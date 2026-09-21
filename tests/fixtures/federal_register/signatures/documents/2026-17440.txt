@@ -1,0 +1,79 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 164 (Wednesday, August 26, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 164 (Wednesday, August 26, 2026)]
+[Rules and Regulations]
+[Page 54947]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-17440]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+FARM CREDIT ADMINISTRATION
+
+12 CFR Part 621
+
+RIN 3052-AD63
+
+
+Loan Performance Categories and Financial Reporting
+
+AGENCY: Farm Credit Administration.
+
+ACTION: Final rule; confirmation of effective date.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The Farm Credit Administration (FCA, we, or our) amends our 
+regulatory high-risk loan performance categories by removing ``Formally 
+restructured loans (TDR),'' also known as troubled debt restructurings. 
+In 2022, changes in generally accepted accounting principles (GAAP) 
+eliminated the accounting guidance for TDRs, enhanced disclosure 
+requirements for certain loan refinancings and restructurings 
+undertaken when a borrower is experiencing financial difficulty and 
+changed existing vintage year disclosure requirements for public 
+business entities. This final rule removes TDRs from our regulatory 
+loan performance categories to reflect changes in GAAP. Because FCA 
+regulations require Farm Credit System (System) institutions to prepare 
+financial statements and reports in accordance with GAAP, retaining 
+TDRs as a regulatory loan performance category is no longer consistent 
+with current accounting standards. In addition to making conforming 
+technical changes, the rule also makes minor technical and 
+organizational revisions to ensure internal consistency within the 
+regulation. In addition, FCA determined that no regulatory amendments 
+are necessary to implement GAAP's enhanced disclosure requirements for 
+loan modifications to borrowers experiencing financial difficulty or 
+for amended vintage year disclosures, as existing FCA regulations 
+already require GAAP-compliant financial reporting.
+
+DATES: The final rule was published on July 24, 2026 (91 FR 46703) and 
+is confirmed as August 24, 2026.
+
+FOR FURTHER INFORMATION CONTACT: 
+    Technical information: Darius Hale, Senior Policy Analyst, Office 
+of Regulatory Policy, (703) 883-4165, TTY (703) 883-4056, 
+<a href="/cdn-cgi/l/email-protection#98f0f9f4fdfcd8fefbf9b6fff7ee"><span class="__cf_email__" data-cfemail="e68e878a8382a6808587c8818990">[email&#160;protected]</span></a>.
+    Legal information: Jennifer Cohn, Assistant General Counsel, Office 
+of General Counsel, (703) 883-4020, TTY (703) 883-4056, <a href="/cdn-cgi/l/email-protection#ceada1a6a0a48ea8adafe0a9a1b8"><span class="__cf_email__" data-cfemail="ec8f83848286ac8a8f8dc28b839a">[email&#160;protected]</span></a>.
+
+SUPPLEMENTARY INFORMATION: On July 24, 2026, FCA issued a final rule 
+amending FCA's regulatory high-risk loan performance categories by 
+removing ``Formally restructured loans (TDR),'' also known as troubled 
+debt restructurings. In accordance with 12 U.S.C. 2252(c)(1), the final 
+rule provided the regulation would become effective 30 days after 
+publication in the Federal Register during which either or both houses 
+of Congress are in session. Based on the records of the sessions of 
+Congress, the effective date of the regulation is August 24, 2026.
+
+Ashley Waldron,
+Secretary to the Board, Farm Credit Administration.
+[FR Doc. 2026-17440 Filed 8-25-26; 8:45 am]
+BILLING CODE P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

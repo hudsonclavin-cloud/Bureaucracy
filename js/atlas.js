@@ -123,6 +123,7 @@ const METHOD_TEXT = {
   // map; the claim is the same, and it is the previous administration's
   // archive, which says nothing about who holds the post now.
   listed_in_opm_plum_archive: "OPM's PLUM archive, the previous administration's reported positions, lists a post of this title under its organisation",
+  signed_a_federal_register_document: "An official signing a published Federal Register document stated this title",
 };
 
 const SOURCE_TEXT = {
@@ -239,6 +240,27 @@ function describeEvidence(node) {
     const filed = entry.parentListedName ? `, filed under "${entry.parentListedName}"` : ", as a top-level entry";
     const edition = entry.edition ? ` (${entry.edition} edition)` : "";
     text += alreadyEntry ? `${asName}${filed}${edition}` : ` · the United States Government Manual also carries an entry for it${asName}${filed}${edition}`;
+  }
+  // The same signature sentence the panel prints: the document, its date,
+  // and that the office was filled when it was signed. The signer's name is
+  // never read, so this can never be a statement about who holds it now.
+  const signature = node.federalRegisterSignature;
+  if (signature && typeof signature === "object") {
+    const already = String(node.verificationMethod || "") === "signed_a_federal_register_document";
+    const quoted = signature.listedTitle ? ` as "${signature.listedTitle}"` : "";
+    const kind = String(signature.documentType || "document").toLowerCase();
+    const signed = formatDate(signature.signingDate);
+    const published = formatDate(signature.publicationDate);
+    const when = signed ? `, signed ${signed}` : published ? `, published ${published}` : "";
+    const doc = `${kind} ${signature.documentNumber}${when}`;
+    text += already
+      ? `${quoted} on ${doc}`
+      : ` · an official signing Federal Register ${doc} stated this title${quoted}`;
+    if (signature.occurrences > 1) text += ` (${signature.occurrences} of the documents read carry it)`;
+    text += signed
+      ? ` — the office was filled on that day`
+      : ` — the office was filled when that document was signed, on or before the day it was published`;
+    text += `; the signer's name is not read, and this says nothing about who holds it now`;
   }
   const readNotNamed = node.pageReadNotNamed;
   if (readNotNamed && typeof readNotNamed === "object" && readNotNamed.url) {

@@ -1,0 +1,181 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 179 (Thursday, September 17, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 179 (Thursday, September 17, 2026)]
+[Notices]
+[Pages 58851-58852]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-19086]
+
+
+-----------------------------------------------------------------------
+
+DEPARTMENT OF COMMERCE
+
+National Oceanic and Atmospheric Administration
+
+
+Agency Information Collection Activities; Submission to the 
+Office of Management and Budget (OMB) for Review and Approval; Comment 
+Request; Analysis of and Review of Ocean Exploration Video Products
+
+AGENCY: National Oceanic & Atmospheric Administration (NOAA), Commerce.
+
+ACTION: Notice of information collection, request for comment.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The Department of Commerce, in accordance with the Paperwork 
+Reduction Act of 1995 (PRA), invites the general public and other 
+Federal agencies to comment on proposed, and continuing information 
+collections, which helps us assess the impact of our information 
+collection requirements and minimize the public's reporting burden. The 
+purpose of this notice is to allow for 60 days of public comment 
+preceding submission of the collection to OMB.
+
+DATES: To ensure consideration, comments regarding this proposed 
+information collection must be received on or before November 16, 2026.
+
+ADDRESSES: Interested persons are invited to submit written comments to 
+Adrienne Thomas, NOAA PRA Officer, at <a href="/cdn-cgi/l/email-protection#703e3f31315e202231301e1f11115e171f06"><span class="__cf_email__" data-cfemail="145a5b55553a444655547a7b75753a737b62">[email&#160;protected]</span></a>. Please 
+reference OMB Control Number 0648-0748 in the subject line of your 
+comments. All comments received are part of the public record and will 
+generally be posted on <a href="https://www.regulations.gov">https://www.regulations.gov</a> without change. Do 
+not submit Confidential Business Information or otherwise sensitive or 
+protected information.
+
+FOR FURTHER INFORMATION CONTACT: Requests for additional information or 
+specific questions related to collection activities should be directed 
+to Liz Hoadley. NOAA Ocean Exploration, NOAA Disaster Response Center, 
+7344 Zeigler Blvd., Mobile, AL, 36608. (240) 429-8706; 
+<a href="/cdn-cgi/l/email-protection#7a1613005412151b1e161f033a14151b1b541d150c"><span class="__cf_email__" data-cfemail="78141102561017191c141d013816171919561f170e">[email&#160;protected]</span></a>.
+
+SUPPLEMENTARY INFORMATION:
+
+I. Abstract
+
+    This request is for a revision and extension to an approved 
+information collection.
+    NOAA's Office of Ocean Exploration and Research (NOAA Ocean 
+Exploration) is the only federal organization dedicated to ocean 
+exploration. By using unique capabilities in terms of personnel, 
+technology, infrastructure, and exploration missions, NOAA Ocean 
+Exploration is reducing unknowns in deep-ocean areas and providing 
+high-value environmental intelligence needed by NOAA and the nation to 
+address both current and emerging science and management needs. Our 
+expertise, work products, and services generally fall into the areas 
+outlined at <a href="https://oceanexplorer.noaa.gov/about/">https://oceanexplorer.noaa.gov/about/</a>; however, none of 
+these areas operate independently and it is only through leveraging 
+resources internally and externally that we can truly achieve our 
+mission. Since the inception of NOAA's exploration program in 2001, 
+data management has been guided by the 2000 President's Panel Report 
+recommendations which prioritized rapid and unrestricted data sharing 
+as one of five critical exploration program components. More recently, 
+Public Law 111-11 [Section XII Ocean Exploration] reinforced and 
+expanded ocean exploration data management objectives, continuing to 
+stress the importance of sharing unique exploration data and 
+information to improve public understanding of the oceans, and for 
+research and management purposes.
+    Telepresence satellite communication from the ship to shore brings 
+the unknown ocean to the screens of both scientists and the general 
+public in their homes, schools or offices in near real time. With 
+technology constantly evolving it is important to address the needs of 
+the shore-based scientists and public to maintain a high level of 
+participation. We use voluntary surveys to identify the needs of users 
+of data, best approaches to leverage expertise of shore-based 
+participants for meaningful public engagement focused on ocean 
+exploration. The four forms used to collect information are as follows: 
+(1) Sailing Contact Information. This form is sent to the few 
+scientists that directly sail on NOAA Ship Okeanos Explorer. The ship's 
+operations and medical officers needs certain information such as: if a 
+sailing individual has securely submitted their proper medical 
+documents to NOAA's Office of Marine and Aviation Operations; if the 
+person is up to date with required security
+
+[[Page 58852]]
+
+documents, such as a passport, if the ship is traveling to a foreign 
+port; any dietary restrictions so that the person will be served food 
+that is safe. Modifications to this form are largely to bring it into 
+compliance with new NOAA policies (remove COVID-19 language, updated 
+medical policies, image and likeness releases, etc.) and small content 
+edits to reflect office changes in partnership status and ship sailing 
+logistics. (2) Okeanos Explorer Participation Assessment. This 
+voluntary form is sent to the scientists that sailed on any Okeanos 
+Explorer cruise funded by NOAA's Office of Ocean Exploration and 
+Research to record any feedback they wish to provide to the office 
+about their experience. The office uses their feedback in assessments 
+for improving the utility and experience of these scientific guests 
+sailing on the Okeanos Explorer. Minimal edits to this form are made to 
+bring the form into compliance with current policy. (3) EX 
+Collaboration Tools Account Request Form. This voluntary form is sent 
+to members of the marine scientific community at the beginning of a 
+fiscal year to ask if members would like to participate in any of the 
+upcoming cruises and to what degree, such as simply asking to be 
+included in emailed updates or if they want to be on a direct line to 
+the ship for remotely operated vehicle dive operations. Modifications 
+to this form are adding clarifying information based on user feedback, 
+making office updates (new engineering partner) and updating 
+information for the current field season. (4) Science Lead Interest 
+Solicitation. This voluntary form will be used to solicit interest from 
+the scientific community to serve as a Science Lead on one of NOAA 
+Ocean Exploration's expeditions. No edits have been made to this form 
+since the last submission. The Citizen Scientist Form was previously 
+part of this information collection. It is no longer utilized by the 
+office and can be removed for the renewal of this information 
+collection.
+
+II. Method of Collection
+
+    Information is collected via online form.
+
+III. Data
+
+    OMB Control Number: 0648-0748.
+    Form Number(s): None.
+    Type of Review: Regular submission [revision and extension of a 
+current information collection].
+    Affected Public: Individuals or households; business or other for-
+profit organizations; not-for-profit institutions; Federal government.
+    Estimated Number of Respondents: 1,000.
+    Estimated Time per Response: 10 minutes.
+    Estimated Total Annual Burden Hours: 668 hours.
+    Estimated Total Annual Cost to Public: $0 in recordkeeping or 
+reporting costs.
+    Respondent's Obligation: Voluntary or required to obtain services 
+or benefits.
+    Legal Authority: Public law 111-11, Section XII Ocean Exploration.
+
+IV. Request for Comments
+
+    We are soliciting public comments to permit the Department/Bureau 
+to: (a) Evaluate whether the proposed information collection is 
+necessary for the proper functions of the Department, including whether 
+the information will have practical utility; (b) Evaluate the accuracy 
+of our estimate of the time and cost burden for this proposed 
+collection, including the validity of the methodology and assumptions 
+used; (c) Evaluate ways to enhance the quality, utility, and clarity of 
+the information to be collected; and (d) Minimize the reporting burden 
+on those who are to respond, including the use of automated collection 
+techniques or other forms of information technology.
+    Comments that you submit in response to this notice are a matter of 
+public record. We will include or summarize each comment in our request 
+to OMB to approve this information collection request. Before including 
+your address, phone number, email address, or other personal 
+identifying information in your comment, you should be aware that your 
+entire comment--including your personal identifying information--may be 
+made publicly available at any time. While you may ask us in your 
+comment to withhold your personal identifying information from public 
+review, we cannot guarantee that we will be able to do so.
+
+Sheleen Dumas,
+Departmental PRA Compliance Officer, Office of the Under Secretary for 
+Economic Affairs, Commerce Department.
+[FR Doc. 2026-19086 Filed 9-16-26; 8:45 am]
+BILLING CODE 3510-KD-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

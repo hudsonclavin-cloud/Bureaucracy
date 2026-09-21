@@ -1,0 +1,201 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 180 (Friday, September 18, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 180 (Friday, September 18, 2026)]
+[Notices]
+[Pages 59137-59138]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-19170]
+
+
+
+[[Page 59137]]
+
+=======================================================================
+-----------------------------------------------------------------------
+
+DEPARTMENT OF HEALTH AND HUMAN SERVICES
+
+Centers for Disease Control and Prevention
+
+[30Day-26-1072]
+
+
+Agency Forms Undergoing Paperwork Reduction Act Review
+
+    In accordance with the Paperwork Reduction Act of 1995, the Centers 
+for Disease Control and Prevention (CDC) has submitted the information 
+collection request titled ``STI Surveillance Network (SSuN)'' to the 
+Office of Management and Budget (OMB) for review and approval. CDC 
+previously published a ``Proposed Data Collection Submitted for Public 
+Comment and Recommendations'' notice on December 5, 2025, to obtain 
+comments from the public and affected agencies. CDC received three 
+public comments related to the previous notice. This notice serves to 
+allow an additional 30 days for public and affected agency comments.
+    CDC will accept all comments for this proposed information 
+collection project. The Office of Management and Budget is particularly 
+interested in comments that:
+    (a) Evaluate whether the proposed collection of information is 
+necessary for the proper performance of the functions of the agency, 
+including whether the information will have practical utility;
+    (b) Evaluate the accuracy of the agencies estimate of the burden of 
+the proposed collection of information, including the validity of the 
+methodology and assumptions used;
+    (c) Enhance the quality, utility, and clarity of the information to 
+be collected;
+    (d) Minimize the burden of the collection of information on those 
+who are to respond, including, through the use of appropriate 
+automated, electronic, mechanical, or other technological collection 
+techniques or other forms of information technology, e.g., permitting 
+electronic submission of responses; and
+    (e) Assess information collection costs.
+    To request additional information on the proposed project or to 
+obtain a copy of the information collection plan and instruments, call 
+(404) 639-7570. Comments and recommendations for the proposed 
+information collection should be sent within 30 days of publication of 
+this notice to <a href="http://www.reginfo.gov/public/do/PRAMain">www.reginfo.gov/public/do/PRAMain</a>. Find this particular 
+information collection by selecting ``Currently under 30-day Review--
+Open for Public Comments'' or by using the search function. Direct 
+written comments and/or suggestions regarding the items contained in 
+this notice to the Attention: CDC Desk Officer, Office of Management 
+and Budget, 725 17th Street NW, Washington, DC 20503 or by fax to (202) 
+395-5806. Provide written comments within 30 days of notice 
+publication.
+
+Proposed Project
+
+    The STI Surveillance Network (SSuN) (OMB Control No. 0920-1072, 
+Exp. 09/30/2026)--Revision--National Center for HIV, Viral Hepatitis, 
+STD, TB Prevention (NCHHSTP), Centers for Disease Control and 
+Prevention (CDC).
+
+Background and Brief Description
+
+    The Centers for Disease Control and Prevention (CDC) is requesting 
+a Revision of a currently approved information collection request (ICR) 
+titled The STI Surveillance Network (SSuN) and approval for an 
+additional period of three years. The Revision submitted for this ICR 
+reflects changes to: (1) the title of the currently approved ICR; (2) 
+the inclusion of Doxycycline Post-exposure Prophylaxis (Doxy PEP) data 
+elements; (3) the deletion of multiple data elements no longer 
+required; and (4) an updated anonymous patient clinic survey. The 
+estimated burden hours for this revised collection decreases from the 
+previously approved 7,510 to 7,237 due to decreases in the number of 
+participating clinical sites and expected number of interviews 
+conducted by funded jurisdictions, a result of declines in reported 
+gonorrhea cases.
+    The purpose of the STI Surveillance Network (SSuN) is to enhance 
+national capacity for STI surveillance. While U.S. jurisdictions 
+voluntarily report STI cases to the CDC via the National Notifiable 
+Diseases Surveillance System (NNDSS), these reports often lack 
+essential patient demographics and detailed information on risk 
+behaviors, treatment, co-infections, preventive services, and sexual 
+networks.
+    SSuN enhances CDC's STI surveillance efforts by:
+    1. Providing comprehensive behavioral and demographic data on STI 
+cases not available from standard case-based surveillance;
+    2. Monitoring trends in STI and HIV co-infection, screening, 
+prevention interventions, and healthcare access among patients with 
+gonorrhea or other STIs;
+    3. Providing an additional sentinel monitoring system for emerging 
+health threats like mpox;
+    These data help public health authorities better understand STI 
+trends, assess disease burden inequalities, and monitor treatment 
+outcomes and adverse health effects among STI patients. Data will be 
+transmitted through CDC's Secure Access Management System (SAMS) by the 
+15 state and local health jurisdictions (eight jurisdictions funded for 
+both Strategy A and B, four Strategy A only jurisdictions, and three 
+Strategy B only jurisdictions) funded to conduct SSuN activities. The 
+revised project, SSuN Cycle 5 (2024-2029), comprises 15 US local/state 
+health departments. SSuN recipients are funded to conduct either or 
+both of the two core SSuN Strategies: Sentinel surveillance in 
+specialty sexual health clinics (Strategy A) and enhanced population-
+based surveillance for persons diagnosed with gonorrhea and adult 
+syphilis (Strategy B).
+    In Strategy A, data is abstracted from existing electronic medical 
+records at 16 participating STI clinics across 12 funded jurisdictions 
+(several sites utilize >1 clinical facility), utilizing information 
+already collected during routine clinical care. This reflects a total 
+of 384 burden hours (16 STI clinic respondents across 12 funded 
+jurisdictions x six data transmissions x four hours per data 
+transmission). These data are sent to the 12 funded health 
+jurisdictions, where they are formatted and deduplicated by data 
+managers into standardized formats. Records are also matched with the 
+jurisdiction's HIV surveillance registry, providing data on HIV co-
+infection not available from other multi-jurisdictional sources. All 
+patient records are fully de-identified and securely transmitted to the 
+CDC six times a year. Data managers at each of the 16 clinical 
+facilities across 12 jurisdictions receiving funding are responsible 
+for transmitting validated datasets for these activities to CDC every 
+other month. This reflects 2,880 burden hours for Strategy A health 
+department data management (12 health jurisdiction respondents x six 
+data transmissions x 40 hours per data transmission). Participating 
+Strategy A clinics are also required to administer a one-time brief 
+(~five minute) clinic patient survey between years 2-5 of the cycle. 
+Clinic patient surveys will be conducted with approximately 3,000 
+patients across all funded sites for a total of five minutes each, 
+resulting in 250 burden hours.
+    The second core data collection activity, Strategy B, includes: (1) 
+abstraction, recoding, and reporting of all gonorrhea and syphilis 
+cases in the collaborating jurisdiction; (2) enhanced investigations of 
+a random sample of diagnosed individuals; and (3) health
+
+[[Page 59138]]
+
+department abstraction and registry matching for a complete census of 
+reported cases. Enhanced investigations include clinical data 
+abstraction from providers, registry matching, and brief demographic 
+and behavioral interviews. SSuN recipients implement data collection 
+protocols that provide uniformly coded data on demographics, risk 
+factors, clinical care, laboratory data, and healthcare-seeking 
+behaviors, which are compiled into a national dataset after quality 
+assurance at the CDC. For Activity 1, data managers at participating 
+health jurisdictions are responsible for transmitting validated 
+datasets case datasets to CDC every other month, resulting in 2,640 
+burden hours (11 jurisdictions x six data transmissions x 40 hours per 
+data transmission). In 2023, there were 187,833 cases of gonorrhea 
+diagnosed and reported across the 11 Strategy B SSuN jurisdictions. 
+Approximately 7%, or 13,148 gonorrhea cases were randomly sampled for 
+enhanced investigation. Over past cycles, approximately 50% of patients 
+contacted for investigation responded; we estimate this will result in 
+1,083 burden hours for patients with gonorrhea.
+    The total estimated annual burden hours are 7,237. Respondents will 
+not receive federal funds to participate in this project. There are no 
+additional costs to respondents other than their time.
+
+                                        Estimated Annualized Burden Hours
+----------------------------------------------------------------------------------------------------------------
+                                                                                        Number of      Average
+           Type of respondent                      Form name             Number of    responses per   hours per
+                                                                        respondents    respondent      response
+----------------------------------------------------------------------------------------------------------------
+Data managers at sentinel STI clinics...  Electronic Clinical Record             16               6            4
+                                           Abstraction.
+General Public--Adults (persons           Patient interviews for a            6,500               1        10/60
+ diagnosed with gonorrhea).                random sample of gonorrhea
+                                           cases.
+Data Managers: local/state health         Data cleaning/validation,              12               6           40
+ departments (Strategy A).                 HIV registry matching and
+                                           data transmissions for all
+                                           activity components.
+Data Managers: local/state health         Data cleaning/validation,              11               6           40
+ departments (Strategy B).                 HIV registry matching and
+                                           data transmissions for all
+                                           activity components.
+General Public--Adults (persons           Clinic patient surveys.....         3,000               1         5/60
+ presenting for care in STI Clinics).
+----------------------------------------------------------------------------------------------------------------
+
+
+Jeffrey M. Zirger,
+Lead, Information Collection Review Office, Office of Public Health 
+Ethics and Regulations, Office of Science, Centers for Disease Control 
+and Prevention.
+[FR Doc. 2026-19170 Filed 9-17-26; 8:45 am]
+BILLING CODE 4163-18-P
+
+
+</pre></body>
+</html>

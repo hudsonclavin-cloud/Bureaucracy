@@ -1,0 +1,1552 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 164 (Wednesday, August 26, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 164 (Wednesday, August 26, 2026)]
+[Rules and Regulations]
+[Pages 55015-55027]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-17391]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+DEPARTMENT OF COMMERCE
+
+National Oceanic and Atmospheric Administration
+
+50 CFR Part 217
+
+[Docket No. 260820-0009]
+RIN 0648-BN42
+
+
+Takes of Marine Mammals Incidental to Specified Activities; 
+Taking Marine Mammals Incidental to the Duckabush Estuary Restoration 
+Project in Washington
+
+AGENCY: National Marine Fisheries Service (NMFS), National Oceanic and 
+Atmospheric Administration (NOAA), Commerce.
+
+ACTION: Final rule; notification of issuance of Letter of 
+Authorization.
+
+-----------------------------------------------------------------------
+
+SUMMARY: NMFS, upon request from the U.S. Army Corps of Engineers 
+(USACE) issues this final rule pursuant to the Marine Mammal Protection 
+Act (MMPA), to govern the taking of marine mammals incidental to the 
+Duckabush Estuary Restoration Project (DERP) in Hood Canal, Washington 
+over 5 years (2027-2032). This final rule, which allows for the 
+issuance of a 5-year letter of authorization (LOA) allowing for the 
+incidental take of marine mammals during the described activities and 
+timeframes, prescribes the permissible methods of taking and other 
+means of effecting the least practicable adverse impact on marine 
+mammal species and their habitat, and establishes requirements 
+pertaining to the monitoring and reporting of such taking.
+
+DATES: Effective from July 9, 2027, through July 8, 2032.
+
+ADDRESSES: Electronic copies of the application and supporting 
+documents, the proposed rule and associated public comments, as well as 
+a list of the references cited in this document, may be obtained online 
+at: https://www.fisheries.noaa.gov/action/
+
+[[Page 55016]]
+
+incidental-take-authorization-us-army-corps-engineers-duckabush-
+estuary-restoration-project. In case of problems accessing these 
+documents, please call the contact listed below.
+
+FOR FURTHER INFORMATION CONTACT: Robert Pauline, Office of Protected 
+Resources, NMFS, (301) 427-8401.
+
+SUPPLEMENTARY INFORMATION:
+
+Purpose for Regulatory Action
+
+    These regulations, promulgated under the authority of the Marine 
+Mammal Protection Act (MMPA) (16 U.S.C. 1361 et seq.), establish a 
+framework for NMFS to authorize the take of marine mammals incidental 
+to construction activities associated with the DERP project in Hood 
+Canal, Washington.
+
+Legal Authority for the Action
+
+    The MMPA prohibits the ``take'' of marine mammals, with certain 
+exceptions. Section 101(a)(5)(A) of the MMPA (16 U.S.C. 1371(a)(5)(A)) 
+directs the Secretary of Commerce, as delegated to NMFS, to allow, upon 
+request, the incidental, but not intentional, taking of small numbers 
+of marine mammals by U.S. citizens who engage in a specified activity 
+(other than commercial fishing) within a specified geographical region 
+for up to 5 years if, after notice and public comment, the agency makes 
+certain findings and promulgates regulations that set forth permissible 
+methods of taking pursuant to that activity and other means of 
+effecting the ``least practicable adverse impact'' on the affected 
+species or stocks and their habitat (see Mitigation section), as well 
+as monitoring and reporting requirements.
+
+Summary of Major Provisions Within the Rule
+
+    Following is a summary of the major provisions of this rule 
+regarding USACE's activities. These provisions include measures 
+requiring:
+    <bullet> Performance of construction work only during daylight 
+hours when visual monitoring of marine mammals can be implemented;
+    <bullet> Gradually increasing time periods dedicated to 
+construction activities each day throughout the day to reduce the risk 
+of potentially startling marine mammals;
+    <bullet> Conducting 30 minutes of pre- and post-activity monitoring 
+associated with pile installation or removal activities;
+    <bullet> Establishment and monitoring by protected species 
+observers (PSOs) of a 300-meter observation zone for all construction 
+activities;
+    <bullet> Halting construction activity: (1) if a marine mammal 
+comes within 10 meters of operations of heavy equipment; or (2) a pup 
+less than one week old comes within 20 meters of where heavy machinery 
+is operating; and
+    <bullet> Not initiating construction activities within 300 meters 
+of a mother-pup pair that is hauled out, or within 100 meters of a 
+mother-pup pair in the water.
+    Through adaptive management, the regulations will allow NMFS to 
+modify (e.g., remove, revise, or add to) the existing mitigation, 
+monitoring, or reporting measures summarized above and required by the 
+LOA.
+
+Background
+
+    The MMPA prohibits the ``take'' of marine mammals, with certain 
+exceptions. Section 101(a)(5)(A) and (D) of the MMPA (16 U.S.C. 1361 et 
+seq.) direct the Secretary of Commerce (as delegated to NMFS) to allow, 
+upon request, the incidental, but not intentional, taking of small 
+numbers of marine mammals by U.S. citizens who engage in a specified 
+activity (other than commercial fishing) within a specified 
+geographical region if certain findings are made and either regulations 
+are promulgated or an incidental harassment authorization is issued.
+    Authorization for incidental takings shall be granted if NMFS finds 
+that the taking will have a negligible impact on the species or 
+stock(s) and will not have an unmitigable adverse impact on the 
+availability of the species or stock(s) for taking for subsistence uses 
+(where relevant). If such findings are made, NMFS must prescribe 
+permissible methods of taking; other ``means of effecting the least 
+practicable adverse impact'' on the affected species or stocks and 
+their habitat, paying particular attention to rookeries, mating 
+grounds, and areas of similar significance, and on the availability of 
+the species or stocks for taking for certain subsistence uses (referred 
+to in shorthand as ``mitigation''); and requirements pertaining to the 
+monitoring and reporting of the takings. The definitions of all 
+applicable MMPA statutory terms cited above are included in the 
+relevant sections below and can be found in section 3 of the MMPA (16 
+U.S.C. 1362) and NMFS regulations at 50 CFR 216.103.
+
+Summary of Request
+
+    On April 17, 2024, NMFS received a request from the USACE for 
+regulations and a subsequent LOA to take marine mammals incidental to 
+construction activities related to the DERP in Washington. A revised 
+application was submitted on September 27, 2024. We determined the 
+application was adequate and complete on November 19, 2024. On November 
+25, 2024, we published a notice of receipt of the USACE's application 
+in the Federal Register, requesting comments and information related to 
+the request for 30 days (89 FR 92907). We received no public comments. 
+On August 15, 2025, we published the proposed rule in the Federal 
+Register (90 FR 39346) and requested comments and information from the 
+public. NMFS reviewed the submitted material and considered it for 
+promulgation of these regulations.
+
+Description of the Specified Activities
+
+    A detailed description of the USACE's planned activities are 
+provided in the proposed rule (90 FR 39346, August 15, 2025). Since 
+publication of the proposed rule, the USACEC has not made any 
+modifications to their specified activities; therefore, we refer the 
+reader to the proposed rule for a detailed description of the specified 
+activities. Mitigation, monitoring, and reporting measures proposed by 
+the USACE and included in this final rule are also described in detail 
+in the proposed rule and summarized later in this document (please see 
+Mitigation and Monitoring and Reporting). Note that the effective dates 
+of the regulations and LOA in the proposed rule (90 FR 39346) were 
+listed as July 30, 2026, through July 29, 2031.
+    The project has been delayed by one year due to the inability of 
+the USACE to secure funding during the 2026 budget cycle. Therefore, 
+the applicant requested new effective dates of July 9, 2027, through 
+July 8, 2032. These new effective dates have been authorized by NMFS. 
+The delay of the project by one year (2026 to 2027) and the change in 
+the effective start date by several weeks (July 30 compared to July 9) 
+will not affect any additional species or have any impact on the life 
+cycle of harbor seals. The one-year delay and change of effective start 
+dates during Year 1 of the LOA is not expected to affect our analysis 
+in any way. The species affected, number of animals authorized for 
+take, and mitigation and monitoring requirement remain unchanged.
+    Additional details on the specified activities are available in the 
+proposed rule (90 FR 39346, August 15, 2025).
+
+Specified Geographic Region
+
+    The specified geographic region is Hood Canal in Puget Sound. 
+Details regarding this area can be found in the proposed rule (90 FR 
+39346, August 15, 2025).
+
+Comments and Responses
+
+    During the 30-day comment period, we received a single comment 
+letter from a member of the public that
+
+[[Page 55017]]
+
+contained three separate comments. NMFS has reviewed and considered all 
+relevant comments received on the proposed rule and issuance of the 
+LOA. All substantive, relevant comments and our responses are described 
+below.
+    Comment 1: The commenter wrote that construction activities could 
+negatively impact marine mammals and that even a ``small number'' of 
+takes could lead to disruptions in feeding, breeding, and migratory 
+patterns, which could have lasting consequences for the population.
+    Response: Section 101(a)(5)(A) of the MMPA requires NMFS to make a 
+determination that the take incidental to a ``specified activity'' will 
+have a negligible impact on the affected species or stocks of marine 
+mammals. NMFS' implementing regulations 50 CFR 216.104(a)(1) require 
+applicants to include in their request a detailed description of the 
+specified activity or class of activities that can be expected to 
+result in incidental taking of marine mammals. NMFS has defined 
+negligible impact as an impact resulting from the specified activity 
+that cannot be reasonably expected to, and is not reasonably likely to, 
+adversely affect the species or stock through effects on annual rates 
+of recruitment or survival (50 CFR 216.103). A negligible impact 
+finding is based on the lack of likely adverse effects on annual rates 
+of recruitment or survival (i.e., population-level effects). An 
+estimate of the number of takes alone is not enough information on 
+which to base an impact determination. In addition to considering 
+estimates of the number of marine mammals that might be ``taken'' 
+through harassment, NMFS considers other factors, such as the likely 
+nature of any impacts or responses (e.g., intensity, duration), the 
+context of any impacts or responses (e.g., critical reproductive time 
+or location, foraging impacts affecting energetics), as well as effects 
+on habitat, and the likely effectiveness of the mitigation. We also 
+assess the number, intensity, and context of estimated takes by 
+evaluating this information relative to population status. In this 
+instance, NMFS has determined that the USACE's planned activities will 
+have a negligible impact on harbor seals in the project area.
+    NMFS is also required to make a small numbers determination. NMFS 
+explains the concept of ``small numbers'' in recognition that there 
+could also be quantities of individuals taken that would correspond 
+with ``medium'' and ``large'' numbers. As such, for an individual 
+incidental take authorization, NMFS considers that one-third of the 
+most appropriate population abundance number--as compared with the 
+assumed number of individuals taken--is an appropriate limit with 
+regard to ``small numbers.'' This relative approach is consistent with 
+relevant case law. See Center for Biological Diversity v. Salazar, 695 
+F.3d 893, 907 (9th Cir. 2012) (holding that the U.S. Fish and Wildlife 
+Service reasonably interpreted ``small numbers'' by analyzing take in 
+relative or proportional terms). As noted above, there is no biological 
+significance associated with ``small numbers'' and, as such, NMFS 
+appropriately does not consider ``conservation status'' or other issues 
+related to the status of a species or stock in making its small numbers 
+finding. Instead, these concepts are considered as part of the 
+negligible impact analysis described previously. The USACE requested, 
+and NMFS has authorized, incidental take that amounts to no more than 
+14.3 percent of the Washington Inland Hood Canal stock of harbor seals, 
+which is less than one-third of the stock's population abundance.
+    Comment 2: The commenter stated that the five-year period of 
+incidental takes allowed under an LOA in such a sensitive area raises 
+concerns about the cumulative impact on marine mammal populations. They 
+stated that the risk of compounding negative effects over time--
+especially in a confined area like Hood Canal--demands a more cautious, 
+conservative approach to project approval, as the ecological 
+consequences of such disruptions may not become evident until it is too 
+late to reverse the damage.
+    Response: Neither the MMPA nor NMFS' codified implementing 
+regulations require consideration of other unrelated activities and 
+their impacts on marine mammal populations. The preamble for NMFS' 
+implementing regulations (54 FR 40338, September 29, 1989) states in 
+response to comments that the impacts from other past and ongoing 
+anthropogenic activities are to be incorporated into the negligible 
+impact analysis via their impacts on the baseline. Consistent with that 
+direction, NMFS has factored into its negligible impact analysis the 
+impacts of other past and ongoing anthropogenic activities via their 
+impacts on the baseline (e.g., as reflected in the density, 
+distribution and status of the species, population size and growth 
+rate, and other relevant stressors). The 1989 final rule for the MMPA 
+implementing regulations also addressed public comments regarding 
+cumulative effects from future, unrelated activities. There, NMFS 
+stated that such effects are not considered in making findings under 
+MMPA section 101(a)(5) concerning negligible impact.
+    Comment 3: The commenter stated that an incidental take 
+authorization may overlook the availability of alternatives that could 
+prevent the need for any take of marine mammals and should be designed 
+in such a way that minimizes its impact on wildlife and prioritizes the 
+health of marine ecosystems without resorting to take authorizations. 
+The goal should be to avoid take altogether, not merely to manage or 
+mitigate it after the fact. The commenter further asserted that the 
+precautionary principle demands that we prioritize the protection of 
+vulnerable marine species, especially in ecologically sensitive areas 
+like Hood Canal.
+    Response: Neither the MMPA nor NMFS' implementing regulations 
+include discussion or requirements related to a ``precautionary 
+principle.'' NMFS must process requests for incidental take regulations 
+in a manner consistent with the requirements of section 101(a)(5)(A) of 
+the MMPA, which establishes specific criteria for when incidental take 
+must be authorized. NMFS is not required under the MMPA to avoid take 
+altogether. As described above, NMFS has determined that the planned 
+activities will have a negligible impact on affected species or stocks. 
+Furthermore, NMFS has not overlooked the availability of alternatives. 
+As required under the MMPA, NMFS has prescribed the permissible methods 
+of taking and other ``means of effecting the least practicable adverse 
+impact'' on the affected species or stocks and their habitat.
+    The USACE would be unable to conduct their planned construction 
+activities without being in violation of the MMPA if all incidental 
+take of marine mammals was prohibited.
+
+Changes From Proposed to Final Rule
+
+    The Level 2 Reaction Code in table 4 of this notice has been 
+revised to include the following language: ``Movements in response to 
+the source of disturbance, ranging from short withdrawals at least 
+twice the animal's body length to longer retreats, or if already moving 
+a change of direction of greater than 90 degrees.'' The text has been 
+updated from that in the proposed rule to match the most recent 
+standardized language that is being utilized across all incidental take 
+authorizations that incorporate the Marine Mammal Reaction Code. The 
+Marine Mammal Reaction Code is used to classify the response of an 
+animal to external stimuli. There are no
+
+[[Page 55018]]
+
+substantive changes accompanying the language update.
+    An incorrect value of 13.1 percent of the percentage of stock taken 
+was listed in the Small Numbers section of the proposed rule (90 FR 
+39346). We are making a technical correction to revise this value to 
+14.3 percent in the Small Numbers section of this notice and in table 
+3.
+    The effective dates of the regulations and LOA in the proposed rule 
+(90 FR 39346) were listed as July 30, 2026, through July 29, 2031. 
+Because the project has been delayed by one year, we changed the 
+effective dates to July 9, 2027, through July 8, 2032. Since the 
+project was delayed for one year, table 3 in this notice, Authorized 
+Takes by Level B Harassment Annually, covers the years 2027-2030 while 
+table 3 in the proposed notice covered the years 2026 through 2029 (90 
+FR 39346).
+    Under the Monitoring and Reporting section of the proposed rule (90 
+FR 39346), language pertaining to the reporting of dead or injured 
+animals was accidentally omitted. The appropriate language has been 
+included in the Monitoring and Reporting section and regulations in 
+this final rule. This is standard language included in all incidental 
+take authorizations where there is the possibility of observing dead or 
+injured animals and was inadvertently omitted from the proposed rule.
+
+Description of Marine Mammals in the Specified Geographic Region
+
+    A single species of marine mammal may be taken by harassment 
+incidental to the USACE's specified activities. A complete description 
+of marine mammals status and trends, life history, habitat use, and 
+threats is included in the USACE's application and NMFS' proposed rule 
+(90 FR 39346). NMFS is not aware of any new relevant information since 
+publication of the proposed rule. Please refer to the proposed rule for 
+detailed descriptions of marine mammals in the project area.
+    Table 1 lists all species or stocks for which take is expected and 
+has been authorized by NMFS for this activity and summarizes 
+information related to the population or stock, including regulatory 
+status under the MMPA and Endangered Species Act (ESA) and potential 
+biological removal (PBR), where known. PBR is defined by the MMPA as 
+the maximum number of animals, not including natural mortalities, that 
+may be removed from a marine mammal stock while allowing that stock to 
+reach or maintain its optimum sustainable population (as described in 
+NMFS' stock assessment reports). All values presented in table 1 are 
+the most recent available at the time of publication (available online 
+at: <a href="https://www.fisheries.noaa.gov/national/marine-mammal-protection/marine-mammal-stock-assessments">https://www.fisheries.noaa.gov/national/marine-mammal-protection/marine-mammal-stock-assessments</a>).
+
+                    Table 1--Marine Mammal Species \1\ Likely To Occur Near the Project Area That May Be Taken by USACE's Activities
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                                                                                Stock abundance
+                                                                                           ESA/MMPA status;     (CV, Nmin, most                Annual M/
+             Common name                    Scientific name               Stock             strategic (Y/N)    recent abundance       PBR       SI \4\
+                                                                                                  \2\             survey) \3\
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                               Order Carnivora--Pinnipedia
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+Family Phocidae (earless seals):
+    Harbor Seal......................  Phoca vitulina..........  Washington Inland Hood   -, -, N                   3,363 (0.16,          88           2
+                                                                  Canal.                                        2,940, 2019) \5\
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+\1\ Information on the classification of marine mammal species can be found on the web page for The Society for Marine Mammalogy's Committee on Taxonomy
+  at: <a href="https://marinemammalscience.org/science-and-publications/list-marine-mammal-species-subspecies">https://marinemammalscience.org/science-and-publications/list-marine-mammal-species-subspecies</a>.
+\2\ ESA status: Endangered (E), Threatened (T)/MMPA status: Depleted (D). A dash (-) indicates that the species is not listed under the ESA or
+  designated as depleted under the MMPA. Under the MMPA, a strategic stock is one for which the level of direct human-caused mortality exceeds PBR or
+  which is determined to be declining and likely to be listed under the ESA within the foreseeable future. Any species or stock listed under the ESA is
+  automatically designated under the MMPA as depleted and as a strategic stock.
+\3\ NMFS marine mammal SARs online at: <a href="https://www.fisheries.noaa.gov/national/marine-mammal-protection/marine-mammal-stock-assessment-reports-region">https://www.fisheries.noaa.gov/national/marine-mammal-protection/marine-mammal-stock-assessment-reports-region</a>.
+  CV is coefficient of variation; Nmin is the minimum estimate of stock abundance.
+\4\ These values, found in NMFS's SARs, represent annual levels of human-caused mortality plus serious injury from all sources combined (e.g.,
+  commercial fisheries, ship strike). Annual M/SI often cannot be determined precisely and is in some cases presented as a minimum value or range.
+\5\ These values were presented in the 2023 Draft Marine Mammal SAR. However, the draft 2023 SAR for the Washington Inland Waters harbor seal stocks,
+  including the Hood Canal stock was not finalized as part of the 2023 Final SAR (89 FR 104989, December 26, 2024) given that the Pearson et al. (2024)
+  estimates of abundance and trends remain unpublished at the time of publication. This SAR will be revised in a subsequent cycle when the abundance
+  estimates for these stocks are published. However, this remains the best available information for use in evaluating effects to this stock of harbor
+  seals.
+
+Potential Effects of Specified Activities on Marine Mammals and Their 
+Habitat
+
+    The effects of visual and acoustic stimuli generated by the 
+presence and operation of assorted DERP construction equipment as well 
+as the presence of personnel, has the potential to cause Level B 
+harassment of pinnipeds in the DERP project area. The proposed rule 
+included a discussion of the effects of these stimuli from the planned 
+activities on marine mammals and their habitat (90 FR 39346). There is 
+no newly available relevant information that would change our analyses 
+or the results thereof.
+
+Estimated Take of Marine Mammals
+
+    This section provides an estimate of the number of incidental takes 
+authorized through the LOA, which will inform NMFS' consideration of 
+``small numbers,'' the negligible impact determinations, and impacts on 
+subsistence uses.
+    Harassment is the only type of take expected to result from these 
+activities. Except with respect to certain activities not pertinent 
+here, section 3(18) of the MMPA (16 U.S.C. 1362(18)) defines 
+``harassment'' as any act of pursuit, torment, or annoyance, which (i) 
+has the potential to injure a marine mammal or marine mammal stock in 
+the wild (Level A harassment); or (ii) has the potential to disturb a 
+marine mammal or marine mammal stock in the wild by causing disruption 
+of behavioral patterns, including, but not limited to, migration, 
+breathing, nursing, breeding, feeding, or sheltering (Level B 
+harassment).
+    Authorized takes would be by Level B harassment only, in the form 
+of behavioral reactions for individual marine mammals resulting from 
+exposure to visual or acoustic disturbance associated with various 
+construction equipment and personnel or protected species observers 
+(PSOs). Based on the nature of the activity, Level A harassment is 
+neither anticipated nor authorized.
+    As described previously, no serious injury or mortality is 
+anticipated or authorized for this activity. Below we
+
+[[Page 55019]]
+
+describe how the take numbers were estimated.
+
+Acoustic Impacts
+
+    There is very limited potential for impacts from underwater noise 
+to result in harassment of pinnipeds. As noted previously, nearly all 
+construction would be land-based. Pile driving within a wetted channel 
+is only planned at a single location among the river channels and other 
+permanently inundated areas in the project area. A vibratory driver 
+will be used to remove bridge piers within the wetted river channel 
+during the demolition of the existing north Highway 101 bridge (see 
+figure 12 in the USACE's application). The USACE, in consultation with 
+NMFS, concluded that the meandering path of the river at this location 
+will adequately prevent direct propagation of underwater noise to the 
+nearest haulout site and, while it is possible that underwater noise 
+from pile-driving could potentially result in take, it is not 
+considered likely and will be adequately addressed through our 
+consideration of the effects of other, more likely causes of 
+disturbance to seals.
+    All other vibratory and impact pile driving will occur on solid 
+ground and will either occur during low tide or will be isolated from 
+water using the existing Highway 101 causeway, cofferdams, or aquadams, 
+thereby dampening propagation of sound through the substrate. For in-
+air sounds, NMFS has established a threshold of received levels above 
+90 dB re 20 [mu]Pa (rms) that could result in behavioral harassment 
+(Level B harassment) of harbor seals. The actual measured in-air Lmax 
+(dBA) at 50 feet (15.24 m) for vibratory and impact pile drivers is 101 
+dB (FHWA 2017). Noise attenuates as the distance from the source of the 
+noise increases. A general equation shows noise propagation loss as 7.5 
+dB for each doubling of distance in areas where landscape features and 
+vegetation exist (WSDOT 2020). Additionally, the following equation can 
+be used to determine construction noise levels at a specific distance 
+from the source (WSDOT 2020):
+    Lmax = the Construction Lmax at 50 feet (15.24 m)-25 * Log(D/Do). 
+In this equation, Lmax = the highest A-weighted sound level occurring 
+during a noise event during the time that noise is being measured; 50 
+feet (15.24 m) = the reference measurement distance; and D = the 
+distance from the noise source.
+    Do = the reference measurement distance (50 feet (15.24 m) in this 
+case). Using this equation, a 101 dB vibratory or impact pile driver 
+will attenuate to 90 dB after 54 m (177 ft). The nearest vibratory pile 
+driving site in the project area is about 265 m (870 ft) from known 
+harbor seal haulout sites at the Duckabush River estuary. Therefore, 
+Level B harassment from airborne noise could only occur if a seal left 
+their haulout site and proceeded to within 54 m (177 ft) of an active 
+pile driving site.
+
+Marine Mammal Occurrence
+
+    In this section we provide information about the occurrence of 
+marine mammals, including abundance or other relevant information which 
+will inform the take calculations.
+    WDFW conducts regular aerial surveys of hauled out harbor seals in 
+the Hood Canal, typically restricting monitoring to the peak of the 
+pupping period and the window two hours before and after high tides to 
+maximize the number of individuals on land. The USACE utilized 
+unpublished WDFW data from 2021-2023 (USACE, 2024) as well as aerial 
+survey information of hauled out harbor seals at Duckabush River in 
+2013 and 2014 (Jeffries et al. 2014) to estimate harbor seal abundance. 
+Table 2 summarizes the results from both surveys.
+    From 2021-2023, an average of 86 seals hauled out at the Duckabush 
+River estuary during the pupping season, with a maximum daily count of 
+130 seals. Harbor seal counts during the molting season peaked at 23 
+per day although data during this period is limited. Available count 
+data outside of the critical life history periods of pupping and 
+molting season is also limited but indicated scarce usage of Duckabush 
+River estuary haulout sites during the daytime for this period.
+
+                                Table 2--Harbor Seal Counts at Duckabush Estuary
+----------------------------------------------------------------------------------------------------------------
+                      Date                             Year            Pups           Adults        Total count
+----------------------------------------------------------------------------------------------------------------
+February 4......................................            2014               0               0           \a\ 0
+March 13........................................            2013               0               0           \a\ 0
+March 21........................................            2013               0               7           \a\ 7
+July 23.........................................            2013               0               0           \a\ 0
+August 26.......................................            2013              17              60          \a\ 77
+August 27.......................................            2013              21              78          \a\ 99
+September 21....................................            2023               3             127         \b\ 130
+September 22....................................            2023               2              94          \b\ 96
+September 28....................................            2021               2              85          \b\ 87
+September 29....................................            2022               4             111         \b\ 115
+October 17......................................            2023               1               3           \a\ 4
+November 6......................................            2013               0              23          \a\ 23
+November 8......................................            2013               0              13          \a\ 13
+----------------------------------------------------------------------------------------------------------------
+Count source: \a\--Jeffries et al. (2014),
+\b\ --WDFW (unpublished).
+
+Take Estimation
+
+    Here, we describe how the information provided above is synthesized 
+to produce a quantitative estimate of the take that is reasonably 
+likely to occur and which will be authorized by NMFS.
+    Since there is no previous data on how harbor seals react to 
+construction activities at the Duckabush River estuary, take rates from 
+an analogous project were utilized to estimate take. The Elkhorn Slough 
+Tidal Marsh Restoration Project in Monterey County, California is a 
+similar wetland restoration project involving land-based construction 
+near harbor seal haulout sites (CDFW 2021). NMFS has issued IHAs for 
+all three phases of this project, all authorizing take by Level B 
+harassment of harbor seals resulting from similar disturbances as 
+considered here, including the use of haul trucks, dozers, backhoes, 
+loaders, and excavators. The objective of both projects is to restore 
+tidal marshes that have been altered by past land use practices. The 
+Elkhorn Slough project is in the process of restoring 147 wetland acres 
+while the DMMP project will
+
+[[Page 55020]]
+
+restore 38 acres. Impacts from both projects include the potential for 
+Level B harassment of harbor seals by visual disturbance and in-air 
+noise.
+    Due to the limited harbor seal survey data at the Duckabush River 
+estuary, a basic model was used to estimate seal counts throughout the 
+year. Using the survey data from table 3, it was assumed that there is 
+an increase or decrease in the number of seals, as defined by use of a 
+linear function (instead of a block function). This means that every 
+day of the year has a unique number of seals based on a linear 
+relationship between a specific date on which a certain number of seals 
+were actually recorded and the next specific date on which seals were 
+recorded. For example, in table 2, there were 99 total seals (pups and 
+adults) recorded on August 27, while 130 total seals were recorded on 
+September 21. Using a linear relationship, it was assumed that 100.24 
+seals were observed on August 28 (one day after the date of recording--
+August 27 with 99 seals) observation, while 128.76 seals were observed 
+on September 20 (one day before the next actual date of recording--
+September 20 with 130 seals). This methodology allows each day of the 
+year to have a unique number of assumed seals present. The USACE 
+developed a detailed project schedule which identified the number of 
+workdays expected to occur for each year of the planned activity, 
+ranging from a minimum of 111 days in 2026 to a maximum of 262 days in 
+2029. The USACE further identified the specific dates of each year that 
+work is planned. The sum of the number of observed seals associated 
+with each specified work date was then calculated for each year of the 
+authorization.
+    Monitoring reports from the Elkhorn Slough Tidal Marsh Restoration 
+Project showed that nine percent of harbor seals present were recorded 
+as takes in Phase I of the Elkhorn Slough Tidal Marsh Restoration 
+Project while 0.7 percent were recorded as takes in Phase II. 
+Monitoring data from Phase III of the project is not available, so the 
+conservative assumption of nine percent take rate were used to estimate 
+realized take. The sum of the number of assumed seals present 
+calculated for each year, as described previously, was then multiplied 
+by nine percent to provide the calculated annual take estimates shown 
+in table 3.
+
+                            Table 3--Authorized Takes by Level B Harassment Annually
+----------------------------------------------------------------------------------------------------------------
+                                                                                          Estimated
+                                 NMFS stock     Predicted work   Predicted   Estimated     take by     Take % of
+             Year                 abundance         dates        work days  total seals    Level B       stock
+                                                                              exposed     harassment
+----------------------------------------------------------------------------------------------------------------
+2027.........................           3,363  July 30-                111        4,883          440        13.1
+                                                December 31.
+2028.........................  ..............  January 1-              261        5,331          480        14.3
+                                                December 31.
+2029.........................  ..............  January 1-              260        5,310          478        14.2
+                                                December 31.
+2030.........................  ..............  January 1-              262        5,090          458        13.6
+                                                November 7.
+----------------------------------------------------------------------------------------------------------------
+
+    To inform both the negligible impact analysis and the small numbers 
+determination, NMFS assesses the maximum number of takes of marine 
+mammals that could occur within any given year during the effective LOA 
+period. In this calculation, the maximum estimated number of Level B 
+harassment takes in any one year (480 in 2027) is used to yield the 
+highest number of estimated take that could occur in any year (table 
+3). Table 3 also depicts the number of takes requested by the USACE and 
+authorized by NMFS relative to the abundance of the Hood Canal stock.
+
+Mitigation
+
+    In order to issue an LOA under section 101(a)(5)(A) of the MMPA, 
+NMFS must set forth the permissible methods of taking pursuant to the 
+activity, and other means of effecting the least practicable adverse 
+impact on the species or stock and its habitat, paying particular 
+attention to rookeries, mating grounds, and areas of similar 
+significance, and on the availability of the species or stock for 
+taking for certain subsistence uses (latter not applicable for this 
+action). NMFS regulations require applicants for incidental take 
+authorizations to include information about the availability and 
+feasibility (economic and technological) of equipment, methods, and 
+manner of conducting the activity or other means of effecting the least 
+practicable adverse impact upon the affected species or stocks, and 
+their habitat (50 CFR 216.104(a)(11)).
+    In evaluating how mitigation may or may not be appropriate to 
+ensure the least practicable adverse impact on species or stocks and 
+their habitat, as well as subsistence uses where applicable, NMFS 
+considers two primary factors:
+    (1) The manner in which, and the degree to which, the successful 
+implementation of the measure(s) is expected to reduce impacts to 
+marine mammals, marine mammal species or stocks, and their habitat. 
+This considers the nature of the potential adverse impact being 
+mitigated (likelihood, scope, range). It further considers the 
+likelihood that the measure will be effective if implemented 
+(probability of accomplishing the mitigating result if implemented as 
+planned), the likelihood of effective implementation (probability 
+implemented as planned); and
+    (2) The practicability of the measures for applicant 
+implementation, which may consider such things as cost and impact on 
+operations.
+    The mitigation measures described in the following sections will 
+apply to the USACE construction activities.
+    The USACE shall conduct training between supervisors and crews, the 
+PSO team, and relevant USACE staff prior to the start of DERP 
+construction so that responsibilities, communication procedures, 
+monitoring protocols, and operational procedures are clearly 
+understood. If new construction personnel are added to the project, the 
+contractor shall ensure that the personnel receive the mandatory 
+training before starting work.
+
+Visual Monitoring
+
+    Required monitoring must be conducted by dedicated, trained, NMFS-
+approved PSO(s). PSOs shall establish and monitor a 300-meter zone 
+around all construction activities. A PSO will be present every day 
+when construction activities occur in or near the DERP area. A 30-
+minute pre-clearance observation period will occur prior to the start 
+of construction activities. Construction may not start until the work 
+area is cleared by the PSOs. Monitoring will occur until 30 minutes 
+after construction is complete. One or more PSOs will be stationed at 
+location(s) offering the best view of four haulout sites and the 
+project area as described in the USACE's marine mammal monitoring plan 
+(MMMP).
+    If environmental conditions deteriorate such that marine mammals 
+within the entire shutdown zone (10 m)
+
+[[Page 55021]]
+
+will not be visible (e.g., fog, heavy rain), construction must be 
+delayed until the PSO is confident marine mammals within the shutdown 
+zone could be detected.
+
+Pre-Construction Clearance and Ramp-up
+
+    A 30-minute pre-clearance observation period must occur prior to 
+the start of ramp-up and construction activities. The USACE must adhere 
+to the following pre-clearance and ramp-up requirements: (i) 
+Construction activities must not be initiated if any marine mammal is 
+within 10 m of planned operations. If a marine mammal is observed 
+within 10 m of planned operations during the 30-minute pre-clearance 
+period, ramp-up must not begin until the animal(s) has been observed 
+exiting the zones or until an additional time period has elapsed with 
+no further sightings; and (ii) Construction activities may not be 
+initiated within 100 meters of a mother-pup pair in the water.
+    To reduce the risk of potentially startling marine mammals with a 
+sudden intensive sound, the contractor will ramp-up construction 
+activities gradually each day by moving around the project area and 
+starting equipment one at a time.
+
+Shutdown Requirements
+
+    For heavy machinery work, if a marine mammal comes within 10 meters 
+of such operations, operations must cease work or will not be initiated 
+until the marine mammal has moved outside the 10-meter buffer. During 
+pupping season (August 1-October 31) construction activities may not be 
+initiated: (1) Within 300 meters of a mom/pup pair that is hauled out, 
+or (2) within 100 meters of a mom/pup pair in the water. If a pup less 
+than 1 week old (neonate) comes within 20 meters of where heavy 
+machinery is working, construction activities in that area must be shut 
+down or delayed until the pup has left the area.
+    Activities must cease if a marine mammal species for which take was 
+not authorized, or a species for which authorization was granted but 
+the authorized number of takes have been met, is observed by PSOs 
+approaching or within the Level B harassment zone. Activities must not 
+resume until the animal is confirmed to have left the area.
+    NMFS has determined that the mitigation measures contained within 
+this final rule will provide the means of effecting the least 
+practicable adverse impact on the affected species or stocks and their 
+habitat, paying particular attention to rookeries, mating grounds, and 
+areas of similar significance.
+
+Monitoring and Reporting
+
+    In order to issue an LOA for an activity, section 101(a)(5)(A) of 
+the MMPA states that NMFS must set forth requirements pertaining to the 
+monitoring and reporting of such taking. The MMPA implementing 
+regulations at 50 CFR 216.104(a)(13) require that requests for 
+authorizations include the suggested means of accomplishing the 
+necessary monitoring and reporting that will result in increased 
+knowledge of the species and of the level of taking or impacts on 
+populations of marine mammals that are expected to be present while 
+conducting the activities. Effective reporting is critical both to 
+compliance as well as ensuring that the most value is obtained from the 
+required monitoring.
+    Monitoring and reporting requirements prescribed by NMFS should 
+contribute to improved understanding of one or more of the following:
+    <bullet> Occurrence of marine mammal species or stocks in the area 
+in which take is anticipated (e.g., presence, abundance, distribution, 
+density);
+    <bullet> Nature, scope, or context of likely marine mammal exposure 
+to potential stressors/impacts (individual or cumulative, acute or 
+chronic), through better understanding of: (1) action or environment 
+(e.g., source characterization, propagation, ambient noise); (2) 
+affected species (e.g., life history, dive patterns); (3) co-occurrence 
+of marine mammal species with the activity; or (4) biological or 
+behavioral context of exposure (e.g., age, calving or feeding areas);
+    <bullet> Individual marine mammal responses (behavioral or 
+physiological) to acoustic stressors (acute, chronic, or cumulative), 
+other stressors, or cumulative impacts from multiple stressors;
+    <bullet> How anticipated responses to stressors impact either: (1) 
+long-term fitness and survival of individual marine mammals; or (2) 
+populations, species, or stocks;
+    <bullet> Effects on marine mammal habitat (e.g., marine mammal prey 
+species, acoustic habitat, or other important physical components of 
+marine mammal habitat); and,
+    <bullet> Mitigation and monitoring effectiveness.
+
+Visual Monitoring
+
+    PSO monitoring during construction will occur from vantage points 
+along the current Highway 101 elevated causeway that allow monitors to 
+observe any seals hauling out in the estuary as shown in the Marine 
+Mammal Monitoring Plan. The primary observation locations shall be on 
+the northern Highway 101 bridge and at the head of the existing estuary 
+access path that will become the temporary parking platform. Monitors 
+may also traverse along the Highway 101 causeway to obtain clearer 
+views of approaching or hauled-out seals, such as from the southern 
+Highway 101 bridge or North Parking Area. The observation area for the 
+restoration area shall be accessed by foot and used to provide a 
+vantage point of the construction area and Duckabush River estuary. 
+This observation area includes all restoration areas within 300 meters 
+of harbor seal haulout sites.
+    The USACE must submit a Marine Mammal Monitoring Plan to NMFS for 
+approval at least 90 days in advance of construction. Marine mammal 
+monitoring must be conducted in accordance with the conditions in this 
+section and the approved Marine Mammal Monitoring Plan. Marine mammal 
+monitoring during construction activities must be conducted by 
+qualified, NMFS approved PSOs, in accordance with the following:
+    <bullet> PSOs must be independent of the activity contractor (for 
+example, employed by a subcontractor) and have no other assigned tasks 
+during monitoring periods.
+    <bullet> At least one PSO must have prior experience performing the 
+duties of a PSO during construction activity pursuant to a NMFS-issued 
+incidental take authorization.
+    <bullet> Other PSOs may substitute other relevant experience, 
+education (degree in biological science or related field), or training 
+for prior experience performing the duties of a PSO during construction 
+activity pursuant to a NMFS-issued incidental take authorization.
+    <bullet> PSOs must be approved by NMFS prior to beginning any 
+activity subject to this rule.
+    PSOs should have the following additional qualifications:
+    <bullet> Ability to conduct field observations and collect data 
+according to assigned protocols;
+    <bullet> Experience or training in the field identification of 
+marine mammals, including the identification of behaviors;
+    <bullet> Sufficient training, orientation, or experience with the 
+construction operation to provide for personal safety during 
+observations;
+    <bullet> Writing skills sufficient to prepare a report of 
+observations including but not limited to: (1) the number and species 
+of marine mammals observed; (2) dates
+
+[[Page 55022]]
+
+and times when in-water construction activities were conducted; (3) 
+dates, times, and reason for implementation of mitigation (or why 
+mitigation was not implemented when required); and (4) marine mammal 
+behavior; and
+    <bullet> Ability to communicate orally, by radio or in person, with 
+project personnel to provide real-time information on marine mammals 
+observed in the area as necessary.
+
+Pre- and Post-Construction Daily Censuses
+
+    A census of marine mammals in the project area and the area 
+surrounding the project will be conducted 30 minutes prior to the 
+beginning of construction on monitoring days, and again 30 minutes 
+after the completion of construction activities. Data collected during 
+the pre- and post-construction daily censuses will include:
+    <bullet> Environmental conditions (weather condition, tidal 
+conditions, visibility, cloud cover, air temperature and wind speed);
+    <bullet> Numbers of each marine mammal species spotted;
+    <bullet> Location of each species spotted, including distance from 
+construction activity;
+    <bullet> Status (in water or hauled-out); and
+    <bullet> Behavior.
+
+Hourly Counts
+
+    The USACE will conduct hourly counts of animals hauled out and in 
+the water. Data collected will include:
+    <bullet> Numbers of each species;
+    <bullet> Location of species, whether hauled out or in the water; 
+and distance from construction activities;
+    <bullet> Time;
+    <bullet> Tidal conditions;
+    <bullet> Time construction activities start and end;
+    <bullet> Primary construction activities occurring during past 
+hour;
+    <bullet> Any noise or visual disturbance;
+    <bullet> Number of mom/pup pairs and neonates observed; and
+    <bullet> Notable behaviors, including foraging, grooming, resting, 
+aggression, mating activity, and others.
+    PSOs will take notes including any of the following information to 
+the extent it is feasible to record:
+    <bullet> Age-class;
+    <bullet> Sex;
+    <bullet> Unusual activity or signs of stress; and
+    <bullet> Any other information worth noting.
+    PSOs will record reaction observed in relation to construction 
+activities including:
+    <bullet> Tally of each reaction;
+    <bullet> Time of reaction;
+    <bullet> Concurrent construction activity (including duration) and 
+assumed cause (whether related to construction activities or not) and 
+observer determination as to the source of disturbance, to the extent 
+possible;
+    <bullet> Location of animal during initial reaction and distance 
+from the noted disturbance;
+    <bullet> Direction of movement;
+    <bullet> Activity before and after disturbance;
+    <bullet> Status (in water or hauled out) before and after 
+disturbance; and
+    <bullet> Coded reaction as shown in table 4.
+
+                                      Table 4--Marine Mammal Reaction Codes
+----------------------------------------------------------------------------------------------------------------
+                Level                      Type of response                        Definition
+----------------------------------------------------------------------------------------------------------------
+1....................................  Alert..................  Head orientation or brief movement in response
+                                                                 to disturbance, which may include turning head
+                                                                 towards the disturbance, craning head and neck
+                                                                 or craning head and neck while holding the body
+                                                                 rigid in a u-shaped position, changing from a
+                                                                 lying to a sitting position, or brief movement
+                                                                 of less than twice the animal's body length.
+                                                                 Alerts would be recorded, but not counted as a
+                                                                 `take'.
+2 *..................................  Movement...............  Movements in response to the source of
+                                                                 disturbance, ranging from short withdrawals at
+                                                                 least twice the animal's body length to longer
+                                                                 retreats, or if already moving a change of
+                                                                 direction of greater than 90 degrees.
+3 *..................................  Flush..................  All retreats (flushes) to the water.
+----------------------------------------------------------------------------------------------------------------
+* Only Levels 2 and 3 are considered take under the MMPA, whereas Level 1 is not.
+
+Reporting
+
+    The USACE must submit a draft monitoring report to NMFS within 90 
+calendar days of the completion of each construction year. A draft 
+comprehensive 5-year summary report must also be submitted to NMFS 
+within 90 days of the end of the effective period of the LOA. The 
+reports must detail the monitoring protocol and summarize the data 
+recorded during monitoring. Final annual reports and the final 
+comprehensive report must be prepared and submitted within 30 days 
+following resolution of any NMFS comments on the draft report. If no 
+comments are received from NMFS within 30 days of receipt of the draft 
+report, the report must be considered final. If comments are received, 
+a final report addressing NMFS comments must be submitted within 30 
+days after receipt of comments. The annual and final marine mammal 
+monitoring reports will include an overall description of work 
+completed, a narrative regarding marine mammal sightings, and 
+associated PSO data sheets. Specifically, the report must include:
+    <bullet> Dates and times (begin and end) of all marine mammal 
+monitoring;
+    <bullet> Construction activities occurring during each daily 
+observation period;
+    <bullet> PSO locations during marine mammal monitoring;
+    <bullet> Environmental conditions during monitoring periods (at 
+beginning and end of PSO shift and whenever conditions change 
+significantly), including Beaufort sea state and any other relevant 
+weather conditions including cloud cover, fog, sun glare, and overall 
+visibility to the horizon, and estimated observable distance;
+    <bullet> Upon observation of a marine mammal, the following 
+information: (1) name of PSO who sighted the animal(s) and PSO location 
+and activity at time of sighting; (2) time of sighting; (3) 
+identification of the animal(s) (e.g., genus/species, lowest possible 
+taxonomic level, or unidentified); (4) distance and bearing of each 
+marine mammal observed relative to the pile being driven for each 
+sighting (if pile driving was occurring at time of sighting); (5) 
+estimated number of animals (min/max/best estimate); (6) estimated 
+number of animals by cohort (e.g., adults, juveniles, neonates, group 
+composition, etc.); (7) animal's closest point of approach; and (8) 
+description of any marine mammal behavioral observations (e.g., 
+observed behaviors such as feeding or traveling), including an 
+assessment of behavioral responses thought to have resulted from the 
+activity (e.g., no response or changes in behavioral state such as 
+ceasing feeding,
+
+[[Page 55023]]
+
+changing direction, flushing, or breaching);
+    <bullet> Number of marine mammals detected within the harassment 
+zones; and
+    <bullet> Detailed information about any implementation of any 
+mitigation triggered (e.g., shutdowns and delays), a description of 
+specific actions that ensued, and resulting changes in behavior of the 
+animal(s), if any.
+    The following requirement was unintentionally omitted from the 
+proposed rule. It is included here as well as in the regulatory text. 
+In the event that personnel involved in the construction activities 
+discover an injured or dead marine mammal, the USACE must report the 
+incident to the Office of Protected Resources (OPR) and the West Coast 
+regional stranding network as soon as feasible. If the death or injury 
+was clearly caused by the specified activity, the USACE must 
+immediately cease the activities until NMFS OPR is able to review the 
+circumstances of the incident and determine what, if any, additional 
+measures are appropriate to ensure compliance with the terms of this 
+IHA. The USACE must not resume their activities until notified by NMFS. 
+The report must include the following information:
+    <bullet> Time, date, and location (latitude/longitude) of the first 
+discovery (and updated location information if known and applicable);
+    <bullet> Species identification (if known) or description of the 
+animal(s) involved;
+    <bullet> Condition of the animal(s) (including carcass condition if 
+the animal is dead);
+    <bullet> Observed behaviors of the animal(s), if alive;
+    <bullet> If available, photographs or video footage of the 
+animal(s); and
+    <bullet> General circumstances under which the animal was 
+discovered.
+
+Adaptive Management
+
+    The regulations governing the take of marine mammals incidental to 
+the USACE's construction activities contain an adaptive management 
+component which was described in detail in the proposed rule and is not 
+repeated here. The reporting requirements associated with this final 
+rule are designed to provide NMFS with monitoring data from completed 
+projects to allow consideration of whether any changes are appropriate. 
+The use of adaptive management allows NMFS to consider new information 
+from different sources to determine (with input from the USACE 
+regarding practicability) on an annual or biennial basis if mitigation 
+or monitoring measures should be modified (including additions or 
+deletions). Mitigation measures could be modified if new data suggests 
+that such modifications would have a reasonable likelihood of reducing 
+adverse effects to marine mammals and if the measures are practicable.
+    The following are some of the possible sources of applicable data 
+to be considered through the adaptive management process: (1) results 
+from monitoring reports, as required by MMPA authorizations; (2) 
+results from general marine mammal and sound research; and (3) any 
+information which reveals that marine mammals may have been taken in a 
+manner, extent, or number not authorized by these regulations or LOAs 
+issued pursuant to these regulations.
+
+Negligible Impact Analysis and Determination
+
+    NMFS has defined negligible impact as an impact resulting from the 
+specified activity that cannot be reasonably expected to, and is not 
+reasonably likely to, adversely affect the species or stock through 
+effects on annual rates of recruitment or survival (50 CFR 216.103). A 
+negligible impact finding is based on the lack of likely adverse 
+effects on annual rates of recruitment or survival (i.e., population-
+level effects). An estimate of the number of takes alone is not enough 
+information on which to base an impact determination. In addition to 
+considering estimates of the number of marine mammals that might be 
+``taken'' through harassment, NMFS considers other factors, such as the 
+likely nature of any impacts or responses (e.g., intensity, duration), 
+the context of any impacts or responses (e.g., critical reproductive 
+time or location, foraging impacts affecting energetics), as well as 
+effects on habitat, and the likely effectiveness of the mitigation. We 
+also assess the number, intensity, and context of estimated takes by 
+evaluating this information relative to population status. Consistent 
+with NMFS' implementing regulations (54 FR 40338, September 29, 1989), 
+the impacts from other past and ongoing anthropogenic activities are 
+incorporated into this analysis via their impacts on the baseline 
+(e.g., as reflected in the regulatory status of the species, population 
+size and growth rate where known, ongoing sources of human-caused 
+mortality, or ambient noise levels).
+    The USACE has requested, and NMFS is authorizing take, by Level B 
+harassment, of harbor seals from the Washington Inland Hood Canal 
+stock. No injuries or mortalities are anticipated to occur as a result 
+of the DERP project and none are authorized. Effects on individuals 
+that are taken by Level B harassment, on the basis of reports in the 
+literature, would likely be localized and limited to reactions such as 
+alerts or movements away from the construction area, including flushing 
+into the water. Most likely, individuals, if affected at all will 
+simply move away from the visual or acoustic stimulus and be 
+temporarily displaced from the areas.
+    Repeated exposures of individuals to relatively low levels of 
+visual and sound disturbance outside of preferred habitat areas are 
+unlikely to significantly disrupt critical behaviors or result in 
+permanent abandonment of the haulout site. Even repeated Level B 
+harassment of some small subset of the overall stock is unlikely to 
+result in any significant realized decrease in viability for the 
+affected individuals, and thus would not result in any adverse impact 
+to the stock as a whole. Level B harassment will be reduced to the 
+level of least practicable adverse impact through use of mitigation 
+measures described herein. If visual disturbance and low-level sound 
+produced by project activities is sufficiently disturbing, animals are 
+likely to simply avoid the area while the activity is occurring.
+    No adverse effects to habitat or prey species are anticipated 
+during or after construction has ended since almost the entirety of 
+work will be land-based. There is other suitable habitat nearby where 
+harbor seals could temporarily relocate. The restoration of the marsh 
+habitat will have no adverse effect on marine mammal habitat, but 
+possibly a long-term beneficial effect on habitat and harbor seals by 
+improving ecological function of the slough, including increased prey 
+availability, higher species diversity, larger fish, and improved 
+habitat.
+    Harbor seals are not listed as threatened or endangered under the 
+ESA and there are no known areas of biological importance in the 
+project area. Furthermore, the population of the Hood Canal stock of 
+harbor seals has been relatively stable over the past three decades 
+(Pearson et al. 2024).
+    Taking into account the planned mitigation measures, effects to 
+marine mammals are generally expected to be restricted to short-term 
+changes in behavior or temporary displacement from haulout sites. There 
+are other haulout areas for pinnipeds to temporarily relocate, and 
+marine mammals are expected to return to the area shortly after 
+activities cease.
+    In summary and as described above, the following factors primarily 
+support our determination that the impacts
+
+[[Page 55024]]
+
+resulting from this activity are not expected to adversely affect 
+harbor seals (or any other species) through effects on annual rates of 
+recruitment or survival:
+    <bullet> No serious injury, mortality or Level A harassment is 
+anticipated or authorized;
+    <bullet> Effects of the activities will be limited to localized 
+behavioral changes and temporary displacement;
+    <bullet> Nominal adverse impacts to pinniped habitat are 
+anticipated while improved ecological processes in the estuary will 
+result in positive effects to habitat;
+    <bullet> No biologically important areas have been identified in 
+the project area; and
+    <bullet> Mitigation measures are anticipated to be effective in 
+minimizing the number and severity of takes by Level B harassment, 
+which are expected to be localized.
+    Based on the analysis contained herein of the likely effects of the 
+specified activity on marine mammals and their habitat, and taking into 
+consideration the implementation of the required monitoring and 
+mitigation measures, NMFS finds that the total marine mammal take from 
+the planned activity will have a negligible impact on all affected 
+marine mammal species or stocks.
+
+Small Numbers
+
+    As noted previously, only take of small numbers of marine mammals 
+may be authorized under sections 101(a)(5)(A) and (D) of the MMPA for 
+specified activities other than military readiness activities. The MMPA 
+does not define small numbers and so, in practice, where estimated 
+numbers are available, NMFS compares the maximum number of individuals 
+taken in any year to the most appropriate estimation of abundance of 
+the relevant species or stock in our determination of whether an 
+authorization is limited to small numbers of marine mammals. When the 
+predicted maximum annual number of individuals to be taken is fewer 
+than one-third of the species or stock abundance, the take is 
+considered to be of small numbers. Additionally, other qualitative 
+factors may be considered in the analysis, such as the temporal or 
+spatial scale of the activities.
+    Table 3 in this notice demonstrates the maximum number of Level B 
+harassment events per year. Our analysis shows that no more than 14.3 
+percent of harbor seals could be taken by Level B harassment. The 
+numbers of animals authorized to be taken for this stock would be 
+considered small relative to the relevant stock's abundances, even if 
+each estimated taking occurred to a new individual--an extremely 
+unlikely scenario.
+    Based on the analysis contained herein of the planned activity 
+(including the required mitigation and monitoring measures) and the 
+anticipated take of marine mammals, NMFS finds that small numbers of 
+marine mammals would be taken relative to the population size of the 
+affected species or stocks.
+
+Unmitigable Adverse Impact Analysis and Determination
+
+    There are no relevant subsistence uses of the affected marine 
+mammal stocks or species implicated by this action. Therefore, NMFS has 
+determined that the total taking of affected species or stocks will not 
+have an unmitigable adverse impact on the availability of such species 
+or stocks for taking for subsistence purposes.
+
+Endangered Species Act (ESA)
+
+    Section 7(a)(2) of the ESA of 1973 (16 U.S.C. 1531 et seq.) 
+requires that each Federal agency ensure that any action it authorizes, 
+funds, or carries out is not likely to jeopardize the continued 
+existence of any endangered or threatened species or result in the 
+destruction or adverse modification of designated critical habitat. To 
+ensure ESA compliance for the issuance of proposed rules, NMFS consults 
+internally whenever we propose to authorize take for endangered or 
+threatened species.
+    No incidental take of ESA-listed species is authorized or expected 
+to result from this activity. Therefore, NMFS has determined that 
+formal consultation under section 7 of the ESA is not required for this 
+action
+
+National Environmental Policy Act (NEPA)
+
+    To comply with the National Environmental Policy Act of 1969 (NEPA) 
+(42 U.S.C. 4321 et seq.) and NOAA Administrative Order (NAO) 216-6A, 
+NMFS must evaluate the proposed action (i.e., promulgation of 
+regulations and subsequent issuance of a 5-year LOA) and alternatives 
+with respect to potential impacts on the human environment.
+    This action is consistent with categories of activities identified 
+in Categorical Exclusion B4 (Incidental Harassment Authorizations 
+(IHAs)) with no anticipated serious injury or mortality) of the 
+Companion Manual for NAO 216-6A, which do not individually or 
+cumulatively have the potential for significant impacts on the quality 
+of the human environment and for which we have not identified any 
+extraordinary circumstances that would preclude this categorical 
+exclusion. Accordingly, NMFS has determined that issuance of the final 
+rule qualifies to be categorically excluded from further NEPA review.
+
+Classification
+
+Executive Order 12866
+
+    The Office of Management and Budget (OMB) has determined that this 
+final rule is significant under section 3(f) of Executive Order 12866. 
+USACE's planned activities would support the construction of a new 
+eight-span Highway 101 bridge across the Duckabush estuary. The 
+existing bridge crossing will be removed. The activities would create 
+economic benefits by improving the stream of commerce along Highway 
+101, which serves as a vital economic lifeline for Washington's Olympic 
+Peninsula, generating hundreds of millions of dollars annually through 
+robust tourism and critical freight and commercial transport. USACE 
+initiated the request for an MMPA incidental take authorization, which 
+suggests that it is relying on NMFS' authorization to proceed with its 
+proposed action. While a MMPA incidental take authorization is not a 
+pre-condition for conducting the proposed action (USACE is ultimately 
+responsible for this decision), it would provide USACE with two key 
+benefits: (1) a legal exemption from the MMPA's general prohibition on 
+the take of marine mammals (assuming USACE complies with the terms and 
+conditions of its authorization); and (2) regulatory certainty because 
+USACE will be fully cognizant of NMFS' expectations in regard to the 
+steps needed to be taken to address risks to marine mammals and how to 
+minimize its legal exposure under the statute. USACE will also incur 
+costs to comply with certain mitigation and monitoring requirements, as 
+required by the MMPA. Despite the additional costs of such measures, 
+the costs related to MMPA compliance during USACE's activities are 
+small compared with expenditures on other aspects of construction and 
+operations, and direct compliance costs of the regulatory requirements 
+are unlikely to result in material impacts to the project.
+    In addition, cost savings may be generated by the reduced 
+administrative effort required to obtain a LOA under the framework 
+established by a rule compared to what would be required to obtain 
+annual incidental harassment authorizations (IHA) under section 
+101(a)(5)(D). Absent the rule, to attain
+
+[[Page 55025]]
+
+equivalent compliance with the MMPA, USACE would need to apply for IHAs 
+annually over the duration of their activities. Although not monetized, 
+NMFS' analysis indicates that the upfront work associated with the rule 
+(e.g., analyses, modeling, process for obtaining an LOA valid for 5 
+years) likely saves significant time and money for both NMFS and USACE.
+    In addition, some degree of benefits can be expected to accrue 
+solely via ecological benefits to marine mammals and other wildlife as 
+a result of this rulemaking. The published literature is clear that 
+healthy populations of marine mammals and other co-existing species 
+benefit regional economies and provide social welfare benefits to 
+people. However, the literature does not provide a basis for 
+quantitatively valuing the cost of anticipated incremental changes in 
+environmental disturbance and marine mammal harassment associated with 
+the rule.
+
+Executive Order 14192
+
+    This rule is considered an Executive Order 14192 deregulatory 
+action. The promulgation of incidental take regulations under MMPA 
+section 101(a)(5)(A) of the MMPA allows an otherwise prohibited action 
+(i.e., the taking of marine mammals), which increases flexibility and 
+reduces burden.
+
+Regulatory Flexibility Act (RFA)
+
+    Pursuant to section 605(b) of the Regulatory Flexibility Act (RFA) 
+(5 U.S.C. 601 et seq.), the Chief Counsel for Regulation of the 
+Department of Commerce certified to the Chief Counsel for Advocacy of 
+the Small Business Administration at the proposed rule stage that this 
+rule would not have a significant economic impact on a substantial 
+number of small entities. The USACE is the only entity that will be 
+subject to the requirements in these regulations. The USACE is not a 
+small governmental jurisdiction, small organization, or small business 
+as defined by the RFA. No comments were received that would affect this 
+certification. Therefore, a regulatory flexibility analysis is not 
+required and none has been prepared.
+
+Paperwork Reduction Act (PRA)
+
+    This final rule does not contain a collection-of-information 
+requirement subject to the provisions of the Paperwork Reduction Act 
+(PRA) because the applicant is a Federal agency.
+
+List of Subjects in 50 CFR Part 217
+
+    Administrative practice and procedure, Endangered and threatened 
+species, Fish, Fisheries, Marine mammals, Reporting and recordkeeping 
+requirements, Wildlife.
+
+    Dated: August 21, 2026.
+Samuel D. Rauch III,
+Deputy Assistant Administrator for Regulatory Programs, National Marine 
+Fisheries Service.
+
+    For the reasons set forth in the preamble, NMFS amends 50 CFR part 
+217 as follows:
+
+PART 217--REGULATIONS GOVERNING THE TAKE OF MARINE MAMMALS 
+INCIDENTAL TO SPECIFIED ACTIVITIES
+
+0
+1. The authority citation for part 217 continues to read as follows:
+
+    Authority: 16 U.S.C. 1361 et seq., unless otherwise noted.
+
+
+0
+2. Add subpart Y to part 217 to read as follows:
+
+Subpart Y--Taking of Marine Mammals Incidental to Specified 
+Activities; Taking Marine Mammals Incidental to the Duckabush 
+Estuary Restoration Project in Washington
+
+Sec.
+217.240 Specified activity and geographical region.
+217.241 Effective dates.
+217.242 Permissible methods of taking.
+217.243 Prohibitions.
+217.244 Mitigation requirements.
+217.245 Requirements for monitoring and reporting.
+217.246 Letters of Authorization.
+217.247 Renewals and modifications of Letters of Authorization.
+217.248-217.249 [Reserved]
+
+
+Sec.  217.240  Specified activity and geographical region.
+
+    (a) Regulations in this subpart apply only to the United States 
+Army Corps of Engineers (USACE) and those persons it authorizes or 
+funds to conduct activities on its behalf for the taking of marine 
+mammals that occur in the areas outlined in paragraph (b) of this 
+section and that occur incidental to construction activities, including 
+maintenance and replacement of piles, as designated in the Duckabush 
+Estuary Restoration Project in Washington. Requirements imposed on the 
+USACE pursuant to this subpart must be implemented by those persons it 
+authorizes or funds to conduct activities on its behalf.
+    (b) The taking of marine mammals by the USACE may be authorized in 
+a Letter of Authorization (LOA) only if it occurs as part of the 
+Duckabush Estuary Restoration Project in Washington.
+
+
+Sec.  217.241  Effective dates.
+
+    Regulations in this subpart are effective from July 9, 2027 through 
+July 8, 2032.
+
+
+Sec.  217.242  Permissible methods of taking.
+
+    Under an LOA issued pursuant to Sec. Sec.  216.106 of this chapter 
+and 217.246 of this chapter, the Holder of the LOA (hereinafter 
+``USACE'') may incidentally, but not intentionally, take marine mammals 
+within the area described in Sec.  217.240 (b) by harassment associated 
+with construction activities, provided the activity is in compliance 
+with all terms, conditions, and requirements of the regulations in this 
+subpart and the applicable LOA.
+
+
+Sec.  217.243  Prohibitions.
+
+    (a) Except for the takings contemplated in Sec.  217.242 and 
+authorized by an LOA issued under this subpart, it is unlawful for any 
+person to do any of the following in connection with the activities 
+described in Sec.  217.240:
+    (1) Violate, or fail to comply with, the terms, conditions, and 
+requirements of this subpart or a LOA issued under this subpart;
+    (2) Take any marine mammal not specified in such LOA;
+    (3) Take any marine mammal specified in such LOA in any manner 
+other than as specified;
+    (4) Take a marine mammal specified in such LOA if NMFS determines 
+such taking results in more than a negligible impact on the species or 
+stocks of such marine mammal; or
+    (5) Take a marine mammal specified in such LOA after NMFS 
+determines such taking results in an unmitigable adverse impact on the 
+species or stock of such marine mammal for taking for subsistence uses.
+    (b) [Reserved]
+
+
+Sec.  217.244  Mitigation requirements.
+
+    (a) When conducting the activities identified in Sec.  217.240(a), 
+the mitigation measures contained in any LOA issued under this subpart 
+must be implemented. These mitigation measures include but are not 
+limited to:
+    (1) A copy of this LOA must be in the possession of the USACE, 
+supervisory construction personnel, lead protected species observers 
+(PSOs), and any other relevant designees of the USACE operating under 
+the authority of this LOA at all times that activities subject to this 
+LOA are being conducted.
+    (2) The USACE shall conduct training between supervisors and crews, 
+the PSO team, and relevant USACE staff prior to the start of 
+construction activity subject to this rule, so that responsibilities,
+
+[[Page 55026]]
+
+communication procedures, monitoring protocols, and operational 
+procedures are clearly understood. New personnel joining during the 
+project must be trained in the aforementioned matters prior to 
+commencing work.
+    (3) The USACE must employ PSOs and establish monitoring locations 
+as described in the Marine Mammal Monitoring Plan. The USACE must 
+monitor the Project Area to the maximum extent possible based on the 
+required number of PSOs, required monitoring locations, and 
+environmental conditions.
+    (4) Monitoring must take place from 30 minutes prior to initiation 
+of pile driving activity (i.e., pre-start clearance monitoring) through 
+30 minutes post-completion of construction activity.
+    (5) Pre-start clearance monitoring must be conducted during periods 
+of visibility sufficient for the lead PSO to determine that the 
+shutdown zones are clear of marine mammals. Construction activity may 
+commence following 30 minutes of observation when the shutdown zones 
+are clear of marine mammals.
+    (6) Construction activities must stop if a marine mammal is in a 
+shutdown zone and may not resume until a marine mammal exits the 
+shutdown zone.
+    (7) If construction activity is delayed or halted due to the 
+presence of a marine mammal, the activity may not commence or resume 
+until the animal has voluntarily exited and has been visually confirmed 
+beyond the shutdown zone.
+    (8) The USACE must conduct a gradual increase (i.e., ramp-up) to 
+begin construction each day by moving around the project area and 
+starting equipment one at a time, not all at once.
+    (9) The USACE must avoid direct physical interaction with marine 
+mammals during construction activity. If a marine mammal comes within 
+10 meters (m) of such activity operations must cease to avoid direct 
+physical interaction and can only resume after the animal has left the 
+10 m zone.
+    (10) If a pup less than one week old comes within 20 m of where 
+heavy machinery is working, operations must cease and can only resume 
+after the animal has left the 20 m zone.
+    (11) During pupping season (August 1 through October 31), 
+construction activities may not be initiated within 300 m of a mom/pup 
+pair that is hauled out or within 100 m of a mom/pup pair in the water.
+    (b) [Reserved]
+
+
+Sec.  217.245  Requirements for monitoring and reporting.
+
+    (a) The USACE must submit a Marine Mammal Monitoring Plan to NMFS 
+for approval at least 90 days in advance of construction. Marine mammal 
+monitoring must be conducted in accordance with the conditions in this 
+section and the approved Marine Mammal Monitoring Plan.
+    (b) Monitoring must be conducted by qualified, NMFS-approved PSOs, 
+in accordance with the following conditions:
+    (1) PSOs must be independent of the activity contractor (for 
+example, employed by a subcontractor) and have no other assigned tasks 
+during monitoring periods.
+    (2) At least one PSO must have prior experience performing the 
+duties of a PSO during construction activity pursuant to a NMFS-issued 
+incidental take authorization.
+    (3) Other PSOs may substitute other relevant experience, education 
+(i.e., degree in biological science or related field), or training for 
+prior experience performing the duties of a PSO during construction 
+activity pursuant to a NMFS-issued incidental take authorization.
+    (4) PSOs must record all observations of marine mammals as 
+described in the Marine Mammal Monitoring Plan, regardless of distance 
+from the pile being driven. PSOs shall document any behavioral 
+reactions in concert with distance from piles being driven or removed.
+    (c) A census of marine mammals in the project area and the area 
+surrounding the project must be conducted 30 minutes prior to the 
+beginning of any construction day, and again 30 minutes after the 
+completion of construction activities. Data collected during the pre-
+and post-construction daily censuses must include:
+    (1) Environmental conditions (weather condition, tidal conditions, 
+visibility, cloud cover, air temperature and wind speed);
+    (2) Numbers of each marine mammal species spotted;
+    (3) Location of each species spotted, including distance from 
+construction activity;
+    (4) Status (in water or hauled-out); and
+    (5) Behavior.
+    (d) The USACE must conduct hourly counts of animals hauled out and 
+in the water. Data collected must include:
+    (1) Numbers of each species;
+    (2) Location of species; whether hauled-out or in the water; and 
+distance from construction activities;
+    (3) Time;
+    (4) Tidal conditions;
+    (5) Time construction activities start and end;
+    (6) Primary construction activities occurring during past hour;
+    (7) Any noise or visual disturbance;
+    (8) Number of mom/pup pairs and neonates observed; and
+    (9) Notable behaviors, including foraging, grooming, resting, 
+aggression, mating activity, and others.
+    (e) The USACE must note any of the following information to the 
+extent it is feasible to record:
+    (1) Age-class;
+    (2) Sex;
+    (3) Unusual activity or signs of stress; and
+    (4) Any other information worth noting.
+    (f) The USACE must record reaction observed in relation to 
+construction activities including:
+    (1) Tally of each reaction;
+    (2) Time of reaction;
+    (3) Concurrent construction activity (including duration) and 
+assumed cause (whether related to construction activities or not) and 
+whether observer feels the disturbance was visual or acoustic;
+    (4) Location of animal during initial reaction and distance from 
+the noted disturbance;
+    (5) Direction of movement;
+    (6) Activity before and after disturbance;
+    (7) Status (in water or hauled out) before and after disturbance; 
+and
+    (8) Coded reaction of Level 1--Alert; Level 2--Movement, or Level 
+3--Flush as defined in the Preamble.
+    (g) The USACE must submit a draft monitoring report to NMFS within 
+90 calendar days of the completion of each construction year. A draft 
+comprehensive 5-year summary report must also be submitted to NMFS 
+within 90 days of the end of the project. The reports must detail the 
+monitoring protocol and summarize the data recorded during monitoring. 
+Final annual reports and the final comprehensive report must be 
+prepared and submitted within 30 days following resolution of any NMFS 
+comments on the draft report. If no comments are received from NMFS 
+within 30 days of receipt of the draft report, the report must be 
+considered final. If comments are received, a final report addressing 
+NMFS comments must be submitted within 30 days after receipt of 
+comments. The reports must contain the informational elements described 
+at minimum below including:
+    (1) Information collected in Sec.  247.245 (c) through (f).
+    (2) All PSO datasheets and/or raw sightings data in electronic 
+format.
+
+[[Page 55027]]
+
+    (h) In the event that personnel involved in the construction 
+activities discover an injured or dead marine mammal, the USACE must 
+report the incident to the Office of Protected Resources (OPR) and the 
+West Coast regional stranding network as soon as feasible. If the death 
+or injury was clearly caused by the specified activity, the USACE must 
+immediately cease the activities until NMFS OPR is able to review the 
+circumstances of the incident and determine what, if any, additional 
+measures are appropriate to ensure compliance with the terms of this 
+IHA. The USACE must not resume their activities until notified by NMFS. 
+The report must include the following information:
+    (1) Time, date, and location (latitude/longitude) of the first 
+discovery (and updated location information if known and applicable);
+    (2) Species identification (if known) or description of the 
+animal(s) involved;
+    (3) Condition of the animal(s) (including carcass condition if the 
+animal is dead);
+    (4) Observed behaviors of the animal(s), if alive;
+    (5) If available, photographs or video footage of the animal(s); 
+and
+    (6) General circumstances under which the animal was discovered.
+
+
+Sec.  217.246  Letters of Authorization.
+
+    (a) To incidentally take marine mammals pursuant to these 
+regulations, the USACE must apply for and obtain an LOA.
+    (b) An LOA, unless suspended or revoked, may be effective for a 
+period of time not to exceed the expiration date of these regulations.
+    (c) If an LOA expires prior to the expiration date of these 
+regulations, the USACE may apply for and obtain a renewal of the LOA.
+    (d) In the event of projected changes to the activity or to 
+mitigation and monitoring measures required by an LOA, the USACE must 
+apply for and obtain a modification of the LOA as described in Sec.  
+217.247.
+    (e) The LOA must set forth the following information:
+    (1) Permissible methods of incidental taking;
+    (2) Means of effecting the least practicable adverse impact (i.e., 
+mitigation) on the species, its habitat, and on the availability of the 
+species for subsistence uses; and
+    (3) Requirements for monitoring and reporting.
+    (f) Issuance of the LOA must be based on a determination that the 
+level of taking will be consistent with the findings made for the total 
+taking allowable under these regulations.
+    (g) Notice of issuance or denial of an LOA must be published in the 
+Federal Register within 30 days of a determination.
+
+
+Sec.  217.247  Renewals and modifications of Letters of Authorization.
+
+    (a) An LOA issued under Sec.  216.106 of this chapter and Sec.  
+217.246 for the activity identified in Sec.  217.240(a) may be renewed 
+or modified upon request by the applicant, provided that:
+    (1) The specified activity and mitigation, monitoring, and 
+reporting measures, as well as the anticipated impacts, are the same as 
+those described and analyzed for these regulations; and
+    (2) NMFS determines that the mitigation, monitoring, and reporting 
+measures required by the previous LOA under these regulations were 
+implemented.
+    (b) For LOA modification or renewal requests by the applicant that 
+include changes to the activity or the mitigation, monitoring, or 
+reporting that do not change the findings made for the regulations or 
+result in no more than a minor change in the total estimated number of 
+takes (or distribution by species or years), NMFS may publish a notice 
+of proposed LOA in the Federal Register, including the associated 
+analysis of the change, and solicit public comment before issuing the 
+LOA.
+    (c) An LOA issued under Sec. Sec.  216.106 of this chapter and 
+217.246 for the activity identified in Sec.  217.240 (a) may be 
+modified by NMFS under the following circumstances:
+    (1) NMFS may modify (including augment) the existing mitigation, 
+monitoring, or reporting measures (after consulting with USACE 
+regarding the practicability of the modifications) if doing so creates 
+a reasonable likelihood of more effectively accomplishing the goals of 
+the mitigation and monitoring set forth in the preamble for these 
+regulations;
+    (i) Possible sources of data that could contribute to the decision 
+to modify the mitigation, monitoring, or reporting measures in an LOA:
+    (A) Results from USACE's monitoring from previous years;
+    (B) Results from other marine mammal and/or sound research or 
+studies; and
+    (C) Any information that reveals marine mammals may have been taken 
+in a manner, extent or number not authorized by these regulations or 
+subsequent LOAs; and
+    (ii) If, through adaptive management, the modifications to the 
+mitigation, monitoring, or reporting measures are substantial, NMFS 
+must publish a notice of proposed LOA in the Federal Register and 
+solicit public comment; and
+    (2) If NMFS determines that an emergency exists that poses a 
+significant risk to the well-being of the species or stocks of marine 
+mammals specified in a LOA issued pursuant to Sec.  216.106 of this 
+chapter and Sec.  217.246, a LOA may be modified without prior notice 
+or opportunity for public comment. Notification would be published in 
+the Federal Register within 30 days of the action.
+
+
+Sec. Sec.  217.248-217.249  [Reserved]
+
+[FR Doc. 2026-17391 Filed 8-25-26; 8:45 am]
+BILLING CODE 3510-22-P
+
+
+</pre></body>
+</html>

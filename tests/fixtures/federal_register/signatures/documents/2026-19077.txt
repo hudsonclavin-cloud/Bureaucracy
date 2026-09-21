@@ -1,0 +1,376 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 179 (Thursday, September 17, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 179 (Thursday, September 17, 2026)]
+[Notices]
+[Pages 58916-58919]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-19077]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+DEPARTMENT OF LABOR
+
+Employee Benefits Security Administration
+
+[Prohibited Transaction Exemption 2026-08; Application No. D-12097]
+
+
+Exemption Involving the Abiomed Retirement Savings Plan Located 
+in Danvers, MA
+
+AGENCY: Employee Benefits Security Administration, Labor.
+
+ACTION: Notice of exemption.
+
+-----------------------------------------------------------------------
+
+SUMMARY: This exemption allows the Abiomed Retirement Savings Plan (the 
+Plan) to acquire and hold certain ``contingent value rights'' and to 
+receive payments in connection with that acquisition and holding. 
+Absent an exemption, these transactions would violate the prohibited 
+transaction provisions of the Employee Retirement Income Security Act 
+of 1974 (ERISA) and/or the Internal Revenue Code of 1986 (the Code).
+
+DATES: Exemption date: The exemption will be in effect as of November 
+15, 2022.
+
+FOR FURTHER INFORMATION CONTACT: Blessed Chuksorji-Keefe at 
+<a href="/cdn-cgi/l/email-protection#8dcee5f8e6fee2ffe7e4a3cfe1e8fefee8e9cde9e2e1a3eae2fb"><span class="__cf_email__" data-cfemail="77341f021c0418051d1e59351b12040412133713181b59101801">[email&#160;protected]</span></a> or Emily Harris at <a href="/cdn-cgi/l/email-protection#8dc5ecffffe4fea3c8e0e4e1f4a3c0cde9e2e1a3eae2fb"><span class="__cf_email__" data-cfemail="df97beadadb6acf19ab2b6b3a6f1929fbbb0b3f1b8b0a9">[email&#160;protected]</span></a>.
+
+SUPPLEMENTARY INFORMATION:
+
+Background
+
+    The Plan submitted an exemption application to the Department of 
+Labor (the Department) requesting retroactive exemptive relief, in 
+effect as of November 15, 2022, for: (1) the Plan's acquisition and 
+holding of ``contingent value rights'' (CVRs) following the tender of 
+Abiomed, Inc. (Abiomed) common stock or the cancellation of Abiomed 
+common stock; and (2) the Plan's receipt of payments in connection with 
+the acquisition and holding of CVRs (collectively, the Covered 
+Transactions).\1\ The Plan's acquisition of CVRs was on essentially
+
+[[Page 58917]]
+
+the same terms and in the same manner as the acquisition of CVRs by all 
+other similarly situated shareholders of Abiomed common stock.
+---------------------------------------------------------------------------
+
+    \1\ The right to receive contingent payments of up to $35.00 per 
+share of Abiomed common stock in cash, without interest and less any 
+required withholding taxes, in the aggregate, upon the achievement 
+of specified milestones, and upon the terms and subject to the 
+conditions set forth in the Contingent Value Rights Agreement, 
+contained as an exhibit to the Agreement and Plan of Merger, dated 
+as of November 15, 2022, between Abiomed and Johnson & Johnson.
+---------------------------------------------------------------------------
+
+    After reviewing the Plan's application, the Department tentatively 
+determined that the Covered Transactions would be administratively 
+feasible, in the interest of, and protective of, the Plan and its 
+participants and beneficiaries. On June 3, 2026, the Department 
+published a notice of proposed exemption that would permit the Covered 
+Transactions subject to certain conditions (the Proposed Exemption).\2\ 
+The Proposed Exemption invited interested persons to submit comments 
+and hearing requests to the Department.
+---------------------------------------------------------------------------
+
+    \2\ 91 FR 33205 (June 3, 2026).
+---------------------------------------------------------------------------
+
+Written Comment
+
+    The Department received one comment from Johnson & Johnson (J&J) on 
+behalf of itself, Abiomed, and the Plan.\3\ J&J requested that the 
+Department revise the audit condition in Proposed Exemption Section 
+II(j) which requires that, if J&J or Abiomed provides notice or takes 
+the position that a CVR milestone has not been met, J&J must submit to 
+an audit by an independent certified public accounting firm for the 
+purpose of verifying whether the relevant CVR milestone has been met, 
+and J&J must bear the cost of the audit.
+---------------------------------------------------------------------------
+
+    \3\ In addition to the comment's substantive request, J&J also 
+clarified that the Plan's Abiomed stock fund was unitized, and as a 
+result, the $29,040,462.55 fair market value of the stock fund 
+included both shares with a value of $27,621,947.20 and a 
+$1,418,515.35 cash position. Further, J&J clarified that (a) its 
+name is Johnson & Johnson, not Johnson & Johnson, Inc. and (b) the 
+name of the Plan's committee is the Abiomed 401(k) Fiduciary 
+Committee.
+---------------------------------------------------------------------------
+
+    J&J states in its comment that, due to the structure of the CVR 
+milestones, payments are not contingent on all CVR milestones being 
+met. Instead, the achievement of individual CVR milestones would 
+trigger specific payments. J&J also represents that the audit 
+condition, as proposed, would be inconsistent with the terms of the 
+Contingent Value Rights Agreement governing the CVRs (CVR Agreement), 
+in that the CVR Agreement does not require that audits automatically 
+occur. J&J explains that the CVR Agreement permits holders of at least 
+35% of the CVRs to obtain an audit upon request if J&J provides notice 
+that a CVR milestone relating to net sales figures has not been met. 
+Only if the auditor were to determine that J&J's calculations of the 
+net sales figures are incorrect, J&J would be required to pay for the 
+costs of the audit. J&J presented that this framework for the CVR 
+Agreement reflects market practice.
+    Additionally, J&J explains that in any event, the CVR Agreement 
+does not provide for an audit in connection with two of the CVR 
+milestones. These CVR milestones would be publicly reported by 
+organizations independent of J&J if they are achieved. For these two 
+CVR milestones there would be no records to audit and the application 
+of Section II(j) would be unworkable.\4\
+---------------------------------------------------------------------------
+
+    \4\ These two milestones include the: (1) U.S. Food and Drug 
+Administration premarket application approval of the use of certain 
+Abiomed products in patients by January 1, 2028; and (2) First 
+publication of a Class I recommendation for the use of certain 
+Abiomed products for patients in American College of Cardiology/
+American Heart Association clinical practice guidelines no later 
+than December 31, 2029.
+---------------------------------------------------------------------------
+
+Department's Response
+
+    After reviewing J&J's comment, the Department has determined to 
+revise Section II(j) so that the ability to request an audit is 
+consistent with the terms of the CVR Agreement. In this regard, holders 
+of at least 35% of the CVRs may obtain an audit upon request if J&J 
+provides notice that a CVR milestone relating to net sales figures has 
+not been met. First, the Department agrees that an automatic audit 
+requirement is unnecessary for the CVR milestones that are determined 
+by publicly reviewable actions of independent third parties. Second, 
+the Department agrees that the audit rights already provided under the 
+CVR Agreement are a sufficient, independent means to validate J&J's 
+calculations in the event J&J provides notice that a CVR milestone was 
+not reached.\5\
+---------------------------------------------------------------------------
+
+    \5\ The Department notes that the exemption requires Plan 
+participants to have the same rights with respect to the CVRs 
+allocated to their accounts under the Plan as unrelated CVR holders 
+have. Thus, Plan participant CVR holders and unrelated CVR holders 
+will be equally affected by J&J's determinations whether a net 
+revenue milestone has been met.
+---------------------------------------------------------------------------
+
+    The Department notes that, notwithstanding the above, Section II(j) 
+provides that J&J will cover any audit costs that would otherwise be 
+allocable to the Plan. This ensures the Plan is not required to bear 
+costs arising from an audit process that is controlled by CVR holders 
+generally and not by the Plan alone. The Plan should not bear these 
+expenses, because the Plan acquired the CVRs through an independent 
+corporate transaction, did not negotiate the CVR Agreement, and does 
+not independently control whether the 35% holder threshold for 
+requesting an audit is met. The condition preserves the Plan's economic 
+position by ensuring that participant accounts are not reduced by audit 
+expenses.
+    Based on the record and representations made by the Plan, the 
+Department makes the requisite findings under ERISA section 408(a) that 
+the exemption is: (1) administratively feasible for the Department; (2) 
+in the interest of the Plan and its participants and beneficiaries; and 
+(3) protective of the rights of the participants and beneficiaries of 
+the Plan. All of the exemption's conditions must be met at all 
+times.\6\ Accordingly, affected parties should be aware that the 
+exemption's conditions are, taken individually and as a whole, 
+necessary for the Department to grant relief. The exemption provides 
+only the relief specified herein and does not provide relief from 
+violations of any law, including but not limited to, ERISA section 404, 
+other than the prohibited transaction provisions of ERISA and the Code.
+---------------------------------------------------------------------------
+
+    \6\ Any references hereinafter to sections of ERISA shall be 
+deemed to refer to the corresponding sections of the Code, unless 
+indicated otherwise.
+---------------------------------------------------------------------------
+
+    The complete application file (D-12097) will remain available for 
+public inspection in the Public Disclosure room of the Employee 
+Benefits Security Administration, Room N-1515, U.S. Department of 
+Labor, 200 Constitution Avenue NW, Washington, DC 20210, reachable by 
+telephone at 866-444-3272. For a more complete statement of the facts 
+and representations supporting the Department's decision to grant this 
+exemption, please refer to the Proposed Exemption.
+
+General Information
+
+    The attention of interested persons is directed to the following:
+    (1) The fact that a transaction is the subject of an exemption 
+under ERISA section 408(a) and Code section 4975(c)(2) does not relieve 
+a fiduciary or other party in interest or disqualified person from 
+certain other provisions of ERISA or the Code, including any prohibited 
+transaction provisions to which the exemption does not apply and the 
+general fiduciary responsibility provisions of ERISA section 404, 
+which, among other things, require a fiduciary to discharge their 
+duties respecting the plan solely in the interest of the plan and its 
+participants and beneficiaries and in a prudent manner in accordance 
+with ERISA section 404(a)(1)(B); nor does it affect the requirement of 
+Code section 401(a) that the plan must operate for the exclusive 
+benefit of the employees of the employer maintaining the plan and their 
+beneficiaries;
+    (2) As required by ERISA section 408(a) and Code section 
+4975(c)(2), the Department finds that the exemption is
+
+[[Page 58918]]
+
+administratively feasible, in the interests of the plan and of its 
+participants and beneficiaries, and protective of the rights of 
+participants and beneficiaries of the plan;
+    (3) The exemption is supplemental to, and not in derogation of, any 
+other provisions of ERISA and the Code, including statutory or 
+administrative exemptions and transitional rules. Furthermore, the fact 
+that a transaction is subject to an administrative or statutory 
+exemption is not dispositive of whether the transaction is, in fact, a 
+prohibited transaction; and
+    (4) The availability of this exemption is subject to the express 
+condition that the material facts and representations contained in the 
+application are true and complete at all times and that the application 
+accurately describes all material terms of the transactions which are 
+the subject of the exemption.
+    Accordingly, after considering the entire record developed in 
+connection with the exemption application, the Department grants the 
+following exemption under the authority of ERISA section 408(a) and 
+Code section 4975(c)(2) in accordance with the Department's exemption 
+procedures regulation.\7\
+---------------------------------------------------------------------------
+
+    \7\ 29 CFR part 2570, subpart B (89 FR 4662 (Jan. 24, 2024)). 
+Effective December 31, 1978, section 102 of Reorganization Plan No. 
+4 of 1978, 5 U.S.C. App. 1 (1996), transferred the authority of the 
+Secretary of the Treasury to issue exemptions of the type requested 
+to the Secretary of Labor. Therefore, this exemption is issued 
+solely by the Department.
+---------------------------------------------------------------------------
+
+Section I. Covered Transactions
+
+    If the conditions in Section II are met, the restrictions of ERISA 
+sections 406(a)(1)(A), 406(a)(1)(E), 406(a)(2), and 407(a)(1)(A), and 
+the excise tax imposed by Code section 4975(a) and (b) will not apply, 
+effective November 15, 2022, to: (1) the Plan's acquisition and holding 
+of ``contingent value rights'' (CVRs) \8\ following the tender of 
+Abiomed common stock or the cancellation of Abiomed common stock; and 
+(2) the Plan's receipt of payments in connection with the transactions 
+described in (1).
+---------------------------------------------------------------------------
+
+    \8\ The right to receive contingent payments of up to $35.00 per 
+share of Abiomed common stock in cash, without interest and less any 
+required withholding taxes, in the aggregate, upon the achievement 
+of specified milestones, and upon the terms and subject to the 
+conditions set forth in the Contingent Value Rights Agreement.
+---------------------------------------------------------------------------
+
+Section II. Conditions
+
+    (a) The Plan's acquisition of the CVRs resulted solely from an 
+independent corporate act of Johnson & Johnson (J&J), without 
+participation on the part of any Plan fiduciary, in accordance with the 
+terms of the Agreement and Plan of Merger \9\ between J&J and Abiomed, 
+dated November 15, 2022.
+---------------------------------------------------------------------------
+
+    \9\ The Merger Agreement dated November 15, 2022, that 
+contemplated the acquisition of Abiomed by merging it into a wholly 
+owned subsidiary of J&J. The Merger Agreement required the tender of 
+a majority of the outstanding shares of Abiomed's common stock, as 
+well as the receipt of applicable regulatory approvals and other 
+customary closing conditions. A total of 38,961,427 shares of 
+Abiomed common stock were tendered or 86.4% of the outstanding 
+Abiomed shares of common stock.
+---------------------------------------------------------------------------
+
+    (b) The Plan's acquisition of CVRs was on essentially the same 
+terms and in the same manner as the acquisition of CVRs by all other 
+similarly situated shareholders of Abiomed common stock.
+    (c) Plan participants' acquisitions of the CVRs were consistent 
+with the terms of the Plan.
+    (d) A Plan participant's decision whether or not to tender their 
+shares had no impact on the amount of cash or the number of CVRs that 
+they received.
+    (e) Abiomed 401(k) Fiduciary Committee (Committee) acted prudently 
+and loyally in accordance with ERISA section 404, with respect to the 
+transactions described in this exemption, including with respect to the 
+Committee's decision to allow participants to decide whether or not to 
+participate in the Tender Offer.
+    (f) The Plan did not pay any fees or commissions in connection with 
+its acquisition and holding of the CVRs, and its receipt of cash 
+payments in connection therewith.
+    (g) Plan participants have the same rights with respect to the CVRs 
+allocated to their accounts under the Plan as unrelated CVR holders 
+have with respect to CVRs not held under the Plan.
+    (h) Plan participants receive payment of all amounts due under the 
+terms of the CVRs.
+    (i) The terms of the Plan's acquisition and holding of the CVRs, 
+and the Plan's receipt of cash payments in connection therewith, will 
+be the same as the terms applicable to all other holders of CVRs.
+    (j) The Contingent Value Rights Agreement governing the CVRs (CVR 
+Agreement) permits holders of at least 35% of the CVRs to obtain an 
+audit upon request if J&J provides notice that a CVR Milestone relating 
+to net sales figures has not been met. To the extent an audit is 
+performed in accordance with the terms of the CVR Agreement, then J&J 
+will bear any audit-related costs and expenses that would otherwise 
+have been allocated to the Plan regardless of the determinations of the 
+auditor. The results of the audit will be provided to the Plan sponsor 
+to review and maintain.
+    (k) The Plan maintains for a period of six (6) years from the date 
+of publication of the exemption in the Federal Register, in a manner 
+that is convenient and accessible for audit and examination, the 
+records necessary to enable the persons described in paragraph (l)(1) 
+below to determine whether conditions of this exemption, if granted, 
+have been met, except that (1) a prohibited transaction will not be 
+considered to have occurred if, due to circumstances beyond the control 
+of Abiomed, the records are lost or destroyed prior to the end of the 
+six-year period, and (2) no party in interest other than Abiomed shall 
+be subject to the civil penalty that may be assessed under ERISA 
+section 502(i) if the records are not maintained, or are not available 
+for examination as required by paragraph (l) below.
+    (l)(1) Except as provided in Section (2) of this paragraph and 
+notwithstanding any provisions of subsections (a)(2) and (b) of ERISA 
+section 504, the records referred to in paragraph (k) above shall be 
+unconditionally available at their customary location during normal 
+business hours to:
+    (A) any duly authorized employee or representative of the 
+Department or the Internal Revenue Service;
+    (B) Abiomed or any duly authorized representative of Abiomed;
+    (C) a Plan fiduciary or any duly authorized representative of a 
+Plan fiduciary;
+    (D) any participant or beneficiary of the Plan, or any duly 
+authorized representative of such participant or beneficiary;
+    (2) No person described in paragraph (l)(1)(B)-(D) is authorized to 
+examine financial information which is privileged or confidential, and 
+should the Applicant refuse to disclose information on the basis that 
+such information is exempt from disclosure, the Applicant must, by the 
+close of the thirtieth (30th) day following the request, provide a 
+written notice advising that person of the reasons for the refusal and 
+that the Department may request such information.
+    (m) The Plan provides the Department with the records necessary to 
+demonstrate that the conditions of this exemption, if granted, have 
+been met, within 30 days from the date the Department requests such 
+records.
+    (n) All of the material facts and representations made by the 
+Applicant that are set forth in the Summary of Facts and 
+Representations are true and accurate at all times.
+    Exemption date: The exemption will be in effect as of November 15, 
+2022.
+
+
+[[Page 58919]]
+
+
+    Signed at Washington, DC, this 17th day of August 2026.
+Christopher Motta,
+Acting Director, Office of Exemption Determinations, Employee Benefits 
+Security Administration, U.S. Department of Labor.
+[FR Doc. 2026-19077 Filed 9-16-26; 8:45 am]
+BILLING CODE 4510-29-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

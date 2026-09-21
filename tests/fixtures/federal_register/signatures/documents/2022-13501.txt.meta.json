@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-09-21T16:31:03Z",
+ "url": "https://www.federalregister.gov/documents/full_text/text/2022/06/24/2022-13501.txt",
+ "status": 200,
+ "final_url": "https://www.federalregister.gov/documents/full_text/text/2022/06/24/2022-13501.txt",
+ "content_type": "text/plain",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /documents/full_text/text/2022/06/24/2022-13501.txt",
+ "bytes": 3090,
+ "sha256": "b359bf124b7d9666c297cefba8584e2150e65e0333923679b5b590912f542e58",
+ "error": null
+}

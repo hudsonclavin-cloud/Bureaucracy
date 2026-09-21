@@ -1,0 +1,1027 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 168 (Tuesday, September 1, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 168 (Tuesday, September 1, 2026)]
+[Rules and Regulations]
+[Pages 56022-56029]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-17865]
+
+
+-----------------------------------------------------------------------
+
+FEDERAL DEPOSIT INSURANCE CORPORATION
+
+12 CFR Part 337
+
+RIN 3064-AG32
+
+
+Reciprocal Deposits: Implementing the 21st Century ROAD to 
+Housing Act
+
+AGENCY: Federal Deposit Insurance Corporation.
+
+ACTION: Interim final rule and request for comment.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The Federal Deposit Insurance Corporation (FDIC) is amending 
+its brokered deposit regulations to conform with recent changes to 
+section 29 of the Federal Deposit Insurance Act made by section 902 of 
+the 21st Century ROAD to Housing Act related to reciprocal deposits, 
+which took effect on July 11, 2026. The FDIC is also providing certain 
+clarifications regarding the reciprocal deposit framework to facilitate 
+and simplify compliance. The FDIC invites public comment on this 
+interim final rule.
+
+[[Page 56023]]
+
+
+DATES: The interim final rule is effective September 1, 2026. Comments 
+must be received no later than October 1, 2026.
+
+ADDRESSES: You may submit comments on the interim final rule, 
+identified by RIN 3064-AG32 using any of the following methods:
+    <bullet> FDIC Website: <a href="https://www.fdic.gov/federal-register-publications">https://www.fdic.gov/federal-register-publications</a>. Follow the instructions for submitting comments on the 
+agency website.
+    <bullet> Email: <a href="/cdn-cgi/l/email-protection#a6e5c9cbcbc3c8d2d5e6c0c2cfc588c1c9d0"><span class="__cf_email__" data-cfemail="4c0f2321212922383f0c2a28252f622b233a">[email&#160;protected]</span></a>. Include RIN 3064-AG32 on the 
+subject line of the message.
+    <bullet> Mail: Jennifer M. Jones, Deputy Executive Secretary, 
+Attention: Comments--RIN 3064-AG32, Federal Deposit Insurance 
+Corporation, 550 17th Street NW, Washington, DC 20429.
+    <bullet> Hand Delivery to FDIC: Comments may be hand-delivered to 
+the guard station at the rear of the 550 17th Street NW, building 
+(located on F Street NW) on business days between 7 a.m. and 5 p.m.
+    <bullet> Public Inspection: Comments received, including any 
+personal information provided, may be posted without change to <a href="https://www.fdic.gov/federal-register-publications">https://www.fdic.gov/federal-register-publications</a>. Commenters should submit 
+only information that the commenter wishes to make available publicly. 
+The FDIC may review, redact, or refrain from posting all or any portion 
+of any comment that it may deem to be inappropriate for publication, 
+such as irrelevant or obscene material. The FDIC may post only a single 
+representative example of identical or substantially identical 
+comments, and in such cases will generally identify the number of 
+identical or substantially identical comments represented by the posted 
+example. All comments that have been redacted, as well as those that 
+have not been posted, that contain comments on the merits of the rule 
+will be retained in the public comment file and will be considered as 
+required under all applicable laws. All comments may be accessible 
+under the Freedom of Information Act.
+    This interim final rule, all comments received, and a summary of 
+not more than 100 words are available at <a href="https://www.fdic.gov/federal-register-publications">https://www.fdic.gov/federal-register-publications</a> consistent with the Providing Accountability 
+Through Transparency Act of 2023.
+
+FOR FURTHER INFORMATION CONTACT: Legal Division: Ryan McCarthy, 
+Counsel, (202) 898-7301, <a href="/cdn-cgi/l/email-protection#d4a6adb9b7b7b5a6a0bcad94b2b0bdb7fab3bba2"><span class="__cf_email__" data-cfemail="1e6c67737d7d7f6c6a76675e787a777d30797168">[email&#160;protected]</span></a>; Shane Bogusz, Senior 
+Attorney, (571) 366-0212, <a href="/cdn-cgi/l/email-protection#fc8f9e939b898f86bc9a98959fd29b938a"><span class="__cf_email__" data-cfemail="d6a5b4b9b1a3a5ac96b0b2bfb5f8b1b9a0">[email&#160;protected]</span></a>. Risk Management 
+Supervision: Brian Cox, Deputy Director, Capital Markets, Accounting, 
+and Policy, (703) 254-0763, <a href="/cdn-cgi/l/email-protection#543626373b2c1432303d377a333b22"><span class="__cf_email__" data-cfemail="afcdddccc0d7efc9cbc6cc81c8c0d9">[email&#160;protected]</span></a>; Justin Hagerty, Senior 
+Examination Specialist, (319) 382-2760, <a href="/cdn-cgi/l/email-protection#402a2821272532343900262429236e272f36"><span class="__cf_email__" data-cfemail="f59f9d94929087818cb593919c96db929a83">[email&#160;protected]</span></a>.
+
+SUPPLEMENTARY INFORMATION:
+
+I. Background
+
+    The 21st Century ROAD to Housing Act (the Housing Act) became 
+effective on July 11, 2026. Section 902 of the Housing Act amended the 
+limited exception for reciprocal deposits (the exception) in section 
+29(i) of the Federal Deposit Insurance Act (FDI Act). The exception was 
+added to section 29 by section 202 of the Economic Growth, Regulatory 
+Relief, and Consumer Protection Act (EGRRCPA) \1\ enacted on May 24, 
+2018, and allows qualifying institutions to except a capped amount of 
+reciprocal deposits from being considered to be received by or through 
+a deposit broker (i.e., the reciprocal deposits are considered to not 
+be brokered deposits). The FDIC implemented section 202 of EGRRCPA by 
+amending its brokered deposit and assessment regulations through a 2018 
+rule.\2\ The FDIC is now issuing this interim final rule (IFR) to amend 
+its brokered deposit regulations to conform with section 29 as amended 
+by the Housing Act.
+---------------------------------------------------------------------------
+
+    \1\ Public Law 115-174, 132 Stat. 1296 (May 24, 2018).
+    \2\ 84 FR 1346 (Feb. 4, 2019).
+---------------------------------------------------------------------------
+
+A. Section 29 of the FDI Act
+
+    Under section 29 of the FDI Act, an insured depository institution 
+(IDI) is restricted from accepting deposits by or through a deposit 
+broker unless the institution is well capitalized for Prompt Corrective 
+Action (PCA) purposes.\3\ The FDIC may waive this restriction if the 
+IDI is adequately capitalized; however, the restriction cannot be 
+waived if the institution is undercapitalized.\4\
+---------------------------------------------------------------------------
+
+    \3\ 12 U.S.C. 1831f(a).
+    \4\ 12 U.S.C. 1831f(c).
+---------------------------------------------------------------------------
+
+    A ``deposit broker,'' as defined by section 29 of the FDI Act, 
+includes ``any person engaged in the business of placing deposits, or 
+facilitating the placement of deposits, of third parties with insured 
+depository institutions or the business of placing deposits with 
+insured depository institutions for the purpose of selling interests in 
+those deposits to third parties. . . .'' \5\
+---------------------------------------------------------------------------
+
+    \5\ 12 U.S.C. 1831f(g)(1).
+---------------------------------------------------------------------------
+
+    Section 337.6 of the FDIC's Rules and Regulations implements the 
+brokered deposit restrictions of section 29 of the FDI Act. Under the 
+FDIC's regulations, a ``brokered deposit'' is thus defined as ``any 
+deposit that is obtained, directly or indirectly, from or through the 
+mediation or assistance of a deposit broker.'' \6\
+---------------------------------------------------------------------------
+
+    \6\ 12 CFR 337.6(a)(2).
+---------------------------------------------------------------------------
+
+    Neither section 29 nor the FDIC's brokered deposit regulations 
+prescribe reporting requirements for brokered deposits or reciprocal 
+deposits. Rather, IDIs are required to report deposits in accordance 
+with the instructions to the Consolidated Reports of Condition and 
+Income (Call Report) promulgated by the Federal Financial Institutions 
+Examination Council (FFIEC).\7\ The Call Report instructions describe 
+the reporting requirements for brokered deposits, including reciprocal 
+deposits,\8\ to in part support the FDIC's calculation of assessments 
+under the risk-based assessment system required by section 7 of the FDI 
+Act. As discussed below, the FFIEC will be issuing supplemental Call 
+Report instructions for the September 30, 2026 reporting period so that 
+institutions may report brokered and reciprocal deposits consistent 
+with the Housing Act.
+---------------------------------------------------------------------------
+
+    \7\ 12 CFR 304.3(a).
+    \8\ The FDIC defines reciprocal deposits as ``deposits received 
+by an agent institution through a deposit placement network with the 
+same maturity (if any) and in the same aggregate amount as covered 
+deposits placed by the agent institution in other network member 
+banks.'' 12 CFR 337.6(e)(2)(v).
+---------------------------------------------------------------------------
+
+B. Section 29(i)--Reciprocal Deposit Exception
+
+    Consistent with section 29 of the FDI Act, an ``agent institution'' 
+can except reciprocal deposits received through a deposit placement 
+network from being classified as brokered deposits up to its applicable 
+statutory cap.\9\ Prior to the Housing Act, section 29 defined an agent 
+institution as an IDI that places a covered deposit at other IDIs 
+through a deposit placement network in amounts that are less than or 
+equal to the standard maximum deposit insurance amount, if the placing 
+institution satisfies at least one of three prongs:
+---------------------------------------------------------------------------
+
+    \9\ See 12 U.S.C. 1831f. The 2018 rulemaking introduced the 
+terms special cap and general cap to refer to the statutory caps 
+established by section 202 of EGRRCPA. See 84 FR 1346 (Feb. 4, 
+2019).
+
+    (1) the institution, when most recently examined, was found to 
+have a composite condition of outstanding or good, and is well 
+capitalized;
+    (2) the institution has obtained a waiver under section 29(c); 
+or
+    (3) the institution does not receive an amount of reciprocal 
+deposits that causes the total amount of reciprocal deposits held by 
+the agent institution to be greater than the average of the total 
+amount of reciprocal deposits held by the agent institution on the 
+last day of the 4 calendar quarters preceding the calendar quarter 
+in which the agent institution was found not to have a
+
+[[Page 56024]]
+
+composite condition of outstanding or good or was determined to be 
+not well capitalized.
+
+    The FDIC has interpreted ``a composite condition of outstanding or 
+good'' to constitute an institution that has been assigned a CAMELS 
+\10\ composite rating of ``1'' or ``2.'' \11\
+---------------------------------------------------------------------------
+
+    \10\ CAMELS refers to Capital adequacy, Asset quality, 
+Management, Earnings, Liquidity, and Sensitivity to market risk.
+    \11\ 84 FR 1346, 1347-48 (Feb. 4, 2019).
+---------------------------------------------------------------------------
+
+    The amount of the four-quarter average described in the third prong 
+is referred to as the special cap. The maximum amount of reciprocal 
+deposits that can be treated as not being brokered under the exception 
+is referred to as the general cap. Prior to the Housing Act, the 
+general cap was the lesser of $5 billion or 20 percent of the total 
+liabilities of the agent institution.
+
+C. Section 902 of the 21st Century ROAD to Housing Act
+
+    The Housing Act became effective on July 11, 2026, and made two 
+amendments to the reciprocal deposit exception provisions in section 
+29. First, the Act changed the amount and calculation method of the 
+general cap. Second, the Act amended the first prong of the agent 
+institution definition to replace the requirement that an institution 
+be found to have a composite condition rating of ``outstanding or 
+good'' with the requirement that an institution was assigned a CAMELS 
+rating of ``1,'' ``2,'' or ``3'' under the Uniform Financial 
+Institutions Rating System (or an equivalent rating under a comparable 
+rating system).
+    As discussed below, this IFR amends the FDIC's brokered deposit 
+regulations in section 337.6 to implement the statutory text of section 
+29 as amended by the Housing Act. The IFR also makes corresponding 
+changes to the regulations to facilitate and simplify compliance.
+
+II. Changes To Conform FDIC Brokered Deposit Regulations to Section 902 
+of the Housing Act
+
+A. General Cap
+
+    An agent institution can except reciprocal deposits from being 
+considered brokered deposits up to either its general cap or special 
+cap, as applicable.\12\ The Housing Act increased the maximum potential 
+amount of the general cap and uses a tiered calculation based on the 
+total liabilities of the agent institution. Consistent with the Housing 
+Act, the IFR amends the general cap in section 337.6(e)(1) to be the 
+sum of:
+---------------------------------------------------------------------------
+
+    \12\ The application of the caps is detailed in the 2018 final 
+rule. See 84 FR 1346 (Feb. 4, 2019).
+
+    (1) 50 percent of the portion of the total liabilities of the 
+agent institution that is less than or equal to $1,000,000,000;
+    (2) 40 percent of the portion, if any, of the total liabilities 
+of the agent institution that is greater than $1,000,000,000, but 
+less than or equal to $10,000,000,000; and
+    (3) 30 percent of the portion, if any, of the total liabilities 
+of the agent institution that is greater than $10,000,000,000, but 
+less than or equal to $96,333,333,333.
+
+    Under the general cap, as amended by the Housing Act, the maximum 
+amount of reciprocal deposits allowed under the exception for any 
+institution totals $30 billion, which would be the general cap for an 
+institution with $96.33 billion or more in total liabilities (assuming 
+the institution is not limited to the special cap). An institution with 
+less than $96.33 billion in total liabilities must calculate its 
+general cap using the new tiered methodology. As an example for how the 
+FDIC would calculate the amount of reciprocal deposits eligible for the 
+exception, an agent institution with $25 billion in total liabilities 
+would have a general cap equal to (0.5 * $1 billion) + (0.4 * $9 
+billion) + (0.3 * $15 billion) = $8.6 billion.
+    The FDIC will continue to calculate an institution's general cap 
+based on data reported in its Call Report.
+
+B. Qualifying as an Agent Institution
+
+    Consistent with the Housing Act, the IFR amends the first prong of 
+the agent institution definition \13\ to require that, when most 
+recently examined under section 10(d) of the FDI Act, an institution 
+was assigned a CAMELS composite rating of ``1,'' ``2,'' or ``3'' under 
+the Uniform Financial Institutions Rating System (or an equivalent 
+rating under a comparable rating system).\14\ The second element of the 
+definition is that the institution be well capitalized; this element 
+was not amended by the Housing Act. Thus, under the first prong as 
+amended, an institution must have a CAMELS composite rating of ``1,'' 
+``2,'' or ``3'' and be well capitalized.
+---------------------------------------------------------------------------
+
+    \13\ The second and third prongs of the agent institution 
+definition remain unchanged.
+    \14\ The effective date of a CAMELS composite rating is the 
+``date of written notification to the institution by its primary 
+federal regulator or state authority of its supervisory rating.'' 12 
+CFR 327.4(f).
+---------------------------------------------------------------------------
+
+    The FDIC recognizes that, although the Housing Act amends the first 
+prong of the agent institution definition to replace the ``outstanding 
+or good'' rating language, it did not amend the mirroring ``outstanding 
+or good'' rating language used in the special cap prong. Thus, read 
+together, the two provisions indicate that an institution that becomes 
+subject to the special cap because it no longer satisfies the first 
+prong of the agent institution definition may not have its four-quarter 
+average (i.e., its special cap) calculated based on the preceding four 
+quarters. Instead, this calculation may rely on quarters that are 
+earlier than the preceding four quarters.\15\
+---------------------------------------------------------------------------
+
+    \15\ For example, if an institution is downgraded from a ``2'' 
+to a ``3'' in 2026, then downgraded to a ``4'' in 2030, the special 
+cap will be based on its reciprocal deposit holdings in 2025 to 2026 
+(when it was no longer considered ``outstanding or good''), not the 
+four quarters preceding the downgrade to a ``4.'' Thus, with respect 
+to an institution that loses agent institution status due to a 
+ratings downgrade, the special cap no longer approximates the status 
+quo that exists immediately prior to an institution no longer 
+meeting the first prong of the agent institution definition.
+---------------------------------------------------------------------------
+
+    Although this could have the effect of an institution's special cap 
+being smaller or larger than the average of the most recent four 
+quarters prior to the institution ceasing to meet the first prong of 
+the agent institution definition, an agent institution that becomes 
+subject to the special cap may continue to hold reciprocal deposits 
+previously received in an amount that is greater than the special cap; 
+\16\ therefore, institutions will not be disqualified from being 
+considered an agent institution as a result of the timing disparity 
+between the special cap calculation and its application.
+---------------------------------------------------------------------------
+
+    \16\ See 84 FR 1346, 1349 (Feb. 4, 2019).
+---------------------------------------------------------------------------
+
+III. Clarifications Regarding Reciprocal Deposits Framework and 
+Reporting
+
+    The FDIC recognizes that section 902 of the Housing Act may result 
+in increased holdings of reciprocal deposits by IDIs, including by 
+institutions that previously did not utilize reciprocal deposits. To 
+facilitate compliance with the FDIC's regulations concerning reciprocal 
+deposits, and to assist institutions that may be reviewing and relying 
+upon those regulations for the first time, the FDIC is clarifying 
+certain aspects of the reciprocal deposits framework.
+
+A. Receipt of Nonmaturity Reciprocal Deposits
+
+    An agent institution that becomes subject to the special cap can 
+continue to hold the reciprocal deposits that it received prior to 
+becoming subject to the special cap; however, if an institution 
+``receives'' reciprocal deposits in excess of its special cap, it is no 
+longer an agent institution, and all of its reciprocal deposits must be 
+reported as brokered deposits.\17\
+---------------------------------------------------------------------------
+
+    \17\ See id. at 1348-49 (explaining the FDIC's view that the 
+special cap limits an agent institution's receipt of reciprocal 
+deposits, not the maintenance, retention, or holding of reciprocal 
+deposits).
+
+---------------------------------------------------------------------------
+
+[[Page 56025]]
+
+    Over the past several years, institutions have sought clarity 
+regarding the ``receipt'' of nonmaturity reciprocal deposits through a 
+deposit placement network. More specifically, there has been 
+uncertainty as to whether changes in the composition of the reciprocal 
+deposits received through a deposit placement network resulting from 
+actions of the network operator, as opposed to the agent institution 
+placing covered deposits, constitutes ``receiving'' reciprocal 
+deposits. For example, the identities of the individual depositors for 
+whom the agent institution holds reciprocal deposits may change day by 
+day. Likewise, the amounts of reciprocal deposits attributable to 
+individual depositors may change without an increase in the aggregate 
+amount of reciprocal deposits the agent institution receives from the 
+network.
+    Section 902 of the Housing Act and this IFR are likely to increase 
+the range of institutions that participate in reciprocal deposit 
+networks and that are subject to the FDIC's regulations, which only 
+underscores the need to provide clarity in this area. Per section 29 of 
+the FDI Act, an institution satisfies the third prong of the agent 
+institution definition if it places a covered deposit through a deposit 
+placement network at other institutions as long as the agent 
+institution does not receive an amount of reciprocal deposits that 
+causes the total amount of reciprocal deposits held by the agent 
+institution to be greater than its special cap. Section 29 defines a 
+``covered deposit'' as one submitted for placement through a deposit 
+placement network by an agent institution, and it defines ``reciprocal 
+deposits'' as deposits received by an agent institution through a 
+deposit placement network with the same maturity (if any) and in the 
+same aggregate amount as covered deposits placed by the agent 
+institution in other network member banks.
+    The plain meaning of these statutory definitions is that to 
+``receive'' reciprocal deposits, an agent institution must also place a 
+covered deposit through a deposit placement network. Only by placing a 
+covered deposit can an agent institution then ``receive'' an amount of 
+reciprocal deposits that causes the total amount of its reciprocal 
+deposits held by the agent institution to be greater than its special 
+cap.\18\ Thus, an institution cannot receive nonmaturity reciprocal 
+deposits if it does not first place additional covered deposits through 
+a deposit placement network.
+---------------------------------------------------------------------------
+
+    \18\ As explained in the 2018 final rule, renewing or rolling 
+over maturity reciprocal deposits would be considered placement and 
+receipt of reciprocal deposits. See 84 FR 1348-49 (Feb. 4, 2019). 
+Nothing in this IFR is intended to alter the FDIC's approach to the 
+receipt of reciprocal time deposits.
+---------------------------------------------------------------------------
+
+    The statute provides that an institution meets the definition of an 
+agent institution as long as it does not receive an amount of 
+reciprocal deposits above its special cap. Thus, to the extent a 
+deposit placement network alters the individual underlying depositors 
+or rebalances the amount on deposit at an institution that holds an 
+amount of reciprocals in excess of its special cap at the time it 
+becomes subject to the special cap without increasing the aggregate 
+amount of reciprocals, the institution continues to meet the definition 
+of an agent institution. If, however, the agent institution places any 
+covered deposits into the network while holding an amount of reciprocal 
+deposits above its special cap, it will have received an amount of 
+reciprocal deposits in excess of its special cap and will no longer 
+satisfy the agent institution definition.\19\
+---------------------------------------------------------------------------
+
+    \19\ This can have disruptive and costly effects for an 
+institution because all reciprocal deposits must then be reported as 
+brokered, unless and until the institution again qualifies as an 
+agent institution.
+---------------------------------------------------------------------------
+
+B. Requalifying as an Agent Institution
+
+    As discussed above, the Housing Act amended the definition of agent 
+institution to include institutions that have been assigned a CAMELS 
+rating of ``1,'' ``2,'' or ``3.'' This amendment expands the scope of 
+institutions that can qualify as an agent institution, and certain 
+institutions that did not qualify prior to the Housing Act now meet the 
+definition of agent institution. Qualifying as an agent institution has 
+important implications, such as whether an institution may receive 
+reciprocal deposits (if the institution is not well capitalized and 
+does not have a waiver) and the extent to which reciprocal deposits are 
+reported as brokered deposits. The FDIC is therefore clarifying when an 
+institution qualifies as an agent institution. In general, and as 
+discussed below, an institution should determine whether it qualifies 
+as an agent institution as of the quarter-end without regard for 
+whether the institution was, or was not, an agent institution at any 
+point throughout the quarter.
+1. Supervisory Ratings Change
+    A well capitalized institution qualifies as an agent institution as 
+of the date it receives a CAMELS composite rating of ``1,'' ``2,'' or 
+``3'' from its primary federal regulator (PFR) because it meets the 
+statutory definition of an agent institution at that time. The FDIC's 
+brokered deposit regulations neither control nor determine the 
+effective date of a ratings upgrade. The effective date of a CAMELS 
+composite rating is the date of written notification to the institution 
+by its PFR or state authority of its supervisory rating.\20\ If an 
+institution has a CAMELS composite rating of ``4,'' upon an effective 
+composite rating upgrade to a CAMELS ``1,'' ``2,'' or ``3'' from its 
+PFR, the institution immediately becomes an agent institution under the 
+first prong of the definition, if it is well capitalized.
+---------------------------------------------------------------------------
+
+    \20\ The FDIC uses the date of written notification by an 
+institution's PFR for purposes of the brokered deposit regulations, 
+consistent with the FDIC's assessment regulations at 12 CFR 
+327.4(f).
+---------------------------------------------------------------------------
+
+2. Capital Category Change
+    Similarly, an institution that has a CAMELS composite rating of 
+``1,'' ``2,'' or ``3'' qualifies as an agent institution on the date it 
+is deemed to be within the well capitalized category. Like rating 
+changes, the FDIC's brokered deposit regulations do not control or 
+determine the effective date of a capital category change. Rather, the 
+brokered deposit regulations incorporate the implementing regulations 
+for section 38 of the FDI Act promulgated by the Federal banking 
+agencies for determining the date of a capital category change because 
+section 29 also incorporates the section 38 capital standards.\21\ 
+Thus, when determining whether it qualifies as an agent institution, an 
+institution should determine the effective date of its capital category 
+change according to the PCA laws and regulations.
+---------------------------------------------------------------------------
+
+    \21\ 12 CFR 337.6(a)(3); FDIC--12 CFR part 324, subpart H; Board 
+of Governors of the Federal Reserve System--12 CFR part 208; and 
+Office of the Comptroller of the Currency--12 CFR part 6.
+---------------------------------------------------------------------------
+
+3. Obtaining a Brokered Deposit Waiver
+    An institution qualifies as an agent institution under the second 
+prong of the agent institution definition on the date it receives 
+written notice from the FDIC that its application for a brokered 
+deposit waiver under section 29(c) has been approved. Likewise, an 
+institution that obtains a waiver while qualifying as an agent 
+institution under the special cap prong will no longer be subject to 
+the special cap on the date it receives written notice from the FDIC 
+that its application for a brokered deposit waiver has been 
+approved.\22\
+---------------------------------------------------------------------------
+
+    \22\ As a condition of approving a brokered deposit waiver, the 
+FDIC may limit the amount of reciprocal and brokered deposits an 
+institution may accept, hold, renew, etc., and therefore, such an 
+institution may not necessarily be able to rely on the general cap.
+
+---------------------------------------------------------------------------
+
+[[Page 56026]]
+
+4. Special Cap
+    An institution that is not well capitalized and does not have a 
+brokered deposit waiver can only receive reciprocal deposits if it 
+qualifies as an agent institution under the special cap prong of the 
+definition. Otherwise, section 29 prohibits these institutions from 
+accepting brokered deposits because they are not well capitalized. 
+Thus, the date these institutions qualify as an agent institution also 
+determines what deposit taking activities are permissible. The FDIC is 
+therefore clarifying when an institution requalifies under the special 
+cap.
+    As discussed above, section 29 provides that an institution meets 
+the definition of an agent institution as long as it does not receive 
+an amount of reciprocal deposits above its special cap. An institution 
+that places an amount of covered deposits such that the amount received 
+in return causes the amount held to exceed its special cap does not 
+qualify as an agent institution. Such an institution will requalify as 
+an agent institution under the special cap prong on the date it reduces 
+its reciprocal deposits to an amount that is less than its special cap.
+
+C. Call Report Changes
+
+    The Housing Act became effective in the third quarter of 2026 and 
+the FFIEC will issue Supplemental Instructions as part of the September 
+30, 2026 Call Report Instructions for information on reporting brokered 
+and reciprocal deposits under the new law. The FFIEC indicated that it 
+anticipates updating the Call Report instructions to conform to the new 
+law for purposes of reporting in the Call Report by December 31, 2026. 
+No new line items will need to be added to the Call Report, although 
+the FDIC anticipates working through the FFIEC so that RC-O Line 9 for 
+brokered reciprocal deposits will be reported confidentially as part of 
+the instruction updates.
+    In conjunction with conforming assessment regulation changes made 
+in 2018, the FFIEC updated the Call Report to add Memorandum item 1.g, 
+``Total reciprocal deposits,'' to Schedule RC-E.\23\ However, this 
+line, if viewed alongside Schedule RC-O, item 9 (``Brokered reciprocal 
+deposits''),\24\ may reveal non-public supervisory information. The 
+issue arises because an agent institution that no longer qualifies for 
+the reciprocal deposit exception must report all of its reciprocal 
+deposits as brokered reciprocal deposits on Schedule RC-O, item 9. 
+These deposits previously would have been excepted and not reported as 
+brokered, up to the applicable general or special cap amount for that 
+institution. This reporting reclassification can cause the amount of 
+brokered reciprocal deposits an institution must report on Schedule RC-
+O, item 9 to increase significantly over the period of a single quarter 
+while Schedule RC-E, Memorandum item 1.g, the line for total reciprocal 
+deposits, typically does not change to the same degree.
+---------------------------------------------------------------------------
+
+    \23\ See Fed. Fin. Inst. Examination Council, FFIEC 051 Call 
+Report Instruction Book Update (Sept. 2018).
+    \24\ The FDIC uses Schedule RC-O, item 9 for assessment purposes 
+because brokered reciprocal deposits are excluded from the brokered 
+deposit ratio for small institutions that are well capitalized and 
+well rated.
+---------------------------------------------------------------------------
+
+    The interplay of these two lines together may indicate that an 
+institution no longer qualifies as an agent institution. Because an 
+institution that is well capitalized will only be disqualified from 
+excepting reciprocal deposits if it does not have a CAMELS composite 
+rating of ``1,'' ``2,'' or ``3,'' an observer may be able to infer an 
+institution's confidential supervisory rating through changes in the 
+amount of brokered reciprocal deposits reported on Schedule RC-O, item 
+9. To counter this unintended consequence while still collecting the 
+necessary data for assessment purposes, the FDIC intends to work 
+through the FFIEC to make Schedule RC-O, item 9 confidential when the 
+Call Report instructions are updated to conform to the Housing Act.
+
+IV. Expected Effects
+
+    The rule implements section 902 of the Housing Act by making 
+conforming changes to the FDIC's regulations. Relevant regulations as 
+of June 30, 2026, and financial data as of March 31, 2026, are 
+generally used to estimate outcomes under the IFR and the baseline.\25\ 
+This section summarizes the analysis performed by the FDIC to estimate 
+those economic impacts. The FDIC notes at the outset that the IFR is 
+implementing Section 902 of the Housing Act, which was effective upon 
+enactment. Therefore, relative to a post-statutory baseline these 
+amendments will have no substantive effect.
+---------------------------------------------------------------------------
+
+    \25\ The FDIC is analyzing expected effects based on March 31, 
+2026 Call Report data, which is the last available Call Report data 
+prior to the enactment of section 902 of the Housing Act on July 11, 
+2026.
+---------------------------------------------------------------------------
+
+    As of March 31, 2026, there were 4,278 FDIC-insured institutions. 
+Of these, 1,971 institutions reported having brokered deposits, which 
+totaled $1.204 trillion. Additionally, a total of 2,089 institutions 
+reported having reciprocal deposits totaling $462.8 billion. Of these, 
+331 institutions reported brokered reciprocal deposits totaling $91.9 
+billion.
+    The principal effect of section 902 of the Housing Act, and of this 
+implementing regulation, will be that a smaller share of reciprocal 
+deposits are classified as brokered deposits. As previously discussed, 
+the IFR would increase the general cap applicable to reciprocal 
+deposits for certain institutions. The IFR would increase the general 
+cap from the lesser of $5 billion or 20 percent of total liabilities to 
+a tiered calculation based on total liabilities. Further, the IFR 
+implements the Housing Act's definition of ``outstanding or good'' with 
+respect to the general cap, thereby expanding the agent institution 
+definition to include institutions assigned a CAMELS composite rating 
+of ``3.'' These amendments would increase the number of IDIs who can 
+exclude certain volumes of reciprocal deposits from being considered 
+brokered deposits. In turn, these aspects of the IFR may result in an 
+increase in the volume of reciprocal deposits held by IDIs, as well as 
+an increase in the number of institutions holding reciprocal deposits. 
+The FDIC does not have the information necessary to accurately estimate 
+the number of IDIs affected or any such changes in volumes of 
+reciprocal deposits, reported or held, in future periods.
+    The IFR could indirectly affect deposit insurance assessments for a 
+small number of institutions. The following assessments impact is based 
+on data as of March 31, 2026, with the current assessment 
+regulations.\26\
+---------------------------------------------------------------------------
+
+    \26\ On June 25, 2026, the FDIC Board approved a notice of 
+proposed rulemaking that would amend the FDIC's assessment 
+regulations. See 91 FR 39794 (Jun. 30, 2026).
+---------------------------------------------------------------------------
+
+    For established small institutions, the IFR may decrease their 
+brokered deposit ratio, potentially resulting in a change in the bank's 
+assessment. The brokered deposit ratio is one of the financial measures 
+used to determine assessment rates for established small 
+institutions.\27\ The ratio is the difference between brokered deposits 
+and 10 percent of total assets to total assets. Additionally, for 
+institutions that are well capitalized and have a CAMELS composite 
+rating of ``1'' or ``2,'' brokered reciprocal deposits are deducted 
+from brokered deposits.\28\ Established small institutions that are 
+well capitalized and have a CAMELS composite rating of ``1'' or ``2'' 
+can already deduct brokered reciprocal deposits from brokered deposits 
+and generally would not be affected by the
+
+[[Page 56027]]
+
+IFR, for assessment purposes.\29\ Furthermore, the IFR would not affect 
+the assessment rates of small institutions that do not have reciprocal 
+deposits or whose brokered deposits comprise less than 10 percent of 
+total assets. The FDIC estimates that 16 small FDIC-insured 
+institutions could have a lower assessment due to the effect of the IFR 
+on their brokered deposit ratio, if their reciprocal deposits are 
+excepted from treatment as brokered.
+---------------------------------------------------------------------------
+
+    \27\ See 12 CFR 327.16(a)(1).
+    \28\ See 12 CFR 327.16(a)(1)(ii)(A).
+    \29\ The core deposit ratio is measured as domestic deposits, 
+excluding brokered deposits and uninsured non-brokered time 
+deposits, divided by total liabilities. Reciprocal deposits that are 
+brokered reciprocal deposits will continue to be excluded from the 
+ratio. See 12 CFR 327.16(b) and 12 CFR part 327, Appendix B to 
+Subpart A.
+---------------------------------------------------------------------------
+
+    For large and highly complex institutions, the IFR may increase the 
+core deposit ratio, potentially resulting in a reduction in the bank's 
+assessment. The core deposit ratio applies to large and highly complex 
+institutions and is measured as domestic deposits, excluding brokered 
+deposits and uninsured non-brokered time deposits, divided by total 
+liabilities.\30\ The FDIC estimates that 14 large or highly complex 
+institutions could have a lower assessment due to the effect of the IFR 
+on their core deposit ratio, if their reciprocal deposits are excepted 
+or further excepted from treatment as brokered.
+---------------------------------------------------------------------------
+
+    \30\ See 12 CFR 327.16(b) and Appendix B to Subpart A.
+---------------------------------------------------------------------------
+
+    For certain large and highly complex institutions and new small 
+institutions that meet the revised definition of agent institution, the 
+IFR may alter their brokered deposit adjustment, resulting in a change 
+in the bank's assessment. The brokered deposit adjustment applies to 
+all new small institutions in Risk Categories II, III, and IV, and all 
+large and all highly complex institutions, except large and highly 
+complex institutions (including new large and new highly complex 
+institutions) that are well capitalized and have a CAMELS composite 
+rating of 1 or 2.\31\ The brokered deposit adjustment can increase 
+assessments for institutions that have brokered deposits in excess of 
+10 percent of domestic deposits.\32\ The FDIC estimates that three 
+FDIC-insured institutions could have a lower assessment due to the 
+effect of the IFR on the brokered deposit adjustment, if their 
+reciprocal deposits are excepted from treatment as brokered.
+---------------------------------------------------------------------------
+
+    \31\ See 12 CFR 327.16(e)(3).
+    \32\ Id.
+---------------------------------------------------------------------------
+
+    Based on data as of March 31, 2026, the FDIC estimates that 
+aggregate assessment revenue would be reduced by an estimated $45.8 
+million annually. However, as previously discussed, the IFR is 
+implementing section 902 of the Housing Act, which was effective upon 
+enactment, and thus, relative to a post-statutory baseline, the IFR 
+will have no substantive effect on assessment revenue.
+    Through the IFR, the FDIC further clarifies certain provisions 
+within and related to section 29 of the FDI Act, such as what 
+constitutes ``receipt'' of nonmaturity reciprocal deposits, 
+requalifying as an agent institution, effective date of a supervisory 
+ratings or capital category change, effective date for written notice 
+of a brokered deposit waiver, or when an institution requalifies under 
+the special cap. These aspects of the IFR should benefit IDIs by 
+enabling them to comply with section 29 of the FDI Act more 
+efficiently.
+    Institutions may incur small costs to make changes to their systems 
+and procedures for maintaining compliance with section 29 of the FDI 
+Act. However, these changes are likely to be de minimis.
+
+V. Administrative Law Matters
+
+    The FDIC is issuing the IFR without prior notice and the 
+opportunity for public comment and the delayed effective date 
+ordinarily prescribed by the Administrative Procedure Act (APA).\33\ 
+Pursuant to section 553(b)(B) of the APA, general notice and the 
+opportunity for public comment are not required with respect to a 
+rulemaking when an ``agency for good cause finds (and incorporates the 
+finding and a brief statement of reasons therefore in the rules issued) 
+that notice and public procedure thereon are impracticable, 
+unnecessary, or contrary to the public interest.'' \34\
+---------------------------------------------------------------------------
+
+    \33\ 5 U.S.C. 553.
+    \34\ 5 U.S.C. 553(b)(B).
+---------------------------------------------------------------------------
+
+    Notice and comment are unnecessary for this rule. The substantive 
+changes made by the interim final rule implement section 902 of the 
+Housing Act, which became effective upon enactment. Notice and comment 
+are unnecessary as the FDIC is required to conform its regulations to 
+avoid legal conflicts.\35\ Delaying the issuance of amended 
+regulations--or delaying the effective date of those regulations--would 
+prolong the time in which the FDIC's regulations were inconsistent with 
+the FDI Act, as amended by the Housing Act, causing uncertainty for 
+industry participants. The FDIC has therefore determined that the 
+public notice and participation ordinarily required by the APA before a 
+regulation may take effect would, in this case, be unnecessary and 
+contrary to the public interest and that good cause exists to waive the 
+customary 30-day delayed effective date.
+---------------------------------------------------------------------------
+
+    \35\ See Gray Panthers Advoc. Comm. v. Sullivan, 936 F.2d 1284, 
+1291-92 (D.C. Cir. 1991) (citations omitted) (public comment is 
+unnecessary if the regulation ``merely reiterates the statutory 
+language''); Metzenbaum v. FERC, 675 F.2d 1282, 1291 (D.C. Cir. 
+1982) (notice and comment was unnecessary for nondiscretionary act); 
+accord Lake Carriers' Ass'n v. EPA, 652 F.3d 1, 10 n.10 (D.C. Cir. 
+2011) (collecting cases).
+---------------------------------------------------------------------------
+
+    Nevertheless, the FDIC desires to have the benefit of public 
+comment before adopting a permanent final rule and thus invites 
+interested parties to submit comments during a 30-day comment period. 
+In adopting a final regulation, the FDIC will revise the IFR if 
+appropriate in light of the comments received.
+
+A. Paperwork Reduction Act
+
+    This IFR has been reviewed for compliance with the Paperwork 
+Reduction Act of 1995 (PRA) (44 U.S.C. 3501 et seq.). In accordance 
+with the PRA, the FDIC may not conduct or sponsor, and an organization 
+is not required to respond to, an information collection unless the 
+information collection displays a currently valid Office of Management 
+and Budget (OMB) control number. The FDIC has reviewed this IFR and 
+determined that it does not create any information collection or revise 
+any existing collection of information. Accordingly, no PRA submissions 
+to OMB will be made with respect to this rule.
+
+B. Regulatory Flexibility Act
+
+    The Regulatory Flexibility Act (RFA) requires an agency to consider 
+whether the rules it proposes will have a significant economic impact 
+on a substantial number of small entities. The RFA applies only to 
+rules for which an agency publishes a general notice of proposed 
+rulemaking pursuant to 5 U.S.C. 553(b). As discussed previously, 
+consistent with section 553(b)(B) of the APA, the FDIC has determined 
+for good cause that notice and opportunity for public comment prior to 
+the rule's effective date is contrary to the public interest and 
+therefore is not issuing a notice of proposed rulemaking. Accordingly, 
+the FDIC has concluded that the RFA's requirements relating to initial 
+and final regulatory flexibility analyses do not apply. Nevertheless, 
+the FDIC is interested in receiving feedback on ways that it could 
+reduce any potential burden of the IFR on small entities.
+
+[[Page 56028]]
+
+C. Riegle Community Development and Regulatory Improvement Act
+
+    The Riegle Community Development and Regulatory Improvement Act of 
+1994 (RCDRIA),\36\ generally provides that new regulations or 
+amendments to regulations prescribed by a Federal banking agency that 
+impose additional reporting, disclosure, or other new requirements on 
+insured depository institutions shall take effect on the first day of a 
+calendar quarter that begins on or after the date on which the 
+regulations are published in final form, unless the agency determines, 
+for good cause published with the rule, that the rule should become 
+effective before such time.\37\ Pursuant to section 553(d)(1) of the 
+APA, a rule may become effective without waiting for the delayed 
+effective date to elapse where the rule grants an exemption or relieves 
+a restriction.\38\ For the reasons discussed above, and because the IFR 
+relaxes certain aspects of the FDIC's restrictions on reciprocal 
+deposits, the FDIC has determined that good cause exists for the IFR to 
+become effective immediately upon publication in the Federal Register.
+---------------------------------------------------------------------------
+
+    \36\ 12 U.S.C. 4802.
+    \37\ 12 U.S.C. 4802(b).
+    \38\ 5 U.S.C. 553(d)(1).
+---------------------------------------------------------------------------
+
+D. Plain Language
+
+    Section 722 of the Gramm-Leach-Bliley Act \39\ requires the Federal 
+banking agencies to use plain language in all proposed and final 
+rulemakings published in the Federal Register after January 1, 2000. 
+The FDIC invites your comments on how to make this rule easier to 
+understand, including the following:
+---------------------------------------------------------------------------
+
+    \39\ Public Law 106-102, section 722, 113 Stat. 1338, 1471 (Nov. 
+12, 1999); 12 U.S.C. 4809.
+---------------------------------------------------------------------------
+
+    <bullet> Has the FDIC organized the material to suit your needs? If 
+not, how could the rule be more clearly stated?
+    <bullet> Are the requirements in the rule clearly stated? If not, 
+how could the rule be more clearly stated?
+    <bullet> Does the rule contain language or jargon that is not 
+clear? If so, which language requires clarification?
+    <bullet> Would a different format (grouping and order of sections, 
+use of headings, paragraphing) make the rule easier to understand? If 
+so, what changes to the format would make the rule easier to 
+understand?
+    <bullet> What else could the FDIC do to make the rule easier to 
+understand?
+
+E. Executive Orders 12866, 13563, and 14192
+
+    Executive Order 12866 directs agencies to assess the costs and 
+benefits of available regulatory alternatives and, if regulation is 
+necessary, to select regulatory approaches that maximize net benefits. 
+This rule was drafted and reviewed in accordance with Executive Order 
+12866. Within OMB, the Office of Information and Regulatory Affairs 
+(OIRA) has determined that this rulemaking is not a ``significant 
+regulatory action'' under section 3(f) of Executive Order 12866. 
+Accordingly, the draft rule was submitted to OIRA for review. As noted 
+in other sections of the SUPPLEMENTARY INFORMATION of this document, 
+the FDIC has assessed the costs and benefits of this rulemaking and has 
+made a reasoned determination that the benefits of this rulemaking 
+justify its costs. Executive Order 14192, titled ``Unleashing 
+Prosperity Through Deregulation,'' was issued on January 31, 2025. 
+Section 3(a) of Executive Order 14192 requires an agency, unless 
+prohibited by law, to identify at least ten existing regulations to be 
+repealed when the agency publicly proposes for notice and comment or 
+otherwise promulgates a new regulation. In furtherance of this 
+standard, section 3(c) of Executive Order 14192 requires that the new 
+incremental costs associated with new regulations shall, to the extent 
+permitted by law, be offset by the elimination of existing costs 
+associated with at least ten prior regulations. This rule is not 
+expected to be a regulatory action under Executive Order 14192.
+
+VI. Request for Comment
+
+    The FDIC invites comments on all aspects of the interim final rule. 
+In particular, the FDIC requests comment on the following:
+    Question 1: Do the amendments to the FDIC's regulations made by 
+this interim final rule fully and properly implement section 902 of the 
+Housing Act? If not, how could the amendments be improved?
+    Question 2: Is the FDIC's interpretation of the third prong of the 
+agent institution definition in Section 29 of the FDI Act, as amended 
+by the Housing Act, regarding the timing of the four-quarter average, 
+appropriate? If not, what interpretation should the FDIC adopt and why?
+    Question 3: Are the clarifications contained in this interim final 
+rule regarding the reciprocal deposit regulations sufficiently clear? 
+If not, how could they be improved?
+    Question 4: Is the FDIC's interpretation of when a reciprocal 
+deposit is ``received'' by an agent institution appropriate? If not, 
+what interpretation should the FDIC adopt and why? Would additional 
+clarity be helpful?
+    Question 5: Are there other aspects of the FDIC's reciprocal 
+deposit regulations that are ambiguous or unclear? If so, what changes, 
+including adopting amended regulations, should the FDIC consider to 
+address such ambiguity?
+
+List of Subjects in 12 CFR Part 337
+
+    Banks, Banking, Reporting and recordkeeping requirements, Savings 
+associations, Securities.
+
+Authority and Issuance
+
+    For the reasons stated in the preamble, the Federal Deposit 
+Insurance Corporation amends 12 CFR part 337 as follows:
+
+PART 337--UNSAFE AND UNSOUND BANKING PRACTICES
+
+0
+1. The authority citation for part 337 continues to read as follows:
+
+    Authority: 12 U.S.C. 375a(4), 375b, 1463, 1464, 1468, 1816, 
+1818(a), 1818(b), 1819, 1820(d), 1821(f), 1828(j)(2), 1831, 1831f, 
+1831g, 5412.
+
+
+0
+2. Amend Sec.  337.6 by:
+0
+a. Revising paragraphs (a)(3)(ii) and (iii), (e)(1) and (2); and
+0
+b. Adding paragraphs (e)(3) and (4).
+    The revisions and additions read as follows:
+
+
+Sec.  337.6  Brokered deposits.
+
+    (a) * * *
+    (3) * * *
+    (ii) If the appropriate Federal banking agency reclassifies a well 
+capitalized insured depository institution as adequately capitalized 
+pursuant to section 38 of the Federal Deposit Insurance Act, the 
+institution so reclassified shall be subject to the provisions 
+applicable to such lower capital category under this section and Sec.  
+337.7, including paragraph (e)(2)(i)(A)(2) of this section.
+    (iii) An insured depository institution shall be deemed to be 
+within a given capital category for purposes of this section and Sec.  
+337.7, including paragraph (e)(2)(i)(A)(2) of this section, as of the 
+date the institution is notified of, or is deemed to have notice of, 
+its capital category, under regulations implementing section 38 of the 
+Federal Deposit Insurance Act issued by the appropriate Federal banking 
+agency for that institution.
+* * * * *
+    (e) Limited exception for reciprocal deposits--(1) Limited 
+exception. The sum of the following amounts of reciprocal deposits of 
+an agent institution shall not be considered to be funds obtained, 
+directly or indirectly, by or through a deposit broker:
+
+[[Page 56029]]
+
+    (i) An amount equal to 50 percent of the portion of the total 
+liabilities of the agent institution that is less than or equal to 
+$1,000,000,000;
+    (ii) An amount equal to 40 percent of the portion, if any, of the 
+total liabilities of the agent institution that is greater than 
+$1,000,000,000, but less than or equal to $10,000,000,000; and
+    (iii) An amount equal to 30 percent of the portion, if any, of the 
+total liabilities of the agent institution that is greater than 
+$10,000,000,000, but less than or equal to $96,333,333,333.
+    (2) Additional definitions that apply to the limited exception for 
+reciprocal deposits--(i) Agent institution means an insured depository 
+institution that places a covered deposit through a deposit placement 
+network at other insured depository institutions in amounts that are 
+less than or equal to the standard maximum deposit insurance amount, 
+specifying the interest rate to be paid for such amounts, if the 
+insured depository institution:
+    (A)(1) When most recently examined under section 10(d) of the 
+Federal Deposit Insurance Act (12 U.S.C. 1820(d)) was assigned a CAMELS 
+rating of 1, 2, or 3 under the Uniform Financial Institutions Rating 
+System (or an equivalent rating under a comparable rating system); and
+    (2) Is well capitalized;
+    (B) Has obtained a waiver pursuant to paragraph (c) of this 
+section; or
+    (C) Does not receive an amount of reciprocal deposits that causes 
+the total amount of reciprocal deposits held by the agent institution 
+to be greater than the average of the total amount of reciprocal 
+deposits held by the agent institution on the last day of each of the 
+four calendar quarters preceding the calendar quarter in which the 
+agent institution was found not to have a composite condition of 
+outstanding or good or was determined to be not well capitalized.
+    (ii) Covered deposit means a deposit that:
+    (A) Is submitted for placement through a deposit placement network 
+by an agent institution; and
+    (B) Does not consist of funds that were obtained for the agent 
+institution, directly or indirectly, by or through a deposit broker 
+before submission for placement through a deposit placement network.
+    (iii) Deposit placement network means a network in which an insured 
+depository institution participates, together with other insured 
+depository institutions, for the processing and receipt of reciprocal 
+deposits.
+    (iv) Network member bank means an insured depository institution 
+that is a member of a deposit placement network.
+    (v) Reciprocal deposits means deposits received by an agent 
+institution through a deposit placement network with the same maturity 
+(if any) and in the same aggregate amount as covered deposits placed by 
+the agent institution in other network member banks.
+    (3) Requalifying as an Agent Institution due to a Rating Change or 
+Receipt of Reciprocal Deposits in Excess of 4-Quarter Average--(i) 
+Rating change. The effective date of a CAMELS rating change for 
+purposes of satisfying the agent institution definition under paragraph 
+(e)(2) of this section is the date of written notification to the 
+insured depository institution by its appropriate Federal banking 
+agency of its supervisory rating.
+    (ii) Receipt of Reciprocal Deposits in Excess of 4-Quarter Average. 
+An insured depository institution that does not satisfy the agent 
+institution definition under paragraph (e)(2) of this section because 
+it receives an amount of reciprocal deposits that causes the total 
+amount of reciprocal deposits held to be greater than the amount 
+specified in paragraph (e)(2)(i)(C) of this section is considered to 
+satisfy the definition as of the date the amount of reciprocal deposits 
+held by the insured depository institution is less than the amount 
+specified in paragraph (e)(2)(i)(C) of this section.
+    (4) Receipt of nonmaturity reciprocal deposits. For purposes of 
+this section, an agent institution receives nonmaturity reciprocal 
+deposits through a deposit placement network if the deposit is received 
+from a deposit placement network as a result of the agent institution 
+submitting a new covered deposit for placement through the deposit 
+placement network.
+
+    Federal Deposit Insurance Corporation.
+
+    By order of the Board of Directors.
+    Dated at Washington, DC, on August 28, 2026.
+Jennifer M. Jones,
+Deputy Executive Secretary.
+[FR Doc. 2026-17865 Filed 8-31-26; 8:45 am]
+BILLING CODE 6714-01-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

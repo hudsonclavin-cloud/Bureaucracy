@@ -1,0 +1,298 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 181 (Monday, September 21, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 181 (Monday, September 21, 2026)]
+[Notices]
+[Pages 59792-59794]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-19252]
+
+
+-----------------------------------------------------------------------
+
+DEPARTMENT OF HEALTH AND HUMAN SERVICES
+
+
+Request for Information on Electromagnetic Fields (EMFs), 
+Radiofrequency (RF) Radiation, and Wireless Radiation Exposure
+
+AGENCY: U.S. Department of Health and Human Services (HHS or the 
+Department).
+
+ACTION: Notice of Request for Information (RFI) on electromagnetic 
+field (EMF) exposure and human health.
+
+-----------------------------------------------------------------------
+
+SUMMARY: Consistent with the Department of Health and Human Services' 
+emphasis on evaluating environmental factors that may affect human 
+health, particularly among children and other potentially vulnerable 
+populations, HHS seeks information on electromagnetic field (EMF) 
+emissions and exposure, particularly RF and wireless, and human health. 
+RF radiation and other forms of non-ionizing electromagnetic (EMF) 
+exposure, will hereafter be referred to as ``RF/EMF.'' Responses will 
+help identify and assess the current state of the scientific evidence 
+on RF/EMF exposures and health outcomes, compare existing domestic and 
+international safety standards and regulatory approaches, identify 
+research gaps and priority areas for future study, and inform 
+practical, evidence-based recommendations for policymakers, public 
+health stakeholders, families, schools, and communities. HHS welcomes 
+input from researchers, clinicians, public health professionals, 
+industry, standards organizations, educators, advocacy groups, and 
+members of the public to clearly distinguish established evidence from 
+emerging findings and areas of uncertainty, and supports transparent, 
+science-informed decision-making.
+
+DATES: Comments on this notice must be received no later than October 
+21, 2026.
+
+ADDRESSES: RFI Docket: You may examine the RFI docket at 
+<a href="http://regulations.gov">regulations.gov</a> under HHS-OASH-2026-0397. The docket contains this RFI 
+and all comments received to date. To submit a response, click the 
+``Comment'' button inside Docket: HHS-OASH-2026-0397and follow all 
+instructions.
+
+FOR FURTHER INFORMATION CONTACT: Victoria Marshall, Office of the 
+Assistant Secretary for Health, <a href="/cdn-cgi/l/email-protection#a4ebe5f7ec89f6e2ede4ccccd78ac3cbd2"><span class="__cf_email__" data-cfemail="a9e6e8fae184fbefe0e9c1c1da87cec6df">[email&#160;protected]</span></a>.
+
+SUPPLEMENTARY INFORMATION: Electromagnetic fields (EMFs) are energy 
+fields produced by moving electrically charged particles and electrical 
+currents. EMFs occur across a broad range of frequencies, including low 
+radiofrequency (RF) associated with power systems and household 
+appliances, as well as higher RF and microwave exposures associated 
+with wireless communication technologies. HHS is conducting this 
+request for information under 21 CFR subpart J.
+    Public concern about potential health effects from RF/EMF exposure 
+has increased, particularly in relation to children, schools, and long-
+term cumulative exposure. At the same time, scientific literature is 
+extensive, technically complex, and not always easy for policymakers or 
+public health stakeholders to interpret. Exposure standards and 
+regulatory approaches also vary across jurisdictions. HHS is interested 
+in clear, balanced, and evidence-informed information about RF/EMF 
+exposure that can support decision-making, identify research 
+priorities, and inform practical strategies to reduce unnecessary 
+exposure where appropriate.
+
+Request for Information
+
+    For this RFI, HHS is seeking input from the public, including 
+individuals, families, caregivers, healthcare professionals, public 
+health practitioners, researchers, organizations, equipment or product 
+manufacturers, service or infrastructure providers, and other 
+interested stakeholders that have knowledge of or experience with RF/
+EMF emission and exposure. Please identify whether your response is 
+based on peer-reviewed research, government reports, industry data, 
+clinical observations, or other sources. If you rely on existing 
+exposure guidelines, regulatory frameworks, or scientific assessments, 
+please identify the specific framework(s) and explain how they inform 
+your response. Respondents are encouraged to include supporting facts, 
+research, datasets, technical reports, and other evidence in their 
+comments, including citations to the published materials referenced, 
+and active hyperlinks, where available.
+
+Instructions
+
+    1. Responses submitted at <a href="http://regulations.gov/deregulation">regulations.gov/deregulation</a> should 
+follow the format provided there. You may respond to one or more of the 
+questions listed below and please include question numbers provided in 
+the response. Each responding entity (person or organization) should 
+submit only one response. Unless submitted anonymously, responses 
+should include the name(s) of the person(s) or organization(s) 
+submitting the comment. If a comment is submitted on behalf of an 
+organization, the individual respondent's role in the organization may 
+also be provided. In your response, please describe which 
+perspective(s) your comments represent: individual consumer, patient, 
+family member, or caregiver; healthcare professional; equipment or 
+product manufacturer; service or infrastructure provider; business; 
+industry group; government; research entity; or another type of 
+organization or perspective.
+    This RFI is voluntary, and responses may be submitted anonymously. 
+Please do not submit proprietary, classified, confidential, or 
+sensitive information, to include personally identifiable (PII) or 
+personal health information (PHI), in response to this RFI.
+    This RFI should not be construed as a policy, solicitation for 
+applications, or as an obligation on the part of the government to 
+provide support for any
+
+[[Page 59793]]
+
+ideas in response to it. Comments submitted will become public on 
+<a href="http://regulations.gov">regulations.gov</a>. The information provided will be analyzed and may 
+appear in anonymized reports, on HHS websites, or otherwise released 
+publicly. Respondents are advised that the government is not obligated 
+to acknowledge receipt of submissions. Those submitting responses are 
+solely responsible for all expenses associated with response 
+preparation. HHS will use the information submitted in response to this 
+RFI at its discretion and will not comment on any respondent's 
+submission. However, responses to this RFI may be reflected in future 
+solicitation(s) or policies.
+
+Questions
+
+Public Experiences and Reported Potential Adverse Health Effects
+
+    2. In your response, please describe which perspective(s) your 
+comments represent: individual consumer, patient, family member, or 
+caregiver; healthcare professional; worker with occupational exposure; 
+equipment or product manufacturer; service or infrastructure provider; 
+business; industry group; government; research entity; or another type 
+of organization or perspective.
+    3. We invite individuals, families, caregivers, healthcare 
+professionals, and organizations to share experiences regarding 
+potential adverse health effects they believe may be associated with 
+exposure to RF/EMFs. Respondents are encouraged to provide as much 
+detail as they are comfortable sharing, recognizing that responses to 
+this RFI will be public and therefore should not include PII or PHI. 
+Examples of information that may be helpful to include are the 
+following:
+    a. The type(s) of wireless technology or RF/EMF source(s) involved 
+(e.g., mobile phones, Wi-Fi, smart meters, wireless infrastructure, 
+wearable devices, occupational equipment).
+    b. The nature, duration, frequency, and approximate timing of the 
+reported exposure(s).
+    c. The potential adverse health effects experienced.
+    d. When potential adverse health effects first appeared relative to 
+when exposure began and whether any changes in exposure coincided with 
+potential adverse health effects.
+    e. Whether medical evaluation or treatment was sought, including 
+any diagnoses received (if the respondent chooses to share them).
+    f. Whether steps to reduce or eliminate exposure were taken and, if 
+so, whether any subsequent changes in potential adverse health effects 
+were observed.
+    g. Any supporting documentation, including scientific reports, 
+exposure measurements, or other relevant information.
+    4. We invite healthcare professionals, researchers, and public 
+health practitioners to describe observations from clinical practice, 
+occupational settings, or research that may help identify patterns, if 
+any, of reported potential adverse health effects associated with RF/
+EMF radiation and exposure. In describing these observations, please 
+include where available:
+    h. The types of potential adverse health effects reported.
+    i. Onset of potential adverse health effects.
+    j. Characteristics of the individuals or populations involved, 
+excluding any identifying information such as PII or PHI.
+    k. Any observed exposure patterns.
+    l. What standardized methods were used to assess exposure or 
+potential adverse health effects, if any were used.
+    m. Recommendations for future research or surveillance.
+
+Exposure Standards and Risk Assessment
+
+    5. What existing national and international exposure standards, 
+guidelines, or regulatory frameworks should federal health agencies 
+consider when evaluating the potential adverse health effects of human 
+exposure to RF/EMF?
+    n. What scientific, technical, or regulatory changes by federal 
+health agencies, if any, would improve the assessment, disclosure, and 
+regulation of wireless radiation exposure?
+    o. Is additional research needed to develop, test, and evaluate the 
+effectiveness of procedures and techniques for minimizing exposure to 
+electronic product radiation? Where are the largest gaps, if any, in 
+knowledge? What research is needed to appropriately evaluate current or 
+future national and international exposure standards, guidelines, or 
+regulatory frameworks.
+    p. How, if at all, should a classification system account for 
+exposure-related characteristics, including operating frequency, power 
+density, specific absorption rate (SAR), electric- and magnetic-field 
+strength, modulation and pulse characteristics, duty cycle, 
+beamforming, simultaneous exposure to multiple frequencies, duration of 
+exposure, distance from the source, proximity to the body, and 
+cumulative exposure over time?
+    6. What scientific evidence exists about potential adverse health 
+effects caused by current exposure limits?
+
+Measuring Human Exposure and Public Health Surveillance
+
+    7. What scientific methods are currently available for accurately 
+characterizing individual and population-level RF radiation exposure?
+    8. What, if any, improvements in exposure assessment methodologies 
+are needed to better evaluate real-world exposure conditions?
+    9. What, if any, technical and exposure-related information should 
+be disclosed to consumers, residents, workers, schools, healthcare 
+providers, and local governments?
+    10. What data sources or surveillance systems currently exist to 
+monitor potential adverse health effects associated with RF radiation 
+exposure? Should additional data sources or surveillance systems be 
+developed? Please discuss the benefits and challenges of the following 
+data sources and surveillance systems, as relevant:
+    a. disease registries.
+    b. occupational monitoring.
+    c. environmental monitoring.
+    d. longitudinal cohort studies.
+    e. biomonitoring.
+    f. adverse event reporting.
+    g. disease or illness clusters.
+    h. Other.
+    11. Should exposure assessment or risk evaluation differ for 
+sensitive populations such as those noted below? Please explain.
+    a. children.
+    b. pregnant women.
+    c. older adults.
+    d. individuals with implanted medical devices.
+    e. workers with elevated occupational exposure.
+    f. individuals with preexisting medical conditions.
+    g. Other populations that may uniquely experience potential adverse 
+health effects in response to RF radiation.
+
+Existing Evidence
+
+    12. What scientific evidence exists regarding potential adverse 
+health effects associated with RF radiation exposure at levels below 
+current federal exposure limits?
+    13. According to scientific evidence, how do the technologies below 
+affect cumulative exposure patterns?
+    a. 5G.
+    b. 6G.
+    c. Wi-Fi.
+    d. Satellite-based communications.
+    e. Internet of Things (IoT).
+    f. Wearable technologies.
+
+[[Page 59794]]
+
+    g. Smart homes/appliances.
+    h. Smart cities.
+    i. Autonomous vehicles.
+    j. Wireless medical devices.
+    k. Communication enabled smart meters.
+    14. What scientific evidence exists regarding potential adverse 
+environmental effects associated with RF radiation?
+    15. What types of scientific evidence should be considered when 
+evaluating RF exposure associated with wireless infrastructure? Please 
+comment on:
+    a. proximity to homes, schools, childcare facilities, healthcare 
+facilities, and/or workplaces.
+    b. cumulative neighborhood exposure.
+    c. antenna density.
+    d. small-cell deployment.
+    e. livestock.
+
+Federal Research Priorities
+
+    16. What are the highest priority research gaps regarding EMF and 
+RF radiation and public health that the federal health agencies should 
+address?
+    17. How can federal health agencies improve coordination of EMF and 
+RF radiation research? Please comment on potential roles for federal 
+health agencies including, but not limited to:
+    a. HHS Food and Drug Administration (FDA).
+    b. HHS National Institutes of Health (NIH).
+    c. HHS Centers for Disease Control and Prevention (CDC).
+
+Additional Information
+
+    18. Please identify any additional scientific evidence, technical 
+information, data, or recommendations that federal health agencies 
+should consider when evaluating potential adverse health effects 
+associated with RF/EMF radiation exposure.
+
+Robert F. Kennedy, Jr.,
+Secretary, Department of Health and Human Services.
+[FR Doc. 2026-19252 Filed 9-17-26; 12:30 pm]
+BILLING CODE 4164-01-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

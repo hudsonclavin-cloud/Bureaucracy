@@ -1,0 +1,181 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 172 (Tuesday, September 8, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 172 (Tuesday, September 8, 2026)]
+[Notices]
+[Pages 57166-57167]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-18205]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+MERIT SYSTEMS PROTECTION BOARD
+
+
+Agency Information Collection Activities: Renewal With Change of 
+a Currently Approved Information Collection; Comment Request
+
+AGENCY: Merit Systems Protection Board.
+
+ACTION: 60-Day notice and request for comments.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The U.S. Merit Systems Protection Board (MSPB or Board) is 
+seeking to renew with change a currently approved Information 
+Collection Request (ICR) in accordance with the Paperwork Reduction Act 
+(PRA). MSPB will submit the ICR to the Office of Management and Budget 
+(OMB) for review and clearance. This information collection is part of 
+MSPB's statutory mission to adjudicate appeals of certain Federal 
+agency personnel and retirement actions and certain alleged violations 
+of law. The information collection instruments consist of the Initial 
+Appeal Form in different collection mediums: paper; PDF; and 
+electronically through MSPB's electronic filing system, e-Appeal. 
+Through this collection and approval process, MSPB is complying with 
+normal clearance procedures. The purpose of this notice is to allow 60 
+days for public comment preceding submission of the collection to the 
+OMB.
+
+DATES: Consideration will be given to all comments received by November 
+9, 2026.
+
+ADDRESSES: Submit comments by using only one of the following methods:
+    (1) Email. Submit comments to <a href="/cdn-cgi/l/email-protection#ddadafb4abbcbea49db0aeadbff3bab2ab"><span class="__cf_email__" data-cfemail="2d5d5f445b4c4e546d405e5d4f034a425b">[email&#160;protected]</span></a>.
+    (2) Mail. Submit comments to Gina K. Grippando, Clerk of the Board 
+and Senior Agency Official for Privacy, Office of the Clerk of the 
+Board, U.S. Merit Systems Protection Board, 1615 M Street NW, 
+Washington, DC 20419.
+    (3) Fax. Submit comments to (202) 653-7130.
+    All comments must reference OMB Control No. 3124-0017. Regardless 
+of the method used for submitting comments or material, MSPB will post 
+all submissions, without change, to MSPB's website (<a href="http://www.mspb.gov">www.mspb.gov</a>) and 
+will include any personal information that you provide. Therefore, 
+submitting this information makes it public.
+
+FOR FURTHER INFORMATION CONTACT: Gina K. Grippando, Clerk of the Board 
+and Senior Agency Official for Privacy, at <a href="/cdn-cgi/l/email-protection#f383819a8592908ab39e808391dd949c85"><span class="__cf_email__" data-cfemail="bacac8d3ccdbd9c3fad7c9cad894ddd5cc">[email&#160;protected]</span></a>. You may 
+submit written questions to the Office of the Clerk of the Board by any 
+of the following methods: by email to <a href="/cdn-cgi/l/email-protection#3747455e4156544e775a44475519505841"><span class="__cf_email__" data-cfemail="c5b5b7acb3a4a6bc85a8b6b5a7eba2aab3">[email&#160;protected]</span></a>, or by mail to 
+Clerk of the Board, U.S. Merit Systems Protection Board, 1615 M Street 
+NW, Washington, DC 20419. Please reference OMB Control No. 3124-0017 
+with your questions.
+
+SUPPLEMENTARY INFORMATION: MSPB is authorized to adjudicate appeals of 
+certain Federal agency personnel and retirement actions and certain 
+alleged violations of law. See 5 U.S.C.Sec.  7701(a); 5 U.S.C.Sec.  
+1204. The Board has published its regulations for processing appeals at 
+5 CFR parts 1201, 1208, and 1209, which include the information 
+required to be submitted to initiate a new appeal. Individuals must 
+provide this information in writing and are not required to use a 
+particular format.
+    The purpose of collecting the information is to ensure that 
+individuals submit the required information to file an appeal, as set 
+forth in MSPB's regulations. While no specific format is required, MSPB 
+provides an appeal form, MSPB Form 185 (Initial Appeal Form), to assist 
+individuals in the efficient and timely submission of the information.
+    As set forth in statute and regulation, MSPB is a quasi-judicial 
+agency of limited jurisdiction. The Board's regulations require that 
+appellants provide certain information when filing an appeal so that 
+the Board can determine whether it has jurisdiction over the appeal and 
+whether the appeal has been filed within the applicable time limit. 
+Although an appeal may be filed in any format, including letter form, 
+the Initial Appeal Form is designed to assist individuals in submitting 
+the required information, and to ensure that individuals file appeals 
+that meet the jurisdictional requirements of MSPB. The information 
+required to file an appeal is set forth at 5 CFR 1201.24, 1208.13, 
+1208.23, and 1209.6. Once obtained, this information allows MSPB to 
+docket the appeal for assignment to an administrative judge to 
+adjudicate the appeal. If this information is not collected, the 
+process of determining whether MSPB has jurisdiction over any given 
+appeal and any subsequent adjudication will be less efficient and more 
+time consuming.
+
+Appeal Form 185
+
+    The Initial Appeal Form (Form 185) for this renewal is 
+substantially similar to the currently approved Initial Appeal Form 
+with the following updates. The Instructions include edits to remove 
+references to field offices and an update to the Privacy Act Statement 
+to reflect the current system of records notice for
+
+[[Page 57167]]
+
+appeals and case records. Part 2--Agency Personnel Action or Decision 
+(non-retirement) includes updates to address changes in laws or 
+regulations, including recent regulatory revisions that went into 
+effect on September 2, 2026. Specifically, it removes the following 
+check boxes: ``Termination during probationary or initial service 
+period'' and ``Negative suitability determination.'' It also modifies 
+the check box that currently states ``Separation, demotion or furlough 
+for more than 30 days by reduction in force (RIF)'' to state 
+``Reduction-in-force (RIF) action in the Foreign Service.'' And it adds 
+a new check box for ``Failure to restore to duty from Uniformed Service 
+or work-related compensable injury.'' Appendix B includes updates to 
+remove the Denver Field Office and add to the Western Regional Office 
+the following states: Arizona, Colorado, Kansas (except Kansas City), 
+Montana, Nebraska, New Mexico, North Dakota, South Dakota, Utah and 
+Wyoming. There are also non-substantive formatting updates throughout 
+the Initial Appeal Form.
+
+Law Firm Point of Contact Collection Form
+
+    There are no changes to the previously approved form.
+
+e-Appeal Technical Support Collection Form
+
+    There are no changes to the previously approved form.
+    Title: Information Collection Submission for ``E-Appeal/U.S. Merit 
+Systems Protection Board Appeal Form.''
+    OMB Number: 3124-0017.
+    Type of Information Collection: Renewal with Change of a currently 
+approved information collection.
+    ICR Status: This ICR is currently set to expire on September 30, 
+2026. An Agency may not conduct or sponsor, and a person is not 
+required to respond to, a collection of information, unless it displays 
+a currently valid OMB control number.
+    Abstract of Proposed Collection: This information collection is 
+necessary to ensure that individuals submit the required information to 
+file an appeal, as set forth in MSPB's regulations, including 
+information about the appellant and the personnel action or decision 
+that is being appealed.
+    Affected Public: Individuals and Households.
+    Estimated Total Number of Respondents: 5,000.
+    Estimated Frequency of Responses: Once per year.
+    Estimated Total Average Number of Responses for Each Respondent: 1.
+    Estimated Total Annual Burden Hours: 7,500.
+    Estimated Total Cost: $294,075.
+    Comments: Submit comments as indicated in the ADDRESSES caption 
+above. MSPB is soliciting comments to: (a) evaluate whether the 
+collection of information is necessary for the proper performance of 
+the functions of MSPB, including whether the information shall have 
+practical utility; (b) evaluate the accuracy of MSPB's estimate of the 
+burden of the collection of information; (c) enhance the quality, 
+utility, and clarity of the information to be collected; (d) minimize 
+the burden of the collection of information on respondents, including 
+through the use of automated collection techniques or other forms of 
+information technology; and (e) evaluate the estimates of capital or 
+start-up costs and costs of operation, maintenance, and purchase of 
+services to provide information. Burden means the total time, effort, 
+or financial resources expended by persons to generate, maintain, 
+retain, disclose or provide information to or for a Federal agency. 
+This includes the time needed to review instructions; to develop, 
+acquire, install and utilize technology and systems for the purpose of 
+collecting, validating and verifying information, processing and 
+maintaining information, and disclosing and providing information; to 
+train personnel and to be able to respond to a collection of 
+information, to search data sources, to complete and review the 
+collection of information; and to transmit or otherwise disclose the 
+information.
+
+Gina K. Grippando,
+Clerk of the Board.
+[FR Doc. 2026-18205 Filed 9-4-26; 8:45 am]
+BILLING CODE 7400-01-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

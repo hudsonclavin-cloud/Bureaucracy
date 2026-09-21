@@ -1,0 +1,610 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 168 (Tuesday, September 1, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 168 (Tuesday, September 1, 2026)]
+[Rules and Regulations]
+[Pages 56056-56060]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-17901]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+OFFICE OF MANAGEMENT AND BUDGET
+
+Office of Federal Procurement Policy
+
+48 CFR Part 9903
+
+RIN 0348-AB85
+
+
+Increase of Monetary Thresholds and Other Matters Related to Cost 
+Accounting Standards Program Requirements
+
+AGENCY: Cost Accounting Standards Board, Office of Federal Procurement 
+Policy. Office of Management and Budget.
+
+ACTION: Final rule.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The Office of Management and Budget (OMB), Cost Accounting 
+Standards Board (Board), is publishing a final rule to increase the 
+Cost Accounting Standards (CAS) thresholds and agency waiver authority, 
+and issue clarifications on application of the CAS thresholds and 
+exemptions to indefinite delivery contracts (IDCs).
+
+DATES: Effective October 1, 2026.
+
+FOR FURTHER INFORMATION CONTACT: John L. McClung, Manager, Cost 
+Accounting Standards Board (telephone: 202-881-9758; email: 
+<a href="/cdn-cgi/l/email-protection#3877757a7b796b7a7857555a165d5748165f574e"><span class="__cf_email__" data-cfemail="327d7f7071736170725d5f501c575d421c555d44">[email&#160;protected]</span></a>.).
+
+SUPPLEMENTARY INFORMATION: 
+
+I. Background
+
+    On March 20, 2026, the Board published a notice of proposed 
+rulemaking (NPRM) (91 FR 13559) to solicit views on the Board's 
+provisional conclusions regarding increases to the CAS thresholds and 
+agency waiver authority, and proposed clarifications on applying the 
+CAS thresholds and exemptions to indefinite delivery contracts (IDCs).
+    The Board received nine sets of public comments to the NPRM: five 
+from industry associations, two from individual contractors, one from a 
+consulting firm, and one from an individual. Comments strongly 
+supported the Board's proposed actions and the deregulatory nature of 
+the NPRM. Although comments did not provide information to quantify the 
+impact of this final rule, all comments strongly supported the 
+qualitative aspects noted in the NPRM: reduced compliance costs, 
+simplified CAS administration for existing contractors,
+
+[[Page 56057]]
+
+and reduced barriers to entry for nontraditional contractors, new 
+entrants, and mid-size entities who no longer qualify for a full 
+exemption from CAS as small businesses. Specific comments and 
+discussion, as applicable, are detailed in the sections below. This 
+final rule reflects input from the public, as well as research 
+conducted by the Board. This final rule is issued by the Board in 
+accordance with the requirements of 41 U.S.C. 1502.
+
+II. Regulatory Thresholds
+
+a. Overview and Conclusion
+
+    This final rule raises the thresholds for full CAS coverage and 
+Disclosure Statement requirements from the current $50 million to $100 
+million. This final rule also eliminates the exemption at CAS 9903.202-
+1(c)(ii) which currently exempts a Disclosure Statement from a segment 
+if during the most recently completed cost accounting period the 
+segment's CAS-covered awards are less than 30 percent of total segment 
+sales for the period and less than $10 million. As a result of the 
+higher thresholds this exemption is no longer necessary.
+    Based on public comments this final rule further revises 9903.202-
+1(b)(2) to more clearly state that a Disclosure Statement is required 
+only for segments or business units that independently meet the 
+applicable thresholds for full CAS coverage. As a result, the Board is 
+also removing CAS 9903.202-1(c) in its entirety as it is no longer 
+necessary with the additional clarity provided in 9903.202-1(b)(2) as 
+suggested by public comments.
+    Based on public comments this final rule further amends 9903.201-2 
+(b) to provide a mechanism for determining eligibility for modified 
+coverage for new solicitations and awards for contractors or 
+subcontractors currently subject to full coverage that would not 
+otherwise be subject to full coverage at the new $100 million 
+threshold. This requires that the contractor or subcontractor has no 
+unresolved CAS noncompliances.
+    As detailed in the NPRM, the Board's analysis estimated these 
+changes will result in a substantial reduction of burden and lower the 
+barrier to entry with a minimal loss in the total dollars currently 
+subject to full coverage and Disclosure Statement requirements.
+
+b. Summary of Public Comments on Regulatory Thresholds
+
+    Comments strongly supported the Board's provisional conclusions in 
+the NPRM to raise the regulatory thresholds and eliminate the exemption 
+at CAS 9903.202-1(c)(ii). Comments raising additional issues are as 
+follows:
+    Comment: A number of comments requested additional improvements to 
+the proposed language covering Disclosure Statement requirements. While 
+these comments offered varying alternatives, they identified similar 
+opportunities for the Board to further streamline and provide greater 
+clarity on applying the Disclosure Statement requirements for entities 
+with multiple CAS reporting segments. For example, as one comment 
+explained,
+
+    The current requirements to aggregate total company CAS covered 
+awards in 9903.202-1(b)(2) and then to separately assess 
+applicability at the business unit (or segment) level in 9903.202-
+1(c) creates an unnecessary step and causes confusion in determining 
+whether a Disclosure Statement is required for each business unit. 
+In the spirit of streamlining and simplifying regulatory 
+requirements and reducing administrative burden, we recommend 
+eliminating the total company threshold and implementing the 
+threshold at the business unit level to align the threshold to the 
+filing requirement.
+
+    The comment recommended revising the current language at 9903.202-
+1(b)(2) to more clearly state that a Disclosure Statement is required 
+only for segments or business units that independently meet the 
+applicable thresholds for full CAS coverage. With this clarification 
+they further recommended deleting CAS 9903-202-1(c) in its entirety as 
+it is no longer necessary with the recommended changes in section 
+9903.202-1(b)(2).
+    Response: The Board concurs this creates an unnecessary step and 
+may cause confusion in determining whether a Disclosure Statement is 
+required for each business unit. The Board has incorporated this 
+recommendation in the final rule as noted above.
+    Comment: Multiple commenters recommended the Board consider issuing 
+transition guidance related to the application of the new thresholds 
+considering the potential implications for full versus modified CAS 
+coverage. For example, as one commenter theorized; if a contractor is 
+performing a $50 million contract subject to full CAS coverage under 
+the current thresholds with no other CAS-covered awards and receives a 
+$40 million CAS-covered award under the new thresholds it would be 
+subject to full coverage. In this scenario, the new award itself is not 
+over $100 million and taken together with the existing contract the 
+awards are not over $100 million; however, because the contractor had 
+an award subject to full CAS coverage under the prior thresholds, any 
+new award between $35 million and $100 million (not otherwise exempt 
+from CAS) would be subject to full CAS coverage due to the requirements 
+at 9903.201-2(b)(2).
+    Comments also contend that to fully realize the deregulatory 
+intent, the Board should ensure a level playing field for ``mid-tier'' 
+firms. This would allow existing contractors otherwise eligible for 
+modified coverage to receive the same benefit as a new entrant or other 
+entity currently not subject to CAS if they are competing for an award 
+that would qualify for modified CAS coverage. Without a transition 
+mechanism, a number of existing contractors will face a significant 
+competitive disadvantage against new entrants who benefit from the 
+higher $100 million threshold immediately.
+    Response: The Board appreciates the concerns raised and generally 
+agrees such a mechanism is desirable and in the spirit of the Board's 
+deregulatory actions. However, the Board believes this needs to be 
+contingent on a contractor currently being in a compliant status. As 
+such, the Board has provided added coverage in 9903.202-1(b) to provide 
+this with the requirement that the contractor or subcontractor has no 
+outstanding CAS noncompliances. In addition, the Board expects 
+contractors will continue to follow their existing practices as they 
+comply with CAS. As such, any current or future cost accounting 
+practice changes related to the transition from full CAS coverage to 
+modified CAS coverage would be considered unilateral and subject to the 
+contract price adjustment requirements.
+    Comment: Comments generally supported the use of the Unique Entity 
+Identifier (UEI) as a proxy for a covered segment for the purpose of 
+analyzing the potential impact of the regulatory changes contemplated 
+in the NPRM. However, comments raised concerns that there may not 
+always be a one-to-one relationship between a CAS segment and a UEI. 
+These comments urged the Board to clarify it was not changing the CAS 
+definition of a segment.
+    Response: The NPRM did not propose to change, nor is the final rule 
+changing the definition of a CAS segment contained in CAS regulations. 
+The Board appreciates the concerns raised by the public and will 
+continue to evaluate how changes in other statutory requirements, 
+technology, and the business environment impact CAS program 
+requirements. If the Board determines further changes are necessary to 
+the definitions and application of CAS program requirements they will 
+be made through subsequent rulemaking.
+
+[[Page 56058]]
+
+III. Statutory Thresholds
+
+a. Overview and Conclusion
+
+    As detailed in the NPRM, OMB developed a legislative proposal to 
+decouple the basic CAS monetary threshold from the Truthful Cost or 
+Pricing Data statute, and raise it to a stated dollar amount of $35 
+million. The proposal also eliminated the $7.5 million trigger contract 
+threshold as it would no longer be necessary with a higher 
+applicability threshold. The proposal was transmitted to Congress in 
+June of 2025 for consideration in the 2026 National Defense 
+Authorization Act (NDAA). As discussed in the NPRM the Board's analysis 
+estimated these changes would reduce the number of CAS-covered business 
+segments by approximately 60 percent, while still maintaining over 90 
+percent of the current dollars subject to CAS coverage. Section 1806 of 
+the 2026 NDAA fully codified the OMB legislative proposal, and this 
+final rule revises 9903.201-1 CAS applicability to implement these 
+changes.
+    Based on public comments this final rule also modifies the three 
+statutory CAS exemptions at 9903.201-1(b) to align them with the 
+amendments made by Section 1806(d) of the 2026 NDAA. Section 1806(d) 
+added language to the three statutory CAS exemptions in 41 U.S.C. 1502 
+to make them applicable to portions of contracts and subcontracts. 
+These changes address contract arrangements that include multiple 
+contract types (i.e., hybrid contracts).
+
+b. Summary of Public Comments
+
+    Comments strongly supported OMB's legislative proposal and the 
+Board's provisional conclusions in the NPRM to raise the statutory 
+thresholds as a result of the 2026 NDAA codification of the OMB 
+proposal. A number of comments related to additional provisions of the 
+2026 NDAA were made as follows:
+    Comment: Commenters pointed out that the proposed rule did not 
+address other CAS related provisions included in the 2026 NDAA. 
+Specifically changes to the contract price adjustments requirements in 
+41 U.S.C. 1503, and the Section 1806(d) amendments to the statutory 
+exemptions to accommodate hybrid contract arrangements.
+    Response: The Board recognizes the importance of the remaining 2026 
+NDAA provisions. The Board has updated the statutory exemptions 
+included 9903.201-1(b) to align them with the 2026 NDAA revisions to 
+apply those exemptions to portions of contracts and subcontracts (i.e., 
+hybrids). However, attempting to incorporate the complex issues related 
+to the contract price adjustments requirements in 41 U.S.C. 1503 would 
+require additional notice and comment. As noted in its July 2, 2025 
+notice of agenda topics, (90 FR 29048) the Board has already begun 
+review of contract price adjustments requirements and has established a 
+separate case which will incorporate the direction provided in the 2026 
+NDAA.
+
+IV. Agency Head Waiver Authority
+
+a. Overview and Conclusion
+
+    CAS 9903.201-5 currently provides the head of an executive agency 
+the authority to waive CAS on their own for contracts valued up to $15 
+million without seeking approval from the Board, but they must notify 
+the Board of the waiver. This final rule raises this threshold to $100 
+million. This increase implements changes made to 41 U.S.C. 1502(b)(3) 
+by Section 820 of the 2017 NDAA.
+
+b. Summary of Public Comments
+
+    Comments strongly supported the Board updating its regulations to 
+accurately reflect the increased waiver authority for the head of an 
+executive agency as a result of the 2017 NDAA change.
+
+V. Application of CAS to Indefinite Delivery Contracts
+
+a. Overview and Conclusion
+
+    Indefinite delivery contracts (IDCs) are contracts where work is 
+awarded through the placement of individual task and delivery orders as 
+requirements arise, with a minimum guaranteed order value and a ceiling 
+amount reflecting the maximum total value of orders that can be placed 
+under the contract. They include the Federal Supply Schedule (FSS) 
+program and government-wide acquisition contracts (GWACs). Obligations 
+under the FSSs and GWACs are tracked separately from other task and 
+delivery order contracts in the Federal Procurement Data System (FPDS).
+    As detailed in the NPRM, analysis of FPDS data indicates the use of 
+IDCs has continued to increase in both size and as a percentage of 
+overall contract obligations. Although there is a statutory preference 
+to award IDCs to multiple contractors, they may also be awarded to a 
+single contractor. The prevalence of obligations on task and delivery 
+orders against IDCs awarded to a single contractor has also increased, 
+reaching $262 billion in Fiscal Year (FY) 2024. This represented over 
+one-third of all contract obligations in FY2024. Preliminary data for 
+FY 2025 indicated a similar dispersion of contract obligations.
+    The Board has concluded that, unlike multiple-award IDCs, the 
+information required to determine CAS exemptions and consistently apply 
+CAS to single-award IDCs is available at the time of award of the 
+single-award IDC. For these reasons, this final rule amends 9903.202-1 
+to make clear that application of CAS to multiple-award IDCs including 
+all exemptions is determined at the task or delivery order level. For 
+multiple-award IDCs CAS would apply only to those individual task or 
+delivery orders whose values meet the monetary threshold for CAS 
+coverage and do not qualify for another CAS exemption.
+    This final rule also amends 9903.202-1 to make clear that 
+application of CAS applicability to single-award IDCs is determined at 
+the time of award of the IDC using the ceiling value to assess if the 
+monetary threshold has been met. Based on input from public comments, 
+this final rule adds additional language to clarify that a single-award 
+IDC can be exempt if the entire IDC meets one of the other exemptions 
+in 9903.202-1(b) (i.e., the IDC is awarded to a small business, the IDC 
+only provides for orders of commercial products or commercial services, 
+or the IDC only allows for orders that are firm-fixed-price and the IDC 
+was awarded on the basis of adequate price competition without the 
+submission of certified cost or pricing data).
+    This final rule is consistent with the criteria the Board 
+identified for evaluating alternatives: it helps each contract party 
+manage risk; it is expected to reduce regulatory burden, and promote 
+competition by minimizing complexity and providing guidance that is 
+clear and straightforward. Having a clear and predictable rule promotes 
+consistency in the application of CAS and avoids friction and disputes. 
+Public comments did not provide any additional alternatives or criteria 
+for the Board to consider.
+
+b. Summary of Public Comments
+
+    Comments strongly supported the Board's provisional conclusions in 
+the NPRM to apply CAS exemptions at the task or delivery order level 
+for multiple-award IDCs. However, comments did not support the Board's 
+provisional conclusions in the NPRM to apply CAS exemptions at the IDC 
+level for single-award IDCs. Comments preferred that CAS applicability 
+for all IDCs should be determined at the task or delivery order level 
+as proposed by the Board for multiple-award IDCs. Although the Board 
+was not persuaded by these
+
+[[Page 56059]]
+
+comments, it appreciates the breadth and depth of responses. 
+Illustrative examples of concerns raised are discussed in further 
+detail below.
+    Comment: Some comments argue that the Board's proposed approach of 
+treating single-award IDCs differently than multiple-award IDCs creates 
+inconsistencies. Some further posit the approach is contradictory to 
+the purpose of the CAS exemptions themselves, which are meant to reduce 
+the administrative burden on low-risk acquisitions. Others declared 
+this approach creates inequity in the treatment of single-award and 
+multiple-award IDCs.
+    Response: The Board does not consider the approach as inconsistent 
+or creating inequities. Single-award and multiple-award IDCs are 
+inherently different. Task or delivery orders awarded under each type 
+of IDC are awarded under different circumstances and present 
+differentiated levels of risk. Single-award IDCs establish a long-term 
+relationship without maintaining competition for task or delivery 
+orders. Single-award IDCs increase the potential for vendor lock-in, 
+further reducing competition and creating risk to the Government. This 
+type of transaction creates higher risk, not lower risk as some 
+comments suggested.
+    Comment: Some comments theorized the Board's proposed approach of 
+determining CAS applicability differently for single-award IDCs could 
+result in applying CAS to transactions that would otherwise be exempt 
+such as commercial products and commercial services. One comment 
+postulated that the application of CAS at the IDC level could result in 
+the application of CAS to tasks or delivery orders that would be exempt 
+if these same task or delivery orders were issued under a multiple-
+award IDC or nearly all other contract scenarios. Another comment 
+declared the Board's proposed approach of determining CAS applicability 
+differently for single-award IDCs would result in application of CAS to 
+fixed-price contracts.
+    Response: The Board appreciates the concerns raised associated with 
+unique hybrid contract arrangements. As noted above, the Board is 
+addressing the application of CAS to hybrid contracts through this 
+rulemaking. In addition, the Board has added additional language to 
+clarify that an entire single-award IDC could be exempt under certain 
+circumstances.
+    Comment: A number of comments suggested the Board delay issuance of 
+a final rule, and conduct additional data analysis related to single-
+award IDCs. This point was part of their overall objection to the 
+Board's proposed approach for single-award IDCs, and concerns that in 
+some cases the cumulative value of task or delivery orders on single-
+award IDCs may not reach or could fall well below the ceiling value. 
+For example, it would be possible for a $35 million single-award IDC to 
+receive less than $35 million in tasks or delivery orders. Similarly, a 
+$100 million single-award IDC could receive less than $100 million in 
+tasks or delivery orders.
+    Response: The Board recognizes the potential exists for cases as 
+those described by comments and has carefully considered the likelihood 
+of these scenarios in both the NPRM and this final rule. These 
+scenarios under single-award IDCs are similar to the risk under 
+definitive contracts that may, in some cases, not have all options 
+exercised. The Board believes the risk, similar to most regulations 
+applying thresholds, is amplified at or near the threshold. However, 
+the Board believes this risk decreases at higher values and is 
+mitigated as a result of the increased thresholds finalized in this 
+rule. The Board's analysis also indicated that most of the entities 
+receiving single-award IDCs would otherwise be subject to CAS based on 
+definitive awards, which further mitigates this risk. The Board 
+appreciates the willingness of the industry associations to engage with 
+their members to collect, aggregate, and provide the Board with actual 
+data. This would be particularly beneficial for subcontracts where 
+currently the government-wide data is limited. Lastly, the Board notes 
+that this final rule does not preclude the Board from conducting 
+further analysis or additional rulemaking in the future as the impact 
+of the threshold increases take effect and additional information 
+becomes available or is provided to the Board.
+
+VI. Expected Impact of the Rule
+
+    This final rule is deregulatory, reduces compliance costs, 
+simplifies CAS administration for existing contractors, and reduces 
+barriers to entry for nontraditional contractors, including new mid-
+size entities who no longer qualify for a full exemption from CAS as 
+small businesses. This final rule increases the basic CAS applicability 
+threshold from the current $2.5 million to $35 million, and eliminates 
+the $7.5 million trigger contract concept. This simplifies the 
+determination of CAS applicability while dramatically lowering barriers 
+to entry on larger value contracts. Larger contract values will attract 
+additional private investment into the federal contracting marketplace 
+and increase competition as a result of the higher point of entry 
+without the need to establish more sophisticated compliance regimes 
+required to comply with CAS requirements.
+    This final rule further reduces the CAS regulatory footprint by 
+doubling the thresholds for full CAS coverage and Disclosure Statement 
+requirements from $50 million to $100 million. This significantly 
+reduce compliance burden and lowers barriers to entry into the federal 
+marketplace. The Board analyzed FPDS data for the five-year period 
+covering FYs 2020 through 2024 and estimates there have been 773 
+entities subject to full coverage and Disclosure Statement requirements 
+with aggregate total contract values during the period of $1.22 
+trillion. Applying the finalized threshold of $100 million to the data 
+set estimates a reduction in the number of entities to 564 while 
+maintaining $1.21 trillion of the dollars. This represents a nearly 30 
+percent reduction in entities that would be subject to full CAS 
+coverage and Disclosure Statement reporting with a less than one 
+percent loss of the dollars currently subject to these requirements. 
+The higher threshold for full coverage reduces the barriers to entry 
+for nontraditional contractors including contractors that have outgrown 
+their small business size status and no longer qualify for a full 
+exemption from CAS as small businesses as they may be more willing to 
+compete for larger contracts only subject to modified coverage.
+    This final rule codifies needed clarity on applying the CAS 
+thresholds and exemptions to IDCs. Having a clear rule avoids 
+unnecessary ambiguity, friction and contract disputes. Determining CAS 
+applicability for multiple-award IDCs at the task or delivery order 
+ensure CAS is not overapplied to lower-risk transactions. Similarly, 
+determining CAS applicability for single-award IDCs at the IDC level 
+ensures CAS is not underapplied to higher-risk transactions. This 
+lowers barriers to entry into the federal marketplace as potential 
+offerors now have clarity on whether or not they will be subject to CAS 
+and, if covered, whether full or modified.
+    The changes addressed in this final rule, both individually and in 
+conjunction with the Board's ongoing broader CAS to GAAP conformance 
+efforts simplifies CAS administration and reduces barriers to entry for 
+nontraditional contractors including new mid-size entities who no 
+longer qualify as small businesses. These actions are expected to 
+increase competition in federal contracting.
+
+[[Page 56060]]
+
+VII. Regulatory Flexibility Act
+
+    CAS Board rules do not impact small entities within the meaning of 
+the Regulatory Flexibility Act 5 U.S.C. 601-612. Contracts and 
+subcontracts with small business concerns are exempted from all CAS 
+requirements.
+
+VIII. Executive Orders 12866, 13563 and 14192
+
+    Executive Orders (E.O.s) 12866 and 13563 direct agencies to assess 
+all costs and benefits of available regulatory alternatives and, if 
+regulation is necessary, to select regulatory approaches that maximize 
+net benefits. E.O. 13563 emphasizes the importance of quantifying both 
+costs and benefits, of reducing costs, of harmonizing rules, and of 
+promoting flexibility. This rule is not a significant regulatory action 
+under E.O. 12866, Regulatory Planning and Review, dated September 30, 
+1993. This rule is a deregulatory action under E.O. 14192 based on the 
+discussion in the ``Expected Impact of the Rule'' section.
+
+IX. Paperwork Reduction Act
+
+    The Paperwork Reduction Act, Public Law 96-511, does not apply to 
+this final rule, because this rule imposes no paperwork burden on 
+offerors, affected contractors and subcontractors, or members of the 
+public which requires the approval of OMB under 44 U.S. U.S.C. 3501, et 
+seq.
+
+List of Subjects in 48 CFR 9903
+
+    Government procurement, Cost accounting standards.
+
+Kevin R. Rhodes,
+Administrator, Office of Federal Procurement Policy, and Chair, Cost 
+Accounting Standards Board.
+
+    For the reasons set forth in the preamble, the Office of Management 
+and Budget is amending Chapter 99 of Title 48 of the Code of Federal 
+Regulations as set forth below:
+
+PART 9903--CONTRACT COVERAGE
+
+0
+1. The authority citation for part 9903 continues to read as follows:
+
+    Authority: Pub. L. 111-350, 124 Stat. 3677, 41 U.S.C. 1502.
+
+
+0
+2. Amend section 9903.201-1 by revising paragraph (b) and adding 
+paragraph (c) to read as follows:
+
+
+9903.201-1  CAS applicability.
+
+* * * * *
+    (b) The following categories of contracts and subcontracts are 
+exempt from all CAS requirements:
+    (1) Sealed bid contracts.
+    (2) Negotiated contracts and subcontracts not in excess of $35 
+million. For purposes of this paragraph (b)(2), an order issued by one 
+segment to another segment shall be treated as a subcontract.
+    (3) Contracts and subcontracts with small businesses.
+    (4) Contracts and subcontracts with foreign governments or their 
+agents or instrumentalities or, insofar as the requirements of CAS 
+other than 9904.401 and 9904.402 are concerned, any contract or 
+subcontract awarded to a foreign concern.
+    (5) Contracts and subcontracts (or the portion of a contract or 
+subcontract) in which the price is set by law or regulation.
+    (6) Contracts and subcontracts (or the portion of a contract or 
+subcontract) for the acquisition of commercial products or commercial 
+services.
+    (7) Subcontractors under the NATO PHM Ship program to be performed 
+outside the United States by a foreign concern.
+    (8) Firm-fixed-price contracts or subcontracts (or the portion of a 
+contract or subcontract) awarded on the basis of adequate price 
+competition without submission of certified cost or pricing data.
+    (c) Application of paragraph (b) exemptions to indefinite delivery 
+contracts shall be determined as follows:
+    (1) Multiple-award indefinite delivery contracts. The exemptions 
+listed in paragraph (b) shall be determined at the time of award of any 
+individual task or delivery order, and shall use the ceiling value of 
+the individual task or deliver order to determine if the monetary 
+threshold in (b)(2) has been met.
+    (2) Single-award indefinite delivery contracts. The exemptions 
+listed in paragraph (b) shall be determined at the time of award of the 
+indefinite delivery contract, and shall use the ceiling value of the 
+indefinite delivery contract to determine if the monetary threshold in 
+(b)(2) has been met. An entire single-award indefinite delivery 
+contract is exempt if it only provides for the ordering of commercial 
+products or commercial services, or only provides for ordering on a 
+firm-fixed-price basis and the indefinite delivery contract was awarded 
+on the basis of adequate price competition without the submission of 
+certified cost or pricing data.
+
+
+0
+3. Amend section 9903.201-2 by:
+0
+a. Removing ``$50 million'', wherever it appears, and adding, in its 
+place, the text ``$100 million''; and
+0
+b. Adding paragraphs (b)(4) and (5).
+    The additions read as follows
+
+
+9903.201-2  Types of CAS coverage.
+
+* * * * *
+    (b) * * *
+    (4) Contractors or subcontractors subject to full CAS coverage 
+based on the $50 million threshold in effect prior to October 1, 2026 
+may transition the affected contracts or subcontracts to modified 
+coverage at the start of the business unit's next full cost accounting 
+period beginning on or after October 1, 2026, provided the business 
+unit:
+    (i) Has no unresolved CAS noncompliances; and
+    (ii) Does not meet the criteria for full CAS coverage using the 
+$100 million threshold in effect as of October 1, 2026.
+    (5) Contractors or subcontractors eligible for modified coverage 
+based on the criteria in paragraph (b)(4) of this section may use this 
+status for determining and certifying eligibility for modified coverage 
+for new solicitations and awards on or after October 1, 2026.
+
+
+9903.201-3  [Amended]
+
+0
+4. Section 9903.201-3 is amended by removing ``$50 million'', wherever 
+it appears, and adding, in its place, the text ``$100 million''.
+
+
+9903.201-4  [Amended]
+
+0
+5. Section 9903.201-4 is amended by removing ``$50 million'', wherever 
+it appears, and adding, in its place, the text ``$100 million''.
+
+
+9903.201-5  [Amended]
+
+0
+6. Section 9903.201-5 is amended in paragraph (a) by removing ``$15 
+million'', and adding, in its place, the text ``$100 million''.
+
+
+9903.202-1  [Amended]
+
+0
+7. Section 9903.202-1 is amended by:
+0
+a. Removing ``$50 million'', wherever it appears, and adding, in its 
+place, the text ``$100 million'';
+0
+b. In paragraph (b)(2) removing the text ``Any company which, together 
+with its segments,'', and adding, in its place, the text ``Any business 
+unit or segment,''.
+0
+c. Removing and reserving paragraph (c).
+
+[FR Doc. 2026-17901 Filed 8-31-26; 8:45 am]
+BILLING CODE 3110-01-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

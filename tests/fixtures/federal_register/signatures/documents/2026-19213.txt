@@ -1,0 +1,664 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 181 (Monday, September 21, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 181 (Monday, September 21, 2026)]
+[Notices]
+[Pages 59828-59832]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-19213]
+
+
+-----------------------------------------------------------------------
+
+SECURITIES AND EXCHANGE COMMISSION
+
+[Release No. 34-106393; File No. SR-MSRB-2026-04]
+
+
+Self-Regulatory Organizations; Municipal Securities Rulemaking 
+Board; Order Granting Approval of a Proposed Rule Change To Amend MSRB 
+Rule G-27 to Exclude Certain Public Finance Activities From the Term 
+``Structuring of Public Offerings or Private Placements,'' Extend the 
+Length of the Exclusion for Non-Primary Residences From Municipal 
+Branch Office Designation, and Make a Technical Update to the Rule's 
+Title
+
+September 16, 2026.
+
+I. Introduction
+
+    On July 27, 2026, the Municipal Securities Rulemaking Board 
+(``MSRB'') filed with the Securities and Exchange Commission (``SEC'' 
+or ``Commission''), pursuant to Section 19(b)(1) of the Securities 
+Exchange Act of 1934 (``Act'' or ``Exchange Act'') \1\ and Rule 19b-4 
+thereunder,\2\ a proposed rule change to amend MSRB Rule G-27 (``Rule 
+G-27''), on supervision, to (i) exclude certain public finance 
+activities from the term ``structuring of public offerings or private 
+placements'' as used within MSRB Rule G-27, (ii) extend the length of 
+the exclusion for non-primary residences from municipal branch office 
+designation, and (iii) make a technical update to the title of MSRB 
+Rule G-27 (collectively, the ``proposed rule change'').\3\
+---------------------------------------------------------------------------
+
+    \1\ 15 U.S.C. 78s(b)(1).
+    \2\ 17 CFR 240.19b-4.
+    \3\ See Exchange Act Release No. 34-106014 (July 30, 2026), 91 
+FR 49460 (August 4, 2026) (File No. SR-MSRB-2026-04) (``Notice'').
+---------------------------------------------------------------------------
+
+    The MSRB will announce the operative date of the proposed rule 
+change in a regulatory notice to be published on the MSRB website no 
+later than 30 days following Commission approval.\4\ The compliance 
+date would be no earlier than 90 days and no later than 180 days 
+following Commission approval.\5\
+---------------------------------------------------------------------------
+
+    \4\ See Notice, 91 FR at 49460.
+    \5\ See id.
+---------------------------------------------------------------------------
+
+    The proposed rule change was published for comment in the Federal 
+Register on August 4, 2026.\6\ The Commission received four comment 
+letters \7\ on the proposed rule change. On September 2, 2026, the MSRB 
+responded to the comment letters.\8\ As described further below, the 
+Commission is approving the proposed rule change.
+---------------------------------------------------------------------------
+
+    \6\ See id.
+    \7\ See Letter from Leslie M. Norwood, Managing Director and 
+Associate General Counsel, Securities Industry and Financial Markets 
+Association, dated August 25, 2026 (``SIFMA Letter''); Letter from 
+Susan Gaffney, Executive Director, National Association of Municipal 
+Advisors, dated August 25, 2026 (``NAMA Letter''); Letter from 
+Michael Decker, Senior Vice President, Research & Public Policy, 
+Bond Market Association, dated August 24, 2026 (``BMA Letter''); and 
+Letter from Jessica R. Giroux, Chief Legal Officer, American 
+Securities Association, dated August 25, 2026 (``ASA Letter'').
+    \8\ See Letter from Ernesto A. Lanza, Chief Regulatory and 
+Policy Officer, MSRB, dated September 2, 2026 (``MSRB Letter'').
+---------------------------------------------------------------------------
+
+II. Description of the Proposed Rule Change
+
+A. Background
+
+    MSRB Rule G-27(a), on obligation to supervise, requires each 
+broker, dealer, or municipal securities dealers (``dealer'') to 
+supervise the conduct of the municipal securities activities of the 
+dealer and its associated persons to ensure compliance with MSRB rules, 
+and the applicable provisions of the Exchange Act and rules thereunder. 
+As such, MSRB Rule G-27(b)(iii) requires dealers to designate as an 
+office of municipal supervisory jurisdiction (``OMSJ'') any office at 
+which any one or more of the enumerated activities under MSRB Rule G-
+27(g)(i) occurs at such office with respect to municipal securities. 
+Locations that are not required to be designated as an OMSJ constitute 
+either a municipal branch office or a non-branch location.\9\
+---------------------------------------------------------------------------
+
+    \9\ See Notice, 91 FR at 49461.
+---------------------------------------------------------------------------
+
+    The MSRB notes it has never publicly defined the scope of the term 
+``structuring of public offerings or private placements,'' \10\ which 
+the MSRB believes has led to dealers designating some locations as an 
+OMSJ out of an abundance of caution.\11\ The MSRB notes that there are 
+additional compliance and regulatory obligations for locations 
+classified as an OMSJ or a municipal branch office, including annual 
+inspections.\12\ According to the MSRB, advancements in technology and 
+compliance tools have enhanced dealers' ability to more effectively 
+supervise the conduct of the municipal securities activities of the 
+dealer and that of its associated persons in a decentralized 
+environment due to hybrid work arrangements.\13\ The MSRB also stated 
+that certain surveillance and monitoring technology can provide a more 
+real-time supervision of associated persons regardless of their 
+physical location.\14\ Thus, according to the MSRB, dealers have made 
+strides in modernizing their workplace while also undertaking the 
+necessity of putting proper safeguards in place to ensure compliance 
+with MSRB rules and the applicable provisions of the Exchange Act and 
+rules thereunder.\15\
+---------------------------------------------------------------------------
+
+    \10\ See Notice, 91 FR at 49462. The MSRB notes that FINRA has 
+also never defined the term ``structuring of public offerings or 
+private placements'' in FINRA Rule 3110.
+    \11\ See Notice, 91 FR at 49461.
+    \12\ See Notice, 91 FR at 49462.
+    \13\ See Notice, 91 FR at 49461.
+    \14\ See id.
+    \15\ See id.
+---------------------------------------------------------------------------
+
+    Based on the above and as further described in the Notice, 
+according to the MSRB, the proposed rule change will provide greater 
+flexibility to dealers and their associated persons with respect to 
+hybrid work arrangements without modifying the OMSJ and municipal 
+branch office definitions within MSRB Rule G-27(g)(i) and MSRB Rule G-
+27(g)(ii), respectively.\16\
+---------------------------------------------------------------------------
+
+    \16\ See id.
+---------------------------------------------------------------------------
+
+B. Summary of the Proposed Rule Change
+
+    As discussed below and in the Notice, the proposed rule change 
+would amend Rule G-27 to (i) exclude certain public finance activities 
+from the term ``structuring of public offerings or private placements'' 
+as used within MSRB Rule G-27, (ii) extend the length of the exclusion 
+for non-primary residences from municipal branch office designation, 
+and (iii) make a technical update to the title of MSRB Rule G-27.\17\ 
+Specifically, the proposed rule change would extend an exemption from 
+municipal branch office designation under MSRB Rule G-27(g)(ii)(A)(3) 
+for non-primary residences from less than
+
+[[Page 59829]]
+
+30 business days per year to up to 90 business days per year.\18\ The 
+proposed rule change would also provide guidance in new Supplementary 
+Materials .06 and .07 on the meaning of the term ``structuring of 
+public offerings or private placements'', also commonly referred to as 
+public finance banking activities.\19\ More specifically, the proposed 
+rule change describes the types of activities that would be included or 
+excluded from the meaning of ``structuring of public offerings or 
+private placements'' under MSRB Rule G-27.\20\ The proposed rule change 
+would also make clarifying edits to the title of MSRB Rule G-27 to 
+plainly state that the rule is applicable to brokers, dealers, and 
+municipal securities dealers.\21\
+---------------------------------------------------------------------------
+
+    \17\ See Notice, 91 FR at 49462-65.
+    \18\ See Notice, 91 FR at 49462-63.
+    \19\ See Notice, 91 FR at 49463-64.
+    \20\ See id.
+    \21\ See Notice, 91 FR at 49464.
+---------------------------------------------------------------------------
+
+Extend the 30-Business Day Exclusion for Non-Primary Residences from 
+Municipal Branch Office Designation
+    MSRB Rule G-27(g)(ii)(A)(3) currently allows for a non-primary 
+residence where municipal securities business is conducted for less 
+than 30 business days per calendar year to be excluded from municipal 
+branch office designation, if the location meets the provisions of MSRB 
+Rule G-27(g)(ii)(A)(2)(a) through (h). The proposed rule change would 
+increase this limit in MSRB Rule G-27(g)(ii)(A)(3) to up to 90 business 
+days per calendar year without amending the conditions outlined in MSRB 
+Rule G-27.\22\
+---------------------------------------------------------------------------
+
+    \22\ See Notice, 91 FR at 49462-63.
+---------------------------------------------------------------------------
+
+    According to the MSRB, the increase from less than 30 business days 
+per calendar year to up to 90 business days per calendar year for an 
+associated person to work from a non-primary residence without 
+triggering municipal branch office designation would provide dealers 
+greater latitude in permitting their associated persons to work at non-
+primary residential locations, such as a vacation home or the home of a 
+partner or family member, or at another location.\23\ The MSRB believes 
+that the proposed rule change would also provide dealers additional and 
+reasonable flexibility in implementing hybrid work arrangements that 
+acknowledge and account for advances in technology that could allow for 
+effective remote supervision capabilities, while also appropriately 
+limiting the municipal securities related work that could be done away 
+from a municipal branch office.\24\ In addition to changing the annual 
+business day limit from 30 to 90, the proposed rule change would also 
+make minor technical edits to MSRB Rule G-27(g)(ii)(A)(3) to improve 
+clarity of the rule by removing the term ``less than'' and adding the 
+term ``or fewer'' into the text of the rule.\25\
+---------------------------------------------------------------------------
+
+    \23\ See Notice, 91 FR at 49462.
+    \24\ See id.
+    \25\ See id.
+---------------------------------------------------------------------------
+
+    The MSRB notes that the current less than 30-business days per 
+calendar year exclusion from municipal branch office designation for 
+work performed at a non-primary residence, and the potential extension 
+to up to 90 business days per calendar year under the proposed rule 
+change, is an exclusion that would be allowed under MSRB Rule G-27.\26\ 
+However, the MSRB also notes that dealers would need to conduct their 
+own risk analysis to determine if this type of remote work, and the 90-
+business day limit allowed under the proposed rule change, is 
+appropriate for their business model, supervisory structure and 
+overarching supervisory system.\27\
+---------------------------------------------------------------------------
+
+    \26\ See id.
+    \27\ See Notice, 91 FR at 49462-63.
+---------------------------------------------------------------------------
+
+Structuring of Public Offering or Private Placements
+    The proposed rule change would add proposed new Supplementary 
+Material .06, on Exemption of Excluded Public Finance Activities from 
+Office of Municipal Supervisory Jurisdiction and Municipal Branch 
+Office Designation, and .07, on Definition of Excluded Public Finance 
+Activities to MSRB Rule G-27.\28\ Proposed new Supplementary Material 
+.06 of MSRB Rule G-27 would state that a location would not meet the 
+definition of an OMSJ under MSRB Rule G-27(g)(i) if associated persons 
+at such location engage in excluded public finance activities, so long 
+as that location does not engage in any other activities that would 
+require designation as an OMSJ.\29\ The proposed supplementary material 
+would also expressly state that these excluded public finance 
+activities would not be deemed to constitute ``structuring of public 
+offerings or private placements'' within the meaning of OMSJ under MSRB 
+Rule G-27(g)(i)(B).\30\ Furthermore, under proposed new Supplementary 
+Material .06 of MSRB Rule G-27, a primary residence that otherwise 
+meets the exception from municipal branch office designation under MSRB 
+Rule G-27(g)(ii)(A)(2), and from which an associated person engages in 
+excluded public finance activities, would be deemed a non-branch 
+location, as long as the associated person does not engage in any other 
+activities that would require designation of such location as an OMSJ, 
+under MSRB Rule G-27(g)(i).\31\ The MSRB notes that dealers would need 
+to look carefully at the activities of their non-branch locations to 
+ensure that they are not considered by MSRB Rule G-27 to be a municipal 
+branch office.\32\ In addition, the proposed rule change would add a 
+reference to new Supplementary Materials .06 and .07.\33\
+---------------------------------------------------------------------------
+
+    \28\ See Notice, 91 FR at 49463-64.
+    \29\ See Notice, 91 FR at 49463.
+    \30\ See id.
+    \31\ See id.
+    \32\ See id.
+    \33\ See id.
+---------------------------------------------------------------------------
+
+    Proposed new Supplementary Material .07 of MSRB Rule G-27 would 
+define the term excluded public finance activities as activities that 
+are associated with the structuring of public offerings or private 
+placements, including but not limited to, debt modeling, financial 
+analysis, number running and the solicitation of issuers or obligated 
+persons for the dealer's investment banking services in connection with 
+municipal securities (e.g. public finance banking services).\34\ 
+However, the MSRB states that this does not include final approval of a 
+public offering or private placement transaction (i.e., structuring) 
+conducted by the dealer.\35\ Proposed new Supplementary Material .07 of 
+MSRB Rule G-27 would also make clear that the activities described 
+within the definition of excluded public finance activities are not an 
+exhaustive list of excluded public finance activities, and other 
+activities could fall within the definition if a dealer can demonstrate 
+that such other activities do not include the final approval of a 
+public offering or private placement transaction.\36\ According to the 
+MSRB, activities such as preliminary data analysis and modeling, as 
+well as running standard debt capacity or sensitivity analyses using 
+established firm models controlled by senior personnel, which are much 
+more specific than the broader enumerated list of excluded public 
+finance activities, would be examples of activities that would be 
+categorized as excluded public finance activities under proposed new 
+Supplementary Material .07 of MSRB Rule G-27.\37\ The MSRB stated that 
+it is intentionally leaving the definition of excluded public finance 
+activities under proposed new Supplementary Material .07 as business
+
+[[Page 59830]]
+
+model neutral, without listing an exhaustive list of activities that 
+would qualify as excluded public finance activities, to account for the 
+diversity in business models among dealers.\38\
+---------------------------------------------------------------------------
+
+    \34\ See id.
+    \35\ See id.
+    \36\ See id.
+    \37\ See id.
+    \38\ See id.
+---------------------------------------------------------------------------
+
+    Proposed new Supplementary Material .07 of MSRB Rule G-27 would 
+also expressly state that the final approval of a public offering or 
+private placement transaction would be explicitly outside of the scope 
+and definition of excluded public finance activities, since such final 
+approval of a public offering or private placement transaction is 
+deemed structuring for purposes of the OMSJ definition, pursuant to 
+MSRB Rule G-27(g)(i).\39\ The MSRB stated that it recognizes that there 
+are many individual supportive decisions made in the overall work to be 
+done on a municipal securities public offering or private placement 
+and, as a result, the MSRB is clarifying that it deems the final 
+approval of a public offering or private placement transaction as 
+constituting ``structuring of public offerings or private placements.'' 
+\40\ The MSRB stated that such final approval of a public offering or 
+private placement transaction should be conducted by a person in a 
+principal-level capacity.\41\
+---------------------------------------------------------------------------
+
+    \39\ See id.
+    \40\ See id.
+    \41\ See id.
+---------------------------------------------------------------------------
+
+    The MSRB believes that proposed new Supplementary Material .06 and 
+.07 of MSRB Rule G-27 would not alter the definition of OMSJ, but 
+rather, would clarify that certain activities performed by municipal 
+securities professionals in furtherance of the ``structuring of a 
+public offering or private placements'' do not constitute structuring 
+and therefore do not rise to the level of activities that need to take 
+place at an OMSJ.\42\ Furthermore, according to the MSRB, clarifying 
+that the MSRB deems structuring as the final approval of a public 
+offering or private placement transaction, means that dealers are 
+better equipped, given varying business models, to evaluate their 
+specific business model and make determinations as to where ultimate 
+decision making and supervisory authority rest for purposes of 
+designating such locations as an OMSJ.\43\
+---------------------------------------------------------------------------
+
+    \42\ See id.
+    \43\ See id.
+---------------------------------------------------------------------------
+
+    The MSRB notes that the phrase ``final approval of a public 
+offering or private placement transaction'' in proposed new 
+Supplementary Material .07 would reference actions internal to the 
+dealer relating to the decision to approve such transaction, the timing 
+of which may vary depending on the specific transaction or the 
+processes undertaken by a specific dealer.\44\ According to the MSRB, 
+it is not the MSRB's intention for final approval to entail the act 
+itself of executing a bond purchase agreement (which may occur at an 
+issuer's location or at some other location away from the offices of 
+the dealer) or submitting a bid in response to a notice of sale.\45\ 
+Rather, according to the MSRB, this provision of the proposed rule 
+change turns on dealers' actions that ultimately leads to the formality 
+of executing the bond purchase agreement or submitting a bid.\46\ The 
+MSRB stated that, while the proposed rule change takes a principles-
+based approach to the determination of what constitutes final approval 
+of a public offering or private placement transaction, proposed new 
+Supplementary Material .07 would require dealers to adopt compliance 
+policies and procedures reasonably designed to make clear what action 
+taken constitutes such final approval by the dealer.\47\ Proposed new 
+Supplementary Material .07 would also require dealers to take into 
+consideration all relevant factors in determining what action taken 
+constitutes final approval of a public offering or private placement 
+transaction to ensure dealers' supervisory systems are reasonably 
+designed to achieve compliance with applicable securities laws and 
+regulations, and with applicable MSRB rules.\48\ The proposed rule 
+change also prescribes that such compliance policies and procedures 
+should support evidencing compliance to the appropriate examining 
+authority.\49\
+---------------------------------------------------------------------------
+
+    \44\ See id.
+    \45\ See id.
+    \46\ See id.
+    \47\ See id.
+    \48\ See id.
+    \49\ See Notice, 91 FR at 49463-64.
+---------------------------------------------------------------------------
+
+Rule Title Clarification
+    The proposed rule change would change the title of MSRB Rule G-27 
+from ``Supervision'' to ``Supervisory and Compliance Obligations of 
+Brokers, Dealers and Municipal Securities Dealers.'' \50\ According to 
+the MSRB, this non-substantive, technical change would clarify that 
+MSRB Rule G-27 is applicable to dealers only, as well as standardize 
+the title with MSRB Rule G-44, on Supervisory and Compliance 
+Obligations of Municipal Advisors.\51\
+---------------------------------------------------------------------------
+
+    \50\ See Notice, 91 FR at 49464.
+    \51\ See id.
+---------------------------------------------------------------------------
+
+III. Summary of Comments Received and the MSRB's Response
+
+    The Commission received four comment letters \52\ on the proposed 
+rule change, as well as a response from the MSRB to the comment 
+letters.\53\ Three commenters expressed support for the proposed rule 
+change,\54\ one commenter stated that it supports the goals proposed in 
+the proposed rule change,\55\ and no commenters objected to the 
+proposed rule change.
+---------------------------------------------------------------------------
+
+    \52\ See SIFMA Letter; BMA Letter; NAMA Letter; ASA Letter.
+    \53\ See MSRB Letter.
+    \54\ See SIFMA Letter; BMA Letter; ASA Letter.
+    \55\ See NAMA Letter.
+---------------------------------------------------------------------------
+
+    One commenter expressed support for extending the exclusion for 
+non-primary residential locations from municipal branch office 
+designation from 30 to 60 business days and the proposed definition of 
+``structuring of public offerings or private placements'' as used in 
+the definition of an office of OMSJ under MSRB Rule G-27(g)(i).\56\ The 
+commenter also urged the MSRB to address additional items in future 
+rulemakings, including express confirmation that drafting presentations 
+and materials for issuer meetings and routine data gathering and 
+document coordination qualify as ``excluded public finance activities'' 
+under MSRB Rule G-27(g)(i).\57\ In its response letter, the MSRB stated 
+that the proposed rule change contains a non-exhaustive list of 
+activities that could be considered excluded public finance activities 
+and that, so long as the activities outlined by the commenter do not 
+include final approval of a public offering or private placement 
+transaction conducted by a dealer, such activities would normally fall 
+within the proposed rule change's definition of excluded public finance 
+activities.\58\ The MSRB also stated that it did not create an 
+exhaustive or definitive list of excluded public finance activities to 
+account for the diversity in business models among dealers.\59\
+---------------------------------------------------------------------------
+
+    \56\ See ASA Letter at 1-2.
+    \57\ See ASA Letter at 2.
+    \58\ See MSRB Letter at 1-2.
+    \59\ See MSRB Letter at 2.
+---------------------------------------------------------------------------
+
+    One commenter stated that the proposed rule change is an important 
+``first step'' towards a larger overhaul of MSRB and FINRA supervision 
+rules and believes that the proposed definition of ``structuring of 
+public offerings or private placements'' provides clarity because firms 
+have been inconsistent in their interpretations of that term.\60\ The 
+commenter also stated that location-based supervision regimes are 
+obsolete
+
+[[Page 59831]]
+
+because compliance tools can monitor traders' work no matter where they 
+are physically located and would like to see the MSRB remove 
+distinctions among various types of offices and locations, or rely on a 
+centralized supervision model.\61\
+---------------------------------------------------------------------------
+
+    \60\ See BMA Letter at 1-2.
+    \61\ See id.
+---------------------------------------------------------------------------
+
+    One commenter believes that the proposed rule change will reduce 
+``undue compliance burdens'' and urges the MSRB to eliminate ``all 
+location-based concepts of supervision.'' \62\ The commenter also 
+stated that MSRB rules should be neutral as to business model and 
+structure and urged FINRA to adopt similar changes to its supervision 
+rules.\63\
+---------------------------------------------------------------------------
+
+    \62\ See SIFMA Letter at 1.
+    \63\ See SIFMA Letter at 2.
+---------------------------------------------------------------------------
+
+    One commenter stated that it ``supports the goals proposed'' in the 
+proposed rule change and noted that the proposed rule change would 
+create a framework for broker-dealer firms to supervise their dealer 
+professionals in a manner more in line with the current workplace 
+environment that is not always tethered to a physical firm office.\64\ 
+The commenter also stated that the definitions of ``excluded public 
+finance activities'' and by inference ``structuring'' in the proposed 
+rule change ``need continued discussion, especially if they could have 
+implications outside of Rule G-27, to avoid any potential conflicts 
+with SEC regulations and other MSRB rules.'' \65\ In its response 
+letter, the MSRB stated that it does not believe that the proposed rule 
+change would conflict with any SEC regulations or other MSRB rules 
+because the applicability of MSRB Rule G-27 and the proposed rule 
+change is limited to MSRB-registered dealers in the context of their 
+supervisory obligations and the commenter had not identified any rule 
+or regulation that may conflict with the proposed rule change.\66\ The 
+MSRB further stated in its response letter that the terms in the 
+proposed rule change are defined solely for purposes of MSRB Rule G-
+27,\67\ which is not explicit in the proposed rule change. The 
+Commission expects that if, in the future, the MSRB were to use the 
+term ``excluded public finance activities'' in another rule, the MSRB 
+would also need to amend Supplementary Material .07 of Rule G-27 or 
+make other conforming changes to address the applicability of such 
+definition.
+---------------------------------------------------------------------------
+
+    \64\ See NAMA Letter at 1.
+    \65\ See id.
+    \66\ See MSRB Letter at 2.
+    \67\ See id. at 2.
+---------------------------------------------------------------------------
+
+    The MSRB also stated that it ``remains committed to considering 
+additional opportunities to modernize MSRB Rule G-27'' and that it 
+believes that the proposed rule change would ``support the 
+competitiveness of the municipal securities market and provide greater 
+workplace flexibility while maintaining appropriate supervisory 
+requirements.'' \68\
+---------------------------------------------------------------------------
+
+    \68\ See MSRB Letter at 3.
+---------------------------------------------------------------------------
+
+IV. Discussion and Commission Findings
+
+    The Commission has carefully considered the proposed rule change. 
+The Commission finds that the proposed rule change is consistent with 
+the requirements of the Exchange Act and the rules and regulations 
+thereunder applicable to the MSRB.
+    In particular, the Commission finds that the proposed rule change 
+is consistent with the provisions of Section 15B(b)(2)(C) of the 
+Exchange Act,\69\ which provides that the MSRB's rules shall be 
+designed to prevent fraudulent and manipulative acts and practices, to 
+promote just and equitable principles of trade, to foster cooperation 
+and coordination with persons engaged in regulating, clearing, 
+settling, processing information with respect to, and facilitating 
+transactions in municipal securities and municipal financial products, 
+to remove impediments to and perfect the mechanism of a free and open 
+market in municipal securities and municipal financial products, and, 
+in general, to protect investors, municipal entities, obligated 
+persons, and the public interest. The Commission believes that the 
+proposed rule change will promote just and equitable principles of 
+trade because it provides context and clarity regarding the meaning of 
+the previously undefined term ``structuring of public offerings or 
+private placements'' which, according to the MSRB, has been interpreted 
+inconsistently by dealers.\70\ Clear guidance as to what work functions 
+are included within the meaning of the term ``structuring'' for the 
+municipal securities market will facilitate dealers' understanding and 
+implementation of sound compliance policies and procedures when 
+applying the principles of MSRB Rule G-27 to each dealer's business 
+model.\71\
+---------------------------------------------------------------------------
+
+    \69\ 15 U.S.C. 78o-4(b)(2)(C).
+    \70\ See Notice, 91 FR at 49464.
+    \71\ See id.
+---------------------------------------------------------------------------
+
+    The Commission also believes that the proposed rule change will 
+remove impediments to and perfect the mechanism of a free and open 
+market in municipal securities and municipal financial products because 
+it provides flexibility to firms implementing hybrid work models.\72\ 
+Allowing the additional flexibility of working remote from a non-
+primary residence for up to 90 business days per calendar year, and 
+clarifying that excluded public finance activities can generally be 
+conducted at a primary residence if the applicable conditions are met, 
+in both cases without triggering municipal branch office designation, 
+would remove an impediment to dealers and their municipal securities 
+professionals by allowing dealers more flexibility to craft hybrid work 
+models that reflect their own individual risk factors and technological 
+capabilities.\73\
+---------------------------------------------------------------------------
+
+    \72\ See Notice, 91 FR at 49464-65.
+    \73\ See id.
+---------------------------------------------------------------------------
+
+    Although the proposed rule change would result in a move away from 
+harmonization with FINRA Rule 3110, the Commission believes that the 
+particular nature of the municipal securities market outweighs the 
+benefit of rule harmonization.\74\ As noted by the MSRB, the broad 
+geographic dispersion of municipal issuers across all 50 states, the 
+District of Columbia, and U.S. territories creates challenges for 
+dealers in the municipal market, compared to other securities markets, 
+to effectively engage with prospective issuer clients and service 
+existing issuer clients.\75\ Resultingly, many dealers choose to have 
+public finance bankers operate in a much more geographically dispersed 
+manner--with many operating as a single-person OMSJ--as compared to 
+other segments of their securities activities so as to meet the needs 
+of their municipal clients.\76\ Therefore, the Commission believes that 
+extending the length of the exclusion for non-primary residences from 
+municipal branch office designation and defining the term ``structuring 
+of public offerings or private placements'' provides ample benefits to 
+dealers that are particular to the municipal securities market and 
+outweigh any potential costs of reduced harmonization with FINRA Rule 
+3110.
+---------------------------------------------------------------------------
+
+    \74\ See Notice, 91 FR at 49464.
+    \75\ See id.
+    \76\ See id.
+---------------------------------------------------------------------------
+
+    The Commission also finds that the proposed rule change is 
+consistent with the provisions of Section 15B(b)(2)(C) of the Exchange 
+Act,\77\ which requires that MSRB rules not be designed to impose any 
+burden on competition that is not necessary or appropriate in 
+furtherance of the purposes of the Exchange Act. The Commission finds 
+that the proposed rule change would not impose any burden on 
+competition not
+
+[[Page 59832]]
+
+necessary or appropriate in furtherance of the purposes of the Exchange 
+Act because the proposed rule change applies equally to all 
+dealers.\78\
+---------------------------------------------------------------------------
+
+    \77\ 15 U.S.C. 78o-4(b)(2)(C).
+    \78\ See Notice, 91 FR at 49465.
+---------------------------------------------------------------------------
+
+    In approving the proposed rule change, the Commission has also 
+considered the proposed rule change's impact on efficiency, 
+competition, and capital formation under Section 3(f) of the Exchange 
+Act.\79\ The Commission finds that the record for the proposed rule 
+change does not contain any information to indicate that the proposed 
+rule change would have a negative impact on efficiency, competition, or 
+capital formation.\80\ In fact, the proposed rule change could promote 
+market efficiency and capital formation by providing clarity on the 
+interpretation of the previously undefined term ``structuring of public 
+offerings or private placements'' and providing dealers with greater 
+flexibility in achieving the regulatory obligations outlined in MSRB 
+Rule G-27.\81\
+---------------------------------------------------------------------------
+
+    \79\ See 15 U.S.C. 78c(f).
+    \80\ See 15 U.S.C. 78c(f).
+    \81\ See Notice, 91 FR at 49466.
+---------------------------------------------------------------------------
+
+    For the reasons noted above, the Commission finds that the proposed 
+rule change is consistent with the Exchange Act.
+
+V. Conclusion
+
+    It is therefore ordered, pursuant to Section 19(b)(2) of the 
+Exchange Act,\82\ that the proposed rule change (SR-MSRB-2026-04) be, 
+and hereby is, approved.
+---------------------------------------------------------------------------
+
+    \82\ 15 U.S.C. 78s(b)(2).
+
+    For the Commission, by the Office of Municipal Securities, 
+pursuant to delegated authority.\83\
+---------------------------------------------------------------------------
+
+    \83\ 17 CFR 200.30-3a(a)(2).
+---------------------------------------------------------------------------
+
+Sherry R. Haywood,
+Assistant Secretary.
+[FR Doc. 2026-19213 Filed 9-18-26; 8:45 am]
+BILLING CODE 8011-01-P
+
+
+</pre></body>
+</html>

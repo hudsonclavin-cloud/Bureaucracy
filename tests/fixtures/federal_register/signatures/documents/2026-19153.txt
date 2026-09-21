@@ -1,0 +1,186 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 180 (Friday, September 18, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 180 (Friday, September 18, 2026)]
+[Notices]
+[Pages 59156-59160]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-19153]
+
+
+-----------------------------------------------------------------------
+
+DEPARTMENT OF THE INTERIOR
+
+Bureau of Safety and Environmental Enforcement
+
+[Docket ID BSEE-2025-0332; EEEE500000--256E1700D2--ET1SF0000.EAQ000 OMB 
+Control Number 1014-0002]
+
+
+Agency Information Collection Activities; Submission to the 
+Office of Management and Budget for Review and Approval; Oil and Gas 
+Production Measurement Surface Commingling, and Security
+
+AGENCY: Bureau of Safety and Environmental Enforcement, Interior.
+
+ACTION: Notice of information collection; request for comment.
+
+-----------------------------------------------------------------------
+
+SUMMARY: In accordance with the Paperwork Reduction Act (PRA) of 1995, 
+the Bureau of Safety and Environmental Enforcement (BSEE) proposes to 
+renew an information collection.
+
+DATES: Interested persons are invited to submit comments on or before 
+October 19, 2026.
+
+ADDRESSES: Written comments and recommendations for the proposed 
+information collection should be sent within 30 days of publication of 
+this notice to <a href="http://www.reginfo.gov/public/do/PRAMain">www.reginfo.gov/public/do/PRAMain</a>. Find this particular 
+information collection by selecting ``Currently under 30-day Review--
+Open for Public Comments'' or by using the search function. Please 
+provide a copy of your comments to Kelly Odom, Acting BSEE ICCO, 45600 
+Woodland Road, Sterling, VA 20166; or by email to <a href="/cdn-cgi/l/email-protection#a6edc3cacadf88e9c2c9cbe6c4d5c3c388c1c9d0"><span class="__cf_email__" data-cfemail="7d361811110453321912103d1f0e1818531a120b">[email&#160;protected]</span></a>. 
+Please reference OMB Control Number 1014-0002 in the subject line of 
+your comments.
+
+FOR FURTHER INFORMATION CONTACT: To request additional information 
+about
+
+[[Page 59157]]
+
+this ICR, contact Kelly Odom by email at <a href="/cdn-cgi/l/email-protection#bdf6d8d1d1c493f2d9d2d0fddfced8d893dad2cb"><span class="__cf_email__" data-cfemail="e1aa848d8d98cfae858e8ca183928484cf868e97">[email&#160;protected]</span></a>, or by 
+telephone at (703) 787-1775. Individuals in the United States who are 
+deaf, deafblind, hard of hearing, or have a speech disability may dial 
+711 (TTY, TDD, or TeleBraille) to access telecommunications relay 
+services. Individuals outside the United States should use the relay 
+services offered within their country to make international calls to 
+the point-of-contact in the United States. You may also view the ICR at 
+<a href="http://www.reginfo.gov/public/do/PRAMain">http://www.reginfo.gov/public/do/PRAMain</a>.
+
+SUPPLEMENTARY INFORMATION: In accordance with the PRA and 5 CFR 
+1320.8(d)(1), we provide the general public and other Federal agencies 
+with an opportunity to comment on new, proposed, revised, and 
+continuing collections of information. This helps us assess the impact 
+of our information collection requirements and minimize the public's 
+reporting burden. It also helps the public understand our information 
+collection requirements and provide the requested data in the desired 
+format.
+    A Federal Register notice with a 60-day public comment period 
+soliciting comments on this collection of information was published on 
+June 17, 2026 [91 FR 36607]. No comments were received.
+    As part of our continuing effort to reduce paperwork and respondent 
+burdens, we are again soliciting comments from the public and other 
+Federal agencies on the proposed ICR that is described below. We are 
+especially interested in public comment addressing the following:
+    (1) Whether or not the collection of information is necessary for 
+the proper performance of the functions of the agency, including 
+whether or not the information will have practical utility;
+    (2) The accuracy of our estimate of the burden for this collection 
+of information, including the validity of the methodology and 
+assumptions used;
+    (3) Ways to enhance the quality, utility, and clarity of the 
+information to be collected; and
+    (4) How might the agency minimize the burden of the collection of 
+information on those who are to respond, including through the use of 
+appropriate automated, electronic, mechanical, or other technological 
+collection techniques or other forms of information technology, e.g., 
+permitting electronic submission of response.
+    Comments that you submit in response to this notice are a matter of 
+public record. Before including your address, phone number, email 
+address, or other personal identifying information in your comment, you 
+should be aware that your entire comment--including your personal 
+identifying information--may be made publicly available at any time. 
+While you can ask us in your comment to withhold your personal 
+identifying information from public review, we cannot guarantee that we 
+will be able to do so.
+    Abstract: The regulations at 30 CFR 250, subpart L, Oil and Gas 
+Production Measurement, Surface Commingling, and Security, are the 
+subject of this collection. This request also covers the related 
+Notices to Lessees and Operators (NTLs) that BSEE issues to clarify, 
+supplement, or provide additional guidance on some aspects of our 
+regulations. BSEE uses the information collected under subpart L to 
+ensure that the volumes of hydrocarbons produced are measured 
+accurately, and royalties are paid on the proper volumes. Specifically, 
+BSEE needs the information to:
+
+Liquid Hydrocarbon Measurement
+
+    <bullet> Determine if measurement equipment is properly installed, 
+provides accurate measurement of production on which royalty is due, 
+and is operating properly;
+    <bullet> Ascertain if all removals of oil and condensate from the 
+lease are reported;
+    <bullet> Obtain rates of production measured at royalty meters, 
+which can be examined during field inspections;
+
+Gas Measurement
+
+    <bullet> Ensure that the sales location is secure and production 
+cannot be removed without the volumes being recorded;
+
+Surface Commingling
+
+    <bullet> Review gas volume statements and compare them with the Oil 
+and Gas Operations Reports to verify accuracy.
+
+Miscellaneous & Recordkeeping
+
+    <bullet> Review proving reports to verify that data on run tickets 
+are calculated and reported accurately.
+    Title of Collection: 30 CFR 250, Subpart L, Oil and Gas Production 
+Measurement Surface Commingling, and Security.
+    OMB Control Number: 1014-0002.
+    Form Number: None.
+    Type of Review: Extension of a currently approved collection.
+    Respondents/Affected Public: Potential respondents include Federal 
+OCS oil, gas, and sulfur lessees and/or operators and holders of 
+pipeline rights-of-way.
+    Total Estimated Number of Annual Respondents: Currently there are 
+approximately 550 Federal OCS oil, gas, and sulfur lessees and holders 
+of pipeline rights-of-way. Not all the potential respondents will 
+submit information in any given year, and some may submit multiple 
+times.
+    Total Estimated Number of Annual Responses: 3,548.
+    Estimated Completion Time per Response: Varies from 10 minutes to 
+35 hours, depending on activity.
+    Total Estimated Number of Annual Burden Hours: 1,621.
+    Respondent's Obligation: Responses are mandatory, while others are 
+required to obtain or retain benefits, or are voluntary.
+    Frequency of Collection: Submissions are generally on occasion and 
+monthly.
+    Total Estimated Annual Nonhour Burden Cost: $54,270.
+BILLING CODE 4310-VH-P
+
+[[Page 59158]]
+
+[GRAPHIC] [TIFF OMITTED] TN18SE26.004
+
+
+[[Page 59159]]
+
+
+[GRAPHIC] [TIFF OMITTED] TN18SE26.005
+
+
+[[Page 59160]]
+
+
+BILLING CODE 4310-VH-C
+    An agency may not conduct, or sponsor and a person is not required 
+to respond to a collection of information unless it displays a 
+currently valid OMB control number.
+    The authority for this action is the Paperwork Reduction Act of 
+1995 (44 U.S.C. 3501 et seq.).
+
+Kirk Malstrom,
+Chief, Regulations and Standards Branch.
+[FR Doc. 2026-19153 Filed 9-17-26; 8:45 am]
+BILLING CODE 4310-VH-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

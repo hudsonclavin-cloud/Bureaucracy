@@ -1,0 +1,839 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 167 (Monday, August 31, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 167 (Monday, August 31, 2026)]
+[Rules and Regulations]
+[Pages 55788-55793]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-17756]
+
+
+-----------------------------------------------------------------------
+
+DEPARTMENT OF TRANSPORTATION
+
+National Highway Traffic Safety Administration
+
+49 CFR Parts 523, 534, and 535
+
+[Docket No. NHTSA-2026-1948]
+
+
+Resetting NHTSA's Fuel Economy Program: Commercial Medium- and 
+Heavy-Duty On-Highway Vehicles and Work Trucks
+
+AGENCY: National Highway Traffic Safety Administration (NHTSA), 
+Department of Transportation (DOT).
+
+ACTION: Interpretive rule.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The National Highway Traffic Safety Administration is issuing 
+this interpretive rule regarding the scope of its authority to set fuel 
+economy standards for commercial medium- and heavy-duty on-highway 
+vehicles and work trucks. This rule describes NHTSA's authority to set 
+vehicle standards, which does not include the authority to set separate 
+standards for engines. NHTSA will review its existing standards 
+applicable to commercial medium- and heavy-duty on-highway vehicles and 
+work trucks for consistency with this interpretation in a separate 
+rulemaking. Pending the rulemaking process, NHTSA will exercise its 
+enforcement authority with regard to affected standards in accordance 
+with the interpretation set forth in this rule.
+
+DATES: This interpretive rule is applicable as of August 31, 2026.
+
+FOR FURTHER INFORMATION CONTACT: Kerry Kolodziej, NHTSA Office of the 
+Chief Counsel, National Highway Traffic Safety Administration, 1200 New 
+Jersey Avenue SE, W44-308, Washington, DC 20590; email: 
+<a href="/cdn-cgi/l/email-protection#dd96b8afafa4f396b2b1b2b9a7b4b8b79db9b2a9f3bab2ab"><span class="__cf_email__" data-cfemail="4d06283f3f34630622212229372428270d292239632a223b">[email&#160;protected]</span></a>.
+
+SUPPLEMENTARY INFORMATION: The National Highway Traffic Safety 
+Administration (NHTSA) issues this interpretive rule as part of its 
+comprehensive effort to reset its fuel economy program to comply with 
+the law.\1\ NHTSA has reconsidered the scope of its authority to set 
+fuel economy standards for commercial medium- and heavy-duty on-highway 
+vehicles and work trucks. As NHTSA sets forth in this interpretation, 
+the Energy Independence and Security Act of 2007 (EISA) requires NHTSA 
+to set fuel economy standards for medium- and heavy-duty on-highway 
+vehicles and work trucks but did not authorize NHTSA to set standards 
+for engines on a standalone basis. In contrast to the Clean Air Act 
+(CAA), which specifically authorizes EPA to set separate standards for 
+engines, EISA specifically requires NHTSA set standards for vehicles, 
+and authorized separate standards for different classes of vehicles, 
+but did not authorize standalone engine standards. A related decision 
+of the United States Court of Appeals for the District of Columbia 
+Circuit further confirms that NHTSA's authority was limited to setting 
+vehicle standards.\2\
+---------------------------------------------------------------------------
+
+    \1\ See, e.g., Interpretive Rule, Resetting the Corporate 
+Average Fuel Economy Program, 90 FR 24518 (June 11, 2025).
+    \2\ This interpretation is not applicable to light-duty 
+vehicles. NHTSA has not established engine standards for light-duty 
+vehicles separate from the CAFE standards, and NHTSA confirms that 
+it does not have statutory authority to do so.
+---------------------------------------------------------------------------
+
+    This interpretation will help ensure the efficient functioning of 
+the market for these commercial vehicles by limiting regulation to its 
+legally authorized scope. This interpretation will also help ensure 
+that manufacturers have flexibility in how best to meet the standards 
+and needs of their sophisticated commercial customers, who make 
+business decisions that account for their own fuel economy needs. NHTSA 
+will review its regulations for consistency with this interpretation in 
+a separate rulemaking.
+
+I. Statutory Background and Regulatory History
+
+    EISA established a statutory requirement for the Secretary of 
+Transportation to implement a commercial medium- and heavy-duty on-
+highway vehicle and work truck fuel efficiency improvement program, 
+commonly known as the MDHD program.\3\ EISA requires NHTSA, by 
+delegation from the Secretary of Transportation,\4\ to prescribe 
+``average fuel economy standards for . . . work trucks and commercial 
+medium-duty
+
+[[Page 55789]]
+
+and heavy-duty on-highway vehicles in accordance with subsection (k).'' 
+\5\ Subsection (k) requires NHTSA to establish ``a commercial medium- 
+and heavy-duty on-highway vehicle and work truck fuel efficiency 
+improvement program.'' \6\ EISA defines ``commercial medium- and heavy-
+duty on-highway vehicle'' as ``an on-highway vehicle with a gross 
+vehicle weight rating of 10,000 pounds or more,'' and ``work truck'' as 
+``a vehicle that--(A) is rated at between 8,500 and 10,000 pounds gross 
+vehicle weight; and (B) is not a medium-duty passenger vehicle . . . 
+.'' \7\ Pursuant to these definitions, medium- and heavy-duty on-
+highway vehicles and work trucks are all ``vehicles'' with certain 
+specified characteristics.
+---------------------------------------------------------------------------
+
+    \3\ The MDHD program encompasses both commercial medium- and 
+heavy-duty on-highway vehicles and work trucks, as defined in EISA. 
+See 49 U.S.C. 32901(a)(7) and (19).
+    \4\ 49 CFR 1.95(j).
+    \5\ EISA, Public Law 110-140 Sec.  102 (2007), 121 Stat. 1492, 
+1498-99; see 49 U.S.C. 32902(b)(1)(C).
+    \6\ 49 U.S.C. 32902(k).
+    \7\ 49 U.S.C. 32901(a)(7), (19).
+---------------------------------------------------------------------------
+
+    To inform the fuel efficiency improvement program for these 
+vehicles, EISA instructed the National Academy of Sciences (NAS) to 
+publish a study ``evaluating medium-duty and heavy-duty truck fuel 
+economy standards,'' including elements such as ``an assessment of 
+technologies and costs to evaluate fuel economy for medium-duty and 
+heavy-duty trucks.'' \8\ After NAS completed its study, the EISA 
+directed NHTSA to ``examine the fuel efficiency of commercial medium- 
+and heavy-duty on-highway vehicles and work trucks.'' \9\ Among other 
+things, EISA required NHTSA to determine ``the appropriate test 
+procedures and methodologies for measuring the fuel efficiency of such 
+vehicles and work trucks'' and ``the appropriate metric for measuring 
+and expressing commercial medium- and heavy-duty on-highway vehicle and 
+work truck fuel efficiency performance.'' \10\
+---------------------------------------------------------------------------
+
+    \8\ EISA, Public Law 110-140 Sec.  108 (2007), 121 Stat. 1492, 
+1505.
+    \9\ 49 U.S.C. 32902(k)(1).
+    \10\ Id.
+---------------------------------------------------------------------------
+
+    EISA then required NHTSA to ``determine in a rulemaking proceeding 
+how to implement a commercial medium- and heavy-duty on-highway vehicle 
+and work truck fuel efficiency improvement program designed to achieve 
+the maximum feasible improvement.'' \11\ As part of that program, NHTSA 
+``shall adopt and implement appropriate test methods, measurement 
+metrics, fuel economy standards, and compliance and enforcement 
+protocols that are appropriate, cost-effective, and technologically 
+feasible for commercial medium- and heavy-duty on-highway vehicles and 
+work trucks.'' \12\ The statute specifies that NHTSA ``may prescribe 
+separate standards for different classes of vehicles under this 
+subsection.'' \13\ The statute also requires that ``the commercial 
+medium- and heavy-duty on-highway vehicle and work truck fuel economy 
+standard adopted pursuant to this subsection shall provide not less 
+than--(A) 4 full model years of regulatory lead-time; and (B) 3 full 
+model years of regulatory stability.'' \14\
+---------------------------------------------------------------------------
+
+    \11\ Id. Sec.  32902(k)(2).
+    \12\ Id.
+    \13\ Id.
+    \14\ Id. Sec.  32902(k)(3).
+---------------------------------------------------------------------------
+
+    NHTSA first established the MDHD program through a September 2011 
+final rule, known as Phase 1, issued jointly with the Environmental 
+Protection Agency (EPA).\15\ NHTSA and EPA generally set standards for 
+the same vehicles and engines in the Phase 1 rule.\16\ Relying on its 
+EISA authority, NHTSA adopted standards for different classes of 
+commercial medium- and heavy-duty on-highway vehicles and work trucks 
+and separate standards for engines used for certain of those vehicles 
+(combination tractors and vocational vehicles).\17\ NHTSA's standards 
+generally were mandatory for Model Years 2016 and later.\18\ EPA also 
+set separate emissions standards for vehicles and engines. EPA relied 
+on its CAA authority to set air pollutant standards for ``any class or 
+classes of new motor vehicles or new motor vehicle engines.'' \19\
+---------------------------------------------------------------------------
+
+    \15\ Final Rules, Greenhouse Gas Emissions Standards and Fuel 
+Efficiency Standards for Medium- and Heavy-Duty Engines and 
+Vehicles, 76 FR 57106 (Sept. 15, 2011).
+    \16\ EPA set standards for recreational on-highway vehicles in 
+Phase 1, while NHTSA did not. Id. at 57134.
+    \17\ E.g., id. at 57106.
+    \18\ See id.
+    \19\ See 42 U.S.C. 7521(a)(1); see Phase 1 Final Rules, 76 FR 
+57114 (``The Clean Air act, of course, mandates standards for both 
+`new motor vehicles' and `new motor vehicle engines', so there is no 
+issue of authority for separate engine standards under the EPA GHG 
+program.''). EPA has since ``rescind[ed] the Administrator's 2009 
+findings of contribution and endangerment and repealing all 
+greenhouse gas (GHG) emission standards for light-duty, medium-duty, 
+and heavy-duty vehicles and engines to effectuate the best reading 
+of Clean Air Act (CAA) section 202(a)(1).'' Final Rule, Rescission 
+of the Greenhouse Gas Endangerment Finding and Motor Vehicle 
+Greenhouse Gas Emission Standards Under the Clean Air Act, 91 FR 
+7686 (Feb. 18, 2026).
+---------------------------------------------------------------------------
+
+    NHTSA offered several explanations for its authority to set engine 
+standards during the Phase 1 rulemaking despite the absence of the word 
+``engine'' in NHTSA's standards-setting authority. In both the proposed 
+and final rules, NHTSA asserted that its express authority to set 
+``separate standards for different classes of vehicles'' also allowed 
+it to set standards for engines.\20\ NHTSA recognized that it was 
+interpreting the statutory language ``broadly.'' \21\ In a footnote in 
+the proposal, NHTSA also cited the statutory requirement to set maximum 
+feasible standards as a basis for its authority to set engine 
+standards.\22\ After several industry commenters argued that NHTSA 
+lacked this claimed authority, the agency asserted that the statute 
+``grants NHTSA broad authority to regulate this sector'' and ``does not 
+. . . preclude[ ] the regulation of engines, but rather explicitly 
+leaves the regulatory approach to the agency's expertise and 
+discretion.'' \23\
+---------------------------------------------------------------------------
+
+    \20\ Phase 1 Final Rules, 76 FR 57112; Proposed Rules, 
+Greenhouse Gas Emissions Standards and Fuel Efficiency Standards for 
+Medium- and Heavy-Duty Engines and Vehicles, 75 FR 74152, 74158 
+(Nov. 30, 2010).
+    \21\ Phase 1 Final Rules, 76 FR 57112 (``Congress also stated 
+that NHTSA may set separate standards for different classes of HD 
+vehicles, which the agency interprets broadly to allow regulation of 
+HD engines in addition to HD vehicles . . . .''); Phase 1 Proposed 
+Rules, 75 FR 74158 (``Congress also stated that NHTSA may set 
+separate standards for different classes of HD vehicles, which the 
+agency interprets broadly to allow regulation of HD engines in 
+addition to HD vehicles . . . .'').
+    \22\ Phase 1 Proposed Rules, 75 FR 74173 n.36 (``NHTSA 
+interprets 49 U.S.C. 32902(k)(2) to include a grant of authority to 
+establish engines standards pursuant to the broader statement of 
+authority to establish standards that achieve the maximum feasible 
+improvement in fuel efficiency.'').
+    \23\ Phase 1 Final Rules, 76 FR 57114 (``Volvo and Daimler 
+argued that EISA limited NHTSA's authority to the regulation of 
+completed vehicles and did not give NHTSA authority to regulate 
+engines. 49 U.S.C. 32902(k)(2) grants NHTSA broad authority to 
+regulate this sector . . . . NHTSA does not believe that this 
+language precludes the regulation of engines, but rather explicitly 
+leaves the regulatory approach to the agency's expertise and 
+discretion. See 75 FR 74173 n. 36 . . . . NHTSA continues to believe 
+that the separate regulation of engines and vehicles is [ ] 
+consistent with the agency's statutory mandate to determine how to 
+implement a regulatory program designed to achieve the maximum 
+feasible improvement and facilitates coordination with EPA's efforts 
+to reduce greenhouse gas emissions.'').
+---------------------------------------------------------------------------
+
+    NHTSA and EPA issued a second, Phase 2, joint final rule for the 
+MDHD program in October 2016.\24\ In the Phase 2 rule, both agencies 
+increased the stringency of the standards applicable to the vehicles 
+and engines addressed by the Phase 1 rule and set separate standards 
+for trailers designed to be
+
+[[Page 55790]]
+
+drawn by a motorized tractor.\25\ NHTSA's Phase 2 standards generally 
+applied to Model Years 2021 and later.\26\ In a legal challenge to the 
+agencies' trailer standards, the D.C. Circuit ruled the agencies 
+exceeded their authorities under their respective enabling statutes to 
+establish fuel economy or emissions standards for various categories of 
+``vehicles.'' \27\
+---------------------------------------------------------------------------
+
+    \24\ Final Rule, Greenhouse Gas Emissions and Fuel Efficiency 
+Standards for Medium- and Heavy-Duty Engines and Vehicles--Phase 2, 
+81 FR 73478 (Oct. 25, 2016). In the Phase 2 proposed and final 
+rules, NHTSA referred back to the explanation from the Phase 1 final 
+rule for the assertion that EISA ``includes authority to establish 
+separate engine standards.'' Phase 2 Final Rule, 81 FR 73491 n.51; 
+Proposed Rule, Greenhouse Gas Emissions and Fuel Efficiency 
+Standards for Medium- and Heavy-Duty Engines and Vehicles--Phase 2, 
+80 FR 40138, 40152 n.43 (July 13, 2015).
+    \25\ See generally Phase 2 Final Rule, 81 FR 73478. NHTSA also 
+added standards for recreational vehicles in the Phase 2 rule and 
+EPA added standards for gliders. See id. at 73521, 73584.
+    \26\ See id. at 73493, 73504.
+    \27\ Truck Trailer Mfrs. Ass'n, Inc. (``TTMA'') v. Envtl. Prot. 
+Agency, 17 F.4th 1198 (D.C. Cir. 2021).
+---------------------------------------------------------------------------
+
+II. EISA Required NHTSA To Set Vehicle Standards and Did Not Permit 
+Engine Standards
+
+    ``Start[ing] with the statutory text,'' \28\ NHTSA's standards-
+setting authority speaks only of setting fuel economy standards for 
+vehicles and not their component parts. As part of NHTSA's ``commercial 
+medium- and heavy-duty on-highway vehicle and work truck fuel 
+efficiency improvement program,'' EISA instructs NHTSA to ``prescribe 
+separate average fuel economy standards for . . . work trucks and 
+commercial medium-duty or heavy-duty on-highway vehicles.'' \29\ A 
+``work truck'' is ``a vehicle that--(A) is rated at between 8,500 and 
+10,000 pounds gross vehicle weight; and (B) is not a medium-duty 
+passenger vehicle . . . .'' \30\ In setting these vehicle standards, 
+NHTSA must evaluate these vehicles as a whole. NHTSA must determine: 
+``the appropriate test procedures and methodologies for measuring the 
+fuel efficiency of such vehicles and work trucks''; ``the appropriate 
+metric for measuring and expressing commercial medium- and heavy-duty 
+on-highway vehicle and work truck fuel efficiency performance''; and 
+factors and conditions that may affect vehicle and work truck fuel 
+efficiency.\31\ And NHTSA must establish ``compliance and enforcement 
+protocols for commercial medium- and heavy-duty on-highway vehicles and 
+work trucks,'' \32\ not for various sub-components of those vehicles.
+---------------------------------------------------------------------------
+
+    \28\ Garland v. Cargill, 602 U.S. 406, 415 (2024).
+    \29\ 49 U.S.C. 32902(b)(1)(C) (emphasis added).
+    \30\ Id. Sec.  32901(a)(7), (19) (emphasis added).
+    \31\ Id. Sec.  32902(k)(1).
+    \32\ Id. Sec.  32902(k)(2).
+---------------------------------------------------------------------------
+
+    Indeed, nowhere in NHTSA's standards-setting authority does 
+Congress instruct NHTSA to set fuel economy standards for component 
+parts. In addition to setting standards for commercial medium- and 
+heavy-duty on-highway vehicles and work trucks, NHTSA is also 
+instructed to prescribe separate average fuel economy standards for 
+``passenger automobiles'' and ``non-passenger automobiles,'' \33\ but 
+not their component parts. And, unlike commercial medium- and heavy-
+duty on-highway vehicles and work trucks, NHTSA has never asserted 
+authority to set standards for component parts of passenger and non-
+passenger automobiles when establishing fuel economy standards for 
+those automobiles.
+---------------------------------------------------------------------------
+
+    \33\ Id. Sec.  32902(b)(1)(A)-(B) (emphases added).
+---------------------------------------------------------------------------
+
+    Congress has demonstrated that it understands the difference 
+between vehicles and engines, and that when it wants an agency to have 
+authority to regulate one or both, it says so.\34\ For example, EISA 
+mentioned engines in several unrelated statutory provisions.\35\ The 
+absence of any reference to engines in NHTSA's standards-setting 
+authority confirms that NHTSA's authority was limited to setting 
+standards for the types of vehicles referenced: work trucks and 
+commercial medium-duty or heavy-duty on-highway vehicles. The Supreme 
+Court has explained that when ``Congress includes particular language 
+in one section of a statute but omits it in another section of the same 
+Act, it is generally presumed that Congress acts intentionally and 
+purposely in the disparate inclusion or exclusion.'' \36\ NHTSA must 
+give meaning to the fact that Congress did not mention engines in its 
+standard-setting authority at the same time it enacted other engine-
+related provisions.
+---------------------------------------------------------------------------
+
+    \34\ See, e.g., Bittner v. United States, 598 U.S. 85, 94 (2023) 
+(``When Congress includes particular language in one section of a 
+statute but omits it from a neighbor, we normally understand that 
+difference in language to convey a difference in meaning [].'').
+    \35\ See, e.g., EISA, Public Law 110-140 Sec.  209 (requiring 
+study of whether changes in vehicle and engine emissions of air 
+pollutants adversely impact air quality); id. Sec.  226 (``Study of 
+Engine Durability and Performance Associated with the Use of 
+Biodiesel''); id. Sec.  251 (providing for waiver related to vehicle 
+or engine emission standards).
+    \36\ Nken v. Holder, 556 U.S. 418, 430 (2009) (quoting INS v. 
+Cardoza-Fonseca, 480 U.S. 421, 432 (1987)).
+---------------------------------------------------------------------------
+
+    NHTSA must also give weight to the fact that Congress expressly 
+granted authority to set engine standards to another Federal agency: 
+the EPA. In the CAA, Congress expressly authorized EPA to set air 
+pollutant standards for ``any class or classes of new motor vehicles or 
+new motor vehicle engines.'' \37\ The differences in authority granted 
+to the two agencies are not arbitrary. The CAA was designed to provide 
+EPA with broad authority to address harmful air pollutants, which 
+originate from vehicle engines as well as tailpipes. The EISA 
+provisions described above were designed to provide the Department of 
+Transportation, through NHTSA, with different tools to achieve feasible 
+petroleum conservation from motor vehicles, which is a function of a 
+vehicle's entire design and construction. The CAA was not designed to 
+require energy conservation, and EISA was not designed to mandate 
+environmental improvements.\38\ EPA is not a fuel economy regulator, 
+and NHTSA is not an environmental regulator. The CAA and EISA granted 
+EPA and NHTSA specific statutory authority appropriate to accomplish 
+their respective goals. A desire by the agencies to achieve regulatory 
+harmonization does not empower NHTSA to expand its statutory authority.
+---------------------------------------------------------------------------
+
+    \37\ 42 U.S.C. 7521 (emphasis added). EPA has since rescinded 
+its standards not because it found it lacked authority to regulate 
+engines, but because it rescinded the endangerment finding for 
+greenhouse gas emissions. See Final Rule, Rescission of the 
+Greenhouse Gas Endangerment Finding and Motor Vehicle Greenhouse Gas 
+Emission Standards Under the Clean Air Act, 91 FR 7686 (Feb. 18, 
+2026).
+    \38\ See 42 U.S.C. 7521(a)(1); 49 U.S.C. 32902(f).
+---------------------------------------------------------------------------
+
+    In Loper Bright Enterprises v. Raimondo,\39\ the United States 
+Supreme Court explained that ``statutes . . . do--in fact, must--have a 
+single, best meaning.'' \40\ Interpreting a statute requires 
+``determin[ing] the best reading of the statute,'' and not a so-called 
+``permissible'' interpretation.\41\
+---------------------------------------------------------------------------
+
+    \39\ 603 U.S. 369 (2024).
+    \40\ Id. at 400.
+    \41\ Id. (``In the business of statutory interpretation, if it 
+is not the best, it is not permissible.'').
+---------------------------------------------------------------------------
+
+    Consistent with Loper Bright, NHTSA asserts the best reading of the 
+statute is that it lacks the authority to set fuel economy standards 
+for engines of work trucks and commercial medium-duty or heavy-duty on-
+highway vehicles on a standalone basis. EISA commands NHTSA to set fuel 
+economy standards for commercial medium- and heavy-duty on-highway 
+vehicles and work trucks (which are defined as ``vehicles'' \42\). The 
+statute permits ``separate standards for different classes of 
+vehicles.'' \43\ The statute did not, however, authorize separate 
+standards for components of a vehicle, including a vehicle's engine. In 
+contrast, Congress expressly granted authority to set engine standards 
+to EPA.
+---------------------------------------------------------------------------
+
+    \42\ 49 U.S.C. 32901(a)(7), (19).
+    \43\ Id. Sec.  32902(b)(1), (k)(2).
+---------------------------------------------------------------------------
+
+    NHTSA's interpretation is also supported by recent case law. As 
+noted above, the D.C. Circuit found NHTSA's attempt to set fuel economy 
+standards for trailers as a type of vehicle unlawful.\44\ The court 
+found that trailers
+
+[[Page 55791]]
+
+are not vehicles ``when that term is used in the context of a vehicles' 
+fuel economy''; trailers ``have no motor,'' and ``motorless vehicles 
+use no fuel.'' \45\ Therefore, NHTSA's delegation of authority to set 
+fuel economy standards for vehicles did not include trailers.
+---------------------------------------------------------------------------
+
+    \44\ TTMA, 17 F.4th at 1208.
+    \45\ See e.g., id. at 1200.
+---------------------------------------------------------------------------
+
+    Nor does it include engines. An engine is not a vehicle. To be 
+sure, a vehicle's engine necessarily impacts its fuel economy. So do 
+tires, transmissions, and tailpipes. However, that does not grant NHTSA 
+authority to set fuel economy standards for those components 
+individually or separately from the entirety of a vehicle of which they 
+comprise a part.\46\ If that were the case, like NHTSA's theory in TTMA 
+that was rejected, ``there is no principled limit to NHTSA's theory.'' 
+\47\ If NHTSA could set fuel economy standards for engines, NHTSA could 
+also set standards for any component of a vehicle that impacts fuel 
+economy, including tires, transmissions, and tailpipes.\48\
+---------------------------------------------------------------------------
+
+    \46\ While one reason the D.C. Circuit rejected the argument 
+that trailers are ``vehicles'' was because ``Congress put the term 
+`vehicle' in a context limited to machines that use fuel,'' see 
+TTMA, 17 F.4th at 1205, engines are plainly not vehicles despite 
+their use of fuel.
+    \47\ Id. at 1207-08 (finding that if a trailer is a vehicle 
+there would be no principled limit; NHTSA could regulate bike racks, 
+rooftop cargo carriers, or anything similar that would impact the 
+fuel efficiency of a vehicle).
+    \48\ Id.
+---------------------------------------------------------------------------
+
+    The D.C. Circuit similarly rejected EPA's argument that it could 
+regulate significant components of a vehicle: ``Perhaps sensing that it 
+needs to offer a limiting principle, the EPA claims that it can 
+regulate only `significant' vehicle components. But that limit is 
+atextual. . . . [W]e cannot endorse a hazy line mentioned nowhere in a 
+statutory provision that allows the EPA to regulate `motor vehicles,' 
+not motor-vehicle components.'' \49\ The same argument applies to 
+NHTSA's claim of authority to set separate engine standards.
+---------------------------------------------------------------------------
+
+    \49\ Id. at 1202.
+---------------------------------------------------------------------------
+
+    The D.C. Circuit set forth several other reasons why NHTSA could 
+not set fuel economy standards for trailers as vehicles that inform 
+NHTSA's interpretation here. For example, the court stated that because 
+the term ``vehicles'' in NHTSA's standard setting authority is preceded 
+by three other types of vehicles, all of which have engines and burn 
+fuel--``passenger automobiles, non-passenger automobiles,'' and ``work 
+trucks''--the term ``vehicles'' should be given a meaning similar to 
+those other words with which it is associated. A vehicle trailer, the 
+court explained, did not have any meaningful similarity to passenger 
+and non-passenger automobiles because trailers are not propelled by 
+fuel, and trailers are not like work trucks that both ``have an engine 
+and burn fuel.'' \50\ Here, engines have no meaningful similarity to 
+vehicles or passenger and non-passenger automobiles. They are not a 
+type of vehicle or automobile.\51\
+---------------------------------------------------------------------------
+
+    \50\ Id. at 1205-06.
+    \51\ The court also reasoned in a footnote that while a trailer 
+affects fuel economy, so do other ``attachments'' to vehicles like 
+bike racks that do not have a gross vehicle weight rating (GVWR) of 
+10,000 pounds or more as required by the statutory definition of 
+``commercial medium- and heavy-duty on highway vehicle'' at 49 
+U.S.C. 32901(a)(7). Id. at n.10. The same is true of the engine 
+(which also does not have a GVWR of between 8,500 and 10,000 pounds 
+as required by the statutory definition of ``work truck'' at 49 
+U.S.C. 32901(a)(19)). The court also noted that NHTSA regulations 
+separately refer to the gross combined weight rating, defined as the 
+``maximum load that the vehicle can haul, including the weight of a 
+loaded trailer and the vehicle itself.'' Id. at n.15.
+---------------------------------------------------------------------------
+
+    Because engines are not vehicles, NHTSA's justification for 
+regulating them separately has relied on the assertion that the agency 
+is vested with broad discretion by EISA. NHTSA's argument during its 
+Phase 1 rulemaking--that its mandate to ``set separate standards for 
+different classes of HD vehicles'' should be ``interpret[ed] broadly to 
+allow regulation of HD engines in addition to HD vehicles''--pushes the 
+text beyond its natural reading.\52\ The ability to set standards for a 
+vehicle does not logically include the authority to set standards for 
+parts of a vehicle.\53\
+---------------------------------------------------------------------------
+
+    \52\ See Phase 1 Final Rules, 76 FR 57112 (``Congress also 
+stated that NHTSA may set separate standards for different classes 
+of HD vehicles, which the agency interprets broadly to allow 
+regulation of HD engines in addition to HD vehicles . . . .''); 
+Phase 1 Proposed Rules, 75 FR 74158 (``Congress also stated that 
+NHTSA may set separate standards for different classes of HD 
+vehicles, which the agency interprets broadly to allow regulation of 
+HD engines in addition to HD vehicles . . . .'').
+    \53\ See, e.g., TTMA, 17 F.4th at 1207-08 (``[T]here is no 
+principled limit to NHTSA's theory.'').
+---------------------------------------------------------------------------
+
+    In the Phase 1 and Phase 2 rulemakings, NHTSA also identified other 
+aspects of its standard setting authority, including the requirement to 
+set maximum feasible standards and parts of the rulemaking mandate, to 
+argue that the statute conferred broad discretion on the agency.\54\ 
+While NHTSA has the ability to exercise discretion in setting standards 
+and other aspects of the MDHD program, NHTSA did not explain how 
+standalone engine standards were consistent with its mandate to 
+``prescribe separate fuel economy standards for . . . work trucks and 
+commercial medium-duty or heavy-duty on-highway vehicles.'' \55\ The 
+general authority to establish various aspects of ``a commercial 
+medium- and heavy-duty on-highway vehicle and work truck fuel 
+efficiency program'' is insufficient to confer standard-setting 
+authority on NHTSA beyond the plain text of the statute. EISA did not 
+direct NHTSA to establish a MDHD vehicle and engines fuel efficiency 
+program, and NHTSA cannot simply assume that authority through 
+regulation.\56\
+---------------------------------------------------------------------------
+
+    \54\ See Phase 1 Final Rules, 76 FR 57114; Phase 1 Proposed 
+Rules, 75 FR 74173 n.36; see also Phase 2 Final Rule, 81 FR 73491 
+n.51 (citing to explanation of authority in Phase 1 final rule); 
+Phase 2 Proposed Rule, 80 FR 40138, 40152 n.43 (same).
+    \55\ See 49 U.S.C. 32902(b)(1)(C); see also Phase 2 Final Rule, 
+81 FR 73491 n.51; Phase 2 Proposed Rule, 80 FR 40138, 40152 n.43 
+(same); Phase 1 Final Rules, 76 FR 57114; Phase 1 Proposed Rules, 75 
+FR 74173 n.36.
+    \56\ Cf. Nat'l Fed'n of Indep. Bus. v. Dep't of Labor, 595 U.S. 
+109, 117 (2022) (``Administrative agencies are creatures of statute. 
+They accordingly possess only the authority that Congress has 
+provided.''); Louisiana Pub. Serv. Comm'n v. F.C.C., 476 U.S. 355 
+(1986) (``[A]n agency literally has no power to act . . . unless and 
+until Congress confers power upon it.'').
+---------------------------------------------------------------------------
+
+    Upon further consideration, NHTSA has determined that the statute 
+did not authorize it to set separate standards for engines. Unlike EPA, 
+NHTSA lacked express authority to set engine standards. The desire to 
+have harmonized requirements is insufficient for NHTSA to exercise 
+regulatory authority not given by statute.\57\ It is insufficient to 
+assert, as NHTSA has, that EISA did not ``preclude[] the regulation of 
+engines,'' given that the statute refers expressly and repeatedly to 
+NHTSA's authority to establish fuel economy standards for specific 
+categories of ``vehicles.''
+---------------------------------------------------------------------------
+
+    \57\ See, e.g., Phase 1 Proposed Rules, 75 FR 74157 (``EPA's and 
+NHTSA's proposed standards for the heavy-duty sector are largely 
+harmonized with one another due to the close and direct relationship 
+between improving the fuel efficiency of these vehicles and reducing 
+their CO<INF>2</INF> tailpipe emissions.''); id. at 74177 (``NHTSA's 
+fuel consumption standards . . . [include] mandatory engine 
+standards starting in 2017 model year, harmonized with EPA's 2017 
+model year standards.'').
+---------------------------------------------------------------------------
+
+    EISA requires NHTSA to set standards for vehicles, authorized 
+separate standards for different classes of vehicles, set lead time and 
+regulatory stability limits for those vehicle standards, and otherwise 
+addressed the parameters of a regulatory program for improving the fuel 
+efficiency of vehicles. For the reasons stated above, NHTSA does not 
+have authority to set fuel efficiency standards for engines separately 
+from vehicles.
+
+III. Next Steps for MDHD Program Reset and Enforcement Considerations
+
+    As NHTSA explained in its June 2025 interpretive rule, Resetting 
+the
+
+[[Page 55792]]
+
+Corporate Average Fuel Economy Program, a reset of the MDHD program is 
+necessary to ensure the regulations are consistent with law. NHTSA will 
+reconsider the engine standards consistent with this interpretive rule 
+as part of its reset of that program and ensure that vehicle 
+manufacturers have practicable means to comply in the absence of 
+separate engine standards.\58\
+---------------------------------------------------------------------------
+
+    \58\ See 90 FR 24518 (June 11, 2025). NHTSA addressed other 
+aspects of its MDHD program in this interpretive rule. Specifically, 
+NHTSA stated that: (1) EISA requires NHTSA to consider the factors 
+in 49 U.S.C. 32902(f) in determining the maximum feasible standards; 
+(2) NHTSA lacked authority to assess civil penalties for violations 
+of MDHD standards; (3) NHTSA improperly established a credit trading 
+program for MDHD vehicles, and (4) NHTSA considered credits and 
+electric vehicles in setting the MDHD standards without express 
+authority to do so.
+---------------------------------------------------------------------------
+
+    Resetting the MDHD program in compliance with law will help prevent 
+market distortions. Commercial vehicle purchasers make business 
+decisions that account for their own fuel economy needs. Focusing the 
+MDHD program on vehicle standards, as the law requires, will help 
+ensure that manufacturers have flexibility in how best to meet the 
+standards and the needs of their customers.
+    The interpretation set forth in this rule clarifies the appropriate 
+scope of NHTSA's authority to set fuel economy standards for the MDHD 
+program. This interpretation does not change existing standards or any 
+rights or obligations under the MDHD program. Instead, this 
+interpretation lays the groundwork for notice-and-comment rulemaking to 
+reset the agency's regulatory program as determined necessary to bring 
+it into compliance with applicable substantive statutory requirements 
+as codified in Chapter 329 of title 49 of the United States Code and 
+Administration policy. NHTSA will also consider other issues as 
+appropriate in resetting the MDHD program, including whether any 
+adjustments to the vehicle standards are warranted. Among the matters 
+under review is the relationship between potential NO<INF>X</INF> 
+emission reductions arising from EPA's 2023 NO<INF>X</INF> emission 
+standards (taking effect in model year 2027) \59\ and fuel 
+consumption.\60\
+---------------------------------------------------------------------------
+
+    \59\ Environmental Protection Agency, Final rule, Control of Air 
+Pollution from New Motor Vehicles: Heavy-Duty Engine and Vehicle 
+Standards, 88 FR 4296 (Jan. 24, 2023).
+    \60\ EPA has proposed to amend the 2023 rule. Environmental 
+Protection Agency, Proposed rule, Amendments and Nonconformance 
+Penalties for Model Year 2027 and Later Heavy-Duty Highway Engines 
+and Amendments to Inducement Provisions for SCR-Equipped Diesel 
+Engines, 91 FR 43154 (July 14, 2026).
+---------------------------------------------------------------------------
+
+    In light of the legal interpretation set forth in this interpretive 
+rule, NHTSA will reset the MDHD program consistent with the law. 
+Pending the rulemaking process, NHTSA will exercise its enforcement 
+authority with regard to affected standards in accordance with the 
+interpretation set forth in this rule.
+
+Regulatory Analyses
+
+A. Administrative Procedure Act
+
+    NHTSA issues this interpretive rule to explain the statute the 
+agency administers and how the agency will apply its interpretation to 
+subsequent substantive rules. This interpretive rule does not amend or 
+alter the meaning of any regulations, and any costs and benefits of any 
+subsequent proposed changes to regulations will be analyzed in a future 
+rulemaking. As such, notice and comment under the Administrative 
+Procedure Act is not required for this interpretive rule,\61\ and the 
+rule similarly is not subject to a 30-day delay in effective date.\62\
+---------------------------------------------------------------------------
+
+    \61\ See 5 U.S.C. 553(b)(A).
+    \62\ See 5 U.S.C. 553(d)(2).
+---------------------------------------------------------------------------
+
+B. Executive Order 12866, Regulatory Planning and Review; Executive 
+Order 14192, Unleashing Prosperity Through Deregulation; and Executive 
+Order 14219, Ensuring Lawful Governance and Implementing the 
+President's ``Department of Government Efficiency'' Deregulatory 
+Initiative
+
+    Executive Order (E.O.) 12866, ``Regulatory Planning and Review'' 
+(58 FR 51735, Oct. 4, 1993), provides for determining whether a 
+regulatory action is ``significant'' and therefore subject to the 
+Office of Management and Budget (OMB) review process and to the 
+requirements of the E.O. This is a ``significant regulatory action'' 
+under E.O. 12866. Accordingly, NHTSA submitted this action to OMB for 
+review. However, there are no costs or benefits associated with this 
+interpretive rule. Any costs and benefits of rules implementing the 
+interpretation will be analyzed in those subsequent rulemakings.
+    E.O. 14192, ``Unleashing Prosperity Through Deregulation'' (90 FR 
+9065, Feb. 6, 2025), requires an agency, unless prohibited by law, to 
+identify at least ten existing regulations to be repealed when the 
+agency publicly proposes for notice and comment or otherwise 
+promulgates a new regulation. In furtherance of this requirement, 
+section 3(c) of Executive Order 14192 requires that the new incremental 
+costs associated with new regulations shall, to the extent permitted by 
+law, be offset by the elimination of existing costs associated with at 
+least ten prior regulations. As discussed above, there are no costs or 
+benefits associated with this interpretive rule. However, this 
+interpretive rule, which sets forth NHTSA's interpretation of its 
+statutory authority for the MDHD program ensures that, going forward, 
+NHTSA will not regulate beyond its statutory authority. The costs and 
+benefits of future MDHD rules will be analyzed in those rulemakings.
+    E.O. 14219, ``Ensuring Lawful Governance and Implementing the 
+President's `Department of Government Efficiency' Deregulatory 
+Initiative,'' requires agency heads to review their regulations and 
+identify regulations that, among other things, are based on anything 
+other than the best reading of the underlying statutory authority or 
+prohibition, or that implicate matters of social, political, or 
+economic significance that are not authorized by clear statutory 
+authority. NHTSA has identified its MDHD engine standards as falling 
+within an enumerated category or categories of E.O. 14219. NHTSA is 
+issuing this interpretive rule to set forth the agency's interpretation 
+that it lacks the authority to regulate engines. This rule describes 
+NHTSA's interpretation of its authority to establish the necessary 
+legal foundation for bringing the MDHD program into compliance with 
+relevant statutory requirements.
+
+C. Executive Order 13132, Federalism
+
+    A rule has implications for federalism under section 1(a) of E.O. 
+13132 if it has ``substantial direct effects on the States, on the 
+relationship between the national government and the States, or on the 
+distribution of power and responsibilities among the various levels of 
+government.'' NHTSA has determined that this interpretive rule will not 
+have substantial direct costs on or for States, nor would it limit the 
+policymaking discretion of States. Nothing in this document preempts 
+any State law or regulation. Therefore, this interpretive rule does not 
+have sufficient federalism implications to warrant the preparation of a 
+Federalism Impact Statement.
+
+D. Executive Order 12988, Civil Justice Reform
+
+    E.O. 12988, ``Civil Justice Reform'' (61 FR 4729, Feb. 7, 1996), 
+requires that agencies promulgating new regulations or reviewing 
+existing regulations take steps to minimize litigation, eliminate 
+ambiguity, and to reduce burdens on the regulated public. NHTSA has 
+reviewed this interpretive rule and determined that this action 
+conforms to the applicable standards in sections 3(a) and 3(b)(2) of 
+E.O. 12988, Civil Justice Reform.
+
+[[Page 55793]]
+
+E. Executive Order 13175, Consultation and Coordination With Indian 
+Tribal Governments
+
+    This interpretive rule does not have Tribal implications under E.O. 
+13175, Consultation and Coordination with Indian Tribal Governments, 
+because it does not have a substantial direct effect on one or more 
+Indian Tribes, on the relationship between the Federal Government and 
+Indian Tribes, or on the distribution of power and responsibilities 
+between the Federal Government and Indian Tribes.
+
+F. Unfunded Mandates Reform Act of 1995
+
+    The Unfunded Mandates Reform Act of 1995 (2 U.S.C. 1531-1538) 
+(UMRA) requires Federal agencies to assess the effects of their 
+discretionary regulatory actions. UMRA addresses actions that may 
+result in the expenditure by a State, local, or Tribal government, in 
+the aggregate, or by the private sector of $206 million (which is the 
+value equivalent of $100 million in 1995, adjusted for inflation to 
+2025) or more in any 1 year. As discussed above, this interpretive rule 
+by itself results in no expenditures and therefore the analytical 
+requirements of UMRA do not apply. Any costs and benefits will be 
+analyzed in future rules subject to the principles laid out in this 
+notice.
+
+G. Regulatory Flexibility Act of 1980
+
+    The Regulatory Flexibility Act, 5 U.S.C. 601 et seq., requires 
+agencies to prepare a regulatory flexibility analysis for any rule 
+where the agency is required by law to publish a general notice of 
+proposed rulemaking.\63\ NHTSA is not required to complete a regulatory 
+flexibility analysis because, as discussed previously, this action is 
+not subject to notice and public comment under the Administrative 
+Procedure Act (APA) \64\ or any other law.
+---------------------------------------------------------------------------
+
+    \63\ See 5 U.S.C. 603.
+    \64\ See 5 U.S.C. 553(b)(A).
+---------------------------------------------------------------------------
+
+H. Paperwork Reduction Act
+
+    This interpretive rule contains no new information collection 
+requirements under the Paperwork Reduction Act of 1995 (44 U.S.C. 3501-
+3520).
+
+I. National Environmental Policy Act of 1969
+
+    In accordance with 42 U.S.C. 4336, ``[a]n agency is not required to 
+prepare an environmental document with respect to a proposed agency 
+action if the proposed agency action is not a final agency action 
+within the meaning of such term in chapter 5 of title 5 [of the United 
+States Code].'' As discussed above, this action is not a final agency 
+action within the meaning of 5 U.S.C. Chapter 5. Any environmental 
+effects will be analyzed in a future rulemaking resetting the MDHD 
+program subject to the principles laid out in this notice.
+
+J. Privacy
+
+    The Consolidated Appropriations Act, 2005 (Pub. L. 108-447, 118 
+Stat. 2809, 3268, Dec. 8, 2004 (5 U.S.C. 552a note)), requires certain 
+parties (Federal agencies and any non-Federal entity that receives 
+records contained in a system of records from a Federal agency for use 
+in a matching program) to conduct a privacy impact assessment of a 
+regulation that will affect the privacy of individuals. Because this 
+interpretive rule does not require the collection of personally 
+identifiable information, NHTSA is not required to conduct a privacy 
+impact assessment.
+    The E-Government Act of 2002 (Pub. L. 107-347, sec. 208, 116 Stat. 
+2899, 2921, Dec. 17, 2002), requires Federal agencies to conduct a 
+privacy impact assessment for new or substantially changed technology 
+that collects, maintains, or disseminates information in an 
+identifiable form. No new or substantially changed technology will 
+collect, maintain, or disseminate information as a result of this 
+interpretive rule. Accordingly, NHTSA has not conducted a privacy 
+impact assessment.
+
+K. Congressional Review Act
+
+    Pursuant to the Congressional Review Act (CRA) (5 U.S.C. 801 et 
+seq.), the Office of Information and Regulatory Affairs designated this 
+rule as not a ``major rule,'' as defined by 5 U.S.C. 804(2). NHTSA will 
+submit this rule to Congress and the Government Accountability Office 
+as required by the CRA.
+
+    Issued on August 27, 2026 in Washington, DC, under authority 
+delegated in 49 CFR 1.95.
+Jonathan Morrison,
+Administrator.
+[FR Doc. 2026-17756 Filed 8-28-26; 8:45 am]
+BILLING CODE 4910-59-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

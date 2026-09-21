@@ -1,0 +1,419 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 173 (Wednesday, September 9, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 173 (Wednesday, September 9, 2026)]
+[Rules and Regulations]
+[Pages 57262-57265]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-18334]
+
+
+-----------------------------------------------------------------------
+
+ENVIRONMENTAL PROTECTION AGENCY
+
+40 CFR Part 52
+
+[EPA-R05-OAR-2018-0788; FRL-13249-02-R5]
+
+
+Air Plan Approvals; Indiana; Prong 4 (Visibility) for the 2015 
+Ozone National Ambient Air Quality Standard
+
+AGENCY: Environmental Protection Agency (EPA).
+
+ACTION: Final rule.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The U.S. Environmental Protection Agency (EPA) is approving a 
+portion of Indiana's State Implementation Plan (SIP) submission 
+regarding the infrastructure requirements in Clean Air Act (CAA) 
+section 110 for the 2015 ozone National Ambient Air Quality Standards 
+(NAAQS). The infrastructure requirements are designed to ensure that 
+the structural components of each State's air quality management 
+program are adequate to meet the State's responsibilities under the 
+CAA. The EPA finds that Indiana's infrastructure submission fulfills 
+CAA requirements for a State's SIP to contain adequate provisions 
+prohibiting emissions that will interfere with required visibility 
+protection measures in any other State's SIP. The EPA proposed to 
+approve this action on April 10, 2026, and received no adverse 
+comments.
+
+DATES: This final rule is effective on October 9, 2026.
+
+ADDRESSES: The EPA has established a docket for this action under 
+Docket ID No. EPA-R05-OAR-2018-0788. All documents in the docket are 
+listed on the <a href="https://www.regulations.gov">https://www.regulations.gov</a> website. Although listed in 
+the index, some information is not publicly available, i.e., 
+Confidential Business Information (CBI), Proprietary Business 
+Information (PBI), or other information whose disclosure is restricted 
+by statute. Certain other material, such as copyrighted material, is 
+not placed on the internet and will be publicly available only in hard 
+copy form. Publicly available docket materials are available either 
+through <a href="https://www.regulations.gov">https://www.regulations.gov</a> or please contact the person 
+identified in the FOR FURTHER INFORMATION CONTACT section for 
+additional information.
+
+FOR FURTHER INFORMATION CONTACT: Matt Rau, Air and Radiation Division 
+(AR-18J), Environmental Protection Agency, Region 5, 77 West Jackson 
+Boulevard, Chicago, Illinois 60604, telephone number: (312) 886-6524, 
+email address: <a href="/cdn-cgi/l/email-protection#3e4c5f4b10535f4a4a565b497e5b4e5f10595148"><span class="__cf_email__" data-cfemail="9fedfeeab1f2feebebf7fae8dffaeffeb1f8f0e9">[email&#160;protected]</span></a>.
+
+SUPPLEMENTARY INFORMATION: Throughout this document whenever ``we,'' 
+``us,'' or ``our'' is used, we mean the EPA.
+
+Acronyms
+
+CAA Clean Air Act
+CBI Confidential Business Information
+EPA U.S. Environmental Protection Agency
+LADCO Lake Michigan Air Directors Consortium
+NAAQS National Ambient Air Quality Standards
+PBI Proprietary Business Information
+RPO Regional Planning Organization
+SIP State Implementation Plan
+
+I. Executive Summary
+
+A. What action is the EPA taking?
+
+    The EPA is finalizing an approval of Indiana's November 2, 2018, 
+interstate transport infrastructure SIP submission as satisfying the 
+requirements related to visibility protection contained in CAA section 
+110(a)(2)(D)(i)(II), also known as Prong 4, for the 2015 ozone NAAQS.
+
+B. What is the legal authority and requirements?
+
+    The EPA proposed to approve Indiana's submission into the SIP on 
+April 10, 2026, 91 FR 18347. In this action, EPA is finalizing an 
+approval of Indiana's submittal as meeting the visibility protection 
+requirements of CAA section 110(a)(2)(D)(i)(II) for the 2015 ozone 
+NAAQS.
+
+II. Background
+
+    On November 2, 2018, Indiana submitted an infrastructure SIP 
+revision for the 2015 ozone NAAQS addressing the fourth component of 
+CAA section 110(a)(2)(D)(i)(II), also known as ``Prong 4.'' Prong 4 
+requires that a State's SIP contain adequate provisions prohibiting any 
+source or other type of emissions activity within the State from 
+emitting any air pollutant in amounts which will interfere with 
+measures required to be included in the applicable SIP for any other 
+State to protect visibility.
+    Indiana is a member of the Lake Michigan Air Directors Consortium 
+(LADCO) regional planning organization (RPO) and participated in the 
+RPO's regional approach to identifying emission reduction measures 
+necessary to make reasonable progress towards the national visibility 
+goal in LADCO Class I areas. That process also included consultations 
+with States in other RPOs. Indiana responded to requests from non-LADCO 
+States and another RPO to consider additional measures to address 
+visibility impairment in Class I areas outside the LADCO States.
+
+III. CAA Section 110(a)(2)(D)(i)(II)--Visibility Protection
+
+    CAA section 110(a)(2)(D)(i)(II), Prong 4, requires SIPs to contain 
+adequate provisions to prohibit emissions in amounts that will 
+interfere with measures required to be included in the applicable 
+implementation plan for any other state under part C of the Act to 
+protect visibility. The EPA issued guidance on infrastructure SIPs in a 
+September 13, 2013, memorandum titled ``Guidance on Infrastructure 
+State Implementation Plan (SIP) Elements
+
+[[Page 57263]]
+
+under Clean Air Act sections 110(a)(1) and 110(a)(2)'' (``2013 
+Guidance''). The 2013 Guidance states that these Prong 4 requirements 
+can be satisfied by approved SIP provisions that the EPA has found to 
+adequately address any contribution of that State's sources that impact 
+the visibility program requirements in other States.\1\
+---------------------------------------------------------------------------
+
+    \1\ 2013 Guidance at pages 32 through 33. A copy of this 
+guidance can be found in the docket of this rulemaking.
+---------------------------------------------------------------------------
+
+    The 2013 Guidance lays out how a State's infrastructure SIP may 
+satisfy Prong 4. In the second planning period, confirmation that a 
+State has a fully approved regional haze SIP that fully meets the 
+requirements of 40 CFR 51.308 will satisfy the requirements of Prong 
+4.\2\ A fully approved regional haze SIP \3\ will ensure that emissions 
+from sources under an air agency's jurisdiction are not interfering 
+with measures required to be included in other air agencies' plans to 
+protect visibility.
+---------------------------------------------------------------------------
+
+    \2\ The EPA acknowledges that in the 2013 Guidance, we indicated 
+that the EPA may find it appropriate to supplement the guidance 
+regarding the relationship between regional haze SIPs and prong 4 
+after second implementation period SIPs become due, which occurred 
+on July 31, 2021. After a review of the 2013 Guidance and the second 
+implementation period regional haze requirements, the EPA maintains 
+the interpretation that a fully approved regional haze SIP satisfies 
+prong 4 requirements in the second implementation period.
+    \3\ Since second implementation period SIPs became due, a 
+``fully approved regional haze SIP'' would necessarily include fully 
+approved first and second implementation period regional haze SIPs.
+---------------------------------------------------------------------------
+
+    In the second planning period, the EPA's Regional Haze regulations 
+under 40 CFR 51.308(f) require that a State consider the emission 
+reduction measures identified by other States as being necessary to 
+make reasonable progress towards meeting the national visibility goal 
+in Class I Federal areas. Specifically, the regulations require a State 
+to include in its Regional Haze SIP all measures agreed to during that 
+process or measures that will provide equivalent visibility improvement 
+(See 40 CFR 51.308(f)(2)(ii)). Thus, in meeting the requirements of 40 
+CFR 51.308(f), an approved regional haze SIP meeting the requirements 
+of 40 CFR 51.308(f)(2)(ii) will ensure that emissions from sources 
+under an air agency's jurisdiction are not interfering with measures 
+required to be included in other air agencies' plans to protect 
+visibility and will, therefore, satisfy Prong 4.
+
+III. Summary of Public Comments and the EPA's Responses
+
+    The EPA received one comment during the comment period for the 
+proposed rule. The commenter did not object to the EPA's proposed 
+action, but rather suggested that the EPA include additional 
+information supporting the determinations of the proposal in the final 
+rule. EPA has provided this additional information in the background 
+section of this final action, and we are finalizing our action as 
+proposed.
+    The commenter stated, ``EPA should strengthen the final rule in 
+three ways.'' A synopsis of each comment is given before the response. 
+The comment letter is included in the docket for this rulemaking.
+    Comment: The commenter suggests that the EPA identify the specific 
+findings from the regional haze plan approval that it believes satisfy 
+prong 4. The commenter contends that the proposal does not explain 
+which findings from the January 26, 2026, approval demonstrate that 
+Indiana emissions will not interfere with the visibility protection 
+measures required in other States' SIPs.
+    Response: In the proposed rule, the EPA confirms that Indiana has a 
+fully approved regional haze SIP meeting the requirements of 40 CFR 
+51.308 to satisfy Prong 4. According to the 2013 Guidance, a State's 
+infrastructure SIP may satisfy Prong 4 for any relevant NAAQS through 
+an air agency's confirmation that the State has a fully approved 
+regional haze SIP meeting the requirements of 40 CFR 51.308. Since 
+second implementation period SIPs became due, a ``fully approved 
+regional haze SIP'' would necessarily include fully approved first and 
+second implementation period regional haze SIPs. Therefore, simply 
+confirming the EPA's approval of Indiana's second implementation period 
+regional haze plan satisfies the requirement.
+    The Regional Haze Rule's consultation requirement of 40 CFR 
+51.308(f)(2)(ii) requires a State to consult with other States that 
+also have emissions that are reasonably anticipated to contribute to 
+visibility impairment in each Class I area. The EPA's approval of 
+Indiana's second implementation period regional haze plan confirms it 
+has engaged in consultation to consider the emission reduction measures 
+identified by other States for their sources as being necessary to make 
+reasonable progress in the mandatory Class I Federal area (See 91 FR 
+3057, January 26, 2026).
+    Comment: The commenter suggests that the EPA explain the sequencing 
+of the EPA's approvals of Indiana's 2015 ozone standard infrastructure 
+SIP submission made on November 2, 2018. As the Prong 4 portion of the 
+submittal was not included in the EPA's June 29, 2022, approval, the 
+commenter suggests that the EPA state what changed and why that change 
+is sufficient to resolve the previously open Prong 4 issue.
+    Response: This is the third EPA rulemaking on Indiana's November 2, 
+2018, submission addressing the 2015 ozone NAAQS. First, the EPA 
+approved most elements of Indiana's submission on November 2, 2022 (87 
+FR 66091), which addressed the applicable infrastructure requirements 
+in CAA section 110(a)(1) and (2) for the 2015 ozone NAAQS related to 
+the interstate transport element preventing significant deterioration 
+of air quality from CAA section 110(a)(2)(D)(i)(II) (``Prong 3''). The 
+proposed rule details the background, including an analysis of each 
+element (See 87 FR 38693, June 29, 2022). In this rulemaking, EPA did 
+not act on the other interstate transport elements, Prongs 1, 2, and 4.
+    Second, the EPA acted on the Prongs 1 and 2 interstate transport 
+elements. On February 13, 2023 (88 FR 9336), the EPA disapproved the 
+CAA section 110(a)(2)(D)(i)(I) elements for Indiana and other States. 
+Prongs 1 and 2 require that each State's SIP contain adequate 
+provisions to prohibit emissions from within the State from 
+significantly contributing to nonattainment or interfering with 
+maintenance of the NAAQS in other States. The EPA found that a portion 
+of Indiana's submission did not meet the State's interstate transport 
+obligations, because it did not contain the necessary provisions to 
+eliminate emissions that would contribute significantly to 
+nonattainment or interfere with maintenance of the 2015 ozone NAAQS in 
+any other State. The proposed rulemaking further details the analysis 
+used in evaluating each State's interstate transport provision for the 
+2015 ozone NAAQS implementation plan submission, including Indiana (See 
+87 FR 9838, February 22, 2022).
+    Third, the EPA is approving the Prong 4 element of CAA section 
+110(a)(2)(D)(i)(II), with this rule. The EPA finds that Indiana's 
+infrastructure submission fulfills CAA requirements for a State's SIP 
+to contain adequate provisions prohibiting emissions that will 
+interfere with required visibility protection measures in any other 
+State's SIP. The 2013 Guidance confirms a State's infrastructure SIP 
+may satisfy Prong 4 \4\ for any relevant NAAQS
+
+[[Page 57264]]
+
+through the States's confirmation that it has a fully approved regional 
+haze SIP \5\ meeting the requirements of 40 CFR 51.308. The EPA 
+approved Indiana's regional haze plan for the second implementation 
+period (See 91 FR 3057, January 26, 2026).
+---------------------------------------------------------------------------
+
+    \4\ In the 2013 Guidance, we indicate that it may be appropriate 
+to supplement the guidance regarding the relationship between 
+regional haze SIPs and Prong 4 after second implementation period 
+SIPs become due, which occurred on July 31, 2021. After a review of 
+the 2013 Guidance and the second implementation period regional haze 
+requirements, the EPA maintains the interpretation that a fully 
+approved regional haze SIP satisfies Prong 4 requirements in the 
+second implementation period.
+    \5\ Since second implementation period SIPs became due, a 
+``fully approved regional haze SIP'' would necessarily include fully 
+approved first and second implementation period regional haze SIPs.
+---------------------------------------------------------------------------
+
+    Comment: The commenter suggests that the EPA make the 
+administrative record easier to audit for ordinary readers. The 
+commenter contends that if the Agency's conclusion depends almost 
+entirely on Indiana's regional haze plan approval, then the final rule 
+should include a short summary showing how the plan's interstate 
+visibility findings relate to this Prong 4 determination.
+    Response: Electronic dockets make the supporting documents readily 
+available to readers. The referenced documents are in the docket for 
+this rulemaking.
+    As noted in the proposed rule and the previous comment response, a 
+State having a fully approved regional haze plan for the second 
+implementation period will ensure that emissions from sources under an 
+air agency's jurisdiction are not interfering with measures required to 
+be included in other air agencies' plans to protect visibility and 
+will, therefore, satisfy Prong 4. By meeting the statutory and 
+regulatory requirements of the regional haze program, including the 
+interstate consultation requirements in 40 CFR 51.308(f)(2)(ii), 
+Indiana's SIP adequately prohibits emissions from within the State that 
+would interfere with visibility protection measures in any other 
+State's SIP. Thus, now that the EPA has approved Indiana's regional 
+haze plan for the second implementation period, Indiana satisfies the 
+requirements of CAA section 110(a)(2)(D)(i)(II) relating to visibility 
+protection for the 2015 ozone NAAQS, allowing the Prong 4 element of 
+the infrastructure submission to be approved.
+
+IV. What action is the EPA taking?
+
+    The EPA is approving Indiana's November 2, 2018, interstate 
+transport infrastructure SIP submission as satisfying the requirements 
+related to visibility protection contained in CAA section 
+110(a)(2)(D)(i)(II), also known as Prong 4, for the 2015 ozone NAAQS.
+
+V. Statutory and Executive Order Reviews
+
+    Under the CAA, the Administrator is required to approve a SIP 
+submission that complies with the provisions of the CAA and applicable 
+Federal regulations. 42 U.S.C. 7410(k); 40 CFR 52.02(a). Thus, in 
+reviewing SIP submissions, the EPA's role is to approve State choices, 
+provided that they meet the criteria of the CAA. Accordingly, this 
+action merely approves State law as meeting Federal requirements and 
+does not impose additional requirements beyond those imposed by State 
+law. For that reason, this action:
+    <bullet> Is not a significant regulatory action subject to review 
+by the Office of Management and Budget under Executive Order 12866 (58 
+FR 51735, October 4, 1993);
+    <bullet> Is not an Executive Order 14192 (90 FR 9065, February 6, 
+2025) regulatory action because this action is not significant under 
+Executive Order 12866;
+    <bullet> Does not impose an information collection burden under the 
+provisions of the Paperwork Reduction Act (44 U.S.C. 3501 et seq.);
+    <bullet> Is certified as not having a significant economic impact 
+on a substantial number of small entities under the Regulatory 
+Flexibility Act (5 U.S.C. 601 et seq.);
+    <bullet> Does not contain any unfunded mandate or significantly or 
+uniquely affect small governments, as described in the Unfunded 
+Mandates Reform Act of 1995 (Pub. L. 104-4);
+    <bullet> Does not have federalism implications as specified in 
+Executive Order 13132 (64 FR 43255, August 10, 1999);
+    <bullet> Is not subject to Executive Order 13045 (62 FR 19885, 
+April 23, 1997) because it approves a State program;
+    <bullet> Is not a significant regulatory action subject to 
+Executive Order 13211 (66 FR 28355, May 22, 2001); and
+    <bullet> Is not subject to requirements of section 12(d) of the 
+National Technology Transfer and Advancement Act of 1995 (15 U.S.C. 272 
+note) because application of those requirements would be inconsistent 
+with the CAA.
+    In addition, the SIP is not approved to apply on any Indian 
+reservation land or in any other area where the EPA or an Indian Tribe 
+has demonstrated that a Tribe has jurisdiction. In those areas of 
+Indian country, the rule does not have Tribal implications and will not 
+impose substantial direct costs on Tribal governments or preempt Tribal 
+law as specified by Executive Order 13175 (65 FR 67249, November 9, 
+2000).
+    This action is subject to the Congressional Review Act, and the EPA 
+will submit a rule report to each House of the Congress and to the 
+Comptroller General of the United States. This action is not a ``major 
+rule'' as defined by 5 U.S.C. 804(2).
+    Under CAA section 307(b)(1), petitions for judicial review of this 
+action must be filed in the United States Court of Appeals for the 
+appropriate circuit by November 9, 2026. Filing a petition for 
+reconsideration by the Administrator of this final rule does not affect 
+the finality of this action for the purposes of judicial review nor 
+does it extend the time within which a petition for judicial review may 
+be filed, and shall not postpone the effectiveness of such rule or 
+action. This action may not be challenged later in proceedings to 
+enforce its requirements (See CAA section 307(b)(2)).
+
+List of Subjects in 40 CFR Part 52
+
+    Environmental protection, Air pollution control, Incorporation by 
+reference, Intergovernmental relations, Nitrogen oxides, Ozone, 
+Particulate matter, Sulfur oxides.
+
+    Dated: August 24, 2026.
+Anne Vogel,
+Regional Administrator, Region 5.
+
+    For the reasons stated in the preamble, 40 CFR part 52 is amended 
+as follows:
+
+PART 52--APPROVAL AND PROMULGATION OF IMPLEMENTATION PLANS
+
+0
+1. The authority citation for part 52 continues to read as follows:
+
+    Authority: 42 U.S.C. 7401 et seq.
+
+
+0
+2. In Sec.  52.770, the table in paragraph (e) is amended by removing 
+the two entries for ``Section 110(a)(2) Infrastructure Requirements for 
+the 2015 Ozone NAAQS'' adding in their place an entry for ``Section 
+110(a)(2) Infrastructure Requirements for the 2015 Ozone NAAQS'' to 
+read as follows:
+
+
+Sec.  52.770  Identification of plan.
+
+* * * * *
+    (e) * * *
+
+[[Page 57265]]
+
+
+
+                       EPA-Approved Indiana Nonregulatory and Quasi-Regulatory Provisions
+----------------------------------------------------------------------------------------------------------------
+                  Title                    Indiana date          EPA approval                 Explanation
+----------------------------------------------------------------------------------------------------------------
+ 
+                                                  * * * * * * *
+Section 110(a)(2) Infrastructure               11/2/2018  9/9/2026, 91 FR [INSERT     All CAA infrastructure
+ Requirements for the 2015 Ozone NAAQS.                    Federal Register PAGE       elements have been
+                                                           WHERE THE DOCUMENT          approved except (D)(i)(I)
+                                                           BEGINS].                    Prongs 1 and 2, which are
+                                                                                       disapproved.
+ 
+                                                  * * * * * * *
+----------------------------------------------------------------------------------------------------------------
+
+* * * * *
+[FR Doc. 2026-18334 Filed 9-8-26; 8:45 am]
+BILLING CODE 6560-50-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

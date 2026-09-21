@@ -1,0 +1,150 @@
+<html>
+<head>
+<title>Federal Register, Volume 90 Issue 240 (Wednesday, December 17, 2025)</title>
+</head>
+<body><pre>
+[Federal Register Volume 90, Number 240 (Wednesday, December 17, 2025)]
+[Notices]
+[Pages 58677-58678]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2025-23111]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+SELECTIVE SERVICE SYSTEM
+
+
+Privacy Act of 1974; System of Records
+
+AGENCY: Selective Service System (SSS).
+
+ACTION: Notice of modified system of records.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The purpose of this notice is to meet the requirement of the 
+Privacy Act of 1974, as amended, and OMB Circular No. A-108 to provide 
+notice that the SSS is modifying three systems of records: (1) 
+Registration, Compliance and Verification (RCV) provides a central 
+repository for all data related to active registrants and potential 
+violators; (2) Enterprise Content Management (ECM) manage the document 
+workflow and processing automation of the Data Management Center (DMC); 
+and (3) Information Management Information System (IMIS) manages the 
+daily operational needs for the agency, i.e., requests for 
+reimbursements, financial records, and personnel data are processed by 
+batch and transaction processing. SSS is adding two routine uses and 
+removing two that are no longer applicable.
+
+DATES: This SORN will become effective upon publication in the Federal 
+Register, except for the routine uses, which will become effective 1 
+February 2026 [30 DAYS AFTER PUBLICATION IN THE Federal Register], 
+unless they need to be changed as a result of public comment. SSS will 
+publish any changes to the SORN resulting from public comment.
+
+ADDRESSES: Written comments and recommendations should be sent to 
+<a href="/cdn-cgi/l/email-protection#5918353438771a2b2c23192a2a2a773e362f"><span class="__cf_email__" data-cfemail="d594b9b8b4fb96a7a0af95a6a6a6fbb2baa3">[email&#160;protected]</span></a>, Ms. Alma Cruz, Senior Agency Official for Privacy, 
+1501 Wilson Boulevard, Arlington, Virginia 22209-2425.
+
+FOR FURTHER INFORMATION CONTACT: For further inquiries regarding this 
+amendment, you may contact Mr. Jeffrey Steinlage, Acting Chief 
+Information Officer. Email: <a href="/cdn-cgi/l/email-protection#96dcc5e2f3fff8faf7f1f3d6e5e5e5b8f1f9e0"><span class="__cf_email__" data-cfemail="501a032435393e3c313735102323237e373f26">[email&#160;protected]</span></a>, 1501 Wilson Boulevard, 
+Arlington, Virginia 22209-2425.
+
+SUPPLEMENTARY INFORMATION: This notice serves to update and amend all 
+three of the SSS' SORNs routine uses. The amended list of routine uses 
+is consistent with OMB Circular No. A-108.
+
+SYSTEM NAME(S) AND NUMBER(S):
+    (1) Registration, Compliance and Verification (RCV), SSS-19. (2) 
+Integrated Mobilization Information Management System (IMIS) and 
+Reserve and National Guard Personnel Records, SSS-5. (3) Enterprise 
+Content Management System (ECM), SSS-50.
+
+SECURITY CLASSIFICATION:
+    Unclassified.
+
+SYSTEM LOCATION:
+    National Headquarters, Selective Service System, 1501 Wilson 
+Boulevard, Arlington, VA 22209-2425.
+
+SYSTEM MANAGER(S):
+    Director of Selective Service, 1501 Wilson Boulevard, Arlington, VA 
+22209-2425, Attn: Records Manager.
+
+ROUTINE USES OF RECORDS MAINTAINED IN THE SYSTEM, INCLUDING CATEGORIES 
+OF USERS AND THE PURPOSES OF SUCH USES:
+    In addition to the disclosures permitted under subsection (b) of 
+the Privacy Act, the SSS may disclose information contained in this 
+System of Records without the consent of the individuals to whom the 
+records pertain if the disclosure is compatible with the purpose for 
+which the record was collected under the following routine uses:
+    1. To the Department of Justice for the purpose of reviewing and 
+processing suspected violations of the Military Selective Service Act 
+(MSSA), for investigation or reviewing of perjury, and for defense of a 
+civil action arising from administrative processing under such Act.
+    2. To the Department of State and U.S. Citizenship and Immigration 
+Services for collection and evaluation of data to determine an 
+individual's eligibility for United States citizenship.
+    3. To the Department of Defense and U.S. Coast Guard to exchange 
+data concerning registration, classification, induction, and 
+examination of registrants and for identification of prospects for 
+recruiting.
+    4. To the Department of Labor to assist veterans in need of data 
+concerning reemployment rights, and for determination of eligibility 
+for benefits under the Workforce Investment Act.
+    5. To all Federal Agencies to determine eligibility for employment.
+    6. To the U.S. Census Bureau for the purposes of planning or 
+carrying out a census or survey or related activity pursuant to the 
+provisions of Title 13.
+    7. To all U.S. Universities and colleges to determine eligibility 
+for student aid, including grants and loans as required by state and 
+local law.
+    8. To the Department of Health and Human Services to determine an 
+individual's proper Social Security Account Number and for locating 
+parents pursuant to the Child Support Enforcement Act.
+    9. To an appropriate Federal, state, local, territorial, tribal, or 
+foreign law enforcement authority for investigation or prosecution 
+where a record indicates a violation or potential violation of law.
+    10. To the Alternative Service Employers, during conscription, to 
+exchange information with employers regarding a registrant who is a 
+conscientious objector for the purpose of placement and supervision of 
+performance of alternative service in lieu of induction into the 
+military service.
+    11. To appropriate agencies, entities, and persons when (a) the SSS 
+suspects or has confirmed that there has been a breach of the System of 
+Records. (b) the SSS has determined that as a result of the suspected 
+or confirmed breach there is a risk of harm to an individual(s), the 
+SSS (including its information systems, programs, and operations), the 
+Federal Government, or national security; and (c) the disclosure made 
+to such agencies, entities, and persons is reasonably necessary to 
+assist in connection with the SSS efforts to respond to the suspected 
+or confirmed breach or to prevent, minimize, or remedy such harm.
+    12. To another Federal agency or Federal entity, when the SSS 
+determines that information from this System of Records is necessary to 
+assist the recipient agency or entity in (a) responding to a suspected 
+or confirmed breach, or (b) preventing, minimizing, or remedying the 
+risk of harm to individuals, the recipient agency or entity (including 
+its information systems, programs, and operations), the Federal 
+Government, or national security, resulting from a suspected or 
+confirmed breach.
+    13. To the General Public for the purpose of retrieving a copy of 
+their Selective Service Number for various purposes such as applying 
+for employment, security background check, student grants and loans, 
+and citizenship.
+
+[[Page 58678]]
+
+HISTORY:
+    Document Citations: 90 FR 20734; 82 FR 29971; 90 FR 17680; 82 FR 
+29970.
+
+Alma Cruz,
+Senior Agency Official for Privacy, Selective Service System.
+[FR Doc. 2025-23111 Filed 12-16-25; 8:45 am]
+BILLING CODE 8015-01-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

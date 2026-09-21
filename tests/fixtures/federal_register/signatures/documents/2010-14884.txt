@@ -1,0 +1,40 @@
+<html>
+<head>
+<title>Federal Register, Volume 75 Issue 117 (Friday, June 18, 2010)</title>
+</head>
+<body><pre>
+[Federal Register Volume 75, Number 117 (Friday, June 18, 2010)]
+[Rules and Regulations]
+[Page 34634]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2010-14884]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+DEPARTMENT OF DEFENSE
+
+National Geospatial-Intelligence Agency
+
+32 CFR Part 320
+
+
+Privacy Act; Implementation
+
+CFR Correction
+
+    In Title 32 of the Code of Federal Regulations, Parts 191 to 399, 
+revised as of July 1, 2009, on page 912, revise the heading of part 320 
+to read as set forth below, and on page 914, in Sec.  320.5, in 
+paragraph (b)(2), revise ``NIMA'' to read ``NGA''.
+
+PART 320--NATIONAL GEOSPATIAL-INTELLIGENCE AGENCY (NGA) PRIVACY
+
+
+[FR Doc. 2010-14884 Filed 6-17-10; 8:45 am]
+BILLING CODE 1505-01-D
+
+
+</pre></body>
+</html>

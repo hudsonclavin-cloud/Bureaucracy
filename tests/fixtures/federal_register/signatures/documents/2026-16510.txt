@@ -1,0 +1,373 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 155 (Thursday, August 13, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 155 (Thursday, August 13, 2026)]
+[Rules and Regulations]
+[Pages 52249-52251]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-16510]
+
+
+
+[[Page 52249]]
+
+-----------------------------------------------------------------------
+
+ENVIRONMENTAL PROTECTION AGENCY
+
+40 CFR Part 52
+
+[EPA-R09-OAR-2026-2608; FRL-13323-02-R9]
+
+
+Determination of Attainment by the Attainment Date and Clean Data 
+Determination for the 2012 Annual Fine Particulate Standard; Plumas 
+County, California
+
+AGENCY: Environmental Protection Agency (EPA).
+
+ACTION: Final rule.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The Environmental Protection Agency (EPA) is finalizing our 
+determination that the Portola nonattainment area in Plumas County, 
+California, attained the 2012 annual fine particulate matter 
+(``PM<INF>2.5</INF>'') national ambient air quality standard (NAAQS or 
+``standard'') by the December 31, 2025 ``Serious'' area attainment 
+date. This determination is based on ambient air quality monitoring 
+data from 2023 through 2025. We are also finalizing a clean data 
+determination (CDD) based on the 2023 through 2025 data and our 
+evaluation of preliminary air quality monitoring data from 2026.
+
+DATES: This rule is effective September 14, 2026.
+
+ADDRESSES: The EPA has established a docket for this action under 
+Docket ID No. EPA-R09-OAR-2026-2608. All documents in the docket are 
+listed on the <a href="https://www.regulations.gov">https://www.regulations.gov</a> website. Although listed in 
+the index, some information is not publicly available, e.g., 
+Confidential Business Information (CBI) or other information whose 
+disclosure is restricted by statute. Certain other material, such as 
+copyrighted material, is not placed on the internet and will be 
+publicly available only in hard copy form. Publicly available docket 
+materials are available through <a href="https://www.regulations.gov">https://www.regulations.gov</a>, or please 
+contact the person identified in the FOR FURTHER INFORMATION CONTACT 
+section for additional availability information. If you need assistance 
+in a language other than English or if you are a person with a 
+disability who needs a reasonable accommodation at no cost to you, 
+please contact the person identified in the FOR FURTHER INFORMATION 
+CONTACT section.
+
+FOR FURTHER INFORMATION CONTACT: Lindsay Wickersham, Planning Section 
+(AIR-2-1), EPA Region IX, 75 Hawthorne Street, San Francisco, CA 94105; 
+telephone number: (415) 947-4192; email address: 
+<a href="/cdn-cgi/l/email-protection#7b0c1218101e0908131a16551712151f081a023b1e0b1a551c140d"><span class="__cf_email__" data-cfemail="bfc8d6dcd4dacdccd7ded291d3d6d1dbccdec6ffdacfde91d8d0c9">[email&#160;protected]</span></a>.
+
+SUPPLEMENTARY INFORMATION: Throughout this document, ``we,'' ``us,'' 
+and ``our'' refer to the EPA.
+
+Table of Contents
+
+I. Summary of the Proposed Action
+II. Public Comment
+III. Final Action
+IV. Statutory and Executive Order Reviews
+
+I. Summary of the Proposed Action
+
+    On May 14, 2026, the EPA proposed to determine, based on complete 
+(or otherwise validated), quality-assured, and certified data, meeting 
+the requirements of 40 CFR part 50, appendix N for 2023 through 2025, 
+that the Portola PM<INF>2.5</INF> nonattainment area attained the 2012 
+annual PM<INF>2.5</INF> NAAQS by its December 31, 2025 attainment 
+date.\1\
+---------------------------------------------------------------------------
+
+    \1\ 91 FR 27224 (May 14, 2026).
+---------------------------------------------------------------------------
+
+    In accordance with 40 CFR 51.1015, we also proposed to issue a CDD 
+for the Portola PM<INF>2.5</INF> nonattainment area for the 2012 annual 
+PM<INF>2.5</INF> NAAQS based on the 2023-2025 data.\2\
+---------------------------------------------------------------------------
+
+    \2\ Id.
+---------------------------------------------------------------------------
+
+    The EPA's proposal explained that if we were to finalize the CDD, 
+the requirements for the area to submit attainment planning provisions 
+to meet the requirements for an attainment plan for the 2012 annual 
+PM<INF>2.5</INF> NAAQS, including an attainment demonstration, 
+reasonable further progress plan, quantitative milestones, quantitative 
+milestone reports, and contingency measures, would be suspended until 
+such time as: (1) the area is redesignated to attainment, after which 
+such requirements are permanently discharged; or (2) the EPA determines 
+that the area has re-violated the PM<INF>2.5</INF> NAAQS, at which time 
+the state shall submit such attainment plan elements for the Serious 
+nonattainment area by a future date to be determined by the EPA and 
+announced through publication in the Federal Register at the time the 
+EPA determines the area is violating the 2012 PM<INF>2.5</INF> 
+NAAQS.\3\ The requirements to submit emissions inventories, best 
+available control measures, including control technologies, and a 
+nonattainment new source review permitting program for the Serious 
+nonattainment area will remain in effect.
+---------------------------------------------------------------------------
+
+    \3\ 40 CFR 51.1015(b).
+---------------------------------------------------------------------------
+
+    Finally, the EPA's proposal explained that the CDD does not 
+constitute a redesignation to attainment. The Portola PM<INF>2.5</INF> 
+nonattainment area will remain designated nonattainment for the 2012 
+annual PM<INF>2.5</INF> NAAQS until such time as the EPA determines, 
+pursuant to sections 107 and 175A of the Clean Air Act (CAA), that the 
+Portola PM<INF>2.5</INF> nonattainment area meets the CAA requirements 
+for redesignation to attainment, including an approved maintenance plan 
+showing that the area will continue to meet the 1997 annual 
+PM<INF>2.5</INF> NAAQS for 10 years.\4\
+---------------------------------------------------------------------------
+
+    \4\ Id.
+---------------------------------------------------------------------------
+
+    Please see our May 14, 2026 proposed rulemaking for additional 
+background and a detailed explanation of the rationale for our proposed 
+action.\5\
+---------------------------------------------------------------------------
+
+    \5\ 91 FR 27724 (May 14, 2026).
+---------------------------------------------------------------------------
+
+II. Public Comment
+
+    The public comment period for the proposed rulemaking opened on May 
+14, 2026,\6\ the date of its publication in the Federal Register, and 
+closed on June 15, 2026. During this period, the EPA received one 
+comment submission that discussed diesel generator exhaust associated 
+with data centers around the nation. As this action only concerns the 
+Portola PM<INF>2.5</INF> nonattainment Area, and because there are no 
+data centers in this area, this comment is not germane to our action 
+and does not require a response. The comment is included in the docket 
+for this action.
+---------------------------------------------------------------------------
+
+    \6\ Id.
+---------------------------------------------------------------------------
+
+III. Final Action
+
+    For the reasons discussed in detail in our proposed action, the EPA 
+is finalizing our determination that the Portola PM<INF>2.5</INF> 
+nonattainment area has attained the 2012 annual PM<INF>2.5</INF> NAAQS 
+by the December 31, 2025 attainment date, based on complete, quality-
+assured, and certified ambient air quality monitoring data for the 
+2023-2025 monitoring period.\7\ The EPA is taking this final action 
+pursuant to CAA section 179(c)(1).
+---------------------------------------------------------------------------
+
+    \7\ EPA AQS Design Value Report, AMP480, dated March 31, 2026. 
+(Report Request ID: 2367374).
+---------------------------------------------------------------------------
+
+    Preliminary data available in the EPA's Air Quality System (AQS) 
+for 2026 (January through March) indicate that the Portola 
+nonattainment area continues to show concentrations consistent with 
+attainment of the 2012 annual PM<INF>2.5</INF> NAAQS; \8\ therefore, as 
+provided in 40 CFR 51.1015, we are also finalizing a CDD. Consequently, 
+the requirements for the state to submit any SIP revisions related to 
+attainment of the 2012 annual PM<INF>2.5</INF> NAAQS for this
+
+[[Page 52250]]
+
+area, including an attainment demonstration, reasonable further 
+progress plan, quantitative milestones, quantitative milestone reports, 
+and contingency measures, will be suspended for so long as the area 
+continues to attain this NAAQS. This final determination that the 
+Portola nonattainment area has attained the 2012 annual 
+PM<INF>2.5</INF> NAAQS does not constitute a redesignation of the area 
+to attainment. The designation status of the Portola nonattainment area 
+will remain ``Serious'' nonattainment for the 2012 annual 
+PM<INF>2.5</INF> NAAQS until such time as the EPA determines, pursuant 
+to sections 107 and 175A of the CAA, that the area meets the CAA 
+requirements for redesignation to attainment, including an approved 
+maintenance plan showing that the area will continue to meet the 
+standard for 10 years.
+---------------------------------------------------------------------------
+
+    \8\ EPA, AQS Design Value Report, AMP480, dated June 23, 2026. 
+(Report Request ID: 2390857). Although the Q1 mean of 19.32 
+[micro]g/m\3\ exceeds the NAAQS, the means for Q2 and Q3 are 
+expected to be significantly lower, because Q1 corresponds with the 
+winter months, when PM<INF>2.5</INF> concentrations in the area peak 
+due to bowl-shaped topography, cold stagnant winters, and extensive 
+use of residential wood stoves. Q1 2026 concentrations are 
+consistent with the historic trend of data years that have recorded 
+annual averages attaining the NAAQS. See 83 FR 64774, 64788.
+---------------------------------------------------------------------------
+
+IV. Statutory and Executive Order Reviews
+
+    Additional information about these statutes and Executive Orders 
+can be found at <a href="https://www.epa.gov/laws-regulations/laws-and-executive-orders">https://www.epa.gov/laws-regulations/laws-and-executive-orders</a>.
+
+A. Executive Order 12866: Regulatory Planning and Review and Executive 
+Order 13563: Improving Regulation and Regulatory Review
+
+    This action is not a significant regulatory action and was 
+therefore not submitted to the Office of Management and Budget (OMB) 
+for review.
+
+B. Executive Order 14192: Unleashing Prosperity Through Deregulation
+
+    This action is not an Executive Order 14192 regulatory action 
+because this action is not significant under Executive Order 12866.
+
+C. Paperwork Reduction Act (PRA)
+
+    This action does not impose an information collection burden under 
+the PRA because this action does not impose additional requirements 
+beyond those imposed by state law.
+
+D. Regulatory Flexibility Act (RFA)
+
+    I certify that this action will not have a significant economic 
+impact on a substantial number of small entities under the RFA. This 
+action will not impose any requirements on small entities beyond those 
+imposed by state law.
+
+E. Unfunded Mandates Reform Act (UMRA)
+
+    This action does not contain any unfunded mandate as described in 
+UMRA, 2 U.S.C. 1531-1538, and does not significantly or uniquely affect 
+small governments. This action does not impose additional requirements 
+beyond those imposed by state law. Accordingly, no additional costs to 
+state, local, or Tribal governments, or to the private sector, will 
+result from this action.
+
+F. Executive Order 13132: Federalism
+
+    This action does not have federalism implications. It will not have 
+substantial direct effects on the states, on the relationship between 
+the national government and the states, or on the distribution of power 
+and responsibilities among the various levels of government.
+
+G. Executive Order 13175: Coordination With Indian Tribal Governments
+
+    This action does not have Tribal implications as specified in 
+Executive Order 13175. As there are no federally recognized Tribes 
+within the Portola nonattainment area,\9\ the final determination of 
+attainment by the attainment date and CDD do not apply to Tribal areas, 
+and the final rule would not impose a burden on Indian reservation 
+lands or other areas where the EPA or an Indian Tribe has demonstrated 
+that a Tribe has jurisdiction within the Portola nonattainment area. 
+Thus, this final rule does not have Tribal implications and will not 
+impose substantial direct costs on Tribal governments or preempt Tribal 
+law as specified by Executive Order 13175.
+---------------------------------------------------------------------------
+
+    \9\ Map of Federally-Recognized Tribes in EPA's Pacific 
+Southwest (Region 9) is available at <a href="https://www.epa.gov/tribal-pacific-sw/map-federally-recognized-tribes-epas-pacific-southwest-region-9">https://www.epa.gov/tribal-pacific-sw/map-federally-recognized-tribes-epas-pacific-southwest-region-9</a>.
+---------------------------------------------------------------------------
+
+H. Executive Order 13045: Protection of Children From Environmental 
+Health Risks and Safety Risks
+
+    The EPA interprets Executive Order 13045 as applying only to those 
+regulatory actions that concern environmental health or safety risks 
+that the EPA has reason to believe may disproportionately affect 
+children, per the definition of ``covered regulatory action'' in 
+section 2-202 of the Executive Order. This action is not subject to 
+Executive Order 13045 because it does not concern an environmental 
+health risk or safety risk.
+
+I. Executive Order 13211: Actions That Significantly Affect Energy 
+Supply, Distribution, or Use
+
+    This action is not subject to Executive Order 13211, because it is 
+not a significant regulatory action under Executive Order 12866.
+
+J. National Technology Transfer and Advancement Act (NTTAA)
+
+    Section 12(d) of the NTTAA directs the EPA to use voluntary 
+consensus standards in its regulatory activities unless to do so would 
+be inconsistent with applicable law or otherwise impractical. The EPA 
+believes that this action is not subject to the requirements of section 
+12(d) of the NTTAA because application of those requirements would be 
+inconsistent with the CAA.
+
+K. Congressional Review Act (CRA)
+
+    This action is subject to the CRA and the EPA will submit a rule 
+report to each House of the Congress and to the Comptroller General of 
+the United States. This action is not a ``major rule'' as defined by 5 
+U.S.C. 804(2).
+
+L. Petitions for Judicial Review
+
+    Under section 307(b)(1) of the CAA, petitions for judicial review 
+of this action must be filed in the United States Court of Appeals for 
+the appropriate circuit by October 13, 2026. Filing a petition for 
+reconsideration by the Administrator of this final rule does not affect 
+the finality of this rule for the purposes of judicial review, nor does 
+it extend the time within which a petition for judicial review may be 
+filed, and shall not postpone the effectiveness of such rule or action. 
+This action may not be challenged later in proceedings to enforce its 
+requirements (see section 307(b)(2)).
+
+List of Subjects in 40 CFR Part 52
+
+    Environmental protection, Air pollution control, Incorporation by 
+reference, Particulate matter, Reporting and recordkeeping 
+requirements.
+
+    Dated: August 3, 2026.
+Michael Martucci,
+Acting Regional Administrator, Region IX.
+
+    For the reasons stated in the preamble, the Environmental 
+Protection Agency amends part 52, chapter I, title 40 of the Code of 
+Federal Regulations as follows:
+
+PART 52--APPROVAL AND PROMULGATION OF IMPLEMENTATION PLANS
+
+0
+1. The authority citation for part 52 continues to read as follows:
+
+    Authority:  42 U.S.C. 7401 et seq.
+
+Subpart F--California
+
+0
+2. Section 52.247 is amended by adding paragraph (u) to read as 
+follows:
+
+[[Page 52251]]
+
+Sec.  52.247  Control Strategy and regulations: Fine Particle Matter.
+
+* * * * *
+    (u) Determination of attainment. Effective September 14, 2026, the 
+EPA has determined that, based on 2023 to 2025 ambient air quality 
+data, the Portola PM<INF>2.5</INF> nonattainment area has attained the 
+2012 annual PM<INF>2.5</INF> NAAQS by the applicable attainment date of 
+December 31, 2025. Therefore, the EPA has met the requirement pursuant 
+to CAA section 179(c)(1) to determine whether the area attained the 
+standards. Under the provisions of the EPA's PM<INF>2.5</INF> 
+implementation rule (see 40 CFR 51.1015), this determination suspends 
+the requirements for this area to submit an attainment demonstration, a 
+reasonable further progress plan, quantitative milestones, quantitative 
+milestone reports, contingency measures, and any other planning SIP 
+revisions related to attainment for as long as this area continues to 
+attain the 2012 annual PM<INF>2.5</INF> NAAQS. If the EPA determines, 
+after notice-and-comment rulemaking, that this area no longer meets the 
+2012 annual PM<INF>2.5</INF> NAAQS, the corresponding determination of 
+attainment for that area shall be withdrawn.
+
+[FR Doc. 2026-16510 Filed 8-12-26; 8:45 am]
+BILLING CODE 6560-50-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

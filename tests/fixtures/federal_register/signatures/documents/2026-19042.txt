@@ -1,0 +1,123 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 179 (Thursday, September 17, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 179 (Thursday, September 17, 2026)]
+[Notices]
+[Page 58921]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-19042]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+OFFICE OF PERSONNEL MANAGEMENT
+
+
+Agency Information Collection Request: Annual Employee Survey 
+(3206-NEW)
+
+AGENCY: Office of Personnel Management.
+
+ACTION: 30-Day notice and request for comments.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The Office of Personnel Management (OPM) invites the public 
+and Federal agencies to comment on its new Annual Employee Survey (AES) 
+information collection request (ICR). The AES includes survey items 
+previously administered through the Federal Employee Viewpoint Survey 
+(FEVS) and fulfills statutory and regulatory employee-survey 
+requirements.
+
+DATES: Comments are encouraged and will be accepted until October 19, 
+2026. This process is conducted in accordance with 5 CFR 1320.8(d)(1).
+
+ADDRESSES: Written comments and recommendations for the proposed 
+information collection should be sent within 30 days of publication of 
+this notice to <a href="http://www.reginfo.gov/public/do/PRAMain">http://www.reginfo.gov/public/do/PRAMain</a>. Find this 
+particular information collection request by selecting ``Office of 
+Personnel Management'' under ``Currently Under Review,'' then check 
+``Only Show ICR for Public Comment'' checkbox.
+
+FOR FURTHER INFORMATION CONTACT: Employee Viewpoint Survey Team, 
+Attention: Makisha Brown, via electronic mail to <a href="/cdn-cgi/l/email-protection#21647772614e514c0f464e57"><span class="__cf_email__" data-cfemail="8ecbd8ddcee1fee3a0e9e1f8">[email&#160;protected]</span></a> or via 
+telephone at (202) 606-1800.
+
+SUPPLEMENTARY INFORMATION: As required by the Paperwork Reduction Act 
+of 1995, 44 U.S.C. 3506(c)(2), OPM is soliciting comments for this 
+collection. The Office of Management and Budget is particularly 
+interested in comments that:
+    1. Evaluate whether the proposed collection of information is 
+necessary for the proper performance of functions of the agency, 
+including whether the information will have practical utility;
+    2. Evaluate the accuracy of the agency's estimate of the burden of 
+the proposed collection of information, including the validity of the 
+methodology and assumptions used;
+    3. Enhance the quality, utility, and clarity of the information to 
+be collected; and
+    4. Minimize the burden of the collection of information on those 
+who are to respond, including through the use of appropriate automated, 
+electronic, mechanical, or other technological collection techniques or 
+other forms of information technology, e.g., permitting electronic 
+submissions of responses.
+
+Background
+
+    Section 1128 of the National Defense Authorization Act for Fiscal 
+Year 2004 (Pub. L. 108-136, 5 U.S.C. 7101 note) requires executive 
+agencies to conduct an annual employee survey and directs OPM to issue 
+regulations prescribing the survey questions that must appear on all 
+agency surveys to allow for comparison across agencies. The survey is 
+the instrument through which agencies meet the statutory requirement to 
+assess (1) leadership and management practices that contribute to 
+agency performance and (2) employee satisfaction with leadership 
+policies and practices, the work environment, rewards and recognition 
+for professional accomplishment and personal contributions to achieving 
+the organizational mission, opportunity for professional development 
+and growth, and opportunity to contribute to achieving the 
+organizational mission. OPM implemented this requirement through 
+regulations at 5 CFR part 250, subpart C, to provide comparable 
+governmentwide data and centrally administered the annual survey, the 
+Annual Employee Survey (formerly Federal Employee Viewpoint Survey 
+(FEVS)), on behalf of agencies. Agencies participating in the AES 
+satisfy the annual employee survey requirement by including the 
+prescribed core survey questions, while retaining limited flexibility 
+to add agency-specific items consistent with OPM guidance.
+    In a proposed rule (91 FR 40435) issued July 2, 2026, OPM proposed 
+to reduce the number of prescribed annual employee survey questions 
+from 16 to 10, retaining the most probative items to better serve 
+workforce planning needs. In addition, OPM would no longer centrally 
+administer the survey on behalf of agencies. Instead, each agency would 
+administer the survey to its employees. The survey consists of Likert-
+type, mark-one, and mark-all-that-apply items. The information 
+collection consists of the responses provided by the employees who 
+complete the survey. The OPM survey will be available to agencies as a 
+common form. An agency would submit the resulting data for the 
+prescribed questions to OPM and OMB once per year to enable 
+governmentwide comparison. Should agencies add questions to the common 
+form, agencies would be responsible for their own collections separate 
+from the OPM common form and would need to seek their own OMB control 
+number.
+
+Analysis
+
+    Agency: Office of Personnel Management.
+    Title: Annual Employee Survey (AES).
+    OMB Number: 3206-NEW.
+    Frequency: Annually.
+    Affected Public: Federal Government.
+    Number of Respondents: 1,990.
+    Estimated Time per Respondent: 5 minutes.
+    Total Burden Hours: 166 hours.
+
+Alexys Stanley,
+Federal Register Liaison.
+[FR Doc. 2026-19042 Filed 9-16-26; 8:45 am]
+BILLING CODE 6325-39-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

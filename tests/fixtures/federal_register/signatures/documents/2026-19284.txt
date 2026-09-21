@@ -1,0 +1,209 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 181 (Monday, September 21, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 181 (Monday, September 21, 2026)]
+[Notices]
+[Pages 59780-59781]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-19284]
+
+
+-----------------------------------------------------------------------
+
+DEPARTMENT OF HEALTH AND HUMAN SERVICES
+
+Food and Drug Administration
+
+[Docket No. FDA-2026-N-3400]
+
+
+Agency Information Collection Activities; Submission for Office 
+of Management and Budget Review; Comment Request; Orphan Drugs
+
+AGENCY: Food and Drug Administration, HHS.
+
+ACTION: Notice.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The Food and Drug Administration (FDA, Agency, or we) is 
+announcing that a proposed collection of information has been submitted 
+to the Office of Management and Budget (OMB) for review and clearance 
+under the Paperwork Reduction Act of 1995.
+
+DATES: Submit written comments (including recommendations) on the 
+collection of information by October 21, 2026.
+
+ADDRESSES: To ensure that comments on the information collection are 
+received, OMB recommends that written comments be submitted to <a href="https://www.reginfo.gov/public/do/PRAMain">https://www.reginfo.gov/public/do/PRAMain</a>. Find this particular information 
+collection by selecting ``Currently under Review--Open for Public 
+Comments'' or by using the search function. The OMB control number for 
+this information collection is 0910-0167. Also include the FDA docket 
+number found in brackets in the heading of this document.
+
+FOR FURTHER INFORMATION CONTACT: Domini Bean, Office of Operations, 
+Food and Drug Administration, Three White Flint North, 10A-12M, 11601 
+Landsdown St., North Bethesda, MD 20852, 240-402-5733, 
+<a href="/cdn-cgi/l/email-protection#4b1b190a183f2a2d2d0b2d2f2a65232338652c243d"><span class="__cf_email__" data-cfemail="336361726047525555735557521d5b5b401d545c45">[email&#160;protected]</span></a>.
+
+SUPPLEMENTARY INFORMATION: In compliance with 44 U.S.C. 3507, FDA has 
+submitted the following proposed collection of information to OMB for 
+review and clearance.
+
+Orphan Drugs--21 CFR Part 316
+
+OMB Control Number 0910-0167--Extension
+
+    This information collection helps support implementation of 
+sections 525, 526, 527, and 528 of the Federal Food, Drug, and Cosmetic 
+Act (FD&C Act) (21 U.S.C. 360aa, 360bb, 360cc, and 360dd), as well as 
+related guidance and Agency forms. Sections 525, 526, 527, and 528 of 
+the FD&C Act pertain to the development of drugs for rare diseases or 
+conditions, including biological products and antibiotics, otherwise 
+known or referred to as ``orphan drugs.'' Specifically, section 525 of 
+the FD&C Act requires written recommendations on studies required for 
+approval of a marketing application for a drug for a rare disease or 
+condition. Section 526 of the FD&C Act provides for designation of 
+drugs as orphan drugs when certain conditions are met; section 527 
+provides conditions under which a sponsor of an approved orphan drug 
+enjoys exclusive FDA marketing approval for that drug for the orphan 
+indication for a period of 7 years; and, finally, section 528 is 
+intended to encourage sponsors to make investigational orphan drugs 
+available for treatment of persons in need on an open protocol basis 
+before the drug has been approved for general marketing. Open protocols 
+may permit patients who are not part of the formal clinical 
+investigation to obtain treatment where adequate supplies exist and no 
+alternative effective therapy is available.
+    Agency regulations in part 316, subpart A (21 CFR part 316, subpart 
+A) (Sec. Sec.  316.1 through 316.4) identify the scope of coverage, 
+applicable definitions, and statutory provisions applicable to orphan 
+drugs. The regulations in part 316, subpart B (Sec. Sec.  316.10 
+through 316.14) set forth content and format elements for written 
+recommendation requests and discuss FDA providing or refusing to 
+provide the requested written recommendations. Similarly, regulations 
+in part 316, subpart C (Sec. Sec.  316.20 through 316.30) prescribe 
+content and format elements for requesting orphan drug designation; 
+identify submission schedules for requisite information including 
+amendments, updates, and reports; and provide for publication and 
+revocation of orphan drug designation. Regulations in part 316, 
+subparts D and E (Sec. Sec.  316.31 through 316.40) address orphan drug 
+exclusive approval and open protocols for investigations, respectively. 
+Finally, regulations in part 316, subpart F (Sec. Sec.  316.50 through 
+316.52) provide for the issuance of guidance documents that apply to 
+the orphan drug provisions of the FD&C Act and regulations in part 316. 
+The list is maintained on the internet and guidance documents are 
+issued in accordance with our good guidance practices regulation in 21 
+CFR 10.115, which provide for public comment at any time.
+    The information collection includes the Agency guidance document 
+entitled ``Meetings with the Office of Orphan Products Development: 
+Guidance for Industry, Researchers, Patient Groups, and Food and Drug 
+Administration Staff'' (July 2015), available for download at: <a href="https://www.fda.gov/regulatory-information/search-fda-guidance-documents/meetings-office-orphan-products-development">https://www.fda.gov/regulatory-information/search-fda-guidance-documents/meetings-office-orphan-products-development</a>. It provides 
+recommendations to industry, researchers, patient groups, and other 
+stakeholders interested in requesting a meeting, including a 
+teleconference, with the Office of Orphan Products Development (OOPD) 
+on issues related to orphan drug designation requests, humanitarian use 
+device designation requests, rare pediatric disease designation 
+requests, funding opportunities through the Orphan Products Grants 
+Program and the Pediatric Device Consortia Grants Program, and orphan 
+product patient-related topics of concern. It is also intended to 
+assist OOPD staff in addressing such meeting requests. The guidance 
+describes procedures for requesting, preparing, scheduling, conducting, 
+and documenting such meetings and discusses background information we 
+recommend be included in such requests.
+    The information collection includes Form FDA 4035, FDA Orphan Drug 
+Designation Request Form, intended to benefit sponsors who desire to 
+seek orphan designation of drugs intended for rare diseases or 
+conditions from FDA. The form is a simplified method for sponsors to 
+provide only the information required by Sec.  316.20 for FDA decision 
+making. Orphan drug designation requests and related submissions 
+(amendments, annual reports, etc.), humanitarian use device 
+designation, and rare pediatric disease designation requests and 
+submissions may be submitted electronically by email to the OOPD.
+    As communicated on our website at <a href="https://www.fda.gov/industry/medical-products-rare-diseases-and-conditions/designating-orphan-product-drugs-and-biological-products">https://www.fda.gov/industry/medical-products-rare-diseases-and-conditions/designating-orphan-product-drugs-and-biological-products</a>, respondents may submit orphan 
+drug designation requests electronically through the Center for Drug 
+Evaluation and Research (CDER) NextGen portal, or by emailing the 
+required information to <a href="/cdn-cgi/l/email-protection#f19e838199909fb1979590df999982df969e87"><span class="__cf_email__" data-cfemail="472835372f262907212326692f2f3469202831">[email&#160;protected]</span></a>; or by mailing the required 
+information to the OOPD at the address
+
+[[Page 59781]]
+
+found on our website. New users of the CDER NextGen Portal must 
+register for an account. For designation requests submitted by email, 
+the Agency recommends using automated read receipt to verify receipt of 
+the email.
+    Sponsors and others who plan to email information to FDA that is 
+private, sensitive, proprietary, or commercial confidential are 
+strongly encouraged to send it from an FDA-secured email address so the 
+transmission is encrypted. The Agency will assume the addresses of 
+emails received or email addresses provided as a point of contact are 
+secure when responding to those email addresses. Sponsors and others 
+can establish a secure email address link to FDA by sending a request 
+to <a href="/cdn-cgi/l/email-protection#30635553454255755d51595c705654511e5858431e575f46"><span class="__cf_email__" data-cfemail="f6a59395838493b39b979f9ab6909297d89e9e85d8919980">[email&#160;protected]</span></a>. There may be a fee to a commercial 
+enterprise for establishing a digital certificate before encrypted 
+emails can be sent to FDA.
+    Respondents to the information collection are sponsors who develop 
+investigational drugs and biologicals for commercial use and who seek 
+orphan drug designation, and upon approval or licensure, orphan drug 
+exclusivity.
+    In the Federal Register of April 16, 2026 (91 FR 20460), we 
+published a 60-day notice requesting public comment on the proposed 
+collection of information. One comment was received encouraging FDA to 
+offer more incentives toward the development of drug products to treat 
+specific conditions and we appreciate this comment. At the same time, 
+the comment did not suggest any modification to the estimates in our 
+60-day notice nor appear to question the Agency's need for the 
+information collection.
+    We estimate the burden of this collection of information as 
+follows:
+
+                               Table 1--Estimated Annual Recordkeeping Burden \1\
+----------------------------------------------------------------------------------------------------------------
+                                                                                              Average
+                                                     Number of       Number of      Total      burden     Total
+        21 CFR part or section; activity            respondents     records per     annual      per       hours
+                                                                   recordkeeper    records     record
+----------------------------------------------------------------------------------------------------------------
+Part 316 associated records.....................             864               1      1,080        135   145,800
+Sec.  Sec.   316.20, 316.21, 316.26 (Form FDA                864               1      1,080         32    34,560
+ 4035)..........................................
+Sec.   316.22; Notifications of changes in                   305               1        305        0.5       153
+ agents.........................................
+Sec.   316.24(a); Deficiency letters and                     756               1        756          2     1,512
+ granting orphan-drug designation...............
+Sec.   316.27; Submissions to change ownership               110               1        110          3       330
+ of orphan-drug designation.....................
+Sec.   316.30; Annual reports...................           2,210               1      2,210          3     6,630
+Sec.   316.36; Assurance of the availability of                1               3          3         15        45
+ sufficient quantities of the orphan drug;
+ holder's consent for the approval of other
+ marketing applications for the same drug.......
+Guidance Recommendations: Meeting requests to                800             1.5      1,200          4     4,800
+ OOPD and related submission packages...........
+                                                 ---------------------------------------------------------------
+    Total.......................................  ..............  ..............      6,744  .........   193,830
+----------------------------------------------------------------------------------------------------------------
+\1\ There are no capital costs or operating and maintenance costs associated with this collection of
+  information.
+
+    We base our burden figures on the number of submissions received 
+and include those activities relating to: (1) requesting orphan drug 
+designation; (2) responding to deficiencies letters with submissions of 
+amendments; (3) keeping files current with contact information for 
+agents and transfer of ownership, when applicable; (4) submitting 
+annual reports while products have designation status; and (5) 
+requesting and preparing for both informal and formal meetings. Because 
+the PRA defines a recordkeeping requirement to include reporting those 
+records to the Federal government, we account for these activities 
+cumulatively in table 1 above. Our burden estimate reflects a nominal 
+increase of approximately 9% annually.
+
+Grace R. Graham,
+Deputy Commissioner for Policy, Legislation, and International Affairs.
+[FR Doc. 2026-19284 Filed 9-18-26; 8:45 am]
+BILLING CODE 4164-01-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

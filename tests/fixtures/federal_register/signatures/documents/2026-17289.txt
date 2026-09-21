@@ -1,0 +1,116 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 163 (Tuesday, August 25, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 163 (Tuesday, August 25, 2026)]
+[Notices]
+[Page 54893]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-17289]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+OFFICE OF SCIENCE AND TECHNOLOGY POLICY
+
+
+United States Global Change Research Program; Availability for 
+Public Comment on the Proposed Amendment to the Fifth National Climate 
+Assessment (NCA5)
+
+AGENCY: United States Global Change Research Program (USGCRP), Office 
+of Science and Technology Policy (OSTP).
+
+ACTION: Notice of availability for public comment.
+
+-----------------------------------------------------------------------
+
+SUMMARY: OSTP, on behalf of the U.S. Global Change Research Program 
+(USGCRP), announces the availability of a proposed amendment and 
+clarification to the Fifth National Climate Assessment (NCA5) for 
+public comment. The proposed amendment addresses the interpretation and 
+Federal use of NCA5 results that depend materially on RCP8.5, SSP5-8.5, 
+SRES A2, or analogous high-emissions pathways.
+
+DATES: Comments must be received by 11:59 p.m. Eastern Time September 
+9, 2026.
+
+ADDRESSES: Interested individuals and organizations should submit 
+comments electronically to <a href="/cdn-cgi/l/email-protection#0d6b6869687f6c617f686a647e79687f4d627e797d2368627d236a627b"><span class="__cf_email__" data-cfemail="523437363720333e2037353b21263720123d2126227c373d227c353d24">[email&#160;protected]</span></a> and include 
+``RFI Response: Proposed Amendment to NCA5'' in the subject line of the 
+email. Mailed paper submissions will not be accepted, and electronic 
+submissions received after the deadline may not be taken into 
+consideration.
+    Instructions: Response to this RFI is voluntary. Each individual or 
+institution is requested to submit only one response. Electronic 
+responses must be provided as attachments to an email rather than a 
+link. Comments of seven pages or fewer (3,500 words) are requested; 
+longer responses will not be considered. Responses should include the 
+name of the person(s) or organization(s) filing the response. Responses 
+containing references, studies, research, and other empirical data that 
+are not widely published should include copies of or electronic links 
+to the referenced materials. Responses containing profanity, vulgarity, 
+threats, or other inappropriate language or content will not be 
+considered.
+    USGCRP will not respond to individual submissions. A response to 
+this RFI will not be viewed as a binding commitment to develop or 
+pursue the project or ideas discussed. This RFI is not accepting 
+applications for financial assistance or financial incentives.
+    Comments submitted in response to this notice are subject to the 
+Freedom of Information Act (FOIA). No business proprietary information, 
+copyrighted information, or personally identifiable information should 
+be submitted in response to this RFI. Please be aware that comments 
+submitted in response to this RFI, including the submitter's 
+identification (as noted above), may be posted, without change, on 
+OSTP's or another Federal website or otherwise released publicly.
+    After the public comment period closes, relevant Federal officials 
+and participating agencies will consider the comments as appropriate. 
+The proposed amendment may be revised before any final action.
+
+FOR FURTHER INFORMATION CONTACT: Dr. Matthew Wielicki, Director, U.S. 
+Global Change Research Program, Office of Science and Technology 
+Policy; email: <a href="/cdn-cgi/l/email-protection#ef898a8b8a9d8e839d8a88869c9b8a9daf809c9b9fc18a809fc1888099"><span class="__cf_email__" data-cfemail="3a5c5f5e5f485b56485f5d53494e5f487a55494e4a145f554a145d554c">[email&#160;protected]</span></a>; tel: 202-456-4444.
+
+SUPPLEMENTARY INFORMATION: The proposed amendment will be available at 
+<a href="https://www.noaa.gov/sites/default/files/2026-08/NCA5-Proposed-Amendment-August-2026.pdf">https://www.noaa.gov/sites/default/files/2026-08/NCA5-Proposed-Amendment-August-2026.pdf</a>. The USGCRP is mandated under the Global 
+Change Research Act of 1990 to conduct a quadrennial National Climate 
+Assessment to evaluate scientific findings and uncertainties related to 
+global change, analyze the effects of global change, and analyze 
+current and projected trends in global change, both human-induced and 
+natural.
+    NCA5 was released in November 2023. The proposed amendment would 
+clarify the interpretation and Federal use of NCA5 statements, figures, 
+tables, traceable accounts, regional summaries, public summaries, and 
+derivative Federal communications that rely materially on RCP8.5, SSP5-
+8.5, SRES A2, or analogous high-emissions pathways. The proposed 
+amendment would not withdraw NCA5 in its entirety or disturb its 
+compilation of observations, regional information, adaptation 
+considerations, or appropriately described scenario-based analyses.
+    The proposed amendment would clarify that results dependent on 
+these pathways should not be presented as expected, baseline, business-
+as-usual, likely, central, or ordinary Federal planning futures unless 
+the same result is independently reproduced under a presently plausible 
+scenario and evaluated against observations. Such results may remain 
+useful as sensitivity analyses, bounding exercises, or stress tests 
+when the applicable scenario, material assumptions, and limitations are 
+clearly disclosed where the projected impact is communicated.
+    USGCRP invites public comment on the scientific basis for the 
+proposed amendment; NCA5 material that may require clarification; 
+methods for labeling and communicating scenario-dependent results; the 
+use of observational evidence and plausible comparator scenarios; and 
+implications for Federal planning, analysis, and public communications. 
+Commenters are encouraged to provide citations, data, or other 
+supporting material.
+    Authority: 15 U.S.C. Chapter 56A
+
+    Dated: August 20, 2026.
+Stacy Murphy,
+Deputy Chief Operations Officer/Security Officer.
+[FR Doc. 2026-17289 Filed 8-24-26; 8:45 am]
+BILLING CODE 3270-F1-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

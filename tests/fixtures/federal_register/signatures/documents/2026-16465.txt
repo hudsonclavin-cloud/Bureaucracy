@@ -1,0 +1,306 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 155 (Thursday, August 13, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 155 (Thursday, August 13, 2026)]
+[Rules and Regulations]
+[Pages 52239-52241]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-16465]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+LIBRARY OF CONGRESS
+
+Copyright Office
+
+37 CFR Part 202
+
+[Docket No. 2026-5]
+
+
+Group Registration of Updates to a News Website
+
+AGENCY: U.S. Copyright Office, Library of Congress.
+
+ACTION: Final rule.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The U.S. Copyright Office is amending its regulation governing 
+the group registration option for news websites. The final rule amends 
+the definition of a ``news website'' to clarify the works eligible for 
+this option, as set forth in the May 2026 notice of proposed 
+rulemaking.
+
+DATES: This rule is effective August 13, 2026.
+
+FOR FURTHER INFORMATION CONTACT: Rhea Efthimiadis, Assistant to the 
+General Counsel, by email at <a href="/cdn-cgi/l/email-protection#6b3e3828242c0e050e190a0728041e05180e072b08041b1219020c031f450c041d"><span class="__cf_email__" data-cfemail="e8bdbbaba7af8d868d9a8984ab879d869b8d84a88b8798919a818f809cc68f879e">[email&#160;protected]</span></a> or by 
+telephone at (202) 707-8350.
+
+SUPPLEMENTARY INFORMATION: On July 22, 2024, the U.S. Copyright Office 
+(``Office'') issued a final rule (``2024 rulemaking'') establishing a 
+group registration option for frequently
+
+[[Page 52240]]
+
+updated news websites, or ``GRNW.'' \1\ That rule defined ``news 
+website'' as ``a website that is designed to be a primary source of 
+written information on current events, either local, national, or 
+international in scope, that contains a broad range of news on all 
+subjects and activities and is not limited to any specific subject 
+matter.'' \2\ In establishing the definition, the Office explained that 
+it ``encompass[es] news websites that cover current events and provide 
+information on diverse topics.'' \3\ News websites that focus primarily 
+on particular issues, but do not ``limit their coverage to a particular 
+subject matter'' or ``direct [their websites] at narrow or discrete 
+groups of readers'' were intended to fall within the definition.\4\ 
+However, the Office stated that we were amenable to revising the 
+definition if it ``proved too rigid or unworkable'' to administer.\5\
+---------------------------------------------------------------------------
+
+    \1\ 89 FR 58991 (July 22, 2024).
+    \2\ Id. at 58991 n.8, 58992, 58999 (codified as 37 CFR 
+202.4(m)(1)(i)).
+    \3\ Id. at 58994.
+    \4\ Id.
+    \5\ Id.
+---------------------------------------------------------------------------
+
+    Since the 2024 rulemaking took effect, the Office has received over 
+four thousand applications under the GRNW option.\6\ During this 
+period, we continued to receive stakeholder feedback on the ``news 
+website'' definition.
+---------------------------------------------------------------------------
+
+    \6\ The number of GRNW applications received by the Office is 
+current as of July 16, 2026.
+---------------------------------------------------------------------------
+
+    Based on the Office's initial experience implementing this group 
+registration option and the stakeholder feedback received, we 
+determined that the definition of ``news website'' should be 
+clarified.\7\ On May 28, 2026, the Office published a notice of 
+proposed rulemaking (``NPRM'') setting forth an amendment to the 
+definition.\8\ As explained in the NPRM, the current definition 
+``presents recurring questions in its application,'' including that its 
+strict application could inadvertently ``exclude otherwise eligible 
+news websites that focus on a defined subject area or set of topics.'' 
+\9\ The Office proposed amending the definition to clarify the eligible 
+works under this group registration option and sought to 
+``accommodat[e] a range of modern news publishing practices.'' \10\ 
+Specifically, we proposed that a ``news website'' need not report on 
+``a broad range of news on all subjects and activities,'' but only ``on 
+a variety of subjects,'' \11\ that its primary function be 
+``report[ing] on current events,'' and that its news content be 
+``updated frequently.'' \12\
+---------------------------------------------------------------------------
+
+    \7\ 89 FR 58991, 58994 (explaining that the Office was willing 
+to ``revisit this issue'' based on ``experience in administering 
+this rule'').
+    \8\ 91 FR 31684 (May 28, 2026).
+    \9\ Id. at 31684 & n.5.
+    \10\ Id. at 31684.
+    \11\ For example, a news website may have a particular lens 
+through which it filters its reporting, such as articles related to 
+technology or entertainment, but may nonetheless report on a variety 
+of subjects within that topic area. News/Media Alliance (``NMA'') 
+Comments at 3 (``Specialized outlets often cover their topics and 
+related issues from various angles with, for example, a video gaming 
+website covering game reviews, business developments, product 
+announcements, related popular culture, and investigative journalism 
+into the gaming industry as a whole. Similarly, a business-oriented 
+publication may cover travel, leisure, or real estate, and a sports 
+website may include investigative reporting on issues ranging from 
+doping to sexual harassment, in addition to athletic coverage and 
+equipment reviews. All share the hallmarks of news publishers.'').
+    \12\ 91 FR 31684; 89 FR 58991, 58994.
+---------------------------------------------------------------------------
+
+    The Office received seven comments in response to the NPRM, and has 
+carefully reviewed and considered each of them.
+    The comments generally supported the Office's proposed amendment to 
+the ``news website'' definition.\13\ Multiple commenters lauded the 
+proposed definition, predicting that it would encourage 
+registration.\14\ The National Association of Broadcasters (``NAB'') 
+stated that the rule ``promotes broader participation in the 
+registration system and strengthens the ability of news publishers to 
+protect their online copyrighted content.'' \15\ Public Knowledge 
+asserted that the definition ``appropriately excludes websites whose 
+primary purpose is to deliver marketing, promotion, or other activities 
+that do not constitute news reporting'' and ``sustains the integrity of 
+the registration process while maintaining broad access for qualifying 
+publishers.'' \16\ News/Media Alliance (``NMA'') commended the proposed 
+new definition, noting that ``GRNW is a substantial success story'' and 
+``applaud[ing] the Office for listening to stakeholder feedback and for 
+introducing this proposed rule.'' \17\
+---------------------------------------------------------------------------
+
+    \13\ NMA Comments at 3 (``[T]he revised definition is a welcome 
+change that will increase access to the registration system and 
+reduce confusion by applicants, to the benefit of publishers, the 
+Copyright Office and Library, and ultimately the overall public.''); 
+Public Knowledge Comments at 1 (``The proposed definition provides 
+needed flexibility without undermining the purpose of the group 
+registration system.''); Am. Ass'n of Independent Music (``A2IM'') 
+Comments at 1 (stating that they ``do not oppose'' the rule and that 
+it is a ``sensible administrative improvement''); Am. Intell. Prop. 
+L. Ass'n (``AIPLA'') Comments at 1 (suggesting that the phrase 
+``related to one or more topics'' would further clarify eligibility, 
+but supporting the ``overarching goals and purposes'' of the 
+amendment); Copyright All. Comments at 2 (``We support the proposed 
+revision because it provides clarity that the final rule does not 
+unnecessarily restrict or leave out certain news publishers from 
+benefitting from this group registration option.''); Nat'l Ass'n 
+Broad. (``NAB'') Comments at 1 (``NAB supports the proposed 
+amendment and appreciates the Office's continued efforts to refine 
+its regulations based on implementation experience and stakeholder 
+feedback.''). But see Nat'l Writers Union (``NWU'') Comments at 1-6 
+(reiterating their comments from the 2024 rulemaking and proposing 
+substantive changes to the GRNW registration option, which would 
+substantially change the scope of this rulemaking).
+    \14\ NAB Comments at 2; Copyright All. Comments at 3, NMA 
+Comments at 3; Public Knowledge Comments at 2.
+    \15\ NAB Comments at 2.
+    \16\ Public Knowledge Comments at 2.
+    \17\ NMA Comments at 2, 6.
+---------------------------------------------------------------------------
+
+    Commenters further stated that the proposed definition better 
+reflects the specialization and reality of news publishing.\18\ 
+Copyright Alliance explained that digital news is increasingly 
+``tailored toward particular topics of interest as readers are often 
+looking to read individual news articles on specific subjects or 
+issues.'' \19\ NMA stated that the rulemaking ``respects . . . the 
+operational realities of modern news media,'' as news outlets are 
+driven by user demand, which often results in ``subject-matter focused 
+publications'' due to readers' ``fragment[ed]'' interests.\20\ The 
+proposed amendment improves on the original definition of ``news 
+websites'' by better accounting for this reality.
+---------------------------------------------------------------------------
+
+    \18\ Copyright All. Comments at 2, 3; NMA Comments at 3; NAB 
+Comments at 2; Public Knowledge Comments at 1.
+    \19\ Copyright All. Comments at 2.
+    \20\ NMA Comments at 3.
+---------------------------------------------------------------------------
+
+    Some commenters argued that the Office should expand the 
+eligibility for GRNW even further,\21\ or otherwise
+
+[[Page 52241]]
+
+provided comments outside the scope of this rulemaking.\22\ These 
+additional suggestions, many of which the Office considered and 
+responded to in the 2024 rulemaking,\23\ do not provide any reason to 
+delay clarifying the definition of ``news websites'' as proposed.\24\
+---------------------------------------------------------------------------
+
+    \21\ AIPLA proposed additional regulatory language specifying 
+that ``news websites'' includes those that report on only one topic. 
+AIPLA Comments at 2 (defining news website as ``a website that is 
+primarily designed to be a source of written information on current 
+events related to one or more topics, either local, national, or 
+international in scope''). AIPLA argued that this change would 
+ensure that news websites with an industry-specific focus are 
+eligible. Id. (citing <a href="http://WIRED.com">WIRED.com</a> as an example). The Office 
+appreciates this proposal but declines to incorporate it into the 
+``news website'' definition. As noted in footnote 11 supra, 
+industry-specific websites--such as those focused on technology or 
+entertainment--are covered by the Office's amended definition even 
+without AIPLA's proposed addition, so long as they report on a 
+variety of subjects within the area of focus.
+    \22\ See NMA Comments at 5 (proposing removal of work made for 
+hire requirement and expanding format eligibility to include mobile 
+applications); NWU Comments at 1-6 (proposing removal of work made 
+for hire requirement and creating a new group registration option 
+for web content generally); AIPLA Comments at 1-2 (proposing 
+expanding format eligibility to include nonwritten content); A2IM 
+Comments at 1 (proposing creation of new group registration option 
+for music).
+    \23\ See 89 FR 58991, 58995-96 (July 22, 2024) (noting the 
+administrative challenges to removing the work made for hire 
+eligibility requirement); id. at 58994 (explaining that ``[t]o the 
+extent that news publishers seek to register the works published on 
+the app, a registration for a newspaper or a news website would 
+protect those works if they contain the same content''); id. at 
+58992 (explaining that NWU's proposal to remove the ``news'' 
+requirement ``would substantially change its scope'').
+    \24\ The Office continues to consider how to make the statutory 
+benefits of registering works of authorship more accessible, and we 
+recognize the ongoing stakeholder interest in additional group 
+registration options. We have sought public input on such options, 
+as we continue development of the new Enterprise Copyright System 
+(ECS) which will enhance access to registration and other services. 
+See 91 FR 14724 (Mar. 26, 2026); U.S. Copyright Office, Proposed 
+Schedule of Fees to Go Into Effect in Fall 2026 at 28-29, 42 (July 
+14, 2026), <a href="https://www.copyright.gov/rulemaking/feestudy2026/proposed-fee-schedule.pdf">https://www.copyright.gov/rulemaking/feestudy2026/proposed-fee-schedule.pdf</a>.
+---------------------------------------------------------------------------
+
+    The Office will adopt the final rule effective immediately.\25\ 
+Because this rulemaking seeks to remove a restriction and expand 
+eligibility for the GRNW registration option, we find good cause to do 
+so.\26\
+---------------------------------------------------------------------------
+
+    \25\ Two commenters requested that the final rule take effect 
+immediately. Copyright All. Comments at 2 (``It is our hope that 
+this proposed rule can go into effect as soon as possible so that 
+news publishers that have been uncertain of whether their website 
+content is eligible for this group registration . . . imminently 
+register their works using this option.''); NMA Comments at 5 
+(``[T]he proposed update would best promote administrative 
+efficiency, and any delay would be unnecessary or contrary to the 
+public interest.'').
+    \26\ 5 U.S.C. 553(d)(1), (3).
+---------------------------------------------------------------------------
+
+List of Subjects in 37 CFR Part 202
+
+    Copyright, Copyright claims, preregistration and registration.
+
+Final Regulations
+
+    For the reasons set forth in the preamble, the Copyright Office 
+amends 37 CFR part 202 as follows:
+
+PART 202--PREREGISTRATION AND REGISTRATION OF CLAIMS TO COPYRIGHT
+
+0
+1. The authority citation for part 202 continues to read as follows:
+
+    Authority: 17 U.S.C. 408(f), 702.
+
+
+0
+2. Amend Sec.  202.4 by revising paragraph (m)(1)(i) to read as 
+follows:
+
+
+Sec.  202.4  Group registration.
+
+* * * * *
+    (m) * * *
+    (1) Definitions. For the purposes of paragraph (m) of this section:
+    (i) News website means a website that is primarily designed to be a 
+source of written information on current events, either local, 
+national, or international in scope.
+* * * * *
+
+    Dated: August 10, 2026.
+Shira Perlmutter,
+Register of Copyrights and Director of the U.S. Copyright Office.
+    Approved by:
+Robert Newlen,
+Acting Librarian of Congress.
+[FR Doc. 2026-16465 Filed 8-12-26; 8:45 am]
+BILLING CODE 1410-30-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

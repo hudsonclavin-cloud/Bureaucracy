@@ -1,0 +1,209 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 168 (Tuesday, September 1, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 168 (Tuesday, September 1, 2026)]
+[Rules and Regulations]
+[Pages 56049-56050]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-17815]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+DEPARTMENT OF JUSTICE
+
+28 CFR Part 27
+
+[Docket No. 164; AG Order No. 7114-2026]
+
+
+Technical Amendments to the Regulations Providing Whistleblower 
+Protection for Federal Bureau of Investigation Employees
+
+AGENCY: Department of Justice.
+
+ACTION: Final rule.
+
+-----------------------------------------------------------------------
+
+SUMMARY: This rule makes technical amendments to relevant portions of 
+28 CFR part 27, the Department of Justice (Department) regulations on 
+the protection of whistleblowers in the Federal Bureau of Investigation 
+(FBI), so that the provisions conform with organizational changes 
+brought about by a restructuring of the Justice Management Division 
+(JMD).
+
+DATES: Effective September 1, 2026.
+
+FOR FURTHER INFORMATION CONTACT: John E. Thompson, Deputy General 
+Counsel, Justice Management Division; email: <a href="/cdn-cgi/l/email-protection#c58faaadabeb80eb91adaaa8b5b6aaab85b0b6a1aaafeba2aab3"><span class="__cf_email__" data-cfemail="eea4818680c0abc0ba8681839e9d8180ae9b9d8a8184c0898198">[email&#160;protected]</span></a>.
+
+SUPPLEMENTARY INFORMATION: This rule makes technical amendments to 
+certain provisions in 28 CFR part 27 to reflect that ``the Office of 
+Attorney Recruitment and Management'' has been renamed ``the Office of 
+Adjudication, Recruitment, and Management'' (OARM) as part of a 
+reorganization of JMD, which included the formal realignment of OARM to 
+JMD.
+
+Regulatory Analysis
+
+    In developing this rule, the Department considered numerous 
+statutes and executive orders applicable to rulemaking. The 
+Department's analysis of the applicability of those statutes and 
+executive orders to this rule is summarized below.
+
+A. Administrative Procedures Act
+
+    This rule relates to matters of agency personnel, organization, and 
+procedure, and, pursuant to 5 U.S.C. 553(a)(2), it is exempt from the 
+requirements of notice and comment and a 30-day delay in the effective 
+date.
+
+B. Executive Orders 12866 (Regulatory Planning and Review), Executive 
+Order 13563 (Improving Regulation and Regulatory Review), and Executive 
+Order 14192 (Unleashing Prosperity Through Deregulation)
+
+    This rule is not a significant regulatory action under section 3(f) 
+of Executive Order 12866, as supplemented by Executive Order 13563. 
+This rule makes technical amendments to portions of the existing 
+regulations that provide whistleblower protection for FBI employees and 
+applicants to conform with organizational changes within JMD. The 
+changes do not materially affect the number of claims or the time, 
+cost, or resources required to address them.
+    Accordingly, this rule does not require an assessment of potential 
+costs and benefits under section 6(a)(3) of Executive Order 12866. The 
+Office of Management and Budget has not reviewed this rule under these 
+Orders.
+    Further, as this rule relates to agency organization, management, 
+or personnel, it is fully exempt from the numerical 10-for-1 and cost 
+offset requirements of Executive Order 14192.
+
+C. Regulatory Flexibility Act
+
+    The Regulatory Flexibility Act of 1980, 5 U.S.C. 601-12, as 
+amended, requires Federal agencies to consider the potential impact of 
+regulations on small entities during rulemaking. The term ``small 
+entities'' comprises small businesses, not-for-profit organizations 
+that are independently owned and operated and are not dominant in their 
+fields, and governmental jurisdictions with populations of less than 
+50,000. 5 U.S.C. 601.
+    The Attorney General certifies under 5 U.S.C. 605(b) that this rule 
+does not have a significant economic impact on a substantial number of 
+small entities. The rule makes technical amendments to the portions of 
+the regulations governing the Department's internal process for 
+addressing allegations of retaliation for protected whistleblowing by 
+FBI employees and applicants. It has no application to small entities 
+as defined above.
+
+D. Paperwork Reduction Act
+
+    This final rule does not call for a new collection of information 
+under the Paperwork Reduction Act of 1995, 44 U.S.C. 3501-20.
+
+E. Executive Order 13132 (Federalism)
+
+    A rule has federalism implications under Executive Order 13132 if 
+it has a substantial direct effect on the States, on the relationship 
+between the national government and the States, or on the distribution 
+of power and responsibilities among the various levels of government. 
+E.O. 13132, sec. 1(a). The Department has analyzed this rule under that 
+Order and determined that this rule does not have federalism 
+implications.
+
+F. Unfunded Mandates Reform Act of 1995
+
+    The Unfunded Mandates Reform Act of 1995, 2 U.S.C. 1531-38, 
+requires Federal agencies to determine whether a rule, if promulgated, 
+will result in the expenditure by State, local, or tribal governments, 
+in the aggregate, or by the private sector, of $100 million (adjusted 
+for inflation) or more in any one year. 2 U.S.C. 1532(a). This rule 
+does not require or result in expenditures by any of the above-named 
+entities.
+
+G. Executive Order 12988 (Civil Justice Reform), Plain Language
+
+    This rule meets applicable standards in sections 3(a) and 3(b)(2) 
+of Executive Order 12988.
+
+[[Page 56050]]
+
+H. Executive Order 13175 (Consultation and Coordination With Indian 
+Tribal Governments)
+
+    This rule does not have tribal implications under Executive Order 
+13175 because it would not have a substantial direct effect on one or 
+more Indian tribes, on the relationship between the Federal Government 
+and Indian tribes, or on the distribution of power and responsibilities 
+between the Federal Government and Indian tribes.
+
+I. Congressional Review Act
+
+    The reporting requirements of the Congressional Review Act 
+(Subtitle E of the Small Business Regulatory Enforcement Fairness Act 
+of 1996), 5 U.S.C. 801-08, do not apply to this rule. This rule relates 
+primarily to agency management, personnel, and organization. 5 U.S.C. 
+804(3)(B). The rule makes technical amendments to 28 CFR part 27, as 
+necessary to conform to recent Department organizational changes. This 
+action is accordingly not a ``rule'' as that term is used by the 
+Congressional Review Act, see 5 U.S.C. 804(3), and the reporting 
+requirement of 5 U.S.C. 801 does not apply.
+
+List of Subjects in 28 CFR Part 27
+
+    Government employees, Justice Department, Organization and 
+functions (Government agencies), Whistleblowing.
+
+Authority and Issuance
+
+    For the reasons stated above, the Department of Justice amends 28 
+CFR part 27 as follows:
+
+PART 27--WHISTLEBLOWER PROTECTION FOR FEDERAL BUREAU OF 
+INVESTIGATION EMPLOYEES
+
+0
+1. The authority citation for part 27 continues to read as follows:
+
+    Authority: 5 U.S.C. 301, 3151; 28 U.S.C. 509, 510, 515-519; 5 
+U.S.C. 2303; President's Memorandum to the Attorney General, 
+Delegation of Responsibilities Concerning FBI Employees Under the 
+Civil Service Reform Act of 1978, 3 CFR p. 284 (1997); Presidential 
+Policy Directive 19, ``Protecting Whistleblowers with Access to 
+Classified Information'' (October 10, 2012).
+
+
+0
+2. Amend Sec.  27.4 by revising the section heading and paragraph (a) 
+to read as follows:
+
+
+Sec.  27.4  Corrective action and other relief; Director, Office of 
+Adjudication, Recruitment and Management.
+
+    (a) If, in connection with any investigation, the Conducting Office 
+determines that there are reasonable grounds to believe that a reprisal 
+has been or will be taken, the Conducting Office shall report this 
+conclusion, together with any findings and recommendations for 
+corrective action, to the Director of the Office of Adjudication, 
+Recruitment, and Management (the Director). If the Conducting Office's 
+report to the Director includes a recommendation for corrective action, 
+the Director shall provide an opportunity for comments on the report by 
+the FBI and the Complainant. The Director, upon receipt of the 
+Conducting Office's report, shall proceed in accordance with paragraphs 
+(e) and (f) of this section. A determination by the Conducting Office 
+that there are reasonable grounds to believe that a reprisal has been 
+or will be taken shall not be cited or referred to in any proceeding 
+under these regulations, without the Complainant's consent.
+* * * * *
+
+Todd Blanche,
+Attorney General.
+[FR Doc. 2026-17815 Filed 8-31-26; 8:45 am]
+BILLING CODE 4410-AR-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

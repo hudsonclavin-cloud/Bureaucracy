@@ -1,0 +1,160 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 173 (Wednesday, September 9, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 173 (Wednesday, September 9, 2026)]
+[Notices]
+[Pages 57390-57391]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-18351]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+NATIONAL SCIENCE FOUNDATION
+
+
+Agency Information Collection Activities: Comment Request
+
+AGENCY: National Science Foundation.
+
+ACTION: Submission for OMB Review; Comment Request: National Science 
+Foundation Research Traineeship (NRT) Monitoring System.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The National Science Foundation (NSF) has submitted the 
+following request for revision of the approved collection of research 
+and development data in accordance with the Paperwork Reduction Act of 
+1995. This is the second notice for public comment; the first was 
+published in the Federal Register and one comment was received. NSF is 
+forwarding the proposed renewal submission to the Office of Management 
+and Budget (OMB) for clearance simultaneously with the publication of 
+this second notice.
+
+DATES: Written comments and recommendations for the proposed 
+information collection should be sent within 30 days of publication of 
+this notice to <a href="http://www.reginfo.gov/public/do/PRAmain">www.reginfo.gov/public/do/PRAmain</a>. Find this particular 
+information collection by selecting ``Currently under 30-day Review--
+Open for Public Comments'' or by using the search function.
+
+FOR FURTHER INFORMATION CONTACT: Suzanne H. Plimpton, Reports Clearance 
+Officer, National Science Foundation, 401 Dulany Street, Alexandria, VA 
+22314; or send email to <a href="/cdn-cgi/l/email-protection#ccbfbca0a5a1bcb8a38ca2bfaae2aba3ba"><span class="__cf_email__" data-cfemail="f88b88949195888c97b8968b9ed69f978e">[email&#160;protected]</span></a>. Individuals who use a 
+telecommunications device for the deaf (TDD) may call the Federal 
+Information Relay Service (FIRS) at 1-800-877-8339, which is accessible 
+24 hours a day, 7 days a week, 365 days a year (including federal 
+holidays).
+    Comments: Comments regarding (a) whether the proposed collection of 
+information is necessary for the proper performance of the functions of 
+the NSF, including whether the information shall have practical 
+utility; (b) the accuracy of the NSF's estimate of the burden of the 
+proposed collection of information; (c) ways to enhance the quality, 
+use, and clarity of the information on respondents; and (d) ways to 
+minimize the burden of the collection of information on those who are 
+to respond, including through the use of appropriate automated, 
+electronic, mechanical, or other technological collection techniques or 
+other forms of information technology should be addressed to the points 
+of contact in the FOR FURTHER INFORMATION CONTACT section.
+    Copies of the submission may be obtained by calling 703-292-7556. 
+NSF may not conduct or sponsor a collection of information unless the 
+collection of information displays a currently valid OMB control 
+number, and the agency informs potential persons who are to respond to 
+the collection of information that such persons are not required to 
+respond to the collection of information unless it displays a currently 
+valid OMB control number.
+
+SUPPLEMENTARY INFORMATION: 
+    Comments: As required by 5 CFR 1320.8(d), comments on the 
+information collection were solicited through publication of a 60-Day 
+Notice in the Federal Register on January 30, 2026, at 91 FR 4113, and 
+one comment was received. Because it was in support of the information 
+collection, we are moving forward with the request to OMB.
+    Title of Collection: National Science Foundation Research 
+Traineeship (NRT) Monitoring System.
+    OMB Number: 3145-0263.
+    Type of Request: Intent to seek approval to renew an information 
+collection.
+    Proposed Project: The National Science Foundation's Directorate for 
+STEM Education (EDU) administers the NSF Research Traineeship (NRT) 
+program. The NRT program is designed to encourage the development and 
+implementation of bold, new, and potentially transformative models for 
+STEM graduate education training. The NRT program seeks to ensure that 
+graduate students in research-based master's and doctoral degree 
+programs develop the skills, knowledge, and competencies needed to 
+pursue a range of STEM careers. NRT is dedicated to effective training 
+of STEM graduate students in high-priority interdisciplinary or 
+convergent research areas through the use of a comprehensive 
+traineeship model that is innovative, evidence-based, and aligned with 
+changing workforce and research needs.
+    Previously, NRT awardees provided NSF with information on their 
+activities through periodic research performance progress reports. The 
+NRT monitoring system (also referred to as the NRT reporting system) 
+has replaced these reports with a tailored program monitoring system 
+that uses internet-based information and communication technologies to 
+collect, review, and validate specific data on NRT awards. EDU is 
+committed to ensuring the efficiency and effectiveness with which 
+respondents provide and NSF staff can access and analyze data on funded 
+projects within the NRT programs.
+
+[[Page 57391]]
+
+    The NRT monitoring system includes subsets of questions aimed at 
+the different project participants (i.e., Principal Investigators 
+(PIs), and trainees), and allows for data analysis and data report 
+generation by authorized NSF staff. The collection takes a census 
+approach and generally includes three categories of descriptive data: 
+(1) Staff and project participants (data that are necessary to 
+determine individual-level treatment and control groups for future 
+third-party study or for internal evaluation); (2) project 
+implementation characteristics (also necessary for future use to 
+identify well-matched comparison groups); and (3) project outputs 
+(necessary to measure baseline for pre- and post- NSF-funding-level 
+impacts). NRT awardees will be required to report data on an annual 
+basis for the life of their award.
+    Use of the Information: NSF will primarily use the data from this 
+collection for program planning, management, and audit purposes to 
+respond to queries from the Congress, the public, NSF's external merit 
+reviewers, external third parties who serve as advisors, the NSF Office 
+of the Inspector General, and as a basis for either internal or third-
+party evaluations of individual programs. This information is required 
+for effective administration, communication, program and project 
+monitoring and evaluation, and for measuring attainment of NSF's 
+program, project, and strategic goals. The data collection is primarily 
+used for accountability and evaluation purposes, including responding 
+to queries from external experts. Some data collected under this 
+collection will serve as baseline data for future research and 
+evaluation studies.
+    NSF-funded contract or grantee researchers and internal or external 
+evaluators in part may identify control, comparison, or treatment 
+groups for NSF's education and training portfolio using some of the 
+descriptive data gathered through this collection to conduct well-
+designed, rigorous research and portfolio evaluation studies.
+    Burden on the Public:
+
+                      Table A.12.1--Surveys and Burden Comprising the NRT Monitoring System
+----------------------------------------------------------------------------------------------------------------
+                                  Respondent         Response                         Number of    Total annual
+            Survey                responsible        frequency      Burden estimate  respondents    hour burden
+----------------------------------------------------------------------------------------------------------------
+Project Survey...............  PI*.............  Once annually...  30 hours........          130           3,900
+PI Survey....................  PI..............  Once annually...  10 minutes......          130              22
+Faculty Survey (includes       Faculty/Co-PI...  Once annually...  10 minutes......        1,560             260
+ CoPIs).
+Trainee Survey...............  Trainee.........  Once annually...  90 minutes......        1,300           1,950
+                                                                                    ----------------------------
+    Total....................  ................  ................  ................        3,120           6,132
+----------------------------------------------------------------------------------------------------------------
+
+
+    Dated: September 4, 2026.
+Suzanne H. Plimpton,
+Reports Clearance Officer, National Science Foundation.
+[FR Doc. 2026-18351 Filed 9-8-26; 8:45 am]
+BILLING CODE 7555-01-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

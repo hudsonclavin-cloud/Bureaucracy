@@ -1,0 +1,127 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 163 (Tuesday, August 25, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 163 (Tuesday, August 25, 2026)]
+[Rules and Regulations]
+[Page 54796]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-17338]
+
+
+-----------------------------------------------------------------------
+
+OFFICE OF PERSONNEL MANAGEMENT
+
+5 CFR Part 351
+
+[Docket ID: OPM-2025-0239]
+RIN 3206-AO99
+
+
+Reduction in Force Appeals; Correction
+
+AGENCY: Office of Personnel Management.
+
+ACTION: Final rule; correction.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The Office of Personnel Management (OPM) published a final 
+rule in the Federal Register on August 3, 2026, concerning reduction in 
+force appeals. That document contained typographical and citation 
+errors in the regulatory text. This document corrects the final rule.
+
+DATES: Effective September 2, 2026.
+
+FOR FURTHER INFORMATION CONTACT: Aaron Gottesman, Senior Advisor to the 
+Director, by email at <a href="/cdn-cgi/l/email-protection#13767e637f7c6a76767270707c667d6772717a7f7a676a537c637e3d747c65"><span class="__cf_email__" data-cfemail="87e2eaf7ebe8fee2e2e6e4e4e8f2e9f3e6e5eeebeef3fec7e8f7eaa9e0e8f1">[email&#160;protected]</span></a> or by phone at 
+(202) 606-7400.
+
+SUPPLEMENTARY INFORMATION: OPM published a final rule on August 3, 2026 
+(91 FR 49230; FR Doc. 2026-15666), revising subpart I of 5 CFR part 
+351. The document contained clerical errors, including an imprecise 
+cross-reference in Sec.  351.902(b)(3); a garbled series in Sec.  
+351.902(c)(6); the use in Sec.  351.904(c) of the term ``responsible 
+agency,'' which is undefined in part 351 (the term is defined only in 
+Sec.  731.503(b)(2), for purposes of part 731, subpart E); and 
+typographical errors. This document corrects those errors before the 
+rule's effective date. The corrections are non-substantive.
+
+Regulatory Review
+
+    OPM has examined this rule under Executive Orders 12866 and 13563. 
+For the reasons discussed above, this rule is not a significant 
+regulatory action under Executive Order 12866. This is not an E.O. 
+14192 regulatory action because this rule is not significant under E.O. 
+12866.
+
+Signing Statement
+
+    The Director of OPM, Scott Kupor, reviewed and approved this 
+document and has authorized the undersigned to electronically sign and 
+submit this document to the Office of the Federal Register for 
+publication.
+
+Office of Personnel Management.
+Jerson Matias,
+Federal Register Liaison.
+
+Correction
+
+    In FR Doc. 2026-15666, appearing on page 49230 in the Federal 
+Register of Monday, August 3, 2026, the following corrections are made:
+
+
+Sec.  351.901   [Corrected]
+
+0
+1. On page 49263, in Sec.  351.901(c)(1), remove ``The procedures in 
+this part are'' and add in its place ``The procedures in this subpart 
+are''.
+
+
+Sec.  351.902   [Corrected]
+
+0
+2. On page 49264, in Sec.  351.902:
+0
+a. In paragraph (b)(3), remove ``an entity identified in Sec.  
+351.901(c),'' and add in its place ``an entity identified in Sec.  
+351.901(c)(3),''; and
+0
+b. In paragraph (c)(6), remove ``filed by a party or party's 
+representative and OPM'' and add in its place ``filed by a party, a 
+party's representative, or OPM''.
+
+
+Sec.  351.904   [Corrected]
+
+0
+3. On page 49265, in Sec.  351.904(c), remove ``OPM or the responsible 
+agency may'' and add in its place ``OPM or the agency whose action is 
+under appeal may'', and remove ``an employee of the responsible agency 
+or OPM'' and add in its place ``an employee of that agency or OPM''.
+
+
+Sec.  351.905  [Corrected]
+
+0
+4. On page 49265, in Sec.  351.905(b), remove ``For the purposes of 
+paragraph (b) of this section,'' and add in its place ``For purposes of 
+this paragraph (b),''.
+
+
+Sec.  351.909   [Corrected]
+
+0
+5. On page 49267, in Sec.  351.909(f), remove ``protected personnel 
+information'' and add in its place ``protected personal information''.
+
+[FR Doc. 2026-17338 Filed 8-24-26; 8:45 am]
+BILLING CODE 6325-39-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

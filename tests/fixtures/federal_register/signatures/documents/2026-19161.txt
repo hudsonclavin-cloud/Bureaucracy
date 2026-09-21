@@ -1,0 +1,640 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 180 (Friday, September 18, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 180 (Friday, September 18, 2026)]
+[Rules and Regulations]
+[Pages 59059-59063]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-19161]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+DEPARTMENT OF STATE
+
+22 CFR Part 120, 123, 125, and 126
+
+[Public Notice: 13121]
+RIN 1400-AG31
+
+
+International Traffic in Arms Regulations: Clarifying Policies of 
+Denial, Updating the Major Non-NATO Ally List, and Minor Corrections
+
+AGENCY: Department of State.
+
+ACTION: Final rule.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The Department of State is amending the International Traffic 
+in Arms Regulations (ITAR) to clarify certain policy-of-denial 
+provisions, update country policies for Ethiopia and Somalia, add Saudi 
+Arabia and Peru to the list of major non-NATO allies, and make other 
+miscellaneous corrections.
+
+DATES: This rule is effective on September 18, 2026.
+
+FOR FURTHER INFORMATION CONTACT: Mr. Ryan Haddad, Foreign Affairs 
+Officer, Office of Defense Trade Controls Policy, U.S. Department of 
+State, telephone 771-204-7878; email <a href="/cdn-cgi/l/email-protection#4c0808180f0f393f382321293e1f293e3a252f290c3f382d3829622b233a"><span class="__cf_email__" data-cfemail="cb8f8f9f8888beb8bfa4a6aeb998aeb9bda2a8ae8bb8bfaabfaee5aca4bd">[email&#160;protected]</span></a>. 
+ATTN: Regulatory Change, ITAR Section 126.1 Clarification.
+
+SUPPLEMENTARY INFORMATION: It is the policy of the United States to 
+deny licenses or other approvals for exports and imports destined for, 
+or originating in, certain countries. That policy is codified in the 
+ITAR in Sec.  126.1(a), and countries subject to it are identified in 
+paragraph (d). Within that paragraph, the Department distinguishes 
+between countries subject to a comprehensive policy of denial and those 
+subject to qualified policies of denial. Countries subject to a 
+comprehensive policy of denial are identified in Sec.  126.1(d)(1). 
+Meanwhile, qualified policies of denial are described in Sec.  
+126.1(d)(2). To improve clarity regarding the scope of these 
+prohibitions, and to make additional changes to implement recent policy 
+actions and correct minor typographical errors, the Department is 
+amending parts 120, 123, 125, and 126 of the ITAR. The changes are as 
+follows:
+
+Improving the Organization and Readability of Sec.  126.1
+
+    <bullet> The text of Sec.  126.1(a) is modified to specify that its 
+prohibitions apply to ``exports, reexports, retransfers, and temporary 
+imports of defense articles and defense services destined for, or 
+originating in, certain countries.'' This revision more specifically 
+states which controlled events are subject to a policy of denial, and 
+similar changes are made in this rule to other paragraphs for the same 
+reason. Additionally, a revision is made to further emphasize that the 
+ITAR's prohibitions on brokering activities involving countries 
+identified in Sec.  126.1 can be found in Sec.  129.7.
+    <bullet> Identification. To better introduce the topic of paragraph 
+(c) and to conform with the structure and style of paragraphs in the 
+section, the Department is adding the paragraph heading 
+``Identification in this section.'' to paragraph (c).
+    <bullet> The general policy descriptions in paragraphs (d)(1) and 
+(2) are revised by clarifying that ``exports, reexports, retransfers, 
+and temporary imports'' of defense articles and defense services are 
+affected by these prohibitions.
+
+Clarifying Policy of Denial-Related Prohibitions
+
+    <bullet> Sec.  120.15 Exemptions. The prohibition on exemption 
+usage described in Sec.  120.15(c) is revised to specify that it 
+applies to exports, reexports, retransfers, and temporary imports of 
+defense articles and defense services.
+    <bullet> Sec.  123.16 Exemptions of general applicability (defense 
+articles). The license exemption described in Sec.  123.16 is revised 
+to specify that the exemptions may not be used for defense article and 
+defense service exports, reexports, or retransfers to, or temporary 
+imports from, any proscribed countries, areas, or persons identified in 
+Sec.  126.1 of this subchapter, except as provided in Sec.  126.1.
+    <bullet> Sec.  125.4 Exemptions of general applicability (technical 
+data and classified defense articles).
+    [cir] In Sec.  125.4(a), the text is revised to specify that the 
+exemptions in the paragraph may not be used for defense article and 
+defense service exports, reexports, retransfers to, or temporary 
+imports from, any proscribed countries, areas, or persons identified in 
+Sec.  126.1 of this subchapter, except as provided in Sec.  126.1. The 
+paragraph is also revised to specify that the exemptions in the 
+paragraph may not be used for transfers ``to or for''--rather than just 
+``for''--persons ineligible under Sec.  120.16. This change confirms 
+that such persons may not participate in any ITAR-controlled activities 
+under these exemptions. A minor typographical correction is also made 
+to capitalize the word ``Controls.''
+    [cir] The Sec.  125.4(b)(10) exemption text is revised to replace 
+the term ``Disclosures'' with the ITAR term ``Releases.'' A minor 
+typographical correction is also made to hyphenate ``full-time.''
+
+[[Page 59060]]
+
+Updating Sec.  126.1 Country Policies
+
+    <bullet> The entry for Ethiopia in paragraph (n) is removed and the 
+paragraph is reserved, implementing a February 5, 2026 policy 
+determination by the Secretary of State terminating the policy of 
+denial for licenses or other approvals for exports of defense articles 
+or defense services destined to or for the armed forces, police, 
+intelligence, or other internal security forces of Ethiopia.
+    <bullet> The entry for Libya in paragraph (k) is revised to make 
+several minor clarifications and typographical corrections:
+    [cir] Paragraph (3) is revised to use the ITAR phrase ``defense 
+services'' instead of ``technical assistance or training.''
+    [cir] Paragraph (6) is revised to replace the phrase ``arms and 
+related material'' with ``defense articles'' and to replace ``provision 
+of assistance or personnel'' with ``defense services.'' It also 
+replaces the phrase ``Committee of the Security Council concerning 
+Libya'' with the more specific ``committee of the United Nations 
+Security Council concerned with Libya,'' which is the ITAR's standard 
+formulation and reflects that the committee is not named with a proper 
+noun.
+    [cir] Paragraph (8) is revised to add the phrase ``provided by the 
+United States Government'' after ``Defense services,'' which was 
+mistakenly omitted in a prior rule. The word ``associated'' is removed 
+from the phrase ``associated temporary exports of defense articles'' to 
+clarify that those temporary exports do not need to be specifically 
+associated with the defense services in question to qualify for this 
+exclusion.
+    [cir] Paragraph (9) is revised to remove the superfluous `` `s'' 
+after ``United Nations.''
+    <bullet> The entry for Somalia in paragraph (m) is revised to 
+remove a comma from the existing text clarify the text of the exclusion 
+from the policy of denial. This change affirms that the supply of 
+weapons, ammunition, or military equipment may be authorized through 
+case-by-case licensing review if intended solely for the support of, or 
+use by, European Union training and support activities, Turkey, the 
+United Kingdom, and the United States; it equally applies in the same 
+circumstances for other United Nations Member States that have 
+concluded a Status of Forces Agreement with Somalia, provided those 
+Member States pre-notify the committee of the United Nations Security 
+Council concerned with Somalia. The Department will consider 
+applications for such activities on a case-by-case basis.
+    <bullet> The entry for South Sudan in paragraph (w) is revised to 
+clarify that the policy of denial generally applies to both exports and 
+imports of defense articles and defense services. A stylistic change is 
+also made in paragraph (2) to use the standardized phrase ``committee 
+of the United Nations Security Council concerned with South Sudan.''
+
+Correcting Technical Errors in the Sec.  126.5 Canadian Exemptions
+
+    <bullet> The Canadian exemption for temporary and permanent export 
+at Sec.  126.5(b) is revised to remove a requirement that contradicts 
+the text of Sec.  123.10. The current Sec.  126.5(b) text states that 
+exporters must obtain a Nontransfer and Use Certificate (Form DSP-83) 
+for all significant military equipment transferred under the Sec.  
+126.5(b) exemptions. Section 123.10 states that such assurances are not 
+required when using the Sec.  126.5 exemptions. This revision aligns 
+the two paragraphs and clarifies that such certificates are not needed 
+when using the Sec.  126.5(b) Canadian exemption.
+    <bullet> A similar correction is made to Sec.  126.5(d) to specify 
+that the paragraph's reexport/retransfer exemption requirements do not 
+include the need to obtain Nontransfer and Use Certificates, 
+notwithstanding the cross reference to Sec.  123.9(c) and the 
+requirement to include the information required by that paragraph, 
+which in turn references Sec.  123.1, and the need to include all 
+documentation required of a permanent export license.
+
+Updating the Major Non-NATO Allies List
+
+    <bullet> In Sec.  120.23, the list of ``major non-NATO allies'' is 
+revised to add Saudi Arabia (91 FR 3017, January 13, 2026) and Peru (91 
+FR 3019, January 14, 2026.)
+
+Regulatory Analysis and Notices
+
+Administrative Procedure Act
+
+    This rulemaking is exempt from the rulemaking requirements of the 
+Administrative Procedure Act (APA) pursuant to 5 U.S.C. 553(a)(1) as a 
+military or foreign affairs function of the United States. As the 
+provisions of section 553 do not apply to this rulemaking, the 
+Department is publishing this rule with an immediate effective date and 
+without a request for public comment.
+
+Regulatory Flexibility Act
+
+    Since this rule is exempt from the notice-and-comment rulemaking 
+provisions of 5 U.S.C. 553, the rule does not require analysis under 
+the Regulatory Flexibility Act.
+
+Unfunded Mandates Reform Act of 1995
+
+    This rulemaking does not involve a mandate that will result in the 
+expenditure by State, local, and tribal governments, in the aggregate 
+or by the private sector, of $100 million or more in any year, and it 
+will not significantly or uniquely affect small governments. Therefore, 
+no actions are deemed necessary under the provisions of the Unfunded 
+Mandates Reform Act of 1995.
+
+Congressional Review Act
+
+    The Office of Information and Regulatory Affairs has found that 
+this rulemaking is not a major rule within the criteria of 5 U.S.C. 
+804(2).This rule will not increase costs or prices and should have no 
+adverse effects on competition, employment, investment, productivity, 
+innovation, or the ability of U.S.-based enterprises to compete with 
+foreign-based enterprises in domestic and export markets. The 
+Department does not expect this change to have an annual effect on the 
+economy of $100 million or more.
+
+Executive Orders 12372 and 13132
+
+    This rulemaking does not have sufficient federalism implications to 
+require consultations or warrant the preparation of a federalism 
+summary impact statement. The regulations implementing Executive Order 
+12372 regarding intergovernmental consultation on Federal programs and 
+activities do not apply to this rulemaking.
+
+Executive Orders 12866 and 13563
+
+    Executive Order 12866, as amended by Executive Order 13563, directs 
+agencies to assess all costs and benefits of available regulatory 
+alternatives and, if regulation is necessary, to select regulatory 
+approaches that maximize net benefits (including potential economic, 
+environmental, public health, and safety effects). As a result of this 
+change, certain restrictions on defense trade activities will be 
+clarified. Other changes modestly expand the scope of permissible 
+defense trade activities. Because this rule, on balance, removes 
+regulatory requirements and obligations, the Department believes costs 
+associated with this rule will be minimal. This rule has been 
+designated a ``significant regulatory action'' by the Office of 
+Information and Regulatory Affairs under Executive Order 12866.
+
+Executive Order 12988
+
+    The Department of State has reviewed this rulemaking in light of 
+Executive Order 12988 to eliminate ambiguity,
+
+[[Page 59061]]
+
+minimize litigation, establish clear legal standards, and reduce 
+burden.
+
+Executive Order 13175
+
+    The Department of State determined that this rulemaking will not 
+have tribal implications, will not impose substantial direct compliance 
+costs on Indian tribal governments, and will not preempt tribal law. 
+Accordingly, Executive Order 13175 does not apply to this rulemaking.
+
+Executive Order 14192
+
+    This rule is exempt from the requirements of Executive Order 14192 
+because it relates to a foreign affairs or national security function 
+of the United States.
+
+Paperwork Reduction Act
+
+    This rulemaking does not impose or revise any information 
+collections subject to 44 U.S.C. Chapter 35.
+
+List of Subjects
+
+22 CFR Part 120
+
+    Arms and munitions, Classified information, Exports.
+
+22 CFR Part 123
+
+    Arms and munitions, Exports, Reporting and recordkeeping 
+requirements.
+
+22 CFR Part 125
+
+    Arms and munitions, Classified information, Exports.
+
+22 CFR Part 126
+
+    Arms and munitions, Exports, Reporting and recordkeeping 
+requirements, Technical assistance.
+
+PART 120--PURPOSE AND DEFINITIONS
+
+0
+1. The authority citation for part 120 continues to read as follows:
+
+    Authority:  22 U.S.C. 2651a, 2752, 2753, 2776, 2778, 2779, 
+2779a, 2785, 2794, 2797; E.O. 13637, 78 FR 16129, 3 CFR, 2013 Comp., 
+p. 223.
+
+
+0
+2. Amend Sec.  120.15 by revising paragraph (c) to read as follows:
+
+
+Sec.  120.15  Exemptions.
+
+* * * * *
+    (c) Exemptions provided in this subchapter do not apply to defense 
+article and defense service exports, reexports, or retransfers to, or 
+temporary imports originating from, any proscribed countries, areas, or 
+persons identified in Sec.  126.1 of this subchapter, except as 
+provided in Sec.  126.1.
+* * * * *
+
+0
+3. Amend Sec.  120.23 by revising paragraph (b)(2) to read as follows:
+
+
+Sec.  120.23  Organizations and arrangements.
+
+* * * * *
+    (b) * * *
+    (2) The following countries have been designated as major non-NATO 
+allies: Argentina, Australia, Bahrain, Brazil, Colombia, Egypt, Israel, 
+Japan, Jordan, Kenya, Kuwait, Morocco, New Zealand, Pakistan, Peru, the 
+Philippines, Qatar, the Republic of Korea, Saudi Arabia, Thailand, and 
+Tunisia. Taiwan shall be treated as though it were designated a major 
+non-NATO ally.
+* * * * *
+
+PART 123--LICENSES FOR THE EXPORT AND TEMPORARY IMPORT OF DEFENSE 
+ARTICLES
+
+0
+4. The authority citation for part 123 continues to read as follows:
+
+    Authority:  Secs. 2, 38, and 71, Pub. L. 90-629, 90 Stat. 744 
+(22 U.S.C. 2752, 2778, 2797); 22 U.S.C. 2753; 22 U.S.C. 2651a; 22 
+U.S.C. 2776; Pub. L. 105-261, 112 Stat. 1920; Sec. 1205(a), Pub. L. 
+107-228; Sec. 520, Pub. L. 112-55; Section 1261, Pub. L. 112-239; 
+E.O. 13637, 78 FR 16129.
+
+
+0
+5. Amend Sec.  123.16 by revising paragraph (a) to read as follows:
+
+
+Sec.  123.16  Exemptions of general applicability.
+
+    (a) The following exemptions apply to exports, reexports, 
+retransfers, or temporary imports of unclassified defense articles for 
+which no approval is needed from the Directorate of Defense Trade 
+Controls. These exemptions do not apply to: Proscribed destinations 
+under Sec.  126.1 of this subchapter; exports for which Congressional 
+notification is required (see Sec.  123.15 and Sec.  124.11 of this 
+subchapter); defense articles designated as Significant Military 
+Equipment (SME) or on the Missile Technology Control Regime (MT) Annex; 
+and may not be used by persons who are generally ineligible as 
+described in Sec.  120.16 of this subchapter. All shipments of defense 
+articles, including but not limited to those to Australia, Canada, and 
+the United Kingdom, require an Electronic Export Information (EEI) 
+filing or notification letter. If the export of a defense article is 
+exempt from licensing, the EEI filing must cite the exemption. Refer to 
+Sec.  123.22 for EEI filing and letter notification requirements.
+* * * * *
+
+PART 125--LICENSES FOR THE EXPORT OF TECHNICAL DATA AND CLASSIFIED 
+DEFENSE ARTICLES
+
+0
+6. The authority citation for part 125 continues to read as follows:
+
+    Authority:  Secs. 2 and 38, Pub. L. 90-629, 90 Stat. 744 (22 
+U.S.C. 2752, 2778); 22 U.S.C. 2651a; E.O. 13637, 78 FR 16129.
+
+
+0
+7. Amend Sec.  125.4 by revising paragraphs (a) and (b)(10) to read as 
+follows:
+
+
+Sec.  125.4  Exemptions of general applicability.
+
+    (a) The following exemptions apply to exports of technical data for 
+which approval is not needed from the Directorate of Defense Trade 
+Controls. The exemptions, except for paragraph (b)(13) of this section, 
+do not apply to defense article and defense service exports, reexports, 
+or retransfers to, or temporary imports from, proscribed destinations 
+under Sec.  126.1 of this subchapter or for persons considered 
+generally ineligible under Sec.  120.16 of this subchapter. The 
+exemptions are also not applicable for purposes of establishing 
+offshore procurement arrangements or producing defense articles 
+offshore (see Sec.  124.13), except as authorized under paragraph (c) 
+of this section. Transmission of classified information must comply 
+with the requirements of the Department of Defense National Industrial 
+Security Program Operating Manual (unless such requirements are in 
+direct conflict with guidance provided by the Directorate of Defense 
+Trade Controls, in which case the latter guidance must be followed) and 
+the exporter must certify to the transmittal authority that the 
+technical data does not exceed the technical limitation of the 
+authorized export.
+    (b) * * *
+    (10) Releases of unclassified technical data in the U.S. by U.S. 
+institutions of higher learning to foreign persons who are their bona 
+fide and full-time regular employees. This exemption is available only 
+if:
+* * * * *
+
+PART 126--GENERAL POLICIES AND PROVISIONS
+
+0
+8. The authority citation for part 126 continues to read as follows:
+
+    Authority:  22 U.S.C. 287c, 2651a, 2752, 2753, 2776, 2778, 2779, 
+2779a, 2780, 2791, 2797, 10423; sec. 1225, Pub. L. 108-375, 118 
+Stat. 2091; sec. 7045, Pub. L. 112-74, 125 Stat. 1232; sec. 1250A, 
+Pub. L 116-92, 133 Stat. 1665; sec. 205, Pub. L. 116-94, 133 Stat. 
+3052; and E.O. 13637, 78 FR 16129, 3 CFR, 2013 Comp., p. 223.
+
+
+0
+9. Amend Sec.  126.1 by:
+0
+a. Revising paragraph (a);
+0
+b. In paragraph (c), adding a paragraph heading;
+0
+c. Revising paragraphs (d), (i) introductory text and (i)(5), (k) 
+introductory text, (k)(3), (6), (8) and (9), (m) introductory text and 
+(m)(2)(iii);
+
+[[Page 59062]]
+
+0
+d. Removing and reserving paragraph (n); and
+0
+e. Revising paragraphs (w) introductory text and (w)(2).
+    The revisions read as follows:
+
+
+Sec.  126.1  Prohibited exports, imports, and sales to or from certain 
+countries.
+
+    (a) General. It is the policy of the United States to deny licenses 
+and other approvals for exports, reexports, retransfers, and temporary 
+imports of defense articles and defense services destined for, or 
+originating in, certain countries. (For brokering activities, see Sec.  
+129.7 of this subchapter, which imposes restrictions similar to those 
+contained in this section.) No transfer of defense articles or defense 
+services may be made pursuant to an exemption provided in this 
+subchapter to or from any proscribed countries, areas, or persons as 
+described in this section, except as follows:
+    (1) Transfers pursuant to Sec.  123.17, Sec.  125.4(b)(13), Sec.  
+126.6, or Sec.  126.18(e) of this subchapter;
+* * * * *
+    (c) Identification in this section. * * *
+* * * * *
+    (d) Countries subject to certain prohibitions. (1) For exports, 
+reexports, retransfers, and temporary imports of defense articles and 
+defense services, the following countries are subject to a policy of 
+denial:
+
+                       Table 1 to Paragraph (d)(1)
+------------------------------------------------------------------------
+                                 Country
+-------------------------------------------------------------------------
+Belarus
+Burma
+China
+Cuba
+Iran
+North Korea
+Syria
+Venezuela
+------------------------------------------------------------------------
+
+    (2) For exports, reexports, retransfers, and temporary imports of 
+defense articles and defense services, a policy of denial applies as 
+specified in the associated paragraphs in the following table:
+
+                       Table 2 to Paragraph (d)(2)
+------------------------------------------------------------------------
+                                            Country specific paragraph
+                Country                              location
+------------------------------------------------------------------------
+Afghanistan............................  See also paragraph (g) of this
+                                          section.
+Central African Republic...............  See also paragraph (u) of this
+                                          section.
+Cyprus.................................  See also paragraph (r) of this
+                                          section.
+Democratic Republic of the Congo.......  See also paragraph (i) of this
+                                          section.
+Eritrea................................  See also paragraph (h) of this
+                                          section.
+Haiti..................................  See also paragraph (j) of this
+                                          section.
+Iraq...................................  See also paragraph (f) of this
+                                          section.
+Lebanon................................  See also paragraph (t) of this
+                                          section.
+Libya..................................  See also paragraph (k) of this
+                                          section.
+Nicaragua..............................  See also paragraph (p) of this
+                                          section.
+Russia.................................  See also paragraph (l) of this
+                                          section.
+Somalia................................  See also paragraph (m) of this
+                                          section.
+South Sudan............................  See also paragraph (w) of this
+                                          section.
+Sudan..................................  See also paragraph (v) of this
+                                          section.
+Zimbabwe...............................  See also paragraph (s) of this
+                                          section.
+------------------------------------------------------------------------
+
+* * * * *
+    (i) Democratic Republic of the Congo. It is the policy of the 
+United States to deny licenses or other approvals for exports or 
+imports of defense articles and defense services destined for or 
+originating in the Democratic Republic of the Congo, except that a 
+license or other approval may be issued, on a case-by-case basis, for:
+* * * * *
+    (5) Defense articles and defense services as approved by the 
+committee of the United Nations Security Council concerned with the 
+Democratic Republic of the Congo.
+* * * * *
+    (k) Libya. It is the policy of the United States to deny licenses 
+or other approvals for exports or imports of defense articles and 
+defense services destined for or originating in Libya, except that a 
+license or other approval may be issued, on a case-by-case basis, for:
+* * * * *
+    (3) The provision of defense services when intended solely for 
+security or disarmament assistance to the Libyan government;
+* * * * *
+    (6) Other sales or supply of defense articles or defense services, 
+as approved in advance by the committee of the United Nations Security 
+Council concerned with Libya;
+* * * * *
+    (8) Defense services provided by the United States Government to 
+Libyan security forces intended solely to promote the process of 
+reunification of Libyan military and security institutions, as well as 
+temporary exports of defense articles intended solely for use by the 
+non-Libyan providers of those defense services for delivery of those 
+defense services and their protective use, as notified in advance to 
+the committee of the United Nations Security Council concerned with 
+Libya; or
+
+[[Page 59063]]
+
+    (9) Military aircraft or naval vessels temporarily exported by the 
+United States Government into the territory of Libya solely to deliver 
+items or facilitate activities otherwise exempted or not covered by the 
+United Nations arms embargo on Libya, including humanitarian 
+assistance, as well as defense articles for defensive purposes that 
+remain at all times aboard the vessel or aircraft while temporarily in 
+Libya or on the person of any non-Libyan personnel temporarily 
+disembarked from such vessel or aircraft.
+* * * * *
+    (m) Somalia. It is the policy of the United States to deny licenses 
+or other approvals for exports or imports of defense articles and 
+defense services destined for Somalia, except that a license or other 
+approval may be issued, on a case-by-case basis, for:
+* * * * *
+    (2) * * *
+    (iii) European Union training and support activities, Turkey, the 
+United Kingdom, or the United States, or any other Member State forces 
+with a status of forces agreement or a memorandum of understanding with 
+the Government of the Federal Republic of Somalia, provided that they 
+inform the committee of the United Nations Security Council concerned 
+with Somalia, for information purposes only, about the existence of 
+such agreements;
+* * * * *
+    (w) South Sudan. It is the policy of the United States to deny 
+licenses or other approvals for exports or imports of defense articles 
+and defense services destined for South Sudan, except that a license or 
+other approval may be issued, on a case-by-case basis, for:
+* * * * *
+    (2) Non-lethal defense articles intended solely for humanitarian or 
+protective use, and related defense services as notified in advance to 
+the committee of the United Nations Security Council concerned with 
+South Sudan;
+* * * * *
+
+0
+10. Amend Sec.  126.5 by revising paragraphs (b) and (d) introductory 
+text to read as follows:
+
+
+Sec.  126.5  Canadian exemptions.
+
+* * * * *
+    (b) Permanent and temporary export of defense articles. Except as 
+provided in Supplement No. 1 to part 126 of this subchapter and for 
+exports that transit third countries, Port Directors of U.S. Customs 
+and Border Protection and postmasters shall permit, when for end-use in 
+Canada by Canadian Federal or Provincial governmental authorities 
+acting in an official capacity or by a Canadian-registered person, or 
+for return to the United States, the permanent and temporary export to 
+Canada without a license of unclassified defense articles and defense 
+services identified on the U.S. Munitions List (22 CFR 121.1). The 
+exceptions are subject to meeting the requirements of this subchapter, 
+to include Sec. Sec.  120.15(d) and 120.16, parts 122 and 123 (except 
+insofar as exemption from licensing requirements is herein authorized) 
+and Sec.  126.1. For purposes of this section, ``Canadian-registered 
+person'' is any Canadian national (including Canadian business entities 
+organized under the laws of Canada), dual citizen of Canada and a third 
+country other than a country listed in Sec.  126.1, and permanent 
+resident registered in Canada in accordance with the Canadian Defense 
+Production Act, and such other Canadian Crown Corporations identified 
+by the Department of State in a list of such persons publicly available 
+through the internet website of the Directorate of Defense Trade 
+Controls and by other means.
+* * * * *
+    (d) Reexports/retransfer. Reexport/retransfer in Canada to another 
+end-user or end-use or from Canada to another destination, except the 
+United States, must in all instances have the prior approval of the 
+Directorate of Defense Trade Controls. Unless otherwise exempt in this 
+subchapter, the original exporter is responsible, upon request from a 
+Canadian-registered person, for obtaining or providing reexport/
+retransfer approval. In any instance when the U.S. exporter is no 
+longer available to the Canadian end-user the request for reexport/
+retransfer may be made directly to the Directorate of Defense Trade 
+Controls. All requests must include the information in Sec.  123.9(c) 
+of this subchapter, except that as provided in Sec.  123.10 of this 
+subchapter a Nontransfer and Use Certificate is not required. Reexport/
+retransfer approval is acquired by:
+* * * * *
+
+Thomas G. DiNanno,
+Under Secretary, Arms Control and International Security, Department of 
+State.
+[FR Doc. 2026-19161 Filed 9-17-26; 8:45 am]
+BILLING CODE 4710-25-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

@@ -1,0 +1,183 @@
+<html>
+<head>
+<title>Federal Register, Volume 70 Issue 128 (Wednesday, July 6, 2005)</title>
+</head>
+<body><pre>
+[Federal Register Volume 70, Number 128 (Wednesday, July 6, 2005)]
+[Notices]
+[Pages 38892-38893]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 05-13204]
+
+
+-----------------------------------------------------------------------
+
+DEPARTMENT OF DEFENSE
+
+Defense Information Systems Agency
+
+
+Privacy Act of 1974; System of Records
+
+AGENCY: Defense Information Systems Agency, DoD.
+
+ACTION: Notice to amend a system of records; K890.08 Recall Roster/
+Locator Records.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The Defense Information Systems Agency is amending a system of 
+records notice to its inventory of record systems subject to the 
+Privacy Act of 1974 (5 U.S.C. 552a), as amended.
+
+DATES: This proposed action will be effective without further notice on 
+August 5, 2005 unless comments are received which result in a contrary 
+determination.
+
+ADDRESSES: Send comments to the Defense Information Systems Agency, 
+ATTN: Records Manager (SPI21), P.O. Box 4520, Arlington, VA 22204-4502.
+
+FOR FURTHER INFORMATION CONTACT: Ms. Jeanette Jenkins at (703) 681-
+2103.
+
+SUPPLEMENTARY INFORMATION: The Defense Information Systems Agency 
+systems of records notices subject to the Privacy Act of 1974, (5 
+U.S.C. 552a), as amended, have been published in the Federal Register 
+and are available from the address above.
+    The specific changes to the record system being amended are set 
+forth below followed by the notice, as amended, published in its 
+entirety. The proposed amendments are not within the purview of 
+subsection (r) of the Privacy Act of 1974, (5 U.S.C. 552a), as amended, 
+which requires the submission of a new or altered system report.
+
+    Dated: June 29, 2005.
+Jeannette Owings-Ballard,
+OSD Federal Register Liaison Officer, Department of Defense.
+K890.08
+
+System name:
+    Recall Roster/Locator Records (May 23, 2005, 70 FR 29487).
+
+Changes:
+* * * * *
+
+Categories of individuals covered by the system:
+    Delete entry and replace with: `DISA Civilian employees, Military 
+personnel assigned or detailed to DISA, including DISA field 
+activities.'
+
+Categories of records in the system:
+    Delete entry and replace with: `Individual's name, duty title, 
+grade, social security number, home address, work/home/cellular 
+telephone numbers, work and home electronic mail addresses, facsimile 
+number, pager number (if applicable).'
+* * * * *
+K890.08
+
+System name:
+    Recall Roster/Locator Records.
+
+System location:
+    Defense Information Systems Agency (DISA), ATTN: SPI21, P.O. Box 
+4502, Arlington, VA 22204-4502 and DISA organizations elements.
+
+Categories of individuals covered by the system:
+    DISA Civilian employees, Military personnel assigned or detailed to 
+DISA, including DISA field activities.
+
+Categories of records in the system:
+    Individual's name, duty title, grade, social security number, home 
+address, work/home/cellular telephone numbers, work and home electronic 
+mail addresses, facsimile number, pager number (if applicable).
+
+Authority for maintenance of the system:
+    5 U.S.C. 301, Departmental Regulation; 10 U.S.C. chp 8; DoD 
+Directive 5105.19, Defense Information Systems Agency (DISA); E.O. 9397 
+(SSN).
+
+Purpose(s):
+    Information is collected and maintained to ensure that DISA has the 
+capability to recall personnel to their place of duty when required for 
+operational reasons. Sure emergency notification may be required when 
+necessary to perform relevant functions/requirements/actions consistent 
+with the DISA mission.
+
+Routine uses of records maintained in the system, including categories 
+of users and the purposes of such uses:
+    In addition to those disclosures generally permitted under 5 U.S.C. 
+552a(b) of the Privacy Act, these records or information contained 
+therein may specifically be disclosed outside the DoD as a routine use 
+pursuant to 5 U.S.C. 552a(b)(3) as follows:
+    The `Blanket Routine Uses' set forth at the beginning of the DISA's 
+compilation of systems of records notices apply to this system.
+
+Policies and practices for storing, retrieving, accessing, retaining, 
+and disposing of records in the system:
+Storage:
+    Paper records are maintained in file folders, index cards, Rolodex-
+type files, loose-leaf and bound notebooks. Computer files are 
+maintained on magnetic tape, diskette, or other machine-readable media.
+
+Retrievability:
+    Records are retrieved by Social Security Number and/or name of 
+individual.
+
+Safeguards:
+    Buildings are secured by guards during non-duty hours. Access to 
+records is controlled by management personnel, who are responsible for 
+maintaining the confidentiality of the records and using the 
+information contained therein only for official purposes related to 
+emergency notification. Access to computerized data is restricted by 
+passwords.
+
+Retention and disposal:
+    Records are continuously updated. Records that are no longer 
+current are destroyed by tearing into pieces, shredding, pulping, or 
+burning. Obsolete computer records are erased or overwritten.
+
+[[Page 38893]]
+
+System manager(s) and address:
+    Records Manager, SPI21, Defense Information Systems Agency, P.O. 
+Box 4520, Arlington, VA 22204-4502.
+
+Notification procedure:
+    Individuals seeking to determine whether information about 
+themselves is contained in this system should address written inquiries 
+to Records Manager, SPI21, Defense Information Systems Agency, P.O. Box 
+4520, Arlington, VA 22204-4502.
+    The individual should make reference to the office where he/she is/
+was assigned or affiliated and include address and telephone number 
+applicable to the period during which the record was maintained. Social 
+Security Number should be included in the inquiry for positive 
+identification.
+
+Record access procedures:
+    Individuals seeking access to information about themselves 
+contained in this system should address written inquiries to Records 
+Manager, SPI21, Defense Information Systems Agency, P.O. Box 4520, 
+Arlington, VA 22204-4502.
+    The individual should make reference to the office where he/she is/
+was assigned or affiliated and include address and telephone number 
+applicable to the period during which the record was maintained. Social 
+Security Number should be included in the inquiry for positive 
+identification.
+
+Contesting record procedures:
+    DISA's rules for accessing records, for contesting contents and 
+appealing initial agency determinations are published in DISA 
+Instruction 210-225-2 at 32 CFR part 316 or may be obtained from the 
+system manager.
+
+Record source categories:
+    Individuals.
+
+Exemptions claimed for the system:
+    None.
+
+[FR Doc. 05-13204 Filed 7-5-05; 8:45 am]
+BILLING CODE 5001-06-P
+
+
+</pre></body>
+</html>

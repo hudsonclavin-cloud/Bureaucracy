@@ -1,0 +1,446 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 154 (Wednesday, August 12, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 154 (Wednesday, August 12, 2026)]
+[Rules and Regulations]
+[Pages 51999-52002]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-16425]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+DEPARTMENT OF ENERGY
+
+10 CFR Part 861
+
+[DOE-HQ-2026-0529]
+RIN 1992-AA65
+
+
+Rescission of DOE's Procedures for Traffic Control on the Nevada 
+Test Site
+
+AGENCY: Office of Environment, Health, Safety, and Security, Department 
+of Energy (DOE).
+
+ACTION: Interim final rule; request for comments.
+
+-----------------------------------------------------------------------
+
+SUMMARY: This interim final rule rescinds DOE's regulations outlining 
+the establishment of traffic control regulations on the Nevada National 
+Security Site (NNSS), formerly known as the Nevada Test Site. This 
+action is being taken to remove regulations that are obsolete because 
+the NNSS uses Nevada traffic enforcement statutes. The effect of this 
+action will be the removal of obsolete regulations.
+
+DATES: The interim final rule is effective on August 12, 2026. Comments 
+must be filed electronically no later than September 11, 2026. The 
+Department will not necessarily consider any comments received after 
+the above date in making our decision.
+
+ADDRESSES: Interested persons are encouraged to submit comments using 
+the Federal eRulemaking Portal at <a href="http://www.regulations.gov">www.regulations.gov</a> under docket 
+number DOE-HQ-2026-0529. Follow the instructions for submitting 
+comments. Docket: The docket for this interim final rule, which 
+includes Federal Register notices, comments, and other supporting 
+documents and materials, is available for review at 
+<a href="http://www.regulations.gov">www.regulations.gov</a>. All documents in the docket are listed in the 
+<a href="http://www.regulations.gov">www.regulations.gov</a> index. However, not all documents listed in the 
+index may be publicly available, such as information that is exempt 
+from public disclosure. The docket web page can be found at <a href="https://www.regulations.gov/docket/DOE-HQ-2026-0529">https://www.regulations.gov/docket/DOE-HQ-2026-0529</a>. The docket web page 
+contains instructions on how to access all documents, including public 
+comments, in the docket, as well as a summary of the interim final 
+rule.
+    In accordance with 5 U.S.C. 553(b)(4), a summary of this rule may 
+be found at <a href="http://www.regulations.gov">www.regulations.gov</a>, under the docket number.
+
+FOR FURTHER INFORMATION CONTACT: Mr. Mark Hojnacke, U.S. Department of 
+Energy, Office of Security and Threat Management, EH-40, 1000 
+Independence Avenue SW, Washington, DC 20585. Telephone: (301) 903-
+3311, email: <a href="/cdn-cgi/l/email-protection#2c414d5e4702444346424d4f47496c445d02484349024b435a"><span class="__cf_email__" data-cfemail="c6aba7b4ade8aea9aca8a7a5ada386aeb7e8a2a9a3e8a1a9b0">[email&#160;protected]</span></a>.
+
+SUPPLEMENTARY INFORMATION:
+
+Table of Contents
+
+I. Background/Authority
+II. Basis for the Rule
+III. Basis for Issuing an Interim Final Rule
+IV. Procedural Issues and Regulatory Review
+    A. Review Under Executive Orders 12866
+    B. Review Under the Regulatory Flexibility Act
+    C. Review Under the Paperwork Reduction Act
+    D. Review Under the National Environmental Policy Act of 1969
+    E. Review Under Executive Order 13132
+    F. Review Under Executive Order 12988
+    G. Review Under the Unfunded Mandates Reform Act
+    H. Review Under the Treasury and General Government 
+Appropriations Act, 1999
+
+[[Page 52000]]
+
+    I. Review Under Executive Order 12630
+    J. Review Under the Treasury and General Government 
+Appropriations Act, 2001
+    K. Review Under Executive Order 13211
+    L. Review Under Additional Executive Orders and Presidential 
+Memoranda
+    M. Congressional Notification
+V. Approval by the Office of the Secretary of Energy
+
+I. Background/Authority
+
+    The Atomic Energy Act of 1954, Public Law 83-703 (August 30, 1954), 
+later codified at 42 U.S.C. 2011 et seq., delegated many aspects of the 
+development and regulation of nuclear materials and facilities to the 
+Department of Energy. Specifically, 42 U.S.C. 2282c(a)(1), directs the 
+Department of Energy (DOE or the Department) to promulgate regulations 
+for industrial and construction health and safety at DOE nuclear 
+facilities. In response, DOE promulgated 10 CFR part 861 (part 861) 
+that was originally published on December 30, 1976, (41 FR 56788) to 
+facilitate the control of traffic on the Nevada Test Site, now known as 
+the Nevada National Security Site (NNSS). Part 861 outlines various 
+aspects of traffic control, including speed limits, traffic signs and 
+signals, stopping and yielding, and parking restrictions that are to be 
+addressed in the ``Nevada Test Site Traffic Regulations'' which are to 
+be promulgated by the Manager of the Nevada Site Office and posted at 
+NNSS. The rule states that, ``once posted, these regulations shall have 
+the same force and effect as if made a part hereof.'' 10 CFR 861.4(b). 
+The rule also outlines penalties for violations and procedures for 
+posting and distributing the regulations.
+
+II. Basis for the Rule
+
+    Through this interim final rule, DOE is rescinding 10 CFR part 861, 
+including all sections, because the rule has not been utilized in 
+practice for many years to govern traffic flow at NNSS. Rather, NNSS 
+site traffic has been governed by State of Nevada traffic laws with 
+enforcement carried out by the Nye County Sheriff's Office through 
+contractual arrangement since at least 1987. (NNSS is located wholly 
+within the boundaries of Nye County, Nevada.) For these reasons, the 
+rule is obsolete and should be rescinded. This interim final rule is 
+based on the statutory authority delegated to the DOE to promulgate 
+regulations for health and safety at DOE nuclear facilities pursuant to 
+the Atomic Energy Act of 1954. Furthermore, 42 U.S.C. 2282c(a)(3), 
+grants the Secretary ``flexibility'' in tailoring said regulations for 
+efficiency. DOE deems the rescission of this provision and reliance on 
+State of Nevada traffic laws to be both efficient and appropriate. 
+Additionally, DOE rescinds obsolete part 861 to further Executive Order 
+(E.O.) 14192, ``Unleashing Prosperity through Deregulation'' and E.O. 
+14219 ``Ensuring Lawful Governance and Implementing the President's 
+``Department of Governmental Efficiency'' Deregulatory Initiative.
+    The effect of rescinding 10 CFR part 861 will be that an obsolete 
+regulation is eliminated resulting in the reduction of the overall 
+regulatory burden including unnecessary Federal enforcement 
+responsibilities.
+
+III. Basis for Issuing an Interim Final Rule
+
+    The Department issues this interim final rule without prior public 
+notice and comment pursuant to the Administrative Procedure Act's 
+exception for rules ``relating to agency management or personnel or to 
+public property, loans, grants, benefits, or contracts.'' 5 U.S.C. 
+553(a)(2). This interim final rule falls into that exception for the 
+reasons described in this section.
+
+A. Rule Relates to Agency Management of Public Property
+
+    The purpose of 10 CFR part 861 is to set standards for the 
+management of traffic control and enforcement at NNSS, a wholly owned 
+and managed DOE site. DOE promulgated part 861 pursuant to the 
+authority granted to the Department in the Atomic Energy Act of 1954, 
+Public Law 83-703 (later codified at 42 U.S.C. 2211 et seq.), which 
+granted DOE broad discretion to set standards for industrial and 
+construction health and safety at DOE nuclear facilities. See 42 U.S.C. 
+2282c(a)(3). Since part 861 was promulgated in 1976, DOE has determined 
+that contracting with local law enforcement to enforce Nevada traffic 
+law at NNSS is a prudent alternative to enforcing separate site-
+specific traffic regulations. Therefore, this interim final rule 
+relates to a matter of agency organization, procedure, or practice. See 
+5 U.S.C. 553(a)(2), (b)(A).
+    Furthermore, this interim final rule rescinds an obsolete 1976 
+regulation to align with current and historical practice related to 
+traffic control at the NNSS. Removing this obsolete regulation 
+addressing traffic control at a DOE site does not adversely affect 
+members of the public and involves an agency management decision that 
+is exempt from the notice-and-comment rulemaking procedures of the 
+Administrative Procedure Act.
+
+B. DOE Solicits Comment
+
+    Although DOE has determined that a notice of proposed rulemaking 
+(and comment thereon) is not required for this interim final rule's 
+rescission of part 861, DOE nevertheless voluntarily elected to solicit 
+comment. DOE considers public participation to be a very important part 
+of its process for considering rulemaking petitions. DOE actively 
+encourages the participation and interaction of the public during the 
+comment period. DOE will accept comments regarding this interim final 
+rule on or before the date provided in the DATES section at the 
+beginning of this document. Interested parties may submit comments as 
+outlined in the ADDRESSES section at the beginning of this document. 
+Comments submitted during this period will be reviewed and considered. 
+A final rule, or additional notice, may be issued at a later date, with 
+a response to comments, reflecting any experience DOE may gain in 
+implementing this interim final rule. All comments received will be 
+posted without change to <a href="http://www.regulations.gov">www.regulations.gov</a>, including any personal 
+information provided. Do not include personal information you would not 
+want publicly shared, including social security information, home 
+addresses, or any other personal identifying information. DOE will not 
+take responsibility for sharing information provided by you.
+
+IV. Procedural Issues and Regulatory Review
+
+A. Review Under Executive Orders 12866
+
+    Section 6(a) of E.O. 12866 also requires agencies to submit 
+``significant regulatory actions'' to the Office of Information and 
+Regulatory Affairs (OIRA) for review. OIRA has determined that this 
+interim final rule does not constitute a ``significant regulatory 
+action'' under section 3(f) of E.O. 12866. Accordingly, this interim 
+final rule was not submitted to OIRA for review under E.O. 12866.
+
+B. Review Under the Regulatory Flexibility Act
+
+    The Regulatory Flexibility Act (5 U.S.C. 601 et seq.) requires 
+preparation of an initial regulatory flexibility analysis (IRFA) and a 
+final regulatory flexibility analysis (FRFA) for any rule that by law 
+must be proposed for public comment, unless the agency certifies that 
+the rule, if promulgated, will not have a significant economic impact 
+on a substantial number of small entities. As required by E.O. 13272, 
+``Proper Consideration of Small Entities in
+
+[[Page 52001]]
+
+Agency Rulemaking,'' 67 FR 53461 (Aug. 16, 2002), DOE published 
+procedures and policies on February 19, 2003, to ensure that the 
+potential impacts of its rules on small entities are properly 
+considered during the rulemaking process. 68 FR 7990. DOE has made its 
+procedures and policies available on the Office of the General 
+Counsel's website (<a href="http://www.energy.gov/gc/office-general-counsel">www.energy.gov/gc/office-general-counsel</a>).
+    DOE reviewed this interim final rule under the provisions of the 
+Regulatory Flexibility Act and the policies and procedures published on 
+February 19, 2003. This rule eliminates obsolete regulations as 
+discussed previously. Therefore, DOE initially concludes that the 
+impacts of the interim final rule would not have a ``significant 
+economic impact on a substantial number of small entities,'' and that 
+the preparation of an IRFA is not warranted. DOE will transmit this 
+certification and supporting statement of factual basis to the Chief 
+Counsel for Advocacy of the Small Business Administration for review 
+under 5. U.S.C. 605(b).
+
+C. Review Under the Paperwork Reduction Act
+
+    This interim final rule imposes no new information or record-
+keeping requirements. Accordingly, Office of Management and Budget 
+(OMB) clearance is not required under the Paperwork Reduction Act. (44 
+U.S.C. 3501 et seq.)
+
+D. Review Under the National Environmental Policy Act of 1969
+
+    DOE has analyzed this action in accordance with the National 
+Environmental Policy Act of 1969, as amended (NEPA), DOE's NEPA 
+regulations (10 CFR part 1021), and DOE's NEPA Implementing procedures 
+at <a href="https://www.energy.gov/nepa/doe-nepa-implementing-procedures">https://www.energy.gov/nepa/doe-nepa-implementing-procedures</a>. 
+Accordingly, DOE has determined that NEPA does not apply to the action 
+in this interim final rule as this rulemaking is solely an 
+administrative and routine action excepted from NEPA review. (See 
+section 2.1(c)(5) of DOE's NEPA implementing procedures.).
+
+E. Review Under Executive Order 13132
+
+    E.O. 13132, ``Federalism,'' 64 FR 43255 (Aug. 10, 1999), imposes 
+certain requirements on Federal agencies formulating and implementing 
+policies or regulations that preempt State law or that have federalism 
+implications. The Executive order requires agencies to examine the 
+constitutional and statutory authority supporting any action that would 
+limit the policymaking discretion of the States and to carefully assess 
+the necessity for such actions. The Executive order also requires 
+agencies to have an accountable process to ensure meaningful and timely 
+input by State and local officials in the development of regulatory 
+policies that have federalism implications. On March 14, 2000, DOE 
+published a statement of policy describing the intergovernmental 
+consultation process it will follow in the development of such 
+regulations. 65 FR 13735.
+    DOE has examined this interim final rule and determined that it 
+would not have a substantial direct effect on the States, on the 
+relationship between the National Government and the States, or on the 
+distribution of power and responsibilities among the various levels of 
+government. Therefore, no further action is required by E.O. 13132.
+
+F. Review Under Executive Order 12988
+
+    With respect to the review of existing regulations and the 
+promulgation of new regulations, section 3(a) of E.O. 12988, ``Civil 
+Justice Reform,'' imposes on Federal agencies the general duty to 
+adhere to the following requirements: (1) eliminate drafting errors and 
+ambiguity, (2) write regulations to minimize litigation, and (3) 
+provide a clear legal standard for affected conduct rather than a 
+general standard, and promote simplification and burden reduction. 61 
+FR 4729 (Feb. 7, 1996). Regarding the review required by section 3(a), 
+section 3(b) of E.O. 12988 specifically requires that Executive 
+agencies make every reasonable effort to ensure that the regulation (1) 
+clearly specifies the preemptive effect, if any, (2) clearly specifies 
+any effect on existing Federal law or regulation, (3) provides a clear 
+legal standard for affected conduct while promoting simplification and 
+burden reduction, (4) specifies the retroactive effect, if any, (5) 
+adequately defines key terms, and (6) addresses other important issues 
+affecting clarity and general draftsmanship under any guidelines issued 
+by the Attorney General. Section 3(c) of E.O. 12988 requires Executive 
+agencies to review regulations in light of applicable standards in 
+section 3(a) and section 3(b) to determine whether they are met or it 
+is unreasonable to meet one or more of them. DOE has completed the 
+required review and determined that, to the extent permitted by law, 
+this interim final rule meets the relevant standards of E.O. 12988.
+
+G. Review Under the Unfunded Mandates Reform Act
+
+    Title II of the Unfunded Mandates Reform Act of 1995 (UMRA) 
+requires each Federal agency to assess the effects of Federal 
+regulatory actions on State, local, and Tribal governments and the 
+private sector. Public Law 104-4, sec. 201 (codified at 2 U.S.C. 1531). 
+For a regulatory action likely to result in a rule that may cause the 
+expenditure by State, local, and Tribal governments, in the aggregate, 
+or by the private sector of $100 million or more in any one year 
+(adjusted annually for inflation), section 202 of UMRA requires a 
+Federal agency to publish a written statement that estimates the 
+resulting costs, benefits, and other effects on the national economy. 
+(2 U.S.C. 1532(a), (b)) The UMRA also requires a Federal agency to 
+develop an effective process to permit timely input by elected officers 
+of State, local, and Tribal governments on a ``significant 
+intergovernmental mandate,'' and requires an agency plan for giving 
+notice and opportunity for timely input to potentially affected small 
+governments before establishing any requirements that might 
+significantly or uniquely affect them. On March 18, 1997, DOE published 
+a statement of policy on its process for intergovernmental consultation 
+under UMRA. 62 FR 12820. DOE's policy statement is also available at 
+<a href="http://www.energy.gov/sites/prod/files/gcprod/documents/umra_97.pdf">www.energy.gov/sites/prod/files/gcprod/documents/umra_97.pdf</a>.
+    DOE examined this interim final rule according to UMRA and its 
+statement of policy and determined that the interim final rule does not 
+contain a Federal intergovernmental mandate, nor is it expected to 
+require expenditures of $100 million or more in any one year by State, 
+local, and Tribal governments, in the aggregate, or by the private 
+sector. As a result, the analytical requirements of UMRA do not apply.
+
+H. Review Under the Treasury and General Government Appropriations Act, 
+1999
+
+    Section 654 of the Treasury and General Government Appropriations 
+Act, 1999 (Pub. L. 105-277) requires Federal agencies to issue a Family 
+Policymaking Assessment for any rule that may affect family well-being. 
+This interim final rule would not have any financial impact on families 
+nor any impact on the autonomy or integrity of the family as an 
+institution. Accordingly, DOE has concluded that it is not necessary to 
+prepare a Family Policymaking Assessment.
+
+I. Review Under Executive Order 12630
+
+    Pursuant to E.O. 12630, ``Governmental Actions and Interference 
+with Constitutionally Protected Property Rights,'' 53 FR 8859 (March 
+18, 1988), DOE has determined that this interim final rule would not 
+result in any
+
+[[Page 52002]]
+
+takings that might require compensation under the Fifth Amendment to 
+the U.S. Constitution.
+
+J. Review Under the Treasury and General Government Appropriations Act, 
+2001
+
+    Section 515 of the Treasury and General Government Appropriations 
+Act, 2001 (44 U.S.C. 3516, note) provides for Federal agencies to 
+review most disseminations of information to the public under 
+information quality guidelines established by each agency pursuant to 
+general guidelines issued by OMB. OMB's guidelines were published at 67 
+FR 8452 (Feb. 22, 2002), and DOE's guidelines were published at 67 FR 
+62446 (Oct. 7, 2002). Pursuant to OMB Memorandum M-19-15, Improving 
+Implementation of the Information Quality Act (April 24, 2019), DOE 
+published updated guidelines which are available at: <a href="http://www.energy.gov/cio/department-energy-information-quality-guidelines">www.energy.gov/cio/department-energy-information-quality-guidelines</a>. DOE has reviewed 
+this interim final rule under the OMB and DOE guidelines and has 
+concluded that it is consistent with applicable policies in those 
+guidelines.
+
+K. Review Under Executive Order 13211
+
+    E.O. 13211, ``Actions Concerning Regulations That Significantly 
+Affect Energy Supply, Distribution, or Use,'' 66 FR 28355 (May 22, 
+2001), requires Federal agencies to prepare and submit to OIRA at OMB, 
+a Statement of Energy Effects for any significant energy action. A 
+``significant energy action'' is defined as any action by an agency 
+that promulgates or is expected to lead to promulgation of a final 
+rule, and that: (1) is a significant regulatory action under E.O. 
+12866, or any successor order and is likely to have a significant 
+adverse effect on the supply, distribution, or use of energy; or (2) is 
+designated by the Administrator of OIRA as a significant energy action. 
+For any significant energy action, the agency must give a detailed 
+statement of any adverse effects on energy supply, distribution, or use 
+should the rule be implemented, and of reasonable alternatives to the 
+action and their expected benefits on energy supply, distribution, and 
+use.
+    This interim final rule of obsolete traffic control regulations is 
+not a significant regulatory action under E.O. 12866. Moreover, it 
+would not have a significant adverse effect on the supply, 
+distribution, or use of energy, nor has it been designated as such by 
+the Administrator at OIRA. Accordingly, DOE has not prepared a 
+Statement of Energy Effects.
+
+L. Review Under Additional Executive Orders and Presidential Memoranda
+
+    DOE has examined this interim final rule and determined that it is 
+consistent with the policies and directives outlined in E.O. 14192, 
+``Unleashing Prosperity Through Deregulation'' and E.O. 14219, 
+``Ensuring Lawful Governance and Implementing the President's 
+``Department of Governmental Efficiency'' Deregulatory Initiative. This 
+interim final rule is expected to be an Executive Order 14192 
+deregulatory action.
+
+M. Congressional Notification
+
+    As required by 5 U.S.C. 801, DOE will report to Congress on the 
+promulgation of this interim final rule before its effective date. The 
+report will state that it has been determined that the rule is not a 
+``major rule'' as defined by 5 U.S.C. 804(2).
+
+V. Approval of the Office of the Secretary
+
+    The Secretary of Energy has approved the publication of the interim 
+final rule; request for comment.
+
+List of Subjects in 10 CFR Part 861
+
+    Federal buildings and facilities, Penalties, Traffic regulations.
+
+Signing Authority
+
+    This document of the Department of Energy was signed on July 28, 
+2026, by James Danly, Deputy Secretary of Energy. That document with 
+the original signature and date is maintained by DOE. For 
+administrative purposes only, and in compliance with requirements of 
+the Office of the Federal Register, the undersigned DOE Federal 
+Register Liaison Officer has been authorized to sign and submit the 
+document in electronic format for publication, as an official document 
+of the Department of Energy. This administrative process in no way 
+alters the legal effect of this document upon publication in the 
+Federal Register.
+
+    Signed in Washington, DC, on August 10, 2026.
+Treena V. Garrett,
+Federal Register Liaison Officer, U.S. Department of Energy.
+
+PART 861--[REMOVED AND RESERVED]
+
+0
+For the reasons set forth in the preamble, under the authority of 42 
+U.S.C. 2201, DOE is removing and reserving 10 CFR Part 861.
+
+[FR Doc. 2026-16425 Filed 8-11-26; 8:45 am]
+BILLING CODE 6450-01-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

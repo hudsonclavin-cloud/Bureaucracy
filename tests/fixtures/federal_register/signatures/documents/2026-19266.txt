@@ -1,0 +1,390 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 181 (Monday, September 21, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 181 (Monday, September 21, 2026)]
+[Notices]
+[Pages 59801-59804]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-19266]
+
+
+-----------------------------------------------------------------------
+
+DEPARTMENT OF LABOR
+
+Mine Safety and Health Administration
+
+[OMB Control No. 1219-0015]
+
+
+Proposed Extension of Information Collection: Refuse Piles and 
+Impoundment Structures
+
+AGENCY: Mine Safety and Health Administration, Labor.
+
+ACTION: Request for public comments.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The Department of Labor (DOL), as part of its continuing 
+effort to reduce paperwork and respondent burden, conducts a pre-
+clearance consultation program for all information collections, to 
+provide the public and Federal agencies with an opportunity to comment 
+on proposed collections of information, in accordance with the 
+Paperwork Reduction Act of 1995. This program helps to ensure that 
+requested data can be provided in the desired format, reporting burden 
+(time and financial resources) is minimized, collection instruments are 
+clearly understood, and the impact of collection requirements on 
+respondents can be properly assessed. The Mine Safety and Health 
+Administration (MSHA) is soliciting comments on the information 
+collection titled ``Refuse Piles and Impoundment Structures.''
+
+DATES: All comments must be received on or before November 20, 2026.
+
+ADDRESSES: Comments concerning the information collection requirements 
+of this notice may be sent by any of the methods listed below. Please 
+note that comments received after the deadline will not be considered.
+    <bullet> Federal E-Rulemaking Portal: <a href="https://www.regulations.gov">https://www.regulations.gov</a>. 
+Follow the instructions for submitting comments for docket number MSHA-
+2026-0563.
+    <bullet> Mail/Hand Delivery: DOL-MSHA, Office of Standards, 
+Regulations, and Variances, 200 Constitution Avenue NW, Washington, DC 
+20210. Before visiting MSHA in person, call 202-693-9440 to make an 
+appointment.
+    <bullet> MSHA will post all comments as well as any attachments, 
+except for information submitted and marked as confidential, in the 
+docket at <a href="https://www.regulations.gov">https://www.regulations.gov</a>.
+
+FOR FURTHER INFORMATION CONTACT: Corliss A. Josephs-Conway, Acting 
+Director, Office of Standards, Regulations, and Variances, MSHA, at 
+<a href="/cdn-cgi/l/email-protection#2469776c650a4d4a424b564945504d4b4a0a474b48484147504d4b4a5764404b480a434b52"><span class="__cf_email__" data-cfemail="8ec3ddc6cfa0e7e0e8e1fce3effae7e1e0a0ede1e2e2ebedfae7e1e0fdceeae1e2a0e9e1f8">[email&#160;protected]</span></a> (email); (202) 693-9440 (voice); 
+or (202) 693-9441 (facsimile). These are not toll-free numbers.
+
+SUPPLEMENTARY INFORMATION:
+
+I. Background
+
+A. Legal Authority
+
+    Section 103(h) of the Federal Mine Safety and Health Act of 1977 
+(Mine Act), as amended, 30 U.S.C. 813(h), authorizes MSHA to collect 
+information necessary to carry out its duty in protecting the safety 
+and health of miners. Further, section 101(a) of the Mine Act, 30 
+U.S.C. 811(a), authorizes the Secretary of Labor to develop, 
+promulgate, and revise as may be appropriate, improved mandatory health 
+or safety standards for the protection of life and prevention of 
+injuries in coal and metal and nonmetal mines.
+    The Paperwork Reduction Act of 1995 (PRA, 44 U.S.C. 3501 et seq.) 
+governs paperwork burdens imposed on the public by Federal agencies 
+when using identical questions to collect information from 10 or more 
+persons. The PRA defines paperwork burden in 44 U.S.C. 3502(2) as the 
+time, effort, or financial resources expended to generate, maintain, or 
+provide information to or for a Federal agency. Under 44 U.S.C. 3507, 
+the PRA also establishes policies and procedures for information 
+collection to control paperwork burdens imposed by Federal agencies on 
+the public, including evaluating public comments.
+    To fulfill its statutory mandate to promote miners' health and 
+safety, MSHA requires information collected under the OMB request 
+titled ``Refuse Piles and Impoundment Structures.'' This information 
+collection is intended to ensure that refuse piles and impoundments 
+provide adequate safety protection by preventing or eliminating 
+hazardous conditions for coal miners.
+
+B. Information Collection
+
+    To fulfill its statutory mandate to promote miners' health and 
+safety, MSHA requires information under the information collection 
+request (ICR) titled ``Refuse Piles and Impoundment Structures.'' This 
+information collection is intended to ensure that refuse piles and 
+impoundments provide adequate safety protection by preventing or 
+eliminating hazardous conditions to coal miners.
+    Burden costs associated with the ICR include:
+
+1. Developing Fire Extinguishing Plans for Refuse Piles and 
+Impoundments
+2. Posting Permanent Identification Markers for Refuse Piles and 
+Impoundments
+3. Developing New Plans for Refuse Piles and New and Modified Plans for 
+Impoundments
+
+[[Page 59802]]
+
+4. Developing Annual Status Reports and Certifications for Refuse Piles 
+and Impoundments
+5. Developing Abandonment Plans for Refuse Piles and Impoundments
+6. Recording Weekly Inspections and Instrumentation Monitoring of 
+Impoundments
+
+    The associated standards that authorize the collection of 
+information are described below.
+    Under 30 CFR 77.217(c), impoundments are defined as structures that 
+can impound water, sediment, or slurry or any combination of materials. 
+Under 30 CFR 77.217(e), refuse piles are defined as deposits of coal 
+mine which may contain a mixture of coal, shale, claystone, siltstone, 
+sandstone, limestone, and related materials that are excavated during 
+mining operations or separated from mined coal and deposited on the 
+surface as waste byproducts of either coal mining or preparation 
+operations. Refuse pile does not mean temporary spoil piles of removed 
+overburden material associated with surface mining operations. Under 30 
+CFR 77.217(a), ``abandoned'' as applied to any refuse pile or 
+impoundment and impounding structure means that work on refuse pile or 
+impounding structure having been completed in accordance with a plan 
+for abandonment as approved by the District Manager.
+1. Developing Fire Extinguishing Plans for Refuse Piles and 
+Impoundments (30 CFR 77.215(j) and 77.216(e))
+Refuse Piles
+    Under 30 CFR 77.215(j), all fires in refuse piles shall be 
+extinguished, and the method used shall be in accordance with a plan 
+approved by the District Manager. The plan shall contain as a minimum, 
+provisions to ensure that only those persons authorized by the 
+operator, and who have an understanding of the procedure to be used, 
+shall be involved in the extinguishing operation.
+Impoundments
+    Under 30 CFR 77.216(e), all fires in impounding structures shall be 
+extinguished, and the method used shall be in accordance with a plan 
+approved by the District Manager. The plan shall contain as a minimum, 
+provisions to ensure that only those persons authorized by the 
+operator, and who have an understanding of the procedures to be used, 
+shall be involved in the extinguishing operation.
+2. Posting Permanent Identification Markers for Refuse Piles and 
+Impoundments (30 CFR 77.215-1 and 77.216-1)
+Refuse Piles
+    Under 30 CFR 77.215-1, a permanent identification marker, at least 
+six feet high and showing the refuse pile identification number as 
+assigned by the District Manager, the name associated with the refuse 
+pile and the name of the person owning, operating or controlling the 
+refuse pile, shall be located on or immediately adjacent to each refuse 
+pile within 30 days from acknowledgment of the proposed location of a 
+new refuse pile.
+Impoundments
+    Under 30 CFR 77.216-1, a permanent identification marker, at least 
+six feet high and showing the identification number of the impounding 
+structure as assigned by the District Manager, the name associated with 
+the impounding structure and name of the person owning, operating, or 
+controlling the structure, shall be located on or immediately adjacent 
+to each water, sediment or slurry impounding structure within 30 days 
+from the start of construction.
+3. Developing New Plans for Refuse Piles and New and Modified Plans for 
+Impoundments (30 CFR 77.215-2, 77.216, and 77.216-2)
+Refuse Piles
+    Under 30 CFR 77.215-2(a) the proposed location of a new refuse pile 
+shall be reported to and acknowledged in writing by the District 
+Manager prior to the beginning of any work associated with the 
+construction of the refuse pile.
+    Under 30 CFR 77.215-2(b), within 180 days from the date of 
+acknowledgment of the proposed location of a new refuse pile, the 
+person owning, operating or controlling a refuse pile shall submit to 
+the District Manager a report in triplicate which contains the 
+information listed in paragraphs 77.215-2(b)(1) through (b)(8).
+Impoundments
+    Under 30 CFR 77.216(a) plans for the design, construction, and 
+maintenance of structures which impound water, sediment, or slurry 
+shall be required if such an existing or proposed impounding structure 
+can:
+    (1) Impound water, sediment, or slurry to an elevation of five feet 
+or more above the upstream toe of the structure and can have a storage 
+volume of 20 acre-feet or more; or
+    (2) Impound water, sediment, or slurry to an elevation of 20 feet 
+or more above the upstream toe of the structure; or
+    (3) As determined by the District Manager, present a hazard to coal 
+miners.
+    Under 30 CFR 77.216(b) plans for the design and construction of all 
+new water, sediment, or slurry impoundments and impounding structures 
+which meet the requirements of paragraph (a) of this section shall be 
+submitted in triplicate to and be approved by the District Manager 
+prior to the beginning of any work associated with construction of the 
+impounding structure.
+    Under 30 CFR 77.216-2 the plans required under 77.216 shall contain 
+as a minimum the information listed in paragraphs 77.216-2(a)(1) 
+through (a)(18).
+    Under 30 CFR 77.216-2(b) any changes or modifications to plans for 
+water, sediment, or slurry impoundments or impounding structures shall 
+be approved by the District Manager prior to the initiation of such 
+changes or modifications.
+4. Developing Annual Status Reports and Certifications for Refuse Piles 
+and Impoundments (30 CFR 77.215-2, 75.215-3, and 77.216-4)
+Refuse Piles
+    Under 30 CFR 77.215-2(c), the information required by paragraphs 
+77.215-2(b)(4) through (b)(8) shall be reported every twelfth month 
+from the date of original submission for those refuse piles which the 
+District Manager has determined can present a hazard until the District 
+Manager notifies the operator that the hazard has been eliminated.
+    Under 30 CFR 77.215-3(a), within 180 days following written 
+notification by the District Manager that a refuse pile can present a 
+hazard, the person owning, operating, or controlling the refuse pile 
+shall submit to the District Manager a certification by a registered 
+engineer that the refuse pile is being constructed or has been modified 
+in accordance with current, prudent engineering practices to minimize 
+the probability of impounding water and failure of such magnitude as to 
+endanger the lives of miners.
+    Under 30 CFR 77.215-3(b), after the initial certification required 
+by this section and until the District Manager notifies the operator 
+that the hazard has been eliminated, certification shall be submitted 
+every twelfth month from the date of the initial certification.
+
+[[Page 59803]]
+
+Impoundments
+    Under 30 CFR 77.216-4(a), every twelfth month following the date of 
+the initial plan approval, the person owning, operating, or controlling 
+a water, sediment, or slurry impoundment and impounding structure that 
+has not been abandoned in accordance with an approved plan shall submit 
+to the District Manager a report containing information listed in 
+paragraphs 77.216-4(a)(1) through (a)(7).
+    Under 30 CFR 77.216-4(b), a report is not required when the 
+operator provides the District Manager with a certification by a 
+registered professional engineer that there have been no changes under 
+paragraphs 77.216-4(a)(1) through (a)(6) to the impoundment or 
+impounding structure. However, a report containing the information set 
+out in paragraph 77.216-4(a) shall be submitted to the District Manager 
+at least every 5 years.
+5. Developing Abandonment Plans for Refuse Piles and Impoundments (30 
+CFR 77.215-4 and 77.216-5)
+Refuse Piles
+    Under 30 CFR 77.215-4, when a refuse pile is to be abandoned, the 
+District Manager shall be notified in writing, and if he determines it 
+can present a hazard, the refuse pile shall be abandoned in accordance 
+with a plan submitted by the operator and approved by the District 
+Manager. The plan shall include a schedule for its implementation and 
+describe provisions to prevent burning and future impoundment of water, 
+and provide for major slope stability.
+Impoundments
+    Under 30 CFR 77.216-5(a), prior to abandonment of any water, 
+sediment, or slurry impoundment and impounding structure which meets 
+the requirements of paragraph 77.216(a), the person owning, operating, 
+or controlling such an impoundment and impounding structure shall 
+submit to and obtain approval from the District Manager, a plan for 
+abandonment based on current, prudent engineering practices. This plan 
+shall provide for major slope stability, include a schedule for the 
+plan's implementation and, except as provided in paragraph (b) of this 
+section, contain provisions to preclude the probability of future 
+impoundment of water, sediment, or slurry.
+    Under 30 CFR 77.216-5(b), an abandonment plan does not have to 
+contain a provision to preclude the future impoundment of water if the 
+plan is approved by the District Manager and documentation is included 
+in the abandonment plan to ensure that the following requirements are 
+met:
+    (1) A registered professional engineer, knowledgeable in the 
+principles of dam design and in the design and construction of the 
+structure, shall certify that it substantially conforms to the approved 
+design plan and specifications and that there are no apparent defects.
+    (2) The current owner or prospective owner shall certify a 
+willingness and ability to assume responsibility for operation and 
+maintenance of the structure.
+    (3) A permit or approval for the continued existence of the 
+impoundment or impounding structure shall be obtained from the Federal 
+or State agency responsible for dam safety.
+6. Recording Weekly Inspections and Instrumentation Monitoring of 
+Impoundments (30 CFR 77.216-3)
+    Under 30 CFR 77.216-3(a), all water, sediment, or slurry 
+impoundments that meet the requirements of 77.216(a) shall be examined 
+as follows:
+    (1) At intervals not exceeding 7 days, or as otherwise approved by 
+the District Manager, for appearances of structural weakness and other 
+hazardous conditions.
+    (2) All instruments shall be monitored at intervals not exceeding 7 
+days, or as otherwise approved by the District Manager.
+    (3) Longer inspection or monitoring intervals approved under this 
+paragraph shall be justified by the operator based on the hazard 
+potential and performance of the impounding structure, and shall 
+include a requirement for inspection immediately after a specified rain 
+event approved by the District Manager.
+    (4) All inspections required by this paragraph shall be performed 
+by a qualified person designated by the person owning, operating, or 
+controlling the impounding structure.
+    Under 30 CFR 77.216-3(b), when a potentially hazardous condition 
+develops, the person owning, operating or controlling the impounding 
+structure shall immediately:
+    (1) Take action to eliminate the potentially hazardous condition;
+    (2) Notify the District Manager;
+    (3) Notify and prepare to evacuate, if necessary, all coal miners 
+from coal mine property which may be affected by the potentially 
+hazardous conditions; and
+    (4) Direct a qualified person to monitor all instruments and 
+examine the structure at least once every eight hours, or more often as 
+required by an authorized representative of the Secretary.
+    Under 30 CFR 77.216-3(c), after each examination and 
+instrumentation monitoring referred to in this section, each qualified 
+person who conducted all or any part of the examination or 
+instrumentation monitoring shall promptly record the results of such 
+examination or instrumentation monitoring in a book which shall be 
+available at the mine for inspection by an authorized representative of 
+the Secretary, and such qualified person shall also promptly report the 
+results of the examination or monitoring to one of the persons 
+specified in 30 CFR 77.216-3(d).
+    Under 30 CFR 77.216-3(d), all examination and instrumentation 
+monitoring reports recorded in accordance with 77.216-3(c) shall 
+include a report of the action taken to abate hazardous conditions and 
+shall be promptly signed or countersigned by at least one of the 
+following persons:
+    (1) The mine foreman;
+    (2) The assistant superintendent of the mine;
+    (3) The superintendent of the mine;
+    (4) The person designated by the operator as responsible for health 
+and safety at the mine.
+
+II. Desired Focus of Comments
+
+    MSHA is soliciting comments concerning the proposed information 
+collection titled ``Refuse Piles and Impoundment Structures.'' MSHA is 
+particularly interested in comments that:
+    <bullet> Evaluate whether the proposed collection of information is 
+necessary for the proper performance of the functions of the Agency, 
+including whether the information will have practical utility;
+    <bullet> Evaluate the accuracy of MSHA's estimate of the burden of 
+the proposed collection of information, including the validity of the 
+methodology and assumptions used;
+    <bullet> Suggest methods to enhance the quality, utility, and 
+clarity of the information to be collected; and
+    <bullet> Minimize the burden of the collection of information on 
+those who are to respond, including through the use of appropriate 
+automated, electronic, mechanical, or other technological collection 
+techniques or other forms of information technology, e.g., permitting 
+electronic submission of responses.
+    The ICR is available on <a href="https://www.regulations.gov">https://www.regulations.gov</a>. MSHA cautions 
+commenters against providing any information in the submission that 
+should not be publicly disclosed. Full
+
+[[Page 59804]]
+
+comments, including personal information provided, will be made 
+available on <a href="https://www.regulations.gov">https://www.regulations.gov</a> and <a href="https://www.reginfo.gov">https://www.reginfo.gov</a>.
+    The public may also examine publicly available documents at DOL-
+MSHA, Office of Standards, Regulations and Variances, 200 Constitution 
+Avenue NW, Washington, DC 20210. Before visiting MSHA in person, call 
+202-693-9440 to make an appointment.
+    Questions about the information collection requirements may be 
+directed to the person listed in the FOR FURTHER INFORMATION CONTACT 
+section of this notice.
+
+III. Current Actions
+
+    This ICR concerns provisions for Refuse Piles and Impoundment 
+Structures. MSHA has updated the data with respect to the number of 
+respondents, responses, time burden, and burden costs supporting this 
+ICR from the previous ICR.
+    Type of Review: Extension, without change, of a currently approved 
+collection.
+    Agency: Mine Safety and Health Administration.
+    OMB Control Number: 1219-0015.
+    Affected Public: Business or other for-profit entity.
+    Number of Annual Respondents: 939.
+    Frequency: On occasion.
+    Number of Annual Responses: 27,006.
+    Annual Time Burden: 66,699 hours.
+    Annual Recordkeeping Costs: $1,198,501.
+    Comments submitted in response to this notice will be summarized 
+and included in the request for Office of Management and Budget 
+approval of the proposed ICR; they will become a matter of public 
+record and be available at <a href="https://www.reginfo.gov">https://www.reginfo.gov</a>.
+
+Corliss A. Josephs-Conway,
+Certifying Officer, Mine Safety and Health Administration.
+[FR Doc. 2026-19266 Filed 9-18-26; 8:45 am]
+BILLING CODE 4510-43-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

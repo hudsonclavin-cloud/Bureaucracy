@@ -1,0 +1,142 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 174 (Thursday, September 10, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 174 (Thursday, September 10, 2026)]
+[Notices]
+[Pages 57656-57657]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-18499]
+
+
+-----------------------------------------------------------------------
+
+DEPARTMENT OF LABOR
+
+Employment and Training Administration
+
+
+Agency Information Collection Activities; Comment Request; 
+Migrant and Seasonal Farmworker Monitoring Report and Complaint/
+Apparent Violation Form
+
+ACTION: Notice.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The Department of Labor's (DOL) Employment and Training 
+Administration (ETA) is soliciting comments concerning a proposed 
+revision for the authority to conduct the information collection 
+request (ICR) titled, ``Migrant and Seasonal Farmworker (MSFW) 
+Monitoring Report and Complaint/Apparent Violation Form.'' This comment 
+request is part of continuing Departmental efforts to reduce paperwork 
+and respondent burden in accordance with the Paperwork Reduction Act of 
+1995 (PRA).
+
+DATES: Consideration will be given to all written comments received by 
+November 9, 2026.
+
+ADDRESSES: A copy of this ICR with applicable supporting documentation, 
+including a description of the likely respondents, proposed frequency 
+of response, and estimated total burden, may be obtained for free by 
+contacting Laura Tramontana by email at <a href="/cdn-cgi/l/email-protection#39777478795d5655175e564f"><span class="__cf_email__" data-cfemail="7a34373b3a1e1516541d150c">[email&#160;protected]</span></a> or telephone at 
+202-693-3980 (this is not a toll-free number).
+    Submit written comments about, or requests for a copy of, this ICR 
+by mail or courier to the U.S. Department of Labor, Employment and 
+Training Administration, Office of Workforce Investment, Room C 4510, 
+200 Constitution Avenue NW, Washington, DC 20210; by email to 
+<a href="/cdn-cgi/l/email-protection#743a393534101b185a131b02"><span class="__cf_email__" data-cfemail="66282b272602090a48010910">[email&#160;protected]</span></a>; or by fax to 202-693-3981.
+
+FOR FURTHER INFORMATION CONTACT: Laura Tramontana by telephone at 202-
+693-3980 (this is not a toll-free number) or by email at <a href="/cdn-cgi/l/email-protection#85cbc8c4c5e1eae9abe2eaf3"><span class="__cf_email__" data-cfemail="a9e7e4e8e9cdc6c587cec6df">[email&#160;protected]</span></a>.
+
+SUPPLEMENTARY INFORMATION: DOL, as part of continuing efforts to reduce 
+paperwork and respondent burden, conducts a pre-clearance consultation 
+program to provide the general public and Federal agencies an 
+opportunity to comment on proposed and/or continuing collections of 
+information before submitting them to the Office of Management and 
+Budget (OMB) for final approval. This program helps to ensure requested 
+data can be provided in the desired format, reporting burden (time and 
+financial resources) is minimized, collection instruments are clearly 
+understood, and the impact of collection requirements can be properly 
+assessed.
+    Pursuant to 20 CFR 653.109, State Workforce Agencies (SWA) use Form 
+ETA-5148 to submit to DOL quarterly data on the services they provide 
+to MSFWs. DOL uses that data to monitor and measure the extent and 
+effectiveness of SWA Employment Service (ES) delivery and compliance 
+with 20 CFR parts 651, 653, and 658. ETA proposes to add an instruction 
+document for completing Form ETA-5148 but does not propose to change 
+the form itself. While ETA is temporarily not enforcing the Minimum 
+Service Level Indicators in Part 3 and certain SMA Annual Report 
+elements in Part 4, as described in Training and Employment Notice 09-
+25, ETA is not proposing to alter the form through this revision in 
+order to maintain alignment with the current ES regulations.
+    Pursuant to 20 CFR 658.411, SWAs use the Complaint/Apparent 
+Violation Form, Form ETA-8429 to record and process complaints and 
+apparent violations, as defined at 20 CFR 651.10. ETA proposes to 
+revise Form ETA-8429 so that there will be separate forms for 
+complaints and apparent violations. ETA also proposes to add 
+instruction documents for each form. The intent of these revisions is 
+to clarify processes for external and internal users.
+    This information collection is subject to the PRA. A Federal agency 
+generally cannot conduct or sponsor a collection of information, and 
+the public is generally not required to respond to an information 
+collection, unless it is approved by OMB under the PRA and displays a 
+currently valid OMB Control Number. In addition, notwithstanding any 
+other provisions of law, no person shall generally be subject to 
+penalty for failing to comply with a collection of information that 
+does not display a valid Control Number. See 5 CFR 1320.5(a) and 
+1320.6.
+    Interested parties are encouraged to provide comments to the 
+contact shown in the ADDRESSES section. Comments must be written to 
+receive consideration, and they will be summarized and included in the 
+request for OMB approval of the final ICR. In order to help ensure 
+appropriate consideration, comments should mention OMB control number 
+1205-0039.
+    Submitted comments will also be a matter of public record for this 
+ICR and posted on the internet, without redaction. DOL encourages 
+commenters not to include personally identifiable information, 
+confidential business data, or other sensitive statements/information 
+in any comments.
+    DOL is particularly interested in comments that:
+    <bullet> Evaluate whether the proposed collection of information is 
+necessary for the proper performance of the functions of the Agency, 
+including whether the information will have practical utility;
+    <bullet> Evaluate the accuracy of the Agency's estimate of the 
+burden of the proposed collection of information, including the 
+validity of the methodology and assumptions used;
+    <bullet> Enhance the quality, utility, and clarity of the 
+information to be collected; and
+    <bullet> Minimize the burden of the collection of information on 
+those who are to respond, including through the use of appropriate 
+automated, electronic, mechanical, or other technological collection 
+techniques or other forms of information technology, (e.g., permitting 
+electronic submission of responses).
+    Agency: DOL-ETA.
+    Type of Review: Revision.
+
+[[Page 57657]]
+
+    Title of Collection: Migrant and Seasonal Farmworker Monitoring 
+Report and Complaint/Apparent Violation Form.
+    Forms: ETA-5148; ETA-8429.
+    OMB Control Number: 1205-0039.
+    Affected Public: Individuals or Households; State, Local, and 
+Tribal Governments; Private Sector.
+    Estimated Number of Respondents: 22,086.
+    Frequency: Varies.
+    Total Estimated Annual Responses: 22,410.
+    Estimated Average Time per Response: Varies.
+    Estimated Total Annual Burden Hours: 40,912.98 hours.
+    Total Estimated Annual Other Cost Burden: $0.
+    Authority: 44 U.S.C. 3506(c)(2)(A).
+
+Marek Laco,
+Acting Assistant Secretary for Employment and Training, Labor.
+[FR Doc. 2026-18499 Filed 9-9-26; 8:45 am]
+BILLING CODE 4510-FN-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

@@ -1,0 +1,92 @@
+<html>
+<head>
+<title>Federal Register, Volume 69 Issue 9 (Wednesday, January 14, 2004)</title>
+</head>
+<body><pre>
+[Federal Register Volume 69, Number 9 (Wednesday, January 14, 2004)]
+[Rules and Regulations]
+[Page 2066]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 04-758]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+DEPARTMENT OF DEFENSE
+
+National Geospatial-Intelligence Agency
+
+32 CFR Part 320
+
+[NIMA Instruction 5500.7R1]
+
+
+Privacy Act; Implementation
+
+AGENCY: National Geospatial-Intelligence Agency, DoD.
+
+ACTION: Final rule.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The document is published to make administrative changes to 
+the National Geospatial-Intelligence Agency (NGA), formerly know as the 
+National Imagery and Mapping Agency, Privacy Program rule.
+
+EFFECTIVE DATE: This rule is effective January 14, 2004.
+
+FOR FURTHER INFORMATION CONTACT: Ms. M. Flattery, (301) 227-2268.
+
+SUPPLEMENTARY INFORMATION:
+
+List of Subjects in 32 CFR Part 320
+
+    Privacy program.
+
+
+0
+Accordingly, 32 CFR part 320 is amended as follows:
+
+PART 320--NATIONAL GEOSPATIAL-INTELLIGENCE AGENCY (NGA) PRIVACY
+
+Program
+
+0
+1. The authority citation for part 320 continues to read as follows:
+
+
+    Authority: Pub. L. 93-579, 88 Stat. 1986 (5 U.S.C. 552a).
+
+
+0
+2. The part heading is revised as set forth above.
+
+
+Sec.  320.1  [Amended]
+
+0
+3. Section 320.1, paragraph (a)(1)(i) is amended by revising ``National 
+Imagery and Mapping Agency (NIMA)'' to read ``National Geospatial-
+Intelligence Agency (NGA)''
+
+0
+4. The following paragraphs are amended by revising ``NIMA'' to read 
+``NGA'': Sec.  320.1 paragraph (a)(2); Sec.  320.2 paragraphs (a), (c), 
+(f), (h), and (i); Sec.  320.3 paragraphs (a), (a)(1), (a)(2), (a)(4), 
+(b)(6), and (c)(4); Sec.  320.4 paragraphs (a), (b), (c), (c)(2), (d), 
+and (e); Sec.  320.5 paragraphs (a), (b), (b)(1), (b)(2), (b)(3), (c), 
+(c)(1), (c)(2), and (d)(1); Sec.  320.6 (b); Sec.  320.7 paragraphs (a) 
+and (b); Sec.  320.8, paragraphs (b), (c), and (c)(1); Sec.  320.9 
+paragraphs (a), (c)(5), and (c)(7); Sec. Sec.  320.10 and 320.11; and 
+Sec.  320.12 paragraphs (a), (b)(3)(i), (b)(3)(v) and (b)(3)(vi).
+
+    Dated: January 7, 2004.
+L.M. Bynum,
+Alternate OSD Federal Register Liaison Officer, Department of Defense.
+[FR Doc. 04-758 Filed 1-13-04; 8:45 am]
+BILLING CODE 5001-06-P
+
+
+</pre></body>
+</html>

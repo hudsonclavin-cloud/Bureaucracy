@@ -1,0 +1,560 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 166 (Friday, August 28, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 166 (Friday, August 28, 2026)]
+[Rules and Regulations]
+[Pages 55482-55486]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-17579]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+ENVIRONMENTAL PROTECTION AGENCY
+
+40 CFR Part 180
+
+[EPA-HQ-OPP-2025-0286; FRL-13571-01-OCSPP]
+
+
+Alpha-d-Glucopyranoside, Beta-d-Fructofuranosyl, Mixed Palmitates 
+and Stearates in Pesticide Formulations; Exemption From the Requirement 
+of a Tolerance
+
+AGENCY: Environmental Protection Agency (EPA).
+
+ACTION: Final rule.
+
+-----------------------------------------------------------------------
+
+SUMMARY: This regulation establishes an exemption from the requirement 
+of a tolerance for residues of alpha-d-glucopyranoside, beta-d-
+fructofuranosyl, mixed palmitates and stearates (CAS Reg. No. 84066-95-
+5) when used as an inert ingredient (surfactant) on growing crops pre-
+harvest at no more than 12% of the final pesticide formulation. Elicit 
+Plant S.A.S submitted a petition to EPA under the Federal Food, Drug, 
+and Cosmetic Act (FFDCA), requesting establishment of an exemption from 
+the requirement of a tolerance. This regulation eliminates the need to 
+establish a maximum permissible level for residues of alpha-d-
+glucopyranoside, beta-d-fructofuranosyl, mixed palmitates and 
+stearates, when used in accordance with the terms of this exemption.
+
+DATES: This regulation is effective August 28, 2026. Objections and 
+requests for hearings must be received on or before October 27, 2026 
+and must be filed in accordance with the instructions provided in 40 
+CFR part 178 (see also Unit I.C. of this document).
+
+ADDRESSES: The docket for this action, identified by docket 
+identification (ID) number EPA-HQ-OPP-2025-0286, is available online at 
+<a href="https://www.regulations.gov">https://www.regulations.gov</a>. Additional information about dockets 
+generally, along with instructions for visiting the docket in-person, 
+is available at <a href="https://www.epa.gov/dockets">https://www.epa.gov/dockets</a>.
+
+FOR FURTHER INFORMATION CONTACT: Charles Smith, Registration Division 
+(7505T), Office of Pesticide Programs, Environmental Protection Agency, 
+1200 Pennsylvania Ave. NW, Washington, DC 20460-0001; main telephone 
+number: (202) 566-1030; email address: <a href="/cdn-cgi/l/email-protection#35677173677b5a415c565046755045541b525a43"><span class="__cf_email__" data-cfemail="43110705110d2c372a202630032633226d242c35">[email&#160;protected]</span></a>.
+
+SUPPLEMENTARY INFORMATION:
+
+I. General Information
+
+A. Does this action apply to me?
+
+    You may be potentially affected by this action if you are an 
+agricultural producer, food manufacturer, or pesticide manufacturer. 
+The following list of North American Industrial Classification System 
+(NAICS) codes is not intended to be exhaustive but rather provides a 
+guide to help readers determine whether this document applies to them.
+    <bullet> Crop production (NAICS code 111).
+    <bullet> Animal production (NAICS code 112).
+    <bullet> Food manufacturing (NAICS code 311).
+    <bullet> Pesticide manufacturing (NAICS code 32532).
+    If you have any questions regarding the applicability of this 
+proposed action to a particular entity, consult the person listed under 
+FOR FURTHER INFORMATION CONTACT.
+
+B. What is EPA's authority for taking this action?
+
+    EPA is issuing this rulemaking under section 408 of the Federal 
+Food, Drug, and Cosmetic Act (FFDCA), 21 U.S.C. 346a. FFDCA section 
+408(c)(2)(A)(i) allows EPA to establish an exemption from the 
+requirement for a tolerance (the legal limit for a pesticide chemical 
+residue in or on a food) only if EPA determines that the exemption is 
+``safe.'' FFDCA section 408(c)(2)(A)(ii) defines ``safe'' to mean that 
+``there is a reasonable certainty that no harm will result from 
+aggregate exposure to the pesticide chemical residue, including all 
+anticipated dietary exposures and all other exposures for which there 
+is reliable information.'' This includes exposure through drinking 
+water and in residential settings but does not include occupational 
+exposure. Pursuant to FFDCA section 408(c)(2)(B), in establishing or 
+maintaining in effect an exemption from the requirement of a tolerance, 
+EPA must take into account the factors set forth in FFDCA section 
+408(b)(2)(C), which require EPA to give special consideration to 
+exposure of infants and children to the pesticide chemical residue in 
+establishing a tolerance and to ``ensure that there is a reasonable 
+certainty that no harm will result to infants and children from 
+aggregate exposure to the pesticide chemical residue . . . . '' 
+Additionally, FFDCA section 408(b)(2)(D) requires that the Agency 
+consider, among other things, ``available information concerning the 
+cumulative effects of a particular pesticide's residues'' and ``other 
+substances that have a common mechanism of toxicity.''
+
+C. How can I file an objection or hearing request?
+
+    Under FFDCA section 408(g), 21 U.S.C. 346a(g), any person may file 
+an objection to any aspect of this regulation and may also request a 
+hearing on those objections. If you fail to file an objection to the 
+final rule within the time period specified in the final rule, you will 
+have waived the right to raise any issues resolved in the final rule. 
+You must file your objection or request a hearing on this regulation in 
+accordance with the instructions provided in 40 CFR part 178. To ensure 
+proper receipt by EPA, you must identify the docket ID number EPA-HQ-
+OPP-2025-0286 in the subject line on the first page of your submission. 
+All objections and requests for a hearing must be in writing and must 
+be received by the Hearing Clerk on or before October 27, 2026.
+    EPA's Administrative Law Judges Division (ALJD), in which the 
+Hearing Clerk is housed, urges parties to file and serve documents by 
+electronic means only, notwithstanding any other particular 
+requirements set forth in other procedural rules governing those 
+proceedings. See ``Order Urging Electronic Filing and Service,'' dated 
+December 3, 2025, which can be found at <a href="https://www.epa.gov/system/files/documents/2025-12/2025-12-03-order-urging-electronic-filing-and-service.pdf">https://www.epa.gov/system/files/documents/2025-12/2025-12-03-order-urging-electronic-filing-and-service.pdf</a>.
+
+[[Page 55483]]
+
+Although EPA's regulations require submission via U.S. Mail or hand 
+delivery, EPA intends to treat submissions filed via electronic means 
+as properly filed submissions; therefore, EPA believes the preference 
+for submission via electronic means will not be prejudicial. When 
+submitting documents to the ALJD electronically, a person should 
+utilize the e-filing system at <a href="https://yosemite.epa.gov/oa/eab/eab-alj_upload.nsf">https://yosemite.epa.gov/oa/eab/eab-alj_upload.nsf</a>.
+    In addition to filing an objection or hearing request with the 
+Hearing Clerk as described in 40 CFR part 178, please submit a copy of 
+the filing (excluding any Confidential Business Information (CBI)) for 
+inclusion in the public docket at <a href="https://www.regulations.gov">https://www.regulations.gov</a>. Follow 
+the online instructions for submitting comments. Do not submit 
+electronically any information you consider to be CBI or other 
+information whose disclosure is restricted by statute. If you wish to 
+include CBI in your request, please follow the applicable instructions 
+at <a href="https://www.epa.gov/dockets/commenting-epa-dockets#rules">https://www.epa.gov/dockets/commenting-epa-dockets#rules</a> and clearly 
+mark the information that you claim to be CBI. Information not marked 
+confidential pursuant to 40 CFR part 2 may be disclosed publicly by EPA 
+without prior notice.
+
+II. Petition for Exemption
+
+    In the Federal Register of July 3, 2025 (90 FR 29515) (FRL-12474-
+05-OCSPP), EPA issued a document pursuant to FFDCA section 408, 21 
+U.S.C. 346a, announcing the filing of a pesticide petition (PP IN-
+11962) by TSG Consulting on behalf of Elicit Plant S.A.S, 1 Passage de 
+la Croix, Lieu-dit le chataignier, 16220 Moulins-sur-tardoire, France. 
+The petition requested that 40 CFR 180.920 be amended by establishing 
+an exemption from the requirement of a tolerance for residues of alpha-
+d-glucopyranoside, beta-d-fructofuranosyl, mixed palmitates and 
+stearates (CAS Reg. No. 84066-95-5) when used as an inert ingredient 
+(surfactant) in pesticide formulations applied to growing crops pre-
+harvest. That document referenced a summary of the petition prepared by 
+Elicit Plant S.A.S, which is available in the docket. There were no 
+comments received in response to the notice of filing.
+    Based upon review of the data supporting the petition and in 
+accordance with its authority under FFDCA section 408(d)(4)(A)(i), EPA 
+is establishing an exemption limiting the concentration of alpha-d-
+glucopyranoside, beta-d-fructofuranosyl, mixed palmitates and stearates 
+to no more than 12% of the final pesticide formulation to decrease any 
+potential for surfactant effects on the respiratory system.
+
+III. Inert Ingredient Definition
+
+    Inert ingredients are all ingredients that are not active 
+ingredients as defined in 40 CFR 153.125 and include, but are not 
+limited to, the following types of ingredients (except when they have a 
+pesticidal efficacy of their own): solvents such as alcohols and 
+hydrocarbons; surfactants such as polyoxyethylene polymers and fatty 
+acids; carriers such as clay and diatomaceous earth; thickeners such as 
+carrageenan and modified cellulose; wetting, spreading, and dispersing 
+agents; propellants in aerosol dispensers; microencapsulating agents; 
+and emulsifiers. The term ``inert'' is not intended to imply 
+nontoxicity; the ingredient may or may not be chemically active. 
+Generally, EPA has exempted inert ingredients from the requirement of a 
+tolerance based on the low toxicity of the individual inert 
+ingredients.
+
+IV. Final Tolerance Actions
+
+A. Aggregate Risk Assessment and Determination of Safety
+
+    EPA establishes exemptions from the requirement of a tolerance only 
+in those cases where it can be clearly demonstrated that the risks from 
+aggregate exposure to pesticide chemical residues under reasonably 
+foreseeable circumstances will pose no harm to human health. In order 
+to determine the risks from aggregate exposure to pesticide inert 
+ingredients, the Agency considers the toxicity of the inert in 
+conjunction with possible exposure to residues of the inert ingredient 
+through food, drinking water, and through other exposures that occur as 
+a result of pesticide use in residential settings. If EPA is able to 
+determine that a finite tolerance is not necessary to ensure that there 
+is a reasonable certainty that no harm will result from aggregate 
+exposure to the inert ingredient, an exemption from the requirement of 
+a tolerance may be established.
+    Consistent with FFDCA section 408(c)(2)(A), and the factors 
+specified in FFDCA section 408(c)(2)(B), EPA has reviewed the available 
+scientific data and other relevant information in support of this 
+action. EPA has sufficient data to assess the hazards of and to make a 
+determination on aggregate exposure for alpha-d-glucopyranoside, beta-
+d-fructofuranosyl, mixed palmitates and stearates, including exposure 
+resulting from the exemption established by this action. EPA's 
+assessment of exposures and risks associated with alpha-d-
+glucopyranoside, beta-d-fructofuranosyl, mixed palmitates and stearates 
+follows.
+
+B. Toxicological Profile
+
+    EPA has evaluated the available toxicity data and considered their 
+validity, completeness, and reliability as well as the relationship of 
+the results of the studies to human risk. EPA has also considered 
+available information concerning the variability of the sensitivities 
+of major identifiable subgroups of consumers, including infants and 
+children. Specific information on the studies received and the nature 
+of the adverse effects caused by alpha-d-glucopyranoside, beta-d-
+fructofuranosyl, mixed palmitates and stearates as well as the no 
+observed adverse effect level (NOAEL) and the lowest observed adverse 
+effect level (LOAEL) from the toxicity studies are discussed in this 
+unit.
+    The toxicological database of alpha-d-glucopyranoside, beta-d-
+fructofuranosyl, mixed palmitates and stearates is supported by data 
+regarding several other mixtures of sucrose esters of fatty acids which 
+have similar compositions and are manufactured by inter-esterification 
+of sucrose with fatty acids derived from edible vegetable oils and fats 
+(stearic acid and palmitic acid). These include fatty acids, C16-18 
+(even numbered), mono diesters with sucrose; Ryoto Sugar Ester S-570; 
+and Ryoto Sugar Ester S-1170. EPA has determined that it is appropriate 
+to bridge data from these three compounds to assess alpha-d-
+glucopyranoside, beta-d-fructofuranosyl, mixed palmitates and stearates 
+due to similarities in the manufacturing processes and composition.
+    Based on the available toxicity studies, alpha-d-glucopyranoside, 
+beta-d-fructofuranosyl, mixed palmitates and stearates is anticipated 
+to have low overall toxicity. Physico-chemical properties suggest low 
+potential for dermal toxicity. Studies with surrogate chemicals showed 
+low acute toxicity via the oral route, and low potential for skin 
+irritation or sensitization. Alpha-d-glucopyranoside, beta-d-
+fructofuranosyl, mixed palmitates and stearates may be irritating to 
+the eye.
+    There is a general concern regarding the disruption of natural 
+surfactants in the lungs from inhalation of chemicals with surfactant 
+properties. EPA lacks acute inhalation toxicity data for alpha-d-
+glucopyranoside, beta-d-fructofuranosyl, mixed palmitates and stearates 
+to determine whether it may cause such effects. However, the chemical's 
+physico-chemical properties
+
+[[Page 55484]]
+
+suggest low potential for inhalation toxicity. Moreover, EPA is 
+establishing a tolerance exemption with a 12% concentration limitation 
+to reduce exposure, which EPA believes will also reduce any potential 
+for such effects.
+    Read-across information did not identify adverse effects in a 
+subchronic study, a combined developmental/reproductive toxicity study, 
+or a chronic/carcinogenicity study. There was also no evidence of 
+mutagenicity. Therefore, concern for mutagenicity and carcinogenicity 
+is low. Neurotoxicity and immunotoxicity studies are not available for 
+review. However, no evidence of neurotoxicity or immunotoxicity was 
+observed in the available studies.
+
+C. Toxicological Points of Departure/Levels of Concern
+
+    Once a pesticide's toxicological profile is determined, EPA 
+identifies toxicological points of departure (POD) and levels of 
+concern to use in evaluating the risk posed by human exposure to the 
+pesticide. For hazards that have a threshold below which there is no 
+appreciable risk, the toxicological POD is used as the basis for 
+derivation of reference values for risk assessment. PODs are developed 
+based on a careful analysis of the doses in each toxicological study to 
+determine the dose at which no adverse effects are observed (the NOAEL) 
+and the lowest dose at which adverse effects of concern are identified 
+(the LOAEL). Uncertainty/safety factors are used in conjunction with 
+the POD to calculate a safe exposure level, generally referred to as a 
+population-adjusted dose or a reference dose, and a safe margin of 
+exposure. For non-threshold risks, the Agency assumes that any amount 
+of exposure will lead to some degree of risk. Thus, the Agency 
+estimates risk in terms of the probability of an occurrence of the 
+adverse effect expected in a lifetime. For more information on the 
+general principles EPA uses in risk characterization and a complete 
+description of the risk assessment process, see <a href="https://www.epa.gov/pesticide-science-and-assessing-pesticide-risks/overview-risk-assessment-pesticide-program">https://www.epa.gov/pesticide-science-and-assessing-pesticide-risks/overview-risk-assessment-pesticide-program</a>.
+    The hazard profile of alpha-d-glucopyranoside, beta-d-
+fructofuranosyl, mixed palmitates and stearates is adequately defined. 
+Overall, alpha-d-glucopyranoside, beta-d-fructofuranosyl, mixed 
+palmitates and stearates is of low acute, subchronic, and developmental 
+toxicity. No systemic toxicity is observed up to 1,000 mg/kg/day. Since 
+signs of toxicity were not observed, no toxicological endpoints of 
+concern or PODs were identified. Therefore, a qualitative risk 
+assessment for alpha-d-glucopyranoside, beta-d-fructofuranosyl, mixed 
+palmitates and stearates can be performed.
+
+D. Exposure Assessment
+
+    1. Dietary exposure from food and feed uses. In evaluating dietary 
+exposure to alpha-d-glucopyranoside, beta-d-fructofuranosyl, mixed 
+palmitates and stearates, EPA considered exposure under the proposed 
+exemption from the requirement of a tolerance and existing uses. EPA 
+assessed dietary exposures from alpha-d-glucopyranoside, beta-d-
+fructofuranosyl, mixed palmitates and stearates in food as follows:
+    Dietary exposure (food and drinking water) to alpha-d-
+glucopyranoside, beta-d-fructofuranosyl, mixed palmitates and stearates 
+may occur following ingestion of foods with residues from their use in 
+accordance with this exemption. Dietary exposure also may occur 
+following ingestion of alpha-d-glucopyranoside, beta-d-fructofuranosyl, 
+mixed palmitates and stearates when used as a food additive. Although 
+alpha-d-glucopyranoside, beta-d-fructofuranosyl, mixed palmitates and 
+stearates itself is not a food additive authorized by the U.S. Food and 
+Drug Administration, similar sucrose esters of fatty acids, meeting the 
+criteria outlined in 21 CFR 172.859 and 21 CFR 172.869, are authorized 
+for use as emulsifiers, stabilizers, and texturizers in various food 
+products (e.g., chewing gum, coffee, beverages, sauces, meat, and 
+seafood). However, a quantitative dietary exposure assessment was not 
+conducted since a toxicological endpoint for risk assessment was not 
+identified.
+    2. From non-dietary exposure. The term ``residential exposure'' is 
+used in this document to refer to non-occupational, non-dietary 
+exposure (e.g., textiles (clothing and diapers), carpets, swimming 
+pools, and hard surface disinfection on walls, floors, tables).
+    Alpha-d-glucopyranoside, beta-d-fructofuranosyl, mixed palmitates 
+and stearates may be present in pesticide and non-pesticide products 
+(e.g., cosmetics) that may be used in and around the home. However, a 
+quantitative residential exposure assessment was not conducted since a 
+toxicological endpoint for risk assessment was not identified.
+    3. Cumulative effects from substances with a common mechanism of 
+toxicity. Section 408(b)(2)(D)(v) of FFDCA requires that, when 
+considering whether to establish, modify, or revoke a tolerance, the 
+Agency consider ``available information'' concerning the cumulative 
+effects of a particular pesticide's residues and ``other substances 
+that have a common mechanism of toxicity.''
+    Based on the lack of toxicity in the available database, EPA has 
+not found alpha-d-glucopyranoside, beta-d-fructofuranosyl, mixed 
+palmitates and stearates to share a common mechanism of toxicity with 
+any other substances, and alpha-d-glucopyranoside, beta-d-
+fructofuranosyl, mixed palmitates and stearates does not appear to 
+produce a toxic metabolite produced by other substances. For the 
+purposes of this tolerance exemption, therefore, EPA has assumed that 
+alpha-d-glucopyranoside, beta-d-fructofuranosyl, mixed palmitates and 
+stearates does not have a common mechanism of toxicity with other 
+substances. For information regarding EPA's efforts to determine which 
+chemicals have a common mechanism of toxicity and to evaluate the 
+cumulative effects of such chemicals, see EPA's website at <a href="https://www.epa.gov/pesticide-science-and-assessing-pesticide-risks/cumulative-assessment-risk-pesticides">https://www.epa.gov/pesticide-science-and-assessing-pesticide-risks/cumulative-assessment-risk-pesticides</a>.
+
+E. Additional Safety Factor for the Protection of Infants and Children
+
+    Section 408(b)(2)(C) of FFDCA provides that EPA shall apply an 
+additional tenfold (10X) margin of safety for infants and children in 
+the case of threshold effects to account for prenatal and postnatal 
+toxicity and the completeness of the database on toxicity and exposure 
+unless EPA determines based on reliable data that a different margin of 
+safety will be safe for infants and children. This additional margin of 
+safety is commonly referred to as the Food Quality Protection Act 
+safety factor. In applying this provision, EPA either retains the 
+default value of 10X, or uses a different additional safety factor when 
+reliable data available to EPA support the choice of a different 
+factor.
+    Based on an assessment of alpha-d-glucopyranoside, beta-d-
+fructofuranosyl, mixed palmitates and stearates, EPA has concluded that 
+there are no toxicological endpoints of concern for the U.S. 
+population, including infants and children. Because there are no 
+threshold effects associated with alpha-d-glucopyranoside, beta-d-
+fructofuranosyl, mixed palmitates and stearates, EPA conducted a 
+qualitative assessment. As part of that assessment, the Agency did not 
+use safety factors for assessing risk, and no additional safety factor 
+is needed for assessing risk to infants and children.
+
+[[Page 55485]]
+
+F. Determination of Safety
+
+    Because no toxicological endpoints of concern were identified, EPA 
+concludes that there is a reasonable certainty that no harm will result 
+to the general population, or to infants and children, from aggregate 
+exposure to residues of alpha-d-glucopyranoside, beta-d-
+fructofuranosyl, mixed palmitates and stearates.
+
+G. Analytical Enforcement Methodology
+
+    An analytical method is not required for enforcement purposes since 
+the Agency is not establishing a numerical tolerance for residues of 
+alpha-d-glucopyranoside, beta-d-fructofuranosyl, mixed palmitates and 
+stearates in or on any food commodities. EPA is establishing a 
+limitation on the amount of alpha-d-glucopyranoside, beta-d-
+fructofuranosyl, mixed palmitates and stearates that may be used in 
+pesticide formulations applied pre-harvest. This limitation will be 
+enforced through the pesticide registration process under the Federal 
+Insecticide, Fungicide, and Rodenticide Act (``FIFRA''), 7 U.S.C. 136 
+et seq. EPA will not register any pesticide formulation for food use 
+that exceeds 12% alpha-d-glucopyranoside, beta-d-fructofuranosyl, mixed 
+palmitates and stearates in the final pesticide formulation.
+
+H. Conclusion
+
+    Therefore, an exemption from the requirement of a tolerance is 
+established for residues of alpha-d-glucopyranoside, beta-d-
+fructofuranosyl, mixed palmitates and stearates (CAS Reg. No. 84066-95-
+5) when used as an inert ingredient (surfactant) in pesticide 
+formulations applied to growing crops pre-harvest under 40 CFR 180.920 
+at no more than 12% of the final pesticide formulation.
+
+V. Statutory and Executive Order Reviews
+
+    Additional information about these statutes and Executive Orders 
+can be found at <a href="https://www.epa.gov/regulations/and-executive-orders">https://www.epa.gov/regulations/and-executive-orders</a>.
+
+A. Executive Order 12866: Regulatory Planning and Review
+
+    This action is exempt from review under Executive Order 12866 (58 
+FR 51735, October 4, 1993), because it establishes or modifies a 
+pesticide tolerance or a tolerance exemption under FFDCA section 408 in 
+response to a petition submitted to the Agency. The Office of 
+Management and Budget (OMB) has exempted these types of actions from 
+review under Executive Order 12866.
+
+B. Executive Order 14192: Unleashing Prosperity Through Deregulation
+
+    Executive Order 14192 (90 FR 9065, February 6, 2025) does not apply 
+because actions that establish a tolerance or a tolerance exemption 
+under FFDCA section 408 are exempted from review under Executive Order 
+12866.
+
+C. Paperwork Reduction Act (PRA)
+
+    This action does not impose an information collection burden under 
+the PRA, 44 U.S.C. 3501 et seq., because it does not contain any 
+information collection activities.
+
+D. Regulatory Flexibility Act (RFA)
+
+    This action is not subject to the RFA, 5 U.S.C. 601 et seq. The RFA 
+applies only to rules subject to notice and comment rulemaking 
+requirements under the Administrative Procedure Act (APA), 5 U.S.C. 
+553, or any other statute. This rule is not subject to the APA but is 
+subject to FFDCA section 408(d), which does not require notice and 
+comment rulemaking to take this action in response to a petition.
+
+E. Unfunded Mandates Reform Act (UMRA)
+
+    This action does not contain an unfunded mandate of $100 million or 
+more (in 1995 dollars and adjusted annually for inflation) as described 
+in UMRA, 2 U.S.C. 1531-1538, and does not significantly or uniquely 
+affect small governments. The action imposes no enforceable duty on any 
+state, local or tribal governments or the private sector.
+
+F. Executive Order 13132: Federalism
+
+    This action does not have federalism implications as specified in 
+Executive Order 13132 (64 FR 43255, August 10, 1999), because it will 
+not have substantial direct effects on the States, on the relationship 
+between the national government and the States, or on the distribution 
+of power and responsibilities among the various levels of government.
+
+G. Executive Order 13175: Consultation and Coordination With Indian 
+Tribal Governments
+
+    This action does not have Tribal implications as specified in 
+Executive Order 13175 (65 FR 67249, November 9, 2000), because it will 
+not have substantial direct effects on Tribal governments, on the 
+relationship between the Federal government and the Indian Tribes, or 
+on the distribution of power and responsibilities between the Federal 
+government and Indian Tribes.
+
+H. Executive Order 13045: Protection of Children From Environmental 
+Health Risks and Safety Risks
+
+    This action is not subject to Executive Order 13045 (62 FR 19885, 
+April 23, 1997) because it is not a significant regulatory action under 
+section 3(f)(1) of Executive Order 12866 (see Unit IV.A.), and because 
+EPA does not believe the environmental health or safety risks addressed 
+by this action present a disproportionate risk to children.
+    However, EPA's 2026 Policy on Children's Health applies to this 
+action. This rule finalizes tolerance actions under the FFDCA, which 
+requires EPA to give special consideration to exposure of infants and 
+children to the pesticide chemical residue in establishing a tolerance 
+and to ``ensure that there is a reasonable certainty that no harm will 
+result to infants and children from aggregate exposure to the pesticide 
+chemical residue . . .'' (FFDCA 408(b)(2)(C)). The Agency's 
+consideration is documented in the pesticide-specific registration 
+review documents, located in the applicable docket at <a href="https://www.regulations.gov">https://www.regulations.gov</a>.
+
+I. Executive Order 13211: Actions Concerning Regulations That 
+Significantly Affect Energy Supply, Distribution or Use
+
+    This action is not subject to Executive Order 13211 (66 FR 28355) 
+(May 22, 2001) because it is not a significant regulatory action under 
+Executive Order 12866.
+
+J. National Technology Transfer Advancement Act (NTTAA)
+
+    This action does not involve technical standards that would require 
+Agency consideration under NTTAA section 12(d), 15 U.S.C. 272.
+
+K. Congressional Review Act (CRA)
+
+    This action is subject to the CRA, 5 U.S.C. 801 et seq., and EPA 
+will submit a rule report to each House of the Congress and to the 
+Comptroller General of the United States. This action not a ``major 
+rule'' as defined by 5 U.S.C. 804(2).
+
+List of Subjects in 40 CFR Part 180
+
+    Environmental protection, Administrative practice and procedure, 
+Agricultural commodities, Pesticides and pests, Reporting and 
+recordkeeping requirements.
+
+
+[[Page 55486]]
+
+
+    Dated: August 25, 2026.
+Charles Smith,
+Director, Registration Division, Office of Pesticide Programs.
+
+    For the reasons stated in the preamble, 40 CFR chapter I is amended 
+as follows:
+
+PART 180--TOLERANCES AND EXEMPTIONS FOR PESTICIDE CHEMICAL RESIDUES 
+IN FOOD
+
+0
+1. The authority citation for part 180 continues to read as follows:
+
+    Authority: 21 U.S.C. 321(q), 346a and 371.
+
+
+0
+2. Amend Sec.  180.920, by adding an entry for ``Alpha-d-
+glucopyranoside, beta-d-fructofuranosyl, mixed palmitates and stearates 
+(CAS Reg. No. 84066-95-5)'' in alphabetical order to Table 1 to read as 
+follows:
+
+
+Sec.  180.920   Inert ingredients used pre-harvest; exemptions from the 
+requirement of a tolerance.
+
+* * * * *
+
+                       Table 1--to Sec.   180.920
+------------------------------------------------------------------------
+       Inert ingredients               Limits               Uses
+------------------------------------------------------------------------
+ 
+                              * * * * * * *
+Alpha-d-glucopyranoside, beta-d- No more than 12%   Surfactant.
+ fructofuranosyl, mixed           of the final
+ palmitates and stearates (CAS    pesticide
+ Reg. No. 84066-95-5).            formulation.
+ 
+                              * * * * * * *
+------------------------------------------------------------------------
+
+[FR Doc. 2026-17579 Filed 8-27-26; 8:45 am]
+BILLING CODE 6560-50-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

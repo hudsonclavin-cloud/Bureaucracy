@@ -1,0 +1,226 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 181 (Monday, September 21, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 181 (Monday, September 21, 2026)]
+[Notices]
+[Pages 59810-59812]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-19208]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+NATIONAL MEDIATION BOARD
+
+
+Notice of Proposed Information Collection Request
+
+AGENCY: National Mediation Board.
+
+ACTION: Notice.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The National Mediation Board (NMB) invites comments on the 
+proposed information collection request as required by the Paperwork 
+Reduction Act of 1995. The NMB is seeking the reinstatement, with non-
+substantive change, of a previously approved collection of information, 
+entitled ``Application for Mediation Services.'' The change to the 
+information collection is a non-substantive one related to the change 
+in the agency's Washington, DC headquarters address, which was 
+effective August 1, 2026. This notice allows for 60 days for public 
+comments.
+
+DATES: Comments are due by November 20, 2026.
+
+ADDRESSES: Requests for copies of the proposed information collection 
+request should be directed by email (the preferred method) to NMB 
+Program Management Specialist Keaira Butler at <a href="/cdn-cgi/l/email-protection#335856525a41521d5146475f5641735d5e511d545c45"><span class="__cf_email__" data-cfemail="f79c92969e8596d99582839b9285b7999a95d9909881">[email&#160;protected]</span></a>, 
+or mailed to Keaira Butler at National Mediation Board, Office of Legal 
+Affairs, P.O. Box 23300, Washington, DC 20026. Please specify the 
+complete title of the information collection when making your request.
+    Comments on the proposed information collection request should be 
+directed by email (the preferred method) to NMB Counsel John Gross at 
+<a href="/cdn-cgi/l/email-protection#b5d2c7dac6c6f5dbd8d79bd2dac3"><span class="__cf_email__" data-cfemail="0166736e7272416f6c632f666e77">[email&#160;protected]</span></a>, or by mail to John Gross at National Mediation Board, 
+Office of Legal Affairs, P.O. Box 23300, Washington, DC 20026.
+
+FOR FURTHER INFORMATION CONTACT: John Gross, Counsel, National 
+Mediation Board, National Mediation Board, Office of Legal Affairs, 
+P.O. Box 23300, Washington, DC 20026; telephone number: 202-815-1647; 
+email address: <a href="/cdn-cgi/l/email-protection#27405548545467494a4509404851"><span class="__cf_email__" data-cfemail="e88f9a879b9ba886858ac68f879e">[email&#160;protected]</span></a>.
+
+SUPPLEMENTARY INFORMATION: Section 3506 of the Paperwork Reduction Act 
+of
+
+[[Page 59811]]
+
+1995 (U.S.C. Chapter 35) requires that the Office of Management and 
+Budget (OMB) provide interested Federal agencies and the public an 
+early opportunity to comment on information collection requests. OMB 
+may amend or waive the requirement for public consultation to the 
+extent that public participation in the approval process would defeat 
+the purpose of the information collection, violate State or Federal 
+law, or substantially interfere with any agency's ability to perform 
+its statutory obligations. The NMB publishes that notice containing 
+proposed information collection requests prior to submission of these 
+requests to OMB. Each proposed information collection contains the 
+following: (1) Type of review requested, e.g. new, revision extension, 
+existing or reinstatement; (2) Title; (3) Summary of the collection; 
+(4) Description of the need for, and proposed use of, the information; 
+(5) Respondents and frequency of collection; and (6) Reporting and/or 
+Record keeping burden. OMB invites public comment.
+    Currently, the NMB is soliciting comments concerning the proposed 
+reinstatement, with non-substantive change, of a previously approved 
+collection of information, entitled ``Application for Mediation 
+Services,'' and is interested in public comment addressing the 
+following issues: (1) Is this collection necessary to the proper 
+functions of the agency; (2) will this information be processed and 
+used in a timely manner; (3) is the estimate of burden accurate; (4) 
+how might the agency enhance the quality, utility, and clarity of the 
+information to be collected; and (5) how might the agency minimize the 
+burden of this collection on the respondents, including through the use 
+of information technology.
+    Title of Collection: Application for Mediation Services.
+    OMB Control Number: 3140-0002.
+    Type of Review: Reinstatement, with non-substantive change, of a 
+previously approved collection of information.
+    Affected Public: Carrier and Labor Union Officials, and employees 
+of railroads and airlines.
+    Frequency of Collection: On occasion.
+    Respondent's Obligation: Voluntary.
+    Estimated Reporting and Recordkeeping Hour Burden:
+    Responses: 25 annually.
+    Burden Hours: 6.25.
+    1. Abstract: Section 5, First, of the Railway Labor Act (RLA), 45 
+U.S.C. 155, First, provides that both, or either, of the parties to a 
+labor/management dispute may invoke the mediation services of the NMB. 
+Congress has determined that it is in the nation's best interest to 
+provide for governmental mediation as the primary dispute resolution 
+mechanism to resolve collective bargaining disputes in the railroad and 
+airline industries. The NMB's duties do not arise until its services 
+have been invoked by a party to the dispute. The RLA is silent as to 
+how the invocation of the mediation services of the NMB is to be 
+accomplished and the NMB has not promulgated regulations requiring any 
+specific vehicle. Nonetheless, 29 CFR 1203.1, provides that 
+applications for the mediation services of the NMB under Section 5, 
+First, of the RLA, may be made on printed forms secured from the NMB or 
+on the internet at <a href="http://www.nmb.gov">http://www.nmb.gov</a>. This section of the regulations 
+provides that applications should be submitted in duplicate, show the 
+exact nature of the dispute, the number of employees involved, name of 
+the carrier and name of the labor organization, date of agreement 
+between the parties, date and copy of notice served by the invoking 
+party to the other and date of final conference between the parties. 
+The application should be signed by the highest officer of the carrier 
+who has been designated to handle disputes under the RLA or by the 
+chief executive of the labor organization, whichever party files the 
+application.
+    2. The reinstatement of this form is necessary considering the 
+information provided by the parties is used by the NMB to structure a 
+mediation process that will be productive to the parties and result in 
+a settlement, hopefully, without resort to a strike or lockout. The NMB 
+has been very successful in resolving labor disputes in the railroad 
+and airline industries. Historically, approximately 97 percent of all 
+NMB mediation cases have been successfully resolved without 
+interruption to public transportation services. This success ratio 
+would possibly be reduced if the NMB was unable to collect the brief 
+information it does on the Application for Mediation Services.
+    3. There is no improved technological method for obtaining this 
+information. The burden on the parties is minimal in completing the 
+one-page Application for Mediation Services.
+    4. There is no duplication in obtaining this information. The 
+information sought in the Application for Mediation Services constantly 
+changes and is known at any given time only to the labor and management 
+parties involved. Thus, there is no similar information available 
+elsewhere.
+    5. This collection does not impact small businesses or other small 
+entities.
+    6. Although the Application for Mediation Services is required by 
+29 CFR 1203.1, parties determine when to submit the applications. The 
+NMB has no ability to control the frequency of applications or the 
+technical or legal obstacles, which would reduce the burden.
+    7. The information requested by the NMB is consistent with the 
+general information collection guidelines of 5 CFR 1320.6 and 5 CFR 
+1320.8(b)(3). The NMB has no ability to control the data provided or 
+timing of the invocation. The burden on the parties is minimal in 
+completing the Application for Mediation Services.
+    8. No payments or gifts have been provided by the NMB to any 
+respondents of the form.
+    9. There are no questions of a sensitive nature on the form.
+    10. The total time burden on respondents is 6.25 hours annually--
+this is the time required to collect information. After consulting with 
+a sample of people involved with the collection of this information, 
+the time to complete this information collection is estimated to 
+average 15 minutes per response, including gathering the data needed 
+and completion and review of the information.
+    Number of respondents per year: 25.
+    Estimated time per respondent: 15 minutes.
+    Total Burden hours per year: 6.25 (25 x .25 hours).
+    11. The total collection and mail cost burden on respondents is 
+estimated at $205.60 annually ($201.50 time cost burden + $4.10 mail 
+cost burden).
+    a. The respondents will not incur any capital costs or start up 
+costs for this collection.
+    b. Cost burden on respondents--detail:
+    The total time burden annual cost is $201.50.
+    Time Burden Basis: The total hourly burden per year, upon 
+respondents, is 6.25.
+    Staff cost = $201.50.
+    $32.24 per hour--based on mid level clerical salary.
+    $32.24 x 6.25 hours per year = $201.50.
+    We are estimating that a mid-level clerical person, with an average 
+salary of $32.24 per hour, will be completing the Application for 
+Mediation Services form. The total burden is estimated at 6.25 hours, 
+therefore, the total time burden cost is estimated at $201.50 per year.
+    The total annual mailing cost to respondents is $4.10.
+    Number of applications mailed by
+    Respondents per year: 5 (The NMB receives 5 or fewer by regular 
+mail each year; the vast majority are sent to the NMB by email.)
+
+[[Page 59812]]
+
+    Total estimated cost: $4.10 (5 x .82 stamp).
+    The collection of this information is not mandatory; it is a 
+voluntary request from carrier and union officials and airline and 
+railroad carrier employees seeking to invoke mediation services. The 
+NMB will send the form to the carriers and labor organizations upon 
+request. The form is also available on the internet at <a href="http://www.nmb.gov">http://www.nmb.gov</a>, which is the primary source of the form.
+    12. The total annualized Federal cost is $340.00. This cost 
+represents the processing cost of the applications once they are 
+received by the NMB. There are no printing and mailing costs. (The NMB 
+has not received any requests to print and mail a form for a number of 
+years.) The completed applications are maintained by the Office of 
+Mediation Services.
+    a. Processing Cost = $340.00.
+    Basis (processing cost): Mediation is requested approximately 25 
+times per year and it takes approximately 20 minutes to process each 
+application.
+    Staff Cost = $340.00.
+    $.68 per minute (GS 11 Step 1 base hourly rate of $40.94 per hr. / 
+60).
+    $.68 x 20 minutes per application = $13.60.
+    $13.60 x 25 times per year = $340.00.
+    13. Item 13--no change in annual reporting and recordkeeping hour 
+burden.
+    14. The information collected by the application will not be 
+published.
+    15. The NMB will display the OMB expiration date on the form.
+    16(a)--the form does not reduce the burden on small entities; 
+however, the burden is minimized and voluntary.
+    16(b)--the form does not indicate the retention period for record 
+keeping requirements.
+    16(c)--not applicable, the form is not part of a statistical 
+survey.
+
+    Dated: September 16, 2026.
+Michael Jerger,
+Chief Financial Officer, Acting Director of Administration, National 
+Mediation Board.
+[FR Doc. 2026-19208 Filed 9-18-26; 8:45 am]
+BILLING CODE 7550-01-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

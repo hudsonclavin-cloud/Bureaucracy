@@ -1,0 +1,162 @@
+<html>
+<head>
+<title>Federal Register, Volume 71 Issue 54 (Tuesday, March 21, 2006)</title>
+</head>
+<body><pre>
+[Federal Register Volume 71, Number 54 (Tuesday, March 21, 2006)]
+[Notices]
+[Pages 14187-14188]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 06-2683]
+
+
+-----------------------------------------------------------------------
+
+DEPARTMENT OF DEFENSE
+
+Defense Information Systems Agency
+
+
+Privacy Act of 1974; System of Records
+
+AGENCY: Defense Information Systems Agency, DoD.
+
+ACTION: Notice to add a system of records.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The Defense Information Systems Agency proposes to add a 
+system of records notice to its inventory of record systems subject to 
+the Privacy Act of 1974 (5 U.S.C. 552a), as amended.
+
+DATES: This proposed action will be effective without further notice on 
+April 20, 2006 unless comments are received which result in a contrary 
+determination.
+
+ADDRESSES: Send comments to the Defense Information Systems Agency, 
+ATTN: Records Manager (SPI21), P.O. Box 4520, Arlington, VA 22204-4502.
+
+FOR FURTHER INFORMATION CONTACT: Ms. Jeanette Jenkins at (703) 681-
+2103.
+
+SUPPLEMENTARY INFORMATION: The Defense Information Systems Agency 
+systems of records notices subject to the Privacy Act of 1974, (5 
+U.S.C. 552a), as amended, have been published in the Federal Register 
+and are available from the address above.
+    The proposed system report, as required by 5 U.S.C. 552a(r) of the 
+Privacy Act, was submitted on March 9, 2006, to the House Committee on 
+Government Reform, the Senate Committee on Homeland Security and 
+Governmental Affairs, and the Office of Management and Budget (OMB) 
+pursuant to paragraph 4c of Appendix I to OMB Circular No. A-130, 
+`Federal Agency Responsibilities for Maintaining Records About 
+Individuals,' dated February 8, 1996, (61 FR 6427, February 20, 1996).
+
+    Dated: March 15, 2006.
+L.M. Bynum,
+OSD Federal Register Liaison Officer, Department of Defense.
+K890.09
+
+System name:
+    Enterprise Data and Global Exchange (EDGE) Knowledge Management 
+Portal.
+
+System location:
+    Defense Information Systems Agency (DISA), ATTN: SPI21, P.O. Box 
+4502, Arlington, VA 22204-4502.
+
+Categories of individuals covered by the system:
+    DISA Civilian employees, Military personnel assigned or detailed to 
+DISA, and Contractors assigned to all DISA elements, including DISA 
+field activities.
+
+Categories of records in the system:
+    Individual's name, duty title, grade, social security number, 
+address and phone number.
+
+Authority for maintenance of the system:
+    5 U.S.C. 301, Departmental Regulation; 10 U.S.C. chp 8; DoD 
+Directive 5105.19, Defense Information Systems Agency (DISA); E.O. 9397 
+(SSN).
+
+Purpose(s):
+    The purpose of this system is to provide valid DISA users 
+centralized access to agency information, data and applications via 
+web-based technology.
+    Routine uses of records maintained in the system, including 
+categories of users and the purposes of such uses:
+    In addition to those disclosures generally permitted under 5 U.S.C. 
+552a(b) of the Privacy Act, these records or information contained 
+therein may specifically be disclosed outside the DoD as a routine use 
+pursuant to 5 U.S.C. 552a(b)(3) as follows:
+    The `Blanket Routine Uses' set forth at the beginning of the DISA's 
+compilation of systems of records notices apply to this system.
+    Policies and practices for storing, retrieving, accessing, 
+retaining, and disposing of records in the system:
+
+Storage:
+    Records are stored in an encrypted format and maintained on 
+magnetic tapes and disks, and are housed in a controlled computer media 
+library.
+
+Retrievability:
+    Records are retrieved by name and Social Security Number.
+
+[[Page 14188]]
+
+Safeguards:
+    Buildings are secured by guards during non-duty hours. Access to 
+records is controlled by management personnel, who are responsible for 
+maintaining the confidentiality of the records and using the 
+information contained therein only for official purposes. Access to 
+personal information is restricted to those who require the records in 
+the performance of their official duties. Access to personal 
+information is further restricted by the use of passwords.
+
+Retention and disposal:
+    Records are continuously updated. Obsolete computer records are 
+erased or overwritten.
+
+System manager(s) and address:
+    Records Manager, SPI21, Defense Information Systems Agency, P.O. 
+Box 4520, Arlington, VA 22204-4502.
+
+Notification procedure:
+    Individuals seeking to determine whether information about 
+themselves is contained in this system of records should address 
+written inquiries to Records Manager, SPI21, Defense Information 
+Systems Agency, P.O. Box 4520, Arlington, VA 22204-4502.
+    The individual should make reference to the office where he/she is/
+was assigned or affiliated and include address and telephone number 
+applicable to the period during which the record was maintained. Social 
+Security Number should be included in the inquiry for positive 
+identification.
+
+Record access procedures:
+    Individuals seeking access to information about themselves 
+contained in this system of records should address written inquiries to 
+Records Manager, SPI21, Defense Information Systems Agency, P.O. Box 
+4520, Arlington, VA 22204-4502.
+    The individual should make reference to the office where he/she is/
+was assigned or affiliated and include address and telephone number 
+applicable to the period during which the record was maintained. Social 
+Security Number should be included in the inquiry for positive 
+identification.
+
+Contesting record procedures:
+    DISA's rules for accessing records, for contesting contents and 
+appealing initial agency determinations are published in DISA 
+Instruction 210-225-2 at 32 CFR part 316 or may be obtained from the 
+system manager.
+
+Record source categories:
+    Individuals and Manpower Systems (MPS) records.
+
+Exemptions claimed for the system:
+    None.
+
+[FR Doc. 06-2683 Filed 3-20-06; 8:45 am]
+BILLING CODE 5001-06-M
+
+
+</pre></body>
+</html>

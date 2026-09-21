@@ -1,0 +1,360 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 174 (Thursday, September 10, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 174 (Thursday, September 10, 2026)]
+[Rules and Regulations]
+[Pages 57513-57515]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-18478]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+FEDERAL COMMUNICATIONS COMMISSION
+
+47 CFR Part 64
+
+[CG Docket No. 03-123, GN Docket No. 25-133; FCC 26-56; FR ID 366314]
+
+
+Telecommunications Relay Service ASCII Format Requirement
+
+AGENCY: Federal Communications Commission.
+
+ACTION: Final rule.
+
+-----------------------------------------------------------------------
+
+SUMMARY: In this document, the Federal Communications Commission 
+(Commission) amends its rules to eliminate the requirement that Text 
+Telephone (TTY)-based Telecommunications Relay Services (TRS) be 
+capable of communicating in the American Standard Code for Information 
+Interchange (ASCII) format. By removing this outdated regulatory 
+mandate, the Commission relieves TRS providers of the obligation to 
+maintain costly and obsolete ASCII-compatible hardware and software 
+systems. Eliminating this requirement will reduce inefficiencies, 
+preserve the integrity of the TRS Fund, and allow providers to redirect 
+resources toward modern relay technologies, all without adversely 
+impacting functional equivalence for consumers who rely on TTY-based 
+TRS.
+
+DATES: Effective October 13, 2026.
+
+FOR FURTHER INFORMATION CONTACT: Joshua Mendelsohn, Disability Rights 
+Office, Consumer and Governmental Affairs Bureau, at (202) 559-7304 or 
+<a href="/cdn-cgi/l/email-protection#2963465a415c4807644c474d4c455a464147694f4a4a074e465f"><span class="__cf_email__" data-cfemail="bff5d0ccd7cade91f2dad1dbdad3ccd0d7d1ffd9dcdc91d8d0c9">[email&#160;protected]</span></a>.
+
+SUPPLEMENTARY INFORMATION: This is a summary of the Commission's 
+Telecommunications Relay Services and Speech-to-Speech Services for 
+Individuals with Hearing and Speech Disabilities and Delete, Delete, 
+Delete, Report and Order (Order) in CG Docket No. 03-123 and GN Docket 
+No. 25-133, document FCC 26-56, adopted August 21, 2026 and released 
+August 25, 2026. The full text of this document is available online at 
+<a href="https://docs.fcc.gov/public/attachments/FCC-26-56A1.pdf">https://docs.fcc.gov/public/attachments/FCC-26-56A1.pdf</a>.
+    Paperwork Reduction Act: The Order does not contain new or modified 
+information collection requirements subject to the Paperwork Reduction 
+Act of 1995. In addition, therefore, it does not contain any new or 
+modified information collection burden for small business concerns with 
+fewer than 25 employees, pursuant to the Small Business Paperwork 
+Relief Act of 2002.
+    Congressional Review Act: The Commission has determined, and the 
+Administrator of the Office of Information and Regulatory Affairs, 
+Office of Management and Budget, concurs, that this rule is ``non-
+major'' under the Congressional Review Act, 5 U.S.C. 804(2). The 
+Commission sent a copy of the Order to Congress and the Government 
+Accountability Office pursuant to 5 U.S.C. 801(a)(1)(A).
+
+Synopsis
+
+    1. Title IV of the Americans with Disabilities Act of 1990 (ADA), 
+codified at section 225 of the Communications Act, requires the 
+Commission to ensure that TRS is available ``to the extent possible and 
+in the most efficient manner'' to enable people with hearing or speech 
+disabilities to communicate in a manner that is functionally equivalent 
+to voice communication service. 47 U.S.C. 225(a)(3), (b)(1). In 
+accordance with this directive, the Commission has adopted mandatory 
+minimum standards for TRS.
+    2. At that time, TTYs generally used the Baudot coding format, but 
+the ASCII format was widely used to transmit data between personal 
+computers over the telephone network. The Commission, believing that 
+ASCII was ``a superior technology'' that would eventually supplant 
+Baudot as the preferred format, required that TRS be able to transmit 
+in both ASCII and Baudot at any speed generally in use. Over the last 
+three decades, technological advancements have revolutionized the TRS 
+landscape, and introduced forms of non-TTY-based TRS that do not rely 
+on the ASCII and Baudot formats to transmit information.
+    3. Baudot remains the predominant TTY-based TRS format, currently 
+accounting for almost all TTY-based TRS communications. Recognizing the 
+obsolescence of the ASCII format, T-Mobile Accessibility (T-Mobile) 
+filed a Petition for Rulemaking in August 2022, requesting the 
+Commission to amend Sec.  64.604(b)(1) of its rules, to eliminate the 
+ASCII requirement. T-Mobile noted that ASCII-based TTY calls represent 
+a tiny fraction of its overall TRS call minutes, and that complying 
+with the requirement forces providers to incur unnecessary hardware 
+costs and hinders network upgrades. Following a June 2023 request from 
+T-Mobile for a temporary waiver of the rule, the Consumer and 
+Governmental Affairs Bureau (Bureau) granted a conditional two-year 
+waiver of the ASCII requirement to T-Mobile and Hamilton on November 
+22, 2024. On June 27, 2025, the Commission released a Notice of 
+Proposed Rulemaking (NPRM), published at 90 FR 164, August 27, 2025, 
+proposing to permanently delete the ASCII requirement from Sec.  
+64.604(b)(1) of the Commission's rules.
+    4. The Commission adopts its proposal to delete the requirement in 
+Sec.  64.604(b)(1) of its rules, 47 CFR 64.604(b)(1), that TTY-based 
+TRS support the ASCII format. The Commission also finds good cause to 
+eliminate the definition of ASCII from the Commission's TRS rules. The 
+record confirms that ASCII usage for TTY-based TRS is exceedingly small 
+and continues to shrink. Data provided in the NPRM indicated that in a 
+three-month period in 2022, total ASCII usage of TTY-based TRS did not 
+exceed 87 minutes, representing approximately 0.01 percent of total 
+TTY-based TRS minutes. Following waiver of the ASCII requirement in 
+November 2024, one TTY-based TRS provider reports that it has not had a 
+single request to have ASCII made available and the Commission has not 
+received any inquiries or complaints from consumers
+
+[[Page 57514]]
+
+regarding the availability of the ASCII-format.
+    5. Furthermore, the Commission concludes that there is no prospect 
+of a resurgence in ASCII usage. Stakeholders, including the 
+Telecommunications Equipment Distribution Program Association and the 
+National Association of State Relay Administrators, point out that 
+ASCII equipment is no longer commercially available, functional units 
+are increasingly difficult to locate, and the format is incompatible 
+with modern telephone networks. Because of these realities, the record 
+reflects unanimous support for the rule's elimination from both 
+providers and consumer advocacy groups that acknowledge the technology 
+is obsolete.
+    6. The Commission also deletes the second sentence of Sec.  
+64.604(b)(1) of the Commission's rules which currently states: ``Other 
+forms of TRS are not subject to this requirement.'' As noted in the 
+NPRM, because the first sentence of the revised provision explicitly 
+makes clear that the Baudot rule applies only to ``TTY-based relay 
+service,'' the second sentence is unnecessary surplusage.
+    7. Benefits and Costs. The record affirms the Commission's 
+tentative conclusion that the cost savings for TRS providers far 
+outweigh the negligible burdens of transitioning the few, if any, 
+remaining ASCII users. Maintaining the ASCII obligation imposes ongoing 
+software and network compatibility costs that yield no consumer benefit 
+and needlessly burden the TRS Fund. Removing this mandate allows 
+providers to redirect vital resources toward improving modern, widely 
+used relay technologies, such as Real-Time Text (RTT), Internet-
+Protocol Relay, and Video Relay Service. The Commission concludes that 
+eliminating this requirement provides administrative and financial 
+relief. By freeing providers from maintaining obsolete hardware 
+platforms, providers can more easily execute necessary network 
+upgrades.
+    8. The record demonstrates that the number of consumers impacted by 
+this change is effectively zero. To the extent any legacy users remain, 
+the record shows that the transition process will be seamless and 
+straightforward. Switching from ASCII to Baudot does not require the 
+purchase of new equipment; a TTY user will only need to change a 
+setting on the user's existing TTY device, because most TTYs 
+automatically default to Baudot unless specifically configured to 
+ASCII-only. Providers have affirmed their readiness to assist any 
+affected users to ensure a seamless migration to Baudot or other modern 
+platforms. Because users can transition simply by adjusting their 
+device settings, and providers will offer technical support, the 
+Commission finds that mandating providers to supply new Baudot devices 
+at their own expense is unnecessary.
+    9. The Commission concludes that eliminating the ASCII requirement 
+is a targeted, common-sense reform that modernizes TRS regulations. The 
+substantial benefits of reduced network complexity, hardware cost 
+savings, and the ability to invest in modern technologies unequivocally 
+outweigh the minimal costs of transitioning remaining ASCII users.
+    10. Deleting the Definition of ASCII. The Commission also deletes 
+the definition of ASCII from the TRS rules. Under the Administrative 
+Procedure Act, when an agency for good cause finds that notice and 
+public comment ``are impracticable, unnecessary, or contrary to the 
+public interest,'' it need not follow notice and comment procedures 
+before modifying or repealing rules. Prior notice and comment are 
+``unnecessary'' when ``the administrative rule is a routine 
+determination, insignificant in nature and impact, and inconsequential 
+to the industry and to the public.''
+    11. The definition of ASCII was only relevant to two provisions of 
+this subpart F in Part 64 of the Commission rules. First, Sec.  
+64.607(b)(2) of the Commission's rules, concerned the availability of 
+text telephones using ASCII, which the Commission eliminated by Direct 
+Final Rule. Second, in this item, the Commission deletes the only other 
+reference to ASCII. The Commission therefore finds good cause to 
+conclude that notice and comment procedures are unnecessary and would 
+not serve any useful purpose because the term ASCII no longer needs to 
+be defined in this portion of the rules and its deletion is 
+inconsequential.
+
+Final Regulatory Flexibility Analysis
+
+    12. As required by the Regulatory Flexibility Act of 1980, as 
+amended, the Commission incorporated an Initial Regulatory Flexibility 
+Analysis (IRFA) in its NPRM, released in June 2025. The Commission 
+sought written public comment on the proposals in the NPRM, including 
+comment on the IRFA. No comments were filed addressing the IRFA.
+
+Need for, and Objectives of, the Rules
+
+    13. In the Order, the Commission amends its rules to eliminate the 
+requirement that TTY-based relay service providers offer users the 
+service in the ASCII format, as it has become an outdated and 
+infrequently used format. TTY-based TRS is a text-based relay service. 
+To make a call, a TTY user calls a TRS center and types the number of 
+the person he or she wishes to call. A Communications Assistant at the 
+relay center then makes a voice telephone call to the other party to 
+the call, and relays the call back and forth between the parties by 
+speaking what a text user types, and typing what a voice telephone user 
+speaks.
+    14. In addition to the near-obsolescence of the ASCII format, the 
+Commission takes these steps because TTY users also have access to 
+Baudot format, which is more commonly used. At present, there are only 
+two providers of TTY-based telecommunications relay service, and usage 
+of ASCII-format TTY totaled less than 100 minutes during three months 
+in 2022, with less than 10 users placing calls in any month. Based on 
+these reports, it appears that total ASCII usage of TTY-based TRS was 
+limited to approximately 0.01% of total TTY-based TRS minutes for that 
+period, while Baudot format TTY would account for the remaining TTY-
+based TRS minutes. Furthermore, retaining the requirement to support 
+ASCII-format TTY-based TRS limits the ability of TTY-based TRS 
+providers to upgrade and improve their networks for delivery of 
+enhanced services. Eliminating the ASCII-support requirement will 
+ultimately benefit both TTY-based TRS users and providers by 
+facilitating network upgrades by providers while TTY-based TRS users 
+can continue communicating with Baudot-format TTY or other forms of 
+text-based TRS.
+
+Summary of Significant Issues Raised by Public Comments in Response to 
+the IRFA
+
+    15. No comments were filed addressing the impact of the proposed 
+rules on small entities.
+
+Response to Comments by the Chief Counsel for the Small Business 
+Administration Office of Advocacy (SBA)
+
+    16. The Chief Counsel did not file any comments in response to the 
+proposed rules in this proceeding.
+
+Description and Estimate of the Number of Small Entities to Which the 
+Rules Will Apply
+
+    17. The rules adopted in the Order will apply to small entities in 
+the industries identified in the chart below by their six-digit North 
+American Industry Classification System codes and corresponding SBA 
+size standard. Where available, the Commission also provides additional 
+information
+
+[[Page 57515]]
+
+regarding the number of potentially affected entities in the identified 
+industries below.
+
+----------------------------------------------------------------------------------------------------------------
+ Regulated industry (footnotes
+ specify potentially affected                       SBA size                        Total small
+  entities within a regulated     NAICS code        standard        Total firms        firms       % Small firms
+  industry where applicable)
+----------------------------------------------------------------------------------------------------------------
+All Other Telecommunications..          517810  $40 million.....           1,673           1,007           60.19
+----------------------------------------------------------------------------------------------------------------
+
+Description of Economic Impact and Projected Reporting, Recordkeeping 
+and Other Compliance Requirements for Small Entities
+
+    18. The changes made in the Order would not impose new or modified 
+reporting, recordkeeping, or other compliance obligations on certain 
+small entities that provide TTY-based TRS. Currently, there are only 
+two providers of TTY-based TRS. To facilitate a transition to TTY-based 
+TRS using the Baudot format, for consumers without access to broadband 
+services, the Commission sought comment on whether to require small and 
+other TTY-based TRS providers to provide information about State 
+equipment distribution programs that make Baudot-format TTY-devices 
+available, where available. It also sought comment on whether to 
+require TRS providers to make available a Baudot-format TTY device to 
+ASCII-format TTY users, without cost to the user. The Commission 
+considered requiring providers to issue free Baudot-compatible devices, 
+but the record demonstrated that switching from ASCII to Baudot does 
+not require new TTY equipment, a user need only change a setting on the 
+TTY device. After developing a record, the Commission determined that 
+no additional obligations needed to be placed on entities that provide 
+TTY-based TRS.
+
+Discussion of Steps Taken To Minimize the Significant Economic Impact 
+on Small Entities, and Significant Alternatives Considered
+
+    19. The amendment to the Commission's rules governing TRS is 
+designed to facilitate upgrades to providers' networks by eliminating 
+the requirement to support rarely-used ASCII format. This amendment 
+would only affect two TTY-based relay service providers and a handful 
+of ASCII-format TTY users, who account for a very small number of TTY-
+based TRS call minutes. The Commission considered requiring TRS 
+providers to incur the costs of making Baudot-format TTY devices 
+available given the small number of ASCII-format TTY users. However, 
+the record demonstrated that switching from ASCII to Baudot only 
+requires changing a device setting. By removing this ASCII mandate, 
+TTY-based TRS providers are relieved of the financial and operational 
+costs required to support obsolete technology, thereby facilitating 
+network upgrades without countervailing transition costs.
+
+Ordering Clauses
+
+    20. Pursuant to sections 1, 4(i), 4(j), and 225 of the 
+Communications Act of 1934, as amended, 47 U.S.C. 151, 154(i), 154(j), 
+225, that the Order is adopted, and the Commission's rules are amended.
+    21. The Order shall be effective October 13, 2026.
+    22. The Office of the Managing Director, Performance Evaluation and 
+Records Management, sent a copy of the Order in a report to be sent to 
+Congress and the Government Accountability Office pursuant to the 
+Congressional Review Act, 5 U.S.C. 801(a)(1)(A).
+    23. The Commission's Office of the Secretary, shall send a copy of 
+the Order, including the Final Regulatory Flexibility Analysis, to the 
+Chief Counsel for the SBA Office of Advocacy.
+
+List of Subjects in 47 CFR Part 64
+
+    Communications, Communications common carriers, Communications 
+equipment, Individuals with disabilities, Telecommunications.
+
+Federal Communications Commission.
+Marlene Dortch,
+Secretary.
+
+Final Rules
+
+    For the reasons discussed in the preamble, the Federal 
+Communications Commission amends 47 CFR part 64 as follows:
+
+PART 64--MISCELLANEOUS RULES RELATING TO COMMON CARRIERS
+
+0
+1. The authority citation for part 64 continues to read as follows:
+
+    Authority: 47 U.S.C. 151, 152, 154, 201, 202, 217, 218, 220, 
+222, 225, 226, 227, 227b, 228, 251(a), 251(e), 254(k), 255, 262, 
+276, 403(b)(2)(B), (c), 616, 620, 716, 1401-1473, unless otherwise 
+noted; Pub. L. 115-141, Div. P, sec. 503, 132 Stat. 348, 1091; Pub. 
+L. 117-338, 136 Stat. 6156.
+
+
+Sec.  64.601  [Amended]
+
+0
+2. Amend Sec.  64.601 by removing paragraph (a)(7), and redesignating 
+paragraphs (a)(8) through (a)(62) as paragraphs (a)(7) through (a)(61).
+
+0
+3. Amend Sec.  64.604 by revising paragraph (b)(1) to read as follows:
+
+
+Sec.  64.604  Mandatory minimum standards.
+
+* * * * *
+    (b) Technical Standards--(1) Baudot. TTY-based relay service shall 
+be capable of communicating with Baudot format.
+* * * * *
+[FR Doc. 2026-18478 Filed 9-9-26; 8:45 am]
+BILLING CODE 6712-01-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

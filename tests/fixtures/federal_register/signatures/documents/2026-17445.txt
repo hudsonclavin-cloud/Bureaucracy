@@ -1,0 +1,767 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 164 (Wednesday, August 26, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 164 (Wednesday, August 26, 2026)]
+[Rules and Regulations]
+[Pages 54941-54946]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-17445]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+NUCLEAR REGULATORY COMMISSION
+
+10 CFR Part 72
+
+[NRC-2026-2806]
+RIN 3150-AL72
+
+
+List of Approved Spent Fuel Storage Casks: TN Americas, LLC 
+Standardized NUHOMS[supreg] Horizontal Modular Storage System for 
+Irradiated Nuclear Fuel, Certificate of Compliance No. 1004, Renewed 
+Amendment No. 19
+
+AGENCY: Nuclear Regulatory Commission.
+
+ACTION: Direct final rule.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The U.S. Nuclear Regulatory Commission (NRC) is amending its 
+spent fuel storage regulations by revising the TN Americas, LLC 
+Standardized NUHOMS[supreg] Horizontal Modular Storage System for 
+Irradiated Nuclear Fuel listing within the ``List of approved spent 
+fuel storage casks'' to include Amendment No. 19 to Certificate of 
+Compliance (CoC) No. 1004. Amendment No. 19 revises the certificate of 
+compliance to provide for a 61BTH improved basket design using 
+staggered plates similar the 24PTH Type 3 basket approved in CoC 1004 
+Amendment 18 and similar to the EOS 37PTH and 89BTH baskets approved in 
+CoC 1042. This will simplify construction, reduce weight and improve 
+fabricability. Additional changes are proposed to address editorial 
+corrections, consistency, and terminology clarifications. The NRC is 
+referring to this amendment as ``Renewed Amendment No. 19'' because it 
+was submitted after the renewal of the TN Americas, LLC Standardized 
+NUHOMS Horizontal Modular Storage System for Irradiated Nuclear Fuel 
+Certificate of Compliance No. 1004 and, therefore, subject to the Aging 
+Management Program requirements of the renewed certificate.
+
+DATES: This direct final rule is effective November 9, 2026, unless 
+significant adverse comments are received by September 25, 2026. If 
+this direct final rule is withdrawn as a result of such comments, 
+timely notice of the withdrawal will be published in the Federal 
+Register. Comments received after this date will be considered if it is 
+practical to do so, but the NRC is able to ensure consideration only 
+for comments received on or before this date. Comments received on this 
+direct final rule will also be considered to be comments on a companion 
+proposed rule published in the Proposed Rules section of this issue of 
+the Federal Register.
+
+ADDRESSES: Submit your comments, identified by Docket ID NRC-2026-2806, 
+at <a href="https://www.regulations.gov">https://www.regulations.gov</a>. If your material cannot be submitted 
+using <a href="https://www.regulations.gov">https://www.regulations.gov</a>, call or email the individuals listed 
+in the FOR FURTHER INFORMATION CONTACT section of this document for 
+alternate instructions. Do not include any personally identifiable 
+information (such as name, address, or other contact information) or 
+confidential business information that you do not want publicly 
+disclosed. All comments are public records; they are publicly displayed 
+exactly as received, and will not be deleted, modified, or redacted. 
+Comments may be submitted anonymously.
+    Follow the search instructions on <a href="https://www.regulations.gov">https://www.regulations.gov</a> to 
+view public comments.
+    You can read a plain language description of this direct final rule 
+at <a href="https://www.regulations.gov/docket/NRC-2026-2806">https://www.regulations.gov/docket/NRC-2026-2806</a>. For additional 
+direction on obtaining information and submitting comments, see 
+``Obtaining Information and Submitting Comments'' in the SUPPLEMENTARY 
+INFORMATION section of this document.
+
+FOR FURTHER INFORMATION CONTACT: Heath Stroud, Office of Nuclear 
+Material Safety and Safeguards, telephone: 301-287-3664, email: 
+<a href="/cdn-cgi/l/email-protection#1058757164783e4364627f6574507e62733e777f66"><span class="__cf_email__" data-cfemail="561e3337223e780522243923321638243578313920">[email&#160;protected]</span></a>; and Tim Mossman, Office of Nuclear Material 
+Safety and Safeguards, telephone: 301-287-9100, email: 
+<a href="/cdn-cgi/l/email-protection#683c0105071c00114625071b1b05090628061a0b460f071e"><span class="__cf_email__" data-cfemail="2175484c4e5549580f6c4e52524c404f614f53420f464e57">[email&#160;protected]</span></a>. Both are staff of the U.S. Nuclear Regulatory 
+Commission, Washington, DC 20555-0001.
+
+SUPPLEMENTARY INFORMATION:
+
+Table of Contents
+
+I. Obtaining Information and Submitting Comments
+II. Rulemaking Procedure
+III. Background
+IV. Discussion of Changes
+V. Voluntary Consensus Standards
+
+[[Page 54942]]
+
+VI. Agreement State Compatibility
+VII. Plain Writing
+VIII. Environmental Assessment and Finding of No Significant Impact
+IX. Regulatory Planning and Review
+X. Paperwork Reduction Act Statement
+XI. Regulatory Flexibility Certification
+XII. Regulatory Analysis
+XIII. Backfitting and Issue Finality
+XIV. Congressional Review Act
+XV. Availability of Documents
+
+I. Obtaining Information and Submitting Comments
+
+A. Obtaining Information
+
+    Please refer to Docket ID NRC-2026-2806 when contacting the NRC 
+about the availability of information for this action. You may obtain 
+publicly available information related to this action by any of the 
+following methods:
+    <bullet> Federal Rulemaking Website: Go to <a href="https://www.regulations.gov">https://www.regulations.gov</a> and search for Docket ID NRC-2026-2806. Address 
+questions about NRC dockets to Helen Chang, telephone: 301-415-3228, 
+email: <a href="/cdn-cgi/l/email-protection#88c0ede4ede6a6cbe0e9e6efc8e6faeba6efe7fe"><span class="__cf_email__" data-cfemail="7e361b121b10503d161f10193e100c1d50191108">[email&#160;protected]</span></a>. For technical questions contact the 
+individuals listed in the FOR FURTHER INFORMATION CONTACT section of 
+this document.
+    <bullet> NRC's Agencywide Documents Access and Management System 
+(ADAMS): You may obtain publicly available documents online in the 
+ADAMS Public Documents collection at <a href="https://www.nrc.gov/reading-rm/adams.html">https://www.nrc.gov/reading-rm/adams.html</a>. To begin the search, select ``Begin ADAMS Public Search.'' 
+For problems with ADAMS, please contact the NRC's Public Document Room 
+(PDR) reference staff at 1-800-397-4209, at 301-415-4737, or by email 
+to <a href="/cdn-cgi/l/email-protection#49190d1b671b2c3a263c3b2a2c09273b2a672e263f"><span class="__cf_email__" data-cfemail="623226304c3007110d17100107220c10014c050d14">[email&#160;protected]</span></a>. For the convenience of the reader, 
+instructions about obtaining materials referenced in this document are 
+provided in the ``Availability of Documents'' section.
+    <bullet> NRC's PDR: The PDR, where you may examine and order copies 
+of publicly available documents, is open by appointment. To make an 
+appointment to visit the PDR, please send an email to 
+<a href="/cdn-cgi/l/email-protection#752531275b2710061a00071610351b07165b121a03"><span class="__cf_email__" data-cfemail="b7e7f3e599e5d2c4d8c2c5d4d2f7d9c5d499d0d8c1">[email&#160;protected]</span></a> or call 1-800-397-4209 or 301-415-4737, between 8 
+a.m. and 4 p.m. eastern time, Monday through Friday, except Federal 
+holidays.
+
+B. Submitting Comments
+
+    The NRC encourages electronic comment submission through the 
+Federal rulemaking website (<a href="https://www.regulations.gov">https://www.regulations.gov</a>). Please 
+include Docket ID NRC-2026-2806 in your comment submission.
+    The NRC cautions you not to include identifying or contact 
+information that you do not want to be publicly disclosed in your 
+comment submission. The NRC will post all comment submissions at 
+<a href="https://www.regulations.gov">https://www.regulations.gov</a> as well as enter the comment submissions 
+into ADAMS. The NRC does not routinely edit comment submissions to 
+remove identifying or contact information.
+    If you are requesting or aggregating comments from other persons 
+for submission to the NRC, then you should inform those persons not to 
+include identifying or contact information that they do not want to be 
+publicly disclosed in their comment submission. Your request should 
+state that the NRC does not routinely edit comment submissions to 
+remove such information before making the comment submissions available 
+to the public or entering the comment into ADAMS.
+
+II. Rulemaking Procedure
+
+    This rule is limited to the changes contained in Amendment No. 19 
+to Certificate of Compliance No. 1004 and does not include other 
+aspects of the TN Americas, LLC Standardized NUHOMS[supreg] Horizontal 
+Modular Storage System for Irradiated Nuclear Fuel system design. The 
+NRC is using the ``direct final rule procedure'' to issue this 
+amendment because it represents a limited and routine change to an 
+existing certificate of compliance that is expected to be non-
+controversial. Adequate protection of public health and safety 
+continues to be reasonably assured. The amendment to the rule will 
+become effective on November 9, 2026. However, if the NRC receives any 
+significant adverse comment on this direct final rule by September 25, 
+2026, then the NRC will publish a document that withdraws this action 
+and will subsequently address the comments received in a final rule as 
+a response to the companion proposed rule published in the Proposed 
+Rules section of this issue of the Federal Register or as otherwise 
+appropriate. In general, absent significant modifications to the 
+proposed revisions requiring republication, the NRC will not initiate a 
+second comment period on this action.
+    A significant adverse comment is a comment where the commenter 
+explains why the rule would be inappropriate, including challenges to 
+the rule's underlying premise or approach, or would be ineffective or 
+unacceptable without a change. A comment is adverse and significant if:
+    (1) The comment opposes the rule and provides a reason sufficient 
+to require a substantive response in a notice-and-comment process. For 
+example, a substantive response is required when:
+    (a) The comment causes the NRC to reevaluate (or reconsider) its 
+position or conduct additional analysis;
+    (b) The comment raises an issue serious enough to warrant a 
+substantive response to clarify or complete the record; or
+    (c) The comment raises a relevant issue that was not previously 
+addressed or considered by the NRC.
+    (2) The comment proposes a change or an addition to the rule, and 
+it is apparent that the rule would be ineffective or unacceptable 
+without incorporation of the change or addition.
+    (3) The comment causes the NRC to make a change (other than 
+editorial) to the rule, certificate of compliance, or technical 
+specifications.
+
+III. Background
+
+    Section 218(a) of the Nuclear Waste Policy Act of 1982, as amended, 
+requires that ``[t]he Secretary [of the Department of Energy] shall 
+establish a demonstration program, in cooperation with the private 
+sector, for the dry storage of spent nuclear fuel at civilian nuclear 
+power reactor sites, with the objective of establishing one or more 
+technologies that the [Nuclear Regulatory] Commission may, by rule, 
+approve for use at the sites of civilian nuclear power reactors 
+without, to the maximum extent practicable, the need for additional 
+site-specific approvals by the Commission.'' Section 133 of the Nuclear 
+Waste Policy Act states, in part, that ``[t]he Commission shall, by 
+rule, establish procedures for the licensing of any technology approved 
+by the Commission under Section 219(a) [sic: 218(a)] for use at the 
+site of any civilian nuclear power reactor.''
+    To implement this mandate, the Commission approved dry storage of 
+spent nuclear fuel in NRC-approved casks under a general license by 
+publishing a final rule that added a new subpart K in part 72 of title 
+10 of the Code of Federal Regulations (10 CFR) entitled ``General 
+License for Storage of Spent Fuel at Power Reactor Sites'' (55 FR 
+29181; July 18, 1990). This rule also established a new subpart L in 10 
+CFR part 72 entitled ``Approval of Spent Fuel Storage Casks,'' which 
+contains procedures and criteria for obtaining NRC approval of spent 
+fuel storage cask designs. The NRC subsequently issued a final rule on 
+December 22, 1994 (59 FR 65898) that approved the Standardized 
+NUHOMS[supreg] Horizontal Modular Storage System for Irradiated Nuclear 
+Fuel System design and added it to the list of NRC-approved cask 
+designs in Sec.  72.214 as Certificate of Compliance No.1004.
+
+[[Page 54943]]
+
+IV. Discussion of Changes
+
+    On November 5, 2024, and as supplemented on February 20, 2025, and 
+August 26, 2025, TN Americas, LLC submitted a request to the NRC to 
+amend Certificate of Compliance No. 1004 for the Standardized 
+NUHOMS[supreg] Horizontal Modular Storage System for Irradiated Nuclear 
+Fuel. Renewed Amendment No. 19 revises the certificate and technical 
+specifications to provide a 61BTH basket design using staggered plates 
+similar to the 24PTH Type 3 basket to simplify construction, reduce 
+weight, and improve fabricability; and to provide editorial 
+corrections, consistency and terminology clarifications for Updated 
+Final Safety Analysis Report Technical Specifications, Appendix A, B, 
+and C.
+    As documented in the preliminary safety evaluation report, the NRC 
+performed a safety evaluation of the proposed certificate of compliance 
+amendment request. The NRC determined that this amendment does not 
+reflect a significant change in design or fabrication of the cask. 
+Specifically, the NRC determined that the design of the cask would 
+continue to maintain confinement, shielding, and criticality control in 
+the event of each evaluated accident condition. In addition, any 
+resulting occupational exposure or offsite dose rates from the 
+implementation of Amendment No. 19 would remain well within the limits 
+specified by 10 CFR part 20, ``Standards for Protection Against 
+Radiation.'' Thus, the NRC found there will be no significant change in 
+the types or amounts of any effluent released, no significant increase 
+in the individual or cumulative radiation exposure, and no significant 
+increase in the potential for or consequences from radiological 
+accidents.
+    The NRC staff determined that the amended Standardized 
+NUHOMS[supreg] Horizontal Modular Storage System for Irradiated Nuclear 
+Fuel cask design, when used under the conditions specified in the 
+certificate of compliance, the technical specifications, and the NRC's 
+regulations, will meet the requirements of 10 CFR part 72; therefore, 
+adequate protection of public health and safety will continue to be 
+reasonably assured. When this direct final rule becomes effective, 
+persons who hold a general license under Sec.  72.210 may, consistent 
+with the license conditions under Sec.  72.212, load spent nuclear fuel 
+into Standardized NUHOMS[supreg] Horizontal Modular Storage System for 
+Irradiated Nuclear Fuel casks that meet the criteria of Amendment No. 
+19 to Certificate of Compliance No. 1004.
+
+V. Voluntary Consensus Standards
+
+    The National Technology Transfer and Advancement Act of 1995 (Pub. 
+L. 104-113) requires that Federal agencies use technical standards that 
+are developed or adopted by voluntary consensus standards bodies unless 
+the use of such a standard is inconsistent with applicable law or 
+otherwise impractical. In this direct final rule, the NRC revises the 
+Standardized NUHOMS[supreg] Horizontal Modular Storage System for 
+Irradiated Nuclear Fuel Cask System design listed in Sec.  72.214, 
+``List of approved spent fuel storage casks.'' This action does not 
+constitute the establishment of a standard that contains generally 
+applicable requirements.
+
+VI. Agreement State Compatibility
+
+    Under the ``Agreement State Program Policy Statement'' approved by 
+the Commission on October 2, 2017, and published in the Federal 
+Register on October 18, 2017 (82 FR 48535), this rule is classified as 
+Compatibility Category NRC--Areas of Exclusive NRC Regulatory 
+Authority. The NRC program elements in this category are those that 
+relate directly to areas of regulation reserved to the NRC by the 
+Atomic Energy Act of 1954, as amended, or the provisions of 10 CFR 
+chapter I. Therefore, compatibility is not required for program 
+elements in this category.
+
+VII. Plain Writing
+
+    The Plain Writing Act of 2010 (Pub. L. 111-274) requires Federal 
+agencies to write documents in a clear, concise, and well-organized 
+manner. The NRC has written this document to be consistent with the 
+Plain Writing Act as well as the Presidential Memorandum, ``Plain 
+Language in Government Writing,'' published June 10, 1998 (63 FR 
+31885).
+
+VIII. Environmental Assessment and Finding of No Significant Impact
+
+    Under the National Environmental Policy Act of 1969, as amended, 
+and the NRC's regulations in 10 CFR part 51, ``Environmental Protection 
+Regulations for Domestic Licensing and Related Regulatory Functions,'' 
+the NRC has determined that this direct final rule, if adopted, would 
+not be a major Federal action significantly affecting the quality of 
+the human environment and, therefore, an environmental assessment or 
+environmental impact statement is not required (per 10 CFR 
+51.22(a)(12)). The NRC has made a finding of no significant impact on 
+this basis.
+
+A. The Action
+
+    The action is to amend Sec.  72.214 to revise the TN Americas, LLC 
+Standardized NUHOMS[supreg] Horizontal Modular Storage System for 
+Irradiated Nuclear Fuel listing within the ``List of approved spent 
+fuel storage casks'' to include Amendment No. 19 to Certificate of 
+Compliance No. 1004.
+
+B. The Need for the Action
+
+    This direct final rule amends the certificate of compliance for the 
+TN Americas, LLC Standardized NUHOMS[supreg] Horizontal Modular Storage 
+System for Irradiated Nuclear Fuel design within the list of approved 
+spent fuel storage casks to allow power reactor licensees to store 
+spent fuel at reactor sites in casks with the approved modifications 
+under a general license. Specifically, Amendment No. 19 revises the 
+certificate of compliance as described in Section IV, ``Discussion of 
+Changes,'' of this document, for the use of the Standardized 
+NUHOMS[supreg] Horizontal Modular Storage System.
+
+C. Environmental Impacts of the Action
+
+    On July 18,1990 (55 FR 29181), the NRC issued an amendment to 10 
+CFR part 72 to provide for the storage of spent fuel under a general 
+license in cask designs approved by the NRC. The potential 
+environmental impact of using NRC-approved storage casks was analyzed 
+in the environmental assessment for the 1990 final rule. The 
+environmental assessment for this Amendment No. 19 tiers off of the 
+environmental assessment for the July 18, 1990, final rule. Tiering on 
+past environmental assessments is a standard process under the National 
+Environmental Policy Act of 1969, as amended.
+    The TN Americas, LLC Standardized NUHOMS[supreg] Horizontal Modular 
+Storage System for Irradiated Nuclear Fuel is designed to mitigate the 
+effects of design basis accidents that could occur during storage. 
+Design basis accidents account for human-induced events and the most 
+severe natural phenomena reported for the site and surrounding area. 
+Postulated accidents analyzed for an independent spent fuel storage 
+installation, the type of facility at which a holder of a power reactor 
+operating license would store spent fuel in casks in accordance with 10 
+CFR part 72, can include tornado winds and tornado-generated missiles, 
+a design basis earthquake, a design basis flood, an accidental cask 
+drop, lightning effects, fire, explosions, and other incidents.
+    This amendment does not reflect a significant change in design or
+
+[[Page 54944]]
+
+fabrication of the cask. Because there are no significant design or 
+process changes, any resulting occupational exposure or offsite dose 
+rates from the implementation of Amendment No. 19 would remain well 
+within the 10 CFR part 20 limits. The NRC has also determined that the 
+design of the cask as modified by this rule would maintain confinement, 
+shielding, and criticality control in the event of an accident. 
+Therefore, the proposed changes will not result in any radiological or 
+non-radiological environmental impacts that significantly differ from 
+the environmental impacts evaluated in the environmental assessment 
+supporting the July 18, 1990, final rule. There will be no significant 
+change in the types or significant revisions in the amounts of any 
+effluent released, no significant increase in the individual or 
+cumulative radiation exposures, and no significant increase in the 
+potential for, or consequences from, radiological accidents. The NRC 
+documented its safety findings in the preliminary safety evaluation 
+report.
+
+D. Alternative to the Action
+
+    The alternative to this action is to deny approval of Amendment No. 
+19 and not issue the direct final rule. Consequently, any 10 CFR part 
+72 general licensee that seeks to load spent nuclear fuel into The TN 
+Americas, LLC Standardized NUHOMS[supreg] Horizontal Modular Storage 
+System for Irradiated Nuclear Fuel in accordance with the changes 
+described in proposed Amendment No. 19 would have to request an 
+exemption from the requirements of Sec. Sec.  72.212 and 72.214. Under 
+this alternative, interested licensees would have to prepare, and the 
+NRC would have to review, a separate exemption request, thereby 
+increasing the administrative burden upon the NRC and the costs to each 
+licensee. The environmental impacts would be the same as the proposed 
+action.
+
+E. Alternative Use of Resources
+
+    Approval of Amendment No. 19 to Certificate of Compliance No. 1004 
+would result in no irreversible and irretrievable commitments of 
+Federal resources.
+
+F. Agencies and Persons Contacted
+
+    No agencies or persons outside the NRC were contacted in connection 
+with the preparation of this environmental assessment.
+
+G. Finding of No Significant Impact
+
+    The environmental impacts of the action have been reviewed under 
+the requirements in the National Environmental Policy Act of 1969, as 
+amended, and the NRC's regulations in subpart A of 10 CFR part 51, 
+``Environmental Protection Regulations for Domestic Licensing and 
+Related Regulatory Functions.'' Based on the foregoing environmental 
+assessment, the NRC concludes that this direct final rule, ``List of 
+Approved Spent Fuel Storage Casks: TN Americas LLC, Standardized 
+NUHOMS[supreg] Horizontal Modular Storage System for Irradiated Nuclear 
+Fuel, Certificate of Compliance No. 1004, Renewed Amendment No. 19,'' 
+will not have a significant effect on the human environment. Therefore, 
+the NRC has determined that an environmental impact statement is not 
+necessary for this direct final rule.
+
+IX. Regulatory Planning and Review
+
+    Executive Order (E.O.) 12866, as amended by E.O. 14215, provides 
+that the Office of Information and Regulatory Affairs (OIRA) will 
+determine whether a regulatory action is significant as defined by E.O. 
+12866 and will review significant regulatory actions. OIRA determined 
+that this direct final rule is not a significant regulatory action 
+under E.O. 12866.
+
+X. Paperwork Reduction Act Statement
+
+    This direct final rule does not contain any new or amended 
+collections of information subject to the Paperwork Reduction Act of 
+1995 (44 U.S.C. 3501 et seq.). Existing collections of information were 
+approved by the Office of Management and Budget, approval number 3150-
+0132.
+
+Public Protection Notification
+
+    The NRC may not conduct or sponsor, and a person is not required to 
+respond to, a request for information or an information collection 
+requirement unless the requesting document displays a currently valid 
+Office of Management and Budget control number.
+
+XI. Regulatory Flexibility Certification
+
+    Under the Regulatory Flexibility Act of 1980 (5 U.S.C. 605(b)), the 
+NRC certifies that this direct final rule will not, if issued, have a 
+significant economic impact on a substantial number of small entities. 
+This direct final rule affects only nuclear power plant licensees and 
+TN Americas LLC. These entities do not fall within the scope of the 
+definition of small entities set forth in the Regulatory Flexibility 
+Act or the size standards established by the NRC (Sec.  2.810).
+
+XII. Regulatory Analysis
+
+    On July 18, 1990 (55 FR 29181), the NRC issued an amendment to 10 
+CFR part 72 to provide for the storage of spent nuclear fuel under a 
+general license in cask designs approved by the NRC. Any nuclear power 
+reactor licensee can use NRC-approved cask designs to store spent 
+nuclear fuel if (1) it notifies the NRC in advance; (2) the spent fuel 
+is stored under the conditions specified in the cask's certificate of 
+compliance; and (3) the conditions of the general license are met. A 
+list of NRC-approved cask designs is contained in Sec.  72.214. On 
+December 22, 1994 (59 FR 65898), the NRC issued an amendment to 10 CFR 
+part 72 that approved Standardized NUHOMS[supreg] Horizontal Modular 
+Storage System for Irradiated Nuclear Fuel by adding it to the list of 
+NRC-approved cask designs in Sec.  72.214.
+    On November 5, 2024, and as supplemented on February 20, 2025, and 
+August 26, 2025, TN Americas, LLC submitted a request to amend 
+Certificate of Compliance No. 1004 for the Standardized NUHOMS[supreg] 
+Horizontal Modular Storage System for Irradiated Nuclear Fuel as 
+described in Section IV, ``Discussion of Changes,'' of this document.
+    The alternative to this action is to withhold approval of Renewed 
+Amendment No. 19 and to require any 10 CFR part 72 general licensee 
+seeking to load spent nuclear fuel into the TN Americas, LLC 
+Standardized NUHOMS[supreg] Horizontal Modular Storage System for 
+Irradiated Nuclear Fuel under the changes described in Renewed 
+Amendment No. 19 to request an exemption from the requirements of 
+Sec. Sec.  72.212 and 72.214. Under this alternative, each interested 
+10 CFR part 72 licensee would have to prepare, and the NRC would have 
+to review, a separate exemption request, thereby increasing the 
+administrative burden upon the NRC and the costs to each licensee.
+    Approval of this direct final rule is consistent with previous NRC 
+actions. Further, as documented in the preliminary safety evaluation 
+report and environmental assessment, this direct final rule will have 
+no adverse effect on public health and safety or the environment. This 
+direct final rule has no significant identifiable impact or benefit on 
+other government agencies. Based on this regulatory analysis, the NRC 
+concludes that the requirements of this direct final rule are 
+commensurate with the NRC's responsibilities for public health and 
+safety and the common defense and security. No other
+
+[[Page 54945]]
+
+available alternative is believed to be as satisfactory; therefore, 
+this action is recommended.
+
+XIII. Backfitting and Issue Finality
+
+    The NRC has determined that the backfit rule (Sec.  72.62) does not 
+apply to this direct final rule. Therefore, a backfit analysis is not 
+required. This direct final rule revises Certificate of Compliance No. 
+1004 for the TN Americas, LLC Standardized NUHOMS[supreg] Horizontal 
+Modular Storage System for Irradiated Nuclear Fuel, as currently listed 
+in Sec.  72.214. The revision consists of the changes in Amendment No. 
+19 previously described, as set forth in the revised certificate of 
+compliance and technical specifications.
+    Amendment No. 19 to Certificate of Compliance No. 1004 for the TN 
+Americas, LLC Standardized NUHOMS[supreg] Horizontal Modular Storage 
+System for Irradiated Nuclear Fuel was initiated by TN Americas, LLC 
+and was not submitted in response to new NRC requirements, or an NRC 
+request for amendment. Amendment No. 19 applies only to new casks 
+fabricated and used under Amendment No. 19. These changes do not affect 
+existing users of the TN Americas, LLC Standardized NUHOMS[supreg] 
+Horizontal Modular Storage System for Irradiated Nuclear Fuel, and the 
+current Amendment No. 18 continues to be effective for existing users. 
+While current users of this storage system may comply with the new 
+requirements in Amendment No. 19, this would be a voluntary decision on 
+the part of current users.
+    For these reasons, Amendment No. 19 to Certificate of Compliance 
+No. 1004 does not constitute backfitting under Sec.  72.62 or Sec.  
+50.109(a)(1), or otherwise represent an inconsistency with the issue 
+finality provisions applicable to combined licenses in 10 CFR part 52. 
+Accordingly, the NRC has not prepared a backfit analysis for this 
+rulemaking.
+
+XIV. Congressional Review Act
+
+    This direct final rule is not a rule as defined in the 
+Congressional Review Act.
+
+XV. Availability of Documents
+
+    The documents identified in the following table are available to 
+interested persons as indicated.
+
+------------------------------------------------------------------------
+                                       ADAMS Accession No./ web link/
+             Document                     Federal Register citation
+------------------------------------------------------------------------
+Proposed NUHOMS 1004 Amendment No.  ML26103A253
+ 19 Certificate of Compliance.
+Proposed NUHOMS 1004 Amendment No.  ML26103A254
+ 19 Technical Specification
+ Appendix A.
+Proposed NUHOMS 1004 Amendment No.  ML26103A255
+ 19 Technical Specification
+ Appendix B Table of Contents.
+Proposed NUHOMS 1004 Amendment No.  ML26103A256
+ 19 Technical Specification
+ Appendix B Text.
+Proposed NUHOMS 1004 Amendment No.  ML26103A257
+ 19 Technical Specification
+ Appendix B Tables.
+Proposed NUHOMS 1004 Amendment No.  ML26103A258
+ 19 Technical Specification
+ Appendix B Figures.
+Proposed NUHOMS 1004 Amendment No.  ML26103A259
+ 19 Technical Specification
+ Appendix C.
+Proposed NUHOMS 1004 Amendment No.  ML26103A252
+ 19 Safety Evaluation Report.
+Environmental Assessment for        ML051230231
+ Proposed Rule Entitled, ``Storage
+ of Spent Nuclear Fuel in NRC-
+ Approved Storage Casks at Nuclear
+ Power Reactor Sites.'' (1989).
+``Environmental Assessment and      ML100710441
+ Finding of No Significant Impact
+ for the Final Rule Amending 10
+ CFR Part 72 License and
+ Certificate of Compliance Terms''
+ (2010).
+Generic Environmental Impact        ML14198A440 (package).
+ Statement for Continued Storage
+ of Spent Nuclear Fuel: Final
+ Report (NUREG-2157, Volumes 1 and
+ 2) (2014).
+Application for Amendment 19 to     ML24310A095 (package).
+ Standardized NUHOMS[supreg]
+ Certificate of Compliance No.
+ 1004 for Spent Fuel Storage
+ Casks, Revision 0 (Docket No. 72-
+ 1004), November 5, 2024.
+Response to Request for             ML25051A273
+ Supplemental Information--
+ Application for Amendment 19 to
+ Standardized NUHOMS[supreg]
+ Certificate of Compliance No.
+ 1004 for Spent Fuel Storage
+ Casks, Revision 1 (Docket No. 72-
+ 1004, CAC No. 001028, EPID: L-
+ 2024-LLA-0142), February 20, 2025.
+Response to Request for Additional  ML25238A033
+ Information--Application for
+ Amendment 19 to Standardized
+ NUHOMS[supreg] Certificate of
+ Compliance No. 1004 for Spent
+ Fuel Storage Casks, Revision 3
+ (Docket No. 72-1004, CAC No.
+ 001028, EPID: L-2024-LLA-0142),
+ August 26, 2025.
+Plain Language in Government        63 FR 31885
+ Writing, dated June 10, 1998.
+Storage of Spent Fuel In NRC-       55 FR 29181
+ Approved Storage Casks at Power
+ Reactor Sites: Final Rule, dated
+ July 18, 1990.
+List of Approved Spent Fuel         59 FR 65898
+ Storage Casks: TN Americas LLC,
+ NUHOMS[supreg] Horizontal Modular
+ Storage System for Irradiated
+ Nuclear Fuel, Certificate of
+ Compliance No. 1004: Direct Final
+ Rule, dated December 22, 1994.
+------------------------------------------------------------------------
+
+    The NRC may post materials related to this document, including 
+public comments, on the Federal rulemaking website at <a href="https://www.regulations.gov">https://www.regulations.gov</a> under Docket ID NRC-2026-2806. In addition, the 
+Federal rulemaking website allows members of the public to receive 
+alerts when changes or additions occur in a docket folder. To 
+subscribe: (1) navigate to the docket folder (NRC-2026-2806); (2) click 
+the ``Subscribe'' link; and (3) enter an email address and click on the 
+``Subscribe'' link.
+
+List of Subjects in 10 CFR Part 72
+
+    Administrative practice and procedure, Hazardous waste, Indians, 
+Intergovernmental relations, Nuclear energy, Penalties, Radiation 
+protection, Reporting and recordkeeping requirements, Security 
+measures, Spent fuel, Whistleblowing.
+    For the reasons set out in the preamble and under the authority of 
+the Atomic Energy Act of 1954, as amended; the Energy Reorganization 
+Act of 1974, as amended; the Nuclear Waste Policy Act of 1982, as 
+amended; and 5 U.S.C. 552 and 553; the NRC is adopting the following 
+amendments to 10 CFR part 72:
+
+PART 72--LICENSING REQUIREMENTS FOR THE INDEPENDENT STORAGE OF 
+SPENT NUCLEAR FUEL, HIGH-LEVEL RADIOACTIVE WASTE, AND REACTOR-
+RELATED GREATER THAN CLASS C WASTE
+
+0
+1. The authority citation for part 72 continues to read as follows:
+
+
+    Authority:  Atomic Energy Act of 1954, secs. 51, 53, 57, 62, 63, 
+65, 69, 81, 161, 182, 183, 184, 186, 187, 189, 223, 234, 274 (42 
+U.S.C. 2071, 2073, 2077, 2092, 2093, 2095, 2099, 2111, 2201, 2210e, 
+2232, 2233, 2234, 2236, 2237, 2238, 2273, 2282, 2021); Energy 
+Reorganization Act of 1974, secs. 201, 202, 206, 211 (42 U.S.C. 
+5841, 5842, 5846, 5851);
+
+[[Page 54946]]
+
+National Environmental Policy Act of 1969 (42 U.S.C. 4332); Nuclear 
+Waste Policy Act of 1982, secs. 117(a), 132, 133, 134, 135, 137, 
+141, 145(g), 148, 218(a) (42 U.S.C. 10137(a), 10152, 10153, 10154, 
+10155, 10157, 10161, 10165(g), 10168, 10198(a)); 44 U.S.C. 3504 
+note.
+
+0
+2. In Sec.  72.214, Certificate of Compliance No. 1004 is revised to 
+read as follows:
+
+
+Sec.  72.214   List of approved spent fuel storage casks.
+
+* * * * *
+    Certificate Number: 1004.
+    Initial Certificate Effective Date: January 23, 1995, superseded by 
+Initial Certificate, Revision 1, on April 25, 2017, superseded by 
+Renewed Initial Certificate, Revision 1, on December 11, 2017.
+    Renewed Initial Certificate, Revision 1, Effective Date: December 
+11, 2017.
+    Amendment Number 1 Effective Date: April 27, 2000, superseded by 
+Amendment Number 1, Revision 1, on April 25, 2017, superseded by 
+Renewed Amendment Number 1, Revision 1, on December 11, 2017.
+    Renewed Amendment Number 1, Revision 1, Effective Date: December 
+11, 2017.
+    Amendment Number 2 Effective Date: September 5, 2000, superseded by 
+Amendment Number 2, Revision 1, on April 25, 2017, superseded by 
+Renewed Amendment Number 2, Revision 1, on December 11, 2017.
+    Renewed Amendment Number 2, Revision 1, Effective Date: December 
+11, 2017.
+    Amendment Number 3 Effective Date: September 12, 2001, superseded 
+by Amendment Number 3, Revision 1, on April 25, 2017, superseded by 
+Renewed Amendment Number 3, Revision 1, on December 11, 2017.
+    Renewed Amendment Number 3, Revision 1, Effective Date: December 
+11, 2017.
+    Amendment Number 4 Effective Date: February 12, 2002, superseded by 
+Amendment Number 4, Revision 1, on April 25, 2017, superseded by 
+Renewed Amendment Number 4, Revision 1, on December 11, 2017.
+    Renewed Amendment Number 4, Revision 1, Effective Date: December 
+11, 2017.
+    Amendment Number 5 Effective Date: January 7, 2004, superseded by 
+Amendment Number 5, Revision 1, on April 25, 2017, superseded by 
+Renewed Amendment Number 5, Revision 1, on December 11, 2017.
+    Renewed Amendment Number 5, Revision 1, Effective Date: December 
+11, 2017.
+    Amendment Number 6 Effective Date: December 22, 2003, superseded by 
+Amendment Number 6, Revision 1, on April 25, 2017, superseded by 
+Renewed Amendment Number 6, Revision 1, on December 11, 2017.
+    Renewed Amendment Number 6, Revision 1, Effective Date: December 
+11, 2017.
+    Amendment Number 7 Effective Date: March 2, 2004, superseded by 
+Amendment Number 7, Revision 1, on April 25, 2017, superseded by 
+Renewed Amendment Number 7, Revision 1, on December 11, 2017.
+    Renewed Amendment Number 7, Revision 1, Effective Date: December 
+11, 2017.
+    Amendment Number 8 Effective Date: December 5, 2005, superseded by 
+Amendment Number 8, Revision 1, on April 25, 2017, superseded by 
+Renewed Amendment Number 8, Revision 1, on December 11, 2017.
+    Renewed Amendment Number 8, Revision 1, Effective Date: December 
+11, 2017.
+    Amendment Number 9 Effective Date: April 17, 2007, superseded by 
+Amendment Number 9, Revision 1, on April 25, 2017, superseded by 
+Renewed Amendment Number 9, Revision 1, on December 11, 2017.
+    Renewed Amendment Number 9, Revision 1, Effective Date: December 
+11, 2017.
+    Amendment Number 10 Effective Date: August 24, 2009, superseded by 
+Amendment Number 10, Revision 1, on April 25, 2017, superseded by 
+Renewed Amendment Number 10, Revision 1, on December 11, 2017.
+    Renewed Amendment Number 10, Revision 1, Effective Date: December 
+11, 2017.
+    Amendment Number 11 Effective Date: January 7, 2014, superseded by 
+Amendment Number 11, Revision 1, on April 25, 2017, superseded by 
+Renewed Amendment Number 11, Revision 1, on December 11, 2017.
+    Renewed Amendment Number 11, Revision 1, Effective Date: December 
+11, 2017, as corrected (ADAMS Accession No. ML18018A043).
+    Amendment Number 12 Effective Date: Amendment not issued by the 
+NRC.
+    Amendment Number 13 Effective Date: May 24, 2014, superseded by 
+Amendment Number 13, Revision 1, on April 25, 2017, superseded by 
+Renewed Amendment Number 13, Revision 1, on December 11, 2017.
+    Renewed Amendment Number 13, Revision 1, Effective Date: December 
+11, 2017, as corrected (ADAMS Accession No. ML18018A100).
+    Amendment Number 14 Effective Date: April 25, 2017, superseded by 
+Renewed Amendment Number 14, on December 11, 2017.
+    Renewed Amendment Number 14 Effective Date: December 11, 2017.
+    Renewed Amendment Number 15 Effective Date: January 22, 2019.
+    Renewed Amendment Number 16 Effective Date: September 14, 2020.
+    Renewed Amendment Number 17 Effective Date: June 7, 2021.
+    Renewed Amendment Number 18 Effective Date: December 18, 2023.
+    Renewed Amendment Number 19 Effective Date: November 9, 2026.
+    Safety Analysis Report (SAR) Submitted by: TN Americas LLC.
+    SAR Title: Final Safety Analysis Report for the Standardized 
+NUHOMS[supreg] Horizontal Modular Storage System for Irradiated Nuclear 
+Fuel.
+    Docket Number: 72-1004.
+    Certificate Expiration Date: January 23, 2015.
+    Renewed Certificate Expiration Date: January 23, 2055.
+    Model Number: NUHOMS[supreg]-24P, -24PHB, -24PTH, -32PT, -32PTH1, -
+37PTH, -52B, -61BT, -61BTH, and -69BTH.
+* * * * *
+
+    Dated: August 14, 2026
+
+    For the Nuclear Regulatory Commission.
+Michael King,
+Executive Director for Operations.
+[FR Doc. 2026-17445 Filed 8-25-26; 8:45 am]
+BILLING CODE 7590-01-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

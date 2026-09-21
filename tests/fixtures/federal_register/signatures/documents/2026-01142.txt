@@ -1,0 +1,100 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 14 (Thursday, January 22, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 14 (Thursday, January 22, 2026)]
+[Notices]
+[Page 2804]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-01142]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+OFFICE OF SPECIAL COUNSEL
+
+
+Agency Information Collection; Request for Public Comment
+
+AGENCY: U.S. Office of Special Counsel (OSC).
+
+ACTION: Notice of request for public comment and submission for OMB 
+review of proposed collection of information.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The U.S. Office of Special Counsel (OSC) has submitted a 
+request to the Office of Management and Budget (OMB) for review and 
+approval of an extension of a currently approved information collection 
+used to file complaints and disclosures with OSC (Form OSC-14/dynamic 
+electronic form). In accordance with the Paperwork Reduction Act of 
+1995, OSC is providing the public with an additional opportunity to 
+comment on this proposed information collection prior to OMB approval.
+    OMB first approved OSC's dynamic electronic filing form on 
+September 18, 2017. OSC revised the previously approved form in July 
+2019 to reflect interim statutory changes and obtained emergency OMB/
+OIRA processing for that collection. A final rule authorizing use of 
+Form OSC-14 took effect on August 26, 2019, and OMB approval on 
+February 3, 2020, authorized use of the revised form through March 
+2023. The collection was subsequently re-approved through February 28, 
+2026. OSC now seeks to extend approval of this collection through 2029. 
+No substantive changes to the form or collection methodology are 
+proposed with this extension.
+
+DATES: Written comments must be received on or before February 23, 
+2026.
+
+ADDRESSES: Submit written comments to: Rhoan Jones, U.S. Office of 
+Special Counsel, at (202) 804-7000 or via email at <a href="/cdn-cgi/l/email-protection#4f293d23262e263c20210f203c2c61282039"><span class="__cf_email__" data-cfemail="6006120c090109130f0e200f13034e070f16">[email&#160;protected]</span></a>.
+
+SUPPLEMENTARY INFORMATION: 
+    Title of Collection: Filing of Complaints and Disclosures with OSC.
+    OMB Control Number: 3255-0005.
+    Type of Review: Reinstatement without change of a previously 
+approved collection.
+    Respondents: Individuals (or their representatives) who have sought 
+assistance from OSC.
+    Estimated Number of Respondents: 6,000 annually. (Note: While some 
+individuals may submit more than one filing in a year, OSC estimates 
+total annual responses at approximately 6,000.)
+    Estimated Time per Response: 90 minutes (1.5 hours).
+    Total Estimated Annual Burden: 9,000 hours.
+    Obligation to Respond: Voluntary.
+    Estimated Total Annual Respondent Cost and Non-Hour Costs: $0 
+(electronic submission; no capital, start-up, operation, or maintenance 
+costs to respondents).
+    Abstract/Needs and Uses: The collection enables individuals to 
+submit disclosures of wrongdoing (5 U.S.C. 1213) and PPP complaints (5 
+U.S.C. 1214) through a secure, dynamic electronic form consistent with 
+the Government Paperwork Elimination Act. The electronic format 
+improves data quality, supports complete records, reduces 
+resubmissions, and facilitates efficient and fair processing. This 
+request seeks an extension of the current approval through 2029 with no 
+substantive changes.
+    Request for Comments: Pursuant to 44 U.S.C. 3506(c)(2)(A) and 5 CFR 
+1320.8(d), OSC specifically solicits comments on:
+    1. Whether the proposed collection of information is necessary for 
+the proper performance of OSC's functions, including whether the 
+information will have practical utility;
+    2. The accuracy of OSC's estimate of the burden of the proposed 
+collection, including the validity of the methodology and assumptions 
+used;
+    3. Ways to enhance the quality, utility, and clarity of the 
+information to be collected; and
+    4. Ways to minimize the burden of the collection on respondents, 
+including through the use of automated collection techniques or other 
+forms of information technology.
+    All comments received will be posted without change, to the extent 
+a docket is used, and will be included in the public record.
+
+    Dated: January 20, 2026.
+Barbara Jones,
+Chief, Case Review Division, U.S. Office of Special Counsel.
+[FR Doc. 2026-01142 Filed 1-21-26; 8:45 am]
+BILLING CODE P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

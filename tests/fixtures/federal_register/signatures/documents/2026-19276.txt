@@ -1,0 +1,1899 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 181 (Monday, September 21, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 181 (Monday, September 21, 2026)]
+[Notices]
+[Pages 59834-59849]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-19276]
+
+
+-----------------------------------------------------------------------
+
+DEPARTMENT OF TRANSPORTATION
+
+Pipeline and Hazardous Materials Safety Administration
+
+[Docket No. PHMSA-2026-1981 (Notice No. 2026-04)]
+
+
+Hazardous Materials: Information Collection Activities
+
+AGENCY: Pipeline and Hazardous Materials Safety Administration (PHMSA), 
+Department of Transportation (DOT).
+
+ACTION: Notice and request for comments.
+
+-----------------------------------------------------------------------
+
+SUMMARY: In accordance with the Paperwork Reduction Act of 1995 (PRA), 
+PHMSA invites comments on proposed updates to the form used for 
+reporting incidents that occur during the transportation of hazardous 
+materials. PHMSA intends to request a revision of a currently approved 
+information collection from the Office of Management and Budget (OMB) 
+for the Hazardous Materials Incident Report (DOT Form 5800.1; Form 
+Approval OMB No. 2137-0039). Revisions include new data elements and 
+clarifications of existing fields. PHMSA has also removed, simplified, 
+or reorganized data elements to reduce the burden on filers and staff, 
+alongside modernizing the form's visual layout. PHMSA encourages 
+commenters to review a draft version of the new DOT Form 5800.1, which 
+is provided as a Portable Document Format (PDF) file in the electronic 
+Docket at <a href="http://regulations.gov">regulations.gov</a>. This draft of the new form does not replace 
+the currently approved form. It
+
+[[Page 59835]]
+
+is provided only for purposes of this notice and request for comments.
+
+DATES: Interested persons are invited to submit comments on or before 
+December 21, 2026. However, PHMSA will consider late-filed comments to 
+the extent possible.
+
+ADDRESSES: You may submit comments identified by the Docket Number 
+PHMSA-2026-1981 (Notice No. 2026-04) by any of the following methods:
+    <bullet> Federal eRulemaking Portal: <a href="http://www.regulations.gov">http://www.regulations.gov</a>. 
+Follow the online instructions for submitting comments.
+    <bullet> Mail: Docket Management System, U.S. Department of 
+Transportation, Docket Operations, M-30, Ground Floor, Room W12-140, 
+1200 New Jersey Avenue SE, Washington, DC 20590.
+    <bullet> Hand Delivery: To the Docket Management System; U.S. 
+Department of Transportation, Docket Operations, M-30, Room W12-140 on 
+the ground floor of the West Building, 1200 New Jersey Avenue SE, 
+Washington, DC 20590, between 9 a.m. and 5 p.m., Monday through Friday, 
+except Federal holidays.
+    Instructions: All submissions must include the agency name and 
+Docket ID (i.e., PHMSA-2026-1981) for this notice at the beginning of 
+the comment. To avoid duplication, please use only one of these methods 
+(i.e., Federal Rulemaking Portal, Mail, or Hand Delivery). PHMSA will 
+post all comments without change to the Federal Docket Management 
+System (FDMS) and will include any personal information you provide.
+    If you send comments by mail, please submit two copies. Persons 
+wishing to receive confirmation of receipt of their comments must 
+include a self-addressed stamped postcard.
+    Direct requests for a copy of an information collection to Steven 
+Andrews or Glenn Foster, Standards and Rulemaking Division, (202) 366-
+8553, Pipeline and Hazardous Materials Safety Administration, U.S. 
+Department of Transportation, 1200 New Jersey Avenue SE, Washington, DC 
+20590-0001. In addition, the current DOT Form 5800.1 can be accessed 
+electronically on the PHMSA website.\1\
+---------------------------------------------------------------------------
+
+    \1\ PHMSA, Hazardous Materials Incident Report (DOT Form 5800.1; 
+OMB No. 2137-0039) (Jan. 2004), available at: <a href="https://www.phmsa.dot.gov/sites/phmsa.dot.gov/files/docs/IncidentForm010105.pdf">https://www.phmsa.dot.gov/sites/phmsa.dot.gov/files/docs/IncidentForm010105.pdf</a>.
+---------------------------------------------------------------------------
+
+    Docket: For access to background documents or comments received, go 
+to <a href="http://www.regulations.gov">http://www.regulations.gov</a> and search for the Docket ID: PHMSA-2026-
+1981. Access to the docket materials can also be provided at the 
+physical location for DOT's Docket Operations Office (see ADDRESSES).
+    Privacy Act: In accordance with 5 U.S.C. 553(c) and 44 U.S.C. 3501 
+et seq., DOT solicits comments from the public to inform better its 
+rulemaking and information collection processes, respectively. DOT 
+posts these comments, without edit, including any personal information 
+the commenter provides, to <a href="http://www.regulations.gov">www.regulations.gov</a>, as described in the 
+system of records notice (DOT/ALL-14 FDMS).\2\
+---------------------------------------------------------------------------
+
+    \2\ DOT, System of Records Notice (DOT/ALL-14 FDMS), available 
+at: <a href="https://www.transportation.gov/individuals/privacy/privacy-act-system-records-notices">https://www.transportation.gov/individuals/privacy/privacy-act-system-records-notices</a>.
+---------------------------------------------------------------------------
+
+    Confidential Business Information: Confidential Business 
+Information (CBI) is commercial or financial information that is both 
+customarily and actually treated as private by its owner. Under the 
+Freedom of Information Act (FOIA) (5 U.S.C. 552), CBI is exempt from 
+public disclosure. If your comments contain commercial or financial 
+information that is customarily treated as private, that you actually 
+treat as private, and that is relevant or responsive to this notice, it 
+is important that you clearly designate the submitted comments as CBI. 
+Please mark each page of your submission containing CBI as ``PROPIN'' 
+to indicate the presence of proprietary information. PHMSA will treat 
+such marked submissions as confidential under the FOIA, and they will 
+not be placed in the public docket of this notice. Submissions 
+containing CBI should be sent to Steven Andrews, Standards and 
+Rulemaking Division, and addressed to the Pipeline and Hazardous 
+Materials Safety Administration, U.S. Department of Transportation, 
+1200 New Jersey Avenue SE, Washington, DC 20590-0001 or 
+<a href="/cdn-cgi/l/email-protection#6112150417040f4f000f051304161221050e154f060e17"><span class="__cf_email__" data-cfemail="82f1f6e7f4e7ecace3ece6f0e7f5f1c2e6edf6ace5edf4">[email&#160;protected]</span></a>. Any commentary that PHMSA receives which is not 
+specifically designated as CBI will be placed in the public docket for 
+this notice.
+
+FOR FURTHER INFORMATION CONTACT: For information about the proposed 
+updates to this form, contact Robert Starin, (202) 366-1074, 
+<a href="/cdn-cgi/l/email-protection#20524f424552540e53544152494e60444f540e474f56"><span class="__cf_email__" data-cfemail="a7d5c8c5c2d5d389d4d3c6d5cec9e7c3c8d389c0c8d1">[email&#160;protected]</span></a>, Operations Systems Division, Office of Hazardous 
+Materials Safety (OHMS), Pipeline and Hazardous Materials Safety 
+Administration, U.S. Department of Transportation, 1200 New Jersey 
+Avenue SE, Washington, DC 20590-0001. For information about the PRA and 
+this information collection, contact Steven Andrews or Ryan Larson at 
+(202) 366-8553 or at <a href="/cdn-cgi/l/email-protection#8fe0e7e2fcfffdeecfebe0fba1e8e0f9"><span class="__cf_email__" data-cfemail="8fe0e7e2fcfffdeecfebe0fba1e8e0f9">[email&#160;protected]</span></a>.
+
+SUPPLEMENTARY INFORMATION:
+
+Acronyms
+
+CFR Code of Federal Regulations
+CTMV Cargo Tank Motor Vehicle
+DCMRB Data Collection and Methodology Research Branch (U.S. Census 
+Bureau)
+DHS Department of Homeland Security
+DOT Department of Transportation
+EMS Emergency Medical Services
+EPA Environmental Protection Agency
+FAA Federal Aviation Administration
+FMCSA Federal Motor Carrier Safety Administration
+FRA Federal Railroad Administration
+GPS Global Positioning System
+HAZMATICS Hazardous Materials Incident Communication System
+HMR Hazardous Materials Regulations
+HMT Hazardous Materials Table
+IBC Intermediate Bulk Container
+ID Identification
+NAR Non-Accident Release
+NRC National Response Center
+OHMS Office of Hazardous Materials Safety (DOT/PHMSA)
+OMB Office of Management and Budget
+PDF Portable Document Format
+PHMSA Pipeline and Hazardous Materials Safety Administration
+PIH Poisonous by Inhalation
+POP Performance Oriented Packaging
+RAM Radioactive Materials
+SME Subject Matter Expert
+TIH Toxic by Inhalation
+TSA Transportation Security Administration (DHS)
+UAS Unmanned Aircraft System
+ULD Unit Load Device
+UN United Nations
+UN/NA United Nations/North American
+USCG U.S. Coast Guard
+XML Extensible Markup Language
+
+I. Overview
+
+    PHMSA uses the Hazardous Materials Incident Report (DOT Form 
+5800.1) to collect information on reportable hazardous materials 
+incidents in air, rail, highway, and vessel transportation under the 
+Hazardous Materials Regulations (HMR; 49 CFR parts 171-180). OHMS 
+requires the form for incidents covered by 49 CFR 171.16, including 
+those subject to Sec.  171.15.\3\ PHMSA must comply with Federal laws, 
+regulations, and policies when collecting this information or revising 
+the collection.
+---------------------------------------------------------------------------
+
+    \3\ 49 CFR 171.15.
+---------------------------------------------------------------------------
+
+    Under 5 CFR 1320.8(d), PHMSA must provide the public and affected 
+agencies an opportunity to comment before submitting an information 
+collection request to OMB.\4\ PHMSA is providing a 90-day comment 
+period, rather than 60 days, because it has not substantially revised 
+DOT Form 5800.1 in many years. After considering comments and revising 
+the proposal as warranted, PHMSA will submit the request to OMB for a 
+3-year approval and publish a subsequent 30-day Federal Register notice 
+for additional public comment.
+
+[[Page 59836]]
+
+This notice begins the first of those two comment periods.\5\
+---------------------------------------------------------------------------
+
+    \4\ 5 CFR 1320.8.
+    \5\ GSA, A Guide to the Paperwork Reduction Act: PRA Approval 
+Process, available at: <a href="https://pra.digital.gov/clearance-process/">https://pra.digital.gov/clearance-process/</a>.
+---------------------------------------------------------------------------
+
+    The form collects information about the incident, hazardous 
+material, packaging, and human and environmental impacts to help PHMSA 
+analyze trends and gaps and inform actions to mitigate risk and improve 
+safety. The OHMS Operations Systems Division processes and checks the 
+data through a quality management system compliant with International 
+Organization for Standardization's (ISO) ISO 9001:2015 standard.\6\ In 
+coordination with PHMSA's Office of the Chief Information Officer, the 
+division stores and manages the data in a relational database and 
+publishes them on PHMSA's website with a tool to search fields and 
+filter results.\7\
+---------------------------------------------------------------------------
+
+    \6\ PHMSA, Data Operations Quality Management System, available 
+at: <a href="https://www.phmsa.dot.gov/hazmat-program-management-data-and-statistics/data-operations/quality-management-system">https://www.phmsa.dot.gov/hazmat-program-management-data-and-statistics/data-operations/quality-management-system</a>.
+    \7\ PHMSA, Hazardous Materials Incident Report Search Tool, 
+available at: <a href="https://www.phmsa.dot.gov/hazmat-program-management-data-and-statistics/data-operations/incident-statistics">https://www.phmsa.dot.gov/hazmat-program-management-data-and-statistics/data-operations/incident-statistics</a>.
+---------------------------------------------------------------------------
+
+II. Census Review and Cognitive Evaluation of DOT Form 5800.1
+
+    PHMSA contracted with the U.S. Census Bureau to evaluate DOT Form 
+5800.1 and recommend a redesign that improves data accuracy and 
+consistency, reduces respondent burden, and meets collection 
+requirements. The Bureau's Data Collection and Methodology Research 
+Branch (DCMRB) assessed the form for cognitive and usability issues and 
+opportunities to reduce burden.
+    DCMRB began with an expert review and exploratory research, 
+including interviews with internal and external stakeholders and 
+subject matter experts (SMEs), focus groups, and field observations. It 
+used the findings to develop changes, which it refined through 
+cognitive and usability testing with filers. DCMRB presented findings 
+to PHMSA after each activity. Its final report is available in the 
+electronic docket. Recommendations included:
+    <bullet> Improving efficiency by reorganizing content, allowing 
+filers to bypass sections that are not applicable to their reported 
+incident;
+    <bullet> Adding content to address incidents caused by batteries 
+(e.g., lithium-ion batteries) that undergo thermal runaway, which were 
+not captured previously;
+    <bullet> Reducing burden by capturing alternative data in cases 
+where other data may not be available to the filer or not available at 
+the time of submission--e.g., Global Positioning System (GPS) location, 
+flight numbers; and
+    <bullet> Identifying intermodal transport to account for multiple 
+modes of transportation that may have been involved in an incident or 
+the shipment.
+
+III. Supporting Materials in the Docket
+
+    The electronic docket at <a href="http://www.regulations.gov">www.regulations.gov</a> contains the proposed 
+DOT Form 5800.1 in PDF format and the U.S. Census Bureau's final 
+research report.\8\ PHMSA intends the proposed PDF to replace the 
+current PDF on its website after public comment and OMB approval. 
+Filers must continue using the currently approved form until OMB 
+finalizes and approves the revision.
+---------------------------------------------------------------------------
+
+    \8\ Docket Number: PHMSA-2026-1981, available at: <a href="https://www.regulations.gov/document/">https://www.regulations.gov/document/</a> PHMSA-2026-1981.
+---------------------------------------------------------------------------
+
+    Filers may submit reports using the PDF form, the Hazardous 
+Materials Incident Communication System (HAZMATICS) portal at <a href="https://portal.phmsa.dot.gov">https://portal.phmsa.dot.gov</a>, or Extensible Markup Language (XML) data 
+submission.\9\ PHMSA encourages HAZMATICS and XML submissions because 
+they better accommodate incidents involving multiple packaging types or 
+hazardous materials. The PDF remains an option and provides a practical 
+way to show the proposed data changes without developing a HAZMATICS 
+prototype.
+---------------------------------------------------------------------------
+
+    \9\ PHMSA, Introduction to XML Submission, available at: <a href="https://www.phmsa.dot.gov/hazmat-program-development/data-operations/introduction-xml-submission">https://www.phmsa.dot.gov/hazmat-program-development/data-operations/introduction-xml-submission</a>.
+---------------------------------------------------------------------------
+
+    PHMSA also seeks comments on filers' experiences with HAZMATICS and 
+XML submissions. The PDF includes all required incident-reporting data 
+elements, which must remain consistent across all three submission 
+methods. PHMSA will assess the software, data-processing, and database 
+changes needed to reflect revisions to the collection in HAZMATICS and 
+XML submissions.
+    The Council on the Safe Transportation of Hazardous Articles 
+(COSTHA) petitioned PHMSA to revise DOT Form 5800.1 (P-1721).\10\ Many 
+of COSTHA's comments concern HAZMATICS and remain outstanding. PHMSA 
+will consider them with comments received on this notice and expects to 
+better address HAZMATICS development by the second comment period.
+---------------------------------------------------------------------------
+
+    \10\ COSTHA, Petition P-1721 (Oct. 5, 2018), available at: 
+<a href="https://www.regulations.gov/docket/PHMSA-2018-0101">https://www.regulations.gov/docket/PHMSA-2018-0101</a>.
+---------------------------------------------------------------------------
+
+IV. Proposed Changes to DOT Form 5800.1--Question-by-Question Review
+
+    This section explains and justifies revisions to existing data 
+elements, following the current form's organization and numbering. 
+References such as ``Q1'' mean Question 1 on the current form. Readers 
+should consult the current form on PHMSA's website alongside the 
+proposed form in the docket.\11\ Section V addresses new data elements 
+and provides additional details in proposed-form order.
+---------------------------------------------------------------------------
+
+    \11\ PHMSA, Hazardous Materials Incident Report (Jan. 2004). DOT 
+Form 5800.1; OMB No. 2137-0039, available at: <a href="https://www.phmsa.dot.gov/sites/phmsa.dot.gov/files/docs/IncidentForm010105.pdf">https://www.phmsa.dot.gov/sites/phmsa.dot.gov/files/docs/IncidentForm010105.pdf</a>.
+---------------------------------------------------------------------------
+
+    The current form has eight Parts:
+
+I. Part I--Report Type
+II. Part II--General Incident Information
+III. Part III--Packaging Information
+IV. Part IV--Consequences
+V. Part V--Air Incident Information
+VI. Part VI--Description of Events & Packaging
+VII. Part VII--Recommendations/Actions Taken To Prevent Recurrence
+VIII. Part VIII--Contact Information
+
+A. Current Form: Part I--Report Type
+
+    Q1 on the current form asks whether the filer is reporting: (A) a 
+hazardous materials incident; (B) an undeclared shipment with no 
+release; or (C) certain damage to a specification cargo tank with no 
+release. The new form divides Q1 into two questions aligned with 
+Sec. Sec.  171.15 and 171.16. The first replaces option A with the 
+circumstances requiring a telephone report to the National Response 
+Center (NRC) under Sec.  171.15(b), making the applicable incident 
+types explicit. The second covers options B and C and the other 
+reporting criteria in Sec.  171.16(a)(2) and (a)(5).
+    Renamed ``Part 1--Reason for the Report,'' this section requires 
+filers to identify the regulatory basis for reporting before completing 
+the rest of the form. This will help the OHMS Data Operations team 
+determine whether a report is required without checking other answers. 
+Filers may spend more time reviewing Sec. Sec.  171.15 and 171.16 to 
+identify the applicable criteria, but the change may prevent 
+unnecessary reports. Filers should complete the remaining sections only 
+after confirming that reporting is required.
+    Q2 currently offers ``an initial report,'' ``a supplemental 
+(follow-up) report,'' and ``additional pages.'' The new form replaces 
+``a supplemental (follow-up) report'' with the plainer ``update 
+existing report,'' without changing its
+
+[[Page 59837]]
+
+purpose: providing new or revised information after submitting a 
+completed report. Filers who have not yet submitted a report must 
+select ``an initial report.'' Under Sec.  171.16(c), a filer must 
+update a report within one year of the incident whenever:
+    <bullet> a death results from injury caused by hazardous material;
+    <bullet> there was a misidentification of the hazardous material or 
+package information on a prior incident report;
+    <bullet> damage, loss or related cost that was not known when the 
+initial incident report was filed becomes known; or
+    <bullet> damage, loss, or related cost changes by $25,000 or more, 
+or 10% of the prior total estimate, whichever is greater.
+    <bullet> Filers may also select ``update existing report'' to 
+revise information voluntarily, even when Sec.  171.16(c) does not 
+require an update. ``Additional pages'' applies only when information 
+does not fit in the space provided.
+
+B. Current Form: Part II--General Incident Information
+
+    Q3 and Q4 request the incident's date and time, but the filer may 
+know when an incident was discovered without knowing when it occurred. 
+The new form asks filers to identify which date and time they are 
+providing.
+    This distinction reduces the need to determine an exact occurrence 
+time when only discovery is known--for example, when an undeclared 
+shipment with no release is discovered after shipment. The new PDF also 
+includes a calendar date picker and specifies the 24-hour time format 
+as ``HH:MM'' (two-digit hour, two-digit minute), clarifying the current 
+instruction to ``use 24-hour time.'' These features may reduce 
+reporting burden.
+    Section 171.15 requires telephone notification to the U.S. Coast 
+Guard (USCG) NRC for certain incidents. Q5 currently requests the NRC 
+report number, if applicable. A blank response does not distinguish a 
+call that was not made from one whose report number is unknown or 
+omitted. The new form first asks whether the flier notified the NRC, 
+and then requests the report number separately. It also links to the 
+NRC website so filers can look up the number.\12\ PHMSA intends these 
+changes to improve clarity for filers and data users.
+---------------------------------------------------------------------------
+
+    \12\ USCG, National Response Center, available at: <a href="https://nrc.uscg.mil/">https://nrc.uscg.mil/</a>.
+---------------------------------------------------------------------------
+
+    OHMS Data Operations staff use NRC records to identify incidents 
+not yet reported on DOT Form 5800.1 and to match the two reports. In 
+PHMSA's experience, NRC records generally become available within days, 
+before the 30-day written-report deadline. If the report number is 
+unavailable or omitted, the new Yes or No response will help staff 
+assess whether NRC reporting requirements apply and follow up on 
+incomplete information.
+    Q6 currently requests the agency name and report number in one 
+field when the filer report an incident to ``another Federal DOT 
+agency.'' For example, a derailment may require both a PHMSA report and 
+a Federal Railroad Administration (FRA) report on FRA F 6180.54.\13\ 
+The new form first asks whether the filer reported the incident other 
+agencies, then provides separate fields for agency names and report 
+numbers, if known, with space for multiple reports. This accommodates 
+filers who know the agency but not its report number and should improve 
+completeness and coordination during analysis or investigation.
+---------------------------------------------------------------------------
+
+    \13\ FRA, Rail Equipment Accident/Incident (approved Dec. 5, 
+2023). FRA F 6180.54; OMB No. 2130-0500, available at: <a href="https://railroads.dot.gov/safety-data/forms-guides-publications/forms/618054-rail-equipment-accidentincident">https://railroads.dot.gov/safety-data/forms-guides-publications/forms/618054-rail-equipment-accidentincident</a>.
+---------------------------------------------------------------------------
+
+    The new question also expands the scope beyond DOT: ``Was the 
+incident reported to other Federal, state, or local regulatory 
+agencies?'' For example, USCG enforces the HMR for vessel shipments but 
+is part of the Department of Homeland Security (DHS), not DOT. 
+Collecting information about reports to non-DOT Federal agencies and 
+state or local agencies may increase filer burden, but it may improve 
+coordination with agencies responding to or investigating incidents. 
+PHMSA solicits comment.
+    Q7 requests the incident's city, county, state, postal code, and 
+street address, or mode-specific location information such as a mile 
+marker, yard name, airport, body of water, river mile, or subdivision. 
+The new form retains these fields, adds a checkbox for locations 
+without a street address, and requests GPS latitude and longitude 
+coordinates.
+    PHMSA expects GPS coordinates to improve location accuracy and 
+support geospatial safety analysis, especially for in-flight, rail, or 
+vessel incidents without a useful street address. Free online mapping 
+tools can provide coordinates for a selected point. Providing 
+coordinates may add little burden and may be easier than identifying a 
+street address, mile marker, yard name, or other location descriptor.
+    Q8 identifies the transportation mode at the time of the incident. 
+The new form retains that question and adds a follow-up about other 
+modes used or planned for the shipment. Filers may identify multiple 
+known modes--for example, vessel transport before a rail incident or 
+air transport planned after a highway leg.
+    This information could support coordination with the Federal 
+Aviation Administration (FAA), FRA, the Federal Motor Carrier Safety 
+Administration (FMCSA), and USCG on intermodal safety and ``near miss'' 
+analysis. It would also help data users avoid treating the incident 
+mode as the only mode potentially affected. PHMSA seeks comment on the 
+benefits and burden of the question and whether to ask separately about 
+modes already used and modes planned for later legs.
+    Q9 retains the transportation phases--in-transit, loading, 
+unloading, and in-transit storage--but changes ``In-Transit Storage'' 
+to ``Temporary Storage (In-Transit Storage).'' The revision clarifies 
+that this storage occurs before final delivery to the consignee. PHMSA 
+solicits comment.
+    Q10 requests the ``Carrier/Reporter'' name, address, Federal DOT ID 
+Number, and PHMSA Hazardous Materials Registration Number. The new form 
+links to FMCSA's DOT-number lookup and PHMSA's registration search (see 
+49 CFR part 107, subpart G).\14\ It replaces ``Carrier/Reporter'' with 
+``Reporter/Company'' because Sec.  171.16 assigns reporting to the 
+person in physical possession of the material, who is not necessarily 
+the carrier. Carrier information is requested separately; a ``Carrier/
+Transporter same as Reporter'' checkbox copies the reporter information 
+into those fields to avoid duplicate entry. The new form also replaces 
+``ZIP code'' with ``Postal Code'' to accommodate international 
+addresses and supplies state dropdowns for the reporter, carrier, 
+shipper, shipment origin and destination, and incident location. These 
+changes are intended to improve accuracy and standardize entries 
+without adding burden.
+---------------------------------------------------------------------------
+
+    \14\ FMCSA, Safety and Fitness Electronic Records (SAFER) 
+System: Company Snapshot, available at: <a href="https://safer.fmcsa.dot.gov/CompanySnapshot.aspx">https://safer.fmcsa.dot.gov/CompanySnapshot.aspx</a>. PHMSA, Hazmat Registration Company Search, 
+available at: <a href="https://portal.phmsa.dot.gov/HazmatRegistrationSearch">https://portal.phmsa.dot.gov/HazmatRegistrationSearch</a>.
+---------------------------------------------------------------------------
+
+    Q11 retains shipper/offeror information, replaces ``ZIP Code'' with 
+``Postal Code,'' and links to PHMSA's registration search. Anyone may 
+search by company name, postal code, DOT number, or Hazardous Materials 
+Registration Number.\15\ The new form also clarifies the current 
+``Waybill/Shipping Paper'' field as ``Identification
+
+[[Page 59838]]
+
+Number for the Shipping Paper/Bill of Lading/Waybill (e.g., Invoice #, 
+tracking #).'' PHMSA solicits comment.
+---------------------------------------------------------------------------
+
+    \15\ PHMSA, Hazmat Registration Company Search, available at: 
+<a href="https://portal.phmsa.dot.gov/HazmatRegistrationSearch">https://portal.phmsa.dot.gov/HazmatRegistrationSearch</a>.
+---------------------------------------------------------------------------
+
+    Q12 and Q13 retain shipment origin and destination addresses, 
+replace ``ZIP code'' with ``Postal Code,'' and add country fields to 
+capture international shipments. Because most reported origins and 
+destinations are in the United States, PHMSA seeks comment on whether 
+the country fields should be required only for international locations 
+to limit added burden.
+    Q14-Q18 retain the proper shipping name, technical/trade name, 
+hazard class/division, United Nations/North American (UN/NA) 
+identification number, and packing group used to identify the 
+material's Hazardous Materials Table (HMT) entry (49 CFR 172.101), with 
+revised wording and order. ``Identification number'' becomes ``UN/NA 
+Identification Number,'' and ``Hazardous Class/Division'' becomes 
+``Hazard Class/Division.'' The form clarifies that ``Technical Trade 
+Name'' applies only to certain HMT entries.\16\ Dropdowns supply the 
+limited choices for hazard class/division and packing group. A lookup 
+or autofill feature for the thousands of UN/NA numbers and proper 
+shipping names appears feasible in HAZMATICS but difficult in the PDF. 
+PHMSA solicits comment.
+---------------------------------------------------------------------------
+
+    \16\ In the first column of the HMT, the letter ``G'' identifies 
+proper shipping names for which one or more technical names of the 
+hazardous material must be entered in parentheses, in association 
+with the basic description. See Sec.  172.203(k).
+---------------------------------------------------------------------------
+
+    Q19 currently combines release quantity and unit of measure in one 
+free-text field. The new form first asks ``Was there a release?'' to 
+distinguish no release from an unknown quantity. It then permits a 
+point estimate, a range, or both, and separates the unit of measure. 
+This gives filers flexibility when the exact quantity is uncertain. A 
+new field requests estimated release duration, which may add burden but 
+could improve risk analysis and emergency-response planning by 
+indicating potential public exposure. PHMSA has previously estimated 
+duration from media reports, which may be less accurate than 
+information available to filers.
+    Q20 retains the Yes/No hazardous-waste question concerning 
+Environmental Protection Agency (EPA) requirements but specifies 
+``shipped as an EPA-regulated hazardous waste.'' The new wording adds 
+``tracking'' to ``EPA Manifest Tracking Number,'' matching EPA's 
+Uniform Hazardous Waste Manifest (OMB No. 2050-0039).\17\
+---------------------------------------------------------------------------
+
+    \17\ EPA, Uniform Hazardous Waste Manifest (rev. Dec. 2017). EPA 
+Form 8700-22, available at: <a href="https://www.epa.gov/sites/default/files/2018-05/documents/uniform_hazardous_waste_manifest.pdf">https://www.epa.gov/sites/default/files/2018-05/documents/uniform_hazardous_waste_manifest.pdf</a>.
+---------------------------------------------------------------------------
+
+    Q21 retains the Toxic by Inhalation (TIH) question and adds the 
+synonymous term ``Poison by Inhalation (PIH).'' \18\ For an affirmative 
+response, a dropdown supplies the hazard-zone choices A, B, C, and D. 
+PHMSA intends for change to reduce burden and improve accuracy and 
+completeness.
+---------------------------------------------------------------------------
+
+    \18\ Section 171.8 defines ``Material poisonous by inhalation or 
+Material toxic by inhalation'' as: ``(1) a gas meeting the defining 
+criteria in Sec.  173.115(c) of this subchapter and assigned to 
+Hazard Zone A, B, C, or D in accordance with Sec.  173.116(a) of 
+this subchapter; (2) a liquid (other than as a mist) meeting the 
+defining criteria in Sec.  173.132(a)(1)(iii) of this subchapter and 
+assigned to Hazard Zone A or B in accordance with Sec.  173.133(a) 
+of this subchapter; or (3) any material identified as an inhalation 
+hazard by a special provision in column 7 of the Sec.  172.101 
+table.'' available at: <a href="https://www.ecfr.gov/current/title-49/subtitle-B/chapter-I/subchapter-C/part-171/subpart-A/section-171.8">https://www.ecfr.gov/current/title-49/subtitle-B/chapter-I/subchapter-C/part-171/subpart-A/section-171.8</a>.
+---------------------------------------------------------------------------
+
+    Q22 replaces ``Exemption'' with ``Special Permit,'' consistent with 
+the HM-240 final rule, Hazardous Materials: Incorporation of 
+Statutorily Mandated Revisions to the Hazardous Materials Regulations 
+(70 FR 73156).\19\ Because a Competent Authority Certificate is a type 
+of approval under the HMR, the new form asks whether the material was 
+``shipped under a DOT/PHMSA Special Permit or Approval.'' \20\ PHMSA 
+solicits comment on this simplification. Links allow filers to search 
+for the applicable Special Permit or Approval number.\21\ Although 
+Sec.  172.203(a) requires the ``DOT-SP'' number on the shipping paper, 
+these searches provide another resource.
+---------------------------------------------------------------------------
+
+    \19\ Hazardous Materials: Incorporation of Statutorily Mandated 
+Revisions to the Hazardous Materials Regulations, 70 FR 73156 (Dec. 
+9, 2005).
+    \20\ Section 171.8 defines ``Approval'' as ``a written 
+authorization, including a competent authority approval, issued by 
+the Associate Administrator, the Associate Administrator's designee, 
+or as otherwise prescribed in the HMR, to perform a function for 
+which prior authorization by the Associate Administrator is required 
+under subchapter C of this chapter (49 CFR parts 171 through 180).'' 
+available at: <a href="https://www.ecfr.gov/current/title-49/subtitle-B/chapter-I/subchapter-C/part-171/subpart-A/section-171.8">https://www.ecfr.gov/current/title-49/subtitle-B/chapter-I/subchapter-C/part-171/subpart-A/section-171.8</a>.
+    \21\ PHMSA, Hazardous Materials Special Permits Search Page, 
+available at: <a href="https://www.phmsa.dot.gov/approvals-and-permits/hazmat/special-permits-search">https://www.phmsa.dot.gov/approvals-and-permits/hazmat/special-permits-search</a>. PHMSA, Hazardous Materials Approvals 
+Search Page, available at: <a href="https://www.phmsa.dot.gov/approvals-and-permits/hazmat/approvals-search">https://www.phmsa.dot.gov/approvals-and-permits/hazmat/approvals-search</a>.
+---------------------------------------------------------------------------
+
+    Q23 retains the undeclared-shipment question and adds a question 
+about misdeclaration. An undeclared hazardous material lacks ``any 
+visible indication to the person accepting the hazardous material'' 
+(see Sec.  171.8); misdeclaration may involve incorrect or missing 
+shipping-paper information, labels, markings, or placards. The new 
+question could identify noncompliance trends or confusing requirements 
+that warrant guidance or regulatory changes.
+    Unlike undeclared shipments, ``misdeclaration'' is not itself a 
+criterion that triggers hazardous materials incident reporting in Sec.  
+171.16. Therefore, a misdeclared shipment that does not result in a 
+release may not require reporting on DOT Form 5800.1.
+
+C. Current Form: Part III--Packaging Information
+
+    Q24 currently offers Non-bulk, Intermediate Bulk Container (IBC), 
+Cargo Tank Motor Vehicle (CTMV), Tank Car, Cylinder, Radioactive 
+Materials (RAM), Portable Tank, and Other. To identify a non-bulk 
+subtype, filers must complete Q26b or provide a packaging code or 
+specification marking in Q26a; for example, 1A1 identifies a steel drum 
+with a non-removable head and 4G a fiberboard box. Without that 
+information, data users cannot distinguish drums, boxes, bags, or other 
+non-bulk packaging. The new form adds ``Drum (Non-bulk),'' ``Box (Non-
+bulk),'' ``Bag (Non-bulk),'' ``Jerrican (Non-bulk),'' and ``Barrel 
+(Non-bulk),'' aligned with United Nations (UN) Performance Oriented 
+Packaging (POP) categories. POP also includes IBCs and composite 
+packaging.\22\ IBCs already have a separate option and are not non-bulk 
+packaging. PHMSA expects the expanded choices to be more intuitive and 
+improve completeness, but their effect on burden is uncertain. PHMSA 
+solicits comment.
+---------------------------------------------------------------------------
+
+    \22\ PHMSA, Guide to Performance Oriented Packaging Codes, 
+available at: <a href="https://www.phmsa.dot.gov/sites/phmsa.dot.gov/files/docs/Performance%20Packaging%20Codes.pdf">https://www.phmsa.dot.gov/sites/phmsa.dot.gov/files/docs/Performance%20Packaging%20Codes.pdf</a>.
+---------------------------------------------------------------------------
+
+    The new form adds ``Nurse Tanks'' as a packaging type. Under 49 CFR 
+173.315(m), these cargo tanks transport anhydrous ammonia and are 
+operated by private motor carriers exclusively for agricultural 
+purposes.\23\ The current form accommodates them under ``Other.'' PHMSA 
+proposes a separate category because nurse tanks present distinct 
+safety risks and are a common ``Other'' response.
+---------------------------------------------------------------------------
+
+    \23\ 49 CFR 173.315.
+---------------------------------------------------------------------------
+
+    For incidents involving multiple packaging types, the new form 
+directs filers to HAZMATICS (<a href="https://portal.phmsa.dot.gov">https://portal.phmsa.dot.gov</a>). Each type 
+requires its own packaging details; using the current PDF requires 
+copies of Part III with separate responses for each type. HAZMATICS and 
+XML better accommodate these incidents, and PHMSA encourages their use.
+    Q25 requests packaging failure codes from the Guide for Reporting 
+Hazardous Materials Incident Reports in three categories: What Failed, 
+How Failed,
+
+[[Page 59839]]
+
+and Cause of Failure.\24\ The current PDF allows two codes per 
+category. The new form requests the most important code in each 
+category--three codes total--consistent with most filings, while 
+retaining a free-text field for additional codes. The question moves 
+after the packaging description so filers describe the package before 
+explaining its failure. This is intended to streamline reporting 
+without restricting additional information.
+---------------------------------------------------------------------------
+
+    \24\ PHMSA, Guide for Preparing Hazardous Materials Incident 
+Reports (Jan. 2004), available at: <a href="https://www.phmsa.dot.gov/sites/phmsa.dot.gov/files/docs/reporting_instructions_rev.pdf">https://www.phmsa.dot.gov/sites/phmsa.dot.gov/files/docs/reporting_instructions_rev.pdf</a>.
+---------------------------------------------------------------------------
+
+    PHMSA seeks comment on whether to delete, revise, or add failure 
+codes, including an ``Other (not listed)'' code. DOT's internal review 
+recommended ``Carrier/Operator Mishandling,'' included as code 539 in 
+the new form. The following tables show code counts in incident reports 
+from 2010-2023, illustrating common and rarely used codes.
+---------------------------------------------------------------------------
+
+    \25\ PHMSA, Hazardous Materials Incident Report Search Tool 
+(last accessed Feb. 26, 2026), available at: <a href="https://www.phmsa.dot.gov/hazmat-program-management-data-and-statistics/data-operations/incident-statistics">https://www.phmsa.dot.gov/hazmat-program-management-data-and-statistics/data-operations/incident-statistics</a>. Query the incident data by the 
+following field: Date of Incident = 01/01/2010 to 12/31/2023. 
+Deduplicate the resulting rows/records using the Report Number 
+field, as a single incident (each uniquely identified by the Report 
+Number) can have multiple rows/records. Aggregate the number of 
+distinct reports where the Failure_Cause_Code is not blank and 
+contains at least one valid value for the field, such as ``501,'' 
+``535,'' or ``535; 508.''
+    \26\ PHMSA, Hazardous Materials Incident Report Search Tool 
+(last accessed Feb. 26, 2024), available at: <a href="https://www.phmsa.dot.gov/hazmat-program-management-data-and-statistics/data-operations/incident-statistics">https://www.phmsa.dot.gov/hazmat-program-management-data-and-statistics/data-operations/incident-statistics</a>. Query the incident data by the 
+following field: Date of Incident = 01/01/2010 to 12/31/2023. 
+Deduplicate the resulting rows/records using the Report Number 
+field, as a single incident (each uniquely identified by the Report 
+Number) can have multiple rows/records. Aggregate the number of 
+distinct reports where the value for the What_Failed_Code is not 
+blank and contains at least one valid value for the field, such as 
+``101,'' ``104,'' or ``104; 161''.
+
+                                  Count of Failure Cause Codes, 2010-2023 \25\
+----------------------------------------------------------------------------------------------------------------
+             Failure cause code                       Description           Count (n=188,672)      Percentage
+----------------------------------------------------------------------------------------------------------------
+526........................................  Loose Closure, Component, or              34,331               18.2
+                                              Device.
+515........................................  Human Error..................             29,284               15.5
+511........................................  Dropped......................             24,934               13.2
+517........................................  Improper Preparation for                  23,496               12.5
+                                              Transportation.
+513........................................  Forklift Accident............             13,935                7.4
+521........................................  Inadequate Preparation for                12,039                6.4
+                                              Transportation.
+508........................................  Defective Component or Device             11,274                6.0
+516........................................  Impact with Sharp or                       9,584                5.1
+                                              Protruding Object (e.g.,
+                                              nails).
+519........................................  Inadequate Blocking and                    3,880                2.1
+                                              Bracing.
+534........................................  Too Much Weight on Package...              3,857                2.0
+502........................................  Broken Component or Device...              3,139                1.7
+535........................................  Valve Open...................              3,011                1.6
+522........................................  Inadequate Procedures........              2,175                1.2
+505........................................  Conveyor or Material Handling              2,008                1.1
+                                              Equipment Mishap.
+510........................................  Deterioration or Aging.......              1,757                0.9
+501........................................  Abrasion.....................              1,732                0.9
+537........................................  Vehicular Crash or Accident                1,366                0.7
+                                              Damage.
+529........................................  Overfilled...................              1,095                0.6
+531........................................  Rollover Accident............              1,015                0.5
+530........................................  Over-pressurized.............                916                0.5
+527........................................  Misaligned Material,                         614                0.3
+                                              Component, or Device.
+507........................................  Corrosion--Interior..........                549                0.3
+528........................................  Missing Component or Device..                515                0.3
+506........................................  Corrosion--Exterior..........                295                0.2
+514........................................  Freezing.....................                293                0.2
+509........................................  Derailment...................                250                0.1
+512........................................  Fire, Temperature, or Heat...                236                0.1
+533........................................  Threads Worn or Cross                        199                0.1
+                                              Threaded.
+518........................................  Inadequate Accident Damage                   183                0.1
+                                              Protection.
+523........................................  Inadequate Training..........                160                0.1
+538........................................  Water Damage.................                148                0.1
+520........................................  Inadequate Maintenance.......                114                0.1
+503........................................  Commodity Self-Ignition......                 98                0.1
+525........................................  Incorrectly Sized Component                   92                0.0
+                                              or Device.
+524........................................  Incompatible Product.........                 47                0.0
+536........................................  Vandalism....................                 25                0.0
+504........................................  Commodity Polymerization.....                 22                0.0
+532........................................  Stub Sill Separation from                      4                0.0
+                                              Tank (Tank Cars).
+----------------------------------------------------------------------------------------------------------------
+
+
+                                 Count of ``What Failed'' Codes, 2010-2023 \26\
+----------------------------------------------------------------------------------------------------------------
+                                                                                       Count
+               What failed code                            Description              (n=189,087)     Percentage
+----------------------------------------------------------------------------------------------------------------
+109...........................................  Closure (e.g., Cap, Top, or               80,546            42.6
+                                                 Plug).
+104...........................................  Body............................          62,179            32.9
+103...........................................  Basic Material..................          13,125             6.9
+128...........................................  Inner Packaging.................           4,468             2.4
+129...........................................  Inner Receptacle................           3,982             2.1
+110...........................................  Cover...........................           3,231             1.7
+
+[[Page 59840]]
+
+ 
+161...........................................  Weld or Seam....................           2,474             1.3
+137...........................................  Manway or Dome Cover............           1,886             1.0
+140...........................................  Outer Frame.....................           1,382             0.7
+121...........................................  Gasket..........................           1,331             0.7
+134...........................................  Liquid Valve....................           1,084             0.6
+144...........................................  Pressure Relief Valve--Reclosing             964             0.5
+150...........................................  Tank Shell......................             907             0.5
+106...........................................  Bottom Outlet Valve.............             857             0.5
+125...........................................  Hose............................             821             0.4
+139...........................................  O-Rings or Seals................             776             0.4
+135...........................................  Loading or Unloading Lines......             580             0.3
+126...........................................  Hose Adaptor or Coupling........             540             0.3
+108...........................................  Chime...........................             522             0.3
+158...........................................  Vapor Valve.....................             482             0.3
+115...........................................  Discharge Valve or Coupling.....             462             0.2
+141...........................................  Piping or Fittings..............             433             0.2
+159...........................................  Vent............................             432             0.2
+114...........................................  Cylinder Valve..................             410             0.2
+117...........................................  Fill Hole.......................             402             0.2
+112...........................................  Cylinder Sidewall--Near Base....             394             0.2
+153...........................................  Vacuum Relief Valve.............             365             0.2
+143...........................................  Pressure Relief Valve--Non-                  350             0.2
+                                                 Reclosing.
+133...........................................  Liquid Line.....................             336             0.2
+118...........................................  Flange..........................             287             0.2
+122...........................................  Gauging Device..................             280             0.1
+105...........................................  Bolts or Nuts...................             245             0.1
+132...........................................  Liner...........................             235             0.1
+113...........................................  Cylinder Sidewall--Other........             200             0.1
+119...........................................  Frangible Disc..................             197             0.1
+154...........................................  Valve Body......................             181             0.1
+111...........................................  Cylinder Neck or Shoulder.......             171             0.1
+124...........................................  High Level Sensor...............             140             0.1
+130...........................................  Lifting Feature.................             134             0.1
+101...........................................  Air Inlet.......................             132             0.1
+107...........................................  Check Valve.....................             127             0.1
+146...........................................  Sample Line.....................             124             0.1
+157...........................................  Valve Stem......................             123             0.1
+152...........................................  Threaded Connection.............             121             0.1
+160...........................................  Washout.........................             119             0.1
+149...........................................  Tank Head.......................             115             0.1
+127...........................................  Inlet (Loading) Valve...........              91             0.0
+116...........................................  Excess Flow Valve...............              74             0.0
+155...........................................  Valve Seat......................              58             0.0
+120...........................................  Fusible Pressure Relief Device                56             0.0
+                                                 or Element.
+102...........................................  Auxiliary Valve.................              31             0.0
+136...........................................  Locking Bar.....................              28             0.0
+148...........................................  Sump............................              21             0.0
+151...........................................  Thermometer Well................              20             0.0
+123...........................................  Heater Coil.....................              11             0.0
+138...........................................  Mounting Studs..................              10             0.0
+147...........................................  Stub Sill (Tank Car)............               9             0.0
+142...........................................  Piping Shear Section............               8             0.0
+145...........................................  Remote Control Device...........               7             0.0
+156...........................................  Valve Spring....................               7             0.0
+131...........................................  Lifting Lug.....................               4             0.0
+----------------------------------------------------------------------------------------------------------------
+
+
+                                  Count of ``How Failed'' Codes, 2010-2023 \27\
+----------------------------------------------------------------------------------------------------------------
+              How failed code                         Description           Count (n=187,584)      Percentage
+----------------------------------------------------------------------------------------------------------------
+308........................................  Leaked.......................            100,434              53.54
+309........................................  Punctured....................             27,412              14.61
+305........................................  Crushed......................             19,041              10.15
+304........................................  Cracked......................             14,556               7.76
+306........................................  Failed to Operate............              6,531               3.48
+303........................................  Burst or Ruptured............              5,999               3.20
+302........................................  Bent.........................              3,665               1.95
+312........................................  Torn Off or Damaged..........              2,713               1.45
+310........................................  Ripped or Torn...............              2,090               1.11
+
+[[Page 59841]]
+
+ 
+307........................................  Gouged or Cut................              1,810               0.96
+313........................................  Vented.......................              1,694               0.90
+311........................................  Structural...................              1,148               0.61
+301........................................  Abraded......................                491               0.26
+----------------------------------------------------------------------------------------------------------------
+
+    Q26a replaces ``identification markings'' with ``specification 
+markings'' to reduce confusion with UN material identification numbers 
+such as UN1263 and UN1075. Responses are frequently missing, incorrect, 
+or incomplete. Possible reasons include this terminology, unfamiliarity 
+with technical markings, markings destroyed in the incident, or 
+packaging no longer in the reporting company's custody. PHMSA seeks 
+comment on improving data quality for this field.
+---------------------------------------------------------------------------
+
+    \27\ PHMSA, Hazardous Materials Incident Report Search Tool 
+(last accessed Feb. 26, 2024), available at: <a href="https://www.phmsa.dot.gov/hazmat-program-management-data-and-statistics/data-operations/incident-statistics">https://www.phmsa.dot.gov/hazmat-program-management-data-and-statistics/data-operations/incident-statistics</a>. Query the incident data by the 
+following field: Date of Incident = 01/01/2010 to 12/31/2023. 
+Deduplicate the resulting rows/records using the Report Number 
+field, as a single incident (each uniquely identified by the Report 
+Number) can have multiple records. Aggregate the number of distinct 
+reports where the value for How_Failed_Code is not blank and 
+contains at least one valid value for the field, such as ``301,'' 
+``304,'' or ``303; 308.''
+---------------------------------------------------------------------------
+
+    The new form asks whether the packaging met a UN or DOT 
+specification. A ``No'' response hides the specification-markings 
+field, accommodating authorized non-specification packaging. Otherwise, 
+markings remain relevant because they describe packaging design, 
+manufacture, and testing and can support failure investigations. PHMSA 
+seeks comment on reducing nonresponse and improving accuracy.
+    Q26b currently requests packaging type and material of construction 
+for non-bulk, IBC, and non-specification packaging when identification 
+markings are incomplete or unavailable. The new form instead requests 
+these details for the outermost or single packaging, then for inner 
+packaging, if applicable. Expanded Q24 packaging choices eliminate the 
+first Q26b packaging-type field; the inner-packaging field remains. 
+Packaging-type fields therefore decrease from three (Q24 and two in 
+Q26b) to two. Material-of-construction fields likewise decrease from 
+three (Q28 and two in Q26b) to two. The information remains requested, 
+but it is organized by outer/single and inner packaging rather than by 
+separate groups of packaging types.
+    Packaging codes or complete specification markings can already 
+supply some of these details. For example, 1A1 identifies a steel drum 
+with a non-removable head, while 1A2 identifies a removable head. The 
+marking 1A1/Y1.4/150/92/USA/RB additionally gives performance level 
+(Y), specific gravity (1.4), hydrostatic test pressure (150 kPa), 
+manufacture year (1992), country of origin (USA), and manufacturer's 
+symbol (RB). Thus, code 1A1 conveys the packaging type, construction 
+material, and head type requested in Q26b.
+    The form retains some redundancy because filers may know these 
+characteristics without knowing the packaging code or full 
+specification marking. They may be unfamiliar with PHMSA's Guide to 
+Performance Packaging Codes or have difficulty locating and 
+interpreting requirements such as 49 CFR 178.35 for DOT specification 
+cylinders or part 178, subpart L for non-bulk POP specifications.\28\
+---------------------------------------------------------------------------
+
+    \28\ PHMSA, Guide to Performance Packaging Codes (Aug. 13, 
+2009), available at: <a href="https://www.phmsa.dot.gov/sites/phmsa.dot.gov/files/docs/Performance%20Packaging%20Codes.pdf">https://www.phmsa.dot.gov/sites/phmsa.dot.gov/files/docs/Performance%20Packaging%20Codes.pdf</a>.
+---------------------------------------------------------------------------
+
+    PHMSA seeks comment on reducing confusion and streamlining 
+packaging-specification questions. Options include allowing a 
+photograph showing the markings and encouraging carriers to corroborate 
+information with shippers. The shipper preparing the package may know 
+more about its specification than the carrier, although Sec.  171.16 
+places reporting responsibility on the person in physical possession of 
+the material at the time of the incident.
+    Q27 retains capacity, amount in the package, the number of packages 
+matching the Part III description, and the number that failed. The new 
+form adds separate unit-of-measure fields for capacity and amount. It 
+presents outermost or single packaging first and inner packaging later, 
+rather than side by side, because all shipments have single or 
+outermost packaging but only some have inner packaging. ``Outermost'' 
+identifies the packaging visible to shippers and carriers.
+    Q28's twelve fields are reorganized into smaller groups. 
+``Manufacturer Name,'' ``Date of Manufacture,'' and ``Serial Number'' 
+form one question, with the first two labels replacing ``Manufacturer'' 
+and ``Manufacture Date.'' As explained under Q26b, construction 
+material is requested for outer/single and inner packaging rather than 
+separately for tank cars, CTMVs, portable tanks, and cylinders. Design 
+pressure, shell thickness, head thickness, and service pressure remain, 
+with a nurse-tank annotation and visibility linked to packaging type. 
+The pressure-relief device or valve fields--type, manufacturer, and 
+model--remain essentially unchanged.
+    Alongside Q28's ``Last Test Date,'' the new form requests ``Type of 
+Testing or Requalification'' and ``Test Laboratory or Provider,'' 
+identifying the authorized person or company that last performed the 
+prescribed testing. Because specification packaging undergoes different 
+tests, the type and provider give the date context and can support 
+failure investigations. These new fields may add burden. PHMSA solicits 
+comment.
+    Q29's radioactive-materials questions move into a separate Part 
+without changing their content, as recommended by PHMSA's RAM experts. 
+This makes these questions easier to bypass for the large majority of 
+incidents that do not involve RAM. Even a small time saving across 
+those filings could be beneficial.
+    The new form reorganizes Q24-Q29, increases spacing, provides 
+dropdowns for limited response sets, and links fields so filers see 
+only applicable questions. PHMSA seeks comment on whether these design 
+changes reduce burden and improve response rates and data quality in 
+this technical section.
+
+D. Current Form: Part IV--Consequences
+
+    Q30 currently identifies the ``Result of Incident'' through 
+Spillage, Fire, Explosion, Material Entered Waterway/Storm Sewer, Vapor 
+(Gas) Dispersion, Environmental Damage, and No Release. The new form 
+asks ``What was the type of release or outcome of the release?'' and 
+adds ``thermal runaway.'' This is a reaction in which heat generation 
+accelerates further temperature rise. Increasing lithium battery 
+incidents
+
+[[Page 59842]]
+
+prompted the addition, but it also covers other reactions, including 
+polymerization and decomposition. PHMSA seeks comment, particularly on 
+additional lithium-battery data elements.
+    The new ``Was there a release?'' question also replaces Q30's ``No 
+release'' checkbox. A blank checkbox is ambiguous, and a ``Yes'' value 
+for the published variable ``No_Release_Result_Ind'' can confuse data 
+users. Asking directly whether a release occurred makes both reporting 
+and interpretation clearer. PHMSA expects filers to be able to 
+determine this by the time of filing, even if it was uncertain during 
+the initial response.
+    As discussed under Q19, the new form requests release duration in a 
+dedicated field rather than only in the incident narrative. Duration 
+helps assess potential exposure of responders, transportation workers, 
+and the public. PHMSA expects filers preparing reports within 30 days 
+to provide more complete estimates than may be available to on-site 
+contacts or news outlets soon after an incident.
+    Q31 retains the Fire/Emergency Medical Services (EMS) and Police 
+response indicators and report-number fields and adds the responding 
+departments' names. Incident location alone may not identify which 
+state, county, or municipal departments responded. Names will help OHMS 
+Data Operations staff obtain or corroborate information even when the 
+filer does not know the report numbers.
+    The new form separates Q31's ``In-house cleanup'' and ``Other 
+Cleanup'' from emergency response because remediation and cleanup are 
+distinct activities. It asks: ``Did the release of hazardous material 
+require environmental remediation, disposal of contaminated soil or 
+water, or other cleanup?'' A ``No'' response closes the question. A 
+``Yes'' response prompts a description using ``In-house cleanup (no 
+contracted parties)'' or ``Other cleanup (e.g., contracted parties).'' 
+The latter requests the names of companies contracted to conduct or 
+otherwise involved in cleanup; the in-house selection ends the 
+question. This removes uncertainty when the current cleanup checkboxes 
+are left blank.
+    Q32 retains the $500 damage threshold and the categories Material 
+Loss, Carrier Damage, Property Damage, Response Cost, and Remediation/
+Cleanup Cost. The new form hides the category fields when the filer 
+answers ``No'' to whether total damage exceeded $500. PHMSA remains 
+concerned about underreported damages but does not propose changing the 
+threshold and seeks comment on it.
+    Q33a retains the question whether hazardous material caused or 
+contributed to a fatality and the counts for employees, responders, and 
+the general public. The new form removes ``resulting from the hazardous 
+material'' from the follow-up instructions because the initial question 
+already establishes that scope. Q33b separately addresses fatalities 
+not caused by hazardous material.
+    Q33b retains fatalities not resulting from the hazardous material 
+and changes ``If yes, how many?'' to ``If yes, enter the number of 
+fatalities,'' consistent with Q33a. For example, a driver killed by a 
+collision with a gasoline cargo tank is distinguished from a driver 
+killed by a fire resulting from released gasoline. The distinction 
+between incident involvement and hazardous-material causation remains.
+    Q34 retains the question whether hazardous material caused or 
+contributed to injury and the counts by hospitalization status and 
+population--employees, responders, or the general public. The new form 
+slightly revises the affirmative-response instructions and hides the 
+remaining fields after a ``No'' response.
+    Q35 retains whether hazardous material caused or contributed to 
+evacuation, the employee and general-public counts, and duration in 
+hours. It removes ``Total Evacuated'' because PHMSA calculates and 
+publishes that total by adding the two counts. The follow-up fields 
+respond to the Yes/No selection to reduce unnecessary entry.
+    Q36 retains whether a major transportation artery or facility 
+closed and, if so, the closure duration. The current guide defines a 
+major transportation artery as a highway, main road, or secondary road, 
+excluding side streets and dirt roads; for rail, it includes lines 
+other than rail spurs. The new form slightly revises the affirmative-
+response instructions and hides the duration field after a ``No'' 
+response.
+    Q37 retains crash or derailment, vehicle overturn, departure from 
+the roadway or track, estimated speed, and weather conditions. The new 
+form groups the Yes/No questions and requests speed in miles per hour 
+and a weather description if any of the three conditions occurred. The 
+current form requests these details only for a crash or derailment. 
+Expanding the trigger to overturns and departures may therefore 
+slightly increase burden.
+
+E. Current Form: Part V--Air Incident Information
+
+    The new form retains the current air-only content (Q38-Q40), 
+expands some response choices, and adds questions on flight numbers, 
+passenger baggage, and Unmanned Aircraft Systems (UAS), or drones. 
+Section V describes the new questions.
+    The air-only section moves earlier, from Part V to Part 4, so 
+filers reporting passenger-baggage incidents can identify which 
+shipping-paper questions to bypass. It is enabled only when the 
+reported mode at occurrence or discovery is air; otherwise, its fields 
+cannot be completed.
+    Q38 retains whether the material was offered or transported on 
+passenger aircraft and whether it was cargo or passenger baggage. For 
+baggage incidents, the new instructions allow filers to skip shipment 
+information such as shipper/offeror name and shipping-paper or bill-of-
+lading number because baggage generally has no shipping paper. This 
+should reduce required entries.
+    Q39 currently offers six incident locations or stages: air carrier 
+cargo facility, sort center, baggage area, surface transport to or from 
+the airport, flight, and aircraft loading/unloading. The new form adds 
+Unit Load Device (ULD) loading and unloading, taxiing for takeoff and 
+landing, Transportation Security Administration (TSA) baggage screening 
+area, other baggage area, gate area, and maintenance/stores area. It 
+separates aircraft loading from unloading and adds ``Other (please 
+describe)'' with free text. DOT's internal review recommended the 
+expanded choices to give PHMSA and FAA more detail, although reviewing 
+more options may increase burden. DOT solicits comment.
+    Q40 asks which phases the shipment had completed before the 
+incident. The new form changes ``Transported by air (first flight)'' 
+and ``Transported by air (subsequent flights)'' to ``Transported by air 
+(one flight)'' and ``Transported by air (multiple flights).'' It 
+separates ``Transfer at sort center/cargo facility'' into sort-center 
+and air-cargo-facility choices and adds ``Origin Forwarder'' and 
+``Destination Forwarder.'' ``Shipment had not been transported'' and 
+``Initial transport by highway to cargo facility'' remain. DOT's 
+internal review recommended the additional choices. DOT solicits 
+comment.
+    Section V, Part 4, provides the additional air questions and the 
+routing instructions for cargo and passenger-baggage incidents.
+
+[[Page 59843]]
+
+F. Current Form: Part VI--Description of Events & Package Failure
+
+    Part VI requests a free-text incident narrative: the sequence of 
+events, mitigation actions, package failure--including the size and 
+location of holes or cracks--and estimated release duration. It also 
+requests photographs and diagrams when needed for clarification. This 
+flexible field allows filers to explain circumstances not captured by 
+structured questions, but many responses contain only a sentence or 
+two. PHMSA seeks comment on encouraging more detailed narratives.
+    The new form retains a large free-text field and uses plain-
+language questions and bullets to organize the response. Its 
+``Description of Events'' instructions are:
+    Please describe the following:
+    <bullet> Why did the incident occur?
+    <bullet> What sequence of events led up to the incident?
+    <bullet> What was done to mitigate the release?
+    <bullet> What actions were taken at the time the incident occurred 
+or was first discovered?
+    <bullet> Any additional details about the incident that are not 
+captured elsewhere on the form?
+    The dedicated release-duration field discussed under Q19 replaces 
+the request within the current narrative instructions, where filers may 
+overlook it.
+    The new instructions state: ``PHMSA strongly encourages you to 
+submit photographs, maps, diagrams, or other visuals that illustrate 
+the nature or impacts of the incident.'' Visuals can clarify 
+circumstances beyond the narrative. Filers may attach them to an 
+emailed PDF report sent to <a href="/cdn-cgi/l/email-protection#33635b5e40527b72697e72677a706073575c471d545c45"><span class="__cf_email__" data-cfemail="1141797c627059504b5c504558524251757e653f767e67">[email&#160;protected]</span></a> or upload them 
+through HAZMATICS (<a href="https://portal.phmsa.dot.gov">https://portal.phmsa.dot.gov</a>). PHMSA seeks comment 
+on encouraging these submissions.
+
+G. Current Form: Part VII--Recommendations/Actions Taken To Prevent 
+Recurrence
+
+    Part VII retains a free-text field for actions and recommendations 
+to prevent recurrence, including measures within the company's control 
+and broader improvements. Filers have suggested training, packaging, 
+operating procedures, technology, and routing changes that PHMSA and 
+other stakeholders can examine. The new form revises the instructions 
+for ``Actions Taken or Planned to Prevent Recurrence'' as follows:
+
+Do you have recommendations to help prevent the recurrence of a 
+similar incident? These recommendations may include improvements to 
+regulations, training, packaging, operations, communications, or 
+other areas. Please describe whether the recommended actions are 
+within the control of your company or if they depend on other 
+parties or stakeholders to be implemented.
+
+    PHMSA seeks comment on improving responses because many filings 
+leave this field blank or identify no potential change to prevent 
+recurrence.
+
+H. Current Form: Part VIII--Contact Information
+
+    Part VIII currently identifies a ``Preparer'' whom PHMSA can 
+contact for additional information. It requests name, telephone, job 
+title, fax, business name and address, email, hazardous materials 
+registration number if not already provided, date, and whether the 
+preparer is a carrier, shipper, facility, or other entity.
+    The new form removes fax number, date, separate preparer business 
+name and address, and preparer registration number. Email generally 
+serves document transmission needs, and email timestamps or mailed-
+report postmarks supply dates. Although a company may use a third-party 
+preparer, the reporter remains responsible under the HMR; PHMSA 
+therefore proposes to remove the preparer/reporter distinction while 
+retaining a direct contact. Email and telephone are preferred contact 
+methods, and carrier and shipper registration numbers are already 
+collected elsewhere.
+    PHMSA has also removed the carrier/shipper/facility/other 
+indicator. Reporter, carrier, and shipper information--and the 
+``Shipper/Offeror same as Reporter'' and ``Carrier/Transporter same as 
+Reporter'' checkboxes--can identify those relationships. ``Facility'' 
+is ambiguous and historically appears in less than about 0.5 percent of 
+filings; ``Other'' often identifies a third-party agent or consultant. 
+PHMSA solicits comment.
+    The direct contact moves earlier in the form and retains first 
+name, last name, position title, email, telephone, and extension, 
+without the ``Preparer'' label.
+    The new form also requests a direct shipper contact, beyond the 
+company-level information already collected. DOT's internal review 
+recommended this addition to help investigators obtain packaging and 
+hazardous-material information. Most reporters are carriers; PHMSA 
+expects them to be able to provide a shipper contact reachable by 
+telephone or email. Section V, Part 5, describes this new field.
+
+V. New Content (Found on New Form/Not Found on Current Form)
+
+    This section describes new data elements and additional details in 
+proposed-form order. Where a change is already explained in section IV, 
+this section refers to that discussion. The proposed form uses Arabic-
+numbered Parts rather than Roman numerals to improve readability.
+The proposed form has ten Parts:
+
+1. Part 1--Reason for the Report
+2. Part 2--Reporter/Company Information
+3. Part 3--General Incident Information
+4. Part 4--Air Incident Only
+5. Part 5--Shipment Information
+6. Part 6--Hazardous Material Information
+7. Part 7--RAM
+8. Part 8--Packaging Information
+9. Part 9--Outcomes of the Incident
+10. Part 10--Description of Events and Actions Taken To Prevent 
+Recurrence
+
+    Here, ``Q*1'' means Question 1 on the proposed form; ``Q1'' refers 
+to the current form. Compare the docketed proposal with the current 
+form on PHMSA's website.\29\ Section VI provides a crosswalk, with 
+proposed question numbers in its right-most column.
+---------------------------------------------------------------------------
+
+    \29\ PHMSA, Hazardous Materials Incident Report (Jan. 2004). DOT 
+Form 5800.1; OMB No. 2137-0039, available at: <a href="https://www.phmsa.dot.gov/sites/phmsa.dot.gov/files/docs/IncidentForm010105.pdf">https://www.phmsa.dot.gov/sites/phmsa.dot.gov/files/docs/IncidentForm010105.pdf</a>.
+---------------------------------------------------------------------------
+
+A. New Form: Part 1--Reason for the Report
+
+    Q*1 asks whether any of the following occurred as a direct result 
+of the hazardous material:
+     <bullet> A person was killed.
+     <bullet> A person received an injury requiring admittance to a 
+hospital.
+     <bullet> The general public was evacuated for one hour or more.
+     <bullet> A major transportation artery or facility was closed or 
+shut down for one hour or more.
+     <bullet> The operational flight pattern or routine of an aircraft 
+was altered.
+     <bullet> During transportation by aircraft, a fire, violent 
+rupture, explosion, or dangerous evolution of heat occurred as a direct 
+result of a battery or battery-powered device.
+     <bullet> Fire, breakage, spillage, or suspected radioactive 
+contamination occurred involving a radioactive material.
+     <bullet> Fire, breakage, spillage, or suspected contamination 
+occurred involving an infectious substance other than a regulated 
+medical waste.
+     <bullet> A release of a marine pollutant occurred in a quantity 
+exceeding 450 L (119 gallons) for a liquid or 400 kg (882 pounds) for a 
+solid.
+     <bullet> In the judgment of the person in possession of the 
+hazardous material,
+
+[[Page 59844]]
+
+the incident should be reported to the National Response Center (NRC) 
+even though the incident did not meet other criteria above.
+    These selections reflect Sec.  171.15(b) and make the reporting 
+criteria explicit, as discussed under Q1 in section IV.
+    A written report may be required even when NRC telephone 
+notification is not. Q*2 therefore asks, ``During transportation in 
+commerce, did any of the following occur?'' Filers select all 
+applicable criteria from Sec.  171.16(a):
+     <bullet> An unintentional release of a hazardous material or the 
+discharge of any quantity of hazardous waste.
+     <bullet> An undeclared hazardous material was discovered.
+     <bullet> In any mode of transportation, a fire, violent rupture, 
+explosion, or dangerous evolution of heat occurred as a direct result 
+of a battery or battery-powered device.
+     <bullet> A specification cargo tank with a capacity of 1,000 
+gallons or greater containing any hazardous material suffered 
+structural damage to the lading retention system or damage that 
+requires repair to a system intended to protect the lading retention 
+system, even if there is no release of hazardous material.
+    Together, Q*1 and Q*2 identify the basis for filing. If none 
+applies, the filer should gather more information and consider whether 
+a report is required. The current form identifies only some reporting 
+criteria, which can leave the basis unclear. Reviewing the full 
+criteria may add burden but should prevent unnecessary filing and 
+processing. Understanding reporting requirements is also part of 
+function-specific training for hazmat employees who prepare or assist 
+with reports; see the definition in Sec.  171.8 and training 
+requirements in Sec.  172.704.
+    Q*3-Q*6 correspond to existing questions. Section VI maps them to 
+the current form, including Q*3 to Q2 and Q*4 to Q5.
+    Q*3 retains initial reports, updates, and additional pages. Section 
+IV's Q2 discussion explains the revised ``update existing report'' 
+label and mandatory update criteria. The label also aligns with 
+``Updating the incident report'' in Sec.  171.16(c). ``Additional 
+pages'' accommodates multiple hazardous materials, packaging types, or 
+shippers when using the PDF, although PHMSA encourages HAZMATICS or XML 
+for those cases. For example, an initial report covering UN1267 and 
+UN1993 would contain the general incident details and UN1267 
+information; a second PDF marked ``additional pages'' would provide the 
+unique UN1993 information.
+    Q*4 implements the NRC notification indicator, separate report-
+number field, and lookup link discussed under Q5 in section IV. The NRC 
+website helps filers find a report number after notification.\30\
+---------------------------------------------------------------------------
+
+    \30\ USCG, National Response Center, available at: <a href="https://nrc.uscg.mil/">https://nrc.uscg.mil/</a>.
+---------------------------------------------------------------------------
+
+    Q*5 carries forward Q31's Fire/EMS and Police response information 
+and adds the responding departments' names, as explained in section IV. 
+Moving it earlier groups NRC, Fire/EMS, Police, and other-agency 
+reporting questions together.
+    Q*6 implements the separate agency-name and report-number fields, 
+space for multiple reports, and expanded agency scope described under 
+Q6 in section IV.
+    That discussion explains the potential added burden and 
+coordination benefits of including non-DOT Federal, state, and local 
+agencies. PHMSA solicits comment.
+
+B. New Form: Part 2--Reporter/Company Information
+
+    Part 2 combines reporting-company and direct-contact information. 
+Section IV's Q10 and Part VIII discussions explain the retained fields 
+and removal of fax and separate preparer information. Use of a third 
+party does not transfer the reporting company's responsibility under 
+Sec.  171.16.
+    Q*9 asks, ``Is the reporting company the carrier of the hazardous 
+material?'' If yes, Q*10 asks whether the carrier notified the shipper 
+that its shipment was involved in an accident or incident. PHMSA 
+expects greater carrier-shipper communication to help corroborate 
+information and resolve safety issues.
+    The HMR currently does not require a carrier to notify the shipper 
+of such an incident. PHMSA may consider that requirement in a future 
+rulemaking. For now, Q*10 would identify whether notification occurred 
+and may encourage communication so both parties can help prevent 
+recurrence. A shipper otherwise may be unaware of the incident.
+    Shippers may be better positioned to fill gaps in packaging 
+specifications, markings, capacity, testing, and material 
+classification. The HMR distinguishes pre-transportation from 
+transportation functions. Section 171.1(b) addresses classification, 
+packaging selection, marking, labeling, shipping papers, and package 
+closure; Sec.  172.204 addresses the shipper's certification. These 
+responsibilities make shippers a potential resource for improving 
+incomplete reports.
+    Q*10 would help PHMSA assess whether voluntary notification is 
+common enough that a new requirement may be unnecessary. This PRA 
+notice does not propose an HMR amendment requiring notification. The 
+Research and Special Programs Administration (RSPA) proposed such a 
+requirement in the 2001 HM-229 notice of proposed rulemaking (NPRM) but 
+did not adopt it in the final rule.\31\ PHMSA seeks comment on 
+improving notification and collaboration.
+---------------------------------------------------------------------------
+
+    \31\ RSPA, Hazardous Materials: Revisions to Incident Reporting 
+Requirements and the Hazardous Materials Incident Report Form 
+(Docket No. RSPA-99-5013 (HM-229); RIN 2137-AD21), 66 FR 35155 (July 
+3, 2001).
+---------------------------------------------------------------------------
+
+    Section VI maps the remaining Part 2 fields to the current form.
+
+C. New Form: Part 3--General Incident Information
+
+    Part 3 requires filers to select either ``occurred'' or ``first 
+discovered'' for the incident date and time. Section IV's Q3/Q4 
+discussion explains how this distinction accommodates unknown 
+occurrence times without materially increasing burden.
+    Q*11 adds the calendar date picker, and Q*12 specifies the HH:MM 
+time format, as described in that discussion.
+    Q*13 adds GPS longitude/latitude coordinates. Section IV's Q7 
+discussion explains their use where conventional location descriptors 
+are inadequate and the possible additional burden. Filers can copy 
+coordinates from a point selected in a free online mapping tool into 
+the PDF.
+    Filer-supplied coordinates may also be more accurate than PHMSA's 
+geocoding results when no reliable street address exists. Uncertainty 
+in those results has complicated consideration of publishing 
+coordinates in the incident dataset. The new field is intended to 
+improve location accuracy and support PHMSA's geographic information 
+systems analysis, as well as partners' and stakeholders' use of 
+geospatial data.
+    Q*15 asks, ``Was the shipment transported or planned to be 
+transported by another mode?'' After ``Yes,'' filers select all known 
+applicable modes: Highway, Rail, Air, Water, and Pipeline. A ``No'' 
+response closes the choices. The mode at occurrence or discovery 
+remains separately identified.
+    Section IV's Q8 discussion explains the intermodal rationale, 
+burden considerations, and possible separation of completed and planned 
+legs. For example, a highway incident involving a shipment destined for 
+air transport could inform analysis of potential air risks. The 
+additional modes would support multimodal queries and coordination with 
+FAA, FMCSA, FRA,
+
+[[Page 59845]]
+
+and USCG; they do not establish where the packaging would otherwise 
+have failed.
+    Q*17 asks, ``Did the incident occur or was the incident discovered 
+during an inspection?'' An affirmative response requests the inspecting 
+entity's name. PHMSA believes the information could help identify 
+patterns associated with inspections and inform advisories, guidance, 
+or changes to inspection practices or requirements to protect 
+transportation workers and agency personnel.
+    Section VI maps the remaining Part 3 fields, including Q*16 to Q9 
+and Q*18 to Q22.
+
+D. New Form: Part 4--Air Incident Only
+
+    Part 4 is enabled only for air incidents at occurrence or 
+discovery. Section IV's Q38-Q40 discussion covers retained and expanded 
+air-only fields. The following paragraphs describe additional questions 
+and routing.
+    Q*19 adds a UAS question. Hazardous-material transport by UAS 
+presents potential safety risks and may become more common, subject to 
+FAA coordination and applicable testing, packaging, material, and 
+quantity limits. The FAA Reauthorization Act of 2024 directs the 
+Secretary to ``use a risk-based approach to establish the operational 
+requirements, standards, or special permits necessary to approve or 
+authorize an air carrier to transport hazardous materials by unmanned 
+aircraft systems'' based on the weight, amount, and type of 
+material.\32\ HMR incident-reporting triggers in Sec. Sec.  171.15 and 
+171.16 already apply to UAS operators as to other air operators. PHMSA 
+seeks comment on the proposed UAS question.
+---------------------------------------------------------------------------
+
+    \32\ FAA Reauthorization Act of 2024, Public Law 118-63 (May 16, 
+2024), available at: <a href="https://www.congress.gov/bill/118th-congress/house-bill/3935/text">https://www.congress.gov/bill/118th-congress/house-bill/3935/text</a>.
+---------------------------------------------------------------------------
+
+    Q*20 expands Q39's six incident-location choices to fifteen: Sort 
+Center; During flight; Gate area; TSA baggage screening area; By 
+surface to/from the airport; Maintenance/Stores area; Other baggage 
+area; During loading of aircraft; During unloading of aircraft; During 
+taxiing for takeoff; During taxiing for landing; During loading of ULD 
+[Unit Load Device]; During unloading of ULD; Cargo facility; and Other 
+(please describe). The last option includes free text. Section IV 
+explains the changes recommended by DOT's internal review and their 
+potential burden. PHMSA solicits comment.
+    Q*22 requests flight numbers for cargo or passenger flights that 
+transported the material or to which it was offered. Flight numbers can 
+provide routing and flight details beyond origin and destination, 
+supporting analysis and investigation.
+    Q*23 and Q*24 retain Q38's passenger-aircraft and cargo/baggage 
+questions. For passenger baggage, Q*25 adds six location choices: ``On 
+the passenger's person (on one's person),'' ``In the cabin,'' ``In a 
+baggage compartment,'' ``Checked baggage,'' ``Gate area,'' and ``Other 
+(please describe),'' with free text. Q*26 asks whether the material 
+carried by the passenger or crewmember was allowed under 49 CFR 175.10 
+and requests a plain-language description.\33\ DOT's internal review 
+recommended these fields to help PHMSA and FAA identify prohibited 
+items commonly brought aboard and target outreach.
+---------------------------------------------------------------------------
+
+    \33\ 49 CFR 175.10.
+---------------------------------------------------------------------------
+
+    A ``Cargo'' response to Q*24 routes filers to Part 5, which 
+requests shipping-paper information. ``Passenger Baggage'' routes them 
+through Q*25 and Q*26 and then to Part 6, bypassing Part 5 because 
+baggage may have no shipping paper.
+    Q*21 corresponds to Q40, with the additional options described in 
+section IV. Section VI provides the crosswalk.
+
+E. New Form: Part 5--Shipment Information
+
+    Part 5 retains the shipping-paper or waybill identifier (Q*27), 
+origin (Q*30), and destination (Q*31), corresponding to Q11-Q13. 
+Country fields are added for origin, destination, shipper, and carrier 
+to accommodate non-U.S. locations. Approximately 2 percent of reports 
+from 2010-2023 identified a non-U.S. shipper or shipment origin.\34\ To 
+reduce burden, PHMSA could require country only for non-U.S. entries or 
+prefill ``U.S.'' as the default.
+---------------------------------------------------------------------------
+
+    \34\ PHMSA, Hazardous Materials Incident Report Search Tool 
+(last accessed Sept. 12, 2024), available at: <a href="https://www.phmsa.dot.gov/hazmat-program-management-data-and-statistics/data-operations/incident-statistics">https://www.phmsa.dot.gov/hazmat-program-management-data-and-statistics/data-operations/incident-statistics</a>. Query the incident data by the 
+following field: Date of Incident = 01/01/2010 to 12/31/2023. 
+Deduplicate the resulting rows/records using the Report Number 
+field, as a single incident (each uniquely identified by the Report 
+Number) can have multiple records. Aggregate the number of distinct 
+reports where the value for Shipper_Country or Origin_Country is not 
+the U.S. and is not blank. Divide this count of distinct non-U.S. 
+shipper/origin incidents by the total number of incidents. 
+Approximately 1.8% of incidents indicate a non-U.S. shipper and 
+approximately 0.2% of incidents show a non-U.S. origin.
+---------------------------------------------------------------------------
+
+    Checkboxes copy information to avoid repeat entry: ``Shipper/
+Offeror same as Reporter'' (Q*28), ``Same as Shipper/Offeror Address'' 
+(Q*30), and ``Carrier/Transporter same as Reporter'' (Q*31). Filers can 
+instead enter different addresses when these relationships do not 
+apply. The checkboxes are intended to reduce burden.
+    Q*29 adds a direct shipper contact who knows the shipment and pre-
+transportation functions. Section IV's Part VIII discussion explains 
+the investigative purpose and expectation that reporting carriers can 
+provide a name, telephone number, and email. When the shipper is the 
+reporter, Q*7 already supplies its main contact. DOT's internal review 
+recommended ensuring investigators can reach both shipper and carrier 
+directly.
+    Section VI maps the remaining Part 5 fields to the current form.
+
+F. New Form: Part 6--Hazardous Material Information
+
+    Part 6 carries forward Q14-Q23 and Q30: UN/NA ID (Q*33), proper 
+shipping name (Q*34), technical trade name where applicable (Q*35), 
+hazard class (Q*36), packing group (Q*37), undeclared shipment (Q*38), 
+TIH (Q*39), hazardous waste (Q*40), and release quantity (Q*41). 
+Section IV explains revisions to the existing fields.
+    Q*38 adds the definition of ``undeclared hazardous material'' to 
+the form.\35\ If the shipment was not undeclared, the filer is asked 
+whether it was misdeclared and to describe suspected errors in shipping 
+papers, labels, markings, or placards. ``Misdeclared'' is not defined 
+in Sec.  171.8; the form explains it for this collection. 
+Misdeclaration alone does not trigger reporting under Sec.  171.16, so 
+a misdeclared shipment without a release may not require a report. 
+PHMSA solicits comment.
+---------------------------------------------------------------------------
+
+    \35\ 49 CFR 171.8.
+---------------------------------------------------------------------------
+
+    Q*41 combines the release questions discussed under Q19 and Q30: an 
+explicit Yes/No release indicator, quantity as a point estimate or 
+range, and a dedicated unit-of-measure dropdown. A range may reduce 
+burden when a precise estimate is unavailable.
+    Q*41 also gives release duration its own field, replacing the 
+request within the current Part VI narrative instructions. Duration can 
+inform risk assessment and investigation of exposure affecting the 
+public, environment, transportation workers, and responders. PHMSA 
+solicits comment.
+    Section VI provides the Part 6 crosswalk.
+
+G. New Form: Part 7--Radioactive Materials (RAM)
+
+    Part 7 (Q*42) retains Q29's RAM fields unchanged and groups them 
+separately so filers with non-RAM incidents can bypass them. Internal
+
+[[Page 59846]]
+
+review identified no need to revise the individual questions. PHMSA 
+solicits comment.
+
+H. New Form: Part 8--Packaging Information
+
+    Part 8 reorganizes Q24-Q28. Section IV, Part III, explains the non-
+bulk packaging categories and nurse-tank option in Q*43, consolidation 
+of construction-material fields, and other changes to existing 
+packaging questions.
+    Q*48 adds ``Does this Outer Packaging meet UN or DOT 
+specification?'' and requests the type of the most recent testing or 
+requalification and the test laboratory or provider. Specification 
+packaging is subject to applicable testing requirements in 49 CFR parts 
+178 and 180.\36\ Non-specification packaging does not have testing 
+prescribed under the HMR. The new fields give context to ``Last Test 
+Date,'' which otherwise leaves the test type and applicability unclear. 
+Approximately 75 percent of 2013-2022 reports involving tank cars 
+lacked a meaningful last-test date.\37\ Ambiguity may contribute to 
+missing responses. The new fields may add burden but could make sparse 
+testing information more useful. PHMSA solicits comment.
+---------------------------------------------------------------------------
+
+    \36\ 49 CFR part 178 includes testing requirements for UN 
+performance-oriented packaging. See subpart M--Testing of Non-bulk 
+Packagings and Packages and subpart O--Testing of IBCs. Part 180 
+includes testing requirements for cylinders (subpart C), Cargo Tanks 
+(subpart E), Tank Cars (subpart F), and Portable Tanks (subpart G), 
+as well as additional testing requirements for IBCs (subpart D).
+    \37\ PHMSA, Hazardous Materials Incident Report Search Tool, 
+available at: <a href="https://www.phmsa.dot.gov/hazmat-program-management-data-and-statistics/data-operations/incident-statistics">https://www.phmsa.dot.gov/hazmat-program-management-data-and-statistics/data-operations/incident-statistics</a>. Query the 
+incident data by the following fields: Date of Incident = 01/01/2013 
+to 12/31/2022, Mode of Transportation = ``Rail''. Deduplicate the 
+resulting rows/records using the Report Number field, as a single 
+incident (each uniquely identified by the Report Number) can have 
+multiple records. Aggregate the number of distinct reports where the 
+variable, Cont1.Package.Last.Test.Date, is equal to ``0-00-00 
+00:00:00'' and divide the count by the number of distinct reports. 
+PHMSA found 3304 records with Cont1.Package.Last.Test.Date='0-00-00 
+00:00:00'' among 4424 distinct reports; 3304/4424 = 0.7468 or 
+approximately 75%.
+---------------------------------------------------------------------------
+
+    Knowing what testing occurred, when, and by whom can support 
+failure investigations and safety advisories. PHMSA may need to examine 
+test results when packaging passes required tests but fails in service. 
+Testing addresses design and manufacture and, where required, 
+continuing qualification and maintenance. PHMSA specifies testing 
+standards and oversees providers; the additional information could 
+inform outreach, policy, regulations, testing practices, or program 
+oversight.
+    Q*53 adds a rail-only Non-Accident Release (NAR) cause-code 
+question. PHMSA understands that Appendix B of the Association of 
+American Railroads' Non-Accident Release Risk Index publication 
+specifies tank-car NAR cause codes.\38\ These releases warrant 
+attention because a derailment or collision does not explain the 
+packaging failure. PHMSA seeks comment on adding these codes and other 
+rail-only information.
+---------------------------------------------------------------------------
+
+    \38\ Association of American Railroads, Hazardous Materials 
+(BOE) Working Committee, The Non-Accident Relase Risk Index (NARRI) 
+Revision 6 (Oct. 23, 2002, updated Aug. 1, 2014), available at: 
+<a href="https://www.aar.org/wp-content/uploads/2017/12/AAR-2002-NARRI-BOE.pdf">https://www.aar.org/wp-content/uploads/2017/12/AAR-2002-NARRI-BOE.pdf</a>.
+---------------------------------------------------------------------------
+
+    Q*51 retains Q25's failure codes. Section IV explains the revised 
+structure, and section VI supplies the crosswalk.
+
+I. New Form: Part 9--Outcomes of the Incident
+
+    Part 9 carries forward Part IV's questions on hazardous-material 
+fatalities and injuries, other incident fatalities, transportation 
+closures, evacuations, crashes or derailments, and monetary damages 
+above $500. Section IV explains the individual changes.
+    Q31's emergency-response and cleanup content is divided between 
+Part 1 and Part 9.
+    Q*61 places environmental remediation and cleanup in Part 9. 
+Section IV's Q31 discussion explains the Yes/No question, the in-house 
+and other-cleanup choices, the request for contracted companies' names, 
+and the routing after each response.
+    Fire/EMS and Police response information moves to Q*5 in Part 1, 
+with new fields for department names to support follow-up. This 
+separates emergency response from environmental remediation.
+    Section VI maps the remaining Part 9 fields, including Q*60 to 
+current Q32.
+
+J. New Form: Part 10--Description of Events and Actions Taken To 
+Prevent Recurrence
+
+    Part 10 combines the incident narrative and recurrence-prevention 
+fields from current Parts VI and VII, with the revised instructions 
+discussed in section IV. It also adds a separate feedback field: 
+``Please describe any issues you encountered while completing this 
+form. Please provide suggestions on how to improve the form or your 
+experience completing and submitting the report.''
+    Feedback collected during filing could inform continuing 
+improvements, including from filers unable to comment during formal 
+notice periods. PHMSA requests renewal of information collection 2137-
+0039 every three years and may seek comments and OMB approval for 
+revisions more often. The feedback field would provide additional input 
+for those efforts. Suggestions may also be sent to 
+<a href="/cdn-cgi/l/email-protection#34645c5947557c756e7975607d776774505b401a535b42"><span class="__cf_email__" data-cfemail="d484bcb9a7b59c958e9995809d978794b0bba0fab3bba2">[email&#160;protected]</span></a>.
+
+VI. Crosswalk Between the Current Form and Proposed Form
+
+    This table shows the corresponding data elements of the current and 
+proposed form.
+
+----------------------------------------------------------------------------------------------------------------
+                                                           Current form--
+     Data element description       Current form--part    question (Q) No.   New form--part   New form--question
+                                                                                                     No.
+----------------------------------------------------------------------------------------------------------------
+Report Type--Reason for the        I..................  Q1.................               1  Q*1 and Q*2.
+ Report.
+Report Type--Indication of         I..................  Q2.................               1  Q*3.
+ whether the report is an initial
+ report.
+Date of Incident.................  II.................  Q3.................               3  Q*11.
+Time of Incident.................  II.................  Q4.................               3  Q*12.
+NRC Report Number (if applicable)  II.................  Q5.................               1  Q*4.
+Other Federal DOT Reports (if      II.................  Q6.................               1  Q*6.
+ applicable).
+Location of Incident.............  II.................  Q7.................               3  Q*13.
+Mode of Transportation...........  II.................  Q8.................               3  Q*14.
+Transportation Phase.............  II.................  Q9.................               3  Q*16.
+Carrier/Reporter (i.e., Name,      II.................  Q10................       2 (and 5)  Q*8 (and Q*31).
+ Address, DOT ID Number, and
+ Hazardous Materials Registration
+ Number).
+Shipper/Offeror (i.e., Name,       II.................  Q11................               5  Q*28.
+ Address, Shipping Paper Number,
+ and Hazardous Materials
+ Registration Number).
+Origin...........................  II.................  Q12................               5  Q*30.
+Destination......................  II.................  Q13................               5  Q*32.
+
+[[Page 59847]]
+
+ 
+Proper Shipping Name of the        II.................  Q14................               6  Q*34.
+ Material.
+Technical Trade Name (if           II.................  Q15................               6  Q*35.
+ applicable).
+Hazard Class/Division............  II.................  Q16................               6  Q*36.
+UN/NA Identification Number......  II.................  Q17................               6  Q*33.
+Packing Group (if applicable)....  II.................  Q18................               6  Q*37.
+Quantity Released................  II.................  Q19................               6  Q*41.
+Hazardous Waste (Yes/No) and EPA   II.................  Q20................               6  Q*40.
+ Uniform Waste Manifest Number.
+Toxic by Inhalation (Yes/No) and   II.................  Q21................               6  Q*39.
+ Hazard Zone.
+Special Permit (SP) or Approval    II.................  Q22................               3  Q*18.
+ (Yes/No) and SP or Approval
+ Number.
+Undeclared Hazardous Material....  II.................  Q23................               6  Q*38.
+Packaging Type...................  III................  Q24................               8  Q*43.
+Failure Codes....................  III................  Q25................               8  Q*51.
+Specification Packaging Markings.  III................  Q26a...............               8  Q*48.
+Non-Bulk, IBC, or Non-             III................  Q26b...............               8  Q*44-Q*45 (and Q*50
+ Specification: Packaging Type,                                                               for inner
+ Material of Construction, Head                                                               packaging).
+ Type (drums).
+Package Capacity and Quantity....  III................  Q27................               8  Q*46, Q*49 (and
+                                                                                              Q*50 for inner
+                                                                                              packaging).
+Packaging Manufacturer, Date of    III................  Q28................               8  Q*47.
+ Manufacture, and Serial Number.
+Packaging Last Test Date.........  III................  Q28................               8  Q*48.
+Material of Construction (if Tank  III................  Q28................               8  Q*45.
+ Car, CTMV, Portable Tank, or
+ Cylinder).
+Design Pressure and Shell          III................  Q28................               8  Q*52.
+ Thickness (if Tank Car, CTMV, or
+ Portable Tank).
+Head Thickness (if Tank Car,       III................  Q28................               8  Q*52.
+ CTMV).
+Service Pressure (if Cylinder)...  III................  Q28................               8  Q*52.
+Pressure Relief Valve or Device:   III................  Q28................               8  Q*52.
+ Type, Manufacturer, and Model.
+Radioactive Materials............  III................  Q29................               7  Q*42.
+Result of Incident...............  IV.................  Q30................               6  Q*41.
+Emergency Response (Fire/EMS,      IV.................  Q31................               9  Q*5, Q*61.
+ Police, and In-house/Other
+ Cleanup).
+Damages..........................  IV.................  Q32................               9  Q*60.
+Hazardous Materials Fatalities...  IV.................  Q33a...............               9  Q*54.
+Non-Hazardous Materials            IV.................  Q33b...............               9  Q*55.
+ Fatalities.
+Hazardous Materials Injuries.....  IV.................  Q34................               9  Q*56.
+Evacuation.......................  IV.................  Q35................               9  Q*59.
+Closure of Major Transportation    IV.................  Q36................               9  Q*58.
+ Artery.
+Crash or Derailment, Speed,        IV.................  Q37................               9  Q*57.
+ Weather Conditions.
+Passenger Aircraft...............  V..................  Q38................               4  Q*23.
+Cargo Shipment or Passenger        V..................  Q38................               4  Q*24.
+ Baggage.
+Description of Air Incident        V..................  Q39................               4  Q*20.
+ Location.
+Hazardous Materials by Air         V..................  Q40................               4  Q*21.
+ Transportation Phases.
+Description of Events and Package  VI.................  Not numbered/Free                10  Not numbered/Free
+ Failure.                                                text.                                text.
+Recommendations/Actions Taken to   VII................  Not numbered/Free                10  Not numbered/Free
+ Prevent Recurrence.                                     text.                                text.
+Contact Information..............  VIII...............  Not numbered.......               2  Q*7 (reporter) and
+                                                                                              Q*29 (shipper).
+----------------------------------------------------------------------------------------------------------------
+
+VII. Burden Estimates for Information Collection 2137-0039
+
+A. Current Form--Burden Estimates
+
+    The following estimates come from the supporting statement for the 
+current information collection, 2137-0039.\39\ Supporting documents are 
+available through <a href="https://www.reginfo.gov/public/do/PRASearch">https://www.reginfo.gov/public/do/PRASearch</a> using 
+that number. Figures may be rounded for readability.
+---------------------------------------------------------------------------
+
+    \39\ OMB, Office of Information and Regulatory Affairs, 
+Information Collection Request Documents: Burden Calculations (June 
+22, 2023), available at: <a href="https://www.reginfo.gov/public/do/PRAViewDocument?ref_nbr=202306-2137-002">https://www.reginfo.gov/public/do/PRAViewDocument?ref_nbr=202306-2137-002</a>.
+
+[[Page 59848]]
+
+
+
+----------------------------------------------------------------------------------------------------------------
+                                                                                                   Total annual
+             Information collection                 Respondents    Total annual      Hours per     burden hours
+                                                        [A]        responses [B]   response [C]       [B * C]
+----------------------------------------------------------------------------------------------------------------
+Telephone Notifications.........................             180             716             .08              57
+Incident Reports-- Paper........................             172           2,888             1.6           4,621
+Incident Reports--Electronic....................             166          19,720              .8          15,776
+                                                 ---------------------------------------------------------------
+    Total.......................................             518          23,324             (*)          20,454
+----------------------------------------------------------------------------------------------------------------
+* The current estimates are 96 minutes (1.6 hours) for a paper report, 48 minutes (0.8 hours) for a HAZMATICS
+  submission (<a href="https://portal.phmsa.dot.gov">https://portal.phmsa.dot.gov</a>), and approximately 5 minutes (0.08 hour) for an NRC telephone
+  notification (1-800-424-8802).
+
+    Annual Reporting and Recordkeeping Burden:
+    Affected Public: Shippers and carriers of hazardous materials.
+    Number of Respondents: 518.
+    Total Annual Responses: 23,324.
+    Total Annual Burden Hours: 20,454.
+    Frequency of Collection: On occasion.
+    This notice does not change the NRC telephone-notification 
+requirement or the information collected by telephone. When Sec.  
+171.15 applies, the person in physical possession of the material must 
+notify the NRC ``as soon as practicable but no later than 12 hours 
+after the occurrence of the incident.''
+    The proposed changes concern the written incident report, DOT Form 
+5800.1, under Sec. Sec.  171.15 and 171.16.
+
+B. New Form--Burden Estimates
+
+    Under Executive Order 14192, PHMSA characterizes the proposed 
+revision as a net deregulatory action, reducing average filer burden 
+from 0.9 to 0.38 hours and saving industry approximately $400,000 
+annually.
+    The new form adds discrete fields but is designed to reduce 
+completion time by replacing vague, open-ended, or irrelevant questions 
+with specific choices and routing filers past inapplicable sections. 
+For example, for a lithium battery thermal runaway in a carry-on bag 
+aboard an aircraft, the current form requires irrelevant bill-of-lading 
+numbers, manifest details, or release quantities. The new form bypasses 
+those sections and asks three questions specific to battery incidents 
+on aircraft.
+
+----------------------------------------------------------------------------------------------------------------
+                                                                                                   Total annual
+             Information collection                 Respondents    Total annual      Hours per     burden hours
+                                                        [A]        responses [B]   response [C]       [B * C]
+----------------------------------------------------------------------------------------------------------------
+Telephone Notifications.........................             180             716            0.08              57
+Incident Reports (Electronic)...................             331          22,156            0.38           8,419
+Incident Reports (Paper)........................               7             452             1.6             723
+                                                 ---------------------------------------------------------------
+    Total.......................................             518          23,324  ..............           9,200
+----------------------------------------------------------------------------------------------------------------
+
+    Annual Reporting and Recordkeeping Burden:
+    Affected Public: Shippers and carriers of hazardous materials.
+    Number of Respondents: 518.
+    Total Annual Responses: 23,324.
+    Total Annual Burden Hours: 9,200.
+    Frequency of Collection: On occasion.
+    PHMSA derived the 0.38-hour electronic-filing estimate from 
+internal SME testing with filers of varying technical expertise and 
+validated it against system log-session metadata. PHMSA considers it a 
+conservative upper-bound estimate because those metrics treat all 
+electronic submissions as manual web interactions, although large 
+entities with established incident databases transmit a substantial 
+share through automated XML batches without filing burden. PHMSA 
+retained the prior 1.6-hour paper-filing estimate without retesting 
+because only 2 percent of filers use paper. PHMSA expects that share to 
+continue declining and paper filings to have a nominal effect on 
+overall burden.
+    PHMSA invites comments on the proposed form and burden estimates 
+through the two-stage process described in the Overview and will revise 
+them as warranted before submitting the request to OMB.
+
+VIII. Specific Questions and Topics for Public Comment
+
+    Review by DOT modal administrations, USCG, and OHMS staff 
+identified the following topics for public comment. Some questions are 
+repeated here to bring the requests together.
+    1. Carriers submit most reports because they typically possess the 
+material when an incident occurs. Shippers may know more about its 
+classification, packaging, and other shipment characteristics. 
+Communication between them may therefore improve report quality.
+    a. Should the hazardous materials carrier be required under the HMR 
+to notify the shipper when their shipment is involved in an incident? 
+In practice, do hazardous materials carriers regularly and voluntarily 
+notify the shipper that their shipment was involved in an incident? 
+Anecdotally, PHMSA staff have heard of shippers that are not aware of 
+incidents involving their shipment. How would the regulated industry 
+address this issue in a cost-effective manner?
+    b. The proposed form asks reporting carriers whether they notified 
+the shipper. PHMSA believes this may indicate whether the parties 
+worked together on the report. In your opinion, is this new question a 
+positive change?
+    c. In what ways can PHMSA encourage hazardous materials carriers 
+and shippers to work together to ensure that information about an 
+incident is accurate and complete?
+    2. UAS operations are increasing in number and complexity. Although 
+14 CFR 107.36 prohibits small UAS from carrying hazardous material, 
+operators may petition FAA for exemptions, including for medical-supply 
+delivery.\40\ Prohibited operations can still produce reportable 
+incidents, and HMR incident and discrepancy reporting requirements
+
+[[Page 59849]]
+
+apply to UAS operators as to other air operators. The proposed form 
+includes a UAS question (Q*19) for consideration.
+---------------------------------------------------------------------------
+
+    \40\ FAA-2021-0050-0001. Available at: <a href="https://www.regulations.gov/document/FAA-2021-0050-0001">https://www.regulations.gov/document/FAA-2021-0050-0001</a>. Pursuant to 14 CFR 
+part 11, Zipline International Inc. (``Zipline,'' ``we,'' or ``us'') 
+respectfully submits this petition requesting a limited exemption 
+from 14 CFR 107.36 to enable it to carry hazardous materials in 
+support of the development of a cold storage container capable of 
+transporting the COVID-19 vaccine by our unmanned aircraft system . 
+. .
+---------------------------------------------------------------------------
+
+    a. Should the DOT Form 5800.1 include question(s) about whether a 
+hazardous materials incident involved UAS? Why or why not?
+    b. If yes, what other information about UAS incidents (e.g., method 
+of delivery) should be included on DOT Form 5800.1?
+    3. In addition to UAS, autonomous or remotely operated vehicles may 
+be used in the future to transport certain hazardous materials in other 
+modes of transportation.
+    a. Should the hazardous materials incident report form indicate 
+whether a hazardous materials shipment involved an autonomous vehicle 
+or remotely operated vehicle? Why or why not?
+    b. If yes, what information should be collected with respect to 
+autonomous or remotely operated vehicles involved in a hazardous 
+materials incident?
+    4. As reflected in the incident data, incidents involving lithium 
+batteries have increased in recent years. They continue to pose 
+heightened safety risks in commercial hazardous materials 
+transportation.
+    a. What fields should be added to the DOT Form 5800.1 to understand 
+better the nature and consequences of transportation incidents 
+involving lithium batteries?
+    b. What are the benefits of adding the fields and the burden or 
+costs of filling them out? Do benefits outweigh the costs?
+    c. Will this new information be reasonably available to the 
+hazardous materials carrier, who is typically the responsible party for 
+reporting the incident?
+    d. Is this data already collected elsewhere, by a different 
+organization as part of a different data collection?
+    e. Is PHMSA's DOT Form 5800.1 the best instrument for collecting 
+this new information about lithium battery transportation incidents?
+    5. What questions, fields, or choices on the current form should be 
+revised or clarified? In your opinion, which revisions or 
+clarifications should be the highest priority to address? Which changes 
+are simply editorial in nature?
+    6. What questions, fields, or choices on the current form should be 
+removed? Why? What is the trade-off involved in their removal? This 
+trade-off weighs the benefit of the data currently collected versus the 
+burden or cost of collection.
+    7. What questions, fields, or choices should be added to the form? 
+Why? What is the benefit of adding them? What will be the added burden 
+or cost to collect this new information, especially to filers of DOT 
+Form 5800.1?
+    8. PHMSA estimates 96 minutes (1.6 hours) for both the current and 
+proposed PDF forms, compared with 48 minutes (0.8 hours) for current 
+electronic filing and 22.8 minutes (0.38 hours) for the proposed 
+electronic version.
+    a. Are PHMSA's preliminary estimates reasonable for the new form?
+    b. What specific changes to the new form are most burdensome?
+    c. What specific changes to the new form save the most time and 
+relieve the most burden?
+    d. In your opinion, how long will it take on average to fill out 
+and submit the new PDF form?
+    9. The PDF demonstrates the proposed collection changes; HAZMATICS 
+and XML reporting would also be updated to reflect them.
+    a. What challenges have you faced in reporting incidents using the 
+HAZMATICS portal? What improvements do you recommend for this portal?
+    b. What challenges have you faced in reporting incidents via XML 
+data submission? What improvements do you recommend for XML data 
+submission?
+
+     Issued in Washington, DC, on September 17, 2026, under 
+authority delegated in 49 CFR 1.97.
+William Quade,
+Associate Administrator of Hazardous Materials Safety, Pipeline and 
+Hazardous Materials Safety Administration.
+[FR Doc. 2026-19276 Filed 9-18-26; 8:45 am]
+BILLING CODE 4910-60-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

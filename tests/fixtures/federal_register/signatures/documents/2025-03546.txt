@@ -1,0 +1,138 @@
+<html>
+<head>
+<title>Federal Register, Volume 90 Issue 42 (Wednesday, March 5, 2025)</title>
+</head>
+<body><pre>
+[Federal Register Volume 90, Number 42 (Wednesday, March 5, 2025)]
+[Notices]
+[Pages 11329-11330]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2025-03546]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+DEPARTMENT OF JUSTICE
+
+U.S. Marshals Service
+
+[OMB Number 1105-0105]
+
+
+Agency Information Collection Activities; Proposed eCollection 
+eComments Requested; Extension Without Change or a Currently Approved 
+Collection; Comments Requested: Form CSO-005, Preliminary Background 
+Check Form
+
+AGENCY: U.S. Marshals Service, Department of Justice.
+
+ACTION: 30-Day notice.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The Department of Justice (DOJ), U.S. Marshals Service (USMS), 
+will submit the following information collection request to the Office 
+of Management and Budget (OMB) for review and approval in accordance 
+with the Paperwork Reduction Act of 1995.
+
+DATES: Comments are encouraged and will be accepted for 30 days until 
+April 4, 2025.
+
+FOR FURTHER INFORMATION CONTACT: If you have additional comments, 
+particularly with respect to the estimated public burden or associated 
+response time, have suggestions, need a copy of the proposed 
+information collection instrument with instructions, or desire any 
+additional information, please contact Assistant Chief Karl Slazer/
+Management Support Division, US Marshals Service Headquarters, 1215 S 
+Clark St., Ste. 10017, Arlington, VA 22202-4387, by telephone at 703-
+740-2316 or by email at <a href="/cdn-cgi/l/email-protection#157e7467793b6679746f7067556066717a7f3b727a63"><span class="__cf_email__" data-cfemail="1972786b75376a7578637c6b596c6a7d7673377e766f">[email&#160;protected]</span></a>.
+
+SUPPLEMENTARY INFORMATION: The proposed information collection was 
+previously published in the Federal Register on December 10, 2024, 89 
+FR 99281, allowing a 60-day comment period. Written comments and 
+suggestions from the public and affected agencies concerning the 
+proposed collection of information are encouraged. Your comments should 
+address one or more of the following four points:
+
+--Evaluate whether the proposed collection of information is necessary 
+for the proper performance of the functions of the agency, including 
+whether the information will have practical utility;
+--Evaluate the accuracy of the agency's estimate of the burden of the 
+proposed collection of information, including the validity of the 
+methodology and assumptions used;
+--Evaluate whether and if so how the quality, utility, and clarity of 
+the information to be collected can be enhanced; and
+--Minimize the burden of the collection of information on those who are 
+to respond, including through the use of appropriate automated, 
+electronic, mechanical, or other technological collection techniques or 
+other forms of information technology, e.g., permitting electronic 
+submission of responses.
+
+Overview of This Information Collection
+
+    1. Type of Information Collection (check justification or form 83): 
+Extension without change or a currently approved collection.
+    2. The Title of the Form/Collection: Form CSO-005, Preliminary 
+Background Check Form.
+    3. The agency form number, if any, and the applicable component of 
+the Department sponsoring the collection:
+    Form number (if applicable): Form CSO-005.
+    Component: U.S. Marshals Service, U.S. Department of Justice.
+    4. Affected public who will be asked or required to respond, as 
+well as a brief abstract:
+    Primary: Court Security Officers/Special Security Officer (CSO/SSO) 
+Applicants.
+    Other (if applicable): [None].
+    Abstract: The CSO-005 Preliminary Background Check Form is used to 
+collect applicant information for CSO/SSO positions. The applicant 
+information provided to USMS from the Vendor gives information about 
+which District and Facility the applicant will be working, the 
+applicant's personal information, prior employment verification, 
+employment performance and current financial status. The information 
+allows the selecting official to hire applicants with a strong history 
+of employment performance and financial responsibility. The questions 
+on this form have been developed from the OPM, MSPB and DOJ ``Best 
+Practice'' guidelines for reference checking.
+    5. An estimate of the total number of respondents and the amount of 
+time estimated for an average respondent to respond: An estimated 750 
+respondents will utilize the form, and it will take each respondent 
+approximately 60 minutes to complete the form.
+    6. An estimate of the total public burden (in hours) associated 
+with the collection: The estimated annual public burden associated with 
+this collection is 750 hours, which is equal to (750 (total # of annual 
+responses) * 1 (60 mins).
+    7. An estimate of the total annual cost burden associated with the 
+collection, if applicable:
+
+                                               Total Burden Hours
+----------------------------------------------------------------------------------------------------------------
+                                                                                     Time per
+           Activity                Number of        Frequency      Total annual      response      Total annual
+                                  respondents                        responses        (min.)      burden (hours)
+----------------------------------------------------------------------------------------------------------------
+Ex: Survey (individuals or                 750  1/annually......           1,000              60             750
+ households).
+                               ---------------------------------------------------------------------------------
+    Unduplicated Totals.......           1,000  ................           1,000  ..............             750
+----------------------------------------------------------------------------------------------------------------
+
+    Estimated Total Annual Cost Burden: $14,651.00.
+    If additional information is required contact: Darwin Arceo, 
+Department Clearance Officer, United States Department of Justice, 
+Justice Management Division, Policy and Planning Staff, Two 
+Constitution Square, 145 N Street NE, 4W-218, Washington, DC.
+
+
+[[Page 11330]]
+
+
+    Dated: February 28, 2024.
+Darwin Arceo,
+Department Clearance Officer for PRA, U.S. Department of Justice.
+[FR Doc. 2025-03546 Filed 3-4-25; 8:45 am]
+BILLING CODE 4410-04-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

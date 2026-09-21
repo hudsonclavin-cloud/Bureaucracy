@@ -1,0 +1,502 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 167 (Monday, August 31, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 167 (Monday, August 31, 2026)]
+[Rules and Regulations]
+[Pages 55740-55744]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-17752]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+DEPARTMENT OF JUSTICE
+
+Bureau of Prisons
+
+28 CFR Part 523
+
+[BOP-1183-I]
+RIN 1120-AB83
+
+
+First Step Act Time Credits--Revisions
+
+AGENCY: Bureau of Prisons, Justice.
+
+ACTION: Interim final rule; request for comments.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The Bureau of Prisons (BOP) amends its First Step Act (FSA) 
+Time Credits regulation to accord with the best reading of the FSA and 
+to conform with recent case law trends. The first change clarifies when 
+an inmate can begin to earn time credits, and the second change 
+clarifies time credits eligibility for inmates serving a term of 
+imprisonment imposed in a foreign country.
+
+DATES: 
+    Effective date: This rule is effective September 30, 2026.
+    Comments: Written comments must be postmarked and electronic 
+comments must be submitted on or before September 30, 2026.
+
+ADDRESSES: You may submit comments using one of the following methods:
+    [ssquf] Federal eRulemaking Portal: <a href="https://www.regulations.gov">https://www.regulations.gov</a>. 
+Follow the instructions for submitting comments. Commenters should be 
+aware that the electronic Federal Docket Management System will not 
+accept comments after Midnight Eastern Time on the last day of the 
+comment period.
+    [ssquf] Mail: Office of General Counsel, Attn: LCI/Rules 
+Administrator, Federal Bureau of Prisons, 320 First Street NW, 
+Washington, DC 20534. Reference ``FSA Time Credits rule'' on the first 
+page of the written comment.
+    Comments will be made available to the public online at <a href="https://www.regulations.gov">https://www.regulations.gov</a>. Do not include any personally identifiable or 
+confidential information that you do not want publicly disclosed. 
+Anonymous comments are acceptable.
+
+FOR FURTHER INFORMATION CONTACT: Whittington C. Wiman, Rules 
+Administrator, Federal Bureau of Prisons, at the address above or at 
+(202) 353-4885.
+
+SUPPLEMENTARY INFORMATION:
+
+I. Discussion of Rulemaking
+
+    The goal of this rulemaking is to amend two sections of the First 
+Step Act (FSA) Time Credits regulation to accord with the best reading 
+of the FSA and to conform with recent case law trends. On January 19, 
+2022, the Bureau of Prisons (BOP) codified its procedures regarding the 
+earning and application of time credits as authorized by the FSA 
+(hereinafter, ``FSA Time Credits'' or ``Time Credits''), which provides 
+that eligible inmates earn Time Credits toward prerelease custody or 
+early transfer to supervised release for successfully completing 
+certain approved programs or activities assigned to each inmate based 
+on the inmate's risk and needs assessments.
+    On February 19, 2025, President Donald J. Trump issued Executive 
+Order (E.O.) 14219, ``Ensuring Lawful Governance and Implementing the 
+President's `Department of Government Efficiency' Deregulatory 
+Initiative,'' which directs all executive agencies to identify certain 
+``classes of regulations'' enumerated in Section 2(a) of the E.O. and 
+subject to certain exemptions in Section 7. 90 FR 10583 (Feb. 25, 
+2025). Pursuant to that executive order, BOP reviewed its regulations 
+and identified two sections of its FSA Time Credits regulation as ones 
+to which revisions should be made to ensure the regulatory scheme is 
+based on the best reading of the underlying statutory authority.
+    The first change removes the parenthetical clause from 28 CFR
+
+[[Page 55741]]
+
+523.42(a), which provides that a ``term of imprisonment commences'' 
+(and thus an inmate may begin to earn Time Credits) on ``the date the 
+inmate arrives or voluntarily surrenders at the designated Bureau 
+facility where the sentence will be served.'' BOP believes this portion 
+of the paragraph should be removed to accord with the best reading of 
+the FSA and to conform with recent court decisions that have concluded 
+this language conflicts with the FSA. See, e.g., Miles v. Bowers, 173 
+F.4th 372, 379 (1st Cir. Apr. 27, 2026) (finding the regulation's view 
+of when a sentence commences ``plainly conflicts with the text of the 
+FSA''); Sharma v. Peters, 756 F. Supp. 3d 1271, 1281-82 (M.D. Ala. 
+2024) (concluding that 28 CFR 523.42 ``adds a layer of eligibility not 
+found in the statute'' and thus ``conflicts with its express 
+language''); Davidovic v. Warden, FCC Coleman-Low, No. 24-cv-86, at 5 
+(M.D. Fla. May 2, 2025) (``Thus, the BOP's regulation that adds a layer 
+of eligibility not found in the statute conflicts with its express 
+language.''); Heath v. Knight, No. 22-CV-7270, 2024 WL 5198863, at *5 & 
+n.9 (D.N.J. Dec. 23, 2024) (concluding that ``BOP's interpretation in 
+28 CFR 523.42(a) . . . conflicts with the plain meaning of the 
+statute,'' and citing district court decisions holding the same from 
+the Central District of California, District of Minnesota, District of 
+Massachusetts, Eastern District of California, Western District of 
+Washington, District of Hawaii, and the District of New Hampshire); 
+Anderson v. FPC Yankton, No. 4:23-CV-04136-ECS, 2024 WL 4993680, at *2 
+(D.S.D. Nov. 26, 2024) (collecting cases and ``tending to agree'' but 
+not ruling until jurisdiction was resolved).
+    With the parenthetical clause removed, the paragraph provides that 
+``[a]n eligible inmate begins earning FSA Time Credits after the 
+inmate's term of imprisonment commences.'' This change aligns the 
+regulatory text with the long-established rule that a sentence to a 
+term of imprisonment commences on the date the defendant is received in 
+custody awaiting transportation to, or voluntarily arrives at, the 
+official detention facility at which the sentence is to be served. 18 
+U.S.C. 3585(a). The underlying principle of Sec.  3585(a) is that a 
+federal sentence commences when the defendant is received by the 
+Attorney General of the United States \1\ for service of his federal 
+sentence, whether through remand immediately after federal sentencing, 
+or upon the date on which the defendant voluntarily surrenders to the 
+official detention facility where the sentence is to be served. Rashid 
+v. Quintana, 372 F. App'x 260, 262 (3d Cir. 2010) (``A federal sentence 
+commences when the defendant is received by the Attorney General for 
+service of his federal sentence.''). A sentence cannot begin prior to 
+the date on which it is imposed. United States v. Gonzalez, 192 F.3d 
+350 (2d Cir. 1999); see United States v. Flores, 616 F.2d 840, 841 (5th 
+Cir. 1980) (``[A] federal sentence cannot commence prior to the date it 
+is pronounced, even if made concurrent with a sentence already being 
+served.''); United States v. Tancil, 817 F.App'x 234, 237 (7th Cir. 
+2020) (``[A] district judge may not backdate a sentence.''). Therefore, 
+by removing the parenthetical, we leave intact the understanding that a 
+term of imprisonment begins either (1) on the date the defendant is 
+received in custody pending transportation to the designated facility 
+where the sentence will be served, or (2) on the date the defendant 
+voluntarily surrenders at the institution where the sentence will be 
+served.
+---------------------------------------------------------------------------
+
+    \1\ Title 18 U.S.C. 3621 explicitly vests the Attorney General's 
+designation authority in the BOP.
+---------------------------------------------------------------------------
+
+    This change furthers the FSA's goal of providing inmates access to 
+programs and activities proven to reduce their likelihood of 
+recidivating. Specifically, removing the parenthetical allows inmates 
+awaiting transportation to their designated facilities to begin FSA-
+approved programming, the successful completion of which may earn 
+eligible inmates Time Credits. However, this change does not mean that 
+every eligible inmate will automatically begin earning Time Credits 
+immediately after their sentence is imposed. In accordance with the FSA 
+and its implementing regulations, to earn Time Credits, the inmate must 
+still complete evidence-based recidivism reduction (EBRR) programming 
+or productive activities assigned to them based on their assessed 
+needs. 18 U.S.C. 3632(d)(4)(A); 28 CFR 523.42(b)(3).
+    The second change addresses the eligibility of prisoners 
+transferred to BOP custody from foreign countries to earn Time 
+Credits.\2\ This change adds a concluding sentence to 28 CFR 
+523.44(a)(3), which addresses ``[s]erving a term of imprisonment 
+pursuant to a conviction for an offense under laws other than the U.S. 
+Code . . . .'' The new sentence clarifies that Time Credits can be 
+applied for inmates serving a term of imprisonment imposed in a foreign 
+country so long as the U.S. Parole Commission has determined an 
+equivalent U.S. Code sentence exists under 18 U.S.C. 4106A. At least 
+one federal court agrees that inmates serving a foreign sentence that, 
+when evaluated for its equivalent U.S. Code section and qualifies as 
+eligible, is eligible for Time Credits. Martinez v. Rosalez, No. 23-
+50406, 2024 WL 140438 (5th Cir. Jan. 12, 2024). BOP's current practice 
+is consistent with the regulatory change, so the amendment would codify 
+that practice and ensure the regulation accords with the best reading 
+of the FSA.
+---------------------------------------------------------------------------
+
+    \2\ Pursuant to Public Law 95-144 (18 U.S.C. 4001 et seq.), BOP 
+is authorized to receive custody of offenders who are convicted and 
+sentenced in foreign countries, so long as there is a treaty in 
+place between the United States and that country.
+---------------------------------------------------------------------------
+
+    This change also furthers the FSA's goal of preparing inmates to 
+successfully re-enter their communities within the United States by 
+allowing treaty transfer inmates--who must be a citizen or national of 
+the United States under 18 U.S.C. 4100(b)--the same resources as other 
+inmates under the FSA so they can reintegrate back into society. 
+Through treaties, U.S. citizens or nationals who commit crimes and are 
+sentenced in foreign countries may serve their terms of imprisonment in 
+BOP custody so they can avail themselves of programming and reentry-
+related activities that strengthen ties to their local communities and 
+reduce the risk of recidivism. Therefore, by no longer excluding treaty 
+transfer inmates from FSA eligibility based solely on their foreign 
+convictions, we are improving public safety by incentivizing risk-
+reduction programming.
+
+II. Regulatory Certifications
+
+Executive Orders 12866 and 13563--Regulatory Review
+
+    The Department has determined that this rulemaking is a 
+``significant regulatory action'' under subsection 3(f) of Executive 
+Order 12866, ``Regulatory Planning and Review''. Accordingly, this 
+interim final rule has been submitted to the Office of Management and 
+Budget (OMB) for review. This interim final rule has been drafted and 
+reviewed in accordance with Executive Order 12866, ``Regulatory 
+Planning and Review,'' subsection 1(b), Principles of Regulation, and 
+Executive Order 13563, ``Improving Regulation and Regulatory Review,'' 
+subsection 1(b), General Principles of Regulation.
+    Executive Orders 12866 and 13563 direct agencies to assess all 
+costs and benefits of available regulatory alternatives and, if 
+regulation is necessary, to select regulatory approaches that maximize 
+net benefits (including potential economic, environmental, public 
+health, and safety effects, distributive impacts, and
+
+[[Page 55742]]
+
+equity). Executive Order 13563 emphasizes the importance of using the 
+best available methods to quantify costs and benefits, reducing costs, 
+harmonizing rules, and promoting flexibility.
+    As shown in the table below, BOP projects that expansion of Time 
+Credits will result in net savings of millions of taxpayer dollars 
+because less time in a BOP institution or in a Residential Community 
+Center (RRC) or on Home Confinement (HC) equates to cost savings. 
+Current estimates show that thousands of inmates will benefit from 
+eligibility expansion and be able to leave a BOP institution and 
+transfer to an RRC or HC sooner than they would without these 
+regulatory changes.
+
+  Average Length of Time to Designation and Average Potential Time Credits for FSA Eligible Inmates With Annual
+                                                Estimated Savings
+----------------------------------------------------------------------------------------------------------------
+                                                                                     Potential       Potential
+                                      Inmates        Avg days       Daily cost      savings per    saving total
+----------------------------------------------------------------------------------------------------------------
+Length of Time to Designation...  ..............           66.06  ..............  ..............  ..............
+FTCs Toward RRC/HC..............           7,554           23.81           10.61             253       1,908,322
+FTCs Toward Supervised Release            11,258           23.81          119.73        2,850.77      32,093,983
+ (RRC)..........................
+FTCs Toward Supervised Release             6,486           23.81          130.34        3,103.40      20,128,623
+ (BOP Facility).................
+    Total Potential Savings for   ..............  ..............  ..............  ..............      54,130,928
+     Additional Time Credits....
+----------------------------------------------------------------------------------------------------------------
+Avg time from sentencing to designation (66.06 days) results in an average of 23.81 days of Time Credits.
+Total daily cost for all typical facilities = $130.34.
+Total daily cost for RRC/HC = $119.73. Cost savings of transfer to RRC/HC = $10.61/day.
+Daily cost obtained from the current published Annual Determination of Average Cost of Incarceration Fee (COIF).
+Number of Inmates = Annual average FSA-eligible transfers to RRC & supervised release 2023-2025.
+
+    The time an inmate spends in transit before arriving at their 
+designated BOP facility, after the federal sentence is imposed, can 
+vary widely based on the difference between the starting and ending 
+locations as well as the capacity and availability of air and bus 
+routes. An analysis of the transit times for newly committed inmates 
+with sentences starting from 2023 through 2025 found the average length 
+of time from sentencing to arrival at the designated facility to be 
+66.06 days. At the time of sentencing, inmates are in the custody of 
+the United States Marshals Service (USMS) and may be housed in local, 
+county, and regional jails or federal detention centers. The above 
+analysis of transit time included all facilities utilized by USMS.
+    Inmates accrue Time Credits at a rate of 10 or 15 days for every 30 
+days of successful participation in EBRR programming or productive 
+activities based on their individual calculated recidivism risk level. 
+Inmates determined to be at a minimum or low risk for recidivating and 
+maintain or decrease their risk level over two consecutive assessments 
+earn 15 Time Credits for every 30 days of participation. Inmates with a 
+medium or high risk for recidivating or who have not maintained a low 
+risk for two consecutive assessments earn 10 days of Time Credits for 
+every 30 days of participation. Based on the current risk levels in the 
+BOP population, the average time of 66.06 days spent in transit would 
+result in 23.81 days of Time Credits.
+    For inmates with a low or minimum risk of recidivism, the first 365 
+days of accrued Time Credits are applied to an inmate's calculated 
+statutory release date for early release to supervision if the 
+sentencing court included a requirement that the inmate be placed on a 
+term of supervised release after imprisonment as part of the inmate's 
+sentence. For inmates with a low or minimum risk of recidivism without 
+a term of imprisonment, and/or for Time Credits accrued in excess of 
+365 days, inmates can be transferred to prerelease custody in a RRC or 
+HC when the Time Credits are equal to the remainder of the imprisonment 
+term.
+    As shown in the above table, an analysis of inmates earning Time 
+Credits who were released from BOP custody from 2023 through 2025 
+identified three categories of application of Time Credits for transfer 
+and release: (1) Time Credits applied toward transfer to prerelease 
+custody (RRC or HC) for inmates without a term of supervision (which 
+averaged 7,554 inmates annually); (2) Time Credits applied toward 
+supervised prerelease custody and early supervised release (which 
+averaged 11,258 inmates annually); and (3) Time Credits applied toward 
+early supervised release whereby inmates release from a typical BOP 
+facility (which averaged 6,486 inmates annually). The expansion of Time 
+Credits would result in savings by allowing inmates to transfer to 
+prerelease custody (RRC or HC) an average of 23.81 days earlier, or 
+result in inmates releasing to a term of supervised release earlier.
+    According to BOP's 2024 Cost of Incarceration Fee (COIF), the 
+average per capita cost for an inmate in a secure facility is $130.34 
+and the per capita cost for prerelease custody is $119.73. The savings 
+for transferring inmates from secure facilities to RRCs or HCs is 
+$10.61 per day. Applying these per capita amounts to the three 
+categories of inmates receiving an additional 23.81 days of Time 
+Credits results in the following potential savings: (1) $1,908,322 for 
+additional Time Credits applied toward transfer to prerelease custody 
+at $10.61 reduced cost for 23.81 days for 7,554 inmates annually; (2) 
+$32,093,983 for additional Time Credits applied toward early supervised 
+release from an RRC at $119.73 reduced cost for 23.81 days for 11,258 
+inmates annually; and (3) $20,128,623 for additional Time Credits 
+applied toward early supervised release from a typical BOP facility at 
+$130.34 reduced cost for 23.81 days for 6,486 inmates annually. 
+Accordingly, far from increasing costs, the expansion of Time Credits 
+is projected to reduce overall costs in the estimated amount of 
+$54,130,928.
+
+Executive Order 14192--Regulatory Costs
+
+    Executive Order 14192 (Unleashing Prosperity Through Deregulation) 
+requires an agency, unless prohibited by law, to identify at least ten 
+existing regulations to be repealed or revised when the agency publicly 
+proposes for notice and comment or otherwise promulgates a new 
+regulation that qualifies as an Executive Order 14192 regulatory action 
+(defined in OMB Memorandum M-25-20 as a final significant regulatory 
+action as defined in section 3(f) of Executive Order 12866 that imposes 
+total costs greater than zero). In furtherance of this requirement, 
+section 3(c) of Executive Order 14192 requires that any new incremental 
+costs
+
+[[Page 55743]]
+
+associated with such new regulations must, to the extent permitted by 
+law, also be offset by eliminating existing costs associated with at 
+least ten prior regulations. Although this rule would be a significant 
+regulatory action as defined by Executive Order 12866, it would not 
+count as an Executive Order 14192 regulatory action because it has 
+total costs less than zero. This rule expands the accrual period of 
+Time Credits and reduces the amount of time inmates spend in BOP 
+facilities, producing cost savings. BOP therefore expects this rule to 
+qualify as an Executive Order 14192 deregulatory action (defined in OMB 
+Memorandum M-25-20 as a final action that imposes total costs less than 
+zero).
+
+Executive Order 14294--Fighting Overcriminalization of Federal 
+Regulations
+
+    Executive Order 14294 ``Fighting Overcriminalization in Federal 
+Regulations'' directs agencies promulgating regulations with criminal 
+regulatory offenses potentially subject to criminal enforcement to 
+explicitly describe the conduct subject to criminal enforcement, the 
+authorizing statutes, and the mens rea standard applicable to each 
+element of those offenses. For the purposes of Executive Order 14294, 
+the phrase ``criminal regulatory offense'' means a regulation that 
+purports to impose a penalty of imprisonment without a connection to a 
+statute that itself authorizes such a penalty. The phrase does not 
+include regulations implementing a statutory scheme in which a statute 
+contains a criminal penalty (i.e., imprisonment) and authorizes an 
+agency to define by regulation what specific conduct is prohibited. 
+This rule does not impose a penalty of imprisonment that is not 
+authorized by statute and is thus exempt from Executive Order 14924 
+requirements.
+
+Executive Order 13132--Federalism
+
+    This interim final rule will not have substantial direct effects on 
+the States, on the relationship between the national government and the 
+States, or on distribution of power and responsibilities among the 
+various levels of government. Therefore, in accordance with Executive 
+Order 13132, it is determined that this interim final rule does not 
+have sufficient federalism implications to warrant the preparation of a 
+Federalism Assessment.
+
+Executive Order 12988--Civil Justice Reform (Plain Language)
+
+    This interim final rule meets the applicable standards set forth in 
+sections 3(a) and 3(b)(2) of Executive Order 12988 to specify 
+provisions in clear language. Pursuant to section 3(b)(1)(I) of the 
+Executive Order, nothing in this interim final rule or any previous 
+rule (or in any administrative policy, directive, ruling, notice, 
+guideline, guidance, or writing) directly relating to the Program that 
+is the subject of this interim final rule is intended to create any 
+legal or procedural rights enforceable against the United States.
+
+Administrative Procedure Act, 5 U.S.C. 553
+
+    The Administrative Procedure Act (5 U.S.C. 553(b) (B)) allows 
+exceptions to notice-and-comment rulemaking ``when the agency for good 
+cause finds . . . that notice and public procedure thereon are 
+impracticable, unnecessary, or contrary to the public interest.'' 
+Further, 5 U.S.C. 553(d) provides an exception to the usual requirement 
+of a delayed effective date for a substantive rule that relieves a 
+restriction, or when the agency finds ``good cause'' that the rule be 
+made immediately effective. This rulemaking is exempt from normal 
+notice-and-comment procedures because advance notice in this instance 
+is unnecessary. The first change conforms to recent court decisions 
+that have concluded the excised language conflicts with the FSA, and 
+the second change codifies a non-controversial practice already in 
+place and thus is insignificant in nature and impact.
+    Further, these two changes are purely beneficial to the inmate 
+population by expanding the time frame of when Time Credits begin to 
+accrue and who may be eligible to earn them. As such, they ``relieve a 
+restriction.'' (5 U.S.C. 553(d)(1)).
+    Accordingly, BOP finds good cause for exempting this interim final 
+rule from the provisions of the Administrative Procedure Act (5 U.S.C. 
+553) requiring prior notice of proposed rulemaking and delay in 
+effective date. Nevertheless, BOP is accepting post-promulgation public 
+comments.
+
+Unfunded Mandates Reform Act of 1995
+
+    This interim final rule will not result in the expenditure by 
+State, local and tribal governments, in the aggregate, or by the 
+private sector, of $100,000,000 or more in any one year (adjusted for 
+inflation), and it will not significantly or uniquely affect small 
+governments. Therefore, no actions were deemed necessary under the 
+provisions of the Unfunded Mandates Reform Act of 1995.
+
+Regulatory Flexibility Act
+
+    The Director has reviewed this regulation in accordance with the 
+Regulatory Flexibility Act (5 U.S.C. 605(b)) and has determined that 
+this interim final rule will not have a significant economic impact on 
+a substantial number of small entities. This rule is limited to Bureau-
+appropriated funds and affects individual inmates only, not small 
+entities. Further, a regulatory flexibility analysis is not required 
+when the agency is not required to publish a general notice of proposed 
+rulemaking, as is the case here. 5 U.S.C. 601(2), 604(a).
+
+Congressional Review Act
+
+    This regulation is not a ``major rule'' as defined by the 
+Congressional Review Act, 5 U.S.C. 804(2).
+
+List of Subjects in 28 CFR Part 523
+
+    First Step Act, Prisoners, Sentence computation.
+    Accordingly, under rulemaking authority vested in the Attorney 
+General in 5 U.S.C. 301; 28 U.S.C. 509, 510 and delegated to the 
+Director of the Bureau of Prisons in 28 CFR 0.96, the Bureau amends 28 
+CFR part 523 as follows:
+
+PART 523--COMPUTATION OF SENTENCE
+
+0
+1. The authority citation for 28 CFR Part 523 continues to read as 
+follows:
+
+    Authority:  5 U.S.C. 301; 18 U.S.C. 3568 (repealed November 1, 
+1987, as to offenses committed on or after that date), 3621, 3622, 
+3624, 3632, 3635, 4001, 4042, 4081, 4082 (repealed in part as to 
+conduct occurring on or after November 1, 1987), 4161-4166 (repealed 
+October 12, 1984, as to offenses committed on or after November 1, 
+1987), 5006-5024 (repealed October 12, 1984, as to conduct occurring 
+after that date), 5039; 28 U.S.C. 509, 510.
+
+Subpart E--First Step Act Time Credits
+
+0
+2. In Sec.  523.42, revise paragraph (a) to read as follows:
+
+
+Sec.  523.42   Earning First Step Act Time Credits.
+
+    (a) When an eligible inmate begins earning FSA Time Credits. An 
+eligible inmate begins earning FSA Time Credits after the inmate's term 
+of imprisonment commences.
+* * * * *
+
+0
+3. In Sec.  523.44, revise paragraph (a)(3) to read as follows:
+
+
+Sec.  523.44   Application of FSA Time Credits.
+
+    (a) * * *
+    (3) Serving a term of imprisonment pursuant to a conviction for an 
+offense
+
+[[Page 55744]]
+
+under laws other than the U.S. Code (see Section 105 of the FSA, Public 
+Law 115-391, 132 Stat. 5214 (not codified; included as note to 18 
+U.S.C. 3621)), the Bureau may not apply FSA Time Credits toward 
+prerelease custody or early transfer to supervised release. This 
+paragraph (a)(3) will not bar the application of FSA Time Credits, as 
+authorized by the DC Code, for those serving a term of imprisonment for 
+an offense under the DC Code. This paragraph will not bar the 
+application of FSA Time Credits for those inmates serving a term of 
+imprisonment imposed in a foreign country and for which the U.S. Parole 
+Commission has determined an equivalent U.S. Code sentence under 18 
+U.S.C. 4106A.
+* * * * *
+
+William K. Marshall III,
+Director, Federal Bureau of Prisons.
+[FR Doc. 2026-17752 Filed 8-28-26; 8:45 am]
+BILLING CODE 4410-05-P
+
+
+</pre></body>
+</html>

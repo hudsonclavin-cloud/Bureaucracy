@@ -1,0 +1,372 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 10 (Thursday, January 15, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 10 (Thursday, January 15, 2026)]
+[Notices]
+[Pages 1743-1745]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-00727]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+CENTRAL INTELLIGENCE AGENCY
+
+
+Privacy Act of 1974; System of Records and Routine Uses
+
+AGENCY: Central Intelligence Agency.
+
+ACTION: Notice of Modified Systems of Records; General Routine Uses of 
+the Central Intelligence Agency.
+
+-----------------------------------------------------------------------
+
+SUMMARY: Pursuant to the Privacy Act of 1974, as amended, and Office of 
+Management and Budget (OMB) Circular No. A-108, notice is hereby given 
+that the Central Intelligence Agency (``CIA'' or ``the Agency'') 
+proposes to modify the CIA System of Records Notices for the CIA 
+systems of records, listed below. Specifically, CIA is adding one (1) 
+General Routine Use to its ``Statement of General Routine Uses,'' and 
+modifying two (2) General Routine Uses in its ``Statement of General 
+Routine Uses.''
+
+DATES: In accordance with 5 U.S.C. 552a(e)(4) and (11), this notice is 
+subject to a 30-day period to comment on the modified routine uses, 
+described below. Please submit any comments by February 17, 2026.
+
+ADDRESSES: Comments may be submitted by the following methods: By mail 
+to Mark Mouser, Privacy and Civil Liberties Officer, Central 
+Intelligence Agency, Washington, DC 20505, by telephone at (571) 280-
+2700, or by email to <a href="/cdn-cgi/l/email-protection#7a3c1f1e281f1d36131b130915143a0f191f5419131b541d150c"><span class="__cf_email__" data-cfemail="692f0c0d3b0c0e250008001a0607291c0a0c470a0008470e061f">[email&#160;protected]</span></a>. Please include ``NOTICE 
+OF CIA ROUTINE USES'' in the subject line of the message.
+
+FOR FURTHER INFORMATION CONTACT: Mark Mouser, Privacy and Civil 
+Liberties Officer, Central Intelligence Agency, Washington, DC 20505, 
+(571) 280-2700.
+
+SUPPLEMENTARY INFORMATION: CIA last published its ``Statement of 
+General Routine Uses for the Central Intelligence Agency'' in 87 FR 
+73198 (November 28, 2022), in order to clarify and increase the 
+public's knowledge of the circumstances in which the Agency may 
+disclose, as a routine use, records from Privacy Act systems of records 
+and to enhance the Agency's ability to share information essential to 
+the conduct of its national security mission. CIA is now updating its 
+``Statement of General Routine Uses for the Central Intelligence 
+Agency,'' applicable to all of the CIA systems of records listed below, 
+by adding one (1) General Routine Use and modifying two (2) General 
+Routine Uses.
+
+Modification to General Routine Use 7
+
+    The Agency proposes a minor edit to correct an error in the second 
+sentence in General Routine Use 7, by adding the word ``use'' after the 
+word ``routine,'' to read: ``This routine use is not intended to 
+supplant the other routine uses published by the Central Intelligence 
+Agency.''
+
+Modification to General Routine Use 19 and New General Routine Use 20
+
+    Executive Order 14249, Protecting America's Bank Account Against 
+Fraud, Waste, and Abuse, 90 FR 14011 (March 25, 2025) requires agencies 
+to review and modify, as applicable, the agency's relevant System of 
+Records Notices to include a ``routine use'' that would allow for the 
+disclosure of records to the U.S. Department of the Treasury for the 
+purposes of identifying, preventing, or recouping fraud and improper 
+payments, to the extent permissible by law. Following this Executive 
+Order, the Office of Management and Budget (OMB) issued M-25-32, 
+Preventing Improper Payments and Protecting Privacy Through Do Not Pay 
+(August 20, 2025). OMB M-25-32 provided specific instructions to 
+agencies on how to assess which agency systems of records may maintain 
+information that would be relevant and necessary for the U.S. 
+Department of the Treasury to identify, prevent, or recoup improper 
+payments through the Do Not Pay Working System, and provided agencies 
+with the specific routine use to publish for its applicable System of 
+Records Notice.
+    Following the Agency's review of Executive Order 14249 and OMB M-
+25-32, the Agency determined that it would add the routine use provided 
+by OMB as a General Routine Use, to ensure that the U.S. Department of 
+the Treasury will have access to any records relevant to identifying, 
+preventing, or recouping improper payments, in accordance with federal 
+law and OMB policy. The Agency proposes to insert this as a new General 
+Routine Use 19, and modify the existing General Routine Use 19 by 
+renumbering it as General Routine Use 20. The substance of the now 
+renumbered General Routine Use 20 has not changed.
+    For ease of reference, the full Statement of General Routine Uses 
+for the Central Intelligence Agency is republished, below. This notice 
+modifies the previously published Statement of General Routine Uses for 
+the Central Intelligence Agency, as detailed above, and does not affect 
+any other routine uses that may apply to CIA systems of records.
+    Nothing in the new or modified General Routine Uses change the 
+Central Intelligence Agency's authorities regarding the collection and 
+maintenance of information about citizens and lawful permanent 
+residents of the United States, nor do the changes impact any 
+individual's rights to access or to amend their records pursuant to the 
+Privacy Act.
+    The Agency is providing an opportunity for interested persons to 
+submit comments on the Agency's new and modified General Routine Uses. 
+Unless CIA determines that, based on the submitted comments, 
+substantial modifications are required, the routine uses will take 
+effect 30 days after publication. In accordance with 5 U.S.C. 552a(r), 
+the Agency has provided a report to OMB and Congress on the new and 
+modified General Routine Use.
+
+Mark J. Mouser,
+Privacy and Civil Liberties Officer, Central Intelligence Agency.
+    The CIA System of Records Notices modified by this notice and the 
+citations to the last full Federal Register notice that included all of 
+the elements that are required to be in a System of Records Notice, 
+follow.
+
+------------------------------------------------------------------------
+                                                   Federal Register
+            System No. and name                      citation(s)
+------------------------------------------------------------------------
+CIA-01, Financial Records..................  87 FR 73198, 73200
+                                              (November 28, 2022).
+CIA-02, Training Records...................  87 FR 73198, 73201
+                                              (November 28, 2022).
+
+[[Page 1744]]
+
+ 
+CIA-03, Language Program Records...........  87 FR 73198, 73202
+                                              (November 28, 2022).
+CIA-04, CIA Declassification Center (CDC)    87 FR 73198, 73203
+ External Liaison Records.                    (November 28, 2022).
+CIA-05, Center for the Study of              87 FR 73198, 73203
+ Intelligence (CSI) Records.                  (November 28, 2022).
+CIA-06, Manuscript Review Records..........  87 FR 73198, 73204
+                                              (November 28, 2022).
+CIA-07, Security Access Records............  87 FR 73198, 73205
+                                              (November 28, 2022).
+CIA-08, Security Operations Records........  87 FR 73198, 73206
+                                              (November 28, 2022).
+CIA-09, Industrial Security Clearance        87 FR 73198, 73207
+ Records.                                     (November 28, 2022).
+CIA-10, Parking Records....................  87 FR 73198, 73208
+                                              (November 28, 2022).
+CIA-12, Vehicle Operator Records...........  87 FR 73198, 73208
+                                              (November 28, 2022).
+CIA-13, Component Human Resource Records...  87 FR 73198, 73209
+                                              (November 28, 2022).
+CIA-14, Information Release Records........  87 FR 73198, 73210
+                                              (November 28, 2022).
+CIA-15, Guest Speaker Records..............  87 FR 73198, 73211
+                                              (November 28, 2022).
+CIA-16, Employee Clinical and Psychiatric    87 FR 73198, 73212
+ Records.                                     (November 28, 2022).
+CIA-17, Applicant Clinical and Psychiatric   87 FR 73198, 73213
+ Records.                                     (November 28, 2022).
+CIA-18, Psychological Testing Data Records.  87 FR 73198, 73214
+                                              (November 28, 2022).
+CIA-19, Agency Human Resource Records......  87 FR 73198, 73215
+                                              (November 28, 2022).
+CIA-21, Applicant Records..................  87 FR 73198, 73216
+                                              (November 28, 2022).
+CIA-22, Personnel Security Records.........  87 FR 73198, 73217
+                                              (November 28, 2022).
+CIA-24, Polygraph Records..................  87 FR 73198, 73218
+                                              (November 28, 2022).
+CIA-25, Office of the Director Action        87 FR 73198, 73219
+ Center (DAC) Records.                        (November 28, 2022).
+CIA-26, Office of General Counsel Records..  87 FR 73198, 73220
+                                              (November 28, 2022).
+CIA-27, Office of Equal Employment           87 FR 73198, 73221
+ Opportunity (OEEO) Records.                  (November 28, 2022).
+CIA-28, Congressional Liaison Records......  87 FR 73198, 73222
+                                              (November 28, 2022).
+CIA-29, Public Affairs Records.............  87 FR 73198, 73223
+                                              (November 28, 2022).
+CIA-30, Inspector General Research Records.  87 FR 73198, 73224
+                                              (November 28, 2022).
+CIA-31, Inspector General Investigation and  87 FR 73198, 73224
+ Interview Records.                           (November 28, 2022).
+CIA-32, Office of the Deputy Director of     70 FR 42418, 42445 (July
+ Central Intelligence (DDCI) for Community    22, 2005).
+ Management Records.
+CIA-34, Arms Control Records...............  87 FR 73198, 73226
+                                              (November 28, 2022).
+CIA-35, Directorate of Science & Technology  87 FR 73198, 73227
+ (DS&T) Private Sector Contact Information.   (November 28, 2022).
+CIA-36, Alumni Relations Records...........  90 FR 44625, 44626
+                                              (September 16, 2025).
+CIA-37, Directorate of Operations Records..  87 FR 73198, 73228
+                                              (November 28, 2022).
+CIA-38, Academic and Business Contact        70 FR 42418, 42450 (July
+ Records.                                     22, 2005).
+CIA-39, Customer Relations Records.........  87 FR 73198, 73229
+                                              (November 28, 2022).
+CIA-40, Research System Records............  87 FR 73198, 73230
+                                              (November 28, 2022).
+CIA-41, Intelligence Analysis Records......  87 FR 73198, 73231
+                                              (November 28, 2022).
+CIA-42, Insider Threat Program Records.....  87 FR 73198, 73232
+                                              (November 28, 2022).
+CIA-43, Environmental Safety Records.......  87 FR 73198, 73233
+                                              (November 28, 2022).
+CIA-44, Business Analytics Records.........  89 FR 92891 (November 25,
+                                              2024).
+CIA-45, Resolution Office Records..........  90 FR 44625, 44627
+                                              (September 16, 2025).
+------------------------------------------------------------------------
+
+    The ``Statement of General Routine Uses for the Central 
+Intelligence Agency,'' last published in 87 FR 73198 (November 28, 
+2022), is hereby rescinded for the CIA System of Records Notices, 
+listed above, and replaced as follows:
+* * * * *
+
+Statement of General Routine Uses for the Central Intelligence Agency
+
+    The following routine uses apply to, and are incorporated by 
+reference into, each system of records maintained by the CIA:
+    1. Disclosure of a record indicating or relating to a violation or 
+potential violation of law, whether civil, criminal or regulatory in 
+nature, and whether arising by general statute or particular program 
+pursuant thereto, to the appropriate agency whether federal, state, 
+local or foreign, charged with the responsibility of investigating or 
+prosecuting such violation, charged with the responsibility to take 
+appropriate administrative action, or charged with enforcing or 
+implementing the law related to the violation or potential violation.
+    2. Disclosure to a federal, state or local agency maintaining 
+civil, criminal, relevant enforcement information, or other pertinent 
+information, such as current licenses, to the extent necessary to 
+obtain information relevant to a Central Intelligence Agency decision 
+concerning hiring or retention of an employee, issuance of a security 
+clearance or special access, or performance of the CIA's acquisition 
+functions.
+    3. Disclosure to a federal, state, or local agency, or other 
+appropriate entities or individuals, in connection with the hiring or 
+retention of an employee, the issuance of a security clearance or 
+special access, the reporting or an investigation of an employee, the 
+letting of a contract, or the issuance of a license, grant or other 
+benefit, to the extent that the information is relevant and necessary 
+to the entity's decision on the matter.
+    4. Disclosure in the course of presenting information or evidence 
+to a court, magistrate, special master, administrative law judge, or 
+administrative board or panel, including disclosures made pursuant to 
+statutes or regulations governing the conduct of such proceedings.
+    5. Disclosure to the Office of Management and Budget (OMB) in 
+connection with the review of private relief legislation, as set forth 
+in OMB Circular No. A-19, or its successor, at any stage of the 
+legislative coordination and clearance process.
+    6. Disclosure to the National Archives and Records Administration 
+(NARA) in records management inspections conducted under the authority 
+of 44 U.S.C. 2904 and 2906.
+    7. Disclosure to a federal, state, or local agency, other 
+appropriate entities or individuals, or, through established liaison 
+channels, to select foreign governments, provided such disclosure is 
+compatible with the purpose for which the record was collected and is 
+undertaken to enable the Central Intelligence Agency to carry out its 
+intelligence mission in support of U.S.
+
+[[Page 1745]]
+
+national security objectives under authorizing laws, statutes, 
+policies, and regulations or any successor order, national security 
+directives applicable to the Agency and implementing procedures 
+approved by the Attorney General promulgated pursuant to such Orders 
+and directives, as well as statutes, Executive orders and directives of 
+general applicability. This routine use is not intended to supplant the 
+other routine uses published by the Central Intelligence Agency.
+    8. Disclosure to a Member of Congress or Congressional staffer 
+acting upon the Member's behalf in response to an inquiry from that 
+Member or staffer made at the written request of the constituent who is 
+the subject of the record.
+    9. Disclosure to the public or to the media for release to the 
+public, to enable the CIA to respond to charges of illegal or improper 
+activity, professional misconduct, or incompetence when such 
+allegations have become publicly known, and the General Counsel in 
+consultation with the Privacy and Civil Liberties Officer, determines 
+that such disclosures are necessary to preserve public confidence in 
+the Agency and the integrity of its processes, or to demonstrate the 
+accountability of the Agency and its employees, and such disclosures do 
+not clearly constitute an unwarranted invasion of personal privacy.
+    10. Disclosure to any Federal agency when information obtained from 
+that agency is used in compiling the record, and the record is relevant 
+to the official responsibilities of that agency.
+    11. Disclosure to representatives of the Department of Justice or 
+of any other entity responsible for representing the interests of the 
+Central Intelligence Agency in connection with judicial, 
+administrative, or other proceedings. Records may also be disclosed to 
+representatives of the Department of Justice and other U.S. Government 
+entities designated by the CIA to represent CIA interests, to the 
+extent necessary to obtain advice on any matter.
+    12. Disclosure to individual Members or staff of the Senate Select 
+Committee on Intelligence and the House Permanent Select Committee on 
+Intelligence in connection with the exercise of the Committees' 
+intelligence oversight and legislative functions, when such limited 
+disclosures are necessary to a lawful activity of the United States, 
+and the CIA General Counsel has determined that such disclosures are 
+otherwise lawful.
+    13. Disclosure to the President's Intelligence Advisory Board, the 
+Intelligence Oversight Board, any successor organizations, and other 
+intelligence or independent oversight entities established by the 
+President or Congress, when the Director of the Central Intelligence 
+Agency determines that such disclosures will assist these entities in 
+the performance of their oversight functions.
+    14. Disclosure to appropriate Federal agencies, entities, and 
+individuals when the CIA: (1) suspects or has confirmed that there has 
+been a breach of a Privacy Act system of records; (2) has determined 
+that as a result of the suspected or confirmed breach there is a risk 
+of harm to individuals, the CIA (including its information systems, 
+programs and operations), the Federal Government, or national security; 
+and (3) the disclosure made to such agencies, entities, and individuals 
+is reasonably necessary to assist in connection with the CIA's efforts 
+to respond to the suspected or confirmed breach or to prevent, 
+minimize, or remedy such harm.
+    15. Disclosure to appropriate Federal agencies, entities, and 
+individuals when the CIA determines that information from a Privacy Act 
+system of records is reasonably necessary to assist the recipient 
+agency, entity or individual in: (1) responding to a suspected or 
+confirmed breach; or (2) preventing, minimizing, or remedying the risk 
+of harm to individuals, the recipient agency or entity (including its 
+information systems, programs, and operations), the Federal Government, 
+or national security, resulting from a suspected or confirmed breach.
+    16. Disclosure to any individual or entity that the CIA has reason 
+to believe possesses information regarding a matter within the 
+jurisdiction of the CIA, to the extent deemed to be necessary in order 
+to elicit such information or cooperation from the recipient for use in 
+the performance of an authorized activity.
+    17. Disclosure to complainants, Responsible Management Officials 
+(RMOs), witnesses, and other individuals to the extent necessary to 
+conduct or report the progress and/or results of an investigation or 
+inquiry into claims of discrimination or harassment brought pursuant to 
+either federal employment laws or internal Agency regulations.
+    18. Disclosure to the Office of the Director of National 
+Intelligence (ODNI) to the extent that CIA maintains ODNI or ODNI-
+related records pursuant to a service level agreement, when access to 
+such records is necessary to perform the function or service for which 
+the CIA has been engaged by ODNI.
+    19. Disclosure to the U.S. Department of the Treasury when 
+disclosure of the information is relevant to review payment and award 
+eligibility through the Do Not Pay Working System for the purposes of 
+identifying, preventing, or recouping improper payments to an applicant 
+for, or recipient of, Federal funds, including funds disbursed by a 
+state (meaning a state of the United States, the District of Columbia, 
+a territory or possession of the United States, or a federally 
+recognized Indian tribe) in a state-administered, federally funded 
+program.
+    20. In accordance with the CIA's approved Attorney General 
+Guidelines, disclosure to other appropriate recipients, if such 
+dissemination is necessary to a lawful activity of the United States, 
+including for a foreign intelligence, counterintelligence, and 
+counterterrorism purpose, with approval from the Director of the CIA or 
+designee, concurrence by the Privacy and Civil Liberties Officer, and 
+concurrence by the General Counsel after consultation with the National 
+Security Division of the Department of Justice. Any such disclosure 
+will require a written assessment that the anticipated benefits 
+outweigh the potential risks resulting from dissemination and whether 
+the receiving entities will be subject to further restrictions on the 
+use and dissemination of the record.
+
+[FR Doc. 2026-00727 Filed 1-14-26; 8:45 am]
+BILLING CODE 6310-02-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

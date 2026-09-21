@@ -1,0 +1,1427 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 161 (Friday, August 21, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 161 (Friday, August 21, 2026)]
+[Rules and Regulations]
+[Pages 54234-54244]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-17116]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+DEPARTMENT OF LABOR
+
+Office of Federal Contract Compliance Programs
+
+41 CFR Part 60-300
+
+[Docket No. OFCCP-2025-0002]
+RIN 1250-AA19
+
+
+Modifications to the Regulations Implementing the Vietnam Era 
+Veterans' Readjustment Assistance Act of 1974, as Amended
+
+AGENCY: Office of Federal Contract Compliance Programs, Labor.
+
+ACTION: Final rule.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The U.S. Department of Labor publishes this final rule to 
+revise its implementing regulations for the Vietnam Era Veterans' 
+Readjustment Assistance Act of 1974, as amended (VEVRAA). These 
+revisions will align the regulations with Executive Order 14173 and 
+remove the VEVRAA regulations' cross-references to the Executive Order 
+11246 authority. Executive Order 11246 was revoked by Executive Order 
+14173 on January 21, 2025. This final rule also makes technical 
+revisions to update the VEVRAA regulations' jurisdictional thresholds, 
+which were adjusted for inflation by the Federal Acquisition Regulation 
+Council on October 1, 2025.
+
+DATES: This rule is effective September 21, 2026.
+
+FOR FURTHER INFORMATION CONTACT: Kenneth Wolfe, Director, OFCCP, 200 
+Constitution Avenue NW, Washington, DC 20210. Telephone: 202-693-0101. 
+Email: <a href="/cdn-cgi/l/email-protection#cda2abaeaebd92aab8a4a9aca3aea88da9a2a1e3aaa2bb"><span class="__cf_email__" data-cfemail="0a656c69697a556d7f636e6b64696f4a6e6566246d657c">[email&#160;protected]</span></a>.
+
+SUPPLEMENTARY INFORMATION:
+
+I. Background
+
+    The U.S. Department of Labor (DOL) enforces VEVRAA, 38 U.S.C. 4212, 
+and its implementing regulations at 41 CFR part 60-300. VEVRAA, as 
+applied by regulation, prohibits Federal contractors and subcontractors 
+(contractors) \1\ from discriminating against employees and applicants 
+because of their status as a protected veteran (defined by the statute 
+to include disabled veterans, recently separated veterans, Armed Forces 
+service medal veterans, and active duty wartime or campaign badge 
+veterans). VEVRAA also requires covered contractors to take 
+``affirmative action to employ and advance in employment qualified 
+covered veterans.'' 38 U.S.C. 4212(a).
+---------------------------------------------------------------------------
+
+    \1\ Hereinafter, the terms ``contractor'' or ``Federal 
+contractor'' are used to refer collectively to Federal contractors 
+and subcontractors that fall under OFCCP's authority, unless 
+otherwise expressly stated. This approach is consistent with OFCCP's 
+regulations, which define ``contract'' to include subcontracts and 
+``contractor'' to include subcontractors. See 41 CFR 60-300.2.
+---------------------------------------------------------------------------
+
+    The basic requirements in VEVRAA generally apply to any business or 
+organization that holds a single Federal contract or subcontract of at 
+least $200,000.\2\ Further, under the current regulations, contractors 
+with 50 or more employees and a single Federal contract or subcontract 
+of $200,000 or more are also required to develop and maintain an 
+affirmative action program (AAP), where they must implement and 
+document their affirmative action efforts on an annual basis, as 
+provided in 41 CFR part 60-300, subpart C.
+---------------------------------------------------------------------------
+
+    \2\ Effective October 1, 2025, the coverage threshold under 
+VEVRAA increased from $150,000 to $200,000, in accordance with the 
+inflationary adjustment requirements in 41 U.S.C. 1908. See Federal 
+Acquisition Regulation: Inflation Adjustment of Acquisition-Related 
+Thresholds, 90 FR 41872 (Aug. 27, 2025).
+---------------------------------------------------------------------------
+
+II. Need for the Rulemaking
+
+    Prior to January 21, 2025, DOL administered and enforced Executive 
+Order 11246, ``Equal Employment Opportunity,'' as amended (Executive 
+Order 11246), Section 503 of the Rehabilitation Act of 1973, as amended 
+(Section 503), and VEVRAA. On January 21, 2025, President Trump issued 
+Executive Order 14173, ``Ending Illegal Discrimination and Restoring 
+Merit-Based Opportunity,'' 90 FR 8633 (Jan. 31, 2025). Executive Order 
+14173 revoked Executive Order 11246. Executive Order 11246, and its 
+implementing regulations at 41 CFR part 60-1 et seq., prohibited 
+contractors from discriminating against employees and applicants 
+because of race, color, religion, sex, sexual orientation, gender 
+identity, national origin, or because they inquired about, discussed, 
+or disclosed their compensation or that of others, subject to certain 
+limitations. Contractors were also required to take certain affirmative 
+actions to promote equal employment opportunity in their workplaces, as 
+specified in 41 CFR part 60-2 and 41 CFR part 60-4.
+    While VEVRAA remains in effect, the revocation of Executive Order 
+11246 necessitates several revisions to the VEVRAA implementing 
+regulations. On July 1, 2025, DOL published a Notice of Proposed 
+Rulemaking (NPRM) in the Federal Register proposing specific revisions. 
+See 90 FR 28485 (July 1, 2025). Specifically, DOL proposed removal of 
+the cross-reference to the Executive Order 11246 administrative 
+proceeding procedures found in 41 CFR 60-300.65(b) and proposed the 
+addition of those administrative proceeding procedures directly into 
+VEVRAA's implementing regulations, except where duplicative of current 
+part 60-300 provisions (e.g., the severability clause).\3\
+---------------------------------------------------------------------------
+
+    \3\ In a separate rulemaking, DOL proposed similar changes to 
+the Section 503 regulations. If the proposed changes become final, 
+the 41 CFR part 60-30 regulations will be duplicative and 
+unnecessary as they will be incorporated into 41 CFR parts 60-300 
+and 60-741. As such, as part of the Section 503 rulemaking, DOL is 
+also proposing to rescind 41 CFR part 60-30 using a delayed 
+effective date.
+---------------------------------------------------------------------------
+
+    DOL also proposed removal of a reference to 41 CFR part 60-3 
+because this citation is part of the revoked Executive Order 11246 
+authority. Additionally, DOL proposed removal of the 29 U.S.C. 793 
+reference in the authority citation for 41 CFR part 60-300. The 29 
+U.S.C. 793 reference refers to the Section 503 authority and is 
+unnecessary.
+
+[[Page 54235]]
+
+    Further, effective October 1, 2025, the coverage threshold under 
+VEVRAA increased from $150,000 to $200,000, in accordance with the 
+inflationary adjustment requirements in 41 U.S.C. 1908.\4\ The NPRM did 
+not reflect the updated threshold amount because the increase became 
+effective after the publication of the NPRM. To align the final rule 
+with the current jurisdictional threshold, DOL has updated the relevant 
+regulatory provisions in this final rule to reflect the threshold 
+increase.\5\ DOL finds good cause to make these changes without prior 
+notice and comment pursuant to 5 U.S.C. 553(b)(B). Specifically, DOL 
+finds that notice and comment is unnecessary because the inflationary 
+adjustments are minor and technical amendments that were previously 
+subject to notice and comment through the Federal Acquisition 
+Regulatory (FAR) Council's rulemaking process and are now binding on 
+the VEVRAA regulations.\6\
+---------------------------------------------------------------------------
+
+    \4\ See Federal Acquisition Regulation: Inflation Adjustment of 
+Acquisition-Related Thresholds, 90 FR 41872 (Aug. 27, 2025).
+    \5\ Specifically, DOL has updated the jurisdictional threshold 
+amounts included in 41 CFR 60-300.1(b), 41 CFR 60-300.2(f), (o), 
+(p), (aa), 41 CFR 60-300.4(a)(1)-(2), 41 CFR 60-300.5(a)(11), 41 CFR 
+60-300.40(a), and 41 CFR 60-300.80(a) to reflect the inflationary 
+adjustments.
+    \6\ See Federal Acquisition Regulation: Inflation Adjustment of 
+Acquisition-Related Thresholds, 90 FR 41872 (Aug. 27, 2025).
+---------------------------------------------------------------------------
+
+III. Public Comments
+
+    The NPRM originally provided for a 60-day comment period, scheduled 
+to close on September 2, 2025. After receiving comments requesting an 
+extension of the comment period, DOL extended the comment period until 
+September 17, 2025.\7\ DOL received 18 public comments in response to 
+the NPRM. The commenters included employer associations, policy 
+advocacy organizations, law firms and legal organizations, an education 
+and research center, a veterans' rights organization, and individuals. 
+The public comments are organized by topic and discussed below.
+---------------------------------------------------------------------------
+
+    \7\ Modifications to the Regulations Implementing the Vietnam 
+Era Veterans' Readjustment Assistance Act of 1974, as Amended; 
+Extension of Comment Period, 90 FR 42713 (Sept. 4, 2025).
+---------------------------------------------------------------------------
+
+A. Comments Related to the Administrative Proceeding Procedures
+
+    DOL received numerous comments on its proposal to relocate the 
+administrative proceeding procedures formerly contained in the 
+Executive Order 11246 regulations into the VEVRAA implementing 
+regulations. Several commenters supported this proposal, stating that 
+conforming the regulatory structure in this manner is reasonable and 
+appropriate following the revocation of Executive Order 11246. These 
+commenters noted that consolidating the applicable procedures within 
+the VEVRAA regulations would improve regulatory clarity and 
+transparency regarding the procedures governing enforcement of VEVRAA. 
+Other commenters recommended that DOL modify or eliminate the 
+administrative proceeding procedures because of recent case law 
+challenging the use of Administrative Law Judges (ALJs) by Federal 
+agencies. See, e.g., Space Exploration Tech. Corp. v. Nat'l Labor 
+Relations Bd., 151 F.4th 761 (5th Cir. 2025) (challenging the structure 
+of the NLRB, including its ALJs); ABM Indus. Groups, LLC v. U.S. Dep't 
+of Labor, et al., 756 F. Supp. 3d 468 (S.D. Tex. Oct. 30, 2024) 
+(holding that Plaintiff is likely to succeed on its claim that the 
+assigned DOL ALJ is unconstitutionally protected by two layers of good-
+cause removal restrictions), vacated, No. 4:24-CV-03353, 2024 WL 
+6076919. Relying on this case law, some of these commenters asserted 
+that DOL can no longer use the ALJ structure included in the current 
+procedures. Commenters also cited SEC v. Jarkesy, 603 U.S. 109 (2024), 
+in which the Supreme Court held that the Seventh Amendment requires the 
+Securities and Exchange Commission (SEC) to pursue civil penalties in 
+Federal court where the defendant is entitled to a jury trial. Some 
+commenters further cited lower court decisions applying Jarkesy outside 
+the SEC context, including Sun Valley Orchards, LLC v. U.S. Dep't of 
+Labor, 148 F.4th 121 (3d Cir. 2025), cert. granted, 2026 WL 1127242 
+(U.S. Apr. 27, 2026) (applying Jarkesy to hold that DOL could not seek 
+certain monetary remedies through administrative proceedings). However, 
+the application of Jarkesy outside the SEC context remains unsettled 
+and continues to be addressed by the courts. Compare Sun Valley 
+Orchards with Axalta Coating Systems LLC v. FAA, 144 F.4th 467 (3d Cir. 
+2025) (holding that Jarkesy did not bar administrative adjudication of 
+civil penalties for violations of hazmat regulations). DOL sought 
+Supreme Court review of Sun Valley Orchards, and the Court granted a 
+writ of certiorari.
+    In any event, these developments do not affect DOL's decision here. 
+This final rule does not expand DOL's remedial authority, create new 
+causes of action, or establish new enforcement mechanisms. It merely 
+relocates the existing procedural provisions after the revocation of 
+Executive Order 11246. To the extent future judicial decisions clarify 
+the constitutional status of DOL's ALJs, clarify the application of 
+Jarkesy to DOL enforcement actions, or otherwise require changes to 
+DOL's administrative enforcement structure or available remedies, then 
+the impact of potential future judicial decisions on such issues may be 
+addressed in a separate rulemaking. DOL reaffirms its position that 
+moving the administrative proceeding procedures directly into the 
+VEVRAA regulations is necessary due to the revocation of Executive 
+Order 11246. This change will also provide clarity about the current 
+administrative proceeding procedures applicable to VEVRAA.
+
+B. Other Comments
+
+    Some commenters expressed general support for the VEVRAA 
+regulations without addressing specific issues discussed in the NPRM. 
+Other commenters raised issues unrelated to the proposed changes, such 
+as recommending the removal of the show cause notice procedures from 41 
+CFR 60-300.62, recommending the removal of AAP requirements contained 
+in the regulations, or requiring a barrier analysis when contractors 
+are below the VEVRAA hiring benchmark, described at 41 CFR 60-300.45, 
+for two consecutive years. DOL is not addressing these comments in the 
+final rule as they are outside the scope of this rulemaking. If DOL 
+determines that additional regulatory changes may be necessary, then 
+DOL may pursue those changes in a separate rulemaking.
+
+C. Final Rule Summary
+
+    For the reasons stated above, the final rule adopts the various 
+changes proposed in the NPRM, which include each of the following: 
+moving the administrative proceeding procedures directly into the 
+VEVRAA regulations, specifically into 41 CFR 60-300.65(c) through (mm), 
+except where duplicative of current part 60-300 provisions; removing 
+the cross-reference to the Executive Order 11246 administrative 
+proceeding procedures found in 41 CFR 60-300.65(b); removing the 
+reference to 41 CFR part 60-3, which was included in 41 CFR 60-
+300.21(g)(2); and removing the unnecessary 29 U.S.C. 793 reference 
+included in the authority citation for 41 CFR 60-300. The final rule 
+also includes the recent inflationary adjustments to the VEVRAA 
+jurisdictional thresholds. As detailed above, DOL has found good cause 
+to implement the inflationary adjustments without notice and comment 
+because the adjustments are minor and technical amendments that were 
+previously subject to notice and comment through
+
+[[Page 54236]]
+
+the FAR Council's rulemaking process and the adjustments are now 
+binding on the VEVRAA regulations.\8\
+---------------------------------------------------------------------------
+
+    \8\ See Federal Acquisition Regulation: Inflation Adjustment of 
+Acquisition-Related Thresholds, 90 FR 41872 (Aug. 27, 2025).
+---------------------------------------------------------------------------
+
+IV. Procedural Issues and Regulatory Review
+
+A. Review Under Executive Order 12866
+
+    Executive Order 12866, ``Regulatory Planning and Review,'' 58 FR 
+51735 (Oct. 4, 1993), requires agencies, to the extent permitted by 
+law, to (1) propose or adopt a regulation only upon a reasoned 
+determination that its benefits justify its costs (recognizing that 
+some benefits and costs are difficult to quantify); (2) tailor 
+regulations to impose the least burden on society, consistent with 
+obtaining regulatory objectives, taking into account, among other 
+things, and to the extent practicable, the costs of cumulative 
+regulations; (3) select, in choosing among alternative regulatory 
+approaches, those approaches that maximize net benefits; (4) to the 
+extent feasible, specify performance objectives, rather than specifying 
+the behavior or manner of compliance that regulated entities must 
+adopt; and (5) identify and assess available alternatives to direct 
+regulation, including providing economic incentives to encourage the 
+desired behavior, such as user fees or marketable permits, or providing 
+information upon which choices can be made by the public.
+    Section 6(a) of Executive Order 12866 also requires agencies to 
+submit ``significant regulatory actions'' to the Office of Information 
+and Regulatory Affairs (OIRA) for review. In accordance with Executive 
+Order 12866, DOL has determined that this final rule does not 
+constitute a ``significant regulatory action'' under section 3(f) of 
+Executive Order 12866. Accordingly, this final rule was not submitted 
+to OIRA for review under Executive Order 12866.
+
+B. Costs and Regulatory Designation
+
+    This rule makes technical and conforming amendments that align 
+regulatory text with existing requirements. It imposes no new 
+obligations. The adjustment to the jurisdictional threshold increases 
+the contract value required for coverage under VEVRAA from $150,000 to 
+$200,000. Because the increased threshold exceeds a pure inflation 
+adjustment, DOL expects that fewer contractors will be subject to the 
+relevant VEVRAA regulatory requirements, resulting in reduced 
+compliance burdens. Accordingly, the rule has a deregulatory effect. 
+DOL lacks data to determine how many contractors will no longer be 
+covered as a result of this change, but DOL expects the number to be 
+small given the incremental nature of the threshold increase. This rule 
+is considered a deregulatory action under Executive Order 14192.
+
+C. Review Under the Regulatory Flexibility Act
+
+    The Regulatory Flexibility Act, 5 U.S.C. 601 et seq., requires 
+preparation of an initial regulatory flexibility analysis (IRFA) and a 
+final regulatory flexibility analysis (FRFA) for any rule that by law 
+must be proposed for public comment, unless the agency certifies that 
+the rule, if promulgated, will not have a significant economic impact 
+on a substantial number of small entities.
+    DOL reviewed this final rule under the provisions of the Regulatory 
+Flexibility Act. This final rule provides regulatory certainty to 
+contractors and other stakeholders by aligning the regulations with the 
+most recent executive orders and inflationary adjustments. As discussed 
+above, the revisions are technical in nature, and do not impose any new 
+requirements for covered entities. The increase in the jurisdictional 
+threshold reduces the number of entities subject to the regulations. 
+DOL lacks data to determine how many small entities will no longer be 
+covered, but DOL expects the number to be small given the incremental 
+nature of the threshold increase. Accordingly, DOL has concluded that 
+the impacts of the final rule would not have a ``significant economic 
+impact on a substantial number of small entities'' and that the 
+preparation of a FRFA is not warranted. DOL will transmit this 
+certification and supporting statement of factual basis to the Chief 
+Counsel for Advocacy of the Small Business Administration for review 
+under 5 U.S.C. 605(b).
+
+D. Review Under the Paperwork Reduction Act
+
+    This final rule imposes no new information or recordkeeping 
+requirements and does not impact current information collections. 
+Accordingly, Office of Management and Budget (OMB) clearance is not 
+required under the Paperwork Reduction Act. 44 U.S.C. 3501 et seq.
+
+E. Review Under Executive Order 13132
+
+    Executive Order 13132, ``Federalism,'' 64 FR 43255 (Aug. 10, 1999), 
+imposes certain requirements on Federal agencies formulating and 
+implementing policies or regulations that preempt State law or that 
+have federalism implications. Executive Order 13132 requires agencies 
+to examine the constitutional and statutory authority supporting any 
+action that would limit the policymaking discretion of the States and 
+to carefully assess the necessity for such actions. Executive Order 
+13132 also requires agencies to have an accountable process to ensure 
+meaningful and timely input by State and local officials in the 
+development of regulatory policies that have federalism implications.
+    DOL has examined this final rule and has determined that it would 
+not have a substantial direct effect on the States, on the relationship 
+between the national government and the States, or on the distribution 
+of power and responsibilities among the various levels of government.
+
+F. Review Under Executive Order 12988
+
+    With respect to the review of existing regulations and the 
+promulgation of new regulations, section 3(a) of Executive Order 12988, 
+``Civil Justice Reform,'' imposes on Federal agencies the general duty 
+to adhere to the following requirements: (1) eliminate drafting errors 
+and ambiguity; (2) write regulations to minimize litigation; (3) 
+provide a clear legal standard for affected conduct rather than a 
+general standard; and (4) promote simplification and burden reduction. 
+61 FR 4729 (Feb. 7, 1996). Regarding the review required by section 
+3(a), section 3(b) of Executive Order 12988 specifically requires that 
+Executive agencies make every reasonable effort to ensure that the 
+regulation: (1) clearly specifies the preemptive effect, if any; (2) 
+clearly specifies any effect on existing Federal law or regulation; (3) 
+provides a clear legal standard for affected conduct while promoting 
+simplification and burden reduction; (4) specifies the retroactive 
+effect, if any; (5) adequately defines key terms; and (6) addresses 
+other important issues affecting clarity and general draftsmanship 
+under any guidelines issued by the Attorney General.
+    Section 3(c) of Executive Order 12988 requires Executive agencies 
+to review regulations in light of applicable standards in section 3(a) 
+and section 3(b) to determine whether they are met or it is 
+unreasonable to meet one or more of them. DOL has completed the 
+required review and determined that, to the extent permitted by law, 
+this final rule meets the relevant standards of Executive Order 12988.
+
+[[Page 54237]]
+
+G. Review Under the Unfunded Mandates Reform Act
+
+    Title II of the Unfunded Mandates Reform Act of 1995 (UMRA) 
+requires each Federal agency to assess the effects of Federal 
+regulatory actions on State, local, and Tribal governments and the 
+private sector. Sec. 201, Public Law 104-4 (codified at 2 U.S.C. 1531). 
+For a regulatory action likely to result in a rule that may cause the 
+expenditure by State, local, and Tribal governments, in the aggregate, 
+or by the private sector of $100 million or more in any one year 
+(adjusted annually for inflation), section 202 of UMRA requires a 
+Federal agency to publish a written statement that estimates the 
+resulting costs, benefits, and other effects on the national economy. 2 
+U.S.C. 1532(a)-(b). The UMRA also requires a Federal agency to develop 
+an effective process to permit timely input by elected officers of 
+State, local, and Tribal governments on a ``significant 
+intergovernmental mandate,'' and requires an agency plan for giving 
+notice and opportunity for timely input to potentially affected small 
+governments before establishing any requirements that might 
+significantly or uniquely affect them.
+    DOL examined this final rule according to UMRA and its statement of 
+policy and determined that the final rule does not contain a Federal 
+intergovernmental mandate, nor is it expected to require expenditures 
+of $100 million or more in any one year by State, local, and Tribal 
+governments, in the aggregate, or by the private sector. As a result, 
+the analytical requirements of UMRA do not apply.
+
+H. Review Under the Treasury and General Government Appropriations Act, 
+1999
+
+    Section 654 of the Treasury and General Government Appropriations 
+Act, 1999 (Pub. L. 105-277) requires Federal agencies to issue a Family 
+Policymaking Assessment for any rule that may affect family well-being. 
+This final rule would not have any impact on the autonomy or integrity 
+of the family as an institution. Accordingly, DOL has concluded that it 
+is not necessary to prepare a Family Policymaking Assessment.
+
+I. Review Under Executive Order 12630
+
+    Pursuant to Executive Order 12630, ``Governmental Actions and 
+Interference with Constitutionally Protected Property Rights,'' 53 FR 
+8859 (Mar. 18, 1988), DOL has determined that this final rule would not 
+result in any takings that might require compensation under the Fifth 
+Amendment to the U.S. Constitution.
+
+J. Review Under the Treasury and General Government Appropriations Act, 
+2001
+
+    Section 515 of the Treasury and General Government Appropriations 
+Act, 2001 (44 U.S.C. 3516, note) provides for Federal agencies to 
+review most disseminations of information to the public under 
+information quality guidelines established by each agency pursuant to 
+general guidelines issued by OMB. OMB's guidelines were published at 67 
+FR 8452 (Feb. 22, 2002). DOL has reviewed this final rule under the OMB 
+guidelines and has concluded that it is consistent with applicable 
+policies in those guidelines.
+
+K. Review Under Executive Order 13175
+
+    DOL has examined this final rule and determined that it does not 
+have tribal implications under Executive Order 13175 that would require 
+a tribal summary impact statement. It does not ``have substantial 
+direct effects on one or more Indian tribes, on the relationship 
+between the Federal Government and Indian tribes, or on the 
+distribution of power and responsibilities between the Federal 
+Government and Indian tribes.''
+
+L. Review Under Additional Executive Orders and Presidential Memoranda
+
+    DOL has examined this final rule and has determined that it is 
+consistent with the policies and directives outlined in Executive 
+Order14173, ``Ending Illegal Discrimination and Restoring Merit-Based 
+Opportunity'' (see ``Background'' discussion regarding E.O. 14173). As 
+noted above, this rule is considered a deregulatory action under 
+Executive Order 14192.
+
+List of Subjects in 41 CFR Part 60-300
+
+    Administrative practice and procedure, Civil rights, Employment, 
+Equal employment opportunity, Government contracts, Government 
+procurement, Investigations, Labor, Veterans.
+
+    For the reasons set forth in the preamble, and under the authority 
+of 38 U.S.C. 4212, as amended, DOL amends 41 CFR part 60-300 as set 
+forth below:
+
+PART 60-300-AFFIRMATIVE ACTION AND NONDISCRIMINATION OBLIGATIONS OF 
+FEDERAL CONTRACTORS AND SUBCONTRACTORS REGARDING DISABLED VETERANS, 
+RECENTLY SEPARATED VETERANS, ACTIVE DUTY WARTIME OR CAMPAIGN BADGE 
+VETERANS, AND ARMED FORCES SERVICE MEDAL VETERANS
+
+0
+1. Revise the authority citation for 41 CFR Part 60-300 to read as 
+follows:
+
+    Authority: 38 U.S.C. 4211 and 4212; E.O. 11758 (3 CFR, 1971-1975 
+Comp., p. 841).
+
+
+0
+2. Revise Sec.  60-300.1(b) to read as follows:
+
+
+Sec.  60-300.1   Purpose, applicability and construction.
+
+* * * * *
+    (b) Applicability. This part applies to any Government contract or 
+subcontract of $200,000 or more, entered into or modified on or after 
+December 1, 2003, for the purchase, sale or use of personal property or 
+nonpersonal services (including construction): Provided, that subpart C 
+of this part applies only as described in Sec.  60-300.40(a); and that 
+the non-discrimination protections in Sec.  60-300.21 and the right to 
+file complaints alleging discriminatory conduct set forth in Sec.  60-
+300.61 also apply to ``pre-JVA veterans'' as defined in Sec.  60-300.2, 
+who are applicants or employees of a contractor with a Government 
+contract of $25,000 or more entered into prior to December 1, 2003, and 
+unmodified since to a contract amount of $200,000. Compliance by the 
+contractor with the provisions of this part will not necessarily 
+determine its compliance with other statutes, and compliance with other 
+statutes will not necessarily determine its compliance with this part.
+* * * * *
+
+0
+3. Amend Sec.  60-300.2 by revising paragraphs (f), (o), (p), and (aa) 
+to read as follows:
+
+
+Sec.  60-300.2   Definitions.
+
+* * * * *
+    (f) Contractor means, unless otherwise indicated, a prime 
+contractor or subcontractor holding a contract of $200,000 or more.
+* * * * *
+    (o) Pre-JVA veteran means an individual who is an employee of or 
+applicant to a contractor with a contract of $25,000 or more entered 
+into prior to December 1, 2003 and unmodified since to $200,000 or 
+more, and who is a special disabled veteran, veteran of the Vietnam 
+era, pre-JVA recently separated
+
+[[Page 54238]]
+
+veteran, or other protected veteran, as defined below:
+* * * * *
+    (p) Prime contractor means any person holding a contract of 
+$200,000 or more, and, for the purposes of subpart D of this part, 
+``General Enforcement and Complaint Procedures,'' includes any person 
+who has held a contract subject to the Act.
+* * * * *
+    (aa) Subcontractor means any person holding a subcontract of 
+$200,000 or more and, for the purposes of subpart D of this part, 
+``General Enforcement and Complaint Procedures,'' any person who has 
+held a subcontract subject to the Act.
+* * * * *
+
+0
+4. Revise Sec.  60-300.4(a) to read as follows:
+
+
+Sec.  60-300.4   Coverage and waivers.
+
+    (a) General--(1) Contracts and subcontracts of $200,000 or more. 
+Contracts and subcontracts of $200,000 or more are covered by this 
+part. No contracting agency or contractor shall procure supplies or 
+services in less than usual quantities to avoid the applicability of 
+the equal opportunity clause.
+    (2) Contracts for indefinite quantities. With respect to indefinite 
+delivery-type contracts (including, but not limited to, open end 
+contracts, requirement-type contracts, Federal Supply Schedule 
+contracts, ``call-type'' contracts, and purchase notice agreements), 
+the equal opportunity clause shall be included unless the contracting 
+agency has reason to believe that the amount to be ordered in any year 
+under such contract will be less than $200,000. The applicability of 
+the equal opportunity clause shall be determined at the time of award 
+for the first year, and annually thereafter for succeeding years, if 
+any. Notwithstanding the above, the equal opportunity clause shall be 
+applied to such contract whenever the amount of a single order is 
+$200,000 or more. Once the equal opportunity clause is determined to be 
+applicable, the contract shall continue to be subject to such clause 
+for its duration, regardless of the amounts ordered, or reasonably 
+expected to be ordered in any year.
+* * * * *
+
+0
+5. Amend Sec.  60-300.5 by revising paragraph (a)(11) to read as 
+follows:
+
+
+Sec.  60-300.5  Equal opportunity clause.
+
+    (a) * * *
+    (11) The contractor will include the provisions of this clause in 
+every subcontract or purchase order of $200,000 or more, unless 
+exempted by the rules, regulations, or orders of the Secretary issued 
+pursuant to VEVRAA so that such provisions will be binding upon each 
+subcontractor or vendor. The contractor will take such action with 
+respect to any subcontract or purchase order as the Director, Office of 
+Federal Contract Compliance Programs, may direct to enforce such 
+provisions, including action for noncompliance.
+* * * * *
+
+0
+6. Revise Sec.  60-300.21(g)(2) to read as follows:
+
+
+Sec.  60-300.21   Prohibitions.
+
+* * * * *
+    (g) * * *
+    (2) The Uniform Guidelines on Employee Selection Procedures do not 
+apply to 38 U.S.C. 4212 and are similarly inapplicable to this part.
+* * * * *
+
+0
+7. Revise Sec.  60-300.40(a) to read as follows:
+
+
+Sec.  60-300.40  Applicability of the affirmative action program 
+requirement.
+
+    (a) The requirements of this subpart apply to every Government 
+contractor that has 50 or more employees and a contract of $200,000 or 
+more.
+* * * * *
+
+0
+8. Revise Sec.  60-300.65 to read as follows:
+
+
+Sec.  60-300.65  Enforcement proceedings.
+
+    (a) General. (1) If a compliance evaluation, complaint 
+investigation or other review by OFCCP finds a violation of the Act or 
+this part, and the violation has not been corrected in accordance with 
+the conciliation procedures in this part, or OFCCP determines that 
+referral for consideration of formal enforcement (rather than 
+settlement) is appropriate, OFCCP may refer the matter to the Solicitor 
+of Labor with a recommendation for the institution of enforcement 
+proceedings to enjoin the violations, to seek appropriate relief, and 
+to impose appropriate sanctions, or any of the above in this sentence. 
+OFCCP may seek back pay and other make whole relief for aggrieved 
+individuals identified during a complaint investigation or compliance 
+evaluation. Such individuals need not have filed a complaint as a 
+prerequisite to OFCCP seeking such relief on their behalf. Interest on 
+back pay shall be calculated from the date of the loss and compounded 
+quarterly at the percentage rate established by the Internal Revenue 
+Service for the underpayment of taxes.
+    (2) In addition to the administrative proceedings set forth in this 
+section, the Director may, within the limitations of applicable law, 
+seek appropriate judicial action to enforce the contractual provisions 
+set forth in Sec.  60-300.5, including appropriate injunctive relief.
+    (b) Hearing practice and procedure. (1) In administrative 
+enforcement proceedings the contractor shall be provided an opportunity 
+for a formal hearing. All hearings conducted under the Act and this 
+part shall be governed by the regulations in paragraphs (c) to (mm) of 
+this section and the Rules of Evidence set out in the Rules of Practice 
+and Procedure for Administrative Hearings Before the Office of 
+Administrative Law Judges contained in 29 CFR part 18, subpart B: 
+Provided, That a final administrative order shall be issued within one 
+year from the date of the issuance of the recommended findings, 
+conclusions and decision of the Administrative Law Judge, or the 
+submission of exceptions and responses to exceptions to such decision 
+(if any), whichever is later.
+    (2) Complaints may be filed by the Solicitor, the Associate 
+Solicitor for Civil Rights and Labor-Management, Regional Solicitors, 
+and Associate Regional Solicitors.
+    (3) [Reserved]
+    (c) Applicability of rules of practice for administrative 
+proceedings. The regulations at paragraphs (c) to (mm) of this section 
+provide the rules of practice for all administrative proceedings that 
+relate to the enforcement of the Vietnam Era Veterans' Readjustment 
+Assistance Act of 1974 (VEVRAA), as amended, including but not limited 
+to proceedings instituted against contractors or subcontractors covered 
+by this part. In the absence of a specific provision, procedures shall 
+be in accordance with the Federal Rules of Civil Procedure.
+    (d) Waiver, modification. Upon notice to all parties, the 
+Administrative Law Judge may, with respect to matters pending before 
+him modify or waive any rule herein upon a determination that no party 
+will be prejudiced and that the ends of justice will be served thereby.
+    (e) Computation of time. In computing any period of time under 
+these rules or in an order issued hereunder, the time begins with the 
+day following the act, event, or default, and includes the last day of 
+the period, unless it is a Saturday, Sunday, or legal holiday observed 
+by the Federal Government in which event it includes the next business 
+day.
+    (f) Form, filing, service of pleadings and papers--(1) Form. The 
+original of all pleadings and papers in a proceeding conducted under 
+the regulations of this section shall be filed with the Administrative 
+Law Judge assigned to the case or with the Chief
+
+[[Page 54239]]
+
+Administrative Law Judge if the case has not been assigned. Every 
+pleading and paper filed in the proceeding shall contain a caption 
+setting forth the name of the agency instituting the proceeding, the 
+title of the action, the case file number assigned by the 
+Administrative Law Judge, and a designation of the pleading or paper 
+(e.g., complaint, motion to dismiss, etc.). The pleading or papers 
+shall be signed and shall contain the address and telephone number of 
+the person representing the party or the person on whose behalf the 
+pleading or paper was filed. Unless otherwise ordered for good cause by 
+the Administrative Law Judge regarding specific papers and pleadings in 
+a specific case, all such papers and pleadings are public documents.
+    (2) Service. Service upon any party shall be made by the party 
+filing the pleading or document in accordance with 29 CFR part 26. When 
+a party is represented by an attorney, the service shall be upon the 
+attorney.
+    (3) Proof of service. A certificate of the person serving the 
+pleading or other document, setting forth the manner of service, shall 
+be proof of the service.
+    (g) Prehearing procedures: Administrative complaint--(1) Filing. 
+The Solicitor of Labor, Associate Solicitor for Labor Relations and 
+Civil Rights Regional Solicitors and Regional Attorney upon referral 
+from the Office of Federal Contract Compliance Programs, are authorized 
+to institute enforcement proceedings by filing a complaint and serving 
+the complaint upon the contractor which shall be designated as the 
+defendant. The Department of Labor, OFCCP, as shall be designated as 
+the plaintiff.
+    (2) Contents. The complaint shall contain a concise jurisdictional 
+statement, and a clear and concise statement sufficient to put the 
+defendant on notice of the acts or practices it is alleged to have 
+committed in violation of the order, the regulations, or its 
+contractual obligations. The complaint shall also contain a prayer 
+regarding the relief being sought, a statement of whatever sanctions 
+the Government will seek to impose and the name and address of the 
+attorney who will represent the Government.
+    (3) Amendment. The complaint may be amended once as a matter of 
+course before an answer is filed, and the defendant may amend its 
+answer once as a matter of course not later than 10 days after the 
+filing of the original answer. Other amendments of the complaint or of 
+the answer to the complaint shall be made only by leave of the 
+Administrative Law Judge or by written consent of the adverse party; 
+and leave shall be freely given where justice so requires. An amended 
+complaint shall be answered within 14 days of its service, or within 
+the time for filing an answer to the original complaint, whichever 
+period is longer. An amended answer shall be responded to within 14 
+days of its service.
+    (h) Prehearing procedures: Answer--(1) Filing and service. Within 
+20 days after the service of the complaint, the defendant shall file an 
+answer with the Chief Administrative Law Judge if the case has not been 
+assigned to an Administrative Law Judge. The answer shall be signed by 
+the defendant or its attorney and served on the Government in 
+accordance with paragraph (f)(2) of this section.
+    (2) Contents; failure to file. The answer shall:
+    (i) Contain a statement of the facts which constitute the grounds 
+of defense, and shall specifically admit, explain, or deny, each of the 
+allegations of the complaint unless the defendant is without knowledge, 
+in which case the answer shall so state; or
+    (ii) State that the defendant admits all the allegations of the 
+complaint. The answer may contain a waiver of hearing; and if not, a 
+separate paragraph in the answer shall request a hearing. The answer 
+shall contain the name and address of the defendant, or of the attorney 
+representing the defendant. Failure to file an answer or to plead 
+specifically to any allegation of the complaint shall constitute an 
+admission of such allegation.
+    (3) Procedure, upon admission of facts. The admission, in the 
+answer or by failure to file an answer, of all the material allegations 
+of fact contained in the complaint shall constitute a waiver of 
+hearing. Upon such admission, the Administrative Law Judge, without 
+further hearing, may prepare his decision in which he shall adopt as 
+his proposed findings of fact the material facts alleged in the 
+complaint. The parties shall be given an opportunity to file exceptions 
+to his decision and to file briefs in support of the exceptions.
+    (i) Prehearing procedures: Notice of prehearing conference. The 
+Administrative Law Judge shall respond to defendant's request for a 
+hearing within 15 days and shall serve a notice of prehearing 
+conference on the parties. The notice shall contain the time and place 
+of the conference.
+    (j) Prehearing procedures: Motions; disposition of motions--(1) 
+Motions. Motions shall state the relief sought, the authority relied 
+upon and the facts alleged, and shall be filed with the Administrative 
+Law Judge. If made before or after the hearing itself, the motions 
+shall be in writing. If made at the hearing, motions may be stated 
+orally; but the Administrative Law Judge may require that they be 
+reduced to writing and filed and served on all parties in the same 
+manner as a formal motion. Unless otherwise ordered by the 
+Administrative Law Judge, written motions shall be accompanied by a 
+supporting memorandum. Within 10 days after a written motion is served, 
+or such other time period as may be fixed, any party may file a 
+response to a motion.
+    (2) Disposition of motions. The Administrative Law Judge may not 
+grant a written motion prior to expiration of the time for filing 
+responses thereto, except upon consent of the parties or following a 
+hearing, but may overrule or deny such motion without awaiting 
+response: Provided, That prehearing conferences, hearings, and 
+decisions need not be delayed pending disposition of motions.
+    (k) Prehearing procedures: Interrogatories and admissions as to 
+facts and documents--(1) Interrogatories. Not later than 25 days prior 
+to the date of the hearing, except for good cause shown, or not later 
+than 14 days prior to such earlier date as the Administrative Law Judge 
+may order, any party may serve upon an opposing party written 
+interrogatories. Each interrogatory shall be answered separately and 
+fully in writing under oath, unless objected to. Answers are to be 
+signed by the person making them and objections by the attorney or by 
+whoever is representing the party. Answers and objections shall be 
+filed and served within 25 days of service of the interrogatory.
+    (2) Admissions. Not later than 14 days prior to the date of the 
+hearing, except for good cause shown, or not later than 14 days prior 
+to such earlier date as the Administrative Law Judge may order, any 
+party may serve upon an opposing party a written request for the 
+admission of the genuineness and authenticity of any relevant documents 
+described in and exhibited with the request, or for the admission of 
+the truth of any relevant matters of fact stated in the request. Each 
+of the matters as to which an admission is requested shall be deemed 
+admitted, unless within 25 days after service, the party to whom the 
+request is directed serves upon the requesting party a sworn statement 
+either:
+    (i) Denying specifically the matter as to which an admission is 
+requested; or
+    (ii) Setting forth in detail the reasons why he cannot truthfully 
+either admit or deny such matters.
+
+[[Page 54240]]
+
+    (3) Objections or failures to respond. The party submitting the 
+interrogatory or request may move for an order with respect to any 
+objection or other failure to respond.
+    (l) Prehearing procedures: Production of documents and things and 
+entry upon land for inspection and other purposes. (1) After 
+commencement of the action, any party may serve on any other party a 
+request to produce and/or permit the party, or someone acting on his 
+behalf, to inspect and copy any unprivileged documents, phonorecords, 
+and other compilations, including computer tapes and printouts which 
+contain or may lead to relevant information and which are in the 
+possession, custody, or control of the party upon whom the request is 
+served. If necessary, translation of data compilations shall be done by 
+the party furnishing the information.
+    (2) After commencement of the action, any party may serve on any 
+other party a request to permit entry upon designated property which 
+may be relevant to the issues in the proceeding and, which is in the 
+possession or control of the party upon whom the request is served for 
+the purpose of inspection, measuring, surveying or photographing, 
+testing, or sampling the property or any designated object or area.
+    (3) Each request shall set forth with reasonable particularity the 
+items to be inspected and shall specify a reasonable time and place for 
+making the inspection and performing the related acts.
+    (4) The party upon whom the request is served shall respond within 
+25 days after the service of the request. The response shall state, 
+with respect to each item, that inspection and related activities will 
+be permitted as requested, unless there are objections, in which case 
+the reasons for each objection shall be stated. The party submitting 
+the request may move for an order with respect to any objection or to 
+other failure to respond.
+    (m) Prehearing procedures: Depositions upon oral examination.--(1) 
+Depositions; notice of examination. After commencement of the action, 
+any party may take the testimony of any person, including a party, 
+having personal or expert knowledge of the matters in issue, by 
+deposition upon oral examination. A party desiring to take a deposition 
+shall give reasonable notice in writing to every other party to the 
+proceeding, and may use an administrative subpoena. The notice shall 
+state the time and place for taking the deposition and the name and 
+address of each person to be examined, if known, and, if the name is 
+not known, a general description sufficient to identify him or the 
+particular class or group to which he belongs. The notice shall also 
+set forth the categories of documents the witness is to bring with him 
+to the deposition, if any. A copy of the notice shall be furnished to 
+the person to be examined unless his name is unknown.
+    (2) Production of witnesses; obligation of parties; objections. It 
+shall be the obligation of each party to produce for examination any 
+person, along with such documents as may be requested, at the time and 
+place, and on the date, set forth in the notice, if that party has 
+control over such person. Each party shall be deemed to have control 
+over its officers, agents, employees, and members. Unless the parties 
+agree otherwise, depositions shall be held within the county in which 
+the witness resides or works. The party or prospective witness may file 
+with the Administrative Law Judge an objection within 5 days after 
+notice of production of such witness is served, stating with 
+particularity the reasons why the party cannot or ought not to produce 
+a requested witness. The party serving the notice may move for an order 
+with respect to such objection or failure to produce a witness. All 
+errors or irregularities in compliance with the provisions of this 
+section shall be deemed waived unless a motion to suppress the 
+deposition or some part thereof is made with reasonable promptness 
+after such defect is or, with due diligence, might have been 
+ascertained.
+    (3) Before whom taken; scope of examination; failure to answer. 
+Depositions may be taken before any officer authorized to administer 
+oaths by the laws of the United States or of the place where the 
+deposition is held. At the time and place specified in the notice, each 
+party shall be permitted to examine and cross-examine the witness under 
+oath upon any matter which is relevant to the subject matter of the 
+proceeding, or which is reasonably calculated to lead to the production 
+of relevant and otherwise admissible evidence. All objections to 
+questions, except as to the form thereof, and all objections to 
+evidence are reserved until the hearing. A refusal or failure on the 
+part of any person under the control of a party to answer a question 
+shall operate to create a presumption that the answer, if given, would 
+be unfavorable to the controlling party, unless the question is 
+subsequently ruled improper by the Administrative Law Judge or the 
+Administrative Law Judge rules that there was valid justification for 
+the witness' failure or refusal to answer the question: Provided, That 
+the examining party shall note on the record during the deposition the 
+question which the deponent has failed, or refused to answer, and state 
+his intention to invoke the presumption if no answer is forthcoming.
+    (4) Subscription; certification; filing. The testimony shall be 
+reduced to typewriting, either by the officer taking the deposition or 
+under his direction, and shall be submitted to the witness for 
+examination and signing. If the deposition is not signed by the witness 
+because he is ill, dead, cannot be found, or refuses to sign it, such 
+fact shall be noted in the certificate of the officer and the 
+deposition may then be used as fully as though signed. The officer 
+shall immediately deliver the original copy of the transcript, together 
+with his certificate, in person or by mail to the Administrative Law 
+Judge. Copies of the transcript and certificate shall be furnished to 
+all persons desiring them, upon payment of reasonable charges, unless 
+distribution is restricted by order of the Administrative Law Judge for 
+good cause shown.
+    (5) Rulings on admissibility; use of deposition. Subject to the 
+provisions of this section, objection may be made at the hearing to 
+receiving in evidence any deposition or part thereof for any reason 
+which would require the exclusion of the evidence if the witness were 
+then present and testifying. Any part or all of a deposition, so far as 
+admissible in the discretion of the Administrative Law Judge, may be 
+used against any party who was present or represented at the taking of 
+the deposition or who had reasonable notice, in accordance with the 
+following provisions:
+    (i) Any deposition may be used by any party for the purpose of 
+contradicting or impeaching the testimony of the deponent as a witness.
+    (ii) The deposition of a party or of any one who at the time of 
+taking the deposition was an officer, director, or managing agent, or 
+was designated to testify on behalf of a public or private corporation, 
+partnership, association, or governmental agency which is a party may 
+be used by the adverse party for any purpose.
+    (iii) The deposition of a witness, whether or not a party, may be 
+used by any party for any purpose if the administrative law judge 
+finds:
+    (A) That the witness is dead; or
+    (B) that the witness is unable to attend or testify because of age, 
+illness, infirmity, or imprisonment; or
+    (C) that the party offering the deposition has been unable to 
+procure
+
+[[Page 54241]]
+
+the attendance of the witness by subpoena; or
+    (D) upon application and notice, that such exceptional 
+circumstances exist as to make it desirable to allow the deposition to 
+be used.
+    (iv) If only part of a deposition is introduced in evidence by a 
+party, any party may introduce any other parts by way of rebuttal and 
+otherwise.
+    (6) Stipulations. If the parties so stipulate in writing, 
+depositions may be taken before any person at any time or place, upon 
+any notice and in any manner, and when so taken may be used like other 
+depositions.
+    (n) Prehearing procedures: Prehearing conferences. (1) Upon his own 
+motion or the motion of the parties, the Administrative Law Judge may 
+direct the parties or their counsel to meet with him for a conference 
+to consider:
+    (i) Simplification of the issues;
+    (ii) Necessity or desirability of amendments to pleadings for 
+purposes of clarification, simplification, or limitation;
+    (iii) Stipulations, admissions of fact and of contents and 
+authenticity of documents;
+    (iv) Limitation of number of witnesses;
+    (v) Scheduling dates for the exchange of witness lists and of 
+proposed exhibits;
+    (vi) Such other matters as may tend to expedite the disposition of 
+the proceedings.
+    (2) The record shall show the matters disposed of by order and by 
+agreement in such pretrial conferences. The subsequent course of the 
+proceeding shall be controlled by such action.
+    (o) Prehearing procedures: Consent findings and order--(1) General. 
+At any time after the issuance of a complaint and prior to or during 
+the reception of evidence in any proceeding, the parties may jointly 
+move to defer the receipt of any evidence for a reasonable time to 
+permit negotiation of an agreement containing consent findings and an 
+order disposing of the whole or any part of the proceeding. The 
+allowance of such deferment and the duration thereof shall be in the 
+discretion of the Administrative Law Judge after consideration of the 
+nature of the proceeding, the requirements of the public interest, the 
+representations of the parties, and the probability of an agreement 
+being reached which will result in a just disposition of the issues 
+involved.
+    (2) Content. Any agreement containing consent findings and an order 
+disposing of a proceeding shall also provide:
+    (i) That the order shall have the same force and effect as an order 
+made after full hearing;
+    (ii) That the entire record on which any order may be based shall 
+consist solely of the complaint and the agreement;
+    (iii) That any further procedural steps are waived; and
+    (iv) That any right to challenge or contest the validity of the 
+findings and order entered into in accordance with the agreement is 
+waived.
+    (3) Submission. On or before the expiration of the time granted for 
+negotiations, the parties or their counsel may:
+    (i) Submit the proposed agreement to the Administrative Law Judge 
+for his consideration;
+    (ii) Inform the Administrative Law Judge that agreement cannot be 
+reached.
+    (4) Disposition. In the event an agreement containing consent 
+findings and an order is submitted within the time allowed, the 
+Administrative Law Judge, within 30 days, shall accept such agreement 
+by issuing his decision based upon the agreed findings, and his 
+decision shall constitute the final Administrative order.
+    (p) Hearings and Related Matters: Designation of Administrative Law 
+Judges. Hearings shall be held before an Administrative Law Judge of 
+the Department of Labor who shall be designated by the Chief 
+Administrative Law Judge of the Department of Labor. After commencement 
+of the proceeding but prior to the designation of an Administrative Law 
+Judge, pleadings and papers shall be filed with the Chief 
+Administrative Law Judge.
+    (q) Hearings and Related Matters: Authority and responsibilities of 
+Administrative Law Judges. The Administrative Law Judge shall propose 
+findings and conclusions to the Secretary on the basis of the record. 
+In order to do so, he shall have the duty to conduct a fair hearing, to 
+take all necessary action to avoid delay, and to maintain order. He 
+shall have all powers necessary to those ends, including, but not 
+limited to, the power to:
+    (1) Hold conferences to settle, simplify, or fix the issues in a 
+proceeding, or to consider other matters that may aid in the 
+expeditious disposition of the proceeding by consent of the parties or 
+upon his own motion;
+    (2) Require parties to state their position with respect to the 
+various issues in the proceeding;
+    (3) Require parties to produce for examination those relevant 
+witnesses and documents under their control; and require parties to 
+answer interrogatories and requests for admissions in full;
+    (4) Administer oaths;
+    (5) Rule on motions, and other procedural items or matters pending 
+before him;
+    (6) Regulate the course of the hearing and conduct of participants 
+therein;
+    (7) Examine and cross-examine witnesses, and introduce into the 
+record documentary or other evidence;
+    (8) Receive, rule on, exclude, or limit evidence and limit lines of 
+questioning or testimony which are irrelevant, immaterial, or unduly 
+repetitious;
+    (9) Fix time limits for submission of written documents in matters 
+before him and extend any time limits established by this part upon a 
+determination that no party will be prejudiced and that the ends of 
+justice will be served thereby;
+    (10) Impose appropriate sanctions against any party or person 
+failing to obey an order under these rules which may include:
+    (i) Refusing to allow the disobedient party to support or oppose 
+designated claims or defenses, or prohibiting it from introducing 
+designated matters in evidence;
+    (ii) Excluding all testimony of an unresponsive or evasive witness, 
+or determining that the answer of such witness, if given, would be 
+unfavorable to the party having control over him; and
+    (iii) Expelling any party or person from further participation in 
+the hearing;
+    (11) Take official notice of any material fact not appearing in 
+evidence in the record, which is among the traditional matters of 
+judicial notice;
+    (12) Recommend whether the respondent is in current violation of 
+the order, regulations, or its contractual obligations, as well as the 
+nature of the relief necessary to insure the full enjoyment of the 
+rights secured by the order;
+    (13) Issue subpoenas; and
+    (14) Take any action authorized by these rules.
+    (r) Hearings and Related Matters: Appearances--(1) Representation. 
+The parties or other persons or organizations participating pursuant to 
+this section have the right to be represented by counsel.
+    (2) Failure to appear. In the event that a party appears at the 
+hearing and no party appears for the opposing side, the party who is 
+present shall have an election to present his evidence in whole or such 
+portion thereof sufficient to make a prima facie case before the 
+Administrative Law Judge. Failure to appear at the hearing shall not be 
+deemed to be a waiver of the right to be served with a copy of the
+
+[[Page 54242]]
+
+Administrative Law Judge's recommended decision and to file exceptions 
+to it.
+    (s) Hearings and Related Matters: Appearance of witnesses. (1) A 
+party wishing to procure the appearance at the hearing of any person 
+having personal or expert knowledge of the matters in issue shall serve 
+on the prospective witness a notice, which may be accomplished by an 
+administrative subpoena, setting forth the time, date, and place at 
+which he is to appear for the purpose of giving testimony. The notice 
+shall also set forth the categories of documents the witness is to 
+bring with him to the hearing, if any. A copy of the notice shall be 
+filed with the Administrative Law Judge and additional copies shall be 
+served upon the opposing parties.
+    (2) It shall be the obligation of each party to produce for 
+examination any person, along with such documents as may be requested, 
+at the time and place, and on the date, set forth in the notice, if 
+that party has control over such person. Each party shall be deemed to 
+have control over its officers, agents, employees, and members. Due 
+regard shall be given to the convenience of witnesses in scheduling 
+their testimony so that they will be detained no longer than reasonably 
+necessary.
+    (3) The party or prospective witness may file an objection within 5 
+days after notice of production of such witness is served stating with 
+particularity the reasons why the party cannot produce a requested 
+witness. The party serving the notice may move for an order with 
+respect to such objection or failure to produce a witness.
+    (t) Hearings and Related Matters: Rules of evidence. In any 
+hearing, decision, or administrative review conducted pursuant to this 
+part, all evidentiary matters shall be governed by Office of 
+Administrative Law Judges' Rules of evidence at 29 CFR part 18, subpart 
+B, Provided however, That the provision at 29 CFR 18.1104 which delays 
+the effective date of the rule with respect to certain investigations 
+does not apply.
+    (u) Hearings and Related Matters: Objections; exceptions; offer of 
+proof--(1) Objections. If a party objects to the admission or rejection 
+of any evidence or to the limitation of the scope of any examination or 
+cross-examination or the failure to limit such scope, he shall state 
+briefly the grounds for such objection. Rulings on all objections shall 
+appear in the record. Only objections made on the record may be relied 
+upon subsequently in the proceedings.
+    (2) Exceptions. Formal exception to an adverse ruling is not 
+required. Rulings by the Administrative Law Judge shall not be appealed 
+prior to the transfer of the case to the Secretary, but shall be 
+considered by the Secretary upon filing exceptions to the 
+Administrative Law Judge's recommendations and conclusions.
+    (3) Offer of proof. An offer of proof made in connection with an 
+objection taken to any ruling excluding proffered oral testimony shall 
+consist of a statement of the substance of the evidence which counsel 
+contends would be adduced by such testimony; and, if the excluded 
+evidence consists of evidence in written form or consists of reference 
+to documents, a copy of such evidence shall be marked for 
+identification and shall accompany the record as the offer of proof.
+    (v) Hearings and Related Matters: Ex parte communications. The 
+Administrative Law Judge shall not consult any person, or party, on any 
+fact in issue unless upon notice and opportunity for all parties to 
+participate. No employee or agent of the Federal Government engaged in 
+the investigation and prosecution of this case shall participate or 
+advise in the rendering of the recommended or final decision in the 
+case, except as witness or counsel in the proceeding.
+    (w) Hearings and Related Matters: Oral argument. Any party shall be 
+entitled upon request to a reasonable period between the close of 
+evidence and termination of the hearing for oral argument. Oral 
+arguments shall be included in the official transcript of the hearing.
+    (x) Hearings and Related Matters: Official transcript. The official 
+transcripts of testimony taken, together with any exhibits, briefs, or 
+memorandums of law, shall be filed with the Administrative Law Judge. 
+Transcripts of testimony may be obtained from the official reporter by 
+the parties and the public as provided in section 11(a) of the Federal 
+Advisory Committee Act (86 Stat. 770). Upon notice to all parties, the 
+Administrative Law Judge may authorize such corrections to the 
+transcript as are necessary to reflect accurately the testimony.
+    (y) Hearings and Related Matters: Summary judgment--(1) For the 
+Government. At any time after the expiration of 20 days from the 
+commencement of the action, or after service of a motion for summary 
+judgment by the respondent, the Government may move with or without 
+supporting affidavits for a summary judgment upon all claims or any 
+part.
+    (2) For defendant. The defendant may, at any time after 
+commencement of the action, move with or without supporting affidavits 
+for summary judgment in its favor as to all claims or any part.
+    (3) Other parties. Any other party to a formal proceeding under 
+this part may support or oppose motions for summary judgment made by 
+the Government or respondent, in accordance with this section, but may 
+not move for a summary judgment in his own behalf.
+    (4) Statement of uncontested facts. All motions for summary 
+judgment shall be accompanied by a ``Statement of Uncontested Facts'' 
+in which the moving party sets forth all alleged uncontested material 
+facts which shall provide the basis for its motion. At least 5 days 
+prior to the time fixed for hearing on the motion, any party contending 
+that any material fact regarding the matter covered by the motion is in 
+dispute, shall file a ``Statement of Disputed Facts.'' Failure to file 
+a ``Statement of Disputed Facts'' shall be deemed as an admission to 
+the ``Statement of Uncontested Facts.''
+    (5) Motion and proceedings. The motion shall be served upon all 
+parties at least 15 days before the time fixed for the hearing on the 
+motion. The adverse party or parties may serve opposing affidavits 
+prior to the day of hearing. The judgment sought shall be rendered 
+forthwith if the complaint and answer, depositions, and admissions on 
+file, together with the affidavits, if any, show that there is no 
+genuine issue as to any material fact and that the moving party is 
+entitled to a judgment as a matter of law. Summary judgment rendered 
+for or against the Government or the respondent shall constitute the 
+findings and recommendations on the issues involved. Hearings on 
+motions made under this section shall be scheduled by the 
+Administrative Law Judge.
+    (6) Case not fully adjudicated on motion. If on motion under this 
+section judgment is not rendered upon the whole case or for all the 
+relief asked and a final hearing is necessary, the Administrative Law 
+Judge at the hearing of the motion, by examining the notice and answer 
+and the evidence before him and by interrogating counsel, shall, if 
+practicable, ascertain what material facts exist without substantial 
+controversy and what material facts are actually and in good faith 
+controverted. He shall thereupon make an order specifying the facts 
+that appear without substantial controversy, including the extent to 
+which relief is not in controversy, and directing such further 
+proceedings as are just. At the hearing on the merits, the facts so 
+specified shall be deemed established, and the final hearing shall be 
+conducted accordingly.
+
+[[Page 54243]]
+
+    (z) Hearings and Related Matters: Participation by interested 
+persons--(1) To the extent that proceedings hereunder involve 
+employment of persons covered by a collective bargaining agreement, and 
+compliance may necessitate a revision of such agreement, any labor 
+organization which is a signatory to the agreement shall have the right 
+to participate as a party.
+    (2) Other persons or organizations shall have the right to 
+participate as parties if the final Administrative order could 
+adversely affect them or the class they represent, and such 
+participation may contribute materially to the proper disposition of 
+the proceedings.
+    (3) Any person or organization wishing to participate as a party 
+under this section shall file with the Administrative Law Judge and 
+serve on all parties a petition within 25 days after the commencement 
+of the action or at such other time as ordered by the Administrative 
+Law Judge, so long as it does not disrupt the proceeding. Such petition 
+shall concisely state:
+
+    (i) Petitioner's interest in the proceedings;
+    (ii) who will appear for petitioner;
+    (iii) the issues on which petitioner wishes to participate; and
+    (iv) whether petitioner intends to present witnesses.
+
+    (4) The Administrative Law Judge shall determine whether each 
+petitioner has the requisite interest in the proceedings and shall 
+permit or deny participation accordingly. Where petitions to 
+participate as parties are made by individuals or groups with common 
+interest, the Administrative Law Judge may request all such petitioners 
+to designate a single representative to represent all such petitioners: 
+Provided, That the representative of a labor organization qualifying to 
+participate under paragraph (z)(1) of the section must be permitted to 
+participate in the proceedings. The Administrative Law Judge shall give 
+each petitioner written notice of the decision on his petition; and if 
+the petition is denied, he shall briefly state the grounds for denial 
+and shall then treat the petition as a request for participation as 
+amicus curiae. The Administrative Law Judge shall give written notice 
+to each party of each petition granted.
+    (5) Any other interested person or organization wishing to 
+participate as amicus curiae shall file a petition before the 
+commencement of the final hearing with the Administrative Law Judge. 
+Such petition shall concisely state:
+
+    (i) The petitioner's interest in the hearing;
+    (ii) who will represent the petitioner; and
+    (iii) the issues on which petitioner intends to present 
+argument. The Administrative Law Judge may grant the petition if he 
+finds that the petitioner has a legitimate interest in the 
+proceedings, and that such participation may contribute materially 
+to the proper disposition of the issues. An amicus curiae is not a 
+party but may participate as provided in this section.
+
+    (6) An amicus curiae may present a brief oral statement at the 
+hearing at the point in the proceeding specified by the Administrative 
+Law Judge. He may submit a written statement of position to the 
+Administrative Law Judge prior to the beginning of a hearing and shall 
+serve a copy on each party. He may also submit a brief or written 
+statement at such time as the parties submit briefs and exceptions, and 
+he shall serve a copy on each party.
+    (aa) Post-Hearing Procedures: Proposed findings of fact and 
+conclusions of law. Within 20 days after receipt of the transcript of 
+the testimony, each party and amicus may file a brief. Such briefs 
+shall be served simultaneously on all parties and amici, and a 
+certificate of service shall be furnished to the Administrative Law 
+Judge. Requests for additional time in which to file a brief shall be 
+made in writing, and copies shall be served simultaneously on the other 
+parties. Requests for extensions shall be received not later than 3 
+days before the date such briefs are due. No reply brief may be filed 
+except by special permission of the Administrative Law Judge.
+    (bb) Post-Hearing Procedures: Record for recommended decision. The 
+transcript of testimony, exhibits, and all papers, documents, and 
+requests filed in the proceedings, including briefs, but excepting the 
+correspondence section of the docket, shall constitute the record for 
+decision.
+    (cc) Post-Hearing Procedures: Recommended decision. Within a 
+reasonable time after the filing of briefs, the Administrative Law 
+Judge shall recommend findings, conclusions, and a decision. These 
+recommendations shall be certified, together with the record for 
+recommended decision, to the Administrative Review Board, United States 
+Department of Labor, for a final Administrative order. The recommended 
+findings, conclusions, and decision shall be served on all parties and 
+amici to the proceeding.
+    (dd) Post-Hearing Procedures: Exceptions to recommended decisions. 
+Within 14 days after receipt of the recommended findings, conclusions, 
+and decision, any party may submit exceptions to said recommendation. 
+These exceptions may be responded to by other parties within 14 days of 
+their receipt by said parties. All exceptions and responses shall be 
+filed with the Administrative Review Board, United States Department of 
+Labor. Service of such briefs or exceptions and responses shall be made 
+simultaneously on all parties to the proceeding. Requests to the 
+Administrative Review Board, United States Department of Labor, for 
+additional time in which to file exceptions and responses shall be in 
+writing and copies shall be served simultaneously on other parties. 
+Requests for extensions must be received no later than 3 days before 
+the exceptions are due.
+    (ee) Post-Hearing Procedures: Record. After expiration of the time 
+for filing briefs and exceptions, the Administrative Review Board, 
+United States Department of Labor, shall make a decision, which shall 
+be the Administrative order, on the basis of the record. The record 
+shall consist of the record for recommended decision, the rulings and 
+recommended decision of the Administrative Law Judge and the exceptions 
+and briefs filed subsequent to the Administrative Law Judge's decision.
+    (ff) Post-Hearing Procedures: Administrative Order. After 
+expiration of the time for filing, the Administrative Review Board, 
+United States Department of Labor, shall make a decision which shall be 
+served on all parties. If the Administrative Review Board, United 
+States Department of Labor, concludes that the defendant has violated 
+VEVRAA, the equal opportunity clause, or the regulations, an 
+Administrative Order shall be issued enjoining the violations, and 
+requiring the contractor to provide whatever remedies are appropriate, 
+and imposing whatever sanctions are appropriate, or any of the above. 
+In any event, failure to comply with the Administrative Order shall 
+result in the immediate cancellation, termination, and suspension of 
+the respondent's contracts and/or debarment of the respondent from 
+further contracts.
+    (gg) Expedited Hearing Procedures: Expedited hearings--when 
+appropriate. Expedited Hearings may be used, inter alia, when a 
+contractor or subcontractor has violated a conciliation agreement; has 
+not adopted and implemented an acceptable affirmative action program; 
+has refused to give access to or to supply records or other information 
+as required by the equal opportunity clause; or has refused to allow an 
+on-site compliance review to be conducted.
+    (hh) Expedited Hearing Procedures: Administrative complaint and 
+answer. (1) Expedited hearings shall be
+
+[[Page 54244]]
+
+commenced by filing an administrative complaint in accordance with 
+paragraph (g) of this section. The complaint shall state that the 
+hearing is subject to these expedited hearing procedures.
+    (2) The answer shall be filed in accordance with paragraphs (h)(1) 
+and (2) of this section.
+    (3) Failure to request a hearing within the 20 days provided by 
+paragraph (h)(1) of this section shall constitute a waiver of hearing, 
+and all the material allegations of fact contained in the complaint 
+shall be deemed to be admitted. If a hearing is not requested or is 
+waived, within 25 days of the complaint's filing, the Administrative 
+Law Judge shall adopt as findings of fact the material facts alleged in 
+the complaint, and shall order the appropriate sanctions and/or 
+penalties sought in the complaint. The Administrative Law Judge's 
+findings and order shall constitute a final Administrative order, 
+unless the Office of the Solicitor, U.S. Department of Labor, files 
+exceptions to the findings and order within 10 days of receipt thereof. 
+If the Office of the Solicitor, U.S. Department of Labor, files 
+exceptions, the matter shall proceed in accordance with paragraph (ll) 
+of this section.
+    (4) If a request for a hearing is received within 20 days as 
+provided by paragraph (h)(1) of this section, the hearing shall be 
+convened within 45 days of receipt of the request and shall be 
+completed within 15 days thereafter, unless more hearing time is 
+required.
+    (ii) Discovery. (1) Any party may serve requests for admissions in 
+accordance with paragraphs (k)(2) and (3) of this section.
+    (2) Witness lists and hearing exhibits will be exchanged at least 
+10 days in advance of the hearing.
+    (3) For good cause shown, and upon motion made in accordance with 
+paragraph (j) of this section, the Administrative Law Judge may allow 
+the taking of depositions. Other discovery will not be permitted.
+    (jj) Conduct of hearing. (1) At the hearing, the Government shall 
+be given an opportunity to demonstrate the basis for the request for 
+sanctions and/or remedies, and the contractor shall be given an 
+opportunity to show that the violation complained of did not occur and/
+or that good cause or good faith efforts excuse the alleged violations. 
+Both parties shall be allowed to present evidence and argument and to 
+cross-examine witnesses.
+    (2) The hearing shall be informal in nature, and the Administrative 
+Law Judge shall not be bound by formal rules of evidence.
+    (kk) Recommended decision after hearing. Within 15 days after the 
+hearing is concluded, the Administrative Law Judge shall recommend 
+findings, conclusions, and a decision. The Administrative Law Judge may 
+permit the parties to file written post-hearing briefs within this time 
+period, but the Administrative Law Judge's recommendations shall not be 
+delayed pending receipt of such briefs. These recommendations shall be 
+certified, together with the record, to the Administrative Review 
+Board, United States Department of Labor, for a final Administrative 
+order. The recommended decision shall be served on all parties and 
+amici to the proceeding.
+    (ll) Exceptions to recommendations. Within 10 days after receipt of 
+the recommended findings, conclusions and decision, any party may 
+submit exceptions to said recommendations. Exceptions may be responded 
+to by other parties within 7 days after receipt by said parties of the 
+exceptions. All exceptions and responses shall be filed with the 
+Administrative Review Board, United States Department of Labor. Briefs 
+or exceptions and responses shall be served simultaneously on all 
+parties to the proceeding.
+    (mm) Final Administrative Order. After expiration of the time for 
+filing exceptions, the Administrative Review Board, United States 
+Department of Labor, shall issue an Administrative Order which shall be 
+served on all parties. Unless the Administrative Review Board, United 
+States Department of Labor, issues an Administrative Order within 30 
+days after the expiration of the time for filing exceptions, the 
+Administrative Law Judge's recommended decision shall become a final 
+Administrative Order which shall become effective on the 31st day after 
+expiration of the time for filing exceptions. Except as to specific 
+time periods required in this paragraph (mm), paragraph (ff) of this 
+section shall be applicable.
+
+0
+9. Revise Sec.  60-300.80(a) to read as follows:
+
+
+Sec.  60-300.80  Recordkeeping.
+
+    (a) General requirements. Except as set forth in paragraph (b) of 
+this section, any personnel or employment record made or kept by the 
+contractor shall be preserved by the contractor for a period of two 
+years from the date of the making of the record or the personnel action 
+involved, whichever occurs later. However, if the contractor has fewer 
+than 150 employees or does not have a Government contract of at least 
+$200,000, the minimum record retention period will be one year from the 
+date of the making of the record or the personnel action involved, 
+whichever occurs later, except as set forth in paragraph (b) of this 
+section. Such records include, but are not necessarily limited to, 
+records relating to requests for reasonable accommodation; the results 
+of any physical examination; job advertisements and postings; 
+applications and resumes; tests and test results; interview notes; and 
+other records having to do with hiring, assignment, promotion, 
+demotion, transfer, lay-off or termination, rates of pay or other terms 
+of compensation, and selection for training or apprenticeship. In the 
+case of involuntary termination of an employee, the personnel records 
+of the individual terminated shall be kept for a period of two years 
+from the date of the termination, except that contractors that have 
+fewer than 150 employees or do not have a Government contract of at 
+least $200,000 shall keep such records for a period of one year from 
+the date of the termination. Where the contractor has received notice 
+that a complaint of discrimination has been filed, that a compliance 
+evaluation has been initiated, or that an enforcement action has been 
+commenced, the contractor shall preserve all personnel records relevant 
+to the complaint, compliance evaluation or action until final 
+disposition of the complaint, compliance evaluation or action. The term 
+personnel records relevant to the complaint, compliance evaluation or 
+action would include, for example, personnel or employment records 
+relating to the aggrieved person and to all other employees holding 
+positions similar to that held or sought by the aggrieved person, and 
+application forms or test papers completed by an unsuccessful applicant 
+and by all other candidates for the same position as that for which the 
+aggrieved person applied and was rejected.
+* * * * *
+
+    Dated: August 19, 2026.
+Kenneth Wolfe,
+Director, Office of Federal Contract Compliance Programs.
+[FR Doc. 2026-17116 Filed 8-20-26; 8:45 am]
+BILLING CODE 4510-CM-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

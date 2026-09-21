@@ -1,0 +1,197 @@
+<html>
+<head>
+<title>Federal Register, Volume 73 Issue 45 (Thursday, March 6, 2008)</title>
+</head>
+<body><pre>
+[Federal Register Volume 73, Number 45 (Thursday, March 6, 2008)]
+[Notices]
+[Pages 12146-12147]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: E8-4370]
+
+
+
+[[Page 12146]]
+
+-----------------------------------------------------------------------
+
+DEPARTMENT OF DEFENSE
+
+Defense Intelligence Agency
+
+[DoD-2008-OS-0022]
+
+
+Privacy Act of 1974; Systems of Records
+
+AGENCY: Defense Intelligence Agency, DoD.
+
+ACTION: Notice to Amend a System of Records.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The Defense Intelligence Agency is amending a system of 
+records notice to its existing inventory of record systems subject to 
+the Privacy Act of 1974 (5 U.S.C. 552a), as amended.
+
+DATES: This proposed action will be effective without further notice on 
+April 7, 2008 unless comments are received that would result in a 
+contrary determination.
+
+ADDRESSES: Freedom of Information Office, Defense Intelligence Agency 
+(DAN-1A), 200 MacDill Blvd, Washington, DC 20340-5100.
+
+FOR FURTHER INFORMATION CONTACT: Ms. Theresa Lowery at (202) 231-1193.
+
+SUPPLEMENTARY INFORMATION: The Defense Intelligence Agency notices for 
+systems of records subject to the Privacy Act of 1974 (5 U.S.C. 552a), 
+as amended, have been published in the Federal Register and are 
+available from the address above.
+    The specific changes to the record system being amended are set 
+forth below followed by the notice, as amended, published in its 
+entirety. The proposed amendment is not within the purview of 
+subsection (r) of the Privacy Act of 1974, (5 U.S.C. 552a), as amended, 
+which requires the submission of a new or altered system report.
+
+    Dated: February 29, 2008.
+L.M. Bynum,
+Alternate Federal Register Liaison Officer, Department of Defense.
+LDIA 05-0001
+
+System name:
+    Human Resources Management System (HRMS) (November 25, 2005, 70 FR 
+71099).
+
+Changes:
+* * * * *
+
+Categories of records in the system:
+    Delete entry and replace with ``Records include, but are not 
+limited to employment, security, education, training & career 
+development, organizational and administrative information such as 
+employee name, Social Security Number (SSN), addresses, phone numbers, 
+emergency contacts and employee identification number, etc.''
+* * * * *
+
+Retrievability:
+    Delete entry and replace with ``Name and employee identification 
+number.''
+* * * * *
+
+System manager(s) and address:
+    Delete entry and replace with ``Defense Intelligence Agency, 
+Directorate of Human Capital, Office for Human Capital Online 
+Services''.
+* * * * *
+LDIA 05-0001
+
+System name:
+    Human Resources Management System (HRMS).
+
+System location:
+    Defense Intelligence Agency, Washington, DC 20340-0001.
+
+Categories of individuals covered by the system:
+    Current and former military and civilian personnel employed by or 
+temporarily assigned to the DIA; current and former contract personnel; 
+current and former civilian dependents, current and former military 
+dependents assigned to the Defense Attach[eacute] System; and 
+individuals applying for possible employment.
+    DoD military, civilian, or contractor personnel nominated for 
+security clearance/SCI access by DIA, and other DoD agencies and 
+offices.
+
+Categories of records in the system:
+    Records include, but are not limited to employment, security, 
+education, training & career development, organizational and 
+administrative information such as employee name, Social Security 
+Number (SSN), addresses, phone numbers, emergency contacts and employee 
+identification number, etc.
+
+Authority for maintenance of the system:
+    The National Security Act of 1947, as amended (50 U.S.C. 401 et 
+seq.), 10 U.S.C. 113, 5 U.S.C. 301, 44 U.S.C. 3102, and E.O. 9397 
+(SSN).
+
+Purpose(s):
+    To collect employment and related information to perform numerous 
+administrative tasks, to include preparing, submitting, and approving 
+official personnel actions; personnel appraisals; and making decisions 
+on benefits & entitlements. HRMS provides a central, official data 
+source for the production of work force demographics, reports, rosters, 
+statistical analysis, and documentation/studies.
+
+Routine uses of records maintained in the system, including categories 
+of users and the purposes of such uses:
+    In addition to those disclosures generally permitted under 5 U.S.C. 
+552a(b) of the Privacy Act, these records or information contained 
+therein may specifically be disclosed outside the Department of Defense 
+as a routine use pursuant to 5 U.S.C. 552a(b)(3) as follows:
+    The DoD `Blanket Routine Uses' set forth at the beginning of the 
+Defense Intelligence Agency's compilation of systems of records notices 
+apply to this system.
+
+Policies and practices for storing, retrieving, accessing, retaining, 
+and disposing of records in the system:
+Storage:
+    Paper and automated records.
+
+Retrievability:
+    Name and employee identification number.
+
+Safeguards:
+    The server hosting HRMS is located in a secure area under employee 
+supervision 24/7. Records are maintained and accessed by authorized 
+personnel via Defense Intelligence Agency's internal, classified 
+network. These personnel are properly screened, cleared and trained in 
+the protection of privacy information.
+
+Retention and disposal:
+    Disposition pending (until the National Archives and Records 
+Administration has approved retention and disposition of these records, 
+treat as permanent).
+
+System manager(s) and address:
+    Defense Intelligence Agency, Directorate of Human Capital, Office 
+for Human Capital Online Services.
+
+Notification procedure:
+    Individuals seeking to determine whether information about 
+themselves is contained in this system of records should address 
+written inquiries to the Freedom of Information Office, Defense 
+Intelligence Agency (DAN-1A), 200 MacDill Blvd., Washington, DC 20340-
+5100.
+    Individuals should provide their full name, current address, 
+telephone number and Social Security Number.
+
+Record access procedures:
+    Individuals seeking access to information about themselves,
+
+[[Page 12147]]
+
+contained in this system of records, should address written inquiries 
+to the Freedom of Information Office, Defense Intelligence Agency (DAN-
+1A), 200 MacDill Blvd., Washington, DC 20340-5100.
+    Individuals should provide their full name, current address, 
+telephone number and Social Security Number.
+
+Contesting record procedures:
+    Defense Intelligence Agency's rules for accessing records, for 
+contesting contents and appealing initial agency determinations are 
+published in DIA Regulation 12-12 ``Defense Intelligence Agency Privacy 
+Program''; 32 CFR part 319--Defense Intelligence Agency Privacy 
+Program; or may be obtained from the system manager.
+
+Record Source Categories:
+    Agency officials, employees, educational institutions, parent 
+Service of individual and immediate supervisor on station, and other 
+Government officials.
+
+Exemptions claimed for the system:
+    None.
+[FR Doc. E8-4370 Filed 3-5-08; 8:45 am]
+BILLING CODE 5001-06-P
+
+
+</pre></body>
+</html>

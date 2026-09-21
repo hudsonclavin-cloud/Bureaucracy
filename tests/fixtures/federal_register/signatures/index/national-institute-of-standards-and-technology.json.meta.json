@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-09-21T16:25:55Z",
+ "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=2&order=newest&conditions%5Bagencies%5D%5B%5D=national-institute-of-standards-and-technology&conditions%5Btype%5D%5B%5D=RULE&conditions%5Btype%5D%5B%5D=NOTICE&fields%5B%5D=document_number&fields%5B%5D=raw_text_url&fields%5B%5D=html_url&fields%5B%5D=agencies&fields%5B%5D=signing_date&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+ "status": 200,
+ "final_url": "https://www.federalregister.gov/api/v1/documents.json?per_page=2&order=newest&conditions%5Bagencies%5D%5B%5D=national-institute-of-standards-and-technology&conditions%5Btype%5D%5B%5D=RULE&conditions%5Btype%5D%5B%5D=NOTICE&fields%5B%5D=document_number&fields%5B%5D=raw_text_url&fields%5B%5D=html_url&fields%5B%5D=agencies&fields%5B%5D=signing_date&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+ "content_type": "application/json; charset=utf-8",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /api/v1/documents.json",
+ "bytes": 2964,
+ "sha256": "18b39f196377b4e8f3766dc9cae2bc490e0d8c5d10a5f3f5c3b28ce9a8b50cf9",
+ "error": null
+}

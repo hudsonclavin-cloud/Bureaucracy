@@ -1,0 +1,1294 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 173 (Wednesday, September 9, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 173 (Wednesday, September 9, 2026)]
+[Rules and Regulations]
+[Pages 57265-57274]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-18380]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+DEPARTMENT OF TRANSPORTATION
+
+National Highway Traffic Safety Administration
+
+49 CFR Part 571
+
+[Docket No. NHTSA-2025-0046]
+RIN 2127-AM62
+
+
+Federal Motor Vehicle Safety Standard No. 213a; Child Restraint 
+Systems--Side Impact Protection; Federal Motor Vehicle Safety Standard 
+No. 213; Child Restraint Systems, Federal Motor Vehicle Safety Standard 
+No. 213b; Child Restraint Systems; Incorporation by Reference
+
+AGENCY: National Highway Traffic Safety Administration (NHTSA), 
+Department of Transportation (DOT).
+
+ACTION: Final rule; grant of petitions for rulemaking and other 
+amendments.
+
+-----------------------------------------------------------------------
+
+SUMMARY: This final rule amends the safety standards for child 
+restraint systems (CRSs). NHTSA is amending Federal motor vehicle 
+safety standard (FMVSS) No. 213a, ``Child restraint systems--side 
+impact protection,'' to exempt school bus CRSs from the standard's 
+requirements as long as they meet specified labeling requirements; to 
+delay the compliance date from June 30, 2025 to December 5, 2026; to 
+amend the dummy selection requirements so that the Child Restraint Air 
+Bag Interaction twelve-month-old test dummy (CRABI-12MO) will not be 
+used to test forward-facing CRSs; and to amend positioning procedures 
+for that dummy. The first two of these amendments are in response to 
+petitions from CRS manufacturers. NHTSA is also amending FMVSS No. 213, 
+``Child restraint systems'' and FMVSS No. 213b, ``Child restraint 
+systems; Mandatory applicability beginning December 5, 2026,'' to 
+exclude school bus CRSs from the requirements to provide attachments 
+for connection to the vehicle's child restraint anchorage system and to 
+change certain labeling requirements to reflect how school bus child 
+restraints are used.
+
+DATES: 
+    Effective date: The effective date of this final rule is October 9, 
+2026.
+    Compliance date: The revised compliance date for FMVSS No. 213a is 
+December 5, 2026. The compliance date for the updated labeling 
+requirements in FMVSS No. 213 adopted by this final rule is December 8, 
+2026. The compliance date for the updated labeling requirements in 
+FMVSS No. 213b is December 5, 2026. Optional early compliance with 
+FMVSS Nos. 213, 213a, and 213b is permitted. The incorporation by 
+reference of certain material listed in this rule was approved by the 
+Director of the Federal Register as of June 24, 2003 and December 5, 
+2023.
+    Reconsideration date: If you wish to petition for reconsideration 
+of this rule, your petition must be received by October 26, 2026.
+
+ADDRESSES: Petitions for reconsideration of this final rule must refer 
+to the docket number set forth above and be submitted to the 
+Administrator, National Highway Traffic Safety Administration, 1200 New 
+Jersey Avenue SE, Washington, DC 20590. Note that all petitions 
+received will be posted without change to <a href="http://www.regulations.gov">www.regulations.gov</a>, 
+including any personal information provided.
+    Docket: For access to the docket, go to <a href="http://www.regulations.gov">www.regulations.gov</a>, or the 
+street address listed above. Follow the online instructions for 
+accessing the dockets.
+
+FOR FURTHER INFORMATION CONTACT: For technical issues, you may contact 
+Cristina Echemendia, Office of Crashworthiness Standards (email: 
+<a href="/cdn-cgi/l/email-protection#0d4e7f647e7964636c23486e656860686369646c4d696279236a627b"><span class="__cf_email__" data-cfemail="1c5f6e756f6875727d32597f747971797278757d5c787368327b736a">[email&#160;protected]</span></a>). For legal issues, you may contact John 
+Piazza, Office of Chief Counsel (email: <a href="/cdn-cgi/l/email-protection#682207000646380109121209280c071c460f071e"><span class="__cf_email__" data-cfemail="377d585f5919675e564d4d567753584319505841">[email&#160;protected]</span></a>). You can 
+reach these officials by phone at 202-366-1810. Address: National 
+Highway Traffic Safety Administration, U.S. Department of 
+Transportation, 1200 New Jersey Avenue SE, West Building, Washington, 
+DC 20590.
+
+SUPPLEMENTARY INFORMATION:
+
+Table of Contents
+
+I. Executive Summary
+II. Background
+III. Amendments to Side Impact Requirements (FMVSS No. 213a)
+    A. Exempt School Bus CRSs From Side Impact Requirements
+    B. Exclude the CRABI-12MO From Testing Forward-Facing CRSs and 
+Make Corresponding Amendments to the Dummy Positioning Procedures
+    C. Delay the Compliance Date From June 30, 2025 to December 5, 
+2026
+IV. Amendments to Frontal Impact Requirements (FMVSS Nos. 213 and 
+213b) and 49 CFR 571.5
+V. Cost and Benefits
+VI. Incorporation by Reference
+VII. Effective Date and Compliance Date
+VIII. Regulatory Notices and Analyses
+
+I. Executive Summary
+
+    This final rule amends three different safety standards: FMVSS No. 
+213, ``Child restraint systems; Applicable unless a vehicle or child 
+restraint system is certified to Sec.  571.213b;'' FMVSS No. 213b, 
+``Child restraint systems; Mandatory applicability beginning December 
+5, 2026;'' and FMVSS No. 213a, ``Child restraint systems--side impact 
+protection.'' FMVSS Nos. 213, 213a, and 213b set out most of the 
+agency's safety requirements for CRSs.
+    NHTSA published a notice of proposed rulemaking (NPRM) preceding 
+this final rule on May 30, 2025.\1\ This final rule adopts all the 
+proposals in the NPRM. NHTSA received 15 comments to the NPRM with wide 
+support for the proposals. Two commenters (Graco and Dorel) opposed the 
+proposed delay in the compliance date of FMVSS No. 213a.
+---------------------------------------------------------------------------
+
+    \1\ 90 FR 23009.
+---------------------------------------------------------------------------
+
+    Specifically, this final rule amends the side impact standard 
+(FMVSS No. 213a) by:
+    <bullet> Exempting school bus CRSs from the side impact 
+requirements in FMVSS No. 213a because these requirements
+
+[[Page 57266]]
+
+were not designed to apply to school buses, which do not pose the type 
+of side-impact crash risks the standard was designed to address.
+    <bullet> Delaying the compliance date of FMVSS No. 213a from June 
+30, 2025 to December 5, 2026 to enable small manufacturers \2\ to 
+complete validation and conformance testing at oversubscribed third-
+party test facilities.
+---------------------------------------------------------------------------
+
+    \2\ In the context of this final rule a ``small manufacturer'' 
+is referring to CRS manufacturers with smaller market share which do 
+not typically have their own lab to develop their products.
+---------------------------------------------------------------------------
+
+    <bullet> Amending the dummy selection criteria in FMVSS No. 213a 
+regarding the Child Restraint Air Bag Interaction twelve-month-old test 
+dummy (CRABI-12MO) \3\ so that it will not be used to test forward-
+facing CRSs for side impact requirements in FMVSS No. 213a. NHTSA makes 
+this change because the rulemaking prohibits CRS manufacturers from 
+recommending forward-facing CRSs for children weighing less than 12 kg 
+(26.5 pounds) and the CRABI-12MO represents a smaller child.
+---------------------------------------------------------------------------
+
+    \3\ 49 CFR part 572, subpart R--CRABI 12-Month-Old Infant, Alpha 
+Version.
+---------------------------------------------------------------------------
+
+    <bullet> Amending the positioning procedures for the CRABI-12MO to 
+reflect that the dummy would no longer be tested with forward-facing 
+CRSs.
+    This final rule also amends FMVSS No. 213, ``Child restraint 
+systems'' and FMVSS No. 213b ``Child restraint systems; Mandatory 
+applicability beginning December 5, 2026,'' by:
+    <bullet> Excluding school bus CRSs from the requirements to provide 
+attachments for connection to the vehicle's child restraint anchorage 
+system because school bus CRSs are designed to be mounted to the seat 
+back and seat pan, and school bus seats do not generally include 
+anchorage systems.\4\
+---------------------------------------------------------------------------
+
+    \4\ As defined in FMVSS No. 225, ``Child restraint anchorage 
+systems,'' a child restraint anchorage system means a vehicle system 
+that is designed for attaching a child restraint system to a vehicle 
+at a particular designated seating position, consisting of: (a) Two 
+lower anchorages meeting the requirements of Sec.  571.225 S9; and 
+(b) A tether anchorage meeting the requirements of Sec.  571.225 S6.
+---------------------------------------------------------------------------
+
+    <bullet> Amending the S5.5.2(g)(1)(ii) label statement requirement 
+to be consistent with how school bus CRSs are installed.
+    <bullet> Making technical corrections to the regulatory text in 
+FMVSS No. 213 S5.9(a) and 49 CFR 571.5 related to references to certain 
+documents previously incorporated by reference.
+
+II. Background
+
+    This final rule amends three different safety standards: FMVSS No. 
+213, ``Child restraint systems; Applicable unless a vehicle or child 
+restraint system is certified to Sec.  571.213b;'' FMVSS No. 213b, 
+``Child restraint systems; Mandatory applicability beginning December 
+5, 2026;'' and FMVSS No. 213a, ``Child restraint systems--side impact 
+protection.'' FMVSS No. 213, established in the 1970s, sets out 
+requirements for CRSs including requirements for frontal impact 
+protection. FMVSS No. 213b, established in December 2023, updates 
+aspects of FMVSS No. 213 and is set to replace FMVSS No. 213 on 
+December 5, 2026. FMVSS No. 213a, established in June 2022, sets forth 
+side impact protection requirements for CRSs.
+    On May 30, 2025, NHTSA published a notice of proposed rulemaking 
+(NPRM) (90 FR 23009) in response to three petitions for reconsideration 
+that NHTSA is treating as petitions for rulemaking.\5\ The NPRM 
+proposed to exempt school bus CRSs from the side impact requirements 
+and to delay the compliance date of FMVSS No. 213a. The NPRM also 
+proposed to amend the dummy selection criteria in FMVSS No. 213a so 
+that the CRABI-12MO would not be used to test forward-facing CRSs. The 
+NPRM also proposed updates to FMVSS No. 213 and 213b to exclude school 
+bus CRSs from requirements to provide attachments for connection to a 
+vehicle's child restraint anchorage system and to amend a label 
+requirement for school bus CRSs so the label reflects the attachment 
+type (seat back mount) these CRSs use to attach to the school bus seat.
+---------------------------------------------------------------------------
+
+    \5\ NHTSA received three petitions for reconsideration of the 
+October 2024 (89 FR 81836) final rule responding to petitions for 
+reconsideration of the December 2023 final rule (88 FR 84514) 
+establishing FMVSS No. 213b, ``Child restraint systems; Mandatory 
+applicability beginning December 5, 2026.'' However, the three 
+petitions for reconsideration did not request any amendments to the 
+October 2024 final rule and instead requested amendments to FMVSS 
+No. 213a. Because the requests were outside the scope of the October 
+2024 final rule, and in accordance with NHTSA's regulations, the 
+agency decided to treat the three petitions for reconsideration as 
+new petitions for rulemaking.
+---------------------------------------------------------------------------
+
+    On July 2, 2025, NHTSA published a notice of enforcement discretion 
+(90 FR 28909) that announced a temporary pause on NHTSA's enforcement 
+of the applicability of FMVSS No. 213a for CRSs produced on or after 
+June 30, 2025 and until the date of publication of any rule finalizing 
+NHTSA's May 30, 2025 proposal.
+    There were fifteen (15) comments to the NPRM. Four comments were 
+from individual CRS manufacturers--Dorel Juvenile Group, Inc. (Dorel); 
+Graco Children's Products, Inc. (Graco); IMMI; and BESI, Inc. (BESI). 
+One comment was submitted jointly by six CRS manufacturers with 
+relatively small market share--Baby Trend, Babyark, Diono, Doona 
+(Traveler Innovations Ltd), KidsEmbrace, and WAYB--and one consulting 
+firm (DECA Consulting).\6\ Eight comments were from private citizens, 
+and two comments were from pupil transportation organizations: National 
+Association of State Directors of Pupil Transportation Services 
+(NASDPTS) and National Association of Pupil Transportation (NAPT). The 
+NPRM generally received wide support from commenters except for two 
+commenters opposing the delay in FMVSS No. 213a compliance date. 
+Details of the comments and NHTSA's response are provided in the 
+following sections.
+---------------------------------------------------------------------------
+
+    \6\ Six of these commenters (Baby Trend, Babyark, Diono, Doona, 
+KidsEmbrace, and Deca Consulting) were also among the group of CRS 
+manufacturers and the consulting firm who petitioned for an 
+extension in lead time for FMVSS No. 213a. In this notice, we refer 
+to the signatories to the jointly submitted comment as the ``Small 
+CRS Manufacturers Group.''
+---------------------------------------------------------------------------
+
+III. Amendments to Side Impact Requirements (FMVSS No. 213a)
+
+A. Exempt School Bus CRSs From Side Impact Requirements
+
+    In the NPRM, the agency proposed to exclude school bus CRSs from 
+side impact requirements in FMVSS No. 213a. This proposal was in 
+response to IMMI \7\ and BESI \8\ petitions that requested NHTSA amend 
+FMVSS No. 213a so that this type of restraint would not be subject to 
+the side impact protection standard.
+---------------------------------------------------------------------------
+
+    \7\ NHTSA-2024-0058-0003.
+    \8\ NHTSA-2024-0058-0004.
+---------------------------------------------------------------------------
+
+    IMMI described in its petition its school bus CRS product named the 
+``Student Transportation Add-on Restraint'' (STAR), which consists of a 
+harness attached to a rigid seat base that provides fixed anchorage 
+points for the harness's lap belt and crotch strap. IMMI explained that 
+because the purpose of the STAR is to secure safely the child to the 
+school bus seat, there is no shell component in this restraint to 
+provide protection for side impact collisions. IMMI stated that ``due 
+to the nature of its design, [STAR] is not capable of meeting the newly 
+established side impact requirements of FMVSS 213a.'' It also explained 
+what it viewed as the advantages of the product and noted that NHTSA 
+has included this type of CRS in its training materials. IMMI and BESI 
+each stated that unless school bus CRSs are excluded from side impact 
+requirements, it would have to stop production of these CRSs (for the 
+U.S. market) and that this would affect Head Start programs that 
+require the use of child restraint systems in school bus transportation 
+of their students.
+
+[[Page 57267]]
+
+Comments
+    Twelve commenters--IMMI, BESI, NASDPTS, NAPT, and eight private 
+citizens \9\--supported the proposal to exclude school bus CRSs from 
+FMVSS No. 213a requirements. No commenter opposed the proposal.
+---------------------------------------------------------------------------
+
+    \9\ Kimberly Loughlin, Jimmy Lacy, Susan Shutrump, Wilson 
+Barnes, Jacob Whilhite, Judy Korn, Michelle Summers and an anonymous 
+route coordinator for special needs students.
+---------------------------------------------------------------------------
+
+Agency Response
+    This final rule excludes school bus CRSs from the side impact 
+requirements. As noted in the NPRM, school bus CRSs should be excluded 
+because of practicability concerns about the ability of the school bus 
+CRS to meet the proposed requirements and because school bus CRSs serve 
+a niche market where the needs cannot be met by any other type of CRS. 
+NHTSA also recognizes that the side impact crash environment of a 
+school bus is significantly different from the simulated side impact 
+test in FMVSS No. 213a, which simulates a near-side impact of a small 
+passenger car. Accordingly, NHTSA corrects this inconsistency in FMVSS 
+No. 213a and amends the applicability of the CRS side impact standard 
+to exempt explicitly all school bus CRSs.
+
+B. Exclude the CRABI-12MO From Testing Forward-Facing CRSs and Make 
+Corresponding Amendments to the Dummy Positioning Procedures
+
+    Child restraint systems must meet the performance requirements in 
+FMVSS Nos. 213, 213a, and 213b when tested dynamically with specific 
+anthropomorphic test devices (test dummies). FMVSS Nos. 213a and 213b 
+specify testing with the CRABI-12MO for CRSs recommended for children 
+weighing 5 kilograms (kg) (11 pounds) to 13.6 kg (30 pounds) and 
+specify a 3-year-old dummy--the Hybrid III 3-year-old dummy \10\ for 
+213b and Q3s \11\ for 213a--for testing CRSs recommended for children 
+weighing greater than 13.6 kg (30 pounds) but not greater than 18 kg 
+(40 pounds).\12\ However, FMVSS No. 213b states that the CRABI-12MO 
+will not be used to test forward-facing CRSs because recent updates to 
+FMVSS No. 213 and 213b now require that forward-facing CRSs cannot be 
+recommended for children weighing less than 12 kg (26.5 pounds). 
+Therefore, testing a forward-facing CRS to the requirements of FMVSS 
+No. 213a with a 10 kg (22 pounds) CRABI-12MO would not be appropriate, 
+as the dummy's weight is not within the recommended weight range of 
+forward-facing CRSs. The NPRM therefore proposed to exclude forward-
+facing CRSs from being tested with the CRABI-12MO in the side impact 
+test to align dummy selection specified in FMVSS No. 213a for the side 
+impact test with that in FMVSS No. 213b for the frontal impact test. 
+NHTSA proposed to add a sentence in S7.1(a) to state that the CRABI-
+12MO dummy will not be used to test forward-facing CRSs.
+---------------------------------------------------------------------------
+
+    \10\ 49 CFR Part 572, subpart P--3-year-Old Child Crash Test 
+Dummy, Alpha Version.
+    \11\ 49 CFR Part 572, subpart W--Q3s Three-Year-Old Child Test 
+Dummy.
+    \12\ FMVSS Nos. 213 and 213b have additional different sized 
+dummies for evaluating frontal impacts.
+---------------------------------------------------------------------------
+
+Comments
+    Four CRS manufacturers (BESI, IMMI, Dorel and Graco) and a private 
+citizen (Michelle Summers) supported the proposal to remove the 
+requirement to test with the CRABI-12MO in forward-facing car seats 
+during 213a testing. No commenter opposed the proposal.
+Agency Response
+    This final rule amends FMVSS No. 213a so that the CRABI-12MO is not 
+used to test a forward-facing child restraint system recommended for 
+children weighing greater than 5 kg (11 pounds) but not greater than 
+13.6 kg (30 pounds), or for children whose height is greater than 650 
+millimeters but not greater than 870 millimeters. NHTSA believes CRSs 
+should be tested with the same size test dummies in both the frontal 
+impact and side impact tests to minimize burden on CRS manufacturers. 
+NHTSA also believes that a requirement to test a CRS in a configuration 
+that the agency prohibits CRS manufacturers from recommending is 
+unnecessary and burdensome.
+    The agency is also finalizing its proposal to delete paragraphs 
+S9.1(c) and (d) in FMVSS No. 213a because those sections contain 
+positioning information relating to testing forward-facing CRSs with 
+the CRABI-12MO, which are no longer relevant given the amendments 
+described above. NHTSA is also amending S9.1(b). Currently, that 
+section describes how to position the CRABI-12MO in a ``forward-
+facing'' child restraint system. Instead, S9.1(b) will now indicate how 
+to position the CRABI-12MO dummy in CRSs used rear-facing using the 
+same procedure in FMVSS No. 213b for consistency between the standards. 
+For completeness, the update also includes the rotation plane required 
+for positioning the dummy's arm.
+
+C. Delay the Compliance Date From June 30, 2025 to December 5, 2026
+
+    The petition for rulemaking from the group of CRS manufacturers 
+\13\ requested a delay of the June 30, 2025 compliance date of the CRS 
+side impact standard, FMVSS No. 213a, to prevent ``significant market 
+disruption resulting from a reduced availability of child restraint 
+systems and higher costs than necessary for those that are available.'' 
+The petitioners argued that the extension is needed because of 
+``inconsistent results within individual labs and lab to lab 
+variation,'' and the limited ``availability of compliance lab sled 
+time'' to develop their products to certify compliance with the new 
+standard. CRS manufacturers with smaller market share (such as the 
+petitioners) do not typically have their own lab to develop their 
+products and are dependent on commercial compliance lab sled time. The 
+petitioners suggested that the agency consider moving the FMVSS No. 
+213a compliance date to December 5, 2026 to match the compliance date 
+of FMVSS No. 213b. In the NPRM, NHTSA proposed to grant the petition to 
+delay the compliance date of FMVSS No. 213a to December 5, 2026.
+---------------------------------------------------------------------------
+
+    \13\ BabyTrend, Babyark, DECA Consulting, Diono, Doona, 
+KidsEmbrace, Peg Perego, and Safe Traffic System.
+---------------------------------------------------------------------------
+
+Comments
+    Five commenters--IMMI, BESI, a group of six CRS manufacturers and 
+one consulting company (the Small CRS Manufacturers Group), and 2 
+private citizens--supported the proposal to delay the FMVSS No. 213a 
+compliance date to December 5, 2026. Two CRS manufacturers--Dorel and 
+Graco--opposed it. Dorel and Graco are CRS manufacturers with a larger 
+share of the market and have their own test labs, which facilitates 
+product development because they are not as dependent on commercial lab 
+sled time for their development work.
+    Specifically, the Small CRS Manufacturers Group commented that they 
+would need to cease the production of certain models and delay 
+production of other models if the compliance date was not delayed, 
+resulting in reduced availability of child restraints in the market. 
+This group added that variance in their sled test outcomes resulted in 
+the need to test the CRS designs in multiple laboratories. The Small 
+CRS Manufacturers Group further explained that increased demand for CRS 
+sled testing has caused delays in test lab availability, which in turn 
+lengthened the development
+
+[[Page 57268]]
+
+timeline for compliant designs. These commenters stated that delaying 
+the compliance date to December 5, 2026, would provide the necessary 
+time to complete development and validation of the new CRS designs, 
+while preventing market disruption that could reduce availability of 
+compliant CRSs or increase costs to consumers.
+    In contrast, Dorel opposed delaying the FMVSS No. 213a compliance 
+date. Dorel stated that the arguments from the ``relatively small car 
+seat manufacturers'' (petitioners) that there would be a significant 
+market disruption resulting in reduced availability of CRSs were 
+``without merit.'' Dorel explained that it, together with several other 
+manufacturers, sell most car seats in the U.S. and have already begun 
+selling FMVSS No. 213a-compliant CRSs for several months. Dorel also 
+claimed that even some of the petitioners have FMVSS No. 213a compliant 
+CRSs in the market already. Dorel concluded that the market disruption 
+claimed by the petitioners ``is not supported by the evidence.'' Dorel 
+also added that the petitioner's concerns on variability would not be 
+solved by the delay in compliance date and stated that only additional 
+research would help identify the sources of variation.
+    Similarly, Graco did not support a delay of the FMVSS No. 213a 
+compliance date because, Graco stated, most manufacturers already 
+updated their products to meet the new side impact requirements. Graco 
+explained that shortly after the final rule was published, retailers 
+expressed their desire to carry only FMVSS No. 213a-certified products 
+by the compliance date. Graco added that retailers have been purchasing 
+FMVSS No. 213a certified CRSs since the fall of 2024 and that retailers 
+have been discontinuing purchases of products not meeting the side 
+impact standard. Graco argued that a shortage of products does not and 
+will not exist because the ``absence of the petitioner's products has 
+already been accounted for by retailer purchasing decisions.'' Graco 
+also added that since belt positioning boosters would not need to meet 
+FMVSS No. 213a, there would be no shortage of belt positioning boosters 
+in the market.
+    Graco also stated that the compliance date delay would ``punish in 
+the marketplace those companies that invested in compliance to the 
+provisions of FMVSS No. 213a under the original three-year schedule.'' 
+Graco explained that since the new dummy selection criteria indicates 
+CRSs recommended for 13.6 kg (30 pounds) or more would be tested with 
+the Q3s dummy, FMVSS No. 213a compliant rear-facing only CRSs already 
+have updated product instructions, labels, marketing and promotional 
+materials to reflect a 30 pounds maximum weight limit. Graco added that 
+the compliance date delay would allow non-FMVSS No. 213a compliant 
+products to continue selling infant carriers for children weighing more 
+than 30 pounds, which some consumers may choose instead, even though 
+they are not FMVSS No. 213a compliant. Graco also argued that granting 
+the extension would ``forgo some or all of the societal benefits of 
+injury prevention.'' \14\
+---------------------------------------------------------------------------
+
+    \14\ Graco also argued that, if NHTSA extended the compliance 
+date, it would happen after the mandatory compliance date (June 30, 
+2025) for FMVSS No. 213a. As explained earlier in this document, on 
+July 2, 2025 NHTSA published a notice of enforcement discretion 
+announcing a temporary pause on the enforcement of the applicability 
+of FMVSS No. 213a for CRSs produced on or after June 30, 2025 until 
+the date of publication of any rule finalizing NHTSA's May 30, 2025 
+proposal.
+---------------------------------------------------------------------------
+
+    Dorel also asked for a clarification on footnote 26 in the NPRM 
+that states: ``It would be permissible for manufacturers to recommend a 
+seat for forward-facing use for a subset of children weighing between 
+10 kg (22 pounds) and 13.6 kg (30 pounds)--namely, children weighing 
+less than 12 kg (26.5 pounds)--but NHTSA has decided not to specify the 
+CRABI-12MO for testing CRS designated for forward-facing . . .''
+Agency Response
+    After considering the comments, NHTSA has decided to delay the 
+compliance date of FMVSS No. 213a to December 5, 2026. When considering 
+the impacts resulting from the delay in the compliance date, NHTSA 
+takes into account the entirety of the CRS market. The agency 
+considered the potential negative impacts to small manufacturers that 
+may result in long-term impacts to market competition if some are 
+forced to exit the market should an extension not be granted. 
+Similarly, the agency considered the negative impacts to those 
+manufacturers that are already complying with the requirement, but also 
+noted that those manufacturers may gain a competitive advantage during 
+the extension in lead time. Overall, the agency concluded that the 
+negative impacts to the market would be greater in the case that delay 
+in the compliance date was not granted.
+    NHTSA is mindful of the disparate effect of regulations on small 
+and large manufacturers. Small manufacturers, such as the petitioners, 
+may find it more costly and time consuming to comply with the 
+regulation due to lack of their own testing facilities. This can 
+potentially lead small manufacturers to exit the CRS market, resulting 
+in reduced competition and consumer options. The agency considered the 
+potential burden that small manufacturers may face when developing and 
+testing their products to meet the FMVSS No. 213a requirements by the 
+original compliance date of June 30, 2025. Rather than creating 
+specific requirements for these small CRS manufacturers to relieve 
+regulatory burden, the agency decided to extend the lead time afforded 
+to all CRS manufacturers. The delay in compliance date provided in this 
+final rule would ease the burden on small manufacturers and make it 
+less likely that they would be forced to exit the CRS market, thereby 
+helping to preserve competition and consumer choice in the CRS market 
+without significant loss in safety benefits. The costs and benefits of 
+this final rule are further discussed in section V.
+    The agency has also concluded that CRS manufacturers whose products 
+are already in compliance with FMVSS No. 213a would not be negatively 
+impacted by this final rule. The agency acknowledges that several CRS 
+manufacturers have expended time and resources to meet the requirements 
+of FMVSS No. 213a by the original compliance date of June 30, 2025. 
+Furthermore, many of those manufacturers have demonstrated voluntary 
+early compliance to FMVSS No. 213a. Those manufacturers that would 
+continue to comply with the requirement even under the extended time 
+before the new compliance date will provide a societal benefit through 
+the safety benefits realized by their improved CRSs. These 
+manufacturers may also gain a competitive advantage relative to those 
+manufacturers that do not comply with the standard during the extended 
+time. As noted by Graco, manufacturers that are not yet certifying 
+their applicable CRSs to FMVSS No. 213a are unable to sell their 
+products to bigger retailers that require the certification. These 
+manufacturers may still be able to sell their products in some retail 
+stores or directly to the consumer but would miss the advantages of 
+larger retail stores. Caregivers in the process of purchasing a child 
+restraint may prefer CRSs that have additional safety features, such as 
+FMVSS-certified side impact protection, to enhance crash protection to 
+their children. With respect to Graco's argument that a delay in the 
+compliance date would punish the manufacturers that are already 
+complying with the side impact requirements because CRS
+
+[[Page 57269]]
+
+manufacturers that do not have CRSs that meet FMVSS No. 213a (or FMVSS 
+No. 213b) requirements can still market their infant carriers (rear-
+facing CRSs) for children weighting over 30 pounds, NHTSA reviewed the 
+available infant carriers in the current market and the vast majority 
+are already recommending infant carriers for children weighing 30 
+pounds or less. There is a small number of infant carriers recommended 
+for children weighing 35 pounds or less. However, due to the small 
+number of such models and because these models are from small 
+manufacturers, those volumes would not likely be significant enough to 
+disadvantage bigger manufacturers that are already complying with FMVSS 
+No. 213a.\15\
+---------------------------------------------------------------------------
+
+    \15\ We note that the standard does not limit infant carriers 
+from being recommended for children over 30 pounds. However, the 
+standard does require the infant carrier to be tested with the Q3s 
+dummy if it is recommended for children over 30 pounds.
+---------------------------------------------------------------------------
+
+    Regarding Dorel's request to clarify footnote 26 in the NPRM, NHTSA 
+clarifies that the footnote is incorrect. The footnote should have 
+stated ``It would be permissible for manufacturers to recommend a seat 
+for forward-facing use for a subset of children weighing between 10 kg 
+(22 pounds) and 13.6 kg (30 pounds)--namely, children weighing more 
+than 12 kg (26.5 pounds)--but NHTSA has decided not to specify the 
+CRABI-12MO for testing CRS designated for forward-facing use for such 
+children to simplify the requirements.''
+
+IV. Amendments to Frontal Impact Requirements (FMVSS Nos. 213 and 213b) 
+and 49 CFR 571.5
+
+    The NPRM proposed to exclude ``school bus CRSs'' from the FMVSS 
+Nos. 213 and 213b S5.9(a) requirements for CRSs to provide lower anchor 
+attachments. These attachments are unnecessary for school bus CRSs 
+because these CRSs attach to the school bus seat using a seat back 
+mount. The NPRM also proposed to amend the labeling requirements in 
+S5.5.2(g)(1)(ii) of FMVSS Nos. 213 and 213b regarding how to secure the 
+CRS to the vehicle. Because the requirement lists the ``child restraint 
+anchorage system'' or ``vehicle belt'' as methods to attach the CRS to 
+the vehicle, NHTSA proposed to adopt a requirement specific for school 
+bus CRSs that states that the school bus child restraint is secured to 
+the school bus seat using the child restraint's seat back mount instead 
+of the ``child restraint anchorage system or vehicle belt'' because 
+those methods of attachment are not applicable when using school bus 
+CRSs.
+
+Comments
+
+    Eleven commenters--2 CRS manufacturers (IMMI and BESI), NASDPTS, 
+NAPT and 7 private citizens \16\--supported the proposal to exclude 
+school bus CRSs from the requirement to provide lower anchorage 
+attachments in FMVSS Nos. 213 and 213b. No commenter opposed the 
+proposal.
+---------------------------------------------------------------------------
+
+    \16\ Kimberly Loughlin, Jimmy Lacy, Susan Shutrump, Wilson 
+Barnes, Jacob Whilhite, Judy Korn, Michelle Summers.
+---------------------------------------------------------------------------
+
+Agency Response
+
+    NHTSA is amending FMVSS Nos. 213 and 213b to exclude ``school bus 
+CRSs'' from the S5.9(a) requirements and amending S5.5.2(g)(1)(ii) so 
+that the required labeling statement reflects that school bus CRSs are 
+attached using a seat back mount. In addition, to align with the 
+installation methods used to test CRSs under FMVSS Nos. 213 and 213b, 
+the updated labeling requirement in section S5.5.2(g)(1)(ii) will allow 
+manufacturers to indicate either a seat back mount or a seat back and 
+seat pan mount as acceptable installation options for school bus child 
+restraints.
+    NHTSA is also making two technical corrections to the regulatory 
+text related to paragraph S5.9 in FMVSS Nos. 213 and 213b. First, 
+paragraph S5.9(a) in FMVSS No. 213b references NHTSA Standard Seat 
+Assembly; FMVSS No. 213, No. NHTSA-213-2021, (March 2023), which is 
+incorporated by reference in 571.5(k)(6). The final rule corrects the 
+formatting of the title of this document in 571.5(k)(6). Second, 
+paragraph S5.9 in FMVSS No. 213 references (among other things) 
+``Drawing Package SAS-100-1000, Standard Seat Belt Assembly with 
+Addendum A.'' As S5.9 notes, this document is incorporated by reference 
+in Sec.  571.5(k)(2). For clarification, NHTSA is amending S5.9 to add 
+the phrase ``Seat Base Weldment'' to the title of this document.
+
+V. Costs and Benefits
+
+    Due to the change in compliance date, some of the benefits and 
+costs associated with meeting the requirement of FMVSS No. 213a will be 
+delayed. The NPRM estimated a cost savings to consumers of 
+approximately $10.58 million assuming all CRS manufacturers would delay 
+compliance with FMVSS No. 213a to December 5, 2026. However, because 
+Dorel and Graco have noted in their comments that most of their 
+applicable products are now compliant with FMVSS No. 213a, NHTSA is 
+revising the estimated cost savings to reflect our revised assumption 
+that 100 percent of applicable CRSs from large manufacturers, 50 
+percent of CRSs from medium-size manufacturers, and 0 percent of CRSs 
+from small manufacturers will be certified to FMVSS No. 213a prior to 
+the compliance date of December 5, 2026. The revised estimates also 
+assume that the large, medium and small manufacturers have a 60 
+percent, 30 percent, and 10 percent market share, respectively.
+    The revised analysis estimates that the cost savings to consumers 
+resulting from a delay in the compliance date for FMVSS No. 213a from 
+June 30, 2025 to December 5, 2026 is approximately $2.65 million. When 
+discounting at three and seven percent, this final rule would result in 
+cost savings to society of approximately $2.59 million and $2.53 
+million, respectively. Because most large CRS manufacturers are already 
+certifying their products to FMVSS No. 213a and these CRSs account for 
+most CRSs currently sold by large retailers, a great portion of the 
+benefits estimated for the June 2022 final rule (annually 3.7 lives 
+saved and 40.9 serious injuries prevented) would still be realized. The 
+delay in the compliance date provided in this final rule would ensure 
+small manufacturers are not forced to exit the CRS market, thereby 
+preserving competition and consumer choice in the CRS market without 
+significant loss in safety benefits. The full analysis of these cost 
+savings is docketed along with this final rule.\17\
+---------------------------------------------------------------------------
+
+    \17\ The Final Regulatory Evaluation (FRE) of FMVSS No. 213a; 
+Child Restraint Systems--Side Impact Protection will be docketed 
+along with this final rule.
+---------------------------------------------------------------------------
+
+    Similar to the cost savings from the extended lead time of the 
+compliance date discussed above, exempting school bus CRSs from the 
+side impact requirements may result in a cost savings for 
+manufacturers, as it is likely that school bus CRS manufacturers that 
+could not comply with FMVSS No. 213a by June 30, 2025 would have had to 
+stop manufacturing school bus CRSs. Exempting school bus CRSs from 
+compliance with FMVSS No. 213a would ensure that school bus CRS 
+manufacturers can continue to manufacture their products after June 30, 
+2025. There are potential safety benefits by exempting school bus child 
+restraint systems from side impact protection requirements and lower 
+anchorages attachment requirements by ensuring these products can 
+continue to be sold to head start programs and daycares.
+
+[[Page 57270]]
+
+    Removing the requirement to test CRSs in forward facing mode with 
+the CRABI-12MO for side impact protection, would have no impacts on 
+safety but would reduce yearly testing costs by approximately $1.29 
+million.\18\
+---------------------------------------------------------------------------
+
+    \18\ There are currently 48 convertible CRS models, 60 all-in-
+one CRS models and 21 combination CRS models. Each forward-facing 
+convertible, combination and all-in-one CRS would no longer be 
+tested using the CRABI-12MO in a forward-facing configuration. The 
+cost of a side impact sled test is estimated at $5,000. Therefore, 
+the temporary additional test cost is estimated to be $1,290,000 
+(129 CRS Models X $5000 X 2 test installation configurations with 
+CRABI-12MO in forward-facing mode).
+---------------------------------------------------------------------------
+
+    Finally, exempting school bus CRSs from compliance with the FMVSS 
+Nos. 213 and 213b lower anchorages attachment requirements will likely 
+result in a cost savings. If the agency did not adopt this amendment, 
+school bus CRSs would need to be equipped with hardware that would 
+allow the school bus CRSs to attach to the lower anchorages in a motor 
+vehicle other than a school bus. This would be unnecessary, as school 
+bus CRSs are not designed for use in other types of motor vehicles. In 
+addition, FMVSS Nos. 213 and 213b have a requirement that school bus 
+CRSs must be labeled to inform the consumer that school bus CRSs are 
+for use only in school buses. Accordingly, the agency believes there 
+would be some cost savings associated with exempting school bus CRSs 
+from this unnecessary attachment requirement. However, the agency is 
+unable to estimate those cost savings. Exempting school bus CRSs from 
+this lower anchorage attachment requirement is not expected to impact 
+safety because school bus CRSs are attached to the school bus seat 
+using the school bus CRS seat back mount. Therefore, there is no change 
+in the safety benefits associated with this amendment in the final 
+rule.
+
+VI. Incorporation by Reference
+
+    The following materials appear in the amendatory text of this final 
+rule and have already been approved for the locations in which they 
+appear:
+    <bullet> Drawing Package SAS-100-1000, Standard Seat Belt Assembly 
+with Addendum A, Seat Base Weldment (approved June 24, 2003);
+    <bullet> Drawing Package, ``NHTSA Standard Seat Assembly; FMVSS No. 
+213, No. NHTSA-213-2003'' (approved June 24, 2003); and
+    <bullet> NHTSA Standard Seat Assembly; FMVSS No. 213, No. NHTSA-
+213-2021 (March 2023) (approved December 5, 2023).
+    This final rule makes no changes to the IBR material.
+
+VII. Effective Date and Compliance Date
+
+    The Administrative Procedure Act requires a 30-day delay in 
+effective date for final rules unless an exception applies. See 5 
+U.S.C. 553(d). The amendments in this final rule become effective 
+October 9, 2026.
+    As explained earlier, this final rule delays the compliance date 
+for FMVSS No. 213a to December 5, 2026 to preserve competition and 
+consumer choice in the CRS market without significant loss in safety 
+benefits.
+    The compliance date for the updated labeling requirements in FMVSS 
+No. 213 adopted by this final rule is 90 days after the effective date 
+of the final rule. The compliance date for the updated labeling 
+requirements in FMVSS No. 213b is December 5, 2026; this is the same as 
+the date that CRSs must be certified to the new standard. NHTSA notes 
+that the NPRM proposed that the compliance date for the updates to the 
+labeling requirements in FMVSS Nos. 213 and 213b to be the same as the 
+effective date of the final rule. However, manufacturers of school bus 
+child restraints may need additional time to make the necessary updates 
+to the labels to comply with the updated labeling requirements. 
+Therefore, the final rule provides 90 days for compliance with the 
+updated labeling requirements in FMVSS No. 213. Because the compliance 
+date for FMVSS No. 213b is December 5, 2026, there is already 
+sufficient time for manufacturers to comply with the updated labeling 
+requirements in 213b.
+    NHTSA is permitting optional early compliance with FMVSS Nos. 213, 
+213a, and 213b to facilitate early adoption of CRS designs and consumer 
+information that would enhance child passenger safety. If early 
+compliance is chosen by a manufacturer for a CRS model, the CRS model 
+must meet all applicable requirements in FMVSS No. 213, including the 
+amendments to FMVSS No. 213 made by this final rule, or meet all 
+applicable requirements in FMVSS No. 213b, including the updates made 
+in this final rule. The manufacturer also has the option to comply 
+early (before December 5, 2026) with FMVSS No. 213a side impact 
+requirements, including the updates made in this final rule and 
+likewise must meet all applicable requirements in FMVSS No. 213a.
+
+VIII. Regulatory Notices and Analyses
+
+Executive Order 12866, Executive Order 14192, and DOT Regulatory 
+Policies and Procedures
+
+    NHTSA has considered the impact of this rule under Executive Order 
+(E.O.) 12866 and E.O. 14192. This final rule is not considered to be 
+significant, and NHTSA has considered the cost savings of the final 
+rule under the principles of these executive orders. Please refer to 
+Section V, Costs and Benefits, for this discussion. This final rule is 
+an E.O. 14192 deregulatory action.
+
+Regulatory Flexibility Act
+
+    Pursuant to the Regulatory Flexibility Act (5 U.S.C. 601 et seq., 
+as amended by the Small Business Regulatory Enforcement Fairness Act 
+(SBREFA) of 1996), whenever an agency is required to publish a notice 
+of proposed rulemaking or final rule, it must prepare and make 
+available for public comment a regulatory flexibility analysis that 
+describes the effect of the rule on small entities (i.e., small 
+businesses, small organizations and small governmental jurisdictions), 
+unless the head of an agency certifies the rule will not have a 
+significant economic impact on a substantial number of small entities. 
+Agencies must also provide a statement of the factual basis for this 
+certification.
+    I certify that this rulemaking action will not have a significant 
+economic impact on a substantial number of small entities. Small 
+businesses are defined using the North American Industry Classification 
+System (NAICS) code. One of the criteria for determining size, as 
+stated in 13 CFR 121.201, is the number of employees in the firm. While 
+there is no separate NAICS code for child restraint manufacturers, 
+there are three other categories that could be appropriate: ``Motor 
+Vehicle Seating and Interior Trim'' Category (NAICS 336360, 1500 
+employees); ``All Other Motor Vehicle Parts Manufacturing'' category 
+(NAICS 336390, 1000 employees); and ``All Other Transportation 
+Equipment Manufacturing'' category (NAICS 336999, 1000 employees). In 
+the Final Regulatory Impact Analysis for the side impact protection 
+final rule,\19\ NHTSA determined that none of the CRS manufacturers 
+would be classified as small businesses based on the lowest employee 
+threshold in effect at that time for these three NAICS categories (500 
+employees). Since that time the NAICS thresholds have been increased 
+from the threshold of 500 employees. Even if any of these CRS 
+manufacturers would be classified as small businesses under the
+
+[[Page 57271]]
+
+current SBA business size thresholds, NHTSA has determined that this 
+rule will not have a significant economic impact on any CRS 
+manufacturer. In this deregulatory rule responding to petitions for 
+reconsideration of an earlier rulemaking, NHTSA amends FMVSS No. 213a, 
+``Child restraint systems--side impact protection'' to exempt school 
+bus CRSs that meet specified labeling requirements from the standard; 
+to delay the compliance date from June 30, 2025 to December 5, 2026; to 
+amend the dummy selection requirements so that the Child Restraint Air 
+Bag Interaction twelve-month-old test dummy (CRABI-12MO) will not be 
+used to test forward-facing CRSs; and to amend in a corresponding 
+manner positioning procedures for that dummy. NHTSA also amends FMVSS 
+No. 213, ``Child restraint systems'' and FMVSS No. 213b, ``Child 
+restraint systems; Mandatory applicability beginning December 5, 
+2026,'' to exclude school bus CRSs from the requirements to provide 
+lower anchorage attachments for connection to a vehicle's child 
+restraint anchorage system and to change certain labeling requirements 
+to reflect how school bus child restraints are used. NHTSA has 
+determined that the rule will likely result in cost savings to CRS 
+manufacturers.
+---------------------------------------------------------------------------
+
+    \19\ Docket NHTSA-2022-0051.
+---------------------------------------------------------------------------
+
+Federalism
+
+    NHTSA has examined this final rule pursuant to E.O. 13132 (64 FR 
+43255, August 10, 1999) and concluded that no additional consultation 
+with States, local governments or their representatives is mandated 
+beyond the rulemaking process. The agency has concluded that the 
+rulemaking would not have sufficient federalism implications to warrant 
+consultation with State and local officials or the preparation of a 
+federalism summary impact statement. This final rule would not have 
+``substantial direct effects on the States, on the relationship between 
+the Federal Government and the States, or on the distribution of power 
+and responsibilities among the various levels of government.''
+    NHTSA rules can have preemptive effect in two ways. First, the 
+National Traffic and Motor Vehicle Safety Act contains an express 
+preemption provision stating that, if NHTSA has established a standard 
+for an aspect of motor vehicle or motor vehicle equipment performance, 
+a State may only prescribe or continue in effect a standard for that 
+same aspect of performance if the State standard is identical to the 
+Federal standard.\20\ It is this statutory command by Congress that 
+preempts any non-identical State legislative and administrative law 
+addressing the same aspect of performance.
+---------------------------------------------------------------------------
+
+    \20\ 49 U.S.C. 30103(b)(1).
+---------------------------------------------------------------------------
+
+    The express preemption provision described above is subject to a 
+savings clause under which ``[c]ompliance with a motor vehicle safety 
+standard prescribed under this chapter does not exempt a person from 
+liability at common law.'' \21\ Pursuant to this provision, State 
+common law tort causes of action against motor vehicle manufacturers 
+that might otherwise be preempted by the express preemption provision 
+are generally preserved.
+---------------------------------------------------------------------------
+
+    \21\ 49 U.S.C. 30103(e).
+---------------------------------------------------------------------------
+
+    NHTSA rules can also preempt State law if complying with the FMVSS 
+would render the motor vehicle manufacturers liable under State tort 
+law. Because most NHTSA standards established by an FMVSS are minimum 
+standards, a State common law tort cause of action that seeks to impose 
+a higher standard on motor vehicle manufacturers will generally not be 
+preempted. However, if and when such a conflict does exist--for 
+example, when the standard at issue is both a minimum and a maximum 
+standard--the State common law tort cause of action is impliedly 
+preempted.\22\
+---------------------------------------------------------------------------
+
+    \22\ See Geier v. American Honda Motor Co., 529 U.S. 861 (2000).
+---------------------------------------------------------------------------
+
+    Pursuant to E.O. 13132, NHTSA has considered whether this final 
+rule could or should preempt State common law causes of action. The 
+agency's ability to announce its conclusion regarding the preemptive 
+effect of one of its rules reduces the likelihood that preemption will 
+be an issue in any subsequent tort litigation. To this end, the agency 
+has examined the nature (e.g., the language and structure of the 
+regulatory text) and objectives of this final rule and finds that this 
+final rule, like many NHTSA rules, prescribes only a minimum safety 
+standard. Accordingly, NHTSA does not intend that this final rule 
+preempt State tort law that would effectively impose a higher standard 
+on motor vehicle manufacturers than that established by this final 
+rule. Establishment of a higher standard by means of State tort law 
+would not conflict with the minimum standard finalized in this 
+document. Without any conflict, there could not be any implied 
+preemption of a State common law tort cause of action.
+
+Executive Order 12988 (Civil Justice Reform)
+
+    When promulgating a regulation, agencies are required under E.O. 
+12988 to make every reasonable effort to ensure that the regulation, as 
+appropriate: (1) specifies in clear language the preemptive effect; (2) 
+specifies in clear language the effect on existing Federal law or 
+regulation, including all provisions repealed, circumscribed, 
+displaced, impaired, or modified; (3) provides a clear legal standard 
+for affected conduct rather than a general standard, while promoting 
+simplification and burden reduction; (4) specifies in clear language 
+the retroactive effect; (5) specifies whether administrative 
+proceedings are to be required before parties may file suit in court; 
+(6) explicitly or implicitly defines key terms; and (7) addresses other 
+important issues affecting clarity and general draftsmanship of 
+regulations.
+    NHTSA has reviewed this rulemaking and determined that this 
+rulemaking action conforms to the applicable standards in sections 3(a) 
+and 3(b)(2) of E.O. 12988, Civil Justice Reform. The issue of 
+preemption is discussed above in connection with E.O. 13132 
+(Federalism). NHTSA believes that this final rule specifies clearly the 
+changes made to FMVSS Nos. 213, 213a, and 213b, defines any necessary 
+key terms, and provides a clear legal standard for manufacturers to 
+follow. The amendments do not take effect retroactively. NHTSA notes 
+further that there is no requirement that an individual submit a 
+petition for reconsideration or pursue other administrative proceedings 
+before they may file suit in court.
+
+Executive Order 13609 (Promoting International Regulatory Cooperation)
+
+    E.O. 13609, ``Promoting International Regulatory Cooperation,'' 
+promotes international regulatory cooperation to meet shared challenges 
+involving health, safety, labor, security, environmental, and other 
+issues and to reduce, eliminate, or prevent unnecessary differences in 
+regulatory requirements.
+    NHTSA participates in the negotiation and development of technical 
+standards for Safety Glazing in the United Nations Economic Commission 
+for Europe (UNECE) World Forum for Harmonization of Vehicle Regulations 
+(WP.29). As a signatory member, NHTSA is obligated to initiate 
+rulemaking to incorporate safety requirements and options specified in 
+Global Technical Regulations (GTRs) if the U.S. votes in the 
+affirmative to establish the GTR. No GTR for child restraint systems 
+has been developed at this time.
+    NHTSA has analyzed this rule under the policies and agency 
+responsibilities
+
+[[Page 57272]]
+
+of E.O. 13609 and has determined this rulemaking will have no effect on 
+international regulatory cooperation.
+
+National Environmental Policy Act
+
+    The Department has analyzed the environmental impacts of this 
+rulemaking pursuant to the National Environmental Policy Act of 1969 
+(NEPA) (42 U.S.C. 4321 et seq.). Pursuant to 49 CFR 1.81, the Secretary 
+has delegated the ``functions'' under NEPA to the Administrators ``as 
+they relate to the matters within the primary responsibility of each 
+Operating Administration.'' NHTSA has determined that this rule is 
+categorically excluded pursuant to 23 CFR 771.118(c)(4). Categorical 
+exclusions are actions identified in an agency's NEPA procedures that 
+do not normally have a significant impact on the environment and 
+therefore do not require either an environmental assessment (EA) or 
+environmental impact statement (EIS). This rulemaking amends FMVSS No. 
+213a, ``Child restraint systems--side impact protection,'' to exempt 
+school bus CRSs from the standard's requirements as long as they meet 
+specified labeling requirements; to delay the compliance date from June 
+30, 2025 to December 5, 2026; and to provide that the Child Restraint 
+Air Bag Interaction twelve-month-old (CRABI)-12MO test dummy will not 
+be used to test forward-facing CRSs. The first two of these amendments 
+are in response to petitions from CRS manufacturers. NHTSA is also 
+amending FMVSS No. 213, ``Child restraint systems'' and FMVSS No. 213b, 
+Child restraint systems; Mandatory applicability beginning December 5, 
+2026, to exclude school bus CRSs from the requirements to provide 
+attachments for connection to the vehicle's child restraint anchorage 
+system. This rulemaking is categorically excluded pursuant to 23 CFR 
+771.118(c)(4) (Planning and administrative activities that do not 
+involve or lead directly to construction, such as: Training, technical 
+assistance and research; promulgation of rules, regulations, 
+directives, or program guidance; approval of project concepts; 
+engineering; and operating assistance to transit authorities to 
+continue existing service or increase service to meet routine demand). 
+NHTSA does not anticipate any environmental impacts, and there are no 
+extraordinary circumstances present in connection with this rulemaking.
+
+Paperwork Reduction Act
+
+    Under the procedures established by the Paperwork Reduction Act of 
+1995 (PRA) (44 U.S.C. 3501, et seq.), a Federal agency must request and 
+receive approval from the Office of Management and Budget (OMB) before 
+it collects certain information from the public and a person is not 
+required to respond to a collection of information by a Federal agency 
+unless the collection displays a valid OMB control number. This final 
+rule does not establish or modify any information collection 
+requirements as defined by OMB in 5 CFR part 1320.
+
+Unfunded Mandates Reform Act (UMRA)
+
+    The Unfunded Mandates Reform Act of 1995 (2 U.S.C. 1531-1538) 
+(UMRA) requires Federal agencies to assess the effects of regulatory 
+actions that may result in the expenditure by a State, local, or Tribal 
+government, in the aggregate, or by the private sector of $184 million 
+(the value equivalent of $100 million in 1995, adjusted for inflation 
+to 2024) or more in any one year. This final rule does not contain 
+Federal mandates (under the regulatory provisions of Title II of the 
+UMRA) for State, local and Tribal governments, or the private sector of 
+$206 million or more in any one year. Thus, the analytical requirements 
+of the UMRA do not apply to this action.
+
+National Technology Transfer and Advancement Act
+
+    Under the National Technology Transfer and Advancement Act of 1995 
+(NTTAA) (Pub. L. 104-113), ``all Federal agencies and departments shall 
+use technical standards that are developed or adopted by voluntary 
+consensus standards bodies, using such technical standards as a means 
+to carry out policy objectives or activities determined by the agencies 
+and departments.'' Voluntary consensus standards are technical 
+standards (e.g., materials specifications, test methods, sampling 
+procedures and business practices) developed or adopted by voluntary 
+consensus standards bodies, such as the International Organization for 
+Standardization (ISO) and the Society of Automotive Engineers (SAE). 
+The NTTAA directs this agency to provide Congress, through OMB, 
+explanations when we decide not to use available and applicable 
+voluntary consensus standards. There are no voluntary consensus 
+standards developed by voluntary consensus standards bodies pertaining 
+to this final rule.
+
+Executive Order 13175
+
+    E.O. 13175 requires Federal agencies to consult and coordinate with 
+Tribes on a government-to-government basis on policies that have Tribal 
+implications, including regulations, legislative comments or proposed 
+legislation, and other policy statements or actions that have 
+substantial direct effects on one or more Indian Tribes, on the 
+relationship between the Federal Government and Indian Tribes, or on 
+the distribution of power and responsibilities between the Federal 
+Government and Indian Tribes. NHTSA has assessed the impact of this 
+rule on Indian tribes and determined that this rule does not have 
+tribal implications that require consultation under E.O. 13175.
+
+E-Government Act Compliance
+
+    NHTSA is committed to complying with the E-Government Act, 2002 to 
+promote the use of the internet and other information technologies to 
+provide increased opportunities for citizen access to Government 
+information and services, and for other purposes. The E-Government Act 
+of 2002 (Pub. L. 107-347, sec. 208, 116 Stat. 2899, 2921, Dec. 17, 
+2002), requires Federal agencies to conduct a privacy impact assessment 
+for new or substantially changed technology that collects, maintains, 
+or disseminates information in an identifiable form. No new or 
+substantially changed technology would collect, maintain, or 
+disseminate information as a result of this rule. Accordingly, NHTSA 
+has not conducted a privacy impact assessment.
+
+Plain Language Requirement
+
+    E.O. 12866 requires each agency to write all rules in plain 
+language. Application of the principles of plain language includes 
+consideration of the following questions:
+    <bullet> Have we organized the material to suit the public's needs?
+    <bullet> Are the requirements in the rule clearly stated?
+    <bullet> Does the rule contain technical language or jargon that is 
+not clear?
+    <bullet> Would a different format (grouping and order of sections, 
+use of headings, paragraphing) make the rule easier to understand?
+    <bullet> Would more (but shorter) sections be better?
+    <bullet> Could we improve clarity by adding tables, lists, or 
+diagrams?
+    <bullet> What else could we do to make the rule easier to 
+understand?
+    NHTSA has considered these questions and attempted to use plain 
+language in promulgating this final rule. Please inform the agency if 
+you can suggest how NHTSA can improve its use of plain language.
+
+Privacy Act
+
+    Petitions for review of the final rule will be placed in the 
+docket. Anyone is able to search the electronic form of all
+
+[[Page 57273]]
+
+documents received into any of our dockets by the name of the 
+individual submitting the comment (or signing the comment, if submitted 
+on behalf of an association, business, labor union, etc.). For 
+information on DOT's compliance with the Privacy Act, see <a href="https://www.transportation.gov/privacy">https://www.transportation.gov/privacy</a>. To see the list of DOT's systems of 
+records notices, please visit <a href="https://www.transportation.gov/individuals/privacy/privacy-act-system-records-notices">https://www.transportation.gov/individuals/privacy/privacy-act-system-records-notices</a>.
+
+Regulatory Identifier Number (RIN)
+
+    The Department of Transportation assigns a regulation identifier 
+number (RIN) to each regulatory action listed in the Unified Agenda of 
+Federal Regulations. The Regulatory Information Service Center 
+publishes the Unified Agenda in April and October of each year. The RIN 
+contained in the heading at the beginning of this document may be used 
+to find this action in the Unified Agenda.
+
+List of Subjects in 49 CFR Part 571
+
+    Motor vehicle safety, Motor vehicles, Incorporation by reference.
+
+    In consideration of the foregoing, NHTSA proposes to amend 49 CFR 
+part 571 as follows:
+
+PART 571--FEDERAL MOTOR VEHICLE SAFETY STANDARDS
+
+0
+1. The authority citation for part 571 continues to read as follows:
+
+    Authority: 49 U.S.C. 322, 30111, 30115, 30117 and 30166; 
+delegation of authority at 49 CFR 1.95.
+
+0
+2. Amend Sec.  571.5 by revising paragraph (k)(6) to read as follows:
+
+
+Sec.  571.5  Matter incorporated by reference.
+
+* * * * *
+    (k) * * *
+    (6) Parts List and Drawings--NHTSA Standard Seat Assembly; FMVSS 
+No. 213, No. NHTSA-213-2021--Child Frontal Impact Sled, March 2023; 
+into Sec.  571.213b.
+* * * * *
+0
+3. Amend Sec.  571.213 by:
+0
+a. Revising paragraphs S5(g), S5.5.2(g)(1)(ii), and S5.9(a); and
+0
+b. In paragraph S6.1.1(a)(1)(ii), removing the text ``(consisting of 
+drawings and a bill of materials)''.
+    The revisions read as follows:
+
+
+Sec.  571.213   Child restraint systems; Applicable unless a vehicle or 
+child restraint system is certified to Sec.  571.213b.
+
+* * * * *
+    S5 * * *
+    (g) Each add-on child restraint system manufactured for use in 
+motor vehicles, that is recommended for children in a weight range that 
+includes weights up to 18 kg (40 pounds), or for children in a height 
+range that includes heights up to 1100 millimeters, shall meet the 
+requirements in this standard and the additional side impact protection 
+requirements in Standard No. 213a (Sec.  571.213a). Excepted from 
+Standard No. 213a are harnesses, school bus child restraint systems, 
+and car beds.
+* * * * *
+    S5.5.2 * * *
+    (g) * * *
+    (1) * * *
+    (ii) Secure this child restraint with the vehicle's child restraint 
+anchorage system, if available, or with a vehicle belt. [For school bus 
+child restraint systems, the preceding statement does not apply.] [For 
+car beds, harnesses, and belt positioning seats, the first part of the 
+statement regarding attachment by the child restraint anchorage system 
+is optional.] [For belt-positioning seats, the second part of the 
+statement regarding attachment by the vehicle belt does not apply.] 
+[School bus child restraint systems manufactured on or after December 
+8, 2026 must use the following statement: Secure this school bus child 
+restraint using the child restraint's (insert the words ``seat back 
+mount'' or ``seat back and seat pan mount'' as appropriate).]
+* * * * *
+    S5.9 * * *
+    (a) Each add-on child restraint system other than a car bed, 
+harness, school bus child restraint system, and belt-positioning seat, 
+shall have components permanently attached to the system that enable 
+the restraint to be securely fastened to the lower anchorages of the 
+child restraint anchorage system specified in Standard No. 225 (Sec.  
+571.225) and depicted in Drawing Package SAS-100-1000, Standard Seat 
+Belt Assembly with Addendum A, Seat Base Weldment or in Drawing 
+Package, ``NHTSA Standard Seat Assembly; FMVSS No. 213, No. NHTSA-213-
+2003'' (both incorporated by reference, see Sec.  571.5). The 
+components must be attached by use of a tool, such as a screwdriver. In 
+the case of rear-facing child restraints with detachable bases, only 
+the base is required to have the components.
+* * * * *
+0
+4. Amend Sec.  571.213a by:
+0
+a. Revising paragraph S3;
+0
+b. In paragraph S4, adding, in alphabetical order, a definition for 
+``school bus child restraint system'';
+0
+c. Revising paragraphs S7.1(a) and S9.1(b); and
+0
+d. Removing paragraphs S9.1(c) and S9.1(d).
+    The addition and revisions read as follows:
+
+
+Sec.  571.213a;  Child restraint systems--Side Impact Protection--
+Mandatory applicability beginning December 5, 2026.
+
+* * * * *
+    S3 Application. This standard applies to add-on child restraint 
+systems that are either recommended for use by children in a weight 
+range that includes weights up to 18 kilograms (40 pounds) regardless 
+of height, or by children in a height range that includes heights up to 
+1100 millimeters regardless of weight, except for car beds, school bus 
+child restraint systems, and harnesses.
+    S4 * * *
+* * * * *
+    School bus child restraint system means an add-on child restraint 
+system (including a harness) manufactured and sold only for use on 
+school bus seats that has a label conforming with S5.3.1(b) of FMVSS 
+No. 213b (Sec.  571.213b).
+* * * * *
+    S7.1 * * *
+    (a) A child restraint that is recommended by its manufacturer in 
+accordance with S5.5 of Standard No. 213 (Sec.  571.213) for use either 
+by children in a specified mass range that includes any children having 
+a mass greater than 5 kilograms but not greater than 13.6 kilograms, or 
+by children in a specified height range that includes any children 
+whose height is greater than 650 millimeters but not greater than 870 
+millimeters, is tested with a CRABI 12-month-old test dummy conforming 
+to 49 CFR part 572 subpart R, provided, however, that the CRABI 12-
+month-old dummy is not used to test a forward-facing child restraint 
+system.
+* * * * *
+    S9.1 * * *
+    (b) When testing child restraint systems rear-facing, extend the 
+dummy's arms vertically upwards and then rotate each arm downward in 
+the plane parallel to the dummy's midsagittal plane toward the dummy's 
+lower body until the arm contacts a surface of the child restraint 
+system or the SISA. Ensure that no arm is restrained from movement in 
+other than the downward direction, by any part of the system or the 
+belts used to anchor the system to the SISA sliding seat.
+* * * * *
+0
+5. Amend Sec.  571.213b by revising S5(b)(2), S5.5.2(g)(1)(ii), and 
+S5.9(a) to read as follows:
+
+
+Sec.  571.213b;   Child restraint systems; Mandatory applicability 
+beginning December 5, 2026.
+
+* * * * *
+
+[[Page 57274]]
+
+    S5 * * *
+    (b) * * *
+    (2) Each add-on child restraint system manufactured for use in 
+motor vehicles, that is recommended for children in a weight range that 
+includes weights less than 18 kg (40 pounds) regardless of height, or 
+for children in a height range that includes heights less than 1100 
+millimeters (mm) regardless of weight, shall meet the requirements in 
+this standard and the applicable side impact protection requirements in 
+Standard No. 213a (Sec.  571.213a). Excepted from Standard No. 213a are 
+harnesses, school bus child restraint systems, and car beds.
+* * * * *
+    S5.5.2 * * *
+    (g) * * *
+    (1) * * *
+    (ii) Secure this child restraint with the vehicle's child restraint 
+anchorage system, if available, or with a vehicle belt. [For school bus 
+child restraint systems, the preceding statement does not apply.] [For 
+car beds, harnesses, and belt positioning seats, the first part of the 
+statement regarding attachment by the child restraint anchorage system 
+is optional.] [For belt-positioning seats, the second part of the 
+statement regarding attachment by the vehicle belt does not apply.] 
+[School bus child restraint systems must use the following statement 
+instead: Secure this school bus child restraint using the child 
+restraint system's (insert the words ``seat back mount'' or ``seat back 
+and seat pan mount'' as appropriate).]
+* * * * *
+    S5.9 * * *
+    (a) Each add-on child restraint system other than a car bed, 
+harness, school bus child restraint system, and belt-positioning seat, 
+shall have components permanently attached to the system that enable 
+the restraint to be securely fastened to the lower anchorages of the 
+child restraint anchorage system specified in Standard No. 225 (Sec.  
+571.225) and depicted in NHTSA Standard Seat Assembly; FMVSS No. 213, 
+No. NHTSA-213-2021 (March 2023) (incorporated by reference, see Sec.  
+571.5). The components must be attached by use of a tool, such as a 
+screwdriver. In the case of rear-facing child restraint systems with 
+detachable bases, only the base is required to have the components. For 
+child restraints manufactured on or after January 8, 2028, all 
+components provided to attach the add-on child restraint or the 
+detachable base (in the case of a rear-facing child restraint with a 
+detachable base) to the lower anchorages of the child restraint 
+anchorage system shall be permanently marked with the pictogram in 
+figure 15 to this section.
+* * * * *
+
+    Issued under authority delegated in 49 CFR 1.95.
+Jonathan Morrison,
+Administrator.
+[FR Doc. 2026-18380 Filed 9-8-26; 8:45 am]
+BILLING CODE 4910-59-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

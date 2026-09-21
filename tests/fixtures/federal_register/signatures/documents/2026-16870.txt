@@ -1,0 +1,1547 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 159 (Wednesday, August 19, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 159 (Wednesday, August 19, 2026)]
+[Rules and Regulations]
+[Pages 53526-53539]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-16870]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+DEPARTMENT OF COMMERCE
+
+National Oceanic and Atmospheric Administration
+
+50 CFR Part 635
+
+[Docket No. 260813-0186]
+RIN 0648-BN60
+
+
+Atlantic Highly Migratory Species; North Atlantic Swordfish, 
+South Atlantic Swordfish, North Atlantic Albacore, and Atlantic Bluefin 
+Tuna Quotas
+
+AGENCY: National Marine Fisheries Service (NMFS), National Oceanic and 
+Atmospheric Administration (NOAA), Commerce.
+
+ACTION: Final rule; temporary quota adjustment; temporary quota 
+transfer.
+
+-----------------------------------------------------------------------
+
+SUMMARY: In this final rule, NMFS is implementing binding 
+recommendations of the International Commission for the Conservation of 
+Atlantic Tunas (ICCAT) on quotas for North Atlantic swordfish, South 
+Atlantic swordfish, North Atlantic albacore tuna (northern albacore), 
+and Atlantic bluefin tuna, including aspects of the management 
+procedures for North Atlantic swordfish and northern albacore. For 
+bluefin tuna, this action implements the increased U.S. baseline quota 
+adopted by ICCAT in 2025, dividing it among the established regulatory 
+domestic subquota categories, and implements changes to the bluefin 
+tuna quota associated with pelagic longline bycatch adopted by ICCAT in 
+2025. Finally, this action transfers 30.8 metric tons (mt) of bluefin 
+tuna quota from the Longline category to the Reserve category and 
+temporarily adjusts the baseline quotas for U.S. North and South 
+Atlantic swordfish, northern albacore, and the Atlantic bluefin tuna 
+Reserve category for 2026 based on 2025 underharvests and applicable 
+international quota transfers.
+
+DATES: The final rule is effective August 19, 2026. The temporary quota 
+adjustments and transfer are effective August 19, 2026, through 
+December 31, 2026.
+
+ADDRESSES: Additional information related to this final rule, including
+
+[[Page 53527]]
+
+electronic copies of the supporting documents are available from the 
+Highly Migratory Species (HMS) Management Division website at <a href="https://www.fisheries.noaa.gov/topic/atlantic-highly-migratory-species">https://www.fisheries.noaa.gov/topic/atlantic-highly-migratory-species</a> or by 
+contacting Carrie Soltanoff, Steve Durkee, or Larry Redd, Jr.
+
+FOR FURTHER INFORMATION CONTACT: Carrie Soltanoff 
+(<a href="/cdn-cgi/l/email-protection#412220333328246f322e2d35202f2e2727012f2e20206f262e37"><span class="__cf_email__" data-cfemail="7f1c1e0d0d161a510c10130b1e111019193f11101e1e51181009">[email&#160;protected]</span></a>), Steve Durkee (<a href="/cdn-cgi/l/email-protection#5e2d2a3b283b703a2b2c353b3b1e30313f3f70393128"><span class="__cf_email__" data-cfemail="3142455447541f5544435a5454715f5e50501f565e47">[email&#160;protected]</span></a>), or 
+Larry Redd, Jr., (<a href="/cdn-cgi/l/email-protection#761a1704040f5804131212361819171758111900"><span class="__cf_email__" data-cfemail="0864697a7a71267a6d6c6c4866676969266f677e">[email&#160;protected]</span></a>) at 301-427-8503.
+
+SUPPLEMENTARY INFORMATION: Federal Atlantic HMS fisheries (tunas, 
+billfish, swordfish, and sharks) are managed under the 2006 
+Consolidated HMS Fishery Management Plan, as amended (HMS FMP) pursuant 
+to the Magnuson-Stevens Fishery Conservation and Management Act 
+(Magnuson-Stevens Act) (16 U.S.C. 1801 et seq.) and consistent with the 
+Atlantic Tunas Convention Act (ATCA) (16 U.S.C. 971 et seq.). HMS are 
+defined at section 3(21) of the Magnuson-Stevens Act (16 U.S.C. 
+1802(21)), and the provisions for their management are at section 
+304(g)(1) (16 U.S.C. 1854(g)(1)). ATCA is the implementing statute for 
+binding recommendations of ICCAT. Regulations implementing the HMS FMP 
+are at 50 CFR part 635. Section 635.15 implements the Individual 
+Bluefin Tuna Quota (IBQ) program. Section 635.27(a) divides the U.S. 
+bluefin tuna quota as recommended by ICCAT and implemented by the 
+United States among domestic fishing categories as established under 
+the HMS FMP, provides the annual bluefin tuna quota adjustment process, 
+and implements an incidental catch quota for pelagic longline vessels. 
+Section 635.27(c) implements the ICCAT-recommended U.S. North and South 
+Atlantic swordfish quotas and provides the annual adjustment process. 
+Section 635.27(e) implements the ICCAT-recommended U.S. northern 
+albacore quota and provides the annual northern albacore quota 
+adjustment process. NMFS is required under the Magnuson-Stevens Act to 
+provide U.S. fishing vessels with a reasonable opportunity to harvest 
+quotas established pursuant to relevant international fishery 
+agreements such as the ICCAT Convention.
+    Through this action, NMFS implements various management measures, 
+including quotas, consistent with measures adopted by ICCAT for North 
+Atlantic swordfish, South Atlantic swordfish, northern albacore, and 
+Atlantic bluefin tuna. Additionally, NMFS: (1) adjusts the 2026 
+baseline quotas for U.S. North and South Atlantic swordfish, northern 
+albacore, and the Atlantic bluefin tuna Reserve category based on the 
+2025 underharvest and applicable international quota transfers; and (2) 
+transfers 30.8 mt of bluefin tuna quota from the Longline category to 
+the Reserve category. A brief summary of background information is 
+provided below; additional information can be found in the proposed 
+rule (91 FR 24789, May 7, 2026) and supporting documents (see ADDRESSES 
+section). NMFS has prepared a comprehensive document that presents the 
+alternatives considered for this final rule and analyzes their 
+anticipated environmental, social, and economic impacts (``supporting 
+document''). This supporting document consolidates the requirements of 
+a number of Federal statutes and executive orders and includes, among 
+other sections, an Environmental Assessment (EA), Regulatory Impact 
+Review (RIR), and a Final Regulatory Flexibility Analysis (FRFA). A 
+copy of the supporting document prepared for this final rule is 
+available from NMFS (see ADDRESSES section).
+    Consistent with how the quotas are established at ICCAT, weight 
+information for northern albacore and bluefin tuna is shown in mt whole 
+weight (ww), and weight information for swordfish is shown in both 
+dressed weight (dw) and ww. The conversion factor between dw and ww for 
+swordfish is 1.33 and the conversion follows the following formula: dw 
+* 1.33 = ww.
+    This final rule additionally includes two minor changes to the 
+regulatory text to correct a regulatory reference (see Changes from the 
+Proposed Rule section).
+
+Statutory Authority
+
+    Under section 971d(c)(1)(A) of ATCA, NMFS must promulgate such 
+regulations as may be necessary and appropriate to carry out binding 
+recommendations of ICCAT (16 U.S.C. 971d(c)(1)(A)). Further, 
+regulations promulgated shall, to the extent practicable, be consistent 
+with FMPs prepared and implemented under the Magnuson-Stevens Act (see 
+16 U.S.C. 971d(c)(1)(C)).
+    The Magnuson-Stevens Act (16 U.S.C. 1801 et seq.) requires measures 
+necessary for the conservation and management of the fishery to be 
+consistent with the 10 National Standards set forth in section 301(a) 
+(16 U.S.C. 1851(a)). The National Standards state, among other things, 
+that conservation and management measures must: (1) prevent overfishing 
+while achieving, on a continuing basis, optimum yield from the fishery 
+(National Standard 1); (2) be based on the best scientific information 
+available (National Standard 2); and (3) take into account and allow 
+for variations among fisheries, fishery resources, and catches 
+(National Standard 6). Furthermore, the Magnuson-Stevens Act authorizes 
+measures to promote the long-term health and stability of the fisheries 
+(Sec.  303(a)(1); 16 U.S.C. 1853(a)(1)) and to assess and specify the 
+present and probable future condition of optimum yield and the extent 
+to which fishing vessels of the United States, on an annual basis, will 
+harvest the optimum yield (Sec.  303(a)(3)-(4); 16 U.S.C. 1853(a)(3)-
+(4)). Measures such as annual adjustments of quotas for under- or 
+overharvests are important in achieving these goals. Section 102 of the 
+Magnuson-Stevens Act also provides for management actions to be 
+coordinated through appropriate international organizations to promote 
+conservation and achievement of optimum yield of such species 
+throughout their range, both within and beyond the exclusive economic 
+zone, and to take into account the traditional participation of U.S. 
+fishermen (16 U.S.C. 1812(a) and (b)). Section 304(g)(1), among other 
+things, provides NMFS the authority to implement fishery management 
+plans and plan amendments that provide fishing vessels fishing for 
+Atlantic HMS with a reasonable opportunity to harvest an allocation or 
+quota authorized under an international fishing agreement, such as 
+ICCAT's recommendations, and to ensure that conservation and management 
+measures promote international conservation of HMS fisheries (16 U.S.C. 
+1845(g)(1)).
+
+Background
+
+    On May 7, 2026, NMFS published a proposed rule (91 FR 24789) and 
+released a draft of the supporting document, which included a Draft EA, 
+RIR, and Initial Regulatory Flexibility Analysis (IRFA). The proposed 
+rule and supporting document contain background information relevant to 
+this action that is not fully repeated here. Details about the 
+temporary quota adjustments and inseason transfers for 2026 are 
+included below. The comment period for the proposed rule closed on June 
+6, 2026. NMFS received 39 written comments during the proposed rule 
+public comment period, as well as verbal comments during a public 
+hearing webinar and an HMS Advisory Panel meeting. The comments 
+received, and the responses to those comments, are summarized in the 
+Response to Comments section.
+
+[[Page 53528]]
+
+Overall Quota-Setting Process
+
+    Regulations at 50 CFR 635.27(c), (e), and (a) set forth the ICCAT-
+established U.S. baseline quotas for North and South Atlantic 
+swordfish, northern albacore, and Atlantic bluefin tuna, respectively, 
+as well as the requirements and processes for annual adjustments of the 
+quotas for underharvest or overharvest required by ICCAT. The process 
+for annually adjusting the baseline quotas for each stock is described 
+in the proposed rule, with details for 2026 described below. When the 
+current baseline quotas for each stock were originally implemented, 
+NMFS took public comment on their respective adjustment processes and 
+ultimately determined that the annual adjustments to those baseline 
+quotas could be made through temporary final rules as long as the 
+adjustments were consistent with the implementing regulations (87 FR 
+33049, June 1, 2022, for northern albacore and bluefin tuna; 81 FR 
+48719, July 26, 2016, for North and South Atlantic swordfish).
+    In this rulemaking, NMFS once again provided an opportunity for the 
+public to comment on the annual quota adjustment processes for each 
+stock. No comments were provided by the public on these processes. As a 
+result, in the future NMFS will adjust the annual baseline quotas with 
+temporary final rules as long as the adjustments are consistent with 
+the implementing regulations as applied in the calculations detailed in 
+the proposed rule and supporting document. This final rule includes 
+temporary 2026 quota adjustments for North and South Atlantic 
+swordfish, northern albacore, and Atlantic bluefin tuna as described 
+below.
+
+North Atlantic Swordfish Annual Quota and Adjustment Process
+
+    This final rule implements Recommendation 25-10, which describes 
+the management procedure for North Atlantic swordfish, by adding a 
+reference to that procedure in the swordfish quota regulations at Sec.  
+635.27(c)(1) (see 91 FR at 24790-24791 (explaining management procedure 
+in proposed rule)). The supporting document analyzes the range of total 
+allowable catches (TACs) that might be derived from the new North 
+Atlantic swordfish management procedure. NMFS is also temporarily 
+adjusting the quota for 2026. In this rulemaking, NMFS is not making 
+any changes to the current U.S. baseline quota, quota adjustment 
+provisions, and domestic quota allocations. These processes are 
+codified at Sec.  635.27(c)(1)(i) and (c)(3) (77 FR 45273, July 31, 
+2012).
+    In the future, if ICCAT modifies the North Atlantic-wide swordfish 
+TAC for the next 3-year management period consistent with the 
+management procedure in Recommendation 25-10, NMFS may codify the 
+resulting U.S. baseline quota up to a maximum of 3,446.1 mt dw through 
+a final rulemaking if consistent with the analyses in this action's 
+associated supporting document and if no new circumstances are present 
+or management measures introduced that require additional analysis or 
+opportunity for public comment. If a new TAC is adopted and resulting 
+U.S. quota codified, NMFS could continue to annually adjust the new 
+U.S. baseline quota through a temporary final rule reflecting 
+underharvest carryover (up to a 3,963-mt dw maximum adjusted quota) or 
+overharvest per the process discussed below if consistent with analyses 
+in the supporting document and there are no new circumstances. NMFS 
+would evaluate the need for any additional environmental analyses or 
+proposed and final rulemaking when implementing any new management 
+procedure-derived TAC and associated quotas adopted by ICCAT.
+    Consistent with the North Atlantic swordfish quota regulations at 
+Sec.  635.27(c), in this action, NMFS adjusts the 2026 U.S. annual 
+North Atlantic swordfish quota for allowable underharvest from 2025. 
+NMFS makes such adjustments consistent with ICCAT carryover limits and 
+when complete catch information for the prior year is available and 
+finalized. The U.S. North Atlantic swordfish baseline annual quota is 
+2,937.6 mt dw (3,907 mt ww).
+    As codified at Sec.  635.27(c)(3), the maximum North Atlantic 
+swordfish underharvest that may be carried forward from one year to the 
+next is 15 percent of the baseline quota, which equates to 440.6 mt dw 
+(586 mt ww). For 2025, the adjusted North Atlantic swordfish quota was 
+3,152.6 mt dw (90 FR 60017, December 23, 2025). In 2025, U.S. landings 
+of North Atlantic swordfish, which include landings and dead discards, 
+were 637.7 mt dw (2,514.9 mt dw less than the 2025 adjusted quota). 
+This underharvest exceeds the 440.6-mt dw underharvest carryover limit 
+allowed; therefore, only 440.6 mt dw may be carried forward to the 2025 
+fishing year.
+    Thus, the adjusted 2026 North Atlantic swordfish quota is 3,378.2 
+mt dw (2,937.6-mt dw baseline quota + 440.6-mt dw underharvest = 
+3,378.2 mt dw). From the adjusted quota and consistent with Sec.  
+635.27(c)(1)(i): (1) 50 mt dw would be allocated to the Reserve 
+category for inseason adjustments and research; (2) 300 mt dw would be 
+allocated to the incidental category, which covers recreational 
+landings and landings by incidental swordfish permit holders; and (3) 
+the remainder of the adjusted quota (3,028.2 mt dw) would be allocated 
+to the directed category, which will be split equally between two 
+seasons in 2026 (January through June, and July through December) 
+(table 1).
+
+              Table 1--2026 North Atlantic Swordfish Quotas
+------------------------------------------------------------------------
+ North Atlantic swordfish quota (mt dw)        2025            2026
+------------------------------------------------------------------------
+Baseline Quota..........................         2,937.6         2,937.6
+International Quota Transfers *.........       (-) 225.6               0
+Underharvest from Previous Year.........         2,558.3         2,514.9
+Underharvest Carryover from Previous           (+) 440.6       (+) 440.6
+ Year [dagger]..........................
+Adjusted Quota (Baseline + Carryover-            3,152.6         3,378.2
+ Transfer)..............................
+------------------------------------------------------------------------
+                            Quota Allocation
+------------------------------------------------------------------------
+Directed Category.......................         2,802.6         3,028.2
+Incidental Category.....................             300             300
+Reserve Category........................              50              50
+------------------------------------------------------------------------
+* Under ICCAT Recommendation 24-10, the United States transferred 225.6
+  mt dw (300 mt ww) to Costa Rica in 2025.
+[dagger] Allowable underharvest carryover is capped at 15 percent of the
+  baseline quota (440.6 mt dw).
+
+
+[[Page 53529]]
+
+South Atlantic Swordfish Annual Quota and Adjustment Process
+
+    In this rulemaking, NMFS is not making any changes to the current 
+South Atlantic swordfish quota or adjustment process for 2026 or for 
+future years. This process is codified at Sec.  635.27(c) (72 FR 56929, 
+October, 5, 2007). However, consistent with the South Atlantic 
+swordfish quota regulations at Sec.  635.27(c), NMFS is taking action 
+to temporarily adjust the U.S. annual South Atlantic swordfish quota. 
+Specifically, the U.S. South Atlantic swordfish baseline annual quota 
+is 75.2 mt dw (100 mt ww), and the amount of underharvest that the 
+United States can carry forward from one year to the next is 75.2 mt dw 
+(100 mt ww) (table 2). In 2025, there were no landings of South 
+Atlantic swordfish by U.S. fishermen, which is an underharvest of 75.2 
+mt dw of the 2025 adjusted quota. Of that underharvest, 75.2 mt dw may 
+be carried forward to the 2026 fishing year. Under Recommendations 17-
+03 and 22-04, the United States continues to transfer a total of 75.2 
+mt dw (100 mt ww) to other countries. These transfers are 37.6 mt dw 
+(50 mt ww) to Namibia, 18.8 mt dw (25 mt ww) to C[ocirc]te d'Ivoire, 
+and 18.8 mt dw (25 mt ww) to Belize. Thus, the adjusted 2026 South 
+Atlantic swordfish quota is 75.2 mt dw (table 2).
+
+              Table 2--2026 South Atlantic Swordfish Quotas
+------------------------------------------------------------------------
+ South Atlantic swordfish quota (mt dw)        2025            2026
+------------------------------------------------------------------------
+Baseline Quota..........................            75.2            75.2
+International Quota Transfers *.........         (-)75.2         (-)75.2
+Underharvest from Previous Year.........            75.2            75.2
+Underharvest Carryover from Previous                75.2            75.2
+ Year [dagger]..........................
+Adjusted quota (Baseline + Carryover +              75.2            75.2
+ Transfers).............................
+------------------------------------------------------------------------
+* Under ICCAT Recommendations 17-03 and 22-04, the United States
+  transfers 75.2 mt dw (100 mt ww) annually as follows: Namibia (37.6 mt
+  dw, 50 mt ww); C[ocirc]te d'Ivoire (18.8 mt dw, 25 mt ww); and Belize
+  (18.8 mt dw, 25 mt ww).
+[dagger] Allowable underharvest carryover is capped at 75.2 dw (100 mt
+  ww) for the South Atlantic.
+
+Northern Albacore Annual Quota and Adjustment Process
+
+    In this rulemaking, no changes are being made regarding the U.S. 
+baseline quota and quota adjustment provisions codified at Sec.  
+635.27(e), as no regulatory changes are necessary for U.S. 
+implementation of the current ICCAT recommendation on northern 
+albacore. However, consistent with the regulations, NMFS is temporarily 
+adjusting the U.S. annual northern albacore quota for 2026. 
+Additionally, NMFS explains the range of adjusted quotas possible under 
+the existing management procedure and provides updated analyses in the 
+supporting document. Implementation of the management procedure and the 
+current quota adjustment processes for northern albacore are codified 
+at Sec.  635.27(e)(2) (87 FR 33049, June 1, 2022).
+    Consistent with the northern albacore quota regulations at Sec.  
+635.27(e), NMFS adjusts the U.S. annual northern albacore quota for 
+allowable underharvest in the previous year. NMFS makes these 
+adjustments consistent with ICCAT carryover limits, once complete catch 
+information for the prior year is available and finalized. The baseline 
+quota is 889.4 mt. The maximum underharvest that may be carried forward 
+from one year to the next is 25 percent of its baseline quota (i.e., 
+222.4 mt).
+    For 2025, the adjusted quota was 1,111.8 mt (90 FR 60017, December 
+23, 2025). In 2025, the United States landed 188.8 mt of northern 
+albacore which is 923 mt less than the 2025 adjusted quota. This 
+underharvest exceeds the 222.4-mt underharvest carryover limit allowed 
+under Recommendation 23-05; therefore, only 222.4 mt may be carried 
+forward to the 2026 fishing year. Thus, the adjusted 2026 northern 
+albacore quota is 1,111.8 mt (889.4-mt baseline quota + 222.4-mt 
+carryover = 1,111.8 mt) (table 3).
+
+                  Table 3--2026 Northern Albacore Quota
+------------------------------------------------------------------------
+     Northern albacore quota (mt ww)           2025            2026
+------------------------------------------------------------------------
+Baseline Quota..........................           889.4           889.4
+Underharvest from Previous Year.........           838.9             923
+Underharvest Carryover from Previous           (+) 222.4       (+) 222.4
+ Year [dagger]..........................
+Adjusted Quota (Baseline + Underharvest)         1,111.8         1,111.8
+------------------------------------------------------------------------
+[dagger] Allowable underharvest carryover is capped at 25 percent of the
+  baseline quota allocation (222.4 mt ww).
+
+Bluefin Tuna Annual Quota and Subquotas
+
+    In this rulemaking, NMFS implements a U.S. bluefin tuna baseline 
+quota of 1,509.98 mt, reflecting adoption of the new quota by ICCAT in 
+Recommendation 25-05. In implementing the new baseline quota, NMFS also 
+modifies the codified quotas and subquotas at 635.27(a), using the 
+currently codified percentages. NMFS also increases the pelagic 
+longline bycatch set-aside quota from 25 mt to 62.5 mt, as well as 
+modifies how it is accounted for, consistent with Recommendation 25-05. 
+The current quota adjustment processes and domestic quota allocations 
+for Atlantic bluefin tuna were codified in Amendment 13 to the HMS FMP 
+(87 FR 59966, October 3, 2022) at Sec.  635.27(a). NMFS is not making 
+any changes to the current regulatory formula codified at Sec.  
+635.27(a) that distributes the U.S. baseline quota among domestic quota 
+categories or the quota adjustment process.
+    Section 635.27(a) details the current regulatory quota formulas for 
+dividing the baseline bluefin tuna quota among
+
+[[Page 53530]]
+
+domestic categories. The baseline category quotas and subquotas that 
+result from applying the regulatory formulas under the quota increase 
+are shown in table 4. The changes to the text of Sec.  635.27(a) are to 
+insert the new quota and resulting category and subquota amounts.
+
+                         Table 4--New Annual Baseline Bluefin Tuna Quotas and Subquotas
+----------------------------------------------------------------------------------------------------------------
+                                                    Annual
+                   Category                     baseline quota              Subquotas                Subquota
+                                                     (mt)                                          amounts (mt)
+----------------------------------------------------------------------------------------------------------------
+General.......................................           815.4  ................................  ..............
+                                                                January-March...................            43.2
+                                                                June-August.....................           407.7
+                                                                September.......................           216.1
+                                                                October-November................           106.0
+                                                                December........................            42.4
+Harpoon.......................................            67.9  ................................  ..............
+Longline......................................           240.1  ................................  ..............
+Trap..........................................             1.5  ................................  ..............
+Angling.......................................           341.3  ................................  ..............
+                                                                School..........................           157.2
+                                                                Reserve:........................            29.1
+                                                                   North of 39[deg]18' N Lat....            60.5
+                                                                   South of 39[deg]18' N Lat....            67.7
+                                                                Large School/Small Medium:......           173.4
+                                                                   North of 39[deg]18' N Lat....            81.9
+                                                                   South of 39[deg]18' N Lat....            91.6
+                                                                Trophy:.........................            10.6
+                                                                   North of 42[deg] N Lat.......             2.6
+                                                                   North of 39[deg]18' N Lat....             2.6
+                                                                   South of 39[deg]18' N Lat....             2.6
+                                                                   Gulf of America..............             2.6
+Reserve.......................................            43.8  ................................  ..............
+U.S. Baseline Quota...........................  ..............  ................................        1,509.98
+Bycatch set-aside (for use by Longline          ..............  ................................            62.5
+ category).
+                                               -----------------------------------------------------------------
+    Annual Total U.S. quota...................  ..............  ................................        1,572.48
+----------------------------------------------------------------------------------------------------------------
+Note: Totals subject to rounding.
+
+    As explained in the proposed rule, there is outdated language in 
+Sec.  635.27(a) that provides that NMFS may subtract the most recent, 
+complete, and available estimate of dead discards from the annual U.S. 
+quota, and make the remainder available to be retained, possessed, or 
+landed by persons and vessels subject to U.S. jurisdiction. Amendments 
+7 and 13 to the HMS FMP changed the bluefin tuna quota category 
+calculations so that the codified category percentages are applied 
+directly to the baseline quota, but the dead discards text was 
+inadvertently left in Sec.  635.27(a). Accordingly, this final rule 
+deletes that text.
+
+Revisions and Adjustments Related to the 2026 Bluefin Tuna Quotas for 
+the Harpoon, Longline, and Reserve Categories
+
+    NMFS recalculates the 2026 Harpoon, Longline, and Reserve category 
+quotas based on the baseline bluefin tuna quota increase and inseason 
+transfers that took place earlier in 2026. In July, NMFS transferred 
+6.4 mt of Reserve category quota to the Harpoon category resulting in 
+an adjusted Harpoon category quota of 65.6 mt (91 FR 43571, July 16, 
+2026). With this final rule, the adjusted Harpoon category quota is 
+revised to be 74.3 mt (67.9 mt new baseline Harpoon category quota + 
+6.4 mt transfer from July).
+    In February, NMFS transferred 30.8 mt of Reserve category quota to 
+the Longline category resulting in an adjusted Longline category quota 
+of 240.1 mt (91 FR 5855, February 10, 2026). Consistent with Sec.  
+635.15(e)(1), NMFS provided each IBQ shareholder an equal amount of 
+transferred quota. As discussed in the February Federal Register 
+notice, NMFS transferred quota then to optimize fishing opportunities 
+for longline vessels at a time bluefin tuna interactions are more 
+likely in the areas they operate through increasing flexibility in the 
+availability of IBQ quota for leasing amongst vessels as needed. With 
+the new baseline quota in this final rule, the adjusted Longline 
+category quota is 270.9 mt (240.1 mt new baseline Longline category 
+quota + 30.8 mt from the February 2026 transfer). As described below, 
+NMFS has decided to make a further adjustment to this quota.
+    Following the February and July quota transfers, the Reserve 
+category quota was 1 mt. With the new baseline quota in this final 
+rule, the adjusted Reserve category quota is 6.6 mt (43.8 mt new 
+baseline Reserve category quota-30.8 mt from the February 2026 
+transfer-6.4 mt from the July 2026 transfer). At this time, NMFS is 
+further transferring 30.8 mt of quota from the Longline category to the 
+Reserve category, thus resulting in adjusted quotas of 240.1 mt 
+(Longline) and 37.4 mt (Reserve). As this transfer adjusts the Longline 
+category quota to be equal to the new baseline Longline category quota, 
+NMFS will not be adjusting IBQ allocations as a result of this transfer 
+or the new baseline quota. However, as described below, NMFS is making 
+further adjustments to the IBQ allocations as a result of implementing 
+the changes to the pelagic longline bycatch set-aside quota adopted by 
+ICCAT in 2025.
+    Regulations at Sec.  635.27(a)(8) authorize NMFS to transfer quota 
+among fishing categories or subcategories after considering the 
+determination criteria provided under Sec.  635.27(a)(7) and other 
+relevant factors. Per Sec.  635.27(a)(6), quota from the Reserve 
+category may be transferred to other fishing categories as
+
+[[Page 53531]]
+
+needed throughout the year or utilized for the issuance of exempted 
+fishing and other permitted research needs. A key consideration for 
+this action is that an increased Reserve category quota would provide 
+maximum flexibility for NMFS to transfer quota as needed to the various 
+sectors of the bluefin tuna fishery and optimize fishing opportunities 
+to harvest the increased U.S. bluefin tuna annual baseline quota (Sec.  
+635.27(a)(7)(x)) within the remainder of the 2026 fishing year. NMFS 
+also considered catches over the last several years and landings to 
+date this year among each quota category that may receive a future 
+transfer from the Reserve category and the likelihood of closure of 
+those fisheries if no adjustment is made later in the year (Sec.  
+635.27(a)(7)(ii)), as well as daily landing trends and the availability 
+of bluefin tuna on fishing grounds (Sec.  635.27(a)(7)(ix)). As noted 
+earlier, NMFS transferred 30.8 mt of quota to the Longline category in 
+February to optimize fishing opportunities at a time when bluefin tuna 
+interactions are more likely, and thus IBQ usage or leasing are more 
+necessary, where those vessels operate. Historically, bluefin tuna 
+landings within the General and Angling categories increase from June 
+through December. In contrast, Longline category landings over this 
+same time frame tend to decrease as there are fewer interactions with 
+bluefin tuna compared to earlier in the year (i.e., January through 
+March). Adding quota availability to the Reserve category mitigates the 
+risk that NMFS may need to close other fishing categories even though 
+bluefin tuna remain available in the areas where General and Angling 
+category permitted vessels operate, while still allowing for additional 
+Longline category quota needs if bluefin tuna interactions happen to 
+increase later in the year beyond the category's increased baseline 
+quota. Similarly, this transfer considers variations in seasonal 
+distribution, abundance, or migration patterns of bluefin tuna (Sec.  
+635.27(a)(7)(vii)). While the quota transfer to the Longline category 
+earlier in the year optimized fishing opportunities for those vessels 
+then, transferring quota from the Longline category to the Reserve 
+category helps to address the diversity of the bluefin tuna fishery 
+with respect to timing during the latter part of the year (i.e., 
+fishing when there tends to be more bluefin tuna available on fishing 
+grounds).
+    Further, regarding the ability of the vessels fishing under each 
+quota category that may receive a transfer from the Reserve category to 
+harvest the additional amount of bluefin tuna quota that would become 
+available before the end of the fishing year (Sec.  635.27(a)(7)(iii)), 
+NMFS considered landings in each category over the last several years. 
+Landings are highly variable and depend on access to commercial-sized 
+bluefin tuna and fishing conditions, among other factors. Given the 
+increase in bluefin tuna availability in recent years, a quota transfer 
+to the Reserve quota provides the most likelihood that the quota amount 
+will be harvested before the end of the fishing year, as it could be 
+further transferred to other fishing categories as needed. Finally, 
+NMFS is implementing this transfer with the objective of providing 
+opportunities to harvest available quota without exceeding the annual 
+quota, based on the objectives of the HMS FMP and its amendments, 
+including to achieve optimum yield on a continuing basis and to allow 
+all permit categories a reasonable opportunity to harvest available 
+bluefin tuna quota allocations (Sec.  635.27(a)(7)(vi) and related to 
+Sec.  635.27(a)(7)(x)). In summary, this transfer results in an 
+adjusted Longline category quota of 240.1 mt and an adjusted Reserve 
+category quota of 37.4 mt.
+
+Adjustment of the 2026 Bluefin Tuna Reserve Category Quota for 2025 
+Underharvest
+
+    Regulations at Sec.  635.27(a)(9) regarding annual adjustments of 
+category quotas provide that, if NMFS determines that catches from the 
+previous year indicate that a bluefin tuna quota for any category or, 
+as appropriate, subcategory has not been reached (underharvest), NMFS 
+may add all or a portion of the underharvest to that quota category or 
+subcategory and/or the Reserve category in the following year. The 
+underharvest that is carried forward may not exceed 100 percent of each 
+category's baseline allocation, and the total of the adjusted fishing 
+category quotas and the Reserve category quota must be consistent with 
+ICCAT recommendations. Consistent with these regulations, the annual 
+adjusted quota is thus calculated as detailed in the proposed rule and 
+supporting document. NMFS makes such temporary adjustments consistent 
+with ICCAT quota adjustment provisions and when complete catch 
+information for the prior year is available and finalized.
+    Consistent with Recommendation 25-05, the maximum underharvest that 
+the United States can carry forward from one year to the next is 10 
+percent of its total annual quota, which equates to 134.1 mt for 2025. 
+In 2025, the adjusted U.S. quota was 1,199.94 mt (including the 25-mt 
+set-aside for the Northeast Distant gear restricted area (NED)) (90 FR 
+60017, December 23, 2025), and the U.S. catch, including landings and 
+dead discards, totaled 1,125.1 mt. Thus, the 2025 underharvest was 74.8 
+mt. As such, the United States is carrying forward the allowable 74.8 
+mt underharvest to 2026. Per Sec.  635.27(a)(9), NMFS is augmenting the 
+2026 Reserve category quota with this 2025 underharvest.
+    As described above, the transfer to the Reserve category from the 
+Longline category, would result in an adjusted 2026 Reserve category 
+quota of 37.4 mt. With the addition of the underharvest of 74.8 mt, the 
+adjusted 2026 Reserve category quota as of the effective date of this 
+action is 112.2 mt (37.4 mt + 74.8 mt (2025 underharvest carryover in 
+this action)) (table 5).
+
+                    Table 5--2026 Bluefin Tuna Quotas
+------------------------------------------------------------------------
+       Bluefin tuna quota (mt ww)              2025            2026
+------------------------------------------------------------------------
+Baseline Quota..........................        1,316.14        1,509.98
+Total Quota (Baseline Quota + Bycatch           1,341.14        1,572.48
+ Allocation) *..........................
+Under (+) or over (-) harvest from                -141.2            74.8
+ Previous Year [dagger].................
+Adjusted Quota (Total quota + Carryover)        1,199.94        1,647.28
+Baseline Reserve Category Quota.........            38.2            43.8
+Adjusted Reserve Category Quota (Reserve              NA           112.2
+ Category Quota + Carryover)............
+------------------------------------------------------------------------
+Values in this table are subject to rounding error.
+* The United States is allocated an additional 25 mt in 2025 and 62.5 mt
+  in 2026 to account for bycatch related to pelagic longline fisheries.
+[dagger] Allowable underharvest carryover is capped at 10 percent of the
+  total annual quota (134.1 mt ww in 2025).
+
+
+[[Page 53532]]
+
+Implementation of Pelagic Longline Bycatch Set-Aside Quota for Bluefin 
+Tuna
+
+    Consistent with ICCAT Recommendation 25-05, in this rulemaking, 
+NMFS increases the pelagic longline bycatch set-aside quota from 25 mt 
+to 62.5 mt (table 4) and allocates this set-aside quota to pelagic 
+longline IBQ shareholders with IBQ shares designated for the Atlantic 
+region as defined at Sec.  635.15(c)(3). That section defines the Gulf 
+of America region as all waters of the U.S. exclusive economic zone 
+west and north of the boundary stipulated at Sec.  600.105(c) and the 
+Atlantic region as all other waters of the Atlantic Ocean including the 
+NED, a large area whose coordinates are set forth in Sec.  635.2.
+    In this rule, NMFS also changes how this set-aside quota will be 
+used and distributed. Specifically, NMFS will no longer account for 
+bluefin tuna catch in the NED separately from bluefin tuna catch in the 
+rest of the Atlantic region; instead, NMFS will allocate the pelagic 
+longline bycatch set-aside quota to pelagic longline vessels that have 
+fishing history in the Atlantic region and will annually distribute 
+Atlantic allocation to each IBQ shareholder based on their IBQ share 
+percentage. IBQ shareholders with shares designated for the Gulf region 
+will not receive allocation from the set-aside quota, and Atlantic IBQ 
+allocation cannot be used in the Gulf under existing regulations, which 
+remain in place, the existing gear and bait requirements at Sec.  
+635.21(c)(2) and (4) specific to pelagic longline vessels fishing in 
+the NED also remain in place.
+    With this change, for the remainder of 2026, NMFS will distribute 
+the 62.5 mt to 2026 IBQ shareholders that have been issued Atlantic 
+IBQ. Consistent with Sec.  635.15(e)(3), each applicable IBQ 
+shareholder will receive their share percentage. Shareholders should 
+receive this additional amount in their IBQ accounts shortly.
+
+Response to Comments
+
+    NMFS received 39 written comments from individual members of the 
+public. All written comments can be found at <a href="https://www.regulations.gov/docket/NOAA-NMFS-2025-0053">https://www.regulations.gov/docket/NOAA-NMFS-2025-0053</a>. NMFS also received oral 
+comments from the HMS Advisory Panel and during a public hearing 
+webinar. Below, NMFS summarizes and responds to the written and oral 
+comments made on the proposed rule during the comment period.
+    Comment 1: NMFS received multiple comments supporting the increased 
+U.S. bluefin tuna baseline quota from 1,316.14 mt to 1,509.98 mt as 
+preferred in Alternative C2.
+    Response: NMFS agrees that implementing the increased bluefin tuna 
+baseline quota under Alternative C2 is appropriate and necessary to 
+provide fishing opportunities consistent with the Magnuson-Stevens Act 
+and ATCA.
+    Comment 2: NMFS received multiple comments regarding implementation 
+of the pelagic longline bycatch set-aside quota, specifically the 
+incorporation of that quota into the Atlantic IBQ shares for pelagic 
+longline fishermen. Some comments supported preferred Alternative D3 to 
+allocate the pelagic longline bycatch set-aside quota to IBQ 
+shareholders with IBQ shares designated for the Atlantic region, 
+although some other commenters suggested limiting the availability of 
+the set-aside quota to Atlantic IBQ shareholders in only portions of 
+the Atlantic. Some commenters requested that NMFS limit the allocation 
+of this quota to certain IBQ shareholders such that it be used only in 
+areas where bluefin tuna are caught, or creating an IBQ designation 
+line separating the mainland east coast from the Caribbean; they 
+indicate that there are no interactions with bluefin tuna in the 
+Caribbean Sea. One commenter requested a proportional distribution of 
+quota based on where vessels land bluefin tuna. Another commenter 
+suggested that the agency consider the ICCAT bluefin tuna Management 
+Strategy Evaluation (MSE) statistical map in place of the ICCAT bluefin 
+tuna sampling areas map when describing in which areas this quota would 
+apply.
+    Response: As discussed in Chapters 3 and 4 of the supporting 
+document, research shows that more than 50 percent of commercial-sized 
+bluefin tuna caught in U.S. fisheries are of eastern Atlantic and 
+Mediterranean origin. Given this, NMFS agrees that incorporating the 
+bluefin tuna pelagic longline set-aside quota into the Atlantic IBQ 
+shares pool is appropriate and consistent with ICCAT Recommendation 25-
+05, paragraph 6, which refers to bycatch related to pelagic longline 
+fisheries in the vicinity of the management area boundary and adjacent 
+areas derived from the eastern Atlantic and Mediterranean bluefin tuna 
+TAC. NMFS does not believe that limiting the use of the 62.5-mt bycatch 
+set-aside quota to only certain portions of the Atlantic is appropriate 
+at this time. Under Alternative D3, NMFS includes all of the areas in 
+the vicinity of the management area boundary. Applying quota to all 
+areas would be consistent with the Recommendation and with providing 
+U.S. fishing opportunities, under the Magnuson-Stevens Act and ATCA. 
+Additionally, Atlantic IBQ shares are applicable to pelagic longline 
+fishing in all of the Atlantic outside the Gulf of America. Sub-
+dividing Atlantic IBQ use or shares on a geographic basis would require 
+full rulemaking in support of an FMP Amendment and is outside the scope 
+of this rulemaking.
+    NMFS acknowledges that there are not many pelagic longline 
+interactions with bluefin tuna in the Caribbean Sea. However, pelagic 
+longline effort historically has occurred in the Caribbean Sea for 
+target species such as swordfish and yellowfin tuna. Under the current 
+regulations, NMFS annually distributes IBQ based on fishing effort. 
+This fishing effort is not dependent on bluefin tuna landings, rather 
+it is dependent on the number of sets that individual vessels make in 
+the relevant 36-month period. If pelagic longline vessels are making 
+fishing sets, they are eligible for IBQ regardless of if the vessel's 
+home port is in the Caribbean. As such, under the preferred 
+alternative, NMFS would distribute the pelagic longline bycatch set-
+aside quota of 62.5 mt to pelagic longline IBQ shareholders with IBQ 
+shares designated for the Atlantic region. There is no distinction in 
+the IBQ program for different areas of the Atlantic region, outside the 
+Gulf of America.
+    With respect to the suggestion to use the map of bluefin tuna MSE 
+spatial areas, NMFS considered the MSE map to illustrate appropriate 
+areas to apply the pelagic longline bluefin tuna bycatch set-aside 
+quota. However, NMFS chose the ICCAT bluefin tuna sampling areas map to 
+illustrate these alternatives, as a map that is generally more familiar 
+to fishery participants and other stakeholders. The MSE spatial areas 
+reinforce the underlying concept that the area adjacent to the 
+management area boundary is the entire western Atlantic area extending 
+to the shore, and that area is not further subdivided (other than 
+differentiating between the Atlantic and the Gulf of America). As in 
+the current regulations, usage of Atlantic IBQ would not be limited to 
+any certain area under any of the possible maps (domestic or ICCAT) but 
+would continue to apply in the entire Atlantic outside the Gulf of 
+America.
+    Comment 3: NMFS received a comment requesting that the agency 
+include economic analysis on private anglers for the bluefin tuna quota 
+increase in the Regulatory Flexibility Act (RFA) section of the rule. 
+This
+
+[[Page 53533]]
+
+commenter noted that in the RFA section, economic information was 
+presented only on the commercial and for-hire fleets.
+    Response: Under the RFA, small entities are defined as small 
+businesses, small non-profit organizations, and small governmental 
+jurisdictions. Since private anglers are individuals, they are not 
+considered small entities under the RFA. Thus, analysis of the economic 
+impacts to private anglers is not found in the RFA section of this 
+rule. However, NMFS analyzed the social and economic impacts of 
+implementing the ICCAT bluefin tuna quota increase (preferred 
+Alternative C2) for private anglers in Chapter 4 (EA) and Chapter 5 
+(RIR) of the supporting document.
+    Comment 4: NMFS received multiple comments in support of 
+implementing the North Atlantic swordfish management procedure.
+    Response: NMFS is finalizing the preferred alternative to implement 
+the North Atlantic swordfish management procedure.
+    Comment 5: NMFS received multiple comments that are outside the 
+scope of this rulemaking including suggestions to: (1) negotiate for a 
+higher U.S. share of the western Atlantic bluefin tuna TAC at ICCAT; 
+(2) change the bluefin tuna retention limits; (3) reconsider the 
+separation of western and eastern Atlantic bluefin tuna stocks; (4) 
+prohibit fishing; and (5) include ``seafood gleaning'' (which is 
+defined as giving a fish that was landed but not sold at some point in 
+the supply chain and providing it to those in need) in fishery 
+management plans. One commenter suggested reimbursing (partially or 
+wholly) anglers for the cost of an HMS Angling permit if the 
+recreational bluefin tuna fishery closes before the end of the year. 
+One commenter noted ICCAT's bluefin tuna management procedure, 
+referencing potential future revisions. Other commenters provided 
+suggestions related to the accounting of recreational landings of 
+bluefin tuna under the U.S. quota.
+    Response: These comments are outside the scope of this rulemaking. 
+The purpose of this action is to implement the ICCAT recommendations 
+adopting management procedures and current TACs, quotas, transfers, and 
+quota adjustment provisions for North and South Atlantic swordfish, 
+northern albacore, and bluefin tuna (Recommendations 25-10, 22-04, 23-
+05, and 25-05, respectively), as necessary and appropriate pursuant to 
+ATCA, and to achieve domestic management objectives under the Magnuson-
+Stevens Act. However, note that this final rule does not include any 
+changes to recreational fishing mortality tracking and accounting, 
+reporting or quotas. To the extent that these comments are suggesting 
+development of U.S. proposals at ICCAT, U.S. proposals and priorities 
+for ICCAT generally are discussed in the context of the U.S. ICCAT 
+Advisory Committee meetings, which typically have at least one session 
+per meeting open to the public. For more information on the ICCAT and 
+the ICCAT Advisory Committee meetings, please refer to the website: 
+<a href="https://www.fisheries.noaa.gov/international-affairs/international-commission-conservation-atlantic-tunas">https://www.fisheries.noaa.gov/international-affairs/international-commission-conservation-atlantic-tunas</a>.
+
+Changes From the Proposed Rule
+
+    This final rule includes two changes to the regulatory text from 
+the proposed rule to correct a regulatory reference. The final 
+regulatory text for Sec.  635.15(d)(1) and (2) is corrected to 
+reference Sec.  635.15(e)(3) in addition to Sec.  635.15(e)(2).
+
+Classification
+
+    NMFS is issuing this final rule and temporary quota actions 
+pursuant to the ATCA section 971d(c)(1)(A) (16 U.S.C. 971d(c)(1)(A), 
+and sections 304(g)(1) and 305(d) of the Magnuson-Stevens Act (16 
+U.S.C. 1854(g)(1) and 1855(d)). The NMFS Assistant Administrator has 
+determined that this rule and quota actions are consistent with the HMS 
+FMP and its amendments, ATCA, other provisions of the Magnuson-Stevens 
+Act, and other applicable law.
+    A proposed rule was published on May 7, 2026, to provide prior 
+notice and an opportunity for public comment on implementation of the 
+new Atlantic bluefin tuna quota and pelagic longline bycatch set-aside 
+quota, annual quota adjustment procedures for Atlantic bluefin tuna, 
+swordfish, and albacore tuna and 2026 adjustments, and the North 
+Atlantic swordfish and northern albacore management procedures (91 FR 
+24789). This final action also includes a temporary bluefin tuna quota 
+transfer from the Longline category to the Reserve category.
+    The Assistant Administrator for NMFS (AA) finds that pursuant to 5 
+U.S.C. 553(b)(B), there is good cause to waive prior notice of, and 
+opportunity for public comment on, the temporary quota transfer because 
+it is contrary to the public interest for the following reasons. The 
+regulations implementing the HMS FMP and amendments provide for 
+inseason adjustments and quota transfers to respond to the 
+unpredictable nature of bluefin tuna availability on the fishing 
+grounds, the migratory nature of this species, and the regional 
+variations in the bluefin tuna fishery. Providing prior notice and an 
+opportunity for public comment is contrary to the public interest as 
+various sectors of this fishery are currently underway. Delaying the 
+transfer would decrease the ability to optimize fishing opportunities 
+amongst fishing categories to utilize the new U.S. quota when bluefin 
+tuna are available on fishing grounds and would not provide a 
+comprehensive and transparent account of bluefin tuna quota management 
+among fishing categories. This action does not raise conservation and 
+management concerns and would support effective management of the 
+bluefin tuna fishery. The quota transfer action itself does not affect 
+the overall ICCAT-allocated U.S. bluefin tuna quota. As NMFS has stated 
+previously, the public had an opportunity to comment on the underlying 
+rulemakings that established the inseason adjustment criteria, as well 
+as the new U.S. bluefin tuna quota in the proposed rule published in 
+May 2026. Comments received on the underlying rulemakings were fully 
+considered in the promulgation of those past final rules.
+    The 30-day delay in effective date requirement does not apply to 
+this final rule because the final rule relieves restrictions on the 
+level of bluefin tuna harvest allowed by the U.S. bluefin tuna fishery 
+(5 U.S.C. 553(d)(1)) and because there is good cause for the rule and 
+temporary quota actions to take effect upon publication in the Federal 
+Register. (5 U.S.C. 553(d)(3)).
+    The fisheries for northern albacore, North and South Atlantic 
+swordfish, and bluefin tuna began on January 1, 2026. Implementation of 
+the increased U.S. bluefin tuna quota and pelagic longline set-aside 
+quota needs to occur as soon as possible to prevent premature closure 
+of bluefin tuna subcategory quotas and unnecessary loss of fishing 
+opportunities.
+    With respect to the annual quota adjustments, NMFS monitors 
+northern albacore, North and South Atlantic swordfish, and bluefin tuna 
+annual catch and uses the previous year's catch data to calculate the 
+legally allowable quotas for the current year. However, these 
+adjustments to the 2026 quotas could not occur earlier in the year 
+because the final 2025 landings data--which first must be collected, 
+compiled and submitted in association with ICCAT reporting 
+requirements--were not available until now.
+    Given that these fisheries are currently open and permit-holders 
+are actively fishing, delaying the effective date of this rule's quota 
+increases and
+
+[[Page 53534]]
+
+adjustments would in turn lead to premature closure of one or more 
+affected fisheries if the unadjusted quota limit is reached within the 
+next 30 days. Such an event would negatively affect the regulated 
+fisheries' reasonable opportunity to catch the available quotas, 
+contrary to Magnuson-Stevens Act requirements and overall purpose of 
+sound conservation and management of fisheries--including HMS--in a 
+manner that achieves optimum yield. Therefore, this rule taking effect 
+without a 30-day delay in effective date removes a restriction on the 
+fishery and is not subject to the requirement.
+    Furthermore, delaying the effective date of this rule would delay 
+the application of South Atlantic swordfish quota transfers pursuant to 
+ICCAT obligations to U.S. quota limits, contrary to requirements under 
+ATCA, and delay NMFS' ability to transfer quota inseason, as needed, 
+among bluefin tuna subquota fishing categories to ensure fishing 
+opportunities and avoid premature fishery closures. As with the quota 
+adjustments, such a delay would be contrary to the Magnuson-Stevens Act 
+requirement to allow U.S. vessels reasonable opportunity to harvest HMS 
+allocations and quotas under relevant international fishery agreements 
+such as the ICCAT Convention.
+    Finally, similar to the reasons noted above regarding a waiver of 
+prior notice for the bluefin tuna quota transfer action, delaying the 
+effective date of the bluefin tuna quota transfer to the Reserve 
+category would decrease the ability to optimize fishing opportunities 
+across the bluefin tuna fishery sectors when bluefin tuna are available 
+on fishing grounds. Therefore, there is good cause for the rule to take 
+effect without a 30-day delay in effective date.
+    This final rule has been determined to be not significant for 
+purposes of Executive Order 12866.
+    This final rule is an Executive Order 14192 deregulatory action.
+    NMFS has determined that this action would not have a substantial 
+direct effect on one or more Indian Tribes, on the relationship between 
+the Federal Government and Indian Tribes, or on the distribution of 
+power and responsibilities between the Federal Government and Indian 
+Tribes; therefore, consultation with Tribal officials under Executive 
+Order 13175 is not required, and the requirements of section (5)(b) and 
+(c) of Executive Order 13175 also do not apply. A Tribal summary impact 
+statement under section (5)(b)(2)(B) and (c)(2) of Executive Order 
+13175 is not required and has not been prepared.
+    A FRFA was prepared for this final rule. The FRFA incorporates the 
+IRFA, a summary of the significant issues raised by the public comments 
+in response to the IRFA, NMFS' responses to those comments, and a 
+summary of the analyses updated in response to the comments and 
+completed to support the action. A copy of this analysis is available 
+from NMFS (see ADDRESSES section). A summary is provided below.
+    Section 604(a)(1) of the Regulatory Flexibility Act (RFA) requires 
+agencies to state the need for, and objective of, the final action. The 
+need for this action is to implement the ICCAT recommendations adopting 
+management procedures and current TACs, quotas, transfers, and 
+carryforward provisions for North and South Atlantic swordfish, 
+northern albacore, and bluefin tuna (Recommendations 25-10, 22-04, 23-
+05, and 25-05, respectively), as necessary and appropriate pursuant to 
+ATCA, and to achieve domestic management objectives under the Magnuson-
+Stevens Act.
+    Section 604(a)(2) of the RFA requires a summary of significant 
+issues raised by the public in response to the IRFA, a summary of the 
+agency's assessment of such issues, and a statement of any changes made 
+in the rule as a result of the comments. NMFS received 39 written 
+comments and additional verbal comments following presentations at the 
+2026 Spring HMS Advisory Panel meeting and public webinar. Summarized 
+public comments and NMFS' responses to them are included in the final 
+rule associated with this FRFA. Only one comment referred to the IRFA 
+impacts in this rule.
+    Comment: NMFS received a comment requesting that the agency include 
+economic analysis on private anglers for the bluefin tuna quota 
+increase in the RFA section of the rule. This commenter noted that in 
+the RFA section, economic information was only presented on the 
+commercial and for-hire fleets.
+    Response: Under the RFA, small entities are defined as small 
+businesses, small non-profit organizations, and small governmental 
+jurisdictions. Since private anglers are individuals, they are not 
+considered small entities under the RFA. Thus, analysis of the economic 
+impacts to private anglers is not found in the RFA section of this 
+rule. However, NMFS analyzed the social and economic impacts of 
+implementing the ICCAT bluefin tuna quota increase (preferred 
+Alternative C2) for private anglers in chapter 4 (EA) and chapter 5 
+(RIR) of the supporting document.
+    Section 604(a)(3) of the RFA requires the agency to respond to any 
+comments filed by the Chief Counsel for Advocacy of the Small Business 
+Administration (SBA) in response to the proposed rule, and a detailed 
+statement of any change made in the rule as a result of such comments. 
+NMFS did not receive any comments from the Chief Counsel for Advocacy 
+of the SBA in response to the proposed rule.
+    Section 604(a)(4) of the RFA requires agencies to provide 
+descriptions of, and where feasible, an estimate of the number of small 
+entities to which the rule would apply. The SBA has established size 
+criteria for all major industry sectors in the United States, including 
+fish harvesters. Provision is made under SBA's regulations for an 
+agency to develop its own industry-specific size standards after 
+consultation with SBA's Office of Advocacy and an opportunity for 
+public comment (see 13 CFR 121.903(c)). Under this provision, NMFS may 
+establish size standards that differ from those established by the SBA 
+Office of Size Standards, but only for use by NMFS and only for the 
+purpose of conducting an analysis of economic effects in fulfillment of 
+the agency's obligations under the RFA. To utilize this provision, NMFS 
+must publish such size standards in the Federal Register, which NMFS 
+did on December 29, 2015 (80 FR 81194). In that final rule, effective 
+on July 1, 2016, NMFS established a small business size standard of $11 
+million in annual gross receipts for all businesses in the commercial 
+fishing industry (North American Industry Classification System (NAICS) 
+11411) for RFA compliance purposes. NMFS completed a review of the 
+small business size standard on November 24, 2025 (90 FR 52917), that 
+resulted in maintaining the existing size standard. NMFS considers all 
+HMS permit holders to be small entities because they had average annual 
+receipts of less than $11 million for commercial fishing. SBA has 
+established size standards for all other major industry sectors in the 
+United States, including the scenic and sightseeing transportation 
+(water) sector (NAICS code 487210, for-hire), which includes charter/
+party boat entities. SBA has defined a small charter/party boat entity 
+as one with average annual receipts (revenue) of less than $14 million.
+    NMFS considers all HMS permit holders, both commercial and for-
+hire, to be small entities because they had average annual receipts of 
+less than their respective sector's standard of $11 million and $14 
+million. Regarding those entities that would be directly affected by 
+the preferred alternatives, the average annual revenue per pelagic 
+longline vessel that received IBQ shares
+
+[[Page 53535]]
+
+is estimated to be $211,842, based on approximately 76 vessels that 
+produced an estimated $16.1 million in revenue in 2024, which is well 
+below the NMFS small business size standard for commercial fishing 
+businesses of $11 million. No single pelagic longline vessel has 
+exceeded $11 million in revenue in recent years, and all pelagic 
+longline vessel owners have identified themselves as small entities on 
+their permit renewal applications.
+    Other non-longline HMS commercial fishing vessels typically earn 
+less revenue than pelagic longline vessels and, thus, would also be 
+considered small entities. Based on 2025 permit information, NMFS 
+predicts that the preferred alternatives would apply to the following 
+numbers of non-pelagic longline permit holders that fish commercially 
+or engage in commercial or for-hire activities: 2,420 Atlantic Tunas 
+General category, 4,409 HMS Charter/Headboat, 37 Atlantic Tunas Harpoon 
+category, 73 Swordfish Handgear, 616 Swordfish General Commercial, and 
+109 Commercial Caribbean Small Boat permits. This final rule would also 
+impact HMS Angling permit holders, but those permit holders are 
+considered individuals and not small entities under RFA.
+    This action would apply to all participants in the Atlantic 
+swordfish and tuna fisheries. This final rule is expected to directly 
+affect commercial and for-hire fishing vessels that possess an Atlantic 
+Swordfish, Atlantic Tunas, Commercial Caribbean Small Boat, or Atlantic 
+HMS Charter/Headboat permit. It is unknown what portion of HMS Charter/
+Headboat permit holders actively participate in the swordfish, bluefin 
+tuna, and northern albacore fisheries or provide fishing services for 
+recreational anglers. This constitutes the best available information 
+regarding the universe of permits and permit holders recently analyzed.
+    NMFS has determined that the preferred alternatives would not 
+likely directly affect any small organizations or small government 
+jurisdictions defined under RFA, nor would there be disproportionate 
+economic impacts between large and small entities.
+    Section 604(a)(5) of the RFA requires agencies to describe any new 
+reporting, record-keeping, and other compliance requirements. The 
+action does not contain any new collection of information, reporting, 
+or record-keeping requirements.
+    Section 604(a)(6) of the RFA requires agencies to describe the 
+steps the agency has taken to minimize the significant economic impact 
+on small entities consistent with the stated objectives of applicable 
+statutes, including a statement of the factual, policy, and legal 
+reasons for selecting the alternative adopted in the final rule and why 
+each one of the other significant alternatives to the rule considered 
+by the agency which affect the impact on small entities was rejected. 
+As described below, NMFS analyzed several different alternatives in 
+this final rulemaking and provides rationales for identifying the 
+preferred alternatives to achieve the desired objectives. The FRFA 
+assumes that each vessel will have similar catch and gross revenues to 
+show the relative impact of the final action on vessels.
+
+North and South Atlantic Swordfish
+
+    Under Alternative A1, the no action alternative for North and South 
+Atlantic swordfish, NMFS would not implement the ICCAT North Atlantic 
+swordfish management procedure and would maintain implementation of 
+relevant South Atlantic swordfish quota measures. NMFS has estimated 
+the average impact maintaining the North Atlantic swordfish and South 
+Atlantic swordfish quotas for all domestic quota categories would have 
+on individual categories and the permit holders within those 
+categories. For North Atlantic swordfish, the United States is unlikely 
+to achieve 100-percent quota utilization in the short term. In the long 
+term, however, the U.S. swordfish fishery could near 100-percent quota 
+utilization. The maximum adjusted quota considered under Alternative A1 
+is 3,378.2 mt dw. Assuming the 2024 average ex-vessel price of $4.48 
+per pound and 100-percent quota utilization, total possible gross 
+revenues across the domestic North Atlantic swordfish fishery would be 
+estimated to be $33,365,000 under Alternative A1. In 2025, there were 
+150 swordfish directed permit holders, 56 swordfish incidental permit 
+holders, 73 swordfish handgear permit holders, 616 swordfish general 
+commercial permit holders, and 65 incidental squid trawl permit 
+holders. Due to quota tracking complexities, NMFS does not have a 
+proportional breakdown of the total landings by permit type, however, 
+the average annual ex-vessel revenue across all swordfish permit types 
+is $34,755 per vessel ($33,365,000/960 permit holders). Since retention 
+limits are higher for directed permit holders than incidental permit 
+holders, actual per vessel revenue would likely be higher for directed 
+permit holders and lower for incidental permit holders. There would be 
+no change in economic impacts on vessels in the short term under this 
+no action alternative.
+    For South Atlantic swordfish, the United States is unlikely to 
+achieve 100-percent quota utilization in the short term. In the long 
+term, however, the U.S. swordfish fishery could near 100-percent quota 
+utilization. The maximum adjusted quota considered under Alternative A1 
+is 75.2 mt dw. There are no recent landings of South Atlantic swordfish 
+and, thus, no recent ex-vessel prices for the stock, but North Atlantic 
+swordfish prices can be used as a proxy. Assuming the 2024 average ex-
+vessel price of $4.48 per pound for North Atlantic swordfish and 100-
+percent quota utilization, total possible gross revenues across the 
+domestic South Atlantic swordfish fishery would be estimated to be 
+$743,000 under Alternative A1. Due to the distance from the U.S. 
+mainland, only pelagic longline vessels operating under a swordfish 
+directed permit are likely to fish for South Atlantic swordfish and, in 
+2025, there were 150 swordfish directed permits. The long-term 
+estimated potential average annual ex-vessel revenue from South 
+Atlantic swordfish across all swordfish directed permit holders is 
+$4,953 per vessel ($743,000/150 swordfish directed permit holders). 
+Similar to North Atlantic swordfish, there would be no change in 
+economic impacts on vessels in the short term under this no- action 
+alternative.
+    Under preferred Alternative A2, NMFS would implement the ICCAT 
+North Atlantic swordfish management procedure and would not make 
+changes to implementation of relevant South Atlantic swordfish quota 
+measures. NMFS has estimated the average impact of the North Atlantic 
+swordfish and South Atlantic swordfish quotas under the most recent 
+ICCAT recommendations for all domestic quota categories on individual 
+categories and the permit holders within those categories. For North 
+Atlantic swordfish, the United States is unlikely to achieve 100-
+percent quota utilization in the short term. In the long term, however, 
+the U.S. swordfish fishery could near 100-percent quota utilization. 
+The maximum adjusted quota considered under Alternative A2 is 3,963.0 
+mt dw. Assuming the 2024 average ex-vessel price of $4.48 per pound and 
+100-percent quota utilization, total possible gross revenues across the 
+domestic North Atlantic swordfish fishery would be estimated to be 
+$39,141,000 under Alternative A2. In 2025, there were 150 swordfish 
+directed permit holders, 56 swordfish incidental permit holders, 73 
+swordfish handgear permit holders, 616 swordfish general commercial 
+permit holders, and 65
+
+[[Page 53536]]
+
+incidental squid trawl permit holders. Due to quota tracking 
+complexities, NMFS does not have a proportional breakdown of the total 
+landings by permit type, however, the average annual ex-vessel revenue 
+across all swordfish permit types is $40,772 per vessel ($39,141,000/
+960 permit holders). This would be a gain of an estimated $6,017 per 
+vessel in revenue as compared to the no action alternative, A1. Since 
+retention limits are higher for directed permit holders than incidental 
+permit holders, actual per vessel revenue would likely be higher for 
+directed permit holders and lower for incidental permit holders.
+    Since there is no change in the South Atlantic quota under 
+Alternative A2, there would be no change in impacts on small entities 
+associated with the South Atlantic swordfish quota under Alternative A2 
+as compared to the status quo under Alternative A1.
+
+Northern Albacore
+
+    Under Alternative B1, the no action alternative for northern 
+albacore, NMFS would maintain implementation of the ICCAT northern 
+albacore management procedure. NMFS has estimated the average impact of 
+maintaining the northern albacore quota for all permit holders. For 
+northern albacore, the United States is unlikely to achieve 100-percent 
+quota utilization in the short term. In the long term, however, the 
+U.S. northern albacore fishery could near 100-percent quota 
+utilization. The maximum adjusted quota considered under Alternative B1 
+is 1,111.8 mt. Assuming the 2024 average ex-vessel price of $2.12 per 
+pound and 100-percent quota utilization, total possible gross revenues 
+across the domestic northern albacore fishery would be estimated to be 
+$4,519,000 (1,111.8 mt/1.15 dw conversion factor * $2.12) under 
+Alternative B1. The total number of permit holders that would 
+potentially land northern albacore is 2,662 (2,420 in the Atlantic 
+Tunas General category; 37 in the Atlantic Tunas Harpoon category; 205 
+in the Atlantic Tunas Longline category). If the entire quota is 
+harvested under this No Action alternative, average annual revenue 
+across all permit holders would be $1,698 ($4,519,000/2,662 permit 
+holders). Under this no action alternative, there would be no short-
+term economic impact on these vessel owners.
+    Under preferred Alternative B2, NMFS would maintain implementation 
+of the ICCAT northern albacore management procedure, including a 
+maximum adjusted quota. NMFS has estimated the average impact of the 
+northern albacore quota under the most recent ICCAT recommendation for 
+all permit holders. For northern albacore, the United States is 
+unlikely to achieve 100-percent quota utilization in the short term. In 
+the long term, however, the U.S. northern albacore fishery could near 
+100-percent quota utilization. The maximum adjusted quota considered 
+under Alternative B2 is 1,187.5 mt. Assuming the 2024 average ex-vessel 
+price of $2.12 per pound and 100-percent quota utilization, total 
+possible gross revenues across the domestic northern albacore fishery 
+would be estimated to be $4,826,000 (1,187.5 mt/1.15 dw conversion 
+factor * $2.12) under Alternative B2. The total number of permit 
+holders that would potentially land northern albacore is 2,662 (2,420 
+in the Atlantic Tunas General category; 37 in the Atlantic Tunas 
+Harpoon category; 205 in the Atlantic Tunas Longline category). If the 
+entire quota is harvested under this No Action alternative, average 
+annual revenue across all permit holders would be $1,813 ($4,826,000/
+2,662 permit holders). This is an increase of $115 per vessel in 
+average annual revenue as compared to the no action alternative, B1.
+
+Bluefin Tuna Quota
+
+    Under Alternative C1, the no action alternative for bluefin tuna, 
+NMFS would not implement the increased bluefin tuna quota adopted under 
+Recommendation 25-05. NMFS has estimated the average impact maintaining 
+the bluefin tuna quota for all domestic quota categories would have on 
+individual categories and the permit holders within those categories. 
+For bluefin tuna, to calculate the average ex-vessel bluefin tuna 
+revenues under Alternative C1, NMFS first estimated potential category-
+wide revenues. The calculated 2024 average ex-vessel price for each 
+commercial quota category is used to estimate potential ex-vessel gross 
+revenues under the current subquotas. The current baseline subquotas 
+could result in estimated gross revenues of $11.1 million annually, if 
+fully utilized, broken out by quota category. NMFS notes that these 
+prices are presented in dw. Revenues in each category are as follows: 
+General category: $7.4 million (710.7 mt ww/1.25 dw conversion factor * 
+$5.92/lb dw); Harpoon category: $602,445 (59.2 mt ww/1.25 dw conversion 
+factor * $5.77/lb dw); Longline category: $2.8 million (209.3 mt ww/
+1.25 dw conversion factor * $7.46/lb dw); the pelagic longline bycatch 
+set-aside: $328,926 (25 mt ww/1.25 dw conversion factor * $7.46/lb dw); 
+and the Trap category: $14,032 (1.3 mt ww/1.25 dw conversion factor * 
+$6.12/lb dw). Note that these revenues are likely an underestimation 
+for the General and Harpoon categories, which typically receive 
+additional quota from the Reserve category (i.e., from the baseline 
+Reserve subquota, and from the up to 10 percent of the U.S. baseline 
+quota that could be carried forward from the previous year's 
+underharvest). These revenues are likely an overestimation for the 
+Longline and Trap categories, which do not typically land their entire 
+quotas allocated for incidental bluefin tuna catch. Additionally, there 
+has been substantial interannual variability in ex-vessel revenues in 
+each category in recent years, due to recent changes in bluefin tuna 
+availability and other factors.
+    To estimate the potential average ex-vessel revenues for each 
+permit holder that could result from Alternative C1, NMFS divided the 
+potential annual gross revenues for the General, Harpoon, and Trap 
+category by the number of permit holders. For the Longline category, 
+NMFS divided the potential annual gross revenues by the number of 
+permit holders that received IBQ shares in 2026. This is an appropriate 
+approach for bluefin tuna fisheries, because available landings data 
+(weight and ex-vessel value of the fish in price-per-pound) allow NMFS 
+to calculate the gross revenue earned by a permit holder on a 
+successful trip. The available data (particularly from non-Longline 
+permit holders) do not, however, allow NMFS to calculate the effort and 
+cost associated with each successful trip (e.g., the cost of gas, bait, 
+ice), so net revenue for each permit holder cannot be calculated. As a 
+result, NMFS analyzes the average impact of the alternatives among all 
+permit holders in each category using gross revenues.
+    Success rates for catching and landing bluefin tuna vary widely 
+across permit holders in each category (due to extent of vessel effort 
+and availability of commercial-sized bluefin tuna to permit holders 
+where they fish), but for the sake of estimating potential revenues per 
+permit holder, category-wide revenues can be divided by the number of 
+permits in each category. In 2025, there were 2,420 Atlantic Tunas 
+General category permits, 37 Atlantic Tunas Harpoon category permit, 
+and no Atlantic Tunas Trap category permits. For the longline fishery, 
+category-wide revenue is divided by the number of permit holders who 
+received IBQ shares in 2026 to determine potential revenue per the 76 
+permit holders, as indicated below. Actual vessel level revenues would 
+depend, in part, on each permit holder's effort. It is unknown what 
+portion of HMS Charter/Headboat
+
+[[Page 53537]]
+
+permit holders actively participate in the bluefin tuna fishery. HMS 
+Charter/Headboat vessels may fish commercially under the General 
+category quota and retention limits. Therefore, NMFS is estimating 
+potential General category ex-vessel revenue changes using the number 
+of General category permit holders only.
+    Estimated potential bluefin tuna revenues on a per permit holder 
+basis under Alternative C1, the no action alternative, considering the 
+number of permit holders and estimated gross revenues listed above, 
+under the current subquotas, could be $3,066 for the General category 
+permit holders; $16,282 for the Harpoon category permit holders; and 
+$40,562 for the Longline category, including the pelagic longline 
+bycatch-set aside quota (using 76 permit holders). Under this no action 
+alternative, there would be no short-term economic impact on these 
+vessel owners.
+    Under preferred Alternative C2, NMFS would implement the U.S. 
+bluefin tuna quota and distribute it to domestic categories in 
+accordance with ICCAT Recommendation 25-05 and currently codified quota 
+regulations. NMFS has estimated the average impact of the bluefin tuna 
+quota under the most recent ICCAT recommendations for all domestic 
+quota categories on individual categories and the permit holders within 
+those categories. For bluefin tuna, to calculate the average ex-vessel 
+bluefin tuna revenues under Alternative C2, NMFS first estimated 
+potential category-wide revenues under the maximum potential baseline 
+subquotas. The calculated 2024 average ex-vessel price for each 
+commercial quota category is used to estimate potential ex-vessel gross 
+revenues under the subquotas. The baseline subquotas could result in 
+estimated gross revenues of $13.2 million annually, broken out by quota 
+category. Revenues in each category are as follows: General category: 
+$8.5 million (815.4 mt ww/1.25 dw conversion factor * $5.92/lb dw); 
+Harpoon category: $690,980 (67.9 mt ww/1.25 dw conversion factor * 
+$5.77/lb dw); Longline category: $3.2 million (240.1 mt ww/1.25 dw 
+conversion factor * $7.46/lb dw); pelagic longline bycatch set-aside: 
+$822,315 (62.5 mt/1.25 dw conversion factor * $7.46/lb dw); and Trap 
+category: $16,191 (1.5 mt/1.25 dw conversion factor * $6.12/lb dw). 
+Note that these revenues are likely an underestimation for the General 
+and Harpoon categories, which typically receive additional quota from 
+the Reserve category (i.e., from the baseline Reserve subquota, and 
+from the up to 10 percent of the U.S. baseline quota that could be 
+carried forward from the previous year's underharvest). These revenues 
+are likely an overestimation for the Longline and Trap categories, 
+which do not typically land their entire quotas allocated for 
+incidental bluefin tuna catch. Additionally, there has been substantial 
+interannual variability in ex-vessel revenues in each category in 
+recent years, due to recent changes in bluefin tuna availability and 
+other factors.
+    To estimate the potential average ex-vessel revenues for each 
+permit holder that could result from this action for bluefin tuna, NMFS 
+divided the potential annual gross revenues for the General, Harpoon, 
+and Trap category by the number of permit holders. For the Longline 
+category, NMFS divided the potential annual gross revenues by the 
+number of permit holders that received IBQ shares in 2026. This is an 
+appropriate approach for bluefin tuna fisheries, in particular, because 
+available landings data (weight and ex-vessel value of the fish in 
+price-per-pound) allow NMFS to calculate the gross revenue earned by a 
+permit holder on a successful trip (e.g., the cost of gas, bait, ice, 
+etc.), so net revenue for each permit holder cannot be calculated. As a 
+result, NMFS analyzes the average impact of the alternatives among all 
+permit holders in each category using gross revenues.
+    Success rates for catching and landing bluefin tuna vary widely 
+across permit holders in each category (due to extent of vessel effort 
+and availability of commercial-sized bluefin tuna to permit holders 
+where they fish), but for the sake of estimating potential revenues per 
+permit holder, category-wide revenues can be divided by the number of 
+permits in each category. In 2025, there were 2,420 Atlantic Tunas 
+General category permits, 37 Atlantic Tunas Harpoon category permits, 
+and no Atlantic Tunas Trap category permits. For the Longline fishery, 
+category-wide revenue is divided by the number of permit holders who 
+received IBQ shares in 2026 to determine potential revenue per the 76 
+permit holders, as indicated below, and actual revenues would depend, 
+in part, on each permit holder's effort. It is unknown what portion of 
+HMS Charter/Headboat permit holders actively participate in the bluefin 
+tuna fishery. HMS Charter/Headboat vessels may fish commercially under 
+the General category quota and retention limits. Therefore, NMFS is 
+estimating potential General category ex-vessel revenue changes using 
+the number of General category permit holders only.
+    Estimated potential 2026 bluefin tuna revenues on a per permit 
+holder basis under Alternative C2, the preferred alternative, 
+considering the number of permit holders and estimated gross revenues 
+listed above, under the maximum potential subquotas, could be $3,518 
+for the General category permit holders; $18,675 for the Harpoon 
+category permit holders; and $52,386 for the Longline category, 
+including the pelagic longline bycatch-set aside quota (using 76 permit 
+holders). If the entire quota was harvested under Alternative C2, 
+permit holders could expect an increase in gross revenues when compared 
+to the no action alternative. For instance, General category permit 
+holders could experience an increase of $452; $2,393 for the Harpoon 
+category permit holders; and $11,824 for the Longline category, 
+including the pelagic longline bycatch set-aside quota (using 76 permit 
+holders).
+
+Bluefin Tuna Longline Bycatch Area
+
+    Under Alternative D1, NMFS would maintain the area status quo 
+(i.e., the NED) and allocate the pelagic longline bycatch set-aside 
+quota for use by pelagic longline vessels fishing specifically in the 
+NED. This alternative would likely result in neutral economic impacts 
+as few vessels currently fish in the NED and catch bluefin tuna. NMFS 
+does not anticipate a change in fishing effort and thus economic 
+impacts under this alternative.
+    Under Alternative D2, NMFS would allocate the pelagic longline 
+bycatch set-aside quota for use by pelagic longline vessels fishing in 
+the existing NED area, as well as the adjacent pelagic longline 
+statistical reporting areas of the NEC, NCA, and SAR. Within these 
+areas, pelagic longline vessels would not have to use IBQ allocation to 
+account for bluefin tuna catch until the ICCAT-designated pelagic 
+longline bycatch set-aside quota has been caught. Alternative D2 allows 
+pelagic longline vessels greater flexibility to catch bluefin tuna 
+incidentally without using IBQ allocation in areas with more frequent 
+fishing effort and lower transit costs. NMFS expects this alternative 
+would have neutral to minor beneficial economic impacts dependent on 
+fishing activities. For instance, pelagic longline fishermen that have 
+access to these areas would be able to land target species and bluefin 
+tuna without needing to use or lease IBQ. Furthermore, these vessels 
+would have additional opportunities to generate revenue as they could 
+potentially catch and sell additional bluefin tuna, and catch and sell 
+additional target species, due to the flexibility for more fishing 
+effort. However, pelagic longline fishermen that could not access these
+
+[[Page 53538]]
+
+areas and utilize the set-aside quota, due to the set-aside quota being 
+reached, or due to being located prohibitively far from these areas, 
+would likely have neutral impacts as they would have to use their 
+annual IBQ allocations for catches of bluefin tuna. There could be some 
+potential for derby fishing for this set-aside quota if this quota is 
+frequently reached early in the season. Derby fishing could result in 
+reduced profitability and safety at sea concerns if fishing occurs at 
+suboptimal times and at increased intensity in a shorter period.
+    Under preferred Alternative D3, NMFS would allocate the pelagic 
+longline bycatch set-aside quota to pelagic longline IBQ shareholders 
+with IBQ shares designated for the Atlantic region as defined at Sec.  
+635.15(c)(3). Under this alternative, NMFS will no longer account for 
+bluefin tuna catch in the NED separately from bluefin tuna catch in the 
+rest of the Atlantic. Instead, NMFS will allocate the pelagic longline 
+bycatch set-aside quota to pelagic longline vessels that have fishing 
+history in the Atlantic and annually distribute Atlantic allocation to 
+each IBQ shareholder based on their IBQ share percentage to account for 
+bluefin tuna catches. Atlantic and Gulf pelagic longline vessels with 
+Atlantic IBQ shares may be more willing to fish for target species and 
+catch additional bluefin tuna incidentally compared to current levels. 
+Furthermore, these vessels may be more willing to lease IBQ to other 
+vessels through the IBQ system. Thus, NMFS expects minor beneficial 
+economic impacts for those vessels in the short term and long term. 
+Pelagic longline vessels that only fish in the Gulf of America are 
+expected to have neutral economic impacts as they would not receive an 
+increase to their IBQ shares designated for the Gulf region. However, 
+these vessels may see a minor beneficial economic impact in future 
+years if they fish in the Atlantic region as they would then qualify to 
+receive a share of the 62.5-mt pelagic longline bycatch set-aside 
+quota. The use of individual quotas to allocate this set-aside quota 
+would eliminate the risk of potential derby fishing (and the associated 
+profitability and safety at sea impacts) that might arise under 
+Alternative D2.
+    Section 212 of the Small Business Regulatory Enforcement Fairness 
+Act of 1996 (Pub. L. 104-121) states that, for each rule or group of 
+related rules for which an agency is required to prepare a FRFA, the 
+agency shall publish one or more guides to assist small entities in 
+complying with the rule and shall designate such publications as 
+``small entity compliance guides'' (5 U.S.C. 601). The agency shall 
+explain the actions a small entity is required to take to comply with a 
+rule or group of rules. As part of this rulemaking process, NMFS 
+prepared a web page that also serves as a small entity compliance 
+guide. Copies of this final rule and compliance guide are available on 
+the HMS Management Division website (<a href="https://www.fisheries.noaa.gov/topic/atlantic-highly-migratory-species">https://www.fisheries.noaa.gov/topic/atlantic-highly-migratory-species</a>).
+    This final rule contains no information collection requirements 
+under the Paperwork Reduction Act of 1995.
+
+List of Subjects in 50 CFR Part 635
+
+    Fisheries, Fishing, Fishing vessels, Foreign relations, Imports, 
+Penalties, Reporting and recordkeeping requirements, Statistics, 
+Treaties.
+
+    Dated: August 13, 2026.
+Samuel D. Rauch III,
+Deputy Assistant Administrator for Regulatory Programs, National Marine 
+Fisheries Service.
+
+    For the reasons set out in the preamble, NMFS amends 50 CFR part 
+635 as follows:
+
+PART 635--ATLANTIC HIGHLY MIGRATORY SPECIES
+
+0
+1. The authority citation for part 635 continues to read as follows:
+
+    Authority: 16 U.S.C. 971 et seq.; 16 U.S.C. 1801 et seq.
+
+
+0
+2. In Sec.  635.15, revise paragraphs (d) and (f)(3)(i), and remove 
+paragraph (f)(6) to read as follows:
+
+
+Sec.  635.15   Individual bluefin tuna quotas (IBQs).
+
+* * * * *
+    (d) Annual IBQ allocations--(1) Annual IBQ allocation from the 
+baseline Longline category quota. An annual IBQ allocation is the 
+amount of BFT (whole weight) in metric tons corresponding to an IBQ 
+shareholder's share percentage, distributed to their vessel to account 
+for incidental landings and dead discards of BFT during a specified 
+calendar year. NMFS will distribute IBQ allocations only when there is 
+a valid Atlantic Tunas Longline category LAP associated with a vessel. 
+Unless otherwise required under paragraph (f)(4) of this section, an 
+IBQ allocation is derived by multiplying the IBQ share percentage 
+(calculated under paragraph (c)(1) of this section) by the baseline 
+Longline category quota for that year. If the baseline quota is 
+adjusted during the fishing year, the annual IBQ allocation may also be 
+adjusted as specified in paragraph (e)(2) or (e)(3) of this section, as 
+appropriate.
+    (2) The IBQ Program and the pelagic longline bycatch set-aside 
+quota. In addition to the annual IBQ allocation described in paragraph 
+(d)(1) of this section, NMFS will annually allocate the pelagic 
+longline bycatch set-aside quota under Sec.  635.27(a)(3) to IBQ 
+shareholders with ATL shares. The allocation of the pelagic longline 
+bycatch set-aside quota will be derived by multiplying the IBQ share 
+percentage (calculated under paragraph (c)(1) of this section) by the 
+pelagic longline bycatch set-aside quota. The IBQ shares and resultant 
+allocations of the pelagic longline bycatch set-aside quota will be 
+designated as only ATL shares. If the pelagic longline bycatch set-
+aside quota is adjusted during the fishing year, the annual IBQ 
+allocation may also be adjusted as specified under paragraph (e)(2) or 
+(e)(3) of this section, as appropriate. The BFT accounting requirement 
+of paragraph (f)(3) of this section is applicable.
+* * * * *
+    (f) * * *
+    (3) * * *
+    (i) Catch deduction from IBQ allocations. All BFT landings must be 
+deducted from the vessel's IBQ allocation at the end of each trip by 
+providing information to and coordinating with the dealer. Dead 
+discards will be deducted from the vessel's IBQ allocation by the Catch 
+Shares Online System when the vessel operator reports dead discards 
+through VMS as required under Sec.  635.69(e)(4)(i).
+* * * * *
+
+0
+3. In Sec.  635.27, revise paragraphs (a) introductory text, (a)(1)(i) 
+introductory text, (a)(2) introductory text, (a)(2)(ii), (a)(3) through 
+(5), (a)(6)(i), and (c)(1) introductory text to read as follows:
+
+
+Sec.  635.27   Quotas.
+
+    (a) BFT. Consistent with ICCAT recommendations, the baseline annual 
+U.S. BFT quota will be allocated among the General, Angling, Harpoon, 
+Longline, Trap, and Reserve categories, as described in this section. 
+BFT quotas are specified in whole weight. The baseline annual U.S. BFT 
+quota is 1,509.98 mt, not including an additional annual 62.5-mt 
+pelagic longline bycatch set-aside quota provided in paragraph (a)(3) 
+of this section. This baseline BFT quota is divided among the 
+categories according to the following percentages: General--54 percent 
+(815.4 mt); Angling--22.6 percent (341.3 mt), which includes the school 
+BFT held in reserve as described under paragraph (a)(6)(ii) of this 
+section; Longline--15.9 percent (240.1 mt) (total not including the 
+62.5-mt pelagic longline bycatch set-
+
+[[Page 53539]]
+
+aside quota from paragraph (a)(3) of this section); Harpoon--4.5 
+percent (67.9 mt); Trap--0.1 percent (1.5 mt); and Reserve--2.9 percent 
+(43.8 mt). NMFS may make inseason and annual adjustments to quotas as 
+specified in paragraphs (a)(8) and (9) of this section.
+    (1) * * *
+    (i) Catches from vessels for which Atlantic Tunas General category 
+permits have been issued and certain catches from vessels for which an 
+HMS Charter/Headboat permit has been issued are counted against the 
+General category quota in accordance with Sec.  635.23(c)(3). Pursuant 
+to paragraph (a) of this section, the amount of large medium and giant 
+BFT that may be caught, retained, possessed, landed, or sold under the 
+General category quota is 815.4 mt, and is apportioned as follows, 
+unless modified as described under paragraph (a)(1)(ii) of this 
+section:
+* * * * *
+    (2) Angling category quota. In accordance with the framework 
+procedures as described under Sec.  635.34, prior to each fishing year, 
+or as early as feasible, NMFS will establish the Angling category daily 
+retention limits. In accordance with paragraph (a) of this section, the 
+total amount of BFT that may be caught, retained, possessed, and landed 
+by anglers aboard vessels for which an HMS Angling permit or an HMS 
+Charter/Headboat permit has been issued is 341.3 mt. No more than 3.1 
+percent of the annual Angling category quota may be large medium or 
+giant BFT. In addition, no more than 10 percent of the baseline annual 
+U.S. BFT quota, inclusive of the allocation specified in paragraph 
+(a)(3) of this section, may be school BFT. The Angling category quota 
+includes the amount of school BFT held in reserve under paragraph 
+(a)(6)(ii) of this section. The size class subquotas for BFT are 
+further subdivided as follows:
+* * * * *
+    (ii) After adjustment (Angling category quota minus school and 
+large medium/giant subquotas), resulting in a large school/small medium 
+subquota of 173.4 mt, an amount equal to 52.8 percent may be caught, 
+retained, possessed, or landed south of 39[deg]18' N lat. The remaining 
+large school/small medium BFT Angling category quota may be caught, 
+retained, possessed, or landed north of 39[deg]18' N lat.
+* * * * *
+    (3) Longline category quota. Pursuant to paragraph (a) of this 
+section, the total amount of large medium and giant BFT that may be 
+caught, discarded dead, or retained, possessed, or landed by vessels 
+that possess Atlantic Tunas Longline category permits is 240.1 mt. In 
+addition, pelagic longline vessels with ATL IBQ are allocated, as 
+described in Sec.  635.15(d)(2), a pelagic longline bycatch set-aside 
+quota of 62.5 mt. For purposes of the closure authority under Sec.  
+635.28(a)(1), regional IBQ allocations under Sec.  635.15(c)(3) and the 
+BFT catch cap for fishing in the Gulf of America (Sec.  
+635.15(c)(3)(iii)) are considered quotas.
+    (4) Harpoon category quota. The total amount of large medium and 
+giant BFT that may be caught, retained, possessed, landed, or sold by 
+vessels that possess Atlantic Tunas Harpoon category permits is 67.9 
+mt. The Harpoon category fishery commences on June 1 of each year and 
+closes on November 15 of each year.
+    (5) Trap. The total amount of large medium and giant BFT, that may 
+be caught, retained, possessed, or landed by vessels that possess 
+Atlantic Tunas Trap category permits is 1.5 mt.
+    (6) * * *
+    (i) The total amount of BFT that is held in reserve is 43.8 mt, 
+which may be augmented by allowable underharvest from the previous 
+year. Consistent with paragraphs (a)(7) through (9) of this section, 
+NMFS may allocate any portion of the Reserve category quota for 
+inseason or annual adjustments to any fishing category quota. NMFS may 
+also use any portion of the Reserve category quota for adjustments to, 
+or appeals of, IBQ allocations (see Sec.  635.15(e)(1)(i)) and research 
+using quota or subquotas (see Sec.  635.32).
+* * * * *
+    (c) * * *
+    (1) Categories. Consistent with ICCAT recommendations, the ICCAT 
+North Atlantic swordfish management procedure, and domestic management 
+objectives, the fishing year's total amount of swordfish that may be 
+caught, retained, possessed, or landed by persons and vessels subject 
+to U.S. jurisdiction is divided into quotas for the North Atlantic 
+swordfish stock and the South Atlantic swordfish stock. The quota for 
+the North Atlantic swordfish stock is further divided into equal semi-
+annual directed fishery quotas, an annual incidental catch quota for 
+fishermen targeting other species or taking swordfish recreationally, 
+and a reserve category.
+* * * * *
+[FR Doc. 2026-16870 Filed 8-18-26; 8:45 am]
+BILLING CODE 3510-22-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

@@ -1,0 +1,65 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 130 (Thursday, July 9, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 130 (Thursday, July 9, 2026)]
+[Notices]
+[Page 42560]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-13886]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+DEPARTMENT OF JUSTICE
+
+Federal Bureau of Investigation
+
+[Docket No. FBI164]
+
+
+FBI Criminal Justice Information Services Division; User Fee 
+Schedule; Correction
+
+AGENCY: Federal Bureau of Investigation (FBI), Justice.
+
+ACTION: Notice; correction.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The Federal Bureau of Investigation published a document in 
+the Federal Register of June 8, 2026, concerning the Criminal Justice 
+Information Services Division User Fee Schedule. The document was 
+published without including the footnotes for the new fee amounts 
+table.
+
+FOR FURTHER INFORMATION CONTACT: Mr. Mark Bland, Chief, Financial 
+Management Unit, Resources Management Section, Criminal Justice 
+Information Services (CJIS) Division, FBI, 1000 Custer Hollow Road, 
+Module D-3, Clarksburg, WV 26306. Telephone number 771-228-3066.
+
+SUPPLEMENTARY INFORMATION:
+
+Correction
+
+    In the Federal Register of June 8, 2026, in FR Doc. 91-109, on page 
+34655, immediately following the FINGERPRINT-BASED CHRI CHECKS table, 
+add the footnotes to read:
+
+    \1\ Centralized Billing Service Providers, see 75 FR 18753.
+    \2\ Cost Recovery = $3; Automation = $10.
+    \3\ Volunteers providing care for children, the elderly, or 
+individuals with disabilities. See e.g., 75 FR 18752, 83 FR 48335.
+    \4\ Cost Recovery = $3; Automation = $8.
+
+    Dated: July 7, 2026.
+Timothy A. Ferguson,
+Assistant Director.
+[FR Doc. 2026-13886 Filed 7-8-26; 8:45 am]
+BILLING CODE 4410-02-P
+
+
+</pre></body>
+</html>

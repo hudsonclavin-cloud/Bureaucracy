@@ -1,0 +1,159 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 164 (Wednesday, August 26, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 164 (Wednesday, August 26, 2026)]
+[Rules and Regulations]
+[Pages 54947-54948]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-17428]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+FEDERAL TRADE COMMISSION
+
+RIN 3084-AA98
+
+16 CFR Part 310
+
+
+Telemarketing Sales Rule Fees
+
+AGENCY: Federal Trade Commission.
+
+ACTION: Final rule.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The Federal Trade Commission (``Commission'') is amending its 
+Telemarketing Sales Rule (``TSR'') by updating the fees charged to 
+entities accessing the National Do Not Call Registry (``Registry'') as 
+required by the Do-Not-Call Registry Fee Extension Act of 2007.
+
+DATES: The revised fees will become effective October 1, 2026.
+
+ADDRESSES: Copies of this document are available on the internet at the 
+Commission's website: <a href="https://www.ftc.gov">https://www.ftc.gov</a>.
+
+FOR FURTHER INFORMATION CONTACT: Ami Joy Dziekan, (202) 326-2648, 
+Bureau of Consumer Protection, Federal Trade Commission, 600 
+Pennsylvania Avenue NW, Washington, DC 20580.
+
+SUPPLEMENTARY INFORMATION: To comply with the Do-Not-Call Registry Fee 
+Extension Act of 2007 (Pub. L. 110-188, 122 Stat. 635, codified at 15 
+U.S.C. 6152) (``Act''), the Commission is amending the TSR, which is 
+contained in 16 CFR part 310, by updating the fees entities are charged 
+for accessing the Registry. Specifically, the revised rule increases 
+(1) the annual fee for access to
+
+[[Page 54948]]
+
+the Registry for each area code of data from $82 to $85 per area code, 
+and (2) the maximum amount that will be charged to any single entity 
+for accessing area codes of data from $22,626 to $23,425. Entities may 
+add area codes during the second six months of their annual 
+subscription period, and the fee for those additional area codes 
+increases from $41 to $43.
+    These increases are in accordance with the Act, which specifies 
+that beginning after fiscal year 2009, the dollar amounts charged shall 
+be increased by an amount equal to the amounts specified in the Act, 
+multiplied by the percentage (if any) by which the average of the 
+monthly consumer price index (for all urban consumers published by the 
+Department of Labor) (``CPI'') for the most recently ended 12-month 
+period ending on June 30 exceeds the CPI for the 12-month period ending 
+June 30, 2008. The Act also states that any increase shall be rounded 
+to the nearest dollar and that there shall be no increase in the dollar 
+amounts if the change in the CPI since the last fee increase is less 
+than one percent. For fiscal year 2009, the Act specified that the 
+original annual fee for access to the Registry for each area code of 
+data was $54 per area code, or $27 per area code of data during the 
+second six months of an entity's annual subscription period, and that 
+the maximum amount that would be charged to any single entity for 
+accessing area codes of data would be $14,850.
+    The determination of whether a fee change is required and the 
+amount of the fee changes involves a two-step process. First, to 
+determine whether a fee change is required, we measure the change in 
+the CPI from the time of the previous increase in fees. There was an 
+increase in the fees for fiscal year 2026. Accordingly, we calculated 
+the change in the CPI since last year, and the increase was 3.5 
+percent. Because this change is over the one percent threshold, the 
+fees will change for fiscal year 2027.
+    Second, to determine how much the fees should increase this fiscal 
+year, we use the calculation specified by the Act set forth above: the 
+percentage change in the baseline CPI applied to the original fees for 
+fiscal year 2009. The average value of the CPI for July 1, 2007, to 
+June 30, 2008, was 211.702; the average value for July 1, 2025, to June 
+30, 2026, was 333.952, an increase of 57.75 percent. Applying the 57.75 
+percent increase to the base amount from fiscal year 2009, leads to a 
+$85 fee for access to a single area code of data for a full year for 
+fiscal year 2027, an increase of $3 from last year. The actual amount 
+is $85.18 but when rounded, pursuant to the Act, $85 is the appropriate 
+fee. The fee for accessing an additional area code for a half year 
+increases by two dollars to $43 (rounded from $42.59). The maximum 
+amount charged increases to $23,425 (rounded from $23,425.32).
+
+Administrative Procedure Act; Regulatory Flexibility Act; Paperwork 
+Reduction Act
+
+    Under the Administrative Procedure Act (5 U.S.C. 553(b)), an agency 
+may waive the normal notice and comment requirements if it finds, for 
+good cause, that they are impracticable, unnecessary, or contrary to 
+the public interest. The fee adjustments set forth in this final rule 
+are mandated by the Do-Not-Call Registry Fee Extension Act of 2007. 
+Accordingly, the amendments to the TSR are merely technical in nature, 
+making notice and comment unnecessary and contrary to the public 
+interest. See 5 U.S.C. 553(b). For this reason, the requirements of the 
+Regulatory Flexibility Act also do not apply. See 5 U.S.C. 603, 604.
+    Pursuant to the Paperwork Reduction Act, 44 U.S.C. 3501-3521, the 
+Office of Management and Budget (``OMB'') approved the information 
+collection requirements in the TSR and assigned the following existing 
+OMB Control Number: 3084-0169. The amendments outlined in this final 
+rule pertain only to the fee provision (Sec.  310.8) of the TSR and 
+will not establish or alter any record keeping, reporting, or third-
+party disclosure requirements elsewhere in the TSR.
+
+List of Subjects in 16 CFR Part 310
+
+    Advertising, Consumer protection, Reporting and recordkeeping 
+requirements, Telephone, Trade practices.
+
+    Accordingly, the Federal Trade Commission amends part 310 of title 
+16 of the Code of Federal Regulations as follows:
+
+PART 310-TELEMARKETING SALES RULE
+
+0
+1. The authority citation for part 310 continues to read as follows:
+
+    Authority: 15 U.S.C. 6101-6108.
+
+
+Sec.  310.8   [Amended]
+
+0
+2. Amend Sec.  310.8 by:
+0
+a. In paragraph (c):
+0
+i. Removing ``$82'' and adding ``$85'' in its place; and
+0
+ii. Removing ``$22,626'' and adding ``$23,425'' in its place;
+0
+b. In paragraph (d):
+0
+i. Removing ``$82'' and adding ``$85'' in its place; and
+0
+ii. Removing ``$41'' and adding ``$43'' in its place.
+
+    By direction of the Commission.
+Joel Christie,
+Acting Secretary.
+[FR Doc. 2026-17428 Filed 8-25-26; 8:45 am]
+BILLING CODE 6750-01-P
+
+
+</pre></body>
+</html>

@@ -1,0 +1,592 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 166 (Friday, August 28, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 166 (Friday, August 28, 2026)]
+[Rules and Regulations]
+[Pages 55457-55461]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-17660]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+DEPARTMENT OF STATE
+
+[Public Notice: 13088]
+
+22 CFR Parts 120 and 121
+
+RIN 1400-AG17
+
+
+International Traffic in Arms Regulations: Modification of Civil 
+Aircraft To Incorporate Aircraft Survivability Equipment
+
+AGENCY: Department of State.
+
+ACTION: Interim final rule; request for comments.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The Department of State (the Department) amends the 
+International Traffic in Arms Regulations (ITAR) to remove from the 
+U.S. Munitions List (USML) certain aircraft that have been modified to 
+incorporate aircraft survivability equipment (ASE) and to exclude from 
+the ITAR certain activities that would otherwise meet the definition of 
+reexport or temporary import of ASE incorporated into such aircraft.
+
+DATES: 
+    Effective date: This rule is effective October 13, 2026.
+    Comment due date: Send comments on or before September 28, 2026.
+
+ADDRESSES: Interested parties may submit comments to the Department of 
+State by any of the following methods:
+    <bullet> Visit the <a href="http://Regulations.gov">Regulations.gov</a> website at: <a href="https://www.regulations.gov">https://www.regulations.gov</a> and search for the docket number [DOS-2026-0892].
+    <bullet> Email: <a href="/cdn-cgi/l/email-protection#8bcfcfdfc8dbfee9e7e2e8c8e4e6e6eee5fff8cbf8ffeaffeea5ece4fd"><span class="__cf_email__" data-cfemail="9bdfdfcfd8cbeef9f7f2f8d8f4f6f6fef5efe8dbe8effaeffeb5fcf4ed">[email&#160;protected]</span></a>. Commenting parties 
+must include RIN 1400-AG17 in the subject line of the email message.
+    See SUPPLEMENTARY INFORMATION for other information about 
+electronic filing.
+
+FOR FURTHER INFORMATION CONTACT: Mr. Chris Weil, Office of Defense 
+Trade Controls Policy, Department of State, email 
+<a href="/cdn-cgi/l/email-protection#5a1e1e0e19192f292e35373f28093f282c33393f1a292e3b2e3f743d352c"><span class="__cf_email__" data-cfemail="0d4949594e4e787e796260687f5e687f7b646e684d7e796c7968236a627b">[email&#160;protected]</span></a> SUBJECT: Aircraft Survivability 
+Equipment--RIN 1400-AG17.
+
+SUPPLEMENTARY INFORMATION: The Department of State's Directorate of 
+Defense Trade Controls (DDTC) administers the ITAR (22 CFR parts 120 
+through 130) to, among other things, regulate the export, reexport, 
+retransfer, and temporary import of defense articles and defense 
+services described on the USML at ITAR Sec.  121.1. Items not subject 
+to the ITAR or to the exclusive licensing jurisdiction of any other 
+department or agency of the U.S. Government are subject to the Export 
+Administration Regulations (EAR; 15 CFR parts 730 through 774), which 
+include the Commerce Control List (CCL) in Supplement No. 1 to part 
+774. The EAR is administered by the Bureau of Industry and Security 
+(BIS), U.S. Department of Commerce. This rule does not modify the list 
+of defense articles and defense services controlled for purposes of 
+permanent import by the Attorney General, as enumerated on the U.S. 
+Munitions Import List (USMIL) at 27 CFR 447.21.
+    Section 38 of the Arms Export Control Act (AECA) (22 U.S.C. 2778), 
+the authority from which the ITAR is derived, requires periodic review 
+to determine what articles and services, if any, no longer warrant 
+designation on the USML at ITAR Sec.  121.1. In maintaining the USML, 
+DDTC's Office of Defense Trade Controls Policy (DTCP) identifies 
+articles and services for review for addition to or removal from the 
+USML, or for clarification on how they are described on the USML, 
+through a variety of methods, including public feedback and interagency 
+consultations, commodity jurisdiction reviews, advisory opinions, and 
+technology monitoring. The Department maintains the USML such that it 
+comprises those defense articles or defense services that provide a 
+critical military or intelligence advantage or, in the case of weapons, 
+have an inherently military function. The Department, informed by 
+consultations with its interagency partners, determined that those 
+articles and services this rule removes from the USML no longer warrant 
+ITAR control. Additionally, the Department has long used its delegated 
+authority under the AECA to define which events are controlled as 
+exports, reexports, retransfers, and temporary imports.
+    For the purposes of this rule the Department refers to civil 
+aircraft that are subsequently modified to incorporate certain aircraft 
+survivability equipment (ASE) as survivability-enhanced aircraft. ASE 
+is a term generally used to refer to systems and equipment designed to 
+reduce an aircraft's susceptibility and vulnerability to manufactured 
+threats by detecting, alerting on, and mitigating threats. For purposes 
+of this preamble,
+
+[[Page 55458]]
+
+ASE specifically refers to directed infrared countermeasures (DIRCM) 
+and infrared or ultraviolet missile warning systems necessary for the 
+operation of DIRCM. Survivability-enhanced aircraft are often used to 
+mitigate risk in the transport of passengers or goods, in various 
+threat environments. These aircraft incorporate ASE described on the 
+USML to protect the aircraft and its occupants from man-portable air 
+defense systems (MANPADS) and other guided weapons that can pose a 
+serious threat to aircraft. Foreign governments also utilize civil 
+aircraft incorporating ASE to transport heads of state and other 
+persons, and some airlines have incorporated ASE to protect passengers 
+traveling in higher risk areas.
+    ASE is described in the subparagraphs of USML Category XI(a)(4), 
+which describes electronic warfare (EW) systems and equipment; thus, 
+survivability-enhanced aircraft are currently described in USML 
+Category VIII(a)(8), as aircraft specially designed to incorporate a 
+defense article for the purpose of performing an EW function. The 
+Department notes that aircraft modified to facilitate incorporation of 
+ASE are currently described in paragraph (a)(8) even when the ASE is 
+not physically present in the aircraft. Since such modifications are 
+properties peculiarly responsible for the incorporation of the ASE, 
+they satisfy the specially designed definition at Sec.  120.41(a)(1).
+    Based on its assessments and the discretion afforded it, and to 
+facilitate the operation and maintenance of certain aircraft that have 
+been modified to incorporate ASE, the Department is amending USML 
+Category VIII(a)(8), adding corresponding definitions to Sec.  121.0, 
+and adding two new entries to Sec.  120.54 to expand the definition of 
+``activities that are not exports, reexports, retransfers, or temporary 
+imports.'' Activities listed in ITAR Sec.  120.54 do not require an 
+authorization from DDTC.
+
+USML Category VIII
+
+    The Department is revising USML Category VIII(a)(8) to exclude 
+certain aircraft that have been modified to incorporate ASE. To 
+concisely implement this exclusion, the Department is also adding new 
+definitions of secured ASE and survivability-enhanced aircraft, and the 
+acronyms ``ASE'' and ``USML,'' to Sec.  121.0.
+    Furnishing assistance to a foreign person in maintaining, 
+repairing, or operating an aircraft described in paragraph (a)(8) is a 
+defense service even for repairs limited to an aircraft component 
+otherwise subject to the EAR, such as brakes controlled in the EAR's 
+Export Control Classification Number (ECCN) 9A991.d, while that item is 
+incorporated into the aircraft. This is because such activities furnish 
+assistance to the foreign person in maintaining the aircraft, which is 
+a defense article.
+    Servicing activities for aircraft described on the USML continue to 
+warrant control under the ITAR because maintenance of an aircraft helps 
+maintain the foreign person's access to the capabilities of the 
+aircraft. However, the Department assesses that incorporating secured 
+ASE to protect an aircraft and its occupants should not, by itself, 
+subject an otherwise civil aircraft to regulation under the ITAR. Such 
+regulation of maintenance services, when not directly related to the 
+incorporated ASE, may place U.S. companies at an unnecessary 
+competitive disadvantage due to the widespread availability of such 
+services and a lack of similar foreign regulation. The Department 
+assesses that, when incorporated into an otherwise civil aircraft 
+without modifications to incorporate other defense articles, ASE 
+supports a purely protective function. For this and other reasons, the 
+Department assesses commercial servicing and maintenance of 
+survivability-enhanced aircraft does not provide a critical military or 
+intelligence advantage that warrants continued ITAR control.
+    Following the changes in this rule to remove certain aircraft from 
+paragraph (a)(8), ASE will still be described on the USML in Category 
+XI. The Department has determined that ASE, and directly related 
+technical data and defense services, continue to provide a critical 
+military or intelligence advantage and therefore should remain on the 
+USML. ITAR Sec.  120.11(c) will continue to apply to ASE incorporated 
+into an aircraft, regardless of the export jurisdiction of the 
+aircraft. As a result, servicing ASE for a foreign person continues to 
+be a defense service. Furthermore, assisting a foreign person in the 
+modification of an aircraft to facilitate incorporation of ASE is a 
+defense service described in USML Category XI(d) even before the ASE is 
+installed. Such assistance is directly related to the ASE and, at a 
+minimum, assists the foreign person in the use of the ASE. Similarly, 
+assisting a foreign person in maintaining or repairing portions of the 
+aircraft modified for the purpose of incorporating ASE (e.g., upgraded 
+power supplies, dedicated wiring) are defense services described in 
+USML Category XI(d). Even when such services are performed on aircraft 
+components subject to the EAR, they both directly relate to the ASE and 
+assist the foreign person in the use of the ASE.
+    The new definition of secured ASE in Sec.  121.0 limits the scope 
+of that term to specific types of defensive EW equipment. The 
+Department considered further limiting the scope of the exclusion to 
+ASE designed to provide protection against MANPADS; however, the 
+Department's review of civil aircraft losses concluded that the threat 
+is no longer limited to MANPADS. The new definition of secured ASE also 
+specifies that certain anti-tamper protections must be in place when 
+the ASE is incorporated into the aircraft.
+    The new definition of survivability-enhanced aircraft specifically 
+excludes unmanned aircraft, aircraft that did not start out as civil 
+aircraft (as described in paragraph (1) of the new definition for 
+``survivability-enhanced aircraft''), and aircraft described in USML 
+Category VIII(a)(8) or elsewhere on the USML for reasons other than 
+incorporating secured ASE.
+
+New Entries in Sec.  120.54(a)
+
+    The Department is adding two new paragraphs to Sec.  120.54(a) to 
+remove the ITAR authorization requirement for certain reexports and 
+temporary imports of defense articles that meet the new Sec.  121.0 
+definition of secured ASE. Pursuant to Sec.  120.11(c), ASE retains its 
+status as a defense article following incorporation or integration into 
+an aircraft, regardless of the jurisdiction of the aircraft. For 
+example, an ITAR license or other authorization type is currently 
+required for all exports of ASE out of the United States and for all 
+temporary imports of ASE into the United States, including instances in 
+which the ASE is incorporated into an aircraft not described on the 
+USML. Similarly, when ASE is subject to the reexport or retransfer 
+restrictions of the ITAR (e.g., U.S.-origin defense articles and 
+defense articles subject to ITAR Sec.  124.8(a)(5)), an ITAR 
+authorization is currently required for all reexports and retransfers, 
+including when an aircraft incorporating secured ASE travels to a third 
+country.
+    The Department determined ASE provides a critical military or 
+intelligence advantage such that it warrants description on the USML. 
+ASE is military technology, regardless of its use by civilian entities. 
+In providing notifications of guided missile threats and assisting 
+pilots in defending against those threats, ASE provides a critical 
+advantage--including during contested airspace operations. However, 
+standard ITAR requirements impose an
+
+[[Page 55459]]
+
+unnecessary compliance burden on international partners using secured 
+ASE to protect dignitaries and commercial passengers, particularly when 
+traveling to a country identified in ITAR Sec.  126.1. The requirements 
+also place U.S. manufacturers at a competitive disadvantage relative to 
+foreign manufacturers whose products are not subject to ITAR regulation 
+of reexports.
+    The Department assesses that, when ASE has previously been 
+authorized for export from the United States pursuant to a license 
+issued under the ITAR (and thus subjected to a U.S. national security 
+review), for incorporation into a survivability-enhanced aircraft, and 
+continues to be utilized only for its authorized use by an authorized 
+end user, it is not necessary for the Department to review the 
+operational movements of that aircraft. Similarly, the Department 
+assesses that temporary imports of secured ASE incorporated into 
+survivability-enhanced aircraft, without other modifications that make 
+the aircraft described on the USML, do not require its review while the 
+ASE remains incorporated.
+    For these reasons, the Department is adding two new paragraphs to 
+Sec.  120.54(a) to exclude what would otherwise be a reexport or 
+temporary import of secured ASE while it is incorporated into 
+survivability-enhanced aircraft, under specified conditions. Defense 
+services directly related to ASE and transfer to a foreign person of 
+technical data directly related to ASE remain controlled events, 
+regardless of the ASE status.
+    The primary purpose of the new Sec.  120.54(a)(8) is to remove 
+certain restrictions on otherwise civil aircraft temporarily entering 
+and exiting the United States with secured ASE installed. Similarly, 
+the primary purpose of the new Sec.  120.54(a)(9) is to remove certain 
+restrictions on the movement of aircraft that incorporate secured ASE 
+already approved for export from the United States pursuant to a 
+license and remaining under the control of users already authorized to 
+possess the ASE. Such aircraft may include those operated by civilian 
+airlines or those maintained or operated for the benefit of heads of 
+state, international organizations like the United Nations, and 
+humanitarian organizations. New paragraphs (a)(8) and (9) apply only to 
+the physical movement of the secured ASE while it is incorporated into 
+a survivability-enhanced aircraft; these paragraphs do not authorize 
+any defense services or release of technical data directly related to 
+the ASE (including removal of the ASE from the aircraft). New paragraph 
+(a)(9) applies only to ASE previously authorized for export from the 
+United States pursuant to a license; it does not apply to ASE that has 
+only been exported pursuant to an exemption.
+    Retransfer of ASE to a foreign person while outside the United 
+States remains a controlled event in all cases. The new Sec.  
+120.54(a)(8) does not enable temporary imports that involve transfers 
+of the aircraft or the incorporated ASE to a different foreign person 
+while inside the United States. If the ASE has been authorized for 
+export under a separate ITAR authorization, for use by a particular 
+organization and its employees, then a transfer of control of the 
+aircraft and secured ASE between employees of the same organization 
+must be completed using that ITAR authorization.
+
+Effective Date and Updating of Licenses and Agreements
+
+    The Department is implementing an effective date of October 13, 
+2026, in making the revisions described in this interim final rule. The 
+Department's website (<a href="http://www.pmddtc.state.gov">www.pmddtc.state.gov</a>) includes guidance for 
+practitioners on the treatment of items removed from the USML.
+
+Submission of Voluntary Disclosures or Voluntary Self-Disclosures
+
+    In reviewing the clarifications provided by this rule, if you 
+identify a potential violation of the ITAR, you may submit a voluntary 
+disclosure to DDTC, consistent with the procedures outlined in ITAR 
+Sec.  127.12. For potential violations of the EAR, persons are 
+encouraged to disclose violations to BIS, including through the 
+submission of voluntary self-disclosures, consistent with the 
+procedures outlined in EAR Sec. Sec.  764.4 and 764.5. For potential 
+violations of both the EAR and the ITAR, persons are encouraged to 
+submit disclosures to both agencies.
+
+Request for Comments
+
+Comments Requested
+
+    The Department is requesting public comments on the revisions 
+described in this rulemaking. The Department encourages the public to 
+provide comments related to this rule, as well as comments specifically 
+responsive to the five questions described in this section. To 
+facilitate timely review and assessment of the comments, comments 
+should be provided in a concise sentence or paragraph, followed by 
+supporting explanatory paragraphs and examples, with each distinct 
+comment treated separately (as opposed to multiple comments in one 
+paragraph or section). The Department requests comments focused on the 
+following questions:
+    1. How much would practitioners benefit from the Department 
+defining the terms for the eligible types of ASE?
+    2. Are there commodities, services, or technical data closely 
+related to these revisions that warrant ITAR control, but are currently 
+either not described on the USML, or not described with sufficient 
+clarity? If so, please provide examples and a concise explanation.
+    3. Are there commodities, services, or technical data closely 
+related to these revisions that do not warrant ITAR control? If so, 
+please provide examples and a concise explanation.
+    4. Are there specific functions, performance levels, or 
+characteristics related to these revisions that could better:
+    a. Distinguish between the commodities that do, and do not, warrant 
+ITAR control; or
+    b. Align with the constructions or language used elsewhere in the 
+ITAR?
+    5. Can any of these revisions be more clearly or concisely stated?
+
+Comment Submission Instructions
+
+    Include the Regulatory Information Number (RIN) (1400-AG17) for all 
+submissions related to this rule. Parties who wish to comment 
+anonymously may do so by submitting their comments via 
+<a href="http://www.regulations.gov">www.regulations.gov</a>, leaving the fields that would identify the 
+commenter blank and including no identifying information in the comment 
+itself. Commenters are cautioned not to include proprietary, export-
+controlled, personal, or other sensitive information in their comments 
+that they would not want to be made public. If such information would 
+provide useful insight to the comment: (1) assemble that information in 
+a separate document with proprietary markings; (2) include 
+``Proprietary supplement on file with: [provide POC]'' as the first 
+line in the body of the email submission; (3) submit the public portion 
+of the comment via email; and (4) call DDTC at (202) 663-1282 to 
+coordinate submission of the proprietary supplement.
+
+Regulatory Analysis and Notices
+
+Administrative Procedure Act
+
+    This rulemaking is exempt from the rulemaking requirements of the 
+Administrative Procedure Act (APA) pursuant to 5 U.S.C. 553(a)(1) as it 
+involves a military or foreign affairs function of the United States. 
+Nevertheless, and without prejudice to
+
+[[Page 55460]]
+
+this determination, the Department seeks certain public comments in 
+this rule.
+
+Regulatory Flexibility Act
+
+    Since this rule is exempt from the notice-and-comment rulemaking 
+provisions of 5 U.S.C. 553, it does not require analysis under the 
+Regulatory Flexibility Act.
+
+Unfunded Mandates Reform Act of 1995
+
+    This rulemaking does not involve a mandate that will result in the 
+expenditure by state, local, and tribal governments, in the aggregate, 
+or by the private sector of $100 million or more in any year and it 
+will not significantly or uniquely affect small governments. Therefore, 
+no actions are deemed necessary under the provisions of the Unfunded 
+Mandates Reform Act of 1995.
+
+Congressional Review Act
+
+    This rule does not meet the criteria of 5 U.S.C. 804(2).
+
+Executive Orders 12372 and 13132
+
+    This rulemaking does not have sufficient federalism implications to 
+require consultations or warrant the preparation of a federalism 
+summary impact statement. The regulations implementing Executive Order 
+12372 regarding intergovernmental consultation on Federal programs and 
+activities do not apply to this rulemaking.
+
+Executive Orders 12866 and 13563
+
+    Executive Order 12866, as supplemented and affirmed by Executive 
+Order 13563, directs agencies to assess all costs and benefits of 
+available regulatory alternatives and, if regulation is necessary, to 
+select regulatory approaches that maximize net benefits (including 
+potential economic, environmental, public health and safety effects, 
+distributed impacts, and equity). Executive Order 13563 emphasizes the 
+importance of quantifying both costs and benefits, of reducing costs, 
+of harmonizing rules, and of promoting flexibility. The Department 
+specifically welcomes public comment on the effects, including costs 
+and benefits, of this rule. After review by the Office of Management 
+and Budget (OMB), this rule has been deemed a ``significant regulatory 
+action'' under section 3(f) of Executive Order 12866.
+    This rule was undertaken pursuant to a statutory directive to 
+periodically review the items on the USML. The Department generally 
+determines which items warrant addition to, or removal from, the USML 
+by assessing whether each provides a critical military or intelligence 
+advantage based on national security and foreign policy considerations. 
+Because the costs and benefits of changing what is controlled focus on 
+the effect or utility of the item or service, rather than its market 
+prevalence or economic value, quantitative analyses cannot be usefully 
+estimated and are not available, particularly since the global 
+prevalence or availability of the item or service are not known. 
+Qualitatively, the rule was assessed for costs and benefits. These 
+revisions are also informed by confidential commodity jurisdiction 
+determination and advisory opinion requests, submitted by industry. The 
+Department takes into account common questions and strives to 
+streamline and simplify USML entries based on how it understands 
+industry experience with certain parts of the USML.
+    This rule moves the export regulation of certain aircraft from the 
+ITAR to the EAR, and it excludes from ITAR authorization requirements 
+certain transfers of defense articles while they are incorporated into 
+those aircraft. These actions reduce the regulatory burden on those who 
+transfer, repair, or maintain such aircraft. The Department assesses 
+that continuing to regulate these modified aircraft under the ITAR is 
+unnecessary and that removing them will add options for U.S. 
+participation in improving aviation safety. The Department assesses the 
+benefits of this rulemaking outweigh any costs, that modifying the USML 
+in this manner is the most cost-effective method to achieve the 
+Department's regulatory objectives on this matter, and that doing so 
+will result in a net reduction of the burden on the regulated 
+community.
+    The alternative to this rule was inaction or delay. The Department 
+could have waited to amend larger parts of the USML at once or 
+continued to gather data to evaluate the controls affected by this 
+rule. These alternatives were rejected. Statutory requirements, 
+including section 38(f) of the Arms Export Control Act (22 U.S.C. 
+2778(f)), and section 1345 of the National Defense Authorization Act 
+for Fiscal Year 2024, require a periodic review of the USML for edits 
+like those made by this rule. While the Department continuously reviews 
+the entire USML, it aims to focus on particular USML revisions in 
+cycles, as it has done in implementing this rule.
+
+Executive Order 14192
+
+    This rule is exempt from Executive Order 14192 as it is a 
+regulation issued with respect to a foreign affairs or national 
+security function of the United States.
+
+Executive Order 12988
+
+    The Department of State has reviewed this rulemaking in light of 
+sections 3(a) and 3(b)(2) of Executive Order 12988 to eliminate 
+ambiguity, minimize litigation, establish clear legal standards, and 
+reduce burden.
+
+Executive Order 13175
+
+    The Department of State has determined that this rulemaking will 
+not have tribal implications, will not impose substantial direct 
+compliance costs on Indian tribal governments, and will not preempt 
+tribal law. Accordingly, the requirements of Executive Order 13175 do 
+not apply to this rulemaking.
+
+Paperwork Reduction Act
+
+    This rulemaking does not impose or revise any information 
+collections subject to 44 U.S.C. chapter 35.
+
+List of Subjects
+
+22 CFR Part 120
+
+    Arms and munitions, Classified information, Exports.
+
+22 CFR Part 121
+
+    Arms and munitions, Classified information, Exports.
+
+    For reasons stated in the preamble, the Department of State amends 
+22 CFR parts 120 and 121, the United States Munitions List, as follows:
+
+PART 120--PURPOSE AND DEFINITIONS
+
+0
+1. The authority citation for part 120 continues to read as follows:
+
+    Authority:  22 U.S.C. 2651a, 2752, 2753, 2776, 2778, 2779, 
+2779a, 2785, 2794, 2797; E.O. 13637, 78 FR 16129, 3 CFR, 2013 Comp., 
+p. 223.
+
+0
+Amend Sec.  120.54 by revising paragraphs (a)(6) and (a)(7) and adding 
+paragraphs (a)(8) and (a)(9), to read as follows:
+
+
+Sec.  120.54  Activities that are not exports, reexports, retransfers, 
+or temporary imports.
+
+    (a) * * *
+    (6) * * *
+    (iii) The defense article is not being exported from or temporarily 
+imported into the United States;
+    (7) * * *
+    (iii) The defense article is not being exported from or temporarily 
+imported into the United States;
+    (8) Temporarily bringing secured ASE (as defined in Sec.  121.0) 
+into the United States; provided that neither the ASE,
+
+[[Page 55461]]
+
+nor the aircraft in which it is incorporated, is transferred without a 
+license or other approval under this subchapter to another foreign 
+person while in the United States; and
+    (9) Taking secured ASE (as defined in Sec.  121.0), previously 
+exported from the United States pursuant to a license under this 
+subchapter, from one foreign country to another while it is 
+incorporated into a survivability-enhanced aircraft (as defined in 
+Sec.  121.0).
+
+PART 121--THE UNITED STATES MUNITIONS LIST
+
+0
+3. The authority citation for part 121 continues to read as follows:
+
+    Authority:  22 U.S.C. 2752, 2778, 2797; 22 U.S.C. 2651a; Sec. 
+1514, Pub. L. 105-261, 112 Stat. 2175; E.O. 13637, 78 FR 16129, 3 
+CFR, 2013 Comp., p. 223.
+
+0
+4. Amend Sec.  121.0 by adding definitions of ASE, secured ASE, 
+survivability-enhanced aircraft, and USML, as follows:
+
+
+Sec.  121.0  United States Munitions List description and definitions.
+
+* * * * *
+    ASE means Aircraft Survivability Equipment.
+* * * * *
+    Secured ASE means a system or equipment that meets all of the 
+following conditions:
+    (1) Is one of the following defense articles designed for the 
+purpose of aircraft survivability:
+    (i) Directed/directional infrared countermeasures (DIRCM) systems; 
+or
+    (ii) Infrared or ultraviolet missile warning systems necessary for 
+the operation of DIRCM;
+    (2) Is incorporated into an aircraft; and
+    (3) Employs anti-tamper measures to deter, delay, and detect access 
+to, or exploitation of, critical system components and software.
+    Survivability-enhanced aircraft means a manned aircraft meeting all 
+of the following criteria:
+    (1) Prior to the modifications described in paragraph (2) of this 
+definition, was an aircraft in production that:
+    (i) Is not described on the USML;
+    (ii) Is described only in ECCN 9A991.b; and
+    (iii) Was issued either:
+    A. A type certificate by the U.S. Federal Aviation Administration 
+as a transport airplane or small commuter airplane, or
+    B. An equivalent certification by the civil aviation authorities of 
+one or more North Atlantic Treaty Organization member states or major 
+non-NATO allies;
+    (2) Has been modified to facilitate the incorporation of one or 
+more items of secured ASE as defined in this section;
+    (3) But for the modifications performed to incorporate secured ASE, 
+would not be described in paragraph (a)(8) of USML Category VIII; and
+    (4) Is not described in any USML paragraph other than paragraph 
+(a)(8) of USML Category VIII.
+    USML means the United States Munitions List in Sec.  121.1.
+* * * * *
+
+0
+5. Amend Sec.  121.1 by revising paragraph (a)(8) under Category VIII, 
+as follows:
+
+
+Sec.  121.1  The United States Munitions List.
+
+* * * * *
+Category VIII--Aircraft and Related Articles
+
+    (a) * * *
+    * (8) Aircraft specially designed to incorporate a defense article 
+for the purpose of performing an electronic warfare function, excluding 
+survivability-enhanced aircraft (see Sec.  121.0 of this subchapter); 
+airborne warning and control aircraft; or aircraft specially designed 
+to incorporate a defense article for the purpose of performing a 
+command, control, and communications function;
+* * * * *
+
+Thomas G. DiNanno,
+Under Secretary for Arms Control and International Security, U.S. 
+Department of State.
+[FR Doc. 2026-17660 Filed 8-27-26; 8:45 am]
+BILLING CODE 4710-25-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

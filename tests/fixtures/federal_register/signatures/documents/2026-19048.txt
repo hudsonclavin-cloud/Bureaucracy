@@ -1,0 +1,174 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 179 (Thursday, September 17, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 179 (Thursday, September 17, 2026)]
+[Notices]
+[Pages 58913-58914]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-19048]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+DEPARTMENT OF THE INTERIOR
+
+Geological Survey
+
+[Docket No. USGS-2026-0298; GX26EN05ESB0500; OMB Control Number 1028-
+0096]
+
+
+Agency Information Collection Activities; Submission to the 
+Office of Management and Budget for Review and Approval; Regional 
+Climate Adaptation Science Centers (CASCs)
+
+AGENCY: U.S. Geological Survey, Interior.
+
+ACTION: Notice of information collection; request for comment.
+
+-----------------------------------------------------------------------
+
+SUMMARY: In accordance with the Paperwork Reduction Act (PRA) of 1995, 
+the U.S. Geological Survey (USGS) is proposing to renew an information 
+collection authorization. Projects supported under this cooperative 
+agreement should advance Administration priorities, including, but not 
+limited to, American energy dominance, critical mineral development, 
+water security, infrastructure resilience, and natural hazard 
+preparedness. Research and activities may incorporate scientific 
+expertise in areas such as hydrology, geology, geospatial science, 
+biosecurity, and near-earth space science, including extreme events 
+such as drought, flooding, wildland fire, coastal erosion, severe 
+storms, and geologic hazards, to develop actionable science, data, and 
+tools that support informed decision-making by resource managers and 
+stakeholders.
+
+DATES: Interested persons are invited to submit comments on or before 
+October 19, 2026.
+
+ADDRESSES: You may submit comments by one of the following methods:
+    [ssquf] Internet: <a href="https://www.regulations.gov">https://www.regulations.gov</a>. Search for and 
+submit comments on Docket No. USGS-2026-0298.
+    [ssquf] U.S. Mail: USGS, Information Collections Clearance Officer, 
+12201 Sunrise Valley Drive, MS 159, Reston, VA 20192.
+
+FOR FURTHER INFORMATION CONTACT: To request additional information 
+about this information collection request (ICR), contact Shawn Carter, 
+Chief Administrator (Acting) and Senior Scientist of the USGS National 
+Climate Adaptation Science Center, by email at <a href="/cdn-cgi/l/email-protection#631000021117061123161004104d040c15"><span class="__cf_email__" data-cfemail="6c1f0f0d1e18091e2c191f0b1f420b031a">[email&#160;protected]</span></a>, or by 
+telephone at 571-314-2788. Individuals in the United States who are 
+deaf, deafblind, hard of hearing, or have a speech disability may dial 
+711 (TTY, TDD, or TeleBraille) to access telecommunications relay 
+services. Individuals outside the United States should use the relay 
+services offered within their country to make international calls to 
+the point-of-contact in the United States. You may also view the ICR at 
+<a href="http://www.reginfo.gov/public/do/PRAMain">http://www.reginfo.gov/public/do/PRAMain</a>.
+
+SUPPLEMENTARY INFORMATION: In accordance with the PRA (44 U.S.C. 3501 
+et seq.) and 5 CFR 1320.8(d)(1), we provide the public and other 
+Federal agencies with an opportunity to comment on new, proposed, 
+revised, and continuing collections of information. This helps us 
+assess the impact of our information collection requirements and 
+minimize the public's reporting burden. It also helps the public 
+understand our information collection requirements and provide the 
+requested data in the desired format.
+    A Federal Register notice with a 60-day public comment period 
+soliciting comments on this collection of information was published on 
+July 17, 2026 (91 FR 44868). No comments were received.
+    As part of our continuing effort to reduce paperwork and respondent 
+burdens, we are again soliciting comments from the public and other 
+Federal agencies on the proposed ICR that is described below. We are 
+especially interested in public comments addressing the following:
+    (1) Whether or not the collection of information is necessary for 
+the proper performance of the functions of the agency, including 
+whether the information will have practical utility.
+    (2) The accuracy of our estimate of the burden for this collection 
+of information, including the validity of the methodology and 
+assumptions used.
+    (3) Ways to enhance the quality, utility, and clarity of the 
+information to be collected; and
+    (4) How might the agency minimize the burden of the collection of 
+information on those who are to respond, including using appropriate 
+automated, electronic, mechanical, or other technological collection 
+techniques or other forms of information technology, e.g., permitting 
+electronic submission of response.
+    Comments that you submit in response to this notice are a matter of 
+public record. Before including your address, phone number, email 
+address, or other personally identifiable information (PII) in your 
+comment, you should be aware that your entire comment--including your 
+PII--may be made publicly available at any time. While you can ask us 
+in your comment to withhold your PII from public review, we cannot 
+guarantee that we will be able to do so.
+    Abstract: The US Geological Survey (USGS) manages one National and 
+nine Regional Climate Adaptation Science Centers (CASCs). Each regional 
+CASC involves a cooperative agreement with a host institution. The host 
+institution agreements are periodically re-competed, requiring 
+collection of information from potential host institutions. In 
+addition, this information collection addresses annual and biannual 
+reporting required of host institutions as part of their hosting 
+agreement and associated research agreements.
+    Title of Collection: Department of the Interior Regional Climate 
+Adaptation Science Centers.
+    OMB Control Number: 1028-0096.
+    Form Number: N/A.
+    Type of Review: Extension of a currently approved collection.
+    Respondents/Affected Public: Institutions that are expected to 
+propose to serve as CASC host or partner institutions including state, 
+local government, and tribal entities, and
+
+[[Page 58914]]
+
+academic institutions. Existing host institutions are state academic 
+institutions.
+    Total Estimated Number of Annual Respondents: 10.
+    Total Estimated Number of Annual Responses: 307 Responses (see 
+table below).
+    Estimated Completion Time per Response: Each proposal for CASC 
+hosting is expected to take 200 hours to complete. The time required to 
+complete annual reports for any specific host cooperative agreement is 
+expected to take 5 hours per report and annual reports for each 
+research agreement are expected to total 2.5 hours per report.
+    Total Estimated Number of Annual Burden Hours: 2,590 Hours (see 
+table below).
+
+----------------------------------------------------------------------------------------------------------------
+                                                                                   Annual burden
+                        Type of report                          Annual number of     hours per     Total annual
+                                                                    reports           report          burden
+----------------------------------------------------------------------------------------------------------------
+Host Recompete...............................................                  9             200           1,800
+Host Performance Report......................................                  9               5              45
+Host Financial Report........................................                  9               5              45
+Research Performance Report..................................                135             2.5           337.5
+Research Financial Report....................................                135             2.5           337.5
+NCASC Performance Report.....................................                  5             2.5            12.5
+NCASC Financial Report.......................................                  5             2.5            12.5
+                                                              --------------------------------------------------
+    Grand Total..............................................                307             220           2,590
+----------------------------------------------------------------------------------------------------------------
+
+    Respondent's Obligation: Required to Obtain or Retain a Benefit.
+    Frequency of Collection: Information will be collected one time 
+every five years for each CASC to enable re-competition of CASC hosting 
+agreements. In addition, host institutions are required to provide 
+annual financial reports and performance reports, as well as annual or 
+biannual financial and performance reports on the associated research 
+agreements.
+    Total Estimated Annual Non-hour Burden Cost: There are no ``non-
+hour cost'' burdens associated with this collection of information.
+    An agency may not conduct or sponsor, and a person is not required 
+to respond to, a collection of information unless it displays a 
+currently valid OMB control number.
+    The authority for this action is the Paperwork Reduction Act of 
+1995 (44 U.S.C. 3501 et seq.).
+
+Brian Kimbrell,
+Information Collection Clearance Officer, U.S. Geological Survey.
+[FR Doc. 2026-19048 Filed 9-16-26; 8:45 am]
+BILLING CODE 4334-63-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

@@ -1,0 +1,243 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 180 (Friday, September 18, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 180 (Friday, September 18, 2026)]
+[Notices]
+[Pages 59130-59131]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-19169]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+FEDERAL HOUSING FINANCE AGENCY
+
+[No. 2026-N-12]
+
+
+Proposed Collection; Comment Request
+
+AGENCY: Federal Housing Finance Agency.
+
+ACTION: Federal Home Loan Bank Capital Stock--60-Day notice of 
+submission of information collection for approval from Office of 
+Management and Budget.
+
+-----------------------------------------------------------------------
+
+SUMMARY: In accordance with the requirements of the Paperwork Reduction 
+Act of 1995 (PRA), the Federal Housing Finance Agency (FHFA) is seeking 
+public comment concerning an information collection known as ``Federal 
+Home Loan Bank Capital Stock,'' which has been assigned control number 
+2590-0002 by the Office of Management and Budget (OMB). FHFA intends to 
+submit the information collection to OMB for review and approval of a 
+three-year extension of the control number, which is due to expire on 
+November 30, 2026.
+
+DATES: Interested persons may submit comments on or before November 17, 
+2026.
+
+ADDRESSES: Submit comments to FHFA, identified by ``Proposed 
+Collection; Comment Request: `Federal Home Loan Bank Capital Stock, 
+(No. 2026-N-12)' '' by any of the following methods:
+    <bullet> Agency Website: <a href="https://www.fhfa.gov/regulation/federal-register?comments=open">https://www.fhfa.gov/regulation/federal-register?comments=open</a>.
+    <bullet> Email: <a href="/cdn-cgi/l/email-protection#50023537133f3d3d353e242310363836317e373f26"><span class="__cf_email__" data-cfemail="f5a79092b69a9898909b8186b5939d9394db929a83">[email&#160;protected]</span></a>. Include ``Proposed 
+Collection; Comment Request: ``Federal Home Loan Bank Capital Stock, 
+(No. 2026-N-12) in the subject line of the message.
+    <bullet> Mail/Hand Delivery: Federal Housing Finance Agency, Fourth 
+Floor, 400 Seventh Street SW, Washington, DC 20219, ATTENTION: Proposed 
+Collection; Comment Request: ``Federal Home Loan Bank Capital Stock, 
+(No. 2026-N-12).'' Please note that all mail sent to FHFA via U.S. Mail 
+is routed through a national irradiation facility, a process that may 
+delay delivery by approximately two weeks. For any time-sensitive 
+correspondence, please plan accordingly.
+    FHFA invites comments on all aspects of the proposed rule and will 
+take all comments into consideration before issuing a final rule. 
+Comments, including any personally identifiable information such as 
+name and contact information, will be posted to the electronic 
+rulemaking docket on the FHFA public website at <a href="https://www.fhfa.gov">https://www.fhfa.gov</a>, 
+except as described below. Commenters should submit only information 
+that the commenter wishes to make available publicly. FHFA will not 
+redact personally identifiable information once it is submitted. 
+Commenters who do not wish to be identified by their comments may 
+submit their comments anonymously. FHFA may post only a single 
+representative example of identical or substantially identical 
+comments, and in such cases will generally identify the number of 
+identical or substantially identical comments represented by the posted 
+example. FHFA may, in its discretion, redact or refrain from posting 
+all or any portion of any comment that contains content that is 
+obscene, vulgar, profane, or threatens harm. All comments, including 
+those that are redacted or not posted, will be retained in their 
+original form in FHFA's internal rulemaking file and will be considered 
+as required by all applicable laws. Commenters who would like FHFA to 
+consider any portion of their comment exempt from disclosure on the 
+basis that it contains trade secrets, or financial, confidential or 
+proprietary data or information, should follow the procedures in 
+section IV.D. of FHFA's Policy on Communications with Outside Parties 
+in Connection with FHFA Rulemakings, see <a href="https://www.fhfa.gov/document/policy-on-communications-with-outside-parties-in-connection-with-fhfa-rulemakings">https://www.fhfa.gov/document/policy-on-communications-with-outside-parties-in-connection-with-fhfa-rulemakings</a>. FHFA cannot guarantee that such data or information will 
+remain confidential if disclosure is sought pursuant to an applicable 
+statute or regulation. See 12 CFR 1202.8, 12 CFR 1214.2, and FHFA's 
+FOIA Reference Guide at <a href="https://www.fhfa.gov/about/foia-reference-guide">https://www.fhfa.gov/about/foia-reference-guide</a> 
+for additional information.
+
+FOR FURTHER INFORMATION CONTACT: Eric Raudenbush, Associate General 
+Counsel, <a href="/cdn-cgi/l/email-protection#6227100b014c30031706070c0017110a22040a04034c050d14"><span class="__cf_email__" data-cfemail="5f1a2d363c710d3e2a3b3a313d2a2c371f3937393e71383029">[email&#160;protected]</span></a>, (202) 649-3084 or Angela 
+Supervielle, Assistant Counsel, <a href="/cdn-cgi/l/email-protection#34755a535158551a6741445146425d5158585174525c52551a535b42"><span class="__cf_email__" data-cfemail="4a0b242d2f262b64193f3a2f383c232f26262f0a2c222c2b642d253c">[email&#160;protected]</span></a>, (202) 649-
+3973 (these are not toll-free numbers). For TTY/TRS users with hearing 
+and speech disabilities, dial 711 and ask to be connected to any of the 
+contact numbers above.
+
+SUPPLEMENTARY INFORMATION:
+
+A. Paperwork Reduction Act
+
+    Under the PRA (44 U.S.C. 3501-3520), Federal agencies must obtain 
+approval from OMB for each collection of information they conduct or 
+sponsor. ``Collection of information'' is defined in 44 U.S.C. 3502(3) 
+and 5 CFR 1320.3(c) to include agency requests or requirements that ten 
+or more persons submit information to a third party.
+    Section 3506(c)(2)(A) of title 44 and 5 CFR 1320.8(d) requires 
+Federal agencies to provide a 60-day notice \1\ in the Federal Register 
+concerning each proposed collection of information, including each 
+proposed extension of an existing collection of information, before 
+submitting the collection of information to OMB for approval. FHFA's 
+collection of information set forth in this document is titled 
+``Federal Home Loan Bank Capital Stock'' (assigned control number 2590-
+0002 by OMB). To comply with the PRA requirement, FHFA is publishing 
+notice of a proposed three-year extension of this collection of 
+information and renewal of the control number, which is due to expire 
+on November 30, 2026.
+---------------------------------------------------------------------------
+
+    \1\ Following the close of this notice's 60-day comment period, 
+FHFA will publish a second notice with a 30-day comment period as 
+required by 44 U.S.C. 3507(b) and 5 CFR 1320.10(a).
+---------------------------------------------------------------------------
+
+B. Background
+
+    The Federal Home Loan Bank System consists of eleven regional 
+Federal Home Loan Banks (Banks) and the Office of Finance (a joint 
+office of the Banks that issues and services the Banks' debt 
+securities). The Banks are wholesale financial institutions, organized 
+under the authority of the Federal Home Loan Bank Act (Bank Act) to 
+serve the public interest by enhancing the availability of residential 
+housing finance and community lending credit through their member 
+institutions and, to a limited extent, through certain eligible 
+nonmembers. Each Bank is structured as a regional cooperative that is 
+owned and controlled by member
+
+[[Page 59131]]
+
+institutions located within its district, which are also its primary 
+customers. An institution that is eligible for membership in a 
+particular Bank must purchase and hold a prescribed minimum amount of 
+the Bank's capital stock in order to become and remain a member of that 
+Bank. With limited exceptions, only an institution that is a member of 
+a Bank may obtain access to low cost secured loans, known as advances, 
+or other products provided by that Bank.
+    Section 6 of the Bank Act establishes capital requirements for the 
+Banks and requires FHFA to issue regulations prescribing uniform 
+capital standards applicable to all of the Banks.\2\ Section 6 also 
+establishes parameters relating to the Banks' capital structures and 
+requires that each Bank adopt a ``capital structure plan'' (capital 
+plan) to establish, within those statutory parameters, its own capital 
+structure and to establish requirements for, and govern transactions 
+in, the Bank's capital stock.\3\ FHFA's regulations on Bank Capital 
+Requirements, Capital Stock, and Capital Plans are located at 12 CFR 
+part 1277.
+---------------------------------------------------------------------------
+
+    \2\ See 12 U.S.C. 1426(a).
+    \3\ See 12 U.S.C. 1426(b), (c).
+---------------------------------------------------------------------------
+
+C. Need For and Use of the Information Collection
+
+    Both the Bank Act and FHFA's regulations state that a Bank's 
+capital plan must require its members to maintain a minimum investment 
+in the Bank's capital stock, but both permit each Bank to determine for 
+itself what that minimum investment is and how each member's required 
+minimum investment is to be calculated.\4\ Although each Bank's capital 
+plan establishes a slightly different method for calculating the 
+required minimum stock investment for its members, each Bank's method 
+is tied to some degree to both the level of assets held by the member 
+institution (typically referred to as a ``membership stock purchase 
+requirement'') and the amount of advances or other business engaged in 
+between the member and the Bank (typically referred to as an 
+``activity-based stock purchase requirement'').
+---------------------------------------------------------------------------
+
+    \4\ See 12 U.S.C. 1426(c)(1); 12 CFR 1277.22, 1277.28(a).
+---------------------------------------------------------------------------
+
+    A Bank must collect information from its members to determine the 
+minimum capital stock investment each member is required to maintain at 
+any point in time. Although the information needed to calculate a 
+member's required minimum investment and the precise method through 
+which it is collected differ somewhat from Bank to Bank, the Banks 
+typically collect two types of information. First, in order to 
+calculate and monitor compliance with its membership stock purchase 
+requirement, a Bank typically requires each member to provide and/or 
+confirm an annual report on the amount and types of assets held by that 
+institution. Second, each time a Bank engages in a business transaction 
+with a member, the Bank typically confirms with the member the amount 
+of additional Bank capital stock, if any, the member must acquire in 
+order to satisfy the Bank's activity-based stock purchase requirement 
+and the method through which the member will acquire that stock.
+
+D. Burden Estimate
+
+    FHFA has analyzed the time burden imposed on respondents by the two 
+collections under this control number and estimates that the average 
+total annual hour burden imposed on all respondents over the next three 
+years will be 19,898 hours. This estimate is derived from the following 
+calculations:
+
+1. Membership Stock Purchase Requirement Submissions
+
+    FHFA estimates that the average annual number of current and former 
+members and applicants for membership required to report information 
+needed to calculate a membership stock purchase requirement will be 
+6,425, and that each institution will submit one report per year, 
+resulting in an estimated total of 6,425 submissions annually. The 
+estimate for the average time required to prepare, review, and submit 
+each report is 0.7 hours. Accordingly, the estimate for the annual hour 
+burden associated with membership stock purchase requirement 
+submissions is (6,425 reports x 0.7 hours per report) = 4,498 hours.
+
+2. Activity-Based Stock Purchase Requirement Submissions
+
+    FHFA estimates that the average number of daily transactions 
+between Banks and members that will require the exchange of information 
+to confirm the member's activity-based stock purchase requirement will 
+be 295, and that there will be an average of 261 working days per year, 
+resulting in an estimated 76,995 submissions annually. The estimate for 
+the average preparation time per submission is 0.1 hours. Accordingly, 
+the estimate for the annual hour burden associated with activity-based 
+stock purchase requirement submissions is (76,995 submissions x 0.2 
+hours per submission) = 15,400 hours.
+
+E. Comment Request
+
+    FHFA requests written comments on the following: (1) Whether the 
+collection of information is necessary for the proper performance of 
+FHFA functions, including whether the information has practical 
+utility; (2) the accuracy of FHFA's estimates of the burdens of the 
+collection of information; (3) ways to enhance the quality, utility, 
+and clarity of the information collected; and (4) ways to minimize the 
+burden of the collection of information on respondents, including 
+through the use of automated collection techniques or other forms of 
+information technology.
+
+Shawn Bucholtz,
+Chief Data Officer, Federal Housing Finance Agency.
+[FR Doc. 2026-19169 Filed 9-17-26; 8:45 am]
+BILLING CODE 8070-01-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

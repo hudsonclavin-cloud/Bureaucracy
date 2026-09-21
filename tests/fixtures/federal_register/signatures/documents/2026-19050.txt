@@ -1,0 +1,367 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 179 (Thursday, September 17, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 179 (Thursday, September 17, 2026)]
+[Notices]
+[Pages 58890-58892]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-19050]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+DEPARTMENT OF ENERGY
+
+Bonneville Power Administration
+
+[BPA File No.: BP-27]
+
+
+Revision of Fiscal Year (FY) 2026-2028 Power Rate Schedules and 
+General Rate Schedule Provisions (GRSPs) for the Remainder of BP-26 
+Rate Period; Public Hearing and Opportunities for Public Review and 
+Comment
+
+AGENCY: Bonneville Power Administration (Bonneville or BPA), Department 
+of Energy (DOE).
+
+ACTION: Revision to add power rate adjustment mechanisms to FY 2026-
+2028 Power Rate Schedules and General Rate Schedule Provisions (GRSPs).
+
+-----------------------------------------------------------------------
+
+SUMMARY: Because of a recent district court decision in a lawsuit filed 
+by the National Wildlife Federation, a coalition of fishing and 
+environmental groups, and the State of Oregon, Bonneville is holding an 
+expedited rate proceeding pursuant to the Pacific Northwest Electric 
+Power Planning and Conservation Act (Northwest Power Act) to add power 
+rate adjustment mechanisms to the FY 2026-2028 Power Rate Schedules and 
+GRSPs for the remainder of the BP-26 rate period. The Northwest Power 
+Act requires that Bonneville's rates be established through a section 
+7(i) rate proceeding and based on the record of a formal hearing. The 
+expedited proceeding is required to ensure the proposed mechanism takes 
+effect as soon as practicable, given Bonneville is already being 
+negatively impacted by the court order. By this notice, Bonneville 
+announces the commencement of an expedited rate proceeding, designated 
+as the ``BP-27'' proceeding, for the limited purpose of adding power 
+rate adjustment mechanisms to the FY 2026-2028 Power Rate Schedules and 
+GRSPs. The proposed power rate adjustment mechanisms are expected to 
+recover an additional $250 million from power rates, which would result 
+in a 6.3 percentage increase to the average effective Priority Firm 
+Non-Slice power rate.
+
+DATES: 
+    Prehearing Conference: A prehearing conference for the BP-27 
+proceeding will be held at 9 a.m. on October 5, 2026, via WebEx. The 
+WebEx information will be available on Bonneville's website at <a href="https://www.bpa.gov/energy-and-services/rate-and-tariff-proceedings/bp-27-rate-case">https://www.bpa.gov/energy-and-services/rate-and-tariff-proceedings/bp-27-rate-case</a> or from the Hearing Clerk.
+    Intervention: Petitions to intervene in the BP-27 proceeding must 
+be filed on Bonneville's secure website no later than 4:30 p.m. Pacific 
+Prevailing Time on October 6, 2026. Part III of this notice, ``Public 
+Participation in BP-27,'' provides details on requesting access to the 
+secure website and filing a petition to intervene.
+    Participant Comments: Written comments by non-party participants 
+must be received by October 19, 2026, to be considered in the 
+Administrator's Record of Decision (ROD). Part III of this notice, 
+``Public Participation in BP-27,'' provides details on submitting 
+participant comments.
+
+FOR FURTHER INFORMATION CONTACT: Ms. Elissa Haley, NKS-7, BPA 
+Communications, Bonneville Power Administration, P.O. Box 14428, 
+Portland, Oregon 97293; by phone toll-free at 1-800-622-4519; or by 
+email to <a href="/cdn-cgi/l/email-protection#5d3833353c3138241d3f2d3c733a322b"><span class="__cf_email__" data-cfemail="91f4fff9f0fdf4e8d1f3e1f0bff6fee7">[email&#160;protected]</span></a>.
+    The Hearing Clerk for this proceeding can be reached via the 
+contact information provided on Bonneville's website at <a href="https://www.bpa.gov/energy-and-services/rate-and-tariff-proceedings/bp-27-rate-case">https://www.bpa.gov/energy-and-services/rate-and-tariff-proceedings/bp-27-rate-case</a>.
+    Please direct questions regarding Bonneville's secure website to 
+the Hearing Coordinator via email at <a href="/cdn-cgi/l/email-protection#b8dbcfdfcad1dededdd6f8dac8d996dfd7ce"><span class="__cf_email__" data-cfemail="f6958191849f90909398b6948697d8919980">[email&#160;protected]</span></a> or, if the 
+question is time-sensitive, via telephone at (503) 230-5107.
+    Responsible Officials: Ms. Sarah E. Burczak, Power Rates Manager, 
+is the official responsible for the development of Bonneville's power 
+rates.
+
+SUPPLEMENTARY INFORMATION:
+
+Table of Contents
+
+Part I. Introduction and Procedural Matters
+Part II. Scope of the BP-27 Rate Proceeding
+Part III. Public Participation in the BP-27 Rate Proceeding
+Part IV. Summary of Rate Proposal
+
+Part I--Introduction and Procedural Matters
+
+A. Introduction and Expedited Process
+
+    Bonneville is proposing to add power rate adjustment mechanisms to 
+the FY 2026-2028 Wholesale Power Rate Schedules and General Rate 
+Schedule Provisions (GRSPs) for the remainder of the BP-26 rate period 
+in order to address the financial impact of the U.S. District Court for 
+the District of Oregon's Amended Preliminary Injunction Order, ECF No. 
+2674, NWF, et al. v. NMFS, et al., Case No. 3:01-cv-640-SI, issued 
+March 2, 2026. This proceeding, the BP-27 proceeding, is limited solely 
+to this purpose. The proposed power rate adjustment mechanisms are 
+expected to recover an additional $250 million from power rates, which 
+would result in a 6.3 percent increase to the average effective 
+Priority Firm Non-Slice power rate, a 5.3 percent increase to the 
+average effective Industrial Firm power rate, and a 2.2 percent 
+increase to the average effective New Resources Firm power rate.
+    In light of the limited purpose of the BP-27 proceeding, and in 
+compliance with the procedures for the establishment of Bonneville 
+rates set forth in Section 7(i) of the Northwest Power Act, 16 U.S.C. 
+839e(i), Bonneville is conducting the hearing process for a review of 
+this proposal on an expedited basis.
+    The Rules of Procedure that govern Bonneville's rate proceedings 
+were published in the Federal Register, 83 FR 39993 (Aug. 13, 2018), 
+and posted on Bonneville's website at <a href="https://www.bpa.gov/Finance/RateCases/RulesProcedure/Pages/default.aspx">https://www.bpa.gov/Finance/RateCases/RulesProcedure/Pages/default.aspx</a>. Sections 1010.4(b)(4) and 
+1010.22 of the Rules of Procedure provide for expedited rate processes. 
+In order to facilitate the expedited process in the BP-27 proceeding, 
+pursuant to Section 1010.1(e) of the Rules of Procedure, the 
+Administrator authorizes the Hearing Officer to waive any procedural 
+requirements of the rules for the purpose of developing the record and 
+completing the proceeding on an expedited basis.
+
+B. Proposed Procedural Schedule
+
+    Bonneville has made prospective parties aware of its intent to use 
+an expedited process pursuant to section 1010.22 of the Rules of 
+Procedure. The official schedule will be established by the Hearing 
+Officer and may be amended by the Hearing Officer as needed during the 
+proceeding. The Hearing Officer may circumscribe or reduce the timing 
+or availability of any procedural activities in the case as he or she 
+determines are unnecessary or overly burdensome in consideration of the 
+limited scope and purpose of this case.
+
+Initial Proposal Released--October 5, 2026
+Prehearing Conference--October 5, 2026
+Deadline for Petitions to Intervene--October 6, 2026
+Close of Participant Comment Period--October 19, 2026
+Final Record of Decision--December 18, 2026
+
+[[Page 58891]]
+
+C. Ex Parte Communications
+
+    Section 1010.5 of the Rules of Procedure prohibits ex parte 
+communications. Ex parte communications include any oral or written 
+communication (1) relevant to the merits of any issue in the 
+proceeding; (2) that is not on the record; and (3) with respect to 
+which reasonable prior notice has not been given. The ex parte rule 
+applies to communications with all Bonneville and DOE employees and 
+contractors, the Hearing Officer, and the Hearing Clerk during the 
+proceeding. Except as provided, any communications with persons covered 
+by the rule regarding the merits of any issue in the proceeding by 
+other executive branch agencies, Congress, existing or potential 
+Bonneville customers, nonprofit or public interest groups, or any other 
+non-DOE parties are prohibited. The rule explicitly excludes and does 
+not prohibit communications (1) relating to matters of procedure; (2) 
+otherwise authorized by law or the Rules of Procedure; (3) from or to 
+the Federal Energy Regulatory Commission (Commission); (4) that all 
+litigants agree may be made on an ex parte basis; (5) in the ordinary 
+course of business, about information required to be exchanged under 
+contracts, or in information responding to a Freedom of Information Act 
+request; (6) between the Hearing Officer and Hearing Clerk; (7) in 
+meetings for which prior notice has been given; or (8) as otherwise 
+specified in section 1010.5(b) of the Rules of Procedure. The 
+prohibition on ex parte communications applies from the date of 
+publication of this notice and will remain in effect until the 
+Administrator's Final Record of Decision is issued.
+
+Part II--Scope of the BP-27 Rate Proceeding
+
+A. BP-27 Rate Proceeding
+
+    The scope of the BP-27 rate proceeding is limited solely to 
+consideration of the proposed revision to add the Court-Ordered 
+Operation Rate Adder (COORA) and COORA True-Up adjustment mechanisms to 
+section II.AD to the Wholesale Power Rate Schedules and GRSPs. The BP-
+26 power and transmission rates were approved by the Federal Energy 
+Regulatory Commission on a final basis on February 19, 2026. Bonneville 
+is not otherwise revising the BP-26 power or transmission rates in the 
+BP-27 rate proceeding.
+    Bonneville may revise the scope of the proceeding to include new 
+issues that arise as a result of circumstances or events occurring 
+outside the proceeding that are substantially related to the rates 
+under consideration in the proceeding. See Rules of Procedure, section 
+1010.4(b)(8)(ii), (iii), (iv). Only Bonneville may prescribe or revise 
+the scope of the proceeding. Id. If Bonneville revises the scope of the 
+proceeding to include new issues, Bonneville will provide public notice 
+on its website, present testimony or other information regarding such 
+issues, and provide a reasonable opportunity to intervene and respond 
+to Bonneville's testimony or other information. Id.
+    Pursuant to section 1010.4(b)(8) of the Rules of Procedure, the 
+Administrator directs the Hearing Officer to exclude from the record 
+all argument, testimony, or other evidence that challenges the 
+appropriateness or reasonableness of any other matter, issue, topic, or 
+policy that is not directly related to the proposed revisions to 
+section II.AD of the Power Rate Schedules and GRSPs discussed in 
+section IV of this notice.
+
+B. The National Environmental Policy Act
+
+    Bonneville is in the process of assessing the potential 
+environmental effects of its proposed power rate adjustments, 
+consistent with the National Environmental Policy Act (NEPA). The NEPA 
+process is conducted separately from the rate proceeding. All evidence 
+and argument addressing potential environmental impacts of the rate 
+adjustments being developed in the BP-27 rate proceeding are excluded 
+from the rate proceeding record. Instead, comments on environmental 
+effects should be directed to the NEPA process.
+    Based on its most current assessment of the proposed power rate 
+adjustments, Bonneville believes this proposal may be the type of 
+action typically excluded from further NEPA review pursuant to U.S. 
+Department of Energy NEPA regulations and procedures, which apply to 
+Bonneville. More specifically, the proposal appears to solely involve 
+changes to Bonneville's rates and other cost recovery and management 
+mechanisms to ensure that there are sufficient revenues to meet 
+Bonneville's financial obligations and other costs and expenses, while 
+using existing generation sources operating within normal operating 
+limits. As such, it appears this rate proposal falls within Categorical 
+Exclusion B4.3, found at 10 CFR part 1021, Appendix B, which provides 
+for the categorical exclusion from further NEPA review of ``[r]ate 
+changes for electric power, power transmission, and other products or 
+services provided by a Power Marketing Administration that are based on 
+a change in revenue requirements if the operations of generation 
+projects would remain within normal operating limits.''
+    Nonetheless, Bonneville is still assessing the proposal, and, 
+depending upon the ongoing environmental review, Bonneville may instead 
+take another appropriate approach to NEPA. Comments regarding the 
+potential environmental effects of the proposal may be submitted to 
+Katey Grange, NEPA Compliance Officer, EC-4, Bonneville Power 
+Administration, 905 NE 11th Avenue, Portland, Oregon 97232, and to 
+<a href="/cdn-cgi/l/email-protection#1378707461727d7476537163723d747c65"><span class="__cf_email__" data-cfemail="573c343025363930321735273679303821">[email&#160;protected]</span></a>. Any such comments received by the comment deadline 
+for Participant Comments identified in section III. A of this notice 
+will be considered by Bonneville's NEPA compliance staff in the NEPA 
+process that is being conducted for this proposal.
+
+Part III--Public Participation in the BP-27 Rate
+
+A. Interventions
+
+    Any entity or person intending to become a party in the BP-27 
+proceeding must file a petition to intervene through Bonneville's 
+secure website, <a href="https://www.bpa.gov/secure/Ratecase/">https://www.bpa.gov/secure/Ratecase/</a>. A first-time user 
+of Bonneville's secure website must create a user account to submit an 
+intervention. Returning users may request access to the BP-27 rate 
+proceeding through their existing accounts and may submit interventions 
+once their permissions have been updated. The secure website contains a 
+link to the user guide, which provides step-by-step instructions for 
+creating user accounts, submitting filings, and uploading 
+interventions. Please contact the Hearing Coordinator via email at 
+<a href="/cdn-cgi/l/email-protection#f2918595809b9494979cb2908293dc959d84"><span class="__cf_email__" data-cfemail="f2918595809b9494979cb2908293dc959d84">[email&#160;protected]</span></a> or, if the question is time-sensitive, via telephone 
+at (503) 230-5107, with any questions regarding the registration and 
+submission process.
+    All petitions to intervene must be uploaded to Bonneville's secure 
+website by 4:30 p.m. Pacific Prevailing Time on the deadline in the 
+procedural schedule adopted by the Hearing Officer. Late interventions 
+are strongly disfavored. Petitions to intervene must conform to the 
+format and content requirements in sections 1010.6 and 1010.11 of the 
+Rules of Procedure. Petitions must state the name and address of the 
+entity or person requesting party status and the entity or person's 
+interest in the hearing.
+    The Hearing Officer will rule on all petitions to intervene. 
+Bonneville customers and affiliated customer groups will be granted 
+intervention based on petitions filed in conformance with the Rules of 
+Procedure. Other petitioners must explain their interests
+
+[[Page 58892]]
+
+in sufficient detail to permit the Hearing Officer to determine whether 
+the petitioners have a relevant interest in the hearing.
+    Bonneville or any party may oppose a petition to intervene. The 
+deadline for opposing a timely petition to intervene is two business 
+days after the deadline for filing the petition.
+    Opposition to an untimely petition to intervene must be filed 
+within two business days after service of the petition.
+
+B. Participant Comments
+
+    Bonneville distinguishes between ``participants in'' and ``parties 
+to'' the BP-27 proceeding. Separate from the formal hearing process, 
+Bonneville will accept written comments, views, opinions, and 
+information from participants who have not intervened in the BP-27 
+proceeding and been granted ``party'' status by the Hearing Officer. 
+Participants are not entitled to participate in the prehearing 
+conference; may not cross-examine parties' witnesses, seek discovery, 
+or serve or be served with documents; and are not subject to the same 
+procedural requirements as parties. Bonneville customers whose rates 
+are subject to this proceeding, or their affiliated customer groups, 
+may not submit participant comments. Members or employees of 
+organizations that have intervened in the proceeding may submit 
+participant comments as private individuals (that is, not speaking for 
+their organizations) but may not use the comment procedures to address 
+specific issues raised by their intervenor organizations.
+    Written comments by participants must be received by October 19, 
+2026, to be included in the record and considered by the Administrator. 
+Participants should submit comments through Bonneville's website at 
+<a href="http://www.bpa.gov/comment">www.bpa.gov/comment</a> or by hard copy to: BPA Public Involvement, 
+Bonneville Power Administration, P.O. Box 14428, Portland, Oregon 
+97293. All comments should contain the designation ``BP-27'' in the 
+subject line.
+
+C. Developing the Record
+
+    The hearing record will include, among other things, the 
+transcripts of the hearing, written evidence and argument entered into 
+the record by Bonneville and the parties, written comments from 
+participants, and other material accepted into the record by the 
+Hearing Officer. The Hearing Officer will review and certify the record 
+to the Administrator.
+    The Administrator will make a final determination on the issue in 
+this proceeding based on the record and such other materials and 
+information as may have been submitted to or developed by the 
+Administrator. The Final ROD will be made available to all parties. 
+Bonneville will submit the Final ROD and the hearing record to the 
+Commission for confirmation and approval after issuance of the Final 
+ROD.
+
+Part IV--Summary of Rate Proposal
+
+    Bonneville is proposing limited revisions to the Fiscal Year 2026-
+2028 Power Rate Schedules and GRSPs to add new power rate adjustment 
+mechanisms to address the expected financial impact of the U.S. 
+District Court for the District of Oregon's Amended Preliminary 
+Injunction Order, ECF No. 2674, NWF, et al. v. NMFS, et al., Case No. 
+3:01-cv-640-SI, issued March 2, 2026.
+    The Power GRSPs include general rate schedule terms and conditions 
+applicable to Bonneville's power rates. In addition, the Power GRSPs 
+contain special rate adjustments, charges, credits, and pass-through 
+mechanisms for specific events and customer circumstances.
+    Specifically, Bonneville proposes adding the COORA and COORA True-
+Up to GRSP section II.AD. These mechanisms would apply to the following 
+products under the PF-26 Rate Schedule: Load Following, Block, and the 
+Block portion of Slice/Block. The COORA and COORA True-Up also apply to 
+power purchased at the PF Melded Rate (PF-26), Industrial Firm Power 
+Rate (IP-26), and New Resource Firm Power Rate (NR-26). These 
+mechanisms would adjust the PF Tier 1 Equivalent Energy Rates (GRSP 
+II.AA), the Load Shaping Charge True-Up Rate (GRSP II.E, Section 1), 
+and the PF Melded Equivalent Energy Scalar Rate (GRSP II.R, Section 
+1(c)).
+    Bonneville's proposed GRSP revisions are a part of this notice and 
+are available for viewing and downloading on Bonneville's website at 
+<a href="https://www.bpa.gov/bp-27-rate-case">https://www.bpa.gov/bp-27-rate-case</a>.
+
+Signing Authority
+
+    This document of the Department of Energy was signed on September 
+10, 2026, by Travis R. Kavulla, Administrator and Chief Executive 
+Officer of the Bonneville Power Administration, pursuant to delegated 
+authority from the Secretary of Energy. That document with the original 
+signature and date is maintained by DOE. For administrative purposes 
+only, and in compliance with requirements of the Office of the Federal 
+Register, the undersigned DOE Federal Register Liaison Officer has been 
+authorized to sign and submit the document in electronic format for 
+publication, as an official document of the Department of Energy. This 
+administrative process in no way alters the legal effect of this 
+document upon publication in the Federal Register.
+
+    Signed in Washington, DC, on September 15, 2026.
+Treena V. Garrett,
+Federal Register Liaison Officer, U.S. Department of Energy.
+[FR Doc. 2026-19050 Filed 9-16-26; 8:45 am]
+BILLING CODE 6450-01-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

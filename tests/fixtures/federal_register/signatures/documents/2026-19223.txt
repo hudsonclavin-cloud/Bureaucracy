@@ -1,0 +1,909 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 181 (Monday, September 21, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 181 (Monday, September 21, 2026)]
+[Rules and Regulations]
+[Pages 59698-59705]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-19223]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+DEPARTMENT OF STATE
+
+22 CFR Part 171
+
+[Public Notice: 13124]
+RIN 1400-AG32
+
+
+Public Access to Information
+
+AGENCY: Department of State.
+
+ACTION: Final rule.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The Department of State revises its regulations governing the 
+availability to the public of information that is under the control of 
+the
+
+[[Page 59699]]
+
+Department. This rule reflects changes in the Department's organization 
+and procedures since the last revision of the Department's regulations 
+on public access to information, including relating to the use of email 
+to submit requests for information under this part.
+
+DATES: The rule is in effect on October 21, 2026.
+
+FOR FURTHER INFORMATION CONTACT: Susan Weetman, FOIA Public Liaison, 
+Information Access Programs Directorate, U.S. Department of State, 
+<a href="/cdn-cgi/l/email-protection#fabcb5b3bba98e9b8e8f89ba898e9b8e9fd49d958c"><span class="__cf_email__" data-cfemail="682e2721293b1c091c1d1b281b1c091c0d460f071e">[email&#160;protected]</span></a>, 202-261-8484.
+
+SUPPLEMENTARY INFORMATION: This final rule implements the Freedom of 
+Information Act (FOIA) Improvement Act of 2016, Public Law 114-185, and 
+updates the Department's FOIA regulations at 22 CFR part 171. The 
+following is a summary of the substantive changes.
+    The final rule, in Sec.  171.4(a)(1), encourages the public to 
+search the agency's FOIA Library to determine whether the records they 
+seek are already publicly available prior to submitting a request. Due 
+to the Department's release-to-one, release-to-all policy, in many 
+cases this provision would enable the public to locate records 
+immediately and without the need to file a FOIA request.
+    The final rule, in Sec.  171.4(a)(2) and Sec.  171.15(a)(2) and 
+(3), directs the public to the agency's FOIA web page for the list of 
+components accepting FOIA requests, administrative appeals, and the 
+corresponding contact information. This will enable the Department to 
+more easily keep component contact information up to date.
+    The final rule, in Sec.  171.4(a)(2), provides updated procedures 
+for submitting FOIA requests to the Department. Specifically, the 
+Department will only accept electronic FOIA and Privacy Act request 
+submissions for the Information Access Programs Directorate and the 
+Directorate for Passport Services via <a href="http://FOIA.gov">FOIA.gov</a> or the Department's FOIA 
+website.
+    The final rule, in Sec.  171.4(b), simplifies and consolidates the 
+procedures for reasonably describing records sought; for example, what 
+information should be provided when requesting visa records. This 
+update aims to increase efficiency in processing requests by reducing 
+the need to manually enter data into the Department's case management 
+system and reduce the need to request information that is often missing 
+from submissions.
+    The final rule, in Sec.  171.11(a), removes redundant information 
+regarding IAP's role in making initial determinations.
+    Subpart C contains the rule's Privacy Act provisions. The final 
+rule, in Sec.  171.22(c) and (e), clarifies the methods used to verify 
+identity for first-party information or a third party's information 
+requests. The rule consolidates these requirements in this section that 
+were previously repeated or spread across several subsections. The 
+final change aims to make it easier for requesters to understand what 
+information is required to verify their identity and how this 
+information can be submitted. This update will minimize the number of 
+requests that do not include proper verification of identity and 
+increase the number of properly verified first and third-party requests 
+the Department receives and reduce the administrative burden on the 
+agency of following up with requesters that have not properly verified 
+their identity.
+    In Sec.  171.26(a), the final rule updates the list of SORNS and 
+exemptions.
+    Finally, the final rule makes numerous minor changes throughout, to 
+update references to the Office of Information Programs and Services to 
+Information Access Programs Directorate.
+
+Regulatory Findings
+
+Administrative Procedure Act
+
+    This rulemaking is exempt from notice and comment procedures under 
+the provisions of 5 U.S.C. 553(b), since it is related to Department 
+organization, procedure, and practice.
+
+Regulatory Flexibility Act
+
+    The Department of State, in accordance with the Regulatory 
+Flexibility Act, 5 U.S.C. 605(b), has reviewed this regulation and, by 
+approving it, certifies that this rule will not have a significant 
+economic impact on a substantial number of small entities.
+
+Unfunded Mandates Act of 1995
+
+    This rule will not result in the expenditure by State, local, and 
+tribal governments, in the aggregate, or by the private sector, of $100 
+million or more in any year, and it will not significantly or uniquely 
+affect small governments. Therefore, no actions were deemed necessary 
+under the provisions of the Unfunded Mandates Reform Act of 1995.
+
+Executive Order 12988--Civil Justice Reform
+
+    The Department has reviewed this regulation in light of Executive 
+Order 12988 to eliminate ambiguity, minimize litigation, establish 
+clear legal standards, and reduce burden.
+
+Executive Orders 12372 and 13132--Federalism
+
+    This regulation will not have substantial direct effects on the 
+States, on the relationship between the national government and the 
+States, or on the distribution of power and responsibilities among the 
+various levels of government. Therefore, in accordance with Executive 
+Order 13132, it is determined that this rule does not have sufficient 
+federalism implications to require consultations or warrant the 
+preparation of a federalism summary impact statement. The regulations 
+implementing Executive Order 12372 regarding intergovernmental 
+consultation on Federal programs and activities do not apply to this 
+regulation.
+
+Executive Order 13175--Consultation and Coordination With Indian Tribal 
+Governments
+
+    The Department has determined that this rulemaking will not have 
+tribal implications, will not impose substantial direct compliance 
+costs on Indian tribal governments, and will not pre-empt tribal law. 
+Accordingly, the requirements of Executive Order 13175 do not apply to 
+this rulemaking.
+
+Executive Orders 12866 and 13563--Improving Regulation and Regulatory 
+Review
+
+    The Department has considered this rule in light of these Executive 
+Orders and affirms that this regulation is consistent with the guidance 
+therein. The benefits of this rulemaking for the public include, but 
+are not limited to, providing an up-to-date procedure for requesting 
+information from the Department that is consistent with the FOIA 
+Improvement Act of 2016. The Department is aware of no more than a 
+minimal cost to the public from this rulemaking. The Office of 
+Information and Regulatory Affairs has not designated this rule as 
+``significant'' within the meaning of E.O. 12866.
+
+Executive Order 14192--Unleashing Prosperity Through Deregulation
+
+    Since this rule was not deemed ``significant'' under Executive 
+Order 12866, it is not subject to the provisions of Executive Order 
+14192.
+
+Paperwork Reduction Act
+
+    This rule does not impose or revise any reporting or recordkeeping 
+requirements subject to the Paperwork Reduction Act, 44 U.S.C. Chapter 
+35.
+
+List of Subjects in 22 CFR Part 171
+
+    Administrative practice and procedure, Freedom of information, 
+Privacy.
+
+[[Page 59700]]
+
+    Accordingly, for the reasons set forth in the preamble, the State 
+Department amends 22 CFR part 171 as follows:
+
+PART 171--PUBLIC ACCESS TO INFORMATION
+
+0
+1. The authority citation for part 171 continues to read as follows:
+
+    Authority:  22 U.S.C. 2651a; 5 U.S.C. 552, 552a; E.O. 12600 (52 
+FR 23781); Pub. L. 114-185; Pub. L. 95-521, 92 Stat. 1824 (codified 
+as amended at 5 U.S.C. Ch. 131); 5 CFR part 2634.
+
+0
+2. In Sec.  171.1 amend paragraph (b) by revising the definition of 
+``Component'' to read as follows:
+
+
+ Sec.  171.1  General provisions.
+
+* * * * *
+    (b) * * *
+    Component means each separate bureau, office, division, commission, 
+service, center, or administration within an agency that is responsible 
+for processing FOIA or PA requests concerning records under their 
+jurisdiction. The rules described in this regulation that apply to 
+agencies also apply to components.
+* * * * *
+
+0
+3. Revise Sec.  171.2 to read as follows:
+
+
+Sec.  171.2  Types of records maintained.
+
+    Most of the records maintained by the Department pertain to the 
+formulation and execution of U.S. foreign policy. The Department also 
+maintains certain records that pertain to individuals, such as 
+applications for U.S. passports issued from March 1925 to present, 
+applications for U.S. visas, records on consular assistance given 
+abroad by U.S. Foreign Service posts to U.S. citizens and lawful 
+permanent residents, and records on Department employees. Further 
+information on the types of records maintained by the Department may be 
+obtained by reviewing the Department's records disposition schedules, 
+which are available on the Department's FOIA website at <a href="https://foia.state.gov/">https://foia.state.gov/</a>.
+
+
+Sec.  171.3   [Amended]
+
+0
+4. Amend Sec.  171.3(a) by removing the words ``www.state.gov/privacy'' 
+and adding in their place ``www.state.gov/system-of-records-notices-
+privacy-office''.
+
+0
+5. Revise Sec.  171.4 to read as follows:
+
+
+Sec.  171.4   Requests for information--types and how made.
+
+    (a) General information. (1) Prior to filing a request for records, 
+please determine if the information you are seeking is already 
+available on the Department's website (<a href="http://www.state.gov">www.state.gov</a>) or the FOIA 
+Library (<a href="https://foia.state.gov/FOIALIBRARY/FOIALIB2.aspx">https://foia.state.gov/FOIALIBRARY/FOIALIB2.aspx</a>).
+    (2) Requests for records made in accordance with this part must be 
+made in writing via the Department's FOIA website (<a href="https://foia.state.gov/">https://foia.state.gov/</a>), the National FOIA Portal (<a href="http://www.foia.gov">www.foia.gov</a>), or by mail 
+to the component address as listed on the Department's FOIA website. A 
+request will receive the quickest possible response if it is addressed 
+to the FOIA office of the component that maintains the records sought. 
+A list of the Department's components that accept FOIA requests, 
+including descriptions of the types of records maintained, as well as 
+FOIA contact information can be found at <a href="https://foia.state.gov/">https://foia.state.gov/</a>.
+    (3) Requesters must provide contact information, such as their 
+phone number, email address, and/or mailing address, to assist the 
+Department in communicating with them and providing released records.
+    (4) Requests for records of the OIG must be made in writing via the 
+National FOIA Portal (<a href="http://www.foia.gov">www.foia.gov</a>), email, or mail. Guidance and 
+contact information are available on the OIG's website at 
+<a href="http://www.stateoig.gov/foiarequest">www.stateoig.gov/foiarequest</a>.
+    (5) The requester should provide the specific citation to the 
+authority under which he or she is requesting information (e.g., the 
+FOIA, the PA, or Mandatory Declassification Review (MDR) under the 
+current Executive Order on classification). This will facilitate the 
+processing of the request.
+    (b) Description of records sought. Although no particular format is 
+required, a request must reasonably describe the Department record(s) 
+that the requester seeks. Requesters must describe the records sought 
+in sufficient detail to enable agency personnel to locate them with a 
+reasonable amount of effort. To the extent possible, requesters should 
+include specific information that may assist the Department in 
+identifying the requested record(s), such as the bureau or office; date 
+or timeframe; title or name of the custodian, author, or recipient; 
+subject matter; case number; or file designation reference number. 
+Requests for visa records should include the following information for 
+the applicant and, if applicable, the petitioner: full name, as well as 
+any aliases used; current address; email; and date and place of birth 
+(including city, state, and country). Additional information describing 
+the records sought will assist the Department in properly identifying 
+the responsive records and in processing the request. If after 
+receiving a request the Department determines that the request does not 
+reasonably describe the records sought, the Department will inform the 
+requester that the request is insufficient and shall inform the 
+requester what additional information is needed or why the request is 
+otherwise insufficient. If a request does not reasonably describe the 
+records sought, the agency's response to the request may be delayed. 
+Any records provided in response to a request will be provided in the 
+form or format requested if a releasable form of the records is readily 
+reproducible in that form or format. Before submitting their requests, 
+requesters are encouraged to contact the component's FOIA contact or 
+FOIA Public Liaison to discuss the records they seek and to receive 
+assistance in describing the records or narrowing the scope of their 
+request.
+    (c) Privacy Act versus FOIA. While the Department makes every 
+effort to provide the greatest possible access to all requested records 
+regardless of the statute(s) under which the information is requested, 
+the following guidance is provided for the benefit of requesters:
+    (1) The Freedom of Information Act applies to requests for records 
+concerning the general activities of government and of the Department 
+in particular (see subpart B of this part).
+    (2) The Privacy Act applies to requests from U.S. citizens or 
+lawful permanent residents for records about them that are maintained 
+by the Department in a system of records retrievable by the 
+individual's name or personal identifier (see subpart C of this part).
+    (3) Requests made by individuals for records about themselves under 
+the Privacy Act of 1974, 5 U.S.C. 552a, are processed in accordance 
+with the Department's Privacy Act regulations in subpart C, as well as 
+under this subpart. Information in such records will be withheld only 
+if it is exempt from access under both laws; if the information is 
+exempt under only one of the laws, it will be released. Responsive 
+records that are not maintained in a Privacy Act system of records are 
+processed only under the FOIA.
+    (4) A requester who requests records about himself or herself must 
+comply with the verification of identity requirements as set forth in 
+Sec.  171.22 of Subpart C (the Privacy Act Provisions) of this part in 
+order for the request to be processed.
+
+0
+6. Revise Sec.  171.5 to read as follows:
+
+
+Sec.  171.5   Archival records.
+
+    The Department ordinarily transfers records designated as 
+historically significant to the National Archives when they are 25 
+years old. Accordingly, requests for some
+
+[[Page 59701]]
+
+Department records 25 years old or older should be submitted to the 
+National Archives. More information about requesting such records can 
+be found in NARA's FOIA Reference Guide (<a href="https://www.archives.gov/foia/foia-guide#toc-iii-how-to-make-a-foia-request">https://www.archives.gov/foia/foia-guide#toc-iii-how-to-make-a-foia-request</a>). The Department's 
+website, <a href="https://foia.state.gov/">https://foia.state.gov/</a>, has additional information regarding 
+archival records.
+
+0
+7. Amend Sec.  171.11 by:
+0
+a. In paragraph (a)(1) removing the words ``Office of Information 
+Programs and Services (A/GIS/IPS)'' and adding in their place 
+``Information Access Programs Directorate (A/SKS/IAP)'';
+0
+b. Removing and reserving paragraphs (a)(2) and (3);
+0
+c. Revising paragraph (b); and
+0
+d. Revising last sentence of paragraph (d)(3).
+    The revisions read as follows:
+
+
+Sec.  171.11  Processing requests.
+
+* * * * *
+    (b) Receipt of request. The Department is in receipt of a request 
+when the request is received by a component designated to receive FOIA 
+requests (see Sec.  171.4(a)(2)). At that time, the Department must 
+send an acknowledgment letter to the requester that identifies the date 
+of receipt of the request in the proper component, and the case 
+tracking number. When one of these components determines that a request 
+was misdirected within the Department, that office must promptly route 
+the request to the proper component(s) within the Department.
+* * * * *
+    (d) * * *
+    (3) * * * The release determination for the record that is the 
+subject of such coordination will be conveyed to the requester by the 
+component that originally received the request.
+* * * * *
+
+0
+8. Amend Sec.  171.12 by:
+0
+a. In paragraph (a):
+0
+i. Removing the first instance of the word ``office'' and adding in its 
+place ``component'';
+0
+ii. Removing the words ``(A/GIS/IPS, OIG, or PPT)'';
+0
+iii. Removing the words ``any of these three offices'' and adding in 
+their place ``any component''.
+0
+b. In paragraph (b) removing the words ``An intake office (A/GIS/IPS, 
+OIG, or PPT)'' in the second sentence and adding in their place ``The 
+component'';
+0
+c. Revising paragraph (d)(2);
+0
+d. In paragraph (d)(4) removing the words ``office (whether A/GIS/IPS, 
+OIG, or PPT)'' and adding in their place the word ``component''.
+    The revision reads as follows:
+
+
+Sec.  171.12   Timing of responses to requests.
+
+* * * * *
+    (d) * * *
+    (2) A request for expedited processing may be made at the time of 
+the initial request for records or at any later time. When making a 
+request for expedited processing of an administrative appeal, the 
+request must be submitted to A/SKS/IAP, or OIG in the case of appeals 
+of OIG decisions (see Sec.  171.15). A Department component that 
+receives a misdirected request for expedited processing must forward it 
+promptly to the correct component responsible for receiving requests 
+for its determination.
+* * * * *
+
+0
+9. Amend Sec.  171.13
+0
+a. In paragraph (e) by revising the second sentence;
+0
+b. In paragraph (g):
+0
+i. Removing the word ``deleted'' and adding in its place the word 
+``withheld'';
+0
+ii. Removing the word ``deletion'' and adding in its place the word 
+``withholding''; and
+0
+c. In paragraph (h)(1) by removing the words ``A/GIS/IPS or OIG'' and 
+adding in their place ``The component''.
+    The revision reads as follows:
+
+
+Sec.  171.13  Responses to requests.
+
+* * * * *
+    (e) * * * Adverse determinations, or denials of requests, include 
+but are not limited to decisions that: the requested record is exempt 
+from disclosure, in whole or in part; the request does not reasonably 
+describe the records sought; the information requested is not a record 
+subject to the FOIA; the requested record does not exist, cannot be 
+located, or has been destroyed; or the requested record is not readily 
+reproducible in the form or format sought by the requester. * * *
+* * * * *
+
+0
+10. Amend Sec.  171.15 by revising paragraphs (a)(2), (3), (4), and 
+(b)(1) it to read as follows:
+
+
+Sec.  171.15   Administrative appeals.
+
+    (a) * * *
+    (2) To appeal any adverse determinations made by a component other 
+than OIG, requesters must submit an administrative appeal to the A/SKS/
+IAP FOIA Appeals Office by email to <a href="/cdn-cgi/l/email-protection#23656c6a6262535346424f506350574257460d444c55"><span class="__cf_email__" data-cfemail="d5939a9c9494a5a5b0b4b9a695a6a1b4a1b0fbb2baa3">[email&#160;protected]</span></a> or by mail to 
+the address listed on the Department's FOIA website.
+    (3) To appeal any adverse determinations made by OIG, requesters 
+must submit an administrative appeal to OIG via email to 
+<a href="/cdn-cgi/l/email-protection#43252c2a2222333326222f300330372237262c2a246d242c35"><span class="__cf_email__" data-cfemail="adcbc2c4ccccddddc8ccc1deedded9ccd9c8c2c4ca83cac2db">[email&#160;protected]</span></a> or by mail to the address on OIG's FOIA 
+website at <a href="http://www.stateoig.gov/foiaappeals">www.stateoig.gov/foiaappeals</a>. For those cases in which OIG 
+and another component provided written denials to the requester, the 
+requester may administratively appeal to both A/SKS/IAP and OIG, and 
+each office will handle its respective portion of the appeal.
+    (4) To appeal any adverse determinations made by the FSGB, 
+requesters must submit an administrative appeal to A/SKS/IAP using the 
+methods listed above in paragraph (2). A/SKS/IAP will assign a tracking 
+number to the appeal and forward it to the FSGB, which is an 
+independent body, for adjudication.
+    (b) * * *
+    (1) The A/SKS/IAP/LA Director or designee will act on behalf of the 
+Assistant Secretary for Administration on all appeals of A/SKS/IAP FOIA 
+determinations under this section. Likewise, the General Counsel of OIG 
+or his/her designee will act on behalf of the Inspector General on all 
+appeals of OIG FOIA determinations under this section.
+* * * * *
+
+0
+11. Revise and republish Sec.  171.22 to read as follows:
+
+
+Sec.  171.22   Request for access to records.
+
+    (a) In general. Requests for access to records under the PA must be 
+made in writing to the FOIA component listed in Sec.  171.4(a)(2). A 
+request will receive the quickest possible response if it is addressed 
+to the component that maintains the records sought. A list of the 
+Department's components that accept PA requests, as well as contact 
+information, can be found at <a href="https://foia.state.gov/">https://foia.state.gov/</a>. Each component is 
+responsible for acting on all PA requests for Department records as 
+described in Sec.  171.1(b).
+    (b) Description of records sought. Requests for access should 
+describe the requested record(s) in sufficient detail to permit 
+identification of the record(s). At a minimum, requests should include 
+the individual's full name (including maiden name, if appropriate) and 
+any other names used, current complete mailing address, and date and 
+place of birth (city, state, and country). Helpful information includes 
+the approximate time period of the record and the circumstances that 
+give the individual reason to believe that the Department maintains a 
+record under the individual's name or personal identifier, and, if 
+known, the system of records in which the record is maintained. In 
+certain instances, it may be necessary
+
+[[Page 59702]]
+
+for the Department to request additional information from the 
+requester, either to ensure a full search, or to ensure that a record 
+retrieved does in fact pertain to the individual.
+    (c) Verification of personal identity. The Department will require 
+reasonable identification of individuals requesting records about 
+themselves under the PA's access provisions to ensure that records are 
+only accessed by the proper persons. Requesters must state their full 
+name, current address, citizenship or lawful permanent resident alien 
+status, and date and place of birth (city, state, and country). The 
+requester must include a statement verifying that he/she is the person 
+requesting the records. The statement must be signed and dated within 6 
+months of the date of the request and be made under penalty of perjury 
+pursuant to 28 U.S.C. 1746. The preferred methods for verification of 
+identity are to certify under penalty of perjury in the request form on 
+the Department's FOIA website (<a href="https://foia.state.gov/">https://foia.state.gov/</a>), the National 
+FOIA Portal (<a href="http://www.foia.gov">www.foia.gov</a>), or to submit a completed DS-4240-R, Request 
+for Individual Access to Records Protected Under the Privacy Act 
+(<a href="https://foia.state.gov/Request/forms/DS-4240-R.pdf">https://foia.state.gov/Request/forms/DS-4240-R.pdf</a>). Forms created by 
+other Federal agencies will not be accepted. If the requester seeks 
+records under another name the requester has used, a statement, under 
+penalty of perjury, that the requester has also used the other name 
+must be included. In addition to the requirements in this paragraph (c) 
+and paragraph (e) of this section, requesters seeking access to copies 
+of the Passport Services' passport records must meet the requirements 
+in paragraph (d) of this section. As an exercise of administrative 
+discretion, the component can require a requester to supply additional 
+information if necessary in order to verify that a particular 
+individual has consented to disclosure.
+    (d) Special requirements for passport records. Given the sensitive 
+nature of passport records and their use, requests seeking access to 
+copies of passport records from Passport Services under the PA must 
+include the full name at birth and any subsequent name changes of the 
+individual whose records are being requested (if submitting the request 
+on behalf of a minor, provide the representative's full name as well); 
+the date and place of birth of the individual whose records are being 
+requested; the requester's current mailing address; and, if available, 
+daytime telephone number and email address; the date or estimated date 
+the passport(s) was issued; the passport number of the person whose 
+records are being sought, if known; and any other information that will 
+help to locate the records. The requester must also include a clear 
+copy of both sides of the requester's valid government-issued photo 
+identification, e.g., a driver's license.
+    (e) Authorized third party access. The Department shall process all 
+properly authorized third party requests, as described in this section, 
+under the PA. In the absence of proper authorization from the 
+individual to whom the records pertain, the Department will process 
+third party requests under the FOIA. The preferred method for 
+verification of identity is for the subject of the records being 
+requested to certify under penalty of perjury in the request form on 
+the Department's FOIA website (<a href="https://foia.state.gov/">https://foia.state.gov/</a>), the National 
+FOIA Portal (<a href="http://www.foia.gov">www.foia.gov</a>), or to submit a completed DS-4240-C, Consent 
+for Disclosure of Records Protected Under the Privacy Act (<a href="https://foia.state.gov/Request/forms/DS-4240-C.pdf">https://foia.state.gov/Request/forms/DS-4240-C.pdf</a>), authorizing release of the 
+requested information to another person or entity. Forms created by 
+other Federal agencies will not be accepted. Attorneys or other legal 
+representatives requesting visa information on behalf of a visa 
+applicant should submit a statement with the request made under penalty 
+of perjury pursuant to 28 U.S.C. 1746 by the applicant (and the 
+petitioner if the records sought pertain to a petition) authorizing 
+release of the requested visa information to the representative. Third 
+party requesters seeking access to copies of the Passport Office's 
+records must submit a clear copy of both sides of a valid government-
+issued photo identification (e.g., a driver's license) in addition to 
+the other information described above. As an exercise of administrative 
+discretion, the component can require a requester to supply additional 
+information, if necessary, in order to verify that a particular 
+individual has consented to disclosure.
+    (1) Parents and guardians of minor children. Upon presentation of 
+acceptable documentation of the parental or guardian relationship, a 
+parent or guardian of a U.S. citizen or LPR minor (an unmarried person 
+under the age of 18) may, on behalf of the minor, request records under 
+the PA pertaining to the minor. In any case, U.S. citizen or LPR minors 
+may request such records on their own behalf. When making a request as 
+the parent or guardian of a minor child, for access to records about 
+that individual, a requester must establish:
+    (i) The identity of the individual who is the subject of the 
+records, by stating the name, current address, date and place of birth;
+    (ii) The requester's own identity, as required in paragraph (c) of 
+this section;
+    (iii) That the requester is the parent of that individual, which 
+the requester may prove by providing a copy of the individual's birth 
+certificate showing parentage, or by providing a court order 
+establishing guardianship; and
+    (iv) That the requester is acting on behalf of that individual in 
+making the request. A parent's right to access their minor child's 
+record is not absolute.
+    (2) Guardians of incompetent adults. A guardian of an individual 
+who has been declared by a court to be incompetent may act for and on 
+behalf of the incompetent individual upon presentation of appropriate 
+documentation of the guardian relationship. When making a request as 
+the guardian of someone determined by a court to be incompetent, for 
+access to records about that individual, a requester must establish:
+    (i) The identity of the individual who is the subject of the 
+records, by stating the name, current address, date and place of birth;
+    (ii) The requester's own identity, as required in paragraph (c) of 
+this section;
+    (iii) That the requester is the guardian of that individual, which 
+the requester may prove by providing a copy of a court order 
+establishing guardianship; and
+    (iv) That the requester is acting on behalf of that individual in 
+making the request.
+    (f) Referrals and consultations. If the Department determines that 
+records retrieved as responsive to the request were created by another 
+agency, it ordinarily will refer the records to the originating agency 
+for direct response to the requester. If the Department determines that 
+Department records retrieved as responsive to the request are of 
+interest to another agency, it may consult with the other agency before 
+responding to the request. The Department may make agreements with 
+other agencies to eliminate the need for consultations or referrals for 
+particular types of records.
+    (g) Records relating to civil actions. Nothing in this subpart 
+entitles an individual to access any information compiled in reasonable 
+anticipation of a civil action or proceeding.
+    (h) Time limits. The Department will acknowledge the request 
+promptly and furnish the requested information as soon as possible 
+thereafter.
+
+0
+12. Revise Sec.  171.23(b) to read as follows:
+
+[[Page 59703]]
+
+Sec.  171.23  Request to amend or correct records.
+
+* * * * *
+    (b) Requests to amend records must be in writing and submitted to 
+A/SKS/IAP by email to <a href="/cdn-cgi/l/email-protection#42040d0b0303323227232e310231362336276c252d34"><span class="__cf_email__" data-cfemail="c1878e888080b1b1a4a0adb281b2b5a0b5a4efa6aeb7">[email&#160;protected]</span></a> or by mail to the address 
+listed on the Department's FOIA website. Requests to amend OIG records 
+must be made in writing and submitted to OIG by email or mail to the 
+address provided on OIG's website (<a href="https://www.stateoig.gov/freedom-information-act-foia-0">https://www.stateoig.gov/freedom-information-act-foia-0</a>). To facilitate handling, the requester should 
+mark both the letter and envelope, or subject line of the electronic 
+transmission, ``Privacy Act Amendment Request.'' A/SKS/IAP or OIG will 
+coordinate the review of the request with the appropriate offices under 
+its purview. The Department will require verification of personal 
+identity as provided in Sec.  171.22(c) before it will initiate action 
+to amend a record. Amendment requests should contain, at a minimum, 
+identifying information needed to locate the record in question, a 
+description of the specific correction requested, and an explanation of 
+why the existing record is not accurate, relevant, timely, or complete. 
+The requester should submit as much pertinent documentation, other 
+information, and explanation as possible to support the request for 
+amendment.
+* * * * *
+
+
+Sec.  171.24   [Amended]
+
+0
+13. Amend Sec.  171.24(a) by removing the words ``A/GIS/IPS'' in the 
+last sentence and adding in their place ``A/SKS/IAP''.
+
+0
+14. Amend Sec.  171.25 by revising paragraphs (b), (c), (d), (e), (g), 
+and (h) introductory text to read as follows:
+
+
+Sec.  171.25  Appeals from denials of PA amendment requests.
+
+* * * * *
+    (b) To appeal any decisions made by a component other than OIG, 
+requesters must submit an administrative appeal to the A/SKS/IAP FOIA 
+Appeals Office by email to <a href="/cdn-cgi/l/email-protection#b8fef7f1f9f9c8c8ddd9d4cbf8cbccd9ccdd96dfd7ce"><span class="__cf_email__" data-cfemail="3771787e7676474752565b4477444356435219505841">[email&#160;protected]</span></a> or by mail to the 
+address as listed on the Department's FOIA website. To facilitate 
+handling, the requester should mark both the appeal letter and 
+envelope, or subject line of the electronic transmission, ``Privacy Act 
+Appeal.''
+    (c) For decisions made by OIG, requesters should submit their 
+appeal to the OIG. The contact information for OIG is available at 
+<a href="https://www.stateoig.gov/foia-appeals">https://www.stateoig.gov/foia-appeals</a>. To facilitate handling, the 
+requester should mark both the appeal letter and envelope, or subject 
+line of the electronic transmission, ``Privacy Act Appeal.''
+    (d) Appellants should submit an administrative appeal of any 
+denial, in whole or in part, of a request for access to FSGB records 
+under the PA to the A/SKS/IAP Appeals Office by email to 
+<a href="/cdn-cgi/l/email-protection#2761686e6666575742464b5467545346534209404851"><span class="__cf_email__" data-cfemail="e4a2abada5a5949481858897a49790859081ca838b92">[email&#160;protected]</span></a> or by mail to address as listed on the 
+Department's FOIA website. A/SKS/IAP will assign a tracking number to 
+the appeal and forward it to the FSGB, which is an independent body, 
+for adjudication.
+    (e) A/SKS/IAP, OIG, or FSGB will decide appeals from denials of PA 
+amendment requests within 30 working days from the date when the appeal 
+is received, unless an extension of that period for good cause shown is 
+needed.
+* * * * *
+    (g) If the decision is that a record shall be amended in accordance 
+with the appellant's request, A/SKS/IAP, OIG, or FSGB shall direct the 
+office under its purview that is responsible for the record to amend 
+the record, advise all previous recipients of the record of the 
+amendment and its substance (if an accounting of previous disclosures 
+has been made), and so advise the individual in writing.
+    (h) If the decision is that the amendment request is denied, in 
+addition to the notification required by paragraph (f) of this section, 
+A/SKS/IAP, OIG, or FSGB shall advise the appellant:
+* * * * *
+
+0
+15. Amend Sec.  171.26 by revising table 1 to paragraph (a)(2)(iii) and 
+paragraph (b) to read as follows:
+
+
+Sec.  171.26  Exemptions.
+
+* * * * *
+    (a) * * *
+    (2) * * *
+    (iii) * * *
+
+                    Table 1 to Paragraph (a)(2)(iii)
+------------------------------------------------------------------------
+                Title                                 No.
+------------------------------------------------------------------------
+Office of Inspector General            STATE-53.
+ Investigation Management System.
+Risk Analysis and Management.........  STATE-78.
+Security Records.....................  STATE-36.
+------------------------------------------------------------------------
+
+    (b) Specific exemptions. Portions of the following systems of 
+records are exempt from 5 U.S.C. 552a(c)(3), (d), (e)(1), and (4), (G), 
+(H), and (I), and (f). The names of the systems correspond to those 
+published in the Federal Register by the Department.
+    (1) Exempt under 5 U.S.C. 552a(k)(1). Records contained within the 
+following systems of records are exempt under this section to the 
+extent that they are subject to the provisions of 5 U.S.C. 552(b)(1).
+
+                       Table 2 to Paragraph (b)(1)
+------------------------------------------------------------------------
+                Title                                 No.
+------------------------------------------------------------------------
+Congressional Correspondence.........  STATE-43.
+Congressional Travel Records.........  STATE-44.
+Coordinator for the Combating of       STATE-06.
+ Terrorism Records.
+Extradition Records..................  STATE-11.
+Family Advocacy Case Records.........  STATE-75.
+Foreign Assistance Inspection Records  STATE-48.
+Human Resources Records..............  STATE-31.
+Intelligence and Research Records....  STATE-15.
+International Organizations Records..  STATE-17.
+Legal Case Management Records........  STATE-21.
+Munitions Control Records............  STATE-42.
+
+[[Page 59704]]
+
+ 
+Office of Inspector General            STATE-53.
+ Investigation Management System.
+Overseas Citizens Services Records     STATE-05.
+ and Other Overseas Records.
+Passport Records.....................  STATE-26.
+Personnel Payroll Records............  STATE-30.
+Records of Domestic Accounts           STATE-23.
+ Receivable.
+Records of the Office of the           STATE-54.
+ Assistant Legal Adviser for
+ International Claims and Investment
+ Disputes.
+Records of the Office of White House   STATE-34.
+ Liaison.
+Refugee Records......................  STATE-59.
+Risk Analysis and Management Records.  STATE-78.
+Rover Records........................  STATE-41.
+Security Records.....................  STATE-36.
+Visa Records.........................  STATE-39.
+------------------------------------------------------------------------
+
+    (2) Exempt under 5 U.S.C. 552a(k)(2). Records contained within the 
+following systems of records are exempt under this section to the 
+extent that they consist of investigatory material compiled for law 
+enforcement purposes, subject to the limitations set forth in 5 U.S.C. 
+552a(k)(2).
+
+                       Table 3 to Paragraph (b)(2)
+------------------------------------------------------------------------
+                Title                                 No.
+------------------------------------------------------------------------
+Coordinator for the Combating of       STATE-06.
+ Terrorism Records.
+Extradition Records..................  STATE-11.
+Family Advocacy Case Records.........  STATE-75.
+Foreign Assistance Inspection Records  STATE-48.
+Garnishment of Wages Records.........  STATE-61.
+Intelligence and Research Records....  STATE-15.
+Munitions Control Records............  STATE-42.
+Office of Foreign Missions Records...  STATE-81.
+Office of Inspector General            STATE-53.
+ Investigation Management System.
+Overseas Citizens Services Records     STATE-05.
+ and Other Overseas Records.
+Passport Records.....................  STATE-26.
+Risk Analysis and Management Records.  STATE-78.
+Security Records.....................  STATE-36.
+Visa Records.........................  STATE-39.
+------------------------------------------------------------------------
+
+    (3) Exempt under 5 U.S.C. 552a(k)(3). Records contained within the 
+following systems of records are exempt under this section to the 
+extent that they are maintained in connection with providing protective 
+services pursuant to 18 U.S.C. 3056.
+
+                       Table 4 to Paragraph (b)(3)
+------------------------------------------------------------------------
+                Title                                 No.
+------------------------------------------------------------------------
+Extradition Records..................  STATE-11.
+Intelligence and Research Records....  STATE-15.
+Overseas Citizens Services Records     STATE-05.
+ and Other Overseas Records.
+Passport Records.....................  STATE-26.
+Security Records.....................  STATE-36.
+Visa Records.........................  STATE-39.
+------------------------------------------------------------------------
+
+    (4) Exempt under 5 U.S.C. 552a(k)(4). Records contained within the 
+following systems of records are exempt under this section to the 
+extent that they are required by statute to be maintained and are used 
+solely as statistical records.
+
+                       Table 5 to Paragraph (b)(4)
+------------------------------------------------------------------------
+                Title                                 No.
+------------------------------------------------------------------------
+Foreign Service Institute Records....  STATE-14.
+Human Resources Records..............  STATE-31.
+Overseas Citizens Services Records     STATE-05.
+ and Other Overseas Records.
+Personnel Payroll Records............  STATE-30.
+Security Records.....................  STATE-36.
+------------------------------------------------------------------------
+
+
+[[Page 59705]]
+
+    (5) Exempt under 5 U.S.C. 552a(k)(5). Records contained within the 
+following systems of records are exempt under this section to the 
+extent that they consist of investigatory material compiled solely for 
+the purpose of determining suitability, eligibility, or qualifications 
+for Federal civilian employment, military service, Federal contracts, 
+or access to classified information, but only to the extent that 
+disclosure of such material would reveal the identity of a confidential 
+informant.
+
+                       Table 6 to Paragraph (b)(5)
+------------------------------------------------------------------------
+                Title                                 No.
+------------------------------------------------------------------------
+Foreign Assistance Inspection Records  STATE-48.
+Foreign Service Grievance Board        STATE-13.
+ Records.
+Human Resources Records..............  STATE-31.
+Legal Adviser Attorney Employment      STATE-20.
+ Application Records.
+Office of Inspector General            STATE-53.
+ Investigation Management System.
+Overseas Citizens Services Records     STATE-05.
+ and Other Overseas Records.
+Records Maintained by the Office of    STATE-09.
+ Civil Rights.
+Records of the Office of White House   STATE-34.
+ Liaison.
+Risk Analysis and Management Records.  STATE-78.
+Rover Records........................  STATE-41.
+Security Records.....................  STATE-36.
+Senior Personnel Appointments Records  STATE-47.
+------------------------------------------------------------------------
+
+    (6) Exempt under 5 U.S.C. 552a(k)(6). Records contained within the 
+following systems of records are exempt under this section to the 
+extent that they consist of testing or examination material used solely 
+to determine individual qualifications for appointment or promotion in 
+the Federal service the disclosure of which would compromise the 
+objectivity or fairness of the testing or examination process.
+
+                       Table 7 to Paragraph (b)(6)
+------------------------------------------------------------------------
+                Title                                 No.
+------------------------------------------------------------------------
+Foreign Service Institute Records....  STATE-14.
+Human Resources Records..............  STATE-31.
+Records Maintained by the Office of    STATE-09.
+ Civil Rights.
+Security Records.....................  STATE-36.
+------------------------------------------------------------------------
+
+    (7) Exempt under 5 U.S.C. 552a(k)(7). Records contained within the 
+following systems of records are exempt under this section to the 
+extent that they consist of evaluation material used to determine 
+potential for promotion in the armed services, but only to the extent 
+that such disclosure would reveal the identity of a confidential 
+informant.
+
+                       Table 8 to Paragraph (b)(7)
+------------------------------------------------------------------------
+                Title                                 No.
+------------------------------------------------------------------------
+Human Resources Records..............  STATE-31.
+Overseas Citizens Services Records     STATE-05.
+ and Other Overseas Records.
+Security Records.....................  STATE-36.
+------------------------------------------------------------------------
+
+Signing Authority
+
+    The Assistant Secretary for Administration, Jose Cunningham, 
+reviewed and approved this document and has authorized the undersigned 
+to electronically sign and submit this document to the Office of the 
+Federal Register for publication.
+
+Alice M. Kottmyer,
+Attorney-Adviser, Office of the Legal Adviser, U.S. Department of 
+State.
+[FR Doc. 2026-19223 Filed 9-18-26; 8:45 am]
+BILLING CODE 4710-024-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

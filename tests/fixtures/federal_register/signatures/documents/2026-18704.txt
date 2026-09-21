@@ -1,0 +1,233 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 176 (Monday, September 14, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 176 (Monday, September 14, 2026)]
+[Notices]
+[Pages 58170-58172]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-18704]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+DEPARTMENT OF THE INTERIOR
+
+Fish and Wildlife Service
+
+[Docket No. FWS-HQ-NWRS-2026-3400; FVRS34510900000-XXX-FF09R50000; OMB 
+Control Number 1018-0174]
+
+
+Agency Information Collection Activities; Submission to the 
+Office of Management and Budget; U.S. Fish and Wildlife Service 
+Preliminary Land Acquisition Process
+
+AGENCY: Fish and Wildlife Service, Interior.
+
+ACTION: Notice of information collection; request for comment.
+
+-----------------------------------------------------------------------
+
+SUMMARY: In accordance with the Paperwork Reduction Act of 1995, we, 
+the U.S. Fish and Wildlife Service (Service), are proposing to renew a 
+currently approved information collection with change.
+
+DATES: Interested persons are invited to submit comments on or before 
+October 14, 2026.
+
+[[Page 58171]]
+
+
+ADDRESSES: Written comments and recommendations for the proposed 
+information collection should be sent within 30 days of publication of 
+this notice to <a href="https://www.reginfo.gov/public/do/PRAMain">https://www.reginfo.gov/public/do/PRAMain</a>. Find this 
+particular information collection by selecting ``Currently under 
+Review--Open for Public Comments'' or by using the search function. 
+Please provide a copy of your comments to the Service Information 
+Collection Clearance Officer, U.S. Fish and Wildlife Service, MS: PRB 
+(JAO/3W), 5275 Leesburg Pike, Falls Church, VA 22041-3803 (mail); or by 
+email to <a href="/cdn-cgi/l/email-protection#357c5b535a6a765a5959755342461b525a43"><span class="__cf_email__" data-cfemail="470e2921281804282b2b0721303469202831">[email&#160;protected]</span></a>. Please reference ``1018-0174'' in the 
+subject line of your comments.
+
+FOR FURTHER INFORMATION CONTACT: Madonna L. Baucum, Service Information 
+Collection Clearance Officer, by email at <a href="/cdn-cgi/l/email-protection#e8a1868e87b7ab878484a88e9f9bc68f879e"><span class="__cf_email__" data-cfemail="bff6d1d9d0e0fcd0d3d3ffd9c8cc91d8d0c9">[email&#160;protected]</span></a>, or by 
+telephone at (703) 358-2503. Individuals in the United States who are 
+deaf, deafblind, hard of hearing, or have a speech disability may dial 
+711 (TTY, TDD, or TeleBraille) to access telecommunications relay 
+services. Individuals outside the United States should use the relay 
+services offered within their country to make international calls to 
+the point-of-contact in the United States. You may also view the 
+information collection request (ICR) at <a href="https://www.reginfo.gov/public/do/PRAMain">https://www.reginfo.gov/public/do/PRAMain</a>.
+
+SUPPLEMENTARY INFORMATION: In accordance with the Paperwork Reduction 
+Act (PRA; 44 U.S.C. 3501 et seq.) and its implementing regulations at 5 
+CFR part 1320, all information collections require approval under the 
+PRA. We may not conduct or sponsor, and you are not required to respond 
+to, a collection of information unless it displays a currently valid 
+OMB control number.
+    On March 13, 2026, we published in the Federal Register (91 FR 
+12437) a notice of our intent to request that OMB approve this 
+information collection. In that notice, we solicited comments for 60 
+days, ending on May 12, 2026. We also published the Federal Register 
+notice on <a href="http://Regulations.gov">Regulations.gov</a> Docket No. FWS-R3-NWRS-2025-1496). We 
+received one anonymous comment in response to that notice. The 
+commenter did not address the information collection requirements; 
+therefore, no response is required.
+    As part of our continuing effort to reduce paperwork and respondent 
+burdens, we are again inviting the public and other Federal agencies to 
+comment on new, proposed, revised, and continuing collections of 
+information. This helps us assess the impact of our information 
+collection requirements and minimize the public's reporting burden. It 
+also helps the public understand our information collection 
+requirements and provide the requested data in the desired format.
+    We are especially interested in public comment addressing the 
+following:
+    (1) Whether or not the collection of information is necessary for 
+the proper performance of the functions of the agency, including 
+whether or not the information will have practical utility;
+    (2) The accuracy of our estimate of the burden for this collection 
+of information, including the validity of the methodology and 
+assumptions used;
+    (3) Ways to enhance the quality, utility, and clarity of the 
+information to be collected; and
+    (4) How might the agency minimize the burden of the collection of 
+information on those who are to respond, including through the use of 
+appropriate automated, electronic, mechanical, or other technological 
+collection techniques or other forms of information technology, e.g., 
+permitting electronic submission of response.
+    Comments that you submit in response to this notice are a matter of 
+public record. Before including your address, phone number, email 
+address, or other personal identifying information in your comment, you 
+should be aware that your entire comment--including your personal 
+identifying information--may be publicly available at any time. While 
+you can ask us in your comment to withhold your personal identifying 
+information from public review, we cannot guarantee that we will be 
+able to do so.
+    Abstract: Information collected by the Service (in support of the 
+land acquisition program) is required under applicable statutes, 
+Department of Justice regulations, Department of the Interior and 
+Service policies, and best business practices. In addition, the land 
+acquisition program facilitates Secretarial Orders 3356 and 3366 by 
+tracking land acquisitions that have potential to support public 
+hunting, fishing, and other forms of outdoor recreation, and access 
+related thereto. Authorities for the collection of realty-related 
+information include:
+    <bullet> U.S. Department of Justice; Regulations of the Attorney 
+General Governing the Review and Approval of Title for Federal Land 
+Acquisitions (2016);
+    <bullet> Uniform Relocation Assistance and Real Property 
+Acquisition Policies Act of 1970, as amended (42 U.S.C. 4601 et seq.);
+    <bullet> National Wildlife Refuge Administration Act of 1966 (16 
+U.S.C. 668dd et seq.);
+    <bullet> Migratory Bird Hunting and Conservation Stamp Act (16 
+U.S.C. 718a et seq.);
+    <bullet> Migratory Bird Conservation Act, as amended (16 U.S.C. 
+715-715r);
+    <bullet> Land and Water Conservation Fund Act of 1965 (54 U.S.C. 
+200301 et seq.);
+    <bullet> Endangered Species Act of 1973, as amended (16 U.S.C. 1531 
+et seq.);
+    <bullet> Emergency Wetlands Resources Act of 1986 (16 U.S.C. 3901); 
+and
+    <bullet> Fish and Wildlife Act of 1956, as amended (16 U.S.C. 
+742a).
+    The Service tracks information collected from landowners as part of 
+the preliminary land acquisition process. Information collected by the 
+Service as part of the preliminary land acquisition process may include 
+the following:
+    <bullet> Initial Requests--Initial landowner request to consider 
+their property, to include such items as:
+    [cir] Identifying information for the legal property owner(s), such 
+as:
+
+--Name of primary property owner, along with spouse and/or co-owner(s) 
+whose names appear on the current deed to the property under review;
+--Marital status;
+--Other names used; and
+--Contact information, to include telephone numbers, personal email 
+addresses, and mailing/home addresses.
+
+    [cir] Financial information, to include Social Security Numbers 
+(necessary for final payment transaction).
+    [cir] Property description, to include such information as:
+--Property name,
+--Location,
+--Legal description, and
+--Introductory information.
+    <bullet> Permission to Inspect and Appraise (Form 3-2471)--Collects 
+information about the property owner and location, and grants 
+permission to enter and inspect the property for real estate 
+acquisition purposes. Inspection may include, but is not limited to:
+    [cir] Appraisal valuations;
+    [cir] Boundary survey;
+    [cir] Hazardous materials examination (contaminant survey); and
+    [cir] Physical examination of any structures on the property.
+    We do not use Form 3-2471 in projects that are under Memoranda of 
+Understanding, Memoranda of Agreement, Cooperative Agreements, certain 
+donation partnerships, and other special cases.
+    <bullet> Waiver of Appraisal Requirement (Form 3-2461)--Per 49 CFR 
+24.102(c)(2), a willing-seller landowner
+
+[[Page 58172]]
+
+may release the Service from the obligation of obtaining an appraisal 
+for (1) land donations and (2) certain land acquisitions where the 
+anticipated value is low and the valuation problem is uncomplicated.
+    Unless delivered in person, both the Permission to Inspect and 
+Appraise form (Form 3-2471) and the Waiver of Appraisal Requirement 
+form (Form 3-2461) will contain a cover letter referred to as the 
+access permission letter. The access permission letter does not request 
+any information, but is used to explain the form or waiver process.
+    Information is collected and protected in accordance with the 
+Privacy Act (5 U.S.C. 552a) and the Freedom of Information Act (5 
+U.S.C. 552). We will maintain the information in a secure system of 
+records (Real Property Records, FWS-11; 71 FR 68635 (November 27, 
+2006); modification published 88 FR 16277 (March 16, 2023)). We gather 
+Social Security numbers and banking information to assist with 
+electronic payments and preparation of the required Internal Revenue 
+Service 1099 Forms.
+
+Proposed Revision
+
+    The Service proposes to rescind Form 3-2471, ``Permission to 
+Inspect and Appraise'' and Form 3-2461, ``Waiver of Appraisal 
+Requirement'' forms because the property information was previously 
+provided in the initial landowner request and is prepopulated by the 
+Service, and the property owner signs only to verify and approve the 
+information. Therefore, since the property owners are not required to 
+resubmit this information, the forms do not require OMB approval under 
+the PRA.
+    Title of Collection: U.S. Fish and Wildlife Service Preliminary 
+Land Acquisition Process.
+    OMB Control Number: 1018-0174.
+    Form Numbers: 3-2461 and 3-2471.
+    Type of Review: Revision of a currently approved collection.
+    Respondents/Affected Public: Individuals/households, private 
+sector, and State/local/Tribal governments participating in realty 
+transactions with the Service.
+    Respondent's Obligation: Required to obtain or retain a benefit.
+    Total Estimated Number of Annual Respondents: 669.
+    Total Estimated Number of Annual Responses: 669.
+    Estimated Completion Time per Response: Varies from 15 minutes to 2 
+hours, depending on activity.
+    Total Estimated Number of Annual Burden Hours: 495.
+    Frequency of Collection: On occasion.
+    Total Estimated Annual Nonhour Burden Cost: None.
+    An agency may not conduct or sponsor and a person is not required 
+to respond to a collection of information unless it displays a 
+currently valid OMB control number.
+    The authority for this action is the Paperwork Reduction Act of 
+1995 (44 U.S.C. 3501 et seq.).
+
+Madonna Baucum,
+Information Collection Clearance Officer, U.S. Fish and Wildlife 
+Service.
+[FR Doc. 2026-18704 Filed 9-11-26; 8:45 am]
+BILLING CODE 4333-15-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

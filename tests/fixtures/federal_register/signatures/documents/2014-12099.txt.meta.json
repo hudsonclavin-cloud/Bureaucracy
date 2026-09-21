@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-09-21T16:30:33Z",
+ "url": "https://www.federalregister.gov/documents/full_text/text/2014/05/28/2014-12099.txt",
+ "status": 200,
+ "final_url": "https://www.federalregister.gov/documents/full_text/text/2014/05/28/2014-12099.txt",
+ "content_type": "text/plain",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /documents/full_text/text/2014/05/28/2014-12099.txt",
+ "bytes": 47767,
+ "sha256": "028bd4089f51c2f1e0872bbad3c0086a59af322bb3d98e7386afa1e2ea432e9b",
+ "error": null
+}

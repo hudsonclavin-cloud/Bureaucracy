@@ -1,0 +1,2547 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 178 (Wednesday, September 16, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 178 (Wednesday, September 16, 2026)]
+[Rules and Regulations]
+[Pages 58576-58593]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-19006]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+COMMODITY FUTURES TRADING COMMISSION
+
+17 CFR Part 165
+
+RIN 3038-AF74
+
+
+Whistleblower Award Determination
+
+AGENCY: Commodity Futures Trading Commission.
+
+ACTION: Final rule.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The Commodity Futures Trading Commission (``Commission'' or 
+``CFTC'') is amending its rules implementing section 23 of the 
+Commodity Exchange Act (``CEA''). Section 23 of the CEA and the 
+Commission's implementing regulations provide for the payment of 
+awards, subject to certain limitations and conditions, to 
+whistleblowers who provide the Commission with information that aids in 
+successful enforcement efforts. The Commission is adopting amendments, 
+which are modeled on a similar provision in the Securities and Exchange 
+Commission's (``SEC'') regulations, to part 165 of its regulations to 
+increase the efficiency, transparency, and predictability of 
+whistleblower claims process, thereby protecting and enhancing the 
+program's effectiveness in incentivizing whistleblowers to report. The 
+amendments also include technical corrections to the whistleblower 
+rules to reflect the Whistleblower Office's (``WBO'') move in 2025, 
+consistent with its adjudicatory functions, to the Office of the 
+General Counsel (``OGC'').
+
+DATES: This rule is effective October 16, 2026.
+
+FOR FURTHER INFORMATION CONTACT: Tyler S. Badgley, General Counsel, 
+<a href="/cdn-cgi/l/email-protection#1a686f767f777b7173747d5a797c6e79347d756c"><span class="__cf_email__" data-cfemail="d2a0a7beb7bfb3b9bbbcb592b1b4a6b1fcb5bda4">[email&#160;protected]</span></a>, 202-418-5000; Stephen Andrews, Deputy General 
+Counsel for Regulation, Office of the General Counsel, 
+<a href="/cdn-cgi/l/email-protection#1c6e697079717d7775727b5c7f7a687f327b736a"><span class="__cf_email__" data-cfemail="9ae8eff6fff7fbf1f3f4fddaf9fceef9b4fdf5ec">[email&#160;protected]</span></a>, 202-308-7563; Aaron Levine, Senior Advisor, Office 
+of the General Counsel, <a href="/cdn-cgi/l/email-protection#e290978e878f83898b8c85a281849681cc858d94"><span class="__cf_email__" data-cfemail="1361667f767e72787a7d7453707567703d747c65">[email&#160;protected]</span></a>, 646-746-9721; Raagnee 
+Beri, Director, Whistleblower Office, <a href="/cdn-cgi/l/email-protection#35475750475c75565341561b525a43"><span class="__cf_email__" data-cfemail="40322225322900232634236e272f36">[email&#160;protected]</span></a>, 202-418-5986; 
+Commodity Futures Trading Commission, Three Lafayette Centre, 1155 21st 
+Street NW, Washington, DC 20581.
+
+SUPPLEMENTARY INFORMATION:
+
+Table of Contents
+
+I. Background
+II. Summary of the Proposal, Comments Received, and Discussion
+    A. New Rule 165.9(d): The 30 Percent Presumption
+    B. Comments Received
+    C. Discussion
+III. Technical Amendments to Rules 165.10(a)(7) and 165.15
+IV. Related Matters
+    A. Regulatory Flexibility Act
+    B. Paperwork Reduction Act
+    C. Consideration of Benefits and Costs
+    D. Antitrust Considerations
+    E. Executive Orders 12866, 13563, and 14192
+    F. Congressional Review Act
+
+I. Background
+
+    The CFTC's whistleblower program (``Program'') plays an important 
+role in promoting the fairness and integrity of the nation's 
+derivatives markets. By rewarding individuals who come forward and 
+provide original information about violations of the CEA or the 
+Commission's regulations (``Regulations''), the Program enhances the 
+Commission's enforcement efforts and helps deter illegal conduct.
+    Section 23 of the CEA establishes the Program,\1\ while part 165 of 
+the Regulations defines the Program's framework.\2\ Part 165 of the 
+Regulations provides for the payment of awards, subject to certain 
+limitations and conditions, to whistleblowers who provide the 
+Commission information that aids in successful enforcement efforts. To 
+qualify for an award, a whistleblower must voluntarily provide original 
+information about a violation of the CEA or the Regulations that leads 
+to a successful Commission enforcement action (judicial or 
+administrative) that results in monetary sanctions over $1 million 
+(``Covered Action''), or the successful enforcement of an action 
+brought by specified entities or organizations including the Department 
+of Justice.
+---------------------------------------------------------------------------
+
+    \1\ 7 U.S.C. 26.
+    \2\ 17 CFR part 165.
+---------------------------------------------------------------------------
+
+    (``Related Action'').\3\ The CEA and Regulations authorize an 
+aggregate award of between 10 and 30 percent of the amount of monetary 
+sanctions collected in the Covered Action and/or a Related Action for 
+successful claimants, which is paid from the CFTC Customer Protection 
+Fund (``CPF'').\4\ Throughout the process, whistleblowers who make a 
+claim for an award have a right to be represented by counsel.\5\
+---------------------------------------------------------------------------
+
+    \3\ See 7 U.S.C. 26(a)(1), (5), (b)(1); 17 CFR 165.2(e) 
+(defining ``covered judicial or administrative action''); 165.2(m) 
+(defining ``related action''); 165.5 (requirements for consideration 
+of an award); 165.7 (procedures for award applications in Commission 
+actions and related actions, and Commission award determinations); 
+165.11(a) (awards based on related actions).
+    \4\ 7 U.S.C. 26(b)(2). The CPF is funded through certain 
+monetary sanctions that the Commission collects and can receive 
+deposits or credits when the balance is at or below $100 million. 7 
+U.S.C. 26(g)(3)(A). In contrast, the SEC Investor Protection Fund--
+the counterpart to the CPF for funding SEC whistleblower awards--has 
+a higher $300 million threshold. 15 U.S.C. 78u-6(g)(a)(3)(A)(i). If 
+amounts deposited or credited to the CPF are insufficient to pay a 
+whistleblower award, additional collected monetary sanctions equal 
+to the unsatisfied portion of the award are to be deposited or 
+credited to the CPF. 7 U.S.C. 26(g)(3)(B). Besides funding 
+whistleblower awards, the CPF also funds the operation of the WBO 
+and the Office of Customer Education and Outreach. See id. (g)(2); 
+U.S. Commodity Futures Trading Commission--Availability of the 
+Customer Protection Fund, B-321788 (GAO Aug. 8, 2011).
+    \5\ 7 U.S.C. 26(d)(1).
+---------------------------------------------------------------------------
+
+    The Commission retains discretion in determining whistleblower 
+award amounts.\6\ In exercising this discretion, the Commission must 
+consider certain statutorily specified factors, but it may not consider 
+the CPF balance.\7\ Rule 165.9 defines the factors the Commission 
+considers in determining a whistleblower award amount.\8\ Positive 
+factors that may increase an award include: the significance of the 
+information provided by the whistleblower, the degree of assistance
+
+[[Page 58577]]
+
+provided by the whistleblower, furtherance of the Commission's law 
+enforcement interest, and the whistleblower's participation in internal 
+compliance systems.\9\ Negative factors that may reduce an award 
+include whistleblower culpability, unreasonable reporting delay, and 
+interference with internal compliance and reporting systems.\10\ In 
+promulgating rule 165.9, the Commission expressed its intent that 
+whistleblower award amounts be determined based on an individualized 
+review of the circumstances surrounding each award.\11\
+---------------------------------------------------------------------------
+
+    \6\ Id. 26(c)(1)(A); 17 CFR 165.9.
+    \7\ 7 U.S.C. 26(c)(1)(B)(i)(I)-(III) (specifying the following 
+for consideration: information's significance; degree of the 
+assistance; programmatic interest; and enhanced ability to enforce 
+the CEA, protect customers, and encourage the submission of high-
+quality information); id. 26(c)(1)(B)(ii) (prohibiting consideration 
+of the CPF balance); see also id. 26(c)(1)(B)(i)(IV) (authorizing 
+the Commission to consider other factors established by rule or 
+regulation).
+    \8\ 17 CFR 165.9.
+    \9\ Id. 165.9(b). The rule specifies subfactors that the 
+Commission may consider in assessing each positive factor.
+    \10\ Id. 165.9(c). The rule specifies subfactors that the 
+Commission may consider in assessing each factor that may decrease 
+an award.
+    \11\ See Whistleblower Incentives and Protection, 76 FR 53172, 
+53188 (Aug. 25, 2011) (``The Commission anticipates that the 
+determination of award amounts . . . will involve highly 
+individualized review of the circumstances surrounding each 
+award.'').
+---------------------------------------------------------------------------
+
+    Part 165 also defines the process by which Program awards are made, 
+with the WBO serving as administrator. Among other duties,\12\ the WBO 
+reviews whistleblower award claims and makes initial recommendations 
+regarding their disposition. In doing so, the WBO reviews the 
+circumstances surrounding each claim, with outreach where appropriate, 
+to other Commission staff including the Division of Enforcement 
+(``DOE''), or, for Related Actions, to the staff of other relevant 
+agencies.\13\ If a claimant appears eligible for an award, the WBO 
+analyzes each of the factors set out in CEA section 23(c) and rule 
+165.9.
+---------------------------------------------------------------------------
+
+    \12\ See 17 CFR 165.7(e)(1), (2), (f)(2), (g), (j) (specifying 
+various WBO duties).
+    \13\ Id. 165.7(f)(2).
+---------------------------------------------------------------------------
+
+    Designated Claims Review Staff (``CRS'')--consisting of three to 
+five individuals from various Commission divisions and offices--review 
+the WBO's initial recommendation and issue a preliminary determination 
+(``Preliminary Determination'') based on the WBO's analysis and 
+recommendations. A Preliminary Determination reflects the CRS's 
+assessment of whether a claim should be granted, and, if so, proposes a 
+percentage of the collected monetary sanctions for the award in the 
+Covered Action and any Related Actions.\14\ If a claimant disagrees 
+with a Preliminary Determination, the claimant may contest it by 
+submitting a written response.\15\ The CRS considers timely submitted 
+responses before making a proposed final determination (``Proposed 
+Final Determination''). The WBO notifies the Commission of each 
+Proposed Final Determination, and, within 30 calendar days, any 
+Commissioner may request Commission review of a Proposed Final 
+Determination.\16\ A Proposed Final Determination automatically becomes 
+a final order of the Commission (``Final Order'') if no Commissioner 
+requests review by the full Commission. If a Commissioner requests a 
+review, the Commission will review the record relied upon by Commission 
+staff in making its determination and will then issue a Final 
+Order.\17\ The OGC reviews all Preliminary Determinations and Proposed 
+Final Determinations for legal sufficiency before their issuance.\18\
+---------------------------------------------------------------------------
+
+    \14\ See id. 165.7(g)(1), (i); id. 165.15(a)(2).
+    \15\ Id. 165.7(g)(2). A claimant's failure to submit a timely 
+response to the Preliminary Determination results in the Preliminary 
+Determination becoming either the Final Order of the Commission or, 
+if an award was recommended, a Proposed Final Determination. Id. 
+165.7(h).
+    \16\ Id. 165.7(j).
+    \17\ Id. 165.7(i), (j).
+    \18\ Id. 165.7(k).
+---------------------------------------------------------------------------
+
+    By many metrics, the Program has been a success since it began 
+operating in 2011. Through the end of calendar year 2025, whistleblower 
+reports have contributed to successful enforcement actions resulting in 
+over $3.3 billion in financial remedies,\19\ including approximately 
+$160 million (excluding added interest) returned to harmed customers. 
+In fiscal year (``FY'') 2024, whistleblowers contributed information 
+relevant to approximately 42 percent of the Commission's enforcement 
+actions. Between 2014, when the Commission issued its first 
+whistleblower award, and the end of calendar year 2025, the Commission 
+granted 73 awards in 56 matters, totaling over $395 million in award 
+payments. As the agency's Director of Enforcement noted at the time, 
+``Timely reports to the CFTC are critical for enforcement [as they] 
+help prevent further harm to customers or market participants and hold 
+wrongdoers accountable to the fullest extent possible.'' \20\
+---------------------------------------------------------------------------
+
+    \19\ This figure reflects awards in Commission enforcement 
+actions and Related Actions as defined in 7 U.S.C. 26(a)(5) and 17 
+CFR 165.2(m).
+    \20\ Press Release, CFTC, CFTC Awards $4M to Two Whistleblowers 
+(Nov. 12, 2024), available at <a href="https://www.cftc.gov/PressRoom/PressReleases/9006-24">https://www.cftc.gov/PressRoom/PressReleases/9006-24</a>.
+---------------------------------------------------------------------------
+
+    Notwithstanding the Program's success, an important area for 
+improvement remains: the time required to process and issue awards for 
+meritorious claims. From 2012 to 2025, the average time from the 
+deadline for prospective whistleblowers to submit award claims to the 
+date of a Commission Final Order granting an award to meritorious 
+claimants averaged more than 2.5 years. The delay between claim 
+submission and award is a concern for the Commission, claimants, and 
+members of Congress, as delays could dampen incentives for potential 
+whistleblowers to participate in the Program.\21\
+---------------------------------------------------------------------------
+
+    \21\ See, e.g., Testimony of Michael Selig, Chairman of the 
+CFTC, before House Agriculture Committee (Apr. 14, 2026) (remarks of 
+Congressman Zach Nunn), available at <a href="https://www.pbs.org/newshour/politics/watch-live-cftc-chairman-testifies-before-house-panel-amid-scrutiny-of-prediction-markets">https://www.pbs.org/newshour/politics/watch-live-cftc-chairman-testifies-before-house-panel-amid-scrutiny-of-prediction-markets</a>, 3:16:28 mark); CFTC Whistleblower 
+Protection and Program Improvement Act of 2026, S. 5161, 119th Cong. 
+Sec.  4 (2026) (specifying one-year general deadlines for 
+Preliminary Determinations and Final Orders).
+---------------------------------------------------------------------------
+
+    The Commission believes the amendments adopted herein will help to 
+improve processing time and promote transparency in the awards process. 
+Before these amendments, Commission staff were required to analyze the 
+factors that may increase the amount of a whistleblower's award 
+regardless of the size of an award, including for smaller awards.\22\ 
+This process consumed resources that otherwise could be devoted to 
+resolving larger, more complex matters. Responding to requests to 
+contest a Preliminary Determination, where a claimant has contested an 
+award of less than the maximum 30 percent award, can also consume 
+additional Commission time and resources.\23\
+---------------------------------------------------------------------------
+
+    \22\ See 7 U.S.C. 26(c)(1)(A), 17 CFR 165.9.
+    \23\ See 17 CFR 165.7(g)(2).
+---------------------------------------------------------------------------
+
+    The Commission expects the rule changes adopted herein will shorten 
+the time needed to resolve meritorious, smaller-dollar whistleblower 
+claims by limiting the scope of analysis and intra-agency review of the 
+appropriate award percentage. These resource savings will allow 
+Commission staff to concentrate on larger awards, facilitating the 
+Commission's ability to assess and pay larger award claims more 
+quickly. And, as explained below, the Commission expects that a 
+shortened award timeframe and more transparent, predictable process 
+will reinforce whistleblowers' incentives to participate in the 
+Program.
+
+II. Summary of the Proposal, Comments Received, and Discussion
+
+    On June 15, 2026, the Commission proposed to amend part 165 of its 
+Regulations to increase the Program's overall efficiency, transparency, 
+and predictability (``Proposal'' or ``NPRM'').\24\ Specifically, the 
+Commission proposed adding new rule 165.9(d) to establish a 30 percent 
+presumption (the ``30 Percent Presumption,'' defined further below) for 
+whistleblowers under certain
+
+[[Page 58578]]
+
+conditions and to redesignate existing rule 165.9(d) as rule 165.9(e). 
+The NPRM also proposed technical corrections to the whistleblower rules 
+to update regulatory references to reflect the WBO move in 2025, 
+consistent with its adjudicatory functions, to the OGC.
+---------------------------------------------------------------------------
+
+    \24\ See Whistleblower Award Determination, 91 FR 35914 (June 
+15, 2026) (Notice of Proposed Rulemaking).
+---------------------------------------------------------------------------
+
+    The comment period for the Proposal closed on July 15, 2026. The 
+Commission received nine responsive comments.\25\ As discussed in more 
+detail below, most commenters generally supported proposed new rule 
+165.9(d) and the 30 Percent Presumption.\26\ One commenter criticized 
+the proposal.\27\
+---------------------------------------------------------------------------
+
+    \25\ See comments posted on <a href="http://Regulations.gov">Regulations.gov</a> from Emily Stulz 
+(posted June 23, 2026) (``Stulz Comment''); Stephen Hasegawa, 
+Partner at Phillips & Cohen LLP (posted July 14, 2026) (``Hasegawa 
+Comment''); Constantine Cannon LLP (posted July 14, 2026) 
+(``Constantine Cannon Comment''); National Whistleblower Center and 
+Kohn, Kohn, and Colapinto (posted August 10, 2026) (``National 
+Whistleblower Center Comment''); Meagan Nugent (posted July 14, 
+2026) (``Nugent Comment''); Better Markets (posted July 20, 2026) 
+(``Better Markets Comment''); The Anti-Fraud Coalition (posted July 
+20, 2026) (``TAF Coalition Comment''); H Street Law PLLC (posted 
+July 20, 2026) (``H Street Law Comment''); and An Individual Retail 
+Derivatives Market Participant (posted July 20, 2026) (``Anonymous 
+Comment''). An additional comment, submitted by BSM Supervisao de 
+Mercados (``BSM Comment''), a self-regulatory organization of 
+Brazilian capital markets, did ``not aim to discuss directly'' the 
+proposed amendments but to explain its own reporting model (which 
+does not include financial award to whistleblowers) with the 
+intention of supporting the CFTC in developing initiatives aimed at 
+maintaining market integrity and protecting investors.'' BSM Comment 
+at 1-2 (posted July 20, 2026) (``BSM Comment''). While the BSM 
+Comment did not directly address the Commission's proposal, the 
+Commission appreciates BSM's input and collaborative intent.
+---------------------------------------------------------------------------
+
+A. New Rule 165.9(d): The 30 Percent Presumption
+
+    The Commission proposed new rule 165.9(d), which the Commission 
+modeled on an existing provision in the SEC whistleblower program 
+rules. Under proposed new rule 165.9(d), the Commission is adopting a 
+presumption under which any awardees would receive, in total, the 30 
+percent statutory maximum when (1) the amount collected in any Covered 
+and Related Action(s), in the aggregate, would yield a maximum award of 
+$5 million or less,\28\ and (2) the awardee(s) meet certain conditions, 
+set out in proposed new rule 165.9(d)(1)(ii)-(iv). Based on these 
+conditions, the 30 Percent Presumption would apply unless: (1) a 
+reduction would otherwise be warranted under rule 165.9(c)(1), the 
+claimant interfered with internal compliance or reporting systems under 
+rule 165.9(c)(3), or the claim triggers rule 165.17 (concerning awards 
+to whistleblowers who engage in culpable conduct); (2) the claimant 
+engaged in unreasonable reporting delay under rule 165.9(c)(2); \29\ or 
+(3) the Commission determines that applying the presumption would be 
+inappropriate either because the claimant's assistance was limited or 
+because such an award would otherwise be inconsistent with the public 
+interest or the objectives of the Program. If a whistleblower matter 
+that falls within the $5 million threshold for the 30 Percent 
+Presumption has multiple awardees and at least one meets the conditions 
+of proposed new rule 165.9(d)(1)(ii)-(iv), the total aggregate award 
+will be set at the maximum 30 percent level. If any of the awardees do 
+not satisfy the conditions in proposed new rule 165.9(d)(1)(ii) and 
+(iii), the Commission will allocate a greater share of the 30 percent 
+award to those awardee(s) who do. The Commission will assess the amount 
+for the awardees who do not satisfy the conditions in proposed new rule 
+165.9(d)(1)(ii) and (iii) by considering all relevant facts.
+---------------------------------------------------------------------------
+
+    \26\ See National Whistleblower Center Comment at 2 (stating 
+that ``the 30 Percent Presumption provides greater clarity and 
+predictability for whistleblowers and their counsel, helping them 
+understand at the outset what potential reward they can reasonably 
+expect''); Hasegawa Comment (believing ``that the Commission is 
+correct that the Proposed Rule will save staff time and will allow 
+the Commission to shift resources to the evaluation of whistleblower 
+awards in larger cases [and sharing the] hope that this, in turn, 
+will alleviate delays in resolution of award claims in larger 
+matters, and ultimately will reinforce incentives for whistleblowers 
+to come forward with information that aids the Commission's 
+enforcement of the commodities laws[,] I support the Proposed 
+Rule''); Constantine Cannon Comment at 2 (``We . . . fully support 
+the proposed 30% presumption [and] believe the agency's reasoning 
+strongly supports the rule change and the benefits it will bring to 
+the program.''); Nugent Comment at 1 (writing ``in support of the 
+Commission's proposed amendments to 17 CFR Part 165, specifically 
+the new 30 Percent Presumption at proposed section 165.9(d)''); 
+Better Markets Comment at 1 (``We agree with the Commission that the 
+rule will increase the whistleblower program's overall efficiency, 
+transparency, and predictability and potentially enhance 
+whistleblowers' incentives to report unlawful conduct; as a result, 
+the Commission should adopt the rule.''); TAF Coalition Comment at 2 
+(``We support the Whistleblower Rule Amendment, proposed new rule 
+165.9(d).''); Anonymous Comment at 1 (``This comment supports the 
+proposed 30 Percent Presumption.''); H Street Law Comment at 2 
+(characterizing the 30 Percent Presumption as ``a welcome 
+improvement'').
+    \27\ See Stulz Comment.
+    \28\ See new rule 165.9(d)(1), (2). A $5 million threshold for a 
+30 percent award corresponds to approximately $16.66 million in 
+collected monetary sanctions. Collections would fall under $16.66 
+million if the total monetary sanctions imposed are less than this 
+amount. Even if monetary sanctions exceed this amount, DOE staff who 
+worked on an action may have learned enough about the assets of the 
+responsible parties to reasonably anticipate that less than $16.66 
+million will ever be collected. If so, this fact would appear in the 
+record supporting the Proposed Final Determination and enable the 
+Commission to ``determine[ ] that it does not reasonably anticipate 
+that future collections would cause the statutory maximum award to 
+be paid to any whistleblower to exceed $5 million in the aggregate'' 
+under new rule 165.9(d)(1)(i).
+    \29\ This exclusion may be waived at the Commission's discretion 
+based upon the claimant demonstrating that, in the circumstances, 
+doing so is consistent with the public interest and the Program's 
+objectives. See new rule 165.9(d)(1)(iii).
+---------------------------------------------------------------------------
+
+    As discussed in the Proposal, the Commission expects new rule 
+165.9(d) will enhance the efficiency, transparency, and predictability 
+of the Program and will reduce the delay in processing awards, thereby 
+incentivizing whistleblowers to report violations to the Commission. 
+First, the Commission expects the 30 Percent Presumption will 
+materially reduce the time for award determinations by improving 
+Commission staff's efficiency in processing award applications and 
+thereby enabling Commission staff to more timely process larger, 
+complex claims.\30\ Second, the Commission anticipates that the 
+amendment will reduce delays in granting awards to meritorious 
+whistleblowers, incentivizing potential whistleblowers to report 
+violations.\31\ Third, by making award percentages more transparent and 
+predictable through the 30 Percent Presumption for claims at or below 
+the $5 million threshold, proposed new rule 165.9(d) aims to strengthen 
+whistleblower incentives to report violations, as historical award data 
+suggests the rule would have resulted in higher payments in 
+approximately 30 percent of eligible matters.\32\ Fourth, proposed new 
+rule 165.9(d) is tailored to improve Program efficiency, transparency, 
+and predictability without sacrificing Program integrity or public 
+interests by (1) conditioning operation of the 30 Percent Presumption 
+on satisfaction of the specific safeguarding criteria and (2) retaining 
+the Commission's discretion in issuing whistleblower awards to ensure 
+the public interest is protected.\33\ Fifth, proposed new rule 165.9(d) 
+would better align the CFTC and the SEC whistleblower programs--a goal 
+that is consistent with the spirit of the Memorandum of Understanding 
+between the CFTC and SEC to guide inter-agency coordination and 
+collaboration.\34\
+---------------------------------------------------------------------------
+
+    \30\ 91 FR at 35917.
+    \31\ Id.
+    \32\ Id. at 35917-35918; see also National Whistleblower Center 
+Comment at 2 (``The presumption aligns with that well-established 
+fact, recognized by the SEC in a 2022 rulemaking, that high rewards 
+increase the likelihood of whistleblowers coming forward to 
+regulators with their information.'').
+    \33\ Id. at 35918.
+    \34\ See CFTC-SEC Harmonization Initiative, available at <a href="https://www.cftc.gov/harmonization">https://www.cftc.gov/harmonization</a>.
+
+---------------------------------------------------------------------------
+
+[[Page 58579]]
+
+B. Comments Received
+
+    The Commission received nine responsive comments. Most commenters 
+generally supported proposed new rule 165.9(d) and the 30 Percent 
+Presumption, while one criticized the proposal.
+    Constantine Cannon, H Street Law, Stephen Hasegawa of Phillips & 
+Cohen LLP, the National Whistleblower Center and Kohn, Kohn, and 
+Colapinto (``National Whistleblower Center''), Meagan Nugent, The Anti-
+Fraud Coalition (``TAF Coalition''), Better Markets, and an anonymous 
+individual retail derivatives market participant supported the 
+Commission's adoption of the 30 Percent Presumption. Constantine 
+Cannon, a law firm that represents CFTC whistleblowers, ``fully 
+support[ed] the proposed 30% presumption,'' agreeing with the 
+Commission that ``the extended delay in [the Commission's] awards 
+determination process poses a significant disincentive for would-be 
+whistleblowers to report violations'' and noting that ``potential 
+whistleblowers . . . look to timing considerations as a significant 
+factor in assessing whether it is worth it for them to move forward 
+under the whistleblower program.'' \35\ The National Whistleblower 
+Center praised the 30 Percent Presumption, concluding that ``[t]his 
+reform serves the central purpose of the CEA's award provisions: 
+ensuring that whistleblowers can rely on a meaningful and predictable 
+opportunity when they assume the substantial personal and professional 
+risks of reporting.'' \36\ Similarly, H Street Law described the 30 
+Percent Presumption as ``a welcome improvement'' and expressed support 
+for ``the Commission's efforts to enhance the efficiency, transparency, 
+and predictability of whistleblower claim processing, and to preserve 
+and enhance whistleblower incentives.'' \37\ Hasegawa likewise 
+expressed support, stating that he ``appreciate[d] the Commission's 
+Proposed Rule establishing a presumptive 30% award in matters in which 
+the aggregate award will total no more than $5 million'' and that ``the 
+Commission is correct that the Proposed Rule will save staff time and 
+will allow the Commission to shift resources to the evaluation of 
+whistleblower awards in larger cases.'' \38\ Better Markets similarly 
+agreed with the Commission ``that the rule will increase the 
+whistleblower program's overall efficiency, transparency, and 
+predictability and potentially enhance whistleblowers' incentives to 
+report unlawful conduct'' and that the 30 Percent Presumption ``will 
+materially reduce the time for award determinations by improving the 
+Commission staff's efficiency in processing award applications.'' \39\ 
+And TAF Coalition, whose membership includes two former CFTC WBO 
+Directors, ``applaud[ed] the Commission's decision to model the 
+Whistleblower Rule Amendments on a similar provision in the [SEC's] 
+regulations,'' noting that ``[t]he CFTC's Whistleblower Program has a 
+long history of modeling its rules, processes, and award determinations 
+on the SEC's regulations, internal operations, and determinations that 
+have proven to be effective and provide efficiency.'' \40\
+---------------------------------------------------------------------------
+
+    \35\ Constantine Cannon Comment at 2.
+    \36\ National Whistleblower Center Comment at 1.
+    \37\ H Street Law Comment at 1, 2. H Street Law also ``share[d] 
+the timing concerns raised by Constantine Cannon LLP.'' Id. at 1. H 
+Street Law wrote that ``many whistleblowers have noted [current] 
+delay[s] as a significant disincentive to reporting unlawful 
+conduct.'' Id. at 2.
+    \38\ Hasegawa Comment.
+    \39\ Better Markets Comment at 1, 2.
+    \40\ TAF Coalition Comment at 1-2.
+---------------------------------------------------------------------------
+
+    Individual commenters also provided detailed support that tracked 
+the Commission's specific rationale for the Proposal.\41\ Meagan Nugent 
+strongly supported proposed new rule 165.9(d), writing that, among 
+other things, the ``SEC's own experience with the model rule confirms 
+the approach works,'' and that the ``built-in safeguards prevent 
+overreach.'' \42\ And the anonymous individual retail derivatives 
+market participant supported adoption of the 30 Percent Presumption, 
+agreeing with the Commission that ``greater predictability may increase 
+willingness to report and to apply for an award,'' and that ``a 
+potential whistleblower cannot readily value an award within a 
+discretionary range of 10 to 30 percent, but can understand a 
+presumptive 30 percent outcome for claims within the proposed 
+threshold.'' \43\
+---------------------------------------------------------------------------
+
+    \41\ See Nugent Comment at 1; Anonymous Comment at 1.
+    \42\ Nugent Comment at 1. Nugent cited the SEC's 2021 Annual 
+Report to Congress and noted that ``the [30 percent] presumption's 
+application rate in qualifying cases climbed from 46 percent to 89 
+percent, with the SEC reporting increased consistency, greater 
+transparency for claimants and counsel, and faster processing.'' Id. 
+at 3.
+    \43\ Anonymous Comment at 1.
+---------------------------------------------------------------------------
+
+    Despite their overall support, several commenters suggested 
+modifications to the Proposal. The most commonly raised concern among 
+supporting commenters was that the 30 Percent Presumption was 
+``unlikely on its own to resolve'' whistleblower award delays.\44\ 
+These commenters suggested additional modifications to proposed new 
+rule 165.9(d) to further target delays in issuing whistleblower awards. 
+The proffered refinements were to adopt specific time requirements, 
+such as six months, for issuing Preliminary Determinations and making 
+final awards; \45\ raise the maximum award level for application of the 
+30 Percent Presumption from $5 million to $15 million in awards; \46\ 
+and provide for annual adjustment of the $5 million threshold to guard 
+against erosion of the proposed rule's intended benefits over time.\47\
+---------------------------------------------------------------------------
+
+    \44\ H Street Law Comment at 2; see also Constantine Cannon 
+Comment at 2 (doubts ``that the 30% presumption will go far enough 
+in tightening up the existing delay in making award decisions'' as 
+evidenced by ``still significant delays under the SEC whistleblower 
+program even though it has used the 30% presumption for several 
+years''); Better Markets Comment at 2 (the Commission could ``go 
+even further'' to reduce the time for award determinations).
+    \45\ Constantine Cannon Comment at 2; H Street Law Comment at 1-
+2 (endorsing Constantine Cannon's suggestion). Constantine Cannon 
+additionally advocated that the Commission adopt the Department of 
+Justice's (DOJ's) ``much simpler'' process for making 
+``whistleblower (Relator) share determinations under the False 
+Claims Act''--which it characterized as ``often just a simple back 
+and forth between the whistleblower (and their counsel) and the DOJ 
+attorneys''--as a ``useful model for how the CFTC might improve its 
+approach.'' Constantine Cannon Comment at 3.
+    \46\ Better Markets Comment at 2.
+    \47\ H Street Law Comment at 1.
+---------------------------------------------------------------------------
+
+    Commenters also suggested additional rule refinements.\48\ Hasegawa 
+suggested adding a provision to eliminate the potential ``unintended 
+inconsistency in whistleblower awards'' that could arise under proposed 
+new rule 165.9(d) for meritorious whistleblowers in a subset of 
+matters.\49\ For instance, Hasegawa observed that a whistleblower whose 
+submission led to a recovery of $16.66 million in collected proceeds 
+would be eligible under the presumption to receive approximately $5 
+million, whereas a whistleblower whose information led to a recovery of 
+$17 million in collected proceeds could receive as little as $1.7 
+million, based on the statutory minimum of a 10 percent award.\50\ The 
+anonymous individual
+
+[[Page 58580]]
+
+retail derivatives market participant recommended the Commission adopt 
+changes to provide (1) that when the Commission does not apply the 
+presumption, the Preliminary Determination should identify the 
+particular provision relied upon and briefly explain the material facts 
+supporting that conclusion and (2) that a complete and well-organized 
+initial submission should not be found to reflect ``limited'' 
+assistance solely because Commission staff did not request supplemental 
+cooperation from the whistleblower.\51\
+---------------------------------------------------------------------------
+
+    \48\ See Hasegawa Comment; Anonymous Comment. Another comment 
+requested the Commission link the proposed new rule to an increase 
+in the statutory CPF from $100 million to $300 million. H Street Law 
+Comment at 1. The statutory CPF cap amount is, however, beyond the 
+scope of the Commission's authority to alter; doing so requires an 
+act of Congress, see CEA section 23(g)(3)(A), 7 U.S.C. 26(g)(3)(A), 
+which H Street Law acknowledged. See H Street Law Comment at 1 (``We 
+support a legislative increase in the CPF threshold . . . .'').
+    \49\ Hasegawa Comment.
+    \50\ Id. The maximum award under the 30 Percent Presumption rule 
+is $5 million, which corresponds to collections of about $16.66 
+million. It is mathematically possible that a whistleblower who 
+would qualify for the presumption but for collections exceeding 
+$16.66 million would receive an award of less than 30 percent and 
+less than $5 million.
+    \51\ Anonymous Comment at 4-5. The comment reasons that, absent 
+the first ``discipline[], the discretionary grounds for displacing 
+the presumption could reintroduce the uncertainty the proposal is 
+intended to reduce''; and, regarding the second that a complete and 
+well-organized initial submission may provide substantial assistance 
+precisely because it enables staff to proceed without repeated 
+follow-up, and the absence of requests for supplemental cooperation 
+should not, standing alone, support a finding under proposed rule 
+165.9(d)(1)(iv)(A) that assistance was limited.'' Id. at 1.
+---------------------------------------------------------------------------
+
+C. Discussion
+
+    Upon consideration of comments received, the Commission is adopting 
+new rule 165.9(d) as proposed. As noted above, the comments received 
+were broadly supportive of the rule and its core rationale of promoting 
+the efficiency and transparency of the Program and reducing delay in 
+processing whistleblower claims.
+    First, the Commission expects that new rule 165.9(d) will 
+materially reduce the time for award determinations by improving the 
+Commission staff's efficiency in processing award applications. This 
+will enable the Commission to process claims more quickly. The reasons 
+for the Commission's expectation are described below.
+    The SEC's experience under its own rule demonstrates the 30 Percent 
+Presumption is likely to increase consistency and transparency and 
+reduce delays. The Commission's expectation for improved efficiency and 
+shortened award times is based, in part, on the SEC's experience after 
+that agency adopted a similar presumption.\52\ A year after 
+promulgating rule 21F-6(c), the SEC reported that the ``30% presumption 
+has had a significant impact on [its] whistleblower program,'' 
+``allowed for increased consistency among awards and greater 
+transparency to claimants and their counsel,'' and ``assisted . . . in 
+expediting the processing of award claims.'' \53\ Commenters also 
+described the SEC's ``parallel experience'' as a ``genuine natural 
+experiment with a comparable federal whistleblower program [that] 
+strongly supports the Commission's expectation that its own presumption 
+will produce similar efficiency gains.'' \54\
+---------------------------------------------------------------------------
+
+    \52\ Whistleblower Program Rules, 85 FR 70898, 70911-70912 (Nov. 
+5, 2020) (promulgating, among other rules, SEC rule 21F-6(c), 
+codified at 17 CFR 240.21F-6).
+    \53\ Securities and Exchange Commission, 2021 Annual Report to 
+Congress Whistleblower Program, 18 (2021), available at <a href="https://www.sec.gov/reports?aId=edit-tid&year=All&field_article_sub_type_secart_value=Reports+and+Publications-AnnualReports&tid=59">https://www.sec.gov/reports?aId=edit-tid&year=All&field_article_sub_type_secart_value=Reports+and+Publications-AnnualReports&tid=59</a>.
+    \54\ See Nugent Comment at 2-3; see also TAF Coalition Comment 
+at 3 (``[T]he proposed rule amendment, following the SEC's result, 
+should shorten the time required by the CFTC to resolve and pay 
+awards on small, meritorious whistleblower claims by limiting the 
+scope of analysis over the appropriate award percentage.'').
+---------------------------------------------------------------------------
+
+    While one commenter noted that ``there are still significant delays 
+under the SEC whistleblower program,'' the commenter did not deny that 
+the SEC's 30 percent presumption has reduced delays.\55\ Nor did the 
+commenter explain or provide quantitative information for its assertion 
+that the SEC whistleblower program still experiences ``significant 
+delays.'' The Commission therefore cannot evaluate the validity of this 
+claim.
+---------------------------------------------------------------------------
+
+    \55\ See Constantine Cannon Comment at 2.
+---------------------------------------------------------------------------
+
+    A significant portion of meritorious whistleblower claimants are 
+likely to fall within the 30 Percent Presumption. As discussed in more 
+detail in its Consideration of Benefits and Costs,\56\ the Commission's 
+historical experience suggests that the 30 Percent Presumption is 
+likely to apply to a sizeable portion--around 82 percent--of 
+meritorious whistleblower claims. For these claims, the new rule will 
+truncate the staff-intensive, frequently time-consuming process of 
+determining an appropriate award percentage because the scope of 
+analysis will be narrowed. TAF Coalition concurred in the Commission's 
+assessment, writing that, based on members' relevant experience under 
+part 165, precise award percentages are determined through a process 
+that is indifferent to the size of the claim, requiring essentially the 
+same degree of Commission staff time and attention to determine award 
+percentage levels with the same time dedication and precision for both 
+large and smaller awards and WBO attorneys and others who participate 
+in the award process must analyze the factors that may increase the 
+amount of a whistleblower's award irrespective of the size of an 
+award.\57\
+---------------------------------------------------------------------------
+
+    \56\ See infra Section IV.C.
+    \57\ See TAF Coalition Comment at 2.
+---------------------------------------------------------------------------
+
+    The 30 Percent Presumption will streamline the analysis required 
+for a significant portion of meritorious whistleblower claims. Under 
+new rule 165.9(d), award-determination analysis will be narrowed: for 
+claims within the $5 million threshold, the only rule 165.9(b) factor 
+Commission staff will need to consider is whether the whistleblower's 
+assistance was more than ``limited.'' \58\ Commission staff will not be 
+required to assess the whistleblower's degree of assistance at a more 
+granular level.\59\ Nor will Commission staff be required to make award 
+percentage recommendations relating to the significance of the 
+whistleblower's information, the Commission's law enforcement interest, 
+or the whistleblower's participation in internal compliance 
+systems.\60\ As a result, Commission staff can spend less time 
+analyzing criteria factors that may increase the amount of a 
+whistleblower award within the statutory range of 10 to 30 percent; and 
+the OGC's legal sufficiency review, described above, also will be 
+simplified insofar as the analysis of the award percentage is 
+streamlined.\61\
+---------------------------------------------------------------------------
+
+    \58\ New rule 165.9(d)(1)(iv).
+    \59\ See 17 CFR 165.9(b)(2).
+    \60\ See id. 165.9(b)(1), (3), (4).
+    \61\ By designating a 30 percent maximum award for all matters 
+within the $5 million threshold unless the 30 Percent Presumption is 
+overcome, new rule 165.9(d) will limit the scope of analysis 
+required to determine appropriate award percentages for the 
+significant portion of claims subject to awards of $5 million or 
+less.
+---------------------------------------------------------------------------
+
+    The 30 Percent Presumption is anticipated to help reduce requests 
+to contest Preliminary Determinations of recommended award percentages 
+for a significant share of claims. Applying the 30 Percent Presumption 
+to meritorious claims is expected to reduce incentives for claimants to 
+contest Preliminary Determinations or request reconsideration in cases 
+where the Preliminary Determination does not provide for the statutory 
+maximum award. Indeed, the Commission's analysis of the distribution of 
+past awards indicates that, had new rule 165.9(d) been in effect since 
+the Program's inception, approximately 30 percent of the matters with 
+awards of $5 million or less would likely have resulted in higher award 
+payments--i.e., at the statutory maximum of 30 percent based on the 
+Presumption. Some of the claimants in that subset of matters contested 
+their awards; had the 30 Percent Presumption been in operation, those 
+claimants would have had no
+
+[[Page 58581]]
+
+reason to contest the Preliminary Determination award percentage.
+    Reconsideration requests require additional Commission staff time 
+and resources to consider the issues and grounds advanced in the 
+claimant's response, along with any supporting documentation the 
+claimant provided.\62\ With fewer Preliminary Determinations subject to 
+contests, the Commission anticipates that staff resources that 
+otherwise would be required to handle reconsideration requests can be 
+redirected to more timely process awards in other matters. Commenters 
+addressing this point largely agreed: TAF Coalition, for instance, 
+reasoned that ``[t]he resource savings for matters with small awards 
+and the receipt of fewer Requests for Reconsideration would free WBO 
+and Commission staff to concentrate more on larger awards, facilitating 
+the WBO's and Commission's ability to assess and pay larger awards more 
+quickly.'' \63\
+---------------------------------------------------------------------------
+
+    \62\ See 17 CFR 165.7(i); see also TAF Coalition Comment at 3 
+(``Requests for Reconsideration take an extraordinary amount of time 
+and resources for the WBO attorney staff to review, process, and 
+prepare a recommendation for Commission consideration.'').
+    \63\ TAF Coalition Comment at 3.
+---------------------------------------------------------------------------
+
+    Streamlining the award process for claims subject to the 30 Percent 
+Presumption will help support whistleblowers' incentives to report 
+violations. First, as mentioned above, by reducing the staff time and 
+resources necessary to address claims in the significant portion of 
+meritorious claims that the Commission expects to qualify for the 30 
+Percent Presumption, the Commission will be able to devote resources to 
+other whistleblower matters. This includes assessing and awarding 
+claims in larger, potentially more complex, matters. With the benefit 
+of more focused staff attention, the Commission expects accelerated 
+processing of these matters as well.
+    Second, the Commission anticipates that new rule 165.9(d) will 
+guard against erosion of whistleblowers' incentives to report 
+violations to the Commission. As discussed in the Consideration of 
+Benefits and Costs section, extended delays in making awards 
+determinations following a whistleblower's claim submission diminish 
+the overall value of the award due to the time-value of money.\64\ This 
+reduction may adversely affect incentives for individuals to report 
+illegal activity, as noted by several commenters.\65\ Consequently, 
+significant delays may lead prospective whistleblowers to determine 
+that the reduced valuation resulting from longer wait times does not 
+justify the associated risks of disclosure. Insofar as the 30 Percent 
+Presumption reduces award application processing times for all claims 
+(small and large), as the Commission expects, potential whistleblowers 
+will be more likely to find it worthwhile to report violations and 
+apply for awards.\66\
+---------------------------------------------------------------------------
+
+    \64\ See infra Section IV.C.
+    \65\ See Constantine Cannon Comment at 2 (``The agency is 
+correct that the extended delay in its awards determination process 
+poses a significant disincentive for would-be whistleblowers to 
+report violations. We know this firsthand from our own dealings with 
+potential whistleblowers who look to timing considerations as a 
+significant factor in assessing whether it is worth it for them to 
+move forward under the whistleblower program.''); Nugent Comment at 
+3 (``Delay is not a neutral inefficiency; it directly reduces the 
+present value of an eventual award and, as the Commission 
+recognizes, can deter exactly the kind of prompt, high-quality 
+reporting the Program exists to encourage.'').
+    \66\ Accord Nugent Comment at 3 (``A rule that measurably 
+shortens that timeline for the great majority of smaller claims--
+freeing staff time to focus on the largest, most complex matters--is 
+a direct and well-tailored response to a real problem [i.e., the 
+reporting disincentive delay can engender].'') One comment posits 
+that, absent hard deadlines for the Commission to complete certain 
+steps in the award process, ``would-be whistleblowers [could still 
+be dissuaded] from coming forward'' after new rule 165.9(d) is 
+effective. Constantine Cannon Comment at 2. The concern apparently 
+stems from the underlying premise that ``significant delays''--a 
+concept the comment does not further define or explain, as noted 
+previously--still occur in the SEC whistleblower program. Absent 
+stronger support for this underlying premise (including the 
+likelihood and relative degree of the potential dissuasion that the 
+commenter expects would linger with new rule 165.9(d) in effect), 
+the Commission is unable to assess and assign weight to the concern.
+---------------------------------------------------------------------------
+
+    Third, by designing new rule 165.9(d) to enhance Program 
+transparency and predictability, the Commission seeks to enhance the 
+incentives for whistleblowers to report violations to the Commission. 
+The criteria considered in determining award amounts are enumerated in 
+new rule 165.9 and are publicly available on the Commission's 
+whistleblower website, making them easily accessible to potential 
+whistleblowers and their counsel.\67\ With greater visibility into the 
+types of awards that may receive the statutory cap, whistleblowers will 
+have greater predictability in assessing potential rewards for the 
+submission of tips to assist the Commission's enforcement mission.\68\ 
+The Commission anticipates that this is likely to increase 
+whistleblowers' willingness to participate in the Program. Analysis of 
+the distribution of past awards supports new rule 165.9(d)'s potential 
+to encourage whistleblower participation: had new rule 165.9(d) been in 
+effect since the Program's inception, approximately 30 percent of the 
+matters with awards of $5 million or less would likely have resulted in 
+higher award payments.
+---------------------------------------------------------------------------
+
+    \67\ See Commodity Futures Trading Commission Whistleblower 
+Program, Preliminary Decisions, <a href="https://www.whistleblower.gov/overview/preliminarydeterminations">https://www.whistleblower.gov/overview/preliminarydeterminations</a> (FAQs: ``What factors does the 
+CFTC consider in determining the amount of the award''). See also 7 
+U.S.C. 26(d) (delineating whistleblowers' right to be represented by 
+counsel). Because attorneys--who may submit tips and other 
+information to the Program for their anonymous clients (see id. 
+26(d)(2))--frequently represent whistleblowers on a contingency 
+basis, the Program's process and award-size potential affects 
+attorneys' incentives as well as whistleblowers'.
+    \68\ As a practical matter, both Preliminary Determinations and 
+Final Orders granting awards less than 30 percent to meritorious 
+whistleblower claimants should provide--in circumstances where the 
+Commission determines the 30 Percent Presumption inapplicable based 
+on operation of the conditions set out in new rule 165.9(d)(1)(ii)-
+(iv)--the reasons for the Commission's determination. See 17 CFR 
+165.7(g)(1) (calling for the CRS's ``assessment'' in its Preliminary 
+Determination); id. CFR 165.7(i) (calling on the CRS to ``consider 
+the issues and grounds advanced in the claimant's response'' when a 
+claimant contests the Preliminary Determination). In any event, 
+Preliminary Determinations and Final Orders are subject to 
+reconsideration and appeal, respectively. See id. 165.7(g)(2) 
+(stating claimants' right to contest Preliminary Determinations); 
+id. 165.13 (stating claimants' right to appeal Final Orders to a 
+federal court of appeals with Preliminary Determinations to be 
+included in the record on appeal).
+---------------------------------------------------------------------------
+
+    Fourth, new rule 165.9(d) is tailored to preserve Program integrity 
+and avoid any conflict with the public interest.\69\ This tailoring is 
+achieved in two ways: (1) operation of the 30 Percent Presumption is 
+conditioned on a whistleblower's satisfaction of the safeguarding 
+criteria specified in subparagraphs 165.9(d)(1)(ii)-(iii) and (2) the 
+Commission retains discretion to determine appropriate award 
+percentages as described in subparagraphs 165.9(d)(1)(iii) and (iv). 
+With respect to the first factor, the Commission considers it 
+inappropriate to extend the benefit of the presumption to claimants who 
+were culpable in the violation, who interfered to a degree with 
+internal compliance or reporting systems, or (absent justifying case-
+specific circumstances) who delayed reporting. Moreover, conditioning 
+the presumption on the absence of unreasonable reporting delays is 
+intended to incentivize prompt reporting. With respect to the second 
+factor, the Commission retains overall discretion in establishing award 
+percentages to incentivize strong and sustained whistleblower 
+assistance in the Covered Action or Related Action, see subparagraph 
+165.9(d)(1)(iv)(A), and to provide an overarching safeguard to protect 
+the public interest and the
+
+[[Page 58582]]
+
+Program's integrity, see subparagraph 165.9(d)(1)(iv)(B).\70\
+---------------------------------------------------------------------------
+
+    \69\ See Nugent Comment at 3 (``The retained safeguards are the 
+right way to balance speed against integrity.'').
+    \70\ The Commission equates the meaning of the term ``public 
+interest'' in subparagraphs (d)(1)(iii)'s and (iv)'s to the 
+considerations delineated in CEA section 15(a)(2), 7 U.S.C. 
+19(a)(2)--i.e., protection of market participants and the public; 
+efficiency, competitiveness, and financial integrity of markets; 
+price discovery; sound risk management practices; and other public 
+interest considerations.
+---------------------------------------------------------------------------
+
+    Fifth, new rule 165.9(d) will further harmonize the CFTC and the 
+SEC whistleblower programs, which were both enacted by the Dodd-Frank 
+Wall Street Reform and Consumer Protection Act in 2010 (``Dodd-Frank 
+Act'').\71\ Doing so is consistent with the spirit of the Memorandum of 
+Understanding between the CFTC and SEC to guide inter-agency 
+coordination and collaboration.\72\ As noted above, SEC rule 21F-6(c) 
+currently provides for a conditional 30 percent presumption for matters 
+where the 30 percent award would yield a total payment of $5 million or 
+less and served as the model for new rule 165.9(d).\73\ Because it is 
+not unusual for affiliated market participants or entities to be 
+subject to regulation or oversight by both the CFTC and the SEC (and 
+unlawful conduct by some actors may implicate the jurisdiction of both 
+agencies), the Commission views consistency between the two 
+whistleblower programs to be of value.\74\ By modeling new rule 
+165.9(d) on the SEC's corresponding provision, the Commission intends 
+to incentivize whistleblower participation in the Program by ensuring 
+that potential whistleblowers perceive the Program as equally 
+worthwhile and accessible as the SEC whistleblower program.\75\
+---------------------------------------------------------------------------
+
+    \71\ The programs are codified at 7 U.S.C. 26 and 15 U.S.C. 78u-
+6, respectively. The SEC and CFTC whistleblower programs share a 
+common statutory origin, having been enacted contemporaneously by 
+the Dodd-Frank Act to achieve common policy objectives--namely, to 
+incentivize the disclosure of violations and deter misconduct in the 
+financial markets. This shared origin, the parallel structure of the 
+two programs, and the fact that certain market participants and 
+conduct fall within the overlapping jurisdictional reach of both 
+agencies support a harmonized interpretive approach.
+    \72\ See Memorandum of Understanding between the U.S. Securities 
+and Exchange Commission and the U.S. Commodity Futures Trading 
+Commission Regarding Harmonization in Areas of Common Regulatory 
+Interest (Mar. 11, 2026), available at <a href="https://www.sec.gov/files/mou-sec-cftc-2026.pdf">https://www.sec.gov/files/mou-sec-cftc-2026.pdf</a>.
+    \73\ See 17 CFR 240.21F-6.
+    \74\ This is particularly true because members of the legal bar 
+who represent whistleblowers may be less likely to seek potential 
+whistleblower clients for, or represent whistleblowers in, the 
+CFTC's Program if they view it as less desirable than the SEC 
+whistleblower program.
+    \75\ Accord Nugent Comment at 3 (``A Commission program that is 
+meaningfully less predictable than its SEC counterpart risks losing 
+valuable tips to that uncertainty, or discouraging a report 
+altogether. Aligning the $5 million threshold with the SEC's 
+existing rule . . . removes an unnecessary source of that 
+uncertainty[.]'').
+---------------------------------------------------------------------------
+
+    Finally, the Commission is unconvinced that commenters' various 
+suggested modifications would improve new rule 165.9(d) materially, if 
+at all. And, in some cases, the Commission believes that alternatives 
+offered by commenters could undermine the goals of this rulemaking. The 
+Commission discusses its reasons for declining to adopt these 
+commenters' recommendations below.
+    Specific Time Requirements. Constantine Cannon recommended that the 
+Commission adopt specific time limits, such as six months, for issuing 
+Preliminary Determinations and making final awards.\76\ The Commission 
+declines to adopt this recommendation.
+---------------------------------------------------------------------------
+
+    \76\ Constantine Cannon Comment at 2.
+---------------------------------------------------------------------------
+
+    Because award determinations are not one-size-fits-all,\77\ 
+establishing a uniform timeframe within which Preliminary 
+Determinations and Final Orders must be issued will not help the 
+Commission manage its caseload of claims or ensure reasoned decision-
+making, even with options for reasonable extensions of time in certain 
+cases.\78\ Award determinations vary in complexity; some, for example, 
+require extensive information gathering from outside sources that can 
+be time-consuming. Because the complexity of claims and the time needed 
+to resolve claims vary significantly, mandating resolution of claims 
+(particularly more complex ones) within a strict timeframe risks 
+undermining Program integrity.\79\ Moreover, adopting additional 
+procedural requirements could undermine new rule 165.9(d)'s efficiency 
+goals by requiring Commission staff to justify extensions of time or to 
+defend against legal challenges regarding what constitutes a 
+``reasonable extension[ ] of time'' in ``legitimate[ ]'' matters.\80\ 
+Accordingly, the Commission is not persuaded that establishing new time 
+limits would be beneficial or appropriate for the Program.
+---------------------------------------------------------------------------
+
+    \77\ In fact, the 30 Percent Presumption, is just that--a 
+presumption. It does not eliminate Commission discretion to 
+determine appropriate award percentages as described in section 
+165.9(d)(1), including where the Commission determines application 
+of the 30 Percent Presumption is inappropriate or contrary to the 
+public interest.
+    \78\ See Constantine Cannon Comment at 2.
+    \79\ Award consistency, fairness, and reasoned decision-making 
+are foreseeable casualties in rushed scenarios.
+    \80\ See Constantine Cannon Comment at 2 (``And to the extent 
+there are matters where the agency legitimately needs more time, 
+there can be accommodations built in to allow for reasonable 
+extensions of time, perhaps as overseen by the CFTC Whistleblower 
+Office.''). Similarly, to the extent a regulatory deadline could 
+invite legal challenges in matters where claimants assert deadlines 
+were not adhered to or prejudiced their award in some way, agency 
+resources would be diverted, undermining the efficiency gains under 
+new rule 165.9(d).
+---------------------------------------------------------------------------
+
+    The Commission also concludes that Constantine Cannon's suggestion 
+to model the CFTC's process on the DOJ's administration of the False 
+Claims Act (``FCA'') is inapposite and beyond the scope of this 
+rulemaking.\81\ In this rulemaking, the Commission proposed to improve 
+the existing award process by incorporating the 30 Percent Presumption 
+within part 165 of its Regulations. Further, because the whistleblower 
+programs enacted as part of the Dodd-Frank Act--including both the 
+CFTC's and SEC's \82\--do not contain an equivalent to the False Claims 
+Act's qui tam mechanism, the Commission does not view the DOJ's process 
+as an appropriate model for administering the Program. Under CEA 
+section 23,\83\ determining whether a claimant is eligible for an award 
+requires a factual inquiry and application of the statute and 
+whistleblower rules by Commission staff.\84\ Depending on how a qui tam 
+litigation proceeds (i.e., whether the government intervenes), 
+whistleblower awards (as Constantine Cannon notes) are based on 
+negotiations with ``the DOJ attorneys who worked on the matter and are 
+best situated to assess the whistleblower's contribution and 
+appropriate share of the recovery within the statutory range'' and can 
+take ``weeks'' or ``months'' to resolve.\85\ This structure differs 
+from that of both the CFTC and SEC whistleblower programs, which were 
+enacted by the Dodd-Frank Act.\86\ Adopting such a structure would 
+undermine the goal of further harmonization with the SEC whistleblower 
+program and sacrifice the associated benefits for market 
+participants.\87\
+---------------------------------------------------------------------------
+
+    \81\ See id. at 3.
+    \82\ See Public Law 111-203, 124 Stat. 1376, 1739 (adding 
+Section 23 to the CEA, codified at 7 U.S.C. 26), and 124 Stat. 1841 
+(adding Section 21F to the Securities Exchange Act of 1934, codified 
+at 15 U.S.C. 78u-6).
+    \83\ 7 U.S.C. 26.
+    \84\ See generally 31 U.S.C. 3729 et seq. See also Dep't of 
+Justice Criminal Resource Manual, ``932. Provisions for the Handling 
+of Qui Tam Suits Filed Under the False Claims Act,'' available at 
+<a href="https://www.justice.gov/archives/jm/criminal-resource-manual-932-provisions-handling-qui-tam-suits-filed-under-false-claims-act">https://www.justice.gov/archives/jm/criminal-resource-manual-932-provisions-handling-qui-tam-suits-filed-under-false-claims-act</a>.
+    \85\ Constantine Cannon Comment at 3.
+    \86\ See section 748 of the Dodd-Frank Act, codified at 7 U.S.C. 
+26 (CFTC Whistleblower Program); section 922, codified at 15 U.S.C. 
+78u-6 (SEC Whistleblower Program).
+    \87\ The Commission also notes that changes to its Program 
+mirroring the FCA would likely require statutory changes, in 
+addition to major restructuring of the Regulations.
+---------------------------------------------------------------------------
+
+    Annual inflation adjustments of the $5 million threshold. H Street 
+Law suggested that the Commission
+
+[[Page 58583]]
+
+incorporate an annual indexing provision into new rule 165.9(d) to 
+prevent the ``real value of [the $5 million] threshold [from] erod[ing] 
+over time.'' \88\ The Commission declines to adopt this suggestion.
+---------------------------------------------------------------------------
+
+    \88\ H Street Law Comment at 1.
+---------------------------------------------------------------------------
+
+    While annual inflation adjustments are a commonly used and readily 
+automated regulatory tool, the Commission is not adopting automatic 
+indexing for the $5 million threshold at this time. A fixed threshold 
+promotes harmonization with the SEC's 30 percent presumption and avoids 
+year-to-year boundary disputes in matters that span multiple calendar 
+or fiscal years, thereby preserving the 30 Percent Presumption's goal 
+of a simpler, faster process for small-dollar awards. The Commission 
+believes that implementing indexing would still require recurring 
+updates to internal guidance, forms, claimant communications, and 
+award-calculation workflows to track which threshold applies at each 
+stage of multi-year cases, resulting in administrative costs and 
+complexity that run counter to those efficiencies. Because the 
+threshold determines whether a claim receives the default 30 Percent 
+Presumption or a full factor-by-factor analysis, annual changes would 
+cause otherwise similar cases to toggle across index dates, invite 
+disputes about the applicable threshold (e.g., by claim, order, or 
+collection date), and complicate case management. The Commission 
+believes that maintaining a fixed $5 million threshold preserves 
+predictable incentives and operational stability. In addition, the SEC 
+whistleblower program rules do not provide for automatic inflation 
+indexing, so adopting such a provision would not further the 
+Commission's harmonization goals. To the extent, however, the 
+Commission determines in the future that the $5 million threshold has 
+failed to keep pace with inflation, the Commission retains its 
+statutory authority to engage in rulemaking to update the threshold, as 
+appropriate.
+    Ensuring that, where collections are above $16.66 million, the 
+associated award is $5 million or more. The Hasegawa Comment expressed 
+concern that a whistleblower who is entitled to the 30 Percent 
+Presumption in a case where the Commission recovers $16.66 million in 
+collected proceeds could obtain a larger settlement than a 
+whistleblower in a case where the Commission recovers collections 
+between $16.66 million to just under $50 million, but the whistleblower 
+is not entitled to the 30 Percent Presumption due to the higher 
+collection amount and is awarded less than the $5 million.\89\ To 
+address this concern, Hasegawa proposed that the Commission add a 
+provision to new rule 165.9(d) under which ``the Commission shall apply 
+its ordinary rules to evaluate and calculate awards in matters in which 
+collected proceeds exceed the amount for which the presumption could 
+apply, provided that, absent applicability of the same enumerated 
+exceptions described in the Proposed Rule, the aggregate award in those 
+cases shall fall within the statutory range and shall be no less than 
+$5 million.'' \90\ The Commission understands Hasegawa's proposal to 
+require that the Commission ensure that a whistleblower in this 
+circumstance be guaranteed a minimum recovery of $5 million.
+---------------------------------------------------------------------------
+
+    \89\ Hasegawa Comment.
+    \90\ Id.
+---------------------------------------------------------------------------
+
+    Hasegawa's observation presents a mathematical possibility under 
+new rule 165.9(d). But the Commission's experience in administering 
+whistleblower awards to date has not substantiated this concern. 
+Indeed, in prior matters where the aggregate award was below $5 million 
+and collections in the underlying matters were over $16.66 million, the 
+awardee(s) would not have satisfied new rule 165.9(d)(1)(ii)-(iv)'s 
+conditions to qualify for a 30 percent award.
+    Furthermore, with new rule 165.9(d) in place, awardees in matters 
+with collections between $16.66 million and $50 million will not 
+receive less than they merit under the standard application of the 
+criteria and positive factors in rule 165.9(a)-(b). As noted above, the 
+Commission has not observed instances in which a meritorious 
+whistleblower would have received less than a whistleblower qualifying 
+for the 30 Percent Presumption. In addition, the Commission cannot 
+credit the concern that the new rules will result in ``weaker 
+incentives for whistleblowers to bring cases resulting in large 
+recoveries than for whistleblowers whose information results in smaller 
+recoveries.'' \91\ Whistleblowers do not know at the time they bring 
+their information whether it will contribute to a successful CFTC 
+enforcement action, much less what the amount of collections will be. 
+The 30 Percent Presumption will only be applied to increase awards that 
+qualify; it will not operate to decrease any awards. As a result, it 
+should only further incentivize whistleblowers to come forward. For 
+these reasons, and to promote further harmonization with SEC rule 21F-
+6(c), the Commission declines to modify new rule 165.9(d) to provide 
+for automatic increases for any awards where collections exceed the 
+threshold for the 30 Percent Presumption.
+---------------------------------------------------------------------------
+
+    \91\ Id.
+---------------------------------------------------------------------------
+
+    Written explanation when the 30 Percent Presumption is not applied 
+to a potentially eligible claim.\92\ One commenter suggested that new 
+rule 165.9(d) should require the Preliminary Determination to include a 
+provision-specific written explanation in cases in which the 30 Percent 
+Presumption is not applied to a potentially eligible claim. The 
+Commission declines to adopt this suggestion.
+---------------------------------------------------------------------------
+
+    \92\ Anonymous Comment at 1, 4-5.
+---------------------------------------------------------------------------
+
+    Rule 165.7(g)(1) already requires that Preliminary Determinations 
+``set[ ] forth a preliminary assessment'' of each whistleblower 
+claim.\93\ This ``assessment'' entails the application of all relevant 
+part 165 rules, including those in new rule 165.9(d) pertaining to the 
+30 Percent Presumption. Accordingly, the Commission disagrees with the 
+contention that the requested modification is needed to avoid 
+``reintroduc[ing] the uncertainty the proposal is intended to reduce.'' 
+\94\ On the contrary, the existing part 165 framework, within which new 
+rule 165.9(d) will operate, guards against such uncertainty. For this 
+reason, and because the modification would unnecessarily reduce 
+harmonization between new rule 165.9(d) and SEC rule 21F-6(c), the 
+Commission declines to make this modification.
+---------------------------------------------------------------------------
+
+    \93\ 17 CFR 165.7(g)(1); id. 165.13(b)(2) (noting that the 
+record on appeal of any Final Order of the Commission relating to a 
+whistleblower award determination shall consist of the Preliminary 
+Determination and the Final Order of the Commission as set forth in 
+Sec.  165.7.).
+    \94\ See Anonymous Comment at 1.
+---------------------------------------------------------------------------
+
+    Assistance and cooperation. The anonymous commenter also 
+recommended that the Commission clarify that limited assistance may not 
+be inferred solely from the absence of requests for what the commenter 
+calls ``supplemental cooperation.'' \95\ The Commission declines to 
+adopt this modification. New rule 165.9(d)(1)(iv)(A) provides for the 
+Commission to consider ``the relevant facts and circumstances'' in 
+determining whether an awardee's assistance was ``limited.'' Moreover, 
+the Commission conducts a holistic review of each whistleblower claim, 
+including the degree of assistance provided. Accordingly, the 
+Commission does not find adoption of the proposed recommendation 
+warranted.
+---------------------------------------------------------------------------
+
+    \95\ Id. at 1, 4-5.
+---------------------------------------------------------------------------
+
+    Additional comments. Finally, several commenters requested that the 
+Commission acknowledge or address certain topics in the final rule's
+
+[[Page 58584]]
+
+preamble, rather than in rule text. One requested that the Commission, 
+in order to make the rule ``stronger and easier to evaluate going 
+forward,'' commit to report annually on the rate at which the 30 
+Percent Presumption is applied or overridden and the impact on average 
+award-processing times.\96\ The Commission declines, however, to adopt 
+additional reporting obligations as part of this rulemaking. 
+Introducing additional administrative burden in this manner would 
+undermine the goal of promoting Program efficiency. Another requested 
+that the Commission specify that ``the final rule expresses no view on 
+[whether a retail customer admitted directly as a self-clearing member 
+is subject to the statutory whistleblower exclusion set out in CEA 
+section 23(c)(2)(A)] is a `member of a registered entity' and state 
+that the Commission intends to solicit focused public input [on the 
+issue] through a separate process'' \97\--an issue that the Commission 
+notes is beyond the scope of this rulemaking.
+---------------------------------------------------------------------------
+
+    \96\ Nugent Comment at 4. Doing so, according to the comment, 
+``would let the Commission, Congress, and the public confirm that 
+the $5 million threshold continues to perform as modeled, and would 
+provide a ready evidentiary basis for any future adjustment.'' Id.
+    \97\ Anonymous Comment at 2.
+---------------------------------------------------------------------------
+
+    The Stulz Comment asserted that the Commission's rules should 
+``protect whistleblowers from being targeted, not given money[, which 
+incentivizes people] to make up things, or create problems that aren't 
+actually there.'' \98\ On this basis, Stulz argued that new rule 
+165.9(d) could ``increase the amount of fraudulent claims . . . [and] 
+increase workload.'' \99\ The Commission finds this comment 
+unpersuasive. Under the CEA and the Commission's Regulations, 
+whistleblowers enjoy robust protection, which proposed new rule 
+165.9(d) would in no way diminish if adopted.\100\ In addition, the 
+Commission considers the risk that the 30 Percent Presumption would 
+trigger frivolous or fraudulent claims that significantly increase 
+Commission staff workload to be slight for several reasons. First, the 
+30 Percent Presumption only affects award percentages for meritorious 
+whistleblower claimants, not a whistleblower's eligibility for 
+award.\101\ Second, while the commenter expressed concern that 
+frivolous reports may be filed to target disfavored individuals, 
+Commission staff can typically screen out frivolous claims with limited 
+effort before proceeding with a full inquiry. Finally, adverse 
+incentives to file frivolous or fraudulent whistleblower claims are 
+more likely to arise from higher-value awards, not the smaller-value 
+awards of $5 million or less that the 30 Percent Presumption is 
+designed to address.\102\
+---------------------------------------------------------------------------
+
+    \98\ Stulz Comment.
+    \99\ Id.
+    \100\ See 7 U.S.C. 26(h); 7 CFR 165.20.
+    \101\ Additionally, the act of filing a false claim renders a 
+claimant ineligible for a whistleblower award. 17 CFR 165.6(a)(5).
+    \102\ See 17 CFR 165.9(a)(5) (specifying ``[p]otential adverse 
+incentives from oversize awards'' as a factor for the Commission to 
+consider in determining award amounts); Whistleblower Incentives and 
+Protection, 76 FR 53172, 53189 (Aug. 25, 2011) (Rule subsection 
+165.9(a)(5) was added to part 165 in response to comment from 
+Senator Carl Levin expressing ``concern that excessive monetary 
+incentives may lead to misreporting causing investigative waste.'').
+---------------------------------------------------------------------------
+
+    Additional Alternatives. In its Consideration of Benefits and Costs 
+in Section IV.C below, the Commission also considers three additional 
+alternatives: (1) hiring additional WBO staff to improve the agency's 
+capacity to process claims; (2) applying the 30 Percent Presumption in 
+matters where the award at the 30 percent maximum would be $2 million 
+or less; and (3) applying the 30 Percent Presumption in matters where 
+the award at the 30 percent maximum would be $15 million or less. As 
+explained in its Consideration of Benefits and Costs, the Commission 
+concludes that the 30 Percent Presumption is likely to be more 
+effective in achieving the goals of this rulemaking than these 
+alternatives.
+
+III. Technical Amendments to Rules 165.10(a)(7) and 165.15
+
+    The NPRM also proposed technical corrections to its whistleblower 
+rules to update references in part 165 to reflect the WBO's 2025 
+transfer from the DOE to the OGC, in light of the WBO's adjudicatory 
+functions.\103\ As a result of the WBO's transfer, several references 
+in rules 165.10(a)(7) and 165.15 to the WBO's placement within the 
+Commission's operating structure had become outdated. Accordingly, the 
+Commission proposed technical corrections to remove several references 
+to the DOE and to reflect the WBO's placement within the OGC.
+---------------------------------------------------------------------------
+
+    \103\ Keynote Address of Acting Chairman Caroline D. Pham, ISDA 
+Annual General Meeting (May 15, 2025), available at <a href="https://www.cftc.gov/PressRoom/SpeechesTestimony/opapham15">https://www.cftc.gov/PressRoom/SpeechesTestimony/opapham15</a>.
+---------------------------------------------------------------------------
+
+    The National Whistleblower Center expressed support for these 
+technical corrections and the Commission's decision to locate the WBO 
+in the OGC. It asserted that the move ``reinforce[s] the impartiality 
+of award decisions . . . and legitimates the CFTC's award decisions.'' 
+\104\ In contrast, TAF Coalition criticized the WBO's move to the 
+Office of the General Counsel. TAF Coalition stated that it 
+``disagree[d] strongly with Commission's decision to give general 
+authority to administer the whistleblower program to the General 
+Counsel, and accordingly, move the WBO from supervision by the Director 
+of the [DOE], to the General Counsel.'' \105\ TAF Coalition also 
+asserted that the Commission's proposed technical corrections did not 
+comport with notice-and-comment requirements under the Administrative 
+Procedure Act.\106\
+---------------------------------------------------------------------------
+
+    \104\ National Whistleblower Center Comment at 3.
+    \105\ TAF Coalition Comment at 3. TAF Coalition argued that 
+General Counsel oversight of WBO staff is not consistent with 
+Commission Regulations and that the OGC is not suited to supervising 
+the WBO but should be limited to reviewing the WBO awards for 
+``legal sufficiency.'' Id. at 4-5.
+    \106\ See id. (arguing that ``moving administration of the WBO 
+from the Director of the DOE to the CFTC's General Counsel requires 
+the CFTC to publish a Proposed Rule and provide the public with an 
+opportunity for comment'')
+---------------------------------------------------------------------------
+
+    The Commission finds TAF Coalition's arguments unavailing. As a 
+threshold matter, the Commission retains discretion to organize its 
+staffing in the manner most appropriate for carrying out its legal 
+mandates under the CEA.\107\ The Commission exercised this discretion 
+to transfer the WBO to the CFTC's OGC in 2025 to reflect the WBO's 
+adjudicatory functions. The technical amendments merely reflect this 
+reorganization. Moreover, TAF Coalition argues that the Commission's 
+rules limit the OGC to performing legal sufficiency review and prohibit 
+OGC staff from participating in the WBO claims review process in any 
+other manner.\108\ But neither the Commission's rules nor the CEA limit 
+the OGC to performing legal sufficiency review, nor do they prohibit 
+OGC staff from playing additional roles in the review process.\109\ 
+Accordingly, the Commission rejects TAF Coalition's argument.
+---------------------------------------------------------------------------
+
+    \107\ See, e.g., 7 U.S.C. 2(a)(12) (``The Commission is 
+authorized to promulgate such rules and regulations as it deems 
+necessary to govern the operating procedures and conduct of the 
+business of the Commission.''); id. 16(b)(1) (``The Commission shall 
+have the authority to employ such investigators, special experts, 
+Administrative Law Judges, clerks, and other employees as it may 
+from time to time find necessary for the proper performance of its 
+duties and as may be from time to time appropriated for by 
+Congress.'').
+    \108\ See TAF Coalition Comment at 3-4.
+    \109\ See, e.g., Estate of Jennions v. CFTC, 183 F.4th 858, 866 
+(D.C. Cir. 2026) (determining that CFTC reasonably rejected claims 
+of undue involvement by CFTC's OGC during the claims review 
+process).
+---------------------------------------------------------------------------
+
+    In addition, the Commission provided notice to the public in the 
+NPRM and an opportunity to comment on the technical corrections 
+designed to reflect the move of the WBO to OGC and to reflect General 
+Counsel supervision of WBO. While rules of agency organization, 
+practice, and procedure
+
+[[Page 58585]]
+
+are generally exempt from the notice-and-comment requirements of the 
+APA,\110\ the Commission in its discretion chose to provide the public 
+with an opportunity to comment on these technical revisions. 
+Accordingly, the Commission finds TAF Coalition's procedural argument 
+unconvincing.
+---------------------------------------------------------------------------
+
+    \110\ 5 U.S.C. 553(b)(A) (excepting rules of agency organization 
+from notice-and-comment rulemaking requirements).
+---------------------------------------------------------------------------
+
+    For these reasons, the Commission declines to accept TAF 
+Coalition's request to republish a notice regarding the technical 
+corrections and is adopting these technical corrections to update 
+references in part 165, as proposed.
+
+IV. Related Matters
+
+A. Regulatory Flexibility Act
+
+    The Regulatory Flexibility Act (``RFA''),\111\ requires agencies to 
+consider whether the rules they propose and promulgate will have a 
+significant economic impact on a substantial number of small entities 
+and, if so, provide a regulatory flexibility analysis with respect to 
+such impact. Section 604 of the RFA \112\ requires an agency to 
+undertake a final regulatory flexibility analysis of a rule's effects 
+on small entities unless the Chairman certifies that the rule, if 
+adopted, would not have a significant economic impact on a substantial 
+number of small entities.\113\
+---------------------------------------------------------------------------
+
+    \111\ 5 U.S.C. 601-612.
+    \112\ Id. 604.
+    \113\ Id. 605(b).
+---------------------------------------------------------------------------
+
+    Only individuals are eligible for participation in the Commission's 
+whistleblower program. The amendments would apply only to an 
+individual, or individuals acting jointly, who provide information 
+relating to the violation of the CEA or Commission regulations. By 
+definition, companies and other entities cannot be whistleblowers.\114\ 
+Consequently, the persons that would be subject to the rule amendments 
+are not ``small entities'' under the RFA.
+---------------------------------------------------------------------------
+
+    \114\ 7 U.S.C. 26(a)(7).
+---------------------------------------------------------------------------
+
+    Accordingly, the Chairman, on behalf of the Commission, hereby 
+certifies under 5 U.S.C. 605(b) that the regulations, as adopted 
+herein, will not have a significant economic impact on a substantial 
+number of small entities. This document serves as notification to the 
+Small Business Administration of the Commission's certification of no 
+effect.
+
+B. Paperwork Reduction Act
+
+    The Paperwork Reduction Act (``PRA'') \115\ imposes certain 
+requirements on federal agencies including the Commission in connection 
+with their conducting or sponsoring any collection of information as 
+defined by the PRA. The rule amendments being adopted herein do not 
+impose any new information collection requirements within the meaning 
+of the PRA. Accordingly, the requirements imposed by the PRA are not 
+applicable to this rule.
+---------------------------------------------------------------------------
+
+    \115\ 44 U.S.C. 3501-3521.
+---------------------------------------------------------------------------
+
+C. Consideration of Benefits and Costs
+
+1. Introduction
+    CEA section 15(a) requires the Commission to consider the benefits 
+and costs of its actions before promulgating a regulation under the CEA 
+or issuing certain orders.\116\ Section 15(a) further specifies that 
+the costs and benefits shall be evaluated in light of the following 
+five factors: (1) protection of market participants and the public; (2) 
+efficiency, competitiveness, and financial integrity of futures 
+markets; (3) price discovery; (4) sound risk management practices; and 
+(5) other public interest considerations. The discussion below 
+addresses the Commission's statutory CEA section 15(a) obligation.\117\
+---------------------------------------------------------------------------
+
+    \116\ 7 U.S.C. 19(a).
+    \117\ In conducting its analysis, the Commission is informed by 
+Executive Order 12866, Regulatory Planning and Review, 58 FR 51735 
+(Oct. 4, 1993), as supplemented by Executive Order 14215, Ensuring 
+Accountability for All Agencies, 90 FR 10447 (Feb. 24, 2025).
+---------------------------------------------------------------------------
+
+    As described above, the Commission is adopting new rule 165.9(d) to 
+establish a presumption that, unless certain factors that may decrease 
+an award are present, the Commission will set the award at the 
+statutory maximum of 30 percent in matters where the total awards in 
+the Covered Action and any Related Actions do not exceed $5 million. 
+This new rule will improve the efficiency, transparency, and 
+predictability of processing whistleblower award applications and to 
+align the Commission's approach with SEC rule 21F-6(c).\118\ Under the 
+current framework, every meritorious claim, regardless of award size, 
+undergoes an individualized, factor-by-factor review to determine an 
+appropriate award percentage. Applying this highly tailored analysis to 
+smaller-dollar matters, however, can be disproportionately resource-
+intensive and tax Commission resources--thereby extending timelines for 
+issuing final awards. Delays, in turn, may weaken incentives for 
+individuals to report violations. Reduced whistleblowing activity, 
+should it occur, could impair the Commission's ability to enforce the 
+CEA and its regulations effectively, diminish deterrence, and 
+ultimately hinder the Commission's broader mission of protecting market 
+participants and the public; supporting market efficiency, 
+competitiveness, and market integrity; and ensuring sound price 
+discovery and risk management.
+---------------------------------------------------------------------------
+
+    \118\ The amendments would also redesignate current Sec.  
+165.9(d) as new Sec.  165.9(e) and make technical corrections in 
+part 165 to update regulatory references to reflect the WBO's 2025 
+move, consistent with its adjudicatory functions, from the DOE to 
+the OGC. These amendments are ministerial and not expected to 
+generate benefits or costs.
+---------------------------------------------------------------------------
+
+    With one exception, commenters did not directly address the 
+Commission's consideration of the benefits and costs of new rule 
+165.9(d).\119\ However, several comments supported new rule 165.9(d) 
+and some comments proposed modifications to new rule 165.9(d) or 
+suggested alternative approaches. In the analysis below, the Commission 
+evaluates, within the scope of this rulemaking, the benefits and costs 
+of each feasible alternative proposed by commenters and the 
+alternatives identified in the NPRM.\120\
+---------------------------------------------------------------------------
+
+    \119\ See Nugent Comment at 3 (``Applying its own historical 
+data, the Commission estimates that had the presumption been in 
+effect for the Program's entire twelve-year history, total 
+additional payouts from the Customer Protection Fund would have been 
+under $4 million--roughly $333,000 per year on average, about one 
+percent of total award dollars paid since 2014, and under two 
+percent of the Fund's balance at the end of FY2025. That is a 
+modest, well-bounded cost against the benefits of faster processing, 
+reduced administrative burden, and stronger whistleblower 
+incentives, and I urge the Commission to adopt the proposal on that 
+basis.''). Another comment, without referencing the Commission's 
+cost-benefit consideration directly, said that it ``should better 
+explain why $5 million is the appropriate threshold'' instead of a 
+higher one that ``could allow the Commission to reduce processing 
+times even further.'' Better Markets Comment at 2. Additionally, 
+several commenters raised economic arguments bearing on the benefits 
+and costs of new rule 165.9(d). Those arguments, including points 
+concerning the present value of delayed awards, the calibration of 
+the $5 million threshold, potential adverse incentives for awards 
+with higher dollar values, the liquidity implications for the CPF, 
+and the appropriate evidentiary weight to assign to the SEC's 
+experience, are addressed as relevant in the discussion.
+    \120\ See infra SectionIV.C.5 (``Regulatory Alternatives''); 
+supra Section II.B and II.C (``Comments Received'' and 
+``Discussion'').
+---------------------------------------------------------------------------
+
+    The Commission provides below a qualitative assessment of the 
+benefits and costs of the final amendments and considered regulatory 
+alternatives and, where feasible, quantified estimates of those 
+economic effects. The Commission is unable to quantify certain economic 
+effects because the Commission does not have, and in certain cases 
+cannot reasonably obtain, data necessary to inform Commission 
+estimates. Further, even in cases where the Commission has data, 
+certain economic effects cannot practicably be
+
+[[Page 58586]]
+
+quantified due to the number and type of assumptions necessary. In 
+particular, the Commission recognizes that significant structural 
+changes continue to occur in the financial markets within its 
+jurisdiction, and that the number, nature, and complexity of future 
+enforcement matters--and related whistleblower claims--cannot be 
+predicted with precision. As a result, any estimate of the net effects 
+of the amendments is subject to uncertainty and cannot be expressed 
+with a narrow confidence interval. The Commission's inability to 
+quantify particular benefits and costs does not imply that such 
+economic effects are less significant than quantified effects.
+2. Baseline
+    The baseline against which the benefits and costs of the new rule 
+are measured consists of the existing legal framework for the Program 
+and the Commission's implementation of that framework.
+    The current regulatory framework requires an individualized, 
+factor-by-factor review to determine the appropriate percentage award 
+of every meritorious claim, regardless of award size. Section 23 of the 
+CEA directs the Commission to pay awards of 10 to 30 percent of 
+collected monetary sanctions to eligible whistleblowers whose original 
+information leads to a successful Covered Action or Related 
+Action.\121\ Under the existing rules in part 165, including rule 165.7 
+(procedures for award applications) and rule 165.9 (criteria for 
+determining amount of award), every meritorious claim, regardless of 
+award size, undergoes an individualized, factor-by-factor review. That 
+multi-factor review considers positive factors, including the 
+significance of the information, degree of assistance, programmatic 
+interest, and participation in internal compliance systems, and factors 
+that may decrease an award, including culpability or involvement, 
+unreasonable delay, and interference with internal compliance systems, 
+to determine the appropriate award percentage.\122\
+---------------------------------------------------------------------------
+
+    \121\ See 7 U.S.C. 26(b).
+    \122\ See 17 CFR 165.9(b), (c); see generally Whistleblower 
+Incentives and Protection, 76 FR 53172 (Aug. 25, 2011); 
+Whistleblower Award Process, 82 FR 24487 (May 30, 2017).
+---------------------------------------------------------------------------
+
+    The absence of any streamlined mechanism for small claims in part 
+165 contrasts with the SEC whistleblower program, which, in 2020, 
+adopted a presumption to award qualifying claimants the statutory 30 
+percent maximum in matters involving total awards of $5 million or 
+less.\123\
+---------------------------------------------------------------------------
+
+    \123\ See Whistleblower Program Rules, 85 FR 70898, 70911-70912 
+(Nov. 5, 2020) (promulgating, among other rules, SEC rule 21F-6(c), 
+codified at 17 CFR 240.21F-6).
+---------------------------------------------------------------------------
+
+    Because the staff review process under part 165 is labor-intensive 
+and time-consuming for all submissions, the average interval from 
+claim-submission deadline to final award order has been over 2.5 
+years.\124\ The longer the interval between the claim deadline and 
+claim-award resolution, the greater the reduction of an expected 
+award's present value, which may diminish the economic incentives for 
+individuals to report potential violations. Challenges to Preliminary 
+Determinations, especially when the recommended award is less than the 
+statutory maximum, can impose additional wait-times for award 
+applicants.\125\ Staff time devoted to reviewing challenges in smaller-
+dollar cases divert efforts that otherwise would be expended towards 
+processing other claims, potentially ones with greater impact or 
+significance. As a result, resources spent on smaller matters may delay 
+the resolution of other cases, ultimately extending overall award 
+processing times and reducing the Program's effectiveness.
+---------------------------------------------------------------------------
+
+    \124\ There is significant variance in individual case 
+processing times where some matters resolve within a year of the 
+application deadline, while, as one commenter notes, others can 
+extend four or more years beyond the deadline. See Constantine 
+Cannon Comment at 1. Multi-claimant matters and those in which 
+Preliminary Determinations are contested are likely to exceed this 
+average.
+    \125\ See 17 CFR 165.7(g)(2) (process for claimants to contest 
+preliminary award); id. 165.13(a) (claimants' right to appeal final 
+Commission order). Unlike the amount of an SEC whistleblower award, 
+the amount of a CFTC whistleblower award is subject to judicial 
+challenge. Compare 15 U.S.C. 78u-6(f) with 7 U.S.C. 26(f)(2).
+---------------------------------------------------------------------------
+
+    Based on awards the Commission issued through calendar year 2025, 
+whistleblower submissions have contributed to legal judgments for more 
+than $3.3 billion in financial remedies and the return of approximately 
+$160 million to harmed customers. From 2014--the year of the 
+Commission's first whistleblower award--through calendar year 2025, the 
+Commission granted 73 awards across 56 orders, amounting to more than 
+$395 million. In FY 2024, whistleblowers were involved in approximately 
+42 percent of the Commission's enforcement actions.\126\
+---------------------------------------------------------------------------
+
+    \126\ See Commodity Futures Trading Commission Whistleblower 
+Program and Customer Education Initiatives 2024 Annual Report, 8 
+(Oct. 2024), available at <a href="https://www.whistleblower.gov/sites/whistleblower/files/2024-11/FY24%20Customer%20Protection%20Fund%20Annual%20Report%20to%20Congress.pdf">https://www.whistleblower.gov/sites/whistleblower/files/2024-11/FY24%20Customer%20Protection%20Fund%20Annual%20Report%20to%20Congress.pdf</a>.
+---------------------------------------------------------------------------
+
+    Tables 1-3, below, show Program performance metrics under the 
+existing framework. They are labeled as follows to provide common 
+references for the metrics presented: ``awards'' refers to award 
+payments issued to individual awardees; ``orders granting awards'' 
+refers to Commission actions issuing formal decisions that confer 
+awards in specific enforcement matters where a single order may cover 
+multiple awardees; ``percent of total award dollars'' refers to 
+percentage calculated against aggregate dollars paid in whistleblower 
+awards during the stated period. Table 1 presents the distribution of 
+the number of whistleblower tips (received via Form TCR \127\), award 
+applications (received via Form WB-APP \128\), awards, and orders 
+granting awards from FY 2012 through the first quarter of FY 2026 
+(which ended on December 31, 2025).\129\ Table 2 presents the 
+distribution of whistleblower awards received by each awardee across 
+award size buckets during the same time period. Table 3 presents the 
+distribution of orders granting whistleblower awards (a given order 
+might have multiple awardees) across award size buckets during the same 
+period.
+---------------------------------------------------------------------------
+
+    \127\ See 17 CFR 165.3(a) (prescribing that whistleblowers 
+submit original information via a Form TCR to be eligible for 
+award); id. part 165 App. B (Form TCR and Form WP-APP).
+    \128\ See id. 165.7(b) (prescribing that whistleblowers submit a 
+Form WB-APP to file a claim to receive a whistleblower award); id. 
+part 165 App. B (Form TCR and Form WP-APP).
+    \129\ Fiscal years begin on October 1 of the prior calendar year 
+and end on September 30 of the calendar year. For example, FY 2026 
+began on October 1, 2025, and will end on September 30, 2026.
+
+   Table 1--Distribution of the Number of Whistleblower Tips, Award Applications, Awards, and Orders Granting
+           Awards FY 2012-Q1 (Starting October 1, 2012) Through FY 2026-Q1 (Ending December 31, 2025)
+----------------------------------------------------------------------------------------------------------------
+                                                                                                 Orders granting
+                             FY                              Forms TCR  Forms WB-APP   Awards        awards
+----------------------------------------------------------------------------------------------------------------
+2012.......................................................         58            16         0                 0
+2013.......................................................        138            12         0                 0
+2014.......................................................        227            38         1                 1
+
+[[Page 58587]]
+
+ 
+2015.......................................................        232            47         1                 1
+2016.......................................................        273            59         2                 2
+2017.......................................................        465            74         0                 0
+2018.......................................................        760           120         5                 5
+2019.......................................................        455           117         5                 5
+2020.......................................................      1,030           140        16                11
+2021.......................................................        961           140         6                 6
+2022.......................................................      1,506           152        10                 5
+2023.......................................................      1,530           301         7                 5
+2024.......................................................      1,744           317        15                12
+2025.......................................................      1,697           203         3                 2
+2026 Q1....................................................        360            18         2                 1
+----------------------------------------------------------------------------------------------------------------
+
+
+        Table 2--Distribution of Whistleblower Awards Received by Each Awardee Across Award Size Buckets
+                                           [Through December 31, 2025]
+----------------------------------------------------------------------------------------------------------------
+                                                                              Percent of total  Percent of total
+                           Range                            Number of awards     award count     award dollars *
+----------------------------------------------------------------------------------------------------------------
+$2 million or less........................................                52                71                 4
+Over $2 million to $5 million.............................                 8                11                 6
+Over $5 million to $10 million............................                 6                 8                12
+Over $10 million to $15 million...........................                 3                 4                10
+Over $15 million to $25 million...........................                 2                 3                11
+Over $25 million..........................................                 2                 3                56
+                                                           -----------------------------------------------------
+    Total.................................................                73               100               100
+----------------------------------------------------------------------------------------------------------------
+* Figures do not sum to 100% due to rounding.
+
+
+             Table 3--Distribution of Orders Granting Whistleblower Awards Across Award Size Buckets
+                                           [Through December 31, 2025]
+----------------------------------------------------------------------------------------------------------------
+                                                                              Percent of total  Percent of total
+                           Range                            Number of orders    order count *    award dollars *
+----------------------------------------------------------------------------------------------------------------
+$2 million or less........................................                34                61                 3
+Over $2 million to $5 million.............................                 9                16                 7
+Over $5 million to $10 million............................                 6                11                12
+Over $10 million to $15 million...........................                 3                 5                10
+Over $15 million to $25 million...........................                 2                 4                11
+Over $25 million..........................................                 2                 4                56
+                                                           -----------------------------------------------------
+    Total.................................................                56               100               100
+----------------------------------------------------------------------------------------------------------------
+* Figures do not sum to 100% due to rounding.
+
+    Awards are concentrated at the lower end of the distribution where 
+approximately 71 percent of awards were at or under $2 million 
+(representing about four percent of total award dollars paid to 
+whistleblowers). When measured by the Commission's orders granting 
+awards, about 61 percent of these orders were for $2 million or less, 
+making up roughly three percent of total payouts. Approximately 82 
+percent of awards were at or under $5 million and collectively 
+represented about 10 percent of total award dollars paid to 
+whistleblowers. Similarly, 77 percent of orders granting awards were 
+for $5 million or less, accounting for about 10 percent of total 
+payouts.\130\
+---------------------------------------------------------------------------
+
+    \130\ The Commission has continued to resolve Covered Actions 
+for which the imposed monetary sanctions are small enough that a 30 
+percent award would not exceed $5 million.
+---------------------------------------------------------------------------
+
+    Of the 43 matters with $5 million or less in awards from the start 
+of the Program through December 31, 2025, 12 matters had award 
+percentages of less than 30 percent. If those 12 matters instead had 
+awards of 30 percent of the recovered amounts, the total CPF payouts 
+would have increased by less than $4 million over the entire period. To 
+put that amount in context, the CPF had an available balance of over 
+$200 million as of September 30, 2025.\131\
+---------------------------------------------------------------------------
+
+    \131\ See CFTC Whistleblower Program, 2025 Annual Report, at 3, 
+21-2.
+---------------------------------------------------------------------------
+
+3. Benefits
+    Relative to the baseline and after consideration of comments, the 
+Commission believes that amended rule 165.9 will improve the efficiency 
+of whistleblower-award processing, by conserving Commission staff 
+resources in processing applicants' submissions and reducing the 
+potential for administrative and judicial contests. The amended rule 
+will also support the effectiveness of the Program and the
+
+[[Page 58588]]
+
+Commission's enforcement mission by enhancing the predictability and 
+procedural clarity of the award process for prospective whistleblowers 
+and strengthening incentives for timely and high-quality 
+reporting.\132\
+---------------------------------------------------------------------------
+
+    \132\ The Commission is unaware of metrics to monetize these 
+benefits and so generally discusses them qualitatively when it 
+cannot do so quantitatively.
+---------------------------------------------------------------------------
+
+    Amended rule 165.9 is expected to improve the efficiency of the 
+Program. The 30 Percent Presumption will reduce the average time and 
+resources required for the WBO and the Commission to review smaller-
+dollar matters by reducing the circumstances where staff must engage in 
+the full factor-by-factor analysis specified in rule 165.9(b) and (c). 
+Specifically, when the 30 Percent Presumption applies, the award amount 
+will be conditionally set at the 30 percent statutory maximum unless 
+certain factors that may decrease an award are present.\133\ In such 
+cases, Commission staff will not be required to conduct a granular 
+analysis for the following positive factors: (1) the significance of 
+the whistleblower's information; (2) the degree of assistance provided 
+by the whistleblower (beyond confirming that assistance was not 
+limited); (3) the Commission's interest in deterring violations; and 
+(4) participation in internal compliance systems.\134\ Assessing all 
+these positive factors can be labor intensive. For example, evaluating 
+the degree of assistance may entail reviewing hundreds of pages of 
+investigative records and correspondence, while determining 
+significance or deterrence involves cross-referencing enforcement 
+outcomes and market impacts. Based on historical data, the Commission 
+anticipates that streamlining the award determination process for 
+matters under the $5 million threshold would eliminate the need for 
+individualized analysis on these points for approximately 82 percent of 
+awards, thereby substantially reducing administrative burden.\135\ 
+Accordingly, the Commission believes that removing these requirements 
+is likely to result in a substantial decrease in award-processing time. 
+In addition to a reduction in award-processing time, the average claim-
+award-resolution time will potentially be further reduced insofar as 
+there are fewer disputes seeking higher award percentages, when the 
+maximum is awarded by operation of the 30 Percent Presumption.\136\
+---------------------------------------------------------------------------
+
+    \133\ Because the 30 Percent Presumption does not apply where 
+factors that may decrease an award are present (including 
+culpability, unreasonable delay, or interference with internal 
+compliance systems), the amended rule 165.9 will avoid unintended 
+costs associated with over-inclusive awards that might otherwise 
+offset the efficiency gains of the amendments. Accord Nugent Comment 
+at 3 (``The retained safeguards are the right way to balance speed 
+against integrity.'').
+    \134\ Commission staff will continue to evaluate the factors in 
+rule 165.9(c) to determine whether the presumption applies under new 
+rule 165.9(d).
+    \135\ See supra section IV.C.2.
+    \136\ A single-claimant award at the 30-percent level eliminates 
+any incentive for that claimant to contest the award percentage in 
+the Preliminary Determination or appeal the Final Determination.
+---------------------------------------------------------------------------
+
+    Notwithstanding the uncertainty associated with evolving markets, 
+the Commission's experience supports the expectation that the volume 
+and complexity of potential enforcement matters will increase over 
+time, making streamlined review of smaller-dollar claims progressively 
+more important for maintaining Program effectiveness. Specifically, as 
+new products, trading technologies, and market structures emerge, the 
+Commission expects, based on its experience, that the number and 
+complexity of potential enforcement matters will grow as well, 
+expanding the potential need for whistleblower assistance in the 
+process.\137\ Accordingly, the Commission believes it is reasonable to 
+expect that streamlined review of smaller-dollar claims will become 
+increasingly important for maintaining Program effectiveness.\138\
+---------------------------------------------------------------------------
+
+    \137\ For example, the Commission has observed significant 
+recent growth in event contracts--i.e., derivatives contracts, 
+typically with a binary payoff structure, based on the outcome of an 
+underlying occurrence or event--and the prediction markets that 
+trade them. See Prediction Markets, 91 FR 12516, 12517 nn.9-10 and 
+accompanying text (Mar. 16, 2026) (advanced notice of proposed 
+rulemaking). Insider trading in these expanding prediction markets 
+is a particular focus for the Commission's enforcement effort. See 
+David I. Miller, CFTC Director of Enforcement, Public Remarks and 
+New York University Law School--CFTC Enforcement Priorities, Insider 
+Trading in the Prediction Markets and Cooperation with the CFTC 
+(Mar. 31, 2026), available at <a href="https://www.cftc.gov/PressRoom/SpeechesTestimony/opamiller1">https://www.cftc.gov/PressRoom/SpeechesTestimony/opamiller1</a>.
+    \138\ The Commission's analysis is grounded in historical 
+Program data, which, combined with the markets' highly dynamic 
+natures, renders it unable to more precisely quantify the likely 
+magnitude of expected efficiency gains ex ante.
+---------------------------------------------------------------------------
+
+    The SEC's experience with its analogous provision, SEC rule 21F-
+6(c), provides empirical evidence of the efficiency gains the 
+Commission expects from new rule 165.9(d).\139\ According to the SEC's 
+2021 annual report to Congress, after implementation of the SEC 
+whistleblower program rules, the SEC rule 21F-6(c) presumption was 
+applied in approximately 89 percent of cases with award amounts not 
+exceeding $5 million, compared to 46 percent of cases in which the 
+statutory 30 percent maximum was awarded before the amendments. The 
+report further notes that this presumption increased consistency and 
+transparency and expedited the processing of award claims in FY 
+2021.\140\
+---------------------------------------------------------------------------
+
+    \139\ One commenter asserted that the SEC has continued to 
+experience some delays. See Constantine Cannon Comment at 2. 
+However, the presence of some residual delays in SEC review of 
+larger matters does not undercut the rule's expected efficiency 
+benefit for smaller matters; rather, they reinforce the rationale 
+for the rule's goal of promoting efficient resource allocation to 
+free up resources for reviewing higher dollar claims.
+    \140\ Securities and Exchange Commission, 2021 Annual Report to 
+Congress Whistleblower Program at 18 (2021), available at <a href="https://www.sec.gov/reports?aId=edit-tid&year=All&field_article_sub_type_secart_value=Reports+and+Publications-AnnualReports&tid=59">https://www.sec.gov/reports?aId=edit-tid&year=All&field_article_sub_type_secart_value=Reports+and+Publications-AnnualReports&tid=59</a>.
+---------------------------------------------------------------------------
+
+    In addition, new rule 165.9(d) is expected to support the 
+effectiveness of the Program and the Commission's enforcement mission. 
+The Commission expects that new rule 165.9(d) will encourage 
+whistleblower reporting by improving the predictability and procedural 
+transparency of the award process. The amendments will increase 
+reporting incentives in at least three ways. First, some meritorious 
+whistleblowers will receive higher awards than they would under the 
+status quo, which the Commission expects will incentivize prompt 
+reporting. The Commission's analysis of historical award data suggests 
+that, of the 43 matters with $5 million or less in awards, 
+approximately 30 percent (12 matters) would have received a larger 
+award had new rule 165.9(d) been in effect.
+    Second, even for those whistleblowers that would have received 30 
+percent under the current rule 165.9, prompt processing of smaller-
+dollar awards may encourage timely reporting. Economic theory and 
+common experience suggest that shorter, more predictable timelines 
+reinforce the incentive to report promptly by increasing the perceived 
+value of prospective awards.\141\ By shortening average processing 
+time, new rule 165.9(d) should mitigate timing-related disincentives 
+and help preserve the Program's ability to attract high-quality 
+information.\142\
+---------------------------------------------------------------------------
+
+    \141\ According to the time value of money, the longer the time 
+required to make an award, the lower the present value of the award 
+becomes to the claimant at the time of applying. As a result, if the 
+delay between application and award becomes too long, a potential 
+whistleblower, based on his or her circumstances, may decide that 
+the cost of becoming a whistleblower would outweigh the present 
+value of the whistleblower award. Accord Nugent Comment at 3 
+(``Delay is not a neutral inefficiency; it directly reduces the 
+present value of an eventual award and, as the Commission 
+recognizes, can deter exactly the kind of prompt, high-quality 
+reporting the Program exists to encourage.''); H Street Law Comment 
+at 2 (``Unfortunately, many whistleblowers have noted [the delay 
+whistleblowers may experience] as a significant disincentive to 
+reporting unlawful conduct.'')
+    \142\ The magnitude of this incentive distortion could be 
+material to whistleblowers. For illustrative purposes, assuming a 
+discount rate of three percent, a conservative approximation of an 
+individual's opportunity cost of waiting, a $1 million award delayed 
+by 2.5 years has a present value of approximately $929,000, a 
+reduction of roughly seven percent. At a four-year delay, the same 
+award is worth approximately $888,000, a reduction of roughly 11 
+percent.
+
+---------------------------------------------------------------------------
+
+[[Page 58589]]
+
+    Third, harmonizing rule 165.9 with SEC rule 21F-6(c) for smaller-
+dollar claims should help ensure that the CFTC's Program is viewed as 
+offering fair and comparable incentives, thereby encouraging 
+participation and improving the overall functioning of the federal 
+whistleblower framework. Ultimately, by strengthening incentives for 
+individuals to provide timely, high-quality information, new rule 
+165.9(d) may also conserve enforcement resources by reducing the 
+Commission resources necessary to identify possible misconduct.
+    Also, new rule 165.9(d) includes appropriate conditions to ensure 
+that the 30 Percent Presumption does not result in outcomes contrary to 
+the public interest.\143\ Where factors that may decrease an award are 
+present (including culpability, unreasonable delay, or interference 
+with internal compliance systems), the presumption does not apply. And 
+the Commission retains authority to modify award amounts where applying 
+the maximum percentage would be inappropriate considering public 
+interest concerns. These safeguards are intended to avoid unintended 
+costs associated with over-inclusive awards (i.e., awards at the 
+statutory-maximum percentage notwithstanding that the claimant's 
+assistance was limited or duplicative; the presence of one or more 
+factors that may decrease an award (culpability, unreasonable delay, or 
+interference with internal compliance systems); inconsistency with 
+Program objectives or the public interest; or unduly awarding one 
+claimant relative to another in a multi-claimant award allocation).
+---------------------------------------------------------------------------
+
+    \143\ Accord Nugent Comment at 3 (``The retained safeguards are 
+the right way to balance speed against integrity.'')
+---------------------------------------------------------------------------
+
+4. Costs
+    Based on historical experience and subject to acknowledged 
+uncertainty about future market conditions and enforcement activity, 
+the Commission believes that new rule 165.9(d) will result in a limited 
+and manageable increase in award payments from the CPF and will not 
+impose additional burdens on whistleblowers seeking to provide tips or 
+apply for awards or on the Commission in administering the Program. The 
+Commission also believes that the 30 Percent Presumption is unlikely to 
+meaningfully increase the incentives to submit meritless whistleblower 
+claims.
+    With respect to the CPF, the Commission recognizes that new rule 
+165.9(d) will increase payments for the subset of awards at or under 
+the $5 million threshold compared to awards calculated under existing 
+part 165. Using Program data from 2014 through the end of calendar year 
+2025, the Commission identified 43 matters with $5 million or less in 
+awards, representing approximately 10 percent of the total award 
+dollars paid over that period. If the 30 Percent Presumption had 
+applied to these 43 matters, the Commission's analysis indicates that 
+total CPF payouts would have increased by less than $4 million during 
+the entire period the Program has been operated \144\ (i.e., equivalent 
+to an average of roughly $333,000 per year over 2014-2025). Four 
+million dollars is approximately one percent of the more than $395 
+million in whistleblower awards issued since 2014 through calendar year 
+2025 and less than two percent of the FY 2025 CPF balance.\145\ Because 
+awards are paid as a fixed percentage (10 to 30 percent) of collected 
+monetary sanctions and the CPF is statutorily replenished from 
+collections when balances are insufficient to pay awards, the 
+Commission does not view the potential increase in CPF withdrawals as 
+threatening to the CPF's continued efficacy or its ability to support 
+the Program's statutory functions.\146\
+---------------------------------------------------------------------------
+
+    \144\ See supra note 131 and accompanying text.
+    \145\ See CFTC Whistleblower Program, 2025 Annual Report, at 3, 
+21-21 (includes CPF balance sheet showing available balance of 
+$212,679,118 as of Sept. 30, 2025); see also Nugent Comment at 3 
+(characterizing the amount as ``a modest, well-bounded cost against 
+the benefits of faster processing, reduced administrative burden and 
+stronger whistleblower incentives'').
+    \146\ The Commission acknowledges that these estimates rely on 
+the Program's historical experience and that future effects are 
+subject to uncertainty. The derivatives markets overseen by the 
+Commission are experiencing significant structural evolution--
+including new products, new intermediaries, changing market 
+dynamics, and new trading technologies; all this adds uncertainty 
+regarding the number, nature, and size of future enforcement actions 
+and related whistleblower claims. And, as noted previously, the 
+Commission lacks discretion to consider the CPF balance in its 
+determination of award amount. 7 U.S.C. 26(c)(1)(B)(ii); 17 CFR 
+165.9(d); see also 7 U.S.C. 26(b)(1) (the Commission ``shall pay'' 
+awards to qualifying whistleblowers).
+---------------------------------------------------------------------------
+
+    The Commission does not anticipate that new rule 165.9(d) will 
+impose material claim application or processing costs on whistleblowers 
+or the Commission. The new rule neither changes the information that 
+whistleblowers must provide to submit a tip or apply for an award, nor 
+does it alter the substantive eligibility requirements under part 165. 
+Accordingly, the Commission expects no incremental burden on award 
+claimants. Likewise, the amended rule introduces no new administrative 
+compliance obligations for the WBO or the Commission, and therefore, 
+should not increase administrative burden or operating costs.
+    A commenter expressed concern that the 30 Percent Presumption would 
+generate adverse incentives by inducing individuals to submit meritless 
+or manufactured claims in an effort to obtain a guaranteed maximum 
+award.\147\ Although any change to part 165 that increases the expected 
+award for the average claim could increase the corresponding incentives 
+to submit a whistleblower claim, the Commission believes that the 30 
+Percent Presumption is unlikely to meaningfully increase the number of 
+meritless claims. First, the 30 Percent Presumption affects only the 
+award percentage for meritorious claims--i.e., those that have already 
+been determined to provide original information that led to a 
+successful Covered Action. The 30 Percent Presumption does not alter 
+part 165's eligibility requirements, the original information standard, 
+or the criteria for successful Covered Actions. Second, the economic 
+literature on whistleblower and informant incentive programs indicates 
+that the risk of adverse incentives from monetary awards is most 
+pronounced at larger award levels, where the incentive to inflate 
+claims is highest relative to the risk of detection.\148\ Awards of $5 
+million or less are relatively modest in the context of financial 
+markets enforcement and are unlikely to produce the type of incentive-
+driven claim inflation that characterizes high-value award 
+environments. Third, meritless claims (i.e., those lacking original 
+information tied to a specific, demonstrable violation) are typically 
+identifiable by Commission staff at an early screening stage with 
+minimal analytical effort, limiting the marginal screening cost they 
+impose. Accordingly, the Commission does not view the potential for 
+adverse incentives as a meaningful cost of new rule
+
+[[Page 58590]]
+
+165.9(d) that would offset its expected efficiency and incentive 
+benefits.
+---------------------------------------------------------------------------
+
+    \147\ See Stulz Comment.
+    \148\ Cf. Paolo Buccirossi, Giovanni Immordino, and Giancarlo 
+Spagnolo, Whistleblower Rewards, False Reports, and Corporate Fraud, 
+51 Eur. J.L. & Econ. 443 (2021) (arguing that while very large 
+awards--defined mathematically based on the whistleblower's net 
+economic trade-offs, rather than a specific monetary value--lead to 
+fraudulent reporting, when the risk of retaliation is severe, these 
+large rewards are needed and so are tougher sanctions against 
+fraudulent reports).
+---------------------------------------------------------------------------
+
+5. Regulatory Alternatives
+    In developing new rule 165.9(d), the Commission considered several 
+alternatives.
+a. Increasing WBO Staffing
+    The Commission considered increasing WBO staffing to accelerate 
+processing as an alternative. While additional WBO staff is likely to 
+improve processing capacity, this alternative standing alone would not 
+address the procedural inefficiencies of the current framework. 
+Moreover, staffing increases would require recurring and certain costs. 
+For example, the Commission estimates the annual salary burden for 
+hiring one data analyst at the CT-13 grade and two attorney-advisors at 
+the CT-14 grade would be $512,497 per year, excluding benefits.\149\ By 
+contrast, the 30 Percent Presumption's incremental impact on awards is 
+bounded and contingent. With respect to funding sources, awards are 
+paid from the CPF, which also funds the WBO and the Office of Customer 
+Education and Outreach. In cases where additional staffing is not 
+eligible to be funded from the CPF, it would require appropriated 
+dollars, making the Presumption's CPF-based impact comparatively 
+preferable.
+---------------------------------------------------------------------------
+
+    \149\ This figure was calculated using the Commission's 2026 pay 
+table and the lowest wage specified in the CT-13 and CT-14 wage 
+bands for employees in Washington, DC, respectively.
+---------------------------------------------------------------------------
+
+b. Using a Lower or Higher Threshold
+    The Commission also considered a lower presumption threshold of $2 
+million.\150\ A $2 million threshold would forfeit the benefits 
+associated with harmonization with SEC rule 21F-6(c), which the 
+Commission views as important for reducing inter-agency disparities 
+that can influence whistleblower behavior in cross-jurisdictional 
+contexts. It would also apply the presumption to fewer matters,\151\ 
+thereby diminishing potential gains in timeliness, participation, and 
+administrative efficiency.\152\
+---------------------------------------------------------------------------
+
+    \150\ This is an approach initially proposed but ultimately not 
+adopted by the SEC. See Whistleblower Program Rules, 85 FR at 70910-
+70911.
+    \151\ That is, approximately 71% of awards by count at $2 
+million or less versus 82% at $5 million or less. See Table 2, 
+supra.
+    \152\ Id. (showing only a four percent difference in total award 
+dollars at the $2 million-capped level versus the $5 million-capped 
+level).
+---------------------------------------------------------------------------
+
+    The Commission also evaluated whether the 30 Percent Presumption 
+should apply to matters with awards up to $15 million, consistent with 
+a proposed whistleblower rulemaking by the Financial Crimes Enforcement 
+Network (``FinCEN''), a bureau of the U.S. Department of the 
+Treasury.\153\ The economic objective in setting the threshold for the 
+presumption's application is to maximize administrative efficiency (by 
+covering as many claims as possible under the presumption) while 
+avoiding two countervailing costs--increased pressure on the CPF and 
+the loss of the individualized factor analysis that is crucial for the 
+most valuable, higher-dollar matters. Historically, 77 percent of 
+orders granting awards were for $5 million or less, accounting for 
+about 10 percent of total payouts. Moving from a $5 million threshold 
+to a $15 million threshold would increase coverage by 12 percentage 
+points (from approximately 82 percent to approximately 94 percent of 
+awards by count), while increasing the associated share of total award 
+dollars subject to the presumption by 22 percentage points (from 
+approximately 10 percent to 32 percent). That is, adopting a threshold 
+above $5 million increases the likelihood that the benefits from 
+increased claim processing efficiency will be offset by an increase in 
+the average payment amount from the CPF. Additionally, a higher 
+threshold may be more likely to include matters where the stakes are 
+sufficiently substantial that the individualized factor analysis has 
+the most value in ensuring the award outcomes are equitable and 
+proportionate to each claimant's contribution. Replacing that analysis 
+with a blanket presumption in those matters would increase the risk of 
+over- or under-awarding claimants in higher value cases--a cost that 
+could undermine Program integrity and have a greater impact on the CPF.
+---------------------------------------------------------------------------
+
+    \153\ See Whistleblower Incentives and Protections, 91 FR 16328, 
+16339 (Apr. 1, 2026) (Financial Crimes Enforcement Network, 
+Department of Treasury; proposed 31 CFR 1010.930(e)(3)(iv)--Certain 
+Awards of $15 Million or Less).
+---------------------------------------------------------------------------
+
+c. Adopting a Minimum Amount for Awards Over the Threshold
+    The Commission also assessed a commenter's concern that the $5 
+million threshold could ``create weaker incentives for whistleblowers 
+to bring cases resulting in large recoveries than for whistleblowers 
+whose information results in smaller recoveries'' because awards above 
+a certain threshold would not be subject to the 30 Percent 
+Presumption.\154\ The commenter recommended that the Commission modify 
+the proposal to establish a $5 million award-floor applicable in the 
+event that a meritorious claimant contributed to an award that was too 
+large to trigger the 30 Percent Presumption, but would receive an award 
+of less than $5 million based on the Commission's individualized claim 
+review.\155\
+---------------------------------------------------------------------------
+
+    \154\ See Hasegawa Comment (raising concern that whistleblowers 
+in matters where collections are above $16.66million and below $50 
+million might, under a limited, theorized set of circumstances, be 
+awarded less than $5 million, and urging the Commission to modify 
+new rule 165.9(d) to incorporate a $5 million award-floor applicable 
+if the theorized circumstances actually arose).
+    \155\ Id.
+---------------------------------------------------------------------------
+
+    The principal cost of line-drawing in threshold-based rules is the 
+differential outcomes at the margin and, under the new rule 165.9(d), 
+the Commission acknowledges that it is possible that a successful 
+claimant might receive an aggregate award of less than $5 million in a 
+matter where collections exceed the 30 Percent Presumption threshold. 
+However, in evaluating incentives, whistleblowers cannot know with 
+certainty whether their information will contribute to a CFTC 
+enforcement action, much less what amount of collections will result 
+from a whistleblower tip at the time they submit information. And, 
+because the Presumption will operate to provide the statutory maximum 
+in a greater share of claims, the Commission anticipates that the 
+Presumption likely will incentivize rather than disincentivize 
+whistleblower assistance.
+    Moreover, there is insufficient evidence to suggest the 
+circumstance identified by the commenter is likely to result in 
+materially inequitable outcomes. All awards above the threshold would 
+be subject to an appropriate, individualized assessment. Based on the 
+Commission's experience to date, in every matter where collections 
+exceeded $16.66 million but the aggregate award fell below $5 million, 
+the awardee(s) would not have satisfied the conditions in new rule 
+165.9(d)(1)(ii)-(iv) necessary to qualify for a 30 percent award.\156\ 
+Accordingly, the Commission does not expect that the individualized 
+factor analysis of new rule 165.9(d)(1)(ii)-(iv) will produce 
+materially less favorable outcomes to claimants in the potentially 
+impacted zone. Incorporating a separate threshold or other adjustment 
+mechanism would add administrative cost and increase complexity because 
+staff would need to perform both the Sec.  165.9(d)(1)(ii)-(iv) 
+exceptions analysis and an additional, threshold specific determination 
+(including documenting outcomes, updating guidance and workflows, and
+
+[[Page 58591]]
+
+tracking thresholds across multi-claimant matters), thereby increasing 
+procedural steps and potential disputes. It would also reduce 
+harmonization with SEC rule 21F-6(c), and the Commission's experience 
+indicates the incremental benefit would be limited given the rarity of 
+the identified circumstance.
+---------------------------------------------------------------------------
+
+    \156\ See supra Section II.C.
+---------------------------------------------------------------------------
+
+d. Automatic Inflation Adjustments
+    The Commission considered whether to include a predetermined 
+adjustment mechanism in amended rule 165.9, such as indexing to 
+inflation. As one commenter stated, the $5 million nominal threshold 
+will erode in real value over time, causing an increasing share of 
+cases to fall above the threshold and progressively reducing the rule's 
+coverage.\157\ The Commission acknowledges potential inflation impacts 
+but assesses this risk to be limited because the historical 
+distribution of awards has been heavily concentrated at the lower end 
+of the dollar range. In 2025, 71 percent of all awards were at or below 
+$2 million. The award distribution would have to shift substantially 
+toward the $5 million threshold before there would be a material 
+decline in awards subject to the 30 Percent Presumption. However, 
+because the Commission is sensitive to the continuing efficacy of the 
+Presumption, the Commission will monitor the annual distribution of 
+awards relative to the $5 million threshold. The Commission retains 
+discretion to consider adjustments to the threshold if the data 
+indicate an erosion of the rule's effectiveness.
+---------------------------------------------------------------------------
+
+    \157\ H Street Law Comment at 1.
+---------------------------------------------------------------------------
+
+e. Adopting Additional Process Requirements for the Commission
+    As suggested by a commenter, the Commission considered whether to 
+adopt specific time requirements for Preliminary and Final Award 
+Determinations.\158\ Mandatory processing deadlines would reduce staff 
+flexibility to allocate resources according to case complexity, 
+undermining Commission staff's ability to engage in the thorough, 
+individualized evaluations required for more complex, higher-value 
+matters. Furthermore, the Commission anticipates that the 
+administrative costs of tracking and ensuring compliance with fixed 
+deadlines, and the potential litigation exposure if deadlines were 
+missed, could exceed the efficiency gains that the 30 Percent 
+Presumption is designed to achieve.
+---------------------------------------------------------------------------
+
+    \158\ See Constantine Cannon Comment at 2.
+---------------------------------------------------------------------------
+
+    Another commenter suggested a requirement that Preliminary 
+Determinations include a provision-specific written explanation when 
+the 30 Percent Presumption is overridden.\159\ Even without a specific 
+requirement in new rule 165.9(d), Commission staff must document and 
+analyze relevant analytical criteria in Preliminary Determinations for 
+which the 30 Percent Presumption is not applied due to the presence of 
+factors that may decrease an award; this is done as a matter of sound 
+administrative practice and pursuant to the review requirements under 
+rules 165.7 and 165.13. Including additional documentation requirements 
+under rule 165.9 would impose additional procedural costs, without 
+meaningfully improving the substantive quality and transparency of the 
+determinations.
+---------------------------------------------------------------------------
+
+    \159\ See Anonymous Comment at 1, 4-5.
+---------------------------------------------------------------------------
+
+f. Making the Factors More Prescriptive
+    The Commission also considered whether to make the factors 
+considered when determining whether the 30 Percent Presumption applies 
+more prescriptive. For example, a commenter suggested a statement that 
+limited assistance may not be inferred solely from the absence of 
+requests for supplemental cooperation. Because the existing framework 
+for evaluating the degree of assistance provided by the claimant 
+requires an individualized assessment based on the claimant's 
+contribution to the Commission's investigation, the suggested amendment 
+would increase complexity without altering the substantive standard and 
+would risk generating interpretive disputes about other factors not 
+addressed by the clarification, resulting in additional costs.
+6. Section 15(a) Factors
+    Section 15(a)(2) of the CEA requires the Commission to consider the 
+costs and benefits of its actions in light of five factors: (1) 
+protection of market participants and the public; (2) efficiency, 
+competitiveness, and financial integrity of the futures markets; (3) 
+price discovery; (4) sound risk management practices; and (5) any other 
+public-interest considerations.\160\ The following discussion 
+synthesizes the Commission's consideration of these factors with 
+respect to new rule 165.9(d), based on the Program's historical data 
+and subject to recognized uncertainty regarding the number, nature, and 
+complexity of future whistleblower matters.
+---------------------------------------------------------------------------
+
+    \160\ 7 U.S.C. 19(a)(2).
+---------------------------------------------------------------------------
+
+    The Commission believes that new rule 165.9(d) is likely to enhance 
+the protection of market participants and the public by improving 
+incentives for the timely, high-quality reporting of potential 
+violations through more predictable award-percentage outcomes and 
+streamlined processing for matters where the statutory-maximum payout 
+would be $5 million or less. In addition, the Commission anticipates 
+that the amendments will promote more timely and accurate reporting, 
+which strengthens the Commission's ability to detect, deter, and 
+remediate violations that could harm market participants, distort 
+market integrity, or undermine confidence in derivatives markets.
+    The Commission expects new rule 165.9(d) to promote efficiency by 
+streamlining award-percentage determinations for matters in which the 
+statutory-maximum payout would be $5 million or less, a cohort that 
+accounts for approximately 82 percent of awards by count in historical 
+Program data. Improved Program efficiency is likely to bolster 
+enforcement program effectiveness, which in turn supports market 
+competitiveness and enhances overall market integrity by increasing the 
+likelihood that harmful conduct will be detected and addressed. Because 
+new rule 165.9(d) does not introduce new reporting, recordkeeping, or 
+compliance obligations, it is not expected to impose new burdens on 
+registrants or other market participants.
+    Although new rule 165.9(d) would not directly impact price-
+formation mechanisms, the Commission anticipates potential indirect 
+contributions to more accurate price discovery. By enhancing the 
+Program's efficiency, transparency and predictability--thereby 
+shortening award timelines and reinforcing whistleblower incentives to 
+report--new rule 165.9(d) would operate in service of the Commission's 
+enforcement mission to deter and prosecute misconduct. Misconduct that 
+impairs market transparency, distorts prices, or affects liquidity is 
+more likely to be identified and addressed when whistleblowers have 
+reliable incentives and predictable award outcomes. By enhancing the 
+Commission's ability to detect misconduct early and deploy enforcement 
+resources more efficiently, the new rule supports the statutory 
+objective of fostering fair, orderly, and transparent markets.
+    Market participants rely on the integrity of derivatives markets to 
+hedge and manage risk effectively. The Commission believes that insofar 
+as new rule 165.9(d), for reasons already identified, strengthens 
+deterrence of
+
+[[Page 58592]]
+
+misconduct and accelerates the Commission's response to potential 
+violations, it will support sound risk-management practices indirectly 
+by accelerating the identification and remediation of misconduct that 
+can create operational, counterparty, or market-wide risks. By 
+reinforcing the incentive for whistleblowers to promptly report 
+information that may reveal systemic risks, operational failures, or 
+abusive conduct, new rule 165.9(d) enhances the Commission's ability to 
+address emerging threats to market integrity.
+    The Commission believes that new rule 165.9(d) is likely to advance 
+additional public-interest considerations. First, the new rule is 
+expected to conserve public resources by improving administrative 
+efficiency with limited additional CPF drawdown. Second, the Commission 
+believes that aligning the $5 million threshold with SEC rule 21F-6(c) 
+fosters consistency across the two whistleblower programs, which serves 
+the public interest in effective legal enforcement across financial 
+markets, supporting market integrity, market participant protection, 
+and public trust in regulatory systems.
+
+A. Antitrust Considerations
+
+    CEA section 15(b) \161\ requires the Commission to consider the 
+public interests protected by the antitrust laws and to take actions 
+involving the least anti-competitive means of achieving the objectives 
+of the CEA. The Commission received no comments specifically addressing 
+this issue. The Commission foresees no negative impact accruing to the 
+public interests protected by the antitrust laws from new rule 
+165.9(d). Accordingly, in its view, new rule 165.9(d) is consistent 
+with the least anti-competitive means of achieving the objectives of 
+the CEA.
+---------------------------------------------------------------------------
+
+    \161\ 7 U.S.C. 19(b).
+---------------------------------------------------------------------------
+
+B. Executive Orders 12866, 13563, and 14192
+
+    Executive Orders 12866 and 13563 direct agencies to assess all 
+costs and benefits of available regulatory alternatives and, if 
+regulation is necessary, to select those regulatory approaches that 
+maximize net benefits (including potential economic, environmental, 
+public health and safety, and other advantages; and distributive 
+impacts). Section 3(f) of Executive Order 12866 defines a ``significant 
+regulatory action'' as any regulatory action that is likely to result 
+in a rule that may: (1) have an annual effect on the economy of $100 
+million or more or adversely affect in a material way the economy, a 
+sector of the economy, productivity, competition, jobs, the 
+environment, public health or safety, or State, local, or tribal 
+governments or communities; (2) create a serious inconsistency or 
+otherwise interfere with an action taken or planned by another agency; 
+(3) materially alter the budgetary impact of entitlements, grants, user 
+fees, or loan programs or the rights and obligations of recipients 
+thereof; or (4) raise novel legal or policy issues arising out of legal 
+mandates, or the President's priorities.
+    OMB has determined that this action is not a significant regulatory 
+action as defined in Executive Order 12866, as amended, and therefore 
+it was not subject to Executive Order 12866 review.
+    This action is not an Executive Order 14192 regulatory action 
+because it is not a significant regulatory action under E.O. 12866.
+
+F. Congressional Review Act
+
+    Pursuant to the Congressional Review Act,\162\ the Office of 
+Information and Regulatory Affairs designated this rule as not a 
+``major rule,'' as defined by 5 U.S.C. 804(2).
+---------------------------------------------------------------------------
+
+    \162\ 5 U.S.C. 801 et seq.
+---------------------------------------------------------------------------
+
+List of Subjects in 17 CFR Part 165
+
+    Administrative practice and procedure, Government employees, 
+Investigations, Whistleblowing.
+
+    For the reasons stated in the preamble, the Commodity Futures 
+Trading Commission amends 17 CFR part 165 as follows:
+
+PART 165--WHISTLEBLOWER RULES
+
+0
+1. The authority citation for part 165 continues to read as follows:
+
+    Authority:  7 U.S.C. 2, 5, 9, 12a(5), 13a, 13a-1, 13b, and 26.
+
+
+Sec.  165.7   [Amended]
+
+0
+2. In Sec.  165.7(e)(1), remove the words ``by the Director of the 
+Division of Enforcement''.
+
+0
+3. In Sec.  165.9:
+0
+a. Redesignate paragraph (d) as paragraph (e); and
+0
+b. Add new paragraph (d).
+    The addition reads as follows:
+
+
+Sec.  165.9   Criteria for determining amount of award.
+
+* * * * *
+    (d) Additional considerations in connection with certain awards of 
+$5 million or less. (1) This paragraph (d) applies when the Commission 
+is considering any meritorious award application where:
+    (i) The statutory maximum award of 30 percent of the monetary 
+sanctions collected in any covered and related action(s), in the 
+aggregate, is $5 million or less, and the Commission determines that it 
+does not reasonably anticipate that future collections would cause the 
+statutory maximum award to be paid to any whistleblower to exceed $5 
+million in the aggregate;
+    (ii) None of the negative award factors specified in paragraph 
+(c)(1) or (c)(3) of this section were found present with respect to the 
+claimant's award application and the award claim does not trigger Sec.  
+165.17 (concerning awards to whistleblowers who engage in culpable 
+conduct);
+    (iii) The claimant did not engage in unreasonable reporting delay 
+under paragraph (c)(2) of this section (although the Commission, in its 
+discretion, may in certain limited circumstances determine to waive 
+this criterion if the claimant can demonstrate that doing so based on 
+the facts and circumstances of the matter is consistent with the public 
+interest and the objectives of the whistleblower program); and
+    (iv) The Commission does not otherwise determine in its discretion 
+that application of the enhancement afforded by this paragraph (d) 
+would be inappropriate because either:
+    (A) The whistleblower's assistance in the covered action or related 
+action (as assessed under paragraph (b)(2) of this section) was, under 
+the relevant facts and circumstances, limited; or
+    (B) Providing the enhancement would be inconsistent with the public 
+interest, or the objectives of the whistleblower program.
+    (2) If the Commission determines that the criteria in paragraph 
+(d)(1) of this section are satisfied, the resulting payout to a 
+claimant for the original information that the claimant provided that 
+led to one or more successful covered or related action(s), 
+collectively, will be the maximum allowed under the statute.
+    (3) Notwithstanding paragraph (d)(2) of this section, if two or 
+more claimants qualify for an award in connection with any covered 
+action or related action and at least one of those claimants' award 
+applications qualifies under paragraph (d)(1) of this section, the 
+aggregate amount awarded to all meritorious claimants will be the 
+statutory maximum. In allocating that amount among the meritorious 
+claimants, the Commission will consider whether an individual 
+claimant's award application satisfies paragraphs (d)(1)(ii) and (iii).
+
+
+Sec.  165.10   [Amended]
+
+0
+4. In Sec.  165.10(a)(7), remove the words ``Division of Enforcement''.
+
+0
+5. Revise Sec.  165.15 to read as follows:
+
+[[Page 58593]]
+
+Sec.  165.15  Administering the whistleblower program.
+
+    (a) Specific authorities--(1) Payments, deposits, and credits. The 
+Executive Director is authorized to deposit into or credit collected 
+monetary sanctions to the Fund, and to make payment of awards 
+therefrom, with the concurrence of the General Counsel, or of their 
+respective designees.
+    (2) Designation of claims review staff. The Claims Review Staff 
+referenced in Sec.  165.7 shall be composed of no fewer than three and 
+no more than five staff members from at least two of the Commission's 
+Offices or Divisions (except the Office of the General Counsel) who 
+have not had direct involvement in the underlying enforcement action, 
+as designated by the General Counsel in consultation with the Executive 
+Director.
+    (3) Disclosure of whistleblower identifying information. The 
+General Counsel is authorized on behalf of the Commission to exercise 
+its discretion to disclose whistleblower identifying information under 
+Sec.  165.4(a).
+    (b) General authority to administer the program. The General 
+Counsel shall have general authority to administer the whistleblower 
+program except as otherwise provided under this part.
+
+    Issued in Washington, DC, on September 14, 2026, by the 
+Commission.
+Robert Sidman,
+Deputy Secretary of the Commission.
+
+    Note:  The following appendix will not appear in the Code of 
+Federal Regulations.
+
+Appendix to Whistleblower Award Determination--Commission Voting 
+Summary
+
+    On this matter, Chairman Selig voted in the affirmative. No 
+Commissioner voted in the negative.
+
+[FR Doc. 2026-19006 Filed 9-15-26; 8:45 am]
+BILLING CODE 6351-01-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

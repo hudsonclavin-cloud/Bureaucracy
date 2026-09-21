@@ -1,0 +1,553 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 179 (Thursday, September 17, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 179 (Thursday, September 17, 2026)]
+[Notices]
+[Pages 58936-58940]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-19041]
+
+
+-----------------------------------------------------------------------
+
+SECURITIES AND EXCHANGE COMMISSION
+
+[Release No. 34-106352; File No. SR-LCH SA-2026-006]
+
+
+Self-Regulatory Organizations; LCH SA; Order Approving Proposed 
+Rule Change Relating to the LCH SA CDSClear Trade Registration Fund
+
+September 14, 2026.
+
+I. Introduction
+
+    On July 20, 2026, Banque Centrale de Compensation, which conducts 
+business under the name LCH SA (``LCH SA''), filed with the Securities 
+and Exchange Commission (the ``Commission''), pursuant to Section 
+19(b)(1) of the Securities Exchange Act of 1934 (the ``Act'') \1\ and 
+Rule 19b-4 thereunder,\2\ a proposed rule change to establish a Trade 
+Registration Fund. The proposed rule change was published for comment 
+in the Federal Register on August 5, 2026.\3\ The Commission did not 
+receive comments regarding the proposed rule change. For the reasons 
+discussed below, the Commission is approving the proposed rule change.
+---------------------------------------------------------------------------
+
+    \1\ 15 U.S.C. 78s(b)(1).
+    \2\ 17 CFR 240.19b-4.
+    \3\ Securities Exchange Act Release No. 106024 (July 31, 2026), 
+91 FR 50584 (Aug. 5, 2026) (File No. SR-LCH SA-2026-006) 
+(``Notice''). CDS Clearing Procedures (``Procedures'').
+---------------------------------------------------------------------------
+
+II. Description of the Proposed Rule Change
+
+    LCH SA is a clearing agency registered with the Commission. Through 
+its CDSClear business unit, LCH SA provides central counterparty 
+(``CCP'') services for security-based swaps, including credit default 
+swaps (``CDS'') and options on CDS. LCH SA is an affiliate of LCH, Ltd, 
+through common ownership by LCH Group Holdings Limited (``LCH Group''). 
+LCH SA's ultimate parent company is London Stock Exchange Group.
+    As a CCP, LCH SA is exposed to certain risk, including the risk 
+that Clearing Members (``Members'') may default on their obligations. 
+In that case, as a CCP, LCH SA is obligated to perform the obligations 
+of the defaulting Members. To mitigate such risk and control exposures 
+to its Members, LCH SA requires that Members deposit a certain amount 
+of collateral, or margin, in respect of the transactions that they 
+submit for clearing. The Proposed Rule Change would introduce a form of 
+margin forbearance, through amendments to LCH SA's CDS Clearing Rule 
+Book (``Rule Book'') \4\ and CDS Clearing Procedures (``Procedures'').
+---------------------------------------------------------------------------
+
+    \4\ In order to formalize the relationship between LCH SA and 
+its clearing members, LCH SA adopted the Rule Book. See LCH SA's 
+website for the latest version of the LCH SA CDS Clearing Rule Book. 
+<a href="https://www.lseg.com/en/post-trade/clearing/clearing-resources/rulebooks/lch-sa#t-over-the-counter-credit-default-swaps">https://www.lseg.com/en/post-trade/clearing/clearing-resources/rulebooks/lch-sa#t-over-the-counter-credit-default-swaps</a>. 
+Capitalized terms not otherwise defined herein have the meanings 
+assigned to them in Rule Book.
+---------------------------------------------------------------------------
+
+A. Description of Proposed Rule Changes
+
+    The Proposed Rule Change would establish a form of margin 
+forbearance, or a delay in posting sufficient margin, to facilitate the 
+registration (i.e., acceptance for clearing) of trades submitted by 
+Members. As noted, LCH SA requires that Members deposit a certain 
+amount of collateral, or margin, in respect of the transactions that 
+they submit for clearing. If the amount of collateral, including a 
+collateral buffer, is insufficient, LCH SA's current policy is to 
+reject such trades from clearing. The Proposed Rule Change would create 
+a Trade Registration Fund (``TRF'') facility which could be used by 
+Members to satisfy the requisite collateral and thereby avoid trade 
+rejections.
+    Currently, Members contribute funds to the CDS Default Fund, a 
+shared pool of assets, including cash and liquid assets. LCH SA can use 
+the CDS Default Fund to resolve losses in case of a Member's default. 
+LCH SA proposes to require Members to contribute to the TRF, which will 
+be separate from the Default Fund, and allow Members to draw upon this 
+facility in certain situations where additional collateral is necessary 
+to avoid trade rejections. LCH SA proposes to implement this change in 
+the following ways.
+i. CDS Clearing Rule Book
+    LCH SA proposes to introduce new terms to its Rule Book, which will 
+be
+
+[[Page 58937]]
+
+incorporated into provisions surrounding the new TRF. A ``TRF 
+Allowance'' will refer to margin provided by LCH SA to Members in LCH 
+SA's discretion, while the ``Available TRF Allowance'' will refer to 
+the portion of the TRF Allowance not already used up as margin by the 
+Member. The ``TRF Contribution'' will describe the amount that a Member 
+must contribute, as calculated by LCH SA based on a Member's usage, 
+which will be called the ``TRF Utilization.'' LCH SA will not include 
+the TRF Allowance within its calculation for contributions to the CDS 
+Default Fund.
+    ``Credit Tolerance'' will also be included as a new term within the 
+Rule Book. As LCH SA has explained, this would be a second layer of 
+forbearance that could be extended by LCH SA if a Member has already 
+exhausted its Available TRF Allowance, although LCH SA does not intend 
+to disclose the maximum value of this additional tolerance, including 
+to the Member itself, because of what it describes as operational 
+flexibility.\5\ ``Available Credit Tolerance'' will refer to whatever 
+portion remains of the Credit Tolerance that is not already used for 
+margin by a Member. Finally, LCH SA will also define ``Tolerance 
+Check,'' whereby the total forbearance available to a Member through 
+both the TRF Allowance and the Credit Tolerance will be determined by 
+LCH SA. Section 2.3 of the Rule Book would be amended to include a new 
+paragraph making clear that these facilities would be available on a 
+first-in-time basis, allocated in the order that intraday trades are 
+received.
+---------------------------------------------------------------------------
+
+    \5\ See Notice, at 50586.
+---------------------------------------------------------------------------
+
+    Operationally, LCH SA proposes to create the TRF by separating the 
+TRF Allowance from the CDS Default Fund. Currently, Members must 
+contribute [euro]10 million to the CDS Default Fund. Under LCH SA's new 
+procedures, the contribution amount would remain the same, at a 
+minimum, but be split so that [euro]7 million is apportioned to the CDS 
+Default Fund while at least [euro]3 million will be the TRF 
+Contribution.
+    A ``TRF Initial Member,'' another new term proposed for the Rule 
+Book, will be a Member who has not used its TRF Allowance in the 
+trailing 90 day period and would therefore be subject only to the 
+[euro]3 million minimum payment. Other Members would see their 
+contribution calculated relative to the average of the peak daily TRF 
+Utilization over the preceding 180 days, divided by the total of all 
+TRF Utilization of all non-defaulting Members.\6\ LCH SA will refer to 
+this as the ``TRF Contribution Percentage,'' which it will use to 
+calculate the TRF Contribution by multiplying it against the TRF 
+Allowance. Descriptions of these calculations will be moved from 
+Article 4.4.1.3 of the Rule Book to amended Section 6.6 of the 
+Procedures. Amended Section 6.5 of the Procedures, as well as Article 
+4.4.1.2 of the Rule Book, would also make clear that the TRF Allowance 
+Amount, when added to the Combined Unmargined Risk,\7\ will constitute 
+the CDS Default Fund.
+---------------------------------------------------------------------------
+
+    \6\ LCH SA has said that the contribution would top out at 
+[euro]30 million, thereby capping Member contributions. See Notice, 
+at 50587.
+    \7\ As defined in the Rule Book, Combined Unmargined Risk means 
+the theoretical losses caused by an Event of Default occurring in 
+respect of the Members that are responsible for the two highest 
+daily Group Member Uncovered Risks over the last sixty Clearing Days 
+plus a buffer equal to 10 percent.
+---------------------------------------------------------------------------
+
+    LCH SA proposes to add Article 4.2.2.5 to the Rule Book in order to 
+explain how the TRF Allowance and Credit Tolerances are intended to 
+function. Neither facility is intended to lead to a transfer of 
+collateral or payment from LCH SA, or to use assets contained in the 
+CDS Default Fund (except following a Member's default). Because the 
+facilities are intended only as forbearance, Members would be required 
+to transfer additional collateral in excess of any margin shortfall 
+resulting from the utilization of the facilities at the next collateral 
+call, but LCH SA may require it sooner. New language in Article 4.2.2.6 
+would limit the return of collateral to Clearing Members only to 
+instances where they have not utilized either the TRF Allowance or 
+Credit Tolerance facilities. And additions to Article 4.2.3.1 would add 
+the TRF Utilization amount to a list of items disclosed to Members, 
+such as the margin balance, shortfall, and requirement for margin 
+accounts. Other changes to the Rule Book would be administrative, such 
+as the updating of rule references or re-working numbering to account 
+for added and amended provisions.
+ii. CDS Clearing Procedures
+    The Proposed Rule Change would also modify the Procedures to 
+describe the changes related to the TRF Allowance.
+    Specifically, Section 2.3 would be renamed to add language 
+indicating that it will apply to the TRF Allowance and Credit 
+Tolerance. A new paragraph (e) will be added to the section describing 
+how these facilities would be used. For example, it will make clear 
+that the Available TRF Allowance, followed by available Credit 
+Tolerance, could be allocated by LCH SA to satisfy notional and 
+collateral checks prior to the novation of eligible transactions. LCH 
+SA would determine the maximum value of these facilities, and the TRF 
+Allowance would be notified to the Members, while the Credit Tolerance, 
+as also made clear in the Rule Book, would not. Additional language 
+would clarify that Members would not be able to direct these facilities 
+to any specific account, and that the facilities would become available 
+on a first in time basis, tied to the order in which LCH SA receives 
+and processes trades.
+    New paragraph (e) would also make clear that when a Member is 
+subject to a risk-reducing event, thereby freeing up collateral, it 
+would first be allocated to the Credit Tolerance, followed by the TRF 
+Allowance, if applicable, rather than other collateral posted by the 
+Member. In this way, the new facilities would always be drawn down 
+first. The paragraph would add a further clarification that the maximum 
+value of the TRF Allowance, normally consisting of several factors, 
+would also include the internal credit score of the Member.
+    Finally, changes would include references, where relevant, to the 
+Available TRF Allowance and Available Credit Tolerance, and other 
+technical amendments or corrections to typographical errors.
+    LCH SA has also proposed to make changes to Section 3 of the 
+Procedures. These changes would ensure that the TSF Allowance and the 
+Credit Tolerance are not currently utilized before LCH SA accepts a 
+request for the return of collateral to Clearing Members in certain 
+circumstances, such as for non-Euro denominated cash collateral as 
+outlined in paragraphs 3.8 (h) and (i), eligible collateral provided on 
+a bilateral basis as outlined in paragraph 3.10.1(c), or eligible 
+collateral held at the Bank of New York Mellon as outlined in paragraph 
+3.17(b).
+    Section 6 of the Procedures would also be amended by LCH SA to 
+incorporate the TRF Allowance and Credit Tolerance. Section 6.2 would 
+define terms relevant to the facilities, such as the TRF Contribution 
+Percentage, while Section 6.3 would explain the definition of the TRF 
+Initial Member. Section 6.5 would clarify that the CDS Default Fund is 
+equal the sum of the Combined Unmargined Risk and the TRF Allowance, 
+and state the formula that LCH SA uses to arrive at this calculation. 
+Finally, Article 4.4.1.3 of the Rule Book would be moved to the 
+Procedures, specifically amended Section 6.6. It will state the 
+operational changes to the CDS Default Fund, such as the separation of 
+the TRF Allowance
+
+[[Page 58938]]
+
+Amount from the CDS Default Fund, and the subsequent reduction of the 
+minimum ordinary contribution to [euro]7 million, along with a [euro]3 
+million minimum TRF contribution.
+    Section 8 of the Procedures LCH SA would also see amendments, as 
+paragraph 8.3(a) would make clear that multiple failures by a Member to 
+submit a complete price submission file could lead to an increase in 
+the ordinary contribution, but not the TRF Contribution.
+iii. LCH Counterparty Credit Risk Policy
+    LCH SA has also proposed to make changes to the LCH Counterparty 
+Credit Risk Policy (``CCRP''). New section 9.7 would set daily credit 
+limits on TRF usage, expressed as a percentage of the total CDS Clear 
+TRF. It would also set a group cap whereby an affiliated group of 
+Members could not use TRF in excess of the sum of that group's Default 
+Fund contributions plus its TRF contributions. A table would be added, 
+which would make clear the limit on Member tolerance, or maximum TRF, 
+along with the group cap limit that is tied to an internal credit 
+score.\8\
+---------------------------------------------------------------------------
+
+    \8\ The Policy makes clear that these limits are to be applied 
+daily per Clearing Member.
+---------------------------------------------------------------------------
+
+    Other changes to the CCRP would include changes unrelated to the 
+TRF. For example, Section 6.1, which requires that every relevant 
+counterparty, including certain non-US dormant Members, go through a 
+documented credit review before being onboarded, would also be subject 
+to a new review on a 12 months rolling basis, instead of just annually. 
+Section 6.2 would introduce new minimum Internal Credit Scores for two 
+categories of RepoClear sponsored clearing participants, including 
+Guaranteed Sponsored Members, formalizing a minimum creditworthiness 
+standard. Additionally, amendments to Section 6.3 of the Policy would 
+require that the LCH Executive Risk Committee (``ERCo'') sign off on 
+new Clearing Member applications, including cases where a member of one 
+of LCH SA's affiliated CCPs applies to join a different affiliated CCP, 
+and which would also implicate the new credit scoring rule. Changes 
+would also extend new participant categories within the CCRP, including 
+New Sponsored Clearing Agents and Guaranteeing Agent Members. Finally, 
+it would be made clear that existing Members that extend to a new 
+business line, or a different service, would need Credit Risk Team and 
+ERCo approval.
+    Certain annexes within the CCRP would also see revisions under the 
+Proposed Rule Change. Annex I of Section 9.2 would ensure that non-US 
+business Guaranteed Sponsored Members have their exposure monitoring 
+requirements tracked the same way as other sponsored participants, 
+while changes to Annex I under Section 9.3 would extend tracking of a 
+Member's stress-test losses and default fund contribution to the non-US 
+business RepoClear Guaranteed Sponsored Clearing structure. The 
+Guaranteeing Agents backing the Guaranteed Sponsored Members would have 
+their exposure expanded to also include the stress losses of the 
+Members they guaranty so that the exposure captures the risk an agent 
+takes on by guaranteeing others in addition to its own positions.\9\ 
+And Annex I under Section 9.11 would create a new framework, the Credit 
+Risk Resources (``CRR''), which would tie additional resource 
+requirements to the combined credit quality of both the sponsored 
+Member and the Guaranteeing Agent, whereby a decline in the combined 
+credit quality would require greater stress-loss coverage and an 
+initial margin multiplier. The proposed rule change would amend a table 
+in Section 9.2 to add Guaranteed Sponsored Members. This change would 
+confirm that LCH SA monitors certain thresholds for Guaranteed 
+Sponosored Members daily, such as ICS and initial margin to net asset 
+value.
+---------------------------------------------------------------------------
+
+    \9\ Net of any prefunded resources already posted by the 
+guaranteeing agents.
+---------------------------------------------------------------------------
+
+III. Discussion and Commission Findings
+
+    Section 19(b)(2)(C) of the Act requires the Commission to approve a 
+proposed rule change of a self-regulatory organization if it finds that 
+the proposed rule change is consistent with the requirements of the Act 
+and the rules and regulations thereunder applicable to the 
+organization.\10\ Under the Commission's Rules of Practice, the 
+``burden to demonstrate that a proposed rule change is consistent with 
+the Exchange Act and the rules and regulations issued thereunder . . . 
+is on the self-regulatory organization [`SRO'] that proposed the rule 
+change.'' \11\
+---------------------------------------------------------------------------
+
+    \10\ 15 U.S.C. 78s(b)(2)(C).
+    \11\ Rule 700(b)(3), Commission Rules of Practice, 17 CFR 
+201.700(b)(3).
+---------------------------------------------------------------------------
+
+    The description of a proposed rule change, its purpose and 
+operation, its effect, and a legal analysis of its consistency with 
+applicable requirements must all be sufficiently detailed and specific 
+to support an affirmative Commission finding,\12\ and any failure of an 
+SRO to provide this information may result in the Commission not having 
+a sufficient basis to make an affirmative finding that a proposed rule 
+change is consistent with the Exchange Act and the applicable rules and 
+regulations.\13\ Moreover, ``unquestioning reliance'' on an SRO's 
+representations in a proposed rule change is not sufficient to justify 
+Commission approval of a proposed rule change.\14\
+---------------------------------------------------------------------------
+
+    \12\ Id.
+    \13\ Id.
+    \14\ Susquehanna Int'l Group, LLP v. Securities and Exchange 
+Commission, 866 F.3d 442, 447 (D.C. Cir. 2017).
+---------------------------------------------------------------------------
+
+    After carefully considering the proposed rule change, the 
+Commission finds that the proposed rule change is consistent with the 
+requirements of the Act and the rules and regulations thereunder 
+applicable to LCH SA. More specifically, for the reasons given below, 
+the Commission finds that the proposed rule change is consistent with 
+Section 17A(b)(3)(F) of the Act,\15\ and Rules 17Ad-22(e)(4)(i) \16\ 
+and 17Ad-22(e)(6)(ii)(B) \17\ thereunder.
+---------------------------------------------------------------------------
+
+    \15\ 15 U.S.C. 78q-1(b)(3)(F).
+    \16\ 17 CFR 240.17ad-22(e)(4)(i).
+    \17\ 17 CFR 240.17ad-22(e)(6)(ii)(B).
+---------------------------------------------------------------------------
+
+A. Consistency With Section 17A(b)(3)(F) of the Act
+
+    Section 17A(b)(3)(F) of the Act requires, among other things, that 
+the rules of LCH SA be designed to promote the prompt and accurate 
+clearance and settlement of securities transactions and, to the extent 
+applicable, derivative agreements, contracts, and transactions.\18\ 
+Based on a review of the record, and for the reasons discussed below, 
+the proposed changes by LCH SA are consistent with the promotion of the 
+prompt and accurate clearance and settlement of transactions at LCH SA.
+---------------------------------------------------------------------------
+
+    \18\ 15 U.S.C. 78q-1(b)(3)(F).
+---------------------------------------------------------------------------
+
+    LCH SA's changes are designed to help ensure that transactions are 
+completed as entered. Without the TRF, Members face the prospect of 
+having trades rejected from clearing because of insufficient 
+collateral, including a collateral buffer, even when the insufficiency 
+may be covered by a subsequent margin call, as in intraday activities. 
+Indeed, LCH SA's policy is to reject trades where Members do not have 
+sufficient collateral, currently on deposit at LCH SA, to cover such 
+trades. The TRF, however, would help facilitate the acceptance of new 
+trades by allowing Members additional collateral leeway in the form of 
+forbearance, which LCH SA interprets as delaying collection of 
+additional collateral until the next collateral call, while having on 
+hand financial resources, in the form of the TRF, which LCH SA could 
+draw on
+
+[[Page 58939]]
+
+if needed in the event of a default.\19\ While Members would still be 
+required to make additional collateral deposits at subsequent 
+collateral calls, and to have their deposits into the TRF calculated 
+relative to its utilization, the TRF would allow submitted trades to 
+avoid immediate rejection.
+---------------------------------------------------------------------------
+
+    \19\ Notwithstanding Credit Tolerance, which would be unfunded, 
+though still subject to subsequent collateral calls.
+---------------------------------------------------------------------------
+
+    The Proposed Rule Change therefore will promote the acceptance of 
+trades that may have otherwise been rejected, while ensuring that 
+sufficient collateral at LCH SA can support those trades. Therefore, it 
+will contribute to the prompt and accurate clearing of securities 
+transactions.
+    Changes to the CCRP, as well, help promote the prompt and accurate 
+clearance and settlement of securities transactions. These changes 
+would allow LCH SA to improve its risk assessment. For example, the 
+exposure to LCH by Guaranteeing Agents, who are responsible for the 
+activities of Guaranteed Sponsored Members, would be subject to stress 
+losses in addition to those of their guarantees. In this way, LCH SA 
+can better account for the risk it undertakes, thereby protecting its 
+continued viability and ensuring it can continue to guarantee trades as 
+a central clearing counterparty.
+    Additional changes to the CCRP would also set daily credit limits 
+on the TRF usage, limiting LCH SA's credit exposure. The group cap on 
+TRF usage especially would limit the risk undertaken by LCH SA as it 
+would prevent multiple affiliated entities from each taking advantage 
+of individual Member Tolerance and thereby expose LCH SA to a potential 
+combined risk.
+    For the reasons stated above, the Commission finds that the 
+Proposed Rule Change is consistent with Section 17A(b)(3)(F) of the 
+Act.\20\
+---------------------------------------------------------------------------
+
+    \20\ Id.
+---------------------------------------------------------------------------
+
+B. Consistency With Rule 17ad-22(e)(4)(i) Under the Act
+
+    Rule 17Ad-22(e)(4)(i) requires each covered clearing agency to 
+establish, implement, maintain, and enforce written policies and 
+procedures reasonably designed to, as applicable, effectively identify, 
+measure, monitor, and manage its credit exposures to participants and 
+those arising from its payment, clearing, and settlement processes, 
+including by maintaining sufficient financial resources to cover its 
+credit exposure to each participant fully with a high degree of 
+confidence.\21\
+---------------------------------------------------------------------------
+
+    \21\ 17 CFR 240.17ad-22(e)(4)(i).
+---------------------------------------------------------------------------
+
+    As described above, LCH SA has designed the TRF Allowance to be 
+appropriately sized to the contributions of the respective Members, and 
+to the risk their activities expose LCH SA. For example, the TRF 
+Allowance will be funded, initially, by a minimum set contribution, and 
+then adjusted upwards to reflect the TRF Utilization of the Member, as 
+calculated by LCH SA. This facility is, therefore, a separate pool of 
+funds, funded by Members, which LCH SA can draw from on behalf of 
+Members in certain circumstances, and not a debt facility reliant on an 
+extension of credit. Additionally, LCH SA will only approve trades that 
+do not exceed collateral requirements as supplemented by the new TRF 
+Allowance and Credit Tolerance, and then require Members to deposit 
+additional collateral at the next collateral call. In this way, LCH SA 
+ensures that adequate collateral is always posted, even as it provides 
+more flexible ways for Members to post such collateral. Moreover, 
+because the facilities intended to be used will be pre-funded through 
+Member contributions, LCH SA will avoid risking the extension of 
+unfunded commitments. Member Tolerance would also ensure that 
+forbearance extensions are sized to each Member based on its 
+creditworthiness and contributions, while LCH SA's discretion in 
+requiring collateral transfers at any time to cover margin shortfall 
+would further support mitigation of its credit exposure.
+    These changes would help LCH SA better measure and manage credit 
+exposure in other ways. It would introduce new internal credit scores, 
+a new cadence of credit review, and formalize a new creditworthiness 
+standard for certain Members, which would mitigate credit exposure by 
+limiting unfunded Member transactions. Similarly, LCH SA's formula for 
+determining a Member's TRF Contribution would quantify a Member's draw 
+on the facility and ensure that contributions are related to usage, 
+thereby imposing costs on higher risk Members, which would also 
+ultimately mitigate credit exposure. Finally, LCH SA would also review 
+its exposure to the creditworthiness of sponsored member guarantors, 
+helping to ensure that LCH SA's risk management framework adequately 
+manages LCH SA's credit exposure associated with the TRF.
+    For the reasons stated above, the Commission finds that the 
+Proposed Rule Change is consistent with Rule 17Ad-22(e)(4)(i) under the 
+Act.\22\
+---------------------------------------------------------------------------
+
+    \22\ Id.
+---------------------------------------------------------------------------
+
+C. Consistency With Rule 17ad-22(e)(6)(ii)(B) Under the Act
+
+    Rule 17Ad-22(e)(6)(ii)(B) requires each covered clearing agency to 
+establish, implement, maintain, and enforce written policies and 
+procedures reasonably designed to, as applicable, cover, if the covered 
+clearing agency provides central counterparty services, its credit 
+exposures to its participants by establishing a risk-based margin 
+system that, at a minimum, monitors intraday exposures on an ongoing 
+basis.\23\
+---------------------------------------------------------------------------
+
+    \23\ 17 CFR 240.17ad-22(e)(6)(ii)(B).
+---------------------------------------------------------------------------
+
+    LCH SA would monitor a Member's use of the TRF on an intraday 
+basis. Before accepting for clearing and novating an intraday trade, 
+LCH SA will, among other things, conduct a Tolerance Check. As 
+discussed above, a Tolerance Check is the process by which LCH SA 
+determines whether there is sufficient Available TRF Allowance and, as 
+the case may be, sufficient Available Credit Tolerance, in respect of a 
+Member to satisfy the margin requirement for a new trade. Thus, LCH 
+will monitor, on an intraday basis, its exposures to Members through 
+the TRF. Additionally, the Proposed Rule Change incorporates additional 
+measurement functions within LCH SA's clearing model, such as 
+monitoring the credit exposure of GAMs alongside GSMs. By including 
+GSMs within a monitoring framework in order to determine credit risk 
+exposure, LCH SA could better ensure that trading activities, including 
+margin, are adequately funded.
+    For the reasons stated above, the Commission finds that the 
+Proposed Rule Change is consistent with Rule 17Ad-22(e)(6)(ii)(B) under 
+the Act.\24\
+---------------------------------------------------------------------------
+
+    \24\ Id.
+---------------------------------------------------------------------------
+
+IV. Conclusion
+
+    On the basis of the foregoing, the Commission finds that the 
+proposed rule change is consistent with the requirements of the Act, 
+and in particular, with the requirements of Section 17A(b)(3)(F) of the 
+Act,\25\ and Rules 17Ad-22(e)(4)(i) \26\ and 17Ad-22(e)(6)(ii)(B) \27\ 
+thereunder.
+---------------------------------------------------------------------------
+
+    \25\ 15 U.S.C. 78q-1(b)(3)(F).
+    \26\ 17 CFR 240.17ad-22(e)(4)(i).
+    \27\ 17 CFR 240.17ad-22(e)(6)(ii)(B).
+---------------------------------------------------------------------------
+
+    It is therefore ordered pursuant to Section 19(b)(2) of the Act 
+\28\ that the proposed rule change (SR-LCH SA-2026-006) be, and hereby 
+is, approved.\29\
+---------------------------------------------------------------------------
+
+    \28\ 15 U.S.C. 78s(b)(2).
+    \29\ In approving the proposed rule change, the Commission 
+considered the proposal's impact on efficiency, competition, and 
+capital formation. 15 U.S.C. 78c(f).
+
+
+[[Page 58940]]
+
+
+---------------------------------------------------------------------------
+
+    For the Commission, by the Division of Trading and Markets, 
+pursuant to delegated authority.\30\
+---------------------------------------------------------------------------
+
+    \30\ 17 CFR 200.30-3(a)(12).
+---------------------------------------------------------------------------
+
+J. Matthew DeLesDernier,
+Deputy Secretary.
+[FR Doc. 2026-19041 Filed 9-16-26; 8:45 am]
+BILLING CODE 8011-01-P
+
+
+</pre></body>
+</html>

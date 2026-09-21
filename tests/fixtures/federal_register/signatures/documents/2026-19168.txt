@@ -1,0 +1,275 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 180 (Friday, September 18, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 180 (Friday, September 18, 2026)]
+[Notices]
+[Pages 59131-59133]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-19168]
+
+
+-----------------------------------------------------------------------
+
+FEDERAL HOUSING FINANCE AGENCY
+
+[No. 2026-N-11]
+
+
+Proposed Collection; Comment Request
+
+AGENCY: Federal Housing Finance Agency.
+
+ACTION: 60-Day notice of submission of information collection for 
+approval from Office of Management and Budget.
+
+-----------------------------------------------------------------------
+
+SUMMARY: In accordance with the requirements of the Paperwork Reduction 
+Act of 1995 (PRA), the Federal Housing Finance Agency (FHFA) is seeking 
+public comments concerning an information collection known as ``Members 
+of the Banks,'' which has been assigned control number 2590-0003 by the 
+Office of Management and Budget (OMB). FHFA intends to submit the 
+information collection to OMB for review and approval of a three-year 
+extension of the control number, which is due to expire on November 30, 
+2026.
+
+DATES: Interested persons may submit comments on or before November 17, 
+2026.
+
+ADDRESSES: Submit comments to FHFA, identified by ``Proposed 
+Collection; Comment Request: `Members of the Banks, (No. 2026-N-11)' '' 
+by any of the following methods:
+    <bullet> Agency Website: <a href="https://www.fhfa.gov/regulation/federal-register?comments=open">https://www.fhfa.gov/regulation/federal-register?comments=open</a>.
+    <bullet> Email: <a href="/cdn-cgi/l/email-protection#0755626044686a6a6269737447616f616629606871"><span class="__cf_email__" data-cfemail="32605755715d5f5f575c464172545a54531c555d44">[email&#160;protected]</span></a>. Include ``Proposed 
+Collection; Comment Request: ``Members of the Banks, (No. 2026-N-11) in 
+the subject line of the message.
+
+[[Page 59132]]
+
+    <bullet> Mail/Hand Delivery: Federal Housing Finance Agency, Fourth 
+Floor, 400 Seventh Street SW, Washington, DC 20219, ATTENTION: Proposed 
+Collection; Comment Request: ``Members of the Banks, (No. 2026-N-11).'' 
+Please note that all mail sent to FHFA via U.S. Mail is routed through 
+a national irradiation facility, a process that may delay delivery by 
+approximately two weeks. For any time-sensitive correspondence, please 
+plan accordingly.
+    FHFA invites comments on all aspects of the proposed rule and will 
+take all comments into consideration before issuing a final rule. 
+Comments, including any personally identifiable information such as 
+name and contact information, will be posted to the electronic 
+rulemaking docket on the FHFA public website at <a href="https://www.fhfa.gov">https://www.fhfa.gov</a>, 
+except as described below. Commenters should submit only information 
+that the commenter wishes to make available publicly. FHFA will not 
+redact personally identifiable information once it is submitted. 
+Commenters who do not wish to be identified by their comments may 
+submit their comments anonymously. FHFA may post only a single 
+representative example of identical or substantially identical 
+comments, and in such cases will generally identify the number of 
+identical or substantially identical comments represented by the posted 
+example. FHFA may, in its discretion, redact or refrain from posting 
+all or any portion of any comment that contains content that is 
+obscene, vulgar, profane, or threatens harm. All comments, including 
+those that are redacted or not posted, will be retained in their 
+original form in FHFA's internal rulemaking file and will be considered 
+as required by all applicable laws. Commenters who would like FHFA to 
+consider any portion of their comment exempt from disclosure on the 
+basis that it contains trade secrets, or financial, confidential or 
+proprietary data or information, should follow the procedures in 
+section IV.D. of FHFA's Policy on Communications with Outside Parties 
+in Connection with FHFA Rulemakings, see <a href="https://www.fhfa.gov/document/policy-on-communications-with-outside-parties-in-connection-with-fhfa-rulemakings">https://www.fhfa.gov/document/policy-on-communications-with-outside-parties-in-connection-with-fhfa-rulemakings</a>. FHFA cannot guarantee that such data or information will 
+remain confidential if disclosure is sought pursuant to an applicable 
+statute or regulation. See 12 CFR 1202.8, 12 CFR 1214.2, and FHFA's 
+FOIA Reference Guide at <a href="https://www.fhfa.gov/about/foia-reference-guide">https://www.fhfa.gov/about/foia-reference-guide</a> 
+for additional information.
+
+FOR FURTHER INFORMATION CONTACT: Eric Raudenbush, Associate General 
+Counsel, <a href="/cdn-cgi/l/email-protection#5411263d377a06352130313a3621273c14323c32357a333b22"><span class="__cf_email__" data-cfemail="793c0b101a572b180c1d1c171b0c0a11391f111f18571e160f">[email&#160;protected]</span></a>, (202) 649-3084 or Angela 
+Supervielle, Assistant Counsel, <a href="/cdn-cgi/l/email-protection#44052a232128256a1731342136322d2128282104222c22256a232b32"><span class="__cf_email__" data-cfemail="f7b69990929b96d9a482879285819e929b9b92b7919f9196d9909881">[email&#160;protected]</span></a>, (202) 649-
+3973 (these are not toll-free numbers). For TTY/TRS users with hearing 
+and speech disabilities, dial 711 and ask to be connected to any of the 
+contact numbers above.
+
+SUPPLEMENTARY INFORMATION:
+
+A. Paperwork Reduction Act
+
+    Under the PRA (44 U.S.C. 3501-3520), Federal agencies must obtain 
+approval from OMB for each collection of information they conduct or 
+sponsor. ``Collection of information'' is defined in 44 U.S.C. 3502(3) 
+and 5 CFR 1320.3(c) to include agency requests or requirements that ten 
+or more persons submit information to a third party.
+    Section 3506(c)(2)(A) of title 44 and 5 CFR 1320.8(d) requires 
+Federal agencies to provide a 60-day notice \1\ in the Federal Register 
+concerning each proposed collection of information, including each 
+proposed extension of an existing collection of information, before 
+submitting the collection of information to OMB for approval. FHFA's 
+collection of information set forth in this document is titled 
+``Members of the Banks'' (assigned control number 2590-0003 by OMB). To 
+comply with the PRA requirement, FHFA is publishing notice of a 
+proposed three-year extension of this collection of information and 
+renewal of the control number, which is due to expire on November 30, 
+2026.
+---------------------------------------------------------------------------
+
+    \1\ Following the close of this notice's 60-day comment period, 
+FHFA will publish a second notice with a 30-day comment period as 
+required by 44 U.S.C. 3507(b) and 5 CFR 1320.10(a).
+---------------------------------------------------------------------------
+
+B. Background
+
+    The Federal Home Loan Bank System consists of eleven regional 
+Federal Home Loan Banks (Banks) and the Office of Finance (a joint 
+office of the Banks that issues and services the Banks' debt 
+securities). The Banks are wholesale financial institutions, organized 
+under the authority of the Federal Home Loan Bank Act (Bank Act) to 
+serve the public interest by enhancing the availability of residential 
+housing finance and community lending credit through their member 
+institutions and, to a limited extent, through certain eligible 
+nonmembers. Each Bank is structured as a regional cooperative that is 
+owned and controlled by member institutions located within its 
+district, which are also its primary customers. The Banks carry out 
+their public policy functions primarily by providing low-cost loans, 
+known as advances, to their members. With limited exceptions, an 
+institution may obtain advances and access other products and services 
+provided by a Bank only if it is a member of that Bank.
+    The Bank Act limits membership in any Bank to specific types of 
+financial institutions located within the Bank's district that meet 
+specific eligibility requirements. Section 4 of the Bank Act specifies 
+the types of institutions that may be eligible for membership and 
+establishes eligibility requirements that each type of applicant must 
+meet in order to become a Bank member.\2\ That provision also specifies 
+that (with limited exceptions) an eligible institution may become a 
+member only of the Bank of the district in which the institution's 
+``principal place of business'' is located.\3\ With respect to the 
+termination of Bank membership, section 6(d) of the Bank Act sets forth 
+requirements pursuant to which an institution may voluntarily withdraw 
+from membership or a Bank may terminate an institution's membership for 
+cause.\4\
+---------------------------------------------------------------------------
+
+    \2\ See 12 U.S.C. 1424(a).
+    \3\ See 12 U.S.C. 1424(b).
+    \4\ See 12 U.S.C. 1426(d).
+---------------------------------------------------------------------------
+
+C. Need For and Use of the Information Collection
+
+    FHFA's ``Members of the Banks'' regulation, set forth at 12 CFR 
+part 1263, implements those statutory provisions on Bank membership and 
+otherwise establishes substantive and procedural requirements relating 
+to the initiation and termination of Bank membership. Many of the 
+provisions in the membership regulation require that an institution 
+submit information to a Bank or to FHFA, in most cases to demonstrate 
+compliance with statutory or regulatory requirements or to request 
+action by the Bank or FHFA.
+    There are four types of information collections that may occur 
+under part 1263. First, the regulation provides that (with limited 
+exceptions) no institution may become a member of a Bank unless it has 
+submitted to that Bank an application that documents the applicant's 
+compliance with the statutory and regulatory membership eligibility 
+requirements and that otherwise includes all required information and 
+materials.\5\ Second, the regulation provides applicants that have been 
+denied membership by a Bank the option of appealing the decision to 
+FHFA. To file such an appeal, an applicant must submit to FHFA a copy
+
+[[Page 59133]]
+
+of the Bank's decision resolution denying its membership application 
+and a statement of the basis for the appeal containing sufficient 
+facts, information, and analysis to support the applicant's 
+position.\6\ Third, the regulation provides that, in order to initiate 
+a voluntary withdrawal from Bank membership, a member must submit to 
+its Bank a written notice of intent to withdraw.\7\ Fourth, under 
+certain circumstances, the regulation permits a member of one Bank to 
+transfer its membership to a second Bank ``automatically'' without 
+either initiating a voluntary withdrawal from the first Bank or 
+submitting a membership application to the second Bank. Despite the 
+regulatory reference to such a transfer as being ``automatic,'' a 
+member meeting the criteria for an automatic transfer must initiate the 
+transfer process by filing a request with its current Bank, which will 
+then arrange the details of the transfer with the second Bank.\8\
+---------------------------------------------------------------------------
+
+    \5\ See 12 CFR 1263.2(a), 1263.6-1263.9, 1263.11-1263.18.
+    \6\ See 12 CFR 1263.5.
+    \7\ See 12 CFR 1263.26.
+    \8\ See 12 CFR 1263.4(b), 1263.18(d), (e).
+---------------------------------------------------------------------------
+
+    The Banks use most of the information collected under part 1263 to 
+determine whether an applicant satisfies the statutory and regulatory 
+requirements for Bank membership and should be approved as a Bank 
+member. The Banks may use some of the information collected under part 
+1263 as a means of learning that a member wishes to withdraw or to 
+transfer its membership to a different Bank so that the Bank can begin 
+to process those requests. FHFA may also use the collected information 
+to determine whether an institution that has been denied membership by 
+a Bank should be permitted to become a member of that Bank.
+
+D. Burden Estimate
+
+    FHFA has analyzed the time burden imposed on respondents by the 
+four collections under this control number and estimates that the 
+average total annual hour burden imposed on all respondents by those 
+collections over the next three years will be 1,637 hours. This 
+estimate is derived from the following calculations:
+
+1. Membership Applications
+
+    FHFA estimates that the average number of applications for Bank 
+membership submitted annually will be 105 and that the average time to 
+prepare and submit an application and supporting materials will be 15 
+hours. Accordingly, the estimate for the annual hour burden associated 
+with preparation and submission of applications for Bank membership is 
+(105 applications x 15 hours per application) = 1,575 hours.
+
+2. Appeals of Membership Denials
+
+    FHFA estimates that the average number of applicants that have been 
+denied membership by a Bank that will appeal such a denial to FHFA will 
+be 1 and that the average time to prepare and submit an application for 
+appeal will be 50 hours. Accordingly, the estimate for the annual hour 
+burden associated with the preparation and submission of membership 
+appeals is (1 appellants x 50 hours per application) = 50 hours.
+
+3. Notices of Intent To Withdraw From Membership
+
+    FHFA estimates that the average number of Bank members submitting a 
+notice of intent to withdraw from membership annually will be 4 and 
+that the average time to prepare and submit a notice will be 1.5 hours. 
+Accordingly, the estimate for the annual hour burden associated with 
+preparation and submission of notices of intent to withdraw is (4 
+withdrawing members x 1.5 hours per application) = 6 hours.
+
+4. Requests for Transfer of Membership to Another Bank District
+
+    FHFA estimates that the average number of Bank members submitting a 
+request for transfer to another Bank will be 3 and that the average 
+time to prepare and submit a request will be 2 hours. Accordingly, the 
+estimate for the annual hour burden associated with preparation and 
+submission of requests for automatic transfer is (3 transferring 
+members x 2 hours per request) = 6 hours.
+
+E. Comment Request
+
+    FHFA requests written comments on the following: (1) Whether the 
+collection of information is necessary for the proper performance of 
+FHFA functions, including whether the information has practical 
+utility; (2) the accuracy of FHFA's estimates of the burdens of the 
+collection of information; (3) ways to enhance the quality, utility, 
+and clarity of the information collected; and (4) ways to minimize the 
+burden of the collection of information on respondents, including 
+through the use of automated collection techniques or other forms of 
+information technology.
+
+Shawn Bucholtz,
+Chief Data Officer, Federal Housing Finance Agency.
+[FR Doc. 2026-19168 Filed 9-17-26; 8:45 am]
+BILLING CODE 8070-01-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

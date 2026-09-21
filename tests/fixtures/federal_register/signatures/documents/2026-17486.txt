@@ -1,0 +1,990 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 165 (Thursday, August 27, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 165 (Thursday, August 27, 2026)]
+[Rules and Regulations]
+[Pages 55274-55280]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-17486]
+
+
+-----------------------------------------------------------------------
+
+ENVIRONMENTAL PROTECTION AGENCY
+
+40 CFR Part 52
+
+[EPA-R05-OAR-2024-0137; EPA-R05-OAR-2025-0235; FRL-13185-02-R5]
+
+
+Air Plan Approval; Michigan; 2015 Ozone Moderate Reasonably 
+Available Control Technology
+
+AGENCY: Environmental Protection Agency (EPA).
+
+ACTION: Final rule.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The U.S. Environmental Protection Agency (EPA) is approving 
+revisions and additions to Michigan Air Pollution Control Rules (MAPCR) 
+Parts 6 and 8 for inclusion in the Michigan State Implementation Plan 
+(SIP). Michigan submitted these SIP revisions to meet the Moderate 
+Volatile Organic Compound (VOC) and Nitrogen Oxide (NO<INF>X</INF>) 
+Reasonably Available Control Technology (RACT) requirements for the 
+Western Michigan nonattainment areas (Berrien, Western portion of 
+Allegan, and Western portion of Muskegon counties) under the 2015 ozone 
+National Ambient Air Quality Standard (NAAQS or standard). The EPA is 
+approving rules that limit VOC emissions from consumer products and 
+architectural and industrial maintenance coatings, as SIP strengthening 
+measures for the Western Michigan nonattainment areas under the 2015 
+ozone standard. The EPA proposed to approve this action on February 27, 
+2026, and received eleven sets of comments.
+
+DATES: This final rule is effective on September 28, 2026.
+
+ADDRESSES: The EPA has established a docket for this action under 
+Docket ID No. EPA-R05-OAR-2024-0137 (for VOC RACT) or EPA-R05-OAR-2025-
+0235 (for NO<INF>X</INF> RACT). All documents in the docket are listed 
+on the <a href="https://www.regulations.gov">https://www.regulations.gov</a> website. Although listed in the 
+index, some information is not publicly available, i.e., Confidential 
+Business Information (CBI), Proprietary Business Information (PBI), or 
+other information whose disclosure is restricted by statute. Certain 
+other material, such as copyrighted material, is not placed on the 
+internet and will be publicly available only in hard copy form. 
+Publicly available docket materials are available either through 
+<a href="https://www.regulations.gov">https://www.regulations.gov</a> or please contact the person identified in 
+the FOR FURTHER INFORMATION CONTACT section for additional information.
+
+FOR FURTHER INFORMATION CONTACT: Katie Caskey, Air and Radiation 
+Division (AR18J), Environmental Protection Agency, Region 5, 77 West 
+Jackson Boulevard, Chicago, Illinois 60604, telephone number: (312) 
+353-3490, email address: <a href="/cdn-cgi/l/email-protection#0a696b79616f7324616b7e62666f6f644a6f7a6b246d657c"><span class="__cf_email__" data-cfemail="046765776f617d2a6f65706c6861616a446174652a636b72">[email&#160;protected]</span></a>.
+
+SUPPLEMENTARY INFORMATION: Throughout this document whenever ``we,'' 
+``us,'' or ``our'' is used, we mean the EPA. We use multiple 
+abbreviations and terms in this rule. While this list may not be 
+exhaustive, for ease of reading and for reference purposes, the EPA 
+defines the following terms and acronyms here:
+
+BACM Best Available Control Measures
+BACT Best Available Control Technology
+CAA Clean Air Act
+CBI Confidential Business Information
+CTG Control Technique Guidelines
+EGLE Michigan Department of Environment, Great Lakes, and Energy
+E.O. Executive Order
+EPA Environmental Protection Agency
+FR Federal Register
+MAPCR Michigan Air Pollution Control Rules
+NAAQS National Ambient Air Quality Standard
+NEPA National Environmental Policy Act
+NO<INF>X</INF> Nitrogen Oxide
+NSR New Source Review
+PBI Proprietary Business Information
+RACM Reasonably Available Control Measures
+RACT Reasonably Available Control Technology
+RFA Regulatory Flexibility Analysis
+SBA Small Business Administration
+SIP State Implementation Plan
+TSD Technical Support Documentation
+UMRA Unfunded Mandates Reform Act
+VOC Volatile Organic Compound
+
+Table of Contents
+
+I. What action is the EPA taking?
+II. Background Information
+III. Public Comments
+IV. Incorporation by Reference
+V. Statutory and Executive Order Reviews
+
+I. What action is the EPA taking?
+
+    The EPA is approving various revisions and additions to MAPCR Parts 
+6 and 8 into the Michigan SIP as described in the Preamble above. The 
+EPA is approving these revisions as meeting the Moderate VOC and 
+NO<INF>X</INF> RACT requirements of Clean Air Act (CAA) sections 
+182(b)(2) and 182(f), respectively, for the Western Michigan 
+nonattainment areas under the 2015 ozone standard. EPA is also 
+approving MAPCR Rules 336.1660 and 336.1662, which limit VOC emissions 
+from consumer products and architectural and industrial maintenance 
+coatings, as SIP strengthening measures for the areas. SIP revisions to 
+Rules 336.1801,
+
+[[Page 55275]]
+
+336.1802, 336.1803, 336.1810, 336.1818, 336.1841(8), 336.1842(10), and 
+336.1844(9) are responsive to different CAA requirements and will be 
+considered in a separate rulemaking.
+
+II. Background Information
+
+    The Michigan Department of Environment, Great Lakes, and Energy 
+(Michigan or EGLE) submitted the VOC SIP revisions on March 7, 2024, 
+supplemented on May 2, 2024, and NO<INF>X</INF> SIP revisions on May 5, 
+2025, supplemented on August 6, 2025. On February 27, 2026 (91 FR 
+9793), the EPA proposed to approve revisions and additions to MAPCR 
+Parts 6 and 8 to meet the Moderate VOC and NO<INF>X</INF> RACT 
+requirements for the Western Michigan nonattainment areas under the 
+2015 ozone standard. The EPA also proposed to approve rules that limit 
+VOC emissions from consumer products and architectural and industrial 
+maintenance coatings, as SIP strengthening measures for the Western 
+Michigan nonattainment areas under the 2015 ozone standard.
+    The EPA is incorporating by reference Michigan rules R 336.1601, 
+except for R 336.1601(a); R 336.1602; R 336.1606; R 336.1607; R 
+336.1608; R 336.1609; R 336.1610; R 336.1610a; R 336.1611; R 336.1618; 
+R 336.1620; R 336.1620a; R 336.1621; R 336.1621a; R 336.1622; R 
+336.1623; R 336.1624; R 336.1624a; R 336.1625; R 336.1627; R 336.1628; 
+R 336.1629; R 336.1630; R 336.1631; R 336.1632, except for R 
+336.1632(9); R 336.1633; R 336.1634; R 336.1635; R 336.1636; R 
+336.1637; R 336.1638; R 336.1639; R 336.1640; R 336.1641; R 336.1642; R 
+336.1643; R 336.1644; R 336.1660; R 336.1661 (Rescinded); R 336.1662; 
+effective April 18, 2023; R 336.1840; R 336.1841,except for R 
+336.1841(8); R 336.1842, except for R 336.1842(10); R 336.1843; R 
+336.1844, except for R 336.1844(9); R 336.1845; and R 336.1846; 
+effective April 28, 2025.
+    An explanation of the CAA requirements, a detailed analysis of the 
+revisions, and the EPA's reasons for proposing approval were provided 
+in the notice of proposed rulemaking and will not be restated here. The 
+EPA provided a 30-day review and comment period for this action in the 
+proposal. The comment period ended on March 30, 2026. The EPA reopened 
+the 30-day comment period on April 23, 2026, and this extension ended 
+on May 26, 2026. The EPA received eleven comments in total--one 
+supportive, six not relevant, and four adverse.
+    The six comments that are not relevant to this action covered a 
+variety of topics including: a general statement regarding the ozone 
+layer, information on a VOC control technology intended to reduce VOC 
+emissions from open containers. All of the comments received are 
+included in the docket for this action. We do not consider these six 
+comments to be germane or relevant to this action and therefore not 
+adverse to this action. These comments lack the required specificity to 
+the proposed SIP revision and the relevant requirements of CAA section 
+110. Moreover, none of these comments address a specific regulation or 
+provision in question or recommend a different action on the SIP 
+submission from what the EPA proposed.
+
+III. Public Comments
+
+    Comment: The commenter asserts that the EPA requires States to 
+adopt the ``best available controls'' when determining RACT and cites 
+more stringent requirements in other States for the following 
+categories:
+
+<bullet> VOC RACT:
+    [cir] Surface coating of cans, coils, paper, fabrics, automobiles, 
+and light-duty trucks (San Joaquin Valley, CA)
+    [cir] Existing Aerospace Manufacturing and Rework Operations 
+(Oregon, Pennsylvania)
+    [cir] Existing Metals Parts, Metal Products, and Motor Vehicle 
+Surfacing Coating Lines (Delaware)
+<bullet> NO<INF>X</INF> RACT:
+    [cir] Boilers (San Joaquin Valley, CA)
+    [cir] Combustion turbines (San Joaquin Valley, CA and Connecticut)
+    [cir] Internal combustion engines (South Coast AQMD, CA)
+
+    Response: The EPA disagrees with the commenter's interpretation of 
+RACT. The EPA has long defined RACT as the lowest emission limitation 
+that a particular source is capable of meeting through application of 
+control technology that is reasonably available, considering 
+technological and economic feasibility (44 FR 53762, September 17, 
+1979).
+    RACT is distinct from Best Available Control Technology (BACT), 
+which applies under the New Source Review (NSR) program (see CAA 
+section 169(3) and 40 CFR 51.166). RACT applies to existing sources and 
+reflects a different statutory standard.
+    The existence of more stringent emission limits in other States 
+does not establish that such limits are reasonably available in 
+Michigan. The examples cited by the commenter are from areas classified 
+as Serious or Extreme nonattainment; these areas may choose to go 
+beyond RACT for attainment planning purposes. The Michigan rules in 
+this action are to address Moderate requirements in the West Michigan 
+nonattainment areas, for which RACT is the applicable control level 
+under CAA section 182(b)(2).
+    Therefore, EPA finds that differences in emission limits across 
+other States are expected and consistent with the CAA.
+    Comment: That commenter argues Michigan must justify any deviation 
+from the most stringent controls and has failed to demonstrate 
+technological or economic infeasibility.
+    Response: The EPA disagrees with the commenter's interpretation of 
+the RACT requirement. The CAA does not require States to adopt the most 
+stringent controls implemented anywhere in the country. Rather, States 
+must demonstrate that their selected controls meet the RACT standard, 
+which is based on reasonable technological and economic feasibility.
+    Michigan conducted a due diligence review consistent with the EPA's 
+guidance, including evaluation of Control Technique Guidelines (CTGs), 
+existing SIP-approved rules, and controls implemented in other States. 
+Differences in requirements reflect variation in source characteristics 
+and feasibility considerations.
+    The EPA finds that Michigan has provided an adequate basis for its 
+RACT determinations.
+    Comment: That commenter asserts that Michigan failed to provide 
+sufficient justification for higher exemption thresholds, did not 
+include sufficient detail--such as facility-specific data--in its five 
+percent equivalency analysis to enable meaningful public input or the 
+EPA review, and relied on assumptions that the commenter asserts affect 
+the analysis.
+    Response: The EPA finds that Michigan's submittal satisfies 
+applicable CAA requirements and adequately addresses the issues raised 
+by the commenter.
+    First, Michigan has adopted the more stringent exemption threshold 
+of 15 pounds per day (2.7 tons per year) for the Western Michigan 
+nonattainment areas under the 2015 ozone standard through rules R 
+336.1610a, R 336.1620a, R 336.1621a, and R 336.1624a. These rules 
+implement VOC RACT for the relevant source categories. Therefore, 
+Michigan has met Moderate VOC RACT requirements for these categories in 
+those areas.
+    Second, the exemption threshold SIP revisions commenter references 
+apply to areas outside of the Western Michigan nonattainment areas 
+under the 2015 ozone standard where RACT and a five
+
+[[Page 55276]]
+
+percent equivalency analysis are not required. Although Michigan 
+submitted a five percent equivalency analysis, the EPA is evaluating 
+and approving these revisions under CAA section 110(l). The EPA is not 
+approving rules R 336.1610, R 336.1620, R 336.1621, and R 336.1624 as 
+RACT.
+    Under CAA section 110(l), the relevant inquiry is whether the SIP 
+revision will interfere with attainment, reasonable further progress 
+(RFP), or any other applicable requirement. Michigan's analysis 
+demonstrates that the revised exemption thresholds will not result in 
+an increase in VOC emissions that would interfere with these 
+requirements.
+    Because the EPA's approval is based on CAA section 110(l), the 
+commenter's concerns regarding the level of detail in the five percent 
+equivalency analysis, including the absence of facility-specific data 
+and assumptions used in that analysis, do not affect the approvability 
+of the revision. The EPA finds that the record contains sufficient 
+information to conclude that the revisions will not interfere with 
+applicable CAA requirements.
+    The EPA therefore concludes that Michigan's analysis provides an 
+adequate basis for approval.
+    Comment: That commenter states that the EPA should clarify that the 
+approval of EGLE's proposed SIP submission to apply only to the West 
+Michigan nonattainment areas as the title of the proposed rule is 
+highly misleading if it is intended apply to the whole State.
+    Response: The EPA acknowledges the commenter's concerns; however, 
+this proposed and final action only approves this SIP submission as 
+meeting the RACT requirement for the West Michigan areas. Michigan 
+would have to make a new submission to meet RACT requirements for other 
+nonattainment areas in the State.
+    Comment: Two commenters allege that the technical support 
+documentation (TSD) was not adequately available during the public 
+comment period.
+    Response: The EPA acknowledges these commenters' concern regarding 
+availability of technical support documentation. In response, the EPA 
+extended the public comment period to ensure that the TSD was available 
+for a full 30-day review period.
+    The EPA finds that providing the TSD for a full 30-day public 
+comment period afforded adequate opportunity for meaningful public 
+participation consistent with the CAA and Administrative Procedure Act. 
+Therefore, the EPA concludes that the extended comment period addressed 
+both commenters' concerns and provided sufficient opportunity for 
+review and comment.
+    Comment: The commenter asserts that the EPA's proposal fails to 
+document CAA 110(a) SIP approval criteria under 42 U.S.C. 7410(a)(2).
+    Response: CAA 110(a) contains infrastructure SIP (iSIP) 
+requirements, and the EPA has taken action on infrastructure 
+requirements and approved iSIP elements for Michigan in separate 
+actions; therefore, it is not relevant to address in this action.
+    Comment: That commenter states that the EPA's proposal fails to 
+document source-specific RACT determinations, comparison to EPA CTGs, 
+or evaluation against current best available control measures (BACM).
+    Response: The EPA finds that Michigan's submittal satisfies 
+applicable CAA requirements for RACT and adequately addresses the 
+issues raised by the commenter. Michigan provided source-specific RACT 
+analyses and conducted a due diligence review consistent with the EPA's 
+guidance, including evaluation of CTGs, existing SIP-approved rules, 
+and controls implemented in other States. RACT is distinct from BACM, 
+which applies under CAA 189(b)(1)(B) and does not apply to ozone 
+nonattainment areas. RACT applies to existing sources and reflects a 
+different statutory standard. Therefore, The EPA finds that Michigan 
+has provided an adequate basis for its RACT determinations.
+    Comment: That commenter claims the EPA's proposal fails to document 
+RFP demonstrations to comply with CAA 172(c)(2)
+    Response: The EPA has taken action on and approved RFP requirements 
+in a separate action (91 FR 9453, February 26, 2026).
+    Comment: That commenter claims the EPA's proposal fails to document 
+an anti-backsliding analysis to comply with CAA 193.
+    Response: The EPA finds that Michigan's submittal does not trigger 
+a need for an anti-backsliding analysis under CAA 193 as no control 
+requirements are being removed but rather added or strengthened.
+    Comment: That commenter insists the EPA's proposal fails to 
+document a National Environmental Policy Act (NEPA) significance 
+determination or a basis for any claimed exemption.
+    Response: The EPA determined that this action is not a ``major 
+federal action'' that significantly affects the quality of the human 
+environment as it is approving State choices as meeting the CAA and 
+does not impose any additional requirements beyond those required by 
+State law.
+    Comment: That commenter alleges that the EPA's proposal does not 
+document an environmental justice analysis under Executive Order (E.O.) 
+12898 and E.O. 14008.
+    Response: An environmental justice analysis is not required as both 
+E.O. 12898 and E.O. 14008 were rescinded.
+    Comment: That commenter claims the EPA's proposal fails to document 
+a children's health analysis for ozone under E.O. 13045 and fails to 
+provide a reasoned explanation under State Farm, Encino, West Virginia 
+v. EPA, and Loper Bright.
+    Response: This action is not subject to E.O. 13045 and these court 
+decisions because it merely approves State choices as meeting the CAA 
+and does not impose any additional requirements beyond those required 
+by State law.
+    Comment: That commenter states that the EPA's proposal fails to 
+document Tribal consultation under E.O. 13175.
+    Response: This action is not approved to apply on any Indian 
+reservation land or in any other area where the EPA or an Indian Tribe 
+has demonstrated that a Tribe has jurisdiction. In those areas of 
+Indian country, the rule does not have Tribal implications and will not 
+impose substantial direct costs on Tribal governments or preempt Tribal 
+law.
+    Comment: That commenter insists the EPA's proposal fails to 
+document an E.O. 13132 federalism analysis.
+    Response: This action does not have federalism implications as 
+specified in E.O. 13132.
+    Comment: That commenter asserts that the EPA should develop an 
+Initial Regulatory Flexibility Analysis (RFA) or revised certification 
+with supporting evidence to demonstrate a lack of significant economic 
+impact on a substantial number of small entities.
+    Response: An RFA is inapplicable to this rulemaking because the 
+regulatory analysis provisions of the RFA are only triggered by a 
+threshold determination by the Agency that this rule will have a 
+significant economic impact on a substantial number of small entities. 
+Because the Agency has certified this rule will not have a significant 
+economic impact, section 603 and 604 of the RFA do not apply to this 
+rulemaking. 5 U.S.C. 605(b).
+    Comment: That commenter states that the proposal does not provide 
+an Unfunded Mandates Reform Act (UMRA) analysis as to whether this 
+action imposes a Federal intergovernmental mandate.
+    Response: The EPA has already complied with any UMRA obligation by 
+including in the proposed rulemaking
+
+[[Page 55277]]
+
+its determination that this rule will not result in expenditures 
+exceeding $100 million in any one year, pursuant to 2 U.S.C. 1532(a). 
+The Agency need not complete any further statement under 2 U.S.C. 1532.
+    Comment: That commenter alleges the proposal fails to document 
+Centralized Regulatory Review Under E.O. 12866 section 3(f) and E.O. 
+14094.
+    Response: This action does not require this documentation as SIP 
+actions are exempt from review under E.O. 12866 and E.O. 14094 was 
+revoked.
+    Comment: That commenter insists the EPA's proposal fails to 
+document the basis for re-opening the comment period.
+    Response: The EPA is not required to document the basis for re-
+opening a comment period; however, the public was made aware that the 
+public comment period was reopened in response to a comment.
+    Comment: That commenter claims the EPA's proposal does not comply 
+with E.O. 13272 as it does not document consultation with the Small 
+Business Administration (SBA) Office of Advocacy.
+    Response: This action will not have any significant economic impact 
+on a substantial number of small entities and merely approves State 
+choices as meeting the CAA and does not impose any additional 
+requirements beyond those required by State law, therefore consultation 
+with the SBA is not warranted.
+
+IV. Incorporation by Reference
+
+    In this rule, the EPA is finalizing regulatory text that includes 
+incorporation by reference. In accordance with the requirements of 1 
+CFR 51.5, the EPA is finalizing the incorporation by reference of the 
+Michigan Regulations described in section II of this preamble and set 
+forth in the amendments to 40 CFR part 52 below. The EPA has made, and 
+will continue to make, these documents generally available through 
+<a href="https://www.regulations.gov">https://www.regulations.gov</a>, and at the EPA Region 5 Office (please 
+contact the person identified in the FOR FURTHER INFORMATION CONTACT 
+section of this preamble for more information). Therefore, these 
+materials have been approved by the EPA for inclusion in the SIP, have 
+been incorporated by reference by the EPA into that plan, are fully 
+federally enforceable under CAA sections 110 and 113 as of the 
+effective date of the final rulemaking of the EPA's approval, and will 
+be incorporated by reference in the next update to the SIP 
+compilation.\1\
+---------------------------------------------------------------------------
+
+    \1\ 62 FR 27968 (May 22, 1997).
+---------------------------------------------------------------------------
+
+V. Statutory and Executive Order Reviews
+
+    Under the CAA, the Administrator is required to approve a SIP 
+submission that complies with the provisions of the CAA and applicable 
+Federal regulations. 42 U.S.C. 7410(k); 40 CFR 52.02(a). Thus, in 
+reviewing SIP submissions, the EPA's role is to approve State choices, 
+provided that they meet the criteria of the CAA. Accordingly, this 
+action merely approves State law as meeting Federal requirements and 
+does not impose additional requirements beyond those imposed by State 
+law. For that reason, this action:
+    <bullet> Is not a significant regulatory action subject to review 
+by the Office of Management and Budget under Executive Order 12866 (58 
+FR 51735, October 4, 1993);
+    <bullet> Is not an Executive Order 14192 (90 FR 9065, February 6, 
+2025) regulatory action because this action is not significant under 
+Executive Order 12866;
+    <bullet> Does not impose an information collection burden under the 
+provisions of the Paperwork Reduction Act (44 U.S.C. 3501 et seq.);
+    <bullet> Is certified as not having a significant economic impact 
+on a substantial number of small entities under the Regulatory 
+Flexibility Act (5 U.S.C. 601 et seq.);
+    <bullet> Does not contain any unfunded mandate or significantly or 
+uniquely affect small governments, as described in the Unfunded 
+Mandates Reform Act of 1995 (Pub. L. 104-4);
+    <bullet> Does not have federalism implications as specified in 
+Executive Order 13132 (64 FR 43255, August 10, 1999);
+    <bullet> Is not subject to Executive Order 13045 (62 FR 19885, 
+April 23, 1997) because it approves a State program;
+    <bullet> Is not a significant regulatory action subject to 
+Executive Order 13211 (66 FR 28355, May 22, 2001); and
+    <bullet> Is not subject to requirements of section 12(d) of the 
+National Technology Transfer and Advancement Act of 1995 (15 U.S.C. 272 
+note) because application of those requirements would be inconsistent 
+with the CAA.
+    In addition, the SIP is not approved to apply on any Indian 
+reservation land or in any other area where the EPA or an Indian Tribe 
+has demonstrated that a Tribe has jurisdiction. In those areas of 
+Indian country, the rule does not have Tribal implications and will not 
+impose substantial direct costs on Tribal governments or preempt Tribal 
+law as specified by Executive Order 13175 (65 FR 67249, November 9, 
+2000).
+    This action is subject to the Congressional Review Act, and the EPA 
+will submit a rule report to each House of the Congress and to the 
+Comptroller General of the United States. This action is not a ``major 
+rule'' as defined by 5 U.S.C. 804(2).
+    Under CAA section 307(b)(1), petitions for judicial review of this 
+action must be filed in the United States Court of Appeals for the 
+appropriate circuit by October 26, 2026. Filing a petition for 
+reconsideration by the Administrator of this final rule does not affect 
+the finality of this action for the purposes of judicial review nor 
+does it extend the time within which a petition for judicial review may 
+be filed, and shall not postpone the effectiveness of such rule or 
+action. This action may not be challenged later in proceedings to 
+enforce its requirements. (See section 307(b)(2).)
+
+List of Subjects in 40 CFR Part 52
+
+    Environmental protection, Air pollution control, Incorporation by 
+reference, Intergovernmental relations, Nitrogen oxides, Ozone, 
+Volatile organic compounds.
+
+    Dated: August 14, 2026.
+Anne Vogel,
+Regional Administrator, Region 5.
+
+    For the reasons stated in the preamble, 40 CFR part 52 is amended 
+as follows:
+
+PART 52--APPROVAL AND PROMULGATION OF IMPLEMENTATION PLANS
+
+0
+1. The authority citation for part 52 continues to read as follows:
+
+    Authority:  42 U.S.C. 7401 et seq.
+
+
+0
+2. In Sec.  52.1170, the table in paragraph (c) is amended by:
+0
+a. Revising the section ``Part 6. Emission Limitations and 
+Prohibitions--Existing Sources of Volatile Organic Compound 
+Emissions'', consisting of entries R 336.1601 through R 336.1662; and
+0
+b. Adding new entries R 336.1840 through R 336.1846 at the end of 
+section ``Part 8. Emission Limitations and Prohibitions--Oxides of 
+Nitrogen''.
+    The revisions and additions read as follows:
+
+[[Page 55278]]
+
+Sec.  52.1170  Identification of plan.
+
+* * * * *
+    (c) * * *
+
+                                       EPA--Approved Michigan Regulations
+----------------------------------------------------------------------------------------------------------------
+ Michigan  citation         Title         State  effective date    EPA approval date           Comments
+----------------------------------------------------------------------------------------------------------------
+ 
+                                                  * * * * * * *
+----------------------------------------------------------------------------------------------------------------
+     Part 6. Emission Limitations and Prohibitions--Existing Sources of Volatile Organic Compound Emissions
+----------------------------------------------------------------------------------------------------------------
+R 336.1601.........  Definitions.......  April 18, 2023.........  8/27/2026, 91 FR    All except for (a).
+                                                                   [INSERT FEDERAL
+                                                                   REGISTER PAGE
+                                                                   WHERE THE
+                                                                   DOCUMENT BEGINS].
+R 336.1602.........  Existing sources    April 18, 2023.........  8/27/2026, 91 FR
+                      of volatile                                  [INSERT FEDERAL
+                      organic compound                             REGISTER PAGE
+                      emissions                                    WHERE THE
+                      generally.                                   DOCUMENT BEGINS].
+R 336.1604.........  Storage of organic  3/19/2002..............  6/1/2006, 71 FR
+                      compounds having                             31093.
+                      a true vapor
+                      pressure of more
+                      than 1.5 psia,
+                      but less than 11
+                      psia, in existing
+                      fixed roof
+                      stationary
+                      vessels of more
+                      than 40,000
+                      gallon capacity.
+R 336.1605.........  Storage of organic  3/19/2002..............  6/1/2006, 71 FR
+                      compounds having                             31093.
+                      a true vapor
+                      pressure of 11 or
+                      more psia in
+                      existing
+                      stationary
+                      vessels of more
+                      than 40,000
+                      gallon capacity.
+R 336.1606.........  Loading gasoline    April 18, 2023.........  8/27/2026, 91 FR
+                      into existing                                [INSERT FEDERAL
+                      stationary                                   REGISTER PAGE
+                      vessels of more                              WHERE THE
+                      than 2,000 gallon                            DOCUMENT BEGINS].
+                      capacity at
+                      dispensing
+                      facilities.
+R 336.1607.........  Loading gasoline    April 18, 2023.........  8/27/2026, 91 FR
+                      into existing                                [INSERT FEDERAL
+                      stationary                                   REGISTER PAGE
+                      vessels of more                              WHERE THE
+                      than 2,000                                   DOCUMENT BEGINS].
+                      capacity at
+                      loading
+                      facilities.
+R 336.1608.........  Loading gasoline    April 18, 2023.........  8/27/2026, 91 FR
+                      into existing                                [INSERT FEDERAL
+                      delivery vessels                             REGISTER PAGE
+                      at loading                                   WHERE THE
+                      facilities                                   DOCUMENT BEGINS].
+                      handling less
+                      than 5,000,000
+                      gallons per year.
+R 336.1609.........  Loading delivery    April 18, 2023.........  8/27/2026, 91 FR
+                      vessels with                                 [INSERT FEDERAL
+                      organic compounds                            REGISTER PAGE
+                      having a true                                WHERE THE
+                      vapor pressure of                            DOCUMENT BEGINS].
+                      more than 1.5
+                      psia at existing
+                      loading
+                      facilities
+                      handling
+                      5,000,000 or more
+                      gallons of the
+                      compounds per
+                      year.
+R 336.1610.........  Existing coating    April 18, 2023.........  8/27/2026, 91 FR
+                      lines; emission                              [INSERT FEDERAL
+                      of volatile                                  REGISTER PAGE
+                      organic compounds                            WHERE THE
+                      from existing                                DOCUMENT BEGINS].
+                      automobile, light-
+                      duty truck, and
+                      other product and
+                      material coating
+                      lines.
+R 336.1610a........  Existing coating    April 18, 2023.........  8/27/2026, 91 FR
+                      lines; emission                              [INSERT FEDERAL
+                      of volatile                                  REGISTER PAGE
+                      organic compounds                            WHERE THE
+                      from existing                                DOCUMENT BEGINS].
+                      automobile, light-
+                      duty truck; and
+                      paper, film, and
+                      foil; cans,
+                      coils, and
+                      fabrics;
+                      insulation of
+                      magnet wire;
+                      metal furniture
+                      coating lines in
+                      2015 ozone
+                      nonattainment
+                      areas.
+336.1611...........  Existing cold       April 18, 2023.........  8/27/2026, 91 FR
+                      cleaners.                                    [INSERT FEDERAL
+                                                                   REGISTER PAGE
+                                                                   WHERE THE
+                                                                   DOCUMENT BEGINS].
+R 336.1612.........  Existing open top   3/29/2017..............  6/29/2018, 83 FR
+                      vapor degreasers.                            30571.
+R 336.1613.........  Existing            3/29/2017..............  6/29/2018, 83 FR
+                      conveyorized cold                            30571.
+                      cleaners.
+R 336.1614.........  Existing            3/29/2017..............  6/29/2018, 83 FR
+                      conveyorized                                 30571.
+                      vapor degreasers.
+R 336.1615.........  Existing vacuum-    3/19/2002..............  6/1/2006, 71 FR
+                      producing system                             31093.
+                      at petroleum
+                      refineries.
+R 336.1616.........  Process unit        3/19/2002..............  6/1/2006, 71 FR
+                      turnarounds at                               31093.
+                      petroleum
+                      refineries.
+R 336.1617.........  Existing organic    3/19/2002..............  6/1/2006, 71 FR
+                      compound-water                               31093.
+                      separators at
+                      petroleum
+                      refineries.
+336.1618...........  Use of cutback or   April 18, 2023.........  8/27/2026, 91 FR
+                      emulsified paving                            [INSERT FEDERAL
+                      asphalt.                                     REGISTER PAGE
+                                                                   WHERE THE
+                                                                   DOCUMENT BEGINS].
+R 336.1619.........  Standards for       3/29/2017..............  6/29/2018, 83 FR
+                      perchloroethylene                            30571.
+                      dry cleaning
+                      equipment.
+336.1620...........  Emission of         April 18, 2023.........  8/27/2026, 91 FR
+                      volatile organic                             [INSERT FEDERAL
+                      compounds from                               REGISTER PAGE
+                      existing flat                                WHERE THE
+                      wood paneling                                DOCUMENT BEGINS].
+                      coating lines.
+336.1620a..........  Emission of         April 18, 2023.........  8/27/2026, 91 FR
+                      volatile organic                             [INSERT FEDERAL
+                      compounds from                               REGISTER PAGE
+                      existing flat                                WHERE THE
+                      wood paneling                                DOCUMENT BEGINS].
+                      coating lines in
+                      2015 ozone
+                      nonattainment
+                      areas.
+336.1621...........  Emission of         April 18, 2023.........  8/27/2026, 91 FR
+                      volatile organic                             [INSERT FEDERAL
+                      compounds from                               REGISTER PAGE
+                      existing metallic                            WHERE THE
+                      surface coating                              DOCUMENT BEGINS].
+                      lines.
+336.1621a..........  Emission of         April 18, 2023.........  8/27/2026, 91 FR
+                      volatile organic                             [INSERT FEDERAL
+                      compounds from                               REGISTER PAGE
+                      existing metal                               WHERE THE
+                      parts, metal                                 DOCUMENT BEGINS].
+                      products, and
+                      motor vehicle
+                      material surface
+                      coating lines in
+                      2015 ozone
+                      nonattainment
+                      areas.
+336.1622...........  Emission of         April 18, 2023.........  8/27/2026, 91 FR
+                      volatile organic                             [INSERT FEDERAL
+                      compounds from                               REGISTER PAGE
+                      existing                                     WHERE THE
+                      components of                                DOCUMENT BEGINS].
+                      petroleum
+                      refineries;
+                      refinery
+                      monitoring
+                      program.
+
+[[Page 55279]]
+
+ 
+336.1623...........  Storage of          April 18, 2023.........  8/27/2026, 91 FR
+                      petroleum liquids                            [INSERT FEDERAL
+                      having a true                                REGISTER PAGE
+                      vapor pressure of                            WHERE THE
+                      more than 1.0                                DOCUMENT BEGINS].
+                      psia but less
+                      than 11.0 psia,
+                      in existing
+                      external floating
+                      roof stationary
+                      vessels of more
+                      than 40,000
+                      gallon capacity.
+336.1624...........  Emission of         April 18, 2023.........  8/27/2026, 91 FR
+                      volatile organic                             [INSERT FEDERAL
+                      compound from an                             REGISTER PAGE
+                      existing graphic                             WHERE THE
+                      arts lines.                                  DOCUMENT BEGINS].
+336.1624a..........  Emission of         April 18, 2023.........  8/27/2026, 91 FR
+                      volatile organic                             [INSERT FEDERAL
+                      compounds from                               REGISTER PAGE
+                      existing                                     WHERE THE
+                      flexographic                                 DOCUMENT BEGINS].
+                      printing lines
+                      located in the
+                      2015 ozone
+                      nonattainment
+                      areas.
+336.1625...........  Emission of         April 18, 2023.........  8/27/2026, 91 FR
+                      volatile organic                             [INSERT FEDERAL
+                      compounds from                               REGISTER PAGE
+                      existing                                     WHERE THE
+                      equipment                                    DOCUMENT BEGINS].
+                      utilized in
+                      manufacturing
+                      synthesized
+                      pharmaceutical
+                      products.
+336.1627...........  Delivery vessels;   April 18, 2023.........  8/27/2026, 91 FR
+                      vapor collection                             [INSERT FEDERAL
+                      systems.                                     REGISTER PAGE
+                                                                   WHERE THE
+                                                                   DOCUMENT BEGINS].
+336.1628...........  Emission of         April 18, 2023.........  8/27/2026, 91 FR
+                      volatile organic                             [INSERT FEDERAL
+                      compounds from                               REGISTER PAGE
+                      components of                                WHERE THE
+                      existing process                             DOCUMENT BEGINS].
+                      equipment used in
+                      manufacturing
+                      synthetic organic
+                      chemicals and
+                      polymers;
+                      monitoring
+                      program.
+336.1629...........  Emission of         April 18, 2023.........  8/27/2026, 91 FR
+                      volatile organic                             [INSERT FEDERAL
+                      compounds from                               REGISTER PAGE
+                      components of                                WHERE THE
+                      existing process                             DOCUMENT BEGINS].
+                      equipment used in
+                      processing
+                      natural gas;
+                      monitoring
+                      program.
+336.1630...........  Emission of         April 18, 2023.........  8/27/2026, 91 FR
+                      volatile organic                             [INSERT FEDERAL
+                      compounds from                               REGISTER PAGE
+                      existing paint                               WHERE THE
+                      manufacturing                                DOCUMENT BEGINS].
+                      processes.
+336.1631...........  Emission of         April 18, 2023.........  8/27/2026, 91 FR
+                      volatile organic                             [INSERT FEDERAL
+                      compounds from                               REGISTER PAGE
+                      existing process                             WHERE THE
+                      equipment                                    DOCUMENT BEGINS].
+                      utilized in
+                      manufacture of
+                      polystyrene of
+                      other organic
+                      resins.
+336.1632...........  Emission of         April 18, 2023.........  8/27/2026, 91 FR    All except for (9).
+                      volatile organic                             [INSERT FEDERAL
+                      compounds from                               REGISTER PAGE
+                      existing                                     WHERE THE
+                      automobile,                                  DOCUMENT BEGINS].
+                      truck, and
+                      business machine
+                      plastic part
+                      coating lines.
+336.1633...........  Emission of         April 18, 2023.........  8/27/2026, 91 FR
+                      volatile organic                             [INSERT FEDERAL
+                      compounds from                               REGISTER PAGE
+                      existing plastic                             WHERE THE
+                      parts and                                    DOCUMENT BEGINS].
+                      products surface
+                      coating; and
+                      pleasure craft
+                      coating
+                      operations in
+                      2015 ozone
+                      nonattainment
+                      areas.
+336.1634...........  Emissions of        April 18, 2023.........  8/27/2026, 91 FR
+                      volatile organic                             [INSERT FEDERAL
+                      compounds from                               REGISTER PAGE
+                      existing                                     WHERE THE
+                      industrial                                   DOCUMENT BEGINS].
+                      solvent cleaning
+                      in 2015 ozone
+                      nonattainment
+                      areas.
+336.1635...........  Emission of         April 18, 2023.........  8/27/2026, 91 FR
+                      volatile organic                             [INSERT FEDERAL
+                      compounds from                               REGISTER PAGE
+                      existing offset                              WHERE THE
+                      lithographic and                             DOCUMENT BEGINS].
+                      letterpress
+                      printing lines in
+                      2015 ozone
+                      nonattainment
+                      areas.
+336.1636...........  Emission of         April 18, 2023.........  8/27/2026, 91 FR
+                      volatile organic                             [INSERT FEDERAL
+                      compounds from                               REGISTER PAGE
+                      existing                                     WHERE THE
+                      miscellaneous                                DOCUMENT BEGINS].
+                      industrial
+                      adhesives
+                      operations in
+                      2015 ozone
+                      nonattainment
+                      areas.
+336.1637...........  Emissions of        April 18, 2023.........  8/27/2026, 91 FR
+                      volatile organic                             [INSERT FEDERAL
+                      compounds from                               REGISTER PAGE
+                      existing                                     WHERE THE
+                      fiberglass boat                              DOCUMENT BEGINS].
+                      manufacturing in
+                      2015 ozone
+                      nonattainment
+                      areas.
+336.1638...........  Emissions of        April 18, 2023.........  8/27/2026, 91 FR
+                      volatile organic                             [INSERT FEDERAL
+                      compounds from                               REGISTER PAGE
+                      existing wood                                WHERE THE
+                      furniture                                    DOCUMENT BEGINS].
+                      manufacturing in
+                      2015 ozone
+                      nonattainment
+                      areas.
+336.1639...........  Emission of         April 18, 2023.........  8/27/2026, 91 FR
+                      volatile organic                             [INSERT FEDERAL
+                      compounds from                               REGISTER PAGE
+                      existing                                     WHERE THE
+                      aerospace                                    DOCUMENT BEGINS].
+                      manufacturing and
+                      rework operations
+                      in 2015 ozone
+                      nonattainment
+                      areas.
+336.1640...........  Emission of         April 18, 2023.........  8/27/2026, 91 FR
+                      volatile organic                             [INSERT FEDERAL
+                      compounds from                               REGISTER PAGE
+                      existing storage                             WHERE THE
+                      vessels in the                               DOCUMENT BEGINS].
+                      oil and natural
+                      gas industry
+                      located in the
+                      2015 ozone
+                      nonattainment
+                      areas.
+336.1641...........  Emission of         April 18, 2023.........  8/27/2026, 91 FR
+                      volatile organic                             [INSERT FEDERAL
+                      compounds from                               REGISTER PAGE
+                      existing                                     WHERE THE
+                      pneumatic                                    DOCUMENT BEGINS].
+                      controllers in
+                      the oil and
+                      natural gas
+                      industry located
+                      in the 2015 ozone
+                      nonattainment
+                      areas.
+336.1642...........  Emission of         April 18, 2023.........  8/27/2026, 91 FR
+                      volatile organic                             [INSERT FEDERAL
+                      compounds from                               REGISTER PAGE
+                      existing                                     WHERE THE
+                      pneumatic pumps                              DOCUMENT BEGINS].
+                      in the oil and
+                      natural gas
+                      industry located
+                      in the 2015 ozone
+                      nonattainment
+                      areas.
+336.1643...........  Emission of         April 18, 2023.........  8/27/2026, 91 FR
+                      volatile organic                             [INSERT FEDERAL
+                      compounds from                               REGISTER PAGE
+                      existing                                     WHERE THE
+                      compressors in                               DOCUMENT BEGINS].
+                      the oil and
+                      natural gas
+                      industry located
+                      in the 2015 ozone
+                      nonattainment
+                      areas.
+336.1644...........  Emission of         April 18, 2023.........  8/27/2026, 91 FR
+                      volatile organic                             [INSERT FEDERAL
+                      compounds from                               REGISTER PAGE
+                      fugitive                                     WHERE THE
+                      emissions from                               DOCUMENT BEGINS].
+                      the oil and
+                      natural gas
+                      industry located
+                      in the 2015 ozone
+                      nonattainment
+                      areas.
+R 336.1651.........  Standards for       3/29/2017..............  6/29/2018, 83 FR
+                      degreasers.                                  30571.
+336.1660...........  Standards for       April 18, 2023.........  8/27/2026, 91 FR
+                      volatile organic                             [INSERT FEDERAL
+                      compounds                                    REGISTER PAGE
+                      emissions from                               WHERE THE
+                      consumer products.                           DOCUMENT BEGINS].
+
+[[Page 55280]]
+
+ 
+336.1661...........  Rescinded.........  April 18, 2023.........  8/27/2026, 91 FR
+                                                                   [INSERT FEDERAL
+                                                                   REGISTER PAGE
+                                                                   WHERE THE
+                                                                   DOCUMENT BEGINS].
+336.1662...........  Standards for       April 18, 2023.........  8/27/2026, 91 FR
+                      volatile organic                             [INSERT FEDERAL
+                      compounds                                    REGISTER PAGE
+                      emissions from                               WHERE THE
+                      architectural and                            DOCUMENT BEGINS].
+                      industrial
+                      maintenance
+                      coatings.
+ 
+                                                  * * * * * * *
+----------------------------------------------------------------------------------------------------------------
+                        Part 8. Emission Limitations and Prohibitions--Oxides of Nitrogen
+----------------------------------------------------------------------------------------------------------------
+ 
+                                                  * * * * * * *
+336.1840...........  Definitions for     April 28, 2025.........  8/27/2026, 91 FR
+                      the NOX RACT                                 [INSERT FEDERAL
+                      rules.                                       REGISTER PAGE
+                                                                   WHERE THE
+                                                                   DOCUMENT BEGINS].
+336.1841...........  RACT emission       April 28, 2025.........  8/27/2026, 91 FR    All except for (8).
+                      limitations for                              [INSERT FEDERAL
+                      engines.                                     REGISTER PAGE
+                                                                   WHERE THE
+                                                                   DOCUMENT BEGINS].
+336.1842...........  RACT emission       April 28, 2025.........  8/27/2026, 91 FR    All except for (10).
+                      limitations for                              [INSERT FEDERAL
+                      boilers.                                     REGISTER PAGE
+                                                                   WHERE THE
+                                                                   DOCUMENT BEGINS].
+336.1843...........  RACT emission       April 28, 2025.........  8/27/2026, 91 FR
+                      limitations for                              [INSERT FEDERAL
+                      combustion                                   REGISTER PAGE
+                      turbines.                                    WHERE THE
+                                                                   DOCUMENT BEGINS].
+336.1844...........  RACT emission       April 28, 2025.........  8/27/2026, 91 FR    All except for (9).
+                      limitations for                              [INSERT FEDERAL
+                      miscellaneous                                REGISTER PAGE
+                      process specific                             WHERE THE
+                      combustion                                   DOCUMENT BEGINS].
+                      sources.
+336.1845...........  RACT requirements   April 28, 2025.........  8/27/2026, 91 FR
+                      for alternative                              [INSERT FEDERAL
+                      RACT.                                        REGISTER PAGE
+                                                                   WHERE THE
+                                                                   DOCUMENT BEGINS].
+336.1846...........  RACT requirements   April 28, 2025.........  8/27/2026, 91 FR
+                      for miscellaneous                            [INSERT FEDERAL
+                      large sources at                             REGISTER PAGE
+                      major sources of                             WHERE THE
+                      NOX.                                         DOCUMENT BEGINS].
+ 
+                                                  * * * * * * *
+----------------------------------------------------------------------------------------------------------------
+
+* * * * *
+[FR Doc. 2026-17486 Filed 8-26-26; 8:45 am]
+BILLING CODE 6560-50-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

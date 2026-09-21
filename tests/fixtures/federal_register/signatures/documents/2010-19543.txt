@@ -1,0 +1,86 @@
+<html>
+<head>
+<title>Federal Register, Volume 75 Issue 152 (Monday, August 9, 2010)</title>
+</head>
+<body><pre>
+[Federal Register Volume 75, Number 152 (Monday, August 9, 2010)]
+[Notices]
+[Pages 47797-47798]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2010-19543]
+
+
+-----------------------------------------------------------------------
+
+DEPARTMENT OF DEFENSE
+
+Defense Logistics Agency
+
+[Docket ID: DOD-2010-OS-0110]
+
+
+Privacy Act of 1974; System of Records
+
+AGENCY: Defense Logistics Agency, DoD.
+
+ACTION: Notice to delete a system of records.
+
+-----------------------------------------------------------------------
+
+[[Page 47798]]
+
+SUMMARY: The Defense Logistics Agency proposes to delete a system of 
+records notice in its existing inventory of records systems subject to 
+the Privacy Act of 1974, (5 U.S.C. 552a), as amended.
+
+DATES: This proposed action will be effective without further notice on 
+September 8, 2010, unless comments are received which result in a 
+contrary determination.
+
+ADDRESSES: You may submit comments, identified by docket number and 
+title, by any of the following methods:
+    * Federal Rulemaking Portal: <a href="http://www.regulations.gov">http://www.regulations.gov</a>. Follow the 
+instructions for submitting comments.
+    * Mail: Federal Docket Management System Office, Room 3C843 
+Pentagon, 1160 Defense Pentagon, Washington, DC 20301-1160.
+    Instructions: All submissions received must include the agency name 
+and docket number for this Federal Register document. The general 
+policy for comments and other submissions from members of the public is 
+to make these submissions available for public viewing on the Internet 
+at <a href="http://www.regulations.gov">http://www.regulations.gov</a> as they are received without change, 
+including any personal identifiers or contact information.
+
+FOR FURTHER INFORMATION CONTACT: Jody Sinkler at (703) 767-5045.
+
+SUPPLEMENTARY INFORMATION: The Defense Logistics Agency systems of 
+records notices subject to the Privacy Act of 1974, (5 U.S.C. 552a), as 
+amended, have been published in the Federal Register and are available 
+from the Chief Privacy and FOIA Officer, Headquarters Defense Logistics 
+Agency, ATTN: DGA, 8725 John J. Kingman Road, Suite 1644, Fort Belvoir, 
+VA 22060-6221.
+    The Agency proposes to delete a system of records notice in its 
+inventory of record systems subject to the Privacy Act of 1974 (5 
+U.S.C. 552a), as amended. The proposed deletion is not within the 
+purview of subsection (r) of the Privacy Act of 1974, (5 U.S.C. 552a), 
+as amended, which requires the submission of a new or altered system 
+report.
+
+    Dated: August 4, 2010.
+Mitchell S. Bryman,
+Alternate OSD Federal Register Liaison Officer, Department of Defense.
+Deletion: S330.40 CAHS
+
+System name:
+    Employee Assistance Program Records (August 27, 1999; 64 FR 46889).
+
+Reason:
+    This collection is covered under the existing DHHS/FOH EAP Privacy 
+notice 09-90-0010, entitled ``Employee Assistance Program (EAP) 
+Records, HHS/OS/ASAM/OHR.''
+
+[FR Doc. 2010-19543 Filed 8-6-10; 8:45 am]
+BILLING CODE 5001-06-P
+
+
+</pre></body>
+</html>

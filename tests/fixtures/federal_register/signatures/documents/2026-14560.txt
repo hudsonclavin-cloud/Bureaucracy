@@ -1,0 +1,110 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 137 (Monday, July 20, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 137 (Monday, July 20, 2026)]
+[Notices]
+[Page 45280]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-14560]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+DEPARTMENT OF HOMELAND SECURITY
+
+U.S. Immigration and Customs Enforcement
+
+[OMB Control Number 1653-0055]
+
+
+Flight Manifest/Billing Agreement
+
+AGENCY: U.S. Immigration and Customs Enforcement, Department of 
+Homeland Security.
+
+ACTION: 30-Day notice.
+
+-----------------------------------------------------------------------
+
+SUMMARY: In accordance with the Paperwork Reduction Act (PRA) of 1995 
+the Department of Homeland Security (DHS), U.S. Immigration and Customs 
+Enforcement (ICE) will submit the following Information Collection 
+Request (ICR) to the Office of Management and Budget (OMB) for review 
+and clearance. This information collection was previously published in 
+the Federal Register on December 17, 2025, allowing for a 60-day 
+comment period. ICE received several comments which have been addressed 
+in the supporting statement available on <a href="http://www.reginfo.gov/public/do/PRAMain">www.reginfo.gov/public/do/PRAMain</a>. The purpose of this notice is to allow an additional 30 days 
+for public comments.
+
+DATES: Comments are encouraged and will be accepted until August 19, 
+2026.
+
+ADDRESSES: Written comments and recommendations for this information 
+collection should be sent within 30 days of publication of this notice 
+to <a href="http://www.reginfo.gov/public/do/PRAMain">www.reginfo.gov/public/do/PRAMain</a>. Find this particular information 
+collection by selecting ``Currently under 30-day Review--Open for 
+Public Comments'' or by using the search function under e-Docket ID 
+number ICEB-2021-0005-0003.
+
+FOR FURTHER INFORMATION CONTACT: For specific question related to 
+collection activities, please contact U.S. Immigration and Customs 
+Enforcement at <a href="/cdn-cgi/l/email-protection#88c1cbcdc7cbcec7d8e7e4e1ebf1c8e1ebeda6ece0fba6efe7fe"><span class="__cf_email__" data-cfemail="2a63696f65696c657a45464349536a43494f044e4259044d455c">[email&#160;protected]</span></a>.
+
+SUPPLEMENTARY INFORMATION:
+
+Comments
+
+    Written comments and suggestions from the public and affected 
+agencies concerning the proposed collection of information should 
+address one or more of the following four points:
+    (1) Evaluate whether the proposed collection of information is 
+necessary for the proper performance of the functions of the agency, 
+including whether the information will have practical utility;
+    (2) Evaluate the accuracy of the agencies estimate of the burden of 
+the proposed collection of information, including the validity of the 
+methodology and assumptions used;
+    (3) Enhance the quality, utility, and clarity of the information to 
+be collected; and
+    (4) Minimize the burden of the collection of information on those 
+who are to respond, including through the use of appropriate automated, 
+electronic, mechanical, or other technological collection techniques or 
+other forms of information technology, e.g., permitting electronic 
+submission of responses.
+
+Overview of This Information Collection
+
+    (1) Type of Information Collection: Extension of a Currently 
+Approved Collection.
+    (2) Title of the Form/Collection: Flight Manifest/Billing 
+Agreement.
+    (3) Agency form number, if any, and the applicable component of the 
+Department of Homeland Security sponsoring the collection: U.S. 
+Immigration and Customs Enforcement.
+    (4) Affected public who will be asked or required to respond, as 
+well as a brief abstract: Primary: Individuals or households. The 
+Flight Manifest/Billing Agreement collects information for the purpose 
+of confirming Space Available passengers on any ICE-chartered flight 
+and to facilitate the effective billing of those passengers for the 
+full coach fare of their seats on the flight.
+    (5) An estimate of the total number of responses and the amount of 
+time estimated for an average respondent to respond: The estimated 
+total number of respondents for the information collection is 250 and 
+the estimated hour burden per response is .25 hours.
+    (6) An estimate of the total public burden (in hours) associated 
+with the collection: 63 annual burden hours.
+    (7) An estimate of the total public burden (in cost) associated 
+with the collection: The estimated total annual cost burden associated 
+with this collection of information is $2,391.
+
+    Dated: May 27, 2026.
+Ashley Pearce,
+Deputy Chief Data Officer.
+[FR Doc. 2026-14560 Filed 7-17-26; 8:45 am]
+BILLING CODE 9111-28-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

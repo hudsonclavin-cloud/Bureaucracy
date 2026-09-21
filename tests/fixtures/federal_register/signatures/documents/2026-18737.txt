@@ -1,0 +1,109 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 176 (Monday, September 14, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 176 (Monday, September 14, 2026)]
+[Notices]
+[Page 58250]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-18737]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+DEPARTMENT OF TRANSPORTATION
+
+Maritime Administration
+
+[Docket No. MARAD-2026-1519]
+
+
+Request for Comments on the Renewal of a Previously Approved 
+Information Collection: Information To Determine Seamen's Reemployment 
+Rights--National Emergency
+
+AGENCY: Maritime Administration (MARAD), U.S. Department of 
+Transportation (DOT).
+
+ACTION: Notice.
+
+-----------------------------------------------------------------------
+
+SUMMARY: MARAD invites public comments on its intention to request 
+Office of Management and Budget (OMB) approval to renew an information 
+collection in accordance with the Paperwork Reduction Act of 1995. The 
+proposed collection OMB 2133-0526 (Information to Determine Seamen's 
+Reemployment Rights--National Emergency) is used to determine if U.S. 
+civilian mariners are eligible for reemployment rights under the 
+Maritime Security Act of 1996. MARAD is required to publish this notice 
+in the Federal Register to obtain comments from the public and affected 
+agencies.
+
+DATES: Comments must be submitted on or before November 13, 2026.
+
+ADDRESSES: You may submit comments identified by Docket No. DOT-MARAD-
+2026-1519 through one of the following methods:
+    <bullet> Federal eRulemaking Portal: <a href="http://www.regulations.gov">www.regulations.gov</a>. Search 
+using the above DOT docket number and follow the online instructions 
+for submitting comments.
+    <bullet> Mail or Hand Delivery: Docket Management Facility, U.S. 
+Department of Transportation, 1200 New Jersey Avenue SE, West Building, 
+Room W12-140, Washington, DC 20590, between 9 a.m. and 5 p.m., Monday 
+through Friday, except on Federal holidays.
+    Instructions: All submissions must include the agency name and 
+docket number for this rulemaking.
+
+    Note: All comments received will be posted without change to 
+<a href="http://www.regulations.gov">www.regulations.gov</a> including any personal information provided.
+
+    Comments are invited on: (a) whether the proposed collection of 
+information is reasonable for the Department's performance; (b) the 
+accuracy of the estimated burden; (c) ways for the Department to 
+enhance the quality, utility, and clarity of the information 
+collection; and (d) ways that the burden could be lessened without 
+reducing the quality of the collected information. The agency will 
+summarize or include your comments in the request for OMB's clearance 
+of this information collection.
+
+FOR FURTHER INFORMATION CONTACT: Jennifer E. Pralgo, 202-309-7187, 
+Office of Workforce Development and Education, 1200 New Jersey Avenue 
+SE, MAR-650, Mail Stop 2, Washington, DC 20590, 
+<a href="/cdn-cgi/l/email-protection#ddb7b8b3b3b4bbb8aff3adafbcb1bab29db9b2a9f3bab2ab"><span class="__cf_email__" data-cfemail="e08a858e8e89868592ce9092818c878fa0848f94ce878f96">[email&#160;protected]</span></a>.
+
+SUPPLEMENTARY INFORMATION: 
+    Title: Information to Determine Seamen's Reemployment Rights--
+National Emergency.
+    OMB Control Number: 2133-0526.
+    Type of Request: Extension without change of a currently approved 
+collection.
+    Abstract: This information collection is needed in order to 
+implement provisions of the Maritime Security Act of 1996. These 
+provisions grant reemployment rights and other benefits to certain 
+merchant seamen serving aboard vessels used by the United States during 
+national emergencies. The Maritime Security Act of 1996 establishes the 
+procedures for obtaining the necessary MARAD certification for re-
+employment rights and other benefits.
+    Respondents: U.S. merchant seamen who have completed designated 
+national service during a time of maritime mobilization need and are 
+seeking re-employment with a prior employer.
+    Affected Public: Individuals or households.
+    Estimated Number of Respondents: 10.
+    Estimated Number of Responses: 10.
+    Estimated Hours per Response: 1.
+    Annual Estimated Total Annual Burden Hours: 10.
+    Frequency of Response: Annually.
+
+(Authority: The Paperwork Reduction Act of 1995; 44 U.S.C. Chapter 
+35, as amended; and 49 CFR 1.49.)
+
+    By Order of the Maritime Administrator.
+T. Mitchell Hudson, Jr.,
+Secretary, Maritime Administration.
+[FR Doc. 2026-18737 Filed 9-11-26; 8:45 am]
+BILLING CODE 4910-81-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

@@ -1,0 +1,196 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 161 (Friday, August 21, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 161 (Friday, August 21, 2026)]
+[Notices]
+[Pages 54377-54378]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-17149]
+
+
+
+[[Page 54377]]
+
+-----------------------------------------------------------------------
+
+DEPARTMENT OF THE INTERIOR
+
+Bureau of Ocean Energy Management
+
+[OMB Control Number 1010-NEW; Docket ID: BOEM-2026-0958]
+
+
+Agency Information Collection Activities; Application To Be 
+Recognized as Qualified To Bid On, Hold, or Operate a Lease or Grant on 
+the OCS in Accordance With the Requirements of 30 CFR 556, Subpart D
+
+AGENCY: Bureau of Ocean Energy Management, Interior.
+
+ACTION: Notice of information collection; request for comment.
+
+-----------------------------------------------------------------------
+
+SUMMARY: In accordance with the Paperwork Reduction Act of 1995, the 
+Bureau of Ocean Energy Management (BOEM) is proposing a new information 
+collection request (ICR).
+
+DATES: Comments must be received by BOEM no later than October 20, 
+2026.
+
+ADDRESSES: Send your comments on this ICR by either of the following 
+methods listed below:
+    <bullet> Visit <a href="http://www.regulations.gov">http://www.regulations.gov</a>. In the Search box, enter 
+BOEM-2026-0958 then click search. Follow the instructions to submit 
+public comments and view all related materials.
+    <bullet> Email <a href="/cdn-cgi/l/email-protection#63110604160f02170c111a020505020a111023010c060e4d040c15"><span class="__cf_email__" data-cfemail="780a1d1f0d14190c170a01191e1e19110a0b381a171d15561f170e">[email&#160;protected]</span></a> or mail or hand-carry 
+comments to the Department of the Interior; BOEM Information Collection 
+Clearance Officer, Bureau of Ocean Energy Management, 1849 C Street NW, 
+Washington, DC 20240.
+
+FOR FURTHER INFORMATION CONTACT: Karen Thundiyil by email at 
+<a href="/cdn-cgi/l/email-protection#b7c5d2d0c2dbd6c3d8c5ced6d1d1d6dec5c4f7d5d8d2da99d0d8c1"><span class="__cf_email__" data-cfemail="42302725372e23362d303b232424232b303102202d272f6c252d34">[email&#160;protected]</span></a>, or by telephone at 202-742-0970. 
+Individuals in the United States who are deaf, deafblind, hard of 
+hearing, or have a speech disability may dial 711 (TTY, TDD, or 
+TeleBraille) to access telecommunications relay services. Individuals 
+outside of the United States should use the relay services offered 
+within their country to make international calls to the point of 
+contact in the United States.
+
+SUPPLEMENTARY INFORMATION: In accordance with the Paperwork Reduction 
+Act of 1995, BOEM provides the general public and other Federal 
+agencies with an opportunity to comment on new, proposed, revised, and 
+continuing collections of information. This helps BOEM assess the 
+impact of its information collection requirements and minimize the 
+public's reporting burden. It also helps the public understand BOEM's 
+information collection requirements and provide the requested data in 
+the desired format.
+    BOEM is soliciting comments on the proposed ICR described below. 
+BOEM is especially interested in public comments addressing the 
+following issues: (1) is the collection necessary to the proper 
+functions of BOEM; (2) what can BOEM do to ensure that this information 
+is processed and used in a timely manner; (3) is the burden estimate 
+accurate; (4) how might BOEM enhance the quality, utility, and clarity 
+of the information to be collected; and (5) how might BOEM minimize the 
+burden of this collection on the respondents, including minimizing the 
+burden through the use of information technology?
+    Comments that you submit in response to this notice are a matter of 
+public record. BOEM will include or summarize each comment in its ICR 
+to OMB for approval of this information collection. You should be aware 
+that your entire comment--including your address, phone number, email 
+address, or other personally identifiable information included in your 
+comment--may be made publicly available at any time. Even if BOEM 
+withholds your personally identifiable information in the context of 
+this ICR, your comment is subject to the Freedom of Information Act 
+(FOIA) (5 U.S.C. 552). Your information will only be withheld if a 
+determination is made that one of the FOIA exemptions to disclosure 
+applies. Such a determination will be made in accordance with the 
+Department of the Interior's (DOI) FOIA implementing regulations (43 
+CFR part 2) and applicable law.
+    In order for BOEM to consider withholding from disclosure your 
+personally identifiable information, you must identify, in a cover 
+letter, any information contained in the submittal of your comments 
+that, if released, would constitute a clearly unwarranted invasion of 
+your personal privacy. You must also briefly describe any possible 
+harmful consequences of the disclosure of information, such as 
+embarrassment, injury, or other harm. Note that BOEM will make 
+available for public inspection, in their entirety, all comments 
+submitted by organizations and businesses, or by individuals 
+identifying themselves as representatives of organizations or 
+businesses.
+    BOEM protects proprietary information in accordance with FOIA, 
+DOI's implementing regulations (43 CFR part 2), and 30 CFR 580.70, 
+promulgated pursuant to the Outer Continental Shelf Lands Act (OCS 
+Lands Act) (43 U.S.C. 1352(c)).
+    Title of Collection: ``Application to be Recognized as Qualified to 
+Bid On, Hold, or Operate a Lease or Grant on the OCS in Accordance with 
+the Requirements of 30 CFR 556, Subpart D.''
+    Abstract: This ICR seeks approval for a new form entitled 
+Application to be Recognized as Qualified to Bid On, Own, Hold, or 
+Operate a Lease or Grant on the OCS in Accordance with the Requirements 
+of 30 CFR 556, Subpart D. The form establishes a single, standardized 
+method for applicants to submit the information required to obtain a 
+BOEM qualification number under 30 CFR 556. Its purpose is to 
+streamline both applicant submissions and BOEM's review process.
+    The burden hours associated with collecting this information are 
+already covered under OMB Control Number 1010-0006. However, because 
+that control number is currently associated with a rulemaking under OMB 
+review, BOEM is requesting a separate control number for this form to 
+ensure it receives OMB review and approval.
+    BOEM seeks to streamline its process for collecting information 
+required under 30 CFR 556, Subpart D. Entities wishing to bid on, own, 
+hold, or operate a lease or grant on the OCS must first obtain a 
+qualification number from BOEM by submitting the evidence required 
+under 30 CFR 556.402. Historically, BOEM has not provided a single 
+standardized format for entities seeking qualification to bid on, own, 
+hold, or operate an OCS lease or grant. Applicants were required to 
+prepare and submit multiple certificates and resolutions to demonstrate 
+eligibility under 30 CFR 556. The new form consolidates all required 
+information into one submission, reducing administrative effort for 
+applicants and enabling more efficient processing of qualification 
+requests.
+    The collection of information required by this form does not add 
+any new burden hours. All relevant hours are already included under OMB 
+Control Number 1010-0006, which covers the submission of evidence 
+needed for an applicant to qualify to bid on, own, hold, or operate a 
+lease or grant on the Outer Continental Shelf (OCS).
+    This ICR requests OMB approval for a new BOEM form under a new OMB 
+control number to collect the required information in a single, 
+standardized format, eliminating the need for applicants to prepare, 
+execute, and submit multiple separate certificates and resolutions. 
+This streamlined approach will simplify and expedite the process for 
+applicants seeking to qualify to conduct business on the OCS.
+
+[[Page 54378]]
+
+Additionally, consolidating all required information into one uniform 
+submission will enable more efficient processing of initial 
+qualification applications.
+    In accordance with 30 CFR 556.401 and 556.402, the form collects 
+only the information required by regulation to establish eligibility 
+for an OCS lease or grant and to obtain a qualification number. 
+Applicants must indicate their category--such as U.S. citizens, lawful 
+permanent residents, corporations, associations, States, political 
+subdivisions, or trusts.
+    The form also collects information required by 556.402, which 
+specifies that certain categories, like businesses, must provide extra 
+documentation, including evidence of operating rules and a list of 
+individuals authorized to bind the entity. By collecting all the 
+information and evidence required in 556.401 and 556.402, the form 
+ensures all regulatory requirements are met for each applicant type.
+    The submitted statements and supporting evidence are used to 
+determine eligibility and inform BOEM's qualification decisions.
+    OMB Control Number: 1010-NEW.
+    Form Number: Form BOEM-0153, Application to Qualify.
+    Type of Review: New.
+    Respondents/Affected Public: Potential respondents are OCS 
+applicants for leases and grants on the OCS.
+    Total Estimated Number of Annual Responses: 50 responses.
+    Total Estimated Number of Annual Burden Hours: 50 hours, but the 
+submission of this information is already accounted for and collected 
+under OMB Control Number 1010-0006.
+    Respondent's Obligation: Mandatory.
+    Frequency of Collection: Once.
+    Total Estimated Annual Non-Hour Burden Cost: None.
+    Estimated Reporting and Recordkeeping Hour Burden: BOEM estimates 
+that approximately 50 respondents will submit this form annually, with 
+an estimated burden of 1 hour per response. The total estimated annual 
+burden is 50 hours, which is already accounted for under OMB Control 
+Number 1010-0006. No additional burden hours are associated with this 
+request.
+    An agency may not conduct or sponsor, and a person is not required 
+to respond to, a collection of information unless it displays a 
+currently valid OMB control number.
+    The authority for this action is the Paperwork Reduction Act of 
+1995 (44 U.S.C. 3501 et seq.).
+
+Karen Thundiyil,
+Director, Office of Regulatory Affairs, Bureau of Ocean Energy 
+Management.
+[FR Doc. 2026-17149 Filed 8-20-26; 8:45 am]
+BILLING CODE 4340-98-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

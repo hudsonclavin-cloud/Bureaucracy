@@ -1,0 +1,87 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 60 (Monday, March 30, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 60 (Monday, March 30, 2026)]
+[Notices]
+[Page 15596]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-06039]
+
+
+-----------------------------------------------------------------------
+
+DEPARTMENT OF COMMERCE
+
+Bureau of Economic Analysis
+
+
+Agency Information Collection Activities; Submission to the 
+Office of Management and Budget (OMB) for Review and Approval; Comment 
+Request; Direct Investment Surveys: BE-13, Survey of New Foreign Direct 
+Investment in the United States
+
+    The Department of Commerce will submit the following information 
+collection request to the Office of Management and Budget (OMB) for 
+review and clearance in accordance with the Paperwork Reduction Act of 
+1995, on or after the date of publication of this notice. We invite the 
+general public and other Federal agencies to comment on proposed, and 
+continuing information collections, which helps us assess the impact of 
+our information collection requirements and minimize the public's 
+reporting burden. Public comments were previously requested via the 
+Federal Register on 01/16/2026 during a 60-day comment period. This 
+notice allows for an additional 30 days for public comments.
+    Agency: Bureau of Economic Analysis (BEA), Commerce.
+    Title: Survey of New Foreign Direct Investment in the United 
+States.
+    OMB Control Number: 0608-0035.
+    Form Number: BE-13.
+    Type of Request: Regular submission, reinstatement without change.
+    Number of Respondents: 3,417 annually, of which approximately 402 
+file BE-13A forms, 74 file BE-13B forms, 49 file BE-13D forms, 165 file 
+BE-13E forms, and 2,727 file BE-13 Claim for Exemption forms.
+    Average Hours per Response: 0.6 hours is the average but may vary 
+considerably among respondents because of differences in company 
+structure and complexity.
+    Burden Hours: 2,032.
+    Needs and Uses: The Survey of New Foreign Direct Investment in the 
+United States (BE-13) collects information on the acquisition and 
+establishment of U.S. business enterprises by foreign investors and on 
+expansions by existing U.S. affiliates of foreign companies. The data 
+collected on the survey are used to measure the amount of new foreign 
+direct investment in the United States, assess the impact on the U.S. 
+economy, and ensure complete coverage of BEA's other foreign direct 
+investment statistics. This mandatory BE-13 survey is required from 
+business enterprises subject to the reporting requirements, whether or 
+not they are contacted by BEA. Business enterprises contacted by BEA 
+that do not meet the reporting requirements are required to respond to 
+indicate that they do not meet the requirements.
+    Affected Public: Businesses or other for-profit organizations.
+    Frequency: Forms BE-13A, BE-13B, BE-13D, and BE-13 Claim for 
+Exemption are filed once for a new investment. Form BE-13E is filed 
+annually for up to three years after the year of the establishment or 
+expansion of the U.S. business enterprise.
+    Respondent's Obligation: Mandatory.
+    Legal Authority: International Investment and Trade in Services 
+Survey Act (Pub. L. 94-472, 22 U.S.C. 3101-3108, as amended).
+    This information collection request may be viewed at 
+<a href="http://www.reginfo.gov">www.reginfo.gov</a>. Follow the instructions to view Department of Commerce 
+collections currently under review by OMB.
+    Written comments and recommendations for the proposed information 
+collection should be submitted within 30 days of the publication of 
+this notice on the following website <a href="http://www.reginfo.gov/public/do/PRAMain">www.reginfo.gov/public/do/PRAMain</a>. 
+Find this particular information collection by selecting ``Currently 
+under 30-day Review--Open for Public Comments'' or by using the search 
+function and entering either the title of the collection or the OMB 
+Control Number 0608-0035.
+
+Sheleen Dumas,
+Departmental PRA Compliance Officer, Under Secretary for Economic 
+Affairs, Commerce Department.
+[FR Doc. 2026-06039 Filed 3-27-26; 8:45 am]
+BILLING CODE 3510-06-P
+
+
+</pre></body>
+</html>

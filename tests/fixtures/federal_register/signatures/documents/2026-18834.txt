@@ -1,0 +1,101 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 177 (Tuesday, September 15, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 177 (Tuesday, September 15, 2026)]
+[Notices]
+[Page 58463]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-18834]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+DEPARTMENT OF HOMELAND SECURITY
+
+U.S. Customs and Border Protection
+
+
+Accreditation and Approval of Bennett Testing Service, Inc. 
+(Rahway, NJ), as a Commercial Gauger and Laboratory
+
+AGENCY: U.S. Customs and Border Protection, Department of Homeland 
+Security.
+
+ACTION: Notice of accreditation and approval of Bennett Testing 
+Service, Inc. (Rahway, NJ), as a commercial gauger and laboratory.
+
+-----------------------------------------------------------------------
+
+SUMMARY: Notice is hereby given, pursuant to CBP regulations, that 
+Bennett Testing Service, Inc. (Rahway, NJ), has been approved to gauge 
+petroleum and certain petroleum products and accredited to test 
+petroleum and certain petroleum products for customs purposes for the 
+next three years as of August 28, 2025.
+
+DATES: Bennett Testing Service, Inc. (Rahway, NJ) was approved and 
+accredited as a commercial gauger and laboratory as of August 28, 2025. 
+The next triennial inspection date will be scheduled for August 2028.
+
+FOR FURTHER INFORMATION CONTACT: Robert Harvey, Laboratories and 
+Scientific Services, U.S. Customs and Border Protection, 1331 
+Pennsylvania Avenue NW, Suite 1501A North, Washington, DC 20004, tel. 
+202-344-1060.
+
+SUPPLEMENTARY INFORMATION: Notice is hereby given pursuant to 19 CFR 
+151.12 and 19 CFR 151.13, that Bennett Testing Service, Inc., 1045 E 
+Hazelwood Ave., Rahway, NJ 07065, has been approved to gauge petroleum 
+and certain petroleum products and accredited to test petroleum and 
+certain petroleum products for customs purposes, in accordance with the 
+provisions of 19 CFR 151.12 and 19 CFR 151.13.
+    Bennett Testing Service, Inc. (Rahway, NJ), is approved for the 
+following gauging procedures for petroleum and certain petroleum 
+products from the American Petroleum Institute (API):
+
+------------------------------------------------------------------------
+            API chapters                             Title
+------------------------------------------------------------------------
+3...................................  Tank Gauging.
+7...................................  Temperature Determination.
+8...................................  Sampling.
+12..................................  Calculation of Petroleum
+                                       Quantities.
+17..................................  Marine Measurement.
+------------------------------------------------------------------------
+
+    Bennett Testing Service, Inc. (Rahway, NJ), is accredited for the 
+following laboratory analysis procedures and methods for petroleum and 
+certain petroleum products set forth by the U.S. Customs and Border 
+Protection Laboratory Methods (CBPL) and American Society for Testing 
+and Materials (ASTM):
+
+------------------------------------------------------------------------
+        CBPL No.              ASTM                    Title
+------------------------------------------------------------------------
+27-48..................  D4052          Standard Test Method for
+                                         Density, Relative Density, and
+                                         API Gravity of Liquids by
+                                         Digital Density Meter.
+------------------------------------------------------------------------
+
+    Anyone wishing to employ this entity to conduct laboratory analyses 
+and gauger services should request and receive written assurances from 
+the entity that it is accredited or approved by the U.S. Customs and 
+Border Protection to conduct the specific test or gauger service 
+requested. Alternatively, inquiries regarding the specific test or 
+gauger service this entity is accredited or approved to perform may be 
+directed to the U.S. Customs and Border Protection by calling (202) 
+344-1060. The inquiry may also be sent to <a href="/cdn-cgi/l/email-protection#3b78796b7c5a4e5c5e4948775a59487b58594b155f5348155c544d"><span class="__cf_email__" data-cfemail="aeedecfee9cfdbc9cbdcdde2cfccddeecdccde80cac6dd80c9c1d8">[email&#160;protected]</span></a>. 
+Please reference the website listed below for a complete listing of CBP 
+approved gaugers and accredited laboratories. <a href="http://www.cbp.gov/about/labs-scientific/commercial-gaugers-and-laboratories">http://www.cbp.gov/about/labs-scientific/commercial-gaugers-and-laboratories</a>
+
+Patricia A. Coleman,
+Acting Assistant Commissioner, Laboratories and Scientific Services.
+[FR Doc. 2026-18834 Filed 9-14-26; 8:45 am]
+BILLING CODE 9111-14-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

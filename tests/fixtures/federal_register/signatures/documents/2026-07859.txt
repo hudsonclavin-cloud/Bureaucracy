@@ -1,0 +1,153 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 78 (Thursday, April 23, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 78 (Thursday, April 23, 2026)]
+[Notices]
+[Pages 21856-21857]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-07859]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+EXECUTIVE OFFICE OF THE PRESIDENT
+
+Office of National Drug Control Policy
+
+
+Paperwork Reduction Act; Proposed Collection; Comment Request
+
+AGENCY: Office of National Drug Control Policy.
+
+ACTION: 60-Day notice and request for comments. Revisions of currently 
+approved collection: Drug-Free Communities (DFC) Support Program and 
+Community-Based Coalition Enhancement Grants to Address Local Drug 
+Crisis (CARA) Local Drug Crisis Program National Evaluation.
+
+-----------------------------------------------------------------------
+
+SUMMARY: In accordance with the Paperwork Reduction Act of 1995, the 
+Office of National Drug Control Policy (ONDCP) announces it will submit 
+to the Office of Management and Budget (OMB) Office of Information and 
+Regulatory Affairs (OIRA) an information collection request.
+
+DATES: ONDCP encourages and will accept public comments on or before 60 
+days after the date of this publication.
+
+ADDRESSES: Address all comments in writing within 60 days to the Office 
+of Grants and Programs. Email is the most reliable means of 
+communication. The DFC Program inbox is <a href="/cdn-cgi/l/email-protection#1c515e44325352585f4c32585a5f5c7372787f6c3279736c327b736a"><span class="__cf_email__" data-cfemail="98d5dac0b6d7d6dcdbc8b6dcdedbd8f7f6fcfbe8b6fdf7e8b6fff7ee">[email&#160;protected]</span></a>. 
+Mailing address is: Executive Office of the President, Office of 
+National Drug Control Policy, Office of Grants and Programs, Drug-Free 
+Communities (DFC) Support Program, 1800 G Street NW, Suite 9110, 
+Washington, DC 20006.
+
+SUPPLEMENTARY INFORMATION: 
+    Abstract: ONDCP administers the Drug-Free Communities (DFC) Support 
+Program and Community-Based Coalition Enhancement Grants to Address 
+Local Drug Crisis (CARA) Local Drug Crisis Programs. The DFC Program 
+has two primary goals: To reduce youth substance abuse, and to support 
+community anti-drug coalitions by establishing, strengthening, and 
+fostering collaboration among public and private agencies. The CARA 
+Local Drug Crisis grant program funds current or former DFC grant award 
+recipients to focus on preventing and reducing the misuse of opioids, 
+prescription medication, and the use of methamphetamines among youth 
+ages 12-18 in communities throughout the United States.
+    Under reauthorization legislation (21 U.S.C. 1521), Congress 
+mandated an evaluation of the DFC program to determine its 
+effectiveness in meeting objectives. Under the CARA Local Drug Crisis 
+program statute, CARA Local
+
+[[Page 21857]]
+
+Drug Crisis data collection is authorized and required by Public Law 
+114-198 Sec 103, ``a grant under this section shall be subject to the 
+same evaluation requirements and procedures as the evaluation 
+requirements and procedures imposed on the recipients of a grant under 
+the Drug-Free Communities Act of 1997, and may also include an 
+evaluation of the effectiveness at reducing abuse of opioids or 
+methamphetamines''. ONDCP awarded a contract for a DFC grant oversight 
+system at the end of 2014, following a competitive request for 
+proposals process. The DFC Management and Evaluation (DFC Me) system 
+was launched in 2016. An additional award was made in 2019, with the 
+requirement to include CARA Local Drug Crisis recipients in the system 
+and DFC & CARA Me continues to be used and updated (<a href="https://dfcme.ondcp.eop.gov">https://dfcme.ondcp.eop.gov</a>) regularly to support grant recipients.
+    The development and implementation of the DFC & CARA Me system 
+provided an improved platform for DFC & CARA recipients to meet data 
+reporting requirements of the grant, introduced a DFC Learning Center 
+where resources and success stories can be shared, and strengthened 
+ONDCP's continued oversight of the programs. The data collected through 
+this system is more user friendly and validates data during entry, 
+therefore reducing the burden on grant award recipients.
+    ONDCP's Drug-Free Communities office will continue to utilize the 
+case study protocols previously approved by OMB to document coalition 
+practices, successes and challenges. Approximately nine DFC grant award 
+recipients are selected each year to highlight in the case studies. The 
+information from the case studies will be used to illustrate not only 
+what works to reduce drug use in a community setting, but also how and 
+why it works.
+    The CARA Local Drug Crisis program evaluation makes use of a 
+shortened version of the DFC progress report to support evaluation, 
+monitoring and tracking of progress annually for grant award recipients 
+and will provide information to ONDCP and the Administration's effort 
+to address the opioid crisis.
+    Title of Information Collection: Web based data collection, surveys 
+and interviews of DFC and CARA Local Drug Crisis grant award 
+recipients.
+    Title: Drug-Free Communities (DFC) Support Program and CARA Local 
+Drug Crisis Program National Cross Site Evaluation.
+    Frequency: DFC and CARA Local Drug Crisis Program Directors submit 
+annual progress reports via the DFC & CARA Me System. DFC Program 
+Directors also submit annual Coalition Asset Survey (CAS) data in DFC & 
+CARA Me. Core measures are collected and submitted every two years in 
+progress reports for both grant programs.
+    Case study interviews and electronic surveys of Program Directors 
+and electronic surveys of selected coalition members will be 
+accomplished once a year.
+    Affected Public: DFC current grant award recipients and CARA Local 
+Drug Crisis grant award recipients (includes both current and former 
+DFC grant award recipients).
+    Estimated Burden: ONDCP expects that the time required to complete 
+each DFC annual report via DFC & CARA Me will be approximately 24 
+hours, and each CAS report will take approximately one hour to 
+complete. Face to face interviews will take 1-2 hours. The estimated 
+total amount of time required by all DFC respondents over one year, 
+including Program Directors and recipients to complete DFC & CARA Me, 
+CAS, surveys, and interviews, is 19,642 hours. ONDCP expects that the 
+time required to complete each CARA Local Drug Crisis annual report via 
+DFC & CARA Me will be approximately 10 hours, with an estimated total 
+time for all respondents to complete of 640 hours. The combined hour 
+burden is 19,642 hours.
+    Goals: ONDCP intends to use the data of the DFC & CARA National 
+Evaluations to assess each Program's effectiveness in preventing and 
+reducing youth substance use. Two primary objectives of the evaluation 
+are to: (1) Regularly monitor, measure and analyze data in order to 
+report on the progress of each program and its recipients on program 
+goals, and (2) providing technical assistance support to grant award 
+recipients in effectively collecting and submitting data and in 
+understanding the role of data in driving local coalition efforts. In 
+addition, ONDCP intends to use the data from the CARA Local Drug Crisis 
+grant award recipients to inform ONDCP and the Administration's efforts 
+to address the opioid crisis.
+    Comment Request: ONDCP especially invites comments on: Whether the 
+proposed data are proper for the functions of the agency; whether the 
+information will have practical utility; the accuracy of ONDCP's 
+estimate of the burden of the proposed collection of information, 
+including the validity of the methodology and assumptions; ways to 
+enhance the quality, utility, and clarity of the information to be 
+collected; and, ways to ease the burden on proposed respondents, 
+including the use of automated collection techniques or other forms of 
+information technology. Comments will be accepted for sixty days.
+
+    Dated: April 20, 2026.
+Dario Camacho,
+General Counsel.
+[FR Doc. 2026-07859 Filed 4-22-26; 8:45 am]
+BILLING CODE 3280-F5-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

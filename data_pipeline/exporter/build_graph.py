@@ -251,6 +251,10 @@ MINIMAL_GRAPH_FIELDS = (
     # with the leadership table's own "updated" footer, which the panel
     # prints because some tables are years older than the edition
     "govmanListing", "govmanEntry",
+    # The title an official stated for themselves when signing one published
+    # Federal Register document, with that document and its date: evidence
+    # the post existed and was filled then, and never a claim about now
+    "federalRegisterSignature",
     # USAspending File A gross outlays, beside the cost and never in it
     "usaspendingOutlays",
     # Treasury's audited Statement of Net Cost, likewise beside and never in
@@ -2475,6 +2479,7 @@ def build_graph(
     usaspending_evidence_path: str | Path | None = "default",
     net_cost_evidence_path: str | Path | None = "default",
     govman_evidence_path: str | Path | None = "default",
+    fr_signature_evidence_path: str | Path | None = "default",
     omb_budget_evidence_path: str | Path | None = "default",
 ) -> BuildResult:
     payload_list = list(iter_payload_items(payloads))
@@ -2800,6 +2805,23 @@ def build_graph(
     # it; the one route to evidence for units on the 67 walled hosts.
     validation["govman_org_evidence"] = apply_govman_org_evidence(
         graph, load_govman_org_evidence(resolved_govman_path) if resolved_govman_path else {}, index_tree=index_tree,
+    )
+    # The signature blocks of published Federal Register documents: the title
+    # an official stated for themselves on the day they signed. Beside a page
+    # or Manual claim, never over it, and never a placement -- one document is
+    # one observation.
+    from data_pipeline.verification.federal_register_signatures import (  # noqa: E402 — same late-import shape as govman
+        DEFAULT_EVIDENCE_PATH as DEFAULT_FR_SIGNATURE_EVIDENCE_PATH,
+        apply_signature_evidence,
+        load_signature_evidence,
+    )
+
+    resolved_fr_signature_path = (
+        DEFAULT_FR_SIGNATURE_EVIDENCE_PATH if fr_signature_evidence_path == "default" else fr_signature_evidence_path
+    )
+    validation["fr_signature_evidence"] = apply_signature_evidence(
+        graph, load_signature_evidence(resolved_fr_signature_path) if resolved_fr_signature_path else {},
+        index_tree=index_tree,
     )
     # OMB's Public Budget Database, beside the cost and never in it. Applied
     # after the evidence sweep has withdrawn the field, so a package whose

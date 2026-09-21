@@ -1,0 +1,297 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 165 (Thursday, August 27, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 165 (Thursday, August 27, 2026)]
+[Rules and Regulations]
+[Pages 55272-55274]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-17490]
+
+
+-----------------------------------------------------------------------
+
+ENVIRONMENTAL PROTECTION AGENCY
+
+40 CFR Part 52
+
+[EPA-R04-OAR-2024-0484; FRL-13036-02-R4]
+
+
+Air Plan Approval; FL; Emissions Reporting Requirements and 
+Permitting Forms
+
+AGENCY: Environmental Protection Agency (EPA).
+
+ACTION: Final rule.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The U.S. Environmental Protection Agency (EPA) is approving a 
+State Implementation Plan (SIP) revision submitted by the Florida 
+Department of Environmental Protection (FDEP) on August 15, 2023. The 
+revision updates reporting requirements; adds, updates, and renames 
+forms for several permit applications; renumbers and updates the 
+effective dates of various forms to align with programmatic changes; 
+and improves the process for submitting forms across several rules 
+within the Florida SIP. Additionally, the revision removes a rule 
+concerning administrative permit corrections from the SIP. The EPA is 
+approving these changes pursuant to the Clean Air Act (CAA or Act).
+
+DATES: This rule is effective September 28, 2026.
+
+ADDRESSES: The EPA has established a docket for this action under 
+Docket Identification No. EPA-R04-OAR-2024-0484. All documents in the 
+docket are listed on the <a href="http://regulations.gov">regulations.gov</a> website. Although listed in 
+the index, some information may not be publicly available, i.e., 
+Confidential Business Information or other information whose disclosure 
+is restricted by statute. Certain other material, such as copyrighted 
+material, is not placed on the internet and will be publicly available 
+only in hard copy form. Publicly available docket materials are 
+available either electronically through <a href="http://www.regulations.gov">www.regulations.gov</a> or in hard 
+copy at the Air Regulatory Management Section, Air Planning and 
+Implementation Branch, Air and Radiation Division, U.S. Environmental 
+Protection Agency, Region 4, 61 Forsyth Street SW, Atlanta, Georgia 
+30303-8960. The EPA requests you contact the person listed in the FOR 
+FURTHER INFORMATION CONTACT section to schedule your inspection. The 
+Regional Office's official hours of business are Monday through Friday 
+8:30 a.m. to 4:30 p.m., excluding Federal holidays.
+
+FOR FURTHER INFORMATION CONTACT: Josue Ortiz Borrero, Air Regulatory 
+Management Section, Air Planning and Implementation Branch, Air and 
+Radiation Division, U.S. Environmental Protection Agency, Region 4, 61 
+Forsyth Street SW, Atlanta, Georgia 30303-8960. The telephone number is 
+(404) 562-8085. Mr. Ortiz Borrero can also be reached via electronic 
+mail at <a href="/cdn-cgi/l/email-protection#5d322f2934273f322f2f382f327337322e28381d382d3c733a322b"><span class="__cf_email__" data-cfemail="fd928f8994879f928f8f988f92d397928e8898bd988d9cd39a928b">[email&#160;protected]</span></a>.
+
+SUPPLEMENTARY INFORMATION: Throughout this final rule, the use of 
+``we,'' ``us,'' or ``our'' is intended to refer to the EPA. We use 
+multiple abbreviations and terms in this final rule. While this list 
+may not be exhaustive, for ease of reading and for reference purposes, 
+the EPA defines the following terms and acronyms here:
+
+CAA Clean Air Act
+CFR Code of Federal Regulations
+EPA Environmental Protection Agency
+F.A.C. Florida Administrative Code
+FDEP Florida Department of Environmental Protection
+FR Federal Register
+NPRM Notice of Proposed Rulemaking
+SIP State Implementation Plan
+U.S.C. United States Code
+
+Table of Contents
+
+I. Background
+II. Incorporation by Reference
+III. Final Action
+IV. Statutory and Executive Order Reviews
+
+I. Background
+
+    The EPA is approving changes to the Florida SIP submitted by the 
+State on August 15, 2023, regarding Chapter 62-210, Florida 
+Administrative Code (F.A.C.), Stationary Sources--General Requirements. 
+Specifically, Florida requested that the EPA approve the removal of 
+Rule 62-210.360, F.A.C., Administrative Permit Corrections, in its 
+entirety and approve changes to Rule 62-210.370, F.A.C., Emissions 
+Computation and Reporting, and Rule 62-210.900, F.A.C., Forms and 
+Instructions.\1\ Through a notice of proposed rulemaking (NPRM) 
+published on May 21, 2026 (91 FR 29924), the EPA proposed to approve 
+these changes to Florida's SIP. The details of Florida's submission, as 
+well as the EPA's rationale for approving the changes, are described in 
+more detail in the May 21, 2026, NPRM. Comments on the May 21, 2026, 
+NPRM were due on or before June 22, 2026. No comments were received on 
+the May 21, 2026, NPRM, adverse or otherwise.
+---------------------------------------------------------------------------
+
+    \1\ The August 15, 2023, submittal contains revisions to other 
+Florida SIP-approved rules that are not addressed in this document. 
+EPA will act on those rulechanges in separate rulemakings.
+---------------------------------------------------------------------------
+
+II. Incorporation by Reference
+
+    In this document, the EPA is finalizing regulatory text that 
+includes incorporation by reference. In accordance with requirements of 
+1 CFR 51.5, and as discussed in Section I of this preamble, the EPA is 
+finalizing the incorporation by reference of Florida Rule 62-210.370, 
+Emissions Computation and Reporting, state
+
+[[Page 55273]]
+
+effective August 25, 2014, and Rule 62-210.900, Forms and Instructions, 
+with the exception of numbered paragraphs 1 through 4 and 7, state 
+effective July 3, 2018, which add, update, and rename forms; renumber 
+and update the effective dates of various forms to reflect programmatic 
+changes; update the process for submitting forms in several of 
+Florida's rules; and make other minor revisions.\2\ Also in this 
+document, the EPA is finalizing the removal of Rule 62-210.360, 
+Administrative Permit Corrections, state effective November 23, 1994, 
+from the Florida SIP, which is incorporated by reference in accordance 
+with the requirements of 1 CFR part 51. The EPA has made and will 
+continue to make the State Implementation Plan generally available at 
+the EPA Region 4 Office (please contact the person identified in the 
+For Further Information Contact section of this preamble for more 
+information). Therefore, the revised materials as stated above, have 
+been approved by the EPA for inclusion in the State implementation 
+plan, have been incorporated by reference by the EPA into that plan, 
+are fully federally enforceable under CAA sections 110 and 113 as of 
+the effective date of the final rulemaking of the EPA's approval, and 
+will be incorporated by reference in the next update to the SIP 
+compilation.\3\
+---------------------------------------------------------------------------
+
+    \2\ As finalized, the SIP-approved version of Rule 62-210.900 
+will only contain numbered paragraphs 5 and 6 and the preceding 
+unnumbered paragraph, state effective July 3, 2018.
+    \3\ See 62 FR 27968 (May 22, 1997).
+---------------------------------------------------------------------------
+
+III. Final Action
+
+    The EPA is approving the August 15, 2023, SIP revision submitted by 
+Florida consisting of changes to Rule 62-210.370, Emissions Computation 
+and Reporting, state effective August 25, 2014, and Rule 62-210.900, 
+Forms and Instructions, state effective July 3, 2018. The EPA is also 
+approving the removal of Rule 62-210.360, Administrative Permit 
+Corrections from the Florida SIP. The EPA is approving these changes 
+pursuant to the CAA.
+
+IV. Statutory and Executive Order Reviews
+
+    Under the CAA, the Administrator is required to approve a SIP 
+submission that complies with the provisions of the CAA and applicable 
+Federal regulations.\4\ Thus, in reviewing SIP submissions, the EPA's 
+role is to approve state choices, provided they meet the criteria of 
+the CAA. Accordingly, this action merely approves state law as meeting 
+Federal requirements and does not impose additional requirements beyond 
+those imposed by state law. For that reason, this action:
+---------------------------------------------------------------------------
+
+    \4\ See 42 U.S.C. 7410(k); 40 CFR 52.02(a).
+---------------------------------------------------------------------------
+
+    <bullet> Is not a significant regulatory action subject to review 
+by the Office of Management and Budget under Executive Order 12866 (58 
+FR 51735, October 4, 1993);
+    <bullet> Is not an Executive Order 14192 (90 FR 9065, February 6, 
+2025) regulatory action because this action is not significant under 
+Executive Order 12866;
+    <bullet> Does not impose an information collection burden under the 
+provisions of the Paperwork Reduction Act (44 U.S.C. 3501 et seq.);
+    <bullet> Is certified as not having a significant economic impact 
+on a substantial number of small entities under the Regulatory 
+Flexibility Act (5 U.S.C. 601 et seq.);
+    <bullet> Does not contain any unfunded mandate or significantly or 
+uniquely affect small governments, as described in the Unfunded 
+Mandates Reform Act of 1995 (Pub. L. 104-4);
+    <bullet> Does not have federalism implications as specified in 
+Executive Order 13132 (64 FR 43255, August 10, 1999);
+    <bullet> Is not subject to Executive Order 13045 (62 FR 19885, 
+April 23, 1997) because it approves a state program;
+    <bullet> Is not a significant regulatory action subject to 
+Executive Order 13211 (66 FR 28355, May 22, 2001); and
+    <bullet> Is not subject to requirements of section 12(d) of the 
+National Technology Transfer and Advancement Act of 1995 (15 U.S.C. 272 
+note) because application of those requirements would be inconsistent 
+with the CAA.
+    In addition, the SIP is not approved to apply on any Indian 
+reservation land or in any other area where the EPA or an Indian Tribe 
+has demonstrated that a Tribe has jurisdiction. In those areas of 
+Indian country, the rule does not have Tribal implications and will not 
+impose substantial direct costs on Tribal governments or preempt Tribal 
+law as specified by Executive Order 13175 (65 FR 67249, November 9, 
+2000).
+    This action is subject to the Congressional Review Act, and the EPA 
+will submit a rule report to each House of the Congress and to the 
+Comptroller General of the United States. This action is not a ``major 
+rule'' as defined by 5 U.S.C. 804(2).
+    Under section 307(b)(1) of the CAA, petitions for judicial review 
+of this action must be filed in the United States Court of Appeals for 
+the appropriate circuit by October 26, 2026. Filing a petition for 
+reconsideration by the Administrator of this final rule does not affect 
+the finality of this action for the purposes of judicial review nor 
+does it extend the time within which a petition for judicial review may 
+be filed and shall not postpone the effectiveness of such rule or 
+action. This action may not be challenged later in proceedings to 
+enforce its requirements.\5\
+---------------------------------------------------------------------------
+
+    \5\ See CAA section 307(b)(2).
+---------------------------------------------------------------------------
+
+List of Subjects in 40 CFR Part 52
+
+    Environmental protection, Air pollution control, Incorporation by 
+reference, Intergovernmental relations, Nitrogen dioxide, Ozone, 
+Particulate matter, Reporting and recordkeeping requirements, Sulfur 
+oxides.
+
+    Dated: August 20, 2026.
+Kristy Eubanks,
+Deputy Regional Administrator performing the functions and duties of 
+the Regional Administrator, Region 4.
+
+    For the reasons stated in the preamble, the EPA amends 40 CFR part 
+52 as follows:
+
+PART 52--APPROVAL AND PROMULGATION OF IMPLEMENTATION PLANS
+
+0
+1. The authority citation for part 52 continues to read as follows:
+
+    Authority:  42 U.S.C. 7401 et seq.
+
+Subpart K--Florida
+
+0
+2. In Sec.  52.520, amend the table in paragraph (c) by removing the 
+entry for ``62-210.360'' and revising the entries for ``62-210.370'' 
+and ``62-210.900'' to read as follows:
+
+
+Sec.  52.520   Identification of plan.
+
+* * * * *
+    (c) * * *
+
+[[Page 55274]]
+
+
+
+                                    EPA-Approved Florida Laws and Regulations
+----------------------------------------------------------------------------------------------------------------
+                                                        State
+  State citation  (section)       Title/subject       effective      EPA  approval date          Explanation
+                                                         date
+----------------------------------------------------------------------------------------------------------------
+ 
+                                                  * * * * * * *
+----------------------------------------------------------------------------------------------------------------
+                             Chapter 62-210 Stationary Sources--General Requirements
+----------------------------------------------------------------------------------------------------------------
+ 
+                                                  * * * * * * *
+62-210.370..................  Emissions Computation    8/25/2014  8/27/2026, 91 FR [Insert  ....................
+                               and Reporting.                      Federal Register page
+                                                                   where the document
+                                                                   begins].
+ 
+                                                  * * * * * * *
+62-210.900..................  Forms and                 7/3/2018  8/27/2026, 91 FR [Insert  Except numbered
+                               Instructions.                       Federal Register page     paragraphs 1
+                                                                   where the document        through 4 and 7.
+                                                                   begins].
+ 
+                                                  * * * * * * *
+----------------------------------------------------------------------------------------------------------------
+
+* * * * *
+[FR Doc. 2026-17490 Filed 8-26-26; 8:45 am]
+BILLING CODE 6560-50-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

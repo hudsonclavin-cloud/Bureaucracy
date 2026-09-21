@@ -1,0 +1,1093 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 178 (Wednesday, September 16, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 178 (Wednesday, September 16, 2026)]
+[Notices]
+[Pages 58729-58736]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-18932]
+
+
+-----------------------------------------------------------------------
+
+SECURITIES AND EXCHANGE COMMISSION
+
+[Release No. 34-106336; File No. SR-NASDAQ-2026-076]
+
+
+Self-Regulatory Organizations; The Nasdaq Stock Market LLC; 
+Notice of Filing and Immediate Effectiveness of Proposed Rule Change To 
+Set Fees for Nasdaq TotalView Plus and Nasdaq Basic Plus
+
+September 11, 2026.
+    Pursuant to Section 19(b)(1) of the Securities Exchange Act of 1934 
+(``Act''),\1\ and Rule 19b-4 thereunder,\2\ notice is hereby given that 
+on September 8, 2026, The Nasdaq Stock Market LLC (``Nasdaq'' or 
+``Exchange'') filed with the Securities and Exchange Commission 
+(``SEC'' or ``Commission'') the proposed rule change as described in 
+Items I, II, and III below, which Items have been prepared by the 
+Exchange. The Commission is publishing this notice to solicit comments 
+on the proposed rule change from interested persons.
+---------------------------------------------------------------------------
+
+    \1\ 15 U.S.C. 78s(b)(1).
+    \2\ 17 CFR 240.19b-4.
+---------------------------------------------------------------------------
+
+I. Self-Regulatory Organization's Statement of the Terms of Substance 
+of the Proposed Rule Change
+
+    The Exchange proposes to set fees for Nasdaq TotalView Plus and 
+Nasdaq Basic Plus at or below fees currently charged for the combined 
+underlying Depth-of-Book and Top-of-Book products offered by the Nasdaq 
+U.S. Equity Markets.
+    The text of the proposed rule change is available on the Exchange's 
+website at <a href="https://listingcenter.nasdaq.com/rulebook/nasdaq/rulefilings">https://listingcenter.nasdaq.com/rulebook/nasdaq/rulefilings</a>, and at the principal office of the Exchange.
+
+II. Self-Regulatory Organization's Statement of the Purpose of, and 
+Statutory Basis for, the Proposed Rule Change
+
+    In its filing with the Commission, the Exchange included statements 
+concerning the purpose of and basis for the proposed rule change and 
+discussed any comments it received on the proposed rule change. The 
+text of these statements may be examined at the places specified in 
+Item IV below. The Exchange has prepared summaries, set forth in 
+sections A, B, and C below, of the most significant aspects of such 
+statements.
+
+[[Page 58730]]
+
+A. Self-Regulatory Organization's Statement of the Purpose of, and 
+Statutory Basis for, the Proposed Rule Change
+
+1. Purpose
+    The purpose of the proposed rule change is to set fees for Nasdaq 
+TotalView Plus and Nasdaq Basic Plus \3\ at or below the fees currently 
+charged for the combined underlying Depth-of-Book and Top-of-Book 
+products offered by the Nasdaq U.S. Equity Markets.\4\
+---------------------------------------------------------------------------
+
+    \3\ See Securities Exchange Act Release No. 105997 (July 28, 
+2026), 81 FR 48466 (July 31, 2026) (SR-Nasdaq-2026-061) (a proposal 
+to introduce Nasdaq TotalView Plus and Nasdaq Basic Plus, two new 
+data feeds which will offer consolidated Top-of-Book and Depth-of-
+Book information currently disseminated by Nasdaq, Nasdaq Texas, and 
+Nasdaq PSX).
+    \4\ The Nasdaq Stock Market LLC (``Nasdaq''), Nasdaq Texas, LLC 
+(``Nasdaq Texas''), and Nasdaq PHLX LLC equities (``Nasdaq PSX'').
+---------------------------------------------------------------------------
+
+    The proposed fees will provide customers with the option of 
+lowering market data, networking, and connectivity costs by replacing 
+three separate feeds with one, and setting fees for these two new 
+consolidated data products \5\ at a level that is at or below current 
+market data fees for the combined underlying products.\6\
+---------------------------------------------------------------------------
+
+    \5\ See Supra, n.4.
+    \6\ As discussed in further detail below, the proposed fees are 
+also structured to provide market data vendors an incentive to offer 
+their own consolidated market data feeds in competition with Nasdaq 
+TotalView Plus and Nasdaq Basic Plus to widespread dissemination of 
+consolidated data to investors.
+---------------------------------------------------------------------------
+
+    The Exchange believes that this proposal will facilitate the 
+transition to overnight trading in December 2026. As discussed in the 
+product filing for Nasdaq TotalView Plus and Nasdaq Basic Plus,\7\ 
+liquidity may be limited for certain stocks in the overnight session. 
+The two new consolidated data products will address this issue by 
+providing investors with a broader view of the market than any of the 
+individual underlying individual exchange feeds, thereby improving the 
+ability of investors to analyze trading in a lower liquidity 
+environment.
+---------------------------------------------------------------------------
+
+    \7\ See Supra, n.4.
+---------------------------------------------------------------------------
+
+Nasdaq TotalView Plus
+    Nasdaq TotalView Plus includes, with respect to stocks listed on 
+Nasdaq or on any exchange other than Nasdaq, all orders and quotes from 
+all members of any of the Nasdaq U.S. Equity Markets and displayed on a 
+Nasdaq U.S. Equity Market, including all information currently 
+disseminated through Nasdaq TotalView,\8\ Nasdaq Texas TotalView,\9\ 
+and PSX TotalView,\10\ and the aggregate size of such orders and quotes 
+at each price level in the execution functionality of the Nasdaq U.S. 
+equity markets.
+---------------------------------------------------------------------------
+
+    \8\ See Nasdaq Stock Market Rules, Equity 7, Section 123.
+    \9\ Nasdaq Texas TotalView disseminates all individual Nasdaq 
+Texas Equities System participant orders and quotes displayed in the 
+system, the aggregate size of such orders and quotes at each price 
+level, and the trade data for executions that occur within the 
+Nasdaq Texas Equities System. See Nasdaq Texas LLC Rules, Equity 7, 
+Section 123.
+    \10\ PSX TotalView disseminates all individual Nasdaq PSX 
+participant orders displayed in Nasdaq PSX, the aggregate size of 
+such orders at each price level, and the trade data for executions 
+that occur within Nasdaq PSX. See Nasdaq PHLX LLC Rules, Equity 7, 
+Section 3, PSX TotalView.
+---------------------------------------------------------------------------
+
+Nasdaq Basic Plus
+    Nasdaq Basic Plus offers the best bid and offer and last sale 
+information for stocks listed on any of the Nasdaq U.S. Equity Markets 
+or any exchange other than Nasdaq and displayed on any of the Nasdaq 
+U.S. Equity Markets or the FINRA/Nasdaq TRF, including all information 
+currently disseminated through Nasdaq Basic,\11\ Nasdaq Texas BBO 
+feeds,\12\ Nasdaq Texas Last Sale,\13\ PSX BBO Feeds,\14\ and PSX Last 
+Sale.\15\
+---------------------------------------------------------------------------
+
+    \11\ Including ``Nasdaq Basic for Nasdaq,'' ``Nasdaq Basic for 
+NYSE,'' and ``Nasdaq Basic for NYSE American.''
+    \12\ The Nasdaq Texas BBO Feeds consist of real-time market 
+information from the Nasdaq Texas Market Center. See Nasdaq Texas, 
+LLC, Equity 7, Section 147. ``Nasdaq Texas BBO for Nasdaq'' contains 
+the Nasdaq Texas's best bid and offer for Nasdaq-listed securities. 
+``Nasdaq Texas BBO for NYSE'' contains Nasdaq Texas's best bid and 
+offer for NYSE-listed securities. ``Nasdaq Texas BBO for Amex'' 
+contains Nasdaq Texas's best bid and offer for Amex-listed 
+securities.
+    \13\ Nasdaq Texas Last Sale is a proprietary data feed 
+containing real-time last sale information for trades executed on 
+Nasdaq Texas. See Nasdaq Texas, LLC, Equity 7, Section 139(a). 
+``Nasdaq Texas Last Sale for Nasdaq'' contains all transaction 
+reports for Nasdaq-listed securities. ``Nasdaq Texas Last Sale for 
+NYSE/Amex'' contains all such transaction reports for NYSE- and 
+Amex-listed securities. ``Nasdaq Texas Last Sale for NYSE/Amex'' 
+also includes transaction reports from other Tape B listing venues, 
+as set forth under Nasdaq Stock Market Rules, Equity 7, Section 
+139(a) (`` `Nasdaq Last Sale for NYSE/NYSE American' contains all 
+such transaction reports for NYSE-listed stocks and stocks listed on 
+NYSE American and other Tape B listing venues.'').
+    \14\ PSX BBO Feeds consist of real-time market information from 
+PSX. See Nasdaq PHLX LLC, Equity 7, Section 3 (PSX BBO Feeds). ``PSX 
+BBO for Nasdaq'' contains PSX's best bid and offer for Nasdaq-listed 
+securities. ``PSX BBO for NYSE'' contains PSX's best bid and offer 
+for NYSE-listed securities. ``PSX BBO for NYSE Amex'' contains PSX's 
+best bid and offer for NYSE Amex-listed securities.
+    \15\ PSX Last Sale is a proprietary data feed containing real-
+time last sale information for trades executed on Nasdaq PSX. See 
+Nasdaq PHLX LLC, Equity 7, Section 3 (PSX Last Sale and Nasdaq Last 
+Sale Plus Data Feeds). ``PSX Last Sale for Nasdaq'' contains all 
+transaction reports for Nasdaq-listed securities on Nasdaq PSX. 
+``PSX Last Sale for NYSE/NYSEAmex'' contains all such transaction 
+reports on Nasdaq PSX for securities listed on NYSE, NYSE Amex, and 
+other exchanges. The phrase ``other exchanges'' refers to other Tape 
+B listing venues, as set forth under Nasdaq Stock Market Rules, 
+Equity 7, Section 139(a) (`` `Nasdaq Last Sale for NYSE/NYSE 
+American' contains all such transaction reports for NYSE-listed 
+stocks and stocks listed on NYSE American and other Tape B listing 
+venues.'').
+---------------------------------------------------------------------------
+
+Proposed Fees
+    As set forth in detail below, Nasdaq proposes to set fees for 
+Nasdaq TotalView Plus and Nasdaq Basic Plus at or below fees currently 
+charged for the Depth-of-Book and Top-of-Book products offered by the 
+Nasdaq U.S. Equity Markets. This, together with the networking and 
+connectivity savings inherent in lowering the number of data feeds, is 
+designed to maximize the distribution of consolidated data feeds to 
+investors throughout the 23 hour, 5 days per week schedule set to begin 
+in December 2026.
+    The Exchange proposes to offer Nasdaq TotalView Plus for the same 
+Professional and Non-Professional Subscriber and enterprise license 
+fees as Nasdaq TotalView.\16\ To ensure that market data vendors will 
+be able to offer competing consolidated data products, any firm that 
+certifies to Nasdaq that it will consolidate Nasdaq TotalView, Nasdaq 
+Texas TotalView and Nasdaq PSX TotalView into a data feed solely for 
+external redistribution shall be exempt from Nasdaq Texas Market Data 
+Distributor Fees \17\ and Nasdaq PSX Market Data Distributor Fees.\18\ 
+This will ensure that vendors will be able to cover the cost of 
+consolidating the underlying feeds.
+---------------------------------------------------------------------------
+
+    \16\ Internal and External Distributor, as well as Direct Access 
+fees, may apply to purchasers of Nasdaq Plus products depending on 
+the customer's use case. See Nasdaq Rules, Equity 7, Section 119(b). 
+The Exchange is not proposing to change Distributor or Direct Access 
+fees with this filing.
+    \17\ See Nasdaq Texas Rules, Equity 7, Section 119(a).
+    \18\ See Nasdaq PHLX Rules, Equity 7, Section 3 (Market Data 
+Distributor Fees).
+---------------------------------------------------------------------------
+
+    The Exchange proposes to offer Nasdaq Basic Plus for the same 
+Professional and Non-Professional Subscriber, enterprise license, and 
+Distributor fees as Nasdaq Basic. To ensure that other market data 
+vendors will be able to offer competing consolidated data products, 
+Nasdaq proposes to charge the same monthly administrative and data 
+consolidation fees for Nasdaq Basic Plus as are currently charged for 
+Nasdaq Last Sale Plus to both Internal Distributors \19\ and External 
+Distributors \20\ to cover the
+
+[[Page 58731]]
+
+costs of data feed consolidation to be incurred by market data vendors.
+---------------------------------------------------------------------------
+
+    \19\ ``Internal Distributors'' are Distributors that receive 
+Nasdaq Last Sale Plus or Nasdaq Basic Plus data and then distribute 
+that data to one or more Subscribers within the Distributor's own 
+entity.
+    \20\ ``External Distributors'' are Distributors that receive 
+Nasdaq Last Sale Plus or Nasdaq Basic Plus data and then distribute 
+that data to one or more Subscribers outside the Distributor's own 
+entity.
+---------------------------------------------------------------------------
+
+    With respect to the Market Data Enterprise License for Display 
+Usage,\21\ which currently offers both Nasdaq TotalView and Nasdaq 
+Basic in the same enterprise license, the Exchange proposes to offer 
+the Nasdaq TotalView Plus and Nasdaq Basic Plus feeds for the same fees 
+currently charged for the Nasdaq TotalView and Nasdaq Basic.
+---------------------------------------------------------------------------
+
+    \21\ See Nasdaq Stock Market Rules, Equity 7, Section 132.
+---------------------------------------------------------------------------
+
+    Details for each of the proposed fees follow.\22\
+---------------------------------------------------------------------------
+
+    \22\ In addition, Nasdaq is proposing to correct references to 
+the Nasdaq NTX exchange at Equity 7, Section 139(e) as a non-
+substantive modification.
+---------------------------------------------------------------------------
+
+TotalView Plus
+Subscriber Fees
+    Nasdaq proposes to offer Nasdaq TotalView Plus for the same 
+Professional and Non-Professional Subscriber fees as Nasdaq TotalView. 
+This is, in effect, a waiver of Subscriber \23\ and Non-Display Usage 
+\24\ fees for Texas TotalView \25\ and Entitlement fees for Nasdaq PSX 
+TotalView.\26\
+---------------------------------------------------------------------------
+
+    \23\ The monthly charge for each Subscriber of Nasdaq Texas 
+TotalView for Nasdaq is currently $22.25 (operative January 1, 
+2026), and $22.25 (operative January 1, 2026) for NYSE and regional 
+issues for display usage or non-display usage not based upon Direct 
+Access. See Nasdaq Texas Rules, Equity 7, Section 123(a)(1).
+    \24\ For non-display usage of Nasdaq Texas TotalView for all 
+issues based upon Direct Access, Distributors currently pay a 
+monthly fee of $58.50 (operative January 1, 2026) for each 
+Professional Subscriber. See Nasdaq Texas Rules, Equity 7, Section 
+123(a)(2).
+    \25\ See Nasdaq Texas Rules, Equity 7, Section 123. Nasdaq Texas 
+TotalView disseminates all individual Nasdaq Texas Equities System 
+participant orders and quotes displayed in the system, the aggregate 
+size of such orders and quotes at each price level, and the trade 
+data for executions that occur within the Nasdaq Texas Equities 
+System.
+    \26\ See Nasdaq PHLX Rules, Equity 7, Section 3(a)(1)). The 
+monthly charge for the PSX TotalView entitlement is $44.50 
+(operative January 1, 2026) for each Subscriber for display usage or 
+for nondisplay usage not based upon Direct Access. The charge paid 
+by non-professional subscribers for access to PSX TotalView Service 
+through an authorized vendor is $1.00 per Subscriber per month. See 
+Nasdaq PHLX Rules, Equity 7, Section 3(b).
+---------------------------------------------------------------------------
+
+    Current Professional Subscriber fees for Nasdaq TotalView are $84 
+per month (operative January 1, 2026).\27\ Non-Display Usage fees based 
+upon Direct Access depend on the number of Subscribers: $412 per month 
+for 1-39 Subscribers (operative January 1, 2026); $16,490 per month for 
+40-99 Subscribers (operative January 1, 2026); $32,990 per month for 
+100-249 Subscribers (operative January 1, 2026); and $75,000.00 per 
+month per firm for over 250 Subscribers.
+---------------------------------------------------------------------------
+
+    \27\ See Nasdaq Stock Market Rules, Equity 7, Section 
+123(b)(1)(B).
+---------------------------------------------------------------------------
+
+    Non-Professional Subscriber fees for Nasdaq TotalView are $15 per 
+month.\28\
+---------------------------------------------------------------------------
+
+    \28\ See id. Section 123(b)(2)(A).
+---------------------------------------------------------------------------
+
+    All of these Professional and Non-Professional Subscriber fees and 
+Non-Display Usage fees will be the same for both Nasdaq TotalView and 
+Nasdaq TotalView Plus.
+Enterprise License Fees
+    Nasdaq offers two monthly enterprise licenses for Nasdaq TotalView, 
+one for $25,000,\29\ and another for $500,000.\30\
+---------------------------------------------------------------------------
+
+    \29\ See id. Section 123(c)(1).
+    \30\ See id. Section 123(c)(2).
+---------------------------------------------------------------------------
+
+    The $25,000 per month enterprise license offers customers the right 
+to provide Nasdaq TotalView for Display Usage for Internal 
+Distribution, or for External Distribution to both Professional and 
+Non-Professional Subscribers with whom the firm has a brokerage 
+relationship.\31\ Purchasers of this license also pay a monthly fee of 
+$9 for each Non-Professional Subscriber and a monthly fee of $60 for 
+each Professional Subscriber for Display Usage based upon Direct or 
+Indirect Access.
+---------------------------------------------------------------------------
+
+    \31\ See id. Section 123(c)(1).
+---------------------------------------------------------------------------
+
+    The $500,000 per month enterprise license offers customers Nasdaq 
+Level 2 or Nasdaq TotalView for Display Usage by Professional or Non-
+Professional Subscribers with whom the firm has a brokerage 
+relationship.\32\
+---------------------------------------------------------------------------
+
+    \32\ This license does not apply to Distributor fees.
+---------------------------------------------------------------------------
+
+    Nasdaq proposes to offer Nasdaq TotalView Plus with each enterprise 
+license for the same monthly charge as Nasdaq TotalView.
+Distributor Fees for Depth-of-Book Data
+    Nasdaq charges fees for distributors of its depth-of-book data.\33\ 
+Internal Distributors are charged a fee of $1,125 per month (operative 
+January 1, 2026) for Nasdaq-listed security depth entitlements and $565 
+per month (operative January 1, 2026) for non-Nasdaq-listed security 
+depth entitlements.\34\ External Distributors are charged a fee of 
+$2,820 per month (operative January 1, 2026) for Nasdaq-listed security 
+depth entitlements and $1,410 per month (operative January 1, 2026) for 
+non-Nasdaq-listed security depth entitlements.\35\ These fees apply to 
+all distributors of real-time depth-of-book data, which would include 
+Nasdaq TotalView Plus.
+---------------------------------------------------------------------------
+
+    \33\ A ``distributor'' of Nasdaq data is any entity that 
+receives a feed or data file of Nasdaq data directly from Nasdaq or 
+indirectly through another entity and then distributes it either 
+internally (within that entity) or externally (outside that entity). 
+See Nasdaq Rules, Equity 7, Section 119(c).
+    \34\ See Nasdaq Stock Market Rules, Equity 7, Section 119(b).
+    \35\ See id.
+---------------------------------------------------------------------------
+
+Fee Waiver for Vendors of TotalView Plus
+    To ensure that market data vendors will be able to offer competing 
+consolidated data products, any firm that certifies to Nasdaq that it 
+will consolidate Nasdaq TotalView, Nasdaq Texas TotalView and Nasdaq 
+PSX TotalView into a data feed solely for external redistribution shall 
+be exempt from External Market Data Distributor Fees for Nasdaq Texas 
+of $1,620 per month,\36\ and the Monthly External Distributor fee for 
+PSX TotalView of $1,390.\37\
+---------------------------------------------------------------------------
+
+    \36\ See Nasdaq Texas Rules, Equity 7, Section 119(a).
+    \37\ See Nasdaq PHLX Rules, Equity 7, Section 3 (Market Data 
+Distributor Fees).
+---------------------------------------------------------------------------
+
+    This waiver of market data distributor fees will cover the cost of 
+consolidation for vendors. A vendor that seeks to create its own 
+consolidated feed that includes Nasdaq TotalView, Nasdaq Texas 
+TotalView and Nasdaq PSX TotalView would currently pay external 
+distributor fees of $2,820 per month (operative January 1, 2026) for 
+Nasdaq-listed security depth entitlements and $1,410 per month 
+(operative January 1, 2026) for non-Nasdaq-listed security depth 
+entitlements,\38\ as well as External Market Data Distributor Fees for 
+Nasdaq Texas of $1,620 per month,\39\ and the Monthly External 
+Distributor fee for PSX TotalView of $1,390.\40\ A vendor that 
+certifies to Nasdaq that it will consolidate these Nasdaq feeds to 
+formulate its own product would continue to pay Nasdaq external 
+distributor fees, but would not pay the external market data 
+distributor fees for Nasdaq Texas and Nasdaq PSX, saving $1,620 per 
+month,\41\ and $1,390 per month,\42\ respectively, for a total fee 
+reduction of $3,010 per month. The same discount would not apply to 
+non-vendors. Vendors would be able to apply this fee reduction to cover 
+the cost of forming their own consolidated feed, thereby allowing 
+vendors to compete with Nasdaq in the sale of consolidated data 
+products using the depth of book data from Nasdaq affiliates.
+---------------------------------------------------------------------------
+
+    \38\ See Nasdaq Stock Market Rules, Equity 7, Section 119(b).
+    \39\ See Nasdaq Texas Rules, Equity 7, Section 119(a).
+    \40\ See Nasdaq PHLX Rules, Equity 7, Section 3 (Market Data 
+Distributor Fees).
+    \41\ See Nasdaq Texas Rules, Equity 7, Section 119(a).
+    \42\ See Nasdaq PHLX Rules, Equity 7, Section 3 (Market Data 
+Distributor Fees).
+
+---------------------------------------------------------------------------
+
+[[Page 58732]]
+
+Basic Plus
+Subscriber Fees
+    Nasdaq proposes to offer Nasdaq Basic Plus for the same 
+Professional and Non-Professional Subscriber fees as Nasdaq Basic. This 
+is not a fee change, as there are currently no charges for Nasdaq Texas 
+BBO feeds,\43\ Nasdaq Texas Last Sale,\44\ PSX BBO Feeds,\45\ and PSX 
+Last Sale.\46\
+---------------------------------------------------------------------------
+
+    \43\ See Nasdaq Texas Rules, Equity 7, Section 147.
+    \44\ See Nasdaq Texas, Rules, Equity 7, Section 139(a).
+    \45\ See Nasdaq PHLX Rules, Equity 7, Section 3, (PSX BBO 
+Feeds).
+    \46\ See Nasdaq PHLX Rules, Equity 7, Section 3 (PSX Last Sale 
+and Nasdaq Last Sale Plus Data Feeds).
+---------------------------------------------------------------------------
+
+    The current monthly per Subscriber charges for Nasdaq Basic, or 
+Derived Data therefrom, are $14.10 for Nasdaq Basic for Nasdaq, $7.20 
+for Nasdaq Basic for NYSE, and $7.20 for Nasdaq Basic for NYSE 
+American.\47\
+---------------------------------------------------------------------------
+
+    \47\ See Nasdaq Stock Market Rules, Equity 7, Section 147(b)(1).
+---------------------------------------------------------------------------
+
+    For Non-Professional Subscribers, there currently is a monthly 
+charge of $0.50 for Nasdaq Basic for Nasdaq, $0.25 for Nasdaq Basic for 
+NYSE, $0.25 for Nasdaq Basic for NYSE American.\48\ For Nasdaq Basic 
+Plus, there will be a single charge of $1.00 that will cover Nasdaq 
+Basic for Nasdaq, Nasdaq Basic for NYSE, and Nasdaq Basic for NYSE 
+American.
+---------------------------------------------------------------------------
+
+    \48\ See id. Section 147(b)(2).
+---------------------------------------------------------------------------
+
+Enterprise License Fees
+    Nasdaq offers three monthly enterprise licenses for Nasdaq Basic: a 
+broker-dealer enterprise license for $155,000 per month,\49\ another 
+broker-dealer enterprise license for $100,000 per month,\50\ and a 
+Media Enterprise license for $100,000.\51\
+---------------------------------------------------------------------------
+
+    \49\ See id. Section 147(b)(4).
+    \50\ See id. Section 147(b)(5).
+    \51\ See id. Section 147(b)(6).
+---------------------------------------------------------------------------
+
+    The broker-dealer enterprise license for $155,000 per month offers 
+internal Professional Subscribers access to Nasdaq Basic for Nasdaq, 
+Nasdaq Basic for NYSE, and Nasdaq Basic for NYSE American, or Derived 
+Data therefrom.\52\ The broker-dealer must obtain a separate enterprise 
+license for each External Distributor that controls display of the 
+product if it wishes such External Distributor to be covered by an 
+enterprise license rather than per-Subscriber fees. The license also 
+offers access to Nasdaq Last Sale data for its own stock price and the 
+stock price of up to ten of its competitors or peers, for display use 
+on the broker-dealer's internal website.
+---------------------------------------------------------------------------
+
+    \52\ See id. Section 147(b)(4).
+---------------------------------------------------------------------------
+
+    The broker-dealer enterprise license for $100,000 per month offers 
+any Nasdaq Basic Product, or Derived Data therefrom, through any 
+electronic system approved by Nasdaq to an unlimited number of 
+Professional and Non-Professional Subscribers who are natural persons 
+and with whom the broker-dealer has a brokerage relationship.\53\ This 
+includes the right to distribute Nasdaq Last Sale data to the general 
+investing public for Display Usage and to distribute Nasdaq Basic to 
+the general investing public via television, websites, mobile devices, 
+or any other unrestricted means of transmission for Display Usage.\54\ 
+A separate enterprise license is required for each discrete electronic 
+system for distribution of Nasdaq Basic that is approved by Nasdaq and 
+used by the broker-dealer.
+---------------------------------------------------------------------------
+
+    \53\ See id. Section 147(b)(5).
+    \54\ Use of the Nasdaq Basic data obtained through this license 
+by any Professional Subscriber is limited to the context of the 
+brokerage relationship between that person and the broker-dealer, 
+except that a Distributor may make Nasdaq Basic data obtained 
+through this license available to up to and including 4,500 internal 
+Subscribers operating on an electronic system approved by Nasdaq, 
+which may be used by Professional Subscribers employed by the 
+broker-dealer in support of brokerage services to investors; any 
+distribution to over 4,500 internal Subscribers, or any usage by 
+Professional Subscribers not in support of brokerage services to 
+investors on an approved platform, would be subject to any 
+applicable fees set forth in Equity 7, Section 147(b).
+---------------------------------------------------------------------------
+
+    The Media Enterprise License for $100,000 per month offers the 
+right to distribute all or part of Nasdaq Basic for Display Usage to 
+the general investing public.\55\ Information may be made available via 
+television, websites, mobile devices, or any other unrestricted means 
+of transmission for Display Usage, to an unlimited number of Users. An 
+External Distributor may use a Hosted Display Solution to distribute 
+the data, provided that the External Distributor purchases a separate 
+Media Enterprise License for each such Hosted Display Solution. Data 
+may only be used for informational and non-trading purposes and 
+distribution of Derived Data is not permitted.
+---------------------------------------------------------------------------
+
+    \55\ See Nasdaq Stock Market Rules, Equity 7, Section 147(b)(6).
+---------------------------------------------------------------------------
+
+    With each enterprise license listed above, Nasdaq proposes to offer 
+Nasdaq Basic Plus for the same fee as Nasdaq Basic.
+Distributor Fees
+    Nasdaq proposes to offer Nasdaq Basic Plus for the same Distributor 
+fees as Nasdaq Basic.
+    Each Distributor of any Nasdaq Basic product currently pays a fee 
+of $1,680 for internal distribution or a fee of $2,140 for external, or 
+external and internal, distribution.\56\ A Distributor may also pay 
+$1,500 per month to create and distribute Derived Data from Nasdaq 
+Basic to an unlimited number of non-professional subscribers.\57\ In 
+addition, a Distributor that employs a Hosted Display Solution of 
+distribute Derived Data taken from Nasdaq Basic pays a fee of $400 per 
+month for each Hosted Display Solution.\58\
+---------------------------------------------------------------------------
+
+    \56\ See Nasdaq Stock Market Rules, Equity 7, Section 147(c)(1).
+    \57\ See Nasdaq Stock Market Rules, Equity 7, Section 147(c)(2).
+    \58\ See Nasdaq Stock Market Rules, Equity 7, Section 147(c)(3).
+---------------------------------------------------------------------------
+
+    The Exchange proposes that all of these fees also apply to Nasdaq 
+Basic Plus.
+Data Consolidation Fee for Nasdaq Basic
+    Firms that receive Nasdaq Last Sale Plus or Nasdaq Basic Plus or 
+both shall pay the monthly administrative fees for Nasdaq Last Sale, 
+NTX Last Sale, and PSX Last Sale. Additionally, Internal Distributors 
+\59\ or External Distributors \60\ of Nasdaq Last Sale Plus or Nasdaq 
+Basic Plus or both shall pay a data consolidation fee of $350 per 
+month. Firms that receive Nasdaq Last Sale Plus or Nasdaq Basic Plus 
+would either be liable for Nasdaq Last Sale fees or Nasdaq Basic fees, 
+but not both.
+---------------------------------------------------------------------------
+
+    \59\ ``Internal Distributors'' are Distributors that receive 
+Nasdaq Last Sale Plus or Nasdaq Basic Plus data and then distribute 
+that data to one or more Subscribers within the Distributor's own 
+entity.
+    \60\ ``External Distributors'' are Distributors that receive 
+Nasdaq Last Sale Plus or Nasdaq Basic Plus data and then distribute 
+that data to one or more Subscribers outside the Distributor's own 
+entity.
+---------------------------------------------------------------------------
+
+    This fee is designed to cover the data consolidation costs of 
+market data vendors to ensure that they will be able to offer competing 
+consolidated data products.
+    As a conforming change, the Exchange proposes to modify Nasdaq Last 
+Sale Plus to state that firms that receive Nasdaq Last Sale Plus or 
+Nasdaq Basic Plus or both shall pay the monthly administrative fees for 
+Nasdaq Last Sale, NTX Last Sale, and PSX Last Sale, as well as a data 
+consolidation fee of $350 per month.
+Market Data Enterprise License for Display Usage
+    Nasdaq proposes to offer both Nasdaq TotalView Plus and Nasdaq 
+Basic Plus through its Market Data Enterprise License for Display 
+Usage.
+    A Distributor that is also a broker-dealer or an investment adviser 
+may pay a monthly enterprise license fee of $600,000 to distribute, for 
+Display Usage only, Depth-of-Book data and Nasdaq Basic to an unlimited 
+number of
+
+[[Page 58733]]
+
+internal and external recipients, to be used only in the context of a 
+brokerage relationship with a broker-dealer or an engagement with an 
+investment adviser, as well as Nasdaq Basic under the terms and 
+conditions set forth at Equity 7, Section 147(b)(6), and NLS and NLS 
+Plus for unlimited external distribution through one of the mechanisms 
+for the general investing public identified at Equity 7, Section 
+139(b). Alternatively, a Distributor eligible for the enterprise 
+license may purchase a full twelve months of the enterprise license in 
+advance for a monthly fee of $500,000, which may be paid in monthly 
+installments.
+    Nasdaq proposes to include Nasdaq TotalView Plus and Nasdaq Basic 
+Plus within this license for no additional fee.
+2. Statutory Basis
+    The Exchange believes that its proposal is consistent with Section 
+6(b) of the Act,\61\ in general, and furthers the objectives of 
+Sections 6(b)(4) and 6(b)(5) of the Act,\62\ in particular, in that it 
+provides for the equitable allocation of reasonable dues, fees and 
+other charges among members and issuers and other persons using any 
+facility, and is not designed to permit unfair discrimination between 
+customers, issuers, brokers, or dealers because the proposal: (i) 
+offers more customer choice; (ii) prepares investors for overnight 
+trading in potentially low-liquidity environments; (iii) protects 
+competition by covering the data consolidation costs of market data 
+vendors; (iv) proposes fees at or below current levels for Nasdaq and 
+its affiliates; (v) proposes fees that are comparable to those of other 
+exchanges; (vi) sets fees for a voluntary product, in that the Exchange 
+is not required by any rule or regulation to make this data available 
+and potential subscribers may purchase it only if they voluntarily 
+choose to do so; and (vii) offers products to all market participants 
+on a non-discriminatory basis.
+---------------------------------------------------------------------------
+
+    \61\ 15 U.S.C. 78f(b).
+    \62\ 15 U.S.C. 78f(b)(4) and (5).
+---------------------------------------------------------------------------
+
+1. More Customer Choice
+    The proposal will expand choice by allowing customers to select 
+whether to purchase best bid and offer information through the separate 
+data feeds of Nasdaq Basic, Nasdaq Texas BBO and PSX BBO (or any 
+combination thereof) separately or in a single feed. Purchasing Nasdaq 
+Basic Plus or Nasdaq TotalView Plus will allow some customers to 
+optimize consumption by ingesting information from multiple markets in 
+a single connection, which may result in cost savings for subscribers 
+based on a more efficient configuration of data feeds. Nothing in this 
+proposal will change the quantity or quality of Depth-of-Book or Top-
+of-Book information available in the market, as the underlying feeds 
+will remain available, and the proposed feeds are simply amalgamations 
+of those underlying feeds.
+2. Prepare for Overnight Trading
+    Although the consolidation of Top-of-Book and Depth-of-Book data 
+feeds from multiple affiliated exchanges is not new, the Exchange 
+believes that such feeds will become more important with the 
+commencement of overnight trading in December 2026. Because liquidity 
+may be limited for certain stocks in the overnight session, the 
+proposed consolidated feeds will provide investors with a broader view 
+of the market than independent feeds, improving the ability of the 
+investor to analyze market data in a lower liquidity environment. As 
+such, we believe that the creation of these new feeds will facilitate 
+the transition of investors to an overnight trading environment.
+3. No Competitive Advantage Relative to Market Data Vendors
+    In offering Nasdaq Basic Plus and Nasdaq TotalView Plus, Nasdaq 
+will be acting as a redistributor of Depth-of-Book \63\ and Top-of-Book 
+\64\ products from Nasdaq, Nasdaq Texas, and Nasdaq PSX.
+---------------------------------------------------------------------------
+
+    \63\ The underlying Depth-of-Book products are Nasdaq TotalView, 
+Nasdaq Texas TotalView, and PSX TotalView.
+    \64\ The underlying Top-of-Book products are Nasdaq Basic (which 
+includes both best bid and offer and last sale information), Nasdaq 
+Texas BBO, Nasdaq Texas Last Sale, PSX BBO, and PSX Last Sale.
+---------------------------------------------------------------------------
+
+    Nasdaq Basic Plus and Nasdaq TotalView Plus will be compiled from 
+the same underlying feeds from Nasdaq, Nasdaq Texas, and Nasdaq PSX 
+that are distributed to the purchasers of those feeds. With respect to 
+speed, the path for the distribution of the information by the Exchange 
+will not be faster than the path for distribution that would be used by 
+a market data vendor to distribute similar, independently created 
+products.
+    With respect to information, the same source of the market data to 
+be used by the Exchange to create the two proposed products will also 
+be available to any other market data vendor. The Nasdaq system that 
+will create and support Nasdaq Basic Plus and Nasdaq TotalView Plus 
+will access the underlying feeds from Nasdaq, Nasdaq Texas, and Nasdaq 
+PSX from the same point as any market data vendor.
+    With respect to cost, the Exchange proposes to ensure that market 
+data vendors are able to compete with the proposed fees by introducing 
+a fee waiver for distributors of Nasdaq TotalView Plus and a 
+consolidation fee for Nasdaq Basic Plus. These proposals will allow 
+vendors to cover the costs of consolidation for Depth-of-Book and Top-
+of-Book feeds, respectively.\65\
+---------------------------------------------------------------------------
+
+    \65\ There is no consolidation fee for Nasdaq TotalView because 
+the waiver of distributor fees is sufficient to cover the costs of 
+consolidation without any additional fee.
+---------------------------------------------------------------------------
+
+    The proposed fee waiver for Nasdaq TotalView Plus will exempt any 
+firm that certifies to Nasdaq that it will consolidate Nasdaq 
+TotalView, Nasdaq Texas TotalView and Nasdaq PSX TotalView into a data 
+feed solely for external redistribution from Nasdaq Texas Market Data 
+Distributor Fees \66\ Nasdaq PSX Market Data Distributor Fees.\67\ This 
+substantial savings in distributor fees offered only to external 
+distributors--$1,620 per month for Nasdaq Texas,\68\ and $1,390 per 
+month for PSX TotalView,\69\--will allow vendors to cover the cost of 
+consolidation of Depth-of-Book feeds and will ensure that market data 
+vendors will be able to offer consolidated data products that compete 
+with Nasdaq TotalView Plus.
+---------------------------------------------------------------------------
+
+    \66\ See Nasdaq Texas Rules, Equity 7, Section 119.
+    \67\ See Nasdaq PHLX Rules, Equity 7, Section 3.
+    \68\ See Nasdaq Texas Rules, Equity 7, Section 119(a).
+    \69\ See Nasdaq PHLX Rules, Equity 7, Section 3 (Market Data 
+Distributor Fees).
+---------------------------------------------------------------------------
+
+    The proposed fees for Nasdaq Basic Plus include monthly 
+administrative fees for Nasdaq Last Sale, NTX Last Sale, and PSX Last 
+Sale and a data consolidation fee of $350 per month for Internal 
+Distributors and External Distributors of Nasdaq Basic Plus.\70\ This 
+is the current fee charged for Nasdaq Last Sale Plus to ensure that 
+market data vendors will be able to offer competing feeds.
+---------------------------------------------------------------------------
+
+    \70\ Firms that receive Nasdaq Last Sale Plus or Nasdaq Basic 
+Plus would either be liable for Nasdaq Last Sale fees or Nasdaq 
+Basic fees, but not both.
+---------------------------------------------------------------------------
+
+    The Exchange proposes a consolidation fee for both Nasdaq Basic 
+Plus and Nasdaq Last Sale Plus because Nasdaq Basic Plus includes last 
+sale information. Nasdaq expects vendors to use the same processes and 
+servers to consolidate both best bid and offer and last sale 
+information, and therefore the same consolidation fee should be 
+sufficient to cover all data consolidation costs for both, enabling 
+vendors to compete with the Exchange in consolidating and distributing 
+data from multiple exchanges.
+
+[[Page 58734]]
+
+4. Proposes Fees at or Below Current Levels
+    All of the proposed fees are at or below the fees currently charged 
+by Nasdaq and its affiliates for its exchange-only data feeds.
+    For Nasdaq Basic Plus, all subscriber fees, including both 
+Professional and Non-Professional fees, and enterprise license fees, 
+are exactly the same as currently charged for Nasdaq Basic alone. The 
+proposed data consolidation fee for Nasdaq Basic Plus is exactly the 
+same fee as currently charged for Nasdaq Last Sale Plus, and customers 
+of Nasdaq Last Sale Plus would pay no consolidation fee for Nasdaq 
+Basic Plus. Given that Nasdaq Basic Plus provides information for three 
+exchanges at the same price currently charged for only the Nasdaq 
+exchange, the proposed fees will allow customers to purchase the data 
+of three exchanges for the fees currently charged by just one.
+    For Nasdaq TotalView Plus, all subscriber fees, including both 
+Professional and Non-Professional fees, Non-Display Usage fees, and 
+enterprise license fees are proposed to be exactly the same as 
+currently charged for Nasdaq TotalView alone. The proposed fee waiver 
+for vendors of TotalView Plus lowers fees even further. The proposed 
+Nasdaq TotalView Plus fees therefore offer customers a discount below 
+current fees.
+5. Proposed Fees Are Comparable to Those of Other Exchanges
+    Exchange groups affiliated with both NYSE and Cboe offer 
+consolidated data products comparable to Nasdaq Basic Plus and Nasdaq 
+TotalView Plus.
+    For Top-of-Book products, the proposed Nasdaq Basic Plus feed is 
+comparable to the NYSE BQT feed, which provides best bid and offer and 
+last sale information for the New York Stock Exchange and its 
+affiliates,\71\ and the Cboe One feed, which disseminates the aggregate 
+best bid and offer of all displayed orders traded on Cboe's affiliated 
+exchanges.\72\
+---------------------------------------------------------------------------
+
+    \71\ See Securities Exchange Act Release No. 73553 (November 6, 
+2014), 79 FR 67491 (November 13, 2014) (SR-NYSE-2014-40).
+    \72\ See Securities Exchange Act Release No. 82423 (December 29, 
+2017), 83 FR 579 (January 4, 2018) (SR-CboeEDGA-2017-004)
+---------------------------------------------------------------------------
+
+    For Depth-of-Book products, the proposed Nasdaq TotalView Plus feed 
+is comparable to the NYSE Pillar Depth feed, which provides a 
+consolidated view of the ten best price levels on both the bid and 
+offer sides across the NYSE Group's combined limit order books for the 
+NYSE-affiliated exchanges,\73\ and the Cboe One Premium feed, which 
+disseminates aggregated Depth-of-Book information for up to twelve 
+price levels for the Cboe-affiliated exchanges.\74\
+---------------------------------------------------------------------------
+
+    \73\ See Securities Exchange Act Release No. 100030 (April 25, 
+2024), 89 FR 35260 (May 1, 2024) (SR-NYSE-2024-24) (introducing the 
+NYSE Pillar Depth feed as immediately effective pursuant to Section 
+19(b)(3)(A)(iii) of the Act and Rule 19b-4(f)(6) thereunder).
+    \74\ See Securities Release Act Release No. 105190 (April 9, 
+2026), 91 FR 19233 (April 14, 2026) (SR-CboeEDGX-2026-020).
+---------------------------------------------------------------------------
+
+    As shown below, the combined market share of the Nasdaq- NYSE- and 
+Cboe-affiliated exchanges for the period July 2025 to June 2026 is 
+similar, with the combined market share of the Nasdaq U.S. Equity 
+exchanges over the past year at approximately 14.58 percent,\75\ 
+somewhat below the market share of the NYSE affiliates at 18.83 
+percent,\76\ and above the market share of 9.59 percent for Cboe 
+affiliates.\77\
+---------------------------------------------------------------------------
+
+    \75\ This is composed of 14.21 percent for Nasdaq, 0.26 percent 
+for Nasdaq Texas, and 0.11 percent for Nasdaq PSX.
+    \76\ This is composed of 8.2 percent for NYSE, 10.34 percent for 
+NYSE Arca, 0.29 percent for Amex, and 0.35 percent for NYSE Texas.
+    \77\ Composed of 3.62 percent for BATS, 0.65 percent for BATSY, 
+0.82 percent for EDGA, and 4.50 percent for EDGX.
+
+------------------------------------------------------------------------
+                                                           Market share
+                        Exchange                                (%)
+------------------------------------------------------------------------
+Nasdaq..................................................           14.21
+Nasdaq Texas............................................            0.26
+PSX.....................................................            0.11
+NYSE....................................................            8.20
+ARCA....................................................           10.34
+AMEX....................................................            0.29
+NYSE Texas..............................................            0.35
+NSX.....................................................            0.33
+IEX.....................................................            3.43
+MEMX....................................................            2.19
+MIAX....................................................            0.95
+LTSE....................................................            0.01
+BATS....................................................            3.62
+BATSY...................................................            0.65
+EDGA....................................................            0.82
+EDGX....................................................            4.50
+24x.....................................................            0.06
+------------------------------------------------------------------------
+
+    The Nasdaq- NYSE- and Cboe-affiliated exchange groups each offer 
+different fee schedules, which will impact the fees paid by particular 
+customers differently, depending on the type of customer and its use 
+cases. Although these fee schedules are similar in many respects--all 
+of these groups offer specific Professional and Non-Professional user 
+fees, for example--they differ in important respects that limit the 
+Exchange's ability to compare overall fee levels outside of the context 
+of a particular customer and service order. The NYSE-affiliated 
+exchanges charge access fees, for example, while the Nasdaq-affiliated 
+exchanges do not. Therefore, the fees cannot be compared directly 
+without knowing the details of a particular customer and its specific 
+use cases.
+    With respect to Top-of-Book information, Nasdaq Basic Plus proposes 
+subscriber fees of $14.10 for Nasdaq Basic for Nasdaq, $7.20 for Nasdaq 
+Basic for NYSE, and $7.20 for Nasdaq Basic for NYSE American,\78\ as 
+well as Non-Professional fees of $0.50 for Nasdaq Basic for Nasdaq, 
+$0.25 for Nasdaq Basic for NYSE, and $0.25 for Nasdaq Basic for NYSE 
+American,\79\ as discussed above. The Exchange also proposes a data 
+consolidation fee of $350 per month and payment of monthly 
+administrative fees for Nasdaq Last Sale, NTX Last Sale, and PSX Last 
+Sale. There are also enterprise licenses of $100,000 per month \80\ and 
+$155,000 per month \81\ for broker-dealers for various use cases, and a 
+Media Enterprise license of $100,000.\82\
+---------------------------------------------------------------------------
+
+    \78\ See Nasdaq Stock Market Rules, Equity 7, Section 147(b)(1).
+    \79\ See id., Section 147(b)(2).
+    \80\ See id., Section 147(b)(5).
+    \81\ See id., Section 147(b)(4).
+    \82\ See id., Section 147(b)(6).
+---------------------------------------------------------------------------
+
+    For Top-of-Book information from NYSE affiliates (Best Quotes & 
+Trades), the per user access fee is $850, the access fee is $6,250, the 
+redistribution fee is $2,500, the professional user fee is $18, the 
+non-professional user fee is $1, and there is an enterprise license for 
+Enterprise Fee: $50,000, and a digital media enterprise license for 
+$65,000.\83\
+---------------------------------------------------------------------------
+
+    \83\ See NYSE Proprietary Market Data Pricing Guide (May 14, 
+2026) at 29, available at <a href="https://www.nyse.com/publicdocs/nyse/data/NYSE_Market_Data_Pricing.pdf">https://www.nyse.com/publicdocs/nyse/data/NYSE_Market_Data_Pricing.pdf</a>.
+---------------------------------------------------------------------------
+
+    For Top-of-Book information from Cboe affiliates (Cboe One 
+Summary), external distribution fees are $5,000, professional user fees 
+are $10, Non-Professional User fees are $0.25, Digital Media fees are 
+$15,000, data consolidation fees are $1,000, and there is an enterprise 
+license of $50,000.\84\
+---------------------------------------------------------------------------
+
+    \84\ See Cboe Market Data Product Price List, available at 
+<a href="https://cdn.cboe.com/resources/membership/US_Market_Data_Product_Price_List.pdf">https://cdn.cboe.com/resources/membership/US_Market_Data_Product_Price_List.pdf</a>.
+---------------------------------------------------------------------------
+
+    Although, as noted above, fees cannot be compared directly without 
+understanding the type of customer, the number of end users, how that 
+customer is using the data, and related information, they can be 
+compared indirectly by analyzing overall market prices. As explained 
+above, the proposed fees are essentially the same as those currently 
+charged for the underlying Nasdaq products, which are, by definition, 
+at current market prices. As the Exchange is proposing no new fees, the 
+new products will also be at current market prices, and therefore 
+continue to be comparable to the fees charged by other exchanges.
+
+[[Page 58735]]
+
+    The same analysis holds for Depth-of-Book products.
+    As set forth in detail above, the Exchange proposes the following 
+fees for Nasdaq TotalView Plus: Professional Subscriber fees of $84 per 
+month,\85\ Non-Display Usage fees based on a tiered structure,\86\ and 
+Non-Professional Subscriber fees of $15 per month.\87\ The Exchange 
+also proposes to offer enterprise licenses for $25,000 per month \88\ 
+and $500,000 per month.\89\ The Exchange also proposes to waive 
+External Market Data Distributor Fees for Nasdaq Texas and the Monthly 
+External Distributor fee for PSX TotalView for any firm that certifies 
+to Nasdaq that it will consolidate Nasdaq TotalView, Nasdaq Texas 
+TotalView and Nasdaq PSX TotalView into a data feed solely for external 
+redistribution.\90\
+---------------------------------------------------------------------------
+
+    \85\ See Nasdaq Stock Market Rules, Equity 7, Section 
+123(b)(1)(B).
+    \86\ $412 per month for 1-39 Subscribers; $16,490 per month for 
+40-99 Subscribers; $32,990 per month for 100-249 Subscribers; and 
+$75,000.00 per month per firm for over 250 Subscribers.
+    \87\ See Nasdaq Stock Market Rules, Equity 7, Section 
+123(b)(1)(A).
+    \88\ See id., Equity 7, Section 123(c)(1).
+    \89\ See id., Section 123(c)(2).
+    \90\ See Nasdaq PHLX Rules, Equity 7, Section 3 (Market Data 
+Distributor Fees).
+---------------------------------------------------------------------------
+
+    For comparison, the NYSE Pillar Depth Feed has an Access Fee of 
+$5,000, an Access & Redistribution Fee of $5,750, a Consolidation Fee 
+of $250, a Multiple Datafeed Fee of $600, a Non-Display Fee of $10,000 
+(with $30,000 cap for Category 3), a Professional User Fee of $66, a 
+Non-Professional User Fee of $10, a Non-Pro Enterprise User Fee Cap of 
+$55,000 and a Professional & Non-Professional User Fee Cap: 
+$135,550.\91\
+---------------------------------------------------------------------------
+
+    \91\ See NYSE Proprietary Market Data Pricing Guide (May 14, 
+2026), available at <a href="https://www.nyse.com/publicdocs/nyse/data/NYSE_Market_Data_Pricing.pdf">https://www.nyse.com/publicdocs/nyse/data/NYSE_Market_Data_Pricing.pdf</a>.
+---------------------------------------------------------------------------
+
+    The Cboe One Premium feed as an External Distribution fee of 
+$12,500, a Professional User fee of $15, a Non-Professional User fee of 
+$0.50, a Digital Media fee of $25,000, a Data Consolidation fee of 
+$1,000, and an Enterprise license of $100,000.\92\
+---------------------------------------------------------------------------
+
+    \92\ See Cboe Market Data Product Price List, available at 
+<a href="https://cdn.cboe.com/resources/membership/US_Market_Data_Product_Price_List.pdf">https://cdn.cboe.com/resources/membership/US_Market_Data_Product_Price_List.pdf</a>.
+---------------------------------------------------------------------------
+
+    As is true for Top-of-Book consolidated data fees, the Depth-of-
+Book consolidated data fees depend on the type of customer, the number 
+of end users, and how that customer is using the data. Nevertheless, 
+the proposed fees are essentially the same as those currently charged 
+for the underlying Nasdaq products, which are, by definition, at 
+current market prices. As the Exchange is proposing no new fees, the 
+new products will also be at current market prices, and therefore 
+continue to be comparable to the fees charged by other exchanges.
+6. Products Are Voluntary
+    Nasdaq Basic Plus and Nasdaq TotalView Plus are voluntary products, 
+in that the Exchange is not required by any rule or regulation to make 
+this data available and potential subscribers may purchase it only if 
+they voluntarily choose to do so. As noted above, all of the underlying 
+exchange Top-of-Book and Depth-of-Book products will remain available 
+at current prices, and customers may decline to purchase Nasdaq Basic 
+Plus and Nasdaq TotalView Plus for any reason, including cost.
+7. No Unfair Discrimination
+    The proposal is not designed to permit unfair discrimination 
+between customers, issuers, brokers, or dealers because the proposed 
+feeds are optional data fees available to all market participants on a 
+non-discriminatory basis.
+    In summary, the proposal provides for the equitable allocation of 
+reasonable dues, fees and other charges among members and issuers and 
+other persons using any facility, and is not designed to permit unfair 
+discrimination between customers, issuers, brokers, or dealers because 
+the proposal: (i) offers more customer choice; (ii) prepares investors 
+for overnight trading in potentially low-liquidity environments; (iii) 
+protects competition by covering the data consolidation costs of market 
+data vendors; (iv) proposes fees at or below current levels; (v) 
+proposes fees that are comparable to those of other exchanges; (vi) 
+sets fees for a voluntary product, in that the Exchange is not required 
+by any rule or regulation to make this data available and potential 
+subscribers may purchase it only if they voluntarily choose to do so; 
+and (vii) offers products to all market participants on a non-
+discriminatory basis.
+
+B. Self-Regulatory Organization's Statement on Burden on Competition
+
+    The Exchange does not believe that the proposed rule change will 
+impose any burden on competition not necessary or appropriate in 
+furtherance of the purposes of the Act.
+    Nothing in the proposal burdens inter-market competition (the 
+competition among self-regulatory organizations) because approval of 
+the proposal does not impose any burden on the ability of other options 
+exchanges to compete. As set forth in detail above, the proposed fees 
+are comparable to the Depth-of-Book and Top-of-Book products offered by 
+both NYSE-affiliated and Cboe-affiliated exchange groups, and either or 
+both of those groups can propose fee changes to compete.
+    Nothing in the Proposal burdens intra-market competition (the 
+competition among consumers of exchange data), because Nasdaq TotalView 
+Plus and Nasdaq Basic Plus will be offered to all market participants 
+at the same price and any market participant that elects to purchase 
+either Nasdaq TotalView Plus or Nasdaq Basic Plus may do so on a non-
+discriminatory basis.
+    Moreover, as explained above, the proposed fees offer no 
+competitive advantage relative to market data vendors. With respect to 
+speed, the path for the distribution of the information by the Exchange 
+will not be faster than the path for distribution that would be used by 
+a market data vendor to distribute similar, independently created 
+products. With respect to information, the same source of the market 
+data to be used by the Exchange to create the two proposed products 
+will also be available to any other market data vendor. With respect to 
+cost, the Exchange proposes to ensure that market data vendors are able 
+to compete with the proposed fees by introducing a fee waiver for 
+Nasdaq TotalView Plus that is exclusively available to market data 
+vendors and a consolidation fee for Nasdaq Basic Plus.
+    Nasdaq Basic Plus and Nasdaq TotalView Plus are completely 
+voluntary products in that the Exchange is not required by any rule or 
+regulation to make this data available and potential subscribers may 
+purchase it only if they voluntarily choose to do so. Information is 
+compiled from underlying feeds from Nasdaq, Nasdaq Texas, and Nasdaq 
+PSX which will remain available for purchase.
+
+C. Self-Regulatory Organization's Statement on Comments on the Proposed 
+Rule Change Received From Members, Participants, or Others
+
+    No written comments were either solicited or received.
+
+III. Date of Effectiveness of the Proposed Rule Change and Timing for 
+Commission Action
+
+    The foregoing rule change has become effective pursuant to Section 
+19(b)(3)(A)(ii) of the Act.\93\
+---------------------------------------------------------------------------
+
+    \93\ 15 U.S.C. 78s(b)(3)(A)(ii).
+---------------------------------------------------------------------------
+
+    At any time within 60 days of the filing of the proposed rule 
+change, the Commission summarily may
+
+[[Page 58736]]
+
+temporarily suspend such rule change if it appears to the Commission 
+that such action is: (i) necessary or appropriate in the public 
+interest; (ii) for the protection of investors; or (iii) otherwise in 
+furtherance of the purposes of the Act. If the Commission takes such 
+action, the Commission shall institute proceedings to determine whether 
+the proposed rule should be approved or disapproved.
+
+IV. Solicitation of Comments
+
+    Interested persons are invited to submit written data, views and 
+arguments concerning the foregoing, including whether the proposed rule 
+change is consistent with the Act. Comments may be submitted by any of 
+the following methods:
+
+Electronic Comments
+
+    <bullet> Use the Commission's internet comment form (<a href="https://www.sec.gov/rules/sro.shtml">https://www.sec.gov/rules/sro.shtml</a>); or
+    <bullet> Send an email to <a href="/cdn-cgi/l/email-protection#7b090e171e56181416161e150f083b081e18551c140d"><span class="__cf_email__" data-cfemail="6c1e190009410f0301010902181f2c1f090f420b031a">[email&#160;protected]</span></a>. Please include 
+file number
+    SR-NASDAQ-2026-076 on the subject line.
+
+Paper Comments
+
+    <bullet> Send paper comments in triplicate to Secretary, Securities 
+and Exchange Commission, 100 F Street NE, Washington, DC 20549-1090.
+
+All submissions should refer to file number SR-NASDAQ-2026-076. This 
+file number should be included on the subject line if email is used. To 
+help the Commission process and review your comments more efficiently, 
+please use only one method. The Commission will post all comments on 
+the Commission's internet website (<a href="https://www.sec.gov/rules/sro.shtml">https://www.sec.gov/rules/sro.shtml</a>). Copies of the filing will be available for inspection and 
+copying at the principal office of the Exchange. Do not include 
+personal identifiable information in submissions; you should submit 
+only information that you wish to make available publicly. We may 
+redact in part or withhold entirely from publication submitted material 
+that is obscene or subject to copyright protection. All submissions 
+should refer to file number SR-NASDAQ-2026-076 and should be submitted 
+on or before October 7, 2026.
+
+    For the Commission, by the Division of Trading and Markets, 
+pursuant to delegated authority.\94\
+---------------------------------------------------------------------------
+
+    \94\ 17 CFR 200.30-3(a)(12).
+---------------------------------------------------------------------------
+
+Sherry R. Haywood,
+Assistant Secretary.
+[FR Doc. 2026-18932 Filed 9-15-26; 8:45 am]
+BILLING CODE 8011-01-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

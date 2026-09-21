@@ -1,0 +1,137 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 16 (Monday, January 26, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 16 (Monday, January 26, 2026)]
+[Notices]
+[Pages 3231-3232]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-01444]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+PEACE CORPS
+
+
+Privacy Act of 1974; System of Records
+
+AGENCY: Peace Corps.
+
+ACTION: Notice of a modified system of records.
+
+-----------------------------------------------------------------------
+
+[[Page 3232]]
+
+SUMMARY: As required by the Privacy Act of 1974 and the OMB Circular A-
+108 Federal Agency Responsibilities for Review, Reporting, and 
+Publication under the Privacy Act (December 23, 2016) and Circular A-
+130, Managing Information as a Strategic Resource, the Peace Corps is 
+publishing notice of a modification of the Peace Corps systems of 
+records notices for the Peace Corps systems of records listed in Table 
+1 below. Pursuant to OMB Memorandum M-25-32, Preventing Improper 
+Payments and Protecting Privacy Through Do Not Pay (August 20, 2025), 
+and OMB Circular A-136, Financial Reporting Requirements--Revised (July 
+14, 2025), this Notice amends the Peace Corps General Routine Use List 
+to ensure that the agency can more easily collaborate with the U.S. 
+Department of the Treasury (Department of Treasury) to take action to 
+defend against financial fraud and prevent improper payments.
+
+DATES: This modified system of records notice will become applicable 
+following the end of the public comment period on February 25, 2026.
+
+ADDRESSES: Send written comments, identified by the docket number and 
+title, to the Peace Corps, ATTN: James Olin, FOIA/Privacy Act Officer, 
+1275 First Street NE, Washington, DC 20526, or by email at 
+<a href="/cdn-cgi/l/email-protection#4030232632003025212325232f3230336e272f36"><span class="__cf_email__" data-cfemail="87f7e4e1f5c7f7e2e6e4e2e4e8f5f7f4a9e0e8f1">[email&#160;protected]</span></a>. Email comments must be made in text and not in 
+attachments.
+
+FOR FURTHER INFORMATION CONTACT: James Olin, FOIA/Privacy Act Officer, 
+1275 First Street NE, Washington, DC 20526; <a href="/cdn-cgi/l/email-protection#8dfdeeebffcdfde8eceee8eee2fffdfea3eae2fb"><span class="__cf_email__" data-cfemail="5b2b383d291b2b3e3a383e3834292b28753c342d">[email&#160;protected]</span></a>; or 
+202-692-2507.
+
+SUPPLEMENTARY INFORMATION: On March 25, 2025, President Trump issued 
+Executive Order (E.O.) 14249, Protecting America's Bank Account Against 
+Fraud, Waste, and Abuse, which requires executive branch agencies to 
+take action to defend against financial fraud and prevent improper 
+payments in collaboration with the Department of the Treasury, the 
+Federal Government's largest financial payment manager. On August 20, 
+2025, OMB also issued Memorandum M-25-32, ``Preventing Improper 
+Payments and Protecting Privacy Through Do Not Pay,'' to the heads of 
+all executive departments and agencies. Specifically, OMB Memorandum M-
+25-32 requires all Senior Agency Officials for Privacy to ensure that 
+their agency's system of records notices include a routine use for the 
+disclosure of information to the Department of the Treasury, when 
+relevant and necessary for identifying, preventing, or recouping 
+improper payments by reviewing payment and award eligibility through 
+the Do Not Pay Working System, to the extent permissible by law. This 
+Notice provides official notice to the public that the agency has added 
+Routine Use O to the Peace Corps' General Routine Use list of systems 
+of records to comply with OMB Memorandum M-25-32. Routine Use O applies 
+specifically to SORNs PC-1, PC-9, P-22 and PC-23, respectively (see 
+Table 1 below). This new routine use will help to ensure that the 
+agency can share data with the Treasury Department's Do Not Pay (DNP) 
+system to verify eligibility and prevent suspected fraud or improper 
+payments and helps protect privacy by integrating privacy safeguards 
+into the DNP initiative.
+
+SYSTEM NAME AND NUMBER:
+    First, Routine Use O applies and modifies PC-1, PC-9, P-22 and PC-
+23, respectively (see Table 1 below). Please refer to the specific 
+SORNs in the table to find specific routine uses that are unchanged by 
+this Notice. Second, please refer to the appropriate individual SORN 
+for any additional information unchanged by this Notice.
+
+                                                     Table 1
+----------------------------------------------------------------------------------------------------------------
+               System No. and name                                 Federal Register, citation(s)
+----------------------------------------------------------------------------------------------------------------
+PC-1 Accounts Receivable (Collection of Debts     65 FR 53772
+ Claims Records).
+PC-9 Travel and Transportation Payment..........  65 FR 53772
+PC-22 Financial Management System (FMS).........  72 FR 25343
+PC-23 Health Benefits Program for Peace Corps     65 FR 53772
+ Volunteers.
+----------------------------------------------------------------------------------------------------------------
+
+SECURITY CLASSIFICATION:
+    The applicable security classification is identified in each 
+notice.
+
+SYSTEM LOCATION:
+    The applicable location is identified in each notice.
+
+SYSTEM MANAGER(S):
+    The applicable system manager(s) is identified in each notice.
+
+ROUTINE USES OF RECORDS MAINTAINED IN THE SYSTEM, INCLUDING CATEGORIES 
+OF USERS AND PURPOSES OF SUCH USES:
+    Routine Use O: To the U.S. Department of the Treasury when 
+disclosure of the information is relevant to review payment and award 
+eligibility through the Do Not Pay Working System for the purposes of 
+identifying, preventing, or recouping improper payments to an applicant 
+for, or recipient of Federal funds, including funds disbursed by a 
+state (meaning a state of the United States, the District of Columbia, 
+a territory or possession of the United States, or a federally 
+recognized Indian tribe) in a state-administered, federally funded 
+program.
+    This routine use will be added to each SORN as they are updated and 
+republished.
+
+HISTORY:
+    The SORNs listed previously were last published in the Federal 
+Register (FR), 65 FR 53773, on September 5, 2000, and 72 FR 25343, on 
+May 4, 2007.
+
+    Dated: January 22, 2026.
+James Olin,
+FOIA/Privacy Act Officer.
+[FR Doc. 2026-01444 Filed 1-23-26; 8:45 am]
+BILLING CODE 6051-01-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

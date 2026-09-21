@@ -1,0 +1,85 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 157 (Monday, August 17, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 157 (Monday, August 17, 2026)]
+[Notices]
+[Pages 53349-53350]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-16726]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+DEPARTMENT OF THE TREASURY
+
+Bureau of the Fiscal Service
+
+
+Extension of a Currently Approved Information Collection: 
+Authorization Agreement for Preauthorized Payment (SF 5510)
+
+ACTION: Notice and request for comments.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The Department of the Treasury, as part of its continuing 
+effort to reduce paperwork and respondent burden, invites the general 
+public and other Federal agencies to take this opportunity to comment 
+on proposed and/or continuing information collections, as required by 
+the Paperwork Reduction Act of 1995. Currently the Bureau of the Fiscal 
+Service within the Department of the Treasury is soliciting comments 
+concerning the Standard Form 5510, ``Authorization Agreement for 
+Preauthorized Payment''.
+
+DATES: Written comments should be received on or before October 16, 
+2026 to be assured of consideration.
+
+ADDRESSES: Direct all written comments and requests for additional 
+information
+
+[[Page 53350]]
+
+to Bureau of the Fiscal Service, Bruce A. Sharp, T1-G, PO Box 1328, 
+Parkersburg, WV 26106-1328, or <a href="/cdn-cgi/l/email-protection#e68494938583c8958e879496a6808f9585878ac8929483879593949fc8818990"><span class="__cf_email__" data-cfemail="e98b9b9c8a8cc79a81889b99a98f809a8a8885c79d9b8c889a9c9b90c78e869f">[email&#160;protected]</span></a>.
+
+SUPPLEMENTARY INFORMATION: 
+    Title: Authorization Agreement for Preauthorized Payment.
+    OMB Number: 1530-0015.
+    Form Number: SF 5510.
+    Abstract: The form is used to collect information from remitters 
+(individuals and corporations) to authorize electronic fund transfers 
+from accounts maintained at financial institutions to collect monies 
+for government agencies.
+    Current Actions: Extension of a currently approved collection.
+    Type of Review: Regular.
+    Affected Public: Business or other for-profit, individuals or 
+households, Federal Government.
+    Estimated Number of Respondents: 100,000.
+    Estimated Time per Respondent: 15 minutes.
+    Estimated Total Annual Burden Hours: 25,000.
+    Request for Comments: Comments submitted in response to this notice 
+will be summarized and/or included in the request for OMB approval. All 
+comments will become a matter of public record. Comments are invited 
+on: (1.) Whether the collection of information is necessary for the 
+proper performance of the functions of the agency, including whether 
+the information shall have practical utility; (2.) the accuracy of the 
+agency's estimate of the burden of the collection of information; (3.) 
+ways to enhance the quality, utility, and clarity of the information to 
+be collected; (4.) ways to minimize the burden of the collection of 
+information on respondents, including through the use of automated 
+collection techniques or other forms of information technology; and 
+(5.) estimates of capital or start-up costs and costs of operation, 
+maintenance, and purchase of services to provide information.
+
+    Dated: August 13, 2026.
+Bruce A. Sharp,
+Bureau PRA Clearance Officer.
+[FR Doc. 2026-16726 Filed 8-14-26; 8:45 am]
+BILLING CODE 4810-AS-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-09-21T16:24:38Z",
+ "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=2&order=newest&conditions%5Bagencies%5D%5B%5D=government-accountability-office&conditions%5Btype%5D%5B%5D=RULE&conditions%5Btype%5D%5B%5D=NOTICE&fields%5B%5D=document_number&fields%5B%5D=raw_text_url&fields%5B%5D=html_url&fields%5B%5D=agencies&fields%5B%5D=signing_date&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+ "status": 200,
+ "final_url": "https://www.federalregister.gov/api/v1/documents.json?per_page=2&order=newest&conditions%5Bagencies%5D%5B%5D=government-accountability-office&conditions%5Btype%5D%5B%5D=RULE&conditions%5Btype%5D%5B%5D=NOTICE&fields%5B%5D=document_number&fields%5B%5D=raw_text_url&fields%5B%5D=html_url&fields%5B%5D=agencies&fields%5B%5D=signing_date&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+ "content_type": "application/json; charset=utf-8",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /api/v1/documents.json",
+ "bytes": 2238,
+ "sha256": "10dcb3557b55e9087aa7c712e4552cd76604edb428c4c533e0c8b3507c8256cb",
+ "error": null
+}

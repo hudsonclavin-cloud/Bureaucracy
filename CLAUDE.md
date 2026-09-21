@@ -44,6 +44,7 @@ python scripts/probe_network_access.py           # what this session can reach n
 python scripts/derive_pay_evidence.py --dry-run  # the salary table joined to the archive's levels; writes nothing
 python scripts/derive_gs_pay_evidence.py --dry-run  # GS / SES / SL-ST base-pay RANGES for the listings' pay plans; writes nothing
 python scripts/derive_plum_current_evidence.py --dry-run  # OPM's CURRENT Plum Book export matched to position nodes; the incumbent columns are never read; writes nothing
+python scripts/derive_fr_signature_evidence.py --dry-run  # the title an official stated when signing a Federal Register document; the signer's NAME is never read; writes nothing
 python scripts/derive_judicial_pay_evidence.py --dry-run    # uscourts.gov's own compensation table; writes nothing
 python scripts/derive_congressional_pay_evidence.py --dry-run  # senate.gov's own salary schedule; writes nothing
 python scripts/derive_whitehouse_pay_evidence.py --dry-run     # the White House Office's statutory staff roster; writes nothing
@@ -1274,6 +1275,185 @@ The third group was admitted the same day (see the caps-row paragraph
 above): the equality join, not a plural test, is what keeps "DEPUTY
 ADMINISTRATORS" from reaching anything. The first two stay refused, recorded
 as a measurement.
+
+**The documents the government signs (`federal_register_signatures.py`, since
+2026-09-21).** Every source above is a document ABOUT an agency, and each is as
+complete as somebody decided to make it: a web page is not obliged to name an
+agency's officers, and the Government Manual's leadership tables carry what the
+Office of the Federal Register chose to print. Counted on the published graph:
+4,280 of the 4,591 positions carry no verification method at all, and **1,922 of
+those sit under an organisation whose own page WAS read** -- it named the
+organisation, or was recorded as not naming it -- and simply does not name the
+post.
+
+A Federal Register document is a different kind of thing. Every rule and every
+notice the government publishes ends with a signature block, and the block names
+the signing official and that official's own title:
+
+    R.N. Macon,
+    Captain, U.S. Coast Guard, Captain of the Port, Lake Michigan.
+    [FR Doc. 2026-19270 Filed 9-18-26; 8:45 am]
+
+It is not a roster somebody compiled; it is an act of government carried out by
+a named officer, published by the Office of the Federal Register, and the title
+is there because the document has no legal force without somebody competent to
+sign it. So it carries something no other source here does: the post existed
+**and was filled** on the day the document was signed.
+
+**The signer's name is never read**, and here that is structural rather than a
+promise. The block's shape is `<name>,` then the title, so `signature_title`
+locates the name line's index and builds the title out of
+`lines[name_index + 1 : fr_doc_index]` — the name line is stepped over, never
+bound to anything that escapes. That is the rule `positions.py` sets for the
+PLUM archive's incumbent columns and `whitehouse_pay.classify_row` for its
+report's NAME column, and the test is the strongest of the three:
+`tests/test_federal_register_signatures.py` re-finds, per committed document,
+exactly the line the module steps over, and asserts none of those strings
+appears anywhere in what the module returns, writes or prints — including the
+dry run's own output.
+
+**Scoping is the API's, not the text's.** The signature says "U.S. Coast Guard"
+in its own words, and reading that would be the assembly this file refuses
+everywhere else. What scopes a document is the Register's own `agencies` field,
+resolved by `directories.federal_register_name_keys` — the same rule the agency
+directory uses, shared so the two can never disagree about which agency is which
+node — and **only when the whole agency list reduces to exactly one organisation
+here**. It is the second-largest refusal this module makes -- 133 of 443
+committed documents -- and it is measured rather than argued around: the
+Register files a Coast Guard rule under both "Homeland Security Department" and
+"Coast Guard", both are nodes in this graph, and which of the two signed it is
+not something the API settles.
+
+**Equality, never containment**, and a floor of two tokens. Most signature
+titles are written `<office>, <organisation>` — "Administrator, Agricultural
+Marketing Service" — and splitting one to reach a node named `Administrator`
+would be producing a title rather than selecting one, the failure
+`rename_templated_post_titles.py` is built around. The titles that do reach a
+node are the bare ones -- `Attorney General`, `Executive Director for
+Operations`, `Secretary of Transportation` -- and they are the whole of what
+this source yields.
+
+**What it actually reaches, measured on 443 committed documents: three posts.**
+The corpus yields **360 signature titles, 208 of them distinct**. Of the 443
+documents, 133 are refused because the Register files them under two agencies
+that are both nodes here, 83 carry no signature block above the `[FR Doc. …]`
+line at all, 14 sign with a title of under two tokens, and **210 sign with a
+title the scoped organisation carries no post of**. Three reach a node:
+
+- the **Attorney General**, on Justice Department rule 2026-17815;
+- the NRC's **Executive Director for Operations**, on rule 2026-17445;
+- the **Secretary of Transportation**, on rule 2026-18040.
+
+Five titles were re-fetched live and compared with the committed bytes — the
+three above, the Coast Guard rule this section opens with, and a Labor
+Department notice — and all five agree.
+
+**The 210 refusals are the finding, not the failure.** Read against the posts
+those organisations carry, they are almost all one of two things. Most
+signatures are an administrative officer's rather than a principal's:
+`Federal Register Liaison Officer, U.S. Department of Energy`, `Departmental
+PRA Compliance Officer`, `FOIA/Privacy Act Officer`, `Alternate OSD Federal
+Register Liaison Officer` — real posts, signing because somebody has to, and
+posts this graph does not carry. And this graph's small independent agencies
+are the stamped five this file documents elsewhere (`Director / Administrator
+/ Chair, <agency>`, `Deputy Director / Vice Chair`, `General Counsel`,
+`Inspector General`, `Chief Financial Officer`), which almost nothing signs
+under. The near misses are refused deliberately and correctly: `Acting
+General Counsel` against the CSB's `General Counsel`, `Acting Comptroller
+General of the United States` against the GAO's `Comptroller General of the
+United States`, `Chair, Federal Election Commission` against `Director /
+Administrator / Chair, Federal Election Commission`. Folding "Acting" or
+splitting a comma would reach each of them, and each fold is the containment
+failure this file records twice already.
+
+**All three were already sourced, and that is where the value landed.** None
+of the three takes the signature as its verification method: the Attorney
+General and the Secretary of Transportation carried the Government Manual's
+entry (`partial`, 0.70, one URL) and the NRC's Executive Director for
+Operations a label on the NRC's own page. The signature is a second,
+genuinely independent official document, so the first two move **`partial` →
+`verified`** on the existing arithmetic (0.70 + 0.10 for a second source) and
+the third stays verified at 0.90. Three of 4,591 positions is **0.07%**, it is
+printed on its own line by the gate so it cannot be read as anything grander,
+and the honest summary is that the Federal Register confirms the government's
+principals rarely and its paperwork officers constantly.
+
+**It claims no placement, and it is never a cost.** One document was read and it
+yields one observation; publishing existence and placement from it would present
+a single finding as two corroborating ones — the rule the Manual's post route
+already follows, and the gate refuses a placement method naming this source.
+
+**And it is worth less than it first looks, which is the existing arithmetic
+rather than a new rule.** `classify_source_url` files a `federalregister.gov`
+URL as `federal_register` and deliberately NOT as `official_site` — "a notice is
+documentation of an office, not the office's own site" — so it scores the bare
+0.4 any source scores and misses the 0.3 an official site adds. A post confirmed
+by a signature ALONE publishes **`unverified` with a source recorded**, not
+`partial`: the site shows what was read and does not call it a verification.
+A post that already carries a page or Manual claim keeps it and the second
+source adds 0.1, which is the only route from here to `verified`.
+
+**A response that is not the document is refused, not parsed.**
+`www.federalregister.gov` answers `robots.txt` **200** with real rules, none of
+which covers either path read here, and it answers a document's `raw_text_url`
+with a 10,596-byte HTML page titled "Federal Register :: Request Access" at
+random — under HTTP **200**, so nothing in the status says anything is wrong,
+and the same URL serves the document on the next attempt. It is neither a fact
+about this project's agent nor a simple rate limit: measured against three
+header sets the rate did not move, and across four stretches of the run paced
+at 2.5, 2.0, 6.0 and 2.5 seconds it came back on 63%, 68%, 59% and 82% of
+requests, drifting without tracking the delay (`docs/NETWORK_ACCESS.md` §13).
+What it costs is attempts rather than patience, so the run allows twelve, after
+which one document of the 444 the two tranches asked for was never served. A
+response whose media type is not `text/plain` is therefore not the document: it
+is deleted and retried, and where the host never served it no fixture is
+committed and the `.meta.json` says why. The plain-text rendering the Publishing
+Office does serve is wrapped in a fixed `<html>…<pre>` envelope and a few bodies
+carry an injected Cloudflare e-mail span; nothing here parses either. The
+signature block is located by the document's own `[FR Doc. <number> Filed …]`
+line, whose number must be the number the API gives, and a tag or an HTML
+entity inside the block refuses it — a bare ampersand does not, because this
+graph names units "Health & Human Services" and carries a curated post called
+`AF/A1 (Manpower & Personnel)`.
+
+**The sample is a census in two tranches, and its bias is stated.** Tranche A:
+for each of the 143 agency-directory entries that reduce to exactly one
+organisation carrying a post a signature could name, one API listing call took
+that agency's two most recent RULE and NOTICE documents, and every document
+those listings named was fetched. Tranche B: the 300 most recent RULE and the
+300 most recent NOTICE documents government-wide, three listing pages each, of
+which the ones whose agency list reduces to exactly one organisation here were
+fetched — because tranche A
+under-weights the departments, whose newest documents are filed under a bureau
+as well and so are refused by the scoping rule. Every listing is committed, so
+what was refused before any fetch is reproducible offline with no network, and
+`read_documents` counts a document the host refused separately from one nothing
+asked for. Neither tranche selected anything for what its signature says, and
+together they say nothing about how often a title is signed in general — only
+that it was signed on the documents in here
+(`tests/fixtures/federal_register/README.md`).
+
+**The gate** re-reads the committed fixtures by the block's own document number,
+recomputes every digest, re-derives the signature title with a second,
+independent stdlib parse, and re-resolves the agency list against the published
+organisations — so the scope the claim rests on is checked rather than copied.
+The parent is read off the **tree the gate is walking, never off `parentId`**,
+for the reason the scoped Executive Schedule claim already documents: `General
+Counsel` names 84 nodes here, so a record moved to another node of the same name
+keeps a real title, a real document and a real URL, and only the parent tells
+them apart. It refuses a block on a non-post, a renamed node, a document not in
+the fixtures, a digest or URL that is not the committed one, a title the
+document does not print in its signature position, an agency list the Register
+does not print, a future date, an inflated occurrence count, a citation that is
+not the Register's own address, a method with no block behind it, and any
+placement claimed from this source.
+`tests/test_federal_register_signatures.py` corrupts each in turn, against a
+record applied to a copy of the published graph so every other gate check runs
+beside it — but built from fixtures the test WRITES rather than the committed
+ones. That is deliberate: the Register publishes what it publishes, so a corpus
+fetched today may trip a given rule once or never, and a gate rule exercised
+only when the host happens to cooperate is not pinned at all. What the
+committed corpus really yields is checked separately, and the gate accepts it.
 
 **Headcounts and positions (`headcounts.py`, `positions.py`).** Two more
 official sources, applied by the exporter since 2026-09-09 from

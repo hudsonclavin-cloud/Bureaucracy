@@ -1,0 +1,345 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 165 (Thursday, August 27, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 165 (Thursday, August 27, 2026)]
+[Rules and Regulations]
+[Pages 55282-55284]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-17500]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+DEPARTMENT OF COMMERCE
+
+National Oceanic and Atmospheric Administration
+
+50 CFR Part 648
+
+[Docket No. 260821-0006]
+RIN 0648-BO16
+
+
+Fisheries of the Northeastern United States; Monkfish; Framework 
+Adjustment 17
+
+AGENCY: National Marine Fisheries Service (NMFS), National Oceanic and 
+Atmospheric Administration (NOAA), Commerce.
+
+ACTION: Final rule.
+
+-----------------------------------------------------------------------
+
+SUMMARY: Through this action, NMFS is implementing specifications and 
+management measures in Framework Adjustment 17 to the Monkfish Fishery 
+Management Plan (FMP). This action sets monkfish specifications for 
+fishing year 2026, projects specifications for fishing years 2027 and 
+2028, streamlines the Annual Catch Limit (ACL) Overage Accountability 
+Measure (AM) trigger, and adds default specifications for the monkfish 
+fishery. This action is necessary to respond to updated scientific 
+information and achieve the goals and objectives of the FMP. These 
+measures are intended to help prevent overfishing and ensure that 
+management measures are based on the best scientific information 
+available.
+
+DATES: Effective September 28, 2026.
+
+ADDRESSES: Copies of Framework Adjustment 17, including the draft 
+Supplemental Information Report (SIR) prepared by the New England 
+Fishery Management Council in support of this action, are available 
+from Dr. Cate O'Keefe, Executive Director, New England Fishery 
+Management Council, 50 Water Street, Mill 2, Newburyport, MA 01950. The 
+supporting documents are also accessible via the internet at: <a href="https://www.nefmc.org/management-plans/monkfish">https://www.nefmc.org/management-plans/monkfish</a> or <a href="https://www.regulations.gov">https://www.regulations.gov</a>.
+
+FOR FURTHER INFORMATION CONTACT: Spencer Talmage, Fishery Policy 
+Analyst, (978) 281-9232.
+
+SUPPLEMENTARY INFORMATION:
+
+Background
+
+    The monkfish fishery is jointly managed under the Monkfish FMP by 
+the New England and the Mid-Atlantic Fishery Management Councils 
+(Councils). The fishery extends from Maine to North Carolina from the 
+coast out to the end of the continental shelf. The Councils manage the 
+fishery as two management areas, with the Northern Fishery Management 
+Area (NFMA) covering the Gulf of Maine and northern part of Georges 
+Bank, and the Southern Fishery Management Area (SFMA) extending from 
+the southern flank of Georges Bank through Southern New England and 
+into the Mid-Atlantic Bight to North Carolina.
+    The monkfish fishery is primarily managed by landing limits and a 
+yearly allocation of monkfish days-at-sea (DAS) calculated to enable 
+vessels participating in the fishery to catch, but not exceed, the 
+target total allowable landings (TAL) and the annual catch target 
+(ACT), which is the TAL plus an estimate of expected discards, for each 
+management area.
+    Under the Magnuson-Stevens Fishery Conservation and Management Act 
+(Magnuson-Stevens Act), NMFS approves, disapproves, or partially 
+approves measures that the Council recommends, based on consistency 
+with the Act and other applicable law. NMFS reviews proposed 
+regulations for consistency with the fishery management plan, plan 
+amendments, the Magnuson-Stevens Act and other applicable law, and 
+publishes the proposed regulations, solicits public comment, and 
+promulgates the final regulations. NMFS published a proposed rule for 
+Framework 17 on April 23, 2026 (91 FR 21779), with a 30-day comment 
+period that ended on May 26, 2026. Based on information provided in the 
+SIR and considered during the preparation of this action, and after 
+consideration of comments, NMFS has approved all the measures in 
+Framework 17 recommended by the Councils, as described below. The 
+measures implemented in this final rule:
+    <bullet> Set specifications for the NFMA and SFMA for fishing year 
+2026 and projects specifications for fishing years 2027 and 2028;
+
+[[Page 55283]]
+
+    <bullet> Streamlines the implementation of AMs in the event of an 
+ACL overage; and
+    <bullet> Adds default specifications for the monkfish fishery, 
+previously approved in Framework 13.
+
+Approved Measures
+
+1. Specifications
+
+    This action sets the NFMA and SFMA quotas for fishing year 2026 and 
+projects quotas for fishing year 2027 and 2028, based on the Councils' 
+recommendations.
+    On August 19, 2025, the New England Council's Scientific and 
+Statistical Committee (SSC) recommended acceptable biological catch 
+(ABC) levels in the NFMA and SFMA for fishing years 2026-2028 based on 
+the Northeast Fisheries Science Center's 2025 Data Update for Northern 
+and Southern Monkfish and information provided by the New England 
+Council's Plan Development Team.
+    The Councils' recommended specifications include status quo ABCs 
+and ACLs in both management areas relative to 2023-2025 values. 
+Expected discards, calculated using the median of the most recent 10 
+years of data, slightly increased in the NFMA and marginally decreased 
+in the SFMA. After accounting for discards, the Councils recommended a 
+3-percent decrease in the TAL for the NFMA and a less than 1-percent 
+increase in the TAL for the SFMA. Table 1 includes the approved catch 
+limits for 2026-2028 and the change relative to the 2023-2025 
+specifications.
+
+                                  Table 1--Approved Framework 17 Specifications
+----------------------------------------------------------------------------------------------------------------
+                                                      Northern area                        Southern area
+                                       -------------------------------------------------------------------------
+             Catch limits                  2026-2028 Specs in     % Change from      2026-2028     % Change from
+                                            metric tons (mt)       2023-2025 *      Specs (mt)      2023-2025 *
+----------------------------------------------------------------------------------------------------------------
+ABC...................................                    6,224               0            5,861               0
+ACL...................................                    6,224               0            5,861               0
+Management Uncertainty (3%)...........                      187  ...............             176  ..............
+ACT (TAL + discards)..................                    6,038               0            5,685               0
+Expected Discards.....................                      863            18.4          2,198.5            -0.3
+TAL...................................                    5,309              -3            3,487             0.2
+----------------------------------------------------------------------------------------------------------------
+* Percent change from the previously approved 2023-2025 specifications.
+
+    At the end of each fishing year, NMFS evaluates catch information 
+and determines if the quota has been exceeded. The regulations at 50 
+CFR 648.96(d) require revision of the monkfish ACT if it is determined 
+that the ACL was exceeded in any given year. If an overage occurs, NMFS 
+will publish a notice in the Federal Register of any revisions to these 
+specifications. NMFS has determined, based on final 2024 year-end 
+accounting, that no adjustment is necessary for fishing year 2026. NMFS 
+will provide notice of the 2027 and 2028 quotas prior to the start of 
+each respective fishing year.
+
+2. Annual Catch Limit Overage Accountability Measures
+
+    Under regulations defining the ACL Overage AMs at Sec.  
+648.96(d)(2), if it is determined that the ACL for a stock was exceeded 
+in a given year, then the Councils are required to take action to 
+deduct the amount of the ACL overage from the ACT for that stock in the 
+second fishing year following the overage. Only if the Councils fail to 
+take action to implement this revision is the Regional Administrator 
+required to take action to implement the AM in accordance with the 
+Administrative Procedure Act and other applicable law.
+    Framework 17 removes the requirement that the Councils trigger the 
+ACL Overage AMs, making only the Regional Administrator responsible for 
+implementing the AMs. This change simplifies and streamlines the 
+procedure for implementing AMs and minimizes disruption to Council 
+workplans. Shifting responsibility for implementing AMs to the Regional 
+Administrator eliminates these disruptions; NMFS already provides 
+notice of annual monkfish quotas in the Federal Register and would be 
+able to implement any ACT revisions as part of that process. The 
+regulations included in this final rule clarify this process.
+    This rule implements no other changes to the ACL Overage AMs.
+
+3. Default Overfishing Limits (OFL), ABCs, and ACLs
+
+    This rule implements regulations that define default OFLs, ABCs, 
+and ACLs that would go into place if no specifications for a fishing 
+year are in place at the start of that fishing year.
+    Default rollover specifications were originally included in the 
+Councils' submission of Framework 13 to the Monkfish FMP. After 
+reviewing Framework 13 for consistency with the Magnuson-Stevens Act 
+and applicable law, NMFS approved Framework 13 and published a final 
+rule in the Federal Register on August 11, 2023 (88 FR 54495) (2023 
+Final Rule). However, during the development of Framework 17 and in 
+discussions related to potential changes that might be considered under 
+the New England Council's Omnibus Management Flexibility Amendment, 
+NMFS discovered that changes to the monkfish regulations to clarify 
+rollover and default specifications in Sec.  648.96 were inadvertently 
+omitted from the 2023 Final Rule. As such, these regulations were never 
+put in place. This action adds regulations to define default 
+specifications and corrects this omission.
+
+Comments and Responses
+
+    NMFS received two comments during the public comment period for the 
+proposed rule. Of these comments, one was not relevant to the proposed 
+measures and will not be addressed here. The other comment received 
+opposed publication of the final rule for Framework 17 on procedural 
+grounds.
+    Comment 1: One member of the public stated that, in 15 separate 
+instances, the proposed rule for Framework 17 failed to comply or 
+document compliance with the Magnuson-Stevens Act (including the 10 
+National Standards), the National Environmental Policy Act (NEPA), the 
+Endangered Species Act (ESA), the Regulatory Flexibility Act (RFA), the 
+Marine Mammal Protection Act (MMPA), the Coastal Zone Management Act 
+(CZMA), and several Executive Orders. The commenter stated that NMFS 
+should not approve the action or issue the final rule for Framework 17 
+until these ``procedural and substantive defects'' are addressed.
+
+[[Page 55284]]
+
+    Response: NMFS disagrees that Framework 17 or the proposed rule is 
+out of compliance with the MSA, applicable law, or applicable Executive 
+Orders. NMFS has approved Framework 17 on the basis that it is in 
+compliance with the Monkfish FMP, the Magnuson-Stevens Act, and all 
+applicable law.
+    The Supplemental Information Report submitted by the Councils in 
+support of Framework 17 includes an in-depth discussion of the action's 
+compliance with the Magnuson-Stevens Act and applicable laws that the 
+commenter states are not adequately addressed. Specifically, the 
+Framework 17 document includes a summary of how the Framework is 
+consistent with all 10 National Standards, 15 required provisions for 
+FMPs found in section 303(a) of the Magnuson-Stevens Act, the ESA, the 
+MMPA, CZMA, and applicable Executive Orders. The proposed rule for 
+Framework 17 provided instruction in the ADDRESSES section on how to 
+obtain copies of the Framework 17 document, including the draft 
+Supplemental Information Report, prepared by the Councils. This 
+included instructions on how readers could access the documents via the 
+internet. NMFS again directs the commenter and the public to the 
+Framework 17 document by following the instructions in the ADDRESSES 
+section of this final rule.
+    In addition, the proposed rule clearly documents that the Chief 
+Counsel for Regulation of the Department of Commerce certified to the 
+Chief Counsel for Advocacy of the Small Business Administration (SBA) 
+that this action would not have a significant economic effect on a 
+substantial number of small entities. The proposed rule includes a 
+detailed description of the entities regulated by this action, whether 
+they are large or small, and the long-term impacts of the action on 
+small entities.
+    Finally, some of the remaining deficiencies that the commenter 
+claims regarding Framework 17 and/or its proposed rule are not relevant 
+(e.g., Executive Orders 12898 and 14008, which have been rescinded).
+
+Changes From the Proposed Rule
+
+    NMFS made one change to the proposed rule. This final rule made a 
+minor adjustment to the regulatory text regarding the implementation of 
+an AM due to an ACL overage to clarify the Regional Administrator's 
+role in the process.
+
+Classification
+
+    Pursuant to section 304(b)(3) of the Magnuson-Stevens Act, the NMFS 
+Assistant Administrator has determined that this final rule is 
+consistent with the Monkfish FMP, other provisions of the Magnuson-
+Stevens Act, and other applicable law.
+    This final rule has been determined to be not significant for 
+purposes of Executive Order 12866.
+    This final rule is exempt from the requirements of Executive Order 
+14192 because it is a routine fishing action.
+    This final rule contains no information collection requirements 
+under the Paperwork Reduction Act of 1995.
+    NMFS has determined that this action would not have a substantial 
+direct effect on one or more Indian Tribes, on the relationship between 
+the Federal Government and Indian Tribes, or on the distribution of 
+power and responsibilities between the Federal Government and Indian 
+Tribes; therefore, consultation with Tribal officials under Executive 
+Order 13175 is not required, and the requirements of section (5)(b) and 
+(c) of Executive Order 13175 also do not apply. A Tribal summary impact 
+statement under section (5)(b)(2)(B) and (c)(2) of Executive Order 
+13175 is not required and has not been prepared.
+    The Chief Counsel for Regulation of the Department of Commerce 
+certified to the Chief Counsel for Advocacy of the Small Business 
+Administration during the proposed rule stage that this action would 
+not have a significant economic impact on a substantial number of small 
+entities. The factual basis for the certification was published in the 
+proposed rule and is not repeated here. Although NMFS received a 
+comment simply stating that the certification was not defensible, this 
+comment did not provide additional data or information that contradicts 
+the factual basis for this certification. This comment and NMFS's 
+response is included in the Comments and Responses section of this 
+final rule. As a result, a regulatory flexibility analysis was not 
+required, and none was prepared.
+
+List of Subjects in 50 CFR Part 648
+
+    Fisheries, Fishing.
+
+    Dated: August 24, 2026.
+Samuel D. Rauch III,
+Deputy Assistant Administrator for Regulatory Programs, National Marine 
+Fisheries Service.
+
+    For the reasons set out in the preamble, NMFS amends 50 CFR part 
+648 as follows:
+
+PART 648--FISHERIES OF THE NORTHEASTERN UNITED STATES
+
+0
+1. The authority citation for part 648 continues to read as follows:
+
+    Authority: 16 U.S.C. 1801 et seq.
+
+
+0
+2. Amend Sec.  648.96 by adding paragraph (c)(1)(iv) and revising 
+paragraph (d)(2) to read as follows:
+
+
+Sec.  648.96  FMP review, specification, and framework adjustment 
+process.
+
+* * * * *
+    (c) * * *
+    (1) * * *
+    (iv) Default OFLs, ABCs, and ACLs. If final specifications (OFLs, 
+ABCs, and ACLs) for a fishing year are not published in the Federal 
+Register in a manner consistent with this section for the start of that 
+fishing year, specifications for that fishing year shall be equal to 
+the prior fishing year's specifications for each stock, until 
+superseded by a final rule implementing new specifications.
+    (A) Specification of ACTs for each management area and accounting 
+for incidental catch in non-directed fisheries and discards in all 
+fisheries under default ACLs shall be consistent with what was adopted 
+for the previous year's specifications.
+    (B) [Reserved]
+    (d) * * *
+    (2) ACL overages and adjustments. If it is determined, based upon, 
+but not limited to, available landings and discard information, that 
+the ACL for a monkfish stock is exceeded in a given year, then the ACT 
+for that stock in the second fishing year following the fishing year in 
+which the ACL overage occurred shall be revised such that the ACL 
+overage is deducted from the ACT on a pound for pound basis. If 
+necessary, based on the scale of the deduction, management measures 
+(DAS and trip limits) may be revised after consultation with the 
+Councils. The Regional Administrator shall make these adjustments in 
+accordance with the Administrative Procedure Act and other applicable 
+law.
+* * * * *
+
+[FR Doc. 2026-17500 Filed 8-26-26; 8:45 am]
+BILLING CODE 3510-22-P
+
+
+</pre></body>
+</html>

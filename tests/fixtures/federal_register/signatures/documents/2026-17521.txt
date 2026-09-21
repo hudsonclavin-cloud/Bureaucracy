@@ -1,0 +1,173 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 165 (Thursday, August 27, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 165 (Thursday, August 27, 2026)]
+[Notices]
+[Pages 55353-55354]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-17521]
+
+
+-----------------------------------------------------------------------
+
+DEPARTMENT OF THE INTERIOR
+
+Bureau of Indian Affairs
+
+[267A2100DD/AAKP300000/A0A501010.000000; OMB Control Number 1076-0122]
+
+
+Agency Information Collection Activities; Submission to the 
+Office of Management and Budget for Review and Approval; Data Elements 
+for Bureau-Funded Schools
+
+AGENCY: Bureau of Indian Affairs, Interior.
+
+ACTION: Notice of information collection; request for comment.
+
+-----------------------------------------------------------------------
+
+SUMMARY: In accordance with the Paperwork Reduction Act of 1995, we, 
+the Bureau of Indian Education (BIE), are proposing to renew an 
+information collection with revisions.
+
+DATES: Interested persons are invited to submit comments. To be 
+considered, your comments must be received on or before September 28, 
+2026.
+
+ADDRESSES: Send your written comments and recommendations for the 
+proposed information collection request (ICR) to the Office of 
+Information and Regulatory Affairs (OIRA) through <a href="https://www.reginfo.gov/public/do/PRA/icrPublicCommentRequest?ref_nbr=202512-1076-003">https://www.reginfo.gov/public/do/PRA/icrPublicCommentRequest?ref_nbr=202512-1076-003</a> or by visiting <a href="https://www.reginfo.gov/public/do/PRAMain">https://www.reginfo.gov/public/do/PRAMain</a> and 
+selecting ``Currently under Review--Open for Public Comments'' and then 
+scrolling down to the ``Department of the Interior.''
+
+FOR FURTHER INFORMATION CONTACT: Steven Mullen, Information Collection 
+Clearance Officer, Office of Regulatory Affairs and Collaborative 
+Action--Indian Affairs, U.S. Department of the Interior, 1001 Indian 
+School Road NW, Suite 229, Albuquerque, New Mexico 87104; 
+<a href="/cdn-cgi/l/email-protection#a2c1cdcfcfc7ccd6d1e2c0cbc38cc5cdd4"><span class="__cf_email__" data-cfemail="aac9c5c7c7cfc4ded9eac8c3cb84cdc5dc">[email&#160;protected]</span></a>; (202) 924-2650. Individuals in the United States who 
+are deaf, deafblind, hard of hearing, or have a speech disability may 
+dial 711 (TTY, TDD, or TeleBraille) to access telecommunications relay 
+services. You may also view the ICR at <a href="https://www.reginfo.gov/public/Forward?SearchTarget=PRA&textfield=1076-0122">https://www.reginfo.gov/public/Forward?SearchTarget=PRA&textfield=1076-0122</a>.
+
+SUPPLEMENTARY INFORMATION: In accordance with the Paperwork Reduction 
+Act of 1995 (PRA, 44 U.S.C. 3501 et seq.) and 5 CFR 1320.8(d)(1), we 
+provide the general public and other Federal agencies with an 
+opportunity to comment on new, proposed, revised, and continuing 
+collections of information. This helps us assess the impact of our 
+information collection requirements and minimize the public's reporting 
+burden. It also helps the public understand our information collection 
+requirements and provide the requested data in the desired format.
+    A Federal Register notice with a 60-day public comment period 
+soliciting comments on this collection of information was published on 
+March 3, 2026 (91 FR 10410). We received one comment, available at 
+<a href="https://www.regulations.gov/comment/BIA-2022-0005-0028">https://www.regulations.gov/comment/BIA-2022-0005-0028</a> with pertinent 
+summary below.
+    Comment 1: The National Indian Education Association (NIEA) 
+recommends establishing mechanisms for tribal data ownership and 
+governance; incorporating tribally defined indicators of success, 
+including language and cultural measures; ensuring meaningful 
+consultation in system design and renewal; increasing transparency in 
+how data informs funding decisions; strengthening safeguards for 
+sensitive information; and reducing unnecessary administrative burden 
+on Tribal schools.
+    Agency Response to Comment 1: Under 25 CFR 43, BIE maintains the 
+security and confidentiality of student records with appropriate 
+administrative, technical and physical safeguards. The Native American 
+Student Information System (NASIS) is a centralized system for 
+supporting school administrators, teachers, staff, students, parents/
+guardians, and Central Office staff. NASIS access resources may be 
+found at <a href="https://www.bie.edu/CAO/NASISTraining">https://www.bie.edu/CAO/NASISTraining</a> and <a href="https://www.bie.edu/events-and-consultation/nasis-virtual-trainings">https://www.bie.edu/events-and-consultation/nasis-virtual-trainings</a>.
+    As part of our continuing effort to reduce paperwork and respondent 
+burdens, we are again soliciting comments from the public and other 
+Federal agencies on the proposed ICR that is described below. We are 
+especially interested in public comment addressing the following:
+    (1) Whether or not the collection of information is necessary for 
+the proper performance of the functions of the agency, including 
+whether or not the information will have practical utility;
+    (2) The accuracy of our estimate of the burden for this collection 
+of information, including the validity of the methodology and 
+assumptions used;
+    (3) Ways to enhance the quality, utility, and clarity of the 
+information to be collected; and
+    (4) How might the agency minimize the burden of the collection of 
+information on those who are to respond, including through the use of 
+appropriate automated, electronic, mechanical, or other technological 
+collection techniques or other forms of information technology, e.g., 
+permitting electronic submission of response.
+    Comments that you submit in response to this notice are a matter of 
+public record. Before including your address, phone number, email 
+address, or other personal identifying information in your comment, you 
+should be aware that your entire comment--including your personal 
+identifying information--may be made publicly available at any time. 
+While you can ask us in your comment to withhold your personal 
+identifying information from public review, we cannot guarantee that we 
+will be able to do so.
+    Abstract: The Secretary of the Interior, through the Bureau of 
+Indian Education (BIE), is required by the Snyder Act (25 U.S.C. 13), 
+Indian Self-Determination and Education Assistance Act of 1975 (25 
+U.S.C. 5301), Education Amendments of 1978 (25 U.S.C. 2001), Augustus 
+F. Hawkins-Robert T. Stafford Elementary and Secondary School 
+Improvement Amendments of 1988 (20 U.S.C. 6301 et seq.), and Every 
+Student Succeeds Act (20 U.S.C. 6301) to provide educational services 
+to federally recognized Indians and Alaska Natives. In addition, 25 CFR 
+43, Maintenance and Control of Student Records in Bureau Schools, 
+contain regulations governing the maintenance, control, and 
+accessibility of student records.
+    BIE's Student Enrollment Application is utilized by schools 
+operated or funded by BIE. The information is collected by school 
+registrars to determine the student's eligibility for enrollment in a 
+bureau-operated school, and if eligible, is shared with appropriate 
+school officials to identify the student's base and supplemental 
+educational and/or residential program needs. The information is 
+compiled into a national database by the Bureau of Indian Education to 
+facilitate budget requests and the allocation of congressionally 
+appropriated funds.
+
+Revision to Information Collection
+
+    The Behavioral Health and Wellness Program (BHWP) has concluded its 
+services. No additional information will be collected. The BHWP was 
+focused on providing indigenous focused, evidence-based, and trauma-
+informed
+
+[[Page 55354]]
+
+behavioral health and wellness services/resources for students and 
+staff at all Bureau-funded programs, departments, and institutions 
+including Bureau operated schools, Tribally controlled schools, post-
+secondary institutions, and Tribal colleges and universities.
+    Title of Collection: Data Elements for Bureau-Funded Schools.
+    OMB Control Number: 1076-0122.
+    Form Number: None.
+    Type of Review: Revision of a currently approved collection.
+    Respondents/Affected Public: Individuals, Contract and Grant 
+schools, and Bureau-funded schools.
+    Total Estimated Number of Annual Respondents: 48,000 per year, on 
+average.
+    Total Estimated Number of Annual Responses: 48,000 per year, on 
+average.
+    Estimated Completion Time per Response: 15 minutes.
+    Total Estimated Number of Annual Burden Hours: 12,000 hours.
+    Frequency of Collection: Occasionally, required to obtain a 
+benefit.
+    Total Estimated Annual Nonhour Burden Cost: $0.
+
+Authority
+
+    An agency may not conduct or sponsor and a person is not required 
+to respond to a collection of information unless it displays a 
+currently valid OMB control number. The authority for this action is 
+the Paperwork Reduction Act of 1995 (44 U.S.C. 3501 et seq.).
+
+Steven Mullen,
+Information Collection Clearance Officer, Office of Regulatory Affairs 
+and Collaborative Action--Indian Affairs.
+[FR Doc. 2026-17521 Filed 8-26-26; 8:45 am]
+BILLING CODE 4337-15-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

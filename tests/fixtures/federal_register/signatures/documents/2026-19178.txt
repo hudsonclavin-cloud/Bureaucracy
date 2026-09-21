@@ -1,0 +1,137 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 180 (Friday, September 18, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 180 (Friday, September 18, 2026)]
+[Notices]
+[Pages 59294-59295]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-19178]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+DEPARTMENT OF TRANSPORTATION
+
+Federal Aviation Administration
+
+[Docket No. FAA-2026-10264]
+
+
+Notice of Availability, Notice of Public Comment Period, and 
+Request for Comment on the Draft Programmatic Environmental Assessment 
+for Reentry Vehicle Operations in the Marine Environment
+
+AGENCY: Federal Aviation Administration (FAA), Department of 
+Transportation (DOT).
+
+ACTION: Notice of availability and request for comment.
+
+-----------------------------------------------------------------------
+
+SUMMARY: In accordance with the National Environmental Policy Act of 
+1969, as amended (NEPA), DOT Order 5610.1D, DOT's Procedures for 
+Considering Environmental Impacts, and FAA Order 1050.1G, FAA National 
+Environmental Policy Act Implementing Procedures, FAA is announcing the 
+availability of and requesting comment on the Draft Programmatic 
+Environmental Assessment for Reentry Vehicle Operations in the Marine 
+Environment (Draft PEA). FAA is also requesting comment on proposed new 
+categorical exclusions (CATEXs) as described in and substantiated by 
+the Draft PEA.
+
+DATES: The public comment period for the Draft PEA will close on 
+October 19, 2026.
+
+ADDRESSES: The Draft PEA is available for public review at <a href="https://www.faa.gov/space/environmental/nepa_docs">https://www.faa.gov/space/environmental/nepa_docs</a>. Public comments can be 
+submitted electronically to <a href="http://www.regulations.gov">www.regulations.gov</a> under Docket No. FAA-
+2026-10264, or by postal mail to Nicholas Baker, FAA Environmental 
+Protection Specialist, c/o ICF, 1902 Reston Metro Plaza, Reston, VA 
+20190. The Unique ID for this document is PEAX-012-12-000-1774526578.
+
+FOR FURTHER INFORMATION CONTACT: For more information, visit <a href="https://www.faa.gov/space/environmental/nepa_docs">https://www.faa.gov/space/environmental/nepa_docs</a> or send an email to 
+<a href="/cdn-cgi/l/email-protection#540631313a20262d17352427213831041115143d37327a373b39"><span class="__cf_email__" data-cfemail="eebc8b8b809a9c97ad8f9e9d9b828bbeabafae878d88c08d8183">[email&#160;protected]</span></a>.
+
+SUPPLEMENTARY INFORMATION: FAA is the lead federal agency, and the 
+National Aeronautics and Space Administration and U.S. Coast Guard are 
+cooperating agencies. FAA has prepared this Draft PEA to evaluate the 
+potential environmental impacts associated with issuing vehicle 
+operator licenses or experimental permits to commercial reentry vehicle 
+operators, which would authorize reentry operations of vehicles in the 
+marine environment. In addition to issuing a license or permit, FAA's 
+federal actions include issuing airspace closures to ensure reentry 
+operations are conducted safely. FAA intends to use this PEA to comply 
+with its National Environmental Policy Act requirements for subsequent 
+reviews of license or permit applications involving reentry operations 
+in the marine environment, as well as to establish three new CATEXs, as 
+described in the Draft PEA. The new CATEXs would be added to FAA Order 
+1050.1G, Appendix B-2.2 (Categorical Exclusions for Certification 
+Actions). Concurrent with this public review period, FAA is consulting 
+with the Council on Environmental Quality on its PEA and proposed 
+CATEXs, in accordance with Section 1.4(b)(2) of FAA Order 1050.1G.
+
+Proposed Categorical Exclusions
+
+    The first proposed CATEX is for issuing FAA vehicle operator 
+licenses or experimental permits for reentry operations that are within 
+the scope of operations described in Chapter 2, Description of Proposed 
+Action and Alternatives, of the PEA. All FAA-licensed or -permitted 
+reentry operations would occur within the study area analyzed in the 
+PEA and the applicant's annual frequency of reentry operations would 
+not exceed the cumulative number of annual FAA-licensed and -permitted 
+reentries described in the PEA.
+    The second proposed CATEX is for renewing FAA vehicle operator 
+licenses or experimental permits for reentry operations that are within 
+the scope of operations described in Chapter 2, Description of Proposed 
+Action and Alternatives, of the PEA. All FAA-licensed or -permitted 
+reentry operations would occur within the study area analyzed in the 
+PEA and the applicant's annual frequency of reentry operations would 
+not exceed the cumulative number of annual FAA-licensed and -permitted 
+reentries described in the PEA.
+    The third proposed CATEX is for modifying FAA vehicle operator 
+licenses or experimental permits for reentry operations that are within 
+the scope of operations described in Chapter 2, Description of Proposed 
+Action and Alternatives, of the PEA. Such modifications might include 
+new splashdown locations within the study area analyzed in the PEA or 
+new expended or reused components within the type and frequency 
+described in Chapter 2 of the PEA.
+
+Basis for Establishing the Categorical Exclusions
+
+    FAA Order 1050.1G states FAA may establish a CATEX through a 
+decision document supported by a programmatic environmental document 
+that substantiates the FAA's conclusion that the category of actions 
+analyzed in the programmatic environmental document does not have 
+significant effects, individually or in the aggregate.
+    As described in the PEA and consistent with CEQ's guidance 
+memorandum, Establishing, Revising, Adopting, and Applying Categorical 
+Exclusions under the National Environmental Policy Act (April 9, 2026), 
+FAA has analyzed previously implemented reentry operations in multiple 
+environmental documents prepared in accordance with NEPA and determined 
+there would not be significant impacts on the human environment. Each 
+EA resulted in a Finding of No Significant Impact (refer to Appendix B 
+of the PEA for a list of these EAs).
+
+Public Disclosure Statement
+
+    Before including your address, phone number, email address, or 
+other personal identifying information in your comment, be advised that 
+your entire comment--including your personal identifying information--
+may be made publicly available at any time. While you can ask the FAA 
+in your comment
+
+[[Page 59295]]
+
+to withhold from public review your personal identifying information, 
+FAA cannot guarantee that we will be able to do so.
+
+     Issued in Washington, DC, on September 16, 2026.
+Stacey Molinich Zee,
+Manager, Operations Support Branch.
+[FR Doc. 2026-19178 Filed 9-17-26; 8:45 am]
+BILLING CODE 4910-13-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

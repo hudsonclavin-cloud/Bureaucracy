@@ -1,0 +1,102 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 165 (Thursday, August 27, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 165 (Thursday, August 27, 2026)]
+[Rules and Regulations]
+[Page 55244]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-17538]
+
+
+-----------------------------------------------------------------------
+
+DEPARTMENT OF AGRICULTURE
+
+Commodity Credit Corporation
+
+7 CFR Part 1414
+
+[Docket ID FSA-2026-0001]
+RIN 0560-AI87
+
+
+Farmer Bridge Assistance (FBA) Program; Correction
+
+AGENCY: Commodity Credit Corporation, U.S. Department of Agriculture 
+(USDA).
+
+ACTION: Correcting amendment.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The Commodity Credit Corporation (CCC) announced the Farmer 
+Bridge Assistance (FBA) Program in a final rule on February 23, 2026. 
+This correction amends the definition of ``corn'' to add blue and red 
+corn, which are eligible commodities for the FBA Program.
+
+DATES: Effective on August 27, 2026.
+
+FOR FURTHER INFORMATION CONTACT: Jamie Garriott; telephone: (202) 253-
+9843; or email: <a href="/cdn-cgi/l/email-protection#84cee5e9ede1aac3e5f6f6edebf0f0c4f1f7e0e5aae3ebf2"><span class="__cf_email__" data-cfemail="cd87aca0a4a8e38aacbfbfa4a2b9b98db8bea9ace3aaa2bb">[email&#160;protected]</span></a>. Individuals with disabilities 
+who require alternative means for communication should contact the USDA 
+Target Center at (202) 720-2600 (voice and text telephone (TTY mode)) 
+or dial 711 for Telecommunications Relay Service (both voice and text 
+telephone users can initiate this call from any telephone).
+
+SUPPLEMENTARY INFORMATION: On February 23, 2026, CCC published a final 
+rule (91 FR 8360) announcing the FBA program, which provides up to $11 
+billion in one-time bridge payments to American farmers in response to 
+temporary trade market disruptions and increased production costs. Corn 
+is an eligible commodity for the FBA Program, and the final rule 
+defined ``corn'' as, ``only white, yellow, amylose, popcorn (excluding 
+strawberry popcorn), waxy, and high amylase corn.'' (7 CFR 1414.3). 
+That definition inadvertently omitted blue and red corn, which are also 
+eligible for the FBA Program. This document corrects that omission by 
+adding those types of corn to the definition of ``corn.''
+    The deadline to apply for the FBA Program was April 17, 2026. Due 
+to the omission of blue and red corn from the definition of ``corn'', 
+those types of corn were not included on pre-filled FBA Program 
+applications and producers of those commodities could not apply by the 
+deadline. CCC is announcing that it will generate a CCC-555, Farmer 
+Bridge Assistance (FBA) Program Application, for each eligible producer 
+who timely reported eligible 2025 crop year acres of blue or red corn, 
+as provided in Sec.  1414.5. CCC is extending the deadline for 
+producers to submit a CCC-555 for blue and red corn until September 28, 
+2026, as authorized under Sec.  1414.6(b). As indicated in Sec.  
+1414.6(c), producers must also submit all eligibility forms by April 
+19, 2027.
+
+List of Subjects in 7 CFR Part 1414
+
+    Agricultural commodities, Cotton, Feed grains, Fruits, Nuts, 
+Oilseeds, Peanuts, Reporting and recordkeeping requirements, Rice, 
+Vegetables, Wheat.
+    For the reasons discussed above, CCC amends the regulations in 7 
+CFR part 1414 as follows:
+
+PART 1414--BRIDGE ASSISTANCE
+
+0
+1. The authority citation for part 1414 continues to read as follows:
+
+    Authority:  15 U.S.C. 714, et seq.
+
+Subpart A--Farmer Bridge Assistance Program
+
+
+Sec.  1414.3  [Amended]
+
+0
+2. Amend the definition of ``Corn'' in Sec.  1414.3 by adding the words 
+``blue, red,'' after the word ``only''.
+
+William Beam,
+Executive Vice President, Commodity Credit Corporation.
+[FR Doc. 2026-17538 Filed 8-26-26; 8:45 am]
+BILLING CODE 3411-E2-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

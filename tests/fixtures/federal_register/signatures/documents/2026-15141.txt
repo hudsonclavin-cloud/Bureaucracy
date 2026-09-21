@@ -1,0 +1,222 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 142 (Monday, July 27, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 142 (Monday, July 27, 2026)]
+[Notices]
+[Pages 46948-46949]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-15141]
+
+
+-----------------------------------------------------------------------
+
+DEPARTMENT OF LABOR
+
+Mine Safety and Health Administration
+
+[OMB Control No. 1219-0155]
+
+
+Proposed Extension of Information Collection: Safety Program for 
+Surface Mobile Equipment
+
+AGENCY: Mine Safety and Health Administration, Labor.
+
+ACTION: Request for public comments.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The Department of Labor (DOL), as part of its continuing 
+effort to reduce paperwork and respondent burden, conducts a pre-
+clearance consultation program for all information collections, to 
+provide the public and Federal agencies with an opportunity to comment 
+on proposed collections of information, in accordance with the 
+Paperwork Reduction Act of 1995. This program helps to ensure that 
+requested data can be provided in the desired format, reporting burden 
+(time and financial resources) is minimized, collection instruments are 
+clearly understood, and the impact of collection requirements on 
+respondents can be properly assessed. The Mine Safety and Health 
+Administration (MSHA) is soliciting comments on the information 
+collection titled ``Safety Program for Surface Mobile Equipment.''
+
+DATES: All comments must be received on or before September 25, 2026.
+
+ADDRESSES: Comments concerning the information collection requirements 
+of this notice may be sent by any of the methods listed below. Please 
+note that comments received after the deadline will not be considered.
+    <bullet> Federal E-Rulemaking Portal: <a href="https://www.regulations.gov">https://www.regulations.gov</a>. 
+Follow the instructions for submitting comments for docket number MSHA-
+2026-0661.
+    <bullet> Mail/Hand Delivery: DOL-MSHA, Office of Standards, 
+Regulations, and Variances, 200 Constitution Avenue NW, Washington, DC 
+20210. Before visiting MSHA in person, call 202-693-9440 to make an 
+appointment.
+    <bullet> MSHA will post all comments as well as any attachments, 
+except for information submitted and marked as confidential, in the 
+docket at <a href="https://www.regulations.gov">https://www.regulations.gov</a>.
+
+FOR FURTHER INFORMATION CONTACT: Corliss A. Josephs-Conway, Acting 
+Director, Office of Standards, Regulations, and Variances, MSHA, at 
+<a href="/cdn-cgi/l/email-protection#b8f5ebf0f996d1d6ded7cad5d9ccd1d7d696dbd7d4d4dddbccd1d7d6cbf8dcd7d496dfd7ce"><span class="__cf_email__" data-cfemail="a4e9f7ece58acdcac2cbd6c9c5d0cdcbca8ac7cbc8c8c1c7d0cdcbcad7e4c0cbc88ac3cbd2">[email&#160;protected]</span></a> (email); (202) 693-9440 (voice); 
+or (202) 693-9441 (facsimile). These are not toll-free numbers.
+
+SUPPLEMENTARY INFORMATION:
+
+I. Background
+
+A. Legal Authority
+
+    Section 103(h) of the Federal Mine Safety and Health Act of 1977 
+(Mine Act), as amended, 30 U.S.C. 813(h), authorizes the Mine Safety 
+and Health Administration (MSHA) to collect information necessary to 
+carry out its duty in protecting the safety and health of miners. 
+Further, section 101(a) of the Mine Act, 30 U.S.C. 811(a), authorizes 
+the Secretary of Labor (Secretary) to develop, promulgate, and revise, 
+as may be appropriate, improved mandatory health or safety standards 
+for the protection of life and prevention of injuries in coal and metal 
+and nonmetal (MNM) mines.
+    The Paperwork Reduction Act of 1995 (PRA, 44 U.S.C. 3501 et seq.) 
+governs paperwork burdens imposed on the public by Federal agencies for 
+using identical questions to collect information from 10 or more 
+persons. The PRA defines paperwork burden in 44 U.S.C. 3502(2) as time, 
+effort, or financial resources expended to generate, maintain, or 
+provide information to or for a Federal agency. Under 44 U.S.C. 3507, 
+the PRA also establishes policies and procedures of information 
+collection for controlling paperwork burdens imposed by Federal 
+agencies on the public, including evaluating public comments.
+
+B. Information Collection
+
+    To fulfill its statutory mandate to promote miners' health and 
+safety, MSHA requires information under the information collection 
+request (ICR) titled ``Safety Program for Surface Mobile Equipment.'' 
+This information collection is intended to ensure that mine operators 
+will identify risks related to the movement and operation of surface 
+mobile equipment in written safety programs. This will allow mines to 
+eliminate or mitigate safety hazards and thereby reduce the likelihood 
+of accidents, injuries, and fatalities.
+    Burden costs associated with the ICR include:
+
+1. Developing hazard analyses and evaluating technologies at new mines
+2. Developing maintenance procedures and schedules at new mines
+3. Updating safety programs at existing mines, and
+4. Providing copies of written safety programs
+
+    The associated standards that authorize the collection of 
+information are described below.
+1. Developing Hazard Analyses and Evaluating Technologies at New Mines 
+(30 CFR 56.23003(a)(1) and (a)(3), 57.23003(a)(1) and (a)(3), and 
+77.2103(a)(1) and (a)(3))
+    Under 30 CFR 56.23000, 57.23000, and 77.2100, operators shall 
+develop, implement, and update a written safety program for surface 
+mobile equipment to reduce the number and rates of accidents, injuries, 
+and fatalities.
+    Under 30 CFR 56.23002, 57.23002, and 77.2102, each operator shall 
+develop and implement a written safety program for surface mobile 
+equipment. Operators shall also designate a responsible person to 
+evaluate and update the written safety program.
+    Under 30 CFR 56.23003(a), 57.23003(a), and 77.2103(a), a written 
+safety program shall include the types of actions the operator will 
+take to:
+    (i) Identify and analyze hazards and reduce the resulting risks 
+related to the movement and the operation of surface mobile equipment; 
+and
+
+[[Page 46949]]
+
+    (ii) Identify currently available and newly emerging feasible 
+technologies that can enhance safety at the mine and evaluate whether 
+to adopt them.
+2. Developing Maintenance Procedures and Schedules at New Mines (30 CFR 
+56.23003(a)(2), 57.23003(a)(2), and 77.2103(a)(2))
+    Under 30 CFR 56.23003(a)(2), 57.23003(a)(2), and 77.2103(a)(2), a 
+written safety program shall include actions the operators will take to 
+develop and maintain procedures and schedules for routine maintenance 
+and non-routine repairs for surface mobile equipment.
+3. Updating Safety Programs at Existing Mines (30 CFR 56.23003(b), 
+57.23003(b), and 71.2103(b))
+    Under 30 CFR 56.23003(b), 57.23002(b), and 77.2103(b), the 
+responsible person shall evaluate and update the written safety program 
+at least annually, or as mining conditions or practices change that may 
+adversely affect the health and safety of miners or other persons, as 
+accidents or injuries occur, or as surface mobile equipment changes or 
+modifications are made.
+4. Providing Copies of Written Safety Programs (30 CFR 56.23004, 
+57.23004, and 77.2104)
+    Under 30 CFR 56.23004(a), 57.23004(a), and 77.2104(a), the operator 
+shall make the written safety program available for inspection by 
+authorized representatives of the Secretary and provide a copy upon 
+request.
+    Under 30 CFR 56.23004(b), 57.23004(b), and 77.2104(b), the operator 
+shall make the written safety program available for inspection by 
+miners and their representatives and, at no cost, provide a copy upon 
+request.
+5. Developing Training (30 CFR 56.23003(a)(2), 57.23003(a)(2), and 
+77.2103(a)(2))
+    Under 30 CFR 56.23003(a)(2), 57.23003(a)(2), and 77.2103(a)(2), a 
+written safety program shall include actions the operators will take to 
+train miners and other persons at the mine necessary to perform work to 
+identify and address or avoid hazards related to surface mobile 
+equipment.
+
+II. Desired Focus of Comments
+
+    MSHA is soliciting comments concerning the proposed information 
+collection titled ``Safety Program for Surface Mobile Equipment.'' MSHA 
+is particularly interested in comments that:
+    <bullet> Evaluate whether the proposed collection of information is 
+necessary for the proper performance of the functions of the Agency, 
+including whether the information will have practical utility;
+    <bullet> Evaluate the accuracy of MSHA's estimate of the burden of 
+the proposed collection of information, including the validity of the 
+methodology and assumptions used;
+    <bullet> Suggest methods to enhance the quality, utility, and 
+clarity of the information to be collected; and
+    <bullet> Minimize the burden of the collection of information on 
+those who are to respond, including through the use of appropriate 
+automated, electronic, mechanical, or other technological collection 
+techniques or other forms of information technology, e.g., permitting 
+electronic submission of responses.
+    The ICR is available on <a href="https://www.regulations.gov">https://www.regulations.gov</a>. MSHA cautions 
+commenters against providing any information in the submission that 
+should not be publicly disclosed. Full comments, including personal 
+information provided, will be made available on <a href="https://www.regulations.gov">https://www.regulations.gov</a> and <a href="https://www.reginfo.gov">https://www.reginfo.gov</a>.
+    The public may also examine publicly available documents at DOL-
+MSHA, Office of Standards, Regulations and Variances, 200 Constitution 
+Avenue NW, Washington, DC 20210. Before visiting MSHA in person, call 
+202-693-9440 to make an appointment.
+    Questions about the information collection requirements may be 
+directed to the person listed in the FOR FURTHER INFORMATION CONTACT 
+section of this notice.
+
+III. Current Actions
+
+    This ICR concerns provisions for Safety Program for Surface Mobile 
+Equipment. MSHA has updated the data with respect to the number of 
+respondents, responses, time burden, and burden costs supporting this 
+ICR from the previous ICR.
+    Type of Review: Extension, without change, of a currently approved 
+collection.
+    Agency: Mine Safety and Health Administration.
+    OMB Control Number: 1219-0155.
+    Affected Public: Business or other for-profit entity.
+    Number of Annual Respondents: 17,798.
+    Frequency: On occasion.
+    Number of Annual Responses: 57,583.
+    Annual Time Burden: 190,732 hours.
+    Annual Recordkeeping Costs: $26,697.
+    Comments submitted in response to this notice will be summarized 
+and included in the request for Office of Management and Budget 
+approval of the proposed ICR; they will become a matter of public 
+record and be available at <a href="https://www.reginfo.gov">https://www.reginfo.gov</a>.
+
+Corliss A. Josephs-Conway,
+Certifying Officer, Mine Safety and Health Administration.
+[FR Doc. 2026-15141 Filed 7-24-26; 8:45 am]
+BILLING CODE 4510-43-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

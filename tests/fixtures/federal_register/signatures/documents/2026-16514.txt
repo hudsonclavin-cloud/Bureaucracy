@@ -1,0 +1,343 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 155 (Thursday, August 13, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 155 (Thursday, August 13, 2026)]
+[Rules and Regulations]
+[Pages 52246-52248]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-16514]
+
+
+-----------------------------------------------------------------------
+
+ENVIRONMENTAL PROTECTION AGENCY
+
+40 CFR Part 52
+
+[EPA-R05-OAR-2026-0695; FRL-13224-02-R5]
+
+
+Air Plan Approval; Illinois; Clean Data Determination for the 
+Illinois Portion of the St. Louis Area for the 2015 Ozone Standard
+
+AGENCY: Environmental Protection Agency (EPA).
+
+ACTION: Final rule.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The Environmental Protection Agency (EPA) is determining under 
+the Clean Air Act (CAA) that the Illinois portion of the St. Louis, MO-
+IL nonattainment area (hereafter also referred to as the ``St. Louis 
+area'' or ``area'') has achieved clean data for the 2015 ozone National 
+Ambient Air Quality Standards (NAAQS or standard). This determination 
+is based upon complete, quality-assured, and certified ambient air 
+monitoring data for the 2023-2025 design value period showing that the 
+Illinois portion of the area achieved attainment of the 2015 ozone 
+NAAQS. This determination also relies on the EPA's concurrence of an 
+exceptional events request submitted by the Illinois Environmental 
+Protection Agency (Illinois EPA) on December 18, 2025, and concurred on 
+by the EPA on January 12, 2026. Therefore, the EPA is taking final 
+agency action on Illinois' exceptional events request. In a separate 
+action, the EPA is finalizing a similar determination for the Missouri 
+portion of the St. Louis area. This final determination suspends the 
+requirements for the area to submit attainment demonstrations and 
+associated Reasonably Available Control Measures (RACM), Reasonable 
+Further Progress (RFP) plans, contingency measures for failure to 
+attain or make reasonable progress, and other planning State 
+Implementation Plans (SIPs) related to attainment of the 2015 ozone 
+NAAQS, for as long as the area continues to attain the 2015 ozone 
+NAAQS.
+
+DATES: This final rule is effective on September 14, 2026.
+
+ADDRESSES: The EPA has established a docket for this action under 
+Docket ID No. EPA-R05-OAR-2026-0695. All documents in the docket are 
+listed on the <a href="https://www.regulations.gov">https://www.regulations.gov</a> website. Although listed in 
+the index, some information is not publicly available, i.e., 
+Confidential Business Information (CBI) or other information whose 
+disclosure is restricted by statute. Certain other material, such as 
+copyrighted material, is not placed on the internet and will be 
+publicly available only in hard copy form. Publicly available docket 
+materials are available through <a href="https://www.regulations.gov">https://www.regulations.gov</a> or please 
+contact the person identified in the FOR FURTHER INFORMATION CONTACT 
+section for additional information.
+
+FOR FURTHER INFORMATION CONTACT: Alexis Bender, Air and Radiation 
+Division (AR-18J), Environmental Protection Agency, Region 5, 77 West 
+Jackson Boulevard, Chicago, Illinois 60604, telephone number: (312) 
+886-9497, email address: <a href="/cdn-cgi/l/email-protection#583a3d363c3d2a7639343d20312b183d2839763f372e"><span class="__cf_email__" data-cfemail="e183848f858493cf808d84998892a1849180cf868e97">[email&#160;protected]</span></a>.
+
+[[Page 52247]]
+
+
+SUPPLEMENTARY INFORMATION: Throughout this document whenever ``we,'' 
+``us,'' or ``our'' is used, we mean the EPA.
+
+I. Background
+
+    On October 1, 2015, the EPA promulgated a revised 8-hour ozone 
+NAAQS of 0.070 parts per million (ppm). See 80 FR 65292 (October 26, 
+2015). Upon promulgation of a new or revised NAAQS, section 
+107(d)(1)(B) of the CAA requires the EPA to designate as nonattainment 
+any areas that are violating the NAAQS, based on the most recent three 
+years of quality-assured ozone monitoring data. On June 4, 2018 (83 FR 
+25776), the EPA designated the St. Louis, MO-IL area as Marginal 
+nonattainment for the 2015 ozone NAAQS. The current nonattainment area 
+includes Boles Township of Franklin County, Jefferson County, St. 
+Charles County, St. Louis County, and St. Louis City in Missouri, and 
+Madison County, Monroe County, and St. Clair County in Illinois.
+    On October 7, 2022 (87 FR 60897), the EPA determined that the St. 
+Louis area did not attain the standards by the Marginal attainment 
+date, and the area was reclassified as Moderate by operation of law. 
+More recently, on November 25, 2024 (89 FR 92816), and December 17, 
+2024 (89 FR 101901), the EPA determined the Missouri portion of the 
+area and the Illinois portion of the area, respectively, did not attain 
+the standards by the Moderate attainment date, and both portions of the 
+area were reclassified as Serious by operation of law.\1\
+---------------------------------------------------------------------------
+
+    \1\ The EPA's rules dated November 24, 2024, and December 17, 
+2024, are the subject of ongoing litigation in the U.S. Court of 
+Appeals for the Eighth Circuit and the U.S. Court of Appeals for the 
+Seventh Circuit, respectively.
+---------------------------------------------------------------------------
+
+    On February 26, 2026 (91 FR 9519), the EPA proposed to determine 
+that the St. Louis area attained the 2015 ozone NAAQS, based upon 
+complete, quality-assured, and certified ambient air monitoring data 
+for the 2023 through 2025 design period. Such a determination, based 
+upon the EPA's Clean Data Policy, is known informally as a clean data 
+determination. As noted in the Notice of Proposed Rule Making, the 
+Illinois portion of the St. Louis area's 3-year ozone design value for 
+2023 through 2025 is 0.070 ppm, which meets the 2015 ozone NAAQS.
+    The EPA's proposed clean data determination relied upon the EPA's 
+concurrence on an exceptional events demonstration submitted by 
+Illinois on December 18, 2025. The EPA concurred on Illinois' 
+demonstration on January 12, 2026.
+    In the February 26, 2026, proposed clean data determination, the 
+EPA proposed to take final agency action on the exceptional events 
+concurrence, which removed the event-influenced data from the design 
+value, and opened an opportunity for public comment on the EPA's 
+concurrence.
+    This action does not constitute a determination of attainment by 
+the attainment date under CAA section 181(b)(2). In this action, the 
+EPA is considering the area's design value for the 2023 through 2025 
+period, however the 2023 through 2025 design value does not serve as 
+the area's most recent complete and quality-assured design value 
+available as of the August 3, 2027, applicable attainment date.
+    This action does not constitute a redesignation of the area to 
+attainment of the 2015 ozone NAAQS, nor does it constitute approval of 
+a maintenance plan for any portion of the area as required under 
+section 175A of the CAA, nor does it find that any portion of the area 
+has met all other requirements for redesignation. A nonattainment area 
+may constitute a redesignation to attainment as it has met requirements 
+of section 107(d)(3)(E) of the CAA. The Illinois portion of the St. 
+Louis area will remain designated nonattainment for the 2015 ozone 
+NAAQS unless and until the EPA determines that the area meets CAA 
+requirements for redesignation to attainment and takes a separate 
+action to redesignate the area.
+
+II. The EPA's Responses to Comments
+
+    The public comment period on the EPA's proposed rule opened 
+February 26, 2026, the date of its publication in the Federal Register 
+and closed on March 30, 2026. During this period, the EPA received one 
+supportive comment.
+
+III. What action is the EPA taking?
+
+    The EPA is making a determination under the CAA that the Illinois 
+portion of the St. Louis area has achieved clean data for the 2015 
+ozone NAAQS. This determination is based upon complete, quality-
+assured, and certified ambient air monitoring data for the 2023 through 
+2025 design value period showing that the area achieved attainment of 
+the 2015 ozone NAAQS. The EPA is also taking final agency action on an 
+exceptional events request submitted by the Illinois EPA on December 
+18, 2025, and concurred on by the EPA on January 12, 2026. In a 
+separate action, the EPA is taking action on a similar determination 
+for the Missouri portion of the St. Louis area. As a result of these 
+determinations, EPA suspends the requirements for the area to submit 
+attainment demonstrations and associated RACM, RFP plans, contingency 
+measures for failure to attain or make reasonable progress, and other 
+planning SIPs related to attainment of the 2015 ozone NAAQS, for as 
+long as the area continues to attain the 2015 ozone NAAQS. In a 
+separate action, the EPA is finalizing a similar determination for the 
+Missouri portion of the St. Louis area.
+
+IV. Statutory and Executive Order Reviews
+
+    Additional information about these statutes and Executive Orders 
+can be found at <a href="https://www.epa.gov/lawsregulations/laws-and-executive-orders">https://www.epa.gov/lawsregulations/laws-and-executive-orders</a>.
+
+A. Executive Order 12866: Regulatory Planning and Review and Executive 
+Order 13563: Improving Regulation and Regulatory Review
+
+    This action is not a significant regulatory action and was 
+therefore not submitted to the Office of Management and Budget (OMB) 
+for review. This action issues a clean data determination for the 
+Illinois portion of the St. Louis area for the 2015 ozone NAAQS.
+
+B. Executive Order 14192: Unleashing Prosperity Through Deregulation
+
+    This action is not an Executive Order 14192 regulatory action 
+because this action is not significant under Executive Order 12866.
+
+C. Paperwork Reduction Act (PRA)
+
+    This rule does not impose an information collection burden under 
+the provisions of the Paperwork Reduction Act of 1995 (44 U.S.C. 3501 
+et seq.)
+
+D. Regulatory Flexibility Act (RFA)
+
+    I certify that this action will not have a significant economic 
+impact on a substantial number of small entities under the RFA. This 
+action will not impose any requirements on small entities beyond those 
+imposed by State law. The clean data determination does not create any 
+new requirements and does not directly regulate any entities.
+
+E. Unfunded Mandates Reform Act (UMRA)
+
+    This action does not contain any unfunded mandate as described in 
+UMRA, 2 U.S.C. 1531-1538, and does not significantly or uniquely affect 
+small governments. This action imposes no enforceable duty on any 
+State, local or Tribal governments or the private sector.
+
+F. Executive Order 13132: Federalism
+
+    This action does not have federalism implications. It will not have 
+substantial
+
+[[Page 52248]]
+
+direct effects on the States, on the relationship between the national 
+government and the States, or on the distribution of power and 
+responsibilities among the various levels of government. This action 
+issues a clean data determination for the Illinois portion of the St. 
+Louis area under the CAA.
+
+G. Executive Order 13175: Coordination With Indian Tribal Governments
+
+    This rule does not have Tribal implications, as specified in 
+Executive Order 13175. It will not have substantial direct effects on 
+Tribal governments. Thus, Executive Order 13175 does not apply to this 
+rule.
+
+H. Executive Order 13045: Protection of Children From Environmental 
+Health Risks and Safety Risks
+
+    The EPA interprets Executive Order 13045 as applying only to those 
+regulatory actions that concern environmental health or safety risks 
+that the EPA has reason to believe may disproportionately affect 
+children, per the definition of ``covered regulatory action'' in 
+section 2-202 of the Executive Order. This action is not subject to 
+Executive Order 13045 because it merely issues a clean data 
+determination.
+
+I. Executive Order 13211: Actions That Significantly Affect Energy 
+Supply, Distribution, or Use
+
+    This action is not subject to Executive Order 13211, because it is 
+not a significant regulatory action under Executive Order 12866.
+
+J. National Technology Transfer Advancement Act
+
+    This rulemaking does not involve technical standards.
+
+K. Congressional Review Act
+
+    This action is subject to the Congressional Review Act, and the EPA 
+will submit a rule report to each House of the Congress and to the 
+Comptroller General of the United States. This action is not a ``major 
+rule'' as defined by 5 U.S.C. 804(2).
+
+L. Judicial Review
+
+    Under section 307(b)(1) of the CAA, petitions for judicial review 
+of this action must be filed in the United States Court of Appeals for 
+the appropriate circuit by October 13, 2026. Filing a petition for 
+reconsideration by the Administrator of this final rule does not affect 
+the finality of this rule for the purposes of judicial review nor does 
+it extend the time within which a petition for judicial review may be 
+filed, and shall not postpone the effectiveness of such rule or action. 
+This action may not be challenged later in proceedings to enforce its 
+requirements. See section 307(b)(2).
+
+List of Subjects in 40 CFR Part 52
+
+    Environmental protection, Air pollution control, Incorporation by 
+reference, Intergovernmental relations, Nitrogen oxides, Ozone, 
+Reporting and recordkeeping requirements, Volatile organic compounds.
+
+    Dated: July 27, 2026.
+Anne Vogel,
+Regional Administrator, Region 5.
+
+    For the reasons stated in the preamble, 40 CFR part 52 is amended 
+as follows:
+
+PART 52--APPROVAL AND PROMULGATION OF IMPLEMENTATION PLANS
+
+0
+1. The authority citation for part 52 continues to read as follows:
+
+    Authority: 42 U.S.C. 7401 et seq.
+
+
+0
+2. In Sec.  52.720, the table in paragraph (e) is amended under 
+``Attainment and Maintenance Plans'' by adding a new entry for ``Ozone 
+(8-hour, 2015) Clean Data Determination'' after the entry for ``Ozone 
+(8-hour, 2008) redesignation and maintenance plan'' for the ``Chicago 
+Area'' to read as follows:
+
+
+Sec.  52.720  Identification of plan.
+
+* * * * *
+    (e) * * *
+
+                       EPA-Approved Illinois Nonregulatory and Quasi-Regulatory Provisions
+----------------------------------------------------------------------------------------------------------------
+                                        Applicable          State
+      Name of SIP provision           geographical or     submittal     EPA approval date         Comments
+                                    nonattainment area       date
+----------------------------------------------------------------------------------------------------------------
+ 
+                                                  * * * * * * *
+                                        Attainment and Maintenance Plans
+----------------------------------------------------------------------------------------------------------------
+ 
+                                                  * * * * * * *
+Ozone (8-hour, 2015) Clean Data    St. Louis area......          N/A  8/13/26, 91 FR        EPA's final
+ Determination.                                                        [INSERT Federal       determination
+                                                                       Register PAGE WHERE   suspends
+                                                                       THE DOCUMENT          requirements for
+                                                                       BEGINS].              Illinois EPA to
+                                                                                             submit an
+                                                                                             attainment
+                                                                                             demonstration and
+                                                                                             other associated
+                                                                                             nonattainment
+                                                                                             planning
+                                                                                             requirements for
+                                                                                             the St. Louis area
+                                                                                             for as long as the
+                                                                                             area continues to
+                                                                                             attain the 2015
+                                                                                             ozone NAAQS.
+----------------------------------------------------------------------------------------------------------------
+ 
+                                                  * * * * * * *
+----------------------------------------------------------------------------------------------------------------
+
+* * * * *
+[FR Doc. 2026-16514 Filed 8-12-26; 8:45 am]
+BILLING CODE 6560-50-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

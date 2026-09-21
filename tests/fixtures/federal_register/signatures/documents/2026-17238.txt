@@ -1,0 +1,3217 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 164 (Wednesday, August 26, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 164 (Wednesday, August 26, 2026)]
+[Rules and Regulations]
+[Pages 54966-54992]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-17238]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+POSTAL SERVICE
+
+39 CFR Part 111
+
+
+Ballot Mail for Federal Elections
+
+AGENCY: Postal Service.
+
+ACTION: Final rule.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The Postal Service is amending the Mailing Standards of the 
+United States Postal Service, Domestic Mail Manual, regarding the 
+transmission of mail-in or absentee ballots for federal elections 
+pursuant to its rulemaking authority.
+
+DATES: Effective August 21, 2026.
+
+FOR FURTHER INFORMATION CONTACT: Keith Weidner, (202) 268-2950 or Drew 
+Mitchum, (202) 779-2766.
+
+SUPPLEMENTARY INFORMATION:
+
+I. Background
+
+    On March 31, 2026, the President issued Executive Order 14399, 
+Ensuring Citizenship Verification and Integrity in Federal Elections, 
+91 FR 17125 (2026) (``Executive Order'' or ``Order''). The Executive 
+Order stresses the federal government's ``unavoidable duty under 
+Article II of the Constitution of the United States to enforce 
+[f]ederal law, which includes preventing violations of [f]ederal 
+criminal law and maintaining public confidence in election outcomes.'' 
+Id. To these ends, the Order points out the need for additional 
+measures concerning the use of the mail in order to facilitate 
+enforcement of federal law, reduce the risk of fraud, and help protect 
+the integrity of federal elections. Id. Following the issuance of the 
+Order, the Postal Service engaged in an interagency review process 
+through the Office of Management and Budget (``OMB''), and subsequently 
+issued a proposed rule regarding the preparation of ballot mail for 
+federal elections to facilitate the enforcement of federal law and to 
+implement best practices for Postal Service operations regarding ballot 
+mail. Ballot Mail for Federal Elections, 91 FR 32915 (June 2, 2026).
+    Although exempt by 39 U.S.C. 410(a) from the notice and comment 
+requirements of the Administrative Procedure Act (``APA'') (5 U.S.C. 
+553) regarding proposed rulemaking, the Postal Service invited public 
+comment on the proposed revisions to Mailing Standards of the United 
+States Postal Service, Domestic Mail Manual (``DMM''), incorporated by 
+reference in the Code of Federal Regulations, set forth in the proposed 
+rule. The comment period closed on July 2, 2026.
+    To ensure the faithful execution of federal law in connection with 
+federal elections, this rule has an immediate effective date. Delaying 
+the effective date would jeopardize implementation of this rule in time 
+for the 2026 general election, which will be held on November 3, 2026. 
+Given injunctions currently in place in State of California v. Trump, 
+No. 26-cv-11581 (D. Mass. June 25, 2026), and League of Women Voters of 
+Massachusetts v. Trump, No. 26-cv-11549 (D. Mass. Aug. 11, 2026), the 
+Postal Service will not take actions to implement the rule specifically 
+for the 2026 election unless and until the government obtains relief 
+from those injunctions. If the government obtains timely relief from 
+the injunctions, implementation immediately thereafter will provide 
+election officials as much time as possible before the next election to 
+comply with the rule's preparation standards for Federal Ballot Mail 
+envelopes, and to prepare to submit data to the Federal Ballot Mail 
+Portal (``Portal''), before the mail-in and absentee ballots subject to 
+this rule aremailed (which generally occurs in September or thereafter, 
+as determined by state law). The Portal will become active (along with 
+the verification process that relies on Portal data) at the time of the 
+publication of the system of records (``SOR'') governing the Portal. 
+Publication of the SOR will occur on or after August 17, 2026 (pending 
+the Postal Service's separate consideration of the comments on that SOR 
+proposal). Finally, the terms ``mail-in ballot'' and ``absentee 
+ballot'' are synonymous and interchangeable for the purposes of this 
+rule. These terms include any ballot sent through the U.S. Mail, 
+irrespective of state law terminology.
+
+II. Overview of Comments
+
+    The Postal Service received more than 200,000 responses during the 
+comment period. These comments consisted primarily of form letters that 
+appeared to be drawn from templates; brief statements of general 
+support for or opposition to the proposed rule; and individualized 
+messages from concerned citizens. Additionally, organizational 
+commenters individually and jointly submitted over 250 letters. This 
+group of commenters included postal unions; federal, state, local, and 
+tribal officials, including state attorneys general, governors, and 
+members of Congress; election officials, including secretaries of state 
+and county election administrators; voting rights organizations; and a 
+range of other issue-based and political advocacy groups.
+    As discussed below, some opposition to the proposed rule reflected 
+misunderstandings about how the rule will operate in practice; to these 
+misunderstandings the Postal Service offers explanations in the 
+``Operation of the Final Rule'' section below.
+
+A. Comments in Support of the Rule
+
+    Supportive comments emphasized several themes. Some discussed voter 
+fraud as a significant problem and lauded the proposed rule for helping 
+to restore voters' confidence in election integrity. One letter, 
+submitted by an Alabama-led coalition of thirteen state attorneys 
+general, contended that the proposed rule would facilitate efforts to 
+combat voter fraud while shoring up public confidence in ways that 
+states could not achieve on their own
+
+[[Page 54967]]
+
+initiative. That coalition further emphasized that states retain full 
+control of ballots until they are transferred to the Postal Service, 
+and that the proposed rule would help mitigate weaknesses in the chain 
+of custody of Federal Ballot Mail.
+    Supporting commenters also appraised the proposed rule as enhancing 
+election security by improving the visibility of Federal Ballot Mail in 
+the mailstream; approved of the ballot envelope design standards it 
+would normalize; emphasized the benefits of creating reconcilable data 
+(through the state-specific Mail-In and Absentee Participation Lists 
+(``Lists'')) that offers a neutral administrative check which 
+strengthens confidence in elections; and predicted that the rule would 
+reduce uncertainty as to whether ballots have reached their intended 
+destination.
+    Supporting commenters further evaluated the actions that state and 
+local election officials may need to take to comply with the proposed 
+rule's standards. The Alabama-led coalition of state attorneys general, 
+for instance, acknowledged that the proposal would impose certain 
+burdens but characterized them as ``plainly justified by the security 
+and accountability benefits of the proposed rule,'' concluding that the 
+rule ``addresses real vulnerabilities inherent in mail-in voting, 
+responds to legitimate and widespread public concerns about federal 
+election integrity, and equips States with tools that strengthen their 
+own oversight capabilities without displacing their authority.''
+    Finally, many supporting commenters affirmed the Postal Service's 
+statutory and constitutional authority to enact the rule. Some cited 
+Article II, Section 3 of the U.S. Constitution (requiring the President 
+to ``take Care that the Laws be faithfully executed'') as legal grounds 
+for the rule, while also endorsing the analysis of authorities set out 
+in the Notice of Proposed Rulemaking. There, the Postal Service cited 
+authority to regulate the mail as embodied in 39 U.S.C. 401 and 404 and 
+described the proposed regulations as setting forth ``mailpiece 
+preparation and data reporting standards that can provide information 
+regarding the sending of ballots through the mail that would be 
+available for use by law enforcement, and are consistent with title 39 
+of the U.S. Code.'' The Postal Service addresses the legal authority to 
+promulgate the final rule at greater length in the ``Legal Authority'' 
+section below.
+    Finally, some commenters urged the Postal Service to adopt 
+additional measures, including citizenship-verification requirements, 
+as part of a final rule.
+
+B. Comments in Opposition to the Rule
+
+    Comments received in opposition to the proposed rule generally 
+urged the Postal Service to withdraw the rule or to delay its 
+implementation until after the November 3, 2026, general election. 
+Several commenters argued that the rule should be withdrawn in light of 
+an injunction entered by the United States District Court for the 
+District of Massachusetts (California v. Trump, 2026 WL 1826490 (D. 
+Mass. June 25, 2026)) and a now-stayed injunction issued by the United 
+States District Court for the District of Columbia, in litigation 
+arising out of a 2021 settlement with the National Association for the 
+Advancement of Colored People (``NAACP'') in the United States District 
+Court for the District of Columbia (NAACP v. U.S. Postal Serv., 2026 WL 
+1893762 (D.D.C. July 1, 2026)).
+    Concerns raised by opposing commenters largely fell into three 
+broad categories, each of which is addressed in greater detail below:
+    <bullet> The alleged legal deficiencies of the proposed rule;
+    <bullet> Concerns regarding the purported practical implementation 
+challenges;
+    <bullet> Concerns about the proposed rule's alleged broader 
+political and social impact.
+    With respect to legal objections, opposing commenters argued that 
+the Postal Service lacks legal authority to adopt or implement the 
+proposed rule. Commenters further argued that, even if the Postal 
+Service possesses the requisite authority, adoption of the proposed 
+rule would be arbitrary and capricious. These legal objections are 
+addressed at length in the ``Legal Authority'' and ``Impact of the 
+Final Rule'' sections below.
+    With respect to the substance of the proposed rule, opposing 
+commenters frequently focused on the Portal, the acceptance (or 
+verification) provisions, and the fact that the Postal Service would 
+refuse to accept certain ballots for federal elections that states 
+tender without satisfying the data-entry obligations that the rule 
+would impose. Although these provisions were uniformly opposed by 
+commenters not otherwise supportive of the rule, some expressed greater 
+openness to the envelope-design requirements, asserting that such 
+requirements would fall more squarely within the Postal Service's 
+sphere of authority. Thus, in the opinion of some commenters, the 
+envelope design provisions for Outbound and Return Federal Ballot Mail 
+in DMM 705.24.3 could be retained while the verification, Portal, and 
+optional notice provisions should be removed. In a similar vein, at 
+least one commenter signaled conditional support for the proposed rule 
+so long as all mandatory provisions were made voluntary. Comments 
+raising specific implementation concerns--arising from asserted costs 
+and burdens associated with implementation before the 2026 general 
+election, as well as those costs and burdens that would purportedly be 
+incurred on an ongoing basis; the potential risk of administrative or 
+data errors leading to ballot rejection; and the Postal Service's 
+perceived lack of readiness--are addressed at length in the sections 
+below.
+    A number of commenters urged the Postal Service to publish a system 
+of records notice (``SORN'') under the Privacy Act and raised questions 
+addressable through the SORN, including whether personally identifiable 
+information will be collected and stored, how long such information 
+will be retained, which entities and personnel will have access to it, 
+whether it will be shared with other federal entities or contractors, 
+what cybersecurity safeguards will be implemented, and what remedies 
+will be available in the event of improper disclosure. The Postal 
+Service published a SORN on July 17, 2026. 91 FR 44880. The public was 
+invited to submit comments relevant to the SORN and related Privacy Act 
+considerations in that proceeding.
+
+C. Comments Outside the Scope of This Rulemaking
+
+    The Postal Service also received a significant number of comments 
+that fall outside the scope of this proceeding.
+    First, many commenters described voting by mail as an effective 
+means of exercising their franchise due to their individual 
+circumstances. Other commenters, by contrast, criticized mail-in voting 
+as a general practice and urged the Postal Service to cease delivering 
+ballot mail altogether. The Postal Service takes no position on 
+whether, or the extent to which, states should utilize the mail as part 
+of the administration of their elections. Indeed, the Postal Service 
+does not advocate for or against voting by mail. Instead, the Postal 
+Service collects, processes, transports, and delivers mail and 
+packages, and remains fully committed to transporting all types of 
+mail, including Federal Ballot Mail that conforms with the Postal 
+Service's mail preparation, data reporting, acceptance, and entry 
+standards. As discussed
+
+[[Page 54968]]
+
+further below, under the proposed rule, and as retained in the final 
+rule, the states retain full authority to decide whether to utilize the 
+U.S. Mail as part of their electoral systems, and to determine who 
+should be eligible to vote by mail.
+    Second, comments that comprehensively address state and local 
+election administration or the Postal Service's election mail 
+procedures fall outside the scope of this proceeding. By way of 
+example, one commenter raised concerns regarding the accuracy of voter 
+registration rolls, recounted their experience of observing purported 
+irregularities during the 2020 election cycle, and urged the Postal 
+Service to undertake a comprehensive review of all mail-in ballot 
+procedures. Comments in this vein, which concern the entire system of 
+election mail administration, rather than the DMM provisions set forth 
+in the Notice of Proposed Rulemaking, will not be addressed below.
+    Third, numerous comments raised concerns influenced by partisan 
+political speculation. This included conjecture about the underlying 
+intent of the Order and the impact it may have on voter turnout or 
+election outcomes. Such remarks are speculative and exceed the scope of 
+this proceeding. In any event, as explained further below, this rule 
+does not--nor is it intended to--facilitate any form of voter 
+suppression, affect election outcomes, or target particular 
+demographics, districts, or states.
+    Fourth, a number of comments raised issues that fall outside both 
+the scope of this proceeding and the Postal Service's authority 
+generally, extending the rule's logic beyond election mail and/or 
+invoking executive branch entities not involved in Postal Service 
+operations. Some, for example, proposed that ballots be accepted only 
+if they arrive by election day; demanded that mail-in voting be 
+discontinued; urged Congress to enact the Safeguard American Voter 
+Eligibility (SAVE) Act; and weighed in on sections of Executive Order 
+14399 that do not concern the Postal Service. Comments addressing 
+election deadlines, the policy of mail-in voting, other election 
+administration changes, pending legislation, and other entities' law 
+enforcement priorities are not relevant to this proceeding.
+    Fifth, some commenters raised broad issues of service performance 
+and operational decision-making. Such issues include which facilities 
+process particular mail classes; postmarking practices; service 
+performance complaints; the scope of Postal Police Officers' authority; 
+operational changes or service commitments for ballots mailed to and 
+from military and overseas voters; and collateral consequences to the 
+Postal Service's brand reputation or revenue if a final rule is issued. 
+Such comments are beyond the scope of this proceeding and will not be 
+addressed below.
+    Sixth, the Postal Service received numerous comments addressing 
+matters unrelated to election mail or to the matters discussed in this 
+proceeding. These included comments expressing personal opinions of the 
+President; remarks concerning nominees to the Postal Service Board of 
+Governors and criticisms of the Board's leadership; objections to 
+postage and stamp prices; requests for congressional action; appraisals 
+of judges who have issued decisions concerning election mail; 
+appraisals of the current and former Postmaster General; comments aimed 
+at postal management and staff; comments on postal reform and 
+privatization; comments on voter intimidation; comments regarding the 
+role of public election auditors and observers; opinions about the 
+impact of the Supreme Court's recent decisions dealing with the Voting 
+Rights Act; comments regarding the Federal Election Commission's 
+Clearinghouse on Election Administration; and feedback on other 
+administrative proceedings, including a Department of Justice (``DOJ'') 
+rulemaking concerning the review of state bar complaints and 
+allegations against DOJ attorneys and a separate Postal Service 
+rulemaking concerning the mailability of firearms. Such comments are 
+also beyond the scope of this proceeding and will not be addressed 
+below.
+
+D. Conclusion
+
+    The Postal Service has carefully considered all comments received. 
+The summary above is intended to broadly cover the issues they raise. 
+Substantive legal objections, operational issues, requests for 
+additional study, suggested revisions to the proposed rule, and 
+additional topics related to the proposed rule are addressed in the 
+dedicated subsections that follow.
+
+III. Legal Authority
+
+    Numerous commenters asserted, on varying grounds, that the Postal 
+Service lacks the legal authority to implement the proposed rule. This 
+section recites the specific arguments advanced by commenters, followed 
+in each case by a response affirming the legal basis of the DMM 
+changes.
+
+A. General Remarks
+
+    Ballot mail presents unique considerations, given the role it plays 
+in the electoral process. This role has also grown in importance in 
+recent years, as many states have expanded eligibility for mail-in 
+voting, with some states moving to universal mail-in voting. The number 
+of voters using the mail to receive and cast their ballots has 
+commensurately increased. The Postal Service's policies regarding 
+election mail in general, and ballot mail in particular, have evolved 
+to reflect these unique considerations. From an operational standpoint, 
+the Postal Service deploys special practices on a nationwide basis for 
+the processing and delivery of ballot mail to ensure that such mail is 
+prioritized across the postal network and timely delivered. These 
+practices include the use of extraordinary measures during the period 
+surrounding federal general elections to accelerate the delivery of 
+return ballot mail beyond the Postal Service's typical operations when 
+its employees are able to identify a mailpiece as a ballot. In 
+recognition of the importance of ballot mail, the Postal Service 
+regularly issues nationwide guidance documents in federal election 
+cycles, has dedicated points of contact to coordinate with election 
+officials, and has created a dedicated election mail group tasked with 
+overseeing the Postal Service's election mail procedures nationwide. 
+The Postal Service also amended DMM 703.8.0 in 2022 to add its 
+longstanding best-practices recommendations concerning ballot mail to 
+facilitate efficient handling and prompt delivery and to 
+improvemailpiece visibility. Some jurisdictions have adopted those 
+recommendations.
+    The use of the U.S. Mail to vote also implicates federal interests 
+regarding whether the postal system is being used in a manner that is 
+consistent with federal law, including those laws governing who is 
+allowed to vote in federal elections. Executive Order 14399 emphasizes 
+the constitutional obligation of the Executive Branch to take care that 
+these laws are faithfully executed, and discusses the importance of 
+applying additional measures concerning the use of the mail to vote in 
+federal elections, in order to facilitate enforcement of federal law, 
+reduce the risk of fraud, and help protect the integrity of federal 
+elections--a point subsequently echoed by some comments supporting the 
+rule. It is fully appropriate for the Postal Service, as an 
+establishment of the Executive Branch, to take actions deemed necessary 
+to ensure the faithful
+
+[[Page 54969]]
+
+execution of federal law and enhance the efficiency of postal 
+operations. As discussed below, the Postal Service has the statutory 
+and constitutional authority to take such actions.
+
+B. Election Integrity
+
+    The Postal Service received many comments expressing differing 
+views on the incidence of voter fraud and its impact on election 
+integrity. Some commenters, in voicing support for the proposed rule, 
+portrayed voter fraud as a significant problem, while commenters 
+opposing the rule argued that it is not a problem, and disputed the 
+Postal Service's legal authority and rationale to impose preparation 
+requirements for Outbound Federal Ballot Mail.
+    While the Postal Service acknowledges the range of disagreement on 
+this point, the incidence of voter fraud does not impact the proposed 
+rule's legal grounding. As discussed in the Notice of Proposed 
+Rulemaking and in further detail below, the rule will afford 
+significantly enhanced visibility into the sending of Federal Ballot 
+Mail, and this will in turn facilitate law enforcement efforts by 
+enabling law enforcement to better detect potential issues meriting 
+further investigation. Such enhanced visibility will help identify 
+potential issues that would have otherwise gone undetected; at the very 
+least, it will provide increased assurance that any potential issues 
+are more capable of being effectively identified and investigated. Cf. 
+Crawford v. Marion Cnty. Election Bd., 553 U.S. 181, 196-97 (2008) 
+(noting the propriety of taking steps designed to detect and deter 
+potential electoral fraud, which also has the benefit of ``safeguarding 
+voter confidence'' in elections). Whether or not voter fraud is common 
+or uncommon, the Postal Service has the legal authority to take the 
+measures in this rule to facilitate enforcement of federal law, reduce 
+the risk of fraud, and help protect the integrity of federal elections.
+
+C. The Constitution's Elections Clause and the 10th Amendment
+
+    Numerous commenters argued that the Postal Service, through the 
+proposed DMM provisions, would supplant the states' authority to 
+administer elections. Some of these comments characterized the proposed 
+rule as inconsistent with the Elections Clause of the Constitution, 
+Article I, Section 4, Clause 1 (vesting authority over the ``manner of 
+elections'' with the States and Congress), and with the 10th Amendment 
+(reserving all non-enumerated powers to the states). According to many 
+of these comments, the proposed rule would allegedly recast the Postal 
+Service as an ``auditor of state voter rolls and an arbiter of ballot 
+validity,'' a ``gatekeeper of who can vote by mail,'' or a ``checkpoint 
+for voting.'' In a similar vein, commenters asserted that the proposed 
+rule contravenes the separation of powers by arrogating powers that lie 
+with Congress. Finally, at least one commenter argued that, by 
+requiring that states expend resources to comply with the standards 
+mandated by the Postal Service, the proposed rule would 
+unconstitutionally commandeer State resources.
+    These comments are fundamentally erroneous. The rule does not 
+recast the Postal Service as an election administrator, nor dictate the 
+manner of elections in the states. On the contrary, it sets forth 
+mailpiece design and data reporting standards tied to the use of the 
+mail. States maintain complete control over their own voter 
+registration rolls, deciding who within their jurisdiction is eligible 
+to vote by mail. States also retain complete autonomy to determine the 
+extent to which they utilize the postal system as an aspect of their 
+elections. The rule is plainly consistent with the Elections Clause, 
+the 10th Amendment, and the separation of powers, as well as the Postal 
+Service's statutory and regulatory authority.
+    Some commenters acknowledged the Postal Service's authority to 
+impose general standards governing the dispatch of election mail, 
+including ballot mail. For instance, election mail must today conform 
+with the DMM provisions that apply to the class of mail in which it is 
+entered, and users of such mail must pay the required postage. The 
+requirement to follow federal mail regulations if states choose to use 
+the federal postal system, then, cannot inherently violate the 
+Elections Clause, nor would it in any way ``commandeer'' state 
+resources. The Postal Service is not constitutionally obliged to defer 
+to a given state's Outbound Federal Ballot Mail design preferences or 
+accept a given state's decision not to use barcodes. On the contrary, 
+establishing a standardized set of mailpiece design requirements for 
+Outbound Federal Ballot Mail--requirements that, being tailored to 
+enable more efficient handling of Outbound Federal Ballot Mail, improve 
+such mail's visibility in the mailstream, and Postal Service 
+operations--lies within the Postal Service's authority. These 
+requirements do not amount to election administration, nor do they 
+usurp state resources; rather, they regulate the use of the mail to 
+improve operational efficiency and support the faithful execution of 
+federal law. In this regard, as a general matter, states do not have to 
+use the U.S. mail to conduct their elections, and the Postal Service 
+can take steps to ensure that if states do use the mail, that use 
+occurs in a manner that achieves these legitimate purposes.
+    Similarly, the requirement to report mail piece-level data into the 
+Portal is not tantamount to election administration. States retain full 
+control over who within their jurisdictions is (or is not) eligible to 
+vote by mail in federal elections; they would, moreover, determine who 
+is enrolled in their respective Mail-In and Absentee Participation 
+Lists. DMM 705.24.4 only requires that states provide to the Postal 
+Service certain information inscribed on the Outbound and Return 
+Federal Ballot Mail envelopes that they mail to voters, prior to or at 
+the time of the outbound mailing. This information, which necessarily 
+lies in the states' possession, would not be subject to revision by the 
+Postal Service. Eligible voters will therefore be listed by and at the 
+discretion of election officials, and the Postal Service will not 
+second-guess the states' submissions. State election officials will 
+thus retain full control over who is permitted to vote in federal 
+elections in their state by U.S. mail.
+    Finally, the verification process aims only to ensure that states 
+adhere to the mailpiece design and data reporting standards. By 
+checking the outbound barcode, the Postal Service will be able to 
+verify that the state or political subdivision thereof has satisfied 
+the Portal data entry requirements (e.g., certifying that Outbound and 
+Return Federal Ballot Mail envelopes have been submitted for Mailpiece 
+Design Analyst (``MDA'') review and that feedback has been received, 
+all required data fields have been entered). Again, the Postal Service 
+will exercise no discretion or authority over whether an individual 
+should or should not be on the list a state provides.
+    This rule does not involve or authorize inspection of a mail-in 
+ballot's contents, review of individual voter's eligibility, or 
+auditing of state voter rolls. It instead focuses exclusively on 
+exterior mailpiece criteria and barcode scan data. As DMM 704.24.6 
+explains, ``[t]his rule relates only to the use of the U.S. Mail,'' 
+leaving states ``fully responsible for the contents of [their] Mail-In 
+and Absentee Participation List.'' 91 FR 32929. Specifically, DMM 
+705.24.1.b limits enrollment in the Portal to users authorized by a 
+state's chief election official; accordingly, and as detailed in DMM 
+705.24.4.3, the Postal Service will compile and return to each state 
+only the information that
+
+[[Page 54970]]
+
+the state itself has submitted, thus preserving the states' control 
+over who is (and is not) able to vote by mail. It further bears 
+emphasizing that the verification process delineated in DMM 705.24.5 
+would not involve voter eligibility determinations in any way; it will 
+not entail scrutiny into, or any attempt to evaluate, individual 
+voters. Finally, as plainly stated in DMM 705.24.5.2, ``Postal Service 
+personnel are not authorized to open mail sealed against inspection.'' 
+In short, the rule adds a layer of security and accountability while 
+leaving the administration of elections firmly in the hands of the 
+states.
+
+D. First Amendment and Privacy Act Concerns
+
+    Some commenters raised First Amendment concerns, noting that the 
+Supreme Court has long recognized that voting is a protected form of 
+political participation and that compelled disclosure of political 
+participation can chill the exercise of First Amendment freedoms. 
+Though some commenters correctly acknowledged that the Postal Service 
+does not propose to disclose voting choices, numerous commenters 
+nevertheless alleged that the rule would compel the creation and 
+maintenance of records identifying citizens who engage in mail-in or 
+absentee voting; speculated that such records may be subject to future 
+disclosure, misuse, breach, or political targeting; and advised against 
+collecting personally identifiable election-participation information 
+absent a compelling need and robust safeguards.
+    Other commenters invoked the Privacy Act, and 5 U.S.C. 552a(e)(7) 
+in particular, as a statutory bar on the maintenance of records 
+``describing how any individual exercises rights guaranteed by the 
+First Amendment unless expressly authorized by statute or by the 
+individual about whom the record is maintained or unless pertinent to 
+and within the scope of an authorized law enforcement activity[.]''.
+    These First Amendment concerns are misplaced. First, the Postal 
+Service reiterates that it will not collect or record party affiliation 
+and will not inspect ballot contents. Postal Service personnel are not 
+authorized to open mail sealed against inspection. Instead, through the 
+Portal the Postal Service will maintain data of the sort that is 
+routinely generated for mail from the exterior of the mailpiece, 
+including addressing and barcode information.
+    The rule's enactment will not entail ``compelled disclosure of 
+political participation.'' Supreme Court cases on ``compelled 
+disclosure'' in the electoral context address compelled public 
+disclosure of personally identifiable election participation 
+information, such as a public records law making the signatures on a 
+referendum petition publicly available upon request. John Doe No. 1 v. 
+Reed, 561 U.S. 186, 192 (2010). The rule, by contrast, neither directs 
+nor contemplates the public disclosure of Mail-In and Absentee 
+Participation Lists or the underlying Portal data.
+    The Postal Service recognizes the importance of ensuring that the 
+Lists are protected from ``future disclosure, misuse, breach, or 
+political targeting.'' The Notice of Proposed Rulemaking indicated that 
+``steps necessary for the creation of a new SORN in accordance with the 
+Privacy Act'' would be initiated. 91 FR 32971. On July 17, 2026, the 
+SORN was published in the Federal Register. The SORN provides details 
+regarding retention periods, access, disclosure, notification, and 
+contest procedures under 39 CFR 266.5. 91 FR 44880. The notice 
+specifies the categories of records covered, a five-year retention 
+period, encryption of online data transmissions, and badge- and log-on-
+controlled access limited to personnel whose duties require it. The 
+Postal Service can therefore confirm that no data will be collected 
+through the Portal until a system of record (SOR) is in effect, and 
+that records will be disclosed and maintained consistently with any 
+final SOR, which does not allow public disclosure of the Lists.
+    The proposed rule is also consistent with 5 U.S.C. 552a(e)(7), 
+which applies only to records revealing ``how any individual exercises 
+rights guaranteed by the First Amendment.'' Courts have interpreted 
+this ``how'' to mean gathering and recording the ``content'' of 
+expressive activity under the First Amendment. E.g., Reuber v. United 
+States, 829 F.2d 133, 143 (D.C. Cir. 1987) (holding that a letter 
+reprimanding an employee for privately published essays did not depict 
+``how'' he had exercised First Amendment rights under the Privacy Act 
+because it did not discuss ``the content'' of his privately published 
+essays and made ``only vague allusions to the manner in which he 
+expressed his views'').
+    This section of the Privacy Act could only be invoked here if the 
+Postal Service were gathering and maintaining records indicating the 
+``content'' of an individual's exercise of their First Amendment rights 
+(i.e., the content of an individual's ballot, and thus the candidate 
+for which an individual voted). That is not the type of information 
+being collected under the rule. The state-specific Mail-In and Absentee 
+Participation Lists indicate whether a state planned to mail a blank 
+ballot to any given individual. This information does not describe 
+``the content'' of expressive activity under the First Amendment, but 
+simply indicates the specific means by which an individual may have 
+chosen to receive or return their ballot.
+    Furthermore, Section 552a(e)(7)'s prohibitions are operative 
+``unless pertinent to and within the scope of an authorized law 
+enforcement activity''--and as stated above, this rule is enacted to 
+assist in the faithful execution and enforcement of federal law. See 
+Jabara v. Webster, 691 F.2d 272, 280 (6th Cir. 1982) (Section 
+552a(e)(7) ``does not bar the maintenance of records describing how a 
+person exercises First Amendment rights if there is a direct nexus to 
+an authorized criminal, civil or administrative law enforcement 
+activity''). The applicability of Section 552a(e)(7)'s law enforcement 
+exception to DMM 705.24.4 is further confirmed by the DOJ Office of 
+Legal Counsel's recent memorandum opinion, ``Authority to Obtain and 
+Share Statewide Voter Roll Data.'' 50 Op. OLC _(May 12, 2026), Slip. 
+Op. at 25-29 (explaining that Section 552a(e)(7)'s law enforcement 
+exception permits retention of statewide voter-registration lists when 
+a SORN is published).
+
+E. Fourth Amendment Concerns
+
+    Some commenters argued that the proposed rule would violate the 
+Fourth Amendment by allegedly:
+    <bullet> Allowing unreasonable search of voter information encoded 
+on the outside of Federal Ballot Mail envelopes;
+    <bullet> Permitting unreasonable seizure of Federal Ballot Mail 
+encoded with voter information; and
+    <bullet> Requiring voter information to be encoded on the outside 
+of Federal Ballot Mail envelopes and allowing suspicionless searches 
+(also known as ``administrative'' or ``special needs'' searches) of 
+that information for general law-enforcement purposes that fall outside 
+of the Postal Service's lawful mission of mail delivery.
+    The Postal Service notes that courts have long held that there is 
+no reasonable expectation of privacy in information displayed on the 
+exterior of a mailpiece because it is exposed to anyone's view, 
+including postal employees who must rely upon it in the performance of 
+their duties. E.g., United States v. Choate, 576 F.2d 165, 175-77 (9th 
+Cir. 1978). Thus, the Postal Service's creation of ``mail covers''--
+images of the outside cover of envelopes or packages in its custody--
+for general
+
+[[Page 54971]]
+
+law enforcement purposes do not constitute a ``search'' under the 
+Fourth Amendment. See generally 39 CFR 233.3. Likewise, the 
+government's use of voter information displayed or encoded on Federal 
+Ballot Mail envelopes would not constitute a Fourth Amendment 
+``search''--administrative or otherwise--because it invades no 
+reasonable expectation of privacy.
+
+F. Due Process Concerns
+
+    Some commenters argued that once a state provides for absentee 
+voting, the state has enabled a qualified individual to exercise their 
+fundamental right to vote in a way that was previously unavailable; and 
+that, as a result, the state must afford appropriate due process 
+protections, including notice and a hearing, before rejecting an 
+absentee ballot. Commenters analogized this principle (which applies 
+via the Fourteenth Amendment to the states) to the Fifth Amendment, 
+which, in their view, requires the federal government to provide 
+adequate due process before restricting voters' use of otherwise 
+permissible voting methods.
+    The Postal Service reiterates that the rule adopted herein does not 
+determine any individual's eligibility to vote and thus does not raise 
+the specter of a due process violation. The verification procedures set 
+forth in DMM 705.24.5 are instead designed to ensure that states 
+sending Federal Ballot Mail have transmitted to the Federal Ballot Mail 
+Portal the information required for each state-specific Mail-In and 
+Absentee Participation List. Such information lies with the states, 
+which already fully control who is, and who is not, included on the 
+Lists; voters themselves cannot provide all of that information (e.g., 
+unique Intelligent Mail barcode (``IMb'') on the outbound and return 
+envelope), and the Postal Service cannot correct or amend it. While the 
+verification process may identify missing data or other errors between 
+Outbound Federal Ballot mailings and the Portal data, the states 
+themselves control the information that they transmit (as they do 
+already, even in the absence of this rule), and any procedural 
+protections attaching to such information must accordingly be provided 
+by the states. Ultimately, with or without this rule, states are 
+responsible for managing their own voter rolls, and deciding who is or 
+is not eligible to vote by mail.
+
+G. Equal Protection Concerns
+
+    Some commenters raised concerns regarding the guarantee of equal 
+protection under the Fourteenth Amendment (and subsequently 
+incorporated into the Fifth Amendment by Bolling v. Sharpe, 347 U.S. 
+497 (1954)). For example, at least one commenter asserted that the 
+exemption for ballots covered by the Uniformed and Overseas Citizens 
+Absentee Voting Act (``UOCAVA'') affords unequal legal protection (on 
+the mistaken grounds that UOCAVA covers military personnel but not 
+overseas civilians). Moreover, at least one commenter argued that by 
+creating the possibility of noncompliance, the rule's envelope-design 
+standards and verification process might restrict some voters' ability 
+to vote by mail, thus withholding equal protection under the law.
+    However, another commenter reasoned that uniform national 
+standards--far from raising equal-protection issues--resolve these 
+constitutional concerns. Relying on Jones v. U.S. Postal Service, 488 
+F. Supp. 3d 103 (S.D.N.Y. 2020), the commenter explained that Fifth 
+Amendment equal-protection claims were likely to succeed where there 
+were no standards or uniformity for handling election mail; this 
+inconsistency can result in intrastate and interstate disparities in 
+citizens' voting power. The proposed rule, the commenter argued, 
+eliminates such concerns by setting a single, nationwide standard for 
+Federal Ballot Mail.
+    The Postal Service agrees with this commenter that the rule 
+safeguards, rather than abrogates, equal protection. The rule is 
+neutral on its face and uniform in application: DMM 705.24.3 applies 
+objective requirements to all Outbound and Return Federal Ballot Mail 
+envelopes without distinction, and the data entry and verification 
+processes delineated by DMM 705.24.4 and 705.24.5, respectively, 
+likewise apply to all states equally. Furthermore, as noted, the rule 
+promotes multiple rational objectives through nationwide standards and 
+implementation, including the enhancement of Federal Ballot Mail 
+visibility in the mailstream, Postal Service operations, and the 
+facilitation of law enforcement objectives. Cf. United States v. 
+Salerno, 481 U.S. 739, 734 (1987) (holding that facial challenges to 
+statutes ``must establish that no set of circumstances exists under 
+which the Act would be valid''); Reno v. Flores, 507 U.S. 292, 301 
+(1993) (extending the Salerno standard to federal agency regulations). 
+The rule's exemptions also rest on a legitimate, nondiscriminatory 
+basis. Congress, for example, created in UOCAVA a separate federal 
+statutory scheme with its own requirements, including different timing 
+constraints and deadlines. McDonald v. Board of Election Comm'rs, 394 
+U.S. 802, 809 (1969) (allowing exceptions within an absentee ballot 
+voting scheme provided ``some rational relationship to a legitimate 
+state end''). Furthermore, as indicated, UOCAVA coverage does in fact 
+extend to non-military U.S. citizens who reside outside the United 
+States. 52 U.S.C. 20310(5)(B)-(C).
+
+H. Statutory Grounding in Title 39
+
+    Multiple commenters argued that, as a general matter, the Postal 
+Service lacks the statutory authority to implement the proposed rule. 
+Along similar lines, some commenters alleged specifically that, because 
+no provisions in title 39 explicitly contemplate mandatory standards 
+regarding Federal Ballot Mail, title 39 impliedly bars the Postal 
+Service from implementing such standards.
+    These statutory arguments are unavailing. As explained in the 
+Notice of Proposed Rulemaking, 39 U.S.C. 401(2) authorizes the Postal 
+Service ``to adopt, amend, and repeal such rules and regulations, not 
+inconsistent with this title, as may be necessary in the execution of 
+its functions under this title and such other functions as may be 
+assigned to the Postal Service under any provisions of law outside of 
+this title,'' and further grants the Postal Service ``all other powers 
+incidental, necessary, or appropriate to the carrying on of its 
+functions or the exercise of its specific powers.'' Id. Sec.  401(10). 
+Furthermore, Section 404 grants the Postal Service specific powers, 
+including the power ``to provide for the collection, handling, 
+transportation, delivery, forwarding, returning, and holding of mail, 
+and for the disposition of undeliverable mail.'' Id. Sec.  404(a)(1).
+    Setting preparation and data-reporting standards for a defined 
+category of mail falls squarely within that statutory authority. 
+Supreme Court precedent confirms the Postal Service's expansive 
+rulemaking authority. As noted by one commenter, in U.S. Postal Service 
+v. Council of Greenburgh, the Court explained that under 39 U.S.C. 401 
+``the Postal Service is broadly empowered to adopt rules and 
+regulations.'' 453 U.S. 114, 122 (1981). This commenter further argued 
+that the Postal Service has long managed election mail as a distinct 
+category under its authority. In Rider v. United States, the commenter 
+explained, the Claims Court recognized that the Postal Service issues 
+``detailed regulations and management instructions concerning the 
+various classes of mail and types of postal services in its Domestic 
+Mail Manual'' pursuant to Section 404(a), and that its Postal 
+Operations Manual establishes ``special operating procedures'' to 
+ensure that election and campaign mailings ``are processed properly,
+
+[[Page 54972]]
+
+delivered with equitable care and attention and that proper records are 
+maintained.'' 7 Cl. Ct. 770 (1985). Courts have recognized the Postal 
+Service's broad regulatory authority in other contexts as well. See 
+Grover City v. U.S. Postal Serv., 391 F. Supp. 982, 986 (C.D. Cal.1975) 
+(finding postal regulations setting mail receptacle standards to be 
+valid exercises of Sec.  404(a)(1) delivery power and Sec.  401(2) 
+rulemaking authority); Rockville Reminder v. U.S. Postal Serv., 480 
+F.2d 4, 7 (2nd Cir. 1973) (upholding postal regulations prohibiting 
+mailbox installations facilitating private delivery of advertising 
+circulars under the Postal Service's broad rulemaking authority); Egger 
+v. U.S. Postal Serv., 436 F. Supp. 138, 142 (W.D. Va. 1977) (upholding 
+the Postal Service's interpretation of its regulations governing mail 
+addressed to people at school).
+    The Postal Service has the statutory authority to set forth mail 
+preparation, acceptance, and entry standards that are necessary to 
+achieve the functions assigned to it by law--functions that include 
+investigation into the potential misuse of the mail and coordination 
+with other federal law enforcement entities. See 39 U.S.C. 401(2); cf. 
+18 U.S.C. 3061(b) (authorizing the Postal Service to investigate crimes 
+regarding ``the use of the mails'' and other appropriate crimes as 
+determined by agreement with the Attorney General); 52 U.S.C. 10307, 
+20511. The rule sets forth tailored requirements regarding the use of 
+the mail--the design of Federal Ballot Mail envelopes and the provision 
+of mailpiece-level data concerning such ballot mailings--to help ensure 
+the faithful execution of federal law; and the information yielded by 
+these requirements would be available for use by law enforcement. 
+Additionally, the rule would implement the Postal Service's 
+longstanding best practices for ballot mail, thereby advancing 
+execution of a key Postal Service function: processing and delivery of 
+the Nation's mail. Contrary to commenters' arguments, achieving such 
+purposes is within the scope of the Postal Service's authority to take 
+``necessary'' action to regulate the use of the mail and achieve its 
+assigned functions.
+    There is also no basis to conclude that the Postal Service's broad 
+statutory authority regarding the postal system encompasses all types 
+of mail except ballot mail, and specifically Federal Ballot Mail. On 
+the contrary, the Postal Service has acted pursuant to its existing 
+authority to take many actions regarding ballot mail, reflective of the 
+unique considerations raised by such mail, including by establishing 
+special operational procedures and issuing best practice 
+recommendations. While the Postal Service is now taking additional 
+action to make some of these recommendations mandatory, and to add a 
+requirement that states provide mailpiece-level detail about their 
+mailings, such additional steps equally fall within the Postal 
+Service's authority to execute on functions as assigned.
+
+I. Grounding in Law Enforcement Statutes
+
+    Multiple commenters contested the state-specific Mail-In and 
+Absentee Participation Lists' grounding in law enforcement objectives, 
+on the theory that the Lists, and the purposes to which they will 
+allegedly be put, exceed the Postal Service's authority to investigate 
+crimes involving election fraud. In general, these comments assert that 
+the criminal statutes cited by the Notice of Proposed Rulemaking either 
+have nothing to do with voting or are related to voting but are not 
+enforceable by the Postal Service. Specific arguments include:
+    <bullet> The U.S. Code does not confer on the Postal Service 
+authority to enforce election statutes. Commenters asserted that 52 
+U.S.C. 10307 and 20511 do not expressly name the Postal Service, and as 
+such cannot be taken to confer enforcement or investigative authority 
+on the Postal Service with respect to voter intimidation and fraudulent 
+registration or voting. Conversely, 39 U.S.C. 404(a)(6) confers on the 
+Postal Service the power ``to investigate postal offenses and civil 
+matters relating to the Postal Service,'' not election law per se.
+    <bullet> The investigatory and enforcement powers conferred by 
+statute on Postal Inspectors are limited. Some commenters averred that 
+18 U.S.C. 3061(b) grants only limited law enforcement powers to Postal 
+Inspectors, which are confined to ``the enforcement of laws regarding 
+property in the custody of the Postal Service, property of the Postal 
+Service, the use of the mails, and other postal offenses,'' and to any 
+offenses subject to interagency agreement with the Attorney General. 
+This grant of authority, some asserted, does not authorize the Postal 
+Service to collect data on voters. Similarly, the regulations in 39 CFR 
+233.1(b) do not expressly grant Postal Inspectors authority to 
+administer elections, determine voter eligibility, maintain voter 
+registration databases, or conduct election fraud investigations 
+unrelated to postal offenses.
+    <bullet> The proposed rule lacks a factual predicate. To initiate 
+an investigation, the Postal Service requires either direct, visible 
+evidence of a crime or reasonable grounds to suspect that a crime is or 
+has been committed. Some commenters characterized voter fraud, 
+including through use of the mail, as rare. Commenters contended that 
+the proposed rule nevertheless assumes that every mail-in voter may 
+cast a fraudulent vote and must be placed under surveillance.
+    <bullet> Lack of a clear statement conferring investigative or 
+enforcement authority. Commenters argued that if Congress had intended 
+to deputize the Postal Service as an adjunct of federal election law 
+enforcement, it would have said so clearly.
+    Each of the above arguments is unpersuasive. The proposed rule 
+establishes mailpiece preparation and data reporting standards that 
+will significantly enhance the visibility of Federal Ballot Mail. The 
+information generated by the implementation of those standards would be 
+available for use by appropriately authorized law enforcement entities 
+to help ensure the faithful execution of federal law. The determination 
+of whether to investigate, refer, charge, or prosecute any matter 
+relating to illegal voting, voter fraud or voter intimidation rests, 
+and will continue to rest, with the entities to which Congress has 
+assigned such functions. Moreover, as noted above, the rule does not 
+dictate the administration of elections, the determination of voter 
+eligibility, or the maintenance of voter registration databases--all of 
+which is controlled by the states-nor does the rule authorize the 
+Postal Service to conduct investigations unrelated to postal offenses.
+    Concerning the proposed rule's factual predicate (or alleged lack 
+thereof), claims regarding the empirical incidence of voter fraud do 
+not, as explained above, affect the Postal Service's authority to adopt 
+these regulations. The Postal Service further emphasizes that, under 
+the rule, it will not surveil mail-in or absentee voters. Under the 
+rule's plain terms, information generated at acceptance is embedded in 
+exterior mailpiece indicia and barcode scan data; Postal Service 
+personnel are not authorized to open mail sealed against inspection; 
+and no provision in DMM 705.24 authorizes review of any ballot's 
+contents.
+    Concerning the implied clear statement rule discerned by some 
+commenters, the Postal Service does not purport to discover 
+``transformative power'' in a ``long-extant'' statute. Rather, the 
+envelope design, automation, barcoding and design review standards set 
+forth by DMM
+
+[[Page 54973]]
+
+705.24.3 are similar to mail preparation requirements routinely applied 
+across other mail categories. The rule, therefore, does not introduce 
+new and unsettled ``major questions''--a point explained in greater 
+depth below.
+
+J. The Major Questions Doctrine
+
+    Some commenters asserted that the proposed rule would violate the 
+``major questions doctrine,'' which applies to agency actions 
+purporting to ``discover in a long-extant statute an unheralded power 
+representing a transformative expansion in its regulatory authority.'' 
+West Virginia v. EPA, 597 U.S. 697, 724 (2022). Such comments theorized 
+that as the right to vote is a fundamental political right, and as the 
+Postal Service has no authority to adopt rules regulating voting in 
+federal elections without express congressional authorization, the 
+proposed rule would derive from its stated sources of statutory 
+authority just such ``transformative'' powers.
+    As an initial matter, it bears repeating that this rule does not 
+regulate the right or eligibility to vote, voter registration, or the 
+manner by which states administer elections. States will retain full 
+autonomy to decide whether (and to what extent) they utilize the U.S. 
+Mail as part of their electoral systems and who can use ballot mail to 
+cast a vote. The rule instead imposes modest data and mail preparation 
+requirements on Federal Ballot Mail envelopes. The preparation 
+requirements have for years been issued as best-practice guidance--and 
+are substantively similar to the standards already employed to varying 
+extents by some election officials. And the data standards require that 
+states provide information regarding the exterior of Federal Ballot 
+Mail envelopes that they will already have available as part of their 
+ballot mailings. The verification procedures simply help to ensure 
+these standards have been met prior to accepting an Outbound Federal 
+Ballot mailing. Furthermore, the Postal Service is authorized to 
+regulate certain mail preparation requirements in furtherance of 
+federal law enforcement and to advance its ability to efficiently 
+handle the mail. On its face, then, the rule does not represent any 
+``transformative expansion'' of regulatory authority, rendering the 
+``major questions'' doctrine inapplicable.
+    By way of further explanation, major questions arise when agencies 
+claim to ``discover in a long-extant statute an unheralded power 
+representing a transformative expansion in its regulatory authority.'' 
+West Virginia, 597 U.S. at 724. Per West Virginia, ``the history and 
+breadth of the authority that [the agency] has asserted'' distinguishes 
+``extraordinary cases'' from ordinary ones. Such cases, which ``provide 
+a reason to hesitate before concluding that Congress meant to confer 
+such authority,'' typically involve an agency reaching beyond its area 
+of expertise. Id. at 721; see also, e.g., Alabama Ass'n of Realtors v. 
+HHS, 594 U.S. 758, 764 (2021) (the Centers for Disease Control 
+regulating landlord-tenant relations); NFIB v. OSHA, 595 U.S. 109, 
+(2022) (OSHA regulating a public health risk rather than workplace 
+hazards). By contrast, in United States v. White, 97 F.4th 532, 540 
+(7th Cir. 2024), the Seventh Circuit refused to apply the major 
+questions doctrine in a case plainly lacking ``the hallmarks of the 
+truly extraordinary cases,'' with no claim to ``unheralded power.'' In 
+Nebraska v. Su, 121 F.4th 1 (9th Cir. 2024), the Ninth Circuit likewise 
+held the major questions doctrine not to apply to a federal contractor 
+minimum wage mandate which, following a history of presidents setting 
+federal contractor rules, constituted neither a ``transformative'' nor 
+an ``unheralded'' expansion of regulatory power. Id. at 14.
+    Similar to the facts in White and Su, envelope preparation and data 
+transmission and verification requirements of the sort contemplated 
+here fall well short of an ``unheralded transformation'' of regulatory 
+authority, lack ``the hallmarks of the truly extraordinary cases,'' and 
+do not derive ``unheralded power'' from a ``long-extant statute.'' 
+Indeed, the Postal Service has for years conditioned eligibility for 
+certain rate levels on specific requirements, including barcodes and 
+Mailer IDs, and has done so under the same statutory authority that 
+underlies this rule. For example, the Full-Service Intelligent Mail 
+program, described in DMM 705.23, offers automation discounts for 
+commercial mailers in exchange for end-to-end mail tracking, electronic 
+documentation, and address corrections. Participation in this program 
+is mandatory for automation pricing. See 78 FR 23,137 (Apr. 18, 2013) 
+(requiring the use of ``full-service'' Intelligent Mail ``to qualify 
+for automation prices for postcards (First-Class Mail[supreg] only), 
+letters, and flats when mailed using the following services: First-
+Class Mail, Standard Mail and Periodicals; and for flats mailed at 
+Bound Printed Matter prices''). If the Full-Service IMb regime is 
+lawful under Sections 401 and 404, and it is, then the proposed rule 
+cannot be said to effect an ``unheralded transformation'' of the 
+regulatory prerogatives embedded in those statutes. Barcode, logo, 
+automation-compatibility, design review, and electronic documentation 
+conditions on defined mail categories constitute normal exercises of 
+Postal Service authority; they have, moreover, in large part, long been 
+included in the Postal Service's guidance to state Boards of Elections.
+    Other major-questions cases focus on the ``economic and political 
+significance'' of the authority at issue. Learning Res., Inc. v. Trump, 
+607 U.S. 229, 246 (2026); see also, e.g., Biden v. Nebraska, 600 U.S. 
+477, 502 (2023). Here, the economic significance of the rule is slight 
+as compared to prior major-questions cases. See Learning Resources, 607 
+U.S. at 246 (``could be worth $15 trillion''); Nebraska, 600 U.S. at 
+502 (``between $496 billion and $519 billion''). And although actual 
+changes to eligibility of voters to vote by mail might fairly be 
+described as having political significance in some sense, this rule 
+makes no such changes--it instead leaves voter-eligibility unchanged, 
+requiring only certain modest envelope-design and data reporting 
+standards, most of which have long been recommended by the Postal 
+Service (and are voluntarily complied with by some jurisdictions 
+already). It follows that the rule's incorporation of these practices 
+does not raise any ``major question'' in the relevant sense.
+
+K. Ultra Vires Creation of ``Nonmailable Matter'' Categories
+
+    Some commenters noted that, in 39 U.S.C. 3001-3018, Congress 
+specified categories of nonmailable materials with robust protections 
+for all forms of mail not included. These commenters then argued that 
+the rule effectively creates a new category of ``nonmailable matter,'' 
+and thereby exceeds title 39's statutory scheme. On this basis, they 
+contended that the rule and the verification process that it 
+establishes is ultra vires.
+    The rule does not create a new category of ``nonmailable matter'' 
+into which Federal Ballot Mail as a class may generally fall. Rather, 
+it is designed to ensure that Federal Ballot Mail envelopes meet 
+certain preparation standards consistent with operational best 
+practices and to condition acceptance on the provision of certain 
+mailpiece-level data regarding those ballot envelopes--both of which 
+support the execution of federal law. The rule does not prohibit 
+federal ballots from being mailed altogether. While it is true that 
+outbound mail-in ballots may be rejected from the mailstream as a 
+consequence of noncompliance with the rule's
+
+[[Page 54974]]
+
+requirements, conditions on the acceptance of mailable matter are 
+distinct from a determination that the matter is nonmailable. Moreover, 
+compliance is straightforward: states need only provide information 
+that is inscribed on the outside of Federal Ballot Mail envelopes, 
+which will necessarily be in their possession. And ample resources are 
+available to assist states with ballot mail envelope design, should 
+such assistance be required. Compliance is verified by checking a 
+single data point (IMb) on Outbound Federal Ballot Mail prior to 
+acceptance. Although Outbound Federal Ballot mailings that fail the 
+verification process may be temporarily rejected (and thus not 
+permitted to enter the mailstream), any errors may be corrected and the 
+mailpieces will thereafter be accepted for mailing.
+    Rather than usurp Congress's authority to create new categories of 
+``nonmailable matter,'' then, the Postal Service will impose mailpiece 
+design and reporting standards to promote a rational and legitimate 
+objective. As discussed below, to support this proposal, the Postal 
+Service has reasonably determined that the mailpiece design 
+requirements will help ensure proper handling, efficient processing, 
+and timely delivery of such ballots to and from voters. See 90 FR at 
+9843 (special conditions are appropriate for ``sensitive matter'' where 
+such conditions ``will improve visibility and enhance handling 
+methods''). Moreover, requiring the submission of a consolidated list 
+of data concerning Federal Ballot Mail will assist law enforcement 
+authorities in investigating crimes, including those involving the 
+mails, as is consistent with the Postal Service's regulatory 
+authorities. See 39 U.S.C. 401(b) (noting that the Postal Service can 
+issue regulations to support functions assigned to it by law); 18 
+U.S.C. 3061(b) (authorizing Postal Service to investigate crimes 
+``regarding the use of the mails'' and other appropriate crimes as 
+determined by agreement with the Attorney General).
+    The Postal Service has previously relied on its authority under 39 
+U.S.C. 401(2) to establish standards applicable to the acceptance and 
+transmission of certain unique articles in furtherance of specific 
+Postal Service operational interests where those articles raise special 
+handling concerns, even where the articles are not dangerous. For 
+example, cremated human and animal remains must be transported through 
+specific types of USPS-provided boxes, and must be trackable via 
+barcode. See Cremated Remains Packaging Requirements, 90 FR 9843 (Feb 
+19, 2025) (implementing rules concerning the sending of cremated 
+remains in specific types of USPS-provided boxes because the Postal 
+Service understands such remains are ``sensitive matter and believes 
+this will improve visibility and enhance handling methods throughout 
+processing and transportation''). Similarly, replica explosives--which, 
+although not dangerous, also require special handling to prevent 
+operational disruptions--rather than being prohibited from the mail 
+altogether must be mailed in certain ways, including in-person 
+presentation to a retail counter and shipment via Registered Mail. 
+Restricting the Mailing of Replica or Inert Explosives, 75 FR 282 (Jan. 
+5, 2010) (noting that ``[t]his process will ensure that packages 
+containing these items remain separate and easily identifiable during 
+the mailing process'').
+    Although ballot mail does not present precisely the same 
+operational issues as cremated remains or replica explosives, it is 
+unquestionably sensitive mail that raises unique operational 
+considerations, as discussed above, and the Postal Service's authority 
+under Section 401(2) is sufficiently expansive to encompass mail-entry 
+conditions that further the effective execution of federal law and 
+advance operational best practices. 39 U.S.C. 401(2) (noting that the 
+Postal Service can issue regulations to support functions assigned to 
+it by law). And incidental to the ability to impose standards in 
+furtherance of such legitimate objectives is the ability to restrict 
+mailings that do not meet those conditions from being accepted. Cf. id. 
+Sec.  401(10) (Postal Service is granted ``incidental'' and 
+``necessary'' powers to effectuate its responsibilities).
+
+L. Consistency With 39 U.S.C. 101(a), 403(c), 404(e), 412, and 3661
+
+    Commenters also argued that the proposed rule is inconsistent with 
+various title 39 provisions, i.e., 39 U.S.C. 101(a), 403(c), 404(e), 
+and 412. Other commenters averred that, prior to implementing these 
+provisions, the Postal Service must request an advisory opinion from 
+the Postal Regulatory Commission (``PRC'') under 39 U.S.C. 3661(b).
+    The Postal Service disagrees with these assessments and addresses 
+each of the above-cited title 39 provisions in turn.
+    Section 101(a) establishes the Postal Service's foundational legal 
+mandate to bind the nation together by providing reliable, efficient, 
+and regular mail services to all communities. This obligation coexists 
+with federal laws determining what is mailable, and the Postal Service 
+abides by several statutory and regulatory directives regarding items 
+that are not mailable, such as hazardous substances or explosives, or 
+(as here) mailable with conditions imposed on preparation and data 
+reporting. The existence of these directives does not negate the 
+foundational legal mandate, and neither would Federal Ballot Mail 
+envelope design standards and electronic documentation requirements 
+that align with preexisting guidance. Furthermore, the Postal Service 
+will continue to coordinate with state election officials and other 
+officials regarding the transmittal of election mail and will maintain 
+its longstanding election mail practices concerning the processing and 
+delivery of ballots that enter the mailstream, including completed 
+ballots mailed by voters to election officials. Indeed, consistent 
+implementation of longstanding best practices recommendations will 
+enhance, rather than hinder, these efforts.
+    Section 403(c) mandates that, in providing services, ``the Postal 
+Service shall not . . . make any undue or unreasonable discrimination 
+among users of the mails, nor shall it grant any undue or unreasonable 
+preferences to any such user.'' The PRC has noted that a violation of 
+section 403(c) requires that (1) a user of the mail is receiving less 
+favorable services than those provided to one or more other postal 
+customers, (2) the user is similarly situated to those postal customers 
+receiving more favorable service, and (3) there is no rational or 
+legitimate basis for denying the user the more favorable service 
+currently being provided to those similarly situated postal customers. 
+PRC Order No. 718, Advisory Opinion (AO) on Service Changes Associated 
+with First-Class Mail and Periodicals, July 20, 2021, Docket No. N2021-
+1 at 170.
+    The rule adopted herein sets forth neutral, uniform, and non-
+discriminatory mailpiece design and data reporting standards that apply 
+uniformly to all Federal Ballot Mail; thus, no ``preferential mail 
+service'' is granted to one class of mail-in voters over another. Nor 
+does the Postal Service violate Section 403(c) by requiring that 
+Federal Ballot Mail meet these uniform standards, since given the 
+unique considerations raised by such mail, Federal Ballot Mail is not 
+``similarly situated'' to other types of mail. Indeed, the Postal 
+Service already accords to election mail special operational treatment 
+that is unavailable for other mail matter sent as First-Class Mail or 
+Marketing Mail (the postal products typically used to send ballot
+
+[[Page 54975]]
+
+mail), and there is no basis to conclude that this special operational 
+treatment constitutes undue discrimination against any users of the 
+mail. Finally, Section 403(c) does not prohibit all distinctions among 
+mail users, but only preferences that are ``undue'' or 
+``unreasonable.'' Given the reasonable and legitimate objectives of the 
+new standards, they are neither ``undue'' nor ``unreasonable''--even 
+assuming arguendo that users of Federal Ballot Mail are ``similarly 
+situated'' to users of other mail classes not covered by those 
+standards, and even if those standards were conceded to somehow provide 
+``less favorable'' terms (and they do not).
+    The Postal Service also notes an issue flagged by several 
+commenters: namely, that not all states can implement the rule's 
+requirements with the same facility. By way of example, one comment 
+noted that states with universal mail-in voting can more readily 
+implement the new electronic documentation requirements than can states 
+that do not mail absentee ballots unless requested by the voter--since 
+the states in the former category can submit their entire list of 
+enrollees in one session through the ballot portal, while states in the 
+latter category must submit names in a more piecemeal fashion and only 
+for those individuals requesting to receive a ballot through the mail. 
+The Postal Service acknowledges the existing variations in state mail-
+in voting practices, which may require different levels of process 
+changes in order to comply with the rule; however, as noted, the rule 
+itself sets forth neutral, uniform, and non-discriminatory mailpiece 
+design and data reporting standards that apply equally to all Federal 
+Ballot Mail. Compliance with these standards is straightforward and 
+facilitated by existing resources (in some cases, free of charge). 
+Furthermore, the nature and degree of states' prospective compliance 
+efforts reflect the states' own policies, not the uniform standards 
+adopted by the Postal Service. Such discrepancies, therefore, do not 
+implicate Section 403(c).
+    Section 404(e) generally prohibits the Postal Service from 
+providing any new ``nonpostal service.'' The term ``service'' is not 
+defined in title 39; the statute directed the PRC to review the 
+``nonpostal services'' offered by the Postal Service as of January 1, 
+2006, to determine whether each such service may continue. Id. Sec.  
+404(e)(1). In carrying out that responsibility, the PRC defined the 
+term ``service'' by regulation as ``any ongoing, commercial activity 
+offered to the public for the purpose of financial gain.'' PRC Order 
+154, Review of Nonpostal Services Under the Postal Accountability and 
+Enhancement Act, Dec. 19, 2008, Docket No. MC2008-1 at 14. Because the 
+creation and distribution of the Mail-in and Absentee Participation 
+Lists are not ``commercial'' in nature, are not offered to the public, 
+and are not offered ``for the purpose of financial gain,'' it would not 
+qualify as a ``service'' for the purposes of Section 404(e).
+    In any event, the creation of such lists is ``postal'' in nature, 
+as it would involve ``delivery of letters, printed matter, or mailable 
+packages, including acceptance, collection, sorting, transportation, or 
+other functions ancillary thereto.'' 39 U.S.C. 102(5); see also id. 
+Sec.  404(e)(1) (``the term `nonpostal service' means any service that 
+is not a postal service defined under section 102(5)''). As noted 
+above, these provisions set forth preparation and data standards that 
+are tailored to the sending of ballots, and hence to the use of the 
+mail.
+    Section 412 provides in part that ``no officer or employee of the 
+Postal Service shall make available to the public by any means or for 
+any purpose any mailing or other list of names or addresses (past or 
+present) of postal patrons or other persons.'' Some commenters 
+theorized that unless state law shields postal-provided state-specific 
+Mail-In and Absentee Participation Lists from disclosure, furnishing 
+the state's chief election official with a list containing the names 
+and addresses of those receiving a mail-in ballot likely violates this 
+section. However, 39 U.S.C. 412(a) addresses lists of ``postal 
+patrons'' or ``other persons'' compiled from postal data, and provides 
+that the Postal Service shall not make such a postal list available to 
+the public. The information on which the Mail-In and Absentee 
+Participation Lists will be based is provided by the states themselves, 
+and specifically the states' records of individuals to whom they (or 
+their authorized election officials) plan to mail blank ballots. 
+Because the lists involve information furnished by the states, 39 
+U.S.C. 412(a) is not applicable; and in any event, the Postal Service 
+will not make the lists public.
+    Certain commenters nevertheless argued that the exception structure 
+created by Section 412(a) (allowing disclosure of information ``as 
+specifically provided by subsection (b) or other law'') in tandem with 
+Section 412(b) (stating that ``[t]he Postal service shall provide to 
+the Secretary of Commerce for use by the Bureau of the Census such 
+address information, address-related information, and point of postal 
+delivery information . . . as may be determined by the Secretary to be 
+appropriate for any census or survey''), impliedly excludes the 
+provision of Mail-In and Absentee Participation Lists to state 
+officials. It therefore bears emphasizing that even if Section 412(a) 
+were applicable to Mail-In and Absentee Participation Lists, it would 
+not bar the provision of such lists to state elections officials.
+    First and foremost, the provisions of these lists to state election 
+officials does not constitute such disclosure of protected information 
+``to the public.'' (Emphasis added.) Indeed, at least one court has 
+interpreted disclosure to state law enforcement officials under 39 
+U.S.C. 412 as not being tantamount to an impermissible disclosure to 
+the public. See, e.g., People v. Pearson, 169 Cal. App. 3d 319, 323 
+(1985) (holding that an individual ``had no reasonable expectation of 
+privacy of his name and residential address given to the United States 
+Postal Service when applying for a post office box''; noting that ``the 
+information was not made available to the public'' under 39 U.S.C. 412 
+``but rather to a law enforcement officer conducting an official 
+investigation'').
+    Second, Section 412(a) allows disclosure of information ``as 
+specifically provided by subsection (b) or other law.'' (Emphasis 
+added.) Postal Service regulations accordingly make clear that 
+disclosure of information under Section 412 to the Secretary of 
+Commerce for census-related purposes is not exclusive, countenancing 
+such disclosure pursuant to certain contracts and interagency 
+agreements, by written request and with the prior consent of the 
+individuals, or as ``otherwise expressly authorized by federal law'' 
+See 39 CFR 266.3(b)(3). As noted, the rule's Mail-In and Absentee 
+Participation List disclosure provisions are adopted pursuant to 39 
+U.S.C. 401 and 404 with the aim of supporting the faithful execution of 
+federal law, and disclosure would occur in accordance with an 
+established SOR.
+    Third, federal legislation serves as both a precedent and a 
+template for the sharing of information by the Postal Service with 
+state election officials, in the context of voting. Specifically, the 
+National Voter Registration Act of 1993 (``NVRA'') requires each state 
+to manage a voter list maintenance program, and to make reasonable 
+efforts to remove ineligible voters from voting rolls. 52 U.S.C. 
+20507(a)(4). The NVRA includes a safe harbor provision, whereby a state 
+can comply with its obligation to have a voter list maintenance program 
+if ``change-of-address information supplied by the Postal Service 
+through
+
+[[Page 54976]]
+
+its licensees is used to identify registrants whose addresses may have 
+changed.'' 52 U.S.C. 20507(c)(1)(A). In 2018, the Supreme Court 
+determined that it was ``undisputedly lawful'' for a state to utilize 
+the Postal Service national change-of-address data for voter list 
+maintenance purposes, as described in the NVRA. See Husted v. A. Philip 
+Randolph Inst., 584 U.S. 756, 765 (2018) (citing 52 U.S.C. 20507(c)(1) 
+and referring to the NVRA safe harbor as ``the Postal Service 
+option''). As a general matter, then, the Postal Service's sharing of 
+information with government officials is not exclusively limited to 
+providing information to the Secretary of Commerce under Section 
+412(b).
+    Section 3661(b) provides that, when the Postal Service ``determines 
+that there should be a change in the nature of postal services which 
+will generally affect service on a nationwide or substantially 
+nationwide basis,'' it must request an advisory opinion from the PRC 
+before implementing the change. Some commenters reasoned that a change 
+touching Federal Ballot Mail is a nationwide change in postal services 
+within the meaning of Section 3661--one requiring pre-filing 
+conferences with affected stakeholders and a formal request filed with 
+the PRC at least 90 days before implementation (39 CFR 3020.110-
+3020.112).
+    As an initial matter, 39 CFR 3020.110-3020.112 are regulations 
+binding the PRC, not the Postal Service. It is therefore incorrect to 
+suggest (as some commenters did) that the Postal Service's adoption of 
+this proposed rule would violate its own regulations.
+    More importantly, the changes contemplated by the proposed rule do 
+not trigger any obligations under Section 3661. As noted, the 
+obligations attendant to Section 3661 arise in the event of ``a change 
+in the nature of postal services which will generally affect service on 
+a nationwide or substantially nationwide basis.'' Implementation of 
+this rule does not constitute such a nationwide change in postal 
+services. As the leading case on this issue explains, Section 3661 must 
+be read within the context of the overall statutory scheme of title 39, 
+which is designed to give the Postal Service ``broad authority in 
+postal management'' to ensure that management is not ``unjustly 
+hampered in its efforts to administer the Department in a businesslike 
+way.'' Buchanan v. U.S. Postal Serv., 508 F.2d 259, 262-63 (5th Cir. 
+1975). Section 3661(b) therefore comes into play only in limited 
+circumstances, if (1) there is a change that has a ``meaningful impact 
+on service,'' (2) the change is ``in the nature of postal service,'' 
+and (3) the change affects service ``on a nationwide or substantially 
+nationwide basis.'' Id. ``These three factors combine to demonstrate 
+that Congress intended the safeguards of 3661 to apply only when 
+changes of significance were contemplated.'' Id. at 263.
+    As to the first Buchanan factor, a proposed change triggers the 
+Section 3661 advisory opinion requirement when that change is 
+``meaningful'' rather than ``minor'' from a quantitative perspective. 
+See Buchanan, 508 F.2d at 262. Alterations that have a minimal effect 
+on the general class of postal users therefore do not fall within the 
+scope of Section 3661. Id. Here, the rule's requirements apply only to 
+Federal Ballot Mail--a subset of election mail--and only in connection 
+with federal general, special, or runoff elections (and not state 
+elections or primary elections). To put this in context, in 2020 the 
+Postal Service delivered roughly 400 million pieces of mail per day, 
+and election mail in the 2020 general election accounted for only a 
+small fraction of a percentage (roughly 0.1%) of that total mail 
+volume. The standards being imposed on this exceedingly small subset of 
+overall mail volume do not constitute a change of sufficient scale and 
+scope to implicate Section 3661, but will instead have only a de 
+minimis effect on the nature of postal services available to ordinary 
+Postal Service users.
+    Moreover, whether a proposed action constitutes a change in the 
+``nature of postal services'' within the meaning of Section 3661(b) 
+``involves a qualitative examination of the manner in which postal 
+services available to the users will be altered.'' Buchanan, 508 F.2d 
+at 263. In that regard, the PRC has held that ``in determining whether 
+an initiative involves a change in the nature of postal services `[i]t 
+is the experience of the individual postal consumer, the recipient of 
+the complex of services provided by the Postal Service and the intended 
+beneficiary of the policies incorporated by Sec.  3661, that must be 
+assayed.' '' Pennsylvania v. DeJoy, 490 F. Supp. 3d 833, 885 (E.D. Pa. 
+2020). Here, the changes contemplated by this rule do not directly 
+affect the provision of postal services; rather, they encompass 
+preparation and documentation requirements that are within the control 
+of the states and, if adhered to, will not disturb the acceptance, 
+processing, transmission or delivery of Federal Ballot Mail. The rule 
+contemplates no changes to how the Postal Service processes and 
+delivers election mail. In other words, as long as the rule's 
+conditions are met, Outbound Federal Ballot Mail will enter the 
+mailstream as usual, will transit as usual to its intended destination, 
+and will in the usual manner be delivered: no discernible difference in 
+the nature of postal services will arise. Indeed, as explained more 
+fully below, the Postal Service will work closely with Boards of 
+Elections to facilitate that very outcome. And, once the Outbound 
+Federal Ballot Mail reaches a voter, the voter will experience no 
+change. Voters may complete and return their ballot as they do now. It 
+further bears noting that even if a state declined to submit the 
+information required by the rule, the resulting acceptance refusal 
+would not implicate Section 3661 any more than would a large-
+scalemailer's decision to opt out of the mail system: the nationwide 
+availability of postal services would remain unchanged.
+    Finally, some commenters argued that it was unlawful for the 
+President to issue an Executive Order directing action by the 
+Postmaster General. To be sure, Executive Order 14399 was relevant to 
+the Postal Service's consideration of this subject and began the 
+deliberative process that is now resulting in this rule. While the 
+Executive Order did not mandate a final rule, the Postal Service has 
+determined that, to help achieve the goals articulated by the Order as 
+necessary to faithfully execute federal law and also to advance the 
+Postal Service's operational interests, it is appropriate to exercise 
+its statutory authority to promulgate these provisions. Considerations 
+of Postal Service independence are not relevant to this rulemaking.
+
+M. 2021 Settlement With the NAACP
+
+    In a 2021 settlement with the NAACP, the Postal Service agreed to 
+take certain actions regarding mail-in voting in future federal 
+elections, including prioritizing monitoring and timely delivery of 
+election mail through 2028. Some commenters argued that the enactment 
+of new mail preparation and electronic documentation requirements, 
+particularly immediately, would deprioritize the timely delivery of 
+election mail and, thus, violate that settlement agreement. In doing 
+so, some commenters pointed to a recent judgment by the U.S. District 
+Court for the District of Columbia granting NAACP's motion to enforce 
+the settlement agreement, and enjoining the proposed rule's 
+implementation. See NAACP v. U.S. Postal Serv., No. 1:20-cv-2295 
+(D.D.C.).
+    On July 17, 2026, the U.S. Court of Appeals for the D.C. Circuit 
+stayed the
+
+[[Page 54977]]
+
+district court's injunction, concluding that ``even if adopted, that 
+proposed rule likely would not violate . . . the parties' settlement 
+agreement.'' NAACP v. U.S. Postal Serv., No. 26-5257 (D.C. Cir. July 
+17, 2026). As the government has explained in that litigation, 
+implementation of this proposed rule is not inconsistent with the terms 
+of the settlement agreement: nothing in the rule adopted herein 
+deprioritizes the timely delivery of election mail. To the contrary, 
+implementation of these standards will, in fact, facilitate the Postal 
+Service's efforts to deliver Federal Ballot Mail in a timely manner. 
+Furthermore, the Postal Service will continue to work closely with 
+stakeholders, and will deploy an array of special operational 
+procedures (including so-called ``extraordinary measures'') to ensure 
+the timely delivery of election mail, as it has done in prior election 
+cycles.
+
+N. NVRA, the Help America Vote Act and the Voting Rights Act
+
+    Some commenters argued that NVRA (intended primarily to facilitate 
+the registration of voters) and the Help America Vote Act (``HAVA'') 
+(establishing a funding program to support state administration of 
+elections) neither grant the President authority to identify the 
+additional measures outlined in Executive Order 14399, nor authorize 
+the Postal Service to adopt the rule as proposed. Commenters further 
+argued that implementation of the proposed rule, and in particular the 
+refusal to accept Outbound Federal Ballot Mail mailings that do not 
+comply with the acceptance standards embodied in DMM 705.24, would 
+violate the Voting Rights Act. As background, Congress enacted the 
+Voting Rights Act to protect citizens' constitutional right to vote and 
+to move freely across state lines, providing that no U.S. citizen shall 
+``be denied the right to vote'' in federal elections ``because of the 
+failure of such citizen to be physically present in such State or 
+political subdivision at the time of such election,'' so long as the 
+citizen has ``complied with the requirements prescribed by the law of 
+such State or political subdivision'' concerning absentee ballots. 52 
+U.S.C. 10502. The enforcement provisions of the Voting Rights Act, id. 
+Sec.  10307(a), further establish that ``[n]o person acting under color 
+of law shall fail or refuse to permit any person to vote who is 
+entitled to vote under any provision of chapters 103 to 107 of this 
+title or is otherwise qualified to vote[.]'' In these commenters' view, 
+the rule as proposed would violate these statutes by adding a new 
+enrollment requirement as a necessary precondition to the delivery of 
+absentee ballots. Other commenters argued that the Election Assistance 
+Commission (``EAC''), not the Postal Service, is the federal entity 
+tasked to act as a national clearinghouse and resource for the 
+compilation of information with respect to administration of Federal 
+elections; if the EAC cannot impose any requirement on any state or 
+local unit of government, the Postal Service cannot do so through its 
+proposed rule either.
+    As discussed above, under the rule, states retain full control over 
+how to utilize the mail in their electoral systems, including by 
+determining who is registered to vote and who is eligible to receive 
+and send a mail-in ballot. The rule requires only that Federal Ballot 
+Mail envelopes meet certain mail preparation requirements and that 
+states provide mailpiece-level data regarding their Outbound and Return 
+Federal Ballot mailings. As such, this rule simply regulates the use of 
+the mail, and does not interfere with or supplant the schemes 
+established under NVRA, HAVA, or the Voting Rights Act. The Postal 
+Service's rule complements, rather than replaces, these statutory 
+responsibilities by supporting the accurate distribution of ballots 
+after states have determined who is eligible to receive them. 
+Similarly, the Postal Service is not usurping the authority vested in 
+the EAC. This rule concerns the mail, not election administration; 
+voting systems and other election administration tasks remain squarely 
+within EAC's scope. The Postal Service will continue (as before) to 
+provide change of address information to state and local officials; and 
+state and local officials will continue (as before) to maintain their 
+official voter registration lists. Mail-In and Absentee Participation 
+Lists will be based entirely on data in the possession of, and provided 
+by, the states, and the Postal Service will not change the content of 
+those lists. In this regard, it bears repeating that the Portal is not 
+in any way a federal voting database; instead, it establishes a 
+mechanism whereby states can provide data, which is fully within their 
+possession and control, regarding Federal Ballot mailings.
+
+O. The Paperwork Reduction Act
+
+    Some commenters faulted the proposed rule for its alleged failure 
+to address the obligations under the Paperwork Reduction Act, 44 U.S.C. 
+3501 et seq., which requires that federal agencies obtain approval from 
+OMB before imposing a new information collection requirement on 
+persons, including state governments.
+    The Postal Service notes that it is outside the Paperwork Reduction 
+Act's scope. See Kuzma v. U.S. Postal Serv., 798 F.2d 29, 32 (2d Cir. 
+1986); Shane v. Buck, 658 F. Supp. 908, 915 (D. Utah 1985), aff'd, 817 
+F.2d 87 (10th Cir. 1987).
+
+P. Administrative Procedure Act Requirements
+
+    Some commenters took issue with the length of the notice and 
+comment period, with some alleging that the time allotted for comments 
+was insufficient under the APA, and others remarking that for a rule of 
+such scope and consequence, a 60-day comment period would be more 
+fitting and appropriate.
+    Although the Postal Service is part of the executive branch, it is 
+not subject to many of the laws and guidance that govern the rulemaking 
+processes used by other executive branch entities--including the APA 
+(except in proceedings concerning mailability, which as explained above 
+and in the Notice of Proposed Rulemaking, the instant proceeding is 
+not). 39 U.S.C. 410(a), 3001(m). The Postal Service also notes that the 
+Notice of Proposed Rulemaking prompted more than 200,000 comments 
+covering a wide range of topics and opinions. There is thus no 
+indication that the public had inadequate time to share its views, or 
+that 30 additional days would have resulted in material additional 
+comments. The Postal Service has considered and taken seriously all 
+significant comments.
+
+IV. Operation of the Final Rule
+
+    The proposed rule, and the final rule on which it is based, was 
+designed to be flexible enough to accommodate the variation in state 
+election laws and election administration practices. However, some 
+commenters interpreted this flexibility as vague, expressing 
+frustration about the lack of concrete compliance steps or confusion 
+over the responsibilities of Authorized Ballot Mailers and Federal 
+Ballot Mail Portal Users. Commenters also misconstrued the proposed 
+rule's provisions as covering the most expansive scope of ballot mail 
+possible while also operating in the most restrictive manner possible. 
+This led to a substantial volume of comments that were premised on 
+inaccurate factual assumptions, with the underlying basis for the 
+expressed opposition being based, either in full or in part, on these 
+inaccurate assumptions. These inaccuracies led to many exaggerated 
+claims about the
+
+[[Page 54978]]
+
+impact of the proposed rule as well as the Postal Service's role under 
+the rule.
+    The Postal Service does not expressly recount each inaccuracy here, 
+in an effort to avoid further confusion. Instead, to respond to the 
+multitude of factual misunderstandings represented in the comments, and 
+in an effort to supply additional details, the Postal Service offers 
+the following explanation of how the final rule is intended to be 
+implemented.
+
+A. Overview
+
+    To begin, the Postal Service is continuing to accept and deliver 
+ballot mail, including Federal Ballot Mail, from election officials and 
+voters. The proposed rule does not end or prevent mail-in or absentee 
+voting, contrary to the mistaken claims raised in comments. As 
+explained above, the Postal Service is continuing to carry out its core 
+statutory mission in a uniform, neutral, and nondiscriminatory manner. 
+Nothing in this rule need prevent that outcome, as states will retain 
+full control over who is (or is not) permitted to vote by mail in their 
+jurisdiction.
+    The rule introduces new mailpiece preparation requirements and data 
+reporting standards for Federal Ballot Mail that must be satisfied 
+prior to presenting Outbound Federal Ballot Mail for acceptance into 
+the mailstream. Thus, the final rule regulates Federal Ballot Mail, 
+consistent with the Postal Service's core statutory function, not the 
+franchise. Eligibility for mail-in and absentee voting will continue to 
+be governed by state law; state and local election officials will still 
+determine which individuals are eligible under these laws; and state 
+and local election officials will determine whether completed ballots 
+are eligible to be counted. To repeat, the Postal Service will not play 
+any role in determining voter eligibility, maintaining voter rolls, or 
+counting ballots. The Postal Service will not open ballot mail, 
+including Federal Ballot Mail; will not know the contents of a ballot; 
+will not know how an individual voted; and will not know an 
+individual's political party affiliation.
+    However, as many commenters acknowledged, and consistent with the 
+stated authority above, the Postal Service will generally not accept 
+Outbound Federal Ballot mailings unless compliance with the rule's new 
+standards has been verified, as further detailed below and in the final 
+rule.
+
+B. Optional 90-Day Pre-Mailing Notice
+
+    Section 705.24.2 of the rule creates an optional process through 
+which a state's chief election official (including those representing 
+DC and U.S. territories) may alert the Postal Service of the state's 
+intent to allow mail-in or absentee ballots to be transmitted by the 
+Postal Service. This notice may be given 90 days prior to a federal 
+election. This provision does not require a response from the state 
+official, and also does not require preparation of a list of 
+individuals to whom a ballot will be mailed or coordination with local 
+officials (although the state official may choose to do so).
+    Some commenters misunderstood the purpose of this optional notice. 
+For instance, one comment from a former election official stated that 
+the Postal Service is already well aware of whether a state intends to 
+use its services. The purpose of this provision, however, is to 
+facilitate pre-election planning, as some commenters accurately 
+recognized. When the Postal Service knows that a state plans to send 
+ballots for a federal election using the mail, it can conduct outreach 
+on mail preparation, provide resources related to IMbs, and offer 
+guidance on how to access and use the Federal Ballot Mail Portal. While 
+the process to enroll in the Portal is straightforward, beginning this 
+process sooner--as the 90-day notice would allow--will be logistically 
+beneficial.
+    Alternatively, the chief state election official can provide no 
+notice at all. This does not preclude the state from using the Postal 
+Service to transmit mail-in and absentee ballots for federal elections. 
+Ballots for federal elections may still be sent through the mail so 
+long as the chief state election official, and any other Federal Ballot 
+Mail Portal User, creates a Portal account, satisfies the rule's mail 
+preparation requirements, enters the required information into the 
+Portal, and successfully completes verification prior to their Outbound 
+Federal Ballot Mail being accepting for mailing.
+    The chief state election official may also provide notice that they 
+do not intend to transmit ballots using the mail or that they do not 
+intend to use the Portal. This also provides the Postal Service with 
+valuable information to plan its resources and may inform internal 
+training.
+    It should also be emphasized that these notices are not binding. 
+For example, if the chief state election official initially informs the 
+Postal Service that they do not intend to use the Portal, they may 
+later change their mind and send ballots using the mail by following 
+the steps outlined above.
+
+C. Envelope Design
+
+    The rule makes several of the Postal Service's longstanding 
+mailpiece design preparation recommendations required elements for 
+Federal Ballot Mail. As many commenters recognized, these elements--the 
+Official Election Mail logo, automation-compatible envelope design, 
+uniquely serialized IMbs on outbound and return envelopes, and 
+mailpiece design review--are not novel. Each of these design elements 
+is already recommended in the Postal Service's Official Election Mail 
+Guide (``Kit 600'') and included as a best practice in DMM 703.8.0. 
+Some jurisdictions have, on their own initiative, already opted to 
+implement these recommendations to varying degrees. However, nothing in 
+the rule prevents or discourages election officials from including 
+envelope design elements required by state law, such as printed 
+affidavits. Nor does anything in the rule prevent states from complying 
+with accessibility laws or including unique envelope design elements 
+intended to accommodate voters covered by these laws. The rule will not 
+create a single, uniform ballot envelope design across all states; 
+variation will remain. Rather, as one commenter explained, what the 
+rule adds is uniformity: it makes these proven measures a consistent 
+baseline for every jurisdiction that mails federal ballots, closing the 
+patchwork that today inhibits mailpiece visibility and can make it more 
+difficult to process and deliver ballot mail.
+    The rule's design requirements help to ensure timely processing and 
+delivery of Federal Ballot Mail. As explained in the proposed rule and 
+as echoed by many commenters, envelopes built for automation move 
+through processing with less manual intervention and fewer chances for 
+error. A consistent, recognizable election mail logo helps postal 
+employees distinguish ballot mail from other mailpieces and facilitates 
+proper handling, in accordance with existing Postal Service policy. And 
+unique IMb data helps facilitate the tracking of individual pieces of 
+Federal Ballot Mail to and from individual voters as the barcodes are 
+scanned on the Postal Service's mail processing equipment.
+    Some commenters, including election officials and election-related 
+organizations, appeared confused about how to generate IMbs. Unique 
+IMbs can be generated for any type of address, including P.O. Boxes and 
+nontraditional addresses. Generating and printing unique IMbs does not 
+require specialized equipment or expensive software. It can be done by 
+election officials of any level of technical sophistication, including 
+those jurisdictions that manually print and stuff their own ballot 
+envelopes, using
+
+[[Page 54979]]
+
+free tools and common office equipment.
+    The Postal Service offers a number of tools and resources to make 
+generating unique IMbs simple, quick, and cost-effective. For example, 
+the Postal Service's Intelligent Mail for Small Business Tool (``IMsb 
+Tool'') is a free (voluntary) online tool specifically designed for 
+small-volume mailers that do not use Business Reply Mail, allowing such 
+mailers to generate unique IMbs for printing on address labels or 
+envelopes. The IMsb Tool is a web-based program that does not require 
+any software or downloads. It allows small mailers to create mailings 
+and documentation without making the investment of engaging software 
+providers. Customers can upload their mailing list into the Tool to 
+create and print address labels, envelopes, inserts or card stock and 
+also generate the associated postage statements. The printing can be 
+done from a regular printer. Some in the election community have 
+printed the IMbs themselves using this tool for several years. More 
+information about getting started in the IMsb Tool is available on 
+PostalPro: <a href="https://postalpro.usps.com/node/2266">https://postalpro.usps.com/node/2266</a>.
+    The Postal Service also anticipates making modifications to the 
+IMsb Tool to further enhance its functionality for Federal Ballot Mail. 
+For instance, the Tool will be able to create lists for Portal 
+submissions that contain a file with the name, address, and unique 
+outbound and return IMb of individuals on the election official's 
+mailing list. This file can be uploaded directly to the Portal by 
+Federal Ballot Mail Portal Users. Another change for Federal Ballot 
+Mail in the IMsb Tool will allow election officials to generate a 
+unique IMb even where the address cannot be verified using Delivery 
+Point Verification (``DPV''). Although DPV helps to identify issues 
+that may hinder delivery, this modification will reduce the chance of 
+an administrative or technical issue that could prevent an election 
+official from generating a unique IMb.
+    Alternatively, if an election official prefers to work with a 
+vendor, as many do, the Postal Service provides a list of certified 
+vendors and Mail Service Providers (``MSPs'') at <a href="https://postalpro.usps.com/certifiedmsps/">https://postalpro.usps.com/certifiedmsps/</a>. It is a basic function of MSPs to 
+print mailings with unique IMbs. To the extent they arise, printing 
+issues, including jams, are surmountable and do not prevent proper 
+implementation of the rule.
+    The Postal Service's Managers of Customer Relations (``MCRs'') are 
+also available to provide guidance and support on mailpiece design as 
+election officials work to comply with the rule. MCRs serve as 
+dedicated points of contact for each election jurisdiction, including 
+territories. They regularly educate election officials on the benefits 
+of using unique IMbs and can direct election officials to available 
+postal resources to help them get started. Election officials can 
+contact their local MCR directly or by following this link: <a href="https://electionmail.usps.com/s/contact-local-mcr">https://electionmail.usps.com/s/contact-local-mcr</a>. Election Officials can also 
+contact the Mailing & Shipping Solutions Center (``MSSC'') for support 
+regarding IMbs by email at <a href="/cdn-cgi/l/email-protection#044957574744717774772a636b72"><span class="__cf_email__" data-cfemail="0a475959494a7f797a79246d657c">[email&#160;protected]</span></a> or by phone at 1-877-672-0007 
+(Monday-Friday, 7:00 a.m. to 7:00 p.m. CT).
+
+D. Mailpiece Design Analyst Review
+
+    Once election officials or their vendors have designed the Outbound 
+and Return Federal Ballot Mail envelope to include the required 
+elements, as set forth in DMM 705.24.3, the mailpiece must be submitted 
+to the Postal Service for review by one of its MDAs. The envelope 
+design must be reviewed each election cycle. If a state uses a single 
+design, each political subdivision thereof does not need to separately 
+submit the envelope for review. Mailpieces do not need to be reviewed 
+prior to each separate mailing.
+    The mailpiece design review referenced in 705.24.3 is the existing 
+MDA review process that many in the election community already utilize. 
+MDAs are specially trained postal employees who can answer questions 
+about mailpiece design, including IMbs and automation compatibility. 
+Consulting with Postal Service MDAs will help ensure election officials 
+have a well-designed Federal Ballot Mail envelope that is compatible 
+with Postal Service guidelines and regulations, including the 
+provisions of this rule. Although MDAs are already trained to assess 
+the design elements included in this rule, the Postal Service will 
+provide supplemental training to MDAs on Federal Ballot Mail and will 
+offer additional resources as necessary to ensure customers receive 
+consistent, accurate advice.
+    The rule does not change the process for submitting a mailpiece for 
+review, receiving feedback, or contesting an MDA's advice. Customers 
+can receive assistance from an MDA by submitting a design review 
+request to <a href="/cdn-cgi/l/email-protection#0b464f4a4b7e787b78256c647d"><span class="__cf_email__" data-cfemail="1b565f5a5b6e686b68357c746d">[email&#160;protected]</span></a>, through the Postal Service's Election Mail 
+website at <a href="https://electionmail.usps.com/s/election-mail-review">https://electionmail.usps.com/s/election-mail-review</a>, or by 
+calling 877-672-0007 (select option 3 for mailpiece design) (Monday-
+Friday, 7:00 a.m. to 7:00 p.m. CT).
+    MDA review is generally a quick process. MDAs typically aim to 
+provide feedback to mailers within 2 business days after receiving the 
+mailer's request and necessary information and samples.
+    More information about the MDA review process is available in Kit 
+600 or at <a href="https://postalpro.usps.com/node/773">https://postalpro.usps.com/node/773</a>.
+
+E. Federal Ballot Mail Portal
+
+    Under 705.24.4, Federal Ballot Mail Portal Users, including state 
+and local election officials and other authorized users, such as MSPs, 
+must submit certain data into the Federal Ballot Mail Portal prior to 
+presenting an Outbound Federal Ballot mailing for acceptance. Chief 
+state election officials are not required to enter this data themselves 
+or to consolidate data for all political subdivisions within their 
+state before data can be entered into the Portal. The chief state 
+election official of each state does, however, authorize access for 
+other Federal Ballot Mail Portal Users within their state. The rule 
+also allows other individuals to enter information into the Portal if 
+authorized, such as staff members, MSPs, or other vendors, thereby 
+minimizing any potential administrative burden on election officials.
+    The Postal Service recognizes that many states have decentralized 
+election administration. It is important that the state, through the 
+chief state election official, maintain ultimate control over access to 
+the Portal because they will have more visibility into their own 
+election structures than will the Postal Service.
+    Voters themselves will not enroll with the Postal Service, and are 
+not responsible for verifying Portal information or correcting 
+information provided by Federal Ballot Mail Portal Users. In part, this 
+is because voters do not design ballot mail envelopes and, 
+consequently, do not have the relevant data elements for the Portal. 
+Instead, that responsibility lies exclusively with election officials 
+and their authorized MSPs.
+    Once Federal Ballot Mail Portal Users have set up a Portal account, 
+they will be prompted to certify that their Outbound and Return Federal 
+Ballot Mail envelopes have been submitted for MDA review and that they 
+have received feedback. Federal Ballot Mail Portal Users will not be 
+able to upload any data into the Portal until the certification is 
+complete. This will ensure compliance with DMM 705.24.3.1 and 
+705.24.3.2 and reduces the information that is verified prior to 
+acceptance of an Outbound Federal
+
+[[Page 54980]]
+
+Ballot mailing. Business Mail Entry Unit (``BMEU'') technicians and 
+Retail clerks will not perform a separate review of this information.
+    After completing the certification, Federal Ballot Mail Portal 
+Users must provide: the name and address of the voter as found on 
+Outbound Federal Ballot Mail envelope; the issuing state; and the IMbs 
+on the Outbound and Return Federal Ballot Mail envelopes. This 
+information must be uploaded to the Portal prior to presenting Outbound 
+Federal Ballot Mail for acceptance. These data help to ensure that the 
+rule's preparation standards have been satisfied, can provide valuable 
+insight to election officials and law enforcement, and facilitate the 
+verification process. This type of information is regularly collected 
+by the Postal Service, including on mailing manifests. No other voter 
+information, such as birthdate, social security number, or other voter 
+registration details, will be uploaded to the Portal. As described 
+further below, the Postal Service is developing this Portal with 
+appropriate cybersecurity and privacy safeguards to protect Portal 
+data, consistent with applicable law.
+    The required information can be uploaded into the Portal using an 
+Excel template specifically formatted for Portal submission. Uploading 
+and generating the necessary information is similar to submitting a 
+manifest for bulk mailings, which larger election offices and their 
+MSPs routinely complete. For smaller jurisdictions, the (free and 
+optional) IMsb Tool can be used to generate a file that can be uploaded 
+directly into the Portal. This will help minimize any data entry 
+burden. The Postal Service does not anticipate that providing Portal 
+data should require any change to statewide systems or databases. 
+States must necessarily already maintain lists or databases with the 
+relevant name and address information, otherwise it would never have 
+been possible to mail those ballots in the first place. These systems 
+are intended to remain separate, and do not need to be interconnected 
+with the Portal. One commenter mentioned that states may wish to update 
+their databases to include IMb data. States are free to undertake such 
+actions, but it is not required by the rule.
+    Under the proposed rule, there is a flexible timeline for uploading 
+data into the Portal. Initial mailing lists should be entered into the 
+Portal at least 30 days before the election, if possible, or by the 
+date on which ballots must begin being mailed under state law. This 30-
+day timeline, retained without modification in the final rule, is not a 
+rigid deadline for completing Portal data entry. Although Executive 
+Order 14399 contemplated a proposal in which states would submit such 
+lists ``no fewer than 60 days before the election,'' the flexible 30-
+day timeline accommodates variations in state law.
+    The Postal Service does not expect these initial lists to be 
+complete or final. States may continue to add, amend, or remove data 
+from the Portal to account for new voters, new mail-in or absentee 
+ballot requests, replacement ballots, addressing administrative errors, 
+and other changes consistent with their state's law. These changes can 
+be made as a new separate entry or by updating prior entries. This 
+flexibility is intended to facilitate--not constrain--voters' ability 
+to access mail-in or absentee voting as permitted by their own state's 
+voting law, none of which are altered by this rule.
+    Federal Ballot Mail Portal Users can update the information 
+submitted through the Portal as frequently as needed, consistent with 
+state law. This process is designed to be flexible to account for 
+variation in state law. For example, as one commenter explained, 
+California Elections Code Section 3000.5(a) dictates when county 
+election officials are to mail ballots to registered voters. Section 
+3005.5(a) provides, in part: ``for each election, the elections 
+official shall, no later than 29 days before the day of the election, 
+begin mailing the materials specified in Section 3010 to every 
+registered voter. The elections official shall have five days to mail a 
+ballot to each person who is registered to vote on the 29th day before 
+the day of the election and five days to mail a ballot to each person 
+who is subsequently registered to vote.'' Under California law, a voter 
+may also register as late as 15 days before an election and will 
+subsequently be sent a ballot via mail. Even after the 15th day before 
+an election, voters may request a replacement mail ballot upon request 
+to their county election official. This state statutory scheme is 
+consistent with the rule. California election officials could submit 
+initial mailing lists into the Portal 30 days (or sooner) before the 
+election and present Outbound Federal Mailings for acceptance ``no 
+later than 29 days before the day of the election,'' consistent with 
+state law. California election officials may continue to add Portal 
+entries for Outbound Federal Ballot Mail destined for voters who 
+register after that time and until the 15th day before the election, 
+and even after the 15th day before the election may continue to make 
+supplemental entries for any replacement requests.
+    The ability to add and amend lists also allows Authorized Ballot 
+Mailers to enter Outbound Federal Ballot Mail in batches, consistent 
+with the current practice for many in the election community. Federal 
+Ballot Mail Portal Users may continue to supplement the Portal data as 
+permitted by state law, potentially up until Election Day. The only 
+constraint imposed by the rule in this regard is that the information 
+for a particular mailing must be uploaded into the Portal prior to the 
+Outbound Federal Ballot mailing being presented to the Postal Service 
+for acceptance. Thus, the Portal and verification process accommodate 
+election officials who (for example) may do one large mailing and 
+multiple smaller mailings. It also accommodates election officials who 
+prepare many ballots for mailing at once but enter them into the 
+mailstream in multiple installments.
+    Portal data will be updated as soon as it is submitted by the 
+Federal Ballot Mail Portal User, and there should be minimal to no 
+delay between Portal upload and a mailer's ability to present the 
+mailing for acceptance. Portal data will also be available for 
+verification purposes on a nationwide basis. If an Outbound Federal 
+Ballot mailing is presented for acceptance outside of the issuing 
+state, Postal Service employees would still have access to the 
+necessary Portal data to perform verification under DMM 705.24.5.
+    Within the Portal, the Postal Service plans to confirm that the 
+required data fields are completed (i.e., they may not be left blank) 
+prior to Outbound Federal Ballot mailings being presented for 
+acceptance. This includes verifying the unique IMb on Return Federal 
+Ballot Mail has been uploaded into the Portal. Aside from confirming 
+that the required data has been uploaded, however, the Postal Service 
+will not otherwise verify, correct, or amend any data entered into the 
+Portal. It will not determine whether an individual's name is accurate; 
+so, for example, married women changing their names or potential 
+mismatches for misspellings will not prevent a ballot from reaching a 
+voter under the rule. Likewise, the Postal Service will not assess the 
+accuracy of the address entered, such as to determine whether there is 
+a Change of Address or whether the address is otherwise invalid. 
+Moreover, the address uploaded into the Portal should be the address 
+used on the Outbound Federal Ballot Mail envelope. Nontraditional 
+addresses, such as tribal addresses, college dormitories, and long-term 
+care facilities, can and should be entered into the Portal if that is 
+the address on the Outbound Federal Ballot envelope. Voters who may 
+move often,
+
+[[Page 54981]]
+
+like students, the homeless, the elderly, renters, or people whose 
+mailing addresses do not match identically with government records, 
+should not experience delivery issues under the rule so long as their 
+state or local election official has their current mailing address.
+    The Postal Service will not be comparing any data entered into the 
+Portal against state voter rolls as part of the verification process or 
+otherwise. This means that state election officials will maintain full 
+control over managing their own voter rolls and determining voter 
+eligibility without any interference or involvement from the Postal 
+Service.
+    All data or changes submitted by Federal Ballot Mail Portal Users 
+will be accepted. The possibility that the Portal may, therefore, be 
+overinclusive does not undermine the purposes of the rule as the State 
+Mail-In and Absentee Participation List, which compiles all Portal data 
+for a state and is not intended to serve as a replacement for official 
+voter rolls.
+    Finally, shortly after the effective date of the final rule, the 
+Postal Service will make additional guidance documents available, 
+including a User Guide for the Portal and Technical Specifications for 
+the Portal. These resources will explain how to create a Portal 
+account, how to assign and approve Federal Ballot Mail Portal Users, 
+the file format for Portal uploads, and how to resolve errors and make 
+new submissions; these documents will be available in accessible 
+formats. The Postal Service has an established process for 
+communicating new or updated technical requirements that it will deploy 
+to inform election officials, MSPs, and others in the mailing community 
+about the Portal and these resources. This process includes familiar 
+communications channels, including Industry Alerts and Mailers 
+Technical Advisory Committee User Group notifications, which help to 
+ensure that the information reaches the appropriate audience. MCRs are 
+also available to assist individual customers by email and phone. The 
+Postal Service will also directly engage with election officials, MSPs, 
+and other stakeholders to answer questions and provide guidance related 
+to implementation of the rule.
+
+F. Outbound Federal Ballot Mail Entry
+
+    When preparing Outbound Federal Ballot mailings, Authorized Ballot 
+Mailers must segregate Outbound Federal Ballot Mail from other types of 
+ballot mail, such as primary ballots, UOCAVA ballots, or ballots for 
+state or local elections only. Comingling non-federal ballot mail with 
+Outbound Federal Ballot Mail may impact the verification process and 
+could prevent or delay proper acceptance of mailings. For ballots that 
+have both federal and state issues on the ballot, the mailing will be 
+treated as Outbound Federal Ballot Mail and will be subject to the 
+rule. At entry, mailers should inform the BMEU technician or Retail 
+clerk if a ballot mailing contains non-federal ballots. Timing 
+differences (between primaries and general elections or between federal 
+and state elections) and external indicia may also help alert postal 
+employees to the presence of non-Federal Ballot Mail.
+    The Postal Service is also working on establishing Federal Election 
+Mail and Non-Federal Election Mail Service Type Identifiers 
+(``STIDs''). Specifically, the Postal Service is planning to convert 
+the current Election Mail STIDs to Federal Election Mail STIDs. New 
+STIDs will be developed for non-Federal elections. This approach will 
+assist jurisdictions that may have already finalized the printing 
+process for their 2026 general election envelopes relying on the 
+existing STID table, and will support their ability to comply with the 
+final rule. Having unique STIDs for Federal and non-Federal elections 
+will help to further distinguish Federal Ballot Mail from other ballot 
+mail. Prior to finalizing and releasing the new STIDs, the Postal 
+Service will publish a notice in the Federal Register.
+    As stated in the proposed rule, Outbound Federal Ballot mailings 
+must be entered at a Post Office retail counter, including manual post 
+offices, or a BMEU. A locator tool for Postal Service locations is 
+available here: <a href="https://tools.usps.com/locations/">https://tools.usps.com/locations/</a>. These mailings may 
+not be entered into blue collection boxes, collection boxes in retail 
+lobbies, or through other means. While the rule makes this restriction 
+mandatory, it is also consistent with the Postal Service's general 
+guidance for outbound ballot mailings. Commercial mailings must meet 
+applicable DMM requirements. Mailings paid at single-piece First Class 
+Mail rates are not required to meet commercial mailing standards.
+    Verification under 705.24.5 will be performed at a BMEU or Post 
+Office retail counter when an Outbound Federal Ballot mailing is 
+presented for acceptance. Conducting verification prior to acceptance 
+is intended to obviate confusion and provide a clear, immediate 
+identification of potential issues. Either a BMEU technician, if the 
+mailing is presented at a BMEU, or Retail clerk, if the mailing is 
+presented at a Post Office or other Postal Service retail location, 
+will perform the verification. Both BMEU technicians and Retail clerks 
+will receive training on this process.
+    The verification process is straightforward. The Outbound Federal 
+Ballot mailings will be verified using the IMb on the outside of the 
+Outbound Federal Ballot Mail envelope. Relying on existing scanning 
+technology and devices, the Postal Service will confirm the presence of 
+scanned barcodes in the Federal Ballot Mail Portal. Portal data will be 
+available for verification purposes on a nationwide basis. Therefore, 
+if a state uses an MSP located in a state different than the issuing 
+state of the ballot, the Postal Service will still be able to conduct 
+verification.
+    This process can be completed promptly. Scanning a barcode 
+generally takes less than a minute per mailpiece. Depending on how many 
+barcodes are scanned, the verification process should take no more than 
+a few hours for larger mailings, and potentially only a few minutes for 
+smaller mailings. Authorized Ballot Mailers should remain at the BMEU 
+or postal retail location during the verification process.
+    If the Outbound Federal Ballot mailing meets the verification 
+standards, it will be accepted by the Postal Service. No further action 
+is needed by election officials or voters under the rule.
+    Authorized Ballot Mailers will be informed of the escalation 
+procedures should they decide to challenge a rejection; relevant Postal 
+Service employees will also receive training about these procedures. 
+The ability to cure rests not with the voter, as the franchise itself 
+is not impacted, but with the officials responsible for preparing the 
+envelope and entering Portal data. This approach is consistent with how 
+election mail works now, where election officials and mailers are 
+responsible for preparing the ballot mail, addressing the mailpieces 
+properly, ensuring that they are going to the proper individual, and 
+correcting any error that may occur or prevent delivery to the intended 
+recipient. Thus, the Postal Service will continue to resolve issues 
+consistent with our current approach, rather than creating a new 
+``appeal'' process for voters, as many commenters urged, that would 
+impose a direct burden on voters and increase the risk of confusion and 
+concern.
+    Once Outbound Federal Ballot Mail is accepted by the Postal 
+Service, it will enter and move through the mailstream as it has in 
+prior elections. It will not be intercepted, returned, or delayed due 
+to the rule.
+
+[[Page 54982]]
+
+    The verification process does not entail scrutiny into, or any 
+attempt to evaluate, individual voters. The Postal Service is not 
+verifying addresses, names, voter eligibility, or citizenship status as 
+part of this verification process. As noted above, Portal data will be 
+regularly refreshed to minimize the risk that the verification process 
+incorrectly flags, delays, or disrupts lawful federal ballot materials.
+    Verification under DMM 705.24.5 is done only for Outbound Federal 
+Ballot mailings. If a voter chooses to return their completed ballot by 
+mail, they should use the Federal Return Ballot Mail envelope provided 
+by their state; and they may continue to mail from a residential 
+mailbox, a blue collection box, or any retail counter. Once the Federal 
+Return Ballot Mail enters the mailstream, it will be processed and 
+delivered consistently with current operational practices. This 
+includes generating scan data from the unique IMb on the outer return 
+envelope when the mailpiece is processed on the Postal Service's 
+automated equipment subject to certain limitations, including 
+extraordinary measures that may remove ballots from normal operational 
+processes to expedite delivery.
+    The Postal Service also wishes to clarify two provisions of the 
+proposed rule, which are adopted without change in the final rule. 
+First, the Postal Service would like to clarify the meaning of Section 
+705.24.5.2, which provides in part that ``[t]he Postal Service's 
+acceptance of Outbound Federal Ballot Mail does not constitute verified 
+compliance.'' This provision was included in recognition of the fact 
+that, despite the Postal Service's best efforts, some Outbound Federal 
+Mail may enter the mailstream that does not meet the preparation or 
+data standards set forth in the rule. For that reason, DMM 705.24.5.2 
+is intended to acknowledge that acceptance (and ultimately delivery) of 
+an outbound federal ballot does not, in and of itself, evidence 
+compliance with the rule's provisions.
+    Second, commenters expressed concern over 705.24.5.3.d, which 
+states that ``[t]he Postal Service assumes no responsibility for any 
+outbound ballot mailing presented until it is accepted into the mail. 
+The Postal Service is not responsible for service delays when the 
+Ballot Portal User or Authorized Ballot Mailer does not meet the 
+applicable preparation or entry standards.'' The Postal Service notes 
+that comparable statements appear throughout the DMM, and that the 
+provision reflects the longstanding principle that the Postal Service 
+is not responsible for a mailing until the mailing is in its custody--
+that is, until it has been accepted. For example, DMM 608.11.3 
+(Postmarks and Postal Possession) describes the point at which the 
+``Postal Service accept[s] custody of a mailpiece,'' and the Plant-
+Verified Drop Shipment provisions of DMM 705 provide that such 
+shipments ``are freight until deposited and accepted as mail at the 
+destination facility.'' The specific language in 705.24.5.3.d is 
+similar to a provision discussing the effects on service for Metered 
+Mail Drop Shipments, which also must satisfy specific preparation 
+conditions to be accepted for mailing. DMM 705.19.1. That provision 
+states: ``The USPS assumes no responsibility for the material presented 
+until it is accepted into the mail. The USPS is not responsible for 
+service delays when the mailer does not meet the applicable preparation 
+or entry requirements.'' This language is included in the rule to 
+ensure that mailers know that they must remain in control of an 
+Outbound Federal Ballot mailing until it has been accepted by the 
+Postal Service.
+
+G. State-Specific Mail-In and Absentee Participation List
+
+    On or about Election Day, the Postal Service will generate a state-
+specific Mail-In and Absentee Participation List, which compiles all 
+Federal Ballot Mail Portal entries submitted for the originating state. 
+This list will be securely transmitted to the chief election official 
+of each state. The Postal Service will not disclose the Lists to the 
+public. The List is in effect a manifest, and is primarily intended to 
+assist election officials and law enforcement to understand who may 
+have been mailed a ballot, in order to identify potentially anomalous 
+incidents that may merit further investigation. Providing the list on 
+or after Election Day is consistent with this purpose.
+    To be clear, the state-specific Lists are not intended to 
+substitute for or supplant state voter rolls. It simply offers another 
+data point at the chief state election official's disposal based on 
+their own Portal data. The chief state election official is free to 
+choose whether and how to use the state-specific list. Those decisions 
+are not dictated by the Postal Service or this rule. States have sole 
+responsibility for ensuring the accuracy of their voter rolls and 
+counting ballots as permitted under state law.
+    The Portal data is the sole data source used to generate the Lists. 
+These data are provided directly by election officials (and other 
+Federal Ballot Mail Portal Users) based on the mailings they actually 
+made or planned to make. The List will not be based on external sources 
+of information, such as federal databases made available by the 
+Department of Homeland Security or the Social Security Administration. 
+Nor will the Postal Service compare Portal data to any other internal 
+or external source (e.g., National Change of Address data, federal data 
+lists), filter the information, or otherwise alter the Portal data on 
+its own when compiling the state-specific List. The Lists will also not 
+contain any scan data. As one commenter correctly stated, the rule 
+``require[s] USPS to provide the state with the List that contained the 
+same information that the state provided to USPS.''
+    In light of the above, some commenters questioned the purpose of 
+the Lists. Other commenters recognized that the value of the List lies 
+in the creation of reconcilable data that offer a neutral 
+administrative check that strengthens confidence in elections. These 
+commenters argued that credible post-election audits can rise or fall 
+on the quality of the underlying data. The state-specific List would 
+meaningfully sharpen that data by providing significantly enhanced 
+visibility regarding the sending of mail-in ballots, as it will provide 
+federal law enforcement with a list of individuals to whom states 
+planned to mail a ballot (and who may potentially use the mail to 
+vote), along with the associated barcode data, which the Postal Service 
+understands will help to facilitate enforcement of federal law. 
+Currently, law enforcement lacks such information regarding the use of 
+the mail. The List is not intended to substitute for official election 
+records or state mandated reconciliation procedures. In assessing the 
+List for areas of potential further investigation, it should also be 
+noted that some variation may exist between the List and the (separate) 
+scan data for a variety of reasons, for example not all voters who 
+receive a mail-in ballot will return it by mail, and as noted above the 
+Portal data may be over-inclusive. The benefits of the rule are still 
+achieved notwithstanding these variations.
+
+V. Impact of the Final Rule
+
+    Consistent with the operation of the rule set forth above, the 
+Postal Service also clarifies the impact of the rule on voters and 
+election officials, particularly as weighed against the rule's purpose 
+and benefits. As provided by the comments, this section discusses 
+commenters' claims regarding the benefits and burdens of the rule, and 
+how the Postal Service is striking an appropriate balance in the final 
+rule.
+
+[[Page 54983]]
+
+A. Benefits of the Rule
+
+    Those commenters who supported the rule believed that the benefits 
+to the rule are aligned with the rule's intended purpose and that the 
+rule's policy goals are properly weighed against the potential burdens, 
+harms, and costs. They urged the Postal Service to swiftly adopt the 
+proposed rule, so that all federal elections could benefit from its 
+stated improvements, including mailpiece visibility and the enforcement 
+of federal law.
+    As an initial matter, these comments acknowledged that mail ballots 
+play an important role for many voters, but also had concerns related 
+to voter fraud. These commenters noted that even the possibility that 
+elections are taking place in an unsecure manner due to lack of 
+necessary visibility can undermine public confidence in the electoral 
+process, even if no fraud is ultimately discovered. These commenters 
+asserted that given the prevalence of mail-in voting, it would be both 
+appropriate and beneficial for the government entity tasked with 
+delivering ballots to and from the voter and the election office to put 
+safeguards in place. Many of these commenters argued that by making the 
+mailstream more reliable and more transparent on a nationwide basis, 
+the rule would provide states with a means to combat potential voter 
+fraud in ways they could not do acting alone. Commenters note that this 
+would strengthen public confidence in the election system without 
+altering any state election laws, voter registration, or eligibility 
+requirements; or changing how ballots are issued, collected, or 
+counted. As one comment explained: public confidence in elections is 
+best sustained by procedures that can be verified, documented, and 
+consistently applied.
+    Moreover, these commenters recognized that the rule offers 
+efficiency and security benefits for voters and election officials, and 
+promotes secure elections that the public can be confident in. 
+Commenters note that a set of minimum envelope-design standards would 
+help election officials, the Postal Service, and the public better 
+account for Federal Ballot Mail moving through the mailstream. As 
+several commenters explained, a ballot that can be tracked is far 
+harder to misplace, stall, or counterfeit. Improved tracking may also 
+help identify discrepancies between ballots mailed and ballots 
+received, some commenters added, making it easier to detect and deter 
+potential fraud or irregularities while protecting the integrity of 
+mail-in voting. Even parties opposing the rule recognized that unique 
+IMbs can provide unmatched visibility into the mailpiece's progress in 
+the mailstream. Commenters also reiterated the importance of the 
+Official Election Mail logo as a means for voters to recognize election 
+mail as important and distinct from other mailings and to help Postal 
+Service employees identify official election mail among the millions of 
+mailpieces processed daily. Commenters further explained that advance 
+review of ballot envelope designs would reduce operational errors, 
+delays, and delivery issues that have sometimes affected voters and 
+delayed delivery of their ballots. As examples, commenters pointed out 
+that non-automation compatible ballot mail is more likely to encounter 
+avoidable processing complications or delays, and other mailpiece 
+design defects could prevent barcodes from being read or increase the 
+need for manual handling. Commenters concluded that requiring design 
+review before ballot envelopes are printed and mailed is a low-cost, 
+high-value step that can prevent serious problems during the compressed 
+period before an election.
+    Furthermore, these commenters state that the rule's other 
+preparation and data entry requirements, particularly those involving 
+the Portal, would support stronger coordination between state election 
+officials and the Postal Service. For example, the rule would improve 
+pre-election planning by allowing states to notify the Postal Service 
+before using the postal system for ballot delivery. States would still 
+retain full control over who receives a ballot, and the Postal Service 
+would have better information to plan resources. Many election 
+officials who submitted comments, including those who opposed the rule, 
+expressed appreciation for the Postal Service's ongoing efforts to 
+support election officials. The rule, some commenters noted, provides 
+another avenue to strengthen those relationships. Many commenters 
+concluded that by improving coordination between election officials and 
+the Postal Service, the proposed rule has the potential to reduce 
+undeliverable election mail, strengthen ballot accountability, and 
+reinforce public confidence that election mail is being sent to the 
+correct recipients.
+    These commenters further contend that applying reasonable 
+verification procedures to federal election ballots is consistent with 
+the Postal Service's longstanding mission of delivering mail 
+accurately, securely, and reliably. Commenters noted that verification, 
+as contemplated in the rule, does not alter the states' authority to 
+determine voter eligibility or administer elections. Rather, it 
+provides an additional administrative safeguard to help ensure that 
+ballots approved by election officials are delivered accurately to the 
+intended recipient. Commenters opposing and supporting the rule noted 
+the extensive efforts election officials undertake to maintain accurate 
+voter rolls. Those in favor of the proposed rule argue that rather than 
+duplicating, undermining, or usurping these efforts, the rule 
+strengthens ballot distribution procedures as a logical complement to 
+states' election administration responsibilities.
+    Ultimately, these commenters reasoned that while the rule would 
+place some administrative burdens on states, as they take advantage of 
+the new Portal registration, barcode generation, and list submission 
+provisions, these burdens are plainly justified by the rule's security 
+and accountability benefits. Overall, in their view, the rule's 
+standards would improve accountability without displacing the role of 
+states in deciding who is eligible to vote or how elections are 
+administered. The operational improvements that the rule mandates would 
+benefit voters of every political affiliation because they promote 
+accuracy, efficiency, and transparency in the administration of federal 
+elections. These commenters explained that public confidence in 
+elections is strengthened when every stage of ballot distribution is 
+transparent. They also opined that the rule would help facilitate the 
+appropriate direction of resources to law enforcement efforts.
+
+B. Burdens and Costs of the Rule
+
+    Separate from arguments, discussed above, about the legal authority 
+for the rule, numerous commenters opposing the rule also criticized it 
+for purportedly failing to account for the potential burdens and other 
+alleged harms it would impose on voters and election officials, not 
+addressing associated reliance interests, and not adequately 
+demonstrating a connection between the proposed rule's provisions and 
+its stated goal. These commenters asserted that a rule of this nature 
+should be based on detailed study, should be gradually rolled out, and 
+should move forward only after election officials and the Postal 
+Service are fully prepared for implementation. In particular, these 
+commenters argued that a rule of this nature should not be issued 
+roughly three months before an election. These commenters contended 
+that the Postal Service should not finalize this rule without a 
+reasoned explanation, a full implementation analysis, and an
+
+[[Page 54984]]
+
+assessment of foreseeable civil rights impacts. Commenters strongly 
+urged the Postal Service not to finalize it.
+Voters
+    Those opposed to the rule expressed concern about the possibility 
+of disenfranchisement. They contended that voters may be omitted from 
+the Portal with no recourse, that an administrative or technical error 
+may result in an otherwise lawful ballot being rejected by the Postal 
+Service, or that voters may not receive a ballot at all if their state 
+government chooses not to provide data in the Portal. Any of these 
+scenarios, commenters argued, could result in voters having their mail-
+in or absentee ballots withheld or delayed, without any recourse or 
+viable alternative to cast a ballot. Commenters asserted that some 
+voters may be especially impacted should their ability to vote by mail 
+be altered in any way, including those who are disabled, are elderly, 
+have limited English proficiency, live in rural-dwelling, or are 
+financially distressed. According to commenters, voters would bear the 
+practical consequence of any delivery delay, even if the delay was 
+caused by an administrative process outside the voter's control. 
+Commenters asserted that the rule would discourage individuals from 
+voting by mail. Other commenters argued that any policy that could 
+result in the delay, rejection, segregation, or differential treatment 
+of mail ballots raises concerns regarding voter access, election 
+administration, and public confidence in the democratic process.
+    Commenters also discussed the risks of confusion that the rule 
+would purportedly create, particularly because voters may not know if 
+their state has complied with or will be able to comply with the rule. 
+These commenters claimed that the potential for voter confusion due to 
+the rule is a harm in and of itself.
+    Others expressed concerns for their privacy and did not want voter 
+information included in a Portal run by the federal government or their 
+identity linked to uniquely serialized IMbs on Outbound and Return 
+Federal Ballot Mail envelopes.
+Election Officials
+    Among the most frequently raised concerns from commenters opposing 
+the rule was the purported burden imposed on election officials, 
+specifically if the rule were implemented immediately. Commenters, 
+particularly election officials, secretaries of state, governmental 
+officials, and voting organizations, stated that it would be difficult 
+if not impossible to implement the rule in time for the 2026 general 
+election. Election officials asserted that their preparations for the 
+2026 election are already underway and that they lack the time, 
+funding, and staff to implement the proposed rule. Some commenters 
+asserted that they have already purchased envelopes for the 2026 
+election cycle, and that generating unique barcodes for both outbound 
+and return ballot mailings in some cases would require significant 
+changes to their ballot envelope design, as well as procurement of 
+those redesigned envelopes on an expedited timeline, which they assert 
+would not be possible. Other commenters explained that in some cases, 
+legislative action, Attorney General guidance, or state board approval 
+are needed before such changes could be made. Some commenters posited 
+that smaller and more rural counties with limited technology would be 
+disproportionately affected, while others thought complying with the 
+rule would be more onerous for election officials in states that have 
+universal mail-in voting compared to states that do not mail absentee 
+ballots unless requested by the voter.
+    Commenters also argued that the rule would impose new and recurring 
+costs and administrative burdens for future elections cycles that do 
+not currently exist. In this regard, commenters note that election 
+systems are designed around state law, existing technology systems, 
+vendor contracts, staffing structures, election calendars, and 
+operational procedures that have been developed over time, and 
+introducing new reporting, certification, and verification processes 
+for Federal Ballot Mail would, in their view, require significant 
+modifications to existing workflows and systems. Having previously 
+relied on current procedures in structuring their budgets, staffing, 
+and election timelines, commenters note that states would have to 
+absorb any new costs, which those plans never contemplated.
+    Complying with the mail preparation and data-reporting standards, 
+commenters asserted, would require them to divert resources away from 
+processing voter registration applications and mail-in or absentee 
+ballot applications, and in some instances the staffing necessary to 
+implement the proposed rule may not be available at all. Election 
+officials also asserted that there will be additional costs for direct 
+voter contact, and other voter education efforts required to explain 
+the rule to voters and to respond to related inquiries, including an 
+increase in support calls.
+Reliance Interests
+    Other commenters argued that, when a federal entity issues new 
+standards, it must assess whether there were reliance interests, 
+determine whether these interests were significant, and weigh any such 
+interests against competing policy concerns, and alleged that the 
+Postal Service has failed to do so. Commenters argued that the rule 
+would create a ``one size fits all'' federal policy that would displace 
+established state and local practices driven by the needs of different 
+localities and grounded in reliance on the Postal Service's dependable 
+transmission of mail-in and absentee ballots. As noted above, 
+commenters further focused on reliance interests related to 
+preparations for the 2026 election cycle.
+Relationship of the Rule to Its Intended Purpose
+    Commenters argued that the proposed rule was not sufficiently tied 
+to its stated purpose--namely to help ensure election integrity, fraud 
+prevention, and facilitation of federal law enforcement. In their view, 
+the proposed rule provides no empirical evidence or other explanation 
+to articulate why existing election mail procedures are deficient, what 
+operational problem would be solved by the Portal, or how IMb data 
+would help mitigate or investigate election crimes. Numerous commenters 
+also argued that, the proposed rule would not provide any material new 
+information to law enforcement.
+    Some commenters who opposed 705.24.4 and 705.24.5 were supportive 
+of the mailpiece envelope design provisions of 705.24.3. However, those 
+commenters noted that many of the envelope design best practices the 
+rule would mandate are already available and used voluntarily. 
+Commenters argued that converting these recommendations into federal 
+requirements adds cost and operational risk for election officials 
+without counterbalancing benefits.
+Evaluating Less Restrictive Alternatives
+    Several commenters also argued that the Postal Service should 
+evaluate less restrictive alternatives. For example commenters 
+suggested: voluntary pilot programs, phased implementation after the 
+2026 election cycle or a capacity-adjusted implementation timeline, 
+aggregate or post-mailing reconciliation, data minimization, hashed or 
+non-voter-identifying records, safe harbors for minor or correctable 
+defects, mandatory acceptance during Portal outages,
+
+[[Page 54985]]
+
+making the data entry standards optional, and emergency escalation 
+procedures for replacement ballots, late-added voters, court-ordered 
+ballots, and small-volume local mailings. Other commenters argued that 
+rejection of Outbound Federal Ballot Mail for failure to satisfy 
+preparation and data entry standards is a disproportionate consequence 
+compared to the monetary penalties imposed elsewhere in the DMM for 
+failing to meet other preparation or eligibility standards after an 
+administrative review. See DMM 607.
+
+C. Balancing Interests
+
+    After careful consideration of these various viewpoints, and the 
+comments discussing these issues, the Postal Service is moving to 
+finalize the proposed rule, subject to certain modifications explained 
+in ``Revisions Adopted in the Final Rule.''
+    The Postal Service has thoroughly explained the rationale for 
+imposing mail preparation and data reporting requirements as set forth 
+in the proposed rule, which are necessary to help promote the faithful 
+execution of federal law and advance the Postal Service's ability to 
+efficiently handle Federal Ballot Mail. While the Postal Service's 
+existing processes are designed to support the timely delivery and 
+smooth processing of ballot mail, it has long recognized that across-
+the-board compliance with its longstanding recommendations would 
+further improve efficient handling, processing, and delivery. This 
+would benefit the Postal Service, election officials, and voters alike. 
+Moreover, while the Postal Service currently does obtain scan data for 
+some ballot mail that could be useful for law-enforcement purposes, 
+mandating compliance with the data reporting and mail-preparation 
+requirements for all Federal Ballot Mail would significantly improve 
+the quality of that data. This visibility will, in turn, put law 
+enforcement in a better position to identify any potential issues 
+regarding compliance with federal law that may merit further 
+investigation.
+    Weighing these benefits and the operational needs of the Postal 
+Service, the rule is intended to minimize the burden and impact on 
+voters and election officials, while still achieving the rule's 
+purposes. Under this rule, states will retain complete autonomy to 
+determine voter eligibility to use the mail to vote, as they do today. 
+If their state complies with the rule's relatively modest mail 
+preparation and data entry standards, voters should not experience any 
+difference from the status quo. The Postal Service anticipates that all 
+states will make a good faith effort to comply with the rule, 
+consistent with the belief expressed by some commenters, thereby 
+enabling eligible voters to continue to use the mail to vote. Overall, 
+the rule imposes requirements that are rationally and carefully 
+tailored to the underlying purposes of the rule. The Postal Service 
+would also reiterate that the rule does not mandate that states 
+administer elections in a ``one size fits all'' manner; on the 
+contrary, state election laws and practices will continue to vary in 
+accordance with state law, as states will retain control over the 
+manner of their elections, unaltered by the rule. The rule requires 
+merely that states that choose to use the U.S. mail as part of their 
+elections adhere to certain standard mailpiece design and data 
+reporting standards when sending Federal Ballot Mail.
+    The Postal Service also notes that some commenters narrowly focused 
+their concerns on the purportedly substantial costs and practical 
+challenges that election officials would presently face in attempting 
+to comply with the rule for the November 2026 general election. The 
+Postal Service recognizes that the rule would require states to adjust 
+their processes and adapt to the changes imposed by the rule, 
+potentially incurring new costs. While the Postal Service has weighed 
+these considerations, including the possibility that some jurisdictions 
+would need to order new ballot envelopes and devote resources to 
+complying with the new envelope-design standards and reporting 
+requirements, those considerations have to be balanced against the 
+benefits of the rule, and in particular the fact that these standards 
+are necessary to ensure the faithful execution of federal law. Given 
+that mail-in ballots subject to this rule are generally mailed in 
+September or thereafter, an immediate effective date ensures the 
+maximum possible time for election officials to adjust their ballot 
+mail envelopes to meet the new preparation standards if necessary, and 
+to prepare to submit data to the Portal once it becomes active. This 
+promotes states' and political subdivisions' ability to successfully 
+implement the rule prior to the 2026 general election with good faith 
+efforts and the available postal resources, notwithstanding the 
+comments that described this task as ``impossible.'' And despite any 
+logistical or financial difficulties states may face complying with the 
+rule, including some claims that immediate implementation would prove 
+impossible, the visibility and law-enforcement benefits of the rule, 
+including for this election cycle, are such that there is no compelling 
+reason for any delay. In recognition of the potential burdens on 
+election officials and the timeline involved, the Postal Service will 
+make available considerable educational and other support resources 
+discussed above to assist election officials with implementation and 
+help facilitate timely compliance with the rule.
+    The Postal Service has also considered alternatives to the proposed 
+rule, including both more and less restrictive options. The Postal 
+Service received comments proposing a number of alternatives including: 
+using registered mail to transmit ballots; performing verification of 
+additional forms of data (including name, address, or Return Federal 
+Ballot Mail envelope IMb); expanding the rule to cover primaries or all 
+voters; making all of the rule's provisions optional; eliminating 
+verification and rejection procedures; and not requiring a unique IMb 
+on return ballot envelopes.
+    As explained above, the Postal Service believes the proposed rule, 
+as modified in the final rule, is appropriate in scale and scope. A 
+more restrictive approach is unnecessary to achieve the goals of the 
+rule and realize the related benefits. At the same time, the 
+sensitivity of Outbound Federal Ballot Mail, the importance of voter 
+confidence and election security, and the ability to support law 
+enforcement purposes that are necessary to ensure the faithful 
+execution of federal law require the inclusion of the verification and 
+rejection procedures as set forth in 704.24.5 in order to fulfill the 
+purposes of the rule. A less restrictive approach would not achieve all 
+of the rule's benefits. For example, scans from unique IMbs provide a 
+level of visibility into individual mailpieces that is not possible 
+using non-serialized IMbs. The Postal Service agrees with commenters 
+that this visibility is dependent on the mailpieces being scanned, and 
+believes that the potential for improved visibility made possible by 
+the use of unique IMbs on both Outbound and Return Federal Ballot Mail 
+better serves the intended goals of the rule than if a unique IMb were 
+only on Outbound Federal Ballot Mail. Moreover, if the rule were not 
+applied in a consistent, nationwide fashion (e.g., if its provisions 
+only applied to some ballot mail, were optional, or if there were a 
+phased roll-out), it may prevent the full benefits of the rule from 
+being realized, prove unadministrable, and could potentially cause 
+confusion and delays.
+    The final rule creates an appropriate balance of the purported 
+burdens
+
+[[Page 54986]]
+
+imposed by the rule against its intended benefits. As one commenter 
+explained, election integrity and voter access are complementary goals. 
+Any regulatory changes should strengthen public confidence while 
+avoiding unnecessary obstacles to the timely and reliable delivery of 
+election mail. This rule properly balances those considerations.
+
+VI. Other Considerations
+
+A. Postal Service Readiness
+
+    Numerous commenters expressed concern over the Postal Service's 
+ability to successfully implement this rule. They expressed concern 
+over whether the Postal Service had the necessary financial resources 
+and staffing capacity and conjectured that proposed rule would saddle 
+the Postal Service with election administration functions; require 
+additional clerks, mailpiece design personnel, information technology 
+support staff, and other human resources; and impose new obligations on 
+retail offices and field operations.
+    Other commenters sought clarification about the training that 
+postal employees would need to perform the new processes set forth in 
+the rule. Other commenters, including some postal employees, questioned 
+whether postal employees could satisfy their obligations under the 
+Hatch Act and to the public under the rule.
+    The Postal Service is prepared to implement the rule, consistent 
+with its legal obligations and available resources. The Postal Service 
+already possesses the necessary staffing capacity at BMEUs and retail 
+locations as well as mail acceptance infrastructure necessary to 
+administer the rule: wholly new institutional capacity does not need to 
+be built from scratch. The Postal Service currently operates nationwide 
+digital systems through the Business Customer Gateway and PostalOne!, 
+and business mailers must already submit mailing documentation 
+electronically. The Postal Service also maintains centralized support 
+channels, including the MDA help desk. Furthermore, as stated in the 
+Notice of Proposed Rulemaking, the Postal Service has available or will 
+soon publish resources to assist election officials with compliance, 
+including technical instructions on barcode creation, service type 
+identifiers, acceptance processes, file preparation, documentation 
+submission, and entry of data into the proposed portal. The addition of 
+a new compliance review for a small subset of overall mail volume is 
+not expected to require additional staff or be a significant burden on 
+employees. Since the rule builds on processes already in place for 
+election mail, its implementation should not prove inordinately costly. 
+The Postal Service is able to balance the cost of implementing the 
+rule, including developing the Portal, with the costs required to 
+fulfill its other core operational responsibilities.
+    As explained above, there are only a few categories of employees 
+who will be directly responsible for verifying compliance with the rule 
+under 705.24.5, namely BMEU technicians, Retail clerks, and discrete 
+support functions like employees in the PCSC. For employees in direct 
+operational roles, the new pre-acceptance verification measures are 
+similar to, and are no more onerous than, other mailing manifest 
+reviews. With respect to other provisions in the rule, the Postal 
+Service also recognizes that MDAs will see an increase in mailpiece 
+design review requests under the rule. The Postal Service is committed 
+to ensuring this process is completed in a timely manner, consistent 
+with current customer expectations.
+    The Postal Service agrees that proper training to ensure nationwide 
+consistency is important. The Postal Service is developing specific 
+training for employees who will be directly responsible for conducting 
+verification under the rule. Retail clerks and BMEU technicians will be 
+trained on how to identify Federal Outbound Ballot Mail and what the 
+scanning verification process requires. The training will be rolled out 
+and conducted consistently with the Postal Service's usual processes. 
+Additionally, MDAs will receive training on the rule's design 
+requirements and recordkeeping requirements.
+    It is important to remember that the vast majority of employees 
+will not experience a change in their responsibilities as a result of 
+the rule. For example, letter carriers and employees in delivery and 
+processing functions will not have any new responsibilities. These 
+employees will continue to process and deliver ballot mail, including 
+Federal Ballot Mail, and all other election mail, consistent with 
+existing Postal Service processes, procedures, and guidance. Letter 
+carriers and employees in processing and delivery functions will not 
+validate, withhold, delay, or remove ballots in the mailstream.
+    The rule's requirements should not impact how the Postal Service 
+processes and delivers Federal Ballot Mail. Longstanding processing and 
+delivery practices for completed ballots that enter the mainstream will 
+remain unchanged. As noted, designing automation compatible mailpieces, 
+inclusion of the Official Election Mail logo, serialized IMbs on both 
+the outbound and return ballots, and MDA mailpiece review have long 
+been key components of the Postal Service's best practices guidance for 
+ballot mail. Ensuring compliance with these longstanding 
+recommendations, together with verification processes for IMbs on 
+Outbound Federal Ballot Mail, lie within the Postal Service's zone of 
+competence, and can therefore be incorporated into the Postal Service's 
+normal course of operations.
+    The Postal Service would also note that the rule does not implicate 
+the Hatch Act, as it neither directs nor authorizes any partisan 
+political activity as defined by that Act by Postal Service employees.
+
+B. Portal Security
+
+    The Postal Service received a number of comments concerned that 
+creating a centralized data repository with voter information would 
+make elections less secure. These comments argued that creating a 
+centralized Portal establishes a high-value target for state-sponsored 
+cyberattacks, other data breaches, and election disruption, and that 
+the recent rise of AI-enhanced hacking technology increases these 
+risks. For these commenters, the value of the Portal is minimal because 
+it is, they argue, largely duplicative of existing state systems, and, 
+in their view, does not justify the risk. Commenters contend that 
+decentralized election systems improve election security.
+    Some commenters were concerned about the Postal Service's ability 
+to maintain and protect data in complex, public-facing systems, with a 
+few commenters suggesting technology, services, and other resources 
+that the Postal Service could use to create the Portal. Commenters 
+noted that system outages, technical malfunction or cyberattacks 
+impacting the Portal could impact, or potentially halt, Outbound 
+Federal Ballot mailings across multiple states simultaneously. Others 
+emphasized that neither the Portal nor any related technical 
+specifications are currently available; as a result, these commenters 
+questioned whether election offices (especially those in small or 
+under-resourced jurisdictions) would have the time and technical 
+capacity to build the required data files immediately.
+    The Postal Service has extensive experience in developing, 
+maintaining, and safeguarding public-facing data systems. The Postal 
+Service faces ongoing cyberthreats and challenges
+
+[[Page 54987]]
+
+that could directly impact customers, partners, and employees, and it 
+is well prepared to defend against these threats. The Postal Service's 
+Corporate Information Security Office (CISO) protects its critical 
+stakeholders by safeguarding the postal network, monitoring threats, 
+and responding to incidents. As with comparable organizations in the 
+government and private-sector, cybersecurity is a top priority for the 
+Postal Service.
+    Against this backdrop, the Postal Service maintains a vast 
+commercial public-facing website and has a number of existing systems 
+for mailers to enter data to satisfy other mail preparation standards. 
+It also has experience in quickly developing and deploying public-
+facing websites, like the website created to facilitate ordering and 
+distribution of COVID-19 test kits. These are high-volume systems that 
+maintain sensitive data. The Postal Service has specific guidelines and 
+protocols in place for protecting and handling the sensitive and 
+critical data contained within these systems. In short, contrary to 
+commenters' claims and concerns, the Postal Service has meaningful 
+experience developing and operating a system like the Portal.
+    The Portal will contain multi-layered security controls, including 
+encrypted data transmission and storage, strict access management with 
+multi-factor authentication, and role-based permissions. The system 
+will be protected by enterprise-grade network defenses, real-time 
+monitoring, and comprehensive audit logging, ensuring that sensitive 
+data is accessible only to authorized officials and is retained 
+securely.
+    As discussed above in ``Operation of the Final Rule,'' there are 
+free, optional tools available that can assist election officials and 
+Federal Ballot Mail Portal Users in generating the data files necessary 
+to satisfy the rule's data reporting requirements and ensure that the 
+necessary information for Outbound Federal Ballot mailings is available 
+to satisfy verification and be accepted into the mailstream. 
+Jurisdictions using a vendor may already have such data files prepared 
+as part of other mailing documentation. In either case, the burdens are 
+modest and can be timely satisfied.
+
+C. Other State Law Concerns
+
+    Commenters, including election officials, raised concerns about the 
+ability of election officials to satisfy the requirements of the rule 
+while also complying with various state laws. For example, some 
+comments argued that the obligation to provide Portal data for 
+inclusion on a state-specific List could require election officials to 
+choose between complying with state privacy laws or the rule. Other 
+commenters questioned election officials' ability to satisfy the rule's 
+requirements while also complying with state statutory timing 
+requirements for requesting, processing, and issuing ballots. And 
+others argued that the rule would impact state and local elections 
+where consolidated ballots are used.
+    The decision of how to arrange ballots is a matter for the states. 
+Ballots that contain both federal and state or local elections are 
+covered by the rule. States can easily avoid any effects on their state 
+elections by either complying with the rule's requirements or by 
+separating their federal ballots to exclude any non-federal elections. 
+Either is permissible under the rule and would eliminate any impact on 
+exclusively state or local elections.
+    The rule is also not facially incompatible with the various timing 
+provisions in state election law. The envelope design review, data 
+entry, and verification processes set forth in the rule should be 
+relatively quick to complete and should not significantly alter the 
+timeline for election officials. The rule's requirements will permit an 
+election official to prepare and send Outbound Federal Ballot Mail near 
+election day, as they do now. And, once Outbound Federal Ballot Mail is 
+accepted into the postal network, the Postal Service has a strong track 
+record of promptly delivering ballots to and from voters.
+    The rule also does not require that sensitive voter information be 
+made public, like birthdates or social security numbers that may be 
+protected from disclosure by state law. For one thing, the Portal and 
+the Lists will not contain this kind of sensitive information; they 
+include information that appears on the outside of the ballot mail 
+envelopes. For another, the Lists and the underlying Portal data will 
+not be made publicly available. There are existing statutory and 
+regulatory protections against the disclosure of customer addresses and 
+other sensitive information. For example, while 39 U.S.C. 410 provides 
+that the Postal Service is subject to the Freedom of Information Act 
+and the Privacy Act, it limits the scope of access to certain kinds of 
+postal records. In particular, Section 410(c)(1) provides that neither 
+law requires the Postal Service to release ``the name or address, past 
+or present, of any postal patron.'' Similarly, postal regulations 
+provide that disclosures of address information may be made to state 
+and local governments and law enforcement agencies, but generally 
+prohibit disclosure of an individual person's mailing address to a non-
+government individual except in limited, enumerated circumstances. 39 
+CFR 265.14(d)(2)-(5), (9). Furthermore, as discussed above and 
+reiterated below, many of these privacy concerns may be resolved by the 
+information contained in the SOR for the Portal, which was published in 
+the Federal Register on July 17, 2026.
+
+D. Tribal Issues
+
+    The Postal Service received a small number of comments arguing that 
+the proposed rule did not meaningfully address how the rule's 
+requirements would affect tribal communities. Commenters were concerned 
+about the ability of election officials to generate unique IMbs for 
+nontraditional mailing addresses used by many Native American 
+households, and about the impact of the rule more broadly given the 
+unique mail delivery challenges that can impact these communities. 
+Other commenters advocated for tribal consultation prior issuance of a 
+final rule. In particular, one commenter argued that the rule should 
+not be finalized until the Postal Service conducted formal consultation 
+with federally recognized tribes pursuant to Executive Order 13175.
+    As the Postal Service has explained, the rule does not require any 
+change to existing addressing practices. It only requires that the 
+address uploaded into the Portal be the address used on the Outbound 
+Federal Ballot Mail envelope. Election officials may continue to 
+address ballots to nontraditional addresses and may generate unique 
+IMbs for these addresses to comply with the rule. As discussed above, 
+election officials may be able to use the free IMsb tool to generate a 
+unique IMb even if these addresses cannot be validated through DPV.
+    With respect to consultation, the Postal Service will continue to 
+work with tribal stakeholders as part of its broader outreach, 
+education, and implementation efforts. However, Executive Order 13175 
+does not require the Postal Service to engage in such consultations. 
+Only agencies covered by the Paperwork Reduction Act are subject to 
+that Executive Order and, as noted above, the Postal Service is outside 
+the Paperwork Reduction Act's scope. Shane, 658 F. Supp. at 915; accord 
+Kuzma, 798 F.2d at 32. Therefore, consultation under Executive Order 
+13175 is not required prior to finalizing the rule.
+
+[[Page 54988]]
+
+E. Requests for More Information
+
+    The Postal Service received several comments requesting detailed 
+analysis about the potential impact of the proposed rule and 
+recommending that the results of any such analysis be published before 
+issuing a final rule. For example, requests were made for a state-by-
+state analysis of the rule's impact; impact assessments for Tribal 
+communities and UOCAVA voters (despite the express exclusion of UOCAVA 
+ballots from the rule's scope); detailed information about the 
+development of this rule and the Portal; an evaluation of any 
+differential administrative burdens based on the size or resources of 
+election jurisdictions; an assessment of the anticipated ballot-
+rejection rate under DMM 705.24.5; and a formal disability 
+accessibility impact assessment before finalizing any changes to ballot 
+mail procedures.
+    The Postal Service declines to conduct, publish, or otherwise 
+disclose any additional analysis or information concerning the rule or 
+Portal. The Postal Service has received sufficient information through 
+public comments to assess the impact of the proposed rule and issue 
+this final rule. Each state and political subdivision thereof may 
+choose different means to satisfy the rule's mail preparation and data 
+entry requirements based on their own capabilities and resources. As a 
+result, the impact on states may vary but these decisions are not 
+dictated by the Postal Service. Similarly, the Postal Service 
+anticipates that the rejection rate of Outbound Federal Ballot Mail 
+will be low, as states need only comply with the final rule's 
+relatively modest mail preparation and data entry standards.
+
+F. System of Records Notice
+
+    The Postal Service received numerous comments urging it to publish 
+a new SORN for the Federal Ballot Mail Portal in accordance with the 
+Privacy Act. Commenters sought information about retention periods for 
+Portal data, access to that data, and limits on disclosure, among other 
+things. While these comments are outside the scope of this rulemaking, 
+the Postal Service separately took steps necessary for the creation of 
+a SORN, as stated in the Notice of Proposed Rulemaking. On July 17, 
+2026, the SORN was published in the Federal Register. 91 FR 44880. As 
+explained in the SORN, a SOR will need to be in place to implement this 
+final rule, because no data will be collected through the Portal or 
+disclosed until a SOR is in place. The SORN provides details regarding 
+retention periods, access, disclosure, and the other matters raised by 
+commenters. Comments will be accepted on the SORN for 30 days. 
+Interested parties were invited to submit comments.
+
+VII. Suggested Revisions to the Proposed Rule
+
+A. UOCAVA
+
+    In the Notice of Proposed Rulemaking, the Postal Service 
+specifically invited comments on the exemption in the proposed rule for 
+UOCAVA voters. Many commenters supported this exemption. Other 
+commenters, while supporting the exemption, believed that the rule's 
+express exclusion of UOCAVA ballots was insufficient to exclude or 
+protect UOCAVA voters. These commenters asked for more assurances and 
+safeguards to ensure UOCAVA ballots would not be impacted by the rule, 
+as errors could occur that would accidentally apply the rule's 
+standards to UOCAVA ballots.
+    Some commenters opposed the exemption for UOCAVA ballots. These 
+commenters argued that ``[a]pplying the E.O. 14399 framework''--such as 
+enhanced tracking and participation lists--to UOCAVA ballots would 
+strengthen integrity without undermining access, while aligning with 
+existing Postal Service special handling for election mail to and from 
+military and overseas voters. Excluding them, in the opinion of some 
+commenters, leaves a significant portion of ballot mail for federal 
+elections outside the new security measures, and including UOCAVA 
+ballots would create a more comprehensive, uniform system that better 
+serves all eligible voters while deterring unlawful use of the mail.
+    The Postal Service finds that the proposed rule provides sufficient 
+safeguards for UOCAVA voters as drafted and declines to make additional 
+changes. Further safeguards and assurances are unnecessary because 
+these voters will experience no change as a result of proper 
+implementation of the rule given its exemption of UOCAVA ballots. At 
+the same time, the exemption does not create an anomaly or otherwise 
+undermine the stated purpose of the rule. Rather, it reflects the 
+unique logistical circumstances that overseas and military voters and 
+their family members face, consistent with the statutory scheme enacted 
+by Congress.
+    Separately, other comments sought clarification on how the Postal 
+Service would distinguish between ballots sent pursuant to UOCAVA and 
+other mail-in or absentee ballots. Existing postal regulations require 
+that ballots sent to and from UOCAVA voters include unique identifiers 
+on the exterior of the envelope that are not present on the ballot 
+envelopes for non-UOCAVA voters. Specifically, DMM 703.8.8.5 requires 
+that envelopes for mailing and receiving absentee ballots under UOCAVA 
+must contain the following words: ``No Postage Necessary in the U.S. 
+Mail--DMM 703.8.0.'' Additionally, balloting envelopes for UOCAVA 
+voters contain the statement: ``U.S. Postage Paid 39 U.S.C. 3406.'' 
+These indicia enable the Postal Service to distinguish between UOCAVA 
+ballots and ballots that fall within the scope of the rule. As 
+explained above, UOCAVA ballots should be segregated from Outbound 
+Federal Ballot Mail when presented for mailing. This will help ensure 
+that both UOCAVA ballots and Outbound Federal Ballot Mail covered by 
+the rule are properly accepted under applicable rules. Therefore, 
+revisions to the proposed rule are unnecessary to ensure that UOCAVA 
+ballots are distinguishable from Federal Ballot Mail.
+
+B. Primaries
+
+    The Postal Service received several comments about primary 
+elections specifically. Describing primaries as gateways to federal 
+general elections, and further noting that in noncompetitive districts, 
+primaries may effectively determine the outcomes of federal races, 
+commenters argued that the rule's exclusion of primary elections 
+creates inconsistencies in tracking, verification, and security 
+standards. Commenters contended that the Notice of Proposed Rulemaking 
+inadequately explained why fraud prevention and law enforcement 
+rationales for ballots for general, special, and runoff federal 
+elections would not apply equally to primaries. These commenters opined 
+that voters and election officials would benefit from uniform Postal 
+Service requirements throughout the election cycle.
+    The Postal Service reaffirms that, consistent with the framework 
+for the proposed rule set forth in Executive Order 14399, the rule will 
+not apply to primaries. Primary elections involve the selection of 
+political party nominees through procedures chosen by the parties 
+themselves, not the election of federal officials; as such, they fall 
+outside the rule's scope and reach.
+
+[[Page 54989]]
+
+C. Address Confidentiality Protection and Other Voter Confidentiality 
+Programs
+
+    As some commenters pointed out, survivors of domestic and sexual 
+violence and/or stalking may experience significant privacy concerns 
+related to the voter registration process. The fear of being located 
+may deter such victims from voting in person, and even from registering 
+to vote. Furthermore, as commenters noted, survivors of domestic 
+violence, sexual violence, and/or stalking often relocate multiple 
+times and/or postpone updating public records until adequate safety 
+measures are in place. For these reasons, commenters concluded, many 
+survivors rely crucially on the ability to vote by mail.
+    According to commenters, to assist such survivors, forty-seven 
+states have instituted Address Confidentiality Protection programs 
+(``ACPs'')--confidential mail forwarding services available to 
+survivors of domestic violence, stalking, sexual violence, child 
+abduction and/or human trafficking who have recently relocated to a 
+location unknown to their abuser or stalker. To ensure participant 
+safety, commenters explained, ACPs typically shield participants from 
+appearing in public voter files, usually by substituting alternative 
+addresses or keeping records entirely offline. Often, ACP registration 
+is entered manually in a locked file and not entered into the state's 
+typical voter registration system. The ballot is then mailed to the 
+state's substitute address, which, by design, differs from the voter's 
+confidential actual address. In some instances, even an individual's 
+name is protected under ACPs. Some commenters also noted that other 
+states have additional privacy protections in place for participants.
+    Some commenters voiced concern that including information about 
+these voters in the Portal and the contemplated exchange of this 
+information through the state-specific Mail-In and Absentee 
+Participation Lists would compromise ACP and other confidentiality 
+programs and may call into question compliance with certain state 
+requirements. One commenter noted a lack of guidance as to whether 
+states would be required to upload survivors' actual physical addresses 
+to the Portal, or whether the Postal Service (or other entities within 
+the federal government) would question mailing ballots to a potentially 
+large number of voters registered to a single alternative mailing 
+address. Other commenters criticized the proposed rule for allegedly 
+increasing risks to survivor safety. One commenter cited recent large-
+scale privacy breaches affecting government agencies and suggested that 
+Mail-In and Absentee Participation Lists in the Postal Service's 
+custody (including, presumably, the private information of voters 
+protected under ACPs) could fall prey to such a breach.
+    The Postal Service clarifies that the rule requires that the name 
+and address used on the outside of a ballot envelope be submitted to 
+the Portal; it would not require that confidential information known 
+only to the state be provided. The information in the Portal would also 
+not be publicly disclosed, and the Postal Service has taken appropriate 
+cybersecurity measures with respect to the Portal cybersecurity as 
+discussed above. For these reasons, the proposed rule is compatible 
+with state ACP programs.
+
+D. Alternative Operational Approaches
+
+    A small number of commenters recommended that the rule be 
+accompanied by ambitious operational changes, including a dedicated 
+postal-run ``state ballot box'' into which only ballots would be 
+placed, the establishment of a separate processing and delivery system 
+for ballots, and fundamental Mailer ID redesign (a key component of 
+IMbs).
+    The Postal Service declines to adopt these proposals. Such large-
+scale (and costly) operational changes are not necessary to accomplish 
+the rule's objectives.
+
+VIII. Revisions Adopted in the Final Rule
+
+    Very few comments included recommended changes to the rule itself. 
+The Postal Service received several suggestions that would result in a 
+more expansive final rule ; however, these suggestions fall outside the 
+scope of this rulemaking and the Postal Service's authority. For 
+instance, a few commenters encouraged the Postal Service to add 
+provisions into the rule to verify a voter's citizenship status as a 
+condition of mail acceptance. Other commenters advocated for 
+exclusively in-person voting, and still others proposed only accepting 
+ballots that are received by Election Day. The Postal Service also 
+received comments recommending a narrower final rule that would retain 
+the proposed rule's provisions concerning ballot envelope design for 
+Federal Ballot Mail, in 705.24.3, and eliminate the rule's other 
+substantive provisions, namely 705.24.4 and 705.24.5. Within the scope 
+of this rulemaking, the Postal Service is making several changes in 
+response to the concerns discussed above.
+    First, the Postal Service makes clear that the verification process 
+set forth in 705.24.5 (i.e., mail sent by authorized ballot mailers) 
+does not apply to Return Federal Ballot Mail. Many comments 
+demonstrated a factual misunderstanding about the inapplicability of 
+these verification procedures to return ballots. Given the widespread 
+confusion, the Postal Service believes that clarifying the final rule 
+will reduce voter confusion and help ensure consistent implementation 
+of the rule. However, as noted above, for individuals transmitting 
+Return Federal Ballot mail to be in compliance with this rule, Return 
+Federal Ballot Mail must be mailed in an envelope that meets the 
+requirements of 705.24.3.2. As under existing law, voters may use their 
+residential mailbox, any retail counter, or other authorized means to 
+transmit their compliant Return Federal Ballot Mail.
+    In the event a voter loses or misplaces the Return Federal Ballot 
+Mail envelope provided by the Authorized Ballot Mailer, or if the 
+Authorized Ballot Mailer fails to provide the voter with a compliant 
+Return Federal Ballot Mail envelope, the voter should request a 
+replacement envelope from the Authorized Ballot Mailer that conforms to 
+705.24.3.2. The Postal Service may also provide such other means as 
+reasonably determined by the Postal Service for transmitting Return 
+Federal Ballot Mail consistent with the requirements of this rule. This 
+will provide visibility and scan data for these ballot envelopes when 
+processed on the Postal Service's automated equipment.
+    Second, there was confusion over how the MDA review requirements 
+would be verified and enforced, and the circumstances under which the 
+MDA review requirements could lead to an Outbound Federal Ballot 
+mailing being rejected. As set forth above, certification of MDA review 
+will not be verified when an Outbound Federal Ballot mailing is 
+presented for acceptance. Instead, prior to uploading data into the 
+Portal, Federal Ballot Mail Portal Users will be prompted to certify 
+that their ballot envelope design has been submitted for review by an 
+MDA and that the MDA has provided feedback. If they do not provide such 
+certification, Federal Ballot Mail Portal Users will be unable to 
+upload data into the Portal. To reduce confusion and clarify the 
+responsibilities of Federal Ballot Mail Portal Users, the Postal 
+Service is amending the language in 705.24.3.1, 705.24.3.2, and 
+705.24.4.2.f, and striking 705.24.5.3.b from the final rule.
+
+[[Page 54990]]
+
+    Third, the Postal Service is amending the language in 705.24.3.1.c 
+and 705.23.3.2.c to make clear that Authorized Ballot Mailers are 
+responsible for creating IMbs. The Postal Service is also amending the 
+language in 705.24.4.2.b.3 and 705.24.4.2.b.4 to clarify that the 
+unique IMb submitted into the Portal is the IMb printed on the Outbound 
+and Return Federal Ballot Mail envelopes. These clarifications are 
+intended to reduce confusion and provide clarity for Federal Ballot 
+Mail Portal users; they do not substantively change the rule's data 
+reporting requirements.
+    Fourth, the Postal Service is amending the language in 705.24.5.2 
+to clarify that only commercial mailings are subject to commercial 
+mailing standards and regulations. There was confusion over whether 
+non-commercial mailings must be entered at BMEUs or otherwise meet 
+commercial mailing standards. The Postal Service has simplified the 
+language in 705.24.5.2 to help avoid confusion.
+    Finally, the Postal Service is changing the term ``Ballot Portal 
+User'' to ``Federal Ballot Mail Portal User'' to clarify the 
+relationship between Federal Ballot Mail, the rule's data standards, 
+and the Federal Ballot Mail Portal. The Postal Service's hope is that 
+this reduces confusion about the application of rule's data-entry 
+requirements to other ballot mail as well as confusion about data entry 
+that needs to be performed at the state-level.
+
+IX. Explanation of Final Rule
+
+    After evaluating the comments, the Postal Service is adopting the 
+new DMM Section 705.24. The final text of DMM Section 705.24 
+incorporates the revisions noted above. Accordingly, the Postal Service 
+adopts the described changes to Mailing Standards of the United States 
+Postal Service, Domestic Mail Manual (DMM), incorporated by reference 
+in the Code of Federal Regulations. We will publish an appropriate 
+amendment to 39 CFR part 111 to reflect these changes.
+
+List of Subjects in 39 CFR Part 111
+
+    Administrative practice and procedure, Postal Service.
+
+    Accordingly, the Postal Service amends Mailing Standards of the 
+United States Postal Service, Domestic Mail Manual (DMM), incorporated 
+by reference in the Code of Federal Regulations as follows (see 39 CFR 
+111.1):
+
+PART 111--[AMENDED]
+
+0
+1. The authority citation for 39 CFR Part 111 continues to read as 
+follows:
+
+    Authority: 5 U.S.C. 552(a); 13 U.S.C. 301-307; 18 U.S.C. 1692-
+1737; 39 U.S.C. 101, 401-404, 414, 416, 3001-3018, 3201-3220, 3401-
+3406, 3621, 3622, 3626, 3629, 3631-3633, 3641, 3681-3685, and 5001.
+
+
+0
+2. Revise Mailing Standards of the United States Postal Service, 
+Domestic Mail Manual (DMM) as follows:
+
+Mailing Standards of the United States Postal Service, Domestic Mail 
+Manual (DMM)
+
+* * * * *
+
+700 Special Standards
+
+* * * * *
+
+705 Advanced Preparation and Special Postage Payment Systems
+
+* * * * *
+    [Insert after 705.23 the following:]
+
+24.0 Ballot Mail for Federal Elections
+
+24.1 Definitions
+
+    For the purposes of Section 705.24, the following definitions 
+apply:
+    a. Authorized ballot mailer means an election official of a state 
+or a political subdivision thereof who is responsible for sending mail-
+in or absentee ballots to eligible voters of that state or political 
+subdivision; or an individual or entity, such as a mail service 
+provider, that an election official has authorized to send mail-in or 
+absentee ballots by mail on the election official's behalf.
+    b. Federal Ballot Mail Portal User means the chief election 
+official of each state and any individual or entity, such as a mail 
+service provider or an election official of that state or a political 
+subdivision thereof, authorized by the chief election official to 
+provide information through the Postal Service Federal Ballot Mail 
+Portal as described in 24.4.2.b.
+    c. Mail-in or absentee ballot means a physical ballot, other than a 
+ballot provided at a designated polling place, that may be used to cast 
+a vote in a federal election. For the purposes of Section 705.24, a 
+mail-in or absentee ballot does not include a ballot mailed under 
+703.8.8 or 703.8.9.
+    d. Outbound Federal Ballot Mail means any mailpiece containing a 
+mail-in or absentee ballot for a federal election sent from an 
+authorized ballot mailer to an individual voter.
+    e. Return Federal Ballot Mail means any mailpiece containing a 
+mail-in or absentee ballot for a federal election sent from an 
+individual voter to an election office, or an authorized recipient of 
+ballot mail, of a state or a political subdivision thereof.
+    f. Federal election means any general, special, or runoff election 
+for the office of President or Vice President; or of Senator or 
+Representative in, or Delegate or Resident Commissioner to, the 
+Congress. This definition does not include primary elections.
+    g. State includes all 50 states, as well as the District of 
+Columbia, Puerto Rico, the Virgin Islands, Guam, American Samoa, and 
+the Northern Mariana Islands.
+    h. Intelligent Mail barcode (IMb) has the meaning provided in 
+204.1.2.1.
+    i. Official Election Mail logo is a unique registered trademark 
+designed exclusively for inclusion in the design of Official Election 
+Mail. The conditions of use are provided in Publication 631, Official 
+Election Mail--Graphic Guidelines and Logos.
+
+24.2 Optional 90-Day Pre-Mailing Notice
+
+    A state's chief election official may notify the Postal Service, no 
+fewer than 90 days prior to a federal election, of its intent to allow 
+for mail-in or absentee ballots in the federal election to be 
+transmitted by the Postal Service. This notification should indicate 
+whether the state intends to submit to the Postal Service the 
+information described in 24.4.2.b to the Postal Service Federal Ballot 
+Mail Portal as set forth in 24.4.2.d.
+    A state's failure to provide the optional 90-day notice to the 
+Postal Service under 24.2 will not prevent enrollment under 24.4.
+
+24.3 Federal Ballot Mail
+
+24.3.1 Outbound Federal Ballot Mail Envelope Standards
+
+    Outbound Federal Ballot Mail must be mailed in an envelope that:
+    a. Includes the official Election Mail logo;
+    b. Is automation compatible; and
+    c. Bears the voter's unique IMb, as created by the Authorized 
+Ballot Mailer, with the Delivery Point ZIP Code embedded and a Federal 
+Ballot Mail Service Type Identifier (STID).
+    Outbound Federal Ballot Mail envelopes must be submitted to the 
+Postal Service for mailpiece design review and feedback.
+
+24.3.2 Return Federal Ballot Mail Envelope Standards
+
+    Return Federal Ballot Mail must be mailed in an envelope that:
+    a. Includes the official Election Mail logo;
+    b. Is automation compatible; and
+
+[[Page 54991]]
+
+    c. Bears the voter's unique IMb, as created by the Authorized 
+Ballot Mailer, with the Delivery Point ZIP Code embedded and a Federal 
+Ballot Mail STID.
+    Return Federal Ballot Mail envelopes must be submitted to the 
+Postal Service for mailpiece design review and feedback.
+
+24.3.3 Authorized Ballot Mailer Responsibility
+
+    Authorized ballot mailers are responsible for barcode creation 
+under 24.3.1 and 24.3.2 as well as envelope design and printing for all 
+ballot mail.
+
+24.3.4 Additional Recommendations
+
+    For additional information on the Postal Service's recommendations 
+for all ballot mail, see DMM 703.8.4.
+
+24.4 State-Specific Mail-In and Absentee Participation Lists
+
+24.4.1 Postal Service Federal Ballot Mail Portal User Registration
+
+    To access the Postal Service Federal Ballot Mail Portal, each 
+Federal Ballot Mail Portal User must have a registered account. 
+Registration must be completed no later than two business days before 
+an Outbound Federal Ballot mailing. The chief election official of each 
+state is responsible for authorizing the Federal Ballot Mail Portal 
+Users for their state including political subdivisions thereof.
+
+24.4.2 Enrollment
+
+    a. Any state that intends to receive mail-in or absentee ballots 
+from individual voters through the Postal Service must ensure that such 
+individuals have been enrolled with the Postal Service for inclusion on 
+the state's Mail-In and Absentee Participation List.
+    b. In order for an individual to be enrolled with the Postal 
+Service for inclusion on a state's Mail-In and Absentee Participation 
+List, a Federal Ballot Mail Portal User in that state must provide the 
+following information through the Postal Service Federal Ballot Mail 
+Portal:
+    1. Name of individual receiving a mail-in or absentee ballot;
+    2. Address of individual receiving a mail-in or absentee ballot;
+    3. Unique IMb applied on the Outbound Federal Ballot Mail envelope 
+pursuant to 24.3.1;
+    4. Unique IMb applied on the Return Federal Ballot Mail envelope 
+pursuant to 24.3.2; and
+    5. Originating election office state.
+    c. An individual will be deemed enrolled with the Postal Service 
+for inclusion on a state's Mail-In and Absentee Participation List as 
+of the date that the information in 24.4.2.b is provided.
+    d. Federal Ballot Mail Portal Users must provide the information in 
+24.4.2.b at least 30 days before the date of the federal election, to 
+the extent practicable, or by the date on which mail-in or absentee 
+ballots may begin to be mailed under state law. Federal Ballot Mail 
+Portal Users may make supplemental submissions to enroll additional 
+individuals or modify prior submissions until the last day that ballots 
+may be mailed out to individuals under state law. A separate submission 
+is required in connection with each Outbound Federal Ballot mailing, 
+regardless of the number of mailpieces in the mailing.
+    e. The information provided in 24.4.2.b must meet the Postal 
+Service's technical specifications for the Federal Ballot Mail Portal.
+    f. Before providing the information in 24.4.2.b, Federal Ballot 
+Mail Portal Users must certify in the Federal Ballot Mail Portal that 
+any mail-in or absentee ballots their state's authorized ballot mailers 
+provide to the Postal Service for mailing have been submitted for 
+review and that they have received feedback consistent with 24.3.1 and 
+24.3.2 Federal Ballot Mail Portal Users will not be able to enter the 
+information in 24.4.2.b into the Federal Ballot Mail Portal if the 
+certification is incomplete.
+
+24.4.3 Provision of State-Specific Lists
+
+    On or about the date of the federal election, the Postal Service 
+will provide a state-specific Mail-In and Absentee Participant List to 
+each state's chief election official that contains the name and address 
+of each individual in that state who was enrolled through the process 
+set forth in 24.4.2, along with the unique IMb associated with the 
+Outbound and Return Federal Ballot Mail sent to each such individual.
+
+24.5 Outbound Federal Ballot Mail Verification
+
+24.5.1 Procedure
+
+    Using the information provided in 24.4.2, the Postal Service will 
+review mailings identified as Outbound Federal Ballot Mail prior to 
+acceptance to evaluate whether the mailing meets the standards in 
+24.3.1 and is being sent to individuals who have been enrolled with the 
+Postal Service for inclusion on the state's Mail-In and Absentee 
+Participation List, consistent with the technical specifications for 
+the Federal Ballot Mail Portal.
+
+24.5.2 Authorized Verification
+
+    Mailings identified as Outbound Federal Ballot Mail are verified by 
+Postal Service employees when presented for acceptance. Outbound 
+Federal Ballot Mail must be entered at a facility that performs 
+business mail acceptance functions or at a Postal Service retail 
+counter. Commercial mailings must comply with applicable requirements. 
+Postal Service personnel are not authorized to open mail sealed against 
+inspection, except under circumstances described in ASM 274. The Postal 
+Service's acceptance of Outbound Federal Ballot Mail does not 
+constitute verified compliance.
+
+24.5.3 Noncompliance
+
+    a. Mailings that do not comply with 24.5.1 and 24.5.2 will not be 
+accepted and will be returned to the authorized ballot mailer. The 
+authorized ballot mailer or Federal Ballot Mail Portal User must 
+address the error(s) before resubmitting the mailing.
+    b. An authorized ballot mailer may request further review by the 
+Postal Service if Outbound Federal Ballot Mail is not accepted.
+    c. The Postal Service assumes no responsibility for any outbound 
+ballot mailing presented until it is accepted into the mail. The Postal 
+Service is not responsible for service delays when the Federal Ballot 
+Mail Portal User or authorized ballot mailer does not meet the 
+applicable preparation or entry standards.
+    d. Authorized ballot mailers must comply with all applicable postal 
+laws and regulations governing mailability and preparation for mailing, 
+as well as nonpostal laws and regulations on the possession, treatment, 
+transmission, or transfer of particular matter.
+
+24.5.4 Return Federal Ballot Mail
+
+    705.24.5 does not apply to Return Federal Ballot Mail.
+
+24.6 Non-Interference With State or Federal Election Laws
+
+    This rule relates only to the use of the U.S. Mail. The Postal 
+Service does not purport to alter the eligibility of any individual to 
+vote under state or federal law. The Postal Service does not have any 
+legal responsibility for management of state voter rolls or 
+administration of federal elections within each state. States are fully 
+responsible for the
+
+[[Page 54992]]
+
+contents of each State's Mail-In and Absentee Participation List.
+* * * * *
+
+Colleen Hibbert-Kapler,
+Attorney, Ethics and Legal Compliance.
+[FR Doc. 2026-17238 Filed 8-21-26; 9:00 pm]
+BILLING CODE 7710-12-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

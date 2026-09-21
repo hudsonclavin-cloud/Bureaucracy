@@ -1,0 +1,201 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 181 (Monday, September 21, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 181 (Monday, September 21, 2026)]
+[Notices]
+[Pages 59813-59815]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-19217]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+NUCLEAR REGULATORY COMMISSION
+
+[NRC-2022-0215]
+
+
+Draft Interim Staff Guidance: Material Compatibility for Non-
+Light Water-Reactors
+
+AGENCY: Nuclear Regulatory Commission.
+
+ACTION: Draft guidance; request for comment.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The U.S. Nuclear Regulatory Commission (NRC) is soliciting 
+public comment on its draft Interim Staff Guidance (ISG), ``Material 
+Compatibility for non-Light-Water Reactors, DANU-ISG-2023-01, Revision 
+1.'' The purpose of this draft ISG is to assist the NRC staff in 
+reviewing certain applications for non-light water reactor designs, 
+including power and non-power reactors. This ISG has been updated to 
+include an appendix to describe information the NRC staff generally 
+have used to perform the review of materials of construction and 
+passive structures, systems, and components (SSCs) performance for non-
+light water reactors (non-LWRs), as well as limited updates to 
+technical information in the main body. It has also been updated to 
+make it applicable to certain additional NRC regulations.
+
+DATES: Submit comments by November 5, 2026. Comments received after 
+this date will be considered if it is practical to do so, but the 
+Commission is able to ensure consideration only for comments received 
+on or before this date.
+
+ADDRESSES: You may submit comments by any of the following methods:
+
+[[Page 59814]]
+
+    <bullet> Federal Rulemaking Website: Go to <a href="http://www.regulations.gov">http://www.regulations.gov</a> and search for Docket ID NRC-2022-0215. Address 
+questions about Docket IDs in <a href="http://Regulations.gov">Regulations.gov</a> to Bridget Curran; 
+telephone: 301-415-1003; email: <a href="/cdn-cgi/l/email-protection#4a0838232e2d2f3e64093f38382b240a243829642d253c"><span class="__cf_email__" data-cfemail="60221209040705144e23151212010e200e12034e070f16">[email&#160;protected]</span></a>. For technical 
+questions, contact the individual(s) listed in the FOR FURTHER 
+INFORMATION CONTACT section of this document.
+    <bullet> Mail comments to: Office of Nuclear Material Safety and 
+Safeguards, Mail Stop: TWFN-5-A85, U.S. Nuclear Regulatory Commission, 
+Washington, DC 20555-0001, ATTN: Program Management, Announcements and 
+Editing Staff.
+    For additional direction on obtaining information and submitting 
+comments, see ``Obtaining Information and Submitting Comments'' in the 
+SUPPLEMENTARY INFORMATION section of this document.
+
+FOR FURTHER INFORMATION CONTACT: Matthew Hiser, telephone: 301-415-
+2454; email: <a href="/cdn-cgi/l/email-protection#eda08c999985889ac3a5849e889fad839f8ec38a829b"><span class="__cf_email__" data-cfemail="74391500001c11035a3c1d071106341a06175a131b02">[email&#160;protected]</span></a> and Vincent Voltaggio, telephone: 
+301-415-3860; email: <a href="/cdn-cgi/l/email-protection#8cdae5e2efe9e2f8a2dae3e0f8edebebe5e3cce2feefa2ebe3fa"><span class="__cf_email__" data-cfemail="4c1a25222f292238621a2320382d2b2b25230c223e2f622b233a">[email&#160;protected]</span></a>. Both are staff of the 
+Office of Advanced Reactors at the U.S. Nuclear Regulatory Commission, 
+Washington, DC 20555-0001.
+
+SUPPLEMENTARY INFORMATION:
+
+I. Obtaining information and Submitting Comments
+
+A. Obtaining Information
+
+    Please refer to Docket ID NRC-2022-0215 when contacting the NRC 
+about the availability of information for this action. You may obtain 
+publicly available information related to this action by any of the 
+following methods:
+    <bullet> Federal Rulemaking Website: Go to <a href="https://www.regulations.gov">https://www.regulations.gov</a> and search for Docket ID NRC-2022-0215.
+    <bullet> NRC's Agencywide Documents Access and Management System 
+(ADAMS): You may obtain publicly available documents online in the 
+ADAMS Public Documents collection at <a href="https://www.nrc.gov/reading-rm/adams.html">https://www.nrc.gov/reading-rm/adams.html</a>. To begin the search, select ``Begin ADAMS Public Search.'' 
+For problems with ADAMS, please contact the NRC's Public Document Room 
+(PDR) reference staff at 1-800-397-4209, at 301-415-4737, or by email 
+to <a href="/cdn-cgi/l/email-protection#b7e7f3e599e5d2c4d8c2c5d4d2f7d9c5d499d0d8c1"><span class="__cf_email__" data-cfemail="b2e2f6e09ce0d7c1ddc7c0d1d7f2dcc0d19cd5ddc4">[email&#160;protected]</span></a>. The ADAMS accession number for each document 
+referenced (if it is available in ADAMS) is provided the first time 
+that it is mentioned in this document.
+    <bullet> NRC's PDR: The PDR, where you may examine and order copies 
+of publicly available documents, is open by appointment. To make an 
+appointment to visit the PDR, please send an email to 
+<a href="/cdn-cgi/l/email-protection#f2a2b6a0dca097819d87809197b29c8091dc959d84"><span class="__cf_email__" data-cfemail="752531275b2710061a00071610351b07165b121a03">[email&#160;protected]</span></a> or call 1-800-397-4209 or 301-415-4737, between 8 
+a.m. and 4 p.m. eastern time (ET), Monday through Friday, except 
+Federal holidays.
+
+B. Submitting Comments
+
+    The NRC encourages electronic comment submission through the 
+Federal rulemaking website (<a href="https://www.regulations.gov">https://www.regulations.gov</a>). Please 
+include Docket ID NRC-2022-0215 in your comment submission.
+    The NRC cautions you not to include identifying or contact 
+information that you do not want to be publicly disclosed in your 
+comment submission. The NRC will post all comment submissions at 
+<a href="https://www.regulations.gov">https://www.regulations.gov</a> as well as enter the comment submissions 
+into ADAMS. The NRC does not routinely edit comment submissions to 
+remove identifying or contact information.
+    If you are requesting or aggregating comments from other persons 
+for submission to the NRC, then you should inform those persons not to 
+include identifying or contact information that they do not want to be 
+publicly disclosed in their comment submission. Your request should 
+state that the NRC does not routinely edit comment submissions to 
+remove such information before making the comment submissions available 
+to the public or entering the comment into ADAMS.
+
+II. Background
+
+    As part of its review of advanced non-light water reactor 
+applications, the NRC staff evaluates materials performance to ensure 
+passive components fulfill design requirements for the design life, and 
+that adequate surveillance and monitoring programs are in place. NRC 
+regulations in parts 50, 52, and 53 of title 10 of the Code of Federal 
+Regulations (10 CFR) describe the information applicants must include 
+in applications for construction permits, operating licenses, combined 
+operating licenses, standard design approvals, standard design 
+certifications, and manufacturing licenses. This includes information 
+related to requirements to ensure passive materials performance and 
+performance monitoring. The NRC endorsed, with exceptions and 
+limitations, American Society of Mechanical Engineers (ASME) Code 
+Section III, Division 5, ``High Temperature Reactors'' (III-5), with 
+conditions, in Revision 3 of Regulatory Guide (RG) 1.87, 
+``Acceptability of ASME Code, Section III, Division 5, `High 
+Temperature Reactors,''' (ADAMS Accession No. ML25176A084) for use by 
+non-LWR applicants and licensees subject to 10 CFR parts 50 and 52. The 
+NRC staff has not endorsed this document for use by applicants and 
+licensees subject to 10 CFR part 53. The NRC staff is currently 
+considering whether to endorse both III-5 for applicants and licensees 
+subject to 10 CFR part 53. If, based on the NRC staff's review, the NRC 
+staff determines that it cannot endorse either III-5 for use by 
+applicants and licensees subject to 10 CFR part 53, it will revise this 
+ISG accordingly before issuing it for use.
+    This revision to DANU-ISG-2023-01 adds an appendix providing risk-
+informed guidance on information related to materials performance that 
+applicants should include in various applications. It also updates 
+miscellaneous information and extends the ISG's applicability to 
+applications under 10 CFR part 53.
+
+III. Discussion
+
+    The purpose of this draft ISG, ``Material Compatibility for non-
+Light-Water Reactors, DANU-ISG-2023-01, Revision 1'' (ADAMS Accession 
+No. ML26155A114), is to aid the NRC staff reviewing non-light water 
+reactor applications for permits, licenses, certifications, and 
+approvals under 10 CFR parts 50, 52 and 53. III-5 and other codes and 
+standards used for the design and construction of mechanical components 
+specify the mechanical properties and allowable stresses for design of 
+components in high temperature reactors. Because III-5 and other design 
+and construction codes and standards do not provide methods to evaluate 
+deterioration that may occur in service as a result of corrosion, mass 
+transfer phenomena, radiation effects, or other material instabilities, 
+this draft ISG revision identifies information that the staff should 
+consider as part of its evaluation of a non-light water reactor 
+application with respect to applicable design requirements including 
+materials performance, environmental compatibility, and performance 
+monitoring programs for safety-significant SSCs.
+    This revision of DANU-ISG-2023-01 adds an appendix to provide 
+guidance related to information the NRC staff generally have used to 
+perform the review of materials of construction and passive SSC 
+performance for non-LWRs. This appendix provides guidance across key 
+application content areas for materials performance, including 
+description of the design and operating environment as well as 
+performance evaluation and monitoring. Description of the design and 
+operating environment includes identification of materials of 
+construction, identification of
+
+[[Page 59815]]
+
+environmental conditions, and use of codes and standards. Performance 
+evaluation and monitoring covers primarily an environmental 
+compatibility assessment and performance monitoring. The appendix 
+concludes with tables providing guidance on what information is 
+acceptable at the preliminary and final design stages across these key 
+application content areas as a function of safety significance.
+    In addition to adding the appendix, this revision also makes the 
+ISG applicable to applications under 10 CFR part 53 and makes other 
+miscellaneous changes to the ISG.
+
+(Authority: 42 U.S.C. 2011 et seq.)
+
+    Dated: September 16, 2026.
+
+    For the Nuclear Regulatory Commission.
+Mehdi Reisi Fard,
+Director, Division of Advanced Reactor Engineering, Office of Advanced 
+Reactors.
+[FR Doc. 2026-19217 Filed 9-18-26; 8:45 am]
+BILLING CODE 7590-01-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

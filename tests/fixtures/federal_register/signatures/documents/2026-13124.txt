@@ -1,0 +1,227 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 124 (Tuesday, June 30, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 124 (Tuesday, June 30, 2026)]
+[Rules and Regulations]
+[Pages 39463-39465]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-13124]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+PENSION BENEFIT GUARANTY CORPORATION
+
+29 CFR Part 4044
+
+
+Allocation of Assets in Single-Employer Plans; Interest 
+Assumptions for Valuing Benefits
+
+AGENCY: Pension Benefit Guaranty Corporation.
+
+ACTION: Final rule.
+
+-----------------------------------------------------------------------
+
+SUMMARY: This final rule amends the Pension Benefit Guaranty 
+Corporation's regulation on Allocation of Assets in Single-Employer 
+Plans to prescribe the spreads component of the interest assumption 
+under the asset allocation regulation for plans with valuation dates of 
+July 31, 2026-October 30, 2026. These interest assumptions are used for 
+valuing benefits under terminating single-employer plans and for other 
+purposes.
+
+DATES: Effective July 31, 2026.
+
+FOR FURTHER INFORMATION CONTACT: Jose Singer-Freeman (<a href="/cdn-cgi/l/email-protection#4d3e24232a283f602b3f2828202c236327223e280d3d2f2a2e632a223b"><span class="__cf_email__" data-cfemail="aeddc7c0c9cbdc83c8dccbcbc3cfc080c4c1ddcbeedeccc9cd80c9c1d8">[email&#160;protected]</span></a>), Attorney, Legislative and Regulatory Division, 
+Office of the General Counsel, Pension Benefit Guaranty Corporation, 
+445 12th Street SW, Washington, DC 20024-2101, 202-229-5432. If you are 
+deaf or hard of hearing, or have a speech disability, please dial 7-1-1 
+to access telecommunications relay services.
+
+SUPPLEMENTARY INFORMATION: PBGC's regulation on Allocation of Assets in 
+Single-Employer Plans (29 CFR part 4044) prescribes actuarial 
+assumptions--including an interest assumption--for valuing benefits 
+under terminating single-employer plans covered by title IV of the 
+Employee Retirement Income Security Act of 1974 (ERISA). The interest 
+assumption is also posted on PBGC's website (<a href="http://www.pbgc.gov">www.pbgc.gov</a>).
+    PBGC uses the interest assumption in Sec.  4044.54 to determine the 
+present value of annuities in an involuntary or
+
+[[Page 39464]]
+
+distress termination of a single-employer plan under the asset 
+allocation regulation. The assumptions in part 4044 of PBGC's 
+regulations are also used in other situations where it is appropriate 
+for liabilities to align with private sector group annuity prices. For 
+example, PBGC's regulations on Notice, Collection, and Redetermination 
+of Withdrawal Liability (29 CFR part 4219) and Duties of Plan Sponsor 
+Following Mass Withdrawal (29 CFR part 4281) provide that these 
+assumptions are used to value liabilities for purposes of determining 
+withdrawn employers' reallocation liability in the event of a mass 
+withdrawal from a multiemployer plan. Multiemployer plans that receive 
+special financial assistance under the regulation on Special Financial 
+Assistance by PBGC (29 CFR part 4262) must, as a condition of receiving 
+special financial assistance, use the interest assumption to determine 
+withdrawal liability for a prescribed period. Additionally, plan 
+sponsors are required to use some, or all of these assumptions for 
+specified purposes (e.g., reporting benefit liabilities in filings 
+required under PBGC's regulation on Annual Financial and Actuarial 
+Information Reporting (29 CFR part 4010) or determining certain amounts 
+to transfer to PBGC's Missing Participants Program on behalf of a 
+missing participant of a terminating defined benefit plan under PBGC's 
+regulation on Missing Participants (29 CFR part 4050)) and may use them 
+for other purposes (e.g., to ensure that plan spinoffs comply with 
+section 414(l) of the Internal Revenue Code).
+    Part 4044 of PBGC's regulations provides that the interest 
+assumption for part 4044 purposes is a yield curve (i.e., the ``4044 
+yield curve'') that is based on a blend of two publicly available bond 
+yield curves that is adjusted to the extent necessary so that the 
+resulting liabilities align with group annuity prices. The adjustments 
+are referred to as ``spreads.'' PBGC determines and publishes spreads 
+quarterly based on survey data on pricing of private-sector group 
+annuities. PBGC posts the 4044 yield curve on its website at 
+<a href="http://www.pbgc.gov">www.pbgc.gov</a> each month shortly after its underlying data becomes 
+available. In addition, practitioners are able to determine the 4044 
+yield curve as of the end of any month using the publicly available 
+bond yield curves and the spreads specified in the regulation.
+    This rule amends the regulation to specify the spreads used to 
+determine the 4044 yield curve as of the last days of July, August, and 
+September of 2026 (i.e., the ``third quarter 2026 spreads''). Due to 
+space constraints, table 1 to paragraph (e) shows spreads only for the 
+most recent four quarters. Historical spreads are available on 
+<a href="http://www.pbgc.gov">www.pbgc.gov</a>, along with more recent spreads.
+
+Need for Immediate Guidance
+
+    PBGC has determined that notice of, and public comment on, this 
+rule are impracticable, unnecessary, and contrary to the public 
+interest. PBGC routinely updates the spreads component of the interest 
+assumption in the asset allocation regulation so that the 4044 yield 
+curve may be determined as soon as the underlying bond yield curves 
+become available. These amendments are merely technical; they ensure 
+that use of PBGC's interest assumption continues to yield liabilities 
+in line with group annuity prices. Accordingly, PBGC finds that the 
+public interest is best served by issuing this rule expeditiously, 
+without an opportunity for notice and comment, and that good cause 
+exists for making the assumptions set forth in this amendment effective 
+less than 30 days after publication.
+    PBGC has determined that this action is not a ``significant 
+regulatory action'' under the criteria set forth in Executive Order 
+12866.
+    Because no general notice of proposed rulemaking is required for 
+this amendment, the Regulatory Flexibility Act of 1980 does not apply. 
+See 5 U.S.C. 601(2).
+
+List of Subjects in 29 CFR Part 4044
+
+    Employee benefit plans, Pension insurance, Pensions.
+
+    For the reasons stated in the preamble, PBGC amends 29 CFR part 
+4044 as follows.
+
+PART 4044--ALLOCATION OF ASSETS IN SINGLE-EMPLOYER PLANS
+
+0
+1. The authority citation for part 4044 continues to read as follows:
+
+    Authority: 29 U.S.C. 1301(a), 1302(b)(3), 1341, 1344, 1362.
+
+
+0
+2. In Sec.  4044.54, revise table 1 to paragraph (e) to read as 
+follows:
+
+
+Sec.  4044.54   Interest assumptions.
+
+* * * * *
+    (e) * * *
+    (3) * * *
+
+                                          Table 1 to Paragraph--Spreads
+----------------------------------------------------------------------------------------------------------------
+                                                  Fourth quarter   First quarter  Second quarter   Third quarter
+                 Maturity point                    2025 spreads    2026 spreads    2026  spreads   2026  spreads
+                                                     (percent)       (percent)       (percent)       (percent)
+----------------------------------------------------------------------------------------------------------------
+0.5.............................................            0.49            0.56            0.63            0.71
+1.0.............................................            0.49            0.56            0.63            0.71
+1.5.............................................            0.49            0.56            0.62            0.70
+2.0.............................................            0.49            0.56            0.62            0.70
+2.5.............................................            0.49            0.55            0.62            0.69
+3.0.............................................            0.49            0.55            0.62            0.69
+3.5.............................................            0.48            0.54            0.60            0.68
+4.0.............................................            0.48            0.54            0.60            0.68
+4.5.............................................            0.47            0.53            0.59            0.66
+5.0.............................................            0.47            0.53            0.59            0.66
+5.5.............................................            0.46            0.52            0.57            0.64
+6.0.............................................            0.46            0.52            0.57            0.64
+6.5.............................................            0.44            0.50            0.54            0.61
+7.0.............................................            0.44            0.50            0.54            0.61
+7.5.............................................            0.43            0.48            0.52            0.59
+8.0.............................................            0.43            0.48            0.52            0.59
+8.5.............................................            0.41            0.45            0.49            0.55
+9.0.............................................            0.41            0.45            0.49            0.55
+9.5.............................................            0.39            0.43            0.46            0.52
+
+[[Page 39465]]
+
+ 
+10.0............................................            0.39            0.43            0.46            0.52
+10.5............................................            0.37            0.40            0.43            0.48
+11.0............................................            0.37            0.40            0.43            0.48
+11.5............................................            0.34            0.37            0.39            0.44
+12.0............................................            0.34            0.37            0.39            0.44
+12.5............................................            0.32            0.34            0.36            0.40
+13.0............................................            0.32            0.34            0.36            0.40
+13.5............................................            0.30            0.31            0.32            0.36
+14.0............................................            0.30            0.31            0.32            0.36
+14.5............................................            0.27            0.28            0.28            0.32
+15.0............................................            0.27            0.28            0.28            0.32
+15.5............................................            0.25            0.25            0.24            0.28
+16.0............................................            0.25            0.25            0.24            0.28
+16.5............................................            0.23            0.22            0.21            0.23
+17.0............................................            0.23            0.22            0.21            0.23
+17.5............................................            0.20            0.19            0.17            0.19
+18.0............................................            0.20            0.19            0.17            0.19
+18.5............................................            0.18            0.16            0.13            0.15
+19.0............................................            0.18            0.16            0.13            0.15
+19.5............................................            0.16            0.13            0.10            0.11
+20.0............................................            0.16            0.13            0.10            0.11
+20.5............................................            0.14            0.11            0.07            0.08
+21.0............................................            0.14            0.11            0.07            0.08
+21.5............................................            0.12            0.08            0.04            0.04
+22.0............................................            0.12            0.08            0.04            0.04
+22.5............................................            0.10            0.06            0.01            0.01
+23.0............................................            0.10            0.06            0.01            0.01
+23.5............................................            0.08            0.04           -0.02           -0.02
+24.0............................................            0.08            0.04           -0.02           -0.02
+24.5............................................            0.07            0.02           -0.04           -0.05
+25.0............................................            0.07            0.02           -0.04           -0.05
+25.5............................................            0.06            0.00           -0.06           -0.07
+26.0............................................            0.06            0.00           -0.06           -0.07
+26.5............................................            0.05           -0.01           -0.08           -0.09
+27.0............................................            0.05           -0.01           -0.08           -0.09
+27.5............................................            0.04           -0.02           -0.09           -0.10
+28.0............................................            0.04           -0.02           -0.09           -0.10
+28.5............................................            0.03           -0.03           -0.10           -0.11
+29.0............................................            0.03           -0.03           -0.10           -0.11
+29.5............................................            0.03           -0.03           -0.10           -0.11
+30.0............................................            0.03           -0.03           -0.10           -0.11
+----------------------------------------------------------------------------------------------------------------
+
+* * * * *
+
+Joseph Krettek,
+Assistant General Counsel, Pension Benefit Guaranty Corporation.
+[FR Doc. 2026-13124 Filed 6-29-26; 8:45 am]
+BILLING CODE 7709-02-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

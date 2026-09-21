@@ -1,0 +1,119 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 181 (Monday, September 21, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 181 (Monday, September 21, 2026)]
+[Notices]
+[Page 59776]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-19210]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+GENERAL SERVICES ADMINISTRATION
+
+[OMB Control No. 3090-XXXX; Docket No. 2026-0497; Sequence No. 1]
+
+
+Information Collection; General Services Administration 
+Acquisition Regulation; GSA Voluntary FSS Domestic End Product 
+Certification on GSA Federal Supply Schedule, GSAR Clause 552.238-130
+
+AGENCY: Office of Acquisition Policy, General Services Administration 
+(GSA).
+
+ACTION: Notice; request for comments.
+
+-----------------------------------------------------------------------
+
+SUMMARY: In accordance with the Paperwork Reduction Act of 1995, and 
+the Office of Management and Budget (OMB) regulations, GSA invites the 
+public to comment on: whether this collection of information is 
+necessary; whether it will have practical utility; whether our estimate 
+of the public burden of this collection of information is accurate, and 
+based on valid assumptions and methodology; ways to enhance the 
+quality, utility, and clarity of the information to be collected; and 
+ways in which we can minimize the burden of the collection of 
+information on those who are to respond, through the use of appropriate 
+technological collection techniques or other forms of information 
+technology.
+
+DATES: GSA will consider all comments received by November 20, 2026.
+
+ADDRESSES: Submit comments on this information collection to <a href="https://www.regulations.gov">https://www.regulations.gov</a>. Submit comments via the Federal eRulemaking portal 
+by searching for ``Information Collection 3090-XXXX, GSA Voluntary FSS 
+Domestic End Product Certification on GSA Federal Supply Schedule.'' 
+Select the link ``Comment Now'', and follow the instructions provided 
+on the screen. Please include your name, company name (if any), and 
+``Information Collection 3090-XXXX'' on your attached document.
+    Instructions: Please submit comments only and cite ``Information 
+Collection 3090-XXXX, GSA Voluntary FSS Domestic End Product 
+Certification on GSA Federal Supply Schedule, GSAR clause: 252.238-
+130'' in all correspondence related to this collection. Comments 
+received generally will be posted without change to <a href="http://regulations.gov">regulations.gov</a>, 
+including any personal and/or business confidential information 
+provided. To confirm receipt of your comment(s), please check 
+<a href="http://regulations.gov">regulations.gov</a> approximately two-to-three days after submission to 
+verify posting.
+
+FOR FURTHER INFORMATION CONTACT: Email Mr. Bryon Boyer at 
+<a href="/cdn-cgi/l/email-protection#3d5f4f445253135f5244584f7d5a4e5c135a524b"><span class="__cf_email__" data-cfemail="a8cadad1c7c686cac7d1cddae8cfdbc986cfc7de">[email&#160;protected]</span></a> or call 817-850-5580.
+
+SUPPLEMENTARY INFORMATION:
+
+A. OMB Control Number, Title, and Any Associated Form(s)
+
+    3090-XXXX, GSA Voluntary FSS Domestic End Product Certification on 
+GSA Federal Supply Schedule.
+
+B. Need and Uses
+
+    This justification supports a new information collection to comply 
+with Executive Order (E.O.) 14392, Ensuring Truthful Advertising of 
+Products Claiming to be Made in America and to revitalize American 
+manufacturing and promote American workers (91 FR 13201, March 13, 
+2026). The E.O. requires agencies review the compliance of ``Made in 
+America'' representations for products and report false representations 
+to the Department of Justice. Information collected in response to this 
+new clause will allow GSA to meet this mandate. This clearance covers 
+the information that GSA contractors and offerors on the Federal Supply 
+Schedule (FSS) may voluntarily submit if their products qualify as 
+``FSS domestic end products'' as defined in the General Services 
+Acquisition Regulation (GSAR) clause 552.238-130. The proposed clause 
+contains a fillable table where contractors may make their 
+certification and provide the following information: 1. product name, 
+2. manufacturer part number, and 3. manufacturer name. This 
+certification is voluntary and not required.
+    GSA intends to issue rulemaking to provide the opportunity for the 
+public to comment on the policy to implement E.O. 14392 in the GSAR.
+
+C. Annual Reporting Burden
+
+    Public reporting burden for GSAR clause 552.238-130, is estimated 
+to average 0.5 hours per response, including the time for reviewing 
+instructions, searching existing data sources, gathering and 
+maintaining the data needed, and completing and reviewing the 
+collection of information.
+    The annual reporting burden is estimated as follows:
+    Total annual responses: 18,255.
+    Preparation hours per response: 0.5.
+    Total response burden hours: 9,128.
+    Obtaining Copies of Proposals: Requesters may obtain a watermarked 
+``DRAFT'' copy of the supporting statement via the Federal eRulemaking 
+portal at <a href="http://regulations.gov">regulations.gov</a> and searching for Docket ID ``GSA-GSA-2026-
+0497.'' Select the document titled ``Supporting Statement: 3090-XXXX--
+GSA Voluntary FSS Domestic End Product Certification on GSA Federal 
+Supply Schedule, GSAR clause: 552.228-130--DRAFT'' located under 
+Supporting and Related Materials.
+
+Richard Speidel,
+Deputy Chief Data Officer, General Services Administration.
+[FR Doc. 2026-19210 Filed 9-18-26; 8:45 am]
+BILLING CODE P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

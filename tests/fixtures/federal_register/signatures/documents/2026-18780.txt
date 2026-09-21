@@ -1,0 +1,157 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 176 (Monday, September 14, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 176 (Monday, September 14, 2026)]
+[Rules and Regulations]
+[Pages 58027-58028]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-18780]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+FEDERAL COMMUNICATIONS COMMISSION
+
+47 CFR Part 54
+
+[WC Docket No. 21-455, CC Docket No. 02-6; FCC 26-30; FR ID 366213]
+
+
+Promoting Fair and Open Competitive Bidding in the E-Rate 
+Program; Schools and Libraries Universal Service Support Mechanism
+
+AGENCY: Federal Communications Commission.
+
+ACTION: Final rule; announcement of effective date.
+
+-----------------------------------------------------------------------
+
+SUMMARY: In this document, the Federal Communications Commission 
+(Commission) announces that the Office of Management and Budget (OMB) 
+has approved until November 30, 2027 an information collection 
+associated with the rules for the Universal Service Schools and 
+Libraries program contained in the Commission's Promoting Fair and Open 
+Competitive Bidding in the E-Rate Program; Schools and Libraries 
+Universal Service Support Mechanism Report and Order (Report and 
+Order), WC Docket No. 21-455, CC Docket No. 02-6; FCC 26-30. This 
+document is consistent with the Report and Order, which stated that the 
+Commission would publish a document in the Federal Register announcing 
+the effective date of the new information collection requirements.
+
+DATES: The amendatory instructions 4 and 5, published at 91 FR 29051, 
+on May 19, 2026 are effective September 14, 2026.
+
+FOR FURTHER INFORMATION CONTACT: Jennifer Mensah, Wireline Competition 
+Bureau at (202) 418-1387 or TTY (202) 418-0484 or via email: 
+<a href="/cdn-cgi/l/email-protection#763c1318181f101304583b131805171e3610151558111900"><span class="__cf_email__" data-cfemail="206a454e4e494645520e6d454e534148604643430e474f56">[email&#160;protected]</span></a>. For additional information concerning the 
+Paperwork Reduction Act information collection
+
+[[Page 58028]]
+
+requirements contact Nicole Ongele at (202) 418-2991 or via email at 
+<a href="/cdn-cgi/l/email-protection#430d2a202c2f266d0c2d24262f26032520206d242c35"><span class="__cf_email__" data-cfemail="4d03242e2221286302232a2821280d2b2e2e632a223b">[email&#160;protected]</span></a>.
+
+SUPPLEMENTARY INFORMATION: The Commission made a submission for non-
+substantive changes to an existing collection for review and approval 
+by OMB, as required by the Paperwork Reduction Act (PRA) of 1995, on 
+June 25, 2026, which were approved by the OMB on July 7, 2026.
+    The information collection requirements are contained in the 
+Commission's Report and Order, WC Docket No. 21-455, CC Docket No. 02-
+6; FCC 26-30, published at 91 FR 29051, May 19, 2026. The OMB Control 
+Number is 3060-0806. The Commission publishes this document as an 
+announcement of the effective date of the rules published on May 19, 
+2026. If you have any comments on the burden estimates listed in the 
+following, or how the Commission can improve the collections and reduce 
+any burdens caused thereby, please contact Nicole Ongele, Federal 
+Communications Commission, 45 L Street NE, Washington, DC 20554. Please 
+include the OMB Control Number, 3060-0806, in your correspondence. The 
+Commission will also accept your comments via email at <a href="/cdn-cgi/l/email-protection#3f6f6d7e7f595c5c11585049"><span class="__cf_email__" data-cfemail="1c4c4e5d5c7a7f7f327b736a">[email&#160;protected]</span></a>. To 
+request materials in accessible formats for people with disabilities 
+(Braille, large print, electronic files, audio format), send an email 
+to <a href="/cdn-cgi/l/email-protection#284e4b4b1d181c684e4b4b064f475e"><span class="__cf_email__" data-cfemail="076164643237334761646429606871">[email&#160;protected]</span></a> or call the Consumer and Governmental Affairs Bureau 
+at (202) 418-0530 (voice).
+
+Synopsis
+
+    As required by the Paperwork Reduction Act of 1995 (44 U.S.C. 
+3507), the Commission is notifying the public that it received OMB 
+approval on July 7, 2026, for the amendatory instructions 4 and 5, 
+published at 91 FR 29051, on May 19, 2026.
+    Under 5 CFR part 1320, an agency may not conduct or sponsor a 
+collection of information unless it displays a current, valid OMB 
+Control Number.
+    No person shall be subject to any penalty for failing to comply 
+with a collection of information subject to the Paperwork Reduction Act 
+that does not display a current, valid OMB Control Number. The OMB 
+Control Number is 3060-0806.
+    The foregoing notice is required by the Paperwork Reduction Act of 
+1995, Public Law 104-13, October 1, 1995, and 44 U.S.C. 3507.
+    The total annual reporting burdens and costs for the respondents 
+are as follows:
+    OMB Control Number: 3060-0806.
+    OMB Approval Date: July 7, 2026.
+    OMB Expiration Date: November 30, 2027.
+    Title: Universal Service--Schools and Libraries Universal Service 
+Program, FCC Form 470 and 471.
+    Form Number: FCC Forms 470 and 471.
+    Respondents: Not-for-profit institutions, and State, Local or 
+Tribal governments.
+    Number of Respondents and Responses: 25,000 unique respondents; 
+83,560 responses.
+    Estimated Time per Response: 4 hours for FCC Form 470 [3 hours for 
+response; 1 hour for recordkeeping]; 5 hours for FCC Form 471 [4 hours 
+for response; 1 hour for recordkeeping].
+    Frequency of Response: Recordkeeping, on occasion and annually 
+reporting requirements.
+    Obligation to Respond: Required to obtain or retain benefits. 
+Statutory authority for this information collection is contained in 
+sections 1, 4(i), 4(j), 201-205, 214, 254, and 403 of the 
+Communications Act of 1934, as amended, 47 U.S.C. 151-154, 201-205, 
+218-220, 254, 303(r), 403 and 405.
+    Total Annual Burden: 236,890 hours.
+    Total Annual Cost: No Cost.
+    Needs and Uses: The requirements are necessary to implement the 
+congressional mandate for universal service. The information collected 
+provides the Commission and the Universal Service Administrative 
+Company with the necessary information to administer the E-Rate 
+program, determine the amount of support entities seeking funding are 
+eligible to receive, to determine if entities are complying with the 
+Commission's rules, and to protect the integrity of the E-Rate program. 
+The information will also allow the Commission to evaluate the extent 
+to which the E-Rate program is meeting the statutory objectives 
+specified in section 254 of the 1996 Act and the Commission's 
+performance goals set forth in the 2014 First E-Rate Order, and to 
+evaluate the need for and feasibility of any future revisions to 
+program rules.
+    On April 30, 2026, the Commission took action to reinforce the 
+success and integrity of the E-Rate program by establishing a 
+competitive bidding portal and document repository to strengthen the E-
+Rate program's competitive bidding rules as well as other actions to 
+simplify and streamline program processes and procedures for E-Rate 
+participants. In addition, the Commission adopted changes to streamline 
+and simplify the E-Rate program while maintaining the integrity of the 
+program. Those actions provided greater transparency into the 
+applicants' competitive bidding and bid evaluation and selection 
+processes, and protect the program against waste, fraud, and abuse.
+    The submission was made for non-substantive changes to an existing 
+information collection pursuant to 44 U.S.C. 3507. The submission 
+sought to alleviate the current 10-year document retention and 
+production requirement for service providers and applicants of the 
+schools and libraries universal service support program, commonly known 
+as the E-Rate program. The submission also sought to add checkboxes 
+and/or fields applicable to the Schools and Libraries Universal Service 
+Description of Services Requested and Certification FCC Form 470 and 
+FCC Form 471.
+
+Federal Communications Commission.
+Marlene Dortch,
+Secretary, Office of the Secretary.
+[FR Doc. 2026-18780 Filed 9-11-26; 8:45 am]
+BILLING CODE 6712-01-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

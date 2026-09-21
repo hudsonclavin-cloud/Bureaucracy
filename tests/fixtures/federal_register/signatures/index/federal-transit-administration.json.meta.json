@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-09-21T16:24:11Z",
+ "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=2&order=newest&conditions%5Bagencies%5D%5B%5D=federal-transit-administration&conditions%5Btype%5D%5B%5D=RULE&conditions%5Btype%5D%5B%5D=NOTICE&fields%5B%5D=document_number&fields%5B%5D=raw_text_url&fields%5B%5D=html_url&fields%5B%5D=agencies&fields%5B%5D=signing_date&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+ "status": 200,
+ "final_url": "https://www.federalregister.gov/api/v1/documents.json?per_page=2&order=newest&conditions%5Bagencies%5D%5B%5D=federal-transit-administration&conditions%5Btype%5D%5B%5D=RULE&conditions%5Btype%5D%5B%5D=NOTICE&fields%5B%5D=document_number&fields%5B%5D=raw_text_url&fields%5B%5D=html_url&fields%5B%5D=agencies&fields%5B%5D=signing_date&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+ "content_type": "application/json; charset=utf-8",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /api/v1/documents.json",
+ "bytes": 3236,
+ "sha256": "9d9b58c5af4d1a15b6ac6dd7ae86cf68bb27f87a255b78e6a3adad80cd6254b4",
+ "error": null
+}

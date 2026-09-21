@@ -1,0 +1,491 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 179 (Thursday, September 17, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 179 (Thursday, September 17, 2026)]
+[Notices]
+[Pages 58944-58946]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-19043]
+
+
+
+[[Page 58944]]
+
+-----------------------------------------------------------------------
+
+SECURITIES AND EXCHANGE COMMISSION
+
+[Release No. 34-106349; File No. 4-757]
+
+
+Joint Industry Plan; Order Approving the Third Amendment to the 
+National Market System Plan Regarding Consolidated Equity Market Data 
+To Revise the Revenue Allocation Formula
+
+September 14, 2026.
+
+I. Introduction
+
+    On June 2, 2026, the Operating Committee \1\ of the Limited 
+Liability Company Agreement of the CT Plan LLC (``CT Plan'') filed with 
+the Securities and Exchange Commission (``SEC'' or ``Commission''), 
+pursuant to section 11A of the Securities Exchange Act of 1934 
+(``Exchange Act'') \2\ and Rule 608 of Regulation National Market 
+System (``Regulation NMS'') thereunder,\3\ a proposal \4\ to revise the 
+allocation of net revenues under the CT Plan among Members 
+(``Amendment'').\5\ The Amendment, which represents the Third Amendment 
+to the CT Plan, was published for comment in the Federal Register on 
+June 17, 2026.\6\ The Commission received comment on the Amendment and 
+a response from the Operating Committee.\7\ This order approves the 
+Amendment.
+---------------------------------------------------------------------------
+
+    \1\ See CT Plan Art. IV, sec. 4.1.
+    \2\ 15 U.S.C. 78k-1(a)(3).
+    \3\ 17 CFR 242.608.
+    \4\ See Letter from Jeff Kimsey, CT Plan Operating Committee 
+Chair, dated June 1, 2026. Pursuant to section 4.3(b) of the CT 
+Plan, certain actions of the Operating Committee require an 
+affirmative vote of not less than two-thirds of all votes eligible 
+to vote on a matter. Long Term Stock Exchange, Inc. (``LTSE'') did 
+not join in the submission of the proposal. See Securities Exchange 
+Act Release No. 105680 (June 12, 2026), 91 FR 36633 at n.4 (June 17, 
+2026) (``Notice'').
+    \5\ The Members are: 24X National Exchange LLC, Cboe BYX 
+Exchange, Inc., Cboe BZX Exchange, Inc., Cboe EDGA Exchange, Inc., 
+Cboe EDGX Exchange, Inc., Cboe Exchange, Inc., Financial Industry 
+Regulatory Authority, Inc. (``FINRA''), Investors Exchange LLC, 
+LTSE, MEMX LLC, MIAX PEARL, LLC, Nasdaq Texas, LLC, Nasdaq ISE, LLC, 
+Nasdaq PHLX LLC, The Nasdaq Stock Market LLC, New York Stock 
+Exchange LLC, NYSE American LLC, NYSE Arca, Inc., NYSE National, 
+Inc., NYSE Texas, Inc. (``NYSE Texas''), and Texas Stock Exchange 
+LLC.
+    \6\ See Notice, supra note 4.
+    \7\ Comments received can be found on the Commission's website 
+at: <a href="https://www.sec.gov/comments/4-757/4-757.htm">https://www.sec.gov/comments/4-757/4-757.htm</a>.
+---------------------------------------------------------------------------
+
+II. Background
+
+    Exhibit D to the CT Plan provides for the allocation of net 
+revenues received under the CT Plan among the Members. Generally, 
+revenue is allocated through a two-step process that involves first, 
+allocating revenue to individual securities and second, allocating such 
+revenue to Members based on their respective quoting and trading 
+activity in such individual securities.\8\ Under the CT Plan, the 
+Operating Committee has ``full and complete discretion,'' subject to 
+any required approval by its Members \9\ and the requirements of Rule 
+608 of Regulation NMS,\10\ to, among other things, take all such 
+actions as it deems necessary or appropriate to accomplish the purposes 
+of the CT Plan, including ``designing a fair and reasonable revenue 
+allocation formula for allocating plan revenues'' and overseeing, 
+reviewing, and revising that formula as needed,\11\ as well as 
+proposing amendments to the CT Plan.\12\ The Amendment would impose a 
+limit, or ``cap,'' on the ratio of revenue distributed to each 
+individual Member that is attributable to its quoting activity compared 
+to revenue such Member receives for trading activity.
+---------------------------------------------------------------------------
+
+    \8\ See Exhibit D of the CT Plan.
+    \9\ See supra note 4.
+    \10\ 17 CFR 242.608.
+    \11\ See section 4.1(a)(vi) of the CT Plan.
+    \12\ See section 4.1(a)(i) of the CT Plan.
+---------------------------------------------------------------------------
+
+1. Purpose of Amendment
+
+    According to the Operating Committee, Members have observed a 
+distinct pattern on some markets of quoting and trading activity, 
+characterized by frequent or continuous quoting at the national best 
+bid and offer (``NBBO'')--often in size and in high-priced securities--
+accompanied by relatively little increase in the level of trading 
+activity on those venues.\13\ The Operating Committee stated that this 
+resulted in extreme distortions in how quote-based revenues were 
+allocated among the Members, compared to trade-based revenues.\14\ For 
+example, according to the Operating Committee, LTSE's quote-to-trade 
+ratio for 2024 was approximately 107:1 on Tape A, 70:1 on Tape B, and 
+88:1 on Tape C.\15\ In addition, according to the Operating Committee, 
+NYSE Chicago, Inc. (now NYSE Texas) also exhibited quote-to-trade 
+ratios significantly higher than historical norms, often exceeding 
+20:1, in Tapes A and C beginning in 2021 and ending in 2024.\16\ By 
+comparison, according to the Operating Committee, from 2018 through the 
+present, Members typically have maintained quote-to-trade ratios 
+substantially less than 5:1 and allocations in excess of that ratio 
+have historically occurred only under exceptional circumstances, such 
+as the temporary distortions in quoting and trading related to the 
+entry of new exchanges with low absolute trading and quoting 
+volume.\17\ The Operating Committee stated that the observed quoting 
+activity undermined the Commission's objectives in adopting the revenue 
+allocation formula in Regulation NMS and warranted a change to the CT 
+Plan's revenue allocation formula to ensure those objectives are 
+met.\18\ According to the Operating Committee, when quoting activity 
+ceases to bear a meaningful relationship to trading, it becomes ``less 
+useful for price discovery and more likely to be associated with 
+activity that distorts market data[.]'' \19\
+---------------------------------------------------------------------------
+
+    \13\ See Notice, supra note 4 at 36634. The Operating Committee 
+also stated that ``much of the quoting activity responsible for high 
+quote-to-trade ratios has involved quoting in relatively inactively 
+traded securities.'' See Notice, supra note 4 at 36634 n.10.
+    \14\ See Notice, supra note 4 at 36634.
+    \15\ See Notice, supra note 4 at 36634.
+    \16\ See Notice, supra note 4 at 36634.
+    \17\ See Notice, supra note 4 at 36634.
+    \18\ See Notice, supra note 4 at 36634 (stating that ``[i]n 
+revising the formula, the Commission determined that it should 
+provide some allocation of revenue for quotations that contribute 
+meaningfully to the consolidated data stream''); see also Securities 
+Exchange Act Release No. 51808 (June 9, 2005), 70 FR 37496 at 37561-
+37566 (June 29, 2005) (``Regulation NMS Adopting Release'') 
+(discussing the new revenue allocation formula).
+    \19\ See Notice, supra note 4 at 36634.
+---------------------------------------------------------------------------
+
+2. Description of Proposed Amendment
+
+    In the Amendment, the Operating Committee proposed to implement a 
+ratio cap on the quote-to-trade revenue ratio. Specifically, under the 
+Amendment, the amount of quote-related revenue received by a Member 
+would be adjusted if it exceeded its allocated trading revenue by a 
+ratio of more than five-to-one.\20\ The Amendment would apply the ratio 
+cap to each periodic distribution of CT Plan revenue to Members. As 
+proposed, the amount of quoting revenue that exceeds the five-to-one 
+ratio that would be otherwise payable to the Member would be 
+redistributed to all other Members, including FINRA (to which the ratio 
+cap does not apply).\21\ The allocation of the excess to such other 
+Members would be based on each Member's share of distributable quote 
+revenue in relation to all quote revenue distributable to all such 
+other Members. Furthermore, if the redistribution of revenue would 
+cause a Member to exceed the 5:1 ratio, the excess revenue above the 
+ratio would be
+
+[[Page 58945]]
+
+further redistributed in the same way to other Members that have not 
+exceed the ratio cap.\22\ The Amendment also included a de minimis 
+exception for Members with very low total quoting and trading activity, 
+to recognize that such entities may temporarily exceed the 5:1 ratio 
+due to statistical volatility without materially affecting revenue 
+distribution.\23\ As proposed, the de minimis exception would not apply 
+the ratio cap where a Member's total payment based on quoting activity 
+does not exceed $50,000 during a calendar year.\24\
+---------------------------------------------------------------------------
+
+    \20\ See proposed section (a)(ii) of Exhibit D of the CT Plan 
+and Notice, supra note 4 at 36635. According to the Operating 
+Committee, the 5:1 threshold is based on an analysis of historical 
+data from 2018 to 2024. The Operating Committee stated that during 
+that time, excluding the 25 out of 318 distributions when the ratio 
+cap would have been breached by various exchanges, the average 
+quote-to-trade ratio would have been as follows: Tape A: 1.79, Tape 
+B: 1.86; and Tape C 1.82. See Notice, supra note 4 at 36635.
+    \21\ See proposed section (a)(ii) of Exhibit D of the CT Plan 
+and Notice, supra note 4 at 36635.
+    \22\ See proposed section (a)(ii) of Exhibit D of the CT Plan 
+and Notice, supra note 4 at 36635.
+    \23\ See proposed section (a)(ii) of Exhibit D of the CT Plan 
+and Notice, supra note 4 at 36635. The Operating Committee stated 
+that in 3 of the 25 times that the proposed ratio cap would have 
+been exceeded between 2018 and 2024, one exchange that exceeded the 
+ratio cap would have been eligible for receiving quote revenue under 
+the de minimis exception. See Notice, supra note 4 at 36635.
+    \24\ See proposed section (a)(ii) of Exhibit D of the CT Plan 
+and Notice, supra note 4 at 36635. According to the Operating 
+Committee, the de minimis exception was selected based on reviewing 
+data for new exchanges and ensuring that those new exchanges would 
+not be affected by the ratio cap during their launch. See Notice, 
+supra note 4 at 36635.
+---------------------------------------------------------------------------
+
+III. Discussion and Commission Findings
+
+    After careful consideration, the Commission is approving the 
+Amendment. Rule 608 of Regulation NMS authorizes two or more self-
+regulatory organizations, acting jointly, to file with the Commission a 
+proposed amendment to an effective national market system plan, and 
+Rule 608 provides that the Commission shall approve an amendment to an 
+effective national market system plan if it finds that the amendment is 
+necessary or appropriate in the public interest, for the protection of 
+investors and the maintenance of fair and orderly markets, to remove 
+impediments to, and perfect the mechanisms of, a national market 
+system, or otherwise in furtherance of the purposes of the Exchange 
+Act.\25\ For the reasons discussed below, the Commission concludes that 
+the Amendment is appropriate in the public interest, for the protection 
+of investors and the maintenance of fair and orderly markets, to remove 
+impediments to, and perfect the mechanism of a national market system, 
+or is otherwise in furtherance of the purposes of the Exchange Act 
+consistent with Rule 608(b)(2) of Regulation NMS.\26\
+---------------------------------------------------------------------------
+
+    \25\ See 17 CFR 242.608(a)(1) and 17 CFR 242.608(b)(2).
+    \26\ See 17 CFR 242.608(b)(2). The Commission stated when it 
+adopted Regulation NMS and the revenue allocation formula that ``the 
+language added to the Plans by the Allocation Amendment can be 
+adjusted in the future pursuant to the normal process of Commission-
+approved amendments.'' See Regulation NMS Adopting Release, supra 
+note 18 at 37561-62.
+---------------------------------------------------------------------------
+
+    The Commission received comment letters on the Amendment. While one 
+commenter ``generally agree[s] with the Third Amendment as a corrective 
+measure,'' the commenter stated that ``it does not go far enough and 
+does not remedy the structural deficiencies in the current [revenue 
+allocation] formula,'' \27\ which it stated contributes to excessive 
+exchange proliferation by ``permitting exchanges to earn meaningful 
+market data revenues without making commensurate contributions to 
+trading activity, liquidity, or price discovery[.]'' \28\ According to 
+this commenter, the Amendment only addresses a ``narrow set of outlier 
+outcomes'' and would continue to ``systematically award quote revenue 
+at nearly double the rate of trade revenue even for exchanges operating 
+well within the proposed cap.'' \29\ Instead, the commenter made 
+several recommendations, including (i) reducing overall CT Plan costs 
+to ensure the CT Plan recovers ``only those costs reasonably necessary 
+to administer and operate'' the CT Plan,\30\ (ii) increasing the 
+weighting assigned to trade executions since executions ``provide the 
+strongest evidence of price discovery[,]'' \31\ (iii) limiting quote 
+credits, if the Commission determines that quotations should continue 
+to receive credit under the revenue allocation formula, to NBBO setting 
+quotations that result in executions to reward quotations that both 
+introduce new pricing information to the marketplace and demonstrate 
+that information's value through actual trading activity,\32\ and (iv) 
+establishing a minimum participation threshold as a prerequisite to 
+sharing revenues.\33\ One commenter stated that ``[m]aking more 
+fundamental changes to the formula requires a thoughtful approach 
+because it will impact exchange and market participant behavior.'' \34\ 
+This commenter also provided data on 2025 and first quarter of 2026 
+revenue allocations and showed that three exchanges in 2025 and two 
+exchanges in the first quarter of 2026 would have been impacted by the 
+proposed quote-to-trade ratio of 5:1.\35\
+---------------------------------------------------------------------------
+
+    \27\ See Letter from Joanna Mallers, Secretary, PTG, dated July 
+8, 2026 (``PTG Letter'') at 1.
+    \28\ PTG Letter at 1-2; see also Letter from Katie Kolchin, CFA, 
+Managing Director, Head of Equity & Options Market Structure and 
+Gerald O-Hara, Vice President & Assistant General Counsel, The 
+Securities Industry and Financial Markets Association, dated July 
+22, 2026 (``SIFMA Letter'') at 2.
+    \29\ PTG Letter at 2; see also SIFMA Letter at 1.
+    \30\ PTG Letter at 3; see also SIFMA Letter at 4-5.
+    \31\ PTG Letter at 3; see also SIFMA Letter at 3-4. According to 
+one commenter, the current formula fails to distinguish between 
+``quotations that establish the NBBO and facilitate trading, 
+quotations that join an existing NBBO, and quotations that never 
+result in executions at all.'' PTG Letter at 2.
+    \32\ PTG Letter at 3-4.
+    \33\ PTG Letter at 4. See also SIFMA Letter at 1 (stating that 
+the commenter plans to address, among other things, the revenue 
+allocation formula ``more broadly in our response to the Rule 611 
+Proposal'') and Letter from William R. Harts, Chief Executive 
+Officer, LTSE, dated July 8, 2026, at 6 (``LTSE Letter'') (stating 
+that if the Commission decides to revisit the revenue allocation 
+formula, it should conduct a comprehensive re-examination). The 
+Commission recently proposed to rescind Rule 611 of Regulation NMS 
+and stated in that release that ``[s]ome have criticized the 
+formula's quoting component, which they argued has contributed to 
+the creation of new exchanges and subsidizes exchanges that quote 
+but rarely trade, thus providing minimal value to market 
+participants.'' See Notice, supra note 4 at 36636. In this regard, 
+the Commission requested comment on whether, and to what extent, 
+revisions should be made to the revenue allocation formula. See 
+Notice, supra note 4 at 36636. The comment period for the proposal 
+to rescind Rule 611 was open until August 17, 2026. See Securities 
+Exchange Release No. 105655 (June 11, 2026), 91 FR 36656 (June 17, 
+2026) (``Rule 611 Proposal''). For the reasons discussed herein, the 
+Commission is approving the Amendment. However, the Commission will 
+continue to consider all comments on whether, and to what extent, 
+additional revisions should be made to the revenue allocation 
+formula. Moreover, the Operating Committee has committed to 
+overseeing a broader review of the revenue allocation formula. See 
+Letter from Jeff Kimsey, CT Plan Operating Committee Chair, dated 
+August 23, 2026 (``Response Letter'') at 3.
+    \34\ SIFMA Letter at 1.
+    \35\ SIFMA Letter at 2-3.
+---------------------------------------------------------------------------
+
+    Another commenter stated that the Commission should disapprove the 
+Amendment.\36\ The commenter stated that the current revenue allocation 
+formula ``reflects Commission-approved goals designed to remunerate 
+contributions to price discovery'' \37\ and that there is no data that 
+shows the existence of any deficiencies.\38\ The commenter stated that 
+the Amendment is ``unsupported and controversial.'' \39\ The commenter 
+also stated that the current revenue allocation formula has been in 
+place for over 20 years and rewards exchanges that contribute to price 
+discovery by displaying high-quality quotations at the NBBO.\40\ The 
+commenter further stated that there are other legitimate reasons as to 
+why quoting activity may not have a
+
+[[Page 58946]]
+
+``meaningful relationship'' to trading, including other venues quickly 
+matching the NBBO; smart order routers prioritizing exchanges with 
+historical liquidity; routers prioritizing venues with the largest 
+displayed size; firms seeking to lower their costs by reaching certain 
+exchange volume tiers; and competition from the over-the-counter market 
+and other exchanges.\41\ The commenter stated that the Amendment would 
+create distorted incentives and potentially anti-competitive outcomes 
+because exchanges with low quote-to-trade ratios would be less 
+incentivized to encourage aggressive quoting that contributes to price 
+discovery.\42\
+---------------------------------------------------------------------------
+
+    \36\ LTSE Letter at 2. This commenter submitted a subsequent 
+comment letter to ``supplement the record'' by attaching the comment 
+letter it submitted on the Rule 611 Proposal. See Letter from Maliz 
+Beams, Interim Chief Executive Officer, LTSE, dated August 28, 2026.
+    \37\ LTSE Letter at 1.
+    \38\ LTSE Letter at 1-2, 6.
+    \39\ LTSE Letter at 2.
+    \40\ LTSE Letter at 6.
+    \41\ LTSE Letter at 4-5.
+    \42\ LTSE Letter at 6.
+---------------------------------------------------------------------------
+
+    In response to the foregoing, the Operating Committee stated that 
+the Amendment ``represents a measured and beneficial refinement to the 
+existing allocation framework, directed at a specific issue[.]'' \43\ 
+According to the Operating Committee, the Amendment addresses a 
+discrete concern ``that in certain circumstances, quote activity may 
+generate revenue allocations that are disproportionate to trading 
+activity and disconnected from meaningful market contribution.'' \44\ 
+Accordingly, the Operating Committee stated that future consideration 
+of broader reforms to the allocation formula should not delay approval 
+of the Amendment, which is an ``incremental, practical correction to a 
+discrete problem.'' \45\ Further, approval of the Amendment would ``not 
+prevent the SEC or the Operating Committee from reviewing the remaining 
+aspects of the formula at a future date.'' \46\ The Operating Committee 
+represented that the it remained ``committed to overseeing a broader 
+review of the . . . formula, especially in light of broader market 
+reforms being considered by the SEC.'' \47\
+---------------------------------------------------------------------------
+
+    \43\ Response Letter at 1.
+    \44\ Response Letter at 1.
+    \45\ Response Letter at 2-3.
+    \46\ Response Letter at 1.
+    \47\ Response Letter at 3.
+---------------------------------------------------------------------------
+
+    As to one commenter stating that there may be other legitimate 
+reasons as to why quoting activity may not have a meaningful 
+relationship to trading,\48\ the Operating Committee stated that this 
+commenter had ``not presented data demonstrating that an exchange 
+subject to the cap provides the type of market contribution'' suggested 
+by the commenter.\49\ Further, the Operating Committee stated that 
+``Members typically have maintained quote-to-trade ratios substantially 
+less than 5:1, and allocations in excess of that ratio have 
+historically occurred only under exceptional circumstances,'' \50\ such 
+as the entry of new exchanges, and that the commenter had ``not 
+provided data demonstrating that the temporary distortions are 
+associated with what it considers to be meaningful quote-only 
+participation.'' \51\ The Operating Committee also stated that the 
+Amendment ``continues to recognize quote-based contribution by 
+preserving quote-related allocation. It simply limits the extent to 
+which quote-based allocation may outpace trade-based allocation.'' \52\
+---------------------------------------------------------------------------
+
+    \48\ See supra note 41 and accompanying text.
+    \49\ Response Letter at 2.
+    \50\ Response Letter at 2.
+    \51\ Response Letter at 2.
+    \52\ Response Letter at 2.
+---------------------------------------------------------------------------
+
+    As described above, the Operating Committee proposed a discrete 
+change to how payments would be allocated to Members under the revenue 
+allocation formula, which formula remains unchanged, to address quoting 
+activities that are outside of historic quote-to-trade ratios that the 
+Operating Committee estimates as substantially less than 5:1.\53\ The 
+Operating Committee provided data to support the Amendment that showed 
+quote-to-trade ratios on certain exchanges that were outside of 
+historical norms, in one case in excess of 100:1.\54\ While one 
+commenter stated that there may have been legitimate reasons for that 
+elevated quoting activity,\55\ it is not clear that these reasons 
+explain the prolonged and recurring quoting activity that significantly 
+exceeded other Members' historical norms.\56\ Further, there is no 
+evidence, at this time, to suggest that the Amendment would result in 
+exchanges being less incentivized to display aggressive quotes. 
+However, as described above, the Commission and the Operating Committee 
+will continue to monitor any issues that may arise and consider whether 
+and to what extent additional revisions should be made to the revenue 
+allocation formula.\57\
+---------------------------------------------------------------------------
+
+    \53\ See supra notes 15-17 and accompanying text.
+    \54\ See Notice, supra note 4 at 36634; see also SIFMA Letter at 
+3.
+    \55\ See supra note 41 and accompanying text.
+    \56\ See Notice, supra note 4 at 36634.
+    \57\ See supra note 33.
+---------------------------------------------------------------------------
+
+    The Commission finds that the Amendment is appropriate in the 
+public interest, for the protection of investors and the maintenance of 
+fair and orderly markets because it is a narrowly designed revision to 
+payments pursuant to the revenue allocation formula, while including a 
+de minimis exception applied to Members with very low total quoting and 
+trading activity.\58\ Specifically, the Amendment is narrow in scope, 
+as it is designed to revise the payment of quotation revenue to Members 
+only in specific occurrences of quoting activity that are outside of 
+historical norms. Providing a de minimis exception also recognizes that 
+Members may temporarily exceed the 5:1 ratio due to statistical 
+volatility without materially affecting revenue distribution, such as 
+can happen to new exchanges during their launch. Moreover, the 
+exclusion of FINRA from the 5:1 ratio is appropriate given the unique 
+nature of FINRA's trade reporting facilities.\59\ Consequently, the 
+Commission finds that the Operating Committee's adjustments to payments 
+under the revenue allocation formula to address these quoting 
+activities are reasonable and fulfill its obligations of ``designing a 
+fair and reasonable revenue allocation formula . . . and overseeing, 
+reviewing and revising that formula as needed.'' \60\
+---------------------------------------------------------------------------
+
+    \58\ See supra notes 23 and 24.
+    \59\ See Notice, supra note 4. Pursuant to FINRA Rule 6110, 
+FINRA members are required to report transactions in NMS stocks 
+effected ``otherwise than on or through a national securities 
+exchange to FINRA.'' See FINRA Rule 6110(a). FINRA also provides an 
+Alternative Display Facility (``ADF'') that provides members with a 
+facility for the display of quotations, the reporting of trades, and 
+the comparisons of trades. Currently, there are no active quoting 
+ADF members. See <a href="https://www.finra.org/filing-reporting/alternative-display-facililty-adf">https://www.finra.org/filing-reporting/alternative-display-facililty-adf</a>.
+    \60\ See CT Plan, Art. IV, section 4.1(a)(vi).
+---------------------------------------------------------------------------
+
+IV. Conclusion
+
+    For the reasons discussed above, the Commission finds that the 
+Amendment is consistent with the requirements of section 11A of the 
+Exchange Act,\61\ and Rule 608 thereunder.\62\ Specifically, the 
+Commission finds that the Amendment is appropriate in the public 
+interest, for the protection of investors and the maintenance of fair 
+and orderly markets, to remove impediments to, and perfect the 
+mechanism of, a national market system, or otherwise in furtherance of 
+the purposes of the Exchange Act.
+---------------------------------------------------------------------------
+
+    \61\ 15 U.S.C. 78k-1.
+    \62\ 17 CFR 242.608.
+---------------------------------------------------------------------------
+
+    It is therefore ordered, that pursuant to section 11A of the 
+Exchange Act,\63\ and Rule 608(b)(2) thereunder,\64\ the Amendment 
+(File No. 4-757) is approved.
+---------------------------------------------------------------------------
+
+    \63\ 15 U.S.C. 78k-1.
+    \64\ 17 CFR 242.608(b)(2).
+
+    By the Commission.
+J. Matthew DeLesDernier,
+Deputy Secretary.
+[FR Doc. 2026-19043 Filed 9-16-26; 8:45 am]
+BILLING CODE 8011-01-P
+
+
+</pre></body>
+</html>

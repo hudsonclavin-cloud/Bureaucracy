@@ -1,0 +1,100 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 140 (Thursday, July 23, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 140 (Thursday, July 23, 2026)]
+[Notices]
+[Page 46487]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-14826]
+
+
+
+[[Page 46487]]
+
+-----------------------------------------------------------------------
+
+DEPARTMENT OF LABOR
+
+Bureau of Labor Statistics
+
+
+Agency Information Collection Activities; Submission for OMB 
+Review; Current Population Survey--Basic Labor Force
+
+ACTION: Notice of availability; request for comments.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The Department of Labor (DOL) is submitting this Bureau of 
+Labor Statistics (BLS)-sponsored information collection request (ICR) 
+to the Office of Management and Budget (OMB) for review and approval in 
+accordance with the Paperwork Reduction Act of 1995 (PRA). Public 
+comments on the ICR are invited.
+
+DATES: The OMB will consider all written comments that the agency 
+receives on or before August 24, 2026.
+
+ADDRESSES: Written comments and recommendations for the proposed 
+information collection should be sent within 30 days of publication of 
+this notice to <a href="http://www.reginfo.gov/public/do/PRAMain">www.reginfo.gov/public/do/PRAMain</a>. Find this particular 
+information collection by selecting ``Currently under 30-day Review--
+Open for Public Comments'' or by using the search function.
+    Comments are invited on: (1) whether the collection of information 
+is necessary for the proper performance of the functions of the 
+Department, including whether the information will have practical 
+utility; (2) the accuracy of the agency's estimates of the burden and 
+cost of the collection of information, including the validity of the 
+methodology and assumptions used; (3) ways to enhance the quality, 
+utility and clarity of the information collection; and (4) ways to 
+minimize the burden of the collection of information on those who are 
+to respond, including the use of automated collection techniques or 
+other forms of information technology.
+
+FOR FURTHER INFORMATION CONTACT: Nicole Bouchet by telephone at 202-
+693-0213, or by email at <a href="/cdn-cgi/l/email-protection#ffbbb0b3a0afadbea0afaabdb3b6bcbf9b9093d1989089"><span class="__cf_email__" data-cfemail="a0e4efecfff0f2e1fff0f5e2ece9e3e0c4cfcc8ec7cfd6">[email&#160;protected]</span></a>.
+
+SUPPLEMENTARY INFORMATION: The labor force data gathered through the 
+Current Population Survey (CPS) are provided to users in the greatest 
+detail possible, consistent with the demographic information obtained 
+in the survey. In brief, the labor force data can be broken down by 
+sex, age, race, ethnicity, marital status, family composition, 
+educational level, certification and licensing status, disability 
+status, and various other characteristics. Through such breakdowns, one 
+can focus on the employment situation of specific population groups as 
+well as on the general trends in employment and unemployment. Moreover, 
+the survey yields data on the characteristics of people who have 
+stopped looking for work because they believe no jobs are available, 
+also referred to as discouraged workers. Information of this type can 
+be obtained only through demographically-oriented surveys such as the 
+CPS. For additional substantive information about this ICR, see the 
+related notice published in the Federal Register on April 30, 2026 (91 
+FRN 23310).
+    This information collection is subject to the PRA. A Federal agency 
+generally cannot conduct or sponsor a collection of information, and 
+the public is generally not required to respond to an information 
+collection, unless the OMB approves it and displays a currently valid 
+OMB Control Number. In addition, notwithstanding any other provisions 
+of law, no person shall generally be subject to penalty for failing to 
+comply with a collection of information that does not display a valid 
+OMB Control Number. See 5 CFR 1320.5(a) and 1320.6.
+    Agency: DOL-BLS.
+    Title of Collection: Current Population Survey--Basic Labor Force.
+    OMB Control Number: 1220-0100.
+    Affected Public: Individuals or Households.
+    Total Estimated Number of Respondents: 41,000.
+    Total Estimated Number of Responses: 492,000.
+    Total Estimated Annual Time Burden: 66,420 hours.
+    Total Estimated Annual Other Costs Burden: $0.
+
+(Authority: 44 U.S.C. 3507(a)(1)(D))
+
+Nicole Bouchet,
+Senior Paperwork Reduction Act Analyst.
+[FR Doc. 2026-14826 Filed 7-22-26; 8:45 am]
+BILLING CODE 4510-24-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

@@ -1,0 +1,561 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 175 (Friday, September 11, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 175 (Friday, September 11, 2026)]
+[Rules and Regulations]
+[Pages 57798-57801]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-18535]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+FEDERAL COMMUNICATIONS COMMISSION
+
+47 CFR Parts 1 and 2
+
+[ET Docket No. 21-232; FCC 26-50; FR ID 365005]
+
+
+Protecting Against National Security Threats to the 
+Communications Supply Chain Through the Equipment Authorization Program
+
+AGENCY: Federal Communications Commission.
+
+ACTION: Final rule.
+
+-----------------------------------------------------------------------
+
+SUMMARY: In this document, the Federal Communications Commission 
+(Commission or FCC) takes further steps to strengthen its equipment 
+authorization program against national security risks to the 
+communications supply chain. The Commission closes a component-part 
+loophole by prohibiting authorization of devices that incorporate 
+logic-bearing hardware components produced by an entity identified on 
+the Commission's Covered List, where the device would itself be 
+prohibited from authorization had the Covered List entity produced the 
+entire device. The Commission also requires that any modification or 
+permissive change to equipment by an entity identified on the Covered 
+List undergo full certification, clarifies that its marketing rules 
+reach any entity (including online marketplaces) that markets 
+unauthorized equipment, and requires online marketplaces, subject to 
+limited exceptions, to display a device's FCC ID at the online point of 
+sale. Finally, the Commission amends its definition of ``critical 
+infrastructure,'' as used on the Covered List, and corrects two 
+administrative errors in its rules.
+
+DATES: This final rule is effective October 13, 2026.
+
+FOR FURTHER INFORMATION CONTACT: Mateo Dunne, (202) 418-2615, 
+<a href="/cdn-cgi/l/email-protection#0d606c7968622369786363684d6b6e6e236a627b"><span class="__cf_email__" data-cfemail="6e030f1a0b01400a1b00000b2e080d0d40090118">[email&#160;protected]</span></a>, for the Office of Engineering and Technology.
+
+SUPPLEMENTARY INFORMATION: This is a summary of the Commission's Third 
+Report and Order, in ET Docket No. 21-232, FCC 26-50, adopted on July 
+22, 2026, and released on July 23, 2026. The full text of this 
+document, including the accompanying Third Further Notice of Proposed 
+Rulemaking, is available for public inspection and can be downloaded at 
+<a href="https://docs.fcc.gov/public/attachments/FCC-26-50A1.pdf">https://docs.fcc.gov/public/attachments/FCC-26-50A1.pdf</a>. Alternative 
+formats are available for people with disabilities (Braille, large 
+print, electronic files, audio format) by sending an email to 
+<a href="/cdn-cgi/l/email-protection#3f595c5c0a0f0b7f595c5c11585049"><span class="__cf_email__" data-cfemail="680e0b0b5d585c280e0b0b460f071e">[email&#160;protected]</span></a> or calling the Commission's Consumer and Governmental 
+Affairs Bureau at (202) 418-0530 (voice), (202) 418-0432 (TTY).
+    Regulatory Flexibility Act. The Regulatory Flexibility Act of 1980, 
+as amended (RFA), requires that an agency prepare a regulatory 
+flexibility analysis for notice and comment rulemakings, unless the 
+agency certifies that ``the rule will not, if promulgated, have a 
+significant economic impact on a substantial number of small 
+entities.'' Accordingly, the Commission has prepared a Final Regulatory 
+Flexibility Analysis (FRFA) concerning the possible impact of the rule 
+changes contained in the Third Report and Order on small entities. The 
+FRFA is set forth in Appendix C to the Third Report and Order.
+    Paperwork Reduction Act. This document contains new or modified 
+information collection requirements subject to the Paperwork Reduction 
+Act of 1995 (PRA), Public Law 104-13. The Commission, as part of its 
+continuing effort to reduce paperwork burdens, will invite the general 
+public and the Office of Management and Budget (OMB) to comment on any 
+information collection requirements contained in this document. In 
+addition, pursuant to the Small Business Paperwork Relief Act of 2002, 
+Public Law 107-198, see 44 U.S.C. 3506(c)(4), the Commission seeks 
+specific comment on how it might ``further reduce the information 
+collection burden for small business concerns with fewer than 25 
+employees.''
+    Congressional Review Act. The Commission has determined, and the 
+Administrator of the Office of Information and Regulatory Affairs, 
+Office of Management and Budget, concurs, that this rule is ``non-
+major'' under the Congressional Review Act, 5 U.S.C. 804(2). The 
+Commission will send a copy of the Third Report and Order to Congress 
+and the Government Accountability Office pursuant to 5 U.S.C. 
+801(a)(1)(A).
+
+Synopsis
+
+    In this document, the Commission continues its multi-year effort, 
+undertaken pursuant to the Secure and Trusted Communications Networks 
+Act of 2019 (Secure Networks Act) and the Secure Equipment Act of 2021, 
+to protect the communications supply chain from national security 
+threats. Building on the First Report and Order (87 FR 71739, Nov. 22, 
+2022) and the Second Report and Order (90 FR 53227, Nov. 25, 2025), and 
+on recent Covered List additions identifying uncrewed aircraft systems 
+(UAS), UAS critical components, and routers ``produced in a foreign 
+country,'' the Commission adopts targeted rule changes to close 
+remaining gaps in its equipment authorization, modification, and 
+marketing rules.
+
+A. Logic-Bearing Hardware Components
+
+    The Commission prohibits authorization of devices that incorporate 
+a logic-bearing hardware component produced by an entity identified on 
+the Covered List, where the device would itself be prohibited from 
+authorization under 47 CFR 2.903(a) had the Covered List entity 
+produced the device as a whole. The Commission finds that, from a 
+technical perspective, such components pose essentially the same 
+unacceptable risks to national security or the safety and security of 
+U.S. persons as covered equipment itself, because a compromised logic-
+bearing component can enable interception, disruption, sabotage, or 
+unauthorized access regardless of who assembles or brands the finished 
+device. This action extends the approach the Commission previously took 
+with respect to covered modular transmitters in the Second Report and 
+Order.
+
+[[Page 57799]]
+
+    The Commission defines ``logic-bearing hardware component'' as any 
+device, system, module, sub-assembly, integrated circuit, or other 
+physical component that generates and uses timing signals or pulses at 
+a rate in excess of 9,000 pulses (cycles) per second and uses digital 
+techniques, or that generates and uses radio frequency energy to 
+perform data processing functions such as computation, storage, or 
+transfer of data, drawing on the Commission's existing ``digital 
+device'' definition in Sec.  15.3(k) to provide a workable, bright-line 
+standard. The definition excludes purely mechanical or passive 
+components, such as housings, fasteners, resistors, wiring, and plain 
+battery cells. The Commission declines, at this time, to adopt broader 
+proposals that would prohibit all components (rather than only logic-
+bearing hardware components) produced by Covered List entities, or that 
+would extend the prohibition to components produced by any entity owned 
+or controlled by a foreign adversary regardless of Covered List status, 
+and keeps the record open on those questions. The Commission also 
+declines to extend the prohibition to software or firmware components 
+at this time.
+    The prohibition applies only to logic-bearing hardware components 
+produced by entities subject to producer/provider-based Covered List 
+determinations; it does not apply to production location-based Covered 
+List entries (e.g., UAS, UAS critical components, or routers produced 
+in a foreign country) unless the producing entity is independently 
+identified on the Covered List. The rule is effective 30 days after 
+publication in the Federal Register and applies prospectively to new 
+equipment authorization applications; it does not affect previously 
+authorized equipment. Applications pending as of the effective date are 
+exempt from the new prohibition unless later amended to add, 
+substitute, or change a logic-bearing hardware component.
+
+B. Marketing
+
+    The Commission clarifies and strengthens its marketing rules under 
+47 CFR 2.803. First, the Commission amends Sec.  2.803(a) to clarify 
+that the term ``distribution for the purpose of selling'' includes the 
+listing of regulated equipment on an online marketplace in combination 
+with activities such as consignment, warehousing, inventory management, 
+order processing, labeling, packaging, billing, or fulfillment 
+services--even where the equipment is sold by a third-party seller. The 
+Commission finds this interpretation consistent with the plain text and 
+legislative history of section 302 of the Communications Act, which 
+reaches sale, offer for sale, and shipment of noncompliant devices, and 
+confirms that carriers that merely transport devices without trading in 
+them remain outside the scope of the marketing rules under section 
+302(c).
+    Second, the Commission confirms that online marketplaces that 
+market unauthorized devices are subject to enforcement of the marketing 
+rules on the same basis as any other person, without a willfulness or 
+knowledge element, consistent with section 302(b) of the Communications 
+Act.
+    Third, the Commission amends Sec.  2.803(c) to require online 
+marketplaces to display a certified device's FCC ID at the online point 
+of sale. Online marketplaces that sell their own devices, or that have 
+physical access to or take title to a third-party seller's device, must 
+display a valid and accurate FCC ID. Online marketplaces that market 
+third-party listings without physical access to or title over the 
+device need only verify that the FCC ID supplied is validly issued and 
+require the seller to certify its accuracy. The requirement excludes: 
+listings published before the rule's effective date that are not later 
+amended or updated; listings by sellers that are not ``high-volume 
+third-party sellers'' as defined in the INFORM Consumers Act; and 
+listings for used devices. The Commission adopts differentiated 
+compliance dates (March 1, 2027 for online marketplaces with physical 
+access to or title over the device, and June 1, 2027 for marketplaces 
+relying on third-party seller certifications) in recognition of the 
+differing implementation burdens. The Commission declines, at this 
+time, to require display of FCC IDs on external product packaging, but 
+keeps the record open on that question.
+
+C. Clarifications Regarding Modifications to Previously Authorized 
+Equipment
+
+    The Commission clarifies that the prohibition on permissive changes 
+and modifications set forth in Sec. Sec.  2.932 and 2.1043 applies both 
+to equipment that is already prohibited from authorization under Sec.  
+2.903 and to equipment that would become prohibited as a result of the 
+proposed modification, consistent with the Commission's stated intent 
+in the First and Second Reports and Orders and with the Secure 
+Equipment Act's bar on approving covered equipment. The prohibition 
+applies to changes such as a shift in production to a Covered List 
+entity or a change that would cause a device to lose ``domestic end 
+product'' status. The Commission confirms it is not imposing new 
+component-lineage investigation obligations beyond those already 
+required for compliance, and that the ``produced by'' standard 
+continues to be evaluated under a totality-of-the-circumstances test 
+that looks to substantial responsibility for or control over a device's 
+design, development, manufacture, or assembly.
+
+D. Re-Certification Required of Covered List Entities for Any Change to 
+Equipment
+
+    The Commission requires that any entity identified on the Covered 
+List seeking a permissive change to equipment, whether or not the 
+equipment is itself covered, must submit an application for 
+recertification rather than relying on the more limited permissive-
+change process. The Commission confirms that no Covered List entity may 
+use the Supplier's Declaration of Conformity (SDoC) process for any 
+modification. This requirement applies only where the applicant for the 
+modification is itself a Covered List entity; it does not apply to a 
+non-Covered List manufacturer's modification of equipment originally 
+produced by a Covered List entity where the modification does not 
+itself render the device ``produced by'' that entity. The requirement 
+does not apply to production location-based Covered List entries. 
+Limited waivers previously granted by the Office of Engineering and 
+Technology permitting Class I and Class II permissive changes for 
+Covered List UAS equipment and covered routers, through January 1, 
+2029, remain in effect according to their terms.
+
+E. Definition of ``Critical Infrastructure''
+
+    Responding to the partial remand issued by the U.S. Court of 
+Appeals for the District of Columbia Circuit, the Commission adopts a 
+revised definition of ``critical infrastructure'' for purposes of 
+implementing section 889(f)(3) of the 2019 National Defense 
+Authorization Act, as incorporated into the Covered List. The 
+Commission retains the definition set forth in section 1016(e) of the 
+USA PATRIOT Act of 2001: systems and assets ``so vital to the United 
+States that the incapacity or destruction of such systems would have a 
+debilitating impact on security, national economic security, national 
+public health or safety, or any combination of those matters,'' relying 
+on the 16 critical infrastructure sectors identified by the Department 
+of Homeland Security (DHS) and the 55 National Critical Functions 
+(NCFs) published by DHS's National Risk Management Center.
+
+[[Page 57800]]
+
+However, the Commission eliminates the prior ``connected to'' language 
+that the D.C. Circuit found ``unjustifiably broad.'' The revised 
+definition instead encompasses systems and assets used in the provision 
+of services or functions in the 16 critical infrastructure sectors when 
+used to provide any of the 55 NCFs. The Commission finds this revision 
+responsive to the court's remand while remaining consistent with 
+existing Executive Branch critical-infrastructure policy.
+
+F. Rule Correction and Clarification
+
+    The Commission corrects a scrivener's error in Sec.  2.903, 
+restoring cross-references within redesignated paragraphs (d)(1) 
+through (d)(3) that had inadvertently continued to refer to former 
+paragraph (b). The Commission also corrects administrative errors in 
+Sec.  2.1204(a): adding the omitted word ``and'' between ``technical'' 
+and ``administrative'' in paragraph (a)(2), and removing paragraph 
+(a)(4)(iv) as duplicative of paragraph (a)(4)(iii).
+
+G. Benefits and Costs
+
+    The Commission finds that the benefits of the rules adopted in the 
+Third Report and Order substantially outweigh their costs. The 
+Commission estimates one-time implementation costs of no more than $300 
+million, largely attributable to online marketplace platforms updating 
+listing systems to support FCC ID display, and recurring annual costs 
+under $40 million, largely attributable to sellers identifying and 
+including FCC IDs in covered listings. These estimates account for the 
+exemptions adopted for low-volume sellers, used devices, and certain 
+pre-existing listings. Because the logic-bearing hardware component 
+prohibition applies only prospectively and affects a comparatively 
+narrow subset of manufacturers, and because the marketing and 
+modification clarifications largely codify existing interpretations, 
+the Commission does not expect these measures to impose significant 
+additional compliance burdens. Against these costs, the Commission 
+finds that closing the identified component, marketing, and 
+modification loopholes will generate substantial, if difficult to 
+quantify, benefits by reducing the risk of espionage, network 
+disruption, and unauthorized access to U.S. communications 
+infrastructure, benefits the Commission estimates could exceed $1 
+billion annually given the scale of the U.S. communications economy. 
+The Commission considered and rejected two alternatives: taking no 
+action, which would leave existing vulnerabilities unaddressed, and 
+adopting a categorical ban on all components (not only logic-bearing 
+hardware components) produced by Covered List entities, which the 
+record shows would impose disproportionate redesign, retesting, and 
+supply-chain costs without a commensurate increase in national security 
+benefit.
+
+List of Subjects in 47 CFR Parts 1 and 2
+
+    Administrative practice and procedure, Communications equipment, 
+Reporting and recordkeeping requirements, Telecommunications.
+
+Federal Communications Commission.
+Marlene Dortch,
+Secretary, Office of the Secretary.
+
+Final Rules
+
+    For the reasons discussed in the preamble, the Federal 
+Communications Commission amends 47 CFR parts 1 and 2 as follows:
+
+PART 1--PRACTICE AND PROCEDURE
+
+0
+1. The authority citation for part 1 continues to read as follows:
+
+    Authority: 47 U.S.C. chs. 2, 5, 9, 13; 28 U.S.C. 2461 note; 47 
+U.S.C. 1754, unless otherwise noted.
+
+
+0
+2. Amend Sec.  1.50001 by:
+0
+a. Redesignating paragraphs (g), (h), and (i) as paragraphs (h), (i), 
+and (j), respectively;
+0
+b. Redesignating paragraph (e) as paragraph (g);
+0
+c. Redesignating paragraph (f) as paragraph (e); and
+0
+d. Adding new paragraph (f).
+    The revisions read as follows:
+
+
+Sec.  1.50001  Definitions.
+
+* * * * *
+    (f) Critical Infrastructure. For purposes of implementing section 
+889(f)(3) of the John S. McCain National Defense Authorization Act for 
+Fiscal Year 2019 (Pub. L. 115-232; 132 Stat. 1918), the term ``critical 
+infrastructure'' has the meaning given in 42 U.S.C. 5195c(e). This 
+definition encompasses systems and assets used in the provision of 
+services or functions in the 16 critical infrastructure sectors, as 
+identified in National Security Memorandum 22 and further clarified by 
+the Department of Homeland Security, to provide any of the 55 National 
+Critical Functions published by the Department of Homeland Security 
+through the National Risk Management Center.
+* * * * *
+
+PART 2--FREQUENCY ALLOCATIONS AND RADIO TREATY MATTERS; GENERAL 
+RULES AND REGULATIONS
+
+0
+3. The authority citation for part 2 continues to read as follows:
+
+    Authority:  47 U.S.C. 154, 302a, 303, and 336 unless otherwise 
+noted.
+
+
+0
+4. Amend Sec.  2.803 by:
+0
+a. Adding paragraph (a)(1);
+0
+b. Adding and reserving paragraph (a)(2);
+0
+c. Redesignating paragraphs (c) and (d) as paragraphs (d) and (e); and
+0
+d. Adding new paragraph (c).
+    The additions read as follows:
+
+
+Sec.  2.803  Marketing of radio frequency devices prior to equipment 
+authorization.
+
+    (a) * * *
+    (1) Marketing includes the listing of regulated equipment on an 
+online marketplace, in combination with any of the following 
+activities: consignment, warehousing, inventory management, order 
+processing, labelling, packaging, billing, or fulfilment services--even 
+if that equipment is sold or offered for sale by a third-party seller.
+    (2) [Reserved]
+* * * * *
+    (c) FCC IDs must be displayed in online marketplaces as follows:
+    (1) An online marketplace that markets a radiofrequency device 
+subject to certification, or that offers for sale a radiofrequency 
+device subject to certification on behalf of a third-party seller and 
+has physical access to or takes title to that device, must display a 
+valid and accurate FCC ID, as set forth in Sec.  2.925, for the device 
+at the online point of sale.
+
+    Note 1 to paragraph (c)(1): Compliance with this paragraph is 
+not required until March 1, 2027.
+
+    (2) An online marketplace that markets a radiofrequency device 
+subject to certification on behalf of a third-party seller, but does 
+not have physical access to or take title to that device, must display 
+a valid FCC ID, as set forth in Sec.  2.925, at the point of sale. An 
+online marketplace is not liable under this paragraph for the 
+inaccuracy of an FCC ID or related equipment authorization information 
+supplied by a third-party seller, provided the marketplace has
+    (i) Taken reasonable steps to verify that the FCC ID supplied 
+corresponds to a validly issued FCC ID in the Commission's Equipment 
+Authorization System database, and
+    (ii) Required the third-party seller to certify the accuracy of the 
+information supplied.
+
+    Note 2 to paragraph (c)(2): Compliance with this paragraph is 
+not required until June 1, 2027.
+
+
+[[Page 57801]]
+
+
+    (3) Paragraphs (c)(1) and (2) of this section shall not apply to:
+    (i) A listing for a radiofrequency device published before the 
+effective date of this rule, unless and until that listing is amended, 
+updated, or republished on or after the effective date of this rule. 
+For purposes of this paragraph, an amendment or update includes a 
+change to a listing's product description, product images, product 
+specifications, or seller information, but does not include a non-
+substantive or automated change such as a change to search ranking, 
+page layout, translation, pricing, or currency display.
+    (ii) A listing for a radiofrequency device made by a third-party 
+seller that is not a ``high-volume third-party seller,'' as defined in 
+15 U.S.C. 45f(f)(6).
+    (iii) A listing for a used radiofrequency device. For purposes of 
+this section a ``used radio frequency device'' refers to ``any device 
+that was previously sold to a retail customer and is marketed as a 
+`used' or otherwise not `new' device.''
+* * * * *
+
+0
+5. Amend Sec.  2.902 by adding the definitions for ``Logic-bearing 
+hardware component'' and ``Online marketplace'' in alphabetical order, 
+to read as follows:
+
+
+Sec.  2.902  Terms and definitions.
+
+    Logic-bearing hardware component. Any device, system, module, sub-
+assembly, integrated circuit, or other physical component that 
+generates and uses timing signals or pulses at a rate in excess of 
+9,000 pulses (cycles) per second and uses digital techniques; inclusive 
+of telephone equipment that uses digital techniques or any device, 
+system, module, sub-assembly, integrated circuit, or other physical 
+component that generates and uses radio frequency energy for the 
+purpose of performing data processing functions, such as electronic 
+computations, operations, transformations, recording, filing, sorting, 
+storage, retrieval, or transfer.
+    Online marketplace. An ``online marketplace'' as that term is 
+defined in 15 U.S.C. 45f(f)(4).
+* * * * *
+
+0
+6. Amend Sec.  2.903 by revising the section heading and revising 
+paragraphs (b) and (d) to read as follows:
+
+
+Sec.  2.903  Prohibition on authorization of equipment on the Covered 
+List and related equipment.
+
+* * * * *
+    (b) All devices that incorporate one or more of the following 
+components are prohibited from obtaining an equipment authorization 
+under this subpart:
+    (1) Equipment meeting the descriptions in paragraph (a)(1) or (2) 
+of this section; and
+    (2) A logic-bearing hardware component produced by an entity 
+identified on the Covered List pursuant to Sec.  1.50002 of this 
+chapter if--had such entity produced the device itself, rather than 
+just a component--the device would be prohibited from receiving 
+authorization under paragraph (a) of this section.
+* * * * *
+    (d) Each entity named on the Covered List as producing covered 
+communications equipment, as established pursuant to Sec.  1.50002 of 
+this chapter, must provide to the Commission the following information: 
+the full name, mailing address or physical address (if different from 
+mailing address), email address, and telephone number of each of that 
+named entity's associated entities (e.g., subsidiaries or affiliates) 
+identified on the Covered List as producing covered communications 
+equipment.
+    (1) Each entity named on the Covered List as producing covered 
+communications equipment must provide the information described in this 
+section no later than March 8, 2023;
+    (2) Each entity named on the Covered List as producing covered 
+communications equipment must provide the information described in this 
+section no later than 30 days after the effective date of each updated 
+Covered List; and
+    (3) Each entity named on the Covered List as producing covered 
+communications equipment must notify the Commission of any changes to 
+the information described in this section no later than 30 days after 
+such change occurs.
+
+0
+7. Amend Sec.  2.932 by adding a sentence to the end of paragraph (a) 
+and adding paragraph (f) to read as follows:
+
+
+Sec.  2.932  Modification of equipment.
+
+    (a) * * * The exceptions set forth in this section do not apply to 
+changes made by Covered List entities or changes that would result in 
+the modified device being considered covered communications equipment.
+* * * * *
+    (f) Notwithstanding other provisions of this section, use of the 
+permissive change procedures to modify equipment that is produced by 
+any entity identified on the Covered List, established pursuant to 
+Sec.  1.50002 of this chapter, is prohibited. Any modification to such 
+equipment must be authorized under the equipment certification 
+provisions under subpart J of this part.
+
+0
+8. Amend Sec.  2.1043 by revising paragraph (a) to read as follows:
+
+
+Sec.  2.1043  Changes in certificated equipment.
+
+    (a) Any changes made by Covered List entities or changes that would 
+result in the modified device being considered Covered Equipment shall 
+not be performed without application for and authorization of a new 
+grant of certification. In all other instances, except as provided in 
+paragraph (b)(3) of this section, changes to the basic frequency 
+determining and stabilizing circuitry (including clock or data rates), 
+frequency multiplication stages, basic modulator circuit or maximum 
+power or field strength ratings shall not be performed without 
+application for and authorization of a new grant of certification. 
+Variations in electrical or mechanical construction, other than these 
+indicated items, are permitted provided the variations either do not 
+affect the characteristics required to be reported to the Commission or 
+the variations are made in compliance with the other provisions of this 
+section. Changes to the software installed in a transmitter that do not 
+affect the radio frequency emissions do not require any additional 
+filings and may be made by parties other than the holder of the grant 
+of certification.
+* * * * *
+
+0
+9. Amend Sec.  2.1204 by:
+0
+a. Revising paragraph (a)(2) and
+0
+b. Removing paragraph (a)(4)(iv)
+    The revision reads as follows:
+
+
+Sec.  2.1204  Import conditions.
+
+* * * * *
+    (a) * * *
+    (2) The radio frequency device is not required to have an equipment 
+authorization and the device complies with FCC technical and 
+administrative regulations.
+* * * * *
+[FR Doc. 2026-18535 Filed 9-10-26; 8:45 am]
+BILLING CODE 6712-01-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

@@ -1,0 +1,180 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 179 (Thursday, September 17, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 179 (Thursday, September 17, 2026)]
+[Notices]
+[Pages 58907-58909]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-19079]
+
+
+-----------------------------------------------------------------------
+
+DEPARTMENT OF HEALTH AND HUMAN SERVICES
+
+Substance Abuse and Mental Health Services Administration
+
+
+Agency Information Collection Activities: Proposed Collection; 
+Comment Request
+
+    In compliance with section 3506(c)(2)(A) of the Paperwork Reduction 
+Act of 1995 concerning opportunity for public comment on proposed 
+collections of information, the Substance Abuse and Mental Health 
+Services Administration (SAMHSA) will publish periodic summaries of 
+proposed projects. To request more information on the proposed projects 
+or to obtain a copy of the information collection plans, call the 
+SAMHSA Reports Clearance Officer at: <a href="/cdn-cgi/l/email-protection#4635272b2e35273634270635272b2e3527682e2e3568212930"><span class="__cf_email__" data-cfemail="2251434f4a51435250436251434f4a51430c4a4a510c454d54">[email&#160;protected]</span></a>.
+    Comments are invited on: (a) Whether the proposed collections of 
+information are necessary for the proper performance of the functions 
+of the agency, including whether the information shall have practical 
+utility; (b) the accuracy of the agency's estimate of the burden of the 
+proposed collection of information; (c) ways to enhance the quality, 
+utility, and clarity of the information to be collected; and (d) ways 
+to minimize the burden of the collection of information on respondents, 
+including through the use of automated collection techniques or other 
+forms of information technology.
+
+Proposed Project: National Survey on Drug Use and Health (OMB No. 0930-
+0110)
+
+    The National Survey on Drug Use and Health (NDUH) is a survey of 
+the U.S. civilian, non-institutionalized population aged 12 years old 
+or older within the 50 states and the District of Columbia. Consistent 
+with NSDUH designs since 1991, the 2027 NSDUH will include residents of 
+noninstitutional group quarters (e.g., shelters, rooming houses, 
+dormitories) and civilians residing on military bases. Excluded from 
+the NSDUH are people without fixed household address (e.g., homeless 
+people not in shelters) and residents of institutional group quarters, 
+such as jails and hospitals.
+    The 2027 sampling frame will exclude U.S. territories. Although 
+data collection pilots were conducted to assess operational feasibility 
+in Puerto Rico (2023-2025) and in the U.S. Virgin Islands (2024), 
+SAMHSA determined that additional testing and discussions with other 
+statistical agencies are needed before expanding full-scale
+
+[[Page 58908]]
+
+NSDUH data collection to Puerto Rico and the U.S. Virgin Islands.
+    The 2027 NSDUH will continue to use both in-person and web-based 
+modes of data collection. Consistent with all NSDUH surveys conducted 
+since 2002, each respondent who completes the full interview will be 
+given a $30 incentive. The delivery method will depend on the interview 
+mode: in-person respondents will receive a $30 cash incentive, while 
+web-based respondents will receive either an electronic gift card by 
+email or a physical gift card by mail, based on their preference.
+    NSDUH provides nationally representative data on the use of 
+tobacco, alcohol, and drugs; substance use disorders; mental health 
+issues; recovery from substance use disorders and mental health issues; 
+and receipt of substance use and mental health treatment at the 
+national, state, and substate levels. NSDUH data also help to identify 
+the extent of substance use and mental illness among different 
+population subgroups, estimate trends over time, and determine the need 
+for treatment services. Substance use topics covered include lifetime, 
+past-year, and past-month use; age at first use; substance use 
+treatment history; perceived need for treatment; and substance use 
+disorders. Mental health topics include major depressive episodes; 
+suicidal ideation and attempts; general mental illness; and use of 
+mental health care. NSDUH estimates allow researchers, clinicians, 
+policymakers, and the general public to better understand and improve 
+the nation's behavioral health.
+    The NSDUH questionnaire must be updated periodically to reflect 
+changing substance use and mental health issues and to continue 
+producing current data. For the 2027 NSDUH, planned changes from the 
+2026 questionnaire include: (1) revisions and additions to the Special 
+Drugs module to prevent inconsistent reporting of last use of specific 
+drugs with earlier modules; (2) revisions to the Risk/Availability 
+module to ask about using marijuana rather than smoking marijuana; (3) 
+addition to the Mental Health Services Utilization module to capture 
+past 12-month use of a Crisis Line service; (4) reinstatement of a 
+question in the Youth Experiences module about perceived attitudes of 
+close friends; (5) revisions to the Consumption of Alcohol module to 
+ask about polysubstance use in the past 30 days rather than the last 
+time the respondent used drugs; (6) additions to the Emerging Issues 
+module to measure past 12-month use of glucagon-like peptide-1 
+medications (GLP-1s), selective serotonin reuptake inhibitors (SSRIs), 
+serotonin and norepinephrine reuptake inhibitors (SNRIs), mood 
+stabilizers, and antipsychotic medications; (7) reinstatement of 
+questions in the Employment module about workplace testing for drug and 
+alcohol use; and (8) revisions to the Health Insurance and Income 
+modules to include updated state program names for Medicaid, the 
+Children's Health Insurance Program, and Temporary Assistance for Needy 
+Families.
+    Overall, these changes are expected to generate data on new areas 
+of interest, such as mental health medications and Crisis Line service 
+utilization. They will also reinstate questions previously used by 
+other federal agencies in their reporting and revise additional items 
+to prevent misreporting.
+    The revisions to the Special Drugs module will allow the 2027 NSDUH 
+to collect more consistent information across the survey and lower 
+interview completion time by avoiding redundant questions for some 
+respondents. Several questions in the Risk/Availability module were 
+revised to ask about ``using'' marijuana rather than ``smoking'' 
+marijuana. This wording change is intended to measure other ways of 
+using marijuana that are common with youth, such as vaping or edibles. 
+In the Mental Health Services Utilization module, the addition of a 
+question capturing past 12-month use of a Crisis Line service is to 
+provide new data on emerging topics. Reinstating items in the Youth 
+Experience and Employment module will collect data needed by several 
+government agencies for their ongoing reporting while revising 
+polysubstance use questions in the Consumption of Alcohol module to a 
+standardized past 30-day reference period will bring this data more in 
+line with other NSDUH drug use questions. The new questions measuring 
+use of mental health medications, GLP-1s, and Crisis Line services were 
+added because the NSDUH did not previously include these items and they 
+are of growing interest to data users. Questions about workplace 
+testing for drug and alcohol use were also reinstated in the Employment 
+module to collect data needed by several government agencies for their 
+ongoing reporting. Finally, annual updates of state Medicaid, 
+Children's Health Insurance Program, and Temporary Assistance to Needy 
+Families program names were made to ensure question accuracy.
+    As with all NSDUH/NHSDA \1\ surveys conducted since 1999, the 
+sample size of the NSDUH for 2027 will be sufficient to permit 
+prevalence estimates for each of the 50 states and the District of 
+Columbia. The total annual burden estimate for the NSDUH is shown below 
+in Table 1. The primary set of new items is included in the Emerging 
+Issues Module, which appears near the end of the interview. By this 
+point, respondents are familiar with the survey format and 
+questionnaire structure. The additional questions will take about one 
+minute for an average respondent to complete, as they are short, 
+contained within a module, and use straightforward survey logic. 
+Overall, while new questions are being added, it is not expected that 
+the addition will result in any significant increase in participant 
+burden, as the survey branches efficiently to keep it short for most 
+respondents.
+---------------------------------------------------------------------------
+
+    \1\ Prior to 2002, the NSDUH was referred to as the National 
+Household Survey on Drug Abuse (NHSDA).
+
+                               Table 1--Annualized Estimated Burden for 2027 NSDUH
+----------------------------------------------------------------------------------------------------------------
+                                     Number of     Responses per   Total number      Hours per     Total burden
+           Instrument               respondents     respondent     of responses      response          hours
+----------------------------------------------------------------------------------------------------------------
+Household Screening.............         297,529               1         297,529           0.083          24,695
+Interview.......................          67,507               1          67,507           1.008          68,047
+Screening Verification..........           6,248               1           6,248           0.067             419
+Interview Verification..........           7,088               1           7,088           0.067             475
+                                 -------------------------------------------------------------------------------
+    Total.......................         378,372  ..............         378,372  ..............          93,636
+----------------------------------------------------------------------------------------------------------------
+
+
+[[Page 58909]]
+
+    Send comments to SAMHSA Reports Clearance Officer, 5600 Fisher 
+Lane, Room 15E57A, Rockville, MD 20852 OR email him a copy at 
+<a href="/cdn-cgi/l/email-protection#0e7d6f63667d6f7e7c6f4e7d6f63667d6f2066667d20696178"><span class="__cf_email__" data-cfemail="483b2925203b29383a29083b2925203b296620203b662f273e">[email&#160;protected]</span></a>. Written comments should be received by 
+November 16, 2026.
+
+Alicia Broadus,
+Public Health Advisor.
+[FR Doc. 2026-19079 Filed 9-16-26; 8:45 am]
+BILLING CODE 4162-20-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

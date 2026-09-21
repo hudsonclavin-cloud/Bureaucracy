@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-09-21T17:14:13Z",
+ "url": "https://www.federalregister.gov/documents/full_text/text/2026/09/21/2026-19217.txt",
+ "status": 200,
+ "final_url": "https://www.federalregister.gov/documents/full_text/text/2026/09/21/2026-19217.txt",
+ "content_type": "text/plain",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /documents/full_text/text/2026/09/21/2026-19217.txt",
+ "bytes": 11314,
+ "sha256": "fe389270bbadabf79f4af3973c80a6228bba2b034211c1a4ac0f4d3fb7a0500d",
+ "error": null
+}

@@ -1,0 +1,127 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 160 (Thursday, August 20, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 160 (Thursday, August 20, 2026)]
+[Notices]
+[Pages 53933-53934]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-17035]
+
+
+-----------------------------------------------------------------------
+
+DEPARTMENT OF TRANSPORTATION
+
+Federal Transit Administration
+
+[FTA Docket No. FTA 2026-0265]
+
+
+Agency Information Collection Activity Under OMB Review: National 
+Transit Database (NTD)
+
+AGENCY: Federal Transit Administration, Department of Transportation 
+(DOT).
+
+ACTION: Notice of request for comments.
+
+-----------------------------------------------------------------------
+
+SUMMARY: In compliance with the Paperwork Reduction Act of 1995, this 
+notice announces that the Information Collection Requirements (ICRs) 
+abstracted below have been forwarded to the Office of Management and 
+Budget (OMB) for review and comment. The ICR describe the nature of the 
+information collection and their expected burdens.
+
+DATES: Comments must be submitted on or before September 21, 2026.
+
+ADDRESSES: Written comments and recommendations for the proposed 
+information collection should be sent within 30 days of publication of 
+this notice to <a href="https://www.reginfo.gov/public/do/PRAMain">https://www.reginfo.gov/public/do/PRAMain</a>. Find this 
+particular information collection by selecting ``Currently under 
+Review--Open for Public Comments'' or by using the search function.
+    Comments are Invited On: Whether the proposed collection of 
+information is necessary for the proper performance of the functions of 
+the Department, including whether the information will have practical 
+utility; the accuracy of the Department's estimate of the burden of the 
+proposed information collection; ways to enhance the quality, utility, 
+and clarity of the information to be collected; and ways to minimize 
+the burden of the collection of information on respondents, including 
+the use of automated collection techniques or other forms of 
+information technology. A comment to OMB is best assured of having its 
+full effect if OMB receives it within 30 days of publication of this 
+notice in the Federal Register.
+
+FOR FURTHER INFORMATION CONTACT: Tia Swain, Office of Administration, 
+Management Planning Division, 1200 New Jersey Avenue SE, Mail Stop FTA 
+TAD-10, Washington, DC 20590, (202) 366-0354 or <a href="/cdn-cgi/l/email-protection#691d0008471a1e080007290d061d470e061f"><span class="__cf_email__" data-cfemail="35415c541b4642545c5b75515a411b525a43">[email&#160;protected]</span></a>.
+
+[[Page 53934]]
+
+
+SUPPLEMENTARY INFORMATION: The Paperwork Reduction Act of 1995 (PRA), 
+Public Law 104-13, Section 2, 109 Stat. 163 (1995) (codified as revised 
+at 44 U.S.C. 3501-3520), and its implementing regulations, 5 CFR part 
+1320, require Federal agencies to issue two notices seeking public 
+comment on information collection activities before OMB may approve 
+paperwork packages. 44 U.S.C. 3506, 3507; 5 CFR 1320.5, 1320.8(d)(1), 
+1320.12. On March 26, 2026 FTA published a 60-day notice (91 FR 14751) 
+in the Federal Register soliciting comments on the ICR that the agency 
+was seeking OMB approval. FTA received ten comments after issuing this 
+60-day notice. The comments were in regard to information collection 
+duration, funding match requirements, and reporting definitions. The 
+FTA has carefully considered all feedback but has determined that no 
+changes to the information collection are warranted at this time. 
+Accordingly, DOT announces that these information collection activities 
+have been re-evaluated and certified under 5 CFR 1320.5(a) and 
+forwarded to OMB for review and approval pursuant to 5 CFR 1320.12(c).
+    Before OMB decides whether to approve these proposed collections of 
+information, it must provide 30 days for public comment. 44 U.S.C. 
+3507(b); 5 CFR 1320.12(d). Federal law requires OMB to approve or 
+disapprove paperwork packages between 30 and 60 days after the 30-day 
+notice is published. 44 U.S.C. 3507(b)-(c); 5 CFR 1320.12(d); see also 
+60 FR 44978, 44983. OMB believes that the 30-day notice informs the 
+regulated community to file relevant comments and affords the agency 
+adequate time to digest public comments before it renders a decision. 
+60 FR 44983. Therefore, respondents should submit their respective 
+comments to OMB within 30 days of publication to best ensure having 
+their full effect. 5 CFR 1320.12(c); see also 60 FR 44983.
+    The summaries below describe the nature of the information 
+collection requirements (ICRs) and the expected burden. The 
+requirements are being submitted for clearance by OMB as required by 
+the PRA.
+    Title: National Transit Database (NTD).
+    OMB Control Number: 2132-0008.
+    In accordance with the Paperwork Reduction Act (PRA) of 1995, the 
+Federal Transit Administration (FTA) is requesting Office of Management 
+and Budget (OMB) 3-year approval of an extension without change for a 
+currently approved collection. 49 U.S.C. 5335 requires the Secretary of 
+Transportation to maintain a reporting system, using a uniform system 
+of accounts, to collect financial, operating, geographic service area 
+coverage, and asset condition information from the nation's public 
+transportation systems. Congress created NTD to be the repository of 
+transit data for the nation to support public transportation service 
+planning and FTA established NTD to meet these requirements. FTA 
+continues to seek ways to reduce the burden of NTD reporting. The 
+existing information collection request (ICR) is set to expire on 
+August 31, 2026, this ICR covers the information collection activities 
+associated with proposed changes finalized in July 2025, to include the 
+consolidation of station and facility reporting, security reporting 
+clarification, trip planning and geospatial data, and ensuring a state 
+of good repair. There is no added burden from these changes.
+    Respondents: State or local governmental entities that operate a 
+public transportation service.
+    Estimated Annual Number of Respondents: 2,481 respondents.
+    Estimated Total Annual Burden: 456,179 hours.
+    Frequency: Annual.
+
+Kusum Dhyani,
+Director, Office of Management Planning.
+[FR Doc. 2026-17035 Filed 8-19-26; 8:45 am]
+BILLING CODE 4910-57-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

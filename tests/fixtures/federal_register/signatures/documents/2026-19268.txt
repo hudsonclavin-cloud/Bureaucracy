@@ -1,0 +1,191 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 181 (Monday, September 21, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 181 (Monday, September 21, 2026)]
+[Notices]
+[Pages 59804-59805]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-19268]
+
+
+-----------------------------------------------------------------------
+
+DEPARTMENT OF LABOR
+
+Occupational Safety and Health Administration
+
+[Docket No. OSHA-2007-0043]
+
+
+TUV SUD America, Inc.: Application for Expansion of Recognition
+
+AGENCY: Occupational Safety and Health Administration (OSHA), Labor.
+
+ACTION: Notice.
+
+-----------------------------------------------------------------------
+
+SUMMARY: In this notice, OSHA announces the application of TUV SUD 
+America, Inc. (TUVAM), for expansion of the scope of recognition as a 
+Nationally Recognized Testing Laboratory (NRTL) and presents the 
+agency's preliminary finding to grant the application. TUVAM requests 
+the addition of two test standards to the NRTL scope of recognition.
+
+DATES: Submit comments, information, and documents in response to this 
+notice, or requests for an extension of time to make a submission, on 
+or before October 6, 2026.
+
+ADDRESSES: Comments may be submitted as follows:
+    Electronically: You may submit comments, including attachments, 
+electronically at <a href="http://www.regulations.gov">http://www.regulations.gov</a>, the Federal eRulemaking 
+Portal. Follow the online instructions for submitting comments.
+    Instructions: All submissions must include the agency's name and 
+the docket number for this rulemaking (Docket No. OSHA-2007-0043). All 
+comments, including any personal information you provide, are placed in 
+the public docket without change and may be made available online at 
+<a href="https://www.regulations.gov">https://www.regulations.gov</a>. Therefore, OSHA cautions commenters about 
+submitting information they do not want made available to the public, 
+or submitting materials that contain personal information (either about 
+themselves or others), such as Social Security numbers and birthdates.
+    Docket: To read or download comments or other material in the 
+docket, go to <a href="http://www.regulations.gov">http://www.regulations.gov</a>. Documents in the docket 
+(including this Federal Register notice) are listed in the <a href="http://www.regulations.gov">http://www.regulations.gov</a> index; however, some information (e.g., copyrighted
+
+[[Page 59805]]
+
+material) is not publicly available to read or download through the 
+website. All submissions, including copyrighted material, are available 
+for inspection through the OSHA Docket Office. Contact the OSHA Docket 
+Office at (202) 693-2350 (TTY (877) 889-5627) for assistance in 
+locating docket submissions.
+    Extension of comment period: Submit requests for an extension of 
+the comment period on or before October 6, 2026 to the Office of 
+Technical Programs and Coordination Activities, Directorate of 
+Technical Support and Emergency Management, Occupational Safety and 
+Health Administration, U.S. Department of Labor, 200 Constitution 
+Avenue NW, Room N-3653, Washington, DC 20210, or by fax to (202) 693-
+1644.
+
+FOR FURTHER INFORMATION CONTACT: Information regarding this notice is 
+available from the following sources:
+    Press inquiries: Contact Mr. Frank Meilinger, Director, OSHA Office 
+of Communications, U.S. Department of Labor by phone: (202) 693-1000 
+ext. 18477 or email: <a href="/cdn-cgi/l/email-protection#7f121a16131611181a0d51190d1e111c160c4d3f1b101351181009"><span class="__cf_email__" data-cfemail="137e767a7f7a7d7476613d7561727d707a602153777c7f3d747c65">[email&#160;protected]</span></a>.
+    General and technical information: Contact Mr. Kevin Robinson, 
+Director, Office of Technical Programs and Coordination Activities, 
+Directorate of Technical Support and Emergency Management, Occupational 
+Safety and Health Administration, U.S. Department of Labor by phone: 
+(202) 693-1000 ext. 11538 or email: <a href="/cdn-cgi/l/email-protection#176578757e79647879397c72617e795773787b39707861"><span class="__cf_email__" data-cfemail="2d5f424f44435e42430346485b44436d494241034a425b">[email&#160;protected]</span></a>.
+
+SUPPLEMENTARY INFORMATION:
+
+I. Notice of the Application for Expansion
+
+    OSHA is providing notice that TUV SUD America, Inc. (TUVAM) is 
+applying for expansion of the current recognition as a NRTL. TUVAM 
+requests the addition of two test standards to the NRTL scope of 
+recognition.
+    OSHA recognition of a NRTL signifies that the organization meets 
+the requirements specified in 29 CFR 1910.7. Recognition is an 
+acknowledgment that the organization can perform independent safety 
+testing and certification of the specific products covered within its 
+scope of recognition. Each NRTL's scope of recognition includes (1) the 
+type of products the NRTL may test, with each type specified by its 
+applicable test standard; and (2) the recognized site(s) that has/have 
+the technical capability to perform the product-testing and product-
+certification activities for test standards within the NRTL's scope. 
+Recognition is not a delegation or grant of government authority; 
+however, recognition enables employers to use products approved by the 
+NRTL to meet OSHA standards that require product testing and 
+certification.
+    The agency processes an application by a NRTL for initial 
+recognition and for an expansion or renewal of this recognition, 
+following requirements in Appendix A, 29 CFR 1910.7. This appendix 
+requires that the agency publish two notices in the Federal Register in 
+processing an application. In the first notice, OSHA announces the 
+application and provides its preliminary finding. In the second notice, 
+the agency provides the final decision on the application. These 
+notices set forth the NRTL's scope of recognition or modifications of 
+that scope. OSHA maintains an informational web page for each NRTL, 
+including TUVAM, which details the NRTL's scope of recognition. These 
+pages are available from the OSHA website at: <a href="https://www.osha.gov/nationally-recognized-testing-laboratory-program">https://www.osha.gov/nationally-recognized-testing-laboratory-program</a>.
+
+II. General Background on the Application
+
+    TUVAM submitted an application to OSHA for expansion of the NRTL 
+scope of recognition on February 27, 2025 (OSHA-2007-0043-0075), 
+requesting the expansion of the NRTL scope of recognition to include 
+two additional test standards. OSHA did not perform any on-site reviews 
+with respect to this application.
+    Table 1 below lists the appropriate test standards found in TUVAM's 
+application for expansion for testing and certification of products 
+under the NRTL Program.
+
+  Table 1--Proposed List of Appropriate Test Standards for Inclusion in
+                    TUVAM's NRTL Scope of Recognition
+------------------------------------------------------------------------
+          Test  standard                     Test standard title
+------------------------------------------------------------------------
+UL 2580...........................  Batteries for Use in Electric
+                                     Vehicles.
+UL 2743...........................  Portable Power Packs.
+------------------------------------------------------------------------
+
+III. Preliminary Findings on the Application
+
+    TUVAM submitted an acceptable application for expansion of the NRTL 
+scope of recognition. OSHA's review of the application file, and 
+pertinent documentation, indicate that TUVAM can meet the requirements 
+prescribed by 29 CFR 1910.7 for expanding its recognition to include 
+the addition of two additional testing standards for NRTL testing and 
+certification. This preliminary finding does not constitute an interim 
+or temporary approval of TUVAM's application. OSHA seeks comment on 
+this preliminary determination.
+
+IV. Public Participation
+
+    OSHA welcomes public comment as to whether TUVAM meets the 
+requirements of 29 CFR 1910.7 for expansion of recognition as a NRTL. 
+Comments should consist of pertinent written documents and exhibits.
+    Commenters needing more time to comment must submit a request in 
+writing, stating the reasons for the request by the due date for 
+comments. OSHA will limit any extension to 10 days unless the requester 
+justifies a longer time period. OSHA may deny a request for an 
+extension if it is not adequately justified.
+    To review copies of the exhibits identified in this notice, as well 
+as comments submitted to the docket, contact the Docket Office, 
+Occupational Safety and Health Administration, U.S. Department of 
+Labor. These materials also are generally available online at <a href="https://www.regulations.gov">https://www.regulations.gov</a> under Docket No. OSHA-2007-0043 (for further 
+information, see the ``Docket'' heading in the section of this notice 
+titled ADDRESSES).
+    OSHA staff will review all comments to the docket submitted in a 
+timely manner. After addressing the issues raised by these comments, 
+staff will make a recommendation to the Assistant Secretary of Labor 
+for Occupational Safety and Health on whether to grant TUVAM's 
+application for expansion of the scope of recognition. The Assistant 
+Secretary will make the final decision on granting the application. In 
+making this decision, the Assistant Secretary may undertake other 
+proceedings prescribed in Appendix A to 29 CFR 1910.7.
+    OSHA will publish a public notice of the final decision in the 
+Federal Register.
+
+V. Authority and Signature
+
+    Amanda Laihow, Principal Deputy Assistant Secretary of Labor for 
+Occupational Safety and Health, authorized the preparation of this 
+notice. Accordingly, the agency is issuing this notice pursuant to 29 
+U.S.C. 657(g)(2), Secretary of Labor's Order No. 7-2025 (90 FR 27878, 
+June 30, 2025), and 29 CFR 1910.7.
+
+    Signed at Washington, DC, on September 4, 2026.
+Amanda Laihow,
+Principal Deputy Assistant Secretary of Labor for Occupational Safety 
+and Health.
+[FR Doc. 2026-19268 Filed 9-18-26; 8:45 am]
+BILLING CODE 4510-26-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

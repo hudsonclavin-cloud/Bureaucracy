@@ -1,0 +1,206 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 161 (Friday, August 21, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 161 (Friday, August 21, 2026)]
+[Notices]
+[Pages 54328-54330]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-17164]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+DEPARTMENT OF HEALTH AND HUMAN SERVICES
+
+Agency for Healthcare Research and Quality
+
+
+Agency Information Collection Activities: Proposed Collection; 
+Comment Request
+
+AGENCY: Agency for Healthcare Research and Quality, HHS.
+
+ACTION: Notice.
+
+-----------------------------------------------------------------------
+
+SUMMARY: This notice announces the intention of the Agency for 
+Healthcare Research and Quality (AHRQ) to request that the Office of 
+Management and Budget (OMB) approve the reinstatement with change of 
+the previously approved information collection project ``AHRQ Research 
+Reporting System (ARRS)'' OMB No 0935-0122. This information collection 
+was previously published in the Federal Register on June 17, 2026, and 
+allowed 60 days for public comment. AHRQ did not receive any comments. 
+The purpose of this notice is to allow an additional 30 days for public 
+comment. The package expired on July 31, 2027.
+
+DATES: Comments on this notice must be received by September 21, 2026.
+
+ADDRESSES: Written comments and recommendations for the proposed 
+information collection should be sent within 30 days of publication of 
+this notice to <a href="http://www.reginfo.gov/public/do/PRAMain">www.reginfo.gov/public/do/PRAMain</a>. Find this particular 
+information collection by selecting ``Currently under 30-day Review--
+Open for Public Comments'' or by using the search function. Copies of 
+the proposed collection plans, data collection instruments, and 
+specific details on the estimated burden can be obtained from the AHRQ 
+Reports Clearance Officer.
+
+FOR FURTHER INFORMATION CONTACT: Margie Shofer, AHRQ Reports Clearance 
+Officer, 301-427-1696 or by email at 
+<a href="/cdn-cgi/l/email-protection#a7f5e2f7e8f5f3f4e4ebe2e6f5e6e9e4e2e8e1e1eee4e2f5e7c6cfd5d689cfcfd489c0c8d1"><span class="__cf_email__" data-cfemail="752730253a2721263639303427343b36303a33333c36302735141d07045b1d1d065b121a03">[email&#160;protected]</span></a>.
+
+SUPPLEMENTARY INFORMATION:
+
+Proposed Project
+
+    In 2007, AHRQ developed a systematic method for its grantees to 
+report project progress, and important preliminary findings called the 
+Grants Reporting System (GRS). In 2008, GRS was renamed AHRQ Research 
+Reporting System (ARRS) and in addition to reporting on grant progress, 
+also supported reporting on jobs created under contracts pursuant to 
+the American Recovery and Reinvestment Act of 2009. ARRS is still being 
+used to track grant progress and may also support administrative 
+progress reporting for AHRQ-funded research activities conducted under 
+contracts and challenge competition awards, as applicable. Such 
+information may be entered by award recipients, contractors, or 
+authorized AHRQ officials, as appropriate. ARRS is no longer used for 
+contract job creation.
+    The system addressed the shortfalls in the previous reporting 
+process and established a consistent and comprehensive reporting 
+solution for AHRQ. The ARRS provides a centralized repository of AHRQ-
+supported research progress and administrative project information 
+across grants, and where applicable, research contracts and challenge 
+competition awards, that can be used to support initiatives within the 
+Agency. This includes future research planning and support to 
+administration activities such as performance monitoring,
+
+[[Page 54329]]
+
+budgeting, knowledge transfer as well as strategic planning.
+    This Project seeks to answer the following research questions:
+    (1) What progress has been demonstrated across AHRQ-funded research 
+activities and related funding mechanisms, including grants, research 
+contracts, and challenge completion awards, and how can the resulting 
+progress and output data be systematically leveraged to inform future 
+research planning and to support core administrative functions, 
+including performance monitoring, budgeting, knowledge transfer, and 
+strategic planning?
+    This Project has the following goals:
+    (1) To promote the transfer of critical information more frequently 
+and efficiently and enhance the Agency's ability to support research 
+designed to improve the outcomes and quality of health care, reduce its 
+costs, and broaden access to effective services
+    (2) To increase the efficiency of the Agency in responding to ad-
+hoc information requests
+    (3) To support Executive Branch requirements for increased 
+transparency and public reporting
+    (4) To establish a consistent approach throughout the Agency for 
+information collection regarding research progress and a systematic 
+basis for oversight and for facilitating potential collaborations among 
+grantees
+    (5) To decrease the inconvenience and burden on grantees of 
+unanticipated ad-hoc requests for information by the Agency in response 
+to particular (one-time) internal and external requests for information
+    The information is being collected by AHRQ, pursuant to its 
+statutory authority to conduct and support research on healthcare and 
+on systems for the delivery of such care, including activities with 
+respect to the quality, effectiveness, efficiency, appropriateness and 
+value of healthcare services and with respect to quality measurement 
+and improvement, and database development. 42 U.S.C. 299a(a)(1) and 
+(8). Minor revisions to the scope of respondents are being proposed to 
+clarify applicability to AHRQ-funded research contracts and challenge 
+competition recipients; no substantive revisions to the core reporting 
+content are being proposed.
+
+Method of Collection
+
+    To achieve the goals of this project the following data collections 
+will be implemented:
+    AHRQ Research Reporting System (ARRS)--Award recipients, 
+contractors, and authorized AHRQ official, as applicable, use the ARRS 
+system to report project progress and important preliminary findings 
+for AHRQ-funded research activities. Reporting frequency varies based 
+on award type and programmatic need. All users access the ARRS system 
+through a secure online interface which requires user authentication. 
+When status reports are due AHRQ notifies designated reporting 
+officials via email.
+
+Estimated Annual Respondent Burden
+
+    Exhibit 1 shows the estimated annualized burden hours for the 
+respondents. The estimated number of respondents is 450 a year, a 
+decrease from the last Information Collection Request, which estimated 
+500 reports to be collected in a year. This revised amount is based on 
+the current number of 210 active reports and adjusted upwards to 
+account for any new grants, research contracts, or challenge 
+competition awards AHRQ may award in the future.
+    Grantees will take an estimated 30 minutes to enter the necessary 
+data into the ARRS. Frequency of reporting varies from monthly to twice 
+a year. Based on that, the total annualized burden hours are estimated 
+to be 225 hours.
+
+                                  Exhibit 1--Estimated Annualized Burden Hours
+----------------------------------------------------------------------------------------------------------------
+                                                                     Number of
+                    Form name                        Number of     responses per     Hours per     Total burden
+                                                    respondents     respondent       response          hours
+----------------------------------------------------------------------------------------------------------------
+ARRS Data Entry.................................             450               1           30/60             225
+                                                 ---------------------------------------------------------------
+    Total.......................................             450             N/A             N/A             225
+----------------------------------------------------------------------------------------------------------------
+
+    Exhibit 2 shows the estimated annualized cost burden for the 
+respondents. The total estimated cost burden for respondents is 
+$26,725.50.
+
+                                   Exhibit 2--Estimated Annualized Cost Burden
+----------------------------------------------------------------------------------------------------------------
+                                                                                     Adjusted
+                    Form name                      Total burden   Average hourly    hourly wage     Total cost
+                                                       hours        wage rate *       rate **         burden
+----------------------------------------------------------------------------------------------------------------
+ARRS Data Entry.................................             225          $59.39         $118.78      $26,725.50
+                                                 ---------------------------------------------------------------
+    Total.......................................             225             N/A             N/A       26,725.50
+----------------------------------------------------------------------------------------------------------------
+``National Compensation Survey: Occupational Wages in the United States, May 2025,'' U.S. Department of Labor,
+  Bureau of Labor Statistics, <a href="https://data.bls.gov/oes/#/area/0000000/2025">https://data.bls.gov/oes/#/area/0000000/2025</a>.
+* Based upon the average wages for Healthcare Practitioner and Technical Occupations (29-0000), ** The Adjusted
+  Hourly Rate was estimated at 200% of the hourly wage.
+
+Request for Comments
+
+    In accordance with the Paperwork Reduction Act, 44 U.S.C. 3501-
+3520, comments on AHRQ's information collection are requested with 
+regard to any of the following: (a) whether the proposed collection of 
+information is necessary for the proper performance of AHRQ's health 
+care research and health care information dissemination functions, 
+including whether the information will have practical utility; (b) the 
+accuracy of AHRQ's estimate of burden (including hours and costs) of 
+the proposed collection(s) of information; (c) ways to enhance the 
+quality, utility and clarity of the information to be collected; and 
+(d) ways to minimize the burden of the collection of information upon 
+the
+
+[[Page 54330]]
+
+respondents, including the use of automated collection techniques or 
+other forms of information technology.
+    Comments submitted in response to this notice will be summarized 
+and included in the Agency's subsequent request for OMB approval of the 
+proposed information collection. All comments will become a matter of 
+public record.
+
+    Dated: August 18, 2026.
+Jeffrey Toven,
+Executive Officer.
+[FR Doc. 2026-17164 Filed 8-20-26; 8:45 am]
+BILLING CODE 4160-90-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

@@ -1,0 +1,45 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 161 (Friday, August 21, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 161 (Friday, August 21, 2026)]
+[Rules and Regulations]
+[Page 54214]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-17145]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+NUCLEAR REGULATORY COMMISSION
+
+10 CFR Part 51
+
+
+Environmental Protection Regulations for Domestic Licensing and 
+Related Regulatory Functions
+
+CFR Correction
+
+    This rule is being published by the Office of the Federal Register 
+to correct an editorial or technical error that appeared in the most 
+recent annual revision of the Code of Federal Regulations.
+
+0
+In Title 10 of the Code of Federal Regulations, Parts 51 to 199, 
+revised as of January 1, 2026, in section 51.53, in the introductory 
+paragraph of (c)(3) remove the words ``an initial renewed license and 
+holding an operating license, construction permit, or combined license 
+as of June 30, 1995'' and add in their place the words ``a license 
+renewal covered by Table B-1 for a nuclear power plant for which an 
+operating license, construction permit, or combined license was issued 
+as of June 30, 1995''.
+
+[FR Doc. 2026-17145 Filed 8-20-26; 8:45 am]
+BILLING CODE 0099-10-D
+
+
+</pre></body>
+</html>

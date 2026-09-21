@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-09-21T17:17:18Z",
+ "url": "https://www.federalregister.gov/documents/full_text/text/1998/05/08/98-12343.txt",
+ "status": 200,
+ "final_url": "https://www.federalregister.gov/documents/full_text/text/1998/05/08/98-12343.txt",
+ "content_type": "text/plain",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /documents/full_text/text/1998/05/08/98-12343.txt",
+ "bytes": 9260,
+ "sha256": "26a953f476a75dcb408b6b76f28804ef68f24c1114f3eea9d2cc46283cb4b51a",
+ "error": null
+}

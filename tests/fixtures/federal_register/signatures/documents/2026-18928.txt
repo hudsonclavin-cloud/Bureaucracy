@@ -1,0 +1,551 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 178 (Wednesday, September 16, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 178 (Wednesday, September 16, 2026)]
+[Notices]
+[Pages 58723-58726]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-18928]
+
+
+-----------------------------------------------------------------------
+
+SECURITIES AND EXCHANGE COMMISSION
+
+[Release No. 34-106317; File No. SR-MIAX-2026-37]
+
+
+Self-Regulatory Organizations; Miami International Securities 
+Exchange, LLC; Notice of Filing and Immediate Effectiveness of a 
+Proposed Rule Change To Amend the Fee Schedule To Modify the Priority 
+Customer Rebate Program Table for Certain Transactions in Complex 
+Orders
+
+ September 11, 2026.
+    Pursuant to Section 19(b)(1) of the Securities Exchange Act of 1934 
+(``Exchange Act'' or ``Act'') \1\ and Rule 19b-4 thereunder,\2\ notice 
+is hereby given that on August 31, 2026, Miami International Securities 
+Exchange, LLC (``MIAX'' or ``Exchange'') filed with the Securities and 
+Exchange Commission (``Commission'') the proposed rule change as 
+described in Items I, II, and III below, which Items have been prepared 
+by the Exchange. The Commission is publishing this notice to solicit 
+comments on the proposed rule change from interested persons.
+---------------------------------------------------------------------------
+
+    \1\ 15 U.S.C. 78s(b)(1).
+    \2\ 17 CFR 240.19b-4.
+---------------------------------------------------------------------------
+
+I. Self-Regulatory Organization's Statement of the Terms of Substance 
+of the Proposed Rule Change
+
+    The Exchange proposes to amend the Priority Customer Rebate Program 
+(``PCRP'') (defined below) table to establish alternative rebates 
+appliable to certain transactions in Complex Orders (defined below).
+    The text of the proposed rule change is available on the Exchange's 
+website at <a href="https://www.miaxglobal.com/markets/us-options/miax-options/rule-filings">https://www.miaxglobal.com/markets/us-options/miax-options/rule-filings</a>, and at the Exchange's principal office.
+
+II. Self-Regulatory Organization's Statement of the Purpose of, and 
+Statutory Basis for, the Proposed Rule Change
+
+    In its filing with the Commission, the Exchange included statements 
+concerning the purpose of and basis for the proposed rule change and 
+discussed any comments it received on the proposed rule change. The 
+text of these statements may be examined at the places specified in 
+Item IV below. The Exchange has prepared summaries, set forth in 
+sections A, B, and C below, of the most significant aspects of such 
+statements.
+
+A. Self-Regulatory Organization's Statement of the Purpose of, and 
+Statutory Basis for, the Proposed Rule Change
+
+1. Purpose
+    The Exchange proposes to amend Section 1)a)iii) of the Fee Schedule 
+to modify the PCRP table to establish alternative rebates appliable to 
+certain transactions in Complex Orders.\3\
+---------------------------------------------------------------------------
+
+    \3\ A ``complex order'' is any order involving the concurrent 
+purchase and/or sale of two or more different options in the same 
+underlying security (the ``legs'' or ``components'' of the complex 
+order), for the same account, in a conforming or non-conforming 
+ratio for the purposes of executing a particular investment 
+strategy. A complex order can also be a ``stock-option order'' with 
+a conforming or non-conforming ratio, and subject to the limitations 
+set forth, in Interpretation and Policy .01 of Rule 518. A stock-
+option order is an order to buy or sell a stated number of units of 
+an underlying security (stock or Exchange Traded Fund Share 
+(``ETF'')) or a security convertible into the underlying stock 
+(``convertible security'') coupled with the purchase or sale of 
+options contract(s) on the opposite side of the market representing 
+either (i) the same number of units of the underlying security or 
+convertible security, or (ii) the number of units of the underlying 
+stock necessary to create a delta neutral position where the ratio 
+represents the total number of units of the underlying security or 
+convertible security in the option leg to the total number of units 
+of the underlying security or convertible security in the stock leg. 
+Only those stock-option orders in the classes designated by the 
+Exchange and communicated to Members via Regulatory Circular with no 
+more than the applicable number of legs as determined by the 
+Exchange on a class-by-class basis and communicated to Members via 
+Regulatory Circular, are eligible for processing. See Exchange Rule 
+518(a)(5).
+
+---------------------------------------------------------------------------
+
+[[Page 58724]]
+
+Background
+    Pursuant to the PCRP, the Exchange credits each Member \4\ the per 
+contract amount set forth in the PCRP table in Section 1)a)iii) of the 
+Fee Schedule, as applicable, resulting from each Priority Customer \5\ 
+order transmitted by that Member which is executed electronically on 
+the Exchange in all multiply-listed option classes (with certain 
+exclusions described below), provided the Member meets certain 
+percentage thresholds in a month as described in the PCRP table. The 
+volume thresholds are calculated based on the percentage of national 
+customer volume in multiply-listed options classes listed on MIAX 
+entered and executed over the course of the month but does not include, 
+in simple or complex as applicable, QCC \6\ and cQCC Orders,\7\ 
+Priority Customer-to-Priority Customer Orders, C2C \8\ and cC2C 
+Orders,\9\ PRIME \10\ and cPRIME \11\ AOC Responses, PRIME and cPRIME 
+Contra-side Orders, PRIME and cPRIME Orders for which both the Agency 
+and Contra-side Order are Priority Customers, and executions related to 
+contracts that are routed to one or more exchanges in connection with 
+the Options Order Protection and Locked/Crossed Market Plan referenced 
+in MIAX Rule 1400 (herein referred to as the ``National Customer 
+Volume'').\12\
+---------------------------------------------------------------------------
+
+    \4\ The term ``Member'' means an individual or organization 
+approved to exercise the trading rights associated with a Trading 
+Permit. Members are deemed ``members'' under the Exchange Act. See 
+Exchange Rule 100.
+    \5\ The term ``Priority Customer'' means a person or entity that 
+(i) is not a broker or dealer in securities, and (ii) does not place 
+more than 390 orders in listed options per day on average during a 
+calendar month for its own beneficial account(s). See Exchange Rule 
+100.
+    \6\ A Qualified Contingent Cross Order is comprised of an 
+originating order to buy or sell at least 1,000 contracts, that is 
+identified as being part of a qualified contingent trade, as that 
+term is defined in Interpretations and Policies .01, coupled with a 
+contra-side order or orders totaling an equal number of contracts. 
+See Exchange Rule 516(j).
+    \7\ A Complex Qualified Contingent Cross or ``cQCC'' Order is 
+comprised of an originating complex order to buy or sell where each 
+component is at least 1,000 contracts that is identified as being 
+part of a qualified contingent trade, as defined in Rule 516, 
+Interpretations and Policies .01, coupled with a contra-side complex 
+order or orders totaling an equal number of contracts. Trading of 
+cQCC Orders is governed by Rule 515(h)(4). See Exchange Rule 
+518(b)(6).
+    \8\ A Customer Cross Order is comprised of a Priority Customer 
+Order to buy and a Priority Customer Order to sell at the same price 
+and for the same quantity. See Exchange Rule 516(i).
+    \9\ A Complex Customer Cross or ``cC2C'' Order is comprised of 
+one Priority Customer complex order to buy and one Priority Customer 
+complex order to sell at the same price and for the same quantity. 
+Trading of cC2C Orders is governed by Rule 515(h)(3). See Exchange 
+Rule 518(b)(5).
+    \10\ PRIME is a process by which a Member may electronically 
+submit for execution (``Auction'') an order it represents as agent 
+(``Agency Order'') against principal interest, and/or an Agency 
+Order against solicited interest. See Exchange Rule 515A(a).
+    \11\ A Complex Prime or ``cPRIME'' Order is a complex order (as 
+defined in Rule 518(a)(5)) that is submitted for participation in a 
+cPRIME Auction. See Exchange Rule 518(b)(7).
+    \12\ See Fee Schedule, Section 1)a)iii).
+---------------------------------------------------------------------------
+
+    Pursuant to the PCRP, Priority Customer volume for transactions in 
+simple, PRIME Agency, complex, and cPRIME Agency are aggregated to 
+determine the appropriate volume tier threshold applicable to each 
+transaction. Volume is recorded for, and credits are delivered to, the 
+Member that submits the order to the Exchange. All fees and rebates are 
+per contract per leg. MIAX aggregates the contracts resulting from 
+Priority Customer Orders \13\ transmitted and executed electronically 
+on MIAX from Members and Affiliates \14\ for purposes of the thresholds 
+described in the PCRP table.
+---------------------------------------------------------------------------
+
+    \13\ The term ``Priority Customer Order'' means an order for the 
+account of a Priority Customer. See Exchange Rule 100.
+    \14\ For purposes of the MIAX Options Fee Schedule, the term 
+``Affiliate'' means (i) an affiliate of a Member of at least 75% 
+common ownership between the firms as reflected on each firm's Form 
+BD, Schedule A, (``Affiliate''), or (ii) the Appointed Market Maker 
+of an Appointed EEM (or, conversely, the Appointed EEM of an 
+Appointed Market Maker). An ``Appointed Market Maker'' is a MIAX 
+Market Maker (who does not otherwise have a corporate affiliation 
+based upon common ownership with an EEM) that has been appointed by 
+an EEM and an ``Appointed EEM'' is an EEM (who does not otherwise 
+have a corporate affiliation based upon common ownership with a MIAX 
+Market Maker) that has been appointed by a MIAX Market Maker, 
+pursuant to the following process. A MIAX Market Maker appoints an 
+EEM and an EEM appoints a MIAX Market Maker, for the purposes of the 
+Fee Schedule, by each completing and sending an executed Volume 
+Aggregation Request Form by email to <a href="/cdn-cgi/l/email-protection#610c040c03041312090811210c080019060d0e03000d4f020e0c"><span class="__cf_email__" data-cfemail="761b131b141304051e1f06361b1f170e111a1914171a5815191b">[email&#160;protected]</span></a> no 
+later than 2 business days prior to the first business day of the 
+month in which the designation is to become effective. Transmittal 
+of a validly completed and executed form to the Exchange along with 
+the Exchange's acknowledgement of the effective designation to each 
+of the Market Maker and EEM will be viewed as acceptance of the 
+appointment. The Exchange will only recognize one designation per 
+Member. A Member may make a designation not more than once every 12 
+months (from the date of its most recent designation), which 
+designation shall remain in effect unless or until the Exchange 
+receives written notice submitted 2 business days prior to the first 
+business day of the month from either Member indicating that the 
+appointment has been terminated. Designations will become operative 
+on the first business day of the effective month and may not be 
+terminated prior to the end of the month. Execution data and reports 
+will be provided to both parties. See Fee Schedule, Section 1)a)i), 
+note 1.
+---------------------------------------------------------------------------
+
+Proposal
+    The Exchange proposes to amend the PCRP table to establish 
+alternative rebates for certain transactions in Complex Orders based on 
+a Member's Priority Customer total monthly non-paired Complex Order 
+volume as a percent of the Member's Priority Customer total monthly 
+volume aggregated to the Priority Customer Rebate Program as described 
+above.
+    Currently, the PCRP table provides the following volume thresholds 
+applicable to Priority Customer Orders, which are based on a percentage 
+of national customer volume in multiply-listed options classes listed 
+on MIAX during the relevant month: 0.00% to 0.50% in tier 1; above 
+0.50% to 1.50% in tier 2; above 1.50% to 1.90% in tier 3; above 1.90% 
+to 3.50% in tier 4; and above 3.50% in tier 5. Currently, for Priority 
+Customer orders in the PCRP, the Exchange provides a per contract 
+credit for Complex Orders as follows: $0.20 per contract in tier 1; 
+$0.21 per contract in tier 2; $0.26 \15\ or $0.27 \16\ per contract in 
+tier 3, depending on whether the executing buyer and seller are the 
+same Member or Affiliates; and $0.27 \17\ or $0.28 \18\ per contract in 
+tiers 4 and 5 depending on whether the executing buyer and seller are 
+not the same Member or Affiliates.
+---------------------------------------------------------------------------
+
+    \15\ This rebate is for executed Priority Customer non-paired 
+Complex Orders when the executing buyer and seller are the same 
+Member or Affiliates. See Fee Schedule, note.
+    \16\ This rebate is for executed Priority Customer non-paired 
+Complex Orders when the executing buyer and seller are not the same 
+Member or Affiliates. See Fee Schedule, note.
+    \17\ See supra note 15.
+    \18\ See supra note 16.
+---------------------------------------------------------------------------
+
+    The Exchange now proposes to amend the PCRP table to establish 
+alternative rebates for certain transactions in non-paired Complex 
+Order volume based on a Member's Priority Customer total monthly non-
+paired Complex Order volume as a percent of the Member's Priority 
+Customer total monthly volume aggregated to the Priority Customer 
+Rebate Program as described above. Under the proposed structure, 
+Members can qualify for alternative, higher rebates for their Priority 
+Customer Complex Orders. The Exchange will compare the Member's monthly 
+Priority Customer non-paired Complex Order volume to its total monthly 
+Priority Customer volume aggregated for the Priority Customer Rebate 
+Program which includes simple, PRIME Agency, complex, and cPRIME Agency 
+orders transmitted by that Priority Customer which is executed 
+electronically on the Exchange in all multiply-listed option classes 
+with certain exclusions. The following orders will be excluded from the 
+calculation of Priority Customer Complex Order credits and from the 
+calculation of the volume thresholds set forth in the PCRP table: QCC 
+and cQCC
+
+[[Page 58725]]
+
+Orders, Priority Customer-to-Priority Customer Orders, C2C and cC2C 
+Orders, PRIME and cPRIME AOC Responses, PRIME and cPRIME Contra-side 
+Orders, PRIME and cPRIME Orders for which both the Agency and Contra-
+side Order are Priority Customers, and executions related to contracts 
+that are routed to one or more exchanges in connection with the Options 
+Order Protection and Locked/Crossed Market Plan referenced in MIAX Rule 
+1400.\19\ For purposes of calculating the Member's monthly Priority 
+Customer non-paired Complex Order volume for the alternative PCRP 
+rebates, the Exchange will count the volume of the option legs of a 
+Complex Order and exclude the stock portion if the Complex Order is a 
+stock-option order, as defined in Exchange Rule 518(a)(5).
+---------------------------------------------------------------------------
+
+    \19\ See Fee Schedule, the explanation paragraph underneath 
+cPRIME Agency Order Break-up Table on page 6 (stating that ``MIAX 
+shall credit each Member the per contract amount set forth above as 
+applicable resulting from each Priority Customer order transmitted 
+by that Member which is executed electronically on the Exchange in 
+all multiply-listed option classes (excluding, in simple or complex 
+as applicable, QCC and cQCC Orders, Priority Customer-to-Priority 
+Customer Orders, C2C and cC2C Orders, PRIME and cPRIME AOC 
+Responses, PRIME and cPRIME Contra-side Orders, PRIME and cPRIME 
+Orders for which both the Agency and Contra-side Order are Priority 
+Customers, and executions related to contracts that are routed to 
+one or more exchanges in connection with the Options Order 
+Protection and Locked/Crossed Market Plan referenced in MIAX Rule 
+1400), provided the Member meets certain percentage thresholds in a 
+month as described in the Priority Customer Rebate Program 
+table.''). See also Fee Schedule, the sixth explanation paragraph on 
+page 7 (stating that ``[t]he percentage thresholds are calculated 
+based on the percentage of national customer volume in multiply-
+listed options classes listed on MIAX entered and executed over the 
+course of the month (excluding QCC and cQCC Orders, Priority 
+Customer-to-Priority Customer Orders, C2C and cC2C Orders, PRIME and 
+cPRIME AOC Responses, PRIME and cPRIME Contra-side Orders, and PRIME 
+and cPRIME Orders for which both the Agency and Contra-side Order 
+are Priority Customers).'').
+---------------------------------------------------------------------------
+
+    Specifically, the Exchange proposes to amend Section 1)a)iii) of 
+the Fee Schedule to amend the PCRP table to add a new column to the 
+table, titled ``Per Contract Credit for Complex Orders, Priority 
+Customer Non-Paired Complex Orders Volume >= 50% of Member's PCRP 
+Volume''. The Exchange also proposes to amend the title of the eighth 
+column from ``Per Contract Credit for Complex Orders,'' to now be ``Per 
+Contract Credit for Complex Orders, Priority Customer Non-Paired 
+Complex Orders Volume <50% of Member's PCRP Volume''. With the proposed 
+changes, if Priority Customer non-paired Complex Orders account for 50% 
+or more of a Priority Customer's total monthly volume, Priority 
+Customers will qualify for higher rebates as follows: (i) $0.23 per 
+contract in tier 1; (ii) $0.27 per contract in tier 2; and (iii) $0.28 
+per contract in tiers 3, 4, or 5. If Priority Customer non-paired 
+Complex Orders account for less than 50% of a Priority Customer's total 
+monthly volume, Priority Customers will qualify for the current rebates 
+applicable to Complex Orders in the PCRP table, which are as follows: 
+(i) $0.20 per contract in tier; (ii) $0.21 per contract in tier 2; 
+(iii) $0.26 \20\ or $0.27 \21\ per contract in tier 3 depending on 
+whether the executing buyer and seller are the same Member or 
+Affiliates; and (iv) $0.27 \22\ or $0.28 \23\ per contract in tiers 4 
+and 5 depending on whether the executing buyer and seller are not the 
+same Member or Affiliates. The Exchange does not propose to amend any 
+of the volume threshold percentages with this filing.
+---------------------------------------------------------------------------
+
+    \20\ See supra note 15.
+    \21\ See supra note 16.
+    \22\ See supra note 15.
+    \23\ See supra note 16.
+---------------------------------------------------------------------------
+
+    The Exchange believes that the proposed changes to provide enhanced 
+rebates for Priority Customers Complex Orders that account for 50% or 
+more of its total monthly Priority Customer volume will encourage 
+market participants to submit more Priority Customer Complex Orders and 
+therefore increase Priority Customer order flow, resulting in increased 
+liquidity which benefits all Exchange participants by providing more 
+trading opportunities and tighter spreads. The Exchange also notes that 
+at least one other competing exchange similarly provides for higher 
+rebates based on the ratio of simple order volume to complex order 
+volume.\24\
+---------------------------------------------------------------------------
+
+    \24\ See Cboe Exchange Inc. (``Cboe'') Fee Schedule, dated 
+August 20, 2026, page 4, which states that ``[a] TPH will only 
+receive the Complex credit rates for Complex volume if at least 32% 
+for Tiers 1, 2, and 3 or 38% for Tiers 4 and 5 of that TPH's 
+qualifying VIP volume in the previous month was comprised of Simple 
+volume. If not, then the TPH's Customer (C) Complex volume will 
+receive credits at the applicable Simple credit rate only.''
+---------------------------------------------------------------------------
+
+Implementation
+    The proposed changes are effective beginning September 1, 2026.
+2. Statutory Basis
+    The Exchange believes that its proposal to amend its Fee Schedule 
+is consistent with Section 6(b) of the Act \25\ in general, and 
+furthers the objectives of Section 6(b)(4) of the Act \26\ in 
+particular, in that it is an equitable allocation of reasonable dues, 
+fees, and other charges among its members and issuers and other persons 
+using its facilities. The Exchange also believes the proposal furthers 
+the objectives of Section 6(b)(5) of the Act \27\ in that it is 
+designed to promote just and equitable principles of trade, to remove 
+impediments to and perfect the mechanism of a free and open market and 
+a national market system, and, in general, to protect investors and the 
+public interest and is not designed to permit unfair discrimination 
+between customers, issuers, brokers and dealers.
+---------------------------------------------------------------------------
+
+    \25\ 15 U.S.C. 78f(b).
+    \26\ 15 U.S.C. 78f(b)(4).
+    \27\ 15 U.S.C. 78f(b)(5).
+---------------------------------------------------------------------------
+
+    The Commission has repeatedly expressed its preference for 
+competition over regulatory intervention in determining prices, 
+products, and services in the securities markets. In Regulation NMS, 
+the Commission highlighted the importance of market forces in 
+determining prices and SRO revenues and, also, recognized that current 
+regulation of the market system ``has been remarkably successful in 
+promoting market competition in its broader forms that are most 
+important to investors and listed companies.'' \28\
+---------------------------------------------------------------------------
+
+    \28\ See Securities Exchange Act Release No. 51808 (June 9, 
+2005), 70 FR 37496 (June 29, 2005).
+---------------------------------------------------------------------------
+
+    There are currently 18 registered options exchanges competing for 
+order flow. Based on publicly-available information, and excluding 
+index-based and singly-listed options, no single exchange had more than 
+approximately 11-12% of the multiply-listed equity options market share 
+for the month of July 2026.\29\ Therefore, no exchange possesses 
+significant pricing power. More specifically, the Exchange had a market 
+share of approximately 9.46% of executed volume of multiply-listed 
+equity options for the month of July 2026.\30\
+---------------------------------------------------------------------------
+
+    \29\ See the ``Market Share'' section of the Exchange's website, 
+available at <a href="https://www.miaxglobal.com/">https://www.miaxglobal.com/</a> (last visited August 26, 
+2026).
+    \30\ See id.
+---------------------------------------------------------------------------
+
+    The Exchange believes its proposal to provide alternative, enhanced 
+rebates for Priority Customers non-paired Complex Orders that account 
+for 50% or more of its total Priority Customer monthly volume, with 
+certain exclusions from the calculation, is reasonable, equitable and 
+not unfairly discriminatory because it may encourage market 
+participants to submit more Priority Customer Complex Orders and 
+therefore increase Priority Customer order flow, resulting in increased 
+liquidity which benefits all Exchange participants by providing more 
+trading opportunities and tighter spreads. The Exchange believes the 
+proposed change to the PCRP is equitable and not unfairly 
+discriminatory because it will apply equally to all market participants
+
+[[Page 58726]]
+
+who provide Priority Customer Orders in various segments. The Exchange 
+also notes that at least one other competing exchange similarly 
+provides for higher customer rebates based on the ratio of simple order 
+volume to complex order volume.\31\
+---------------------------------------------------------------------------
+
+    \31\ See supra note 24.
+---------------------------------------------------------------------------
+
+B. Self-Regulatory Organization's Statement on Burden on Competition
+
+    The Exchange believes that the proposed change will not impose any 
+burden on competition that is not necessary or appropriate in 
+furtherance of the purposes of the Act.
+Intra-Market Competition
+    The Exchange does not believe that the proposal will impose any 
+burden on intra-market competition not necessary or appropriate in 
+furtherance of the purposes of the Act.
+    The Exchange believes its proposal to provide enhanced rebates for 
+Priority Customers Complex Orders that account for 50% or more of its 
+total Priority Customer monthly volume will not impose any burden on 
+intra-market competition. Instead, the Exchange believes this proposed 
+change will promote competition because it would encourage market 
+participants to submit more Priority Customer Complex Orders and 
+therefore increase Priority Customer order flow, resulting in increased 
+liquidity which benefits all Exchange participants by providing more 
+trading opportunities and tighter spreads.
+Inter-Market Competition
+    The Exchange does not believe that the proposed changes will impose 
+any burden on inter-market competition and the Exchange notes that it 
+operates in a highly competitive market in which market participants 
+can readily favor competing venues if they deem fee levels at a 
+particular venue to be excessive, or rebate opportunities available at 
+other venues to be more favorable. There are currently 18 registered 
+options exchanges competing for order flow. Based on publicly-available 
+information, and excluding index-based options, no single exchange had 
+more than approximately 11-12% of the multiply-listed equity options 
+market share for the month of July 2026.\32\ Therefore, no exchange 
+possesses significant pricing power. More specifically, the Exchange 
+had a market share of approximately 9.46% of executed volume of 
+multiply-listed equity options for the month of July 2026.\33\
+---------------------------------------------------------------------------
+
+    \32\ See supra note 29.
+    \33\ See id.
+---------------------------------------------------------------------------
+
+    In such an environment, the Exchange must continually adjust its 
+rebates and tiers to remain competitive with other options exchanges. 
+Because competitors are free to modify their own fees and tiers in 
+response, and because market participants may readily adjust their 
+order routing practices, the Exchange believes that the degree to which 
+fee changes in this market may impose any burden on competition is 
+extremely limited. The Exchange believes that the proposed rule changes 
+reflect this competitive environment because they modify the Exchange's 
+rebates in a manner that encourages market participants to continue to 
+provide liquidity and to send order flow to the Exchange. The Exchange 
+notes that at least one other competing exchange similarly provides for 
+different rebates based on the ratio of simple order volume to complex 
+order volume.\34\
+---------------------------------------------------------------------------
+
+    \34\ See supra note 24.
+---------------------------------------------------------------------------
+
+C. Self-Regulatory Organization's Statement on Comments on the Proposed 
+Rule Change Received From Members, Participants, or Others
+
+    No written comments were either solicited or received.
+
+III. Date of Effectiveness of the Proposed Rule Change and Timing for 
+Commission Action
+
+    The foregoing rule change has become effective pursuant to Section 
+19(b)(3)(A)(ii) of the Act,\35\ and Rule 19b-4(f)(2) \36\ thereunder. 
+At any time within 60 days of the filing of such proposed rule change, 
+the Commission summarily may temporarily suspend such rule change if it 
+appears to the Commission that such action is necessary or appropriate 
+in the public interest, for the protection of investors, or otherwise 
+in furtherance of the purposes of the Act. If the Commission takes such 
+action, the Commission shall institute proceedings to determine whether 
+the proposed rule should be approved or disapproved.
+---------------------------------------------------------------------------
+
+    \35\ 15 U.S.C. 78s(b)(3)(A)(ii).
+    \36\ 17 CFR 240.19b-4(f)(2).
+---------------------------------------------------------------------------
+
+IV. Solicitation of Comments
+
+    Interested persons are invited to submit written data, views and 
+arguments concerning the foregoing, including whether the proposed rule 
+change is consistent with the Act. Comments may be submitted by any of 
+the following methods:
+
+Electronic Comments
+
+    <bullet> Use the Commission's internet comment form (<a href="https://www.sec.gov/rules/sro.shtml">https://www.sec.gov/rules/sro.shtml</a>); or
+    <bullet> Send an email to <a href="/cdn-cgi/l/email-protection#196b6c757c347a7674747c776d6a596a7c7a377e766f"><span class="__cf_email__" data-cfemail="eb999e878ec6888486868e859f98ab988e88c58c849d">[email&#160;protected]</span></a>. Please include 
+file number SR-MIAX-2026-37 on the subject line.
+
+Paper Comments
+
+    <bullet> Send paper comments in triplicate to Secretary, Securities 
+and Exchange Commission, 100 F Street NE, Washington, DC 20549-1090.
+
+All submissions should refer to file number SR-MIAX-2026-37. This file 
+number should be included on the subject line if email is used. To help 
+the Commission process and review your comments more efficiently, 
+please use only one method. The Commission will post all comments on 
+the Commission's internet website (<a href="https://www.sec.gov/rules/sro.shtml">https://www.sec.gov/rules/sro.shtml</a>). Copies of the filing will be available for inspection and 
+copying at the principal office of the Exchange. Do not include 
+personal identifiable information in submissions; you should submit 
+only information that you wish to make available publicly. We may 
+redact in part or withhold entirely from publication submitted material 
+that is obscene or subject to copyright protection. All submissions 
+should refer to file number SR-MIAX-2026-37 and should be submitted on 
+or before October 7, 2026.
+
+    For the Commission, by the Division of Trading and Markets, 
+pursuant to delegated authority.\37\
+---------------------------------------------------------------------------
+
+    \37\ 17 CFR 200.30-3(a)(12).
+---------------------------------------------------------------------------
+
+Sherry R. Haywood,
+Assistant Secretary.
+[FR Doc. 2026-18928 Filed 9-15-26; 8:45 am]
+BILLING CODE 8011-01-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

@@ -48,8 +48,16 @@ def now() -> str:
     return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
-def robots_verdict(url: str, user_agent: str) -> tuple[bool, str]:
+def robots_verdict(url: str, user_agent: str, cache: dict | None = None) -> tuple[bool, str]:
     """Ask robots.txt, and say which answer this is.
+
+    `cache` is for a run that fetches many files from ONE host: a mapping the
+    caller owns, keyed by (netloc, user agent), holding either the parsed
+    rules or the refusal. Passing one reads robots.txt once instead of once
+    per file, which is the polite thing when the alternative is four hundred
+    requests for the same file; the rules are still applied per path, so the
+    verdict a cached run records is the same verdict an uncached one would.
+    Omitting it keeps the old behaviour exactly.
 
     A host that answers robots.txt itself with 401 or 403 is refused by this
     project's choice, not by the standard: RobotFileParser swallows that status
@@ -67,6 +75,17 @@ def robots_verdict(url: str, user_agent: str) -> tuple[bool, str]:
     """
     parts = urlparse(url)
     robots_url = f"{parts.scheme}://{parts.netloc}/robots.txt"
+    if cache is not None and (parts.netloc, user_agent) in cache:
+        cached = cache[(parts.netloc, user_agent)]
+        if isinstance(cached, tuple):
+            return cached
+        allowed = cached.can_fetch(user_agent, url)
+        return allowed, ("allows " if allowed else "disallows ") + parts.path
+    def remember(value):
+        if cache is not None:
+            cache[(parts.netloc, user_agent)] = value
+        return value
+
     parser = RobotFileParser()
     parser.set_url(robots_url)
     try:
@@ -77,20 +96,21 @@ def robots_verdict(url: str, user_agent: str) -> tuple[bool, str]:
     except urllib.error.HTTPError as error:
         if error.code in (401, 403):
             if standard_4xx_host(parts.netloc) is not None:
-                return True, (
+                return remember((True, (
                     f"robots.txt could not be read ({error.code}); no rule was seen. "
                     "RFC 9309 2.3.1.3 permits access to a server whose robots.txt is "
                     "unavailable, and this host is listed for the standard's rule"
-                )
-            return False, f"robots.txt could not be read ({error.code}); refused by policy"
-        return True, f"no readable robots.txt (HTTP {error.code}); failing open"
+                )))
+            return remember((False, f"robots.txt could not be read ({error.code}); refused by policy"))
+        return remember((True, f"no readable robots.txt (HTTP {error.code}); failing open"))
     except Exception as error:  # noqa: BLE001 - the reason is the record
-        return True, f"no readable robots.txt ({type(error).__name__}); failing open"
+        return remember((True, f"no readable robots.txt ({type(error).__name__}); failing open"))
+    remember(parser)
     allowed = parser.can_fetch(user_agent, url)
     return allowed, ("allows " if allowed else "disallows ") + urlparse(url).path
 
 
-def fetch(url: str, target: Path, user_agent: str = DEFAULT_UA) -> int:
+def fetch(url: str, target: Path, user_agent: str = DEFAULT_UA, robots_cache: dict | None = None) -> int:
     meta: dict[str, object] = {
         "fetched_at": now(),
         "url": url,
@@ -103,7 +123,7 @@ def fetch(url: str, target: Path, user_agent: str = DEFAULT_UA) -> int:
         "sha256": None,
         "error": None,
     }
-    allowed, verdict = robots_verdict(url, user_agent)
+    allowed, verdict = robots_verdict(url, user_agent, robots_cache)
     meta["robots"] = verdict
     target.parent.mkdir(parents=True, exist_ok=True)
     meta_path = target.with_name(target.name + ".meta.json")

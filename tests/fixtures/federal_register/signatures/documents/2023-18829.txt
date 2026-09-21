@@ -1,0 +1,200 @@
+<html>
+<head>
+<title>Federal Register, Volume 88 Issue 168 (Thursday, August 31, 2023)</title>
+</head>
+<body><pre>
+[Federal Register Volume 88, Number 168 (Thursday, August 31, 2023)]
+[Notices]
+[Pages 60221-60222]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2023-18829]
+
+
+-----------------------------------------------------------------------
+
+DEPARTMENT OF HOMELAND SECURITY
+
+Secret Service
+
+[Docket Number DHS-2023-0017]
+
+
+Agency Information Collection Activities: Generic Information 
+Collection: USSS Customer Satisfaction Surveys
+
+AGENCY: Department of Homeland Security (DHS).
+
+ACTION: 30-Day notice and request for comments.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The Department of Homeland Security will submit the following 
+Information Collection Request (ICR) to the Office of Management and 
+Budget (OMB) for review and clearance in accordance with the Paperwork 
+Reduction Act of 1995. DHS previously published this ICR in the Federal 
+Register on Thursday, June 8, 2023 for a 60-day public comment period. 
+There were no comments received by DHS. The purpose of this notice is 
+to allow additional 30-days for public comments.
+
+DATES: Comments are encouraged and will be accepted until October 30, 
+2023. This process is conducted in accordance with 5 CFR 1320.1.
+
+ADDRESSES: You may submit comments, identified by docket number Docket 
+#DHS-2023-0017, at:
+    [cir] Federal eRulemaking Portal: <a href="http://www.regulations.gov">http://www.regulations.gov</a>. 
+Please follow the instructions for submitting comments.
+    Instructions: All submissions received must include the agency name 
+and docket number Docket #DHS-2023-0017. All comments received will be 
+posted without change to <a href="http://www.regulations.gov">http://www.regulations.gov</a>, including any 
+personal information provided.
+    Docket: For access to the docket to read background documents or 
+comments received, go to <a href="http://www.regulations.gov">http://www.regulations.gov</a>.
+
+SUPPLEMENTARY INFORMATION: Executive Order 12862 directs Federal 
+agencies to provide service to the public that matches or exceeds the 
+best service available in the private sector. In order to work 
+continuously to ensure that our programs are effective and meet our 
+customers' needs, the Department of Homeland Security (hereafter ``the 
+Agency'') seeks to obtain OMB approval of a generic clearance to 
+collect qualitative feedback on our service delivery. By qualitative 
+feedback we mean information that provides useful insights on 
+perceptions and opinions, but are not statistical surveys that yield 
+quantitative results that can be generalized to the population of 
+study. This collection of information is necessary to enable the Agency 
+to garner customer and stakeholder feedback in an efficient, timely 
+manner, in accordance with our commitment to improving service 
+delivery. The information collected from our customers and stakeholders 
+will help ensure that users have an effective, efficient, and 
+satisfying experience with the Agency's programs. This feedback will 
+provide insights into customer or stakeholder perceptions, experiences 
+and expectations, provide an early warning of issues with service, or 
+focus attention on areas where
+
+[[Page 60222]]
+
+communication, training or changes in operations might improve delivery 
+of products or services. These collections will allow for ongoing, 
+collaborative and actionable communications between the Agency and its 
+customers and stakeholders. It will also allow feedback to contribute 
+directly to the improvement of program management. Improving agency 
+programs requires ongoing assessment of service delivery, by which we 
+mean systematic review of the operation of a program compared to a set 
+of explicit or implicit standards, as a means of contributing to the 
+continuous improvement of the program.
+    The Agency will collect, analyze, and interpret information 
+gathered through this generic clearance to identify strengths and 
+weaknesses of current services and make improvements in service 
+delivery based on feedback. The solicitation of feedback will target 
+areas such as: timeliness, appropriateness, accuracy of information, 
+courtesy, efficiency of service delivery, and resolution of issues with 
+service delivery. Responses will be assessed to plan and inform efforts 
+to improve or maintain the quality of service offered to the public. If 
+this information is not collected, vital feedback from customers and 
+stakeholders on the Agency's services will be unavailable. The Agency 
+will only submit a collection for approval under this generic clearance 
+if it meets the following conditions:
+    <bullet> Information gathered will be used only internally for 
+general service improvement and program management purposes and is not 
+intended for release outside of the agency (if released, procedures 
+outlined in Question 16 will be followed);
+    <bullet> Information gathered will not be used for the purpose of 
+substantially informing influential policy decisions 1;
+    <bullet> Information gathered will yield qualitative information; 
+the collections will not be designed or expected to yield statistically 
+reliable results or used as though the results are generalizable to the 
+population of study;
+    <bullet> The collections are voluntary;
+    <bullet> The collections are low-burden for respondents (based on 
+considerations of total burden hours, total number of respondents, or 
+burden-hours per respondent) and are low-cost for both the respondents 
+and the Federal Government;
+    <bullet> The collections are non-controversial and do not raise 
+issues of concern to other Federal agencies;
+    <bullet> Any collection is targeted to the solicitation of opinions 
+from respondents who have experience with the program or may have 
+experience with the program in the near future; and
+    <bullet> With the exception of information needed to provide 
+renumeration for participants of focus groups and cognitive laboratory 
+studies, personally identifiable information (PII) is collected only to 
+the extent necessary and is not retained.
+    If these conditions are not met, the Agency will submit an 
+information collection request to OMB for approval through the normal 
+PRA process. To obtain approval for a collection that meets the 
+conditions of this generic clearance, a standardized form will be 
+submitted to OMB along with supporting documentation (e.g., a copy of 
+the comment card). The submission will have automatic approval, unless 
+OMB identifies issues within 5 business days. The types of collections 
+that this generic clearance covers include, but are not limited to:
+
+<bullet> Customer comment cards/complaint forms
+<bullet> Small discussion groups
+<bullet> Focus Groups of customers, potential customers, delivery 
+partners, or other stakeholders
+<bullet> Cognitive laboratory studies, such as those used to refine 
+questions or assess usability of a website
+<bullet> Qualitative customer satisfaction surveys (e.g., post-
+transaction surveys; opt-out web surveys)
+<bullet> In-person observation testing (e.g., website or software 
+usability tests)
+
+    The Agency has established a manager/managing entity to serve for 
+this generic clearance and will conduct an independent review of each 
+information collection to ensure compliance with the terms of this 
+clearance prior to submitting each collection to OMB. If appropriate, 
+agencies will collect information electronically and/or use online 
+collaboration tools to reduce burden.
+    Small business or other small entities may be involved in these 
+efforts but the Agency will minimize the burden on them of information 
+collections approved under this clearance by sampling, asking for 
+readily available information, and using short, easy-to-complete 
+information collection instruments. Without these types of feedback, 
+the Agency will not have timely information to adjust its services to 
+meet customer needs. If a confidentiality pledge is deemed useful and 
+feasible, the Agency will only include a pledge of confidentiality that 
+is supported by authority established in statute or regulation, that is 
+supported by disclosure and data security policies that are consistent 
+with the pledge, and that does not unnecessarily impede sharing of data 
+with other agencies for compatible confidential use. If the agency 
+includes a pledge of confidentiality, it will include a citation for 
+the statute or regulation supporting the pledge. This is a new 
+collection.
+    The Office of Management and Budget is particularly interested in 
+comments which:
+    1. Evaluate whether the proposed collection of information is 
+necessary for the proper performance of the functions of the agency, 
+including whether the information will have practical utility;
+    2. Evaluate the accuracy of the agency's estimate of the burden of 
+the proposed collection of information, including the validity of the 
+methodology and assumptions used;
+    3. Enhance the quality, utility, and clarity of the information to 
+be collected; and
+    4. Minimize the burden of the collection of information on those 
+who are to respond, including through the use of appropriate automated, 
+electronic, mechanical, or other technological collection techniques or 
+other forms of information technology, e.g., permitting electronic 
+submissions of responses.
+
+Analysis
+
+    Agency: Department of Homeland Security (DHS)/United States Secret 
+Service (USSS).
+    Title: Generic Information Collection: USSS Customer Satisfaction 
+Surveys.
+    OMB Number: 1620-NEW.
+    Frequency: On occasion.
+    Affected Public: Stakeholders/participants who engage with USSS 
+programs, investigations, and inspections; including, individuals/
+households and Federal, State, and Local governments.
+    Number of Respondents: 160,000.
+    Estimated Time per Respondent: 2 Minutes.
+    Total Burden Hours: 5,333 Hours.
+
+Frances Humphrey,
+Information Technology Program Manager, Office of the Chief information 
+Officer.
+[FR Doc. 2023-18829 Filed 8-30-23; 8:45 am]
+BILLING CODE 9110-18-P
+
+
+</pre></body>
+</html>

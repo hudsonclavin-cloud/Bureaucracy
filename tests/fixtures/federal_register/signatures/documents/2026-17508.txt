@@ -1,0 +1,116 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 165 (Thursday, August 27, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 165 (Thursday, August 27, 2026)]
+[Rules and Regulations]
+[Pages 55281-55282]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-17508]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+FEDERAL COMMUNICATIONS COMMISSION
+
+47 CFR Part 27
+
+[GN Docket Nos. 18-122 and 25-59; FCC 26-46; FR ID 362070]
+
+
+Upper C-Band (3.98-4.2 GHz); Expanding Flexible Use of the 3.7 to 
+4.2 GHz Band; Correction
+
+AGENCY: Federal Communications Commission.
+
+ACTION: Final rule; correction.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The Federal Communications Commission (Commission or FCC) is 
+correcting a final rule that appeared in the Federal Register on July 
+31, 2026. The text of the Report and Order, Order of Proposed 
+Modification, and Order on Reconsideration inadvertently contained 
+minor editorial errors and incorrectly restated the number of years 
+provided in the definitions of the first and second performance 
+benchmarks, which are corrected as detailed below. We make this 
+correction to improve the clarity and internal consistency of the 
+document.
+
+DATES: The corrections are effective on September 29, 2026.
+
+FOR FURTHER INFORMATION CONTACT: Andrew McArdell of the Wireless 
+Telecommunications Bureau, at <a href="/cdn-cgi/l/email-protection#f7b69993859280d9ba94b68593929b9bb7919494d9909881"><span class="__cf_email__" data-cfemail="6c2d02081e091b42210f2d1e080900002c0a0f0f420b031a">[email&#160;protected]</span></a> or 202-418-1576.
+
+SUPPLEMENTARY INFORMATION: In FR Doc. 2026-15598 appearing on page 
+48700 in the Federal Register of Friday, July 31, 2026, the following 
+corrections are made:
+    1. On page 48700, in the second column, in the DATES section, 
+``instruction 17 Sec.  (27.14(x)(3))'' is
+
+[[Page 55282]]
+
+corrected to read ``instruction 17 (Sec.  27.14(x)(4))''.
+    2. On page 48708, in the third column, in paragraph 60, the second 
+sentence is corrected to read as follows: ``Specifically, if a licensee 
+fails to meet the first performance benchmark (i.e., providing reliable 
+signal coverage and offering service to at least 45% of the population 
+in the license area no later than two years after the relevant 
+Transition Deadline), it will accelerate its second performance 
+benchmark by one year.''
+    3. Beginning on page 48708, in the third column, in paragraph 60, 
+the third sentence is corrected to read as follows: ``If a licensee 
+fails to meet the second performance benchmark (i.e., providing 
+reliable signal coverage and offering service to at least 80% of the 
+population in the license area no later than six years after the 
+relevant Transition Deadline) in any license area, its authorization 
+for that particular license area will terminate automatically without 
+Commission action.''
+    4. Beginning on page 48738, in the third column, paragraph 241 is 
+corrected to read as follows: ``It is further ordered that the rules 
+and requirements as adopted herein are adopted, effective sixty (60) 
+days after publication in the Federal Register, and that the Order of 
+Proposed Modification is effective as of the date of publication in the 
+Federal Register; provided, however, that Sec. Sec.  25.138(a)-(b); 
+25.147(a)-(c); 27.14(x)(4); 27.1412(b)-(c); 27.1412(e); 27.1412(g); 
+27.1413(a)(3); 27.1413(c)(1); 27.1413(c)(9); 27.1413(e)-(f); 
+27.1414(e); 27.1415; 27.1416; 27.1417; 27.1419; 27.1421; 27.1422(c); 
+27.1424 of the Commission's rules, which contain new or modified 
+information collection requirements that require review by the Office 
+of Management and Budget (OMB) under the Paperwork Reduction Act, will 
+not become effective until the effective date for those information 
+collections is announced in a document published in the Federal 
+Register after the Commission receives OMB approval. The Commission 
+directs the Bureau to issue such document and to cause Sec. Sec.  
+25.138(a) and (b); 25.147(a) through (c); 27.14(x)(4); 27.1412(b) and 
+(c); 27.1412(e); 27.1412(g); 27.1413(a)(3); 27.1413(c)(1); 
+27.1413(c)(9); 27.1413(e)-(f); 27.1414(e); 27.1415; 27.1416; 27.1417; 
+27.1419; 27.1421; 27.1422(c); 27.1424 to be revised accordingly.''
+
+0
+5. On page 48742, in the third column, in Sec.  27.14, paragraphs 
+(x)(3) and (x)(4) are corrected to read as follows:
+
+
+Sec.  27.14  [Corrected]
+
+    (x) * * *
+    (3) If a licensee fails to establish that it meets the Second 
+Buildout Requirement for a particular license area, its authorization 
+for each license area in which it fails to meet the Second Buildout 
+Requirement shall terminate automatically without Commission action, 
+and the licensee will be ineligible to regain it if the Commission 
+makes the license available at a later date.
+    (4) [Reserved]
+
+Federal Communications Commission.
+Marlene Dortch,
+Secretary.
+[FR Doc. 2026-17508 Filed 8-26-26; 8:45 am]
+BILLING CODE 6712-01-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

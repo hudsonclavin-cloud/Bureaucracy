@@ -1,0 +1,107 @@
+<html>
+<head>
+<title>Federal Register, Volume 90 Issue 182 (Tuesday, September 23, 2025)</title>
+</head>
+<body><pre>
+[Federal Register Volume 90, Number 182 (Tuesday, September 23, 2025)]
+[Notices]
+[Pages 45817-45818]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2025-18437]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+OFFICE OF SPECIAL COUNSEL
+
+
+Information Collection Request; Request for Comment
+
+AGENCY: U.S. Office of Special Counsel (OSC).
+
+ACTION: Notice of request for comments.
+
+-----------------------------------------------------------------------
+
+SUMMARY: In accordance with the Paperwork Reduction Act of 1995 (44 
+U.S.C. chapter 35), the U.S. Office of Special Counsel (OSC) has 
+submitted to the Office of Management and Budget (OMB) for review and 
+approval the following information collection: OSC's Alternative 
+Dispute Resolution (ADR) Program Survey. The currently approved 
+information collection (OMB Control Number 3255-0008) has been revised 
+to streamline survey administration. OSC now uses a single survey 
+distributed electronically to participants immediately following their 
+ADR mediation session, replacing the previous two-part process. The 
+survey is voluntary and anonymous, and responses are used to evaluate 
+program effectiveness, improve service delivery, and identify areas for 
+enhancement.
+
+DATES: Written comments must be received on or before October 23, 2025.
+
+ADDRESSES: You may submit comments by any of the following methods:
+    <bullet> Mail: Barbara Wheeler Jones, U.S. Office of Special 
+Counsel, 1730 M Street NW, Suite 218, Washington, DC 20036.
+    <bullet> Email: <a href="/cdn-cgi/l/email-protection#b0d6c2dcd9d1d9c3dfdef0dfc3d39ed7dfc6"><span class="__cf_email__" data-cfemail="1375617f7a727a607c7d537c60703d747c65">[email&#160;protected]</span></a>.
+
+FOR FURTHER INFORMATION CONTACT: Nicole Courtney, Records Manager, at 
+(202) 804-7000 or via email at <a href="/cdn-cgi/l/email-protection#85e3f7e9ece4ecf6eaebc5eaf6e6abe2eaf3"><span class="__cf_email__" data-cfemail="086e7a646169617b676648677b6b266f677e">[email&#160;protected]</span></a>.
+
+SUPPLEMENTARY INFORMATION: OSC's ADR Survey is administered 
+electronically to individuals who participate in the agency's voluntary 
+mediation program for prohibited personnel practice complaints. To 
+improve efficiency and enhance response quality, OSC now issues a 
+single consolidated survey immediately after the mediation concludes. 
+The information collected will help OSC evaluate the overall success of 
+its ADR process and improve service delivery. Participation remains 
+voluntary and anonymous.
+    <bullet> Title of Collection: OSC Alternative Dispute Resolution 
+(ADR) Program Survey.
+    <bullet> OMB Control Number: 3255-0008.
+    <bullet> Type of Review: An amendment of a currently approved 
+information collection. OSC has submitted an extension request to OMB 
+for this collection (Control No. 3255-0008), which is currently under 
+review. This notice initiates a separate review process for a proposed 
+revision to that collection, which will be submitted to OMB following 
+the conclusion of the public comment period.
+    <bullet> Affected Public: Individuals who participate in OSC's ADR 
+process (e.g., federal employees, agency representatives, legal 
+counsel).
+    <bullet> Estimated Number of Respondents: 80 annually.
+    <bullet> Estimated Time per Response: 35 minutes.
+    <bullet> Total Estimated Annual Burden: Approximately 46.64.
+    Abstract: OSC's ADR Program provides a voluntary and confidential 
+mediation process for resolving prohibited personnel practice 
+complaints. To assess participant satisfaction and overall program 
+effectiveness, OSC administers a short survey electronically to each 
+participant following mediation. This revised one-time survey format 
+replaces the prior two-part survey (initial and follow-up). Results 
+will be used to evaluate the ADR program, identify trends, and inform 
+improvements. Responses are voluntary and anonymous.
+
+[[Page 45818]]
+
+    Request for Comments: OSC invites written comments on:
+    1. Whether the proposed collection of information is necessary for 
+the proper performance of the functions of the agency, including 
+whether the information will have practical utility;
+    2. The accuracy of OSC's estimate of the burden of the proposed 
+collection of information;
+    3. Ways to enhance the quality, utility, and clarity of the 
+information to be collected; and
+    4. Ways to minimize the burden of the collection of information on 
+respondents, including through the use of automated collection 
+techniques or other forms of information technology.
+    All comments received will be included in the public record. 
+Comments will be summarized and/or included in the request for Office 
+of Management and Budget (OMB) approval.
+
+    Dated: September 19, 2025.
+Barbara W. Jones,
+Chief, Case Review Division, U.S. Office of Special Counsel.
+[FR Doc. 2025-18437 Filed 9-22-25; 8:45 am]
+BILLING CODE 7405-01-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

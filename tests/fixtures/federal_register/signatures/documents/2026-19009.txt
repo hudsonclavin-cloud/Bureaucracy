@@ -1,0 +1,138 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 178 (Wednesday, September 16, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 178 (Wednesday, September 16, 2026)]
+[Notices]
+[Pages 58692-58693]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-19009]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+DEPARTMENT OF HOMELAND SECURITY
+
+Federal Emergency Management Agency
+
+[Docket ID: FEMA-2025-0311; OMB No. 1660-0070]
+
+
+Agency Information Collection Activities: Submission for OMB 
+Review, Comment Request; National Fire Department Registry
+
+AGENCY: Federal Emergency Management Agency, Department of Homeland 
+Security.
+
+ACTION: 30-Day notice of extension and request for comments.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The Federal Emergency Management Agency (FEMA) will submit the 
+information collection abstracted below to the Office of Management and 
+Budget for review and clearance in accordance with the requirements of 
+the Paperwork Reduction Act of 1995. FEMA invites the general public to 
+take this opportunity to comment on an extension of a currently 
+approved information collection. In accordance with the requirements of 
+the Paperwork Reduction Act of 1995, this notice seeks comments 
+concerning the use of a form to collect data for the development and 
+continuation of the National Fire Department Registry.
+
+DATES: Comments must be submitted on or before October 16, 2026.
+
+ADDRESSES: Written comments and recommendations for the proposed 
+information collection should be sent within 30 days of publication of 
+this notice to <a href="http://www.reginfo.gov/public/do/PRAMain">www.reginfo.gov/public/do/PRAMain</a>. Find this particular 
+information collection by selecting ``Currently under 30-day Review--
+Open for Public Comments'' or by using the search function.
+
+FOR FURTHER INFORMATION CONTACT: Requests for additional information or 
+copies of the information collection should be made to Director, 
+Information Management Division, 500 C Street SW, Washington, DC 20472, 
+email address <a href="/cdn-cgi/l/email-protection#1254575f533f5b7c747d607f73667b7d7c3f517d7e7e7771667b7d7c613f5f737c7375777f777c665274777f733c767a613c757d64"><span class="__cf_email__" data-cfemail="2462616965096d4a424b564945504d4b4a09674b48484147504d4b4a570969454a45434149414a5064424149450a404c570a434b52">[email&#160;protected]</span></a> or 
+Craig Rollins, Supervisory Program Specialist, National Fire Data 
+Center, United States Fire Administration, FEMA, (202) 710-1836, and 
+<a href="/cdn-cgi/l/email-protection#1d7e6f7c747a336f72717174736e5d7b78707c3379756e337a726b"><span class="__cf_email__" data-cfemail="beddccdfd7d990ccd1d2d2d7d0cdfed8dbd3df90dad6cd90d9d1c8">[email&#160;protected]</span></a>.
+
+SUPPLEMENTARY INFORMATION: The Federal Fire Prevention and Control Act 
+of 1974 (Pub. L. 93-498, 15 U.S.C. 2201-2235) provides for the 
+gathering and analyzing of data as deemed useful and applicable for 
+fire departments. The U.S. Fire Administration (USFA) receives many 
+requests from fire service organizations and the general public for 
+information related to fire departments, including the total number of 
+departments, number of stations per department, population protected, 
+and number of firefighters. The USFA also has a need for this 
+information to guide programmatic decisions and produce mailing lists 
+for USFA publications.
+    Recommendations for the creation of the fire department census 
+database came out of a Blue Ribbon Panel's review of the USFA. The 
+report included a review of the structure, mission, and funding of the 
+USFA, future policies, programmatic needs, course development and 
+delivery, and the role of the USFA to reflect changes in the fire 
+service. As a result of those recommendations, the USFA is working to 
+identify all fire departments in the United States to develop a 
+database that includes information related to demographics, 
+capabilities, and activities of fire departments nationwide. In the 
+fall of 2016, the USFA renamed the census to the National Fire 
+Department Registry.
+    This proposed information collection previously published in the 
+Federal Register on February 11, 2026, at 91 FR 6233 with a 60-day 
+public comment period. No comments were received. The purpose of this 
+notice is to notify the public that FEMA will submit the information 
+collection abstracted below to the Office of Management and Budget for 
+review and clearance.
+
+Collection of Information
+
+    Title: National Fire Department Registry.
+    Type of Information Collection: Extension of a currently approved 
+information collection.
+    OMB Number: 1660-0070.
+    FEMA Forms: FEMA Form FF-USFA-FY-21-100 (formerly 070-0-0-1), Paper 
+Version; FEMA Form FF-USFA-FY-21-110 (formerly 070-0-0-1), Online 
+Version.
+    Abstract: This collection seeks to identify fire departments in the 
+United States to compile a database related to their demographics, 
+capabilities, and activities. The database is used to guide 
+programmatic decisions and provide information to the public and the 
+fire service.
+    Affected Public: State, Local or Tribal Government.
+    Estimated Number of Respondents: 6,375.
+    Estimated Number of Responses: 6,375.
+    Estimated Total Annual Burden Hours: 1,219.
+    Estimated Total Annual Respondent Cost: $18,139.
+    Estimated Respondents' Operation and Maintenance Costs: $0.
+    Estimated Respondents' Capital and Start-Up Costs: $0.
+    Estimated Total Annual Cost to the Federal Government: $111,146.
+
+Comments
+
+    Comments may be submitted as indicated in the ADDRESSES caption 
+above. Comments are solicited to (a) evaluate whether the proposed data 
+collection is necessary for the proper performance of the Agency, 
+including whether the information shall have practical utility; (b) 
+evaluate the
+
+[[Page 58693]]
+
+accuracy of the Agency's estimate of the burden of the proposed 
+collection of information, including the validity of the methodology 
+and assumptions used; (c) enhance the quality, utility, and clarity of 
+the information to be collected; and (d) minimize the burden of the 
+collection of information on those who are to respond, including 
+through the use of appropriate automated, electronic, mechanical, or 
+other technological collection techniques or other forms of information 
+technology, e.g., permitting electronic submission of responses.
+
+Nigel S. Allicock,
+Records Management Branch Chief, Office of the Chief Administrative 
+Officer, Mission Support, Federal Emergency Management Agency, 
+Department of Homeland Security.
+[FR Doc. 2026-19009 Filed 9-15-26; 8:45 am]
+BILLING CODE 9111-76-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-09-21T16:29:53Z",
+ "url": "https://www.federalregister.gov/documents/full_text/text/2006/12/26/06-9852.txt",
+ "status": 200,
+ "final_url": "https://www.federalregister.gov/documents/full_text/text/2006/12/26/06-9852.txt",
+ "content_type": "text/plain",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /documents/full_text/text/2006/12/26/06-9852.txt",
+ "bytes": 3492,
+ "sha256": "c89ce6c30f1eb998fcf8ddf189c4b3ad141522360246cf35e9e74db31795c87d",
+ "error": null
+}

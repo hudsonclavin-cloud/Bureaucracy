@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-09-21T17:17:51Z",
+ "url": "https://www.federalregister.gov/documents/full_text/text/2008/03/06/E8-4370.txt",
+ "status": 200,
+ "final_url": "https://www.federalregister.gov/documents/full_text/text/2008/03/06/E8-4370.txt",
+ "content_type": "text/plain",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /documents/full_text/text/2008/03/06/E8-4370.txt",
+ "bytes": 7277,
+ "sha256": "c4780274a2400928d58a6d0b5314aa7211d60f07d77b2ebe49efb4d46ed3e2d4",
+ "error": null
+}

@@ -1,0 +1,895 @@
+<html>
+<head>
+<title>Federal Register, Volume 79 Issue 102 (Wednesday, May 28, 2014)</title>
+</head>
+<body><pre>
+[Federal Register Volume 79, Number 102 (Wednesday, May 28, 2014)]
+[Rules and Regulations]
+[Pages 30463-30469]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2014-12099]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+DEPARTMENT OF DEFENSE
+
+Office of the Secretary
+
+32 CFR Part 300
+
+Defense Logistics Agency
+
+32 CFR Part 1285
+
+[Docket ID: DOD-2012-OS-0019]
+RIN 0790-AI87
+
+
+Defense Logistics Agency Freedom of Information Act Program
+
+AGENCY: Defense Logistics Agency, DoD.
+
+ACTION: Final rule.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The Defense Logistics Agency (DLA) is revising and updating 
+its existing rule concerning the DLA Freedom of Information Act (FOIA) 
+Program. This rule implements changes to conform to the requirements of 
+the Electronic Freedom of Information Act Amendments of 1996, and the 
+OPEN Government Act of 2007. In addition, part 1285 will be 
+redesignated as part 300.
+
+DATES: Effective Date: This rule is effective June 27, 2014.
+
+FOR FURTHER INFORMATION CONTACT: Ms. Deborah Teer, (703) 767-5247.
+
+SUPPLEMENTARY INFORMATION: This rule supplements 32 CFR part 286 to 
+accommodate specific requirements of DLA's FOIA Program.
+
+Executive Summary
+
+I. Purpose of This Regulatory Action
+    a. This rule assigns responsibilities and establishes policies 
+and procedures for a uniform DLA Freedom of Information Act program 
+pursuant to the provisions of the Freedom of Information Act.
+    b. Authority: 5 U.S.C. 552
+II. Summary of the Major Provisions of This Regulatory Action
+    This rule implements changes to conform to the requirements of 
+the Electronic Freedom of Information Act Amendments of 1996, Public 
+Law 104-231, and the OPEN Government Act of 2007, Public Law 110-
+175.
+III. Costs and Benefits of This Regulatory Action
+    This regulatory action imposes no monetary costs to the Agency 
+or public. The benefit to the public is the accurate reflection of 
+the Agency's FOIA Program to ensure that policies and procedures are 
+known to the public.
+
+REGULATORY PROCEDURES
+
+Executive Order 12866, ``Regulatory Planning and Review'' and Executive 
+Order 13563, ``Improving Regulation and Regulatory Review''
+
+    It has been certified that 32 CFR part 300 does not: (1) Have an 
+annual effect on the economy of $100 million or more or adversely 
+affect in a material way the economy; a sector of the economy; 
+productivity; competition; jobs; the environment; public health or 
+safety; or State, local, or tribal governments or communities; (2) 
+Create a serious inconsistency or otherwise interfere with an action 
+taken or planned by another Agency; (3) Materially alter the budgetary 
+impact of entitlements, grants, user fees, or loan programs, or the 
+rights and obligations of recipients thereof; or (4) Raise novel legal 
+or policy issues arising out of legal mandates, the President's 
+priorities, or the principles set forth in these Executive orders.
+
+Public Law 96-354, ``Regulatory Flexibility Act'' (5 U.S.C. Chapter 6)
+
+    It has been determined that 32 CFR part 300 is not subject to the 
+Regulatory Flexibility Act because it would not, if promulgated, have 
+significant economic
+
+[[Page 30464]]
+
+impact on a substantial number of small entities.
+
+Public Law 96-511, Paperwork Reduction Act (44 U.S.C. Chapter 35)
+
+    It has been determined that 32 CFR part 300 does not impose 
+reporting or recordkeeping requirements under the Paperwork Reduction 
+Act of 1995.
+
+Public Law 104-4, Unfunded Mandates Reform Act of 1995
+
+    It has been certified that 32 CFR part 300 does not contain any 
+unfunded mandate or significantly or uniquely affect small governments, 
+as described in the Unfunded Mandates Reform Act of 1995.
+
+Executive Order 13132, Federalism
+
+    It has been certified that 32 CFR part 300 does not have 
+substantial direct effects on the states, on the relationship between 
+the national government and the states, or on the distribution of power 
+and responsibilities among the various levels of government, as 
+specified in Executive Order 13132.
+
+Executive Order 13045, Protection of Children From Environmental Health 
+Risks and Safety Risks
+
+    32 CFR part 300 is not subject to Executive Order 13045.
+
+Public Comments
+
+    The proposed rule was published on October 15, 2012 at 77 FR 62469. 
+A discussion of the comments and the changes made to the proposed rule 
+as a result of those comments are provided as follows:
+
+1. General Comments
+
+    Comments: Office of Government Information Services (OGIS) and 
+Electronic Privacy Information Center (EPIC) commends DLA for the 
+emphasis on customer service and electronic databases in the proposed 
+rule.
+    Response: Although no response is required, DLA appreciates all 
+comments.
+
+2. Out-of-Scope Comments
+
+    Comments: Several respondents stated that DLA does not offer any 
+changes to existing regulatory exemptions governing the Agency under 
+the Freedom of Information Act (FOIA). DLA assumes the continuing 
+viability of these exemptions. However, in Milner v. Department of the 
+Navy, 131 S.Ct. 1259 (2011), the Supreme Court reversed the lower court 
+interpretation of certain of the FOIA statutory exemptions, upon which 
+interpretation the exemptions regulations relied. The present Comment 
+urges DLA and the Department of Defense (DoD) to revisit these 
+regulatory exemptions and to recraft them both to comply with the 
+Court's Milner holding and to clarify the proper regulatory 
+interpretation of the statutory exemptions.
+    EPIC makes a number of comments on the wording of 32 CFR part 286, 
+DoD FOIA Program Regulation.
+    Response: The purpose of this rule is to implement 32 CFR part 286. 
+Issues relating to the scope or coverage of 32 CFR part 286 are outside 
+the scope of this final rule.
+
+3. Specific Comments
+
+Sec.  300.3 Definitions
+    Comment: EPIC suggests adding language to make clear that this 
+section is intended to supplement 32 CFR part 286.
+    Response: The final rule opening paragraph has been revised to 
+state that other definitions may be found in 32 CFR part 286, Subpart 
+A.
+    Comment: OGIS suggests adding terms, including requester category 
+and fee waiver, to the glossary. OGIS has found that even experienced 
+requesters can still confuse those terms. Additionally, because DLA 
+refers to both in Sec.  300.3(l), this will ensure shared 
+understanding.
+    Response: The final rule has been revised to include the requester 
+category. The definition of fee waiver is unnecessary as DLA adopts 
+Subpart F of 32 CFR part 286 which defines fee waiver.
+    (a) Administrative Appeal.
+    Comment: EPIC suggests adding language to state that failure to 
+respond within the statutory time limit is appealable.
+    Response: The final rule definition has been revised.
+    (b) Adverse Determination.
+    Comment: EPIC suggests adding language to state that definition 
+includes but is not limited to.
+    Response: The final rule definition has been revised.
+    (d) Consultation.
+    Comment: EPIC suggests amending the definition to clarify when 
+consultation is necessary.
+    Response: The final rule has been revised.
+    (e) Defense Freedom of Information Program Office.
+    Comment: EPIC suggests changing the word Program to Policy.
+    Response: The final rule has been revised.
+    (g) DLA Component.
+    Comment: EPIC suggests modifying the current definition will result 
+in limitless authority to any delegate within DLA to deny FOIA 
+requests.
+    Response: DLA will not retain the current definition. Due to DLA 
+reorganization of Components, including FOIA offices, not all 
+components are authorized to receive and act independently on FOIA 
+requests. To address EPIC's comment, DLA incorporates language from the 
+DoD FOIA Program Regulation directing DLA Components to limit the 
+number of IDAs appointed and to balance the goals of centralization of 
+authority to promote uniform decisions and decentralization to 
+facilitate responding to each request within the time limitations of 
+the FOIA. Refer to definition (o) DLA FOIA Requester Service Center.
+    Comment: (l) FOIA Public Liaison. OGIS applauds DLA for including 
+FOIA Public Liaison in its Definitions section and suggests additional 
+language to reflect the position's statutorily enhanced role in the 
+2007 FOIA amendments that comes directly from 5 U.S.C. 552(l).
+    Response: The final rule has been revised to expand the definition 
+of FOIA Public Liaison.
+    Comment: (m) FOIA Request. EPIC suggests retaining current DLA 
+definition.
+    Response: The final rule definition is amended in part. The 
+definition does not require advance payment but to state a willingness 
+to pay fees should they be assessed. See current regulation at 
+1285.5(d). DLA does not deny a request if a willingness to pay fees is 
+not indicated but before processing begins the requester is contacted 
+to obtain a fee declaration.
+Sec.  300.4 Policy
+    (a) General.
+    Comment: EPIC suggests that the proposed changes provide the agency 
+with greater discretion to deny FOIA requests.
+    Response: DLA has amended this paragraph, since this regulation 
+does not impact disclosures outside of FOIA (refer to DoD Directive 
+5230.09, Clearance of DoD Information for Public Release).
+    (c) Creating a Record.
+    Comment: EPIC suggests the regulations would significantly limit 
+the circumstances under which DLA will process a FOIA request.
+    Response: DLA partially accommodates EPIC's comment regarding 
+agency burden and significant inference with business as usual.
+    (d) Consultations and Referrals.
+    Comment: OGIS suggests that in addition to the adoption of 32 CFR 
+part 286, Subpart A, 286.4(i) and 286.22(e), Policy, that DLA offices 
+notify requesters in writing of a referral, and
+
+[[Page 30465]]
+
+the part of the request that has been referred and the name of a 
+contact at the other agency.
+    Response: The final rule implements this section of 32 CFR part 
+286, Subpart A, 286.4(i), which incorporates OGIS's suggestion.
+    Comment: EPIC suggests DLA not adopt 32 CFR part 286, Subpart A, 
+286.4 unless it is revised.
+    Response: DLA adheres to DoD policies, to create uniformity across 
+DoD which provides greater understanding of the DoD FOIA Program to 
+requesters. Paragraph 300.7(d) contains the language recommended by 
+EPIC in its comment (B).
+Sec.  300.6 General
+    (a)(2) Requests from the public.
+    Comment: EPIC states that the new language gives DLA unharnessed 
+discretion whether to comply with time limits; unnecessarily delay the 
+processing of FOIA requests; and contains a broken link.
+    Response: Per 32 CFR 310.17(i), DLA is required by law to abide by 
+the statutory time limit. DLA has revised this paragraph to re-
+emphasize that requirement; and included a link to the homepage of DoD 
+Issuances.
+Sec.  300.7 FOIA Request Processing Procedures
+    (a) Receipt and Control.
+    Comment: OGIS suggests including a new subsection that addresses 
+acknowledgment of a request. Specifically OGIS suggests that DLA state 
+that it will provide an acknowledgment letter confirming receipt of a 
+request that includes the unique tracking number as well as a brief 
+description of the subject of the request. This would help requesters 
+as well as the agency keep track of multiple pending requests.
+    Response: Per 5 U.S.C. 552(a)(7)(A), the final rule has been 
+revised at Sec.  300.7 (a)(4) to include acknowledgement of a FOIA 
+request.
+    (a)(2) Receipt and Control.
+    Comment: EPIC states that the proposed language increases the 
+burden on the requester to produce errorless requests and suggests 
+addressing tolling the time limit due to defects. EPIC suggests that 
+sentences be struck from this section. EPIC also states the proposed 
+language outright bans referrals outside the DoD.
+    Response: At the screening phase a request that is not perfected 
+cannot be tolled. There is no ban of referrals outside of DoD, to the 
+contrary, DLA refers records to the originating agency both inside and 
+outside of DoD. The regulation is revised to address tolling and the 
+language relating to misdirected requests is removed.
+    (b) Multi-track processing.
+    Comment: EPIC believes that DLA is supplanting the statute with 
+this section as it reduces the ``unusual circumstances'' provision of 
+the agency.
+    Response: Pursuant to the authority granted by 5 U.S.C. 
+552(a)(6)(D), DLA's establishment of multi-track processing complies 
+with DoD regulation and assists both DLA and the requester in 
+recognizing when the request is complex in nature due to ``unusual 
+circumstances,'' and may require an additional ten days for processing. 
+DLA's focus on customer service ensures the requester is informed of 
+its processes and the use of multi-track assists DLA and requesters in 
+achieving better response times.
+    (d) Misdirected requests.
+    Comment: EPIC recommends retaining the language in the current 
+regulation.
+    Response: DLA has amended this paragraph based on guidance in both 
+the DOJ FOIA Guide and DoD regulation. DLA is not required to forward 
+misdirected requests to outside DoD agencies.
+Sec.  300.8 Initial Determinations
+(a)
+    Comment: OGIS suggests including additional information addressing 
+the content of the denial letter. Specifically, OGIS suggests providing 
+a brief description of the information DLA is withholding if it is 
+possible without revealing exempt information. OGIS also recommends 
+that DLA specifically address the new requirements in 5 U.S.C. 552(b) 
+that agencies shall (1) indicate, if technically feasible, the precise 
+amount of information deleted and the exemption under which the 
+deletion is made at the place in the record where the deletion is made, 
+and (2) indicate the exemption under which a deletion is made on the 
+released portion of the record, unless including that indication would 
+harm an interest protected by the exemption.
+    Response: The final rule has been revised at Sec.  300.8(c) to 
+include the elements of an initial determination response letter.
+(b)
+    Comment: EPIC states that the proposed rule eliminates the mention 
+of advising a requester when segregation was not reasonable when a 
+release is denied in full.
+    Response: The final rule has been revised at Sec.  300.9(c) to 
+address EPIC's comment. DLA does not deny records in full on the 
+grounds of reasonable segregability. Full denials are based on FOIA 
+exemptions and should be appealed on this basis.
+Sec.  300.9 Appeals
+    Comment: EPIC suggests language adding the right to appeal if the 
+requester receives no determination. This subsection changes the window 
+of time in which requesters may file an appeal from sixty to thirty 
+calendar days.
+    Response: DLA has revised the definition of an adverse 
+determination (see Sec.  300.3(b)) to include this language. The length 
+of time to appeal is set by DoD, therefore, is outside the scope of 
+DLA's authority.
+Sec.  300.10 Mediation Services
+    Comment: OGIS suggests renumbering the current Sec.  300.10 as 
+Sec.  300.11 and inserting a new Sec.  300.10 to inform requesters of 
+the mediation services provided by OGIS to resolve disputes between 
+FOIA requesters and DLA in accordance with FOIA and DoD policy.
+    Response: DLA recognized the value of mediation and appreciates its 
+role in the FOIA process, however, DoD has not established guidelines 
+for using mediation services provided by OGIS to resolve disputes 
+between FOIA requesters and the Agency, therefore this comment is not 
+adopted.
+Sec.  300.11 General
+    Comment: OGIS suggests that in addition to the adoption of 32 CFR 
+part 286, Subpart F, Fee Schedule that DLA address fee estimates and 
+administrative waiver of fees.
+    Response: The purpose of this rule is to implement 32 CFR part 286 
+and DLA finds it unnecessary to duplicate information published by DoD.
+
+List of Subjects in 32 CFR Parts 300 and 1285
+
+    Freedom of Information Act.
+
+    For the reasons stated in the preamble, DoD amends 32 CFR chapters 
+I and XII as follows:
+
+TITLE 32--NATIONAL DEFENSE
+
+CHAPTER I--OFFICE OF THE SECRETARY OF DEFENSE
+
+CHAPTER XII--DEFENSE LOGISTICS AGENCY
+
+PART 1285 [REDESIGNATED AS PART 300 AND TRANSFERRED TO CHAPTER I]
+
+0
+1. Part 1285 is redesignated as part 300 and transferred from chapter 
+XII, subchapter B, to chapter I, subchapter N.
+
+[[Page 30466]]
+
+
+0
+2. Newly redesignated part 300 is revised to read as follows:
+
+PART 300--DEFENSE LOGISTICS AGENCY FREEDOM OF INFORMATION ACT 
+PROGRAM
+
+Subpart A--General Provisions
+Sec.
+300.1 Purpose.
+300.2 DLA FOIA regulatory precedence.
+300.3 Definitions.
+300.4 Policy.
+Subpart B--Exemptions
+Sec.
+300.5 General.
+Subpart C--FOIA Request Processing
+Sec.
+300.6 General.
+300.7 FOIA request processing procedures.
+300.8 Initial determinations.
+300.9 Appeals.
+300.10 Judicial actions.
+Subpart D--Fees and Fee Waivers
+Sec.
+300.11 General.
+
+Appendix A to Part 300--Access to DLA Records
+
+     Authority:  5 U.S.C. 552.
+
+Subpart A--General Provisions
+
+
+Sec.  300.1  Purpose.
+
+    This part provides policies and procedures for the Defense 
+Logistics Agency (DLA) implementation of the Freedom of Information Act 
+(FOIA) (5 U.S.C. 552). This part supplements and implements the 
+Department of Defense (DoD) FOIA Program Directive (32 CFR part 285) 
+and DoD FOIA Program Regulation (32 CFR part 286). This part applies to 
+DLA Components and takes precedence over all DLA regulations that 
+supplement the FOIA program.
+
+
+Sec.  300.2  DLA FOIA regulatory precedence.
+
+    This part is published in accordance with the authority contained 
+in 5 U.S.C. 552 and 32 CFR parts 285 and 286. It supplements 32 CFR 
+part 286 to accommodate specific requirements of DLA's FOIA Program. 
+For all FOIA issues not covered by this part, the rules set forth in 32 
+CFR part 286 will govern.
+
+
+Sec.  300.3  Definitions.
+
+    Definitions not included in this subpart may be found in 32 CFR 
+part 286, subpart A. The following terms and meanings apply for the 
+purposes of this part:
+    (a) Administrative appeal. A written request by a member of the 
+public, made under the FOIA, to DLA's Appellate Authority requesting 
+reversal of an adverse determination. An appeal may be mailed, emailed 
+to <a href="/cdn-cgi/l/email-protection#0a627b276c65636b4a6e666b24676366"><span class="__cf_email__" data-cfemail="1d756c307b72747c5d79717c33707471">[email&#160;protected]</span></a>, or faxed to 703-767-6091. Appeals are to be 
+addressed to the Appellate Authority, Defense Logistics Agency, Suite 
+1644, 8725 John J. Kingman Road, Fort Belvoir, Virginia 22060-6221.
+    (b) Adverse determination. Adverse determinations include, but are 
+not limited to decisions that: Withhold all or part of a requested 
+record; deny a fee category claim by a requester; deny a request for 
+waiver or reduction of fees; deny requesters challenge of fee 
+estimates; denies a request for expedited processing; state that no 
+records were located; do not provide a response within the statutory 
+time limit; or what the requester believes is adverse in nature.
+    (c) Appellate authority. The General Counsel, DLA, who upon receipt 
+of an administrative appeal, reviews the initial determination and may 
+uphold, reverse or amend any adverse determination.
+    (d) Consultation. The process whereby a DoD Component receives a 
+FOIA request for a record in which another DoD Component or Federal 
+agency has a clear and substantial interest in the subject matter, the 
+responsive record is sent to another DoD Component or Federal agency to 
+obtain recommendations on the releasability of the document and is 
+returned to the originator for further action.
+    (e) Defense Freedom of Information Policy Office (DFOIPO). The 
+office responsible for the formulation and implementation of DoD policy 
+guidance for FOIA. For information about DFOIPO refer to <a href="http://www.dod.mil/pubs/foi/dfoipo/">http://www.dod.mil/pubs/foi/dfoipo/</a>.
+    (f) Direct costs. Expenditures made in searching for, reviewing, 
+and duplicating documents in response to a FOIA request. Direct costs 
+include, for example, the salary of the employee performing the work 
+(the basic rate of pay plus 16 percent of that rate to cover benefits) 
+and the costs of operating duplicating machinery. Not included in 
+direct costs are overhead expenses such as the cost of space, heating, 
+or lighting the facility in which the records are stored.
+    (1) Search. This term includes all time spent looking, both 
+manually and electronically, for records that are responsive to a FOIA 
+request, such as:
+    (i) Searching for responsive emails or electronic documents located 
+on individually-assigned computers or servers;
+    (ii) Time taken by a programmer to create a program to run a 
+requested report from a database; or
+    (iii) Searching through hardcopy files to include records stored at 
+a Federal Records Center. The term ``search'' also includes a page-by-
+page and line-by-line identification of a record to determine if it, or 
+portions, are responsive to the request.
+    (2) Duplication. The process of making a copy of a document in 
+response to a FOIA request. Copies can take the form of paper, 
+microfiche, audiovisual or machine-readable documentation (e.g., 
+magnetic tape or compact disc), among others. Personnel time spent 
+performing tasks to enable a computer system to output information in a 
+particular digital form or format for a requester is considered search 
+time. Search time is calculated according to 32 CFR part 286, subpart 
+F.
+    (3) Review. The examination of documents located in response to a 
+FOIA request to determine if any of the statutory exemptions permit 
+withholding. Review also includes the time taken to redact documents, 
+preparing them for release and reviewing submitter responses under 
+Executive Order 12600. Review does not include the time spent resolving 
+general legal or policy issues regarding the application of exemptions.
+    (g) DLA component. DLA Components consist of Headquarters 
+Organizations, Primary Level Field Activities, Defense Business 
+Services, Regional Commands, and other Organizational entities. A 
+description of DLA Components can be found at <a href="http://www.dla.mil">www.dla.mil</a>.
+    (h) DLA FOIA Requester Service Center. DLA Office's authorized to 
+receive and process FOIA requests and where a FOIA requester can gain 
+information concerning DLA's FOIA Program, the status of the person's 
+FOIA request, or information about the agency's FOIA response. Refer to 
+Appendix A of this part for locations of FOIA Requester Service Centers 
+or for additional information refer to DLA's public Web site at 
+<a href="http://www.dla.mil/FOIA-Privacy">www.dla.mil/FOIA-Privacy</a>.
+    (i) Electronic records. Records (including email) created, stored, 
+and retrieved by electronic means.
+    (j) Federal agency. This term is defined at 5 U.S.C. 551(1) and 5 
+U.S.C. 552(f)(1).
+    (k) FOIA officer. DLA employee who is responsible for processing 
+FOIA requests and is a point of contact for the FOIA program. The FOIA 
+Officer grants or denies requests for fee waivers or expedited 
+processing and makes requester category determinations.
+    (l) FOIA Public Liaison. The member of DLA's Headquarters FOIA 
+staff to whom a FOIA requester can raise concerns about the service the 
+requester received from a DLA FOIA Requester Service Center. The FOIA 
+Public Liaison is available to assist in reducing delays,
+
+[[Page 30467]]
+
+increasing transparency; increasing understanding of the status of 
+requests and assists with resolving disputes.
+    (m) FOIA request. A written request for DLA records that reasonably 
+describes the record(s) sought, enabling a DLA employee familiar with 
+the files to locate the record(s) with a reasonable amount of effort; 
+indicates a willingness to pay processing fees or requests a fee 
+waiver; and includes a postal mailing address and contact information. 
+A willingness to pay fees is not required when, based upon the request, 
+fees will not be assessed (e.g. an ``other'' requester requests a 
+document that is certain to be less than 100 pages and will take less 
+than two hours of search time). Written requests may be received by 
+U.S. Postal Service or other commercial delivery means, by facsimile, 
+or electronically. A FOIA request meeting these conditions, arriving at 
+DLA's FOIA Requester Service Center in possession of the requested 
+records, is considered perfected or properly received at which time the 
+statutory time limit for response begins. In no case shall the 
+statutory time limit for processing a perfected request begin later 
+than ten business days after receipt by any of DLA's FOIA Request 
+Service Centers.
+    (n) Initial denial authority (IDA). By this regulation, the 
+Director, DLA, delegates to Heads of DLA Components the authority to 
+withhold information requested under the FOIA pursuant to one or more 
+of the nine FOIA exemptions and to confirm that no records were located 
+in response to a request. The designation of IDA may be further 
+delegated by the Heads of DLA Components to their Deputies. DLA 
+Components shall limit the number of IDAs appointed. In designating its 
+IDAs, a DLA Component shall balance the goals of centralization of 
+authority to promote uniform decisions and decentralization to 
+facilitate responding to each request within the time limitations of 
+the FOIA. IDAs may also deny a fee category claim by a requester, deny 
+a request for expedited processing, deny a request for a waiver or 
+reduction of fees, or review a fee estimate, although these 
+determinations are usually made by the FOIA Officer.
+    (o) Referral. The process of transferring records found in response 
+to a FOIA request to another DLA or DoD Component, or any Federal 
+agency for review and direct response to the requester. This process is 
+used when documents located during a search are found to have 
+originated or there is a substantial interest in the record with 
+another DLA or DoD Component, or Federal agency.
+    (p) Requester category. One of three categories that agencies place 
+requesters in for the purpose of determining fees for search, review 
+and duplication. The three categories are:
+    (1) Commercial;
+    (2) Non-commercial scientific or educational institutions or news 
+media; and
+    (3) All others.
+
+
+Sec.  300.4  Policy.
+
+    DLA adopts and supplements the DoD FOIA Program policy and 
+procedures codified at 32 CFR part 286, subpart A, General Provisions 
+and subpart B, FOIA Reading Rooms and 32 CFR part 285.
+    (a) General. As a matter of policy, DLA shall make discretionary 
+disclosures of exempt records or information whenever disclosure would 
+not foreseeably harm an interest protected by a FOIA exemption, but 
+this policy does not create any right enforceable in court. The public 
+has a right to information concerning the activities of its Government. 
+DLA policy is to conduct its activities in an open manner and provide 
+the public with a maximum amount of accurate and timely information 
+concerning its activities, consistent always with the legitimate public 
+and private interests of the American people. A DLA record requested by 
+a member of the public who follows rules established herein shall be 
+withheld only when it is exempt from mandatory public disclosure under 
+the FOIA.
+    (b) Customer Service. Executive Order 13392, Improving Agency 
+disclosure of Information, December 14, 2005, requires agencies to 
+emphasize a new citizen-centered approach to the FOIA that is results-
+oriented. Because FOIA requesters are seeking a service from the 
+Federal Government, all DLA Components shall respond courteously and 
+professionally to FOIA requesters. Additionally, the Components shall 
+provide the public with information about agency records that are 
+already publicly available, as well as information about the status of 
+a person's FOIA request and an estimated date on which DLA's Component 
+will complete the request. Refer to Appendix A of this part for DLA 
+FOIA Requester Service Center contact information.
+    (1) To meet the requirements of Executive Order 13392, each FOIA 
+Requester Service Center shall have an internet Web site that serves to 
+educate the public on the FOIA process. At a minimum, each Web site 
+shall have the address, telephone number, facsimile number, and 
+electronic mail address to which FOIA requests can be sent; a link to 
+DoD's FOIA handbook; the name and contact information of DLA's FOIA 
+Officer and Public Liaison; and information on how a requester can 
+obtain the status of a request. Additionally, each FOIA Requester 
+Service Center Web site will have links to DLA's Headquarters FOIA/
+Privacy Web site reading room.
+    (2) [Reserved]
+    (c) Creating a Record. (1) There is no obligation to create nor 
+compile a record to satisfy an FOIA request. A DLA activity, however, 
+may compile a new record when doing so would result in a more useful 
+response to the requester or be less burdensome to the activity 
+provided the requester does not object. The cost of creating or 
+compiling such a record may not be charged to the requester unless the 
+fee for creating the record is equal to or less than the fee which 
+would be charged for providing the existing record. Fee assessments 
+shall be in accordance with part 286, subpart F, of this title.
+    (2) A record must exist and be in the possession and control of DLA 
+at the time the search begins to be considered subject to this part and 
+the FOIA.
+    (3) When processing FOIA requests for electronic data, if DLA's 
+Component has the capability to respond to the request, and the effort 
+is reasonable and would be a business as usual approach, then the 
+request should be processed. However, the request need not be processed 
+where the capability to respond does not exist without a significant 
+expenditure of resources, thus not being a normal business as usual 
+approach. For example: Processing a request that would cause a 
+significant interference with the operation of DLA's Component's 
+automated system or require a significant amount of programming effort.
+    (d) Consultations and Referrals. The rules published in part 32 CFR 
+part 286, subpart A, Sec. Sec.  286.4(i) and 286.22(e), Policy, apply 
+to this rule.
+    (e) Forms. This part authorizes the use of forms developed by DoD 
+and DLA for the express use of the FOIA Program. Refer to <a href="http://www.dla.mil">www.dla.mil</a> 
+for a list of all forms prescribed by this part.
+
+Subpart B--Exemptions
+
+
+Sec.  300.5  General.
+
+    Refer to the DoD FOIA Program regulations codified at 32 CFR part 
+286, subpart C, Exemptions.
+
+Subpart C--FOIA Request Processing
+
+
+Sec.  300.6  General.
+
+    DLA adopts and supplements the DoD FOIA Program regulations 
+codified at 32
+
+[[Page 30468]]
+
+CFR part 286, subpart E, Release and Processing Procedures.
+    (a) Requests from the public. (1) Individuals seeking DLA 
+information should address their FOIA requests to one of the FOIA 
+Requester Service Center addresses listed in Appendix A of this part.
+    (2) When personally identifying information in a record is 
+requested by the subject of the record or the subject's representative, 
+and the information is contained within a Privacy Act system of 
+records, the request will be processed under both the FOIA and the 
+Privacy Act. Due to the dual nature of the processing, the FOIA time 
+limits will be used. DLA Components must comply with the provisions of 
+32 CFR 310.17(c) to confirm the identity of the requester.
+    (b) [Reserved]
+
+
+Sec.  300.7  FOIA request processing procedures.
+
+    (a) Receipt and Control. Requests received after 5:00 p.m. EST will 
+be considered received the following business day. Upon receipt of a 
+request for records, the FOIA Officer must:
+    (1) Open a file in DLA's specified control system designed to 
+ensure accountability and compliance with the FOIA. The control system 
+will include the data elements needed to compile the statistics 
+required in the annual Department of Justice FOIA report or other 
+reports required by another authority. Each request shall automatically 
+be assigned a unique tracking number.
+    (2) Screen the request for defects in the description, the 
+requester category, the fee declaration, and full postal address. The 
+FOIA Officer will notify the requester of any such defects and provide 
+assistance to help remedy the defects. The FOIA Officer will place the 
+request on-hold until the request is perfected. When a DLA FOIA 
+Requester Service Center receives a request for records that clearly 
+belong to an agency outside of DoD, the requester shall be told these 
+are not agency records and, if possible, provide the name of the agency 
+that may hold the records. No referral of the request is made outside 
+of DoD.
+    (3) Once a request is perfected, DLA may make one request for 
+additional information unrelated to fees and toll the 20 working-day 
+period while awaiting the information. Tolling the 20 working-day 
+period is not limited for fee related issues.
+    (4) DLA will provide the requester with the FOIA tracking number 
+and the track in which the FOIA was placed (see Sec.  300.7(b)). Each 
+DLA FOIA Requester Service Center has a telephone line to inform the 
+requester of the status of their request (see Appendix A of this part).
+    (5) DLA uses the date-of-search cut-off (this cut-off is the day 
+before the search begins) to ensure that as many records as possible 
+will be captured by the agency's search. A FOIA request may not be on-
+going or open-ended in nature. DLA Components are responsible for 
+providing records in possession and control of DLA at the time the 
+search for records begins. DLA Components are not required to expend 
+DLA funds to establish data links that provide real-time or near-real-
+time data to a FOIA requester.
+    (b) Multi-track Processing. DLA components shall process requests 
+with all due diligence according to their order of receipt. A DLA 
+component uses three processing tracks by distinguishing between 
+simple, complex, and expedited requests based on the need to search and 
+collect from multiple directorates/locations; the need to search for, 
+collect and appropriately examine a voluminous amount of records; and/
+or the need to consult with other DLA or DoD Components having a 
+substantial interest in the releasability of the record. Requesters are 
+notified in the acknowledgement letter of the track the request is 
+placed in. Requests placed in the simple track will typically be 
+completed within the statutory time limit for responding to requests. 
+Requests placed in the complex track may be narrowed or modified in 
+order to qualify for faster processing within the specified limits of 
+DLA's simple track. Expedited processing must be requested and a 
+requester who seeks expedited processing must submit a statement, 
+certified to be true and correct to the best of that person's knowledge 
+and belief, explaining in detail the basis for requesting expedited 
+processing. Within ten calendar days of its receipt of a request for 
+expedited processing, the proper component shall decide whether to 
+grant expedited processing and shall notify the requester of the 
+decision. If a request for expedited processing is granted, the request 
+shall be given priority and processed as soon as practicable. If a 
+request for expedited processing is denied, any appeal of that decision 
+shall be acted on expeditiously. Refer to the DoD FOIA Handbook for 
+information on multi-track processing (<a href="http://www.dod.mil/pubs/foi/dfoipo/foiaHandbook.html#long">http://www.dod.mil/pubs/foi/dfoipo/foiaHandbook.html#long</a>).
+    (c) Payments in Arrears. Where a requester has previously failed to 
+pay a fee charged within 30 calendar days, DLA may require the 
+requester to pay the full amount owed, plus any applicable interest, 
+before beginning to process a new or pending request from the requester 
+(see OMB Fee Guidelines (<a href="http://www.dod.gov/pubs/foi/dfoipo/docs/OMBGuidelines_FOIAFees.pdf">http://www.dod.gov/pubs/foi/dfoipo/docs/OMBGuidelines_FOIAFees.pdf</a>)). Interest will be at the rate prescribed 
+in 31 U.S.C. 3717, and confirmed with the servicing Financial 
+Operations Office.
+    (d) Misdirected Requests. A misdirected request is a request 
+received by DLA's FOIA Office for records maintained by another DLA or 
+DoD Component. Misdirected requests shall be forwarded promptly, but in 
+any event not later than ten days after the request is first received 
+by any component of the agency that is designated in this regulation to 
+receive requests (see Appendix A of this part). The receiving FOIA 
+Office shall route the request to the proper DLA or DoD FOIA Office and 
+the response time will commence on the date that the request is 
+received by the proper FOIA Office, but not later than ten working days 
+after the request is first received by any DLA or DoD FOIA Office. 
+Misdirected FOIA requests are not forwarded outside of DoD.
+
+
+Sec.  300.8  Initial determinations.
+
+    (a) The initial determination is whether to make a record available 
+in response to a FOIA request. A full release may be made by an 
+official knowledgeable of the record, with authority to determine that 
+no harm would come from release. Adverse determinations (refer to Sec.  
+300.3(b)) must be made by the designated Initial Denial Authority (IDA) 
+except for determinations made regarding the requester category and 
+requests for fee waivers or expedited processing. By this regulation, 
+the Director, DLA, delegates to Heads of DLA Components (see Sec.  
+300.3(h)) the designation of IDA. The designation of IDA may be further 
+delegated by the Heads of DLA Components to their Deputies. The IDA 
+shall review all recommendations for withholding information and 
+whether the criteria for withholding under one or more FOIA exemptions 
+are met. DLA has IDAs throughout the agency; and each IDA will make the 
+determination for records within their area of functional 
+responsibility. If a request involves records from more than one 
+functional area, consultation will be done with all responsible IDAs 
+but will be signed by the IDA assigned the primary responsibility for 
+processing the request.
+    (b) The FOIA requires that any reasonably segregable portion of a 
+record must be released after appropriate application of the Act's nine 
+exemptions. Segregation is not reasonable when it would produce an
+
+[[Page 30469]]
+
+essentially meaningless set of words and phrases, or even sentences 
+which taken separately or together have minimal or no information 
+content.
+    (c) If information is withheld in whole or part, DLA will provide 
+in a response letter the exemption under which the withholding is made, 
+a description of the type of information redacted, the name and title 
+or position of the IDA and the administrative appeal rights. When 
+information is withheld in full, DLA will provide an estimate of the 
+volume withheld. This estimate should be in number of pages or in some 
+other reasonable form of estimation. When information is withheld in 
+part, DLA will show the redacted amount of information and the 
+exemption under which the redaction is made on the released portion of 
+the record, unless including that indication would harm an interest 
+protected by the exemption under which the redaction is made.
+
+
+Sec.  300.9  Appeals.
+
+    When an IDA makes an adverse determination (see Sec.  300.3(b)) the 
+requester may appeal that decision in writing to the designated 
+appellate authority (see Sec.  300.3(a)). An appeal must be made in 
+writing to DLA's Appellate Authority and must be postmarked within the 
+appeal time limits of the DoD FOIA Program Regulation at 32 CFR 286.24. 
+The appeal should be accompanied by copies of the initial request and 
+the denial letter.
+
+
+Sec.  300.10  Judicial actions.
+
+    DLA adopts the DoD FOIA Program regulations codified at 32 CFR part 
+286, subpart E, Release and Processing Procedures.
+
+Subpart D--Fees and Fee Waivers
+
+
+Sec.  300.11  General.
+
+    DLA adopts the rules and rates published in 32 CFR part 286, 
+subpart F, Fee Schedule. In addition, DLA considers fees charged by a 
+Federal Records Center to retrieve and re-file records a part of the 
+direct costs charged to requesters.
+
+APPENDIX A TO PART 300--GAINING ACCESS TO DLA RECORDS
+
+    (a) General. (1) The Defense Logistics Agency, established 
+pursuant to authority vested in the Secretary of Defense, is an 
+agency of DoD under the direction, authority, and control of the 
+Assistant Secretary of Defense for Logistics and Materiel Readiness, 
+and is subject to DoD policies, directives, and instructions.
+    (2) DLA is comprised of several Components and each DLA 
+Component is responsible for maintaining its own records; therefore, 
+FOIA requests should be addressed to the FOIA Requester Service 
+Center that has custody of the record sought. (See paragraph (c) of 
+this appendix.) DLA FOIA Officers will assist requesters in 
+determining the correct DLA Requester Service Center to address 
+requests. (See paragraph (c) of this appendix and DLA's public Web 
+site at <a href="http://www.dla.mil">www.dla.mil</a>.)
+    (3) On DLA's public Web site is an index to assist in locating 
+DLA records by category, organization, keyword search, or by 
+contract prefix. The index is titled ``Index of Information at DLA 
+FOIA Service Centers'' at <a href="http://www.dla.mil/FOIA-Privacy/servindex/pages/category.aspx">www.dla.mil/FOIA-Privacy/servindex/pages/category.aspx</a>.
+    (b) Requester Requirements. (1) Requesters are responsible for 
+submitting a perfected request as defined in Sec.  300.3(m), FOIA 
+Request.
+    (2) Addressing Requests. Address requests to DLA's FOIA 
+Requester Service Center most likely to hold the records (see 
+paragraph (c) of this appendix for the contact information of DLA 
+FOIA Requester Service Centers designated to receive FOIA requests). 
+If DLA's FOIA Requester Service Center is undeterminable, address 
+requests to DLA Headquarters FOIA Requester Service Center for 
+proper routing.
+    (3) Availability of DLA Publications. Many unrestricted DLA 
+regulations, manuals, and handbooks are available online. Visit 
+DLA's FOIA/Privacy Web site for more information at <a href="http://www.dla.mil/foia-privacy/">http://www.dla.mil/foia-privacy/</a>.
+    (c) Locations of DLA FOIA Requester Service Centers. Refer to 
+the FOIA/Privacy Web page at <a href="http://www.dla.mil/FOIA-Privacy/pages/foiapocs.aspx">http://www.dla.mil/FOIA-Privacy/pages/foiapocs.aspx</a> for current points of contact at each of the DLA's 
+FOIA Requester Service Centers.
+    (1) Defense Logistics Agency Headquarters, ATTN: DGA, 8725 John 
+J. Kingman Rd., Ste 1644, Fort Belvoir, VA 22060-6221, Fax: 703-767-
+6091, Email: <a href="/cdn-cgi/l/email-protection#e38b92ce858c8a82a3878f82cd8e8a8f"><span class="__cf_email__" data-cfemail="0169702c676e686041656d602f6c686d">[email&#160;protected]</span></a>--Responsible for broad functional 
+areas, such as Office of the Director, General Counsel, Small 
+Business Programs, DLA Office of Inspector General, Legislative 
+Affairs, Equal Employment Opportunity Office, Installation Support, 
+Human Resources, Logistics Operations, Information Operations, 
+Acquisition, and Financial Operations. This FOIA Requester Service 
+Center also processes FOIA requests for the following locations:
+    (i) DLA Transaction Service, Wright-Patterson AFB, Ohio--
+Editing/routing of logistics transactions, network interoperability 
+and eBusiness services.
+    (ii) DLA Strategic Materials, Fort Belvoir, Va.--Manages the 
+strategic and critical raw material stockpile that supports national 
+defense needs.
+    (iii) DLA Europe & Africa, Kaiserslautern, Germany--Focal point 
+for U.S. European Command's and U.S. Africa Command's theater of 
+operations.
+    (iv) DLA Pacific, Camp Smith, Hawaii--Focal point for U.S. 
+Pacific Command's theater of operations.
+    (v) DLA Central, MacDill AFB, Fla.--Focal point for U.S. Central 
+Command's theater of operations.
+    (2) DLA Energy, 8725 John J. Kingman Rd., Ste 3729, Fort 
+Belvoir, VA 22060-6222, Fax: 703-767-5022, Email: 
+<a href="/cdn-cgi/l/email-protection#acc8c0cdc9c2c9decbd582c9cac3c5cdecc8c0cd82c1c5c0"><span class="__cf_email__" data-cfemail="791d15181c171c0b1e00571c1f161018391d151857141015">[email&#160;protected]</span></a>--Fuel, energy support and services, and bulk 
+petroleum.
+    (3) DLA Land and Maritime, ATTN: GC, 3990 E. Broad Street, 
+Columbus, OH 43218-3990, Fax: 614-692-4385, Email: 
+<a href="/cdn-cgi/l/email-protection#45213626266b20232a2c24052129246b282c29"><span class="__cf_email__" data-cfemail="e387908080cd86858c8a82a3878f82cd8e8a8f">[email&#160;protected]</span></a>--Maritime and land weapons system supply chains.
+    (4) DLA Aviation, 8000 Jefferson Davis Highway, Richmond, VA 
+23297-5000, Fax: 804-279-4137, Email: <a href="/cdn-cgi/l/email-protection#7d1b12141c53190e1e0f3d19111c53101411"><span class="__cf_email__" data-cfemail="4c2a23252d62283f2f3e0c28202d62212520">[email&#160;protected]</span></a>--Aviation 
+supply chain.
+    (5) DLA Troop Support, 700 Robbins Avenue, Bldg 36, 
+Philadelphia, PA 19111-5096, Fax: 215-737-2151, Email: 
+<a href="/cdn-cgi/l/email-protection#a7e3ebe6f3d5c8c8d7f4d2d7d7c8d5d3e1e8eee6c2d5c2d6d2c2d4d3e7c3cbc689cacecb"><span class="__cf_email__" data-cfemail="480c04091c3a2727381b3d3838273a3c0e0701092d3a2d393d2d3b3c082c242966252124">[email&#160;protected]</span></a>--Subsistence, clothing, and 
+textiles, medical, and construction and equipment supply chains.
+    (6) DLA Distribution, ATTN: DDC-GC, Mission Drive, Bldg 81, New 
+Cumberland, PA 17070-5000, Fax: 717-770-5685, Email: <a href="/cdn-cgi/l/email-protection#513535327c34373e383011353d307f3c383d"><span class="__cf_email__" data-cfemail="741010175911121b1d15341018155a191d18">[email&#160;protected]</span></a>--Worldwide network of 25 distribution depots and nine 
+map support offices.
+    (7) DLA Disposition Services and DLA Logistics Information 
+Service, 74 Washington Avenue North, Battle Creek, MI 49017-3084, 
+Fax: 269-961-4534, Email: <a href="/cdn-cgi/l/email-protection#254157485640434a4c44654149440b484c49"><span class="__cf_email__" data-cfemail="acc8dec1dfc9cac3c5cdecc8c0cd82c1c5c0">[email&#160;protected]</span></a>.
+    (i) Disposition Services: Reutilization, transfer, 
+demilitarization, and environmental disposal and reuse.
+    (ii) Logistics Information Service: Manages a wide range of 
+logistics information and identification systems.
+    (8) DLA Document Services, 5450 Carlisle Pike, Bldg 9, P.O. Box 
+2020, Mechanicsburg, PA 17055-0788, Fax: 717-605-3999, Email: 
+<a href="/cdn-cgi/l/email-protection#6d0b02040c4309020e1e1b0e1e2d09010c43000401"><span class="__cf_email__" data-cfemail="d8beb7b1b9f6bcb7bbabaebbab98bcb4b9f6b5b1b4">[email&#160;protected]</span></a>--Automated document production, printing 
+services, digital conversion and document storage.
+
+    Dated: May 21, 2014.
+Aaron Siegel,
+Alternate OSD Federal Register Liaison Officer, Department of Defense.
+[FR Doc. 2014-12099 Filed 5-27-14; 8:45 am]
+BILLING CODE 5001-06-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

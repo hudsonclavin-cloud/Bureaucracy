@@ -1,0 +1,69 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 179 (Thursday, September 17, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 179 (Thursday, September 17, 2026)]
+[Notices]
+[Page 58935]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-19034]
+
+
+-----------------------------------------------------------------------
+
+SECURITIES AND EXCHANGE COMMISSION
+
+[OMB Control No. 3235-0621]
+
+
+Agency Information Collection Activities; Submission for OMB 
+Review; Comment Request; Extension: Form 15F
+
+Upon Written Request, Copies Available From: Securities and Exchange 
+Commission, Office of FOIA Services, 100 F Street NE, Washington, DC 
+20549-2736
+
+    Notice is hereby given that, pursuant to the Paperwork Reduction 
+Act of 1995 (44 U.S.C. 3501 et seq.), the Securities and Exchange 
+Commission (``Commission'') has submitted to the Office of Management 
+and Budget this request for extension of the previously approved 
+collection of information discussed below.
+    Form 15F (17 CFR 249.324) is filed by a foreign private issuer when 
+terminating or suspending its Securities and Exchange Act of 1934 
+(``Exchange Act'') reporting obligations. Form 15F requires a foreign 
+private issuer to disclose information that helps investors understand 
+the foreign private issuer's decision to terminate or suspend its 
+Exchange Act reporting obligations and assists the Commission staff in 
+determining whether the issuer is eligible to terminate or suspend its 
+Exchange Act reporting obligations. The information required by Form 
+15F is mandatory, and Form 15F is publicly available on the 
+Commission's Electronic Data Gathering, Analysis, and Retrieval 
+(``EDGAR'') system. We estimate that Form 15F takes approximately 30 
+hours to prepare and is filed once per year by approximately 23 foreign 
+private issuers, for a total of approximately 23 responses annually. We 
+estimate that 25% of the 30 hours per response (7.5 hours per response) 
+is carried internally by the issuer for a total annual reporting burden 
+of 173 hours (7.5 hours per response x 23 responses). We estimate that 
+75% of the 30 hours per response (22.5 hours per response) is carried 
+externally by outside professionals retained by the issuer at an 
+estimated rate of $600 per hour for a total annual cost burden of 
+$310,500 ($600 per hour x 22.5 hours per response x 23 responses 
+annually).
+    An agency may not conduct or sponsor, and a person is not required 
+to respond to, a collection of information unless it displays a 
+currently valid OMB Control Number.
+    The public may view and comment on this information collection 
+request at: <a href="https://www.reginfo.gov/public/do/PRAViewICR?ref_nbr=202605-3235-007">https://www.reginfo.gov/public/do/PRAViewICR?ref_nbr=202605-3235-007</a> or send an email comment to 
+<a href="/cdn-cgi/l/email-protection#3578776d1b7a78771b7a7c67741b6670766a5150465e6a5a53535c565047755a58571b505a451b525a43"><span class="__cf_email__" data-cfemail="baf7f8e294f5f7f894f5f3e8fb94e9fff9e5dedfc9d1e5d5dcdcd3d9dfc8fad5d7d894dfd5ca94ddd5cc">[email&#160;protected]</span></a> within 30 days of the day 
+after publication of this notice by October 19, 2026.
+
+    Dated: September 14, 2026.
+J. Matthew DeLesDernier,
+Deputy Secretary.
+[FR Doc. 2026-19034 Filed 9-16-26; 8:45 am]
+BILLING CODE 8011-01-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

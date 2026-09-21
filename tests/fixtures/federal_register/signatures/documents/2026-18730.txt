@@ -1,0 +1,269 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 176 (Monday, September 14, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 176 (Monday, September 14, 2026)]
+[Notices]
+[Pages 58254-58255]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-18730]
+
+
+-----------------------------------------------------------------------
+
+DEPARTMENT OF THE TREASURY
+
+Internal Revenue Service
+
+
+Agency Information Collection Activities; Comment Request on U.S. 
+Employment Tax Returns and Related Forms, Schedules, Attachments, and 
+Published Guidance
+
+AGENCY: Internal Revenue Service (IRS), Treasury.
+
+ACTION: Notice of information collection; request for comments.
+
+-----------------------------------------------------------------------
+
+SUMMARY: In accordance with the Paperwork Reduction Act of 1995, the 
+IRS is inviting comments on the information collection request outlined 
+in this notice.
+
+DATES: Written comments should be received on or before November 13, 
+2026 to be assured of consideration.
+
+ADDRESSES: Direct all written comments to Andres Garcia, Internal 
+Revenue Service, Room 6526, 1111 Constitution Avenue NW, Washington, DC 
+20224, or by email to <a href="/cdn-cgi/l/email-protection#9aeae8fbb4f9f5f7f7fff4eee9daf3e8e9b4fdf5ec"><span class="__cf_email__" data-cfemail="463634276825292b2b23283235062f343568212930">[email&#160;protected]</span></a>. Include ``OMB Control No. 
+1545-0029'' in the subject line of the message.
+
+FOR FURTHER INFORMATION CONTACT: View the latest drafts of the tax 
+forms related to the information collection listed in this notice at 
+<a href="https://www.irs.gov/draft-tax-forms">https://www.irs.gov/draft-tax-forms</a>. Requests for additional 
+information or copies of this collection should be directed to Kerry 
+Dennis, (202) 317-5751.
+
+SUPPLEMENTARY INFORMATION: The IRS, in accordance with the Paperwork 
+Reduction Act of 1995 (PRA) (44 U.S.C. 3506(c)(2)(A)), provides the 
+general public and Federal agencies with an opportunity to comment on 
+proposed, revised, and continuing collections of information. This 
+helps the IRS assess the impact and minimize the burden of its 
+information collection requirements. Comments submitted in response to 
+this notice will be summarized and/or included in the request for OMB 
+approval. All comments will become a matter of public record. For this 
+reason, please do not include in your comments information of a 
+confidential nature, such as sensitive personal information. Comments 
+are invited on: (a) Whether the collection of information is necessary 
+for the proper performance of the functions of the agency, including 
+whether the information shall have practical utility; (b) the accuracy 
+of the agency's estimate of the burden of the collection of 
+information; (c) ways to enhance the quality, utility, and clarity of 
+the information to be collected; (d) ways to minimize the burden of the 
+collection of information on respondents, including through the use of 
+automated collection techniques or other forms of information 
+technology; and (e) estimates of capital or start-up costs and costs of 
+operation, maintenance, and purchase of services to provide 
+information.
+
+Tax Compliance Burden
+
+    Tax compliance burden is defined as the time and money taxpayers 
+spend to comply with their tax filing responsibilities. Time-related 
+activities include recordkeeping, tax planning, gathering tax 
+materials, learning about the law, and completing and submitting the 
+return. Out-of-pocket costs include expenses such as purchasing tax 
+software, paying a third-party preparer, and printing and postage. Tax 
+compliance burden does not include a taxpayer's tax liability, economic 
+inefficiencies caused by sub-optimal choices related to tax deductions 
+or credits, or psychological costs.
+
+Proposed PRA Submission to OMB
+
+    Title: U.S. Employment Tax Returns and Related Forms, Schedules, 
+Attachments, and Published Guidance.
+    OMB Control Number: 1545-0029.
+    Form Numbers and Published Guidance: CT-1, CT-1X, CT-2, SS-8, W-2, 
+W-2 AS, W-2 C, W-2 GU, W-2 VI, W-3, W-3 (PR), W-3 C, W-3 C (PR), W-3 
+SS, 940, 940 SCH A, 940 SCH R, 941, 941 SCH B, 941 SCH D, 941 SCH R, 
+941 X, 943, 943 A, 943 SCH R, 943 X, 944, 944 X, 945, 945 A, 945 X, 
+2032, 2678, 8027, 8027 T, 8453 EMP, 8850, 8879 EMP, 8922, 8952, 8974 
+and all related forms, schedules, and attachments.
+    Abstract: These forms, schedules and attachments are used by 
+employers to report their employment tax-related activity. This 
+information collection covers the burden associated with preparing and 
+submitting employment tax returns and related forms, schedules, and 
+attachments, and complying with published guidance.
+    Current Actions: There have been changes in regulatory guidance 
+related to various forms approved under this approval package during 
+the past year. There have been additions and removals of forms included 
+in this approval package. It is anticipated that these changes will 
+have an impact on the overall burden and cost estimates requested for 
+this approval package, however these estimates were not finalized at 
+the time of release of this notice. These estimated figures are 
+expected to be available by the release of the 30-day comment notice 
+from Treasury. This approval package is being submitted for renewal 
+purposes.
+    Type of Review: Revision of currently approved collection.
+    Affected Public: Employers.
+    Preliminary Estimated Number of Respondents: 7,730,000.
+    Preliminary Estimated Total Time (Hours): 475,200,000.
+    Preliminary Estimated Time per Respondent (Hours): 61 hours 28 
+minutes.
+    Preliminary Estimated Monetized Time ($): 17,082,000,000.
+    Preliminary Estimated Out-of-Pocket Costs ($): 21,499,000,000.
+    Preliminary Estimated Total Monetized Burden ($): 38,581,000,000.
+
+    Note:  Total Monetized Burden = Out-of-Pocket Costs + Monetized 
+Time
+
+
+    Dated: September 10, 2026.
+Kerry Dennis,
+Tax Analyst.
+
+Appendix-A: Forms and Schedules
+
+[[Page 58255]]
+
+
+
+------------------------------------------------------------------------
+         Form No.                              Title
+------------------------------------------------------------------------
+CT-1.....................  Employer's Annual Railroad Retirement Tax
+                            Return.
+CT-1X....................  Adjusted Employer's Annual Railroad
+                            Retirement Tax Return or Claim for Refund.
+CT-2.....................  Employee Representative's Quarterly Railroad
+                            Tax Return.
+SS-8.....................  Determination of Worker Status for Purposes
+                            of Federal Employment Taxes and Income Tax
+                            Withholding.
+W-2......................  Wage and Tax Statement.
+W-2 AS...................  American Samoa Wage and Tax Statement.
+W-2 C....................  Corrected Wage and Tax Statement.
+W-2 GU...................  Guam Wage and Tax Statement.
+W-2 VI...................  U.S. Virgin Islands Wage and Tax Statement.
+W-3......................  Transmittal of Wage and Tax Statements.
+W-3 (PR).................  Transmittal of Withholding Statements (Puerto
+                            Rican Version).
+W-3 C....................  Transmittal of Corrected Wage and Tax
+                            Statements.
+W-3 C (PR)...............  Transmittal of Corrected Wage and Tax
+                            Statements (Puerto Rican Version).
+W-3 SS...................  Transmittal of Wage and Tax Statements.
+940......................  Employer's Annual Federal Unemployment (FUTA)
+                            Tax Return.
+940 SCH A................  Multi-State Employer and Credit Reduction
+                            Information.
+940 SCH R................  Allocation Schedule for Aggregate Form 940
+                            Filers.
+941......................  Employer's Quarterly Federal Tax Return.
+941 SCH B................  Report of Tax Liability for Semiweekly
+                            Schedule Depositors.
+941 SCH D................  Report of Discrepancies Caused by
+                            Acquisitions, Statutory Mergers, or
+                            Consolidations.
+941 SCH R................  Reconciliation for Aggregate Form 941 Filers.
+941 X....................  Adjusted Employer's QUARTERLY Federal Tax
+                            Return or Claim for Refund.
+943......................  Employer's Annual Tax Return for Agricultural
+                            Employees.
+943 SCH R................  Allocation Schedule for Aggregate Form 943
+                            Filers.
+943 A....................  Agricultural Employer's Record of Federal Tax
+                            Liability.
+943 X....................  Adjusted Employer's Annual Federal Tax Return
+                            for Agricultural Employees or Claim for
+                            Refund.
+944......................  Employer's ANNUAL Federal Tax Return.
+944 X....................  Adjusted Employer's ANNUAL Federal Tax Return
+                            or Claim for Refund.
+945......................  Annual Return of Withheld Federal Income Tax.
+945 A....................  Annual Record of Federal Tax Liability.
+945 X....................  Adjusted ANNUAL Return of Withheld Federal
+                            Income Tax or Claim for Refund.
+2032.....................  Contract Coverage Under Title II of the
+                            Social Security Act.
+2678.....................  Employer/Payer Appointment of Agent.
+4669.....................  Statement of Payments Received.
+4670.....................  Request for Relief of Payment of Certain
+                            Withholding Taxes.
+8027.....................  Employer's Annual Information Return of Tip
+                            Income and Allocated Tips.
+8027 T...................  Transmittal of Employer's Annual Information
+                            Return of Tip Income and Allocated Tips.
+8453 EMP.................  Employment Tax Declaration for an IRS e-file
+                            Return.
+8850.....................  Pre-Screening Notice and Certification
+                            Request for the Work Opportunity Credit.
+8879 EMP.................  IRS e-file Signature Authorization for Forms
+                            940, 940-PR, 941, 941-PR, 941-SS, 943, 943-
+                            PR, 944, and 945.
+8922.....................  Third-Party Sick Pay Recap.
+8952.....................  Application for Voluntary Classification
+                            Settlement Program (VCSP).
+8974.....................  Qualified Small Business Payroll Tax Credit
+                            for Increasing Research Activities.
+9465.....................  Payment Plan Request.
+------------------------------------------------------------------------
+
+Appendix-B: Guidance Documents
+
+------------------------------------------------------------------------
+                 Guidance                          Title/document
+------------------------------------------------------------------------
+Announcement 2000-19.....................  Tip Reporting Alternative
+                                            Commitment (TRAC) agreement
+                                            for use in industries other
+                                            than the food and beverage
+                                            industry and the cosmetology
+                                            and barber industry in which
+                                            tipped employees receive
+                                            both cash and charged tips.
+Announcement 2000-20.....................  Tip Reporting Alternative
+                                            Commitment (TRDA) for use in
+                                            industries other than the
+                                            food and beverage industry
+                                            and the gaming industry.
+Announcement 2000-21.....................  Tip Reporting Alternative
+                                            Commitment (TRAC) Agreement
+                                            for Use in the Cosmetology
+                                            and Barber Industry to
+                                            Employment Tax.
+Announcement 2000-22.....................  Tip Reporting Alternative
+                                            Commitment (TRAC) agreement
+                                            for use in the food and
+                                            beverage industry.
+Announcement 2000-23.....................  Tip Rate Determination
+                                            Agreement (TRDA) for use in
+                                            the food and beverage
+                                            industry.
+Notice 2000-21...........................  Employer-designed Tip
+                                            Reporting Program (EmTRAC)
+                                            for the Food and Beverage
+                                            Industry.
+TD 6516..................................  Employment Taxes, Applicable
+                                            on and after January 1, 1955
+                                            (26 CFR 31.6001-1; 26 CFR
+                                            31.6001-2; 26 CFR 31.6001-3;
+                                            26 CFR 31.6001-5).
+TD 9405..................................  Employment Tax Adjustments
+                                            (Reg-111583-07).
+TD 9645..................................  Rules Relating to Additional
+                                            Medicare Tax (REG-130074-
+                                            11).
+TD 9860..................................  Certified Professional
+                                            Employer Organizations.
+TD 10053.................................  Backup Withholding on Third
+                                            Party Network Transactions.
+------------------------------------------------------------------------
+
+[FR Doc. 2026-18730 Filed 9-11-26; 8:45 am]
+BILLING CODE 4831-GV-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

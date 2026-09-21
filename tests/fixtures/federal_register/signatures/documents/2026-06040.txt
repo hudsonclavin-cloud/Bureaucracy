@@ -1,0 +1,93 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 60 (Monday, March 30, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 60 (Monday, March 30, 2026)]
+[Notices]
+[Pages 15595-15596]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-06040]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+DEPARTMENT OF COMMERCE
+
+Bureau of Economic Analysis
+
+
+Agency Information Collection Activities; Submission to the 
+Office of Management and Budget (OMB) for Review and Approval; Comment 
+Request; Direct Investment Surveys: BE-605, Quarterly Survey of Foreign 
+Direct Investment in the United States--Transactions of U.S. Affiliate 
+With Foreign Parent
+
+    The Department of Commerce will submit the following information 
+collection request to the Office of Management and Budget (OMB) for 
+review and clearance in accordance with the Paperwork Reduction Act of 
+1995, on or after the date of publication
+
+[[Page 15596]]
+
+of this notice. We invite the general public and other Federal agencies 
+to comment on proposed, and continuing information collections, which 
+helps us assess the impact of our information collection requirements 
+and minimize the public's reporting burden. Public comments were 
+previously requested via the Federal Register on 1/15/2026 during a 60-
+day comment period. This notice allows for an additional 30 days for 
+public comments.
+    Agency: Bureau of Economic Analysis (BEA), Commerce.
+    Title: Quarterly Survey of Foreign Direct Investment in the United 
+States.
+    OMB Control Number: 0608-0009.
+    Form Number: BE-605.
+    Type of Request: Revision.
+    Number of Respondents: 2,100 per quarter; 8,400 annually.
+    Average Hours per Response: 1 hour is the average but may vary 
+considerably among respondents because of differences in company 
+structure and complexity.
+    Burden Hours: 8,400.
+    Needs and Uses: The Quarterly Survey of Foreign Direct Investment 
+in the United States (BE-605) obtains quarterly data on transactions 
+and positions between foreign-owned U.S. business enterprises and their 
+``affiliated foreign groups'' (i.e., their foreign parents and foreign 
+affiliates of their foreign parents). The survey is a sample survey 
+that covers all U.S. affiliates, except for certain private funds, 
+above a size-exemption level. The sample data are used to derive 
+universe estimates of direct investment transactions, positions, and 
+income in nonbenchmark years from similar data reported in the BE-12, 
+Benchmark Survey of Foreign Direct Investment in the United States, 
+which is conducted every five years. The data collected through the BE-
+605 survey are essential for the preparation of the U.S. international 
+transactions accounts, the national income and product accounts, and 
+the net international investment position accounts of the United 
+States. The data are needed to measure the size and economic 
+significance of foreign direct investment in the United States, measure 
+changes in such investment, and assess its impact on the U.S. economy.
+    Affected Public: Businesses or other for-profit organizations.
+    Frequency: Quarterly.
+    Respondent's Obligation: Mandatory.
+    Legal Authority: International Investment and Trade in Services 
+Survey Act (Pub. L. 94-472, 22 U.S.C. 3101-3108, as amended).
+    This information collection request may be viewed at 
+<a href="http://www.reginfo.gov">www.reginfo.gov</a>. Follow the instructions to view Department of Commerce 
+collections currently under review by OMB.
+    Written comments and recommendations for the proposed information 
+collection should be submitted within 30 days of the publication of 
+this notice on the following website <a href="http://www.reginfo.gov/public/do/PRAMain">www.reginfo.gov/public/do/PRAMain</a>. 
+Find this particular information collection by selecting ``Currently 
+under 30-day Review--Open for Public Comments'' or by using the search 
+function and entering either the title of the collection or the OMB 
+Control Number 0608-0009.
+
+Sheleen Dumas,
+Departmental PRA Compliance Officer, Office of the Under Secretary for 
+Economic Affairs, Commerce Department.
+[FR Doc. 2026-06040 Filed 3-27-26; 8:45 am]
+BILLING CODE 3510-06-P
+
+
+</pre></body>
+</html>

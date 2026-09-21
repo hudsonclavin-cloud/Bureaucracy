@@ -1,0 +1,611 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 179 (Thursday, September 17, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 179 (Thursday, September 17, 2026)]
+[Notices]
+[Pages 58940-58943]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-19054]
+
+
+-----------------------------------------------------------------------
+
+SECURITIES AND EXCHANGE COMMISSION
+
+[Release No. 34-106353; File No. 600-36]
+
+
+Self-Regulatory Organizations; LCH SA; Order Granting Conditional 
+Exemptive Relief Pursuant to Section 36 of the Securities Exchange Act 
+of 1934 Relating to Rule Filing Requirements
+
+September 15, 2026.
+
+I. Introduction
+
+    On December 22, 2025, Banque Centrale de Compensation, which 
+conducts business under the name LCH SA (``LCH SA''), filed an 
+application with the Securities and Exchange Commission 
+(``Commission''), to amend exemptive relief granted to it by the 
+Commission on December 29, 2016 (``Request for Exemptive Relief'') \1\ 
+pursuant to section 36 of the Securities Exchange Act of 1934 (``Act'' 
+or ``Exchange Act''),\2\ in accordance with the procedures set forth in 
+Rule 0-12 under the Act.\3\ As part of the Commission's 2016 order 
+granting LCH SA's application for registration as a clearing agency, 
+the Commission granted LCH SA exemptions from certain requirements of 
+the Act and the rules thereunder, including an exemption from section 
+19(b) of the Act \4\ and Rule 19b-4 \5\ thereunder with respect to 
+filing certain proposed rule changes relating to its business lines 
+operating outside of the U.S. (``Current Exemptive Relief'').\6\ LCH 
+SA's Request for Exemptive Relief would amend the Current Exemptive 
+Relief as it relates to section 19(b) of the Act \7\ and Rule 19b-4 \8\ 
+thereunder relating to LCH SA's clearing services.
+---------------------------------------------------------------------------
+
+    \1\ Letter from Nicolas Dot, Chief Compliance Officer, LCH SA, 
+dated December 22, 2025 (``Application'').
+    \2\ 15 U.S.C. 78mm.
+    \3\ 17 CFR 240.0-12. Exchange Act Rule 0-12 sets forth 
+procedures for filing applications for orders for exemptive relief 
+pursuant to section 36. The Application is available on the 
+Commission's website at <a href="https://www.sec.gov/files/rules/sro/lchsa/2026/34-105357.pdf">https://www.sec.gov/files/rules/sro/lchsa/2026/34-105357.pdf</a>. Defined terms in this order are the same as used 
+in the Application unless we note otherwise.
+    \4\ 15 U.S.C. 78s(b)(2).
+    \5\ 17 CFR 240.19b-4.
+    \6\ Order Granting Application for Registration as a Clearing 
+Agency and Request for Exemptive Relief, Exchange Act Release No. 
+79707 (Dec. 29, 2016), 82 FR 1398, 1412 (Jan. 5, 2017) File No. 600-
+36) (``Order'').
+    \7\ 15 U.S.C. 78s(b)(2).
+    \8\ 17 CFR 240.19b-4.
+---------------------------------------------------------------------------
+
+    Notice of the Request for Exemptive Relief (``Notice'') was 
+published in the Federal Register on May 6, 2026.\9\ The Commission 
+received two comment letters on the Notice.\10\ Both letters supported 
+the Request for Exemptive Relief and requested the Commission grant it. 
+Neither letter suggested any changes to the conditions to the relief. 
+For the reasons discussed below, this order grants LCH SA conditional 
+exemptive relief from certain requirements under section 19(b) of the 
+Act \11\ and Rule 19b-4 \12\ thereunder.
+---------------------------------------------------------------------------
+
+    \9\ Exchange Act Release No. 105357 (May 4, 2026), 91 FR 24617 
+(May 6, 2026) (File No. 600-36) (``Notice'').
+    \10\ See Letter from Jennifer W. Han, Managed Funds Association, 
+dated June 4, 2026; Letter from Jiri Krol, Alternative Investment 
+Management Association, dated June 5, 2026. The public comment file 
+for the Application is available on the Commission's website at: 
+<a href="https://www.sec.gov/rules-regulations/public-comments/600-36">https://www.sec.gov/rules-regulations/public-comments/600-36</a>.
+    \11\ 15 U.S.C. 78s(b)(2).
+    \12\ 17 CFR 240.19b-4.
+---------------------------------------------------------------------------
+
+II. Background
+
+    LCH SA is a clearing agency currently registered with the 
+Commission for the purpose of clearing security-based-swaps.\13\ It 
+clears security-based-swaps through its CDSClear business unit, for 
+persons in the U.S. and abroad.\14\ When the Current Exemptive Relief 
+was approved, LCH SA had three additional business units--(i) 
+EquityClear, for clearing equities, debt instruments, and futures 
+contracts; (ii) CommodityClear for clearing futures and options for 
+agricultural and energy products; and (iii) RepoClear for clearing 
+repurchase and cash transactions on Euro-denominated government and 
+supranational debts.\15\ These units operated entirely outside of the 
+U.S. and did not have any U.S. persons as Clearing Members, and LCH SA 
+did not seek to offer them to any U.S. persons (``Non-U.S. 
+Business'').\16\
+---------------------------------------------------------------------------
+
+    \13\ Order, 82 FR at 1410.
+    \14\ Order, 82 FR at 1398.
+    \15\ Notice, 91 FR at 24617.
+    \16\ Order, 82 FR at 1398; 1411.
+---------------------------------------------------------------------------
+
+    The Current Exemptive Relief exempts LCH SA from filing a proposed 
+rule change under section 19 of the Act \17\ and Rule 19b-4 \18\ 
+thereunder if the proposed rule change (i) primarily affects LCH SA's 
+clearing operations with respect to its Non-U.S. Business, and (ii) 
+does not significantly affect any CDSClear operations or any rights or 
+obligations of LCH SA with respect to CDSClear services or persons 
+using such services (``Non-U.S. Business Rule Change'').\19\ Even if a 
+proposed rule change primarily affects the Non-U.S. Business, the 
+Current Exemptive Relief does not apply if it would significantly 
+affect CDSClear operations, services, or persons using those services. 
+Further, as a condition to the Current Exemptive Relief, LCH SA must 
+provide Commission staff with notice of its Non-U.S. Business Rule 
+Changes within three business days following approval by LCH SA's 
+national competent authorities.\20\ The Commission granted this relief 
+because the Non-U.S. Business did not and would not have U.S. persons 
+as Clearing Members and the terms of the relief ensured that the 
+Commission would have the opportunity to review proposed rule changes 
+that impacted U.S. persons.\21\
+---------------------------------------------------------------------------
+
+    \17\ 15 U.S.C. 78s(b).
+    \18\ 17 CFR 240.19b-4.
+    \19\ Order, 82 FR at 1414.
+    \20\ Order, 82 FR at 1414.
+    \21\ Order, 82 FR at 1411-12; Notice, 91 FR at 24617.
+---------------------------------------------------------------------------
+
+II. Request for Exemptive Relief
+
+    Currently, LCH SA has three business units--CDSClear, RepoClear, 
+and DigitalAssetClear.\22\ RepoClear and DigitalAssetClear currently 
+comprise the Non-U.S. Business, because LCH SA operates them entirely 
+outside of the U.S. and because they do not have any U.S. persons as 
+Clearing Members.\23\ CDSClear is the only service currently offered in 
+the U.S. or to U.S. persons.\24\
+---------------------------------------------------------------------------
+
+    \22\ Notice, 91 FR at 24617. The EquityClear and CommodityClear 
+business units have both closed. Notice, 91 FR at 24617. LCH SA will 
+provide clearing services through DigitalAssetClear for cash-settled 
+Bitcoin index futures and options contracts. Notice, 91 FR at 24617 
+n.18.
+    \23\ Notice, 91 FR at 24617.
+    \24\ Notice, 91 FR at 24617.
+---------------------------------------------------------------------------
+
+    LCH SA now seeks to allow U.S. persons to join RepoClear as 
+Clearing Members, which would mean that RepoClear would no longer be a 
+Non-U.S. Business under the Current Exemptive Relief.\25\ Therefore, 
+LCH SA would classify RepoClear under a new category, as a ``Non-
+Registrable Business.'' \26\ LCH SA represents that the Non-Registrable 
+Business does not include any clearance and settlement services 
+pertaining to any purchase or sale transaction in U.S. Treasury 
+securities or repurchase or reverse repurchase agreement collateralized 
+by U.S. Treasury securities; any other transaction involving U.S. 
+Treasury securities; or any clearance and settlement services 
+pertaining to any securities meeting the definition of ``government 
+securities'' in section
+
+[[Page 58941]]
+
+3(a)(42) of the Act.\27\ LCH SA requests an amendment to the Current 
+Exemptive Relief as it relates to its Non-Registrable Business to 
+provide limited, conditional relief for RepoClear while allowing LCH SA 
+to onboard U.S. Clearing Members to RepoClear.
+---------------------------------------------------------------------------
+
+    \25\ Notice, 91 FR at 24617-18.
+    \26\ Notice, 91 FR at 24617; Application at 4.
+    \27\ Notice, 91 FR at 24617-18 n.20; Application, at 2 n.7.
+---------------------------------------------------------------------------
+
+    Specifically, LCH SA requests an amendment to the Current Exemptive 
+Relief to provide its Non-Registrable Business (i.e., RepoClear) with 
+an exemption from section 19(b)(2) of the Exchange Act.\28\ LCH SA 
+requests that, for as long as the Non-Registrable Business has U.S. 
+Clearing Members, the Commission allow LCH SA to file with the 
+Commission proposed rule changes related to the Non-Registrable 
+Business solely pursuant to section 19(b)(3)(A) of the Act \29\ and 
+paragraph (f)(6) of Rule 19b-4 thereunder,\30\ provided that, 
+consistent with the Current Exemptive Relief, any such proposed rule 
+change (i) primarily affects LCH SA's clearing operations with respect 
+to the Non-Registrable Business, and (ii) does not significantly affect 
+any CDSClear operations or any rights or obligations of LCH SA with 
+respect to the CDSClear services or persons using the CDSClear services 
+(``Non-Registrable Business Rule Change'').\31\ Under this proposed 
+relief, LCH SA will not file a Non-Registrable Business Rule Change 
+pursuant to section 19(b)(2) of the Act,\32\ and a Non-Registrable 
+Business Rule Change will take effect upon filing without an approval 
+order by the Commission.\33\
+---------------------------------------------------------------------------
+
+    \28\ 15 U.S.C. 78s(b)(2).
+    \29\ 15 U.S.C. 78s(b)(3)(a).
+    \30\ 17 CFR 240.19b-4(f)(6).
+    \31\ As part of LCH SA's Request for Exemptive Relief, Non-
+Registrable Business Rule Changes would become effective under Rule 
+19b-4(f)(6) earlier than 30 days after the date of the filing, but 
+not sooner than the date of filing, and LCH SA may file Non-
+Registrable Business Rule Changes even if LCH SA has not given the 
+Commission written notice of its intent to file the proposed rule 
+change, along with a brief description and text of the proposed rule 
+change, at least five business days prior to the date of filing the 
+proposed rule change. Notice, 91 FR at 24618 n.23.
+    \32\ 15 U.S.C. 78s(b)(2).
+    \33\ 15 U.S.C. 78s(b)(3)(A).
+---------------------------------------------------------------------------
+
+    LCH SA further proposes that this relief will end following written 
+notice from LCH SA to the Commission that the Non-Registrable Business 
+no longer has any U.S. Clearing Members. After such a notice, all Non-
+Registrable Business Rule Changes will be treated like Non-U.S. 
+Business Rule Changes under the Current Exemptive Relief.\34\
+---------------------------------------------------------------------------
+
+    \34\ Notice, 91 FR at 24618.
+---------------------------------------------------------------------------
+
+    The Request for Exemptive Relief identifies several additional 
+conditions:
+    <bullet> LCH SA's obligation to file with the Commission the Non-
+Registrable Business Rule Changes will begin on the effective date that 
+the first U.S. Clearing Member is admitted as a member of the Non-
+Registrable Business.
+    <bullet> LCH SA will continue to comply with the terms of the 
+Current Exemptive Relief in respect of the Non-U.S. Business (including 
+DigitalAssetClear and any future business unit that LCH SA operates 
+entirely outside the U.S. that does not have any U.S. persons as 
+Clearing Members) by providing notice to Commission Staff of its Non-
+U.S. Business Rule Changes within three (3) business days of such rules 
+taking effect pursuant to the requirements of the European Market 
+Infrastructure Regulation or LCH SA's national competent authorities.
+    <bullet> LCH SA must provide prompt written notice to the 
+Commission in the event that the Non-Registrable Business onboards U.S. 
+Clearing Members or ceases to have U.S. Clearing Members.
+    <bullet> LCH SA must continue to file Non-Registrable Business Rule 
+Changes, and otherwise comply with the terms of the requested relief 
+until LCH SA has, with respect to the Non-Registrable Business, closed 
+all transactions and positions involving U.S. Clearing Members and 
+their clients; completed final settlement of amounts owed to or from 
+U.S. Clearing Members and their clients; returned any collateral, 
+margin, or other property of U.S. Clearing Members and their clients; 
+and provided prompt written notice to the Commission when these 
+conditions are satisfied.
+    <bullet> If LCH SA is no longer required to file Non-Registrable 
+Business Rule Changes because LCH SA no longer has U.S. Clearing 
+Members in the Non-Registrable Business and has otherwise met the 
+above-described conditions, LCH SA may not again onboard U.S. Clearing 
+Members to the Non-Registrable Business without first receiving 
+approval from the Commission.
+    <bullet> Finally, in connection with the statutory and rule 
+provisions discussed throughout the Application from which exemptive 
+relief is requested, LCH SA represents that, as a condition of such 
+relief, LCH SA shall continue to implement policies and procedures 
+designed to ensure compliance with the terms and conditions described 
+in the Application, and to conduct periodic internal risk-based reviews 
+related to its compliance program.\35\
+---------------------------------------------------------------------------
+
+    \35\ Notice, 91 FR at 24618.
+---------------------------------------------------------------------------
+
+    The Request for Exemptive Relief does not change the rule filing 
+obligations of CDSClear or the Non-U.S. Business under the Current 
+Exemptive Relief.\36\ LCH SA must continue to file proposed rule 
+changes pursuant to section 19(b) of the Act \37\ and Rule 19b-4 \38\ 
+thereunder for CDSClear.\39\ LCH SA is still exempt from filing 
+proposed rule changes that primarily affect its clearing operations 
+with respect to its Non-U.S. Business, including DigitalAssetClear and 
+any future business unit that LCH SA operates entirely outside the U.S. 
+and that does not have any U.S. persons as Clearing Members, and do not 
+significantly affect any CDSClear operations or any rights or 
+obligations of LCH SA with respect to the CDSClear services or persons 
+using such services, subject to the conditions set out in the Current 
+Exemptive Relief.\40\
+---------------------------------------------------------------------------
+
+    \36\ Notice, 91 FR at 24618.
+    \37\ 15 U.S.C. 78s(b).
+    \38\ 17 CFR 240.19b-4.
+    \39\ 17 CFR 240.19b-4.
+    \40\ Notice, 91 FR at 24618; Order, 82 FR at 1410 n.188.
+---------------------------------------------------------------------------
+
+    The Commission's oversight of LCH SA extends to LCH SA as a whole 
+and is entity-based, rather than product-based.\41\ Absent exemptive 
+relief, LCH SA is required to file all proposed rule changes with the 
+Commission, including those that relate to its Non-Registerable 
+Business. Moreover, absent exemptive relief, LCH SA is required to file 
+its proposed rule changes pursuant to section 19(b)(2) \42\ or 
+19(b)(3)(A) \43\ of the Act, depending on the content and effect of the 
+proposed rule change. Proposed rule changes filed under section 
+19(b)(3)(A) \44\ of the Act take effect upon filing, while proposed 
+rule changes filed under section 19(b)(2) \45\ must be approved by the 
+Commission before they take effect.
+---------------------------------------------------------------------------
+
+    \41\ Order, 82 FR at 1411, n.195.
+    \42\ 15 U.S.C. 78s(b)(2).
+    \43\ 15 U.S.C. 78s(b)(3)(a).
+    \44\ 15 U.S.C. 78s(b)(3)(a).
+    \45\ 15 U.S.C. 78s(b)(2).
+---------------------------------------------------------------------------
+
+III. Discussion
+
+    Under section 36 of the Exchange Act, the Commission ``may 
+conditionally or unconditionally exempt any person, security, or 
+transaction, or any class or classes of persons, securities, or 
+transactions, from any provision or provisions of this title or of any 
+rule or regulation thereunder, to the extent that such exemption is 
+necessary or appropriate in the public interest, and is consistent with 
+the protection of investors.'' \46\ The Commission granted LCH SA's 
+Current Exemptive Relief, finding that it was necessary or appropriate 
+in the public interest and consistent with the protection of investors. 
+The Commission determined
+
+[[Page 58942]]
+
+that requiring LCH SA to file proposed rule changes with respect to the 
+Non-U.S. Business would not advance the Commission's regulatory 
+interest in overseeing registered clearing agencies and granting the 
+request for exemption would not compromise the Commission's oversight 
+responsibilities over registered clearing agencies on an entity-wide 
+basis.\47\ Similarly, the Commission finds that the conditional 
+exemptive relief granted herein is necessary or appropriate in the 
+public interest and consistent with the protection of investors because 
+(i) requiring LCH SA to file Non-Registrable Business Rule Changes 
+pursuant to section 19(b)(2) of the Act does not advance the 
+Commission's regulatory interest in overseeing registered clearing 
+agencies, and (ii) allowing LCH SA to file Non-Registrable Business 
+Rule Changes solely pursuant to section 19(b)(3)(A) of the Act,\48\ and 
+paragraph (f)(6) of Rule 19b-4 thereunder,\49\ does not compromise the 
+Commission's oversight responsibilities over registered clearing 
+agencies on an entity-wide basis.
+---------------------------------------------------------------------------
+
+    \46\ 15 U.S.C. 78mm(a)(1).
+    \47\ Order, 82 FR at 1411-12.
+    \48\ 15 U.S.C. 78s(b)(3)(a).
+    \49\ 17 CFR 240.19b-4(f)(6).
+---------------------------------------------------------------------------
+
+    First, requiring LCH SA to file Non-Registrable Business Rule 
+Changes pursuant to section 19(b)(2) of the Act does not advance the 
+Commission's regulatory interest in overseeing registered clearing 
+agencies. Although LCH SA's Non-Registerable Business will offer 
+clearing services for securities, the Commission has a reduced 
+regulatory interest in the Non-Registerable Business. In the Non-
+Registerable Business, LCH SA clears repurchase and cash transactions 
+on Euro-denominated government and supranational debts. As noted above, 
+the Non-Registerable Business does not include any clearance and 
+settlement services pertaining to any purchase or sale transaction in 
+U.S. Treasury securities or repurchase or reverse repurchase agreement 
+collateralized by U.S. Treasury securities; any other transaction 
+involving U.S. Treasury securities; or any clearance and settlement 
+services pertaining to any securities meeting the definition of 
+``government securities'' in section 3(a)(42) of the Act.\50\ Thus, the 
+Commission has a reduced regulatory interest in these clearing 
+services.
+---------------------------------------------------------------------------
+
+    \50\ 15 U.S.C. 78c(a)(42).
+---------------------------------------------------------------------------
+
+    Moreover, although LCH SA's Non-Registerable Business will include 
+U.S. Clearing Members, those Clearing Members will have opportunities 
+to review and comment on Non-Registerable Business Rule Changes. LCH SA 
+will file all Non-Registerable Business Rule Changes under section 
+19(b)(3)(A) of the Act \51\ and paragraph (f)(6) of Rule 19b-4 
+thereunder.\52\ Like other proposed rule changes filed under section 
+19(b)(3)(A) of the Act,\53\ the Commission will publish notice of, and 
+request public comment on, the Non-Registerable Business Rule Changes. 
+The public, including U.S. Clearing Members, will be able to review and 
+comment on the Non-Registerable Business Rule Changes, affording them 
+an opportunity to consider and provide feedback on such changes. If it 
+appears to the Commission that such action is necessary or appropriate 
+in the public interest, for the protection of investors, or otherwise 
+in furtherance of the purposes of the Act, the Commission summarily may 
+temporarily suspend a Non-Registerable Business Proposed Rule Change 
+and institute proceedings with respect to such change, pursuant to 
+section 19(b)(3)(C) of the Act.\54\ Public notice and comment, as well 
+as the Commission's ability to suspend and institute proceedings, 
+provide a fair process to U.S. Clearing Members to consider, provide 
+feedback, and potentially challenge the Non-Registerable Business Rule 
+Changes.
+---------------------------------------------------------------------------
+
+    \51\ 15 U.S.C. 78s(b)(3)(A).
+    \52\ 17 CFR 240.19b-4(f)(6).
+    \53\ 15 U.S.C. 78s(b)(3)(A).
+    \54\ 15 U.S.C. 78s(b)(3)(C).
+---------------------------------------------------------------------------
+
+    Second, granting the conditional exemption does not compromise the 
+Commission's oversight responsibilities over registered clearing 
+agencies on an entity-wide basis. As stated above, the Commission's 
+oversight of LCH SA extends to LCH SA as a whole and is entity-based, 
+rather than product-based.\55\ Granting the relief will not affect 
+CDSClear and the Non-U.S. Business, as LCH SA will continue to file 
+proposed rule changes with respect to CDSClear and comply with the 
+existing conditions of the Current Exemptive Relief as they relate to 
+the Non-U.S. Business. Thus, LCH SA must file (i) proposed rule changes 
+with respect to CDSClear, (ii) proposed rule changes that do not 
+primarily affect LCH SA's non-CDSClear business lines, and (iii) 
+proposed rule changes with respect to its Non-U.S. Business that 
+significantly affect any CDSClear operations or any rights or 
+obligations of LCH SA with respect to the CDSClear services or persons 
+using the CDSClear services. LCH SA must also continue to provide 
+notice to Commission staff of its Non-U.S. Business Rule Changes within 
+three business days of such rules being duly approved by LCH SA's 
+national competent authorities.\56\ Similarly, Non-Registrable Business 
+Rule Changes must not significantly affect any CDSClear operations or 
+any rights or obligations of LCH SA with respect to the CDSClear 
+services or persons using the CDSClear services. The Commission's 
+oversight responsibilities are also not compromised by granting the 
+conditional exemption because, as noted above, the Commission could 
+still review, potentially suspend, and potentially disapprove Non-
+Registrable Business Rule Changes filed under section 19(b)(3)(A) of 
+the Exchange Act.\57\
+---------------------------------------------------------------------------
+
+    \55\ Order, 82 FR at 1411, n.195.
+    \56\ Order, 82 FR at 1414.
+    \57\ 15 U.S.C. 78s(b)(3)(A).
+---------------------------------------------------------------------------
+
+    The conditions of the exemptive relief further prevent the request 
+from compromising the Commission's oversight responsibilities. 
+Specifically, the exemptive relief is conditioned on LCH SA's 
+obligation to file the Non-Registrable Business Rule Changes beginning 
+on the date that the first U.S. Clearing Member is admitted as a member 
+of the Non-Registrable Business and LCH SA providing prompt written 
+notice to the Commission when the Non-Registrable Business onboards 
+U.S. Clearing Members or ceases to have U.S. Clearing Members. It also 
+is conditioned on LCH SA's obligation to file Non-Registrable Business 
+Rule Changes ending only when it has closed all transactions and 
+positions involving U.S. Clearing Members and their clients, completed 
+final settlement of amounts owed to or from U.S. Clearing Members and 
+their clients, returned any collateral or other property of U.S. 
+Clearing Members and their clients, and provided prompt written notice 
+when it satisfies the conditions necessary to stop filing Non-
+Registrable Business Rule Changes. If LCH SA is no longer required to 
+file Non-Registrable Business Rule Changes because LCH SA no longer has 
+U.S. Clearing Members in the Non-Registrable Business and has otherwise 
+met the required conditions, LCH SA may not again onboard U.S. Clearing 
+Members to the Non-Registrable Business without first receiving 
+approval from the Commission.
+    These conditions ensure that the Commission is aware of when LCH SA 
+begins filing Non-Registrable Business Rule Changes under the exemptive 
+relief. Further, the conditions ensure that the Commission is aware of 
+when LCH SA ceases filing Non-Registrable Business Rule Changes under 
+the exemptive relief and resumes treating its proposed changes as if 
+they are Non-
+
+[[Page 58943]]
+
+U.S. Business Rule Changes under the Current Exemptive Relief (and 
+therefore neither filing its Non-U.S. Business Rule Changes under 
+section 19(b)(2) \58\ nor 19(b)(3)(A) \59\ of the Exchange Act). By 
+making clear which relief LCH SA is following, these conditions allow 
+the Commission to maintain the appropriate level of oversight, as 
+described in the Current Exemptive Relief and the Request for Exemptive 
+Relief.
+---------------------------------------------------------------------------
+
+    \58\ 15 U.S.C. 78s(b)(2).
+    \59\ 15 U.S.C. 78s(b)(3)(A).
+---------------------------------------------------------------------------
+
+    Additionally, the conditions ending LCH SA's obligation to file 
+Non-Registrable Business Rule Changes only when it has closed all 
+transactions and positions involving U.S. Clearing Members and their 
+clients, completed final settlement of amounts owed to or from U.S. 
+Clearing Members and their clients, and returned any collateral or 
+other property of U.S. Clearing Members and their clients ensure that 
+LCH SA has satisfied all obligations with respect to its U.S. Clearing 
+Members before it treats the Non-Registrable Business as a Non-U.S. 
+Business. The conditions requiring that LCH SA continue to implement 
+policies and procedures designed to ensure compliance with the terms 
+and conditions described in the Request for Exemptive Relief and 
+conduct periodic, internal risk-based reviews related to its compliance 
+program further bolster LCH SA's oversight of its interactions with 
+U.S. Clearing Members.
+    Based on the above, granting LCH SA conditional exemptive relief 
+from the requirement to file Non-Registerable Business Rule Changes 
+under section 19(b)(2) of the Act \60\ and Rule 19b-4 thereunder \61\ 
+is necessary or appropriate in the public interest, and consistent with 
+the protection of investors.
+---------------------------------------------------------------------------
+
+    \60\ 15 U.S.C. 78s(b)(2).
+    \61\ 17 CFR 240.19b-4.
+---------------------------------------------------------------------------
+
+IV. Conclusion
+
+    It is therefore ordered, pursuant to section 36 of the Act, based 
+on the representations and facts presented in LCH SA's Request for 
+Exemptive Relief, that LCH SA is exempt from the requirement to file 
+Non-Registrable Business Rule Changes under sction 19(b)(2) of the Act 
+and Rule 19b-4 thereunder, subject to the following conditions:
+    (1) A Non-Registrable Business Rule Change is a proposed rule 
+change that;
+    (a) primarily affects LCH SA's clearing operations with respect to 
+the Non-Registrable Business; and
+    (b) does not significantly affect any CDSClear operations or any 
+rights or obligations of LCH SA with respect to the CDSClear services 
+or persons using the CDSClear services.
+    (2) LCH SA's Non-Registerable Business consists of its RepoClear 
+service, which offers clearing services for transactions in repurchase 
+and cash transactions on Euro-denominated government and supranational 
+debts and does not include any services pertaining to any purchase or 
+sale transaction in U.S. Treasury securities or repurchase or reverse 
+repurchase agreement collateralized by U.S. Treasury securities; any 
+other transaction involving U.S. Treasury securities; or any clearance 
+and settlement services pertaining to any securities meeting the 
+definition of ``government securities'' in section 3(a)(42) of the 
+Act.\62\
+---------------------------------------------------------------------------
+
+    \62\ 15 U.S.C. 78c(a)(42).
+---------------------------------------------------------------------------
+
+    (3) LCH SA must file with the Commission a Non-Registrable Business 
+Rule Change pursuant to section 19(b)(3)(A) of the Act \63\ and 
+paragraph (f)(6) of Rule 19b-4 thereunder,\64\ except that a Non-
+Registrable Business Rule Change,
+---------------------------------------------------------------------------
+
+    \63\ 15 U.S.C. 78s(b)(3)(A).
+    \64\ 17 CFR 240.19b-4(f)(6).
+---------------------------------------------------------------------------
+
+    (a) may become effective under Rule 19b-4(f)(6) \65\ earlier than 
+30 days after the date of the filing, but not sooner than the date of 
+filing; and
+---------------------------------------------------------------------------
+
+    \65\ 17 CFR 240.19b-4(f)(6).
+---------------------------------------------------------------------------
+
+    (b) may be filed even if LCH SA has not given the Commission 
+written notice of its intent to file the proposed rule change, along 
+with a brief description and text of the proposed rule change, at least 
+five business days prior to the date of filing the proposed rule 
+change.
+    (4) LCH SA's obligation to file with the Commission the Non-
+Registrable Business Rule Changes begins on the effective date that the 
+first U.S. Clearing Member is admitted as a member of the Non-
+Registrable Business.
+    (5) LCH SA must provide prompt written notice to the Commission in 
+the event that the Non-Registrable Business,
+    (a) onboards U.S. Clearing Members, and
+    (b) ceases to have U.S. Clearing Members.
+    (6) In the event the Non-Registrable Business ceases to have U.S. 
+Clearing Members, LCH SA must continue to file Non-Registrable Business 
+Rule Changes, and otherwise comply with the conditions described herein 
+until LCH SA has, with respect to the Non-Registrable Business,
+    (a) closed all transactions and positions involving U.S. Clearing 
+Members and their clients;
+    (b) completed final settlement of amounts owed to or from U.S. 
+Clearing Members and their clients;
+    (c) returned any collateral, margin, or other property of U.S. 
+Clearing Members and their clients; and
+    (d) provided prompt written notice to the Commission when these 
+conditions are satisfied.
+    (7) If LCH SA is no longer required to file Non-Registrable 
+Business Rule Changes because LCH SA no longer has U.S. Clearing 
+Members in the Non-Registrable Business and has otherwise met the 
+above-described conditions, LCH SA may not again onboard U.S. Clearing 
+Members to the Non-Registrable Business without first receiving 
+approval from the Commission.
+    (8) If LCH SA is no longer required to file Non-Registrable 
+Business Rule Changes because LCH SA no longer has U.S. Clearing 
+Members in the Non-Registrable Business and has otherwise met the 
+above-described conditions, LCH SA may, from that point forward, treat 
+all Non-Registrable Business Rule Changes as Non-U.S. Business Rule 
+Changes under the Current Exemptive Relief.
+    (9) LCH SA must continue to comply with the terms of the Current 
+Exemptive Relief in respect of the Non-U.S. Business, which shall 
+include DigitalAssetClear and any future business unit that LCH SA 
+operates entirely outside the U.S. and that does not have any U.S. 
+Clearing Members, including by, among other things, providing notice to 
+Commission Staff of its Non-U.S. Business Rule Changes within three (3) 
+business days of such rules taking effect pursuant to the requirements 
+of the European Market Infrastructure Regulation or LCH SA's national 
+competent authorities.
+    (10) LCH SA shall implement policies and procedures designed to 
+ensure compliance with the terms and conditions described herein and 
+shall conduct periodic internal risk-based reviews of its program 
+designed to ensure compliance with the terms and conditions described 
+herein.
+
+    By the Commission.
+Sherry R. Haywood,
+Assistant Secretary.
+[FR Doc. 2026-19054 Filed 9-16-26; 8:45 am]
+BILLING CODE 8011-01-P
+
+
+</pre></body>
+</html>

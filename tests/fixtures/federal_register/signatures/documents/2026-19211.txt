@@ -1,0 +1,342 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 180 (Friday, September 18, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 180 (Friday, September 18, 2026)]
+[Rules and Regulations]
+[Pages 59063-59065]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-19211]
+
+
+-----------------------------------------------------------------------
+
+DEPARTMENT OF STATE
+
+22 CFR Part 121
+
+[Public Notice: 13120]
+RIN 1400-AG35
+
+
+International Traffic in Arms Regulations: Modification of U.S. 
+Munitions List Category XX(a)
+
+AGENCY: Department of State.
+
+ACTION: Interim final rule.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The Department of State (the Department) amends the 
+International Traffic in Arms Regulations (ITAR) to remove from the 
+U.S. Munitions List (USML) certain uncrewed underwater vehicles (UUVs) 
+and make conforming changes to related controls. The Department also 
+requests comments to assist in further refining ITAR controls on UUVs 
+and to identify possible enhancements to the license exemption for 
+certain UUV-related activities.
+
+DATES: 
+    Effective date: This rule is effective October 19, 2026.
+    Comment due date: Send comments on or before October 19, 2026.
+
+ADDRESSES: Interested parties may submit comments to the Department of 
+State by any of the following methods:
+    <bullet> Visit the <a href="http://Regulations.gov">Regulations.gov</a> website at: <a href="https://www.regulations.gov">https://www.regulations.gov</a> and search for the docket number DOS-2026-0958.
+    <bullet> Email: <a href="/cdn-cgi/l/email-protection#2460607067745146484d47674b4949414a50576457504550410a434b52"><span class="__cf_email__" data-cfemail="e1a5a5b5a2b194838d8882a28e8c8c848f9592a19295809584cf868e97">[email&#160;protected]</span></a>. Commenting parties 
+must include RIN 1400-AG35 in the subject line of the email message.
+    See SUPPLEMENTARY INFORMATION for other information about 
+electronic filing.
+
+FOR FURTHER INFORMATION CONTACT: Mr. Chris Weil, Office of Defense 
+Trade Controls Policy, Department of State, email 
+<a href="/cdn-cgi/l/email-protection#3f7b7b6b7c7c4a4c4b50525a4d6c5a4d49565c5a7f4c4b5e4b5a11585049"><span class="__cf_email__" data-cfemail="2e6a6a7a6d6d5b5d5a41434b5c7d4b5c58474d4b6e5d5a4f5a4b00494158">[email&#160;protected]</span></a> SUBJECT: U.S. Munitions List Category 
+XX(a)--RIN 1400-AG35.
+
+SUPPLEMENTARY INFORMATION: The Department of State's Directorate of 
+Defense Trade Controls (DDTC) administers the ITAR (22 CFR parts 120 
+through 130) to, among other things, regulate the export, reexport, 
+retransfer, and temporary import of defense articles and defense 
+services described on the USML at ITAR Sec.  121.1. Items not subject 
+to the ITAR or to the exclusive licensing jurisdiction of certain other 
+departments or agencies of the U.S. Government are subject to the 
+Export Administration Regulations (EAR) (15 CFR parts 730 through 774), 
+which include the Commerce Control List (CCL) in Supplement No. 1 to 
+part 774. The EAR is administered by the Department of
+
+[[Page 59064]]
+
+Commerce, Bureau of Industry and Security (BIS). This rule does not 
+modify the list of defense articles and defense services controlled for 
+purposes of permanent import by the Attorney General, as enumerated on 
+the U.S. Munitions Import List (USMIL) at 27 CFR 447.21.
+    Section 38 of the Arms Export Control Act (AECA) (22 U.S.C. 2778) 
+requires periodic review of the USML to determine which articles and 
+services, if any, no longer warrant designation. In maintaining the 
+USML, DDTC identifies articles and services for potential addition to 
+or removal from the USML, or for clarification on how they are 
+described on the USML, through a variety of methods. This can include 
+public feedback and interagency consultations, commodity jurisdiction 
+reviews, advisory opinions, and technology monitoring. The Department 
+maintains the USML such that it comprises those defense articles or 
+defense services that provide a critical military or intelligence 
+advantage. The Department, informed by consultations with its 
+interagency partners, and with the concurrence of the Department of 
+Defense, has determined that those articles and services this rule 
+removes from the USML no longer warrant ITAR control.
+    USML Category XX(a)(10) describes certain vessels with a gross 
+weight rating exceeding 3,000 pounds that are designed to operate 
+without human interaction for longer than 24 hours or for more than 70 
+nautical miles. The license exemption at ITAR Sec.  126.9(u) authorizes 
+certain transfers of vessels described in USML Category XX(a)(10).
+    The Department, with the concurrence of the Department of Defense, 
+now assesses that vessels described in USML Category XX(a)(10) with a 
+gross weight rating up to 8,000 pounds only provide a critical military 
+or intelligence advantage when they are described elsewhere on the USML 
+or when they are specially designed to possess certain navigation 
+capabilities. Based on this assessment, the Department is revising 
+paragraph (a)(10) to continue describing vessels at or under 8,000 
+pounds only if they are specially designed to have navigation 
+capabilities beyond the ability to (1) follow fixed waypoints and (2) 
+perform collision avoidance maneuvers that adhere to the see-and-avoid 
+principles of navigation regulations. The Department is also revising 
+paragraph (a)(10) to use the term ``specially designed,'' which is 
+defined in Sec.  120.41, to improve the clarity of the control text. 
+The Department is also adding a new paragraph (a)(11) and moving 
+vessels with a gross weight rating exceeding 8,000 pounds that are 
+specially designed to operate without human interaction for longer than 
+24 hours or for more than 70 nautical miles, to paragraph (11) from the 
+current paragraph (10). This rule does not modify the license exemption 
+at Sec.  126.9(u); the provisions in that exemption remain available 
+for vessels described in USML Category XX(a)(10). The Department also 
+makes conforming changes to paragraph (a)(9) in this rule. The 
+Department also notes its intent to review the ITAR controls on 
+autonomous capabilities, including the maritime navigation systems 
+described in USML Category VI.
+
+Request for Comments
+
+Specific Comments Requested
+
+    The Department encourages the public to provide comments related to 
+this rule, as well as comments specifically responsive to the questions 
+described in this section. To facilitate timely review and assessment, 
+comments should be provided in a concise sentence or paragraph, 
+followed by supporting explanatory paragraphs and examples, with each 
+distinct comment treated separately as opposed to multiple comments in 
+one paragraph or section. The Department encourages commenters to 
+include supporting facts, research, and evidence in their comments. 
+When doing so, commenters are encouraged to provide citations to any 
+published materials referenced.
+    1. Are there other navigation capabilities the Department should 
+consider in order to refine the updated navigation system criteria in 
+the new USML Category XX(a)(10)?
+    2. Section Sec.  126.9 includes a licensing exemption for certain 
+activities using UUVs described in USML Category XX(a)(10).
+    a. What challenges, if any, have operators of vessels described in 
+the new USML Category XX(a)(10) encountered in using the exemption? How 
+could the Department revise the exemption to mitigate those challenges 
+while continuing to protect U.S. national security interests?
+    b. Are there additional activities the Department should consider 
+adding to the list of authorized purposes in Sec.  126.9(u)(2)(iii)?
+
+Comment Submission Instructions
+
+    Include the Regulatory Information Number (RIN) (1400-AG35) for all 
+submissions related to this rule and follow the submission instructions 
+contained in the ADDRESSES section above. Parties who wish to comment 
+anonymously may do so by submitting their comments via 
+<a href="http://www.regulations.gov">www.regulations.gov</a>, leaving the fields that would identify the 
+commenter blank and including no identifying information in the comment 
+itself. Commenters are cautioned not to include proprietary, export-
+controlled, personal, or other sensitive information in their comments 
+that they would not want to be made public. If such information would 
+provide useful insight to the comment: (1) assemble that information in 
+a separate document with relevant markings; (2) include ``[Proprietary] 
+supplement on file with: [provide POC]'' as the first line in the body 
+of the email submission; (3) submit the public portion of the comment 
+via email; and (4) call DDTC at (202) 663-1282 to coordinate submission 
+of the proprietary supplement.
+
+Regulatory Analysis and Notices
+
+Administrative Procedure Act
+
+    This rulemaking is exempt from the rulemaking requirements of the 
+Administrative Procedure Act (APA) pursuant to 5 U.S.C. 553(a)(1) as it 
+involves a military or foreign affairs function of the United States. 
+Nevertheless, and without prejudice to this determination, the 
+Department seeks public comments in this rule.
+
+Regulatory Flexibility Act
+
+    Since this rule is exempt from the notice-and-comment rulemaking 
+provisions of 5 U.S.C. 553, it does not require analysis under the 
+Regulatory Flexibility Act.
+
+Unfunded Mandates Reform Act of 1995
+
+    This rulemaking does not involve a mandate that will result in the 
+expenditure by state, local, and tribal governments, in the aggregate, 
+or by the private sector of $100 million or more in any year and it 
+will not significantly or uniquely affect small governments. Therefore, 
+no actions are deemed necessary under the provisions of the Unfunded 
+Mandates Reform Act of 1995.
+
+Congressional Review Act
+
+    The Office of Information and Regulatory Affairs has found that 
+this rule is not a major rule under the criteria of 5 U.S.C. 804(2).
+
+Executive Orders 12372 and 13132
+
+    This rulemaking does not have sufficient federalism implications to 
+require consultations or warrant the preparation of a federalism 
+summary impact statement. The regulations implementing Executive Order 
+12372
+
+[[Page 59065]]
+
+regarding intergovernmental consultation on Federal programs and 
+activities do not apply to this rulemaking.
+
+Executive Orders 12866 and 13563
+
+    Executive Order 12866, as supplemented and affirmed by Executive 
+Order 13563, directs agencies to assess all costs and benefits of 
+available regulatory alternatives and, if regulation is necessary, to 
+select regulatory approaches that maximize net benefits (including 
+potential economic, environmental, public health and safety effects, 
+distributed impacts, and equity). Executive Order 13563 emphasizes the 
+importance of quantifying both costs and benefits, of reducing costs, 
+of harmonizing rules, and of promoting flexibility. After review by the 
+Office of Management and Budget (OMB), this rule has been deemed to be 
+a ``significant regulatory action'' under section 3(f) of Executive 
+Order 12866.
+    This rule was undertaken pursuant to a statutory directive to 
+periodically review the items on the USML. The Department generally 
+determines which items warrant addition to, or removal from, the USML 
+by assessing whether each provides a critical military or intelligence 
+advantage based on national security and foreign policy considerations. 
+Because the costs and benefits of changing what is controlled focus on 
+the effect or utility of the item or service, rather than its market 
+prevalence or economic value, quantitative analyses cannot be usefully 
+estimated and are not available, particularly since the global 
+prevalence or availability of the item or service are not known. 
+Qualitatively, the rule was assessed for costs and benefits. These 
+revisions are also informed by confidential requests for commodity 
+jurisdiction determinations and advisory opinions, submitted by 
+industry. The Department takes into account common questions and 
+strives to streamline and simplify USML paragraphs based on how it 
+understands industry experience with certain parts of the USML.
+    This rule removes the designation of certain defense articles by 
+revising USML Category XX(a). Vessels removed from the scope of USML 
+Category XX(a)(10), that are not described elsewhere on the USML, will 
+become subject to the EAR. This action reduces the regulatory 
+requirements associated with the removed vessels. The Department 
+assesses the vessels removed by this rule do not warrant control under 
+the ITAR. The Department assesses the benefits of this rulemaking 
+outweigh any costs, that modifying the USML in this manner is the most 
+cost-effective method to achieve the Department's regulatory objectives 
+on this matter, and that doing so will result in a net reduction of the 
+burden on the regulated community.
+    The alternative to this rule was inaction or delay. The Department 
+could have waited to amend larger parts of the USML at once or 
+continued to gather data to evaluate the controls affected by this 
+rule. These alternatives were rejected. Statutory requirements, 
+including section 38(f) of the Arms Export Control Act (22 U.S.C. 
+2778(f)), and section 1345 of the National Defense Authorization Act 
+for Fiscal Year 2024, require a periodic review of the USML for edits 
+like those made by this rule. While the Department continuously reviews 
+the entire USML, it aims to implement most revisions through rules that 
+are focused on specific items or subsets of the USML.
+
+Executive Order 14192
+
+    This rule is exempt from Executive Order 14192 as it is a 
+regulation issued with respect to a foreign affairs or national 
+security function of the United States.
+
+Executive Order 12988
+
+    The Department of State has reviewed this rulemaking in light of 
+sections 3(a) and 3(b)(2) of Executive Order 12988 to eliminate 
+ambiguity, minimize litigation, establish clear legal standards, and 
+reduce burden.
+
+Executive Order 13175
+
+    The Department of State has determined that this rulemaking will 
+not have tribal implications, will not impose substantial direct 
+compliance costs on Indian tribal governments, and will not preempt 
+tribal law. Accordingly, the requirements of Executive Order 13175 do 
+not apply to this rulemaking.
+
+Paperwork Reduction Act
+
+    This rulemaking does not impose or revise any information 
+collections subject to 44 U.S.C. chapter 35.
+
+List of Subjects in 22 CFR Part 121
+
+    Arms and munitions, Classified information, Exports.
+
+    For the reasons set forth in the preamble, the Department of State 
+amends 22 CFR part 121, the United States Munitions List, as follows:
+
+PART 121--THE UNITED STATES MUNITIONS LIST
+
+0
+1. The authority citation for part 121 continues to read as follows:
+
+    Authority:  22 U.S.C. 2752, 2778, 2797; 22 U.S.C. 2651a; Sec. 
+1514, Pub. L. 105-261, 112 Stat. 2175; E.O. 13637, 78 FR 16129, 3 
+CFR, 2013 Comp., p. 223.
+
+
+0
+2. Amend Sec.  121.1, in Category XX, by revising paragraphs (a)(9) and 
+(10), adding note 1 to paragraph (a)(10)(ii), and adding paragraph 
+(a)(11), to read as follows:
+
+
+Sec.  121.1  The United States Munitions List.
+
+* * * * *
+Category XX--Submersible Vessels and Related Articles
+    (a) * * *
+* * * * *
+    (9) Uncrewed, untethered vessels that have an anti-recovery (e.g., 
+scuttle or self-destruct) feature;
+    (10) Uncrewed, untethered vessels with a gross weight rating 
+exceeding three thousand pounds (3,000 lb) and not exceeding eight 
+thousand pounds (8,000 lb), specially designed to both:
+    (i) Operate without human interaction for longer than 24 hours or 
+for more than seventy nautical miles (70 nmi); and
+    (ii) Have capabilities for deviating from, determining, or planning 
+a navigation route, other than: activating and following pre-planned 
+routes using fixed waypoints, station-keeping, or performing collision 
+avoidance maneuvers that adhere to the see-and-avoid principles of 
+navigation regulations; or
+    Note 1 to paragraph (a)(10)(ii): An example of ``see-and-avoid 
+principles of navigation regulations'' are those that implement 
+relevant sections of the International Regulations for Preventing 
+Collisions at Sea (COLREGs) such as Rules 5 (look-out), 8 (action to 
+avoid collision), and 13 through 18 (various actions and 
+responsibilities between vessels).
+    (11) Uncrewed, untethered vessels with a gross weight rating 
+exceeding eight thousand pounds (8,000 lb), specially designed to 
+operate without human interaction for longer than 24 hours or for more 
+than seventy nautical miles (70 nmi).
+* * * * *
+
+Thomas G. DiNanno,
+Under Secretary for Arms Control and International Security, Department 
+of State.
+[FR Doc. 2026-19211 Filed 9-17-26; 8:45 am]
+BILLING CODE 4710-25-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

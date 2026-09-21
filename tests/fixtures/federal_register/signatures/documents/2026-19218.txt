@@ -1,0 +1,556 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 181 (Monday, September 21, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 181 (Monday, September 21, 2026)]
+[Notices]
+[Pages 59824-59828]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-19218]
+
+
+-----------------------------------------------------------------------
+
+SECURITIES AND EXCHANGE COMMISSION
+
+[Release No. 34-106390; File No. SR-IEX-2026-31]
+
+
+Self-Regulatory Organizations; Investors Exchange LLC; Notice of 
+Filing and Immediate Effectiveness of Proposed Rule Change To Address 
+Internal Inconsistencies in Rule 22.260 in Advance of the Launch of IEX 
+Options
+
+September 16, 2026.
+    Pursuant to Section 19(b)(1) \1\ of the Securities Exchange Act of 
+1934 (the ``Act'') \2\ and Rule 19b-4 thereunder,\3\ notice is hereby 
+given that on September 8, 2026, the Investors Exchange LLC (``IEX'' or 
+the ``Exchange'') filed with the Securities and Exchange Commission 
+(the ``Commission'') the proposed rule change as described in Items I 
+and II below, which Items have been prepared by the self-regulatory 
+organization. The Commission is publishing this notice to solicit 
+comments on the proposed rule change from interested persons.
+---------------------------------------------------------------------------
+
+    \1\ 15 U.S.C. 78s(b)(1).
+    \2\ 15 U.S.C. 78a.
+    \3\ 17 CFR 240.19b-4.
+---------------------------------------------------------------------------
+
+I. Self-Regulatory Organization's Statement of the Terms of Substance 
+of the Proposed Rule Change
+
+    Pursuant to the provisions of Section 19(b)(1) under the Act,\4\ 
+and Rule 19b-4 thereunder,\5\ the Exchange is filing with the 
+Commission a rule change proposal to address internal inconsistencies 
+in Rule 22.260 in advance of the launch of IEX Options. The Exchange 
+has designated this rule change as ``non-controversial'' under Section 
+19(b)(3)(A) of the Act \6\ and provided the Commission with the notice 
+required by Rule 19b-4(f)(6) thereunder.\7\
+---------------------------------------------------------------------------
+
+    \4\ 15 U.S.C. 78s(b)(1).
+    \5\ 17 CFR 240.19b-4.
+    \6\ 15 U.S.C. 78s(b)(3)(A).
+    \7\ 17 CFR 240.19b-4.
+---------------------------------------------------------------------------
+
+    The text of the proposed rule change is available at the Exchange's 
+website at <a href="https://www.iexexchange.io/resources/regulation/rule-filings">https://www.iexexchange.io/resources/regulation/rule-filings</a> 
+and at the principal office of the Exchange.
+
+[[Page 59825]]
+
+II. Self-Regulatory Organization's Statement of the Purpose of, and the 
+Statutory Basis for, the Proposed Rule Change
+
+    In its filing with the Commission, the self-regulatory organization 
+included statements concerning the purpose of and basis for the 
+proposed rule change and discussed any comments it received on the 
+proposed rule change. The text of these statements may be examined at 
+the places specified in Item IV below. The self-regulatory organization 
+has prepared summaries, set forth in Sections A, B, and C below, of the 
+most significant aspects of such statements.
+
+A. Self-Regulatory Organization's Statement of the Purpose of, and the 
+Statutory Basis for, the Proposed Rule Change
+
+1. Purpose
+    On September 18, 2025, the Commission approved IEX's proposal to 
+adopt rules governing the trading of options on the Exchange in a new 
+facility called ``IEX Options''; \8\ IEX Options has announced its plan 
+to commence trading options on October 2, 2026.\9\ As set forth in the 
+IEX Options rules, the System's \10\ acceptance and execution of 
+orders, quotes, and bulk messages, as applicable, are subject to the 
+price protection mechanisms and risk controls provided to Options 
+Members \11\ in Rule 22.250 (Pre-Trade and Activity-Based Risk 
+Controls) and Rule 22.260 (Additional Price Protection Mechanisms and 
+Risk Controls). In advance of the commencement of trading options, IEX 
+now makes this rule change proposal to address internal inconsistencies 
+in Rule 22.260. Specifically, as described below, IEX proposes to 
+delete Rule 22.260(b) and to expand the types of orders that are not 
+subject to Rule 22.260(e). The Exchange has designated this rule change 
+as ``non-controversial'' under Section 19(b)(3)(A) of the Act \12\ and 
+provided the Commission with the notice required by Rule 19b-4(f)(6) 
+thereunder.\13\
+---------------------------------------------------------------------------
+
+    \8\ See Securities Exchange Act Release No. 103290 (June 18, 
+2025), 90 FR 26865, 26878 (June 24, 2025) (SR-IEX-2025-02) (Notice 
+of Filing of Amendment No. 3 to a Proposed Rule Change To Adopt 
+Rules To Govern the Trading of Options on the Exchange for a New 
+Facility Called IEX Options) (``Options Rule Filing'') and 
+Securities Exchange Act Release No. 103998 (September 18, 2025), 90 
+FR 45861 (September 23, 2025) (SR-IEX-2025-02) (Commission order 
+approving a Proposed Rule Change, as Modified by Amendment No. 3, to 
+Adopt Rules To Govern the Trading of Options on the Exchange for a 
+New Facility Called IEX Options) (``Approval Order'').
+    \9\ See <a href="https://www.iex.io/options/resources#important-dates">https://www.iex.io/options/resources#important-dates</a>.
+    \10\ The term ``System'' means the automated trading system used 
+by IEX Options for the trading of options contracts, as described in 
+Rule 22.100(a). See Rule 17.100.
+    \11\ The term ``Options Member'' means a firm, or organization 
+that is registered with the Exchange pursuant to Chapter 18 of these 
+Rules for purposes of participating in options trading on IEX 
+Options as an Options Order Entry Firm, Options Market Maker, or 
+Clearing Member. See Rule 17.100.
+    \12\ 15 U.S.C. 78s(b)(3)(A).
+    \13\ 17 CFR 240.19b-4.
+---------------------------------------------------------------------------
+
+Background
+    IEX Options has three Order Types (applicable to orders and 
+quotes): Limit orders,\14\ Market orders,\15\ and Attributable 
+orders.\16\ Each order and quote must also have a TIF \17\ of either 
+IOC \18\ or Day.\19\ Options Members may also include one of three 
+optional ``Handling Instructions'' \20\ with their orders and quotes: 
+Book only,\21\ Post Only,\22\ and Intermarket Sweep Orders.\23\
+---------------------------------------------------------------------------
+
+    \14\ See Rule 22.100(d)(1).
+    \15\ See Rule 22.100(d)(2).
+    \16\ See Rule 22.100(d)(3).
+    \17\ The term ``TIF'' shall mean the period of time that the 
+System will hold an order, subject to the restrictions set forth in 
+paragraph (l) below with respect to bulk messages, for potential 
+execution. A Time-in-Force applied to a bulk message applies to each 
+bid and offer within that bulk message. Unless otherwise specified 
+in the Exchange Rules or the context indicates otherwise, the 
+Exchange determines which of the following Times-in-Force are 
+available on a class or system basis. See Rule 22.100(g).
+    \18\ ``Immediate Or Cancel'' or ``IOC'' shall mean, for an order 
+so designated, an order that is to be executed in whole or in part 
+as soon as such order is received. The portion not so executed 
+immediately on the Exchange or another options exchange is cancelled 
+and is not posted to the IEX Options Book. IOC orders that are not 
+designated as Book Only and that cannot be executed in accordance 
+with Rule 22.170 on the System when reaching the Exchange will be 
+eligible for routing away pursuant to Rule 22.180. Market Makers may 
+designate bulk messages as IOC. See Rule 22.100(g)(1).
+    \19\ ``Day'' shall mean, for an order so designated, an order to 
+buy or sell which, if not executed expires at market close. Market 
+Makers may designate bulk messages as Day. See Rule 22.100(g)(2).
+    \20\ The term ``Handling Instruction'' means an additional 
+instruction a User designates on an order, subject to the 
+restrictions set forth in paragraph (l) below with respect to bulk 
+messages. A Handling Instruction applied to a bulk message applies 
+to each bid and offer within that bulk message. Unless otherwise 
+specified in the Exchange Rules or the context indicates otherwise, 
+the Exchange determines which of the following Handling Instructions 
+are available on a class or system basis. See Rule 22.100(e).
+    \21\ ``Book Only'' is a Handling Instruction that an order is to 
+be ranked and executed on the Exchange pursuant to Rule 22.170 
+(Order Display and Book Processing), or to be repriced or cancelled, 
+as appropriate, without routing away to another options exchange. 
+See Rule 22.100(e)(1).
+    \22\ ``Post Only'' is a Handling Instruction a User may 
+designate on an order that is to be ranked and executed on the 
+Exchange pursuant to Rule 22.170 (Order Display and Book Processing) 
+or cancelled, as appropriate, without routing away to another 
+options exchange except that the order will not remove liquidity 
+from the IEX Options Book. The System reprices, cancels or rejects 
+(in accordance with User Instructions) a bid (offer) designated as 
+Post Only with a price that locks or crosses the Exchange's best 
+offer (bid). A Market order cannot be designated as Post Only. See 
+Rule 22.100(e)(2).
+    \23\ ``Intermarket Sweep Orders'' or ``ISO'' are orders that 
+have the meaning provided in Rule 28.100 (Definitions). Such orders 
+may be executed at one or multiple price levels in the System 
+without regard to Protected Quotations at other options exchanges 
+(i.e., may trade through such quotations). The Exchange relies on 
+the marking of an order as an ISO when handling such order, and 
+thus, it is the entering Options Member's responsibility, not the 
+Exchange's responsibility, to comply with the requirements relating 
+to ISOs. ISOs are not eligible for routing pursuant to Rule 22.180 
+(Order Routing). A Market order cannot be designated as an 
+Intermarket Sweep Order. Market Makers may not designate bulk 
+messages as ISOs. See Rule 22.100(e)(3).
+---------------------------------------------------------------------------
+
+    IEX Options rules provide for several price protection mechanisms, 
+including Rule 22.260(b) (Market Orders in No-Bid (Offer) Series) and 
+Rule 22.260(e) (Drill-Through Protection). The Market Orders in a No-
+Bid (Offer) Series rule is designed to protect Market orders from 
+executions at potentially erroneous prices, and provides that if the 
+System receives a sell Market order in a series after it is open for 
+trading with an NBB \24\ of zero and an NBO \25\ less than or equal to 
+$0.50, the System will convert the Market order to a Limit order with a 
+limit price equal to the minimum trading increment applicable to the 
+series and will post the order to the Order Book.\26\ If the System 
+receives a sell Market order in a series after it is open for trading 
+with an NBB of zero and an NBO greater than $0.50, the System cancels 
+or rejects the Market order, except if the sell Market order would be 
+subject to the drill-through protection, in which case the order joins 
+the ongoing drill-through process.\27\ If the System receives a buy 
+Market order in a series after it is open for trading with an NBO of 
+zero, the System cancels or rejects the Market order.\28\
+---------------------------------------------------------------------------
+
+    \24\ See Rule 17.100.
+    \25\ See Rule 17.100.
+    \26\ See Rule 22.260(b)(1)(A). Note that following the Opening 
+Process, orders and quotes received prior to and not executed in 
+full during the Opening Process will be transitioned to the 
+continuous Order Book and handled in accordance with existing IEX 
+rules, as applicable. The System is considered to have received such 
+orders at that time for purposes of the Market Orders in No-Bid 
+(Offer) Series rule. See Rule 22.160(d). The Market Orders in No-Bid 
+(Offer) Series rule is not applicable to the Opening Process.
+    \27\ See Rule 22.260(b)(1)(B).
+    \28\ See Rule 22.260(b)(2).
+
+---------------------------------------------------------------------------
+
+[[Page 59826]]
+
+    The Drill-Through Protection rule is designed to prevent an 
+aggressively priced order from executing beyond multiple price levels 
+by utilizing a series of iterations up to an Exchange-determined 
+``buffer amount'' \29\ that caps how far the order can execute, rather 
+than immediately sweeping all available liquidity up to its limit 
+price, before it stops executing or routing the order.\30\ Bulk 
+messages \31\ and ISOs are not eligible for drill-through 
+protection.\32\
+---------------------------------------------------------------------------
+
+    \29\ IEX Options determines the buffer amount on a class and 
+premium basis. See Rule 22.260(e)(1)
+    \30\ See generally Rule 22.260(e)(3)(F).
+    \31\ See Rule 22.100(l).
+    \32\ See Rule 22.260(e)(4).
+---------------------------------------------------------------------------
+
+Proposal
+A. Deletion of Rule 22.260(b)
+    As noted above, IEX Rule 22.260(b) specifies that if the System 
+receives a sell Market order in a series after it is open for trading 
+with an NBB of zero, if the NBO in the series is less than or equal to 
+$0.50, then the System will convert the Market order to a Limit order 
+with a limit price equal to the minimum trading increment applicable to 
+the series and enter it into the IEX Options Book. However, IEX Market 
+orders may only have a TIF of IOC,\33\ which means a Market order that 
+is not ``executed immediately on the Exchange or another options 
+exchange is cancelled and is not posted to the IEX Options Book.'' \34\ 
+Because Market orders either execute or cancel on entry, they cannot be 
+converted by the System into a Limit order that is entered into the 
+Options Order Book nor could they be subject to an ongoing drill-
+through process.
+---------------------------------------------------------------------------
+
+    \33\ The Exchange may determine the TIF(s) applicable to each 
+order type on a system-wide basis unless otherwise specified in the 
+Exchange Rules. See Rule 22.100(g). The Exchange TIF determinations 
+are specified in the FIX and binary input specifications and specify 
+that Market orders may only have a TIF of IOC. See IEX Options FIX 
+Specification, Appendix A, available at <a href="https://www.iex.io/documents/iex-options-fix-specification">https://www.iex.io/documents/iex-options-fix-specification</a> and IEX Binary Options 
+Protocol Specification, Appendix A, available at <a href="https://www.iex.io/documents/iex-binary-options-protocol-specification">https://www.iex.io/documents/iex-binary-options-protocol-specification</a>.
+    \34\ See supra note 18.
+---------------------------------------------------------------------------
+
+    Thus, the provisions in Rule 22.260(b) that refer to converting a 
+sell Market order to a limit order or the order being subject to an 
+ongoing drill-through process are inapplicable. If a Market order to 
+sell is received at a time when the NBB is zero (i.e., there is no 
+interest to buy in the series), the Market order will be automatically 
+canceled by the System because it would not be executed, pursuant to 
+Rule 22.100(g)(1). With respect to a buy Market order received in a 
+series after it is open for trading with an NBO of zero (i.e., there is 
+no interest to sell in the series), Rule 22.260(b)(2) provides that the 
+order will be rejected. In this context the terms rejected and canceled 
+achieve the same result because the order would not rest on the IEX 
+Options Order Book. Accordingly, IEX proposes to delete Rule 22.260(b) 
+as unnecessary and duplicative of Rule 22.100(g)(1) and insert the word 
+``Reserved'' in its place.
+B. Amendment to Rule 22.260(e)
+    IEX's Drill-Through Protection provides execution-price protection 
+for liquidity-taking orders, which permits a marketable order to access 
+liquidity across multiple price levels while limiting the distance 
+through the prevailing contra-side NBBO at which executions may 
+initially occur to prevent an order from executing through successive 
+price levels too aggressively.\35\
+---------------------------------------------------------------------------
+
+    \35\ See generally Rule 22.260(e).
+---------------------------------------------------------------------------
+
+    IEX's Drill-Through Protection Rule does not apply to bulk messages 
+or ISOs.\36\ Bulk messages are designed to enable Market Makers to 
+efficiently submit and update liquidity providing quotations, rather 
+than to function as liquidity-taking orders seeking execution through 
+multiple price levels. For example, Day \37\ bulk messages cannot sweep 
+at all because they are Post Only; \38\ and IOC bulk messages are for 
+the limited purpose of Market Maker risk management.\39\ Accordingly, 
+applying drill-through to bulk messages would not meaningfully advance 
+the purpose for which drill-through protection was designed.
+---------------------------------------------------------------------------
+
+    \36\ See Rule 22.260(e)(4).
+    \37\ An order or quote with a TIF of Day that does not execute 
+on entry rests on the Order Book, and if it does not execute before 
+market close, is canceled. See Rule 22.100(g)(2).
+    \38\ See Rule 22.100(l)(3).
+    \39\ See Securities Exchange Act Release No. 105729 (June 18, 
+2026), 91 FR 38051 (June 24, 2026) (SR-IEX-2026-17) (Allowing bulk 
+messages to have a TIF of IOC for the limited purpose of Market 
+Maker risk management, in view of a Market Maker's core obligation 
+to provide liquidity to the market.)
+---------------------------------------------------------------------------
+
+    IEX's Drill-Through Protection Rule does not apply to ISOs for a 
+different reason. An Options Member submitting an ISO order is 
+affirmatively instructing the Exchange to execute the order through the 
+market up to its limit price without regard to Protected Quotations at 
+other options exchanges.\40\ Restricting the order by the Drill-Through 
+process would be inconsistent with the objective of an ISO order.
+---------------------------------------------------------------------------
+
+    \40\ See supra note 23,
+---------------------------------------------------------------------------
+
+    IEX proposes to exclude Post Only orders (i.e., including orders 
+and quotes not submitted as bulk messages), which by definition cannot 
+remove liquidity from the IEX Options Order Book, from the Drill-
+Through Protection rule. For the reasons discussed above, this 
+exclusion is logical because Drill-Through Protection is designed to 
+protect liquidity-taking orders (something Post Only orders cannot do) 
+from executing at too aggressive a price.\41\ Thus, as proposed, Rule 
+22.260(e)(3)(4) will now read: ``This protection does not apply to bulk 
+messages, Post Only, or ISOs.''
+---------------------------------------------------------------------------
+
+    \41\ IEX Options rules provide that the System reprices, 
+cancels, or rejects Post Only interest that would lock/cross the 
+Exchange's contra-side interest, and Post Only interest does not 
+route away. See supra note 22.
+---------------------------------------------------------------------------
+
+2. Statutory Basis
+    The Exchange believes that the proposed rule change is consistent 
+with Section 6(b) of the Act \42\ in general, and furthers the 
+objectives of Section 6(b)(5) of the Act \43\ in particular, in that it 
+is designed to prevent fraudulent and manipulative acts and practices, 
+to promote just and equitable principles of trade, to foster 
+cooperation and coordination with persons engaged in regulating, 
+clearing, settling, processing information with respect to, and 
+facilitating transactions in, securities, to remove impediments to and 
+perfect the mechanism of a free and open market and a national market 
+system, and, in general, to protect investors and the public interest.
+---------------------------------------------------------------------------
+
+    \42\ 15 U.S.C. 78f(b).
+    \43\ 15 U.S.C. 78f(b)(5).
+---------------------------------------------------------------------------
+
+    As discussed in the Purpose section, the proposed rule change is 
+designed to address internal inconsistencies in IEX Options rules. As 
+such, the proposed rule change would foster cooperation and 
+coordination with persons engaged in facilitating transactions in 
+securities and would remove impediments to and perfect the mechanism of 
+a free and open market and a national market system.
+    In particular, the Exchange believes the proposed rule change will 
+promote just and equitable principles of trade, remove impediments to 
+and perfect the mechanism of a national market system, and protect 
+investors and the public interest, by clarifying how impacted order 
+types will function. Specifically, IEX believes that Options Members 
+would not expect a Market order with a TIF of IOC to be eligible for 
+the Market Orders in No-Bid (Offer) Series protection of converting the 
+order to a Limit order and would not expect Drill-Through Protection 
+for aggressive taking orders to apply to Post Only orders that by 
+definition must add liquidity to the Order Book. Thus, IEX believes 
+that the proposed changes will reduce confusion
+
+[[Page 59827]]
+
+among market participants, thereby removing impediments to and 
+perfecting the mechanism of a free and open market and a national 
+market system, and, in general, protecting investors and the public 
+interest.
+    The Exchange also believes that the proposed changes are consistent 
+with the investor protection and the public interest provisions of the 
+Act because impacted order types will continue to function as expected. 
+Specifically, buy (or sell) Market orders received in a series after it 
+is open for trading with an NBO (or NBB) of zero, will be canceled, 
+which is what an Options Member would expect to happen when there is no 
+contra-party interest because all IEX Options Market orders have a TIF 
+of IOC.\44\ And with respect to Drill-Through Protections, because Post 
+Only orders do not take liquidity, it is logical to exclude them from a 
+protection mechanism that prevents taking liquidity at excessive 
+prices. Importantly, Market orders and Post Only orders will continue 
+to be subject to all the applicable protections specified in Rules 
+22.250 and 22.260.
+---------------------------------------------------------------------------
+
+    \44\ See supra note 33.
+---------------------------------------------------------------------------
+
+    Moreover, the Exchange believes these proposed, narrowly tailored 
+changes to its rules are not designed to permit unfair discrimination 
+among Options Members as they would apply equally to all Options 
+Members.
+    Finally, each of these proposed changes is based on the logical 
+functionality of the Commission-approved price protection mechanisms 
+coupled with how IEX's order types, TIFs, and Handling Instructions 
+interact, and thus, the Exchange does not believe that the proposed 
+rule change raises any new or novel issues.
+
+B. Self-Regulatory Organization's Statement on Burden on Competition
+
+    The Exchange does not believe that the proposed rule change will 
+impose any burden on competition that is not necessary or appropriate 
+in furtherance of the purposes of the Act.
+    The Exchange does not believe that the proposed rule change will 
+impose any burden on intermarket competition that is not necessary or 
+appropriate in furtherance of the purposes of the Act. To the extent 
+the proposed changes enhance the competitiveness of IEX Options, 
+competing exchanges have and can continue to adopt comparable 
+functionality, subject to the Commission's rule filing process.
+    The Exchange also does not believe that the proposed rule change 
+will impose any burden on intramarket competition that is not necessary 
+or appropriate in furtherance of the purposes of the Act. The rule 
+change will apply equally to all Options Members. The Exchange believes 
+that these proposed changes to Rule 22.260 to better align the rule 
+with System functionality will enable Options Members to better 
+understand and utilize these price protection mechanisms and risk 
+controls, which, in turn, may enhance the integrity of trading on the 
+options market and help to assure the stability of the financial 
+system.
+
+C. Self-Regulatory Organization's Statement on Comments on the Proposed 
+Rule Change Received From Members, Participants, or Others
+
+    Written comments were neither solicited nor received.
+
+III. Date of Effectiveness of the Proposed Rule Change and Timing for 
+Commission Action
+
+    The Exchange has filed the proposed rule change pursuant to Section 
+19(b)(3)(A) of the Act \45\ and Rule 19b-4(f)(6) \46\ thereunder. 
+Because the foregoing proposed rule change does not: (i) significantly 
+affect the protection of investors or the public interest; (ii) impose 
+any significant burden on competition; or (iii) become operative for 30 
+days from the date on which it was filed, or such shorter time as the 
+Commission may designate, it has become effective pursuant to Section 
+19(b)(3)(A) of the Act \47\ and Rule 19b-4(f)(6) \48\ thereunder.
+---------------------------------------------------------------------------
+
+    \45\ 15 U.S.C. 78s(b)(3)(A).
+    \46\ 17 CFR 240.19b-4(f)(6).
+    \47\ 15 U.S.C. 78s(b)(3)(A).
+    \48\ 17 CFR 240.19b-4(f)(6). In addition, Rule 19b-4(f)(6)(iii) 
+requires the Exchange to give the Commission written notice of its 
+intent to file the proposed rule change, along with a brief 
+description and text of the proposed rule change, at least five 
+business days prior to the date of filing of the proposed rule 
+change, or such shorter time as designated by the Commission. The 
+Exchange has satisfied this requirement.
+---------------------------------------------------------------------------
+
+    A proposed rule change filed under Rule 19b-4(f)(6) \49\ normally 
+does not become operative prior to 30 days after the date of the 
+filing. However, pursuant to Rule 19b-4(f)(6)(iii),\50\ the Commission 
+may designate a shorter time if such action is consistent with 
+protection of investors and the public interest. The Exchange has asked 
+the Commission to waive the 30-day operative delay so that the proposed 
+rule change may become operative immediately upon filing. According to 
+the Exchange, waiving the 30-day delay would allow the proposed rule 
+change to become operative on October 2, 2026, when IEX Options 
+commences trading, and would permit the IEX Options System to operate 
+in a manner fully aligned with IEX Options rules, alleviating any 
+confusion among market participants about how the rules operate. Waiver 
+of the 30-day operative delay is consistent with the protection of 
+investors and the public interest because it allows the revised IEX 
+Options rules to be operative by October 2, 2026, the date that trading 
+begins on the IEX Options System, provides clarity and prevents 
+potential confusion for market participants about the operation of IEX 
+Options rules, and does not introduce any novel regulatory issues. 
+Accordingly, the Commission designates the proposed rule change to be 
+operative upon filing.\51\
+---------------------------------------------------------------------------
+
+    \49\ 17 CFR 240.19b-4(f)(6).
+    \50\ 17 CFR 240.19b-4(f)(6)(iii).
+    \51\ For purposes only of waiving the 30-day operative delay, 
+the Commission also has considered the proposed rule's impact on 
+efficiency, competition, and capital formation. See 15 U.S.C. 
+78c(f).
+---------------------------------------------------------------------------
+
+    At any time within 60 days of the filing of the proposed rule 
+change, the Commission summarily may temporarily suspend such rule 
+change if it appears to the Commission that such action is necessary or 
+appropriate in the public interest, for the protection of investors, or 
+otherwise in furtherance of the purposes of the Act. If the Commission 
+takes such action, the Commission will institute proceedings to 
+determine whether the proposed rule change should be approved or 
+disapproved.
+
+IV. Solicitation of Comments
+
+    Interested persons are invited to submit written data, views and 
+arguments concerning the foregoing, including whether the proposed rule 
+change is consistent with the Act. Comments may be submitted by any of 
+the following methods:
+
+Electronic Comments
+
+    <bullet> Use the Commission's internet comment form (<a href="https://www.sec.gov/rules/sro.shtml">https://www.sec.gov/rules/sro.shtml</a>); or
+    <bullet> Send an email to <a href="/cdn-cgi/l/email-protection#2052554c450d434f4d4d454e5453605345430e474f56"><span class="__cf_email__" data-cfemail="3d4f485158105e5250505853494e7d4e585e135a524b">[email&#160;protected]</span></a>. Please include 
+file number SR-IEX-2026-31 on the subject line.
+
+Paper Comments
+
+    <bullet> Send paper comments in triplicate to Secretary, Securities 
+and Exchange Commission, 100 F Street NE, Washington, DC 20549-1090.
+
+All submissions should refer to file number SR-IEX-2026-31. This file 
+number should be included on the subject line if email is used. To help 
+the Commission process and review your comments more efficiently, 
+please use only one method. The Commission will
+
+[[Page 59828]]
+
+post all comments on the Commission's internet website (<a href="https://www.sec.gov/rules/sro.shtml">https://www.sec.gov/rules/sro.shtml</a>). Copies of the filing will be available 
+for inspection and copying at the principal office of the Exchange. Do 
+not include personal identifiable information in submissions; you 
+should submit only information that you wish to make available 
+publicly. We may redact in part or withhold entirely from publication 
+submitted material that is obscene or subject to copyright protection. 
+All submissions should refer to file number SR-IEX-2026-31 and should 
+be submitted on or before October 13, 2026.
+
+    For the Commission, by the Division of Trading and Markets, 
+pursuant to delegated authority.\52\
+---------------------------------------------------------------------------
+
+    \52\ 17 CFR 200.30-3(a)(12).
+---------------------------------------------------------------------------
+
+Sherry R. Haywood,
+Assistant Secretary.
+[FR Doc. 2026-19218 Filed 9-18-26; 8:45 am]
+BILLING CODE 8011-01-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>
