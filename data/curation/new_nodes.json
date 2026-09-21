@@ -618,6 +618,396 @@
    "url": "https://docs.house.gov/Committee/Committees.aspx?Code=IG00",
    "basis": "docs.house.gov's listing for the Permanent Select Committee on Intelligence prints 'Subcommittee on Oversight and Investigations' in page content. Three other committees carry a subcommittee of this name and the graph already has those; a duplicate across parents is allowed on purpose (the rename table's sibling rule), and this committee had none. Named as the House's own listing prints it. A subcommittee the House Clerk's complete committee list carries under this committee and the graph had no node for (CURATION.md §5.7); the parent is the committee node, and the placement is the Clerk's own structure, which the exporter publishes as listed_under_committee_in_house_clerk_committee_list once the derive step runs. CURATION.md §16.",
    "addedOn": "2026-09-21"
+  },
+  {
+   "id": "exec-ind-misc-holocaust-memorial-museum",
+   "parentId": "exec-ind-misc",
+   "name": "United States Holocaust Memorial Museum",
+   "type": "Independent Agency",
+   "licence": "official_page_label",
+   "url": "https://www.usa.gov/agency-index/h",
+   "basis": "A unit OPM's CURRENT PLUM export files as an agency of its own and this graph had no node for at all (CURATION.md §17). The export is not a licence: the node is licensed by the page named here, tested with the verifier's own label test on the run. 55 live rows, the largest non-Defense block. Its own site is ushmm.org, whose robots.txt this sandbox cannot reach, so the licence rests on usa.gov. usa.gov's A-to-Z index of federal agencies labels it; CLAUDE.md already records that index as a source of candidate pages rather than of claims, and here it is the page the label test was run against. The Government Manual also carries an entry of this name, which will give the node a verification method once the org route runs; the Manual files it at top level and so could not license the placement.",
+   "addedOn": "2026-09-21"
+  },
+  {
+   "id": "exec-ind-misc-commission-on-civil-rights",
+   "parentId": "exec-ind-misc",
+   "name": "United States Commission on Civil Rights",
+   "type": "Independent Agency",
+   "licence": "official_page_label",
+   "url": "https://www.usccr.gov/about",
+   "basis": "A unit OPM's CURRENT PLUM export files as an agency of its own and this graph had no node for at all (CURATION.md §17). The export is not a licence: the node is licensed by the page named here, tested with the verifier's own label test on the run. 20 live rows. The Government Manual carries an entry of this name too.",
+   "addedOn": "2026-09-21"
+  },
+  {
+   "id": "exec-ind-misc-surface-transportation-board",
+   "parentId": "exec-ind-misc",
+   "name": "Surface Transportation Board",
+   "type": "Independent Agency",
+   "licence": "official_page_label",
+   "url": "https://www.stb.gov/about-stb/",
+   "basis": "A unit OPM's CURRENT PLUM export files as an agency of its own and this graph had no node for at all (CURATION.md §17). The export is not a licence: the node is licensed by the page named here, tested with the verifier's own label test on the run. 15 live rows. The Government Manual carries an entry of this name too.",
+   "addedOn": "2026-09-21"
+  },
+  {
+   "id": "exec-ind-misc-international-trade-commission",
+   "parentId": "exec-ind-misc",
+   "name": "United States International Trade Commission",
+   "type": "Independent Agency",
+   "licence": "official_page_label",
+   "url": "https://www.usitc.gov/press_room/about_usitc.htm",
+   "basis": "A unit OPM's CURRENT PLUM export files as an agency of its own and this graph had no node for at all (CURATION.md §17). The export is not a licence: the node is licensed by the page named here, tested with the verifier's own label test on the run. 15 live rows. The Government Manual carries an entry of this name too.",
+   "addedOn": "2026-09-21"
+  },
+  {
+   "id": "exec-ind-misc-institute-of-peace",
+   "parentId": "exec-ind-misc",
+   "name": "United States Institute of Peace",
+   "type": "Independent Agency",
+   "licence": "official_page_label",
+   "url": "https://www.usa.gov/agency-index/u",
+   "basis": "A unit OPM's CURRENT PLUM export files as an agency of its own and this graph had no node for at all (CURATION.md §17). The export is not a licence: the node is licensed by the page named here, tested with the verifier's own label test on the run. 12 live rows. usip.org's robots.txt is unreachable from this sandbox. usa.gov's A-to-Z index of federal agencies labels it; CLAUDE.md already records that index as a source of candidate pages rather than of claims, and here it is the page the label test was run against. The Government Manual carries an entry of this name too.",
+   "addedOn": "2026-09-21"
+  },
+  {
+   "id": "exec-ind-misc-federal-retirement-thrift-investment-board",
+   "parentId": "exec-ind-misc",
+   "name": "Federal Retirement Thrift Investment Board",
+   "type": "Independent Agency",
+   "licence": "official_page_label",
+   "url": "https://www.usa.gov/agency-index/f",
+   "basis": "A unit OPM's CURRENT PLUM export files as an agency of its own and this graph had no node for at all (CURATION.md §17). The export is not a licence: the node is licensed by the page named here, tested with the verifier's own label test on the run. 10 live rows. frtib.gov is readable and allowed but does not carry the full name as a label. usa.gov's A-to-Z index of federal agencies labels it; CLAUDE.md already records that index as a source of candidate pages rather than of claims, and here it is the page the label test was run against. The Government Manual carries an entry of this name too.",
+   "addedOn": "2026-09-21"
+  },
+  {
+   "id": "exec-ind-misc-defense-nuclear-facilities-safety-board",
+   "parentId": "exec-ind-misc",
+   "name": "Defense Nuclear Facilities Safety Board",
+   "type": "Independent Agency",
+   "licence": "official_page_label",
+   "url": "https://www.usa.gov/agency-index/d",
+   "basis": "A unit OPM's CURRENT PLUM export files as an agency of its own and this graph had no node for at all (CURATION.md §17). The export is not a licence: the node is licensed by the page named here, tested with the verifier's own label test on the run. 8 live rows. dnfsb.gov answers robots.txt 403 and is refused by this project's policy. usa.gov's A-to-Z index of federal agencies labels it; CLAUDE.md already records that index as a source of candidate pages rather than of claims, and here it is the page the label test was run against. It is an independent board, not a Defense Agency: the Manual files it at top level, not under the Department of Defense.",
+   "addedOn": "2026-09-21"
+  },
+  {
+   "id": "exec-ind-misc-federal-mine-safety-and-health-review-commission",
+   "parentId": "exec-ind-misc",
+   "name": "Federal Mine Safety and Health Review Commission",
+   "type": "Independent Agency",
+   "licence": "official_page_label",
+   "url": "https://www.fmshrc.gov/",
+   "basis": "A unit OPM's CURRENT PLUM export files as an agency of its own and this graph had no node for at all (CURATION.md §17). The export is not a licence: the node is licensed by the page named here, tested with the verifier's own label test on the run. 7 live rows. Distinct from the Department of Labor's Mine Safety & Health Administration, which the graph already carries: MSHA enforces, this commission adjudicates.",
+   "addedOn": "2026-09-21"
+  },
+  {
+   "id": "exec-ind-misc-inter-american-foundation",
+   "parentId": "exec-ind-misc",
+   "name": "Inter-American Foundation",
+   "type": "Independent Agency",
+   "licence": "official_page_label",
+   "url": "https://www.usa.gov/agency-index/i",
+   "basis": "A unit OPM's CURRENT PLUM export files as an agency of its own and this graph had no node for at all (CURATION.md §17). The export is not a licence: the node is licensed by the page named here, tested with the verifier's own label test on the run. 6 live rows. iaf.gov answers robots.txt 403 and is refused by policy. usa.gov's A-to-Z index of federal agencies labels it; CLAUDE.md already records that index as a source of candidate pages rather than of claims, and here it is the page the label test was run against. ",
+   "addedOn": "2026-09-21"
+  },
+  {
+   "id": "exec-ind-misc-occupational-safety-and-health-review-commission",
+   "parentId": "exec-ind-misc",
+   "name": "Occupational Safety and Health Review Commission",
+   "type": "Independent Agency",
+   "licence": "official_page_label",
+   "url": "https://www.oshrc.gov/",
+   "basis": "A unit OPM's CURRENT PLUM export files as an agency of its own and this graph had no node for at all (CURATION.md §17). The export is not a licence: the node is licensed by the page named here, tested with the verifier's own label test on the run. 6 live rows. Distinct from the Department of Labor's OSHA, which the graph already carries: OSHA enforces, this commission adjudicates.",
+   "addedOn": "2026-09-21"
+  },
+  {
+   "id": "exec-ind-misc-odni",
+   "parentId": "exec-ind-misc",
+   "name": "Office of the Director of National Intelligence",
+   "type": "Independent Agency",
+   "licence": "official_page_label",
+   "url": "https://www.dni.gov/index.php/who-we-are",
+   "basis": "A unit OPM's CURRENT PLUM export files as an agency of its own and this graph had no node for at all (CURATION.md §17). The export is not a licence: the node is licensed by the page named here, tested with the verifier's own label test on the run. 6 live rows. The graph carried no node for the ODNI at all. The Government Manual carries an entry of this name at top level. NOTE: the export spells it 'OFFICE OF THE DIRECTOR FOR NATIONAL INTELLIGENCE' (for, not of), so its rows will NOT reach this node by name equality; that spelling is handed off as an alias candidate rather than used as the node's name.",
+   "addedOn": "2026-09-21"
+  },
+  {
+   "id": "exec-ind-misc-african-development-foundation",
+   "parentId": "exec-ind-misc",
+   "name": "United States African Development Foundation",
+   "type": "Independent Agency",
+   "licence": "official_page_label",
+   "url": "https://www.usadf.gov/",
+   "basis": "A unit OPM's CURRENT PLUM export files as an agency of its own and this graph had no node for at all (CURATION.md §17). The export is not a licence: the node is licensed by the page named here, tested with the verifier's own label test on the run. 5 live rows. The Government Manual carries an entry of this name too.",
+   "addedOn": "2026-09-21"
+  },
+  {
+   "id": "exec-ind-misc-trade-and-development-agency",
+   "parentId": "exec-ind-misc",
+   "name": "United States Trade and Development Agency",
+   "type": "Independent Agency",
+   "licence": "official_page_label",
+   "url": "https://www.usa.gov/agency-index/u",
+   "basis": "A unit OPM's CURRENT PLUM export files as an agency of its own and this graph had no node for at all (CURATION.md §17). The export is not a licence: the node is licensed by the page named here, tested with the verifier's own label test on the run. 4 live rows. ustda.gov's About page does not carry the full name as a label. usa.gov's A-to-Z index of federal agencies labels it; CLAUDE.md already records that index as a source of candidate pages rather than of claims, and here it is the page the label test was run against. The Government Manual carries an entry, printed as 'Trade and Development Agency'.",
+   "addedOn": "2026-09-21"
+  },
+  {
+   "id": "exec-ind-misc-abilityone-commission",
+   "parentId": "exec-ind-misc",
+   "name": "U.S. AbilityOne Commission",
+   "type": "Independent Agency",
+   "licence": "official_page_label",
+   "url": "https://www.abilityone.gov/",
+   "basis": "A unit OPM's CURRENT PLUM export files as an agency of its own and this graph had no node for at all (CURATION.md §17). The export is not a licence: the node is licensed by the page named here, tested with the verifier's own label test on the run. 4 live rows. Statutorily the Committee for Purchase From People Who Are Blind or Severely Disabled; named as its own page labels it.",
+   "addedOn": "2026-09-21"
+  },
+  {
+   "id": "exec-ind-misc-public-buildings-reform-board",
+   "parentId": "exec-ind-misc",
+   "name": "Public Buildings Reform Board",
+   "type": "Independent Agency",
+   "licence": "official_page_label",
+   "url": "https://www.pbrb.gov/",
+   "basis": "A unit OPM's CURRENT PLUM export files as an agency of its own and this graph had no node for at all (CURATION.md §17). The export is not a licence: the node is licensed by the page named here, tested with the verifier's own label test on the run. 7 live rows.",
+   "addedOn": "2026-09-21"
+  },
+  {
+   "id": "exec-ind-misc-federal-mediation-and-conciliation-service",
+   "parentId": "exec-ind-misc",
+   "name": "Federal Mediation and Conciliation Service",
+   "type": "Independent Agency",
+   "licence": "official_page_label",
+   "url": "https://www.fmcs.gov/",
+   "basis": "A unit OPM's CURRENT PLUM export files as an agency of its own and this graph had no node for at all (CURATION.md §17). The export is not a licence: the node is licensed by the page named here, tested with the verifier's own label test on the run. 3 live rows. The Government Manual carries an entry of this name too.",
+   "addedOn": "2026-09-21"
+  },
+  {
+   "id": "exec-ind-misc-administrative-conference-of-the-united-states",
+   "parentId": "exec-ind-misc",
+   "name": "Administrative Conference of the United States",
+   "type": "Independent Agency",
+   "licence": "official_page_label",
+   "url": "https://www.usa.gov/agency-index",
+   "basis": "A unit OPM's CURRENT PLUM export files as an agency of its own and this graph had no node for at all (CURATION.md §17). The export is not a licence: the node is licensed by the page named here, tested with the verifier's own label test on the run. 1 live row. acus.gov answers robots.txt 403 and is refused by policy. usa.gov's A-to-Z index of federal agencies labels it; CLAUDE.md already records that index as a source of candidate pages rather than of claims, and here it is the page the label test was run against. The Government Manual carries an entry of this name too.",
+   "addedOn": "2026-09-21"
+  },
+  {
+   "id": "exec-ind-misc-office-of-government-ethics",
+   "parentId": "exec-ind-misc",
+   "name": "United States Office of Government Ethics",
+   "type": "Independent Agency",
+   "licence": "official_page_label",
+   "url": "https://www.usa.gov/agency-index/o",
+   "basis": "A unit OPM's CURRENT PLUM export files as an agency of its own and this graph had no node for at all (CURATION.md §17). The export is not a licence: the node is licensed by the page named here, tested with the verifier's own label test on the run. 1 live row. oge.gov's front page does not carry the full name as a label. usa.gov's A-to-Z index of federal agencies labels it; CLAUDE.md already records that index as a source of candidate pages rather than of claims, and here it is the page the label test was run against. The Government Manual carries an entry, printed as 'Office of Government Ethics'.",
+   "addedOn": "2026-09-21"
+  },
+  {
+   "id": "exec-ind-misc-access-board",
+   "parentId": "exec-ind-misc",
+   "name": "U.S. Access Board (Architectural and Transportation Barriers Compliance Board)",
+   "type": "Independent Agency",
+   "licence": "official_page_label",
+   "url": "https://www.access-board.gov/about/",
+   "basis": "A unit OPM's CURRENT PLUM export files as an agency of its own and this graph had no node for at all (CURATION.md §17). The export is not a licence: the node is licensed by the page named here, tested with the verifier's own label test on the run. 14 live rows. The export prints both names in the same string; the node is named as the agency's own page labels it, with the statutory name kept in brackets. canonical_name_key drops the bracket, so the key is 'access board' on both sides.",
+   "addedOn": "2026-09-21"
+  },
+  {
+   "id": "exec-ind-misc-nuclear-waste-technical-review-board",
+   "parentId": "exec-ind-misc",
+   "name": "Nuclear Waste Technical Review Board",
+   "type": "Independent Agency",
+   "licence": "official_page_label",
+   "url": "https://www.nwtrb.gov/",
+   "basis": "A unit OPM's CURRENT PLUM export files as an agency of its own and this graph had no node for at all (CURATION.md §17). The export is not a licence: the node is licensed by the page named here, tested with the verifier's own label test on the run. 12 live rows.",
+   "addedOn": "2026-09-21"
+  },
+  {
+   "id": "exec-ind-misc-advisory-council-on-historic-preservation",
+   "parentId": "exec-ind-misc",
+   "name": "Advisory Council on Historic Preservation",
+   "type": "Independent Agency",
+   "licence": "official_page_label",
+   "url": "https://www.achp.gov/about",
+   "basis": "A unit OPM's CURRENT PLUM export files as an agency of its own and this graph had no node for at all (CURATION.md §17). The export is not a licence: the node is licensed by the page named here, tested with the verifier's own label test on the run. 11 live rows.",
+   "addedOn": "2026-09-21"
+  },
+  {
+   "id": "exec-ind-misc-national-council-on-disability",
+   "parentId": "exec-ind-misc",
+   "name": "National Council on Disability",
+   "type": "Independent Agency",
+   "licence": "official_page_label",
+   "url": "https://www.usa.gov/agency-index/n",
+   "basis": "A unit OPM's CURRENT PLUM export files as an agency of its own and this graph had no node for at all (CURATION.md §17). The export is not a licence: the node is licensed by the page named here, tested with the verifier's own label test on the run. 9 live rows. ncd.gov serves a JavaScript shell below the verifier's readable-text floor. usa.gov's A-to-Z index of federal agencies labels it; CLAUDE.md already records that index as a source of candidate pages rather than of claims, and here it is the page the label test was run against. ",
+   "addedOn": "2026-09-21"
+  },
+  {
+   "id": "exec-ind-misc-commission-of-fine-arts",
+   "parentId": "exec-ind-misc",
+   "name": "United States Commission of Fine Arts",
+   "type": "Independent Agency",
+   "licence": "official_page_label",
+   "url": "https://www.cfa.gov/about-cfa",
+   "basis": "A unit OPM's CURRENT PLUM export files as an agency of its own and this graph had no node for at all (CURATION.md §17). The export is not a licence: the node is licensed by the page named here, tested with the verifier's own label test on the run. 8 live rows.",
+   "addedOn": "2026-09-21"
+  },
+  {
+   "id": "exec-ind-misc-arctic-research-commission",
+   "parentId": "exec-ind-misc",
+   "name": "United States Arctic Research Commission",
+   "type": "Independent Agency",
+   "licence": "official_page_label",
+   "url": "https://www.arctic.gov/",
+   "basis": "A unit OPM's CURRENT PLUM export files as an agency of its own and this graph had no node for at all (CURATION.md §17). The export is not a licence: the node is licensed by the page named here, tested with the verifier's own label test on the run. 7 live rows.",
+   "addedOn": "2026-09-21"
+  },
+  {
+   "id": "exec-ind-misc-truman-scholarship-foundation",
+   "parentId": "exec-ind-misc",
+   "name": "Harry S. Truman Scholarship Foundation",
+   "type": "Independent Agency",
+   "licence": "official_page_label",
+   "url": "https://www.truman.gov/",
+   "basis": "A unit OPM's CURRENT PLUM export files as an agency of its own and this graph had no node for at all (CURATION.md §17). The export is not a licence: the node is licensed by the page named here, tested with the verifier's own label test on the run. 5 live rows.",
+   "addedOn": "2026-09-21"
+  },
+  {
+   "id": "exec-ind-misc-madison-fellowship-foundation",
+   "parentId": "exec-ind-misc",
+   "name": "James Madison Memorial Fellowship Foundation",
+   "type": "Independent Agency",
+   "licence": "official_page_label",
+   "url": "https://www.usa.gov/agency-index/j",
+   "basis": "A unit OPM's CURRENT PLUM export files as an agency of its own and this graph had no node for at all (CURATION.md §17). The export is not a licence: the node is licensed by the page named here, tested with the verifier's own label test on the run. 5 live rows. jamesmadison.gov does not carry the full name as a label. usa.gov's A-to-Z index of federal agencies labels it; CLAUDE.md already records that index as a source of candidate pages rather than of claims, and here it is the page the label test was run against. ",
+   "addedOn": "2026-09-21"
+  },
+  {
+   "id": "exec-ind-misc-heritage-abroad-commission",
+   "parentId": "exec-ind-misc",
+   "name": "United States Commission for the Preservation of America's Heritage Abroad",
+   "type": "Independent Agency",
+   "licence": "official_page_label",
+   "url": "https://www.heritageabroad.gov/",
+   "basis": "A unit OPM's CURRENT PLUM export files as an agency of its own and this graph had no node for at all (CURATION.md §17). The export is not a licence: the node is licensed by the page named here, tested with the verifier's own label test on the run. 21 live rows.",
+   "addedOn": "2026-09-21"
+  },
+  {
+   "id": "exec-ind-misc-macpac",
+   "parentId": "exec-ind-misc",
+   "name": "Medicaid and CHIP Payment and Access Commission",
+   "type": "Independent Agency",
+   "licence": "official_page_label",
+   "url": "https://www.usa.gov/agency-index/m",
+   "basis": "A unit OPM's CURRENT PLUM export files as an agency of its own and this graph had no node for at all (CURATION.md §17). The export is not a licence: the node is licensed by the page named here, tested with the verifier's own label test on the run. 22 live rows. macpac.gov labels itself by its acronym. usa.gov's A-to-Z index of federal agencies labels it; CLAUDE.md already records that index as a source of candidate pages rather than of claims, and here it is the page the label test was run against. A legislative-branch advisory commission by statute; the export files it as an agency of its own and this graph has no legislative home for it, so it is placed among the independent establishments and the placement is this row's assertion, not the page's.",
+   "addedOn": "2026-09-21"
+  },
+  {
+   "id": "exec-ind-misc-medpac",
+   "parentId": "exec-ind-misc",
+   "name": "Medicare Payment Advisory Commission",
+   "type": "Independent Agency",
+   "licence": "official_page_label",
+   "url": "https://www.usa.gov/agency-index/m",
+   "basis": "A unit OPM's CURRENT PLUM export files as an agency of its own and this graph had no node for at all (CURATION.md §17). The export is not a licence: the node is licensed by the page named here, tested with the verifier's own label test on the run. 3 live rows. usa.gov's A-to-Z index of federal agencies labels it; CLAUDE.md already records that index as a source of candidate pages rather than of claims, and here it is the page the label test was run against. The same placement caveat as MACPAC above.",
+   "addedOn": "2026-09-21"
+  },
+  {
+   "id": "exec-ind-misc-marine-mammal-commission",
+   "parentId": "exec-ind-misc",
+   "name": "Marine Mammal Commission",
+   "type": "Independent Agency",
+   "licence": "official_page_label",
+   "url": "https://www.mmc.gov/about-the-commission/",
+   "basis": "A unit OPM's CURRENT PLUM export files as an agency of its own and this graph had no node for at all (CURATION.md §17). The export is not a licence: the node is licensed by the page named here, tested with the verifier's own label test on the run. 3 live rows.",
+   "addedOn": "2026-09-21"
+  },
+  {
+   "id": "exec-ind-misc-csosa",
+   "parentId": "exec-ind-misc",
+   "name": "Court Services and Offender Supervision Agency for the District of Columbia",
+   "type": "Independent Agency",
+   "licence": "official_page_label",
+   "url": "https://www.usa.gov/agency-index/c",
+   "basis": "A unit OPM's CURRENT PLUM export files as an agency of its own and this graph had no node for at all (CURATION.md §17). The export is not a licence: the node is licensed by the page named here, tested with the verifier's own label test on the run. 3 live rows. csosa.gov does not carry the full name as a label. usa.gov's A-to-Z index of federal agencies labels it; CLAUDE.md already records that index as a source of candidate pages rather than of claims, and here it is the page the label test was run against. ",
+   "addedOn": "2026-09-21"
+  },
+  {
+   "id": "exec-ind-misc-armed-forces-retirement-home",
+   "parentId": "exec-ind-misc",
+   "name": "Armed Forces Retirement Home",
+   "type": "Independent Agency",
+   "licence": "official_page_label",
+   "url": "https://www.afrh.gov/",
+   "basis": "A unit OPM's CURRENT PLUM export files as an agency of its own and this graph had no node for at all (CURATION.md §17). The export is not a licence: the node is licensed by the page named here, tested with the verifier's own label test on the run. 2 live rows.",
+   "addedOn": "2026-09-21"
+  },
+  {
+   "id": "exec-ind-misc-cigie",
+   "parentId": "exec-ind-misc",
+   "name": "Council of the Inspectors General on Integrity and Efficiency",
+   "type": "Independent Agency",
+   "licence": "official_page_label",
+   "url": "https://www.ignet.gov/",
+   "basis": "A unit OPM's CURRENT PLUM export files as an agency of its own and this graph had no node for at all (CURATION.md §17). The export is not a licence: the node is licensed by the page named here, tested with the verifier's own label test on the run. 1 live row. NOTE: the export spells it 'COUNCIL OF INSPECTORS GENERAL ON INTEGRITY AND EFFICIENCY' (no 'the'), so its row will NOT reach this node by name equality; that spelling is handed off as an alias candidate rather than used as the node's name.",
+   "addedOn": "2026-09-21"
+  },
+  {
+   "id": "exec-ind-misc-delta-regional-authority",
+   "parentId": "exec-ind-misc",
+   "name": "Delta Regional Authority",
+   "type": "Independent Agency",
+   "licence": "official_page_label",
+   "url": "https://dra.gov/",
+   "basis": "A unit OPM's CURRENT PLUM export files as an agency of its own and this graph had no node for at all (CURATION.md §17). The export is not a licence: the node is licensed by the page named here, tested with the verifier's own label test on the run. 1 live row.",
+   "addedOn": "2026-09-21"
+  },
+  {
+   "id": "exec-ind-misc-northern-border-regional-commission",
+   "parentId": "exec-ind-misc",
+   "name": "Northern Border Regional Commission",
+   "type": "Independent Agency",
+   "licence": "official_page_label",
+   "url": "https://www.nbrc.gov/",
+   "basis": "A unit OPM's CURRENT PLUM export files as an agency of its own and this graph had no node for at all (CURATION.md §17). The export is not a licence: the node is licensed by the page named here, tested with the verifier's own label test on the run. 1 live row.",
+   "addedOn": "2026-09-21"
+  },
+  {
+   "id": "exec-ind-misc-japan-united-states-friendship-commission",
+   "parentId": "exec-ind-misc",
+   "name": "Japan-United States Friendship Commission",
+   "type": "Independent Agency",
+   "licence": "official_page_label",
+   "url": "https://www.usa.gov/agency-index/j",
+   "basis": "A unit OPM's CURRENT PLUM export files as an agency of its own and this graph had no node for at all (CURATION.md §17). The export is not a licence: the node is licensed by the page named here, tested with the verifier's own label test on the run. 1 live row. jusfc.gov answers with a 307 redirect the fetcher does not follow to a readable page. usa.gov's A-to-Z index of federal agencies labels it; CLAUDE.md already records that index as a source of candidate pages rather than of claims, and here it is the page the label test was run against. ",
+   "addedOn": "2026-09-21"
+  },
+  {
+   "id": "exec-ind-misc-interagency-council-on-homelessness",
+   "parentId": "exec-ind-misc",
+   "name": "United States Interagency Council on Homelessness",
+   "type": "Independent Agency",
+   "licence": "official_page_label",
+   "url": "https://www.usich.gov/",
+   "basis": "A unit OPM's CURRENT PLUM export files as an agency of its own and this graph had no node for at all (CURATION.md §17). The export is not a licence: the node is licensed by the page named here, tested with the verifier's own label test on the run. 1 live row. NOTE: the export spells it 'INTERAGENCY COUNCIL ON THE HOMELESS', the council's pre-1994 name, so its row will NOT reach this node by name equality; handed off as an alias candidate rather than used as the node's name.",
+   "addedOn": "2026-09-21"
+  },
+  {
+   "id": "exec-ind-misc-civil-rights-cold-case-records-review-board",
+   "parentId": "exec-ind-misc",
+   "name": "Civil Rights Cold Case Records Review Board",
+   "type": "Independent Agency",
+   "licence": "official_page_label",
+   "url": "https://www.coldcaserecords.gov/",
+   "basis": "A unit OPM's CURRENT PLUM export files as an agency of its own and this graph had no node for at all (CURATION.md §17). The export is not a licence: the node is licensed by the page named here, tested with the verifier's own label test on the run. 4 live rows.",
+   "addedOn": "2026-09-21"
+  },
+  {
+   "id": "exec-eop-ceq",
+   "parentId": "exec-eop",
+   "name": "Council on Environmental Quality",
+   "type": "Office",
+   "licence": "official_page_label",
+   "url": "https://www.usa.gov/agency-index/c",
+   "basis": "A unit OPM's CURRENT PLUM export files as an agency of its own and this graph had no node for at all (CURATION.md §17). The export is not a licence: the node is licensed by the page named here, tested with the verifier's own label test on the run. 13 live rows, filed by the export under its own 'EXECUTIVE OFFICE OF THE PRESIDENT - <unit>' form, whose scoped rule found no unit of this name beneath the EOP because the graph had none. whitehouse.gov serves a JavaScript shell below the verifier's readable-text floor. usa.gov's A-to-Z index of federal agencies labels it; CLAUDE.md already records that index as a source of candidate pages rather than of claims, and here it is the page the label test was run against. ",
+   "addedOn": "2026-09-21"
   }
  ]
 }

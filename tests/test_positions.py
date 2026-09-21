@@ -470,7 +470,12 @@ class RealFixtureTests(unittest.TestCase):
         # full name the archive files it under, so one more agency answers by
         # name. A matching count is not a published claim; the records are
         # re-derived and the exporter decides what applies.
-        self.assertEqual((r["agencies_matched"], len(r["agencies_unmatched"]), len(r["agencies_ambiguous"])), (70, 99, 0))
+        # 70 -> 103 on 2026-09-21: the 39 units added from OPM's CURRENT PLUM
+        # export (CURATION.md §17) are almost all organisations the ARCHIVE
+        # files rows under too, so the archive reached 33 more agencies the
+        # moment the nodes existed. Published records are unchanged at 129 --
+        # none of the 39 has a position child for a row to reach.
+        self.assertEqual((r["agencies_matched"], len(r["agencies_unmatched"]), len(r["agencies_ambiguous"])), (103, 66, 0))
         # The same rename reaches one more organisation and seven more positions
         # beneath it (180 -> 181, 939 -> 946); published records stayed at 129.
         # The two ambiguous organisations are both the USPTO's: the archive
@@ -483,8 +488,15 @@ class RealFixtureTests(unittest.TestCase):
         # 168 -> 180 matched on 2026-09-20: the 26 units added from the
         # Government Manual are organisations the PLUM archive files positions
         # under, so its rows reached them as soon as the nodes existed.
+        # 181 -> 208 on 2026-09-21 with the 39 PLUM units, of which 34 -> 61 are
+        # the agency itself. "unmatched" RISES, 946 -> 972, and that is the
+        # count behaving correctly rather than a regression: an organisation
+        # under an agency that matched nothing is not counted unmatched, it is
+        # counted in organizations_under_unmatched_agency (348 -> 295), so 33
+        # agencies becoming matchable moves their sub-units from the second
+        # bucket into the first, where most of them then fail to name a node.
         self.assertEqual((r["organizations_matched"], r["organizations_of_agency"], len(r["organizations_unmatched"]), len(r["organizations_ambiguous"]), r["organizations_under_unmatched_agency"]),
-                         (181, 34, 946, 2, 348))
+                         (208, 61, 972, 2, 295))
         # 4,382 before the White House Office roster expansion added 222, then
         # 13 fewer when the duplicate Coast Guard and House intelligence
         # committee subtrees were merged away (scripts/merge_duplicate_nodes.py).

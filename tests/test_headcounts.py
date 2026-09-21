@@ -444,14 +444,32 @@ class RealFixturePinTests(unittest.TestCase):
         # units the Government Manual carries were added to the curated file:
         # OPM already had rows for them and they landed the moment the nodes
         # existed. The same effect the 15 Treasury units had (136 -> 145).
-        self.assertEqual((self.report["agencies_matched"], self.report["subagencies_matched"], len(self.records)), (59, 105, 164))
+        # 59 -> 74 agencies and 164 -> 179 records on 2026-09-21, the same
+        # effect a third time: of the 39 units added from OPM's current PLUM
+        # export (CURATION.md §17), FedScope already carried an agency row for
+        # fifteen, and each landed the moment the node existed. Sub-agency
+        # matches are unchanged at 105 -- none of the 39 has a sub-unit in the
+        # table -- so every one of the 15 new records is an agency row.
+        self.assertEqual((self.report["agencies_matched"], self.report["subagencies_matched"], len(self.records)), (74, 105, 179))
         self.assertEqual((len(self.report["ambiguous_agencies"]), len(self.report["ambiguous_subagencies"])), (0, 0))
         # Two fewer unmatched agencies: NASA and NARA, whose names the table
         # truncates ("NAT ...") and whose truncation is now undone, so their
         # rows are scoped against the right agency instead of floating.
         # 349 -> 331 on 2026-09-20: exactly the 18 sub-agency rows that found a
         # node when the 26 Government Manual units were added.
-        self.assertEqual((len(self.report["unmatched_agencies"]), len(self.report["unmatched_subagencies"])), (54, 337))
+        # 54 -> 39 and 337 -> 313 on 2026-09-21 with the 39 PLUM units. The 24
+        # sub-agency rows split exactly: 15 are each unit's own self-named row,
+        # now carried by its agency record, and 9 are refused by the scoping
+        # guard (unscoped_refused 8 -> 17) because FedScope abbreviates the
+        # AGENCY row -- "FED RETIREMENT THRIFT INVESTMENT BOARD", "ADV COUNCIL
+        # ON HISTORIC PRESERVATION", "CMSN FOR PRES OF AMERICA'S HERITAGE ABRD"
+        # -- so the agency matches nothing while the sub-agency row spells the
+        # name out and does match the new node. A unique name is not evidence
+        # of placement, so those nine publish nothing; undoing FedScope's
+        # agency abbreviations the way the leading "NATIONAL" is undone would
+        # reach them, and that is a matcher decision, not a curation one.
+        self.assertEqual((len(self.report["unmatched_agencies"]), len(self.report["unmatched_subagencies"])), (39, 313))
+        self.assertEqual(len(self.report["unscoped_refused"]), 17)
         # 10 -> 3 and 331 -> 337 on 2026-09-20 (later): the House Inspector
         # General was renamed from "Office of the Inspector General", a name
         # FedScope's sub-agency rows carry under several agencies, each of
@@ -461,8 +479,10 @@ class RealFixturePinTests(unittest.TestCase):
         self.assertEqual(len(self.report["scoped_out"]), 3)
         # One more: NARA's agency name now matches, so its single self-named
         # row is carried by the agency record instead of standing alone. 42 ->
-        # 45 with the fifteen added units, for the same reason.
-        self.assertEqual(len(self.report["self_named_rows"]), 45)
+        # 45 with the fifteen added units, for the same reason. 45 -> 60 with
+        # the 39 PLUM units, again for the same reason: fifteen of them are
+        # agencies whose only table row is named after the agency itself.
+        self.assertEqual(len(self.report["self_named_rows"]), 60)
         irs = self.records["exec-dept-treasury-irs"]
         self.assertEqual((irs["employees"], irs["previous"]["employees"], irs["agencyMatched"]), (101_312, 99_001, "exec-dept-treasury"))
         va = self.records["exec-dept-va"]
@@ -491,7 +511,15 @@ class RealFixturePinTests(unittest.TestCase):
         # 18 -> 36 with no curated figure: the 26 nodes added on 2026-09-20 carry
         # an OPM headcount and no curated `employees` of their own, which is
         # the honest state for a node whose whole basis is the Manual naming it.
-        self.assertEqual((comparison["compared"], comparison["no_curated_figure"]), (128, 36))
+        # 36 -> 51 on 2026-09-21 for the third time and the same reason: of the
+        # 39 units added from OPM's current PLUM export (CURATION.md §17),
+        # FedScope already held a row for fifteen -- the Holocaust Memorial
+        # Museum, the International Trade Commission, the Surface
+        # Transportation Board, the DNFSB, the Commission on Civil Rights and
+        # ten more -- and each landed the moment the node existed, with no
+        # matcher change at all. "compared" is unchanged at 128, so no figure
+        # that was already being compared moved.
+        self.assertEqual((comparison["compared"], comparison["no_curated_figure"]), (128, 51))
         self.assertEqual(sum(comparison["bands"].values()), 128)
         # Defense heads the list now that the judicial branch's record is
         # refused: a curated "~750,000 civilian + 1.3M active military"
