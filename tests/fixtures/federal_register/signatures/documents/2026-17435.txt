@@ -1,0 +1,113 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 165 (Thursday, August 27, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 165 (Thursday, August 27, 2026)]
+[Notices]
+[Pages 55321-55322]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-17435]
+
+
+-----------------------------------------------------------------------
+
+DEPARTMENT OF COMMERCE
+
+National Telecommunications and Information Administration
+
+
+NTIA Listening Session on Screen-Based Instruction in K-12 
+Schools
+
+AGENCY: National Telecommunications and Information Administration, 
+U.S. Department of Commerce.
+
+ACTION: Notice of open meeting.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The National Telecommunications and Information Administration 
+(NTIA) will convene a virtual listening session on screen use in 
+schools, as it relates to the Federal Communication Commission's 
+(FCC's) E-Rate program. The FCC has initiated a Notice of Proposed Rule 
+Making (NPRM), which includes a public comment period, to examine 
+whether the E-Rate program is serving the long-term interests of 
+children--or instead encouraging excessive screen-based instruction in 
+K-12 schools at the expense of child development and academic outcomes 
+(<a href="https://www.federalregister.gov/documents/2026/08/14/2026-16590/fcc-to-review-e-rate-program-to-ensure-congresss-vision">https://www.federalregister.gov/documents/2026/08/14/2026-16590/fcc-to-review-e-rate-program-to-ensure-congresss-vision</a>). This session 
+invites parents, students, educators, and child development specialists 
+to provide input into the NPRM process.
+
+DATES: The listening session will be held on September 15, 2026, from 
+7:00 p.m. to 8:30 p.m., Eastern Daylight Time (EDT).
+
+ADDRESSES: The session will be held virtually, with more details and 
+online dial-in information to be posted at <a href="https://www.ntia.gov/events-and-meetings/ntia-listening-session-fccs-e-rate-and-screen-use-nprm">https://www.ntia.gov/events-and-meetings/ntia-listening-session-fccs-e-rate-and-screen-use-nprm</a>.
+
+FOR FURTHER INFORMATION CONTACT: Please direct questions regarding this 
+notice to <a href="/cdn-cgi/l/email-protection#513a383522113f2538307f363e27"><span class="__cf_email__" data-cfemail="b2d9dbd6c1f2dcc6dbd39cd5ddc4">[email&#160;protected]</span></a>, indicating ``E-Rate Listening Session'' in the 
+subject line, or if by mail, addressed to National Telecommunications 
+and Information Administration, U.S. Department of Commerce, 1401 
+Constitution Avenue NW, Washington, DC 20230; telephone: 202-941-0606. 
+Please direct media inquiries to NTIA's Office of Public Affairs at 
+<a href="/cdn-cgi/l/email-protection#215153445252614f5548400f464e57"><span class="__cf_email__" data-cfemail="addddfc8dedeedc3d9c4cc83cac2db">[email&#160;protected]</span></a>.
+
+SUPPLEMENTARY INFORMATION: 
+    Background and Authority: The National Telecommunications and 
+Information Administration (NTIA) serves as the President's principal 
+advisor on telecommunications and information policy issues. NTIA's 
+programs and policymaking focus largely on expanding broadband internet 
+access and adoption in America, expanding the use of spectrum by all 
+users, advancing public safety communications, and ensuring that the 
+internet remains an engine for innovation and economic growth. This 
+includes examining how broadband access is used in different contexts, 
+including in educational settings. Pursuant to our authorities under 47 
+U.S.C. 902(b)(2)(M), NTIA will host a public listening session to 
+gather stakeholder perspectives that will inform NTIA's ongoing 
+research.
+    NTIA seeks participant feedback on the effects of screen-based 
+instruction in schools, including one-to-one device policies; existing 
+mechanisms and obstacles for parents seeking to opt their children out 
+of classroom technology use; the content, effectiveness, and 
+enforcement of school internet safety policies under the Children's 
+internet Protection Act (CIPA); the nature and effectiveness of 
+internet filtering in schools; the extent to which parents and 
+teachers--as opposed to vendors, consultants, and lobbyists--have a 
+voice in E-Rate program decisions; other mechanisms used to protect 
+children when using E-Rate funded networks; the appropriate role of 
+parents, schools, the FCC, and other entities in protecting children 
+online; and other comments related to the internet access and online 
+services provided through E-Rate funded schools and libraries. NTIA may 
+collect feedback received during the session from parents, students, 
+educators, and child development specialists regarding use time in 
+schools and submit it to the FCC for consideration as part of the NPRM 
+record. Individuals who are unable to attend, or who do not have the 
+opportunity to speak during the session, may respond directly to the 
+FCC's NPRM at <a href="https://www.fcc.gov/ecfs/search/docket-detail/26-133">https://www.fcc.gov/ecfs/search/docket-detail/26-133</a>.
+    Other Information: All parents, students, educators, and child 
+development specialists are welcome to speak at the listening session, 
+time permitting. For privacy reasons, commenters under age 18 are asked 
+to keep their camera off and not share personally identifiable 
+information. The
+
+[[Page 55322]]
+
+virtual meeting is open for observation by the public and the press. 
+The virtual meeting is accessible to people with disabilities. 
+Individuals requiring accommodations such as real-time captioning, sign 
+language interpretation, or other ancillary aids should notify NTIA at 
+<a href="/cdn-cgi/l/email-protection#e982808d9aa9879d8088c78e869f"><span class="__cf_email__" data-cfemail="9bf0f2ffe8dbf5eff2fab5fcf4ed">[email&#160;protected]</span></a> at least seven (7) business days prior to the meeting. 
+Access details for the meeting are subject to change. Please refer to 
+NTIA's website, <a href="https://www.ntia.gov">https://www.ntia.gov</a>, for the most current information.
+
+    Dated: August 24, 2026.
+David Brodian,
+Chief Counsel, National Telecommunications and Information 
+Administration.
+[FR Doc. 2026-17435 Filed 8-26-26; 8:45 am]
+BILLING CODE 3510-60-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

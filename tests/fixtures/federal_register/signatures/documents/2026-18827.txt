@@ -1,0 +1,155 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 177 (Tuesday, September 15, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 177 (Tuesday, September 15, 2026)]
+[Notices]
+[Pages 58467-58468]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-18827]
+
+
+-----------------------------------------------------------------------
+
+DEPARTMENT OF HOUSING AND URBAN DEVELOPMENT
+
+[Docket No. FR-7110-N-10; OMB Control No. 2502-0423]
+
+
+60-Day Notice of Proposed Information Collection: Single Family 
+Premiums Collections Subsystem--Upfront
+
+AGENCY: Office of the Assistant Secretary for Housing--Federal Housing 
+Commissioner, HUD.
+
+ACTION: Notice.
+
+-----------------------------------------------------------------------
+
+SUMMARY: HUD is seeking approval from the Office of Management and 
+Budget (OMB) for the information collection described below. In 
+accordance with the Paperwork Reduction Act, HUD is requesting comment 
+from all interested parties on the proposed collection of information. 
+The purpose of this notice is to allow for 60 days of public comment.
+
+DATES: Comments due November 16, 2026.
+
+ADDRESSES: Interested persons are invited to submit comments regarding 
+this proposal.
+    Written comments and recommendations for the proposed information 
+collection can be sent within 60 days of publication of this notice to 
+<a href="http://www.regulations.gov">www.regulations.gov</a>. Interested persons are also invited to submit 
+comments regarding this proposal and comments should refer to the 
+proposal by name and/or OMB Control Number and should be sent to: 
+Darian Ziegler, PRA Liaison, Department of Housing and Urban 
+Development, 451 7th Street SW, Washington, DC 20410.
+
+FOR FURTHER INFORMATION CONTACT: Darian Ziegler, PRA Liaison, Office of 
+Housing, Department of Housing and Urban Development, 451 7th Street 
+SW, Washington, DC 20410; email <a href="/cdn-cgi/l/email-protection#e3a782918a828dcdb98a86848f8691a38b9687cd848c95"><span class="__cf_email__" data-cfemail="5f1b3e2d363e317105363a38333a2d1f372a3b71383029">[email&#160;protected]</span></a>, telephone (202) 
+402-5535. This is not a toll-free number. HUD welcomes and is prepared 
+to receive calls from individuals who are deaf or hard of hearing, as 
+well as individuals with speech or communication disabilities. To learn 
+more about how to make an accessible telephone call, please visit 
+<a href="https://www.fcc.gov/consumers/guides/telecommunications-relay-service-trs">https://www.fcc.gov/consumers/guides/telecommunications-relay-service-trs</a>.
+    Copies of available supporting documents for the proposed 
+collection may be obtained from Ms. Ziegler.
+
+SUPPLEMENTARY INFORMATION: This notice informs the public that HUD is 
+seeking approval from OMB for the information collection described in 
+Section A.
+
+A. Overview of Information Collection
+
+    Title of Information Collection: Single Family Premiums Collections 
+Subsystem-Upfront.
+    OMB Approval Number: 2502-0423.
+    Type of Request: Revision.
+    Form Number: N/A.
+    Description of the need for the information and proposed use: 
+Single Family Premiums Collections Subsystem--Upfront (SFPCS-U) 
+strengthens HUD's ability to manage and process upfront single-family 
+mortgage insurance premium collections and corrections to submit data. 
+It also improves data integrity for the Single Family Mortgage 
+Insurance Program. FHA approved lenders use Automated Clearing House 
+(ACH) applications for all transmissions with SFPCS-U. The collection 
+of information is used to update HUD's Single Family Insurance System. 
+The information collection is also used in calculating refunds due to 
+former mortgagors of a portion of the unearned upfront mortgage 
+insurance payment if mortgage insurance is terminated by conveyance to 
+someone other than FHA and a claim for insurance is not presented for 
+payment, by prepayment of the mortgage, or by voluntary agreement with 
+FHA approval. Without this information the premium collection/
+monitoring process would be severely impeded, and program data would be 
+unreliable. In general, lender respondents use the ACH applications to 
+remit the upfront premium through SFPCS-U to obtain mortgage insurance.
+    Refund of one-time payment set forth by 24 CFR 203.283:
+    (a) The Commissioner shall provide for the refund to the mortgagor 
+of a portion of the unearned MIP paid pursuant to Sec.  203.280 if the 
+contract of insurance covering the mortgage is terminated:
+    (1) By conveyance to one other than the Commissioner and a claim 
+for the insurance benefits is not presented for payment (Sec.  
+203.315),
+    (2) By prepayment of the mortgage (Sec.  203.316), or
+    (3) By voluntary agreement with the approval of the Commissioner 
+(Sec.  203.317).
+    (b) The Commissioner shall determine the amount of the premium 
+refund by multiplying the amount the premium paid at the time the 
+mortgage was insured by the applicable premium refund percentage for 
+mortgages insured in the year the mortgage was endorsed for insurance. 
+The Commissioner shall determine the applicable premium refund 
+percentage for each year in an equitable manner and in accordance with 
+sound financial and actuarial practice, taking into account:
+    (1) Projected salaries and expenses,
+    (2) prospective losses generated by insurance claims, and
+    (3) expected future payments of premium refunds.
+    Respondents: FHA approved lenders.
+    Estimated Number of Respondents: 1,080.
+    Estimated Number of Responses: 26,752.
+    Frequency of Response: 24.77.
+    Average Hours per Response: .15.
+    Total Estimated Burdens: $224,672.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                                                                             Burden      Annual     Hourly
+                   Information collection                       Number of     Frequency of     Responses    hour per     burden    cost per     Annual
+                                                               respondents      response       per annum    response     hours     response      cost
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+Single Family Premiums Collections Subsystem-Upfront.......          1,080           24.77        26,752         .15      4,012         $56    $224,672
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+B. Solicitation of Public Comment
+
+    This notice is soliciting comments from members of the public and 
+affected parties concerning the collection of information described in 
+Section A on the following:
+    (1) Whether the proposed collection of information is necessary for 
+the proper performance of the functions of the agency, including 
+whether the information will have practical utility;
+    (2) The accuracy of the agency's estimate of the burden of the 
+proposed collection of information;
+
+[[Page 58468]]
+
+    (3) Ways to enhance the quality, utility, and clarity of the 
+information to be collected; and
+    (4) Ways to minimize the burden of the collection of information on 
+those who are to respond; including through the use of appropriate 
+automated collection techniques or other forms of information 
+technology, e.g., permitting electronic submission of responses.
+    HUD encourages interested parties to submit comment in response to 
+these questions.
+
+C. Authority
+
+    Section 2 of the Paperwork Reduction Act of 1995, 44 U.S.C. 3507.
+
+Paul M. Olin,
+Acting General Deputy Assistant Secretary for Housing.
+[FR Doc. 2026-18827 Filed 9-14-26; 8:45 am]
+BILLING CODE 4210-67-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

@@ -1,0 +1,133 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 178 (Wednesday, September 16, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 178 (Wednesday, September 16, 2026)]
+[Notices]
+[Pages 58663-58664]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-18979]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+DEPARTMENT OF EDUCATION
+
+[Docket No.: ED-2026-SCC-1321]
+
+
+Agency Information Collection Activities; Submission to the 
+Office of Management and Budget for Review and Approval; Private School 
+Universe Survey (PSS) 2025-26 and 2027-28 Data Collections, and 2027-28 
+PSS Frame Development Activities
+
+AGENCY: National Center for Education Statistics (NCES), Institute of 
+Education Sciences (IES), Department of Education (ED).
+
+ACTION: Notice.
+
+-----------------------------------------------------------------------
+
+SUMMARY: In accordance with the Paperwork Reduction Act (PRA) of 1995, 
+the Department is proposing a revision of a currently approved 
+information collection request (ICR).
+
+DATES: Interested persons are invited to submit comments on or before 
+October 16, 2026.
+
+ADDRESSES: Written comments and recommendations for proposed 
+information collection requests should be submitted within 30 days of 
+publication of this notice. Click on this link <a href="http://www.reginfo.gov/public/do/PRAMain">www.reginfo.gov/public/do/PRAMain</a> to access the site. Find this information collection request 
+(ICR) by selecting ``Department of Education'' under ``Currently Under 
+Review,'' then check the ``Only Show ICR for Public Comment'' checkbox. 
+<a href="http://Reginfo.gov">Reginfo.gov</a> provides two links to view documents related to this 
+information collection request. Information collection forms and 
+instructions may be found by clicking on the ``View Information 
+Collection (IC) List'' link. Supporting statements and other supporting 
+documentation may be found by clicking on the ``View Supporting 
+Statement and Other Documents'' link.
+
+FOR FURTHER INFORMATION CONTACT: For specific questions related to 
+collection activities, please contact Matthew Soldner, Acting 
+Commissioner, National Center for Education Statistics, 
+<a href="/cdn-cgi/l/email-protection#93ddd0d6c0d0fcfefefae0e0fafcfdf6e1d3f6f7bdf4fce5"><span class="__cf_email__" data-cfemail="327c717761715d5f5f5b41415b5d5c57407257561c555d44">[email&#160;protected]</span></a>.
+
+SUPPLEMENTARY INFORMATION: The Department, in accordance with the 
+Paperwork Reduction Act of 1995 (PRA) (44 U.S.C. 3506(c)(2)(A)), 
+provides the general public and Federal agencies with an opportunity to 
+comment on proposed, revised, and continuing collections of 
+information. This helps the Department assess the impact of its 
+information collection requirements and minimize the public's reporting 
+burden. It also helps the public understand the Department's 
+information collection requirements and provide the requested data in 
+the desired format.
+
+[[Page 58664]]
+
+    The Department is soliciting comments on the proposed information 
+collection request (ICR) that is described below. The Department is 
+especially interested in public comment addressing the following 
+issues: (1) is this collection necessary to the proper functions of the 
+Department; (2) will this information be processed and used in a timely 
+manner; (3) is the estimate of burden accurate; (4) how might the 
+Department enhance the quality, utility, and clarity of the information 
+to be collected; and (5) how might the Department minimize the burden 
+of this collection on the respondents, including through the use of 
+information technology. Please note that written comments received in 
+response to this notice will be considered public records.
+    Title of Collection: Private School Universe Survey (PSS) 2025-26 
+and 2027-28 Data Collections, and 2027-28 PSS Frame Development 
+Activities.
+    OMB Control Number: 1850-0621.
+    Type of Review: A revision of a currently approved ICR.
+    Respondents/Affected Public: Individuals and Households.
+    Total Estimated Number of Annual Responses: 32,550.
+    Total Estimated Number of Annual Burden Hours: 5,981.
+    Respondent's Obligation: Voluntary.
+    Legal Authority: NCES: Title 20 U.S.C. 9543-44.
+    Abstract: The National Center for Education Statistics (NCES), 
+within the U.S. Department of Education, conducts the Private School 
+Universe Survey (PSS), a national survey of private elementary and 
+secondary schools. The PSS is designed to collect biennial data on the 
+total number of private schools, teachers, and students; and to create 
+an NCES universe frame of private schools that serve as a sampling 
+frame for NCES surveys. This survey is an ongoing project to improve 
+NCES universe and sample data on private schools.
+    This request is to revise contacting materials associated with 
+2027-28 PSS frame-development activities (see: ``Appendix A-C PSS 2025-
+2028 Communications Materials v.16rev'' in this docket) and to extend 
+the expiration date of the collection to May 31, 2028. Additional 
+information about the currently approved collection can be found at 
+<a href="https://www.reginfo.gov/public/do/PRAViewICR?ref_nbr=202409-1850-004">https://www.reginfo.gov/public/do/PRAViewICR?ref_nbr=202409-1850-004</a>.
+    On April 15, 2026, NCES published a notice in the Federal Register 
+soliciting comments on this request. It can be found at <a href="https://www.regulations.gov/document/ED-2026-SCC-1321-0001">https://www.regulations.gov/document/ED-2026-SCC-1321-0001</a>. As shown there one 
+comment was received, which asked NCES to consider modifying the PSS to 
+include one or more questions to elicit information about how private 
+schools use instructional technology. Because the present request 
+focuses only on recruitment materials, and because questions of this 
+type are not historically in-scope for PSS, NCES elects to make no 
+changes to the collection at this time. NCES anticipates submitting a 
+subsequent amendment to this Information Collection Request to 
+accommodate potential revisions to the 2027-28 PSS survey questionnaire 
+and to further update communications materials associated with this 
+collection.
+    As of May 2025, NCES's assurances of confidentiality protections 
+for PSS 2025-26 have changed due to staffing changes at the Department 
+of Education. NCES has removed the Foundations of Evidence-Based 
+Policymaking Act of 2018, Title III, Part B, Confidential Information 
+Protection (``CIPSEA'') as a confidentiality assurance. However, 
+confidentiality assurances under the Education Sciences Reform Act of 
+2002 (ESRA) remain in effect. NCES will consider restoring CIPSEA 
+protections for future PSS collections as appropriate.
+
+Ross Santy,
+Chief Data Officer,Office of Planning, Evaluation and Policy 
+Development.
+[FR Doc. 2026-18979 Filed 9-15-26; 8:45 am]
+BILLING CODE 4000-01-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

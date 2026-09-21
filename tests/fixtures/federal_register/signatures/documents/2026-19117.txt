@@ -1,0 +1,423 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 180 (Friday, September 18, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 180 (Friday, September 18, 2026)]
+[Notices]
+[Pages 59194-59196]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-19117]
+
+
+
+[[Page 59194]]
+
+-----------------------------------------------------------------------
+
+SECURITIES AND EXCHANGE COMMISSION
+
+[Release No. 34-106371; File No. SR-MX2-2026-05]
+
+
+Self-Regulatory Organizations; MX2 LLC; Notice of Filing and 
+Immediate Effectiveness of a Proposed Rule Change To Adopt the 
+Framework of the Exchange's Initial Fee Schedule and Establish an 
+Options Regulatory Fee (``ORF'')
+
+September 15, 2026.
+    Pursuant to Section 19(b)(1) of the Securities Exchange Act of 1934 
+(the ``Act''),\1\ and Rule 19b-4 thereunder,\2\ notice is hereby given 
+that on September 9, 2026, MX2 LLC (``MX2'' or the ``Exchange'') filed 
+with the Securities and Exchange Commission (the ``Commission'') the 
+proposed rule change as described in Items I and II below, which Items 
+have been prepared by the Exchange. The Commission is publishing this 
+notice to solicit comments on the proposed rule change from interested 
+persons.
+---------------------------------------------------------------------------
+
+    \1\ 15 U.S.C. 78s(b)(1).
+    \2\ 17 CFR 240.19b-4.
+---------------------------------------------------------------------------
+
+I. Self-Regulatory Organization's Statement of the Terms of Substance 
+of the Proposed Rule Change
+
+    The Exchange is filing with the Commission a proposed rule change 
+to adopt the framework of the Exchange's initial fee schedule 
+applicable to Members \3\ and Non-Members of the Exchange pursuant to 
+Exchange Rules 15.1(a) and (c) and to establish an Options Regulatory 
+Fee (``ORF''). The text of the proposed rule change is provided in 
+Exhibit 5.
+---------------------------------------------------------------------------
+
+    \3\ See Exchange Rule 1.5(p).
+---------------------------------------------------------------------------
+
+II. Self-Regulatory Organization's Statement of the Purpose of, and 
+Statutory Basis for, the Proposed Rule Change
+
+    In its filing with the Commission, the Exchange included statements 
+concerning the purpose of and basis for the proposed rule change and 
+discussed any comments it received on the proposed rule change. The 
+text of these statements may be examined at the places specified in 
+Item IV below. The Exchange has prepared summaries, set forth in 
+sections A, B, and C below, of the most significant aspects of such 
+statements.
+
+A. Self-Regulatory Organization's Statement of the Purpose of, and 
+Statutory Basis for, the Proposed Rule Change
+
+1. Purpose
+    In preparation for the launch of the Exchange's options market 
+(``MX2 Options''),\4\ the Exchange proposes to adopt the framework of 
+the Exchange's initial fee schedule (the ``Options Fee Schedule'') \5\ 
+applicable to the use of the Exchange and establish an ORF in the 
+amount of $0.0200 per contract side. The Exchange will commence 
+operations as a national securities exchange on September 14, 2026, and 
+thus, proposes the ORF to be effective on that date.
+---------------------------------------------------------------------------
+
+    \4\ On September 30, 2025, the Commission approved SR-MX2-2025-
+01, which proposed rules for the trading of options on the Exchange. 
+See Securities Exchange Act Release No. 104152 (September 30, 2025), 
+90 FR 47867 (October 2, 2025) (SR-MX2-2025-01). The Exchange plans 
+to launch MEMX Options in September of 2026.
+    \5\ Given that this is the first fee filing for MX2 Options, the 
+Exchange wishes to establish the overall framework for the Options 
+Fee Schedule applicable to Members and non-Members of MX2 Options by 
+including headings for the other anticipated sections of the Fee 
+Schedule, including Transaction Fees, Market Data Fees, and Other 
+Fees. It is proposing to leave these sections blank, and it will 
+file separately to adopt those specific fees at a later date.
+---------------------------------------------------------------------------
+
+    The amount of the proposed fee is based on historical industry 
+volume, projected volumes on the Exchange, and projected Exchange 
+regulatory costs. The Exchange's proposed ORF should balance the 
+Exchange's regulatory revenue against the anticipated regulatory costs.
+    The Exchange will assess ORF for options transactions cleared by 
+the Options Clearing Corporation (``OCC'') in the ``customer'' \6\ 
+range by Exchange Members that occur on the Exchange (``On Exchange 
+ORF''). Specifically, the ORF would be collected by OCC on behalf of 
+the Exchange from Members and Non-Members for all customer transactions 
+executed on MEMX Options. ORF would be assessed and collected on all 
+ultimately cleared customer contracts, taking into account adjustments 
+for Clearing Member Trade Assignment (``CMTA'') that were provided to 
+the Exchange on the same day as the trade. Further, the Exchange would 
+bill ORF according to the clearing instructions provided on the 
+execution. More specifically, the Exchange proposes to assess ORF based 
+on the clearing instruction provided on the execution on the trade date 
+and would not take into consideration CMTA changes or transfers that 
+occur at OCC.\7\
+---------------------------------------------------------------------------
+
+    \6\ The ORF is assessed by MX2 Options and collected via OCC on 
+executions for the account of Public Customers, including 
+Professionals, and Broker-Dealers including Foreign Broker-Dealers. 
+These market participants clear in the ``C'' range at OCC. On the 
+Exchange, a ``Public Customer'' means a person that is not a broker 
+or dealer in securities and includes both Priority Customers and 
+Professionals. A ``Priority Customer'' means a person or entity that 
+is a Public Customer and is not a Professional. A ``Professional'' 
+is any person or entity that (a) is not a broker or dealer in 
+securities, and (b) places more than 390 orders in listed options 
+per day on average during a calendar month for its own beneficial 
+account(s). Executions for the account of an OCC clearing member 
+firm proprietary account, joint back office account clearing in the 
+Firm range, or account of a market maker clearing in the Market 
+Maker range will not be charged an ORF.
+    \7\ As noted previously, the Exchange will take into account 
+CMTA transfers that were made the same day as the trade on MEMX 
+Options.
+---------------------------------------------------------------------------
+
+    The following scenarios reflect how the On Exchange ORF will be 
+assessed and collected:
+    1. If a Member is the executing clearing firm on a transaction that 
+occurred on the Exchange, the fee would be assessed to and collected 
+from that Member by OCC on behalf of the Exchange.
+    2. If a Member is the executing clearing firm and the transaction 
+is ``given up'' to a clearing give-up (the ``clearing firm''), the On-
+Exchange ORF is assessed to the executing clearing firm, (the On-
+Exchange ORF remains the obligation of the executing clearing firm 
+under the proposal), but the On-Exchange ORF will be collected from the 
+clearing firm, regardless of whether that clearing firm is a Member of 
+the Exchange.
+    The Exchange expects to provide Members sufficient information in 
+connection with their invoice in order to reconcile charges associated 
+with ORF. In addition, the proposed method for collecting On-Exchange 
+ORF will only consider CMTAs reported to the Exchange and not those 
+reported directly to OCC. The Exchange understands that a CMTA may be 
+added at order entry, via post-trade edit on the Exchange, or post-
+trade at OCC. CMTA transfers that occur at OCC do not necessarily 
+contain reliable information regarding the Exchange on which the 
+original transaction occurred. Without specific information as to where 
+the original transaction occurred, the Exchange would not be able to 
+accurately account for CMTA transfers that occur at OCC. Therefore, the 
+Exchange will only account for CMTAs that occur on the Exchange (which 
+may be a non-Member) and exclude CMTAs occurring at OCC.
+    The ORF is designed to recover a material portion of the costs to 
+the Exchange of the supervision and regulation of Members' customer
+
+[[Page 59195]]
+
+options business, including performing routine surveillances and 
+investigations, as well as policy, rulemaking, interpretive and 
+enforcement activities. The Exchange believes that revenue generated 
+from the ORF, when combined with all of the Exchange's other regulatory 
+fees and fines, will cover a material portion, but not all, of the 
+Exchange's regulatory costs. Regulatory costs include direct regulatory 
+expenses and certain indirect expenses for work allocated in support of 
+the regulatory function. The direct expenses include in-house and 
+third- party service provider costs to support the day-to-day 
+regulatory work such as surveillance, investigations and examinations. 
+The indirect expenses include support from personnel in such areas as 
+human resources, legal, information technology, facilities and 
+accounting as well as shared costs necessary to operate the Exchange 
+and to carry out its regulatory function, such as hardware, data center 
+costs and connectivity. The Exchange acknowledges that these indirect 
+expenses are also allocated towards other business operations, such as 
+providing connectivity and market data services, for which the Exchange 
+has also conducted a cost-based analysis. As such, when analyzing the 
+indirect expenses associated with its regulatory program, the Exchange 
+did not double-count any expenses, but instead, allocated a portion of 
+the cost not already allocated to other fees imposed by the Exchange. 
+Indirect expenses are anticipated to be approximately 20% of the total 
+regulatory costs for 2026. Thus, direct expenses are anticipated to be 
+approximately 80% of the total regulatory costs for 2026. The Exchange 
+notes that its regulatory responsibilities with respect to Member 
+compliance with options sales practice rules have been allocated to the 
+Financial Industry Regulatory Authority (``FINRA'') under a 17d-2 
+Agreement. The ORF is not designed to cover the cost of options sales 
+practice regulation. Finally, the Exchange notes that it takes into 
+account all regulatory sources of funding, including fines collected by 
+the Exchange in connection with disciplinary matters, when determining 
+the appropriate ORF rate.
+    The Exchange will monitor the amount of revenue collected from the 
+ORF to ensure that it, in combination with its other regulatory fees 
+and fines, does not exceed the Exchange's total regulatory costs. More 
+specifically, the Exchange will ensure that revenue generated from ORF 
+not exceed 75% of total annual regulatory costs. The Exchange will 
+monitor regulatory costs and revenues at a minimum on a semi-annual 
+basis. If the Exchange determines regulatory revenues exceed or are 
+insufficient to cover a material portion of its regulatory costs, the 
+Exchange will adjust the ORF by submitting a fee change filing to the 
+Commission. Going forward, the Exchange will notify Members of 
+adjustments to the ORF via Regulatory Notice at least 30 calendar days 
+prior to the effective date of the change and is proposing to codify 
+this practice in the Options Fee Schedule.
+    The Exchange notes that other exchanges currently impose an On 
+Exchange ORF, and most of the options exchanges launched over the last 
+15 years have implemented an ORF on the day of launch or shortly 
+thereafter in order to properly fund their regulatory programs.\8\
+---------------------------------------------------------------------------
+
+    \8\ MEMX Options--effective 9/27/23, launch same; MIAX Options--
+effective 1/2/13, launch 12/7/12; ISE Topaz--effective 8/5/13, 
+launch same; MIAX Pearl--effective 2/6/17, launch same; MIAX 
+Emerald--effective 3/1/19, launch same.
+---------------------------------------------------------------------------
+
+    The Exchange notified current and future Members via a Regulatory 
+Circular of the proposed ORF prior to the proposed operative date, on 
+August 18, 2026.\9\ The Exchange believes that the prior notification 
+to future market participants will ensure that the future market 
+participants are prepared to configure their systems to properly 
+account for the proposed ORF.
+---------------------------------------------------------------------------
+
+    \9\ See MX2 Options Regulatory Notice 26-10, <a href="https://www.memxtrading.com/alerts-and-notices/regulatory-notice-26-10:-mx2-options-regulatory-fee">https://www.memxtrading.com/alerts-and-notices/regulatory-notice-26-10:-mx2-options-regulatory-fee</a>.
+---------------------------------------------------------------------------
+
+2. Statutory Basis
+    The Exchange believes that its proposal to amend its Fee Schedule 
+is consistent with Section 6(b) of the Act \10\ in general, and 
+furthers the objectives of Section 6(b)(4) of the Act \11\ in 
+particular, in that it is an equitable allocation of reasonable dues, 
+fees, and other charges among its members and issuers and other persons 
+using its facilities. The Exchange also believes the proposal furthers 
+the objectives of Section 6(b)(5) of the Act \12\ in that it is 
+designed to promote just and equitable principles of trade, to remove 
+impediments to and perfect the mechanism of a free and open market and 
+a national market system, and, in general to protect investors and the 
+public interest and is not designed to permit unfair discrimination 
+between customers, issuers, brokers and dealers.
+---------------------------------------------------------------------------
+
+    \10\ 15 U.S.C. 78f(b).
+    \11\ 15 U.S.C. 78f(b)(4).
+    \12\ 15 U.S.C. 78f(b)(5).
+---------------------------------------------------------------------------
+
+    The Exchange believes that establishing an ORF in the amount of 
+$0.0200 is reasonable because the Exchange's collection of ORF needs to 
+be balanced against the amount of projected regulatory costs incurred 
+by the Exchange. The Exchange believes that the amount proposed herein 
+will serve to balance the Exchange's regulatory revenue against the 
+anticipated regulatory costs. Moreover, the proposed amount is lower 
+than the amount of ORF assessed on other exchanges.\13\
+---------------------------------------------------------------------------
+
+    \13\ See, e.g., the BOX Options Fee Schedule Section II(C), 
+which provides an ORF rate of $0.0220 per contract. See also the 
+MIAX Pearl Fee Schedule, Section 2(b), which provides an ORF rate of 
+$0.0240 per contract, the MIAX Emerald Fee Schedule, Section 2(b), 
+which provides an ORF rate of $0.0220 per contract, and the MIAX 
+Sapphire Fee Schedule, Section 2(b), which provides an ORF rate of 
+$0.0220 per contract.
+---------------------------------------------------------------------------
+
+    The Exchange believes the proposed ORF is equitable and not 
+unfairly discriminatory because it is objectively allocated to Members 
+in that it is charged to all Members on all their transactions on MX2 
+Options that clear as customer at the OCC. Moreover, the Exchange 
+believes the ORF ensures fairness by assessing fees to those Members 
+that are directly based on the amount of customer options business they 
+conduct. Regulating customer trading activity is much more labor 
+intensive and requires greater expenditure of human and technical 
+resources than regulating non-customer trading activity, which tends to 
+be more automated and less labor-intensive. As a result, the costs 
+associated with administering the customer component of the Exchange's 
+overall regulatory program are materially higher than the costs 
+associated with administering the non- customer component (e.g., Member 
+proprietary transactions) of its regulatory program.
+    The ORF is designed to recover a material portion of the costs of 
+supervising and regulating Members' customer options business including 
+performing routine surveillances and investigations, as well as policy, 
+rulemaking, interpretive, and enforcement activities. The Exchange will 
+monitor the amount of revenue collected from the ORF to ensure that it, 
+in combination with its other regulatory fees and fines, does not 
+exceed the Exchange's total regulatory costs. The Exchange has designed 
+the ORF to generate revenues that, when combined with all of the 
+Exchange's other regulatory fees, will be less than 75% of the 
+Exchange's regulatory costs, which is consistent with the Exchange's 
+by-laws that state in Section 17.4(b): ``[a]ny Regulatory Funds shall 
+not be used for non-regulatory purposes or distributed,
+
+[[Page 59196]]
+
+advanced or allocated to any Company Member, but rather, shall be 
+applied to fund regulatory operations of the Company (including 
+surveillance and enforcement activities). . .''.\14\ In this regard, 
+the Exchange believes that the amount of the fee is reasonable.
+---------------------------------------------------------------------------
+
+    \14\ See MX2 LLC--LLC Agreement at <a href="https://info.memxtrading.com/regulation/governance/">https://info.memxtrading.com/regulation/governance/</a>.
+---------------------------------------------------------------------------
+
+    The Exchange believes that the proposal to provide at least 30 days 
+advance notice to any change in the ORF is reasonable because it will 
+give participants certainty on the timing of changes, if any, and 
+better enable them to properly account for ORF charges among their 
+customers.
+
+B. Self-Regulatory Organization's Statement on Burden on Competition
+
+    The Exchange does not believe that the proposed rule change will 
+impose any burden on competition not necessary or appropriate in 
+furtherance of the purposes of the Act. This proposal will not create 
+an unnecessary or inappropriate intra-market burden on competition 
+because the ORF will apply to all customer activity on the Exchange, 
+and is designed to enable the Exchange to recover a material portion of 
+the Exchange's cost related to its regulatory activities. This proposal 
+will not create an unnecessary or inappropriate inter-market burden on 
+competition because it will be a regulatory fee that supports 
+regulation and customer protection in furtherance of the purposes of 
+the Act. The Exchange is obligated to ensure that the amount of 
+regulatory revenue collected from the ORF, in combination with its 
+other regulatory fees and fines, does not exceed regulatory costs. 
+Unilateral action by the Exchange in establishing fees for services 
+provided to its Members and others using its facilities will not have 
+an impact on competition. The Exchange's proposed ORF, as described 
+herein, is lower than or comparable to fees charged by other options 
+exchanges.
+    The Exchange notes that while it does not believe that its proposed 
+ORF will impose any burden on inter-market competition, the Exchange 
+not charging an ORF or being precluded from charging an ORF would, in-
+fact, represent a significant burden on competition. As noted above, 
+the Exchange is a new entrant in the highly competitive environment for 
+equity options trading. As also noted above, all seventeen (17) [sic] 
+registered options exchanges currently impose ORF on their members, 
+and, similar to the Exchange, the majority of the options exchanges 
+launched over the last decade have implemented an ORF on the day of 
+launch or shortly thereafter.\15\ The Exchange believes that in order 
+to compete with these existing options exchanges, it must, in fact, 
+impose an ORF on its Members, and that the inability to do so would 
+result in an unfair competitive disadvantage to the Exchange.
+---------------------------------------------------------------------------
+
+    \15\ See supra, note 8.
+---------------------------------------------------------------------------
+
+C. Self-Regulatory Organization's Statement on Comments on the Proposed 
+Rule Change Received From Members, Participants, or Others
+
+    The Exchange neither solicited nor received comments on the 
+proposed rule change.
+
+III. Date of Effectiveness of the Proposed Rule Change and Timing for 
+Commission Action
+
+    The foregoing rule change has become effective pursuant to Section 
+19(b)(3)(A) of the Act \16\ and paragraph (f) of Rule 19b-4 \17\ 
+thereunder. At any time within 60 days of the filing of the proposed 
+rule change, the Commission summarily may temporarily suspend such rule 
+change if it appears to the Commission that such action is necessary or 
+appropriate in the public interest, for the protection of investors, or 
+otherwise in furtherance of the purposes of the Act. If the Commission 
+takes such action, the Commission shall institute proceedings to 
+determine whether the proposed rule change should be approved or 
+disapproved.
+---------------------------------------------------------------------------
+
+    \16\ 15 U.S.C. 78s(b)(3)(A).
+    \17\ 17 CFR 240.19b-4(f).
+---------------------------------------------------------------------------
+
+IV. Solicitation of Comments
+
+    Interested persons are invited to submit written data, views and 
+arguments concerning the foregoing, including whether the proposed rule 
+change is consistent with the Act. Comments may be submitted by any of 
+the following methods:
+
+Electronic Comments
+
+    <bullet> Use the Commission's internet comment form (<a href="https://www.sec.gov/rules/sro.shtml">https://www.sec.gov/rules/sro.shtml</a>); or
+    <bullet> Send an email to <a href="/cdn-cgi/l/email-protection#a9dbdcc5cc84cac6c4c4ccc7dddae9daccca87cec6df"><span class="__cf_email__" data-cfemail="aad8dfc6cf87c9c5c7c7cfc4ded9ead9cfc984cdc5dc">[email&#160;protected]</span></a>. Please include 
+file number SR-MX2-2026-05 on the subject line.
+
+Paper Comments
+
+    <bullet> Send paper comments in triplicate to Secretary, Securities 
+and Exchange Commission, 100 F Street NE, Washington, DC 20549-1090.
+
+All submissions should refer to file number SR-MX2-2026-05. This file 
+number should be included on the subject line if email is used. To help 
+the Commission process and review your comments more efficiently, 
+please use only one method. The Commission will post all comments on 
+the Commission's internet website (<a href="https://www.sec.gov/rules/sro.shtml">https://www.sec.gov/rules/sro.shtml</a>). Copies of the filing will be available for inspection and 
+copying at the principal office of the Exchange. Do not include 
+personal identifiable information in submissions; you should submit 
+only information that you wish to make available publicly. We may 
+redact in part or withhold entirely from publication submitted material 
+that is obscene or subject to copyright protection. All submissions 
+should refer to file number SR-MX2-2026-05 and should be submitted on 
+or before October 9, 2026.
+
+    For the Commission, by the Division of Trading and Markets, 
+pursuant to delegated authority.\18\
+---------------------------------------------------------------------------
+
+    \18\ 17 CFR 200.30-3(a)(12).
+---------------------------------------------------------------------------
+
+Sherry R. Haywood,
+Assistant Secretary.
+[FR Doc. 2026-19117 Filed 9-17-26; 8:45 am]
+BILLING CODE 8011-01-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

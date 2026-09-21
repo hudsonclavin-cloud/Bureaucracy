@@ -1,0 +1,235 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 179 (Thursday, September 17, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 179 (Thursday, September 17, 2026)]
+[Notices]
+[Pages 58933-58934]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-19040]
+
+
+-----------------------------------------------------------------------
+
+SECURITIES AND EXCHANGE COMMISSION
+
+[Release No. 34-106351; File No. SR-24X-2026-24]
+
+
+Self-Regulatory Organizations; 24X National Exchange LLC; Notice 
+of Filing and Immediate Effectiveness of Proposed Rule Change To Amend 
+24X Rule 8.1(d) To Clarify Certain Disciplinary Functions by FINRA's 
+Office of Disciplinary Affairs
+
+September 14, 2026.
+    Pursuant to Section 19(b)(1) of the Securities Exchange Act of 1934 
+(``Act'') \1\ and Rule 19b-4 thereunder,\2\ notice is hereby given 
+that, on September 8, 2026, 24X National Exchange LLC (``24X'' or the 
+``Exchange'') filed with the Securities and Exchange Commission (the 
+``Commission'') the proposed rule change as described in Items I and II 
+below, which Items have been prepared by the self-regulatory 
+organization. The Commission is publishing this notice to solicit 
+comments on the proposed rule change from interested persons.
+---------------------------------------------------------------------------
+
+    \1\ 15 U.S.C. 78s(b)(1).
+    \2\ 17 CFR 240.19b-4.
+---------------------------------------------------------------------------
+
+I. Self-Regulatory Organization's Statement of the Terms of Substance 
+of the Proposed Rule Change
+
+    The Exchange proposes to amend subparagraph (d) of Rule 8.1 
+(Disciplinary Jurisdiction) to clarify that the Exchange and FINRA are 
+parties to a regulatory services agreement pursuant to which FINRA has 
+agreed to perform certain functions on behalf of the Exchange, and that 
+FINRA's Office of Disciplinary Affairs may review the Exchange's 
+disciplinary matters, which means that some or all of the adjudication 
+functions described in the Exchange's rules may be provided by FINRA 
+pursuant to the terms of that regulatory services agreement. The 
+proposed rule change is available on the Exchange's website at <a href="https://equities.24exchange.com/regulation">https://equities.24exchange.com/regulation</a> and at the principal office of the 
+Exchange.
+
+II. Self-Regulatory Organization's Statement of the Purpose of, and 
+Statutory Basis for, the Proposed Rule Change
+
+    In its filing with the Commission, the self-regulatory organization 
+included statements concerning the purpose of, and basis for, the 
+proposed rule change and discussed any comments it received on the 
+proposed rule change. The text of those statements may be examined at 
+the places specified in Item IV below. The Exchange has prepared 
+summaries, set forth in sections A, B, and C below, of the most 
+significant parts of such statements.
+
+A. Self-Regulatory Organization's Statement of the Purpose of, and the 
+Statutory Basis for, the Proposed Rule Change
+
+1. Purpose
+    Exchange Rule 8.1 (Disciplinary Jurisdiction) establishes the 
+Exchange's jurisdiction over disciplinary matters that arise from the 
+alleged violation of Exchange rules, federal securities laws, or 
+related provisions by a Member \3\ or person associated with a Member. 
+Currently, subparagraph (d) of Rule 8.1 states that the Exchange may 
+contract with another self-regulatory organization to perform some or 
+all of the Exchange's disciplinary functions, and that the Exchange 
+shall specify to what extent Exchange rules shall govern Exchange 
+disciplinary actions and to what extent the rules of the other self-
+regulatory organization shall govern such actions. The Exchange 
+proposes to amend Rule 8.1(d) to remove non-specific references to 
+other self-regulatory organizations and to clarify that the Exchange 
+and FINRA are parties to a regulatory services agreement pursuant to 
+which FINRA has agreed to perform certain functions on behalf of the 
+Exchange, and that FINRA's Office of Disciplinary Affairs may review 
+the Exchange's disciplinary matters, which means that some or all of 
+the adjudication functions described in the Exchange's rules may be 
+provided by FINRA pursuant to the terms of that regulatory services 
+agreement.
+---------------------------------------------------------------------------
+
+    \3\ See 24X Rule 1.5(u).
+---------------------------------------------------------------------------
+
+    The proposed changes are intended to clarify the manner in which 
+the Exchange contracts with other self-regulatory organizations by 
+specifying that FINRA's Office of Disciplinary Affairs is the entity 
+that may review the Exchange's disciplinary matters and provide the 
+adjudication functions described in the Exchange's rules pursuant to 
+the regulatory services agreement between the Exchange and FINRA.
+2. Statutory Basis
+    The Exchange believes that the proposed rule change is consistent 
+with the provisions of Section 6 of the Act \4\ in general, and with 
+Section 6(b)(5) of the Act \5\ in particular, because it is designed to 
+prevent fraudulent and manipulative acts and practices, to promote just 
+and equitable principles of trade, to foster cooperation and
+
+[[Page 58934]]
+
+coordination with persons engaged in facilitating transactions in 
+securities, to remove impediments to, and perfect the mechanism of, a 
+free and open market and a national market system and, in general, to 
+protect investors and the public interest; and it is not designed to 
+permit unfair discrimination between customers, issuers, brokers, or 
+dealers.
+---------------------------------------------------------------------------
+
+    \4\ 15 U.S.C. 78f.
+    \5\ 15 U.S.C. 78f(b)(5).
+---------------------------------------------------------------------------
+
+    In particular, the Exchange believes that the proposal to update 
+Rule 8.1(d) will ensure that the Rule more clearly describes the manner 
+in which FINRA will provide regulatory services to the Exchange with 
+respect to disciplinary matters pursuant to a regulatory services 
+agreement. The proposed amendment would reduce potential investor and 
+market participant confusion and therefore remove impediments to and 
+perfect the mechanism of a free and open market and a national market 
+system by ensuring that investors and market participants can more 
+easily navigate, understand, and comply with the Exchange's rules. The 
+proposed amendment would not be inconsistent with the public interest 
+and the protection of investors because investors would not be harmed 
+by the proposed changes, but instead would benefit from the increased 
+transparency and clarity that the proposed changes will provide.
+
+B. Self-Regulatory Organization's Statement on Burden on Competition
+
+    The Exchange does not believe that the proposed rule change will 
+impose any burden on competition that is not necessary or appropriate 
+in furtherance of the purposes of the Act. The proposed rule change is 
+not intended to address competitive issues but rather is concerned 
+solely with updating Rule 8.1(d) to more clearly describe the manner in 
+which the Exchange contracts with other self-regulatory organizations 
+with respect to disciplinary matters.
+
+C. Self-Regulatory Organization's Statement on Comments on the Proposed 
+Rule Change Received From Members, Participants, or Others
+
+    No written comments were solicited or received with respect to the 
+proposed rule change.
+
+III. Date of Effectiveness of the Proposed Rule Change and Timing for 
+Commission Action
+
+    Because the proposed rule change does not: (i) significantly affect 
+the protection of investors or the public interest; (ii) impose any 
+significant burden on competition; and (iii) become operative prior to 
+30 days from the date on which it was filed, or such shorter time as 
+the Commission may designate, if consistent with the protection of 
+investors and the public interest, the proposed rule change has become 
+effective pursuant to Section 19(b)(3)(A) \6\ of the Act and Rule 19b-
+4(f)(6) thereunder.\7\ A proposed rule change filed under Rule 19b-
+4(f)(6) normally does not become operative prior to 30 days after the 
+date of the filing. However, pursuant to Rule 19b4(f)(6)(iii),\8\ the 
+Commission may designate a shorter time if such action is consistent 
+with the protection of investors and the public interest.
+---------------------------------------------------------------------------
+
+    \6\ 15 U.S.C. 78s(b)(3)(A).
+    \7\ 17 CFR 240.19b-4(f)(6). In addition, Rule 19b-4(f)(6) 
+requires a self-regulatory organization to give the Commission 
+written notice of its intent to file the proposed rule change at 
+least five business days prior to the date of filing of the proposed 
+rule change, or such shorter time as designated by the Commission. 
+The Exchange has satisfied this requirement.
+    \8\ 17 CFR 240.19b-4(f)(6)(iii).
+---------------------------------------------------------------------------
+
+    At any time within 60 days of the filing of such proposed rule 
+change, the Commission summarily may temporarily suspend such rule 
+change if it appears to the Commission that such action is necessary or 
+appropriate in the public interest, for the protection of investors, or 
+otherwise in furtherance of the purposes of the Act. If the Commission 
+takes such action, the Commission shall institute proceedings under 
+Section 19(b)(2)(B) \9\ of the Act to determine whether the proposed 
+rule change should be approved or disapproved.
+---------------------------------------------------------------------------
+
+    \9\ 15 U.S.C. 78s(b)(2)(B).
+---------------------------------------------------------------------------
+
+IV. Solicitation of Comments
+
+    Interested persons are invited to submit written data, views, and 
+arguments concerning the foregoing, including whether the proposed rule 
+change is consistent with the Act. Comments may be submitted by any of 
+the following methods:
+
+Electronic Comments
+
+    <bullet> Use the Commission's internet comment form (<a href="https://www.sec.gov/rules/sro.shtml">https://www.sec.gov/rules/sro.shtml</a>); or
+    <bullet> Send an email to <a href="/cdn-cgi/l/email-protection#7d0f081118501e1210101813090e3d0e181e531a120b"><span class="__cf_email__" data-cfemail="c6b4b3aaa3eba5a9ababa3a8b2b586b5a3a5e8a1a9b0">[email&#160;protected]</span></a>. Please include 
+file number SR-24X-2026-24 on the subject line.
+
+Paper Comments
+
+    <bullet> Send paper comments in triplicate to Secretary, Securities 
+and Exchange Commission, 100 F Street NE, Washington, DC 20549-1090.
+
+All submissions should refer to file number SR-24X-2026-24. This file 
+number should be included on the subject line if email is used. To help 
+the Commission process and review your comments more efficiently, 
+please use only one method. The Commission will post all comments on 
+the Commission's internet website (<a href="https://www.sec.gov/rules/sro.shtml">https://www.sec.gov/rules/sro.shtml</a>). Copies of the filing will be available for inspection and 
+copying at the principal office of the Exchange. Do not include 
+personal identifiable information in submissions; you should submit 
+only information that you wish to make available publicly. We may 
+redact in part or withhold entirely from publication submitted material 
+that is obscene or subject to copyright protection. All submissions 
+should refer to file number SR-24X-2026-24 and should be submitted on 
+or before October 8, 2026.
+
+    For the Commission, by the Division of Trading and Markets, 
+pursuant to delegated authority.\10\
+---------------------------------------------------------------------------
+
+    \10\ 17 CFR 200.30-3(a)(12).
+---------------------------------------------------------------------------
+
+J. Matthew DeLesDernier,
+Deputy Secretary.
+[FR Doc. 2026-19040 Filed 9-16-26; 8:45 am]
+BILLING CODE 8011-01-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

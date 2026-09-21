@@ -1,0 +1,233 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 163 (Tuesday, August 25, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 163 (Tuesday, August 25, 2026)]
+[Rules and Regulations]
+[Pages 54796-54797]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-17334]
+
+
+-----------------------------------------------------------------------
+
+OFFICE OF PERSONNEL MANAGEMENT
+
+5 CFR Part 575
+
+[Docket IDs: OPM-2025-0004; OPM-2023-0027]
+RIN 3206-AO80; 3206-AO36
+
+
+Improving Performance, Accountability and Responsiveness in the 
+Civil Service, and Recruitment and Relocation Incentive Waivers; 
+Correcting Amendments
+
+AGENCY: Office of Personnel Management.
+
+ACTION: Final rule; correcting amendments.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The Office of Personnel Management (OPM) is correcting 
+technical and conforming errors arising from two recent final rules: 
+``Improving Performance, Accountability and Responsiveness in the Civil 
+Service,'' published February 6, 2026 and effective March 9, 2026, and 
+``Recruitment and Relocation Incentive Waivers,'' published December 
+15, 2025 and effective February 13, 2026. The corrections make no 
+substantive change to the regulations.
+
+DATES: Effective August 25, 2026.
+
+FOR FURTHER INFORMATION CONTACT: Aaron Gottesman, Senior Advisor to the 
+Director, by email at <a href="/cdn-cgi/l/email-protection#b8ddd5c8d4d7c1ddddd9dbdbd7cdd6ccd9dad1d4d1ccc1f8d7c8d596dfd7ce"><span class="__cf_email__" data-cfemail="82e7eff2eeedfbe7e7e3e1e1edf7ecf6e3e0ebeeebf6fbc2edf2eface5edf4">[email&#160;protected]</span></a> or by phone at 
+(202) 606-7400.
+
+SUPPLEMENTARY INFORMATION:
+
+I. Background
+
+    On December 15, 2025, OPM published a final rule at 90 FR 57867 
+(the incentive waivers rule) amending subparts A and B of 5 CFR part 
+575 to expand agency authority to approve waivers of the payment 
+limitations on recruitment and relocation incentives and to permit 
+recruitment incentive service periods of less than 6 months. That rule 
+became effective February 13, 2026. On February 6, 2026, OPM published 
+a final rule at 91 FR 5580 (the Schedule Policy/Career rule) amending 
+several parts of title 5 of the Code of Federal Regulations, including 
+Sec. Sec.  575.104, 575.204, and 575.304 and the authority citation for 
+part 575, to address incentive payments for employees whose positions 
+are moved into Schedule Policy/Career. That rule became effective March 
+9, 2026. After publication, OPM identified the technical errors in part 
+575 described below, each of which has been carried into the Code of 
+Federal Regulations.
+
+[[Page 54797]]
+
+II. Need for Correction
+
+A. Corrections Relating to the Schedule Policy/Career Rule
+
+    First, the Schedule Policy/Career rule revised and republished 
+Sec. Sec.  575.104, 575.204, and 575.304 (Ineligible categories of 
+employees). In each section, the rule restructured former paragraphs 
+(a) through (d) as paragraphs (a)(1) through (a)(4) in order to add a 
+new paragraph (b) addressing incentive payments for employees whose 
+positions are moved into Schedule Policy/Career. The rule did not, 
+however, conform the internal cross-reference in the introductory text 
+of newly designated paragraph (a)(4) of each section, which continues 
+to refer to ``the exclusions in paragraphs (a), (b), and (c) of this 
+section.'' Under the revised structure of each section, the exclusions 
+appear in paragraphs (a)(1) through (3); paragraph (b) is not an 
+exclusion; and there is no paragraph (c). This document conforms the 
+cross-reference in each of the three sections.
+    Second, the parallel paragraphs (b) added to Sec. Sec.  575.104, 
+575.204, and 575.304 by the Schedule Policy/Career rule contain two 
+unintended phrasing discrepancies: Sec.  575.104(b)(1) requires the 
+employee to ``fulfill that term,'' while the parallel provisions at 
+Sec. Sec.  575.204(b)(1) and 575.304(b)(1) use ``fulfill that agreed-
+upon service period''; and the introductory text of Sec.  575.304(b) 
+reads ``Notwithstanding any provision in this subpart,'' while 
+Sec. Sec.  575.104(b) and 575.204(b) read ``Notwithstanding any other 
+provision in this subpart.'' This document harmonizes the phrasing of 
+these parallel provisions. No difference in meaning was intended or 
+results.
+    Third, the Schedule Policy/Career rule revised the authority 
+citation for part 575, setting out the citation as it existed before 
+the incentive waivers rule. Because the Schedule Policy/Career rule 
+became effective March 9, 2026, its revision superseded, without 
+discussion, the revised authority citation for part 575 that the 
+incentive waivers rule had made effective February 13, 2026. This 
+document revises the authority citation for part 575 to restore the 
+formulation adopted in the incentive waivers rule. The authorities 
+cited are identical in substance under either formulation.
+
+B. Correction Relating to the Incentive Waivers Rule
+
+    The incentive waivers rule revised Sec.  575.110(a) to remove the 
+requirement that a recruitment incentive service period be at least 6 
+months, permitting agencies to establish service periods of less than 6 
+months but not more than 4 years. The rule did not make the conforming 
+amendment to the definition of ``Service agreement'' in Sec.  575.102, 
+which continues to describe ``a specified period of employment of not 
+less than 6 months or more than 4 years.'' This document conforms the 
+definition to Sec.  575.110(a) as revised, consistent with the parallel 
+definition in Sec.  575.202.
+
+C. Pre-Existing Typographical Error
+
+    In Sec.  575.109(a), the introductory text joins the phrase ``An 
+agency may pay a recruitment incentive'' to paragraph (a)(1) with a 
+hyphen rather than an em dash. The error predates the two rules 
+described above and appears in the official annual edition of the Code 
+of Federal Regulations. This document replaces the hyphen with an em 
+dash, consistent with the parallel provision at Sec.  575.209(a).
+
+III. Procedural Requirements
+
+    OPM finds good cause under 5 U.S.C. 553(b)(B) to issue these 
+correcting amendments without prior notice and opportunity for comment, 
+because the amendments merely conform cross-references, definitions, 
+parallel phrasing, and punctuation to regulatory text previously 
+adopted after notice and comment, and make no substantive change to the 
+regulations; notice and comment are therefore unnecessary. For the same 
+reason, OPM finds good cause under 5 U.S.C. 553(d)(3) to make these 
+corrections effective upon publication.
+Regulatory Review
+    OPM has examined this rule under Executive Orders 12866 and 13563. 
+For the reasons discussed above, this rule is not a significant 
+regulatory action under Executive Order 12866. This is not an E.O. 
+14192 regulatory action because this rule is not significant under E.O. 
+12866.
+
+List of Subjects in 5 CFR Part 575
+
+    Government employees, Wages.
+Signing Statement
+    The Director of OPM, Scott Kupor, reviewed and approved this 
+document and has authorized the undersigned to electronically sign and 
+submit this document to the Office of the Federal Register for 
+publication.
+
+Office of Personnel Management.
+Jerson Matias,
+Federal Register Liaison.
+    Accordingly, OPM corrects 5 CFR part 575 by making the following 
+correcting amendments:
+
+PART 575--RECRUITMENT, RELOCATION, AND RETENTION INCENTIVES; 
+SUPERVISORY DIFFERENTIALS; AND EXTENDED ASSIGNMENT INCENTIVES
+
+0
+1. The authority citation for part 575 is revised to read as follows:
+
+    Authority:  5 U.S.C. 1104(a)(2), 5307. Subparts A and B also 
+issued under 5 U.S.C. 5753. Subpart C also issued under 5 U.S.C. 
+5754. Subpart D also issued under 5 U.S.C. 5755. Subpart E also 
+issued under 5 U.S.C. 5757; sec. 207, Pub. L. 107-273, 116 Stat. 
+1780 (5 U.S.C. 5307 note).
+
+Subpart A--Recruitment Incentives
+
+
+Sec.  575.102   [Amended]
+
+0
+2. In Sec.  575.102, amend the definition of ``Service agreement'' by 
+removing ``of not less than 6 months or more than 4 years'' and adding 
+in its place ``of not more than 4 years''.
+
+
+Sec.  575.104   [Amended]
+
+0
+3. In Sec.  575.104:
+0
+a. Amend paragraph (a)(4) introductory text by removing ``paragraphs 
+(a), (b), and (c)'' and adding in its place ``paragraphs (a)(1) through 
+(3)''; and
+0
+b. Amend paragraph (b)(1) by removing ``fulfill that term'' and adding 
+in its place ``fulfill that agreed-upon service period''.
+
+
+Sec.  575.109   [Amended]
+
+0
+4. In Sec.  575.109, amend paragraph (a) introductory text by removing 
+in the second sentence ``recruitment incentive-'' and adding in its 
+place ``recruitment incentive--''.
+
+Subpart B--Relocation Incentives
+
+
+Sec.  575.204   [Amended]
+
+0
+5. In Sec.  575.204, amend paragraph (a)(4) introductory text by 
+removing ``paragraphs (a), (b), and (c)'' and adding in its place 
+``paragraphs (a)(1) through (3)''.
+
+Subpart C--Retention Incentives
+
+
+Sec.  575.304  [Amended]
+
+0
+6. In Sec.  575.304:
+0
+a. Amend paragraph (a)(4) introductory text by removing ``paragraphs 
+(a), (b), and (c)'' and adding in its place ``paragraphs (a)(1) through 
+(3)''; and
+0
+b. Amend paragraph (b) introductory text by removing ``Notwithstanding 
+any provision'' and adding in its place ``Notwithstanding any other 
+provision''.
+
+[FR Doc. 2026-17334 Filed 8-24-26; 8:45 am]
+BILLING CODE 6325-39-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

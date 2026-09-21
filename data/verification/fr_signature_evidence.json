@@ -1,0 +1,86 @@
+{
+  "_note": "Derived by scripts/derive_fr_signature_evidence.py from the signature blocks of Federal Register documents committed verbatim under tests/fixtures/federal_register/signatures/ with their digests and with the API listings that selected them. Each record says that the official who signed one published document stated this title, under an agency the Register's own `agencies` field reduces to exactly one organisation in this graph. The signer's name is never read. No placement is claimed: one document is one observation.",
+  "source": {
+    "kind": "federal_register_signature",
+    "derivedAt": "2026-09-21T17:45:07Z",
+    "indexDir": "tests/fixtures/federal_register/signatures/index",
+    "documentDir": "tests/fixtures/federal_register/signatures/documents"
+  },
+  "report": {
+    "listings": 149,
+    "listed_documents": 756,
+    "listed_twice": 129,
+    "documents_read": 443,
+    "documents_refused_by_the_host": 1,
+    "documents_not_fetched": 312,
+    "titles_extracted": 360,
+    "refused_no_signature_block_above_the_fr_doc_line": 83,
+    "documents_considered": 443,
+    "signatures_matched": 3,
+    "distinct_titles": 208,
+    "posts_listed": 3,
+    "refused_no_signature_title": 83,
+    "refused_agencies_reach_no_organisation": 0,
+    "refused_agencies_reach_several_organisations": 133,
+    "refused_title_under_two_tokens": 14,
+    "refused_organisation_carries_no_post_of_that_name": 210,
+    "refused_siblings_share_the_name": 0
+  },
+  "nodes": {
+    "exec-regulatory-nrc-executive-director-for-operations": {
+      "source": "federal_register_signature",
+      "nodeName": "Executive Director for Operations",
+      "listedTitle": "Executive Director for Operations",
+      "documentNumber": "2026-17445",
+      "documentTitle": "List of Approved Spent Fuel Storage Casks: TN Americas, LLC Standardized NUHOMS® Horizontal Modular Storage System for Irradiated Nuclear Fuel, Certificate of Compliance No. 1004, Renewed Amendment No. 19",
+      "documentType": "Rule",
+      "agenciesListed": [
+        "Nuclear Regulatory Commission"
+      ],
+      "signingDate": null,
+      "publicationDate": "2026-08-26",
+      "organisationId": "exec-regulatory-nrc",
+      "url": "https://www.federalregister.gov/documents/full_text/text/2026/08/26/2026-17445.txt",
+      "documentUrl": "https://www.federalregister.gov/d/2026-17445",
+      "documentSha256": "59cbca60654c6754dfa83485f4a26a5d63fe46f5b8c25af56f5d54b1b4c6de7e",
+      "occurrences": 1
+    },
+    "exec-dept-doj-secretary-of-department-of-justice-doj": {
+      "source": "federal_register_signature",
+      "nodeName": "Attorney General",
+      "listedTitle": "Attorney General",
+      "documentNumber": "2026-17815",
+      "documentTitle": "Technical Amendments to the Regulations Providing Whistleblower Protection for Federal Bureau of Investigation Employees",
+      "documentType": "Rule",
+      "agenciesListed": [
+        "Justice Department"
+      ],
+      "signingDate": null,
+      "publicationDate": "2026-09-01",
+      "organisationId": "exec-dept-doj",
+      "url": "https://www.federalregister.gov/documents/full_text/text/2026/09/01/2026-17815.txt",
+      "documentUrl": "https://www.federalregister.gov/d/2026-17815",
+      "documentSha256": "1a2e31024a3da6f139b20fb4a0a42d1ced30f0d975dd23605983847badfda35d",
+      "occurrences": 1
+    },
+    "exec-dept-dot-secretary-of-department-of-transportation-dot": {
+      "source": "federal_register_signature",
+      "nodeName": "Secretary of Transportation",
+      "listedTitle": "Secretary of Transportation",
+      "documentNumber": "2026-18040",
+      "documentTitle": "Cause of Airline Delay and Cancellation Categories Under Section 511(b) of the FAA Reauthorization Act of 2024",
+      "documentType": "Rule",
+      "agenciesListed": [
+        "Transportation Department",
+        "Office of the Secretary"
+      ],
+      "signingDate": null,
+      "publicationDate": "2026-09-03",
+      "organisationId": "exec-dept-dot",
+      "url": "https://www.federalregister.gov/documents/full_text/text/2026/09/03/2026-18040.txt",
+      "documentUrl": "https://www.federalregister.gov/d/2026-18040",
+      "documentSha256": "d6757a60b16b53c19a705403ca8d89f92482c1f0e99703f5a979e5668f9eaafb",
+      "occurrences": 1
+    }
+  }
+}

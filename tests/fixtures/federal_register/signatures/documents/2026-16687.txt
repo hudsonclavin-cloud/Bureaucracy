@@ -1,0 +1,690 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 156 (Friday, August 14, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 156 (Friday, August 14, 2026)]
+[Rules and Regulations]
+[Pages 52479-52484]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-16687]
+
+
+-----------------------------------------------------------------------
+
+OFFICE OF PERSONNEL MANAGEMENT
+
+5 CFR Parts 532 and 550
+
+[Docket ID: OPM-2026-0199]
+RIN 3206-AO76
+
+
+Differential Pay for Prescribed Wildland Fire Activities
+
+AGENCY: Office of Personnel Management.
+
+ACTION: Final rule.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The Office of Personnel Management is issuing a final rule to 
+add prescribed (planned) wildland fire duties as covered activities 
+triggering payment of Hazardous Duty Pay (HDP) for General Schedule 
+(GS) employees and Environmental Differential Pay (EDP) for Federal 
+Wage System (FWS) employees. The final rule authorizes a 25 percent 
+differential for GS and FWS employees participating as a member of a 
+firefighting crew engaged in activities on the fireline directly 
+involving the implementation and control of prescribed wildland fires.
+
+DATES: 
+    Effective date: This regulation is effective September 14, 2026.
+    Applicability date: This change applies on the first day of the 
+first pay period beginning on or after September 14, 2026.
+
+FOR FURTHER INFORMATION CONTACT: Ana Paunoiu, by telephone at (202) 
+606-2858 or by email at <a href="/cdn-cgi/l/email-protection#8efeeff7fee1e2e7edf7cee1fee3a0e9e1f8"><span class="__cf_email__" data-cfemail="0e7e6f777e6162676d774e617e6320696178">[email&#160;protected]</span></a>.
+
+SUPPLEMENTARY INFORMATION:
+
+I. Digest of Public Comments
+
+    On April 14, 2026, OPM issued a proposed rule (91 FR 19081) to add 
+prescribed wildland fire activities as new HDP and EDP categories under 
+5 CFR parts 550 and 532. The proposed rule had a 60-day comment period 
+ending June 15, 2026. OPM received 92 comments from Federal employees, 
+one labor organization, one public sector organization, and one private 
+sector organization. Public comments, with a few exceptions, strongly 
+supported OPM's proposal to authorize a 25 percent differential for GS 
+employees, including General Schedule Wildland Firefighters (GW pay 
+plan), and FWS employees participating on a firefighting crew engaged 
+in activities on the fireline directly involving the implementation and 
+control of prescribed wildland fires.
+    Commenters primarily addressed the following issues: coverage of 
+employees paid under pay plan ``GW'' and employees in the 0456 Wildland 
+Fire Management occupational series; whether prescribed fire duties 
+warrant the same 25 percent differential provided for wildfire fireline 
+duties; the exclusion of pre-ignition preparation activities; legal 
+authority and concerns about double compensation; comparisons to other 
+hazardous Forest Service duties; potential cost and operational 
+incentives; and requests to expand coverage to smokejumper proficiency 
+or training jumps and to aviation or air tanker base personnel.
+    After considering the comments, OPM is adopting the proposed 
+regulatory text and 25 percent differential without change. The 
+responses to the comments in Section III. provide clarifications on the 
+differential coverage, payment, and other provisions.
+
+II. Background
+
+    HDP is a pay differential authorized by 5 U.S.C. 5545(d) and 5 CFR 
+part 550, subpart I, for GS employees performing duties approved by OPM 
+in Appendix A to subpart I that involve unusual physical hardship or 
+hazard. EDP is a pay differential authorized by 5 U.S.C. 5343(c)(4) and 
+5 CFR 532.511 for FWS employees exposed to working conditions or 
+hazards that fall within one of the categories approved by OPM in 
+Appendix A of 5 CFR part 532, subpart E. This final rule establishes 
+new HDP and EDP categories at a 25 percent rate for Federal employees 
+performing prescribed (planned) wildland fire activities. Existing HDP 
+and EDP provisions already provide a 25 percent differential for 
+qualifying wildfire fireline work (i.e., participating as a member of a 
+crew fighting forest and range fires), but they do not cover prescribed 
+fires. United States Department of Agriculture (USDA) Forest Service 
+and the Department of the Interior (DOI) requested that OPM add 
+prescribed wildland fire activities as covered categories because 
+employees engaged in those operations are exposed to many of the same 
+physical, chemical, and biological hazards encountered on wildfire 
+firelines.
+    As in the proposed rule, the final rule limits differential 
+coverage to employees participating as a member of a firefighting crew 
+engaged in activities on the fireline directly involving the 
+implementation and control of a prescribed wildland fire. The rule does
+
+[[Page 52480]]
+
+not extend the differential to pre-ignition preparation activities. OPM 
+retains this limitation because the hazards justifying coverage are 
+associated with the active fire environment and its immediate aftermath 
+on the fireline, not preparatory work performed before a fire has been 
+ignited.
+    For FWS employees, OPM presented the proposal to add an EDP 
+category for prescribed wildland fire activities to the Federal 
+Prevailing Rate Advisory Committee at its July 18, 2024, meeting, and 
+the Committee recommended the change by consensus. For GS employees, 
+the final rule also adds 5 CFR 550.904(f) to clarify that the 
+classification-based exclusion on HDP under 5 U.S.C. 5545(d)(1) and 5 
+CFR 550.904(a)-(b) does not apply to employees in occupational series 
+covering positions whose primary duties involve the prevention, 
+control, suppression, or management of wildland fire, consistent with 
+the amendment to 5 U.S.C. 5545(d)(1) made by Public Law 117-58 (Nov. 
+15, 2021).
+    Prescribed fire duties such as ignition, holding, patrol, mop-up, 
+fireline construction, and snag felling expose employees to open flame, 
+radiant and convective heat, smoke, unstable terrain, fire-weakened 
+trees, chemical by-products of combustion, and biological hazards. OPM 
+concluded that these hazards cannot be fully mitigated through 
+training, personal protective equipment, or standard operational 
+controls and are comparable in degree to the hazards supporting the 
+existing 25 percent differential for wildfire fireline work.
+
+III. Response to Major Comments
+
+a. Coverage of GW Pay Plan and 0456 Wildland Firefighter Employees
+
+    OPM received 7 comments from employees recommending that the final 
+rule include employees paid under the GW pay plan. See, e.g., Comments 
+04, 05, 13, 19, and 03.\1\ The proposed rule addressed the coverage of 
+employees under the GW code for wildland firefighters. Footnote 1 of 
+the proposed rule (91 FR 19081) expressly stated that references to 
+`GS' employees include GW wildland firefighters. As such, qualifying GS 
+employees, including employees under pay plan code GW, engaged in 
+prescribed fire activities, will be entitled to a 25 percent HDP 
+differential.
+---------------------------------------------------------------------------
+
+    \1\ A reference at the end of a comment summary provides the 
+location of the item in the public record. (i.e., the three-digit 
+number associated with the location in the docket). Comments filed 
+in response to the proposed rule are available at <a href="https://www.regulations.gov/comment/OPM-2026-0199-00nn">https://www.regulations.gov/comment/OPM-2026-0199-00nn</a> where ``nn'' is the 
+comment number.
+---------------------------------------------------------------------------
+
+    Accordingly, GW pay plan employees are not excluded from this final 
+rule. Eligibility is determined by whether the employee performs 
+covered duties under the regulatory standard, not by the pay plan code 
+alone. A GS employee (including one with a GS, GW, or other pay plan 
+code for a subcategory of GS employees) or an FWS employee must satisfy 
+the same duty-based requirement: participation as a member of a 
+firefighting crew engaged in activities on the fireline directly 
+involving implementation and control of a prescribed wildland fire.
+
+b. Legal Authority, Position Classification, and Double-Compensation 
+Concerns
+
+    Several comments argued that the real issue is not whether 
+prescribed fires are hazardous, but whether hazard pay is legally 
+authorized under OPM statutes. The commenters contend that employees in 
+the 0456 Wildland Fire Management occupational series paid under the GW 
+scale should not receive hazard pay for wildfire or prescribed fire 
+duties because those hazards are already built into the position 
+classification, job expectations, and base compensation, so any 
+additional differential would amount to double compensation and 
+conflict with 5 CFR 550.904. By contrast, other GS positions (such as 
+``GS timber employees'') are not primarily classified or paid as 
+wildland firefighters, and when they perform fireline or other fire-
+related duties--including work in burned areas where hazards such as 
+fire-weakened trees remain--the risks fall outside their normal 
+position descriptions and base pay, making hazard pay appropriate. The 
+comments conclude that OPM should apply its regulations consistently by 
+denying hazard pay to GW employees whose hazardous duties are already 
+compensated through the classification and associated base pay of their 
+position, while authorizing it for other GS employees who perform 
+similar hazardous duties without equivalent pay, thereby reducing pay 
+inequities and avoiding disincentives for non-fire personnel to support 
+fire operations. See, e.g., Comments 61, 62, 64, and 65.
+    As stated in the proposed rule, while 5 U.S.C. 5545(d)(1) and 5 CFR 
+550.904 generally bar hazard pay when a hazard has already been taken 
+into account in the classification of the position, Congress amended 5 
+U.S.C. 5545(d)(1)(A) to create an exception for employees in 
+occupational series whose primary duties involve the prevention, 
+control, suppression, or management of wildland fires. This exception 
+means GW-0456 employees are not categorically barred from hazard pay 
+simply because fire duties are part of their position duties. 
+Furthermore, the comments make a distinction between ``GW'' and ``GS'' 
+employees. As we previously stated, ``GS'' refers to the General 
+Schedule classification and pay system and multiple pay plan codes 
+exist within this system, including the GW code for wildland 
+firefighters; references to GS employees in the proposed rule therefore 
+include wildland firefighters under the GW pay plan code.
+    Regarding the argument that GS and FWS employees outside the 
+primary fire series should not be undercompensated when they perform 
+the same hazardous fireline work, this point supports including those 
+employees; it does not justify excluding GW employees who are doing the 
+same qualifying work under a statute that now expressly permits hazard 
+pay for employees in an occupational series for wildland firefighters. 
+In conclusion, GW-0456 wildland firefighters are eligible for 
+prescribed-fire hazard pay when they meet the same duty-based criteria 
+that apply to other covered GS employees.
+
+c. Prior Wildland Firefighter Pay Enhancements
+
+    One commenter asserted that Federal firefighters have already 
+received substantial compensation enhancements--including a temporary 
+$20,000 pay increase, a permanent pay increase, creation of the 0456 
+occupational series, and the GW pay scale--and that these changes were 
+meant to account for the hazards of wildland firefighting in their base 
+pay. Because of that, the commenter contends GW employees should no 
+longer receive hazard pay differentials, as doing so would amount to 
+double compensation and violate applicable law. In contrast, the 
+commenter stated that other GS and FWS employees who perform fire 
+duties only on a collateral, emergency, or situational basis have not 
+had those hazards built into their base pay and therefore should remain 
+eligible for hazard pay. The commenter concluded that OPM should end 
+hazard pay for GW employees to comply with its rules and avoid widening 
+pay disparities between GW employees and other GS/FWS employees 
+performing similar work. Comment 76.
+    The assertion that GW employees must be excluded from hazard pay is 
+inconsistent with current law. Congress amended 5 U.S.C. 5545(d)(1)(A) 
+specifically to create an exception to the
+
+[[Page 52481]]
+
+hazard pay provisions for wildland firefighters (including those who 
+prevent, control, suppress, or manage wildland fires) so that they may 
+receive hazard pay even when their position description includes said 
+hazard. Moreover, the 2022 Infrastructure Investment and Jobs Act (Pub. 
+L. 117-58) did not give every firefighter employee a permanent blanket 
+$20,000 raise but gave eligible USDA and DOI wildland firefighters a 
+temporary supplement of up to $20,000 a year or 50 percent of base 
+salary, whichever was less. Furthermore, wildland firefighter pay 
+reform was enacted by Congress in section 1807 of the Full-Year 
+Continuing Appropriations and Extensions Act, 2025 (Public Law 119-4), 
+which established a special base rate for GS and FWS firefighter 
+employees. Any fairness concerns involving GS and FWS employees who 
+perform wildland firefighting activities as a collateral-duty may be 
+addressed by ensuring they are properly compensated under existing law 
+and regulation for the work they perform rather than by withholding 
+hazard pay from GW firefighters that the governing statutes authorize.
+
+d. Whether Prescribed Fire Duties Warrant the Differential and Scope of 
+Covered Activities
+
+    One commenter wrote against the implementation of OPM's proposal, 
+stating that prescribed fire operations, when properly planned and 
+executed, are controlled activities designed to minimize risk to 
+personnel and are not inherently more hazardous than other types of 
+``woods work'' that do not qualify for hazard pay. Additionally, the 
+commenter said that burn plans are developed in advance, ignition is 
+avoided when dangerous weather is forecast, equipment and personnel are 
+prepositioned, and site hazards are identified and mitigated, unlike 
+wildfire operations, which are often fast-moving and unpredictable. The 
+commenter further added that much prescribed fire work involves staging 
+personnel and equipment and waiting for favorable conditions, raising 
+the question of whether hazard pay would be provided for many hours 
+that involve little or no unusual danger. The commenter also said that, 
+if a prescribed burn escapes, existing rules already allow it to be 
+treated as a wildfire, at which point hazard pay applies. The commenter 
+also expressed concern that extending hazard pay to prescribed fire 
+could create incentives for operations to take longer than necessary, 
+increasing costs to taxpayers. Comment 21.
+    As explained in the proposed rule, this rulemaking will add a 25 
+percent differential only for GS and FWS employees who are members of a 
+firefighting crew engaged in activities on the fireline directly 
+involving the implementation and control of a prescribed wildland fire. 
+Pre-ignition preparatory activities are not covered. Our rationale is 
+not that prescribed fire is identical to wildfire in every respect; it 
+is that employees on the fireline during ignition, holding, patrol, 
+snag felling, and mop-up still face open flame, radiant and convective 
+heat, smoke, unstable terrain, fire-weakened trees, and chemical and 
+biological hazards that cannot be fully mitigated. The proposed rule 
+cites 2,142 smoke or inhalation exposure incidents during prescribed 
+fire operations from 2018 to 2023, 15 prescribed fire fatalities from 
+2003 to 2023, and injury frequency and severity similar to large-fire 
+suppression (91 FR 19082 and 19083). Furthermore, OPM specifically did 
+not include ``preparation'' in the proposed regulatory language and 
+explained in the proposed rule that the new differential is justified 
+by management of an active fire and its aftermath, not preparatory 
+activities before ignition. As such, moving personnel and equipment 
+into place and waiting for the burn window will not be the trigger for 
+payment. Additionally, the hazards OPM identifies exist before any loss 
+of containment: ignition, holding, patrol, mop-up, smoke exposure, 
+heat, falling trees, unstable terrain, and other direct fireline 
+hazards all occur during a successful prescribed burn. Waiting until an 
+operation fails before recognizing hazard pay would compensate the 
+escape event, but not the hazardous fireline work performed during 
+normal prescribed fire implementation. The rule compensates hazardous 
+fireline work that continues after ignition, not unnecessary delays.
+    Lastly, while this commenter raised concerns that the proposed 
+differential could increase the duration and cost of prescribed fire 
+operations, the agencies that requested this authority have determined 
+that the pay incentive is necessary and appropriate and that its 
+benefits outweigh any additional costs. Proper management of prescribed 
+fire activities and firefighting crews is the responsibility of the 
+Forest Service and DOI.
+
+e. Comparison to Other Hazardous Forest Service Duties
+
+    Another commenter stated that prescribed fire activities are among 
+the least dangerous duties performed by Forest Service employees. The 
+commenter wrote that timber sale staff, recreation technicians, forest 
+protection officers, and employees who clean and maintain recreation 
+sites often face far greater risks, including encounters with armed 
+individuals in isolated areas, a wide range of chemicals, and 
+environmental hazards. The commenter also said either HDP or EDP should 
+apply broadly to all employees facing these kinds of risks, or it 
+should not be provided at all. Comment 56.
+    The fact that other Forest Service employees may also face certain 
+on-the-job risks does not mean firefighters performing prescribed fire 
+duties on the fireline should be denied hazard pay if their work meets 
+the standard for unusual hazard exposure. The proposed rule is not a 
+blanket bonus for all agency employees; it is limited to those directly 
+involved in implementing and controlling prescribed fire on the 
+fireline. In those roles, employees are exposed to hazards such as 
+heat, smoke, open flame, unstable terrain, and fire-damaged trees--
+risks that may be reduced by planning and protective equipment but not 
+eliminated. Whether other jobs can also have risks is beyond the scope 
+of this rulemaking; this rulemaking is limited to the issue of whether 
+this particular work qualifies for hazard pay under the applicable 
+standard. If other positions deserve similar consideration, that should 
+be evaluated separately through an evidence-based review and future 
+rulemaking, as appropriate.
+
+f. Requests To Expand Coverage to Smokejumper Training, Aviation, and 
+Air Tanker Base Personnel
+
+    One organization supported OPM's proposal, asserting that 
+firefighters face the same smoke exposure, fire behavior, and physical 
+demands on prescribed burns as they do on wildfires. The organization 
+also asked OPM to consider expanding the rule to include smokejumper 
+proficiency and training jumps, arguing that those jumps carry risks 
+similar to operational jumps. Comment 92. Another commenter argued that 
+fixed-wing and air tanker base personnel also face serious hazards, 
+including spinning propellers, Jet A exhaust, and airborne retardant 
+particles, and asserted that hazard pay should be considered more 
+broadly for employees involved in other hazardous firefighting 
+activities, not just those on the fireline. Comment 81.
+    OPM appreciates these comments but is not expanding the final rule 
+beyond the scope of the proposed rule, which was limited to prescribed-
+fire fireline activities. The proposed rule built a record for 
+employees participating as members of a firefighting crew engaged in 
+fireline activities directly involving
+
+[[Page 52482]]
+
+implementation and control of prescribed wildland fires. Smokejumper 
+proficiency or training jumps, aviation operations, ramp operations, 
+and air tanker base activities present distinct questions that were not 
+the subject of this rulemaking record. If those activities warrant 
+additional differential pay categories, they may be considered 
+separately through an evidence-based review and future rulemaking, as 
+appropriate. Limiting this rule to the hazards OPM has evaluated based 
+on USDA and DOI requests does not imply that other activities are risk-
+free; it reflects the scope of this rulemaking.
+
+g. Miscellaneous Comments
+
+    One commenter supported OPM's proposal but argued that the cost of 
+wildfire damage and mitigation should be paid by the fossil fuel 
+industry rather than taxpayers because climate change driven by fossil 
+fuel use has increased the frequency and severity of fires. Comment 94. 
+OPM acknowledges receipt of the commenter's views regarding climate 
+change, fossil-fuel producers, and who should bear the financial burden 
+of wildfire mitigation; however, these issues are outside the scope of 
+this rule.
+    Another comment asked OPM to issue guidance identifying endangered 
+species affected by this rule. OPM acknowledges receipt of the 
+commenter's views regarding listed species and habitat protection 
+during prescribed burns. Comment 93. However, this rulemaking is 
+limited to pay administration for Federal employees. Responsibilities 
+for identifying listed species, evaluating habitat effects, and 
+conducting the appropriate environmental reviews for wildland fire 
+activities remain with the responsible agencies under other existing 
+authorities.
+
+IV. Section-by-Section Analysis
+
+a. Part 532--Prevailing Rate Systems
+
+    OPM is amending appendix A to subpart E of 5 CFR part 532 to add a 
+new EDP category under Part II, category 10, Firefighting, for FWS 
+employees. The new category authorizes a 25 percent differential for 
+employees participating as a member of a firefighting crew engaged in 
+activities on the fireline directly involving the implementation and 
+control of a prescribed wildland fire. The differential is payable on 
+the basis of hours in pay status, consistent with the structure of Part 
+II of the EDP schedule. All other firefighting EDP categories remain in 
+place.
+
+b. Part 550--Pay Administration (General)
+
+    OPM is adding 5 CFR 550.904(f) to clarify that the restriction on 
+paying HDP when a hazard or physical hardship has been taken into 
+account in the classification of an employee's position does not apply 
+to an employee in an occupational series covering positions for which 
+the primary duties involve the prevention, control, suppression, or 
+management of wildland fire. This amendment implements the statutory 
+exception in 5 U.S.C. 5545(d)(1)(A).
+    OPM is also amending appendix A to subpart I of 5 CFR part 550 to 
+revise the Firefighting category in the HDP schedule. The revised 
+category adds a 25 percent differential for GS employees participating 
+as a member of a firefighting crew engaged in activities on the 
+fireline directly involving the implementation and control of a 
+prescribed wildland fire. The amendment leaves the existing 
+firefighting categories for forest and range fires, equipment, 
+installation, or building fires, and in-water under-pier firefighting 
+operations in place.
+
+V. Expected Impact of This Rule
+
+A. Statement of Need
+
+    This final rule is needed to address a pay disparity between 
+Federal employees performing prescribed wildland fire activities and 
+Federal employees performing comparable wildfire fireline duties. This 
+rule is also intended to improve recruitment and retention of GS and 
+FWS employees needed to carry out prescribed fire operations.
+
+B. Impact
+
+    This final rule will primarily apply to firefighters at USDA and 
+DOI. In limited circumstances, however, other agencies may also have 
+employees temporarily assigned to prescribed wildland fire activities 
+who meet the criteria for payment of a differential. OPM estimated in 
+the proposed rule that approximately 10,000 GS employees and 2,500 FWS 
+employees at USDA and DOI could be affected. OPM did not receive any 
+comment on that estimate.
+
+C. Costs
+
+    Utilizing current GS and FWS pay rates, USDA has estimated that 
+providing HDP and EDP for prescribed fires will cost around $20 million 
+annually, while the DOI has estimated it to be around $12.5 million 
+annually.
+    All Forest Service employees engaged in prescribed fires and 
+wildfire response are paid from a single salary line for firefighters. 
+The Forest Service sees on average roughly 80 percent of the 
+operational firefighters participating in prescribed fire in any given 
+fiscal year. The cost estimate of $20 million for the Forest Service 
+for FY 2026 is based on approximately 250 hours of prescribed fire 
+operations per employee. These numbers can fluctuate heavily depending 
+on burn conditions, weather, frequency of wildfires (which take 
+priority), etc.
+    Using the FY 2025 total as the baseline, DOI compared FY 2025 
+prescribed fire accomplishments (acres treated) with draft FY 2026 and 
+FY 2027 targets, which are about 10 percent higher than FY 2025 
+accomplishments. To accommodate both the expected increase in work and 
+labor costs--including a 1 percent annual pay adjustment in January 
+2026, DOI increased the FY 2026 Hazard Pay estimate by 11 percent over 
+FY 2025 actual obligations, resulting in $8.95 million, rounded up to 
+$9.0 million. For FY 2027, DOI increased the estimate from $9.0 million 
+to $9.5 million (a 5.6 percent increase) to account for potential 
+additional labor cost increases and further increases in targets and 
+accomplishments, reflecting DOI leadership and administration 
+priorities around fuels management and the expectation of a 
+departmental performance target in the FY 2026/2027 timeframe. OPM did 
+not receive any comment on that estimate.
+
+D. Benefits
+
+    This rule has important benefits. As stated in the proposed 
+regulation, the hazards faced by FWS and GS employees conducting 
+prescribed fire activities mirror those faced by FWS and GS employees 
+managing wildfires. Providing commensurate pay for prescribed fire 
+operations will help with recruiting and retaining FWS and GS 
+employees. Providing the differential pay also shows a recognition of 
+the risks associated with the work performed by wildland firefighters 
+and places a correct and higher value on the much-needed service.
+
+Regulatory Compliance
+
+A. Regulatory Review
+
+    OPM has examined the impact of this rule as required by Executive 
+Orders 12866 and 13563, which direct agencies to assess all costs and 
+benefits of available regulatory alternatives and, if regulation is 
+necessary, to select regulatory approaches that maximize net benefits 
+(including potential economic, environmental, public, health, and 
+safety effects, distributive
+
+[[Page 52483]]
+
+impacts, and equity). A regulatory impact analysis must be prepared for 
+rules that have an annual effect on the economy of $100 million or more 
+or adversely affect in a material way the economy, a sector of the 
+economy, productivity, competition, jobs, the environment, public 
+health or safety, or State, local, or tribal governments or 
+communities. This rulemaking does not reach that threshold and was not 
+designated as a ``significant regulatory action'' under section 3(f) of 
+E.O. 12866. This rule is not considered an Executive Order 14192 
+regulatory action because it imposes no more than de minimis costs.
+
+B. Regulatory Flexibility Act
+
+    The Director of OPM certifies that this rulemaking will not have a 
+significant economic impact on a substantial number of small entities.
+
+C. Federalism
+
+    This regulation will not have substantial direct effects on the 
+States, on the relationship between the National Government and the 
+States, or on distribution of power and responsibilities among the 
+various levels of government. Therefore, in accordance with E.O. 13132, 
+the Director of OPM certifies that this final rule does not have 
+sufficient federalism implications to warrant preparation of a 
+Federalism Assessment.
+
+D. Civil Justice Reform
+
+    This rulemaking meets the applicable standard set forth in section 
+3(a) and (b)(2) of E.O. 12988.
+
+E. Unfunded Mandates Act of 1995
+
+    Section 202 of the Unfunded Mandates Reform Act of 1995 (UMRA) 
+requires that agencies assess anticipated costs and benefits before 
+issuing any rule that would impose spending costs on State, local, or 
+tribal governments in the aggregate, or on the private sector, in any 1 
+year of $100 million in 1995 dollars, updated annually for inflation. 
+That threshold is currently approximately $206 million. This rulemaking 
+will not result in the expenditure by State, local, or tribal 
+governments, in the aggregate, or by the private sector, in excess of 
+the threshold. Thus, no written assessment of unfunded mandates is 
+required.
+
+F. Congressional Review Act
+
+    Subtitle E of the Small Business Regulatory Enforcement Fairness 
+Act of 1996 (known as the Congressional Review Act or CRA) (5 U.S.C. 
+801 et seq.) requires most final rules to be submitted to Congress 
+before taking effect. OPM will submit to Congress and the Comptroller 
+General of the United States a report regarding the issuance of this 
+rule before its effective date. The Office of Information and 
+Regulatory Affairs in the Office of Management and Budget has 
+determined that this rule is not a major rule as defined by the CRA (5 
+U.S.C. 804).
+
+G. Paperwork Reduction Act
+
+    This rulemaking does not impose any reporting or record-keeping 
+requirements subject to the Paperwork Reduction Act, as amended (44 
+U.S.C. Chapter 35).
+
+List of Subjects
+
+5 CFR Part 532
+
+    Administrative practice and procedure, Freedom of information, 
+Government employees, Reporting and recordkeeping requirements, Wages.
+
+5 CFR Part 550
+
+    Administrative practice and procedure, Claims, Government 
+employees, Wages.
+
+Signing Statement
+
+    The Director of OPM, Scott Kupor, reviewed and approved this 
+document and has authorized the undersigned to electronically sign and 
+submit this document to the Office of the Federal Register for 
+publication.
+
+Office of Personnel Management.
+Jerson Matias,
+Federal Register Liaison.
+
+    Accordingly, OPM is amending 5 CFR parts 532 and 550 as follows:
+
+PART 532--PREVAILING RATE SYSTEMS
+
+0
+1. The authority citation for part 532 continues to read as follows:
+
+    Authority: 5 U.S.C. 5343, 5346. Sec. 532.707 also issued under 5 
+U.S.C. 552.
+
+
+0
+2. In appendix A to subpart E of part 532, amend the table by adding a 
+new activity to the schedule of environmental differentials under 
+category ``10. Firefighting'' in the table titled ``Part II--Payment on 
+Basis of Hours in Pay Status'' to read as follows:
+
+Appendix A to Subpart E of Part 532--Schedule of Environmental 
+Differentials Paid for Exposure to Various Degrees of Hazards, Physical 
+Hardships, and Working Conditions of an Unusual Nature
+
+* * * * *
+
+                                Part II--Payment on Basis of Hours in Pay Status
+----------------------------------------------------------------------------------------------------------------
+    Differential rate (percent)                 Category for which payable                  Effective date
+----------------------------------------------------------------------------------------------------------------
+ 
+                                                  * * * * * * *
+                                     10. Firefighting. Participating or assisting in  July 1, 1972.
+                                      firefighting operations on the immediate fire
+                                      scene and in direct exposure to the hazards
+                                      inherent in containing or extinguishing fires.
+25.................................  High degree....................................
+                                     --Fighting forest and range fires on the         July 1, 1972.
+                                      fireline.
+                                     --Participating as a member of a firefighting    First pay period beginning
+                                      crew engaged in activities on the fireline       on or after September 14,
+                                      directly involving the implementation and        2026.
+                                      control of a prescribed wildland fire.
+ 
+                                                  * * * * * * *
+----------------------------------------------------------------------------------------------------------------
+
+
+[[Page 52484]]
+
+* * * * *
+
+PART 550--PAY ADMINISTRATION (GENERAL)
+
+0
+3. The authority citation for subpart I of part 550 continues to read 
+as follows:
+
+    Authority: 5 U.S.C. 5545(d), 5548(b).
+
+
+0
+4. In Sec.  550.904, add paragraph (f) to read as follows:
+* * * * *
+    (f) The provisions of this section concerning payment of a hazard 
+pay differential when a hazard or physical hardship is taken into 
+account in the classification of an employee's position does not apply 
+to an employee in an occupational series covering positions for which 
+the primary duties involve the prevention, control, suppression, or 
+management of wildland fire.
+
+0
+5. In appendix A to subpart I of part 550--Schedule of Pay Differential 
+Authorized for Hazardous Duty Under Subpart I, amend the table by 
+revising the ``Firefighting'' category in the Hazard Pay Differential 
+to read as follows:
+
+Appendix A to Subpart I of Part 550--Schedule of Pay Differentials 
+Authorized for Hazardous Duty Under Subpart I
+
+* * * * *
+
+----------------------------------------------------------------------------------------------------------------
+                                                           Rate of hazard
+                                                                 pay
+                           Duty                             differential               Effective date
+                                                              (percent)
+----------------------------------------------------------------------------------------------------------------
+ 
+                                                  * * * * * * *
+Firefighting:
+    (1) Forest and range fires. Participating as a member              25  First pay period beginning after July
+     of a firefighting crew in fighting forest and range                    1, 1969.
+     fires on the fireline.
+    (2) Prescribed wildland fire operations.                           25  First pay period beginning on or
+     Participating as a member of a firefighting crew                       after September 14, 2026.
+     engaged in activities on the fireline directly
+     involving the implementation and control of a
+     prescribed wildland fire.
+    (3) Equipment, installation, or building fires.                    25  First pay period beginning after July
+     Participating as an emergency member of a                              1, 1969.
+     firefighting crew in fighting fires of equipment,
+     installations, or buildings.
+    (4) In-water under-pier firefighting operations.                   25  Do.
+     Participating in in-water under-pier firefighting
+     operations (involving hazards beyond those normally
+     encountered in firefighting on land, e.g., strong
+     currents, cold water temperature).
+ 
+                                                  * * * * * * *
+----------------------------------------------------------------------------------------------------------------
+
+* * * * *
+
+[FR Doc. 2026-16687 Filed 8-13-26; 8:45 am]
+BILLING CODE 6325-39-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

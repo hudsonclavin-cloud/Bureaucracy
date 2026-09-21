@@ -1,0 +1,135 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 177 (Tuesday, September 15, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 177 (Tuesday, September 15, 2026)]
+[Notices]
+[Pages 58426-58427]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-18797]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+U.S. ELECTION ASSISTANCE COMMISSION
+
+
+Agency Information Collection Activities: ESTEP Application for 
+Testing
+
+AGENCY: Election Assistance Commission.
+
+ACTION: Notice; request for comment.
+
+-----------------------------------------------------------------------
+
+SUMMARY: In compliance with the Paperwork Reduction Act of 1995, the 
+U.S. Election Assistance Commission (EAC) announces an information 
+collection and seeks public comment on the provisions thereof. The EAC 
+intends to submit this proposed information collection to the Director 
+of the Office of Management and Budget for approval. The EAC is 
+publishing an information collecting form for its Election Supporting 
+Technology Evaluation Program (ESTEP). The information collected is to 
+be used to obtain information about election-supporting technologies 
+submitted for evaluation under ESTEP certification programs. 
+Participation in this program is voluntary.
+
+DATES: Comments must be received by 5 p.m. Eastern on Monday, November 
+16, 2026.
+
+ADDRESSES: Comments on the proposed Election Supporting Technology 
+Evaluation Program forms should be submitted electronically via <a href="https://www.regulations.gov">https://www.regulations.gov</a> (docket ID: EAC-2026-0265). Written comments on 
+the proposed information collection can also be sent to the U.S. 
+Election Assistance Commission, 633 3rd Street NW, Suite 200, 
+Washington, DC 20001, Attn: Election Supporting Technology Evaluation 
+Program.
+
+FOR FURTHER INFORMATION CONTACT: Elizabeth Beatrice, Election 
+Technology Specialist, Election Supporting Technology Evaluation 
+Program, 202-451-2031, <a href="/cdn-cgi/l/email-protection#c2a7b1b6a7b282a7a3a1eca5adb4"><span class="__cf_email__" data-cfemail="690c1a1d0c19290c080a470e061f">[email&#160;protected]</span></a>. All requests and submissions 
+should be identified by the title of the information collection.
+
+SUPPLEMENTARY INFORMATION: 
+    Titles and OMB Number: ESTEP Application for Testing; OMB Number 
+3265-0027.
+
+Purpose
+
+    Under the PRA (44 U.S.C. 3501-3520), Federal Agencies must obtain 
+approval from the Office of Management and Budget (OMB) for each 
+collection of information they conduct or sponsor. ``Collection of 
+information'' is defined in 44 U.S.C. 3502(3) and 5 CFR 1320.3(c) and 
+includes Agency requests or requirements that members of the public 
+submit reports, keep records, or provide information to a third party. 
+Section 3506(c)(2)(A) of the PRA requires Federal Agencies to provide a 
+60-day notice in the Federal Register concerning each proposed 
+collection of information, including each proposed extension of an 
+existing collection of information, before submitting the collection to 
+OMB for approval. To comply with this requirement, the EAC is 
+publishing notice of the proposed collection of information set forth 
+in this document.
+    The EAC Election Supporting Technology Evaluation Program evaluates 
+the functionality, security, and accessibility of election-supporting 
+technologies, including electronic poll books, voter registration 
+systems, electronic ballot delivery systems, and election night 
+reporting databases.
+    The program is publishing the ESTEP Application for Testing form to 
+collect key administrative information regarding new or modified 
+election-
+
+[[Page 58427]]
+
+supporting technologies submitted for testing by a registered 
+manufacturer.
+    This information is collected to improve the quality of election-
+supporting technology used in federal elections.
+
+Public Comments
+
+    We are soliciting public comments to permit the EAC to:
+    <bullet> Evaluate whether the proposed information collection is 
+necessary and sufficient for the proper functions of the Election 
+Supporting Technology Evaluation Program.
+    <bullet> Evaluate the accuracy of our estimate of burden for these 
+proposed collections, including the validity of the methodology and 
+assumptions used.
+    <bullet> Enhance the quality, utility, and clarity of the 
+information to be collected.
+    <bullet> Minimize the reporting burden on those who are responding, 
+including the use of information technology.
+    Please note that comments submitted in response to this notice are 
+public record. Before including any detailed personal information, you 
+should be aware that your comments as submitted, including your 
+personal information, will be available for public review.
+    Respondents: Election Supporting Technology Manufacturers, State 
+and Local Election Officials.
+
+Annual Reporting Burden
+
+    OMB approval is requested for 3 years.
+
+                            Annual Burden Estimates for ESTEP Application for Testing
+----------------------------------------------------------------------------------------------------------------
+                                     Estimated       Estimated    Average burden                   Total cost to
+                                     number of     responses per     hours per     Total annual     respondents
+                                    respondents     respondent       response      burden hours     ($78.10/hr)
+----------------------------------------------------------------------------------------------------------------
+First-Time Submissions..........               3               1             240             720         $56,232
+Subsequent Submissions..........               6               3              32             576       44,985.60
+                                 -------------------------------------------------------------------------------
+    Total.......................  ..............  ..............  ..............            1296      101,217.60
+----------------------------------------------------------------------------------------------------------------
+
+    Estimated burden in hours--1,296.
+    Estimated burden cost--$101,217.60.
+
+Seton Parsons,
+Senior Associate Counsel, U.S. Election Assistance Commission.
+[FR Doc. 2026-18797 Filed 9-14-26; 8:45 am]
+BILLING CODE 4810-71-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

@@ -1,0 +1,354 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 125 (Wednesday, July 1, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 125 (Wednesday, July 1, 2026)]
+[Notices]
+[Pages 39976-39978]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-13283]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+CENTRAL INTELLIGENCE AGENCY
+
+
+Privacy Act of 1974; System of Records
+
+AGENCY: Central Intelligence Agency.
+
+ACTION: Notice of a new system of records.
+
+-----------------------------------------------------------------------
+
+SUMMARY: Pursuant to the Privacy Act of 1974, as amended, and Office of 
+Management and Budget (OMB) Circular No. A-108, notice is hereby given 
+that the Central Intelligence Agency (``CIA'') is submitting to the 
+Federal Register one (1) new System of Records Notice (SORN), CIA-46 
+Sexual Harassment/Assault Response and Prevention Office (SHARP) 
+Records. This new SORN covers records related to CIA's assessment, 
+processing, and tracking of sexual harassment and sexual assault 
+inquiries, allegations, and reports, which includes case management, 
+dispositions, guidance, and reporting to CIA leadership, stakeholders, 
+and oversight bodies.
+
+DATES: In accordance with 5 U.S.C. 552a(e)(4) and (11), this notice is 
+effective upon publication, subject to a 30-day period in which to 
+comment on the routine uses, described below. Please submit any 
+comments by July 31, 2026.
+
+ADDRESSES: Comments may be submitted by the following methods: By mail 
+to Mark Mouser, Privacy and Civil Liberties Officer, Central 
+Intelligence Agency, Washington, DC 20505; or by email to 
+<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d593b0b187b0b299bcb4bca6babb95a0b6b0fbb6bcb4fbb2baa3">[email&#160;protected]</a>. Please include ``NOTICE OF NEW CIA SORN'' in 
+the subject line of the message.
+
+FOR FURTHER INFORMATION CONTACT: Mark Mouser, Privacy and Civil 
+Liberties Officer, Central Intelligence Agency, Washington, DC 20505, 
+(571) 280-2700.
+
+SUPPLEMENTARY INFORMATION: CIA created the Sexual Harassment/Assault 
+Response and Prevention (SHARP) Office to centralize handling and 
+documentation of sexual harassment and sexual assault matters to comply 
+with 50 U.S.C. 3531 to 3533: Sexual Assault and Sexual Harassment 
+Within the Agency; Reporting and Investigation of Allegations of Sexual 
+Assault and Sexual Harassment; and Special Victim Investigator. The 
+SHARP Office provides an enterprise service responsible for responding 
+to and preventing sexual harassment and sexual assault through a 
+balance of education, trauma-informed care, and victim-centered 
+advocacy. Under 50 U.S.C. 3532, the SHARP Office serves as the primary 
+point of contact and entry point for Agency employees to make 
+``Restricted'' or ``Unrestricted'' reports of sexual harassment and 
+sexual assault. ``Restricted'' reports are those reports of sexual 
+harassment or sexual assault that are kept confidential and are made to 
+SHARP without notifications or investigation. ``Unrestricted'' reports 
+are those reports of sexual harassment or sexual assault that are kept 
+confidential, but include notification to management and appropriate 
+investigators. The SHARP Office is also responsible for various 
+notification, reporting, policy setting, training, and data analysis 
+related to reports of sexual harassment and sexual assault by CIA 
+personnel.
+    CIA proposes a new System of Record Notice (SORN), CIA-46, Sexual 
+Harassment/Assault Response and Prevention (SHARP) Office Records, to 
+cover all records maintained by the SHARP Office related to its 
+official responsibilities, including records used to assess, inquire 
+into, and efficiently manage allegations of sexual harassment and 
+sexual assault.
+    In addition to incorporating by reference the ``Statement of 
+General Routine Uses for the Central Intelligence Agency,'' set out at 
+87 FR 73198, November 28, 2022, revised and republished at 91 FR 1743 
+(January 15, 2026), CIA-46, SHARP Records, will include three new 
+routine uses for the records maintained in this system of records. 
+First, consistent with the SHARP Office's responsibilities, records may 
+be disclosed to individual victims, alleged offenders, Senior 
+Management Official Point of Contacts, witnesses, security officers 
+such as the Special Victim Investigator, and other individuals to the 
+extent necessary to respond to, or to update such individuals on the 
+response regarding Restricted or Unrestricted reports relating to an 
+allegation of sexual harassment, sexual assault, or retaliation/
+reprisal.
+    Second, records may be disclosed to any victim or other appropriate 
+individual to the extent necessary to comply with the Agency's common 
+perpetrator notification requirements, in accordance with all 
+applicable laws and internal Agency regulations. ``Common perpetrator 
+notification requirements'' generally refer to the laws and internal 
+Agency regulations that require CIA to provide specific notifications 
+upon receipt of an incident report containing an allegation of sexual 
+harassment or sexual assault against an individual known to be the 
+subject of at least one allegation of sexual harassment or sexual 
+assault by another reporter.
+    Finally, records may be disclosed to a federal, state, local, or 
+Tribal law enforcement agency, or other appropriate entity or 
+individual, when the Special Victim Investigator determines the 
+disclosure is necessary and relevant to conducting inquiries, 
+investigations, or other fact-finding
+
+[[Page 39977]]
+
+activities related to Unrestricted reports containing allegations of 
+sexual harassment or sexual assault, in accordance with federal, state, 
+local, Tribal, or other applicable laws, and internal Agency 
+regulations.
+    The ``Special Victim Investigator'' referenced in these routine 
+uses, and referenced throughout this SORN, refers to the statutorily-
+established federal law enforcement officer authorized to investigate 
+or facilitate the investigation of Unrestricted reports containing 
+allegations of sexual harassment or sexual assault by CIA personnel.
+    Nothing in the new SORN indicates any change in CIA's authorities 
+or practices regarding the collection and maintenance of information 
+about citizens and lawful permanent residents of the United States, nor 
+does the new SORN change any individual's rights to access or to amend 
+their records in accordance with the Privacy Act.
+    In accordance with 5 U.S.C. 552a(r), CIA has provided a report to 
+OMB and Congress on the new system of records.
+
+     Dated: June 25, 2026.
+Mark Mouser,
+Privacy and Civil Liberties Officer, Central Intelligence Agency. (571) 
+280-2700
+CIA-46
+SYSTEM NAME AND NUMBER:
+    Sexual Harassment/Assault Response and Prevention Office (SHARP) 
+Records (CIA-46)
+
+SECURITY CLASSIFICATION:
+    The classification of records in this system can range from 
+UNCLASSIFIED to TOP SECRET.
+
+SYSTEM LOCATION:
+    Central Intelligence Agency, Washington, DC 20505.
+
+SYSTEM MANAGER(S):
+    Director, Sexual Harassment/Assault Response and Prevention Office, 
+Central Intelligence Agency, Washington, DC 20505.
+
+AUTHORITY FOR MAINTENANCE OF THE SYSTEM:
+    The National Security Act of 1947, as amended, 50 U.S.C. 3036 et 
+seq.; the Central Intelligence Agency Act of 1949, as amended, 50 
+U.S.C. 3501 et seq.; 50 U.S.C. 3531 to 3533: Sexual Assault and Sexual 
+Harassment Within the Agency; Reporting and Investigation of 
+Allegations of Sexual Assault and Sexual Harassment; and Special Victim 
+Investigator; and Executive Order 12333, as amended, 73 FR 45325.
+
+PURPOSE(S) OF THE SYSTEM:
+    Records in this system are used by authorized personnel to:
+    a. ensure process integrity and enable the CIA and the Director of 
+the CIA to carry out their lawful and authorized responsibilities.
+    b. centralize case level sexual harassment and sexual assault data 
+involving employees of the Agency and those eligible for SHARP 
+services, in accordance with federal laws regarding Restricted and 
+Unrestricted reporting.
+    c. facilitate reports to, and compile statistical analysis for, 
+Congress and Agency leadership in connection with, disclosures, 
+mandatory reports, Unrestricted Reports, and retaliation reports made 
+by or against Agency personnel and other stakeholders with an official 
+need to know.
+    d. facilitate Common Perpetrator Notification in accordance with 
+federal laws.
+    e. facilitate documentation of disclosures and/or allegations of 
+sexual harassment, sexual assault, and retaliation resulting in a 
+SHARP-related inquiry.
+    f. track appropriate case management and high-risk response team 
+meetings for system coordination and accountability, facilitate a 
+victim's access to quality services, and provide case status updates.
+    g. maintain the Victim Reporting Preference Statement, Retaliation 
+Reporting, and Common Perpetrator Notification, to ensure compliance 
+with the federal records retention requirements and allow victims 
+access to their forms.
+    h. maintain records of all inquiries, investigations, and reports 
+of allegations of sexual harassment and sexual assault.
+    i. provide information to management and Agency leadership 
+regarding personnel matters.
+    j. coordinate with, and provide information indicating or relating 
+to a violation or potential violation of criminal law, civil law, or 
+regulation, to appropriate entities responsible with enforcing or 
+implementing such criminal law, civil law, or regulation.
+    Records may also be used by authorized personnel as a management 
+tool for statistical analysis, tracking, reporting, evaluating program 
+effectiveness, conducting research and surveys, and case and business 
+management.
+
+CATEGORIES OF INDIVIDUALS COVERED BY THE SYSTEM:
+    Agency employees; independent or industrial contractors; detailees 
+and assignees; individuals other than an Agency employee who allege 
+they were sexually harassed or sexually assaulted at a facility 
+associated with the Agency or during the performance of a function 
+associated with the Agency; alleged offenders; witnesses and 
+bystanders; first responders; partners who provide advocacy and 
+resource support; and personnel from other federal, state, local, 
+Tribal, or other appropriate government departments and agencies.
+    Sexual harassment and sexual assault victims, family members, and 
+other parties (e.g. co-workers, friends) who report retaliation related 
+to reports of sexual harassment and sexual assault.
+
+CATEGORIES OF RECORDS IN THE SYSTEM:
+    Documents, written correspondence, cables, and materials relating 
+to inquiries, complaints and investigations of actual or alleged 
+incidents of sexual harassment and sexual assault; records related to 
+the processing of allegations of sexual harassment and sexual assault, 
+including tracking referrals to appropriate resources made available to 
+individuals, to include measures taken, products and services provided 
+in response to such allegations; relationship information, and other 
+details related to the individual(s) impacted by, or involved in, an 
+alleged or actual incident of sexual harassment or sexual assault; 
+witness and mandatory reporting information; victim and alleged 
+offender information, including CIA employee number, gender, location 
+of assignment and incident, name, organizational affiliation (agency, 
+directorate/mission center, office, unit), personal contact information 
+(e.g., phone number, address, email address), badge number, 
+identification type (e.g., driver's license, passport) and 
+identification number, employment data (such as grade), and records on 
+position and job title information; information related to assessment 
+and disposition of the case, including case management and tracking 
+data; other authorized data collected to support inquiries, complaints, 
+and investigations, including but not limited to, date and type of 
+report, case control number, SHARP Advocate assigned, referrals to 
+appropriate resources, victim safety information, medical information, 
+forensic information, information about the presence of drugs, case 
+management meeting information, information on request for reassignment 
+and relocation, information about protective orders, victim reporting 
+preference statements, required 8-day reports; and other sexual 
+harassment or sexual assault data collected to support case and 
+business management.
+    Retaliation reporter and alleged retaliator information may also be 
+included with the retaliation inquiry control number; referral to 
+appropriate
+
+[[Page 39978]]
+
+office to inquire or investigate the retaliation; CIA employee number 
+and name of retaliation reporter, and date of inquiry.
+
+RECORD SOURCE CATEGORIES:
+    Records and information stored in this system may be provided by 
+any individual who is impacted by, or involved in, an alleged or actual 
+incident of sexual harassment or sexual assault and includes: 
+complainants; victims; witnesses; alleged offenders; mandatory 
+reporters; individuals who respond to an allegation of sexual 
+harassment or sexual assault; individuals covered by this system or 
+derived from other systems covered by other System of Record Notices; 
+CIA management; CIA personnel whose duties include advocacy and 
+support, investigation, and processing of inquiries, complaints or 
+investigations of alleged or actual incidents of sexual harassment or 
+sexual assault; other federal, state, local, Tribal or other 
+appropriate government departments and agencies; physicians and medical 
+practitioners; and other organizations or individuals supporting 
+SHARP's mission.
+
+ROUTINE USES OF RECORDS MAINTAINED IN THE SYSTEM, INCLUDING CATEGORIES 
+OF USERS AND THE PURPOSE OF SUCH USES:
+    In addition to the disclosures generally permitted under 5 U.S.C. 
+552a(b), the routine uses set forth in the ``Statement of General 
+Routine Uses for the Central Intelligence Agency,'' 87 FR 73198, 
+November 28, 2022, revised and republished 91 FR 1743, January 15, 
+2026, are incorporated herein by reference. In addition to the General 
+Routine Uses incorporated by reference, the following additional 
+routine uses also apply to this SORN:
+    21. Disclosure to individual victims, alleged offenders, Senior 
+Management Official Point of Contacts (POCs), witnesses, security 
+officers such as the Special Victim Investigator (SVI), and other 
+individuals to the extent necessary to respond to, or to update such 
+individuals on the response regarding Restricted or Unrestricted 
+reports relating to an allegation of sexual harassment, sexual assault, 
+or retaliation/reprisal, reported pursuant to federal, state, local, 
+Tribal, or other applicable laws, or internal Agency regulations.
+    22. Disclosure to any victims or other appropriate individuals to 
+the extent necessary to comply with the Agency's common perpetrator 
+notification requirements, in accordance with federal, state, local, 
+Tribal, or other applicable laws, and internal Agency regulations.
+    23. Disclosure to a federal, state, local, Tribal, or other 
+appropriate law enforcement agency, or other appropriate entities or 
+individuals, when the SVI determines the disclosure is necessary and 
+relevant to conducting inquiries, investigations, or other fact-finding 
+activities related to Unrestricted reports containing allegations of 
+sexual harassment or sexual assault, in accordance with federal, state, 
+local, Tribal, or other applicable laws, and internal Agency 
+regulations.
+
+POLICIES AND PRACTICES FOR STORAGE OF RECORDS:
+    Paper and other hard-copy records are stored in secured areas 
+within the CIA or in CIA-controlled facilities. Electronic records are 
+stored in secure file-servers located within CIA-controlled facilities 
+or in CIA-contracted facilities subject to CIA supervision.
+
+POLICIES AND PRACTICES FOR RETRIEVAL OF RECORDS:
+    Records in this system may be retrieved by name, case control 
+number, CIA employee number, or other unique personal identifier by 
+automated or hand search based on extant indices and automated 
+capabilities utilized in the normal course of business. Under 
+applicable law and regulations, all searches of this system of records 
+will be performed in CIA offices by CIA personnel.
+
+POLICIES AND PRACTICES FOR RETENTION AND DISPOSAL OF RECORDS:
+    All records are maintained and disposed of in accordance with 
+applicable Records Control Schedules issued or approved by the National 
+Archives and Records Administration.
+
+ADMINISTRATIVE, TECHNICAL, AND PHYSICAL SAFEGUARDS:
+    Records are maintained in secure, restricted areas and are accessed 
+only by personnel who have a need for the records in the performance of 
+their official duties and have been authorized for such access. 
+Electronic authorization and authentication access controls are 
+required to prevent against unauthorized access, use, and disclosure.
+
+RECORD ACCESS PROCEDURES:
+    Requests from individuals should be addressed as indicated in the 
+notification procedures section below. Regulations for access to 
+individual records or for appealing an initial determination by CIA 
+concerning the access to records are published in the Code of Federal 
+Regulations (32 CFR 1901.11-.45).
+
+CONTESTING RECORD PROCEDURES:
+    Requests from individuals to correct or amend records should be 
+addressed as indicated in the notification procedures section below. 
+CIA's regulations regarding requests for amendments to, or disputing 
+the contents of, individual records or for appealing an initial 
+determination by CIA concerning these matters are published in the Code 
+of Federal Regulations (32 CFR 1901.21-32, 32 CFR 1901.42).
+
+NOTIFICATION PROCEDURES:
+    Individuals seeking to learn if this system of records contains 
+information about them should direct their inquiries to: Information 
+and Privacy Coordinator, Central Intelligence Agency, Washington, DC 
+20505. Identification requirements are specified in the CIA rules 
+published in the Code of Federal Regulations (32 CFR 1901.12-.14). 
+Individuals must comply with these rules in order for their request to 
+be processed.
+
+EXEMPTIONS PROMULGATED FOR THE SYSTEM:
+    Certain records contained within this system of records may be 
+exempted from certain provisions of the Privacy Act, 5 U.S.C. 552a, 
+pursuant to 5 U.S.C. 552a(d)(5), (j)(1), and (k).
+
+HISTORY:
+    None.
+
+[FR Doc. 2026-13283 Filed 6-30-26; 8:45 am]
+BILLING CODE 6310-02-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

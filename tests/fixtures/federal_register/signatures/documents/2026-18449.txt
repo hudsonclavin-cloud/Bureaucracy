@@ -1,0 +1,105 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 174 (Thursday, September 10, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 174 (Thursday, September 10, 2026)]
+[Notices]
+[Page 57537]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-18449]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+DEPARTMENT OF COMMERCE
+
+Census Bureau
+
+[Docket Number: 260820-0003; RTID 0607-XC086]
+
+
+Annual Survey of State Government Tax Collections
+
+AGENCY: Census Bureau, Department of Commerce.
+
+ACTION: Notice of determination.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The Bureau of the Census (Census Bureau) has ceased collection 
+and production of the Annual Survey of State Government Tax Collections 
+(STC). The Census Bureau has redirected its resources to prioritize the 
+Annual Survey of State Government Finances (ASFIN) and the Quarterly 
+Summary of State & Local Tax Revenue (QTAX). State government tax data 
+previously produced through STC will continue to be made available 
+through ASFIN and QTAX. The survey 2025 data release on April 15, 2026, 
+was the final release.
+
+FOR FURTHER INFORMATION CONTACT: Michael Reich, Assistant Division 
+Chief, Public Sector, Economy-Wide Statistics Division, Telephone: 301-
+763-5163; Email: <a href="/cdn-cgi/l/email-protection#470a2e242f26222b69156915222e242f0724222934323469202831"><span class="__cf_email__" data-cfemail="b2ffdbd1dad3d7de9ce09ce0d7dbd1daf2d1d7dcc1c7c19cd5ddc4">[email&#160;protected]</span></a>.
+
+SUPPLEMENTARY INFORMATION: The Census Bureau produces state government 
+tax estimates via three programs: the Annual Survey of State Tax 
+Collections, the Annual Survey of State Government Finances, and the 
+Quarterly Summary of State & Local Tax Revenue. The data from these 
+surveys serves a wide variety of data users and meets a wide variety of 
+needs from federal agencies to researchers and academia. The Census 
+Bureau is focused on removing redundancies with the sunsetting of the 
+Annual Survey of State Tax Collections and focusing on data quality of 
+the remaining two programs.
+    The Annual Survey of State Tax Collections was collected under the 
+authority of Title 13 U.S.C. 182. Section 182 authorizes surveys when 
+``deemed necessary to furnish annual or other interim current data on 
+the subjects covered by the censuses provided for in this title.'' 
+Therefore, surveys collected under Section 182 are discretionary, and 
+no current regulations require this survey. Because the Census Bureau 
+can produce estimates of the same quality and content without imposing 
+an additional survey burden, the Annual Survey of State Tax Collections 
+is no longer ``necessary to furnish annual or other interim current 
+data'' on state taxes.
+    Determining to eliminate a survey is always a difficult task since 
+there are users of all the data. The Census Bureau has made every 
+effort to determine how data would be impacted and will be mitigating 
+impacts through the programs still produced.
+    All state tax estimates (5 broad tax categories and up to 25 tax 
+subcategories) currently produced as a part of the Annual Survey of 
+State Tax Collections will still be published as a part of the larger 
+Annual Survey of State Government Finances with no change to current 
+structure. However, this data will be published approximately 9 months 
+later than the traditional STC release, due to the longer processing 
+time for the Annual Survey of State Government Finances. Due to this 
+timing, the Census Bureau will also start producing annualized state 
+government tax estimates as a part of the Quarterly Summary of State & 
+Local Tax Revenue in 2027. These estimates will be produced 
+approximately 1-4 months earlier than currently produced from the 
+Annual Survey of State Tax Collections and will be created to follow 
+the same fiscal year reporting covered by the sunset program and used 
+as input into state government finance data processing. With this 
+change, all annual tax estimates will be retained and released to the 
+public sooner with a reduction in respondent burden exemplifying the 
+commitment of the Census Bureau to identifying efficiencies while 
+continuing to produce quality data that highlights the public sector.
+
+Paperwork Reduction Act
+
+    Notwithstanding any other provision of law, no person is required 
+to respond to, nor shall a person be subject to a penalty for failure 
+to comply with a collection of information subject to the requirements 
+of the Paperwork Reduction Act (PRA) unless that collection of 
+information displays a currently valid Office of Management and Budget 
+(OMB) control number. In accordance with the PRA, 44 U.S.C., Chapter 
+45, OMB approved the STC under the OMB control number 0607-0585.
+
+    Dated: September 3, 2026.
+George Cook,
+Deputy Under Secretary for Economic Affairs, performing the non-
+exclusive functions and duties of the Director of the Census Bureau.
+[FR Doc. 2026-18449 Filed 9-9-26; 8:45 am]
+BILLING CODE 3510-07-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

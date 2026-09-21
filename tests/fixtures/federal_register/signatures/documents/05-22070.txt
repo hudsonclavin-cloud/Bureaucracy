@@ -1,0 +1,174 @@
+<html>
+<head>
+<title>Federal Register, Volume 70 Issue 216 (Wednesday, November 9, 2005)</title>
+</head>
+<body><pre>
+[Federal Register Volume 70, Number 216 (Wednesday, November 9, 2005)]
+[Notices]
+[Pages 67995-67996]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 05-22070]
+
+
+-----------------------------------------------------------------------
+
+DEPARTMENT OF DEFENSE
+
+Defense Contract Audit Agency
+
+
+Privacy Act of 1974; System of Records
+
+AGENCY: Defense Contract Audit Agency, DoD.
+
+ACTION: Notice to Amend a System of Records.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The Defense Contract Audit Agency is amending a system of 
+records notice in its existing inventory of records systems subject to 
+the Privacy Act of 1974, (5 U.S.C. 552), as amended.
+
+DATES: This proposed action will be effective without further notice on 
+December 9, 2005 unless comments are received which result in a 
+contrary determination.
+
+ADDRESSES: Send comments to Senior Advisor, Defense Contract Audit 
+Agency, Information and Privacy, CM, 8725 John J. Kingman Road, Suite 
+2135, Fort Belvoir, VA 22060-6201.
+
+FOR FURTHER INFORMATION CONTACT: Ms. Debbie Teer at (703) 767-1002.
+
+SUPPLEMENTARY INFORMATION: The Defense Contract Audit Agency systems of 
+records notices subject to the Privacy Act of 1974, (5 U.S.C. 662a), as 
+amended, have been published in the Federal Register and are available 
+from the address above.
+
+[[Page 67996]]
+
+    The specific changes to the record system being amended are set 
+forth below followed by the notice, as amended, published in its 
+entirety. The proposed amendments are not within the purview of 
+subsection (r) of the Privacy Act of 1974, (5 U.S.C. 552a), as amended 
+which requires the submission of a new or altered system report.
+
+    Dated: November 1, 2005.
+L.M. Bynum,
+Alternate OSD Federal Register Liaison Officer, Department of Defense.
+RDCAA 590.8
+
+System name:
+    DCAA Management Information System (DMIS) (August 10, 2005, 70 FR 
+46495).
+
+Changes:
+* * * * *
+
+Category of Records in the system:
+    Delete the following: ``records containing reimbursable billing 
+information;''
+* * * * *
+RDCAA 590.8
+
+System name:
+    DCAA Management Information System (DMIS).
+
+System location:
+    Defense Contract Audit Agency, Information Technology Division, 
+System Design and Development Branch, 4075 Park Avenue, Memphis, TN 
+38111-7492.
+
+Categories of individuals covered by the system:
+    DCAA employees.
+
+Categories of records in the system:
+    Records relating to audit work performed in terms of hours expended 
+by individual employees, dollar amounts audited, exceptions reported, 
+and net savings to the government as a result of those exceptions; 
+records containing employee data; name, Social Security Number, time 
+and attendance, and work schedule; and records containing office 
+information, e.g., duty station address and telephone number.
+
+Authority for maintenance of the system:
+    5 U.S.C. 301, Departmental Regulations and E.O. 9397 (SSN).
+
+Purpose(s):
+    To provide managers, supervisors, and team members with timely, on-
+line information regarding audit requirements, programs, and 
+performance. To provide timekeepers with access to time and attendance 
+records.
+
+Routine uses of records maintained in the system, including categories 
+of users and the purposes of such uses:
+    In addition to those disclosures generally permitted under 5 U.S.C. 
+552a(b) of the Privacy Act, these records or information contained 
+therein may specifically be disclosed outside the DoD as a routine use 
+pursuant to 5 U.S.C. 552a(b)(3) as follows:
+    The DoD `Blanket Routine Uses' that appear at the beginning of 
+DCAA's compilation of systems of records notices apply to this system.
+    Policies and practices for storing, retrieving, accessing, 
+retaining, and disposing of records in the system:
+
+Storage:
+    Records are maintained in an on-line database and on magnetic tape 
+at secure offsite storage.
+
+Retrievability:
+    Records are retrieved by organizational levels, name of employee, 
+Social Security Number, office symbol, audit activity codes, or any 
+other combination of these identifiers.
+
+Safeguards:
+    Automated records are protected by restricted access procedures. 
+Access to records is strictly limited to authorized officials with a 
+bona fide need for the records.
+
+Retention and disposal:
+    Records are retained indefinitely.
+
+System manager(s) and address:
+    Chief, Information Technology Division, System Design and 
+Development Branch, Defense Contract Audit Agency, 4075 Park Avenue, 
+Memphis, TN 38111-7492.
+
+Notification procedure:
+    Individuals seeking to determine whether information about 
+themselves is contained in this system should address written inquiries 
+to the Chief, Information Technology Division, System Design and 
+Development Branch, Defense Contract Audit Agency, 4075 Park Avenue, 
+Memphis, TN 38111-7492.
+    Individuals must furnish name, Social Security Number, approximate 
+date of record, and geographic area in which consideration was 
+requested for record to be located and identified. Official mailing 
+addresses are published as an appendix to the DCAA's compilation of 
+systems notices.
+
+Record access procedures:
+    Individuals seaking access to information about themselves 
+contained in this system should address written inquiries to the Chief, 
+Information Technology Division, System Design and Development Branch, 
+Defense Contract Audit Agency, 4075 Park Avenue, Memphis, TN 38111-
+7492.
+    Individuals must furnish name, Social Security Number, approximate 
+date of record, and geographic area in which consideration was 
+requested for record to be located and identified.
+
+Contesting record procedures:
+    DCAA's rules for accessing records, for contesting contents and 
+appealing initial agency determinations are published in DCAA 
+Regulation 5410.10; 32 CFR part 317; or may be obtained from the system 
+manager.
+
+Record source categories:
+    Individual employees, supervisors, time keepers, audit reports and 
+working papers.
+
+Exemptions claimed for the system:
+    None.
+
+[FR Doc. 05-22070 Filed 11-8-05; 8:45 am]
+BILLING CODE 5001-06-M
+
+
+</pre></body>
+</html>

@@ -1,0 +1,186 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 137 (Monday, July 20, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 137 (Monday, July 20, 2026)]
+[Notices]
+[Pages 45314-45315]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-14605]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+TENNESSEE VALLEY AUTHORITY
+
+
+Generator Interconnection Programmatic Environmental Impact 
+Statement
+
+AGENCY: Tennessee Valley Authority.
+
+ACTION: Notice of intent.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The Tennessee Valley Authority (TVA) intends to prepare a 
+Programmatic Environmental Impact Statement (PEIS) to evaluate the 
+environmental effects of transmission system activities associated with 
+generator interconnection requests across TVA's Power Service Area 
+(PSA). The PEIS will establish a programmatic, bounded framework to 
+support efficient, consistent, and predictable National Environmental 
+Policy Act (NEPA) review for generator interconnection related 
+transmission actions conducted under TVA's Large Generator 
+Interconnection Procedures (LGIP), Small Generator Interconnection 
+Procedures (SGIP), and Expedited Resource Addition Study (ERAS). The 
+PEIS will also support tiered, site-specific reviews where needed.
+
+DATES: To ensure consideration, comments must be postmarked, emailed, 
+or submitted online no later than August 14, 2026.
+
+ADDRESSES: Written comments should be sent to Elizabeth Smith, NEPA 
+Specialist, Tennessee Valley Authority, 400 West Summit Hill Drive, WT 
+11B, Knoxville, Tennessee 37902. Comments may be submitted online at: 
+<a href="http://www.tva.gov/nepa">www.tva.gov/nepa</a>, or by email to <a href="/cdn-cgi/l/email-protection#127c776273526664733c757d64"><span class="__cf_email__" data-cfemail="a1cfc4d1c0e1d5d7c08fc6ced7">[email&#160;protected]</span></a>. Comments submitted 
+electronically are encouraged.
+
+FOR FURTHER INFORMATION CONTACT: Elizabeth Smith by email at 
+<a href="/cdn-cgi/l/email-protection#711f140110310507105f161e07"><span class="__cf_email__" data-cfemail="cca2a9bcad8cb8baade2aba3ba">[email&#160;protected]</span></a>, by phone at (865) 632-3053, or by mail at the address 
+above.
+
+SUPPLEMENTARY INFORMATION: The unique identification number is PEIS-
+455-00-000-1781540537. This notice is provided in accordance with TVA's 
+procedures for implementing the NEPA (18 CFR 1318). TVA is an agency 
+and instrumentality of the United States, established by an act of 
+Congress in 1933, to foster the social and economic welfare of the 
+people of the Tennessee Valley region and to promote the proper use and 
+conservation of the region's natural resources. One component of this 
+mission is the generation, transmission, and sale of reliable and 
+affordable electric energy.
+    TVA's generator interconnection processes have experienced a 
+substantial increase in volume as electricity demand accelerates due to 
+population growth and industrial development. TVA's new NEPA 
+regulations, adopted January 21, 2026 (18 CFR 1318.502), encourage the 
+use of programmatic environmental documents for geographically broad or 
+procedurally consistent actions. The proposed PEIS would provide 
+bounding environmental criteria, standardized screening tools such as 
+an Environmental Screening Checklist (ESC), and siting guidance to 
+streamline environmental reviews associated with interconnection-driven 
+transmission activities.
+    The PEIS will support timely decision-making related to new
+
+[[Page 45315]]
+
+construction, upgrades, maintenance, and modifications of transmission 
+lines, substations, switchyards, communication infrastructure, access 
+roads, and associated system components needed to interconnect new or 
+modified generation resources. TVA will consult with applicable 
+federal, state, and tribal authorities, and ensure compliance with 
+relevant environmental statutes including, but not limited to, the 
+Clean Water Act, Endangered Species Act, and National Historic 
+Preservation Act.
+
+Background
+
+    The Tennessee Valley region is experiencing rapidly growing 
+electricity demand driven by population increases, industrial 
+expansion, and high-load developments. Generator interconnection 
+requests--ranging from small, distributed resources to large utility-
+scale projects--require transmission system evaluations and, where 
+necessary, construction or modification of transmission assets. A map 
+showing TVA's power service territory is available on the project web 
+page at <a href="http://www.tva.gov/nepa">www.tva.gov/nepa</a>.
+    Traditionally, TVA conducts environmental reviews of 
+interconnection related transmission actions as connected actions to 
+each generation project. However, the consistent and predictable nature 
+of environmental impacts associated with these actions makes them 
+suitable for programmatic analysis. Implementation of a PEIS would 
+allow TVA to separate environmental review of interconnection driven 
+transmission actions from individual generation projects while ensuring 
+NEPA compliance through appropriate tiering.
+
+Project Purpose and Need
+
+    The purpose of the proposed action is to establish a programmatic 
+NEPA approach that supports TVA's statutory mission to provide 
+reliable, affordable electricity while meeting rising regional demand. 
+TVA needs an efficient pathway to evaluate transmission system impacts 
+associated with generator interconnections in a manner that reduces 
+schedule risk, improves process consistency, and maintains system 
+reliability within the TVA service territory.
+    A programmatic NEPA review is needed because generator 
+interconnection related transmission activities generally fall within 
+predictable environmental impact categories that can be bounded at a 
+programmatic level. This approach will support -near-term capacity 
+needs, enable accelerated interconnections of qualifying generation 
+projects, and ensure alignment with TVA's updated NEPA regulations.
+
+Preliminary Proposed Action and Alternatives
+
+    Under the No Action Alternative, TVA would continue to conduct 
+project specific NEPA reviews for all interconnection driven 
+transmission actions under LGIP, SGIP, and ERAS. No programmatic 
+framework or bounded criteria would be established. This alternative 
+serves as the baseline for comparison.
+    Under the Action Alternative, TVA proposes to prepare a PEIS that 
+evaluates typical environmental impacts associated with interconnection 
+driven transmission actions and establishes bounding criteria, 
+screening tools, and standardized siting requirements. Under this 
+alternative:
+    <bullet> TVA would utilize the ESC to assess each proposed 
+interconnection site and determine whether actions fall within the 
+programmatic bounds.
+    <bullet> Site-specific NEPA analyses would be completed only when a 
+proposed action exceeds bounding criteria or requires additional 
+consultation.
+    <bullet> The PEIS would cover new construction, modification, 
+operation, and maintenance of transmission lines, substations, 
+switchyards, communication systems, access roads, and underground 
+components.
+    <bullet> The approach would apply consistently across LGIP (>20 
+MW), SGIP (<=20 MW), and ERAS (targeted >20 MW).
+    This alternative is intended to streamline environmental decision-
+making, enhance schedule certainty, and support TVA's reliability 
+obligations while maintaining full compliance with NEPA and other 
+federal environmental requirements.
+
+Request for Identification of Potential Alternatives, Information, and 
+Analyses Relevant to the Proposed Action
+
+    TVA requests assistance with identifying any new potential 
+alternatives to the proposed action to be considered. TVA also requests 
+assistance with identifying any new potential impacts of the proposed 
+action, identifying the activity and the potential impact that should 
+be analyzed. Information interested parties possess which would assist 
+in the analysis of resources issues is also appreciated. TVA is 
+particularly interested in public input on other reasonable 
+alternatives that should be considered in the PEIS. The preliminary 
+identification of reasonable alternatives, information, and analyses 
+relevant to the proposed action in this notice is not meant to be 
+exhaustive or final.
+
+Public Participation
+
+    The public is invited to submit comments on the scope of this PEIS 
+no later than the date identified in the DATES section of this notice. 
+Federal, state, and local agencies and Native American Tribes are also 
+invited to provide comments. Information about this project is 
+available on the TVA web page at <a href="http://www.tva.gov/nepa">www.tva.gov/nepa</a>, including a link to 
+an online public comment page. Any comments received, including names 
+and addresses, will become part of the administrative record and will 
+be available for public inspection. Following analysis of the issues, 
+TVA will prepare the draft PEIS for public review and comment; expected 
+to be released fall of 2026. TVA anticipates the final PEIS in early 
+2027. In finalizing the PEIS and in making its final decision, TVA will 
+consider the comments that it receives during scoping.
+
+Dawn Booker,
+Senior Manager, NEPA Compliance.
+[FR Doc. 2026-14605 Filed 7-17-26; 8:45 am]
+BILLING CODE 8120-08-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

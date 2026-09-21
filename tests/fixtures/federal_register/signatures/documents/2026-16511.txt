@@ -1,0 +1,336 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 155 (Thursday, August 13, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 155 (Thursday, August 13, 2026)]
+[Rules and Regulations]
+[Pages 52241-52243]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-16511]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+ENVIRONMENTAL PROTECTION AGENCY
+
+40 CFR Part 52
+
+[EPA-R09-OAR-2025-3127; FRL-13098-02-R9]
+
+
+Determination of Attainment by the Attainment Date; 1997 Ozone 
+Standards; California; Coachella Valley
+
+AGENCY: Environmental Protection Agency (EPA).
+
+ACTION: Final rule.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The Environmental Protection Agency (EPA) is taking final 
+action to determine that the Riverside County (Coachella Valley), CA 
+1997 ozone ``Extreme'' nonattainment area attained the revoked 1997 
+ozone national ambient air quality standards (NAAQS) by its June 15, 
+2025 attainment date. This determination is based on quality-assured 
+and certified ambient air quality monitoring data from 2022 through 
+2024.
+
+DATES: This rule is effective September 14, 2026.
+
+ADDRESSES: The EPA has established a docket for this action under 
+Docket ID No. EPA-R09-OAR-2025-3127 at <a href="https://www.regulations.gov">https://www.regulations.gov</a>. All 
+documents in the docket are listed on the <a href="https://www.regulations.gov">https://www.regulations.gov</a> 
+website. Some information is not publicly available, e.g., Confidential 
+Business Information (CBI) or other information whose disclosure is 
+restricted by statute. Certain other material, such as copyrighted 
+material, is not placed on the internet and will be publicly available 
+only in hard copy form. Publicly available docket materials are 
+available through <a href="https://www.regulations.gov">https://www.regulations.gov</a>, or please contact the 
+person identified in the FOR FURTHER INFORMATION CONTACT section for 
+additional availability information. If you need assistance in a 
+language other than English or if you are a person with a disability 
+who needs a reasonable accommodation at no cost to you, please contact 
+the person identified in the FOR FURTHER INFORMATION CONTACT section.
+
+FOR FURTHER INFORMATION CONTACT: Tom Kelly, EPA Region IX, 75 Hawthorne 
+St., San Francisco, CA 94105, telephone number: (415) 972-3856, email 
+address: <a href="/cdn-cgi/l/email-protection#dbb0beb7b7a2f5afb3b4b6baa8ab9bbeabbaf5bcb4ad"><span class="__cf_email__" data-cfemail="fc9799909085d2889493919d8f8cbc998c9dd29b938a">[email&#160;protected]</span></a>.
+
+SUPPLEMENTARY INFORMATION: Throughout this document, ``we,'' ``us,'' 
+and ``our'' refer to the EPA.
+
+Table of Contents
+
+I. Proposed Action
+II. Public Comments and EPA Responses
+III. EPA Action
+IV. Statutory and Executive Order Reviews
+
+I. Proposed Action
+
+    On January 15, 2026, the EPA proposed to determine that the 
+Coachella Valley attained the revoked 1997 ozone national ambient air 
+quality standards (NAAQS) of 0.08 parts per million (ppm) by its June 
+15, 2025 Extreme area attainment date.\1\ The EPA proposed these 
+findings to fulfill our statutory obligation under Clean Air Act (CAA) 
+section 181(b)(2) to determine whether an area has attained the 
+relevant standards by the applicable attainment date. Previously, the 
+EPA granted the nonattainment area a 1-year extension of the attainment 
+date from June 15, 2024, to June 15, 2025.\2\
+---------------------------------------------------------------------------
+
+    \1\ 91 FR 1732 (Jan. 15, 2026).
+    \2\ 90 FR 42844 (Sept. 5, 2025). This action relied upon 
+excluded wildfire-driven exceedances of the 1997 ozone NAAQS at the 
+Palms Springs--Fire Station monitoring site on July 14-15, 2023, 
+under the Exceptional Events Rule.
+
+          Table 1--1997 Ozone NAAQS Extreme Area Action Summary
+------------------------------------------------------------------------
+                                       2022-2024     1997 NAAQS attained
+   1997 NAAQS nonattainment area     design value      by the extreme
+                                         (ppm)        attainment date?
+------------------------------------------------------------------------
+Coachella Valley..................           0.084  Attained.
+------------------------------------------------------------------------
+
+
+[[Page 52242]]
+
+II. Public Comments and EPA Responses
+
+    The EPA's proposed action provided a 30-day public comment period. 
+During this period, we received comments from the Cabazon Band of 
+Cahuilla Indians (CBCI). In their comment letter, the CBCI requested 
+government-to-government consultation with the EPA on our proposed 
+action prior to taking final action.
+    The EPA held a pre-consultation meeting with the CBCI after the 
+close of the comment period and discussed the potential impacts of the 
+proposed action.\3\ Following this meeting, the CBCI notified the EPA 
+they were no longer seeking formal consultation with the EPA.\4\
+---------------------------------------------------------------------------
+
+    \3\ See a summary of the discussion in the docket for this 
+action (Docket No. EPA-R09-OAR-2025-3127-0050).
+    \4\ Email dated April 15, 2026, from Daniel Lopez-Tirado (CBCI) 
+to Kathryn Harper (EPA), Subject ``Re: Pre-Consultation Meeting.''
+---------------------------------------------------------------------------
+
+    Comment 1: The CBCI expressed concern that the EPA's determination 
+would allow non-Tribal areas to increase allowable emissions thresholds 
+for stationary sources. The CBCI were specifically concerned about less 
+stringent permitting requirements for non-Tribal land due to the higher 
+classification of the Tribal land. The CBCI also questioned the EPA's 
+evaluation of this indirect impact on the Tribes of the Coachella 
+Valley and asked the EPA to account for this regulatory asymmetry.
+    Response to Comment 1: The EPA's determination of attainment by the 
+attainment date does not change the nonattainment classification for 
+any Tribal or non-Tribal areas of the Coachella Valley for the 1997 
+ozone NAAQS.
+    If the EPA were to finalize approval of a future maintenance plan 
+and redesignation to attainment for the Coachella Valley for the 1997 
+ozone NAAQS, the area would be redesignated from nonattainment to 
+attainment, which would change the area's major source thresholds for 
+permitting for the 1997 ozone standard. The EPA has not received a 
+redesignation request and maintenance plan for the Coachella Valley 
+1997 ozone nonattainment area and is not taking such redesignation 
+action at this time. We further note that any future redesignation to 
+attainment for the 1997 ozone NAAQS would have little practical 
+consequence on permitting thresholds in the Coachella Valley because 
+the Coachella Valley would remain Extreme for the 2008 ozone NAAQS. 
+Thus, applicable higher permitting thresholds would continue to apply.
+    As we stated in our proposal, the attainment finding would relieve 
+the area's CAA section 182(c)(9) and 172(c)(9) requirements for 
+contingency measures for the 1997 ozone NAAQS, which requires 
+contingent emission control measures in the event a nonattainment area 
+fails to attain the NAAQS by an applicable attainment date. In 
+addition, the area is not required to implement CAA section 185, which 
+calls for the collection of penalty fees in nonattainment areas that 
+fail to attain a specific ozone NAAQS by the applicable attainment 
+date.
+    Comment 2: The CBCI noted that they operate an air monitor along 
+with the Twenty-Nine Palms Band of Mission Indians, and the CBCI 
+adheres to Federal Reference Methods and Federal Equivalent Methods in 
+operation of the ozone monitor. They asserted that the EPA should 
+consider formally incorporating or validating Tribally-affiliated 
+monitoring data to improve representativeness and confidence in future 
+determinations.
+    Response to Comment 2: While 40 CFR part 58, appendix D establishes 
+multiple monitoring objectives, one of these objectives is for the 
+establishment of required ambient air quality monitoring stations that 
+are used to determine compliance with the NAAQS. For this action, the 
+EPA relies only on complete, quality-assured, and certified ambient 
+monitoring data from approved regulatory State/Local Air Monitoring 
+Stations (SLAMS) within the boundaries of Coachella Valley, in 
+accordance with 40 CFR part 58 (see table 1 of this document). The CBCI 
+monitor referenced by the Tribe is not an approved regulatory SLAMS 
+site; therefore, data from the Tribe's monitor were not used for this 
+attainment determination. Though not applicable for comparison to the 
+NAAQS, the CBCI monitor measured ozone concentrations below the 1997 
+ozone NAAQS from 2022-2024.\5\ Although the EPA only considers data 
+from regulatory monitors for regulatory purposes, we acknowledge and 
+appreciate the value of the non-regulatory monitors in providing timely 
+information for <a href="http://AirNow.gov">AirNow.gov</a> and public information purposes.
+---------------------------------------------------------------------------
+
+    \5\ Ambient ozone concentrations at the CBCI monitor were 
+reported January 2022 to November 2023.
+---------------------------------------------------------------------------
+
+    Comment 3: The CBCI asserted that the proposed rule relied on 
+deficient monitors with a constrained timeframe, that the Indio-
+Armistad High School monitor did not collect data from 2022 or 2023, 
+and that two more years of monitoring are required to create a valid 
+three-year design value.
+    Response to Comment 3: Attainment determinations are based on 
+complete, quality-assured, and certified ambient ozone data collected 
+under 40 CFR part 58. For ozone, a design value is determined from the 
+3-year average (i.e., 2022-2024) of the annual fourth-highest daily 
+maximum 8-hour concentrations, calculated in accordance with 40 CFR 
+part 50, appendix H, and using quality-assured and certified data that 
+meet the requirements of that appendix.
+    Within the bounds of the Coachella Valley there are two active 
+ozone SLAMS monitors, Indio-Amistad (Air Quality System (AQS) ID: 06-
+065-2007) and Palm Springs (AQS ID: 06-065-5001). In this case, the 
+Indio-Amistad monitoring site did not produce a valid design value for 
+the 2024 design value period (data years 2022-2024) because the monitor 
+was relocated in 2022-2023 and did not collect valid data during the 
+relocation. However, the Palm Springs monitor, historically the highest 
+concentration site in the nonattainment area, had complete, quality-
+assured, and certified data and an attaining design value. As we stated 
+in our proposal, the Indio-Amistad monitor has historically recorded 
+lower concentrations than Palm Springs,\6\ thus a valid attaining 
+design value at the Palm Springs monitor is sufficient to support this 
+attainment determination despite the absence of a valid design value at 
+Indio-Amistad.
+---------------------------------------------------------------------------
+
+    \6\ 91 FR 1732, 1736.
+---------------------------------------------------------------------------
+
+    Comment 4: The CBCI suggested that the South Coast Air Quality 
+Management District could not provide regulatory data to the EPA 
+because the District is not on the list of regulators that correlate 
+emissions data with applicable emissions limitations per 40 CFR 52.224.
+    Response to Comment 4: The EPA does not agree that 40 CFR 52.224 
+precludes our reliance on emissions data from the South Coast Air 
+Quality Management District for this action. The EPA promulgated 40 CFR 
+52.224 in response to certain state implementation plans (SIPs) \7\ 
+that contained confidentiality clauses that may have caused emission 
+data to be withheld from the public, in violation of CAA 
+110(a)(2)(F)(iii).\8\ All of California,
+
+[[Page 52243]]
+
+including the South Coast Air Quality Management District, have since 
+addressed the requirements of CAA 110(a)(2)(F)(iii) for many NAAQS, and 
+the EPA has approved the California SIP as addressing both requirements 
+of CAA 110(a)(2)(F)(iii) for the 1997 ozone NAAQS.\9\
+---------------------------------------------------------------------------
+
+    \7\ SIPs are collections of regulations and documents used by a 
+state, Tribe, or local air district to implement, maintain, and 
+enforce the NAAQS and fulfill other CAA requirements.
+    \8\ See 40 FR 55326 (Nov. 28, 1975). CAA 110(a)(2)(F)(iii) 
+contains two conditions: (1) that periodic reports on the nature and 
+amounts of emissions and emissions-related data be correlated with 
+the relevant emission limitations, and (2) that these reports be 
+made available at reasonable times for public inspection.
+    \9\ See 81 FR 18766 (Apr. 1, 2016). See also 79 FR 63350 (Oct. 
+23, 2014).
+---------------------------------------------------------------------------
+
+III. EPA Action
+
+    For the reasons discussed in the proposed rule and this document, 
+we are finalizing our determination that the Coachella Valley has 
+attained the revoked 1997 ozone NAAQS by its June 15, 2025 attainment 
+date, based on quality-assured and certified ambient air quality 
+monitoring data from 2022 through 2024.
+
+IV. Statutory and Executive Order Reviews
+
+    This action:
+    <bullet> Is not a significant regulatory action subject to review 
+by the Office of Management and Budget under Executive Order 12866 (58 
+FR 51735, October 4, 1993);
+    <bullet> Is not an Executive Order 14192 (90 FR 9065, February 6, 
+2025) regulatory action because this action is not significant under 
+Executive Order 12866;
+    <bullet> Does not impose an information collection burden under the 
+provisions of the Paperwork Reduction Act (44 U.S.C. 3501 et seq.);
+    <bullet> Is certified as not having a significant economic impact 
+on a substantial number of small entities under the Regulatory 
+Flexibility Act (5 U.S.C. 601 et seq.);
+    <bullet> Does not contain any unfunded mandate or significantly or 
+uniquely affect small governments, as described in the Unfunded 
+Mandates Reform Act of 1995 (Pub. L. 104-4);
+    <bullet> Does not have federalism implications as specified in 
+Executive Order 13132 (64 FR 43255, August 10, 1999);
+    <bullet> Is not subject to Executive Order 13045 (62 FR 19885, 
+April 23, 1997) because it approves a state program;
+    <bullet> Is not a significant regulatory action subject to 
+Executive Order 13211 (66 FR 28355, May 22, 2001); and
+    <bullet> Is not subject to requirements of section 12(d) of the 
+National Technology Transfer and Advancement Act of 1995 (15 U.S.C. 272 
+note) because application of those requirements would be inconsistent 
+with the CAA.
+    This action is subject to the Congressional Review Act (CRA), and 
+the EPA will submit a rule report to each House of the Congress and to 
+the Comptroller General of the United States. This action is not a 
+``major rule'' as defined by 5 U.S.C. 804(2).
+    Under section 307(b)(1) of the CAA, petitions for judicial review 
+of this action must be filed in the United States Court of Appeals for 
+the appropriate circuit by October 13, 2026. Filing a petition for 
+reconsideration by the Administrator of this final rule does not affect 
+the finality of this action for the purposes of judicial review, nor 
+does it extend the time within which a petition for judicial review may 
+be filed and shall not postpone the effectiveness of such rule or 
+action. This action may not be challenged later in proceedings to 
+enforce its requirements (see section 307(b)(2)).
+
+List of Subjects in 40 CFR Part 52
+
+    Environmental protection, Air pollution control, Incorporation by 
+reference, Intergovernmental relations, Nitrogen oxides, Ozone, 
+Reporting and recordkeeping requirements, Volatile organic compounds.
+
+    Dated: July 31, 2026.
+Michael Martucci,
+Acting Regional Administrator, Region IX.
+
+    For the reasons stated in the preamble, the EPA amends 40 CFR part 
+52 as follows:
+
+PART 52--APPROVAL AND PROMULGATION OF IMPLEMENTATION PLANS
+
+0
+1. The authority citation for part 52 continues to read as follows:
+
+    Authority:  42 U.S.C. 7401 et seq.
+
+Subpart F--California
+
+0
+2. Section 52.282 is amended by adding paragraph (r) to read as 
+follows:
+
+
+Sec.  52.282  Control strategy and regulations: Ozone.
+
+* * * * *
+    (r) Determinations of attainment by the attainment date. Effective 
+September 14, 2026. The EPA has determined that the Riverside County 
+(Coachella Valley) 1997 ozone Extreme nonattainment area has attained 
+the 1997 ozone national ambient air quality standards (NAAQS) by the 
+applicable attainment date of June 15, 2025, based upon complete, 
+quality-assured and certified data for the calendar years 2022-2024.
+
+[FR Doc. 2026-16511 Filed 8-12-26; 8:45 am]
+BILLING CODE 6560-50-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

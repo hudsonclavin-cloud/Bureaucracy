@@ -1,0 +1,324 @@
+<html>
+<head>
+<title>Federal Register, Volume 90 Issue 62 (Wednesday, April 2, 2025)</title>
+</head>
+<body><pre>
+[Federal Register Volume 90, Number 62 (Wednesday, April 2, 2025)]
+[Rules and Regulations]
+[Pages 14412-14414]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2025-05504]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+DEPARTMENT OF THE TREASURY
+
+Office of Financial Research
+
+12 CFR Part 1610
+
+
+Ongoing Data Collection of Non-Centrally Cleared Bilateral 
+Transactions in the U.S. Repurchase Agreement Market
+
+AGENCY: Office of Financial Research, Treasury.
+
+ACTION: Final rule.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The Office of Financial Research (the ``Office'') within the 
+U.S. Department of the Treasury (``Treasury'') is extending the 
+compliance date for certain financial companies to report to the Office 
+certain non-centrally cleared bilateral transactions in the U.S. 
+repurchase agreement (``repo'') market. This data collection requires 
+daily reporting to the Office by certain brokers, dealers, and other 
+financial companies with large exposures to non-centrally cleared 
+bilateral repo (``NCCBR'') transactions.
+
+DATES: 
+    Effective date: The effective date for this rule is April 1, 2025.
+    Compliance dates: The compliance date for 12 CFR 1610.11(e)(2) is 
+extended from April 1, 2025 to June 30, 2025, and the compliance date 
+for 12 CFR 1610.11(e)(4) is extended from 270 to 360 days.
+
+FOR FURTHER INFORMATION CONTACT: Michael Passante, Chief Counsel, 
+Office of Financial Research, (202) 594-9658, 
+<a href="/cdn-cgi/l/email-protection#96fbfff5fef7f3fab8e6f7e5e5f7f8e2f3d6f9f0e4b8e2e4f3f7e5e3e4efb8f1f9e0"><span class="__cf_email__" data-cfemail="82efebe1eae3e7eeacf2e3f1f1e3ecf6e7c2ede4f0acf6f0e7e3f1f7f0fbace5edf4">[email&#160;protected]</span></a>; Sriram Rajan, Associate Director of 
+Financial Markets, Office of Financial Research, (202) 594-9658, 
+<a href="/cdn-cgi/l/email-protection#ddaeafb4afbcb0f3afbcb7bcb39db2bbaff3a9afb8bcaea8afa4f3bab2ab"><span class="__cf_email__" data-cfemail="8efdfce7fcefe3a0fcefe4efe0cee1e8fca0fafcebeffdfbfcf7a0e9e1f8">[email&#160;protected]</span></a>; or Laura Miller Craig, Senior Advisor, 
+Office of Financial Research, (202) 594-9658, 
+<a href="/cdn-cgi/l/email-protection#3b575a4e495a1558495a525c7b545d49154f495e5a484e4942155c544d"><span class="__cf_email__" data-cfemail="513d302423307f3223303836113e37237f25233430222423287f363e27">[email&#160;protected]</span></a>.
+
+SUPPLEMENTARY INFORMATION:
+
+I. Discussion
+
+    On May 6, 2024, the Office published a final regulation for a data 
+collection of NCCBR transactions in the U.S. repo market (``Final 
+Rule''), with an effective date of July 5, 2024 and codified at 12 CFR 
+1610.11.\1\ That collection requires daily reporting to the Office by 
+certain brokers, dealers, and other financial companies with large 
+exposures to NCCBR transactions. The compliance date for certain 
+securities brokers, securities dealers, government securities brokers, 
+and government securities dealers occurred on December 2, 2024. These 
+data are being used by the Office to fulfill its responsibilities under 
+title I of the Dodd-Frank Wall Street Reform and Consumer Protection 
+Act, including support of the Financial Stability Oversight Council 
+(``Council'') and Council member agencies by facilitating financial 
+stability monitoring and research.
+---------------------------------------------------------------------------
+
+    \1\ Department of the Treasury. Ongoing Data Collection of Non-
+centrally Cleared Bilateral Transactions in the U.S. Repurchase 
+Agreement Market. Final Rule, 89 FR 37091 (May 6, 2024).
+---------------------------------------------------------------------------
+
+    As explained in the Final Rule, the purpose of the collection is to 
+fill a critical gap in regulators' information about the overall repo 
+market by collecting data on the NCCBR segment, the last segment of the 
+repo market for which regulators have not had a transaction-level data 
+source. Without the collection, regulators would have limited insight 
+into risks in this segment and across segments. The reporting structure 
+of the Final Rule was carefully developed to ensure that no significant 
+data gap remained in repo markets once the rule was fully implemented.
+    In the Final Rule, reporting is required by certain financial 
+companies (as defined in the Final Rule) that fall within either of two 
+categories: \2\
+---------------------------------------------------------------------------
+
+    \2\ 89 FR 37097 (May 6, 2024).
+---------------------------------------------------------------------------
+
+    <bullet> Category 1: a securities broker, securities dealer, 
+government securities broker, or government securities dealer whose 
+average daily outstanding commitments to borrow cash and extend 
+guarantees in NCCBR transactions with counterparties over all business 
+days during the prior calendar quarter is at least $10 billion, and
+    <bullet> Category 2: any financial company that is not a securities 
+broker, securities dealer, government securities broker, or government 
+securities dealer and that has over $1 billion in assets or assets 
+under management, whose average daily outstanding commitments to borrow 
+cash and extend guarantees in NCCBR transactions, including commitments 
+of all funds for which the company serves as an investment adviser, 
+with counterparties that are not securities brokers, securities 
+dealers, government securities brokers, or government securities 
+dealers over all business days during the prior calendar quarter is at 
+least $10 billion.
+    Category 2 is structured to cover other financial companies with 
+large daily outstanding commitments to entities that are not securities 
+brokers, securities dealers, government securities brokers, or 
+government securities dealers to limit duplicative reporting.
+    In the Final Rule, the Office established staggered compliance 
+dates for Category 1 and Category 2 covered reporters, with an 
+additional 120 days for Category 2 reporters compared to Category 1 
+covered reporters. The Final Rule established a compliance date of 150 
+days after the effective date of the Final Rule for Category 1 covered 
+reporters and a compliance date of 270 days after the effective date of 
+the Final Rule for Category 2 covered reporters. These timelines were 
+extensions from the proposed 90 days for both Category 1 and Category 
+2. The Office extended the compliance dates and added the staggered 
+timeline for Category 2 covered reporters based on comments received in 
+response to its proposed rule (the ``proposed rule'').\3\
+---------------------------------------------------------------------------
+
+    \3\ Department of the Treasury. Collection of Noncentrally 
+Cleared Bilateral Transactions in the U.S. Repurchase Agreement 
+Market. Proposed rule, 88 FR 1154 (January 9, 2023).
+---------------------------------------------------------------------------
+
+    Since the Final Rule was adopted, the Office has worked with market 
+participants, including both Category 1 covered reporters and potential 
+Category 2 covered reporters, to address operational questions related 
+to establishing connectivity to the OFR's Data Collection Utility and 
+otherwise preparing for reporting to the Office's data collection 
+infrastructure. Many potential Category 2 covered reporters have 
+connected to the Data Collection Utility and have submitted test 
+submissions files. As part of these efforts, the OFR has become aware 
+that some potential Category 2 covered reporters believe that an 
+extension to the compliance date for Category 2 covered reporters is 
+warranted. Trade associations that represent certain market 
+participants that identify themselves as potential Category 2 covered 
+reporters have described challenges that their members have encountered 
+in the process of preparing
+
+[[Page 14413]]
+
+for reporting under the Final Rule and have requested extensions to the 
+compliance date ranging from three months to over a year.
+    Among the challenges cited by these entities is the automation of 
+reporting processes for financial companies that are not always 
+accustomed to transaction-reporting requirements and to the development 
+of systems that both capture and report trade information. Other 
+concerns noted by potential Category 2 covered reporters include 
+challenges with respect to computing reporting thresholds and a 
+perceived limited number of third-party service providers to submit 
+data on their behalf.
+    The Office had acknowledged in its Final Rule that Category 2 
+reporters may need to establish or adapt their infrastructure to comply 
+with their reporting obligations. As a result, based on comment 
+letters, the Office extended the initial compliance date materially 
+compared to that set forth in its proposed rule (an increase from 90 
+days to 270 days) and introduced an option but not a requirement to use 
+a third-party service provider to submit data on behalf of a covered 
+reporter. Since the publication of the Final Rule, trade associations 
+approached the Office with the challenges mentioned above.
+    The compliance date schedule established in the Final Rule sought 
+to strike a balance between respecting the resources necessary for 
+financial companies to establish or adapt reporting infrastructure 
+against the benefit of the Council's monitoring of emerging threats to 
+the stability of the U.S. financial system. The collection of 
+information on the NCCBR segment continues to be critical to 
+understanding potential financial stability risks. Reporting by 
+Category 1 covered reporters pursuant to the Final Rule has already 
+started, and the Office has begun analyzing these data to support the 
+Council.\4\ Category 2 covered reporters are, as explained in more 
+detail in the Final Rule and above, financial companies with 
+outstanding commitments of greater than $10 billion in NCCBR 
+transactions with financial companies other than securities brokers, 
+securities dealers, government securities brokers, and government 
+securities dealers. Accordingly, transaction-level data reported by 
+Category 2 covered reporters represents substantial incremental 
+coverage of this segment of the repo market, including at least $10 
+billion in commitments from each Category 2 covered reporter that would 
+not be included in transaction-level data reported by Category 1 
+covered reporters. For the reasons discussed in the Final Rule, 
+including coverage of potential future changes in repo market structure 
+such as peer-to-peer repo that bypasses Category 1 financial companies, 
+the benefits of reporting by Category 2 firms remain significant, and 
+the absence of reporting by these firms would leave a crucial gap in 
+the ability of the Council and its member agencies to effectively 
+monitor financial stability risks in this market.
+---------------------------------------------------------------------------
+
+    \4\ See Council, Readout of Meeting on March 20, 2025, available 
+at <a href="https://home.treasury.gov/policy-issues/financial-markets-financial-institutions-and-fiscal-service/fsoc/council-meetings">https://home.treasury.gov/policy-issues/financial-markets-financial-institutions-and-fiscal-service/fsoc/council-meetings</a>.
+---------------------------------------------------------------------------
+
+    The Office has considered the above-noted concerns and also finds 
+that if potential Category 2 covered reporters have not developed 
+adequate reporting systems by the compliance date, such an outcome 
+could affect the quality of any data reported. It believes that a 
+limited extension of the compliance date for Category 2 covered 
+reporters is appropriate. Based on communications with trade 
+associations, which gave qualitative descriptions of the challenges 
+faced by potential Category 2 covered reporters, and the quantitative 
+data and information otherwise available to the Office at this time, 
+the Office does not believe that an extension amounting to the 
+lengthier periods requested is warranted. In addition, in light of the 
+relative proximity between publication of this extension and the 
+Category 2 compliance date originally established, the Office believes 
+that any extension should apply equally to those financial companies 
+that qualified as Category 2 covered reporters as of the effective date 
+of the Final Rule as well as those that qualified or will qualify after 
+such date.
+    Accordingly, the Office believes that a 90-day extension of the 
+Category 2 compliance date for financial companies that qualified as 
+Category 2 covered reporters as of the effective date of the Final 
+Rule, as well as those that qualified or will qualify after such date, 
+is appropriate. The Final Rule's effective date of July 5, 2024 remains 
+unchanged.
+
+II. Administrative Law Matters
+
+II(a). Paperwork Reduction Act
+
+    The information collection contained in the final rule has been 
+reviewed and approved by the Office of Management and Budget (``OMB'') 
+under OMB Control No. 1505-0279. In accordance with the requirements of 
+the Paperwork Reduction Act (44 U.S.C. 3501 et seq.), the Office may 
+not conduct or sponsor, and a covered reporter is not required to 
+respond to, an information collection unless it displays a currently 
+valid OMB control number.
+
+II(b). Administrative Procedure Act
+
+    The Administrative Procedure Act (``APA'') generally requires an 
+agency to publish notice of a rulemaking in the Federal Register, 
+provide an opportunity for public comment, and provide a 30-day delayed 
+effective date for a final rule.\5\ The requirements do not apply, 
+however, if the agency ``for good cause finds . . . that notice and 
+public procedure and impracticable, unnecessary, or contrary to the 
+public interest.'' \6\ The Office finds that, for good cause and the 
+reasons cited above, including the further development of systems to 
+effect the required reporting under the Final Rule, notice and 
+solicitation of comment regarding the extension of the compliance date 
+for Category 2 covered reporters in the Final Rule is impracticable, 
+unnecessary, or contrary to the public interest.
+---------------------------------------------------------------------------
+
+    \5\ 5 U.S.C. 553(b)(B) and (d).
+    \6\ See id.
+---------------------------------------------------------------------------
+
+II(c). Regulatory Flexibility Act
+
+    Because no notice of proposed rulemaking is required for this final 
+rule, the provisions of the Regulatory Flexibility Act (5 U.S.C. 601 et 
+seq.) do not apply.
+
+II(d). Congressional Review Act
+
+    This rule is not a major rule pursuant to the Congressional Review 
+Act (CRA), 5 U.S.C. 801 et seq.
+
+List of Subjects in 12 CFR Part 1610
+
+    Banks, Banking, Confidential business information, Securities.
+
+    For the reasons stated in the preamble, the Office of Financial 
+Research amends 12 CFR part 1610 as follows:
+
+PART 1610--REGULATORY DATA COLLECTIONS
+
+0
+1. The authority citation for part 1610 continues to read as follows:
+
+    Authority: 12 U.S.C. 5343 and 5344.
+
+
+0
+2. Revise Sec.  1610.11(e) to read as follows:
+
+
+Sec.  1610.11   Non-centrally Cleared Bilateral Repurchase Agreement 
+Data.
+
+* * * * *
+    (e) Compliance date. (1) Any financial company that meets the 
+criteria set forth in paragraph (b)(2)(i) of this section as of July 5, 
+2024 shall comply with the reporting requirements pursuant to this 
+section 150 days after July 5, 2024. Any such covered reporter's first 
+submission shall be submitted on the first business day after such 
+compliance date.
+
+[[Page 14414]]
+
+    (2) Any financial company that meets the criteria set forth in 
+paragraph (b)(2)(ii) of this section as of July 5, 2024 shall comply 
+with the reporting requirements pursuant to this section 360 days after 
+July 5, 2024. Any such covered reporter's first submission shall be 
+submitted on the first business day after such compliance date.
+    (3) Any financial company not described in paragraph (e)(1) or (2) 
+of this section that meets the criteria set forth in paragraph 
+(b)(2)(i) of this section after July 5, 2024 shall comply with the 
+reporting requirements pursuant to this section 150 days after the last 
+day of the calendar quarter in which such financial company becomes a 
+covered reporter.
+    (4) Any financial company not described in paragraph (e)(1) or (2) 
+of this section that meets the criteria set forth in paragraph 
+(b)(2)(ii) of this section after July 5, 2024 shall comply with the 
+reporting requirements pursuant to this section 360 days after the last 
+day of the calendar quarter in which such financial company becomes a 
+covered reporter.
+
+James D. Martin,
+Acting Director.
+[FR Doc. 2025-05504 Filed 4-1-25; 8:45 am]
+BILLING CODE 4810-AK-P-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

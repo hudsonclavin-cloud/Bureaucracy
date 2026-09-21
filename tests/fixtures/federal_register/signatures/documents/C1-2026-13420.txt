@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 178 (Wednesday, September 16, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 178 (Wednesday, September 16, 2026)]
+[Rules and Regulations]
+[Page 58593]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: C1-2026-13420]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+SOCIAL SECURITY ADMINISTRATION
+
+20 CFR Parts 404 and 416
+
+[Docket No. SSA-2019-0013]
+RIN 0960-AI43
+
+
+Revised Medical Criteria for Evaluating Cardiovascular Disorders
+
+Correction
+
+    In rule document 2026-13420 beginning on page 40804 in the issue of 
+Thursday, July 2, 2026, make the following correction:
+
+Appendix 1 to Subpart P of Part 404 [Corrected]
+
+    On page 40837, in Appendix 1 to subpart P of part 404, in the 
+second column, in the third row, ``How do we evaluate ECG evidence?'' 
+should read ``2. How do we evaluate ECG evidence?''
+
+[FR Doc. C1-2026-13420 Filed 9-15-26; 8:45 am]
+BILLING CODE 0099-10-D
+
+
+</pre></body>
+</html>

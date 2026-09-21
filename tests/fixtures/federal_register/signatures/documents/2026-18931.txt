@@ -1,0 +1,530 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 178 (Wednesday, September 16, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 178 (Wednesday, September 16, 2026)]
+[Notices]
+[Pages 58720-58723]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-18931]
+
+
+
+[[Page 58720]]
+
+-----------------------------------------------------------------------
+
+SECURITIES AND EXCHANGE COMMISSION
+
+[Release No. 34-106337; File No. SR-Phlx-2026-55]
+
+
+Self-Regulatory Organizations; Nasdaq PHLX LLC; Notice of Filing 
+and Immediate Effectiveness of Proposed Rule Change To Introduce 
+Conforming Changes to Nasdaq Phlx Rules in Connection With the 
+Establishment of Fees for Nasdaq TotalView Plus and Nasdaq Basic Plus
+
+DATES: September 11, 2026.
+    Pursuant to Section 19(b)(1) of the Securities Exchange Act of 1934 
+(``Act''),\1\ and Rule 19b-4 thereunder,\2\ notice is hereby given that 
+on August 31, 2026, Nasdaq PHLX LLC (``Phlx'' or ``Exchange'') filed 
+with the Securities and Exchange Commission (``SEC'' or ``Commission'') 
+the proposed rule change as described in Items I, II, and III below, 
+which Items have been prepared by the Exchange. The Commission is 
+publishing this notice to solicit comments on the proposed rule change 
+from interested persons.
+---------------------------------------------------------------------------
+
+    \1\ 15 U.S.C. 78s(b)(1).
+    \2\ 17 CFR 240.19b-4.
+---------------------------------------------------------------------------
+
+I. Self-Regulatory Organization's Statement of the Terms of Substance 
+of the Proposed Rule Change
+
+    The Exchange proposes to introduce conforming changes to Phlx rules 
+in connection with the establishment of fees for Nasdaq TotalView Plus 
+and Nasdaq Basic Plus by the Nasdaq Stock Exchange. Specifically, the 
+Exchange proposes to amend the Exchange's fees at (i) Equity 7, Section 
+3, Market Data Distributor Fees to waive the market data distributor 
+fees for PSX TotalView for firms that consolidate it with certain other 
+feeds for external redistribution; (ii) Equity 7, Section 3, PSX 
+TotalView to waive the fees for firms purchasing PSX TotalView Plus; 
+(iii) Equity 7, Section 3, PSX Last Sale and Nasdaq Last Sale Plus Data 
+Feeds to reflect the addition of Nasdaq Basic Plus as a product 
+offering subject to a consolidation fee; and (iv) Equity 7, Section 3, 
+PSX BBO Feeds to clarify that firms that receive Nasdaq Last Sale Plus 
+or Nasdaq Basic Plus or both shall pay monthly administrative fees and 
+data consolidation fees, each as described further below.
+    The text of the proposed rule change is available on the Exchange's 
+website at <a href="https://listingcenter.nasdaq.com/rulebook/phlx/rulefilings">https://listingcenter.nasdaq.com/rulebook/phlx/rulefilings</a>, 
+and at the principal office of the Exchange.
+
+II. Self-Regulatory Organization's Statement of the Purpose of, and 
+Statutory Basis for, the Proposed Rule Change
+
+    In its filing with the Commission, the Exchange included statements 
+concerning the purpose of and basis for the proposed rule change and 
+discussed any comments it received on the proposed rule change. The 
+text of these statements may be examined at the places specified in 
+Item IV below. The Exchange has prepared summaries, set forth in 
+sections A, B, and C below, of the most significant aspects of such 
+statements.
+
+A. Self-Regulatory Organization's Statement of the Purpose of, and 
+Statutory Basis for, the Proposed Rule Change
+
+1. Purpose
+    The purpose of the proposed rule change is to introduce conforming 
+changes to Phlx rules in connection with the establishment of fees for 
+Nasdaq TotalView Plus and Nasdaq Basic Plus by the Nasdaq Stock 
+Exchange. Specifically, the Exchange proposes to amend fees at (i) 
+Equity 7, Section 3, Market Data Distributor Fees to waive the market 
+data distributor fees for PSX TotalView for firms that consolidate it 
+with certain other feeds for external redistribution; (ii) Equity 7, 
+Section 3, PSX TotalView to waive the fees for firms purchasing PSX 
+TotalView Plus; (iii) Equity 7, Section 3, PSX Last Sale and Nasdaq 
+Last Sale Plus Data Feeds to reflect the addition of Nasdaq Basic Plus 
+as a product offering subject to a consolidation fee; and (iv) Equity 
+7, Section 3, PSX BBO Feeds to clarify that firms that receive Nasdaq 
+Last Sale Plus or Nasdaq Basic Plus or both shall pay monthly 
+administrative fees and data consolidation fees, each as described 
+further below.
+Nasdaq TotalView Plus and Nasdaq Basic Plus Fees
+    The Nasdaq Stock Market LLC (``Nasdaq'') recently introduced two 
+new products, Nasdaq TotalView Plus and Nasdaq Basic Plus,\3\ which 
+consolidate Depth-of-Book \4\ and Top-of-Book \5\ information currently 
+disseminated by Nasdaq, Nasdaq Texas, LLC (``Nasdaq Texas''), and the 
+Exchange. Nasdaq has submitted to the Commission a fee filing designed 
+to set fees for Nasdaq TotalView Plus and Nasdaq Basic Plus at or below 
+fees currently charged for the Depth-of-Book and Top-of-Book products 
+offered by Nasdaq, Nasdaq Texas, and Phlx. This, together with the 
+networking and connectivity savings inherent in lowering the number of 
+data feeds, is designed to maximize the distribution of consolidated 
+data feeds to investors throughout the 23 hour, 5 days per week 
+schedule set to begin in December 2026.
+---------------------------------------------------------------------------
+
+    \3\ See Securities Exchange Act Release No. 105997 (July 28, 
+2026), 91 FR 48466 (July 31, 2026) (SR-Nasdaq-2026-061) (a proposal 
+to introduce Nasdaq TotalView Plus and Nasdaq Basic Plus, two new 
+data feeds which will offer consolidated Top-of-Book and Depth-of-
+Book information currently disseminated by Nasdaq, Nasdaq Texas and 
+Nasdaq PSX).
+    \4\ The underlying Depth-of-Book products are Nasdaq TotalView, 
+Nasdaq Texas TotalView, and PSX TotalView.
+    \5\ The underlying Top-of-Book products are Nasdaq Basic (which 
+includes both best bid and offer and last sale information), Nasdaq 
+Texas BBO, Nasdaq Texas Last Sale, PSX BBO, and PSX Last Sale.
+---------------------------------------------------------------------------
+
+    Nasdaq will offer Nasdaq TotalView Plus for the same Professional 
+and Non-Professional Subscriber and enterprise license fees as Nasdaq 
+TotalView.\6\ To ensure that market data vendors will be able to offer 
+competing consolidated data products, any firm that certifies to Nasdaq 
+that it will consolidate Nasdaq TotalView, Nasdaq Texas TotalView and 
+Nasdaq PSX TotalView into a data feed solely for external 
+redistribution shall be exempt from Nasdaq Texas Market Data 
+Distributor Fees \7\ and Nasdaq PSX Market Data Distributor Fees.\8\ 
+This will ensure that vendors will be able to cover the cost of 
+consolidating the underlying fees.
+---------------------------------------------------------------------------
+
+    \6\ Internal and External Distributor, as well as Direct Access 
+fees, may apply to purchasers of Nasdaq Plus products depending on 
+the customer's use case. See Nasdaq Rules, Equity 7, Section 119(b).
+    \7\ See Nasdaq Texas Rules, Equity 7, Section 119(a).
+    \8\ See Equity 7, Section 3 (Market Data Distributor Fees).
+---------------------------------------------------------------------------
+
+    Nasdaq will offer Nasdaq Basic Plus for the same Professional and 
+Non-Professional Subscriber, enterprise license, and Distributor fees 
+as Nasdaq Basic. To ensure that other market data vendors will be able 
+to offer competing consolidated data products, Nasdaq proposes to 
+charge the same monthly administrative and data consolidation fees for 
+Nasdaq Basic Plus as are currently charged for Nasdaq Last Sale Plus to 
+both Internal Distributors \9\ and External Distributors \10\ to cover 
+the costs of data feed consolidation to be incurred by market data 
+vendors.
+---------------------------------------------------------------------------
+
+    \9\ ``Internal Distributors'' are Distributors that receive 
+Nasdaq Last Sale Plus or Nasdaq Basic Plus data and then distribute 
+that data to one or more Subscribers within the Distributor's own 
+entity.
+    \10\ ``External Distributors'' are Distributors that receive 
+Nasdaq Last Sale Plus or Nasdaq Basic Plus data and then distribute 
+that data to one or more Subscribers outside the Distributor's own 
+entity.
+
+---------------------------------------------------------------------------
+
+[[Page 58721]]
+
+    With respect to the Market Data Enterprise License for Display 
+Usage,\11\ which currently offers both Nasdaq TotalView and Nasdaq 
+Basic in the same enterprise license, Nasdaq proposes to offer the 
+Nasdaq TotalView Plus and Nasdaq Basic Plus feeds for the same fees 
+currently charged for the Nasdaq TotalView and Nasdaq Basic.
+---------------------------------------------------------------------------
+
+    \11\ See Nasdaq Stock Market Rules, Equity 7, Section 132.
+---------------------------------------------------------------------------
+
+    As a result of the introduction of Nasdaq TotalView Plus and Nasdaq 
+Basic Plus and their related fees, the Exchange is proposing amendments 
+to Equity 7, Section 3, Market Data Distributor Fees, PSX TotalView, 
+PSX Last Sale and Nasdaq Last Sale Plus Data Feeds, and PSX BBO Feeds 
+to make conforming changes to its fee schedule to align with the fees 
+outlined in Nasdaq's Equity 7, Sections 123, 132, 139, and 147 for 
+these new products.
+Market Data Distributor Fees
+    The purpose of the first fee amendment is to issue a fee waiver for 
+External Market Data Distributor Fees of $1,620 per month, in Equity 7, 
+Section 3, Market Data Distributor Fees for vendors that certify to 
+Nasdaq that they will consolidate Nasdaq TotalView, Nasdaq Texas 
+TotalView and Nasdaq PSX TotalView into a data feed solely for external 
+redistribution. The same discount would not apply to non-vendors. 
+Vendors would be able to apply this fee reduction to cover the cost of 
+forming their own consolidated feed, thereby allowing vendors to 
+compete with Nasdaq in the sale of consolidated data products using the 
+depth of book data from Nasdaq affiliates.
+PSX TotalView Fees
+    The purpose of the second fee amendment is to issue a fee waiver 
+for PSX TotalView fees in Equity 7, Section 3, PSX TotalView, to any 
+firm that purchases Nasdaq TotalView Plus. PSX TotalView disseminates 
+all individual Phlx Equities System participant orders and quotes 
+displayed in the system, the aggregate size of such orders and quotes 
+at each price level, and the trade data for executions that occur 
+within the Phlx Equities System.\12\ This will be a fee waiver of (i) 
+monthly Subscriber fees of $ $44.50 (operative January 1, 2026) for 
+each Subscriber for display usage or for non-display usage not based 
+upon Direct Access; and (ii) $1.00 per Subscriber per month for each 
+Professional Subscriber.\13\
+    This is to ensure that Nasdaq can offer Nasdaq TotalView Plus for 
+the same Subscriber fees as Nasdaq TotalView.
+---------------------------------------------------------------------------
+
+    \12\ See Equity 7, Section 3 (PSX TotalView).
+    \13\ See id.
+---------------------------------------------------------------------------
+
+Administrative and Consolidation Fees
+    The purpose of the third and fourth fee amendments is to clarify 
+that firms that receive Nasdaq Basic Plus, in addition to or in lieu of 
+Nasdaq Last Sale Plus, will also pay the monthly administrative fee 
+applicable to PSX Last Sale, and that distributors of Nasdaq Last Sale 
+Plus or Nasdaq Basic Plus will pay a data consolidation fee of $350 per 
+month. Currently, firms that receive Nasdaq Last Sale Plus must pay the 
+administrative and consolidation fees,\14\ and this amendment extends 
+the same to purchasers of Nasdaq Basic Plus,\15\ as both Nasdaq Last 
+Sale Plus and Nasdaq Basic Plus contain the same PSX Last Sale 
+feeds.\16\
+---------------------------------------------------------------------------
+
+    \14\ See Equity 7, Section 3 (PSX Last Sale and Nasdaq Last Sale 
+Plus Data Feeds).
+    \15\ Firms that receive Nasdaq Last Sale Plus or Nasdaq Basic 
+Plus would either be liable for Nasdaq Last Sale fees or Nasdaq 
+Basic fees, but not both. SR-NASDAQ-2026-070.
+    \16\ They also contain PSX BBO feeds, for which there is no 
+charge.
+---------------------------------------------------------------------------
+
+    This fee is designed to cover the data consolidation costs of 
+market data vendors to ensure that they will be able to offer competing 
+consolidated data products to the new Nasdaq Basic Plus product, which 
+contains PSX Last Sale.
+    As a conforming change, the Exchange proposes to modify both Equity 
+7, Section 3, PSX Last Sale and Nasdaq Last Sale and PSX BBO Feeds to 
+state that firms that receive Nasdaq Last Sale Plus or Nasdaq Basic 
+Plus or both shall pay the monthly administrative fees for PSX Last 
+Sale and, as well as a data consolidation fee of $350 per month.
+2. Statutory Basis
+    The Exchange believes that its proposal is consistent with Section 
+6(b) of the Act,\17\ in general, and furthers the objectives of 
+Sections 6(b)(4) and 6(b)(5) of the Act,\18\ in particular, in that it 
+provides for the equitable allocation of reasonable dues, fees and 
+other charges among members and issuers and other persons using any 
+facility, and is not designed to permit unfair discrimination between 
+customers, issuers, brokers, or dealers because the proposal: (i) 
+offers more customer choice; (ii) protects competition by covering the 
+data consolidation costs of market data vendors; (iii) does not 
+increase the fee for any Phlx product, but simply waives certain fees 
+or applies consolidation costs to firms purchasing certain data feeds; 
+(iv) conforms fees for Phlx products to the recent Nasdaq filings 
+related to the offer of Nasdaq TotalView Plus and Nasdaq Basic Plus; 
+and (v) offers products to all market participants on a non-
+discriminatory basis.
+---------------------------------------------------------------------------
+
+    \17\ 15 U.S.C. 78f(b).
+    \18\ 15 U.S.C. 78f(b)(4) and (5).
+---------------------------------------------------------------------------
+
+1. More Customer Choice
+    The proposal will expand choice by allowing customers to select 
+whether to purchase best bid and offer information through the separate 
+data feeds of Nasdaq Basic, Nasdaq Texas Last Sale, Nasdaq Texas BBO, 
+and PSX Last Sale, and PSX BBO (or any combination thereof) separately 
+or in a single feed. Purchasing Nasdaq Basic Plus or Nasdaq TotalView 
+Plus will allow some customers to optimize consumption by ingesting 
+information from multiple markets in a single connection, which may 
+result in cost savings for subscribers based on a more efficient 
+configuration of data feeds. Nothing in this proposal will change the 
+quantity or quality of Depth-of-Book or Top-of-Book information 
+available in the market, as the underlying feeds will remain available, 
+and the proposed feeds are simply amalgamations of those underlying 
+feeds.
+2. No Competitive Advantage Relative to Market Data Vendors
+    In offering Nasdaq Basic Plus and Nasdaq TotalView Plus, Nasdaq 
+will be acting as a redistributor of Depth-of-Book \19\ and Top-of-Book 
+\20\ products from Nasdaq, Nasdaq Texas, and Phlx.\21\
+---------------------------------------------------------------------------
+
+    \19\ The underlying Depth-of-Book products are Nasdaq TotalView, 
+Nasdaq Texas TotalView, and PSX TotalView.
+    \20\ The underlying Top-of-Book products are Nasdaq Basic (which 
+includes both best bid and offer and last sale information), Nasdaq 
+Texas BBO, Nasdaq Texas Last Sale, PSX BBO, and PSX Last Sale.
+    \21\ See Securities Exchange Act Release No. 105997 (July 28, 
+2026), 91 FR 48466 (July 31, 2026) (SR-Nasdaq-2026-061); SR-NASDAQ-
+2026-070.
+---------------------------------------------------------------------------
+
+    Nasdaq Basic Plus and Nasdaq TotalView Plus will be compiled from 
+the same underlying feeds from Nasdaq, Nasdaq Texas, and Phlx that are 
+distributed to the purchasers of those feeds. With respect to speed, 
+the path for the distribution of the information by the Exchange will 
+not be faster than the path for distribution that would be used by a 
+market data vendor to distribute similar, independently created 
+products.
+    With respect to information, the same source of the market data to 
+be used by the Exchange to create the two proposed products will also 
+be available to any other market data vendor. The Nasdaq system that 
+will create and support
+
+[[Page 58722]]
+
+Nasdaq Basic Plus and Nasdaq TotalView Plus will access the underlying 
+feeds from Nasdaq, Nasdaq Texas, and Phlx from the same point as any 
+market data vendor.
+    With respect to cost, Nasdaq will ensure that market data vendors 
+are able to compete with the proposed fees by introducing a fee waiver 
+for distributors of Nasdaq TotalView Plus and a consolidation fee for 
+Nasdaq Basic Plus. These proposals will allow vendors to cover the 
+costs of consolidation for Depth-of-Book and Top-of-Book feeds, 
+respectively.\22\ The Exchange is filing this proposal to implement 
+conforming changes for a Nasdaq Stock Exchange proposal filed 
+separately.
+---------------------------------------------------------------------------
+
+    \22\ There is no consolidation fee for Nasdaq TotalView because 
+the waiver of distributor fees is sufficient to cover the costs of 
+consolidation without any additional fee.
+---------------------------------------------------------------------------
+
+    The proposed fee waiver for Nasdaq TotalView Plus will exempt any 
+firm that certifies to Nasdaq that it will consolidate Nasdaq 
+TotalView, Nasdaq Texas TotalView and PSX TotalView into a data feed 
+solely for external redistribution from Nasdaq Texas Market Data 
+Distributor Fees \23\ and Phlx Market Data Distributor Fees.\24\ This 
+substantial savings in distributor fees offered only to external 
+distributors--$1,620 per month for Nasdaq Texas,\25\ and $1,390 per 
+month for PSX TotalView,\26\--will allow vendors to cover the cost of 
+consolidation of Depth-of-Book feeds and will ensure that market data 
+vendors will be able to offer consolidated data products that compete 
+with Nasdaq TotalView Plus.
+---------------------------------------------------------------------------
+
+    \23\ See Nasdaq Texas Rules, Equity 7, Section 119.
+    \24\ See Equity 7, Section 3.
+    \25\ See Nasdaq Texas Rules, Equity 7, Section 119(a).
+    \26\ See Equity 7, Section 3 (Market Data Distributor Fees).
+---------------------------------------------------------------------------
+
+    The proposed fees for Nasdaq Basic Plus include monthly 
+administrative fees for Nasdaq Last Sale, NTX Last Sale, and PSX Last 
+Sale and a data consolidation fee of $350 per month for Internal 
+Distributors and External Distributors of Nasdaq Basic Plus.\27\ This 
+is the current fee charged for Nasdaq Last Sale Plus to ensure that 
+market data vendors will be able to offer competing feeds.
+---------------------------------------------------------------------------
+
+    \27\ Firms that receive Nasdaq Last Sale Plus or Nasdaq Basic 
+Plus would either be liable for Nasdaq Last Sale fees or Nasdaq 
+Basic fees, but not both.
+---------------------------------------------------------------------------
+
+    Nasdaq introduced a consolidation fee for both Nasdaq Basic Plus 
+and Nasdaq Last Sale Plus because Nasdaq Basic Plus includes last sale 
+information. Nasdaq expects vendors to use the same processes and 
+servers to consolidate both best bid and offer and last sale 
+information, and therefore the same consolidation fee should be 
+sufficient to cover all data consolidation costs, enabling vendors to 
+compete in consolidating and distributing data from multiple exchanges. 
+The Exchange is proposing to amend its rules to permit that 
+competition.
+3. No Fee Increases
+    Nothing in the proposal involves an increase to the fees currently 
+charged by Phlx for its data feeds. Any subscriber to solely a Phlx 
+feed will continue to pay the same fees as are currently set, without 
+any change. The subscriber fee waivers and consolidation fees proposed 
+herein are to ensure that any purchaser of a compiled product, whether 
+it is Nasdaq TotalView Plus, Nasdaq Basic Plus, or the feeds necessary 
+to compile a competing product containing the same information as 
+Nasdaq TotalView Plus and/or Nasdaq Basic Plus, is not at a cost 
+disadvantage compared to other purchasers of the same information.
+    The proposed data consolidation fee for Nasdaq Basic Plus is 
+exactly the same fee as currently charged for Nasdaq Last Sale Plus, 
+and customers of Nasdaq Last Sale Plus would pay no additional 
+consolidation fee for Nasdaq Basic Plus. These consolidation and 
+administrative fees are not new, but are simply being expanded to 
+Nasdaq's new product, and do not increase the fees charged to 
+purchasers of Phlx data.
+    Rather, the proposed fee waiver of PSX TotalView fees for vendors 
+of Nasdaq TotalView Plus lowers fees below current fees.
+    The proposed waiver of all subscriber fees, including both 
+Professional and Non-Professional fees, Non-Display Usage fees, and 
+enterprise license fees for Phlx data for Nasdaq TotalView Plus will 
+actually lower fees further, as purchasers of Nasdaq TotalView Plus 
+will be charged the same fees as currently charged for Nasdaq TotalView 
+alone. The proposed Nasdaq TotalView Plus fees therefore offer 
+customers a discount below current fees.
+4. Conforming amendments
+    The proposal conforms fees for Phlx products to the recent Nasdaq 
+filings related to the offer of Nasdaq TotalView Plus and Nasdaq Basic 
+Plus.\28\ In order for Nasdaq's proposed fees to be effective, Phlx 
+must update its rules to ensure that they do not conflict with 
+Nasdaq's. The proposed amendments to Equity 7, Section 3 are conforming 
+changes made to align the Exchange's rules to Nasdaq's.
+---------------------------------------------------------------------------
+
+    \28\ See Securities Exchange Act Release No. 105997 (July 28, 
+2026), 91 FR 48466 (July 31, 2026) (SR-Nasdaq-2026-061); SR-NASDAQ-
+2026-070.
+---------------------------------------------------------------------------
+
+5. No Unfair Discrimination
+    The proposal is not designed to permit unfair discrimination 
+between customers, issuers, brokers, or dealers because the proposed 
+feeds are optional data fees available to all market participants on a 
+non-discriminatory basis.
+    In summary, the proposal provides for the equitable allocation of 
+reasonable dues, fees and other charges among members and issuers and 
+other persons using any facility, and is not designed to permit unfair 
+discrimination between customers, issuers, brokers, or dealers because 
+the proposal: (i) offers more customer choice; (ii) protects 
+competition by covering the data consolidation costs of market data 
+vendors; (iii) does not increase the fee for any Phlx product, but 
+simply waives certain fees or applies consolidation costs to firms 
+purchasing certain data feeds; (iv) conforms fees for Phlx products to 
+the recent Nasdaq filings related to the offer of Nasdaq TotalView Plus 
+and Nasdaq Basic Plus; and (v) offers products to all market 
+participants on a non-discriminatory basis.
+
+B. Self-Regulatory Organization's Statement on Burden on Competition
+
+    The Exchange does not believe that the proposed rule change will 
+impose any burden on competition not necessary or appropriate in 
+furtherance of the purposes of the Act.
+    Nothing in the proposal burdens inter-market competition (the 
+competition among self-regulatory organizations) because approval of 
+the proposal does not impose any burden on the ability of other 
+exchanges to compete. The proposal merely implements fee waivers for 
+certain purchasers and consolidation and administrative fees for 
+others, which any other exchange could propose.
+    Nothing in the Proposal burdens intra-market competition (the 
+competition among consumers of exchange data), because the products 
+related to the fee changes--Nasdaq TotalView Plus and Nasdaq Basic 
+Plus--will be offered to all market participants at the same price and 
+any market participant that elects to purchase either Nasdaq TotalView 
+Plus or Nasdaq Basic Plus may do so on a non-discriminatory basis.
+    Moreover, as explained above, the proposed fees offer no 
+competitive advantage relative to market data vendors, and are in fact 
+designed to promote competition. There is no
+
+[[Page 58723]]
+
+change to (or advantage in) speed or information. With respect to cost, 
+the Exchange proposes to ensure that market data vendors are able to 
+compete with the proposed fees by introducing a fee waiver for Nasdaq 
+TotalView Plus that is exclusively available to market data vendors and 
+a consolidation fee for Nasdaq Basic Plus. These Nasdaq feeds are 
+completely voluntary products in that Nasdaq is not required by any 
+rule or regulation to make this data available and potential 
+subscribers may purchase it only if they voluntarily choose to do so. 
+Information is compiled from underlying feeds from Nasdaq, Nasdaq 
+Texas, and the Exchange, which will remain available for purchase.
+
+C. Self-Regulatory Organization's Statement on Comments on the Proposed 
+Rule Change Received From Members, Participants, or Others
+
+    No written comments were either solicited or received.
+
+III. Date of Effectiveness of the Proposed Rule Change and Timing for 
+Commission Action
+
+    The foregoing rule change has become effective pursuant to Section 
+19(b)(3)(A)(ii) of the Act.\29\
+---------------------------------------------------------------------------
+
+    \29\ 15 U.S.C. 78s(b)(3)(A)(ii).
+---------------------------------------------------------------------------
+
+    At any time within 60 days of the filing of the proposed rule 
+change, the Commission summarily may temporarily suspend such rule 
+change if it appears to the Commission that such action is: (i) 
+necessary or appropriate in the public interest; (ii) for the 
+protection of investors; or (iii) otherwise in furtherance of the 
+purposes of the Act. If the Commission takes such action, the 
+Commission shall institute proceedings to determine whether the 
+proposed rule should be approved or disapproved.
+
+IV. Solicitation of Comments
+
+    Interested persons are invited to submit written data, views and 
+arguments concerning the foregoing, including whether the proposed rule 
+change is consistent with the Act. Comments may be submitted by any of 
+the following methods:
+
+Electronic Comments
+
+    <bullet> Use the Commission's internet comment form (<a href="https://www.sec.gov/rules/sro.shtml">https://www.sec.gov/rules/sro.shtml</a>); or
+    <bullet> Send an email to <a href="/cdn-cgi/l/email-protection#99ebecf5fcb4faf6f4f4fcf7edead9eafcfab7fef6ef"><span class="__cf_email__" data-cfemail="e99b9c858cc48a8684848c879d9aa99a8c8ac78e869f">[email&#160;protected]</span></a>. Please include 
+file number SR-Phlx-2026-55 on the subject line.
+
+Paper Comments
+
+    <bullet> Send paper comments in triplicate to Secretary, Securities 
+and Exchange Commission, 100 F Street NE, Washington, DC 20549-1090.
+
+All submissions should refer to file number SR-Phlx-2026-55. This file 
+number should be included on the subject line if email is used. To help 
+the Commission process and review your comments more efficiently, 
+please use only one method. The Commission will post all comments on 
+the Commission's internet website (<a href="https://www.sec.gov/rules/sro.shtml">https://www.sec.gov/rules/sro.shtml</a>). Copies of the filing will be available for inspection and 
+copying at the principal office of the Exchange. Do not include 
+personal identifiable information in submissions; you should submit 
+only information that you wish to make available publicly. We may 
+redact in part or withhold entirely from publication submitted material 
+that is obscene or subject to copyright protection. All submissions 
+should refer to file number SR-Phlx-2026-55 and should be submitted on 
+or before October 7, 2026.
+
+    For the Commission, by the Division of Trading and Markets, 
+pursuant to delegated authority.\30\
+---------------------------------------------------------------------------
+
+    \30\ 17 CFR 200.30-3(a)(12).
+---------------------------------------------------------------------------
+
+Sherry R. Haywood,
+Assistant Secretary.
+[FR Doc. 2026-18931 Filed 9-15-26; 8:45 am]
+BILLING CODE 8011-01-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

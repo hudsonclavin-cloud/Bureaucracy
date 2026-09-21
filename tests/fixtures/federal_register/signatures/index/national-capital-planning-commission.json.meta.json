@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-09-21T16:25:39Z",
+ "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=2&order=newest&conditions%5Bagencies%5D%5B%5D=national-capital-planning-commission&conditions%5Btype%5D%5B%5D=RULE&conditions%5Btype%5D%5B%5D=NOTICE&fields%5B%5D=document_number&fields%5B%5D=raw_text_url&fields%5B%5D=html_url&fields%5B%5D=agencies&fields%5B%5D=signing_date&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+ "status": 200,
+ "final_url": "https://www.federalregister.gov/api/v1/documents.json?per_page=2&order=newest&conditions%5Bagencies%5D%5B%5D=national-capital-planning-commission&conditions%5Btype%5D%5B%5D=RULE&conditions%5Btype%5D%5B%5D=NOTICE&fields%5B%5D=document_number&fields%5B%5D=raw_text_url&fields%5B%5D=html_url&fields%5B%5D=agencies&fields%5B%5D=signing_date&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+ "content_type": "application/json; charset=utf-8",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /api/v1/documents.json",
+ "bytes": 2111,
+ "sha256": "e6f49e90317e52898a33079616160cb8d4f4f668ff20a6191a3f740d8f4ec735",
+ "error": null
+}

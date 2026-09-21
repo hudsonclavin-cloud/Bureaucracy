@@ -1,0 +1,379 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 180 (Friday, September 18, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 180 (Friday, September 18, 2026)]
+[Notices]
+[Pages 59256-59259]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-19123]
+
+
+-----------------------------------------------------------------------
+
+SECURITIES AND EXCHANGE COMMISSION
+
+[Release No. 34-106378; File No. SR-NYSEARCA-2026-94]
+
+
+Self-Regulatory Organizations; NYSE Arca, Inc.; Notice of Filing 
+and Immediate Effectiveness of Proposed Rule Change To Amend Rule 7.12-
+E Concerning the Resumption of Trading Following a Level 3 Market-Wide 
+Circuit Breaker Halt in Connection With the Expansion of Trading Hours 
+to 23 Hours per Day, 5 Days per Week
+
+September 15, 2026.
+    Pursuant to Section 19(b)(1) of the Securities Exchange Act of 1934 
+(``Act'') \1\ and Rule 19b-4 thereunder,\2\ notice is hereby given 
+that, on September 4, 2026, NYSE Arca, Inc. (``NYSE Arca'' or the 
+``Exchange'') filed with the Securities and Exchange Commission (the 
+``Commission'') the proposed rule change as described in Items I and II 
+below, which Items have been prepared by the self-regulatory
+
+[[Page 59257]]
+
+organization. The Commission is publishing this notice to solicit 
+comments on the proposed rule change from interested persons.
+---------------------------------------------------------------------------
+
+    \1\ 15 U.S.C. 78s(b)(1).
+    \2\ 17 CFR 240.19b-4.
+---------------------------------------------------------------------------
+
+I. Self-Regulatory Organization's Statement of the Terms of Substance 
+of the Proposed Rule Change
+
+    The Exchange proposes to amend Rule 7.12-E (``Trading Halts Due to 
+Extraordinary Market Volatility'') concerning the resumption of trading 
+following a Level 3 market-wide circuit breaker halt in connection with 
+the extension of exchange trading hours to 23 hours per day, 5 days per 
+week. The proposed rule change is available on the Exchange's website 
+at <a href="http://www.nyse.com">www.nyse.com</a> and at the principal office of the Exchange.
+
+II. Self-Regulatory Organization's Statement of the Purpose of, and 
+Statutory Basis for, the Proposed Rule Change
+
+    In its filing with the Commission, the self-regulatory organization 
+included statements concerning the purpose of, and basis for, the 
+proposed rule change and discussed any comments it received on the 
+proposed rule change. The text of those statements may be examined at 
+the places specified in Item IV below. The Exchange has prepared 
+summaries, set forth in sections A, B, and C below, of the most 
+significant parts of such statements.
+
+A. Self-Regulatory Organization's Statement of the Purpose of, and 
+Statutory Basis for, the Proposed Rule Change
+
+1. Purpose
+    NYSE Arca, Inc. (``NYSE Arca'' or the ``Exchange'') proposes to 
+amend Rule 7.12-E (``Trading Halts Due to Extraordinary Market 
+Volatility'') concerning the resumption of trading following a Level 3 
+market-wide circuit breaker (``MWCB'') halt (``Level 3 Market 
+Decline'') in connection with the extension of exchange trading hours 
+to 23 hours per day, 5 days per week (``23/5 Trading'').\3\ As 
+discussed herein, the proposed rule change would retain the current 
+4:00 a.m. ET resumption time following a Level 3 Market Decline, 
+notwithstanding the fact that the Exchange would normally open for 
+overnight trading at 9:00 p.m. ET once the Exchange has implemented 23/
+5 Trading.
+---------------------------------------------------------------------------
+
+    \3\ See Securities Exchange Act Release No. 105532 (May 21, 
+2026), 91 FR 31509 (May 27, 2026) (SR-NYSEARCA-2026-53) (``NYSE Arca 
+23/5 Trading Notice'').
+---------------------------------------------------------------------------
+
+Background
+
+    The MWCB mechanism under Rule 7.12-E provides an important, 
+automatic mechanism that is invoked to promote stability and investor 
+confidence during a period of significant stress when U.S. securities 
+markets experience extreme broad-based declines. All U.S. equity 
+exchanges and FINRA (collectively, the self-regulatory organizations or 
+``SROs'') adopted uniform rules relating to the MWCB mechanism in 2012, 
+which are designed to slow the effects of extreme price movement 
+through coordinated trading halts across U.S. securities markets when 
+severe price declines reach levels that may exhaust market 
+liquidity.\4\ Such market-wide circuit breakers provide for trading 
+halts in all U.S. cash equity and equities options markets during a 
+severe market decline as measured by a single-day decline in the S&P 
+500 Index during regular trading hours.
+---------------------------------------------------------------------------
+
+    \4\ See Securities Exchange Act Release No. 67090 (May 31, 
+2012), 77 FR 33531 (June 6, 2012) (SR-BATS-2011-038; SR-BYX-2011-
+025; SR-BX-2011-068; SR-CBOE-2011-087; SR-C2-2011-024; SR-CHX-2011-
+30; SR-EDGA-2011-31; SR-EDGX-2011-30; SR-FINRA-2011-054; SR-ISE-
+2011-61; SR-NASDAQ-2011-131; SR-NSX-2011-11; SR-NYSE-2011-48; SR-
+NYSEAmex-2011-73; SR-NYSEArca-2011-68; SR-Phlx-2011-129) (``MWCB 
+Approval Order'').
+---------------------------------------------------------------------------
+
+    Pursuant to Rule 7.12-E, a market-wide trading halt will be 
+triggered if the S&P 500 Index declines in price by specified 
+percentages from the prior day's closing price of that index. 
+Currently, the triggers are set at three circuit breaker thresholds: 7% 
+(Level 1), 13% (Level 2), and 20% (Level 3). A market decline that 
+triggers a Level 1 or Level 2 halt after 9:30 a.m. ET and before 3:25 
+p.m. ET would halt market-wide trading for 15 minutes, while a similar 
+market decline at or after 3:25 p.m. ET would not halt market-wide 
+trading. If a Level 3 Market Decline occurs at any time during the 
+trading day, trading in all stocks will halt on the Exchange for the 
+remainder of the trading day and will resume the following trading day 
+at 4:00 a.m. ET during the Early Trading Session.
+Proposal
+    The Exchange now proposes to amend Rule 7.12-E to reflect extended 
+trading hours, i.e., 23/5 Trading. Currently, the Exchange offers three 
+trading sessions on each day it is open for trading: (1) the Early 
+Trading Session (4:00 a.m. ET to 9:30 a.m. ET); (2) the Core Trading 
+Session (9:30 a.m. ET to 4:00 p.m. ET); and (3) the Late Trading 
+Session (4:00 p.m. ET to 8:00 p.m.). On December 6, 2026, the Exchange 
+intends to offer a new Overnight Trading Session, which would be 
+available from 9:00 p.m. ET to 4:00 a.m. ET, significantly increasing 
+the Exchange's hours of operation in response to customer demand.
+    As discussed, current Rule 7.12-E (b)(ii) provides that if a Level 
+3 Market Decline occurs at any time during the trading day, trading in 
+all stocks will halt on the Exchange for the remainder of the trading 
+day. Currently, this means the Exchange would re-open at its normal 
+time, i.e., 4:00 ET a.m., following a Level 3 Market Decline. However, 
+the Exchange intends to begin 23/5 Trading on December 6, 2026.\5\
+---------------------------------------------------------------------------
+
+    \5\ See supra note 3.
+---------------------------------------------------------------------------
+
+    Unless amended, when the Exchange launches overnight trading, the 
+current rule's reference to halting ``for the remainder of the trading 
+day'' \6\ would require that the Exchange re-open trading at an earlier 
+time, i.e., at 9:00 p.m. ET on the same calendar day, when the 
+Exchange's systems would generally become available for the Overnight 
+Trading Session. The Exchange does not believe that this is an expected 
+or desired result and is therefore amending this rule in coordination 
+with the other SROs such that trading on the Exchange will not resume 
+until 4:00 a.m. ET or later on the following trading day, consistent 
+with current market practice. This proposed rule change is therefore 
+not intended to make any substantive changes to the MWCB mechanism. 
+Rather, the proposed rule change would preserve the current resumption 
+time following a Level 3 Market Decline, notwithstanding changes to the 
+Exchange's rules that would otherwise allow the Exchange to resume 
+trading at 9:00 p.m. ET as it would on any other trading day.
+---------------------------------------------------------------------------
+
+    \6\ See Rule 7.12-E(b)(ii).
+---------------------------------------------------------------------------
+
+    To effect this change, the Exchange proposes to delete the language 
+in Rule 7.12-E(b)(ii) that provides that trading in all stocks will 
+halt on the Exchange ``for the remainder of the trading day'' if a 
+Level 3 Market Decline occurs at any time during the trading day, and 
+replace it with new language that explicitly provides that trading in 
+all stocks would halt on the Exchange until 4:00 a.m. ET or later on 
+the following trading day.
+2. Statutory Basis
+    The Exchange believes that its proposal is consistent with Section 
+6(b) of the Act,\7\ in general, and furthers the objectives of Section 
+6(b)(5) of the Act,\8\ in particular, in that it is designed to promote 
+just and equitable principles of trade, to remove impediments to and
+
+[[Page 59258]]
+
+perfect the mechanism of a free and open market and a national market 
+system, and, in general to protect investors and the public interest.
+---------------------------------------------------------------------------
+
+    \7\ 15 U.S.C. 78f(b).
+    \8\ 15 U.S.C. 78f(b)(5).
+---------------------------------------------------------------------------
+
+    The MWCB mechanism described in Rule 7.12-E is an important, 
+automatic mechanism that is invoked to promote stability and investor 
+confidence during periods of significant stress when U.S. securities 
+markets experience extreme broad-based declines. The proposed rule 
+change would ensure that the Exchange's current 4:00 a.m. ET resumption 
+time following a Level 3 halt continues to apply when the Exchange and 
+various other U.S. equities exchanges begin trading on a 23/5 basis, 
+notwithstanding current rule text implying that the resumption time 
+would coincide with the start of overnight trading on the Exchange.
+    Rather than leave the rule in place as is, which would result in an 
+earlier resumption time than originally contemplated when the rule was 
+adopted, the Exchange, the other U.S. equity exchanges, and FINRA met 
+alongside industry representatives to determine the appropriate 
+resumption time. Following those discussions, the collective decision 
+was made to retain the 4:00 a.m. ET resumption time, notwithstanding 
+the fact that an earlier resumption time would be possible with the 
+introduction of 23/5 Trading. The proposed rule change codifies this 
+decision into the Exchange's rules. The Exchange understands that the 
+other SROs will also be filing similar proposed rule changes. As a 
+result, the market as a whole, including on- and off-exchange, will 
+continue to be subject to harmonized rules for the resumption of 
+trading following a Level 3 Market Decline.
+    While the SROs had previously decided to tie the resumption time 
+following a Level 3 halt to the earliest SRO opening time, the upcoming 
+transition to 23/5 Trading raises various concerns that warrant a 
+change from the current approach.
+    First, the Exchange notes that the MWCB mechanism was designed to 
+provide a cooling-off period where market participants would be 
+provided with additional time to evaluate the market events that led to 
+the decline before determining how to position their trading activity 
+for the next day. With the introduction of 23/5 Trading and the start 
+of the Overnight Trading Session at 9:00 p.m. ET, however, this 
+cooling-off period could be materially shortened, reducing one of the 
+key benefits that the MWCB mechanism was designed to provide in the 
+first place. Rather than shorten the cooling-off period and risk this 
+benefit, the Exchange believes the market would be better served by a 
+change to the length of the associated trading halt that mirrors 
+current market practice. Under the proposed rule, as is the case today, 
+after a Level 3 halt, the Exchange would re-open for the Early Trading 
+Session at 4:00 a.m. ET and would not offer an Overnight Trading 
+Session starting on the day of a Level 3 halt.
+    Second, the new Overnight Trading Session may be subject to 
+different liquidity and participation considerations than the current 
+Early Trading Session. Notably, while retail investors have expressed 
+interest in overnight trading, the Exchange expects that institutional 
+investors will take more time to transition to a round-the-clock model. 
+However, such institutional participation may be of heightened 
+importance following a Level 3 halt, as these investors are likely to 
+have views on the underlying market events that led to the Level 3 
+Market Decline in the first place. The Exchange is concerned that 
+opening during hours that such participants do not normally trade may 
+impact the quality of price discovery at a time of significant market 
+volatility. Waiting until 4:00 a.m. ET to resume trading would 
+facilitate broader participation and therefore price discovery.
+    Finally, the Exchange notes that the Commission recently approved 
+an amendment to the Plan to Address Extraordinary Market Volatility 
+(``LULD Plan'') that would establish new price protections from 9:00 
+p.m. ET to 4:00 a.m. ET.\9\ While these price bands would help to 
+assure a fair and orderly market during normal market conditions, it is 
+possible that they would instead prevent normal price discovery 
+following a Level 3 Market Decline. Rather than allowing trading to 
+resume with such price bands in effect, which would represent a change 
+from the current trading reopening following a Level 3 Market Decline, 
+the Exchange believes that waiting until 4:00 a.m. ET to resume trading 
+would ensure that price discovery can occur unimpeded during pre-market 
+trading, as it does today, which may further inform prices going into 
+the opening auction and regular market hours trading following a Level 
+3 halt.
+---------------------------------------------------------------------------
+
+    \9\ See Securities Exchange Act Release No. 106042 (August 5, 
+2026), 91 FR 51515 (August 10, 2026) (Order Granting Approval of the 
+Twenty-Seventh Amendment to the National Market System Plan to 
+Address Extraordinary Market Volatility to Establish Temporary Price 
+Band Protections in Overnight Trading).
+---------------------------------------------------------------------------
+
+    Given the factors discussed above, the Exchange believes that 
+trading in all securities on the Exchange should not resume before at 
+4:00 a.m. ET on the trading day after a Level 3 halt. This decision, 
+which the Exchange understands will also be reflected in the rules of 
+the other SROs, would promote a fair and orderly market at a time of 
+significant market volatility, and thereby protect investors and the 
+public interest. In addition, while the actual Level 3 resumption time 
+would not be changing in practice--as proposed, the current resumption 
+time and future resumption time would both be 4:00 a.m. ET at the 
+earliest--the Exchange believes that it is appropriate to amend its 
+rules to ensure that its rules reflect the upcoming changes to the 
+Exchange's hours of operation. Without this change, market participants 
+may mistakenly believe that the Exchange's intention is to re-open 
+trading on the Exchange at 9:00 p.m. ET following a Level 3 halt. The 
+proposed rule change would therefore facilitate operational 
+transparency while providing for a fair and orderly market.
+
+B. Self-Regulatory Organization's Statement on Burden on Competition
+
+    The Exchange does not believe that the proposed rule change will 
+impose any burden on competition not necessary or appropriate in 
+furtherance of the purposes of the Act because the proposal would 
+ensure the continued, uninterrupted operation of a consistent mechanism 
+to halt trading across U.S. securities markets. Further, the Exchange 
+understands that the other SROs intend to file proposed rule changes to 
+ensure a consistent resumption time 4:00 a.m. ET or later across 
+markets. Thus, the proposed rule change will help to ensure consistency 
+across market centers without implicating any competitive issues.
+
+C. Self-Regulatory Organization's Statement on Comments on the Proposed 
+Rule Change Received From Members, Participants, or Others
+
+    No written comments were solicited or received with respect to the 
+proposed rule change.
+
+III. Date of Effectiveness of the Proposed Rule Change and Timing for 
+Commission Action
+
+    Because the foregoing proposed rule change does not: (i) 
+significantly affect the protection of investors or the public 
+interest; (ii) impose any significant burden on competition; and (iii) 
+become operative for 30 days from the date on which it was filed, or 
+such shorter time as the Commission may designate, it has become 
+effective pursuant to Section
+
+[[Page 59259]]
+
+19(b)(3)(A)(iii) of the Act \10\ and subparagraph (f)(6) of Rule 19b-4 
+thereunder.\11\
+---------------------------------------------------------------------------
+
+    \10\ 15 U.S.C. 78s(b)(3)(A)(iii).
+    \11\ 17 CFR 240.19b-4(f)(6). In addition, Rule 19b-4(f)(6) 
+requires a self-regulatory organization to give the Commission 
+written notice of its intent to file the proposed rule change at 
+least five business days prior to the date of filing of the proposed 
+rule change, or such shorter time as designated by the Commission. 
+The Exchange has satisfied this requirement.
+---------------------------------------------------------------------------
+
+    At any time within 60 days of the filing of the proposed rule 
+change, the Commission summarily may temporarily suspend such rule 
+change if it appears to the Commission that such action is necessary or 
+appropriate in the public interest, for the protection of investors, or 
+otherwise in furtherance of the purposes of the Act. If the Commission 
+takes such action, the Commission shall institute proceedings to 
+determine whether the proposed rule should be approved or disapproved.
+
+IV. Solicitation of Comments
+
+    Interested persons are invited to submit written data, views and 
+arguments concerning the foregoing, including whether the proposed rule 
+change is consistent with the Act. Comments may be submitted by any of 
+the following methods:
+
+Electronic Comments
+
+    <bullet> Use the Commission's internet comment form (<a href="https://www.sec.gov/rules/sro.shtml">https://www.sec.gov/rules/sro.shtml</a>); or
+    <bullet> Send an email to <a href="/cdn-cgi/l/email-protection#4735322b226a24282a2a222933340734222469202831"><span class="__cf_email__" data-cfemail="afdddac3ca82ccc0c2c2cac1dbdcefdccacc81c8c0d9">[email&#160;protected]</span></a>. Please include 
+file number SR-NYSEARCA-2026-94 on the subject line.
+
+Paper Comments
+
+    <bullet> Send paper comments in triplicate to Secretary, Securities 
+and Exchange Commission, 100 F Street NE, Washington, DC 20549-1090.
+
+All submissions should refer to file number SR-NYSEARCA-2026-94. This 
+file number should be included on the subject line if email is used. To 
+help the Commission process and review your comments more efficiently, 
+please use only one method. The Commission will post all comments on 
+the Commission's internet website (<a href="https://www.sec.gov/rules/sro.shtml">https://www.sec.gov/rules/sro.shtml</a>). Copies of the filing will be available for inspection and 
+copying at the principal office of the Exchange. Do not include 
+personal identifiable information in submissions; you should submit 
+only information that you wish to make available publicly. We may 
+redact in part or withhold entirely from publication submitted material 
+that is obscene or subject to copyright protection. All submissions 
+should refer to file number SR-NYSEARCA-2026-94 and should be submitted 
+on or before October 9, 2026.
+
+    For the Commission, by the Division of Trading and Markets, 
+pursuant to delegated authority.\12\
+---------------------------------------------------------------------------
+
+    \12\ 17 CFR 200.30-3(a)(12).
+---------------------------------------------------------------------------
+
+Sherry R. Haywood,
+Assistant Secretary.
+[FR Doc. 2026-19123 Filed 9-17-26; 8:45 am]
+BILLING CODE 8011-01-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

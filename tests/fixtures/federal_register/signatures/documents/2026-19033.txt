@@ -1,0 +1,136 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 179 (Thursday, September 17, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 179 (Thursday, September 17, 2026)]
+[Notices]
+[Pages 58935-58936]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-19033]
+
+
+-----------------------------------------------------------------------
+
+SECURITIES AND EXCHANGE COMMISSION
+
+[OMB Control No. 3235-0754]
+
+
+Agency Information Collection Activities; Submission for OMB 
+Review; Comment Request; Extension: Rule 30b1-10, Form N-RN
+
+Upon Written Request, Copies Available From: Securities and Exchange 
+Commission, Office of FOIA Services, 100 F Street NE, Washington, DC 
+20549-2736
+
+    Notice is hereby given that, pursuant to the Paperwork Reduction 
+Act of 1995 (44 U.S.C. 3501 et seq.), the Securities and Exchange 
+Commission (SEC or ``Commission'') is submitting to the Office of 
+Management and Budget this request for extension of the previously 
+approved collection of information discussed below.
+    Rule 30b1-10 [17 CFR 270.30b1-10] and Form N-RN [17 CFR 274.223] 
+require registered open-end management investment companies (not 
+including entities regulated as money market funds under 17 CFR 270.2a-
+7), registered closed-end funds, and business development companies 
+(collectively, ``funds''), to file a current report on Form N-RN on a 
+non-public basis when certain events related to their liquidity and 
+events regarding funds' compliance with the VaR-based limit on fund 
+leverage risk in 17 CFR 270.18f-4 (``rule 18f-4'') occur. The first 
+category of information reported on Form N-RN concerns events under 
+which more than 15% of an open-end fund's net assets are, or become, 
+illiquid investments that are assets as defined in 17 CFR 270.22e-4 
+(``rule 22e-4'') and when holdings in illiquid investments are assets 
+that previously exceeded 15% of a fund's net assets have changed to be 
+less than or equal to 15% of the fund's net assets. The second category 
+of information reported on Form N-RN regards events for certain open-
+end funds under which a fund's holdings in assets that are highly 
+liquid investments fall below the fund's highly liquid investment 
+minimum defined in rule 22e-4 for more than 7 consecutive calendar 
+days. The third category of information reported on Form N-RN regards 
+information about a fund's breaches of the VaR test under rule 18f-4. A 
+report on Form N-RN is required to be filed, as applicable, within one 
+business day of the occurrence of one or more of these events. In 
+addition, a fund is in certain cases required to file a second Form N-
+RN when it is no longer in breach of the applicable limit.
+    Based on historical filing data and projected estimates of the 
+annual number of VAR-based filings, the staff estimates that the 
+Commission will receive roughly 31 reports per year on Form N-RN on 
+average When filing a report on Form N-RN, staff estimates that a fund 
+will spend on average approximately 4 hours of a lawyer's and a 
+computer programmer's time to prepare, review, and submit Form N-RN.\1\ 
+We estimate the total time per
+
+[[Page 58936]]
+
+response to be $2,420.\2\ Accordingly, in the aggregate, staff 
+estimates that compliance with rule 30b1-10 and Form N-LIQUID will 
+result in a total annual burden of approximately 124 burden hours and 
+total annual time costs of approximately $75,020.\3\
+---------------------------------------------------------------------------
+
+    \1\ To calculate the occupational hourly rates used in this 
+release, the Commission uses occupational mean hourly wage data from 
+the Occupational Employment and Wage Statistics (OEWS) program of 
+the Bureau of Labor Statistics (BLS) for ``Securities, Commodity 
+Contracts, and Other Financial Investments and Related Activities'' 
+(NAICS 523). See Occupational Employment and Wage Statistics, U.S. 
+BUREAU OF LABOR STATISTICS, <a href="https://www.bls.gov/oes/">https://www.bls.gov/oes/</a>; see also 
+Standard Occupational Classification, U.S. BUREAU OF LABOR 
+STATISTICS, <a href="https://www.bls.gov/soc/">https://www.bls.gov/soc/</a> (describing occupational 
+classification system used by BLS); EXEC. OFF. OF THE PRESIDENT, 
+OFF. OF MGMT. & BUDGET, NORTH AMERICAN INDUSTRY CLASSIFICATION 
+SYSTEM (2022), available at <a href="https://www.census.gov/naics/reference_files_tools/2022_NAICS_Manual.pdf">https://www.census.gov/naics/reference_files_tools/2022_NAICS_Manual.pdf</a> (describing the industry 
+classification system used by BLS and other agencies). The mean 
+hourly wage for each occupation is adjusted for changes in the 
+seasonally adjusted employment cost index for private wages and 
+salaries between the data reference period and when the data are 
+released by BLS. See Employment Cost Index, U.S. BUREAU OF LABOR 
+STATISTICS, <a href="https://www.bls.gov/eci/">https://www.bls.gov/eci/</a>. The adjusted mean hourly wage 
+is then multiplied by a factor that accounts for nonwage costs borne 
+by employers, such as bonuses, benefits, and overhead. This factor 
+is calculated as an average over the 10 most recently available 
+years of data of the ratio of the Bureau of Economic Analysis's 
+annual gross output data for NAICS 523 to total annual wages across 
+all occupations for NAICS 523 in the OEWS data. See Gross Output by 
+Industry, U.S. BUREAU OF ECONOMIC ANALYSIS, <a href="https://www.bea.gov/data/industries/gross-output-by-industry">https://www.bea.gov/data/industries/gross-output-by-industry</a>; Occupational Employment 
+and Wage Statistics, U.S. BUREAU OF LABOR STATISTICS, <a href="https://www.bls.gov/oes/">https://www.bls.gov/oes/</a>. The final product is the occupational hourly rate. 
+See generally UPDATED METHODOLOGY FOR CALCULATING OCCUPATIONAL 
+HOURLY RATES (Dec. 19, 2025), available at <a href="https://www.sec.gov/files/method-occupational-hourly-rates.pdfoffic">https://www.sec.gov/files/method-occupational-hourly-rates.pdfoffic</a>.
+    \2\ This estimate is based on the following calculations: ($774 
+hourly wage rate for lawyer + $436 hourly wage rate for computer 
+programmer)/2 = $605 blended hourly wage rate. $605 blended hourly 
+wage rate x 4 hours = $2,420.
+    \3\ This estimate is based on the following calculations: 31 
+reports filed per year x 4 hours per report = approximately 124 
+total annual burden hours. 31 reports filed per year x $2,420 in 
+costs per report = $75,020 total annual costs.
+---------------------------------------------------------------------------
+
+    Compliance with rule 30b1-10 is mandatory for all funds. Responses 
+to the disclosure requirements will be kept confidential. The estimate 
+of average burden hours is made solely for the purposes of the PRA. The 
+estimate is not derived from a comprehensive or even a representative 
+survey or study of the costs of Commission rules. Complying with this 
+collection of information requirement is necessary to enable the 
+Commission to receive information on fund liquidity events more 
+uniformly and efficiently, and to enhance the Commission's oversight of 
+funds when significant liquidity events occur and its ability to 
+respond to market events.
+    An agency may not conduct or sponsor, and a person is not required 
+to respond to a collection of information unless it displays a 
+currently valid OMB control number.
+    The public may view and comment on this information collection 
+request at: <a href="https://www.reginfo.gov/public/do/PRAViewICR?ref_nbr=202606-3235-021">https://www.reginfo.gov/public/do/PRAViewICR?ref_nbr=202606-3235-021</a> or email comment to 
+<a href="/cdn-cgi/l/email-protection#4c010e146203010e6203051e0d621f090f1328293f2713232a2a252f293e0c23212e6229233c622b233a"><span class="__cf_email__" data-cfemail="ce838c96e081838ce081879c8fe09d8b8d91aaabbda591a1a8a8a7adabbc8ea1a3ace0aba1bee0a9a1b8">[email&#160;protected]</span></a> within 30 days of the day 
+after publication of this notice, by October 19, 2026.
+
+    Dated: September 14, 2026.
+J. Matthew DeLesDernier,
+Deputy Secretary.
+[FR Doc. 2026-19033 Filed 9-16-26; 8:45 am]
+BILLING CODE 8011-01-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

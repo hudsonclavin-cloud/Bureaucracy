@@ -1,0 +1,115 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 158 (Tuesday, August 18, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 158 (Tuesday, August 18, 2026)]
+[Notices]
+[Pages 53420-53422]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-16840]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+DEPARTMENT OF THE INTERIOR
+
+Bureau of Ocean Energy Management
+
+[Docket No. BOEM-2026-0793]
+
+
+Notice of Availability of Outer Continental Shelf Official 
+Protraction Diagrams
+
+AGENCY: Bureau of Ocean Energy Management, Interior.
+
+ACTION: Notice of availability.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The Bureau of Ocean Energy Management (BOEM), in accordance 
+with its authority and responsibility under the Outer Continental Shelf 
+Lands Act, is announcing the availability of new World Geodetic System 
+1984 (WGS84)-based Outer Continental Shelf (OCS) Official Protraction 
+Diagrams (OPDs). These OPDs depict geographic areas located on the OCS 
+offshore the Commonwealth of the Northern Mariana Islands (CNMI) 
+covering the extent of the area identified for further consideration 
+for potential OCS mineral leasing and environmental analysis in BOEM's 
+CNMI Area Identification that was finalized on March 18, 2026. These 
+diagrams may be used in the descriptions of potential OCS mineral lease 
+sales off of CMNI. Additional OPDs for areas offshore CNMI that were 
+not included in the March 2026 Area Identification are expected to be 
+published in the future.
+
+ADDRESSES: Copies of the OPDs are available for download in .pdf format 
+from the Offshore Marine Cadastre (OMC) Navigator at <a href="https://experience.arcgis.com/experience/eb21d5af8cf74c93b139c38c5b4163d1">https://experience.arcgis.com/experience/eb21d5af8cf74c93b139c38c5b4163d1</a>.
+
+FOR FURTHER INFORMATION CONTACT: Dr. Megan Carr, Associate Director for 
+Strategic Resources, at (202) 294-3998 or via email at 
+<a href="/cdn-cgi/l/email-protection#d8b5bdbfb9b6f6bbb9aaaa98bab7bdb5f6bfb7ae"><span class="__cf_email__" data-cfemail="cda0a8aaaca3e3aeacbfbf8dafa2a8a0e3aaa2bb">[email&#160;protected]</span></a>.
+
+SUPPLEMENTARY INFORMATION: The extent of the published diagram coverage 
+is shown in Figure 1 below.
+BILLING CODE 4340-98-P
+
+[[Page 53421]]
+
+[GRAPHIC] [TIFF OMITTED] TN18AU26.023
+
+BILLING CODE 4340-98-C
+    BOEM is announcing the following OPDs for the OCS off of CNMI:
+
+Description/Date
+
+ND54-03 (Arakane Reef)--1/1/2025
+ND54-06 (Suruga Bank)--1/1/2025
+ND55-01 (Island of Saipan)--1/1/2025
+ND55-03 (Pigafetta Guyot)--1/1/2025
+ND55-04 (Island of Rota)--1/1/2025
+ND55-05 (Victoria Guyot)--1/1/2025
+ND55-06 (Ornate Jobfish)--1/1/2025
+ND55-08 (Many-Eyed Snake-Eel)--1/1/2025
+ND55-09 (KIOST Seamount)--1/1/2025
+ND55-11 (Imposter Trevally)--1/1/2025
+ND55-12 (Flag-Tailed Grouper)--1/1/2025
+NE54-03 (Subetbia Seamount)--1/1/2025
+NE54-06 (Threadfin Butterflyfish)--1/1/2025
+NE54-09 (Singlebar Devil)--1/1/2025
+NE54-12 (Pathfinder Reef)--1/1/2025
+NE55-01 (Asuncion Island)--1/1/2025
+NE55-02 (Layuliyar Araw Hill)--1/1/2025
+NE55-03 (Vogt Guyot)--1/1/2025
+NE55-04 (Pagan Island)--1/1/2025
+
+[[Page 53422]]
+
+NE55-06 (Graceful Lizardfish)--1/1/2025
+NE55-07 (Alamagan Island)--1/1/2025
+NE55-09 (Thorny Seahorse)--1/1/2025
+NE55-10 (Anatahan Island)--1/1/2025
+NE55-12 (Del Cano Guyot)--1/1/2025
+NF54-06 (Sh[omacr]y[omacr] Seamount)--1/1/2025
+NF54-09 (Minami-kasuga Seamount)--1/1/2025
+NF54-12 (Stingray Shoal)--1/1/2025
+NF55-02 (Guam Scorpionfish)--1/1/2025
+NF55-05 (Silver Pearlfish)--1/1/2025
+NF55-06 (Magan Seamount)--1/1/2025
+NF55-08 (Harlequin Filefish)--1/1/2025
+NF55-09 (Hakugan Seamounts)--1/1/2025
+NF55-10 (Farallon de Pajaros)--1/1/2025
+NF55-11 (Island Trevally)--1/1/2025
+NF55-12 (Fryer Guyot)--1/1/2025
+
+    Authority: 43 U.S.C. 1331 et seq. (Outer Continental Shelf Lands 
+Act, as amended)
+
+Matthew N. Giacona,
+Acting Director, Bureau of Ocean Energy Management.
+[FR Doc. 2026-16840 Filed 8-17-26; 8:45 am]
+BILLING CODE 4340-98-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

@@ -1,0 +1,154 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 168 (Tuesday, September 1, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 168 (Tuesday, September 1, 2026)]
+[Rules and Regulations]
+[Pages 56052-56053]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-17884]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+POSTAL SERVICE
+
+39 CFR Part 111
+
+
+Free Matter for the Blind and Other Physically Handicapped 
+Persons
+
+AGENCY: Postal Service.
+
+ACTION: Final rule.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The Postal Service is revising Mailing Standards of the United 
+States Postal Service, Domestic Mail Manual (DMM[supreg]) to clarify 
+the applicability of the Hazmat Handling Fee, and to require a parcel 
+barcode, on parcels mailed as Free Matter for the Blind and Other 
+Physically Handicapped Persons (Free Matter).
+
+DATES: Effective date: October 4, 2026.
+
+FOR FURTHER INFORMATION CONTACT: Steven Mills at (202) 268-7433 or 
+Garry Rodriguez at (202) 268-7281.
+
+SUPPLEMENTARY INFORMATION: On July 12, 2026, the Postal Service 
+introduced two new fees, the Hazmat Handling Fee for packages 
+containing hazardous materials to cover the additional costs of 
+transporting these items and the Hazmat Noncompliance Fee that will be 
+applied when we detect a package that contains hazardous materials and 
+that the customer did not appropriately declare and label.
+    The Postal Service is clarifying that pieces mailed under the 
+standards for Free Matter will not be subject to the Hazmat Handling 
+Fee. However, pieces mailed by commercial mailers under the standards 
+for Free Matter are subject to the Hazmat Noncompliance Fee.
+    In addition, the Postal Service is adding to the standards 
+governing Free Matter a requirement that all parcels bear an 
+Intelligent Mail[supreg] package barcode (IMpb[supreg]) and an 
+Intelligent Mail matrix barcode (IMmb<SUP>TM</SUP>). The requirement to 
+include the barcodes will benefit mailers and the Postal Service. It 
+will provide customers the ability to track their packages and it will 
+give the Postal Service better visibility in processing these packages 
+to achieve the expected expeditious handling and delivery of the 
+mailpiece.
+    The barcode will require mailers to use specific HAZMAT Service 
+Type Codes (STC). This requirement will improve processing and 
+transportation
+
+[[Page 56053]]
+
+safety, also beneficial to achieving the expected expeditious handling 
+and delivery of the mailpiece.
+    Commercial mailers of mailpieces not meeting the requirement for 
+using a unique IMpb and IMmb, as outlined in the DMM and Publication 
+199, Intelligent Mail Package Barcode (IMpb) Implementation Guide for 
+Confirmation Services and Electronic Payment Systems, will be subject 
+to the Package Quality Noncompliance Fee provided in the Notice 123-
+Price List.
+    The Postal Service adopts the described changes to Mailing 
+Standards of the United States Postal Service, Domestic Mail Manual 
+(DMM), incorporated by reference in the Code of Federal Regulations. We 
+will publish an appropriate amendment to 39 CFR part 111 to reflect 
+these changes.
+
+List of Subjects in 39 CFR Part 111
+
+    Administrative practice and procedure, Postal Service.
+
+    Accordingly, the Postal Service amends Mailing Standards of the 
+United States Postal Service, Domestic Mail Manual (DMM), incorporated 
+by reference in the Code of Federal Regulations as follows (see 39 CFR 
+111.1):
+
+PART 111--[AMENDED]
+
+0
+1. The authority citation for 39 CFR Part 111 continues to read as 
+follows:
+
+    Authority: 5 U.S.C. 552(a); 13 U.S.C. 301-307; 18 U.S.C. 1692-
+1737; 39 U.S.C. 101, 401-404, 414, 416, 3001-3018, 3201-3220, 3401-
+3406, 3621, 3622, 3626, 3629, 3631-3633, 3641, 3681-3685, and 5001.
+
+
+0
+2. Revise Mailing Standards of the United States Postal Service, 
+Domestic Mail Manual (DMM) as follows:
+
+Mailing Standards of the United States Postal Service, Domestic Mail 
+Manual (DMM)
+
+* * * * *
+
+700 Special Standards
+
+703 Nonprofit USPS Marketing Mail and Other Unique Eligibility
+
+* * * * *
+
+5.0 Free Matter for the Blind and Other Physically Handicapped Persons
+
+5.1 Basic Information
+
+5.1.1 General
+
+    [Revise the first sentence of 5.1.1 to read as follows:]
+    Subject to the standards below, matter may be entered free of 
+postage and is not subject to the Hazmat Handling Fee if mailed by or 
+for the use of blind or other persons who cannot read or use 
+conventionally printed materials due to a physical handicap. * * *
+* * * * *
+
+5.4 Preparation
+
+5.4.1 Basic Standards
+
+    All matter mailed under this standard:
+* * * * *
+    [Revise the text of 5.4.1 by adding a new item d to read as 
+follows:]
+    d. Parcels mailed under this standard (outbound and returns) must 
+bear an Intelligent Mail package barcode (IMpb) and an Intelligent Mail 
+matrix barcode (IMmb) prepared under 204.2.0. Commercial mailers of 
+mailpieces not meeting the requirements for using a unique IMpb and 
+IMmb, as outlined in 204.2.1.6 and Publication 199, Intelligent Mail 
+Package Barcode (IMpb) Implementation Guide for Confirmation Services 
+and Electronic Payment Systems, will be subject to the Package Quality 
+Noncompliance Fee (See Notice 123-Price List.). For details see 
+PostalPro at <a href="https://postalpro.usps.com">https://postalpro.usps.com</a>.
+* * * * *
+
+Colleen Hibbert-Kapler,
+Attorney, Ethics and Legal Compliance.
+[FR Doc. 2026-17884 Filed 8-31-26; 8:45 am]
+BILLING CODE P
+
+
+</pre></body>
+</html>

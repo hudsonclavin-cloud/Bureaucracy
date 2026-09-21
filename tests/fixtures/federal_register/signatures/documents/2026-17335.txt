@@ -1,0 +1,307 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 163 (Tuesday, August 25, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 163 (Tuesday, August 25, 2026)]
+[Rules and Regulations]
+[Pages 54794-54796]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-17335]
+
+
+-----------------------------------------------------------------------
+
+OFFICE OF PERSONNEL MANAGEMENT
+
+5 CFR Parts 316, 330, 351, 353, and 430
+
+[Docket ID: OPM-2026-0107]
+RIN 3206-AO86
+
+
+Reduction in Force; Correction
+
+AGENCY: Office of Personnel Management.
+
+ACTION: Final rule; correction.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The Office of Personnel Management (OPM) published a final 
+rule in the Federal Register on August 3, 2026, concerning reduction in 
+force. That document contained typographical and clerical errors in 
+amendatory instructions and in the regulatory text. This document 
+corrects the final rule.
+
+DATES: Effective September 2, 2026.
+
+FOR FURTHER INFORMATION CONTACT: Aaron Gottesman, Senior Advisor to the 
+Director, by email at <a href="/cdn-cgi/l/email-protection#60050d100c0f1905050103030f150e140102090c091419200f100d4e070f16"><span class="__cf_email__" data-cfemail="43262e332f2c3a26262220202c362d3722212a2f2a373a032c332e6d242c35">[email&#160;protected]</span></a> or by phone at 
+(202) 606-7400.
+
+SUPPLEMENTARY INFORMATION: OPM published a final rule on August 3, 2026 
+(91 FR 49178; FR Doc. 2026-15665), amending 5 CFR parts 316, 330, 351, 
+353, 359, 362, and 430. The document contained typographical and 
+clerical errors, including: amendatory instructions that do not match 
+the current text or structure of the Code of Federal Regulations 
+(instruction 15 directs the addition of Sec.  330.707(w), which already 
+exists as ``[Reserved]''; instruction 36 directs revision of 
+introductory text of Sec.  351.802(a), which has no introductory text; 
+and instruction 39 quotes text for removal from Sec.  353.110(a)(1) 
+that does not match the Code of Federal Regulations); incorrect ``of 
+this part'' references to Sec. Sec.  11.2 and 11.3 of this title, which 
+are located in 5 CFR part 11; a defective list structure in the 
+definition of ``Qualified'' in Sec.  330.202 and in Sec.  
+351.702(a)(4)(iv); and citation-form errors.
+    This document also corrects typographical and cross-reference 
+errors in provisions of 5 CFR part 316, which the final rule likewise 
+amended: Sec.  316.301(c)(1) refers to a covered position ``defined in 
+(2)'' rather than ``defined in paragraph (c)(2) of this section''; 
+Sec.  316.402(b)(4) reads ``30 percent of more'' rather than ``30 
+percent or more''; Sec.  316.403(b)(1) cites Sec.  316.402(b)(5) as the 
+authority for noncompetitive temporary appointments of disabled 
+veterans, although that paragraph concerns appointment under 31 U.S.C. 
+732(g) for current and former employees of the General Accounting 
+Office and the correct citation is Sec.  316.402(b)(4), appointment 
+under 5 U.S.C. 3112 (veterans with compensable service-connected 
+disability of 30 percent or more); Sec.  316.403(b)(2) cites section 
+4114 of title 38, United States Code, which was repealed by Public Law 
+102-40 (May 7, 1991) and replaced by section 7405 of title 38, the 
+current authority for temporary appointments of nurses in the 
+Department of Veterans Affairs; and Sec.  316.403(b)(3) ends with a 
+period rather than a semicolon. This document adds
+
+[[Page 54795]]
+
+amendatory instructions to the final rule to correct these errors in 
+part 316.
+    In addition, this rule and the Reduction in Force Appeals final 
+rule published the same day (91 FR 49230) each revised the authority 
+citation for part 351 with differing text; this document conforms 
+instruction 16 to the version published in the Reduction in Force 
+Appeals rule, which includes 5 U.S.C. 1103 and 1104, the provisions 
+supporting the appeals function established in subpart I of part 351. 
+This document corrects those errors before the rule's effective date. 
+The corrections are non-substantive.
+
+Signing Statement
+
+    The Director of OPM, Scott Kupor, reviewed and approved this 
+document and has authorized the undersigned to electronically sign and 
+submit this document to the Office of the Federal Register for 
+publication.
+
+    Office of Personnel Management.
+Jerson Matias,
+Federal Register Liaison.
+
+Correction
+
+    In FR Doc. 2026-15665, appearing on page 49178 in the Federal 
+Register of Monday, August 3, 2026, the following corrections are made:
+
+0
+1. On page 49215, in the third column, after amendatory instruction 1, 
+add amendatory instructions 1a, 1b, and 1c to read as follows:
+
+
+Sec.  316.301  [Amended]
+
+0
+1a. Amend Sec.  316.301 by removing, in paragraph (c)(1), the words 
+``defined in (2)'' and adding in their place the words ``defined in 
+paragraph (c)(2) of this section''.
+
+
+Sec.  316.402  [Amended]
+
+0
+1b. Amend Sec.  316.402 by removing, in paragraph (b)(4), the words 
+``30 percent of more'' and adding in their place the words ``30 percent 
+or more''.
+
+
+Sec.  316.403  [Amended]
+
+0
+1c. Amend Sec.  316.403 by:
+0
+a. In paragraph (b)(1), removing the citation ``Sec.  316.402(b)(5)'' 
+and adding in its place the citation ``Sec.  316.402(b)(4)'';
+0
+b. In paragraph (b)(2), removing the words ``section 4114 of title 38, 
+United States Code'' and adding in their place the words ``section 7405 
+of title 38, United States Code''; and
+0
+c. In paragraph (b)(3), removing the period at the end of the paragraph 
+and adding in its place a semicolon.
+
+0
+2. On page 49216, amendatory instruction 5 is corrected to read as 
+follows:
+0
+5. Amend Sec.  330.202, in the definition of ``Qualified'', by revising 
+paragraph (5) and adding paragraph (6). The revision and addition read 
+as follows:
+
+
+Sec.  330.202  [Corrected]
+
+0
+3. On page 49216, in Sec.  330.202, in the definition of ``Qualified'', 
+paragraph (5)(iv) is corrected to read as follows:
+    (iv) Acceptable examples of the types of assessments include: 
+structured interviews; a work-related exercise; a custom or generic 
+procedure for measuring an employee's employment or career-related 
+qualifications and interests; a structured resume review; or another 
+assessment, provided that the assessment--
+    (A) Demonstrates job-related technical skills, abilities, and 
+knowledge; and
+    (B) Is relevant for the position for which the assessment is 
+developed; and
+
+
+Sec.  330.609  [Corrected]
+
+0
+4. On page 49217, in Sec.  330.609(hh), remove ``pursuant to Sec.  11.2 
+of this part'' and add in its place ``pursuant to Sec.  11.2 of this 
+chapter''.
+
+0
+5. On page 49217, amendatory instruction 15 is corrected to read as 
+follows:
+0
+15. Amend Sec.  330.707 by revising paragraphs (v), (w), (x), and (y) 
+to read as follows:
+
+
+Sec.  330.707  [Corrected]
+
+0
+6. On page 49217, in Sec.  330.707(w), remove ``pursuant to Sec.  11.2 
+of this part'' and add in its place ``pursuant to Sec.  11.2 of this 
+chapter''.
+
+0
+7. On page 49218, amendatory instruction 16 is corrected to read as 
+follows:
+0
+16. Revise the authority citation for part 351 to read as follows:
+
+    Authority:  5 U.S.C. 1103, 1104, 1302, 2301, 3502, 3503, 38 
+U.S.C. 4331; E.O. 14284, 90 FR 17729; 5 CFR 2.2(c). Sec. 351.801 
+also issued under E.O. 12828, 58 FR 2965, 3 CFR, 1993 Comp., p. 569.
+
+
+Sec.  351.203  [Corrected]
+
+0
+8. On page 49219, in Sec.  351.203:
+0
+a. In the definition of ``Initial probationary period'', remove 
+``described in Sec.  11.2 of this part'' and add in its place 
+``described in Sec.  11.2 of this chapter'';
+0
+b. The definition of ``Military spouse'' is corrected to read as 
+follows:
+    Military spouse means a spouse of a member of the armed forces 
+(service member), as defined in Sec.  315.612(b)(4)(i) of this chapter.
+0
+c. In the definition of ``Trial period'', remove ``described in Sec.  
+11.3 of this part'' and add in its place ``described in Sec.  11.3 of 
+this chapter''.
+
+
+Sec.  351.402  [Corrected]
+
+0
+9. On page 49219, in Sec.  351.402(b)(1), remove ``Except as authorized 
+in paragraph (b)(2),'' and add in its place ``Except as authorized in 
+paragraph (b)(2) of this section,''.
+
+
+Sec.  351.503  [Corrected]
+
+0
+10. On page 49221, in Sec.  351.503:
+0
+a. In paragraph (b)(2), remove ``in accordance with Sec.  351.501 (as 
+augmented'' and add in its place ``in accordance with paragraph (a) of 
+this section (as augmented'';
+0
+b. In paragraph (d), remove ``authorized under 430.208(d) prior to the 
+final rule prescribed at 91 FR 41521)'' and add in its place 
+``authorized under Sec.  430.208(d) of this chapter, as in effect prior 
+to the final rule published at 91 FR 41521 (July 7, 2026))''; and
+0
+c. In paragraph (e)(2), remove ``as authorized under 430.208(d) prior 
+to the final rule prescribed at 91 FR 41521)'' and add in its place 
+``as authorized under Sec.  430.208(d) of this chapter, as in effect 
+prior to the final rule published at 91 FR 41521 (July 7, 2026))''.
+
+
+Sec.  351.506  [Corrected]
+
+0
+11. On page 49223, in Sec.  351.506(c)(2), remove ``under Sec.  
+351.701(b) and (c))'' and add in its place ``under Sec.  351.701(b))''.
+
+
+Sec.  351.606  [Corrected]
+
+0
+12. On page 49224, in Sec.  351.606:
+0
+a. In paragraph (a)(5)(ii), remove ``under parts 432 or 752 of this 
+chapter'' and add in its place ``under part 432 or 752 of this 
+chapter''; and
+0
+b. In paragraph (a)(5)(iii), remove ``under sections 351.606(b), 
+351.607, or 351.608 of this chapter'' and add in its place ``under 
+paragraph (b) of this section or Sec.  351.607 or Sec.  351.608''.
+
+
+Sec.  351.702  [Corrected]
+
+0
+13. On page 49226, in Sec.  351.702(a)(4), paragraph (iv) is corrected 
+to read as follows:
+    (iv) Acceptable examples of the types of assessments include: 
+structured interviews; a work-related exercise; a custom or generic 
+procedure for measuring an employee's employment or career-related 
+qualifications and interests; a structured resume review; or another 
+assessment, provided that the assessment--
+    (A) Demonstrates job-related technical skills, abilities, and 
+knowledge; and
+    (B) Is relevant for the position for which the assessment is 
+developed.
+    14. On page 49226, amendatory instruction 36 is corrected to read 
+as follows:
+
+[[Page 54796]]
+
+    36. Amend Sec.  351.802 by adding introductory text to paragraph 
+(a) and revising paragraphs (a)(2) and (a)(3) to read as follows:
+    15. On page 49226, amendatory instruction 39 is corrected to read 
+as follows:
+    39. Amend Sec.  353.110 by removing, in paragraph (a)(1), the words 
+``Associate Director for Employment, OPM, 1900 E Street, NW, 
+Washington, DC 20415'' and adding, in their place, the words 
+``Workforce Policy & Innovation by email at <a href="/cdn-cgi/l/email-protection#2651564f4852474d436649564b08414950"><span class="__cf_email__" data-cfemail="4e393e27203a2f252b0e213e2360292138">[email&#160;protected]</span></a>''.
+
+
+Sec.  430.208  [Corrected]
+
+0
+16. On page 49227, in Sec.  430.208(e)(4), remove ``under Sec.  
+351.503(d) and (e).'' and add in its place ``under Sec.  351.503(d) and 
+(e) of this chapter.''.
+
+[FR Doc. 2026-17335 Filed 8-24-26; 8:45 am]
+BILLING CODE 6325-39-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

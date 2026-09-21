@@ -1,0 +1,503 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 177 (Tuesday, September 15, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 177 (Tuesday, September 15, 2026)]
+[Rules and Regulations]
+[Pages 58382-58386]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-18849]
+
+
+-----------------------------------------------------------------------
+
+DEPARTMENT OF COMMERCE
+
+National Oceanic and Atmospheric Administration
+
+50 CFR Part 665
+
+[Docket No. 260910-0004]
+RIN 0648-BN81
+
+
+Pacific Island Fisheries; Catch and Retention Limits for Striped 
+Marlin in the Western and Central Pacific Ocean North of the Equator
+
+AGENCY: National Marine Fisheries Service (NMFS), National Oceanic and 
+Atmospheric Administration (NOAA), Commerce.
+
+ACTION: Final rule.
+
+-----------------------------------------------------------------------
+
+SUMMARY: This final rule implements a framework for specifying catch 
+limits for all U.S. fisheries and retention limits
+
+[[Page 58383]]
+
+by U.S. longline fisheries under a Hawaii longline limited entry permit 
+for Western and Central North Pacific Ocean (WCNPO) striped marlin 
+(Kajikia audax), consistent with the requirements of Western and 
+Central Pacific Fisheries Commission (WCPFC) Conservation and 
+Management Measure (CMM) 2024-06. If the retention limit is reached, 
+NMFS will prohibit retention of WCNPO striped marlin by longline 
+fishing vessels until the end of the year to prevent the U.S. catch 
+limit from being exceeded. Because the U.S. limit under the framework 
+can change each year, NMFS will specify the updated catch and longline 
+retention limits by notice in the Federal Register early each calendar 
+year. For fishing year 2026, NMFS specifies a U.S. WCNPO striped marlin 
+limit of 393.4 metric tons (mt) (867,300 pounds (lb)) and a U.S. 
+longline retention limit of 381.6 mt (841,300 lb) using the framework.
+
+DATES: The final rule is effective October 14, 2026.
+
+ADDRESSES: Copies of the Fishery Ecosystem Plan for Pelagic Fisheries 
+of the Western Pacific Region (FEP) are available from the Western 
+Pacific Fishery Management Council (Council), 1164 Bishop St., Suite 
+1400, Honolulu, HI 96813, tel. 808-522-8220, fax 808-522-8226, or 
+<a href="https://www.wpcouncil.org">https://www.wpcouncil.org</a>. Copies of the environmental analyses and 
+other supporting documents for this action are available from <a href="https://www.regulations.gov/docket/NOAA-NMFS-2025-0045">https://www.regulations.gov/docket/NOAA-NMFS-2025-0045</a>, or from Sarah J. 
+Malloy, Regional Administrator, NMFS Pacific Islands Regional Office 
+(PIRO), 1845 Wasp Blvd., Bldg. 176, Honolulu, HI 96818.
+
+FOR FURTHER INFORMATION CONTACT: David O'Brien, NMFS PIRO Sustainable 
+Fisheries, 808-725-5038.
+
+SUPPLEMENTARY INFORMATION: NMFS and the Council manage U.S. commercial 
+fishing for Western Pacific pelagic management unit species, including 
+striped marlin, under the FEP and implementing Federal regulations.
+    In addition, the WCPFC is the regional fisheries management 
+organization that manages WCNPO striped marlin internationally. A 2023 
+stock assessment for WCNPO striped marlin indicates that while the 
+stock was experiencing overfishing, it was not overfished under 
+domestic status determination criteria. This most recent stock 
+assessment indicates improvement in the status of the stock from the 
+previous 2019 stock assessment, when the stock was both experiencing 
+overfishing and overfished. Negotiations at the WCPFC resulted in the 
+adoption of a rebuilding plan for this stock that requires rebuilding 
+to 20 percent of unfished biomass with at least 60 percent probability 
+by 2034. In December 2024, the WCPFC adopted a new CMM for WCNPO 
+striped marlin (CMM 2024-06) (available at <a href="https://cmm.wcpfc.int/measure/cmm-2024-06">https://cmm.wcpfc.int/measure/cmm-2024-06</a>) that includes a total allowable catch (TAC) of the 
+stock across all WCPFC member nations as well as specific catch limits 
+for five nations, including the United States. CMM 2024-06 indicates in 
+paragraph 5 that the TAC of the stock annually from 2025-2027 is 2,400 
+mt (5,291,000 lb). The WCPFC determined this TAC was necessary to 
+achieve the requirements of the rebuilding plan for WCNPO striped 
+marlin.
+    The base U.S. catch limit specified in CMM 2024-06 is 228.4 mt 
+(503,500 lb), or 9.5 percent of the TAC for the stock. The U.S. catch 
+limit would apply to retained striped marlin caught by all vessels of 
+the United States in the Pacific Ocean north of the Equator (0[deg] 
+latitude) and west of 150[deg] W longitude. Consistent with CMM 2024-
+06, the U.S. catch limit under the framework depends on three factors: 
+a base catch limit for the United States set at 228.4 mt (503,500 lb); 
+the availability of unused quota relative to the overall international 
+catch limit for the stock 2 years prior; and any overages of the U.S. 
+limit that occurred 2 years prior.
+    Hawaii-based longline fisheries catch approximately 97 percent or 
+more of the total U.S. striped marlin catch annually and report catch 
+to NMFS on a daily basis. U.S. troll and handline fisheries account for 
+the remaining catch and report catch on a monthly basis. Therefore, 
+near-real-time catch monitoring by this sector is not possible. To 
+ensure that the catch limit is not exceeded, the Council recommended 
+and NMFS is implementing a retention limit of 97 percent of the catch 
+limit, for any U.S. fishing vessel with a Hawaii longline limited entry 
+permit issued under 50 CFR 665.801(b). This longline retention limit 
+ensures that when troll and handline catches are determined after the 
+season ends, the total U.S. catch of WCNPO striped marlin will not 
+exceed the catch limit.
+    Pursuant to this framework, NMFS will annually specify the WCNPO 
+striped marlin limit and longline retention limit through a Federal 
+Register notice. For 2026, the U.S. WCNPO striped marlin catch limit is 
+393.4 mt (867,300 lb) and is comprised of the base limit of 228.4 mt 
+(503,500 lb) and unused quota relative to the overall international 
+catch limit for the stock 2 years prior, which CMM 2024-06 determined 
+to be 165 mt (363,800 lb). The U.S. longline retention limit is 381.6 
+mt (841,300 lb).
+    If NMFS projects, based on vessel logbook, landing and other 
+available information, that the retention limit will be reached, we 
+will prohibit for the remainder of the year retention of striped marlin 
+caught by U.S. longline vessels holding a Hawaii limited entry longline 
+permit issued under 50 CFR 665.801(b) in the Pacific Ocean north of the 
+Equator (0[deg] latitude) and west of 150[deg] W longitude. This 
+retention prohibition will apply to striped marlin alive or dead when 
+fishing gear is recovered. A retention prohibition would go into effect 
+no earlier than 7 days after NMFS publishes a non-retention date notice 
+in the Federal Register and continue until the end of the calendar 
+year. The Regional Administrator will also update owners and operators 
+of longline vessels affected by the retention prohibition using other 
+means. You may find additional background information on this action in 
+the preamble to the proposed rule.
+
+Comments and Responses
+
+    On May 1, 2026, NMFS published a proposed rule, Environmental 
+Assessment (EA), and Regulatory Impact Review for public comment (91 FR 
+23387). The comment period ended June 1, 2026. NMFS received three 
+comments on the proposed rule; two from individuals and one jointly 
+submitted by two non-governmental organizations (NGOs). NMFS did not 
+receive any comments from fishery management agencies or from 
+individuals who identified themselves as fishery participants. We 
+summarize the comments and respond below.
+    Comment 1: A commentor supported the proposed rule, with an 
+interest in maintaining a sustainable striped marlin population to 
+protect biodiversity, strengthen ecosystem resilience, and ensure 
+resources for future generations.
+    Response: For the reasons set out in the proposed rule (91 FR 
+23387; May 1, 2026), we agree with the commentor.
+    Comment 2: A commentor did not support the proposed rule and 
+advocated for an end to fisheries for striped marlin and other highly 
+migratory species based on animal welfare arguments.
+    Response: NMFS is charged with natural resource management under 
+applicable statutes and, for WCNPO striped marlin, international 
+agreements. NMFS's role is to evaluate management recommendations from 
+the Council relative to the National Standards (50 CFR 600 Subpart D) 
+of the Magnuson-Stevens Act, international
+
+[[Page 58384]]
+
+requirements, and other applicable laws and implement those that are 
+consistent with these requirements. Closing the fishery based solely on 
+animal welfare concerns is inconsistent with the statutory objectives 
+of sustainable fisheries management.
+    Comment 3: Two NGOs jointly objected to the proposed rule and the 
+analysis in the EA on several points and recommended NMFS: (1) include 
+all retained catch and discarded catch in the TAC calculation and (2) 
+fully analyze other alternatives that will reduce the U.S. catch per 
+unit effort of striped marlin including (a) gear restrictions; (b) 
+mandatory release of live striped marlin; (c) a minimum size limit; (d) 
+area-based management; (e) protection of spawning and nursery grounds; 
+and (f) maintaining the closure of the Papah[amacr]naumoku[amacr]kea 
+marine national monument (PMNM) to longline fishing.
+    In addition, the commenters further recommended NMFS consider 
+positive economic impacts any additional mitigation measures would have 
+on small boat fishermen and recommended NMFS adopt Alternative 4 (no 
+retention of WCNPO striped marlin) if the agency is unable to 
+incorporate changes to the proposed rule that would reduce catch per 
+unit effort of the stock in U.S. fisheries.
+    Response: CMM 2024-06 requires the United States to implement a 
+catch limit for WCNPO striped marlin, which the WCPFC determined was 
+necessary to achieve the requirements of the rebuilding plan for WCNPO 
+striped marlin. This final rule implements a framework for specifying 
+the U.S. catch limit for WCNPO striped marlin and ensures that the 
+catch of WCNPO striped marlin by the United States will not exceed the 
+international limit for the United States established by the WCPFC in 
+CMM 2024-06.
+    Regarding recommendation 1 to include all retained catch and 
+discarded catch in the TAC calculation, the calculations and catch 
+information presented in the EA are based on the best scientific 
+information available. Because there has not been a prohibition on 
+retention of WCNPO striped marlin in the past, we assume that there 
+have been no significant discards of striped marlin in this fishery due 
+to their economic value. Internationally, catch reports provided to and 
+available from the WCPFC have consisted of only retained catch and past 
+assessments have been based on these retained-catch estimates. CMM 
+2024-06 specifically requires all WCPFC member countries, including the 
+United States, to provide ``catch, effort, and estimates of total live 
+and dead discards . . . as soon as possible, but no later than 2027'' 
+(paragraph 13). The provision of discard estimates is a new 
+requirement, and differs from the reporting requirements for any other 
+targeted highly migratory species managed through the WCPFC. CMM 2024-
+06 specifically differentiates between catch and estimates of discards 
+in paragraph 13 and does not mention discards in paragraphs related to 
+overall or country specific catch limits (paragraphs 5 & 6). Consistent 
+with WCPFC management for other species, and plain reading of CMM 2024-
+06, catch limits apply to retained catch, and not to the combination of 
+catch and discards. Our analysis in the EA and application of only 
+retained catch to catch and retention limits in this rule are 
+consistent with CMM 2024-06, and thus we did not accept the actions 
+recommended in the comment. Doing so would be inconsistent with the CMM 
+and would exceed its requirements.
+    Regarding recommendation 2a to fully analyze alternatives that will 
+reduce the U.S. catch per unit effort of striped marlin, as described 
+in the EA and noted in the comment, we considered several alternatives. 
+We did not analyze them in detail because they did not meet the purpose 
+and need for the action, are inconsistent with CMM 2024-06, and would 
+exceed its requirements. The alternatives raised by the comment 
+specifically included alternatives involving gear modification such as 
+removal of the shallowest hooks as evaluated by Bigelow and Mourato 
+(2012; as cited in the comment). As noted by Bigelow and Mourato, 
+although removal of the shallowest hooks resulted in reduced catch per 
+unit effort (CPUE) for striped marlin, it also resulted in 
+``operational difficulties as more mainline will need to be deployed, 
+thus increasing both the setting and retrieval times'' (Bigelow and 
+Mourato 2012). Increases in both setting and retrieval times would have 
+negative economic impacts to the longline fleet, counter to the purpose 
+and need for the action. Bigelow and Mourato also examined the use of 
+circle hooks and found a 42 percent reduction in striped marlin CPUE. 
+This gear modification was previously adopted in the Hawaii longline 
+fisheries (50 CFR 665.813(f) and 50 CFR 229.37(c)). For these reasons, 
+we did not modify the alternatives considered in the analysis 
+associated with this final rule.
+    Regarding recommendation 2b on mandatory release of live striped 
+marlin, the analysis in the EA specifically considered mandatory 
+release of live striped marlin. As described in the EA and illustrated 
+in Figure 4 of the EA, an analysis by Brodziak (2020) found that given 
+48 percent of striped marlin are alive at the vessel and, assuming post 
+release survival was 100 percent, even if live-release was universally 
+adopted across all international fleets catching this stock, it would 
+not achieve stock rebuilding goals. Therefore, adopting live releases 
+in U.S. fisheries alone would not be sufficient to achieve stock 
+rebuilding goals and would exceed the requirements of CMM 2024-06. 
+Requiring live releases in U.S. fisheries without concurrent 
+requirements for other international fleets would result in U.S. 
+fishermen assuming a disproportionate burden of the costs associated 
+with international conservation efforts and be contrary to the purpose 
+and need for the action given economic impacts to U.S. fisheries. Given 
+recent catches of striped marlin and the catch and longline retention 
+limits for U.S. fisheries under the framework finalized with this rule, 
+it is likely that we will reach the longline retention limit and 
+retention will be prohibited in the future. For these reasons, NMFS did 
+not adopt this recommendation in this final rule.
+    Regarding recommendation 2c on minimum size limits, the EA did not 
+explicitly consider a minimum size limit for U.S. fisheries, and such 
+limits have not previously been considered for commercial fisheries on 
+this WCNPO stock. The impact of a minimum size limit on the dynamics of 
+the WCNPO striped marlin stock and economics of the fishery are not 
+obvious and would require considerable analysis. In addition, such a 
+measure would likely introduce disproportionate burdens on U.S. 
+fishermen that would not be equally applied to other international 
+fleets.
+    Like recommendation 2b on mandatory release of live striped marlin 
+(above), consideration of a minimum size limit measure does not meet 
+the purpose and need for the action and is inconsistent with and would 
+exceed the requirements of CMM 2024-06. For all the reasons noted 
+above, NMFS did not adopt this recommendation in this final rule.
+    Regarding recommendation 2d on area-based management, NMFS is 
+unaware of published work that suggests that longline catch rates of 
+striped marlin in PMNM were higher than other locations open to 
+fishing, and commercial fishing has been prohibited within the current 
+PMNM boundary since 2011 (50 CFR 404.10). Bigelow and Mourato (2012) 
+specifically analyzed catch rates to determine if there were catch 
+hotspots for striped marlin. If they existed, striped marlin
+
+[[Page 58385]]
+
+catch rate hotspots could be considered as candidates for spatial 
+management as a method of reducing catch. Bigelow and Mourato concluded 
+that across years ``there were no hot-spots identified that were 
+spatially persistent in the area fished by the Hawaii-based tuna 
+fishery'' (Bigelow and Mourato 2012). Like recommendations 2b and 2c, 
+consideration of area-based management does not meet the purpose and 
+need for the action and is inconsistent with and would exceed the 
+requirements of CMM 2024-06. For all the reason noted above, NMFS did 
+not adopt this recommendation in this final rule.
+    Regarding recommendation 2e protection of spawning and nursery 
+grounds, although there is rare evidence of WCNPO striped marlin 
+spawning in waters around Hawaii, scientific consensus is that the 
+primary spawning grounds for this stock are in the far western Pacific 
+outside the jurisdiction of the United States. As summarized by 
+Martinez et al. (2025; as cited in the comment), ``the CNP [central 
+north Pacific Ocean] likely serves as a dynamic juvenile nursery and 
+feeding ground for sub-adult Striped Marlin, characterized by juvenile-
+sized fish and relatively limited spawning activity compared to other 
+regions of the Pacific'' (Martinez et al. 2025). Combined with a lack 
+of catch hotspots as noted in our response for recommendation 2d, 
+above, this relatively low spawning activity in the waters around 
+Hawaii argues against specific time or area-based management measures 
+for WCNPO striped marlin to protect spawning or rearing fish. Like 
+recommendations 2b, 2c, and 2d, consideration of spawning ground 
+protection does not meet the purpose and need for the action, and is 
+inconsistent with and would exceed the requirements of CMM 2024-06. For 
+all the reasons noted above, NMFS did not adopt this recommendation in 
+this final rule.
+    Regarding recommendation 2f to maintain the closure of the PMNM, 
+this final rule does not modify regulations affecting fishing access in 
+the PMNM.
+    Regarding the potential positive economic impacts these additional 
+mitigation measures would have on small boat fishermen, NMFS responds 
+as follows. Although we appreciate that studies of some fish species, 
+including striped marlin, have shown CPUE in recreational fisheries is 
+correlated with angler participation, trip frequency, and regional 
+expenditures, these findings are the result of extensive directed 
+socio-economic research. NMFS currently has not conducted, and is not 
+aware of, specific socio-economic research evaluating how striped 
+marlin CPUE in the Hawaii longline fishery affects the economic 
+performance of non-commercial fisheries in Hawaii. Although dated, the 
+value of the charter fishery in Hawaii was estimated at close to $50 
+million dollars in gross sales and it supported nearly 900 jobs 
+statewide in 2011, but current values or understanding of the effect of 
+striped marlin CPUE on fishery values is unclear. In the absence of 
+existing Hawaii-specific economic information of this type, NMFS is 
+unable to provide a rigorous analysis of the potential economic impacts 
+of variable striped marlin CPUE on non-commercial or charter fisheries 
+associated with this action. We did not implement this recommendation, 
+as there are no data to understand what, if any, benefits would accrue 
+to non-commercial or charter fisheries with the recommended additional 
+measures to reduce CPUE; which all exceed the requirements of CMM 2024-
+06.
+    NMFS declines to adopt the commenters' recommendation to select 
+Alternative 4 (no retention of WCNPO striped marlin) as it fails to 
+meet the purpose and need for the action, is inconsistent with and 
+would exceed the requirements of the CMM, and would maximize the 
+disproportionate burden of costs for international conservation efforts 
+of this stock to U.S. fishermen.
+    Ultimately, the United States is obligated under international 
+agreements to have regulations in place that implement the requirements 
+of WCPFC CMM 2024-06. Based on catches to date in 2026, it is likely 
+that the retention limit will be reached before the end of the year. 
+Without this rule in place and effective, we will be unable to prohibit 
+retention and prevent the U.S. catch limit under CMM 2024-06 from being 
+exceeded.
+
+Changes From the Proposed Rule
+
+    The final rule changes the organization of 50 CFR 665.813(l) from 
+the proposed rule to improve readability with minor changes to the 
+proposed rule text. We modified the text in paragraph (l)(2) ``is based 
+on'' to ``is composed of'' to improve readability. We removed the text 
+``, for which there are no in-season catch estimates,'' from paragraph 
+(l)(3) because there are in-season estimates for troll and handline 
+fisheries, but the data are not available to support in-season 
+management. This clarification would not affect the rule's purpose of 
+avoiding exceedance of the catch limit. We also added paragraph titles 
+to key rule paragraphs to further clarify interpretation of the 
+regulatory text.
+
+Classification
+
+    Pursuant to section 304(b)(3) of the Magnuson-Stevens Act, the NMFS 
+Assistant Administrator has determined that this final rule is 
+consistent with the FEP, other provisions of the Magnuson-Stevens Act, 
+and other applicable law.
+    This final rule has been determined to be not significant for 
+purposes of Executive Order 12866.
+    This final rule is exempt from the requirements of Executive Order 
+14192 because it is a routine fishing action.
+    A Tribal summary impact statement under section (5)(b)(2)(B) and 
+(c)(2) of E.O. 13175 was not required for this final rule because this 
+action does not impose substantial direct compliance costs on Indian 
+Tribal Governments and this action does not preempt Tribal law. A 
+Tribal summary impact statement is not required and has not been 
+prepared.
+    The Senior Lead Counsel for Regulation of the Department of 
+Commerce certified to the Chief Counsel for Advocacy of the Small 
+Business Administration during the proposed rule stage that this action 
+would not have a significant economic impact on a substantial number of 
+small entities. The factual basis for the certification was published 
+in the proposed rule and is not repeated here. No comments were 
+received regarding this certification. As a result, a final regulatory 
+flexibility analysis was not required and none was prepared.
+    This final rule contains no information collection requirements 
+under the Paperwork Reduction Act of 1995.
+
+List of Subjects in 50 CFR Part 665
+
+    Fisheries, Fishing, Hawaii, Longline, Limited access permit, 
+Pacific Islands, Western Pacific.
+
+    Dated: September 10, 2026.
+Samuel D. Rauch III,
+Deputy Assistant Administrator for Regulatory Programs, National Marine 
+Fisheries Service.
+
+    For the reasons set out in the preamble, NMFS amends 50 CFR part 
+665 as follows:
+
+PART 665--FISHERIES IN THE WESTERN PACIFIC
+
+0
+1. The authority citation for part 665 continues to read as follows:
+
+    Authority: 16 U.S.C. 1801 et seq.
+
+
+0
+2. Amend Sec.  665.800 by adding, in alphabetical order, the definition 
+of ``Non-retention date'' to read as follows:
+
+
+Sec.  665.800  Definitions.
+
+* * * * *
+
+[[Page 58386]]
+
+    Non-retention date means the date upon which the Regional 
+Administrator projects that a retention limit will be met, and is the 
+date on which retention of a species identified under Sec.  665.813 is 
+prohibited as specified under Sec.  665.802, until the end of the 
+fishing year.
+* * * * *
+
+0
+3. Amend Sec.  665.802 by adding paragraph (uu) to read as follows:
+
+
+Sec.  665.802  Prohibitions.
+
+* * * * *
+    (uu) Fail to immediately release any striped marlin captured on or 
+after the non-retention date in the Pacific Ocean north of the Equator 
+(0[deg] latitude) and west of 150[deg] W longitude by a vessel 
+registered for use under a longline permit issued under Sec.  
+665.801(b), in violation of Sec.  665.813(l).
+* * * * *
+
+0
+4. Amend Sec.  665.813 by adding paragraph (l) to read as follows:
+
+
+Sec.  665.813  Western Pacific longline fishing restrictions.
+
+* * * * *
+    (l) Striped marlin catch and longline retention limits--(1) 
+Specification. The Regional Administrator shall by notice in the 
+Federal Register specify a U.S. catch limit and longline retention 
+limit for striped marlin for vessels registered for use under a 
+longline permit issued under Sec.  665.801(b) fishing in the Pacific 
+Ocean north of the Equator (0[deg] latitude) and west of 150[deg] W 
+longitude.
+    (2) Catch limit. The U.S. catch limit will be consistent with the 
+international limit for the United States set by the Western and 
+Central Pacific Fisheries Commission. The international limit is 
+composed of a base limit for the United States, plus available underage 
+across all nations' catch of the stock 2 years prior, minus any overage 
+of the U.S. catch limit 2 years prior.
+    (3) Longline retention limit. The longline retention limit will be 
+97 percent of the U.S. catch limit. Catches in troll and handline 
+fisheries are less than 3 percent of the total U.S. catch of striped 
+marlin on average each year. Setting the longline retention limit at 97 
+percent ensures that when the catches from these other fisheries are 
+added post-season, the total U.S. catch limit is not exceeded.
+    (4) Retention Prohibition. NMFS will monitor striped marlin 
+landings with respect to the limits established under paragraphs (l)(2) 
+and (3) of this section using longline landings, data submitted in 
+logbooks, and other available information.
+    (i) When the longline retention limit is projected to be reached 
+based on analyses of available information, the Regional Administrator 
+shall provide notice in the Federal Register. This notice will include 
+an advisement of a non-retention date beginning at a specified date, 
+which is not earlier than 7 days after the date of filing the non-
+retention date notice for public inspection with the Office of the 
+Federal Register.
+    (ii) Once the non-retention date is noticed in the Federal Register 
+pursuant to paragraph (l)(4)(i) of this section, a fishing vessel 
+permitted under a Hawaii longline limited access permit issued under 
+Sec.  665.801(b) may not be used to retain on board, transship, or land 
+striped marlin captured by longline gear in the Pacific Ocean north of 
+0[deg] latitude and west of 150[deg] W longitude from the non-retention 
+date through December 31 of that calendar year.
+    (iii) Exception for striped marlin retained prior to the non-
+retention date. Any striped marlin captured by longline gear in the 
+Pacific Ocean north of 0[deg] latitude and west of 150[deg] W longitude 
+already on board a fishing vessel registered for use with a Hawaii 
+longline limited access permit issued under Sec.  665.801(b) before the 
+non-retention date noticed pursuant to paragraph (l)(4)(i) of this 
+section may be retained on board, transshipped, and/or landed, to the 
+extent authorized by applicable laws and regulations, provided that the 
+striped marlin is landed within 14 days after the effective non-
+retention date.
+    (iv) All striped marlin captured by longline gear in the Pacific 
+Ocean north of 0[deg] latitude and west of 150[deg] W longitude on or 
+after the non-retention date noticed in the Federal Register pursuant 
+to paragraph (l)(4)(i) of this section shall be immediately released.
+
+[FR Doc. 2026-18849 Filed 9-14-26; 8:45 am]
+BILLING CODE 3510-22-P
+
+
+</pre></body>
+</html>

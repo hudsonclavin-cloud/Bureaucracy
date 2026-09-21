@@ -1,0 +1,57 @@
+<html>
+<head>
+<title>Federal Register, Volume 90 Issue 222 (Thursday, November 20, 2025)</title>
+</head>
+<body><pre>
+[Federal Register Volume 90, Number 222 (Thursday, November 20, 2025)]
+[Notices]
+[Page 52452]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2025-20446]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+PRIVACY AND CIVIL LIBERTIES OVERSIGHT BOARD
+
+[Notice-PCLOB-2025-01; Docket No. 2025-0002; Sequence No.13]
+
+
+Privacy and Civil Liberties Oversight Board Public Forum; 
+Correction
+
+AGENCY: U.S. Privacy and Civil Liberties Oversight Board (PCLOB).
+
+ACTION: Notice; correction.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The PCLOB published a document in the Federal Register of 
+November 17, 2025, concerning a virtual public forum to discuss how 
+financial tools historically used by the government to fight terrorism 
+may now be impacting Americans' privacy and civil liberties. The 
+document contained incorrect information in the SUMMARY and DATES 
+sections. This document corrects the errors.
+
+FOR FURTHER INFORMATION CONTACT: Alan Silverleib, Director of 
+Legislative and Public Affairs, Privacy and Civil Liberties Oversight 
+Board, at 202-997-7719 and via email at <a href="/cdn-cgi/l/email-protection#a0d0c1cfe0d0c3cccfc28ec7cfd6"><span class="__cf_email__" data-cfemail="077766684777646b686529606871">[email&#160;protected]</span></a>.
+
+SUPPLEMENTARY INFORMATION: In the Federal Register of November 17, 
+2025, in FR Doc. 2025-198971:
+    1. On page 51414, in the first column, in the SUMMARY, correct 
+``Eastern Daylight Time (EDT)'' to read ``Eastern Standard Time 
+(EST)''.
+    2. On page 51414, in the first column, in the DATES section, 
+correct ``EDT'' to read ``EST''.
+
+Alan Silverleib,
+Legislative and Public Affairs Director, Privacy and Civil Liberties 
+Oversight Board.
+[FR Doc. 2025-20446 Filed 11-19-25; 8:45 am]
+BILLING CODE 6820-B3-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

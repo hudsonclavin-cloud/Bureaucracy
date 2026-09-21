@@ -1,0 +1,558 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 180 (Friday, September 18, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 180 (Friday, September 18, 2026)]
+[Notices]
+[Pages 59253-59256]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-19128]
+
+
+-----------------------------------------------------------------------
+
+SECURITIES AND EXCHANGE COMMISSION
+
+[Release No. 34-106384; File No. SR-CboeEDGX-2026-057]
+
+
+Self-Regulatory Organizations; Cboe EDGX Exchange, Inc.; Notice 
+of Filing and Immediate Effectiveness of a Proposed Rule Change To 
+Amend Exchange Rules 11.1, 11.6, 11.7, and 11.8 To Add a New Time-in-
+Force Designation Known as ``Regular `til Post Market''
+
+September 15, 2026.
+    Pursuant to Section 19(b)(1) of the Securities Exchange Act of 1934 
+(the ``Act''),\1\ and Rule 19b-4 thereunder,\2\ notice is hereby given 
+that on September 9, 2026, Cboe EDGX Exchange, Inc. (the ``Exchange'' 
+or ````EDGX'''') filed with the Securities and Exchange Commission (the 
+``Commission'') the proposed rule change as described in Items I and II 
+below, which Items have been prepared by the self-regulatory 
+organization. The Commission is publishing this notice to solicit 
+comments on the proposed rule change from interested persons.
+---------------------------------------------------------------------------
+
+    \1\ 15 U.S.C. 78s(b)(1).
+    \2\ 17 CFR 240.19b-4.
+---------------------------------------------------------------------------
+
+I. Self-Regulatory Organization's Statement of the Terms of Substance 
+of the Proposed Rule Change
+
+    Cboe EDGX Exchange, Inc. (``EDGX'' or the ``Exchange'') proposes to 
+amend Exchange Rules 11.1, 11.6, 11.7, and 11.8 to add a new Time-in-
+Force (``TIF'') designation known as ``Regular `til Post Market'' 
+(``RTP''). The Exchange also proposes to amend Rule 11.8(c) and Rule 
+11.8(d) to include references to ``Regular Hours Only'' (``RHO'') where 
+it has been erroneously excluded from certain rule text. The Exchange 
+has designated the proposed rule change as noncontroversial and 
+provided the Commission with the notice required by Rule 19b-
+4(f)(6)(iii) under the Act.\3\ The text of the proposed rule change is 
+provided in Exhibit 5.
+---------------------------------------------------------------------------
+
+    \3\ 17 CFR 240.19b-4(f)(6)(iii).
+---------------------------------------------------------------------------
+
+    The text of the proposed rule change is also available on the 
+Commission's website (<a href="https://www.sec.gov/rules/sro.shtml">https://www.sec.gov/rules/sro.shtml</a>), the 
+Exchange's website (<a href="https://www.cboe.com/us/equities/regulation/rule_filings/edgx/">https://www.cboe.com/us/equities/regulation/rule_filings/edgx/</a>), and at the principal office of the Exchange.
+
+II. Self-Regulatory Organization's Statement of the Purpose of, and 
+Statutory Basis for, the Proposed Rule Change
+
+    In its filing with the Commission, the Exchange included statements 
+concerning the purpose of and basis for the proposed rule change and 
+discussed any comments it received on the proposed rule change. The 
+text of these statements may be examined at the places specified in 
+Item IV below. The Exchange has prepared summaries, set forth in 
+sections A, B, and C below, of the most significant aspects of such 
+statements.
+
+A. Self-Regulatory Organization's Statement of the Purpose of, and 
+Statutory Basis for, the Proposed Rule Change
+
+1. Purpose
+    The Exchange proposes to amend Rule 11.6(q) (``Time-in-Force'') to 
+add a new TIF designation known as ``Regular `til Post Market'' or 
+``RTP.'' As proposed, an RTP order would be a limit order designated 
+for execution during both Regular Trading Hours \4\ and the Post-
+Closing Session,\5\ with any unexecuted portion expiring at the end of 
+the Post-Closing Session. In connection with the introduction of the 
+RTP TIF, the Exchange also proposes conforming amendments to Rules 
+11.1, 11.7, and 11.8 to reflect the availability of the RTP TIF across 
+the Exchange's order handling, order type, and opening process rules.
+---------------------------------------------------------------------------
+
+    \4\ See Exchange Rule 1.5(y). The term ``Regular Trading Hours'' 
+means the time between 9:30 a.m. and 4:00 p.m. Eastern Time.
+    \5\ See Exchange Rule 1.5(r). The Post-Closing Session on EDGX 
+means the time between 4:00 p.m. and 8:00 p.m. Eastern Time.
+---------------------------------------------------------------------------
+
+    Currently, Rule 11.6(q) provides Users \6\ with the following TIF 
+options for order entry.\7\ An ``Immediate-or-Cancel'' (``IOC'') order 
+\8\ is an instruction the User may attach to an order stating the order 
+is to be executed in whole or in part as soon as such order is 
+received. Any unexecuted portion of an IOC order is cancelled. A 
+``Day'' order \9\ is an instruction the User may attach to an order 
+stating that an order to buy or sell which, if not executed, expires at 
+the end of Regular Trading Hours. A ``Fill-or-Kill'' (``FOK'') order 
+\10\ is an instruction the User may attach to an order stating that the 
+order is to be executed in its entirety as soon as it is received and, 
+if not so executed, cancelled. A ``Good `til Day'' (``GTD'') order \11\ 
+is an instruction the User may attach to an order specifying the time 
+of day at which the order expires. Any unexecuted portion of an order 
+with a TIF instruction of GTD will be cancelled at the expiration of 
+the User's specified time, which can be no later than the close of the 
+Post-Closing Session. A ``Good `til Extended Day'' (``GTX'') order \12\ 
+is an instruction the User may attach to an order to buy or sell which, 
+if not executed, will be cancelled by the close of the Post-Closing 
+Session. A ``Regular Hours Only'' (``RHO'') order \13\ is an 
+instruction a User may attach to an order designating it for execution 
+only during Regular Trading Hours, which includes the Opening Process 
+and Re-Opening Process \14\ following a halt suspension or pause. A 
+``Pre-Opening Session Plus'' (``PRE'') order \15\ is a limit order 
+designated for execution during the Pre-Opening Session \16\ and 
+Regular Trading Hours. Any portion not executed expires at the end of 
+Regular Trading Hours. A ``Pre-Opening Session `til Extended Day'' 
+(``PTX'') order \17\ is a limit order designated for execution during 
+the Pre-Opening Session, Regular Trading Hours, and the Post-Closing 
+Session. Any portion not executed expires at the end of the Post-
+Closing Session. A ``Pre-Opening Session `til Day'' (``PTD'') order 
+\18\ is a limit order designated for execution during the Pre-Opening 
+Session, Regular Trading
+
+[[Page 59254]]
+
+Hours, and the Post-Closing Session. Any portion not executed will be 
+cancelled at the expiration time assigned to the order, which can be no 
+later than the close of the Post-Closing Session. While EDGX currently 
+offers a wide range of TIF designations, the Exchange does not 
+presently offer a TIF that specifically combines Regular Trading Hours 
+with the Post-Closing Session in a single, dedicated designation.
+---------------------------------------------------------------------------
+
+    \6\ See Exchange Rule 1.5(ee). ``User'' is defined as ``any 
+Member or Sponsored Participant who is authorized to obtain access 
+to the System pursuant to Rule 11.3.'' The ``System'' is ``the 
+electronic communications and trading facility designated by the 
+Board through which securities orders of Users are consolidated for 
+ranking, execution and, when applicable, routing away.'' See 
+Exchange Rule 1.5(cc). The term ``Member'' means any registered 
+broker or dealer that has been admitted to membership in the 
+Exchange. See Exchange Rule 1.5(n).
+    \7\ See Exchange Rule 11.6(q).
+    \8\ See Exchange Rule 11.6(q)(1).
+    \9\ See Exchange Rule 11.6(q)(2).
+    \10\ See Exchange Rule 11.6(q)(3).
+    \11\ See Exchange Rule 11.6(q)(4).
+    \12\ See Exchange Rule 11.6(q)(5).
+    \13\ See Exchange Rule 11.6(q)(6).
+    \14\ See Exchange Rule 11.7.
+    \15\ See Exchange Rule 11.6(q)(7).
+    \16\ See Exchange Rule 1.5(s). The term ``Pre-Opening Session'' 
+shall mean the time between 8:00 a.m. and 9:30 a.m. Eastern Time.
+    \17\ See Exchange Rule 11.6(q)(8).
+    \18\ See Exchange Rule 11.6(q)(9).
+---------------------------------------------------------------------------
+
+    Against this backdrop, the Exchange proposes to introduce the RTP 
+TIF as a new, dedicated TIF option on EDGX. As proposed, the RTP TIF 
+would permit a User to submit a single limit order that is eligible for 
+execution during Regular Trading Hours and that, if not fully executed 
+during Regular Trading Hours, would remain active and eligible for 
+execution during the Post-Closing Session. Any portion of an RTP order 
+not executed by the end of the Post-Closing Session would expire. An 
+RTP order may be modified or cancelled in accordance with Rule 11.10(e) 
+and order priority will be determined pursuant to Rule 11.9(a), just as 
+is the case for RHO orders currently. The Exchange believes that adding 
+the RTP TIF to its suite of available TIF designations in Rule 11.6(q) 
+would provide Users with a convenient, single-instruction mechanism to 
+participate in both Regular Trading Hours and the Post-Closing Session 
+without the need to submit separate orders for each session.
+    In connection with the introduction of the RTP TIF, the Exchange 
+also proposes to amend Rule 11.1 (``Hours of Trading and Trading 
+Days'') to add RTP to the list of TIF designations that are subject to 
+restrictions on order entry prior to the applicable Start times.\19\ 
+Rule 11.1(a) currently provides that the Exchange will not accept, 
+prior to 4:00 a.m. Eastern Time (or prior to 7:00 a.m. Eastern Time for 
+orders eligible for a 7:00 a.m. Start), among other orders, orders with 
+a Minimum Execution Quantity instruction that also include a Time-in-
+Force of Regular Hours Only.\20\ Because an RTP order, like an RHO 
+order, is designed for execution during Regular Trading Hours (and, in 
+the case of RTP, extending into the Post-Closing Session), the Exchange 
+proposes to add RTP to this restriction so that orders with a Minimum 
+Execution Quantity instruction that also include a Time-in-Force of RTP 
+will also not be accepted prior to 4:00 a.m. Eastern Time (or prior to 
+7:00 a.m. Eastern Time for orders eligible for a 7:00 a.m. Start). This 
+proposed change is consistent with the treatment of RHO orders and 
+ensures that orders combining the Minimum Execution Quantity condition 
+with the RTP TIF are not entered into the System before the applicable 
+trading sessions for such orders have commenced.
+---------------------------------------------------------------------------
+
+    \19\ See Exchange Rule 11.1(a).
+    \20\ See Exchange Rule 11.1(a). Rule 11.1(a) provides in part 
+that the Exchange will not accept, prior to 4:00 a.m. Eastern Time 
+(or prior to 7:00 a.m. Eastern Time for orders eligible for a 7:00 
+a.m. Start), orders with a Minimum Execution Quantity instruction 
+that also include a Time-in-Force of Regular Hours Only.
+---------------------------------------------------------------------------
+
+    The Exchange also proposes amendments to Rule 11.7 (``Opening 
+Process'') to add RTP alongside RHO throughout that rule's provisions 
+governing eligibility for and participation in the Opening Process and 
+the Re-Opening Process.\21\ Specifically, the Exchange proposes to 
+amend Rule 11.7(a) to provide that, prior to the beginning of the 
+Regular Session, Users who wish to participate in the Opening Process 
+may enter orders to buy or sell that are designated as either RHO or 
+RTP orders. All existing restrictions applicable to RHO orders in Rules 
+11.7(a)(1) and 11.7(a)(2) would apply equally to RTP orders, including 
+the restriction prohibiting EDGX Post Only Orders, ISOs, and Minimum 
+Quantity Orders from participating in the Opening Process. The Exchange 
+further proposes to amend Rule 11.7(e)(1)(A) to provide that, 
+consistent with non-RHO orders, non-RTP orders will be eligible for 
+participation in the Re-Opening Process following a Regulatory Halt, 
+subject to the same exceptions and limitations that currently apply to 
+non-RHO orders.\22\ These amendments ensure that the RTP TIF is 
+integrated consistently into the Exchange's opening and re-opening 
+processes for securities, on the same terms applicable to RHO orders.
+---------------------------------------------------------------------------
+
+    \21\ See Exchange Rule 11.7(a). Currently, only orders 
+designated as RHO are eligible to participate in the Opening Process 
+for securities prior to the beginning of Regular Trading Hours.
+    \22\ See Exchange Rule 11.7(e)(1)(A). Currently, non-RHO orders 
+are eligible for participation in the Re-Opening Process, but IOC, 
+FOK, EDGX Post Only Orders, and Minimum Quantity Orders will be 
+cancelled or rejected, as applicable, and any ISO that is not IOC or 
+FOK will be converted.
+---------------------------------------------------------------------------
+
+    The Exchange also proposes conforming amendments to Rule 11.8 
+(``Order Types'') to add RTP to the list of permissible TIF 
+instructions for the order types that will support the new 
+designation.\23\ Specifically, the Exchange proposes to add RTP as an 
+available TIF instruction for Limit Orders (Rule 11.8(b)), Intermarket 
+Sweep Orders (Rule 11.8(c)), MidPoint Peg Orders (Rule 11.8(d)), Market 
+Maker Peg Orders (Rule 11.8(e)), Supplemental Peg Orders (Rule 
+11.8(f)), and MidPoint Discretionary Orders (Rule 11.8(g)), in each 
+case alongside the existing RHO instruction and subject to the same 
+handling, display, and re-pricing provisions applicable to those order 
+types. These conforming amendments ensure that the RTP TIF is available 
+across the Exchange's order types in a manner consistent with the 
+treatment of the existing RHO TIF. The Exchange also proposes to amend 
+Rule 11.8(c) and Rule 11.8(d) to include RHO where it has been 
+erroneously excluded from certain rule text. Specifically, the Exchange 
+proposes to add RHO as a permissible TIF to Rule 11.8(c)(1), Rule 
+11.8(c)(3), Rule 11.8(c)(5), Rule 11.8(c)(6), and Rule 11.8(d)(1). The 
+Exchange notes that Rule 11.8(c)(1) and Rule 11.8(d)(1) each includes 
+RHO as a permissible TIF in its opening sentence, but the remainder of 
+Rule 11.8(c) and Rule 11.8(d) does not include RHO even though other 
+similar TIFs (e.g., GTD and GTX, which are both TIFs active during 
+Regular Trading Hours) are permissible. Including RHO in Rules 
+11.8(c)(1), (3), (5), and (6) and Rule 11.8(d)(1) where other TIFs that 
+apply during Regular Trading Hours are similarly included ensures that 
+ISOs \24\ and MidPoint Peg Orders containing a TIF of RHO are treated 
+similarly to other TIFs active during Regular Trading Hours.
+---------------------------------------------------------------------------
+
+    \23\ See Exchange Rule 11.8.
+    \24\ An ``ISO'' refers to an Intermarket Sweep Order as defined 
+in Regulation NMS Rule 600(a)(47).
+---------------------------------------------------------------------------
+
+Comparison to Other Exchange Times-in-Force
+    The Exchange has also considered how other national securities 
+exchanges handle TIF requirements for order entry when it comes to 
+spanning the regular and after-hours trading sessions. NYSE Arca's 
+trading rules provide for three trading sessions: the Early Trading 
+Session, the Core Trading Session, and the Late Trading Session.\25\ 
+Under NYSE Arca's framework, orders entered into the NYSE Arca 
+Marketplace must include a designation for which trading session(s) the 
+order will remain in effect.\26\ An order is eligible to participate in 
+the designated trading session(s) only and may remain in effect for one 
+or more consecutive trading sessions on a particular day.\27\ Orders 
+may be accepted by the exchange that
+
+[[Page 59255]]
+
+are not eligible to trade until a later trading session begins.\28\ 
+Thus, NYSE Arca offers comparable functionality as proposed by the 
+Exchange as it permits orders to be entered during its Early Trading 
+Session that are eligible to trade in both the Core Trading Session and 
+the Late Trading Session, which is analogous to the Exchange's proposed 
+RTP TIF.
+---------------------------------------------------------------------------
+
+    \25\ See NYSE Arca Rule 7.34-E(a). NYSE Arca's Early Trading 
+Session runs from 4:00 a.m. to 9:30 a.m. Eastern Time, its Core 
+Trading Session runs from 9:30 a.m. to 4:00 p.m. Eastern Time, and 
+its Late Trading Session runs from the conclusion of the Core 
+Trading Session until 8:00 p.m. Eastern Time. Under Rule 7.34-E, all 
+order types and modifiers defined in Rule 7.31-E that are designated 
+for the Early Trading Session are eligible to participate in the 
+Early Trading Session, subject to certain order-type restrictions.
+    \26\ See NYSE Arca Rule 7.34-E(b)(1).
+    \27\ Id.
+    \28\ Id.
+---------------------------------------------------------------------------
+
+    Similarly, Nasdaq's Time-in-Force framework, set forth in Nasdaq 
+Equity Rule 4703(a), provides that the TIF assigned to an order 
+designates the period of time that the Nasdaq Market Center will hold 
+the order for potential execution, with Participants specifying both a 
+time at which the order becomes active and a time at which the order 
+ceases to be active.\29\ Nasdaq does refer to certain periods of times 
+with explicit TIFs throughout its rulebook, including ``IOC,'' ``System 
+Hours Day,'' ``System Hours Expire Time,'' and ``Market Hours Day,'' 
+however these terms are derived from the specific start and end times 
+appended to orders, similar to the NYSE Arca functionality described 
+supra. As such, Nasdaq offers comparable functionality as proposed by 
+the Exchange but does so through the ability of orders to be entered 
+with specific start and end times as opposed to a specific TIF as 
+proposed by the Exchange.
+---------------------------------------------------------------------------
+
+    \29\ See Nasdaq Equity Rule 4703(a). Nasdaq provides a list of 
+acceptable times to activate and deactivate orders, which includes 
+Regular Market Hours (similar to the Exchange's RHO TIF) and the end 
+of System Hours (pursuant to Nasdaq Equity 1, Section 1(a)(9), the 
+end of System Hours is defined as 8:00 p.m. ET, which is identical 
+to the end time of the Exchange's Post-Closing Session).
+---------------------------------------------------------------------------
+
+Implementation
+    The Exchange plans to implement the proposed rule change during the 
+early fourth quarter of 2026 and will announce the implementation date 
+via Trade Desk Notice.
+2. Statutory Basis
+    The Exchange believes that the proposed rule change is consistent 
+with Section 6(b) of the Act,\30\ in general, and furthers the 
+objectives of Section 6(b)(5) of the Act,\31\ in particular, in that it 
+is designed to prevent fraudulent and manipulative acts and practices, 
+to promote just and equitable principles of trade, to foster 
+cooperation and coordination with persons engaged in regulating, 
+clearing, settling, processing information with respect to, and 
+facilitating transactions in securities, to remove impediments to and 
+perfect the mechanism of a free and open market and a national market 
+system, and, in general, to protect investors and the public interest.
+---------------------------------------------------------------------------
+
+    \30\ 15 U.S.C. 78f.
+    \31\ 15 U.S.C. 78f(b)(5).
+---------------------------------------------------------------------------
+
+    The Exchange believes the proposed rule change promotes just and 
+equitable principles of trade, removes impediments to and perfects the 
+mechanism of a free and open market and national market system, and 
+protects investors and the public interest by providing Users with a 
+convenient, streamlined mechanism to participate in both Regular 
+Trading Hours and the Post-Closing Session through the submission of a 
+single order. Currently, Users seeking to maintain trading interest 
+across both Regular Trading Hours and the Post-Closing Session must 
+either submit separate orders for each session or utilize broader TIF 
+designations that may include trading sessions not desired by the User. 
+The introduction of the RTP TIF in Rule 11.6 directly addresses this 
+gap by offering a dedicated, purpose-built TIF designation that permits 
+a User to submit a single order eligible for execution during Regular 
+Trading Hours and, if not fully executed, to have such order remain 
+active through the end of the Post-Closing Session.
+    This streamlined approach promotes just and equitable principles of 
+trade by enabling Users to efficiently express their trading interest 
+across the regular and post-close sessions in a single instruction, 
+thereby reducing operational complexity, administrative burden, and the 
+potential for order entry errors that may arise from the need to manage 
+multiple orders across trading sessions.
+    Furthermore, the conforming amendments to Rules 11.1, 11.7, and 
+11.8 ensure that the RTP TIF is fully integrated into the Exchange's 
+existing order handling, order type, and opening process framework in a 
+manner that is consistent with the treatment of the existing limit RHO 
+TIF. By aligning the treatment of RTP orders with RHO limit orders for 
+purposes of participation in the Opening Process and Re-Opening 
+Process, the Exchange ensures that RTP orders are processed in a manner 
+that is transparent, predictable, and fair to all Users. The consistent 
+treatment of RTP orders across the Exchange's rules promotes just and 
+equitable principles of trade by providing Users with certainty as to 
+how their RTP orders will be handled throughout the trading day. 
+Additionally, the proposed amendments to Rules 11.8(c) and Rule 11.8(d) 
+to include RHO as a permissible TIF alongside other TIFs that are 
+active during Regular Trading Hours similarly promotes just and 
+equitable principles of trade by providing Users with certainty as to 
+how their orders designated as ISO and MidPoint Peg orders will be 
+handled throughout the trading day.
+    Moreover, the proposed rule change perfects the mechanism of a free 
+and open market and supports a national market system by offering Users 
+functionality that is comparable to that available on other national 
+securities exchanges. As discussed above, NYSE Arca permits orders to 
+be entered during its Early Trading Session that are eligible to trade 
+in both the Core Trading Session and the Late Trading Session, 
+providing comparable functionality to the Exchange's proposed RTP TIF. 
+Similarly, Nasdaq's Time-in-Force framework permits Participants to 
+specify both a time at which an order becomes active and a time at 
+which the order ceases to be active, enabling comparable order entry 
+flexibility. The Exchange's adoption of the RTP TIF ensures that Users 
+have access to trading functionality on EDGX that is consistent with 
+industry practice and supports the efficient operation of the national 
+market system by enabling Users to express their trading interest in a 
+manner that is compatible with the trading mechanisms employed by other 
+market centers.
+    Finally, the Exchange believes that the proposed rule change is not 
+designed to permit unfair discrimination. The RTP TIF would be 
+available to all Users on an equal and non-discriminatory basis. The 
+use of the RTP TIF is entirely optional, and no User is required to 
+utilize the RTP TIF in connection with order submission to the 
+Exchange. Users who do not wish to use the RTP TIF may continue to 
+submit orders using any of the other TIF designations currently offered 
+by the Exchange, including the Day, RHO, and PTX TIF designations.
+
+B. Self-Regulatory Organization's Statement on Burden on Competition
+
+    The Exchange does not believe that the proposed rule change will 
+impose any burden on competition that is not necessary or appropriate 
+in furtherance of the purposes of the Act. The RTP TIF is an optional 
+designation offered by the Exchange, and Users are free to decide 
+whether to use the RTP TIF in connection with order submission to the 
+Exchange. The Exchange believes that the proposed RTP TIF and 
+associated conforming amendments do not impose any intramarket burden 
+on competition as they represent an enhancement to existing 
+functionality that would be available to all Users on an equal and non-
+discriminatory basis. The proposed
+
+[[Page 59256]]
+
+changes do not alter the way in which orders are prioritized, executed, 
+or otherwise processed on the Exchange; they simply provide Users with 
+an additional TIF option and integrate that option consistently into 
+existing rules.
+    The Exchange believes that the proposed rule change does not impose 
+any undue burden on intermarket competition. On the contrary, the 
+proposed changes are being made to provide Users with enhanced order 
+entry flexibility that may improve their ability to interact across 
+Regular Trading Hours and the Post-Closing Session that is comparable 
+to order entry flexibility on competitor exchanges, therefore promoting 
+competition between venues.
+
+C. Self-Regulatory Organization's Statement on Comments on the Proposed 
+Rule Change Received From Members, Participants, or Others
+
+    The Exchange has not solicited, and does not intend to solicit, 
+comments on this proposed rule change. The Exchange has not received 
+any unsolicited written comments from Members or other interested 
+parties.
+
+III. Date of Effectiveness of the Proposed Rule Change and Timing for 
+Commission Action
+
+    Because the foregoing proposed rule change does not: (i) 
+significantly affect the protection of investors or the public 
+interest; (ii) impose any significant burden on competition; and (iii) 
+become operative for 30 days after the date on which it was filed, or 
+such shorter time as the Commission may designate, it has become 
+effective pursuant to Section 19(b)(3)(A)(iii) of the Act \32\ and 
+subparagraph (f)(6) of Rule 19b-4 thereunder.\33\
+---------------------------------------------------------------------------
+
+    \32\ 15 U.S.C. 78s(b)(3)(A)(iii).
+    \33\ 17 CFR 240.19b-4(f)(6). In addition, Rule 19b-4(f)(6)(iii) 
+requires a self-regulatory organization to give the Commission 
+written notice of its intent to file the proposed rule change, along 
+with a brief description and text of the proposed rule change, at 
+least five business days prior to the date of filing of the proposed 
+rule change, or such shorter time as designated by the Commission. 
+The Exchange has satisfied this requirement.
+---------------------------------------------------------------------------
+
+    A proposed rule change filed under Rule 19b-4(f)(6) \34\ normally 
+does not become operative prior to 30 days after the date of the 
+filing. However, pursuant to Rule 19b-4(f)(6)(iii),\35\ the Commission 
+may designate a shorter time if such action is consistent with the 
+protection of investors and the public interest. The Exchange has asked 
+the Commission to waive the 30-day operative delay so that the proposed 
+rule change may become operative immediately upon filing. The Exchange 
+states that it is seeking to introduce the proposed functionality early 
+in the fourth quarter of 2026 and waiver of the operative delay will 
+permit the proposed rule changes to become effective immediately. The 
+Exchange further states that waiver of the operative delay will allow 
+the Exchange to offer a TIF that is competitive with TIF offerings of 
+Nasdaq \36\ and NYSE Arca,\37\ each of which permits Users to submit 
+orders during the respective Pre-Opening Session that become active 
+during Regular Trading Hours and remain active through the end of the 
+Post-Closing Session. The Commission believes that waiving the 30-day 
+operative delay is consistent with the protection of investors and the 
+public interest as the proposal does not raise any new or novel issues. 
+Therefore, the Commission hereby waives the 30-day operative delay and 
+designates the proposed rule change to be operative upon filing.\38\
+---------------------------------------------------------------------------
+
+    \34\ 17 CFR 240.19b-4(f)(6).
+    \35\ 17 CFR 240.19b-4(f)(6)(iii).
+    \36\ Supra note 29.
+    \37\ Supra note 25.
+    \38\ For purposes only of waiving the 30-day operative delay, 
+the Commission has also considered the proposed rule's impact on 
+efficiency, competition, and capital formation. See 15 U.S.C. 
+78c(f).
+---------------------------------------------------------------------------
+
+    At any time within 60 days of the filing of such proposed rule 
+change, the Commission summarily may temporarily suspend such rule 
+change if it appears to the Commission that such action is necessary or 
+appropriate in the public interest, for the protection of investors, or 
+otherwise in furtherance of the purposes of the Act. If the Commission 
+takes such action, the Commission shall institute proceedings under 
+Section 19(b)(2)(B) \39\ of the Act to determine whether the proposed 
+rule change should be approved or disapproved.
+---------------------------------------------------------------------------
+
+    \39\ 15 U.S.C. 78s(b)(2)(B).
+---------------------------------------------------------------------------
+
+IV. Solicitation of Comments
+
+    Interested persons are invited to submit written data, views and 
+arguments concerning the foregoing, including whether the proposed rule 
+change is consistent with the Act. Comments may be submitted by any of 
+the following methods:
+
+Electronic Comments
+
+    <bullet> Use the Commission's internet comment form (<a href="https://www.sec.gov/rules/sro.shtml">https://www.sec.gov/rules/sro.shtml</a>); or
+    <bullet> Send an email to <a href="/cdn-cgi/l/email-protection#84f6f1e8e1a9e7ebe9e9e1eaf0f7c4f7e1e7aae3ebf2"><span class="__cf_email__" data-cfemail="6b191e070e46080406060e051f182b180e08450c041d">[email&#160;protected]</span></a>. Please include 
+file number SR-CboeEDGX-2026-057 on the subject line.
+
+Paper Comments
+
+    <bullet> Send paper comments in triplicate to Secretary, Securities 
+and Exchange Commission, 100 F Street NE, Washington, DC 20549-1090.
+
+All submissions should refer to file number SR-CboeEDGX-2026-057. This 
+file number should be included on the subject line if email is used. To 
+help the Commission process and review your comments more efficiently, 
+please use only one method. The Commission will post all comments on 
+the Commission's internet website (<a href="https://www.sec.gov/rules/sro.shtml">https://www.sec.gov/rules/sro.shtml</a>). Copies of the filing will be available for inspection and 
+copying at the principal office of the Exchange. Do not include 
+personal identifiable information in submissions; you should submit 
+only information that you wish to make available publicly. We may 
+redact in part or withhold entirely from publication submitted material 
+that is obscene or subject to copyright protection. All submissions 
+should refer to file number SR-CboeEDGX-2026-057 and should be 
+submitted on or before October 9, 2026.
+
+    For the Commission, by the Division of Trading and Markets, 
+pursuant to delegated authority.\40\
+---------------------------------------------------------------------------
+
+    \40\ 17 CFR 200.30-3(a)(12), (59).
+---------------------------------------------------------------------------
+
+Sherry R. Haywood,
+Assistant Secretary.
+[FR Doc. 2026-19128 Filed 9-17-26; 8:45 am]
+BILLING CODE 8011-01-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

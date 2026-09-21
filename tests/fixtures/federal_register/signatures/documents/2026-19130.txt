@@ -1,0 +1,304 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 180 (Friday, September 18, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 180 (Friday, September 18, 2026)]
+[Notices]
+[Pages 59281-59283]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-19130]
+
+
+-----------------------------------------------------------------------
+
+SECURITIES AND EXCHANGE COMMISSION
+
+[Release No. 34-106387; File No. SR-MRX-2026-35]
+
+
+Self-Regulatory Organizations; Nasdaq MRX, LLC; Notice of Filing 
+and Immediate Effectiveness of Proposed Rule Change To Amend Options 2, 
+Section 3, Appointment of Market Makers
+
+September 15, 2026.
+    Pursuant to Section 19(b)(1) of the Securities Exchange Act of 1934 
+(``Act''),\1\ and Rule 19b-4 thereunder,\2\ notice is hereby given that 
+on September 2, 2026, Nasdaq MRX, LLC (``MRX'' or ``Exchange'') filed 
+with the Securities and Exchange Commission (``SEC'' or ``Commission'') 
+the proposed rule change as described in Items I, II, and III, below, 
+which Items have been prepared by the Exchange. The Commission is 
+publishing this notice to solicit comments on the proposed rule change 
+from interested persons.
+---------------------------------------------------------------------------
+
+    \1\ 15 U.S.C. 78s(b)(1).
+    \2\ 17 CFR 240.19b-4.
+---------------------------------------------------------------------------
+
+I. Self-Regulatory Organization's Statement of the Terms of Substance 
+of the Proposed Rule Change
+
+    The Exchange proposes to amend Options 2, Section 3, Appointment of 
+Market Makers.
+    The text of the proposed rule change is available on the Exchange's 
+website at <a href="https://listingcenter.nasdaq.com/rulebook/mrx/rulefilings">https://listingcenter.nasdaq.com/rulebook/mrx/rulefilings</a>, 
+and at the principal office of the Exchange.
+
+II. Self-Regulatory Organization's Statement of the Purpose of, and 
+Statutory Basis for, the Proposed Rule Change
+
+    In its filing with the Commission, the Exchange included statements 
+concerning the purpose of and basis for the proposed rule change and 
+discussed any comments it received on the proposed rule change. The 
+text of these statements may be examined at the places specified in 
+Item IV below. The Exchange has prepared summaries, set forth in 
+sections A, B, and C below, of the most significant aspects of such 
+statements.
+
+A. Self-Regulatory Organization's Statement of the Purpose of, and 
+Statutory Basis for, the Proposed Rule Change
+
+1. Purpose
+    The Exchange proposes to amend Options 2, Section 3, Appointment of 
+Market Makers, at paragraph (b) to change the current requirement that 
+a Primary Market Maker (``PMM'') \3\ shall be appointed to each options 
+class traded on the Exchange. The Exchange proposes instead to state 
+that a PMM may be appointed to each options class traded on the 
+Exchange. The proposed amendment would replace a mandatory requirement 
+to appoint a PMM to every options class with a permissive standard, 
+affording the Exchange the flexibility to determine, based on 
+prevailing market conditions and the availability of qualified 
+applicants, whether a PMM appointment is appropriate for a particular 
+options class.
+---------------------------------------------------------------------------
+
+    \3\ The term ``Primary Market Maker'' means a Member that is 
+approved to exercise trading privileges associated with PMM Rights. 
+See Options 1, Section 1(b)(36).
+---------------------------------------------------------------------------
+
+    Today, there are a number of Competitive Market Makers (``CMMs'') 
+\4\ on MRX that would continue to provide liquidity in the absence of a 
+PMM appointment under this proposal. CMMs are subject to continuous 
+quoting and other market making obligations set forth in Options 2, 
+Section 4 (Obligations of Market Makers), and are required to provide 
+two-sided quotations in 60% of the series in each of the option classes 
+to which they are appointed pursuant to the quoting requirements of 
+Options 2, Section 5 (Market Maker Quotations). CMMs are also not 
+capped in number and may actively quote in a broad range of option 
+classes.
+---------------------------------------------------------------------------
+
+    \4\ The term ``Competitive Market Maker'' means a Member that is 
+approved to exercise trading privileges associated with CMM Rights. 
+See Options 1, Section 1(b)(13).
+---------------------------------------------------------------------------
+
+    The proposed amendment aligns MRX's rule with Nasdaq Phlx LLC 
+(``Phlx'') Options 2, Section 12(a) \5\ which expressly permits, but 
+does not require, Phlx to designate a Lead Market Maker for a 
+particular options series. In addition, until July 2026, The Nasdaq 
+Options Market LLC (``NOM'') did not adopt rules for a class of market 
+maker similar to a PMM. NOM operated its markets for nearly twenty 
+years without such a category of market maker. The Exchange believes 
+that the current mandatory standard is not necessary to protect 
+investors or to ensure a fair and orderly market on MRX. Options 
+classes traded on the Exchange vary widely in their liquidity profiles, 
+order flow, and level of market maker interest. Circumstances may arise 
+in which no eligible Member seeks or is well-suited for a PMM 
+appointment in a particular options class, or in which appointing a PMM 
+is not economically viable for any prospective applicant. The Exchange 
+will monitor instances in which a PMM is not fulfilling its obligations 
+or is not in good standing and will seek to replace it with another 
+qualified PMM. In those cases, the mandatory standard in the current 
+rule provides no operable path forward. A permissive standard would 
+enable the Exchange to determine, on a class-by-class basis, whether a 
+PMM appointment serves the interests of the market and the investing 
+public.
+---------------------------------------------------------------------------
+
+    \5\ Phlx Options 2, Section 12(a) provides that a Lead Market 
+Maker is not required to be assigned to an options series. A Lead 
+Market Maker on Phlx is analogous to a Primary Market Maker on MRX.
+---------------------------------------------------------------------------
+
+    The proposed change is not intended to, and would not, alter the 
+substantive obligations or privileges of a PMM once appointed. A PMM 
+appointed to an options class would remain subject to the full set of 
+obligations set forth in MRX Options 2, Sections 3, 4, and 5, including 
+the Valid Width Quote requirement during the Options Opening Process in 
+Options 3, Section 8, and the 90% two-sided quoting obligation on an 
+intra-day basis. The Exchange further notes that CMMs are
+
+[[Page 59282]]
+
+available to provide liquidity in options classes traded on the 
+Exchange, and the appointment of a PMM is not a prerequisite for 
+maintaining a fair and orderly market in any given class. In options 
+classes for which no PMM is appointed, quoting and liquidity provision 
+would proceed pursuant to the CMM framework in Options 2, Sections 4 
+(Obligations of Market Makers) and 5 (Market Maker Quotations).
+2. Statutory Basis
+    The Exchange believes that its proposal is consistent with Section 
+6(b) of the Act,\6\ in general, and furthers the objectives of Section 
+6(b)(5) of the Act,\7\ in particular, in that it is designed to promote 
+just and equitable principles of trade, to remove impediments to and 
+perfect the mechanism of a free and open market and a national market 
+system, and, in general to protect investors and the public interest.
+---------------------------------------------------------------------------
+
+    \6\ 15 U.S.C. 78f(b).
+    \7\ 15 U.S.C. 78f(b)(5).
+---------------------------------------------------------------------------
+
+    The proposed amendment to Options 2, Section 3(b) protects 
+investors and the public interest and promotes just and equitable 
+principles of trade because CMMs will continue to provide liquidity on 
+the Exchange. There are a number of CMMs on MRX that would continue to 
+provide liquidity in the absence of a PMM appointment under this 
+proposal. CMMs are subject to continuous quoting and other market 
+making obligations set forth in Options 2, Section 4 (Obligations of 
+Market Makers), and are required to provide two-sided quotations in 60% 
+of the series in each of the option classes to which they are appointed 
+pursuant to the quoting requirements of Options 2, Section 5 (Market 
+Maker Quotations). CMMs are also not capped in number and may actively 
+quote in a broad range of option classes. Further, the amendment 
+affords the Exchange the flexibility to determine whether the 
+appointment of a PMM is appropriate in a given options class, rather 
+than requiring the Exchange to appoint a PMM in every class 
+irrespective of market conditions or applicant availability.\8\
+---------------------------------------------------------------------------
+
+    \8\ The Exchange notes that not every Market Maker is eligible 
+to be a PMM. A Market Maker may not be in good standing or may not 
+have superior technology to handle the demands of additional quoting 
+obligations (90% versus 60%) as described in Options 2, Section 5.
+---------------------------------------------------------------------------
+
+    The proposed permissive standard is substantively identical to the 
+framework already in place on Phlx, which provides at Options 2, 
+Section 12(a) that a Lead Market Maker ``is not required to be assigned 
+to an options series.'' Finally, the proposed change does not reduce or 
+otherwise modify the obligations of a PMM. As a result, the proposal 
+enhances the Exchange's administrative flexibility with respect to PMM 
+appointments while preserving all of the substantive market-quality 
+protections that flow from a PMM's obligations. For the foregoing 
+reasons, the Exchange believes that the proposal is consistent with the 
+Act.
+
+B. Self-Regulatory Organization's Statement on Burden on Competition
+
+    The Exchange does not believe that the proposed rule change will 
+impose any burden on competition that is not necessary or appropriate 
+in furtherance of the purposes of the Act.
+    The Exchange does not believe that the proposed rule change will 
+impose any burden on intramarket competition that is not necessary or 
+appropriate in furtherance of the purposes of the Act. The proposed 
+change would apply uniformly to all Members that seek or hold PMM 
+appointments on MRX. Further, the Exchange notes that there is 
+competition among CMMs who are required to provide two-sided quotations 
+in 60% of the series in each of the option classes to which they are 
+appointed pursuant to the quoting requirements of Options 2, Section 5 
+(Market Maker Quotations).
+    Members currently appointed as PMMs will retain their appointments 
+and will continue to be subject to the same obligations and eligible 
+for the same entitlements. Members seeking new PMM appointments will 
+continue to be evaluated under the same standards set forth in Options 
+2, Section 3. The proposal does not favor any Member or class of 
+Members over another, and it does not modify the rights or obligations 
+of CMMs.
+    The Exchange does not believe the proposed rule change will impose 
+any burden on intermarket competition that is not necessary or 
+appropriate in furtherance of the purposes of the Act. The proposed 
+change would harmonize MRX Options 2, Section 3(b) with the analogous 
+framework on Phlx.\9\ In addition, affording the Exchange greater 
+flexibility to administer its PMM program may allow the Exchange to 
+compete more effectively for order flow with other options markets.
+---------------------------------------------------------------------------
+
+    \9\ See Phlx Options 2, Section 12(a).
+---------------------------------------------------------------------------
+
+C. Self-Regulatory Organization's Statement on Comments on the Proposed 
+Rule Change Received From Members, Participants, or Others
+
+    No written comments were either solicited or received.
+
+III. Date of Effectiveness of the Proposed Rule Change and Timing for 
+Commission Action
+
+    Because the foregoing proposed rule change does not: (i) 
+significantly affect the protection of investors or the public 
+interest; (ii) impose any significant burden on competition; and (iii) 
+become operative for 30 days from the date on which it was filed, or 
+such shorter time as the Commission may designate, it has become 
+effective pursuant to Section 19(b)(3)(A)(iii) of the Act \10\ and 
+subparagraph (f)(6) of Rule 19b-4 thereunder.\11\
+---------------------------------------------------------------------------
+
+    \10\ 15 U.S.C. 78s(b)(3)(A)(iii).
+    \11\ 17 CFR 240.19b-4(f)(6). In addition, Rule 19b-4(f)(6) 
+requires a self-regulatory organization to give the Commission 
+written notice of its intent to file the proposed rule change at 
+least five business days prior to the date of filing of the proposed 
+rule change, or such shorter time as designated by the Commission. 
+The Exchange has satisfied this requirement.
+---------------------------------------------------------------------------
+
+    At any time within 60 days of the filing of the proposed rule 
+change, the Commission summarily may temporarily suspend such rule 
+change if it appears to the Commission that such action is necessary or 
+appropriate in the public interest, for the protection of investors, or 
+otherwise in furtherance of the purposes of the Act. If the Commission 
+takes such action, the Commission shall institute proceedings to 
+determine whether the proposed rule should be approved or disapproved.
+
+IV. Solicitation of Comments
+
+    Interested persons are invited to submit written data, views and 
+arguments concerning the foregoing, including whether the proposed rule 
+change is consistent with the Act. Comments may be submitted by any of 
+the following methods:
+
+[[Page 59283]]
+
+Electronic Comments
+
+    <bullet> Use the Commission's internet comment form (<a href="https://www.sec.gov/rules/sro.shtml">https://www.sec.gov/rules/sro.shtml</a>); or
+    <bullet> Send an email to <a href="/cdn-cgi/l/email-protection#0270776e672f616d6f6f676c7671427167612c656d74"><span class="__cf_email__" data-cfemail="c3b1b6afa6eea0acaeaea6adb7b083b0a6a0eda4acb5">[email&#160;protected]</span></a>. Please include 
+file number SR-MRX-2026-35 on the subject line.
+
+Paper Comments
+
+    <bullet> Send paper comments in triplicate to Secretary, Securities 
+and Exchange Commission, 100 F Street NE, Washington, DC 20549-1090.
+
+All submissions should refer to file number SR-MRX-2026-35. This file 
+number should be included on the subject line if email is used. To help 
+the Commission process and review your comments more efficiently, 
+please use only one method. The Commission will post all comments on 
+the Commission's internet website (<a href="https://www.sec.gov/rules/sro.shtml">https://www.sec.gov/rules/sro.shtml</a>). Copies of the filing will be available for inspection and 
+copying at the principal office of the Exchange. Do not include 
+personal identifiable information in submissions; you should submit 
+only information that you wish to make available publicly. We may 
+redact in part or withhold entirely from publication submitted material 
+that is obscene or subject to copyright protection. All submissions 
+should refer to file number SR-MRX-2026-35 and should be submitted on 
+or before October 9, 2026.
+
+    For the Commission, by the Division of Trading and Markets, 
+pursuant to delegated authority.\12\
+---------------------------------------------------------------------------
+
+    \12\ 17 CFR 200.30-3(a)(12).
+---------------------------------------------------------------------------
+
+Sherry R. Haywood,
+Assistant Secretary.
+[FR Doc. 2026-19130 Filed 9-17-26; 8:45 am]
+BILLING CODE 8011-01-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

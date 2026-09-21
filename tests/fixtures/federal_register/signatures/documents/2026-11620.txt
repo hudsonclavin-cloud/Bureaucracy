@@ -1,0 +1,87 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 111 (Wednesday, June 10, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 111 (Wednesday, June 10, 2026)]
+[Notices]
+[Page 35183]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-11620]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+U.S. INTERNATIONAL DEVELOPMENT FINANCE CORPORATION
+
+[DFC-003]
+
+
+Submission for OMB Review; Comments Request
+
+AGENCY: U.S. International Development Finance Corporation (DFC).
+
+ACTION: Notice of information collection; request for comment.
+
+-----------------------------------------------------------------------
+
+SUMMARY: Under the provisions of the Paperwork Reduction Act, agencies 
+are required to publish a Notice in the Federal Register notifying the 
+public that the agency is creating a new/modifying an existing/renewing 
+an existing/reinstating a previously approved information collection 
+for OMB review and approval and requests public review and comment on 
+the submission. Comments are being solicited on the need for the 
+information; the accuracy of the burden estimate; the quality, 
+practical utility, and clarity of the information to be collected; and 
+ways to minimize reporting the burden, including automated collected 
+techniques and uses of other forms of technology.
+
+DATES: Comments must be received by August 10, 2026.
+
+ADDRESSES: Comments and requests for copies of the subject information 
+collection may be sent by any of the following methods:
+    <bullet> Mail: Carla Cooper, Agency Submitting Officer, U.S. 
+International Development Finance Corporation, 1100 New York Avenue NW, 
+Washington, DC 20527.
+    <bullet> Email: <a href="/cdn-cgi/l/email-protection#60060504120507200406034e070f16"><span class="__cf_email__" data-cfemail="95f3f0f1e7f0f2d5f1f3f6bbf2fae3">[email&#160;protected]</span></a>.
+    Instructions: All submissions received must include the agency name 
+and agency form number or OMB form number for this information 
+collection. Electronic submissions must include the agency form number 
+in the subject line to ensure proper routing. Please note that all 
+written comments received in response to this notice will be considered 
+public records.
+
+FOR FURTHER INFORMATION CONTACT: Agency Submitting Officer: Carla 
+Cooper, (202) 926-7241.
+
+SUPPLEMENTARY INFORMATION: This notice informs the public that DFC will 
+submit to OMB a request for approval of the following information 
+collection.
+
+Summary Form Under Review
+
+    Title of Collection: Application for Political Risk Insurance.
+    Type of Review: Extension without change of a currently approved 
+information collection.
+    Agency Form Number: DFC-003.
+    OMB Form Number: Not assigned, new information collection. 3015-
+003.
+    Frequency: Once per investor per project.
+    Affected Public: Business or other for-profit; not-for-profit 
+institutions; individuals.
+    Total Estimated Number of Annual Number of Respondents: 220.
+    Estimated Time per Respondent: 1.5 hours.
+    Total Estimated Number of Annual Burden Hours: 330 hours.
+    Abstract: The Application for Political Risk Insurance will be the 
+principal document used by DFC to determine the investor's and the 
+project's eligibility for political risk insurance coverage.
+
+Lisa Wischkaemper,
+Administrative Counsel, Office of the General Counsel.
+[FR Doc. 2026-11620 Filed 6-9-26; 8:45 am]
+BILLING CODE P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-09-21T16:30:22Z",
+ "url": "https://www.federalregister.gov/documents/full_text/text/2010/08/09/2010-19543.txt",
+ "status": 200,
+ "final_url": "https://www.federalregister.gov/documents/full_text/text/2010/08/09/2010-19543.txt",
+ "content_type": "text/plain",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /documents/full_text/text/2010/08/09/2010-19543.txt",
+ "bytes": 3208,
+ "sha256": "5b673b47d13b5702f020ae34a4aa2a197effe7d589d8ec3ae1c7724a37e18ca4",
+ "error": null
+}

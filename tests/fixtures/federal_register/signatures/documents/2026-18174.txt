@@ -1,0 +1,151 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 171 (Friday, September 4, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 171 (Friday, September 4, 2026)]
+[Notices]
+[Pages 56895-56896]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-18174]
+
+
+-----------------------------------------------------------------------
+
+DEPARTMENT OF HOMELAND SECURITY
+
+Transportation Security Administration
+
+[Docket No. TSA-2004-19147]
+
+
+Intent To Request Extension From OMB of One Current Public 
+Collection of Information: Flight Training Security Program
+
+AGENCY: Transportation Security Administration, DHS.
+
+ACTION: 60-Day notice.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The Transportation Security Administration (TSA) invites 
+public comment on one currently approved Information Collection Request 
+(ICR), Office of Management and Budget (OMB) control number 1652-0021, 
+abstracted below, that we will submit to OMB for an extension, in 
+compliance with the Paperwork Reduction Act (PRA). The ICR describes 
+the nature of the information collection and its expected burden. The 
+collection supports security threat assessments for aliens (candidates) 
+seeking flight training from FAA-certified providers, ensuring they do 
+not pose a threat to aviation or national security. Flight training 
+providers must also conduct and maintain records of security awareness 
+training for their employees.
+
+DATES: Send your comments by November 3, 2026.
+
+ADDRESSES: Comments may be emailed to <a href="/cdn-cgi/l/email-protection#4a1e190b1a180b0a3e392b642e2239642d253c"><span class="__cf_email__" data-cfemail="a3f7f0e2f3f1e2e3d7d0c28dc7cbd08dc4ccd5">[email&#160;protected]</span></a> or delivered 
+to the TSA PRA Officer, Office of Information Technology, TSA-11, 
+Transportation Security Administration, 6595 Springfield Center Drive, 
+Springfield, VA 20598-6011.
+
+FOR FURTHER INFORMATION CONTACT: Christina A. Walsh at the above 
+address, or by telephone (571) 227-2062.
+
+SUPPLEMENTARY INFORMATION:
+
+Comments Invited
+
+    In accordance with the Paperwork Reduction Act of 1995 (44 U.S.C. 
+3501 et seq.), an agency may not conduct or sponsor, and a person is 
+not required to respond to, a collection of information unless it 
+displays a valid OMB control number. The ICR documentation will be 
+available at <a href="https://www.reginfo.gov">https://www.reginfo.gov</a> upon its submission to OMB. 
+Therefore, in preparation for OMB review and approval of the following 
+information collection, TSA is soliciting comments to--
+    (1) Evaluate whether the proposed information requirement is 
+necessary for the proper performance of the functions of the agency, 
+including whether the information will have practical utility;
+    (2) Evaluate the accuracy of the agency's estimate of the burden;
+    (3) Enhance the quality, utility, and clarity of the information to 
+be collected; and
+    (4) Minimize the burden of the collection of information on those 
+who are to respond, including using appropriate automated, electronic, 
+mechanical, or other technological collection techniques or other forms 
+of information technology.
+
+Information Collection Requirement
+
+    OMB Control Number 1652-0021, Flight Training Security. Under 49 
+CFR part 1552, TSA conducts security threat assessments (STAs) for all 
+aliens seeking flight instruction with Federal Aviation Administration 
+(FAA)-certified flight training providers.\1\ The purpose of this 
+requirement is to ensure flight training candidates do not pose a 
+threat to aviation or national security and thus can be permitted to 
+receive flight training. The collection of information required under 
+49 CFR part 1552 includes candidates' biographic information and 
+fingerprints, which TSA uses to perform the STA.
+---------------------------------------------------------------------------
+
+    \1\ See also 49 U.S.C. 44939.
+---------------------------------------------------------------------------
+
+    Additionally, flight training providers are required to maintain 
+records of security awareness training provided to their employees. See 
+subpart B of 49 CFR part 1552. This training, which is intended to 
+increase awareness of suspicious circumstances and activities of 
+individuals enrolling in, or attending, flight training, must be 
+provided to certain employees within 60 days of being hired and on a 
+biennial basis. The flight training providers must maintain records of 
+the training completed throughout the course of the individual's 
+employment, and for no less than 1 year after the individual is no 
+longer a flight training provider employee.
+    TSA estimates a total of 36,704 respondents annually: 18,103 flight 
+training candidates and 18,601 flight training providers. Each 
+candidate will
+
+[[Page 56896]]
+
+submit an application for a new STA, which may be valid for up to 5 
+years. TSA estimates an STA application burden of 9,052 hours per year 
+(18,103 STA applications per year x 0.50 hours per application). Flight 
+training providers must notify TSA of a candidate's proposed and actual 
+training events, retain candidate training records and employee 
+security awareness training records, and provide the names and contact 
+information for security coordinators. TSA estimates providers will 
+submit approximately 38,404 flight training notifications, per year, to 
+TSA on behalf of candidates. TSA estimates a training event 
+notification burden of 6,079 hours per year (38,404 flight training 
+notifications x 0.1583 hours per notification). Flight training 
+providers must also keep records for employee security awareness 
+training. TSA estimates providers will maintain 23,699 records 
+annually, resulting in an annual average recordkeeping burden of 396 
+hours (23,699 employee security awareness training records x 0.0167 
+hours per record). For new providers, and providers that name a new 
+security coordinator, providers must submit such designation along with 
+specific information to TSA. TSA estimates 3,125 new designations 
+annually, resulting in an average annual designation burden of 782 per 
+year (3,125 new security coordinator submissions x 0.25 hours per 
+submission). Providers are also required to submit updated contact 
+information for named security coordinators to TSA as such information 
+changes. TSA estimates 2,209 reported contact information updates 
+annually, resulting in an average information update burden of 199 
+hours per year (2,209 security coordinator contact information updates 
+x 0.09 hours per update). TSA estimates the combined hour burden 
+associated with this collection, for both flight training candidates 
+and providers, to be 16,508 hours annually.
+    Applicants are also required to pay an application fee of $140.00 
+to cover the cost of their STA. TSA also designates a reduced fee of 
+$125 for flight training candidates who hold a comparable STA issued by 
+another Department of Homeland Security or TSA threat assessment 
+program. TSA estimates the annual cost burden for fees to be $2,527,490 
+(17,641 standard applicants x $140 + 462 reduced applicants x $125).
+
+    Dated: September 2, 2026.
+Christina A. Walsh,
+Paperwork Reduction Act Officer, Office of Information Technology, 
+Transportation Security Administration.
+[FR Doc. 2026-18174 Filed 9-3-26; 8:45 am]
+BILLING CODE 9110-05-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

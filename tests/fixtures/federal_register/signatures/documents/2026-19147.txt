@@ -1,0 +1,269 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 180 (Friday, September 18, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 180 (Friday, September 18, 2026)]
+[Notices]
+[Pages 59111-59113]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-19147]
+
+
+-----------------------------------------------------------------------
+
+DEPARTMENT OF COMMERCE
+
+National Institute of Standards and Technology
+
+[Docket Number: 260909-0004]
+
+
+Request for Information (RFI) on Future Needs for Medical 
+Metrology and Standards for Medical Imaging, Devices, Diagnostics and 
+Therapy
+
+AGENCY: Physical Measurement Laboratory (PML), National Institute of 
+Standards and Technology (NIST), U.S. Department of Commerce.
+
+ACTION: Notice of public meeting; request for information (RFI).
+
+-----------------------------------------------------------------------
+
+SUMMARY: The National Institute of Standards and Technology (NIST) and 
+the National Institute of Biomedical Imaging and Bioengineering 
+(NIBIB), a part of the National Institutes of Health (NIH), are 
+requesting input from stakeholders in order to gain a better 
+understanding of the future needs for medical metrology and standards 
+around medical imaging, devices, and diagnostics. This request for 
+information is coordinated with a NIST/NIBIB Symposium on Medical 
+Metrology and Standards for American Healthcare and Commerce Medical 
+Imaging, Devices, Diagnostics at the joint NIST/University of Maryland 
+Institute (UMD) for Bioscience and Biotechnology Research (IBBR). The 
+input received will inform a joint NIST and NIBIB medical metrology and 
+standards roadmap, a document that will identify future needs for 
+medical metrology and standards, identify major stakeholders, and 
+provide guidance for future government programs.
+
+DATES: 
+
+Symposium
+
+    The NIST/NIBIB Symposium on Medical Metrology and Standards for 
+American Healthcare and Commerce Medical Imaging, Devices, Diagnostics, 
+and Therapy will be held on Thursday, September 24, 2026, from 8:45 
+a.m. to 5:30 p.m. Requests to participate must be submitted via the 
+symposium website at <a href="https://www.nist.gov/news-events/events/2026/09/nistnibib-symposium-medical-metrology-and-standards-american-healthcare">https://www.nist.gov/news-events/events/2026/09/nistnibib-symposium-medical-metrology-and-standards-american-healthcare</a> 
+no later than 5:00 p.m. Eastern Time on Friday, September 11, 2026 for 
+in-person attendance, and 5:00 p.m. Eastern Time on Tuesday, September 
+22, 2026 for virtual attendance. To request to participate, go to the 
+symposium website, click on ``Register Here'' button, and follow the 
+instructions listed.
+
+Comments in Response to Request for Information
+
+    Comments in response to this notice must be received on or before 
+November 30, 2026, at 11:59 p.m. Eastern Time. Written comments in 
+response to this notice should be submitted in accordance with the 
+instructions in the ADDRESSES and SUPPLEMENTARY INFORMATION sections 
+below. Submissions received after this date may not be considered.
+
+ADDRESSES: 
+
+Symposium
+
+    Details about attending the NIST-NIBIB Symposium on Medical 
+Metrology and Standards on September 24, 2026, can be found on the 
+Symposium website at <a href="https://www.nist.gov/news-events/events/2026/09/nistnibib-symposium-medical-metrology-and-standards-american-healthcare">https://www.nist.gov/news-events/events/2026/09/nistnibib-symposium-medical-metrology-and-standards-american-healthcare</a>. To register, go to the event website, click on ``Register 
+Here'' button, and follow the instructions listed. Registrants will 
+need to provide their full name, affiliation, email address, and 
+whether they are attending virtually or in person. They will need to 
+indicate if they are an invited speaker, want to present a poster (and 
+give a title of presentation), or need a display table. Optional 
+emergency information and special needs can be specified.
+
+Comments in Response To Request for Information
+
+    Comments can be submitted at <a href="http://www.regulations.gov">www.regulations.gov</a> following the 
+instructions below:
+    Interested parties can submit electronic public comments via the 
+Federal e-Rulemaking Portal.
+    1. Go to <a href="http://www.regulations.gov">www.regulations.gov</a> and enter NIST-2026-0133 in the search 
+field;
+    2. Click the ``Comment Now!'' icon, complete the required fields, 
+including the relevant docket number and title in the subject field; 
+and
+    3. Enter or attach your comments.
+    Additional information on the use of <a href="http://regulations.gov">regulations.gov</a>, including 
+instructions for accessing agency documents, submitting comments, and 
+viewing the docket is available at <a href="http://www.regulations.gov/faq">www.regulations.gov/faq</a>. If you 
+require an accommodation or cannot otherwise submit your comments via 
+<a href="http://regulations.gov">regulations.gov</a>, please contact NIST using the information in the FOR 
+FURTHER INFORMATION CONTACT section below.
+    NIST will not accept comments for this notice by postal mail, 
+email, or fax. To ensure that NIST does not receive duplicate copies, 
+please submit your comments only once. Comments containing references, 
+studies, research, and other empirical data that are not widely 
+published should include copies of the reference materials.
+    NIST will also not accept comments accompanied by a request that 
+part or all the material be treated confidentially because of its 
+business proprietary nature or for any other reason. Therefore, do not 
+submit confidential business information or otherwise sensitive, 
+protected, or personal information, such as account numbers, Social 
+Security numbers, or names of other individuals.
+    All submissions, including comments, attachments and other 
+supporting materials, will become part of the public record and subject 
+to public disclosure. All relevant comments received by the deadline 
+will be posted at: <a href="https://www.regulations.gov">https://www.regulations.gov</a> under docket number 
+NIST-2026-0133 without change or redaction.
+
+FOR FURTHER INFORMATION CONTACT: Stephen Russek, Project Leader: 
+Magnetic Imaging, 325 Broadway, Boulder, CO; email: 
+<a href="/cdn-cgi/l/email-protection#c8bbbcadb8a0ada6e6babdbbbbada388a6a1bbbce6afa7be"><span class="__cf_email__" data-cfemail="1c6f68796c747972326e696f6f79775c72756f68327b736a">[email&#160;protected]</span></a>; phone: 303-497-5097. Direct
+
+[[Page 59112]]
+
+media inquiries to NIST's Office of Public Affairs at (301) 975-2762.
+    Users of telecommunication devices for the deaf, or a text 
+telephone may call the Federal Relay Service toll free at 1-800-877-
+8339. NIST will make the RFI available in alternate formats, such as 
+Braille or large print, upon request by persons with disabilities.
+
+SUPPLEMENTARY INFORMATION:
+
+Background
+
+    Healthcare accounts for 18% of the GDP in the US and is projected 
+to increase to 20.6% by 2034.\1\ It is one of the most socially and 
+commercially important sectors in our economy. Critical components of 
+the healthcare infrastructure are the underlying measurements that are 
+required for accurate screening and diagnostic evaluations and 
+subsequent therapeutic planning and application. Metrology refers to 
+the science of establishing precise reproducible measurements with 
+well-defined uncertainties. A variety of measurement standards exist to 
+ensure measurements are accurate, precise, comparable across all 
+involved sites, and durable over time. Most of the standards are 
+consensus standards established by a large body of stakeholders 
+including professional societies and standards organizations. 
+Government agencies, such as NIST, assist where primary traceability 
+and validation are required.
+---------------------------------------------------------------------------
+
+    \1\ `NHE Fact Sheet [verbar] CMS', n.d. <<a href="https://www.cms.gov/data-research/statistics-trends-and-reports/national-health-expenditure-data/nhe-fact-sheet">https://www.cms.gov/data-research/statistics-trends-and-reports/national-health-expenditure-data/nhe-fact-sheet</a>> [accessed 16 August 2026].
+---------------------------------------------------------------------------
+
+    To help ensure that future medical measurements and standards are 
+developed appropriately and efficiently, a NIST/NIBIB Symposium on 
+Medical Metrology and Standards for American Healthcare and Commerce 
+Medical Imaging, Devices, Diagnostics will be held on September 24, 
+2026 at the joint NIST/UMD Institute for Bioscience and Biotechnology 
+Research (IBBR), 9600 Gudelsky Dr, Rockville, MD 20850.
+    NIST, along with other government agencies, have hosted workshops 
+in the past on different aspects of medical metrology resulting in 
+highly cited documents.\2\ With the advent of rapidly advancing medical 
+technology and artificial intelligence (AI), the future requirements 
+for medical metrology and standards may change considerably. Agility 
+and evolving standards may be required to address a rapidly changing US 
+healthcare system. Better medical metrology and standards are expected 
+to be an important component of the healthcare infrastructure allowing 
+for improved and cost-effective healthcare.
+---------------------------------------------------------------------------
+
+    \2\ Laurence P. Clarke, Ram D. Sriram, and Linda Beth Schilling, 
+`Imaging as a Biomarker: Standards for Change Measurements in 
+Therapy Workshop Summary', Academic Radiology, 15.4 (2008), pp. 501-
+30, doi:10.1016/j.acra.2007.10.021; Megan H. Cleveland and others, 
+`Report of the 2019 NIST-FDA Workshop on Standards for next 
+Generation Sequencing Detection of Viral Adventitious Agents in 
+Biologics and Biomanufacturing', Biologicals: Journal of the 
+International Association of Biological Standardization, 64 (2020), 
+pp. 76-82, doi:10.1016/j.biologicals.2020.02.003; J. C. Chiao and 
+others, `Metrology and Standards Needs for Some Categories of 
+Medical Devices', Journal of Research of the National Institute of 
+Standards and Technology, 113.2 (2008), p. 121, doi:10.6028/
+jres.113.009.
+---------------------------------------------------------------------------
+
+Symposium
+
+    The NIST/NIBIB Symposium on Medical Metrology and Standards for 
+American Healthcare and Commerce Medical Imaging, Devices, Diagnostics 
+will be held as indicated in the DATES and ADDRESSES section. Requests 
+to participate must be received via the symposium website at <a href="https://www.nist.gov/news-events/events/2026/09/nistnibib-symposium-medical-metrology-and-standards-american-healthcare">https://www.nist.gov/news-events/events/2026/09/nistnibib-symposium-medical-metrology-and-standards-american-healthcare</a> no later than 5:00 p.m. 
+Eastern Time on Friday, September 11, 2026 for in person attendance, 
+and 5:00 p.m. Eastern Time on Tuesday, September 22, 2026 for virtual 
+attendance. The symposium will be recorded and transcribed for internal 
+NIST use only.
+    The NIST/NIBIB symposium is meant to be a general meeting with a 
+wide selection of stakeholders. There will be invited speakers who have 
+a very broad range of expertise and will include representatives from 
+clinical sites, government, industry, professional societies, and 
+academia. The goal of the speakers is to highlight the role of medical 
+metrology and standards in their work, discuss future directions and 
+challenges, and potentially show how their work overlaps with the 
+broader medical metrology and standards framework needed for the US 
+healthcare system. At the end of each session, there will be panel 
+discussions where the speakers can address questions and discuss common 
+themes. Between sessions, there will be a break and poster 
+presentations from researchers, standards organizations, and companies 
+providing medical metrology and standards.
+    The final agenda will be posted on the Symposium website <a href="https://www.nist.gov/news-events/events/2026/09/nistnibib-symposium-medical-metrology-and-standards-american-healthcare">https://www.nist.gov/news-events/events/2026/09/nistnibib-symposium-medical-metrology-and-standards-american-healthcare</a> in a downloadable pdf file, 
+along with directions to the IBBR site and suggested local 
+accommodations. Information regarding the virtual attendance link and 
+parking vouchers will be sent to registrants after registration is 
+completed.
+    All visitors attending the Symposium on the joint NIST/University 
+of Maryland Institute (UMD) for Bioscience and Biotechnology Research 
+(IBBR) site are required to pre-register to be admitted. Presentation 
+of ID, driver's license or passport will be required to pick up badge 
+and enter. Limited space is available on a first-come, first-served 
+basis for anyone who wishes to attend in person. For detailed 
+information please visit: <a href="https://www.ibbr.umd.edu/events/visiting-ibbr">https://www.ibbr.umd.edu/events/visiting-ibbr</a>.
+    NIST provides reasonable accommodation to individuals with 
+disabilities where appropriate. If you are a person who requires a 
+reasonable accommodation, please make requests in advance for sign 
+language interpretation, assistive listening devices, or other 
+reasonable accommodation to Sabina Mohan, Conference Program 
+Specialist, <a href="/cdn-cgi/l/email-protection#9fecfefdf6f1feb1f2f0f7fef1dff1f6ecebb1f8f0e9"><span class="__cf_email__" data-cfemail="aeddcfccc7c0cf80c3c1c6cfc0eec0c7ddda80c9c1d8">[email&#160;protected]</span></a>, no later than 5:00 p.m. Eastern Time 
+on September 11, 2026, so appropriate arrangements can be made. 
+Determinations for reasonable accommodation will be made on a case-by-
+case basis.
+
+Request for Information
+
+    In this notice, NIST and NIBIB seek information from organizations, 
+companies, and individuals who are impacted by medical metrology and 
+standards in the areas of Medical Imaging, Devices, Diagnostics and 
+Therapy as well as any other interested stakeholders.
+    Respondents need not address all topic areas described in this 
+notice, though all responses should specify which statements are being 
+responded to. All relevant responses that comply with the requirements 
+listed in the DATES and ADDRESSES sections of this RFI will be 
+considered.
+    NIST and NIBIB seek information on the following topic areas, 
+including but not limited to:
+    <bullet> Areas where there is a need for improved medical 
+measurements relating to medical imaging, devices, diagnostics and 
+therapy and how we can provide the needed standards and validation of 
+these measurements.
+    <bullet> Identification of future medical standards efforts for new 
+measurement areas that may not be currently addressed.
+    <bullet> Suggested changes to the medical metrology and standards 
+process to allow improved and cost-effective healthcare in a time of 
+rapidly changing technology and incorporation of AI.
+
+[[Page 59113]]
+
+    <bullet> Examples of how medical metrology and standards have 
+improved diagnostics, therapeutic outcomes, and cost efficiency. 
+Examples where they are detrimental.
+    Authority: 15 U.S.C. 272(b) and 272(c).
+
+Alicia Chambers,
+NIST Executive Secretariat.
+[FR Doc. 2026-19147 Filed 9-17-26; 8:45 am]
+BILLING CODE 3510-13-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

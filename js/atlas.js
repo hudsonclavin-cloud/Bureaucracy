@@ -126,6 +126,7 @@ const METHOD_TEXT = {
   // A top-level Manual entry whose subject IS the office, rather than an
   // agency's entry listing one of its officers.
   listed_as_its_own_entry_in_us_government_manual: "The United States Government Manual carries an entry for the office itself",
+  signed_a_federal_register_document: "An official signing a published Federal Register document stated this title",
 };
 
 const SOURCE_TEXT = {
@@ -273,6 +274,27 @@ function describeEvidence(node) {
     if (aliasMatch.gradedAtMost === "partial") {
       text += " · nothing else names this unit, so the check is graded no higher than partial";
     }
+  }
+  // The same signature sentence the panel prints: the document, its date,
+  // and that the office was filled when it was signed. The signer's name is
+  // never read, so this can never be a statement about who holds it now.
+  const signature = node.federalRegisterSignature;
+  if (signature && typeof signature === "object") {
+    const already = String(node.verificationMethod || "") === "signed_a_federal_register_document";
+    const quoted = signature.listedTitle ? ` as "${signature.listedTitle}"` : "";
+    const kind = String(signature.documentType || "document").toLowerCase();
+    const signed = formatDate(signature.signingDate);
+    const published = formatDate(signature.publicationDate);
+    const when = signed ? `, signed ${signed}` : published ? `, published ${published}` : "";
+    const doc = `${kind} ${signature.documentNumber}${when}`;
+    text += already
+      ? `${quoted} on ${doc}`
+      : ` · an official signing Federal Register ${doc} stated this title${quoted}`;
+    if (signature.occurrences > 1) text += ` (${signature.occurrences} of the documents read carry it)`;
+    text += signed
+      ? ` — the office was filled on that day`
+      : ` — the office was filled when that document was signed, on or before the day it was published`;
+    text += `; the signer's name is not read, and this says nothing about who holds it now`;
   }
   const readNotNamed = node.pageReadNotNamed;
   if (readNotNamed && typeof readNotNamed === "object" && readNotNamed.url) {

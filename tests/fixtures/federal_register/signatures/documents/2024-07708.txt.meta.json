@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-09-21T16:31:36Z",
+ "url": "https://www.federalregister.gov/documents/full_text/text/2024/04/25/2024-07708.txt",
+ "status": 200,
+ "final_url": "https://www.federalregister.gov/documents/full_text/text/2024/04/25/2024-07708.txt",
+ "content_type": "text/plain",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /documents/full_text/text/2024/04/25/2024-07708.txt",
+ "bytes": 8405,
+ "sha256": "be49e637427cbbf649b0bad96528682f57a5b0165671408a53940f24409a130a",
+ "error": null
+}

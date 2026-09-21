@@ -1,0 +1,227 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 41 (Tuesday, March 3, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 41 (Tuesday, March 3, 2026)]
+[Notices]
+[Pages 10393-10395]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-04137]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+FEDERAL ELECTION COMMISSION
+
+[NOTICE 2026-01]
+
+
+Price Index Adjustments for Contribution and Expenditure 
+Limitations and Lobbyist Bundling Disclosure Threshold
+
+AGENCY: Federal Election Commission.
+
+ACTION: Notice of Adjustments to Coordinated Party Expenditure Limits 
+and Lobbyist Bundling Disclosure Threshold.
+
+-----------------------------------------------------------------------
+
+SUMMARY: As mandated by provisions of the Federal Election Campaign Act 
+(``the Act''), the Federal Election Commission (``the Commission'') is 
+adjusting the coordinated party expenditure limits \1\ and the lobbyist 
+bundling disclosure threshold set forth in the Act, to index the 
+amounts for inflation. Additional details appear in the supplemental 
+information that follows.
+---------------------------------------------------------------------------
+
+    \1\ The United States Supreme Court is currently considering the 
+constitutionality of the coordinated party expenditure limits in the 
+case NRSC v. FEC, No. 24-621 (U.S. oral argument Dec. 9, 2025). 
+Unless and until the Supreme Court decides otherwise, however, the 
+coordinated expenditure limits remain in force and thus this notice 
+states what they are for 2026.
+
+DATES: The new limitations at 52 U.S.C. 30104(i)(3)(A) and 30116(d) 
+---------------------------------------------------------------------------
+apply beginning on January 1, 2026.
+
+ADDRESSES: 1050 First Street NE, Washington, DC 20463.
+
+FOR FURTHER INFORMATION CONTACT: Mr. Gregory J. Scott, Information 
+Division, (202) 694-1100 or (800) 424-9530, <a href="/cdn-cgi/l/email-protection#6a03040c052a0c0f09440d051c"><span class="__cf_email__" data-cfemail="761f1810193610131558111900">[email&#160;protected]</span></a>.
+
+SUPPLEMENTARY INFORMATION: Under the Federal Election Campaign Act, 52 
+U.S.C. 30101-46, the coordinated party expenditure limits (52 U.S.C. 
+30116(d)(2)-(3)) and the disclosure threshold for contributions bundled 
+by lobbyists (52 U.S.C. 30104(i)(3)(A)) are adjusted periodically to 
+reflect changes in the consumer price index. See 52 U.S.C. 
+30104(i)(3)(B), 30116(c)(1)(B); 11 CFR 104.22(g), 109.32(a)(2), (b)(3), 
+110.17(a), (f). The Commission is publishing this notice to announce 
+the adjusted limits and disclosure threshold.
+
+Coordinated Party Expenditure Limits for 2026
+
+    Under 52 U.S.C. 30116(c), the Commission must adjust the 
+expenditure limitations established by 52 U.S.C. 30116(d) (the limits 
+on expenditures by national party committees, state party committees, 
+or their subordinate committees in connection with the general election 
+campaign of candidates for Federal office) annually to account for 
+inflation. This expenditure limitation is increased by the percentage 
+difference between the price index, as certified to the Commission by 
+the Secretary of Labor, for the 12 months preceding the beginning of 
+the calendar year and the price index for the base period (calendar 
+year 1974). 52 U.S.C. 30116(c)(1)(B)(i), (2)(B)(i).
+
+1. Expenditure Limitation for House of Representatives in States With 
+More Than One Congressional District
+
+    Both the national and state party committees have an expenditure 
+limitation for each general election held to fill a seat in the House 
+of Representatives in states with more than one congressional district. 
+See 52 U.S.C. 30116(d)(3)(B). This limitation also applies to the 
+District of Columbia and territories that elect individuals to the 
+office of Delegate or Resident Commissioner.\2\ Id. The formula used to 
+calculate the expenditure limitation in such states and territories 
+multiplies the base figure of $10,000 by the difference in the price 
+index (6.52944), rounding to the nearest $100. See 52 U.S.C. 
+30116(c)(1)(B), (d)(3)(B); 11 CFR 109.32(b), 110.17. Based upon this 
+formula, the expenditure limitation for 2026 general elections for 
+House candidates in these states, districts, and territories is 
+$65,300.
+---------------------------------------------------------------------------
+
+    \2\ Currently, these are Puerto Rico, American Samoa, Guam, the 
+United States Virgin Islands and the Northern Mariana Islands. See 
+<a href="https://www.house.gov/representatives">https://www.house.gov/representatives</a>.
+---------------------------------------------------------------------------
+
+2. Expenditure Limitation for Senate and for House of Representatives 
+in States With Only One Congressional District
+
+    Both the national and state party committees have an expenditure 
+limitation for a general election held to fill a seat in the Senate or 
+in the House of Representatives in states with only one congressional 
+district. See 52 U.S.C. 30116(d)(3)(A). The formula used to calculate 
+this expenditure limitation considers not only the price index but also 
+the voting age population (``VAP'')
+
+[[Page 10394]]
+
+of the state. Id. The VAP figures used to calculate the expenditure 
+limitations were certified by the U.S. Census Bureau. The VAP of each 
+state is also published annually in the Federal Register by the U.S. 
+Department of Commerce. 11 CFR 110.18. The general election expenditure 
+limitation is the greater of: The base figure ($20,000) multiplied by 
+the difference in the price index 6.52944 (which rounds to $130,600); 
+or $0.02 multiplied by the VAP of the state, multiplied by 6.52944. See 
+52 U.S.C. 30116(c)(1)(B), (d)(3)(A); 11 CFR 109.32(b), 110.17. Amounts 
+are rounded to the nearest $100. 52 U.S.C. 30116(c)(1)(B)(iii); 11 CFR 
+109.32(b)(3), 110.17(c). The chart below provides the state-by-state 
+breakdown of the 2026 general election expenditure limitations for 
+Senate elections. The expenditure limitation for 2026 House elections 
+in states with only one congressional district \3\ is $130,600.
+---------------------------------------------------------------------------
+
+    \3\ Currently, these states are: Alaska, Delaware, Montana, 
+North Dakota, Rhode Island, South Dakota, Vermont and Wyoming. See 
+<a href="https://www.house.gov/representatives/">https://www.house.gov/representatives/</a>.
+    \4\ This expenditure limit does not apply to the District of 
+Columbia, Puerto Rico, American Samoa, Guam, the United States 
+Virgin Islands, and the Northern Mariana Islands because those 
+jurisdictions do not elect Senators. See 52 U.S.C. 30116(d)(3)(A); 
+11 CFR 109.32(b)(2)(i).
+
+                   Senate General Election Coordinated Expenditure Limits--2026 Elections \4\
+----------------------------------------------------------------------------------------------------------------
+                                                                                             Senate expenditure
+                                                           Voting age     VAP x .02 x the    limit (the greater
+                         State                             population       price index       of the amount in
+                                                              (VAP)          (6.52944)           column 3 or
+                                                                                                  $130,600)
+----------------------------------------------------------------------------------------------------------------
+Alabama................................................       4,075,161           $532,200              $532,200
+Alaska.................................................         565,570             73,900               130,600
+Arizona................................................       6,026,503            787,000               787,000
+Arkansas...............................................       2,416,023            315,500               315,500
+California.............................................      31,180,511          4,071,800             4,071,800
+Colorado...............................................       4,792,358            625,800               625,800
+Connecticut............................................       2,970,201            387,900               387,900
+Delaware...............................................         849,963            111,000               130,600
+Florida................................................      19,019,796          2,483,800             2,483,800
+Georgia................................................       8,796,778          1,148,800             1,148,800
+Hawaii.................................................       1,151,103            150,300               150,300
+Idaho..................................................       1,557,631            203,400               203,400
+Illinois...............................................      10,100,540          1,319,000             1,319,000
+Indiana................................................       5,397,168            704,800               704,800
+Iowa...................................................       2,518,739            328,900               328,900
+Kansas.................................................       2,294,452            299,600               299,600
+Kentucky...............................................       3,590,081            468,800               468,800
+Louisiana..............................................       3,568,234            466,000               466,000
+Maine..................................................       1,170,629            152,900               152,900
+Maryland...............................................       4,928,480            643,600               643,600
+Massachusetts..........................................       5,826,510            760,900               760,900
+Michigan...............................................       8,065,114          1,053,200             1,053,200
+Minnesota..............................................       4,547,092            593,800               593,800
+Mississippi............................................       2,295,720            299,800               299,800
+Missouri...............................................       4,910,413            641,200               641,200
+Montana................................................         913,041            119,200               130,600
+Nebraska...............................................       1,538,757            200,900               200,900
+Nevada.................................................       2,603,663            340,000               340,000
+New Hampshire..........................................       1,170,277            152,800               152,800
+New Jersey.............................................       7,557,289            986,900               986,900
+New Mexico.............................................       1,686,046            220,200               220,200
+New York...............................................      16,097,036          2,102,100             2,102,100
+North Carolina.........................................       8,838,026          1,154,100             1,154,100
+North Dakota...........................................         616,388             80,500               130,600
+Ohio...................................................       9,368,603          1,223,400             1,223,400
+Oklahoma...............................................       3,165,587            413,400               413,400
+Oregon.................................................       3,461,772            452,100               452,100
+Pennsylvania...........................................      10,488,801          1,369,700             1,369,700
+Rhode Island...........................................         916,867            119,700               130,600
+South Carolina.........................................       4,421,834            577,400               577,400
+South Dakota...........................................         714,952             93,400               130,600
+Tennessee..............................................       5,739,349            749,500               749,500
+Texas..................................................      24,109,307          3,148,400             3,148,400
+Utah...................................................       2,616,637            341,700               341,700
+Vermont................................................         535,049             69,900               130,600
+Virginia...............................................       7,019,802            916,700               916,700
+Washington.............................................       6,366,184            831,400               831,400
+West Virginia..........................................       1,421,798            185,700               185,700
+Wisconsin..............................................       4,750,680            620,400               620,400
+Wyoming................................................         461,419             60,300               130,600
+----------------------------------------------------------------------------------------------------------------
+
+
+[[Page 10395]]
+
+Lobbyist Bundling Disclosure Threshold for 2026
+
+    The Act requires certain political committees to disclose 
+contributions bundled by lobbyists/registrants and lobbyist/registrant 
+political action committees once the contributions exceed a specified 
+threshold amount. 52 U.S.C. 30104(i)(1), (i)(3)(A). The Commission must 
+adjust this threshold amount annually to account for inflation. 52 
+U.S.C. 30104(i)(3)(B). The disclosure threshold is increased by 
+multiplying the $15,000 statutory disclosure threshold by 1.59695, the 
+difference between the price index, as certified to the Commission by 
+the Secretary of Labor, for the 12 months preceding the beginning of 
+the calendar year and the price index for the base period (calendar 
+year 2006). See 52 U.S.C. 30104(i)(3), 30116(c)(1)(B); 11 CFR 
+104.22(g). The resulting amount is rounded to the nearest multiple of 
+$100. 52 U.S.C. 30104(i)(3)(B), 30116(c)(1)(B)(iii); 11 CFR 
+104.22(g)(4). Based upon this formula ($15,000 x 1.59695), the lobbyist 
+bundling disclosure threshold for calendar year 2026 is $24,000.
+
+    Dated: February 26, 2026.
+
+    On behalf of the Commission,
+Shana M. Broussard,
+Chair, Federal Election Commission.
+[FR Doc. 2026-04137 Filed 3-2-26; 8:45 am]
+BILLING CODE 6715-01-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

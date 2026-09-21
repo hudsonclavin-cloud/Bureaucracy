@@ -1,0 +1,207 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 181 (Monday, September 21, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 181 (Monday, September 21, 2026)]
+[Notices]
+[Pages 59833-59834]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-19256]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+DEPARTMENT OF TRANSPORTATION
+
+National Highway Traffic Safety Administration
+
+[Docket No. NHTSA-2025-0658; Notice 1]
+
+
+Ford Motor Company, Receipt of Petition for Decision of 
+Inconsequential Noncompliance
+
+AGENCY: National Highway Traffic Safety Administration (NHTSA), 
+Department of Transportation (DOT).
+
+ACTION: Receipt of petition.
+
+-----------------------------------------------------------------------
+
+SUMMARY: Ford Motor Company (Ford) has determined that certain model 
+year (MY) 2024-2025 Ford Ranger motor vehicles do not fully comply with 
+Federal Motor Vehicle Safety Standard (FMVSS) No. 101, Controls And 
+Displays. Ford filed a noncompliance report dated September 11, 2025, 
+and subsequently petitioned NHTSA (the ``Agency'') on October 3, 2025, 
+for a decision that the subject noncompliance is inconsequential as it 
+relates to motor vehicle safety. This document announces receipt of 
+Ford's petition.
+
+DATES: Send comments on or before October 21, 2026.
+
+ADDRESSES: Interested persons are invited to submit written data, 
+views, and arguments on this petition. Comments must refer to the 
+docket and notice number cited in the title of this notice and may be 
+submitted by any of the following methods:
+    <bullet> Mail: Send comments by mail addressed to the U.S. 
+Department of Transportation, Docket Operations, M-30, West Building 
+Ground Floor, Room W12-140, 1200 New Jersey Avenue SE, Washington, DC 
+20590.
+    <bullet> Hand Delivery: Deliver comments by hand to the U.S. 
+Department of Transportation, Docket Operations, M-30, West Building 
+Ground Floor, Room W12-140, 1200 New Jersey Avenue SE, Washington, DC 
+20590. The Docket Section is open on weekdays from 10 a.m. to 5 p.m. 
+except for Federal Holidays.
+    <bullet> Electronically: Submit comments electronically by logging 
+onto the Federal Docket Management System (FDMS) website at <a href="https://www.regulations.gov/">https://www.regulations.gov/</a>. Follow the online instructions for submitting 
+comments.
+    <bullet> Comments may also be faxed to (202) 493-2251.
+    Comments must be written in the English language, and be no greater 
+than 15 pages in length, although there is no limit to the length of 
+necessary attachments to the comments. If comments are submitted in 
+hard copy form, please ensure that two copies are provided. If you wish 
+to receive confirmation that comments you have submitted by mail were 
+received, please enclose a stamped, self-addressed postcard with the 
+comments. Note that all comments received will be posted without change 
+to <a href="https://www.regulations.gov">https://www.regulations.gov</a>, including any personal information 
+provided.
+    All comments and supporting materials received before the close of 
+business on the closing date indicated above will be filed in the 
+docket and will be considered. All comments and supporting materials 
+received after the closing date will also be filed and will be 
+considered to the fullest extent possible.
+    When the petition is granted or denied, notice of the decision will 
+also be published in the Federal Register pursuant to the authority 
+indicated at the end of this notice.
+    All comments, background documentation, and supporting materials 
+submitted to the docket may be viewed by anyone at the address and 
+times given above. The documents may also be viewed on the internet at 
+<a href="https://www.regulations.gov">https://www.regulations.gov</a> by following the online instructions for 
+accessing the dockets. The docket ID number for this petition is shown 
+in the heading of this notice.
+    DOT's complete Privacy Act Statement is available for review in a 
+Federal Register notice published on April 11, 2000 (65 FR 19477-78).
+
+FOR FURTHER INFORMATION CONTACT: Kamna Ralhan, General Engineer, NHTSA, 
+Office of Vehicle Safety Compliance, (202) 366-6443.
+
+SUPPLEMENTARY INFORMATION: 
+    I. Overview: Ford determined that certain MY 2024-2025 Ford Ranger 
+motor vehicles do not fully comply with paragraphs S5.1.2 and S5.2.1 of 
+FMVSS No. 101, Controls And Displays (49 CFR 571.101) and filed a 
+noncompliance report on September 11, 2025, pursuant to 49 CFR part 
+573, Defect and Noncompliance Responsibility and Reports. Ford 
+petitioned NHTSA on October 3, 2025, for an exemption from the 
+notification and remedy requirements of 49 U.S.C. Chapter 301 on the 
+basis that this noncompliance is inconsequential as it relates to motor 
+vehicle safety, pursuant to 49 U.S.C. 30118(d) and 30120(h) and 49 CFR 
+part 556, Exemption for Inconsequential Defect or Noncompliance.
+    This notice of receipt of Ford's petition is published under 49 
+U.S.C. 30118 and 30120 and does not represent any agency decision or 
+another exercise of judgment concerning the merits of the petition.
+
+[[Page 59834]]
+
+    II. Vehicles Involved: Approximately 76,125 MY 2024-2025 Ford 
+Ranger motor vehicles, manufactured between December 9, 2022, and 
+August 29, 2025, were reported by the manufacturer.
+    III. Noncompliance: Ford explains that the subject vehicles are 
+equipped with an instrument panel cluster (IPC) that temporarily does 
+not display the speedometer unit of measurement (MPH or km/h) under 
+certain conditions and therefore does not comply with paragraphs S5.1.2 
+and S5.2.1 of FMVSS No. 101. Specifically, IPC does not display the 
+speedometer unit of measurement for approximately four seconds while an 
+animation displays after the driver changes the vehicle's drive mode.
+    IV. Rule Requirements: Paragraphs S5.1.2 and S5.2.1 of FMVSS No. 
+101 include the requirements relevant to this petition. Paragraph 
+S5.1.2 requires that the telltales and indicators specified in Table 1 
+and Table 2, including their identifications, must be located to ensure 
+visibility to a driver under the specified conditions of paragraphs 
+S5.6.1 and S5.6.2 of FMVSS No. 101 when activated. Paragraph S5.2.1 
+further requires, in relevant part, that every control, telltale and 
+indicator listed in column 1 of Table 1 or Table 2, with the exception 
+of the Low Tire Pressure Telltale, must be identified by either the 
+symbol in column 2 or the word or abbreviation in column 3 of the 
+respective table.
+    V. Summary of Ford's Petition: The following views and arguments 
+presented in this section, ``V. Summary of Ford's Petition,'' are the 
+views and arguments provided by Ford. They have not been evaluated by 
+the Agency and do not reflect the views of the Agency. Ford describes 
+the subject noncompliance and contends that the noncompliance is 
+inconsequential as it relates to motor vehicle safety.
+    Ford explains that the subject vehicles are equipped with 
+selectable drive modes, which are controlled by a rotary dial or a 
+button on the center console and allow the driver to change the 
+vehicle's handling and suspension dynamics. Ford notes that mode 
+selection will not change the speed and can be performed in most 
+instances while the vehicle is in motion or while it is in Park.
+    Ford explains that when the driver changes drive modes, an 
+animation appears on the IPC that covers the speedometer's unit of 
+measurement (e.g., MPH or km/h) for approximately four seconds. 
+However, the numerical speed display (e.g., ``60'') remains 
+continuously visible during this animation. To correct this, Ford has 
+implemented a software update for new production Ranger vehicles to 
+continuously display the speed units during the animation sequence. The 
+petition includes images illustrating the affected display and the 
+corrected display and is available to view on the docket. Ford states 
+that it is not aware of any field occurrences, accidents, or injuries 
+related to this condition. Ford also notes that it has reviewed 
+connected vehicle data from 8,800 MY 2024 Ranger vehicles, and found 
+that drivers change out of the default Normal drive mode on less than 
+five percent of all key cycles.
+    Ford believes that the subject noncompliance is inconsequential to 
+motor vehicle safety for three primary reasons:
+    First, the primary speedometer's numerical speed remains 
+continuously and accurately displayed, ensuring no incorrect 
+information is presented. Ford explains that the subject noncompliance 
+is limited solely to the temporary disappearance (up to four seconds) 
+of the unit of measurement (MPH or km/h), an interval initiated by the 
+driver's intentional action of changing drive modes.
+    Second, Ford states that it is unaware of any customer complaints, 
+crashes, injuries, or fatalities related to this condition. Ford 
+acknowledges that the absence of complaints is not dispositive but 
+contends that this is further evidence that the drivers of the subject 
+vehicle are not confused by the disappearance of the speedometer unit.
+    Third, Ford cites prior NHTSA grants of petitions for decisions of 
+inconsequential noncompliances concerning similar noncompliances where 
+required information was temporarily unavailable or incorrect. These 
+include a 2022 FCA US LLC \1\ petition concerning speedometers that 
+could be intentionally switched to display only km/h, and a 2016 
+General Motors LLC \2\ petition regarding a momentary instrument 
+cluster reset after a series of driver actions. Ford contends that the 
+subject noncompliance is similar to these grants.
+---------------------------------------------------------------------------
+
+    \1\ See FCA US LLC, Grant of Petition for Decision of 
+Inconsequential Noncompliance, 87 FR 22620 (Apr. 15, 2022).
+    \2\ See General Motors, LLC, Grant of Petition for Decision of 
+Inconsequential Noncompliance, 81 FR 17761 (Mar. 30, 2016).
+---------------------------------------------------------------------------
+
+    NHTSA notes that the statutory provisions (49 U.S.C. 30118(d) and 
+30120(h)) that permit manufacturers to file petitions for a 
+determination of inconsequentiality allow NHTSA to exempt manufacturers 
+only from the duties found in sections 30118 and 30120, respectively, 
+to notify owners, purchasers, and dealers of a defect or noncompliance 
+and to remedy the defect or noncompliance. Therefore, any decision on 
+this petition only applies to the subject vehicles that Ford no longer 
+controlled at the time it determined that the noncompliance existed. 
+However, any decision on this petition does not relieve vehicles 
+distributors and dealers of the prohibitions on the sale, offer for 
+sale, or introduction or delivery for introduction into interstate 
+commerce of the noncompliant vehicles under their control after Ford 
+notified them that the subject noncompliance existed.
+
+(Authority: 49 U.S.C. 30118, 30120: delegations of authority at 49 
+CFR 1.95 and 501.8)
+
+Otto G. Matheke III,
+Director, Office of Vehicle Safety Compliance.
+[FR Doc. 2026-19256 Filed 9-18-26; 8:45 am]
+BILLING CODE 4910-59-P
+
+
+</pre></body>
+</html>

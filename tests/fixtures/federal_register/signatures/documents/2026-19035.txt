@@ -1,0 +1,73 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 179 (Thursday, September 17, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 179 (Thursday, September 17, 2026)]
+[Notices]
+[Pages 58934-58935]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-19035]
+
+
+-----------------------------------------------------------------------
+
+SECURITIES AND EXCHANGE COMMISSION
+
+[OMB Control No. 3235-0233]
+
+
+Agency Information Collection Activities; Submission for OMB 
+Review; Comment Request; Extension: Form 2-E, Report Pursuant to Rule 
+609 and Regulation E
+
+Upon Written Request, Copies Available From: Securities and Exchange 
+Commission, Office of FOIA Services, 100 F Street NE, Washington, DC 
+20549-2736
+
+    Notice is hereby given that, pursuant to the Paperwork Reduction 
+Act of 1995 (44 U.S.C. Sec.  3501 et seq.), the Securities and Exchange 
+Commission (SEC or ``Commission'') is submitting to the Office of 
+Management and Budget (OMB) this request for extension of the proposed 
+collection of information. Rule 609 (17 CFR 230.609) under the 
+Securities Act of 1933 (15 U.S.C. 77a et seq.) requires small business 
+investment companies and business development companies that have 
+engaged in offerings of securities that are exempt from registration 
+pursuant to Regulation E under the Securities Act of 1933 (17 CFR 
+230.601 to 610a) to report semi-annually on Form 2-E (17 CFR 239.201) 
+the progress of the offering. The form solicits information such as the 
+dates an offering commenced and was completed (if completed), the 
+number of shares sold and still being offered, amounts received in the 
+offering, and expenses and underwriting discounts incurred in the 
+offering. The information provided
+
+[[Page 58935]]
+
+on Form 2-E assists the staff in monitoring the progress of the 
+offering and in determining whether the offering has stayed within the 
+limits set for an offering exempt under Regulation E.
+    Although there have been no filings of Form 2-E since 2017, for 
+administrative purposes the Commission estimates that, on average, 
+approximately one respondent submits a Form 2-E filing each year. The 
+Commission further estimates that this information collection imposes 
+an annual burden of four hours and imposes no annual external cost 
+burden.
+    The collection of information under Form 2-E is mandatory. The 
+information provided by the form will not be kept confidential.
+    An agency may not conduct or sponsor, and a person is not required 
+to respond to, a collection of information unless it displays a 
+currently valid OMB Control Number.
+    The public may view and comment on this information collection 
+request at: <a href="https://www.reginfo.gov/public/do/PRAViewICR?ref_nbr=202606-3235-019">https://www.reginfo.gov/public/do/PRAViewICR?ref_nbr=202606-3235-019</a> or email comment to 
+<a href="/cdn-cgi/l/email-protection#2568677d0b6a68670b6a6c77640b7660667a4140564e7a4a43434c464057654a48470b404a550b424a53"><span class="__cf_email__" data-cfemail="703d32285e3f3d325e3f3922315e2335332f1415031b2f1f161619131502301f1d125e151f005e171f06">[email&#160;protected]</span></a> within 30 days of the day 
+after publication of this notice, by October 19, 2026.
+
+    Dated: September 14, 2026.
+J. Matthew DeLesDernier,
+Deputy Secretary.
+[FR Doc. 2026-19035 Filed 9-16-26; 8:45 am]
+BILLING CODE 8011-01-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

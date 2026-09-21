@@ -1,0 +1,159 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 177 (Tuesday, September 15, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 177 (Tuesday, September 15, 2026)]
+[Rules and Regulations]
+[Pages 58363-58364]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-18800]
+
+
+-----------------------------------------------------------------------
+
+OFFICE OF PERSONNEL MANAGEMENT
+
+5 CFR Part 330
+
+[Docket ID: OPM-2025-0107]
+RIN 3206-AO86
+
+
+Reduction in Force; Correction
+
+AGENCY: Office of Personnel Management.
+
+ACTION: Final rule; correcting amendment.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The Office of Personnel Management (OPM) is correcting a final 
+rule that appeared in the Federal Register on August 3, 2026, and 
+became effective on September 2, 2026. That rule revised OPM's 
+reduction in force regulations and made related revisions to the Career 
+Transition Assistance Plan (CTAP) regulations. An amendatory 
+instruction in the rule inadvertently resulted in the removal of two 
+paragraphs from the definition of ``displaced''. This document restores 
+those paragraphs.
+
+DATES: Effective September 15, 2026.
+
+FOR FURTHER INFORMATION CONTACT: Mr. Aaron Gottesman at (202) 606-0960 
+or by email at <a href="/cdn-cgi/l/email-protection#6b0e061b0704122b041b06450c041d"><span class="__cf_email__" data-cfemail="fe9b938e929187be918e93d0999188">[email&#160;protected]</span></a>.
+
+SUPPLEMENTARY INFORMATION:
+
+Background
+
+    On August 3, 2026, OPM published a final rule titled ``Reduction in 
+Force'' at 91 FR 49178 (FR 2026-15665), effective September 2, 2026. 
+Among other things, the final rule revised the definitions of 
+``displaced'' and ``surplus'' in 5 CFR 330.602 to replace references to 
+career and career-conditional (tenure group I or II) employees with 
+references to employees in the competitive service tenure group.
+
+Need for Correction
+
+    Amendatory instruction 11 of the final rule, at 91 FR 49217, 
+directed that paragraph (1) of the definition of ``displaced'' in Sec.  
+330.602 be revised, and set out only the introductory text of that 
+paragraph as the revised text. OPM intended to revise only the 
+introductory text of paragraph (1), and to leave paragraphs (1)(i) and 
+(1)(ii) of the definition unchanged. As published, however, instruction 
+11 had the effect of removing paragraphs (1)(i) and (1)(ii), which 
+describe the circumstances under which a competitive service employee 
+is ``displaced'' for purposes of CTAP: receipt of a reduction in force 
+separation notice under 5 CFR part 351, or receipt of a notice of 
+proposed removal under 5 CFR part 752 for declining a directed 
+geographic relocation outside the local commuting area. Without these 
+paragraphs, the definition is incomplete. This document corrects the 
+error by revising paragraph (1) of the definition of ``displaced'' in 
+its entirety, restating the introductory text as revised by the final 
+rule and restoring paragraphs (1)(i) and (1)(ii) as they read before 
+the final rule.
+    The revision of paragraph (1) of the definition of ``surplus'' in 
+instruction 11 was published as intended and is not affected by this 
+correction.
+
+Administrative Procedure Act
+
+    OPM finds that good cause exists under 5 U.S.C. 553(b)(B) to issue 
+this correcting amendment without prior notice and opportunity for 
+public comment. This document makes no substantive change to the 
+regulations. It restores regulatory text that was in effect before 
+September 2, 2026, that OPM did not propose to remove, and that the 
+final rule did not discuss removing; notice and comment are therefore 
+unnecessary. For the same reasons, OPM finds good cause under 5 U.S.C. 
+553(d)(3) to make this correction effective upon publication.
+
+List of Subjects in 5 CFR Part 330
+
+    Administrative practice and procedure, Armed forces reserves, 
+District of Columbia, Government employees.
+
+Signing Statement
+
+    The Director of OPM, Scott Kupor, reviewed and approved this 
+document and has authorized the undersigned to electronically sign and 
+submit this document to the Office of the Federal Register for 
+publication.
+
+Office of Personnel Management.
+Jerson Matias,
+Federal Register Liaison.
+
+    Accordingly, 5 CFR part 330 is corrected by making the following 
+correcting amendment:
+
+PART 330--RECRUITMENT, SELECTION, AND PLACEMENT (GENERAL)
+
+0
+1. The authority citation for part 330 continues to read as follows:
+
+    Authority:  5 U.S.C. 1104, 1302, 3301, 3302, 3304, and 3330; 
+E.O. 10577, 3 CFR, 1954-58 Comp., p. 218; Section 330.103 also 
+issued under 5 U.S.C. 3327; Subpart B also issued under 5 U.S.C. 
+3315 and 8151; Section 330.401 also issued under 5 U.S.C. 3310; 
+Subparts F and G also issued under Presidential Memorandum on Career 
+Transition Assistance for Federal Employees, September 12, 1995; 
+Subpart G also issued under 5 U.S.C. 8337(h) and 8456(b). Sec.  
+330.1301 also issued under 5 U.S.C. 9201-9206 and Pub. L. 116-92, 
+sec. 1122(b)(1).
+
+Subpart F--Agency Career Transition Assistance Plan (CTAP) for 
+Local Surplus and Displaced Employees
+
+0
+2. Amend Sec.  330.602 by revising paragraph (1) of the definition of 
+``displaced'' to read as follows:
+
+
+Sec.  330.602   Definitions.
+
+* * * * *
+    Displaced * * *
+    (1) A current competitive service employee in the competitive 
+service tenure group at grade GS-15 (or equivalent) or below (or 
+another qualifying competitive service appointment, as determined by 
+OPM) who:
+    (i) Received a reduction in force (RIF) separation notice under 
+part 351 of this chapter and has not declined an offer under part 351, 
+subpart G, of this chapter of a position with the same type of work 
+schedule and a representative rate at least as high as that of the 
+position from which the employee will be separated; or
+    (ii) Received a notice of proposed removal under part 752 of this 
+chapter for declining a directed geographic relocation outside of the 
+local
+
+[[Page 58364]]
+
+commuting area (e.g., a directed reassignment or change in duty 
+station).
+* * * * *
+[FR Doc. 2026-18800 Filed 9-14-26; 8:45 am]
+BILLING CODE 6325-39-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

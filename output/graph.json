@@ -95820,16 +95820,22 @@
                   "nameSource": "listed_in_opm_plum_archive",
                   "nameSourceDetail": "https://www.opm.gov/policy-data-oversight/senior-executive-service/plum-archive/",
                   "sourceUrls": [
-                    "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-121"
+                    "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-121",
+                    "https://www.federalregister.gov/documents/full_text/text/2026/09/01/2026-17815.txt"
                   ],
                   "sourceTypes": [
                     "us_government_manual",
-                    "official_site"
+                    "official_site",
+                    "federal_register_signature",
+                    "federal_register"
                   ],
-                  "proofSourceCount": 2,
+                  "proofSourceCount": 5,
                   "proofSourceTypes": [
                     "us_government_manual",
-                    "official_site"
+                    "official_site",
+                    "federal_register_signature",
+                    "federal_register",
+                    "historical_documentation"
                   ],
                   "existsProven": true,
                   "parentProven": true,
@@ -95843,10 +95849,10 @@
                   "costConfidenceScore": 0.0,
                   "costVerificationReason": "missing_cost",
                   "costSourceCount": 0,
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
-                  "lastVerified": "2025-12-31",
+                  "sourceCount": 2,
+                  "confidenceScore": 0.8,
+                  "verificationStatus": "verified",
+                  "lastVerified": "2026-09-01",
                   "positionSchedulePay": {
                     "source": "us_code_executive_schedule",
                     "method": "level_assigned_by_5_usc_5312_5316",
@@ -95876,7 +95882,8 @@
                     "checkedAt": "2026-09-11T03:05:36Z"
                   },
                   "evidenceUrls": [
-                    "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-121"
+                    "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-121",
+                    "https://www.federalregister.gov/documents/full_text/text/2026/09/01/2026-17815.txt"
                   ],
                   "govmanListing": {
                     "source": "us_government_manual",
@@ -95889,7 +95896,23 @@
                     "tableFooter": null
                   },
                   "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
-                  "evidenceVerifiedAt": "2025-12-31"
+                  "evidenceVerifiedAt": "2026-09-01",
+                  "federalRegisterSignature": {
+                    "source": "federal_register_signature",
+                    "listedTitle": "Attorney General",
+                    "documentNumber": "2026-17815",
+                    "documentTitle": "Technical Amendments to the Regulations Providing Whistleblower Protection for Federal Bureau of Investigation Employees",
+                    "documentType": "Rule",
+                    "agenciesListed": [
+                      "Justice Department"
+                    ],
+                    "signingDate": null,
+                    "publicationDate": "2026-09-01",
+                    "url": "https://www.federalregister.gov/documents/full_text/text/2026/09/01/2026-17815.txt",
+                    "documentUrl": "https://www.federalregister.gov/d/2026-17815",
+                    "documentSha256": "1a2e31024a3da6f139b20fb4a0a42d1ced30f0d975dd23605983847badfda35d",
+                    "occurrences": 1
+                  }
                 },
                 {
                   "id": "exec-dept-doj-deputy-secretary-of-department-of-justice-doj",
@@ -133145,16 +133168,22 @@
                   "nameSource": "named_in_5_usc_5312_5316",
                   "nameSourceDetail": "https://uscode.house.gov/view.xhtml?req=granuleid%3AUSC-prelim-title5-chapter53-subchapterII",
                   "sourceUrls": [
-                    "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-124"
+                    "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-124",
+                    "https://www.federalregister.gov/documents/full_text/text/2026/09/03/2026-18040.txt"
                   ],
                   "sourceTypes": [
                     "us_government_manual",
-                    "official_site"
+                    "official_site",
+                    "federal_register_signature",
+                    "federal_register"
                   ],
-                  "proofSourceCount": 2,
+                  "proofSourceCount": 5,
                   "proofSourceTypes": [
                     "us_government_manual",
-                    "official_site"
+                    "official_site",
+                    "federal_register_signature",
+                    "federal_register",
+                    "historical_documentation"
                   ],
                   "existsProven": true,
                   "parentProven": true,
@@ -133168,10 +133197,10 @@
                   "costConfidenceScore": 0.0,
                   "costVerificationReason": "missing_cost",
                   "costSourceCount": 0,
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
-                  "lastVerified": "2025-12-31",
+                  "sourceCount": 2,
+                  "confidenceScore": 0.8,
+                  "verificationStatus": "verified",
+                  "lastVerified": "2026-09-03",
                   "verificationUnread": {
                     "kind": "host_refuses_crawler",
                     "url": "https://www.transportation.gov/about",
@@ -133209,7 +133238,8 @@
                     "checkedAt": "2026-09-11T03:05:36Z"
                   },
                   "evidenceUrls": [
-                    "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-124"
+                    "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-124",
+                    "https://www.federalregister.gov/documents/full_text/text/2026/09/03/2026-18040.txt"
                   ],
                   "govmanListing": {
                     "source": "us_government_manual",
@@ -133222,7 +133252,24 @@
                     "tableFooter": null
                   },
                   "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
-                  "evidenceVerifiedAt": "2025-12-31"
+                  "evidenceVerifiedAt": "2026-09-03",
+                  "federalRegisterSignature": {
+                    "source": "federal_register_signature",
+                    "listedTitle": "Secretary of Transportation",
+                    "documentNumber": "2026-18040",
+                    "documentTitle": "Cause of Airline Delay and Cancellation Categories Under Section 511(b) of the FAA Reauthorization Act of 2024",
+                    "documentType": "Rule",
+                    "agenciesListed": [
+                      "Transportation Department",
+                      "Office of the Secretary"
+                    ],
+                    "signingDate": null,
+                    "publicationDate": "2026-09-03",
+                    "url": "https://www.federalregister.gov/documents/full_text/text/2026/09/03/2026-18040.txt",
+                    "documentUrl": "https://www.federalregister.gov/d/2026-18040",
+                    "documentSha256": "d6757a60b16b53c19a705403ca8d89f92482c1f0e99703f5a979e5668f9eaafb",
+                    "occurrences": 1
+                  }
                 },
                 {
                   "id": "exec-dept-dot-deputy-secretary-of-department-of-transportation-dot",
@@ -222273,20 +222320,9 @@
                   "sourceUrls": [
                     "https://www.abilityone.gov/"
                   ],
-                  "evidenceUrls": [
-                    "https://www.abilityone.gov/"
-                  ],
                   "sourceTypes": [
                     "official_site"
                   ],
-                  "lastVerified": "2026-09-21T17:57:28+00:00",
-                  "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
-                  "verificationMethod": "name_labelled_on_own_official_page",
-                  "verificationMatchedIn": "content",
-                  "verificationSiteFrom": "exec-ind-misc-abilityone-commission",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
                   "proofSourceCount": 1,
                   "proofSourceTypes": [
                     "official_site"
@@ -222295,7 +222331,6 @@
                   "parentProven": true,
                   "proofStatus": "proven",
                   "proofReason": "official_source_recorded",
-                  "placementCheckable": false,
                   "resolved_total_amount": 94012555.51,
                   "cost_status": "allocated",
                   "cost_basis": "implied_budget_weight",
@@ -222303,7 +222338,19 @@
                   "costVerificationStatus": "unverified",
                   "costConfidenceScore": 0.2,
                   "costVerificationReason": "estimated_from_parent",
-                  "costSourceCount": 0
+                  "costSourceCount": 0,
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "lastVerified": "2026-09-21T17:57:28+00:00",
+                  "evidenceUrls": [
+                    "https://www.abilityone.gov/"
+                  ],
+                  "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
+                  "verificationMethod": "name_labelled_on_own_official_page",
+                  "verificationMatchedIn": "content",
+                  "verificationSiteFrom": "exec-ind-misc-abilityone-commission",
+                  "placementCheckable": false
                 },
                 {
                   "id": "exec-ind-misc-public-buildings-reform-board",
@@ -222665,20 +222712,9 @@
                   "sourceUrls": [
                     "https://www.access-board.gov/about/"
                   ],
-                  "evidenceUrls": [
-                    "https://www.access-board.gov/about/"
-                  ],
                   "sourceTypes": [
                     "official_site"
                   ],
-                  "lastVerified": "2026-09-21T17:57:28+00:00",
-                  "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
-                  "verificationMethod": "name_labelled_on_own_official_page",
-                  "verificationMatchedIn": "content",
-                  "verificationSiteFrom": "exec-ind-misc-access-board",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
                   "proofSourceCount": 1,
                   "proofSourceTypes": [
                     "official_site"
@@ -222687,7 +222723,6 @@
                   "parentProven": true,
                   "proofStatus": "proven",
                   "proofReason": "official_source_recorded",
-                  "placementCheckable": false,
                   "resolved_total_amount": 94012555.51,
                   "cost_status": "allocated",
                   "cost_basis": "implied_budget_weight",
@@ -222695,7 +222730,19 @@
                   "costVerificationStatus": "unverified",
                   "costConfidenceScore": 0.2,
                   "costVerificationReason": "estimated_from_parent",
-                  "costSourceCount": 0
+                  "costSourceCount": 0,
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "lastVerified": "2026-09-21T17:57:28+00:00",
+                  "evidenceUrls": [
+                    "https://www.access-board.gov/about/"
+                  ],
+                  "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
+                  "verificationMethod": "name_labelled_on_own_official_page",
+                  "verificationMatchedIn": "content",
+                  "verificationSiteFrom": "exec-ind-misc-access-board",
+                  "placementCheckable": false
                 },
                 {
                   "id": "exec-ind-misc-nuclear-waste-technical-review-board",
@@ -223206,20 +223253,9 @@
                   "sourceUrls": [
                     "https://www.heritageabroad.gov/"
                   ],
-                  "evidenceUrls": [
-                    "https://www.heritageabroad.gov/"
-                  ],
                   "sourceTypes": [
                     "official_site"
                   ],
-                  "lastVerified": "2026-09-21T17:57:28+00:00",
-                  "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
-                  "verificationMethod": "name_labelled_on_own_official_page",
-                  "verificationMatchedIn": "content",
-                  "verificationSiteFrom": "exec-ind-misc-heritage-abroad-commission",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
                   "proofSourceCount": 1,
                   "proofSourceTypes": [
                     "official_site"
@@ -223228,7 +223264,6 @@
                   "parentProven": true,
                   "proofStatus": "proven",
                   "proofReason": "official_source_recorded",
-                  "placementCheckable": false,
                   "resolved_total_amount": 94012555.51,
                   "cost_status": "allocated",
                   "cost_basis": "implied_budget_weight",
@@ -223236,7 +223271,19 @@
                   "costVerificationStatus": "unverified",
                   "costConfidenceScore": 0.2,
                   "costVerificationReason": "estimated_from_parent",
-                  "costSourceCount": 0
+                  "costSourceCount": 0,
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "lastVerified": "2026-09-21T17:57:28+00:00",
+                  "evidenceUrls": [
+                    "https://www.heritageabroad.gov/"
+                  ],
+                  "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
+                  "verificationMethod": "name_labelled_on_own_official_page",
+                  "verificationMatchedIn": "content",
+                  "verificationSiteFrom": "exec-ind-misc-heritage-abroad-commission",
+                  "placementCheckable": false
                 },
                 {
                   "id": "exec-ind-misc-macpac",
@@ -223813,20 +223860,9 @@
                   "sourceUrls": [
                     "https://www.usich.gov/"
                   ],
-                  "evidenceUrls": [
-                    "https://www.usich.gov/"
-                  ],
                   "sourceTypes": [
                     "official_site"
                   ],
-                  "lastVerified": "2026-09-21T17:57:28+00:00",
-                  "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
-                  "verificationMethod": "name_labelled_on_own_official_page",
-                  "verificationMatchedIn": "content",
-                  "verificationSiteFrom": "exec-ind-misc-interagency-council-on-homelessness",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
                   "proofSourceCount": 1,
                   "proofSourceTypes": [
                     "official_site"
@@ -223835,6 +223871,25 @@
                   "parentProven": true,
                   "proofStatus": "proven",
                   "proofReason": "official_source_recorded",
+                  "resolved_total_amount": 94012555.51,
+                  "cost_status": "allocated",
+                  "cost_basis": "implied_budget_weight",
+                  "cost_validation": "estimated_from_parent",
+                  "costVerificationStatus": "unverified",
+                  "costConfidenceScore": 0.2,
+                  "costVerificationReason": "estimated_from_parent",
+                  "costSourceCount": 0,
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "lastVerified": "2026-09-21T17:57:28+00:00",
+                  "evidenceUrls": [
+                    "https://www.usich.gov/"
+                  ],
+                  "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
+                  "verificationMethod": "name_labelled_on_own_official_page",
+                  "verificationMatchedIn": "content",
+                  "verificationSiteFrom": "exec-ind-misc-interagency-council-on-homelessness",
                   "placementCheckable": false,
                   "employeesOfficial": 13,
                   "employeesOfficialSource": {
@@ -223859,15 +223914,7 @@
                         "employees": 13
                       }
                     ]
-                  },
-                  "resolved_total_amount": 94012555.51,
-                  "cost_status": "allocated",
-                  "cost_basis": "implied_budget_weight",
-                  "cost_validation": "estimated_from_parent",
-                  "costVerificationStatus": "unverified",
-                  "costConfidenceScore": 0.2,
-                  "costVerificationReason": "estimated_from_parent",
-                  "costSourceCount": 0
+                  }
                 },
                 {
                   "id": "exec-ind-misc-civil-rights-cold-case-records-review-board",
@@ -227880,16 +227927,22 @@
                   "children": [],
                   "sourceUrls": [
                     "https://www.nrc.gov/about-nrc/organization-functions",
-                    "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-163"
+                    "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-163",
+                    "https://www.federalregister.gov/documents/full_text/text/2026/08/26/2026-17445.txt"
                   ],
                   "sourceTypes": [
                     "us_government_manual",
-                    "official_site"
+                    "official_site",
+                    "federal_register_signature",
+                    "federal_register"
                   ],
-                  "proofSourceCount": 2,
+                  "proofSourceCount": 5,
                   "proofSourceTypes": [
                     "us_government_manual",
-                    "official_site"
+                    "official_site",
+                    "federal_register_signature",
+                    "federal_register",
+                    "historical_documentation"
                   ],
                   "existsProven": true,
                   "parentProven": true,
@@ -227903,16 +227956,17 @@
                   "costConfidenceScore": 0.0,
                   "costVerificationReason": "missing_cost",
                   "costSourceCount": 0,
-                  "sourceCount": 2,
-                  "confidenceScore": 0.8,
+                  "sourceCount": 3,
+                  "confidenceScore": 0.9,
                   "verificationStatus": "verified",
-                  "lastVerified": "2025-12-31",
+                  "lastVerified": "2026-08-26",
                   "verificationMatchedText": ", Executive Director for Operations",
                   "evidenceUrls": [
                     "https://www.nrc.gov/about-nrc/organization-functions",
-                    "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-163"
+                    "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-163",
+                    "https://www.federalregister.gov/documents/full_text/text/2026/08/26/2026-17445.txt"
                   ],
-                  "evidenceVerifiedAt": "2025-12-31",
+                  "evidenceVerifiedAt": "2026-08-26",
                   "verificationMethod": "name_labelled_on_its_organisations_official_page",
                   "verificationMatchedIn": "content",
                   "verificationSiteFrom": "exec-regulatory-nrc",
@@ -227953,6 +228007,22 @@
                     "granule": "GOVMAN-2025-12-31-163",
                     "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-163",
                     "tableFooter": "[For the Nuclear Regulatory Commission statement of organization, see the Code of Federal Regulations, Title 10, Part I]"
+                  },
+                  "federalRegisterSignature": {
+                    "source": "federal_register_signature",
+                    "listedTitle": "Executive Director for Operations",
+                    "documentNumber": "2026-17445",
+                    "documentTitle": "List of Approved Spent Fuel Storage Casks: TN Americas, LLC Standardized NUHOMS® Horizontal Modular Storage System for Irradiated Nuclear Fuel, Certificate of Compliance No. 1004, Renewed Amendment No. 19",
+                    "documentType": "Rule",
+                    "agenciesListed": [
+                      "Nuclear Regulatory Commission"
+                    ],
+                    "signingDate": null,
+                    "publicationDate": "2026-08-26",
+                    "url": "https://www.federalregister.gov/documents/full_text/text/2026/08/26/2026-17445.txt",
+                    "documentUrl": "https://www.federalregister.gov/d/2026-17445",
+                    "documentSha256": "59cbca60654c6754dfa83485f4a26a5d63fe46f5b8c25af56f5d54b1b4c6de7e",
+                    "occurrences": 1
                   }
                 },
                 {

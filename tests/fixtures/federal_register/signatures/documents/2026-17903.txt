@@ -1,0 +1,402 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 168 (Tuesday, September 1, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 168 (Tuesday, September 1, 2026)]
+[Rules and Regulations]
+[Pages 56061-56063]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-17903]
+
+
+
+[[Page 56061]]
+
+-----------------------------------------------------------------------
+
+OFFICE OF MANAGEMENT AND BUDGET
+
+Office of Federal Procurement Policy
+
+48 CFR Parts 9903 and 9904
+
+RIN 0348-AB91
+
+
+Conformance of Cost Accounting Standards to Generally Accepted 
+Accounting Principles for CAS 407 Use of Standard Costs for Direct 
+Material and Direct Labor
+
+AGENCY: Cost Accounting Standards Board, Office of Federal Procurement 
+Policy, Office of Management and Budget.
+
+ACTION: Final rule.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The Office of Management and Budget (OMB), Cost Accounting 
+Standards Board (the Board), is publishing a final rule rescinding Cost 
+Accounting Standard (CAS) 407 to conform it with Generally Accepted 
+Accounting Principles (GAAP). One definition is transferred to a 
+different location within chapter 99 of title 48, Code of Federal 
+Regulations. This final rule follows issuance of a Notice of Proposed 
+Rulemaking (NPRM) (91 FR 13562).
+
+DATES: Effective date: October 1, 2026.
+
+FOR FURTHER INFORMATION CONTACT: Nathaniel L. Whayland, Cost Accounting 
+Standards Board Staff (telephone: 202-881-9199; email: 
+<a href="/cdn-cgi/l/email-protection#eba4a6a9a8aab8a9ab848689c58e849bc58c849d"><span class="__cf_email__" data-cfemail="d7989a959496849597b8bab5f9b2b8a7f9b0b8a1">[email&#160;protected]</span></a>).
+
+SUPPLEMENTARY INFORMATION:
+
+I. Background
+
+    On March 20, 2026, the Board published a NPRM to solicit views on 
+the Board's provisional conclusions regarding conformance of CAS 407 to 
+GAAP. See the NPRM for background on the purpose of CAS 407. The NPRM 
+noted that the vast majority of CAS 407 could be rescinded. The Board 
+determined that despite the difference in general focus between CAS and 
+GAAP, there has been significant convergence over the years as GAAP has 
+evolved to address cost measurement and assignment of costs to 
+accounting periods. GAAP now contains codified content in these areas 
+very similar to the requirements contained in CAS 407. In addition, the 
+creation of the Financial Accounting Standards Board (FASB) and the 
+Accounting Standards Codification (ASC) as the recognized financial 
+accounting and reporting standards for GAAP fosters increased 
+uniformity and consistency. The FASB is recognized today by the U.S. 
+Securities and Exchange Commission as the designated accounting 
+standard setter for public companies. FASB standards are also 
+recognized as authoritative by many other organizations, including 
+State Boards of Accountancy and the American Institute of Certified 
+Public Accountants (AICPA). The Board concluded that these developments 
+have created opportunities to amend or rescind overlapping CAS 
+requirements where GAAP standards under ASC may be applied as a 
+reasonable substitute for CAS to support contract cost and pricing.
+    The Board concluded that nearly all of the content in CAS 407 has 
+become unnecessary because the Government interests addressed by that 
+content are adequately protected through reliance on GAAP, and existing 
+requirements in other CAS standards. Due to the minimal amount of 
+content identified for retention, the Board concluded that moving the 
+retained requirements to another standard rather than maintaining CAS 
+407 with minimal content would best achieve the goal of streamlining 
+CAS. This final rule reflects input from the public, as well as 
+research conducted by the Board. This action complies with applicable 
+requirements of 41 U.S.C. 1502 and furthers the Board's performance of 
+its duties under 41 U.S.C. 1501(c), which requires, among other things, 
+that the Board: (1) ensure that the cost accounting standards used by 
+Federal contractors rely, to the maximum extent practicable, on 
+commercial standards and accounting practices and systems; and (2) 
+conform CAS, where practicable, to GAAP.
+
+II. CAS 407--Use of Standard Costs for Direct Material and Direct Labor
+
+A. Overview and Conclusion
+
+    As noted in the NPRM, the Board's comparison of CAS 407 with 
+pertinent GAAP content, other CAS Standards, and the Federal 
+Acquisition Regulation (FAR) revealed significant overlaps and 
+equivalent requirements. These comparable requirements protect the 
+Government's interests and promote the uniformity and consistency that 
+was the basis for promulgating CAS 407 more than 50 years ago, when 
+comparable GAAP coverage did not exist.
+    The Board has concluded that, for the vast majority of the 
+requirements in CAS 407, with the exception of certain limited 
+requirements (i.e., CAS 407-30(a)(7), CAS 407-40(b), CAS 407-
+50(a)(4)(i) and (ii), CAS 407-50(d)(1) and (2), CAS 407-50(e), and CAS 
+407-60(b)), the Government's interests are adequately protected by 
+relying on disclosed GAAP practices that are consistently followed and 
+subject to notice of changes and cost recovery pursuant to CAS 401. 
+Specifically, all contractors, whether subject to full or modified CAS 
+coverage, are subject to CAS 401 and will continue to be required to 
+consistently follow their disclosed or actual cost accounting 
+practices. In addition, they will continue to be bound by the 9903.201-
+4 CAS contract clauses requiring disclosure and consistency in cost 
+accounting practices regardless of whether a specific standard exists. 
+These contract clauses implement the statutory requirements for 
+disclosure of 41 U.S.C. 1502(f)(1), and protections from payment of 
+increased costs as a result of changes to contractor's cost accounting 
+practices provided by 41 U.S.C. 1502(f)(2). The limited requirements 
+that are being retained address standard costs and related variances at 
+the production unit level which are not currently covered by GAAP. The 
+Board has concluded to move these requirements to CAS 418--Allocation 
+of direct and indirect costs.
+    This action is consistent with the Board's guiding principles for 
+conforming CAS to GAAP because it would eliminate CAS content to 
+minimize the burden on contractors while protecting the interests of 
+the Government. Furthermore, rescinding CAS 407 aligns with the guiding 
+principles to rely on coverage in GAAP when it would materially achieve 
+uniformity and consistency in cost accounting without bias or prejudice 
+to either party, rely on other CAS Standards which may protect the 
+Government's interests, and rescind CAS coverage no longer necessary.
+    As noted in the NPRM the Board did not identify any instance where 
+the rescinding of CAS 407 would result in a change to a contractor's 
+disclosed cost accounting practices for government contracts. With the 
+noted exceptions, the current CAS requirements are nearly identical to 
+GAAP. The Board expects that contractors would continue to follow their 
+existing practices as they are both compliant with CAS and GAAP. As 
+such, having identified no cost accounting practice changes as a result 
+of this final rule any current or future changes related to standard 
+costing of direct material or labor and the treatment of variances 
+would be considered unilateral as defined in 9903.201-6(b)(2). As 
+discussed further in the ``Summary of Public Comments'' section below, 
+respondents did not identify any instances or issues requiring further 
+consideration by the Board regarding this determination.
+
+[[Page 56062]]
+
+B. Summary of Public Comments
+
+    The Board received three sets of public comments to the NPRM; two 
+from industry associations and one from a consulting firm. All 
+commentors agreed with the provisional decision to rescind CAS 407 and 
+were supportive of the Board's progress with CAS to GAAP conformance. 
+Specific comments and discussion are detailed below.
+    Comment: One commentor believes the Board has not gone far in 
+enough in conformance because it proposes to retain certain limited 
+requirements around the concept of the production unit. However, the 
+other two commentors concur with the Board's conclusion that GAAP does 
+not address the concept of the production unit and agree with the 
+Board's decision to retain these requirements in CAS 418.
+    Response: The Board considered all current GAAP requirements and 
+concluded that full adoption of GAAP does not provide adequate 
+protection of the Government's interest. Retaining the requirements for 
+accounting at the production unit level is necessary to ensure 
+homogeneity while still providing contractors flexibility in setting 
+and revising direct material and/or direct labor standards based on 
+individual needs and circumstances. The Board, therefore, has not 
+adopted the suggestion to rescind 407 in its entirety.
+    Comment: One commentor expressed concern that the Board appears to 
+be expanding the ``disclosure and consistency in cost accounting 
+practices'' to all GAAP accounting practices. The example given by the 
+commentor was a contractor changing its inventory practices from first-
+in-first-out (FIFO) to last-in-first-out (LIFO).
+    Response: As noted in the NPRM, the Board is streamlining CAS 407 
+where reliance on existing standards and GAAP provides adequate 
+protection of the Government's interests. A change from FIFO to LIFO 
+would need to be disclosed by the contractor as this is a requirement 
+for the Disclosure Statement (CASB DS-1) section 2.2.2. Furthermore, 41 
+U.S.C. 1502(f)(1) covers the disclosure in writing of all cost 
+accounting practices, including methods of distinguishing direct costs 
+from indirect costs and the basis used for allocating indirect costs. 
+The Board is not expanding the disclosure requirement, but simply 
+highlighting that these disclosures are already required under 41 
+U.S.C. 1502(f)(1).
+    Comment: One commentor suggested that the elimination of CAS 407 
+could result in a change to a contractor's disclosed cost accounting 
+practice since GAAP allows for additional methodologies not prescribed 
+under CAS 407 and believes that these changes should be deemed 
+``required'' or ``desirable'' under CAS 9903.201-6.
+    Response: While GAAP may allow for additional methodologies, all 
+currently compliant CAS 407 practices are also currently compliant with 
+GAAP and therefore, any current or future changes related to standard 
+costing of direct material or labor and the treatment of variances 
+would be considered unilateral as defined in 9903.201-6(b)(2). The 
+Board, therefore, rejects the suggestion that any change should be 
+deemed required or desirable.
+
+III. Expected Impact of the Rule
+
+    This final rule is deregulatory in furtherance of 41 U.S.C. 
+1501(c), which requires the Board ensure that the Cost Accounting 
+Standards used by contractors rely, to the maximum extent practicable, 
+on commercial standards and accounting practices and systems. In 
+addition, 41 U.S.C. 1501(c) requires the Board to eliminate or conform 
+CAS requirements, where practicable, to GAAP. This final rule 
+eliminates 12 of the 16 individual requirements contained in CAS 407, 
+retaining only the minimal content the Board identified as needed to 
+protect the Government's interest by moving it to another standard. 
+This eliminates the need for a separate CAS standard addressing 
+standard costs for direct material and direct labor. This final rule 
+will result in the removal of almost 2,000 words of unnecessary 
+regulatory text currently in place in this standard. Reliance on a 
+contractor's disclosed GAAP practices for CAS purposes significantly 
+reduces the regulatory footprint associated with CAS and places 
+reliance on commercial accounting practices under GAAP consistent with 
+41 U.S.C. 1501(c).
+    These changes, as finalized, are expected to reduce burden for 
+contractors, external auditors, government auditors, and oversight 
+functions by reducing duplicative compliance requirements. These 
+changes individually and in conjunction with the Board's ongoing 
+broader CAS to GAAP conformance efforts and modernization of the CAS 
+programmatic requirements are expected to simplify CAS administration 
+and reduce barriers to entry for non-traditional contractors including 
+new mid-size entities who no longer qualify as small businesses. These 
+actions should increase competition in federal contracting.
+
+IV. Regulatory Flexibility Act
+
+    CAS Board rules do not impact small entities within the meaning of 
+the Regulatory Flexibility Act 5 U.S.C. 601-612. Contracts and 
+subcontracts with small business concerns are exempted from all CAS 
+requirements.
+
+V. Executive Orders 12866, 13563, and 14192
+
+    Executive Orders (E.O.s) 12866 and 13563 direct agencies to assess 
+all costs and benefits of available regulatory alternatives and, if 
+regulation is necessary, to select regulatory approaches that maximize 
+net benefits E.O. 13563 emphasizes the importance of quantifying both 
+costs and benefits, of reducing costs, of harmonizing rules, and of 
+promoting flexibility. OMB's Office of Information and Regulatory 
+Affairs (OIRA) has determined that this is a significant regulatory 
+action under section 3(f) of E.O. 12866, Regulatory Planning and 
+Review, dated September 30, 1993, and OIRA has reviewed this rule under 
+E.O. 12866. This rule is deregulatory action under E.O. 14192 based on 
+the discussion in the ``Expected Impact of the Rule'' section.
+
+VI. Paperwork Reduction Act
+
+    The Paperwork Reduction Act, Public Law 96-511, does not apply to 
+this final rule because this rule imposes no paperwork burden on 
+offerors, affected contractors and subcontractors, or members of the 
+public that requires the approval of OMB under 44 U.S.C. 3501, et seq.
+
+List of Subjects in 48 CFR 9903 and 9904
+
+    Cost accounting standards, Government procurement.
+
+Kevin R. Rhodes,
+Administrator, Office of Federal Procurement Policy, and Chair, Cost 
+Accounting Standards Board.
+
+    For the reasons set forth in the preamble, the Office of Management 
+and Budget is amending chapter 99 of title 48 of the Code of Federal 
+Regulations as set forth below:
+
+PART 9903--CONTRACT COVERAGE
+
+0
+1. The authority citation for part 9903 continues to read as follows:
+
+    Authority:  Public Law 111-350, 124 Stat. 3677, 41 U.S.C. 1502.
+
+Subpart 9903.3--CAS Rules and Regulations
+
+0
+2. In Sec.  9903.301(a):
+0
+a. Revise the definition for ``Actual cost'';
+
+[[Page 56063]]
+
+0
+b. Remove the definitions for ``Labor cost at standard'', ``Labor-rate 
+standard'', ``Labor-time standard'', ``Material cost at standard'', 
+``Material-price standard'' and ``Material-quantity standard'';
+0
+c. Revise the definition for ``Production unit''; and
+0
+d. Remove the definitions for ``Standard cost'' and ``Variance''.
+    The revisions read as follows:
+
+
+9903.301   Definitions.
+
+    (a) * * *
+* * * * *
+    Actual cost. See 9904.401-30.
+* * * * *
+    Production unit. See 9904-418-30.
+* * * * *
+
+PART 9904--COST ACCOUNTING STANDARDS
+
+0
+3. The authority citation for part 9904 continues to read as follows:
+
+    Authority:  Pub. L. 100-679, 102 Stat. 4056, 41 U.S.C. 422.
+
+Subpart 9904.407 [Removed and Reserved]
+
+0
+4. Remove and reserve subpart 9904.407.
+
+Subpart 9904.418--Allocation of direct and indirect costs
+
+0
+5. In Sec.  9904.418-30, add paragraph (a)(5) to read as follows:
+
+
+Sec.  9904.418-30   Definitions.
+
+    (a) * * *
+    (5) Production unit means a grouping of activities which either 
+uses homogeneous inputs of direct material and direct labor or yields 
+homogeneous outputs such that the costs or statistics related to these 
+homogeneous inputs or outputs are appropriate as bases for allocating 
+variances.
+* * * * *
+
+0
+6. In Sec.  9904.418-50:
+0
+a. Revise paragraph (a)(2)(i); and
+0
+b. Add paragraph (h).
+    The revision and addition read as follows:
+
+
+Sec.  9904.418-50  Techniques for application.
+
+    (a) * * *
+    (2) * * *
+    (i) Standard costs may be used for estimating, accumulating, and 
+reporting costs of direct material and direct labor only when standard 
+costs and related variances are appropriately accounted for at the 
+level of the production unit and paragraph (h) of this section; or
+* * * * *
+    (h) Standard costing. (1) A labor-rate standard may be set to cover 
+a group of direct labor workers who perform disparate functions only 
+under the conditions in either paragraph (h)(1)(i) or (ii) of this 
+section:
+    (i) Where that group of workers all work in a single production 
+unit yielding homogeneous outputs (in this case, the same labor-rate 
+standard shall be applied to each worker in that group).
+    (ii) Where that group of workers, in the performance of their 
+respective functions, forms an integral team (in this case, a labor-
+rate standard shall be set for each integral team).
+    (2) A contractor's established practice with respect to the 
+disposition of variances accumulated by production unit shall be in 
+accordance with paragraph (h)(2)(i) or (ii) of this section:
+    (i) Variances are allocated to cost objectives (including ending 
+in-process inventory) at least annually. Where a variance related to 
+material is allocated, the allocation shall be on the basis of the 
+material cost at standard, or, where outputs are homogeneous, on the 
+basis of units of output. Similarly, where a variance related to labor 
+is allocated, the allocation shall be on the basis of the labor cost at 
+standard or labor hours at standard or, where outputs are homogeneous, 
+on the basis of units of output; or
+    (ii) Variances which are immaterial may be included in appropriate 
+indirect cost pools for allocation to applicable cost objectives.
+    (3) Where variances applicable to covered contracts are allocated 
+by memorandum worksheet adjustments rather than in the books of 
+account, the bases used for adjustment shall be in accordance with 
+those stated in this paragraph (h).
+
+0
+7. In Sec.  9904.418-60, add paragraph (j) to read as follows:
+
+
+Sec.  9904.418-60  Illustrations.
+
+* * * * *
+    (j) Contractor J accumulates, in one account, labor cost at 
+standard for a department in which several categories of direct labor 
+of disparate functions, in different combinations, are used in the 
+manufacture of various dissimilar outputs of the department. Contractor 
+J's department is not a production unit as defined in 9904.418-30(a)(5) 
+of this Cost Accounting Standard. Modifying its practice so as to 
+comply with the definition of production unit in 9904.418-30(a)(5), it 
+could accumulate the standard costs and variances separately,
+    (1) For each of the several categories of direct labor; or
+    (2) For each of several subdepartments, with homogeneous output for 
+each of the subdepartments.
+
+[FR Doc. 2026-17903 Filed 8-31-26; 8:45 am]
+BILLING CODE 3110-01-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

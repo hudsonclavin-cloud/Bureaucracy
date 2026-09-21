@@ -1,0 +1,2880 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 180 (Friday, September 18, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 180 (Friday, September 18, 2026)]
+[Notices]
+[Pages 59259-59278]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-19126]
+
+
+-----------------------------------------------------------------------
+
+SECURITIES AND EXCHANGE COMMISSION
+
+[Release No. 34-106381; File No. SR-FINRA-2026-001]
+
+
+Self-Regulatory Organizations; Financial Industry Regulatory 
+Authority, Inc.; Order Approving a Proposed Rule Change, as Modified by 
+Partial Amendment No. 1, To Adopt FINRA Rule 3290 (Outside Activities 
+Requirements)
+
+September 15, 2026.
+
+I. Introduction
+
+    On January 22, 2026, the Financial Industry Regulatory Authority, 
+Inc. (``FINRA'') filed with the Securities and Exchange Commission 
+(``SEC'' or ``Commission''), pursuant to Section 19(b)(1) of the 
+Securities Exchange Act of 1934 (``Exchange Act'') \1\ and Rule 19b-4 
+thereunder,\2\ a proposed rule change to adopt FINRA Rule 3290 (Outside 
+Activities Requirements) to replace existing FINRA Rules 3270 (Outside 
+Business Activities of Registered Persons) and 3280 (Private Securities 
+Transactions of an Associated Person).
+---------------------------------------------------------------------------
+
+    \1\ 15 U.S.C. 78s(b)(1).
+    \2\ 17 CFR 240.19b-4.
+---------------------------------------------------------------------------
+
+    The proposed rule change was published for comment in the Federal 
+Register on February 3, 2026.\3\ The public comment period closed on 
+February 24, 2026. The Commission received comment letters in response 
+to the Notice.\4\ On March 13, 2026, FINRA consented to an extension of 
+the time period in which the Commission must approve the proposed rule 
+change, disapprove the proposed rule change, or institute proceedings 
+to determine whether to approve or disapprove the proposed rule change 
+to May 4, 2026.\5\ On May 1, 2026, FINRA responded to the comment 
+letters received in response to the Notice and filed a partial 
+amendment to modify the proposed rule change (``Amendment No. 1'').\6\ 
+On May 1, 2026, the Commission published a notice of the filing of 
+Amendment No. 1 and an order instituting proceedings (``OIP'') to 
+determine whether to approve or disapprove the proposed rule change, as 
+modified by Amendment No. 1 (hereinafter referred to as the ``proposed 
+rule change'' unless otherwise specified).\7\ The public comment period 
+closed on May 27, 2026. The Commission received additional comment 
+letters in response to the notice of the filing of the amendment and 
+OIP.\8\ On June 11, 2026, FINRA responded to the comment letters 
+received in response to the OIP.\9\ On July 24, 2026, FINRA consented 
+to extend until October 1, 2026, the time period in which the 
+Commission must approve or disapprove the proposed rule change.\10\ 
+This order approves the proposed rule change, as modified by Amendment 
+No. 1.
+---------------------------------------------------------------------------
+
+    \3\ See Exchange Act Release No. 104746 (Jan. 29, 2026), 91 FR 
+5003 (Feb. 3, 2026) (File No. SR-FINRA-2026-001) (``Notice'').
+    \4\ The comment letters are available at <a href="https://www.sec.gov/rules-regulations/public-comments/sr-finra-2026-001">https://www.sec.gov/rules-regulations/public-comments/sr-finra-2026-001</a>.
+    \5\ See letter from Alicia Goldin, Vice President and Associate 
+General Counsel, Office of General Counsel, FINRA (dated Mar. 13, 
+2026), <a href="https://www.finra.org/sites/default/files/2026-03/SR-FINRA-2026-001-Extension1.pdf">https://www.finra.org/sites/default/files/2026-03/SR-FINRA-2026-001-Extension1.pdf</a>.
+    \6\ See letter from Matthew E. Vitek, Associate General Counsel, 
+Office of General Counsel, FINRA (dated May 1, 2026) (``FINRA I''), 
+<a href="https://www.sec.gov/comments/SR-FINRA-2026-001/srfinra2026001-765807-2350615.pdf">https://www.sec.gov/comments/SR-FINRA-2026-001/srfinra2026001-765807-2350615.pdf</a>; see also Amendment No. 1.
+    \7\ See Exchange Act Release No. 105355 (May 1, 2026), 91 FR 
+24613 (May 6, 2026) (File No. SR-FINRA-2026-001).
+    \8\ See supra note 4.
+    \9\ See letter from Matthew E. Vitek, Associate General Counsel, 
+Office of General Counsel, FINRA (dated June 11, 2026) (``FINRA 
+II''), <a href="https://www.sec.gov/comments/SR-FINRA-2026-001/srfinra2026001-814261-2480673.pdf">https://www.sec.gov/comments/SR-FINRA-2026-001/srfinra2026001-814261-2480673.pdf</a>.
+    \10\ See letter from Alicia Goldin, Vice President and Associate 
+General Counsel, Office of General Counsel, FINRA (dated July 24, 
+2026), <a href="https://www.finra.org/sites/default/files/2026-07/FINRA-2026-001-Extension-2.pdf">https://www.finra.org/sites/default/files/2026-07/FINRA-2026-001-Extension-2.pdf</a>.
+---------------------------------------------------------------------------
+
+II. Description of the Proposed Rule Change
+
+A. Background
+
+1. FINRA Rule 3270 (Outside Business Activities of Registered Persons)
+    Subject to several exemptions, FINRA Rule 3270 prohibits a 
+registered person from being an employee, independent contractor, sole 
+proprietor, officer, director or partner of another person, or being 
+compensated, or having the reasonable expectation of compensation, by 
+any other person as a result of any business activity outside the scope 
+of the relationship with his or her member firm (outside business 
+activities or ``OBA''), unless he or she has provided
+
+[[Page 59260]]
+
+prior written notice to the member, in such form as specified by the 
+member.\11\
+---------------------------------------------------------------------------
+
+    \11\ FINRA Rule 3270 exempts from its operative requirements 
+passive investments and private securities transactions subject to 
+the requirements of FINRA Rule 3280.
+---------------------------------------------------------------------------
+
+    Upon receipt of a written notice, FINRA Rule 3270.01 requires the 
+member to consider whether the proposed activity will: (1) interfere 
+with or otherwise compromise the registered person's responsibilities 
+to the member and/or the member's customers; or (2) be viewed by 
+customers or the public as part of the member's business based upon, 
+among other factors, the nature of the proposed activity and the manner 
+in which it will be offered. Based on the member's review of such 
+factors, the member must evaluate whether to condition, limit, or 
+prohibit a registered person's outside activity.\12\ FINRA Rule 3270.01 
+also requires a member to evaluate the registered person's proposed 
+activity to determine whether the activity is properly characterized as 
+an OBA or a private securities transaction (``PST'') subject to the 
+requirements of FINRA Rule 3280. Additionally, FINRA Rule 3270.01 
+requires a member to keep a record of its compliance with these 
+obligations with respect to each written notice received and must 
+preserve this record in accordance with the time and accessibility 
+requirements of Exchange Act Rule 17a-4(e)(1).
+---------------------------------------------------------------------------
+
+    \12\ See FINRA Rule 3270.01.
+---------------------------------------------------------------------------
+
+2. FINRA Rule 3280 (Private Securities Transactions of an Associated 
+Person)
+    FINRA Rule 3280(a) prohibits an associated person of a member from 
+participating in any manner in a PST \13\ except in accordance with the 
+following requirements:
+---------------------------------------------------------------------------
+
+    \13\ FINRA Rule 3280(e)(1) defines a PST as any securities 
+transaction outside the regular course or scope of an associated 
+person's employment with a member, excluding: (1) transactions 
+subject to the notification requirements of FINRA Rule 3210 
+(Accounts at Other Broker-Dealers and Financial Institutions); (2) 
+transactions among immediate family members (as defined in FINRA 
+Rule 5130 (Restrictions on the Purchase and Sale of Initial Equity 
+Public Offerings)) for which no associated person receives any 
+selling compensation; and (3) personal transactions in investment 
+company and variable annuity securities. FINRA Rule 3280(e)(2) 
+defines ``selling compensation'' as any compensation paid directly 
+or indirectly from whatever source in connection with, or as a 
+result of, the purchase or sale of a security.
+---------------------------------------------------------------------------
+
+    <bullet> FINRA Rule 3280(b) requires an associated person, prior to 
+participating in any private securities transaction, to provide written 
+notice to the member with which he or she is associated, describing in 
+detail the proposed transaction and the person's proposed role therein 
+and stating whether he or she has received or may receive selling 
+compensation in connection with the transaction; \14\
+---------------------------------------------------------------------------
+
+    \14\ In the case of a series of related transactions in which no 
+selling compensation has been or will be received, an associated 
+person may provide a single written notice. FINRA Rule 3280(b).
+---------------------------------------------------------------------------
+
+    <bullet> FINRA Rule 3280(c)(1) requires a member that has received 
+notice from one of its associated persons regarding a proposed 
+transaction for which the associated person has received or may receive 
+selling compensation to advise the associated person in writing whether 
+it approves or disapproves the person's participation in the proposed 
+transaction;
+    <bullet> FINRA Rule 3280(c)(2) requires a member that approves its 
+associated person's participation in a proposed transaction to record 
+the transaction on its books and records supervise the associated 
+person's participation in the transaction as if the transaction were 
+executed on behalf of the member;
+    <bullet> FINRA Rule 3280(c)(3) prohibits an associated person from 
+participating in a transaction if the member disapproves its associated 
+person's participation in the proposed transaction; and
+    <bullet> FINRA Rule 3280(d) requires a member that has received 
+notice from one of its associated persons regarding a proposed 
+transaction or series of related transactions for which the associated 
+person has not and will not receive any selling compensation to provide 
+the associated person prompt written acknowledgment of his or her 
+notice.\15\
+---------------------------------------------------------------------------
+
+    \15\ The member may also require the associated person to adhere 
+to specified conditions in connection with his or her participation 
+in the transaction. See FINRA Rule 3280(d).
+---------------------------------------------------------------------------
+
+B. The Proposed Rule Change
+
+    The proposed rule change would replace current FINRA Rules 3270 and 
+3280 with new FINRA Rule 3290. Proposed FINRA Rule 3290 would retain, 
+or be substantially similar to, many of the existing requirements of 
+the current rules under two distinct categories of activities: (1) 
+outside investment-related activities of registered persons and (2) 
+outside securities transactions of associated persons.\16\ Similar to 
+the obligations imposed under current Rules 3270 and 3280, associated 
+persons generally would be required to report outside securities 
+transactions, while only registered persons would be required to report 
+outside activities.
+---------------------------------------------------------------------------
+
+    \16\ The term ``associated persons'' includes ``registered 
+persons.'' See Notice at 5005.
+---------------------------------------------------------------------------
+
+    As discussed in more detail below, the proposed rule would narrow 
+the scope of reportable activities of registered persons from outside 
+business activities to outside investment-related activities (defined 
+as ``outside activities'' of registered persons). Under proposed FINRA 
+Rule 3290, ``investment-related activity'' would cover a range of 
+activities involving financial assets beyond securities but would be 
+subject to certain exclusions and exceptions. The proposed rule change 
+would also: (1) recharacterize certain associated person activities 
+(such as those involving an unaffiliated investment adviser) that are 
+currently treated as PSTs under FINRA Rule 3280 as outside activities 
+(rather than as outside securities transactions); (2) codify the 
+treatment of certain activities as outside activities; and (3) exclude 
+from the rule's coverage activity conducted by associated persons 
+(including registered persons) on behalf of an affiliate of a member, 
+certain personal real estate activities, and personal investments in 
+non-securities.
+    While the proposed rule change would change the scope of activities 
+covered by, or the characterization of certain activities under (i.e., 
+as an outside activity instead of as an outside securities transaction) 
+the proposed rule, many of the obligations imposed on outside 
+activities or outside securities transactions would either be retained 
+or would be substantially similar to the existing requirements for an 
+OBA or a PST, including: (1) requiring that a registered person who 
+intends to participate in certain outside activities and an associated 
+person who intends to participate in outside securities transactions 
+(as defined below) provide prior written notice to the member; (2) 
+requiring members receiving a notice to assess, among other things, 
+whether to permit, prohibit, or limit the person's participation in the 
+identified proposed activity; (3) requiring members' prior written 
+approval or disapproval of certain activities; and (4) requiring member 
+supervision and recordkeeping of certain activities.\17\
+---------------------------------------------------------------------------
+
+    \17\ Notice at 5004. The proposed rule change would also retain 
+the definition of ``selling compensation'' set forth in FINRA Rule 
+3280(e)(2).
+---------------------------------------------------------------------------
+
+    FINRA stated that, consistent with existing FINRA Rules 3270 and 
+3280, both the notice requirements and member obligations upon 
+receiving the notice would differ depending on the type of activity 
+(outside activity, outside securities transaction not for selling 
+compensation, or outside securities transaction for selling 
+compensation).\18\ The member's obligations after conducting an 
+assessment would also depend on the type of activity, with the
+
+[[Page 59261]]
+
+greatest member obligations applying to outside securities transactions 
+for selling compensation.\19\
+---------------------------------------------------------------------------
+
+    \18\ Notice at 5005.
+    \19\ Id.
+---------------------------------------------------------------------------
+
+    Importantly, the proposed rule change would not limit a member's 
+ability to expand the scope of its assessment for reportable activities 
+beyond the minimum requirements established in the proposed rule change 
+or to exercise discretion to apply stricter criteria and impose 
+conditions or prohibitions based on the member's own assessment of the 
+risk presented by the identified activity.\20\ Additionally, nothing in 
+the proposed rule change would alter the well-settled principle that 
+members must investigate ``red flags'' indicating problematic 
+activities.\21\
+---------------------------------------------------------------------------
+
+    \20\ Id. at 5007.
+    \21\ See id. at 5005, note 8.
+---------------------------------------------------------------------------
+
+    FINRA stated that by merging the two existing rules, the proposed 
+rule change would enhance members' regulatory efficiency without 
+compromising protections for investors and members relating to outside 
+activities.\22\ FINRA stated that reducing or eliminating the 
+regulatory burden on members for activities that FINRA believes are 
+lower risk would enable members to redirect supervisory and compliance 
+resources away from activities that pose fewer investor protection 
+concerns and toward higher-risk investment-related activities.\23\ For 
+example, FINRA stated that the proposed rule would focus on those 
+outside activities that are appropriately within the members' purview 
+that are a potential risk to members and the public.\24\ At the same 
+time, FINRA stated that the proposed rule would provide exclusions for 
+certain activities that FINRA has assessed pose lower risk to its 
+members or the public, including activity conducted at an affiliate or 
+activities such as bartending or refereeing sports games.\25\ As such, 
+FINRA stated that the proposed rule change would serve the public 
+interest by maintaining the core investor protections of the existing 
+rules and addressing the treatment of business activities and 
+securities transactions that are outside the regular scope of 
+individuals' association with a member, while narrowing the scope of 
+reportable activities to those that present higher risk, particularly 
+the risk that customers or the public would view the activities as part 
+of the member's business.\26\ In this way, FINRA stated, the rule would 
+promote more effective risk-based oversight and, as a result, enhance 
+investor protection.\27\
+---------------------------------------------------------------------------
+
+    \22\ Id. at 5004.
+    \23\ Id. at 5007.
+    \24\ See id. at 5004.
+    \25\ Id.
+    \26\ Id. at 5007.
+    \27\ Id.
+---------------------------------------------------------------------------
+
+    Each of the proposed rule changes is discussed below in turn.
+1. Outside Activities
+a. Registered Person's Obligations
+    Proposed FINRA Rule 3290(a) (Obligations of a Registered Person for 
+Outside Activity) would require a registered person who intends to 
+participate in an ``outside activity'' (that is, an investment-related 
+activity \28\ outside the scope of such person's relationship with the 
+member that is not in connection with a securities transaction) to 
+provide prior written notice to the member regarding such outside 
+activity. In addition, proposed FINRA Rule 3290(a) would require a 
+registered person to update any prior written notice to the member if 
+there is a material change to the outside activity. For any notice 
+provided pursuant to the proposed rule, the registered person would be 
+required to describe in detail the proposed outside activity and the 
+person's proposed role therein.\29\
+---------------------------------------------------------------------------
+
+    \28\ Proposed FINRA Rule 3290(f)(3) would define the term 
+``investment-related activity.'' See infra Section II.B.3. (Proposed 
+Definition of Investment-Related Activity). Proposed FINRA Rule 3290 
+also contains exclusions and exceptions for certain activities that 
+would otherwise fall within the definition of ``investment-related 
+activity.'' See infra Section II.B.5 (Exclusions from Proposed FINRA 
+Rule 3290); Section II.B.6. (Associated Person Activities Subject to 
+a Contractual Arrangement).
+    \29\ Proposed FINRA Rule 3290(a).
+---------------------------------------------------------------------------
+
+b. Obligations of a Member for a Registered Person's Outside Activity
+    Proposed Rule 3290(c) (Obligations of a Member for a Registered 
+Person's Outside Activity) would require a member receiving written 
+notice of a registered person's outside activity to assess, at a 
+minimum, whether the outside activity: (1) is an outside securities 
+transaction; \30\ (2) involves a customer of the registered person; (3) 
+will interfere with or otherwise compromise the registered person's 
+responsibilities to the member or the member's customers; and (4) will 
+be viewed by the member's customers or the public as part of the 
+member's business based upon, among other factors, the nature of the 
+proposed activity and the manner in which it will be offered.\31\ FINRA 
+stated that the proposed rule change would add factor (2) (regarding 
+whether the outside activity involves a customer of a registered 
+person) to factors (1), (3), and (4) above, which are consistent with 
+the existing requirements for an OBA under FINRA Rule 3270.\32\
+---------------------------------------------------------------------------
+
+    \30\ FINRA stated that a person may, mistakenly or 
+intentionally, mischaracterize an activity. For this reason, among 
+others, a member must analyze whether the activity is properly 
+characterized to determine its obligations, which vary depending on 
+the activity. See Notice at 5005. If the member determines that the 
+activity is an outside securities transaction, the member would be 
+required to comply with the obligations listed in proposed FINRA 
+Rule 3290(d), as discussed below.
+    \31\ Proposed FINRA Rule 3290(c)(1).
+    \32\ Notice at 5005.
+---------------------------------------------------------------------------
+
+    Based on the member's review of such factors, the member would be 
+required to evaluate whether to condition, limit, or prohibit a 
+registered person's outside activity.\33\
+---------------------------------------------------------------------------
+
+    \33\ See proposed FINRA Rule 3290(c)(2).
+---------------------------------------------------------------------------
+
+    If a member imposes conditions or limitations on an associated 
+person's participation in such an outside activity, proposed FINRA Rule 
+3290.06 would require the member to reasonably supervise the person's 
+compliance with such conditions or limitations.\34\ FINRA stated that 
+this obligation is already implicit in existing FINRA Rule 3270, but 
+would be made explicit in proposed FINRA Rule 3290.\35\
+---------------------------------------------------------------------------
+
+    \34\ See Amendment No. 1.
+    \35\ See FINRA I at 16; see also Amendment No. 1.
+---------------------------------------------------------------------------
+
+2. Outside Securities Transactions
+a. Associated Person's Obligations
+    Proposed FINRA Rule 3290(b) (Obligations of an Associated Person 
+for Outside Securities Transactions) would require an associated person 
+who intends to participate in an ``outside securities transaction'' 
+(that is, an investment-related activity \36\ outside the scope of the 
+associated person's relationship with the member that is in connection 
+with a securities transaction) to provide prior written notice to the 
+member, describing in detail the proposed transaction, the person's 
+proposed role therein, and whether the person will receive selling 
+compensation.\37\ In addition, FINRA
+
+[[Page 59262]]
+
+Rule 3290(b)(2) would require an associated person to update any prior 
+written notice if there is a material change to the outside securities 
+transaction described in such notice. Where the associated person 
+intends to participate in an outside securities transaction for selling 
+compensation, the associated person also would need to obtain prior 
+written approval from the member (including approval for any material 
+change to any information provided pursuant to proposed FINRA Rule 
+3290(b)(1)).\38\
+---------------------------------------------------------------------------
+
+    \36\ See infra Section II.B.3. (Proposed Definition of 
+Investment-Related Activity) for discussion of ``investment-related 
+activity.''
+    \37\ Proposed FINRA Rules 3290(b)(1) and (3). A separate notice 
+would be required for each outside securities transaction unless an 
+exception applies that allows the use of a single notice. See Notice 
+at 5005. Proposed FINRA Rule 3290(b)(1)(A) would permit an 
+associated person who intends to participate in an outside 
+securities transaction that is in connection with a series of 
+related securities transactions not for selling compensation to 
+provide a single prior written notice to the member. Similarly, 
+proposed FINRA Rule 3290(b)(1)(B) would permit an associated person 
+acting as portfolio manager or investment committee member for 
+registered investment companies, unregistered investment companies, 
+business development companies, real estate investment trusts, and 
+entities that are recognized as tax exempt, and who is not selling 
+an entity's shares for selling compensation, to provide a single 
+prior written notice to the member. See proposed FINRA Rule 3290.02; 
+see also infra Section II.B.4.a. (Associated Persons Acting as 
+Portfolio Managers and Investment Committee Members).
+    \38\ See proposed FINRA Rules 3290(b)(1), (2). FINRA Rule 
+3290(f)(5) would define ``selling compensation'' as any compensation 
+paid directly or indirectly from whatever source in connection with 
+or as a result of the purchase, sale or exchange of a security. The 
+proposed definition of ``selling compensation'' is consistent with 
+the definition in FINRA Rule 3280(e)(2).
+---------------------------------------------------------------------------
+
+b. Obligations of a Member for an Associated Person's Outside 
+Securities Transactions
+    Proposed Rule 3290(d)(1) would require a member receiving written 
+notice of an associated person's outside securities transaction to 
+assess, at a minimum, whether the outside securities transaction: (1) 
+is a securities transaction for selling compensation; \39\ (2) involves 
+a customer of the associated person; \40\ (3) will interfere with or 
+otherwise compromise the associated person's responsibilities to the 
+member or the member's customers; \41\ and (4) will be viewed by the 
+member's customers or the public as part of the member's business based 
+upon, among other factors, the nature of the proposed activity and the 
+manner in which it will be offered.\42\ FINRA stated that while 
+existing FINRA Rule 3280 does not require consideration of the four 
+factors identified in proposed FINRA Rule 3290(d) when assessing a PST, 
+FINRA understands that the proposed rule change is consistent with 
+members' current practices.\43\
+---------------------------------------------------------------------------
+
+    \39\ Proposed FINRA Rule 3290(d)(1)(A).
+    \40\ Proposed FINRA Rule 3290(d)(1)(B).
+    \41\ Proposed FINRA Rule 3290(d)(1)(C).
+    \42\ Proposed FINRA Rule 3290(d)(1)(D). Pursuant to proposed 
+FINRA Rule 3290(d)(1), a member would not be required to assess an 
+outside securities transaction for selling compensation when 
+disapproving it under proposed Rule 3290(d)(3)(C).
+    \43\ See Notice at 5005.
+---------------------------------------------------------------------------
+
+    A member's obligations for an associated person's outside 
+securities transactions would depend, in part, on whether the outside 
+securities transaction is for selling compensation. If the outside 
+securities transaction is not for selling compensation, proposed FINRA 
+Rule 3290(d)(2) would require the member to: (1) provide the associated 
+person prompt written acknowledgement of such notice; \44\ and (2) at 
+the member's discretion, require the associated person to adhere to 
+specified conditions \45\ in connection with the associated person's 
+participation in the transaction. If, instead, the outside securities 
+transaction is for selling compensation, proposed FINRA Rule 3290(d)(3) 
+would require the member to notify the associated person in writing of 
+the member's decision to: (1) approve the proposed transaction after 
+making a reasonable determination based on the criteria enumerated in 
+proposed FINRA Rule 3290(d)(1); (2) approve the proposed transaction 
+subject to specific conditions or limitations after a reasonable 
+determination based on the criteria enumerated in proposed FINRA Rule 
+3290(d)(1); or (3) disapprove the proposed transaction.\46\
+---------------------------------------------------------------------------
+
+    \44\ A single written acknowledgement may be used in the case of 
+a series of related outside securities transactions not for selling 
+compensation. See proposed FINRA Rule 3290(d)(2).
+    \45\ See Amendment No.1 (FINRA stated that adding a reference to 
+``limitations'' in proposed FINRA Rule 3290(d)(2) would improve 
+consistency with proposed FINRA Rules 3290(c)(2) and (d)(3)).
+    \46\ Proposed FINRA Rule 3290(d)(3)(A)-(C).
+---------------------------------------------------------------------------
+
+    If a member imposes conditions or limitations on an associated 
+person's participation in such an outside securities transaction, 
+proposed FINRA Rule 3290.06 would require the member to reasonably 
+supervise the person's compliance with such conditions or 
+limitations.\47\ FINRA stated that this obligation is already implicit 
+in existing FINRA Rule 3280, but would be made explicit in proposed 
+FINRA Rule 3290.\48\
+---------------------------------------------------------------------------
+
+    \47\ See Amendment No. 1.
+    \48\ See FINRA I at 16; see also Amendment No. 1.
+---------------------------------------------------------------------------
+
+    Further, proposed FINRA Rule 3290(d)(4) would require a member to 
+record each approved outside securities transaction for selling 
+compensation on the books and records of the member and supervise the 
+person's participation in the transaction as if executed on behalf of 
+the member. However, if a member approves an associated person's 
+participation in an outside securities transaction involving selling 
+compensation and that person is associated with more than one member, 
+proposed FINRA Rule 3290.01 would permit members to develop a written 
+allocation arrangement whereby at least one member agrees to be 
+responsible for compliance with respect to all applicable securities 
+laws and regulations and FINRA rules regarding the proposed activity, 
+including those requiring member supervision and recordkeeping.\49\ 
+FINRA stated that the proposed rule change would codify existing 
+guidance in NASD Notice to Members 96-33, allowing for potential 
+efficiency gains for members that may have been unaware of such 
+previous guidance.\50\
+---------------------------------------------------------------------------
+
+    \49\ Proposed FINRA Rule 3290.01.
+    \50\ See Notice at 5006, 5008.
+---------------------------------------------------------------------------
+
+3. Proposed Definition of Investment-Related Activity
+    The obligations of proposed FINRA Rules 3290(a)-(d) are triggered 
+by the participation of a member's associated person in an investment-
+related activity that is outside the scope of the associated person's 
+or registered person's relationship with the member. Proposed FINRA 
+Rule 3290(f)(3) would define the term ``investment-related activity'' 
+as pertaining to financial assets including, but not limited to, 
+securities, crypto assets, commodities, derivatives (such as futures 
+and swaps), currency, banking, real estate or insurance. The term 
+includes, but is not limited to: (1) acting as or being associated with 
+a broker-dealer, issuer, insurance agent or company, investment 
+company, investment adviser, futures commission merchant, commodity 
+trading advisor, commodity pool operator, municipal advisor, futures 
+sponsor, money services business, bank, savings association, or credit 
+union; and (2) an associated person's participation in any manner in a 
+personal investment involving a securities transaction (sometimes 
+referred to as ``buying away''), other than transactions indicated in 
+proposed FINRA Rule 3290(g)(3)(A).\51\ FINRA stated that by focusing 
+the application of proposed Rule 3290 on activities involving financial 
+assets, the proposed rule change would eliminate the burdens associated 
+with the reporting and assessment of activities that FINRA
+
+[[Page 59263]]
+
+views as having lower risk (such as refereeing sports games and 
+bartending), allowing members to dedicate resources to activities 
+presenting higher risk to investors, particularly the risk that 
+investors or the public would view the activities as part of the 
+member's business and thus under its supervision.\52\
+---------------------------------------------------------------------------
+
+    \51\ Proposed FINRA Rule 3290(g)(3)(A) would exclude from the 
+definition of ``investment-related activity'' an associated person's 
+personal investments involving securities transactions subject to or 
+delineated in FINRA Rule 3210. FINRA Rule 3210 applies to securities 
+transactions effected by the associated person or their related 
+persons, as delineated in FINRA Rule 3210.02, at any financial 
+institution other than the member that employs the associated 
+person. FINRA Rule 3210.03 excludes some transactions and accounts 
+from that rule: transactions in unit investment trusts, municipal 
+fund securities as defined under MSRB Rule D-12, qualified tuition 
+programs pursuant to Section 529 of the Internal Revenue Code, 
+variable contracts or redeemable securities of companies registered 
+under the Investment Company Act of 1940, or accounts that are 
+limited to transactions in such securities, or monthly-investment-
+plan-type accounts, or accounts pursuant to Section 530A of the 
+Internal Revenue Code. FINRA Rule 3210.03 (Transactions and Accounts 
+not Subject to this Rule).
+    \52\ See Notice at 5004.
+---------------------------------------------------------------------------
+
+4. Specific Activities Treated as Outside Activities for Purposes of 
+Proposed FINRA Rule 3290
+a. Associated Persons Acting as Portfolio Managers and Investment 
+Committee Members
+    Proposed FINRA Rule 3290.02 states that an associated person would 
+not be considered to be participating in an outside securities 
+transaction to the extent the associated person's activities are 
+limited to acting as portfolio manager or investment committee member 
+for registered investment companies (e.g., mutual funds, exchange 
+traded funds, unit investment trusts, or registered closed-end funds), 
+unregistered investment companies, business development companies, real 
+estate investment trusts, and entities that are recognized as tax 
+exempt. Such activity would be treated as an outside activity and not 
+an outside securities transaction.\53\
+---------------------------------------------------------------------------
+
+    \53\ As an ``outside activity,'' such activity would be subject 
+to the notice and assessment requirements of proposed FINRA Rules 
+3290(a) and (c).
+---------------------------------------------------------------------------
+
+    However, proposed FINRA Rule 3290.02 also states that the proposed 
+exception would not include an associated person's activities related 
+to purchasing or selling such entities' shares. Those activities would 
+instead be considered an outside securities transaction subject to the 
+applicable notice and assessment requirements in proposed FINRA Rule 
+3290(b) and (d) unless otherwise excluded under proposed FINRA Rule 
+3290(g) (discussed infra).
+    FINRA stated that this proposed rule change would codify FINRA 
+staff's position that: (1) an associated person would need to provide 
+prior written notice for activities related to purchasing or selling 
+such entities' shares, and (2) the member would not be required to 
+supervise and maintain records for the activity, unless the associated 
+person is selling such entities' shares for selling compensation and 
+such activity is not otherwise excluded under the proposed rule.\54\
+---------------------------------------------------------------------------
+
+    \54\ See Notice at 5006.
+---------------------------------------------------------------------------
+
+b. Associated Person Activity at an Unaffiliated Registered Investment 
+Adviser (``RIA'')
+    Proposed FINRA Rule 3290.03 states that an associated person's 
+activity at an investment adviser registered either with the Commission 
+under Section 203 of the Investment Advisers Act (``Advisers Act'') or 
+with a state securities commission (or any agency or office performing 
+like functions) would be treated as an outside activity of a registered 
+person (and not an outside securities transaction).\55\
+---------------------------------------------------------------------------
+
+    \55\ Such activity would be subject to the requirements of 
+proposed FINRA Rules 3290(a) and (c). See supra note 53.
+---------------------------------------------------------------------------
+
+    FINRA stated that the proposed rule change would eliminate members' 
+supervision and recordkeeping obligations for investment advisory 
+activities performed by associated persons at unaffiliated investment 
+advisers, which were set forth in FINRA guidance issued in the 
+1990s.\56\ FINRA stated that this prior guidance has caused significant 
+confusion and practical challenges, including privacy challenges to 
+members seeking account information for clients of an unaffiliated 
+investment adviser through which the member's associated person may be 
+acting in an investment advisory capacity.\57\ FINRA stated that 
+without access to information necessary to meaningfully supervise 
+outside unaffiliated investment advisory activities, members would 
+unreasonably bear regulatory responsibility and potential liability 
+without adequate means to fulfill their regulatory obligations.\58\ In 
+addition, FINRA stated that such investment advisers are generally 
+directly regulated by either the Commission or the states, and subject 
+to fiduciary obligation to their clients.\59\
+---------------------------------------------------------------------------
+
+    \56\ See, e.g., Notice at 5006; NASD Notice to Members 94-44 
+(May 1994) and 96-33 (May 1996).
+    \57\ See Notice at 5006.
+    \58\ Id. at 5011.
+    \59\ Id. at 5006.
+---------------------------------------------------------------------------
+
+c. Associated Person Outside Securities Activity Subject to the Gramm-
+Leach-Bliley Act (GLBA) or Exchange Act Regulation R
+    Proposed FINRA Rule 3290.05 states that an associated person's 
+securities activity that qualifies under the GLBA or SEC Regulation R's 
+exception to broker or dealer \60\ registration requirements and that 
+is not otherwise covered by proposed FINRA Rule 3290.04 \61\ would be 
+treated as an outside activity (and not an outside securities 
+transaction).\62\ FINRA stated that the proposed rule change would 
+codify FINRA staff's position with respect to this outside 
+activity.\63\ Specifically, it would clarify that an associated 
+person's securities activity under proposed Rule 3290.05 would have a 
+prior written notice and assessment requirement but would not be 
+subject to member supervision and recordkeeping by the member.\64\
+---------------------------------------------------------------------------
+
+    \60\ The GLBA amended the Exchange Act to except specified 
+securities activities conducted by banks from broker or dealer 
+registration. See Exchange Act Section 3(a)(4)(B). See also 
+Definitions of Terms and Exemptions Relating to the ``Broker'' 
+Exceptions for Banks, Exchange Act Release No. 56501, 72 FR 56514 
+(Oct. 3, 2007); Definition of Terms in and Specific Exemptions for 
+Banks, Savings Associations, and Saving Banks Under Sections 3(a)(4) 
+and 3(a)(5) of the Securities Exchange Act of 1934, Exchange Act 
+Release No. 47364 (Feb. 14, 2003), 68 FR 8686 (Feb. 24, 2003).
+    \61\ See infra Section II.B.6 (Associated Person Activities 
+Subject to a Contractual Arrangement).
+    \62\ Such activity would be subject to the requirements of 
+proposed FINRA Rules 3290(a) and (c). See supra note 53.
+    \63\ See Notice at 5006.
+    \64\ Id.
+---------------------------------------------------------------------------
+
+5. Exclusions From Proposed FINRA Rule 3290
+a. Associated Person Activity on Behalf of a Member or an Affiliate
+    Proposed FINRA Rule 3290(g) would exclude from proposed FINRA Rule 
+3290 an associated person's activity on behalf of a member or its 
+affiliate.\65\ Proposed FINRA Rule 3290(f)(1) would define 
+``affiliate'' as any entity that controls, is controlled by, or is 
+under common control with a member. According to FINRA, this exclusion 
+would include activity such as investment advisory activity at a member 
+that is registered as both a broker-dealer and an investment adviser, 
+as well as investment advisory, insurance, or banking activity 
+conducted on behalf of an affiliate.\66\ FINRA stated that this 
+exclusion for activity conducted on behalf of a member or its affiliate 
+recognizes members' and their control persons' ability to implement 
+meaningful controls across business lines.\67\
+---------------------------------------------------------------------------
+
+    \65\ Proposed FINRA Rule 3290(g)(1).
+    \66\ See Notice at 5005.
+    \67\ Id. at 5005-6.
+---------------------------------------------------------------------------
+
+b. Securities Transactions Among Immediate Family Members of an 
+Associated Person
+    Proposed FINRA Rule 3290(g) would exclude from proposed FINRA Rule 
+3290 an associated person's securities transactions among immediate 
+family for which the associated person receives no selling 
+compensation.\68\ Proposed FINRA Rule 3290(f)(2) would define 
+``immediate family'' to have the same meaning as in paragraph (c) of 
+Rule
+
+[[Page 59264]]
+
+3240 (Prohibition on Borrowing from or Lending to Customers).\69\ FINRA 
+stated that this exclusion recognizes the lower risks to investors and 
+members associated with this activity and the inefficiency of members' 
+having to expend significant resources reviewing it.\70\
+---------------------------------------------------------------------------
+
+    \68\ Proposed FINRA Rule 3290(g)(2).
+    \69\ FINRA Rule 3240 defines the term ``immediate family'' as 
+``parents, grandparents, mother-in-law or father-in-law, spouse or 
+domestic partner, brother or sister, brother-in-law or sister-in-
+law, son-in law or daughter-in-law, children, grandchildren, cousin, 
+aunt or uncle, or niece or nephew, and any other person who resides 
+in the same household as the registered person and the registered 
+person financially supports, directly or indirectly, to a material 
+extent. The term includes step and adoptive relationships.''
+    \70\ Notice at 5006.
+---------------------------------------------------------------------------
+
+c. Certain Personal Investments of an Associated Person
+    Proposed FINRA Rule 3290(g)(3) would exclude from proposed FINRA 
+Rule 3290 the following personal investments of an associated person: 
+(1) securities transactions subject to or delineated in FINRA Rule 3210 
+(Accounts at Other Broker-Dealers and Financial Institutions); \71\ (2) 
+personal investments in non-securities; and (3) the purchase, sale, 
+rental or lease of a main home and up to two secondary homes \72\ that 
+are: (a) solely owned by the associated person or the associated person 
+and immediate family; \73\ (b) owned by the associated person as a sole 
+proprietorship; (c) owned by a corporation, LLC, partnership, limited 
+partnership, or other entity that is solely owned by the associated 
+person or the associated person and immediate family; \74\ or (d) owned 
+by a trust with the associated person or the associated person and 
+immediate family as the sole beneficiaries.\75\ FINRA stated that these 
+exclusions recognize the lower risks to investors and members 
+associated with these activities and the inefficiency of members' 
+having to expend significant resources reviewing them.\76\
+---------------------------------------------------------------------------
+
+    \71\ See supra note 51.
+    \72\ Proposed FINRA Rule 3290(f)(4) would define ``secondary 
+home'' as a property that is used for residential purposes by the 
+associated person for at least part of the year.
+    \73\ See supra note 69 and accompanying text.
+    \74\ Proposed FINRA Rule 3290(g)(3)(C)(3).
+    \75\ Proposed FINRA Rule 3290(g)(3)(C)(4).
+    \76\ Notice at 5006.
+---------------------------------------------------------------------------
+
+6. Associated Person Activities Subject to a Contractual Arrangement
+    Proposed FINRA Rule 3290.04 states that an associated person's 
+activity that is pursuant to a contract between a member and another 
+entity (e.g., banking or insurance networking arrangement) would not be 
+subject to proposed FINRA Rule 3290 if such activity is conducted on 
+behalf of the member as it is within the scope of the associated 
+person's relationship with the member. FINRA stated that the proposed 
+rule change is consistent with current requirements and, as is 
+currently required, such activity already would be subject to broker-
+dealer supervision under FINRA Rule 3110.\77\
+---------------------------------------------------------------------------
+
+    \77\ Id. at 5006 n.13 (and accompanying text).
+---------------------------------------------------------------------------
+
+7. Recordkeeping
+    Proposed FINRA Rule 3290(e) would require a member to keep a record 
+of its compliance with the obligations under proposed FINRA Rule 3290 
+and preserve this record in accordance with the time and accessibility 
+requirements of Exchange Act Rule 17a-4(e)(1).\78\
+---------------------------------------------------------------------------
+
+    \78\ Rule 17a-4(e)(1) states that members subject to Exchange 
+Act Rule 17a-3 must maintain and preserve in an easily accessible 
+place all records required under Rule 17a-3(a)(12) until at least 
+three years after the associated person's employment and any other 
+connection with the member has terminated.
+---------------------------------------------------------------------------
+
+8. General Exemptive Authority
+    Proposed FINRA Rule 3290(h) would authorize FINRA staff, for good 
+cause shown after taking into consideration all relevant factors, to 
+conditionally or unconditionally grant an exemption pursuant to the 
+FINRA Rule 9600 Series from any provision of proposed FINRA Rule 3290 
+to the extent that such exemption is consistent with the purpose of the 
+rule, the protection of investors, and the public interest. FINRA 
+stated that while the proposed rule change is broadly applicable, 
+having the flexibility to provide relief from a particular provision of 
+proposed Rule 3290 where specific factual circumstances justify an 
+exemption would be useful and appropriate.\79\ FINRA also proposed a 
+conforming amendment to FINRA Rule 9610 to add proposed FINRA Rule 3290 
+to the list of FINRA rules for which members may seek exemptive 
+relief.\80\
+---------------------------------------------------------------------------
+
+    \79\ Notice at 5006.
+    \80\ Id. at 5006 n.15.
+---------------------------------------------------------------------------
+
+III. Discussion and Commission Findings
+
+    After careful review of the proposed rule change, comment letters 
+received, and FINRA's responses to the comments, the Commission finds 
+that the proposed rule change is consistent with the requirements of 
+the Exchange Act and the rules and regulations thereunder that are 
+applicable to a national securities association.\81\ Specifically, the 
+Commission finds that the proposed rule change is consistent with 
+Section 15A(b)(6) of the Exchange Act, which requires, among other 
+things, that FINRA rules be designed to prevent fraudulent and 
+manipulative acts and practices, to promote just and equitable 
+principles of trade, and, in general, to protect investors and the 
+public interest.\82\
+---------------------------------------------------------------------------
+
+    \81\ In approving this rule change, the Commission has 
+considered the rule's impact on efficiency, competition, and capital 
+formation. See 15 U.S.C. 78c(f).
+    \82\ 15 U.S.C. 78o-3(b)(6).
+---------------------------------------------------------------------------
+
+    The proposed rule change is reasonably designed to focus member 
+supervisory and compliance resources on the types of outside 
+activities--that is, investment-related activities--of a member's 
+registered or associated persons that are appropriately within the 
+member's purview, particularly where the activities are most likely to 
+be viewed by investors or other members of the public as part of the 
+member's business and thus under its supervision. The proposed rule 
+change reasonably imposes on members different obligations depending on 
+the nature of the identified activity and its associated risk to the 
+member, investors, and the public. The member's obligation is greatest 
+for those activities that present heightened potential risk to 
+investors and to the public, namely when the activity is an associated 
+person's outside securities transaction for selling compensation.
+    Other categories of activity--an associated person's outside 
+securities transaction not for selling compensation and a registered 
+person's outside activity that is outside the scope of their employment 
+with the member (including activity that is subject to another 
+regulatory regime such as activity at an unaffiliated registered 
+investment adviser or a bank)--require the member to assess or restrict 
+the activity as the member determines is necessary but does not require 
+the member to explicitly approve or supervise that activity. For these 
+categories of activity, the risk to investors or the public, including 
+the risk that they will view the activity as part of the member's 
+business and under its supervision, is lower, and reasonably calibrates 
+a member's obligations in accordance with that risk. The proposed rule 
+change also enables a member to impose conditions or limitations, which 
+could include subjecting the activity to the member's supervision, if 
+the member deems it necessary to manage its own risk. Finally, the 
+proposed rule change eliminates reporting obligations for outside 
+activities that are lower risk, either because the activities are 
+inherently unlikely to pose risks to investors or the public (e.g., 
+refereeing sports games), or the member is likely
+
+[[Page 59265]]
+
+either to be already aware of the activity or to have ready access to 
+information about the activity (e.g., activities on behalf of an 
+affiliate).
+    The overall process established by the proposed rule, under which 
+the member's obligations vary based on the nature of the activity, will 
+allow individual members to tailor their oversight of outside 
+activities based on the member's business model, supervisory structure, 
+and the member's risk assessment of the outside activity at issue.
+    Importantly, the proposed rule change would not limit a member's 
+ability to impose more robust supervision of, or to condition, limit, 
+or prohibit, as appropriate, outside activities at the member's 
+discretion. For example, a member may expand the scope of its 
+assessment or implement additional appropriate safeguards, limitations, 
+or prohibitions, beyond the minimum requirements established here.\83\ 
+In addition, although the affiliate exclusion in proposed FINRA Rule 
+3290(g) permits members to exclude activity on behalf of a member or 
+its affiliate, members are free to impose a notice and assessment 
+requirement for this activity if the member has determined additional 
+safeguards are appropriate for its business.\84\ Similarly, the 
+proposed rule change does not alter members' overarching supervisory 
+responsibilities under the federal securities law and FINRA Rule 3110 
+to supervise its business and to investigate and act upon red flags 
+indicating potential misconduct. Accordingly, and as explained in more 
+detail below, the Commission finds that the proposed rule change is 
+consistent with Section 15A(b)(6) of the Exchange Act.\85\ The 
+Commission addresses the proposed rule change's specific provisions, 
+and any related comments, in turn.
+---------------------------------------------------------------------------
+
+    \83\ See, e.g., Notice at 5011; FINRA I at 9; FINRA II at 4.
+    \84\ See FINRA I at 9.
+    \85\ 15 U.S.C. 78o-3(b)(6).
+---------------------------------------------------------------------------
+
+A. Proposed FINRA Rule 3290(a)-(d)
+
+    As stated above, the proposed rule change would replace current 
+FINRA Rules 3270 and 3280 with proposed FINRA Rule 3290. Proposed FINRA 
+Rule 3290(a)-(d) would retain many of the existing requirements of the 
+current rules as part of two distinct categories of activities: (1) 
+outside activities of registered persons, and (2) outside securities 
+transactions of associated persons. Specifically, proposed FINRA Rule 
+3290(a) and (c) would address the obligations of registered persons and 
+members, respectively, with respect to outside activities of registered 
+persons; proposed FINRA Rule 3290(b) and (d) would address the 
+obligations of associated persons and members, respectively, with 
+respect to outside securities transactions of associated persons. The 
+discussion below addresses the obligations triggered by these two 
+categories.
+1. Outside Activities of Registered Persons--Obligations of Registered 
+Persons (Proposed FINRA Rule 3290(a)) and Members (Proposed FINRA Rule 
+3290(c))
+    As stated above, the proposed rule change would, among other 
+things, require a registered person who intends to participate in an 
+outside activity that is not in connection with a securities 
+transaction to provide prior written notice to the member describing in 
+detail the proposed outside activity and the person's proposed role 
+therein.\86\ In the event of a material change to the outside activity, 
+a registered person would be required to provide an updated prior 
+written notice.\87\
+---------------------------------------------------------------------------
+
+    \86\ Proposed FINRA Rule 3290(a).
+    \87\ Id.
+---------------------------------------------------------------------------
+
+    The proposed rule change would require a member receiving a notice 
+to assess, at a minimum, whether the outside activity: (1) is an 
+outside securities transaction; (2) involves a customer of the 
+registered person; (3) will interfere with or otherwise compromise the 
+registered person's responsibilities to the member or the member's 
+customers; and (4) will be viewed by the member's customers or the 
+public as part of the member's business based upon, among other 
+factors, the nature of the proposed activity and the manner in which it 
+will be offered.\88\ Based on the member's review of such factors, the 
+member would be required to evaluate whether to condition, limit, or 
+prohibit a registered person's outside activity.\89\ If a member 
+imposes conditions or limitations on a registered person's outside 
+activity, proposed FINRA Rule 3290.06 would require the member to 
+reasonably supervise the person's compliance with such conditions or 
+limitations.\90\
+---------------------------------------------------------------------------
+
+    \88\ Proposed FINRA Rule 3290(c)(1).
+    \89\ Proposed FINRA Rule 3290(c)(2).
+    \90\ Proposed FINRA Rule 3290.06.
+---------------------------------------------------------------------------
+
+2. Outside Securities Transactions of Associated Persons--Obligations 
+of Associated Persons (Proposed FINRA Rule 3290(b)) and Members 
+(Proposed FINRA Rule 3290(d))
+    As stated above, the proposed rule change would require an 
+associated person of a member who intends to participate in an outside 
+securities transaction to provide prior written notice to the member, 
+describing in detail the proposed transaction, the person's proposed 
+role therein, and whether the person will receive selling 
+compensation.\91\ The associated person must provide prior written 
+notice (and if the transaction is for selling compensation, receive 
+prior written approval) for each separate transaction, with two 
+exceptions: (1) a series of related securities transactions not for 
+selling compensation; and (2) where the associated person is acting as 
+a portfolio manager or investment committee member for an entity as 
+described in proposed FINRA Rule 3290.02 and is not selling the 
+entity's shares for selling compensation.\92\ In those two cases, the 
+associated person may provide a single prior written notice.\93\ In the 
+event of a material change to the outside securities transaction, an 
+associated person would be required to update any prior written notice 
+and, if the outside securities transaction is for selling compensation, 
+obtain prior written approval from the member for the material 
+change.\94\
+---------------------------------------------------------------------------
+
+    \91\ Proposed FINRA Rule 3290(b)(1), (3).
+    \92\ Proposed FINRA Rule 3290(b)(1)(A)-(B).
+    \93\ Proposed FINRA Rule 3290(b)(1)(A)-(B).
+    \94\ Proposed FINRA Rule 3290(b)(2).
+---------------------------------------------------------------------------
+
+    Upon receiving the notice, the proposed rule change would require a 
+member to assess, at a minimum, whether the securities transaction: (1) 
+is a securities transaction for selling compensation; (2) involves a 
+customer of the associated person; (3) will interfere with or otherwise 
+compromise the associated person's responsibilities to the member or 
+the member's customers; and (4) will be viewed by the member's 
+customers or the public as part of the member's business based upon, 
+among other factors, the nature of the proposed activity and the manner 
+in which it will be offered.\95\
+---------------------------------------------------------------------------
+
+    \95\ Proposed FINRA Rule 3290(d)(1).
+---------------------------------------------------------------------------
+
+    If the outside securities transaction is not for selling 
+compensation, the proposed rule change would require the member to: (1) 
+provide the associated person prompt written acknowledgement of such 
+notice, and (2) at the member's discretion, require the associated 
+person to adhere to specified conditions in connection with the 
+associated person's participation in the transaction.\96\
+---------------------------------------------------------------------------
+
+    \96\ Proposed FINRA Rule 3290(d)(2).
+---------------------------------------------------------------------------
+
+    If the outside securities transaction is for selling compensation, 
+proposed FINRA Rule 3290(d)(3) would require the member to notify the 
+associated person in writing of the member's
+
+[[Page 59266]]
+
+decision to: (1) approve the proposed transaction after making a 
+reasonable determination based on the criteria enumerated in proposed 
+FINRA Rule 3290(d)(1); (2) approve the proposed transaction subject to 
+specific conditions or limitations after a reasonable determination 
+based on the criteria enumerated in proposed FINRA Rule 3290(d)(1); or 
+(3) disapprove the proposed transaction.\97\ In addition, proposed 
+FINRA Rule 3290(d)(4) would require a member to record each approved 
+outside securities transaction for selling compensation on its books 
+and records and to supervise the person's participation in the 
+transaction as if executed on behalf of the member.\98\ Further, if a 
+member imposes conditions or limitations on an associated person's 
+participation in an outside securities transaction (whether or not for 
+selling compensation), proposed FINRA Rule 3290.06 would require the 
+member to reasonably supervise the person's compliance with such 
+conditions or limitations.\99\
+---------------------------------------------------------------------------
+
+    \97\ Proposed FINRA Rule 3290(d)(3).
+    \98\ Proposed FINRA Rule 3290(d)(4).
+    \99\ Proposed FINRA Rule 3290.06.
+---------------------------------------------------------------------------
+
+    As stated above, proposed FINRA Rule 3290.01 would provide that if 
+a member approves an associated person's participation in an outside 
+securities transaction involving selling compensation and that person 
+is associated with more than one member, the members may develop a 
+written allocation arrangement whereby at least one member agrees to be 
+responsible for compliance with respect to all applicable securities 
+laws and regulations and FINRA rules regarding the proposed activity, 
+including those requiring member supervision and recordkeeping.
+3. Comments on Proposed FINRA Rule 3290(a)-(d) and FINRA's Response, 
+Including Amendment
+    Many commenters supported the proposed consolidation of FINRA Rules 
+3270 and 3280 into proposed FINRA Rule 3290(a)-(d),\100\ stating that 
+consolidating the OBA and PST reporting requirements and member 
+obligations would promote efficiency and allow compliance personnel to 
+focus on higher-risk activities.\101\
+---------------------------------------------------------------------------
+
+    \100\ See, e.g., letters from Bernard V. Canepa, Managing 
+Director & Associate General Counsel, Securities Industry and 
+Financial Markets Association (``SIFMA''), at 1 (dated Feb. 24, 
+2026), <a href="https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-715007-2237915.pdf">https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-715007-2237915.pdf</a> (``SIFMA I''); Alyssa Pompei, Vice 
+President & Assistant General Counsel, SIFMA, at 1 (dated May 27, 
+2026), <a href="https://www.sec.gov/comments/SR-FINRA-2026-001/srfinra2026001-791999-2397527.pdf">https://www.sec.gov/comments/SR-FINRA-2026-001/srfinra2026001-791999-2397527.pdf</a> (``SIFMA II''); Jessica R. Giroux, 
+Chief Legal Officer, American Securities Association, at 1 (dated 
+Feb. 24, 2026), <a href="https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-714947-2237677.pdf">https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-714947-2237677.pdf</a> (``ASA I''); Clifford Kirsch and 
+Eric Arnold, Eversheds Sutherland (US) LLP for the Committee of 
+Annuity Insurers, at 2 (dated Feb. 25, 2026), <a href="https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-715747-2239634.pdf">https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-715747-2239634.pdf</a> 
+(``CAI''); David T. Bellaire, Executive Vice President & General 
+Counsel, Financial Services Institute, at 1 (dated Feb. 24, 2026), 
+<a href="https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-715027-2237882.pdf">https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-715027-2237882.pdf</a> (``FSI I''); Matthew Morningstar, Group Managing 
+Director, Chief Legal Officer, LPL Financial at 2 (dated Feb. 24, 
+2026), <a href="https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-712287-2235534.pdf">https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-712287-2235534.pdf</a> (``LPL I''); Mark Quinn, Director 
+of Regulatory Affairs, Cetera Financial Group, at 1 (dated Feb. 23, 
+2026), <a href="https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-710532-2232937.pdf">https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-710532-2232937.pdf</a> (``Cetera I''); Matt Billings, 
+President, Robinhood Financial LLC and Robinhood Securities, LLC, at 
+2 (dated Feb. 24, 2026), <a href="https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-714489-2237294.pdf">https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-714489-2237294.pdf</a> (``Robinhood''); Jennifer 
+Brunner, Alicia Strout, Susan La Fond, and Gordon Taylor, Chief 
+Compliance Officers, ACA Foreside, at 1 (dated Feb 24, 2026), 
+<a href="https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-715308-2238374.pdf">https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-715308-2238374.pdf</a> (``ACA''); Seth A. Miller, General Counsel, 
+President, Advocacy & Administration, Cambridge Investment Research, 
+Inc., at 2 (dated Feb. 24, 2026), <a href="https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-712247-2235514.pdf">https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-712247-2235514.pdf</a> (''Cambridge I''); 
+Katherine M. Flouton, CEO, PKS Securities (dated Feb. 24, 2026), 
+<a href="https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-716667-2242714.pdf">https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-716667-2242714.pdf</a> (``PKS''); Elissa Germaine and Christine Lazaro, 
+Supervising Attorneys, Securities Arbitration Clinic at St. John's 
+University School of Law, at 1 (dated Feb. 24, 2026), <a href="https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-715267-2238295.pdf">https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-715267-2238295.pdf</a> (``St. John's Law''); Frank C. Lawrance, Wealth Advisor, 
+Seacrest Wealth Management, at 1 (dated Feb. 21, 2026), <a href="https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-712989-2236235.pdf">https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-712989-2236235.pdf</a> (``Lawrance''); Ben Shamberger, Independent Financial 
+Advisor, at 1-2 (dated Feb. 21, 2026), <a href="https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-708847-2231674.pdf">https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-708847-2231674.pdf</a> 
+(``Shamberger''); Ryan Naugle, Independent Financial Advisor, Advice 
+& Planning Services, at 2 (dated Feb. 22, 2026), <a href="https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-708347-2229754.pdf">https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-708347-2229754.pdf</a> (``A&P Services''); Jaime Benedetti, Managing Partner, 
+BEAM Wealth Advisors (dated Feb. 23, 2026), <a href="https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-2231114.htm">https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-2231114.htm</a> 
+(``Benedetti''); Form Letter A, <a href="https://www.sec.gov/comments/SR-FINRA-2026-001/srfinra2026001-typea.htm">https://www.sec.gov/comments/SR-FINRA-2026-001/srfinra2026001-typea.htm</a>; Form Letter B, <a href="https://www.sec.gov/comments/SR-FINRA-2026-001/srfinra2026001-typeb_1.htm">https://www.sec.gov/comments/SR-FINRA-2026-001/srfinra2026001-typeb_1.htm</a>; 
+Form Letter C, <a href="https://www.sec.gov/comments/SR-FINRA-2026-001/srfinra2026001-typec_0.htm">https://www.sec.gov/comments/SR-FINRA-2026-001/srfinra2026001-typec_0.htm</a>; and Form Letter D, <a href="https://www.sec.gov/comments/SR-FINRA-2026-001/srfinra2026001-typed_0.htm">https://www.sec.gov/comments/SR-FINRA-2026-001/srfinra2026001-typed_0.htm</a>.
+    \101\ See, e.g., FSI I at 1, 4 (stating that streamlining two 
+rules into proposed Rule 3290 would make a time-consuming process 
+for broker-dealer compliance departments more efficient and focus 
+the efforts of compliance personnel on activities that are likely to 
+impact investor protection); letter from David T. Bellaire, 
+Executive Vice President and General Counsel, Financial Services 
+Institute, at 2 (dated May 27, 2026), <a href="https://www.sec.gov/comments/SR-FINRA-2026-001/srfinra2026001-791919-2397389.pdf">https://www.sec.gov/comments/SR-FINRA-2026-001/srfinra2026001-791919-2397389.pdf</a> (``FSI II''); 
+CAI at 2; Cambridge I at 1, 2; ASA I at 1, 2; LPL I at 2; letter 
+from Matthew Morningstar, Group Managing Director, Chief Legal 
+Officer, LPL Financial at 1 (dated May 27, 2026), <a href="https://www.sec.gov/comments/SR-FINRA-2026-001/srfinra2026001-790579-2395826.pdf">https://www.sec.gov/comments/SR-FINRA-2026-001/srfinra2026001-790579-2395826.pdf</a> (``LPL II''); Robinhood at 2 (stating that the 
+consolidation of the OBA and PST regimes into a single rule promotes 
+clarity and simplifies supervisory analysis).
+---------------------------------------------------------------------------
+
+    Specifically, commenters supported the proposed requirement under 
+FINRA Rule 3290(c)(1) and (d)(1) that a member assess whether a 
+proposed activity involves a customer of the registered person or 
+associated person, respectively, rather than a customer of the 
+member.\102\ One of these commenters stated that the more limited 
+assessment would establish an obligation tied to a relationship that 
+members can realistically identify and verify.\103\ In contrast, 
+another commenter recommended that FINRA expand the assessment 
+requirements to include consideration of whether the activity or 
+transaction involves a customer of the member or, at a minimum, to 
+specify that the involvement of a member's customer after the initial 
+notice is a ``material change'' that would require an updated notice 
+and assessment, stating that as proposed, the proposed rule change 
+would increase the risk that members will fail to adequately consider 
+potential risks to their customers, such as the risk presented by the 
+outside securities transactions of an associated person employed in an 
+operational role with access to customer information or member 
+systems.\104\
+---------------------------------------------------------------------------
+
+    \102\ See, e.g., Cambridge I at 2, FSI I at 4, SIFMA I at 2.
+    \103\ See SIFMA I at 2.
+    \104\ See letter from Marni Rock Gibson, President and 
+Commissioner, North American Securities Administrators Association, 
+Inc, at 5-6 (Feb. 24, 2026), <a href="https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-713528-2236594.pdf">https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-713528-2236594.pdf</a> (``NASAA'').
+---------------------------------------------------------------------------
+
+    FINRA responded that customer confusion and the associated 
+reputational and legal risks to the member are most acute when the 
+customer has a direct relationship with the associated person 
+conducting the outside activity.\105\ As such, requiring members to 
+assess whether the activity involves a customer of the associated 
+person is a targeted approach that focuses on situations presenting 
+heightened risk.\106\ Additionally, FINRA stated that requiring members 
+to assess whether the proposed activity involves customers of a member 
+(as opposed to customers of a registered person or associated person) 
+would not meaningfully enhance investor protection, as customers who 
+have no relationship with the particular associated person conducting 
+the outside activity face lower risk of
+
+[[Page 59267]]
+
+confusion about the member's involvement in the proposed activity.\107\
+---------------------------------------------------------------------------
+
+    \105\ See FINRA I at 7.
+    \106\ See id. at 8.
+    \107\ Id. at 7. Further, FINRA stated that a broader requirement 
+could present practical challenges. For example, some members may 
+face operational challenges cross-referencing outside activity 
+participants against the member's entire customer base. Id. at 7-8 
+and n.20.
+---------------------------------------------------------------------------
+
+    FINRA also stated that the proposed rule change would standardize 
+the minimum assessment that members must conduct upon receiving notice 
+of registered persons' outside activities and associated persons' 
+outside securities transactions to include the assessment required by 
+FINRA Rule 3270, and add a new requirement to assess whether the 
+activity involves the customer of the registered or associated 
+person.\108\ FINRA stated, however, that the proposed rule change would 
+not limit a member's ability to expand the scope of its assessment if 
+the member determines a broader scope is appropriate for its 
+business.\109\
+---------------------------------------------------------------------------
+
+    \108\ Id. at 7.
+    \109\ Id. at 8.
+---------------------------------------------------------------------------
+
+    Other commenters recommended that FINRA expand or clarify other 
+aspects of the assessment requirement through amendments to the 
+proposed rule change or additional guidance. Specifically, one 
+commenter recommended that FINRA require members to inspect the 
+personal and operating bank accounts of its independent registered 
+representatives.\110\ Several commenters also made various requests for 
+further guidance, including whether the rule would limit a member's 
+ability to conduct a more robust assessment or implement safeguards 
+beyond the minimum required by the proposed rule change,\111\ and what 
+would constitute a ``material change'' to an outside activity.\112\
+---------------------------------------------------------------------------
+
+    \110\ See letter from Michael Hill, Esq., Menzel & Hill, P.A., 
+(dated Feb. 24, 2026), <a href="https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-713728-2236715.html">https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-713728-2236715.html</a> (``Hill'').
+    \111\ See ASA I at 3-4; letter from Jessica Giroux, Chief Legal 
+Officer, American Securities Association, at 2 (dated May 27, 2026), 
+<a href="https://www.sec.gov/comments/SR-FINRA-2026-001/srfinra2026001-791659-2397067.pdf">https://www.sec.gov/comments/SR-FINRA-2026-001/srfinra2026001-791659-2397067.pdf</a> (``ASA II'').
+    \112\ See Robinhood at 2-3.
+---------------------------------------------------------------------------
+
+    In response, FINRA stated that the proposed rule change would not 
+limit a member's ability to expand the scope of its assessment or to 
+implement safeguards beyond the minimum requirements established in 
+proposed FINRA Rule 3290.\113\ That is, under the proposed rule change, 
+members would maintain the flexibility to develop and implement 
+supervisory systems that reflect their respective business models. For 
+these reasons, FINRA declined to amend the proposed rule change to 
+provide the additional guidance requested by commenters.\114\ FINRA 
+stated, however, that if the Commission approves the proposed rule 
+change, it will consider providing additional guidance as 
+appropriate.\115\
+---------------------------------------------------------------------------
+
+    \113\ See FINRA II at 4.
+    \114\ See FINRA I at 9; FINRA II at 4.
+    \115\ See FINRA I at 17; FINRA II at 4.
+---------------------------------------------------------------------------
+
+    FINRA also declined to modify the proposed rule change to require 
+members to inspect the personal and operating bank accounts of its 
+independent registered representatives, stating that a blanket bank 
+account inspection requirement would raise ``significant privacy 
+concerns and be operationally infeasible.'' \116\
+---------------------------------------------------------------------------
+
+    \116\ See FINRA I at 8.
+---------------------------------------------------------------------------
+
+    Finally, one commenter recommended that FINRA explicitly require 
+members to supervise any conditions or limitations they impose on 
+approved outside activities.\117\ In response, FINRA amended the 
+proposed rule change to include proposed FINRA Rule 3290.06 
+(Supervision of Imposed Conditions or Limitations) to state if a member 
+imposes conditions or limitations pursuant to paragraphs (c)(2), (d)(2) 
+or (d)(3) of Proposed Rule 3290, the member would be required to 
+reasonably supervise compliance with such conditions or 
+limitations.\118\ FINRA stated that, while this obligation has always 
+been implicit in the existing rules, the amendment would provide 
+greater clarity to its members.\119\
+---------------------------------------------------------------------------
+
+    \117\ See FSI I at 3-4 (stating that supervision of any 
+conditions or limitations is implied but stating it plainly would 
+provide ``regulatory cover'' to members that impose them).
+    \118\ See FINRA I at 16.
+    \119\ See Amendment No. 1 at 5; see also FINRA I at 16.
+---------------------------------------------------------------------------
+
+    Three commenters supported this amendment, stating that although 
+this obligation was already implicit under FINRA Rules 3270 and 3280, 
+explicitly codifying it in proposed FINRA Rule 3290.06 would remove 
+ambiguity and reinforce that a member's imposition of conditions or 
+limitations on an outside activity carries a supervisory obligation to 
+assess compliance with those conditions or limitations.\120\
+---------------------------------------------------------------------------
+
+    \120\ See ASA II at 3; see also SIFMA II at 2-3; FSI II at 2.
+---------------------------------------------------------------------------
+
+    Another commenter opposed this amendment, stating that the proposed 
+supervisory requirement is ``irreconcilable with the legal and ethical 
+obligations that govern law firm outside business activities'' 
+(``professional OBAs'').\121\ This commenter recommended that FINRA 
+amend proposed Rule 3290.06 to: clarify that members' obligations to 
+supervise conditions or limitations on licensed professionals' outside 
+activities does not require such members to obtain or review privileged 
+material; establish safe harbors from the proposed supervision 
+obligation for members that impose certain good faith limitations or 
+conditions on licensed professionals' outside activities; and, 
+highlight that members may seek an exemption from proposed Rule 3290.06 
+pursuant to proposed FINRA Rule 3290(h).\122\ In addition, the 
+commenter requested that FINRA provide guidance to help members design 
+conditions and limitation on supervising professional activities that 
+would not require access to privileged information.\123\
+---------------------------------------------------------------------------
+
+    \121\ See letter from Jeffrey Burg, President, AlphaTrust 
+Advisors, at 1 (dated May 15, 2026), <a href="https://www.sec.gov/comments/SR-FINRA-2026-001/srfinra2026001-779208-2374616.pdf">https://www.sec.gov/comments/SR-FINRA-2026-001/srfinra2026001-779208-2374616.pdf</a> 
+(``AlphaTrust'').
+    \122\ Id. at 3-4.
+    \123\ See id.
+---------------------------------------------------------------------------
+
+    In response, FINRA stated that proposed FINRA Rule 3290.06 would 
+not require that a member impose conditions or limitations on 
+professional OBAs; rather, it would require that if a member imposes 
+conditions or limitations, it must reasonably supervise for compliance 
+with the conditions or limitations.\124\ As such, members would have 
+discretion to determine whether to impose any conditions or 
+limitations, and if they do, what types of conditions or limitations 
+would be appropriate given the nature of the activity.\125\ FINRA also 
+noted that proposed Rule 3290(h) would include general exemptive 
+authority to permit FINRA staff to conditionally or unconditionally 
+grant an exemption for good cause shown pursuant to the FINRA Rule 9600 
+Series.\126\ Consequently, FINRA stated that a general safe harbor or 
+exemptive relief for professional OBAs is not necessary.\127\ For these 
+reasons, FINRA declined to modify the proposed rule change in this 
+respect. FINRA stated, however, that it remains open to considering 
+whether to provide additional guidance or exemptive relief on a case-
+by-case basis where specific facts and circumstances demonstrate that 
+such guidance or relief is appropriate.\128\
+---------------------------------------------------------------------------
+
+    \124\ See FINRA I at 14; FINRA II at 8.
+    \125\ See FINRA II at 8.
+    \126\ Id.
+    \127\ Id.
+    \128\ Id.
+---------------------------------------------------------------------------
+
+4. Commission Findings on Proposed FINRA Rule 3290(a)-(d), 3290.01, and 
+3290.06
+    The proposed rule change is reasonably designed to establish 
+uniform minimum standards by which
+
+[[Page 59268]]
+
+registered persons report outside activities, associated persons report 
+outside securities transactions, and members assess and supervise such 
+activities. In doing so, the proposed rule change would both maintain 
+and build on many of the existing requirements for the notice and 
+assessment process in existing FINRA Rules 3270 and 3280. This approach 
+would permit associated persons, registered persons, and members to 
+leverage established supervisory practices designed to comply with 
+existing obligations where applicable, enhancing regulatory and 
+compliance efficiency.
+    The proposed rule change would incorporate existing obligations by 
+requiring that a registered person or associated person provide prior 
+written notice to the member describing in detail the proposed outside 
+activity or outside securities transaction, respectively, and the 
+person's role therein. The proposed rule change would also add a 
+requirement for associated and registered persons to update their 
+notice prior to continuing the activity in case of a material change 
+prior.
+    By enumerating the information that must be included in such 
+notices the proposed rule will set a minimum information requirement so 
+that members have the information that they need to discharge their 
+supervisory obligations. Further, the obligation to provide an updated 
+prior written notice in case of a material change will help ensure that 
+members have current information necessary to fulfill their supervisory 
+obligations. In addition, with respect to the commenter's request for 
+guidance on what constitutes a material change, FINRA will consider 
+providing additional guidance as appropriate if the Commission approves 
+the proposed rule change.
+    Turning to a member's obligations upon receiving a notice of an 
+outside activity or outside securities transaction, by requiring a 
+member to assess an outside activity or outside securities transaction, 
+the proposed rule change provides a uniform regulatory framework with 
+respect to risk assessment, requiring members to consider the potential 
+risks associated with an outside activity or securities transaction and 
+whether to limit, condition or prohibit the outside activity or outside 
+securities transaction.
+    Specifically, requiring a member to assess whether an activity is 
+properly characterized as an outside activity, rather than an outside 
+securities transaction, or, if it is an outside securities transaction, 
+whether it is for selling compensation, should help members address any 
+mistaken or intentional mischaracterization by their associated 
+persons, and help ensure the appropriate obligations apply to the 
+proposed activity.
+    By requiring a member to consider whether the outside activity or 
+outside securities transaction involves a customer of the registered 
+person or an associated person, respectively, rather than a customer of 
+the member as a commenter suggested, the proposed rule change 
+reasonably focuses a member's attention on the relationships where the 
+risk of customer confusion, and the associated reputational and legal 
+risks to the member, are greatest--those where the customer has a 
+direct relationship with the registered person or associated person 
+engaged in the outside activity or outside securities transaction. 
+Further, by requiring the member to assess whether the activity or 
+transaction would be viewed by the member's customers or the public as 
+part of the member's business, a member would be required to more 
+broadly consider the potential for confusion to the member's customers 
+or the public. Moreover, the proposed rule would require a member to 
+assess whether the outside activity or outside securities transaction 
+will interfere with or otherwise compromise the registered person's or 
+associated person's responsibilities to the member or the member's 
+customers, which again imposes a broad obligation on the member to 
+evaluate the risk of the proposed activity to the member and the 
+member's customers. Finally, the obligations imposed by the proposed 
+rule change are a floor, not a ceiling. Accordingly, a member can 
+expand the scope of its assessment if the member determines a broader 
+scope is appropriate for its business.
+    Also, it was reasonable for FINRA to decline to impose an 
+overarching obligation for members to inspect personal bank accounts of 
+its independent registered representatives, given that such an 
+obligation could create privacy challenges and could be operationally 
+difficult to implement without a commensurate benefit to the 
+supervisory program of the member. Moreover, even without such an 
+explicit requirement, a member would still be subject to its general 
+supervisory obligations under federal law or FINRA Rule 3110, including 
+responsibility to investigate and act in light of ``red flags'' 
+suggesting possible misconduct such as an undisclosed outside 
+securities transaction.
+    Requiring a member to evaluate the advisability of imposing 
+specific conditions or limitations on a registered person's outside 
+activity, including where circumstances warrant, prohibiting the 
+activity, will require members to reasonably consider the facts and 
+circumstances associated with the outside activity, to evaluate the 
+nature of the risk associated with the activity, and to determine what 
+conditions and limitations, if any, are appropriate, or whether the 
+activity should be prohibited. In doing so, the proposed rule would 
+impose a uniform minimum assessment process for members, while also 
+providing flexibility to members to determine whether to condition, 
+limit, or prohibit an activity, based on the member's assessment of the 
+risks to customers and the member presented by the activity in light of 
+the member's business model and risk profile.
+    Further, delineating a member's obligations related to an outside 
+securities transaction based on whether the associated person will 
+receive selling compensation maintains existing requirements under 
+FINRA Rule 3280 and is reasonably calibrated to require the member to 
+focus the most supervisory and compliance resources on those activities 
+that pose greater risks to members and their customers. Specifically, 
+for transactions not involving selling compensation, the proposed rule 
+change would reasonably impose fewer obligations--notably requiring a 
+member to assess the proposed transaction and acknowledge the notice--
+and would leave to the member's discretion to determine whether to 
+impose any conditions on the transaction based on the member's 
+assessment of the enumerated factors set forth in proposed FINRA Rule 
+3290(d)(1). For transactions involving selling compensation, however, 
+the proposed rule change would impose more stringent obligations on 
+members, reflecting the increased risks associated with an outside 
+securities transaction involving selling compensation, and the 
+corresponding need for heightened scrutiny. In particular, members 
+would be required to assess the proposed transaction and, based on that 
+assessment, approve (with or without limitations or conditions) or 
+disapprove the transaction. If a member approves a proposed securities 
+transaction for selling compensation, the member would be required to 
+record the transaction on its books and records and supervise the 
+associated person's participation in the transaction as if it was 
+executed on behalf of the member.
+    As the proposed rule change permits, but does not require, members 
+to limit or condition an outside activity or an outside securities 
+transaction (and gives members flexibility in determining any
+
+[[Page 59269]]
+
+such limitations or conditions), and enables members to seek an 
+exemption from any provision of the proposed rule change for unique 
+factual scenarios (as discussed further below), it is reasonable for 
+FINRA not to address all unique factual scenarios at the outset, such 
+as those associated with professional licenses.
+    In addition, as discussed more fully below, the proposed rule 
+change would require a member to supervise any imposed limitations or 
+conditions on an outside activity or outside securities transaction, 
+which will help ensure that any limitations and conditions that a 
+member determines are necessary are observed. Moreover, as noted, the 
+obligations imposed by the proposed rule change are a floor, not a 
+ceiling. Accordingly, the proposed rule change does not restrict a 
+member's ability to limit, condition, or prohibit any outside 
+activities or outside securities transactions where the member has 
+determined such a prohibition is appropriate for its own risk 
+management.
+    Finally, by permitting members to develop a written allocation 
+agreement regarding regulatory obligations for an associated person's 
+participation in an outside securities transaction involving selling 
+compensation, the proposed rule change promotes regulatory efficiency 
+and minimizes duplicative regulatory oversight, while preserving 
+investor protection.
+    For these reasons, the proposed rule change is reasonably designed 
+to prevent fraudulent and manipulative acts and practices, to promote 
+just and equitable principles of trade, and, in general, to protect 
+investors and the public interest.
+
+B. Proposed Definition of Investment-Related Activity
+
+    As stated earlier, the obligations of proposed FINRA Rules 3290(a)-
+(d) are triggered based on the participation of a member's associated 
+person in ``investment-related activity.'' As originally proposed, the 
+term would have been defined as ``pertaining to financial assets, 
+including securities, crypto assets, commodities, derivatives (such as 
+futures and swaps), currency, banking, real estate or insurance.'' The 
+term would have included but not have been limited to, ``acting as or 
+being associated with a broker-dealer; issuer; insurance agent or 
+company; investment company; investment adviser; futures commission 
+merchant; commodity trading advisor; commodity pool operator; municipal 
+advisor; futures sponsor; bank; savings association; or credit union.'' 
+\129\ The proposed definition also included ``an associated person's 
+participation in any manner in a personal investment involving a 
+securities transaction, sometimes referred to as ``buying away,'' other 
+than transactions indicated in proposed FINRA Rule 3290(g)(3)(A).'' 
+\130\
+---------------------------------------------------------------------------
+
+    \129\ See proposed FINRA Rule 3290(f)(3)(A).
+    \130\ See supra note 51.
+---------------------------------------------------------------------------
+
+    Many commenters supported the proposed definition of ``investment-
+related activity'' as originally proposed, stating that it would 
+streamline the process of reporting outside activities by eliminating 
+the obligation to report routine activities (such as volunteer youth 
+sports coaching, serving on a local civic board, and farming) that do 
+not cause harm to members or investors and the reporting of which 
+diverts member resources.\131\ In particular, commenters stated that 
+the current reporting requirements require members to expend compliance 
+resources on reviewing disclosures of low-risk, non-financial 
+activities that ultimately result in increased costs for financial 
+advisors and their clients.\132\
+---------------------------------------------------------------------------
+
+    \131\ See Form Letter A (identifying volunteer youth sports 
+coaching, serving on a local civic board, and farming as examples of 
+such low risk activities); Form Letter B (stating the definition 
+focuses reporting requirements on activities that matter for 
+investor protection and removes obligations to report low-risk 
+activities); FSI I at 4 (noting that narrowing the focus to 
+investment-related activities will benefit investor protection by 
+allowing compliance personnel to spend their time on higher-risk 
+activities); Robinhood at 2 (stating that the focus on investment-
+related activities will reduce unnecessary burdens while maintaining 
+core investor protections of the existing FINRA Rules 3270 and 
+3280). See also CAI at 2; LPL II at 1-2; ACA at 1-2. Commenters also 
+recommended that FINRA amend Form U4 to align with the proposed rule 
+change because requiring registered representatives to disclose non-
+investment-related outside activities pursuant to Question 14 of 
+Form U4 would negate the benefits of the proposed rule change. See, 
+e.g., SIFMA I at 2; SIFMA II at 3; see also CAI at 3; FSI I at 5; 
+NASAA at 2, n.5; Robinhood at 2. In response, FINRA declined to 
+amend the proposed rule change, stating that Form U4 disclosures are 
+outside the scope of the proposed rule change; but FINRA also stated 
+that it would endeavor to work with the Commission and state 
+regulators to harmonize the Form U4 disclosure obligations where 
+appropriate. See FINRA I at 16; FINRA II at 8-9. FINRA reasonably 
+declined to amend the proposed rule change in response, as the 
+comment is outside the scope of the proposed rule change.
+    \132\ See, e.g., Form Letter B; SIFMA II at 2; see also 
+Robinhood at 2 (stating that narrowing the proposed rule change to 
+investment-related activities reduces the administrative and 
+operational burdens of reporting low-risk activities).
+---------------------------------------------------------------------------
+
+    Some commenters requested that the proposed definition be 
+broadened, narrowed, or clarified.\133\ More specifically, with respect 
+to broadening the definition, some commenters opposed the proposed 
+definition as too narrow, stating that disclosures of OBAs should be 
+robust and not limited to investment-related activity in order to 
+ensure that members can evaluate the OBAs for potential conflicts of 
+interest and the risk of securities fraud.\134\ One commenter stated in 
+particular that the boundary between investment-related and non-
+investment-related activity is rarely clear, so restricting the type of 
+activities that could be reported to, and assessed by, members, would 
+create gaps in supervision that could obscure misconduct.\135\ One 
+commenter opposed the definition because it excluded significant 
+categories of agent conduct that may pose risks to investors.\136\ One 
+commenter recommended broadening the proposed definition to include, 
+among other things, activities pertaining to money transmission, 
+collectibles, and lending, and to add the phrase ``but not limited to'' 
+before the list of examples to clarify that the examples are 
+illustrative rather than exhaustive.\137\ Another commenter recommended 
+broadening the proposed definition to include, among other things, 
+financial planning, tax advice, and business advice, stating that
+
+[[Page 59270]]
+
+investors could perceive these activities as part of a member's 
+business.\138\
+---------------------------------------------------------------------------
+
+    \133\ See, e.g., CAI at 3; NASAA at 2-3; St. John's Law at 2; 
+ASA I at 1.
+    \134\ See, e.g., letters from Michael C. Bixby, President, 
+Public Investors Advocate Bar Association (``PIABA''), at 9 (dated 
+Feb. 18, 2026), <a href="https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-704987-2220895.pdf">https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-704987-2220895.pdf</a> (``PIABA I''); Michael C. Bixby, 
+President, PIABA, at 2 (dated June 10, 2026), <a href="https://www.sec.gov/comments/SR-FINRA-2026-001/srfinra2026001-811619-2471170.pdf">https://www.sec.gov/comments/SR-FINRA-2026-001/srfinra2026001-811619-2471170.pdf</a> 
+(``PIABA II''); Nicholas J. Guiliano, The Guiliano Law Group, at 2-3 
+(dated Feb. 24, 2026), <a href="https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-715187-2238215_0.pdf">https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-715187-2238215_0.pdf</a> (``Guiliano''); Courtney M. 
+Werning, Principal, Meyer Wilson Werning, at 1 (dated Feb. 19, 
+2026), <a href="https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-706827-2225236.pdf">https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-706827-2225236.pdf</a> (``Werning''); Peter J. Mougey, 
+Levin Papantonio Proctor Buchanan O'Brien Barr Mougey P.A., at 1 
+(dated Feb. 25, 2026), <a href="https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-716067-2240135.pdf">https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-716067-2240135.pdf</a> (``Mougey''); Samuel B. 
+Edwards, Shepherd Smith Edwards & Kantas, LLP, at 1-2 (dated Feb. 
+19, 2026), <a href="https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-706147-2223534.pdf">https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-706147-2223534.pdf</a> (``Edwards''); Robert Savage, 
+Savage Villoch Law, PLLC, at 1 (dated Feb. 19, 2026), <a href="https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-706367-2223934.pdf">https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-706367-2223934.pdf</a> (``Savage''); Robert H. Rex, Esq., Rex Securities Law, 
+at 1-2 (dated Feb. 19, 2026), <a href="https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-706188-2223574.pdf">https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-706188-2223574.pdf</a> (``Rex''); Richard A. 
+Lewins, Lewins Law, PC, at 1-2 (dated Feb. 19, 2026), <a href="https://www.sec.gov/comments/SR-FINRA-2026-001/srfinra2026001-706327-2223876.pdf">https://www.sec.gov/comments/SR-FINRA-2026-001/srfinra2026001-706327-2223876.pdf</a> (``Lewins''); Melinda Jane Steuer, at 1 (dated Feb. 19, 
+2026), <a href="https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-706547-2224354.pdf">https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-706547-2224354.pdf</a> (``Steuer'').
+    \135\ See Werning at 1.
+    \136\ See letter from William Galvin, Secretary of the 
+Commonwealth, Commonwealth of Massachusetts, at 3 (dated Feb. 24, 
+2026), <a href="https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-713987-2236877.pdf">https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-713987-2236877.pdf</a> (``Massachusetts'').
+    \137\ See NASAA at 2-3.
+    \138\ See St. John's Law at 2 (stating that including these 
+activities within the definition of ``investment-related activity'' 
+would help avoid confusion and potential conflicts regarding the 
+nature of such services); see also Massachusetts at 3 (stating that 
+the proposed rule change excludes consulting, legal, tax, and 
+marketing functions, as well as accountancy and financial control 
+positions that can be precursors to larger fraudulent activity).
+---------------------------------------------------------------------------
+
+    By contrast, one commenter suggested narrowing the proposed 
+definition to securities transactions in order to exclude transactions 
+with which a member may not have familiarity, such as transactions in 
+non-securities insurance or banking products.\139\ Another commenter 
+suggested narrowing the proposed definition to exclude fundraising for 
+non-profit organizations and the receipt of residual insurance 
+commissions.\140\
+---------------------------------------------------------------------------
+
+    \139\ See LPL I at 3.
+    \140\ See CAI at 3.
+---------------------------------------------------------------------------
+
+    With respect to clarifying the proposed definition, one commenter 
+requested guidance regarding the scope of categories such as banking, 
+insurance, and real estate.\141\ Another commenter requested guidance 
+regarding whether the proposed definition included real estate, and in 
+particular rental properties.\142\
+---------------------------------------------------------------------------
+
+    \141\ See Robinhood at 3.
+    \142\ See ASA I at 3; ASA II at 3-4.
+---------------------------------------------------------------------------
+
+    In response to commenters generally opposed to the proposed 
+definition because they viewed it as too narrow, leading to an unduly 
+limited application of the proposed rule change's operative provisions, 
+FINRA stated that the framework under current FINRA rules, in which all 
+OBAs, including those that are non-investment-related, are reported 
+creates significant compliance burdens without commensurate investor 
+protection benefits.\143\ FINRA also stated that by eliminating the 
+notice and assessment requirements for non-investment-related 
+activities, which present minimal investor protection concerns, the 
+proposed rule change would free members to focus resources and 
+attention on activities more likely to involve potential customer 
+confusion or harm.\144\ FINRA stated that members would still be 
+required to maintain a system to supervise activities that is 
+reasonably designed to achieve compliance with applicable securities 
+laws and regulations and FINRA rules.\145\ In addition, FINRA stated 
+that the proposed definition expressly encompasses ``all activities 
+pertaining to financial assets'' even if not individually listed, and 
+clarified that the listed examples in the proposed definition are not 
+exclusive.\146\ Further, FINRA stated that members would retain 
+discretion to prohibit or condition activity based on risk.\147\ For 
+these reasons, FINRA stated that the scope of the proposed definition 
+strikes the right balance regarding disclosure of activities that may 
+pose a greater risk to the investing public and members.\148\ As such, 
+FINRA declined to amend the proposed rule change. However, FINRA also 
+stated if the Commission approves the proposed rule change, it will 
+consider providing additional guidance regarding the scope of 
+investment-related activity as appropriate.\149\
+---------------------------------------------------------------------------
+
+    \143\ See FINRA I at 3.
+    \144\ Id.
+    \145\ Id. at 12-13, n.36.
+    \146\ Id. at 4.
+    \147\ Id. at 12.
+    \148\ Id. at 5.
+    \149\ Id. at 17; FINRA II at 4.
+---------------------------------------------------------------------------
+
+    FINRA also responded to comments about the coverage of specific 
+activities. In response to comments regarding broadening the scope of 
+the definition to include specific activities, such as money 
+transmission and financial planning, FINRA stated that the list of 
+activities in the proposed definition of investment-related activities 
+was not meant to be exhaustive and therefore activities pertaining to 
+financial assets and other related roles or associations would be 
+covered even if not expressly listed among the examples in the proposed 
+definition. As such, FINRA stated the proposed definition already 
+captures money transmission, lending, collectible activity, and 
+financial planning to the extent they pertain to financial assets.\150\ 
+Nevertheless, FINRA amended the proposed rule change to add both the 
+broader phrase ``money services business'' to provide regulatory 
+clarity and the phrase ``but not limited to'' before the list of 
+examples in proposed Rule 3290(f)(3) to confirm that the listed 
+examples are illustrative rather than exhaustive.\151\ FINRA also 
+stated that the proposed definition already captures tax advice and 
+other similar types of services to the extent that are performed 
+concomitant to investment-related activity.\152\
+---------------------------------------------------------------------------
+
+    \150\ See FINRA I at 4-5.
+    \151\ Id. at 2, 4-5; see also Amendment No. 1.
+    \152\ Id. at 5.
+---------------------------------------------------------------------------
+
+    In response to comments requesting the exclusion of specific 
+activities from the scope of the proposed definition, FINRA stated that 
+narrowing the definition to only securities transactions would 
+inappropriately exclude activities that present risks to investors and 
+members, particularly the risk that investors or the public would view 
+the activities as part of the member's business.\153\ With regard to 
+excluding fundraising activities for non-profit organizations, FINRA 
+stated that depending on the specific facts and circumstances, 
+fundraising activity could be investment-related; as such, excluding 
+all fundraising for non-profit organizations from the proposed 
+definition could exclude activities that present risks to investors and 
+members.\154\ With respect to comments seeking to exclude residual 
+insurance commissions, FINRA stated that FINRA Rules 2320 and 2341 
+already address the receipt of residual insurance commissions, because 
+those rules prohibit associated persons of a member from accepting any 
+compensation in connection with the outside sale and distribution of 
+variable contracts or investment company securities.\155\ With respect 
+to comments seeking clarity regarding real estate and particularly 
+rental properties, FINRA stated that real estate is expressly included 
+in the definition of investment-related activity and would be subject 
+to the proposed rule change unless such activity met the exclusion in 
+proposed Rule 3290(g)(3)(C) for a main home and up to two secondary 
+homes.\156\
+---------------------------------------------------------------------------
+
+    \153\ Id. at 6 (citing the example of a registered 
+representative selling fixed annuities, crypto assets or commodities 
+away from the member as particular risks).
+    \154\ Id.
+    \155\ Id.
+    \156\ See FINRA I at 6; FINRA II at 3.
+---------------------------------------------------------------------------
+
+    In response to comments that the proposed definition lacks clarity 
+and would cause registered persons to make subjective determinations, 
+FINRA explained that the proposed definition expressly covers ``all 
+activities pertaining to financial assets,'' including those that are 
+not securities-related, and that the examples cited are not exclusive.
+    Also in response to comments, FINRA proposed a clarifying amendment 
+to make explicit the breadth of the definition with respect to money 
+services business and to confirm that the listed examples are 
+illustrative rather than exhaustive. In addition, FINRA further stated 
+that the definition captures activities related to capital raising, 
+lending, financial planning, selling private funds, investment 
+partnerships, and crypto-asset development, promotion or market 
+intermediation, and that consulting, marketing, accounting, legal and 
+tax advice services concomitant to investment-related activity would 
+also be covered.\157\ With the proposed amendment and statements, FINRA
+
+[[Page 59271]]
+
+clarified that the proposed definition should be interpreted broadly.
+---------------------------------------------------------------------------
+
+    \157\ See FINRA I at 4.
+---------------------------------------------------------------------------
+
+    The proposed rule change reasonably focuses members' oversight of 
+outside activities on those that present the greatest potential harm to 
+members or investors. The proposed definition of investment-related 
+activity is designed to scope into the operative provisions of proposed 
+FINRA Rule 3290 associated persons' activities where the risk 
+associated with the activity, such as the potential for customer 
+confusion about the registered person and their broker-dealer's 
+involvement in the activity, is most acute. Although excluding any 
+category of activity from the scope of the proposed rule may result in 
+a member having less visibility into those activities, members have 
+limited compliance resources, and it is thus reasonable for FINRA to 
+adopt a risk-based approach by narrowing the scope of reportable 
+activities to those with greater potential for harm to investors and to 
+the member. Moreover, members would still be required to maintain a 
+system to supervise activities that is reasonably designed to achieve 
+compliance with applicable securities laws and regulations and FINRA 
+rules. In that regard, members could impose reporting requirements on 
+activities that do not fall within the definition of investment-related 
+activity, or prohibit or condition activities, as appropriate. 
+Additionally, nothing in the proposed rule change would alter the well-
+settled principle that members must investigate ``red flags'' 
+indicating problematic activities.
+    The proposed definition would broadly cover activities pertaining 
+to financial assets, subject to certain targeted exclusions, which are 
+more likely to involve potential customer confusion or harm: activities 
+that are either directly securities-related or otherwise associated 
+with common financial services, such as insurance, banking and crypto 
+assets.
+    The proposed definition of ``investment-related activity'' as 
+amended is reasonably expansive to capture and focus on activity that 
+has greater potential to cause customer confusion or harm to investors 
+and to members--activities that pertain to financial assets. The 
+proposed definition, coupled with the clarifications and explanations 
+offered, should provide a reasonable compliance roadmap for both 
+members and their associated persons, and help ensure that the proposed 
+rule change will result in members being notified of activities that 
+are more likely to expose members and investors to risk. By enabling 
+members to redirect supervisory and compliance resources toward higher-
+risk investment-related activities, including investment-related 
+activities that are not securities-related, the proposed rule change 
+should promote more effective risk-based oversight. FINRA also 
+indicated it would consider providing additional guidance on the scope 
+of investment-related activity if the proposed rule changed is 
+approved, where appropriate.
+    For these reasons, the proposed rule change is reasonably designed 
+to prevent fraudulent and manipulative acts and practices, to promote 
+just and equitable principles of trade, and, in general, to protect 
+investors and the public interest.
+
+C. Activities Treated as Outside Activities for Purposes of Proposed 
+FINRA Rule 3290
+
+1. Associated Persons Acting as Portfolio Managers and Investment 
+Committee Members
+    As stated above, proposed FINRA Rule 3290.02 states that an 
+associated person would not be considered to be participating in an 
+outside securities transaction to the extent that the associated 
+person's activities are limited to acting as portfolio manager or 
+investment committee member for registered investment companies (e.g., 
+mutual funds, exchange traded funds, unit investment trusts, or 
+registered closed-end funds), unregistered investment companies, 
+business development companies, real estate investment trusts, and 
+entities that are recognized as tax exempt. Such activity would be 
+considered an outside activity of a registered person. However, the 
+proposed exception would not include an associated person's activities 
+related to purchasing or selling such entities' shares, which would be 
+considered outside securities transactions unless otherwise excluded 
+under proposed FINRA Rule 3290(g). FINRA Rule 3290.02 would codify 
+FINRA's staff positions on member requirements applicable to these 
+activities.\158\
+---------------------------------------------------------------------------
+
+    \158\ See Notice at 5006.
+---------------------------------------------------------------------------
+
+    One commenter opposed the proposed rule change as too broad, 
+stating that associated persons engaged in the activities described 
+above are subject to a range of conflicts, including compensation-
+related conflicts, as well as other risks and thus there should not be 
+a per se exclusion of these activities from treatment as outside 
+securities transactions and the associated requirements to supervise 
+and maintain records of that activity.\159\ In the context of a tax-
+exempt organization, this commenter stated that there may be risks and 
+conflicts that could harm the organization, particularly since these 
+roles may also pay substantial compensation.\160\
+---------------------------------------------------------------------------
+
+    \159\ See Massachusetts at 4.
+    \160\ Id.
+---------------------------------------------------------------------------
+
+    In response, FINRA stated that the activities deemed to be outside 
+activities under proposed Rule 3290.02 typically involve management of 
+third-party capital with associated fiduciary duties and regulatory 
+oversight, and thus do not present the same level of risk as direct 
+participation in securities transactions.\161\ As such, requiring the 
+associated person to notify its members of the activity and the member 
+to assess the proposed activity is sufficient to enable members to 
+evaluate any associated risks.\162\ Further, FINRA stated that members 
+retain discretion to impose conditions or limitations on the activity 
+based on the member's evaluation of the particular risk, and to the 
+extent a member does impose conditions or limitations on the activity, 
+the member would be required to supervise compliance with the 
+conditions or limitations under proposed FINRA Rule 3290.06.\163\ 
+Additionally, if the associated person begins selling fund shares for 
+compensation, shifting from a governance or management role to a sales 
+capacity, then the proposed rule change's approval, member supervision 
+and recordkeeping requirements would apply.\164\ FINRA also stated that 
+the proposed rule change is consistent with how FINRA staff has 
+interpreted FINRA Rules 3270 and 3280.\165\
+---------------------------------------------------------------------------
+
+    \161\ See FINRA I at 10.
+    \162\ Id.
+    \163\ See proposed FINRA Rule 3290.06; FINRA I at 10.
+    \164\ See FINRA I at 10.
+    \165\ Id.
+---------------------------------------------------------------------------
+
+    The proposed rule change, which codifies FINRA's current treatment 
+of these activities under existing FINRA Rules 3270 and 3280, 
+reasonably treats certain limited activities of an associated person 
+who acts as a portfolio manager or investment committee member for 
+specified entities as outside activities of a registered person, 
+subject to the notice and member assessment in proposed FINRA Rule 
+3290(a) and (c), rather than as outside securities transactions, 
+subject to the notice, assessment, and applicable approval requirements 
+in proposed FINRA Rule 3290(b) and (d). The proposed rule change 
+reasonably tailors the obligations of members and associated persons in 
+light of the risk presented by the activity. For example,
+
+[[Page 59272]]
+
+portfolio managers and investment committee members of registered 
+investment companies are subject to regulatory oversight under the 
+Advisers Act and the Investment Company Act of 1940 (``Investment 
+Company Act'') or oversight by state regulators, as applicable.
+    Treating this activity as an outside activity is designed to help 
+ensure that the member is aware of the proposed activity, assesses the 
+associated risks, and imposes conditions and limitations (including 
+prohibiting the activity) based on its assessment. Further, proposed 
+FINRA Rule 3290.06 would explicitly impose a new requirement for the 
+member to supervise compliance with any conditions or limitations. 
+Finally, if the activity involves selling shares for compensation, the 
+additional notice, assessment, and approval obligations applicable to 
+outside securities transactions would apply to address the additional 
+risks presented by that activity. For these reasons, the proposed rule 
+change is reasonably designed to prevent fraudulent and manipulative 
+acts and practices, to promote just and equitable principles of trade, 
+and, in general, to protect investors and the public interest.
+2. Associated Person Activity at an Unaffiliated RIA
+    As stated above, proposed FINRA Rule 3290.03 states that an 
+associated person's activity at an unaffiliated RIA registered either 
+with the Commission under Advisers Act Section 203 or with a state 
+securities commission (or any agency or office performing like 
+functions) would be considered an outside activity of a registered 
+person and not an outside securities transaction for purposes of 
+proposed FINRA Rule 3290. As a result, the associated person would be 
+required to provide prior written notice of such activity under 
+proposed FINRA Rule 3290(a), and the member would be required to 
+conduct an assessment pursuant to the criteria set forth in proposed 
+FINRA Rule 3290(c), but the member would not be required to supervise 
+or keep records of that activity.\166\ FINRA stated that as a result, 
+the proposed rule change would ``revise[ ] the member obligations 
+imposed via a series of Notices to Members issued in the 1990s.'' \167\
+---------------------------------------------------------------------------
+
+    \166\ See Notice at 5006.
+    \167\ See supra note 56; Notice at 5006.
+---------------------------------------------------------------------------
+
+    The majority of commenters supported the proposed rule change,\168\ 
+generally stating that activities at unaffiliated RIAs are already 
+effectively regulated by the Commission and state regulators, making 
+the existing requirements duplicative.\169\ As such, commenters stated 
+that the existing framework creates a situation in which compliance 
+resources are spent on redundant review rather than investor 
+protection.\170\ Commenters also stated that the existing requirements 
+create an uneven regulatory landscape between broker-dealers and 
+investment advisers because registered investment adviser firms without 
+FINRA-registered personnel are not subject to the additional layer of 
+FINRA regulation.\171\ Other commenters stated that the existing 
+obligation to supervise unaffiliated RIA activity of their associated 
+persons exposes members to an unreasonable liability risk in the event 
+of investor losses stemming from advice provided by the unaffiliated 
+RIA firm.\172\ Finally, several supportive commenters stated that the 
+proposed rule change would help eliminate privacy concerns \173\ and 
+other barriers to regulatory compliance caused by the current 
+rules.\174\
+---------------------------------------------------------------------------
+
+    \168\ See Form Letters A, B, C and D; Cetera I at 1-2; letters 
+from Mark Quinn, Director of Regulatory Affairs, Cetera Financial 
+Group, at 1-2 (dated May 26, 2026), <a href="https://www.sec.gov/comments/SR-FINRA-2026-001/srfinra2026001-789421-2394167.pdf">https://www.sec.gov/comments/SR-FINRA-2026-001/srfinra2026001-789421-2394167.pdf</a> (``Cetera II''); 
+Mark Quinn, Director of Regulatory Affairs, Cetera Financial Group, 
+at 1-2 (dated June 10, 2026), <a href="https://www.sec.gov/comments/SR-FINRA-2026-001/srfinra2026001-815939-2484510.pdf">https://www.sec.gov/comments/SR-FINRA-2026-001/srfinra2026001-815939-2484510.pdf</a> (``Cetera III''); Gail 
+Bernstein and Monique Botkin, General Counsel and Head of Public 
+Policy and Associate General Counsel, Investment Adviser 
+Association, at 1 (dated Feb. 24. 2026), <a href="https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-715090-2238074.pdf">https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-715090-2238074.pdf</a> 
+(``IAA''); CAI at 2; LPL I at 2; SIFMA I at 1-2; letters from Doug 
+Baxley, Chief Compliance Officer, Merit Financial Advisors, at 1 
+(Dated Feb. 22, 2026), <a href="https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-708947-2231755.pdf">https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-708947-2231755.pdf</a> (``Baxley''); John Ramirez, 
+Financial Advisor, Woodlands Portfolio Management, at 1 (dated Feb. 
+22, 2026), <a href="https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-708307-2229695.pdf">https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-708307-2229695.pdf</a> (``Ramirez''); Cline E. Reasor, 
+Managing Partner, Gratus Wealth Advisors, LLC, at 2 (dated Feb. 24, 
+2026), <a href="https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-713067-2236294.pdf">https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-713067-2236294.pdf</a> (``Reasor''); David Gutierrez, 
+Gutierrez Wealth Advisory, at 1 (dated Feb. 24, 2026) <a href="https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-714427-2237214.pdf">https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-714427-2237214.pdf</a> (``Gutierrez''); Scott R. Solod, Chief Compliance 
+Officer, Hammond Iles Wealth Advisors, at 1 (dated Feb. 24, 2026) 
+<a href="https://www.sec.gov/comments/SR-FINRA-2026-001/srfinra2026001-712567-2235796_0.pdf">https://www.sec.gov/comments/SR-FINRA-2026-001/srfinra2026001-712567-2235796_0.pdf</a> (``Solod''); Timothy E. Flatley, President & 
+CEO, Sterling Investment Advisors, Ltd., at 1 (dated Feb. 23, 2026) 
+<a href="https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-712951-2236161.pdf">https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-712951-2236161.pdf</a> (``Flatley''); Brian Nguyen, Twin Peaks Wealth 
+Advisors, at 1 (dated Feb. 22, 2026), <a href="https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-711028-2233350.pdf">https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-711028-2233350.pdf</a> (``Nguyen''); 
+Michael McLane, Owner, Redwood Financial Planning at 2 (dated Feb. 
+22, 2026), <a href="https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-708427-2229934.pdf">https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-708427-2229934.pdf</a> (``Redwood''); Shamberger at 1; 
+A&P Services at 1; Benedetti at 1; Lawrance at 1.
+    \169\ See Form Letter A; SIFMA II at 2-3; Gutierrez at 1; 
+Lawrance at 1; Solod at 1; Flatley at 1; Baxley at 1; Ramirez at 1.
+    \170\ See Form Letter B. See also Shamberger at 1; Naugle at 1; 
+Benedetti at 1; Cetera III at 3-4 (stating recently adopted 
+requirements, under Regulation Best Interest and Form CRS, require 
+disclosure to investors of information that should eliminate any 
+potential customer confusion regarding the role and capacity of a 
+representative, which FINRA Rule 3280 was adopted to prevent); 
+letter from Jamal Mahmood, Certified Financial Planner, Main Street 
+Financial Solutions (dated Feb. 24, 2026), <a href="https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-2238614.htm">https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-2238614.htm</a> (``J. Mahmood 
+'').
+    \171\ See Form Letters C and D; Reasor at 2; Nguyen at 1; 
+Redwood at 2; IAA at 1-3; Baxley at 1; Ramirez at 1.
+    \172\ See Form Letter A, see also IAA at 3 (stating that 
+members' inability to obtain such information subjects them to 
+potential regulatory responsibility and liability without providing 
+adequate means to protect themselves); CAI at 2.
+    \173\ See Reasor at 1 (stating that the current rules require 
+associated persons registered with broker-dealers and with 
+investment advisers to share their advisory clients' non-public 
+personal information with unaffiliated broker-dealers that have no 
+advisory relationship with those clients). See also Form Letter D; 
+letter from Scott Wallschlaeger, MPPL Financial, at 1-2 (dated Feb. 
+22, 2026), <a href="https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-710028-2232575.pdf">https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-710028-2232575.pdf</a> (``MPPL Financial'') (stating that 
+trust is fundamental to the fiduciary relationship between an 
+advisor and client and that the confidentiality of the advisor-
+client relationship is protected under federal law, including 
+Regulation S-P); CAI at 2; PKS at 1; Gutierrez at 1; Redwood at 1.
+    \174\ See ACA at 2 (stating that the proposed rule change would 
+eliminate the difficulty of registering prospective registered 
+representatives who work for unaffiliated investment advisers that 
+are unwilling to provide a broker-dealer with the information 
+necessary for the member to supervise such activity as required 
+under FINRA Rule 3280); IAA at 3 (acknowledging that members may 
+have challenges fulfilling their regulatory obligations under the 
+current rules because they lack access to information necessary to 
+meaningfully supervise outside unaffiliated investment adviser 
+activities); see also Gutierrez at 1-2; J. Mahmood.
+---------------------------------------------------------------------------
+
+    Commenters opposed to the proposed rule change stated that 
+investment adviser oversight by the Commission or state regulators is 
+an inadequate substitute for broker-dealer supervision,\175\ with some 
+noting in particular the length of time that may pass between 
+Commission or state
+
+[[Page 59273]]
+
+examinations of advisers.\176\ One commenter also expressed concern 
+about possible rule changes by the Commission that could lead to 
+further reduced frequency of examinations and other regulatory 
+obligations of some investment advisers, which the commenter believes 
+would result in differing regulatory regimes based on adviser 
+size.\177\
+---------------------------------------------------------------------------
+
+    \175\ See letter from Scott Eichhorn and Melanie Cherdack, 
+Director and Associate Director, University of Miami Investor Rights 
+Clinic, at 2-3 (dated Feb. 24, 2026), <a href="https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-714428-2237215.pdf">https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-714428-2237215.pdf</a> (``Miami 
+Clinic''); Cambridge I at 3; letter from Jeffrey R. Sonn, Esq., Sonn 
+Law Group P.A., at 2-3 (dated Feb. 20, 2026), <a href="https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-706987-2225454.pdf">https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-706987-2225454.pdf</a> (``Sonn 
+I''). See also letter from Seth A. Miller, General Counsel, 
+President, Advocacy & Administration, Cambridge Investment Research, 
+Inc., at 3 (dated May 27, 2026), <a href="https://www.sec.gov/comments/SR-FINRA-2026-001/srfinra2026001-792039-2397586.pdf">https://www.sec.gov/comments/SR-FINRA-2026-001/srfinra2026001-792039-2397586.pdf</a> (''Cambridge II'') 
+(stating that if the existence of regulatory oversight by the SEC or 
+states and RIAs being subject to fiduciary duty was sufficient to 
+ensure effective supervision of this activity then there would not 
+be enforcement actions showing that misconduct ``persists for years 
+before detection'').
+    \176\ See Cambridge I at 3; see also letter from John S. Burke, 
+Esq., JSB Law, at 2-3 (dated Feb. 20, 2026), <a href="https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-707867-2226717.pdf">https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-707867-2226717.pdf</a> 
+(``Burke''); Miami Clinic at 2-3; Cambridge II at 3.
+    \177\ See Cambridge I at 4; Cambridge II at 6-7 (raising 
+concerns that approval of the proposed FINRA rule change, combined 
+with the potential adoption of Commission rules that would increase 
+the thresholds for RIAs being classified as a ``small entity'' under 
+Commission rules and/or increase the asset threshold for investment 
+advisers being required to register with the Commission, would 
+further fragment oversight of RIAs and weaken consistency in 
+investor protection).
+---------------------------------------------------------------------------
+
+    Commenters also stated that broker-dealers have unique insights 
+into the day-to-day activities of their associated persons and thus 
+eliminating the member supervision and recordkeeping requirements 
+associated with unaffiliated investment adviser activities would 
+fundamentally weaken investor protections.\178\ More specifically, 
+commenters stated that the proposed rule change would remove one of the 
+most effective mechanisms for detecting fraud, conflicts of interest, 
+and undisclosed securities activity by associated persons,\179\ and 
+that reducing the reporting requirements would make it more likely that 
+illicit conduct would go unreported and unsupervised.\180\ One 
+commenter stated that the proposed rule change is inconsistent with the 
+Commission's authority under Exchange Act Section 15(b)(4)(E) to impose 
+sanctions on a firm for failing to reasonably supervise a person 
+subject to the firm's supervision who commits a violation of the 
+federal securities laws, including the Advisers Act.\181\ This 
+commenter stated that there is no authority in the Exchange Act that 
+permits a broker-dealer to delegate this supervisory responsibility to 
+another body or that allows FINRA to exempt members from these 
+requirements because another securities statute or regulatory body 
+covers the same activity.\182\
+---------------------------------------------------------------------------
+
+    \178\ See NASAA at 6; see also PIABA I at 4-5, 8; PIABA II at 2; 
+Cambridge I at 6; Sonn I at 2-3; Massachusetts at 2; letters from 
+David Meyer, Founder and Managing Principal, Meyer Wilson Werning, 
+at 2 (dated Feb. 22, 2026), <a href="https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-708147-2229414.pdf">https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-708147-2229414.pdf</a> (``Meyer''); Alex Rogers, 
+Attorney at Law, (dated Feb. 24, 2026), <a href="https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-714647-2237394.html">https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-714647-2237394.html</a> 
+(``Rogers''). See also Cambridge I at 5; Cambridge II at 4-5 
+(stating that removing supervisory obligations over unaffiliated RIA 
+activity fails to reduce a member's litigation or arbitration risk 
+and creates incentives for associated persons to affiliate with the 
+member who imposes only the minimum requirements of the proposed 
+rule change).
+    \179\ See Sonn I at 2; see also letter from Glenn Mazer, Mazer 
+Law Firm PC (dated Feb. 20, 2026), <a href="https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-707567-2226334.html">https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-707567-2226334.html</a> (``Mazer''); Burke 
+at 3; letter from Nico Banks, co-chair of the PIABA Arbitration 
+Committee, Banks Law Office (dated Feb. 19, 2026), <a href="https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-706447-2224014.pdf">https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-706447-2224014.pdf</a> (``Banks'').
+    \180\ See Mougey at 1; Cornish at 1; Bingham at 1; Pearce at 1-
+2; Vannoy at 1; Schwartz at 2; Wojciechowski at 1; Muzaurieta at 1; 
+Ciaccio at 1; Rosenfield at 1; Iorio at 1; Spray at 1; Brewer at 1; 
+Saxon at 1; Evans at 1; Peiffer at 1; Simms at 1; Varnavides at 1-2; 
+Rapaport at 1; letter from Thomas D. Mauriello, Esq., Mauriello Law 
+Firm, at 1 (dated Feb. 24, 2026), <a href="https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-714467-2237275.pdf">https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-714467-2237275.pdf</a> (``Mauriello''); 
+Kane at 1; Cosgrove Letter at 1; and letter from Adolfo Anzola, 
+Esq., Sonn Law Group P.A., at 1 (dated Feb. 24, 2026), <a href="https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-714047-2236935.pdf">https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-714047-2236935.pdf</a> (``Sonn II''). See also letters from Mark Pugsley, The 
+Anti-Fraud Coalition (dated Feb. 20, 2026), <a href="https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-707627-2226454.html">https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-707627-2226454.html</a> 
+(``Pugsley''); Reema Mahmood, Individual (dated Jun. 12, 2026), 
+<a href="https://www.sec.gov/comments/SR-FINRA-2026-001/srfinra2026001-2488330.htm">https://www.sec.gov/comments/SR-FINRA-2026-001/srfinra2026001-2488330.htm</a> (``R. Mahmood''). A commenter also stated that FINRA did 
+not adequately quantify in its economic analysis the costs of 
+unsupervised outside activity on investors, both in terms of 
+existing gaps in supervision and the additional gaps the proposed 
+rule would create. See Burke at 5. In response, FINRA stated that 
+unaffiliated RIA activity is subject to supervision by the 
+unaffiliated RIA and overseen by other regulators, and that any 
+additional investor protections arising from member supervision of 
+these activities may be limited because of the difficulty the member 
+may have in obtaining complete information from the unaffiliated 
+RIA. See FINRA I at 14. Additionally, FINRA believes that the 
+assessment it conducted was appropriate to capture the economic 
+impact associated with the proposed rule change and in order to 
+directly address any potential loss in investor protections would 
+require more granular data to quantify the effectiveness of other 
+regulatory regimes and then the marginal impact of additional 
+supervision by broker-dealer firms. See FINRA I at 14. FINRA's 
+assessment appropriately captures the economic impacts associated 
+with the proposed rule change.
+    \181\ See PIABA I at 1-3, 10. See also Robert Scott Dreher, 
+Dreher Law Firm, at 2 (dated Feb. 20, 2026), <a href="https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-707727-2226594.pdf">https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-707727-2226594.pdf</a> 
+(``Dreher''); Adam J. Gana, Esq. and Adam J. Weinstein, Gana 
+Weinstein LLP, at 2 (dated Feb. 20, 2026), <a href="https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-706927-2225375.pdf">https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-706927-2225375.pdf</a> (``Gana 
+Weinstein''); William Paul Nolan, Esq., The Nolan Law Firm, at 2 
+(dated Feb. 21, 2026), <a href="https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-719187-2251614.pdf">https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-719187-2251614.pdf</a> (``Nolan''); Sonn II.
+    \182\ See PIABA I at 2-3.
+---------------------------------------------------------------------------
+
+    Other commenters opposing the proposed rule change stated that 
+members do not lack sufficient information to meaningfully supervise 
+unaffiliated RIA activities, contending that the securities regulatory 
+framework has never required members to have complete visibility or 
+direct control to meet their supervisory obligations; rather, it 
+requires broker-dealers to maintain reasonably designed risk-based 
+supervisory systems.\183\ Similarly, commenters stated that the privacy 
+rationale underlying the proposed rule change are unjustified.\184\ 
+Specifically, one commenter stated that broker-dealers already handle 
+extensive non-public personal information and are subject to robust 
+safeguarding requirements.\185\
+---------------------------------------------------------------------------
+
+    \183\ See Cambridge I at 6; see also PIABA I at 8-9.
+    \184\ See, e.g., PIABA I at 8-9; Cambridge I at 7; Cambridge II 
+at 5-6; Form Letter D.
+    \185\ See Cambridge I at 7 (stating that Federal privacy regimes 
+applicable to RIAs (including Regulation S-P) are expressly designed 
+to permit information sharing with service providers and affiliated 
+parties where there is a legitimate business purpose, subject to 
+notice, consent, and safeguards); Cambridge II at 5-6.
+---------------------------------------------------------------------------
+
+    Some commenters (including those who supported and those who 
+opposed the proposed rule change) recommended modifications to the 
+proposed rule change.\186\ Similarly, one commenter recommended that, 
+if the proposed rule change is approved by the Commission, FINRA 
+provide guidance or supplementary material stating that a member may 
+not ignore or discount evidence of suspicious activities or red flags 
+arising from activities that they do not supervise and emphasizing that 
+members must consider any red flags related to their associated 
+persons' unaffiliated investment advisory activities as part of their 
+core supervisory obligations.\187\ Another commenter stated that 
+practical and privacy challenges to having members supervise the 
+unaffiliated RIA activity of their associated persons can be addressed 
+through targeted safeguards, such as requiring written agreements 
+providing the member access to necessary records, coupled with 
+obtaining applicable client consents.\188\
+---------------------------------------------------------------------------
+
+    \186\ See FSI I at 3-4; ASA II at 6; NASAA at 7; St. John's Law 
+at 2; Miami Clinic at 3; letter from Jason Albin, Chapman Albin, at 
+2 (dated Feb. 20, 2026), <a href="https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-707507-2226238.pdf">https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-707507-2226238.pdf</a> (``Albin'').
+    \187\ See NASAA at 7 n.24.
+    \188\ See Albin at 2.
+---------------------------------------------------------------------------
+
+    Additionally, a commenter stated that FINRA should tailor rather 
+than eliminate broker-dealer responsibilities for these activities, 
+stating that a reasonable alternative would be requiring notice and 
+member approval of outside advisory activities, while limiting 
+supervisory obligations under proposed FINRA Rule 3290 to activity 
+involving the adviser's clients who are also customers of the member as 
+well as advisory accounts for which the
+
+[[Page 59274]]
+
+member is the custodian.\189\ The commenter stated that such an 
+approach would align supervision with the interests of the member and 
+responsibilities to investors, while helping to mitigate concerns about 
+access to information, privacy, jurisdiction, and overall compliance 
+burden.\190\ In the alternative, the commenter suggested the proposed 
+rule change should be revised to ``more directly encourage [members] to 
+impose conditions or limitations on outside investment advisory 
+activities when the [member] makes certain findings in the required 
+assessment.'' \191\
+---------------------------------------------------------------------------
+
+    \189\ See NASAA at 7. See also St. John's Law at 2 (stating that 
+because unaffiliated RIA activity frequently involves an outside 
+securities transaction and may involve the customer of the 
+registered person, that such activity should either be treated as a 
+subcategory of outside securities transactions or as a separate 
+third category with additional obligations closer to those proposed 
+for outside securities transactions to ensure adequate supervision 
+and investor protection); Miami Clinic at 3 (recommending that FINRA 
+consider retaining risk-based obligations (e.g., reasonable 
+supervision) where associated persons provide any type of investment 
+advice, including through a registered investment adviser).
+    \190\ See NASAA at 7.
+    \191\ Id.
+---------------------------------------------------------------------------
+
+    In contrast, a supportive commenter recommended that FINRA clarify 
+that a member approving an associated person's activities at an 
+unaffiliated investment adviser is not required to oversee compliance 
+with any conditions or limitations imposed on those activities, unlike 
+as required by proposed FINRA Rule 3290.06 for conditions and 
+limitations imposed pursuant to proposed Rule FINRA 3290.\192\ Lastly, 
+one commenter, expressing concern that the proposed rule change would 
+disadvantage members that exercise prudent supervision and incentivize 
+members to ``offload supervisory risk,'' suggested that if the 
+Commission approved proposed FINRA Rule 3290.03, the Commission should 
+provide a safe harbor to members from regulatory enforcement and civil 
+liability if an unaffiliated investment adviser violates regulatory or 
+legal standards or harms clients.\193\
+---------------------------------------------------------------------------
+
+    \192\ See ASA II at 6.
+    \193\ See Cambridge II at 4-5.
+---------------------------------------------------------------------------
+
+    In response, FINRA stated that activities at unaffiliated RIAs are 
+fundamentally different from other situations involving private 
+securities transactions because activities at registered investment 
+advisers are already subject to established regulatory structures, and 
+the proposed rule change respects this allocation of regulatory 
+responsibility.\194\ The proposed rule change would thus eliminate 
+duplicative obligations (e.g., broker-dealer supervision) without 
+diminishing the comprehensive oversight framework already in 
+place.\195\ FINRA further stated that the effectiveness of investment 
+adviser regulation cannot be judged solely by examination frequency but 
+rather by ``the full spectrum of regulatory requirements, ongoing 
+oversight mechanisms, internal compliance obligations, and the 
+fiduciary duty framework applicable to [investment advisers],'' and 
+that the Commission and state regulators are in the best position to 
+determine proper supervision of investment advisers based on market 
+conditions, risk assessments, and available resources.\196\
+---------------------------------------------------------------------------
+
+    \194\ See FINRA I at 14 (noting that unaffiliated RIAs are 
+subject to a fiduciary duty as well as oversight from the Commission 
+or state regulators, as applicable).
+    \195\ Id.
+    \196\ Id.
+---------------------------------------------------------------------------
+
+    In addition, FINRA stated that members would continue to receive 
+notice of any outside activities at unaffiliated RIAs and retain 
+discretion to prohibit or condition or limit such activities based on 
+the member's evaluation of the associated risk.\197\ FINRA further 
+stated that pursuant to FINRA Rule 3110, members are required to 
+investigate any red flags that suggest that misconduct may be occurring 
+and to act upon the results of such investigation; this would include 
+``red flags suggesting that an associated person is involved in an 
+undisclosed outside activity or that a disclosed outside activity 
+involves undisclosed securities transactions, compensation not 
+previously disclosed, or other misconduct.'' \198\ Finally, FINRA also 
+stated that although it is not aware of any interpretation of Section 
+15(b)(4)(E) of the Exchange Act that imposes a general obligation on 
+broker-dealers to supervise investment advisory activity, members are 
+free to impose supervisory obligations on their associated persons as a 
+condition to participating in unaffiliated investment advisory 
+activity.\199\
+---------------------------------------------------------------------------
+
+    \197\ Id. at 12; FINRA II at 6.
+    \198\ FINRA I at 13; see also In re Ronald Pellegrino, Exchange 
+Act Release No. 59125, 2008 SEC LEXIS 2843 (Dec. 19, 2008); FINRA II 
+at 6.
+    \199\ See FINRA I at 14.
+---------------------------------------------------------------------------
+
+    FINRA also declined to modify the proposed rule change to create a 
+tailored approach for unaffiliated RIA activities, such as creating a 
+subcategory of outside securities transaction for unaffiliated RIA 
+activity, or limiting supervision to only the approved activity 
+involving advisory clients who are also customers of the member and to 
+advisory accounts custodied by the member.\200\ FINRA stated that the 
+suggested approaches disregard the comprehensive regulatory regime for 
+RIAs.\201\ Further, FINRA stated that creating a tailored regime for 
+customers who have an advisory account custodied by the member, as 
+suggested by commenters, would be inconsistent with FINRA's 
+longstanding policy of creating rules that are business-model neutral 
+where possible, and could create unintended consequences depending on 
+whether or not a particular member requires its associated persons to 
+execute and custody their outside securities transactions at the 
+member.\202\
+---------------------------------------------------------------------------
+
+    \200\ See supra discussions and note 189.
+    \201\ See FINRA I at 16.
+    \202\ Id. at 16; FINRA II at 5-6.
+---------------------------------------------------------------------------
+
+    With respect to the comments regarding privacy concerns and 
+suggestions for targeted safeguards, such as requiring written 
+agreements between members and associated persons engaging in 
+unaffiliated RIA activity, FINRA stated that based on its examination 
+experience it has found that privacy protection is a legitimate concern 
+that raises practical hurdles for members to obtain information 
+regarding unaffiliated RIA activities that cannot be dismissed as a 
+mere ``operational inconvenience'' and thus managed through disclosure, 
+information-sharing and/or consent agreements.\203\ Additionally, FINRA 
+stated that it has observed in examinations that members have faced 
+practical hurdles to obtaining information regarding unaffiliated RIA 
+activity.\204\ For these reasons, FINRA declined to modify the proposed 
+rule change.
+---------------------------------------------------------------------------
+
+    \203\ See FINRA I at 15; FINRA II at 7.
+    \204\ Id.
+---------------------------------------------------------------------------
+
+    The proposed rule change reasonably treats activity performed by 
+associated persons at an unaffiliated RIA as an outside activity 
+subject to the notice and member assessment requirements in proposed 
+FINRA Rule 3290(a) and (c), rather than an outside securities 
+transaction subject to the notice, assessment, and applicable approval, 
+supervision, and recordkeeping requirements in proposed FINRA Rule 
+3290(b) and (d). The proposed rule change reasonably tailors the 
+applicable framework to address the level of risk presented by the 
+activity, by recognizing existing oversight of the activity by the 
+Commission or state regulators, and in so doing, addresses privacy and 
+practical challenges noted by commenters and observed by FINRA
+
+[[Page 59275]]
+
+regarding members' ability to obtain data necessary to discharge their 
+obligations under existing Rules 3270 and 3280, while also providing 
+important investor protections.
+    With respect to the commenter's concern that proposed or potential 
+future rule changes by the Commission could further reduce the 
+frequency of investment adviser examinations or reduce investment 
+advisers' regulatory obligations, FINRA's proposed rule change must be 
+assessed on whether it meets the standards set forth in the Exchange 
+Act, including whether it is designed to protect investors and the 
+public interest; \205\ any concerns about the impacts of a Commission 
+rulemaking on investor protection would be appropriately addressed in 
+the context of any proposed Commission rulemaking.\206\
+---------------------------------------------------------------------------
+
+    \205\ See Exchange Act Section 15A(b)(6).
+    \206\ Further, the commenter appears to misunderstand the 
+proposal identified, which, if adopted, would not alter the direct 
+obligations of investment advisers registered with the Commission or 
+create any regulatory gap that would weaken investor protection. See 
+``Small Business'' and ``Small Organization'' Definitions for 
+Investment Companies and Investment Advisers for Purposes of the 
+Regulatory Flexibility Act, Release Nos. IA-6935 and IC-35864, 91 FR 
+1107 (Jan. 12, 2026).
+---------------------------------------------------------------------------
+
+    Requiring members to supervise and maintain records of unaffiliated 
+investment adviser activities impose additional compliance costs and 
+liability and causes significant operational and practical challenges 
+for members, which are more appropriately borne by the entity with 
+responsibility for the activity. The proposed rule change eliminates 
+these costs and challenges while preserving reasonable investor 
+protection measures through the obligations imposed by treating these 
+activities as an outside activity.\207\ Specifically, the proposed rule 
+change would still require an associated person to provide prior 
+written notice to his or her member detailing the activity so that a 
+member can make an informed decision about whether to limit, condition, 
+or prohibit the activity. For example, members could impose 
+restrictions on their associated persons as a condition to 
+participation in the unaffiliated RIA activity, and proposed FINRA Rule 
+3290.06 would require the member to supervise compliance with such 
+conditions or limitations.
+---------------------------------------------------------------------------
+
+    \207\ This approach is consistent with the way outside 
+securities transactions that qualify under the GLBA or Regulation R 
+exceptions to broker or dealer registration are treated as an 
+outside activity of a registered person. See infra Section III.C.3 
+(Associated Person Outside Securities Activity Subject to GLBA or 
+Exchange Act Regulation R).
+---------------------------------------------------------------------------
+
+    Similarly, while the proposed rule change forgoes imposing the per 
+se supervisory obligations attendant with treating unaffiliated RIA 
+activity as an outside securities transaction, in favor of a risk-based 
+approach, the proposed rule change does not allow members to turn a 
+blind eye to the risk presented by permitting such activity. Members 
+cannot ignore evidence of suspicious activities, as the proposed rule 
+does not alter members' overarching supervisory responsibilities under 
+applicable federal laws and FINRA rules to investigate and act upon red 
+flags indicating potential misconduct. Furthermore, the proposed rule 
+change establishes a minimum standard under FINRA rules for reasonable 
+supervision of associated persons, including registered persons, for 
+compliance with relevant obligations; the proposed rule change does not 
+alter or supersede a member's obligation to comply with other 
+applicable statutory or regulatory requirements.\208\ In recognition of 
+the regulatory framework that governs activity at registered investment 
+advisers, the proposed rule change imposes targeted, risk-based 
+regulatory safeguards reasonably designed to protect investors and the 
+public interest. In doing so, the proposed rule change should reduce 
+compliance burdens while facilitating investor protection. For these 
+reasons, the proposed rule change is reasonably designed to prevent 
+fraudulent and manipulative acts and practices, to promote just and 
+equitable principles of trade, and, in general, to protect investors 
+and the public interest.
+---------------------------------------------------------------------------
+
+    \208\ See, e.g., Exchange Act Sections 15(b)(4)(E) and 
+15(b)(6)(A).
+---------------------------------------------------------------------------
+
+3. Associated Person Outside Securities Activity Subject to GLBA or 
+Exchange Act Regulation R
+    As stated above, proposed FINRA Rule 3290.05 states that an 
+associated person's securities activity that is not subject to a 
+contractual arrangement under proposed FINRA Rule 3290.04 but that 
+qualifies under the GLBA or Regulation R exceptions to broker or dealer 
+\209\ registration requirements would be considered an outside activity 
+of a registered person and not an outside securities transaction for 
+purposes of the proposed rule. This activity would be subject to the 
+notice and assessment requirements in proposed FINRA Rule 3290(a) and 
+(c), but the member would not be required to supervise or keep records 
+on this activity. The Commission received no comment on this aspect of 
+the proposed rule change.
+---------------------------------------------------------------------------
+
+    \209\ See supra note 60.
+---------------------------------------------------------------------------
+
+    The proposed rule change is reasonably designed to treat an 
+associated person's outside securities transactions that qualify under 
+the GLBA or Regulation R exceptions to broker or dealer registration as 
+an outside activity. The proposed rule change tailors the outside 
+activity framework to address the level of risk presented by the 
+activity by recognizing existing oversight of the activity by the 
+banking regulators.\210\
+---------------------------------------------------------------------------
+
+    \210\ FINRA also stated that the proposed rule change codifies 
+FINRA staff's existing position with respect to this activity. See 
+Notice at 5006.
+---------------------------------------------------------------------------
+
+    Under the proposed rule change, the member would continue to 
+receive prior written notice of the associated person's activity, be 
+required to conduct an upfront assessment, and retain discretion to 
+condition or limit proposed activity (or prohibit the activity) based 
+on its assessment. Moreover, proposed FINRA Rule 3290.06 would require 
+the member to supervise compliance with any conditions or limitations a 
+member elects to impose. In this way, the proposed rule change 
+reasonably imposes targeted, risk-based regulatory safeguards designed 
+to protect investors and the public interest. For these reasons, the 
+proposed rule change is reasonably designed to prevent fraudulent and 
+manipulative acts and practices, to promote just and equitable 
+principles of trade, and, in general, to protect investors and the 
+public interest.
+
+D. Exclusions From Proposed FINRA Rule 3290
+
+1. Associated Person Activity on Behalf of a Member or an Affiliate
+    As stated above, proposed FINRA Rule 3290(g)(1) would exclude from 
+proposed FINRA Rule 3290 an associated person's activity on behalf of a 
+member or its affiliate.\211\ Proposed FINRA Rule 3290(f)(1) would 
+define ``affiliate'' as any entity that controls, is controlled by, or 
+is under common control with a member. FINRA stated that the exclusion 
+for activity conducted on behalf of an affiliate recognizes members' 
+and their control persons' ability to implement meaningful controls 
+across business lines.\212\ According to FINRA, activity conducted on 
+behalf of an affiliate occurs within the scope of the person's 
+relationship with the broader corporate organization and therefore does 
+not pose the same risks as other outside activities targeted
+
+[[Page 59276]]
+
+by the proposed rule change.\213\ Specifically, FINRA stated that the 
+rule's notice process is designed to bring external activities to the 
+member's attention so that risks that may not otherwise be apparent can 
+be evaluated by the member.\214\ FINRA stated that this process is 
+unnecessary where the activity is conducted within the corporate 
+family, where the member can access information about such activities 
+through corporate governance structures, shared compliance systems, or 
+other internal coordination mechanisms.\215\
+---------------------------------------------------------------------------
+
+    \211\ Proposed FINRA Rule 3290(g)(1). FINRA stated that the 
+exclusion would include activity such as investment advisory 
+activity at a member that is registered as both a broker-dealer and 
+an investment adviser, as well as investment advisory, insurance, or 
+banking activity conducted at an affiliate. See Notice at 5005.
+    \212\ See Notice at 5006.
+    \213\ See FINRA I at 9.
+    \214\ Id.
+    \215\ Id.
+---------------------------------------------------------------------------
+
+    Many commenters supported the proposed rule change, generally 
+stating that the affiliate exclusion would create a ``more targeted 
+framework'' that helps members focus their compliance resources on 
+outside activities that are ``more likely to intersect with their 
+supervisory responsibilities and customer facing business.'' \216\ More 
+specifically, one of these commenters stated that excluding activities 
+at affiliated entities, where shared compliance systems already provide 
+oversight, would eliminate a layer of regulatory duplication that adds 
+cost without adding protection.\217\ Other commenters stated that the 
+Advisers Act already requires investment advisers to establish a 
+``robust'' compliance program; thus, by excluding an associated 
+person's advisory activity on behalf of a member or its affiliate from 
+proposed FINRA Rule 3290, the proposed rule change would relieve dual 
+registrants from ``regulatory overlap'' that added complexity without 
+improving investor protection.\218\
+---------------------------------------------------------------------------
+
+    \216\ ASA I at 2; CAI at 2; Benedetti; Shamberger at 2; A&P 
+Services at 2; Form Letter B.
+    \217\ See Benedetti.
+    \218\ See, e.g., Form Letter B; A&P Services at 2.
+---------------------------------------------------------------------------
+
+    Other commenters opposed the proposed rule change.\219\ For 
+example, one commenter stated that reducing a member's regulatory 
+oversight of the activity of their registered and associated persons at 
+affiliated advisers would be a ``dramatic step backward'' and may 
+eliminate recourse for investors seeking redress for harm caused by an 
+affiliated adviser.\220\ Another commenter stated that the Exchange Act 
+requires members to supervise all investment-related activities of 
+their registered representatives regardless of where those activities 
+occur, and does not exempt members based on their affiliates' ability 
+to effectively control activities across business lines.\221\
+---------------------------------------------------------------------------
+
+    \219\ See, e.g., Banks at 1; letter from John E. Sutherland, 
+Brickley/Sears, P.A. at 1-2, (Feb. 25, 2026) <a href="https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-715687-2239515.pdf">https://www.sec.gov/comments/sr-finra-2026-001/srfinra2026001-715687-2239515.pdf</a> 
+(``Brickley/Sears''); Massachusetts at 2; PIABA I at 10.
+    \220\ Brickley/Sears at 1-2 (stating that the way to prevent 
+this is to have the members responsible for supervision over the 
+activity). See also Massachusetts at 2 (stating that eliminating the 
+supervisory requirements over both unaffiliated and affiliated 
+investment advisers is contrary to investor protection).
+    \221\ See PIABA I at 10; see also Banks at 1.
+---------------------------------------------------------------------------
+
+    One commenter who supported the proposed rule change recommended 
+that FINRA provide guidance on when the affiliate exclusion would apply 
+in specific scenarios involving an associated person's work on behalf 
+of a bank, credit union, or insurance company that controls, is 
+controlled by, or is under common control with the member.\222\ The 
+commenter also requested that FINRA provide concrete examples of how 
+the exclusion applies in common fact patterns, including when a 
+registered person's day-to-day activity at an affiliate is covered by 
+the exclusion and how the exclusion applies when the affiliate is the 
+primary employer and association with the member is ``part time or 
+limited in scope.'' \223\
+---------------------------------------------------------------------------
+
+    \222\ See ASA I at 5; ASA II at 5-6. Another commenter 
+recommended that the proposed definition include contractual 
+networking relationships between independent broker-dealers and 
+third-party institutions, including banks, credit unions and 
+insurance companies. See LPL I at 3. FINRA responded that proposed 
+Supplementary Material .04 already excludes an associated person's 
+activity that is pursuant to a contract between a member and another 
+entity if such activity is conducted on behalf of the member as it 
+is within the scope of the associated person's relationship with the 
+member. See FINRA I at 9-10.
+    \223\ ASA I at 5; ASA II at 5-6.
+---------------------------------------------------------------------------
+
+    In response, FINRA stated that the exclusion is appropriate because 
+activity conducted on behalf of an affiliate occurs within the scope of 
+the person's relationship with the broader corporate organization and 
+does not present the same risks that the rule is designed to 
+address.\224\ Specifically, FINRA stated that the notice and assessment 
+process, which is designed to bring external activities to the member's 
+attention so that risks that may not otherwise be apparent can be 
+evaluated, is not necessary for activity conducted within a corporate 
+family, where the member can access information about such activities 
+through corporate governance structures, shared compliance systems, or 
+other internal coordination mechanisms.\225\ In addition, FINRA stated 
+that rather than imposing a one-size-fits-all notice and assessment 
+process, the exclusion would provide a member with flexibility to 
+determine how to manage affiliate activities and whether any controls 
+are appropriate, based on its business model, organizational structure, 
+and the specific activities involved.\226\ FINRA also stated that, 
+while this exclusion is consistent with regulatory efficiency 
+principles, it in no way lessens a member's general supervisory 
+obligations under federal law or FINRA Rule 3110 nor does it limit a 
+member's ability to implement additional safeguards it determines are 
+appropriate.\227\
+---------------------------------------------------------------------------
+
+    \224\ See FINRA I at 9.
+    \225\ Id.
+    \226\ Id.
+    \227\ Id. at 9-10.
+---------------------------------------------------------------------------
+
+    With respect to the commenter's request for additional guidance on 
+the scope and application of the affiliate exclusion in particular 
+factual scenarios, FINRA confirmed that the affiliate exclusion does 
+not turn on whether the member or an affiliate is a registered person's 
+primary employer.\228\ The proposed rule change would exclude from 
+proposed FINRA Rule 3290 an associated person's activities either on 
+behalf of a member (e.g., investment adviser activity conducted for a 
+dually-registered broker-dealer/investment adviser) or its affiliate 
+(investment adviser, insurance or banking activity conducted at an 
+affiliate of the member).\229\ Finally, FINRA stated that if the 
+Commission approves the proposed rule change, it will consider 
+providing additional guidance on this and other topics as 
+appropriate.\230\
+---------------------------------------------------------------------------
+
+    \228\ See FINRA II at 4.
+    \229\ Id.
+    \230\ Id.
+---------------------------------------------------------------------------
+
+    The proposed rule change excluding from proposed FINRA Rule 3290 an 
+associated person's activities on behalf of a member or its affiliates 
+is reasonable given the purpose of the rule: bringing to a member's 
+attention external activities of which the member may not otherwise be 
+aware. With respect to the associated person's activity on behalf of 
+the member, the proposed rule change is reasonably designed to enhance 
+regulatory efficiency by excluding from duplicative obligations 
+activity that already falls within the member's supervisory and 
+compliance responsibilities under other FINRA rules (e.g., FINRA Rule 
+3110). With respect to activity performed on behalf of an affiliate, it 
+is appropriate to exclude the activity from the proposed rule's 
+mandatory notice and assessment process, as it is conducted within a 
+corporate family, where the member should have visibility into the 
+associated person's conduct through the
+
+[[Page 59277]]
+
+corporate governance structure, shared compliance systems, or other 
+internal coordination.
+    As such, the proposed rule change reasonably focuses a member's 
+compliance function on activities where member oversight provides the 
+greatest investor protection benefit. In addition, members retain the 
+ability to impose additional measures on any such activity, including 
+notice requirements and placing conditions or limitations on the 
+activity, while also retaining their overarching supervisory 
+obligations. Further, as noted above, the proposed rule change does not 
+alter or supersede a member's obligation to comply with other 
+applicable statutory or regulatory requirements, nor does it address an 
+investor's ability to seek redress for harm.\231\ As such, the 
+exclusion reflects a reasonable approach that is designed to channel 
+oversight resources toward activities where the member is less likely 
+to have visibility or information, by permitting members to leverage 
+internal structures to avoid unnecessarily duplicative requirements, 
+and providing flexibility to determine how to manage affiliate 
+activities in the context of those structures. For these reasons, the 
+proposed rule change is reasonably designed to prevent fraudulent and 
+manipulative acts and practices, to promote just and equitable 
+principles of trade, and, in general, to protect investors and the 
+public interest.
+---------------------------------------------------------------------------
+
+    \231\ See supra note 208.
+---------------------------------------------------------------------------
+
+2. Securities Transactions Among Immediate Family Members of an 
+Associated Person
+    As stated above, proposed FINRA Rule 3290(g)(2) would exclude from 
+proposed FINRA Rule 3290 an associated person's securities transactions 
+among immediate family for which the associated person receives no 
+selling compensation.\232\ These transactions are also excluded from 
+the current definition of PST, and therefore not subject to the notice 
+and assessment requirements in existing FINRA Rule 3280.\233\ The 
+Commission received no comment on this aspect of the proposed rule 
+change.
+---------------------------------------------------------------------------
+
+    \232\ Proposed FINRA Rule 3290(g)(2). Proposed FINRA Rule 
+3290(f)(2) would define ``immediate family'' to have the same 
+meaning as in FINRA Rule 3240(c).
+    \233\ See FINRA Rule 3280(e)(1) (excluding from the definition 
+of ``private securities transaction'' transactions among immediate 
+family members as defined in FINRA Rule 5130).
+---------------------------------------------------------------------------
+
+    The proposed rule change excluding uncompensated securities 
+transactions among immediate family members from the obligations of 
+proposed FINRA Rule 3290 is reasonably designed to focus members' 
+supervisory and compliance resources on activities that are more likely 
+to raise investor protection concerns. Additionally, the exclusion from 
+proposed FINRA Rule 3290 does not lessen a member's general supervisory 
+obligations under federal law or FINRA Rule 3110 nor limit a member's 
+ability to implement additional safeguards it determines are 
+appropriate. For these reasons, the proposed rule change is reasonably 
+designed to prevent fraudulent and manipulative acts and practices, to 
+promote just and equitable principles of trade, and, in general, to 
+protect investors and the public interest.
+3. Certain Personal Investments of an Associated Person
+    As stated above, proposed FINRA Rule 3290(g)(3) would exclude from 
+proposed FINRA Rule 3290 the following personal investments of an 
+associated person: (1) securities transactions subject to or delineated 
+in FINRA Rule 3210 (Accounts at Other Broker-Dealers and Financial 
+Institutions); (2) personal investments in non-securities; and (3) the 
+purchase, sale, rental or lease of a main home and up to two secondary 
+homes that are: (a) solely owned by the associated person or the 
+associated person and immediate family; (b) owned by the associated 
+person as a sole proprietorship; (c) owned by a corporation, LLC, 
+partnership, limited partnership, or other entity that is solely owned 
+by the associated person or the associated person and immediate family; 
+or (d) owned by a trust with the associated person or the associated 
+person and immediate family as the sole beneficiaries.\234\
+---------------------------------------------------------------------------
+
+    \234\ Proposed FINRA Rule 3290(g)(3)(A)-(C).
+---------------------------------------------------------------------------
+
+    Commenters supported the proposed rule change,\235\ stating that 
+the treatment of these categories of personal investments is 
+appropriately tailored, reflects a calibrated risk-based approach,\236\ 
+and will help members concentrate on outside activities that are more 
+likely to intersect with their supervisory responsibilities and 
+customer-facing business.\237\ In particular, commenters supported the 
+real estate exclusion, stating that such activities do not raise 
+investor protection concerns and therefore should not be subject to 
+reporting.\238\ No commenters objected to this proposed exclusion.
+---------------------------------------------------------------------------
+
+    \235\ See ASA I at 2; Robinhood at 2.
+    \236\ See Robinhood at 2.
+    \237\ See ASA I at 2.
+    \238\ See Cambridge I at 2; see also CAI at 2; ASA I at 2; 
+Robinhood at 2; FSI I at 1.
+---------------------------------------------------------------------------
+
+    The proposed rule change to exclude certain personal investments 
+from the obligations of proposed FINRA Rule 3290 is reasonably designed 
+to help focus members' compliance oversight on activities that are more 
+likely to raise investor protection concerns. Specifically, some of 
+these transactions are covered by FINRA Rule 3210, which already 
+requires a member to consent to an associated person's opening an 
+account with another member or financial institution in which 
+securities transactions can be effected and in which the associated 
+person has a beneficial interest; in addition, the associated person's 
+member can request data for any transaction in an account subject to 
+the rule. Therefore, these transactions are already subject to existing 
+controls under FINRA Rule 3210.\239\ In addition, an associated 
+person's personal investments in non-securities, or, subject to 
+specified conditions, the purchase, sale, rental or lease of a main 
+home and up to two secondary homes is a targeted exclusion for real 
+estate activities and non-securities that are otherwise included in the 
+definition of investment-related activity in proposed Rule 3290(f). 
+This limited exclusion reasonably recognizes the lower risks to 
+investors and members presented by these activities by reducing the 
+regulatory burdens associated with such activities. Moreover, the 
+exclusion from proposed FINRA Rule 3290 does not lessen a member's 
+general supervisory obligations under federal law or FINRA Rule 3110, 
+nor limit a member's ability to implement additional safeguards it 
+determines are appropriate. For these reasons, the proposed rule change 
+is reasonably designed to prevent fraudulent and manipulative acts and 
+practices, to promote just and equitable principles of trade, and, in 
+general, to protect investors and the public interest.
+---------------------------------------------------------------------------
+
+    \239\ See supra note 51.
+---------------------------------------------------------------------------
+
+4. Treatment of Activity Subject to a Contractual Arrangement
+    As stated above, proposed FINRA Rule 3290.04 would exclude from 
+proposed FINRA Rule 3290 an associated person's activity conducted on 
+behalf of the member pursuant to a contract between the member and 
+another entity (e.g., a banking or insurance networking arrangement) 
+because the activity would be considered within the scope of the 
+associated person's relationship with the member and therefore subject 
+to the member's supervisory obligations under FINRA Rule 3110. The 
+Commission
+
+[[Page 59278]]
+
+received no comment on this aspect of the proposed rule change.
+    The proposed rule change to exclude an associated person's activity 
+conducted on behalf of a member pursuant to a contractual arrangement 
+between the member and another entity is reasonably designed to enhance 
+regulatory efficiency by excluding from duplicative obligations 
+activity that already falls within the member's supervisory and 
+compliance responsibilities under other FINRA rules (e.g., FINRA Rule 
+3110). For these reasons, the proposed rule change is reasonably 
+designed to prevent fraudulent and manipulative acts and practices, to 
+promote just and equitable principles of trade, and, in general, to 
+protect investors and the public interest.
+
+E. Recordkeeping
+
+    As stated above, proposed FINRA Rule 3290(e) would require a member 
+to keep a record of its compliance with the obligations under proposed 
+FINRA Rule 3290 and preserve this record in accordance with the time 
+and accessibility requirements of Exchange Act Rule 17a-4(e)(1). The 
+Commission received no comments on this aspect of the proposed rule 
+change.
+    The proposed rule change requiring members to keep and preserve a 
+record of its compliance with the obligations under proposed FINRA Rule 
+3290 is reasonably designed to facilitate oversight of a member's 
+compliance with the proposed rule change. A key component of regulatory 
+oversight is a member's retention of its business records. By expressly 
+requiring compliance with applicable Commission recordkeeping rules, 
+the proposed rule change makes clear members' obligation to maintain 
+and make available records related to proposed FINRA Rule 3290. As 
+such, the proposed rule change will help ensure that regulators can 
+properly oversee members' compliance with proposed FINRA Rule 3290. For 
+these reasons, the proposed rule change is reasonably designed to 
+prevent fraudulent and manipulative acts and practices, to promote just 
+and equitable principles of trade, and, in general, to protect 
+investors and the public interest.
+
+F. General Exemptive Authority
+
+    As stated above, proposed FINRA Rule 3290(h) would authorize FINRA 
+staff, for good cause shown after taking into consideration all 
+relevant factors, to conditionally or unconditionally grant an 
+exemption pursuant to the FINRA Rule 9600 Series from any provision of 
+proposed FINRA Rule 3290 to the extent that such exemption is 
+consistent with the purpose of the rule, the protection of investors, 
+and the public interest. The proposal would also amend FINRA Rule 9610 
+to add Rule 3290 to the list of rules for which a member may seek 
+exemptive relief. The Commission received no comment on this aspect of 
+the proposed rule change.
+    The proposed rule change authorizing FINRA to grant exemptive 
+relief from any provision of proposed FINRA Rule 3290 is reasonably 
+designed to allow FINRA members to avail themselves of an existing 
+procedural vehicle--FINRA's Rule 9600 Series--to apply for exemptive 
+relief from any provision of the rule, on a case-by-case basis, to 
+address unanticipated factual circumstances that may arise under the 
+rule. Prior to granting an exemption, FINRA staff would be required to 
+consider all relevant factors to determine if good cause is shown for 
+the exemption, and that the exemption is consistent with the protection 
+of investors and the public interest. For these reasons, the proposed 
+rule change is reasonably designed to prevent fraudulent and 
+manipulative acts and practices, to promote just and equitable 
+principles of trade, and, in general, to protect investors and the 
+public interest.\240\
+---------------------------------------------------------------------------
+
+    \240\ A commenter recommended that FINRA establish an effective 
+date for the proposed rule change that is at least 12 months after 
+Commission approval, in order to provide members sufficient time to 
+update their compliance systems that are currently designed for 
+FINRA Rules 3270 and 3280. See ASA I at 6; ASA II at 6-7. In 
+response, FINRA stated that if the proposed rule change is approved 
+it would determine an effective date balancing sufficient time for 
+implementation with its objective of reducing unnecessary burdens in 
+a timely manner. See FINRA I at 17; FINRA II at 9. FINRA reasonably 
+declined to establish an effective date for the proposed rule change 
+at this time.
+---------------------------------------------------------------------------
+
+IV. Conclusion
+
+    For the reasons set forth above, the Commission finds that the 
+proposed rule change is consistent with Section 15A(b)(6) of the 
+Exchange Act, which requires, among other things, that FINRA rules be 
+designed to prevent fraudulent and manipulative acts and practices, 
+promote just and equitable principles of trade, and, in general, 
+protect investors and the public interest.\241\
+---------------------------------------------------------------------------
+
+    \241\ 15 U.S.C. 78o-3(b)(6).
+---------------------------------------------------------------------------
+
+    It is therefore ordered pursuant to Section 19(b)(2) of the 
+Exchange Act \242\ that the proposed rule change (SR-FINRA-2026-001) 
+be, and hereby is, approved.
+---------------------------------------------------------------------------
+
+    \242\ 15 U.S.C. 78s(b)(2).
+
+    For the Commission, by the Division of Trading and Markets, 
+pursuant to delegated authority.\243\
+---------------------------------------------------------------------------
+
+    \243\ 17 CFR 200.30-3(a)(12).
+---------------------------------------------------------------------------
+
+Sherry R. Haywood,
+Assistant Secretary.
+[FR Doc. 2026-19126 Filed 9-17-26; 8:45 am]
+BILLING CODE 8011-01-P
+
+
+</pre></body>
+</html>

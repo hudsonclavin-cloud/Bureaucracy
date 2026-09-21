@@ -1,0 +1,417 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 181 (Monday, September 21, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 181 (Monday, September 21, 2026)]
+[Notices]
+[Pages 59815-59818]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-19219]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+SECURITIES AND EXCHANGE COMMISSION
+
+[Release No. 34-106397; File No. SR-NasdaqTX-2026-042]
+
+
+Self-Regulatory Organizations; Nasdaq Texas, LLC; Notice of 
+Filing and Immediate Effectiveness of a Proposal To Amend the 
+Exchange's Rules at Equity 1 and Equity 4 To Enable the Exchange To 
+Become a Primary Listing Venue
+
+September 16, 2026.
+    Pursuant to Section 19(b)(1) of the Securities Exchange Act of 1934 
+(``Act''),\1\ and Rule 19b-4 thereunder,\2\ notice is hereby given that 
+on September 3, 2026, Nasdaq Texas, LLC (``Nasdaq Texas'' or 
+``Exchange'') filed with the Securities and Exchange Commission 
+(``SEC'' or ``Commission'') the proposed rule change as described
+
+[[Page 59816]]
+
+in Items I, II, and III, below, which Items have been prepared by the 
+Exchange. The Commission is publishing this notice to solicit comments 
+on the proposed rule change from interested persons.
+---------------------------------------------------------------------------
+
+    \1\ 15 U.S.C. 78s(b)(1).
+    \2\ 17 CFR 240.19b-4.
+---------------------------------------------------------------------------
+
+I. Self-Regulatory Organization's Statement of the Terms of Substance 
+of the Proposed Rule Change
+
+    The Exchange proposes to amend the Exchange's rules at Equity 1 and 
+Equity 4 to align them with those of The Nasdaq Stock Market LLC 
+(``Nasdaq''), to enable the Exchange to become a primary listing venue.
+    The text of the proposed rule change is available on the Exchange's 
+website at <a href="https://listingcenter.nasdaq.com/rulebook/nasdaqtx/rulefilings">https://listingcenter.nasdaq.com/rulebook/nasdaqtx/rulefilings</a>, and at the principal office of the Exchange.
+
+II. Self-Regulatory Organization's Statement of the Purpose of, and 
+Statutory Basis for, the Proposed Rule Change
+
+    In its filing with the Commission, the Exchange included statements 
+concerning the purpose of and basis for the proposed rule change and 
+discussed any comments it received on the proposed rule change. The 
+text of these statements may be examined at the places specified in 
+Item IV below. The Exchange has prepared summaries, set forth in 
+sections A, B, and C below, of the most significant aspects of such 
+statements.
+
+A. Self-Regulatory Organization's Statement of the Purpose of, and 
+Statutory Basis for, the Proposed Rule Change
+
+1. Purpose
+    The purpose of the proposed rule change is to amend the Exchange's 
+rulebook at Equity 1 and Equity 4 to more closely align them to those 
+of Nasdaq, to prepare the Exchange to become a primary listing venue at 
+some point during the second quarter of 2027.
+    In connection with its transition from ``Nasdaq BX, Inc.'' to 
+``Nasdaq Texas, LLC,'' the Exchange adopted new initial and continued 
+listing standards for equity securities that are substantially similar 
+to those of the Nasdaq Global Market at Nasdaq.\3\ The Exchange 
+currently only dually lists securities that are also listed on another 
+national securities exchange, but it now proposes to modify its rules 
+to allow it to also serve as a primary listing venue. The proposed rule 
+changes described below are designed to enable this transition by 
+aligning the Exchange's rules at Equity 1 and Equity 4 with the 
+corresponding rules of Nasdaq, thereby equipping the Exchange with the 
+rules necessary to operate as a primary listing market.
+---------------------------------------------------------------------------
+
+    \3\ See Exchange Act Release No. 104907 (Feb. 27, 2026), 91 FR 
+10657 (Mar. 4, 2026) (Notice of Filing of Amendment Nos. 1 and 2 and 
+Order Granting Accelerated Approval of a Proposed Rule Change, as 
+Modified by Amendment Nos. 1 and 2, To Remove Existing Listing Rules 
+and Establish New Listing Standards) (File No. SR-BX-2026-004).
+---------------------------------------------------------------------------
+
+Equity 1 Changes
+Equity 1, Section 1(a)(13) (``Market Hours'')
+    The Exchange proposes to amend the definition of ``Market Hours'' 
+in Equity 1, Section 1(a)(13). While the Exchange will retain its 
+current market hours and trading sessions, it proposes to amend the 
+definition of ``Market Hours'' to add ``Regular Market Hours'' and 
+``Regular Trading Hours'' as synonyms for ``Market Hours.'' The 
+proposed amendments also add definitions for ``Pre-Market Session'' and 
+``Post-Market Session,'' which define those terms by reference to the 
+existing definitions of ``Pre-Market Hours'' and ``Post-Market Hours,'' 
+respectively. These changes serve to align these terms with the 
+corresponding Nasdaq terms.
+Equity 1, Section 1(a)(19) (``Exchange-Traded Product'')
+    The Exchange proposes to add a new definition for ``Exchange-Traded 
+Product'' in Equity 1, Section 1(a)(19), which defines the term by 
+reference to securities listed on Nasdaq Texas pursuant to the Rule 
+5700 Series (including Rules 5703, 5704, 5705, 5710, 5711, 5713, 5715, 
+5720, 5735, 5745, 5750, and 5760). The proposed definition is 
+substantially similar to the corresponding Nasdaq definition.
+Equity 1, Section 1(a)(20) (``Business Day'')
+    The Exchange proposes to add a new definition for ``Business Day'' 
+in Equity 1, Section 1(a)(20), which defines the term as any weekday 
+that is not a U.S. holiday. The proposed definition is substantially 
+similar to the corresponding Nasdaq definition.
+Equity 4 Changes
+Rule 4120 (Limit Up-Limit Down Plan and Trading Halts)
+    The Exchange proposes to replace the existing Rule 4120 in its 
+entirety. The current Rule 4120 contains provisions for regulatory 
+halts and operational halts that were adopted when the Exchange 
+operated solely as an unlisted trading privileges market. The proposed 
+rule replaces this framework with a comprehensive set of trading halt 
+provisions that are substantially similar to Nasdaq Equity 4, Rule 4120 
+and that will enable the Exchange to function as a primary listing 
+market. The proposed rule is organized into three sections:
+    Section (a) (Authority to Initiate Trading Halts or Pauses) 
+establishes the Exchange's authority to initiate trading halts or 
+pauses in various circumstances, including: halting Nasdaq Texas-listed 
+securities to permit the dissemination of material news; halting 
+securities listed on other exchanges when such exchanges impose halts; 
+halting for operational reasons; halting American Depository Receipts 
+when the underlying security is halted on a foreign exchange; halting 
+when the Exchange requests information from an issuer; halting due to 
+extraordinary market activity; halting securities that are the subject 
+of an Initial Public Offering; halting index warrants; halting 
+derivative securities products when required values are not 
+disseminated; imposing trading pauses for non-LULD securities; the 
+Limit Up-Limit Down mechanism; halting equity investment tracking 
+stocks and subscription receipts; halting for reverse stock splits; and 
+Initial ETP Opens.\4\
+---------------------------------------------------------------------------
+
+    \4\ The Exchange notes proposed Rule 4120(a)(13)(E)(2)(a) 
+references the FLITE protocol in addition to the OUCH and CORE FIX 
+protocols for the repricing of limit-priced interest under the Limit 
+Up-Limit Down mechanism, while Nasdaq's corresponding provision does 
+not reference FLITE. However, the omission of FLITE in Nasdaq Equity 
+4, Rule 4120(a)(13)(E)(2)(a) is an oversight in Nasdaq's rulebook, 
+which that exchange intends to correct in a forthcoming filing.
+---------------------------------------------------------------------------
+
+    Section (b) (Trading Halts for Trading of Certain Derivative 
+Securities Products on Nasdaq Texas Pursuant to Unlisted Trading 
+Privileges) establishes rules for halting trading in derivative 
+securities products traded on the Exchange pursuant to unlisted trading 
+privileges, including provisions for halts during Pre-Market Hours, 
+Regular Market Hours, and Post-Market Hours when required values are 
+not calculated or widely disseminated.
+    Section (c) (Procedure for Initiating and Terminating a Trading 
+Halt) establishes the procedures for initiating and terminating trading 
+halts, including: requirements for issuers to notify the Exchange of 
+material news; the process for evaluating information and determining 
+whether a halt is appropriate; the process for commencing and 
+terminating halts through notices posted on the Exchange's website; the 
+halt cross process for re-opening securities after trading halts; the 
+IPO halt cross process; the process for initial pricing of securities 
+not previously listed on a national securities exchange; trading pause 
+re-opening procedures; and the Initial ETP Open process.
+
+[[Page 59817]]
+
+Rule 4121 (Trading Halts Due to Extraordinary Market Volatility)
+    The Exchange proposes to amend Rule 4121 to add re-opening 
+procedures following market-wide circuit breaker (``MWCB'') halts, 
+including auction reference prices and MWCB auction collar procedures 
+that are substantially similar to those in Nasdaq Equity 4, Rule 4121. 
+The proposed amendments also update the cross-reference in subsection 
+(c)(i) to direct re-opening of trading following a Level 1 or 2 trading 
+halt to the new MWCB-specific re-opening procedures in Rule 4121(d), 
+rather than the general procedures in Rule 4120, add provisions for 
+publishing halt auction information, and re-letter certain existing 
+subsections.
+Rule 4370 (Additional Requirements for Nasdaq Texas-Listed Securities 
+Issued by the Exchange or Its Affiliates)
+    The Exchange proposes to adopt new Rule 4370, which is 
+substantially similar to Nasdaq Equity 4, Rule 4370, to establish 
+additional requirements for securities listed on the Exchange that are 
+issued by the Exchange or its affiliates (``Affiliate Securities''). 
+The rule requires the Exchange to provide quarterly reports to its 
+Regulatory Oversight Committee regarding compliance with listing 
+requirements and trading of Affiliate Securities, engage an independent 
+accounting firm annually to review compliance, and report any non-
+compliance to the Commission.
+Rule 4702 (Order Types)
+    The Exchange proposes to amend Rule 4702 to add order types 
+necessary for the operation of the Nasdaq Texas Opening Cross and 
+Nasdaq Texas Closing Cross, including: Market On Open Orders (``MOO''), 
+Limit On Open Orders (``LOO''), Opening Imbalance Only Orders 
+(``OIO''), Market On Close Orders (``MOC''), Limit On Close Orders 
+(``LOC''), and Imbalance Only Orders (``IO''). These order types are 
+substantially similar to the corresponding order types in Nasdaq Equity 
+4, Rule 4702.
+Rule 4752 (Opening Process)
+    The Exchange proposes to replace the current Rule 4752 with a 
+comprehensive opening process that includes the Nasdaq Texas Opening 
+Cross. The current rule provides a simple process for trading prior to 
+normal market hours and establishing an official opening price. The 
+proposed rule adds detailed definitions, pre-market trading procedures, 
+the Nasdaq Texas Opening Cross process (including Order Imbalance 
+Indicators, reference prices, and cross price determination), and 
+priority rules for executing orders in the cross. The proposed rule is 
+substantially similar to Nasdaq Equity 4, Rule 4752.
+Rule 4753 (Nasdaq Texas Halt Cross)
+    The Exchange proposes to adopt new Rule 4753 for the Nasdaq Texas 
+Halt Cross, which establishes the process for determining the price at 
+which eligible interest shall be executed at the re-opening of trading 
+for a halted security. The proposed rule includes definitions, Order 
+Imbalance Indicators, cross price determination, and priority rules. 
+The proposed rule is substantially similar to Nasdaq Equity 4, Rule 
+4753.
+Rule 4754 (Nasdaq Texas Closing Cross)
+    The Exchange proposes to adopt new Rule 4754 for the Nasdaq Texas 
+Closing Cross, which establishes the process for determining the price 
+at which orders shall be executed at the close and for executing those 
+orders. The proposed rule includes definitions, the closing cross 
+process, the LULD Closing Cross following Limit-Up-Limit-Down Trading 
+Pauses, the Hybrid Closing Cross following certain trading halts, 
+contingency procedures, and auxiliary procedures. The proposed rule is 
+substantially similar to Nasdaq Equity 4, Rule 4754.
+Rule 4763 (Short Sale Price Test Pursuant to Rule 201 of Regulation 
+SHO)
+    The Exchange proposes to amend Rule 4763 to add a new subsection 
+(c) (Determination of Trigger Price) that establishes procedures for 
+the Exchange, as a listing market, to determine whether a transaction 
+in a covered security has occurred at a Trigger Price and to 
+immediately notify the single plan processor. The proposed amendments 
+also add new paragraphs (d)(1) and (d)(2) (within the re-lettered 
+``Duration of Short Sale Price Test'' subsection) to allow the Exchange 
+to lift the Short Sale Price Test before the Short Sale Period ends in 
+cases involving clearly erroneous executions or incorrect prior day 
+closing prices, and add a new paragraph (e)(2) (within the re-lettered 
+``Re-pricing of Orders during Short Sale Period'' subsection) to 
+address the treatment of Limit-on-Open, Market-on-Open, Limit-on-Close, 
+and Market-on-Close orders during the Short Sale Period. The proposed 
+amendments also re-letter subsequent subsections and make conforming 
+numbering changes. The proposed amendments are substantially similar to 
+the corresponding provisions of Nasdaq Equity 4, Rule 4763.
+2. Statutory Basis
+    The Exchange believes that its proposal is consistent with Section 
+6(b) of the Act,\5\ in general, and furthers the objectives of Section 
+6(b)(5) of the Act,\6\ in particular, in that it is designed to promote 
+just and equitable principles of trade, to remove impediments to and 
+perfect the mechanism of a free and open market and a national market 
+system, and, in general to protect investors and the public interest.
+---------------------------------------------------------------------------
+
+    \5\ 15 U.S.C. 78f(b).
+    \6\ 15 U.S.C. 78f(b)(5).
+---------------------------------------------------------------------------
+
+    The Exchange believes that the proposed rules will remove 
+impediments to, and perfect the mechanism of, a free and open market 
+and a national market system by aligning the Exchange's rules at Equity 
+1 and Equity 4 with the substantially similar rules of Nasdaq, thereby 
+enabling the Exchange to operate as a primary listing venue. The 
+proposed rules are substantially similar to the rules of Nasdaq, which 
+have been approved by the Commission. The Commission has previously 
+found that Nasdaq's rules are consistent with the Act.
+    By adopting trading halt rules, opening and closing cross 
+procedures, halt cross procedures, and related order types that are 
+substantially similar to those of Nasdaq, the proposed rule change will 
+equip the Exchange with the trading infrastructure necessary to serve 
+as a primary listing market and to protect investors and the public 
+interest in connection with the listing and trading of securities on 
+the Exchange. The proposed trading halt rules will provide the Exchange 
+with authority to halt trading in listed securities for material news 
+dissemination, extraordinary market activity, and other circumstances 
+in which such halts are necessary to protect investors and the public 
+interest, consistent with the halting authority exercised by Nasdaq and 
+other primary listing markets. The proposed opening and closing cross 
+procedures will establish price discovery mechanisms that are designed 
+to promote fair and orderly markets and efficient price formation at 
+the open and close of trading. The proposed halt cross procedures will 
+establish re-opening mechanisms following trading halts that are 
+designed to ensure fair and orderly markets and to protect investors.
+    The proposed rule change also adds order types necessary for the 
+operation of the opening and closing crosses, which will provide market 
+participants with the ability to participate in these price-setting 
+events. These order types
+
+[[Page 59818]]
+
+are substantially similar to those available on Nasdaq.
+    The proposed new definitions for ``Exchange-Traded Product'' and 
+``Business Day'' in Equity 1, Section 1(a)(19) and (a)(20) will improve 
+the clarity and transparency of Exchange rules by adding defined terms 
+that are used throughout the Exchange's rules.
+    The proposed Rule 4370 will protect investors and the public 
+interest by establishing additional oversight requirements for 
+securities listed on the Exchange that are issued by the Exchange or 
+its affiliates, including quarterly reporting to the Regulatory 
+Oversight Committee, annual independent accounting firm review, and 
+Commission notification requirements.
+    The proposed amendments to Rule 4763 will protect investors and the 
+public interest by establishing procedures for the Exchange, as a 
+listing market, to determine trigger prices under Regulation SHO's 
+short sale price test, which is a function performed by primary listing 
+markets.
+    The proposed amendments to Rule 4121 will protect investors and the 
+public interest by establishing re-opening procedures for market-wide 
+circuit breaker halts that are substantially similar to those of 
+Nasdaq, ensuring fair and orderly re-opening of trading following 
+market-wide circuit breaker events.
+    By basing the proposed rules on the rules of the Exchange's 
+affiliate, Nasdaq, the proposed rule change will promote continuity 
+across affiliated exchanges and will ensure that market participants 
+encounter substantially similar rules and trading procedures across 
+both exchanges.
+
+B. Self-Regulatory Organization's Statement on Burden on Competition
+
+    The Exchange does not believe that the proposed rule change will 
+impose any burden on competition not necessary or appropriate in 
+furtherance of the purposes of the Act. The proposed rule change will 
+align the Exchange's rules at Equity 1 and Equity 4 with the 
+substantially similar rules of Nasdaq, to prepare the Exchange to 
+become a primary listing venue. The proposed rules will apply equally 
+to all Participants of the Exchange. Further, the proposed rule change 
+will allow the Exchange to operate under trading rules that are 
+substantially similar to those of Nasdaq and other primary listing 
+markets, enabling the Exchange to compete with those markets for 
+listings. The Exchange believes that the proposed rules will promote 
+competition among national securities exchanges by providing issuers 
+with an additional venue for listing their securities on an exchange 
+with trading rules that are consistent with those of other primary 
+listing markets.
+
+C. Self-Regulatory Organization's Statement on Comments on the Proposed 
+Rule Change Received From Members, Participants, or Others
+
+    No written comments were either solicited or received.
+
+III. Date of Effectiveness of the Proposed Rule Change and Timing for 
+Commission Action
+
+    Because the foregoing proposed rule change does not: (i) 
+significantly affect the protection of investors or the public 
+interest; (ii) impose any significant burden on competition; and (iii) 
+become operative for 30 days from the date on which it was filed, or 
+such shorter time as the Commission may designate, it has become 
+effective pursuant to Section 19(b)(3)(A)(iii) of the Act \7\ and 
+subparagraph (f)(6) of Rule 19b-4 thereunder.\8\
+---------------------------------------------------------------------------
+
+    \7\ 15 U.S.C. 78s(b)(3)(A)(iii).
+    \8\ 17 CFR 240.19b-4(f)(6). In addition, Rule 19b-4(f)(6) 
+requires a self-regulatory organization to give the Commission 
+written notice of its intent to file the proposed rule change at 
+least five business days prior to the date of filing of the proposed 
+rule change, or such shorter time as designated by the Commission. 
+The Exchange has satisfied this requirement.
+---------------------------------------------------------------------------
+
+    At any time within 60 days of the filing of the proposed rule 
+change, the Commission summarily may temporarily suspend such rule 
+change if it appears to the Commission that such action is necessary or 
+appropriate in the public interest, for the protection of investors, or 
+otherwise in furtherance of the purposes of the Act. If the Commission 
+takes such action, the Commission shall institute proceedings to 
+determine whether the proposed rule should be approved or disapproved.
+
+IV. Solicitation of Comments
+
+    Interested persons are invited to submit written data, views and 
+arguments concerning the foregoing, including whether the proposed rule 
+change is consistent with the Act. Comments may be submitted by any of 
+the following methods:
+
+Electronic Comments
+
+    <bullet> Use the Commission's internet comment form (<a href="https://www.sec.gov/rules/sro.shtml">https://www.sec.gov/rules/sro.shtml</a>); or
+    <bullet> Send an email to <a href="/cdn-cgi/l/email-protection#2b595e474e06484446464e455f586b584e48054c445d"><span class="__cf_email__" data-cfemail="83f1f6efe6aee0eceeeee6edf7f0c3f0e6e0ade4ecf5">[email&#160;protected]</span></a>. Please include 
+file number SR-NasdaqTX-2026-042 on the subject line.
+
+Paper Comments
+
+    <bullet> Send paper comments in triplicate to Secretary, Securities 
+and Exchange Commission, 100 F Street NE, Washington, DC 20549-1090.
+
+All submissions should refer to file number SR-NasdaqTX-2026-042. This 
+file number should be included on the subject line if email is used. To 
+help the Commission process and review your comments more efficiently, 
+please use only one method. The Commission will post all comments on 
+the Commission's internet website (<a href="https://www.sec.gov/rules/sro.shtml">https://www.sec.gov/rules/sro.shtml</a>). Copies of the filing will be available for inspection and 
+copying at the principal office of the Exchange. Do not include 
+personal identifiable information in submissions; you should submit 
+only information that you wish to make available publicly. We may 
+redact in part or withhold entirely from publication submitted material 
+that is obscene or subject to copyright protection. All submissions 
+should refer to file number SR-NasdaqTX-2026-042 and should be 
+submitted on or before October 13, 2026.
+
+    For the Commission, by the Division of Trading and Markets, 
+pursuant to delegated authority.\9\
+---------------------------------------------------------------------------
+
+    \9\ 17 CFR 200.30-3(a)(12).
+---------------------------------------------------------------------------
+
+Sherry R. Haywood,
+Assistant Secretary.
+[FR Doc. 2026-19219 Filed 9-18-26; 8:45 am]
+BILLING CODE 8011-01-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

@@ -1,0 +1,1305 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 180 (Friday, September 18, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 180 (Friday, September 18, 2026)]
+[Rules and Regulations]
+[Pages 59066-59075]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-19207]
+
+
+
+[[Page 59066]]
+
+=======================================================================
+-----------------------------------------------------------------------
+
+DEPARTMENT OF HOMELAND SECURITY
+
+48 CFR Parts 3025 and 3052
+
+[Docket No. DHS-2024-0020]
+RIN 1601-AB15
+
+
+Homeland Security Acquisition Regulation, Make Personal 
+Protective Equipment in America Act Restrictions on Foreign Acquisition 
+(HSAR Case 2024-003)
+
+AGENCY: Office of the Chief Procurement Officer (OCPO), Department of 
+Homeland Security (DHS).
+
+ACTION: Final rule.
+
+-----------------------------------------------------------------------
+
+SUMMARY: DHS is issuing a final rule to amend the Homeland Security 
+Acquisition Regulation (HSAR) codifying how DHS complies with the 
+requirements of the Make Personal Protective Equipment (PPE) in America 
+Act. These changes are intended to ensure the sustainment and expansion 
+of domestic manufacturing for certain types of PPE critical to the 
+United States' national response to a public health crisis.
+
+DATES: The final rule is effective October 19, 2026.
+
+FOR FURTHER INFORMATION CONTACT: Shaundra Ford, Department of Homeland 
+Security, Office of the Chief Procurement Officer, Acquisition Policy 
+and Legislation, at (202) 282-8000 or email at <a href="/cdn-cgi/l/email-protection#b0f8e3f1e2f0d8c19ed4d8c39ed7dfc6"><span class="__cf_email__" data-cfemail="0b43584a594b637a256f6378256c647d">[email&#160;protected]</span></a>. Include 
+HSAR Case 2024-003 in the subject line.
+
+SUPPLEMENTARY INFORMATION: 
+
+Table of Contents for Preamble
+
+I. Background
+II. Discussion of Public Comments
+III. Final Rule
+IV. Regulatory Analyses
+    A. Executive Orders 12866, 13563, and 14094
+    B. Regulatory Flexibility Act
+    C. Paperwork Reduction Act
+    D. National Environmental Policy Act
+
+I. Background
+
+    In a Notice of Proposed Rulemaking (NPRM), published in the Federal 
+Register on October 1, 2024, the Department of Homeland Security (DHS) 
+proposed to amend the Homeland Security Acquisition Regulation (HSAR) 
+to codify how DHS complies with the requirements of the Make Personal 
+Protective Equipment (PPE) in America Act.\1\
+---------------------------------------------------------------------------
+
+    \1\ See 89 FR 79851, Homeland Security Acquisition Regulation, 
+Make Personal Protective Equipment in America Act Restrictions on 
+Foreign Acquisition (HSAR Case 2024-003) (Oct. 1, 2024)
+---------------------------------------------------------------------------
+
+    As explained in the NPRM, the Infrastructure Investment and Jobs 
+Act was signed into law on November 15, 2021.\2\ Subtitle C of title IX 
+of Division G of the Infrastructure Investment and Jobs Act is the Make 
+PPE in America Act (``MPAA'' or ``the Act'').\3\ The Act requires the 
+DHS, Department of Veterans Affairs (VA), and the U.S. Department of 
+Health and Human Services (HHS) to take certain actions to ensure the 
+sustainment and expansion of domestic manufacturing for certain types 
+of PPE critical to the United States' national response to a public 
+health crisis.\4\
+---------------------------------------------------------------------------
+
+    \2\ Infrastructure Investment and Jobs Act, Public Law 117-58, 
+135 Stat. 429 (2021).
+    \3\ Make PPE in America Act, Public Law 117-58, div. G, title 
+IX, subtitle C, sections 70951-70953, 135 Stat. 1312-1316. The Make 
+PPE in America Act is codified in 41 U.S.C. 8301 note.
+    \4\ Public Law 117-58, 135 Stat. 1312.
+---------------------------------------------------------------------------
+
+    The Act defines PPE as surgical masks, respirator masks and powered 
+air purifying respirators and required filters, face shields and 
+protective eyewear, gloves, disposable and reusable surgical and 
+isolation gowns, head and foot coverings, and other gear or clothing 
+used to protect an individual from the transmission of disease.\5\ The 
+Act requires that any contracts for the procurement of PPE entered into 
+by DHS, HHS, or VA be for PPE, including the materials and components 
+thereof, that is domestically grown, reprocessed, reused, or 
+produced.\6\ The Act also requires that these contracts with DHS, HHS, 
+or VA for PPE last at least two years in duration plus all option 
+periods necessary, to incentivize investment in the domestic production 
+of PPE and the materials and components thereof.\7\ The Act allows for 
+alternatives to domestic production under certain conditions (i.e., 
+where PPE assembled outside of the United States (U.S.) contains only 
+materials and components grown, reprocessed, reused or produced in the 
+U.S.).\8\ When using alternatives to domestic production, DHS, HHS, or 
+VA, as applicable, must certify every 120 days that alternatives to 
+domestic production are necessary to procure PPE due to the immediate 
+needs of a public health emergency.\9\ The Act further recognizes 
+certain exceptions to the domestic production of PPE, such as due to 
+nonavailability, or where the PPE cannot be procured at U.S. market 
+prices.\10\ Where DHS, HHS, or VA respectively grants an exception, 
+that Secretary would also need to certify that implementing these 
+exceptions are necessary to meet the immediate needs of a public health 
+emergency.\11\
+---------------------------------------------------------------------------
+
+    \5\ Public Law 117-58., 135 Stat. 1313.
+    \6\ Public Law 117-58, 135 Stat. 1313-14.
+    \7\ Public Law 117-58, 135 Stat. 1314.
+    \8\ Id.
+    \9\ Id.
+    \10\ Id.
+    \11\ Id.
+---------------------------------------------------------------------------
+
+    As discussed in the NPRM, the DHS Chief Procurement Officer can 
+issue HSAR deviations when necessary to allow Components to deviate 
+from the HSAR.\12\ On October 17, 2022, DHS issued a deviation 
+regarding how DHS would comply with the Make PPE in America Act 
+requirements (Deviation 23-01).\13\
+---------------------------------------------------------------------------
+
+    \12\ See HSAR Deviations, available at: <a href="https://www.dhs.gov/publication/current-hsar-deviations">https://www.dhs.gov/publication/current-hsar-deviations</a>.
+    \13\ See HSAR 3001.4 and HSAR Class Deviation 23-01 
+Implementation of the Make PPE in America Act at <a href="https://www.dhs.gov/sites/default/files/2022-10/HSARClassDeviation23-01ImplementationofMakePPEinAmericaAct-508Final.pdf">https://www.dhs.gov/sites/default/files/2022-10/HSARClassDeviation23-01ImplementationofMakePPEinAmericaAct-508Final.pdf</a>.
+---------------------------------------------------------------------------
+
+II. Discussion of Public Comments
+
+    Interested parties were given until December 2, 2024, to comment on 
+the NPRM. DHS reviewed the public comments in the development of the 
+final rule. DHS received 23 public comments. A certain number of the 
+comments received were outside the scope of the rule. A discussion of 
+the comments within the scope of the rule is provided, as follows:
+
+1. Definitions
+
+    Comment: Several commenters asked DHS to modify its definition of 
+``component,'' ``domestic personal protective equipment,'' ``foreign-
+assembled domestic personal protective equipment,'' and ``foreign 
+personal protective equipment.'' Commenters suggested including the 
+availability exception in the Act for nonavailable articles listed in 
+FAR 25.104(a) to these definitions and, for the ``foreign-assembled 
+domestic personal protective equipment,'' and ``foreign personal 
+protective equipment'' definitions, limiting the applicability of FAR 
+25.104(a) to components used in American manufacturing facilities.
+    Commenters noted the MPAA includes a nonavailability exception that 
+permits agencies to acquire covered PPE from foreign sources when 
+compliant domestic products are not available in sufficient quantity or 
+quality to meet agency requirements or are included in the nonavailable 
+articles listing in FAR 25.104(a). The commenters further stated that 
+nitrile butadiene rubber (NBR), a key raw material used to manufacture 
+nitrile gloves, is a synthetic latex rubber and therefore falls within 
+definition of ``rubber, crude, and latex'' which is currently 
+identified as nonavailable in the listing. The commenters assert that
+
+[[Page 59067]]
+
+inclusion of an express reference to FAR 25.104(a) in the ``component'' 
+definition will limit waivers from the Act's requirements that allow 
+DHS to acquire foreign-sourced nitrile gloves.
+    Additionally, the commenters stated that the existing definitions 
+of ``foreign-assembled domestic personal protective equipment,'' and 
+``foreign personal protective equipment'' circumvent the intent of the 
+Act, allowing for the offshore of manufactured items to be identified 
+as domestic and providing foreign manufacturers an advantage over 
+American manufacturers.
+    Response: DHS declines to adopt the commenters' suggestions to 
+revise the definitions to incorporate FAR 25.104(a); to otherwise 
+address the domestic nonavailability status of NBR; and to include 
+language limiting the applicability of FAR 25.104(a) to components used 
+in American manufacturing facilities.
+    First, the nonavailable articles list at FAR 25.104(a) is subject 
+to periodic review and amendment. Incorporating specific references to 
+articles identified as nonavailable under FAR 25.104(a) into the HSAR 
+could create inconsistencies if future revisions are made to the FAR. 
+DHS therefore believes it is more appropriate to rely on the existing 
+statutory and regulatory framework rather than codify specific 
+nonavailability determinations in the HSAR.
+    Second, DHS disagrees with the commenters' assertion that the 
+nonavailability exception in section 70953(d) of the MPAA applies only 
+to domestic manufacturing facilities. Section 70953(d)(1) expressly 
+provides that the requirements of sections (b) and (c) do not apply to 
+an item of personal protective equipment, or component or material 
+thereof, that is, or that includes, a material listed in FAR 25.104. 
+Accordingly, the statute expressly contemplates application of the 
+nonavailability exception to covered PPE, components, and materials, 
+including those acquired under the alternative domestic production 
+authority. Limiting the exception as suggested would be inconsistent 
+with the plain language of the Act.
+    Third, DHS does not believe that revisions to the definitions are 
+necessary to address NBR nonavailability under the Act. Since 
+implementing the MPAA in October 2022, DHS has relied on 
+nonavailability waivers to acquire nitrile gloves for a variety of 
+reasons, including limited domestic manufacturing capacity to meet DHS 
+specifications and quantity requirements; limited availability of 
+domestic nitrile gloves capable of successfully passing Transportation 
+Security Administration (TSA) testing requirements; and the lack of 
+domestic production of NBR. Prior to January 2026, DHS sourced nitrile 
+gloves from both domestic and foreign manufacturers. However, as 
+domestic manufacturing capacity expanded, DHS transitioned to sourcing 
+all nitrile glove requirements from domestic manufacturers.\14\ 
+Although domestic manufacturers continue to rely on foreign-sourced NBR 
+due to the current absence of domestic NBR production, DHS has 
+demonstrated that it can achieve its domestic sourcing objectives 
+without modifying the definitions as suggested.
+---------------------------------------------------------------------------
+
+    \14\ See, e.g., DHS waiver for nitrile butadiene rubber 
+available at <a href="https://www.madeinamerica.gov/waivers/nonavailability/6994cfdf16e70851109b4247">https://www.madeinamerica.gov/waivers/nonavailability/6994cfdf16e70851109b4247</a> (last visited Sep. 8, 2026).
+---------------------------------------------------------------------------
+
+    Moreover, whether NBR may be categorized as ``rubber, crude, and 
+latex'' under FAR 25.104(a) is not dispositive for the purposes of this 
+rule. Because NBR is not currently produced domestically, agencies 
+acquiring covered PPE that contains NBR have historically relied on the 
+MPAA's nonavailability exception and associated waiver processes to 
+support the domestic nonavailability status of NBR. DHS therefore does 
+not believe revising the definitions is necessary to address the 
+domestic nonavailability of NBR. Accordingly, DHS declines to 
+incorporate specific references to FAR 25.104(a) or NBR in the 
+regulatory definition of ``component.''
+
+2. Expand ``Restrictions'' Section To Include Additional Language
+
+    Comment: Multiple commenters requested that DHS revise HSAR 
+3025.7102-1, Restrictions, to emphasize that the MPAA prioritizes PPE 
+manufactured in the U.S. by American workers. These commenters also 
+recommended narrowing the application of waivers and exceptions to 
+ensure DHS gives preference to wholly domestic PPE supply chains and 
+manufacturing facilities. The commenters assert that DHS's proposed 
+implementation of the MPAA relies too heavily on broad waivers and 
+exceptions, which could undermine the Act's purpose of strengthening 
+domestic PPE manufacturing.
+    The commenters argued that continued reliance on foreign-
+manufactured gloves and reseller-based supply chains discourages 
+private investment in U.S. manufacturing capacity, weakens domestic 
+supply chain resilience, and places American jobs at a competitive 
+disadvantage. The commenters requested that DHS include new paragraphs 
+(c) and (d) to the restrictions listed in 3025.7102-1 as follows: ``(c) 
+The intent of the law and priority is given to American Manufacturers 
+of domestic personal protective equipment to include narrow waivers 
+focused on United States based manufacturing facilities and exceptions 
+identified herein to promote national security, support American 
+manufacturing facilities in the United States, and American workers in 
+an effort to reshore and sustain critical American manufacturing 
+capability in the United States. (d) All contract for personal 
+protective equipment, per the purpose of the, as identified in Section 
+70951 of the Make PPE in America Act which purpose is for the United 
+States to ensure a robust, secure, and wholly domestic PPE supply chain 
+to safeguard public health and national security; to further this 
+effort it provides DHS with flexibility on procurement sources as it 
+does not incorporate any requirement to use a quasi-government 
+mandatory source and thus DHS will use Small Business Sources and 
+encourage our contracting officer to actively seek out and consider 
+small businesses for contracts and American based manufacturing 
+facilities that can manufacture in the United States as priority 
+options.''
+    Finally, some commenters contended that the Act's requirements 
+should apply to ``quasi-governmental'' procurement programs and 
+recommended DHS exhaust domestic manufacturing sources before relying 
+on resellers or nonmanufacturer arrangements.
+    Response: DHS declines to add the suggested language to the 
+regulatory text in section 3025.7102-1. It is unnecessary to include 
+the purpose and intent of the statute and intent of the law in the 
+regulatory text as the regulations do not change this. Such language 
+may also cause confusion as similar language is not typically included 
+in acquisition regulations.
+    DHS also disagrees with the commenters' characterization of DHS's 
+use of waivers and exceptions under the MPAA. The Act expressly 
+contemplates the use of exceptions and waivers in specified 
+circumstances, including when compliant domestic products, components, 
+or materials are unavailable. Accordingly, DHS's use of waivers is 
+consistent with the MPAA which provides for exceptions where domestic 
+industrial capacity is not sufficient to meet agency requirements.
+    DHS further notes that the MPAA establishes domestic sourcing 
+requirements for covered PPE but does
+
+[[Page 59068]]
+
+not create separate procurement preferences based on workforce 
+composition, ownership structure, or the nationality of a 
+manufacturer's employees. Therefore, DHS declines to adopt the 
+commenters' proposed references to ``American workers'' and ``American 
+manufacturers'' in the regulatory text.
+    Finally, DHS declines to adopt the commenters' recommendation that 
+contracting officers be required to exhaust domestic manufacturers 
+before considering authorized distributors, resellers, or other 
+permissible acquisition channels. The MPAA establishes sourcing 
+requirements for covered PPE but does not prescribe particular 
+distribution channels or acquisition methodologies. Accordingly, DHS 
+does not believe such a requirement would be appropriate for inclusion 
+in the HSAR. Such inclusion could inadvertently result in noncompliance 
+with statutes governing competition in contracts which do not allow 
+blanket preference of manufacturers over distributors and resellers.
+    To the extent the commenters' references to ``quasi-government'' 
+agency program contracts are directed at the AbilityOne Program and 
+Procurement List requirements applicable to nitrile gloves, DHS notes 
+that the AbilityOne Program operates pursuant to the Javits-Wagner-
+O'Day (JWOD) Act, codified at 41 U.S.C. chapter 85, which establishes a 
+mandatory source program for certain products and services furnished by 
+qualified nonprofit agencies employing people who are blind or have 
+significant disabilities. The Committee for Purchase From People Who 
+Are Blind or Severely Disabled (operating as the AbilityOne Commission) 
+administers the program and maintains the Procurement List, accessible 
+at <a href="http://www.abilityone.gov">www.abilityone.gov</a>, identifying mandatory source products and 
+services. Federal agencies are generally required to procure listed 
+items through the designated AbilityOne nonprofit agency (NPA) or its 
+authorized distribution channels in accordance with FAR subpart 8.7 
+Acquisition from Nonprofit Agencies Employing People Who Are Blind or 
+Severely Disabled of the Federal Acquisition Regulation. Accordingly, 
+DHS is required to buy Procurement List \15\ products or services from 
+the organization designated on the Procurement List or from an 
+authorized AbilityOne distributor until: (1) the government no longer 
+has requirements for that item, or (2) an NPA employing people who are 
+blind or have significant disabilities can no longer furnish that item. 
+This requirement remains unchanged by the MPAA.
+---------------------------------------------------------------------------
+
+    \15\ See 41 U.S.C. chapter 85, FAR subpart 8.7, and the 
+Procurement List at <a href="https://www.abilityone.gov/procurement_list/index.html">https://www.abilityone.gov/procurement_list/index.html</a>.
+---------------------------------------------------------------------------
+
+    It appears some commenters incorrectly believe DHS is using the 
+fact that nitrile gloves are a Procurement List item to circumvent the 
+requirements of the MPAA. Upon implementation of the Act, DHS 
+immediately extended the requirements of the MPAA to nitrile glove 
+purchases from AbilityOne. DHS's reliance on waivers to acquire nitrile 
+gloves had nothing to do with the fact that these items are sourced 
+through AbilityOne. DHS used waivers to acquire nitrile gloves for a 
+variety of reasons, including limited domestic manufacturing capacity 
+to meet DHS specifications and quantity requirements, limited 
+availability of domestic nitrile gloves capable of successfully passing 
+TSA testing requirements, and the lack of domestic production of NBR. 
+Prior to January 2026, DHS sourced nitrile gloves from both domestic 
+and foreign manufacturers. However, as domestic manufacturing capacity 
+expanded, DHS transitioned to sourcing all nitrile glove requirements 
+from domestic manufacturers. The transition to sourcing 100 percent of 
+DHS's nitrile gloves to domestic manufacturers is largely attributable 
+to the partnership between DHS and our AbilityOne NPA. Accordingly, DHS 
+declines to adopt the suggestion as it is not needed to achieve its 
+domestic sourcing objectives.
+
+3. Exceptions Language
+
+    Comment: Several commenters asserted that section 70953(d)(1)(A) of 
+the MPAA expressly incorporates the nonavailability determinations 
+contained in FAR 25.104(a) and therefore excludes covered PPE component 
+and materials identified on that list from the Act's domestic sourcing 
+requirements. The commenters argued that DHS should revise HSAR 
+3025.7102-2 to clarify that materials such as NBR are automatically 
+exempt from the Act when used in PPE manufactured in the United States 
+and that no additional nonavailability determination or waiver should 
+be required.
+    Response: DHS declines the commenters' request to modify section 
+3025.7102-2 to include reference to FAR 25.104 or otherwise address the 
+domestic nonavailability status of NBR. The nonavailable articles list 
+at FAR 25.104 is subject to periodic review and amendment. 
+Incorporating specific references to articles identified as 
+nonavailable under FAR 25.104 into the HSAR could create 
+inconsistencies if future revisions are made to the FAR. DHS therefore 
+believes it is more appropriate to rely on the existing statutory and 
+regulatory framework rather than codify specific nonavailability 
+determinations in the HSAR. DHS also disagrees with the commenters' 
+assertion that the inclusion of a material, component, or supply on the 
+FAR 25.104 nonavailability list automatically eliminates the need for 
+agencies to comply with the Act's exception procedures. While section 
+70953(d)(1)(A) references articles, materials, and supplies identified 
+in FAR 25.104, DHS does not believe it is necessary or appropriate to 
+incorporate those determinations directly into HSAR. The existing 
+statutory and regulatory framework provides sufficient flexibility to 
+address nonavailable materials and components without creating separate 
+regulatory provisions for specific items in FAR 25.104. Additionally, 
+because NBR is not currently produced domestically, agencies acquiring 
+covered PPE that contains NBR have historically relied on the MPAA's 
+nonavailability exception and associated waiver processes to address 
+the lack of a domestic source. DHS therefore does not believe inclusion 
+of the requested language is necessary to address the current domestic 
+nonavailability of NBR.
+
+4. HSAR 3052.225-7X Make PPE in America
+
+    Comment: Multiple commenters requested DHS revise 3025.7102-2(b) to 
+clarify treatment of components and materials identified as 
+nonavailable under FAR 25.104. The commenters' asserted that PPE 
+manufactured in the United Sates should remain compliant with the MPAA 
+when it contains components or materials listed in FAR 25.104, 
+including NBR. The commenters also proposed revising the paragraph to 
+expressly recognize component-specific waivers and nonavailability 
+determinations when evaluating compliance with the Act's domestic 
+sourcing requirements as follows: ``(b) The Contractor shall deliver 
+only domestic personal protective equipment except the domestic 
+manufactured products include component items except under the FAR 
+25.104 or the agency provides a specific component waiver for domestic 
+manufactured personal protective equipment or to the extent that it 
+specified delivery of foreign-assembled domestic personal protective 
+equipment in the provision of the solicitation entitled ``Make PPE in 
+America Certificate.''
+
+[[Page 59069]]
+
+    Response: Although the commenter cited HSAR 3025.7102-2(b), DHS 
+understands the comment as requesting revisions to the clause at HSAR 
+3052.225-7X based on the proposed clause language provided. 
+Notwithstanding this, DHS declines to make this change to the clause. 
+The regulatory text at 3025.7102-2 makes clear the applicability of the 
+exception at FAR 25.104. Therefore, including a reference to the 
+nonavailable articles listing in FAR 25.104 in the clause text is 
+unnecessary and redundant.
+    DHS also declines to incorporate references to specific 
+nonavailable materials, component-specific waivers, or component-level 
+nonavailability determinations into the clause. The purpose of the 
+clause is to implement the contractor's obligation to provide covered 
+PPE that complies with statutory and regulatory requirements applicable 
+to the acquisition. The clause is not intended to restate all 
+exceptions, waiver authorities, and nonavailability determination that 
+may apply under the Act or related regulations. Those matters are 
+addressed elsewhere in the statutory and regulatory framework, 
+including HSAR 3025.7102-2. Accordingly, DHS believes the existing 
+clause adequately implements the Act without the proposed revisions.
+
+5. AbilityOne and Similar Network Providers
+
+    Comment: One commenter requested creation of a specific category to 
+clarify the status of PPE repackaging operations under programs like 
+AbilityOne, ensuring transparency and alignment with domestic 
+manufacturing priorities. The commenter asserts this refinement would 
+ensure alignment with industry practices and the intent of the Act.
+    The commenter also recommended DHS explicitly address AbilityOne 
+exceptions within the order of precedence framework, stating that the 
+Department's current model allows for foreign-produced PPE to receive 
+preference through AbilityOne repackaging operations, undermining the 
+intent of the MPAA. The commenter further stated this is particularly 
+relevant for nitrile gloves, where certain providers import bulk 
+products from Malaysia for domestic repackaging. To prevent this from 
+happening, the commenter stated waiver usage should be narrowly 
+tailored to support U.S. manufacturers utilizing TAA-compliant 
+components rather than allowing broad allowances that benefit foreign 
+producers.
+    Response: DHS declines the commenter's recommendation to create a 
+specific category for repackaging operations under programs like 
+AbilityOne. DHS also declines to explicitly identify AbilityOne in the 
+order of preference framework and disagrees that the current model 
+allows for foreign-produced PPE to receive preference through 
+AbilityOne repackaging operations.
+    The AbilityOne Program operates pursuant to the JWOD Act, codified 
+at 41 U.S.C. chapter 85, which establishes a mandatory source program 
+for certain products and services furnished by qualified nonprofit 
+agencies employing people who are blind or have significant 
+disabilities. The Committee for Purchase From People Who Are Blind or 
+Severely Disabled (operating as the AbilityOne Commission) administers 
+the program and maintains the Procurement List, accessible at 
+<a href="http://www.abilityone.gov">www.abilityone.gov</a>, identifying mandatory source products and services. 
+Federal agencies are generally required to procure listed items through 
+the designated AbilityOne NPA or its authorized distribution channels 
+in accordance with FAR subpart 8.7 Acquisition from Nonprofit Agencies 
+Employing People Who Are Blind or Severely Disabled of the Federal 
+Acquisition Regulation.
+    Nitrile gloves are a Procurement List item for the Department. DHS 
+is required to buy Procurement List products or services from the 
+organization designated on the Procurement List or from an authorized 
+AbilityOne distributor until: (1) the government no longer has 
+requirements for that item, or (2) an NPA employing people who are 
+blind or have significant disabilities can no longer furnish that item. 
+This requirement remains unchanged by the MPAA.
+    As previously stated, it appears some commenters incorrectly 
+believe DHS is using the fact that nitrile gloves are a Procurement 
+List item to circumvent the requirements of the MPAA. Upon 
+implementation of the Act, DHS immediately extended the requirements of 
+the MPAA to nitrile glove purchases from AbilityOne. DHS's reliance on 
+waivers to acquire nitrile gloves was unrelated to the items being 
+sourced through AbilityOne. DHS used waivers to acquire nitrile gloves 
+for a variety of reasons, including limited domestic manufacturing 
+capacity to meet DHS specifications and quantity requirements, limited 
+availability of domestic nitrile gloves capable of successfully passing 
+TSA testing requirements, and the lack of domestic production of NBR. 
+Prior to January 2026, DHS sourced nitrile gloves from both domestic 
+and foreign manufacturers. However, as domestic manufacturing capacity 
+expanded, DHS transitioned to sourcing all nitrile glove requirements 
+from domestic manufacturers. The transition to sourcing 100 percent of 
+DHS's nitrile gloves to domestic manufacturers is largely attributable 
+to the partnership between DHS and our AbilityOne NPA. Accordingly, DHS 
+declines to adopt the suggestions as they are not needed to achieve its 
+domestic sourcing objectives.
+
+6. Domestic PPE Categories
+
+    Comment: One commenter asked DHS to split ``domestic personal 
+protective equipment'' into two distinct categories, i.e., ``wholly 
+domestic PPE'' for items manufactured entirely in the United States and 
+``domestically manufactured PPE'' for items like nitrile gloves that 
+currently require some imported raw materials. The commenter requested 
+that the ``domestically manufactured PPE'' category explicitly 
+recognize FAR 25.104(a) exceptions for materials like NBR, allowing 
+sourcing from Trade Agreements Act (TAA)-compliant countries without 
+penalty while maintaining domestic manufacturing status.
+    Response: DHS declines to create sub-categories for domestic 
+personal protective equipment. For the purposes of the MPAA, PPE is 
+either domestic, foreign-assembled domestic, or foreign. These 
+definitions were established for consistency with the MPAA which 
+requires purchase of domestic PPE and use of alternative domestic 
+sources when domestic PPE is not available. An additional defined 
+category of PPE is not necessary to implement the availability 
+exception regarding FAR 25.104. Notwithstanding this, the nonavailable 
+articles list at FAR 25.104 is subject to periodic review and 
+amendment.
+    Incorporating specific references to articles identified as 
+nonavailable under FAR 25.104 into the HSAR could create 
+inconsistencies if future revisions are made to the FAR. DHS therefore 
+believes it is more appropriate to rely on the existing statutory and 
+regulatory framework rather than codify specific nonavailability 
+determinations in the HSAR.
+
+7. Exception Criteria for Nonavailability and Unreasonable Cost
+
+    Comment: One commenter requested DHS provide additional guidance 
+regarding the applicability of the nonavailability and unreasonable 
+cost exceptions. Specifically, the commenter recommended: (1) 
+establishing objective quality standards and qualification benchmarks 
+for evaluating nonavailability determinations; (2) adopting defined 
+methodologies and
+
+[[Page 59070]]
+
+thresholds for determining when costs are unreasonable, including 
+consideration of total cost of ownership and reliability factors; and 
+(3) clarifying materials and components identified as nonavailable 
+under FAR 25.104, including NBR, are exempt from the Act's domestic 
+sourcing requirements when incorporated into PPE manufactured in the 
+United States.
+    Response: DHS declines the commenter's recommendation to identify 
+specific quality standards under the exception criteria for 
+nonavailability and unreasonable cost. First, the MPAA provides 
+explicit instruction on the use of the nonavailability exception. 
+Second, DHS does not perform subjective quality assessments and instead 
+relies on established PPE specifications. DHS PPE specifications are 
+based on standards promulgated by either the American National 
+Standards Institute (ANSI), American Society for Testing and Materials 
+(ASTM), or National Institute for Occupational Safety and Health 
+(NIOSH), and regarding nitrile gloves, TSA-specific testing for 
+interference with explosives detection equipment/machines before use. 
+DHS specifications for PPE have been shared with industry multiple 
+times via industry meetings and postings to <a href="http://SAM.gov">SAM.gov</a>. As such, it is 
+clear DHS does not rely on subjective quality standards.
+    Regarding identification of a specific methodology for determining 
+whether an item is being provided at an unreasonable cost, DHS declines 
+the commenter's recommendation. DHS intentionally refrained from 
+identifying a specific calculation methodology to allow more 
+flexibility for DHS and to minimize unfavorable impacts to industry. 
+This flexibility is needed due to fluctuating market conditions that 
+could result in the use of unreasonable cost determinations too 
+frequently. Additionally, given DHS acquires these items on a firm 
+fixed price basis, we would not review the individual cost elements 
+associated with the final price of the item. Notwithstanding this, to 
+date DHS has not used the unreasonable cost exception to acquire 
+personal protective equipment covered under this rulemaking.
+    DHS declines to further identify that the requirements of the MPAA 
+do not apply to PPE, or a component or material thereof, that is or 
+includes a material on the nonavailable articles listing in FAR 
+25.104(a) or limit the applicability of the exception to U.S.-based 
+manufacturing facilities. The nonavailability exception is already 
+addressed in the regulatory text. Specifically, section 3025.7102-
+2(b)(1) states that the purchase restrictions of the MPAA do not apply 
+to PPE, or component thereof, ``that is, or that includes, a material 
+listed in FAR 25.104 as one for which a nonavailability determination 
+has been made.'' Accordingly, DHS concludes the proposed revisions are 
+unnecessary because the existing regulatory text already implements the 
+statutory nonavailability exception and appropriately addresses 
+materials identified in FAR 25.104.
+
+8. Implementation Timeline
+
+    Comment: One commenter stated that the proposed implementation 
+timeline appears workable provided DHS maintains clear communication 
+with industry and allows reasonable adjustment periods for 
+manufacturers to scale production. The commenter recommended: (1) a 
+phased approach to domestic content requirements, particularly for 
+items requiring development of domestic raw material sources; (2) 
+ongoing engagement with manufacturers to address implementation 
+challenges and refine guidance as needed; and (3) clear instructions 
+regarding certification and compliance documentation to minimize 
+administrative burdens.
+    Response: DHS appreciates the commenter's support for the proposed 
+implementation timeline and agrees that continued communication with 
+industry and clear compliance guidance are important to successful 
+implementation of the Act. The MPAA directs agencies to implement the 
+contract requirements beginning 90 days after the enactment of the Act. 
+Accordingly, DHS lacks authority to phase in domestic sourcing 
+requirements beyond the implementation framework established by 
+Congress. As such, a phased approach to domestic content requirements 
+is not possible. However, the Act authorizes the use of exceptions and 
+waivers when covered PPE is unavailable from domestic sources or 
+available only at an unreasonable cost, providing flexibility where 
+domestic industrial capacity cannot meet requirements.
+    DHS has established forums for ongoing engagement with industry on 
+a variety of procurement topics, including the MPAA. Additionally, DHS 
+waivers under the MPAA are publicly posted at <a href="http://MadeinAmerica.gov">MadeinAmerica.gov</a>. DHS 
+intends to continue engaging with industry and other stakeholders 
+regarding implementation of the Act and related acquisition 
+requirements.
+    The provision at 3052.225-7Y Make PPE in America Certificate 
+clearly articulates how contractors must certify compliance with MPAA 
+requirements, including requesting identification of the line item for 
+the covered PPE item(s) identifies and the country of assembly. DHS 
+believes the existing certification provision, together with publicly 
+available solicitation and contract documentation, provides sufficient 
+guidance regarding compliance with the Act and does not require further 
+revision as part of this rulemaking.
+
+9. Tiered Sourcing Hierarchy
+
+    Comment: One commenter urged DHS to adopt a tiered sourcing 
+hierarchy that prioritizes domestic PPE manufacturing to the greatest 
+extent possible before allowing waivers under the MPAA. Specifically 
+the commenter recommends DHS: (1) give first priority to PPE 
+manufactured in the United States using domestically sourced 
+components; (2) allow U.S.-manufactured PPE using TAA-country 
+components when required components are not available domestically, 
+without requiring a waiver; (3) allow U.S.-manufactured PPE using non-
+TAA foreign components when domestic or TAA-sourced components are 
+unavailable, without requiring a waiver; (4) permit waivers for 
+foreign-manufactured PPE from TAA countries only after domestic 
+manufacturing options have been exhausted; and (5) permit waivers for 
+non-TAA foreign-manufactured PPE only as a last resort when no domestic 
+or TAA-country sources are available. The commenter argues this 
+approach would better advance the MPAA's objective of strengthening 
+domestic PPE manufacturing by prioritizing U.S.-based production and 
+employment while recognizing the practical reality that certain 
+components, such as NBR, may not be available from domestic sources.
+    Response: DHS declines to adopt the commenter's proposed 
+restrictions on when a waiver may be used or establish the proposed 
+sourcing hierarchy. The circumstances under which an exception may be 
+used are defined in the MPAA. The Act requires agencies to prioritize 
+the acquisition of covered PPE manufactured in the United States and 
+authorizes the use of exceptions when covered PPE is unavailable or 
+available only at an unreasonable cost. Nothing in the Act directs 
+agencies to create additional tiers of preference among otherwise 
+permissible sources or exhaust particular categories of suppliers 
+before relying on a statutory exception.
+    DHS has nevertheless taken an additional step beyond the 
+requirements
+
+[[Page 59071]]
+
+of the MPAA by requiring procurement of either Buy American statute 
+compliant or TAA-compliant PPE, depending on the dollar value of the 
+procurement, when MPAA compliant PPE is not available. This approach 
+ensures domestically manufactured PPE receives first consideration and 
+that Buy American statute compliant or TAA-compliant PPE is acquired 
+when MPAA compliant PPE cannot be obtained due to nonavailability or 
+unreasonable cost.
+    DHS also declines to adopt the proposed hierarchy because it does 
+not account for all circumstances in which the Act authorizes use of an 
+exception, including situations involving either nonavailability or 
+unreasonable cost. Further, the proposed hierarchy does not account for 
+agency-specific performance requirements that may affect the 
+availability of compliant PPE, such as the TSA testing requirements 
+applicable to nitrile gloves.
+    Notwithstanding this, DHS has only used the nonavailability 
+exception when sourcing nitrile gloves and only when necessary to meet 
+mission requirements. To date, DHS has relied on the nonavailability 
+exception to cover a portion of DHS's nitrile glove demand. Prior to 
+January 2026, DHS sourced nitrile gloves from both domestic and foreign 
+manufacturers. However, as domestic manufacturing capacity expanded, 
+DHS transitioned to sourcing all nitrile glove requirements from 
+domestic manufacturers.
+    Accordingly, DHS declines to adopt the proposed sourcing hierarchy 
+and believes the final rule appropriately implements the statutory 
+framework established by Congress while preserving the flexibility 
+necessary to address nonavailability, unreasonable cost, agency mission 
+requirements, and changing market conditions.
+
+10. Prioritization
+
+    Comment: One commenter asked DHS to prioritize American-made 
+products in government procurement decisions and carefully consider 
+prioritizing products fully manufactured in the United States, but that 
+might use certain raw materials unavailable domestically, from Trade 
+Act compliant nations.
+    Response: DHS already prioritizes wholly domestically manufactured 
+PPE. When these items are not available, either due to nonavailability 
+or unreasonable cost, DHS seeks to acquire either a Buy American 
+statute compliant or TAA-compliant item.
+
+11. Out of Scope
+
+    Comment: Some commenters requested that DHS revise the regulatory 
+text to encourage contracting officers to seek out domestic 
+manufacturers, including small businesses, when acquiring covered PPE.
+    Response: These suggestions are beyond the scope of this rule. This 
+rule is about implementing the MPAA. The MPAA does not include 
+provisions regarding small business participation and the NPRM did not 
+propose requirements involving small business participation.
+
+III. Final Rule
+
+    This final rule amends the HSAR at 48 CFR part 3025, Foreign 
+Acquisition, and at 48 CFR part 3052, Solicitation Provisions and 
+Contract Clauses. The rule adds a new HSAR subpart, an HSAR clause, and 
+an HSAR provision which codifies how DHS complies with the Act. These 
+changes also codify the requirements from Deviation 23-01. Each of 
+these amendments are described in detail in the following paragraphs.
+    This final rule adds new subpart 3025.71, Make PPE in America Act 
+Restrictions on Foreign Acquisition, to the HSAR, codifying the 
+restrictions in Deviation 23-01 applicable to the acquisition of 
+certain PPE consistent with the Act. These restrictions include minimum 
+time periods for contract duration, content requirements for certain 
+PPE, alternatives to domestic production when conforming PPE is not 
+available, and exceptions when conforming PPE is either nonavailable or 
+cannot be procured at U.S. market prices (or in other words, only 
+available at an unreasonable cost).
+    This rule also codifies the definitions of terms used in Deviation 
+23-01.\16\ These terms are ``component,'' ``domestic personal 
+protective equipment,'' ``foreign-assembled domestic personal 
+protective equipment,'' ``foreign personal protective equipment,'' 
+``personal protective equipment,'' and ``United States.''
+---------------------------------------------------------------------------
+
+    \16\ See 48 CFR 3025.7101.
+---------------------------------------------------------------------------
+
+    Additionally, this rule applies to all types of actions, orders, 
+option exercises, and contracts awarded and administered by DHS. It 
+requires contracting officers to purchase domestic PPE except for when 
+certain exceptions, specified in HSAR 3025.7102-2, apply and also 
+requires that any contract for PPE has a base period of performance of 
+at least two years, plus option periods.
+    HSAR 3025.7102-2 codifies the conditions under which acquisitions 
+of PPE, or component thereof, are excepted from the requirements of 
+HSAR 3025.7102-1 (i.e., alternatives to domestic production, 
+nonavailability, and unreasonable cost) consistent with Deviation 23-
+01.
+    This final rule further codifies the clauses and provisions that 
+apply when an exception due to nonavailability or unreasonable cost is 
+used, as listed in Deviation 23-01.\17\ Additionally, this final rule 
+codifies HSAR 3025.7103, HSAR clause 3052.225-7X, Make PPE in America, 
+and HSAR provision HSAR 3052.225-7Y, Make PPE in America Certificate. 
+The final rule makes a technical edit to consistently use the term 
+``DHS Chief Procurement Officer'' where applicable. Otherwise, DHS 
+adopts the NPRM as final, amending 48 CFR part 3025, Foreign 
+Acquisitions, and 48 CFR part 3052, Solicitation Provisions and 
+Contract Clauses.
+---------------------------------------------------------------------------
+
+    \17\ See 48 CFR 3025.7102-3.
+---------------------------------------------------------------------------
+
+IV. Regulatory Analyses
+
+A. Executive Orders 12866, 13563, and 14192
+
+    Executive Orders 12866 (Regulatory Planning and Review) and 13563 
+(Improving Regulation and Regulatory Review) direct agencies to assess 
+the costs and benefits of available regulatory alternatives and, if 
+regulation is necessary, to select regulatory approaches that maximize 
+net benefits. Executive Order 13563 emphasizes the importance of 
+quantifying both costs and benefits, of reducing costs, of harmonizing 
+rules, and of promoting flexibility. Executive Order 14192 (Unleashing 
+Prosperity Through Deregulation) directs agencies to significantly 
+reduce the private expenditures required to comply with Federal 
+regulations and provides that ``any new incremental costs associated 
+with new regulations shall, to the extent permitted by law, be offset 
+by the elimination of existing costs associated with at least 10 prior 
+regulations.''
+    The Office of Management and Budget (OMB) has not designated this 
+rule a significant regulatory action under section 3(f) of Executive 
+Order 12866. Accordingly, OMB has not reviewed this regulatory action. 
+This rule is not an Executive Order 14192 regulatory action because 
+this rule is not significant under Executive Order 12866. See OMB 
+Memorandum M-25-20, ``Guidance Implementing Section 3 of Executive 
+Order 14192, titled `Unleashing Prosperity Through Deregulation''' 
+(Mar. 26, 2025).
+Need for the Rule
+    This final rule codifies the requirements as set forth in the Act 
+and Deviation 23-01. DHS is updating the Homeland Security Acquisition
+
+[[Page 59072]]
+
+Regulation (HSAR) to align with current DHS practice in Deviation 23-
+01. This rule provides for consistency between the Act and the HSAR.
+Benefits and Costs of the Final Rule
+    The benefits and costs of a regulation are generally measured 
+against a no-action baseline, which is a reasonable forecast of the way 
+the world would look absent the regulatory action being assessed.\18\ 
+As the final rule aligns the regulations with DHS current practice, it 
+does not result in additional costs for the Federal Government. The 
+rule codifies the requirement for contactors to submit a Make PPE in 
+America Certificate, only in the situation when the contractor is 
+proposing foreign-assembled domestic PPE. DHS already included this 
+contractor requirement to certify compliance in Deviation 23-01. 
+Because DHS contractors already comply with Deviation 23-01, they would 
+not incur new costs due to this rule.
+---------------------------------------------------------------------------
+
+    \18\ See OMB Circular A-4, p., 15 (September 17, 2003) 
+(accessible at accessible at <a href="https://www.whitehouse.gov/wp-content/uploads/2025/08/CircularA-4.pdf/">https://www.whitehouse.gov/wp-content/uploads/2025/08/CircularA-4.pdf/</a>).
+---------------------------------------------------------------------------
+
+    However, Deviation 23-01, which is how DHS complies with the 
+requirements of the Act, may cause DHS to incur additional costs in the 
+form of higher prices for domestically produced PPE compared to 
+foreign-produced PPE. Future DHS procurement price differences between 
+domestic and foreign-sourced PPE are difficult to accurately estimate. 
+External factors (outside of the Act's requirement) may influence 
+prices. For example, U.S. Government investments in domestic PPE 
+production could factor into domestic production costs and prices. 
+There is uncertainty on foreign governments investment in foreign PPE 
+production which would impact foreign prices. An analysis of PPE would 
+have to be conducted by type of PPE, such as the domestic and foreign 
+prices of masks, protective eyewear, or gloves. Further, DHS has 
+specific requirements in certain procurements such as gloves (i.e., 
+testing for interference with explosive equipment and protection 
+against Fentanyl exposure) that would need to be considered in any 
+price comparisons.\19\ Another factor that would be difficult to 
+address in direct price comparisons is product differences. There are 
+no internationally agreed upon guidelines or standards of what specific 
+products make up PPE categories, complicating product comparisons.\20\
+---------------------------------------------------------------------------
+
+    \19\ DHS, White Paper: Current State of Personal Protective 
+Equipment Procurement by Make PPE in America Act Covered Agencies. 
+3-4 (March 13, 2024).
+    \20\ ``For example, KN95 respirator masks- China made analogues 
+to domestically regulated N-95 respirators- are generally not 
+authorized as medical PPE in the United States. KN95 are authorized 
+in many countries abroad and received temporary (and limited) 
+Emergency Use Authorization from the [U.S. Food and Drug 
+Administration] FDA.'' FDA, Certain Filtering Facepiece Respirators 
+from China May Not Provide Adequate Respiratory Protection--Letter 
+to Health Care Providers, October 15, 2020, at <a href="https://www.fda.gov/medical-devices/letters-health-care-providers/certain-filtering-facepiece-respirators-china-may-not-provide-adequate-respiratory-protection-letter">https://www.fda.gov/medical-devices/letters-health-care-providers/certain-filtering-facepiece-respirators-china-may-not-provide-adequate-respiratory-protection-letter</a>.
+---------------------------------------------------------------------------
+
+    Consequently, due to the lack of specific data, complexity of 
+various factors, and uncertainty of external price influences, DHS is 
+not able to estimate the long-run additional DHS cost of an increased 
+shift to domestic PPE procurements due to the requirements of the Act. 
+Importantly, DHS has already complied with the requirements of the Act 
+through Deviation 23-01 and subsequent contract changes.
+    Congress recognized the need for the United States to have a 
+robust, secure, and wholly domestic PPE supply chain to safeguard 
+public health and national security.\21\ This final rule codifies the 
+statutory requirements that support the sustainment of the U.S. PPE 
+supply chain. This final rule would provide the clarification benefit 
+of consistency and transparency for contractors and DHS contracting 
+officers.
+---------------------------------------------------------------------------
+
+    \21\ Public Law 117-58, 135 Stat. 1313.
+---------------------------------------------------------------------------
+
+B. Regulatory Flexibility Act
+
+    The Regulatory Flexibility Act of 1980, 5 U.S.C. 601 et seq., as 
+amended by the Small Business Regulatory Enforcement Fairness Act of 
+1996, Public Law 104-121 (Mar. 29, 1996), requires Federal agencies 
+engaged in rulemaking to consider the economic impacts of their rules 
+on small entities. A small entity may be a small business (defined as 
+any independently owned and operated business not dominant in its field 
+that qualifies as a small business per the Small Business Act); a small 
+not-for-profit organization; or a small governmental jurisdiction 
+(locality with fewer than 50,000 people). This final rule will provide 
+clarity and consistency between the HSAR and existing DHS practice as 
+set forth in Deviation 23-01. Contractors currently provide the Make 
+PPE in America Certificate in compliance with Deviation 23-01. The Make 
+PPE in America Certificate is required only if the offeror is proposing 
+foreign-assembled domestic PPE. DHS estimates the contractor burden 
+based on experience from subject matter experts familiar with Deviation 
+23-01. DHS estimates it will take a contractor 15 minutes to identify 
+any foreign-assembled domestic PPE items it is offering and complete 
+the Make PPE in America Certificate. DHS assumes an estimated hourly 
+compensation rate of $57.95 for the time burden.\22\ The time burden 
+cost per certificate would be $14.49 (15 minutes x $57.95).
+---------------------------------------------------------------------------
+
+    \22\ The average hourly earnings are based upon the U.S. 
+Department of Labor, Bureau of Labor Statistics' website 
+(<a href="http://www.bls.gov">www.bls.gov</a>). The wage rate category selected is for Business and 
+Financial Operations Occupations (13-0000), May 2022. The rate is 
+estimated to be $57.95 ($41.39 x 1.4), which includes the wage rate 
+multiplier.
+---------------------------------------------------------------------------
+
+    Based on the estimated cost of $14.49 per certificate, DHS assumes 
+this cost would not be a significant economic impact on a small entity 
+affected by the final rule. DHS also believes that contractors 
+generally pass along the cost of complying with DHS contracting 
+requirements to DHS. Therefore, DHS certifies under 5 U.S.C. 605(b) 
+that this final rule would not have a significant economic impact on a 
+substantial number of small entities.
+
+C. Paperwork Reduction Act
+
+    The Paperwork Reduction Act of 1995 (PRA) (44 U.S.C. 3501 et seq.) 
+requires that DHS consider the impact of paperwork and other 
+information collection burdens imposed on the public and, under the 
+provisions of 44 U.S.C. 3507(d), obtain approval from the OMB for each 
+collection of information it conducts, sponsors, or requires through 
+regulations. This final rule contains information collection 
+requirements. Accordingly, DHS is updating OMB No. 1600-0005, 
+Solicitation of Proposal Information for Award of Public Contracts.
+    The collection requirements for this final rule are nominal and 
+based on the new provision, 3052.225-7Y, Make PPE in America 
+Certificate.
+Overview of Information Collection
+    (1) Type of Information Collection: Modification to Existing 
+Collection.
+    (2) Title of the Form/Collection: Solicitation of Proposal 
+Information for Award of Public Contracts.
+    (3) Agency form number, if any, and the applicable component of DHS 
+sponsoring the collection: No form; OCPO.
+    (4) Affected public who will be asked or required to respond; as 
+well as a brief abstract: The affected public is business or other for-
+profit institutions. DHS needs the information required by provision 
+3052.225-72 to assess contractor compliance with the Make PPE in 
+America Act. Responses are required for respondents to obtain or retain 
+benefits.
+
+[[Page 59073]]
+
+    (5) An estimate of the total number of respondents and the amount 
+of time estimated for an average respondent to respond: The estimated 
+number of respondents for reporting is 0.08. This number is nominal 
+because a response to this provision is required only if the offeror is 
+proposing foreign-assembled domestic PPE. Such response should be rare, 
+because the offeror of such products is unlikely to receive an award, 
+unless no offers for domestic PPE are received. In Fiscal Year (FY) 
+2022, DHS awarded 8 contracts for domestic PPE. DHS estimates it will 
+receive ten offers per solicitation. Using the number of contracts 
+awarded in FY 2022, DHS estimates it received 80 offers. DHS estimates 
+0.2 percent of offers, or 0.16 responses, will include foreign-
+assembled domestic protective equipment. The average number of 
+responses per respondent is two or 0.08 respondents. DHS estimates it 
+will take each respondent 15 minutes to complete the certificate. These 
+numbers are not unusual given that DHS awarded a mandatory for use, 
+Departmentwide contract for domestic PPE in March of 2022 and the 
+requirements of provision 3052.225-72 Make PPE in America Certificate 
+were satisfied at the contract level. Standalone contracts are awarded 
+only when the domestic PPE needed is not available under the 
+Departmentwide contract.
+    (6) An estimate of the total public burden (in hours) associated 
+with the information collection: The total estimated annual hour burden 
+associated with this collection is 0.033 hours or 2 minutes.
+    (7) An estimate of the total public burden (in cost) associated 
+with the information collection: The estimated total annual cost burden 
+associated with this collection of information is $2.32.
+
+D. National Environmental Policy Act
+
+    DHS and its components analyze regulatory actions to determine 
+whether the National Environmental Policy Act (NEPA), 42 U.S.C. 4321 et 
+seq., applies to them and, if so, what degree of analysis is required. 
+DHS Directive 023-01 Rev. 01 ``Implementing the National Environmental 
+Policy Act'' (Dir. 023-01 Rev. 01) and Instruction Manual 023-01-001-01 
+Rev. 01 (Instruction Manual) \23\ establish the policies and procedures 
+that DHS and its components use to comply with NEPA.
+---------------------------------------------------------------------------
+
+    \23\ The Instruction Manual, which contains DHS's procedures for 
+implementing NEPA, was issued on November 6, 2014, and is available 
+at <a href="https://www.dhs.gov/ocrso/eed/epb/nepa">https://www.dhs.gov/ocrso/eed/epb/nepa</a> (last modified July 29, 
+2025).
+---------------------------------------------------------------------------
+
+    NEPA allows Federal agencies to establish, in their NEPA 
+implementing procedures, categories of actions (``categorical 
+exclusions'') that experience has shown do not, individually or 
+cumulatively, have a significant effect on the human environment and, 
+therefore, do not require an environmental assessment or environmental 
+impact statement. See 42 U.S.C. 4336(a)(2), 4336e(1). The Instruction 
+Manual, Appendix A lists the DHS Categorical Exclusions.\24\
+---------------------------------------------------------------------------
+
+    \24\ See Appendix A, Table 1.
+---------------------------------------------------------------------------
+
+    Under DHS NEPA implementing procedures, for an action to be 
+categorically excluded, it must satisfy each of the following three 
+conditions: (1) the entire action clearly fits within one or more of 
+the categorical exclusions; (2) the action is not a piece of a larger 
+action; and (3) no extraordinary circumstances exist that create the 
+potential for a significant environmental effect.\25\
+---------------------------------------------------------------------------
+
+    \25\ Instruction Manual 023-01 at V.B(2)(a)-(c).
+---------------------------------------------------------------------------
+
+    The final rule amends the HSAR to better clarify how DHS complies 
+with the Make PPE in America Act, and codifies Deviation 23-01 that is 
+currently in effect. DHS is not aware of any significant impact on the 
+environment, or any change in environmental effect that will result 
+from this final rule.
+    DHS has reviewed this final rule and finds that no significant 
+impact on the environment, or any change in environmental effect will 
+result from the amendments being promulgated in this final rule. 
+Accordingly, DHS finds that the promulgation of this final rule clearly 
+fits within categorical exclusion A3, established in the DHS's NEPA 
+implementing procedures as an administrative change with no change in 
+environmental effect, is not part of a larger Federal action, and does 
+not present extraordinary circumstances that create the potential for a 
+significant environmental effect. Therefore, this final rule is 
+categorically excluded from further NEPA review.
+
+List of Subjects in 48 CFR Parts 3025 and 3052
+
+    Government procurement.
+
+    Accordingly, for the reasons set forth in the preamble, DHS amends 
+48 CFR parts 3025 and 3052 as follows:
+
+PART 3025--FOREIGN ACQUISITION
+
+0
+1. The authority citation for part 3025 is revised to read as follows:
+
+    Authority:  5 U.S.C. 301-302, 41 U.S.C. 1303, 41 U.S.C. 1707, 41 
+U.S.C. 1702, 41 U.S.C. 8301 note, 48 CFR part 1, subpart 1.3, DHS 
+Delegation No. 00701, Revision No. 03.2, paragraphs (III)(H), and 
+DHS Delegation No. 00702, Revision No. 01.2, paragraphs (III)(M).
+
+0
+2. Add subpart 3025.71 to read as follows:
+
+Subpart 3025.71--Make PPE in America Act Restrictions on Foreign 
+Acquisition
+
+Sec.
+3025.7100 Scope of subpart.
+3025.7101 Definitions.
+3025.7102 Restrictions on certain personal protective equipment.
+3025.7102-1 Restrictions.
+3025.7102-2 Exceptions.
+3025.7102-3 Specific application of the Buy American statute and 
+Trade Agreements Act.
+3025.7103 Solicitation provisions and contract clauses.
+
+
+3025.7100  Scope of subpart.
+
+    This subpart contains restrictions on the acquisition of certain 
+personal protective equipment (PPE) imposed by the Make PPE in America 
+Act (Pub. L. 117-58), and they apply to all types of actions, orders, 
+option exercises, and contracts entered into on or after February 14, 
+2022.
+
+
+3025.7101  Definitions.
+
+    As used in this subpart--
+    (a) Component, as applied to an item described in 3025.7102-1, 
+means an article, material, or supply incorporated directly into an 
+item of personal protective equipment.
+    (b) Domestic personal protective equipment, as applied to an item 
+described in 3025.7102-1, means personal protective equipment, 
+including the materials and components thereof, that is grown, 
+reprocessed, reused, or produced in the United States.
+    (c) Foreign-assembled domestic personal protective equipment, as 
+applied to an item described in 3025.7102-2, means personal protective 
+equipment that is assembled outside the United States containing only 
+materials and components that are grown, reprocessed, reused, or 
+produced in the United States.
+    (d) Foreign personal protective equipment means personal protective 
+equipment other than domestic personal protective equipment or foreign-
+assembled domestic personal protective equipment.
+    (e) Personal protective equipment, as applied to an item described 
+in 3025.7102-1, means surgical masks, respirator masks and powered air 
+purifying respirators and required filters, face shields and protective 
+eyewear, gloves, disposable and reusable surgical and isolation gowns, 
+head and foot coverings, and other gear
+
+[[Page 59074]]
+
+or clothing used to protect an individual from the transmission of 
+disease.
+    (f) United States, as applied to an item described in 3025.7102-1, 
+means the 50 States, the District of Columbia, and the possessions of 
+the United States.
+
+
+3025.7102  Restrictions on certain personal protective equipment.
+
+
+3025.7102-1  Restrictions.
+
+    The following restrictions implement section 70953 of the Make PPE 
+in America Act, and they apply to all types of actions, orders, option 
+exercises, and contracts.
+    (a) Except as provided in 3025.7102-2, contracting officers shall 
+purchase domestic personal protective equipment.
+    (b) Any contract for personal protective equipment shall have a 
+base period of performance of at least 2 years, plus all option 
+periods.
+
+
+3025.7102-2  Exceptions.
+
+    Acquisitions in the following categories are not subject to the 
+restrictions in 3025.7102-1:
+    (a) Acquisitions of an item of personal protective equipment, or 
+component thereof, otherwise covered by 3025.7102-1 when the DHS Chief 
+Procurement Officer:
+    (1) Maximizes sources for foreign-assembled domestic personal 
+protective equipment; and
+    (2) Certifies every 120 days that it is necessary to procure 
+personal protective equipment under alternative procedures to respond 
+to the immediate needs of a public health emergency.
+    (b) Acquisitions of an item of personal protective equipment, or 
+component thereof, including those described in paragraph (a) of this 
+section--
+    (1) That is, or that includes, a material listed in FAR 25.104 as 
+one for which a nonavailability determination has been made; or
+    (2) As to which the DHS Chief Procurement Officer determines that a 
+sufficient quantity of a satisfactory quality that is grown, 
+reprocessed, reused, or produced in the United States cannot be 
+procured as, and when, needed at United States market prices; and
+    (3) The DHS Chief Procurement Officer certifies every 120 days that 
+it is necessary to procure personal protective equipment to respond to 
+the immediate needs of a public health emergency.
+    (c) When either of the exceptions in paragraph (a) or (b) of this 
+section are used:
+    (1) Only the DHS Chief Procurement Officer is authorized to make 
+the certification in paragraphs (a)(2) and (b)(3) of this section or 
+the nonavailability or unreasonable cost determination in paragraph (b) 
+of this section.
+    (2) The supporting documentation for the DHS Chief Procurement 
+Officer shall be prepared by the DHS Component(s) and:
+    (i) For the certification in paragraphs (a)(2) and (b)(3) of this 
+section:
+    (A) Include a written justification documenting the immediate 
+public health emergency requiring use of alternative procedures; and
+    (B) Be concurred on by the Head of the Contracting Activity before 
+submission to the DHS Chief Procurement Officer.
+    (ii) For the nonavailability or unreasonable cost determination in 
+paragraph (b) of this section:
+    (A) Include a written justification documenting why a 
+nonavailability or unreasonable cost exception is required; and
+    (B) Be concurred on by the Head of the Contracting Activity before 
+submission to the DHS Chief Procurement Officer.
+
+
+3025.7102-3  Specific application of the Buy American statute and Trade 
+Agreements Act.
+
+    In the event the DHS Chief Procurement Officer determines neither 
+domestic personal protective equipment nor foreign-assembled domestic 
+personal protective equipment is available due to nonavailability or 
+unreasonable cost, contracting officers shall apply one of the 
+following:
+    (a) The clause at FAR 52.225-1, Buy American--Supplies, and the 
+provision at FAR 52.225-2, Buy American Certificate;
+    (b) The clause at FAR 52.225-3, Buy American--Free Trade 
+Agreements--Israeli Trade Act, and the provision at FAR 52.225-4, Buy 
+American--Free Trade Agreements--Israeli Trade Act Certificate; or
+    (c) The clause at FAR 52.225-5, Trade Agreements, and the provision 
+at FAR 52.225-6, Trade Agreements Certificate, as applicable.
+
+
+3025.7103  Solicitation provisions and contract clauses.
+
+    (a) Insert the clause at 3052.225-71, Make PPE in America, in 
+solicitations and contracts, regardless of dollar value, when procuring 
+any item covered under 3025.7102-1(a).
+    (b) Insert the provision at 3052.225-72, Make PPE in America 
+Certificate, in solicitations containing the clause at 3052.225-71.
+
+PART 3052--SOLICITATION PROVISIONS AND CONTRACT CLAUSES
+
+0
+3. The authority citation for part 3052 is revised to read as follows:
+
+    Authority:  5 U.S.C. 301-302, 41 U.S.C. 1303, 41 U.S.C. 1707, 41 
+U.S.C. 1702, 41 U.S.C. 8301 note, 48 CFR part 1, subpart 1.3, DHS 
+Delegation No. 00701, Revision No. 03.2, paragraphs (III)(H), and 
+DHS Delegation No. 00702, Revision No. 01.2, paragraphs (III)(M).
+
+0
+4. Add section 3052.225-71 to read as follows:
+
+
+3052.225-71  Make PPE in America.
+
+    As prescribed in 3025.7103(a), insert the following clause:
+
+Make PPE in America (Oct. 2026)
+
+    (a) Definitions. As used in this clause--
+    Component, as applied to an item described in paragraph (b) of 
+this clause, means an article, material, or supply incorporated 
+directly into personal protective equipment.
+    Domestic personal protective equipment, as applied to an item 
+described in paragraph (b) of this clause, means personal protective 
+equipment, including the materials and components thereof, that is 
+grown, reprocessed, reused, or produced in the United States.
+    Foreign-assembled domestic personal protective equipment, as 
+applied to an item described in paragraph (b) of this clause, means 
+personal protective equipment that is assembled outside the United 
+States containing only materials and components that are grown, 
+reprocessed, reused, or produced in the United States.
+    Foreign personal protective equipment means personal protective 
+equipment other than domestic personal protective equipment or 
+foreign-assembled domestic personal protective equipment.
+    Personal protective equipment, as applied to an item described 
+in paragraph (b) of this clause, means surgical masks, respirator 
+masks and powered air purifying respirators and required filters, 
+face shields and protective eyewear, gloves, disposable and reusable 
+surgical and isolation gowns, head and foot coverings, and other 
+gear or clothing used to protect an individual from the transmission 
+of disease.
+    United States, as applied to an item described in paragraph (b) 
+of this clause, means the 50 States, the District of Columbia, and 
+the possessions of the United States.
+    (b) The Contractor shall deliver only domestic personal 
+protective equipment except to the extent that it specified delivery 
+of foreign-assembled domestic personal protective equipment in the 
+provision of the solicitation entitled ``Make PPE in America 
+Certificate.''
+    (c) Order of Precedence. In the event the Department of Homeland 
+Security determines neither domestic personal protective equipment 
+nor foreign-assembled domestic personal protective equipment are 
+available due to nonavailability or
+
+[[Page 59075]]
+
+unreasonable cost, the Contractor shall comply with the clauses at 
+Federal Acquisition Regulation (FAR) 52.225-1 Buy American--Supplies 
+or 52.225-3 Buy American--Free Trade Agreements--Israeli Trade Act 
+and the provisions at FAR 52.225-2 Buy American Certificate or 
+52.225-4 Buy American--Free Trade Agreements--Israeli Trade Act 
+Certificate or the clause at FAR 52.225-5 Trade Agreements and the 
+provision at FAR 52.225-6 Trade Agreements Certificate, as 
+applicable.
+(End of clause)
+
+0
+5. Add section 3052.225-72 to read as follows:
+
+
+3052.225-72  Make PPE in America Certificate.
+
+    As prescribed in 3025.7103(b), insert the following provision:
+
+Make PPE in America Certificate (Oct. 2026)
+
+    (a)(1) The Offeror certifies that each item of personal 
+protective equipment, except those listed in paragraph (b) of this 
+provision, is domestic personal protective equipment.
+    (2) The Offeror shall list foreign-assembled domestic personal 
+protective equipment items.
+    (3) The terms ``domestic personal protective equipment,'' 
+``foreign-assembled domestic personal protective equipment,'' 
+``foreign personal protective equipment,'' and ``personal protective 
+equipment,'' are defined in the clause of this solicitation entitled 
+``Make PPE in America.''
+    (b) Foreign-assembled Domestic Personal Protective Equipment:
+
+------------------------------------------------------------------------
+             Line item No.                     Country of assembly
+------------------------------------------------------------------------
+                                         ...............................
+                                         ...............................
+                                         ...............................
+------------------------------------------------------------------------
+
+[List as Necessary]
+
+    (c) In the event the Department of Homeland Security determines 
+both domestic personal protective equipment and foreign-assembled 
+domestic personal protective equipment are not available due to 
+nonavailability or unreasonable cost, the Contractor shall comply 
+with the clauses at Federal Acquisition Regulation (FAR) 52.225-1 
+Buy American--Supplies or 52.225-3 Buy American--Free Trade 
+Agreements--Israeli Trade Act and the provisions at FAR 52.225-2 Buy 
+American Certificate or 52.225-4 Buy American--Free Trade 
+Agreements--Israeli Trade Act Certificate or the clause at FAR 
+52.225-5 Trade Agreements and the provision at FAR 52.225-6 Trade 
+Agreements Certificate, as applicable. The contracting officer will 
+notify offerors if a nonavailability or unreasonable cost 
+determination is made.
+(End of Provision)
+
+Paul Courtney,
+Chief Procurement Officer, U.S. Department of Homeland Security.
+[FR Doc. 2026-19207 Filed 9-17-26; 8:45 am]
+BILLING CODE 9112-FE-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

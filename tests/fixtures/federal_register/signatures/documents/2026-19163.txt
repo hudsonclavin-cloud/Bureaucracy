@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 180 (Friday, September 18, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 180 (Friday, September 18, 2026)]
+[Notices]
+[Pages 59101-59102]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-19163]
+
+
+-----------------------------------------------------------------------
+
+DEPARTMENT OF AGRICULTURE
+
+
+Submission for OMB Review; Comment Request
+
+    The Department of Agriculture has submitted the following 
+information collection requirement(s) to OMB for review and clearance 
+under the Paperwork Reduction Act of 1995, Public Law 104-13. Comments 
+are requested regarding; whether the collection of information is 
+necessary for the proper performance of the functions of the agency, 
+including whether the information will have practical utility; the 
+accuracy of the agency's estimate of burden including the validity of 
+the methodology and assumptions used; ways to enhance the quality, 
+utility and clarity of the information to be collected; and ways to 
+minimize the burden of the collection of information on those who are 
+to
+
+[[Page 59102]]
+
+respond, including through the use of appropriate automated, 
+electronic, mechanical, or other technological collection techniques or 
+other forms of information technology.
+    Comments regarding this information collection received by October 
+19, 2026 will be considered. Written comments and recommendations for 
+the proposed information collection should be submitted within 30 days 
+of the publication of this notice on the following website 
+<a href="http://www.reginfo.gov/public/do/PRAMain">www.reginfo.gov/public/do/PRAMain</a>. Find this particular information 
+collection by selecting ``Currently under 30-day Review--Open for 
+Public Comments'' or by using the search function. An agency may not 
+conduct or sponsor a collection of information unless the collection of 
+information displays a currently valid OMB control number and the 
+agency informs potential persons who are to respond to the collection 
+of information that such persons are not required to respond to the 
+collection of information unless it displays a currently valid OMB 
+control number.
+
+Animal Plant and Health Inspection Service
+
+    Title: Emergency Management Response System (EMRS).
+    OMB Control Number: 0579-0071.
+    Summary of Collection: The Animal Health Protection Act (AHPA) of 
+2002 is the primary Federal law governing the protection of animal 
+health. The law gives the Secretary of Agriculture broad authority to 
+detect, control, or eradicate pests or diseases of livestock or 
+poultry. The Secretary may also prohibit or restrict import or export 
+of any animal or related material if necessary to prevent the spread of 
+any livestock or poultry pest or disease. Through the Foreign Animal 
+Disease Surveillance Program, the Animal and Plant Health Inspection 
+Service (APHIS) Veterinary Services compiles essential epidemiological 
+and diagnostic data that are used to define foreign animal diseases 
+(FAD) and their risk factors. The data is compiled through the 
+Veterinary Services Emergency Management Response System, a web-based 
+database for reporting investigations of suspected FAD occurrences.
+    Need and Use of the Information: APHIS collects information such as 
+the purpose of the diagnostician's visit to the site, the name and 
+address of the owner/manager and the site, the type of operation being 
+investigated, the number of and type of animals on the premises, 
+vaccination information on the animals in the herd or flock, 
+biosecurity practices at the site, whether any animals have been moved 
+to or from the premises and when this movement occurred, number of sick 
+or dead animals, the results of physical examinations of the affected 
+animals, the results of postmortem examinations, and the number and 
+kinds of samples taken, and the name of the suspected disease.
+    APHIS uses the collected information to effectively prevent FAD 
+occurrences and protect the health of the United States. Without the 
+information, APHIS has no way to detect and monitor FAD outbreaks in 
+the United States.
+    Description of Respondents: Businesses; and State, Local or Tribal 
+Governments.
+    Number of Respondents: 158.
+    Frequency of Responses: Reporting, on occasion.
+    Total Burden Hours: 24,703.
+
+Rachelle Ragland-Greene,
+Departmental Information Collection Clearance Officer.
+[FR Doc. 2026-19163 Filed 9-17-26; 8:45 am]
+BILLING CODE 3410-34-P
+
+
+</pre></body>
+</html>

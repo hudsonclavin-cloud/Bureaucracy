@@ -1,0 +1,416 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 181 (Monday, September 21, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 181 (Monday, September 21, 2026)]
+[Notices]
+[Pages 59777-59780]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-19271]
+
+
+
+[[Page 59777]]
+
+=======================================================================
+-----------------------------------------------------------------------
+
+DEPARTMENT OF HEALTH AND HUMAN SERVICES
+
+Centers for Disease Control and Prevention
+
+[Docket CDC-2026-1519]
+
+
+Data Intermediaries and Approaches To Strengthen Public Health 
+Data Exchange
+
+AGENCY: Centers for Disease Control and Prevention (CDC), Department of 
+Health and Human Services (HHS).
+
+ACTION: Request for information.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The Centers for Disease Control and Prevention (CDC) seeks 
+broad public input on how data intermediaries can be used to support 
+secure, scalable, standards-based public health data exchange. CDC 
+invites public comment to inform the evaluation and to explore how data 
+intermediaries can advance broader goals to prevent disease, detect 
+emerging threats, drive state-of-the-art solutions that empower 
+communities, and strengthen public health systems for a safer, 
+healthier nation.
+
+DATES: To be assured consideration, written or electronic comments must 
+be received on or before November 20, 2026.
+
+ADDRESSES: You may submit comments, identified by docket number CDC-
+2026-1519, by any of the following methods. Please do not submit 
+comments by email.
+    <bullet> Federal eRulemaking Portal: <a href="http://www.regulations.gov">http://www.regulations.gov</a>. 
+Follow the instructions for submitting comments.
+    <bullet> Mail: Attention: Request for Information: Office of Public 
+Health Data, Surveillance, and Technology, Centers for Disease Control 
+and Prevention. 1600 Clifton Rd. NE, MS H21-8, Atlanta, GA 30329
+    Instructions: All submissions received must include the agency name 
+and Docket Number. All relevant comments received will be posted 
+without change to <a href="http://regulations.gov">http://regulations.gov</a>, including any personal 
+information provided. For access to the docket to read background 
+documents or comments received, go to <a href="http://www.regulations.gov">http://www.regulations.gov</a>.
+
+FOR FURTHER INFORMATION CONTACT: Abigail Viall, Acting Lead, Technology 
+Implementation Office Centers for Disease Control and Prevention, 1600 
+Clifton Road NE, MS H21-8, Atlanta, GA 30329. Phone: 1-800-232-4636. 
+Email: <a href="/cdn-cgi/l/email-protection#6629362e22353236090a0f051f2605020548010910"><span class="__cf_email__" data-cfemail="d89788909c8b8c88b7b4b1bba198bbbcbbf6bfb7ae">[email&#160;protected]</span></a>.
+
+SUPPLEMENTARY INFORMATION:
+
+I. Purpose/Introduction
+
+    The ability to prevent disease, detect threats, and respond 
+effectively to public health events, including public health 
+emergencies, depends on timely, accurate, and actionable data flowing 
+across a complex ecosystem of patients, healthcare providers, public 
+health agencies, and communities. Without data, public health 
+professionals cannot see patterns, identify risks, or inform and 
+evaluate interventions. With high-quality, well-connected data, public 
+health practitioners are better able to act with speed and precision. 
+Increasingly, public health action depends not only on access to data, 
+but also on the ability to integrate, interpret, and apply those data 
+across multiple levels--from the individual case to the community to 
+the larger population level.
+    Over the past several years, public health has made meaningful 
+progress in strengthening its connection to the broader health 
+information technology (health IT) ecosystem. CDC's data modernization 
+investments have improved the ability of public health agencies to 
+access and use electronic health data. Public health programs now 
+routinely leverage electronic laboratory reporting, electronic case 
+reporting, and other digital data streams to support surveillance and 
+response. CDC has adopted an agency-wide data modernization approach 
+through the Public Health Data Strategy (<a href="http://www.cdc.gov/Ph.D.s">http://www.cdc.gov/Ph.D.s</a>). 
+Through the development of the One CDC Data Platform (1CDP) (<a href="https://www.cdc.gov/data-modernization/php/one-cdc-data-platform">https://www.cdc.gov/data-modernization/php/one-cdc-data-platform</a>), the agency 
+is creating a unified data platform to support CDC's everyday work as 
+well as public health emergency response.
+    Despite this progress, data inconsistency, siloing, and 
+interoperability challenges across systems continue to limit public 
+health's ability to respond swiftly to both chronic and emerging 
+threats. Addressing these challenges will require approaches that build 
+on existing investments to make data more accessible, standardized, and 
+usable across all levels of public health. Data intermediaries--trusted 
+organization, network, platform, or governed service that enables 
+secure, standards-based exchange and stewardship of health-related 
+data--have long supported critical aspects of data exchange among 
+public health agencies and between public health and healthcare (see 
+Section II.A. for a comprehensive definition). However, the evolving 
+health IT ecosystem presents new opportunities to consider how a range 
+of intermediary models and capabilities can more effectively support 
+public health data needs while also delivering value to healthcare. The 
+continued evolution of health information exchanges (HIEs), including 
+the emergence of health data utilities (HDUs), alongside broader 
+developments such as the Trusted Exchange Framework and Common 
+Agreement (TEFCA) and the Centers for Medicare & Medicaid Services 
+(CMS) Digital Health Tech Ecosystem, provides an opportunity to examine 
+how intermediaries can collectively enable more seamless, timely, and 
+scalable data exchange, and move the ecosystem beyond technical 
+interoperability toward greater data liquidity.
+    Given these developments, CDC is evaluating how data intermediaries 
+can be used to support secure, scalable, standards-based public health 
+data exchange, while protecting privacy.
+
+II. Solicitation of Public Comments
+
+    CDC is evaluating how data intermediaries can support secure, 
+scalable, standards-based public health data exchange. CDC invites 
+public comment to inform that evaluation and to explore how data 
+intermediaries can advance broader goals to prevent disease, detect 
+emerging threats, drive state-of-the-art solutions that empower 
+communities, and strengthen public health systems for a safer, 
+healthier nation.
+    We encourage interested parties to respond to as many of the 
+questions below as possible. The questions are intended to solicit 
+input from multiple individuals and groups. To support CDC's review of 
+responses, please prioritize clarity and conciseness and identify the 
+applicable question label(s) (for example, XX-1).
+    Please note that comments received, including attachments and other 
+supporting materials, are part of the public record and are subject to 
+public disclosure. Comments will be posted on <a href="https://www.regulations.gov">https://www.regulations.gov</a>. Therefore, do not include any information in your 
+comment or supporting materials that you consider confidential or 
+inappropriate for public disclosure. If you include your name, contact 
+information, or other information that identifies you in the body of 
+your comments, that information will be on public display. CDC will 
+review all submissions and may choose to redact, or withhold, 
+submissions containing private or proprietary information such as 
+Social Security numbers, medical information, inappropriate language, 
+or duplicate/near duplicate examples of a mass-mail campaign. Do not 
+submit comments by email.
+
+[[Page 59778]]
+
+A. Definition of Public Health Data Intermediary
+
+    For the purposes of this RFI, CDC defines a public health data 
+intermediary (data intermediary) as a trusted organization, network, 
+platform, or governed service that enables secure, standards-based 
+exchange and stewardship of health-related data among data sources and 
+public health authorities by providing shared technical, operational, 
+and governance capabilities that seek to reduce connectivity burden and 
+improve the quality, timeliness, and usefulness of data for public 
+health practice, while protecting individual privacy and 
+confidentiality. Data intermediaries may provide additional services 
+such as analytics, visualization, technical assistance, and community 
+engagement to make data actionable for public health.
+    Data intermediaries can be centralized or decentralized; operate at 
+local, regional, state, territorial, tribal, or national scale; and 
+receive data from diverse sources, including healthcare providers, 
+payers, laboratories, pharmacies, non-traditional testing and reporting 
+sites (e.g., schools and pop-up clinics), and federal contributors and 
+platforms. Data intermediaries that already do or potentially could 
+support public health include HIEs, HDUs, TEFCA, Qualified Health 
+Information Networks (QHINs), CMS-Aligned Networks, Health Center 
+Controlled Networks (HCCNs), public health data hubs and exchange 
+platforms, or other entities that provide shared technical, 
+operational, governance, or analytic capabilities for public health 
+purposes.
+    Question II.A-1: How does this definition of ``public health data 
+intermediary'' align or conflict with other established definitions, or 
+on-the ground experiences, used across public health and health IT, and 
+what changes would improve distinction or alignment?
+
+B. Standards and Technical Capabilities
+
+    Data intermediaries vary in function, technical capability, use of 
+standards, and maturity. CDC is developing a Public Health Intermediary 
+Framework to help public health organizations specify, select, and 
+evaluate intermediary capabilities while allowing for different 
+architectures, services, and public health use cases. For purposes of 
+this RFI, CDC is considering a layered framework consisting of the 
+following:
+    <bullet> Universal intermediary baseline: Core capabilities, 
+safeguards, and practices applicable to any intermediary serving public 
+health.
+    <bullet> Service-specific profiles: Additional expectations based 
+on services provided, such as routing, aggregation, transformation, 
+record linkage, terminology management, analytics, or workflow 
+orchestration.
+    <bullet> Public health use-case profiles: Additional expectations 
+based on specific public health programs, data streams, or workflows, 
+such as electronic case reporting, electronic laboratory reporting, 
+immunization data exchange, syndromic surveillance, or emergency 
+response.
+    Expectations may also vary by maturity level, from minimum 
+participation requirements to more advanced operational capabilities. 
+This section seeks input on the technical and operational capabilities, 
+standards, maturity, and performance expectations that should inform 
+the framework; Section II.D addresses governance considerations.
+    Question II.B-1: Which public health data capabilities, functions, 
+and data sources (e.g., clinical, laboratory, claims, pharmacy, 
+schools, social services) are data intermediaries currently supporting 
+or well positioned to potentially support in the future? For which 
+public health use cases do data intermediaries offer meaningful 
+advantages over direct data exchange or other approaches? Where might 
+the use of data intermediaries add unnecessary cost, complexity, 
+latency, governance burden, or introduce risk? In your response, 
+consider intermediary type, required technical and operational 
+capabilities, and interoperability challenges, informed by: Public 
+Health Data Modernization in Practice: Identification of Core Data 
+Capabilities and Functions (<a href="https://cdn.ymaws.com/www.cste.org/resource/resmgr/logo/identi_2__1_.pdf">https://cdn.ymaws.com/www.cste.org/resource/resmgr/logo/identi_2__1_.pdf</a>).
+    Question II.B-2: With the proposed layered approach, which 
+capabilities and standards should sit in the universal baseline versus 
+service-specific or use-case-specific profiles--for example: data 
+quality/provenance (terminology normalization, record matching, 
+longitudinal reconciliation, preservation of source values and 
+transformation rules); exchange/routing (push/query/subscribe, bulk 
+transfer, acknowledgments, jurisdiction-aware routing); security/trust 
+(authentication, authorization, consent enforcement, auditability, 
+incident response); and operational reliability (availability, latency, 
+error rates, incident communication)? Please be specific about minimum 
+requirements.
+    Question II.B-3: How should data intermediaries be assessed to 
+determine whether they meet applicable capability, standards, 
+performance expectations, security and data protection, and assessment 
+of data quality? What standardized metrics, evidence, and testing 
+approaches (e.g., conformance testing, certification, validation 
+services) should be used, including to assess onboarding efficiency, 
+scalability, and reach? What existing tools, programs, or approaches 
+could be leveraged?
+    Question II.B-4: How can a maturity model be useful for advancing 
+data intermediary capabilities over time? If used, in what ways should 
+a maturity model distinguish progression from minimum viable 
+participation to repeatable production and advanced or adaptive 
+capabilities? What capabilities or performance thresholds should 
+characterize each maturity level, and what evidence, including 
+attestation methods, should be required for progression?
+    Question II.B-5: How might artificial intelligence (AI) 
+capabilities affect data intermediaries' technical, governance, and 
+operational roles--including accelerating, replacing, or distributing 
+functions?
+
+C. Shared Infrastructure: Funding and Sustainability
+
+    Shared data intermediary infrastructure has the potential to 
+increase data liquidity and accelerate timely public health action, but 
+its sustainability requires funding that extends beyond initial 
+implementation to cover ongoing operations, maintenance, governance, 
+security, and scalability. CDC seeks input on sustainable funding 
+approaches and the allocation of financial responsibility for shared 
+infrastructure.
+    Question II.C-1: What funding and revenue sources do data 
+intermediaries currently rely on to support public health services, 
+which entities bear those costs, and which entities receive the 
+resulting benefits? How does this vary between public health-specific 
+services and shared infrastructure supporting multiple participants or 
+purposes (e.g., healthcare delivery)?
+    Question II.C-2: What funding models are most likely to sustain and 
+scale data intermediary services for public health over time? What 
+factors most affect data intermediary costs and technical burden, and 
+how should shared funding models account for differences in use, cost, 
+and benefits across participants? Please provide examples from current 
+practice where available.
+    Question II.C-3: How could funding models, fee structures, contract 
+terms, or onboarding processes reduce financial barriers for rural 
+providers, small laboratories, under-resourced public
+
+[[Page 59779]]
+
+health jurisdictions, tribal entities, safety-net providers, and 
+community-based organizations? Please provide examples from current 
+practice where available.
+    Question II.C-4: What funding and contracting approaches could CDC 
+or other public-sector funders use to promote portability, competition, 
+open standards, and sustainable market participation while avoiding 
+unintended market distortion or vendor lock-in? (See also Section II.D 
+for the broader governance section about this issue.)
+
+D. Governance
+
+    CDC is seeking input on the governance framework needed to support 
+effective use of data intermediaries, covering accountability, 
+neutrality, authority, oversight, and equitable implementation. As in 
+Section II.B, CDC is applying a layered approach--a universal 
+governance baseline, service-specific governance profiles, and use-
+case/jurisdictional governance profiles--so that requirements scale 
+appropriately with the functions an intermediary performs and the laws 
+that apply to it.
+    Respondents should consider how governance expectations address 
+roles and delegated authority, participant obligations, permitted and 
+prohibited uses, audit and oversight rights, dispute resolution, 
+corrective action, continuity, and reliance on downstream entities.
+    Question II.D-1: What governance and accountability expectations 
+should apply to data intermediaries, and should these vary based on the 
+functions performed, the data handled, the entities/communities served, 
+or the jurisdiction's laws and authorities?
+    Question II.D-2: What safeguards would ensure transparent access to 
+data intermediary services and prevent conflicts of interest, biased 
+routing, vendor lock-in, proprietary dependencies, or market 
+concentration--including across jurisdictions with differing legal 
+requirements? (See also Section II.C for funding-specific mechanisms 
+addressing the same risks.)
+    Question II.D-3: What requirements should govern a data 
+intermediary's authority to receive, access, route, transform, enrich, 
+or disclose public health data, including delegated authority, 
+reciprocal exchange, and compliance with jurisdiction-specific laws?
+    Question II.D-4: What roles should CDC, other federal agencies, 
+state, tribal, local, and territorial (STLT) public health authorities, 
+data intermediary governing bodies, participants, and other relevant 
+entities play in oversight and accountability? How should these roles 
+be coordinated, and what monitoring, audit, corrective-action, 
+suspension, sanction, or termination mechanisms are appropriate?
+    Question II.D-5: How should governance accommodate jurisdictional 
+differences in law, reporting mandates, privacy, consent, data use 
+agreements, and public health authority while minimizing 
+administrative, technical, and financial burden and supporting 
+equitable participation?
+
+E. Implementation
+
+    CDC seeks input on the practical assistance, readiness conditions, 
+partnerships, and learning approaches needed to integrate 
+intermediaries into public health data modernization. Because needs 
+vary across settings, respondents should provide relevant context, such 
+as jurisdiction or data intermediary type, organization size, technical 
+maturity, primary use cases, and material timing or resource 
+constraints.
+    Question II.E-1: What tools, templates, or guidance (e.g., 
+implementation playbooks, procurement language, data use/service-level 
+agreement templates, security checklists, evaluation tools, governance 
+models) do public health agencies need to evaluate, select, implement, 
+and oversee data intermediary partnerships, and their associated 
+outcomes?
+    Question II.E-2: What barriers (e.g., workforce, funding, 
+procurement, legal authority, governance, technical infrastructure, 
+trust, sustainability, jurisdictional variation)--limit STLT public 
+health agency readiness to use data intermediary services, and what 
+support would address them? How should implementation build on existing 
+investments and support coexistence, migration, or transition without 
+unnecessarily replacing already functioning infrastructure? Where 
+relevant, note differences by data intermediary type.
+    Question II.E-3: What approaches should CDC consider to test, learn 
+from, and scale promising intermediary models or capabilities for 
+public health purposes? How can pilots, demonstrations, learning 
+collaboratives, phased implementation, or other approaches build 
+evidence and trust while informing decisions about whether, when, and 
+how to scale?
+    Question II.E-4: Where do public health needs and capabilities 
+align with those of healthcare providers, payers, laboratories, 
+community organizations, and other partners? What data, information, 
+services, or capabilities could public health provide to partners 
+(e.g., providers) through intermediaries to create shared value and 
+strengthen reciprocal exchange? What collaboration approaches could 
+enable this value, and what constraints, tensions, or tradeoffs should 
+be considered?
+    Question II.E-5: Where can CDC add the greatest value in 
+strengthening the data intermediary ecosystem, and through what 
+role(s)--for example, as a convener, funder, purchaser, technical 
+assistance provider, standards advocate, evaluator, or facilitator of 
+shared infrastructure? Where should CDC instead leverage, align with, 
+or defer to existing public- and private-sector efforts?
+
+F. Dynamic Evaluation
+
+    CDC seeks input on how to evaluate the outcomes, value, and cost 
+efficiency of its intermediary framework over time. This section 
+focuses on CDC's framework-level strategic impact and learning rather 
+than the intermediary capability and performance measures addressed in 
+Section II.B. or implementation, partnership, and oversight addressed 
+in Section II.E. Evidence generated at the intermediary and 
+implementation levels may inform this broader evaluation. Evaluation 
+should be feasible, minimize reporting burden, account for context and 
+unintended consequences, and inform decisions to sustain, modify, 
+expand, replace, or discontinue approaches, and used to refine the 
+intermediary framework.
+    Question II.F-1: Where can CDC add the greatest value as an 
+evaluator (e.g., in providing guidance on evaluating pilots or 
+implementation models, synthesizing evaluation evidence across 
+settings, or evaluating the strategic outcomes and value of the broader 
+intermediary framework)?
+    Question II.F-2: What frameworks, benchmarks, and measures should 
+CDC use to evaluate the intermediary framework, including impacts on 
+workflows, workforce burden, user experience, data usability, 
+situational awareness, and response capacity? What data sources and 
+methods could support feasible measurement and assess the contribution 
+of intermediary-enabled exchange to observed changes and, where 
+feasible, support causal attribution?
+    Question II.F-3: How should CDC and STLT public health partners 
+assess value and cost efficiency, including startup and recurring 
+costs, costs borne by different parties, avoided costs, and monetary 
+and non-monetary benefits to public health, healthcare, and other 
+ecosystem participants? How should
+
+[[Page 59780]]
+
+evaluation account for the distribution of costs and benefits and 
+unintended consequences such as added burden, cost shifting, reduced 
+flexibility, inequitable distribution of benefits, or vendor 
+dependency?
+
+(Authority: 42 U.S.C. 241 and 42 U.S.C. 247d-4)
+
+Noah Aleshire,
+Chief Regulatory Officer, Centers for Disease Control and Prevention.
+[FR Doc. 2026-19271 Filed 9-18-26; 8:45 am]
+BILLING CODE 4163-18-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

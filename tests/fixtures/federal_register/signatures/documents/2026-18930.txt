@@ -1,0 +1,571 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 178 (Wednesday, September 16, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 178 (Wednesday, September 16, 2026)]
+[Notices]
+[Pages 58736-58739]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-18930]
+
+
+-----------------------------------------------------------------------
+
+SECURITIES AND EXCHANGE COMMISSION
+
+[Release No. 34-106341; File No. SR-IEX-2026-29]
+
+
+Self-Regulatory Organizations; Investors Exchange LLC; Notice of 
+Filing and Immediate Effectiveness of Proposed Rule Change Pursuant to 
+IEX Rule 15.110(a) and (c) To Provide That Extranet Providers, in 
+Addition to Data Subscribers, Are also Eligible To Earn the External 
+Distribution Rebate by Enlisting New Data Subscribers of Real-Time IEX 
+Market Data Products
+
+September 11, 2026.
+    Pursuant to Section 19(b)(1) \1\ of the Securities Exchange Act of 
+1934 (the ``Act'') \2\ and Rule 19b-4 thereunder,\3\ notice is hereby 
+given that, on August 31, 2026, the Investors Exchange LLC (``IEX'' or 
+the ``Exchange'') filed with the Securities and Exchange Commission 
+(the ``Commission'') the proposed rule change as described in Items I, 
+II and III below, which Items have been prepared by the self-regulatory 
+organization. The Commission is publishing this notice to solicit 
+comments on the proposed rule change from interested persons.
+---------------------------------------------------------------------------
+
+    \1\ 15 U.S.C. 78s(b)(1).
+    \2\ 15 U.S.C. 78a.
+    \3\ 17 CFR 240.19b-4.
+---------------------------------------------------------------------------
+
+I. Self-Regulatory Organization's Statement of the Terms of Substance 
+of the Proposed Rule Change
+
+    Pursuant to the provisions of Section 19(b)(1) under the Act,\4\ 
+and Rule 19b-4 thereunder,\5\ the Exchange is filing with the 
+Commission a proposed rule change to amend the IEX Fee Schedule (``Fee 
+Schedule''), pursuant to IEX Rules 15.110(a) and (c), to provide that 
+Extranet Providers, in addition to Data Subscribers, are also eligible 
+to earn the External Distribution Rebate by enlisting new Data 
+Subscribers of Real-Time IEX market data products. Changes to the Fee 
+Schedule pursuant to this proposal are effective upon filing,\6\ and 
+will be operative beginning on September 1, 2026.
+---------------------------------------------------------------------------
+
+    \4\ 15 U.S.C. 78s(b)(1).
+    \5\ 17 CFR 240.19b-4.
+    \6\ 15 U.S.C. 78s(b)(3)(A)(ii).
+---------------------------------------------------------------------------
+
+    The text of the proposed rule change is available at the Exchange's 
+website at <a href="https://www.iexexchange.io/resources/regulation/rule-filings">https://www.iexexchange.io/resources/regulation/rule-filings</a> 
+and at the principal office of the Exchange.
+
+II. Self-Regulatory Organization's Statement of the Purpose of, and the 
+Statutory Basis for, the Proposed Rule Change
+
+    In its filing with the Commission, the self-regulatory organization 
+included statements concerning the purpose of and basis for the 
+proposed rule change and discussed any comments it received on the 
+proposed rule change. The text of these statements may be examined at 
+the places specified in Item IV below. The self-regulatory organization 
+has prepared summaries, set forth in Sections A, B, and C below, of the 
+most significant aspects of such statements.
+
+A. Self-Regulatory Organization's Statement of the Purpose of, and the 
+Statutory Basis for, the Proposed Rule Change
+
+1. Purpose
+    The Exchange proposes to amend the Market Data Fees section of the 
+IEX Fee Schedule (``Fee Schedule''),\7\ pursuant to IEX Rules 15.110(a) 
+and (c), to provide that Extranet Providers,\8\ in addition to Data 
+Subscribers,\9\ are also eligible to earn the External Distribution 
+Rebate by enlisting new Data Subscribers \10\ of Real-Time \11\ IEX 
+market data products.
+---------------------------------------------------------------------------
+
+    \7\ See IEX Fee Schedule--Market Data Fees, available at <a href="https://www.iex.io/resources/trading/fee-schedule#market-data-fees">https://www.iex.io/resources/trading/fee-schedule#market-data-fees</a>.
+    \8\ See Rule 11.130(e).
+    \9\ ``Data Subscriber'' means any natural person or entity that 
+receives Real-Time IEX market data either directly from the Exchange 
+or from another non-affiliated Data Subscriber via uncontrolled 
+distribution where such non-affiliated Data Subscriber does not 
+control both the entitlement to and display of the Real-Time IEX 
+Market Data by the Data Subscriber. A Data Subscriber must enter 
+into a Data Subscriber Agreement with IEX in order to receive Real-
+Time IEX market data. A natural person or entity that receives Real-
+Time IEX market data from an affiliated Data Subscriber is subject 
+to the Data Subscriber Agreement of such affiliated Data Subscriber. 
+See Fee Schedule, supra, note 7.
+    \10\ ``External Data Subscriber'' means any Person who (i) 
+receives IEX Market Data from a Data Subscriber via Uncontrolled 
+Distribution, and (ii) is not a Data User or Affiliate of such Data 
+Subscriber. See IEX Data Subscriber Agreement, Section 1--
+Definitions, <a href="https://www.iex.io/documents/iex-data-subscriber-agreement">https://www.iex.io/documents/iex-data-subscriber-agreement</a>.
+    \11\ ``Real-Time IEX market data'' is IEX market data that is 
+accessed, used or distributed less than fifteen (15) minutes after 
+it was made available by the Exchange. See Fee Schedule, supra note 
+7.
+---------------------------------------------------------------------------
+
+Background
+    On July 17, 2026, IEX established an External Distribution 
+Rebate,\12\ to be implemented beginning on September 1, 2026, for Data 
+Subscribers who distribute Real-Time IEX market data to new External 
+Data Subscribers (the ``Market Data Rebate Filing'').\13\ The rebate is 
+available for a Data Subscriber that distributes IEX market data 
+products (referred to herein as a ``Data Redistributor'') to a new 
+External Data Subscriber(s). The External Distribution
+
+[[Page 58737]]
+
+Rebate is equal to 75% of the subscription fees paid to IEX by the new 
+External Data Subscriber(s) enlisted by the Data Redistributor to 
+incentivize Data Redistributors to enlist new External Data Subscribers 
+and thereby increase distribution of Real-Time IEX market data 
+products.
+---------------------------------------------------------------------------
+
+    \12\ See supra, note 7.
+    \13\ See Securities Exchange Act Release No. 105972 (July 23, 
+2026), 91 FR 47293 (July 28, 2026) (SR-IEX-2026-22).
+---------------------------------------------------------------------------
+
+    IEX offers three Real-Time market data products: (i) DEEP+, an 
+uncompressed data feed of order-by-order depth of book quotations for 
+all displayed orders resting on the Order Book at each price level, and 
+execution information (i.e., last sale information) for executions on 
+the Exchange; \14\ (ii) DEEP, an uncompressed data feed that provides 
+aggregated depth of book quotations for all displayed orders resting on 
+the Order Book at each price level and execution information (i.e., 
+last sale information) for executions on the Exchange; \15\ and (iii) 
+TOPS, an uncompressed data feed that provides aggregated top of book 
+quotations for all displayed orders resting on the Order Book and 
+execution information (i.e., last sale information) for executions on 
+the Exchange.\16\
+---------------------------------------------------------------------------
+
+    \14\ See IEX Rule 11.330(a)(3).
+    \15\ See IEX Rule 11.330(a)(2).
+    \16\ See IEX Rule 11.330(a)(1).
+---------------------------------------------------------------------------
+
+    As described in the Market Data Rebate Filing, a Data Redistributor 
+is eligible to receive a rebate of 75% of the amount of subscription 
+fees paid to IEX by any new External Data Subscriber that begins to 
+subscribe to one or more Real-Time IEX market data products through the 
+Data Redistributor.\17\ The Data Redistributor will be eligible to earn 
+the proposed External Distribution Rebate starting the first full month 
+of the new External Data Subscriber's subscription. The proposed rebate 
+applies to the subscriptions of new External Data Subscribers who, as 
+of July 1, 2026, were not entitled to receive Real-Time IEX market data 
+products and would not apply to a Data Subscriber's existing Data 
+Subscriber customers.\18\
+---------------------------------------------------------------------------
+
+    \17\ See supra, note 13.
+    \18\ To the extent that a new External Data Subscriber chooses 
+to participate in the one-time 30-day free trial that IEX offers for 
+TOPS and DEEP, the proposed External Distribution Rebate would begin 
+at the end of the 30-day free trial period. See Fee Schedule--Market 
+Data Fees--Trial Usage, supra note 7.
+---------------------------------------------------------------------------
+
+    The Data Redistributor must report to IEX on a monthly basis any 
+new External Data Subscribers that began subscribing to a particular 
+IEX market data product through the Data Redistributor during the 
+previous month.\19\ A Data Subscriber wishing to participate in the 
+proposed External Distribution Rebate must opt into the program via an 
+updated Exhibit A (Data Request Form) to the IEX Data Subscriber 
+Agreement, and each new External Data Subscriber will be required to 
+execute the IEX Data Subscriber Agreement.
+---------------------------------------------------------------------------
+
+    \19\ Data Subscribers that distribute Real-Time IEX market data 
+externally to External Data Subscribers are already required to 
+report such distributions. See IEX Data Subscriber Agreement, 
+Exhibit A--Data Request Form, supra note 10.
+---------------------------------------------------------------------------
+
+    The rebate will expire on the earlier of (a) the termination of an 
+External Data Subscriber's applicable subscription, or (b) August 31, 
+2028 (two years from the commencement of the proposed External 
+Distribution Rebate program).\20\
+---------------------------------------------------------------------------
+
+    \20\ Should the Exchange determine to extend the proposed rebate 
+program, it would do so subject to an effective SEC rule filing and 
+notice to market participants.
+---------------------------------------------------------------------------
+
+Proposal
+    IEX proposes to make the External Distribution Rebate available to 
+Extranet Providers in the same manner as it is available to Data 
+Subscribers. Extranet Providers are not Exchange Members, but obtain 
+authorized access to the Exchange by entering into a Connectivity 
+Services Agreement (including the ``Extranet Addendum'') with the 
+Exchange.\21\ Extranet Providers with authorized access to the Exchange 
+provide a means for market participants (including Members and Data 
+Subscribers) to connect to the Exchange for order entry access or the 
+receipt of market data.\22\ Extranet Providers who elect to distribute 
+market data to their customers agree not to access or alter the market 
+data subject to some technical exceptions set forth in the Extranet 
+Addendum.\23\ Thus, Extranet Providers receive and transmit IEX market 
+data without signing the IEX Data Subscriber Agreement \24\ and thus 
+without becoming an IEX Data Subscriber.\25\
+---------------------------------------------------------------------------
+
+    \21\ See Rule 11.130(e).
+    \22\ See IEX Extranet Manual, available at <a href="https://www.iex.io/documents/iex-extranet-manual">https://www.iex.io/documents/iex-extranet-manual</a>.
+    \23\ See Section 3(b) of the Extranet Addendum to Connectivity 
+Services Agreement, available at <a href="https://www.iex.io/documents/iex-connectivity-services-agreement-and-forms">https://www.iex.io/documents/iex-connectivity-services-agreement-and-forms</a>.
+    \24\ See Section 2(1) of the IEX Market Data Policies, available 
+at <a href="https://www.iex.io/documents/iex-market-data-policies-rev202408">https://www.iex.io/documents/iex-market-data-policies-rev202408</a>. 
+(``All recipients of Real-Time IEX Market Data via Uncontrolled 
+Distribution, except extranet providers, are required to complete, 
+sign and deliver to IEX the IEX Data Subscriber Agreement, including 
+the Data Request Form and List of Affiliates (if applicable).'') 
+(emphasis added).
+    \25\ IEX's Fee Schedule, Data Subscriber Agreement, and Market 
+Data Policies all define a Data Subscriber as a Person that both 
+receives IEX real-time market data and is required to sign a Data 
+Subscriber Agreement. See Fee Schedule, supra, note 7, IEX Data 
+Subscriber Agreement, supra, note 10, and IEX Market Data Policies, 
+supra, note 24.
+---------------------------------------------------------------------------
+
+    As proposed, each Extranet Provider that transmits Real-Time IEX 
+market data products to one or more Data Subscribers \26\ will be 
+eligible to receive an External Distribution Rebate of 75% of the 
+amount of subscription fees paid to IEX by any new Data Subscriber that 
+begins to subscribe to one or more Real-Time IEX market data products 
+through such Extranet Provider. Each Extranet Provider will be eligible 
+to earn the External Distribution Rebate starting the first full month 
+of any new Data Subscriber's subscription to any Real-Time IEX market 
+data product. To qualify for the External Distribution Rebate, an 
+Extranet Provider must opt into the program via an updated Extranet 
+Addendum to the Connectivity Services Agreement, report monthly to IEX 
+any new Data Subscribers that began subscribing to a particular Real-
+Time IEX market data product through the Extranet Provider during the 
+previous month, and each new Data Subscriber must execute the IEX Data 
+Subscriber Agreement. Only Data Subscribers who, as of July 1, 2026, 
+were not entitled to receive Real-Time IEX market data products will be 
+eligible to be counted. The External Distribution Rebate does not apply 
+to an Extranet Provider's existing Data Subscriber customers.
+---------------------------------------------------------------------------
+
+    \26\ IEX notes that a firm that receives Real-Time IEX market 
+data from an Extranet Provider is referred to herein and in the Fee 
+Schedule as a ``Data Subscriber'', because ``External Data 
+Subscribers'' are defined as receiving Real-Time IEX market data 
+from a Data Subscriber, and as described above, Extranet Providers 
+are not Data Subscribers. See Fee Schedule, supra, note 7.
+---------------------------------------------------------------------------
+
+    IEX believes that it is appropriate to extend the External 
+Distribution Rebate to Extranet Providers because the same factors that 
+are applicable to redistribution by a Data Subscriber, as described in 
+the Market Data Rebate Filing, are also relevant to an Extranet 
+Provider.\27\ Specifically, making rebate payments to an Extranet 
+Provider is designed to provide a strong incentive for the Extranet 
+Provider to expand its distribution of IEX market data products by 
+offering a share in the economics of the new subscriptions in the form 
+of a rebate. As discussed in the Market Data Rebate Filing, such rebate 
+payments are common for exchanges.
+---------------------------------------------------------------------------
+
+    \27\ See supra, note 13.
+---------------------------------------------------------------------------
+
+    In general, the Exchange believes that exchanges, in setting fees 
+of all types, should meet very high standards of transparency to 
+demonstrate why each new fee or fee increase meets the Exchange Act 
+requirements. The Exchange believes this high standard is especially 
+important when an exchange imposes fees for market participants to
+
+[[Page 58738]]
+
+access an exchange's marketplace. The Exchange believes the proposed 
+rebate, as applied to Extranet Providers, is reasonable when compared 
+with similar fee waivers and credits offered by other equities 
+exchanges.\28\
+---------------------------------------------------------------------------
+
+    \28\ The Cboe U.S. equities exchanges (EDGX, EDGA, BYX, and BZX) 
+waive external distribution fees for new uncontrolled external 
+distributors of certain Cboe market data feeds until such time as 
+they enlist one or more users to receive the applicable data feeds: 
+Summary Depth, Top and aggregated market data feeds, Cboe One 
+Summary and Cboe One Premium. See Cboe EDGX U.S. Equities Fee 
+Schedule, effective July 1, 2026, available at <a href="https://www.cboe.com/us/equities/membership/fee_schedule/edgx">https://www.cboe.com/us/equities/membership/fee_schedule/edgx</a>; Cboe EDGA U.S. Equities 
+Fee Schedule, effective July 1, 2026, available at <a href="https://www.cboe.com/us/equities/membership/fee_schedule/edga">https://www.cboe.com/us/equities/membership/fee_schedule/edga</a>; Cboe BYX U.S. 
+Equities Fee Schedule, effective July 1, 2026, available at <a href="https://www.cboe.com/us/equities/membership/fee_schedule/byx">https://www.cboe.com/us/equities/membership/fee_schedule/byx</a>; Cboe BZX U.S. 
+Equities Fee Schedule, effective July 1, 2026, available at <a href="https://www.cboe.com/us/equities/membership/fee_schedule/bzx">https://www.cboe.com/us/equities/membership/fee_schedule/bzx</a>. NYSE also 
+provides a redistribution credit up to the amount of the external 
+distribution fee for the external distribution of the Pillar Depth 
+data feed. See NYSE Proprietary Market Data Pricing Guide, effective 
+May 14, 2026, available at <a href="https://www.nyse.com/publicdocs/nyse/data/NYSE_Market_Data_Pricing.pdf">https://www.nyse.com/publicdocs/nyse/data/NYSE_Market_Data_Pricing.pdf</a>.
+---------------------------------------------------------------------------
+
+    The Exchange plans to implement the proposed fee change on 
+September 1, 2026, subject to effectiveness of this proposed rule 
+change. The Exchange announced the planned implementation of the 
+External Distribution Rebate program set forth in the Market Data 
+Rebate Filing on July 31, 2026 \29\ and will issue an updated 
+announcement regarding this proposed fee change upon effectiveness.
+---------------------------------------------------------------------------
+
+    \29\ See Trading Alert #2026-012, available at <a href="https://notifications.iex.io/tradingalerts/77">https://notifications.iex.io/tradingalerts/77</a>.
+---------------------------------------------------------------------------
+
+    Accordingly, the Exchange proposes to amend the Market Data Fees 
+section of the Fee Schedule as follows:
+
+    <bullet> Add a new paragraph to the ``External Distribution 
+Rebate'' section prior to the last sentence of the existing 
+paragraph with the following text:
+    Each Extranet Provider that transmits Real-Time IEX market data 
+products to one or more Data Subscribers will be eligible to receive 
+an External Distribution Rebate of 75% of the amount of subscription 
+fees paid to IEX by any new Data Subscriber that begins to subscribe 
+to one or more Real-Time IEX market data product through such 
+Extranet Provider. Each Extranet Provider will be eligible to earn 
+the External Distribution Rebate starting the first full month of 
+any new Data Subscriber's subscription to any Real-Time IEX market 
+data product. To qualify for the External Distribution Rebate, an 
+Extranet Provider must opt into the program by providing IEX with an 
+updated Extranet Addendum to the Connectivity Services Agreement, 
+report monthly to IEX any new Data Subscribers that began 
+subscribing to a particular Real-Time IEX market data product 
+through the Extranet Provider during the previous month, and each 
+new Data Subscriber must execute the IEX Data Subscriber Agreement. 
+Only Data Subscribers who, as of July 1, 2026, were not entitled to 
+receive Real-Time IEX market data products will be eligible to be 
+counted. The External Distribution Rebate does not apply to an 
+Extranet Provider's existing Data Subscriber customers.
+
+    IEX also proposes to make one clarifying edit to the now third 
+paragraph of the External Distribution Rebate section of the Fee 
+Schedule. Specifically, IEX proposes to add ``or Data Subscriber's'' 
+after the words ``External Data Subscriber's'', so the paragraph will 
+now read in full:
+
+    The External Distribution Rebate shall automatically expire on 
+the earlier of (a) the termination of an External Data Subscriber's 
+or Data Subscriber's applicable subscription, or (b) August 31, 
+2028.
+
+    IEX makes this change so the Fee Schedule is clear that Extranet 
+Providers and Data Subscribers who qualify for the External 
+Distribution Rebate are treated identically if the new Data Subscriber 
+introduced by an Extranet Provider or External Data Subscriber 
+introduced by a Data Subscriber terminates its subscription for IEX 
+Real-Time market data.
+2. Statutory Basis
+    The Exchange believes that the proposed rule change is consistent 
+with the provisions of Section 6(b) \30\ of the Act in general and 
+furthers the objectives of Section 6(b)(4) \31\ of the Act, in 
+particular, in that it is designed to provide for the equitable 
+allocation of reasonable dues, fees and other charges among its Members 
+and other recipients of Exchange market data products. The Exchange 
+also believes that the proposed rule change is designed to promote just 
+and equitable principles of trade, will not be unfairly discriminatory, 
+and is consistent with the objectives of Section 6(b)(5) \32\ of the 
+Act.
+---------------------------------------------------------------------------
+
+    \30\ 15 U.S.C. 78f(b).
+    \31\ 15 U.S.C. 78f(b)(4).
+    \32\ 15 U.S.C. 78f(b)(5).
+---------------------------------------------------------------------------
+
+    The Exchange believes that the proposed rule change is equitable 
+and not unfairly discriminatory because the External Distribution 
+Rebate would be available to any Extranet Provider that distributes 
+IEX's market data products to new customers. As such, the External 
+Distribution Rebate, as proposed to be modified, is narrowly tailored 
+to increase external distribution of IEX market data and attract new 
+External Data Subscribers. The Exchange believes that the proposed 
+External Distribution Rebate will not only lower the effective costs 
+for Extranet Providers that successfully enlist new External Data 
+Subscribers by defraying their technical and operational costs \33\ but 
+will also potentially reward them with rebates exceeding such costs. 
+The Exchange believes the proposed External Distribution Rebate is 
+reasonably designed because the amount of the rebate will ultimately be 
+a function of the ability of an Extranet Provider to enlist new 
+External Data Subscribers for IEX market data products.
+---------------------------------------------------------------------------
+
+    \33\ Extranet Providers are not subject to IEX market data fees 
+because they are not Data Subscribers. See supra, notes 24 and 25. 
+However, Extranet Providers incur costs to satisfy IEX's requirement 
+that they own and maintain ``reliable, redundant physical 
+connectivity'' to the Exchange. See IEX Extranet Manual, supra, note 
+22.
+---------------------------------------------------------------------------
+
+    Similarly, the Exchange believes it is reasonable that the proposed 
+rebate is not available with respect to the distribution of IEX market 
+data products to existing Data Subscribers because such distribution 
+would not increase the number of Data Subscribers or expand the 
+distribution of IEX market data to new customers.\34\ As such, the 
+proposed rebate is not based on the type of Extranet Provider but on 
+the business model as determined by the Extranet Provider.
+---------------------------------------------------------------------------
+
+    \34\ IEX does not charge incremental fees for internal 
+distribution of its market data.
+---------------------------------------------------------------------------
+
+    In addition, IEX believes that it is reasonable to condition 
+eligibility for the 75% rebate to the subscriptions of those downstream 
+customers of Extranet Providers that, as of July 1, 2026, were not 
+entitled to receive Real-Time IEX market data. This clarifies which 
+downstream customers are eligible to be new Data Subscribers, and is 
+consistent with the Exchange's launch of the program.
+    Furthermore, the Exchange believes that the proposed rule change is 
+consistent with charging fees that are reasonable, fair, and equitable, 
+and not unfairly discriminatory because the proposed rule change does 
+not alter the level of fees that the Exchange currently charges for 
+Real-Time market data products. The proposed External Distribution 
+Rebate would apply equally to all Extranet Providers that are eligible 
+for the rebate and in the same manner as it is currently applicable to 
+Data Subscribers who are eligible for the rebate for enlisting new 
+External Data Subscribers.
+    In addition, the Exchange believes that the proposed rule change is 
+consistent with Section 11A of the Exchange Act \35\ in that it is 
+designed to facilitate the economically efficient execution of 
+securities transactions, fair competition among brokers and dealers,
+
+[[Page 58739]]
+
+exchange markets and markets other than exchange markets, and the 
+practicability of brokers executing investors' orders in the best 
+market. As noted above, the proposed External Distribution Rebate is 
+designed to expand access to IEX market data to a broader range of 
+users and thereby supports the economically efficient execution of 
+securities transactions on IEX.
+---------------------------------------------------------------------------
+
+    \35\ 15 U.S.C. 78k-1.
+---------------------------------------------------------------------------
+
+    As discussed in the Purpose section, other exchanges have similar 
+credits or fee waiver programs designed to incentivize external 
+distribution of market data products.\36\ As discussed in the Market 
+Data Rebate Filing, although other exchanges that offer such credits or 
+fee waiver programs cap such credits or waivers at the amount of fees 
+payable by the upstream distributor, IEX does not believe this 
+difference is material in that it merely reflects a difference in 
+degree rather than substance.\37\ And IEX notes that exchanges 
+routinely provide rebate payments to their members with respect to 
+transaction fees. Thus, the Exchange does not believe that the proposed 
+rule change raises any new or novel issues not already considered by 
+the Commission. For the foregoing reasons, the Exchange believes that 
+the proposed rule change is consistent with charging fees that are 
+reasonable, fair, equitable, and not unfairly discriminatory.
+---------------------------------------------------------------------------
+
+    \36\ See supra note 28.
+    \37\ See supra, note 13.
+---------------------------------------------------------------------------
+
+B. Self-Regulatory Organization's Statement on Burden on Competition
+
+    The Exchange does not believe that the proposed rule change will 
+result in any burden on intramarket or intermarket competition that is 
+not necessary or appropriate in furtherance of the purposes of the Act.
+    The Exchange does not believe that the proposed rule change will 
+impose any burden on intermarket competition that is not necessary or 
+appropriate in furtherance of the purposes of the Act. To the contrary, 
+the proposal is designed to enhance the Exchange's competitiveness by 
+incentivizing Extranet Providers to enlist new Data Subscribers and 
+increase distribution of IEX market data products, thereby expanding 
+access to IEX market data. Other exchanges are free to offer similar 
+External Distribution Rebates to compete with the Exchange's offering, 
+subject to the Commission's rule filing process.
+    Further, the Exchange believes that the proposed rebate program 
+does not impose a burden on intramarket competition that is not 
+necessary or appropriate in furtherance of the purposes of the Act 
+because all Extranet Providers, as well as Data Subscribers, are 
+eligible for the proposed rebate. The proposed rebate is not based on 
+the type of Extranet Provider or Data Subscriber but on their 
+respective business models as determined by the Extranet Provider or 
+Data Subscriber.
+
+C. Self-Regulatory Organization's Statement on Comments on the Proposed 
+Rule Change Received From Members, Participants, or Others
+
+    Written comments were neither solicited nor received.
+
+III. Date of Effectiveness of the Proposed Rule Change and Timing for 
+Commission Action
+
+    The foregoing rule change has become effective pursuant to Section 
+19(b)(3)(A)(ii) \38\ of the Act.
+---------------------------------------------------------------------------
+
+    \38\ 15 U.S.C. 78s(b)(3)(A)(ii).
+---------------------------------------------------------------------------
+
+    At any time within 60 days of the filing of the proposed rule 
+change, the Commission summarily may temporarily suspend such rule 
+change if it appears to the Commission that such action is necessary or 
+appropriate in the public interest, for the protection of investors, or 
+otherwise in furtherance of the purposes of the Act. If the Commission 
+takes such action, the Commission shall institute proceedings under 
+Section 19(b)(2)(B) \39\ of the Act to determine whether the proposed 
+rule change should be approved or disapproved.
+---------------------------------------------------------------------------
+
+    \39\ 15 U.S.C. 78s(b)(2)(B).
+---------------------------------------------------------------------------
+
+IV. Solicitation of Comments
+
+    Interested persons are invited to submit written data, views and 
+arguments concerning the foregoing, including whether the proposed rule 
+change is consistent with the Act. Comments may be submitted by any of 
+the following methods:
+
+Electronic Comments
+
+    <bullet> Use the Commission's internet comment form (<a href="https://www.sec.gov/rules/sro.shtml">https://www.sec.gov/rules/sro.shtml</a>); or
+    <bullet> Send an email to <a href="/cdn-cgi/l/email-protection#c6b4b3aaa3eba5a9ababa3a8b2b586b5a3a5e8a1a9b0"><span class="__cf_email__" data-cfemail="5e2c2b323b733d3133333b302a2d1e2d3b3d70393128">[email&#160;protected]</span></a>. Please include 
+File Number SR-IEX-2026-29 on the subject line.
+
+Paper Comments
+
+    <bullet> Send paper comments in triplicate to Secretary, Securities 
+and Exchange Commission, 100 F Street NE, Washington, DC 20549-1090.
+
+All submissions should refer to file number SR-IEX-2026-29. This file 
+number should be included on the subject line if email is used. To help 
+the Commission process and review your comments more efficiently, 
+please use only one method. The Commission will post all comments on 
+the Commission's internet website (<a href="https://www.sec.gov/rules/sro.shtml">https://www.sec.gov/rules/sro.shtml</a>). Copies of the filing will be available for inspection and 
+copying at the principal office of the Exchange. Do not include 
+personal identifiable information in submissions; you should submit 
+only information that you wish to make available publicly. We may 
+redact in part or withhold entirely from publication submitted material 
+that is obscene or subject to copyright protection. All submissions 
+should refer to file number SR-IEX-2026-29 and should be submitted on 
+or before October 7, 2026.
+
+    For the Commission, by the Division of Trading and Markets, 
+pursuant to delegated authority.\40\
+---------------------------------------------------------------------------
+
+    \40\ 17 CFR 200.30-3(a)(12).
+---------------------------------------------------------------------------
+
+Sherry R. Haywood,
+Assistant Secretary.
+[FR Doc. 2026-18930 Filed 9-15-26; 8:45 am]
+BILLING CODE 8011-01-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

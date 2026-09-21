@@ -1,0 +1,177 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 165 (Thursday, August 27, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 165 (Thursday, August 27, 2026)]
+[Rules and Regulations]
+[Pages 55280-55281]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-17454]
+
+
+-----------------------------------------------------------------------
+
+ENVIRONMENTAL PROTECTION AGENCY
+
+40 CFR Part 271
+
+[EPA-R04-RCRA-2025-1577; FRL-13183-03-R4]
+
+
+Florida: Final Authorization of State Hazardous Waste Management 
+Program Revisions
+
+AGENCY: Environmental Protection Agency (EPA).
+
+ACTION: Final action; response to comments.
+
+-----------------------------------------------------------------------
+
+SUMMARY: On September 1, 2023, Florida submitted to the Environmental 
+Protection Agency (EPA) a program revision application seeking 
+authorization of changes to its hazardous waste program under the 
+Resource Conservation and Recovery Act (RCRA), as amended. On March 26, 
+2026, the EPA published both a direct final action granting Florida 
+final authorization for revisions to its federally authorized hazardous 
+waste program, along with a companion proposed rule announcing the 
+EPA's proposal to grant such final authorization. The EPA announced in 
+both documents that the direct final action would become effective on 
+May 26, 2026, unless adverse comments were received by April 27, 2026. 
+Although the EPA received two comments during the public comment 
+period, the EPA determined that the comments were not adverse. As a 
+result, the direct final rule became effective on May 26, 2026. This 
+action responds to the comments the EPA received.
+
+DATES: The authorization of revisions to Florida's hazardous waste 
+program took effect on May 26, 2026, as provided in the direct final 
+action (91 FR 14648).
+
+FOR FURTHER INFORMATION CONTACT: Leah Davis; RCRA Programs and Cleanup 
+Branch; Land, Chemicals and Redevelopment Division; U.S. Environmental 
+Protection Agency; Atlanta Federal Center, 61 Forsyth Street SW, 
+Atlanta, Georgia 30303-8960; telephone number: (404) 562-8562; fax 
+number: (404) 562-9964; email address: <a href="/cdn-cgi/l/email-protection#b5d1d4c3dcc69bd9d0d4ddf5d0c5d49bd2dac3"><span class="__cf_email__" data-cfemail="f69297809f85d89a93979eb6938697d8919980">[email&#160;protected]</span></a>.
+
+SUPPLEMENTARY INFORMATION:
+
+I. What comments were received on Florida's proposed authorization and 
+how is the EPA responding to these comments?
+
+    During the public comment period for the direct final action (91 FR 
+14648) and proposed rule (91 FR 14673), the EPA received two separate 
+comments. The comments are provided in the docket for this action. See 
+Docket ID No. EPA-R04-RCRA-2025-1577 at <a href="http://www.regulations.gov">www.regulations.gov</a>. A summary 
+of the comments and the EPA's responses are provided below.
+    Comment 1: The first commenter supported the EPA's authorization of 
+revisions to Florida's hazardous waste program, stating that the EPA's 
+authorization of the Florida hazardous waste program is beneficial in 
+safeguarding human health and the environment.
+    Response: Because this comment is supportive of the authorization, 
+the EPA determined that there is no basis to withdraw or deny 
+authorization of revisions to the State program based on this comment.
+    Comment 2: The second commenter supported the EPA's authorization 
+of revisions to the Florida hazardous waste program but posed several 
+clarifying
+
+[[Page 55281]]
+
+questions as to the EPA's authorization decision as set forth below.
+    Comment 2.a.: The commenter notes that the Florida hazardous waste 
+program largely incorporates the Federal hazardous waste regulations by 
+reference but also includes additional State provisions that are either 
+in addition to, or more stringent than, the Federal provisions 
+incorporated by reference. The comment requests clarification of how 
+that determination is reflected in the structure of the State rules.
+    EPA Response to Comment 2.a.: For purposes of this authorization, 
+most of the provisions being authorized were incorporated by reference. 
+In some cases, the State adds additional regulatory language stating 
+that certain Federal provisions are excluded from that incorporation by 
+reference or adopts another definition from its statutes (for example, 
+the definition of ``lamp''). The EPA reviews the totality of the 
+incorporated by reference provisions and any additional State language, 
+to evaluate equivalency.
+    Comment 2.b.: The commenter requests clarification on whether, for 
+Checklists 181 and 244, the authorized provisions are incorporated by 
+reference in whole or in part or implemented through independently 
+codified State text.
+    EPA Response to Comment 2.b.: The State provisions being authorized 
+for Checklists 181 and 244 incorporate the Federal regulations by 
+reference. The authorized State provisions list any Federal regulations 
+that are excluded from that incorporation by reference.
+    Comment 2.c.: The commenter requests confirmation as to whether any 
+substantive differences exist between the Florida provisions and the 
+corresponding Federal requirements.
+    EPA Response to Comment 2.c.: As documented in the direct final 
+action, for the Federal rules being authorized, there are no 
+substantive differences between the Federal requirements and the State 
+requirements.
+    Comment 2.d.: The commenter requests that the EPA identify which 
+import/export functions listed in Checklist 244 remain under Federal 
+implementation and explain how they interact with Florida's authorized 
+program.
+    EPA Response to Comment 2.d.: Checklist 244 makes conforming 
+changes to regulations related to twelve hazardous waste import/export 
+recovery and disposal operations used in hazardous waste export and 
+import notices submitted to the EPA by exporters and importers in the 
+United States, and in movement documents that accompany export and 
+import shipments. These Federal changes were needed to reflect changes 
+to regulations related to Canadian import/export recovery and disposal 
+operations that Canada promulgated in 2021. State programs are required 
+to adopt the provisions in this rule to maintain their equivalency with 
+the Federal program under 40 CFR 271.10(e); however, the import and 
+export requirements are administered by the Federal government as a 
+matter of foreign policy.
+    Comment 2.e.: The commenter notes that in the direct final action 
+the EPA stated that it authorized Checklist 181 for completeness. The 
+commenter requested clarification as to the effect of this statement.
+    EPA Response to Comment 2.e.: As noted in the direct final action, 
+Florida added hazardous waste lamps as a category of universal waste 
+prior to the EPA adding them as a category of universal waste. Florida 
+adopts the federal universal waste lamp regulations by reference but 
+was never specifically authorized for Checklist 181 because lamps were 
+already a part of the Florida universal waste program when Checklist 
+181 was promulgated. The authorization of Checklist 181 clarifies any 
+ambiguity as to whether Florida is authorized for Checklist 181.
+    Because this commenter asked clarifying questions only, to which 
+the EPA has responded above, the EPA determined that there is no basis 
+to withdraw or deny authorization of revisions to the State program 
+based on this comment.
+
+II. Why did the EPA issue this response to comments?
+
+    In the direct final action and proposed rule, the EPA stated that 
+if it received adverse comments, we would either publish a timely 
+withdrawal of this direct final action in the Federal Register 
+informing the public the authorization will not take effect, or we 
+would publish a notification containing a response to comments that 
+either reverses the decision or affirms the final action will take 
+effect. As stated above, the EPA determined that the comments received 
+were not adverse; therefore, there is no basis to withdraw or deny 
+authorization of revisions to the State program based on the comments 
+received. However, the EPA publishes this notice in the Federal 
+Register responding to the comments and acknowledging that the direct 
+final action took effect on May 26, 2026, as provided in the direct 
+final action.
+
+List of Subjects in 40 CFR Part 271
+
+    Environmental protection, Administrative practice and procedure, 
+Confidential business information, Hazardous waste, Hazardous waste 
+transportation, Incorporation by reference, Indian lands, 
+Intergovernmental relations, Penalties, Reporting and recordkeeping 
+requirements.
+
+    Authority: This action is issued under the authority of sections 
+2002(a), 3006, and 7004(b) of the Solid Waste Disposal Act as 
+amended, 42 U.S.C. 6912(a), 6926, and 6974(b).
+
+    Dated: August 6, 2026.
+Kevin J. McOmber,
+Regional Administrator.
+[FR Doc. 2026-17454 Filed 8-26-26; 8:45 am]
+BILLING CODE 6560-50-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

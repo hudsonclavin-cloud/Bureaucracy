@@ -1,0 +1,365 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 165 (Thursday, August 27, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 165 (Thursday, August 27, 2026)]
+[Notices]
+[Pages 55323-55325]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-17525]
+
+
+-----------------------------------------------------------------------
+
+DEPARTMENT OF COMMERCE
+
+Patent and Trademark Office
+
+
+Agency Information Collection Activities; Submission to the 
+Office of Management and Budget for Review and Approval; Comment 
+Request; Substantive Submissions Made During the Prosecution of the 
+Trademark Application
+
+AGENCY: United States Patent and Trademark Office, Department of 
+Commerce.
+
+ACTION: Notice of information collection; request for comments.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The United States Patent and Trademark Office (hereafter 
+``USPTO'' or ``Agency''), as required by the Paperwork Reduction Act of 
+1995, invites comments on the extension and revision of an existing 
+information collection: 0651-0054 (Substantive Submissions Made During 
+the Prosecution of the Trademark Application). The purpose of this 
+notice is to allow 60 days for public comments preceding submission of 
+the information collection to the Office of Management and Budget 
+(OMB).
+
+DATES: To ensure consideration, you must submit comments regarding this 
+information collection on or before October 26, 2026.
+
+ADDRESSES: Interested persons are invited to submit written comments by 
+any of the following methods. Do not submit Confidential Business 
+Information or otherwise sensitive or protected information.
+    <bullet> Email: <a href="/cdn-cgi/l/email-protection#723b1c141d001f13061b1d1c311d1e1e1711061b1d1c32070102061d5c151d04"><span class="__cf_email__" data-cfemail="e3aa8d858c918e82978a8c8da08c8f8f8680978a8c8da3969093978ccd848c95">[email&#160;protected]</span></a>. Include ``0651-
+0054 comment'' in the subject line of the message.
+    <bullet> Federal eRulemaking Portal: <a href="https://www.regulations.gov">https://www.regulations.gov</a>.
+    <bullet> Mail: Justin Isaac, Office of the Chief Administrative 
+Officer, United States Patent and Trademark Office, P.O. Box 1450, 
+Alexandria, VA 22313-1450.
+    <bullet> Telephone: Emily Carlsen, Petitions Office, Office of the 
+Deputy Commissioner for Trademark Examination Policy, 571-272-2235.
+
+FOR FURTHER INFORMATION CONTACT: Requests for additional information 
+should be directed to Emily Carlsen, Senior Attorney Advisor, at: 
+Petitions Office, Office of the Deputy Commissioner of Trademark 
+Examination Policy, United States Patent and Trademark Office, P.O. Box 
+1450, Alexandria, VA 22313-1450; 571-272-2235; or <a href="/cdn-cgi/l/email-protection#76223b26191a1f150f36030506021958111900"><span class="__cf_email__" data-cfemail="5e0a130e3132373d271e2b2d2e2a3170393128">[email&#160;protected]</span></a> 
+with ``0651-0054 comment'' in the subject line. Additional information 
+about this information collection is also available at <a href="https://www.reginfo.gov">https://www.reginfo.gov</a> under ``Information Collection Review.''
+
+SUPPLEMENTARY INFORMATION:
+
+I. Abstract
+
+    This collection of information is required by the Trademark Act, 15 
+U.S.C. 1051 et seq., which provides for the registration of trademarks, 
+service marks, collective trademarks and collective service marks, 
+collective membership marks, and certification marks. Individuals and 
+business that use or intend to use such marks in commerce may file an 
+application to register their marks with the USPTO.
+    Such individuals and businesses may also submit various 
+communications to the USPTO, including providing additional information 
+needed to process a request to delete a particular filing basis from an 
+application or to divide an application identifying multiple goods and/
+or service into two or more separate applications. Applicants may seek 
+a six-month extension of time to file a statement that the mark is in 
+use in commerce or submit a petition to revive an application that was 
+abandoned for failure to submit a timely statement of use or extension 
+request. Applicants are allowed to file up to five extension requests 
+over a 30-month period. The USPTO estimates that the average applicant 
+will file two extension requests per year. In some circumstances, an 
+applicant may expressly abandon an application by filing a request for 
+withdrawal of the application.
+    The rules implementing the Trademark Act are set forth in 37 CFR 
+part 2. These rules mandate that each trademark register entry include 
+the mark, the goods and/or services in connection with which the mark 
+is used, ownership information, dates of use, and certain other 
+information. The USPTO also provides similar information concerning 
+pending applications. The register and pending application information 
+may be accessed by an individual or business to determine the 
+availability of a mark. By accessing the USPTO's information, parties 
+may reduce the possibility of initiating use of a mark previously 
+adopted by another. As a result, the federal trademark registration 
+process is intended to reduce unnecessary litigation and its 
+accompanying costs and burdens.
+    The information in this collection is used to process the 
+substantive submissions made during prosecution of a trademark 
+application. The submissions in this information collection are a 
+matter of public record and are used by the public for a variety of 
+private business purposes related to establishing and enforcing 
+trademark rights. The information is accessible online, through the 
+USPTO website, as well as through various USPTO facilities.
+
+II. Method of Collection
+
+    Items in this information collection must be submitted as 
+electronic submissions. In limited circumstances, applicants may be 
+permitted to submit the information in paper form by mail or hand 
+delivery.
+
+III. Data
+
+    OMB Control Number: 0651-0054.
+    Forms:
+
+<bullet> PTO-1553 (Allegation of Use (Statement of Use/Amendment to 
+Allege Use))
+<bullet> PTO-1554 (Request to Divide Application)
+<bullet> PTO-1555 (Response to Intent-to-Use/Divisional (ITU/
+Divisional) Unit Office Action)
+<bullet> PTO-1556 (Response to Petition to Revive Deficiency Letter)
+<bullet> PTO-1557 (Petition to Revive with Request to Delete Section 
+1(b) Basis or to Delete ITU Goods/Services/Collective Membership 
+Organization after NOA)
+<bullet> PTO-1581 (Request for Extension of Time to File a Statement of 
+Use)
+<bullet> PTO-2194 (Petition to Revive Abandoned Application--Failure to 
+Respond Timely to Office Action)
+<bullet> PTO-2195 (Petition to Revive Abandoned Application--Failure to 
+File Timely Statement of Use or Extension Request)
+<bullet> PTO-2200 (Request to Delete Section 1(B) Basis, Intent to Use)
+<bullet> PTO-2202 (Request for Express Abandonment (Withdrawal) of 
+Application)
+<bullet> PTO-2301 (Petition to Director)
+
+
+[[Page 55324]]
+
+
+    Type of Review: Extension and revision of a currently approved 
+information collection.
+    Affected Public: Private sector.
+    Respondent's Obligation: Required to obtain or retain benefits.
+    Frequency: On occasion.
+    Estimated Number of Annual Respondents: 314,085 respondents.
+    Estimated Number of Annual Responses: 444,085 responses.
+    Estimated Time per Response: The USPTO estimates that the responses 
+in this information collection will take the public approximately 10 
+minutes (0.17 hours) to 70 minutes (1.17 hours) to complete. This 
+includes the time to gather the necessary information, create the 
+document, and submit the completed item(s) to the USPTO.
+    Estimated Total Annual Respondent Burden Hours: 324,612 hours.
+    Estimated Total Annual Respondent Hourly Cost Burden: $178,536,600.
+
+                                       Table 1--Total Burden Hours and Hourly Costs to Private Sector Respondents
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                                                                                                             Estimated
+                                  Estimated     Responses per      Estimated       Estimated time  for       Estimated     Rate \1\ ($/       annual
+ Item No.          Item            annual         respondent        annual          response (hours)       burden (hour/       hour)        respondent
+                                 respondents                       responses                                   year)                        cost burden
+                                          (a)              (b)     (a) x (b) =  (d).....................     (c) x (d) =             (f)     (e) x (f) =
+                                                                           (c)                                       (e)                             (g)
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+1.........  Allegation of Use         135,000                1         135,000  1.......................         135,000            $550     $74,250,000
+             (Statement of
+             Use/Amendment to
+             Allege Use) PTO-
+             1553.
+2.........  Request for               130,000                2         260,000  0.58 (35 minutes).......         150,800             550      82,940,000
+             Extension of
+             Time to File a
+             Statement of Use
+             PTO-1581.
+3.........  Petition to                16,000                1          16,000  1.......................          16,000             550       8,800,000
+             Revive Abandoned
+             Application--Fai
+             lure to Respond
+             Timely to Office
+             Action PTO-2194.
+4.........  Petition to                14,500                1          14,500  0.67 (40 minutes).......           9,715             550       5,343,250
+             Revive Abandoned
+             Application--Fai
+             lure to File
+             Timely Statement
+             of Use or
+             Extension
+             Request PTO-2195.
+5.........  Request to Delete           2,300                1           2,300  0.50 (30 minutes).......           1,150             550         632,500
+             Section 1(b)
+             Basis, Intent to
+             Use PTO-2200.
+6.........  Request for                 8,200                1  ..............  0.17 (10 minutes).......           1,394             550         766,700
+             Express
+             Abandonment
+             (Withdrawal) of
+             Application PTO-
+             2202.
+7.........  Request to Divide           3,650                1           3,650  0.67 (40 minutes).......           2,446             550       1,345,300
+             Application PTO-
+             1554.
+8.........  Response to                   900                1             900  1.17 (70 minutes).......           1,053             550         579,150
+             Intent-to-Use/
+             Divisional (ITU/
+             Divisional) Unit
+             Office Action
+             PTO-1555.
+9.........  Response to                 1,000                1           1,000  0.83 (50 minutes).......             830             550         456,500
+             Petition to
+             Revive
+             Deficiency
+             Letter PTO-1556.
+10........  Petition to                 2,450                1           2,450  2.50....................           6,125             550       3,368,750
+             Director PTO-
+             2301.
+11........  Petition to                    85                1              85  1.17 (70 minutes).......              99             550          54,450
+             Revive with
+             Request to
+             Delete Section
+             1(b) Basis or to
+             Delete ITU Goods/
+             Services/
+             Collective
+             Membership
+             Organization
+             After NOA PTO-
+             1557.
+                              --------------------------------------------------------------------------------------------------------------------------
+  Totals..  .................         314,085  ...............         444,085  ........................         324,612  ..............     178,536,600
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+\1\ 2025 Report of the Economic Survey, published by the Committee on Economics of Legal Practice of the American Intellectual Property Law Association
+  (AIPLA); pg. F-35. The USPTO uses the average billing rate for intellectual property work in all firms which is $550 per hour (<a href="https://www.aipla.org/home/news-publications/economic-survey/2025-report-of-the-economic-survey">https://www.aipla.org/home/news-publications/economic-survey/2025-report-of-the-economic-survey</a>).
+
+    Estimated Total Annual Respondent Non-hourly Cost Burden: 
+$61,747,125. There are no capital start-up costs, maintenance costs, or 
+recordkeeping costs associated with this information collection. 
+However, the USPTO estimates that the total annual non-hourly cost 
+burden for this information collection, in the form of filing fees and 
+postage, is $61,747,125.
+
+Filing Fees
+
+    The fees associated with submitting items in this information 
+collection are outlined in Table 2 below:
+
+[[Page 55325]]
+
+
+
+                                              Table 2--Filing Fees
+----------------------------------------------------------------------------------------------------------------
+                                                                          Estimated
+    Item No.              Fee code                    Item                 annual        Filing     Non-hourly
+                                                                          responses     fee ($)     cost burden
+                                                                                  (a)        (b)     (a) x (b) =
+                                                                                                             (c)
+----------------------------------------------------------------------------------------------------------------
+1...............  6002, 6003.............  Allegation of Use                       14       $250          $3,500
+                                            (Statement of Use/
+                                            Amendment to Allege Use)
+                                            (Paper).
+1...............  7002, 7003.............  Allegation of Use                  134,986        150      20,247,900
+                                            (Statement of Use/
+                                            Amendment to Allege Use)
+                                            (Electronic).
+2...............  6004...................  Request for Extension of                26        225           5,850
+                                            Time to File a Statement
+                                            of Use (Paper).
+2...............  7004...................  Request for Extension of           259,974        125      32,496,750
+                                            Time to File a Statement
+                                            of Use (Electronic).
+3...............  6010...................  Petition to Revive                       2        350             700
+                                            Abandoned Application--
+                                            Failure to Respond Timely
+                                            to Office Action (Paper).
+3...............  7010...................  Petition to Revive                  15,998        250       3,999,500
+                                            Abandoned Application--
+                                            Failure to Respond Timely
+                                            to Office Action
+                                            (Electronic).
+4...............  6010...................  Petition to Revive                       1        350             350
+                                            Abandoned Application--
+                                            Failure to File Timely
+                                            Statement of Use or
+                                            Extension Request (Paper).
+4...............  7010...................  Petition to Revive                  14,499        250       3,624,750
+                                            Abandoned Application--
+                                            Failure to File Timely
+                                            Statement of Use or
+                                            Extension Request
+                                            (Electronic).
+7...............  6006...................  Request to Divide                        1        200             200
+                                            Application (Paper).
+7...............  7006...................  Request to Divide                    3,649        100         364,900
+                                            Application (Electronic).
+10..............  6005...................  Petition to Director                     1        500             500
+                                            (Paper).
+10..............  7005...................  Petition to Director                 2,449        400         979,600
+                                            (Electronic).
+11..............  6010...................  Petition to Revive with                  1        350             350
+                                            Request to Delete Section
+                                            1(b) Basis or to Delete
+                                            ITU Goods/Services/
+                                            Collective Membership
+                                            Organization After NOA
+                                            (Paper).
+11..............  7010...................  Petition to Revive with                 84        250      61,743,000
+                                            Request to Delete Section
+                                            1(b) Basis or to Delete
+                                            ITU Goods/Services/
+                                            Collective Membership
+                                            Organization After NOA
+                                            (Electronic).
+                                                                      ------------------------------------------
+  Totals........  .......................  ..........................         431,685  .........      61,745,850
+----------------------------------------------------------------------------------------------------------------
+
+Postage Costs
+
+    The USPTO requires that the items in this information collection be 
+submitted electronically. In very limited circumstances, responses may 
+be submitted by hand or by mail through the United States Postal 
+Service. The USPTO estimates that 100 items in this information 
+collection will be submitted in themail. The USPTO estimates that the 
+average postage cost for a mailed submission, using a Priority Mail 
+legal flat-rate envelope, will be $13.25. Therefore, the USPTO 
+estimates the total mailing cost for this information collection is 
+$1,325.
+
+IV. Request for Comments
+
+    The USPTO is soliciting public comments to:
+    (a) Evaluate whether the collection of information is necessary for 
+the proper performance of the functions of the Agency, including 
+whether the information will have practical utility;
+    (b) Evaluate the accuracy of the Agency's estimate of the burden of 
+the collection of information, including the validity of the 
+methodology and assumptions used;
+    (c) Enhance the quality, utility, and clarity of the information to 
+be collected; and
+    (d) Minimize the burden of the collection of information on those 
+who are to respond, including through the use of appropriate automated, 
+electronic, mechanical, or other technological collection techniques or 
+other forms of information technology, e.g., permitting electronic 
+submission of responses.
+    All comments submitted in response to this notice are a matter of 
+public record. The USPTO will include or summarize each comment in the 
+request to OMB to approve this information collection. Before including 
+an address, phone number, email address, or other personally 
+identifiable information (PII) in a comment, be advised that the entire 
+comment--including PII--may be made publicly available at any time. 
+While one may request in a comment to withhold PII from public view, 
+the USPTO cannot guarantee that it will be able to do so.
+
+Justin Isaac,
+Information Collections Officer, Office of the Chief Administrative 
+Officer, United States Patent and Trademark Office.
+[FR Doc. 2026-17525 Filed 8-26-26; 8:45 am]
+BILLING CODE 3510-16-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

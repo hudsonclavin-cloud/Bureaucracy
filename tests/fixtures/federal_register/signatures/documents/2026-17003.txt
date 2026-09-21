@@ -1,0 +1,384 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 160 (Thursday, August 20, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 160 (Thursday, August 20, 2026)]
+[Rules and Regulations]
+[Pages 53737-53740]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-17003]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+DEPARTMENT OF COMMERCE
+
+National Oceanic and Atmospheric Administration
+
+50 CFR Part 660
+
+[Docket No. 241022-0278; RIN 0648-BO14]
+
+
+Magnuson-Stevens Act Provisions; Fisheries Off West Coast States; 
+Pacific Coast Groundfish Fishery; 2025-2026 Biennial Specifications and 
+Management Measures; Inseason Adjustments
+
+AGENCY: National Marine Fisheries Service (NMFS), National Oceanic and 
+Atmospheric Administration (NOAA), Commerce.
+
+ACTION: Final rule; inseason adjustments to biennial groundfish 
+management measures.
+
+-----------------------------------------------------------------------
+
+SUMMARY: This final rule announces routine inseason adjustments to 
+management measures in commercial groundfish fisheries. These inseason 
+adjustments will increase sablefish trip limits in the limited entry 
+(LE) and open access (OA) sectors north and south of 36[deg] North 
+latitude (N lat.), and reduce vermilion/sunset rockfish sub-trip limits 
+within the shelf rockfish complex in the LE and OA sectors south of 
+34[deg]27' N lat. This action is intended to allow commercial fishing 
+vessels to access more abundant groundfish stocks while protecting 
+overfished and depleted stocks.
+
+DATES: This final rule is effective August 20, 2026.
+
+ADDRESSES: This final rule is accessible at the Office of the Federal 
+Register website at <a href="https://www.federalregister.gov">https://www.federalregister.gov</a>. Background 
+information and documents are available at the Pacific Fishery 
+Management Council's website at <a href="http://www.pcouncil.org/">http://www.pcouncil.org/</a>.
+
+FOR FURTHER INFORMATION CONTACT: Megan Mackey, Fishery Management 
+Specialist, at 206-526-6140 or <a href="/cdn-cgi/l/email-protection#f8959d9f9996d695999b939d81b896979999d69f978e"><span class="__cf_email__" data-cfemail="3a575f5d5b5414575b59515f437a54555b5b145d554c">[email&#160;protected]</span></a>.
+
+SUPPLEMENTARY INFORMATION:
+
+Background
+
+    The Pacific Coast Groundfish Fishery Management Plan (Groundfish 
+FMP) and its implementing regulations at title 50 in the Code of 
+Federal Regulations (CFR), part 660, subparts C through G, regulate 
+fishing for groundfish seaward of Washington, Oregon, and California. 
+Pacific Coast groundfish fisheries are managed using harvest 
+specifications or limits (e.g., overfishing limits, acceptable 
+biological catch, annual catch limits (ACL), and harvest guidelines) 
+recommended by the Pacific Fishery Management Council (Council) and 
+based on the best scientific information available at that time (50 CFR 
+660.60(b)).
+    During development of the harvest specifications, the Council 
+recommends management measures (e.g., trip limits, area closures, and 
+bag limits) that are meant to help achieve but not to exceed the 
+harvest specifications. Based on recommendations from the Council, NMFS 
+develops and implements groundfish harvest specifications and 
+management measures for 2-year periods (i.e., a biennium). Throughout 
+the biennium, the Council, in coordination with Pacific Coast Treaty 
+Indian Tribes and the States of Washington, Oregon, and California, 
+recommends adjustments to the management measures to achieve this goal.
+    NMFS published the final rule to implement harvest specifications 
+and management measures for the 2025-2026 biennium for most species 
+managed under the Groundfish FMP on December 16, 2024 (89 FR 101514). 
+That final rule was effective on January 1, 2025. Since January 2025, 
+the Council has recommended, and NMFS has implemented, several 
+adjustments to management measures. The inseason adjustments 
+implemented in this action, discussed below, were recommended by the 
+Council at its June 2026 meeting in Spokane, Washington.
+    This action includes two inseason adjustments: (1) an increase in 
+sablefish trip limits in the LE and OA sectors north and south of 
+36[deg] N lat., and (2) a reduction in vermilion/sunset rockfish sub-
+trip limits within the shelf rockfish complex in the LE and OA sectors 
+south of 34[deg]27' N lat. The harvest specifications and mitigation 
+measures developed for the 2025-2026 biennium used the best available 
+data, which included information on the fishery through the 2023 
+fishing year. The adjustments to mitigation measures provided in this 
+inseason action are based on updated information that was unavailable 
+when the analysis for the current harvest specifications was completed. 
+As new fisheries data becomes available, adjustments to mitigation 
+measures are necessary to help harvesters achieve, but not exceed, 
+annual allocations.
+
+Commercial Sablefish Trip Limit Adjustment
+
+    Sablefish is an important commercial species on the U.S. West Coast 
+with vessels targeting sablefish with both trawl and fixed gear 
+(including longline and pots/traps). Sablefish is managed with a coast-
+wide ACL that is apportioned north and south of 36[deg] N lat. 
+Management measures established during the 2025-26 harvest 
+specifications were based on catch projections using catch data through 
+2023. Based on updated landings data through April 30, 2026 and model 
+projections for the remainder of 2026, sablefish landings targets for 
+the LE and OA sectors north and south of 36[deg] N lat. (i.e., LE North 
+(LEN), OA North (OAN), LE South (LES), and OA South (OAS)) continue to 
+be relatively high compared to landings, and industry members have 
+indicated that there is some optimism for market expansion (see 
+Groundfish Advisory Subpanel Report on Agenda Item E.2.a from June 2026 
+Council meeting). Therefore, at its June 2026 meeting, the Council 
+reviewed the analytical documents drafted by its Groundfish Management 
+Team (GMT) and its Groundfish Advisory Subpanel and recommended 
+inseason adjustments to increase the LE and OA sablefish trip limits 
+north and south of 36[deg] N lat. to allow for more attainment of 
+sablefish within the sector allocations.
+    Under the trip limits established for sablefish through the 2025-26 
+harvest specifications, the GMT projects 845 metric tons (mt), or 10.8 
+percent of the combined 2026 landing target of 7,773 mt, of sablefish 
+would be landed by all four sectors. The GMT modeled an increase of 
+approximately 30 percent (between 25 to 35 percent depending on the 
+sector) to all four sectors' trip limits for the remainder of the year. 
+This range helped avoid complicated trip limits; for example, an exact 
+30 percent increase to the current LEN trip limit of 11,000 pounds (lb) 
+(4,989.5 kilograms (kg)) bimonthly is 14,300 lb (6,486 kg), but the GMT 
+proposed an increase to 14,000 lb (6,350 kg). Under the proposed trip 
+limit increases (Option 2), the GMT projected an additional 183 mt, or 
+about 4 percent of the combined 2026 landing target, of sablefish would 
+be caught across all four sectors. Given that sablefish attainments are 
+projected to be low in 2026, and some vessels would benefit from higher 
+trip limits, the Council recommended the trip limit increases for LE 
+and OA sablefish north and south of 36[deg] N lat. as shown in table 1.
+
+[[Page 53738]]
+
+    NMFS is approving and implementing this recommendation through this 
+inseason action.
+
+   Table 1--New LE and OA Sablefish Trip Limits for North and South of
+                             36[deg] N Lat.
+------------------------------------------------------------------------
+         Fishery                   Area              New trip limits
+------------------------------------------------------------------------
+LE.......................  North of 36[deg] N   7,000 lb (3,175 kg)/week
+                            lat.                 not to exceed 14,000 lb
+                                                 (6,350 kg)/2 months.
+                           South of 36[deg] N   4,000 lb (1,814 kg)/
+                            lat.                 week.
+OA.......................  North of 36[deg] N   5,000 lb (2,268 kg)/week
+                            lat.                 not to exceed 10,000 lb
+                                                 (4,536 kg)/2 months.
+                           South of 36[deg] N   3,200 lb (1,451.5 kg)/
+                            lat.                 week not to exceed
+                                                 9,600 lb (4,354.5 kg)/2
+                                                 months.
+------------------------------------------------------------------------
+
+Vermilion/Sunset Rockfish Sub-Trip Limit Adjustments South of 
+34[deg]27' N Lat.
+
+    Within the shelf rockfish complex, vermilion/sunset rockfish 
+landings in commercial non-trawl fisheries south of 40[deg]10' N lat. 
+have increased and are estimated to be 10.4 mt higher than at the same 
+time last year. This increase in landings is due to a greater number of 
+participants and a higher proportion of vessels attaining 90 percent or 
+more of their monthly trip limits (see GMT Report on Agenda Item E.2.a 
+from June 2026 Council meeting). Based on current catch trends, the 
+informal commercial/recreational sharing agreement of 100 mt to 
+commercial non-trawl is projected to be exceeded by around 13 percent. 
+As a result, the GMT analyzed potential sub-trip limit reductions for 
+vermilion/sunset rockfish in commercial non-trawl fisheries south of 
+40[deg]10' N lat.
+    To reduce the likelihood of exceeding the vermilion/sunset rockfish 
+ACL contribution south of 40[deg]10' N lat., the GMT recommended 
+reducing OAS and LES sub-trip limits. The proposed sub-trip limit 
+reductions south of 34[deg]27' N lat. are expected to reduce vermilion/
+sunset rockfish mortality within these sectors in 2026 to 98.3 mt, or 
+98.3 percent of the 100 mt allocation, and better align harvest levels 
+with the ACL contribution for the shelf rockfish complex. NMFS is 
+therefore implementing the following reduced trip limits for the 
+remainder of 2026 as shown in table 2.
+
+     Table 2--New Vermilion/Sunset Rockfish Sub-Trip Limits South of
+                            34[deg]27' N Lat.
+------------------------------------------------------------------------
+                Area                          New sub-trip limits
+------------------------------------------------------------------------
+LES.................................  2,500 lb (1,134 kg)/2 months.
+OAS.................................  750 lb (340 kg)/2 months.
+------------------------------------------------------------------------
+
+Classification
+
+    This final rule makes routine inseason adjustments to groundfish 
+fishery management measures, based on the best scientific information 
+available, consistent with the Groundfish FMP and its implementing 
+regulations.
+    This action is taken under the authority of 50 CFR 660.60(c) and is 
+exempt from review under Executive Order 12866.
+    The aggregate data upon which these actions are based are available 
+for public inspection by contacting Megan Mackey in NMFS West Coast 
+Region (see FOR FURTHER INFORMATION CONTACT section above), or view at 
+the NMFS West Coast Groundfish website: <a href="https://www.fisheries.noaa.gov/species/west-coast-groundfish">https://www.fisheries.noaa.gov/species/west-coast-groundfish</a>.
+    Pursuant to 5 U.S.C. 553(b)(B), NMFS finds good cause to waive 
+prior public notice and an opportunity for public comment on this 
+action, as notice and comment would be impracticable and contrary to 
+the public interest. The routine adjustments to management measures 
+implemented through this action modify trip limits for sablefish and 
+sub-trip limits for vermilion/sunset rockfish while keeping catch 
+within allocations established by the 2025-2026 harvest specifications. 
+Changes of this nature were anticipated in the final rule for the 2025-
+2026 harvest specifications and management measures, which was 
+published on December 16, 2024 (89 FR 101514). Rapid implementation of 
+inseason adjustments to routine management measures is also 
+specifically contemplated in the regulations at 50 CFR 660.60(c). 
+Finally, the sablefish trip limit increases and vermilion/sunset 
+rockfish sub-trip limit reductions implemented through this action were 
+discussed at the Council's June 2026 meeting, which included an 
+opportunity for public comment.
+    Delaying implementation to allow for additional public comment 
+would likely reduce the economic benefits this action is intended to 
+provide to the commercial fishing industry and the businesses that rely 
+on that industry, because it would be unlikely that the new regulations 
+would be implemented in time to realize the projected benefits of the 
+increased sablefish trip limits to fishery participants and fishing 
+communities, or the decreased vermilion/sunset rockfish sub-trip limits 
+to the resource during the 2026 fishing year. A delay in implementation 
+could also contribute to unnecessarily discarded and largely wasted 
+fish for any sablefish fishermen who are attaining the lower trip 
+limit. These fish could otherwise be landed to provide food and 
+revenue, and thus timely implementation of this action promotes 
+responsible use of the resource. In sum, providing a comment period for 
+this action could significantly limit economic benefits to the fishery, 
+and could hamper the potential to achieve optimum yield from the 
+affected fisheries. Accordingly, there is good cause to waive notice 
+and comment rulemaking under 5 U.S.C. 553(b)(B).
+    For the same reasons, NMFS has determined that the 30-day delay in 
+the date of effectiveness required by 5 U.S.C. 553(d) does not apply to 
+this inseason action because there is good cause to waive the 
+requirement under 5 U.S.C. 553(d)(3). NMFS therefore finds that this 
+final rule may become effective upon publication in the Federal 
+Register. The adjustments to management measures implemented in this 
+action would affect sablefish commercial fisheries by increasing 
+opportunity and allowing greater economic benefit; thus helping 
+harvesters achieve, but not exceed, annual allocations. The adjustments 
+would also help commercial non-trawl fishermen avoid exceeding the 2026 
+vermilion/sunset rockfish ACL contribution south of 40[deg]10' N lat. 
+Finally, these adjustments were requested by the Council's advisory 
+bodies, as well as members of industry,
+
+[[Page 53739]]
+
+during the Council's June 2026 meeting, and were recommended by the 
+Council, following the opportunity for public comment at the June 2026 
+meeting. Routine changes of this nature were anticipated in the 2025-
+2026 biennial harvest specifications and management measures, which 
+were established through a notice and comment rulemaking for (December 
+16, 2024 (89 FR 101514)).
+
+List of Subjects in 50 CFR Part 660
+
+    Fisheries, Fishing, Indian fisheries.
+
+    Dated: August 17, 2026.
+Shannon Bettridge,
+Acting Director, Office of Sustainable Fisheries, National Marine 
+Fisheries Service.
+
+    For the reasons set out in the preamble, NMFS amends 50 CFR part 
+660 as follows:
+
+PART 660--FISHERIES OFF WEST COAST STATES
+
+0
+1. The authority citation for part 660 continues to read as follows:
+
+    Authority:  16 U.S.C. 1801 et seq., 16 U.S.C. 773 et seq., and 
+16 U.S.C. 7001 et seq.
+
+
+0
+2. Amend table 2b (North) to part 660, subpart E by revising the entry 
+for ``Sablefish'' to read as follows:
+
+ Table 2b (North) to Part 660, Subpart E--Trip Limits for Limited Entry
+                  Non-Trawl North of 40[deg]10' N Lat.
+------------------------------------------------------------------------
+                Species                             Trip limit
+------------------------------------------------------------------------
+ 
+                              * * * * * * *
+Sablefish..............................  7,000 lb/week not to exceed
+                                          14,000 lb/2 months.
+ 
+                              * * * * * * *
+------------------------------------------------------------------------
+
+* * * * *
+
+0
+3. Amend table 2b (South) to part 660, subpart E by revising the 
+entries for ``Sablefish (south of 36[deg] N lat.)'' and ``Shelf 
+rockfish complex (south of 34[deg] 27' N lat.); excludes bronzespotted 
+rockfish'' to read as follows:
+
+ Table 2b (South) to Part 660, Subpart E--Trip Limits for Limited Entry
+                  Non-Trawl South of 40[deg]10' N Lat.
+------------------------------------------------------------------------
+                Species                             Trip limit
+------------------------------------------------------------------------
+ 
+                              * * * * * * *
+Sablefish (south of 36[deg] N lat.)....  4,000 lb/week.
+ 
+                              * * * * * * *
+Shelf rockfish complex (south of         5,000 lb per 2 months, of which
+ 34[deg]27' N lat.); excludes             no more than 2,500 lb may be
+ bronzespotted rockfish.                  vermilion/sunset rockfish.
+ 
+                              * * * * * * *
+------------------------------------------------------------------------
+
+* * * * *
+
+0
+4. Amend table 3b (North) to part 660, subpart F by revising the entry 
+for ``Sablefish'' to read as follows:
+
+  Table 3b (North) to Part 660, Subpart F--Trip Limits for Open Access
+                       North of 40[deg]10' N lat.
+------------------------------------------------------------------------
+                Species                             Trip limit
+------------------------------------------------------------------------
+ 
+                              * * * * * * *
+Sablefish..............................  5,000 lb/week not to exceed
+                                          10,000 lb/2 months.
+ 
+                              * * * * * * *
+------------------------------------------------------------------------
+
+* * * * *
+
+0
+5. Amend table 3b (South) to part 660, subpart F by revising the 
+entries for ``Sablefish (south of 36[deg] N lat.)'' and ``Shelf 
+rockfish complex (south of 34[deg]27' N lat.); excludes bronzespotted 
+rockfish'' to read as follows:
+
+[[Page 53740]]
+
+
+
+  Table 3b (South) to Part 660, Subpart F--Trip Limits for Open Access
+                       South of 40[deg]10' N lat.
+------------------------------------------------------------------------
+                Species                             Trip limit
+------------------------------------------------------------------------
+ 
+                              * * * * * * *
+Sablefish (south of 36[deg] N lat.)....  3,200 lb/week not to exceed
+                                          9,600 lb/2 months.
+ 
+                              * * * * * * *
+Shelf rockfish complex (south of         3,000 lb per 2 months, of which
+ 34[deg]27' N lat.); excludes             no more than 750 lb may be
+ bronzespotted rockfish.                  vermilion/sunset rockfish.
+ 
+                              * * * * * * *
+------------------------------------------------------------------------
+
+* * * * *
+[FR Doc. 2026-17003 Filed 8-19-26; 8:45 am]
+BILLING CODE 3510-22-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

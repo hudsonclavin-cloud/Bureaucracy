@@ -1,0 +1,768 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 160 (Thursday, August 20, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 160 (Thursday, August 20, 2026)]
+[Rules and Regulations]
+[Pages 53720-53726]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-16989]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+ENVIRONMENTAL PROTECTION AGENCY
+
+40 CFR Part 52
+
+[EPA-R09-OAR-2025-3821; FRL-13144-02-R9]
+
+
+Air Plan Approval; Arizona; Attainment Plan for the Hayden SO2 
+Nonattainment Area for the 1971 and 2010 Sulfur Dioxide National 
+Ambient Air Quality Standards
+
+AGENCY: Environmental Protection Agency (EPA).
+
+ACTION: Final rule.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The Environmental Protection Agency (EPA) is finalizing 
+approval of revisions to the Arizona state implementation plan (SIP) 
+for attaining the 1971 and 2010 sulfur dioxide (SO<INF>2</INF>) 
+national ambient air quality standards (NAAQS or ``standards'') in the 
+Hayden SO<INF>2</INF> nonattainment area. These SIP revisions, 
+collectively referred to as the ``Hayden SO<INF>2</INF> Plan'' or 
+``Plan,'' include Arizona's attainment demonstration and other elements 
+required under Clean Air Act (CAA or ``Act'') sections 110, 172, 191, 
+and 192. In addition to an attainment demonstration, the revisions 
+address the requirements for meeting reasonable further progress (RFP) 
+toward attainment of the NAAQS, reasonably available control measures
+
+[[Page 53721]]
+
+and reasonably available control technology (RACM/RACT), base-year and 
+projection-year emissions inventories, nonattainment new source review, 
+emissions limitations necessary to provide for attainment, and 
+contingency measures. The EPA is approving the SIP revisions as meeting 
+the CAA requirements. This action is being taken under the CAA.
+
+DATES: This rule is effective September 21, 2026.
+
+ADDRESSES: The EPA has established a docket for this action under 
+Docket ID No. EPA-R09-OAR-2025-3821. All documents in the docket are 
+listed on the <a href="https://www.regulations.gov">https://www.regulations.gov</a> website. Although listed in 
+the index, some information is not publicly available, e.g., 
+Confidential Business Information (CBI) or other information whose 
+disclosure is restricted by statute. Certain other material, such as 
+copyrighted material, is not placed on the internet and will be 
+publicly available only in hard copy form. Publicly available docket 
+materials are available through <a href="https://www.regulations.gov">https://www.regulations.gov</a>, or please 
+contact the person identified in the FOR FURTHER INFORMATION CONTACT 
+section for additional availability information. If you need assistance 
+in a language other than English or if you are a person with a 
+disability who needs a reasonable accommodation at no cost to you, 
+please contact the person identified in the FOR FURTHER INFORMATION 
+CONTACT section.
+
+FOR FURTHER INFORMATION CONTACT: Ashley Graham, Geographic Strategies 
+and Modeling Section (AIR-2-2), EPA Region IX, 75 Hawthorne Street, San 
+Francisco, CA 94105; telephone number: (415) 972-3877; email address: 
+<a href="/cdn-cgi/l/email-protection#264154474e474b0847554e4a435f546643564708414950"><span class="__cf_email__" data-cfemail="583f2a3930393576392b30343d212a183d2839763f372e">[email&#160;protected]</span></a>.
+
+SUPPLEMENTARY INFORMATION: Throughout this document, ``we,'' ``us,'' 
+and ``our'' refer to the EPA.
+
+Table of Contents
+
+I. Background
+II. Public Comments and EPA Responses
+III. Final Action
+IV. Incorporation by Reference
+V. Statutory and Executive Order Reviews
+
+I. Background
+
+    The EPA first established primary SO<INF>2</INF> standards in 
+1971.\1\ On March 3, 1978, the EPA designated Pinal County, Arizona as 
+a primary SO<INF>2</INF> nonattainment area based on monitored 
+violations of the primary SO<INF>2</INF> NAAQS in the county between 
+1975 and 1977.\2\ At the request of the Arizona Department of 
+Environmental Quality (ADEQ), the nonattainment area was subsequently 
+reduced to nine townships in and around Hayden, Arizona.\3\
+---------------------------------------------------------------------------
+
+    \1\ 36 FR 8186 (April 30, 1971). See 40 CFR 50.4.
+    \2\ 43 FR 8962 (March 3, 1978).
+    \3\ 44 FR 21261 (April 10, 1979). The nonattainment area is 
+composed of the following townships in southern Gila County and 
+northeastern Pinal County: T4S, R14E; T4S, R15E; T4S, R16E; T5S, 
+R14E; T5S, R15E; T5S, R16E; T6S, R14E; T6S, R15E; and T6S, R16E. The 
+following townships were designated ``cannot be classified:'' T4S, 
+R13E; T4S, R17E; T5S, R13E; T5S, R17E; T6S, R13E; and T6S, R17E.
+---------------------------------------------------------------------------
+
+    On June 22, 2010, the EPA published in the Federal Register a 
+strengthened, primary 1-hour SO<INF>2</INF> NAAQS, establishing a new 
+standard at a level of 75 parts per billion (ppb), based on the 3-year 
+average of the annual 99th percentile of daily maximum 1-hour average 
+concentrations of SO<INF>2</INF>.\4\ The EPA provided that the 24-hour 
+and annual standards established in 1971 were to remain in place for 
+those areas designated nonattainment for the 2010 SO<INF>2</INF> NAAQS 
+until such time that the State submits, and the EPA approves, an 
+implementation plan providing for attainment of the 2010 SO<INF>2</INF> 
+NAAQS.\5\
+---------------------------------------------------------------------------
+
+    \4\ On June 2, 2010, the EPA Administrator signed the final rule 
+titled, ``Primary National Ambient Air Quality Standard for Sulfur 
+Dioxide,'' 75 FR 35520 (June 22, 2010), codified at 40 CFR 50.17.
+    \5\ See 40 CFR 50.4(e). 75 FR 35520 at 75 FR 35581 (June 22, 
+2010).
+---------------------------------------------------------------------------
+
+    The EPA designated the Hayden, Arizona area nonattainment for the 
+2010 SO<INF>2</INF> NAAQS effective October 4, 2013.\6\ The dominant 
+source of SO<INF>2</INF> emissions in the Hayden SO<INF>2</INF> 
+nonattainment area is the Hayden copper smelter, owned and operated by 
+ASARCO LLC (``Asarco'').\7\ The final area designation triggered a 
+requirement for Arizona to submit by April 4, 2015 (within 18 months 
+per CAA section 191(a)), a SIP revision with an attainment plan for how 
+the Hayden SO<INF>2</INF> nonattainment area would attain the 2010 
+SO<INF>2</INF> NAAQS as expeditiously as practicable, but no later than 
+October 4, 2018, per CAA section 192(a), and in accordance with CAA 
+sections 110(a), 172(c), and 191-192.\8\
+---------------------------------------------------------------------------
+
+    \6\ 78 FR 47191 (August 5, 2013), codified at 40 CFR part 81, 
+subpart C.
+    \7\ ASARCO LLC was organized in 1899 as the American Smelting 
+And Refining Company.
+    \8\ 78 FR 47191 at 78 FR 47193 (August 5, 2013).
+---------------------------------------------------------------------------
+
+    ADEQ submitted a SIP revision on March 9, 2017, titled ``Arizona 
+State Implementation Plan Revision: Hayden Sulfur Dioxide Nonattainment 
+Area for the 2010 SO<INF>2</INF> NAAQS'' (``2017 Hayden SO<INF>2</INF> 
+Plan''). The emission limits that were intended to provide for 
+attainment of the 2010 SO<INF>2</INF> NAAQS for the Hayden area were 
+codified in the Arizona Administrative Code (AAC), Title 18, Chapter 2, 
+Article 13, section R18-2-B1302, ``Limits on SO<INF>2</INF> Emissions 
+from the Hayden Smelter'' (``Rule B1302''). ADEQ submitted Rule B1302 
+to the EPA on April 6, 2017.\9\
+---------------------------------------------------------------------------
+
+    \9\ Letter dated March 8, 2017, from Timothy S. Franquist, 
+Director, Air Quality Division, ADEQ, to Alexis Strauss, Acting 
+Regional Administrator, EPA Region IX, Subject: ``Submittal of the 
+State Implementation Plan Revision, Sulfur Dioxide National Ambient 
+Air Quality Standards, Hayden Nonattainment Area,'' (submitted 
+electronically on March 9, 2017); and letter dated April 6, 2017, 
+from Timothy S. Franquist, Director, Air Quality Division, ADEQ, to 
+Alexis Strauss, Acting Regional Administrator, EPA Region IX, 
+Subject: ``RE: Submittal of the Final Rules for the State 
+Implementation Plans for Hayden Sulfur Dioxide Nonattainment Area, 
+Hayden Lead Nonattainment Area, and Miami Sulfur Dioxide 
+Nonattainment Area,'' (submitted electronically on April 6, 2017).
+---------------------------------------------------------------------------
+
+    On November 5, 2020, the EPA finalized a limited approval and 
+limited disapproval of Arizona Rule B1302,\10\ and on November 10, 
+2020, the EPA finalized a partial approval and partial disapproval of 
+the 2017 Hayden SO<INF>2</INF> Plan.\11\ The final limited disapproval 
+of Rule B1302 and partial disapproval of the 2017 Hayden SO<INF>2</INF> 
+Plan became effective on December 7, 2020, and December 10, 2020, 
+respectively, and initiated deadlines under CAA section 179(a) for the 
+imposition of new source review offset and highway funding sanctions 
+unless the State had made the necessary complete submittal and the EPA 
+approved the submittal as meeting applicable requirements prior to 
+those deadlines.\12\
+---------------------------------------------------------------------------
+
+    \10\ 85 FR 70483 (November 5, 2020).
+    \11\ 85 FR 71547 (November 10, 2020). As part of our November 
+10, 2020 final action, the EPA approved the emissions inventory 
+element of the plan and affirmed that the State had met the new 
+source review requirements for the area.
+    \12\ On June 7, 2022, offset sanctions were imposed in the 
+Hayden SO<INF>2</INF> nonattainment area, and on December 7, 2022, 
+highway sanctions were imposed in the area.
+---------------------------------------------------------------------------
+
+    On January 31, 2022, the EPA determined that the Hayden 
+SO<INF>2</INF> nonattainment area failed to attain the 2010 1-hour 
+primary SO<INF>2</INF> NAAQS by the October 4, 2018 applicable 
+attainment date, which triggered a requirement under CAA section 179(d) 
+for Arizona to submit a revised SIP by January 31, 2023, that provides 
+for expeditious attainment of the 2010 SO<INF>2</INF> NAAQS in the 
+Hayden SO<INF>2</INF> nonattainment area by January 31, 2027.\13\
+---------------------------------------------------------------------------
+
+    \13\ 87 FR 4805 (January 31, 2022).
+---------------------------------------------------------------------------
+
+    On October 3, 2023, Arizona submitted the ``Final SIP Revision: 
+2023 Hayden Sulfur Dioxide Nonattainment Area for the 1971 and 2010 
+SO<INF>2</INF> NAAQS'' (``2023 Hayden SO<INF>2</INF> Plan'') to the EPA 
+as a revision to the Arizona SIP.\14\ ADEQ's letter adopting and
+
+[[Page 53722]]
+
+submitting the 2023 Hayden SO<INF>2</INF> Plan for inclusion in the 
+Arizona SIP clarifies that the SIP revision is intended to satisfy the 
+CAA requirements for the Hayden SO<INF>2</INF> planning area for both 
+the 1971 and 2010 SO<INF>2</INF> NAAQS.\15\ The October 3, 2023 
+submittal became complete by operation of law on April 3, 2024. On May 
+2, 2024, the EPA issued a completeness letter, determining that 
+Arizona's October 3, 2023 submittal includes all SIP elements required 
+as a result of the January 31, 2022 finding of failure to attain and 
+that the submittal meets the minimum completeness criteria in 40 CFR 
+part 51, appendix V.\16\
+---------------------------------------------------------------------------
+
+    \14\ Letter dated October 3, 2023, from Daniel Czecholinski, 
+Director, Air Quality Division, ADEQ, to Martha Guzman, Regional 
+Administrator, EPA Region 9, Subject; ``RE: Submittal of the Arizona 
+Department of Environmental Quality's SIP revision: 2023 Hayden 
+Sulfur Dioxide Nonattainment Area for the 1971 and 2010 
+SO<INF>2</INF> NAAQS,'' with enclosures (submitted electronically on 
+October 3, 2023).
+    \15\ Id.
+    \16\ Letter dated May 2, 2024, from Matthew Lakin, Director, Air 
+and Radiation Division, EPA Region IX, to Karen L. Peters, Cabinet 
+Executive Officer, ADEQ, Subject: ``Re: Completeness Finding for the 
+State Implementation Plan (SIP) Submission for the Hayden 
+Nonattainment Area for the 1971 and 2010 Sulfur Dioxide 
+(SO<INF>2</INF>) National Ambient Air Quality Standards (NAAQS).''
+---------------------------------------------------------------------------
+
+    On December 8, 2025, ADEQ submitted for parallel processing the 
+proposed ``SIP Revision: Rules Incorporating Hayden Smelter Permit 
+Conditions to Supplement Arizona's 2023 SO<INF>2</INF> SIP'' as a 
+supplement to the 2023 Hayden SO<INF>2</INF> Plan (``Hayden 
+SO<INF>2</INF> Supplement'').\17\ In addition to addressing attainment 
+planning requirements, the Hayden SO<INF>2</INF> Supplement included 
+revisions to Rule B1302 and AAC Title 18, Chapter 2, Appendix 14, 
+``Procedures for Sulfur Dioxide and Lead Fugitive Emissions Studies for 
+the Hayden Smelter'' (``Appendix 14'') that establish certain 
+enforceable control requirements that are relied upon in the attainment 
+demonstration. These rule revisions had been adopted under State law; 
+\18\ however, ADEQ noted that the State was requesting parallel 
+processing of these submissions to help facilitate timely EPA action on 
+the 2023 Hayden SO<INF>2</INF> Plan, given the additional 
+administrative steps required before codification of the rule revisions 
+in the AAC.
+---------------------------------------------------------------------------
+
+    \17\ Letter dated December 5, 2025, from Daniel Czecholinski, 
+Director, Air Quality Division, ADEQ, to Michael Martucci, Acting 
+Regional Administrator, U.S. EPA, Region 9 (submitted electronically 
+on December 8, 2025).
+    \18\ On December 10, 2025, ADEQ submitted an updated version of 
+the Hayden SO<INF>2</INF> Supplement, which noted in Exhibit A-II 
+that ``[o]n December 2, 2025, the Arizona Governor's Regulatory 
+Review Council (Arizona GRRC) approved the Hayden Pb and 
+SO<INF>2</INF> rulemaking. Accordingly, the Arizona GRRC-approved 
+Notice of Final Rulemaking (NFRM) package was submitted to the 
+Arizona Secretary of State (SOS) on December 9, 2025.'' The NFRM was 
+published in the Arizona Administrative Register on January 2, 2026 
+(Vol. 32, Issue 1, p. 93) with an effective date of February 7, 
+2026. However, the codified version of the rules has not yet been 
+published in the AAC.
+---------------------------------------------------------------------------
+
+    In addition to the 2023 Hayden SO<INF>2</INF> Plan and Hayden 
+SO<INF>2</INF> Supplement, ADEQ previously submitted amendments to AAC 
+Title 18, Chapter 2, Article 13, section R18-2-715, ``Standards of 
+Performance for Existing Primary Copper Smelters: Site-Specific 
+Requirements'' (``Rule 715'') and section R18-2-715.01, ``Standards of 
+Performance for Existing Primary Copper Smelters; Compliance and 
+Monitoring'' (``Rule 715.01'') on April 6, 2017.\19\ These amendments 
+sunset Rule 715 and 715.01 requirements upon the approval and effective 
+date of Rule B1302. Further details can be found in the technical 
+support document titled ``Technical Support Document for Rule Revisions 
+in the Hayden SO<INF>2</INF> Supplement to the 2023 Hayden 
+SO<INF>2</INF> Plan'' included in the docket for the proposed 
+action.\20\ On July 17, 2017, the EPA issued a completeness letter for 
+Rules 715 and 715.01, finding that they fulfill the completeness 
+criteria in 40 CFR part 51, appendix V.\21\
+---------------------------------------------------------------------------
+
+    \19\ Letter dated April 6, 2017, from Timothy S. Franquist, 
+Director, Air Quality Division, ADEQ, to Alexis Strauss, Acting 
+Regional Administrator, EPA Region IX, Subject: ``RE: Submittal of 
+the Final Rules for the State Implementation Plans for Hayden Sulfur 
+Dioxide Nonattainment Area, Hayden Lead Nonattainment Area, and 
+Miami Sulfur Dioxide Nonattainment Area,'' (submitted electronically 
+on April 6, 2017).
+    \20\ EPA Region IX, ``Technical Support Document for Rule 
+Revisions in the Hayden SO<INF>2</INF> Supplement to the 2023 Hayden 
+SO<INF>2</INF> Plan,'' December 2025.
+    \21\ Letter dated July 17, 2017, from Elizabeth J. Adams, Acting 
+Director, Air Division, EPA Region IX, to Timothy S. Franquist, 
+Director, Air Quality Division, ADEQ.
+---------------------------------------------------------------------------
+
+    On March 4, 2026, the EPA proposed to approve the 2023 Hayden 
+SO<INF>2</INF> Plan, Hayden SO<INF>2</INF> Supplement, and Rules 715 
+and 715.01, collectively referred to herein as the ``Hayden 
+SO<INF>2</INF> Plan.'' \22\ For details regarding the EPA's reasons for 
+proposing to approve the Hayden SO<INF>2</INF> Plan please see the 
+March 4, 2026 proposed action.\23\
+---------------------------------------------------------------------------
+
+    \22\ 91 FR 10531 (March 4, 2026).
+    \23\ Id.
+---------------------------------------------------------------------------
+
+    On June 5, 2026, Arizona submitted the final version of the Hayden 
+SO<INF>2</INF> Supplement to the EPA as a revision to the Arizona 
+SIP.\24\ We have reviewed this submittal and have determined that it 
+includes the final codified versions of Rule B1302, Appendix 14, Rule 
+715, and Rule 715.01; and an updated completeness evaluation of the 
+submittal. It does not otherwise differ from the version submitted for 
+parallel processing on December 8, 2025, that we evaluated for our 
+proposed approval.
+---------------------------------------------------------------------------
+
+    \24\ Letter dated June 2, 2026, from Daniel Czecholinski, 
+Director, Air Quality Division, ADEQ, to Michael Martucci, Acting 
+Regional Administrator, U.S. EPA, Region 9, Subject: ``RE: Final 
+Submittal of SIP Revision: Rules Incorporating Hayden Smelter Permit 
+Conditions to Supplement Arizona's 2023 SO<INF>2</INF> SIP,'' with 
+enclosures.
+---------------------------------------------------------------------------
+
+    Based on our review, we find that the June 5, 2026 submittal 
+fulfills the SIP completeness criteria of 40 CFR part 51, appendix V. 
+The SIP submission also includes evidence that adequate public notice 
+was given and that an opportunity for a public hearing was provided 
+consistent with the EPA's implementing regulations in 40 CFR 51.102. 
+Specifically, ADEQ provided public notice and opportunity for public 
+comment prior to its October 14, 2025 public hearing on and adoption of 
+the Hayden SO<INF>2</INF> Supplement.\25\ The SIP submission includes 
+proof of publication notices for the public hearing and includes copies 
+of the written and oral comments received during the State's public 
+review processes and ADEQ's responses thereto.\26\ Therefore, we find 
+that the Hayden SO<INF>2</INF> Supplement meets the procedural 
+requirements for public notice and hearing in CAA sections 110(a) and 
+110(l) and 40 CFR 51.102.
+---------------------------------------------------------------------------
+
+    \25\ Hayden SO<INF>2</INF> Supplement, Appendix B, Exhibit B-
+III, ``Public Notice and Affidavit of Publication.''
+    \26\ Id., Appendix B, Exhibit B-VII, ``Public Hearing 
+Transcript,'' and Exhibit B-VIII, ``Compilation of Comments and 
+State Responses.''
+---------------------------------------------------------------------------
+
+II. Public Comments and EPA Responses
+
+    The public comment period for the proposed rulemaking opened on 
+March 4, 2026,\27\ the date of its publication in the Federal Register, 
+and closed on April 3, 2026. During this period, the EPA received one 
+comment submission from a member of the public.\28\ Following the 
+closure of the public comment period, the EPA received an additional 
+comment submission from Asarco.\29\ Both comment submissions are 
+included in the docket for this action.
+---------------------------------------------------------------------------
+
+    \27\ 91 FR 10531 (March 4, 2026).
+    \28\ Public comment submission received April 3, 2026, from 
+Abdurehman Mektel Weli, to docket EPA-R09-OAR-2025-3821, Subject: 
+``Comment on EPA-R09-OAR-2025-3821: Incomplete Benefit Valuation and 
+Missing Environmental Justice Analysis in Hayden SO<INF>2</INF> Plan 
+Approval.''
+    \29\ Letter dated April 2, 2026, from Alejandro Larrea, General 
+Manager, Hayden Operations, Asarco, to Docket ID No. EPA-R09-OAR-
+2025-3821, Subject: ``Re: Comments of ASARCO LLC--Hayden Operations, 
+Air Plan Approval; Arizona; Attainment Plan for the Hayden 
+SO<INF>2</INF> Nonattainment Area for the 1971 and 2010 Sulfur 
+Dioxide National Ambient Air Quality Standards, Proposed Rule, 91 FR 
+10531 (Mar. 4, 2026).''
+---------------------------------------------------------------------------
+
+    The comment from Asarco is supportive of our proposal to approve 
+the Hayden SO<INF>2</INF> Plan and requests that the EPA finalize the 
+proposed approval. Given the supportive nature of the
+
+[[Page 53723]]
+
+comment, it does not require a response. We respond to the comment from 
+the member of the public in the remainder of this section.
+    The comment submission from a member of the public asserts that the 
+EPA's proposed approval of the Hayden SO<INF>2</INF> Plan is incomplete 
+because it lacks a quantitative benefit valuation and an environmental 
+justice screening analysis, and requests that the EPA withhold final 
+approval of Arizona's submission until such analyses have been 
+completed. The commenter asserts that by not quantifying benefits, the 
+proposal implicitly values them to be zero, which the commenter asserts 
+is ``inconsistent with economic best practices and prevents the public 
+from judging whether the plan's costs are justified.'' The commenter 
+also includes demographic information for the Hayden area, asserts that 
+the Plan does not address whether costs and benefits are born 
+equitably, asserts that ``Executive Order 12898 requires agencies to 
+address disproportionate effects on minority and low-income 
+populations,'' and recommends tools for a costs and benefits analysis.
+    The EPA appreciates the commenter's interest in the implications of 
+this proposed action. However, we disagree with the commenter's 
+assertion that the Hayden SO<INF>2</INF> Plan, or our proposal to 
+approve it, is incomplete without a quantitative benefit valuation and 
+an environmental justice screening analysis.
+    First, we disagree with the assertion that by not quantifying the 
+benefits of our action via a benefit analysis, we somehow imply that 
+they are zero. The EPA's March 4, 2026 proposal discusses the expected 
+air quality benefits resulting from Arizona's control strategy in the 
+Hayden SO<INF>2</INF> Plan for attaining the SO<INF>2</INF> NAAQS in 
+the Hayden area. The EPA's approval of the new controls and emissions 
+limits in the Plan into the Arizona SIP will make them federally 
+enforceable. Additionally, while Executive Order (E.O.) 12866 requires 
+Federal agencies to conduct cost-benefit analyses for ``significant'' 
+regulatory actions, E.O. 12866 applies only to rules with an economic 
+impact of $100 million or more or other material impacts. As discussed 
+in our proposed rule, the EPA's approval of the Hayden SO<INF>2</INF> 
+Plan is not a significant regulatory action under E.O. 12866 and does 
+not require a cost-benefit analysis.\30\ Thus, a benefit analysis is 
+not required.
+---------------------------------------------------------------------------
+
+    \30\ 91 FR 10531 at 91 FR 10544 (March 4, 2026).
+---------------------------------------------------------------------------
+
+    Second, regarding the commenter's assertion that our proposal is 
+incomplete without an environmental justice screening analysis pursuant 
+to E.O. 12898, we note that President Trump revoked E.O. 12898 via E.O. 
+14173 on January 21, 2025. Thus, an environmental justice screening 
+analysis is not required.
+    Finally, as discussed in section IX of the EPA's March 4, 2026 
+proposed rule,\31\ the EPA is required under the CAA to approve a 
+State's SIP submission if it complies with the provisions of the Act 
+and applicable Federal regulations.\32\ Thus, our role in reviewing SIP 
+submissions is to approve State choices provided that they meet the 
+criteria of the CAA. The CAA does not require a cost-benefit analysis 
+or an environmental justice analysis. Accordingly, the EPA is not 
+requiring such analyses as a condition for approving the Hayden 
+SO<INF>2</INF> Plan.
+---------------------------------------------------------------------------
+
+    \31\ Id.
+    \32\ 42 U.S.C. 7410(k); 40 CFR 52.02(a).
+---------------------------------------------------------------------------
+
+III. Final Action
+
+    For the reasons discussed in our proposed action and herein, the 
+EPA is finalizing our approval of the 2023 Hayden SO<INF>2</INF> Plan 
+and the Hayden SO<INF>2</INF> Supplement, including amendments to Rule 
+B1302 and Appendix 14. We find that these submittals provide for 
+attainment of the 1971 and 2010 SO<INF>2</INF> NAAQS in the Hayden 
+SO<INF>2</INF> nonattainment area and for meeting other nonattainment 
+planning requirements. This SO<INF>2</INF> attainment plan includes 
+Arizona's attainment demonstration for the Hayden SO<INF>2</INF> 
+nonattainment area. In addition to an attainment demonstration, the 
+State's Plan addresses the requirements for meeting RFP toward 
+attainment of the NAAQS, RACM/RACT, base year and projection year 
+emission inventories, nonattainment new source review (NSR), emission 
+limitations necessary to provide for attainment, and contingency 
+measures. In addition, the EPA is also finalizing approval of 
+amendments to Rules 715 and 715.01, which ADEQ submitted to the EPA on 
+April 6, 2017. We find that the Plan amendments, which would sunset the 
+requirements in Rules 715 and 715.01, will not result in any relaxation 
+of SIP requirements based on the revisions to Rule B1302.
+    The EPA is finalizing our determination that Arizona's Hayden 
+SO<INF>2</INF> Plan meets the applicable requirements of section 172 of 
+the CAA for the 1971 and 2010 SO<INF>2</INF> NAAQS. The EPA is 
+finalizing our determination that the Hayden SO<INF>2</INF> Plan meets 
+the emissions inventory requirements under CAA section 172(c)(3) and 
+(4) and affirming that the State has met the NSR requirements for the 
+Hayden SO<INF>2</INF> nonattainment area under CAA section 172(c)(5). 
+We are also finalizing our determination that the Hayden SO<INF>2</INF> 
+Plan meets the attainment demonstration, RACM/RACT, enforceable 
+emission limitations, RFP, and contingency measure requirements of the 
+CAA for the 1971 and 2010 SO<INF>2</INF> NAAQS.
+    As a result of this final approval of the Hayden SO<INF>2</INF> 
+Plan, all sanctions triggered by our November 5, 2020 limited 
+disapproval \33\ and November 10, 2020 partial disapproval \34\ actions 
+are terminated on the effective date of this rulemaking. In addition, 
+the Federal implementation plan (FIP) obligation triggered by the March 
+18, 2016 finding of failure to submit has been satisfied and the 
+associated FIP obligation for the Hayden SO<INF>2</INF> nonattainment 
+area under the consent decree in Center for Biological Diversity et al. 
+v. Regan, No. 4:24-cv-01900 (N.D. Cal.), doc. 28, paragraphs 1.b and 2 
+is terminated. Lastly, when this final approval becomes effective, the 
+1971 SO<INF>2</INF> NAAQS will no longer apply to the Hayden 
+SO<INF>2</INF> nonattainment area.\35\
+---------------------------------------------------------------------------
+
+    \33\ 85 FR 70483 (November 5, 2020).
+    \34\ 85 FR 71547 (November 10, 2020).
+    \35\ See 40 CFR 50.4(e).
+---------------------------------------------------------------------------
+
+IV. Incorporation by Reference
+
+    In this document, the EPA is finalizing regulatory text that 
+includes incorporation by reference. In accordance with requirements of 
+1 CFR 51.5, the EPA is finalizing the incorporation by reference of 
+four Arizona Department of Environmental Quality rules: Rule R18-2-715, 
+``Standards of Performance for Existing Primary Copper Smelters: Site-
+Specific Requirements,'' revised on April 7, 2017, which regulates 
+emissions of sulfur dioxide from copper smelters; Rule R18-2-715.01, 
+``Standards of Performance for Existing Primary Copper Smelters, 
+Compliance and Monitoring,'' revised on April 7, 2017, which 
+establishes other implementing requirements related to sulfur dioxide 
+emissions from copper smelters; Rule R18-2-B1302, ``Limits on 
+SO<INF>2</INF> Emissions from the Hayden Smelter,'' revised January 2, 
+2026, which regulates emissions of sulfur dioxide from the Hayden 
+primary copper smelter; and Appendix 14, ``Procedures for Sulfur 
+Dioxide and Lead Fugitive Emissions Studies for the Hayden Smelter,'' 
+revised January 2, 2026, which regulates the methodology for performing 
+fugitive emission studies of sulfur dioxide. Therefore, these materials 
+have been approved by the EPA for inclusion in the SIP, have been 
+incorporated by reference by the EPA into that plan, are
+
+[[Page 53724]]
+
+fully federally enforceable under sections 110 and 113 of the CAA as of 
+the effective date of the final rulemaking of the EPA's approval, and 
+will be incorporated by reference in the next update to the SIP 
+compilation.\36\ The EPA has made, and will continue to make, these 
+documents available through <a href="https://www.regulations.gov">https://www.regulations.gov</a> and at the EPA 
+Region IX Office (please contact the person identified in the FOR 
+FURTHER INFORMATION CONTACT section of this preamble for more 
+information).
+---------------------------------------------------------------------------
+
+    \36\ 62 FR 27968 (May 22, 1997).
+---------------------------------------------------------------------------
+
+V. Statutory and Executive Order Reviews
+
+    Under the CAA, the Administrator is required to approve a SIP 
+submission that complies with the provisions of the Act and applicable 
+Federal regulations. 42 U.S.C. 7410(k); 40 CFR 52.02(a). Thus, in 
+reviewing SIP submissions, the EPA's role is to approve State choices, 
+provided that they meet the criteria of the CAA. Accordingly, this 
+action merely approves State law as meeting Federal requirements and 
+does not impose additional requirements beyond those imposed by State 
+law. For that reason, this action:
+    <bullet> Is not a significant regulatory action subject to review 
+by the Office of Management and Budget under Executive Order 12866 (58 
+FR 51735, October 4, 1993);
+    <bullet> Is not an Executive Order 14192 (90 FR 9065, February 6, 
+2025) regulatory action because this action is not significant under 
+Executive Order 12866;
+    <bullet> Does not impose an information collection burden under the 
+provisions of the Paperwork Reduction Act (44 U.S.C. 3501 et seq.);
+    <bullet> Is certified as not having a significant economic impact 
+on a substantial number of small entities under the Regulatory 
+Flexibility Act (5 U.S.C. 601 et seq.);
+    <bullet> Does not contain any unfunded mandate or significantly or 
+uniquely affect small governments, as described in the Unfunded 
+Mandates Reform Act of 1995 (Pub. L. 104-4);
+    <bullet> Does not have federalism implications as specified in 
+Executive Order 13132 (64 FR 43255, August 10, 1999);
+    <bullet> Is not subject to Executive Order 13045 (62 FR 19885, 
+April 23, 1997) because it approves a State program;
+    <bullet> Is not a significant regulatory action subject to 
+Executive Order 13211 (66 FR 28355, May 22, 2001); and
+    <bullet> Is not subject to requirements of section 12(d) of the 
+National Technology Transfer and Advancement Act of 1995 (15 U.S.C. 272 
+note) because application of those requirements would be inconsistent 
+with the CAA.
+    In addition, the SIP is not approved to apply on any Indian 
+reservation land or in any other area where the EPA or an Indian Tribe 
+has demonstrated that a Tribe has jurisdiction. In those areas of 
+Indian country, the rule does not have Tribal implications and will not 
+impose substantial direct costs on Tribal governments or preempt Tribal 
+law as specified by Executive Order 13175 (65 FR 67249, November 9, 
+2000).
+    The Congressional Review Act, 5 U.S.C. 801 et seq., as added by the 
+Small Business Regulatory Enforcement Fairness Act of 1996, generally 
+provides that before a rule may take effect, the agency promulgating 
+the rule must submit a rule report, which includes a copy of the rule, 
+to each House of the Congress and to the Comptroller General of the 
+United States. Section 804, however, exempts from section 801 the 
+following types of rules: rules of particular applicability; rules 
+relating to agency management or personnel; and rules of agency 
+organization, procedure, or practice that do not substantially affect 
+the rights or obligations of non-agency parties (5 U.S.C. 804(3)). 
+Because this is a rule of particular applicability, the EPA is not 
+required to submit a rule report regarding this action under section 
+801.
+    Under section 307(b)(1) of the CAA, petitions for judicial review 
+of this action must be filed in the United States Court of Appeals for 
+the appropriate circuit by October 19, 2026. Filing a petition for 
+reconsideration by the Administrator of this final rule does not affect 
+the finality of this action for the purposes of judicial review nor 
+does it extend the time within which a petition for judicial review may 
+be filed, and shall not postpone the effectiveness of such rule or 
+action. This action may not be challenged later in proceedings to 
+enforce its requirements (See CAA section 307(b)(2)).
+
+List of Subjects in 40 CFR Part 52
+
+    Environmental protection, Air pollution control, Incorporation by 
+reference, Intergovernmental relations, Reporting and recordkeeping 
+requirements, Sulfur oxides.
+
+    Dated: August 10, 2026.
+Michael Martucci,
+Acting Regional Administrator, Region IX.
+    For the reasons stated in the preamble, the EPA amends 40 CFR part 
+52 as follows:
+
+PART 52--APPROVAL AND PROMULGATION OF IMPLEMENTATION PLANS
+
+0
+1. The authority citation for Part 52 continues to read as follows:
+
+    Authority:  42 U.S.C. 7401 et seq.
+
+Subpart D--Arizona
+
+0
+2. Section 52.120 is amended by:
+0
+a. In table 2 in paragraph (c), revising the entries for ``R18-2-715, 
+section F, excluding (F)(2), and section G'', ``R18-2-715.01'', ``R18-
+2-B1302'', and ``Appendix 14''; and
+0
+b. In table 1 in paragraph (e), adding the entries for ``SIP Revision: 
+Rules Incorporating Hayden Smelter Permit Conditions to Supplement 
+Arizona's 2023 SO<INF>2</INF> SIP, excluding Appendix A'' and ``Final 
+SIP Revision: 2023 Hayden Sulfur Dioxide Nonattainment Area for the 
+1971 and 2010 SO<INF>2</INF> NAAQS, excluding Appendix A'' after the 
+entry for ``SIP Revision: Hayden Lead Nonattainment Area, excluding 
+Appendix C''.
+    The revisions and additions read as follows:
+
+
+Sec.  52.120  Identification of plan.
+
+* * * * *
+    (c) * * *
+
+[[Page 53725]]
+
+
+
+                                    Table 2--EPA-Approved Arizona Regulations
+----------------------------------------------------------------------------------------------------------------
+                                                                                EPA approval       Additional
+        State citation            Title/subject       State effective date          date           explanation
+----------------------------------------------------------------------------------------------------------------
+                                           Arizona Administrative Code
+----------------------------------------------------------------------------------------------------------------
+ 
+                                                  * * * * * * *
+----------------------------------------------------------------------------------------------------------------
+                          Article 7 (Existing Stationary Source Performance Standards)
+----------------------------------------------------------------------------------------------------------------
+ 
+                                                  * * * * * * *
+R18-2-715, section F,           Standards of       April 7, 2017............  8/20/2026, 91 FR  Submitted on
+ excluding (F)(2), section G,    Performance for                               [INSERT FEDERAL   April 6, 2017.
+ and section I.                  Existing Primary                              REGISTER PAGE     EPA approved
+                                 Copper Smelters:                              WHERE THE         the rescission
+                                 Site-Specific                                 DOCUMENT          of sections
+                                 Requirements.                                 BEGINS]; May      (F)(2) and (H)
+                                                                               10, 2021, 86 FR   on May 10,
+                                                                               24726.            2021.
+R18-2-715.01..................  Standards of       April 7, 2017............  8/20/2026, 91 FR  Submitted on
+                                 Performance for                               [INSERT FEDERAL   April 6, 2017.
+                                 Existing Primary                              REGISTER PAGE
+                                 Copper Smelters,                              WHERE THE
+                                 Compliance and                                DOCUMENT
+                                 Monitoring.                                   BEGINS].
+ 
+----------------------------------------------------------------------------------------------------------------
+                                                  * * * * * * *
+----------------------------------------------------------------------------------------------------------------
+                       Article 13 (State Implementation Plan Rules for Specific Locations)
+----------------------------------------------------------------------------------------------------------------
+ 
+                                                  * * * * * * *
+R18-2-B1302...................  Limits on SO2      February 7, 2026.........  8/20/2026, 91 FR  Submitted on
+                                 from the Hayden                               [INSERT FEDERAL   June 5, 2026.
+                                 Smelter.                                      REGISTER PAGE
+                                                                               WHERE THE
+                                                                               DOCUMENT
+                                                                               BEGINS].
+----------------------------------------------------------------------------------------------------------------
+ 
+                                                  * * * * * * *
+Appendix 14...................  Procedures for     February 7, 2026.........  8/20/2026, 91 FR  Submitted on
+                                 Sulfur Dioxide                                [INSERT FEDERAL   June 5, 2026.
+                                 and Lead                                      REGISTER PAGE
+                                 Fugitive                                      WHERE THE
+                                 Emissions                                     DOCUMENT
+                                 Studies for the                               BEGINS].
+                                 Hayden Smelter.
+ 
+                                                  * * * * * * *
+----------------------------------------------------------------------------------------------------------------
+
+* * * * *
+    (e) * * *
+
+                       Table 1--EPA-Approved Non-Regulatory and Quasi-Regulatory Measures
+       [Excluding certain resolutions and statutes, which are listed in tables 2 and 3, respectively] \1\
+----------------------------------------------------------------------------------------------------------------
+                                    Applicable
+                                  geographic or
+     Name of SIP provision        nonattainment       State submittal date      EPA approval       Explanation
+                                  area or title/                                    date
+                                     subject
+----------------------------------------------------------------------------------------------------------------
+                         The State of Arizona Air Pollution Control Implementation Plan
+----------------------------------------------------------------------------------------------------------------
+ 
+                                                  * * * * * * *
+----------------------------------------------------------------------------------------------------------------
+               Part D Elements and Plans (Other than for the Metropolitan Phoenix or Tucson Areas)
+----------------------------------------------------------------------------------------------------------------
+ 
+                                                  * * * * * * *
+SIP Revision: Rules             Hayden, AZ Sulfur  June 5, 2026.............  8/20/2026, 91 FR  Adopted by the
+ Incorporating Hayden Smelter    Dioxide                                       [INSERT FEDERAL   Arizona
+ Permit Conditions to            Nonattainment                                 REGISTER PAGE     Department of
+ Supplement Arizona's 2023 SO2   Area.                                         WHERE THE         Environmental
+ SIP, excluding Appendix A.                                                    DOCUMENT          Quality and
+                                                                               BEGINS].          submitted to
+                                                                                                 the EPA as an
+                                                                                                 attachment to
+                                                                                                 letter dated
+                                                                                                 June 2, 2026.
+
+[[Page 53726]]
+
+ 
+Final SIP Revision: 2023        Hayden, AZ Sulfur  October 3, 2023..........  8/20/2026, 91 FR  Adopted by the
+ Hayden Sulfur Dioxide           Dioxide                                       [INSERT FEDERAL   Arizona
+ Nonattainment Area for the      Nonattainment                                 REGISTER PAGE     Department of
+ 1971 and 2010 SO2 NAAQS,        Area.                                         WHERE THE         Environmental
+ excluding Appendix A.                                                         DOCUMENT          Quality and
+                                                                               BEGINS].          submitted to
+                                                                                                 the EPA as an
+                                                                                                 attachment to
+                                                                                                 letter dated
+                                                                                                 October 3,
+                                                                                                 2023.
+ 
+                                                  * * * * * * *
+----------------------------------------------------------------------------------------------------------------
+\1\ Table 1 is divided into three parts: Clean Air Act Section 110(a)(2) State Implementation Plan Elements
+  (excluding Part D Elements and Plans), Part D Elements and Plans (other than for the Metropolitan Phoenix or
+  Tucson Areas), and Part D Elements and Plans for the Metropolitan Phoenix and Tucson Areas.
+
+* * * * *
+[FR Doc. 2026-16989 Filed 8-19-26; 8:45 am]
+BILLING CODE 6560-50-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

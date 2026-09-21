@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 181 (Monday, September 21, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 181 (Monday, September 21, 2026)]
+[Notices]
+[Pages 59823-59824]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-19215]
+
+
+-----------------------------------------------------------------------
+
+SECURITIES AND EXCHANGE COMMISSION
+
+[Release No. 34-106396; File No. 10-255]
+
+
+Acknowledgement of Receipt of Notice of Registration as a 
+National Securities Exchange Pursuant to Section 6(g) of the Securities 
+Exchange Act of 1934 by North American Derivatives Exchange, Inc.
+
+September 16, 2026.
+    Section 6(g) of the Securities Exchange Act of 1934 (``Exchange 
+Act'') \1\ provides that an exchange that lists or trades security 
+futures products may register as a national securities exchange solely 
+for the purposes of trading security futures products by filing a 
+written notice with the Securities and Exchange Commission 
+(``Commission'') if: (1) the exchange is a board of trade, as that term 
+is defined by the Commodity Exchange Act (``CEA''),\2\ that has been 
+designated a contract market by the Commodity Futures Trading 
+Commission (``CFTC'') and such designation is not suspended by order of 
+the CFTC; and (2) such exchange does not serve as a market place for 
+transactions in securities other than security futures products or 
+futures on exempted securities or groups or indexes of securities or 
+options thereon that have been authorized under Section 2(a)(1)(C) of 
+the CEA.\3\ Rule 6a-4 under the Exchange Act \4\ requires that such an 
+exchange submit written notice of registration to the Commission on 
+Form 1-N.\5\ Under Exchange Act Section 6(g)(2)(B), an exchange's 
+registration as a national securities exchange becomes effective 
+contemporaneously with the submission of the written notice on Form 1-
+N.\6\
+---------------------------------------------------------------------------
+
+    \1\ 15 U.S.C. 78f(g).
+    \2\ 7 U.S.C. 1a(6).
+    \3\ 7 U.S.C. 2(a)(1)(C).
+    \4\ 17 CFR 240.6a-4.
+    \5\ Under Rule 202.3(b)(3) of the Commission's Informal and 
+Other Procedures, upon receipt of a Form 1-N, the Division of 
+Trading and Markets examines the notice to determine whether all 
+necessary information has been supplied and whether all other 
+required documents have been furnished in proper form. 17 CFR 
+202.3(b)(3).
+    \6\ 15 U.S.C. 78f(g)(2)(B).
+---------------------------------------------------------------------------
+
+    On September 14, 2026, North American Derivatives Exchange, Inc. 
+(``Nadex'') filed a Form 1-N with the Commission. Pursuant to Section 
+6(g)(3) of the Exchange Act,\7\ the Commission hereby acknowledges 
+receipt of the Form 1-N submitted by Nadex. Copies of the Form 1-N, 
+including all exhibits, are available on the Commission's internet 
+website (https://www.sec.gov/rules-regulations/commission-orders-
+
+[[Page 59824]]
+
+notices/other-commission-orders-notices-information).
+---------------------------------------------------------------------------
+
+    \7\ 15 U.S.C. 78f(g)(3).
+---------------------------------------------------------------------------
+
+    For further information about this Release, you may contact David 
+Dimitrious, Senior Special Counsel; Jennifer Colihan, Special Counsel; 
+Eugene Hsia, Special Counsel; Michou Nguyen, Special Counsel; and Alba 
+Baze, Attorney-Adviser, Office of Market Supervision, Division of 
+Trading and Markets, at (202) 551-5550, Securities and Exchange 
+Commission, 100 F Street NE, Washington, DC 20549.
+
+    For the Commission, by the Division of Trading and Markets, 
+pursuant to delegated authority.\8\
+---------------------------------------------------------------------------
+
+    \8\ 17 CFR 200.30-3(a)(75).
+---------------------------------------------------------------------------
+
+Sherry R. Haywood,
+Assistant Secretary.
+[FR Doc. 2026-19215 Filed 9-18-26; 8:45 am]
+BILLING CODE 8011-01-P
+
+
+</pre></body>
+</html>

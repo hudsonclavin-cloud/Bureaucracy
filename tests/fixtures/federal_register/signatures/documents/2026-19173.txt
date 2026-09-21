@@ -1,0 +1,97 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 180 (Friday, September 18, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 180 (Friday, September 18, 2026)]
+[Rules and Regulations]
+[Pages 59055-59056]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-19173]
+
+
+-----------------------------------------------------------------------
+
+DEPARTMENT OF TRANSPORTATION
+
+Federal Aviation Administration
+
+14 CFR Part 71
+
+[Docket No. FAA-2025-3288; Airspace Docket No. 25-ANM-158]
+RIN 2120-AA66
+
+
+Establishment of United States Area Navigation Route T-581 in the 
+Vicinity of Missoula, Montana
+
+AGENCY: Federal Aviation Administration (FAA), DOT.
+
+ACTION: Final rule; correction.
+
+-----------------------------------------------------------------------
+
+SUMMARY: This action corrects a final rule published by the FAA in the 
+Federal Register on August 3, 2026, establishing United States Area 
+Navigation (RNAV) Route T-581 in the vicinity of Missoula, Montana. 
+Specifically, this action corrects the description of the route in the 
+regulatory text of the final rule.
+
+DATES: The effective date of the final rule published in the Federal 
+Register on August 3, 2026, remains 0901 UTC, October 29, 2026. The 
+Director of the Federal Register approves this incorporation by 
+reference action under 14 CFR part 71, subject to the annual revision 
+of FAA Order JO 7400.11 and publication of conforming amendments.
+
+ADDRESSES: FAA Order JO 7400.11M, Airspace Designations and Reporting 
+Points, and subsequent amendments can be viewed online at <a href="http://www.faa.gov/air_traffic/publications/">www.faa.gov/air_traffic/publications/</a>. You may also contact the Rules and 
+Regulations Group, Office of Policy, Federal Aviation Administration, 
+800 Independence Avenue SW, Washington DC 20591; telephone: (202) 267-
+8783.
+
+FOR FURTHER INFORMATION CONTACT: Steven Roff, Rules and Regulations 
+Group, Office of Policy, Federal Aviation Administration, 800 
+Independence Avenue SW, Washington, DC 20591; telephone: (202) 267-
+8783.
+
+SUPPLEMENTARY INFORMATION:
+
+[[Page 59056]]
+
+History
+
+    The FAA published a final rule in the Federal Register for Docket 
+No. FAA-2025-3288 (91 FR 48756; August 3, 2026), establishing RNAV 
+Route T-581. The legal description in that final rule for T-581 
+contains two route points that should not be listed in the description 
+due to them being a turn of less than one degree. This action corrects 
+these errors.
+
+Correction to the Final Rule
+
+    Accordingly, pursuant to the authority delegated to me, the final 
+rule for Docket No. FAA-2025-3288, as published in the Federal Register 
+on August 3, 2026 (91 FR 48756; FR Doc. 2026-15675), is corrected as 
+follows:
+
+0
+On page 48757, in the third column, under the heading ``Paragraph 6011 
+United States Area Navigation Routes,'' revise the table across all 
+three columns to read as follows:
+
+T-581 Missoula, MT (MSO) TO Kalispell, MT (FCA) [NEW]
+ 
+Missoula, MT (MSO)                              VOR/DME                        (Lat. 46[deg]54'28.68'' N, long. 114[deg]05'01.15'' W)
+Kalispell, MT (FCA)                             VOR/DME                        (Lat. 48[deg]12'50.77'' N, long. 114[deg]10'33.21'' W)
+ 
+
+
+    Issued in Washington, DC, on September 16, 2026.
+Alex W. Nelson,
+Manager, Rules and Regulations Group.
+[FR Doc. 2026-19173 Filed 9-17-26; 8:45 am]
+BILLING CODE 4910-13-P
+
+
+</pre></body>
+</html>

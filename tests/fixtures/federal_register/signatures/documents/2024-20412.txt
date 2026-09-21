@@ -1,0 +1,106 @@
+<html>
+<head>
+<title>Federal Register, Volume 89 Issue 175 (Tuesday, September 10, 2024)</title>
+</head>
+<body><pre>
+[Federal Register Volume 89, Number 175 (Tuesday, September 10, 2024)]
+[Notices]
+[Page 73351]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2024-20412]
+
+
+-----------------------------------------------------------------------
+
+DEPARTMENT OF AGRICULTURE
+
+Agricultural Research Service
+
+
+Notice of Intent To Renew an Information Collection
+
+AGENCY: Agricultural Research Service, USDA.
+
+ACTION: Notice and request for comments.
+
+-----------------------------------------------------------------------
+
+SUMMARY: In accordance with the Paperwork Reduction Act of 1995, this 
+notice announces the Agricultural Research Service's (ARS) intention to 
+request an extension of a currently approved information collection, 
+Form AD-761, USDA Patent License Application for Government Invention 
+that expires October 31, 2025.
+
+DATES: Comments must be received on or before November 12, 2024.
+
+ADDRESSES: Comments may be sent to Diana D. Halsey, Business Licensing 
+Officer, USDA, ARS, Office of Technology Transfer, 301-785-2741, 
+<a href="/cdn-cgi/l/email-protection#0864616b6d667b6d487d7b6c69266f677e"><span class="__cf_email__" data-cfemail="325e5b51575c415772474156531c555d44">[email&#160;protected]</span></a>.
+
+FOR FURTHER INFORMATION CONTACT: Diana D. Halsey, Business Licensing 
+Officer, USDA, ARS, Office of Technology Transfer, 301-785-2741, 
+<a href="/cdn-cgi/l/email-protection#82eeebe1e7ecf1e7c2f7f1e6e3ace5edf4"><span class="__cf_email__" data-cfemail="e18d8882848f9284a194928580cf868e97">[email&#160;protected]</span></a>.
+
+SUPPLEMENTARY INFORMATION: 
+    Title: USDA Patent License Application.
+    OMB Number: 0518-0003.
+    Expiration Date of Approval: October 31, 2025.
+    Type of Request: To extend a currently approved information 
+collection.
+    Abstract: The USDA patent licensing program grants patent licenses 
+to qualified businesses and individuals who wish to commercialize 
+inventions arising from federally supported research. The objective of 
+the program is to use the patent system to promote the utilization of 
+inventions arising from such research. The licensing of federally owned 
+inventions must be done in accordance with the terms, conditions and 
+procedures prescribed under 37 CFR part 404. Application for a license 
+must be addressed to the Federal agency having custody of the 
+invention. Licenses may be granted only if the license applicant has 
+supplied the Federal agency with a satisfactory plan for the 
+development and marketing of the invention and with information about 
+the applicant's capability to fulfill the plan. 37 CFR 404.8 sets forth 
+the information which must be provided by a license applicant. For the 
+convenience of the applicant, USDA has itemized the information needed 
+on Form AD-761, and instructions for completing the form are provided 
+to the applicant. The information submitted is used to determine 
+whether the applicant has both a complete and sufficient plan for 
+developing and marketing the invention and the necessary manufacturing, 
+marketing, technical and financial resources to carry out the submitted 
+plan.
+    Estimate of Burden: Public reporting burden for this collection of 
+information is estimated to average 3 hours per response.
+    Description of Respondents: Businesses or other for-profit 
+individuals.
+    Estimated Number of Respondents: 75.
+    Frequency of Responses: One time per invention.
+    Estimated Total Annual Burden on Respondents: 225 hours.
+    This data will be collected under the authority of 44 U.S.C. 
+#3506(c)(2)(A).
+    Copies of this information collection and related instructions can 
+be obtained without charge from Diana D. Halsey, Business Licensing 
+Officer, USDA, ARS, Office of Technology Transfer by calling 301-785-
+2741.
+    Comments are invited on (a) whether the proposed collection of 
+information is necessary for the proper performance of the functions of 
+the agency, including whether the information will have practical 
+utility; (b) the accuracy of the agency's estimate of the burden of the 
+proposed collection of information including the validity of the 
+methodology and assumptions used; (c) ways to enhance the quality, 
+utility, and clarity of the information to be collected; and (d) ways 
+to minimize the burden of the collection of information on those who 
+are to respond, such as through the use of appropriate automated, 
+electronic, mechanical, or other technological collection techniques or 
+other forms of information technology, e.g. permitting electronic 
+submission of responses.
+    Comments may be sent to <a href="/cdn-cgi/l/email-protection#c0aca9a3a5aeb3a580b5b3a4a1eea7afb6"><span class="__cf_email__" data-cfemail="3f53565c5a514c5a7f4a4c5b5e11585049">[email&#160;protected]</span></a>. All responses to this 
+notice will be summarized and included in the request for OMB approval. 
+All comments will also become a matter of public record.
+
+Brian T. Nakanishi,
+Assistant Administrator.
+[FR Doc. 2024-20412 Filed 9-9-24; 8:45 am]
+BILLING CODE 3410-03-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

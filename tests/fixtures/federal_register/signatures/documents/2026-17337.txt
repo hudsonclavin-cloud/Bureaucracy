@@ -1,0 +1,158 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 163 (Tuesday, August 25, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 163 (Tuesday, August 25, 2026)]
+[Rules and Regulations]
+[Page 54798]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-17337]
+
+
+
+[[Page 54798]]
+
+-----------------------------------------------------------------------
+
+OFFICE OF PERSONNEL MANAGEMENT
+
+5 CFR Part 731
+
+[Docket ID: OPM-2025-0173]
+RIN 3206-AO97
+
+
+Suitability Action Appeals; Correction
+
+AGENCY: Office of Personnel Management.
+
+ACTION: Final rule; correction.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The Office of Personnel Management (OPM) published a final 
+rule in the Federal Register on August 3, 2026, concerning suitability 
+action appeals. That document contained typographical and structural 
+errors in the regulatory text. This document corrects the final rule.
+
+DATES: Effective September 2, 2026.
+
+FOR FURTHER INFORMATION CONTACT: Aaron Gottesman, Senior Advisor to the 
+Director, by email at <a href="/cdn-cgi/l/email-protection#b4d1d9c4d8dbcdd1d1d5d7d7dbc1dac0d5d6ddd8ddc0cdf4dbc4d99ad3dbc2"><span class="__cf_email__" data-cfemail="9cf9f1ecf0f3e5f9f9fdfffff3e9f2e8fdfef5f0f5e8e5dcf3ecf1b2fbf3ea">[email&#160;protected]</span></a> or by phone at 
+(202) 606-7400.
+
+SUPPLEMENTARY INFORMATION: OPM published a final rule on August 3, 2026 
+(91 FR 49034; FR Doc. 2026-15650), revising subpart E of 5 CFR part 
+731. The document contained clerical errors, including missing spaces 
+in Sec.  731.504(c); a limiting principle miscast as an item in the 
+list of sanctions in Sec.  731.506(b); a cross-reference in Sec.  
+731.505(b) that erroneously included paragraph (d) of that section, 
+which provides for the assignment of an administrative judge rather 
+than an administrative law judge; and citation-form and capitalization 
+errors. In addition, the preamble relies on 5 U.S.C. 3302, which was 
+inadvertently omitted from the revised authority citation for part 731. 
+This document corrects those errors before the rule's effective date. 
+The corrections are non-substantive.
+
+Regulatory Review
+
+    OPM has examined this rule under Executive Orders 12866 and 13563. 
+For the reasons discussed above, this rule is not a significant 
+regulatory action under Executive Order 12866. This is not an E.O. 
+14192 regulatory action because this rule is not significant under E.O. 
+12866.
+
+Signing Statement
+
+    The Director of OPM, Scott Kupor, reviewed and approved this 
+document and has authorized the undersigned to electronically sign and 
+submit this document to the Office of the Federal Register for 
+publication.
+
+    Office of Personnel Management.
+Jerson Matias,
+Federal Register Liaison.
+
+Correction
+
+    In FR Doc. 2026-15650, appearing on page 49034 in the Federal 
+Register of Monday, August 3, 2026, the following corrections are made:
+
+PART 731 [CORRECTED]
+
+0
+1. On page 49065, in the third column, in amendatory instruction 1, in 
+the authority citation for part 731, remove ``5 U.S.C. 1103, 1302, 
+2301, 2302, 3301, 7301.'' and add in its place ``5 U.S.C. 1103, 1302, 
+2301, 2302, 3301, 3302, 7301.''.
+
+
+Sec.  731.503  [Corrected]
+
+0
+2. On page 49067, starting in the second column, in Sec.  731.503:
+0
+a. In paragraph (c)(1), remove ``documents establishing'' and add in 
+its place ``Documents establishing'';
+0
+b. In paragraph (c)(2), remove ``all investigative'' and add in its 
+place ``All investigative'';
+0
+c. In paragraph (c)(3), remove ``the charge-by-charge'' and add in its 
+place ``The charge-by-charge'';
+0
+d. In paragraph (c)(4), remove ``the written final decision'' and add 
+in its place ``The written final decision'';
+0
+e. In paragraph (c)(5), remove ``any direction from OPM'' and add in 
+its place ``Any direction from OPM'';
+0
+f. In paragraph (c)(6), remove ``a certification'' and add in its place 
+``A certification'';
+0
+g. In the paragraph (f) subject heading, remove ``Service of 
+Documents.'' and add in its place ``Service of documents.''; and
+0
+h. In the paragraph (g) subject heading, remove ``Untimely Filings.'' 
+and add in its place ``Untimely filings.''.
+
+
+Sec.  731.504   [Corrected]
+
+0
+3. On page 49068, in the first column, in Sec.  731.504(c), remove ``an 
+employee ofthe responsibleagency or OPMand'' and add in its place ``an 
+employee of the responsible agency or OPM and''.
+
+
+Sec.  731.505  [Corrected]
+
+0
+4. On page 49068, starting in the second column, in Sec.  731.505:
+0
+a. In paragraph (b), remove ``under this paragraph or paragraphs (a) or 
+(d) of this section'' and add in its place ``under this paragraph (b) 
+or paragraph (a) of this section''; and
+0
+b. In paragraph (e), remove ``pursuant to paragraph (d),'' and add in 
+its place ``pursuant to paragraph (d) of this section,''.
+
+0
+5. On page 49069, in the first column, in Sec.  731.506, paragraph 
+(b)(4) is redesignated as paragraph (c) and corrected to read as 
+follows:
+
+
+Sec.  731.506  [Corrected]
+
+    (c) Scope of sanctions. Any sanction issued under paragraph (b) of 
+this section must be proportionate, causally related to the violation, 
+and no broader than necessary to protect the adjudicatory process.
+
+[FR Doc. 2026-17337 Filed 8-24-26; 8:45 am]
+BILLING CODE 6325-39-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

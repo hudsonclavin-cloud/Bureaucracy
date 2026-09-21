@@ -1,0 +1,1217 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 155 (Thursday, August 13, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 155 (Thursday, August 13, 2026)]
+[Rules and Regulations]
+[Pages 52251-52261]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-16503]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+FEDERAL COMMUNICATIONS COMMISSION
+
+47 CFR Part 8
+
+[CG Docket No. 22-2, GN Docket No. 25-133; FCC 26-48; FR ID 361584]
+
+
+Empowering Broadband Consumers Through Transparency
+
+AGENCY: Federal Communications Commission.
+
+ACTION: Final rule.
+
+-----------------------------------------------------------------------
+
+SUMMARY: In this document, the Federal Communications Commission 
+(Commission) eliminates or modifies certain broadband label 
+requirements to ensure that consumers have clear, accurate, and concise 
+information when shopping for broadband plans. Specifically, the 
+Commission enables providers to describe label information in a 
+natural, conversational style over the phone; simplify fee presentation 
+to avoid clutter; remove outdated information from the label; use links 
+or icons at point-of-sale to avoid unwieldy amounts of information that 
+can overwhelm consumers; and eliminate requirements that go beyond our 
+mandate. At the same time, the Commission ensures the labels remain 
+accessible to people with disabilities, and that labels are displayed 
+in the same language(s) used when marketing a service.
+
+DATES: Effective September 14, 2026, except for instruction 3 (Sec.  
+8.1(a)), which is delayed indefinitely. The Commission will publish a 
+document in the Federal Register announcing the effective date.
+
+ADDRESSES: Federal Communications Commission, 45 L Street NE, 
+Washington, DC 20554.
+
+FOR FURTHER INFORMATION CONTACT: For further information about the 
+Report and Order (Order), contact Michelle Branigan of the Consumer and 
+Governmental Affairs Bureau at (202) 418-1345 or 
+<a href="/cdn-cgi/l/email-protection#2c61454f4449404049026e5e4d42454b4d426c4a4f4f024b435a"><span class="__cf_email__" data-cfemail="4c01252f2429202029620e3e2d22252b2d220c2a2f2f622b233a">[email&#160;protected]</span></a>.
+
+SUPPLEMENTARY INFORMATION: This is a summary of the Commission's Report 
+and Order (Order) in CG Docket No. 22-2 and GN Docket No. 25-133, 
+document FCC 26-48, adopted on July 22, 2026 and released on July 23, 
+2026. The full text of this document is available online at <a href="https://docs.fcc.gov/public/attachments/FCC-26-48A1.pdf">https://docs.fcc.gov/public/attachments/FCC-26-48A1.pdf</a>.
+    Paperwork Reduction Act Analysis: The Order may contain proposed 
+new and revised information collection requirements. The Commission, as 
+part of its continuing effort to reduce paperwork burdens, will invite 
+the general public and the Office of Management and Budget (OMB) to 
+comment on the information collection requirements described in this 
+document, as required by the Paperwork Reduction Act of 1995, Public 
+Law 104-13. In addition, pursuant to the Small Business Paperwork 
+Relief Act of 2002, Public Law 107-198, see 44 U.S.C. 3506(c)(4), we 
+previously sought specific comment on how we might further reduce the 
+information collection burden for small business concerns with fewer 
+than 25 employees.
+    Congressional Review Act: The Commission has determined, and the 
+Administrator of the Office of Information and Regulatory Affairs, 
+Office of Management and Budget, concurs, that this rule is ``non-
+major'' under the Congressional Review Act, 5 U.S.C. 804(2). The 
+Commission will send a copy of this Report & Order to Congress and the 
+Government Accountability Office pursuant to 5 U.S.C. 801(a)(1)(A).
+    Ex Parte Rules: The proceeding shall be treated as a ``permit-but-
+disclose'' proceeding in accordance with the Commission's ex parte 
+rules. Persons making ex parte presentations must file a copy of any 
+written presentation or a memorandum summarizing any oral presentation 
+within two business days after the presentation (unless a different 
+deadline applicable to the Sunshine period applies). Persons making 
+oral ex parte presentations are reminded that memoranda summarizing the 
+presentation must (1) list all persons attending or otherwise 
+participating in the meeting at which the ex parte presentation was 
+made, and (2) summarize all data presented and arguments made during 
+the presentation. If the presentation consisted in whole or in part of 
+the presentation of data or arguments already reflected in the 
+presenter's written comments, memoranda or other filings in the 
+proceeding, the presenter may provide citations to such data or 
+arguments in his or her prior comments, memoranda, or other filings 
+(specifying the relevant page and/or paragraph numbers where such data 
+or arguments can be found) in lieu of summarizing them in the 
+memorandum. Documents shown or given to Commission staff during ex 
+parte meetings are deemed to be written ex parte presentations and must 
+be filed consistent with Sec.  1.1206(b) of the Commission's rules. In 
+proceedings governed by Sec.  1.49(f) of the Commission's rules or for 
+which the Commission has made available a method of electronic filing, 
+written ex parte presentations and memoranda summarizing oral ex parte 
+presentations, and all attachments thereto, must, when feasible, be 
+filed through the electronic comment filing system available for that 
+proceeding, and must be filed in their native format (e.g., .doc, .xml, 
+.ppt, searchable .pdf). Participants in this proceeding should 
+familiarize themselves with the Commission's ex parte rules.
+
+Synopsis
+
+I. Discussion
+
+    In this Order, we eliminate or modify certain broadband label 
+requirements to make the label clearer and more usable for consumers, 
+and as a result, also reduce compliance costs. Based on the record in 
+response to Empowering Broadband Consumers Through Transparency; 
+Delete, Delete, Delete, CG Docket No. 22-2, GN Docket No. 25-133, 
+Second Further Notice of Proposed Rulemaking, FCC 25-74, 90 FR 55713 
+(Dec. 3, 2025) (Second Further Notice), we amend the rule to: (1) 
+enable providers to describe label information in a natural, 
+conversational style over the phone; (2) enable providers to simplify 
+fee presentation to avoid label clutter; (3) remove outdated 
+information from the label by eliminating the requirement that 
+providers display information about the now-concluded Affordable 
+Connectivity Program; (4)
+
+[[Page 52252]]
+
+clarify that providers may use hyperlinks or icons within account 
+portals to make the customer's label ``easily accessible''; (5) allow 
+providers to use a hyperlink or icon at the point of sale in lieu of 
+displaying the full label; (6) eliminate the requirement that providers 
+make label information available in machine readable database format; 
+and (7) eliminate the requirement that providers archive labels for at 
+least two years after a service is no longer offered to new customers. 
+We do so while retaining the requirements that labels be accessible to 
+people with disabilities and that providers display labels in any 
+language(s) in which they market their services. We also close open 
+inquiries from Empowering Broadband Consumers Through Transparency, CG 
+Docket No. 22-2, Further Notice of Proposed Rulemaking, FCC 22-86, 87 
+FR 77048 (Dec. 16, 2022) (First Further Notice).
+
+A. Improving Label Display and Content
+
+1. Phone Sales
+    We enable providers' phone sales representatives to present label 
+information in natural, conversational style by eliminating the 
+requirement that they read the labels verbatim to customers. We agree 
+with commenters that a more conversational presentation of the labels 
+fits the unique nature of the telephone sale, which is time-limited and 
+requires the consumer to remember information, unlike written labels 
+that consumers can refer to at any point. By contrast, verbatim 
+recitation of a document that consumers cannot see serves neither 
+providers nor consumers well. Provider phone sales representatives must 
+orally summarize the following label fields during the sales 
+interaction: monthly price inclusive of any monthly fees, including the 
+introductory rate and its duration if applicable; typical download and 
+upload speeds; latency; data allowance; contract term duration if 
+applicable; and early termination fees if applicable.
+    We agree that consumers using the phone to shop for broadband 
+service may also want the opportunity to see the label. Some commenters 
+urge us to require provider phone sales representatives to offer to 
+transmit the full broadband consumer label to the consumer, if the 
+consumer so desires, via text message, email, or U.S. mail--consistent 
+with the consumer's preference. We decline to do so, but encourage 
+providers to direct consumers to the labels on the provider's website.
+    The approach we adopt ensures that consumers receive real-time 
+disclosure of the fields most material to a purchase decision and have 
+access to the full label for review without requiring providers to 
+recite a visual document verbatim in an oral format for which it was 
+not designed. It also addresses the concerns raised in the record by 
+more than a half dozen accessibility organizations: the verbal summary 
+requirement ensures consumers without internet access receive label 
+content during the call and labels will be easily accessible to 
+consumers with disabilities on providers' websites. For these reasons, 
+we decline to simply exclude telephone calls from the definition of 
+point of sale, which would restrict access to label information for the 
+significant segment of the population that engages in telephone 
+shopping for broadband service--including many consumers with 
+disabilities. To ensure providers retain the flexibility to adapt 
+verbal summaries to diverse customer interactions, we also decline to 
+adopt a mandatory script for phone label disclosures.
+    We conclude that the approach we adopt is within our statutory 
+authority. Although the provision of label information in a telephone 
+conversation may not literally constitute the ``display'' of a label, 
+such disclosure is an appropriate implementation of the Congressional 
+intent that the content of labels be disclosed to consumers, especially 
+in light of the record showing that the telephone is a frequently used 
+sales channel, especially for older adults, lower-income households, 
+and consumers with limited digital literacy. We find that in directing 
+the Commission to require the display of labels ``to disclose to 
+consumers information regarding broadband internet access service 
+plans,'' Congress intended to authorize the Commission to adopt closely 
+related measures to ensure such disclosure, and did not intend to 
+prevent the Commission from ensuring that label content is accessible 
+to consumers who use the telephone to purchase broadband service.
+2. Passthrough Fees
+    Rather than continuing to require providers to itemize 
+``passthrough fees'' that can vary by location, we allow providers to 
+display such fees in the aggregate, either as a maximum or ``up to'' 
+amount for the total fees applicable in any location where the service 
+plan is offered, or as the exact total of such fees assessed in a 
+particular location. To ensure that consumers understand the fees they 
+will pay, we also require that any provider choosing to use the ``up 
+to'' option must break out the total ``up to'' amount into two 
+categories: (1) the maximum amount of passthrough fees that recover 
+government-imposed costs, and (2) the maximum amount of passthrough 
+fees attributable to costs imposed by non-governmental third-party 
+entities. Thus, providers choosing the ``up to'' approach must include 
+a comprehensive ``up to'' amount, as well as an ``up to'' amount for 
+governmental passthrough fees and an ``up to'' amount for non-
+governmental passthrough fees. For the governmental and third-party, 
+non-governmental breakdowns, the label also must provide the types of 
+passthrough fees that may be included in each category, but need not 
+identify separate ``up to'' amounts for each type of fee in each of the 
+two categories. The label must also direct consumers to a provider-
+maintained web page with clear descriptions of each type of passthrough 
+fee listed.
+    The Infrastructure Act directs us to require the display of 
+broadband labels ``as described in'' a public notice issued by the 
+Commission in 2016, Consumer and Governmental Affairs, Wireline 
+Competition, and Wireless Communications Bureaus Approve Open internet 
+Broadband Consumer Labels, GN Docket No. 14-28, Public Notice, 31 FCC 
+Rcd 3358 (CGB, WCB,WTB 2016) (2016 Broadband Labels PN), which in turn 
+explains that labels should convey the information consumers need to 
+know ``in plain language that is easy to understand without 
+overwhelming consumers with too much information.'' As a commenter 
+points out, too much detail regarding fees could draw consumers' 
+attention away from more important label information, and research 
+suggests that ``excessive itemization creates cognitive burdens that 
+reduce consumer welfare.'' Commenters who advocate for retaining 
+mandatory itemization of all fees do not persuasively address these 
+concerns. Allowing providers to state a total ``up to'' amount, while 
+also clearly identifying the portions of that amount attributable to 
+governmental and non-governmental, third-party passthrough fees, will 
+ensure that consumers can access relevant information in an easily 
+digestible format without being overwhelmed with an exhaustive 
+itemization of all possible passthrough fees.
+    The record also shows that requiring full itemization imposes 
+burdens on providers. Itemizing fees often requires providers to 
+generate and maintain a large number of distinct labels to account for 
+state and local variation in fees across their service territories. 
+This creates ongoing administrative complexity, particularly for 
+providers operating across multiple jurisdictions.
+
+[[Page 52253]]
+
+By contrast, as demonstrated by the Broadband internet Technical 
+Advisory Group (BITAG) maximum value field approach, calculating a 
+maximum ``up to'' amount is technically achievable without requiring a 
+separate label for each jurisdiction.
+    We amend the rule to allow two additional alternatives for the 
+display of passthrough fees, rather than requiring full itemization of 
+each location-specific fee. First, drawing on the BITAG recommendation, 
+we permit providers to present passthrough fees on a single line 
+specifying the maximum passthrough fee that would be paid by any 
+subscriber across all jurisdictions where the service plan is offered--
+that is, the highest ``up to'' amount applicable anywhere in the 
+provider's service territory for that plan. For purposes of this rule, 
+``service territory'' means the geographic area within which a provider 
+offers the specific broadband service plan to which the label applies. 
+Alternatively, providers may display, on a jurisdiction-specific basis, 
+the exact total of the passthrough fees that subscribers in that 
+jurisdiction will pay. Providers may also continue to itemize fees 
+individually as current rules permit. The displayed maximum or exact 
+total must be accurate, i.e., it must not understate the current fees 
+applicable to any consumer subscribing to that plan. If fees 
+subsequently increase above the disclosed maximum or exact total, the 
+provider must revise the label accordingly. Because fee disclosure must 
+not understate current fees, we decline to adopt NTCA's safe harbor 
+based on a historical 12-month average, because a backward-looking 
+average may not accurately reflect current fees.
+    We also disagree with commenters who argue that displaying an exact 
+total or maximum amount would undermine the effectiveness of the label, 
+increase consumer confusion, or recreate the bill shock the label was 
+designed to prevent. As described above, a single line totaling 
+multiple fees can help consumers compare plan prices without forcing 
+them to make additional calculations. Additionally, a separate 
+breakdown of that maximum amount between governmental and third-party, 
+non-governmental fees will provide useful context for consumers. This 
+approach will reduce consumer confusion, rather than increase it. And 
+because the ``up to'' amounts must be accurate, they will not cause 
+bill shock, which can occur when providers do not disclose the true 
+cost of service at point-of-sale. Including maximum passthrough fee 
+amounts will result in some consumers experiencing bills below what is 
+displayed on the label, the opposite of bill shock.
+    For similar reasons, we reject arguments that an ``up to'' amount 
+will allow providers to hide charges or impair consumers' ability to 
+understand the fees they may pay. Providers that display an ``up to'' 
+amount will still clearly disclose the most that a consumer will pay 
+for passthrough fees in any jurisdiction where the plan is offered. 
+Further, requiring a breakdown of governmental fees in relation to 
+third-party, non-governmental fees will ensure that consumers are aware 
+of the types of fees they may be required to pay. Nothing in the record 
+supports the point that consumer decision-making suffers when multiple 
+fees are consolidated. As long as the exact total or maximum amount is 
+accurate, consumers have the information necessary to make informed 
+purchasing decisions. With respect to Public Knowledge's concern about 
+the absence of a principled limit on embedded fees, we note that the 
+accuracy requirement provides such a limit; a provider may not embed 
+fees that cause the consumers' bill to exceed the maximum stated in the 
+applicable label. Making clear to consumers the maximum aggregate 
+passthrough fee they will face satisfies the transparency objective of 
+the Infrastructure Act, while potentially reducing the burden of review 
+a consumer may experience with an itemized list that may vary slightly 
+across different provider labels.
+    While we anticipate that most providers will opt to present an ``up 
+to'' maximum or an exact, location-specific fee total, some may choose 
+to continue to itemize passthrough fees. We expect that over time, 
+competitive forces will encourage providers to adopt disclosure formats 
+consumers find most useful, and in all cases the accuracy requirements 
+ensure that consumers can reliably compare total recurring amounts 
+across providers. The approach we adopt preserves transparent, 
+comparable information for consumers while allowing providers 
+flexibility to avoid label proliferation. We also recognize this is a 
+change in course. The Commission declined to allow an ``up to'' 
+approach in the Empowering Broadband Consumers Through Transparency, CG 
+Docket No. 22-2, Order on Reconsideration, FCC 23-68, 38 FCC Rcd 8238 
+(2023), stating that a single figure would not provide sufficient 
+transparency or facilitate comparison shopping. With the benefit of a 
+more robust record--including evidence that mandated itemization 
+impedes providers' flexibility, promotes unnecessary label 
+proliferation, and may undermine consumers' ability to comparison shop 
+and thereby frustrate the goals of the Infrastructure Act--we conclude 
+that permitting providers to display passthrough fees as a maximum or 
+``up to'' amount or exact total gives consumers sufficient disclosure 
+to enable comparison shopping and more effectively meets the objectives 
+of the Infrastructure Act.
+3. Affordable Connectivity Program
+    We eliminate the requirement that providers include information 
+about the ACP in the broadband label. The program ended June 1, 2024. 
+We agree with commenters that retaining a reference to an expired 
+program offers no consumer benefit and risks confusing consumers who 
+may be led to believe the program remains available. We thus decline 
+suggestions that we maintain the requirement as a placeholder 
+obligation that would activate automatically upon establishment of a 
+successor federal broadband affordability program.
+4. Customer Account Portal
+    We retain the requirement that providers that give their customers 
+access to their account information via an online portal must give 
+those customers easy access to the label of their current plan. And we 
+amend the rule to clarify that providers may satisfy the ``easily 
+accessible'' requirement for customer portals by prominently displaying 
+a hyperlink or icon in the customer's portal directing the customer to 
+the label for their current plan and thus providers need not display 
+the label itself in the customer's portal. We agree with commenters 
+that access to the label via their portal is important to enable 
+subscribers to verify their current plan terms, detect billing 
+discrepancies, and evaluate their current plan's suitability to their 
+needs. We believe that allowing providers to use a link or icon, rather 
+than displaying the label alongside all the other information in the 
+portal, will make it easier for consumers to focus on the portal 
+information they wish to read and benefit consumers accessing their 
+portal on mobile devices.
+    Display flexibility should also reduce provider compliance costs. 
+We agree with commenters that maintaining label display in customer 
+portals entails costly development work, and that a requirement for 
+full label display in customer portals ``imposes significant burdens 
+and costs without concomitant benefit to subscribers.'' While these 
+commenters do not specifically quantify the costs at issue, the record 
+nonetheless reflects that full-label display imposes
+
+[[Page 52254]]
+
+some compliance burden on providers, and the clarification we adopt 
+here is responsive to that concern.
+    We agree that a static label displayed in a customer's portal runs 
+the risk of becoming outdated, inaccurate, or misleading as plan terms 
+evolve over time. However, the label accessed in a portal should 
+reflect the terms of the customer's current plan, rather than the 
+original plan purchased if different, to, among other things, enable 
+market comparisons and better manage their existing plan. Thus, 
+consumers should not be confused or misled as long as their providers 
+meet their obligations under the rule of providing easy access to the 
+label of each consumer's current plan. While we recognize that labels 
+may not specify every charge or discount associated with a consumer's 
+current service plan, and thus may not serve as a comprehensive billing 
+reference document, labels that correspond to a consumer's current plan 
+clearly ``can assist in identifying billing inaccuracies and unexpected 
+fees,'' as the rule intends, as well as providing a baseline for future 
+comparison shopping. We also disagree with some commenters' claims that 
+the portal access requirement is ``divorced from the purpose of labels: 
+to facilitate shopping for broadband services.'' In adopting the rule, 
+as noted above, the Commission recognized that portal access to labels 
+``furthers our goal of assisting consumers with comparison shopping by 
+allowing consumers to more easily compare their current plans to 
+alternative plans when shopping for broadband service in the future.''
+    Additionally, we are unpersuaded that the costs of providing access 
+via a link in the consumer's account portal outweigh any consumer 
+benefit to subscribers. No commenter attempts to quantify these claimed 
+costs. And, as described above, there is ample evidence that the portal 
+requirement benefits consumers. Therefore, we find insufficient basis 
+in the record to revisit the Empowering Broadband Consumers Through 
+Transparency, CG Docket No. 22-2, Report and Order and Further Notice 
+of Proposed Rulemaking, 37 FCC Rcd 13686 (2022) (2022 Broadband Label 
+Order) assessment that ``associating a label that is already displayed 
+on a provider's primary advertising web page with a customer's online 
+account should not be overly burdensome, and that the benefits to 
+consumers far outweigh any costs to providers.'' We also disagree that 
+information on consumers' bills obviates the need for access to the 
+label. A label provides information (e.g., ``typical'' data speeds) 
+that is not included in bills and summarizes key information in a 
+recognizable format that supports comparison shopping, which bills 
+aren't usually designed to do.
+5. Point-of-Sale Display
+    We give providers flexibility to use links or icons at the point of 
+sale instead of displaying the full label. We agree with commenters 
+that this change will better enable consumers viewing broadband plans 
+on their mobile phones to read and process relevant information. And it 
+will enable providers to avoid significant design and operational 
+challenges, especially in the mobile device context, where screen space 
+limitations make simultaneous display of marketing content and a full 
+label difficult to achieve without degrading the consumer experience 
+for either. An icon or link prominently displayed in close proximity to 
+the advertised plan and that links directly to the associated label can 
+resolve the operational challenges (e.g., by conserving limited display 
+space on mobile devices) while ensuring that consumers can easily 
+access relevant label information.
+    We recognize this is a change in course from the Commission's 2022 
+Broadband Label Order requiring full label display at the point of 
+sale. In previously declining to allow a link in place of the full 
+label, the Commission noted that ``commenters [did] not articulate any 
+particular challenges in displaying the actual label alongside a 
+provider's marketing materials.'' The record here, however, provides a 
+more specific and documented account of the operational challenges 
+involved in meeting the display requirement.
+    We find that these documented operational challenges support 
+modifying the full label display requirement to allow the use of an 
+icon or link, provided that any icon or link connect directly to the 
+customer's specific plan label and appear in close proximity to the 
+associated advertised plan. When a provider places an icon or link next 
+to the advertised plan and that icon or link connects directly to that 
+plan's label, the consumer is a mere single click away from the label, 
+and need not re-enter the address or engage in a time-consuming search 
+for information relevant to comparison shopping, as some comments 
+suggest. Our approach strikes an appropriate balance between 
+operational flexibility and consumer access.
+    To ensure consumers can easily compare plans at point-of-sale, 
+links must connect directly to the label for the advertised plan or to 
+a labels page on which the specific plan is immediately identifiable 
+and accessible without additional navigation, address entry, or search. 
+This requirement addresses concerns raised by commenters about 
+immediacy, minimum-click access, and visibility of labels, which 
+continue to guide our approach to point-of-sale display. Providers 
+using a link or icon in lieu of the full label must clearly identify it 
+as leading to the label so that consumers understand what the link or 
+icon represents and are not left to guess whether it leads to label 
+information.
+6. Multilingual Requirement
+    We retain the requirement that providers display the label in 
+English and any other languages in which the provider markets its 
+services in the United States and its territories. Although the 
+Commission sought comment on whether to remove this requirement, we 
+agree with CTIA and other commenters supporting retaining the 
+requirement and find it is a commonsense way of ensuring the label is a 
+useful tool for consumers.
+    We find insufficient the arguments of two commenters urging us to 
+eliminate this requirement. We see no cost data or other evidence to 
+indicate that retaining the requirement will deter providers from 
+marketing in languages other than English. In the absence of such 
+evidence, it is reasonable to infer that a provider will not incur a 
+substantial incremental cost in translating the label to a language in 
+which the provider is already conducting marketing, and the consumer 
+benefit is concrete and immediate. If a provider has affirmatively 
+sought out and recruited customers in their native language, investing 
+in the research, outreach, and translation resources that multilingual 
+marketing entails, the record offers no persuasive evidence that 
+translating a standardized label into that same language would impose 
+an unreasonable burden. As CTIA acknowledges, the current requirement 
+reflects sound policy precisely because providers that market in a 
+given language already possess the translation resources necessary to 
+produce the label in that language.
+
+B. Eliminating Burdensome Reporting and Recordkeeping Requirements
+
+1. Machine-Readability and Data File Requirements
+    We eliminate the requirement that providers make the contents of 
+labels available separately in a machine readable spreadsheet file 
+format hosted at a dedicated URL, while emphasizing that providers 
+remain obligated to make
+
+[[Page 52255]]
+
+labels accessible to consumers with disabilities, including ensuring 
+such information is compatible with screen readers and other assistive 
+technologies used by people with disabilities. We agree with commenters 
+arguing that this action aligns the label requirements more closely 
+with the Infrastructure Act's purpose of disclosure to consumers, not 
+third parties, and alleviates a significant burden on providers. The 
+Infrastructure Act directs the Commission to require ``the display of 
+broadband consumer labels'' that provide consumers with information 
+about broadband plans. This requirement was modeled on nutrition 
+labels, which are focused on point-of-sale disclosure to consumers.
+    In requiring machine readability, the Commission appeared to 
+believe third-party access advances the statutory objective by 
+facilitating the creation of comparison-shopping tools for consumers, 
+as well as enabling more efficient data collection and compliance 
+monitoring by the Commission, and promoting marketplace research. 
+However, the Infrastructure Act's directive ``to disclose to consumers 
+information'' and the prior Commission-approved label referenced in the 
+Act do not appear to contemplate third-party data aggregation and 
+research. Section 60504 only directs us to require the display of 
+labels to disclose information about broadband plans to consumers. Nor 
+does the Commission's 2016 Broadband Labels PN, cited in section 60504 
+of the Infrastructure Act as a description of what we are directed to 
+require, indicate that the labels described in that public notice must 
+be in machine-readable data file formats for processing by computers. 
+To the contrary, the public notice found that the format of the 
+approved labels ``displays [the key factors consumers need to know] in 
+plain language that is easy to understand.'' For these reasons, we 
+reach a different conclusion than the Commission did in 2022.
+    We also conclude that the substantial compliance burdens imposed by 
+this requirement are not justified by the minimal, if any, likely 
+benefits for consumers. The current record offers a fuller description 
+of the relevant compliance burdens than was available to the Commission 
+in 2022. We also find insufficient evidence that the requirement is 
+needed to facilitate transparency and consumer decision-making, as some 
+commenters argue. The statute and our consumer-focused requirements 
+give consumers the transparency necessary to make good purchase 
+decisions. And there is no record evidence that any third parties have 
+used machine-readable label content to develop pro-consumer tools.
+    Some commenters raise concern that, without machine readability, 
+labels will not be easily accessible to consumers with disabilities. We 
+emphasize that our action in this Order does not affect providers' 
+obligation to make labels accessible to consumers with disabilities, 
+including ensuring such information is compatible with screen readers 
+and other assistive technologies used by people with disabilities. The 
+rules' requirement that labels be easily accessible to consumers with 
+disabilities is independent of the machine-readability provision 
+deleted by this Order. We remind broadband providers of the guidance on 
+accessibility offered by the Web Content Accessibility Guidelines. 
+While machine readability in some form may be involved in ensuring that 
+labels are easily accessible to people with vision disabilities (e.g., 
+by being compatible with screen readers, among other steps), the more 
+specific machine-readability requirement of Sec.  8.1(a)(3)--that label 
+content be provided separately in a spreadsheet file format via a 
+dedicated uniform resource locator (URL) that contains all of a 
+provider's labels--was not adopted to advance accessibility.
+2. Archiving
+    We eliminate the requirement that providers archive all labels for 
+at least two years after a service plan is no longer available to new 
+customers and the provider has removed the plan's label from its 
+website or alternate sales channels. In adopting the archiving 
+requirement in 2022, the Commission assumed that archiving would not 
+impose a significant incremental burden on providers. However, the 
+current record indicates there are substantial compliance costs, while 
+supporters do not point to any demonstrated consumer benefit. According 
+to providers, archiving imposes ongoing costs that fall hardest on 
+small providers, diverting time and resources from core operations. 
+NTCA explains, for example, that the enforcement rationale for the rule 
+is ``based on speculative future utility in complaint proceedings.'' 
+CTIA and ICLE further contend that requiring archiving of labels for 
+service plans that are no longer offered to new purchasers does not aid 
+comparison shopping for currently available services.
+    We emphasize that deleting this provision does not affect the 
+Commission's transparency rule, which requires a broadband provider to 
+``publicly disclose accurate information regarding the network 
+management practices, performance characteristics, and commercial terms 
+of its broadband internet access services sufficient to enable 
+consumers to make informed choices regarding the purchase and use of 
+such services.'' We believe the transparency rule and the requirement 
+that customers maintain access to their current plan label through 
+their account portal--as well as other sources of information such as 
+the customer's service agreement, monthly bills, and records of any 
+plan changes during a customer's subscription--sufficiently address 
+concerns that, absent archiving, subscribers whose service plans are no 
+longer offered to new customers would be deprived of access to key 
+information about their plans.
+    The 2022 Broadband Label Order explained that archived labels would 
+help the Commission and state authorities investigate potential 
+inaccuracies in labels, including in cases arising from consumer 
+complaints. Yet it did not point to any provision of the Infrastructure 
+Act, nor anything in the 2016 Broadband Labels PN, suggesting that an 
+archiving requirement is needed to achieve the Congressional purpose, 
+and we affirmatively conclude today that it is not needed. Further, the 
+2022 Broadband Label Order merely speculated that giving subscribers 
+the ability to request archived labels would help them, without 
+indicating why other customer records, including billing and service 
+agreements, would not do the same at lower marginal cost.
+    We disagree with commenters who say the archiving requirement is 
+essential for enforcement. We retain authority to obtain historical 
+plan data through investigative demands when needed to evaluate 
+potential noncompliance. Providers have other incentives to retain 
+records of their marketing materials in light of federal and state bans 
+on deceptive advertising. And we disagree that archiving is essential 
+for the customers themselves to check if they received the service they 
+signed up for. Service agreements, billing statements, and other 
+records already provide much of the information relevant to resolving 
+billing or service disputes.
+
+C. The Label Template
+
+1. Removing the Template From the CFR
+    We adopt our proposal to remove the label template from the Code of 
+Federal Regulations (CFR). As we stated in the Second Further Notice, 
+our approach will allow us to more easily update the visual layout and 
+other formatting
+
+[[Page 52256]]
+
+elements of the label. No party objects to our proposal, and we agree 
+with the Accessibility Organizations that we should make sure to 
+maintain version control and that updates, including revision history, 
+remain publicly accessible. The template will be maintained at <a href="http://fcc.gov/broadbandlabels">fcc.gov/broadbandlabels</a>. We delegate to the Consumer and Governmental Affairs 
+Bureau authority to make non-substantive changes to the visual layout 
+and other formatting elements of the label. The Bureau shall describe 
+any such update in a Public Notice before an update takes effect. This 
+delegation does not authorize the Bureau to make substantive changes to 
+the template's content except as authorized through Commission action. 
+Providers' underlying obligations remain governed by Sec.  8.1 of the 
+Commission's rules.
+2. Updating the Template
+    We adopt our proposal to replace the ``fcc.gov/consumer'' reference 
+in the template with ``<a href="http://fcc.gov/broadbandlabels">fcc.gov/broadbandlabels</a>.'' This change, which is 
+unopposed, is necessary to enable consumers to access directly the 
+broadband label information maintained by the Commission.
+
+D. Eliminating Outdated Rules
+
+    We adopt our proposal to remove Sec.  8.1(a)(7) from our rules. 
+That provision set forth implementation deadlines for the 2022 
+Broadband Label Order: April 10, 2024 for providers with more than 
+100,000 subscribers and October 10, 2024 for smaller providers. These 
+deadlines have passed, and providers are now subject to the label 
+requirements.
+1. Issues From the First Further Notice of Proposed Rulemaking
+    We close the Commission's inquiry into the various proposals on 
+which the Commission sought comment in the First Further Notice. 
+Specifically, the Commission sought comment on whether to: specify 
+additional accessibility standards (such as ASL, Braille, and tactile 
+indicators); require the display of labels in additional languages; 
+require disclosure of discounts and other price variables in labels; 
+extend label requirements to bundled services; modify or supplement 
+required performance information; require specific disclosures in the 
+label regarding network management and privacy; require interactive 
+labels; employ focus groups, surveys, or subject matter experts to 
+provide feedback on future changes to the label; publish a style guide 
+and implementation tools to assist providers and enhance consistency in 
+label presentation; and permit ISPs to submit labels information 
+directly to the Commission, in lieu of providing labels directly at the 
+point of sale and archiving them. The record indicates that these 
+proposals would unduly complicate the display of labels, contrary to 
+the Commission's objective that labels convey the information consumers 
+need to know ``in plain language that is easy to understand without 
+overwhelming consumers with too much information,'' or would impose 
+unwarranted compliance burdens on providers.
+    Several commenters support the Commission's intention to close its 
+inquiry into the First Further Notice proposals, arguing that those 
+proposals would impose unnecessary burdens and undermine the 
+streamlining objective in this proceeding. Although one commenter urges 
+the Commission not to close its inquiry into defining `typical' 
+performance metrics, arguing that the current approach results in 
+disclosures that are not comparable between providers, we agree with 
+the commenters who argue that the current rule is sufficient.
+    Other commenters oppose closing the inquiry into additional 
+accessibility standards, specifically those relating to ASL-accessible 
+formats, Braille, and tactile indicators, arguing that text-based 
+accessibility alone does not adequately serve all consumers with 
+disabilities. They urge the Commission to acknowledge multimodal 
+accessibility as an open issue warranting further examination. We find 
+that the requirement that providers make the labels easily accessible 
+to people with disabilities sufficiently directs providers to ensure 
+accessibility while providing flexibility to meet the requirement. To 
+the extent accessibility concerns arise, providers will need to act to 
+ensure an individual has access to the provider's labels. While the 
+responsibility is on providers to ensure the labels are accessible for 
+consumers with disabilities, we also encourage consumers to utilize the 
+Commission's Consumer Inquiries and Complaints Center to apprise the 
+Commission of any accessibility concerns requiring additional 
+assistance.
+2. Other Matters
+    We decline to exclude mass-market services that are marketed to 
+business customers from the label requirements, as CTIA asks. The 
+Infrastructure Act directs the Commission to require labels for 
+``broadband internet access service,'' as defined in Sec.  8.1(b) of 
+the Commission's rules or any successor regulation. Section 8.1(b) 
+defines ``broadband internet access service'' as ``a mass-market retail 
+service by wire or radio that provides the capability to transmit data 
+to and receive data from all or substantially all internet endpoints, 
+including any capabilities that are incidental to and enable the 
+operation of the communications service, but excluding dial-up internet 
+access service.'' Given the lack of evidence in the record regarding 
+the costs imposed by the labeling requirement on providers of mass-
+market services used by business customers, we find no reason to pursue 
+a definitional change.
+    We also decline to exclude E-Rate and Rural Health Care (RHC) 
+services from the label requirements, as urged by DQE Communications 
+LLC (DQE), a broadband provider that exclusively serves enterprise and 
+business customers. Although DQE claims that the label requirement 
+imposes disproportionate costs and obligations, it does not describe 
+with specificity the costs and obligations it incurs with respect to E-
+Rate and RHC customers. Given that the label requirement applies to all 
+mass-market broadband services, it would appear that, to the extent 
+such ``off-the-shelf'' services are requested by E-Rate or RHC 
+customers, the necessary labels should already be available from the 
+upstream providers of such mass-market broadband services, and thus can 
+be readily displayed, with minimal if any alteration, by any E-Rate or 
+RHC provider making use of such services. Therefore, in the absence of 
+any contrary evidence, we conclude that minimal, if any, cost would be 
+incurred by DQE or similarly situated providers in passing such labels 
+on to their E-Rate and RHC customers.
+    Further, the Schools, Health & Libraries Broadband Coalition and 
+the Consortium for School Networking (SHLB/CoSN) list a variety of 
+benefits that they claim result from making labels for mass-market 
+services available to schools, libraries, and rural health care 
+facilities. They state that in a variety of circumstances, including 
+limited budgets, lack of competitive options, and insufficient 
+technical expertise to navigate complex proposals, a school, library, 
+or health care provider may choose to purchase a mass-market internet 
+service, rather than an individualized service offered in response to 
+an RFP. They add that by providing standardized, clear information 
+about services available in the mass market, labels also help 
+institutions evaluate bids, comply with program rules requiring cost-
+effectiveness, and plan procurements. According to SHLB/CoSN, labels 
+also
+
+[[Page 52257]]
+
+assist with documentation for funding applications, which often require 
+details such as monthly price, contract length, and speeds--information 
+that labels present ``in a uniform and concise manner.''
+
+E. Assessment of Consumer Benefit
+
+    We recognize the importance of assessing, over time, whether 
+broadband labels are achieving their intended consumer benefits. 
+Accordingly, we direct the Consumer Protection and Accessibility 
+Advisory Committee (CPAAC) to produce reports assessing the 
+effectiveness of broadband labels, the first to be completed no later 
+than two years after publication of this Order in the Federal Register, 
+and the following reports to be completed every four years thereafter. 
+Each report should address: (1) the extent to which broadband labels 
+reach consumers (i.e., are people aware the labels exist and are they 
+using them) and any challenges that remain to their use; (2) 
+recommendations for how the FCC, industry, and consumer groups can 
+better publicize broadband labels to ensure that consumers are aware of 
+them and understand how to use them; (3) the extent to which broadband 
+labels are accessible for consumers with disabilities and any 
+challenges that remain to full accessibility; (4) recommendations for 
+how the FCC and providers can address the challenges that remain in 
+ensuring broadband labels are accessible for consumers with 
+disabilities; and (5) other opportunities to better clarify and make 
+more useful to consumers the information on the label.
+
+F. Legal Authority
+
+    We conclude that section 60504 of the Infrastructure Act provides 
+the Commission with the authority to modify the broadband label rules 
+as discussed herein. Section 60504 directs the Commission to 
+``promulgate regulations to require the display of broadband consumer 
+labels, as described in the 2016 Broadband Labels PN, to disclose to 
+consumers information regarding broadband internet access service 
+plans.'' The 2016 Broadband Labels PN described broadband consumer 
+labels as an implementation of the Commission's broadband transparency 
+rule. In approving a specific format and content for broadband labels, 
+the 2016 Broadband Labels PN characterized them as ``a simple-to-
+understand format describing the key factors consumers need to know 
+when considering broadband service. . . .'' The changes we adopt today 
+better align the rules with section 60504 by removing or modifying a 
+number of requirements that do not appear to be needed to achieve the 
+core statutory objective. We conclude that the label display 
+requirements adopted herein raise no First Amendment concerns.
+    Sections 13 and 257 of the Communications Act of 1934, as amended, 
+which the Commission has previously relied on as authority for the 
+broadband transparency rule, provide additional authority. To the 
+extent that broadband labels continue to be used for offerings through 
+the E-Rate and Rural Health Care universal service programs, Sec.  254 
+supplies authority. We also note the Commission's finding in the 
+Broadband Label Order that Title III of the Act provides additional 
+authority for the rules adopted here with respect to wireless 
+providers.
+
+G. Costs and Benefits
+
+    This Order streamlines the existing broadband label requirements by 
+making minor changes to the information required to be presented and 
+the way in which the information is required to be presented. These 
+changes are expected to reduce costs for broadband providers, while 
+still providing consumers information to make informed broadband 
+purchases.
+    First, the Order modifies the requirement for presenting the 
+broadband label on a sale by phone so that customer service 
+representatives no longer have to read the label contents verbatim. 
+This change will allow representatives to communicate the contents of 
+the broadband label in a more natural and understandable way, which 
+should benefit consumers. Next, instead of requiring providers to 
+itemize all fees, which may vary by location, the rules set forth in 
+this Order allow providers to include either (1) the ``up to'' (i.e., 
+maximum) total amount of passthrough fees that a subscriber would be 
+charged in any location where the service plan is offered, or (2) the 
+exact total amount the consumer would be charged for broadband fees in 
+a particular location. Under both options, the required label content 
+is simplified, enabling providers to convey the information consumers 
+need to know ``in plain language that is easy to understand without 
+overwhelming consumers with too much information.'' In addition, the 
+first alternative--displaying the maximum a consumer would be charged--
+reduces compliance costs for providers because they are no longer 
+required to create multiple labels when fees vary by location.
+    Further, this Order allows providers to use hyperlinks to labels at 
+the point of sale and in customer account portals, rather than 
+displaying the full label. While using hyperlinks to broadband labels 
+instead of displaying the labels automatically may result in fewer 
+consumers reading the label, interested consumers still have the 
+opportunity to view the broadband label. The Order also eliminates the 
+requirement that providers provide the contents of labels separately, 
+in a machine-readable spreadsheet file format on their websites via a 
+dedicated uniform resource locator (URL). Because consumers themselves, 
+including consumers with disabilities, will still be able to read the 
+labels, we do not expect that eliminating this requirement will hurt 
+consumers, and doing so could potentially reduce providers' compliance 
+costs. Lastly, the Order eliminates the requirement that providers 
+retain labels for two years after they discontinue plans. This change 
+will not affect consumers' access to labels for plans currently offered 
+to the public and may lower costs of storage for providers. 
+Collectively, we expect the rule changes set forth in this Order to 
+reduce providers' costs while imposing no material harms on consumers.
+
+II. Final Regulatory Flexibility Analysis
+
+    As required by the Regulatory Flexibility Act of 1980, as amended 
+(RFA), the Federal Communications Commission (Commission) incorporated 
+an Initial Regulatory Flexibility Analysis (IRFA) in the Second Further 
+Notice released in November 2025. The Commission sought written public 
+comment on the proposals in the Notice, including comment on the IRFA. 
+The comments received are addressed below. This Final Regulatory 
+Flexibility Analysis (FRFA) conforms to the RFA and it (or summaries 
+thereof) will be published in the Federal Register.
+
+A. Need for, and Objectives of, the Rules
+
+    The Commission adopted broadband label requirements in the 2022 
+Broadband Label Order to provide consumers with easy-to-understand and 
+accurate information about broadband service plans, as mandated by the 
+Infrastructure Investment and Jobs Act. Since the initial 
+implementation of these rules, for larger providers in April 2024 and 
+for smaller providers in October 2024, the Commission has received 
+feedback from industry stakeholders through the Delete, Delete, Delete 
+proceeding asserting that certain aspects of the current broadband 
+label requirements may be unnecessarily burdensome for providers while 
+not providing commensurate benefits to consumers.
+
+[[Page 52258]]
+
+    The primary objective of the Order is to simplify regulatory 
+requirements while maintaining the transparency benefits that broadband 
+labels offer consumers. Specifically, the Order (1) enables providers 
+to describe labels in a natural, conversational style over the phone, 
+rather than requiring customer service representatives to read label 
+contents verbatim; (2) simplifies fee presentation by allowing 
+providers to include either the maximum or exact amount consumers would 
+be charged for fees that may vary by location, rather than requiring 
+itemization of all such fees; (3) removes outdated information about 
+the now concluded Affordable Connectivity Program (ACP) from the label; 
+(4) allows use of hyperlinks or icons at the point of sale and in 
+customer account portals; (5) eliminates the requirement that providers 
+make label content machine readable; and (6) eliminates the requirement 
+that providers retain labels for two years after a service is no longer 
+offered to new customers. At the same time, the Order ensures that 
+labels remain accessible to people with disabilities and requires 
+providers to present them in English and in any other language a 
+provider uses in marketing.
+    The Order does not change the core label requirements to display a 
+broadband consumer label containing critical information about the 
+provider's service offerings, including information about pricing, 
+introductory rates, data allowances, and performance metrics.
+
+B. Summary of Significant Issues Raised by Public Comments in Response 
+to the IRFA
+
+    NTCA, WISPA, Breezeline, ACA Connects, and Joink filed comments 
+regarding the impact of the rule on small entities.
+    NTCA--The Rural Broadband Association (NTCA) was the only commenter 
+to include a section specifically responding to the IRFA. NTCA, which 
+represents small, rural local exchange carriers, supports the 
+Commission's proposals as burden-relieving for small entities, and 
+urged the Commission to avoid imposing any additional requirements 
+beyond those proposed in the FNRPM. NTCA identified a material 
+inconsistency between the 2023 Paperwork Reduction Act (PRA) Worksheet 
+supporting this proceeding, which estimated zero capital, operation, 
+and maintenance costs for small companies, and the Commission's own 
+acknowledgement in the Broadband Label Order that certain label tasks 
+``may require more time for providers that are less likely to have in-
+house attorneys and compliance departments to assist in the preparation 
+broadband labels, and thus will need to engage outside legal resources 
+to implement several proposed requirements.'' NTCA further argued that 
+even reliance on existing internal staff generates real opportunity 
+costs, as compliance draws resources away from network investment and 
+other operational priorities, concluding that elimination of the 
+identified requirements would provide meaningful economic benefits to 
+small providers.
+    WISPA, Breezeline, ACA Connects, and Joink also raised cost and 
+burden concerns to small entities in their comments on the Notice more 
+generally. These commenters supported the proposed eliminations as 
+measures that would reduce unnecessary compliance costs and 
+administrative burden for providers, including small entities, without 
+undermining the consumer transparency goals of the broadband label 
+requirements.
+    USTelecom and other commenters noted compliance costs and burdens 
+associated with the existing broadband label requirements but did not 
+specifically address the impacts of those requirements on small 
+entities.
+
+C. Response to Comments by the Chief Counsel for the Small Business 
+Administration Office of Advocacy
+
+    Pursuant to the Small Business Jobs Act of 2010, which amended the 
+RFA, the Commission is required to respond to any comments filed by the 
+Chief Counsel for the Small Business Administration (SBA) Office of 
+Advocacy, and also provide a detailed statement of any change made to 
+the proposed rules as a result of those comments. The Chief Counsel did 
+not file any comments in response to the proposed rules in this 
+proceeding.
+
+D. Description and Estimate of the Number of Small Entities to Which 
+the Rules Will Apply
+
+    The RFA directs agencies to provide a description of, and where 
+feasible, an estimate of the number of small entities that may be 
+affected by the adopted rules. The RFA generally defines the term 
+``small entity'' as having the same meaning as the terms ``small 
+business,'' ``small organization,'' and ``small governmental 
+jurisdiction.'' In addition, the term ``small business'' has the same 
+meaning as the term ``small business concern'' under the Small Business 
+Act. A ``small business concern'' is one which: (1) is independently 
+owned and operated; (2) is not dominant in its field of operation; and 
+(3) satisfies any additional criteria established by the SBA. The SBA 
+establishes small business size standards that agencies are required to 
+use when promulgating regulations relating to small businesses; 
+agencies may establish alternative size standards for use in such 
+programs, but must consult and obtain approval from SBA before doing 
+so.
+    Our actions, over time, may affect small entities that are not 
+easily categorized at present. We therefore describe three broad groups 
+of small entities that could be directly affected by our actions. In 
+general, a small business is an independent business having fewer than 
+500 employees. These types of small businesses represent 99.9% of all 
+businesses in the United States, which translates to 34.75 million 
+businesses. Next, ``small organizations'' are not-for-profit 
+enterprises that are independently owned and operated and are not 
+dominant in their field. While we do not have data regarding the number 
+of non-profits that meet that criteria, over 99 percent of nonprofits 
+have fewer than 500 employees. Finally, ``small governmental 
+jurisdictions'' are defined as cities, counties, towns, townships, 
+villages, school districts, or special districts with populations of 
+less than fifty thousand. Based on the 2022 U.S. Census of Governments 
+data, we estimate that at least 48,724 out of 90,835 local government 
+jurisdictions have a population of less than 50,000.
+    The rules adopted in the Order will apply to small entities in the 
+industries identified in the chart below by their six-digit North 
+American Industry Classification System (NAICS) codes and corresponding 
+SBA size standard. Where available, we also provide additional 
+information regarding the number of potentially affected entities in 
+the identified industries below.
+
+                                 Table 1--Census Bureau Data by NAICS Code Table
+----------------------------------------------------------------------------------------------------------------
+   Regulated industry (NAICS                        SBA size                                       % Small firms
+        classification)           NAICS code        standard        Total firms     Small firms     in industry
+----------------------------------------------------------------------------------------------------------------
+Wired Telecommunications                517111  1,500 employees.           3,054           2,964           97.05
+ Carriers.
+
+[[Page 52259]]
+
+ 
+Wireless Telecommunications             517112  1,500 employees.           2,893           2,837           98.06
+ Carriers (except Satellite).
+Telecommunications Resellers..          517121  1,500 employees.           1,386           1,375           99.21
+Satellite Telecommunications..          517410  $47 million.....             275             242           88.00
+All Other Telecommunications..          517810  $40 million.....           1,079           1,039           96.29
+----------------------------------------------------------------------------------------------------------------
+
+
+                                Table 2--Telecommunications Service Provider Data
+----------------------------------------------------------------------------------------------------------------
+   2024 Universal service monitoring report telecommunications          SBA size standard (1,500 employees)
+        service provider data (data as of December 2023)         -----------------------------------------------
+-----------------------------------------------------------------   Total # FCC
+                                                                     Form 499A      Small firms       % Small
+                         Affected entity                              filers                         entities
+----------------------------------------------------------------------------------------------------------------
+Incumbent Local Exchange Carriers (Incumbent LECs)..............           1,175             917           78.04
+Interexchange Carriers (IXCs)...................................             113              95           84.07
+Local Exchange Carriers (LECs)..................................           4,904           4,493           91.62
+Local Resellers.................................................             222             217           97.75
+Toll Resellers..................................................             411             398           96.84
+Telecommunications Resellers....................................             633             615           97.16
+Wired Telecommunications Carriers...............................           4,682           4,276           91.33
+Wireless Telecommunications Carriers (except Satellite).........             585             498           85.13
+Wireless Telephony..............................................             326             247           75.77
+----------------------------------------------------------------------------------------------------------------
+
+E. Description of Economic Impact and Projected Reporting, 
+Recordkeeping and Other Compliance Requirements for Small Entities
+
+    The RFA directs agencies to describe the economic impact of adopted 
+rules on small entities, as well as projected reporting, recordkeeping 
+and other compliance requirements, including an estimate of the classes 
+of small entities which will be subject to the requirement and the type 
+of professional skills necessary for preparation of the report or 
+record.
+    The Order streamlines existing broadband label requirements by 
+making targeted changes to the information providers are required to 
+provide and to the manner in which it must be displayed. The Commission 
+expects these changes to reduce costs for providers, including small 
+entities, while continuing to provide consumers with information needed 
+to make informed broadband purchasing decisions. The Commission expects 
+the rule changes set forth in this Order to reduce provider costs while 
+imposing no material harm on consumers.
+    The Order's changes reduce compliance obligations in the following 
+respects, each of which is particularly beneficial to small entities 
+that are less likely than large providers to maintain dedicated in-
+house legal and technical compliance staff. First, the fee presentation 
+change allows providers to disclose the maximum or exact amount 
+consumers would be charged for location-variable fees, eliminating the 
+need to create and maintain multiple location-specific labels. Second, 
+the point of sale and account portal changes allow providers to use 
+hyperlinks or icons in lieu of the full label display, reducing the 
+technical burden of full label display systems. Third, elimination of 
+the machine readability requirement removes a technical backend 
+obligation that imposed costs without commensurate consumer benefit. 
+Fourth, the telephone sales modification allows customer service 
+representatives to describe label contents conversationally rather than 
+verbatim, reducing training and scripting burdens. Fifth, elimination 
+of the two-year archiving requirement may lower storage costs. Sixth, 
+removal of the outdated ACP information (ACP) eliminates the need to 
+maintain a label element that no longer serves any consumer information 
+purpose.
+    The core broadband label requirements remain in effect for all 
+providers, including small entities. Providers must continue to display 
+a label containing critical information pricing, introductory rates, 
+data allowances, and performance metrics. Compliance will continue to 
+require professional skills in legal compliance, marketing, and 
+broadband technology. Small entities that lack in-house compliance 
+staff may continue to require professional assistance, although we 
+expect that the elimination of several requirements will substantially 
+reduce the scope and cost of such assistance.
+    The Order does not impose any new reporting, recordkeeping, or 
+other compliance obligations on small entities. All adopted changes 
+reduce burdens relative to existing requirements.
+
+F. Discussion of Steps Taken To Minimize the Significant Economic 
+Impact on Small Entities, and Significant Alternatives Considered
+
+    The RFA requires an agency to provide ``a description of the steps 
+the agency has taken to minimize the significant economic impact on 
+small entities . . . including a statement of the factual, policy, and 
+legal reasons for selecting the alternative adopted in the final rule 
+and why each one of the other significant alternatives to the rule 
+considered by the agency which affect the impact on small entities was 
+rejected.''
+    Elimination of six compliance requirements. The most significant 
+step taken to minimize economic impact on small entities is the 
+elimination of six compliance requirements that generated 
+disproportionate administrative, technical and financial burden, 
+particularly for smaller providers, without commensurate consumer 
+benefit. The legal and policy basis for each elimination is grounded in 
+the Commission's finding that these requirements were not mandated by 
+the Infrastructure Act or the 2016 Broadband Labels PN and thus
+
+[[Page 52260]]
+
+exceeded the Commission's statutory mandate. Eliminating requirements 
+that lack statutory grounding and imposed real costs on small entities 
+directly advances the RFA's objectives.
+    Fee Presentation Flexibility. Rather than requiring itemization of 
+all location-variable fees, which entailed creating multiple label 
+versions for different service areas, the Order allows providers to 
+disclose either the maximum or exact amount a consumer will be charged 
+for these fees. This approach achieves the transparency goal while 
+substantially reducing administrative complexity, especially for small 
+entities serving multiple geographic markets.
+    Hyperlink and Icon Alternative. The Order allows providers to 
+satisfy point of sale and customer portal display requirements through 
+hyperlinks or icons linking to broadband labels rather than full-label 
+display at the point of sale. This reduces the technical burden of 
+label display systems while preserving consumer access to label 
+information.
+    Implementation Timing. The Commission notes that the Broadband 
+Label Order provided differential implementation timelines, giving 
+smaller providers (those with 100,000 or fewer subscribers) a six-month 
+extension beyond the deadline applicable to large providers. Because 
+the changes adopted in this Order exclusively reduce compliance 
+obligations, no additional differential implantation schedule for small 
+entities is necessary. The Commission also removes the now-moot 
+deadline provision at Sec.  8.1(a)(7) to streamline the rules.
+
+List of Subjects in 47 CFR Part 8
+
+    Communications, Consumer protection, Labeling, Reporting and 
+recordkeeping requirements, Telecommunications, Telephone.
+
+Federal Communications Commission.
+Aleta Bowers,
+Federal Register Liaison Officer, Office of the Secretary.
+
+Final Rules
+
+    For the reasons discussed in the preamble, the Federal 
+Communications Commission amends 47 CFR part 8 as follows:
+
+PART 8--INTERNET TRANSPARENCY FOR CONSUMERS
+
+0
+1. The authority citation for part 8 continues to read as follows:
+
+    Authority:  47 U.S.C. 151, 152, 154, 201(b), 257, 302a, 303(r), 
+312, 333, 503 and 1753.
+
+Subpart A--Broadband Transparency
+
+0
+2. Amend Sec.  8.1 by revising paragraph (b) to read as follows:
+
+
+Sec.  8.1  Transparency.
+
+* * * * *
+    (b)(1) Broadband internet access service is a mass-market retail 
+service by wire or radio that provides the capability to transmit data 
+to and receive data from all or substantially all internet endpoints, 
+including any capabilities that are incidental to and enable the 
+operation of the communications service, but excluding dial-up internet 
+access service. This term also encompasses any service that the 
+Commission finds to be providing a functional equivalent of the service 
+described in the previous sentence or that is used to evade the 
+protections set forth in this part. For purposes of paragraphs (a)(1) 
+through (6) of this section, ``mass-market'' services exclude service 
+offerings customized for the customer through individually negotiated 
+agreements even when the services are supported by Federal universal 
+service support.
+    (2) In this section, ``passthrough fee'' means a monthly charge 
+that:
+    (i) Is imposed by a government entity or third-party infrastructure 
+owner rather than set by the provider itself;
+    (ii) Represents costs that the provider chooses to recover from 
+consumers as a separate charge rather than incorporating them into the 
+base monthly price; and
+    (iii) Varies by consumer location.
+* * * * *
+
+0
+3. Delayed indefinitely, further amend Sec.  8.1 by:
+0
+a. Revising paragraphs (a)(1) and (2); and
+0
+b. Removing and reserving paragraphs (a)(3), (5), and (7).
+    The revisions read as follows:
+
+
+Sec.  8.1  Transparency.
+
+    (a) * * *
+    (1)(i) Any person providing broadband internet access service shall 
+create and display an accurate broadband consumer label for each stand-
+alone broadband internet access service it currently offers for 
+purchase. The label must be prominently displayed, publicly available, 
+and easily accessible to consumers, including consumers with 
+disabilities, at the point of sale with the content and in the format 
+prescribed by the Commission in ``[Fixed or Mobile] Broadband Consumer 
+Disclosure Label,'' located at www.<a href="http://fcc.gov/broadbandlabels">fcc.gov/broadbandlabels</a> labels.
+    (ii) A label shall itemize any monthly fees not included in the 
+monthly price, except that passthrough fees may be presented in the 
+aggregate, as either the maximum monthly total or the exact monthly 
+total of such fees assessed on subscribers in the geographic area to 
+which the label applies. Providers opting to display passthrough fees 
+as a maximum ``up to'' amount must additionally provide on the label a 
+breakdown of this amount into a maximum ``up to'' amount for 
+passthrough fees that recover government-imposed costs and a maximum 
+``up to'' amount for passthrough fees that recover costs imposed by 
+non-governmental, third-party infrastructure owners, and the types of 
+fees included in each of the two categories.
+    (2)(i) Broadband internet access service providers shall display 
+the label required under paragraph (a)(1) of this section at each point 
+of sale. Point of sale is defined to mean a provider's website and any 
+alternate sales channels through which the provider's broadband 
+internet access service is sold, including provider-owned retail 
+locations, third-party retail locations, and telephone sales channels. 
+For labels displayed on provider websites, the label (or an icon or 
+link that connects directly to the label and is clearly identified as a 
+way to access the label for the advertised plan) must be displayed in 
+close proximity to the associated advertised service plan. Point of 
+sale also means the time a consumer begins investigating and comparing 
+broadband service offerings available to them at their location. For 
+alternate sales channels, providers must document each instance when it 
+directs a consumer to a label and retain such documentation for two 
+years. This requirement will be deemed satisfied if, instead, the 
+provider: establishes the business practices and processes it will 
+follow in distributing the label through alternative sales channels; 
+retains training materials and related business practice documentation 
+for two years; and provides such information to the Commission upon 
+request, within thirty days. Point of sale for purposes of the E-Rate 
+and Rural Health Care programs is defined as the time a service 
+provider submits its bid to a program participant. Providers 
+participating in the E-Rate and Rural Health Care programs must provide 
+their labels to program participants when they submit their bids to 
+participants.
+    (ii) Broadband internet access service providers that offer online 
+account portals to their customers shall also make each customer's 
+current plan label easily accessible to the customer in such portals, 
+by displaying the label (or an
+
+[[Page 52261]]
+
+icon or link that connects directly to the label).
+    (iii) At telephone points of sale, a provider satisfies the display 
+requirement of this paragraph (a)(2) by orally summarizing the 
+following label fields during the sales interaction: monthly price 
+inclusive of monthly fees, including the introductory rate and its 
+duration if applicable; typical download and upload speeds; latency; 
+data allowance; contract term duration if applicable; and early 
+termination fees if applicable. Verbatim recitation of the label is not 
+required to satisfy this obligation.
+* * * * *
+[FR Doc. 2026-16503 Filed 8-12-26; 8:45 am]
+BILLING CODE 6712-01-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

@@ -1,0 +1,208 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 180 (Friday, September 18, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 180 (Friday, September 18, 2026)]
+[Notices]
+[Pages 59298-59300]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-19192]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+UNITED STATES SENTENCING COMMISSION
+
+
+Sentencing Guidelines for United States Courts
+
+AGENCY: United States Sentencing Commission.
+
+ACTION: Notice of submission to Congress of amendment to the sentencing 
+guidelines effective March 15, 2027.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The United States Sentencing Commission hereby gives notice 
+that the Commission has promulgated an amendment to the Guidelines 
+Manual. This notice sets forth the text of the amendment and the reason 
+for the amendment.
+
+DATES: The Commission has specified an effective date of March 15, 
+2027, for the amendment set forth in this notice.
+
+FOR FURTHER INFORMATION CONTACT: Jennifer Dukes, Senior Public Affairs 
+Specialist, (202) 502-4597.
+
+SUPPLEMENTARY INFORMATION: The United States Sentencing Commission is 
+an independent agency in the judicial branch of the United States 
+Government. The Commission promulgates sentencing guidelines and policy 
+statements for federal courts pursuant to 28 U.S.C. 994(a). The 
+Commission also periodically reviews and revises previously promulgated 
+guidelines pursuant to 28 U.S.C. 994(o) and submits guideline 
+amendments to
+
+[[Page 59299]]
+
+the Congress not later than the first day of May each year pursuant to 
+28 U.S.C. 994(p). Absent action of the Congress to the contrary, 
+submitted amendments become effective by operation of law on the date 
+specified by the Commission (generally November 1 of the year in which 
+the amendments are submitted to Congress).
+    Pursuant to its authority under 28 U.S.C. 994(p) and its emergency 
+authority under section 5017 of the Consolidated Appropriations Act, 
+2026 (Pub. L. 119-75), the Commission has promulgated an amendment to 
+the Guidelines Manual. Notice of the proposed amendment was published 
+in the Federal Register on April 24, 2026 (see 91 FR 22228). On 
+September 14, 2026, the Commission submitted this amendment to the 
+Congress and specified an effective date of March 15, 2027.
+    The text of the amendment, and the reason for the amendment, is set 
+forth below. Additional information pertaining to the amendment 
+described in this notice may be accessed through the Commission's 
+website at <a href="http://www.ussc.gov">www.ussc.gov</a>.
+    Authority: 28 U.S.C. 994(a), (o), (p), and (u); Section 5017 of the 
+Consolidated Appropriations Act, 2026 (Public Law 119-75); USSC Rules 
+of Practice and Procedure 2.2 and 4.1.
+
+Carlton W. Reeves,
+Chair.
+
+Amendment to the Sentencing Guidelines, Policy Statements, and Official 
+Commentary
+
+    1. Amendment: The Commentary to Sec.  2A5.2 captioned ``Statutory 
+Provisions'' is amended by striking ``49 U.S.C. 46308, 46503, 46504 
+(formerly 49 U.S.C. 1472(c), (j))'' and inserting ``49 U.S.C. 46307, 
+46308, 46503, 46504 (formerly 49 U.S.C. 1472(c), (j))''.
+    The Commentary to Sec.  2X5.2 captioned ``Statutory Provisions'' is 
+amended by striking ``49 U.S.C. 31310'' and inserting ``49 U.S.C. 
+31310, 46307''.
+    Chapter Three, Part B, is amended by inserting at the end the 
+following new guideline:
+    ``Sec.  3B1.6. Use of Unmanned Aircraft
+    (a) (Apply the greater):
+    (1) If (A) the defendant is convicted of an offense to which the 
+statutory enhancement under 6 U.S.C. 124n-1(c) applies; or (B) the 
+parties stipulate (i) to such an offense for purposes of calculating 
+the guideline range under Sec.  1B1.2 (Applicable Guidelines); or (ii) 
+that the adjustment in this subsection applies, increase by 6 levels.
+    (2) If the offense otherwise involved the use of an unmanned 
+aircraft, increase by 4 levels.
+    (b) For purposes of this guideline:
+    (1) `Unmanned aircraft' has the meaning given that term in 49 
+U.S.C. 44801.
+    (2) `Use' does not include mere possession.
+    (c) Special Instruction
+    (1) If the use of an unmanned aircraft that forms the basis for an 
+adjustment under this guideline is the only conduct that forms the 
+basis for an enhancement in Chapter Two or another adjustment in 
+Chapter Three, apply the provision that results in the greater offense 
+level.
+
+Commentary
+
+    Background: This guideline implements the directive in the SAFER 
+SKIES Act (section 8605(e) of the National Defense Authorization Act 
+for Fiscal Year 2026, Pub. L. 119-60).''.
+    Appendix A (Statutory Index) is amended by inserting before the 
+line referenced to 49 U.S.C. 46308 the following new line reference:
+    ``49 U.S.C. 46307 2A5.2 (for felony offenses), 2X5.2 (for 
+misdemeanor offenses)''.
+    Reason for Amendment: This amendment responds to the SAFER SKIES 
+Act (title LXXXVI of the National Defense Authorization Act for Fiscal 
+Year 2026, Pub. L. 119-60) (the ``Act''), which contains several 
+provisions relating to criminal penalties for offenses involving 
+aircraft and sets forth a congressional directive to the Commission for 
+offenses involving unmanned aircraft. See Public Law 119-60, 8605 
+(2025). Emergency amendment authority requires the Commission to 
+promulgate an amendment implementing the directive ``as soon as 
+possible'' and ``not later than December 31, 2026.'' Consolidated 
+Appropriations Act, 2026, Public Law 119-75, 5017(a).
+
+Increased Statutory Penalties for Offenses Associated With Unmanned 
+Aircraft and Related Directive to the Commission
+
+    The Act amended the statutory penalties for providing contraband to 
+imprisoned individuals, in violation of 18 U.S.C. 1791. Section 1791 
+sets out statutory maximum terms of imprisonment ranging from six 
+months to twenty years depending on the type of contraband provided to 
+the imprisoned individual. The Act increased the maximum penalty by 
+five years ``[i]f a defendant who is convicted under section 1791 . . . 
+knowingly used an unmanned aircraft to provide a prohibited object to 
+an inmate of a prison.'' 6 U.S.C. 124n-1(d).
+    In addition to this specific statutory increase, the Act provided 
+more generally that ``[i]f a person who is convicted of a felony 
+offense (other than an offense based solely on the operation of an 
+unmanned aircraft) knowingly operated an unmanned aircraft during, in 
+relation to, or in furtherance of such offense,'' the maximum penalty 
+for that offense is doubled or increased by five years, whichever is 
+less. Id. Sec.  124n-1(c).
+    Related to these changes, the Act directed the Commission to 
+``promulgate guidelines, or amendments to guidelines, that 
+substantially increase the sentencing range for all offenses involving 
+the use of an unmanned aircraft.'' Id. Sec.  124n-1(e)(1)(A). 
+Specifically, for offenses in which the enhanced penalties under 6 
+U.S.C. 124n-1(c) apply--that is, where the individual knowingly 
+operated an unmanned aircraft during, in relation to, or in furtherance 
+of a felony offense (other than an offense based solely on the 
+operation of an unmanned aircraft)--the guidelines ``shall call for an 
+increase of at least 6 levels in the base offense level,'' and ``in all 
+other cases, the base offense level shall be increased by at least 4 
+levels.'' Id. Sec.  124n-1(e)(2).
+    The amendment implements these provisions of the Act by creating a 
+new guideline at Sec.  3B1.6 (Use of Unmanned Aircraft) providing a 
+tiered adjustment of either 6 or 4 levels for offenses involving the 
+use of an unmanned aircraft. Section 3B1.6 provides a 6-level increase 
+if the defendant is convicted of an offense to which the statutory 
+sentencing enhancement under 6 U.S.C. 124n-1(c) applies, or if the 
+parties stipulate to such an offense for purposes of calculating the 
+guideline range or that the adjustment applies to the offense of 
+conviction. Section 3B1.6 provides a 4-level increase if the offense 
+otherwise involved the use of an unmanned aircraft.
+    Under the new provision, ``unmanned aircraft'' has the meaning 
+given to that term in 49 U.S.C. 44801. Further, the amendment includes 
+a provision expressly stating that ``use'' does not include mere 
+possession. This definition of ``use'' is consistent with the 
+definition in Sec.  3B1.5 (Use of Body Armor in Drug Trafficking Crimes 
+and Crimes of Violence). See USSG App. C, amend. 659 (effective Nov. 1, 
+2003) (implementing the directive in section 11009 of the 21st Century 
+Department of Justice Appropriations Authorization Act, Pub. L. 107-
+273).
+    To avoid unwarranted double counting, a special instruction directs 
+that if the use of an unmanned aircraft that forms the basis for an 
+adjustment
+
+[[Page 59300]]
+
+under this provision is the only conduct that forms the basis for a 
+Chapter Two enhancement or another Chapter Three adjustment, then the 
+court should apply the provision that results in the greater offense 
+level.
+
+New Felony Offense for Repeated Violations of 49 U.S.C. 46307
+
+    The Act created a felony offense for repeated convictions for 
+violating national defense airspace under 49 U.S.C. 46307. Section 
+46307 establishes a criminal offense when an individual knowingly and 
+willfully violates an order issued pursuant to 49 U.S.C. 40103(b)(3) 
+that restricts or prohibits civil aircraft in certain navigable 
+airspace ``in the interest of national defense.'' An offense under 
+section 46307 constitutes a Class A misdemeanor, punishable by up to 
+one year in prison. The Act added a maximum five-year penalty for a 
+person convicted of a second or subsequent offense under section 46307. 
+In response to this new statutory provision, the amendment revises 
+Appendix A to reference 49 U.S.C. 46307 to Sec.  2A5.2 (Interference 
+with Flight Crew Member or Flight Attendant; Interference with 
+Dispatch, Navigation, Operation, or Maintenance of Mass Transportation 
+Vehicle; Unsafe Operation of Unmanned Aircraft) for felony offenses and 
+Sec.  2X5.2 (Class A Misdemeanors (Not Covered by Another Specific 
+Offense Guideline)) for misdemeanor offenses.
+
+[FR Doc. 2026-19192 Filed 9-17-26; 8:45 am]
+BILLING CODE 2210-40-P
+
+
+</pre></body>
+</html>

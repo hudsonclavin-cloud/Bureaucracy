@@ -1,0 +1,759 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 161 (Friday, August 21, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 161 (Friday, August 21, 2026)]
+[Rules and Regulations]
+[Pages 54228-54234]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-17088]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+ENVIRONMENTAL PROTECTION AGENCY
+
+40 CFR Part 180
+
+[EPA-HQ-OPP-2022-0455; FRL-13520-01-OCSPP]
+
+
+Carboxin; Pesticide Tolerances
+
+AGENCY: Environmental Protection Agency (EPA).
+
+ACTION: Final rule.
+
+-----------------------------------------------------------------------
+
+SUMMARY: This regulation establishes tolerances for residues of 
+carboxin in or on multiple crops that are discussed later in this 
+document. Under the Federal Food, Drug, and Cosmetic Act (FFDCA), UPL 
+Delaware Inc. submitted a petition to EPA requesting that EPA establish 
+a maximum permissible level for residues of this pesticide in or on the 
+identified commodities.
+
+DATES: This regulation is effective August 21, 2026. Objections and 
+requests for hearings must be received on or before October 20, 2026 
+and must be filed in accordance with the instructions provided in 40 
+CFR part 178 (see also Unit I.C. of this document).
+
+ADDRESSES: The docket for this action, identified by docket 
+identification (ID) number EPA-HQ-OPP-2022-0455, is available at 
+<a href="https://www.regulations.gov">https://www.regulations.gov</a>. Additional information about dockets 
+generally, along with instructions for visiting the docket in person, 
+is available at <a href="https://www.epa.gov/dockets">https://www.epa.gov/dockets</a>.
+
+FOR FURTHER INFORMATION CONTACT: Charles Smith, Registration Division 
+(7505T), Office of Pesticide Programs, Environmental Protection Agency, 
+1200 Pennsylvania Ave. NW, Washington, DC 20460-0001; main telephone 
+number: (202) 566-1030; email address: <a href="/cdn-cgi/l/email-protection#6f3d2b293d21001b060c0a1c2f0a1f0e41080019"><span class="__cf_email__" data-cfemail="e9bbadafbba7869d808a8c9aa98c9988c78e869f">[email&#160;protected]</span></a>.
+
+SUPPLEMENTARY INFORMATION:
+
+I. Executive Summary
+
+A. Does this action apply to me?
+
+    You may be potentially affected by this action if you are an 
+agricultural producer, food manufacturer, or pesticide manufacturer. 
+The following list of North American Industrial Classification System 
+(NAICS) codes is not intended to be exhaustive, but rather provides a 
+guide to help readers determine whether this document applies to them.
+    <bullet> Crop production (NAICS code 111).
+    <bullet> Animal production (NAICS code 112).
+    <bullet> Food manufacturing (NAICS code 311).
+    <bullet> Pesticide manufacturing (NAICS code 32532).
+    If you have any questions regarding the applicability of this 
+action to a particular entity, consult the person listed under FOR 
+FURTHER INFORMATION CONTACT.
+
+B. What is EPA's authority for taking this action?
+
+    EPA is issuing this rulemaking under section 408 of the Federal 
+Food, Drug, and Cosmetic Act (FFDCA), 21 U.S.C. 346a. FFDCA section 
+408(b)(2)(A)(i) allows EPA to establish a tolerance (the legal limit 
+for a pesticide chemical residue in or on a food) only if EPA 
+determines that the tolerance is ``safe.'' FFDCA section 
+408(b)(2)(A)(ii) defines ``safe'' to mean that ``there is a reasonable 
+certainty that no harm will result from aggregate exposure to the 
+pesticide chemical residue, including all anticipated dietary exposures 
+and all other exposures for which there is reliable information.'' This 
+includes exposure through drinking water and in residential settings 
+but does not include occupational exposure. FFDCA section 408(b)(2)(C) 
+requires EPA to give special consideration to exposure of infants and 
+children to the pesticide chemical
+
+[[Page 54229]]
+
+residue in establishing a tolerance and to ``ensure that there is a 
+reasonable certainty that no harm will result to infants and children 
+from aggregate exposure to the pesticide chemical residue . . .''
+
+C. How can I file an objection or hearing request?
+
+    Under FFDCA section 408(g), 21 U.S.C. 346a(g), any person may file 
+an objection to any aspect of this regulation and may also request a 
+hearing on those objections. If you fail to file an objection to the 
+final rule within the time period specified in the final rule, you will 
+have waived the right to raise any issues resolved in the final rule. 
+You must file your objection or request a hearing on this regulation in 
+accordance with the instructions provided in 40 CFR part 178. To ensure 
+proper receipt by EPA, you must identify docket ID number EPA-HQ-OPP-
+2022-0455 in the subject line on the first page of your submission. All 
+objections and requests for a hearing must be in writing, and must be 
+received by the Hearing Clerk on or before October 20, 2026.
+    EPA's Administrative Law Judges Division (ALJD), in which the 
+Hearing Clerk is housed, urges parties to file and serve documents by 
+electronic means only, notwithstanding any other particular 
+requirements set forth in other procedural rules governing those 
+proceedings. See ``Order Urging Electronic Filing and Service,'' dated 
+December 3, 2025, which can be found at <a href="https://www.epa.gov/system/files/documents/2025-12/2025-12-03-order-urging-electronic-filing-and-service.pdf">https://www.epa.gov/system/files/documents/2025-12/2025-12-03-order-urging-electronic-filing-and-service.pdf</a>. Although EPA's regulations require submission via U.S. 
+Mail or hand delivery, EPA intends to treat submissions filed via 
+electronic means as properly filed submissions; therefore, EPA believes 
+the preference for submission via electronic means will not be 
+prejudicial. When submitting documents to the ALJD electronically, a 
+person should utilize the ALJD e-filing system at <a href="https://yosemite.epa.gov/oa/eab/eab-alj_upload.nsf">https://yosemite.epa.gov/oa/eab/eab-alj_upload.nsf</a>.
+    In addition to filing an objection or hearing request with the 
+Hearing Clerk as described in 40 CFR part 178, please submit a copy of 
+the filing (excluding any Confidential Business Information (CBI)) for 
+inclusion in the public docket at <a href="https://www.regulations.gov">https://www.regulations.gov</a>. Follow 
+the online instructions for submitting comments. Do not submit 
+electronically any information you consider to be CBI or other 
+information whose disclosure is restricted by statute. If you wish to 
+include CBI in your request, please follow the applicable instructions 
+at <a href="https://www.epa.gov/dockets/commenting-epa-dockets#rules">https://www.epa.gov/dockets/commenting-epa-dockets#rules</a> and clearly 
+mark the information that you claim to be CBI. Information not marked 
+confidential pursuant to 40 CFR part 2 may be disclosed publicly by EPA 
+without prior notice.
+
+II. Petitioned-For Tolerance
+
+    In the Federal Register of September 29, 2025 (90 FR 46544 (FRL-
+12474-07-OCSPP)), EPA issued a document pursuant to FFDCA section 
+408(d)(3), 21 U.S.C. 346a(d)(3), announcing the filing of a pesticide 
+petition (PP 1F8976) by UPL Delaware, Inc. and UPL NA, Inc., 630 
+Freedom Business Center, Suite 402, King of Prussia, PA 19406. The 
+petition requested that 40 CFR 180.301 be amended by establishing 
+tolerances for residues of the fungicide carboxin in or on vegetable, 
+legume, forage and hay, except soybean, subgroup 7-22A at 2 parts per 
+million (ppm); vegetable, legume, pulse, bean, dried shelled, except 
+soybean, subgroup 6-22E at 0.2 ppm; and vegetable, legume, pulse, pea, 
+dried shelled, subgroup 6-22F at 0.2 ppm. The petition also requested 
+that 40 CFR 180.301 be amended by removing the tolerance for residues 
+of carboxin in or on bean, dry, seed. The document referenced a summary 
+of the petition prepared by UPL Delaware, Inc. and UPL NA Inc., which 
+is available in the docket at <a href="https://www.regulations.gov">https://www.regulations.gov</a>.
+    The September 29, 2025 notice of filing supersedes two earlier 
+notices of filing published in the Federal Register on January 3, 2023 
+(88 FR 38) (FRL-9410-08-OCSPP), and September 12, 2023 (88 FR 62499) 
+(FRL-10579-07-OCSPP), which were based on earlier versions of the same 
+petition (PP 1F8976) requesting tolerances for crop subgroup 6-22E: 
+dried shelled bean, except soybean at 0.2 ppm; crop subgroup 6-22F: 
+pulses, dried shelled pea at 0.2 ppm; pea, dry, forage at 0.4 ppm; and 
+pea, dry, hay at 2 ppm. UPL Delaware, Inc. and UPL NA, Inc. 
+subsequently amended their petition as noticed in the September 29, 
+2025, Federal Register.
+    EPA received one comment in response to the September 29, 2025, 
+notice of filing expressing concerns that pesticide use is linked to 
+cancer and other chronic diseases and any ``exemption'' should rarely 
+be allowed outside of uses tied to national security. EPA also received 
+one comment in response to the September 12, 2023, notice of filing 
+expressing concerns about pesticide residues in food and their 
+connection to resistance and allergic reactions.
+    The Agency acknowledges the commenters' concerns regarding 
+potential health effects associated with pesticide use. However, the 
+existing legal framework provided by section 408 of the FFDCA 
+authorizes EPA to establish a tolerance when it determines that the 
+tolerance is safe. Upon consideration of the validity, completeness, 
+and reliability of the available data, as well as other factors the 
+FFDCA requires EPA to consider, EPA has determined that the carboxin 
+tolerances established in this action are safe. The commenters provided 
+no information supporting the conclusion that these tolerances are not 
+safe.
+
+III. Final Tolerance Action
+
+A. Aggregate Risk Assessment and Determination of Safety
+
+    Consistent with FFDCA section 408(b)(2)(D) and the factors 
+specified therein, EPA has reviewed the available scientific data and 
+other relevant information in support of this action. EPA has 
+sufficient data to assess the hazards of and to make a determination on 
+aggregate exposure for carboxin, including exposure resulting from the 
+tolerances established by this action. EPA's assessment of exposures 
+and risks associated with carboxin follows.
+
+B. Toxicological Profile
+
+    EPA has evaluated the available toxicity data and considered its 
+validity, completeness, and reliability as well as the relationship of 
+the results of the studies to human risk. EPA has also considered 
+available information concerning the variability of the sensitivities 
+of major identifiable subgroups of consumers, including infants and 
+children.
+    The toxicity database for carboxin is adequate, with the exception 
+of a subchronic inhalation toxicity study. In subchronic and chronic 
+feeding studies in rats with carboxin, the kidney was the primary 
+target organ with effects including chronic progressive nephropathy and 
+histopathological changes showing increased incidence and severity with 
+time. For dogs and mice, the primary target organ appeared to be the 
+liver. The developmental toxicity studies in rats and rabbits and the 
+reproduction study in rats with carboxin indicated no increased 
+quantitative or qualitative susceptibility of the fetuses or pups, as 
+compared to adults. In the carcinogenicity study in mice with carboxin, 
+dose-related increases in the incidence of liver centrilobular 
+hypertrophy were observed; however, this is considered to be an 
+adaptive rather than an adverse response. Carboxin is classified as 
+``Not Likely to Be Carcinogenic to Humans'' based on the lack of 
+evidence of
+
+[[Page 54230]]
+
+carcinogenicity in male and female rats and mice in acceptable 
+carcinogenicity studies. Carboxin exhibits low acute toxicity via oral 
+(Toxicity Category III), inhalation (Toxicity Category IV), and dermal 
+(Toxicity Category III) routes of exposure. It is a slight eye irritant 
+(Toxicity Category III). It is not a skin irritant (Toxicity Category 
+IV) and is negative for dermal sensitization. The developmental 
+toxicity studies in rats and rabbits and the reproduction study in rats 
+with carboxin indicated no increased quantitative or qualitative 
+susceptibility of the fetuses or pups, as compared to adults. In the 
+developmental toxicity studies in rats for carboxin, no adverse effects 
+were observed in either the dams or the fetuses. In a developmental 
+toxicity study in rabbits, abortions were observed at 750 mg/kg/day on 
+GDs 27-28. The abortions are considered to be both maternal and 
+developmental adverse effects. In a two-generation reproduction study 
+with carboxin in rats, the reproductive effects (decreased fertility 
+indices in F2b parents) and offspring effects (decreased pup weight) 
+occurred at higher doses than the parental effects (gross and 
+histopathological changes in the kidneys, e.g., chronic nephritis).
+    Although no high temperature hydrolysis data is available for 
+carboxin, the chemical structure of carboxin suggests that the release 
+of aniline may occur following the processing of carboxin-treated crop 
+commodities. Aniline may be a potential degradation product of carboxin 
+in cooked food, but it is toxicologically different from carboxin. EPA 
+has classified aniline as a B2-probable human carcinogen with an oral 
+cancer slope factor of 5.7 x 10<SUP>-3</SUP> (mg/kg/day)<SUP>-1</SUP>, 
+which is considered very conservative for cancer assessment of aniline. 
+The Agency did not identify any other oral endpoint for aniline.
+    Specific information on the risk assessment conducted in support of 
+this action, including on the studies received and the nature of the 
+adverse effects caused by carboxin and aniline, can be found in the 
+document titled ``Carboxin: Human Health Risk Assessment for the Use of 
+Liquid Formulations on Dried Shelled Peas; to Establish a Tolerance for 
+Residues in/on Vegetable, legume, pulse, pea, dried shelled, subgroup 
+6-22F and Vegetable, Legume, Forage and Hay, Except Soybean, Subgroup 
+7-22A; to Convert the Existing Tolerance for Residues in/on Bean, Dry, 
+Seed Tolerance to Vegetable, legume, pulse, bean, dried shelled, except 
+soybean, subgroup 6-22E; and to Allow a 0-Day Plantback Interval for 
+Vegetable, Legume, Pulse, Pea, Dried Shelled, Subgroup 6-22F in 
+Conjunction with a Tolerance on this Crop Subgroup'' (hereinafter 
+``Carboxin Human Health Risk Assessment'') which is available in the 
+docket for this action.
+
+C. Toxicological Points of Departure/Levels of Concern
+
+    Once a pesticide's toxicological profile is determined, EPA 
+identifies toxicological points of departure (POD) and levels of 
+concern to use in evaluating the risk posed by human exposure to the 
+pesticide. For hazards that have a threshold below which there is no 
+appreciable risk, the toxicological POD is used as the basis for 
+derivation of reference values for risk assessment. PODs are developed 
+based on a careful analysis of the doses in each toxicological study to 
+determine the dose at which no adverse effects are observed (the NOAEL) 
+and the lowest dose at which adverse effects of concern are identified 
+(the LOAEL). Uncertainty/safety factors are used in conjunction with 
+the POD to calculate a safe exposure level, generally referred to as a 
+population-adjusted dose (PAD) or a reference dose, and a safe margin 
+of exposure (MOE). For non-threshold risks, the Agency assumes that any 
+amount of exposure will lead to some degree of risk. Thus, the Agency 
+estimates risk in terms of the probability of an occurrence of the 
+adverse effect expected in a lifetime. For more information on the 
+general principles EPA uses in risk characterization and a complete 
+description of the risk assessment process, see <a href="https://www.epa.gov/science-and-assessing-pesticide-risks/assessing-human-health-risk-pesticides">https://www.epa.gov/science-and-assessing-pesticide-risks/assessing-human-health-risk-pesticides</a>.
+    A summary of the toxicological endpoints for carboxin and aniline 
+used for human health risk assessment can be found in the Carboxin 
+Human Health Risk Assessment, which is available in the docket for this 
+action.
+
+D. Exposure Assessment
+
+1. Dietary Exposure From Food and Feed Uses
+    In evaluating dietary exposure to carboxin and aniline, EPA 
+considered exposure under the petitioned-for tolerances as well as all 
+existing carboxin tolerances in 40 CFR 180.301. EPA assessed dietary 
+exposures from carboxin and aniline in food as follows:
+    i. Acute exposure. Carboxin. Quantitative acute dietary exposure 
+and risk assessments are performed for a food-use pesticide, if a 
+toxicological study has indicated the possibility of an effect of 
+concern occurring as a result of a 1-day or single exposure. No such 
+effects were identified in the toxicological studies for carboxin; 
+therefore, a quantitative acute dietary exposure and risk assessment is 
+not necessary.
+    Aniline. There are no data to determine an acute endpoint for 
+aniline at this time; therefore, a quantitative acute dietary exposure 
+and risk assessment for carboxin-derived aniline residues was not 
+conducted.
+    ii. Chronic exposure. Carboxin. In conducting the chronic dietary 
+exposure assessment for carboxin, EPA used the Dietary Exposure 
+Evaluation Model software with the Food Commodity Intake Database 
+Version 4.02, which uses 2005-2010 food consumption data from the 
+United States Department of Agriculture's National Health and Nutrition 
+Examination Survey, What We Eat in America. As to residue levels in 
+food, EPA assumed tolerance-level residues, default processing factors, 
+and 100 percent crop treated (PCT) for all crops.
+    Aniline. Aniline is a high temperature hydrolysis degradate for 
+another registered pesticide, buprofezin. The highly refined estimated 
+dietary exposure of the most highly exposed adult population (adults 
+50-99 years old) to buprofezin-derived aniline in cooked foods is 
+0.000052 mg/kg/day. Estimated chronic exposures to buprofezin-derived 
+aniline residues are orders of magnitude below any potential chronic 
+non-cancer reference dose for aniline. Any chronic exposures to 
+carboxin-derived aniline residues are expected to be significantly 
+lower than to buprofezin-derived aniline residues based on carboxin's 
+limited use patterns and lower tolerance-level residues in food 
+commodities. Therefore, a quantitative chronic non-cancer dietary 
+exposure and risk assessment for carboxin-derived aniline residues is 
+not necessary.
+    iii. Cancer. Carboxin. Based on the data discussed in Unit III.A., 
+EPA has concluded that carboxin is not likely to be carcinogenic to 
+humans. Therefore, a dietary exposure assessment for the purpose of 
+assessing cancer risk is not necessary.
+    Aniline. Due to the absence of high temperature hydrolysis data for 
+carboxin, a quantitative cancer dietary exposure and risk assessment 
+for carboxin-derived aniline residues was not conducted. However, 
+cancer dietary exposure and risk assessments for buprofezin-derived 
+aniline residues are currently available. See ``Buprofezin: Acute, 
+Chronic (Food and Drinking Water) and Cancer (Aniline; Cooked Food 
+Only) Aggregate Dietary Exposure
+
+[[Page 54231]]
+
+and Risk Assessments for the New Use on Bushberry Crop Subgroup 13-07B 
+and Proposed Amendment to Expand the Use on Succulent Beans to All 
+Members of Proposed Edible Podded Bean Legume Vegetable Subgroup 6-
+22A'' and ``Buprofezin. Human Health Risk Assessment for Proposed New 
+Use on Bushberry Crop Subgroup 13-07B and Proposed Amendments to Expand 
+Use on Succulent Beans to All Members of Proposed Edible Podded Bean 
+Legume Vegetable Subgroup 6-22A and Use on Greenhouse-Grown Tomatoes 
+and Peppers to All Members of Fruiting Vegetable Crop Group 8-10'' in 
+docket ID number EPA-HQ-OPP-2020-0235. EPA conducted a qualitative 
+assessment of cancer dietary exposure and risk for carboxin-derived 
+aniline residues based on the assessments for buprofezin-derived 
+aniline residues.
+    Buprofezin is applied as a broadcast foliar application on a 
+variety of food crops with the maximum seasonal application rates 
+ranging from 0.7 to 4.0 pounds of active ingredient per acre per 
+growing season. Tolerances established for residues of buprofezin in or 
+on various food commodities range from 0.02 to 80 ppm, with most 
+tolerances greater than 0.2 ppm. Buprofezin residue data indicate that 
+there is a proportion of buprofezin residues in or on food crops that 
+is available for conversion to aniline during food processing that is 
+subjected to high temperature cooking conditions. A highly refined 
+cancer dietary exposure and risk assessment for buprofezin-derived 
+aniline residues was conducted for cooked food only using an oral 
+cancer slope factor (Q<INF>1</INF>* of 5.7 x 10<SUP>-3</SUP> (mg/kg/
+day)<SUP>-1</SUP>) for aniline. This assessment was conducted using a 
+maximum conversion factor of buprofezin to aniline of 18.9%, which was 
+the highest found in a high temperature hydrolysis study of buprofezin-
+derived aniline and was applied to estimate residues of buprofezin-
+derived aniline which may form in food as a result of cooking. The 
+highly refined estimated dietary exposure of the most highly exposed 
+adult population (adults 50-99 years old) to buprofezin-derived aniline 
+in cooked foods is 0.000052 mg/kg/day.
+    Any dietary exposure to carboxin-derived aniline residues in cooked 
+foods are expected to be significantly lower than buprofezin-derived 
+aniline residues based on carboxin's limited use patterns and lower 
+tolerance-level residues. Carboxin is used for pre-planting seed 
+treatment, with low maximum application rates ranging from 0.005 to 
+0.825 pounds of active ingredient per acre per year. Carboxin residues 
+in or on certain food crops were non-detectable or below the limit of 
+quantitation (LOQ) based on field trials conducted at exaggerated use 
+rates. Residue data for other food crops indicate that there was not 
+much carboxin residue, at the most less than 0.025 to less than 0.2 
+ppm, available for conversion to aniline during food processing that is 
+subjected to high temperature cooking conditions. Tolerances 
+established for residues of carboxin in or on various food commodities, 
+including the tolerances established in this action, range from 0.03 to 
+0.2 ppm, with several tolerances at 0.2 ppm. The LOQ of the residue 
+data collection method was 0.025 ppm, whereas the LOQ of the 
+enforcement analytical methods was 0.2 ppm, indicating that many of the 
+tolerances at 0.2 ppm would be much lower if not for the limitation of 
+the enforcement analytical methods. These low residue levels can be 
+attributed to carboxin's limited used patterns.
+2. Dietary Exposure From Drinking Water
+    The Agency used screening level water exposure models in the 
+dietary exposure analysis and risk assessment for carboxin in drinking 
+water. These simulation models take into account data on the physical, 
+chemical, and fate/transport characteristics of carboxin. Further 
+information regarding EPA drinking water models used in pesticide 
+exposure assessment can be found at <a href="https://www.epa.gov/pesticide-science-and-assessing-pesticide-risks/models-pesticide-risk-assessment">https://www.epa.gov/pesticide-science-and-assessing-pesticide-risks/models-pesticide-risk-assessment</a>.
+    For surface water, estimated drinking water concentrations (EDWC) 
+were modeled using Pesticide in Water Calculator (PWC) (version 1.52) 
+for seed treatment of all labeled crops except rice. EDWCs for rice 
+seed treatment use were modeled by Pesticide in Flooded Applications 
+Model Version 2. For groundwater, EDWCs were modeled using PWC and the 
+six standard groundwater scenarios at the maximum application rate of 
+0.825 lb a.i./A/yr for registered crops. The highest post breakthrough 
+average EDWC for carboxin residues of concern (i.e., carboxin and its 
+sulfoxide metabolite) was 81.7 [micro]g/L or parts per billion (ppb) in 
+groundwater. The EDWC of carboxin residues of concern in surface water 
+from chronic exposure was minimal (6.2 [micro]g/L). EDWCs were directly 
+entered into the dietary exposure model. For the chronic dietary risk 
+assessment, the ground water concentration value of 81.7 ppb was used 
+to assess the contribution to drinking water.
+    For aniline, the Agency has determined that there is no expectation 
+of carboxin-derived aniline residues in drinking water.
+3. From Non-Dietary Exposure
+    The term ``residential exposure'' is used in this document to refer 
+to non-occupational, non-dietary exposure (e.g., from lawn and garden 
+pest control, indoor pest control, termiticides, and flea and tick 
+control on pets).
+    Carboxin is not registered for any specific use patterns that would 
+result in residential exposure to carboxin or carboxin-derived aniline.
+4. Cumulative Effects From Substances With a Common Mechanism of 
+Toxicity
+    Section 408(b)(2)(D)(v) of the FFDCA requires that, when 
+considering whether to establish, modify, or revoke a tolerance, the 
+Agency consider ``available information'' concerning the cumulative 
+effects of a particular pesticide's residues and ``other substances 
+that have a common mechanism of toxicity.''
+    Unlike other pesticides for which EPA has followed a cumulative 
+risk approach based on a common mechanism of toxicity, EPA has not made 
+a common mechanism of toxicity finding as to carboxin and any other 
+substances. For the purposes of this action, therefore, EPA has not 
+assumed that carboxin has a common mechanism of toxicity with other 
+substances.
+    For information regarding EPA's efforts to determine which 
+chemicals have a common mechanism of toxicity and to evaluate the 
+cumulative effects of such chemicals, see EPA's website at <a href="https://www.epa.gov/pesticide-science-and-assessing-pesticide-risks/cumulative-assessment-risk-pesticides">https://www.epa.gov/pesticide-science-and-assessing-pesticide-risks/cumulative-assessment-risk-pesticides</a>.
+
+E. Safety Factor for Infants and Children
+
+1. In General
+    Section 408(b)(2)(C) of FFDCA provides that EPA shall apply an 
+additional tenfold (10X) margin of safety for infants and children in 
+the case of threshold effects to account for prenatal and postnatal 
+toxicity and the completeness of the database on toxicity and exposure 
+unless EPA determines based on reliable data that a different margin of 
+safety will be safe for infants and children. This additional margin of 
+safety is commonly referred to as the Food Quality Protection Act 
+(FQPA) safety factor. In applying this provision, EPA either retains 
+the default value of 10X, or uses a different additional safety factor 
+when reliable data available to EPA support the choice of a different 
+factor.
+
+[[Page 54232]]
+
+2. Prenatal and Postnatal Sensitivity
+    The developmental toxicity studies in rats and rabbits and the 
+reproduction study in rats with carboxin indicated no increased 
+quantitative or qualitative susceptibility of the fetuses or pups, as 
+compared to adults. In the developmental toxicity studies in rats for 
+carboxin, no adverse effects were observed in either the dams or the 
+fetuses. In a developmental toxicity study in rabbits, abortions were 
+observed at 750 mg/kg/day on GDs 27-28. The abortions are considered to 
+be both maternal and developmental adverse effects. In a two-generation 
+reproduction study with carboxin in rats, the reproductive effects 
+(decreased fertility indices in F<INF>2b</INF> parents) and offspring 
+effects (decreased pup weight) occurred at higher doses than the 
+parental effects (gross and histopathological changes in the kidneys, 
+e.g., chronic nephritis).
+3. Conclusion
+    EPA has determined that reliable data show the safety of infants 
+and children would be adequately protected if the FQPA safety factor 
+were reduced to 1X for dietary exposure scenarios. The current action 
+does not have residential uses; if any future actions have residential 
+uses, then the FQPA safety factor would also be 1X for all residential/
+non-occupational exposure scenarios, with the exception of inhalation 
+scenarios due to the lack of a subchronic inhalation toxicity study. 
+That decision is based on the following findings:
+    i. With the exception of a subchronic inhalation toxicity study, 
+the toxicity database for carboxin is adequate for FQPA evaluation. 
+Developmental toxicity studies in rats and rabbits and a two-generation 
+reproduction toxicity study in rats with carboxin are available for 
+FQPA consideration.
+    ii. There is no evidence of neurotoxicity in the existing toxicity 
+database. No guideline acute or subchronic neurotoxicity studies were 
+submitted; however, no indications of neurotoxic effects were observed 
+in any of the subchronic or chronic studies in dogs, mice, or rats. 
+Based on a Weight-of-Evidence approach, EPA determined that the acute 
+and subchronic neurotoxicity studies are not required at this time.
+    iii. There was no evidence of increased quantitative or qualitative 
+susceptibility in the developmental toxicity studies in rabbits or rats 
+with carboxin.
+    iv. There is no residual uncertainty with respect to the dietary 
+exposure database. A conservative chronic dietary (food and water) risk 
+assessment was conducted for carboxin incorporating tolerance-level 
+residues, EPA's default processing factors, 100 PCT, and the highest 
+EDWCs. There are no residential uses for carboxin. These assessments 
+will not underestimate the exposure and risks posed by carboxin.
+
+F. Aggregate Risks and Determination of Safety
+
+    EPA determines whether acute and chronic dietary pesticide 
+exposures are safe by comparing aggregate exposure estimates to the 
+acute PAD (aPAD) and chronic PAD (cPAD). For linear cancer risks, EPA 
+calculates the lifetime probability of acquiring cancer given the 
+estimated aggregate exposure. Short-, intermediate-, and chronic-term 
+risks are evaluated by comparing the estimated aggregate food, water, 
+and residential exposure to the appropriate PODs to ensure that an 
+adequate MOE exists.
+1. Carboxin: Acute Risk
+    An acute aggregate risk assessment takes into account acute 
+exposure estimates from dietary consumption of food and drinking water. 
+No adverse effect resulting from a single oral exposure was identified 
+and no acute dietary endpoint was selected. Therefore, carboxin is not 
+expected to pose an acute risk, and an acute aggregate risk assessment 
+is not required.
+2. Carboxin: Chronic Risk
+    Using the exposure assumptions described in this unit for chronic 
+exposure, EPA has concluded that chronic exposure to carboxin from food 
+and drinking water will utilize 87% of the cPAD for all infants less 
+than 1 year old, the population group receiving the greatest exposure. 
+There are no residential uses for carboxin. Therefore, chronic 
+aggregate exposures and risk estimates are equivalent to the chronic 
+dietary (food and drinking water) exposure and risk estimates. These 
+risks are not of concern.
+3. Carboxin: Short- and Intermediate-Term Risk
+    Short- and intermediate-term aggregate exposure takes into account 
+short- and intermediate-term residential exposure plus chronic exposure 
+to food and water (considered to be a background exposure level). 
+Carboxin is not registered for any specific use patterns that would 
+result in residential exposure. Therefore, short- and intermediate-term 
+risk is equal to chronic dietary risk, which is not of concern.
+4. Carboxin: Aggregate Cancer Risk for U.S. Population
+    Based on the lack of evidence of carcinogenicity in two adequate 
+rodent carcinogenicity studies, carboxin is classified as ``Not Likely 
+to be Carcinogenic to Humans,'' and quantification of cancer risk is 
+not required.
+5. Aniline
+    There are no data to determine an acute endpoint for aniline at 
+this time; hence, an acute dietary risk assessment was not conducted 
+for carboxin-derived aniline residues. The highly refined estimated 
+chronic exposure of the most highly exposed adult subpopulation (adults 
+50 to 99 years old) to buprofezin-derived aniline residues is 0.000052 
+mg/kg/day. Estimated chronic exposures to buprofezin-derived aniline 
+residues are orders of magnitude below any potential chronic non-cancer 
+reference dose for aniline. Any chronic exposures to carboxin-derived 
+aniline residues are expected to be significantly lower than to 
+buprofezin-derived aniline residues based on carboxin's limited use 
+patterns and lower tolerance-level residues. Therefore, a quantitative 
+chronic non-cancer dietary risk assessment for carboxin-derived aniline 
+residues is not necessary to conclude with reasonable certainty that 
+chronic exposures from carboxin-derived aniline residues do not pose a 
+non-cancer dietary risk. The highly refined estimated chronic exposure 
+of the most highly exposed adult subpopulation to buprofezin-derived 
+aniline results in an upper bound cancer risk estimate of 3 x 
+10<SUP>-7</SUP>. Based again on carboxin's limited use patterns and 
+lower tolerance-level residues, the Agency concludes that the cancer 
+risk estimate for buprofezin-derived aniline residues indicates that 
+there should not be any cancer risk from carboxin-derived aniline 
+residues.
+6. Determination of Safety
+    Based on these risk assessments, EPA concludes that there is a 
+reasonable certainty that no harm will result to the general 
+population, or to infants and children, from aggregate exposure to 
+carboxin residues.
+
+IV. Other Considerations
+
+A. Analytical Enforcement Methodology
+
+    Adequate enforcement methodology is available to enforce the 
+tolerance expression. The Pesticide Analytical Manual, Vol. II lists 
+three methods for determining the combined residues of carboxin and its 
+metabolites,
+
+[[Page 54233]]
+
+determined as the common moiety, aniline, and expressed as carboxin. 
+These methods include a colorimetric method, which in principle is 
+based on the alkaline hydrolysis of carboxin and its sulfoxide 
+metabolite to produce aniline; and gas-liquid chromatography (GLC) 
+methods. A GLC/Mass Selective Detector data-collection method is also 
+available to enforce tolerances for carboxin.
+
+B. International Residue Limits
+
+    In making its tolerance decisions, EPA seeks to harmonize U.S. 
+tolerances with international standards whenever possible, consistent 
+with U.S. food safety standards and agricultural practices. EPA 
+considers the international maximum residue limits (MRLs) established 
+by the Codex Alimentarius Commission (Codex), as required by FFDCA 
+section 408(b)(4). The Codex has not established MRLs for carboxin in 
+or on any commodities.
+
+V. Conclusion
+
+    Therefore, tolerances are established for residues of carboxin, 
+5,6-dihydro-2-methyl- N-phenyl-1,4-oxathiin-3-carboxanilide, including 
+its metabolites and degradates, in or on Vegetable, legume, forage and 
+hay, except soybean, subgroup 7-22A at 2 ppm; Vegetable, legume, pulse, 
+bean, dried shelled, except soybean, subgroup 6-22E at 0.2 ppm; and 
+Vegetable, legume, pulse, pea, dried shelled, subgroup 6-22F at 0.2 
+ppm. The existing tolerance for bean, dry, seed at 0.2 ppm is removed 
+as unnecessary, because this commodity is covered by the new tolerance 
+for Vegetable, legume, pulse, bean, dried shelled, except soybean, 
+subgroup 6-22E at the same level.
+
+VI. Statutory and Executive Order Reviews
+
+    Additional information about these statutes and executive orders 
+can be found at <a href="https://www.epa.gov/regulations/and-executive-orders">https://www.epa.gov/regulations/and-executive-orders</a>.
+
+A. Executive Order 12866: Regulatory Planning and Review
+
+    This action is exempt from review under Executive Order 12866 (58 
+FR 51735, October 4, 1993), because it establishes or modifies a 
+pesticide tolerance or a tolerance exemption under FFDCA section 408 in 
+response to a petition submitted to the Agency. The Office of 
+Management and Budget (OMB) has exempted these types of actions from 
+review under Executive Order 12866.
+
+B. Executive Order 14192: Unleashing Prosperity Through Deregulation
+
+    Executive Order 14192 (90 FR 9065, February 6, 2025) does not apply 
+because actions that establish a tolerance under FFDCA section 408 are 
+exempted from review under Executive Order 12866.
+
+C. Paperwork Reduction Act (PRA)
+
+    This action does not impose an information collection burden under 
+the PRA 44 U.S.C. 3501 et seq., because it does not contain any 
+information collection activities.
+
+D. Regulatory Flexibility Act (RFA)
+
+    Since tolerance actions that are established on the basis of a 
+petition under FFDCA section 408(d), such as the tolerance in this 
+final rule, do not require the issuance of a proposed rule, the 
+requirements of the RFA, 5 U.S.C. 601 et seq., do not apply to this 
+action.
+
+E. Unfunded Mandates Reform Act (UMRA)
+
+    This action does not contain an unfunded mandate of $100 million or 
+more (in 1995 dollars and adjusted annually for inflation) as described 
+in UMRA, 2 U.S.C. 1531-1538, and does not significantly or uniquely 
+affect small governments. The action imposes no enforceable duty on any 
+State, local, or Tribal governments or on the private sector.
+
+F. Executive Order 13132: Federalism
+
+    This action does not have federalism implications as specified in 
+Executive Order 13132 (64 FR 43255, August 10, 1999), because it will 
+not have substantial direct effects on the States, on the relationship 
+between the National Government and the States, or on the distribution 
+of power and responsibilities among the various levels of government.
+
+G. Executive Order 13175: Consultation and Coordination With Indian 
+Tribal Governments
+
+    This action does not have Tribal implications as specified in 
+Executive Order 13175 (65 FR 67249, November 9, 2000), because it will 
+not have substantial direct effects on Tribal governments, on the 
+relationship between the Federal Government and the Indian Tribes, or 
+on the distribution of power and responsibilities between the Federal 
+Government and Indian Tribes.
+
+H. Executive Order 13045: Protection of Children From Environmental 
+Health Risks and Safety Risks
+
+    This action is not subject to Executive Order 13045 (62 FR 19885, 
+April 23, 1997) because tolerance actions like this one are exempt from 
+review under Executive Order 12866. However, EPA's 2026 Policy on 
+Children's Health applies to this action. This rule finalizes tolerance 
+actions under the FFDCA, which requires EPA to give special 
+consideration to exposure of infants and children to the pesticide 
+chemical residue in establishing a tolerance and to ``ensure that there 
+is a reasonable certainty that no harm will result to infants and 
+children from aggregate exposure to the pesticide chemical residue . . 
+.'' (FFDCA 408(b)(2)(C)). The Agency's consideration is summarized in 
+Unit III.E.
+
+I. Executive Order 13211: Actions Concerning Regulations That 
+Significantly Affect Energy Supply, Distribution or Use
+
+    This action is not subject to Executive Order 13211 (66 FR 28355) 
+(May 22, 2001) because it is not a significant regulatory action under 
+Executive Order 12866.
+
+J. National Technology Transfer Advancement Act (NTTAA)
+
+    This action does not involve technical standards that would require 
+Agency consideration under NTTAA section 12(d), 15 U.S.C. 272.
+
+K. Congressional Review Act (CRA)
+
+    This action is subject to the CRA, 5 U.S.C. 801 et seq., and EPA 
+will submit a rule report to each House of the Congress and to the 
+Comptroller General of the United States. This action is not a ``major 
+rule'' as defined by 5 U.S.C. 804(2).
+
+List of Subjects in 40 CFR Part 180
+
+    Environmental protection, Administrative practice and procedure, 
+Agricultural commodities, Pesticides and pests, Reporting and 
+recordkeeping requirements.
+
+    Dated: August 3, 2026.
+Charles Smith,
+Director, Registration Division, Office of Pesticide Programs.
+
+    For the reasons set forth in the preamble, 40 CFR chapter I is 
+amended as follows:
+
+[[Page 54234]]
+
+PART 180--TOLERANCES AND EXEMPTIONS FOR PESTICIDE CHEMICAL RESIDUES 
+IN FOOD
+
+0
+1. The authority citation for part 180 continues to read as follows:
+
+    Authority: 21 U.S.C. 321(q), 346a and 371.
+
+
+0
+2. In Sec.  180.301, amend table 1 to paragraph (a) by:
+0
+a. Removing the entry for ``Bean, dry, seed''; and
+0
+b. Adding alphabetically the entries ``Vegetable, legume, forage and 
+hay, except soybean, subgroup 7-22A'', ``Vegetable, legume, pulse, 
+bean, dried shelled, except soybean, subgroup 6-22E'', and ``Vegetable, 
+legume, pulse, pea, dried shelled, subgroup 6-22F''.
+    The revisions and additions read as follows:
+
+
+Sec.  180.301   Carboxin; tolerances for residues.
+
+    (a) * * *
+
+                        Table 1 to Paragraph (a)
+------------------------------------------------------------------------
+                                                               Parts per
+                          Commodity                             million
+------------------------------------------------------------------------
+ 
+                                * * * * *
+Vegetable, legume, forage and hay, except soybean, subgroup            2
+ 7-22A......................................................
+Vegetable, legume, pulse, bean, dried shelled, except                0.2
+ soybean, subgroup 6-22E....................................
+Vegetable, legume, pulse, pea, dried shelled, subgroup 6-22F         0.2
+ 
+                                * * * * *
+------------------------------------------------------------------------
+
+* * * * *
+[FR Doc. 2026-17088 Filed 8-20-26; 8:45 am]
+BILLING CODE 6560-50-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

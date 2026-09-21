@@ -1,0 +1,870 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 180 (Friday, September 18, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 180 (Friday, September 18, 2026)]
+[Notices]
+[Pages 59283-59289]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-19119]
+
+
+-----------------------------------------------------------------------
+
+SECURITIES AND EXCHANGE COMMISSION
+
+[Release No. 34-106374; File No. SR-NASDAQ-2026-074]
+
+
+Self-Regulatory Organizations; The Nasdaq Stock Market LLC; 
+Notice of Filing and Immediate Effectiveness of Proposed Rule Change To 
+Amend the Exchange's Rules at Options 7, Sections 1 and 2
+
+September 15, 2026.
+    Pursuant to Section 19(b)(1) of the Securities Exchange Act of 1934 
+(``Act''),\1\ and Rule 19b-4 thereunder,\2\ notice is hereby given that 
+on September 1, 2026, The Nasdaq Stock Market LLC (``Nasdaq'' or 
+``Exchange'') filed with the Securities and Exchange Commission 
+(``SEC'' or ``Commission'') the proposed rule change as described in 
+Items I, II, and III, below, which Items have been prepared by the 
+Exchange. The Commission is publishing this notice to solicit comments 
+on the proposed rule change from interested persons.
+---------------------------------------------------------------------------
+
+    \1\ 15 U.S.C. 78s(b)(1).
+    \2\ 17 CFR 240.19b-4.
+---------------------------------------------------------------------------
+
+I. Self-Regulatory Organization's Statement of the Terms of Substance 
+of the Proposed Rule Change
+
+    The Exchange proposes to amend The Nasdaq Options Market LLC 
+(``NOM'') Rules at Options 7, Section 1, General Provisions, and 
+Options 7, Section 2, Nasdaq Options Market--Fees and Rebates.
+    The text of the proposed rule change is available on the Exchange's 
+website at <a href="https://listingcenter.nasdaq.com/rulebook/nasdaq/rulefilings">https://listingcenter.nasdaq.com/rulebook/nasdaq/rulefilings</a>, and at the principal office of the Exchange.
+
+II. Self-Regulatory Organization's Statement of the Purpose of, and 
+Statutory Basis for, the Proposed Rule Change
+
+    In its filing with the Commission, the Exchange included statements 
+concerning the purpose of and basis for the proposed rule change and 
+discussed any comments it received on the proposed rule change. The 
+text of these statements may be examined at the places specified in 
+Item IV below. The Exchange has prepared summaries, set forth in 
+sections A, B, and C below, of the most significant aspects of such 
+statements.
+
+A. Self-Regulatory Organization's Statement of the Purpose of, and 
+Statutory Basis for, the Proposed Rule Change
+
+1. Purpose
+    The Exchange proposes to make several changes to NOM's Pricing 
+Schedule at Options 7. Specifically, the Exchange proposes to make 
+changes to Options 7, Section 2(1), and add a defined term to Options 
+7, Section 1(a).
+    Under Options 7, Section 2(1), the Exchange currently pays 
+Customers,\3\ Professionals,\4\ Broker-Dealers,\5\ Firms,\6\ Non-NOM 
+Market Makers,\7\ and NOM Market Makers \8\ a rebate to add liquidity 
+in Penny Symbols, on a per contract basis. This rebate is paid 
+according to the following schedule:
+---------------------------------------------------------------------------
+
+    \3\ The term ``Customer'' applies to any transaction that is 
+identified by a Participant for clearing in the Customer range at 
+The Options Clearing Corporation (``OCC'') which is not for the 
+account of broker or dealer or for the account of a ``Professional'' 
+(as that term is defined in Options 1, Section 1(a)(48)). See 
+Options 7, Section 1(a).
+    \4\ The term ``Professional'' means any person or entity that 
+(i) is not a broker or dealer in securities, and (ii) places more 
+than 390 orders in listed options per day on average during a 
+calendar month for its own beneficial account(s) pursuant to Options 
+1, Section 1(a)(48). All Professional orders shall be appropriately 
+marked by Participants. See Options 7, Section 1(a).
+    \5\ The term ``Broker-Dealer'' applies to any transaction which 
+is not subject to any of the other transaction fees applicable 
+within a particular category. See Options 7, Section 1(a).
+    \6\ The term ``Firm'' applies to any transaction that is 
+identified by a Participant for clearing in the Firm range at OCC. 
+See Options 7, Section 1(a).
+    \7\ The term ``Non-NOM Market Maker'' is a registered market 
+maker on another options exchange that is not a NOM Market Maker. A 
+Non-NOM Market Maker must append the proper Non-NOM Market Maker 
+designation to orders routed to NOM. See Options 7, Section 1(a).
+    \8\ The term ``NOM Market Maker'' is a Participant that has 
+registered as a Market Maker on NOM pursuant to Options 2, Section 
+1, and must also remain in good standing pursuant to Options 2, 
+Section 9. In order to receive NOM Market Maker pricing in all 
+securities, the Participant must be registered as a NOM Market Maker 
+in at least one security. See Options 7, Section 1(a). The term 
+``Options Participant'' or ``Participant'' means a firm, or 
+organization that is registered with the Exchange pursuant to 
+Options 2A of the NOM Rules for purposes of participating in options 
+trading on NOM as a ``Nasdaq Options Order Entry Firm'' or ``Nasdaq 
+Options Market Maker''. See Options 1, Section 1(a)(40).
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                              Tier 1          Tier 2          Tier 3          Tier 4          Tier 5          Tier 6
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+Customer................................................         ($0.20)         ($0.25)         ($0.43)         ($0.44)         ($0.45)         ($0.48)
+Professional............................................          (0.20)          (0.25)          (0.43)          (0.44)          (0.45)          (0.47)
+Broker-Dealer...........................................          (0.10)          (0.10)          (0.10)          (0.10)          (0.10)          (0.10)
+Firm....................................................          (0.10)          (0.10)          (0.10)          (0.10)          (0.10)          (0.10)
+Non-NOM Market Maker....................................          (0.10)          (0.10)          (0.10)          (0.10)          (0.10)          (0.10)
+NOM Market Maker........................................          (0.20)          (0.25)          (0.30)          (0.32)          (0.45)          (0.47)
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+[[Page 59284]]
+
+    Currently, Participants are assessed certain fees and rebates to 
+add liquidity in Non-Penny Symbols, on a per contract basis, according 
+to the following schedule:
+
+------------------------------------------------------------------------
+ 
+------------------------------------------------------------------------
+Customer...................................  ($0.80)
+Professional...............................  (0.80)
+Broker-Dealer..............................  0.45
+Firm.......................................  0.45
+Non-NOM Market Maker.......................  0.45
+NOM Market Maker...........................  0.35/0.00/(0.30)/(0.40)
+------------------------------------------------------------------------
+
+    Currently, Participants are charged fees to remove liquidity in 
+both Penny and Non-Penny Symbols, on a per contract basis, according to 
+the following schedule:
+
+------------------------------------------------------------------------
+                                    Penny symbols     Non-penny symbols
+------------------------------------------------------------------------
+Customer........................             $0.49                 $0.85
+Professional....................              0.49                  0.85
+Broker-Dealer...................              0.50                  1.25
+Firm............................              0.50                  1.25
+Non-NOM Market Maker............              0.50                  1.25
+NOM Market Maker................              0.50                  1.25
+------------------------------------------------------------------------
+
+    Currently, the Customer and Professional rebate to add liquidity in 
+Penny Symbols is paid per the highest tier achieved below:
+    Tier 1: Participant adds Customer, Professional, Firm, Non-NOM 
+Market Maker and/or Broker-Dealer liquidity in Penny Symbols and/or 
+Non-Penny Symbols of up to 0.10% of total industry customer equity and 
+ETF option average daily volume (``ADV'') contracts per day in a month.
+    Tier 2: Participant adds Customer, Professional, Firm, Non-NOM 
+Market Maker and/or Broker-Dealer liquidity in Penny Symbols and/or 
+Non-Penny Symbols above 0.10% of total industry customer equity and ETF 
+option ADV contracts per day in a month.
+    Tier 3: Participant: (a) adds Customer, Professional, Firm, Non-NOM 
+Market Maker and/or Broker-Dealer liquidity in Penny Symbols and/or 
+Non-Penny Symbols above 0.20% of total industry customer equity and ETF 
+option ADV contracts per day in a month; or (b) adds Customer and/or 
+Professional liquidity in Penny Symbols and/or Non-Penny Symbols above 
+0.05% of total industry customer equity and ETF option ADV contracts 
+per day in a month and qualifies for MARS.\9\
+---------------------------------------------------------------------------
+
+    \9\ The Market Access and Routing Subsidy (``MARS'') is a rebate 
+program set out in Nasdaq Options 7, Section 2(4), under which NOM 
+pays participating firms a per-contract subsidy for routing eligible 
+options order flow to NOM through the participant's own order-
+routing system.
+---------------------------------------------------------------------------
+
+    Tier 4: Participant adds Customer, Professional, Firm, Non-NOM 
+Market Maker and/or Broker-Dealer liquidity in Penny Symbols and/or 
+Non-Penny Symbols above 0.30% of total industry customer equity and ETF 
+option ADV contracts per day in a month.
+    Tier 5: Participant adds Customer, Professional, Firm, Non-NOM 
+Market Maker and/or Broker-Dealer liquidity in Penny Symbols and/or 
+Non-Penny Symbols above 0.40% of total industry customer equity and ETF 
+option ADV contracts per day in a month.
+    Tier 6: Participant adds Customer, Professional, Firm, Non-NOM 
+Market Maker and/or Broker-Dealer liquidity in Penny Symbols and/or 
+Non-Penny Symbols above 0.70% or more of total industry customer equity 
+and ETF option ADV contracts per day in a month, or Participant : (1) 
+adds Customer and/or Professional liquidity in Penny Symbols and/or 
+Non-Penny Symbols of 0.10% or more of total industry customer equity 
+and ETF option ADV contracts per day in a month, and (2) has added 
+liquidity in all securities through one or more of its Nasdaq Market 
+Center MPIDs that represent 1.00% or more of Consolidated Volume in a 
+month or qualifies for MARS.
+    Currently, the fees to remove liquidity in Penny and Non-Penny 
+Symbols for Non-NOM Market Makers and NOM Market Makers are modified 
+according to note 2, which states as follows:
+
+    Participants that add 1.10% of Customer, Professional, Firm, 
+Broker-Dealer or Non-NOM Market Maker liquidity in Penny Symbols 
+and/or Non-Penny Symbols of total industry customer equity and ETF 
+option ADV contracts per day in a month will be subject to the 
+following pricing applicable to executions: a $0.48 per contract 
+Penny Symbols Fee for Removing Liquidity when the Participant is (i) 
+both the buyer and the seller or (ii) the Participant removes 
+liquidity from another Participant under Common Ownership.
+    Participants that add 1.55% of Customer, Professional, Firm, 
+Broker-Dealer or Non-NOM Market Maker liquidity in Penny Symbols 
+and/or Non-Penny Symbols of total industry customer equity and ETF 
+option ADV contracts per day in a month will be subject to the 
+following pricing applicable to executions less than 10,000 
+contracts: a $0.38 per contract Penny Symbols Fee for Removing 
+Liquidity when the Participant is (i) both the buyer and seller or 
+(ii) the Participant removes liquidity from another Participant 
+under Common Ownership.
+
+    Currently, the Tier 6 rebate to add liquidity in Penny Symbols that 
+is paid to Customers is modified according to note 7, which states as 
+follows:
+
+    Participants that: (1) add Customer, Professional, Firm, Non-NOM 
+Market Maker and/or Broker-Dealer liquidity in Penny Symbols and/or 
+Non- Penny Symbols of 1.15% or more of total industry customer 
+equity and ETF option ADV contracts per day in a month will receive 
+an additional $0.02 per contract Penny Symbol Customer Rebate to Add 
+Liquidity for each transaction which adds liquidity in Penny Symbol 
+in that month; or (2) add Customer, Professional, Firm, Non-NOM 
+Market Maker and/or Broker-Dealer liquidity in Penny Symbols and/or 
+Non-Penny Symbols of 1.30% or more of total industry customer equity 
+and ETF option ADV contracts per day in a month will receive an 
+additional $0.05 per contract Penny Symbol Customer Rebate to Add 
+Liquidity for each transaction which adds liquidity in Penny Symbols 
+in that month; or (3) (a) add Customer, Professional, Firm, Non-NOM 
+Market Maker and/or Broker- Dealer liquidity in Penny Symbols and/or 
+Non-Penny Symbols above 0.80% of total industry customer equity and 
+ETF option ADV contracts per day in a month, (b) add Customer, 
+Professional, Firm, Non-NOM Market Maker and/or Broker-Dealer 
+liquidity
+
+[[Page 59285]]
+
+in Non-Penny Symbols above 0.12% of total industry customer equity 
+and ETF option ADV contracts per day in a month, and (c) execute 
+greater than 0.04% of Consolidated Volume (``CV'') via Market-on-
+Close/Limit-on- Close (``MOC/LOC'') volume within The Nasdaq Stock 
+Market Closing Cross within a month will receive an additional $0.05 
+per contract Penny Symbol Customer Rebate to Add Liquidity for each 
+transaction which adds liquidity in Penny Symbols in a month. 
+Consolidated Volume shall mean the total consolidated volume 
+reported to all consolidated transaction reporting plans by all 
+exchanges and trade reporting facilities during a month in equity 
+securities, excluding executed orders with a size of less than one 
+round lot. For purposes of calculating Consolidated Volume and the 
+extent of an equity member's trading activity, expressed as a 
+percentage of or ratio to Consolidated Volume, the date of the 
+annual reconstitution of the Russell Investments Indexes shall be 
+excluded from both total Consolidated Volume and the member's 
+trading activity.
+
+    Currently, the Customer and Professional rebates to add liquidity 
+in both Penny Symbols and Non-Penny Symbols are modified according to 
+note 10, which states as follows:
+
+    NOM Participants that (a) add Customer, Professional, Firm, Non-
+NOM Market Maker and/or Broker-Dealer liquidity in Penny Symbols 
+and/or Non-Penny Symbols above 1.50% of total industry customer 
+equity and ETF option ADV contracts per day in a month, (b) execute 
+greater than 0.04% of Consolidated Volume (``CV'') via Market-on-
+Close/Limit-on-Close (``MOC/LOC'') volume within The Nasdaq Stock 
+Market Closing Cross within a month, and (c) add greater than 1.5 
+million shares per day of non-displayed volume within The Nasdaq 
+Stock Market within a month will receive a $0.55 per contract Rebate 
+to Add Liquidity in Penny Symbols as Customer, a $0.48 per contract 
+Rebate to Add Liquidity in Penny Symbols as Professional, and a 
+$1.15 per contract Rebate to Add Liquidity in Non-Penny Symbols as 
+Customer, and a $0.90 per contract Rebate to Add Liquidity in Non-
+Penny Symbols as Professional. Participants that qualify for this 
+rebate would not be eligible for any other rebates in Tiers 1-6 or 
+other rebate incentives on NOM for Customer and Professional order 
+flow in Options 7, Section 2(1).
+
+    The Exchange proposes to make seven changes to these provisions of 
+the Exchange fee schedule:
+First Change
+    The Exchange proposes to increase the Tier 6 Customer rebate to add 
+liquidity in Penny Symbols from $0.48 to $0.49. Therefore, the new 
+schedule of this rebate for Customers will be as follows:
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                         Tier 1           Tier 2           Tier 3           Tier 4           Tier 5           Tier 6
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+Customer..........................................         ($0.20)          ($0.25)          ($0.43)          ($0.44)          ($0.45)          ($0.49)
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Second Change
+    The Exchange proposes to lower the Tier 6 NOM Market Maker rebate 
+to add liquidity in Penny Symbols from $0.47 to $0.45. Therefore, the 
+new schedule of this rebate for NOM Market Makers will be as follows:
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                         Tier 1           Tier 2           Tier 3           Tier 4           Tier 5           Tier 6
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+NOM Market Maker..................................         ($0.20)          ($0.25)          ($0.30)          ($0.32)          ($0.45)          ($0.45)
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Third Change
+    The Exchange proposes to modify the schedule of fees to remove 
+liquidity in Penny and Non-Penny Symbols by eliminating and reserving 
+note 2, which until now had modified the fees paid by Non-NOM Market 
+Makers and NOM Market Makers to remove liquidity in Penny Symbols.
+Fourth Change
+    The Exchange proposes to modify the Customer and Professional 
+rebate to add liquidity in Penny Symbols by streamlining the criteria 
+to qualify for Tier 6.\10\ Specifically, the Exchange would modify the 
+second of the two alternative paths to qualify for Tier 6.\11\ This 
+second alternative path, in turn, contains two separate requirements 
+that must both be met. The second of these requirements, in turn, is 
+composed of two alternatives.\12\ The Exchange proposes to eliminate 
+the first of these two alternatives.\13\ Therefore, the revised 
+criteria to qualify for Tier 6 would be as follows:
+---------------------------------------------------------------------------
+
+    \10\ As mentioned above, the current criteria to qualify for 
+Tier 6 are the following: ``Participant adds Customer, Professional, 
+Firm, Non-NOM Market Maker and/or Broker-Dealer liquidity in Penny 
+Symbols and/or Non-Penny Symbols above 0.70% or more of total 
+industry customer equity and ETF option ADV contracts per day in a 
+month, or Participant: (1) adds Customer and/or Professional 
+liquidity in Penny Symbols and/or Non-Penny Symbols of 0.10% or more 
+of total industry customer equity and ETF option ADV contracts per 
+day in a month, and (2) has added liquidity in all securities 
+through one or more of its Nasdaq Market Center MPIDs that represent 
+1.00% or more of Consolidated Volume in a month or qualifies for 
+MARS.''
+    \11\ As seen in the immediately preceding footnote, the two 
+conditions to satisfy this second path are currently as follows: 
+``Participant: (1) adds Customer and/or Professional liquidity in 
+Penny Symbols and/or Non-Penny Symbols of 0.10% or more of total 
+industry customer equity and ETF option ADV contracts per day in a 
+month, and (2) has added liquidity in all securities through one or 
+more of its Nasdaq Market Center MPIDs that represent 1.00% or more 
+of Consolidated Volume in a month or qualifies for MARS.''
+    \12\ As seen in the immediately preceding footnote, the two 
+alternatives to satisfy this second requirement are currently that 
+the Participant ``(2) has added to liquidity in all securities 
+through one or more of its Nasdaq Market Center MPIDs that represent 
+1.00% or more of Consolidated Volume in a month or qualifies for 
+MARS.''
+    \13\ As seen in the immediately preceding footnote, the first of 
+these two current alternative requirements is that the Participant 
+``has added to liquidity in all securities through one or more of 
+its Nasdaq Market Center MPIDs that represent 1.00% or more of 
+Consolidated Volume in a month.'' This is the provision of the Tier 
+6 criteria for the Customer and Professional rebate to add liquidity 
+in Penny Symbols that the Exchange proposes to delete through this 
+filing.
+---------------------------------------------------------------------------
+
+    Tier 6: Participant adds Customer, Professional, Firm, Non-NOM 
+Market Maker and/or Broker-Dealer liquidity in Penny Symbols and/or 
+Non-Penny Symbols above 0.70% or more of total industry customer equity 
+and ETF option ADV contracts per day in a month, or Participant: (1) 
+adds Customer and/or Professional liquidity in Penny Symbols and/or 
+Non-Penny Symbols of 0.10% or more of total industry customer equity 
+and ETF option ADV contracts per day in a month, and (2) qualifies for 
+MARS.
+Fifth Change
+    The Exchange proposes to modify the schedule of rebates to add 
+liquidity in Penny Symbols by eliminating and reserving note 7, which 
+until now had modified the Tier 6 rebate paid to Customers.
+Sixth Change
+    The only definition of ``Consolidated Volume'' that is currently in 
+Options 7 is contained in note 7, which is being deleted in this 
+filing. The Exchange proposes to relocate this same definition, 
+verbatim, to Options 7,
+
+[[Page 59286]]
+
+Section 1(a), which contains several other defined terms. The 
+``Consolidated Volume'' defined term in Options 7, Section 1(a) would 
+read as follows:
+
+    The term ``Consolidated Volume'' shall mean the total 
+consolidated volume reported to all consolidated transaction 
+reporting plans by all exchanges and trade reporting facilities 
+during a month in equity securities, excluding executed orders with 
+a size of less than one round lot. For purposes of calculating 
+Consolidated Volume and the extent of an equity member's trading 
+activity, expressed as a percentage of or ratio to Consolidated 
+Volume, the date of the annual reconstitution of the Russell 
+Investments Indexes shall be excluded from both total Consolidated 
+Volume and the member's trading activity.
+
+Seventh Change
+    The Exchange proposes to modify the rebates to add liquidity in 
+Penny Symbols and the schedule of fees and rebates to add liquidity in 
+Non-Penny Symbols by eliminating and reserving note 10, which until now 
+had modified the rebates paid to Customers and Professionals to add 
+liquidity in Penny Symbols, as well as the rebates paid to Customers 
+and Professionals to add liquidity in Non-Penny Symbols.
+2. Statutory Basis
+    The Exchange believes that its proposal is consistent with Section 
+6(b) of the Act,\14\ in general, and furthers the objectives of 
+Sections 6(b)(4) and 6(b)(5) of the Act,\15\ in particular, in that it 
+provides for the equitable allocation of reasonable dues, fees and 
+other charges among members and issuers and other persons using any 
+facility, and is not designed to permit unfair discrimination between 
+customers, issuers, brokers, or dealers.
+---------------------------------------------------------------------------
+
+    \14\ 15 U.S.C. 78f(b).
+    \15\ 15 U.S.C. 78f(b)(4) and (5).
+---------------------------------------------------------------------------
+
+    The Commission and the courts have repeatedly expressed their 
+preference for competition over regulatory intervention in determining 
+prices, products, and services in the securities markets. In Regulation 
+NMS, while adopting a series of steps to improve the current market 
+model, the Commission highlighted the importance of market forces in 
+determining prices and SRO revenues and, also, recognized that current 
+regulation of the market system ``has been remarkably successful in 
+promoting market competition in its broader forms that are most 
+important to investors and listed companies.'' \16\
+---------------------------------------------------------------------------
+
+    \16\ Securities Exchange Act Release No. 51808 (June 9, 2005), 
+70 FR 37496, 37499 (June 29, 2005).
+---------------------------------------------------------------------------
+
+    Likewise, in NetCoalition v. Securities and Exchange Commission 
+\17\ (``NetCoalition'') the D.C. Circuit upheld the Commission's use of 
+a market-based approach in evaluating the fairness of market data fees 
+against a challenge claiming that Congress mandated a cost-based 
+approach.\18\ As the court emphasized, the Commission ``intended in 
+Regulation NMS that `market forces, rather than regulatory 
+requirements' play a role in determining the market data . . . to be 
+made available to investors and at what cost.'' \19\
+---------------------------------------------------------------------------
+
+    \17\ NetCoalition v. SEC, 615 F.3d 525 (D.C. Cir. 2010).
+    \18\ See NetCoalition, at 534-535.
+    \19\ Id. at 537.
+---------------------------------------------------------------------------
+
+    Further, ``[n]o one disputes that competition for order flow is 
+`fierce.' . . . As the SEC explained, `[i]n the U.S. national market 
+system, buyers and sellers of securities, and the broker-dealers that 
+act as their order-routing agents, have a wide range of choices of 
+where to route orders for execution'; [and] `no exchange can afford to 
+take its market share percentages for granted' because `no exchange 
+possesses a monopoly, regulatory or otherwise, in the execution of 
+order flow from broker dealers'. . . .'' \20\ Although the court and 
+the SEC were discussing the cash equities markets, the Exchange 
+believes that these views apply with equal force to the options 
+markets.
+---------------------------------------------------------------------------
+
+    \20\ Id. at 539 (quoting Securities Exchange Act Release No. 
+59039 (Dec. 2, 2008), 73 FR 74770, 74782-83 (Dec. 9, 2008) (File No. 
+SR-NYSEArca-2006-21)).
+---------------------------------------------------------------------------
+
+    The Exchange's proposed changes to Options 7 are reasonable in 
+several respects. As a threshold matter, the Exchange is subject to 
+significant competitive forces in the market for options transaction 
+services that constrain its pricing determinations in that market. 
+Within this environment, the Exchange must continually adjust the fees 
+and rebates set forth in its Pricing Schedule to remain competitive 
+with the other national securities exchanges to which market 
+participants may direct their options order flow. Each of the seven 
+proposed changes is discussed in turn below.
+First Change
+    The proposed amendment to the Tier 6 Customer rebate to add 
+liquidity in Penny Symbols from $0.48 per contract to $0.49 per 
+contract is reasonable because it modestly increases the top-tier 
+Customer Penny Symbol rebate paid on NOM, which is designed to attract 
+additional Customer order flow to the Exchange. As the Exchange has 
+previously observed, Customer liquidity offers benefits to the market 
+that ultimately benefit all Participants: it provides more trading 
+opportunities, which attracts market makers, and an increase in the 
+activity of these market participants in turn facilitates tighter 
+spreads, which may cause an additional corresponding increase in order 
+flow. The proposed higher Tier 6 rebate is therefore intended to 
+improve overall market quality on the Exchange by incentivizing 
+Participants to bring additional Customer order flow to NOM and, in 
+turn, provide more trading opportunities to the benefit of all market 
+participants. The amendment is part of an overall effort to 
+appropriately calibrate rebates in a manner that helps attract order 
+flow to NOM, from which all Participants benefit through increased 
+trading opportunities and greater interaction with liquidity.
+    The proposed amendment is equitable and not unfairly discriminatory 
+because the Exchange would uniformly apply the revised Tier 6 rebate to 
+every Participant that satisfies the qualifying criteria for that Tier 
+through Customer liquidity-adding order flow. Continuing to provide 
+more favorable pricing on Customer liquidity than on liquidity from 
+other categories of market participants is consistent with the 
+Exchange's long-standing practice throughout its Pricing Schedule and 
+is justified because Customer liquidity offers benefits that ultimately 
+flow through to all market participants, as described above. Similar 
+upward adjustments to individual Customer and NOM Market Maker Penny 
+Symbol and Non-Penny Symbol liquidity-adding rebates have previously 
+been effected by the Exchange on the same basis.\21\
+---------------------------------------------------------------------------
+
+    \21\ See, e.g., Securities Exchange Act Release No. 103339 (June 
+27, 2025), 90 FR 29082 (July 2, 2025) (File No. SR-NASDAQ-2025-045) 
+(increasing the Tier 5 NOM Market Maker Rebate to Add Liquidity in 
+Penny Symbols from $0.44 to $0.46 per contract); Securities Exchange 
+Act Release No. 98934 (Nov. 15, 2023), 88 FR 81166 (Nov. 21, 2023) 
+(File No. SR-NASDAQ-2023-044) (increasing the note 9 Customer Rebate 
+to Add Liquidity in Non-Penny Symbols from $1.00 to $1.10 per 
+contract, and increasing the note 10 Customer Rebate to Add 
+Liquidity in Non-Penny Symbols from $1.05 to $1.15 per contract).
+---------------------------------------------------------------------------
+
+Second Change
+    The proposed amendment to the Tier 6 NOM Market Maker rebate to add 
+liquidity in Penny Symbols from $0.47 per contract to $0.45 per 
+contract is reasonable because NOM Market Makers would continue to 
+receive substantial rebates for adding Penny Symbol liquidity across 
+all six volume tiers, and the Tier 6 rebate would remain among the 
+highest of those tiers, tied with the Tier 5 rebate at $0.45 per 
+contract. The amendment is part of an overall effort to appropriately 
+calibrate rebates in a manner that helps attract order flow to NOM, 
+from which all Participants benefit through increased trading
+
+[[Page 59287]]
+
+opportunities and greater interaction with liquidity.
+    The proposed amendment is equitable and not unfairly discriminatory 
+because the Exchange would uniformly apply the revised Tier 6 rebate to 
+every NOM Market Maker that satisfies the qualifying criteria for that 
+Tier. Similar downward adjustments to individual NOM Market Maker Penny 
+Symbol rebate tiers have previously been effected by the Exchange on 
+the same basis.\22\
+---------------------------------------------------------------------------
+
+    \22\ See Securities Exchange Act Release No. 104818 (Feb. 11, 
+2026), 91 FR 7336 (Feb. 17, 2026) (File No. SR-NASDAQ-2026-006) 
+(reducing the Tier 5 NOM Market Maker Rebate to Add Liquidity in 
+Penny Symbols from $0.46 to $0.45 per contract and the Tier 6 NOM 
+Market Maker Rebate to Add Liquidity in Penny Symbols from $0.48 to 
+$0.47 per contract).
+---------------------------------------------------------------------------
+
+Third Change
+    The proposed elimination and reservation of note 2 in Options 7, 
+Section 2(1) is reasonable. Note 2 currently offers Non-NOM Market 
+Makers and NOM Market Makers reduced fees for removing liquidity in 
+Penny Symbols of $0.48 and $0.38 per contract in narrowly defined 
+transactions in which the Participant is (i) both the buyer and the 
+seller or (ii) removes liquidity from another Participant under Common 
+Ownership, and only where the Participant has separately added 1.10% or 
+1.55% of total industry customer equity and ETF option ADV. Following 
+the proposed elimination, Non-NOM Market Makers and NOM Market Makers 
+would be assessed the same standard $0.50 per contract Penny Symbols 
+fee for removing liquidity that is applicable to Broker-Dealers and 
+Firms. The Exchange believes that eliminating this narrow incentive, 
+which today applies only where the Participant is on both sides of the 
+trade or removes liquidity from an affiliate under Common Ownership, 
+produces a more uniform Penny Symbols removal fee structure across Non-
+NOM Market Makers, NOM Market Makers, Broker-Dealers and Firms and 
+simplifies the Pricing Schedule.
+    The proposed elimination is equitable and not unfairly 
+discriminatory because, upon its effectiveness, no Participant would be 
+able to qualify for the eliminated note 2 incentives, and the Exchange 
+would uniformly apply the standard fees to remove liquidity in Penny 
+Symbols to all Non-NOM Market Makers and NOM Market Makers.
+Fourth Change
+    The proposed modification to the Tier 6 criteria for the Customer 
+and Professional rebate to add liquidity in Penny Symbols is 
+reasonable. Tier 6 is presently available under two alternative 
+qualification paths, and the proposal streamlines only the second of 
+those paths. Following the proposed change, that second path will 
+continue to require the Participant to add at least 0.10% of total 
+industry customer equity and ETF option ADV in Customer and/or 
+Professional volume, and to qualify for MARS. The primary qualification 
+path (adding at least 0.70% of total industry customer equity and ETF 
+option ADV in Penny Symbol and/or Non-Penny Symbol liquidity) is not 
+affected by the proposal, and neither is the requirement that the 
+Participant reach 0.10% of total industry customer equity and ETF 
+option ADV in Customer and/or Professional volume under the second 
+path. The Exchange has previously observed, in adding an alternative 
+MARS-tied route to Tier 3 of the Customer and Professional rebate 
+program,\23\ that tying rebate qualification to MARS is designed to 
+incentivize Participants to increase their liquidity adding activity on 
+NOM and thereby improve the quality of the market for all Participants. 
+The Exchange believes that the same reasoning supports focusing the 
+second Tier 6 qualification path on the MARS-tied requirement alone.
+---------------------------------------------------------------------------
+
+    \23\ See Securities Exchange Act Release No. 92974 (Sept. 14, 
+2021), 86 FR 52273 (Sept. 20, 2021) (File No. SR-NASDAQ-2021-069) 
+(adding an alternative MARS-tied route to qualify for the Tier 3 
+Customer and Professional Rebate to Add Liquidity in Penny Symbols).
+---------------------------------------------------------------------------
+
+    The proposed modification is equitable and not unfairly 
+discriminatory because the Exchange would uniformly apply the 
+streamlined Tier 6 criteria to every Participant that seeks to earn the 
+Customer and Professional rebate to add liquidity in Penny Symbols at 
+Tier 6. Participants that previously could have qualified for Tier 6 
+through the deleted alternative (adding liquidity in all securities 
+through one or more of their Nasdaq Market Center MPIDs representing 
+1.00% or more of Consolidated Volume in a month) may still qualify for 
+Tier 6 either by satisfying the unmodified primary volume threshold or 
+by satisfying the retained MARS-tied requirement of the second path, on 
+the same terms as every other Participant. The Exchange acknowledges 
+that a Participant whose Tier 6 eligibility currently rests solely on 
+the deleted MPID/Consolidated Volume alternative--that is, a 
+Participant that does not meet either the unmodified primary volume 
+threshold or the retained MARS-tied requirement of the second path--
+would no longer qualify for Tier 6 following the proposed change. The 
+Exchange believes this outcome is appropriate because it aligns Tier 6 
+eligibility with volume-based and MARS-linked criteria that more 
+directly incentivize the addition of Customer and Professional order 
+flow to NOM.
+Fifth Change
+    The proposed elimination and reservation of note 7 in Options 7, 
+Section 2(1) is reasonable. Note 7 currently modifies the Tier 6 
+Customer rebate to add liquidity in Penny Symbols by providing 
+additional $0.02, $0.05, or $0.05 per contract enhancements upon 
+satisfaction of substantial volume and cross-market conditions. The 
+Exchange has observed that these layered volume-based and cross-market 
+enhancements have not attracted incremental Customer order flow at 
+levels commensurate with the complexity that they add to the Pricing 
+Schedule. Following the proposed elimination, Participants that qualify 
+for the Tier 6 Customer rebate to add liquidity in Penny Symbols would 
+continue to receive that rebate at its established level. The Exchange 
+believes that consolidating the Tier 6 Customer rebate at its 
+established, uniform level, without the additional volume-based and 
+cross-market enhancements currently in note 7, produces a simpler and 
+more transparent Tier 6 Customer rebate structure.
+    The proposed elimination is equitable and not unfairly 
+discriminatory because, upon its effectiveness, no Participant would be 
+able to qualify for the eliminated note 7 enhancements, and the 
+Exchange would uniformly apply the standard Tier 6 Customer rebate to 
+every Participant that qualifies for that Tier.
+Sixth Change
+    The proposed relocation of the ``Consolidated Volume'' defined term 
+from note 7 of Options 7, Section 2(1) to Options 7, Section 1(a), 
+which houses the defined terms applicable throughout the Pricing 
+Schedule, is reasonable. The proposed relocation is a non-substantive 
+change that reproduces the ``Consolidated Volume'' definition verbatim 
+in a new location and, in itself, does not modify any fee, rebate, 
+threshold, or qualification criterion under Options 7. Because notes 3, 
+4, 9 and the note designated by ``##'' within Options 7, Section 2(1) 
+each use the term ``Consolidated Volume'' without themselves defining 
+it, and because the concurrent elimination of note 7 (the sole current 
+location of the defined term) would otherwise leave
+
+[[Page 59288]]
+
+``Consolidated Volume'' undefined within Options 7, the proposed 
+relocation preserves an accurate and clearly identifiable definition of 
+``Consolidated Volume'' for all remaining references to that term 
+within Options 7. Placing the ``Consolidated Volume'' defined term 
+alongside the other defined terms in Section 1(a) also makes the 
+Pricing Schedule easier to read and more accessible to Participants and 
+other market participants that consult it.
+    The proposed relocation is equitable and not unfairly 
+discriminatory because it applies uniformly across all Participants. 
+The definition of ``Consolidated Volume'' proposed for Options 7, 
+Section 1(a) is identical to the definition that currently appears in 
+note 7, and its relocation does not alter how ``Consolidated Volume,'' 
+or activity for any fee or rebate tier that references ``Consolidated 
+Volume,'' is calculated. The Exchange will therefore continue to apply 
+the same measure of ``Consolidated Volume,'' in the same manner, to 
+every Participant that seeks to qualify under any fee or rebate 
+provision of Options 7 that references that term.
+Seventh Change
+    The proposed elimination and reservation of note 10 in Options 7, 
+Section 2(1) is reasonable. Note 10 currently provides an alternative, 
+exclusive rebate schedule to Participants that satisfy a demanding 
+combination of NOM add-liquidity volume above 1.50% of total industry 
+customer equity and ETF option ADV, MOC/LOC Consolidated Volume greater 
+than 0.04% executed within The Nasdaq Stock Market Closing Cross, and 
+non-displayed volume within The Nasdaq Stock Market greater than 1.5 
+million shares per day. Participants that qualified for the note 10 
+rebate schedule were excluded from receiving any of the six tiered 
+Customer and Professional rebates to add liquidity, and from any other 
+Customer and Professional rebate incentive on NOM. With the proposed 
+elimination, all Participants, including any Participant that 
+previously qualified for the note 10 rebate schedule, would be eligible 
+to earn the tiered Customer and Professional rebates to add liquidity 
+in Penny Symbols and Non-Penny Symbols on the same basis as every other 
+Participant.
+    The proposed elimination is equitable and not unfairly 
+discriminatory because, upon its effectiveness, no Participant would be 
+able to qualify for the eliminated note 10 rebate schedule, and the 
+Exchange would uniformly apply to all Participants the tiered Customer 
+and Professional rebates to add liquidity.
+
+B. Self-Regulatory Organization's Statement on Burden on Competition
+
+    The Exchange does not believe that the proposed rule change will 
+impose any burden on competition not necessary or appropriate in 
+furtherance of the purposes of the Act.
+Inter-Market Competition
+    The proposal does not impose an undue burden on inter-market 
+competition that is not necessary or appropriate in furtherance of the 
+purposes of the Act. The Exchange believes its proposal remains 
+competitive with other options markets and will offer market 
+participants with another choice of where to transact options. The 
+Exchange notes that it operates in a highly competitive market in which 
+market participants can readily favor competing venues if they deem fee 
+levels at a particular venue to be excessive, or rebate opportunities 
+available at other venues to be more favorable. In such an environment, 
+the Exchange must continually adjust its fees to remain competitive 
+with other exchanges. Because competitors are free to modify their own 
+fees in response, and because market participants may readily adjust 
+their order routing practices, the Exchange believes that the degree to 
+which fee changes in this market may impose any burden on competition 
+is extremely limited.
+Intra-Market Competition
+    The Exchange does not believe that its proposal would impose an 
+undue burden on intra-market competition. Each of the seven proposed 
+changes would apply uniformly across all Participants, or uniformly 
+within an identifiable class of Participants to which the corresponding 
+pricing provision applies.
+First Change
+    The proposed increase of the Tier 6 Customer rebate to add 
+liquidity in Penny Symbols from $0.48 per contract to $0.49 per 
+contract does not impose an undue burden on intra-market competition, 
+because the revised Tier 6 rebate would apply uniformly to every 
+Participant that satisfies the Tier 6 qualification criteria through 
+Customer liquidity-adding order flow. The Exchange's long-standing 
+practice of providing more favorable pricing on Customer liquidity than 
+on liquidity from other categories of market participants does not 
+impose an undue burden on intra-market competition because, as 
+described above, Customer liquidity offers benefits that ultimately 
+flow through to all Participants.
+Second Change
+    The proposed reduction of the Tier 6 NOM Market Maker rebate to add 
+liquidity in Penny Symbols from $0.47 per contract to $0.45 per 
+contract does not impose an undue burden on intra-market competition, 
+because the revised rebate would apply uniformly to every NOM Market 
+Maker that satisfies the Tier 6 qualification criteria, and NOM Market 
+Makers would continue to receive substantial rebates for adding Penny 
+Symbol liquidity across all six volume tiers.
+Third Change
+    The proposed elimination and reservation of note 2 in Options 7, 
+Section 2(1) does not impose an undue burden on intra-market 
+competition, because, upon its effectiveness, no Participant would be 
+able to qualify for the eliminated note 2 incentives, and Non-NOM 
+Market Makers and NOM Market Makers would be assessed the same $0.50 
+per contract Penny Symbol fee for removing liquidity as Broker-Dealers 
+and Firms.
+Fourth Change
+    The proposed modification of the Tier 6 criteria for the Customer 
+and Professional rebate to add liquidity in Penny Symbols does not 
+impose an undue burden on intra-market competition, because the 
+streamlined Tier 6 criteria would apply uniformly to every Participant 
+that seeks the Tier 6 rebate. The primary qualification path (adding at 
+least 0.70% of total industry customer equity and ETF option ADV in 
+Penny Symbol and/or Non-Penny Symbol liquidity) is unchanged by the 
+proposal, and the MARS-tied requirement of the second qualification 
+path is retained without modification. The proposal narrows only one of 
+two alternative requirements within the second qualification path, and 
+it does so on terms that apply identically to every Participant.
+Fifth Change
+    The proposed elimination and reservation of note 7 in Options 7, 
+Section 2(1) does not impose an undue burden on intra-market 
+competition, because, upon its effectiveness, no Participant would be 
+able to qualify for the eliminated note 7 enhancements, and the Tier 6 
+Customer rebate to add liquidity in Penny Symbols would continue to be 
+paid at its established level to every Participant that satisfies the 
+Tier 6 criteria.
+
+[[Page 59289]]
+
+Sixth Change
+    The proposed relocation of the ``Consolidated Volume'' defined term 
+from note 7 of Options 7, Section 2(1) to Options 7, Section 1(a) does 
+not impose an undue burden on intra-market competition. The relocation 
+is a non-substantive change that reproduces the definition verbatim in 
+a new location, does not modify any fee, rebate, threshold or 
+qualification criterion, and does not alter how ``Consolidated Volume'' 
+is calculated or applied to any Participant. The same measure of 
+``Consolidated Volume'' will continue to apply to all Participants that 
+seek to qualify under any fee or rebate provision of Options 7 that 
+references the term and, accordingly, the proposed relocation applies 
+uniformly across all Participants.
+Seventh Change
+    The proposed elimination and reservation of note 10 in Options 7, 
+Section 2(1) does not impose an undue burden on intra-market 
+competition. Upon its effectiveness, no Participant would be able to 
+qualify for the eliminated note 10 rebate schedule, and, importantly, 
+Participants that previously would have been excluded from the tiered 
+Customer and Professional rebates to add liquidity by virtue of 
+qualifying for note 10 would once again be eligible to earn those 
+tiered rebates on the same basis as every other Participant. The 
+Exchange therefore believes that this change furthers intra-market 
+competition by allowing all Participants, including any Participants 
+that previously qualified for the note 10 rebate schedule, to be 
+eligible to qualify and earn the tiered Customer and Professional 
+rebates to add liquidity in Penny Symbols and Non-Penny Symbols on the 
+same basis as every other Participant.
+
+C. Self-Regulatory Organization's Statement on Comments on the Proposed 
+Rule Change Received From Members, Participants, or Others
+
+    No written comments were either solicited or received.
+
+III. Date of Effectiveness of the Proposed Rule Change and Timing for 
+Commission Action
+
+    The foregoing rule change has become effective pursuant to Section 
+19(b)(3)(A)(ii) of the Act.\24\
+---------------------------------------------------------------------------
+
+    \24\ 15 U.S.C. 78s(b)(3)(A)(ii).
+---------------------------------------------------------------------------
+
+    At any time within 60 days of the filing of the proposed rule 
+change, the Commission summarily may temporarily suspend such rule 
+change if it appears to the Commission that such action is: (i) 
+necessary or appropriate in the public interest; (ii) for the 
+protection of investors; or (iii) otherwise in furtherance of the 
+purposes of the Act. If the Commission takes such action, the 
+Commission shall institute proceedings to determine whether the 
+proposed rule should be approved or disapproved.
+
+IV. Solicitation of Comments
+
+    Interested persons are invited to submit written data, views and 
+arguments concerning the foregoing, including whether the proposed rule 
+change is consistent with the Act. Comments may be submitted by any of 
+the following methods:
+
+Electronic Comments
+
+    <bullet> Use the Commission's internet comment form (<a href="https://www.sec.gov/rules/sro.shtml">https://www.sec.gov/rules/sro.shtml</a>); or
+    <bullet> Send an email to <a href="/cdn-cgi/l/email-protection#4b393e272e66282426262e253f380b382e28652c243d"><span class="__cf_email__" data-cfemail="3a484f565f17595557575f544e497a495f59145d554c">[email&#160;protected]</span></a>. Please include 
+file number SR-NASDAQ-2026-074 on the subject line.
+
+Paper Comments
+
+    <bullet> Send paper comments in triplicate to Secretary, Securities 
+and Exchange Commission, 100 F Street NE, Washington, DC 20549-1090.
+
+All submissions should refer to file number SR-NASDAQ-2026-074. This 
+file number should be included on the subject line if email is used. To 
+help the Commission process and review your comments more efficiently, 
+please use only one method. The Commission will post all comments on 
+the Commission's internet website (<a href="https://www.sec.gov/rules/sro.shtml">https://www.sec.gov/rules/sro.shtml</a>). Copies of the filing will be available for inspection and 
+copying at the principal office of the Exchange. Do not include 
+personal identifiable information in submissions; you should submit 
+only information that you wish to make available publicly. We may 
+redact in part or withhold entirely from publication submitted material 
+that is obscene or subject to copyright protection. All submissions 
+should refer to file number SR-NASDAQ-2026-074 and should be submitted 
+on or before October 9, 2026.
+
+    For the Commission, by the Division of Trading and Markets, 
+pursuant to delegated authority.\25\
+---------------------------------------------------------------------------
+
+    \25\ 17 CFR 200.30-3(a)(12).
+---------------------------------------------------------------------------
+
+Sherry R. Haywood,
+Assistant Secretary.
+[FR Doc. 2026-19119 Filed 9-17-26; 8:45 am]
+BILLING CODE 8011-01-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

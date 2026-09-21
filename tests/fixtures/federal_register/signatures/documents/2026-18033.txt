@@ -1,0 +1,84 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 170 (Thursday, September 3, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 170 (Thursday, September 3, 2026)]
+[Rules and Regulations]
+[Pages 56598-56599]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-18033]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+FEDERAL COMMUNICATIONS COMMISSION
+
+47 CFR Part 1
+
+[WC Docket Nos. 19-195 and 11-10; GN Docket No. 25-133; FCC 26-33]
+
+
+Establishing the Digital Opportunity Data Collection; Modernizing 
+the FCC Form 477 Data Program; Delete, Delete, Delete; Corrections
+
+AGENCY: Federal Communications Commission.
+
+ACTION: Technical amendment.
+
+-----------------------------------------------------------------------
+
+SUMMARY: On June 24, 2026, the Federal Communications Commission (FCC) 
+published a final rule which became effective on July 24, 2026. That 
+document inadvertently failed to revise a certain defined term in FCC 
+regulations. This document corrects the final rule.
+
+DATES: Effective on September 3, 2026.
+
+FOR FURTHER INFORMATION CONTACT: Jamile Kadre, Broadband Data Task 
+Force, at <a href="/cdn-cgi/l/email-protection#f892999591949dd693999c8a9db89e9b9bd69f978e"><span class="__cf_email__" data-cfemail="660c070b0f0a03480d070214032600050548010910">[email&#160;protected]</span></a> or (202) 418-2245.
+
+SUPPLEMENTARY INFORMATION: This is a summary of the FCC's Erratum, 
+correcting FCC 26-33, published June 24, 2026 (91 FR 37831). The 
+Erratum sets out a technical amendment revising the definition of 
+``Broadband connection'' in Sec.  1.7001(a)(1).
+
+List of Subjects in 47 CFR Part 1
+
+    Administrative practice and procedure, Internet, Reporting and 
+recordkeeping requirements, Telecommunications.
+
+    Accordingly, 47 CFR part 1 is corrected by making the following 
+technical amendments:
+
+PART 1--PRACTICE AND PROCEDURE
+
+0
+1. The authority citation for part 1 continues to read as follows:
+
+    Authority: 47 U.S.C. chs. 2, 5, 9, 13; 28 U.S.C. 2461 note; 47 
+U.S.C. 1754, unless otherwise noted.
+
+
+0
+2. Amend Sec.  1.7001 by revising paragraph (a)(1) to read as follows:
+
+[[Page 56599]]
+
+Sec.  1.7001  Scope and content of filed reports.
+
+    (a) * * *
+    (1) Broadband connection. Connections of a ``broadband internet 
+access service,'' as defined in 47 CFR 8.1(b).
+* * * * *
+
+Federal Communications Commission.
+Marlene Dortch,
+Secretary.
+[FR Doc. 2026-18033 Filed 9-2-26; 8:45 am]
+BILLING CODE 6712-01-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

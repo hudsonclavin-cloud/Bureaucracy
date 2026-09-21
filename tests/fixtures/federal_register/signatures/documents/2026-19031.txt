@@ -1,0 +1,194 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 179 (Thursday, September 17, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 179 (Thursday, September 17, 2026)]
+[Notices]
+[Pages 58951-58952]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-19031]
+
+
+-----------------------------------------------------------------------
+
+DEPARTMENT OF TRANSPORTATION
+
+Federal Railroad Administration
+
+
+Safety Advisory 2025-02; Track Is Clear Determination During 
+Shoving or Pushing Movements Across Highway-Rail Grade Crossings 
+Equipped Only With Flashing Lights or Passive Warning Devices 
+(Supplement)
+
+AGENCY: Federal Railroad Administration (FRA), U.S. Department of 
+Transportation (DOT).
+
+ACTION: Notice of Safety Advisory; Notice No. 2.
+
+-----------------------------------------------------------------------
+
+SUMMARY: On December 12, 2025, in response to a series of accidents 
+involving operations requiring crew members to make ``track is clear'' 
+determinations before shoving or pushing movements across highway-rail 
+grade crossings (crossings) equipped only with flashing lights or 
+passive warning devices, FRA published Safety Advisory 2025-02. Since 
+publication, two additional accidents have occurred under similar 
+circumstances, resulting in one fatality and one severe injury. FRA is 
+issuing this Notice to provide details of these recent accidents, to 
+reinforce the existing recommendations in Safety Advisory 2025-02, and 
+to add two recommendations. Specifically, this notice adds 
+recommendations 5 and 6, which recommend railroads conduct in-person 
+briefings with all operating employees performing or overseeing shoving 
+or pushing movements and review and evaluate internal instruction, 
+training, and examination programs for such employees.
+
+FOR FURTHER INFORMATION CONTACT: Christian Holt, Staff Director, 
+Operating Practices Division, FRA Office of Railroad Safety, 1200 New 
+Jersey Ave. SE, Washington, DC 20590; telephone (202) 366-0978; email 
+<a href="/cdn-cgi/l/email-protection#94d7fce6fde7e0fdf5fabadcfbf8e0d4f0fbe0baf3fbe2"><span class="__cf_email__" data-cfemail="67240f150e14130e0609492f080b132703081349000811">[email&#160;protected]</span></a>.
+    Disclaimer: This Notice is considered guidance pursuant to 49 CFR 
+part 5, subpart C. Except when referencing laws, regulations, policies, 
+or orders, the information in this Notice does not have the force and 
+effect of law and is not binding in any way. This Notice expands upon 
+the guidance in Safety Advisory 2025-02, published December 12, 2025 
+(90 FR 57811).
+
+SUPPLEMENTARY INFORMATION:
+
+Background
+
+    Safety Advisory 2025-02 described four fatal accidents between 
+April 2020 and December 2025 involving railroad employees providing 
+point protection during shoving or pushing movements over crossings 
+equipped only with flashing lights or passive warning devices. To 
+address the risks of these types of moves, the advisory recommended 
+that railroads take four specific actions involving job briefings, 
+operating rules, operational testing, and crossing-by-crossing 
+evaluations. The advisory emphasized that railroads should identify and 
+assess specific conditions that impede the performance of a complete 
+visual assessment of a crossing, including road layout, physical 
+obstructions or environmental conditions, and recommended that 
+railroads use a designated and qualified employee stationed at the 
+crossing to provide protection in these situations.
+    Since publication, two additional accidents currently under FRA 
+investigation have occurred during shoving movements across such 
+crossings, one fatally injuring a contractor operating a highway 
+vehicle and the other seriously injuring a railroad employee. Both 
+accidents may have been averted or the severity reduced, if the 
+recommendations of Safety Advisory 2025-02 were implemented fully by 
+railroads and railroad employees. FRA is issuing this notice to 
+reinforce the importance of
+
+[[Page 58952]]
+
+ensuring that operating rules, job briefings, training and operational 
+testing, and crossing hazard evaluations are performed to ensure that 
+the required ``track is clear'' determination is made before rail 
+equipment enters a crossing as part of a shoving or pushing movement.
+
+Recent Significant Accidents
+
+    On June 13, 2026, at 7:48 a.m., in Bensenville, Illinois, the 
+operator of a commercial fuel truck was fatally injured when the 
+leading railcar of a Canadian Pacific Kansas City shoving movement 
+struck the truck at a passively protected yard access crossing. A two-
+person remote control operator crew was conducting an eastward movement 
+inside a remote-control zone. The truck turned off a parallel road onto 
+the crossing without stopping, moving directly into the path of the 
+shove movement.
+    On August 6, 2026, at approximately 10:17 a.m., a CSX 
+Transportation conductor was seriously injured during a shoving 
+movement at an industrial facility in College Park, Georgia. The 
+conductor was riding the leading end of a boxcar and directing the 
+movement over a passively protected industry crossing. A truck driver 
+had departed the facility's loading dock and was positioning his 
+vehicle to back into a staging area when the leading railcar and 
+passenger side of the truck collided. The collision pinned the 
+conductor between the railcar and the truck, causing injuries that 
+required a below-the-knee amputation.
+
+Safety Advisory 2025-02
+
+    As originally issued, Safety Advisory 2025-02 included four 
+recommendations which are summarized as follows:
+    1. Rule Compliance and Job Briefings. Railroads should review their 
+rules related to 49 CFR 218.99, Shoving or pushing movements, to ensure 
+compliance with the comprehensive job briefing requirements of 49 CFR 
+218.99 (including procedures for establishing and verifying that a 
+track meets the ``track is clear'' criteria in 49 CFR 218.93).
+    2. Operating Rules. Railroads should review and update, if 
+necessary, operating rules required by 49 CFR 218.99(a)(1) to ensure 
+they account for all physical and operational factors necessary to 
+determine if ``track is clear.''
+    3. Targeted Operational Testing. Railroads should review and 
+evaluate operational testing data related to shoving or pushing moves, 
+prioritizing testing at crossings equipped with only flashing lights or 
+passive warning devices.
+    4. Crossing Hazard Evaluations. Railroads should implement a 
+program to evaluate whether operational, environmental and 
+infrastructure conditions at crossings equipped with only flashing 
+lights or passive warning devices permit employees to safely determine 
+if the track is clear. If an evaluation demonstrates that it is not 
+feasible for a riding employee to determine the ``track is clear'' as 
+required by 49 CFR 218.99(b)(3), the railroad should update its 
+operating rules and bulletins to require stop-and-flag protection at 
+the crossing.
+
+Additional Recommended Railroad Actions
+
+    FRA is revising the recommendations included in Safety Advisory 
+2025-02 as published on December 12, 2025, to add recommendations 5 and 
+6 as follows:
+    5. Direct Employee Briefings. Railroads should immediately 
+distribute Safety Advisory 2025-02 and this notice to all operational 
+supervisors, safety committees, and field personnel. Railroads should 
+also conduct direct, face-to-face briefings with all operating 
+employees who perform or oversee shoving or pushing movements. The 
+briefings should emphasize 49 CFR 218.99(b) (specifically the point 
+protection requirements under paragraph (b)(3)), the ``track is clear'' 
+criteria of 49 CFR 218.93, and related operating rules or bulletins.
+    6. Immediately Correct Training and Qualification Program 
+Deficiencies. Railroads should immediately review their written 
+instruction, training, and examination programs required by 49 CFR 
+218.95 for employees who perform duties subject to subpart F--Handling 
+Equipment, Switches, and Fixed Derails, including employees who direct, 
+control, or provide point protection for shoving or pushing movements. 
+The review should determine whether those programs adequately address 
+the point-protection requirements in 49 CFR 218.99(b)(3), the ``track 
+is clear'' determination in 49 CFR 218.93, the consequences of 
+noncompliance, and applicable operating rules. Railroads should 
+immediately correct any program deficiencies, provide supplemental 
+instruction, training, and examination as necessary, and verify from 
+the records required by 49 CFR 218.95(a)(5) and (b) that each affected 
+employee has been qualified on the applicable rules within the previous 
+three years, as required by 49 CFR 218.95(a)(4).
+
+Conclusion
+
+    FRA encourages railroads to take actions consistent with Safety 
+Advisory 2025-02, as originally published, the additional 
+recommendations in this notice, and any other complementary actions 
+necessary to ensure the safety of rail transportation. Further, FRA 
+will maintain continuous oversight regarding adherence to the 
+requirements set forth in 49 CFR 218.99. This includes verifying 
+compliance with the mandatory ``track is clear'' determination 
+specified in 49 CFR 218.99(b) and defined under 49 CFR 218.93, 
+conducted through systematic field inspections and the detailed 
+analysis of railroad operational testing records. FRA may modify Safety 
+Advisory 2025-02, issue additional safety advisories, or take other 
+action necessary to ensure the highest level of safety on the Nation's 
+railroads, including pursuing other corrective measures under its rail 
+safety authority.
+
+    Issued in Washington, DC, under authority delegated in 49 CFR 
+1.89.
+John Karl Alexy,
+Associate Administrator for Railroad Safety, Chief Safety Officer.
+[FR Doc. 2026-19031 Filed 9-16-26; 8:45 am]
+BILLING CODE 4910-06-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

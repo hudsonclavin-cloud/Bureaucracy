@@ -1,0 +1,154 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 167 (Monday, August 31, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 167 (Monday, August 31, 2026)]
+[Rules and Regulations]
+[Pages 55735-55737]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: C3-2026-15190]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+DEPARTMENT OF HOMELAND SECURITY
+
+8 CFR Part 208
+
+[CIS No. 2851-26; DHS Docket No. USCIS-2026-0199]
+RIN 1615-AD18
+
+
+Affirmative Asylum Referrals Without Interview
+
+Correction
+
+[[Page 55736]]
+
+
+    Editorial note: This document is the only published correction 
+to 2026-15190. Due to technical issues, documents numbered C1-2026-
+15190 and C2-2026-15190 do not exist.
+
+    In rule document 2026-15190 beginning on page 47101 in the issue of 
+Tuesday, July 28, make the following change
+    On page 47119, Table 3 should appear as follows:
+
+                              Table 3--Summary of the Cost and Benefits of the Rule
+----------------------------------------------------------------------------------------------------------------
+                                    Description of the changes
+              Changes                 to the regulatory text        Estimated benefits         Estimated costs
+----------------------------------------------------------------------------------------------------------------
+Referral of an affirmative asylum   Amend regulations to        Applicants--                Applicants--
+ application to EOIR without         remove language stating    <bullet> Reduced applicant  <bullet> Possibility
+ interview.                          that an AO ``in an          wait times and faster       of increased wait
+                                     interview'' shall review    case resolution at USCIS    times and slower
+                                     the application and give    for both meritorious        case resolution for
+                                     the alien the opportunity   claims and referrals..      some aliens who
+                                     to present any relevant    [cir] Earlier clarity and    under the previous
+                                     and useful information      less time in legal          process would have
+                                     bearing on any              uncertainty..               asylum granted by
+                                     prohibitions on filing.    [cir] Faster access to       USCIS.
+                                    Update to 8 CFR 208.4(a)..   long-term protection and   Government--
+                                    Amend regulations to         family re-unification..    <bullet> Possible
+                                     permit an AO to refer an   [cir] Better preservation    costs to DOJ to
+                                     affirmative Form I-589 to   of evidence..               develop certain
+                                     EOIR without interview,    [cir] Earlier work           elements of the
+                                     based on the record and     authorization for aliens    case during removal
+                                     other relevant evidence..   who are approvable..        proceedings where
+                                    Addition of 8 CFR Sec.      [cir] Earlier access to      USCIS no longer
+                                     208.9(a)(2)..               INA 240 removal             performs an
+                                    Amend regulations to         proceedings..               interview.
+                                     remove language referring  [cir] Earlier access to     <bullet> Possible
+                                     to ``right to an''          procedural protections..    new costs to DOJ
+                                     interview..                [cir] Reduced procedural     for processing
+                                    Update to 8 CFR Sec.         redundancy..                referred asylum
+                                     208.10..                   <bullet> Better              cases that USCIS
+                                    Amend regulations to         understanding of the        could have granted.
+                                     include that an AO can      asylum process..
+                                     refer an asylum            [cir] Explaining that an
+                                     application to EOIR         interview may not be
+                                     without offering an         offered for all cases..
+                                     opportunity for an         [cir] Greater awareness to
+                                     interview, and to remove    submit any and all
+                                     language referring to       evidence in support of
+                                     ``applicant's right to      the asylum application at
+                                     an'' interview..            the time of filing..
+                                    Update to 8 CFR Sec.        [cir] Improved application
+                                     208.14(c)..                 quality and completeness..
+                                    Amend regulations to        [cir] Aliens who are
+                                     remove the requirement      better prepared for the
+                                     that a letter               asylum process..
+                                     communicating the basis    Government--..............
+                                     for referral of asylum     <bullet> Increased
+                                     include an assessment of    operational efficiency
+                                     the alien's credibility..   and reduction in USCIS'
+                                    Update to 8 CFR Sec.         affirmative asylum
+                                     208.19..                    backlog..
+                                    Amend previous agency       [cir] Time and resource
+                                     practice so that an AO      savings (AO time,
+                                     may refer an application    interpreter resources,
+                                     as a matter of discretion   and administrative
+                                     without first making an     support) for USCIS that
+                                     eligibility                 could be reallocated to
+                                     determination. (No change   other priority caseloads..
+                                     to a regulatory            [cir] More efficient
+                                     provision)..                adjudications within
+                                                                 USCIS, especially in
+                                                                 cases where aliens
+                                                                 clearly fail to meet
+                                                                 their burden to establish
+                                                                 eligibility..
+                                                                [cir] Reduced duplicative
+                                                                 work for USCIS and EOIR..
+                                                                [cir] Give USCIS
+                                                                 flexibility to issue
+                                                                 future policy guidance
+                                                                 about which categories of
+                                                                 cases should be
+                                                                 prioritized for referral
+                                                                 without interview..
+                                                                [cir] Give AOs the ability
+                                                                 to focus a decision
+                                                                 letter on the basis for
+                                                                 referral, where
+                                                                 credibility is not the
+                                                                 basis for referral..
+                                                                [cir] More efficient
+                                                                 drafting of referral
+                                                                 decision letters..
+                                                                <bullet> Improvements to
+                                                                 national security and
+                                                                 public safety.
+                                                                [cir] Accelerate
+                                                                 adjudication and reduce
+                                                                 the amount of time that
+                                                                 potentially dangerous
+                                                                 aliens remain in the
+                                                                 community.
+                                                                [cir] Reduce the number of
+                                                                 in-person encounters in
+                                                                 USCIS facilities for
+                                                                 ineligible aliens who
+                                                                 also pose a danger to the
+                                                                 public, thereby lowering
+                                                                 the exposure risk for
+                                                                 AOs, interpreters,
+                                                                 attorneys, and other
+                                                                 government staff working
+                                                                 in public-facing
+                                                                 interview spaces.
+----------------------------------------------------------------------------------------------------------------
+Source: USCIS Analysis.
+
+
+[[Page 55737]]
+
+[FR Doc. C3-2026-15190 Filed 8-28-26; 8:45 am]
+BILLING CODE 0099-10-D
+
+
+</pre></body>
+</html>

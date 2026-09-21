@@ -1,0 +1,251 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 156 (Friday, August 14, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 156 (Friday, August 14, 2026)]
+[Notices]
+[Pages 52664-52666]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-16661]
+
+
+-----------------------------------------------------------------------
+
+DEPARTMENT OF AGRICULTURE
+
+Farm Service Agency
+
+[Docket ID FSA-2023-0020]
+
+
+Notice; Emergency Relief Program 2022 (ERP 2022)
+
+AGENCY: Farm Service Agency, USDA.
+
+ACTION: Notice.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The Farm Service Agency (FSA) is issuing this notice to 
+announce how it will implement a provision of the Full-Year Continuing 
+Appropriations and Extensions Act, 2025, to allow producers who, in 
+certain circumstances would need to repay ERP 2022 payments, to retain 
+those payments, not to exceed 90 percent of the producer's revenue 
+losses, if a de minimis amount of a producer's revenue loss is 
+attributable to crops that were not insured or covered under the 
+Noninsured Crop Disaster Assistance Program (NAP). Through this Notice, 
+the Secretary is defining ``de minimis.''
+
+FOR FURTHER INFORMATION CONTACT: Michael Walter; telephone: (816) 491-
+6934; or email: <a href="/cdn-cgi/l/email-protection#91dcf8f2f9f0f4fdbfc6f0fde5f4e3a0d1e4e2f5f0bff6fee7"><span class="__cf_email__" data-cfemail="8ac7e3e9e2ebefe6a4ddebe6feeff8bbcafff9eeeba4ede5fc">[email&#160;protected]</span></a>. Individuals with disabilities 
+who require alternative means for communication should contact the USDA 
+Target Center at (202) 720-2600 (voice and text telephone (TTY mode)) 
+or dial 711 for Telecommunications Relay Service (both voice and text 
+telephone users can initiate this call from any telephone).
+
+SUPPLEMENTARY INFORMATION:
+
+Background
+
+    ERP 2022 provided payments to eligible crop producers for losses 
+due to qualifying disaster events including wildfires, hurricanes, 
+floods, derechos, excessive heat, tornadoes, winter storms, freeze 
+(including a polar vortex), smoke exposure, excessive moisture, 
+qualifying drought, and related conditions that occurred in calendar 
+year 2022. ERP 2022 was authorized by Title I of the Disaster Relief 
+Supplemental Appropriations Act, 2023 (Division N of the Consolidated 
+Appropriations Act, 2023; Pub. L. 117-328), which incorporated certain 
+provisos from Title I of the Disaster Relief Supplemental 
+Appropriations Act, 2022 (Division B of Pub. L. 117-43), including the 
+tenth and eleventh provisos, which specify that:
+    <bullet> The total amount of payments received under ERP 2022 and 
+applicable policies of crop insurance under the Federal Crop Insurance 
+Act (7 U.S.C. 1501 et seq.) or NAP under section 196 of the Federal 
+Agriculture Improvement and Reform Act of 1996 (7 U.S.C. 7333) (minus 
+any premiums or fees paid for such coverages) shall not exceed 90 
+percent of the loss as determined by the Secretary; and
+    <bullet> The total amount of payments received under ERP 2022 for 
+producers who did not obtain a policy or plan of insurance for an 
+insurable commodity for the applicable crop year under the Federal Crop 
+Insurance Act (7 U.S.C. 1501 et seq.) for the crop incurring the losses 
+or did not file the required paperwork and pay the service fee by the 
+applicable State filing deadline for a noninsurable commodity for the 
+applicable crop year under NAP for the crop incurring the losses shall 
+not exceed 70 percent of the loss as determined by the Secretary.
+    FSA announced ERP 2022 in a Notice of Funds Availability (NOFA) 
+published in the Federal Register on October 31, 2023 (88 FR 74404), 
+and the application period for ERP 2022 ended on August 14, 2024.\1\ 
+FSA administered ERP 2022 in two tracks. Track 1 used a streamlined 
+process with pre-filled application forms for producers who previously 
+received a NAP payment or a Federal crop insurance indemnity for their 
+loss. Track 2 provided payments for other eligible losses through a 
+revenue-based approach for which producers submitted the information 
+required to calculate a payment including their benchmark and disaster 
+year revenue for all eligible crops. To apply for Track 2, producers 
+were required to certify whether all eligible crops were insured or 
+covered by NAP, and FSA used this certification to determine the ERP 
+factor that was used when calculating their Track 2 payment. If a 
+producer answered ``yes'' in Item 16 on the application form, an ERP 
+factor of 90 percent was used, and if a producer answered ``no'', an 
+ERP factor of 70 percent was used to ensure that payments did not 
+exceed the maximum
+
+[[Page 52665]]
+
+amount established in the tenth and eleventh provisos.
+---------------------------------------------------------------------------
+
+    \1\ See <a href="https://www.fsa.usda.gov/news-room/news-releases/2024/usda-announces-august-14-application-deadline-for-emergency-relief-program-assistance-for-commodity-and-specialty-crop-producers-impacted-by-2022-natural-disasters">https://www.fsa.usda.gov/news-room/news-releases/2024/usda-announces-august-14-application-deadline-for-emergency-relief-program-assistance-for-commodity-and-specialty-crop-producers-impacted-by-2022-natural-disasters</a>.
+---------------------------------------------------------------------------
+
+    In certain instances, a producer answered ``yes'' in Item 16 on the 
+application form, certifying that all eligible crops were insured or 
+covered by NAP, even though they also grew another crop that was not 
+insured or covered under NAP. In some instances, the producer had no 
+(or minimal) revenue loss attributable to an eligible crop that was not 
+insured or covered under NAP. As a result of these inaccurate 
+certifications, the producer's payment was calculated using an 
+incorrect ERP factor (90 percent, rather than 70 percent), resulting in 
+an overpayment. The new de minimis provision in the Full-Year 
+Continuing Appropriations and Extensions Act, 2025 (Pub. L. 119-4), 
+discussed below, addresses these cases, where the revenue loss 
+associated with the non-insured (or non-covered) crop was de minimis. 
+If a producer's revenue loss attributable to non-insured (or non-
+covered) crops is de minimis, as defined below, the producer may retain 
+their full ERP 2022 payment calculated using the 90 percent factor, 
+which would otherwise be considered an overpayment.
+    Section 1207 of the Full-Year Continuing Appropriations and 
+Extensions Act, 2025, amended Title I of division N of the Consolidated 
+Appropriations Act, 2023 (Pub. L. 117-328) to specify that ``the 
+Secretary shall allow producers to retain payments not to exceed 90 
+percent of the producer's revenue losses (as determined by the 
+Secretary) if the Secretary determines a de minimis amount, as defined 
+by the Secretary, of a producer's revenue loss is attributable to crops 
+for which the producer did not insure or obtain coverage under the 
+Noninsured Crop Disaster Assistance Program under section 196 of the 
+Federal Agriculture Improvement and Reform Act of 1996 (7 U.S.C. 
+7333).'' This statutory provision only allows a producer to retain an 
+ERP 2022 Track 2 payment that was previously issued; FSA is not 
+reopening the ERP 2022 application period to accept new applications or 
+allowing producers to amend previously filed ERP 2022 applications.
+    For the purpose of implementing this provision of the Full-Year 
+Continuing Appropriations and Extensions Act, 2025, ``a de minimis 
+amount'' means that a producer's revenue loss attributable to crops for 
+which the producer did not insure or obtain NAP coverage is less than 
+or equal to 10 percent of the total revenue loss for all eligible crops 
+that was reported on the producer's ERP 2022 application.
+
+Calculation
+
+    To determine the percentage of a producer's total revenue loss 
+attributable to crops for which the producer did not insure or obtain 
+NAP coverage, the revenue loss for those crops will be divided by a 
+producer's total revenue loss for all eligible crops. The total revenue 
+loss attributable to crops for which the producer did not insure or 
+obtain NAP coverage is equal to the revenue for all eligible crops, as 
+defined in the NOFA, for which the producer did not have Federal crop 
+insurance or NAP coverage. The total revenue loss for all eligible 
+crops is equal to a producer's benchmark year revenue minus their 
+disaster year revenue, as specified in the NOFA (88 FR 74411).
+    Example 1: A producer reported a benchmark year revenue of $200,000 
+and a disaster year revenue of $100,000 on FSA-524, which equals a 
+total revenue loss of $100,000 for all eligible crops, and the producer 
+certified that all eligible crops were insured or covered by NAP. The 
+producer grew several crops that were covered by a Federal crop 
+insurance plan and suffered revenue losses. The producer also grew 
+coastal hay, which was not insured or covered under NAP and did not 
+suffer a revenue loss. The producer had no revenue loss attributable to 
+an eligible crop that was not insured or covered under NAP; therefore, 
+the producer may certify that that loss is de minimis and the producer 
+may retain their Track 2 payment.
+    Example 2: A producer elected the tax year option (see 88 FR 74412) 
+and reported a benchmark year revenue of $200,000 and a disaster year 
+revenue of $100,000 on FSA-524, which equals a total revenue loss of 
+$100,000 for all eligible crops, and certified that all eligible crops 
+were insured or covered by NAP. The producer had insured and NAP-
+covered crops that suffered revenue losses. The producer also grew 
+tomatoes, not covered by Federal crop insurance or NAP, that suffered a 
+revenue loss. To determine whether the revenue loss for tomatoes was a 
+de minimis amount, the producer will calculate the following:
+    Producer certified benchmark year revenue for tomatoes = Allowable 
+gross revenue of $30,000 from sales of the crop
+    Producer certified disaster year revenue for tomatoes = Allowable 
+gross revenue of $5,000 from sales of the crop
+    Revenue loss attributed to tomatoes = $30,000-$5,000 = $25,000
+    The revenue loss of $25,000 for tomatoes is equal to 25 percent of 
+the total revenue loss for all eligible crops ($25,000 / $100,000), 
+which is above 10 percent; therefore, such revenue loss in this example 
+is not considered a de minimis amount and the producer must return the 
+overpayment that resulted from use of a 90 percent ERP factor rather 
+than a 70 percent factor.
+    Example 3: A producer elected the expected revenue option (see 88 
+FR 74413) and reported a benchmark year revenue of $500,000 and a 
+disaster year revenue of $200,000 on FSA-524, which equals a total 
+revenue loss of $300,000 for all eligible crops, and certified that all 
+eligible crops were insured or covered by NAP. The producer had insured 
+crops that suffered revenue losses. The producer also grew coastal hay, 
+not covered by Federal crop insurance or NAP, that suffered a revenue 
+loss. To determine whether the revenue loss for coastal hay was a de 
+minimis amount, the producer will calculate the following:
+    Benchmark year revenue for coastal hay = 100 expected acres x yield 
+of 3.5 bales per acre x price of $75 = $26,250
+    Disaster year revenue for coastal hay = 100 acres x production of 
+2.5 bales x price of $75 = $18,750
+    Revenue loss attributed to coastal hay = $26,250-$18,750 = $7,500
+    The revenue loss of $7,500 for coastal hay is equal to 2.5 percent 
+of the total revenue loss for all eligible crops ($7,500 / $300,000), 
+which is below 10 percent; therefore, such revenue loss in this example 
+is considered a de minimis amount and the producer may retain their 
+Track 2 payment.
+
+Certification
+
+    FSA has identified ERP 2022 participants who previously received an 
+ERP 2022 payment and certified that all eligible crops were insured or 
+covered under NAP but also had eligible crops that did not meet that 
+criteria. FSA will notify such producers of the opportunity to certify 
+that their revenue loss attributable to crops for which they did not 
+insure or obtain NAP coverage was a de minimis amount as defined in 
+this notice. Any producers who believe they may be eligible to retain 
+an overpayment under the provisions in this notice who do not receive 
+notification from FSA are encouraged to contact their FSA county 
+office. Producers may not submit new ERP 2022 applications or revise 
+their previously filed applications.
+    Eligible producers must submit form FSA-524-C, De Minimis Revenue 
+Loss Certification for Uninsured/Uncovered Crops, to their FSA county 
+office within 60 calendar days of notification by FSA. Participants are 
+required to retain
+
+[[Page 52666]]
+
+documentation in support of their certification for 3 years after the 
+date it is submitted to FSA. All information provided to FSA for 
+program eligibility and payment calculation purposes, including 
+certification on FSA-524-C, is subject to spot check. If requested by 
+FSA, producers must submit documentation to FSA to support their 
+certification within 30 calendar days of the request.
+    If a producer certified in error that all eligible crops were 
+insured or covered by NAP and their revenue loss for those crops is not 
+de minimis, the producer must repay the overpayment that resulted from 
+calculation of their payment using a 90 percent payment factor. FSA 
+will recalculate the ERP 2022 payment using a 70 percent payment 
+factor, and the producer must repay the overpayment amount as 
+instructed in the notification.
+
+Paperwork Reduction Act Requirements
+
+    The information collection request for ERP 2022, including producer 
+notification and the use of form FSA-524-C as described in this notice, 
+has been approved by the Office of Management and Budget (OMB) under 
+the Paperwork Reduction Act. The OMB control number for the approval is 
+0560-0316.
+
+William Beam,
+Administrator, Farm Service Agency.
+[FR Doc. 2026-16661 Filed 8-13-26; 8:45 am]
+BILLING CODE 3411-E2-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

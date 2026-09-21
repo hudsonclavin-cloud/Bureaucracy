@@ -1,0 +1,426 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 155 (Thursday, August 13, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 155 (Thursday, August 13, 2026)]
+[Rules and Regulations]
+[Pages 52243-52246]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-16515]
+
+
+-----------------------------------------------------------------------
+
+ENVIRONMENTAL PROTECTION AGENCY
+
+40 CFR Part 52
+
+[EPA-R07-OAR-2026-0463; FRL-13204-02-R7]
+
+
+Air Plan Approval; Missouri; Clean Data Determination for the 
+2015 8-Hour Ozone Standard for the Missouri Portion of the St. Louis 
+Nonattainment Area
+
+AGENCY: Environmental Protection Agency (EPA).
+
+ACTION: Final rule.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The Environmental Protection Agency (EPA) is determining under 
+the Clean Air Act (CAA) that the Missouri portion of the St. Louis, MO-
+IL bi-state nonattainment area has achieved clean data for the 2015 8-
+hour ozone National Ambient Air Quality Standard (NAAQS or standard). 
+This determination of clean data is based upon complete, quality-
+assured, and certified ambient air monitoring data for the 2023-2025 
+design value period showing that the Missouri portion of the area 
+achieved attainment of the 2015 ozone NAAQS. The 2023-2025 design value 
+relies upon EPA concurrence on a portion of the exceptional events 
+request as submitted by the Missouri Department of Natural Resources 
+(MoDNR) on November 3, 2025, and concurred on by the EPA on January 27, 
+2026. The EPA is also approving Missouri's November 3, 2025, clean data 
+determination request. This final clean data determination suspends the 
+obligations of the State of Missouri to submit certain nonattainment 
+area planning requirements for as long as the Missouri portion of the 
+St. Louis area continues to attain the 2015 ozone NAAQS. In a separate 
+action, the EPA is finalizing a similar determination for the Illinois 
+portion of the St. Louis area.
+
+DATES: This final rule is effective on September 14, 2026.
+
+ADDRESSES: The EPA has established a docket for this action under 
+Docket ID No. EPA-R07-OAR-2026-0463. All documents in the docket are 
+listed on the <a href="https://www.regulations.gov">https://www.regulations.gov</a> website. Although listed in 
+the index, some information is not publicly available, i.e., 
+Confidential Business Information (CBI) or other information whose 
+disclosure is restricted by statute. Certain other material, such as 
+copyrighted material, is not placed on the internet and will be 
+publicly available only in hard copy form. Publicly available docket 
+materials are available through <a href="https://www.regulations.gov">https://www.regulations.gov</a> or please 
+contact the person identified in the FOR FURTHER
+
+[[Page 52244]]
+
+INFORMATION CONTACT section for additional information.
+
+FOR FURTHER INFORMATION CONTACT: Ashley Keas, Environmental Protection 
+Agency, Region 7 Office, Air and Radiation Division, 11201 Renner 
+Boulevard, Lenexa, Kansas 66219; telephone number: (913) 551-7629; 
+email address: <a href="/cdn-cgi/l/email-protection#6c07090d1f420d1f040009152c091c0d420b031a"><span class="__cf_email__" data-cfemail="650e0004164b04160d09001c250015044b020a13">[email&#160;protected]</span></a>.
+
+SUPPLEMENTARY INFORMATION: Throughout this document whenever ``we,'' 
+``us,'' or ``our'' is used, we mean the EPA. This SUPPLEMENTARY 
+INFORMATION section is arranged as follows:
+
+Table of Contents
+
+I. What is being addressed in this document?
+II. The EPA's Responses to Comments
+III. What action is the EPA taking?
+IV. Statutory and Executive Order Reviews
+
+I. What is being addressed in this document?
+
+    The EPA has determined that ground-level ozone is detrimental to 
+human health. On October 1, 2015, the EPA promulgated a revised 8-hour 
+ozone NAAQS of 0.070 parts per million (ppm). See 80 FR 65292 (October 
+26, 2015).
+    Upon promulgation of a new or revised NAAQS, section 107(d)(1)(B) 
+of the CAA requires the EPA to designate as nonattainment any areas 
+that are violating the NAAQS, based on the most recent three years of 
+quality-assured ozone monitoring data. On June 4, 2018 (83 FR 25776), 
+the EPA designated the St. Louis, MO-IL area as Marginal nonattainment 
+for the 2015 ozone NAAQS. The current nonattainment area includes Boles 
+Township of Franklin County, Jefferson County, St. Charles County, St. 
+Louis County, and St. Louis City in Missouri, and Madison County, 
+Monroe County, and St. Clair County in Illinois.
+    On October 7, 2022 (87 FR 60897), the EPA determined that the St. 
+Louis area did not attain the standard by the Marginal attainment date, 
+and the area was reclassified as Moderate by operation of law. More 
+recently, on November 25, 2024 (89 FR 92816), and December 17, 2024 (89 
+FR 101901), the EPA determined the Missouri portion of the area and the 
+Illinois portion of the area, respectively, did not attain the standard 
+by the Moderate attainment date, and both portions of the area were 
+reclassified as Serious by operation of law.\1\
+---------------------------------------------------------------------------
+
+    \1\ The EPA's rules dated November 24, 2024, and December 17, 
+2024, are the subject of ongoing litigation in the U.S. Court of 
+Appeals for the Eighth Circuit and the U.S. Court of Appeals for the 
+Seventh Circuit, respectively. Both cases are currently held in 
+abeyance. The U.S. Court of Appeals for the Eighth Circuit granted 
+Missouri's motion to stay the effectiveness of the underlying action 
+pending judicial review on June 6, 2025.
+---------------------------------------------------------------------------
+
+    On February 26, 2026 (91 FR 9159), the EPA published a notice of 
+proposed rulemaking (NPRM) which proposed to determine that the 
+Missouri portion of the St. Louis area attained the 2015 ozone NAAQS, 
+based upon complete, quality-assured, and certified ambient air 
+monitoring data for the 2023-2025 design value period.\2\ Such a 
+determination, based upon the EPA's Clean Data Policy, is known 
+informally as a clean data determination (CDD). As noted in the NPRM, 
+the Missouri portion of the St. Louis area's 3-year ozone design value 
+for 2023-2025 is 0.070 ppm, which meets the 2015 ozone NAAQS.
+---------------------------------------------------------------------------
+
+    \2\ Missouri requested to recertify 2024 and 2025 data via 
+letter to EPA on April 30, 2026. This recertification fixes minor 
+raw data gaps due to a systematic error found in the AQS upload 
+process for several continuous monitors in Missouri. However, this 
+update does not change any of the design values for any monitors in 
+the state's network. The EPA reviewed the data and concurred with 
+the recertification on May 8, 2026. Please see the updated memo to 
+file which discusses this process and includes the state's 
+recertification request.
+---------------------------------------------------------------------------
+
+    The EPA's proposed CDD relied upon EPA's concurrence on an 
+exceptional events demonstration submitted by Missouri on November 3, 
+2025. Missouri posted the demonstration for public comment after 
+engagement with EPA consistent with the process outlined in the EPA's 
+Exceptional Events Rule. The EPA concurred on a portion of the state's 
+demonstration on January 27, 2026. The EPA may defer action on 
+requested events which do not currently have regulatory significance. 
+See 81 FR 68216, 68269 (Oct. 3, 2016).
+    In the February 26, 2026, NPRM, the EPA proposed to take final 
+agency action to issue a CDD based on the concurred dates, which 
+removed the event-influenced data from the design value, and opened an 
+opportunity for public comment on the EPA's exceptional events 
+concurrence. The EPA responds to comments received in section II. of 
+this document.
+    This action does not constitute a determination of attainment by 
+the attainment date under CAA section 181(b)(2). In this action, the 
+EPA is considering the area's design value for the 2023-2025 period, 
+however the 2023-2025 design value does not serve as the area's most 
+recent complete and quality-assured design value available as of the 
+applicable attainment date.
+    This action does not constitute a redesignation of any portion of 
+the area to attainment of the 2015 ozone NAAQS under section 
+107(d)(3)(E) of the CAA, nor does it constitute approval of a 
+maintenance plan for any portion of the area as required under section 
+175A of the CAA, nor does it find that any portion of the area has met 
+all other requirements for redesignation. The Missouri portion of the 
+St. Louis area will remain designated nonattainment for the 2015 ozone 
+NAAQS until such time as the EPA determines that the Missouri portion 
+of the area meets CAA requirements for redesignation to attainment and 
+takes a separate action to redesignate the Missouri portion of the 
+area.
+
+II. The EPA's Responses to Comments
+
+    The public comment period on the EPA's proposed rule opened 
+February 26, 2026, the date of its publication in the Federal Register 
+and closed on March 30, 2026. During this period, the EPA received 
+comments from two entities: the Midwest Ozone Group and the Washington 
+University School of Law Interdisciplinary Environmental Clinic on 
+behalf of the Sierra Club (hereinafter referred to as the Sierra Club). 
+The Midwest Ozone Group supported the proposed action and requested its 
+finalization. In this section, the EPA provides a high-level summary of 
+the comments received from the Sierra Club and our responses. The EPA's 
+full responses to comments are included in a separate Response to 
+Comment (RTC) document included in the docket for this action.
+    The EPA's RTC summarizes the Sierra Club's concerns, including 
+assertions about the procedural adequacy of Missouri's exceptional 
+events demonstration, the timing and scope of the State's submission, 
+and the degree of public participation afforded during the State's 
+review process. In response, the EPA reiterates that Missouri complied 
+with all requirements of the Exceptional Events Rule, including public 
+notice, refinement of the technical documentation following the EPA's 
+initial feedback, and appropriate sequencing of the demonstration once 
+the data became regulatorily significant under 40 CFR 50.14. The EPA 
+therefore concludes that procedural concerns about the State's 
+development of its exceptional events demonstration do not undermine 
+the validity of the State's submission.
+    The EPA also responds to the Sierra Club's comments asserting that 
+the EPA selectively concurred on only a subset of the wildfire 
+influenced exceedance days submitted- by Missouri and that this 
+concurrence was intended to produce a desired regulatory outcome. The 
+EPA does not find merit in these claims and explains that only data
+
+[[Page 52245]]
+
+relevant to the regulatory determination in this action were subject to 
+review. The EPA's concurrence was based on a full technical evaluation 
+of each day that had regulatory significance to the CDD, and the EPA's 
+review of and concurrence on additional days was not required. As 
+explained in the NPRM and RTC, a design value at or below 0.070 ppm 
+demonstrates attainment under the 2015 ozone NAAQS and certified data 
+for all ozone monitors in the Missouri portion of the area for 2023 
+through 2025 meet that standard.
+    The EPA also responds to the Sierra Club's comments regarding long-
+term ozone trends, precursor emissions trajectories, and projected 
+future increases in emissions. In the RTC, the EPA concludes that such 
+issues fall outside the scope of the CDD, which is based solely on 
+complete, quality-assured monitoring data for the most recent three-
+year-period. The EPA notes that the exceedances in late 2025 cited by 
+commenters were fully accounted for in the design value calculations 
+for 2023-2025 that demonstrate attainment.
+    The EPA reviewed the Sierra Club's concerns about potential public 
+health implications associated with excluding wildfire-influenced-data 
+under the Exceptional Events Rule. The EPA acknowledges the health 
+impacts of exposure to high ozone concentrations. The EPA further notes 
+that the Exceptional Events Rule was established under the authority 
+granted by Congress under CAA section 319(b) and implemented by the EPA 
+to ensure that data influenced by uncontrollable natural events are not 
+used in regulatory determinations where doing so would be 
+inappropriate. The Sierra Club also expresses concerns that the State 
+is avoiding important planning and emissions reductions requirements 
+associated with the ozone NAAQS. As explained in the proposed rule and 
+the RTC, Missouri remains responsible for meeting all applicable State 
+Implementation Plan requirements until the area is redesignated to 
+attainment, and the suspension of certain attainment-planning-elements 
+under 40 CFR 51.1318 occurs only upon a final clean data finding and 
+only so long as the area continues to meet the standard.
+    In the RTC, the EPA also addresses comments questioning whether the 
+exceptional events demonstration sufficiently established a clear 
+causal relationship between wildfire smoke and the ozone exceedances on 
+the days for which the EPA concurred. Based on the complete technical 
+record and weight of evidence approach, including but not limited to 
+HYSPLIT back-trajectory-modeling, satellite observations, surface 
+measurements, statistical analyses, and supporting meteorological 
+evidence, the EPA concludes that the State provided an adequate 
+demonstration to support each concurrence day. The EPA explains in the 
+RTC that wildfire plumes originating from multiple fires can merge into 
+regional-scale smoke masses and that attribution to a single point 
+source is neither technically feasible nor required under the 
+Exceptional Events Rule. In addition, individual data elements such as 
+monitored black carbon concentrations or satellite snapshots must be 
+interpreted within the broader meteorological context and the full 
+weight of evidence, which supports the EPA's concurrence.
+    The EPA reviewed comment letters that Sierra Club previously 
+submitted to Missouri during the State's public comment process. The 
+Sierra Club incorporated by reference their previous comment letters in 
+the comment letter it submitted to the EPA. While these materials were 
+cited too generally to constitute significant comments requiring 
+individualized response, the EPA nonetheless evaluated them and 
+addressed the relevant issues within the scope of this federal action. 
+To the extent those materials addressed matters unrelated to the 
+proposed CDD, including redesignation requirements or broader air 
+quality planning questions, the EPA finds that they fall outside the 
+scope of this rulemaking.
+    Overall, the EPA concludes that none of the comments submitted 
+provide evidence to undermine the basis of the EPA's proposed CDD. The 
+record demonstrates that Missouri submitted complete and procedurally 
+valid documentation under the Exceptional Events Rule; that the EPA's 
+technical review was consistent with the CAA, its implementing 
+regulations, and relevant guidance; and that the certified and quality-
+assured-2023-2025 monitoring data demonstrate attainment of the 2015 
+ozone NAAQS in the Missouri portion of the St. Louis nonattainment 
+area. Accordingly, the EPA is finalizing the Clean Data Determination 
+as proposed.
+
+III. What action is the EPA taking?
+
+    The EPA is making a determination under the CAA that the Missouri 
+portion of the St. Louis area has attained the 2015 ozone NAAQS. This 
+determination is based upon complete, quality-assured, and certified 
+ambient air monitoring data for the 2023-2025 design value period 
+showing that the area achieved attainment of the 2015 ozone NAAQS. The 
+EPA is also taking final agency action on an exceptional events request 
+submitted by MoDNR on November 3, 2025, and concurred on by the EPA on 
+January 27, 2026. As provided in 40 CFR 51.1318, through this final 
+determination, the requirements for the area to submit attainment 
+demonstrations and associated RACM, RFP plans, contingency measures for 
+failure to attain or make reasonable progress, and certain other 
+planning requirements related to attainment of the 2015 ozone NAAQS, 
+are suspended for as long as the area continues to attain the 2015 
+ozone NAAQS. In a separate action, the EPA is finalizing a similar 
+determination for the Illinois portion of the St. Louis area.
+
+IV. Statutory and Executive Order Reviews
+
+    Additional information about these statutes and Executive Orders 
+can be found at <a href="https://www.epa.gov/lawsregulations/laws-and-executive-orders">https://www.epa.gov/lawsregulations/laws-and-executive-orders</a>.
+
+A. Executive Order 12866: Regulatory Planning and Review and Executive 
+Order 13563: Improving Regulation and Regulatory Review
+
+    This action is not a significant regulatory action and was 
+therefore not submitted to the Office of Management and Budget (OMB) 
+for review. This action issues a final clean data determination for the 
+Missouri portion of the St. Louis area for the 2015 ozone NAAQS.
+
+B. Executive Order 14192: Unleashing Prosperity Through Deregulation
+
+    Executive Order 14192 does not apply because it is not a 
+significant regulatory action and is therefore exempted from review 
+under Executive Order 12866.
+
+C. Paperwork Reduction Act (PRA)
+
+    This rule does not impose an information collection burden under 
+the provisions of the Paperwork Reduction Act of 1995 (44 U.S.C. 3501 
+et seq.).
+
+D. Regulatory Flexibility Act (RFA)
+
+    I certify that this action will not have a significant economic 
+impact on a substantial number of small entities under the RFA. This 
+action will not impose any requirements on small entities beyond those 
+imposed by state law. The clean data determination does not create any 
+new requirements and does not directly regulate any entities.
+
+E. Unfunded Mandates Reform Act (UMRA)
+
+    This action does not contain any unfunded mandate as described in 
+UMRA, 2 U.S.C. 1531-1538, and does not significantly or uniquely affect 
+small
+
+[[Page 52246]]
+
+governments. This action imposes no enforceable duty on any state, 
+local or Tribal governments or the private sector.
+
+F. Executive Order 13132: Federalism
+
+    This action does not have federalism implications. It will not have 
+substantial direct effects on the states, on the relationship between 
+the national government and the states, or on the distribution of power 
+and responsibilities among the various levels of government. This 
+action finalizes a clean data determination for the Missouri portion of 
+the St. Louis area under the CAA.
+
+G. Executive Order 13175: Coordination With Indian Tribal Governments
+
+    This rule does not have Tribal implications, as specified in 
+Executive Order 13175. It will not have substantial direct effects on 
+Tribal governments. Thus, Executive Order 13175 does not apply to this 
+rule.
+
+H. Executive Order 13045: Protection of Children From Environmental 
+Health Risks and Safety Risks
+
+    The EPA interprets Executive Order 13045 as applying only to those 
+regulatory actions that concern environmental health or safety risks 
+that the EPA has reason to believe may disproportionately affect 
+children, per the definition of ``covered regulatory action'' in 
+section 2-202 of the Executive Order. Therefore, this action is not 
+subject to Executive Order 13045 because it is merely a clean data 
+determination.
+
+I. Executive Order 13211: Actions That Significantly Affect Energy 
+Supply, Distribution, or Use
+
+    This action is not subject to Executive Order 13211, because it is 
+not a significant regulatory action under Executive Order 12866.
+    This action is subject to the Congressional Review Act, and the EPA 
+will submit a rule report to each House of the Congress and to the 
+Comptroller General of the United States. This action is not a ``major 
+rule'' as defined by 5 U.S.C. 804(2).
+    Under section 307(b)(1) of the Clean Air Act, petitions for 
+judicial review of this action must be filed in the United States Court 
+of Appeals for the appropriate circuit by October 13, 2026. Filing a 
+petition for reconsideration by the Administrator of this final rule 
+does not affect the finality of this action for the purposes of 
+judicial review nor does it extend the time within which a petition for 
+judicial review may be filed, and shall not postpone the effectiveness 
+of such rule or action. This action may not be challenged later in 
+proceedings to enforce its requirements. (See section 307(b)(2).)
+
+List of Subjects in 40 CFR Part 52
+
+    Environmental protection, Air pollution control, Incorporation by 
+reference, Intergovernmental relations, Nitrogen dioxide, Ozone, 
+Reporting and recordkeeping requirements, Volatile organic compounds.
+
+    Dated: August 3, 2026.
+James Macy,
+Regional Administrator, Region 7.
+
+    For the reasons stated in the preamble, the EPA amends 40 CFR part 
+52 as set forth below:
+
+PART 52--APPROVAL AND PROMULGATION OF IMPLEMENTATION PLANS
+
+0
+1. The authority citation for part 52 continues to read as follows:
+
+    Authority:  42 U.S.C. 7401 et seq.
+
+Subpart AA--Missouri
+
+0
+2. In Sec.  52.1342, add paragraph (f) to read as follows:
+
+
+Sec.  52.1342  Control strategy: Ozone.
+
+* * * * *
+    (f) Determination of attainment. The EPA has determined, as of 
+August 13, 2026, that the St. Louis Ozone nonattainment area has 
+attained the 2015 8-hour Ozone NAAQS. This determination suspends the 
+requirements for this area to submit an attainment demonstration, 
+associated reasonably available control measures, reasonable further 
+progress, contingency measures, and other plan elements related to 
+attainment of the standard for as long as the area continues to meet 
+the 2015 8-hour Ozone NAAQS.
+
+[FR Doc. 2026-16515 Filed 8-12-26; 8:45 am]
+BILLING CODE 6560-50-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

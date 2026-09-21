@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20260921d";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260921d";
+import { createGovernmentGraph } from "./graph.js?v=20260921e";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260921e";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -1644,6 +1644,12 @@ function renderVerificationPanel(data, isRoot = false) {
       // in this project can reach.
       listed_as_its_own_entry_in_us_government_manual:
         "The United States Government Manual carries an entry for the office itself",
+      // Worded as what was read and when. Every rule and notice ends with a
+      // signature block naming the signing official and their title; this is
+      // the title, never the name. The document and its date follow below,
+      // because a signature is a fact about one moment and not about now.
+      signed_a_federal_register_document:
+        "An official signing a published Federal Register document stated this title",
     };
     const SOURCE_TEXT = {
       federal_register_agency_directory: "the Federal Register's agency directory",
@@ -1751,6 +1757,35 @@ function renderVerificationPanel(data, isRoot = false) {
       checkLine += alreadyOffice
         ? `${heading}${printedAs}${officeEdition}`
         : ` · the United States Government Manual also carries a top-level entry for the office${heading}${printedAs}${officeEdition}`;
+    }
+    // A Federal Register signature, beside any other claim or as the claim
+    // itself. The document and its publication date are printed because that
+    // is the whole of what a signature establishes: the post existed and was
+    // filled on that day. The signer is never named — the name line of the
+    // block is read only so as to be excluded — so the sentence must not read
+    // as a statement about who holds the post now.
+    const signature = data.federalRegisterSignature;
+    if (signature && typeof signature === "object") {
+      const already = String(data.verificationMethod || "") === "signed_a_federal_register_document";
+      const quoted = signature.listedTitle ? ` as "${signature.listedTitle}"` : "";
+      const kind = String(signature.documentType || "document").toLowerCase();
+      const asDate = (value) =>
+        value ? new Date(`${value}T00:00:00Z`).toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric", timeZone: "UTC" }) : "";
+      // The Register states a signing date on some documents and not others.
+      // Where it does not, the only date that can be cited is the day it was
+      // published, and the signature is necessarily on or before it.
+      const signed = asDate(signature.signingDate);
+      const published = asDate(signature.publicationDate);
+      const when = signed ? `, signed ${signed}` : published ? `, published ${published}` : "";
+      const doc = `${kind} ${signature.documentNumber}${when}`;
+      checkLine += already
+        ? `${quoted} on ${doc}`
+        : ` · an official signing Federal Register ${doc} stated this title${quoted}`;
+      if (signature.occurrences > 1) checkLine += ` (${signature.occurrences} of the documents read carry it)`;
+      checkLine += signed
+        ? ` — the office was filled on that day`
+        : ` — the office was filled when that document was signed, on or before the day it was published`;
+      checkLine += `; the signer's name is not read, and this says nothing about who holds it now`;
     }
     // Both facts, where both are true: a directory lists it, and its own
     // page was read and did not name it. Withdrawing the badge is right —

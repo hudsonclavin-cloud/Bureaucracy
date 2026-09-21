@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-09-21T16:29:42Z",
+ "url": "https://www.federalregister.gov/documents/full_text/text/2006/03/21/06-2683.txt",
+ "status": 200,
+ "final_url": "https://www.federalregister.gov/documents/full_text/text/2006/03/21/06-2683.txt",
+ "content_type": "text/plain",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /documents/full_text/text/2006/03/21/06-2683.txt",
+ "bytes": 6207,
+ "sha256": "e7a3fa9b55c8219fa63afc10c28ae5e5a8945784178dc191ce0c5dfbb7c4ab7c",
+ "error": null
+}

@@ -1,0 +1,209 @@
+<html>
+<head>
+<title>Federal Register, Volume 73 Issue 45 (Thursday, March 6, 2008)</title>
+</head>
+<body><pre>
+[Federal Register Volume 73, Number 45 (Thursday, March 6, 2008)]
+[Notices]
+[Pages 12147-12148]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: E8-4373]
+
+
+-----------------------------------------------------------------------
+
+DEPARTMENT OF DEFENSE
+
+Defense Intelligence Agency
+
+[DoD-2008-OS-0023]
+
+
+Privacy Act of 1974; Systems of Records
+
+AGENCY: Defense Intelligence Agency, DoD.
+
+ACTION: Notice to Amend a System of Records.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The Defense Intelligence Agency is amending a system of 
+records notice to its existing inventory of record systems subject to 
+the Privacy Act of 1974 (5 U.S.C. 552a), as amended.
+
+DATES: This proposed action will be effective without further notice on 
+April 7, 2008 unless comments are received that would result in a 
+contrary determination.
+
+ADDRESSES: Freedom of Information Office, Defense Intelligence Agency 
+(DAN-1A), 200 MacDill Blvd, Washington, DC 20340-5100.
+
+FOR FURTHER INFORMATION CONTACT: Ms. Theresa Lowery at (202) 231-1193.
+
+SUPPLEMENTARY INFORMATION: The Defense Intelligence Agency notices for 
+systems of records subject to the Privacy Act of 1974 (5 U.S.C. 552a), 
+as amended, have been published in the Federal Register and are 
+available from the address above.
+    The specific changes to the record system being amended are set 
+forth below followed by the notice, as amended, published in its 
+entirety. The proposed amendment is not within the purview of 
+subsection (r) of the Privacy Act of 1974, (5 U.S.C. 552a), as amended, 
+which requires the submission of a new or altered system report.
+
+    Dated: February 29, 2008.
+L.M. Bynum,
+Alternate Federal Register Liaison Officer, Department of Defense.
+LDIA 07-0002
+
+Changes:
+System name:
+    Delete entry ``Special Program Information System'' and replace 
+with ``Special Program Information Systems.''
+* * * * *
+
+Categories of individuals covered by the system:
+    Delete entry ``Defense Intelligence Agency personnel, military 
+personnel, and contractor employees'' and replace with ``Civilian, 
+military and contract Intelligence Community employees.''
+
+Categories of records in the system:
+    Delete entry ``Individual's full name, Social Security Number 
+(SSN), employee's type (civilian, military or contractor), organization 
+name, and type of clearance level'' and replace with ``Individual's 
+full name, Social Security Number (SSN), employee's type (civilian, 
+military or contractor), organization name, type of clearance level, 
+and name of database to which access has been granted.''
+* * * * *
+
+Purpose(s):
+    Delete entry ``To maintain a database of Defense Intelligence 
+Agency personnel granted access to specific information within the 
+Intelligence Community'' and replace with ``To maintain a database of 
+Intelligence Community personnel granted access to specific information 
+within the Intelligence Community.''
+* * * * *
+
+Retention and disposal:
+    Delete entry ``Data will be maintained as long as users maintain an 
+active clearance in a DIA Security System. Once their clearance is no 
+longer active, their entry will be removed automatically'' and replace 
+with ``Data will be maintained as long as users require access to 
+respective databases.''
+
+System manager(s) and address:
+    Delete entry ``Chief, Program Development Branch, Office for 
+Security Operations and Anti-Terrorism, Defense Intelligence Agency, 
+200 MacDill Blvd., Washington, DC 20340-5100'' and replace with 
+Directorate for Information Management and Chief Information Officer, 
+Defense Intelligence Agency, 200 MacDill Blvd., Washington, DC 20340-
+5100.''
+* * * * *
+
+Record source categories:
+    Delete entry ``By the individuals, from other databases, or from 
+external sources'' and replace with ``Information provided by 
+individuals requesting access and information derived from other 
+databases to verify eligibility, such as security clearance level.''
+* * * * *
+LDIA 07-0002
+
+System name:
+    Special Program Information Systems.
+
+System location:
+    Defense Intelligence Agency, 200 MacDill Boulevard, Washington, DC 
+20340.
+
+Categories of individuals covered by the system:
+    Civilian, military and contract Intelligence Community employees.
+
+Categories of records in the system:
+    Individual's full name, Social Security Number (SSN), employee's 
+type (civilian, military or contractor), organization name, type of 
+clearance level, and name of database to which access has been granted.
+
+Authority for maintenance of the system:
+    Executive Order 12958, Classified National Security Information; 
+DoD Instruction 5205.07, Special Access Program (SAP) Policy; DoD 
+Instruction 5205.11, Management, Administration, and Oversight of DoD 
+Special Access Programs (SAPs); DoD 5200.1-R, Information Security 
+Program; DIA Manual 56-1, 31 Special Program Management; and E.O. 9397 
+(SSN).
+
+Purpose(s):
+    To maintain a database of Intelligence Community personnel granted 
+access to specific information within the Intelligence Community.
+
+Routine uses of records maintained in the system, including categories 
+of users and the purposes of such uses:
+    In addition to those disclosures generally permitted under 5 U.S.C. 
+552a(b) of the Privacy Act, these records
+
+[[Page 12148]]
+
+or information contained therein may specifically be disclosed outside 
+the Department of Defense as a routine use pursuant to 5 U.S.C. 
+552a(b)(3) as follows:
+    The `Blanket Routine Uses' set forth at the beginning of the DIA's 
+compilation of systems of records notices apply to this system.
+
+Policies and practices for storing, retrieving, accessing, retaining, 
+and disposing of records in the system:
+Storage:
+    Paper records in file folders and electronic storage media.
+
+Retrievability:
+    Individual's name and Social Security Number (SSN).
+
+Safeguards:
+    Physical entry is restricted by the use of guards, locks, and 
+administrative procedures. Automated records are password controlled 
+with system-generated, forced password-change protocols or equipped 
+with ``Smart Card'' technology that requires the insertion of an 
+embedded identification card and entry of a PIN.
+
+Retention and disposal:
+    Data will be maintained as long as users require access to 
+respective databases.
+
+System manager(s) and address:
+    Directorate for Information Management and Chief Information 
+Officer, Defense Intelligence Agency, 200 MacDill Blvd, Washington, DC 
+20340-5100.
+
+Notification procedure:
+    Individuals seeking to determine whether information about 
+themselves is contained in this system of records should address 
+written inquiries to the DIA Privacy Office (DAN-1A), Defense 
+Intelligence Agency, 200 MacDill Blvd, Washington, DC 20340-5100.
+    Requests should contain individual's full name, current address, 
+telephone number, and Social Security Number (SSN).
+
+Record Access Procedures:
+    Individuals seeking access to information about themselves 
+contained in this system of records, should address written inquiries 
+to the DIA Privacy Official, Defense Intelligence Agency (DAN-1A), 200 
+MacDill Blvd, Washington, DC 20340-5100.
+    Requests should contain individual's full name, current address, 
+telephone number, and Social Security Number (SSN).
+
+Contesting record procedures:
+    DIA's rules for accessing records, for contesting contents and 
+appealing initial agency determinations are published in DIA 
+Instruction 5400.001 ``Defense Intelligence Agency Privacy Program'' 
+and DIA Instruction 5400.002, Freedom of Information Act.
+
+Record source categories:
+    Information provided by individuals requesting access and 
+information derived from other databases to verify eligibility, such as 
+security clearance level.
+
+Exemptions claimed for the system:
+    None.
+
+ [FR Doc. E8-4373 Filed 3-5-08; 8:45 am]
+BILLING CODE 5001-06-P
+
+
+</pre></body>
+</html>

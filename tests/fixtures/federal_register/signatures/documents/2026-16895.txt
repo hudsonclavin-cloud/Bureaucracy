@@ -1,0 +1,102 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 159 (Wednesday, August 19, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 159 (Wednesday, August 19, 2026)]
+[Notices]
+[Pages 53664-53665]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-16895]
+
+
+-----------------------------------------------------------------------
+
+DEPARTMENT OF LABOR
+
+Bureau of Labor Statistics
+
+
+Agency Information Collection Activities; Submission for OMB 
+Review; Consumer Price Index Commodities and Services Survey
+
+ACTION: Notice of availability; request for comments.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The Department of Labor (DOL) is submitting this Bureau of 
+Labor Statistics (BLS)-sponsored information collection request (ICR) 
+to the Office of Management and Budget (OMB) for review and approval in 
+accordance with the Paperwork Reduction Act of 1995 (PRA). Public 
+comments on the ICR are invited.
+
+DATES: The OMB will consider all written comments that the agency 
+receives on or before September 18, 2026.
+
+ADDRESSES: Written comments and recommendations for the proposed 
+information collection should be sent within 30 days of publication of 
+this notice to <a href="http://www.reginfo.gov/public/do/PRAMain">www.reginfo.gov/public/do/PRAMain</a>. Find this particular 
+information collection by selecting ``Currently under 30-day Review--
+Open for Public Comments'' or by using the search function.
+    Comments are invited on: (1) whether the collection of information 
+is necessary for the proper performance of the functions of the 
+Department, including whether the information will have practical 
+utility; (2) the accuracy of the agency's estimates of the burden and 
+cost of the collection of information, including the validity of the 
+methodology and assumptions used; (3) ways to enhance the quality, 
+utility and clarity of the information collection; and (4) ways to 
+minimize the burden of the collection of information on those who are 
+to respond, including the use of
+
+[[Page 53665]]
+
+automated collection techniques or other forms of information 
+technology.
+
+FOR FURTHER INFORMATION CONTACT: Nicole Bouchet by telephone at 202-
+693-0213, or by email at <a href="/cdn-cgi/l/email-protection#befaf1f2e1eeecffe1eeebfcf2f7fdfedad1d290d9d1c8"><span class="__cf_email__" data-cfemail="5d191211020d0f1c020d081f11141e1d393231733a322b">[email&#160;protected]</span></a>.
+
+SUPPLEMENTARY INFORMATION: The Consumer Price Index (CPI) is a measure 
+of the average change over time in the prices paid by consumers for a 
+market basket of consumer goods and services. Each month, BLS data 
+collectors called economic assistants, visit or call thousands of 
+retail stores, service establishments, rental units, and doctors' 
+offices, all over the United States to obtain information on the prices 
+of the thousands of items used to track and measure price changes in 
+the CPI. The collection of price data from retail establishments is 
+essential for the timely and accurate calculation of the commodities 
+and services component of the CPI. The CPI is then widely used as a 
+measure of inflation, indicator of the effectiveness of government 
+economic policy, deflator for other economic series, and as a means of 
+adjusting dollar values. For additional substantive information about 
+this ICR, see the related notice published in the Federal Register on 
+April 30, 2026 (91 FRN 23311).
+    This information collection is subject to the PRA. A Federal agency 
+generally cannot conduct or sponsor a collection of information, and 
+the public is generally not required to respond to an information 
+collection, unless the OMB approves it and displays a currently valid 
+OMB Control Number. In addition, notwithstanding any other provisions 
+of law, no person shall generally be subject to penalty for failing to 
+comply with a collection of information that does not display a valid 
+OMB Control Number. See 5 CFR 1320.5(a) and 1320.6.
+    Agency: DOL-BLS.
+    Title of Collection: Consumer Price Index Commodities and Services 
+Survey.
+    OMB Control Number: 1220-0039.
+    Affected Public: Businesses or other for-profits; Not-for-profit 
+institutions; State, Local, or Tribal Governments.
+    Total Estimated Number of Respondents: 39,571.
+    Total Estimated Number of Responses: 279,299.
+    Total Estimated Annual Time Burden: 97,934 hours.
+    Total Estimated Annual Other Costs Burden: $0.
+
+(Authority: 44 U.S.C. 3507(a)(1)(D))
+
+Nicole Bouchet,
+Senior Paperwork Reduction Act Analyst.
+[FR Doc. 2026-16895 Filed 8-18-26; 8:45 am]
+BILLING CODE 4510-24-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

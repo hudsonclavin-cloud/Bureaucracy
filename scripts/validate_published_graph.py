@@ -2363,6 +2363,149 @@ GOVMAN_SENTENCE_BOUNDARY = re.compile(
 )
 
 
+# The signature block of a published Federal Register document. Mirrors
+# data_pipeline.verification.federal_register_signatures; the reader below is
+# a SECOND, independent stdlib extraction that imports nothing from the module
+# it checks, the shape govman_entries() and whitehouse_roster() already use.
+FR_SIGNATURE_METHOD = "signed_a_federal_register_document"
+FR_SIGNATURE_SOURCE = "federal_register_signature"
+FR_SIGNATURE_DIR = (
+    Path(__file__).resolve().parents[1] / "tests" / "fixtures" / "federal_register" / "signatures"
+)
+FR_DOCUMENT_URL = "https://www.federalregister.gov/d/{}"
+FR_DOCUMENT_MEDIA_TYPE = "text/plain"
+FR_MIN_POST_TOKENS = 2
+FR_MAX_BLOCK_LINES = 8
+FR_NAME_LINE = re.compile(r"^(?:[A-Z][A-Za-z'’.\-]*\.?)(?:\s+[A-Z][A-Za-z'’.\-]*\.?){0,4},$")
+# Mirrors data_pipeline.verification.directories.HEAD_NOUNS /
+# HEAD_PREPOSITIONS; tests/test_federal_register_signatures.py pins
+# fr_agency_keys equal to federal_register_name_keys on every agency name the
+# committed listings print, so the two cannot drift.
+FR_HEAD_NOUNS = (
+    "department", "office", "bureau", "administration", "agency", "service", "commission", "board",
+    "corporation", "council", "institute", "center", "division", "foundation", "authority", "committee",
+)
+FR_HEAD_PREPOSITIONS = ("of", "of the", "for", "on")
+
+_FR_SIGNATURE_CACHE = {}
+
+
+def fr_agency_keys(name):
+    """The canonical keys a Federal Register agency name may answer to."""
+    key = canonical_key(name)
+    if not key:
+        return set()
+    keys = {key}
+    tokens = key.split()
+    if len(tokens) > 1 and tokens[-1] in FR_HEAD_NOUNS:
+        head, rest = tokens[-1], " ".join(tokens[:-1])
+        for prep in FR_HEAD_PREPOSITIONS:
+            keys.add("{} {} {}".format(head, prep, rest))
+    for k in list(keys):
+        if k.startswith("united states "):
+            keys.add(k[len("united states "):])
+        else:
+            keys.add("united states " + k)
+    return {k for k in keys if k}
+
+
+def fr_signature_title(text, document_number):
+    """The title a document's signature block prints, re-derived here.
+
+    The name line is located ONLY so that the title can be taken from below
+    it: what is returned is built from the lines after the name line, so this
+    function cannot return the signer's name either.
+    """
+    marker = "[FR Doc. {} Filed".format(document_number)
+    lines = text.split("\n")
+    fr_doc_at = None
+    for i, line in enumerate(lines):
+        if line.strip().startswith(marker):
+            fr_doc_at = i
+            break
+    if fr_doc_at is None:
+        return None
+    name_at = None
+    for j in range(fr_doc_at - 1, max(-1, fr_doc_at - 1 - FR_MAX_BLOCK_LINES), -1):
+        stripped = lines[j].strip()
+        if not stripped:
+            break
+        if FR_NAME_LINE.match(stripped):
+            name_at = j
+            break
+    if name_at is None:
+        return None
+    title = " ".join(" ".join(lines[name_at + 1:fr_doc_at]).split())
+    # Mirrors federal_register_signatures.MARKUP_CHARACTERS / HTML_ENTITY: a
+    # tag or an HTML entity is markup and refuses the block; a bare ampersand
+    # is not, because this graph names units "Health & Human Services".
+    if not title or "<" in title or ">" in title or re.search(r"&[#A-Za-z][A-Za-z0-9]*;", title):
+        return None
+    if not title.endswith("."):
+        return None
+    return title[:-1].strip() or None
+
+
+def fr_signature_documents():
+    """document number -> what the committed fixtures say about it.
+
+    {"title": the signature title, "agencies": [names the API listing prints],
+     "publicationDate", "signingDate", "sha256", "url"}. Every digest is
+    recomputed from the bytes. Raises OSError/ValueError for the caller.
+    """
+    if "documents" in _FR_SIGNATURE_CACHE:
+        return _FR_SIGNATURE_CACHE["documents"]
+    import hashlib as _hashlib
+
+    def read(path):
+        meta_path = path.with_name(path.name + ".meta.json")
+        if not meta_path.exists():
+            raise ValueError("{} has no .meta.json beside it".format(path.name))
+        meta = json.loads(meta_path.read_text(encoding="utf-8")) or {}
+        raw = path.read_bytes()
+        digest = _hashlib.sha256(raw).hexdigest()
+        recorded = str(meta.get("sha256") or "").lower()
+        if not recorded or recorded != digest:
+            raise ValueError(
+                "{}: sha256 on disk {} does not match the fetch record {!r}".format(
+                    path.name, digest, recorded))
+        return raw, digest, meta
+
+    listed = {}
+    for path in sorted((FR_SIGNATURE_DIR / "index").glob("*.json")):
+        if path.name.endswith(".meta.json"):
+            continue
+        raw, _digest, _meta = read(path)
+        payload = json.loads(raw.decode("utf-8"))
+        for row in payload.get("results") or []:
+            number = str((row or {}).get("document_number") or "").strip()
+            if not number or number in listed:
+                continue
+            listed[number] = {
+                "agencies": [" ".join(str((a or {}).get("name") or (a or {}).get("raw_name") or "").split())
+                             for a in (row.get("agencies") or [])
+                             if " ".join(str((a or {}).get("name") or (a or {}).get("raw_name") or "").split())],
+                "publicationDate": row.get("publication_date") or None,
+                "signingDate": row.get("signing_date") or None,
+                "documentTitle": " ".join(str(row.get("title") or "").split()),
+                "documentType": " ".join(str(row.get("type") or "").split()),
+            }
+    documents = {}
+    for number, row in listed.items():
+        path = FR_SIGNATURE_DIR / "documents" / (number + ".txt")
+        if not path.exists():
+            continue
+        raw, digest, meta = read(path)
+        if str(meta.get("content_type") or "").split(";")[0].strip() != FR_DOCUMENT_MEDIA_TYPE:
+            continue
+        entry = dict(row)
+        entry.update({"title": fr_signature_title(raw.decode("utf-8", "replace"), number),
+                      "sha256": digest, "url": str(meta.get("url") or "")})
+        documents[number] = entry
+    _FR_SIGNATURE_CACHE["documents"] = documents
+    return documents
+
+
 def list_subcommittee_key(key):
     """Mirror of data_pipeline.verification.congress.subcommittee_key on an
     already-canonical key: the type word set aside on either side and nothing
@@ -2833,6 +2976,7 @@ def main(argv):
         GOVMAN_METHOD,
         GOVMAN_ORG_METHOD,
         GOVMAN_OFFICE_METHOD,
+        FR_SIGNATURE_METHOD,
     }
     # Placement claims that rest on reading a page, as opposed to consulting a
     # separate document. Only these are refused on a post; see below.
@@ -3665,6 +3809,125 @@ def main(argv):
             continue
     gate.check("a Government Manual description is that entry's own text, verbatim, beside the curated prose", govman_desc_violations)
 
+    # The signature block of a published Federal Register document. Everything
+    # is re-derived from the committed fixtures by the block's own document
+    # number -- the digest, the title the document prints in its signature
+    # position, and the agency list the API listing prints for it -- and the
+    # agencies are resolved against the published organisations here, so the
+    # scope the claim rests on is checked rather than copied. The parent is
+    # read off the TREE this gate is walking and never off `parentId`, which
+    # is stamped on the exported node list alone: `General Counsel` names 84
+    # nodes here, so a record moved to another node would keep a real title, a
+    # real document and a real URL, and only the parent tells them apart.
+    fr_signature_violations = []
+    fr_documents = {}
+    try:
+        fr_documents = fr_signature_documents()
+    except (OSError, ValueError) as error:
+        fr_signature_violations.append("the Federal Register signature fixtures could not be read: {}".format(error))
+    fr_orgs_by_key = {}
+    for node in nodes:
+        if not is_post(node) and not node.get("synthetic"):
+            key = canonical_key(node.get("name"))
+            if key:
+                fr_orgs_by_key.setdefault(key, set()).add(str(node.get("id") or ""))
+
+    def fr_signature_problem(node, block_data):
+        """The first thing wrong with this signature block, or None."""
+        if not is_post(node):
+            return "is not a post but carries a Federal Register signature"
+        number = str(block_data.get("documentNumber") or "")
+        listed_title = str(block_data.get("listedTitle") or "")
+        document = fr_documents.get(number)
+        if fr_documents and document is None:
+            return "cites document {!r}, which is not in the committed fixtures".format(number)
+        if document is not None:
+            if document.get("title") != listed_title:
+                return "quotes {!r}, which is not the title document {} prints in its signature position ({!r})".format(
+                    listed_title, number, document.get("title"))
+            if list(block_data.get("agenciesListed") or []) != list(document.get("agencies") or []):
+                return "quotes an agency list document {} does not carry".format(number)
+            if str(block_data.get("documentSha256") or "") != document["sha256"]:
+                return "cites a digest the committed document {} does not have".format(number)
+            if str(block_data.get("url") or "") != document["url"]:
+                return "cites {!r}, which is not the URL that served document {}".format(block_data.get("url"), number)
+            for field in ("publicationDate", "signingDate", "documentTitle", "documentType"):
+                if (block_data.get(field) or None) != (document.get(field) or None):
+                    return "carries a {} that document {} does not print".format(field, number)
+        if canonical_key(node.get("name")) != canonical_key(listed_title):
+            return "carries a signature quoting {!r}, which is not this node's name".format(listed_title)
+        if len(canonical_key(listed_title).split()) < FR_MIN_POST_TOKENS:
+            return "rests on a signature title of under {} tokens".format(FR_MIN_POST_TOKENS)
+        for field in ("publicationDate", "signingDate"):
+            when = block_data.get(field)
+            if when and not _past_iso(when):
+                return "cites a {} of {!r}, which has not happened".format(field, when)
+        if not block_data.get("publicationDate"):
+            return "cites a Federal Register document with no publication date"
+        # The scope IS the claim, and it is re-resolved here against the
+        # published organisations rather than taken from the block. The parent
+        # is read off the TREE this gate is walking, never off `parentId`,
+        # which is stamped on the exported node list alone and would make this
+        # check pass vacuously while looking like a check.
+        reached = set()
+        for name in (block_data.get("agenciesListed") or []):
+            for key in fr_agency_keys(name):
+                reached |= fr_orgs_by_key.get(key, set())
+        parent_id = tree_parents.get(str(node.get("id") or "")) or ""
+        if len(reached) != 1 or parent_id not in reached:
+            return ("rests on a document the Register files under {}, which does not resolve to exactly the "
+                    "organisation the tree gives it".format(block_data.get("agenciesListed")))
+        if str(block_data.get("documentUrl") or "") != FR_DOCUMENT_URL.format(number):
+            return "cites {!r}, not the Register's own address for document {}".format(
+                block_data.get("documentUrl"), number)
+        if str(block_data.get("url") or "") not in [str(u) for u in (node.get("sourceUrls") or [])]:
+            return "cites a Federal Register document without carrying its URL"
+        if FR_SIGNATURE_SOURCE not in [str(t) for t in (node.get("sourceTypes") or [])]:
+            return "cites a Federal Register document without saying so in its source types"
+        # How many committed documents carry this title under this
+        # organisation. The panel prints the number, so a block may not
+        # inflate it. Bounded rather than pinned to an exact figure: the
+        # derive step resolves agencies against the CURATED file and the gate
+        # against the PUBLISHED tree, and a unit the export gate pruned would
+        # make an exact equality fail for a reason that is not a lie.
+        if fr_documents:
+            carrying = 0
+            for other in fr_documents.values():
+                if other.get("title") != listed_title:
+                    continue
+                other_reached = set()
+                for name in other.get("agencies") or []:
+                    for key in fr_agency_keys(name):
+                        other_reached |= fr_orgs_by_key.get(key, set())
+                if reached <= other_reached:
+                    carrying += 1
+            stated = int(block_data.get("occurrences") or 0)
+            if stated < 1 or stated > carrying:
+                return "says {} committed documents carry this title under its organisation; at most {} do".format(
+                    block_data.get("occurrences"), carrying)
+        # One document was read and it yields one observation. Publishing
+        # existence and placement from it would present a single finding as
+        # two corroborating ones -- the rule the Manual's post route follows.
+        if FR_SIGNATURE_SOURCE in str(node.get("placementMethod") or "") or \
+                str(node.get("placementMethod") or "") == FR_SIGNATURE_METHOD:
+            return "claims placement from a Federal Register signature, which reads one document"
+        return None
+
+    for node in nodes:
+        block_data = node.get("federalRegisterSignature")
+        if not isinstance(block_data, dict):
+            if str(node.get("verificationMethod") or "") == FR_SIGNATURE_METHOD:
+                fr_signature_violations.append(
+                    "{} takes a Federal Register signature as its method and carries no signature block".format(label(node)))
+            continue
+        problem = fr_signature_problem(node, block_data)
+        if problem:
+            fr_signature_violations.append("{} {}".format(label(node), problem))
+    gate.check(
+        "a Federal Register signature is a title that document prints, under an agency list that resolves to the node's own parent",
+        fr_signature_violations,
+    )
+
     # OMB's Public Budget Database, re-derived from the committed package
     # rather than trusted. The check that matters most is the fiscal year: the
     # later columns of this file are the President's request, and an estimate
@@ -4048,6 +4311,17 @@ def main(argv):
         len(govman_nodes),
         len({str((n.get("govmanListing") or {}).get("listedUnder") or "") for n in govman_nodes}),
         govman_method, govman_dated))
+    # The signature blocks, on their own line for the reason the post page
+    # method has one: this is a claim about positions, 85% of the graph, and
+    # the number it reaches is small enough that burying it in a total would
+    # read as more than it is.
+    fr_signature_nodes = [n for n in nodes if isinstance(n.get("federalRegisterSignature"), dict)]
+    fr_signature_method = sum(
+        1 for n in fr_signature_nodes if str(n.get("verificationMethod") or "") == FR_SIGNATURE_METHOD)
+    fr_signature_docs = {str((n.get("federalRegisterSignature") or {}).get("documentNumber") or "")
+                         for n in fr_signature_nodes}
+    print("  FR signatures        : {:,} of {:,} positions carry the title their signing official stated on a published Federal Register document, from {:,} distinct documents; {:,} take it as their method, which scores 0.4 alone because the Register is not the unit's own site; the signer's name is never read and no placement is claimed from it".format(
+        len(fr_signature_nodes), len(posts), len(fr_signature_docs), fr_signature_method))
     # Reported on its own line so "133 units with an OMB figure" can never be
     # read as 133 more measured costs. The negative count is printed because a
     # minus sign here is normal -- the figures are net of collections -- and an

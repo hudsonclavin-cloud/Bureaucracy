@@ -1,0 +1,488 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 165 (Thursday, August 27, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 165 (Thursday, August 27, 2026)]
+[Rules and Regulations]
+[Pages 55268-55272]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-17494]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+ENVIRONMENTAL PROTECTION AGENCY
+
+40 CFR Part 52
+
+[EPA-R06-OAR-2022-0735; FRL-9405-02-R6]
+
+
+Air Plan Approval; Arkansas; Regional Haze State Implementation 
+Plan for the Second Implementation Period
+
+AGENCY: Environmental Protection Agency (EPA).
+
+ACTION: Final rule.
+
+-----------------------------------------------------------------------
+
+SUMMARY: Pursuant to the Clean Air Act (CAA or the Act), the U.S. 
+Environmental Protection Agency (EPA) is finalizing approval of a State 
+Implementation Plan (SIP) revision
+
+[[Page 55269]]
+
+submitted by the State of Arkansas through the Division of 
+Environmental Quality (DEQ) on August 8, 2022, clarified by DEQ on July 
+29, 2025, and further supplemented on May 4, 2026, to satisfy the 
+requirements of the Act and the EPA's Regional Haze Rule (RHR) for 
+visibility protection in mandatory Class I Federal areas (Class I 
+areas) for the program's second implementation period. Arkansas' SIP 
+submission addresses the requirement that States must revise their 
+long-term strategies for making reasonable progress to prevent any 
+future and remedy any existing man-made visibility impairment in the 
+Class I areas. The EPA is taking this action pursuant to CAA sections 
+110 and 169A.
+
+DATES: This rule is effective on September 28, 2026.
+
+ADDRESSES: The EPA has established a docket for this action under 
+Docket ID No. EPA-R06-OAR-2022-0735. All documents in the docket are 
+listed on the <a href="https://www.regulations.gov">https://www.regulations.gov</a> website. Although listed in 
+the index, some information is not publicly available, e.g., 
+Confidential Business Information or other information whose disclosure 
+is restricted by statute. Certain other material, such as copyrighted 
+material, is not placed on the internet. Publicly available docket 
+materials are available electronically through <a href="https://www.regulations.gov">https://www.regulations.gov</a>.
+
+FOR FURTHER INFORMATION CONTACT: James E. Grady, EPA Region 6 Office, 
+Regional Haze and SO<INF>2</INF> Section; telephone number: (214) 665-
+6745; email address: <a href="/cdn-cgi/l/email-protection#97f0e5f6f3eeb9fdf6faf2e4d7f2e7f6b9f0f8e1"><span class="__cf_email__" data-cfemail="84e3f6e5e0fdaaeee5e9e1f7c4e1f4e5aae3ebf2">[email&#160;protected]</span></a>. Please call or email Mr. 
+Grady above or call Mr. Bill Deese via telephone at (214) 665-7253 if 
+you need alternative access to material indexed but not provided in the 
+docket.
+
+SUPPLEMENTARY INFORMATION: Throughout this document ``we,'' ``us,'' and 
+``our'' mean ``the EPA.''
+
+Table of Contents
+
+I. Background
+II. Rationale for This Final Action
+III. Public Comments and EPA Responses
+IV. Final Action
+V. Incorporation by Reference
+VI. Statutory and Executive Order Reviews
+
+I. Background
+
+    The background for this action is discussed in detail in our 
+September 5, 2025, proposed action (90 FR 43030). In that document, we 
+proposed approval of the 2022 Arkansas Regional Haze Planning Period II 
+SIP revision (2022 Planning Period II SIP), submitted August 8, 2022, 
+and clarified on July 29, 2025, as meeting the applicable regional haze 
+program requirements for the second implementation period contained in 
+40 CFR 51.308(f), (g)(1) through (5), and (i).
+    On May 4, 2026, DEQ submitted a supplemental package to the EPA to 
+finalize the 2022 Planning Period II SIP and address any concerns with 
+Arkansas' SIP revision and its July 29, 2025, clarification letter 
+regarding opportunity for public comment and FLM consultation. The 
+supplemental package contained the July 2025 letter, as well as 
+required documentation of FLM consultation and public notice with 
+opportunity to comment. The State did not receive any public comments 
+nor comments from FLMs or State agencies through this process.
+    We find that the 2022 Planning Period II SIP revision meets the 
+statutory and specific regulatory requirements of the regional haze 
+second planning period as discussed in the preamble of this final 
+action (see sections II and III), the accompanying response-to-comments 
+document (RTC Document), and in our September 2025 proposed action.\1\
+---------------------------------------------------------------------------
+
+    \1\ See 90 FR 43030 (Sept. 5, 2025).
+---------------------------------------------------------------------------
+
+II. Rationale for This Final Action
+
+    In this final action, we are approving the 2022 Planning Period II 
+SIP and affirming that it is now the Agency's policy that, where 
+visibility conditions for a Class I Federal area impacted by a State 
+are below the uniform rate of progress (URP) and that State has 
+considered the four statutory factors, then that State will have 
+presumptively demonstrated reasonable progress for the second planning 
+period for that area. We acknowledge that this final action reflects a 
+change in policy as to how the URP should be used in the evaluation of 
+regional haze second planning period SIPs but believe that this policy 
+better aligns with the purpose of the statute and the RHR for achieving 
+``reasonable'' progress toward natural visibility. As described in the 
+September 2025 proposed action,\2\ we have discretion and authority to 
+change our policy.\3\
+---------------------------------------------------------------------------
+
+    \2\ Id.
+    \3\ In FCC v. Fox Television Stations, Inc., the U.S. Supreme 
+Court plainly stated that an agency is free to change a prior policy 
+and ``need not demonstrate . . . that the reasons for the new policy 
+are better than the reasons for the old one; it suffices that the 
+new policy is permissible under the statute, that there are good 
+reasons for it, and that the agency believes it to be better.'' 566 
+U.S. 502, 515 (2009) (referencing Motor Vehicle Mfrs. Ass'n of 
+United States, Inc. v. State Farm Mut. Auto. Ins. Co., 463 U.S. 29 
+(1983)). See also Perez v. Mortgage Bankers Assn., 135 S. Ct. 1199 
+(2015).
+---------------------------------------------------------------------------
+
+    In developing the regulations required by CAA section 169A(b), we 
+established the concept of the URP for each Class I area. The URP is 
+determined by drawing a straight line from the measured 2000 through 
+2004 baseline conditions (in deciviews) for the 20 percent most 
+impaired days at each Class I area to the estimated natural conditions 
+(in deciviews) for the 20 percent most impaired days in 2064. From this 
+calculation, a URP value can be calculated for each year between 2004 
+and 2064. We developed the URP to address the diverse concerns of 
+Eastern and Western States and account for the varying levels of 
+visibility impairment in Class I areas around the Country while 
+ensuring an equitable approach nationwide. For each Class I area, 
+States must calculate the URP for the end of each planning period 
+(e.g., in 2028 for the second planning period).\4\ See 40 CFR 
+51.308(f)(1)(vi)(A). States may also adjust the URP to account for 
+impacts from anthropogenic sources outside the United States and/or 
+impacts from certain wildland prescribed fires. See 40 CFR 
+51.308(f)(1)(vi)(B). Then, for each Class I area, States must compare 
+the RPG for the 20 percent most impaired days to the URP for the end of 
+the planning period. If the RPG is above the URP, then an additional 
+``robust demonstration'' requirement is triggered for each State that 
+contributes to that Class I area. See 40 CFR 51.308(f)(3)(ii)(B).
+---------------------------------------------------------------------------
+
+    \4\ We note that reasonable progress goals (RPGs) are a 
+regulatory construct that we developed to address the statutory 
+mandate in CAA section 169B(e)(1), which required our regulations to 
+include ``criteria for measuring `reasonable progress' toward the 
+national goal.'' Under 40 CFR 51.308(f)(3)(ii), RPGs measure the 
+progress that is projected to be achieved by the control measures a 
+State has determined are necessary to make reasonable progress. 
+Consistent with the 1999 RHR, the RPGs are not enforceable, though 
+they create a benchmark that allows for analytical comparisons to 
+the URP and mid-implementation-period course corrections if 
+necessary. 82 FR 3078 at 3091 through 3092 (Jan. 10, 2017).
+---------------------------------------------------------------------------
+
+    In the 2017 RHR revisions,\5\ we addressed the role of the URP as 
+it relates to the development of a State's second planning period SIP. 
+Specifically, in response to comments suggesting that the URP should be 
+considered a ``safe harbor'' that relieves States of any obligation to 
+consider the four statutory factors, we explained that the URP was not 
+intended to be such a safe harbor.\6\ ``Some commenters stated a desire 
+for corresponding rule text dealing with situations where RPGs are 
+equal to (``on'') or better than (``below'') the URP or glidepath. 
+Several commenters stated that the URP or glidepath should be a ``safe 
+harbor,'' opining that States should be permitted to analyze whether 
+projected visibility
+
+[[Page 55270]]
+
+conditions for the end of the implementation period will be on or below 
+the glidepath based on on-the-books or on-the-way control measures, and 
+that in such cases a four-factor analysis should not be required.'' \7\ 
+Other comments indicated a similar approach, such as ``a somewhat 
+narrower entrance to a `safe harbor,' '' by suggesting that if current 
+visibility conditions are already below the end-of-planning-period 
+point on the URP line, a four-factor analysis should not be 
+required.\8\ We stated in our response that we did not agree with 
+either of these recommendations. ``The CAA requires that each SIP 
+revision contains long-term strategies for making reasonable progress, 
+and that in determining reasonable progress States must consider the 
+four statutory factors. Treating the URP as a safe harbor would be 
+inconsistent with the statutory requirement that States assess the 
+potential to make further reasonable progress toward natural visibility 
+goal in every implementation period.'' \9\
+---------------------------------------------------------------------------
+
+    \5\ See 82 FR 3078 (Jan. 10, 2017).
+    \6\ See 82 FR 3078 at 3099 (Jan. 10, 2017).
+    \7\ Id.
+    \8\ Id.
+    \9\ Id.
+---------------------------------------------------------------------------
+
+    Importantly, our recently adopted policy does not make the URP a 
+safe harbor. The policy merely creates a presumption that a State's 
+second planning period SIP is making reasonable progress for a Class I 
+area if a State has taken into consideration the four statutory factors 
+of CAA section 169A(g)(1) and that area is below the URP. This is 
+consistent with the CAA and RHR.
+    The Class I areas impacted by emissions from Arkansas are all below 
+their 2028 URP values, and Arkansas' SIP submittal demonstrated that 
+the State took into consideration the four reasonable progress factors 
+\10\ listed in CAA section 169A(g)(1) with respect to an adequate 
+number of emissions sources selected for analysis. Thus, we have 
+determined that 2022 Planning Period II SIP revision is fully 
+approvable under the Agency's new policy. Indeed, we think this policy 
+better aligns with the statutory goal because it recognizes the 
+considerable improvements in visibility impairment made by a wide 
+variety of State and Federal programs in recent decades.
+---------------------------------------------------------------------------
+
+    \10\ The four statutory factors required to be taken into 
+consideration in determining reasonable progress are: the costs of 
+compliance, the time necessary for compliance, the energy and non-
+air quality environmental impacts of compliance, and the remaining 
+useful life of any existing source subject to such requirements.
+---------------------------------------------------------------------------
+
+III. Public Comments and EPA Responses
+
+    The public comment period for our proposed approval \11\ of the 
+2022 Planning Period II SIP revision expired on October 6, 2025. We 
+received four total sets of comments. We received two adverse comment 
+letters submitted on October 6, 2025--one collectively from 
+Conservation Organizations (Sierra Club, National Parks Conservation 
+Association (NPCA), and the Coalition to Protect America's National 
+Parks), and another from the Mid-Atlantic/Northeast Visibility Union 
+(MANEVU). Both adverse commenters asserted that the new URP policy 
+violates the plain language of the CAA and RHR; that it violates the 
+procedural requirements of the CAA when announcing and applying it in 
+State-specific regional actions; that it is inconsistent with different 
+aspects of the RHR; and that the 2022 Planning Period II SIP does not 
+meet the new URP policy for presumptive approval. The Conservation 
+Groups also specifically asserted that removal of the Independence 
+retirement order was arbitrary, capricious, and contrary to law; that 
+DEQ's cost effectiveness thresholds were based on incomplete data; that 
+Flint Creek's reasonable progress determination was arbitrary, 
+capricious, and contrary to law; and that the EPA should have analyzed 
+impacts of Arkansas pollution on local communities.
+---------------------------------------------------------------------------
+
+    \11\ See 90 FR 43030 (Sept. 5, 2025).
+---------------------------------------------------------------------------
+
+    We also acknowledge two other comment letters received on October 
+6, 2025, from Entergy Services LLS on behalf of Entergy Arkansas, LLC; 
+and Hunton Andrews Kurth LLP on behalf of Ameren Missouri, American 
+Electric Power, Inc. and its operating companies, and Nebraska Public 
+Power District (collectively referred to as ``the utilities'') that 
+were largely in support of our proposed action. Specifically, Entergy 
+supported the determinations that Arkansas made in its second 
+implementation period regional haze SIP and that EPA proposed to 
+approve. The utilities specifically supported EPA's new URP policy 
+stating that the policy implements EPA's original understanding of the 
+regional haze program and its fundamental purpose; that it implements 
+the Congressional design of cooperative federalism; and that it 
+implements the plain text of the CAA and the RHR.
+    We evaluated the 2022 Planning Period II SIP submission against the 
+statutory and regulatory regional haze requirements and determined that 
+it satisfies those requirements. As detailed at length in the RTC 
+document associated with this rulemaking, we explained that our new 
+policy is consistent with the CAA and RHR, and the 2022 Planning Period 
+II SIP met the applicable statutory and regulatory requirements in 
+accordance with the new policy. In addition, we detailed that the 2022 
+Planning Period II SIP without the Independence Administrative Order 
+(LIS No. 22-085) demonstrates reasonable progress under the RHR and the 
+CAA and addresses all required elements of 40 CFR 51.308(f). We 
+explained that the May 4, 2026, supplement addressed any concerns with 
+the 2022 Planning Period II SIP regarding opportunity for public 
+comment and FLM consultation. We further explained in the RTC document 
+that the State reasonably considered the cost effectiveness for the 
+different equipment types and analyzed the four factors based on 
+complete cost data that was appropriate for the second planning period. 
+We also detailed that DEQ adequately considered the four statutory 
+factors in its assessment of potential additional controls for the 
+Flint Creek Power Plant and demonstrated reasonable progress toward the 
+national visibility goal for the second planning period. We clarified 
+that the State reasonably documented all cost calculations and provided 
+appropriate assumptions and parameters in its analyses for Flint Creek. 
+Lastly, regarding analyzing impacts to local communities, we explained 
+that neither the CAA nor the RHR requires States or the EPA to consider 
+the impact of pollution on communities near potentially affected 
+facilities when developing or reviewing a regional haze SIP.
+    We provide the complete comments with our detailed responses to the 
+full range of significant issues raised in the associated RTC document 
+included in the docket of this action. After careful consideration of 
+the public comments received, we are finalizing our action as proposed.
+
+IV. Final Action
+
+    We are finalizing approval of the Arkansas 2022 Regional Haze 
+Planning Period II SIP revision submitted August 8, 2022, clarified on 
+July 29, 2025, and further supplemented on May 4, 2026, as meeting the 
+applicable regional haze program requirements for the second 
+implementation period contained in 40 CFR 51.308(f), (g)(1) through 
+(5), and (i).
+    We are finalizing approval of the State's determination for 
+FutureFuel Chemical Company to require a fuel switch from coal with 3 
+percent sulfur
+
+[[Page 55271]]
+
+content by weight to a low sulfur coal that has 1.5 percent sulfur 
+content (equating to 2.93 lb/MMBtu SO<INF>2</INF>) for its three coal-
+fired boilers (SN:6M01-01). This requirement has been made enforceable 
+by the State through an Administrative Order (LIS No. 22-085) dated 
+August 3, 2022, and is included as part of the 2022 Planning Period II 
+SIP submittal. We are finalizing approval of all requirements set forth 
+in this Administrative Order for FutureFuel Chemical Company included 
+as part of the 2022 Planning Period II SIP submittal as a source 
+specific revision to be incorporated into the Arkansas SIP.
+
+V. Incorporation by Reference
+
+    In this rule, we are finalizing regulatory text that includes 
+incorporation by reference. In accordance with requirements of 1 CFR 
+51.5, we are finalizing the incorporation by reference of the revisions 
+to the Arkansas source specific requirements described in section IV of 
+the preamble of this final action. We have made, and will continue to 
+make, these materials generally available through <a href="https://www.regulations.gov">https://www.regulations.gov</a> (please contact the person identified in the FOR 
+FURTHER INFORMATION CONTACT section of this preamble for more 
+information). Therefore, these materials are approved by the EPA for 
+inclusion in the SIP, and have been incorporated by reference by the 
+EPA into the plan, are fully federally enforceable under CAA sections 
+110 and 113 as of the effective date of our approval of this final 
+rulemaking, and will be incorporated by reference into the next update 
+to the SIP compilation.
+
+VI. Statutory and Executive Order Reviews
+
+    Under the CAA, the Administrator is required to approve a SIP 
+submission that complies with the provisions of the CAA and applicable 
+Federal regulations. 42 U.S.C. 7410(k); 40 CFR 52.02(a). Thus, in 
+reviewing SIP submissions, the EPA's role is to approve State choices, 
+provided that they meet the criteria of the CAA. Accordingly, this 
+action merely proposes to approve State law as meeting Federal 
+requirements and does not impose additional requirements beyond those 
+imposed by State law. For that reason, this action:
+    <bullet> Is not a ``significant regulatory action'' subject to 
+review by the Office of Management and Budget under Executive Orders 
+12866 (58 FR 51735, October 4, 1993);
+    <bullet> Is not subject to Executive Order 14192 (90 FR 9065, 
+February 6, 2025) because State Implementation Plan approvals under the 
+CAA are exempt from review under Executive Order 12866;
+    <bullet> Does not impose an information collection burden under the 
+provisions of the Paperwork Reduction Act (44 U.S.C. 3501 et seq.);
+    <bullet> Is certified as not having a significant economic impact 
+on a substantial number of small entities under the Regulatory 
+Flexibility Act (5 U.S.C. 601 et seq.);
+    <bullet> Does not contain any unfunded mandate or significantly or 
+uniquely affect small governments, as described in the Unfunded 
+Mandates Reform Act of 1995 (Pub. L. 104-4);
+    <bullet> Does not have Federalism implications as specified in 
+Executive Order 13132 (64 FR 43255, August 10, 1999);
+    <bullet> Is not an economically significant regulatory action based 
+on health or safety risks subject to Executive Order 13045 (62 FR 
+19885, April 23, 1997);
+    <bullet> Is not a significant regulatory action subject to 
+Executive Order 13211 (66 FR 28355, May 22, 2001);
+    <bullet> Is not subject to requirements of section 12(d) of the 
+National Technology Transfer and Advancement Act of 1995 (15 U.S.C. 272 
+note) because application of those requirements would be inconsistent 
+with the Clean Air Act.
+    In addition, the SIP is not approved to apply on any Indian 
+reservation land or in any other area where the EPA or an Indian Tribe 
+has demonstrated that a Tribe has jurisdiction. In those areas of 
+Indian country, the proposed rule does not have Tribal implications and 
+will not impose substantial direct costs on Tribal governments or 
+preempt Tribal law as specified by Executive Order 13175 (65 FR 67249, 
+November 9, 2000).
+
+List of Subjects in 40 CFR Part 52
+
+    Environmental protection, Air pollution control, Incorporation by 
+reference, Intergovernmental relations, Nitrogen dioxide, Ozone, 
+Particulate matter, Reporting and recordkeeping requirements, Sulfur 
+oxides, Volatile organic compounds.
+
+    Dated: August 19, 2026.
+Walter Mason,
+Regional Administrator, Region 6.
+
+    For the reasons stated in the preamble, the EPA amends 40 CFR part 
+52 as follows:
+
+PART 52--APPROVAL AND PROMULGATION OF IMPLEMENTATION PLANS
+
+0
+1. The authority citation for part 52 continues to read as follows:
+
+    Authority: 42 U.S.C. 7401 et seq.
+
+Subpart E--Arkansas
+
+0
+2. In Sec.  52.170:
+0
+a. In paragraph (d), amend the table titled ``EPA-Approved Arkansas 
+Source-Specific Requirements'' by adding the entry ``FutureFuel 
+Chemical Company'' at the end of the table.
+0
+b. In paragraph (e), amend the third table titled ``EPA-Approved Non-
+Regulatory Provisions and Quasi-Regulatory Measures in the Arkansas 
+SIP'' by adding the entry ``Arkansas Regional Haze Planning Period II 
+SIP Revision'' at the end of the table.
+    The additions read as follows:
+
+
+Sec.  52.170  Identification of plan.
+
+* * * * *
+    (d) * * *
+* * * * *
+
+                               EPA-Approved Arkansas Source-Specific Requirements
+ 
+                                                  * * * * * * *
+FutureFuel Chemical Company.....  Administrative                8/3/2022  8/27/2026, 91 FR    Three boiler
+                                   Order LIS No. 22-                       [INSERT FEDERAL     system (SN:6M01-
+                                   085.                                    REGISTER PAGE       01).
+                                                                           WHERE THE
+                                                                           DOCUMENT BEGINS].
+----------------------------------------------------------------------------------------------------------------
+
+    (e) * * *
+* * * * *
+
+[[Page 55272]]
+
+
+
+            EPA-Approved Non-Regulatory Provisions and Quasi-Regulatory Measures in the Arkansas SIP
+----------------------------------------------------------------------------------------------------------------
+                                    Applicable
+                                  geographic or     State submittal/
+     Name of SIP provision        nonattainment      effective date    EPA approval date        Explanation
+                                       area
+----------------------------------------------------------------------------------------------------------------
+ 
+                                                  * * * * * * *
+Arkansas Regional Haze          Statewide........            8/8/2022  8/27/2026, 91 FR   Approval of regional
+ Planning Period II SIP                                                 [INSERT FEDERAL    haze SIP revision
+ Revision.                                                              REGISTER PAGE      addressing program
+                                                                        WHERE THE          requirements for the
+                                                                        DOCUMENT BEGINS].  second implementation
+                                                                                           period contained in
+                                                                                           40 CFR 51.308(f),
+                                                                                           (g)(1) through (5),
+                                                                                           and (i).
+----------------------------------------------------------------------------------------------------------------
+
+
+0
+3. In Sec.  52.173, add paragraph (k) to read as follows:
+
+
+Sec.  52.173  Visibility protection.
+
+* * * * *
+    (k) Arkansas Regional Haze Planning Period II SIP Revision. The 
+Arkansas Regional Haze Planning Period II SIP Revision submitted on 
+August 8, 2022, is approved as meeting all program requirements for the 
+second implementation period contained in 40 CFR 51.308(f), (g)(1) 
+through (5), and (i).
+
+[FR Doc. 2026-17494 Filed 8-26-26; 8:45 am]
+BILLING CODE 6560-50-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

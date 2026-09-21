@@ -1,0 +1,258 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 160 (Thursday, August 20, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 160 (Thursday, August 20, 2026)]
+[Rules and Regulations]
+[Pages 53728-53730]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-16986]
+
+
+-----------------------------------------------------------------------
+
+ENVIRONMENTAL PROTECTION AGENCY
+
+40 CFR Part 52
+
+[EPA-R05-OAR-2025-0169; EPA-R05-OAR-2025-0170; EPA-R05-OAR-2025-0171; 
+FRL-13164-02-R5]
+
+
+Air Plan Approval; Wisconsin; Moderate Attainment Plan Elements 
+for Wisconsin's 2015 Ozone Standard Areas
+
+AGENCY: Environmental Protection Agency (EPA).
+
+ACTION: Final rule.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The U.S. Environmental Protection Agency (EPA) is approving 
+portions of Wisconsin's 2015 ozone National Ambient Air Quality 
+Standard (NAAQS or standard) Moderate nonattainment area State 
+Implementation Plan (SIP) submission for the Wisconsin portion of the 
+Chicago, Illinois-Indiana-Wisconsin area (Kenosha County), the 
+Milwaukee, Wisconsin area, and the Sheboygan County, Wisconsin area. 
+The elements of the Moderate SIP submissions include the reasonable 
+further progress (RFP) demonstration and the associated motor vehicle 
+emissions budgets (Budgets) for 2023, the motor vehicle inspection and 
+maintenance (I/M) program, and the nonattainment new source review 
+(NNSR) program. The EPA is also approving the base year emissions 
+inventory as satisfying previous Marginal area requirements for these 
+areas. The EPA is finding adequate and approving the Budgets for these 
+areas. The EPA proposed to approve this action on April 2, 2026, and 
+received no adverse comments.
+
+DATES: This final rule is effective on September 21, 2026.
+
+ADDRESSES: The EPA has established a docket for this action under 
+Docket ID No. EPA-R05-OAR-2025-0169; EPA-R05-OAR-2025-0170; EPA-R05-
+OAR-2025-0171. All documents in the docket are listed on the <a href="https://www.regulations.gov">https://www.regulations.gov</a> website. Although listed in the index, some 
+information is not publicly available, i.e., Confidential Business 
+Information (CBI), Proprietary Business Information (PBI), or other 
+information whose disclosure is restricted by statute. Certain other 
+material, such as copyrighted material, is not placed on the internet 
+and will be publicly available only in hard copy form. Publicly 
+available docket materials are available either through <a href="https://www.regulations.gov">https://www.regulations.gov</a> or please contact the person identified in the FOR 
+FURTHER INFORMATION CONTACT section for additional information.
+
+FOR FURTHER INFORMATION CONTACT: Michael Leslie, Air and Radiation 
+Division (AR18J), Environmental Protection Agency, Region 5, 77 West 
+Jackson Boulevard, Chicago, Illinois 60604, telephone number: (312) 
+353-6680, email address: <a href="/cdn-cgi/l/email-protection#7b171e0817121e55161218131a1e173b1e0b1a551c140d"><span class="__cf_email__" data-cfemail="8ce0e9ffe0e5e9a2e1e5efe4ede9e0cce9fceda2ebe3fa">[email&#160;protected]</span></a>.
+
+[[Page 53729]]
+
+
+SUPPLEMENTARY INFORMATION: Throughout this document whenever ``we,'' 
+``us,'' or ``our'' is used, we mean the EPA.
+
+Table of Contents
+
+I. Executive Summary and Background
+II. What action is the EPA taking?
+III. Statutory and Executive Order Reviews
+
+I. Executive Summary and Background
+
+    On April 2, 2026,\1\ the EPA proposed to approve several 
+nonattainment plan elements, including a 2017 base year emissions 
+inventory for volatile organic compounds (VOC) and oxides of nitrogen 
+(NO<INF>X</INF>), a 15% RFP plan with 2023 VOC and NO<INF>X</INF> motor 
+vehicle emissions budgets, an I/M program certification, and an NNSR 
+certification. An explanation of the Clean Air Act (CAA) requirements, 
+a detailed analysis of the revisions, and the EPA's reasons for 
+proposing approval were provided in the notice of proposed rulemaking 
+(NPRM) and will not be restated here. The public comment period for 
+this proposed rule ended on May 4, 2026. The EPA received no comments 
+on the proposal.
+---------------------------------------------------------------------------
+
+    \1\ April 2, 2026 (91 FR 16605)
+---------------------------------------------------------------------------
+
+II. What action is the EPA taking?
+
+    The EPA is approving revisions to Wisconsin's SIP pursuant to CAA 
+section 110 and part D and EPA's regulations because Wisconsin's April 
+2, 2025, attainment plan submissions satisfy the base year emissions 
+inventory, the RFP demonstration including associated motor vehicle 
+emissions budgets, I/M, and NNSR requirements of the CAA for the 
+Kenosha County, Milwaukee, and the Sheboygan County areas for the 2015 
+ozone NAAQS. The EPA is also finding adequate and approving the 2023 
+Budgets for the Kenosha County, Milwaukee, and the Sheboygan County 
+areas included in this SIP submission.
+
+III. Statutory and Executive Order Reviews.
+
+    Under the CAA, the Administrator is required to approve a SIP 
+submission that complies with the provisions of the CAA and applicable 
+Federal regulations. 42 U.S.C. 7410(k); 40 CFR 52.02(a). Thus, in 
+reviewing SIP submissions, the EPA's role is to approve State choices, 
+provided that they meet the criteria of the CAA. Accordingly, this 
+action merely approves State law as meeting Federal requirements and 
+does not impose additional requirements beyond those imposed by State 
+law. For that reason, this action:
+    <bullet> Is not a significant regulatory action subject to review 
+by the Office of Management and Budget under Executive Order 12866 (58 
+FR 51735, October 4, 1993);
+    <bullet> Is not an Executive Order 14192 (90 FR 9065, February 6, 
+2025) regulatory action because this action is not significant under 
+Executive Order 12866;
+    <bullet> Does not impose an information collection burden under the 
+provisions of the Paperwork Reduction Act (44 U.S.C. 3501 et seq.);
+    <bullet> Is certified as not having a significant economic impact 
+on a substantial number of small entities under the Regulatory 
+Flexibility Act (5 U.S.C. 601 et seq.);
+    <bullet> Does not contain any unfunded mandate or significantly or 
+uniquely affect small governments, as described in the Unfunded 
+Mandates Reform Act of 1995 (Pub. L. 104-4);
+    <bullet> Does not have federalism implications as specified in 
+Executive Order 13132 (64 FR 43255, August 10, 1999);
+    <bullet> Is not subject to Executive Order 13045 (62 FR 19885, 
+April 23, 1997) because it approves a State program;
+    <bullet> Is not a significant regulatory action subject to 
+Executive Order 13211 (66 FR 28355, May 22, 2001); and
+    <bullet> Is not subject to requirements of section 12(d) of the 
+National Technology Transfer and Advancement Act of 1995 (15 U.S.C. 272 
+note) because application of those requirements would be inconsistent 
+with the CAA.
+    In addition, the SIP is not approved to apply on any Indian 
+reservation land or in any other area where the EPA or an Indian Tribe 
+has demonstrated that a Tribe has jurisdiction. In those areas of 
+Indian country, the rule does not have Tribal implications and will not 
+impose substantial direct costs on Tribal governments or preempt Tribal 
+law as specified by Executive Order 13175 (65 FR 67249, November 9, 
+2000).
+    This action is subject to the Congressional Review Act, and the EPA 
+will submit a rule report to each House of the Congress and to the 
+Comptroller General of the United States. This action is not a ``major 
+rule'' as defined by 5 U.S.C. 804(2).
+    Under CAA section 307(b)(1), petitions for judicial review of this 
+action must be filed in the United States Court of Appeals for the 
+appropriate circuit by October 19, 2026. Filing a petition for 
+reconsideration by the Administrator of this final rule does not affect 
+the finality of this action for the purposes of judicial review nor 
+does it extend the time within which a petition for judicial review may 
+be filed, and shall not postpone the effectiveness of such rule or 
+action. This action may not be challenged later in proceedings to 
+enforce its requirements. (See CAA section 307(b)(2).)
+
+List of Subjects in 40 CFR Part 52
+
+    Environmental protection, Air pollution control, Incorporation by 
+reference, Intergovernmental relations, Nitrogen oxides, Ozone, 
+Particulate matter, Reporting and recordkeeping requirements, Volatile 
+organic compounds.
+
+    Dated: August 7, 2026.
+Anne Vogel,
+Regional Administrator, Region 5.
+
+    For the reasons stated in the preamble, 40 CFR part 52 is amended 
+as follows:
+
+PART 52--APPROVAL AND PROMULGATION OF IMPLEMENTATION PLANS
+
+0
+1. The authority citation for part 52 continues to read as follows:
+
+    Authority:  42 U.S.C. 7401 et seq.
+
+
+0
+2. In Sec.  52.2570, the table in paragraph (e) is amended:
+0
+a. Under the heading ``Attainment Plans'' by adding an entry for 
+``Ozone NAAQS (2015)'' before the entry for ``SO<INF>2</INF> NAAQS 
+(2010)''; and
+0
+b. Under the heading ``Emissions Inventories'' by adding an entry for 
+``Ozone NAAQS (2015)'' before the entry for ``PM<INF>2.5</INF> NAAQS 
+(2006)''.
+    The additions read as follows:
+
+
+Sec.  52.2570   Identification of plan.
+
+* * * * *
+    (e) * * *
+
+[[Page 53730]]
+
+
+
+         Table 3 to Paragraph (e)--EPA-Approved Wisconsin Nonregulatory and Quasi-Regulatory Provisions
+----------------------------------------------------------------------------------------------------------------
+                                     Applicable
+   Name of nonregulatory SIP        geographic or         State       EPA approval date          Comments
+           provision             nonattainment area  submittal date
+----------------------------------------------------------------------------------------------------------------
+ 
+                                                  * * * * * * *
+----------------------------------------------------------------------------------------------------------------
+                                                Attainment Plans
+----------------------------------------------------------------------------------------------------------------
+ 
+                                                  * * * * * * *
+Ozone NAAQS (2015).............  Chicago, IL-IN-WI,   April 2, 2025  August 20, 2026,    15% RFP plan with 2023
+                                  Milwaukee, WI,                      91 FR [INSERT       VOC and NOX motor
+                                  and Sheboygan                       FEDERAL REGISTER    vehicle emissions
+                                  County, WI.                         PAGE WHERE THE      budgets, I/M program
+                                                                      DOCUMENT BEGINS].   certification, and
+                                                                                          NNSR certification for
+                                                                                          Kenosha (part),
+                                                                                          Milwaukee, Ozaukee,
+                                                                                          Racine (part),
+                                                                                          Washington (part),
+                                                                                          Waukesha (part), and
+                                                                                          Sheboygan (part)
+                                                                                          Counties.
+ 
+                                                  * * * * * * *
+----------------------------------------------------------------------------------------------------------------
+                                              Emissions Inventories
+----------------------------------------------------------------------------------------------------------------
+ 
+                                                  * * * * * * *
+Ozone NAAQS (2015).............  Chicago, IL-IN-WI,   April 2, 2025  August 20, 2026,    2017 base year
+                                  Milwaukee, WI,                      91 FR [INSERT       emissions inventory
+                                  and Sheboygan                       FEDERAL REGISTER    for Kenosha (part),
+                                  County, WI.                         PAGE WHERE THE      Milwaukee, Ozaukee,
+                                                                      DOCUMENT BEGINS].   Racine (part),
+                                                                                          Washington (part),
+                                                                                          Waukesha (part), and
+                                                                                          Sheboygan (part)
+                                                                                          Counties.
+ 
+                                                  * * * * * * *
+----------------------------------------------------------------------------------------------------------------
+
+[FR Doc. 2026-16986 Filed 8-19-26; 8:45 am]
+BILLING CODE 6560-50-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

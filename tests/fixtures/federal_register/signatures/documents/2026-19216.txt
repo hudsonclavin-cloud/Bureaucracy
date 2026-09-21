@@ -1,0 +1,579 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 181 (Monday, September 21, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 181 (Monday, September 21, 2026)]
+[Notices]
+[Pages 59818-59822]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-19216]
+
+
+-----------------------------------------------------------------------
+
+SECURITIES AND EXCHANGE COMMISSION
+
+[Release No. 34-106391; File No. SR-OCC-2026-007]
+
+
+Self-Regulatory Organizations; The Options Clearing Corporation; 
+Notice of Filing of Partial Amendment No. 1 and Order Granting 
+Accelerated Approval of Proposed Rule Change as Modified by Partial 
+Amendment No. 1, by the Options Clearing Corporation Concerning the 
+Payment of Interest on Margin Cash
+
+September 16, 2026.
+
+I. Introduction
+
+    On July 24, 2026, the Options Clearing Corporation (``OCC''), filed 
+with the Securities and Exchange Commission (``Commission''), pursuant 
+to Section 19(b)(1) of the Securities Exchange Act of 1934 (``Exchange 
+Act'') \1\ and Rule 19b-4 thereunder,\2\ a proposed pule change 
+regarding the payment of interest on Clearing
+
+[[Page 59819]]
+
+Members' cash margin. The proposed rule change was published for 
+comment in the Federal Register on August 5, 2026.\3\ On September 15, 
+2026, OCC amended File No. SR OCC-2026-007 (hereinafter ``Partial 
+Amendment No. 1'') to clarify statements concerning the use of 
+subaccounts at a Federal Reserve Bank (``FRB'').\4\ The Commission has 
+not received any comments on the Proposed Rule Change. For the reasons 
+discussed below, the Commission is publishing this notice to solicit 
+comments on Partial Amendment No. 1 from interested persons, and 
+approving the proposed rule change, as modified by Partial Amendment 
+No. 1 (hereinafter, the ``Proposed Rule Change'').
+---------------------------------------------------------------------------
+
+    \1\ 15 U.S.C. 78s(b)(1).
+    \2\ 17 CFR 240.19b-4.
+    \3\ See Securities Exchange Act Release No. 106018 (July 31, 
+2026), 91 FR 50579 (Aug. 5, 2026) (File No. SR-OCC-2026-007) 
+(``Notice'').
+    \4\ This amendment does not change the purpose of or basis for 
+File No. SR-OCC-2026-007.
+---------------------------------------------------------------------------
+
+    OCC is a central counterparty (``CCP''), which means that, as part 
+of its function as a clearing agency, it interposes itself as the buyer 
+to every seller and seller to every buyer for certain financial 
+transactions. As the CCP for the listed options markets in the United 
+States,\5\ as well as for certain futures and stock loans, OCC is 
+exposed to various risks arising from providing clearance and 
+settlement services to its Clearing Members.\6\ Because OCC is 
+obligated to perform on the contracts it clears, one such risk that OCC 
+is exposed to is liquidity risk, including the risk that OCC would not 
+maintain sufficient liquid resources to cover payment obligations, 
+including exposures if one of its Clearing Members defaults or is 
+otherwise unable to perform its counterparty obligations.
+---------------------------------------------------------------------------
+
+    \5\ OCC describes itself as ``the sole clearing agency for 
+standardized equity options listed on a national securities exchange 
+registered with the Commission (`listed options').'' See Securities 
+Exchange Act Release No. 96533 (Dec. 19, 2022), 87 FR 79015 (Dec. 
+23, 2022) (File No. SR-OCC-2022-012).
+    \6\ Capitalized terms used but not defined herein have the 
+meanings specified in OCC's Rules and By-Laws, available at <a href="https://www.theocc.com/company-information/documents-and-archives/by-laws-and-rules">https://www.theocc.com/company-information/documents-and-archives/by-laws-and-rules</a>.
+---------------------------------------------------------------------------
+
+    One of the ways OCC manages liquidity risk is through the 
+collection of cash collateral from its Clearing Members. Although OCC 
+allows Clearing Members to contribute margin in different forms, OCC 
+may require each Clearing Member to post some amount of margin 
+collateral in cash. Similarly, OCC requires each Clearing Member to 
+contribute cash to meet a portion its Clearing Fund requirement. As 
+permitted under its current rules, OCC maintains an interest-bearing 
+FRB account which it uses to hold Clearing Fund cash. OCC holds some 
+Clearing Member cash margin in its FRB account, but OCC cannot hold 
+securities customer cash margin in its FRB account under OCC's current 
+rules. OCC manages securities customer cash through its commercial bank 
+relationships. According to OCC, Clearing Member cash margin deposits 
+averaged $2.5 billion during the year prior to filing, which OCC 
+describes as a small amount compared to the total amount of margined 
+assets, including valued securities and government securities.\7\
+---------------------------------------------------------------------------
+
+    \7\ See Notice, 91 FR at 50580. OCC states that it held, on 
+average, about $700 million in non-customer margin cash in the FRB 
+account over the past year with the remainder held in cash deposits 
+at commercial banks (about $800 million) and reverse repo 
+investments (about $1 billion). See id.
+---------------------------------------------------------------------------
+
+    Currently OCC passes on earned interest from its cash Clearing Fund 
+deposits to Clearing Members, minus a 5-basis point fee. OCC has 
+observed that since it began paying interest on Clearing Fund cash, 
+some Clearing Members deposit more Clearing Fund cash than is required 
+under OCC's Rules.\8\ OCC stated that, based on its experience and 
+analysis, if Clearing Members received interest on cash margin, they 
+would be more likely to deposit cash as margin in lieu of securities, 
+which would in turn improve OCC's capital efficiency and liquidity.\9\ 
+OCC proposes, as described below, to amend its rules to permit OCC to 
+deposit cash margin deposited in respect of securities customer 
+accounts into its FRB account and require OCC to pay a defined interest 
+rate to its Clearing Members, minus an administrative fee.
+---------------------------------------------------------------------------
+
+    \8\ Id. OCC filed confidential data with File No. SR-OCC-2026-
+007 that showed an increase of excess cash deposits in the Clearing 
+Fund, as a percentage of cash required in the Clearing Fund, from 
+less than 17 percent to over 38 percent (at times rising above 40 
+percent).
+    \9\ Id.
+---------------------------------------------------------------------------
+
+    OCC initially stated that it would establish a subaccount at the 
+FRB under the master account to separately account for customer 
+margin.\10\ In Partial Amendment No. 1, OCC stated that will request a 
+subaccount for securities customer margin. OCC stated further that 
+until such time that OCC could secure a separate subaccount for its 
+Clearing Member's Clearing Fund deposits, OCC would include transaction 
+activity for Clearing Fund deposits in the existing subaccount for non-
+customer margin cash.
+---------------------------------------------------------------------------
+
+    \10\ See Notice, 91 FR at 50580 n.8. OCC explained that it uses 
+a similar subaccount for non-customer margin at the FRB.
+---------------------------------------------------------------------------
+
+II. Description of Proposed Rule Changes
+
+A. Changes to Interest Treatment
+
+    OCC proposes to amend Rule 604B to require that it pay interest to 
+Clearing Members on all margin cash, with the exception of cash held in 
+cross margin, or X-M, accounts.\11\ Specifically, OCC proposes to adopt 
+new Rule 604B(g),\12\ Interest on Margin Cash, to require OCC to set a 
+fixed interest rate on deposited margin cash equal to the Federal 
+Reserve's Interest on Reserve Balance (``IORB''). OCC intends to 
+calculate interest daily at IORB less an administrative fee and to pay 
+interest to Clearing Members monthly.
+---------------------------------------------------------------------------
+
+    \11\ As defined in the OCC By-Laws, X-M accounts are Clearing 
+Member accounts in which positions subject to cross-margining 
+treatment are maintained. See OCC By-Laws Art. I, Sec.  O. Margin 
+cash held in X-M accounts must be deposited in joint accounts at a 
+depository in accordance with OCC's Cross Margin Agreement with CME. 
+Accordingly, such funds are not available to be deposited in OCC's 
+FRB account at which they would earn interest at the IORB rate.
+    \12\ Current Rule 604B(g), Investment of Margin Cash, would be 
+renumbered as Rule 604B(h).
+---------------------------------------------------------------------------
+
+    Under the Proposed Rule Change, OCC would also change its approach 
+to paying interest on Clearing Fund cash deposits. OCC Rule 1002(c)(1) 
+currently states that Clearing Fund deposits at an FRB accrue to the 
+benefit of Clearing Members. OCC proposes to replace this provision of 
+Rule 1002(c)(1) with new Rule 1002(c)(2) requiring OCC to pay the IORB, 
+less the administrative fee, on all Clearing Fund cash deposits without 
+reference to where such Clearing Fund cash is deposited.
+    OCC also proposes to make conforming changes to its Cash and 
+Investment Management Policy (``CIMP''). Specifically, OCC proposes to 
+replace language indicating that interest earned on Clearing Fund cash 
+deposits at an FRB would accrue to the benefit of Clearing Members with 
+language requiring OCC to pay interest to Clearing Members on all and 
+margin cash deposits other than cash in X-M accounts.
+
+B. Changes to Customer Margin Custody Arrangements
+
+    OCC proposes to amend its rules to all the depositing of securities 
+customer cash margin in its FRB account. Specifically, OCC proposes to 
+broaden Rule 604B(b)(2)(B)(iii), which current allows OCC to deposit 
+non-customer margin assets at an FRB account, to allow OCC to deposit 
+margin assets generally at an FRB account. OCC also proposes amending 
+Interpretation & Policy (I&P) .04 associated with Rule 1002 in much the 
+same way, by
+
+[[Page 59820]]
+
+eliminating the requirement that margin assets held at the FRB belong 
+only to non-customers.\13\ OCC proposes adding language to its Cash and 
+Investment Management Policy (``CIMP''), however, to make it clear that 
+OCC would not comingle its own cash with Clearing Member cash deposits.
+---------------------------------------------------------------------------
+
+    \13\ I&P .04, however, would specifically exclude cash derived 
+from cash margin deposited in respect of segregated futures 
+accounts, which OCC has stated must be segregated as required by 
+Commodity Futures Trading Commission (``CFTC'') Regulation 1.20. See 
+Notice at 50581. See also 17 CFR 1.20(a). OCC has stated that it 
+will not title its FRB account as a margin account, since it will 
+hold additional assets, and that it can hold margin assets at the 
+FRB under both its own Rules and under CFTC Regulation 1.20. See id.
+---------------------------------------------------------------------------
+
+    OCC's account agreement for its FRB account provides the FRB with a 
+lien on deposits to the extent of any unpaid fees.\14\ To mitigate the 
+possibility of such a lien attaching to Clearing Member cash deposited 
+in OCC's FRB account, OCC proposes changes ensure it can cover the 
+required FRB service charges.
+---------------------------------------------------------------------------
+
+    \14\ In OCC's case, the only fee owed to the FRB is a monthly 
+service charge, which is approximately $3,000 per month. See Notice, 
+91 FR at 50582.
+---------------------------------------------------------------------------
+
+    Specifically, OCC's Proposed Rule Change authorizes it to charge a 
+10-basis point cash management fee that can be used to pay the monthly 
+service fee.\15\ As a further safeguard, OCC proposes to amend Rule 101 
+to include unpaid FRB services charges as an authorized use of the 
+Minimum Capital Contribution.\16\ Further, OCC proposes to add language 
+to its Rule 1006 that would allow OCC to use the Clearing Fund to 
+satisfy any unpaid FRB account service charges.
+---------------------------------------------------------------------------
+
+    \15\ OCC would amend its schedule of fees to reflect the 10-
+basis point service charge on each Clearing Member's average daily 
+cash balance other than cash held in X-M accounts. This language 
+would replace the current 5-basis point fee on Clearing Member cash 
+held in OCC's FRB account.
+    \16\ OCC also proposes a conforming change to its Capital 
+Management Policy related to the use of the Minimum Corporate 
+Contribution.
+---------------------------------------------------------------------------
+
+    Finally, OCC proposes to make certain categorization changes, by 
+moving paragraphs (i) and (j) from Rule 1006 to Rule 1002, which 
+specifically deals with Clearing Fund contributions. The former 
+paragraph concerns an acknowledgement by Clearing Members that OCC 
+maintains a lien on all assets, including cash, contributed to the 
+Clearing Fund, while the latter concerns OCC's role as a securities 
+intermediary for securities deposited by Clearing Members in the 
+Clearing Fund.
+
+III. Discussion and Commission Findings
+
+    Section 19(b)(2)(C) of the Exchange Act requires the Commission to 
+approve a proposed rule change of a self-regulatory organization if it 
+finds that the proposed rule change is consistent with the requirements 
+of the Exchange Act and the rules and regulations thereunder applicable 
+to the organization.\17\ Under the Commission's Rules of Practice, the 
+``burden to demonstrate that a proposed rule change is consistent with 
+the Exchange Act and the rules and regulations issued thereunder . . . 
+is on the self-regulatory organization [`SRO'] that proposed the rule 
+change.'' \18\
+---------------------------------------------------------------------------
+
+    \17\ 15 U.S.C. 78s(b)(2)(C).
+    \18\ Rule 700(b)(3), Commission Rules of Practice, 17 CFR 
+201.700(b)(3).
+---------------------------------------------------------------------------
+
+    The description of a proposed rule change, its purpose and 
+operation, its effect, and a legal analysis of its consistency with 
+applicable requirements, must all be sufficiently detailed and specific 
+to support an affirmative Commission finding,\19\ and any failure of an 
+SRO to provide this information may result in the Commission not having 
+a sufficient basis to make an affirmative finding that a proposed rule 
+change is consistent with the Exchange Act and the applicable rules and 
+regulations.\20\ Moreover, ``unquestioning reliance'' on an SRO's 
+representations in a proposed rule change is not sufficient to justify 
+Commission approval of a proposed rule change.\21\
+---------------------------------------------------------------------------
+
+    \19\ Id.
+    \20\ Id.
+    \21\ Susquehanna Int'l Group, LLP v. Securities and Exchange 
+Commission, 866 F.3d 442, 447 (D.C. Cir. 2017).
+---------------------------------------------------------------------------
+
+    After carefully considering the Proposed Rule Change, the 
+Commission finds that the Proposed Rule Change is consistent with the 
+requirements of the Exchange Act and the rules and regulations 
+thereunder applicable to OCC. More specifically, for the reasons given 
+below, the Commission finds that the Proposed Rule Change is consistent 
+with Section 17A(b)(3)(F) of the Exchange Act,\22\ and Rules 17ad-
+22(e)(7)(ii) and 17ad-22(e)(7)(iii) thereunder, as described in detail 
+below.\23\
+---------------------------------------------------------------------------
+
+    \22\ 15 U.S.C. 78q-1(b)(3)(F).
+    \23\ 17 CFR 240.17ad-22(e)(7)(ii) and (e)(7)(iii).
+---------------------------------------------------------------------------
+
+A. Consistency With Section 17A(b)(3)(F) of the Exchange Act
+
+    Section 17A(b)(3)(F) of the Exchange Act requires, among other 
+things, that the rules of OCC be designed to promote the prompt and 
+accurate clearance and settlement of securities transactions and, to 
+the extent applicable, derivative agreements, contracts, and 
+transactions and to assure the safeguarding of securities and funds 
+which are in the custody or control of OCC or for which it is 
+responsible.\24\ Based on a review of the record, and for the reasons 
+discussed below, the proposed changes are consistent with the promotion 
+of the prompt and accurate clearance and settlement of transactions at 
+OCC and the safeguarding of securities and funds which it has custody 
+or control over.
+---------------------------------------------------------------------------
+
+    \24\ 15 U.S.C. 78q-1(b)(3)(F).
+---------------------------------------------------------------------------
+
+    OCC is the sole registered clearing agency for the U.S. listed 
+options markets. As described above, one purpose of the proposed 
+changes is to incentivize Clearing Members to meet a larger portion of 
+their collateral requirements in cash. An increase in the amount of 
+collateral provided in cash, as opposed to other permissible forms, 
+would increase the likelihood that OCC would be able to meet its 
+payment obligations when due by removing the potential delays that come 
+with other qualifying liquid resources, such as prearranged funding 
+arrangements. Increasing the likelihood that OCC would be able to meet 
+its payment obligations would increase the likelihood that OCC could 
+promptly and accurately clear transactions in the event of a default.
+    Additionally, the Proposed Rule Change is consistent with assuring 
+the safeguarding of funds, by allowing OCC to deposit customer cash 
+margin in its FRB account. Access to an FRB account is a valuable tool, 
+the use of which would reduce custody risk in a clearing agency.\25\ 
+Further, the Proposed Rule Change would not limit OCC's access to 
+commercial banks, and would, therefore, provide OCC with an additional 
+custodian at which to deposit customer cash margin.
+---------------------------------------------------------------------------
+
+    \25\ See Securities Exchange Act Release 90100 (Oct. 6, 2020), 
+85 FR 64603, 64604 (Oct. 13, 2020) (File No. SR-OCC-2020-010). See 
+also Securities Exchange Act Release 68080, 77 FR 66220, 66268 (Nov. 
+2, 2012) (File No. S7-08- 11).
+---------------------------------------------------------------------------
+
+    For the reasons stated above, the Commission finds that the 
+Proposed Rule Change is consistent with Section 17A(b)(3)(F) of the 
+Exchange Act.\26\
+---------------------------------------------------------------------------
+
+    \26\ Id.
+---------------------------------------------------------------------------
+
+B. Consistency With Rule 17ad-22(e)(7)(ii) Under the Exchange Act
+
+    Rule 17ad-22(e)(7)(ii) under the Exchange Act requires, in part, 
+each covered clearing agency to establish, implement, maintain, and 
+enforce written policies and procedures reasonably designed to 
+effectively measure, monitor, and manage the liquidity risk that arises 
+in or is borne by the covered clearing agency, including measuring, 
+monitoring, and managing its settlement and funding flows on an ongoing 
+and timely basis, and its use of intraday liquidity by, at
+
+[[Page 59821]]
+
+a minimum, holding qualifying liquid resources sufficient to meet its 
+minimum liquidity resource requirements in each relevant currency for 
+which the covered clearing agency has payment obligations owed to 
+clearing members.\27\ Cash, held either at the central bank of issuance 
+or at a creditworthy commercial bank, is the first resource listed in 
+the definition of qualifying liquid resources.\28\
+---------------------------------------------------------------------------
+
+    \27\ 17 CFR 240.17ad-22(e)(7)(ii).
+    \28\ 17 CFR 240.17ad-22(a).
+---------------------------------------------------------------------------
+
+    Since OCC began paying interest on Clearing Fund cash, Clearing 
+Members have deposited more cash in the Clearing Fund than OCC 
+requires. Based on the data provided by OCC, Clearing Member cash 
+contributions to the Clearing Fund have exceeded requirements generally 
+risen over time. In contrast, Clearing Members currently deposit only a 
+small percentage of total margin assets as cash relative to valued 
+securities. Based on the data provided and excess cash deposited in the 
+Clearing Fund, the Proposed Rule Change is likely to increase the 
+percentage of margin Clearing Members post in cash over any minimum 
+requirement imposed by OCC. Increasing the likelihood that members will 
+provide cash to OCC above and beyond what OCC requires increases the 
+likelihood that OCC will continue to hold sufficient qualifying liquid 
+resources to meet its liquidity requirements, which would allow OCC to 
+better manage its liquidity risk.
+    For the reasons stated above, allowing OCC to pay interest on cash 
+deposited as margin is consistent with the requirements of Rule 17ad-
+22(e)(7)(ii) under the Exchange Act.\29\
+---------------------------------------------------------------------------
+
+    \29\ 17 CFR 240.17ad-22(e)(7)(ii).
+---------------------------------------------------------------------------
+
+C. Consistency With Rule 17ad-22(e)(7)(iii) Under the Exchange Act
+
+    Rule 17ad-22(e)(7)(iii) requires each covered clearing agency to 
+establish, implement, maintain, and enforce written policies and 
+procedures reasonably designed to effectively measure, monitor, and 
+manage the liquidity risk that arises in or is borne by the covered 
+clearing agency, including measuring, monitoring, and managing its 
+settlement and funding flows on an ongoing and timely basis, and its 
+use of intraday liquidity by, at a minimum, using the access to 
+accounts and services at a Federal Reserve Bank, pursuant to Section 
+806(a) of the Payment, Clearing, and Settlement Supervision Act of 2010 
+(12 U.S.C. 5465(a)),\30\ or other relevant central bank, when available 
+and where determined to be practical by the board of directors of the 
+covered clearing agency, to enhance its management of liquidity 
+risk.\31\
+---------------------------------------------------------------------------
+
+    \30\ 12 U.S.C. 5465(a). The Board of Governors of the Federal 
+Reserve System may authorize a Federal Reserve Bank to establish and 
+maintain an account for a designated financial market utility. See 
+also Board of Governors of the Federal Reserve System, Designated 
+Financial Market Utilities, Title VIII of the Dodd-Frank Act, 
+available at <a href="https://www.federalreserve.gov/paymentsystems/title-viii-dfa.htm">https://www.federalreserve.gov/paymentsystems/title-viii-dfa.htm</a>.
+    \31\ 17 CFR 240.17ad-22(e)(7)(iii).
+---------------------------------------------------------------------------
+
+    OCC may use cash margin deposits, including customer cash margin 
+deposits, to manage liquidity risk. OCC's Liquidity Risk Management 
+Framework document (``LRMF'') sets forth an overview of OCC's liquidity 
+risk management practices and governs OCC's policies and procedures as 
+they relate to liquidity risk management.\32\ The LRMF describes the 
+primary liquidity risks OCC faces when managing a Clearing Member 
+default, and describes the maintenance of liquidity resources designed 
+to address a variety of stress scenarios through the sizing of such 
+resources.\33\ The LRMF defines such liquidity resources to include 
+cash margin deposits where such deposits are required under OCC's 
+Contingency Funding Plan.\34\ OCC's Proposed Rule Change would permit 
+OCC to deposit securities customer cash margin in its FRB account. 
+Moreover, as described above, the collection of interest from the FRB 
+for cash margin, and consequent delivery of that interest, minus a 
+management fee, to Members would incentivize Members to contribute more 
+cash as part of their margin responsibilities, in lieu of less liquid 
+assets. The holding of a greater amount of cash as margin would help 
+OCC better manage its liquidity risk.
+---------------------------------------------------------------------------
+
+    \32\ See Securities Exchange Act Release 89014 (Jun. 4, 2020), 
+85 FR 35446 (Jun. 10, 2020) (File No. SR-OCC-2020-003) (``LRMF 
+Approval Order'').
+    \33\ See LRMF Approval Order at 35447.
+    \34\ Id.
+---------------------------------------------------------------------------
+
+    For the reasons stated above, allowing OCC to deposit non-customer 
+cash margin in its FRB account is consistent with the requirements Rule 
+17ad-22(e)(7)(iii) under the Exchange Act.\35\
+---------------------------------------------------------------------------
+
+    \35\ 17 CFR 240.17ad-22(e)(7)(iii).
+---------------------------------------------------------------------------
+
+IV. Solicitation of Comments on Partial Amendment No. 1 to the Proposed 
+Rule Change
+
+    Interested persons are invited to submit written data, views and 
+arguments concerning the foregoing, including whether the proposed rule 
+change, as modified by Partial Amendment No. 1, is consistent with the 
+Exchange Act. Comments may be submitted by any of the following 
+methods:
+
+Electronic Comments
+
+    <bullet> Use the Commission's internet comment form (<a href="https://www.sec.gov/rules/sro.shtml">https://www.sec.gov/rules/sro.shtml</a>); or
+    <bullet> Send an email to <a href="/cdn-cgi/l/email-protection#d7a5a2bbb2fab4b8babab2b9a3a497a4b2b4f9b0b8a1"><span class="__cf_email__" data-cfemail="e290978e87cf818d8f8f878c9691a2918781cc858d94">[email&#160;protected]</span></a>. Please include 
+file number SR-OCC-2026-007 on the subject line.
+
+Paper Comments
+
+    <bullet> Send paper comments in triplicate to Secretary, Securities 
+and Exchange Commission, 100 F Street, NE, Washington, DC 20549-1090.
+
+All submissions should refer to file number SR-OCC-2026-007. This file 
+number should be included on the subject line if email is used. To help 
+the Commission process and review your comments more efficiently, 
+please use only one method. The Commission will post all comments on 
+the Commission's internet website (<a href="https://www.sec.gov/rules/sro.shtml">https://www.sec.gov/rules/sro.shtml</a>). Copies of such filing will be available for inspection and 
+copying at the principal office of OCC and on OCC's website at https://
+www.theocc.com/Company-Information/Documents-and-Archives/By-Laws-and-
+Rules.
+    Do not include personal identifiable information in submissions; 
+you should submit only information that you wish to make available 
+publicly. We may redact in part or withhold entirely from publication 
+submitted material that is obscene or subject to copyright protection.
+    All submissions should refer to File Number SR-OCC-2026-007 and 
+should be submitted on or before October 13, 2026.
+    For the Commission, by the Division of Trading and Markets, 
+pursuant to delegated authority.\36\
+---------------------------------------------------------------------------
+
+    \36\ 17 CFR 200.30-3(a)(12).
+---------------------------------------------------------------------------
+
+V. Accelerated Approval of Proposed Rule Change, as Modified by Partial 
+Amendment No. 1
+
+    The Commission finds good cause, pursuant to Section 19(b)(2) of 
+the Exchange Act,\37\ to approve the proposed rule change prior to the 
+30th day after the date of publication of notice of the filing of 
+Partial Amendment No. 1 in the Federal Register. As discussed above, 
+Partial Amendment No. 1 modified the original Proposed Rule Change to 
+correcting a statement made regarding subaccounts at the FRB, as part 
+of File No. SR-OCC-2026-007 on September, 15, 2026. OCC initially 
+stated that it would establish a subaccount at the FRB under the master 
+account to separately account for
+
+[[Page 59822]]
+
+customer margin.\38\ In Partial Amendment No. 1, OCC stated that will 
+request a subaccount for securities customer margin. OCC stated further 
+that until such time that OCC could secure a separate subaccount for 
+its Clearing Member's Clearing Fund deposits, OCC would include 
+transaction activity for Clearing Fund deposits in the existing 
+subaccount for non-customer margin cash. Partial Amendment No. 1 does 
+not change the purpose of or basis for the proposed changes.
+---------------------------------------------------------------------------
+
+    \37\ 15 U.S.C. 78s(b)(2).
+    \38\ See Notice, 91 FR at 50580 n.8. OCC explained that it uses 
+a similar subaccount for non-customer margin at the FRB.
+---------------------------------------------------------------------------
+
+    For similar reasons as discussed above, the Commission finds that 
+Partial Amendment No. 1 is consistent with the requirement that OCC's 
+rules not be designed to permit unfair discrimination among 
+participants in the use of the clearing agency, under Section 
+17A(b)(3)(F) of the Exchange Act.\47\ Accordingly, the Commission finds 
+good cause, pursuant to Section 19(b)(2) of the Exchange Act, to 
+approve the proposed rule change, as modified by Partial Amendment No. 
+1, on an accelerated basis, pursuant to Section 19(b)(2) of the 
+Exchange Act.\39\
+---------------------------------------------------------------------------
+
+    \39\ 15 U.S.C. 78s(b)(2).
+---------------------------------------------------------------------------
+
+VI. Conclusion
+
+    On the basis of the foregoing, the Commission finds that the 
+Proposed Rule Change is consistent with the requirements of the 
+Exchange Act, and in particular, with the requirements of with Section 
+17A(b)(3)(F) of the Exchange Act,\40\ and Rules 17ad-22(e)(7)(ii) and 
+17ad-22(e)(7)(iii) thereunder.\41\
+---------------------------------------------------------------------------
+
+    \40\ 15 U.S.C. 78q-1(b)(3)(F).
+    \41\ 17 CFR 240.17ad-22(e)(7)(ii) and (e)(7)(iii).
+---------------------------------------------------------------------------
+
+    It is therefore ordered pursuant to Section 19(b)(2) of the 
+Exchange Act \42\ that the proposed rule change (SR-OCC-2026-007) be, 
+and hereby is, approved.\43\
+---------------------------------------------------------------------------
+
+    \42\ 15 U.S.C. 78s(b)(2).
+    \43\ In approving the Proposed Rule Change, the Commission 
+considered the proposal's impact on efficiency, competition, and 
+capital formation. 15 U.S.C. 78c(f).
+
+    For the Commission, by the Division of Trading and Markets, 
+pursuant to delegated authority.\44\
+---------------------------------------------------------------------------
+
+    \44\ 17 CFR 200.30-3(a)(12).
+---------------------------------------------------------------------------
+
+Sherry R. Haywood,
+Assistant Secretary.
+[FR Doc. 2026-19216 Filed 9-18-26; 8:45 am]
+BILLING CODE 8011-01-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

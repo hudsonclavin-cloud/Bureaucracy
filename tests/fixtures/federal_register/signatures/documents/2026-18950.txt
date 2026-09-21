@@ -1,0 +1,121 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 178 (Wednesday, September 16, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 178 (Wednesday, September 16, 2026)]
+[Notices]
+[Pages 58686-58687]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-18950]
+
+
+-----------------------------------------------------------------------
+
+DEPARTMENT OF HEALTH AND HUMAN SERVICES
+
+[Document Identifier: OS-0990-0473]
+
+
+Agency Information Collection Request; 30-Day Public Comment 
+Request
+
+AGENCY: Office for Human Research Protections (OHRP), Office of the 
+Assistant Secretary for Health (OASH), Office of the Secretary, HHS.
+
+ACTION: Notice.
+
+-----------------------------------------------------------------------
+
+SUMMARY: In compliance with the requirement of the Paperwork Reduction 
+Act of 1995, the Office of the Secretary (OS), Department of Health and 
+Human Services, submitted an Information Collection Request (ICR) to 
+the Office of Management and Budget (OMB) for review and approval. OMB 
+will accept further comments from the public during the review and 
+approval period.
+
+DATES: Comments on the ICR must be received on or before October 16, 
+2026.
+
+ADDRESSES: Written comments and recommendations for the proposed 
+information collection should be sent within 30 days of publication of 
+this notice via <a href="http://www.reginfo.gov/public/do/PRAMain">www.reginfo.gov/public/do/PRAMain</a>. Find this 
+information collection by selecting ``Currently under Review'' and 
+``Select Agency: Department of Health and Human Services''.
+
+FOR FURTHER INFORMATION CONTACT: Natalie Klein, <a href="/cdn-cgi/l/email-protection#2d634c594c4144480366414844436d45455e034a425b"><span class="__cf_email__" data-cfemail="a7e9c6d3c6cbcec289eccbc2cec9e7cfcfd489c0c8d1">[email&#160;protected]</span></a> 
+or (240) 453-6900. If requesting information, please include the 
+document identifier 0990-0473-30D and project title, ``Department of 
+Health and Human Services (HHS) Subpart C Certification Form'' for 
+reference.
+
+SUPPLEMENTARY INFORMATION: Interested persons are invited to send 
+comments regarding this burden estimate or any other aspect of this 
+collection of information, including any of the following subjects: (1) 
+The necessity and utility of the proposed information collection for 
+the proper performance of the agency's functions; (2) the accuracy of 
+the estimated burden; (3) ways to enhance the quality, utility, and 
+clarity of the information to be collected; and (4) the use of 
+automated collection techniques or other forms of information 
+technology to minimize the information collection burden.
+    Title of the Collection: Department of Health and Human Services 
+(HHS) Subpart C Certification Form.
+    Type of Collection: Renewal.
+    OMB No.: 0990-0473.
+    Abstract: The Office for Human Research Protections (OHRP) is 
+requesting a three-year extension of OMB No. 0990-0473, the HHS Subpart 
+C Certification Form. The purpose of this form is to provide a 
+simplified, standardized procedure for institutions to submit subpart C 
+research certifications to OHRP in order to obtain authorization to 
+include prisoners in HHS-conducted or supported human subjects 
+research. The form also simplifies the internal process used by OHRP to 
+review and record such certifications, resulting in faster processing 
+while reducing unnecessary and burdensome staff time.
+    Likely Respondents: Institutions or Organizations operating 
+Institutional Review Boards (IRBs) that have enrolled or are planning 
+to enroll prisoners in human subjects research conducted or supported 
+by HHS.
+
+                                     Estimated Annualized Burden Hour Table
+----------------------------------------------------------------------------------------------------------------
+                                                                         Number of    Average burden     Total
+          Form name                 Respondents          Number of     responses per   per response     burden
+                                                        respondents     respondent      (in hours)       hours
+----------------------------------------------------------------------------------------------------------------
+Subpart C Certification Form.  Institutions or                    40            2.13             1.0          85
+                                Organizations
+                                operating
+                                Institutional Review
+                                Boards (IRBs).
+                                                     -----------------------------------------------------------
+    Total....................  .....................              40            2.13             1.0          85
+----------------------------------------------------------------------------------------------------------------
+
+    The estimate of the number of respondents is based upon the current 
+number of institutions certifying HHS-conducted or -supported subpart C 
+human subjects research to OHRP. In 2025, OHRP received fifty-one 
+certifications from thirty-eight institutions or organizations, and one 
+hundred percent of the respondents submitted their certification 
+information electronically. We project that, annually, forty 
+institutions will submit certifications. Most respondents will submit 
+the form twice annually; however, some respondents may submit the form 
+3 times annually. Consistent with 5 CFR 1320.5(a)(1)(iv)(5), therefore, 
+we believe this estimate represents the
+
+[[Page 58687]]
+
+total annual reporting and recordkeeping burden that will result from 
+the collection of information.
+    The burden is estimated to average one hour per Subpart C 
+Certification Form and the total annual burden hours are projected to 
+be eighty-five.
+
+Catherine Howard,
+Paperwork Reduction Act Reports Clearance Officer, Office of the 
+Secretary.
+[FR Doc. 2026-18950 Filed 9-15-26; 8:45 am]
+BILLING CODE 4150-36-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

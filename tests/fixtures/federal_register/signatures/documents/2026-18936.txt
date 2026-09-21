@@ -1,0 +1,233 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 178 (Wednesday, September 16, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 178 (Wednesday, September 16, 2026)]
+[Notices]
+[Pages 58712-58714]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-18936]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+NATIONAL MEDIATION BOARD
+
+
+Notice of Proposed Information Collection Request
+
+AGENCY: National Mediation Board.
+
+ACTION: Notice.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The National Mediation Board (NMB) invites comments on the 
+proposed information collection request as required by the Paperwork 
+Reduction Act of 1995. The NMB is seeking the reinstatement, with non-
+substantive change, of a previously approved collection of information, 
+entitled ``Application for Investigation of Representation Dispute.'' 
+The change to the information collection is a non-substantive one 
+related to the change in the agency's Washington, DC headquarters 
+address, which was effective August 1, 2026. This notice allows for 60 
+days for public comments.
+
+DATES: Comments are due by November 16, 2026.
+
+ADDRESSES: Requests for copies of the proposed information collection 
+request
+
+[[Page 58713]]
+
+should be directed by email (the preferred method) to NMB Program 
+Management Specialist Keaira Butler at <a href="/cdn-cgi/l/email-protection#3a515f5b53485b14584f4e565f487a545758145d554c"><span class="__cf_email__" data-cfemail="28434d49415a49064a5d5c444d5a6846454a064f475e">[email&#160;protected]</span></a>, or mailed 
+to Keaira Butler at National Mediation Board, Office of Legal Affairs, 
+P.O. Box 23300, Washington, DC 20026. Please specify the complete title 
+of the information collection when making your request.
+    Comments on the proposed information collection request should be 
+directed by email (the preferred method) to NMB Counsel John Gross at 
+<a href="/cdn-cgi/l/email-protection#deb9acb1adad9eb0b3bcf0b9b1a8"><span class="__cf_email__" data-cfemail="6c0b1e031f1f2c02010e420b031a">[email&#160;protected]</span></a>, or by mail to John Gross at National Mediation Board, 
+Office of Legal Affairs, P.O. Box 23300, Washington, DC 20026.
+
+FOR FURTHER INFORMATION CONTACT: John Gross, Counsel, National 
+Mediation Board, Office of Legal Affairs, P.O. Box 23300, Washington, 
+DC 20026; telephone number: 202-815-1647; email address: <a href="/cdn-cgi/l/email-protection#92f5e0fde1e1d2fcfff0bcf5fde4"><span class="__cf_email__" data-cfemail="4522372a3636052b28276b222a33">[email&#160;protected]</span></a>.
+
+SUPPLEMENTARY INFORMATION: Section 3506 of the Paperwork Reduction Act 
+of 1995 (U.S.C. Chapter 35) requires that the Office of Management and 
+Budget (OMB) provide interested Federal agencies and the public an 
+early opportunity to comment on information collection requests. OMB 
+may amend or waive the requirement for public consultation to the 
+extent that public participation in the approval process would defeat 
+the purpose of the information collection, violate State or Federal 
+law, or substantially interfere with any agency's ability to perform 
+its statutory obligations. The NMB publishes that notice containing 
+proposed information collection requests prior to submission of these 
+requests to OMB. Each proposed information collection contains the 
+following: (1) Type of review requested, e.g. new, revision extension, 
+existing or reinstatement; (2) Title; (3) Summary of the collection; 
+(4) Description of the need for, and proposed use of, the information; 
+(5) Respondents and frequency of collection; and (6) Reporting and/or 
+Record keeping burden. OMB invites public comment.
+    Currently, the NMB is soliciting comments concerning the proposed 
+reinstatement, with non-substantive change, of a previously approved 
+collection of information, entitled ``Application for Investigation of 
+Representation Dispute,'' and is interested in public comment 
+addressing the following issues: (1) Is this collection necessary to 
+the proper functions of the agency; (2) will this information be 
+processed and used in a timely manner; (3) is the estimate of burden 
+accurate; (4) how might the agency enhance the quality, utility, and 
+clarity of the information to be collected; and (5) how might the 
+agency minimize the burden of this collection on the respondents, 
+including through the use of information technology.
+    Title of Collection: Application for Investigation of 
+Representation Dispute.
+    OMB Control Number: 3140-0001.
+    Type of Review: Reinstatement, with non-substantive change, of a 
+previously approved collection of information.
+    Affected Public: Carrier and Union Officials, and employees of 
+railroads and airlines.
+    Frequency of Collection: On occasion.
+    Respondent's Obligation: Voluntary.
+    Estimated Reporting and Recordkeeping Hour Burden:
+    Responses: 25 annually.
+    Burden Hours: 6.25.
+    1. Abstract: When a dispute arises among a carrier's employees as 
+to who will be their bargaining representative, the NMB is required by 
+Section 2, Ninth of the Railway Labor Act (RLA), 45 U.S.C. 152, Ninth, 
+to investigate the dispute, to determine who is the authorized 
+representative, if any, and to certify such representative. The NMB's 
+duties do not arise until its services have been invoked by a party to 
+the dispute. The RLA is silent as to how the invocation of a 
+representation dispute is to be accomplished and the NMB has not 
+promulgated regulations requiring any specific vehicle. Nonetheless, 29 
+CFR 1203.2, provides that applications for the services of the NMB 
+under Section 2, Ninth, to investigate representation disputes may be 
+made on printed forms secured from the NMB's Office of Legal Affairs or 
+on the internet at <a href="http://www.nmb.gov">http://www.nmb.gov</a>. The application requires the 
+following information: the name of the carrier involved; the name or 
+description of the craft or class involved; the name of the petitioning 
+organization or individual; the name of the organization currently 
+representing the employees, if any; the names of any other 
+organizations or representatives involved in the dispute; and the 
+estimated number of employees in the craft or class involved. This 
+basic information is essential in providing the NMB with the details of 
+the dispute so that it can determine what resources will be required to 
+conduct an investigation.
+    2. The application form provides necessary information to the NMB 
+so that it can determine the amount of staff and resources required to 
+conduct an investigation and fulfill its statutory responsibilities. 
+Without this information, the NMB would have to delay the commencement 
+of the investigation, which is contrary to the intent of the RLA.
+    3. There is no improved technological method for obtaining this 
+information. The burden on the parties is minimal in completing the 
+Application for Investigation of Representation Dispute.
+    4. There is no duplication in obtaining this information.
+    5. Rarely are representation elections conducted for small 
+businesses. Employers are not permitted to request our services 
+regarding representation investigations. The labor organizations, which 
+are the typical requesters, are national in scope and would not qualify 
+as small businesses. Even in situations where the invocation comes from 
+a small labor organization, we believe the burden in completing the 
+application form is minimal and that no reduction in burden could be 
+made.
+    6. The NMB is required by Section 2, Ninth, to investigate the 
+dispute, to determine who is the authorized representative, if any, and 
+to certify such representative. The NMB has no ability to control the 
+frequency, technical, or legal obstacles, which would reduce the 
+burden.
+    7. The information requested by the NMB is consistent with the 
+general information collection guidelines of 5 CFR 1320.6 and 5 CFR 
+1320.8(b)(3). The NMB has no ability to control the data provided or 
+timing of the invocation. The burden on the parties is minimal in 
+completing the Application for Investigation of Representation Dispute.
+    8. No payments or gifts have been provided by the NMB to any 
+respondents of the form.
+    9. There are no questions of a sensitive nature on the form.
+    10. The total time burden on respondents is 6.25 hours annually--
+this is the time required to collect information. After consulting with 
+a sample of people involved with the collection of this information, 
+the time to complete this information collection is estimated to 
+average 15 minutes per response, including gathering the data needed 
+and completion and review of the information.
+    Number of respondents per year: 25.
+    Estimated time per respondent: 15 minutes.
+    Total Burden hours per year: 6.25. (25 x .25 hours)
+    11. The total collection and mail cost burden on respondents is 
+estimated at $222.00 annually ($201.50 time cost burden + $20.50 mail 
+cost burden.)
+    a. The respondents will not incur any capital costs or start up 
+costs for this collection.
+    b. Cost burden on respondents--detail:
+
+[[Page 58714]]
+
+    The total time burden annual cost is $201.50.
+    Time Burden Basis: The total hourly burden per year, upon 
+respondents, is 6.25.
+    Staff cost = $201.50.
+
+$32.24 per hour--based on mid level clerical salary
+$32.24 x 6.25 hours per year = $201.50
+
+    We are estimating that a mid-level clerical person, with an average 
+salary of $32.24 per hour, will be completing the Application for 
+Investigation of Representation Dispute form. The total burden is 
+estimated at 6.25 hours, therefore, the total time burden cost is 
+estimated at $201.50 per year.
+    The total annual mailing cost to respondents is $20.50.
+    Number of applications mailed by
+    Respondents per year: 25.
+    Total estimated cost: $20.50 (25 x $.82 stamp).
+    The collection of this information is not mandatory; it is a 
+voluntary request from airline and railroad carrier employees seeking 
+to invoke an investigation of a representation dispute. After 
+consulting with a sample of people involved with the collection of this 
+information, the time to complete this information collection is 
+estimated to average 15 minutes per response, including gathering the 
+data needed and completion and review of the information. However, the 
+estimated hour burden costs of the respondents may vary due to the 
+complexity of the specific question in dispute.
+    The application form is available from the NMB's Office of Legal 
+Affairs and is also available on the internet at <a href="http://www.nmb.gov">http://www.nmb.gov</a>, 
+which is the primary source of the form.
+    12. The total annualized Federal cost is $340.00. This cost 
+represents the processing cost of the applications once they are 
+received by the NMB. There are no printing or mailing costs. (The NMB 
+has not received any requests to print and mail a form for a number of 
+years.) The completed applications are maintained by the Office of 
+Legal Affairs.
+    a. Processing Cost = $340.00.
+    Basis (processing cost): Representation is requested approximately 
+25 times per year and it takes approximately 20 minutes to process each 
+application.
+
+Staff Cost = $340.00
+$.68 per minute (GS 11 Step 1 base hourly rate of $40.94 per hr. / 60)
+$.68 x 20 minutes per mailing = $13.60
+$13.60 x 25 times per year = $340.00
+
+    13. Item 13--no change in annual reporting and recordkeeping hour 
+burden.
+    14. The information collected by the application will not be 
+published.
+    15. The NMB will display the OMB expiration date on the form.
+    16(a)--the form does not reduce the burden on small entities; 
+however, the burden is minimized and voluntary.
+    16(b)--the form does not indicate the retention period for record 
+keeping requirements.
+    16(c)--not applicable, the form is not part of a statistical 
+survey.
+
+    Dated: September 11, 2026.
+Michael Jerger,
+Chief Financial Officer, Acting Director of Administration, National 
+Mediation Board.
+[FR Doc. 2026-18936 Filed 9-15-26; 8:45 am]
+BILLING CODE 7550-01-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

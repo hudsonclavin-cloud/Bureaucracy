@@ -1,0 +1,155 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 165 (Thursday, August 27, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 165 (Thursday, August 27, 2026)]
+[Notices]
+[Pages 55322-55323]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-17524]
+
+
+-----------------------------------------------------------------------
+
+DEPARTMENT OF COMMERCE
+
+Patent and Trademark Office
+
+
+Agency Information Collection Activities; Submission to the 
+Office of Management and Budget for Review and Approval; Comment 
+Request; Patent Trial and Appeal Board (PTAB) Appeals
+
+AGENCY: United States Patent and Trademark Office, Department of 
+Commerce.
+
+ACTION: Notice of information collection; request for comments.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The United States Patent and Trademark Office (hereafter 
+``USPTO'' or ``Agency'') will submit the following information 
+collection request to the Office of Management and Budget (OMB) for 
+review and clearance in accordance with the Paperwork Reduction Act of 
+1995, on or after the date of publication of this notice. The USPTO 
+invites comments on the information collection renewal of 0651-0063, 
+which helps the USPTO assess the impact of its information collection 
+requirements and minimize the reporting burden to the public. Public 
+comments were previously requested via the Federal Register on April 
+20, 2026, during a 60-day comment period (91 FR 20986). This notice 
+allows for an additional 30 days for public comments.
+
+DATES: To ensure consideration, you must submit comments regarding this 
+information collection on or before September 28, 2026.
+
+ADDRESSES: Written comments and recommendations for this information 
+collection should be submitted within 30 days of the publication of 
+this notice on the following website, <a href="https://www.reginfo.gov/public/do/PRAMain">https://www.reginfo.gov/public/do/PRAMain</a>. Find this particular information collection by selecting 
+``Currently under 30-day Review-Open for Public Comments'' or by using 
+the search function and entering either the title of the information 
+collection or the OMB Control Number, 0651-0063. Do not submit 
+Confidential Business Information or otherwise sensitive or protected 
+information.
+
+FOR FURTHER INFORMATION CONTACT: 
+    <bullet> This information collection request may be viewed at 
+<a href="https://www.reginfo.gov/">https://www.reginfo.gov/</a>. Follow the instructions to view the 
+Department of Commerce, USPTO information collections currently under 
+review by OMB.
+    <bullet> Email: <a href="/cdn-cgi/l/email-protection#450c2b232a372824312c2a2b062a29292026312c2a2b05303635312a6b222a33"><span class="__cf_email__" data-cfemail="440d2a222b362925302d2b2a072b28282127302d2b2a04313734302b6a232b32">[email&#160;protected]</span></a>. Include ``0651-
+0063 information request'' in the subject line of the message.
+    <bullet> Mail: Justin Isaac, Office of the Chief Administrative 
+Officer, United States Patent and Trademark Office, P.O. Box 1450, 
+Alexandria, VA 22313-1450.
+    <bullet> Telephone: Stacey White, Patent Trial and Appeal Board, 
+571-272-9797.
+
+SUPPLEMENTARY INFORMATION: 
+    Title: Patent Trial and Appeal Board (PTAB) Appeals.
+    OMB Control Number: 0651-0063.
+    Abstract: The Patent Trial and Appeal Board (hereafter ``PTAB'' or 
+Board'') is established by statute under 35 U.S.C. 6. This statute 
+directs, in relevant part, that PTAB shall ``on written appeal of an 
+applicant, review adverse decisions of examiners upon applications for 
+patents pursuant to section 134(a).'' PTAB has the authority, under 35 
+U.S.C. 134 and 306 to decide appeals in applications and ex parte 
+reexamination proceedings, and under pre-AIA sections of the Patent 
+Act, i.e., 35 U.S.C. 134, 135, and 315, to decide appeals in inter 
+partes reexamination proceedings and interferences. In addition, 35 
+U.S.C. 6 establishes the membership of PTAB as the Director, the Deputy 
+Director, the Commissioner for Patents, the Commissioner for 
+Trademarks, and the Administrative Patent Judges. Appeals and 
+interferences are decided by a merits panel of at least three members 
+of the Board.
+    The Board's responsibilities under the statute include the review 
+of ex parte appeals from adverse decisions of examiners in those 
+situations where a written appeal is taken by a dissatisfied applicant 
+or patent owner. In inter partes reexamination appeals, PTAB reviews an 
+examiner's decision adverse to a patent owner or a third-party 
+requester. PTAB's opinions and decisions for publicly available files 
+are published on the USPTO website.\1\ The Board also conducts 
+interference proceedings.
+---------------------------------------------------------------------------
+
+    \1\ <a href="https://www.uspto.gov/patents/ptab/decisions">https://www.uspto.gov/patents/ptab/decisions</a>.
+---------------------------------------------------------------------------
+
+    The items associated with this information collection include 
+appeals in applications, ex parte reexamination proceedings, and 
+appeals in inter partes reexamination proceedings and interference 
+proceedings that are governed by the regulations in 37 CFR 41. Failure 
+to comply with the appropriate regulations may result in dismissal of 
+the appeal or denial of entry of the submission.
+    Since the publication of the 60-day notice, the USPTO has updated 
+the number of responses associated with this information collection to 
+include respondents participating in the SPARK Pilot Program. This 
+results in an increase of 50 respondents, responses, and burden hours 
+to this information collection.
+
+Forms: (AIA = America Invents Act; SB = Specimen Book)
+
+    <bullet> PTO/AIA/31: (Notice of Appeal from the Examiner to the 
+Patent Trial and Appeal Board).
+    <bullet> PTO/SB/31: (Notice of Appeal from the Examiner to the 
+Board of Patent Appeals and Interferences).
+    <bullet> PTO/AIA/32: (Request for Oral Hearing before the Patent 
+Trial and Appeal Board).
+    <bullet> PTO/SB/32: (Request for Oral Hearing before the Patent 
+Trial and Appeal Board).
+    <bullet> PTO/SB/479b: Certification and Petition Under the 
+Standards Participation and Representation Kudos (SPARK) Pilot Program 
+to Expedite an Appeal to the Patent Trial and Appeal Board (PTAB).
+    Type of Review: Extension and revision of a currently approved 
+information collection.
+    Affected Public: Private sector.
+    Respondent's Obligation: Required to obtain or retain benefits.
+    Frequency: On occasion.
+    Estimated Number of Annual Respondents: 16,955 respondents.
+    Estimated Number of Annual Responses: 31,544 responses.
+    Estimated Time per Response: The USPTO estimates that the responses 
+in this information collection will take the public approximately 30 
+minutes (0.50 hours) to 120 hours to complete. This includes the time 
+to gather the necessary information, create the document, and submit 
+the completed item to the USPTO.
+    Estimated Total Annual Respondent Burden Hours: 337,712 hours.
+    Estimated Total Annual Respondent Non-hourly Cost Burden: 
+$24,086,261.
+
+[[Page 55323]]
+
+Since the publication of the 60-day notice, the USPTO has updated the 
+postage rate associated with this information collection from $12.25 to 
+$13.25. This results in an increase of $315 in non-hourly cost burden, 
+for a new estimated total annual respondent non-hourly cost burden of 
+$24,086,261.
+
+Justin Isaac,
+Information Collections Officer, Office of the Chief Administrative 
+Officer, United States Patent and Trademark Office.
+[FR Doc. 2026-17524 Filed 8-26-26; 8:45 am]
+BILLING CODE 3510-16-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

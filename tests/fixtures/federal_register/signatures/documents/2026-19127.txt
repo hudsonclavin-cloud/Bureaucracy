@@ -1,0 +1,1198 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 180 (Friday, September 18, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 180 (Friday, September 18, 2026)]
+[Notices]
+[Pages 59185-59193]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-19127]
+
+
+
+[[Page 59185]]
+
+-----------------------------------------------------------------------
+
+SECURITIES AND EXCHANGE COMMISSION
+
+[Release No. 34-106382; File No. SR-CboeEDGX-2026-060]
+
+
+Self-Regulatory Organizations; Cboe EDGX Exchange, Inc.; Notice 
+of Filing and Immediate Effectiveness of a Proposed Rule Change To 
+Introduce a Data Vendor Program
+
+September 15, 2026.
+    Pursuant to Section 19(b)(1) of the Securities Exchange Act of 1934 
+(``Act''),\1\ and Rule 19b-4 thereunder,\2\ notice is hereby given that 
+on September 8, 2026, Cboe EDGX Exchange, Inc. (the ``Exchange'' or 
+``EDGX) filed with the Securities and Exchange Commission (the 
+``Commission'') the proposed rule change as described in Items I, II, 
+and III below, which Items have been prepared by the Exchange. The 
+Commission is publishing this notice to solicit comments on the 
+proposed rule change from interested persons.
+---------------------------------------------------------------------------
+
+    \1\ 15 U.S.C. 78s(b)(1).
+    \2\ 17 CFR 240.19b-4.
+---------------------------------------------------------------------------
+
+I. Self-Regulatory Organization's Statement of the Terms of Substance 
+of the Proposed Rule Change
+
+    Cboe EDGX Exchange, Inc. (the ``Exchange'' or ``EDGX'') proposes to 
+introduce a Data Vendor Program, which includes introducing a new 
+defined term of Data Vendor, along with other clarifying changes. The 
+text of the proposed rule change is provided in Exhibit 5.
+    The text of the proposed rule change is also available on the 
+Commission's website (<a href="https://www.sec.gov/rules/sro.shtml">https://www.sec.gov/rules/sro.shtml</a>), the 
+Exchange's website (<a href="https://www.cboe.com/us/equities/regulation/rule_filings/edgx/">https://www.cboe.com/us/equities/regulation/rule_filings/edgx/</a>), and at the principal office of the Exchange.
+
+II. Self-Regulatory Organization's Statement of the Purpose of, and 
+Statutory Basis for, the Proposed Rule Change
+
+    In its filing with the Commission, the Exchange included statements 
+concerning the purpose of and basis for the proposed rule change and 
+discussed any comments it received on the proposed rule change. The 
+text of these statements may be examined at the places specified in 
+Item IV below. The Exchange has prepared summaries, set forth in 
+sections A, B, and C below, of the most significant aspects of such 
+statements.
+
+A. Self-Regulatory Organization's Statement of the Purpose of, and 
+Statutory Basis for, the Proposed Rule Change
+
+1. Purpose
+    The purpose of this proposed rule change is to (i) introduce a 
+definition of Data Vendor; (ii) codify the existing definition (as 
+defined in the Exchange's applicable North American Market Data 
+Policies) of Extranet Service Provider; (iii) codify an existing 
+practice that permits an External Distributor of both Cboe One Summary 
+and Cboe One Premium to be liable only for the External Distribution 
+Fee for Cboe One Premium; and (iv) create a program for Data Vendors in 
+order to incentivize Data Vendors to build out the applicable feeds and 
+make them commercially available to subscribers.\3\ The proposed 
+program will provide fee waivers (as described below) for External 
+Distribution Fees for Data Vendors for the Cboe One Summary Feed, Cboe 
+One Premium Feed, EDGX Summary Depth Data Feed, and EDGX Top Data Feed.
+---------------------------------------------------------------------------
+
+    \3\ The Exchange initially submitted the proposed rule change on 
+July 1, 2026 (SR-CboeEDGX-2026-048). On July 15, 2026, the Exchange 
+withdrew that filing and submitted SR-CboeEDGX-2026-049. On 
+September 8, 2026, the Exchange withdrew that filing and submitted 
+this filing.
+---------------------------------------------------------------------------
+
+Proposed Definitions
+    In connection with this proposed program, the Exchange first 
+proposes to adopt a definition for a specific category of participants. 
+Specifically, the Exchange proposes to establish the term ``Data 
+Vendor'' to mean ``an External Distributor that (i) is actively 
+engaged, as part of its primary business objective, in the solicitation 
+of unaffiliated third-party Distributors to redistribute a transformed 
+Market Data Product; (ii) does not maintain a brokerage relationship 
+with Users in connection with the receipt or use of the applicable 
+Market Data Product; and (iii) is not an Extranet Service Provider.'' 
+As part of this new definition, and as further described below, the 
+Exchange proposes to codify the existing definition of Extranet Service 
+Provider within the Cboe Global North American Market Data Policies to 
+be within its Fee Schedule.
+    The Exchange has also established objective, verifiable criteria 
+for determining eligibility as a Data Vendor. The following criteria, 
+which will be reflected in the Exchange's Fee Schedule, must be 
+satisfied: (1) the External Distributor must identify itself as a Data 
+Vendor in publicly available marketing materials; (2) the External 
+Distributor must transform the applicable Market Data Product before 
+redistribution, which may include aggregation across multiple data 
+sources, normalization into a consistent format, enrichment with 
+reference data or analytics, or repackaging into a proprietary delivery 
+mechanism (e.g., terminal, API, or proprietary feed); (3) the External 
+Distributor must redistribute the applicable transformed Market Data 
+Product to downstream Distributors as part of a paid commercial 
+offering; (4) the External Distributor must not maintain a brokerage 
+relationship with any User to whom it distributes the applicable Market 
+Data Product; (5) the External Distributor must not be an Extranet 
+Service Provider; and (6) the External Distributor must be actively 
+engaged in the solicitation of unaffiliated third-party Distributors to 
+subscribe to and redistribute the applicable transformed Market Data 
+Product. Upon request, the External Distributor must provide a written 
+attestation certifying compliance with the foregoing criteria. The 
+Exchange may request supporting documentation, including but not 
+limited to Distributor subscriber lists, revenue breakdowns by 
+recipient type, and descriptions of the transformations applied to the 
+Market Data Product. These objective eligibility criteria ensure that 
+the Data Vendor Program is equitably applied to all similarly situated 
+market participants.
+External Distributor
+    To begin, ``Data Vendor'' is intended to only encompass External 
+Distributors and not Internal Distributors. An External Distributor is 
+defined as a Distributor that receives the Exchange Market Data product 
+and then distributes that data to a third party or one or more Users 
+outside the Distributor's own entity.\4\ The Exchange seeks to adopt 
+this program in order to encourage broader redistribution of this data. 
+As such, the Exchange limits this to External Distributors as the 
+intent of this program is to have data distributed outside one's own 
+entity.
+---------------------------------------------------------------------------
+
+    \4\ See EDGX Equities Fee Schedule.
+---------------------------------------------------------------------------
+
+Primary Business Is To Redistribute to Distributors
+    To be eligible as a Data Vendor, an External Distributor must be 
+taking in data for the primary business purpose of selling access to 
+the applicable feed as a service in its own right, not merely 
+redistributing data in incidental support of broader business functions 
+such as trade execution, account management, or brokerage services. The 
+Exchange notes that, as part of its business, a Data
+
+[[Page 59186]]
+
+Vendor may redistribute a market data product to Users, but the primary 
+purpose must be to redistribute data to Distributors. The Exchange will 
+assess whether an External Distributor's primary business purpose 
+satisfies this criterion based on the External Distributor's publicly 
+available marketing materials. If the Exchange were to modify this 
+requirement to permit a primary business purpose of redistribution to 
+either Distributors or Users, it would unintentionally include firms 
+that may redistribute only to Users and that are not traditionally 
+considered data vendors (e.g., a media outlet or a bank).
+Transformed Market Data Product
+    To be eligible, the Exchange requires that the Data Vendor not 
+simply pass through data in its original form. Transformation may 
+include aggregation across multiple sources, normalization into a 
+consistent format, enrichment with derived analytics, or repackaging 
+into a proprietary delivery mechanism (e.g., terminal, API, feed), or 
+any other value-added processing that distinguishes the output from the 
+original source data.
+No Brokerage Relationship With Users
+    Next, the Exchange proposes that the definition of Data Vendor 
+include a stipulation that a Data Vendor must not maintain a brokerage 
+relationship with Users who receive the market data product. The 
+Exchange already has programs aimed at retail brokers, for example, 
+both the Small Retail Broker Program and the Small Retail Broker Hosted 
+Solutions Program.\5\ This proposed program is intended to encourage 
+Data Vendors specifically to take in the applicable feeds and 
+distribute them. A Data Vendor's service model is different from a 
+retail broker's, as a Data Vendor's business model is built around 
+providing data to firms and Users alike, whereas a retail broker's 
+business model is focused on connecting Users to markets in order to 
+trade and may include providing market data as part of its offering to 
+its Users. As the Exchange already has programs specifically for retail 
+brokers, the Exchange does not believe it would be appropriate to 
+include retail brokers here. The Exchange notes that if a Data Vendor 
+that is currently receiving a fee waiver under this Program 
+subsequently commences a brokerage relationship with its Users, it will 
+no longer satisfy the definition of Data Vendor and will cease to be 
+eligible for the Program. In such case, the External Distributor would 
+be assessed the standard External Distribution Fee for the applicable 
+feed as of the date it no longer satisfies the definition of Data 
+Vendor.
+---------------------------------------------------------------------------
+
+    \5\ See EDGX Equities Fee Schedule.
+---------------------------------------------------------------------------
+
+Not an Extranet Service Provider
+    As noted above, the Exchange proposes also to define Extranet 
+Service Provider when it introduces the definition of Data Vendor into 
+its Fee Schedule. Today, this term already exists in the Cboe Global 
+Markets North American Data Policies.\6\ The Exchange proposes to 
+codify this definition in its Fee Schedule because the proposed 
+definition of Data Vendor directly references this defined term. 
+Specifically, the Exchange proposes to codify that an Extranet Service 
+Provider is ``an entity that has entered into a Cboe Global Markets 
+Global Data Agreement and Transmits an Exchange Market Data Product, 
+via an extranet operated by such entity, to data recipients. `Transmit' 
+means to direct an Exchange Market Data Product to one or more data 
+recipients without modification of the content, format, or other 
+characteristics of the Exchange Market Data Product.'' An Extranet 
+Service Provider is not authorized to use or process an Exchange Market 
+Data Product for any purpose.
+---------------------------------------------------------------------------
+
+    \6\ See Market_Data_Policies.pdf
+---------------------------------------------------------------------------
+
+Applicable Data Feeds
+    By way of background, the Exchange offers the Cboe One Premium Data 
+Feed, which is a data feed that disseminates, on a real-time basis, the 
+aggregate best bid and offer (``BBO'') of all displayed orders for 
+securities traded on the Exchange and its affiliated equities exchanges 
+and enables recipients to receive aggregated two-sided quotations from 
+EDGX and its affiliated equities exchanges for up to twelve (12) price 
+levels (and, for a limited time, up to five (5) price levels).\7\ The 
+Cboe One Premium Data Feed is created using the data from the Exchange 
+and each of its affiliated equities exchanges' Summary Depth data feeds 
+(allowing for up to 48 total price levels).
+---------------------------------------------------------------------------
+
+    \7\ EDGX filed to increase the levels of the Cboe One Premium 
+Data Feed from five (5) levels to twelve (12) levels. To help in 
+this transition, it is currently supporting both the five and twelve 
+level feeds; however, as stated in its rule, EDGX shall sunset the 
+five (5) level feed of Cboe One Premium by December 31, 2026 (with 
+the date to be announced via Exchange Notice). See Rule 13.8(b)(i).
+---------------------------------------------------------------------------
+
+    The Exchange also offers the Cboe One Summary Data Feed, which 
+disseminates, on a real-time basis, the aggregate BBO of all displayed 
+orders for securities traded on EDGX and its affiliated equities 
+exchanges and also contains individual last sale information for EDGX 
+and its affiliated equities exchanges.\8\
+---------------------------------------------------------------------------
+
+    \8\ The Cboe One Summary Feed is distinguishable from the Cboe 
+One Premium Feed in that it does not provide depth of book data. In 
+contrast, the Cboe One Premium Feed contains all the available data 
+in the Cboe One Summary Feed and also provides depth of book data.
+---------------------------------------------------------------------------
+
+    The Exchange offers the EDGX Summary Depth Data Feed, which is a 
+data feed that offers aggregated two-sided quotations up to twelve 
+price levels for all displayed orders entered into the System, and the 
+EDGX Top Data Feed, which is a data feed that offers top-of-book 
+quotations and last sale information based on orders entered into the 
+Exchange's System.
+External Distribution Fees for Cboe One Premium and Cboe One Summary
+    The proposed rule change also clarifies that External Distributors 
+of both Cboe One Summary and Cboe One Premium shall only be responsible 
+for paying the External Distribution Fee for Cboe One Premium. The 
+current fee schedule provides that ``Cboe One Summary User Fees can be 
+applied to Cboe One Summary and Cboe One Premium External Distribution 
+Fees.'' Under the Exchange's existing application of this provision, an 
+External Distributor receiving both Cboe One Summary and Cboe One 
+Premium is assessed only the Cboe One Premium External Distribution Fee 
+\9\, and User Fees for both Cboe One Summary and Cboe One Premium may 
+be applied to offset that fee.
+---------------------------------------------------------------------------
+
+    \9\ To better illustrate this concept, consider the following 
+examples. Example 1: If a firm subscribes to only Cboe One Summary, 
+its User costs will be used to offset the External Distribution Fee 
+for Cboe One Summary. In the event the firm's User costs total 
+$2,000, the firm will pay $2,000 in User fees and $3,000 ($5,000-
+$2,000) for its External Distribution Fee. Example 2: If a firm 
+subscribes only to Cboe One Premium, its User costs will be used to 
+offset the External Distribution Fee for Cboe One Premium. In the 
+event a firm's User costs total $10,000, the firm will pay $10,000 
+in User fees and $2,500 ($12,500-$10,000) for its External 
+Distribution Fee. Example 3: If a firm subscribes to both Cboe One 
+Summary and Cboe One Premium, only the External Distribution Fee for 
+Cboe One Premium is assessed and this fee may be offset by both Cboe 
+One Summary and Cboe One Premium User fees. In the event a firm's 
+User costs are $2,000 for Cboe One Summary and $10,000 for Cboe One 
+Premium, the firm will pay a total of $12,000 in User fees ($10,000 
++ $2,000) and it will pay $500 for its External Distribution Fee 
+($12,500-($10,000 + $2,000)).
+---------------------------------------------------------------------------
+
+    The Exchange is now proposing to make this treatment explicit by 
+adding clarifying language to the fee schedule stating that External 
+Distributors of both feeds are only responsible for paying the External 
+Distribution Fee for Cboe One Premium. This amendment does not alter 
+the economic substance of the Exchange's existing fee structure, nor 
+does it impose any new or increased
+
+[[Page 59187]]
+
+fees on market participants. Rather, it reduces potential ambiguity by 
+expressly codifying the Exchange's existing application of the user fee 
+offset provisions. The Exchange believes this clarification will 
+promote transparency and reduce confusion among External Distributors 
+regarding their fee obligations under the Cboe One market data product 
+offerings.
+Impact of Proposed Program
+    As noted above, the proposed program would waive External 
+Distribution Fees for Data Vendors of the Cboe One Summary Feed, Cboe 
+One Premium Feed, EDGX Summary Depth Data Feed, and EDGX Top Data Feed 
+(each, an ``Applicable Feed'') that satisfy certain eligibility 
+requirements. A Data Vendor must not have received the Applicable Feed 
+for which it seeks the waiver during the 18 months \10\ preceding the 
+waiver application date, and must integrate, or be actively in the 
+process of integrating, the Applicable Feed and making it commercially 
+available to its subscribers. The Data Vendor need not have fully 
+integrated the Applicable Feed or made it commercially available before 
+the waiver begins. For a qualifying Data Vendor, the applicable waiver 
+commences on the date it first receives the Applicable Feed, and, if 
+that date occurs mid-month, that partial month counts as the first 
+month of the waiver period. Specifically, the Exchange proposes to 
+waive the External Distribution Fee of $5,000 per month for Cboe One 
+Summary for 12 months (the ``Summary Waiver Period''), except that a 
+Data Vendor is not eligible for a Summary Waiver Period if it is 
+receiving Cboe One Premium because Cboe One Summary is included in the 
+Cboe One Premium External Distribution Fee as noted herein. To clarify, 
+because a Data Vendor receiving Cboe One Premium pays only the Cboe One 
+Premium External Distribution Fee (and no separate fee is assessed for 
+Cboe One Summary), there is no separate Cboe One Summary External 
+Distribution Fee to waive for such a firm.\11\ The Exchange proposes to 
+waive the External Distribution Fee of $12,500 per month for Cboe One 
+Premium for 24 months (the ``Premium Waiver Period'').
+---------------------------------------------------------------------------
+
+    \10\ The Exchange notes that this same 18-month requirement is 
+the standard for its other fee waiver programs. See EDGX Equities 
+Fee Schedule.
+    \11\ As noted above, a firm that subscribes to both Cboe One 
+Premium and Cboe One Summary is only charged the External 
+Distribution Fee for Cboe One Premium. Accordingly, an eligible Data 
+Vendor that builds out both feeds simultaneously receives only the 
+Premium Waiver Period.
+---------------------------------------------------------------------------
+
+    If an eligible Data Vendor already receives Cboe One Summary, it 
+may still receive the Premium Waiver Period if it has not received Cboe 
+One Premium during the 18 months preceding the waiver application date 
+and satisfies the integration and commercial availability requirement 
+with respect to Cboe One Premium. During the Premium Waiver Period, the 
+Data Vendor's Cboe One Summary subscription would be covered under the 
+Premium Waiver, and no separate External Distribution Fee would be 
+assessed for Cboe One Summary. Similarly, an eligible Data Vendor that 
+builds out both Cboe One feeds simultaneously would receive only the 
+Premium Waiver Period.
+    Lastly, for eligible Data Vendors, the Exchange also proposes to 
+waive the External Distribution Fee of $2,500 per month for EDGX 
+Summary Depth for 24 months (the ``Summary Depth Waiver Period'') and 
+the External Distribution Fee for EDGX Top of $2,250 for 12 months (the 
+``Top Waiver Period'').
+2. Statutory Basis
+    The Exchange believes the proposed rule change is consistent with 
+the Securities Exchange Act of 1934 (the ``Act'') and the rules and 
+regulations thereunder applicable to the Exchange and, in particular, 
+the requirements of Section 6(b) of the Act.\12\ Specifically, the 
+Exchange believes the proposed rule change is consistent with the 
+Section 6(b)(5) \13\ requirements that the rules of an exchange be 
+designed to prevent fraudulent and manipulative acts and practices, to 
+promote just and equitable principles of trade, to foster cooperation 
+and coordination with persons engaged in regulating, clearing, 
+settling, processing information with respect to, and facilitating 
+transactions in securities, to remove impediments to and perfect the 
+mechanism of a free and open market and a national market system, and, 
+in general, to protect investors and the public interest. Additionally, 
+the Exchange believes the proposed rule change is consistent with the 
+Section 6(b)(5) \14\ requirement that the rules of an exchange not be 
+designed to permit unfair discrimination between customers, issuers, 
+brokers, or dealers.
+---------------------------------------------------------------------------
+
+    \12\ 15 U.S.C. 78f(b).
+    \13\ 15 U.S.C. 78f(b)(5).
+    \14\ Id.
+---------------------------------------------------------------------------
+
+    In particular, the Exchange believes the proposed rule change 
+promotes just and equitable principles of trade by establishing a 
+clear, objective, and transparent definition of ``Data Vendor'' that 
+properly captures the characteristics distinguishing Data Vendors from 
+other categories of External Distributors. The proposed definition sets 
+forth specific, verifiable criteria--namely, that a Data Vendor must 
+(i) be an External Distributor; (ii) be actively engaged, as part of 
+its primary business objective, in the solicitation of unaffiliated 
+third-party Distributors to redistribute a transformed Market Data 
+Product; (iii) not maintain a brokerage relationship with Users; and 
+(iv) not be an Extranet Service Provider. By establishing objective 
+eligibility criteria, the proposed rule change ensures that similarly 
+situated market participants are treated consistently and that the 
+benefits of the Data Vendor Program are available to all External 
+Distributors that meet the defined qualifications.
+    The Exchange further believes that the codification of the existing 
+Extranet Service Provider definition within the Fee Schedule promotes 
+just and equitable principles of trade. Because the proposed Data 
+Vendor definition directly references the term ``Extranet Service 
+Provider,'' market participants seeking to understand their eligibility 
+for the Program should not be required to consult the Cboe Global 
+Markets North American Data Policies to determine how that term 
+applies. By incorporating both defined terms into the Fee Schedule 
+itself, the Exchange ensures that participants have access to the 
+complete framework.
+    The Exchange further believes that the proposed rule change removes 
+impediments to and perfects the mechanism of a free and open market and 
+a national market system. The Data Vendor Program is designed to 
+incentivize Data Vendors to integrate the Applicable Feeds, make them 
+commercially available to subscribers, and redistribute them by 
+providing fee waivers for External Distribution Fees for the Cboe One 
+Summary Feed, Cboe One Premium Feed, EDGX Summary Depth Data Feed, and 
+EDGX Top Data Feed. By waiving the External Distribution Fee for Cboe 
+One Summary for 12 months, Cboe One Premium for 24 months, EDGX Summary 
+Depth for 24 months, and EDGX Top for 12 months, the Exchange 
+encourages broader redistribution of its market data products. Broader 
+distribution of market data enhances price transparency and supports 
+informed decision-making across the national market system, which in 
+turn perfects the mechanism of a free and open market by ensuring that 
+market participants have access to comprehensive, competitive data 
+offerings.
+    By allowing the waiver to begin while an eligible Data Vendor is 
+actively integrating the Applicable Feed and
+
+[[Page 59188]]
+
+working to make it commercially available, the Program lowers barriers 
+to entry during the build-out period and incentivizes a broader set of 
+market participants to enter the Exchange's data distribution chain, 
+thereby expanding the availability of market data throughout the 
+national market system.
+    The proposed rule change also protects investors and the public 
+interest. By encouraging Data Vendors to take in, transform, and 
+redistribute market data feeds, the proposed program promotes greater 
+availability of enriched market data products to downstream 
+Distributors and Users. The transformation requirement--which may 
+include aggregation across multiple sources, normalization into a 
+consistent format, enrichment with derived analytics, or repackaging 
+into a proprietary delivery mechanism such as a terminal, API, or 
+feed--is a key element of qualifying as a Data Vendor and ensures that 
+meaningful value is added to the data before redistributing it, thereby 
+increasing the utility and accessibility of market information. To the 
+extent the Program achieves its purpose and results in more widespread 
+redistribution of the Applicable Feeds, market participants may benefit 
+from enhanced access to consolidated real-time price, depth-of-book, 
+top-of-book, and last sale information through the distribution 
+channels developed by Data Vendors.
+    Additionally, the codification of the existing Extranet Service 
+Provider definition within the Fee Schedule provides additional clarity 
+on the program requirements and codifies the definition that exists 
+already in the Cboe Global Markets North American Market Data Policies. 
+Furthermore, the clarification that External Distributors of both Cboe 
+One Summary and Cboe One Premium are only responsible for paying the 
+External Distribution Fee for Cboe One Premium promotes transparency by 
+expressly codifying a practice that is already reflected in the 
+Exchange's existing application of the fee provision. This reduces 
+potential confusion among market participants regarding their fee 
+obligations.
+Not Unfairly Discriminatory
+    The Exchange believes that the proposed Data Vendor Program is 
+consistent with and complementary to its existing programs for other 
+categories of market participants, and that offering a targeted fee 
+waiver program specifically for Data Vendors does not constitute unfair 
+discrimination. The Exchange has a history of establishing 
+differentiated programs that recognize the distinct roles of different 
+market participants. For example, the Small Retail Broker Distribution 
+Program provides discounted Distribution Fees and Data Consolidation 
+Fees for eligible broker-dealers distributing the applicable feeds to 
+Non-Professional Data Users with whom the broker-dealer has a brokerage 
+relationship.\15\ This program is designed to address the specific 
+characteristics and economic needs of small retail broker-dealers. 
+Similarly, the Small Retail Broker Hosted Solutions Program provides 
+fee waivers for eligible Small Retail Brokers that provide the 
+applicable feeds to other Small Retail Brokers via hosted 
+solutions.\16\ This program recognizes that smaller retail brokers face 
+unique integration challenges and cost constraints when building out 
+hosted data solutions. In addition, the New Internal Distributor Waiver 
+for the EDGX Depth Data Feed waives Internal Distribution Fees for 
+three months for Internal Distributors that have not received the EDGX 
+Depth Data Feed during the prior 18 months.\17\ This program 
+incentivizes new Internal Distributors to integrate the depth-of-book 
+feed into their systems. Lastly, the Exchange's affiliated options 
+exchange, Cboe Exchange, Inc., introduced a 24-month waiver for 
+qualifying retail brokers for its Complex Order Book Feed.\18\
+---------------------------------------------------------------------------
+
+    \15\ See EDGX Equities Fee Schedule.
+    \16\ See EDGX Equities Fee Schedule.
+    \17\ Id.
+    \18\ See Securities Exchange Act Release No. 105198 (April 10, 
+2026), 91 FR 20204 (April 15, 2026) (SR-CBOE-2026-033).
+---------------------------------------------------------------------------
+
+    The proposed Data Vendor Program is consistent with the Exchange's 
+practice of creating a distinct program to serve a specific use case. 
+Data Vendors occupy a distinct role in the market data distribution 
+ecosystem. Unlike retail brokers, whose primary business is providing 
+trade execution and account management services to Users (with market 
+data distribution as an ancillary feature), Data Vendors are primarily 
+engaged in the business of transforming and redistributing market data 
+to other Distributors. This fundamental difference in business model 
+justifies a distinct program with tailored eligibility criteria and 
+waiver periods. The waiver periods under the proposed Data Vendor 
+Program--12 months for Cboe One Summary and EDGX Top, and 24 months for 
+Cboe One Premium and EDGX Summary Depth--are designed to reflect the 
+relative complexity of integrating each feed. Depth-of-book products 
+such as Cboe One Premium and EDGX Summary Depth typically require more 
+extensive technical build-out, including handling of larger data 
+volumes, more complex display and aggregation logic, and more rigorous 
+quality assurance processes. Additionally, EDGX Summary Depth and Cboe 
+One Premium are more expensive relative to the top-of-book feeds. This 
+means that Data Vendors require additional interest from clients in 
+these products before they can even break even. Accordingly, the 
+Exchange believes a 24-month waiver period for these products is 
+appropriate to provide sufficient time for Data Vendors to complete 
+their build-out. Top-of-book and summary products, in contrast, are 
+generally less complex to integrate, and the Exchange believes a 12-
+month waiver period is appropriate for these feeds.
+    Data Vendors' cost and investment trade-offs further support this 
+distinction. A Data Vendor's primary commercial objective is to 
+transform market data and make the resulting product available to 
+unaffiliated downstream Distributors, rather than to provide market 
+data only incidentally in support of another business (in comparison to 
+retail brokers). Because a single Data Vendor can make a Cboe data 
+product available through its platform to multiple downstream 
+Distributors, the waiver is targeted to participants capable of 
+materially expanding the product's distribution footprint. Like any 
+business operator, a Data Vendor evaluates whether to add an Applicable 
+Feed based on expected return on investment, weighing expected revenue 
+against the upfront costs of connectivity, programming, technical 
+integration, and sales and marketing, as well as the ongoing exchange 
+market data fees associated with making the product available to 
+subscribers. In many cases, a Data Vendor may need to add three to five 
+new downstream Distributors merely to offset the ongoing External 
+Distribution Fee. These costs are typically incremental: Data Vendors 
+may already offer one or more equity feeds to clients and add an 
+Applicable Feed only where it is expected to provide return on 
+investment beyond their current offerings. A retail broker's 
+determination is different. A retail broker will often migrate or swap 
+from a competitor's product, and may be able to implement the change 
+through a Data Vendor API into its front-end with a simple entitlement 
+change, without bearing the same upfront connectivity and technical 
+build-out costs.
+    The waiver periods under the proposed Data Vendor Program are 
+longer than certain other Exchange programs because they support more
+
+[[Page 59189]]
+
+than initial feed access or recruitment of a first User.\19\ A 
+qualifying Data Vendor must complete significant technical and 
+commercial build-out before it can distribute the product and begin 
+recovering its upfront costs. Its downstream Distributors may then have 
+their own evaluation, contracting, and integration cycles, further 
+extending the path to meaningful adoption; as noted above, a Data 
+Vendor may need to add three to five new downstream Distributors to 
+offset the ongoing External Distribution Fee.
+---------------------------------------------------------------------------
+
+    \19\ However, as noted above, Cboe Exchange, Inc., offers a 24-
+month waiver for qualifying retail brokers for its Complex Order 
+Book Feed.
+---------------------------------------------------------------------------
+
+    The Exchange does not maintain comparable fee waiver programs for 
+larger broker-dealers that distribute market data to their brokerage 
+customers. The Exchange believes this distinction is appropriate. The 
+Small Retail Broker programs are specifically designed to address the 
+cost constraints faced by smaller broker-dealers in building out market 
+data distribution capabilities. Larger broker-dealers typically have 
+established data infrastructure and greater resources to absorb market 
+data distribution costs as part of their overall brokerage operations, 
+and, as such, their cost per user is meaningfully lower. Data 
+distribution by large broker-dealers is typically an ancillary 
+component of brokerage services offered. In contrast, a Data Vendor 
+must incur incremental buildout fees and ongoing External Distribution 
+Fees to establish and support a new external redistribution channel. 
+The relevant distinction is therefore the nature of the service and the 
+associated barriers to distribution, not the size or identity of the 
+participant.
+    The Data Vendor Program is intended to address a different need: 
+incentivizing specialized data redistribution firms to build out the 
+Applicable Feeds and bring on additional downstream Distributors. By 
+encouraging Data Vendors to invest in the transformation and 
+redistribution of the Exchange's market data products, the Program 
+expands the reach and availability of this data throughout the national 
+market system, benefiting end users and promoting competition. The 
+Exchange therefore believes that creating a targeted program for Data 
+Vendors, in addition to its existing programs for Small Retail Brokers 
+and Internal Distributors, among others, is consistent with Section 
+6(b)(5) of the Act and does not constitute unfair discrimination.
+    The Exchange also believes the proposed rule change is consistent 
+with Section 6(b)(5) of the Act in that it is not designed to permit 
+unfair discrimination between customers, issuers, brokers, or dealers. 
+The Data Vendor Program is available to all External Distributors that 
+satisfy the objective criteria set forth in the proposed definition of 
+Data Vendor and, for waiver eligibility, the additional objective 
+criteria regarding the 18-month lookback for prior receipt of the 
+Applicable Feed and integration or active integration of the Applicable 
+Feed for commercial availability. The distinctions drawn by the 
+definition--(i) requiring that a Data Vendor's primary business 
+objective be the solicitation of unaffiliated third-party Distributors, 
+(ii) that it not maintain a brokerage relationship with Users, and 
+(iii) that it not be an Extranet Service Provider--reflect meaningful 
+differences in business models and market functions.
+External Distributors
+    The Exchange believes that limiting the Data Vendor Program to 
+External Distributors is not unfairly discriminatory. Internal 
+Distributors and External Distributors occupy fundamentally different 
+roles in the market data distribution ecosystem and are not similarly 
+situated participants. An Internal Distributor receives a market data 
+product and distributes it solely within its own entity, whereas an 
+External Distributor redistributes data outside its entity to Users or 
+other Distributors--and a Data Vendor, as a specialized category of 
+External Distributor, further serves the specific function of 
+soliciting unaffiliated third-party Distributors to redistribute a 
+transformed market data product. The Data Vendor Program is designed 
+precisely to incentivize and expand this type of external 
+redistribution, a purpose that has no meaningful application to 
+Internal Distributors who, by definition, cannot advance the proposed 
+program's goal of broadening the reach of the Exchange's market data to 
+downstream Distributors and end-user investors. Furthermore, the 
+Exchange already offers programs for its Internal Distributors that it 
+does not offer for External Distributors.\20\
+---------------------------------------------------------------------------
+
+    \20\ See, e.g., EDGX Equities Fee Schedule that describes the 
+New Internal Distributor Waiver for EDGX Depth Data Feed.
+---------------------------------------------------------------------------
+
+Primary Business Is To Redistribute to Distributors
+    To be eligible as a Data Vendor, an External Distributor must be 
+taking in data for the primary business purpose of selling access to 
+the applicable feed as a service in its own right--not merely 
+redistributing data in incidental support of broader business functions 
+such as trade execution, account management, or brokerage services. The 
+Exchange notes that as part of its business, a Data Vendor may 
+redistribute a market data product to Users, but the primary purpose 
+must be the redistribution of data to Distributors. The Exchange will 
+assess whether an External Distributor's primary business purpose 
+satisfies this criterion based on the External Distributor's publicly 
+available marketing materials. This requirement is not unfairly 
+discriminatory because it is directly tied to the purpose of the 
+Program: encouraging entities whose core commercial activity is the 
+transformation and redistribution of market data to build out the 
+Applicable Feeds and bring on additional downstream Distributors, 
+thereby expanding the reach and availability of the Exchange's data 
+products. An entity that distributes market data only incidentally--as 
+an ancillary feature of a brokerage, execution, or account management 
+business--does not serve this purpose.
+Transformed Market Data Product
+    The Exchange believes it is not unfairly discriminatory to require 
+that a Data Vendor transform market data as a condition of eligibility, 
+as transformation is a definitional characteristic that goes to the 
+core of what distinguishes a Data Vendor from other categories of 
+External Distributors and is directly tied to the Program's purpose of 
+incentivizing participants that create new, differentiated distribution 
+channels for the Exchange's consolidated market data. This reasoning is 
+directly analogous to the rationale for excluding Extranet Service 
+Providers--entities that transmit data without modification and 
+therefore cannot create the type of value-added products, whether 
+delivered via terminal, API, or proprietary feed, that the Program is 
+designed to incentivize. Because the transformation requirement ensures 
+that the Program's fee incentives are directed only at entities whose 
+business is built around adding that value, the Exchange believes this 
+criterion is reasonable and does not constitute unfair discrimination.
+No Brokerage Relationship With Users
+    The Exchange believes it is not unfairly discriminatory to require 
+that Data Vendors not maintain a brokerage relationship with Users. The 
+Exchange already maintains separate programs specifically for 
+qualifying broker-dealers
+
+[[Page 59190]]
+
+that distribute market data to their brokerage customers. Specifically, 
+the Exchange offers the Small Retail Broker Distribution Program, which 
+provides discounted Distribution Fees and Data Consolidation Fees for 
+eligible broker-dealers distributing the applicable feeds to Non-
+Professional Data Users with whom the broker-dealer has a brokerage 
+relationship. The Exchange also offers the Small Retail Broker Hosted 
+Solutions Program, which provides fee waivers and lower data costs for 
+Small Retail Brokers that provide the applicable feeds to other Small 
+Retail Brokers via hosted solutions. These existing programs are 
+specifically designed to encourage retail brokers to distribute market 
+data, and the eligibility criteria for those programs reflect the 
+characteristics of the retail brokerage business model.
+    The proposed Data Vendor Program does not displace or reduce the 
+benefits available to retail brokers under those existing programs. 
+Rather, it creates a parallel and complementary framework for a 
+distinct category of participants--Data Vendors--that do not maintain 
+brokerage relationships with Users, and whose primary business purpose 
+is categorically different from that of a retail broker. Just as it 
+would not be appropriate to extend the Small Retail Broker Program to 
+Data Vendors, it is similarly appropriate--and not unfairly 
+discriminatory--not to extend the Data Vendor Program to retail brokers 
+or other participants that maintain brokerage relationships with their 
+Users, whose needs are separately addressed by the Exchange's existing 
+programs.
+Not an Extranet Service Provider
+    The Exchange also believes it is not unfairly discriminatory to 
+exclude Extranet Service Providers from the Data Vendor Program. An 
+Extranet Service Provider, as defined, is an entity that transmits a 
+market data product to data recipients without modification of the 
+content, format, or other characteristics of the product. Extranet 
+Service Providers do not transform, enrich, or add value to the data 
+they transmit--they serve as conduits, passing data through in its 
+original form. This is fundamentally distinct from the function of a 
+Data Vendor, which, by definition, must transform the Market Data 
+Product as part of its service offering.
+    The Data Vendor Program is specifically premised on the value that 
+transformation adds to the data distribution ecosystem. By enabling 
+Data Vendors to create differentiated products--delivered via a 
+terminal, API, proprietary feed, or other value-added mechanism--that 
+appeal to a broader range of downstream Distributors, the Program 
+advances the Exchange's goal of maximizing the reach and utility of its 
+consolidated market data throughout the national market system. 
+Extending the Program to Extranet Service Providers, which do not 
+perform this transformative function, would undermine the Program's 
+core purpose and would not serve the policy goal of broadening 
+distribution of market data products in readily accessible, value-added 
+formats.
+    The Exchange has created programs to address the distinct needs and 
+business models of different categories of market participants, and the 
+proposed Data Vendor Program is a natural extension of this approach. 
+In addition to the Small Retail Broker programs described above, the 
+Exchange also offers fee waivers for eligible Internal Distributors of 
+the EDGX Depth Data Feed, which are intended to incentivize new 
+Internal Distributors to integrate data feeds into their systems. The 
+differentiation between Data Vendors and other categories of market 
+participants reflects the distinct roles these entities play and the 
+distinct incentive structures appropriate to each and does not 
+constitute unfair discrimination.
+18-Month and Integration Requirements
+    The Exchange further believes it is not unfairly discriminatory to 
+limit the Program to Data Vendors that have not received the Applicable 
+Feed for which they seek a waiver during the 18 months preceding the 
+waiver application date, and that have integrated, or are actively in 
+the process of integrating,\21\ the Applicable Feed and making it 
+commercially available to subscribers. The 18-month limitation is 
+designed to ensure that the fee waivers serve their intended purpose of 
+reducing the upfront cost barriers for new market participants. This 
+approach is directly consistent with the analogous frameworks the 
+Exchange has adopted in prior programs--including the Internal 
+Distributor Waiver for the EDGX Depth Data Feed, which similarly limits 
+fee relief to distributors that have not received the relevant feed in 
+the prior 18 months. The integration and commercial availability 
+requirement is likewise reasonable because it ensures that the waiver 
+is directed to Data Vendors that are undertaking the build-out 
+necessary to distribute the Applicable Feed to subscribers, while not 
+requiring full integration or commercial availability before the waiver 
+begins. The Exchange therefore believes that these objective 
+limitations are reasonable and appropriate, prevent the Program from 
+operating as a permanent subsidy for established distributors, and are 
+not unfairly discriminatory.
+---------------------------------------------------------------------------
+
+    \21\ The Exchange notes that no specific step is required for 
+this, only that Data Vendor is working to integrate the Applicable 
+Feed into its system.
+---------------------------------------------------------------------------
+
+    The Exchange also believes the proposed rule change is consistent 
+with Section 6(b)(4) of the Act,\22\ which requires that Exchange rules 
+provide for the equitable allocation of reasonable dues, fees, and 
+other charges among its Trading Permit Holders and other persons using 
+its facilities. The proposed fee waivers represent a reasonable and 
+equitable allocation of charges. The fee waivers for External 
+Distribution Fees are limited in duration--12 months for Cboe One 
+Summary, 24 months for Cboe One Premium, 24 months for EDGX Summary 
+Depth, and 12 months for EDGX Top--and are available only to Data 
+Vendors that have not received the Applicable Feed for which they seek 
+a waiver during the 18 months preceding the waiver application date and 
+that have integrated, or are actively in the process of integrating, 
+the Applicable Feed and making it commercially available to 
+subscribers. This time-limited structure ensures that the waivers serve 
+their intended purpose of incentivizing new market entry and build-out 
+of data feeds. The 18-month lookback requirement further ensures the 
+equitable allocation of fees by limiting the Program to new feeds for 
+Data Vendors, and the integration and commercial availability 
+requirement ensures that the waiver is tied to actual build-out and 
+distribution activity. The Exchange notes that this same 18-month 
+standard is consistent with the requirements applied in its other fee 
+waiver programs.
+---------------------------------------------------------------------------
+
+    \22\ 15 U.S.C. 78f(b)(4).
+---------------------------------------------------------------------------
+
+    The clarification that External Distributors of both Cboe One 
+Summary and Cboe One Premium shall only be responsible for paying the 
+External Distribution Fee for Cboe One Premium does not alter the 
+economic substance of the Exchange's existing fee structure and does 
+not impose any new or increased fees on market participants. Rather, it 
+expressly codifies the Exchange's existing application of the user fee 
+offset provisions--under which an External Distributor disseminating 
+both products is assessed only the Cboe One Premium External 
+Distribution Fee--thereby ensuring that all market participants have a 
+clear and equitable understanding of their fee obligations. The 
+Exchange therefore believes the
+
+[[Page 59191]]
+
+proposed rule change provides for the equitable allocation of 
+reasonable fees among persons using its facilities.
+    Lastly, the Exchange believes that the limitations regarding the 
+waiver structure for both Cboe One Premium and Cboe One Summary 
+equitably allocate fees. With respect to the Cboe One Summary waiver, 
+only Data Vendors that (i) have not received Cboe One Summary during 
+the 18 months preceding the waiver application date, (ii) are 
+integrating or actively in the process of integrating Cboe One Summary 
+and making it commercially available to subscribers, and (iii) are not 
+receiving Cboe One Premium are eligible for the Summary Waiver Period. 
+The Exchange believes that this is reasonable, as a firm that 
+subscribes to Cboe One Premium already may elect to receive (without 
+incurring an additional External Distribution Fee) Cboe One Summary 
+Feed. For this reason, there is no need to provide a separate Summary 
+Waiver Period while a firm receives Cboe One Premium, because that firm 
+may receive the Cboe One Summary Feed without paying an additional 
+External Distribution Fee that the proposed program seeks to waive.
+    Next, the Exchange notes that if a Data Vendor currently receives 
+Cboe One Summary and elects to receive Cboe One Premium under the 
+proposed program, so long as the Data Vendor has not received the Cboe 
+One Premium Feed during the 18 months preceding the waiver application 
+date and satisfies the integration and commercial availability 
+requirement with respect to Cboe One Premium, the Data Vendor may 
+receive the Premium Waiver Period. During that period, the Data 
+Vendor's existing Cboe One Summary \23\ subscription will be covered 
+under the Premium Waiver, and no separate External Distribution Fee 
+will be assessed for Cboe One Summary. This is because the Cboe One 
+Summary External Distribution Fee is subsumed within the Cboe One 
+Premium External Distribution Fee--accordingly, there is no separate 
+Cboe One Summary fee to waive for a firm receiving Cboe One Premium. 
+The Exchange believes this treatment is reasonable because it avoids 
+providing overlapping or duplicative waiver relief while still 
+incentivizing an existing Summary subscriber to build out Cboe One 
+Premium.
+---------------------------------------------------------------------------
+
+    \23\ For example, if a Data Vendor currently subscribes to Cboe 
+One Summary Feed and is eligible for the proposed program for the 
+Cboe One Premium Feed, no separate External Distribution Fee would 
+be assessed for Cboe One Summary during the Premium Waiver Period 
+because Cboe One Summary is included in the Cboe One Premium 
+subscription. The Data Vendor would receive the Premium Waiver 
+Period and would not receive a separate Summary Waiver Period during 
+that time.
+---------------------------------------------------------------------------
+
+    Lastly, if a Data Vendor has not received either Cboe One Summary 
+or Cboe One Premium during the 18 months preceding the waiver 
+application date and elects to build out both Cboe One feeds 
+simultaneously, the Data Vendor will not receive separate Summary and 
+Premium waivers. Instead, because the Cboe One Summary External 
+Distribution Fee is subsumed within the Cboe One Premium External 
+Distribution Fee, the Data Vendor will receive only the Premium Waiver 
+Period, and no separate Summary Waiver Period will apply while it 
+receives Cboe One Premium.
+    With respect to EDGX Summary Depth and EDGX Top, the Exchange 
+believes that the applicable waiver periods also equitably allocate 
+fees. The 24-month Summary Depth Waiver Period is reasonable because 
+integrating a depth-of-book product may require a more substantial 
+build-out by a Data Vendor, while the 12-month Top Waiver Period is 
+reasonable because EDGX Top provides top-of-book and last sale 
+information and generally should require a less extensive integration 
+effort. In each case, the waiver is available only if the Data Vendor 
+satisfies the 18-month lookback and integration or active-integration 
+requirements for the applicable feed.
+    For all of the foregoing reasons, the Exchange believes the 
+proposed rule change is consistent with the Act and the rules and 
+regulations thereunder, including, in particular, the requirements of 
+Sections 6(b)(4) \24\ and 6(b)(5) \25\ of the Act.
+---------------------------------------------------------------------------
+
+    \24\ 15 U.S.C. 78f(b)(4).
+    \25\ 15 U.S.C. 78f(b)(5).
+---------------------------------------------------------------------------
+
+B. Self-Regulatory Organization's Statement on Burden on Competition
+
+    The Exchange does not believe that the proposed rule change will 
+impose any burden on competition that is not necessary or appropriate 
+in furtherance of the purposes of the Act. The Exchange does not 
+believe the proposed rule change imposes any burden on intramarket 
+competition that is not necessary or appropriate in furtherance of the 
+purposes of the Act. The proposed Data Vendor Program is available to 
+all External Distributors that satisfy the objective, clearly defined 
+criteria set forth in the proposed definition of ``Data Vendor'' and 
+the Program's waiver eligibility standards. Any External Distributor 
+that, as part of its primary business objective, solicits unaffiliated 
+third-party Distributors to redistribute a transformed Market Data 
+Product, does not maintain a brokerage relationship with Users in 
+connection with the applicable Market Data Product, is not an Extranet 
+Service Provider, has not received the Applicable Feed for which it 
+seeks a waiver during the 18 months preceding the waiver application 
+date, and has integrated or is actively integrating the Applicable Feed 
+and making it commercially available to subscribers may qualify for the 
+Program on equal terms. Because eligibility is determined by objective, 
+verifiable criteria rather than by subjective or discretionary 
+determinations, no External Distributor is advantaged or disadvantaged 
+relative to any other similarly situated participant.
+    To the extent that certain External Distributors--such as retail 
+broker-dealers or Extranet Service Providers--do not qualify for the 
+Data Vendor Program, this does not impose a burden on intramarket 
+competition. As described above, retail broker-dealers and Extranet 
+Service Providers are not similarly situated to Data Vendors. Retail 
+broker-dealers distribute market data to their own brokerage customers 
+as an ancillary feature of their core business of providing trade 
+execution and account management services, and their data distribution 
+needs are more appropriately addressed by the Exchange's existing Small 
+Retail Broker Distribution Program and Small Retail Broker Hosted 
+Solutions Program. Extranet Service Providers, by contrast, transmit 
+data in its original form without transformation, and therefore do not 
+serve the same function in the data distribution ecosystem as Data 
+Vendors, which aggregate, transform, and redistribute data to 
+downstream Distributors. Designing a fee program specifically targeted 
+to Data Vendors, rather than applying it uniformly across all 
+categories of External Distributors, does not burden intramarket 
+competition--it reflects the materially different roles, business 
+models, and barriers of these distinct categories of participants.
+    Similarly, limiting the Data Vendor Program to External 
+Distributors and not extending it to Internal Distributors does not 
+impose a burden on intramarket competition. Internal Distributors 
+receive and use market data solely within their own legal entities and 
+do not redistribute data to third parties outside their organizations. 
+They are therefore not participants in the same competitive market for 
+external data redistribution that the Program is designed to promote, 
+and their needs
+
+[[Page 59192]]
+
+are separately addressed through the Exchange's existing Internal 
+Distributor programs--including the New Internal Distributor Waiver for 
+the EDGX Depth Data Feed. The proposed Program is specifically designed 
+to incentivize external redistribution of the Applicable Feeds, a 
+purpose that has no meaningful application to Internal Distributors and 
+that creates no competitive disadvantage for them.
+    The Exchange does not believe the proposed rule change imposes any 
+burden on intermarket competition that is not necessary or appropriate 
+in furtherance of the purposes of the Act. To the contrary, the 
+Exchange believes the proposed rule change will enhance intermarket 
+competition by incentivizing a broader class of market participants to 
+subscribe to and redistribute the Exchange's market data products, 
+thereby increasing the Exchange's ability to compete with other 
+national securities exchanges and data vendors for the business of Data 
+Vendors and their downstream Distributor clients.
+    The market for equity market data is highly competitive. Numerous 
+national securities exchanges offer products that compete directly with 
+the Cboe One Summary Feed, Cboe One Premium Feed, EDGX Summary Depth 
+Data Feed, and EDGX Top Data Feed. Market participants can obtain 
+comprehensive market data from numerous sources, including competing 
+exchanges (such as NYSE and Nasdaq), the consolidated tape (SIP), and 
+alternative trading systems. Prospective Data Vendors evaluating 
+whether to build out the Applicable Feeds must weigh the upfront costs 
+of connectivity, software development, integration, and commercial 
+launch against the commercial opportunity presented by the Exchange's 
+data products. The Data Vendor Program is designed to make the 
+Exchange's market data offering competitively priced relative to 
+alternative options, encouraging Data Vendors to enter the Exchange's 
+data distribution chain and thereby expanding the availability and 
+reach of the Exchange's market data throughout the national market 
+system.
+    Far from burdening intermarket competition, the proposed rule 
+change is a direct response to competitive market forces. The 
+Exchange's decision to offer targeted fee waivers to new Data Vendors 
+reflects its recognition that it must compete aggressively for the 
+participation of data redistribution firms, and that reducing the 
+upfront cost of entry is a legitimate and necessary competitive tool in 
+the market for exchange data products. The Commission has recognized 
+that exchanges operate in a competitive environment with respect to 
+market data, and that exchange fee programs designed to attract new 
+participants and expand market data distribution are consistent with 
+the Act's goals of promoting competition and efficiency in the national 
+market system.
+    The proposed clarification that External Distributors of both Cboe 
+One Summary and Cboe One Premium are only responsible for paying the 
+External Distribution Fee for Cboe One Premium similarly does not 
+impose any burden on intermarket competition. This change does not 
+alter the economic substance of the Exchange's existing fee structure 
+and does not impose any new fees on any market participant. It simply 
+makes explicit the Exchange's existing application of the user fee 
+offset provisions, reducing potential confusion and ensuring that all 
+market participants have a clear and consistent understanding of their 
+fee obligations. Regulatory clarity of this nature promotes, rather 
+than burdens, competition by enabling market participants to make fully 
+informed decisions about their participation in the Exchange's market 
+data programs.
+    With respect to the Cboe One Summary and Cboe One Premium feeds 
+specifically, the Exchange notes that the proposed Data Vendor Program 
+does not impose any burden on competition arising from differential 
+pricing between Cboe One and the applicable underlying equities 
+feeds.\26\ The Exchange notes that historically, its pricing for Cboe 
+One products has been based on the sum of the External Distribution 
+Fees for the four underlying equities feeds.\27\ As an initial matter, 
+not all underlying equities feeds are offered under this Program. The 
+proposed Data Vendor Program applies only to the following feeds: EDGX 
+Top, EDGX Summary Depth, BZX Summary Depth, Cboe One Premium, and Cboe 
+One Summary. A Data Vendor may choose to receive a waiver for Cboe One 
+Summary or Cboe One Premium, or for EDGX Top, or for EDGX Summary 
+Depth, or for BZX Summary Depth, or any combination thereof, subject to 
+the applicable eligibility requirements. However, the proposed Program 
+does not offer fee waivers for BZX Top, BYX Top, or EDGA Top data 
+feeds, nor does it offer fee waivers for BYX Summary Depth or EDGA 
+Summary Depth. Accordingly, the applicable underlying equities feeds do 
+not ``sum'' to the applicable Cboe One feed under this proposed 
+Program.\28\
+---------------------------------------------------------------------------
+
+    \26\ For Cboe One Summary, the four equities feeds are BZX Top, 
+BYX Top, EDGA Top, and EDGX Top. For Cboe One Premium, the four 
+equities feeds are BZX Summary Depth, BYX Summary Depth, EDGA 
+Summary Depth, and EDGX Summary Depth.
+    \27\ For example, under the Small Retail Broker Distribution 
+Program, the discounted External Distribution Fee for Cboe One 
+Summary is $3,500 per month, which equals the sum of the External 
+Distribution Fees for the four underlying Top feeds: BZX Top 
+($2,500), BYX Top ($250), EDGA Top ($0), and EDGX Top ($750). See 
+Cboe BZX, BYX, EDGA, and EDGX U.S. Equities Exchange Fee Schedules. 
+Because the proposed Data Vendor Program does not offer fee waivers 
+for BZX Top, BYX Top, EDGA Top, BYX Summary Depth, or EDGA Summary 
+Depth, the External Distribution Fee for each of those feeds would 
+remain in effect for any Data Vendor receiving those feeds, while 
+the External Distribution Fee for Cboe One Summary ($0 during the 
+Summary Waiver Period) or Cboe One Premium ($0 during the Premium 
+Waiver Period) would be waived. This results in a pricing 
+differential between the sum of the underlying equities feeds and 
+the Cboe One feeds under this Program.
+    \28\ For example, the External Distribution Fee is $0 for Cboe 
+One Summary under the proposed Program, but the sum of the four 
+underlying equities feeds under the proposed Program is $2,750 ($0 
+EDGX Top + $2,500 BZX Top + $250 BYX Top + $0 EDGA Top).
+---------------------------------------------------------------------------
+
+    The Exchange has selected the products covered by the Program based 
+on where it sees the greatest opportunity to expand distribution and 
+align Data Vendor coverage with downstream end-user demand. This 
+product-specific focus is not unfairly discriminatory. All qualifying 
+Data Vendors are subject to the same product-specific eligibility 
+requirements, and offering waivers for some, rather than all four, of 
+the underlying feeds does not result in unequal treatment among 
+similarly situated participants.
+    Even setting aside the foregoing, the Exchange does not believe 
+that pricing the Cboe One Summary or Cboe One Premium feeds differently 
+from the underlying equities feeds imposes any burden on competition. 
+To date, the Exchange is not aware of any distributor that purchases 
+the underlying equities feeds (either the Top or Summary Depth Feeds) 
+for the purpose of creating its own consolidated product comparable to 
+Cboe One Summary or Cboe One Premium. This demonstrates that the 
+practical market concern underlying any perceived burden--that 
+distributors might be disadvantaged by differential pricing on Cboe One 
+that is not extended to the underlying feeds--does not correspond to 
+actual market behavior.
+    Moreover, Cboe One Summary and Cboe One Premium are distinct, 
+independent data products--they are not merely consolidations of data 
+from the four underlying equities feeds. In addition to consolidating 
+data from BZX, BYX, EDGX, and EDGA, Cboe One Summary includes 
+supplementary data elements not found in the individual
+
+[[Page 59193]]
+
+underlying feeds, including data derived from the Securities 
+Information Processor (``SIP'') containing information on the national 
+cumulative volume. This additional content makes Cboe One a distinct 
+product with independent utility. Market participants subscribe to the 
+underlying equities feeds and Cboe One for fundamentally different 
+purposes. For example, a subscriber may be interested only in top-of-
+book data from a single exchange, such as EDGX, for trading, routing or 
+compliance purposes. Such a subscriber has no need for a consolidated 
+product. Conversely, subscribers seeking a comprehensive, cross-
+exchange view of Cboe liquidity choose Cboe One precisely because it 
+offers consolidated data with additional enhancements. These distinct 
+use cases support differentiated pricing treatment.
+    Data Vendors may, in theory, choose to purchase each of the four 
+underlying equities feeds and create their own consolidated product. 
+However, the $1,000 monthly Data Consolidation Fee associated with 
+purchasing Cboe One (and the primary pricing differential) provides 
+access to a production-ready, supported consolidated product, and a 
+vendor seeking to create a comparable offering independently would bear 
+not only the applicable source-feed, but also the costs of developing 
+and maintaining multiple feed handlers, normalizing the data, applying 
+aggregation logic, performing quality assurance, supporting 
+specification changes, and monitoring production feed health. Clients 
+also generally prefer an official exchange product, such as Cboe One, 
+over a vendor-derived consolidated product that requires reporting 
+across multiple exchange products. From a user-experience perspective, 
+the exchange-provided Cboe One is therefore a better solution. A simple 
+combination of the four underlying feeds also would not recreate all 
+Cboe One content, including supplementary SIP-derived information. The 
+Exchange therefore believes that the $1,000 monthly Data Consolidation 
+Fee is less than the full economic cost of independently creating and 
+maintaining a comparable product, particularly for a vendor that does 
+not already operate the required infrastructure.
+    Section 6(b)(8) of the Exchange Act requires that exchange rules 
+not impose any burden on competition that is not necessary or 
+appropriate in furtherance of the purposes of the Act. Cboe One 
+Summary, Cboe One Premium, and the applicable underlying equities feeds 
+are separate products serving different market needs. Just as the 
+Commission has permitted exchanges to offer different fees for depth-
+of-book data versus top-of-book data, the Exchange should have 
+discretion to price its consolidated summary product differently from 
+its component feeds.
+    Finally, the proposed Data Vendor Program is pro-competitive. By 
+reducing the cost of consolidated and top-of-book data products for 
+qualifying Data Vendors, the Exchange enables broader distribution of 
+comprehensive market information to downstream distributors and, 
+ultimately, to retail and institutional investors. Wider access to 
+market data promotes informed investment decisions, enhances market 
+efficiency, and supports the Exchange Act's goals of investor 
+protection and fair and efficient markets. The Exchange does not view 
+external distributors as competitors for its real-time feed offerings; 
+rather, distributors serve as essential conduits that expand delivery 
+of Cboe real-time market data to end users who do not have the 
+technical capability or commercial need to connect directly to Cboe's 
+individual market data feeds. This is particularly important for the 
+retail community, as retail investors typically access market data 
+through vendors rather than purchasing it directly from exchanges. By 
+offering the proposed Data Vendor Program, the Exchange enables 
+distributors to deliver competitively priced, comprehensive market data 
+to a broader audience, thereby enhancing--not burdening--competition in 
+the market data landscape.
+    For the foregoing reasons, the Exchange does not believe that the 
+proposed rule change imposes any burden on competition that is not 
+necessary or appropriate in furtherance of the purposes of the Act.
+
+C. Self-Regulatory Organization's Statement on Comments on the Proposed 
+Rule Change Received From Members, Participants, or Others
+
+    The Exchange neither solicited nor received comments on the 
+proposed rule change.
+
+III. Date of Effectiveness of the Proposed Rule Change and Timing for 
+Commission Action
+
+    The foregoing rule change has become effective pursuant to Section 
+19(b)(3)(A) of the Act \29\ and paragraph (f) of Rule 19b-4 \30\ 
+thereunder. At any time within 60 days of the filing of the proposed 
+rule change, the Commission summarily may temporarily suspend such rule 
+change if it appears to the Commission that such action is necessary or 
+appropriate in the public interest, for the protection of investors, or 
+otherwise in furtherance of the purposes of the Act. If the Commission 
+takes such action, the Commission will institute proceedings to 
+determine whether the proposed rule change should be approved or 
+disapproved.
+---------------------------------------------------------------------------
+
+    \29\ 15 U.S.C. 78s(b)(3)(A).
+    \30\ 17 CFR 240.19b-4(f).
+---------------------------------------------------------------------------
+
+IV. Solicitation of Comments
+
+    Interested persons are invited to submit written data, views and 
+arguments concerning the foregoing, including whether the proposed rule 
+change is consistent with the Act. Comments may be submitted by any of 
+the following methods:
+
+Electronic Comments
+
+    <bullet> Use the Commission's internet comment form (<a href="https://www.sec.gov/rules/sro.shtml">https://www.sec.gov/rules/sro.shtml</a>); or
+    <bullet> Send an email to <a href="/cdn-cgi/l/email-protection#681a1d040d450b0705050d061c1b281b0d0b460f071e"><span class="__cf_email__" data-cfemail="a0d2d5ccc58dc3cfcdcdc5ced4d3e0d3c5c38ec7cfd6">[email&#160;protected]</span></a>. Please include 
+file number SR-CboeEDGX-2026-060 on the subject line.
+
+Paper Comments
+
+    <bullet> Send paper comments in triplicate to Secretary, Securities 
+and Exchange Commission, 100 F Street NE, Washington, DC 20549-1090.
+
+All submissions should refer to file number SR-CboeEDGX-2026-060. This 
+file number should be included on the subject line if email is used. To 
+help the Commission process and review your comments more efficiently, 
+please use only one method. The Commission will post all comments on 
+the Commission's internet website (<a href="https://www.sec.gov/rules/sro.shtml">https://www.sec.gov/rules/sro.shtml</a>). Copies of the filing will be available for inspection and 
+copying at the principal office of the Exchange. Do not include 
+personal identifiable information in submissions; you should submit 
+only information that you wish to make available publicly. We may 
+redact in part or withhold entirely from publication submitted material 
+that is obscene or subject to copyright protection. All submissions 
+should refer to file number SR-CboeEDGX-2026-060 and should be 
+submitted on or before October 9, 2026.
+
+    For the Commission, by the Division of Trading and Markets, 
+pursuant to delegated authority.\31\
+---------------------------------------------------------------------------
+
+    \31\ 17 CFR 200.30-3(a)(12).
+---------------------------------------------------------------------------
+
+Sherry R. Haywood,
+Assistant Secretary.
+[FR Doc. 2026-19127 Filed 9-17-26; 8:45 am]
+BILLING CODE 8011-01-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

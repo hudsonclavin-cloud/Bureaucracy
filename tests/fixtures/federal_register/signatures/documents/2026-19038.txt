@@ -1,0 +1,290 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 179 (Thursday, September 17, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 179 (Thursday, September 17, 2026)]
+[Notices]
+[Pages 58931-58933]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-19038]
+
+
+-----------------------------------------------------------------------
+
+SECURITIES AND EXCHANGE COMMISSION
+
+[Release No. 34-106347; File No. SR-NYSEAMER-2026-81]
+
+
+Self-Regulatory Organizations; NYSE American LLC; Notice of 
+Filing and Immediate Effectiveness of Proposed Change To Amend Rule 
+7.18E Regarding Initial Listing Regulatory Halts
+
+September 14, 2026.
+    Pursuant to Section 19(b)(1) \1\ of the Securities Exchange Act of 
+1934 (``Act'') \2\ and Rule 19b-4 thereunder,\3\ notice is hereby given 
+that on September 2, 2026, NYSE American LLC (``NYSE American'' or the 
+``Exchange'') filed with the Securities and Exchange Commission (the 
+``Commission'') the proposed rule change as described in Items I and II 
+below, which Items have been prepared by the self-regulatory 
+organization. The Commission is publishing this notice to solicit 
+comments on the proposed rule change from interested persons.
+---------------------------------------------------------------------------
+
+    \1\ 15 U.S.C. 78s(b)(1).
+    \2\ 15 U.S.C. 78a.
+    \3\ 17 CFR 240.19b-4.
+---------------------------------------------------------------------------
+
+I. Self-Regulatory Organization's Statement of the Terms of Substance 
+of the Proposed Rule Change
+
+    The Exchange proposes to amend Rule 7.18E (``Trading Halts'') 
+regarding Initial Listing Regulatory Halts. The proposed rule change is 
+available on the Exchange's website at <a href="http://www.nyse.com">www.nyse.com</a> and at the 
+principal office of the Exchange.
+
+II. Self-Regulatory Organization's Statement of the Purpose of, and 
+Statutory Basis for, the Proposed Rule Change
+
+    In its filing with the Commission, the self-regulatory organization 
+included statements concerning the purpose of, and basis for, the 
+proposed rule change and discussed any comments it received on the 
+proposed rule change. The text of those statements may be examined at 
+the places specified in Item IV below. The Exchange has prepared 
+summaries, set forth in sections A, B, and C below, of the most 
+significant parts of such statements.
+
+A. Self-Regulatory Organization's Statement of the Purpose of, and the 
+Statutory Basis for, the Proposed Rule Change
+
+1. Purpose
+    NYSE American LLC (``NYSE American'' or the ``Exchange'') proposes 
+to amend Rule 7.18E (``Trading Halts'') regarding Initial Listing 
+Regulatory Halts.
+Background
+    Rule 7.18E(b)(1)(B) lists the types of discretionary regulatory 
+halts the Exchange may declare, including, at subparagraph (i), an 
+``Initial Listing Regulatory Halt.''
+    The Initial Listing Regulatory Halt was first adopted in 2018 as 
+NYSE Rule 123D(d) on the Exchange's affiliate exchange, the New York 
+Stock Exchange LLC (``NYSE'').\4\ The text of that rule
+
+[[Page 58932]]
+
+stated, in pertinent part, that the Exchange ``may declare a regulatory 
+halt in a security that is the subject of an initial pricing on the 
+Exchange of a security that has not been listed on a national 
+securities exchange . . . immediately prior to the initial pricing.'' 
+\5\ NYSE's Rule 19b-4 filing in support of the rule specified that the 
+purpose of the rule change was to ``provide authority to declare a 
+regulatory halt for a new listing that is not the subject of an IPO.'' 
+\6\ In its order granting approval of the rule, the Commission noted 
+that the rule ``should facilitate the initial opening . . . of certain 
+securities not listed in connection with an underwritten IPO . . . .'' 
+\7\
+---------------------------------------------------------------------------
+
+    \4\ See Securities Exchange Act Release No. 82627 (February 2, 
+2028), 83 FR 5650 (February 8, 2018) (SR-NYSE-2017-30) (Notice of 
+Filing of Amendment No. 3 and Order Granting Accelerated Approval of 
+Proposed Rule Change as Modified by Amendment No. 3).
+    \5\ See NYSE Rule 123D(d) (SR-NYSE-2017-30 version).
+    \6\ See NYSE Form 19b-4 in support of SR-NYSE-2017-30, available 
+at <a href="https://www.nyse.com/publicdocs/nyse/markets/nyse/rule-filings/filings/2017/NYSE-2017-30,%20a.m.%203.pdf">https://www.nyse.com/publicdocs/nyse/markets/nyse/rule-filings/filings/2017/NYSE-2017-30,%20a.m.%203.pdf</a> (``Proposed Rule 123D(d) 
+would provide authority for the Exchange to declare a regulatory 
+halt for a security that is having its initial listing on the 
+Exchange, is not an IPO, and has not been listed on a national 
+securities exchange . . . prior to the initial pricing.'').
+    \7\ See supra note 4, 83 FR at 5655.
+---------------------------------------------------------------------------
+
+    The Exchange adopted the Initial Listing Regulatory Halt as Rule 
+7.18E(e) in 2022,\8\ based on the text of NYSE Rule 123D(d). In August 
+2026, the Exchange's Rule 7.18E (``Trading Halts'') was reorganized and 
+the Initial Listing Regulatory Halt was moved to Rule 7.18E(b)(1)(B)(1) 
+[sic], which currently defines it as ``of a security that is the 
+subject of an initial pricing on the Exchange that has not been listed 
+on a national securities exchange immediately prior to initial 
+pricing.'' \9\
+---------------------------------------------------------------------------
+
+    \8\ See Securities Exchange Act Release No. 95945 (September 29, 
+2022), 87 FR 60428 (October 5, 2022) (SR-NYSEAMER-2022-44).
+    \9\ See Securities Exchange Act Release No. 102810 (April 10, 
+2025), 90 FR 16041 (April 16, 2025) (SR-NYSEAMER-2025-19), and 
+further amended by Securities Exchange Act Release No. 105182 (April 
+8, 2026), 91 FR 18902 (April 13, 2026) (SR-NYSEAMER-2026-27).
+---------------------------------------------------------------------------
+
+Proposed Change to Rule 7.18E(b)(1)(B)(i)
+    The Exchange proposes to amend the text of Rule 7.18E(b)(1)(B)(i) 
+to explicitly specify that the Initial Listing Regulatory Halt does not 
+apply to securities that are subject to an IPO. The Exchange believes 
+that the transparency and clarity of the rule would be enhanced by 
+specifying that the Exchange may declare an Initial Listing Regulatory 
+Halt if a security is the subject of an initial pricing on the 
+Exchange, ``except for (a) IPOs in equity securities that are not 
+derivative security products, or (b) securities that are listed on a 
+national securities exchange immediately prior to initial pricing.'' 
+Because both these exceptions are covered by the existing rule text, 
+the proposed change is not substantive, but rather clarifying in 
+nature.
+Proposed Change to Rule 7.18E(b)(5)(B)(iv)
+    Rule 7.18E(b)(5)(B)(iv) describes how the Exchange will resume 
+trading after an Initial Listing Regulatory Halt. The current rule text 
+provides that the Exchange ``will terminate an Initial Listing 
+Regulatory Halt when the security is open for trading.'' While that 
+language is correct, it does not specify the mechanism by which the 
+security will reopen. In fact, trading after an Initial Listing 
+Regulatory Halt reopens with a Trading Halt Auction,\10\ which is the 
+default described in Rule 7.18E(b)(5)(B).\11\ The Exchange proposes to 
+amend the rule text to specify explicitly that the Exchange will resume 
+trading in a security after an Initial Listing Regulatory Halt ``with a 
+Trading Halt Auction.''
+---------------------------------------------------------------------------
+
+    \10\ The term ``Trading Halt Auction'' is defined in Rule 
+7.35E(e).
+    \11\ Rule 7.18E(b)(5)(B) provides: ``The Exchange will resume 
+trading after a Regulatory Halt other than a SIP Halt with a Trading 
+Halt Auction pursuant to Rule 7.35E, except as provided below . . . 
+.''
+---------------------------------------------------------------------------
+
+2. Statutory Basis
+    The Exchange believes that its proposal is consistent with the 
+requirements of the Act and the rules and regulations thereunder that 
+are applicable to a national securities exchange, and, in particular, 
+with the requirements of Section 6(b) of the Act.\12\ Specifically, the 
+proposal is consistent with Section 6(b)(5) of the Act \13\ because it 
+would promote just and equitable principles of trade, remove 
+impediments to, and perfect the mechanism of, a free and open market 
+and a national market system, and, in general, protect investors and 
+the public interest.
+---------------------------------------------------------------------------
+
+    \12\ 15 U.S.C. 78f(b).
+    \13\ 15 U.S.C. 78f(b)(5).
+---------------------------------------------------------------------------
+
+    The Exchange believes the proposed rule change would protect 
+investors and the public interest and perfect the mechanism of a free 
+and open market and a national market system by adding transparency and 
+specificity to the rule. The existing text and history of the rule are 
+clear that an Initial Listing Regulatory Halt will not be used in the 
+case of an IPO of a corporate security, but the Exchange believes that 
+stating that exception explicitly in the rule text will enhance the 
+transparency of the rule and benefit the public interest. Similarly, 
+the current rule text does not specify the mechanism for reopening 
+trading after an Initial Listing Regulatory Halt, and the Exchange 
+believes that explicitly stating that trading resumes with a Trading 
+Halt Auction will enhance the transparency of the rule. These proposed 
+changes are not substantive in nature, but rather add further 
+specificity and transparency to the existing rule text.
+
+B. Self-Regulatory Organization's Statement on Burden on Competition
+
+    The Exchange believes the proposal is consistent with Section 
+6(b)(8) of the Act \14\ in that it does not impose any burden on 
+competition that is not necessary or appropriate in furtherance of the 
+purposes of the Act as explained below. Rather than impacting 
+competition, the proposed changes are non-substantive and would enhance 
+the specificity and transparency of the rule.
+---------------------------------------------------------------------------
+
+    \14\ 15 U.S.C. 78f(b)(8).
+---------------------------------------------------------------------------
+
+C. Self-Regulatory Organization's Statement on Comments on the Proposed 
+Rule Change Received From Members, Participants, or Others
+
+    No written comments were solicited or received with respect to the 
+proposed rule change.
+
+III. Date of Effectiveness of the Proposed Rule Change and Timing for 
+Commission Action
+
+    Because the foregoing proposed rule change does not: (i) 
+significantly affect the protection of investors or the public 
+interest; (ii) impose any significant burden on competition; and (iii) 
+become operative for 30 days after the date on which it was filed, or 
+such shorter time as the Commission may designate, it has become 
+effective pursuant to Section 19(b)(3)(A)(iii) of the Act \15\ and 
+subparagraph (f)(6) of Rule 19b-4 thereunder.\16\
+---------------------------------------------------------------------------
+
+    \15\ 15 U.S.C. 78s(b)(3)(A)(iii).
+    \16\ 17 CFR 240.19b-4(f)(6). In addition, Rule 19b-4(f)(6)(iii) 
+requires a self-regulatory organization to give the Commission 
+written notice of its intent to file the proposed rule change, along 
+with a brief description and text of the proposed rule change, at 
+least five business days prior to the date of filing of the proposed 
+rule change, or such shorter time as designated by the Commission. 
+The Exchange has satisfied this requirement.
+---------------------------------------------------------------------------
+
+    At any time within 60 days of the filing of such proposed rule 
+change, the Commission summarily may temporarily suspend such rule 
+change if it appears to the Commission that such action is necessary or 
+appropriate in the public interest, for the protection of investors, or 
+otherwise in furtherance of the purposes of the Act. If the Commission 
+takes such action, the Commission shall institute proceedings
+
+[[Page 58933]]
+
+under Section 19(b)(2)(B) \17\ of the Act to determine whether the 
+proposed rule change should be approved or disapproved.
+---------------------------------------------------------------------------
+
+    \17\ 15 U.S.C. 78s(b)(2)(B).
+---------------------------------------------------------------------------
+
+IV. Solicitation of Comments
+
+    Interested persons are invited to submit written data, views and 
+arguments concerning the foregoing, including whether the proposed rule 
+change is consistent with the Act. Comments may be submitted by any of 
+the following methods:
+
+Electronic Comments
+
+    <bullet> Use the Commission's internet comment form (<a href="https://www.sec.gov/rules/sro.shtml">https://www.sec.gov/rules/sro.shtml</a>); or
+    <bullet> Send an email to <a href="/cdn-cgi/l/email-protection#3e4c4b525b135d5153535b504a4d7e4d5b5d10595148"><span class="__cf_email__" data-cfemail="5b292e373e76383436363e352f281b283e38753c342d">[email&#160;protected]</span></a>. Please include 
+file number SR-NYSEAMER-2026-81 on the subject line.
+
+Paper Comments
+
+    <bullet> Send paper comments in triplicate to Secretary, Securities 
+and Exchange Commission, 100 F Street NE, Washington, DC 20549-1090.
+
+All submissions should refer to file number SR-NYSEAMER-2026-81. This 
+file number should be included on the subject line if email is used. To 
+help the Commission process and review your comments more efficiently, 
+please use only one method. The Commission will post all comments on 
+the Commission's internet website (<a href="https://www.sec.gov/rules/sro.shtml">https://www.sec.gov/rules/sro.shtml</a>). Copies of the filing will be available for inspection and 
+copying at the principal office of the Exchange. Do not include 
+personal identifiable information in submissions; you should submit 
+only information that you wish to make available publicly. We may 
+redact in part or withhold entirely from publication submitted material 
+that is obscene or subject to copyright protection. All submissions 
+should refer to file number SR-NYSEAMER-2026-81 and should be submitted 
+on or before October 8, 2026.
+
+    For the Commission, by the Division of Trading and Markets, 
+pursuant to delegated authority.\18\
+---------------------------------------------------------------------------
+
+    \18\ 17 CFR 200.30-3(a)(12).
+---------------------------------------------------------------------------
+
+
+J. Matthew DeLesDernier,
+Deputy Secretary.
+[FR Doc. 2026-19038 Filed 9-16-26; 8:45 am]
+BILLING CODE 8011-01-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

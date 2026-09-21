@@ -1,0 +1,564 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 176 (Monday, September 14, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 176 (Monday, September 14, 2026)]
+[Rules and Regulations]
+[Pages 58023-58027]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-18748]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+ENVIRONMENTAL PROTECTION AGENCY
+
+40 CFR Part 52
+
+[EPA-R09-OAR-2026-3400; FRL-13355-02-R9]
+
+
+Approval and Promulgation of Implementation Plans; California; 
+San Joaquin Valley, Revisions to Motor Vehicle Emissions Budgets for 
+Ozone
+
+AGENCY: Environmental Protection Agency (EPA).
+
+ACTION: Final rule.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The U.S. Environmental Protection Agency (EPA or ``Agency'') 
+is taking final action to approve a revision to the State of 
+California's state implementation plan (SIP) for the San Joaquin Valley 
+(SJV) area. The revision includes an update to the SJV area's motor 
+vehicle emissions budgets (``budgets'') for nitrogen oxides 
+(NO<INF>X</INF>) and volatile organic compounds (VOC) for the 2008 8-
+hour ozone national ambient air quality standards (NAAQS or 
+``standards''). These updated budgets for 2026, 2029, and 2031 were 
+developed with the latest modeling method approved for California. 
+These updated budgets apply to all subareas within the SJV. Upon the 
+effective date of this rule, the updated budgets will supersede the 
+existing approved SJV subarea budgets for the 2008 ozone NAAQS that 
+were based on an earlier
+
+[[Page 58024]]
+
+emissions model. The EPA is approving the updated SJV ozone budgets in 
+accordance with the requirements of the Clean Air Act (CAA or ``Act'') 
+and the EPA's regulations.
+
+DATES: This rule is effective October 14, 2026.
+
+ADDRESSES: The EPA has established a docket for this action under 
+Docket ID No. EPA-R09-OAR-2026-3400. All documents in the docket are 
+listed on the <a href="https://www.regulations.gov">https://www.regulations.gov</a> website. Although listed in 
+the index, some information is not publicly available, e.g., 
+Confidential Business Information (CBI) or other information whose 
+disclosure is restricted by statute. Certain other material, such as 
+copyrighted material, is not placed on the internet and will be 
+publicly available only in hard copy form. Publicly available docket 
+materials are available through <a href="https://www.regulations.gov">https://www.regulations.gov</a>, or please 
+contact the person identified in the FOR FURTHER INFORMATION CONTACT 
+section for additional availability information. If you need assistance 
+in a language other than English or if you are a person with a 
+disability who needs a reasonable accommodation at no cost to you, 
+please contact the person identified in the FOR FURTHER INFORMATION 
+CONTACT section.
+
+FOR FURTHER INFORMATION CONTACT: Lindsay Wickersham, Air Planning 
+Office (ARD-2), EPA Region IX, 75 Hawthorne Street, San Francisco, CA 
+94105, telephone number: (415) 947-4192, or by email at 
+<a href="/cdn-cgi/l/email-protection#7f08161c141a0d0c171e12511316111b0c1e063f1a0f1e51181009"><span class="__cf_email__" data-cfemail="43342a20282631302b222e6d2f2a2d2730223a032633226d242c35">[email&#160;protected]</span></a>.
+
+SUPPLEMENTARY INFORMATION: Throughout this document, the use of ``we,'' 
+``us,'' or ``our'' is intended to refer to the EPA. We use multiple 
+abbreviations and terms in this final rule. While this list may not be 
+exhaustive, for ease of reading and for reference purposes, the EPA 
+defines the following terms and acronyms here:
+
+CAA Clean Air Act
+CARB California Air Resources Board
+CBI Confidential Business Information
+CFR Code of Federal Regulations
+DOT U.S. Department of Transportation
+EMFAC EMission FACtor
+EPA U.S. Environmental Protection Agency
+FCOG Fresno Council of Governments
+FR Federal Register
+KCAG Kings County Association of Governments
+KCOG Kern Council of Governments
+MCAG Merced County Association of Governments
+MCTC Madera County Transportation Commission
+MPO Metropolitan Planning Organization
+NAAQS National Ambient Air Quality Standards
+NO<INF>X</INF> Nitrogen Oxides
+PM<INF>2.5</INF> Particulate matter less than 2.5 [micro]m in 
+diameter
+RFP Reasonable Further Progress
+SIP State Implementation Plan
+SJCOG San Joaquin Council of Governments
+SJV San Joaquin Valley
+StanCOG Stanislaus Council of Governments
+TCAG Tulare County Association of Governments
+TIP Transportation Improvement Program
+VOC Volatile Organic Compounds
+
+Table of Contents
+
+I. Executive Summary
+    A. What action is the EPA taking?
+    B. What is the legal authority and what are the requirements?
+II. Background and Proposed Action
+III. Public Comments
+IV. Final Action
+V. Statutory and Executive Order Reviews
+
+I. Executive Summary
+
+A. What action is the EPA taking?
+
+    The EPA is taking final action to approve a revision to the SJV 
+portion of the California SIP for the 2008 8-hour ozone NAAQS. The 
+revision includes an update to the SJV subarea budgets for 
+NO<INF>X</INF> and VOC for the 2008 8-hour ozone NAAQS. Upon the 
+effective date of the EPA's approval, the revised budgets will 
+supersede the existing approved SJV subarea budgets for the 2008 ozone 
+NAAQS that were based on an earlier emissions model.
+
+B. What is the legal authority and what are the requirements?
+
+    The EPA has legal authority to approve, disapprove, or 
+conditionally approve, in whole or in part, submissions of SIPs and SIP 
+revisions under CAA section 110(k). The applicable requirements for 
+this type of action include those in CAA sections 110(a)(1) and (2), 
+CAA section 110(l), 40 CFR 51.102, and 40 CFR 93.118(e)(4).
+    CAA sections 110(a)(1) and (2) and 40 CFR 51.102 establish certain 
+procedural requirements on States for adoption and submittal of SIPs 
+and SIP revisions to the EPA to meet CAA requirements. CAA section 
+110(l) prohibits the EPA from approving SIP revisions that would 
+interfere with any applicable requirements concerning attainment and 
+reasonable further progress (RFP) or any other applicable requirement 
+of the Act.
+    Generally, the EPA reviews budgets for approval in the context of 
+the Agency's review of a control strategy. A State may revise the motor 
+vehicle emissions inventories and related budgets without revising its 
+entire SIP, consistent with CAA section 110(l), if: (1) the SIP 
+continues to meet applicable requirements when the previous motor 
+vehicle emissions inventories are replaced with new base year and 
+milestone, attainment, or maintenance year inventories based on a more 
+recent emissions model; and (2) the State can document that growth and 
+control strategy assumptions for non-motor vehicle sources continue to 
+be valid and any minor updates do not change the overall conclusions of 
+the SIP.\1\
+---------------------------------------------------------------------------
+
+    \1\ See examples of EPA rules involving replacement of budgets 
+in response to an emissions model update, e.g., Allentown-Bethlehem-
+Easton (79 FR 28435, May 16, 2014) and Beaumont/Port Arthur (78 FR 
+7672, Feb. 4, 2013).
+---------------------------------------------------------------------------
+
+    At 40 CFR 93.118(e)(4), the EPA specifies certain other minimum 
+requirements for budgets to be found adequate or approved.
+
+II. Background and Proposed Action
+
+    On July 9, 2026, the EPA proposed,\2\ under CAA section 110(k)(3), 
+to approve a revision to the California SIP submitted by the California 
+Air Resources Board (CARB) on April 30, 2026.\3\ The SIP submittal 
+revises budgets applicable to control strategy plans for the SJV for 
+the 2008 ozone standards.\4\ CARB developed the revised budgets using 
+EMFAC2021,\5\ with off-model adjustment factors approved by the EPA in 
+November 2025 (``November 2025 Adjustment Factors''),\6\ and travel 
+activity projections provided by the SJV Metropolitan Planning 
+Organizations (MPOs) consistent with the 2025 Federal Transportation 
+Improvement Program (TIP).\7\ As such, the revised
+
+[[Page 58025]]
+
+budgets reflect the most recent planning forecasts and are based on the 
+most recent emission factor data and approved calculation methods.
+---------------------------------------------------------------------------
+
+    \2\ 91 FR 42399 (July 9, 2026).
+    \3\ ``2026 Updates to Motor Vehicle Emissions Budgets for the 
+San Joaquin Valley 75 parts per billion Ozone State Implementation 
+Plan (Feb. 13, 2026) (``2026 Valley Ozone Budget Update'').
+    \4\ The SJV nonattainment area includes all of seven counties, 
+including Fresno, Kings, Madera, Merced, San Joaquin, Stanislaus, 
+and Tulare counties, and the western half of Kern County. See the 
+NAAQS-specific tables in 40 CFR 81.305.
+    \5\ The EMFAC model (short for EMission FACtor) is a computer 
+model developed by CARB. EMFAC is used to calculate current and 
+future on-road inventories. The EPA approved EMFAC2021 for use in 
+SIP revisions and transportation conformity determinations in 
+California in November 2022 (see 87 FR 68483).
+    \6\ Letter dated November 21, 2025, titled ``EPA Region 9 letter 
+approving EMFAC2021 Adjustment Factors that remove the emissions 
+benefits of the Advanced Clean Trucks, Heavy-Duty Omnibus, and other 
+regulations,'' from Anita Lee, Acting Director, Air and Radiation 
+Division, EPA Region IX, to Edie Chang, Deputy Executive Officer, 
+CARB, A copy of this letter can be found on the EPA's Policy and 
+Technical Guidance for State and Local Transportation site, <a href="https://www.epa.gov/state-and-local-transportation/policy-and-technical-guidance-state-and-local-transportation">https://www.epa.gov/state-and-local-transportation/policy-and-technical-guidance-state-and-local-transportation</a>.
+    \7\ More information on each of the SJV MPO's 2025 Federal TIP 
+can be found on their respective websites. See websites for the 
+Fresno Council of Governments (FCOG), Kern Council of Governments 
+(KCOG), Kings County Association of Governments (KCAG), Madera 
+County Transportation Commission (MCTC), Merced County Association 
+of Governments (MCAG), San Joaquin Council of Governments (SJCOG), 
+Stanislaus Council of Governments (StanCOG), and the Tulare County 
+Association of Governments (TCAG).
+---------------------------------------------------------------------------
+
+    The EPA previously approved budgets for the 2008 ozone standards 
+for the SJV nonattainment area. The ozone precursor budgets were 
+included as part of the EPA's approval of three SIP revisions submitted 
+by CARB to address the nonattainment planning requirements for the SJV 
+for the 2008 ozone NAAQS, including the RFP and attainment 
+demonstrations. These SIP revisions include the ``San Joaquin Valley 
+2016 Plan for the 2008 8-Hour Ozone Standard'' (``2016 Ozone Plan'') 
+and the portions of the ``Revised Proposed 2016 State Strategy for the 
+State Implementation Plan'' (``2016 State SIP Strategy'') and ``2018 
+Updates to the California State Implementation Plan'' (``2018 SIP 
+Update'') that pertain to the SJV for the 2008 ozone NAAQS.\8\ 
+Collectively, we refer to the approved SIP revisions for SJV for the 
+2008 ozone NAAQS as the ``2016 SJV Ozone SIP.'' The previously approved 
+ozone budgets were developed using EMFAC2014.
+---------------------------------------------------------------------------
+
+    \8\ We approved portions of the 2016 Ozone Plan and 2016 State 
+SIP Strategy as meeting certain requirements, including the 
+attainment demonstration, at 84 FR 3302 (Feb. 12, 2019). We approved 
+portions of the 2016 Ozone Plan and the 2018 SIP Update as meeting 
+certain other requirements, including the RFP demonstration at 84 FR 
+11198 (Mar. 25, 2019), as corrected at 84 FR 19680 (May 3, 2019). We 
+approved the budgets contained in the 2018 SIP Update as part of our 
+approval published at 84 FR 11198 (Mar. 25, 2019).
+---------------------------------------------------------------------------
+
+    In our July 9, 2026 proposed rule, we reviewed the revised budgets 
+in the April 30, 2026 submittal, evaluated them for compliance with 
+statutory and regulatory requirements, and concluded that they meet all 
+applicable requirements. More specifically, we found that the 2016 SJV 
+Ozone Plan will continue to meet applicable requirements for RFP and 
+attainment when the existing approved, EMFAC2014-based budgets are 
+replaced with the revised budgets based on EMFAC2021 with the November 
+2025 adjustment factors, and that the changes in the growth and control 
+strategy assumptions for non-motor vehicle sources do not change the 
+overall conclusions of the 2016 SJV Ozone SIP.
+    As such, we found that approval of the revised NO<INF>X</INF> and 
+VOC budgets from the 2026 Valley Ozone Budget Update for 2026, 2029, 
+and 2031 as shown in Table 1 would not interfere with attainment or RFP 
+or any other requirement of the Act and would thereby comply with CAA 
+section 110(l). We proposed to approve the revised budgets on that 
+basis.
+
+ Table 1--San Joaquin Valley Revised Budgets Developed Using EMFAC2021 With November 2025 Adjustment Factors \a\
+----------------------------------------------------------------------------------------------------------------
+                                                                2008 8-hour ozone standards
+                                         -----------------------------------------------------------------------
+                                           NOX (tons per average summer day)   VOC (tons per average summer day)
+             County subarea                                                  -----------------------------------
+                                         ------------------------------------
+                                             2026        2029        2031        2026        2029        2031
+----------------------------------------------------------------------------------------------------------------
+Fresno..................................         8.4         7.8         7.6         4.4         3.9         3.6
+Kern (SJV)..............................        10.6        10.3        10.3         3.7         3.3         3.1
+Kings...................................         2.1         2.1         2.1         0.8         0.7         0.7
+Madera..................................         1.9         1.7         1.6         0.9         0.8         0.8
+Merced..................................         4.6         4.3         4.3         1.5         1.3         1.2
+San Joaquin.............................         6.0         5.5         5.2         3.5         3.1         2.8
+Stanislaus..............................         3.9         3.5         3.3         2.4         2.1         1.9
+Tulare..................................         3.6         3.2         3.1         2.2         1.9         1.7
+----------------------------------------------------------------------------------------------------------------
+\a\ The county-specific budgets are set forth in Table III-1 of the 2026 Valley Ozone Budget Update. CARB
+  rounded up each of the subarea budgets calculated using EMFAC2021 with the off-model adjustment factors
+  approved by the EPA in November 2025 to the nearest tenth of a ton.
+
+    In our proposed rule, the EPA also proposed to limit the duration 
+of the approval of the budgets in the 2026 Valley Ozone Budget Update. 
+We did so in light of CARB's request to limit the duration of the 
+revised budgets and CARB's explanation for why the budgets in the 2026 
+Valley Ozone Budget Update may become outdated and should be replaced 
+upon an EPA adequacy finding for further revised budgets. In short, 
+CARB has requested that we limit the duration of the approval of the 
+budgets because CARB expects the next version of EMFAC to estimate 
+higher emissions for certain onroad motor vehicle categories and for 
+certain areas of the State, necessitating updates to the budgets once 
+the next version of EMFAC is submitted to and approved by the EPA.
+    If the EPA approves the future EMFAC model version, CARB explains 
+that the budgets from the 2026 Valley Ozone Budget Update, for which we 
+are finalizing approval in this action, may become outdated and will 
+need to be revised. In addition, CARB states that, without the ability 
+to replace the budgets using the budget adequacy process, the benefits 
+of using the updated data may not be realized for a year or more after 
+the updated SIP (with the future budgets) is submitted, due to the 
+length of the SIP approval process.
+    Please see our July 9, 2026 proposed rule for more information 
+concerning the background for this action and for a more detailed 
+discussion of the rationale for approval of the revised budgets.
+
+III. Public Comments
+
+    Our July 9, 2026 proposed rule provided a 30-day public comment 
+period, which closed on August 10, 2026. During this period, we 
+received comments from five commenters. Two of the commenters refer to 
+air pollution generally, but their comments are not germane to the 
+proposed action. The three other commenters generally support the 
+proposed action, but express certain potential objections, make certain 
+recommendations or request clarification of certain statements in the 
+proposed rule.\9\ In the following paragraphs, we present the comments 
+verbatim and provide our responses. The comment submissions are 
+included in the docket for this action.
+---------------------------------------------------------------------------
+
+    \9\ One of these commenters submitted their germane, supportive 
+comment in duplicate.
+---------------------------------------------------------------------------
+
+    Comment 1. ``It is important to note that the revised VOC budgets 
+slightly increase in Stanislaus County across the three covered years, 
+as well as in Tulare County during '26 and '29. The updated non-road 
+emissions are also greater than prior estimates. Although reductions
+
+[[Page 58026]]
+
+elsewhere in the proposal offset these increases, considering regional 
+totals alone may conceal more local yet nevertheless important 
+changes.''
+    Response 1. VOCs are precursors to formation of ambient ozone and 
+particulate matter less than 2.5 [micro]m in diameter 
+(PM<INF>2.5</INF>), but the associated impact on ambient concentrations 
+occurs well downwind of the source of VOCs, rather than in the locality 
+of the source, and impact depends upon the amount of sunlight present 
+and atmospheric mixing as well as other meteorological and topographic 
+factors. In addition, motor vehicle emissions are distributed 
+throughout the road network of a given county, as well as the 
+nonattainment area. For these reasons, we expect that the slight 
+increases in VOCs in certain counties relative to the budgets that were 
+previously approved would not have an adverse local effect.
+    Comment 2. ``Additionally, it is my stance that prior to approving 
+future replacements via an adequacy finding, the EPA should public 
+comparisons at both the county and regional level, as well as explain 
+any material increases. The agency should also confirm that any new 
+budgets remain consistent with reasonable progress and attainment 
+requirements.''
+    Response 2. The EPA's process for determining adequacy of a budget 
+consists of three steps: (1) Providing public notification of a SIP 
+submission, (2) providing the public the opportunity to comment on the 
+budget during a public comment period, and, (3) making a finding of 
+adequacy or inadequacy.\10\
+---------------------------------------------------------------------------
+
+    \10\ 40 CFR 93.118(f)(2).
+---------------------------------------------------------------------------
+
+    We would expect the SIP revision containing the future budget 
+replacements to compare the approved budgets with the submitted 
+budgets, both on a county-level basis as well as a regional basis, 
+similar to the types of comparisons CARB has provided in the 2026 
+Valley Ozone Budget Update.\11\
+---------------------------------------------------------------------------
+
+    \11\ 2026 Valley Ozone Budget Update, Tables III-2 and III-3.
+---------------------------------------------------------------------------
+
+    For the EPA to find budgets adequate, the budgets must meet, at a 
+minimum, the EPA's adequacy criteria (40 CFR 93.118(e)(4)). To meet 
+these requirements, the budgets must be consistent with the attainment 
+and RFP requirements and reflect all of the motor vehicle control 
+measures contained in the attainment and RFP demonstrations.\12\
+---------------------------------------------------------------------------
+
+    \12\ 40 CFR 93.118(e)(4)(iii), (iv) and (v).
+---------------------------------------------------------------------------
+
+    As such, an EPA finding of adequacy for any replacement budgets 
+relies upon both analysis of public comments on the submitted budgets 
+and on the information included by CARB in support of the submitted 
+budgets and is based on EPA's determination that the submitted budgets 
+are consistent with the RFP and attainment demonstration requirements 
+for the 2008 ozone NAAQS in the San Joaquin Valley.
+    Comment 3. ``The updated model generally lowers the total 
+NO<INF>X</INF> and VOC emissions budgets, which seems like a step in 
+the right direction. However, some individual counties may still see 
+small increases in certain categories. I think the EPA should clearly 
+explain why those increases happen so residents can understand whether 
+they come from changes in traffic, updated data, or the model itself.''
+    Response 3. In 2021, California released a new version of its motor 
+vehicle emissions model, EMFAC2021. CARB notes that, due to updated 
+data and methodologies, EMFAC2021 estimates higher overall emissions 
+from the on-road vehicle population in many areas of the State compared 
+to prior versions of the model.\13\ With respect to the SJV, motor 
+vehicle projections made using EMFAC2021 are higher in certain counties 
+for VOC as compared with the corresponding estimates made using 
+EMFAC2014 but lower for all the counties for NO<INF>X</INF>.
+---------------------------------------------------------------------------
+
+    \13\ 2026 Valley Ozone Budget Update, page 5.
+---------------------------------------------------------------------------
+
+IV. Final Action
+
+    For the reasons discussed in the July 9, 2026 proposed rule and 
+summarized in this final rule, the EPA is approving the 2026 Valley 
+Ozone Budget Update submitted by CARB on April 30, 2026, and all the 
+revised subarea motor vehicle emissions budgets contained therein for 
+the SJV area for the 2008 ozone NAAQS as a revision to the California 
+SIP. More specifically, the EPA is approving, under CAA section 
+110(k)(3), the 2026 Valley Ozone Budget Update and the revised VOC and 
+NO<INF>X</INF> budgets shown in Table 1 of this final rule for 2026, 
+2029, and 2031 for the 2008 ozone standards.
+    With our final approval, we are also limiting the duration of the 
+approval of the budgets to last only until the effective date of an 
+adequacy finding by the EPA for any subsequently submitted budgets for 
+the same CAA purpose and years. We are doing so at CARB's request 
+consistent with 40 CFR 93.118(e)(1).
+    Lastly, on the effective date of this action, the previously 
+approved budgets for the 2008 ozone standard will no longer be 
+applicable for transportation conformity purposes, and the SJV MPOs and 
+the U.S. Department of Transportation (DOT) must use the revised 
+budgets for future transportation conformity determinations.
+
+V. Statutory and Executive Order Reviews
+
+    Under the CAA, the Administrator is required to approve a SIP 
+submission that complies with the provisions of the Act and applicable 
+Federal regulations. 42 U.S.C. 7410(k); 40 CFR 52.02(a). Thus, in 
+reviewing SIP submissions, the EPA's role is to approve State choices, 
+provided that they meet the criteria of the CAA. Accordingly, this 
+action merely approves a State plan as meeting Federal requirements and 
+does not impose additional requirements beyond those imposed by State 
+law. For that reason, this action:
+    <bullet> Is not a significant regulatory action subject to review 
+by the Office of Management and Budget under Executive Order 12866 (58 
+FR 51735, October 4, 1993);
+    <bullet> Is not an Executive Order 14192 (90 FR 9065, February 6, 
+2025) regulatory action because this action is not significant under 
+Executive Order 12866;
+    <bullet> Does not impose an information collection burden under the 
+provisions of the Paperwork Reduction Act (44 U.S.C. 3501 et seq.);
+    <bullet> Is certified as not having a significant economic impact 
+on a substantial number of small entities under the Regulatory 
+Flexibility Act (5 U.S.C. 601 et seq.);
+    <bullet> Does not contain any unfunded mandate or significantly or 
+uniquely affect small governments, as described in the Unfunded 
+Mandates Reform Act of 1995 (Pub. L. 104-4);
+    <bullet> Does not have federalism implications as specified in 
+Executive Order 13132 (64 FR 43255, August 10, 1999);
+    <bullet> Is not subject to Executive Order 13045 (62 FR 19885, 
+April 23, 1997) because it proposes to approve a State program;
+    <bullet> Is not a significant regulatory action subject to 
+Executive Order 13211 (66 FR 28355, May 22, 2001); and
+    <bullet> Is not subject to requirements of section 12(d) of the 
+National Technology Transfer and Advancement Act of 1995 (15 U.S.C. 272 
+note) because application of those requirements would be inconsistent 
+with the CAA.
+    In addition, the SIP is not approved to apply on any Indian 
+reservation land or in any other area where the EPA or an Indian Tribe 
+has demonstrated that a Tribe has jurisdiction. In those areas of 
+Indian country, the rule does not have Tribal implications and will not 
+impose substantial direct costs on Tribal governments or preempt Tribal 
+law as
+
+[[Page 58027]]
+
+specified by Executive Order 13175 (65 FR 67249, November 9, 2000).
+    This action is subject to the Congressional Review Act, and the EPA 
+will submit a rule report to each House of the Congress and to the 
+Comptroller General of the United States. This action is not a ``major 
+rule'' as defined by 5 U.S.C. 804(2).
+    Under section 307(b)(1) of the CAA, petitions for judicial review 
+of this action must be filed in the United States Court of Appeals for 
+the appropriate circuit by November 13, 2026. Filing a petition for 
+reconsideration by the Administrator of this final rule does not affect 
+the finality of this action for the purposes of judicial review, nor 
+does it extend the time within which a petition for judicial review may 
+be filed, and it shall not postpone the effectiveness of such rule or 
+action. This action may not be challenged later in proceedings to 
+enforce its requirements. (See section 307(b)(2).)
+
+List of Subjects in 40 CFR Part 52
+
+    Environmental protection, Air pollution control, Incorporation by 
+reference, Intergovernmental relations, Nitrogen oxides, Ozone, 
+Reporting and recordkeeping requirements, Volatile organic compounds.
+
+    Authority: 42 U.S.C. 7401 et seq.
+
+    Dated: September 2, 2026.
+Michael Martucci,
+Acting Regional Administrator, Region IX.
+
+    For the reasons stated in the preamble, the EPA amends 40 CFR part 
+52 as follows:
+
+PART 52--APPROVAL AND PROMULGATION OF IMPLEMENTATION PLANS
+
+0
+1. The authority citation for part 52 continues to read as follows:
+
+    Authority:  42 U.S.C. 7401 et seq.
+
+Subpart F--California
+
+0
+2. In Sec.  52.220a, in paragraph (e), amend table 8 by adding an entry 
+for ``2026 Updates to Motor Vehicle Emissions Budgets for the San 
+Joaquin Valley 75 parts per billion Ozone State Implementation Plan 
+(February 13, 2026)'' after the entry for ``SJVUAPCD's commitments to 
+adopt, submit, and implement substitute rules that will achieve 
+equivalent reductions in emissions of direct PM<INF>2.5</INF> or 
+PM<INF>2.5</INF> precursors in the same adoption and implementation 
+timeframes or in the timeframes needed to meet CAA milestones, as 
+stated on p. 4 of San Joaquin Valley Unified APCD Resolution 2012-12-
+19, dated December 20, 2012 were revised by California Air Resources 
+Board Resolution 20-15, dated May 28, 2020, in paragraph 
+(c)(539)(ii)(A)(2) of this section'' to read as follows:
+
+
+Sec.  52.220a  Identification of plan--in part.
+
+* * * * *
+    (e) * * *
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+       Name of SIP provision               Applicable geographic area              State submittal date        EPA approval  date        Explanation
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+ 
+                                                                      * * * * * * *
+2026 Updates to Motor Vehicle       San Joaquin Valley.....................  April 30, 2026.................  9/14/2026, 91 FR      Adopted by CARB on
+ Emissions Budgets for the San                                                                                 [INSERT FEDERAL       March 26, 2026
+ Joaquin Valley 75 parts per                                                                                   REGISTER PAGE WHERE   through Resolution
+ billion Ozone State                                                                                           THE DOCUMENT          26-2. Submitted
+ Implementation Plan (February 13,                                                                             BEGINS].              electronically on
+ 2026).                                                                                                                              April 30, 2026 as
+                                                                                                                                     an attachment to a
+                                                                                                                                     letter of the same
+                                                                                                                                     date.
+ 
+                                                                      * * * * * * *
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+* * * * *
+
+0
+3. Section 52.244 is amended by adding paragraph (a)(14) to read as 
+follows:
+
+
+Sec.  52.244   Motor vehicle emissions budgets.
+
+    (a) * * *
+    (14) San Joaquin Valley, for the 2008 ozone NAAQS only (years 2026, 
+2029 and 2031 budgets only), approved October 14, 2026.
+* * * * *
+[FR Doc. 2026-18748 Filed 9-11-26; 8:45 am]
+BILLING CODE 6560-50-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

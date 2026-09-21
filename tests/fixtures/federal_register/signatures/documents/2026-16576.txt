@@ -1,0 +1,2879 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 156 (Friday, August 14, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 156 (Friday, August 14, 2026)]
+[Rules and Regulations]
+[Pages 52508-52528]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-16576]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+DEPARTMENT OF THE TREASURY
+
+Financial Crimes Enforcement Network
+
+31 CFR Part 1010
+
+RIN 1506-AB67
+
+
+Beneficial Ownership Information Reporting Requirement Revision
+
+AGENCY: Financial Crimes Enforcement Network (FinCEN), Treasury.
+
+ACTION: Final rule.
+
+-----------------------------------------------------------------------
+
+SUMMARY: FinCEN is issuing this final rule to adopt as final and with 
+certain limited changes the interim final rule issued on March 26, 
+2025, which narrowed beneficial ownership information (BOI) reporting 
+requirements under FinCEN's regulations implementing the Corporate 
+Transparency Act (CTA). In particular, this final rule not only 
+continues to exempt reporting companies from having to report the BOI 
+of U.S. person beneficial owners and U.S. person beneficial owners from 
+having to provide BOI to reporting companies; it also exempts reporting 
+companies from having to submit information about their U.S. person 
+company applicants to FinCEN and exempts U.S. person company applicants 
+from any obligation to provide their information. In addition, the 
+final rule exempts all U.S. persons from the requirement to update 
+information already provided to FinCEN in connection with obtaining a 
+FinCEN identifier (FinCEN ID).
+
+DATES: This rule is effective August 14, 2026.
+
+FOR FURTHER INFORMATION CONTACT: FinCEN's Regulatory Support Section by 
+submitting an inquiry at <a href="http://www.fincen.gov/contact">www.fincen.gov/contact</a>.
+
+SUPPLEMENTARY INFORMATION:
+
+I. Background
+
+A. The Corporate Transparency Act
+
+    On January 1, 2021, Congress enacted into law the CTA as part of 
+the broader Anti-Money Laundering Act of 2020.\1\ Section 6403 of the 
+CTA, among other things, amends the Bank Secrecy Act (BSA) by adding a 
+new section 5336, Beneficial Ownership Information Reporting 
+Requirements, to subchapter II of chapter 53 of title 31, United States 
+Code.\2\ This section establishes new BOI reporting requirements for 
+many corporations, limited liability companies, and other similar 
+entities operating in the United States, but it excludes specified 
+categories of businesses from the reporting requirements. The CTA also 
+authorizes the Secretary of the Treasury (Secretary) to exempt any 
+other ``entity or class of entities'' for which the Secretary, with the 
+written concurrence of the Attorney General and the Secretary of 
+Homeland Security, has, by regulation, determined that ``requiring 
+beneficial ownership information from the entity or class of entities . 
+. . would not serve the public interest'' and ``would not be highly 
+useful in national security, intelligence, and law enforcement agency 
+efforts to detect, prevent, or prosecute money laundering, the 
+financing of terrorism, proliferation finance, serious tax fraud, or 
+other crimes.'' \3\ In addition, the BSA provides that the Secretary 
+may make appropriate exemptions from a requirement in the BSA or 
+regulations prescribed under the BSA.\4\ Taken together, these 
+provisions authorize the issuance of regulations that may establish 
+additional exemptions from the requirements of the CTA.
+---------------------------------------------------------------------------
+
+    \1\ The CTA is Title LXIV of the William M. (Mac) Thornberry 
+National Defense Authorization Act for Fiscal Year 2021, Public Law 
+116-283 (2021) (NDAA). The Anti-Money Laundering Act of 2020--which 
+includes the CTA--is Division F, sections 6001-6511, of the NDAA.
+    \2\ Certain parts of the Currency and Foreign Transactions 
+Reporting Act, its amendments, and the other statutes relating to 
+the subject matter of that Act, have come to be referred to as the 
+BSA. These statutes are codified at 12 U.S.C. 1829b, 12 U.S.C. 1951-
+1960, and 31 U.S.C. 5311-5314 and 5316-5336 and notes thereto, with 
+implementing regulations at 31 CFR chapter X.
+    \3\ 31 U.S.C. 5336(a)(11)(B)(xxiv).
+    \4\ 31 U.S.C. 5318(a)(7).
+---------------------------------------------------------------------------
+
+    The CTA requires the Secretary to prescribe regulations to 
+implement the CTA's reporting requirements.\5\ The Secretary has 
+delegated these and other CTA-implementing responsibilities to FinCEN, 
+a bureau of the Department of the Treasury (Treasury).\6\
+---------------------------------------------------------------------------
+
+    \5\ 31 U.S.C. 5336(b)(4).
+    \6\ The Secretary delegated the authority to implement, 
+administer, and enforce the BSA and its implementing regulations to 
+the Director of FinCEN. See Treasury Order 180-01, paragraph 3(a) 
+(Jan. 14, 2020), <a href="https://home.treasury.gov/about/general-information/orders-and-directives/treasury-order-180-01">https://home.treasury.gov/about/general-information/orders-and-directives/treasury-order-180-01</a>; see also 31 
+U.S.C. 310(b)(2)(I) (providing that FinCEN Director shall 
+``[a]dminister the requirements of subchapter II of chapter 53 of 
+this title, chapter 2 of title I of Public Law 91-508, and section 
+21 of the Federal Deposit Insurance Act, to the extent delegated 
+such authority by the Secretary'').
+
+---------------------------------------------------------------------------
+
+[[Page 52509]]
+
+B. Issuance of the Reporting Rule and Subsequent Developments
+
+    On September 30, 2022, FinCEN published the Beneficial Ownership 
+Information Reporting Requirements final rule (Reporting Rule), 
+implementing the CTA's reporting requirements (31 U.S.C. 5336(b)).\7\ 
+The Reporting Rule, codified at 31 CFR 1010.380, became effective on 
+January 1, 2024. It required reporting companies to report certain 
+identifying information about themselves, the beneficial owners who own 
+or control them, and, for companies created on or after January 1, 
+2024, the company applicants who form or register them.\8\
+---------------------------------------------------------------------------
+
+    \7\ FinCEN, Beneficial Ownership Information Reporting 
+Requirements (the Reporting Rule), 87 FR 59498 (Sept. 30, 2022). On 
+November 30, 2023, FinCEN also issued a final rule amending the 
+Reporting Rule to extend the filing deadline for reporting companies 
+created or registered in 2024. FinCEN, Beneficial Ownership 
+Information Reporting Deadline Extension for Reporting Companies 
+Created or Registered in 2024 (the Deadline Extension Rule), 88 FR 
+83499 (Nov. 30, 2023).
+    \8\ See Reporting Rule, 87 FR at 59498-99; 31 CFR 
+1010.380(b)(2)(iv).
+---------------------------------------------------------------------------
+
+    The Reporting Rule originally required domestic reporting companies 
+and foreign reporting companies \9\ created or registered to do 
+business in the United States before the rule's effective date of 
+January 1, 2024, to file initial BOI reports with FinCEN by January 1, 
+2025, one year after the effective date of the regulations.\10\ In a 
+subsequent rulemaking, FinCEN set separate deadlines for reporting 
+companies created or registered to do business in calendar year 
+2024.\11\
+---------------------------------------------------------------------------
+
+    \9\ A domestic reporting company was previously defined at 31 
+CFR 1010.380(c)(1)(i) as ``a corporation; a limited liability 
+company; or other entity that is created by the filing of a document 
+with a secretary of state or any similar office under the law of a 
+state or Indian tribe.'' A foreign reporting company was previously 
+defined at 31 CFR 1010.380(c)(1)(ii) as ``a corporation, limited 
+liability company, or other entity that is formed under the law of a 
+foreign country and that is registered to do business in the United 
+States by the filing of a document with a secretary of state or 
+equivalent office under the law of a state or Indian tribe.''
+    \10\ 31 CFR 1010.380(a)(1)(iii).
+    \11\ See, e.g., Deadline Extension Rule, 88 FR at 83504.
+---------------------------------------------------------------------------
+
+    Litigation challenging the CTA, however, disrupted the 
+implementation of section 1010.380 and affected these filing deadlines. 
+Specifically, in late 2024 and early 2025, district courts in two cases 
+issued nationwide orders that preliminarily enjoined FinCEN from 
+implementing and enforcing the Reporting Rule and stayed the effective 
+date of section 1010.380.\12\ Recognizing that the reporting deadlines 
+that had been set by section 1010.380 for many companies had already 
+passed while those deadlines were stayed by court order, and that 
+companies would need additional time to comply, FinCEN extended the 
+reporting deadlines for most reporting companies until March 21, 
+2025.\13\ On March 2, 2025, Treasury announced the suspension of 
+enforcement of the CTA against U.S. citizens, domestic reporting 
+companies, and their beneficial owners, and Treasury further announced 
+its intent to engage in a rulemaking to narrow the Reporting Rule to 
+require BOI reporting by foreign companies only.\14\
+---------------------------------------------------------------------------
+
+    \12\ On December 3, 2024, the U.S. District Court for the 
+Eastern District of Texas, Sherman Division, issued an order that 
+preliminarily enjoined the government from enforcing the CTA and 
+stayed its implementing regulation's reporting deadlines. See Texas 
+Top Cop Shop, Inc. v. Garland, No. 4:24-cv-00478, 2024 WL 4953814 
+(E.D. Tex. Dec. 3, 2024), amended and superseded by Texas Top Cop 
+Shop, Inc. v. Garland, 758 F. Supp. 3d 607 (E.D. Tex. 2024). On 
+January 23, 2025, the U.S. Supreme Court issued an order granting 
+the government's application for a stay of the preliminary 
+injunction pending appeal. See McHenry v. Texas Top Cop Shop, Inc., 
+145 S. Ct. 1 (2025). On January 7, 2025, in Smith v. U.S. Dep't of 
+the Treasury, the U.S. District Court for the Eastern District of 
+Texas, Tyler Division, issued a similar preliminary order that 
+prevented the government from enforcing the CTA against the 
+plaintiffs and stayed the effective date of the implementing 
+regulation during the pendency of that litigation. See Smith v. U.S. 
+Dep't of the Treasury, 761 F. Supp. 3d 952 (E.D. Tex. 2025). The 
+government appealed and sought a stay of this order, which the 
+district court granted on February 17, 2025. In addition to these 
+cases, two other district courts had issued more limited orders that 
+enjoined FinCEN from enforcing the CTA against the parties in those 
+cases. See Nat'l Small Bus. United v. Yellen, 721 F. Supp. 3d 1260 
+(N.D. Ala. 2024), rev'd and remanded sub nom. Nat'l Small Bus. 
+United v. U.S. Dep't of the Treasury, 161 F.4th 1323 (11th Cir. 
+2025); Small Bus. Ass'n of Michigan v. Yellen, 769 F. Supp. 3d 722 
+(W.D. Mich. 2025). Secretary Bessent was substituted as the 
+defendant in those cases.
+    \13\ See FinCEN, FIN-2025-CTA1, FinCEN Extends Beneficial 
+Ownership Information Reporting Deadline by 30 Days; Announces 
+Intention to Revise Reporting Rule, (Feb. 18, 2025), <a href="https://www.fincen.gov/sites/default/files/shared/FinCEN-BOI-Notice-Deadline-Extension-508FINAL.pdf">https://www.fincen.gov/sites/default/files/shared/FinCEN-BOI-Notice-Deadline-Extension-508FINAL.pdf</a>.
+    \14\ Treasury, Treasury Department Announces Suspension of 
+Enforcement of Corporate Transparency Act Against U.S. Citizens and 
+Domestic Reporting Companies (Mar. 2, 2025), <a href="https://home.treasury.gov/news/press-releases/sb0038">https://home.treasury.gov/news/press-releases/sb0038</a>.
+---------------------------------------------------------------------------
+
+C. The Interim Final Rule
+
+1. Immediate Effect
+    FinCEN then issued an interim final rule (IFR) on March 26, 2025, 
+which became effective upon publication.\15\ The IFR provided for two 
+primary exemptions from the original Reporting Rule's BOI reporting 
+requirements.
+---------------------------------------------------------------------------
+
+    \15\ FinCEN, Beneficial Ownership Information Reporting 
+Requirement Revision and Deadline Extension (the IFR), 90 FR 13688 
+(Mar. 26, 2025).
+---------------------------------------------------------------------------
+
+    First, the IFR exempted all entities previously defined as 
+``domestic reporting companies'' from the requirement to file initial 
+BOI reports or to update or correct previously filed BOI reports. The 
+IFR did so by excluding all domestic entities from 31 CFR 1010.380's 
+definition of ``reporting company'' pursuant to the Secretary's 
+authority under 31 U.S.C. 5336(a)(11)(B)(xxiv) of the CTA, discussed 
+above in Section I.A., to exempt ``class[es] of entities'' from BOI 
+reporting obligations if the Secretary determines that collecting this 
+BOI ``would not serve the public interest'' and ``would not be highly 
+useful in national security, intelligence, and law enforcement agency 
+efforts.'' \16\
+---------------------------------------------------------------------------
+
+    \16\ Id. at 13691. Although not specifically addressed in the 
+IFR, the entities that the IFR exempted from BOI reporting 
+requirements are intended to include ERISA-covered defined-benefit 
+pension plans and their underlying participants.
+---------------------------------------------------------------------------
+
+    Second, the IFR exempted foreign reporting companies from the 
+requirement to provide the BOI of any U.S. persons who are their 
+beneficial owners, and exempted such U.S. person beneficial owners from 
+the requirement to provide BOI for the purpose of filing such reports--
+consistent with the Secretary's decision under the general exemptive 
+authority of 31 U.S.C. 5318(a)(7), discussed in Section I.A.\17\ Under 
+the IFR, foreign reporting companies that only have U.S. person 
+beneficial owners are still obligated to file reports, but those 
+reports do not have to include any BOI about their beneficial 
+owners.\18\ Related to this second exemption, the IFR revised the 
+special rule associated with foreign pooled investment vehicles at 31 
+CFR 1010.380(b)(2)(iii) to exempt foreign pooled investment vehicles 
+from having to report the BOI of U.S. persons who exercise substantial 
+control over the entity. Specifically, FinCEN revised this reporting 
+obligation to require foreign pooled investment vehicles to report the 
+BOI of an individual who exercises substantial control over the entity 
+(or the individual who exercises the greatest authority over the 
+strategic management of the entity) and who is not a U.S. person.\19\
+---------------------------------------------------------------------------
+
+    \17\ Id. at 13692.
+    \18\ Id. at 13690.
+    \19\ The preamble to the IFR explained that if there is no 
+individual with substantial control who is not a U.S. person, the 
+foreign pooled investment vehicle is not required to report any 
+beneficial owners. Id.
+---------------------------------------------------------------------------
+
+    The IFR retained the requirement for foreign reporting companies to 
+report BOI about their beneficial owners (excluding U.S. persons) to 
+FinCEN, while extending the deadline for those companies to file 
+initial BOI reports, or update or correct previously filed BOI reports, 
+to the later of 30 days after the date of the publication of the IFR 
+(i.e.,
+
+[[Page 52510]]
+
+to April 25, 2025) or 30 days after their registration to do business 
+in the United States.
+    FinCEN solicited comments from the public on the IFR and stated 
+that it would assess the effect of the IFR, as appropriate, in light of 
+comments received.\20\
+---------------------------------------------------------------------------
+
+    \20\ Id. at 13689.
+---------------------------------------------------------------------------
+
+2. Relief of Burden on Small Businesses
+    The IFR's changes relieved U.S. small businesses of burdens imposed 
+by the Reporting Rule, which the Secretary determined were not 
+justified by the usefulness of the reports generated and the 
+information they made available.\21\
+---------------------------------------------------------------------------
+
+    \21\ See id. at 13691.
+---------------------------------------------------------------------------
+
+    This determination was consistent with the CTA. The CTA directs the 
+Secretary to ``minimize burdens on reporting companies associated with 
+the collection of [beneficial ownership] information . . . in light of 
+the private compliance costs placed on legitimate businesses.'' \22\ As 
+discussed above in Section I.A., the CTA also authorizes the Secretary 
+to entirely exempt ``class[es] of entities'' from BOI reporting via 31 
+U.S.C. 5336(a)(11)(B)(xxiv) under certain appropriate 
+circumstances.\23\
+---------------------------------------------------------------------------
+
+    \22\ See 31 U.S.C. 5336(b)(1)(F)(iii).
+    \23\ See id., at (b)(1)(A)(xxiv).
+---------------------------------------------------------------------------
+
+    FinCEN has long recognized the burdens imposed by BOI reporting. 
+For example, when originally issuing the Reporting Rule in 2022, FinCEN 
+responded to multiple commenters who stated that the rule would pose an 
+undue financial burden on many small businesses.\24\ FinCEN explained 
+that it ``is sensitive to concerns from small businesses about having 
+to comply with a new set of regulations, and has endeavored to minimize 
+unnecessary compliance burdens.'' \25\ FinCEN also stated that 
+achieving the CTA's goal of collecting information that is ``highly 
+useful'' while ``minimiz[ing] burden on reporting companies'' requires 
+a ``delicate balance.'' \26\
+---------------------------------------------------------------------------
+
+    \24\ Reporting Rule, 87 FR at 59550.
+    \25\ Id.
+    \26\ Id.
+---------------------------------------------------------------------------
+
+    On January 20, 2025, there was a change in presidential 
+administrations, which resulted in a reassessment of the balance struck 
+by the Reporting Rule. On January 31, 2025, President Trump issued 
+Executive Order (E.O.) 14192, Unleashing Prosperity Through 
+Deregulation, which announced an Administration policy ``to 
+significantly reduce the private expenditures required to comply with 
+Federal regulations to secure America's economic prosperity and 
+national security and the highest possible quality of life for each 
+citizen'' and ``to alleviate unnecessary regulatory burdens placed on 
+the American people.'' \27\ Consistent with the exemptive authority 
+provided in the CTA and the direction of the President, the IFR 
+reflected the Secretary's reassessment of the balance between the 
+usefulness of collecting BOI and the regulatory burdens imposed by the 
+scope of the Reporting Rule. The Secretary determined, for purposes of 
+the IFR, that the reporting of BOI by domestic reporting companies and 
+their beneficial owners ``would not serve the public interest'' and 
+``would not be highly useful in national security, intelligence, and 
+law enforcement agency efforts to detect, prevent, or prosecute money 
+laundering, the financing of terrorism, proliferation finance, serious 
+tax fraud, or other crimes.'' \28\ The Attorney General and the 
+Secretary of Homeland Security concurred in writing with this 
+determination, as required by the CTA.\29\
+---------------------------------------------------------------------------
+
+    \27\ Executive Order 14192 of January 31, 2025, Unleashing 
+Prosperity Through Deregulation, 90 FR 9065 (Feb. 6, 2025).
+    \28\ IFR, 90 FR at 13691; see 31 U.S.C. 5336(a)(11)(B)(xxiv).
+    \29\ IFR, 90 FR at 13691.
+---------------------------------------------------------------------------
+
+    At the same time, the IFR acknowledged that foreign reporting 
+companies present heightened national security and illicit finance 
+risks and that they also present different concerns about regulatory 
+burdens. Consistent with the CTA's stated purposes, the CTA's exclusion 
+of foreign reporting companies from certain other exemptions,\30\ and a 
+weighing of the risks identified against the relative burdens, the 
+Secretary determined in the IFR that exempting foreign reporting 
+companies would not serve the public interest. The IFR, therefore, 
+continued to require foreign reporting companies to report their BOI, 
+except with respect to U.S. person beneficial owners.\31\ The IFR also 
+provided foreign companies with an additional 30 days to comply with 
+its reporting requirements.\32\
+---------------------------------------------------------------------------
+
+    \30\ As the IFR notes, the CTA excluded foreign reporting 
+companies from certain exemptions it provided to domestic entities. 
+For instance, the CTA limited the exemption for entities assisting a 
+tax-exempt entity to domestic entities ``beneficially owned or 
+controlled exclusively by 1 or more United States persons that are 
+United States citizens or lawfully admitted for permanent 
+residence,'' as provided by 31 U.S.C. 5336(a)(11)(B)(xx). The CTA 
+also limited the inactive entity exemption for entities that are not 
+``owned by a foreign person, whether directly or indirectly, wholly 
+or partially.'' 31 U.S.C. 5336(a)(11)(B)(xxiii).
+    \31\ Furthermore, as noted in the IFR, foreign reporting 
+companies that only have beneficial owners that are U.S. persons 
+must still submit reports to FinCEN but are not required to report 
+information about these beneficial owners. 90 FR at 13692.
+    \32\ Id. at 13690.
+---------------------------------------------------------------------------
+
+3. Comments Received
+    FinCEN received 118 comment letters in response to the IFR. 
+Commenters included, among others, small business owners, industry 
+trade groups, law firms, law enforcement agencies, transparency 
+organizations, the secretary of state of a U.S. state, and several 
+United States senators. Of these comment letters, 40 were clearly 
+supportive of FinCEN's decision to narrow the BOI reporting 
+requirements, 28 were strongly opposed, and 50 comment letters did not 
+clearly support or oppose the IFR.
+    Many commenters wrote that they agreed with FinCEN's decision to 
+exempt domestic entities and U.S. persons from the BOI reporting 
+requirements of the original Reporting Rule. These commenters included 
+individual small business owners, associations representing small 
+businesses, service providers (such as accountants and lawyers), and 
+the secretary of state of a U.S. state. Many of these commenters 
+praised the IFR for taking what they considered a pragmatic and risk-
+based approach to compliance that addresses the need to combat 
+financial crimes while allowing the vast majority of businesses in the 
+United States to focus on growing their businesses rather than 
+navigating what these commenters viewed as government red tape. Some 
+noted that the Internal Revenue Service (IRS) already collects 
+information about certain beneficial owners of some businesses and 
+expressed support for what they perceive as the removal of a redundant 
+requirement. Some commenters also expressed the hope that Congress 
+would adopt the IFR as legislation in order to ensure FinCEN could not 
+later reinstate reporting requirements for U.S. companies.
+    Beyond their general support for the IFR, the clearly supportive 
+commenters asked FinCEN to make changes to the reporting requirements 
+in the final rule to reduce burden on U.S. persons even more. In 
+particular, many of these commenters requested that FinCEN remove the 
+requirement that foreign reporting companies report information about 
+U.S. person company applicants,\33\ as well as the requirement
+
+[[Page 52511]]
+
+that U.S. persons indefinitely update the information they had provided 
+in order to obtain a FinCEN ID.\34\ Some of these commenters also 
+suggested that FinCEN exempt specific types of entities from the 
+reporting requirements, such as homeowners' associations, regardless of 
+their nationality. Finally, and most prominently among the issues they 
+raised, these commenters requested that FinCEN delete the BOI of U.S. 
+persons that already has been reported and is maintained in the 
+beneficial ownership IT system (the ``BO IT System''). These issues are 
+discussed in greater detail in Sections II.C. and III.A. below.
+---------------------------------------------------------------------------
+
+    \33\ The term ``company applicant'' includes both the individual 
+who directly files the document that first registers a reporting 
+company and the individual who is primarily responsible for 
+directing or controlling such filing if more than one individual is 
+involved in the filing of the document. See 31 CFR 1010.380(e).
+    \34\ A FinCEN ID is a unique identifying number that FinCEN will 
+issue to an individual or reporting company upon request after the 
+individual or reporting company provides certain information to 
+FinCEN. See id. at 1010.380(f)(2).
+---------------------------------------------------------------------------
+
+    Commenters critical of the IFR, including corporate transparency 
+advocacy organizations, think tanks, organizations representing law 
+enforcement, and four U.S. senators, fell into two camps: those who 
+essentially urged FinCEN to withdraw the IFR and reinstate the original 
+Reporting Rule, and those with more targeted or incremental criticisms 
+of the IFR.
+    Commenters who urged FinCEN to withdraw the IFR raised a variety of 
+specific objections that broadly fell into two categories. 
+Specifically, one set of commenters disputed FinCEN's determination 
+that the IFR was consistent with Congress's intent in enacting the CTA, 
+and the other set disputed FinCEN's conclusion that the benefit of BOI 
+reporting as required by the Reporting Rule did not justify its burden. 
+Both of these categories of objections are discussed in greater detail 
+in Section II.B. below.
+    Other commenters urged narrowing the exemptions put forth in the 
+IFR but not to abandon them entirely. Some commenters also suggested 
+alternative ways to reduce burden on domestic entities--ways that the 
+commenters suggested might be preferable to the IFR's broad exemptions 
+from the BOI reporting requirements for domestic entities and U.S. 
+persons. These comments are discussed in greater detail in Section 
+II.C. below, in connection with the parts of the IFR that they 
+suggested should be changed.
+    Commenters also raised various other issues tangentially relating 
+to the IFR that would not involve changes to the rule itself. These 
+included issues arising from the relationship between the IFR and the 
+2016 Customer Due Diligence (CDD) Rule,\35\ such as expectations for 
+financial institutions to access the BO IT System, FinCEN's plans to 
+revise the CDD Rule as required by the CTA, and steps that could be 
+taken to reduce the burden of the CDD Rule on covered financial 
+institutions. These comments also raise issues relating to overall 
+implementation of the CTA and the Reporting Rule, including issues 
+raised in response to FinCEN's Frequently Asked Questions (FAQs), and 
+FinCEN's general approach to enforcement of BOI reporting requirements. 
+These comments are discussed in greater detail in Sections III.B., 
+III.C., and III.D. below.
+---------------------------------------------------------------------------
+
+    \35\ FinCEN, Customer Due Diligence Requirements for Financial 
+Institutions, 81 FR 29398 (May 11, 2016).
+---------------------------------------------------------------------------
+
+II. The Final Rule
+
+A. Overview
+
+    In light of this background and having evaluated both the comments 
+it received and the actual effects of the IFR, FinCEN is now issuing a 
+final rule to modify the BOI Reporting Rule permanently, rather than on 
+an interim basis. FinCEN is adopting the following revisions to the BOI 
+Reporting Rule set forth in the IFR, with certain modifications and 
+expansions in response to comments received and with the overarching 
+intent to minimize unnecessary burdens on U.S. persons:
+    <bullet> exercising authority under 31 U.S.C. 5336(a)(11)(B)(xxiv) 
+of the CTA to exempt domestic reporting companies from any BOI 
+reporting requirements. This affirms the same action taken in the IFR.
+    <bullet> exercising authority under 31 U.S.C. 5318(a)(7) to exempt 
+reporting companies (called foreign reporting companies in the 
+Reporting Rule) from having to report the BOI of any U.S. person who is 
+a beneficial owner or company applicant of the foreign reporting 
+company, and to exempt U.S. persons from having to provide such 
+information to a reporting company for which the U.S. person is a 
+beneficial owner or company applicant. This follows the approach set 
+forth in the IFR but expands the exemption to include not only U.S. 
+person beneficial owners but also U.S. person company applicants. 
+Furthermore, the final rule places the exemption in a different 
+subsection of 31 CFR 1010.380 than the IFR did to avoid confusion.
+    <bullet> exercising authority under 31 U.S.C. 5318(a)(7) to revise 
+the special rule for foreign pooled investment vehicles to exempt any 
+such entity from having to report the BOI of any U.S. person who 
+exercises substantial control over the entity. This affirms the same 
+action taken in the IFR.
+    <bullet> exercising authority under 31 U.S.C. 5336(b)(4)(A)--which 
+authorizes the Secretary to ``prescribe procedures and standard 
+governing . . . any FinCEN identifier''--to eliminate the requirement 
+for any U.S. person to update or correct information that the U.S. 
+person provided in order to obtain a FinCEN ID, whether as beneficial 
+owner or company applicant. This action responds to comments on the 
+IFR, which urged FinCEN to make this change as a complement to the 
+modifications to the reporting requirements.
+    The final rule does not make any further changes to the IFR or 
+Reporting Rule. The main points listed above are discussed in Section 
+II.B. and section-by-section in Section II.C., both below. Other issues 
+related to but not affecting the language of the rule, including the 
+status of BOI submitted to FinCEN by domestic entities that are no 
+longer reporting companies under FinCEN regulations, are discussed in 
+Section III below.
+
+B. General Criticism of the IFR
+
+    As noted in Section I.C.3. above, some comment letters were 
+critical of the IFR. Those commenters raised a combination of legal and 
+policy arguments against the IFR as a whole and urged FinCEN to 
+withdraw the rule and revert to the original Reporting Rule with, at 
+most, only modest changes to relieve burden on small businesses. FinCEN 
+addresses the global concerns raised by those commenters here, and 
+their specific concerns in the section-by-section discussion at Section 
+II.C. below.
+1. Constitutionality
+    Several commenters characterized the IFR as ``nullifying'' the CTA, 
+which they argued was a violation of the general constitutional 
+principle of the separation of powers. One commenter argued that 
+FinCEN's disregard of the CTA's requirements was so extreme that it 
+amounted to a violation of the Take Care Clause of the U.S. 
+Constitution--i.e., the President's constitutional duty to ``take Care 
+that the Laws be faithfully executed.'' \36\ FinCEN disagrees with the 
+characterization of the IFR as a ``nullification'' of the CTA. The CTA 
+expressly gives the Secretary broad authority to exempt entities from 
+its reporting requirements under specified circumstances. Moreover, the 
+IFR--and this final rule--continue to require reporting of BOI by 
+foreign-based entities registered to do business in the United States, 
+which will be highly useful to law enforcement and national security 
+agencies. Even if this method of implementation differs from the 
+commenters' preferred approach,
+
+[[Page 52512]]
+
+disagreements over the specifics of executive branch implementation of 
+legislative mandates are not evidence of unconstitutional behavior.
+---------------------------------------------------------------------------
+
+    \36\ See U.S. Const. art. II, sec. 3.
+---------------------------------------------------------------------------
+
+2. Consistency With Statute
+    Some commenters asserted that the IFR created a regulatory 
+framework that was fundamentally inconsistent with the reporting 
+requirements envisioned and described in the CTA. These commenters, 
+including four U.S. senators, tended to stress the differences between 
+the IFR and the asserted intent of Congress as found in the legislative 
+history and specific provisions of the CTA. One commenter claimed that 
+it had never been Congress's intent to allow for the exemption of all 
+domestic entities and their beneficial owners from the CTA's reporting 
+requirements, and stated that no evidence for anyone taking such a 
+position could be found in the twelve years of discussion and debate 
+between Congress, Treasury, and other stakeholders that preceded the 
+enactment of the CTA. Most commenters' arguments pointed to section 
+6402 of the CTA--the CTA's ``Sense of Congress'' section--and noted its 
+language specifically identifying the need for federal legislation 
+``providing for the collection of beneficial ownership information for 
+corporations, limited liability companies, or other similar entities 
+formed under the laws of the States'' to counter money laundering, the 
+financing of terrorism, or other illicit activity.\37\ One commenter 
+also stated that the IFR conflicted with the sense of Congress that 
+federal legislation to require BOI reporting from entities ``formed 
+under the laws of the States'' is needed to ``bring the United States 
+into compliance with international anti-money laundering and countering 
+the financing of terrorism standards.'' \38\ Another commenter 
+concluded that the IFR's exemption of domestic reporting companies 
+deviated enough from the explicit language of the CTA such that it 
+would fail the test set forth in the Supreme Court's decision in Loper 
+Bright Enterprises v. Raimondo.\39\
+---------------------------------------------------------------------------
+
+    \37\ See Section 6402(3) and (5) of Public Law 116-283 (Jan. 1, 
+2021), 134 Stat. 4604.
+    \38\ Public Law 116-283, sec. 6402(5)(E).
+    \39\ Loper Bright Enterprises v. Raimondo, 603 U.S. 369, 395 
+(2024).
+---------------------------------------------------------------------------
+
+    Treasury disagrees with this characterization of the IFR as 
+contrary to the intent of the CTA and its specific provisions. These 
+comments fail to give due weight to statutory language that places the 
+importance of minimizing burden at the center of the statutory scheme. 
+There are two key places where the CTA emphasizes the priority of this 
+factor. Section 6402's aforementioned ``Sense of Congress'' section of 
+the statute states that in prescribing regulations to collect BOI, the 
+Secretary shall ``to the greatest extent practicable'' and consistent 
+with the purposes of the CTA, ``seek to minimize burdens on reporting 
+companies associated with the collection of beneficial information'' 
+and ``collect information in a form and manner that is reasonably 
+designed to generate a database that is highly useful to national 
+security, intelligence, and law enforcement agencies and Federal 
+functional regulators.'' The statute repeats this directive nearly 
+verbatim in section 6403, the operational part of the statute, when 
+describing BOI reporting requirements: in promulgating a regulation, 
+the Secretary shall ``to the greatest extent practicable . . . minimize 
+burdens on reporting companies associated with the collection'' of BOI 
+``in light of the private compliance costs placed on legitimate 
+businesses, including by identifying any steps taken to mitigate the 
+costs relating to compliance with the collection'' of BOI.\40\
+---------------------------------------------------------------------------
+
+    \40\ 31 U.S.C. 5336(b)(1)(F)(iii), added by CTA section 6403(a).
+---------------------------------------------------------------------------
+
+    The repetition of this ``minimize burden'' language in the 
+operational text of the CTA--codified as part of the BSA--gives it 
+significantly more weight than other language in the ``Sense of 
+Congress'' section of the CTA. Indeed, this ``minimize burden'' 
+language is now a statutory requirement in the BSA rather than a guide 
+to interpretation of the CTA. Accordingly, Treasury views the comments 
+arguing that the IFR is contrary to congressional intent as simply 
+expressing disagreement as to the proper balance to strike when 
+engaging in a legally mandated balancing test between generating highly 
+useful information, countering illicit activity, or complying with 
+international standards on the one hand, and minimizing burden on the 
+other. Thus, while Treasury's chosen approach to striking this balance 
+differs from the commenters' preferred approach, it is nonetheless 
+consistent with the CTA's legal framework, especially when the 
+statutory directive to ``minimize burden'' is accorded its proper 
+weight.
+    Some commenters also asserted that certain aspects of the IFR are 
+inconsistent with the CTA in other ways. Specifically, some commenters 
+cited the sense of Congress that ``Federal legislation providing for 
+the collection of beneficial ownership information for corporations, 
+limited liability companies, or other similar entities formed under the 
+laws of the States is needed'' to accomplish specified goals as 
+evidence that Congress specifically intended the CTA to require 
+reporting by most domestic entities--what the Reporting Rule originally 
+called ``domestic reporting companies.''
+    However, the statute must be considered in its entirety. The 
+statute gives the Secretary significant discretion to determine what 
+entities, if any, must report BOI. As noted, 31 U.S.C. 
+5336(a)(11)(B)(xxiv) of the CTA provides the Secretary with very broad 
+exemption authority: the Secretary may exempt ``any entity or class of 
+entities'' (emphasis added) from that definition when the Secretary, 
+with the written concurrence of the Attorney General and the Secretary 
+of Homeland Security, determines by regulation that ``requiring 
+beneficial ownership information from the entity or class of entities . 
+. . would not serve the public interest'' and ``would not be highly 
+useful in national security, intelligence, and law enforcement agency 
+efforts to detect, prevent, or prosecute money laundering, the 
+financing of terrorism, proliferation finance, serious tax fraud, or 
+other crimes.'' This provision of the CTA places no explicit limits on 
+the Secretary's exemption authority beyond these requirements. 
+Therefore, contrary to commenters' assertions, the IFR's exemptions are 
+well within the statutory framework provided by the CTA.
+    Similarly, commenters have not made a compelling argument that the 
+legal basis for the specific exemption of U.S. person beneficial owners 
+of reporting companies (under the original Reporting Rule, ``foreign 
+reporting companies'') from BOI reporting requirements is inadequate. 
+Section 5318(a)(7) of the BSA clearly provides the Secretary with the 
+authority to make any ``appropriate exemption'' from any ``requirement 
+of this subchapter''--i.e., 31 U.S.C. 5311-5336--or from a regulation 
+issued pursuant to these provisions. As noted in Section I.A., the 
+CTA's BOI reporting requirements are codified in 31 U.S.C. 5336, and 
+thus 31 U.S.C. 5318(a)(7) authorizes the Secretary to grant exemptions 
+for its requirements. As the IFR explained, the Secretary has made the 
+determination that exempting U.S. persons in this way is appropriate: 
+it ensures that the Reporting Rule is tailored to advance the public 
+interest by eliminating burdens that are not outweighed by the 
+benefits. This is consistent with E.O. 14192, which directs the 
+Executive branch in general to ``alleviate unnecessary regulatory 
+burdens placed on the American
+
+[[Page 52513]]
+
+people.'' \41\ As explained, 31 U.S.C. 5318(a)(7) provides sufficient 
+legal authority for the Secretary to act on that determination.
+---------------------------------------------------------------------------
+
+    \41\ See E.O. 14192, Unleashing Prosperity Through Deregulation, 
+90 FR 9065.
+---------------------------------------------------------------------------
+
+3. Consistency With Prior Statements and the Factual Record
+    Some commenters criticized the IFR in general, and specific 
+positions in the IFR, for allegedly lacking factual support or 
+contradicting earlier statements by Treasury supporting and defending 
+robust BOI reporting by domestic entities. The commenters asserted that 
+the IFR did not adequately explain what appeared to be a significant 
+change in the agency's position in light of those prior statements. 
+Among the statements in the IFR that commenters, including four U.S. 
+Senators, criticized were the IFR's assessment that domestic entities 
+met the standard for an exemption from the definition of reporting 
+company, and its justification for exempting U.S. persons from 
+reporting requirements.
+    At least one commenter argued that this lack of factual support 
+caused the IFR to be ``arbitrary, capricious, [or] an abuse of 
+discretion'' and therefore in violation of the Administrative Procedure 
+Act (APA).\42\ The commenter argued that the IFR did not provide 
+sufficient evidence to justify the exemptions and did not provide 
+sufficient explanations of the Secretary's reasoning that served as the 
+basis for the exemptions. Specifically, the commenter claimed that the 
+IFR failed to explain why BOI reporting from domestic reporting 
+companies ``would not serve the public interest'' and ``would not be 
+highly useful in national security, intelligence, and law enforcement 
+agency efforts to detect, prevent, or prosecute money laundering, the 
+financing of terrorism, proliferation finance, serious tax fraud, or 
+other crimes.'' \43\
+---------------------------------------------------------------------------
+
+    \42\ See 5 U.S.C. 551-559.
+    \43\ See 31 U.S.C. 5336(a)(11)(B)(xxiv).
+---------------------------------------------------------------------------
+
+    The IFR provided ample rationale for exempting domestic entities 
+and U.S. persons from the reporting requirements. Indeed, in exempting 
+domestic entities from the reporting requirements, the Secretary 
+recognized that ``most domestic reporting companies that are not 
+already covered by a statutory exemption are small businesses and that 
+any regulations affecting them must recognize that fact'' and that the 
+``vast majority of small businesses are legitimate and owned by hard-
+working American taxpayers who are not engaged in illicit activity.'' 
+\44\ No commenters disagreed with this assessment of the small business 
+community. However, critical commenters argued that because criminals 
+and bad actors use some domestic corporate entities for illicit 
+activity, all or nearly all law-abiding American small businesses 
+should comply with the BOI requirements. Treasury respectfully 
+disagrees. The IFR took the position that the requirement in the 
+original Reporting Rule for all U.S. businesses to file BOI reports, 
+unless they qualified for one of the original 23 exemptions was, in 
+retrospect, an unnecessarily broad approach to achieving the purposes 
+of the CTA. Treasury reaffirms that position in this final rule. Based 
+on a reasonable assumption that the great majority of small businesses 
+are law-abiding and do not pose a risk of money laundering or illicit 
+finance, the Secretary has determined, and the Departments of Justice 
+and Homeland Security have concurred in writing, that the original 
+Reporting Rule's indiscriminate collection of BOI from these entities 
+would not provide law enforcement with highly valuable information. 
+Considering the costs of time and money that the BOI requirements would 
+place on law-abiding American small businesses, Treasury concluded in 
+the IFR, and continues to maintain, that requiring BOI reporting from 
+these entities is not in the public interest. While critical of this 
+conclusion, comment letters presented no compelling evidence 
+contradicting it.
+---------------------------------------------------------------------------
+
+    \44\ IFR, 90 FR at 13691.
+---------------------------------------------------------------------------
+
+    Treasury's own prior statements about the value of BOI do not 
+contradict this conclusion. Treasury has on several occasions assessed 
+that BOI reporting had intrinsic value, but it has done so outside the 
+CTA rulemaking context.\45\ These assessments, therefore, have not had 
+to take into account business cost, as they would have to within the 
+CTA rulemaking context. It remains true that if FinCEN received more 
+BOI reporting, this additional reporting likely would be somewhat 
+useful in addressing the misuse of shell companies. However, this does 
+not imply that benefits of collecting BOI on the great majority of 
+American small businesses in order to attempt to collect BOI about 
+shell companies would be worth the large cost doing so imposes. 
+Treasury's statements in the context of earlier legislative or 
+rulemaking activity, such as the Reporting Rule, were prepared under an 
+evaluation framework that, while nominally aware of trade-offs, 
+Treasury now assesses to have been inadequately appreciative of 
+business burden. As the IFR noted, on January 20, 2025, there was a 
+change in presidential administrations, which has resulted in a 
+reassessment of the balance struck in the original Reporting Rule 
+between collecting information that is ``highly useful'' for law 
+enforcement and minimizing burdens on reporting companies. Thus, the 
+fact that Treasury has changed positions does not, in and of itself, 
+cast doubt on the reasonableness of the new positions or the legal 
+adequacy of the rulemaking it undertakes on the basis of the new 
+positions.
+---------------------------------------------------------------------------
+
+    \45\ See, e.g., FinCEN, FIN-2010-G001, Guidance on Retaining and 
+Obtaining Beneficial Ownership Information (Mar. 5, 2010), <a href="https://www.fincen.gov/resources/statutes-regulations/guidance/guidance-obtaining-and-retaining-beneficial-ownership">https://www.fincen.gov/resources/statutes-regulations/guidance/guidance-obtaining-and-retaining-beneficial-ownership</a>; FinCEN, FIN-2017-A003, 
+Advisory to Financial Institutions and Real Estate Firms and 
+Professionals (Aug. 22, 2017), <a href="https://www.fincen.gov/sites/default/files/advisory/2017-08-22">https://www.fincen.gov/sites/default/files/advisory/2017-08-22</a>.
+---------------------------------------------------------------------------
+
+4. Soundness of Policy
+    Some critical commenters argued that, even if the IFR met legal 
+requirements, it was nonetheless unwise as a matter of policy. For 
+instance, commenters argued that the IFR would weaken the ability of 
+law enforcement to investigate money laundering and other illicit 
+activity that relies on the use of anonymous corporate structures. Some 
+of these commenters expressed the view that requiring domestic entities 
+to report BOI is critical for law enforcement to effectively 
+investigate criminality that is hidden behind layers of anonymous 
+corporate ownership. These commenters pointed to examples of illicit 
+activity involving domestic shell or front companies as evidence of the 
+threats to public safety and national security created by such 
+activity. Some commenters provided numerous examples of criminals using 
+domestic shell companies to engage in money laundering, fraud, or other 
+criminal conduct. A few commenters, for example, cited a recent 
+publication by the Government Accountability Office on fraud in federal 
+programs involving the anonymous ownership of shell companies, and they 
+argued that the IFR undermined the government's ability to detect such 
+fraud.\46\ These commenters claimed that the IFR would make it harder 
+for law enforcement to uncover basic BOI in investigations because law 
+enforcement would have to continue to
+
+[[Page 52514]]
+
+rely on time-consuming subpoenas or international legal assistance.
+---------------------------------------------------------------------------
+
+    \46\ See Government Accountability Office, Fraud in Federal 
+Programs: FinCEN Should Take Steps to Improve the Ability of 
+Inspectors General to Determine Beneficial Owners of Companies (Apr. 
+8, 2025), <a href="https://www.gao.gov/products/gao-25-107143">https://www.gao.gov/products/gao-25-107143</a>.
+---------------------------------------------------------------------------
+
+    Many commenters also expressed concern with the IFR's impact on 
+national security. One commenter cited several examples where U.S.-
+based companies were used to launder millions of dollars for foreign 
+criminal networks. Another commenter stated that BOI for U.S. companies 
+would help limit sanctions evasion and weapons proliferation by U.S. 
+adversaries and maintain the security of the U.S. defense supply chain. 
+Multiple commenters expressed concerns regarding the IFR's impact on 
+the ability of the United States to combat Chinese operatives who use 
+U.S. companies to conduct money laundering, fentanyl trafficking 
+organizations, and tariff evasion. Along similar lines, some commenters 
+urged Treasury to reconsider its position on BOI reporting at least 
+with respect to foreign-owned domestic entities, pointing to national 
+security risks. These commenters claimed that foreign persons could 
+easily evade the IFR's requirement for foreign reporting companies to 
+report BOI by forming an entity in the United States, and that this 
+would enable hostile states, corrupt foreign officials, and foreign 
+criminal organizations to misuse domestic entities for nefarious 
+purposes.
+    Some commenters also argued that the IFR would make it more 
+difficult for law-abiding small businesses to operate on an even 
+playing field with entities operating illegally. One commenter 
+representing small businesses criticized the IFR and requested its 
+withdrawal because, the commenter claimed, the IFR would harm law-
+abiding small businesses by making it easier for criminal enterprises 
+to compete against them. The commenter cited examples of fraudsters who 
+have harmed small businesses and used anonymous domestic shell 
+companies to hide their criminal activity. This commenter also argued 
+that the benefits of domestic BOI reporting for legitimate small 
+businesses would outweigh any costs, which this commenter viewed as 
+insignificant for most small businesses.
+    A few commenters also criticized the IFR as being contrary to the 
+international standards set by the Financial Action Task Force (FATF) 
+such as FATF Recommendation 24.\47\ These commenters argued that the 
+IFR could cause FATF to place the United States on the list of 
+Jurisdictions under Increased Monitoring, also known as the ``grey 
+list.'' Another commenter stated that the IFR would make the United 
+States an outlier as countries increasingly adopt corporate 
+transparency measures that require broad BOI reporting from entities, 
+and that this result would make the United States a more attractive 
+place for illicit financial activity compared with other countries.
+---------------------------------------------------------------------------
+
+    \47\ FATF Recommendation 24 states, ``Countries should ensure 
+that there is adequate, accurate and up-to-date information on the 
+beneficial ownership and control of legal persons that can be 
+obtained or accessed rapidly and efficiently by competent 
+authorities, though either a register of beneficial ownership or an 
+alternative mechanism.'' FATF, International Standards on Combating 
+Money Laundering and the Financing of Terrorism & Proliferation: The 
+FATF Recommendations (updated Oct. 2025), <a href="https://www.fatf-gafi.org/en/publications/Fatfrecommendations/Fatf-recommendations.html">https://www.fatf-gafi.org/en/publications/Fatfrecommendations/Fatf-recommendations.html</a>.
+---------------------------------------------------------------------------
+
+    Treasury recognizes that there are numerous, varied, and compelling 
+reasons to support broad reporting of legal entity BOI. Treasury has, 
+in the past, made the case for such a reporting requirement, appealing 
+to many of the same law enforcement, national security, and 
+international cooperation interests that commenters have cited. 
+However, in issuing the IFR and this final rule, Treasury is required 
+to consider the constraints imposed by the CTA in tailoring the scope 
+of the BOI reporting requirements; in particular, the cost 
+considerations must be balanced against other factors.
+    The goal of the IFR and this final rule is to collect BOI that will 
+comprise a database highly useful to national security, intelligence, 
+law enforcement, federal functional regulators, and financial 
+institutions, while complying with the CTA's directive to minimize 
+burdens. Instead of collecting of BOI from nearly all American small 
+businesses--the vast majority of which are legitimate and owned by 
+hard-working American taxpayers who are not engaged in illicit 
+activity--the IFR focused BOI collection where the greatest risk 
+mitigation-to-burden ratio lies. A focus on foreign legal entities--
+what the IFR redefined the term ``reporting company'' exclusively to 
+mean--is the proper focus of BOI collection to create a ``highly 
+useful'' BOI database that minimizes burden on businesses. In that 
+respect, Treasury assesses that the targeted, risk-based approach to 
+BOI collection set out in the IFR and in this final rule would not--
+despite commenters' concerns--undermine law enforcement and national 
+security, as it ensures the collection of BOI that is highly useful to 
+law enforcement while minimizing burden on the business community to 
+the greatest extent possible.
+    Finally, Treasury disagrees with commenters who argued that the 
+IFR's reporting exemptions would significantly and unjustifiably harm 
+law enforcement and national security. First, the IFR's requirement for 
+foreign reporting companies to report BOI of their foreign beneficial 
+owners means that intelligence, law enforcement, and national security 
+agencies will continue to have access to BOI concerning foreign 
+entities operating in the United States. Second, as a pre-requisite to 
+exercising the exemptive authority under the CTA, the statute requires 
+the Secretary to obtain the written concurrence of the Attorney General 
+and the Secretary of Homeland Security in affirming the Secretary's 
+assessment that ``requiring beneficial ownership information from the 
+entity or class of entities . . . would not serve the public interest'' 
+and ``would not be highly useful in national security, intelligence, 
+and law enforcement agency efforts to detect, prevent, or prosecute 
+money laundering, the financing of terrorism, proliferation finance, 
+serious tax fraud, or other crimes.'' \48\ The Department of Justice 
+and the Department of Homeland Security would be unlikely to affirm the 
+Secretary's exemptions in the IFR if the IFR would seriously harm law 
+enforcement and national security activities.
+---------------------------------------------------------------------------
+
+    \48\ See 31 U.S.C. 5336(b)(1)(A)(xxiv).
+---------------------------------------------------------------------------
+
+    Finally, exempting domestic entities from BOI reporting and 
+exempting reporting companies from reporting the BOI of U.S. persons 
+means that the methods for addressing certain existing illicit finance 
+risks return to the status quo ante before the Reporting Rule, not to a 
+worse situation. As noted in the IFR, these methods include taking 
+advantage of the continuing obligation for covered financial 
+institutions to conduct customer due diligence pursuant to the 2016 CDD 
+Rule, which significantly mitigates illicit finance risks posed by both 
+domestic entities and foreign entities with U.S. person beneficial 
+owners and company applicants. Section III.C. below discusses this 
+point in greater detail.
+
+C. Section-by-Section Response to IFR Comments
+
+    In addition to the general issues raised, commenters made a number 
+of points addressing specific aspects of the IFR. FinCEN responds to 
+these points on a section-by-section basis in the context of the 
+specific provisions of the IFR to which they relate.
+1. Timing of Reports, 31 CFR 1010.380(a)
+    The IFR extended the deadline for reporting companies (``foreign 
+reporting
+
+[[Page 52515]]
+
+companies'' under the Reporting Rule) to file their initial BOI 
+reports. For entities that became reporting companies before the 
+publication date of the IFR (March 26, 2025), the IFR provided 30 days 
+after that date to file initial BOI reports, or to update or correct 
+previously filed BOI reports. The IFR required an entity that became a 
+reporting company after March 26, 2025, to file its initial BOI report 
+within 30 days of the date on which it received actual notice that it 
+was registered to do business in the United States, or the date on 
+which a secretary of state or similar office first provided public 
+notice, whichever date was earlier. The IFR required such an entity to 
+update or correct its BOI report within 30 days of any change to the 
+required information previously reported. In addition, the IFR made 
+technical revisions to section 1010.380(a) to align the term 
+``reporting company'' with the revision to the definition of that term 
+in section 1010.380(c)(1) to mean only those entities previously 
+referred to as ``foreign reporting companies.'' This entailed removing 
+the terms ``domestic'' and ``foreign.''
+    Several commenters stated that FinCEN should amend the timeframe 
+that the IFR provided to file initial BOI reports. One commenter 
+suggested extending the filing deadline from 30 to 90 days. Several 
+commenters stated that for newly created foreign entities, there is a 
+disconnect between the time period required to file a BOI report and a 
+foreign entity's receipt of its employer identification number (EIN). 
+These commenters explained that if individual beneficial owners or the 
+entity itself have not yet received an EIN or other required 
+identification number, there is no way for the reporting company to 
+file a BOI report in a timely manner. These commenters suggested that 
+the filing period should align with the receipt of other information 
+(i.e., EIN), or FinCEN should allow an ``in process'' response option 
+that can be updated once the information has been obtained. Another 
+commenter recommended that in general FinCEN should align its reporting 
+deadlines with timelines that apply in foreign jurisdictions.
+    The final rule adopts the timing provisions of the IFR without 
+change. Treasury was not persuaded by commenters' arguments that a 30-
+day filing period was unreasonably short or overly difficult to comply 
+with. Generally, a reporting company must devote attention and effort 
+to registering with a State or Indian tribe as a foreign business and, 
+thus, it is reasonable for a reporting company to devote a small 
+additional increment of effort to registering with FinCEN at roughly 
+the same time. Similarly, Treasury does not view the request to align 
+the BOI reporting timeframe with certain reporting deadlines in foreign 
+jurisdictions as practicable. For instance, different countries have 
+different regulatory or tax deadlines, and it would not be practicable 
+to create a system of varying deadlines. Furthermore, such a system 
+would be extremely challenging, if not impossible, to enforce. Finally, 
+the EIN issue raised by commenters has already been addressed in 
+FinCEN's Frequently Asked Questions to the BOI Reporting Rule (BOI 
+FAQs), which proposed a practical work-around for filers contending 
+with the problem of delayed provision of new EINs.\49\
+---------------------------------------------------------------------------
+
+    \49\ See FinCEN, Beneficial Ownership Information Frequently 
+Asked Questions, FAQ G.3 (updated July 24, 2024) (``How can I obtain 
+a tax identification number for a new company quickly so that I can 
+file an initial beneficial ownership information report on time? . . 
+. A reporting company must report its tax identification number when 
+reporting beneficial ownership information to FinCEN and, indeed, 
+will be unable to submit its BOI report without including a tax 
+identification number. In such circumstances, in addition to making 
+all reasonable efforts to file its BOI report in a timely manner 
+(including requesting all necessary information as early as 
+practicable), the reporting company should file its report as soon 
+as it receives its EIN. As a best practice, the reporting company 
+may consider retaining documentation associated with its efforts to 
+comply with the BOI reporting requirements in a timely manner.''), 
+<a href="https://www.fincen.gov/boi-faqs#G_3">https://www.fincen.gov/boi-faqs#G_3</a>.
+---------------------------------------------------------------------------
+
+2. Reports by Foreign Pooled Investment Vehicles, 31 CFR 
+1010.380(b)(2)(iii)
+    The IFR created a new special rule for foreign pooled investment 
+vehicles. Under the Reporting Rule's original special rule, a foreign 
+pooled investment vehicle that would be a reporting company but for the 
+exemption at 31 CFR 1010.380(c)(2)(xviii), and that was formed under 
+the laws of a foreign country, was required to report BOI with respect 
+to a single individual who exercised substantial control over the 
+entity. If more than one individual exercised substantial control over 
+the entity, the entity was required to report information with respect 
+to the individual who has the greatest authority over the strategic 
+management of the entity. In the IFR, FinCEN revised this rule such 
+that foreign pooled investment vehicles would have to report the BOI of 
+an individual who exercises substantial control over the entity if that 
+individual was not a U.S. person. If more than one individual exercised 
+substantial control over the entity and at least one of those 
+individuals was not a U.S. person, the entity would have to report 
+information with respect to the non-U.S. person individual with the 
+greatest authority over the strategic management of the entity. If 
+there was no individual with substantial control who was not a U.S. 
+person, the foreign pooled investment vehicle would not be required to 
+report any beneficial owners.
+    Treasury did not receive any comments specifically addressing this 
+provision. In the absence of comments and consistent with the general 
+approach to the exemption of U.S. beneficial owners from reporting 
+obligations, the final rule affirms this provision without change.
+3. FinCEN ID, 31 CFR 1010.380(b)(4)
+    The IFR did not revise the Reporting Rule's requirements in 
+connection with FinCEN IDs. In the Reporting Rule, FinCEN set forth 
+parameters for obtaining and using a FinCEN ID. These included the 
+requirement that a person that had obtained a FinCEN ID was required to 
+update or correct the underlying information in the original 
+application within 30 days after such a change became necessary, 
+without qualification or limitation. Because the IFR did not change 
+this requirement, legal and natural U.S. persons that had obtained 
+FinCEN IDs prior to the issuance of the IFR, under the expectation that 
+BOI associated with those U.S. persons would have to be reported to 
+FinCEN and with the desire to streamline such reporting, remained 
+subject to this permanent update/correction requirement even though 
+there was no longer an obligation to report those U.S. persons' 
+BOI.\50\
+---------------------------------------------------------------------------
+
+    \50\ Consistent with the Secretary's announcement on March 2, 
+2025, related to BOI reporting requirements, Treasury has not 
+enforced any BOI reporting deadlines against U.S. citizens, domestic 
+reporting companies, or their beneficial owners--including deadlines 
+concerning updates and corrections of FinCEN ID information.
+---------------------------------------------------------------------------
+
+    Many commenters asked to eliminate some elements of the FinCEN ID 
+update and correction provisions of the Reporting Rule. Some commenters 
+requested that FinCEN remove the update/correct requirement 
+specifically for individual U.S. person beneficial owners of reporting 
+companies as defined in the IFR. Some commenters also urged FinCEN to 
+remove the requirement to update or correct the information associated 
+with FinCEN IDs that had been obtained for domestic entities that are 
+no longer considered reporting companies under the IFR. Finally, some 
+commenters urged the limitation or abolition of the update/correction 
+requirement as it applied to FinCEN IDs held by company applicants.
+
+[[Page 52516]]
+
+    Most commenters urging removal of the update/correction requirement 
+for individual beneficial owners and legal entities made broadly the 
+same point: that it would be inconsistent and unfair for FinCEN to 
+require U.S. persons--both individuals and legal persons--to report BOI 
+in their capacity as FinCEN ID holders when FinCEN was no longer 
+requiring the same information to be reported about them as beneficial 
+owners and reporting companies. Many commenters urging removal of the 
+update/correction requirement for company applicants made a similar 
+argument: for example, one commenter stated that individuals who formed 
+domestic reporting companies are no longer company applicants, and if 
+they obtained FinCEN IDs in order to report their company applicant 
+status they should not have to keep this information up to date. 
+Additionally, this third set also includes commenters who renewed 
+criticisms that had been leveled at this provision of the Reporting 
+Rule: what they characterized as the intrinsic unfairness or 
+unreasonableness of holding individual company applicants to a lifetime 
+update/correction requirement. One commenter noted that reporting 
+companies are not required to update company applicant information on 
+BOI reports (BOIRs), yet company applicants that have obtained a FinCEN 
+ID are required to keep their information up to date. Another commenter 
+raised fundamental concerns about privacy, information security, 
+identity theft, and fraud in connection with the blanket, open-ended 
+requirement to disclose personal information, particularly by persons 
+who might no longer be involved with a reporting company and whose 
+personal information was therefore irrelevant to the company's current 
+operations. This commenter also noted that continuous updating imposes 
+a significant administrative burden, and an unnecessary one if an 
+individual does not intend to be a company applicant or beneficial 
+owner going forward.
+    Several commenters pointed to the broad language of the CTA 
+authorizing the Secretary ``by regulation [to] prescribe procedures and 
+standards governing . . . any FinCEN identifier'' in 31 U.S.C. 
+5336(b)(4)(A) as giving authority to provide the sort of relief being 
+urged for FinCEN ID holders. Commenters who did not advocate outright 
+abolition of the update/correction requirement suggested creating a 
+method for deactivating FinCEN IDs and proposed several deactivation 
+schemes. A few commenters who did not propose specific schemes 
+nonetheless asked when FinCEN would make a deactivation scheme 
+available, consistent with its statement in FAQ M.6 that it has been 
+assessing options to allow individuals to deactivate FinCEN IDs.\51\ At 
+least one commenter also urged FinCEN to destroy FinCEN ID information 
+connected with individuals and entities no longer subject to the 
+reporting requirements.
+---------------------------------------------------------------------------
+
+    \51\ See FinCEN, Beneficial Ownership Information Frequently 
+Asked Questions, FAQ M.6 (issued on September 29, 2023) (``Is there 
+any way to deactivate an individual's FinCEN identifier that is no 
+longer in use so that the individual no longer has to update the 
+information associated with it? FinCEN is actively assessing options 
+to allow individuals to deactivate a FinCEN identifier so that they 
+do not need to update the underlying personal information on an 
+ongoing basis. FinCEN will provide additional guidance on this 
+functionality upon completion of that process.''), <a href="https://www.fincen.gov/boi-faqs#M_6">https://www.fincen.gov/boi-faqs#M_6</a>.
+---------------------------------------------------------------------------
+
+    Treasury fundamentally agrees with the tenor of the comments it 
+received on this subject, and the final rule therefore amends 
+1010.380(b)(4)(iii)(A) to remove the requirement for U.S. persons who 
+are individuals to update or correct information previously submitted 
+in their application for such FinCEN ID. Because the IFR has already 
+changed the definition of ``reporting company'' to exclude domestic 
+legal entities, the overall effect will be to eliminate the update and 
+correction obligations for all U.S. persons that currently have FinCEN 
+IDs. For information about the disposition of information associated 
+with FinCEN IDs no longer subject to update and correction 
+requirements, see Section III.B.
+    No useful purpose is served by requiring the holder of a FinCEN ID 
+to update the information associated with that FinCEN ID if it is not 
+currently in use and clearly will not need to be used in the near 
+future. As this final rule eliminates all requirements for reports 
+about U.S. persons--beneficial owners, company applicants, and legal 
+entities alike--there is thus no longer a justification for imposing 
+the requirement on U.S. person FinCEN ID holders to update or correct 
+the information associated with their FinCEN IDs.
+    The same logic does not apply to FinCEN ID holders that are not 
+U.S. persons. Such FinCEN ID holders fall into one of two categories: 
+either the BOI associated with their FinCEN IDs currently must be 
+reported to FinCEN because they are currently reporting companies or 
+foreign beneficial owners or company applicants of a reporting company; 
+or the BOI associated with their FinCEN IDs was--or was expected to 
+be--subject to a reporting requirement in the past (otherwise, they 
+would had no reason to obtain FinCEN IDs) and accordingly is more 
+likely to be again in the reasonably near future. In either case, 
+FinCEN has good reason to continue requiring foreign FinCEN ID holders 
+to update and correct information provided to FinCEN as originally 
+required under the Reporting Rule.
+4. Reporting Company, 31 CFR 1010.380(c)
+    Redefining the term ``reporting company'' was perhaps the single 
+most important change that the IFR made. Under the original Reporting 
+Rule, reporting companies comprised domestic reporting companies and 
+foreign reporting companies. The former was any corporation, LLC, or 
+other entity created by the filing of a document with a secretary of 
+state or any similar office under the law of a State or Indian tribe, 
+subject to certain exemptions.\52\ The latter was any entity formed 
+under the law of a foreign country and registered to do business in any 
+State or tribal jurisdiction by the filing of a document with a 
+secretary of state or any similar office under the law of a State or 
+Indian tribe, likewise with certain exemptions.\53\ The IFR eliminated 
+domestic entities from the definition of a reporting company.\54\ It 
+also added language under which any entity that fit the old definition 
+of a domestic reporting company would now be exempted from the new 
+definition.\55\ This exemption implemented Treasury's conclusion that 
+the reporting of BOI by domestic entities ``would not serve the public 
+interest'' and ``would not be highly useful in national security, 
+intelligence, and law enforcement agency efforts to detect, prevent, or 
+prosecute money laundering, the financing of terrorism, proliferation 
+finance, serious tax fraud, or other crimes.'' \56\
+---------------------------------------------------------------------------
+
+    \52\ 31 CFR 1010.380(c)(1)(i) (2023).
+    \53\ 31 CFR 1010.380(c)(1)(ii) (2023).
+    \54\ 31 CFR 1010.380(c)(1).
+    \55\ 31 CFR 1010.380(c)(2)(xxiv).
+    \56\ These are the criteria that the CTA established for the 
+creation of a new exemption from the definition of reporting 
+company. See 31 U.S.C. 5336(a)(11)(B)(xxiv). The written concurrence 
+of the Attorney General and the Secretary of Homeland Security in 
+these statements was noted in the Interim Final Rule. See IFR, 90 FR 
+at 13691.
+---------------------------------------------------------------------------
+
+    Many commenters, including several who criticized the IFR as a 
+whole, suggested more targeted carve-outs as alternatives to the 
+blanket exemption of domestic entities from the definition of 
+``reporting company.'' One commenter suggested a tiered system for BOI
+
+[[Page 52517]]
+
+reporting that focuses on the highest risk entities while maintaining a 
+broad exemption from reporting for most domestic entities. Another 
+commenter specifically requested that FinCEN require domestic shell 
+companies to report BOI and expressed a desire that domestic front 
+companies also be required to report BOI. Other commenters suggested 
+other narrower exemptions, such as for one- or two-person businesses or 
+for homeowners' associations. Even a comment that was generally 
+supportive of the IFR strongly urged FinCEN not to exempt from the 
+reporting requirement domestic tax-exempt nonprofit entities that 
+receive foreign funding.
+    Under the evaluation framework imposed by the CTA, Treasury is not 
+persuaded that any of the targeted approaches that commenters have 
+proposed are as effective at obtaining useful BOI on a benefit-to-
+burden ratio basis. The final rule therefore adopts the blanket 
+exemption approach of the IFR. This approach obviates any need to 
+create additional exemptions applicable to subcategories of U.S. 
+entities, such as homeowners' associations.
+5. U.S. Person Beneficial Owners, 31 CFR 1010.380(d)
+    The IFR aimed to relieve burden on individual U.S. persons as well 
+as U.S. legal entities. It did so for individuals by introducing an 
+exemption from the requirement for reporting companies to report BOI of 
+any beneficial owner who was a U.S. person. It took this action relying 
+on the Secretary's authority under the BSA to ``prescribe an 
+appropriate exemption from a requirement under [subchapter II of 
+chapter 53 of title 31, U.S. Code] and regulations prescribed under 
+this subchapter.'' \57\ Given the IFR's redefinition of ``reporting 
+company,'' the exemption from reporting BOI of U.S. persons applied to 
+all U.S. person beneficial owners of foreign legal entities registered 
+to do business in the United States.
+---------------------------------------------------------------------------
+
+    \57\ 31 U.S.C. 5318(a)(7).
+---------------------------------------------------------------------------
+
+    Commenters that were critical of the IFR as a whole tended to see 
+this exemption as a part of the much broader exemption of domestic 
+reporting companies, rather than as a separate exemption that could be 
+applicable to different reporting circumstances.
+    Such a perspective, however, misreads this exemption. The 
+definition of ``beneficial owner'' is secondary to that of ``reporting 
+company.'' Thus, the scope of an exemption from the reporting of 
+information about beneficial owners can only be evaluated after the 
+scope of the reporting company category has been considered. Seen in 
+that light, the exemption from reporting BOI of U.S. person beneficial 
+owners is limited, applying in thousands of instances not tens of 
+millions.\58\ Nothing raised by commenters in connection with this 
+exemption gives any reason to think that such a focused exemption is 
+not ``appropriate,'' as 31 U.S.C. 5318(a)(7) requires it to be.
+---------------------------------------------------------------------------
+
+    \58\ See infra, Section V.E.
+---------------------------------------------------------------------------
+
+    FinCEN does acknowledge, however, that its choice to place the 
+exemption language so close to the familiar language defining 
+beneficial owners may have contributed to this misunderstanding. In 
+addition, FinCEN's placement of this exemption in the section defining 
+beneficial owners inadvertently created the possibility of 
+misunderstandings in other contexts that borrowed the Reporting Rule's 
+definition of beneficial owner, such as the Real Estate Reporting 
+Rule.\59\ To avoid confusion and misunderstanding, FinCEN is 
+repositioning the beneficial owner reporting exemption language in the 
+section on the content, form, and manner of reports, 31 CFR 
+1010.380(b), where its significance is clearer.
+---------------------------------------------------------------------------
+
+    \59\ See FinCEN, Anti-Money Laundering Regulations for 
+Residential Real Estate Transfers, 89 FR 70258, 70273 (Aug. 29, 
+2024) (noting the Real Estate Reporting Rule ``largely defined 
+beneficial owners of transferee entities through a reference to 
+regulations in the BOI Reporting Rule, specifically 31 CFR 
+1010.380(d)''); see also 31 CFR 1031.32(n)(1) (codifying Real Estate 
+Reporting Rule's definition of ``beneficial owner''). On March 19, 
+2026, a federal district court vacated the Real Estate Reporting 
+Rule. See Flowers Title Co. v Bessent, No. 6:25-CV-127-JDK, 2026 WL 
+782283 (E.D. Tex. Mar. 19, 2026), appeal docketed, 26-40285 (5th 
+Cir. May 13, 2026). Even so, FinCEN thinks that the possible 
+misunderstanding that the interaction of the exemption language and 
+the cross-reference in the Real Estate Reporting Rule identified is 
+worth addressing.
+---------------------------------------------------------------------------
+
+    In addition to this repositioning, FinCEN has expanded this 
+exemption to apply to U.S. person company applicants. This addresses a 
+point raised by commenters on the IFR, which is that the IFR retained 
+the requirement from the Reporting Rule for certain reporting companies 
+to report information about their company applicants. Because the IFR 
+redefined the term ``reporting company,'' domestic entities were no 
+longer required to report information about their company applicant(s), 
+regardless of whether those individuals were or were not U.S. persons. 
+But the IFR retained the reporting obligation for foreign entities 
+registered in the United States, including the requirement for such 
+entities to report company applicant information if the foreign entity 
+was registered on or after January 1, 2024.\60\ Because 31 CFR 
+1010.380's definition of ``company applicant'' did not exclude U.S. 
+persons, this requirement continued to apply to both U.S. person and 
+non-U.S. person company applicants.\61\ Thus, under the IFR, a foreign 
+entity first registered in the United States on or after January 1, 
+2024, still had to report any U.S. person who qualified as the foreign 
+entity's company applicant, even though it would not have to report 
+U.S. person beneficial owners.
+---------------------------------------------------------------------------
+
+    \60\ See 31 CFR 1010.380(b)(1)(ii), (2)(iv).
+    \61\ Id. at 1010.380(e).
+---------------------------------------------------------------------------
+
+    Several commenters suggested exempting U.S. persons from having to 
+provide information if they are company applicants, just as they are 
+already exempted if they were beneficial owners. These commenters 
+argued that, for consistency, the two sets of persons should be treated 
+alike. Commenters specifically noted that since the Secretary made the 
+determination that the burden of reporting outweighed the benefits for 
+U.S. person beneficial owners, the same determination should be made 
+for U.S. person company applicants.
+    Treasury agrees that the logic of exempting U.S. person beneficial 
+owners applies with equal weight to U.S. person company applicants. 
+Treasury also agrees that any relief from the requirement to update 
+FinCEN IDs should extend to U.S. persons obtaining FinCEN IDs to use in 
+place of reporting company applicant BOI, as well as U.S. persons 
+obtaining FinCEN IDs to use in place of reporting beneficial owner BOI. 
+The final rule reflects these extensions of the exemption from 
+reporting BOI and from updating and correcting FinCEN IDs to U.S. 
+person company applicants as well as U.S. person beneficial owners.
+
+III. Other Issues Raised in Comments to the Interim Final Rule
+
+    In addition to the issues that commenters raised that directly 
+affect provisions of this final rule, commenters also addressed several 
+topics that are related to the IFR but do not involve revisions to the 
+Reporting Rule or the IFR itself. These include the issue most commonly 
+raised by commenters: how FinCEN should treat the BOI reports already 
+in the BO IT System that contain data of U.S. persons and domestic 
+entities that are, as a result of the IFR, no longer subject to the BOI 
+reporting requirements. Commenters also raised questions about the 
+enforcement of the IFR, as well as the status of the CDD Rule in light 
+of the changes being made to the Reporting
+
+[[Page 52518]]
+
+Rule. This section addresses these and a few miscellaneous issues.
+
+A. Disposition of BOI in the Database
+
+    The IFR revised the Reporting Rule by removing the requirements for 
+domestic entities and U.S. persons to report BOI. It did not address 
+what FinCEN would do with information that had already been reported 
+under the Reporting Rule and stored in FinCEN's BO IT System, but was 
+no longer required to be reported under the IFR itself. FinCEN did not 
+consider the disposition of that information to be a matter best 
+addressed at the same time that it was making changes to the Reporting 
+Rule.
+    Numerous commenters urged FinCEN to announce a disposition of the 
+BOI of U.S. persons that has remained stored in the BO IT System since 
+the IFR relieved domestic entities of the reporting requirements and 
+exempted U.S. persons from providing BOI to foreign entities still 
+required to report. These commenters noted that millions of reporting 
+companies reported BOI to FinCEN prior to the IFR in accordance with 
+the original Reporting Rule, and that now, because of the IFR, much of 
+this information is no longer required to be reported.
+    A large number of commenters requested that FinCEN either delete 
+all the BOI that is no longer required to be reported or provide a 
+mechanism for such deletion. A common suggestion was to allow U.S. 
+persons to contact FinCEN and request that FinCEN delete their BOI from 
+the BO IT System. In urging deletion, either en masse or upon request, 
+commenters cited privacy considerations and concerns about potential 
+misuse of sensitive data relating to individuals and legal entities. 
+Several commenters also expressed cybersecurity concerns, with some 
+stating that the database presents a risk of being hacked or otherwise 
+misused if left intact. Many of the commenters concerned about 
+individuals' BOI repeated their concerns and their suggestions with 
+respect to information provided by and about domestic entities prior to 
+the issuance of the IFR. One commenter also reminded FinCEN that any 
+decision should take into account information provided by individuals 
+and entities in connection with obtaining FinCEN IDs that would now no 
+longer be needed.
+    Commenters agreeing that the final rule should explain FinCEN's 
+disposition of this information, were divided on the subject of what, 
+beyond explanation and actual deletion, FinCEN should do in this 
+regard.
+    <bullet> Some commenters asked that FinCEN allow small business 
+owners to confirm that their data has been deleted.
+    <bullet> One commenter requested that Treasury confirm to the 
+public when data has been deleted.
+    <bullet> One commenter recommended that the final rule include a 
+provision that explicitly prohibits FinCEN from disseminating BOI 
+received from a domestic reporting company. This commenter also 
+requested that FinCEN report monthly in writing to the Secretary on 
+FinCEN's implementation of this provision until destruction of all such 
+BOI is complete.
+    <bullet> One commenter stated that appropriate protocols governing 
+the destruction of BOI should be memorialized in the final rule 
+together with an annual audit process administered by the Comptroller 
+General of the United States to verify the proper destruction of this 
+information.
+    <bullet> One commenter stated that to complete the destruction 
+process transparently FinCEN should issue an electronic notice of 
+deletion to each domestic filer confirming that its BOI record has been 
+removed and is no longer accessible to any agency or financial 
+institution. This commenter suggested further that FinCEN publish its 
+retention schedule and purge methodology so stakeholders could 
+understand how ``domestic'' and ``foreign'' records will henceforth be 
+separated.
+    Summing up the issues at stake, one commenter stated that, whatever 
+mode of disposal FinCEN adopted, securely disposing of this BOI would 
+strengthen trust with the public and protect sensitive information that 
+is no longer needed.
+    FinCEN agrees that the values of privacy, information security, and 
+the trust of the public all argue for the removal from the BO IT 
+System, as much as practicable, of information that would not have been 
+reported if the reporting requirements of this final rule had been in 
+place starting on January 1, 2024. To facilitate the deletion of U.S. 
+person information from the BO IT System that is no longer required to 
+be reported, FinCEN expects to rely upon information provided in 
+previously filed BOIRs to identify all domestic reporting companies, 
+company applicants, and beneficial owners associated with domestic 
+reporting companies. FinCEN anticipates working with the National 
+Archives and Records Administration (NARA) and implementing a process 
+to delete information about any individuals--company applicants, 
+beneficial owners, or recipients of a FinCEN ID--in the BO IT System 
+who reported an identifying document that FinCEN reasonably believes 
+was provided by a U.S. person (e.g., U.S. passport, U.S. driver's 
+license). At this time, FinCEN does not anticipate requiring or 
+requesting that U.S. companies or U.S. persons contact FinCEN 
+requesting that their BOI be removed. Additionally, FinCEN does not 
+intend to provide any acknowledgement or confirmation of the deletion 
+of a U.S. company or U.S. person's BOI. FinCEN will provide notice to 
+the public on its website when it has completed the deletion process.
+    To accomplish this deletion efficiently, FinCEN anticipates 
+undertaking the project in one sweep of the database, not as a regular, 
+periodic sweep. To that end, while FinCEN intends to implement a 
+process to remove BOI of U.S. companies and U.S. persons who are now 
+exempt from the Reporting Rule by virtue of the IFR and this final 
+rule, FinCEN only intends to complete this process one time. If BOI 
+relating to a U.S. company or a U.S. person is included--inadvertently 
+or intentionally--in a filing made after February 10, 2027, FinCEN does 
+not anticipate deleting that information.
+    FinCEN considers it inadvisable as well as unnecessary to add to 
+the time and expense of the deletion project by committing to the more 
+elaborate notice and reporting requirements urged by various 
+commenters. While all aimed at fostering public trust, none of these 
+proposed requirements further the core mission of protecting privacy 
+and information security by deleting information that FinCEN should not 
+retain.
+
+B. Reporting Violations, 31 CFR 1010.380(g)
+
+    The IFR did not alter the provisions in the Reporting Rule 
+concerning reporting violations. By exempting domestic entities and 
+U.S. persons from the reporting requirements, the IFR relieved domestic 
+entities and U.S. persons from potential liability under the Reporting 
+Rule. However, the penalty provisions in the CTA, as interpreted by the 
+reporting violations provisions of the rule, continue to apply to 
+foreign reporting companies and foreign persons.
+    Several commenters stated that the penalties for noncompliance with 
+the reporting requirements are disproportionately harsh for what one 
+commenter labeled a ``paperwork violation.'' These commenters suggested 
+revising the penalties, with some suggesting a scaled system, reserving 
+the harshest penalties for the most severe
+
+[[Page 52519]]
+
+violations. A few commenters suggested that Congress and Treasury 
+pursue a ``risk based'' enforcement posture that focuses on data 
+patterns consistent with financial crimes and then prioritizes 
+enforcement of BOI reporting on these risk patterns. A few of these 
+commenters explained that by prioritizing entities that pose genuine 
+risks of illicit activities, the rule enhances national security while 
+respecting the privacy and rights of law-abiding business owners. 
+Another commenter suggested guidance to businesses that makes it clear 
+that it will only penalize companies that ``willfully'' fail to file or 
+provide false information.
+    The final rule does not alter the reporting violations provisions 
+of the Reporting Rule. FinCEN views the standard of ``willful'' 
+violations in the CTA and the Reporting Rule as a sufficiently clear 
+basis to apply civil or criminal penalties. As FinCEN noted in the 
+original Reporting Rule, willfulness is a well-established legal 
+concept in existing caselaw.\62\ Therefore and particularly given how 
+``willfully'' is expressly defined by the relevant provision of the 
+enacting statute, enforcement actions would not be based on inadvertent 
+mistakes or a lack of awareness of the reporting requirements. 
+Furthermore, since the IFR and this final rule narrow the scope of BOI 
+reporting to focus on those entities that pose the greatest national 
+security risks, namely foreign reporting companies, the approach to 
+enforcing BOI reporting violations will be sufficiently targeted based 
+on risk.
+---------------------------------------------------------------------------
+
+    \62\ Reporting Rule, 87 FR at 59546.
+---------------------------------------------------------------------------
+
+C. The Customer Due Diligence Rule
+
+    The IFR did not revise FinCEN's CDD Rule. The preamble to the IFR 
+noted how the CDD Rule sought to increase transparency by requiring 
+covered financial institutions to collect BOI from their legal entity 
+customers at account opening, whereas the Reporting Rule focused on the 
+collection of BOI at the time of an entity's creation.\63\ The preamble 
+also discussed how the continuing obligations of financial institutions 
+under the CDD Rule would serve to mitigate certain potential illicit 
+finance risks created by the IFR's exemptions of domestic entities and 
+U.S. persons from BOI reporting.\64\
+---------------------------------------------------------------------------
+
+    \63\ IFR, 90 FR at 13691.
+    \64\ Id.
+---------------------------------------------------------------------------
+
+    Several commenters criticized this rationale as insufficient and 
+requested that FinCEN draw an explicit conclusion about the fate of the 
+CDD Rule from the IFR's modifications to the Reporting Rule. Some 
+commenters criticized FinCEN for requiring, even after the changes 
+created by the IFR, that financial institutions collect BOI from both 
+domestic and foreign legal entity customers. Another commenter stated 
+that the fact that, in the aftermath of the IFR, financial institutions 
+are not able to check BOI against a national database for accuracy, and 
+law enforcement has no efficient way to access BOI information 
+collected by financial institutions, means that financial institutions' 
+collection of BOI is of no real value. One commenter recommended that 
+FinCEN remove or revise the CDD Rule requirement for financial 
+institutions to obtain BOI from their customers. In much the same vein, 
+several commenters expressed confusion about the relationship between 
+the IFR and the CDD Rule, asking why they must provide BOI to financial 
+institutions after the issuance of the IFR. One commenter questioned 
+why financial institutions are still required to collect BOI on 
+domestic reporting companies under the CDD rule, even though the IFR 
+stated that this information does not provide highly useful information 
+for law enforcement or advance national security interests. In short, 
+these commenters wanted FinCEN to dismantle the CDD Rule, arguing that 
+this would only be consistent with the IFR's implicit acknowledgement 
+that collection of BOI was of little or no value.
+    In response to these commenters, FinCEN reiterates that the 
+Reporting Rule (as modified by the IFR and again by this final rule) 
+and the CDD Rule serve different purposes and arise under different 
+legal authorities. Compliance with the CDD Rule is an important part of 
+covered financial institutions' overall anti-money laundering and 
+countering the financing of terrorism programs, as it provides covered 
+financial institutions valuable information about their legal entity 
+customers. The revisions reflected in the IFR and this final rule 
+should not be interpreted as diminishing the value of BOI in general 
+but instead reflects a decision that is mindful of the cost to business 
+that results from information collected under the CTA. That message, of 
+course, can always be made more clearly and in greater detail. FinCEN 
+takes seriously commenters' recommendation that it should clarify a 
+number of CDD Rule-related points:
+    <bullet> FinCEN's intention to adopt a policy or engage in 
+rulemaking concerning the CDD Rule;
+    <bullet> The IFR's affirmation of the value of the CDD Rule's 
+original timing requirement, about which FinCEN itself has since issued 
+modifying guidance;
+    <bullet> The expectations on financial institutions with regard to 
+the use of FinCEN's still-extant BO IT System for CDD compliance (or 
+the affirmation that verification under the CDD Rule need not involve 
+the BO IT System);
+    <bullet> The expectations on financial institutions with respect to 
+reconciling disparities between BOI obtained under the CTA and 
+information collected by the financial institution itself;
+    <bullet> The possibility that the diminution of BOI collection 
+under the IFR and this final rule might imply an actual increase in 
+financial institutions' CDD obligations; and
+    <bullet> How the federal functional regulators' guidance on CDD 
+Rule compliance expectations might itself change in light of the IFR.
+    FinCEN is considering whether and, if so, how best to clarify these 
+points. FinCEN is still legally required to modify the CDD Rule in 
+light of the Reporting Rule, and now that FinCEN has completed its 
+changes to the Reporting Rule, it can refocus on the CDD Rule. When 
+FinCEN does so, it intends to address the CDD Rule-related issues 
+identified by commenters to the IFR.
+
+D. Miscellaneous Issues
+
+    A few commenters attempted to address the burden arguments of the 
+IFR by suggesting reporting mechanisms that they argued would decrease 
+burden without requiring significant changes to the Reporting Rule's 
+core regulatory obligations. These suggestions included a postcard 
+filing option for the smallest businesses, otherwise shortening the 
+BOIR to collect only the most critical data, and creating a streamlined 
+form for entities with simple ownership structures. FinCEN appreciates 
+the suggestions for streamlining reporting mechanics but does not 
+consider such changes to be sufficient to address the magnitude of the 
+burden of BOI reporting that the Reporting Rule presented.
+
+IV. Effective Date
+
+    This final rule does not impose any new obligations but rather 
+extends the IFR's exemption on the reporting of U.S. person information 
+to company applicants as well as beneficial owners of foreign reporting 
+companies. Thus, this rule may be immediately effective under 5 U.S.C. 
+553(d)(1) as a ``substantive rule which grants or recognizes an 
+exemption or relieves a restriction.'' For the same reason, a delayed 
+effective date is unnecessary: because this final rule exempts
+
+[[Page 52520]]
+
+reporting companies and U.S. person company applicants from certain 
+reporting requirements, rather than imposes obligations, the public 
+does not need time to prepare to comply with it. Delaying the effective 
+date of this rule would be unnecessary. FinCEN therefore finds good 
+cause for making this rule effective immediately upon publication in 
+the Federal Register, as permitted by 5 U.S.C. 553(d)(3).
+
+V. Regulatory Impact Analysis
+
+    FinCEN has analyzed this rule as required under Executive Order 
+(E.O.) 12866,\65\ E.O. 13563,\66\ E.O. 14192,\67\ the Regulatory 
+Flexibility Act (RFA),\68\ the Unfunded Mandates Reform Act of 1995 
+(UMRA),\69\ and the Paperwork Reduction Act (PRA).\70\ The final rule 
+has been determined to be economically significant because it makes the 
+changes introduced by the IFR permanent \71\ and introduces additional 
+provisions that would enhance the multi-billion dollar average annual 
+savings initially projected under the IFR.\72\
+---------------------------------------------------------------------------
+
+    \65\ E.O. 12866, Regulatory Planning and Review, 58 FR 51735 
+(Oct. 4, 1993).
+    \66\ E.O. 13563, Improving Regulation and Regulatory Review, 76 
+FR 3821 (Jan. 21, 2011).
+    \67\ See E.O. 14192, Unleashing Prosperity Through Deregulation, 
+90 FR 9065 (Feb. 6, 2025); Office of Management and Budget (OMB), 
+Guidance Implementing Section 3 of Executive Order 14192, Titled 
+``Unleashing Prosperity Through Deregulation,'' M-25-20 (Mar. 26, 
+2025), <a href="https://www.whitehouse.gov/wp-content/uploads/2025/02/M-25-20-Guidance-Implementing-Section-3-of-Executive-Order-14192-Titled-Unleashing-Prosperity-Through-Deregulation.pdf">https://www.whitehouse.gov/wp-content/uploads/2025/02/M-25-20-Guidance-Implementing-Section-3-of-Executive-Order-14192-Titled-Unleashing-Prosperity-Through-Deregulation.pdf</a>.
+    \68\ 5 U.S.C. 601 et seq.
+    \69\ 2 U.S.C. 1532.
+    \70\ 44 U.S.C. 3501 et seq.
+    \71\ See Section II.A.
+    \72\ See Section V.A.2.b.ii.
+---------------------------------------------------------------------------
+
+A. Analysis of Impact
+
+1. Broad Economic Considerations
+    As discussed in Section I.C.2., FinCEN remains mindful of the 
+``delicate balance'' \73\ that exists between the anticipated benefits 
+and the costs imposed by requirements to report BOI. In promulgating 
+this final rule, FinCEN anticipates certain changes, of varying 
+magnitude, to both expected benefits and costs--with some easier to 
+quantify than others. Each anticipated change is discussed in turn 
+below.
+---------------------------------------------------------------------------
+
+    \73\ See supra note 26.
+---------------------------------------------------------------------------
+
+    FinCEN further notes that, because portions of its regulatory 
+impact analysis (RIA) consider economic benefits and costs across all 
+the various parties it can reasonably expect to be affected by the 
+rule,\74\ whereas other portions limit the analysis of costs incurred 
+to specific regulatory stakeholders,\75\ certain differences in the 
+accounting treatment of costs may arise.\76\ Where relevant to the 
+analysis, the discussion below makes note of the distinctions in 
+treatment of costs.
+---------------------------------------------------------------------------
+
+    \74\ See infra Sections V.A.4.i and ii and V.E.
+    \75\ See infra Section V.E.
+    \76\ For example, to the extent that the costs to collect U.S. 
+person company applicant information that would have been borne by a 
+reporting company would be forgone, but the information would 
+nevertheless need to be collected for business purposes (such as the 
+opening of a bank account or other financial transactions), the cost 
+of information production would only decrease, in an economic sense, 
+if the party completing the work instead can do so at lower cost 
+than the originally assigned party.
+---------------------------------------------------------------------------
+
+2. Institutional Baseline and Affected Parties
+a. Regulatory Baseline
+    Because the final rule introduces additional modifications to the 
+Reporting Rule, the most appropriate counterfactual scenario used to 
+assess the incremental economic impact of the rule varies by provision. 
+In cases where the final rule has not further amended the IFR, this RIA 
+treats the Reporting Rule as the regulatory baseline against which to 
+analyze regulatory impact. In cases where the provisions in the final 
+rule differ from those in the IFR, the RIA treats the IFR as the 
+regulatory baseline. Where useful for tractability in the analysis, 
+this distinction is noted throughout the remainder of Section V.
+b. Baseline of Affected Parties
+    The revised baseline employed in the RIA reflects two types of 
+changes since the IFR. First, FinCEN updated its baseline population 
+estimates, generally, to enhance the accuracy in light of additional 
+data and analysis performed since the IFR. Secondly, as this final rule 
+further exempts certain parties that were still subject to Reporting 
+Rule obligations under the IFR, the baseline of affected parties in 
+this impact analysis was revised to account for these newly exempt 
+persons.
+i. Revised Estimates of Previously Affected Parties
+    In the IFR, FinCEN estimated the total population of foreign 
+reporting companies to be approximately 25,000 in the first year as 
+benchmarked against the analysis in the Reporting Rule RIA.\77\ This 
+estimate was derived by applying the observed proportion of foreign 
+companies in FinCEN's internal data at that point in time, which was 
+approximately 0.06 percent of all reporters, to the total estimated 
+reporting company population of 32,556,929 from the 2022 Reporting 
+Rule.\78\ This resulted in an estimate of approximately 20,000 expected 
+reporting companies already in existence, plus an additional 5,000 new 
+reporting companies registered in the first year of the IFR, or 25,000 
+foreign reporting companies in 2025.
+---------------------------------------------------------------------------
+
+    \77\ See FinCEN, Beneficial Ownership Information Reporting 
+Requirement Revision and Deadline Extension, 90 FR at 13695.
+    \78\ See Reporting Rule, 87 FR at 59568.
+---------------------------------------------------------------------------
+
+    Following the promulgation of the IFR, FinCEN conducted additional 
+analysis to update its population estimates to account for the passage 
+of time since the benchmark original analysis in the Reporting Rule. 
+This included a re-evaluation of updated IRS tax data.\79\ On the basis 
+of this analysis FinCEN has revised its IFR initial population estimate 
+of approximately 25,000 expected reporting companies in the first 
+effective year of a rule upward to 28,000.\80\ Given that as of the end 
+of 2025 FinCEN had received approximately 13,000 reports from foreign 
+reporting companies, this implies that, of the initial expected 
+population of existing reporting companies, approximately 15,000 
+existing foreign companies would still need to newly report.\81\ 
+Relying on the same sources of IRS tax data, FinCEN
+
+[[Page 52521]]
+
+further anticipates that approximately 1,800 new foreign reporting 
+companies per year would additionally be required to report, including 
+in year one.\82\
+---------------------------------------------------------------------------
+
+    \79\ Specifically, FinCEN reviewed (1) foreign corporations 
+filing IRS Form 1120-F (``U.S. Income Tax Return of a Foreign 
+Corporation'') and (2) partnership tax returns filed by foreign 
+partnerships (IRS Form 1065).
+    \80\ FinCEN's review of updated IRS tax data resulted in a count 
+of approximately 63,000 possible reporting companies at the end of 
+2025. However, FinCEN estimates that a significant number of these 
+entities will be exempt from filing due to meeting one or more 
+reporting exemptions. Specifically, based on IRS tax filing data, 
+FinCEN estimates that as many as 25 percent of corporations that are 
+reporting companies may meet the large operating company exemption. 
+In addition, FinCEN estimates that approximately 18,450 foreign 
+corporations registered to do business in the United States may be 
+operated or advised by an entity that is both described in section 
+203(l) of the Investment Advisers Act of 1940 (15 U.S.C. 80b-3(l)) 
+and has filed Item 10, Schedule A, and Schedule B of Part 1A of Form 
+ADV (or any successor thereto) with the SEC, or is an SEC-registered 
+securities reporting issuer, exempting them from filing. Finally, 
+FinCEN estimates that approximately 1,000 foreign companies 
+registered to do business in the United States are registered with 
+FinCEN as money services businesses. This results in a total 
+population of non-exempt reporting companies numbering approximately 
+28,000, of which approximately 13,000 have already reported as of 
+December 31, 2025. FinCEN acknowledges uncertainty around this 
+estimate, particularly as it does not have data to estimate every 
+category of possible exemption or to estimate the exact number of 
+parties in all the exemption categories discussed above. However, 
+FinCEN expects the number of additional exemptions to be less than 
+five percent of the total estimated population and retains this 
+higher estimate out of a desire to avoid underestimating the number 
+of possible reporting companies.
+    \81\ 28,000 expected reporting companies minus 13,000 reporting 
+companies that have already reported = 15,000 remaining reporting 
+companies.
+    \82\ As described above, FinCEN expects approximately 28,000 
+total non-exempt reporting companies to report out of a total 
+population of approximately 63,000 possible reporting companies at 
+the end of 2025--approximately 45 percent. Based on 4,000 new 
+companies annually based on IRS tax data, this results in 
+approximately 1,800 new reporting companies annually.
+---------------------------------------------------------------------------
+
+ii. Estimates of Newly Affected Parties
+    The final rule includes new provisions pertaining to U.S. holders 
+of FinCEN IDs, including U.S. company applicants, and additional 
+provisions applicable to U.S. company applicants.
+    As of the end of calendar year 2025, FinCEN identified 
+approximately 760,000 U.S. person FinCEN ID holders (approximately 97 
+percent of all holders) that the new provisions in the final rule would 
+exempt from update requirements. While the vast majority of these 
+FinCEN IDs were obtained before the IFR was issued, FinCEN has 
+continued to receive additional FinCEN ID applications from both 
+foreign and U.S. persons. However, a number of these applications 
+appear to have been pursued voluntarily, as the number of U.S. person 
+FinCEN ID applications submitted has exceeded the concurrent number of 
+U.S. person company applicants (who were not exempted from reporting 
+requirements by the IFR) that were reported in association with newly 
+filing reporting companies. FinCEN has received approximately one U.S. 
+person company applicant for every BOIR received since the IFR.
+    FinCEN's estimate of the population of newly affected U.S. company 
+applicants includes both (1) U.S. company applicants that have already 
+obtained a FinCEN ID and will no longer be required to provide updated 
+information (approximately 270,000, a subpopulation of the 760,000 
+FinCEN ID holders no longer required to provide updates), and (2) 
+prospective future U.S. company applicants associated with future new 
+reporting companies to which they will not be required to provide their 
+BOI (approximately 760 associated with the estimated 1,800 new 
+reporting companies per year). FinCEN estimates that this could be no 
+more than approximately 760,300 persons in a given year and will likely 
+be a much smaller population closer to one-third of this estimated 
+upper bound.
+c. Current Market Practices
+i. BOIR Filings Since the IFR
+    Although FinCEN received the majority of BOIRs before the IFR was 
+published, since the IFR was published, FinCEN has nevertheless 
+continued to receive a steady inflow of reports from reporting 
+companies at an average rate of approximately 100 reports per month. On 
+average, these reports have contained 1.2 beneficial owners. About half 
+of the new reports have disclosed one beneficial owner, and a further 
+25 percent did not report any beneficial owner (meaning there was no 
+non-U.S. person beneficial owner to report). The remaining reports 
+contained two or more beneficial owners, with the average number 
+disclosed being three.
+ii. U.S. Person Holders of FinCEN IDs
+    Since the publication of the IFR, FinCEN has continued to receive 
+applications for FinCEN IDs from U.S. persons. FinCEN has received 
+approximately six U.S. person FinCEN ID applications per BOIR received 
+since the IFR. As discussed above, this exceeds the number of U.S. 
+person company applicants, and therefore is assumed to contain a number 
+of voluntary applications. In the two years following the opening of 
+the BOI reporting portal, FinCEN also received approximately 38,000 
+updates and corrections associated with a total of 780,000 active 
+FinCEN IDs, which corresponds to approximately 2.5 percent of the 
+active FinCEN IDs being updated or corrected per year.
+iii. U.S. Company Applicants
+    Prior to the IFR, FinCEN received fewer than one U.S. person 
+company applicant for every two reports by a foreign reporting company. 
+However, since the IFR, this ratio has increased, and FinCEN has 
+received about one U.S. person company applicant for every BOIR 
+received since the IFR. The likely reason for this increase is that 
+company applicants are only required to be reported for companies 
+formed after January 1, 2024. Most newly reporting companies since the 
+IFR were formed after this date, whereas prior to the IFR, a greater 
+proportion of reports were filed by companies that had registered to do 
+business in the United States prior to this date.
+3. Description of Final Amendments
+    The final amendments to the Reporting Rule are as described above 
+in Section II.A. Table 1 presents a summary of these provisions.
+
+                            Table 1--Overview/Mapping of Regulatory Text and Analyses
+----------------------------------------------------------------------------------------------------------------
+                                  The Final Rule will .      Section II     Considered in RIA   Regulatory text
+   Scope of affected entities              . .                analysis        subsection(s)         location
+----------------------------------------------------------------------------------------------------------------
+Reporting companies............  Exempt them from any    II.A.............  V.A.4.i and ii...  31 CFR
+                                  requirements under 31                                         1010.380(b)(5)(i
+                                  U.S.C. 5336 and                                               ).
+                                  section 1010.380 to
+                                  report BOI of any
+                                  U.S. persons who are
+                                  beneficial owners or
+                                  company applicants.
+                                 Remove 31 CFR           N/A..............  n/a..............  n/a, text
+                                  1010.380(d)(4)(i),                                            removed.
+                                  which exempted them
+                                  from reporting the
+                                  BOI of any U.S.
+                                  persons who are
+                                  beneficial owners.
+U.S. persons...................  Exempt them from any    II.A.............  V.A.4.i and ii...  31 CFR
+                                  requirement under 31                                          1010.380(b)(5)(i
+                                  U.S.C. 5336 and                                               i).
+                                  section 1010.380 to
+                                  provide BOI with
+                                  respect to any
+                                  reporting company for
+                                  which they are
+                                  beneficial owners or
+                                  company applicants.
+
+[[Page 52522]]
+
+ 
+                                 Remove 31 CFR           N/A..............  n/a..............  n/a, text
+                                  1010.380(d)(4)(ii),                                           removed.
+                                  which exempted them
+                                  from providing BOI
+                                  with respect to any
+                                  reporting company for
+                                  which they are a
+                                  beneficial owner.
+U.S. persons who obtained a      Remove the prior        II.A.............  V.A.4.i and ii...  31 CFR
+ FinCEN ID.                       requirement to update                                         1010.380(b)(4)(i
+                                  or correct                                                    ii)(A).
+                                  information
+                                  previously submitted
+                                  to FinCEN in an
+                                  application for a
+                                  FinCEN ID.
+----------------------------------------------------------------------------------------------------------------
+
+4. Anticipated Economic Effects
+a. Expected Benefits
+i. Changes in Benefits Relative to the Reporting Rule
+    While the IFR introduced significant exemptions for domestic 
+reporting companies and many U.S. persons, many of the benefits 
+outlined in the original Reporting Rule continued to apply under the 
+IFR and subsequently will apply under this final rule. The final rule 
+will help address the lack of BOI critical for money laundering 
+investigations involving foreign entities. Improved visibility into the 
+identities of the foreign individuals who own or control foreign 
+entities operating in the United States will enhance law enforcement's 
+ability to investigate, prosecute, and disrupt the financing of 
+international terrorism, other transnational security threats, and 
+other types of domestic and transnational financial crime when foreign 
+entities are used to engage in such activities. Other authorized users 
+in the national security and intelligence fields will likewise benefit 
+from the use of these data. The BO IT System will also increase 
+investigative efficiency and thus decrease the cost to law enforcement 
+of investigations that require or benefit from identifying the foreign 
+owners of foreign entities operating in the United States.
+    These anticipated benefits are supported by a number of public 
+comments received on the IFR from those that represent the law 
+enforcement community, some of whom expressed the opinion that the 
+availability of BOI, albeit with a more limited scope, would still 
+provide law enforcement at every level with an important tool to 
+investigate the misuse of foreign shell companies and other foreign 
+entities used for criminal activity. To the extent these investigations 
+become more effective, money laundering in the United States will 
+become more difficult. Making any method of money laundering more 
+difficult in the United States will improve the national security of 
+the United States by increasing barriers for illicit actors to covertly 
+enter and to act within the U.S. financial system. This may serve to 
+deter the use of foreign entities for money laundering purposes in the 
+United States.
+ii. Changes in Benefits Relative to the IFR
+    This final rule does not introduce any additional information 
+collection requirements beyond what was required under the IFR. 
+Therefore, this final rule does not add any incremental benefits 
+associated with such information, which was discussed as the primary 
+benefit under the original Reporting Rule.\83\ However, FinCEN has 
+historically considered the benefits of BOI reporting to a variety of 
+affected parties, including law enforcement, other users of BOI, and 
+the general macroeconomy,\84\ and has taken into consideration the 
+extent to which benefits may change as a consequence of the final 
+rule's reduction in scope, which relate primarily to updates associated 
+with company applicant reporting and FinCEN ID updates.\85\
+---------------------------------------------------------------------------
+
+    \83\ See Reporting Rule, 87 FR at 59562.
+    \84\ Id. at 59682; see also FinCEN, Beneficial Ownership 
+Information Access and Safeguards, and Use of FinCEN Identifiers for 
+Entities, 87 FR 77404, 77425 (Dec. 16, 2022).
+    \85\ To the extent that certain parties would have incurred 
+direct costs in connection with reporting their U.S. person company 
+applicants and would no longer be required to do so under the final 
+rule, the estimated value of this private benefit is not treated as 
+benefit of the IFR, but is included in the discussion of changes to 
+expected costs below and further described in Section V.E.
+---------------------------------------------------------------------------
+
+    FinCEN acknowledges that, while more information about U.S. person 
+company applicants in BOIRs, or about U.S. persons who might have 
+periodically provided updated information associated with their FinCEN 
+IDs, would be collected in the absence of changes made in this final 
+rule, the marginal benefits of this reduction in information reporting 
+is unclear. As FinCEN has not yet been able to conduct the kinds of 
+robust quantitative analysis necessary to estimate the incremental 
+value of such information, it recognizes that its estimated values to 
+date have been partially speculative, albeit informed by feedback from 
+both domestic and international partners in law enforcement and 
+national security.
+    FinCEN anticipates that some parties may experience reduced 
+benefits as a consequence of the changes introduced in this final rule 
+but expects these to be relatively minor. This would include parties, 
+such as law enforcement, financial institutions, and other affected 
+parties whose access to BOI would consequently provide information 
+about fewer U.S. person company applicants. The extent to which 
+reducing the scope of reported information about company applicants 
+would reduce the benefits of access to BOI would, to some extent, 
+depend on the relative informational value of the U.S. person company 
+applicants that would be newly exempted from inclusion in BOIRs versus 
+the informational value that would continue to be reported. Similarly, 
+the reduction in expected benefits may, in some cases, be attenuated by 
+the availability of alternative sources of similar information (e.g., 
+commercially available information) to the extent that such sources can 
+be treated as substitutes as opposed to complements.\86\
+---------------------------------------------------------------------------
+
+    \86\ The original Reporting Rule did not provide an estimate of 
+the relative value of alternative sources relative to the BOI 
+required to be reported by the Reporting Rule.
+---------------------------------------------------------------------------
+
+b. Expected Costs
+i. Changes in Costs Relative to the Reporting Rule
+    This final rule affirms the permanence of the significant 
+reductions in costs the IFR introduced relative to the Reporting Rule. 
+The IFR narrowed the Reporting
+
+[[Page 52523]]
+
+Rule's BOI reporting requirement where domestic entities previously 
+defined as ``domestic reporting companies'' were excluded, and foreign 
+entities were no longer required to report the BOI of any U.S. persons 
+who are beneficial owners of a foreign reporting company. The IFR 
+substantially decreased the scope and number of reporting companies, 
+particularly with respect to domestic and foreign entities previously 
+subject to the Reporting Rule. This scope reduction is being retained 
+by the final rule and entails significant regulatory cost savings.
+    In the original rule, FinCEN's analysis estimated that there would 
+be 32,556,929 total reporting companies in 2024, and 4,998,468 new 
+entities per year that met the previous definition of reporting 
+company, not including exempted parties.\87\ In the period before the 
+IFR was issued, FinCEN received approximately 15 million reports from 
+domestic reporting companies, leaving an estimated 17.5 million 
+outstanding reports, plus an estimated additional 10 million expected 
+reports in 2025 and 2026, meaning that approximately 27.5 million 
+reporting companies have been relieved of reporting obligations since 
+the IFR. Using the estimated weighted average of $665.71 per report 
+contemplated in the original rule,\88\ this is equivalent to 
+approximately $18 billion dollars in savings for entities formerly 
+classified as domestic reporting companies since the IFR was issued.
+---------------------------------------------------------------------------
+
+    \87\ See Reporting Rule, 87 FR at 59568.
+    \88\ See id at 59573.
+---------------------------------------------------------------------------
+
+    The estimated change in total reporting burden hours resulting from 
+the IFR is a reduction from the previous annual burden estimate by 
+approximately 53 million burden hours per year, on average, rounded to 
+the nearest million.\89\ The estimated change in total reporting cost 
+is a reduction by approximately $9 billion dollars per year, on 
+average, rounded to the nearest billion.\90\ The changes introduced by 
+the IFR also decreased the estimated annual cost to the Federal 
+government by approximately $8 million, which is in addition to the 
+$21.5 million dollar cost reduction resulting from additional changes 
+and data deletion being implemented with this final rule.
+---------------------------------------------------------------------------
+
+    \89\ This estimate represents the difference between the three-
+year average burden in the IFR (approximately 86,000) and the five-
+year average burden presented in the original Reporting Rule 
+(approximately 53 million). This expected change in reporting burden 
+is broadly consistent with the change in burden hours presented in 
+the IFR (approximately 91 million), which used a looking-backward 
+method of estimation. These methods only differ in the assignment of 
+when estimated annual burdens are considered to have effectively 
+been realized.
+    \90\ This figure is the difference between the three-year 
+average cost presented in the IFR (approximately $22 million) and 
+the five-year average cost presented in the Reporting Rule issued in 
+2022 (approximately $9 billion).
+---------------------------------------------------------------------------
+
+ii. Changes in Costs Relative to the IFR
+    This final rule does not introduce any additional requirements 
+beyond what was required under the IFR. Therefore, this final rule does 
+not add any incremental costs. However, this final rule does introduce 
+additional exemptions, namely by removing the requirement for (1) U.S. 
+person holders of a FinCEN ID to update or correct the information 
+provided in their application, and (2) reporting companies to report 
+information on U.S. person company applicants. Therefore, FinCEN 
+expects the primary value of the additional exemptions provided by this 
+final rule to be realized in the form of reduced costs, and the final 
+incremental cost of this rule to be significantly less than zero. As 
+described below, FinCEN estimates the incremental cost savings 
+associated with the final rule are approximately $233,439 in the first 
+year and approximately $209,105 in each subsequent year.
+    The final rule will exempt approximately 760,000 U.S. person FinCEN 
+ID holders from update and correction requirements. In the two years 
+following the opening of the BO IT System, FinCEN has received 
+approximately 38,000 updates and corrections associated with a total of 
+780,000 active FinCEN IDs--approximately 2.5 percent per year. Assuming 
+each update would have taken approximately 10 minutes (0.17 hours) and 
+an hourly cost of $65.09,\91\ these FinCEN ID update and correction 
+requirement exemptions would result in an incremental cost savings of 
+approximately $206,000 as presented in Table 2.
+---------------------------------------------------------------------------
+
+    \91\ FinCEN applies a similar hourly wage rate to that used in 
+the IFR, but which has been updated using recently released data. 
+FinCEN estimated an average base wage rate of $45.77 per hour. This 
+estimate is based on U.S. Bureau of Labor Statistics (BLS) May 2024 
+wage estimates and represents the average reported hourly wage rates 
+of three occupational groups assessed to be most likely responsible 
+for executing filings on behalf of reporting companies (11-000: 
+Management; 13-000: Business and Financial Operations; and 43-000: 
+Office and Administrative Support). See BLS, Occupational Employment 
+and Wage Statistics: May 2024 Occupation Profiles, available at 
+<a href="https://www.bls.gov/oes/2024/may/overview_2024.htm">https://www.bls.gov/oes/2024/may/overview_2024.htm</a>. Given that many 
+occupations provide benefits beyond wages (e.g., insurance and paid 
+leave), FinCEN applies the private industry benefits factor of 1.42 
+to the unloaded wage rate to reflect the total cost the employer. 
+The benefit factor is the ratio of total compensation (which 
+includes wages and benefits) to wages. Total compensation = 43.94 
+and Wages and salaries = 30.90 (1.42 = 43.94 / 30.90) as of June 
+2024, based on the private industry workers series data downloaded 
+from the BLS, Employer Costs for Employee Compensation data, 
+available at <a href="https://www.bls.gov/news.release/archives/ecec_09102024.pdf">https://www.bls.gov/news.release/archives/ecec_09102024.pdf</a>. Therefore, the fully loaded wage rate is $65.09 
+per hour.
+---------------------------------------------------------------------------
+
+    In addition to the annual savings associated with the existing 
+760,000 U.S. person FinCEN ID holders, there is a small additional cost 
+savings associated with U.S. persons who would otherwise have continued 
+to be required to obtain FinCEN IDs in association with reporting 
+company submissions of BOI, for instance as company applicants, though 
+the updating costs associated with these additional FinCEN IDs are 
+expected to be relatively small. As detailed in the following 
+discussion on the cost savings associated with the exemption of U.S. 
+person company applicants from being included in BOIRs,\92\ absent the 
+final rule, FinCEN expects approximately 270 U.S. person company 
+applicants to have been reported annually. If virtually all of these 
+individuals applied for FinCEN IDs, this would result in an additional 
+annual cost savings of about $73 per year going forward.\93\
+---------------------------------------------------------------------------
+
+    \92\ See infra note 95.
+    \93\ Updating 2.5 percent of 270 FinCEN IDs results in seven 
+annual updates, which at 10 minutes (0.17 hours) each and an hourly 
+wage rate of $65.09 is $73 annually.
+
+[[Page 52524]]
+
+
+
+     Table 2--Estimated Incremental Annual Cost Savings Associated With New FinCEN ID Update and Correction
+                                             Requirement Exemptions
+----------------------------------------------------------------------------------------------------------------
+                                          Percentage
+                                              of       Number of
+                                           exempted     updates      Hours       Total      Hourly    Total cost
+       Number of exempted parties           parties      from      saved per     hours     wage rate    savings
+                                            making     exempted     update       saved
+                                            updates     parties
+----------------------------------------------------------------------------------------------------------------
+760,000.................................         2.5      19,000        0.17       3,167      $65.09    $206,103
+----------------------------------------------------------------------------------------------------------------
+Hourly savings figures are rounded to the nearest hundredth of an hour for presentation purposes. Total savings
+  figures are produced using unrounded figures for accuracy.
+
+    FinCEN's final rule also exempts reporting companies from including 
+U.S. person company applicants in their BOIRs. This new exemption 
+relieves reporting companies from needing to collect information on 
+their U.S. person company applicants and submit that information in 
+connection with their BOIR. Based on data from foreign reporting 
+company BOIRs received since the IFR, FinCEN estimates that most 
+foreign reporting companies include one company applicant on average 
+with their BOIR. While companies sometimes use the same applicant, 
+FinCEN estimates that most of these company applicants are unique. 
+Using the same reporting data, FinCEN further estimates that about 15 
+percent of these company applicants are U.S. persons, which will now be 
+exempt from inclusion.
+    As described in Section V.A.ii.2.a, FinCEN anticipates 
+approximately 16,800 reporting companies in the first year, and 1,800 
+reporting companies in each subsequent year. Based on this information, 
+FinCEN estimates that as many as 2,520 U.S. person company applicants 
+will not need to be included with reporting company BOIRs in the first 
+year,\94\ and an additional 27 will be excluded in each subsequent 
+year.\95\ FinCEN estimates that it takes approximately 10 minutes (0.17 
+hours) to identify and collect information about a company applicant. 
+Table 3 presents a summary of the anticipated cost savings associated 
+with these new exemptions for U.S. persons to be included as company 
+applicants.
+---------------------------------------------------------------------------
+
+    \94\ If each of 16,800 BOIRs received in year one (15,000 
+existing reporting companies plus 1,800 new reporting companies) is 
+expected to include one company applicant on average, this results 
+in 16,800 company applicants. 15 percent of 16,800 company 
+applicants is 2,520 U.S. person applicants.
+    \95\ If each of the 1,800 new BOIR expected to be received in 
+subsequent years is expected to include one company applicant on 
+average, this results in 1,800 company applicants. 15 percent of 
+1,800 company applicants is 270 U.S. person company applicants per 
+year.
+
+       Table 3--Estimated Incremental Cost Savings Associated With New FinCEN Company Applicant Exemptions
+----------------------------------------------------------------------------------------------------------------
+                                     Number of
+                                     exempted       Hours saved     Total hours     Hourly wage     Total cost
+              Year                    company      per applicant       saved           rate           savings
+                                    applicants
+----------------------------------------------------------------------------------------------------------------
+1...............................           2,520            0.17             420          $65.09         $27,336
+2+..............................             270            0.17              45           65.09           2,929
+----------------------------------------------------------------------------------------------------------------
+Hourly savings figures are rounded to the nearest hundredth of an hour for presentation purposes. Total savings
+  figures are produced using unrounded figures for accuracy.
+
+5. Alternatives Considered
+    FinCEN took into consideration all potential policy alternatives 
+proposed by commenters in response to the IFR. The description of these 
+alternatives and the discussion of FinCEN's reasons for not pursuing 
+those alternatives not incorporated into the final rule as set forth in 
+Section II.C. are incorporated here by reference.
+
+B. Executive Orders 12866, 13563, and 14192
+
+    E.O. 12866 and E.O. 13563 direct agencies to assess costs and 
+benefits of available regulatory alternatives and, if regulation is 
+necessary, to select regulatory approaches that maximize net benefits 
+(including potential economic, environmental, and public health and 
+safety effects; distributive impacts; and equity). E.O. 13563 
+emphasizes the importance of quantifying both costs and benefits, 
+reducing costs, harmonizing rules, and promoting flexibility. E.O. 
+13563 also recognizes that some benefits are difficult to quantify and 
+provides that, where appropriate and permitted by law, agencies may 
+consider and discuss qualitatively values that are difficult or 
+impossible to quantify.
+    This rule has been designated a ``significant regulatory action'' 
+under section 3(f) of E.O. 12866; accordingly, it has been reviewed by 
+OMB.
+    This action is expected to be considered an E.O. 14192 deregulatory 
+action.
+
+C. Regulatory Flexibility Act
+
+    The RFA, Public Law 96-354, applies only to rules for which an 
+agency publishes a general notice of proposed rulemaking pursuant to 5 
+U.S.C. 553(b).\96\ This rule is being immediately published as a final 
+rule following an IFR; it was not preceded by a notice of proposed 
+rulemaking. Therefore, the RFA does not apply to it.
+---------------------------------------------------------------------------
+
+    \96\ See generally 5 U.S.C. 601 et seq.
+---------------------------------------------------------------------------
+
+    Furthermore, because this rule exempts certain U.S. persons who 
+otherwise would have been required to be reported as company applicants 
+or to update information provided to FinCEN, there are no new 
+compliance burdens imposed on a substantial number of U.S. businesses 
+\97\ or to U.S. persons in their capacities as beneficial owners or 
+company applicants of foreign reporting companies. In addition, the RFA 
+does
+
+[[Page 52525]]
+
+not apply to regulatory burdens incurred by U.S. persons in their 
+capacity as natural persons and would therefore not apply to amendments 
+to the IFR adopted in this final rule that affect such parties as 
+individuals.\98\
+---------------------------------------------------------------------------
+
+    \97\ RFA analysis is only required if a regulation meets both of 
+two criteria: (1) the impact of the rule must be economically 
+significant and (2) the rule must affect a substantial number of 
+small U.S. entities.
+    \98\ The RFA applies to regulatory effects on only three types 
+of entities: (1) small businesses, (2) small nonprofits, and (3) 
+small governmental jurisdictions. Individuals impacted in their 
+capacity as natural persons are not included in these categories.
+---------------------------------------------------------------------------
+
+D. Unfunded Mandates Reform Act
+
+    Section 202 of the UMRA,\99\ Public Law 104-4, requires that an 
+agency prepare a budgetary impact statement before promulgating a rule 
+that may result in new, incremental expenditures by State, local, and 
+Tribal governments, in the aggregate, or by the private sector, of $193 
+million or more in any one year ($100 million in 1995, adjusted for 
+inflation).\100\ If a budgetary impact statement is required, section 
+202 of the UMRA also requires an agency to identify and consider a 
+reasonable number of regulatory alternatives before promulgating a 
+rule. FinCEN has determined that this rule will not result in increased 
+expenditures by State, local, and Tribal governments, or by the private 
+sector, of $193 million or more. Accordingly, FinCEN has not prepared a 
+budgetary impact statement. Additionally, while not required for UMRA 
+purposes, FinCEN believes its consideration of policy alternatives in 
+Sections II.C. and V.A.5. provide a sufficiently specific description 
+of regulatory alternatives and incorporates that here by reference.
+---------------------------------------------------------------------------
+
+    \99\ 2 U.S.C. 1532.
+    \100\ The U.S. Bureau of Economic Analysis reports the annual 
+value of the gross domestic product implicit price deflator for 
+calendar year 1995 (the year UMRA was enacted) as 66.939, and as 
+128.974 for calendar year 2025 (the most recent available). Thus, 
+the inflation-adjusted estimate for $100 million is 128.974 / 66.939 
+x $100 million, or $192.7 million. See U.S. Bureau of Economic 
+Analysis, Table 1.1.9. Implicit Price Deflators for Gross Domestic 
+Product, available at <a href="https://apps.bea.gov/iTable/?reqid=19&step=3&isuri=1&1921=survey&1903=13#eyJhcHBpZCI6MTksInN0ZXBzIjpbMSwyLDMsM10sImRhdGEiOltbIk5JUEFfVGFibGVfTGlzdCIsIjEzIl0sWyJDYXRlZ29yaWVzIiwiU3VydmV5Il0sWyJGaXJzdF9ZZWFyIiwiMTk5NSJdLFsiTGFzdF9ZZWFyIiwiMjAyNSJdLFsiU2NhbGUiLCIwIl0sWyJTZXJpZXMiLCJBIl1dfQ==">https://apps.bea.gov/iTable/?reqid=19&step=3&isuri=1&1921=survey&1903=13#eyJhcHBpZCI6MTksInN0ZXBzIjpbMSwyLDMsM10sImRhdGEiOltbIk5JUEFfVGFibGVfTGlzdCIsIjEzIl0sWyJDYXRlZ29yaWVzIiwiU3VydmV5Il0sWyJGaXJzdF9ZZWFyIiwiMTk5NSJdLFsiTGFzdF9ZZWFyIiwiMjAyNSJdLFsiU2NhbGUiLCIwIl0sWyJTZXJpZXMiLCJBIl1dfQ==</a>.
+---------------------------------------------------------------------------
+
+E. Paperwork Reduction Act
+
+    The provisions of the Paperwork Reduction Act of 1995 (PRA) \101\ 
+and its implementing regulations, 5 CFR part 1320, impose certain 
+requirements on federal agencies in connection with their conducting or 
+sponsoring any collection of information as defined by the PRA. Under 
+the PRA, an agency may not conduct or sponsor, and a person is not 
+required to respond to, a collection of information unless it displays 
+a valid control number assigned by OMB.\102\
+---------------------------------------------------------------------------
+
+    \101\ 44 U.S.C. 3506(c)(2)(A), 3507(a)(1)(D).
+    \102\ 44 U.S.C. chapter 35; 5 CFR part 1320.
+---------------------------------------------------------------------------
+
+    The reporting requirements contained in the Reporting Rule, which 
+qualify as ``collections of information'' under the PRA, were approved 
+by OMB in accordance with the PRA under OMB control number 1506-0076. 
+In this final rule, FinCEN is exercising the authority under 31 U.S.C. 
+5336(a)(11)(B)(xxiv) to exempt domestic reporting companies from BOI 
+reporting requirements and the authority under 31 U.S.C. 5318(a)(7) to 
+exempt foreign reporting companies from having to report the BOI of any 
+U.S. persons who are beneficial owners or company applicants of the 
+foreign reporting company, as well as to exempt U.S. persons from 
+having to provide such information to the foreign reporting companies 
+for which they are beneficial owners or company applicants. Related to 
+the second exemption, FinCEN is also exercising the authority under 31 
+U.S.C. 5318(a)(7) to revise the special rule associated with foreign 
+pooled investment vehicles to exempt such entities from having to 
+report the BOI of U.S. persons who exercise substantial control over 
+the entity.
+    FinCEN has revised estimates for the reporting requirements in the 
+IFR based on the changes made by this final rule, as well as updated 
+reporting information received in the time since the IFR was published. 
+Changes to estimates for requirements contained in the IFR, where not 
+related to additional exemptions made in this final rule, are the 
+result of changes to pro forma accounting estimates based on updated 
+reporting information and should not be interpreted as a reduction in 
+regulatory requirements.
+1. Beneficial Ownership Information Reports
+    OMB Control Number: 1506-0076.
+    Reporting Requirements: In accordance with the CTA, the rule 
+retains a reporting requirement on foreign reporting companies to file 
+with FinCEN reports that identify the entities' beneficial owners, and 
+in certain cases, their company applicants.\103\ The report must also 
+contain information about the entity itself. The reporting company must 
+certify that the report is true, correct, and complete. The rule also 
+continues to require foreign reporting companies to update the 
+information in these reports as needed, and correct any previous 
+incorrectly reported information, within specific timeframes. The 
+collected information will be maintained by FinCEN and made accessible 
+to authorized users.
+---------------------------------------------------------------------------
+
+    \103\ 31 U.S.C. 5336(b); 31 CFR 1010.380(b).
+---------------------------------------------------------------------------
+
+    Frequency: As required.\104\
+---------------------------------------------------------------------------
+
+    \104\ For BOI reports, there is an initial filing and subsequent 
+filings; the latter are required as information changes or if 
+previously reported information was incorrect.
+---------------------------------------------------------------------------
+
+    Description of Affected Public: Entities that are: (1) 
+corporations, limited liability companies, or other entities; (2) 
+formed under the law of a foreign country; and (3) registered to do 
+business in any State or Tribal jurisdiction by the filing of a 
+document with a secretary of state or any similar office under the laws 
+of a State or Indian tribe. The rule does not require corporations, 
+limited liability companies, or other entities that are described in 
+any of the 24 specific exemptions to file BOIRs.
+i. Initial BOIRs
+    Estimated Number of Responses: 6,800 initial BOIRs per year, on 
+average.
+    FinCEN anticipates 16,800 BOIRs by reporting companies in the first 
+year, and 1,800 in each subsequent year, which results in a three-year 
+annual average of 6,800.
+    Estimated Time per Response: As discussed in the IFR, the time 
+burden for filing initial BOIRs will vary depending on the complexity 
+of the reporting company's structure. FinCEN therefore estimates a 
+range of time burdens associated with filing an initial BOIR to account 
+for the likely variance among reporting companies based on two 
+categories: simple and complex beneficial ownership structures. FinCEN 
+evaluated data on reports filed by reporting companies since the IFR 
+was published and found that in most cases (approximately 75 percent of 
+the total received), reports had one or no foreign beneficial owners to 
+report. For the minority of reports (approximately 25 percent of the 
+total received) which reported more than one foreign beneficial owner, 
+the average was approximately three foreign beneficial owners. For the 
+purpose of this analysis, FinCEN therefore assumes that 75 percent of 
+reporting companies would have simple beneficial ownership structures 
+and 25 percent would have complex beneficial ownership structures.
+    FinCEN estimates an average burden of reporting BOI for companies 
+with simple beneficial ownership structures as 60 minutes (one hour) 
+per response, which includes 30 minutes to read the form and understand 
+the requirement; 10 minutes to identify and collect
+
+[[Page 52526]]
+
+information about beneficial owners and company applicants; and 20 
+minutes to fill out and file the report, including attaching an image 
+of an acceptable identification document for each beneficial owner and 
+company applicant.
+    FinCEN estimates the average burden of reporting BOI as 120 minutes 
+(two hours) per response for reporting companies that filed reports 
+with two or more foreign beneficial owners (i.e., those with complex 
+beneficial ownership structures). This includes 30 minutes to read the 
+form and understand the requirement; 30 minutes to identify and collect 
+information about beneficial owners and company applicants; and 60 
+minutes to fill out and file the report, including attaching an image 
+of an acceptable identification document for each beneficial owner and 
+company applicant.
+    Estimated Aggregate Reporting Burden Hours: 8,500 hours per year, 
+on average.
+    FinCEN estimates that during Year One, filing initial BOIRs will 
+result in approximately 21,000 burden hours for reporting 
+companies.\105\ In each subsequent year, FinCEN estimates filing 
+initial BOIRs will result in 2,250 burden hours annually for new 
+reporting companies.\106\ This results in a three-year average annual 
+burden for initial BOIRs of 8,500 hours.
+---------------------------------------------------------------------------
+
+    \105\ 16,800 total reporting companies, with 75 percent (12,600) 
+taking one hour, and 25 percent (4,200) taking two hours, results in 
+a total of 21,000 hours in the first year.
+    \106\ 1,800 new reporting companies per year, with 75 percent 
+(1,350) taking one hour, and 25 percent (450) taking two hours, 
+results in a total of 2,250 hours in Year Two and beyond.
+---------------------------------------------------------------------------
+
+    Estimated Aggregate Reporting Cost: $1,913,225 per year, on 
+average.
+    FinCEN estimated a range of costs associated with filing an initial 
+BOIR to account for the likely variance among reporting companies. 
+Using the hourly wage rates presented in the IFR, FinCEN estimates the 
+average cost of filing an initial BOIR per reporting company to range 
+from $65.09 (for companies with simple foreign beneficial ownership 
+structures) \107\ to $930.17 (for companies with complex foreign 
+beneficial ownership structures).\108\ Applying the reporting 
+companies' structure distribution explained above, the estimated total 
+cost of initial BOIRs is $4.7 million in Year One \109\ and $506 
+thousand in each subsequent year.\110\ This results in a three-year 
+average cost for initial BOIRs of $1.9 million.
+---------------------------------------------------------------------------
+
+    \107\ For companies with simple foreign beneficial ownership 
+structures, FinCEN estimated one hour of labor at a rate of $65.09 
+per hour. See supra note 91.
+    \108\ For companies with complex foreign beneficial ownership 
+structures, FinCEN estimated two hours of labor at a rate of $65.09 
+per hour, plus two hours of professional assistance from an attorney 
+or accountant at a rate of approximately $400 per hour. Professional 
+assistance rates are derived from the original Reporting Rule. See 
+Reporting Rule, 87 FR at 59498.
+    \109\ 16,800 total reports, with 75 percent (12,600) costing 
+$65.09 and 25 percent (4,200) costing $930.17, results in a total 
+cost of $4,726,790 in the first year.
+    \110\ 1,800 new reports per year, with 75 percent (1,350) 
+costing $65.09 and 25 percent (450) costing $930.17, results in a 
+total cost of $506,442 in each subsequent year.
+---------------------------------------------------------------------------
+
+ii. Updated BOIRs
+    Estimated Number of Responses: 1,106 reporting company updates per 
+year, on average.
+    In the two-year period following the opening of the BO IT System, 
+FinCEN received approximately 900 updates and corrections for a total 
+of approximately 13,000 foreign reporting company BOIRs, that is, for 
+approximately 3.5 percent. If FinCEN receives 15,000 reports in Year 
+One, this will result in a total of 28,000 total reports by reporting 
+companies.\111\ Including the 1,800 new reports expected in Year One, 
+results in 29,800 expected reports. Assuming 3.5 percent of these 
+29,800 reports will be updated results in 1,043 updates in Year One. In 
+Year Two, if FinCEN receives 1,800 new reports, this will result in a 
+total of 31,600 reports. Assuming 3.5 percent of these 31,600 reports 
+will be updated results in 1,106 updates in Year Two. In Year Three, if 
+FinCEN receives 1,800 new reports, this will result in a total of 
+33,400 reports. Assuming 3.5 percent of these 33,400 reports are 
+updated results in 1,169 updates in Year Three. Together, these figures 
+result in 1,106 updates per year on average over a three-year period.
+---------------------------------------------------------------------------
+
+    \111\ See supra Section V.A.2.ii.a.
+---------------------------------------------------------------------------
+
+    Estimated Time per Response: FinCEN estimates the average burden of 
+updating BOIRs for reporting companies with simple foreign beneficial 
+ownership structures as 30 minutes (0.5 hours) per update, which 
+includes ten minutes to identify and collect information about 
+beneficial owners or company applicants and 20 minutes to fill out and 
+file the update.
+    FinCEN estimates the average burden of updating such reports for 
+reporting companies with complex foreign beneficial ownership 
+structures as 90 minutes (1.5 hours) per update, which includes 30 
+minutes to identify and collect information about beneficial owners or 
+company applicants and 60 minutes to fill out and file the update.
+    Estimated Aggregate Reporting Burden Hours: 830 hours per year, on 
+average.
+    Using the burden hour estimates described above, FinCEN estimates 
+that filing updated BOIRs will result in approximately 782 burden hours 
+for reporting companies in Year One,\112\ 830 burden hours in Year 
+Two,\113\ and 877 burden hours in Year Three.\114\ The three-year 
+average annual burden for updated BOIRs is 830 hours.
+---------------------------------------------------------------------------
+
+    \112\ 1,043 total reporting company updates, with 75 percent 
+(782) taking 0.5 hours and 25 percent (261) taking 1.5 hours, 
+results in a total of 782 hours in the first year.
+    \113\ 1,106 total reporting company updates, with 75 percent 
+(830) taking 0.5 hours and 25 percent (277) taking 1.5 hours, 
+results in a total of 830 hours in the second year.
+    \114\ 1,169 total reporting company updates, with 75 percent 
+(877) taking 0.5 hours and 25 percent (292) taking 1.5 hours, 
+results in a total of 877 hours in the third year.
+---------------------------------------------------------------------------
+
+    Estimated Aggregate Reporting Cost: $164,588 per year, on average.
+    FinCEN estimated a range of costs associated with filing an updated 
+BOIR to account for the likely variance among reporting companies. 
+Using the hourly wage rates presented in the IFR and discussed 
+above,\115\ FinCEN estimates the average cost of filing an updated BOIR 
+per reporting company to range from $32.54 (for companies with simple 
+foreign beneficial ownership structures) \116\ to $497.63 (for 
+companies with complex foreign beneficial ownership structures).\117\ 
+Applying the reporting companies' structure distribution explained in 
+Section V.E.1.a, the estimated total annual cost of updated BOIRs is 
+$155,213 in Year One,\118\ $164,588 in Year Two,\119\ and $173,963 in 
+Year Three.\120\ This results in a three-year average annual cost for 
+updated BOIRs of $164,588.
+---------------------------------------------------------------------------
+
+    \115\ See supra notes 91 and 108.
+    \116\ For companies with simple foreign beneficial ownership 
+structures, FinCEN estimated 0.5 hours of labor at a rate of $65.09 
+per hour.
+    \117\ For companies with complex foreign beneficial ownership 
+structures, FinCEN estimated 1.5 hours of labor at a rate of $65.09 
+per hour, plus one hour of professional assistance from an attorney 
+or accountant at a rate of approximately $400 per hour.
+    \118\ 1,043 total reporting company updates, with 75 percent 
+(782) costing $32.54 and 25 percent (261) costing $497.63, results 
+in a total of $155,213 in the first year.
+    \119\ 1,106 total reporting company updates, with 75 percent 
+(830) costing $32.54 and 25 percent (277) costing $497.63, results 
+in a total of $164,588 in the second year.
+    \120\ 1,169 total reporting company updates, with 75 percent 
+(877) costing $32.54 and 25 percent (292) costing $497.63, results 
+in a total of $173,963 in the third year.
+---------------------------------------------------------------------------
+
+2. Individual FinCEN IDs
+    OMB Control Number: 1506-0076.
+    Reporting Requirements: The rule continues to require the 
+collection of information from individuals in order to
+
+[[Page 52527]]
+
+issue them a FinCEN ID.\121\ This is a voluntary collection. The rule 
+requires individuals to report to FinCEN certain information about 
+themselves to receive a FinCEN ID, in accordance with the CTA.\122\ An 
+individual is also required to submit updates of their identifying 
+information as needed. FinCEN stores such information in its BOI 
+database for access by authorized users.
+---------------------------------------------------------------------------
+
+    \121\ FinCEN is not separately calculating a cost estimate for 
+entities requesting a FinCEN ID because FinCEN assumes this would 
+already be accounted for in the process and cost of submitting the 
+BOI reports.
+    \122\ 31 U.S.C. 5336(b)(3)(A)(i); 31 CFR 1010.380(b)(4).
+---------------------------------------------------------------------------
+
+    Frequency: As required.
+    Description of Affected Public: Individuals associated with foreign 
+reporting companies that elect to request an identifier independent of 
+the FinCEN ID requested by the associated company as part of its BOIR 
+submission.
+    For individuals requesting FinCEN IDs, FinCEN acknowledges that 
+anyone who meets the statutory criteria could apply for a FinCEN ID 
+under the rule. However, the primary incentives for individual 
+beneficial owners to apply for a FinCEN ID are likely data security (an 
+individual may see less risk in submitting personal identifiable 
+information to FinCEN directly and exclusively than doing so indirectly 
+through one or more individuals at one or more foreign reporting 
+companies) and administrative efficiency (where an individual is likely 
+to be identified as a beneficial owner of numerous foreign reporting 
+companies). Company applicants who are responsible for registering many 
+foreign reporting companies may have a similar incentive to request a 
+FinCEN ID in order to limit the number of companies with access to 
+their personal information. This reasoning assumes that there is a one-
+to-many relationship between the company applicant and foreign 
+reporting companies.
+i. Individual FinCEN ID Applications
+    Estimated Number of Responses: 4,080 per year, on average.
+    Based on data from foreign reporting company BOIRs received since 
+the IFR, FinCEN estimates that there have been an average of six 
+personal FinCEN IDs associated with each new (foreign) reporting 
+company. However, FinCEN estimates that approximately only ten percent 
+of FinCEN ID applications since the IFR have been associated with 
+foreign persons (as opposed to U.S. persons, who are now exempted from 
+being reported as company applicants). Based on this data, FinCEN 
+estimates 10,080 expected FinCEN ID applications in Year One,\123\ and 
+1,080 in each subsequent year.\124\ This results in a three-year 
+average of 4,080 applications per year.
+---------------------------------------------------------------------------
+
+    \123\ Six FinCEN ID applications for every BOIR implies 100,800 
+FinCEN ID applications for the 16,800 BOIRs in Year One. Ten percent 
+of 100,800 is 10,080.
+    \124\ Six FinCEN ID applications for every BOIR implies 10,800 
+FinCEN ID applications for the 1,800 BOIRs in each subsequent year. 
+Ten percent of 10,800 is 1,080.
+---------------------------------------------------------------------------
+
+    Estimated Time per Response: As discussed in the Reporting 
+Rule,\125\ FinCEN anticipates that each initial FinCEN ID application 
+will require approximately 20 minutes (ten minutes to read the form and 
+understand the information required and ten minutes to fill out and 
+file the request, including attaching an image of an acceptable 
+identification document), given that the information to be submitted to 
+FinCEN will be readily available to the person requesting the FinCEN 
+ID.
+---------------------------------------------------------------------------
+
+    \125\ See Reporting Rule, 87 FR at 59498-99.
+---------------------------------------------------------------------------
+
+    Estimated Aggregate Reporting Burden Hours: 1,360 hours per year, 
+on average.
+    Using the estimates described above, FinCEN estimates that filing 
+FinCEN ID applications in Year One will result in approximately 3,360 
+burden hours for applicants in Year One,\126\ and 360 burden hours in 
+each subsequent year.\127\ The three-year average of burden hours for 
+filing FinCEN ID applications is 1,360 hours.
+---------------------------------------------------------------------------
+
+    \126\ 10,080 total applications, each taking 20 minutes, results 
+in a total of 3,360 hours in the first year.
+    \127\ 1,080 total applications, each taking 20 minutes, results 
+in a total of 360 hours in each subsequent year.
+---------------------------------------------------------------------------
+
+    Estimated Aggregate Reporting Cost: $88,516 per year, on average.
+    Using the wage rates presented in the IFR and discussed above, 
+FinCEN estimates the average cost of filing a FinCEN ID application to 
+be $21.70.\128\ For 10,080 applications in Year One, this results in a 
+cost of $218,686. For 1,080 applications in each subsequent year, this 
+results in a cost of $23,431. Thus, FinCEN estimates a three-year 
+average cost for FinCEN ID applications of $88,516.
+---------------------------------------------------------------------------
+
+    \128\ 20 minutes of labor at a rate of $65.09 per hour. See 
+supra note 91.
+---------------------------------------------------------------------------
+
+ii. Individual FinCEN ID Updates
+    Estimated Number of Responses: 804 per year, on average.
+    In the two years following the opening of the BO IT System, FinCEN 
+received approximately 38,000 updates and corrections for a total of 
+approximately 780,000 active FinCEN IDs--approximately 2.5 percent. As 
+discussed in Section V.E.2.a, in Year One, FinCEN expects 10,080 total 
+applications, plus a total of approximately 21,000 existing FinCEN IDs 
+associated with foreign persons. Assuming 2.5 percent of the 
+applications are updated, this results in an estimated 777 updates in 
+Year One.\129\ In each subsequent year, FinCEN expects 1,080 
+applications. This results in an estimated 804 updates in Year Two and 
+831 in Year Three.\130\ Thus, FinCEN estimates an average of 804 
+updates per year.
+---------------------------------------------------------------------------
+
+    \129\ 31,080 applications x 2.5 percent = 777 updates in Year 
+One.
+    \130\ 1,080 applications x 2.5 percent = 27 additional updates 
+in each subsequent year.
+---------------------------------------------------------------------------
+
+    Estimated Time per Response: As discussed in the Reporting 
+Rule,\131\ FinCEN estimates that updates and corrections will require 
+10 minutes (approximately 0.17 hours), which includes time to fill out 
+and file the update, given that the information to be submitted to 
+FinCEN will be readily available to the person requesting the FinCEN 
+ID.
+---------------------------------------------------------------------------
+
+    \131\ See supra note 125.
+---------------------------------------------------------------------------
+
+    Estimated Aggregate Reporting Burden Hours: 134 hours per year, on 
+average.
+    Using the estimates described above, FinCEN estimates that updating 
+or correcting FinCEN ID application information will result in 
+approximately 129.5 burden hours for applicants in Year One,\132\ 134 
+burden hours in Year Two,\133\ and 138.5 burden hours in Year 
+Three.\134\ Thus, the three-year average annual burden for updates and 
+corrections is 134 hours.
+---------------------------------------------------------------------------
+
+    \132\ 777 total updates, each taking 0.17 hours, results in a 
+total of 129.5 hours in the first year.
+    \133\ 804 total updates, each taking 0.17 hours, results in a 
+total of 134 hours in the second year.
+    \134\ 831 total updates, each taking 0.17 hours, results in a 
+total of 138.5 hours in the third year.
+---------------------------------------------------------------------------
+
+    Estimated Aggregate Reporting Cost: $8,721 per year, on average.
+    Using the wage rates presented in the IFR and discussed above,\135\ 
+FinCEN estimates the average cost of filing a FinCEN ID update to be 
+$10.85.\136\ For 777 updates in Year One, this results in a cost of 
+$8,429. For 804 updates in Year Two, this results in a cost of $8,721. 
+For 831 updates in Year Three, this results in a cost of $9,014. Thus, 
+FinCEN estimates a three-year average cost for updates and corrections 
+of $8,721.
+---------------------------------------------------------------------------
+
+    \135\ See supra note 108.
+    \136\ 10 minutes (0.17 hours) of labor at a rate of $65.09 per 
+hour.
+---------------------------------------------------------------------------
+
+3. Totals
+    Estimated Total Reporting Burden Hours: 10,824 hours per year, on 
+average.
+    Estimated Total Reporting Cost: $2,175,050 per year, on average.
+
+[[Page 52528]]
+
+    No non-labor cost estimates are assigned to these collections of 
+information because FinCEN assumes that reporting companies already 
+have the necessary equipment and tools to comply with the regulatory 
+requirements.
+
+F. Congressional Review Act
+
+    Pursuant to Subtitle E of the Small Business Regulatory Enforcement 
+and Fairness Act of 1996 (also known as the Congressional Review Act or 
+CRA), OMB's Office of Information and Regulatory Affairs has designated 
+this rule a ``major rule,'' for purposes of the CRA.\137\
+---------------------------------------------------------------------------
+
+    \137\ 5 U.S.C. 804(2).
+---------------------------------------------------------------------------
+
+    Under the CRA, such a rule generally may take effect no earlier 
+than 60 days after the rule is published in the Federal Register.\138\ 
+Notwithstanding this requirement, the CRA allows agencies to dispense 
+with the requirements of section 801 when the agency for good cause 
+finds that ``notice and public procedure'' regarding the rule would be 
+impracticable, unnecessary, or contrary to the public interest. If the 
+agency finds such good cause, the rule shall take effect at such time 
+as the agency promulgating the rule determines.\139\ Pursuant to 
+section 808(2), for the reasons discussed in Section IV: Effective Date 
+above, FinCEN for good cause finds that providing public notice or 
+allowing for public comment before this final rule takes effect is 
+impracticable, unnecessary, and contrary to the public interest.
+---------------------------------------------------------------------------
+
+    \138\ 5 U.S.C. 801(a)(3).
+    \139\ 5 U.S.C. 808(2).
+---------------------------------------------------------------------------
+
+G. Executive Order 14294
+
+    Section 5 of Executive Order 14294 directs that all future notices 
+of proposed rulemaking and final rules published in the Federal 
+Register, the violation of which may constitute criminal regulatory 
+offenses, should include a statement identifying that the rule or 
+proposed rule is a criminal regulatory offense and the authorizing 
+statute.\110\ Executive Order 14294 directs agencies to draft this 
+statement in consultation with the Department of Justice.
+    Executive Order 14294 further directs that the regulatory text of 
+all notices of proposed rulemaking and final rules with criminal 
+consequences published in the Federal Register after May 9, 202 should 
+explicitly state a mens rea requirement for each element of a criminal 
+regulatory offense, accompanied by citations to the relevant provisions 
+of the authorizing statute.
+    Willful violations of the regulations set forth in this final rule 
+may be subject to criminal penalties pursuant to 31 U.S.C. 5336(h) and 
+regulations promulgated 31 CFR 1010.380(g). The statutory authority for 
+criminal liability requires a mens rea of willfulness as an element 
+under 31 U.S.C. 5336(h). In drafting this statement, FinCEN has 
+consulted with the Department of Justice.
+
+VI. Severability
+
+    If any of the provisions of this rule, or the application thereof 
+to any person or circumstance, is held to be invalid, such invalidity 
+shall not affect other provisions or application of such provisions to 
+other persons or circumstances that can be given effect without the 
+invalid provision or application.
+
+List of Subjects in 31 CFR Part 1010
+
+    Administrative practice and procedure, Aliens, Authority 
+delegations (Government agencies), Banks, Banking, Brokers, Business 
+and industry, Citizenship and naturalization, Commodity futures, Crime, 
+Currency, Electronic filing, Federal savings associations, Federal-
+State relations, Fiduciaries, Foreign banking, Foreign currencies, 
+Foreign persons, Gambling, Holding companies, Indians, Indians--law, 
+Indians--tribal government, Insurance companies, Investigations, 
+Investment companies, Law enforcement, Penalties, Reporting and 
+recordkeeping requirements, Savings associations, Securities, Small 
+business, Terrorism, Time.
+
+Amendment to FinCEN Regulations
+
+    For the reasons set forth in the preamble, the interim rule 
+amending 31 CFR part 1010 that was published at 90 FR 13688 on March 
+26, 2025, is adopted as final with the following changes.
+
+PART 1010--GENERAL PROVISIONS
+
+0
+1. The authority citation for part 1010 continues to read as follows:
+
+    Authority:  12 U.S.C. 1829b and 1951-1959; 31 U.S.C. 5311-5314, 
+5316-5336; title III, sec. 314 Pub. L. 107-56, 115 Stat. 307; sec. 
+2006, Pub. L. 114-41, 129 Stat. 457; sec. 701 Pub. L. 114-74, 129 
+Stat. 599; sec. 6403, Pub. L. 116-283, 134 Stat. 3388.
+
+
+0
+2. Section 1010.380 is amended by:
+0
+a. Revising paragraph (b)(4)(iii)(A);
+0
+b. Adding paragraph (b)(5); and
+0
+c. Removing paragraph (d)(4).
+    The revision and addition read as follows:
+
+
+Sec.  1010.380  Reports of beneficial ownership information.
+
+* * * * *
+    (b) * * *
+    (4) * * *
+    (iii) * * *
+    (A) Any individual that has obtained a FinCEN identifier and is not 
+a United States person shall update or correct any information 
+previously submitted to FinCEN in an application for such FinCEN 
+identifier.
+    (1) If there is any change with respect to required information 
+previously submitted to FinCEN in such application, the individual that 
+is not a United States person shall file an updated application 
+reflecting such change within 30 calendar days after the date on which 
+such change occurs.
+    (2) If such application was inaccurate when filed and remains 
+inaccurate, the individual that is not a United States person shall 
+file a corrected application correcting all inaccuracies within 30 
+calendar days after the date on which the individual that is not a U.S. 
+person becomes aware or has reason to know of the inaccuracy. A 
+corrected application filed under this paragraph within this 30-day 
+period will be deemed to satisfy 31 U.S.C. 5336(h)(3)(C)(i)(I)(bb) if 
+filed within 90 calendar days after the date on which the inaccurate 
+application was submitted.
+* * * * *
+    (5) Special exemptions. (i) Reporting companies are exempt from any 
+requirement under 31 U.S.C. 5336 and this section to report the 
+beneficial ownership information of any United States persons who are 
+beneficial owners or company applicants.
+    (ii) United States persons are exempt from any requirement under 31 
+U.S.C. 5336 and this section to provide beneficial ownership 
+information with respect to any reporting company for which they are 
+beneficial owners or company applicants.
+* * * * *
+
+Andrea M. Gacki,
+Director, Financial Crimes Enforcement Network.
+[FR Doc. 2026-16576 Filed 8-13-26; 8:45 am]
+BILLING CODE 4810-02-P
+
+
+</pre></body>
+</html>

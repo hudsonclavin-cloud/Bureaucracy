@@ -1,0 +1,291 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 160 (Thursday, August 20, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 160 (Thursday, August 20, 2026)]
+[Rules and Regulations]
+[Pages 53734-53737]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-16988]
+
+
+-----------------------------------------------------------------------
+
+ENVIRONMENTAL PROTECTION AGENCY
+
+40 CFR Part 300
+
+[EPA-HQ-OLEM-2025-0182; EPA-HQ-OLEM-2025-1146; EPA-HQ-OLEM-2025-3819; 
+EPA-HQ-OLEM-2026-0001; EPA-HQ-OLEM-2026-0002; EPA-HQ-OLEM-2026-0003; 
+EPA-HQ-OLEM-2026-0004; EPA-HQ-OLEM-2026-0166; FRL-13154-02-OLEM]
+
+
+Deletion From the National Priorities List
+
+AGENCY: Environmental Protection Agency (EPA).
+
+ACTION: Final rule.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The Environmental Protection Agency (EPA) announces the 
+deletion of six sites and the partial deletion of two sites, from the 
+Superfund National Priorities List (NPL). The NPL, created under the 
+Comprehensive Environmental Response, Compensation, and Liability Act 
+(CERCLA) of 1980, as amended, is an appendix of the National Oil and 
+Hazardous Substances Pollution Contingency Plan (NCP). In accordance 
+with the NCP, sites may be deleted from the NPL where no further 
+response is appropriate. The EPA and the applicable states, through 
+their designated state agency, have determined that all appropriate 
+response actions under CERCLA have been completed. However, this 
+deletion does not preclude future actions under Superfund.
+
+DATES: The document is effective August 20, 2026.
+
+ADDRESSES: 
+    Docket: EPA has established a docket for this action under the 
+Docket ID Nos. included in table 1 in the SUPPLEMENTARY INFORMATION 
+section of this document. All documents in the docket are listed on the 
+<a href="https://www.regulations.gov">https://www.regulations.gov</a> website. The Final Close-Out Report (FCOR, 
+for a full site deletion) or the Partial Deletion Justification (PDJ, 
+for a partial site deletion) is the primary document which summarizes 
+site information to support the deletion. It is typically written for a 
+broad, non-technical audience and this document is included in the 
+deletion docket for each of the sites in this rulemaking. Although 
+listed in the index, some information is not publicly available, i.e., 
+Confidential Business Information (CBI) or other information whose 
+disclosure is restricted by statute. Certain other material, such as 
+copyrighted material, is not placed on the internet and will be 
+publicly available only in hard copy
+
+[[Page 53735]]
+
+form. Docket materials are available through <a href="https://www.regulations.gov">https://www.regulations.gov</a> or at the corresponding Regional Records Centers. 
+Locations, addresses, and phone numbers of the Regional Records Center 
+follows.
+    <bullet> Region 2 (NJ, NY, PR, VI), U.S. EPA, 290 Broadway, New 
+York, NY 10007-1866; telephone number: (212) 637-4308.
+    <bullet> Region 4 (AL, FL, GA, KY, MS, NC, SC, TN), U.S. EPA, 61 
+Forsyth Street SW, Mail code 9T25, Atlanta, GA 30303; telephone number: 
+(404) 562-8637.
+    <bullet> Region 5 (IL, IN, MI, MN, OH, WI), U.S. EPA Superfund 
+Division Records Manager, Mail code SRC-7J, Metcalfe Federal Building, 
+7th Floor South, 77 West Jackson Boulevard, Chicago, IL 60604; 
+telephone number: (312) 886-4465.
+    <bullet> Region 7 (IA, KS, MO, NE), U.S. EPA, 11201 Renner Blvd., 
+Lenexa, KS 66219; telephone number: (913) 551-7079.
+    <bullet> EPA Headquarters Docket Center Reading Room (deletion 
+dockets for all States), William Jefferson Clinton (WJC) West Building, 
+Room 3334, 1301 Constitution Avenue NW, Washington, DC 20004; telephone 
+number: (202) 566-1744.
+    EPA staff listed below in the FOR FURTHER INFORMATION CONTACT 
+section may assist the public in answering inquiries about deleted 
+sites, accessing deletion support documentation, and determining 
+whether there are additional physical deletion dockets available.
+
+FOR FURTHER INFORMATION CONTACT: 
+    <bullet> Grace Stern and Robert Keating, U.S. EPA Region 2 (NJ, NY, 
+PR, VI), email address: <a href="/cdn-cgi/l/email-protection#fa898e9f8894d49d889b999fba9f8a9bd49d958c"><span class="__cf_email__" data-cfemail="fa898e9f8894d49d889b999fba9f8a9bd49d958c">[email&#160;protected]</span></a>, telephone number: (212) 
+637-4341; email address: <a href="/cdn-cgi/l/email-protection#1b707e7a6f72757c356974797e696f5b7e6b7a357c746d"><span class="__cf_email__" data-cfemail="c7aca2a6b3aea9a0e9b5a8a5a2b5b387a2b7a6e9a0a8b1">[email&#160;protected]</span></a>, telephone number: 
+(212) 637-4325.
+    <bullet> Alayna Famble, U.S. EPA Region 4 (AL, FL, GA, KY, MS, NC, 
+SC, TN), email address: <a href="/cdn-cgi/l/email-protection#5137303c333d347f303d30283f30113421307f363e27"><span class="__cf_email__" data-cfemail="046265696668612a6568657d6a65446174652a636b72">[email&#160;protected]</span></a>, telephone number: (404) 
+562-8768.
+    <bullet> Karen Cibulskis, U.S. EPA Region 5 (IL, IN, MI, MN, OH, 
+WI), email address: <a href="/cdn-cgi/l/email-protection#fc9f959e89908f97958fd2979d8e9992bc998c9dd29b938a"><span class="__cf_email__" data-cfemail="7e1d171c0b120d15170d50151f0c1b103e1b0e1f50191108">[email&#160;protected]</span></a>, telephone number: (312) 
+886-1843.
+    <bullet> Laura Price and Peyton Witham, U.S. EPA Region 7 (IA, KS, 
+MO, NE), email address: <a href="/cdn-cgi/l/email-protection#3e4e4c575d5b10525f4b4c5f7e5b4e5f10595148"><span class="__cf_email__" data-cfemail="69191b000a0c4705081c1b08290c1908470e061f">[email&#160;protected]</span></a>, telephone number: (913) 
+551-7130; email address: <a href="/cdn-cgi/l/email-protection#6c1b0518040d01421c09151803022c091c0d420b031a"><span class="__cf_email__" data-cfemail="63140a170b020e4d13061a170c0d230613024d040c15">[email&#160;protected]</span></a>, telephone number: (816) 
+947-0470.
+    <bullet> Ashley Miller, Matt Spencer, and Jyl Lapachin, U.S. EPA 
+Headquarters, email address: <a href="/cdn-cgi/l/email-protection#49242025252c3b67283a21252c30092c3928672e263f"><span class="__cf_email__" data-cfemail="214c484d4d44530f4052494d4458614451400f464e57">[email&#160;protected]</span></a>, telephone number: 
+(202) 566-1084; email address: <a href="/cdn-cgi/l/email-protection#0e7d7e6b606d6b7c20636f7a7a666b794e6b7e6f20696178"><span class="__cf_email__" data-cfemail="91e2e1f4fff2f4e3bffcf0e5e5f9f4e6d1f4e1f0bff6fee7">[email&#160;protected]</span></a>, telephone 
+number: (202) 566-1851; email address: <a href="/cdn-cgi/l/email-protection#dab6bbaabbb9b2b3b4f4b0a3b69abfaabbf4bdb5ac"><span class="__cf_email__" data-cfemail="cfa3aebfaeaca7a6a1e1a5b6a38faabfaee1a8a0b9">[email&#160;protected]</span></a>, telephone 
+number: (703) 304-8510.
+
+SUPPLEMENTARY INFORMATION: The NPL, created under section 105 of 
+CERCLA, as amended, is an appendix of the NCP. The NCP establishes the 
+criteria that EPA uses to delete sites from the NPL. In accordance with 
+40 CFR 300.425(e), sites may be deleted from the NPL where no further 
+response is appropriate. Partial deletion of sites is in accordance 
+with 40 CFR 300.425(e) and is consistent with the Notice of Policy 
+Change: Partial Deletion of Sites Listed on the National Priorities 
+List, 60 FR 55466 (November 1, 1995). The sites to be deleted or 
+partially deleted are listed in table 1, including docket information 
+containing reference documents with the rationale and data principally 
+relied upon by the EPA to determine that the Superfund response is 
+complete. The NCP permits activities to occur at a deleted site, or 
+that media or parcel of a partially deleted site, including operation 
+and maintenance of the remedy, monitoring, and five-year reviews. These 
+activities for the site are entered in table 1 in this SUPPLEMENTARY 
+INFORMATION section, if applicable, under Footnote such that; 1= site, 
+or portion of the site, has continued operation and maintenance of the 
+remedy, 2= site, or portion of the site, receives continued monitoring, 
+and 3= site, or portion of the site, five-year reviews are conducted. 
+As described in 40 CFR 300.425(e)(3) of the NCP, a site or portion of a 
+site deleted from the NPL remains eligible for Fund-financed remedial 
+action if future conditions warrant such actions.
+
+                                                     Table 1
+----------------------------------------------------------------------------------------------------------------
+            Site name               City/county, state            Type               Docket No.        Footnote
+----------------------------------------------------------------------------------------------------------------
+Velsicol Chemical Corp.            Marshall, IL........  Partial..............  EPA-HQ-OLEM-2025-018   (\1\ \3\)
+ (Illinois).                                                                     2.
+Rowe Industries Gnd Water          Noyack/Sag Harbor,    Full.................  EPA-HQ-OLEM-2025-114
+ Contamination.                     NY.                                          6.
+Kerr-McGee (Kress Creek/W Branch   DuPage County, IL...  Full.................  EPA-HQ-OLEM-2025-381
+ DuPage).                                                                        9.
+Caldwell Lace Leather Co., Inc...  Auburn, KY..........  Full.................  EPA-HQ-OLEM-2026-000
+                                                                                 1.
+Pepper Steel & Alloys, Inc.......  Medley, FL..........  Full.................  EPA-HQ-OLEM-2026-000    (\1\ \2\
+                                                                                 2.                         \3\)
+Miami Drum Services..............  Miami, FL...........  Full.................  EPA-HQ-OLEM-2026-000
+                                                                                 3.
+Diamond Shamrock Corp. Landfill..  Cedartown, GA.......  Full.................  EPA-HQ-OLEM-2026-000
+                                                                                 4.
+Hastings Ground Water              Hastings, NE........  Partial..............  EPA-HQ-OLEM-2026-016   (\1\ \3\)
+ Contamination.                                                                  6.
+----------------------------------------------------------------------------------------------------------------
+\1\ = Site, or portion of the site, has continued operation and maintenance of the remedy.
+\2\ = Site, or portion of the site, receives continued monitoring.
+\3\ = Site, or portion of the site, five-year reviews are conducted.
+
+    Information concerning the sites to be deleted and partially 
+deleted from the NPL, and the proposed rule for the deletion and 
+partial deletion of the sites, are included in table 2.
+
+                                                                         Table 2
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                                                                                                    Full site deletion
+                                       Date, proposed                                                                            (full) or media/parcels/
+              Site name                     rule         FR citation          Public comment           Responsiveness summary         description for
+                                                                                                                                     partial deletion
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+Velsicol Chemical Corp. (Illinois)...      03/04/2026     91-FR-10557  Yes........................  No.........................  270-acre land/soils
+                                                                                                                                  portion of the Site.
+
+[[Page 53736]]
+
+ 
+Rowe Industries Gnd Water                  03/04/2026     91-FR-10557  No.........................  No.........................  Full.
+ Contamination.
+Kerr-McGee (Kress Creek/W Branch           03/04/2026     91-FR-10557  No.........................  No.........................  Full.
+ DuPage).
+Caldwell Lace Leather Co., Inc.......      03/04/2026     91-FR-10557  No.........................  No.........................  Full.
+Pepper Steel & Alloys, Inc...........      03/04/2026     91-FR-10557  No.........................  No.........................  Full.
+Miami Drum Services..................      03/04/2026     91-FR-10557  No.........................  No.........................  Full.
+Diamond Shamrock Corp. Landfill......      03/04/2026     91-FR-10557  No.........................  No.........................  Full.
+Hastings Ground Water Contamination..      03/04/2026     91-FR-10557  No.........................  No.........................  Groundwater at Operable
+                                                                                                                                  Unit 2 and the Source
+                                                                                                                                  Control Landfill Cap
+                                                                                                                                  at Operable Unit 10,
+                                                                                                                                  collectively known as
+                                                                                                                                  the North Landfill
+                                                                                                                                  subsite.
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    For the sites proposed for deletion and partial deletion, the 
+closing date for comments in the proposed rule was April 03, 2026. The 
+EPA received one public comment which was submitted to the docket for 
+the Velsicol Chemical Corp. (Illinois) site. The comment was supportive 
+of all the proposed deletion actions in the rule and was not site-
+specific. EPA did not consider the submission to be an adverse public 
+comment, and no Responsiveness Summary was prepared. The EPA placed the 
+public comment submission for the Velsicol Chemical Corp. (Illinois) 
+site in the docket specified in table 1, on <a href="https://www.regulations.gov">https://www.regulations.gov</a>, and in the appropriate Regional Records Center 
+listed in the ADDRESSES section.
+    The EPA maintains the NPL as the list of sites that appear to 
+present a significant risk to public health, welfare, or the 
+environment. Deletion from the NPL does not preclude further remedial 
+action. Whenever there is a significant release from a site deleted 
+from the NPL, the deleted site may be restored to the NPL without 
+application of the hazard ranking system. Deletion of a site from the 
+NPL does not affect responsible party liability in the unlikely event 
+that future conditions warrant further actions.
+
+List of Subjects in 40 CFR Part 300
+
+    Environmental protection, Air pollution control, Chemicals, 
+Hazardous substances, Hazardous waste, Intergovernmental relations, 
+Natural resources, Oil pollution, Penalties, Reporting and 
+recordkeeping requirements, Superfund, Water pollution control, Water 
+supply.
+
+Mark Barolo,
+Office Director, Office of Superfund and Emergency Management.
+
+    For reasons set out in the preamble, the EPA amends 40 CFR part 300 
+as follows:
+
+PART 300--NATIONAL OIL AND HAZARDOUS SUBSTANCES POLLUTION 
+CONTINGENCY PLAN
+
+0
+1. The authority citation for part 300 continues to read as follows:
+
+    Authority: 33 U.S.C. 1251 et seq.; 42 U.S.C. 9601-9657; E.O. 
+13626, 77 FR 56749, 3 CFR, 2013 Comp., p. 306; E.O. 12777, 56 FR 
+54757, 3 CFR, 1991 Comp., p. 351; E.O. 12580, 52 FR 2923, 3 CFR, 
+1987 Comp., p. 193.
+
+
+0
+2. In appendix B to part 300, amend table 1 by:
+0
+a. Removing the entry for ``FL'', ``Miami Drum Services'', ``Miami''.
+0
+b. Removing the entry for ``FL'', ``Pepper Steel & Alloys, Inc'', 
+``Medley''.
+0
+c. Removing the entry for ``GA'', ``Diamond Shamrock Corp. Landfill'', 
+``Cedartown''.
+0
+d. Removing the entry for ``IL'', ``Kerr-McGee (Kress Creek/W Branch 
+DuPage)'', ``DuPage County''.
+0
+e. Revising the entry for ``IL'', ``Velsicol Chemical Corp. 
+(Illinois)'', ``Marshall''.
+0
+f. Removing the entry for ``KY'', ``Caldwell Lace Leather Co., Inc'', 
+``Auburn''.
+0
+g. Revising the entry for ``NE'', ``Hastings Ground Water 
+Contamination'', ``Hastings''.
+0
+h. Removing the entry for ``NY'', ``Rowe Industries Gnd Water 
+Contamination'', Noyack/Sag Harbor''.
+    The revisions read as follows:
+
+Appendix B to Part 300--National Priorities List
+
+                                       Table 1--General Superfund Section
+----------------------------------------------------------------------------------------------------------------
+               State                          Site name                 City/county              Notes (a)
+----------------------------------------------------------------------------------------------------------------
+ 
+                                                  * * * * * * *
+IL.................................  Velsicol Chemical Corp.      Marshall..............  P.
+                                      (Illinois).
+ 
+                                                  * * * * * * *
+NE.................................  Hastings Ground Water        Hastings..............  P.
+                                      Contamination.
+ 
+                                                  * * * * * * *
+----------------------------------------------------------------------------------------------------------------
+ * * * * * * *
+P = Sites with partial deletion(s).
+
+
+[[Page 53737]]
+
+* * * * *
+[FR Doc. 2026-16988 Filed 8-19-26; 8:45 am]
+BILLING CODE 6560-50-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

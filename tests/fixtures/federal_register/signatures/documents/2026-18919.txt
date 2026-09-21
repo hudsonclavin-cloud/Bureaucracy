@@ -1,0 +1,109 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 178 (Wednesday, September 16, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 178 (Wednesday, September 16, 2026)]
+[Notices]
+[Pages 58662-58663]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-18919]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+DEPARTMENT OF DEFENSE
+
+Office of the Secretary of Defense
+
+[Docket ID: DOD-2026-OS-1948]
+
+
+Privacy Act of 1974; System of Records
+
+AGENCY: Office of the Secretary of Defense (OSD), Department of Defense 
+(DoD).
+
+ACTION: Rescindment of a system of records notice.
+
+-----------------------------------------------------------------------
+
+SUMMARY: In accordance with the Privacy Act of 1974, the OSD is 
+providing notice to rescind a system of records (SORN) titled 
+``Commercial Travel Information Management System (CTIM),'' DHRA 14 
+DoD. The CTIM was established as a repository to collect, maintain, and 
+use DoD travel records from both the Defense Travel System (DTS) and 
+commercial travel vendors. This centralized system is used to satisfy 
+reporting requirements, ensure traveler safety, assist in resource 
+planning, detect fraud, and provide customer support for all DoD 
+official travel-related services.
+
+DATES: The rescindment of this SORNs is effective September 16, 2026.
+
+ADDRESSES: You may submit comments, identified by docket number and 
+title, by either of the following methods:
+    * Federal Rulemaking Portal: <a href="https://www.regulations.gov">https://www.regulations.gov</a>. Follow 
+the instructions for submitting comments.
+    * Mail: Department of Defense, Office of the Director of 
+Administration and Management, Oversight and Compliance Directorate, 
+Regulatory Division, 4800 Mark Center Drive, Mailbox #24, Suite 05F16, 
+Alexandria, VA 22350-1700.
+    Instructions: All submissions received must include the agency name 
+and docket number for this Federal Register document. The general 
+policy for comments and other submissions from members of the public is 
+to make these submissions available for public viewing on the internet 
+at <a href="https://www.regulations.gov">https://www.regulations.gov</a> as they are received without change, 
+including any personal identifiers or contact information.
+
+FOR FURTHER INFORMATION CONTACT: Samuel Peterson, DHRA Component 
+Privacy Officer, 400 Gigling Rd, Rm DODC-MB 7028, Seaside, CA 93955, 
+<a href="/cdn-cgi/l/email-protection#debab1bab6acbff0b3bdf3bfb2bba6f0bab6acbff3b6aff0b3bca6f0aeacb7a8bfbda79eb3bfb7b2f0b3b7b2"><span class="__cf_email__" data-cfemail="5f3b303b372d3e71323c723e333a27713b372d3e72372e71323d27712f2d36293e3c261f323e363371323633">[email&#160;protected]</span></a> or 831-220-7330.
+
+SUPPLEMENTARY INFORMATION:
+
+I. Background
+
+    The Commercial Travel Information Management System, DHRA 14 DoD 
+(September 23, 2020, 85 FR 59759) was established as a repository to 
+collect, maintain, and use DoD travel records from both the DTS and 
+commercial travel vendors. This centralized system is used to satisfy 
+reporting requirements, ensure traveler safety, assist in resource 
+planning, detect fraud, and provide customer support for all DoD 
+official travel-related services. The OSD is rescinding DHRA 14 DoD 
+Commercial Travel Information Management System (CTIM) because the 
+records are covered under the Defense Travel System, DHRA 08 DoD.
+    DoD SORN have been published in the Federal Register and are 
+available at the Oversight and Compliance Directorate website at 
+<a href="https://doc.defense.gov/DIRECTORATES/Privacy-and-Civil-Liberties-Directorate/Privacy/SORNs/">https://doc.defense.gov/DIRECTORATES/Privacy-and-Civil-Liberties-Directorate/Privacy/SORNs/</a>.
+
+II. Privacy Act
+
+    Under the Privacy Act, a ``system of records'' is a group of 
+records under the control of an agency from which information is 
+retrieved by the name of an individual or by some identifying
+
+[[Page 58663]]
+
+number, symbol, or other identifying particular assigned to the 
+individual. In the Privacy Act, an individual is defined as a U.S. 
+citizen or alien lawfully admitted for permanent residence.
+    In accordance with 5 U.S.C. 552a(r) and Office of Management and 
+Budget (OMB) Circular No. A-108, DoW has provided a report of this 
+rescindment to OMB and Congress.
+SYSTEM NAME AND NUMBER:
+    Commercial Travel Information Management System (CTIM), DHRA 14 
+DoD.
+
+HISTORY:
+    September 23, 2020, 85 FR 59759.
+
+     Dated: September 11, 2026.
+Stephanie J. Bost,
+Alternate OSD Federal Register Liaison Officer, Department of Defense.
+[FR Doc. 2026-18919 Filed 9-15-26; 8:45 am]
+BILLING CODE 6001-FR-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

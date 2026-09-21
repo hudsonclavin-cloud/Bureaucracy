@@ -1,0 +1,174 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 181 (Monday, September 21, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 181 (Monday, September 21, 2026)]
+[Notices]
+[Pages 59822-59823]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-19220]
+
+
+-----------------------------------------------------------------------
+
+SECURITIES AND EXCHANGE COMMISSION
+
+[Release No. 34-106392; File No. 4-698]
+
+
+Joint Industry Plan; Notice of Filing and Immediate Effectiveness 
+of Amendment to the National Market System Plan Governing the 
+Consolidated Audit Trail To Add MX2 LLC as a Participant
+
+September 16, 2026.
+    Pursuant to Section 11A(a)(3) of the Securities Exchange Act of 
+1934 (``Exchange Act'') \1\ and Rule 608 thereunder,\2\ notice is 
+hereby given that on September 3, 2026, MX2 LLC (``MX2'' or the 
+``Exchange'') filed with the Securities and Exchange Commission 
+(``Commission'') an amendment to the National Market System Plan 
+Governing the Consolidated Audit Trail (the ``CAT NMS Plan'' or 
+``Plan'').\3\ The amendment adds MX2 as a Participant \4\ to the CAT 
+NMS Plan. The Commission is publishing this notice to solicit comments 
+on the amendment from interested persons.
+---------------------------------------------------------------------------
+
+    \1\ 15 U.S.C. 78k-1(a)(3).
+    \2\ 17 CFR 242.608.
+    \3\ See Securities Exchange Act Release No. 79318 (Nov. 15, 
+2016), 81 FR 84696 (Nov. 23, 2016).
+    \4\ The Participants to the CAT NMS Plan include 24X National 
+Exchange, BOX Exchange LLC, Cboe BYX Exchange, Inc., Cboe BZX 
+Exchange, Inc., Cboe C2 Exchange, Inc., Cboe EDGA Exchange, Inc., 
+Cboe EDGX Exchange, Inc., Cboe Exchange, Inc., Financial Industry 
+Regulatory Authority, Inc., Investors Exchange LLC, Long-Term Stock 
+Exchange, Inc., MEMX LLC, Miami International Securities Exchange 
+LLC, MIAX Emerald, LLC, MIAX PEARL, LLC, MIAX Sapphire, LLC, Nasdaq 
+GEMX, LLC, Nasdaq ISE, LLC, Nasdaq MRX, LLC, Nasdaq PHLX LLC, The 
+Nasdaq Stock Market LLC, Nasdaq Texas, LLC, New York Stock Exchange 
+LLC, NYSE American LLC, NYSE Arca, Inc., NYSE National, Inc., NYSE 
+Texas, Inc, and Texas Stock Exchange LLC.
+---------------------------------------------------------------------------
+
+I. Description and Purpose of the Amendment
+
+    The amendment to the CAT NMS Plan adds MX2 as a Participant.\5\ The 
+CAT NMS Plan provides that any Person \6\ approved by the Commission as 
+a national securities exchange or
+
+[[Page 59823]]
+
+national securities association under the Exchange Act may become a 
+Participant by submitting to the Company \7\ a completed application in 
+the form provided by the Company.\8\ As a condition to admission as a 
+Participant, said Person shall: (i) execute a counterpart of the CAT 
+NMS Plan, at which time Exhibit A shall be amended to reflect the 
+status of said Person as a Participant (including said Person's address 
+for purposes of notices delivered pursuant to the CAT NMS Plan); and 
+(ii) pay a fee to the Company as set forth in the Plan (the 
+``Participation Fee'').\9\ The amendment to the Plan reflecting the 
+admission of a new Participant shall be effective only when: (x) it is 
+approved by the Commission in accordance with Rule 608 or otherwise 
+becomes effective pursuant to Rule 608; and (y) the prospective 
+Participant pays the Participation Fee.\10\
+---------------------------------------------------------------------------
+
+    \5\ Defined in Section 1.1 of the CAT NMS Plan as follows: 
+```Participant'' means each Person identified as such on Exhibit A 
+hereto, and any Person that becomes a Participant as permitted by 
+this Agreement, in such Person's capacity as a Participant in the 
+Company (it being understood that the Participants shall comprise 
+the `members' of the Company (as the term `member' is defined in 
+Section 18-101(11) of the Delaware Act)).''
+    \6\ Defined in Section 1.1 of the CAT NMS Plan as follows: 
+``Person'' means any individual, partnership, limited liability 
+company, corporation, joint venture, trust, business trust, 
+cooperative or association and any heirs, executors, administrators, 
+legal representatives, successors and assigns of such Person where 
+the context so permits.
+    \7\ The ``Company'' refers to the limited liability company, 
+Consolidated Audit Trail, LLC, which is responsible for conducting 
+the activities of the CAT. See Securities Exchange Act Release No. 
+87149 (Sept. 27, 2019), 84 FR 52905 (Oct. 3, 2019).
+    \8\ See Section 3.3(a) of the CAT NMS Plan. MX2 was approved for 
+registration as a national securities exchange on March 13, 2025. 
+See Securities Exchange Act Release No. 102650 (Mar. 13, 2025), 90 
+FR 12590 (Mar. 18, 2025).
+    \9\ See Section 3.3(a) of the CAT NMS Plan.
+    \10\ Id.
+---------------------------------------------------------------------------
+
+    MX2 has executed a copy of the current CAT NMS Plan, amended to 
+include MX2 in the List of Parties (including the address of MX2) and 
+paid the applicable Participation Fee.\11\
+---------------------------------------------------------------------------
+
+    \11\ See Letter from Anders Franzon, General Counsel, MX LLC, to 
+Vanessa Countryman, Secretary, Commission (Sept. 3, 2026).
+---------------------------------------------------------------------------
+
+II. Effectiveness of the Proposed Plan Amendment
+
+    The foregoing CAT NMS Plan amendment has become effective pursuant 
+to Rule 608(b)(3)(iii) \12\ because it involves solely technical or 
+ministerial matters. At any time within sixty days of the filing of 
+this amendment, the Commission may summarily abrogate the amendment and 
+require that it be refiled pursuant to paragraph (a)(1) of Rule 
+608,\13\ if it appears to the Commission that such action is necessary 
+or appropriate in the public interest, for the protection of investors 
+or the maintenance of fair and orderly markets, to remove impediments 
+to, and perfect the mechanisms of, a national market system or 
+otherwise in furtherance of the purposes of the Exchange Act.
+---------------------------------------------------------------------------
+
+    \12\ 17 CFR 242.608(b)(3)(iii).
+    \13\ 17 CFR 242.608(a)(1).
+---------------------------------------------------------------------------
+
+III. Solicitation of Comments
+
+    Interested persons are invited to submit written data, views, and 
+arguments concerning the foregoing, including whether the proposed rule 
+change is consistent with the Exchange Act. Comments may be submitted 
+by any of the following methods:
+
+Electronic Comments
+
+    <bullet> Use the Commission's internet comment form (<a href="https://www.sec.gov/rules/sro.shtml">https://www.sec.gov/rules/sro.shtml</a>); or
+    <bullet> Send an email to <a href="/cdn-cgi/l/email-protection#186a6d747d357b7775757d766c6b586b7d7b367f776e"><span class="__cf_email__" data-cfemail="5022253c357d333f3d3d353e2423102335337e373f26">[email&#160;protected]</span></a>. Please include 
+file number 4-698 on the subject line.
+
+Paper Comments
+
+    <bullet> Send paper comments in triplicate to Secretary, Securities 
+and Exchange Commission, 100 F Street NE, Washington, DC 20549-1090.
+
+All submissions should refer to file number 4-698. This file number 
+should be included on the subject line if email is used. To help the 
+Commission process and review your comments more efficiently, please 
+use only one method. The Commission will post all comments on the 
+Commission's internet website (<a href="https://www.sec.gov/rules/sro.shtml">https://www.sec.gov/rules/sro.shtml</a>). 
+Copies of the filing will be available for inspection and copying at 
+the principal office of the Exchange. Do not include personal 
+identifiable information in submissions; you should submit only 
+information that you wish to make available publicly. We may redact in 
+part or withhold entirely from publication submitted material that is 
+obscene or subject to copyright protection. All submissions should 
+refer to file number 4-698 and should be submitted on or before October 
+9, 2026.
+
+    For the Commission, by the Division of Trading and Markets, 
+pursuant to delegated authority.\14\
+---------------------------------------------------------------------------
+
+    \14\ 17 CFR 200.30-3(a)(85).
+---------------------------------------------------------------------------
+
+Sherry R. Haywood,
+Assistant Secretary.
+[FR Doc. 2026-19220 Filed 9-18-26; 8:45 am]
+BILLING CODE 8011-01-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

@@ -1,0 +1,2176 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 180 (Friday, September 18, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 180 (Friday, September 18, 2026)]
+[Notices]
+[Pages 59199-59216]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-19139]
+
+
+-----------------------------------------------------------------------
+
+SECURITIES AND EXCHANGE COMMISSION
+
+[Release No. 34-106370; File No. SR-NYSEARCA-2026-93]
+
+
+Self-Regulatory Organizations; NYSE Arca, Inc.; Notice of Filing 
+of a Proposed Rule Change To Permit the Listing of Binary KPI Options
+
+September 15, 2026.
+    Pursuant to Section 19(b)(1) \1\ of the Securities Exchange Act of 
+1934 (``Act''),\2\ and Rule 19b-4 thereunder,\3\ notice is hereby given 
+that on September 3, 2026, NYSE Arca, Inc. (``NYSE Arca'' or the 
+``Exchange'') filed with the Securities and Exchange Commission 
+(``Commission'') a proposed rule change as described in Items I and II 
+below, which Items have been prepared by the Exchange. The Commission 
+is publishing this notice to solicit comments on the proposed rule 
+change from interested persons.
+---------------------------------------------------------------------------
+
+    \1\ 15 U.S.C. 78s(b)(1).
+    \2\ 15 U.S.C. 78a.
+    \3\ 17 CFR 240.19b-4.
+---------------------------------------------------------------------------
+
+I. Self-Regulatory Organization's Statement of the Terms of Substance 
+of the Proposed Rule Change
+
+    The Exchange proposes to amend its Rules to permit the listing of 
+binary options overlying key performance indicators (``KPIs'') reported 
+by certain issuers of stock (``binary KPI options''). The proposed rule 
+change is available on the Exchange's website at
+
+[[Page 59200]]
+
+<a href="http://www.nyse.com">www.nyse.com</a> and at the principal office of the Exchange.
+
+II. Self-Regulatory Organization's Statement of the Purpose of, and 
+Statutory Basis for, the Proposed Rule Change
+
+    In its filing with the Commission, the self-regulatory organization 
+included statements concerning the purpose of, and basis for, the 
+proposed rule change and discussed any comments it received on the 
+proposed rule change. The text of those statements may be examined at 
+the places specified in Item IV below. The Exchange has prepared 
+summaries, set forth in sections A, B, and C below, of the most 
+significant parts of such statements.
+
+A. Self-Regulatory Organization's Statement of the Purpose of, and the 
+Statutory Basis for, the Proposed Rule Change
+
+1. Purpose
+    The Exchange proposes to amend its Rules to permit the listing of 
+binary options overlying KPIs reported by certain issuers of stock 
+(``binary KPI options'').\4\
+---------------------------------------------------------------------------
+
+    \4\ The Exchange's proposal is similar to recent proposals filed 
+by Cboe Exchange, Inc. (``Cboe'') and MEMX LLC (``MEMX''). See 
+Securities Exchange Act Release No. 105877 (July 10, 2026), 91 FR 
+43418 (July 15, 2026) (SR-CBOE-2026-061) (``Notice of Filing of a 
+Proposed Rule Change to Amend its Rules to Permit the Listing of 
+Binary Options Overlying Key Performance Indicators (``KPIs'') 
+Reported by Certain Issuers of Stock (``Binary KPI Options'')) and 
+Securities Exchange Act Release No. 106182 (August 24, 2026) (SR-
+MEMX-2026-25). In addition, the Exchange notes that the proposal is 
+similar to the trading of Broad-Based Index Binary Options approved 
+on its related options exchange NYSE American (see NYSE American 
+Rules 18 (Broad-Based Index Binary Options\sm\).
+---------------------------------------------------------------------------
+
+    Binary options are based on the same framework as traditional, 
+standardized options traded on the Exchange, except the payout of a 
+binary option is an amount contingent upon the occurrence of the option 
+being in- or at-the-money rather than the degree to which the option is 
+in-the-money. As a result, payout at expiration of a binary option is 
+an all-or-nothing occurrence.
+    Under current Exchange Rules, the Exchange may list binary return 
+derivatives (``ByRDS'').\5\ The Exchange proposes to amend its Rules to 
+permit the listing of binary KPI options. Binary KPI options are 
+European-style, cash-settled options contracts listed on an underlying 
+KPI of an issuer whose exercise settlement value is determined not by 
+the market price of the issuer's stock, but by whether a specific 
+financial or operating metric reported by the issuer in an earnings-
+related filing submitted to the U.S. Securities and Exchange Commission 
+(the ``Commission'') meets or exceeds a pre-specified strike level.
+---------------------------------------------------------------------------
+
+    \5\ See NYSE ARCA Rules Section 8 (Binary Return 
+Derivatives\sm\).
+---------------------------------------------------------------------------
+
+    First, similar to ByRDS and NYSE American Options Broad-Based Index 
+Binary Options, the Exchange proposes to adopt Section 9 (Binary KPI 
+Options) to describe binary KPI options. The Rules in proposed Section 
+9 apply only to binary KPI options. All other Rules apply to the 
+trading of binary KPI options, except as otherwise provided or the 
+context otherwise requires.
+    Specifically, the Exchange proposes to adopt Rule 5.96-O 
+(Applicability, Definitions). Like other standardized options, binary 
+KPI options have standardized terms that are established by the 
+Exchange. Standardized terms for binary KPI options include the 
+exercise criteria that is the condition or criteria of a binary KPI 
+option, the exercise settlement amount (i.e., payout amount), strike 
+prices, expiration dates, settlement type as A.M.-settlement or P.M.-
+settlement, the settlement style (as European), and the requirements 
+used to determine if the KPI condition or criteria of a binary KPI 
+option has been met (the ``payout determination requirement''). The 
+Exchange proposes to establish these terms in new Rule 5.96-O and 
+additional provisions in proposed 5.96-O(b), as described below.
+    The Exchange proposes to define a ``binary KPI option'' in new Rule 
+5.96-O(b) as a cash-settled option contract listed on an underlying KPI 
+of an issuer with an exercise settlement amount that is established at 
+the creation of the option and with a settlement value that is 
+determined by whether a specific KPI disclosed by the issuer in an 
+earnings-related filing submitted to the Commission meets or exceeds 
+its exercise price. Binary KPI options are paid out if the reported 
+value of the applicable KPI (1) equals or is greater than (as the 
+payout determination requirement) the exercise price for a call binary 
+KPI option or (2) is less than (as the payout determination 
+requirement) the exercise price for a put binary KPI option. The 
+Exchange also proposes to provide that unless the context dictates 
+otherwise, the terms underlying security, equity, or index, or any 
+variations of these terms, in the Rules mean KPI for purposes of binary 
+KPI options.
+    The Exchange proposes to define a ``call binary KPI option'' as an 
+option contract that returns an exercise settlement amount if the 
+settlement value of the underlying KPI is at or above the exercise 
+price at expiration (i.e., in- or at-the-money).\6\
+---------------------------------------------------------------------------
+
+    \6\ See proposed Rule 5.96-O(b)(2).
+---------------------------------------------------------------------------
+
+    The term ``Clearing Corporation'' would mean the registered 
+clearing agency designated by the Exchange to clear binary KPI 
+options.\7\
+---------------------------------------------------------------------------
+
+    \7\ See proposed Rule 5.96-O(b)(3). The definition of Clearing 
+Corporation reflects that the Exchange may designate the Options 
+Clearing Corporation (``OCC'') or another registered clearing agency 
+to clear binary KPI options. References in this filing to the 
+Clearing Corporation therefore are intended to be clearing agency-
+neutral. The proposed definition does not alter the requirement that 
+clearing and settlement occur through a registered clearing agency 
+subject to the applicable provisions of the Act and the rules and 
+oversight applicable to that clearing agency.
+---------------------------------------------------------------------------
+
+    The Exchange proposes to define ``exercise price'' (also referred 
+to as ``strike price'') as the value \8\ to which the settlement value 
+of the underlying KPI is compared to the exercise settlement amount. 
+For binary KPI options, the exercise price is the exercise threshold of 
+an option contract that establishes a number, value, or measure that is 
+compared against the price of the settlement value of the underlying 
+index or the KPI to determine if the cash payout amount (i.e., the 
+exercise settlement amount) will be paid out. In other words, binary 
+options will have a threshold number as the exercise price that will be 
+used to determine if the exercise criteria of the binary option has 
+been met and the option will be exercised (and if holders will receive 
+the cash payout amount). For binary KPI options, the exercise threshold 
+will be a number that reflects or is compared to the underlying KPI of 
+the binary option.
+---------------------------------------------------------------------------
+
+    \8\ See proposed Rule 5.96-O(b)(4).The value of an exercise 
+price is measured in the applicable units of the KPI. For example, 
+some KPIs are measured in U.S. dollars while others may be measured 
+in percentages or numbers.
+---------------------------------------------------------------------------
+
+    The Exchange proposes to define the term KPI (or ``key performance 
+indicator'') as a key financial or operating metric disclosed by an 
+issuer in its earnings-related filings submitted to the Commission 
+(i.e., Form 8-K, Form 10-Q, or Form 10-K, as applicable).\9\
+---------------------------------------------------------------------------
+
+    \9\ See proposed Rule 5.96-O(b)(6).
+---------------------------------------------------------------------------
+
+    The Exchange proposes to define ``put binary KPI option'' as an 
+option contract that returns an exercise settlement amount if the 
+settlement value of the underlying KPI is below the exercise price at 
+expiration (i.e., in-the-money).\10\
+---------------------------------------------------------------------------
+
+    \10\ See proposed Rule 5.96-O(b)(7).
+---------------------------------------------------------------------------
+
+    The Exchange proposes to define ``settlement value'' as the value 
+of the underlying KPI that is used to determine whether a binary KPI 
+option is in-, at-, or out-of-the-money.\11\ The proposed
+
+[[Page 59201]]
+
+definition specifies that the ``settlement value'' is the value of the 
+applicable KPI as disclosed in the applicable issuer's earnings-related 
+filing submitted to, the Commission on applicable expiration date (for 
+both A.M.-settled and P.M.-settled binary KPI options).\12\ The 
+Exchange designates the applicable KPI and the relevant reporting 
+period (for example, a calendar quarter) at the time of listing a 
+binary KPI option. Proposed paragraph (b) of the settlement value 
+definition provides if the applicable KPI is not reported or otherwise 
+unavailable on the expiration date (and will not be reported), 
+settlement (including any payout of the exercise settlement amount) 
+will occur in accordance with the Rules of the Clearing Corporation.
+---------------------------------------------------------------------------
+
+    \11\ See proposed Rule 5.96-O(b)(8).
+    \12\ While the timing of an issuer's official announcement 
+informs whether the Exchange will establish a binary KPI option as 
+A.M.-settled or P.M.-settled (as further discussed below), the 
+Exchange will use the KPI value included in an issuer's report 
+submitted to the Commission (and not the press release announcing 
+earnings results, for example) as the settlement value. The Exchange 
+understands, however, these values are generally the same.
+---------------------------------------------------------------------------
+
+    Additionally, proposed paragraph (c) of the settlement value 
+definition states if an applicable KPI is restated after the expiration 
+date and settlement of a binary KPI option, the settlement value (and 
+the exercise settlement amount) of the binary KPI option does not 
+change. In other words, the value of the applicable KPI as reported by 
+the issuer on the applicable expiration date is final, and the amount 
+paid (or not paid) at settlement will not change, regardless of whether 
+it is later restated by the issuer.
+    The Exchange proposes to adopt Rule 5.97-O(a) (Designation of 
+Binary KPI Option Contracts) to identify the binary KPI options that 
+may be listed for trading on the Exchange. Pursuant to proposed Rule 
+5.97-O(a), the Exchange may from time to time approve for listing and 
+trading on the Exchange any of the following binary KPI options 
+contracts for the following issuers:
+
+ 
+------------------------------------------------------------------------
+                               KPI (each financial metric is measured in
+           Company                   $ unless otherwise specified)
+------------------------------------------------------------------------
+Apple, Inc...................  Earnings per share: diluted.
+                               Total net sales.
+                               Net sales by category: iPhone.
+                               Net sales by category: Services.
+                               Net sales by reportable segment:
+                                Americas.
+                               Net sales by reportable segment: Greater
+                                China.
+Advanced Micro Devices, Inc..  GAAP Diluted earnings per share.
+                               GAAP Revenue.
+                               Net Revenue: Data Center Segment.
+                               Net Revenue: Client and Gaming Segment.
+                               GAAP Operating Margin (%)
+Alphabet Inc.................  Diluted net income per share.
+                               Revenues.
+                               YouTube ads Revenues.
+                               Google Cloud Revenues
+<a href="http://Amazon.com">Amazon.com</a>, Inc..............  Diluted earnings per share.
+                               Total Net sales.
+                               AWS: Net sales.
+                               North America: Net sales.
+                               International: Net sales.
+                               Net Sales: Advertising services
+Bank of America Corporation..  Diluted earnings per share.
+                               Total Revenue, net of interest expense.
+                               Net Interest Income.
+                               Provision for credit losses.
+                               Net Income
+Citigroup Inc................  Diluted earnings per share.
+                               Total Revenue, net of interest expense.
+                               Net Interest Income.
+                               Total Provision for credit losses.
+                               Net Income
+Coinbase Global, Inc.........  Net income per share--Diluted.
+                               Total Revenue.
+                               Transaction Revenue.
+                               Total Trading Volume.
+                               Subscription and Services Revenue
+Ford Motor Company...........  GAAP Earnings per share--Diluted.
+                               Total Revenues.
+                               Ford Pro Segment: Revenue.
+                               Ford Model e Segment: Revenue.
+                               Ford Blue Segment: Revenue
+Intel Corporation............  GAAP Earnings per share attributable to
+                                Intel--diluted.
+                               Net revenue.
+                               Revenue: Client Computing Group (CCG).
+                               Revenue: Data Center and AI (DCAI).
+                               Revenue: Intel Foundry.
+                               GAAP operating margin (%)
+
+[[Page 59202]]
+
+ 
+JPMorgan Chase & Co..........  Earnings per share--diluted.
+                               Net revenue--reported.
+                               Net Interest Income.
+                               Provision for credit losses.
+                               Net Income
+Marathon Digital Holdings,     Earnings (Net loss) per share of common
+ Inc.                           stock--diluted.
+                               Revenues.
+                               Number of Blocks Won (# Bitcoin (BTC)).
+                               Energized Hashrate (EH) (# EH/s).
+                               Total Bitcoin Holdings (# BTC).
+                               BTC Produced (# BTC).
+                               BTC Purchased (# BTC)
+Meta Platforms, Inc..........  Earnings per share: Diluted.
+                               Revenue.
+                               Family Daily Active People (DAP) (#).
+                               Revenue: Advertising.
+                               Operating Margin (%)
+Microsoft Corporation........  Diluted Earnings per Share.
+                               Revenue.
+                               Intelligent Cloud: Revenue.
+                               Microsoft Cloud revenue.
+                               More Personal Computing: Revenue
+Netflix, Inc.................  Earnings per share: Diluted.
+                               Revenues.
+                               United States and Canada (UCAN): Revenue.
+                               Europe, Middle East, and Africa (EMEA):
+                                Revenue Operating Margin (%)
+NVIDIA Corporation...........  GAAP Diluted earnings per share.
+                               Revenue.
+                               Data Center Revenue.
+                               Edge Computing Revenue.
+                               Automotive Revenue
+Palantir Technologies Inc....  Earnings per share attributable to common
+                                stockholders, diluted.
+                               Revenue.
+                               Net Income.
+                               Closed Deals of at Least $1 Million (#)
+Robinhood Markets, Inc.......  Net income attributable to Robinhood
+                                common stockholders: Diluted.
+                               Total net revenues.
+                               Funded Customers (#).
+                               Average Revenue Per User (``ARPU'').
+                               Robinhood Gold Subscribers (#)
+SoFi Technologies, Inc.......  Earnings per share attributable to common
+                                stockholders-diluted.
+                               Total net revenue.
+                               Total net revenue--Technology Platform.
+                               Total net revenue--Financial Services.
+                               Total net revenue--Lending
+Space Exploration              Earnings per share: Diluted.
+ Technologies Corp.            Total Revenues
+Super Micro Computer, Inc....  Net income per common share: Diluted.
+                               Net sales.
+                               Gross Margin (%).
+                               Cash flow used in operations.
+                               Net Income
+Target Corporation...........  Diluted earnings per share.
+                               Net sales.
+                               Food & Beverage Net sales.
+                               Apparel & Accessories Net sales.
+                               Operating income: Rate (%)
+Tesla, Inc...................  Net Income per share of common stocks
+                                attributable to common stockholders:
+                                diluted.
+                               Total Revenues.
+                               Total Automotive Revenue.
+                               Model 3/Y Production (#).
+                               Supercharger Connectors (#).
+                               Free Cash Flow
+The Walt Disney Company......  Diluted earnings per share.
+                               Revenues.
+                               Entertainment Subscription Video On
+                                Demand (SVOD) Operating Income.
+                               Revenues: Experiences.
+                               Segment operating income: Sports
+------------------------------------------------------------------------
+
+
+[[Page 59203]]
+
+    The Exchange proposes to add Rule 5.97-O(b) to clarify that binary 
+KPI options are a separate class from other options overlying the stock 
+of the issuer and are a separate class from other binary KPI options 
+with differently underlying KPIs for the same issuer. The Exchange 
+believes this is reasonable given that an individual KPI is the 
+specific underlying of binary KPI options, and generally options with 
+different underlyings (e.g., different underlying security or index) 
+are different option classes.
+    Next, the Exchange proposes to adopt Rule 5.98-O (Terms of Binary 
+KPI Option Contracts) to describe the permissible terms of binary KPI 
+option series. Proposed Rule 5.98-O provides that binary KPI options 
+listed and traded on the Exchange are designated as to expiration date, 
+exercise price, settlement type, settlement style, exercise settlement 
+amount, contract multiplier, and underlying KPI. After approving a 
+particular binary KPI option class for listing and trading on the 
+Exchange, the Exchange from time to time may open for trading series of 
+options in that binary KPI option class.
+    Proposed Rule 5.98-O(a) states binary KPI options have European-
+style settlement. Proposed Rule 5.98-O(a) further provides that the 
+Exchange may designate the settlement type for binary KPI options as 
+A.M.-settled or P.M.-settled. Binary KPI options for issuers \13\ that 
+disclose their earnings results before the open of the Core Trading 
+Session on a given trading day are designated as A.M.-settled binary 
+KPI options, and binary KPI options for issuers that disclose their 
+earnings results after the close of RTH on a given trading day are 
+designated as P.M.-settled binary KPI options. The Exchange notes that 
+the proposed concepts of A.M.-settlement and P.M.-settlement for binary 
+KPI options differ compared to traditional options, for which ``P.M.-
+settled'' generally means that the expiration of an option so 
+designated will settle to the closing price of the underlying security 
+or index value and ``A.M.-settled'' generally means that the expiration 
+of an option so designated will settle to the opening price of the 
+underlying. While different than how these terms apply to standard and 
+binary index options, the Exchange believes the proposed description of 
+A.M.-settlement and P.M.-settlement appropriately reflect the earnings 
+disclosure practices of issuers. Additionally, while the timing of the 
+event that will determine whether the Exchange designates a binary KPI 
+option as A.M.-settled or P.M.-settled is different than that for 
+traditional options and binary index options, the trading hours on 
+expiration dates for each of A.M.-settled and P.M.-settled binary KPI 
+options are consistent with those of A.M.-settled and P.M.-settled 
+index options (traditional and binary) today.
+---------------------------------------------------------------------------
+
+    \13\ The Exchange determines whether an issuer discloses its 
+earnings results before or after the close of the Core trading hours 
+on a given trading day based on publicly available information 
+regarding the issuer's disclosure practice.
+---------------------------------------------------------------------------
+
+    Proposed Rule 5.98-O(b) describes permissible expirations for 
+binary KPI options. Specifically, the proposed rule change will permit 
+the Exchange to list series that expire on the date the issuer 
+announces its earnings results for the applicable reporting period 
+(such as calendar quarter). The expiration date for a binary KPI option 
+will be the date on which an issuer discloses the applicable KPI in its 
+earnings results (for example, the date on which it issues an earnings 
+results press release) for the specified reporting period (with the 
+specific expiration date to be finalized when an issuer announces the 
+date on which it will disclose its earnings results for that reporting 
+period).\14\ If that date is a Tuesday, Wednesday, Thursday, or Friday 
+and the Exchange is not open for business on that date, the expiration 
+date will be the first business day immediately prior to that day. If 
+that date is a Monday and the Exchange is not open for business on that 
+date, the expiration date will be the first business day immediately 
+following that Monday. The disclosed KPIs relate to a specific 
+reporting period (such as a calendar quarter), which KPIs an issuer 
+publicly announces on a date following the end of that reporting 
+period.
+---------------------------------------------------------------------------
+
+    \14\ For example, for a binary KPI option series, the Exchange 
+may designate the reporting period for a series to be the fourth 
+quarter of 2026. The expiration date for that series would be the 
+date on which the applicable issuer establishes as the date it will 
+announce earnings results for that quarter. The Exchange will issue 
+a Trader Update when the specific expiration date for a binary KPI 
+option is finalized. Additionally, the Exchange will maintain a 
+reference data file for each issuer KPI on which the Exchange lists 
+binary KPI options (as will be described in the Exchange's technical 
+specifications available on its public website), and that reference 
+data file will be updated with the specific expiration date for a 
+binary KPI option once known.
+---------------------------------------------------------------------------
+
+    While an expiration date for a binary KPI option will be a specific 
+date, as is the case for traditional options, the Exchange's proposed 
+designation of expiration dates for binary KPI options will differ to 
+reflect standard issuer disclosure practices. In some instances, an 
+issuer might not establish the specific date on which it will announce 
+its earnings results for a reporting period until weeks prior to the 
+release date. Consequently, unlike standard equity and index options 
+that have an exact expiration date when strikes are first listed, a 
+binary KPI option will be listed for trading with a placeholder 
+expiration date if the date the KPI information will be released by the 
+issuer is not publicly known. If a placeholder expiration date is 
+required, it will be set as the first trading day that is three months 
+following the date of the prior quarterly release date for a KPI (for 
+KPIs announced quarterly) and six months following the date of the 
+prior semiannual release date for a KPI (for KPIs announced 
+semiannually, if the Commission approves proposed rules that would 
+permit such reporting). Once the KPI issuer announces the release date 
+of the KPI information, the expiration date will be updated as the 
+finalized expiration date of the option contract. Ultimately, however, 
+the expiration date for a binary KPI option is an issuer's earnings 
+release date at the time the series is listed (even if the exact date 
+is unknown) until expiration.
+    The Exchange may designate binary KPI option series to expire up to 
+12 months from the time they are listed and may list up to two 
+expirations at one time for a binary KPI option (per KPI per issuer). 
+The Exchange may open for trading a series of binary KPI options at 
+least one business week prior to the expiration date of a binary KPI 
+option. First, the proposed rule change permits the Exchange to list 
+binary KPI options to expire up to 12 months from the time they are 
+listed. The proposed rule change also limits the Exchange to list up to 
+two expirations at one time for binary KPI options.
+    The proposal to list expirations at least one business week prior 
+to the expiration date of binary KPI option (as well as the proposed 
+language regarding shifting an expiration date to the immediately 
+business day before or after an expiration date that falls on a day the 
+Exchange is not open for business) is substantially similar to current 
+Exchange rules applicable to binary equity options,\15\ as well as the 
+rules of another options exchange applicable to short term equity 
+options series.\16\ The Exchange believes it is appropriate to permit 
+listing of binary KPI options that expire up to 12 months from the time 
+they are listed to accommodate different issuer reporting periods 
+(including semiannual reporting if the Commission approves recently 
+proposed rules to permit such reporting), as well as to permit the 
+Exchange to list expirations for consecutive calendar quarter periods 
+or for a calendar quarter and annual
+
+[[Page 59204]]
+
+reporting period at the same time. As discussed above, issuers disclose 
+KPIs in their periodic reports submitted to the Commission.
+---------------------------------------------------------------------------
+
+    \15\ See Rule 5.85-O(b).
+    \16\ See Cboe Rule 4.5(d).
+---------------------------------------------------------------------------
+
+    Proposed Rule 5.98-O(c) describes the automatic exercise feature of 
+binary KPI options. Specifically, the proposed rule states that binary 
+KPI options will be automatically exercised at expiration if the 
+settlement value of the underlying KPI is equal to or greater than the 
+exercise price of a call binary KPI option or less than the exercise 
+price in the case of a put binary KPI option.
+    Proposed Rule 5.98-O(d) describes the permissible exercise prices 
+(or strike prices) the Exchange may designate for series of binary KPI 
+options. Proposed Rule 5.98-O(c)(1) describes how the value of exercise 
+prices of binary KPI options are measured. Specifically, the exercise 
+price of each binary KPI option series will be fixed at an amount equal 
+to a value of the underlying KPI. Because the value of certain KPIs may 
+be very large (e.g., billions of dollars), the Exchange proposes that 
+the exercise price value of the underlying KPI will be divided by a 
+scaling factor based on the value of the KPI in the issuer's most 
+recent earnings-related disclosure as of the time a binary KPI option 
+class is listed) as follows:
+    <bullet> if the most recently disclosed KPI value is greater than 
+or equal to one trillion, the exercise price equals that value divided 
+by one trillion (e.g., for such KPIs, an exercise price of 27.00 is 
+equivalent to a KPI value of 27,000,000,000,000.00);
+    <bullet> if the most recently disclosed KPI value is greater than 
+or equal to one billion but less than one trillion, the exercise price 
+equals that value divided by one billion (e.g., for such KPIs, an 
+exercise price of 112.00 is equivalent to a KPI value of 
+112,000,000,000.00);
+    <bullet> if the most recently disclosed KPI value is greater than 
+or equal to one million but less than one billion, the exercise price 
+equals that value divided by one million (e.g., for such KPIs, an 
+exercise price of 900.00 is equivalent to a KPI value of 
+900,000,000.00);
+    <bullet> if the most recently disclosed KPI value is greater than 
+or equal to one thousand but less than one million, the exercise price 
+equals that value divided by one thousand (e.g., for such KPIs, an 
+exercise price of 42.00 is equivalent to a KPI value of 42,000.00); and
+    <bullet> if the most recently disclosed KPI value is less than one 
+thousand, the exercise price equals that value and is not divided by a 
+scaling factor (e.g., for such KPIs, an exercise price of 774.00 is 
+equivalent to a KPI value of 774.00).\17\
+---------------------------------------------------------------------------
+
+    \17\ When applying the scaling factor, the Exchange will not 
+round the scaled KPI value and instead will truncate the value so 
+the scaled strike price value fits within standard strike listing 
+format.
+---------------------------------------------------------------------------
+
+    The Exchange will apply a different scaling factor to newly listed 
+binary KPI option series for a new expiration only after the value of 
+the KPI in the issuer's earnings-related disclosures has a value in a 
+different scaling tier for four consecutive reporting periods or if the 
+Exchange deems it necessary in the interests of a fair and orderly 
+market. Application of a different scaling factor will not affect the 
+exercise prices of any series of the binary KPI options previously 
+opened. For example, if the Exchange begins listing a new class of 
+binary KPI options and the most recently disclosed KPI value for the 
+issuer at the time of that listing was for the third quarter of 2026 
+and was $892,000, the exercise prices for that class of binary KPI 
+options will be scaled by 1,000, and thus exercise prices of 895, 995, 
+and 1005, would represent $895,000, $995,000, and $1,005,000, 
+respectively. If the issuer discloses a KPI value of $1,020,000 in its 
+fourth quarter 2026 earnings disclosure, the Exchange will continue to 
+list exercise prices scaled by 1,000. If the issuer then discloses KPI 
+values of $1,112,000, $1,237,000, and $1,064,000 for the first, second, 
+and third quarters, respectively, of 2027, the Exchange will begin 
+scaling the exercise prices by 1,000,000 for the fourth quarter 2027 
+expirations (or for the first quarter 2028 expirations if the Exchange 
+had already listed fourth quarter 2027 expirations prior to the 
+disclosure of the third quarter 2027 KPI value). The Exchange believes 
+this will permit consistency for listing scaled KPI values while 
+allowing the Exchange to update strike prices to reflect long-term 
+changes to an issuer's KPI values.
+    The Exchange will announce via Trader Update if the scaling factor 
+applied to a binary KPI options changes (for example, the KPIs will be 
+scaled in billions rather than in millions). Additionally, the Exchange 
+will update this information in the Exchange's technical specifications 
+regarding binary KPI options and reference data file that describes the 
+terms of binary KPI options, both of which will be available on the 
+Exchange's website (customers receive notifications of such updates). 
+This is consistent with how the Exchange provides information regarding 
+product information (including updates) for all options the Exchange 
+lists for trading.
+    It is possible for a KPI to have a negative value, such as earnings 
+per share (which is equivalent to a loss per share). Proposed Rule 
+5.98-O(c)(1)(B) provides the Exchange may list binary KPI options 
+series with exercise prices representing negative KPI values. For these 
+series, the exercise price will equal the absolute value of the KPI and 
+will be scaled as described above. For example, if an issuer's earnings 
+per share in the last reporting period was -$3.52 (and thus was a loss 
+per share), a binary KPI option for such issuer with a strike of 3.58 
+will reflect an expected loss of $3.58 per share. The Exchange will 
+incorporate into symbology for binary KPI options whether the value of 
+the strike price is positive or negative, including if the Exchange 
+lists binary KPI option series with both positive and negative strike 
+prices. Whether a symbol reflects a positive or negative value will be 
+available on contract specifications as well as the reference data file 
+for the specific binary KPI option on the Exchange's public website.
+    Proposed Rule 5.98-O(d)(2) provides the minimum interval between 
+strike prices for binary KPI options series is:
+    <bullet> 0.01 where the strike price is less than 10;
+    <bullet> 0.10 where the strike price is 10 or greater but less than 
+100;
+    <bullet> 1.00 where the strike price is 100 or greater but less 
+than 1,000;
+    <bullet> 10.00 where the strike price is 1,000 or greater but less 
+than 10,000; and
+    <bullet> 100.00 where the strike price is 10,000 or greater.
+    As discussed above, while KPI values above 1,000 are generally 
+scaled, there may be circumstances in which the Exchange lists strikes 
+above 1,000 or even 10,000 given the Exchange's proposal to maintain a 
+lower scale level until a KPI value is consistently above a certain 
+level (e.g., above one billion for four consecutive quarters). This may 
+occur when a KPI value is near the top of a scaling range; for 
+continuity, the Exchange will continue listing strike prices using the 
+lower scaling factor and not change to a higher scaling factor until 
+the KPI value is regularly within that higher range. Suppose a KPI 
+value is 995,000,000; in this case, strike prices will be scaled by 
+1,000,000. Thus, the Exchange may list binary KPI options above and 
+below 995 (995,000,000 divided by 1,000,000). However, there is 
+potential that the KPI may increase to above 1,000,000,000. As 
+proposed, the Exchange may list strike prices, for example, of 1,000 
+(representing 1,000,000,000) and above, for expirations until the KPI 
+value is above 1,000,000,000 for four consecutive reporting periods. To 
+reduce confusion,
+
+[[Page 59205]]
+
+the Exchange would not scale strike prices using different scaling 
+factors within a single expiration (and would not change the scale 
+until the KPI value is consistently at the higher level). Therefore, it 
+is possible the Exchange may list strikes greater than 1,000. 
+Similarly, while strikes above 10,000 may be rare, given the Exchange 
+proposes to maintain a lower scale level until a KPI value is 
+consistently above a certain level (e.g., above one billion for four 
+consecutive quarters, as proposed), depending on market factors and 
+demand, it is possible (although unlikely) the Exchange may determine 
+it is appropriate to list strikes above 10,000 if market factors or 
+expectations signify a significant increase of the KPI value. The 
+proposed strike intervals accommodate the listing of binary KPI options 
+in these circumstances before the Exchange shifts the strike prices for 
+an issuer's KPI to a different scaling level.
+    The proposed strike intervals are generally consistent with current 
+Exchange Rules for other options, which provide for larger strike 
+intervals as the values of strike prices increase. Given the scaling 
+factor for larger KPI values, it may appear the proposed rule change 
+will permit smaller strike intervals for larger KPI values if those 
+intervals are considered solely on a nominal basis. However, that is 
+not the case if the actual values of the strike intervals are 
+considered. The corresponding actual value of the strike interval for a 
+strike price that was subject to a larger scale value is higher than 
+the actual value of the strike interval for a strike price that was 
+subject to a smaller scale value. For example, suppose a strike price 
+of 950 represents $950 million. The proposed rule change would permit 
+strike intervals of $1.00. However, that $1.00 corresponds to 
+$1,000,000. In other words, if the Exchange listed strikes of 950, 951, 
+and 952, the difference in values of those strikes are $1 million, not 
+$1 (i.e., the strikes represent values of $950,000,000, $951,000,000, 
+and $952,000,000). Similarly, suppose a strike price of 3 represents 
+$3,000,000,000. The proposed rule change would permit strike intervals 
+of $0.01. However, that corresponds to $10,000,000. If the Exchange 
+listed strikes of 3.00, 3.01, and 3.02, the difference in values of 
+those strikes are $10,000,000, not $0.01 (i.e., the strikes represent 
+values of $3,000,000,000, $3,010,000,000, and $3,020,000,000, 
+respectively). As a result, the permissible strike intervals for strike 
+prices representing values in the billions are actually larger than the 
+permissible strike intervals for strike prices representing values in 
+the millions. This is consistent with the general premise underlying 
+current strike intervals that larger strike intervals apply to larger 
+strike values.
+    Proposed Rule 5.98-O(e) describes the automatic exercise feature of 
+binary KPI options. Specifically, the proposed rule states that binary 
+KPI options will be automatically exercised at expiration if the 
+settlement value of the underlying KPI is equal to or greater than the 
+exercise price of a call binary KPI option or less than the exercise 
+price in the case of a put binary KPI option.
+    Proposed Rule 5.98-O(f) describes the initial series of a binary 
+KPI option the Exchange may open for trading. Specifically, the 
+Exchange may open for trading one or more binary KPI option series with 
+a fixed KPI value as the strike price, with approximately the same 
+number of strike prices being opened above and below the at-the-money 
+KPI value (i.e., the value of the KPI in the issuer's most recent 
+earnings-related disclosure) at the time the binary KPI options are 
+opened. The Exchange will list strike prices for binary KPI option 
+series that are reasonably close to the at-the-money KPI value at the 
+time of listing. A strike is ``reasonably close'' to the at-the-money 
+KPI value if (1) for KPIs less than or equal to 10, it is no more than 
+100% above or below the at-the-money KPI value; and (2) for KPIs 
+greater than 10, it is no more than 30% above or below the at-the-money 
+KPI value. The Exchange may also open binary KPI option series that are 
+more than 30% above or below the at-the-money KPI value (if the KPI is 
+greater than 10) provided demonstrated customer interest exists for 
+such series, as expressed by institutional, corporate or individual 
+customers or their brokers.
+    The Exchange may add new series of binary KPI options series when 
+the Exchange deems it necessary to maintain a fair and orderly market 
+or to meet customer demand. To the extent the Exchange lists binary KPI 
+options series for an expiration before then-currently listed binary 
+KPI options expire (and thus before the applicable issuer has disclosed 
+the KPI value for the reporting period immediately preceding the 
+reporting period for these newly listed options), the Exchange may list 
+additional series after the KPI value for the immediately preceding 
+reporting period is disclosed using that disclosed KPI value as the at-
+the-money KPI. For example, before expiration of a binary KPI options 
+series set to expire on the date of an issuer's disclosure of its third 
+quarter earnings results, the Exchange lists series of that binary KPI 
+option to expire on the date of an issuer's disclosure of its fourth 
+quarter earnings results (using the KPI from the second quarter 
+earnings results as the at-the-money KPI value). After the issuer 
+discloses its third quarter earnings results, including the applicable 
+KPI, the Exchange may list additional series for the fourth quarter 
+binary KPI options using the third quarter KPI result as the at-the-
+money KPI value. Any additional strike prices the Exchange lists will 
+be reasonably close (as defined above) to the at-the-money KPI value at 
+the time of listing.
+    Continuing the above example, suppose the Exchange lists binary KPI 
+options for the fourth quarter before the binary KPI options for the 
+third quarter have expired. As proposed, the Exchange would list 
+strikes above and below the at-the-money strike, which at the time of 
+listing would be the settlement value KPI from the issuer's second 
+quarter earnings results disclosure, as that is the most recently 
+available KPI. If the KPI for the option was net sales, and the second 
+quarter value was $45.093 billion, the at-the-money strike would be 
+45.10, and the Exchange could list strikes within 50% of that value, 
+and additional series based on customer demand or market changes. After 
+the Exchange lists those series, the issuer announces its third quarter 
+earnings results, including net sales of $57.241 billion. As proposed, 
+after that announcement, the Exchange may list additional strikes 
+within 50% of $57.24 to reflect the change in value of the underlying 
+(as well as additional series based on customer demand or market 
+changes).
+    This proposed framework for listing and adding series is similar to 
+the framework in current Rules for listing and adding series of equity 
+options. While the proposed strike intervals are narrower than these 
+rules, the permissible ranges are also narrower. The Exchange 
+acknowledges the proposed framework would still permit the Exchange to 
+list a large number of strikes per KPI per expiration. However, the 
+Exchange intends to apply its standard strike listing practices to 
+binary KPI options. Specifically, the Exchange generally lists strikes 
+at wider intervals as they move farther away from the at-the-money 
+value, while listing more granular intervals for strikes closer to the 
+at-the-money value. The Exchange also generally delists granular 
+strikes that are deep out-of-the-money if the Exchange determines they 
+are sufficiently covered by wider strike intervals that are close in 
+value.
+    These proposed provisions regarding the listing of binary KPI 
+option series
+
+[[Page 59206]]
+
+are similar to provisions regarding permissible series of other 
+options. The Exchange believes it is reasonable to list binary KPI 
+options for a new reporting period prior to the expiration of then-
+listed binary KPI options for the immediately preceding reporting 
+period (e.g., listing binary KPI options for the fourth quarter before 
+expiration of binary KPI options for the third quarter), and thus 
+before the settlement value of the applicable KPI is known for the 
+immediately preceding reporting period for these options, to permit 
+investors to roll positions from one expiration to the next. As 
+proposed, once the settlement value for the immediately preceding 
+reporting period is known (the third quarter in this example), the 
+Exchange may list additional series of the binary KPI options that 
+reflect that KPI value. This is consistent with current practice if 
+there is a change (including a substantial change) in the price of 
+underlying security or value of an underlying index. For example, Rule 
+6.4-O(a) provides that the Exchange may open additional series of a 
+short-term option series overlying a security when the market price of 
+the underlying security moves substantially from the exercise price or 
+prices of the series already opened, subject to the ``reasonably 
+close'' parameters set forth in that rule. Disclosure of, as an 
+example, the third quarter KPI value after the fourth quarter binary 
+KPI options series were listed based on the second quarter KPI value 
+(if the third quarter KPI value differs from the second quarter KPI 
+value) is similar to the move in the price of an underlying security, 
+which may result in the Exchange listing additional series based on the 
+updated price of the underlying security. Similarly consistent with 
+current practice for other options (as set forth in Rule 6.4-O, 
+Commentary .07(d), for example), opening of binary KPI options based on 
+this later-disclosed KPI value will not affect any other series of 
+options of the same binary KPI options class previously opened.
+    Proposed Rule 5.98-O(f) provides that the contract multiplier for 
+each class of binary KPI options is one.
+    The Exchange proposes to add new Rule 5.99-O (Determination of 
+Settlement Value) to establish that binary KPI options that are ``at-
+the-money,'' ``in-the-money,'' or ``out-of-the-money'' are a function 
+of the settlement value of the underlying KPI in relation to the type 
+of binary KPI option (i.e., put or call) and the exercise price. As 
+described above, the settlement value for a binary KPI option is the 
+value of the KPI as disclosed in the applicable issuer's earnings 
+related filing. While the timing of an announcement of a KPI value 
+factor into the determination of whether the Exchange lists a binary 
+KPI option as A.M-settled or P.M.-settled, the Exchange will source the 
+settlement value from the filing the issuers submits to the Commission. 
+Generally, companies issue press releases that contain earnings results 
+and near contemporaneously submit a Form 8-K to the Commission with the 
+press release as an exhibit. Therefore, it is unlikely the value of the 
+KPI in the Commission filing will differ from the value in the initial 
+announcement; however, the value in the Commission filing will be the 
+ultimate settlement value.
+    Proposed Rule 5.100-O (Adjustment) provides that binary KPI option 
+contracts are subject to adjustment only in accordance with and to the 
+extent specified in the Rules of the Clearing Corporation. When any 
+such adjustment has been determined, the Exchange will announce this 
+adjustment via Trader Update, which will become effective as of the 
+time specified in that announcement.
+    As described above, binary KPI options would be cleared by the 
+Clearing Corporation, which would serve as the central counterparty to 
+each transaction and facilitate standardized clearing, settlement, and 
+contract administration processes pursuant to its Rules. Consistent 
+with this centralized clearing framework, proposed Rule 5.100-O 
+provides that binary KPI options would be subject to adjustment only in 
+accordance with and to the extent specified in the Rules of the 
+Clearing Corporation. When any such adjustment has been determined, the 
+Exchange will announce this adjustment via Trader Update, which will 
+become effective at the time specified in that announcement. The 
+Exchange believes that limiting contract adjustments to those provided 
+under the Rules of the Clearing Corporation provides a clear and 
+transparent framework under which any adjustments to binary KPI options 
+would be administered. A registered clearing agency designated to clear 
+binary KPI options would be subject to Commission oversight and would 
+possess expertise in the clearance and settlement of financial 
+products. Because binary KPI options represent a novel product type, 
+the Exchange anticipates that the Clearing Corporation would develop 
+adjustment procedures designed to address the unique characteristics of 
+these contracts and the types of events that may require adjustment. To 
+the extent the Clearing Corporation adopts new adjustment procedures 
+for binary KPI options, those procedures would be subject to the 
+applicable regulatory process, including review and approval by the 
+Commission, as applicable, before the Exchange commences trading in the 
+product.
+    Next, the Exchange proposes to Rule 5.101-O to provide that binary 
+KPI options, may be traded on the Exchange from 9:30 a.m. to 4:00 
+p.m.\18\ Further, the last day of trading for P.M.-settled binary KPI 
+options is the day of expiration, and the last day of trading for A.M.-
+settled binary KPI options is the trading day prior to expiration.
+---------------------------------------------------------------------------
+
+    \18\ Unless otherwise specified, all times in this proposal are 
+Eastern Time.
+---------------------------------------------------------------------------
+
+    The Exchange recognizes it is possible, although unusual and 
+unlikely, that KPI information may become available at unexpected 
+times. The proposed rules address the impact on trading and expiration 
+that such disclosure may have. First, the proposed rule change provides 
+if the Exchange confirms an issuer discloses the KPI prior to the 
+expiration date, trading in the applicable binary KPI options series 
+will cease, and the expiration date for the option accelerates to a 
+date on or shortly after the date of that disclosure in accordance with 
+the Rules of the OCC.\19\ This may occur if, for example, the 
+applicable issuer releases the KPI information in advance of the 
+expiration date of the option. If the issuer releases KPI information 
+after the expiration date, which may be the case if, for example, the 
+issuer's earnings are delayed, trading in the option will not be 
+impacted and will cease as of the expiration date. While the expiration 
+date will not change, expiration processing of such options will be 
+delayed until the KPI information becomes available, in accordance with 
+the rules of the Clearing Corporation. Additionally, the proposed rule 
+change provides if there is an unofficial disclosure of the KPI prior 
+to the expiration date, the Exchange may determine to halt (and resume) 
+trading in the applicable binary KPI options series in accordance with 
+Rule 953NY. In certain circumstances, the expiration date for the 
+option may accelerate in accordance with the Clearing Corporation 
+rules; if this occurs, trading in the binary KPI will cease. This 
+proposed provision addresses the unlikely event that KPI information 
+becomes available through sources other than the issuer in advance of 
+the expiration date. If the Exchange
+
+[[Page 59207]]
+
+determines the KPI information reported from the unofficial source is 
+unreliable, trading in the binary KPI option may resume until it 
+expires.
+---------------------------------------------------------------------------
+
+    \19\ The proposed acceleration of binary KPI options is similar 
+to the existing acceleration process for equity options when the 
+underlying security of such options has been converted entirely to 
+cash. See OCC Rule 807.
+---------------------------------------------------------------------------
+
+    The Exchange believes proposed Rule 5.101-O(d), which provides that 
+for binary KPI options, the System initiates the opening rotation at 
+9:30 a.m., is consistent with the opening auction framework already 
+applicable to other index options listed on the Exchange and ensures 
+that binary KPI options open for trading in an orderly and transparent 
+manner.
+    The Exchange proposes to amend Rule 6.72-O to establish the minimum 
+increment for bids and offers on orders for binary KPI options, which 
+may not be less than $0.01.
+    The Exchange proposes to adopt Rule 5.102-O (Position Limits for 
+Binary KPI Options) to set forth position limit requirements for binary 
+KPI options. The Exchange proposes to adopt Rule 5.102-O to provide 
+that in determining compliance with Rule 6.8 (Position Limits), the 
+position limit for binary KPI options is the same as the applicable 
+position limit for the stock of the issuer per expiration and 100 
+binary KPI option contracts equal one standard option contract.
+    Per proposed rule 5.102-O(b), positions in binary KPI options on 
+the same KPI that have different expiration dates are not aggregated, 
+and positions in binary KPI options for the same issuer with different 
+underlying KPIs are not aggregated. In addition, the Exchange proposes 
+to adopt Rule 5.102(c) to provide that Binary KPI options are not 
+aggregated with non-binary options contracts overlying the stock of the 
+issuer. Finally, per Rule 5.102-O, with respect to binary KPI options, 
+a binary KPI option short position coupled with a binary KPI option 
+short call position, regardless of the KPI option strike, shall be 
+exempt from the established position limits proscribed in Rule 6.8-O.
+    The Exchange also proposes to adopt Rule 5.103-O (Reporting of 
+Positions) Positions in binary KPI options shall be reported pursuant 
+to Rule 6.6-O, except, in computing reportable binary KPI options 
+thereunder, aggregation of positions shall be in accordance with Rule 
+5.102-O. The proposed Rule 5-103-O further provides that for purposes 
+of this report, 100 binary KPI option contracts equal one standard 
+option contract. The Exchange believes this is reasonable given that 
+binary KPI options have a multiplier of 1 while standard equity option 
+contracts have a multiplier of 100.
+    Except as otherwise described above, all binary KPI options will be 
+listed and traded on the Exchange in a substantially similar manner as 
+standard equity and index options and binary index options are 
+permitted to be listed and traded under current Rules. The Rules that 
+apply to the listing and trading of non-binary options on the Exchange, 
+including those related to customer accounts, margin requirements and 
+trading halt procedures,\20\ which are designed to prevent fraudulent 
+and manipulative acts and practices, will apply to the listing and 
+trading of binary KPI options. The Exchange has analyzed its capacity 
+and represents that it believes the Exchange has the necessary systems 
+capacity to handle any potential additional message traffic associated 
+with the listing of binary KPI options.
+---------------------------------------------------------------------------
+
+    \20\ Binary KPI options will not be tied to the trading state of 
+the underlying issuer stock and thus, trading in binary KPI options 
+will not be affected by halts in the underlying issuer stock. The 
+binary KPI options will halt in accordance with Rule 6.65-O
+---------------------------------------------------------------------------
+
+    The Exchange will support electronic trading, floor trading, and 
+complex orders. Trading in Flexible Execution (``FLEX'') options will 
+not be offered. The Exchange may determine to support particular order 
+types, order instructions, or times-in-force on a class-by-class basis. 
+Consistent with current practice, if the Exchange modifies the 
+applicability of any functionality or order instructions for binary KPI 
+options, it will notify ATP Holders via Trader Update.
+    The Exchange will send quotation and transaction price information 
+for binary KPI options to The Options Price Reporting Authority 
+(``OPRA'') in the same manner it sends this information to OPRA for all 
+other options the Exchange lists. Additionally, the Exchange 
+understands from OPRA that it will disseminate information regarding 
+binary KPI options in the same manner it does for all other options the 
+Exchange lists. The Exchange intends to follow OPRA's standard capacity 
+monitoring process for binary KPI options (in accordance with OPRA 
+instructions), which includes submission of quarterly capacity 
+projections (the Exchange will include its projected binary KPI option 
+volume in the applicable submission). Further, the Exchange understands 
+from OPRA that no technical changes are required to accommodate the 
+reporting to OPRA of quotation and transaction information regarding 
+binary KPI options (the Exchange represents, if later required by OPRA, 
+it will adhere to any new technical requirements OPRA deems necessary 
+to accommodate binary KPI options).\21\
+---------------------------------------------------------------------------
+
+    \21\ The Exchange understands OPRA may need to update how it 
+disseminates open interest information for binary KPI options, as 
+its current process incorporates information from OCC and references 
+in this filing are clearing agency-neutral.
+---------------------------------------------------------------------------
+
+    The Exchange does not believe Option Trade Permit (``OTP'') Holders 
+and OTP Firms will experience any capacity issues as a result of this 
+proposal and represents that it will monitor the trading volume 
+associated with binary options and the effect (if any) of binary 
+options on market fragmentation and the capacity of the Exchange's 
+automated system.
+    The Exchange represents that the same surveillance procedures 
+applicable to all other options currently listed and traded on the 
+Exchange will apply to binary KPI options, and that it has the 
+necessary systems capacity to support the option series. The Exchange's 
+existing surveillance and reporting safeguards are designed to deter 
+and detect possible manipulative behavior and other improper trading In 
+addition, the Exchange has a Regulatory Services Agreement with the 
+Financial Industry Regulatory Authority, Inc. (``FINRA''). Pursuant to 
+a multi-party 17d-2 joint plan, all options exchanges allocate 
+regulatory responsibilities to FINRA to conduct certain options-related 
+market surveillances.\22\ The Exchange is also a member of the 
+Intermarket Surveillance Group (``ISG'') under the ISG Agreement. ISG 
+members work together to coordinate surveillance and investigative 
+information sharing in the stock, options, and futures markets. 
+Further, the Exchange will implement any new surveillance procedures it 
+deems necessary to effectively monitor the trading of binary KPI 
+options.
+---------------------------------------------------------------------------
+
+    \22\ Section 19(g)(1) of the Act, among other things, requires 
+every self-regulatory organization (``SRO'') registered as a 
+national securities exchange or national securities association to 
+comply with the Act, the rules and regulations thereunder, and the 
+SRO's own rules, and, absent reasonable justification or excuse, 
+enforce compliance by its members and persons associated with its 
+members. See 15 U.S.C. 78q(d)(1) and 17 CFR 240.17d-2. Section 
+17(d)(1) of the Act allows the Commission to relieve an SRO of 
+certain responsibilities with respect to members of the SRO who are 
+also members of another SRO. Specifically, Section 17(d)(1) allows 
+the Commission to relieve an SRO of its responsibilities to: (i) 
+receive regulatory reports from such members; (ii) examine such 
+members for compliance with the Act and the rules and regulations 
+thereunder, and the rules of the SRO; or (iii) carry out other 
+specified regulatory responsibilities with respect to such members.
+---------------------------------------------------------------------------
+
+    The Exchange will report any information regarding binary KPI 
+options required to be reported to the Consolidated Audit Trail 
+(``CAT'') in the same manner it reports this information to CAT for all 
+other options the
+
+[[Page 59208]]
+
+Exchange lists.\23\ The Exchange represents, if later required by FINRA 
+CAT, it will adhere to any new technical requirements FINRA CAT deems 
+necessary to accommodate binary KPI options).
+---------------------------------------------------------------------------
+
+    \23\ CAT reporting requirements will apply to broker-dealers 
+with respect to binary KPI options in the same manner as they apply 
+to any other options the Exchange lists. The Exchange understands 
+from FINRA CAT there will be no changes to the reporting 
+specifications for broker-dealers to accommodate the reporting of 
+information regarding binary KPI options to CAT.
+---------------------------------------------------------------------------
+
+    Pursuant to the Options Order Protection and Locked/Crossed Market 
+Plan (``Linkage Plan''),\24\ participant exchanges to the Linkage Plan 
+established a framework to provide order protection. The Linkage Plan 
+(and Exchange Rules 6.92-O through 6.96-O regarding intermarket 
+linkage) applies during all trading sessions during which multiply 
+listed options trade. Rule 6.96-O addresses order routing away from the 
+Exchange to promote compliance with the Linkage Plan. If the proposed 
+binary KPI options become multiply listed options, Users may designate 
+an order for routing (or not available for routing), and the Exchange 
+System is designed to, at all times, prevent trade-throughs and avoid 
+displaying locked/crossed markets in accordance with the Linkage Plan 
+(and Exchange Rules 6.94-O through 6.96-O regarding intermarket 
+linkage).
+---------------------------------------------------------------------------
+
+    \24\ The Linkage Plan requires U.S. options exchanges to 
+establish a framework for providing order protection and addressing 
+locked and crossed markets in eligible options classes. The Linkage 
+Plan is a national market system plan approved by the Commission 
+pursuant to Section 11A of the Act and Rule 608 thereunder. The full 
+text of the Linkage Plan is available at <a href="https://www.theocc.com/getcontentasset/7fc629d9-4e54-4b99-9f11-c0e4db1a2266/dfc3d011-8f63-43f6-9ed8-4b444333a1d0/options_order_protection_plan.pdf">https://www.theocc.com/getcontentasset/7fc629d9-4e54-4b99-9f11-c0e4db1a2266/dfc3d011-8f63-43f6-9ed8-4b444333a1d0/options_order_protection_plan.pdf</a>.
+---------------------------------------------------------------------------
+
+    Upon launch, binary KPI options will clear through the Clearing 
+Corporation as that term is defined in proposed Rule 5.96-O. In doing 
+so, the proposal would bring these securities products within the 
+established regulatory infrastructure applicable to listed options, 
+including exchange trading and surveillance, standardized disclosure, 
+and centralized clearance and settlement through a registered clearing 
+agency, as further described below. Additionally, binary KPI Options 
+would be cleared through a registered clearing agency, which would 
+serve as the central counterparty to each transaction and facilitate 
+risk mitigation through established clearing, settlement, contract 
+adjustment, and other standardized operational processes.
+    The Options Listings Procedure Plan (the ``OLPP'') sets forth 
+procedures to facilitate the listing and trading of standardized 
+options. This plan currently describes procedures with respect to 
+options issued by and cleared at the OCC. If the Exchange ultimately 
+does not designate the OCC as the Clearing Corporation for the purposes 
+of the definition set forth in proposed Rule 5.96-O, the Exchange will 
+take steps necessary and within its authority to amend the OLPP to 
+reflect listing procedures applicable to binary KPI Options to the 
+extent not cleared by the OCC.
+    The Exchange represents it will not list for trading binary KPI 
+options until the registered clearing agency designated as the Clearing 
+Corporation is authorized and operationally ready to clear the options 
+and until all applicable filings and documents of the Clearing 
+Corporation related to securities event contracts being cleared through 
+the Clearing Corporation are approved by the Commission or effective 
+after review by the Commission, as applicable.
+    As discussed in further detail below, the Exchange intends for 
+binary KPI options to be treated as listed standardized options. Rule 
+9b-1 under the Act establishes a disclosure framework for standardized 
+options pursuant to which investors receive a disclosure document 
+describing the terms, characteristics, and risks of the product before 
+trading. Depending on which registered clearing agency is designated as 
+the Clearing Corporation, the applicable Rule 9b-1 disclosure document 
+may be based on an existing options disclosure document utilized by 
+that clearing agency, as modified or supplemented, as appropriate, or 
+another comparable disclosure document prepared in connection with the 
+clearance of securities event contracts. In either case, the disclosure 
+document would contain substantially similar information regarding the 
+terms, characteristics, risks, settlement mechanics, and other material 
+features of securities event contracts and would be tailored, as 
+necessary, to address the product's unique features and distinctions 
+from traditional listed options. The Exchange believes that disclosure 
+through the Rule 9b-1 framework would better serve the informational 
+needs of investors than a traditional prospectus because securities 
+event contracts are standardized options for which the principal 
+investor considerations relate to the contract's terms, payout 
+structure, settlement mechanics, and trading characteristics rather 
+than the disclosure typically provided in connection with an offering 
+of a corporate issuer's securities.
+    The Exchange will not commence listing and trading of securities 
+event contracts until a registered clearing agency is authorized and 
+operationally ready to clear the contracts; the applicable disclosure 
+document under Rule 9b-1 is in place; any necessary changes relating to 
+CAT, FINRA, OPRA, the Linkage Plan, and OLPP have been completed; and 
+the Exchange has issued an implementation notice to Members.
+2. Statutory Basis
+    The Exchange believes that the proposed rule change is consistent 
+with Section 6(b) of the Act,\25\ in general, and furthers the 
+objectives of Section 6(b)(5) of the Act,\26\ in that it is designed to 
+prevent fraudulent and manipulative acts and practices, to promote just 
+and equitable principles of trade, to foster cooperation and 
+coordination with persons engaged in facilitating transactions in 
+securities, to remove impediments to and perfect the mechanism of a 
+free and open market and a national market system and, in general, to 
+protect investors and the public interest. In addition, the Exchange 
+believes that the proposed rule change is consistent with the Section 
+6(b)(5) \27\ requirement that the rules of an exchange not be designed 
+to permit unfair discrimination between customers, issuers, brokers, or 
+dealers.
+---------------------------------------------------------------------------
+
+    \25\ 15 U.S.C. 78f(b).
+    \26\ 15 U.S.C. 78f(b)(5).
+    \27\ 15 U.S.C. 78f(b)(5).
+---------------------------------------------------------------------------
+
+Binary KPI Options Are Securities and Standardized Options
+    As an initial matter, the Exchange's proposal is identical to the 
+proposal made by the Cboe to list binary KPI options.\28\ The Exchange 
+believes that the binary KPI options proposed herein would be 
+``securities'' under the Act.\29\ Section 3(a)(10) of the Act \30\ 
+defines the term ``security'' to include, among other instruments, 
+``any . . . option . . . on any security . . . including any interest 
+therein or based on the value thereof.'' \31\
+---------------------------------------------------------------------------
+
+    \28\ See Securities Exchange Act Release No. 105877 (July 10, 
+2026) (SR-CBOE-2026-061) (``Notice of Filing of a Proposed Rule 
+Change to Amend its Rules to Permit the Listing of Binary Options 
+Overlying Key Performance Indicators (``KPIs'') Reported by Certain 
+Issuers of Stock (``Binary KPI Options''))
+    \29\ The Exchange also believes that binary KPI options are also 
+``securities'' under the Securities Act of 1933, as amended (the 
+``Securities Act''). See 15 U.S.C. 77b(a)(1).
+    \30\ 15 U.S.C. 78c(a)(10).
+    \31\ Id.
+---------------------------------------------------------------------------
+
+    Standardized options are generally offered based on the price of 
+the underlying security or index and include puts, calls, and other 
+complex instruments whose value is based on the price of the underlying 
+security or securities. The binary KPI options will
+
+[[Page 59209]]
+
+operate in substantially the same manner as these binary options but 
+with a different underlying. The Exchange's proposal would expand the 
+universe of listed options to include contracts based on proposed KPIs, 
+including net income, net sales, net interest income, provision for 
+credit losses, and specified expense metrics, that relate to the 
+valuation of the issuer's stock. Such options contracts would reference 
+financial metrics that are material to the value of the underlying 
+security and are therefore included in the issuer's financial reports 
+submitted to the Commission, including Form 8-K, Form 10-K and Form 10-
+Q filings.
+    In addition, the Exchange believes that trading such instruments as 
+binary KPI options would promote a fair and orderly market and 
+facilitate new investment and hedging opportunities on a Commission-
+regulated exchange. In certain cases, financial instruments may contain 
+features similar to both options contracts and security-based swaps. As 
+compared to characterizing an instrument as a security-based swap, 
+which would typically be traded bilaterally in the over-the-counter 
+(``OTC'') market, categorizing an instrument as an options contract 
+comes with a more robust set of regulatory requirements and market 
+practices that the Exchange believes would aid in the development of 
+such binary KPI options. To the extent there is uncertainty regarding 
+how best to characterize these contracts under the statute, the 
+Exchange believes that the best interpretation is the one that promotes 
+innovation and competition while providing robust investor protection 
+guardrails on a regulated exchange.
+    As discussed above, the Exchange is proposing to list and trade 
+binary KPI options. The Exchange currently trades standardized options 
+(puts and calls) based on the price of an underlying NMS stock. Binary 
+KPI options would be different from these contracts in primarily two 
+respects: (1) binary KPI options contracts would have a fixed or 
+``binary'' payout at expiration, regardless of the magnitude of the 
+difference between the option's exercise price and the settlement value 
+for the underlying; and (2) the price of such contracts would be based 
+on the issuer achieving financial metrics that are material to the 
+price of the underlying stock rather than the stock's share price 
+itself. The Exchange does not believe that either of those differences 
+is germane to whether this product is an options contract as defined in 
+the Act.
+    The Exchange notes that options as defined in Section 3(a)(10) 
+encompass not only options on a security but further include options on 
+any interest in a security or based on the value thereof. This broad 
+statutory language is sufficient to support the trading of binary KPI 
+options on a Commission-regulated options exchange, including contracts 
+that reference an issuer's earnings, revenues, sales, or other 
+financial metrics on which investors traditionally base investment 
+decisions. Such options contracts would reference financial metrics 
+that are material to the value of the underlying security and are 
+therefore included in the issuer's financial reports submitted to the 
+Commission, including Form 8-K, Form 10-K and Form 10-Q filings.
+    This is consistent with the Commission's own interpretation of the 
+statute when analyzing its application to similar products offered by 
+another national securities exchange. Consider the Commission's 
+approval of proposals by Cboe to list and trade: (1) credit default 
+options; \32\ and (2) credit default basket options.\33\ As the 
+Commission explained in its order approving credit default options for 
+trading on Cboe, ``credit default options . . . are binary options that 
+are automatically exercised upon the occurrence of specified credit 
+events or expire worthless.'' \34\ While such products were therefore 
+different in certain important respects from existing options 
+contracts, ``[a]fter careful analysis, the Commission [found] that 
+credit default options are options based on the value of a security or 
+securities'' \35\ and also ``options on an interest in, or based on the 
+value of an interest in, a security or securities.'' The Commission 
+made a similar finding when it later approved Cboe's proposal to 
+introduce credit default basket options.
+---------------------------------------------------------------------------
+
+    \32\ See Securities Exchange Act Release No. 55871 (June 6, 
+2007), 72 FR 32372 (June 12, 2007) (SR-CBOE-2006-84).
+    \33\ See Securities Exchange Act Release No. 56275 (August 17, 
+2007), 72 FR 47097 (August 22, 2007) (SR-CBOE-2007-26).
+    \34\ See supra note 34.
+    \35\ Id.
+---------------------------------------------------------------------------
+
+    All of this would also be true of the proposed binary KPI options. 
+Similar to Cboe's credit default options and credit default basket 
+options, the proposed binary KPI options are ``binary options that are 
+automatically exercised upon the occurrence of specified . . . events 
+or expire worthless.'' \36\ The Commission has repeatedly found that 
+contracts with a binary payout structure may nevertheless be properly 
+classified as options contracts under the Act and, while most options 
+contracts have historically had a variable payment structure, such a 
+structure is not required by the Act, which does not specify a 
+particular payment structure. In addition, while in some cases binary 
+options offered by other securities exchanges have referenced the price 
+of some underlying security or index, such binary options also 
+encompass contracts like the ones discussed above.
+---------------------------------------------------------------------------
+
+    \36\ Id.
+---------------------------------------------------------------------------
+
+    The Commodity Exchange Act's (``CEA'') lends further support to the 
+classification of binary KPI options as securities. Specifically, 
+pursuant to Section 3(a)(68) of the Act,\37\ a ``security-based swap'' 
+\38\ is a ``swap'' \39\ as defined in the Commodity Exchange Act that 
+is based on: (1) ``an index that is a narrow-based security index, 
+including any interest therein or on the value thereof;'' \40\ (2) ``a 
+single security or loan, including any interest therein or on the value 
+thereof;'' \41\ or (3) ``the occurrence, nonoccurrence, or extent of 
+the occurrence of an event relating to a single issuer of a security or 
+the issuers of securities in a narrow-based security index, provided 
+that such event directly affects the financial statements, financial 
+condition, or financial obligations of the issuer.'' \42\ In turn, the 
+Commodity Exchange Act defines ``swap'' to include ``any agreement, 
+contract, or transaction . . . that is a put, call, cap floor, collar, 
+or similar option of any kind that is for the purchase or sale, or 
+based on the value, of 1 or more . . . securities.'' \43\
+---------------------------------------------------------------------------
+
+    \37\ 15 U.S.C. 78c(a)(68).
+    \38\ Id.
+    \39\ 7 U.S.C. 1a(47).
+    \40\ 15 U.S.C. 78c(a)(68)(A)(ii)(I).
+    \41\ 15 U.S.C. 78c(a)(68)(A)(ii)(II).
+    \42\ 15 U.S.C. 78c(a)(68)(A)(ii)(III).
+    \43\ 15 U.S.C. 78c(a)(68)(A)(ii)(III).
+---------------------------------------------------------------------------
+
+    This is also the case with the binary KPI options identified in the 
+proposal. The KPIs selected are ``material to the value'' of a 
+particular security, and payouts of binary KPI options are conditioned 
+on those terms. Indeed, the nexus between the proposed KPIs and the 
+value of the underlying security is, if anything, more direct than in 
+the case of CD options. Whereas CD options reference a credit event (a 
+contingency that may or may not affect the market value of the 
+reference security depending on recovery rates and market conditions), 
+binary KPI options reference the issuer's actual reported financial or 
+operating performance and are the metrics investors consider when 
+determining the value of a stock. Unlike an external event that merely 
+holds the potential to trigger potential financial consequence for a 
+security, each of the proposed KPIs (whether measured at the 
+consolidated or segment level)
+
+[[Page 59210]]
+
+ultimately constitutes a material component of the issuer's financial 
+results that itself forms the basis for investors' measurements of a 
+company's (and its stock's) intrinsic value.
+    Each binary KPI option proposed herein provides a cash payout based 
+on the disclosed KPI, some of which are directly tied to a pecuniary 
+interest in a security, such as earnings per share and others of which 
+are indirectly tied to the pecuniary interest of a security, such as 
+the issuer's net revenue and income, which determine the issuer's 
+capacity to generate returns for security holders. A stockholder's 
+pecuniary interest in a security is not limited to contractual payment 
+rights (such as declared dividends) but encompasses the right to 
+benefit from the issuer's earnings capacity, as reflected in the market 
+price of the security. Binary KPI options based on earnings metrics 
+therefore reference a core component of the stockholder's pecuniary 
+interest.
+    Classifying binary KPI options as securities options under the Act 
+is consistent with the Commission's established regulatory framework 
+for binary options, including investor protection objectives, and 
+preserves the integrity of antimanipulation restrictions, insider 
+trading prohibitions, and material nonpublic information controls. More 
+specifically, because these contracts are tied to Commission disclosure 
+rules and regulations and material nonpublic information (``MNPI'') 
+risks that are substantially identical to those present in traditional 
+securities trading, aligning binary KPI options with the securities 
+regulatory framework preserves the integrity of insider trading 
+prohibitions and the Commission's disclosure regime. Listing binary KPI 
+options on a registered national securities exchange subjects trading 
+activity to SRO and Commission surveillance for, among other things, 
+manipulative trading and insider trading, affording investors the full 
+protections of the federal securities laws. Further, classifying binary 
+KPI options as security options under the Act allows these contracts to 
+be offered by the same liquidity providers that offer listed options 
+today, all of whom are Commission-registered and regulated broker-
+dealers who are also subject to FINRA and exchange SRO oversight, and 
+allows such contracts to be traded by the same retail customer base 
+that trade binary options (and KPI-related contracts) today.
+    For these reasons, the Exchange believes that binary KPI options, 
+as proposed, are appropriately classified as binary options eligible to 
+trade on a registered national securities exchange and as standardized 
+options subject to the disclosure framework established by Rule 9b-1. 
+This classification reflects the economic substance and standardized 
+structure of the product, is consistent with the Act and the 
+Commission's prior interpretations, and is designed to prevent 
+fraudulent and manipulative acts and practices, promote just and 
+equitable principles of trade, foster regulatory and clearing 
+coordination, and protect investors and the public interest consistent 
+with Section 6(b)(5) of the Act.\44\
+---------------------------------------------------------------------------
+
+    \44\ 15 U.S.C. 78f(b).
+---------------------------------------------------------------------------
+
+Proposal
+    The Exchange believes the proposal is consistent with Section 6(b) 
+of the Act, in general, and furthers the objectives of Section 6(b)(5) 
+of the Act,\45\ in particular, in that it is designed to prevent 
+fraudulent and manipulative acts and practices, to promote just and 
+equitable principles of trade, to foster cooperation and coordination 
+with persons engaged in facilitating transactions in securities, to 
+remove impediments to and perfect the mechanism of a free and open 
+market and a national market system, and, in general, to protect 
+investors and the public interest.
+---------------------------------------------------------------------------
+
+    \45\ 15 U.S.C. 78f(b).
+---------------------------------------------------------------------------
+
+    Specifically, the Exchange believes the proposed rule change will 
+remove impediments to and perfect the mechanism of a free and open 
+market and a national market system, and, in general, protect investors 
+and the public interest because it establishes a clear and transparent 
+framework for a new category of listed options (binary KPI options) 
+that are tied to financial and operating metrics of issuers that are 
+publicly disclosed in required Commission reports. Currently, investors 
+wishing to position their investment strategies around earnings 
+announcements must rely primarily on equity options, whose pricing is 
+affected by a wide range of variables beyond the reported financial or 
+operating measure of interest (e.g., implied volatility, delta, time 
+value, and general market movement). Binary KPI options allow investors 
+to take a targeted, defined-risk position directly on a specific 
+financial or operating measure (i.e., a KPI) for a particular reporting 
+period. The Exchange believes this additional investment tool will 
+protect investors and the public interest because it will promote 
+market efficiency, enable more precise price discovery around earnings 
+events, allow investors to hedge against potential idiosyncratic risks, 
+and remove a gap in current national securities exchange-listed 
+products available to market participants.
+    The Exchange believes the proposed list of issuers and KPIs on 
+which the Exchange may list binary KPI options will prevent fraudulent 
+and manipulative acts and practices, remove impediments to and perfect 
+the mechanism of a free and open market and a national market system, 
+and, in general, protect investors and the public interest. First, as 
+noted above, the Exchange is proposing to list binary KPI contracts 
+based on specific financial and operating metrics reported by the 
+following issuers in their earnings-related disclosures submitted to 
+the Commission: Apple, Inc.; Advanced Micro Devices, Inc.; Alphabet 
+Inc.; <a href="http://Amazon.com">Amazon.com</a>, Inc.; Bank of America Corporation; Citigroup Inc.; 
+Coinbase Global, Inc.; Ford Motor Company; Intel Corporation; JPMorgan 
+Chase & Co.; Marathon Digital Holdings, Inc.; Meta Platforms, Inc.; 
+Microsoft Corporation; Netflix, Inc.; NVIDIA Corporation; Palantir 
+Technologies Inc.; SoFi Technologies, Inc.; Space Exploration 
+Technologies Corp.; Super Micro Computer, Inc.; Target Corporation; 
+Tesla, Inc.; and The Walt Disney Company. The Exchange believes 
+offering investors an additional investment tool on a national 
+securities exchange related to some of the most actively traded stocks 
+and options will perfect the mechanism of a free and open market and 
+benefit investors by allowing them to further refine their investment 
+strategies, including using these options to hedge idiosyncratic, even-
+specific risk embedded in the specific KPIs (as further discussed 
+below), for these actively traded companies.
+    The Exchange believes the proposed universe of issuers will prevent 
+fraudulent and manipulative acts and practices, because the proposed 
+issuers are large, well-capitalized, and widely followed issuers with 
+highly liquid underlying securities and options markets. As noted in 
+its filing to amend its rules to permit the listing of binary KPI 
+options,\46\ Cboe noted that during May 2026, each of the issuers 
+exceeded $3 billion in market capitalization and ranked among the top 
+200 U.S. companies by average daily options or stock volume, with the 
+exception of Space Exploration Technologies Corp (commonly referred to 
+as SpaceX),
+
+[[Page 59211]]
+
+which had not been trading for a full calendar month but which the 
+Exchange believes will satisfy these measures with its first month of 
+trading results based on its volumes since it began trading.\47\
+---------------------------------------------------------------------------
+
+    \46\ See Securities Exchange Act Release No. 105877 (July 10, 
+2026), 91 FR 43418 (July 15, 2026) (SR-CBOE-2026-061) (``Notice of 
+Filing of a Proposed Rule Change to Amend its Rules to Permit the 
+Listing of Binary Options Overlying Key Performance Indicators 
+(``KPIs'') Reported by Certain Issuers of Stock (``Binary KPI 
+Options'')).
+    \47\ As noted by Cboe, the ADV of SpaceX stock between June 12 
+and June 22, 2026 was approximately 290,009,963 shares. The market 
+capitalization of SpaceX as of June 22, 2026 was $2.145 trillion.
+---------------------------------------------------------------------------
+
+    Securities with high market capitalizations and liquid markets are 
+generally less susceptible to manipulation because of the substantial 
+capital required to artificially influence prices of those securities. 
+The depth and breadth of trading activity for securities with 
+significant market capitalizations, such as the stocks of the proposed 
+issuers, make it unlikely that a single market participant would be 
+able to exert undue influence on the price of such a stock, as large 
+volumes of buyers and sellers are what ultimately continuously reflect 
+the true market value of the stock. The Exchange believes the KPIs of 
+issuers with high market capitalizations proposed to underlie binary 
+KPI options are similarly less susceptible to manipulation because any 
+attempt to distort a financial metric of such an issuer would require 
+an enormous and economically impractical deployment of capital, which 
+would likely exceed the fixed payout of a binary KPI option. Therefore, 
+like stocks of large-cap issuers, KPIs of large-cap issuers are less 
+susceptible to manipulation due to the structural barriers that would 
+make manipulating KPI values operationally difficult and financially 
+irrational (in addition to the rigorous financial oversight to which 
+these issuers are subject, as further discussed below).
+    In addition to the proposed issuers being highly capitalized and 
+having actively traded stocks and options on such stocks, the Exchange 
+also believes the proposed limited universe of issuers for binary KPI 
+options to those proposed will prevent fraudulent and manipulative acts 
+and practices because each issuer is subject to periodic reporting 
+requirements under the Act. Therefore, each of the proposed issuers 
+must file annual reports on Form 10-K, quarterly reports on Form 10-Q, 
+and current reports on Form 8-K with the Commission, which as discussed 
+above disclose information the issuer believes is necessary for an 
+investor to understand its financial condition, changes in financial 
+condition and results of operations, which can include KPIs. Further, 
+each issuer maintains audited financial statements prepared in 
+accordance with U.S. Generally Accepted Accounting Principles 
+(``GAAP'') and is subject to executive certification requirements under 
+the Sarbanes-Oxley Act. As a result, the settlement-determining KPI 
+values for each eligible issuer are produced within the Commission's 
+supervisory jurisdiction, are publicly verifiable from a Commission-
+regulated source and are subject to relevant anti-fraud provisions 
+under the Act, which the Exchange believes will reduce the potential 
+for manipulation of the underlying KPIs as well as the applicable 
+issuer's stock.
+    Further, the Exchange believes the proposed limited universe of 
+issuers will introduce binary KPI options in a well-developed, well-
+understood, and transparent Commission-regulated market environment. 
+Each issuer is among the most widely followed, actively traded, and 
+extensively analyzed issuer in its respective sector, with deep and 
+liquid equity and derivatives markets and a broad institutional and 
+retail investor base. The depth of existing market activity surrounding 
+these issuers supports fair and orderly pricing by ensuring that binary 
+KPI options are listed in markets where price discovery is well-
+established, liquidity is readily available, and participants have 
+broad access to the information necessary to form and express informed 
+views on KPI outcomes. The Exchange believes the continuous public 
+scrutiny to which these issuers are subject substantially reduces the 
+likelihood that any market participant could obtain or maintain an 
+informational advantage sufficient to manipulate the settlement value 
+of the binary KPI options.
+    The Exchange believes the proposed KPI metrics will similarly 
+prevent fraudulent and manipulative acts and practices, remove 
+impediments to and perfect the mechanism of a free and open market and 
+a national market system, and, in general, protect investors and the 
+public interest. The Exchange's proposal limits eligible KPIs to GAAP 
+and non-GAAP measures and other statistics related to an issuer's 
+financial condition and operational results, all of which the proposed 
+issuers disclose in their earnings-related filings (i.e., Forms 8-K, 
+10-Q, and 10-K) submitted to the Commission. As such, the settlement 
+values of the proposed binary KPI options are derived exclusively from 
+information that issuers deem as material information required to be 
+disclosed in reports submitted to the Commission. These metrics are 
+routinely referenced and tracked in the investment community and are 
+figures that the market recognizes as a meaningful and central 
+indicator of issuer performance. The Exchange believes that the 
+inclusion of well-established metrics as eligible KPIs expands the 
+value of binary KPI options for investors without compromising the 
+integrity of trading processes, including the settlement process.
+    The proposed KPI metrics are among the most widely followed and 
+extensively analyzed measures for the proposed issuers. Specifically, 
+the Exchange proposes to be able to list a binary KPI option on 
+earnings per share (prepared in accordance with GAAP) for each proposed 
+issuer. This metric is among the most widely followed and extensively 
+analyzed figures in public company financial disclosure and is 
+disclosed in each issuer's periodic Commission filings. Similarly, the 
+Exchange proposes to list binary KPI options on revenue, prepared in 
+accordance with the applicable GAAP, for each issuer. As is the case 
+for earnings per share, revenue is a widely followed financial metric 
+for publicly reporting companies and is the subject of extensive 
+analyst coverage.
+    The Exchange proposes KPIs representing revenues broken out by 
+appliable reportable segment, business unit, or product category, 
+including cloud and artificial intelligence infrastructure revenues, 
+streaming and geographic subscription revenues, automotive segment 
+revenues, financial services segment revenues, consumer product 
+category revenues, and digital asset exchange transaction and 
+subscription revenues, among others, for several of the proposed 
+issuers. Each such metric is a GAAP-defined figure required to be 
+disclosed in the issuer's periodic Commission filings. The Exchange 
+understands these metrics enable market participants to express views 
+on specific high-profile business lines that are extensively covered by 
+analysts and subject to a high volume of publicly available forecasts.
+    The Exchange proposes KPIs for the proposed financial institution 
+issuers that are specific to financial institution income statement 
+presentation, including net interest income, provision for credit 
+losses, and net income. Each such metric reflects the distinct GAAP 
+reporting framework applicable to banking institutions and is subject 
+to the same periodic disclosures as other proposed KPIs.
+    The proposed rule change also includes operating margin, gross 
+margin, or cash flow from operations KPIs for several issuers, each of 
+which is computed directly from GAAP financial statement line items 
+disclosed in the issuer's periodic Commission filings. These metrics 
+provide market participants with insight into issuer
+
+[[Page 59212]]
+
+profitability and capital generation and complement other revenue and 
+earnings figures when market participants are evaluating the value of 
+an issuer and its stock.
+    The Exchange also proposes several non-financial operational KPIs 
+that issuers disclosed in their periodic Commission filings, including 
+relevant production volumes, network and infrastructure counts, user 
+engagement metrics, deal counts, digital asset trading volume, and 
+digital asset mining and holdings metrics. Each designated non-
+financial operational metric is closely tied to the core economic 
+activity of the respective issuer's business and is a figure that the 
+issuer has affirmatively chosen to disclose to the public as a key 
+indicator of business performance. Issuers typically designate and 
+disclose such metrics precisely because they are understood by the 
+market to be among the most meaningful measures of their business 
+activities. As discussed above, this is consistent with Commission 
+guidance that an issuer should include KPIs in these report that the 
+issuer believes an investor needs to gain understanding of its 
+financial condition, changes in financial condition and results of 
+operations, as such KPIs present the ``pulse'' of the issuer's 
+business. The market significance of these metrics is further reflected 
+in the extensive analyst coverage and investor attention, particularly 
+near each reporting date. Each metric is subject to executive 
+certification as part of the periodic report in which it appears and is 
+widely tracked by financial data services and equity research analysts.
+    Overall, the Exchange believes that the proposed well-established, 
+publicly reported metrics as eligible KPIs will expand the value of 
+binary KPI options for investors without compromising the integrity of 
+trading processes, including the settlement process. As a result, the 
+Exchange believes the proposed KPIs will protect investors and the 
+public interest as it will permit the Exchange to offer investors 
+additional investment and hedging tools on the Exchange that investors 
+can incorporate into their investment strategies regarding the proposed 
+issuers.
+    The Exchange believes the proposed contract terms for binary KPI 
+options will promote just and equitable principles of trade, remove 
+impediments to and perfect a free and open market and national market 
+system, and protect investors. As discussed above, the Exchange 
+believes the proposed contract terms for binary KPI options are 
+standardized option terms. Like standard option contracts and binary 
+index option contracts currently listed for trading on the Exchange, 
+each proposed binary KPI option will be a call or a put, will have an 
+underlying, exercise price, an expiration date, a settlement type, a 
+settlement style, and a multiplier. As is the case for binary index 
+options, each proposed binary KPI option will have an exercise 
+settlement amount paid depending on how the settlement value of the 
+underlying compares to the exercise price.
+    The proposed binary KPI options will function in a substantially 
+similar manner to binary index options, with the proposed contract 
+terms substantially similar to the contract terms of binary index 
+options. The proposed definitions of binary KPI option, call binary KPI 
+option, exercise price, and put binary KPI option are the same as those 
+terms for binary index options (as previously approved by the 
+Commission), differing only in reference to the underlying (KPI v. 
+index).
+    The proposed definition of settlement value for binary KPI options 
+is generally similar to the definition for binary index options (as 
+previously approved by the Commission), with certain differences 
+necessary to be addressed due to the different nature of a KPI as the 
+underlying. The Exchange believes the proposed $1 exercise settlement 
+amount is reasonable given the retail nature of the proposed binary KPI 
+options and merely adds specificity to the Rules for binary KPI 
+options. The Exchange notes binary KPI options differ from standardized 
+index options (which are also cash-settled) in that the exercise 
+settlement amount is $1.00 rather than the cash difference amount 
+between the settlement value of the index and the strike price of an 
+option. Since the $1.00 exercise settlement amount will be paid out to 
+the option holder if the criteria of the binary KPI option have been 
+met, binary KPI options utilize a fixed exercise settlement amount.
+    The Exchange proposes new Rule 5.96-O to list the specific binary 
+KPI contracts with the KPI criteria for each option contract. Such KPI 
+criteria are established as the set KPI events that will be used to 
+determine an option contract should be exercised by comparing the 
+strike price of the binary KPI option to the KPI value. The Exchange 
+believes these proposed contracts (including the issuers and KPIs) are 
+consistent with the Act for the reasons set forth above.
+    The Exchange believes the proposed expirations for binary KPI 
+options will remove impediments to and perfect the mechanism of a free 
+and open market and a national market system because they will align 
+with the reporting periods for which the proposed issuers disclose 
+earnings results and submit corresponding reports to the Commission. 
+These expirations will, therefore, permit investors to incorporate 
+binary KPI options into their investment strategies that correspond to 
+issuers' earnings results. Further, as discussed above, the Exchange 
+believes aligning expirations with Commission-regulated sources will 
+reduce the potential for manipulation of the underlying KPIs, which 
+will ultimately protect investors and the public interest.
+    The proposed rule establishes a strike regime for binary KPI 
+options similar to that for traditional options. As is the case for 
+traditional options and binary index options, the proposed rule change 
+establishes permissible strike intervals, the amounts of which increase 
+as the value of the strike increases. Additionally, the Exchange 
+proposes to list initial and additional series pursuant to a similar 
+framework as traditional equity options. The differences in the 
+proposed strike regime compared to that of standard equity and index 
+options are necessary and appropriate to reflect the static nature of 
+KPIs (unlike underlying equities and indexes, the values of which 
+change throughout the trading day) and the timing of their disclosure. 
+As noted above, the Exchange intends to list binary KPI options aligned 
+with the cadence of the KPI announcements as their expiration cycle 
+(generally quarterly). The Exchange intends to list for trading binary 
+KPI options with expirations for the then-current reporting period 
+(e.g., third quarter) as well as the following period (e.g., fourth 
+quarter) prior to the expiration of the binary KPI options for the 
+then-current reporting period.
+    As the Exchange does for standard options, the Exchange lists 
+strikes (subject to its Rules) based on relevant market information--
+including the then-current value of the underlying--and customer 
+demand. As described above, the Exchange intends to do the same for 
+binary KPI options by listing strikes relative to the then current 
+value of the underlying KPI. The Exchange believes it is consistent 
+with just and equitable principles of trade to permit the Exchange to 
+list strikes for a new expiration based on the most recently disclosed 
+KPI value, which may not be for the immediately preceding reporting 
+period, and then add strikes based on the disclosed KPI for the 
+immediately preceding reporting period (which would be the settlement 
+value for binary KPI options that expire in the prior
+
+[[Page 59213]]
+
+reporting period). This will enable the Exchange to respond to changes 
+in market conditions in the same manner it is able to do today to 
+respond to changes in values of (and market conditions related to) 
+other underlyings. The Exchange believes this flexibility is 
+appropriate for binary KPI options because the value of a KPI changes 
+only when an issuer discloses that KPI, which generally happens every 
+three months, unlike other underlyings that change every trading day. 
+While this proposed strike listing regime differs from that of other 
+options, the concept is the same, which is to permit the Exchange to 
+list strikes reflective of the then-current value of the underlying. It 
+is possible the changed value of an underlying KPI may be more sudden 
+and pronounced than changes in the value of an underlying equity or 
+index (which are susceptible to sudden value changes); however, like 
+the listing rules for equity and index options, the proposed rules 
+permit the Exchange to list strikes to reflect potentially significant 
+changes in the value of the underlying.
+    The Exchange believes the proposed scaling of strike prices is 
+reasonable and will protect investors, as it will permit the Exchange 
+to list strike values in amounts similar to current strike values for 
+other options. As noted above, values of certain KPIs may be large 
+(e.g., in the billions). The proposed scaling will permit the Exchange, 
+for example, to list a strike of 27 rather than 27,000,000,000, which 
+the Exchange believes will be simpler for investors to understand (as 
+it will be made clear that 27 will reflect billions in this example) 
+and consistent with current strike levels. The proposed scaling also 
+permits the strike prices for binary KPI options to fit within current 
+system capabilities regarding strike price values. The Exchange 
+believes scaling rather than modifying its systems (and potentially 
+causing investors to modify their systems) will benefit investors by 
+allowing them to trade binary KPI options in the same manner as they 
+trade other options today.
+    The Exchange believes the proposed strike intervals promote just 
+and equitable principles of trade because it will permit the Exchange 
+to list commercially meaningful strikes that will permit investors to 
+tailor their trading strategies with precision. The Exchange 
+acknowledges the proposed strike intervals are smaller than those in 
+current Rules for other types of options. However, the Exchange 
+believes the precision is appropriate and necessary given the nature of 
+KPIs and the proposed options. The purpose of binary KPI options is to 
+permit investors to take discrete and precise positions on KPIs. 
+Therefore, the Exchange needs the ability to list strikes with the 
+precision necessary to permit investors to take these positions. For 
+example, earnings per share is generally a relatively small number 
+(under $10). While strike intervals for other options are limited to 
+$0.50 intervals, that would not be meaningful in the context of binary 
+KPI options when investors are looking to take positions for a specific 
+KPI, which will be measured in penny intervals. Therefore, the Exchange 
+believes smaller strike intervals will benefit investors because they 
+will allow the Exchange to list binary KPI options that will enable 
+investors to use these options in the precise nature for which they are 
+intended and provide sufficient flexibility for the Exchange to list 
+series to respond to changes in market conditions and customer demand, 
+while other rules will place bounds around the strikes the Exchange may 
+list.
+    Further, as discussed above, the proposed strike intervals are 
+consistent with current rules for other options, which provide for 
+larger strike intervals as the value of strike prices increases. Given 
+the scaling factor for larger KPI values, while it may appear the 
+proposed rule change will permit smaller strike intervals for larger 
+KPI values, that may be true on a nominal basis but is not the case if 
+the actual value of the strike intervals is considered. The 
+corresponding actual value of the strike interval for a strike price 
+that was subject to a larger scale value is higher than the actual 
+value of the strike interval for a strike price that was subject to a 
+smaller scale value. As a result, the permissible strike intervals for 
+strike prices representing higher KPI values are actually larger than 
+the permissible strike intervals for strike prices representing lower 
+KPI values. This is consistent with general premise underlying current 
+strike intervals that larger strike intervals apply to larger strike 
+values and, therefore, the Exchange believes the proposed rule change 
+will promote just and equitable principles of trade.
+    The Exchange believes this proposed rule change clearly describes 
+the proposed terms of binary KPI options, such as with respect to 
+expirations (including the Exchange's announcement of the specific 
+expiration date after binary KPI options series for that expiration are 
+listed) and exercise prices (including the scaling factor, negative 
+values, and potential changes to that scaling factor for a binary KPI 
+option class) for all investors. As discussed above, these terms and 
+changes to such terms will be described in Exchange notices, technical 
+specifications (including binary KPI option reference data files), and 
+contract specifications (all of which are posted on the Exchange's 
+public website and thus available to all investors). Exchange ATP 
+Holders and retail brokerage firms are highly sophisticated investors 
+that intake information regarding other Exchange-listed options 
+(including changes) in the same manner that the Exchange plans to 
+release this information for binary KPI options. Therefore, the 
+Exchange expects retail customers to have access to all relevant 
+information regarding the terms of binary KPI options they choose to 
+trade, including changes to expiration dates and exercise price values 
+as announced by the Exchange.
+    The proposed rule change specifies a multiplier of one for binary 
+KPI options rather than require the Exchange to designate a multiplier 
+of at least one as the rules for binary index options do. This proposed 
+multiplier is consistent with the definition of contract multiplier for 
+binary index options (as that requires a multiplier of at least one) 
+and merely adds specificity to the Rules.
+    The Exchange believes proposed Rule 5.101-O, which establishes 
+Regular Trading Hours for binary KPI options is consistent with the 
+Act, protects investors, and prevents fraudulent and manipulative 
+practices. The Exchange believes the proposed structure ensures that 
+trading in binary KPI options ceases before the earnings announcement 
+that determines settlement. The distinction between A.M.- and P.M.-
+settled contracts mirrors the settlement terms already applicable to 
+binary index options, as well as other Exchange products.
+    The Exchange believes proposed Rule 6.71-O(d), which addresses bid 
+and offer conventions for binary options with multipliers other than 
+100, will provide clarity and consistency in market quotations relative 
+to the notional size of the option, promotes investor understanding of 
+the cost and value of binary KPI option contracts. Therefore, the 
+Exchange believes the proposed rule change is consistent with just and 
+equitable principles of trade because it creates a pricing structure 
+that reflects the notional value of an option based on its multiplier.
+    The Exchange believes proposed Rule 5.101-O(e), which provides that 
+for binary KPI options, the System initiates the opening rotation at 
+9:30 a.m., removes impediments to a free and open market by applying 
+the same proven opening process to binary KPI options that governs 
+other listed options classes
+
+[[Page 59214]]
+
+on the Exchange. Additionally, unlike equity options, for which the 
+underlying opens for trading and can trigger the opening rotation, KPIs 
+do not trade, so triggering the opening rotation based on a set time is 
+reasonable for binary KPI options.
+    The Exchange believes excluding binary KPI options from the obvious 
+error provisions in Rule 6.85-O is consistent with the Act and promotes 
+just and equitable principles of trade because the standard obvious 
+error framework, which evaluates whether an execution price deviates 
+from a ``theoretical value'' by a prescribed amount, is incompatible 
+with the structure of binary KPI options. Binary KPI options have no 
+continuously observable theoretical value (unlike equity and index 
+options) prior to the date of the earnings-related disclosure. Rather, 
+their exercise settlement amount is fixed at either a pre-specified 
+dollar amount or zero, depending entirely on whether the reported KPI 
+satisfies the exercise condition, which itself is based on a single, 
+publicly verifiable metric, disclosed in Commission filings. Applying 
+an obvious error framework premised on theoretical value calculations 
+to a product with a binary, fixed payout would be technically 
+inapplicable and could produce unjust or arbitrary results. Moreover, 
+because settlement of binary KPI options is determined by issuer-
+reported metrics disclosed through Commission filings (i.e., figures 
+produced pursuant to established accounting standards, subject to 
+independent audit, and certified under the Sarbanes-Oxley Act), the 
+settlement process is itself governed by a comprehensive external 
+regulatory framework. The Exchange believes that establishing any 
+alternative dispute mechanism in this context would be not only 
+unnecessary, but potentially disruptive to market integrity, as it may 
+introduce an element of post-hoc discretion into a settlement process 
+that is expressly designed to be objective, verifiable, and rule-bound.
+    The Exchange believes the proposed amendments related to position 
+limits for binary KPI options are consistent with the Act because they 
+establish a rational position limit framework for binary KPI options 
+that protects against manipulation while facilitating legitimate 
+trading activity in a novel product. The Exchange believes that setting 
+the position limit for binary KPI options as the same as the applicable 
+position limit for the stock of the issuer, with 100 binary KPI option 
+contracts equaling one standard option contract, is appropriate. As 
+proposed, binary KPI options with a multiplier of one will count toward 
+applicable limits on a proportional basis relative to standard equity 
+options on the issuer's stock, which carry a multiplier of 100.
+    The Exchange further believes the proposal is reasonable given the 
+nature of binary KPI options and their relationship to the underlying 
+issuer. Because binary KPI options have a fixed maximum notional value 
+and settle on an all-or-nothing basis based on a KPI of the issuer 
+rather than the price of the issuer's stock as with a standard equity 
+option, the Exchange believes the proposed position limits 
+appropriately reflects the distinct structure of these contracts and 
+limits the potential for any single market participant to exert undue 
+influence over binary KPI option settlement. With respect to binary KPI 
+options, the economic risk of a position is binary, in that the 
+contract either settles in-the-money at $1.00 or out-of-the money at 
+$0.00. Additionally, with respect to binary KPI options, the maximum 
+notional exposure per contract is fixed in advance; it cannot exceed 
+$1.00 multiplied by the contract multiplier. Moreover, unlike stock 
+prices or index values, binary KPI option positions would not influence 
+a company's financial or operational outcomes; the number of option 
+contracts outstanding or trading volume, for instance, has no effect on 
+revenue or operational metrics.
+    Further, the Exchange's proposal to provide that positions in 
+binary KPI options on the same KPI with different expiration dates and 
+positions in binary KPI options for the same issuer with different 
+underlying KPIs are not aggregated reflects the distinct structure of 
+binary KPI options. Each binary KPI option expiration corresponds to a 
+separate event tied to a specific issuer reporting period. Thus, the 
+Exchange believes aggregating positions across different expiration 
+dates would not accurately reflect the risk profile of these positions 
+and would impose an unnecessary burden on market participants seeking 
+exposure to company KPI events across different reporting periods. In 
+determining that position limits should not be aggregated across all 
+binary KPI options referencing a single issuer, the Exchange analyzed 
+the degree to which KPIs of a given issuer are correlated with one 
+another.
+    Similarly, the Exchange believes it is reasonable to provide that 
+binary KPI options are not aggregated with non-binary options contracts 
+overlying the stock of the issuer. Because binary KPI options and 
+equity options overlying the same issuer have different risk profile 
+(i.e., binary KPI options settle based on a KPI of the issuer rather 
+than its stock price), the Exchange believes it would be inappropriate 
+and misleading to require aggregation of these positions for purposes 
+of position limits. As noted above, binary KPI options are based solely 
+on whether a single, specified-issuer KPI meets a discrete threshold at 
+a defined future date, and their value reflects the market's 
+probability assessment of that singular outcome. Standard equity 
+options, on the other hand, reflect a broad array of factors bearing on 
+the price of the underlying security, including macroeconomic 
+conditions and sector dynamics, of which any individual KPI is only one 
+component. Because the two products are not priced off of a common 
+reference and do not represent economically equivalent or fungible 
+exposures, aggregating positions across them would not meaningfully 
+advance the prevention of manipulative practices with respect to the 
+underlying security.
+    The Exchange further notes that this proposed non-aggregation 
+framework is not unprecedented. Rule 5.86-O(b) provides that positions 
+in binary return derivatives shall not be aggregated with options 
+contracts on the same or similar underlying security. The Exchange 
+believes that there was no need to aggregate positions across the two 
+product types to prevent manipulative practices involving the 
+underlying.
+    Finally, the Exchange believes the amendments to the hedge 
+exemption provision in proposed Rule 5.102-O(d) is consistent with the 
+Act because it facilitates legitimate hedging activity in binary KPI 
+options. Because a market participant simultaneously holding a short 
+put and short call position in binary KPI options has taken opposing 
+sides of the potential binary outcome (i.e., the short call is at risk 
+if the KPI is met and the short put is at risk if the KPI is not met), 
+the Exchange believes such a position represents a defined, bounded 
+risk profile that does not present the same potential for manipulation 
+or market disruption that position limits are designed to prevent. The 
+Exchange therefore believes the hedge exemption as proposed will 
+encourage market-making activity and liquidity provision in binary KPI 
+options while protecting investors and the public.
+    The Exchange also believes the proposed adoption of Rule 5.103-O 
+consistent with the Act. By establishing tailored reporting 
+requirements for binary KPI options, the Exchange will be able to 
+monitor ATP Holder positions effectively and detect any accumulation of 
+positions that may approach or exceed applicable limits, to the benefit 
+of investors. The Exchange believes it is
+
+[[Page 59215]]
+
+consistent with just and equitable principles of trade for 100 binary 
+KPI option contracts to equal one standard option contract for purposes 
+of determining whether the report in proposed Rule 5.103-O is required 
+given the size of binary KPI contracts. As discussed above, proposed 
+binary KPI options have a multiplier of one, while standard option 
+contracts have a multiplier of 100. Therefore, the notional value of a 
+binary KPI option is significantly less than the notional value of 
+standard option contracts. For example, 200 contracts with a value of 
+$1.00 with a multiplier of 100 would equate to $20,000 notional value, 
+while 200 binary KPI option contracts with a value of $1.00 (which is 
+the fixed maximum value of a binary KPI option contract) with a 
+multiplier of one would equate to $200 notional value. Counting 100 
+binary KPI contracts as one standard option contract for purposes of 
+this report effectively calibrates the reporting requirement so that 
+investors are required to submit the report for an economically 
+equivalent number of contracts, which promotes just and equitable 
+principles of trade.
+    The Exchange believes the proposal will provide the Exchange and 
+regulators with visibility into large position concentrations in binary 
+KPI options, preserving the ability to identify unusual activity and 
+respond to any unforeseen concerns, while calibrating the threshold to 
+a metric that is meaningful for this contract given its smaller 
+multiplier relative to that of standard equity options. The Exchange 
+believes this reporting framework, coupled with the position limits 
+amendments, provides a fully adequate regulatory framework for these 
+instruments.
+    Further, as noted above, the Exchange believes it has an adequate 
+surveillance program in place to detect potentially manipulative 
+trading in binary KPI options. The Exchange notes that manipulation of 
+the reported KPI would constitute securities fraud and expose the 
+issuer to liability under federal securities law, separate and apart 
+from any exchange-related violation.
+    The Exchange believes the proposed binary KPI options will serve as 
+a vehicle to hedge idiosyncratic, event-specific risk embedded in the 
+specific KPIs. Standard equity options are calibrated to the price of 
+the underlying security and capture a full spectrum of factors or risks 
+which may affect issue value, such as macroeconomic conditions or 
+sector dynamics. Because equity option pricing incorporates this full 
+spectrum, a participant seeking to hedge exposure to a single, discrete 
+KPI outcome cannot do so precisely using standard equity options. 
+Because settlement of a binary KPI option is determined solely by 
+whether a specified-issuer KPI meets a defined threshold, the contract 
+effectively isolates certain individual risks an investor may seek to 
+manage. For example, consider an investor holding a long-term position 
+in a particular issuer stock, who believes the issuer's quarterly 
+revenue will fall short of expectations (for reasons unrelated to the 
+issuer's long-term prospects). The investor may utilize the binary KPI 
+option to hedge precisely against the near-term risk without disruption 
+to the underlying equity position. This targeted hedging utility 
+represents a distinct and additive function relative to existing listed 
+products, which the Exchange believes will serve the interests of 
+investors and provide an efficient mechanism for managing event-
+specific, KPI-driven risk.
+    The Exchange believes the proposed rule change will facilitate 
+transactions in securities, remove impediments to and perfect the 
+mechanism of a free and open market and a national market system, and, 
+in general, protect investors and the public interest, because it will 
+provide investors with a securities exchange-listed investment choice 
+for these instruments, offering price transparency and the regulatory 
+protections of a national securities exchange. The Exchange believes 
+the proposed rule change will permit investors to manage their risk 
+exposures and carry out their investment objectives on a securities 
+exchange with more flexibility and broader applicability. The Exchange 
+also believes the proposed rule change will promote competition, as it 
+will meet demands of investors that currently may trade products 
+structured in substantively the same manner as the proposed binary KPI 
+options in other markets (as further discussed below). Binary KPI 
+options would provide investors with a straightforward means of 
+expressing a directional view on key financial and operating metrics. 
+The Exchange further believes the proposed rule change is consistent 
+with the protection of investors and the public interest, as binary KPI 
+options would be subject to the Exchange's existing rules governing the 
+listing and trading of options. The Exchange believes expanding the 
+universe of binary options will benefit investors, particularly retail 
+investors and other investors who prefer simplicity, as a complementary 
+offering to current exchange-traded options.
+    The proposed rule change will permit the Exchange to list binary 
+KPI options on a national securities exchange as alternatives to 
+products that are structured in substantially the same manner as binary 
+options currently available in the OTC market and on other platforms. 
+The Exchange understands investors have traded binary options similar 
+to the proposed binary options in OTC markets for many years but may 
+prefer to trade such options in a listed environment to receive the 
+benefits of trading listing options. These benefits include: (1) 
+enhanced efficiency in initiating and closing out positions; (2) 
+increased market transparency; and (3) heightened contra-party 
+creditworthiness. The Exchange believes the proposed rule change may 
+encourage liquidity to shift from the OTC market onto the Exchange, 
+which the Exchange believes would increase market transparency as well 
+as enhance the process of price discovery conducted on the Exchange 
+through increased order flow. The proposed rule change is intended to 
+provide a market for binary KPI options as a standardized product 
+without the credit risk of an individual issuer. By providing a listed 
+and standardized market for more classes of binary options, the 
+Exchange seeks to attract investors who desire the simplicity of a 
+binary option with the certainty and safeguards of a regulated and 
+standardized marketplace. Additionally, unlike an OTC binary option, 
+counter-party credit risk for Exchange-listed binary KPI options is 
+significantly reduced through the issuance and guarantee of the 
+contracts by a registered clearing agency. Further, as an exchange-
+traded option, binary options will have the advantage of liquidity 
+provided by Market-Makers, which the Exchange believes may lead to 
+tighter spreads than those in the OTC market. The Exchange also 
+believes that standardization will enable more interested parties to 
+become market participants.
+    In addition to the OTC market, various market platforms that are 
+not registered as national securities exchanges currently offer 
+products structured in substantively the same manner as binary options 
+that the Exchange may list pursuant to current Rules and as proposed. 
+These platforms offer binary option products overlying securities 
+indexes, which may be settled at varying points of the day (not just at 
+the open and close of the trading day). However, as these venues are 
+not national securities exchanges, they do not offer investors the 
+benefits of
+
+[[Page 59216]]
+
+centralized liquidity, market transparency, or securities regulations 
+intended to protect investors. The Exchange believes listing 
+competitive products on a national securities exchange would create a 
+centralized and standardized marketplace for these products, which 
+promotes price discovery and transparency, within an established 
+regulatory framework designed to afford investors in securities with 
+important protections. In other words, the Exchange believes its 
+proposal offers a more transparent platform than the OTC market or 
+other market platforms offer. It would contribute to leveling the 
+playing field with these alternative markets and provide investors with 
+safeguards associated with Commission and SRO oversight of the trading 
+activity in these exchange-listed binary KPI options.
+    Ultimately, the Exchange believes the proposed rule change will 
+provide investors with greater trading tools and opportunities and 
+flexibility, resulting in investors having additional means to carry 
+out their investment objectives and manage their risk exposures through 
+products listed and traded on a national securities exchange. The 
+Exchange believes the proposed rule change will offer market 
+participants a simplified, transparent, and limited risk investment 
+choice overlying securities and securities indexes, which may be more 
+aligned with their specific timing needs and investment and hedging 
+strategies and risk tolerances. The Exchange believes it benefits the 
+investing public to continue to enhance its listed product offerings to 
+respond to continuously changing needs of investors and to a 
+continuously changing competitive environment.
+
+B. Self-Regulatory Organization's Statement on Burden on Competition
+
+    The Exchange does not believe that the proposed rule change will 
+impose any burden on competition that is not necessary or appropriate 
+in furtherance of the purposes of the Act. The Exchange does not 
+believe that the proposed rule change will impose any burden on 
+intramarket competition that is not necessary or appropriate in 
+furtherance of the purposes of the Act, because binary KPI options will 
+be available to all market participants who wish to trade such options 
+on the same terms and in the same manner (including with respect to the 
+payout terms and amount). All market participants will be subject to 
+the same rules applicable to binary KPI options, as described in this 
+proposed rule change. Except as set forth in the proposed rule change, 
+binary KPI options will trade in the same manner as other options, 
+including binary index options, on the Exchange.
+    The Exchange does not believe the proposed rule change will impose 
+any burden on intermarket competition that is not necessary or 
+appropriate in furtherance of the purposes of the Act, because other 
+options exchanges may propose similar products. Additionally, as noted 
+above, substantively similar products to binary KPI options, as 
+proposed, are available in the OTC market and various other markets.
+    The Exchange notes that it operates in a highly competitive market 
+in which market participants can readily direct order flow to competing 
+venues who offer similar products. The Exchange believes the proposed 
+rule change will provide investors with a comparable alternative to the 
+OTC market and other venues. The Exchange believes it may be a more 
+attractive alternative to the OTC market and these other venues, as 
+market participants will benefit from being able to trade these options 
+in an exchange environment, which provides, among other things: (1) 
+enhanced efficiency in initiating and closing out positions; (2) 
+increased market transparency; and (3) heightened contra-party 
+creditworthiness. As a result, the Exchange believes that the proposed 
+rule change may relieve any burden on, or otherwise promote, 
+competition, as it will allow the Exchange to offer a securities 
+exchange-listed alternative to the products currently available in 
+these other markets.
+
+C. Self-Regulatory Organization's Statement on Comments on the Proposed 
+Rule Change Received From Members, Participants, or Others
+
+    No written comments were solicited or received with respect to the 
+proposed rule change.
+
+III. Date of Effectiveness of the Proposed Rule Change and Timing for 
+Commission Action
+
+    Within 45 days of the date of publication of this notice in the 
+Federal Register or within such longer period up to 90 days (i) as the 
+Commission may designate if it finds such longer period to be 
+appropriate and publishes its reasons for so finding or (ii) as to 
+which the Exchange consents, the Commission will:
+    A. by order approve or disapprove such proposed rule change, or
+    B. institute proceedings to determine whether the proposed rule 
+change should be disapproved.
+
+IV. Solicitation of Comments
+
+    Interested persons are invited to submit written data, views, and 
+arguments concerning the foregoing, including whether the proposed rule 
+change is consistent with the Act. Comments may be submitted by any of 
+the following methods:
+
+Electronic Comments
+
+    <bullet> Use the Commission's internet comment form (<a href="https://www.sec.gov/rules/sro.shtml">https://www.sec.gov/rules/sro.shtml</a>); or
+    <bullet> Send an email to <a href="/cdn-cgi/l/email-protection#f785829b92da94989a9a92998384b7849294d9909881"><span class="__cf_email__" data-cfemail="a3d1d6cfc68ec0cccecec6cdd7d0e3d0c6c08dc4ccd5">[email&#160;protected]</span></a>. Please include 
+file number SR-NYSEARCA-2026-93 on the subject line.
+
+Paper Comments
+
+    <bullet> Send paper comments in triplicate to Secretary, Securities 
+and Exchange Commission, 100 F Street NE, Washington, DC 20549-1090.
+
+All submissions should refer to file number SR-NYSEARCA-2026-93. This 
+file number should be included on the subject line if email is used. To 
+help the Commission process and review your comments more efficiently, 
+please use only one method. The Commission will post all comments on 
+the Commission's internet website (<a href="https://www.sec.gov/rules/sro.shtml">https://www.sec.gov/rules/sro.shtml</a>). Copies of the filing will be available for inspection and 
+copying at the principal office of the Exchange. Do not include 
+personal identifiable information in submissions; you should submit 
+only information that you wish to make available publicly. We may 
+redact in part or withhold entirely from publication submitted material 
+that is obscene or subject to copyright protection. All submissions 
+should refer to file number SR-NYSEARCA-2026-93 and should be submitted 
+on or before October 9, 2026.
+
+    For the Commission, by the Division of Trading and Markets, 
+pursuant to delegated authority.\48\
+---------------------------------------------------------------------------
+
+    \48\ 17 CFR 200.30-3(a)(12).
+---------------------------------------------------------------------------
+
+Sherry R. Haywood,
+Assistant Secretary.
+[FR Doc. 2026-19139 Filed 9-17-26; 8:45 am]
+BILLING CODE 8011-01-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

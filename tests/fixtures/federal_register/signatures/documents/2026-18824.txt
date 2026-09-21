@@ -1,0 +1,129 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 177 (Tuesday, September 15, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 177 (Tuesday, September 15, 2026)]
+[Notices]
+[Pages 58466-58467]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-18824]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+DEPARTMENT OF HOUSING AND URBAN DEVELOPMENT
+
+[Docket No. FR-7110-N-14; OMB Control No.: 2502-0041]
+
+
+60-Day Notice of Proposed Information Collection: Multifamily 
+Delinquency and Default Reporting System
+
+AGENCY: Office of the Assistant Secretary for Housing--Federal Housing 
+Commissioner, HUD.
+
+ACTION: Notice.
+
+-----------------------------------------------------------------------
+
+SUMMARY: HUD is seeking approval from the Office of Management and 
+Budget (OMB) for the information collection described below. In 
+accordance with the Paperwork Reduction Act, HUD is requesting comment 
+from all interested parties on the proposed collection of information. 
+The purpose of this notice is to allow for 60 days of public comment.
+
+DATES: Comments due November 16, 2026.
+
+ADDRESSES: Interested persons are invited to submit comments regarding 
+this proposal.
+    Written comments and recommendations for the proposed information 
+collection can be sent within 60 days of publication of this notice to 
+<a href="http://www.regulations.gov">www.regulations.gov</a>. Interested persons are also invited to submit 
+comments regarding this proposal and comments should refer to the 
+proposal by name and/or OMB Control Number and should be sent to: 
+Darian Ziegler, PRA Liaison, Department of Housing and Urban 
+Development, 451 7th Street SW, Washington, DC 20410.
+
+FOR FURTHER INFORMATION CONTACT: Darian Ziegler, PRA Liaison, Office of 
+Housing, Department of Housing and Urban Development, 451 7th Street 
+SW, Washington, DC 20410; email <a href="/cdn-cgi/l/email-protection#4d292c3f242c23633724282a21283f0d253829632a223b"><span class="__cf_email__" data-cfemail="8eeaeffce7efe0a0f4e7ebe9e2ebfccee6fbeaa0e9e1f8">[email&#160;protected]</span></a>, or telephone 
+(202) 402-4144. This is not a toll-free number. HUD welcomes and is 
+prepared to receive calls from individuals who are deaf or hard of 
+hearing, as well as individuals with speech or communication 
+disabilities. To learn more about how to make an accessible telephone 
+call, please visit <a href="https://www.fcc.gov/consumers/guides/telecommunications-relay-service-trs">https://www.fcc.gov/consumers/guides/telecommunications-relay-service-trs</a>.
+    Copies of available supporting documents for the proposed 
+collection may be obtained from Ms. Ziegler.
+
+SUPPLEMENTARY INFORMATION: This notice informs the public that HUD is 
+seeking approval from OMB for the information collection described in 
+Section A.
+
+A. Overview of Information Collection
+
+    Title of Information Collection: Multifamily Delinquency and 
+Default Reporting System.
+    OMB Approval Number: 2502-0041.
+    OMB Expiration Date: July 31, 2026.
+    Type of Request: Revision of a currently approved collection.
+    Form Number: N/A.
+    Description of the need for the information and proposed use: The 
+regulations at 24 CFR 207.256, 207.256a, and 207.258 require a 
+mortgagee to notify HUD when a mortgage payment is in default (more 
+than 30 days past due), when a mortgagee has reinstated a loan, and to 
+submit an election to assign a defaulted loan to HUD within a specified 
+timeframe from the date of default. Regulation 24 CFR part 200 Subpart 
+B requires lenders to submit delinquency, default, election to assign, 
+and other related loan information statuses electronically to HUD. 
+Lenders previously used the HUD-92426 form for these submissions, 
+however, with the implementation of the regulation requiring electronic 
+notification, the Multifamily Delinquency and Default Reporting System 
+(MDDR) was established to replace the paper form HUD-92426. HUD uses 
+the information as an early warning mechanism to work with project 
+owners and lenders to develop a plan that will reinstate a loan and 
+avoid an insurance claim. It also provides HUD staff with a mechanism 
+for mortgagee compliance with HUD's loan servicing procedures and 
+assignments.
+    Respondents: Respondents are FHA-approved multifamily lenders 
+(business or other for-profit).
+    Estimated Number of Respondents: 400.
+    Estimated Number of Responses: 2,400.
+    Frequency of Response: 1 per year.
+    Average Hours per Response: 30 minutes.
+    Total Estimated Burdens: 1,200 hours.
+
+B. Solicitation of Public Comment
+
+    This notice is soliciting comments from members of the public and 
+affected parties concerning the collection of information described in 
+Section A on the following:
+    (1) Whether the proposed collection of information is necessary for 
+the proper performance of the functions of the agency, including 
+whether the information will have practical utility;
+    (2) The accuracy of the agency's estimate of the burden of the 
+proposed collection of information;
+    (3) Ways to enhance the quality, utility, and clarity of the 
+information to be collected; and
+    (4) Ways to minimize the burden of the collection of information on 
+those who are to respond; including through the use of appropriate 
+automated collection techniques or other forms of information 
+technology, e.g., permitting electronic submission of responses.
+    HUD encourages interested parties to submit comment in response to 
+these questions.
+
+[[Page 58467]]
+
+C. Authority
+
+    Section 2 of the Paperwork Reduction Act of 1995, 44 U.S.C. 3507.
+
+Paul M. Olin,
+Acting General Deputy Assistant Secretary for Housing.
+[FR Doc. 2026-18824 Filed 9-14-26; 8:45 am]
+BILLING CODE 4210-67-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

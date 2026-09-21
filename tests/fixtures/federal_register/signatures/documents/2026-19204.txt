@@ -1,0 +1,125 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 180 (Friday, September 18, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 180 (Friday, September 18, 2026)]
+[Notices]
+[Page 59153]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-19204]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+DEPARTMENT OF HOMELAND SECURITY
+
+Transportation Security Administration
+
+
+Intent To Request Reinstatement With Revision From OMB of One 
+Previous Public Collection of Information: Law Enforcement Officer 
+(LEO) Reimbursement Request
+
+AGENCY: Transportation Security Administration, DHS.
+
+ACTION: 60-Day notice.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The Transportation Security Administration (TSA) invites 
+public comment on one previously approved Information Collection 
+Request (ICR), Office of Management and Budget (OMB) control number 
+1652-0063, abstracted below that we will submit to OMB for a 
+reinstatement with revision in compliance with the Paperwork Reduction 
+Act. The ICR describes the nature of the information collection and its 
+expected burden. The collection involves the reimbursement of expenses 
+incurred by airport operators for the provision of law enforcement 
+officers (LEOs) to support airport checkpoint screening.
+
+DATES: Send your comments by November 17, 2026.
+
+ADDRESSES: Comments may be emailed to <a href="/cdn-cgi/l/email-protection#21757260717360615552400f4549520f464e57"><span class="__cf_email__" data-cfemail="683c3b29383a29281c1b09460c001b460f071e">[email&#160;protected]</span></a> or delivered 
+to the TSA PRA Officer, Information Technology, TSA-11, Transportation 
+Security Administration, 6595 Springfield Center Drive, Springfield, VA 
+20598-6011.
+
+FOR FURTHER INFORMATION CONTACT: Christina A. Walsh at the above 
+address, or by telephone (571) 227-2062.
+
+SUPPLEMENTARY INFORMATION:
+
+Comments Invited
+
+    In accordance with the Paperwork Reduction Act of 1995 (44 U.S.C. 
+3501 et seq.), an agency may not conduct or sponsor, and a person is 
+not required to respond to, a collection of information unless it 
+displays a valid OMB control number. The ICR documentation will be 
+available at <a href="https://www.reginfo.gov">https://www.reginfo.gov</a> upon its submission to OMB. 
+Therefore, in preparation for OMB review and approval of the following 
+information collection, TSA is soliciting comments to--
+    (1) Evaluate whether the proposed information requirement is 
+necessary for the proper performance of the functions of the agency, 
+including whether the information will have practical utility;
+    (2) Evaluate the accuracy of the agency's estimate of the burden;
+    (3) Enhance the quality, utility, and clarity of the information to 
+be collected; and
+    (4) Minimize the burden of the collection of information on those 
+who are to respond, including using appropriate automated, electronic, 
+mechanical, or other technological collection techniques or other forms 
+of information technology.
+
+Information Collection Requirement
+
+    OMB Control Number 1652-0063; Law Enforcement Officer (LEO) 
+Reimbursement Request. TSA has authority to enter into agreements with 
+airport operators to reimburse them for expenses incurred in the 
+provision of LEOs to support screening at airport checkpoints. See 49 
+U.S.C. 106(l) and (m) and 114(m). Consistent with these authorities, 
+TSA created the LEO Reimbursement Program.
+    TSA requires participants in the LEO Reimbursement Program to 
+record the details of all reimbursements sought. In order to provide 
+for the orderly tracking of reimbursements, the LEO Reimbursement 
+Program uses TSA Form 3503, LEO Reimbursement Request Invoice. The 
+information collected includes, but is not limited to, information 
+regarding the invoice, invoicing point of contact, banking and 
+checkpoint log worksheet.
+    In 2024, TSA requested discontinuation of this collection due to 
+the unavailability of funding to continue the LEO Reimbursement 
+Program. See ICR Reference Number 202109-1652-0005. On April 30, 2026, 
+however, Congress approved funding for the LEO Reimbursement Program as 
+part of the Homeland Security and Further Additional Continuing 
+Appropriations Act, 2026 (Pub. L. 119-86; 140 Stat. 773). TSA is now 
+requesting the reinstatement of the collection, along with a revision.
+    The TSA Form 3503, LEO Reimbursement Request Invoice, is provided 
+to participants upon the start of the agreement and is also available 
+via request. Upon completion, participants submit the LEO Reimbursement 
+Request form directly to the LEO Reimbursement Program via email, mail, 
+or in person. Upon receipt, TSA reviews all request for reimbursement 
+forms. The revision involves changes to Section I of the form, where 
+TSA is replacing ``DUNS'' with ``UEI,\1\ '' and in Section IV, where 
+TSA will update links and contact numbers.
+---------------------------------------------------------------------------
+
+    \1\ A UEI number is a 12-character alphanumeric code that 
+replaced the DUNS number, a unique nine-digit business identifier 
+assigned and managed by Dun & Bradstreet to track commercial 
+entities and build business credit profiles.
+---------------------------------------------------------------------------
+
+    TSA estimates that there will be an average of 260 participant 
+responses monthly, or 3,120 yearly. TSA estimates each respondent will 
+spend approximately 1 hour to complete the request for reimbursement 
+form, for a total annual hour burden of 3,120 hours.
+
+    Dated: September 16, 2026.
+Christina A. Walsh,
+Paperwork Reduction Act Officer, Information Technology, Transportation 
+Security Administration.
+[FR Doc. 2026-19204 Filed 9-17-26; 8:45 am]
+BILLING CODE 9110-05-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

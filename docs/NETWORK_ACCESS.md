@@ -802,3 +802,55 @@ committed record cites the URL that served the bytes;
 links a pay-adjustment Executive Order or an OPM memo — the only related link
 is the generic Compensation Policy Memoranda index — so nothing was fetched
 for that item and nothing is recorded as refused.
+
+## 13. 2026-09-21: www.federalregister.gov, and a host that refuses at random
+
+`www.federalregister.gov` has been in this pipeline since the beginning — the
+discovery crawler reads `api/v1/documents.json` and `directories.py` reads
+`api/v1/agencies.json` — but nothing had ever fetched a document's own text.
+`data_pipeline/verification/federal_register_signatures.py` does, for the
+signature block every rule and notice ends with.
+
+**The permission.** `robots.txt` answers **200** with real rules: five
+`Disallow` lines for search paths, plus `/my/` and `/auth/`,
+`/documents/current` and `/documents/email-a-friend`. Neither path read here is
+covered by any of them, so both are allowed by rules that were actually read —
+not by the "nothing published to obey" fallback most of this project's sources
+rest on. Every `.meta.json` in `tests/fixtures/federal_register/signatures/`
+records the verdict as `allows <path>`. No crawl-delay is stated; a 2.5-second
+delay was kept anyway.
+
+**One robots fetch, not four hundred.** This is the first source here that
+needs several hundred files from one host, and `fetch_fixture.robots_verdict`
+re-read `robots.txt` before every one of them. It now takes an optional
+per-host cache — the caller owns the dict, the rules are still applied per
+path, and omitting it keeps the old behaviour exactly — so the run read the
+file once. A project whose deliverable is public trustworthiness should not
+request one file four hundred times to prove it is being polite.
+
+**The host refuses at random, and the refusal is not about us.** A document's
+`raw_text_url` answers, perhaps one time in three, with a 10,596-byte
+`text/html` page titled **"Federal Register :: Request Access"** — served with
+HTTP **200**, so nothing in the status says anything is wrong. The same URL
+serves the document on the next attempt. Measured against three header sets
+(the project agent alone; with `Accept: text/plain`; with `Accept`,
+`Accept-Language` and `Accept-Encoding: identity`) the rate did not move:
+9, 6 and 8 documents of 12. It is not a rule, not a rate limit anybody stated,
+and not a fact about this project's agent.
+
+**Slowing down does not reliably help either**, which was worth measuring
+rather than assuming. The run was paced at 2.5, 2.0, 6.0 and 2.5 seconds
+between documents in four stretches, and the refusal page came back on
+**63%, 68%, 59% and 82%** of requests. It drifts between roughly three in five
+and four in five and does not track the delay in any clean way, so it is not a
+simple rate limit and there is no pace that buys the document. What it costs is
+attempts rather than patience, so the run allows twelve of them, after which
+nothing is committed and the `.meta.json` records why.
+
+What matters is what is done with such a response, and the answer is nothing.
+It is **not the document**, so it is never parsed — the fetch deletes it,
+waits, and retries up to four times. Where the host never served the document,
+no `.txt` is committed and the `.meta.json` beside it carries the reason; the
+module counts those as `documents_not_committed` rather than dropping them, so
+the fixture set's own README and the derive step both state how many documents
+the listings name that the host would not hand over.

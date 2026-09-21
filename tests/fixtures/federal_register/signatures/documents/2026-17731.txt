@@ -1,0 +1,294 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 167 (Monday, August 31, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 167 (Monday, August 31, 2026)]
+[Rules and Regulations]
+[Pages 55737-55738]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-17731]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+SMALL BUSINESS ADMINISTRATION
+
+13 CFR Part 101
+
+RIN 3245-AI74
+
+
+Rescinding Unnecessary Notice and Comment Procedures
+
+AGENCY: U.S. Small Business Administration.
+
+ACTION: Final rule.
+
+-----------------------------------------------------------------------
+
+SUMMARY: This final rule rescinds the Administration's policy of 
+engaging in notice and comment rulemaking even where the Administrative 
+Procedure Act does not require notice and comment rulemaking. As a 
+result of this final rule, the Administration will follow the default 
+requirements of the Administrative Procedure Act. The Administration 
+will reserve the right to engage in voluntary notice and comment 
+rulemaking even where not required by the Administrative Procedure Act 
+as a matter of policy on a case by case basis.
+
+DATES: The final rule is effective August 31, 2026.
+
+FOR FURTHER INFORMATION CONTACT: Jennifer Prescott, Deputy General 
+Counsel, <a href="/cdn-cgi/l/email-protection#85cfe0ebebece3e0f7abd5f7e0f6e6eaf1f1c5f6e7e4abe2eaf3"><span class="__cf_email__" data-cfemail="6329060d0d0a0506114d33110610000c1717231001024d040c15">[email&#160;protected]</span></a>.
+
+SUPPLEMENTARY INFORMATION: 
+
+I. Background
+
+    The Administrative Procedure Act (APA) generally requires, before 
+an agency promulgates a regulation through informal rulemaking, a 
+``notice of proposed rule making'' to be published in the Federal 
+Register. 5 U.S.C. 553(b). The agency then must ``give interested 
+persons an opportunity to participate in the rule making through 
+submission of written data, views, or arguments with or without 
+opportunity for oral presentation.'' 5 U.S.C. 553(c). These strictures, 
+however, do not apply to matters ``relating to agency management or 
+personnel or to public property, loans, grants, benefits, or 
+contracts.'' 5 U.S.C. 553(a)(2).
+    In 1974, the Small Business Administration (SBA) promulgated a 
+regulation at 13 CFR 101.9 titled ``Public participation in 
+rulemaking'' that provided, in part, that, ``SBA is governed as a 
+matter of policy by the public participation provisions of the 
+Administrative Procedure Act, 5 U.S.C. 553, notwithstanding the 
+exemptions given by such section 553 for matters relating to agency 
+management or personnel, or to public property, loans, grants, 
+benefits, or contracts.'' See 39 FR 43815, December 19, 1974. This rule 
+was subsequently redesignated and revised in 1996 to Sec.  101.108 
+titled ``Has SBA waived any of the public participation exemptions of 
+the Administrative Procedure Act?'' which states, ``Yes. Despite these 
+exemptions, SBA will follow the public participation requirements of 
+the Administrative Procedure Act, 5 U.S.C. 553, in rulemakings relating 
+to public property, loans, grants, benefits, or contracts.'' See 61 FR 
+2394, January 26, 1996.
+
+II. Analysis
+
+    The SBA has decided to rescind the policy in Sec.  101.108. Upon 
+reconsideration and in the Agency's discretion, the SBA has decided 
+that it is proper to return to the text of the APA regarding its 
+enumerated exceptions for matters relating to public property, loans, 
+grants, benefits, and contracts. The SBA has a new policy of acting 
+more nimbly in response to changing circumstances and this rescission 
+will allow for that. To the extent public participation is determined 
+to be advantageous, the SBA may still request public comments through 
+notices of proposed rulemaking. The SBA will continue to comply with 
+the APA's notice and comment requirements where required and otherwise 
+has discretion to seek public input through whatever means it 
+determines appropriate.
+
+III. Justification for Final Rule
+
+    This rule is exempt from the prior notice and comment requirements 
+of the Administrative Procedure Act (APA) because it is a general 
+statement of policy. 5 U.S.C. 553(b)(A). This policy was originally 
+published in the Federal Register as a notice from the Administrator, 
+36 FR 16716 (August 25, 1971), and only subsequently codified in the 
+Code of Federal Regulations as an organizational matter, 39 FR 43815 
+(December 19, 1974). Alternatively, it is a rule of agency 
+organization, procedure, and practice because it is not binding on 
+outside parties and only affects the manner in which they may present 
+their views to the agency. 5 U.S.C. 553(b)(A). Further, because it is 
+not a substantive rule, and because it relieves a restriction, this 
+rule is exempt from the APA's requirement of a 30-day delay in the 
+effective date. See 5 U.S.C. 553(d).
+
+IV. Compliance With Executive Orders 12866, 12988, 13132, 14192, 14219, 
+and the Paperwork Reduction Act (44 U.S.C. Ch. 35), the Congressional 
+Review Act (5 U.S.C. 801-808), and the Regulatory Flexibility Act (5 
+U.S.C. 601-612).
+
+Executive Orders 12866 and 13563
+
+    Executive Order (E.O.) 12866, Regulatory Planning and Review, and 
+E.O. 13563, Improving Regulation and Regulatory Review, direct agencies 
+to assess costs and benefits of available regulatory alternatives and, 
+if regulation is necessary, to select regulatory approaches that 
+maximize net benefits (including potential economic, environmental, 
+public health and safety effects, distributive impacts, and equity). 
+The Office of Management and Budget determined that this rule will be a 
+``significant regulatory action,'' and therefore, is subject to review 
+under section 6(b) of E.O. 12866, dated September 30, 1993. 
+Accordingly, this rule has been submitted to OMB for review.
+
+Cost-Benefit Analysis
+
+    This rule rescinds 13 CFR 101.108, an SBA policy that voluntarily 
+imposed APA notice-and-comment procedures even where such procedures 
+were not legally required. The rescission returns the SBA to the 
+default rulemaking requirements of the APA (5 U.S.C. 553), aligning 
+internal procedure with statute and eliminating SBA's self-imposed 
+procedural burden. The rule has the primary benefit of increasing 
+regulatory efficiency and responsiveness by removing an internal 
+requirement that is not required by law, which slows down regulatory 
+and deregulatory actions. Specifically, removing the requirement to 
+solicit comments on rulemakings involving public property, loans, 
+grants, benefits, or contracts:
+    <bullet> Allows policy changes and their associated benefits to be 
+implemented more quickly, enhancing agility in responding to evolving 
+programmatic or operational needs in areas where Congress has given the 
+SBA broad discretion.
+    <bullet> Streamlines agency decision-making for programs relating 
+to public property, loans, grants, benefits, or contracts.
+    <bullet> Saves staff time and resources that would otherwise be 
+devoted to preparing, publishing, and responding to public comments.
+    The benefits of more quickly adopting new policy changes cannot be 
+quantified as they will depend on the impact of future rules which are 
+unknown. Depending on the nature of
+
+[[Page 55738]]
+
+future proposed rules, quicker policy adoption may benefit the 
+Administration, the general public, or both. The benefits of the rule 
+are also expected to result in streamlined decision-making and 
+meaningful reductions in implementation costs and time burdens for the 
+SBA, some of which are difficult to quantify. The cost savings of 
+reducing agency resources expenditures, however, can be quantified. 
+Between 2021 and 2025, the Administration proposed 33 rules.\1\ 
+Assuming response to comments on a proposed rule requires an average of 
+40 hours of an employee at GS-13 Step 5 this will be $4,247 per avoided 
+proposed rule.\2\ Assuming the Administration will continue rulemaking 
+at a similar rate as before this change, the annual cost savings of 
+this change would be $28,029. The general public will also see cost 
+savings in avoided time drafting and submitting public comments. 
+Assuming the public spends an average of 20 hours writing comments on 
+each rule and their time is valued at the average U.S. hourly wage of 
+$32.66,\3\ the public will be expected to save $4,311 per year. In 
+total, the quantified annual cost savings of this rule is $32,340.
+---------------------------------------------------------------------------
+
+    \1\ Federal Register :: Document Search Note semiannual 
+regulatory agendas were excluded.
+    \2\ The Salary of a GS 13 Step 5 in the Washington, DC area is 
+$138,024 in 2026 (SALARY TABLE 2026-DCB), so 40 hours of time is 
+$2,654. This is then multiplied by 1.6 to account for benefits and 
+overhead.
+    \3\ 2024 Occupational Employment and Wage Statistics
+---------------------------------------------------------------------------
+
+    There may be potential disbenefits of avoiding the public comment 
+period, if the public comments offer information and suggestions that 
+improve the SBA's regulations. The associated disbenefits are expected 
+to be minor as the SBA can still solicit public comments on a case by 
+case basis whenever it perceives the benefits of doing so are expected 
+to exceed the costs.
+    The SBA has considered maintaining the current policy or replacing 
+it with a narrower procedural commitment (e.g., limiting it to certain 
+programs). However, the SBA believes its rescission offers a clearer 
+legal and operational baseline in line with the APA.
+
+Executive Order 12988
+
+    This action meets applicable standards set forth in section 3(a) 
+and 3(b)(2) of Executive Order 12988, Civil Justice Reform, to minimize 
+litigation, eliminate drafting errors and ambiguity, reduce burden, and 
+provide a clear legal standard for affected conduct. The action does 
+not have retroactive or preemptive effect.
+
+Executive Order 13132
+
+    This rule does not have Federalism implications as defined in 
+Executive Order 13132, Federalism. It will not have substantial direct 
+effects on the States, on the relationship between the National 
+Government and the States, or on the distribution of power and 
+responsibilities among the various levels of government, as specified 
+in the Executive Order. As such, it does not warrant the preparation of 
+a Federalism Assessment.
+
+Executive Order 14192
+
+    This final rule is expected to be an Executive Order 14192 
+deregulatory action with a quantified annualized net savings of $32,340 
+in 2026 dollars. This rule will remove 13 CFR 101.108 in its entirety.
+
+Executive Order 14219
+
+    On February 19, 2025, the President issued Executive Order 14219, 
+Ensuring Lawful Governance and Implementing the President's 
+``Department of Government Efficiency'' Deregulatory Initiative, which 
+further emphasized the goal of the Administration to alleviate the 
+regulatory burdens placed on the public. Under Executive Order 14219, 
+agencies must evaluate their existing regulations to determine which 
+ones should be repealed, replaced, or modified. SBA has engaged in this 
+process and has identified 13 CFR 101.108 as appropriate for removal in 
+accordance with Executive Order 14219.
+
+Paperwork Reduction Act
+
+    The SBA has determined that this rule does not impose additional 
+reporting or recordkeeping requirements under the Paperwork Reduction 
+Act, 44 U.S.C. chapter 35.
+
+Congressional Review Act
+
+    Subtitle E of the Small Business Regulatory Enforcement Fairness 
+Act of 1996, also known as the Congressional Review Act, 5 U.S.C. 801 
+et seq., provides that before a rule may take effect, the agency 
+promulgating the rule must submit a rule report, which includes a copy 
+of the rule, to each House of the Congress and to the Comptroller 
+General of the United States. SBA will submit a report containing this 
+rulemaking and other required information to the U.S. Senate, the U.S. 
+House of Representatives, and the Comptroller General of the United 
+States. The Office of Information and Regulatory Affairs has reviewed 
+this rulemaking and found that it does not meet the criteria set forth 
+in 5 U.S.C. 804(2).
+
+Regulatory Flexibility Act
+
+    The Regulatory Flexibility Act (RFA), 5 U.S.C. 601, requires 
+administrative agencies to consider the effect of their actions on 
+small entities, small nonprofit enterprises, and small local 
+governments. Pursuant to the RFA, when an agency issues a rulemaking, 
+the agency must prepare a regulatory flexibility analysis which 
+describes the impact of the rule on small entities. However, the RFA 
+requires such analysis only where notice and comment rulemaking is 
+required. As discussed above, SBA is not required to publish the rule 
+for notice and comment in accordance with Section 553(b)(A) of the APA. 
+Accordingly, SBA is not required to conduct a regulatory flexibility 
+analysis and is publishing this rule as a final rule without advance 
+notice and public comment.
+
+List of Subjects in 13 CFR Part 101
+
+    Administrative practice and procedures, Authority delegations 
+(Government agencies), Intergovernmental relations, Investigations, 
+Reporting and recordkeeping requirements.
+
+    For the reasons set forth in the preamble, SBA amends 13 CFR part 
+101 as follows:
+
+PART 101--ADMINISTRATION
+
+0
+1. The authority citation for part 101 continues to read as follows:
+
+    Authority: 5 U.S.C. 552 and App. 3, secs. 2, 4(a), 6(a), and 
+9(a)(1)(T); 15 U.S.C. 633, 634, 687; 31 U.S.C. 6506; 44 U.S.C. 3512; 
+42 U.S.C. 6307(d); 15 U.S.C. 657h; E.O. 12372 (July 14, 1982), 47 FR 
+30959, 3 CFR, 1982 Comp., p. 197, as amended by E.O. 12416 (April 8, 
+1983), 48 FR 15887, 3 CFR, 1983 Comp., p. 186.
+
+
+Sec.  101.108  [Removed and Reserved]
+
+0
+Remove and reserve Sec.  101.108.
+
+Kelly Loeffler,
+Administrator.
+[FR Doc. 2026-17731 Filed 8-28-26; 8:45 am]
+BILLING CODE 8026-09-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

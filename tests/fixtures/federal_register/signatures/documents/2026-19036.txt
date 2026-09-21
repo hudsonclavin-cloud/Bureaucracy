@@ -1,0 +1,189 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 179 (Thursday, September 17, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 179 (Thursday, September 17, 2026)]
+[Notices]
+[Pages 58909-58911]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-19036]
+
+
+-----------------------------------------------------------------------
+
+DEPARTMENT OF HOMELAND SECURITY
+
+Federal Emergency Management Agency
+
+[Docket ID: FEMA-2026-0694; OMB No. 1660-0076]
+
+
+Agency Information Collection Activities: Proposed Collection; 
+Comment Request; Hazard Mitigation Grant Program (HMGP) Application 
+Reporting
+
+AGENCY: Federal Emergency Management Agency, Department of Homeland 
+Security.
+
+ACTION: 60-Day notice of extension without revision and request for 
+comments.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The Federal Emergency Management Agency (FEMA), as part of its 
+continuing effort to reduce paperwork and respondent burden, invites 
+the general public to take this
+
+[[Page 58910]]
+
+opportunity to comment on an extension, without change, of a currently 
+approved information collection. In accordance with the Paperwork 
+Reduction Act of 1995, this notice seeks comments regarding the 
+requirements, grants management procedures, and implementation of 
+grants awarded under the Hazard Mitigation Grant Program (HMGP), which 
+is a post-disaster program that contributes funds toward the cost of 
+hazard mitigation activities to reduce the risk of future damage, 
+hardship, loss, or suffering in any area affected by a major disaster.
+
+DATES: Comments must be submitted on or before November 16, 2026.
+
+ADDRESSES: To avoid duplicate submissions to the docket, please submit 
+comments at <a href="http://www.regulations.gov">www.regulations.gov</a> under Docket ID FEMA-2026-0694. Follow 
+the instructions for submitting comments.
+    All submissions received must include the agency name and Docket 
+ID. Regardless of the method used for submitting comments or material, 
+all submissions will be posted, without change, to the Federal 
+eRulemaking Portal at <a href="http://www.regulations.gov">http://www.regulations.gov</a>, and will include any 
+personal information you provide. Therefore, submitting this 
+information makes it public. You may wish to read the Privacy and 
+Security Notice that is available via a link on the homepage of 
+<a href="http://www.regulations.gov">www.regulations.gov</a>.
+
+FOR FURTHER INFORMATION CONTACT: H-Camille Crain, Deputy Director, 
+Documents, Design, Program Effectiveness Branch, at 202-212-4871 or <a href="/cdn-cgi/l/email-protection#fbb3d6b89a969297979ed5b8899a9295bb9d9e969ad59f9388d59c948d"><span class="__cf_email__" data-cfemail="51197c12303c383d3d347f122330383f1137343c307f3539227f363e27">[email&#160;protected]</span></a>. You may contact the Information Management 
+Division for copies of the proposed collection of information at email 
+address: <a href="/cdn-cgi/l/email-protection#e7a1a2aaa6caae898188958a86938e8889caa4888b8b8284938e888994caaa86898680828a828993a781828a86c9838f94c9808891"><span class="__cf_email__" data-cfemail="2d6b68606c0064434b425f404c59444243006e424141484e594442435e00604c434c4a48404843596d4b48404c0349455e034a425b">[email&#160;protected]</span></a>.
+
+SUPPLEMENTARY INFORMATION: Section 404 of the Robert T. Stafford 
+Disaster Relief and Emergency Assistance Act, (Stafford Act), Public 
+Law 93-288, as amended, 88 Stat. 143 (42 U.S.C. 5170c), established the 
+Hazard Mitigation Grant Program (HMGP). Program grant requirements and 
+grants management procedures are outlined in 44 CFR part 206 subpart N, 
+and 2 CFR parts 200 and 3002. FEMA administers the HMGP, and Recipients 
+implement the grants under the HMGP per grant agreement, rules, and 
+regulations. The HMGP is a disaster program that contributes funds 
+toward the cost of hazard mitigation activities to reduce the risk of 
+future damage, hardship, loss, or suffering in any area affected by a 
+major disaster, or any area affected by a fire for which assistance was 
+provided under Section 420 of the Stafford Act (42 U.S.C. 5187). 
+Section 102(4) of the Stafford Act (42 U.S.C. 5122(4)) defines a 
+``State'' as any State of the United States, the District of Columbia, 
+Puerto Rico, the Virgin Islands, Guam, American Samoa, and the 
+Commonwealth of the Northern Mariana Islands. ``Recipient,'' as 
+provided in 2 CFR 200.1, means a non-Federal entity that receives a 
+Federal award directly from a Federal awarding agency to carry out an 
+activity under a Federal program. ``Subrecipient'' refers to a non-
+Federal entity that receives a subaward from a pass-through entity to 
+carry out part of a Federal program; but does not include an individual 
+that is a beneficiary of such program. 2 CFR 200.1. A subrecipient may 
+also be a recipient of other Federal awards directly from a Federal 
+awarding agency. 2 CFR 200.1. The term ``Indian Tribal government'' is 
+defined in section 102 of the Stafford Act, 42 U.S.C. 5122(6), as the 
+governing body of any Indian or Alaska Native tribe, band, nation, 
+pueblo, village, or community that the Secretary of the Interior 
+acknowledges to exist as an Indian tribe under the Federally Recognized 
+Indian Tribe List Act of 1994, Public Law 103-454, 108 Stat. 4791 (25 
+U.S.C. 479a). In addition, the Sandy Recovery Improvement Act of 2013, 
+Public Law 113-2, 127 Stat. 47 (42 U.S.C. 5170(b)) amended the Stafford 
+Act to allow the Chief Executive of a Federally recognized Indian tribe 
+to make a direct request for a major disaster or emergency declaration 
+to the President of the United States.
+    The Department of Homeland Security adopted in its entirety the 
+Uniform Administrative Requirements, Cost Principles, and Audit 
+Requirements for Federal Awards in 2 CFR part 200 on December 26, 2014. 
+2 CFR 3002.1, 79 FR 75871 (Dec. 19, 2014). This rule eliminated 
+overlapping and duplicative requirements for stakeholders, including 
+states, territories and Indian Tribal governments, by using general 
+terms such as ``recipient'' and ``pass-through entity.''
+    The HMGP regulation describes the application process in 44 CFR 
+206.436. Information collected through the financial award application 
+is the minimum information necessary for the financial award 
+administration under the HMGP and includes the project narrative, 
+analysis of the measure's cost-effectiveness referred to as the 
+benefit-cost determination, and environmental review used.
+    According to 44 CFR 206.436(d), ``The State must submit all local 
+HMGP applications and funding requests for the purpose of identifying 
+new projects to the Regional Administrator within 15 months of the date 
+of disaster declaration.''
+    Additionally, under 44 CFR 206.438(c), progress reports must be 
+submitted by the HMGP recipient to the Regional Administrator on a 
+quarterly basis, certifying how the funds are being used and reporting 
+on the progress of activities funded under the subrecipient awards made 
+to the Recipient by FEMA. The Regional Administrator and Recipient 
+negotiate the date for submission of the first report. Quarterly 
+progress reports describe the status of those projects on which a final 
+payment of the Federal share has not been made to the recipient, and 
+outline any problems or circumstances expected to result in 
+noncompliance with the approved award conditions.
+    The Foundations for Evidence-Based Policymaking At of 2018 
+(Evidence Act), Public Law 115-435, 132 Stat. 5534 (5 U.S.C. 311-315) 
+establishes evaluation using systematic data collection and analysis of 
+programs, policies, and organizations intended to assess their 
+effectiveness and efficiency as an essential program activity.
+
+Collection of Information
+
+    Title: Hazard Mitigation Grant Program (HMGP) Application and 
+Reporting.
+    Type of Information Collection: Extension, without change, of a 
+currently approved information collection.
+    OMB Number: OMB No. 1660-0076.
+    FEMA Forms: Project Narrative; Benefit-Cost Determination; 
+Environmental Review; FEMA Form FF-206-FY-22-154 (formerly 009-0-111A), 
+Quarterly Progress Reports.
+    Abstract: The Federal Emergency Management Agency (FEMA) 
+administers the Hazard Mitigation Grant Program, which is a disaster 
+program that contributes funds toward the cost of hazard mitigation 
+activities to reduce the risk of future damage hardship, loss or 
+suffering in any area affected by a major disaster. FEMA uses 
+applications to provide financial assistance in the form of grant 
+awards and, through grantee quarterly reporting, monitor grantee 
+project activities and expenditure of funds.
+    Affected Public: State, local, or Tribal Government.
+    Estimated Number of Respondents: 296.
+    Estimated Number of Responses: 6,808.
+    Estimated Total Annual Burden Hours: 56,499.
+
+[[Page 58911]]
+
+    Estimated Total Annual Respondent Cost: $4,169,061.
+    Estimated Respondents' Operation and Maintenance Costs: $0.
+    Estimated Respondents' Capital and Start-Up Costs: $0.
+    Estimated Total Annual Cost to the Federal Government: $5,684,662.
+
+Comments
+
+    Comments may be submitted as indicated in the ADDRESSES caption 
+above. Comments are solicited to (a) evaluate whether the proposed data 
+collection is necessary for the proper performance of the agency, 
+including whether the information shall have practical utility; (b) 
+evaluate the accuracy of the agency's estimate of the burden of the 
+proposed collection of information, including the validity of the 
+methodology and assumptions used; (c) enhance the quality, utility, and 
+clarity of the information to be collected; and (d) minimize the burden 
+of the collection of information on those who are to respond, including 
+through the use of appropriate automated, electronic, mechanical, or 
+other technological collection techniques or other forms of information 
+technology, e.g., permitting electronic submission of responses.
+
+Nigel Allicock,
+Records Management Branch Chief, Office of the Chief Administrative 
+Officer, Mission Support, Federal Emergency Management Agency, 
+Department of Homeland Security.
+[FR Doc. 2026-19036 Filed 9-16-26; 8:45 am]
+BILLING CODE 9111-BW-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

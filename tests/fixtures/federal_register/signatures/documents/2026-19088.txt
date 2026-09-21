@@ -1,0 +1,110 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 179 (Thursday, September 17, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 179 (Thursday, September 17, 2026)]
+[Notices]
+[Pages 58850-58851]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-19088]
+
+
+-----------------------------------------------------------------------
+
+DEPARTMENT OF COMMERCE
+
+National Institute of Standards and Technology
+
+
+Information Collection Activities; Submission to the Office of 
+Management and Budget (OMB) for Review and Approval; Comment Request; 
+iEdison System
+
+    The Department of Commerce will submit the following information 
+collection request to the Office of Management and Budget (OMB) for 
+review and clearance in accordance with the Paperwork Reduction Act of 
+1995, on or after the date of publication of this notice. We invite the 
+general public and other Federal agencies to comment on proposed, and 
+continuing information collections, which helps us assess the impact of 
+our information collection requirements and minimize the public's 
+reporting burden. Public comments were previously requested via the 
+Federal Register on June 2, 2026 during a 60-day comment period. This 
+notice allows for an additional 30 days for public comments.
+    Agency: National Institute of Standards and Technology (NIST), 
+Commerce.
+    Title: iEdison System.
+    OMB Control Number 0693-0090.
+    Form Number(s): None.
+    Type of Request: Regular. Revision of an Existing Collection.
+    Number of Respondents: 6,193 for Invention Records, Patent Records, 
+Utilization Records, and 22 for Domestic Manufacturing Waiver.
+    Average Hours per Response:
+    Invention Records: 1.25 hours.
+    Patent Records: .75 hours.
+    Utilization Records: 25 minutes.
+    Domestic Manufacturing Waiver Requests: 13 hours.
+    Burden Hours:
+    Invention Records: 38,706 hours.
+    Patent Records: 23,224 hours.
+    Utilization Records: 77,413 hours.
+    Domestic Manufacturing Waiver Requests: 286 hours.
+    Needs and Uses: The Bayh-Dole Act (35 U.S.C. 18) and its 
+implementing regulations (37 CFR 401) allow for recipients of Federal 
+research funding (Contractors) to retain ownership of inventions 
+developed under Federal funding agreements. In exchange, the government 
+retains certain rights to the invention, including a world-wide right 
+to use by or on behalf of the U.S. government. The law also requires 
+the Contractor to obtain permission for certain actions and fulfill 
+reporting requirements including:
+    a. Initial reporting of invention.
+
+[[Page 58851]]
+
+    b. Decision to retain title to invention.
+    c. Filing of patent protection.
+    d. Evidence of government support clause within patents.
+    e. Submission of a license confirming the government's rights.
+    f. Notice if the Contractor is going to discontinue the pursuit or 
+continuance of patent protection.
+    g. Information related to the development and utilization of 
+invention.
+    h. Permission to assign to a third party; and
+    i. Permission to waive domestic manufacturing requirements.
+    This information is used for a variety of reasons. It allows the 
+government to identify technologies to which the government has rights 
+to use without additional payment or licensing. This acts as a time and 
+cost-saving mechanism to avoid unnecessary negotiating and payment. It 
+also provides data for calculation of return on investment (ROI) from 
+Federal funding and identifies successful research programs. Thirdly, 
+it allows the government the opportunity to timely protect inventions 
+which the Contractor declines title or discontinues patent protection. 
+Many agencies utilize the iEdison system, managed by NIST, to collect 
+this information. Agencies that do not register with iEdison are 
+required to collect this information independently.
+    Affected Public: Business or other for-profit organizations; Not-
+for-profit institutions.
+    Frequency: On occasion.
+    Respondent's Obligation: Required to obtain benefits.
+    Legal Authority: The Bayh-Dole Act (35 U.S.C. 18) and its 
+implementing regulations (37 CFR 401); 35 U.S.C. 200-212.
+    This information collection request may be viewed at 
+<a href="http://www.reginfo.gov">www.reginfo.gov</a>. Follow the instructions to view the Department of 
+Commerce collections currently under review by OMB.
+    Written comments and recommendations for the proposed information 
+collection should be submitted within 30 days of the publication of 
+this notice on the following website <a href="http://www.reginfo.gov/public/do/PRAMain">www.reginfo.gov/public/do/PRAMain</a>. 
+Find this particular information collection by selecting ``Currently 
+under 30-day Review--Open for Public Comments'' or by using the search 
+function and entering either the title of the collection or the OMB 
+Control Number 0693-0090.
+
+Sheleen Dumas,
+Departmental PRA Compliance Officer, Office of the Under Secretary for 
+Economic Affairs, Commerce Department.
+[FR Doc. 2026-19088 Filed 9-16-26; 8:45 am]
+BILLING CODE 3510-13-P
+
+
+</pre></body>
+</html>

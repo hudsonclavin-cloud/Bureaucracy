@@ -1,0 +1,176 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 179 (Thursday, September 17, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 179 (Thursday, September 17, 2026)]
+[Notices]
+[Pages 58839-58840]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-19087]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+DEPARTMENT OF COMMERCE
+
+Census Bureau
+
+
+Agency Information Collection Activities; Submission to the 
+Office of Management and Budget (OMB) for Review and Approval; Comment 
+Request; Current Population Survey, Annual Social and Economic 
+Supplement
+
+AGENCY: U.S. Census Bureau, Commerce.
+
+ACTION: Notice of information collection, request for comment.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The Department of Commerce, in accordance with the Paperwork 
+Reduction Act (PRA) of 1995, invites the general public and other 
+Federal agencies to comment on proposed and continuing information 
+collections. These comments help us assess the impact of our 
+information collection requirements and minimize the public's reporting 
+burden. The purpose of this notice is to allow for 60 days of public 
+comment on the proposed revision of the Current Population Survey (CPS) 
+Annual Social and Economic Supplement (ASEC) 2027 Field Test 
+collection, prior to the submission of the information collection 
+request (ICR) to OMB for approval.
+
+DATES: To ensure consideration, comments regarding this proposed 
+information collection must be received on or before November 16, 2026.
+
+ADDRESSES: Interested persons are invited to submit written comments by 
+email to Hyon B. Shin, Assistant Division Chief in the Social, 
+Economic, and Housing Statistics Division via the internet at 
+<a href="/cdn-cgi/l/email-protection#37534453195447447754525944424419505841"><span class="__cf_email__" data-cfemail="513522357f3221221132343f2224227f363e27">[email&#160;protected]</span></a>. Please reference Current Population Survey Annual 
+Social and Economic Supplement (CPS ASEC) 2027 Field Test in the 
+subject line of your comments. You may also submit comments, identified 
+by Docket Number USBC-2026-0496, to the Federal e-Rulemaking Portal: 
+<a href="http://www.regulations.gov">http://www.regulations.gov</a>. All comments received are part of the 
+public record. No comments will be posted to <a href="http://www.regulations.gov">http://www.regulations.gov</a> 
+for public viewing until after the comment period has closed. Comments 
+will generally be posted without change. All Personally Identifiable 
+Information (for example, name and address) voluntarily submitted by 
+the commenter may be publicly accessible. Do not submit Confidential 
+Business Information or otherwise sensitive or protected information. 
+You may submit attachments to electronic comments in
+
+[[Page 58840]]
+
+Microsoft Word, Excel, or Adobe PDF file formats.
+
+FOR FURTHER INFORMATION CONTACT: Requests for additional information or 
+specific questions related to collection activities should be directed 
+to Hyon B. Shin, Assistant Division Chief by email (<a href="/cdn-cgi/l/email-protection#345047501a5744477457515a4741471a535b42"><span class="__cf_email__" data-cfemail="c8acbbace6abb8bb88abada6bbbdbbe6afa7be">[email&#160;protected]</span></a>) 
+or by phone (301-763-6169).
+
+SUPPLEMENTARY INFORMATION:
+
+I. Abstract
+
+    The U.S. Census Bureau plans to request clearance from the Office 
+of Management and Budget (OMB) for the collection of information 
+related to a field test of the CPS in calendar year 2027.
+    The CPS has been the source of official government statistics on 
+employment and unemployment since 1942. The Bureau of Labor Statistics 
+(BLS) and the Census Bureau jointly sponsor the basic monthly survey. 
+The Census Bureau also prepares and conducts all the field work. The 
+CPS collects labor force information for the civilian noninstitutional 
+population including employment status, number of hours worked, job 
+search activities, earnings, duration of unemployment, and the industry 
+and occupation classification of the job held the previous week. Data 
+for the CPS are currently collected by Census field interviewers via 
+in-person interviews or by telephone. In February, March, and April of 
+any collection year, the Census Bureau collects additional information 
+via the ASEC supplement to the CPS.
+    The ASEC collects information on work experience, personal income, 
+noncash benefits, current and previous year health insurance coverage, 
+employer-sponsored insurance take-up, and migration. The ASEC is the 
+official source of national poverty estimates calculated in accordance 
+with the Office of Management and Budget's Statistical Policy Directive 
+14. Two other important national estimates derived from the ASEC are 
+real median household income and the number and percent of individuals 
+without health insurance coverage.
+    The 2027 Field Test's goal is to continue the testing conducted for 
+the CPS by incorporating the ASEC supplement. This is the third of 
+three major field tests with the first completed in 2025 and the second 
+in 2026, with an ultimate goal for the ASEC to follow the phase-in 
+changes to the CPS, planned for 2027 through 2028, in 2029.
+
+II. Method of Collection
+
+    The 2027 Field Test is planned for January 2027 until May 2027. 
+This will be the first time that the ASEC supplement will be 
+administered as a self-response mode, therefore, the two main goals of 
+the proposed field test are outlined below.
+    Introducing a self-response mode: The current CPS ASEC 
+questionnaire collects data via computer-assisted personal interviewing 
+(CAPI). Since the ASEC is introducing an internet self-response (ISR) 
+mode, qualitative research, expert review, and smaller-scale tests were 
+conducted to transform the CAPI question wording into an ISR-
+appropriate format. The 2027 Field Test is the first opportunity to 
+conduct a full-scale field test to evaluate comparability of the CAPI 
+questions to the ISR questions.
+    Content Testing: Additionally, multiple rounds of qualitative 
+tests, expert review, and smaller-scale tests were employed for 
+questionnaire clarity and comparability. This field test will utilize 
+the qualitative research findings to do a split-path examination of a 
+control version to a test version of the ASEC questions changes. All 
+questions on the ASEC will have some changes because this is the first 
+instance of a self-response mode so questions that a field 
+representative would ask are updated for a self-respondent. The goal of 
+the test is to determine the impact of changing question wording and 
+response categories, as well as redefining underlying constructs, on 
+the quality of the key ASEC estimates.
+
+III. Data
+
+    OMB Control Number: 0607-0354.
+    Form Number(s): None.
+    Type of Review: Regular submission, Request for a Revision of a 
+Currently Approved Collection.
+    Affected Public: Households.
+    Estimated Number of Respondents: 50,000.
+    Estimated Time per Response: 50 minutes.
+    Estimated Total Annual Burden Hours: 41,667.
+    Estimated Total Annual Cost to Public: $0. There are no costs to 
+the respondents other than their time.
+    Respondent's Obligation: Voluntary.
+    Legal Authority: Title 13, United States Code, Sections 141 and 182 
+and Title 29, United States Code, Sections 1-9.
+
+IV. Request for Comments
+
+    We are soliciting public comments to permit the Department/Bureau 
+to: (a) Evaluate whether the proposed information collection is 
+necessary for the proper functions of the Department, including whether 
+the information will have practical utility; (b) Evaluate the accuracy 
+of our estimate of the time and cost burden for this proposed 
+collection, including the validity of the methodology and assumptions 
+used; (c) Evaluate ways to enhance the quality, utility, and clarity of 
+the information to be collected; and (d) Minimize the reporting burden 
+on those who are to respond, including the use of automated collection 
+techniques or other forms of information technology.
+    Comments that you submit in response to this notice are a matter of 
+public record. We will include, or summarize, each comment in our 
+request to OMB to approve this ICR. Before including your address, 
+phone number, email address, or other personal identifying information 
+in your comment, you should be aware that your entire comment--
+including your personal identifying information--may be made publicly 
+available at any time. While you may ask us in your comment to withhold 
+your personal identifying information from public review, we cannot 
+guarantee that we will be able to do so.
+
+Sheleen Dumas,
+Departmental PRA Compliance Officer, Office of the Under Secretary for 
+Economic Affairs, Commerce Department.
+[FR Doc. 2026-19087 Filed 9-16-26; 8:45 am]
+BILLING CODE 3510-07-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

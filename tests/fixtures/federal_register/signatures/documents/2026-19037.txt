@@ -1,0 +1,661 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 179 (Thursday, September 17, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 179 (Thursday, September 17, 2026)]
+[Notices]
+[Pages 58927-58931]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-19037]
+
+
+
+[[Page 58927]]
+
+=======================================================================
+-----------------------------------------------------------------------
+
+SECURITIES AND EXCHANGE COMMISSION
+
+[Release No. 34-106346; File No. SR-NYSEARCA-2026-91]
+
+
+Self-Regulatory Organizations; NYSE Arca, Inc.; Notice of Filing 
+and Immediate Effectiveness of Proposed Rule Change To Amend the NYSE 
+Arca Equities Fees and Charges
+
+September 14, 2026.
+    Pursuant to Section 19(b)(1) \1\ of the Securities Exchange Act of 
+1934 (``Act'') \2\ and Rule 19b-4 thereunder,\3\ notice is hereby given 
+that on September 1, 2026, NYSE Arca, Inc. (``NYSE Arca'' or the 
+``Exchange'') filed with the Securities and Exchange Commission 
+(``Commission'') the proposed rule change as described in Items I, II, 
+and III below, which Items have been prepared by the Exchange. The 
+Commission is publishing this notice to solicit comments on the 
+proposed rule change from interested persons.
+---------------------------------------------------------------------------
+
+    \1\ 15 U.S.C. 78s(b)(1).
+    \2\ 15 U.S.C. 78a.
+    \3\ 17 CFR 240.19b-4.
+---------------------------------------------------------------------------
+
+I. Self-Regulatory Organization's Statement of the Terms of Substance 
+of the Proposed Rule Change
+
+    The Exchange proposes to amend the NYSE Arca Equities Fees and 
+Charges (``Fee Schedule'') with respect to Retail Tiers. The proposed 
+rule change is available on the Exchange's website at <a href="http://www.nyse.com">www.nyse.com</a> and 
+at the principal office of the Exchange.
+
+II. Self-Regulatory Organization's Statement of the Purpose of, and 
+Statutory Basis for, the Proposed Rule Change
+
+    In its filing with the Commission, the self-regulatory organization 
+included statements concerning the purpose of, and basis for, the 
+proposed rule change and discussed any comments it received on the 
+proposed rule change. The text of those statements may be examined at 
+the places specified in Item IV below. The Exchange has prepared 
+summaries, set forth in sections A, B, and C below, of the most 
+significant parts of such statements.
+
+A. Self-Regulatory Organization's Statement of the Purpose of, and the 
+Statutory Basis for, the Proposed Rule Change
+
+1. Purpose
+    The Exchange proposes to amend the Fee Schedule with respect to 
+Retail Tiers. More specifically, the Exchange proposes to (1) reinsert 
+a previously removed modifier for certain Retail Orders \4\ that are 
+executed against other Retail Orders and (2) exclude Mid-Point 
+Liquidity (``MPL'') Orders \5\ and Discretionary Pegged Orders (``DPO'' 
+orders) \6\ submitted with a retail modifier from the fee applicable to 
+Retail Orders with a time-in-force of Day that remove liquidity.
+---------------------------------------------------------------------------
+
+    \4\ A Retail Order is an agency order that originates from a 
+natural person and is submitted to the Exchange by an ETP Holder, 
+provided that no change is made to the terms of the order to price 
+or side of market and the order does not originate from a trading 
+algorithm or any other computerized methodology. See Securities 
+Exchange Act Release No. 67540 (July 30, 2012), 77 FR 46539 (August 
+3, 2012) (SR-NYSEArca-2012-77).
+    \5\ An MPL Order is a limit order that is not displayed and does 
+not route, with a working price at the midpoint of the Protected 
+Best Bid/Offer. See NYSE Arca Rule 7.31-E(d)(3).
+    \6\ A DPO order is a Pegged Order to buy (sell) that upon entry 
+is assigned a working price equal to the lower (higher) of the 
+midpoint of the PBBO (``Midpoint Price'') or the limit price of the 
+order. Any untraded shares of such order are assigned a working 
+price equal to the lower (higher) of PBB (PBO) or the order's limit 
+price and is automatically adjusted in response to changes to the 
+PBB (PBO) for buy (sell) orders up (down) to the order's limit 
+price. In order to trade with contra-side orders on the NYSE Arca 
+Book, a DPO order to buy (sell) will exercise the least amount of 
+price discretion necessary from its working price to its 
+discretionary price (defined as the lower (higher) of the Midpoint 
+Price or the DPO order's limit price). See NYSE Arca Rule 7.31-
+E(h)(3).
+---------------------------------------------------------------------------
+
+    The proposed change responds to the current competitive environment 
+where ETP Holders have a choice among both exchange and off-exchange 
+venues of where to route marketable retail order flow.
+    The Exchange proposes to implement the fee changes effective 
+September 1, 2026.
+Background
+    The Exchange operates in a highly competitive market. The 
+Commission has repeatedly expressed its preference for competition over 
+regulatory intervention in determining prices, products, and services 
+in the securities markets. In Regulation NMS, the Commission 
+highlighted the importance of market forces in determining prices and 
+SRO revenues and, also, recognized that current regulation of the 
+market system ``has been remarkably successful in promoting market 
+competition in its broader forms that are most important to investors 
+and listed companies.'' \7\
+---------------------------------------------------------------------------
+
+    \7\ See Securities Exchange Act Release No. 51808 (June 9, 
+2005), 70 FR 37496, 37499 (June 29, 2005) (File No. S7-10-04) (Final 
+Rule) (``Regulation NMS'').
+---------------------------------------------------------------------------
+
+    While Regulation NMS has enhanced competition, it has also fostered 
+a ``fragmented'' market structure where trading in a single stock can 
+occur across multiple trading centers. When multiple trading centers 
+compete for order flow in the same stock, the Commission has recognized 
+that ``such competition can lead to the fragmentation of order flow in 
+that stock.'' \8\ Indeed, equity trading is currently dispersed across 
+18 exchanges,\9\ numerous alternative trading systems,\10\ and broker-
+dealer internalizers and wholesalers, all competing for order flow. 
+Based on publicly available information, no single exchange currently 
+has more than 20% market share.\11\ Therefore, no exchange possesses 
+significant pricing power in the execution of equity order flow. More 
+specifically, the Exchange currently has less than 15% market share of 
+executed volume of equities trading.\12\
+---------------------------------------------------------------------------
+
+    \8\ See Securities Exchange Act Release No. 61358, 75 FR 3594, 
+3597 (January 21, 2010) (File No. S7-02-10) (Concept Release on 
+Equity Market Structure).
+    \9\ See Cboe U.S Equities Market Volume Summary, available at 
+<a href="https://markets.cboe.com/us/equities/market_share">https://markets.cboe.com/us/equities/market_share</a>. See generally 
+<a href="https://www.sec.gov/fast-answers/divisionsmarketregmrexchangesshtml.html">https://www.sec.gov/fast-answers/divisionsmarketregmrexchangesshtml.html</a>.
+    \10\ See FINRA ATS Transparency Data, available at <a href="https://otctransparency.finra.org/otctransparency/AtsIssueData">https://otctransparency.finra.org/otctransparency/AtsIssueData</a>. A list of 
+alternative trading systems registered with the Commission is 
+available at <a href="https://www.sec.gov/foia/docs/atslist.htm">https://www.sec.gov/foia/docs/atslist.htm</a>.
+    \11\ See Cboe U.S. Equities Market Volume Summary, available at 
+<a href="http://markets.cboe.com/us/equities/market_share/">http://markets.cboe.com/us/equities/market_share/</a>.
+    \12\ See id.
+---------------------------------------------------------------------------
+
+    The Exchange believes that the ever-shifting market share among the 
+exchanges from month to month demonstrates that market participants can 
+move order flow, or discontinue or reduce use of certain categories of 
+products. While it is not possible to know a firm's reason for shifting 
+order flow, the Exchange believes that one such reason is because of 
+fee changes at any of the registered exchanges or non-exchange venues 
+to which a firm routes order flow. The competition for Retail Orders is 
+even more stark, particularly as it relates to exchange versus off-
+exchange venues.
+    The Exchange thus needs to compete in the first instance with non-
+exchange venues for Retail Order flow, and with the 17 other exchange 
+venues for that Retail Order flow that is not directed off-exchange. 
+Accordingly, competitive forces compel the Exchange to use exchange 
+transaction fees and credits, particularly as they relate to competing 
+for Retail Order flow, because market participants can readily trade on 
+competing venues if they deem pricing levels at those other venues to 
+be more favorable.
+    To respond to this competitive environment, the Exchange has 
+established a number of Retail Tiers, e.g., Retail Tier 1, Retail Tier 
+2, Retail
+
+[[Page 58928]]
+
+Tier 3, Retail Tier 4, Retail Tier 5 and Retail Tier 6, which are 
+designed to provide an incentive for ETP Holders to route Retail Orders 
+to the Exchange by providing higher credits for adding liquidity 
+correlated to an ETP Holder's higher trading volume in Retail Orders on 
+the Exchange. Under certain of these tiers, ETP Holders also do not pay 
+a fee when such Retail Orders have a time-in-force of Day that remove 
+liquidity from the Exchange up to a certain volume threshold. The 
+Retail Tiers are designed to encourage ETP Holders that provide 
+displayed liquidity in Retail Orders on the Exchange to increase that 
+order flow, which would benefit all ETP Holders by providing greater 
+execution opportunities on the Exchange. In order to provide an 
+incentive for ETP Holders to direct providing displayed Retail Order 
+flow to the Exchange, the credits increase in the various tiers based 
+on increased levels of volume directed to the Exchange. Under certain 
+of these six tiers, ETP Holders also do not pay a fee when such Retail 
+Orders have a time-in-force of Day that remove liquidity from the 
+Exchange.
+Proposed Rule Change
+    Currently, pursuant to footnote (d) under the Retail Tiers pricing 
+table, ETP Holders that qualify for Retail Tier 1, Retail Tier 2, 
+Retail Tier 3, Retail Tier 5 and Retail Tier 6 are not charged a fee or 
+provided a credit for Retail Orders where each side of the executed 
+order (1) shares the same MPID and (2) is a Retail Order. Prior to 
+October 2025, the second condition had a ``time-in-force of Day'' 
+modifier attached to such Retail Orders. In October 2025, the Exchange 
+removed the modifier.\13\ As a result, since October 2025, all Retail 
+Orders where each side of the executed order shares the same MPID and 
+each side of the executed order is a Retail Order are not charged a fee 
+or provided a credit. When both sides of an execution are not Retail 
+Orders or do not share the same MPID, the Exchange assesses a fee, if 
+applicable, for removing liquidity, depending on the tier, and provides 
+a credit, all as provided in the Retail Tiers pricing table.
+---------------------------------------------------------------------------
+
+    \13\ See Securities Exchange Act Release No. 104237 (November 
+21, 2025), 90 FR 54425 (November 26, 2025) (SR-NYSEArca-2025-75).
+---------------------------------------------------------------------------
+
+    The Exchange proposes to reinsert the `time-in-force of Day' 
+modifier in the second condition described above. The Exchange has not 
+observed an increase in the number of Retail Orders submitted to the 
+Exchange as anticipated since the change was made in October 2025. The 
+Exchange has now determined that it no longer wants such orders to be 
+fee liable and therefore proposes to adopt the `time-in-force of Day' 
+modifier again. The Exchange expects the proposed change will result in 
+more of such orders being directed to the Exchange resulting in an 
+abundance of liquidity of Retail Orders that would be available for 
+execution. While such Retail Orders that do not have a time-in-force of 
+Day and remove liquidity will be charged a fee, the ETP holder's contra 
+side Retail Order that adds liquidity would receive a rebate, as 
+provided in the Retail Tiers pricing table.
+    As noted above, the Exchange currently provides tiered credits for 
+Retail Orders that provide liquidity on the Exchange. Specifically, 
+Section VII. Tier Rates--Round Lots and Odd Lots (Per Share Price $1.00 
+or Above), provides a credit of $0.0038 per share for Adding under 
+Retail Tier 1, a credit of $0.0037 per share for Adding under Retail 
+Tier 2, a credit of $0.0036 per share for Adding under Retail Tier 3, a 
+credit of $0.0034 per share for Adding under Retail Tier 4, and a 
+credit of $0.0035 per share for Adding under Retail Tier 5 and Retail 
+Tier 6.\14\
+---------------------------------------------------------------------------
+
+    \14\ See Fee Schedule, Retail Tiers table under Section VII. 
+Tier Rates--Round Lots and Odd Lots (Per Share Price $1.00 or 
+Above).
+---------------------------------------------------------------------------
+
+    Additionally, the Exchange currently charges a fee of $0.0025 per 
+share for Retail Orders with a time-in-force of Day that remove 
+liquidity under Retail Tier 1 and Retail Tier 2 if an ETP Holder 
+executes 170 million or more shares of such orders in a billing month 
+or executes 0.055% of Dollar Plus Consolidated Volume,\15\ up to 250 
+million shares a month, whichever is higher, where the first 170 
+million shares of such orders or 0.055% of Dollar Plus Consolidated 
+Volume, up to 250 million shares, whichever is higher, are not charged 
+a fee. Since ETP Holders closely track the number of Retail Orders they 
+send to the Exchange, the Exchange believes they can readily determine 
+at the time of execution whether their Retail Orders will execute free 
+of charge or be subject to a fee.
+---------------------------------------------------------------------------
+
+    \15\ Dollar Plus Consolidated Volume means the full month 
+equivalent of CADV in securities with a per share price $1.00 or 
+Above. See Fee Schedule, Section I. Definitions.
+---------------------------------------------------------------------------
+
+    The Exchange also currently charges a fee of $0.0025 per share for 
+Retail Orders with a time-in-force of Day that remove liquidity under 
+Retail Tier 3 and Retail Tier 5 if an ETP Holder registered as a Lead 
+Market Maker (``LMM'') \16\ or Market Maker \17\ in at least 200 \18\ 
+Less Active ETPs \19\ in which it meets at least two Performance 
+Metrics \20\ executes 170 million or more shares of such orders in a 
+billing month or executes 0.055% of Dollar Plus Consolidated Volume, up 
+to 250 million shares a month, whichever is higher, where the first 170 
+million shares of such orders or 0.055% of Dollar Plus Consolidated 
+Volume, up to 250 million shares, whichever is higher, are not charged 
+a fee. Finally, the Exchange currently charges a fee of $0.0025 per 
+share for Retail Orders with a time-in-force of Day that remove 
+liquidity under Retail Tier 6 where the first 65 million shares of such 
+orders in a billing month are not charged a fee.
+---------------------------------------------------------------------------
+
+    \16\ The term ``Lead Market Maker'' is defined in Rule 1.1(w) to 
+mean a registered Market Maker that is the exclusive Designated 
+Market Maker in listings for which the Exchange is the primary 
+market.
+    \17\ Pursuant to Rule 7.23-E(a)(1), all registered Market 
+Makers, including LMMs, have an obligation to maintain continuous, 
+two-sided trading interest in those securities in which the Market 
+Marker is registered to trade. In addition, pursuant to Rule 7.24-
+E(b), LMMs are held to higher performance standards in the 
+securities in which they are registered as LMM. LMMs can earn 
+additional financial incentives for meeting the higher performance 
+standards specified from time to time in the Fee Schedule. Only one 
+LMM can be registered in a NYSE-Arca listed security, but that 
+security can have an unlimited number of registered Market Makers. 
+Market Makers can also be registered in securities that trade on an 
+unlisted trading privileges basis on the Exchange.
+    \18\ The number of Less Active ETPs for a billing month will be 
+calculated as the average number of Less Active ETPs in which an LMM 
+is registered on the first and last business day of the previous 
+month.
+    \19\ Pursuant to Section I under LMM Transaction Fees and 
+Credits, the term ``Less Active ETPs'' means ETPs that have a CADV 
+in the prior calendar quarter that is the greater of either less 
+than 100,000 shares or less than 0.013% of Consolidated Tape B ADV. 
+The term ``ETP'' means Exchange Traded Product listed on NYSE Arca.
+    \20\ The applicable Performance Metrics are specified in Section 
+III under LMM Transaction Fees and Credits on the Fee Schedule.
+---------------------------------------------------------------------------
+
+    With this proposed rule change, the Exchange proposes to exclude 
+MPL Orders and DPO orders submitted with a retail modifier from the fee 
+applicable for Retail Orders with a time-in-force of Day that remove 
+liquidity. The Exchange is not proposing any change to the rates 
+applicable to Retail Orders or the criteria to qualify under any of the 
+Retail Tiers.
+    The Exchange proposes to exclude MPL Orders and DPO orders 
+submitted with a retail modifier from the Retail Tiers pricing table 
+because they constitute a very small amount, as these orders are 
+generally not used by retail investors or have a time-in-force of Day, 
+and excluding them would also simplify the Exchange's pricing structure 
+to the benefit of market participants generally. With this proposed 
+rule change, such orders will be subject to the standard pricing 
+applicable on the Exchange,
+
+[[Page 58929]]
+
+where MPL Orders with a retail modifier would be charged a fee of 
+$0.010 per share for removing liquidity \21\ and DPO orders with a 
+retail modifier would be charged the standard fee for removing 
+liquidity of $0.030 per share.\22\
+---------------------------------------------------------------------------
+
+    \21\ See Fee Schedule, Section IV. Other Standard Rates for 
+Securities with a Per Share Price $1.00 or Above.
+    \22\ See Fee Schedule, Section III. Standard Rates--Transactions 
+(applicable when Tier Rates do not apply).
+---------------------------------------------------------------------------
+
+    The Exchange believes the proposed rule change would continue to 
+encourage additional liquidity on the Exchange. The Exchange does not 
+know how much Retail Order flow ETP Holders choose to route to other 
+exchanges or to off-exchange venues. Without having a view of ETP 
+Holders' activity on other markets and off-exchange venues, the 
+Exchange has no way of knowing how this proposed rule change would 
+impact ETP Holders in terms of the number of Retail Orders directed to 
+the Exchange or to other trading venues.
+2. Statutory Basis
+    The Exchange believes that the proposed rule change is consistent 
+with Section 6(b) of the Act,\23\ in general, and furthers the 
+objectives of Sections 6(b)(4) and (5) of the Act,\24\ in particular, 
+because it provides for the equitable allocation of reasonable dues, 
+fees, and other charges among its members, issuers and other persons 
+using its facilities and does not unfairly discriminate between 
+customers, issuers, brokers or dealers.
+---------------------------------------------------------------------------
+
+    \23\ 15 U.S.C. 78f(b).
+    \24\ 15 U.S.C. 78f(b)(4) and (5).
+---------------------------------------------------------------------------
+
+The Proposed Fee Change Is Reasonable
+    As discussed above, the Exchange operates in a highly fragmented 
+and competitive market. The Commission has repeatedly expressed its 
+preference for competition over regulatory intervention in determining 
+prices, products, and services in the securities markets. Specifically, 
+in Regulation NMS, the Commission highlighted the importance of market 
+forces in determining prices and SRO revenues and, also, recognized 
+that current regulation of the market system ``has been remarkably 
+successful in promoting market competition in its broader forms that 
+are most important to investors and listed companies.'' \25\
+---------------------------------------------------------------------------
+
+    \25\ See supra note 7.
+---------------------------------------------------------------------------
+
+    Given this competitive environment, the proposal represents a 
+reasonable attempt to continue to attract order flow to the Exchange.
+    As noted above, the competition for Retail Order flow is stark 
+given the amount of retail limit orders that are routed to non-exchange 
+venues. The Exchange believes that the ever-shifting market share among 
+the exchanges from month to month demonstrates that market participants 
+can shift order flow, or discontinue or reduce use of certain 
+categories of products, in response to fee changes. ETP Holders can 
+choose from any one of the 18 currently operating registered exchanges, 
+and numerous off-exchange venues, to route such order flow. 
+Accordingly, competitive forces constrain exchange transaction fees, 
+particularly as they relate to competing for retail orders. Stated 
+otherwise, changes to exchange transaction fees can have a direct 
+effect on the ability of an exchange to compete for order flow.
+    In particular, the Exchange believes it is reasonable to not charge 
+a fee or provide a credit to ETP Holders that qualify for Retail Tier 
+1, Retail Tier 2, Retail Tier 3, Retail Tier 5 and Retail Tier 6 where 
+each side of the executed order (1) shares the same MPID and (2) is a 
+Retail Order with a time-in-force of Day. As noted above, the Exchange 
+currently provides credits ranging from $0.0035 per share to $0.0038 
+per share for Retail Orders where each side of such orders do not share 
+the MPID and do not have a time-in-force of Day. The Exchange believes 
+the proposed change will result in more of such orders being directed 
+to the Exchange resulting in an abundance of liquidity of Retail Orders 
+that would be available for execution.
+    The Exchange notes that market participants are free to shift their 
+order flow to competing venues if they believe other markets offer more 
+favorable fees and credits. Additionally, the proposed fee change would 
+apply only to a subset of Retail Orders directed to the Exchange by ETP 
+Holders, i.e., those that share the same MPID and have a `time-in-
+force' od Day that add and remove retail liquidity. All other Retail 
+Orders would continue to be subject to current fees and credits.
+    The Exchange also believes it is reasonable to exclude MPL Orders 
+and DPO orders submitted with a retail modifier from the fee applicable 
+for Retail Orders with a time-in-force of Day that remove liquidity 
+because they constitute a very small amount and excluding them would 
+also simplify the Exchange's pricing structure to the benefit of market 
+participants generally.
+    The Exchange believes that the proposed fee change will not have a 
+disparate impact on ETP Holders or their trading behavior on the 
+Exchange. The Exchange further believes that the proposal may result in 
+increased participation from retail liquidity providers while 
+maintaining a competitive and performance-based pricing structure that 
+better reflects current market conditions and trading volumes.
+    The Exchange believes the proposed change is also reasonable 
+because it is designed to attract higher volumes of Retail Orders 
+transacted on the Exchange by ETP Holders which would benefit all 
+market participants by offering greater price discovery, increased 
+transparency, and an increased opportunity to trade on the Exchange.
+    The Exchange believes that the proposal represents a reasonable 
+effort to provide enhanced order execution opportunities for ETP 
+Holders. All ETP Holders would benefit from the greater amounts of 
+liquidity on the Exchange, which would represent a wider range of 
+execution opportunities. The Exchange notes that market participants 
+are free to shift their order flow to competing venues if they believe 
+other markets offer more favorable fees and credits.
+    On the backdrop of the competitive environment in which the 
+Exchange currently operates, the proposed rule change is a reasonable 
+attempt to increase liquidity on the Exchange and improve the 
+Exchange's market share relative to its competitors.
+The Proposed Fee Change Is an Equitable Allocation of Fees and Credits
+    The Exchange believes the proposal is an equitable allocation of 
+fees and credits among its market participants because all ETP Holders 
+that participate on the Exchange will be able to transact their Retail 
+Orders where both sides of such orders share the same MPID and both 
+sides are Retail Orders with a time-in-force of Day at no cost, i.e., 
+they would not receive any credit or pay any fee for their execution. 
+The Exchange believes that its fee structure for such Retail Orders as 
+a result of this proposed rule change should incentivize ETP Holders to 
+continue to send such orders to the Exchange. However, without having a 
+view of ETP Holders' activity on other markets and off-exchange venues, 
+the Exchange has no way of knowing whether the Exchange's current fee 
+structure would result in any ETP Holder sending their Retail Orders to 
+the Exchange. The Exchange cannot predict with certainty how many ETP 
+Holders would avail themselves of the opportunity presented by this 
+proposed rule change but additional Retail Orders would benefit all 
+market participants because it would provide greater execution 
+opportunities on the Exchange.
+
+[[Page 58930]]
+
+    The Exchange further believes the proposal to exclude MPL Orders 
+and DPO orders submitted with a retail modifier from the fee applicable 
+to Retail Orders with a time-in-force of Day that remove liquidity is 
+an equitable allocation of fees and credits as such orders constitute a 
+very small amount of Retail Orders and thus would have a minimal impact 
+to ETP Holders in their trading activity.
+    The Exchange believes the proposal equitably allocates fees and 
+credits among market participants because all ETP Holders that 
+participate on the Exchange would be subject to the proposed rule 
+change on an equal basis. The Exchange believes its proposal equitably 
+allocates its fees and credits among its market participants by 
+fostering liquidity provision and stability in the marketplace.
+    The Exchange believes the proposed changes to Retail Orders are an 
+equitable allocation of fees because the proposed changes, taken 
+together, will incentivize ETP Holders to continue to direct their 
+Retail Order flow to the Exchange. The Exchange also believes that the 
+proposed rule change is equitable because it would apply to all 
+similarly situated ETP Holders. As previously noted, the Exchange 
+operates in a competitive environment, particularly as it relates to 
+attracting Retail Orders to the Exchange. The Exchange does not know 
+how much order flow ETP Holders choose to route to other exchanges or 
+to off-exchange venues. The Exchange believes that pricing is just one 
+of the factors that ETP Holders consider when determining where to 
+direct their order flow. Among other things, factors such as execution 
+quality, fill rates, and volatility, are important and deterministic to 
+ETP Holders in deciding where to send their order flow.
+    The Exchange believes that the proposed rule change equitably 
+allocates its fees and credits because maintaining the proportion of 
+Retail Orders in exchange-listed securities that are executed on a 
+registered national securities exchange (rather than relying on certain 
+available off-exchange execution methods) would contribute to 
+investors' confidence in the fairness of their transactions and would 
+benefit all investors by deepening the Exchange's liquidity pool, 
+supporting the quality of price discovery, promoting market 
+transparency and improving investor protection.
+The Proposed Fee Change Is Not Unfairly Discriminatory
+    The Exchange believes that the proposed rule change is not unfairly 
+discriminatory. In the prevailing competitive environment, ETP Holders 
+are free to disfavor the Exchange's pricing if they believe that 
+alternatives offer them better value. Moreover, the proposal neither 
+targets nor will it have a disparate impact on any particular category 
+of market participant. The Exchange believes that the proposal does not 
+permit unfair discrimination because the proposal would be applied to 
+all similarly situated ETP Holders and all ETP Holders would be 
+similarly subject to the proposed changes. Accordingly, no ETP Holder 
+already operating on the Exchange would be disadvantaged by the 
+proposed allocation of fees. The Exchange further believes that the 
+proposed change would not permit unfair discrimination among ETP 
+Holders because the general and tiered rates are available equally to 
+all ETP Holders.
+    As described above, in today's competitive marketplace, order flow 
+providers have a choice of where to direct liquidity-providing order 
+flow, in particular, Retail Orders. The Exchange notes that the 
+submission of Retail Orders is optional for ETP Holders in that they 
+could choose whether to submit Retail Orders and, if they do, the 
+extent of its activity in this regard. The Exchange believes that it is 
+subject to significant competitive forces, as described below in the 
+Exchange's statement regarding the burden on competition.
+    For the foregoing reasons, the Exchange believes that the proposal 
+is consistent with the Act.
+
+B. Self-Regulatory Organization's Statement on Burden on Competition
+
+    In accordance with Section 6(b)(8) of the Act,\26\ the Exchange 
+believes that the proposed rule change would not impose any burden on 
+competition that is not necessary or appropriate in furtherance of the 
+purposes of the Act. Instead, as discussed above, the Exchange believes 
+that the proposed changes would encourage the submission of additional 
+liquidity to a public exchange, thereby promoting market depth, price 
+discovery and transparency and enhancing order execution opportunities 
+for ETP Holders. As a result, the Exchange believes that the proposed 
+change furthers the Commission's goal in adopting Regulation NMS of 
+fostering integrated competition among orders, which promotes ``more 
+efficient pricing of individual stocks for all types of orders, large 
+and small.'' \27\
+---------------------------------------------------------------------------
+
+    \26\ 15 U.S.C. 78f(b)(8).
+    \27\ See supra note 7.
+---------------------------------------------------------------------------
+
+    Intramarket Competition. The Exchange believes the proposed rule 
+change does not impose any burden on intramarket competition that is 
+not necessary or appropriate in furtherance of the purposes of the Act. 
+In particular, the proposed change to adopt the `time-in-force of Day' 
+modifier for Retail Orders where both sides of the order share the same 
+MPID would apply equally to all ETP Holders in that all ETP Holders 
+would be able to transact such orders on the Exchange at no cost, i.e., 
+they would receive no credit or pay any fee. The Exchange believes that 
+the resulting fee structure would continue to incentivize market 
+participants to submit such orders for execution on a public and 
+transparent market rather than on an off-exchange venue. Further, the 
+proposal to exclude MPL Orders and DPO orders submitted with a retail 
+modifier from the fee applicable to Retail Orders with a time-in-force 
+of Day that remove liquidity will have a minimal impact on ETP Holders 
+in their trading activity as such orders constitute a very small amount 
+of all Retail Orders submitted to the Exchange. The Exchange does not 
+believe that the proposed change represents a significant departure 
+from previous pricing offered by the Exchange. The Exchange believes 
+that the proposed changes would continue to incentivize market 
+participants to direct order flow to the Exchange. Greater overall 
+order flow, trading opportunities, and pricing transparency would 
+benefit all market participants on the Exchange by enhancing market 
+quality and would continue to encourage ETP Holders to send their 
+orders to the Exchange, thereby contributing towards a robust and well-
+balanced market ecosystem. All ETP Holders would be subject to the 
+proposed changes, and, as such, the proposed changes would not impose a 
+disparate burden on competition among market participants on the 
+Exchange. As noted, the proposal would apply to all similarly situated 
+ETP Holders on the same and equal terms, who would benefit from the 
+changes on the same basis. Accordingly, the proposed change would not 
+impose a disparate burden on competition among market participants on 
+the Exchange.
+    Intermarket Competition. The Exchange believes the proposed rule 
+change does not impose any burden on intermarket competition that is 
+not necessary or appropriate in furtherance of the purposes of the Act. 
+The Exchange operates in a highly competitive market in which market 
+participants can readily choose to send their orders to other exchanges 
+and off-
+
+[[Page 58931]]
+
+exchange venues if they deem fee levels at those other venues to be 
+more favorable. As noted above, the Exchange's market share of intraday 
+trading (i.e., excluding auctions) is currently less than 15%. In such 
+an environment, the Exchange must continually adjust its fees and 
+rebates to remain competitive with other exchanges and with off-
+exchange venues. Because competitors are free to modify their own fees 
+and credits in response, and because market participants may readily 
+adjust their order routing practices, the Exchange does not believe 
+this proposed fee change would impose any burden on intermarket 
+competition.
+    The Exchange believes that the proposed change could promote 
+competition between the Exchange and other execution venues, including 
+those that currently offer similar order types and comparable 
+transaction pricing, by encouraging additional orders to be sent to the 
+Exchange for execution.
+
+C. Self-Regulatory Organization's Statement on Comments on the Proposed 
+Rule Change Received From Members, Participants, or Others
+
+    No written comments were solicited or received with respect to the 
+proposed rule change.
+
+III. Date of Effectiveness of the Proposed Rule Change and Timing for 
+Commission Action
+
+    Pursuant to Section 19(b)(3)(A)(ii) of the Act,\28\ and Rule 19b-
+4(f)(2) thereunder \29\ the Exchange has designated this proposal as 
+establishing or changing a due, fee, or other charge imposed on any 
+person, whether or not the person is a member of the self-regulatory 
+organization, which renders the proposed rule change effective upon 
+filing. At any time within 60 days of the filing of the proposed rule 
+change, the Commission summarily may temporarily suspend such rule 
+change if it appears to the Commission that such action is necessary or 
+appropriate in the public interest, for the protection of investors, or 
+otherwise in furtherance of the purposes of the Act.
+---------------------------------------------------------------------------
+
+    \28\ 15 U.S.C. 78s(b)(3)(A)(ii).
+    \29\ 17 CFR 240.19b-4.
+---------------------------------------------------------------------------
+
+IV. Solicitation of Comments
+
+    Interested persons are invited to submit written data, views and 
+arguments concerning the foregoing, including whether the proposed rule 
+change is consistent with the Act. Comments may be submitted by any of 
+the following methods:
+
+Electronic Comments
+
+    <bullet> Use the Commission's internet comment form (<a href="https://www.sec.gov/rules/sro.shtml">https://www.sec.gov/rules/sro.shtml</a>); or
+    <bullet> Send an email to <a href="/cdn-cgi/l/email-protection#2b595e474e06484446464e455f586b584e48054c445d"><span class="__cf_email__" data-cfemail="493b3c252c642a2624242c273d3a093a2c2a672e263f">[email&#160;protected]</span></a>. Please include 
+file number SR-NYSEARCA-2026-91 on the subject line.
+
+Paper Comments
+
+    <bullet> Send paper comments in triplicate to Secretary, Securities 
+and Exchange Commission, 100 F Street NE, Washington, DC 20549-1090.
+
+All submissions should refer to file number SR-NYSEARCA-2026-91. This 
+file number should be included on the subject line if email is used. To 
+help the Commission process and review your comments more efficiently, 
+please use only one method. The Commission will post all comments on 
+the Commission's internet website (<a href="https://www.sec.gov/rules/sro.shtml">https://www.sec.gov/rules/sro.shtml</a>). Copies of the filing will be available for inspection and 
+copying at the principal office of the Exchange. Do not include 
+personal identifiable information in submissions; you should submit 
+only information that you wish to make available publicly. We may 
+redact in part or withhold entirely from publication submitted material 
+that is obscene or subject to copyright protection. All submissions 
+should refer to file number SR-NYSEARCA-2026-91 and should be submitted 
+on or before October 8, 2026.
+
+    For the Commission, by the Division of Trading and Markets, 
+pursuant to delegated authority.\30\
+---------------------------------------------------------------------------
+
+    \30\ 17 CFR 200.30-3(a)(12).
+---------------------------------------------------------------------------
+
+J. Matthew DeLesDernier,
+Deputy Secretary.
+[FR Doc. 2026-19037 Filed 9-16-26; 8:45 am]
+BILLING CODE 8011-01-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

@@ -1,0 +1,252 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 173 (Wednesday, September 9, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 173 (Wednesday, September 9, 2026)]
+[Notices]
+[Pages 57320-57322]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-18303]
+
+
+-----------------------------------------------------------------------
+
+DEPARTMENT OF COMMERCE
+
+National Telecommunications and Information Administration
+
+
+Agency Information Collection Activities; Submission to the 
+Office of Management and Budget (OMB) for Review and Approval; Comment 
+Request; NTIA Internet Use Survey
+
+AGENCY: National Telecommunications and Information Administration 
+(NTIA), Commerce.
+
+ACTION: Notice of Information Collection, request for comment.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The Department of Commerce, in accordance with the Paperwork 
+Reduction Act of 1995 (PRA), invites the general public and other 
+Federal agencies to comment on proposed, and continuing information 
+collections, which helps us assess the impact of our information 
+collection requirements and minimize the public's reporting burden. The 
+purpose of this notice is to allow for 60 days of public comment 
+preceding submission of the collection to OMB.
+
+DATES: To ensure consideration, comments regarding this proposed 
+information collection must be received on or before November 9, 2026. 
+Comments submitted after this date will be considered if circumstances 
+allow.
+
+ADDRESSES: Interested persons are invited to submit written comments by 
+mail to Christopher Quarles, Policy Advisor, NTIA, 1401 Constitution 
+Avenue NW, Suite 4725, Washington, DC 20230, or via email at 
+<a href="/cdn-cgi/l/email-protection#5e3a3f2a3f1e302a373f70393128"><span class="__cf_email__" data-cfemail="c8aca9bca988a6bca1a9e6afa7be">[email&#160;protected]</span></a>. Please reference OMB Control Number 0660-0021 in the 
+subject line of your comments. Do not submit Confidential Business 
+Information or otherwise sensitive or protected information.
+
+FOR FURTHER INFORMATION CONTACT: Requests for additional information or 
+specific questions related to collection activities should be directed 
+to Christopher Quarles, Policy Advisor, NTIA, 1401 Constitution Avenue 
+NW,
+
+[[Page 57321]]
+
+Suite 4725, Washington, DC 20230, at (202) 941-0606 or 
+<a href="/cdn-cgi/l/email-protection#741705011506181107341a001d155a131b02"><span class="__cf_email__" data-cfemail="1c7f6d697d6e70796f5c7268757d327b736a">[email&#160;protected]</span></a>.
+
+SUPPLEMENTARY INFORMATION:
+
+I. Abstract
+
+    NTIA seeks feedback under the Paperwork Reduction Act (PRA) on a 
+set of questions for the November 2027 edition of the U.S. Census 
+Bureau's Current Population Survey (CPS). This collection of questions 
+is known as the NTIA internet Use Survey and is also referred to as the 
+CPS Computer and internet Use Supplement. NTIA has sponsored eighteen 
+such surveys since 1994.
+    The NTIA internet Use Survey has long been a key resource for 
+evidence-based policymaking, and an improved set of survey questions 
+could further inform key policy choices at a particularly important 
+time for our nation. From artificial intelligence to online services, 
+the internet is of immense importance to the nation's economic 
+prosperity. Digitally deliverable services make up over $700B of U.S. 
+exports, larger than any single sector.\1\ As a result, policymakers, 
+businesses, non-profits, communities, and other stakeholders rely on 
+data about whether and how Americans use the internet to help shape 
+their activities. Digitally connected Americans populate the modern 
+workforce, drive creative innovation throughout the economy, and ensure 
+a growing customer base to help sustain our nation's global 
+competitiveness.
+---------------------------------------------------------------------------
+
+    \1\ U.S. Bureau of Economic Analysis, ``Table 3.3. U.S. Trade in 
+ICT Services and Digitally Deliverable Services, by Country or 
+Affiliation'' (accessed Friday, June 26, 2026).
+---------------------------------------------------------------------------
+
+    Collecting current, systematic, and comprehensive information on 
+internet use and non-use by U.S. households is critical for helping 
+policymakers gauge progress on topics such as broadband deployment and 
+use, identify specific areas of concern, and target cost-effective 
+responses. Congress has tasked NTIA and other federal agencies with 
+administering multiple broadband grant programs that aim to bolster 
+American prosperity and competitiveness by closing gaps in deployment, 
+use, and digital skills. Efficient and fiscally responsible 
+administration of these programs requires careful monitoring and 
+evaluation of progress towards their statutory goals. NTIA requires 
+accurate and detailed information about computer and internet use--
+including changes over time--in order to carry out these evaluation 
+activities, and as the longest-running and most comprehensive household 
+survey on this topic, the NTIA internet Use Survey serves as an 
+indispensable data source to meet this need.
+    The U.S. Census Bureau is widely regarded as a premier data 
+collector based on centuries of experience and rigorous scientific 
+methods. Collection of NTIA's requested internet usage data will occur 
+in conjunction with a future edition of the U.S. Census Bureau's CPS, 
+thereby significantly reducing the potential burdens on the U.S. Census 
+Bureau and on surveyed households.
+    The U.S. government has a need for comprehensive data in this area. 
+The U.S. Government Accountability Office (GAO), NTIA, and the FCC have 
+issued reports noting the importance of useful broadband data for 
+policymakers. Moreover, Congress has passed legislation--including the 
+Broadband Data Improvement Act, the American Recovery and Reinvestment 
+Act, the Broadband DATA Act, the Consolidated Appropriations Act, 2021, 
+and the Infrastructure Investment and Jobs Act--wholly or in part to 
+facilitate data collection, research, program evaluation, and policy 
+analysis in this area. And Congress has charged NTIA with the task of 
+furthering scientific knowledge on telecommunications and information. 
+(47 U.S.C. 901(c)(5)). Modifying the CPS to include NTIA's requested 
+internet use questions will enable the Commerce Department and NTIA to 
+respond to congressional concerns and directives.
+    As technology changes, so does the best way to measure internet and 
+technology use. For this revision, NTIA is thoroughly re-examining the 
+questions and language in its internet Use Survey to ensure the 
+resulting data meets today's needs. At the same time, NTIA recognizes 
+the value of preserving important long-term time data and aims to 
+maintain time series as much as possible.
+    Internet measurement must balance several competing forces. The 
+ways people access the internet have changed dramatically, as the 
+market has evolved from dial-up and DSL to a widely varied marketplace 
+of wired and wireless options. How people use the internet has shifted 
+as well: connectivity is now embedded in many everyday devices, more 
+people are turning to the internet to buy basic goods, and concerns 
+about problematic use are rising. Artificial intelligence (AI), in 
+particular, has had tremendous effects on how people gather information 
+on the internet and on how that information is generated. Effective 
+longitudinal measurement around AI and other internet-enabled 
+technologies will be needed to predict the issues of tomorrow. 
+Simultaneously, large surveys are costly, and respondents' time is 
+valuable. Survey questions therefore need to focus on topics that have 
+significant value for data users and/or impact on policy.
+    NTIA has made a copy of the proposed information collection 
+instrument available at <a href="https://www.ntia.gov/federal-register-notice/2026/2027-internet-use-survey-information-collection">https://www.ntia.gov/federal-register-notice/2026/2027-internet-use-survey-information-collection</a>.
+    The bureau also welcomes comments on any of the following 
+questions. Where possible, cite question numbers and propose specific, 
+tested language:
+
+    1. Is data from the NTIA Internet Use Survey important in 2027? 
+Should the survey continue to be conducted?
+    2. Which NTIA Internet Use Survey questions should remain 
+unchanged in 2027 to preserve useful longitudinal time series?
+    3. How should the survey questions or language be updated for 
+technology use in 2027?
+    4. Which questions should be kept because they are used by 
+researchers, policymakers, and/or industry? Please explain how the 
+questions are used.
+    5. Which questions use outdated language or will not provide 
+useful data in 2027? Should these questions be removed? If not, how 
+should they be changed?
+    6. Internet connectivity and applications have changed 
+substantially since the survey instrument was substantively 
+rewritten a decade ago. For example, the role of the internet in 
+Americans' lives is often unnoticed, from smart appliances to 
+single-player video games that require online connections. How (if 
+at all) should questions on the NTIA Internet Use Survey be edited, 
+removed, or added to address the evolution of these technologies and 
+the words we use to describe them?
+    7. Commenters often suggest adding questions, but space for 
+questions is limited. If your comment proposed additional questions, 
+are there other questions that should be removed to make space? Or 
+would some questions be better asked in a different venue?
+    8. Are some questions (or potential questions) particularly 
+important for policymakers or industry? Please explain. For example, 
+as a supplement to the CPS, the nation's primary source of labor 
+statistics, the survey might provide key insights on internet use 
+and the workforce.
+    9. What questions (or potential questions) are of particular 
+importance for enabling high-quality evaluation of NTIA's broadband 
+grant programs and other federal broadband programs? Are there 
+particular gaps in existing program evaluation data that could be 
+filled by adding certain questions to the NTIA Internet Use Survey?
+    10. In what ways can survey language be customized to support 
+cross-country comparison?
+    11. Is there a need for more data around children's use of the 
+internet and digital devices? Are there particular areas that need 
+more data, such as screen use in schools or parental perceptions of 
+children's tech use? Is the NTIA Internet Use Survey, a CPS
+
+[[Page 57322]]
+
+supplement, the most appropriate place for this, or should that data 
+be gathered in other ways?
+    12. Is there a need for more data around artificial intelligence 
+(AI)? Are there particular areas that need more data, such as AI use 
+at work or home, or attitudes towards AI? Is the NTIA Internet Use 
+Survey, a CPS supplement, the most appropriate place for this, or 
+should that data be gathered in other ways?
+
+II. Method of Collection
+
+    The NTIA internet Use Survey will be administered by the U.S. 
+Census Bureau as a supplement to the CPS. Data will be collected 
+through personal visits and live telephone interviews using computer-
+assisted telephone interviewing and computer-assisted personal 
+interviewing.
+
+III. Data
+
+    OMB Control Number: 0660-0021.
+    Form Number(s): None.
+    Affected Public: Individuals and households.
+    Estimated Number of Respondents: 50,000 households.
+    Estimated Time per Response: 10 minutes.
+    Estimated Total Annual Burden Hours: 8,334 hours.
+    Estimated Total Annual Cost to Public: $0.
+    Respondent's Obligation: Voluntary.
+    Legal Authority: 47 U.S.C. 902(b)(2)(M), (P).
+
+IV. Request for Comments
+
+    We are soliciting public comments to permit the Department/Bureau 
+to: (a) Evaluate whether the proposed information collection is 
+necessary for the proper functions of the Department, including whether 
+the information will have practical utility; (b) Evaluate the accuracy 
+of our estimate of the time and cost burden for this proposed 
+collection, including the validity of the methodology and assumptions 
+used; (c) Evaluate ways to enhance the quality, utility, and clarity of 
+the information to be collected; and (d) Minimize the reporting burden 
+on those who are to respond, including via the use of automated 
+collection techniques or other forms of information technology.
+    Comments that you submit in response to this notice are a matter of 
+public record. We will include or summarize each comment in our request 
+to OMB to approve this ICR. Before including your address, phone 
+number, email address, or other personal identifying information in 
+your comment, you should be aware that your entire comment, including 
+any personal identifying information that you include--may be made 
+publicly available at any time. While you may ask us in your comment to 
+withhold your personal identifying information from public review, we 
+cannot guarantee that we will be able to do so.
+
+Sheleen Dumas,
+Departmental PRA Compliance Officer, Office of the Under Secretary for 
+Economic Affairs, Commerce Department.
+[FR Doc. 2026-18303 Filed 9-8-26; 8:45 am]
+BILLING CODE 3510-60-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

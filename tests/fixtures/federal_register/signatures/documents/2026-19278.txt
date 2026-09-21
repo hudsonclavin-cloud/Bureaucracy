@@ -1,0 +1,80 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 181 (Monday, September 21, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 181 (Monday, September 21, 2026)]
+[Notices]
+[Pages 59757-59758]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-19278]
+
+
+-----------------------------------------------------------------------
+
+DEPARTMENT OF AGRICULTURE
+
+
+Submission for OMB Review; Comment Request
+
+    The Department of Agriculture has submitted the following 
+information collection requirement(s) to OMB for review and clearance 
+under the Paperwork Reduction Act of 1995, Public Law 104-13. Comments 
+are requested regarding; whether the collection of information is 
+necessary for the proper performance of the functions of the agency, 
+including whether the information will have practical utility; the 
+accuracy of the agency's estimate of burden including the validity of 
+the methodology and assumptions used; ways to enhance the quality, 
+utility and clarity of the information to be collected; and ways to 
+minimize the burden of the collection of information on those who are 
+to respond, including through the use of appropriate automated, 
+electronic, mechanical, or other technological collection techniques or 
+other forms of information technology.
+    Comments regarding this information collection received by October 
+21, 2026 will be considered. Written comments and recommendations for 
+the proposed information collection should be submitted within 30 days 
+of the publication of this notice on the
+
+[[Page 59758]]
+
+following website <a href="http://www.reginfo.gov/public/do/PRAMain">www.reginfo.gov/public/do/PRAMain</a>. Find this 
+particular information collection by selecting ``Currently under 30-day 
+Review--Open for Public Comments'' or by using the search function. An 
+agency may not conduct or sponsor a collection of information unless 
+the collection of information displays a currently valid OMB control 
+number and the agency informs potential persons who are to respond to 
+the collection of information that such people are not required to 
+respond to the collection of information unless it displays a currently 
+valid OMB control number.
+
+Food and Nutrition Administration
+
+    Title: FNS-380-1--Supplemental Nutrition Assistance Program's 
+Quality Control Review Schedule.
+    OMB Control Number: 0584-0299.
+    Summary of Collection: The FNA-380-1, Quality Control Review 
+Schedule, was developed by the Food and Nutrition Administration (FNA) 
+for State use to collect both Quality Control (QC) data and case 
+characteristics for SNAP and to serve as the comprehensive data entry 
+form for SNAP QC reviews. As required by the Food and Nutrition Act of 
+2008, as amended (the Act), FNA is required to collect QC data, and 
+State agencies are required to perform QC reviews for SNAP.
+    Need and Use of the Information: The information needed to complete 
+this form is obtained from the SNAP case record, through State agency 
+quality control interviews with households and collateral contacts, 
+data matches, and verification documents obtained during the QC review. 
+The information is used to monitor and reduce errors, develop policy 
+strategies, and analyze household data.
+    Description of Respondents: Local and Tribal Governments.
+    Number of Respondents: 53.
+    Frequency of Responses: Reporting: Monthly.
+    Total Burden Hours: 50,436.
+
+Rachelle Ragland-Greene,
+Departmental Information Collection Clearance Officer.
+[FR Doc. 2026-19278 Filed 9-18-26; 8:45 am]
+BILLING CODE 3410-30-P
+
+
+</pre></body>
+</html>

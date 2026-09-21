@@ -1,0 +1,107 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 160 (Thursday, August 20, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 160 (Thursday, August 20, 2026)]
+[Rules and Regulations]
+[Pages 53717-53718]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-16967]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+DEPARTMENT OF HOUSING AND URBAN DEVELOPMENT
+
+24 CFR Part 51
+
+[Docket No. FR-6581-C-02]
+RIN 2506-AC63
+
+
+Revising HUD's Noise Abatement and Control Regulations; 
+Correcting Amendment
+
+AGENCY: Office of Community Planning and Development, HUD.
+
+ACTION: Correcting amendment.
+
+-----------------------------------------------------------------------
+
+SUMMARY: On June 12, 2026, HUD published a final rule revising its 
+noise abatement and control regulations. Due to an amendatory 
+instruction drafting error, codified text of was not revised as HUD 
+intended and continues to reference the Assistant Secretary for 
+Community Planning and Development. This document corrects that text to 
+conform to HUD's intent as described in the preamble to the final rule.
+
+DATES: Effective August 20, 2026.
+
+FOR FURTHER INFORMATION CONTACT: Peter Huber, Deputy Director, Office 
+of Affordable Housing Programs, Office of Community Planning and 
+Development, U.S. Department of Housing and Urban Development, 451 7th 
+Street SW, Washington, DC 20410, Room 7282; telephone number (202) 402-
+3941 (this is not a toll-free number). HUD welcomes and is prepared to 
+receive calls from individuals who are deaf or hard of hearing, as well 
+as individuals with speech or communication disabilities. To learn more 
+about how to make an accessible telephone call, please visit <a href="https://www.fcc.gov/consumers/guides/telecommunications-relay-service-trs">https://www.fcc.gov/consumers/guides/telecommunications-relay-service-trs</a>.
+
+SUPPLEMENTARY INFORMATION: On June 12, 2026, HUD published a final rule 
+(91 FR 35624) revising its noise abatement and control regulations at 
+24 CFR part 51. As explained in the preamble, HUD intended to amend 
+Sec.  51.104(a)(2) and (b)(2) ``to allow for noise attenuation measures 
+in unacceptable noise zones, projects in unacceptable noise zones, and 
+EIS waivers for projects in unacceptable noise zones to be approved by 
+the Assistant Secretary for the relevant program office overseeing a 
+HUD-assisted project'' (91 FR 35625).
+    Due to an amendatory instruction drafting error, the instruction 
+for Sec.  51.104(b)(2) did not effectuate this intent. Instead of 
+removing the reference to the ``Assistant Secretary for Community 
+Planning and Development'' from Sec.  51.104(a)(2) and (b)(2), the 
+instructions removed that reference only from Sec.  51.104(a)(2) (91 FR 
+35626). As a result, the codified text of Sec.  51.104(b)(2) continues 
+to require that projects in or partially in an unacceptable noise zone 
+be submitted to the Assistant Secretary for Community Planning and 
+Development (or the Certifying Officer for projects subject to part 58) 
+for approval and that only the Assistant Secretary for Community 
+Planning and Development (or the Certifying Officer) may waive the 
+requirement for an environmental impact statement for such projects. 
+This correcting amendment revises Sec.  51.104(b)(2) to replace the 
+reference to the Assistant Secretary for Community Planning and 
+Development with ``Program Assistant Secretary or their designee,'' 
+consistent with the revision made to Sec.  51.104(a)(2).
+
+List of Subjects in 24 CFR Part 51
+
+    Airports, Hazardous substances, Housing standards, Noise control.
+
+    Accordingly, 24 CFR part 51 is corrected by making the following 
+correcting amendments:
+
+[[Page 53718]]
+
+PART 51--ENVIRONMENTAL CRITERIA AND STANDARDS
+
+0
+1. The authority citation for part 51 continues to read as follows:
+
+    Authority: 42 U.S.C. 3535(d), unless otherwise noted.
+
+
+Sec.  51.104  [Amended]
+
+0
+2. In Sec.  51.104(b)(2), remove the words ``Assistant Secretary for 
+Community Planning and Development'' and add, in their place, the words 
+``Program Assistant Secretary or their designee''.
+
+Ronald Kurtz,
+Assistant Secretary for Community Planning and Development.
+[FR Doc. 2026-16967 Filed 8-19-26; 8:45 am]
+BILLING CODE 4210-67-P
+
+
+</pre></body>
+</html>

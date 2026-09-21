@@ -189,6 +189,13 @@ EVIDENCE_OWNED_FIELDS = (
     # that stops printing a title -- or a rename on this side -- must take
     # the claim with it rather than have it survive on the re-fed graph.
     "govmanListing",
+    # Written by federal_register_signatures.py: the title the official who
+    # signed one published Federal Register document stated for themselves.
+    # Withdrawn here with the rest, because the fixture set is a sample that
+    # is refreshed by re-fetching -- a document dropped from it, or a rename
+    # on this side, must take the claim with it rather than survive on the
+    # re-fed graph.
+    "federalRegisterSignature",
     # Written by positions.py and headcounts.py, withdrawn here with the rest,
     # so a record dropped from either file stops being published.
     "positionListing",

@@ -1,0 +1,134 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 180 (Friday, September 18, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 180 (Friday, September 18, 2026)]
+[Notices]
+[Page 59292]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-19142]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+DEPARTMENT OF STATE
+
+[Public Notice 13122]
+
+
+60-Day Notice of Proposed Information Collection: DS-864E, 
+Request for Exemption From Immigrant Visa Applicant's Affidavit of 
+Support
+
+ACTION: Notice of request for public comment.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The Department of State is seeking Office of Management and 
+Budget (OMB) approval for the information collection described below. 
+In accordance with the Paperwork Reduction Act of 1995, we are 
+requesting comments on this collection from all interested individuals 
+and organizations. The purpose of this notice is to allow 60 days for 
+public comment preceding submission of the collection to OMB.
+
+DATES: The Department will accept comments from the public up to 
+November 17, 2026.
+
+ADDRESSES: You may submit comments by any of the following methods:
+    <bullet> Web: Persons with access to the internet may comment on 
+this notice by going to <a href="http://www.Regulations.gov">www.Regulations.gov</a>. You can search for the 
+document by entering ``Docket Number: DOS-2026-0960'' in the Search 
+field. Then click the ``Comment Now'' button and complete the comment 
+form.
+    <bullet> Email: <a href="/cdn-cgi/l/email-protection#603032213f22151204050e230f0d0d050e14132013140114054e070f16"><span class="__cf_email__" data-cfemail="623230233d20171006070c210d0f0f070c16112211160316074c050d14">[email&#160;protected]</span></a>.
+    <bullet> Regular Mail: Send written comments to: Senior Regulatory 
+Coordinator, Visa Services, Department of State, 600 19th St. NW, 
+Washington, DC 20006.
+    Please contact the Department via email if you are unable to access 
+the supporting documentation through <a href="http://regulations.gov">regulations.gov</a>. You must include 
+the DS form number (if applicable), information collection title, and 
+the OMB control number in any correspondence.
+
+SUPPLEMENTARY INFORMATION: 
+    <bullet> Title of Information Collection: Request for Exemption 
+from Immigrant Visa Applicant's Affidavit of Support.
+    <bullet> OMB Control Number: 1405-XXXX.
+    <bullet> Type of Request: New Collection.
+    <bullet> Originating Office: CA/VO.
+    <bullet> Form Number: DS-864E.
+    <bullet> Respondents: Immigrant Visa Applicants.
+    <bullet> Estimated Number of Respondents: 24,000.
+    <bullet> Estimated Number of Responses: 24,000.
+    <bullet> Average Time Per Response: 1 hour.
+    <bullet> Total Estimated Burden Time: 24,000.
+    <bullet> Frequency: Once per respondent's application.
+    <bullet> Obligation to Respond: Required to Obtain or Retain a 
+Benefit.
+    We are soliciting public comments to permit the Department to:
+    <bullet> Evaluate whether the proposed information collection is 
+necessary for the proper functions of the Department.
+    <bullet> Evaluate the accuracy of our estimate of the time and cost 
+burden for this proposed collection, including the validity of the 
+methodology and assumptions used.
+    <bullet> Enhance the quality, utility, and clarity of the 
+information to be collected.
+    <bullet> Minimize the reporting burden on those who are to respond, 
+including the use of automated collection techniques or other forms of 
+information technology.
+    Please note that comments submitted in response to this Notice are 
+public record. Before including any detailed personal information, you 
+should be aware that your comments as submitted, including your 
+personal information, will be available for public review.
+
+Abstract of Proposed Collection
+
+    Section 213A of the Immigration and Nationality Act (INA) (8 U.S.C. 
+1183a) sets forth the requirements for an Affidavit of Support. In most 
+cases, a family-sponsored and certain employment-based immigrant must 
+have a sponsor execute an Affidavit of Support on his or her behalf. 
+The Affidavit of Support is intended to demonstrate the immigrant will 
+have adequate means of financial support and is not likely to rely on 
+governmental financial assistance. The Affidavit of Support is a 
+legally binding contract which may be enforced in federal or state 
+court if the sponsored immigrant receives any means-tested public 
+benefits and the sponsor does not repay the cost of those benefits to 
+the agency that provided them.
+    The Department of State uses the Department of Homeland's 
+Security's (DHS) Form I-864, Affidavit of Support Under Section 213A of 
+the Act--or Form I-864EZ, Affidavit of Support of Support Under Section 
+213A of the Act, if the applicant qualifies to use it--to determine 
+whether the sponsor meets the minimum income requirements. The 
+Department previously used DHS Form I-864W, Request for Exemption for 
+Intending Immigrant's Affidavit of Support, to determine whether an 
+applicant was eligible for an exemption from filing these forms. 
+However, OIRA approved discontinuation of Form I-864W on October 17, 
+2024.
+    The Department developed Form DS-864E to facilitate the 
+Department's continued ability to assess sponsor information in 
+accordance with INA 213A (8 U.S.C. 1183a), INA 212(a)(4) (8 U.S.C. 
+1182(a)(4)), and 22 CFR 40.41. The Department will use Form DS-864E to 
+determine whether the applicant meets the criteria for exemption from 
+the requirement to submit Form I-864 (or Form I-864EZ). This form will 
+collect the immigrant's basic information, such as name and address, 
+the reason for the exemption, and accompanying documentation in support 
+of the immigrant's claim that he or she is not required to submit Form 
+I-864 (or Form I-864EZ) and serve as his or her affirmative request for 
+an exemption as required under 8 CFR 213a.2(a)(1)(i)(B).
+
+Methodology
+
+    Form DS-864E will be available electronically at <a href="https://travel.state.gov">https://travel.state.gov</a>. The form can be completed online and must be 
+submitted as directed by the National Visa Center (NVC) or by a 
+consular officer abroad.
+
+John L. Armstrong,
+Principal Deputy Assistant Secretary, Bureau of Consular Affairs, 
+Department of State.
+[FR Doc. 2026-19142 Filed 9-17-26; 8:45 am]
+BILLING CODE 4710-06-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

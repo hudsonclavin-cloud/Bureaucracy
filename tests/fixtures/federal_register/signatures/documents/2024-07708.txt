@@ -1,0 +1,153 @@
+<html>
+<head>
+<title>Federal Register, Volume 89 Issue 81 (Thursday, April 25, 2024)</title>
+</head>
+<body><pre>
+[Federal Register Volume 89, Number 81 (Thursday, April 25, 2024)]
+[Notices]
+[Pages 31720-31721]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2024-07708]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+AMERICAN BATTLE MONUMENTS COMMISSION
+
+
+Request for a Revision of a Currently Approved Collection; ABMC 
+Web Survey Amendments
+
+AGENCY: American Battle Monuments Commission (ABMC).
+
+ACTION: Notice of information collection, request for comment.
+
+-----------------------------------------------------------------------
+
+SUMMARY: This The American Battle Monuments Commission, in accordance 
+with the Paperwork Reduction Act (PRA) of 1995, invites the general 
+public and other Federal agencies to comment on proposed, and 
+continuing information collections, which helps us assess the impact of 
+our information collection requirements and minimize the public's 
+reporting burden. The purpose of this notice is to allow for 60 days of 
+public comment on the proposed revision to the Visitor Web Survey prior 
+to the submission of these information collection request (ICR) to OMB 
+for approval.
+
+DATES: To ensure consideration, comments regarding this proposed 
+information collection must be received on or before May 22, 2024.
+
+ADDRESSES: Interested persons are invited to submit written comments by 
+email to <a href="/cdn-cgi/l/email-protection#53312a213d362032136f32733b2136356e" http: abmc.gov">abmc.gov</a>">byrnesa@<a href="http://abmc.gov">abmc.gov</a></a>. Please reference Visitor Web Survey in the 
+subject line of your comments. You may also submit comments, identified 
+by Docket Number ABMC-2024-0001, to the Federal e-Rulemaking Portal: 
+<a href="http://www.regulations.gov">http://www.regulations.gov</a>. All comments received are part of the 
+public record. No comments will be posted to <a href="http://www.regulations.gov">http://www.regulations.gov</a> 
+for public viewing until after the comment period has closed. Comments 
+will generally be posted without change. All Personally Identifiable 
+Information (for example, name and address) voluntarily submitted by 
+the commenter may be publicly accessible. Do not submit confidential 
+information or otherwise sensitive or protected information. You may 
+submit attachments to electronic comments in Microsoft Word, Excel, or 
+Adobe PDF file formats.
+
+FOR FURTHER INFORMATION CONTACT: Ashleigh Byrnes, Deputy Chief of 
+Public Affairs, 703-584-1564, <a href="/cdn-cgi/l/email-protection#46243f3428233527067a27662e3423207b" http: abmc.gov">abmc.gov</a>">byrnesa@<a href="http://abmc.gov">abmc.gov</a></a>; (Alternate) Lin-Lin 
+Jennifer Li, Chief Information Officer, 703-584-1530, <a href="/cdn-cgi/l/email-protection#04686d6e443865246c76616239" http: abmc.gov">abmc.gov</a>">lij@<a href="http://abmc.gov">abmc.gov</a></a>.
+
+SUPPLEMENTARY INFORMATION: 
+    Title: Clearance for the Electronic Survey Collection of 
+Demographic Data on Agency Website Usage and Service Delivery.
+    Type of Request: Regular submission, Request for a Revision of a 
+Currently Approved Collection.
+    Abstract: In an effort to improve online visitor experience and 
+usage habits, the American Battle Monuments Commission (ABMC) is 
+conducting a web survey (survey) on <a href="http://abmc.gov">abmc.gov</a>. The existing survey 
+collects information to track visitor feedback to enhance web design 
+and content, increase data quality, and operate more efficiently. The 
+survey solicits [or, ``provides ABMC''] information on visitation to 
+ABMC's physical locations, functionality of the website, and overall 
+experience.
+    The survey collected roughly 500 responses in 2023. The sample size 
+increased to this point due to survey look and feel enhancements that 
+launched on July 12, 2023. The visual appearance of the survey was 
+realigned with the color palette and design of the <a href="http://abmc.gov">abmc.gov</a> site to 
+make the survey more appealing to respondents. The official sampling 
+percentage for the survey did not change, but collection did improve as 
+a result of these enhancements. Prior to that, the survey sample size 
+was fairly consistent over time.
+    The survey is designed to allow for incorporation of new content 
+based on previous visitor feedback and agency objectives. New questions 
+pertaining to demographic information must be submitted to the OMB for 
+approval.
+    The survey currently collects the following information from site 
+visitors:
+    <bullet> Visitation habits to ABMC physical locations (cemeteries, 
+memorials, monuments, markers).
+    <bullet> Visitation habits to <a href="http://abmc.gov">abmc.gov</a>.
+    <bullet> Purpose of use for visiting <a href="http://abmc.gov">abmc.gov</a>.
+    <bullet> Applicable categories of interest associated with ABMC and 
+<a href="http://abmc.gov">abmc.gov</a> (historical research, genealogy, media, education).
+    <bullet> Website functionality and usability.
+    <bullet> Overall user experience.
+    In accordance with federal guidance to advance diversity, equity, 
+inclusion and accessibility, ABMC proposes to incorporate additional 
+voluntary survey questions to collect data on select demographic 
+characteristics for web visitors, including:
+    <bullet> Age range and sex.
+    <bullet> Ethnicity or race.
+    <bullet> Veteran status.
+    <bullet> Language.
+    <bullet> Disability and accessibility needs.
+    This feedback will provide insights into customer or stakeholder 
+perceptions, experiences, and expectations, taking into account the 
+diverse preferences and needs of the Agency's audience. If this 
+information is not collected, vital feedback from customers and 
+stakeholders on the Agency's services will be unavailable. Information 
+gathered is intended to be used only internally for general service 
+improvement and program management purposes and is not intended for 
+release outside of the agency.
+    Method of Collection: The survey collection is conducted 
+electronically using a web-based questionnaire, and randomly samples 
+50% of desktop website visitors who have visited 2 or more pages. 
+Sampled visitors are presented with an invitation to take the survey, 
+which they can accept or decline. The survey also uses cookies to 
+ensure that repeat visitors are not continuously asked to take the 
+survey. Currently, these cookies are set to offer the ABMC survey every 
+90 days. Visitors who have been to the site and have accepted, 
+declined, or abandoned a survey will not be invited again for 90 days 
+in that browser, on that device, unless they clear their cookies.
+
+[[Page 31721]]
+
+    Type of Respondents: Individuals and Households, Business and 
+Organizations, State, Local or Tribal Government.
+    Estimate of Burden per Response: 10 minutes.
+    Estimated Number of Respondents: 500.
+    Estimated Total Annual Burden on Respondents: 83 hours per year.
+    Respondent's Obligation: Optional.
+    Request for Comments: Comment is invited on: (1) Whether this 
+collection of information is necessary for the stated purposes and the 
+proper performance of the functions of the Agency, including whether 
+the information will have practical utility; (2) the accuracy of the 
+Agency's estimate of the burden of the collection of information, 
+including the validity of the methodology and assumptions used; (3) 
+ways to enhance the quality, utility, and clarity of the information to 
+be collected; and (4) ways to minimize the burden of the collection of 
+information on respondents, including the use of automated, electronic, 
+mechanical, or other technological collection techniques or other forms 
+of information technology.
+    All comments received in response to this notice, including names 
+and addresses when provided, will be a matter of public record. 
+Comments will be summarized and included in the submission to the 
+Office of Management and Budget for approval.
+
+Kelly Dove,
+Chief Human Capital Officer, ABMC.
+[FR Doc. 2024-07708 Filed 4-24-24; 8:45 am]
+BILLING CODE P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

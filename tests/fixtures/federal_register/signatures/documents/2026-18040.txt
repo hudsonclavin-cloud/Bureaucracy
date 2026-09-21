@@ -1,0 +1,707 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 170 (Thursday, September 3, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 170 (Thursday, September 3, 2026)]
+[Rules and Regulations]
+[Pages 56588-56593]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-18040]
+
+
+-----------------------------------------------------------------------
+
+DEPARTMENT OF TRANSPORTATION
+
+Office of the Secretary
+
+14 CFR Part 234
+
+[Docket No. DOT-OST-2026-1257]
+RIN 2105-AF29
+
+
+Cause of Airline Delay and Cancellation Categories Under Section 
+511(b) of the FAA Reauthorization Act of 2024
+
+AGENCY: Bureau of Transportation Statistics, Office of the Assistant 
+Secretary for Research and Technology, Department of Transportation.
+
+ACTION: Final rule.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The U.S. Department of Transportation (Department or DOT) is 
+amending its regulations governing how air carriers report the causes 
+of flight cancellations and delays. This action implements Section 
+511(b) of the FAA Reauthorization Act of 2024, which mandates that ten 
+specific types of events be excluded from the ``Air Carrier'' causal 
+reporting code. That code is reserved for circumstances that are within 
+the carrier's control. This final rule creates a new reporting category 
+to capture these ten specific events, ensuring that the data reported 
+to the Department and shared with the traveling public accurately 
+reflects the statutory distinction between carrier-controllable events 
+and the specific exclusions identified by Congress.
+
+DATES: This final rule becomes effective on October 19, 2026.
+
+[[Page 56589]]
+
+
+FOR FURTHER INFORMATION CONTACT: Robert Nazareth, Bureau of 
+Transportation Statistics, U.S. Department of Transportation, 1200 New 
+Jersey Avenue SE, Washington, DC 20590, 202-934-2413, 
+<a href="/cdn-cgi/l/email-protection#6f1d000d0a1d1b41010e150e1d0a1b072f0b001b41080019"><span class="__cf_email__" data-cfemail="d2a0bdb0b7a0a6fcbcb3a8b3a0b7a6ba92b6bda6fcb5bda4">[email&#160;protected]</span></a> (email). You may also contact Blane Workie, 
+Office of Aviation Consumer Protection, U.S. Department of 
+Transportation, 1200 New Jersey Avenue SE, Washington, DC 20590, 202-
+366-9342 (phone), 202-366-7152 (fax), <a href="/cdn-cgi/l/email-protection#fe9c929f909bd089918c95979bbe9a918ad0999188"><span class="__cf_email__" data-cfemail="6d0f010c0308431a021f0604082d090219430a021b">[email&#160;protected]</span></a> (email).
+
+SUPPLEMENTARY INFORMATION:
+
+Background and Statutory Authority
+
+    Since 2002, DOT regulations at 14 CFR 234.4 have required reporting 
+carriers to submit monthly data identifying the causes of flight 
+cancellations and delays of 15 minutes or greater. Under the existing 
+framework, delays are attributable to one of 5 categories: (1) Air 
+Carrier, (2) Extreme Weather, (3) National Aviation System, (4) 
+Security, and (5) Late Arriving Aircraft.\1\ Carriers use the same 
+categories to report cancellations under the regulation, except that 
+there is no category for Late Arriving Aircraft.\2\ The Air Carrier 
+category has historically included any delay or cancellation due to 
+circumstances within the control of the carrier such as maintenance, 
+crew scheduling, or aircraft cleaning.
+---------------------------------------------------------------------------
+
+    \1\ 14 CFR 234.4(a)(17)-(21), (i).
+    \2\ Id. at (a)(16), (h).
+---------------------------------------------------------------------------
+
+    These causal categories are further detailed in Bureau of 
+Transportation Statistics (BTS) Technical Directive #40, ``On-time 
+Performance'' (Technical Directive).\3\ The technical directive 
+provides a non-exclusive list of events that carriers should report in 
+the Air Carrier category like: aircraft cleaning; aircraft damage 
+(except bird strikes, lightning/hail damage); airport curfew; awaiting 
+the arrival of connecting passengers or crew; awaiting alcohol test; 
+awaiting gate space; baggage loading; cabin servicing; cargo loading; 
+catering; computer outage--carrier equipment; crew legality (pilot or 
+attendant rest); damage by hazardous goods; engineering inspection; 
+public health, etc.; flight paperwork; fueling; gate congestion; 
+government forms not properly completed--INS, FAA, Agriculture; ground 
+equipment out of service; hot brakes restriction; last minute 
+passenger; late mail from Post Office; late crew; lavatory servicing; 
+maintenance; medical emergency; out of service aircraft; oversales; 
+positive passenger baggage match; passenger services; potable water 
+servicing; pre-flight check; ramp congestion--blocked by another 
+aircraft under carrier's control; ramp service; removal of unruly 
+passenger; revised weight sheet; shortage of ramp equipment; slow 
+boarding or seating; snow removal (when it is a carrier ramp service 
+function); stowing carry-on baggage; and weight and balance delays.\4\ 
+The Technical Directive provides similar lists of events for the other 
+causal categories, except for Late Arriving Aircraft, which does not 
+have a list of events.
+---------------------------------------------------------------------------
+
+    \3\ Available at <a href="https://www.bts.gov/sites/bts.dot.gov/files/2025-11/Technical%20Directive%20No%2040%20On-Time%202026.pdf">https://www.bts.gov/sites/bts.dot.gov/files/2025-11/Technical%20Directive%20No%2040%20On-Time%202026.pdf</a>.
+    \4\ Id.
+---------------------------------------------------------------------------
+
+    On May 16, 2024, the FAA Reauthorization Act of 2024 (2024 FAA Act) 
+became law.\5\ Section 511(b) of that act provides that 10 delineated 
+events ``shall not be included within the Air Carrier code.''
+---------------------------------------------------------------------------
+
+    \5\ Public Law 118-63, 138 Stat. 1025 (2024).
+---------------------------------------------------------------------------
+
+Provisions of the Final Rule
+
+    To implement this statutory requirement, the Department is adding a 
+new reporting category to 14 CFR 234.4. This category, to be known as 
+Section 511(b) category, will be used exclusively for the ten events 
+identified in section 511(b) of the 2024 FAA Act. At the same time, the 
+Department is revising the definition of the Air Carrier category to 
+prohibit the inclusion of these ten events explicitly. They are:
+    (1) aircraft cleaning necessitated by the death of a passenger,
+    (2) aircraft damage caused by extreme weather, foreign object 
+debris, or sabotage,
+    (3) a baggage or cargo loading delay caused by an outage of a bag 
+system not controlled by a carrier or its contractor,
+    (4) cybersecurity attacks (provided that the air carrier is in 
+compliance with applicable cybersecurity regulations),
+    (5) a shutdown or system failure of government systems that 
+directly affects the ability of an air carrier to conduct flights 
+safely and is unexpected,
+    (6) overheated brakes due to a safety incident resulting in the use 
+of emergency procedures,
+    (7) unscheduled maintenance, including in response to an 
+airworthiness directive, manifesting outside a scheduled maintenance 
+program that cannot be deferred or must be addressed before flight,
+    (8) an emergency that required medical attention through no fault 
+of the carrier,
+    (9) the removal of an unruly passenger, and
+    (10) an airport closure due to the presence of volcanic ash, wind, 
+or wind shear.
+    By creating a separate category rather than reassigning these 
+events to existing codes like NAS or Extreme Weather, the Department 
+ensures that the reporting structure remains consistent with the 
+nondiscretionary language of the 2024 FAA Act.
+
+Good Cause for the Final Rule
+
+    The Administrative Procedure Act provides an exception to its 
+notice-and-comment rulemaking procedures when an agency for good cause 
+finds that such procedures are impracticable, unnecessary, or contrary 
+to the public interest.\6\ The agency must incorporate the good cause 
+finding and a brief statement of its reasoning in the rule issued.\7\ 
+This final rule implements the statutory requirement that delays and 
+cancellations caused by a list of specific events are excluded from the 
+Air Carrier category in 14 CFR 234.4. Because these exclusions are not 
+discretionary, and the final regulation uses the statutory language for 
+these exclusions without further interpretation, the Department 
+determines that notice and public comment on the rule is unnecessary.
+---------------------------------------------------------------------------
+
+    \6\ 5 U.S.C. 553(b)(B).
+    \7\ Id.
+---------------------------------------------------------------------------
+
+Future Rulemaking
+
+    In addition to those required exclusions from the air carrier 
+category provided in section 511(b) of the 2024 FAA Act, section 511(a) 
+of the act also requires the Director of BTS to initiate a rulemaking 
+to revise 14 CFR 234.4 ``to create a new `cause of delay' category (or 
+categories) that identifies and tracks information on delays and 
+cancellations of air carriers . . . that are due to instructions from 
+the FAA Air Traffic Control System. In addition, Airlines for America 
+(A4A) filed a petition for rulemaking with the Department requesting 
+the Department expedite this rulemaking and make additional regulatory 
+revisions beyond those required by section 511(b).
+    Implementing section 511(a) and assessing the requests in A4A's 
+petition require the exercise of discretion by the Department. 
+Therefore, those topics require notice and comment procedures under the 
+Administrative Procedure Act. As a result, BTS plans to address these 
+issues through future rulemaking, rather than in this final rule.
+
+I. Regulatory Notices
+
+A. Executive Order 12866 (Regulatory Planning and Review) and the 
+Department's Regulatory Procedures
+
+    The Office of Management and Budget (OMB) has not designated this 
+rule a significant regulatory action under
+
+[[Page 56590]]
+
+section 3(f) of Executive Order (E.O.) 12866. Accordingly, OMB has not 
+reviewed it. In addition, this rule is not significant under the 
+Department's Regulatory Policies and Procedures (49 CFR part 5 and DOT 
+Order 2100.6B). This rule implements the statutory requirement that 
+delays and cancellations caused by 10 delineated events are excluded 
+from the Air Carrier category in 14 CFR 234.4 and does not involve the 
+exercise of discretion by the Department. The economic impact of this 
+rulemaking is discussed in this section.
+    This economic analysis describes the expected benefits, costs, and 
+other potential economic impacts of this final rule. The baseline for 
+this analysis is the current regulation at 14 CFR 234.4. This final 
+rule creates a new reporting category in 14 CFR 234.4 for carriers to 
+report the 10 delineated causes of delay and cancellation that section 
+511(b) of the 2024 FAA Act excludes from the Air Carrier category in 14 
+CFR 234.4. This final rule does not change the applicability and scope 
+of the existing reporting requirements in 14 CFR 234 regarding the air 
+carriers that are required to report data or the flights for which data 
+is submitted by the reporting air carriers.
+Benefits
+    This rule benefits the public by ensuring the information airlines 
+report to the Department, and that the Department in turn provides to 
+the public, is accurate because the information is consistent with 
+Federal law and the legislative determination of what circumstances are 
+not within airline control. Consumers of air transportation will be 
+better informed with more appropriate data regarding the causes of 
+delays and cancellations consistent with Federal law, and, therefore, 
+will be able to make improved comparisons when selecting among air 
+carriers. These improvements to information cannot be reliably 
+quantified.
+Costs
+    The Department has determined this final rule will result in an 
+overall total cost savings. In conducting this economic analysis, DOT 
+considered airline compliance with the changes within this final rule 
+as a cost. In analyzing the cost of airline compliance, DOT considered 
+two cost scenarios. The first considers that airlines already track 
+cause of delay and cancellation in detail, and, therefore, airline 
+compliance costs because of this final rule will be de minimis. With 
+this final rule, airlines would not be submitting any new reports to 
+the Department, but rather reporting a limited subset of causes of 
+cancellation and delay in a different category than those same delays 
+and cancellations are currently reported. Airlines use internal codes 
+to classify delay and cancellation causes. Although the DOT will only 
+use six categories of cause of delay and five categories of causes of 
+cancellation, airline's internal systems generally utilize many more 
+codes that provide more specificity than the categories used to report 
+to DOT.\8\ In addition, it is the Department's understanding that each 
+of the airlines covered by this rule have in-house data and information 
+technology resources, and the commercial sensitivity of airline data in 
+general favors in-house work. Therefore, any one-time upfront 
+incremental modifications associated with adding the new 511(b) delay 
+and cancellation category to airline data systems for purposes of 
+reporting to DOT could be performed as part of the usual ongoing 
+business practices of the air carriers in maintaining and improving 
+their data systems. As a result, incremental cost to air carriers to 
+comply with the changes of this final rule would be de minimis.
+---------------------------------------------------------------------------
+
+    \8\ The International Air Transport Association (IATA), the 
+trade association for the world's airlines, provides standardized 
+delay codes. See IATA Airport Handling Manual, <a href="https://www.iata.org/en/publications/manuals/airport-handling-manual/">https://www.iata.org/en/publications/manuals/airport-handling-manual/</a>.
+---------------------------------------------------------------------------
+
+    In an effort to complete a thorough analysis of this final rule, 
+the Department also analyzed airline compliance costs based on a 
+scenario in which this final rule would impose modest one-time upfront 
+incremental costs on reporting air carriers should airlines perform 
+material modifications to data processing systems to incorporate the 
+new causal category for delays and cancellations. The ongoing recurring 
+labor costs and other costs (equipment, etc.) associated with the 
+existing reporting requirements under 14 CFR 234.4 are unchanged under 
+this final rule. The reporting air carriers will still perform the same 
+activities such as assigning delays and cancellations to the various 
+categories and submitting data to BTS, only now with some delays and 
+cancellations assigned to the new causal category rather than the Air 
+Carrier category.
+    For calendar year 2026, 13 carriers report data to the Department 
+under 14 CFR 234.\9\ This final rule does not change the applicability 
+and scope of the existing reporting requirements in 14 CFR 234 
+regarding the air carriers that are required to report data, and 
+therefore the number of air carriers that will need to perform 
+modifications to their data processing systems under this scenario to 
+incorporate the new causal category for delays and cancellations will 
+be limited to these 13 carriers. For each of these air carriers, under 
+this scenario, the Department estimates that modifying the applicable 
+data processing systems to incorporate the new causal category for 
+delays and cancellations will require a total of 100 labor hours to 
+complete, test, and implement fully. The costs associated with these 
+labor hours are comprised of both the base wage rate plus fringe 
+benefits, which taken in combination better represents the economic 
+costs to the air carriers than the base wage rate alone. Fringe 
+benefits include paid leave, bonuses and overtime pay, health and other 
+types of insurance, retirement plans, and legally required benefits 
+(Social Security, Medicare, unemployment insurance, and workers 
+compensation insurance).
+---------------------------------------------------------------------------
+
+    \9\ U.S. Department of Transportation, Bureau of Transportation 
+Statistics, Office of Airline Information, Technical Directive #40-
+On-Time Performance, p. 2, available at <a href="https://www.bts.gov/sites/bts.dot.gov/files/2025-11/Technical%20Directive%20No%2040%20On-Time%202026.pdf">https://www.bts.gov/sites/bts.dot.gov/files/2025-11/Technical%20Directive%20No%2040%20On-Time%202026.pdf</a>. Since the period used to determine reporting 
+carriers began, on October 29, 2025, the FAA issued a single 
+operating certificate to Alaska Airlines and Hawaiian Airlines. As 
+such, the FAA recognizes Alaska/Hawaiian as a single certificated 
+carrier. Hawaiian branded flights are now operated by, and therefore 
+their information reported to the Department by, Alaska Airlines.
+---------------------------------------------------------------------------
+
+    To quantify and monetize the total labor costs to each air carrier, 
+wage rate and benefits data from the U.S. Department of Labor, Bureau 
+of Labor Statistics (BLS) are utilized. Wage rates are derived from the 
+Occupational Employment and Wage Statistics (OEWS) data series 
+published by BLS. The estimated 100 labor hours are allocated among two 
+applicable occupational categories represented in the OEWS data, SOC 
+15-1251 (Computer Programmers) and SOC 15-1211 (Computer Systems 
+Analysts), with 75 percent of the total hours (75 hours) allocated to 
+the 15-1251 Computer Programmers occupational category, and the 
+remaining 25 percent of the total hours (25 hours) allocated to the 15-
+1211 Computer Systems Analysts occupational category. The most recent 
+OEWS data available, for May 2024, report that the 75th percentile 
+hourly wage rate for the 15-1251 Computer Programmers occupational 
+category is $62.00, and for the 15-1211 Computer Systems Analysts 
+occupational category is $63.64.\10\ The 75th percentile hourly
+
+[[Page 56591]]
+
+wage rate is used for this analysis because it is expected that 
+relatively more experienced and senior staff in these labor categories 
+will be assigned to perform the necessary data system modifications, 
+and that these more experienced staff will have an hourly wage rate 
+greater than the median hourly wage rate.
+---------------------------------------------------------------------------
+
+    \10\ U.S. Department of Labor, BLS, Occupational Employment and 
+Wage Statistics, May 2024, available at <a href="https://www.bls.gov/oes/tables.htm">https://www.bls.gov/oes/tables.htm</a>.
+---------------------------------------------------------------------------
+
+    BLS does not publish data on fringe benefits for specific 
+occupations, but it does for broader industry and occupational groups 
+in its Employer Costs for Employee Compensation (ECEC) release.\11\ For 
+this analysis, an average hourly wage of $42.95 and average hourly 
+benefits of $16.64 for private industry workers in ``professional and 
+related occupations'' in the ``trade, transportation, and utilities 
+industry'' is used to estimate that fringe benefits are equal to 39 
+percent of wages ($16.64 / $42.95).
+---------------------------------------------------------------------------
+
+    \11\ U.S. Department of Labor, BLS, Table 4: Employer Costs for 
+Employee Compensation for Private Industry Workers by Occupational 
+and Industry Group, June 2025, available at <a href="https://www.bls.gov/web/ecec/ecec-news-release-tables.xlsx">https://www.bls.gov/web/ecec/ecec-news-release-tables.xlsx</a>.
+---------------------------------------------------------------------------
+
+    Based on these base wage rates and fringe benefits estimates, the 
+combined hourly cost for the 15-1251 Computer Programmers occupational 
+category is $86.02 per hour, and for the 15-1211 Computer Systems 
+Analysts occupational category is $88.29. Applied to the labor hour 
+estimates per carrier of 75 hours for the 15-1251 Computer Programmers 
+occupational category and 25 hours for the 15-1211 Computer Systems 
+Analysts occupational category, the resulting cost per carrier is 
+$6,452 for the 15-1251 Computer Programmers occupational category and 
+$2,207 for the 15-1211 Computer Systems Analysts occupational category, 
+for a total of $8,659 per carrier. The resulting one-time upfront 
+incremental cost for all 13 reporting air carriers combined under this 
+scenario is therefore estimated to be $112,567.
+    Under both scenarios of de minimis and quantified airline costs, 
+BTS will incur modest one-time upfront incremental costs to perform 
+modifications to its data collection and data processing systems to 
+incorporate the new causal category for delays and cancellations. For 
+BTS, it is estimated that modifying the applicable data collection and 
+processing systems to incorporate the new causal category for delays 
+and cancellations will require a total of 240 labor hours to complete, 
+test, and implement fully. An estimated fully loaded hourly labor rate 
+of $200 per hour is used for the hourly labor rate applicable to BTS. 
+This hourly rate is based on recent average labor rates for applicable 
+occupational categories such as senior data analysts and senior data 
+warehouse specialists available under contract to BTS. The resulting 
+one-time upfront incremental cost to BTS is estimated to be $48,000.
+    Under both scenarios, this final rule is also expected to result in 
+a similar relatively modest one-time upfront incremental cost that will 
+be incurred by the Federal Aviation Administration (FAA). FAA uses the 
+on-time performance data collected by BTS under 14 CFR 234.4 to analyze 
+air traffic delays. FAA will need to perform modifications to its data 
+processing systems to incorporate the new causal category for delays 
+and cancellations, such that FAA can continue to receive the BTS on-
+time performance data effectively for its use in analyzing air traffic 
+delays. For FAA, it is estimated that modifying the applicable data 
+processing systems to incorporate the new causal category for delays 
+and cancellations will require a total of 80 labor hours to complete, 
+test, and implement fully. An estimated fully loaded hourly labor rate 
+of $200 per hour is also used for the hourly labor rate applicable to 
+FAA. The resulting one-time upfront incremental cost to FAA is 
+estimated to be $16,000.
+    Under both scenarios, this final rule is also expected to result in 
+cost savings for carriers that will substantially exceed any costs 
+imposed because this final rule will reduce the negative reputational 
+impacts and harm that air carriers currently experience because of the 
+attribution of certain delay and cancellation causes to air carriers 
+that this rulemaking addresses as not within their control. In the 
+absence of this final rule, overreporting of both the number and 
+proportion of delays and cancellations attributed to air carriers would 
+continue, with that information then made available to consumers and 
+the public via BTS's website and the Department's monthly ATCR table 
+displaying cause of delay which in turn reaches various industry and 
+general news outlets and social media. The attribution of delays and 
+cancellations that are outside the control of air carriers to the air 
+carrier causal category impacts the relative competitiveness of air 
+carriers by influencing consumer decision making when selecting an air 
+carrier for a trip. In addition, consumers may consider this 
+information in weighing their transportation options, including options 
+to use modes of transportation other than commercial airlines. This 
+final rule addresses and corrects overreporting of air carrier delays 
+and cancellations, which in turn will reduce the negative reputational 
+impacts and harm that carriers currently experience. Though the 
+magnitude of the reduction in negative reputational impacts and harm 
+cannot be quantified, the largest U.S. industry representative group 
+submits that the reporting that makes it into the hands of the public 
+through the Department's ATCR is significant.\12\ Given the large 
+number of flights operated and passengers transported by the 13 
+reporting air carriers that are within the scope of this final rule, 
+the Department believes that the cost savings to air carriers resulting 
+from the reduction in the negative reputational impacts and harm that 
+air carriers currently experience will substantially exceed the 
+scenario with relatively modest one-time upfront incremental costs to 
+the reporting air carriers, BTS, and FAA to perform modifications to 
+data processing systems to incorporate the new causal category for 
+delays and cancellations. Therefore, overall, this final rule is 
+expected to have total costs less than zero.
+---------------------------------------------------------------------------
+
+    \12\ Airlines for America, et al., Petition for Rulemaking to 
+Revise On-time Performance Reporting Regulations Under 14 CFR part 
+234, October 22, 2024, Docket No: DOT-OST-2024-0123, available at 
+<a href="https://www.regulations.gov/document/DOT-OST-2024-0123-0001">https://www.regulations.gov/document/DOT-OST-2024-0123-0001</a>.
+---------------------------------------------------------------------------
+
+Transfers
+    In addition to the benefits and cost savings of the final rule, it 
+is expected that the total value of amenities and compensation 
+currently provided by air carriers to consumers will be reduced under 
+this final rule because of the 10 delineated causes of delay and 
+cancellation that will now be excluded from the Air Carrier category in 
+14 CFR 234.4. All the reporting air carriers that sell tickets 
+currently commit to providing amenities at no cost to consumers for 
+lengthy controllable delays and controllable cancellations in their 
+customer service plans.\13\ In addition, some of these carriers commit 
+to providing non-cash compensation for lengthy controllable 
+cancellations and controllable delays. With the 10 delineated causes of 
+delay and cancellation under this final rule now excluded from the Air 
+Carrier category in 14 CFR 234.4, the number of delays and 
+cancellations for which air carriers provide amenities and compensation 
+to consumers is expected to be reduced. The magnitude of the total 
+reduction in amenities and compensation cannot be reliably estimated by 
+the Department
+
+[[Page 56592]]
+
+mainly because the Department does not have visibility into the 
+frequency of the 10 delineated causes excluded from the Air Carrier 
+category. To the extent that the total value of amenities and 
+compensation that air carriers provide to consumers is reduced under 
+this final rule, the value of that reduction is best represented as a 
+transfer of value from consumers back to air carriers, rather than a 
+cost to consumers or a benefit to air carriers. Benefit and cost 
+estimates reflect real resource use, and in general it is more 
+appropriate to consider payments from one group to another that do not 
+affect the total resources available to society as transfers rather 
+than as costs or benefits.
+---------------------------------------------------------------------------
+
+    \13\ U.S. Department of Transportation, Office of Aviation 
+Consumer Protection. Airline Cancellation and Delay Dashboard, 
+available at <a href="https://www.transportation.gov/airconsumer/airline-cancellation-delay-dashboard">https://www.transportation.gov/airconsumer/airline-cancellation-delay-dashboard</a>.
+---------------------------------------------------------------------------
+
+B. Executive Order 14192 (Unleashing Prosperity Through Deregulation)
+
+    This final rule is considered an E.O. 14192 deregulatory action. 
+Details on the estimated cost savings of this rule can be found in the 
+rule's economic analysis.
+
+C. Executive Order 13132 (Federalism)
+
+    This final rule has been analyzed in accordance with the principles 
+and criteria contained in E.O. 13132 (Federalism). This final rule does 
+not impose any requirement that: (1) has substantial direct effects on 
+the States, the relationship between the national government and the 
+States, or the distribution of power and responsibilities among the 
+various levels of government, (2) imposes substantial direct compliance 
+costs on State and local governments, or (3) preempts State law. The 
+Airline Deregulation Act already preempts States from regulating in 
+this area, 49 U.S.C. 41713. Therefore, the consultation and funding 
+requirements of E.O. 13132 do not apply.
+
+D. Executive Order 13175
+
+    This rule has been analyzed in accordance with the principles and 
+criteria contained in E.O. 13175 (Consultation and Coordination with 
+Indian Tribal Governments). Because the requirements of this final rule 
+do not significantly or uniquely affect the communities of the Indian 
+tribal governments or impose substantial direct compliance costs on 
+them, the funding and consultation requirements of E.O. 13175 do not 
+apply.
+
+E. Regulatory Flexibility Act
+
+    The Regulatory Flexibility Act of 1980 (RFA) (5 U.S.C. 601, et 
+seq.) requires Federal agencies to review and assess the impact on 
+small entities of any regulation required by 5 U.S.C. 553 or any other 
+law to be published as a proposed rule for public comment prior to 
+issuance of a final rule. Because no notice of proposed rulemaking is 
+required for this rule under the Administrative Procedure Act (5 U.S.C. 
+553) or any other law the analytical provisions of the RFA do not 
+apply.
+
+F. Paperwork Reduction Act
+
+    Under the Paperwork Reduction Act (44 U.S.C. 3501, et seq.) (PRA), 
+no person is required to respond to a collection of information unless 
+it displays a valid OMB control number.
+    This final rule imposes revised requirements that would require 
+revisions to the information collection under OMB Control No. 2138-0041 
+and approval by OMB. The Department will seek approval from OMB for the 
+changes to the collection of information established in this final 
+rule.
+
+G. Unfunded Mandates Reform Act
+
+    The Unfunded Mandates Reform Act of 1995 (UMRA) at 2 U.S.C. 1532 
+requires that agencies prepare an assessment of anticipated costs and 
+benefits before issuing any rule that may result in the expenditure by 
+State, local, and tribal governments, in the aggregate, or by the 
+private sector, of $100 million or more (adjusted annually for 
+inflation) in any one year. As described elsewhere in the preamble, 
+this final rule would have no such effect on State, local, and tribal 
+governments or on the private sector. Therefore, the Department has 
+determined that no assessment is required pursuant to UMRA.
+
+H. National Environmental Policy Act
+
+    The Department has analyzed the environmental impacts of this final 
+rule pursuant to the National Environmental Policy Act of 1969 (NEPA) 
+\14\ and has determined that it is categorically excluded pursuant to 
+DOT Order 5610.1D, Procedures for Considering Environmental 
+Impacts.\15\ DOT Order 5610.1D categorically excludes ``[a]ctions 
+relating to consumer protection, including regulations.'' The purpose 
+of this rulemaking is to update reporting on the causes of flight 
+cancellations and delays, consistent with the requirements of the 2024 
+FAA Act. Section 506 of the 2024 FAA Act, codified at 49 U.S.C. 42307, 
+requires the Department to establish and maintain a publicly available 
+online delay and cancellation dashboard ``that displays information 
+regarding the services and compensation provided by each large air 
+carrier to mitigate any passenger inconvenience caused by a delay or 
+cancellation due to circumstances in the control of such carrier.'' 
+That section further requires the Department to ``explain the 
+circumstances under which a delay or cancellation is not due to 
+circumstances in the control of the large air carrier . . . consistent 
+with [14 CFR] 234.4.'' Accordingly, this rulemaking, which defines 
+which causes of delay are and are not due to circumstances within the 
+control of an air carrier falls under the categorical NEPA exception 
+for regulations relating to consumer protection. The Department does 
+not anticipate any environmental impacts, and there are no 
+extraordinary circumstances present in connection with this rulemaking.
+---------------------------------------------------------------------------
+
+    \14\ 42 U.S.C. 4321, et seq.
+    \15\ Available at <a href="https://www.transportation.gov/sites/dot.gov/files/2025-07/DOT_Order_5610.1D_OST-P-250627-001_508_Compliant.pdf">https://www.transportation.gov/sites/dot.gov/files/2025-07/DOT_Order_5610.1D_OST-P-250627-001_508_Compliant.pdf</a>.
+---------------------------------------------------------------------------
+
+List of Subjects in 14 CFR Part 234
+
+    Air carriers, Air rates and fares, Consumer protection, Reporting 
+and recordkeeping requirements.
+    For the reasons stated in the preamble, DOT amends 14 CFR part 234 
+as follows:
+
+PART 234--AIRLINE SERVICE QUALITY PERFORMANCE REPORTS
+
+0
+1. The authority citation for part 234 is revised to read as follows:
+
+    Authority: 49 U.S.C. 329, 41708, and 41709.
+    Sec. 234.4 also issued under sec. 511, Pub. L. 118-63, 138 Stat 
+1025 (49 U.S.C. 6302 note).
+
+0
+2. Amend Sec.  234.4 by:
+0
+a. Redesignating paragraphs (a)(22) through (29) as paragraphs (a)(23) 
+through (30);
+0
+b. Adding new paragraph (a)(22);
+0
+c. Revising paragraphs (b) and (c);
+0
+d. Revising paragraphs (h) introductory text and (h)(1) and adding 
+paragraph (h)(5); and
+0
+e. Revising paragraphs (i) introductory text and (i)(1), and adding 
+paragraph (i)(6).
+    The addition and revisions read as follows:
+
+
+Sec.  234.4  Airline Service Quality Performance Reports
+
+    (a) * * *
+    (22) Minutes of delay attributed to the category for section 511(b) 
+of the FAA Reauthorization Act of 2024, if any.
+* * * * *
+    (b) Repeat fields in paragraphs (a)(26) through (30) for each 
+subsequent diverted airport landing.
+    (c) When reporting the information specified in paragraph (a) of 
+this section for diverted flights, a reporting carrier shall use the 
+original scheduled flight number and the origin and destination
+
+[[Page 56593]]
+
+airport codes except for the item in paragraph (a)(26).
+* * * * *
+    (h) Reporting carriers should use the following codes to identify 
+causes for cancelled flights:
+
+------------------------------------------------------------------------
+ 
+-------------------------------------------------------------------------
+Code
+A-Air Carrier
+B-Extreme Weather
+C-National Aviation System (NAS)
+D-Security
+E-Section 511(b)
+------------------------------------------------------------------------
+
+    (1) Air Carrier cancellations are due to circumstances that were 
+within the control of the air carrier (e.g., lack of flight crew, 
+maintenance, etc.). Cancellations due to events listed in paragraph 
+(h)(5) of this section must not be reported as Air Carrier.
+* * * * *
+    (5) Section 511(b) of the FAA Reauthorization Act of 2024 
+cancellations are due to:
+    (i) Aircraft cleaning necessitated by the death of a passenger;
+    (ii) Aircraft damage caused by extreme weather, foreign object 
+debris, or sabotage;
+    (iii) A baggage or cargo loading delay caused by an outage of a bag 
+system not controlled by a carrier or its contractor;
+    (iv) Cybersecurity attacks (provided that the air carrier is in 
+compliance with applicable cybersecurity regulations);
+    (v) A shutdown or system failure of government systems that 
+directly affects the ability of an air carrier to safely conduct 
+flights and is unexpected;
+    (vi) Overheated brakes due to a safety incident resulting in the 
+use of emergency procedures;
+    (vii) Unscheduled maintenance, including in response to an 
+airworthiness directive, manifesting outside a scheduled maintenance 
+program that cannot be deferred or must be addressed before flight;
+    (viii) An emergency that required medical attention through no 
+fault of the carrier,
+    (ix) The removal of an unruly passenger; or
+    (x) An airport closure due to the presence of volcanic ash, wind, 
+or wind shear.
+    (i) Reporting carriers should use the following causes to identify 
+the reasons for delayed flights:
+
+------------------------------------------------------------------------
+ 
+-------------------------------------------------------------------------
+CAUSE
+Air Carrier
+Extreme weather
+NAS
+Security
+Late arriving aircraft
+Section 511(b)
+------------------------------------------------------------------------
+
+    (1) Air carrier delays are due to circumstances within the control 
+of the air carrier. Delays due to events listed in paragraph (i)(6) of 
+this section must not be reported as Air Carrier.
+* * * * *
+    (6) Section 511(b) of the FAA Reauthorization Act of 2024 delays 
+are due to:
+    (i) Aircraft cleaning necessitated by the death of a passenger;
+    (ii) Aircraft damage caused by extreme weather, foreign object 
+debris, or sabotage;
+    (iii) A baggage or cargo loading delay caused by an outage of a bag 
+system not controlled by a carrier or its contractor;
+    (iv) Cybersecurity attacks (provided that the air carrier is in 
+compliance with applicable cybersecurity regulations);
+    (v) A shutdown or system failure of government systems that 
+directly affects the ability of an air carrier to conduct flights 
+safely and is unexpected;
+    (vi) Overheated brakes due to a safety incident resulting in the 
+use of emergency procedures;
+    (vii) Unscheduled maintenance, including in response to an 
+airworthiness directive, manifesting outside a scheduled maintenance 
+program that cannot be deferred or must be addressed before flight;
+    (viii) An emergency that required medical attention through no 
+fault of the carrier,
+    (ix) The removal of an unruly passenger; or
+    (x) An airport closure due to the presence of volcanic ash, wind, 
+or wind shear.
+* * * * *
+
+    Signed in Washington, DC
+Sean P. Duffy,
+Secretary of Transportation.
+[FR Doc. 2026-18040 Filed 9-2-26; 8:45 am]
+BILLING CODE 4910-9X-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

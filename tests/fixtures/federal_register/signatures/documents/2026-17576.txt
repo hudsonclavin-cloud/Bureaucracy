@@ -1,0 +1,216 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 166 (Friday, August 28, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 166 (Friday, August 28, 2026)]
+[Rules and Regulations]
+[Pages 55461-55462]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-17576]
+
+
+-----------------------------------------------------------------------
+
+DEPARTMENT OF STATE
+
+22 CFR Part 121
+
+[Public Notice: 13110]
+RIN 1400-AG36
+
+
+International Traffic in Arms Regulations: Extension of Temporary 
+Modification of Category XI(b) of the U.S. Munitions List
+
+ACTION: Final rule; extension of temporary modification.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The Department of State (the Department), pursuant to its 
+regulations and in the interest of the national security and foreign 
+policy of the United States, extends a previous temporary modification 
+of Category XI(b) of the United States Munitions List (USML).
+
+DATES: This rule is effective August 30, 2026, except for amendatory 
+instruction 3, which is effective August 30, 2028.
+
+FOR FURTHER INFORMATION CONTACT: Mrs. Engda Wubneh, Office of Defense 
+Trade Controls Policy, Department of State, telephone (771) 205-9566; 
+email <a href="/cdn-cgi/l/email-protection#763232223535030502191b1304251304001f151336050217021358111900"><span class="__cf_email__" data-cfemail="b6f2f2e2f5f5c3c5c2d9dbd3c4e5d3c4c0dfd5d3f6c5c2d7c2d398d1d9c0">[email&#160;protected]</span></a>. ATTN: Extension of Temporary 
+Modification--USML Category XI(b).
+
+SUPPLEMENTARY INFORMATION: On July 1, 2014, the Department published a 
+final rule revising Category XI of the USML, 79 FR 37536, effective 
+December 30, 2014. That final rule, consistent with the two prior 
+proposed rules for USML Category XI (78 FR 45018, July 25, 2013 and 77 
+FR 70958, November 28, 2012), revised paragraph (b) of Category XI to 
+clarify the extent of control and maintain the existing scope of 
+control on items described in paragraph (b) and the directly related 
+software described in paragraph (d). The Department later determined 
+that exporters may read the revised control language to exclude certain 
+intelligence-analytics software that has been and remains controlled on 
+the USML.
+    Section 126.2 of the ITAR provides that the Deputy Assistant 
+Secretary for Defense Trade Controls may order the temporary suspension 
+or modification of any or all provisions of the ITAR when in the 
+interest of the security and foreign policy of the United States. 
+Therefore, the Department determined that it was in the interest of the 
+security of the United States to temporarily revise USML Category XI 
+paragraph (b), pursuant to the provisions of 22 CFR 126.2, while a 
+long-term solution was developed. The Department previously published a 
+final rule on July 2, 2015 (80 FR 37974) that temporarily modified USML 
+Category XI(b) until December 29, 2015. The Department subsequently 
+published a series of rules that had the effect of continuing the 
+modification, the most recent ending on August 30, 2026 (86 FR 48021).
+    The scope of control in existence prior to December 30, 2014 for 
+USML Category XI paragraph (b) and directly related software in 
+paragraph (d) remains in effect. This clarification is achieved by 
+reinserting the words ``analyze and produce information from'' and by 
+adding software to the description of items controlled with the 
+modification of the regulations.
+    The Department extends the temporary modification of USML Category 
+XI(b) for two years, to August 30, 2028, while the Department, with its 
+interagency partners, continues to review the U.S. Munitions List as 
+mandated by the Arms Export Control Act, 22 U.S.C. 2778(f) and every 
+three years as mandated by section 1345 of the National Defense 
+Authorization Act FY24.
+
+[[Page 55462]]
+
+Regulatory Analysis and Notices
+
+Administrative Procedure Act
+
+    This rulemaking is exempt from the rulemaking requirements of the 
+Administrative Procedure Act (APA) pursuant to 5 U.S.C. 553(a)(1) as it 
+involves a military or foreign affairs function of the United States.
+
+Regulatory Flexibility Act
+
+    Since this rule is exempt from the notice-and-comment rulemaking 
+provisions of 5 U.S.C. 553, it does not require analysis under the 
+Regulatory Flexibility Act.
+
+Unfunded Mandates Reform Act of 1995
+
+    This rulemaking does not involve a mandate that will result in the 
+expenditure by state, local, and tribal governments, in the aggregate, 
+or by the private sector of $100 million or more in any year and it 
+will not significantly or uniquely affect small governments. Therefore, 
+no actions are deemed necessary under the provisions of the Unfunded 
+Mandates Reform Act of 1995.
+
+Congressional Review Act
+
+    The Office of Information and Regulatory Affairs has found that 
+this rulemaking is not a major rule within the criteria of 5 U.S.C. 
+804(2).
+
+Executive Orders 12372 and 13132
+
+    This rulemaking does not have sufficient federalism implications to 
+require consultations or warrant the preparation of a federalism 
+summary impact statement. The regulations implementing Executive Order 
+12372 regarding intergovernmental consultation on Federal programs and 
+activities do not apply to this rulemaking.
+
+Executive Orders 12866 and 13563
+
+    Executive Order 12866, as supplemented and affirmed by Executive 
+Order 13563, directs agencies to assess all costs and benefits of 
+available regulatory alternatives and, if regulation is necessary, to 
+select regulatory approaches that maximize net benefits (including 
+potential economic, environmental, public health and safety effects, 
+distributed impacts, and equity). Executive Order 13563 emphasizes the 
+importance of quantifying both costs and benefits, of reducing costs, 
+of harmonizing rules, and of promoting flexibility. This rulemaking is 
+deemed a not significant rule under section 3(f) of Executive Order 
+12866.
+
+Executive Order 14192
+
+    This rule is exempt from Executive Order 14192 as it is a 
+regulation issued with respect to a foreign affairs or national 
+security function of the United States.
+
+Executive Order 12988
+
+    The Department of State has reviewed this rulemaking in light of 
+sections 3(a) and 3(b)(2) of Executive Order 12988 to eliminate 
+ambiguity, minimize litigation, establish clear legal standards, and 
+reduce burden.
+
+Executive Order 13175
+
+    The Department of State has determined that this rulemaking will 
+not have tribal implications, will not impose substantial direct 
+compliance costs on Indian tribal governments, and will not preempt 
+tribal law. Accordingly, the requirements of Executive Order 13175 do 
+not apply to this rulemaking.
+
+Paperwork Reduction Act
+
+    This rulemaking does not impose or revise any information 
+collections subject to 44 U.S.C. chapter 35.
+
+List of Subjects in 22 CFR Part 121
+
+    Arms and munitions, Classified information, Exports.
+
+    For reasons stated in the preamble, the Department of State amends 
+22 CFR part 121 as follows:
+
+PART 121--THE UNITED STATES MUNITIONS LIST
+
+0
+1. The authority citation for part 121 continues to read as follows:
+
+    Authority: 22 U.S.C. 2752, 2778, 2797; 22 U.S.C. 2651a; Sec. 
+1514, Pub. L. 105-261, 112 Stat. 2175; E.O. 13637, 78 FR 16129, 3 
+CFR, 2013 Comp., p. 223.
+
+
+0
+2. In Sec.  121.1, under Category XI, revise paragraph (b) to read as 
+follows:
+
+
+Sec.  121.1  The United States Munitions List.
+
+* * * * *
+Category XI--Military Electronics
+* * * * *
+    * (b) Electronic systems, equipment or software, not elsewhere 
+enumerated in this subchapter, specially designed for intelligence 
+purposes that collect, survey, monitor, or exploit, or analyze and 
+produce information from, the electromagnetic spectrum (regardless of 
+transmission medium), or for counteracting such activities.
+* * * * *
+
+0
+3. Effective August 30, 2028, in Sec.  121.1. under Category XI, revise 
+paragraph (b) to read as follows:
+
+
+Sec.  121.1  The United States Munitions List.
+
+* * * * *
+Category XI--Military Electronics
+* * * * *
+    * (b) Electronic systems or equipment, not elsewhere enumerated in 
+this subchapter, specially designed for intelligence purposes that 
+collect, survey, monitor, or exploit the electromagnetic spectrum 
+(regardless of transmission medium), or for counteracting such 
+activities.
+* * * * *
+
+Fleet R. White,
+Assistant Secretary, Bureau of Political-Military Affairs, Department 
+of State.
+[FR Doc. 2026-17576 Filed 8-27-26; 8:45 am]
+BILLING CODE 4710-25-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

@@ -1,0 +1,71 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 178 (Wednesday, September 16, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 178 (Wednesday, September 16, 2026)]
+[Rules and Regulations]
+[Page 58610]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-18914]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+DEPARTMENT OF STATE
+
+[Public Notice: 13126]
+
+22 CFR Parts 120 and 121
+
+RIN 1400-AG17
+
+
+International Traffic in Arms Regulations: Modification of Civil 
+Aircraft To Incorporate Aircraft Survivability Equipment
+
+AGENCY: Department of State.
+
+ACTION: Interim final rule; correction.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The Department of State (the Department) is correcting an 
+interim final rule that appeared in the Federal Register on August 28, 
+2026. The document contained an error in Amendatory Instruction 2. This 
+correction clarifies the Department's intent.
+
+DATES: This rule is effective October 13, 2026.
+    Comment due date: Public comments are due on September 28, 2026. 
+Comment instructions are contained in the interim final rule (91 FR 
+55457).
+
+FOR FURTHER INFORMATION CONTACT: Mr. Chris Weil, Office of Defense 
+Trade Controls Policy, Department of State, email 
+<a href="/cdn-cgi/l/email-protection#480c0c1c0b0b3d3b3c27252d3a1b2d3a3e212b2d083b3c293c2d662f273e"><span class="__cf_email__" data-cfemail="84c0c0d0c7c7f1f7f0ebe9e1f6d7e1f6f2ede7e1c4f7f0e5f0e1aae3ebf2">[email&#160;protected]</span></a>
+Subject: Aircraft Survivability Equipment--RIN 1400-AG17.
+
+SUPPLEMENTARY INFORMATION:
+
+0
+In FR Doc. 2026-17660, appearing in the third column on page 55460 in 
+the Federal Register of Friday, August 28, 2026, the amendatory 
+instruction for Sec.  120.54 is corrected to read:
+
+
+Sec.  120.54   [Corrected]
+
+    ``2. Amend Sec.  120.54 by revising paragraphs (a)(6)(iii) and 
+(a)(7)(iii), and adding paragraphs (a)(8) and (a)(9), to read as 
+follows:''
+
+Alice Kottmyer,
+Attorney-Adviser, Office of the Legal Adviser, U.S. Department of 
+State.
+[FR Doc. 2026-18914 Filed 9-15-26; 8:45 am]
+BILLING CODE 4710-25-P
+
+
+</pre><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>
