@@ -174,6 +174,13 @@ EVIDENCE_OWNED_FIELDS = (
     # Written by positions.py and headcounts.py, withdrawn here with the rest,
     # so a record dropped from either file stops being published.
     "positionListing",
+    # Written by plum_current.py: the CURRENT PLUM export's listing of the
+    # post, and the rate of basic pay that export states for the one row
+    # listed under the title. The rate is tied to the listing and both are
+    # withdrawn here on every build, so a row the next export no longer
+    # carries -- or carries at another figure -- stops being published.
+    "positionCurrentListing",
+    "positionCurrentPay",
     "employeesOfficial",
     "employeesOfficialSource",
     # Written by pay_tables.py. It is a gloss on positionListing directly
@@ -1121,6 +1128,14 @@ def clear_evidence_fields(node: dict[str, Any], official_urls: set[str]) -> bool
             touched = True
     if not any("federalregister.gov/agencies/" in u for u in kept):
         types = [str(t) for t in (node.get("sourceTypes") or []) if t not in ("federal_register_directory", "federal_register")]
+        if len(types) != len(node.get("sourceTypes") or []):
+            node["sourceTypes"] = types
+            touched = True
+    # The current PLUM export's own label goes with its URL (plum_current.py
+    # writes it), so a withdrawn listing does not leave the stage label
+    # asserting a document that is no longer cited.
+    if not any("escs.opm.gov/" in u for u in kept):
+        types = [str(t) for t in (node.get("sourceTypes") or []) if t != "opm_plum_current_export"]
         if len(types) != len(node.get("sourceTypes") or []):
             node["sourceTypes"] = types
             touched = True

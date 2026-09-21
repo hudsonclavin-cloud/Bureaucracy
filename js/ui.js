@@ -278,8 +278,8 @@ function summariseGraph(root) {
     if (isPost) {
       count.posts += 1;
       if (String(node.cost_validation || "") === "post_is_not_a_budget_unit") count.postsWithoutFigure += 1;
-      if (reportedPayOf(node) || node.positionPayRate || node.positionStatutoryPay || node.positionReportedPay
-        || gradePayOf(node)) {
+      if (reportedPayOf(node) || currentPayOf(node) || node.positionPayRate || node.positionStatutoryPay
+        || node.positionReportedPay || gradePayOf(node)) {
         count.paidPosts += 1;
       }
     }
@@ -1032,7 +1032,10 @@ function renderGradePay(data, add) {
     }
     add(" The archive does not say which kind of agency employs the post, so both rows are shown; a band is not a rate, and the table names no post.");
   }
-  add(" Two documents, not one: the pay plan is the archive's record of a period that ended, and the range is from a table that took effect afterwards.");
+  const planFromCurrent = pay.listingSource && pay.listingSource.source === "opm_plum_current_export";
+  add(planFromCurrent
+    ? " Two documents, not one: the pay plan is the current PLUM export's listing of this post as it stands, and the range is from OPM's salary table for that pay plan; the export prints no rate for this row."
+    : " Two documents, not one: the pay plan is the archive's record of a period that ended, and the range is from a table that took effect afterwards.");
   const notes = Array.isArray(pay.footnotes) ? pay.footnotes.filter((n) => String(n || "").trim()) : [];
   for (const note of notes) add(` The table's own note: "${String(note).trim()}"`);
 }
@@ -1052,8 +1055,13 @@ function renderTableRate(data, add) {
   const when = rate.effectiveText ? `, ${String(rate.effectiveText).replace(/^Effective\b/, "effective")}` : "";
   add(` Separately, OPM's ${rate.table}${when}, pays ${printed} for ${rate.amountScope}.`);
   // The whole point of the module: two documents, and the join is weaker than
-  // either. Neither half is allowed to be read as the other.
-  add(" That is two documents, not one — the level is the archive's record of a period that ended, and the rate is from a table that took effect afterwards, so neither says what this post pays whoever holds it now.");
+  // either. Neither half is allowed to be read as the other. Which document
+  // supplied the level is the record's own `levelSource.source`: the
+  // archive of a period that ended, or the current export.
+  const levelFromCurrent = rate.levelSource && rate.levelSource.source === "opm_plum_current_export";
+  add(levelFromCurrent
+    ? " That is two documents, not one — the level is the current PLUM export's listing of this post as it stands, and the rate is from OPM's salary table for that level; the export itself prints no rate for this row, so this is a table's figure for a rank, not a figure for the post."
+    : " That is two documents, not one — the level is the archive's record of a period that ended, and the rate is from a table that took effect afterwards, so neither says what this post pays whoever holds it now.");
   add(" A rate of basic pay is also not this unit's cost: it excludes benefits, and it is not a share of federal outlays, which is what every other figure in this graph means.");
   const notes = Array.isArray(rate.footnotes) ? rate.footnotes.filter((n) => String(n || "").trim()) : [];
   for (const note of notes) add(` The table's own note: "${String(note).trim()}"`);
@@ -1183,6 +1191,77 @@ function renderReportedPay(data) {
   add(" It is not this unit's cost — basic pay excludes benefits and is not a share of federal outlays — and it is not evidence that this post exists as the graph draws it.");
   const quote = String(pay.quote || "").trim();
   if (quote) add(` The report's own row: "${quote}"`);
+}
+
+// OPM's CURRENT PLUM export — the live counterpart of the archive above. A
+// second, independent document: it says the post is listed now (Filled or
+// Vacant), under which organisation, on which pay plan, and on ES rows what
+// the one row under the title is paid. A row is an incumbency, so the rate
+// is deliberately the row's figure and never "what the post pays". Its own
+// element, drawn whatever the estimates toggle says, headed CURRENT PLUM
+// BOOK so a reader can tell it from the archive's record of a period that
+// ended.
+function currentPayOf(node) {
+  const pay = node.positionCurrentPay;
+  if (!pay || typeof pay !== "object") return null;
+  return typeof pay.amount === "number" && pay.amount > 0 ? pay : null;
+}
+
+function formatFetchDate(stamp) {
+  return stamp
+    ? new Date(stamp).toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" })
+    : null;
+}
+
+function renderCurrentListing(data) {
+  let line = document.getElementById("info-current-listing");
+  if (!line && dom.infoStats) {
+    line = document.createElement("div");
+    line.id = "info-current-listing";
+    line.style.fontSize = "9px";
+    line.style.color = "#8f7a5d";
+    line.style.letterSpacing = "0.06em";
+    line.style.margin = "2px 0 8px";
+    dom.infoStats.insertAdjacentElement("afterend", line);
+  }
+  if (!line) return;
+  const listing = data.positionCurrentListing;
+  if (!listing || typeof listing !== "object") {
+    line.replaceChildren();
+    return;
+  }
+  line.replaceChildren();
+  const add = (text) => line.appendChild(document.createTextNode(text));
+  const on = formatFetchDate(listing.exportFetchedAt);
+  add(`CURRENT PLUM BOOK: OPM's PLUM Reporting export${on ? `, fetched ${on},` : ""} lists "${listing.listedTitle}"`);
+  if (listing.organization) add(` under ${listing.organization}`);
+  if (listing.agency && listing.agency !== listing.organization) add(` (${listing.agency})`);
+  if (listing.positionStatus) {
+    add(`, ${String(listing.positionStatus).toLowerCase()}`);
+  } else if (listing.positionStatusCounts && typeof listing.positionStatusCounts === "object") {
+    // The two statuses this listing can carry are a closed set (the module
+    // reads no Historical row), so they are named rather than enumerated:
+    // js/ never enumerates node keys, which is what lets the viewer copy be
+    // pruned safely.
+    const counts = listing.positionStatusCounts;
+    const parts = ["Filled", "Vacant"].filter((k) => counts[k]).map((k) => `${counts[k]} ${k.toLowerCase()}`);
+    if (parts.length) add(`, ${parts.join(" and ")}`);
+  }
+  const rows = Number(listing.rowsListed) || 0;
+  if (rows > 1) add(` (${rows} rows under this title)`);
+  add(". ");
+  if (listing.appointmentType) add(`Appointment type ${listing.appointmentType}. `);
+  if (listing.payPlan) add(`Pay plan ${listing.payPlan}`);
+  if (listing.payLevel) {
+    add(`${listing.payPlan ? ", " : ""}${listing.payPlan === "EX" ? "Executive Schedule level" : "level or grade"} ${listing.payLevel}`);
+    add(". The export gives the rank, not a rate of pay. ");
+  } else if (listing.payPlan) {
+    add(". ");
+  }
+  if (typeof listing.reportedPay === "number" && listing.reportedPay > 0) {
+    add(`It prints basic pay of ${listing.reportedPayText || `$${listing.reportedPay.toLocaleString()}`} for the one row listed under this title — what that listing is paid, not what the post pays whoever holds it, and not this unit's cost. `);
+  }
+  add("A Vacant row is still a listed position. This says nothing about who holds the post: the export's name columns are never read.");
 }
 
 function renderDescriptionProvenance(data, isClusteredView) {
@@ -1888,14 +1967,22 @@ function costStandInOf(node) {
   if (isCostIdentifiedForTheNode(node)) {
     return null;
   }
-  const pay = reportedPayOf(node);
-  const range = pay ? null : gradePayOf(node);
-  if (!pay && !range) {
+  // The current export's own printed figure first, then the archive's rate,
+  // then a table's range: a printed figure beats a band.
+  const current = currentPayOf(node);
+  const pay = current ? null : reportedPayOf(node);
+  const range = current || pay ? null : gradePayOf(node);
+  if (!current && !pay && !range) {
     return null;
   }
   const status = String(node.cost_status || "").toLowerCase();
   const nothingElse = !status || status === "unavailable" || toFiniteAmount(node.resolved_total_amount) === null || isBelowPrecision(node);
-  return hasWithheldEstimate(node) || nothingElse ? { pay, range } : null;
+  return hasWithheldEstimate(node) || nothingElse ? { current, pay, range } : null;
+}
+
+function showsCurrentPayInsteadOfCost(node) {
+  const standIn = costStandInOf(node);
+  return Boolean(standIn && standIn.current);
 }
 
 function showsPayInsteadOfCost(node) {
@@ -1924,7 +2011,11 @@ function formatCostAmount(node) {
   if (standIn) {
     // The estimate is withheld, or there is none; a real salary or a stated
     // range is shown, headed as pay rather than as a cost by the head drawn
-    // beside it.
+    // beside it. The current export's own printed figure first, then the
+    // archive's.
+    if (standIn.current) {
+      return standIn.current.rateText || `$${Math.round(standIn.current.amount).toLocaleString()}`;
+    }
     if (standIn.pay) {
       return standIn.pay.reportedPayText || `$${Math.round(standIn.pay.reportedPay).toLocaleString()}`;
     }
@@ -1958,17 +2049,24 @@ function isBelowPrecision(node) {
 
 function describeCost(node) {
   const standIn = costStandInOf(node);
+  const current = standIn ? standIn.current : null;
   const pay = standIn ? standIn.pay : null;
   const range = standIn ? standIn.range : null;
-  const payNote = pay
+  const payNote = current
+    ? ` What is shown instead is a rate of basic pay: OPM's current PLUM Reporting export` +
+      `${formatFetchDate(current.exportFetchedAt) ? ` (fetched ${formatFetchDate(current.exportFetchedAt)})` : ""}` +
+      ` prints ${current.rateText} for the one row listed under "${current.listedTitle}". That is what that listing is paid, a row being an incumbency; not what the post pays whoever holds it, and not what this unit costs.`
+    : pay
     ? ` What is shown instead is a rate of basic pay: OPM's PLUM archive reports ${pay.reportedPayText} for this post` +
       `${pay.edition ? ` (${pay.edition})` : ""}. That is compensation for one post, not what this unit costs.`
     : range
       ? (range.kind === "general_schedule_grade"
         ? ` What is shown instead is the base General Schedule range for grade ${range.grade} in ${String(range.effective || "").slice(0, 4)}, before locality pay, from OPM's ${range.table}; not this unit's cost and not necessarily what the post pays now.`
-        : ` What is shown instead is the range OPM's ${range.table} states for the pay system the archive files this post on; not this unit's cost and not necessarily what the post pays now.`)
+        : ` What is shown instead is the range OPM's ${range.table} states for the pay system the listing files this post on; not this unit's cost and not necessarily what the post pays now.`)
       : "";
-  const payLabel = pay
+  const payLabel = current
+    ? "No cost known; the current Plum Book's rate of pay is shown"
+    : pay
     ? "No cost known; a reported rate of pay is shown"
     : range
       ? "No cost known; a base-pay range is shown"
@@ -2107,19 +2205,30 @@ function buildCostBlock(node) {
   // a unit costs, and the label is the first thing a reader takes as the
   // claim. The period line below is the Treasury anchor's and is suppressed
   // for the same reason.
+  // The current Plum Book's own printed rate comes first: it is the live
+  // export's figure for the one row under this title, headed PAY with the
+  // export's fetch date on the period line, and never headed COST.
+  const showingCurrentPay = showsCurrentPayInsteadOfCost(node);
   const showingPay = showsPayInsteadOfCost(node);
   // A base-pay RANGE shown in the estimate's place is headed as a range, and
   // as base pay before locality where it is the General Schedule's: the two
   // bounds are the table's and the word COST would make them the unit's.
   const showingRange = showsRangeInsteadOfCost(node);
-  const period = showingPay || showingRange ? { label: null, amountKind: null } : getCostPeriod(node);
+  const period = showingCurrentPay
+    ? {
+        label: `OPM's current Plum Book export${formatFetchDate(currentPayOf(node).exportFetchedAt) ? `, fetched ${formatFetchDate(currentPayOf(node).exportFetchedAt)}` : ""} — one row's rate of basic pay, not a cost`,
+        amountKind: null,
+      }
+    : showingPay || showingRange ? { label: null, amountKind: null } : getCostPeriod(node);
   const label = document.createElement("span");
   label.className = "info-cost-label";
-  label.textContent = showingPay
-    ? "REPORTED RATE OF BASIC PAY"
-    : showingRange
-      ? (gradePayOf(node).kind === "general_schedule_grade" ? "BASE PAY RANGE, BEFORE LOCALITY" : "PAY SYSTEM RANGE")
-      : coversFullYear(period.amountKind) ? "ANNUAL COST" : "COST";
+  label.textContent = showingCurrentPay
+    ? "PAY — CURRENT PLUM BOOK"
+    : showingPay
+      ? "REPORTED RATE OF BASIC PAY"
+      : showingRange
+        ? (gradePayOf(node).kind === "general_schedule_grade" ? "BASE PAY RANGE, BEFORE LOCALITY" : "PAY SYSTEM RANGE")
+        : coversFullYear(period.amountKind) ? "ANNUAL COST" : "COST";
   head.appendChild(label);
 
   const amountText = formatCostAmount(node);
@@ -2132,7 +2241,7 @@ function buildCostBlock(node) {
   // to three figures, never a different claim. Estimates are untouched; they
   // were always rounded and marked ≈.
   const exactAmount = toFiniteAmount(node.resolved_total_amount);
-  if (amountText !== null && !showingPay && !showingRange && isCostIdentifiedForTheNode(node) && exactAmount !== null && Math.abs(exactAmount) >= 1e9) {
+  if (amountText !== null && !showingCurrentPay && !showingPay && !showingRange && isCostIdentifiedForTheNode(node) && exactAmount !== null && Math.abs(exactAmount) >= 1e9) {
     const compact = document.createElement("span");
     compact.className = "info-cost-compact";
     compact.textContent = `${formatApproximateCost(exactAmount)}, to three figures`;
@@ -2254,6 +2363,7 @@ function renderInfoPanel(nodeObj) {
   renderOfficialDescription(data, isClusteredView);
   renderHeadcountProvenance(data);
   renderPositionListing(data);
+  renderCurrentListing(data);
   renderStatutoryPay(data);
   renderSchedulePay(data);
   renderReportedPay(data);
@@ -2411,6 +2521,7 @@ function renderInfoPanel(nodeObj) {
   // Fixed bottom-right, the key sat inside the open panel, which spans the
   // viewport's height at 1400x900; it shifts left with the depth control.
   if (dom.legend) dom.legend.classList.add("panel-open");
+  document.getElementById("view-switcher")?.classList.add("panel-open");
   dom.statsPanel.classList.remove("panel-closed");
   setText(dom.btnFlyMode, state.graph?.isFlyMode() ? "Disable Fly Mode" : "Enable Fly Mode");
   if (dom.btnTraceOrigin) {

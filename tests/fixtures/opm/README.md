@@ -91,9 +91,11 @@ as a robots file carrying no directives, which is what RFC 9309 §2.3.1.2 calls 
 access with no parseable rules, so the path is allowed by the standard's ordinary rule and
 `STANDARD_4XX_HOSTS` never came into play. The verdict string `allows /escs-net/...` is what
 the fetcher writes in that case; no rule was actually read. `docs/NETWORK_ACCESS.md` §12
-records it. **Nothing reads this file yet**: no `plum_current` module exists and no published
-node carries a current-PLUM claim; what follows is what the file contains, so the matcher
-that eventually reads it is written against the file and not a guess about it.
+records it. **Read since 2026-09-21** by `data_pipeline/verification/plum_current.py`
+(CLAUDE.md, "The current Plum Book, read"): only `Filled` and `Vacant` rows, identical rows
+folded, the digest recomputed before a row is read, and the three incumbent columns never
+projected at all; what follows is what the file contains, and the matcher was written against
+it rather than a guess about it.
 
 - Encoding: UTF-8 with a byte-order mark; served as `text/csv`.
 - Records: **15,777** data rows after the header, every row 15 fields.

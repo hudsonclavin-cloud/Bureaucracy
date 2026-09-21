@@ -42,7 +42,8 @@ python scripts/add_curated_nodes.py --dry-run     # add a unit the graph lacks, 
 python scripts/mark_superseded_units.py --dry-run # mark a unit the government has replaced; nothing is ever deleted
 python scripts/probe_network_access.py           # what this session can reach now, and whether a 403 was the proxy or the host
 python scripts/derive_pay_evidence.py --dry-run  # the salary table joined to the archive's levels; writes nothing
-python scripts/derive_gs_pay_evidence.py --dry-run  # GS / SES / SL-ST base-pay RANGES for the archive's pay plans; writes nothing
+python scripts/derive_gs_pay_evidence.py --dry-run  # GS / SES / SL-ST base-pay RANGES for the listings' pay plans; writes nothing
+python scripts/derive_plum_current_evidence.py --dry-run  # OPM's CURRENT Plum Book export matched to position nodes; the incumbent columns are never read; writes nothing
 python scripts/derive_judicial_pay_evidence.py --dry-run    # uscourts.gov's own compensation table; writes nothing
 python scripts/derive_congressional_pay_evidence.py --dry-run  # senate.gov's own salary schedule; writes nothing
 python scripts/derive_whitehouse_pay_evidence.py --dry-run     # the White House Office's statutory staff roster; writes nothing
@@ -998,9 +999,9 @@ permission neither §9 nor §10 anticipated: the host answered `robots.txt` with
 successfully fetched file with no parseable rules, so the standard's ordinary
 rule allowed the path and the 4xx policy never came into play
 (`docs/NETWORK_ACCESS.md` §12; `tests/fixtures/opm/README.md` §1 says what the
-file contains, name columns never read). **Nothing reads it yet**: no matcher
-exists for it, and position evidence still rests entirely on the previous
-administration's archive. The rest of the list that stood
+file contains, name columns never read). **It is read since the same day** by
+`plum_current.py`, as a second document beside the archive and never over
+it — see "The current Plum Book, read" below. The rest of the list that stood
 here — clerk.house.gov, www.usa.gov, api.sam.gov, data.opm.gov and
 govinfo.gov — was re-measured on 2026-09-19 and **every one of them now
 answers**: clerk.house.gov, api.sam.gov and data.opm.gov with a 404 (nothing
@@ -1014,8 +1015,8 @@ worked around.
 Next in this line, in order of evidence value, with what 2026-09-19's
 measurement did to each: the House Clerk's committee list **landed**
 (2026-09-13); OPM FedScope for the headcounts the cascade weights by
-**landed**; OPM's current Plum Book is refused by its host, so positions still
-rest on the previous administration's archive; and SAM.gov's Federal Hierarchy
+**landed**; OPM's current Plum Book **landed** on 2026-09-21 and is read by
+`plum_current.py` beside the archive; and SAM.gov's Federal Hierarchy
 is reachable at last and still needs a key the owner would have to obtain.
 `data.opm.gov` and `www.usa.gov` answer too and nothing here has read either.
 
@@ -1503,6 +1504,106 @@ the listing block beside the pay plan it rests on, and in the cost block
 under `BASE PAY RANGE, BEFORE LOCALITY` (or `PAY SYSTEM RANGE`), never under
 COST.
 
+**The current Plum Book, read (`plum_current.py`, since 2026-09-21).** The
+export `docs/NETWORK_ACCESS.md` §12 landed the same morning is the live
+counterpart of the archive `positions.py` reads: 15,777 rows, one per
+incumbency, `Position Status` `Filled` (6,846), `Vacant` (2,951) or
+`Historical` (5,980). `data_pipeline/verification/plum_current.py` reads it,
+`scripts/derive_plum_current_evidence.py` writes
+`data/verification/plum_current_evidence.json`, and the digest is recomputed
+from the bytes before a row is read, the refusal `pay_tables` and `gs_pay`
+make. Only `Filled` and `Vacant` rows are read — a Vacant row is still a
+listed position — and the 5,980 Historical rows are counted and never read.
+**The two name columns and the unique-ID column are never read**, not read
+and declined: `READ_COLUMNS` is the whole of what is taken off a row, by
+header index, and the gate's own reader projects the same seven columns;
+`tests/test_plum_current.py` plants a sentinel in the three incumbent columns
+of every fixture row and asserts it appears nowhere in what either returns,
+writes or prints. Identical rows for one position — the same (Agency,
+Organization, Position Title, Pay Plan, Level) — are folded into one listing
+carrying the row count and both statuses BEFORE the archive's rule that two
+titles collapsing onto one key claim neither; 442 folds on the real file.
+
+Matching is the archive's, reused: `positions.archive_title_keys`,
+`position_name_alternatives`, the same (Agency, Organization) scoping, one
+name to one node or nothing. One rule is added and it is the export's own
+filing read back rather than a guess: the file names twelve units
+`EXECUTIVE OFFICE OF THE PRESIDENT - <unit>`, and where the whole name
+matches nothing the half before " - " must name exactly one organisation and
+the half after it exactly one organisation beneath it — the scoping
+`headcounts.py` applies to a FedScope sub-agency row. The archive printed the
+same form and `positions.py` never reached those units; the rule matched 7
+agencies and **43 positions**, most of them White House Office titles the
+roster had already named. HTML entities (`&amp;`, `&#039;`) are resolved for
+keys only; every published string is the file's own. Two groups that are both
+the agency itself (the USPTO's rows sit under two spellings of its own name)
+feed one title index rather than cancelling each other as ambiguous.
+
+**No alias table.** The largest unmatched block is `OFFICE OF THE SECRETARY
+OF WAR` (506 live rows, the archive's "Office of the Secretary of Defense"):
+this graph has no OSD node to alias it to, so an alias could reach nothing.
+`DEPARTMENT OF THE NAVY` / `ARMY` / `AIR FORCE` (240 rows) are the
+civilian-department against uniformed-service distinction this file already
+refuses for FedScope. 96 of 174 agencies are unmatched in all, and the dry
+run prints them by live rows so the coordinator can see what a node — not an
+alias — would buy.
+
+**What it publishes.** `positionCurrentListing` (method
+`listed_in_opm_current_plum_export`, the export's URL in `sourceUrls`, the
+method only where none exists) and, on the tree's own parent only, placement
+`listed_under_organization_in_opm_current_plum_export`. It is a second,
+independent official document, so a post listed in the archive too reaches
+`verified` on the existing arithmetic (0.4 + 0.3 for one official URL, +0.1
+for a second) and a post with only this one stays `partial`. Where the row
+prints a rate of basic pay, `positionCurrentPay`: the export's own figure for
+the one row listed under this title now, validated by
+`financial_evidence.validate_record` (`opm_plum_current_export` joins
+`SCALE_PRINTED_SOURCE_TYPES`, since the cell prints `$228,000` and nothing in
+the file says "dollars"), `scopeMatch: proxy` and graded `partial`
+deliberately — a row is an incumbency, and what one listing is paid is not
+what the post pays whoever holds it. Never $0 (a printed `$0.00` is refused
+as its own reason). Tied to the listing exactly as `positionPayRate` is tied
+to the archive's: published only while the listing still reports the same
+figure, both in `EVIDENCE_OWNED_FIELDS` and `MINIMAL_GRAPH_FIELDS`, and it
+writes no `sourceUrls`, `sourceTypes`, `lastVerified` or
+`verificationMethod` and is never a cost. The multi-post sweep takes it with
+the other five pay fields.
+
+**First derivation, measured on the evidence files (the graph is not
+rebuilt here).** 170 of 4,591 positions listed, 170 placements, **100 rates**
+(all partial); 118 of the 170 are in the archive too and will read `verified`
+on the next build, 52 are current-only, 11 archive-only. Filled 121, Vacant
+37, 12 with rows of both. Pay plans ES 85, AD 43, EX 32, OT 6, SL 1, 3 whose
+rows disagree. 63 listings print no rate and 7 print several figures for one
+title, so no rate is written for them. **36 White House Office posts now
+carry both the roster's figure and the export's, and all 36 agree** — two
+documents, one number. The salary-table joins now read either listing:
+`positions.LISTING_FIELD_BY_SOURCE` ties a claim to the field of the document
+that reported the level or pay plan, `combine_listings` prefers the current
+export where it lists a post, and a rate stated by EITHER listing refuses a
+table rate or a range (`a_listing_reports_a_rate`), because that would be two
+figures for one post. Regenerated: Executive Schedule records **29 → 31** (170
+listings now supply the level, 11 from the archive); ranges **45 → 26**,
+because 104 listings now state the rate the range used to stand in for,
+which is the honest direction — a printed figure beats a band. Both apply
+functions and both gate checkers read the listing the record's own
+`levelSource`/`listingSource` names, so a rate looked up from the current
+export is withdrawn with the current listing and never survives on the
+archive's.
+
+**The gate** (`current_listing_violations`, `current_pay_violations`,
+stdlib-only) re-reads the committed CSV by the block's own keys — never the
+incumbent columns — and refuses a block on a non-post, a renamed node, a
+parent that is not the organisation the export files the title under
+(checked off the tree, against the parent's name), a `Historical` status, a
+digest that is not the committed file's, a status, pay plan, level or figure
+no live row of the title carries, a placement method with no listing beneath
+it, a rate its listing does not report, zero, more than a proxy, a rate
+beside a measured cost, and a table rate or range beside a rate the other
+listing states. The panel prints a CURRENT PLUM BOOK sentence in the listing
+block and the rate under `PAY — CURRENT PLUM BOOK` with the fetch date on the
+period line, never under COST; the atlas view carries the same block.
+
 **The level half, from current law instead of a closed archive (since
 2026-09-18).** Every Executive Schedule rate this project published took its
 *level* from one place: OPM's PLUM archive of the **previous** administration
@@ -1733,8 +1834,8 @@ person, and must name this node by equality or with the rank folded off.
 `CURATION.md` §7.4-7.5 record the run and what stays unpriced.
 
 The PLUM archive is the previous administration's reported positions
-(the current export from escs.opm.gov landed on 2026-09-21 and nothing reads
-it yet, §12), so every
+(the current export from escs.opm.gov landed on 2026-09-21 and is read by
+`plum_current.py` as a second document beside it, §12), so every
 record and every proposed panel sentence names the archive and its period
 and says nothing about who holds a post now: the incumbent columns are
 never read. 91 of the graph's 4,382 position nodes matched a listed title

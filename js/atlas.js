@@ -424,13 +424,28 @@ function describePay(node) {
       text: `OPM's PLUM archive${listing.edition ? ` (${listing.edition})` : ""} reports basic pay of ${listing.reportedPayText || `$${listing.reportedPay.toLocaleString("en-US")}`} for this post — not this unit's cost, not necessarily what the post pays now, and a record of that period that says nothing about who holds it now.`,
     });
   }
+  // The current Plum Book's own printed rate: the panel's sentence, and
+  // the same caveat — a row is an incumbency, so this is one listing's
+  // figure, headed as pay and never as cost.
+  const current = node.positionCurrentPay;
+  if (current && typeof current === "object" && typeof current.amount === "number" && current.amount > 0) {
+    const printed = current.rateText || `$${current.amount.toLocaleString("en-US")}`;
+    const on = formatDate(current.exportFetchedAt);
+    blocks.push({
+      heading: "Pay — current Plum Book",
+      text: `OPM's current PLUM Reporting export${on ? ` (fetched ${on})` : ""} prints ${printed} for the one row listed under "${current.listedTitle || "this title"}". That is what that listing is paid, a row being an incumbency; not what the post pays whoever holds it, and not this unit's cost.`,
+    });
+  }
   const rate = node.positionPayRate;
   if (rate && typeof rate === "object" && typeof rate.amount === "number") {
     const printed = rate.rateText || `$${rate.amount.toLocaleString("en-US")}`;
     const when = rate.effectiveText ? `, ${String(rate.effectiveText).replace(/^Effective\b/, "effective")}` : "";
+    const levelFromCurrent = rate.levelSource && rate.levelSource.source === "opm_plum_current_export";
     blocks.push({
-      heading: "Rate for the archive's level",
-      text: `OPM's ${rate.table}${when}, pays ${printed} for ${rate.amountScope}. That is two documents, not one — the level is the archive's record of a period that ended, and the rate is from a table that took effect afterwards, so neither says what this post pays whoever holds it now.`,
+      heading: levelFromCurrent ? "Rate for the current export's level" : "Rate for the archive's level",
+      text: levelFromCurrent
+        ? `OPM's ${rate.table}${when}, pays ${printed} for ${rate.amountScope}. That is two documents, not one — the level is the current PLUM export's listing of this post, and the rate is a table's figure for that rank; the export prints no rate for this row, so this is not a figure for the post.`
+        : `OPM's ${rate.table}${when}, pays ${printed} for ${rate.amountScope}. That is two documents, not one — the level is the archive's record of a period that ended, and the rate is from a table that took effect afterwards, so neither says what this post pays whoever holds it now.`,
     });
   }
   const schedule = node.positionSchedulePay;

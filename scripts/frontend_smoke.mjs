@@ -1274,7 +1274,7 @@ try {
       const b = el.getBoundingClientRect();
       return { left: b.left, right: b.right, top: b.top, bottom: b.bottom, open: el.classList.contains("open") };
     };
-    return { legend: rect("legend"), panel: rect("info-panel"), depth: rect("depth-ctrl"), hint: rect("controls-hint"), crumbs: rect("breadcrumb") };
+    return { legend: rect("legend"), panel: rect("info-panel"), depth: rect("depth-ctrl"), hint: rect("controls-hint"), crumbs: rect("breadcrumb"), switcher: rect("view-switcher"), stats: rect("stats"), search: rect("search-wrap") };
   });
   const overlaps = (a, b) => a.left < b.right && b.left < a.right && a.top < b.bottom && b.top < a.bottom;
   check("the info panel is open for the overlap check", boxes.panel.open, JSON.stringify(boxes.panel));
@@ -1283,6 +1283,12 @@ try {
   // Moved left of the panel, the legend shared a row with the controls hint.
   check("the legend does not collide with the controls hint", !overlaps(boxes.legend, boxes.hint), JSON.stringify(boxes));
   check("the legend does not collide with the breadcrumb", !overlaps(boxes.legend, boxes.crumbs), JSON.stringify(boxes));
+  // The Directory / 3D-universe switcher shared the top-right corner with the
+  // panel's title; it moves left of the open panel and the stats block sits
+  // beneath it.
+  check("the view switcher never sits over the open info panel", !overlaps(boxes.switcher, boxes.panel), JSON.stringify(boxes));
+  check("the view switcher does not cover the stats block", !overlaps(boxes.switcher, boxes.stats), JSON.stringify(boxes));
+  check("the view switcher does not cover the search box", !overlaps(boxes.switcher, boxes.search), JSON.stringify(boxes));
 
   // The counter names both numbers: loaded is not drawn, and "5,402 / 5,402
   // nodes rendered" was printed while the Agency tier drew depth 3.

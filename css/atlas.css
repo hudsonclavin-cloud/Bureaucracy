@@ -13,6 +13,7 @@
   z-index: 95;
   top: 22px;
   right: 28px;
+  transition: right 0.45s cubic-bezier(.16,1,.3,1);
   display: flex;
   padding: 4px;
   border: 1px solid rgba(242, 238, 229, 0.24);
@@ -55,6 +56,10 @@
 
 body:not(.atlas-mode) #atlas { display: none; }
 body.atlas-mode { overflow: hidden; cursor: default; }
+/* In the 3D view the switcher shares the top-right corner with the info
+   panel; it moves left of the panel when the panel opens, the way the depth
+   control and the stats block already do, so it never covers the title. */
+body:not(.atlas-mode) #view-switcher.panel-open { right: 338px; }
 body.atlas-mode > :not(#atlas):not(#view-switcher):not(#loading):not(#reading-guide):not(script) { visibility: hidden; }
 body.atlas-mode #view-switcher,
 body.atlas-mode #atlas,

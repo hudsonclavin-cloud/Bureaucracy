@@ -605,6 +605,11 @@ def eligible(record: Mapping[str, Any], tables: Mapping[str, Mapping[str, Any]])
     pay_plan, level = _listing_of(record)
     if record.get("reportedPay") is not None:
         return False, "archive_reports_a_rate"
+    if record.get("anyListingReportsRate"):
+        # The OTHER PLUM listing on this node states a rate
+        # (plum_current.combine_listings marks it); a range beside it is a
+        # second figure for one post.
+        return False, "a_listing_reports_a_rate"
     if not pay_plan:
         return False, "no_pay_plan_reported"
     kind = kind_for_pay_plan(pay_plan)
@@ -846,15 +851,20 @@ def apply_grade_pay(
         if node.get("representsPosts"):
             stats["stands_for_many_posts"] += 1
             continue
-        listing = node.get("positionListing")
+        kind = str(record.get("kind") or "")
+        claim = record.get("listingClaim") or {}
+        # Which document reported the pay plan: the archive's listing or the
+        # current export's (positions.LISTING_FIELD_BY_SOURCE). The range is
+        # tied to that listing and withdrawn with it, never the other one.
+        from data_pipeline.verification.positions import any_listing_reports_a_rate, listing_field_for
+
+        listing = node.get(listing_field_for(claim.get("source")) or "positionListing")
         if not isinstance(listing, Mapping):
             stats["no_listing_published"] += 1
             continue
-        if listing.get("reportedPay") is not None:
+        if listing.get("reportedPay") is not None or any_listing_reports_a_rate(node):
             stats["listing_reports_a_rate"] += 1
             continue
-        kind = str(record.get("kind") or "")
-        claim = record.get("listingClaim") or {}
         listed_plan = str(listing.get("payPlan") or "")
         listed_level = str(listing.get("payLevel") or "")
         if kind not in KINDS or listed_plan != str(claim.get("payPlan") or "") or listed_plan not in PAY_PLANS_BY_KIND[kind]:
