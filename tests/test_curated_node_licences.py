@@ -41,6 +41,20 @@ from data_pipeline.verification.govman import read_manual  # noqa: E402
 PUBLISHED = PROJECT_ROOT / "output" / "graph.json"
 
 
+class SourceUnreachable(Exception):
+    """The writer could not reach a source it re-verifies a row against.
+
+    A `treasury_statement_line` row is re-checked against the CURRENT
+    statement on every run, by design, so these tests reach the network. When
+    the host does not answer, the writer exits nonzero and the row is neither
+    applied nor refused -- nothing was learned. Reporting that as a failed
+    rule would be the exact confusion this project refuses everywhere else:
+    "the check failed" and "the check could not be made" are different
+    claims. Measured on 2026-09-21, api.fiscaldata.treasury.gov answered two
+    calls in two seconds and timed out on the next two.
+    """
+
+
 def run_table(rows, extra=()):
     """Dry-run the writer over a scratch table; returns its JSON report."""
     import contextlib
@@ -50,8 +64,19 @@ def run_table(rows, extra=()):
         path = Path(tmp) / "table.json"
         path.write_text(json.dumps({"nodes": rows}), encoding="utf-8")
         buffer = io.StringIO()
-        with contextlib.redirect_stdout(buffer):
-            add_main(["add", "--dry-run", "--json", "--table", str(path), *extra])
+        errors = io.StringIO()
+        try:
+            # The "could not reach ..." line goes to stderr, so both streams
+            # are captured; reading only stdout reported an unanswered host as
+            # a failed rule.
+            with contextlib.redirect_stdout(buffer), contextlib.redirect_stderr(errors):
+                add_main(["add", "--dry-run", "--json", "--table", str(path), *extra])
+        except SystemExit:
+            printed = buffer.getvalue() + errors.getvalue()
+            if "could not reach" in printed:
+                said = [line for line in printed.strip().splitlines() if "could not reach" in line]
+                raise SourceUnreachable(said[-1].strip()) from None
+            raise
         # --json prints the report and then a human line after it.
         report, _end = json.JSONDecoder().raw_decode(buffer.getvalue().lstrip())
         return report
@@ -151,7 +176,10 @@ class WriterRefusalTests(unittest.TestCase):
         self.assertIn("exec-dept-doi-bia", item["detail"])
 
     def test_the_committed_table_is_idempotent(self):
-        report = run_table(json.loads((PROJECT_ROOT / "data" / "curation" / "new_nodes.json").read_text())["nodes"])
+        try:
+            report = run_table(json.loads((PROJECT_ROOT / "data" / "curation" / "new_nodes.json").read_text())["nodes"])
+        except SourceUnreachable as unreachable:
+            self.skipTest(f"a source this table is re-checked against did not answer: {unreachable}")
         self.assertEqual(report["added"], 0, "every committed row is already in the curated file")
 
 

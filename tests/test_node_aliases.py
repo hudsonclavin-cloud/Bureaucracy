@@ -257,8 +257,17 @@ class IsolationTests(unittest.TestCase):
         "scripts/derive_directory_evidence.py",
         "scripts/derive_plum_current_evidence.py",
         "scripts/rename_units_to_official_wording.py",
+        "scripts/add_curated_nodes.py",
         "tests/test_node_aliases.py",
         "tests/test_govman.py",
+    }
+    #: Whitelisted for GENERIC_NAMES alone -- the shared name-quality floor
+    #: that happens to live in the alias module -- and never for the table.
+    #: `NAME_FLOOR_ONLY` is checked by AST below, so a file here cannot
+    #: quietly start reading aliases later on the strength of being listed.
+    NAME_FLOOR_ONLY = {
+        "scripts/add_curated_nodes.py",
+        "scripts/rename_units_to_official_wording.py",
     }
     #: Every join in this project that publishes a NUMBER. Each already has
     #: its own reviewed table where a figure is at stake.
@@ -303,6 +312,27 @@ class IsolationTests(unittest.TestCase):
             if "verification.aliases" in text or "verification import aliases" in text:
                 out.add(rel)
         return out
+
+    def test_a_name_floor_importer_never_reads_the_table(self):
+        """Being on the whitelist buys GENERIC_NAMES and nothing else."""
+        import ast
+
+        for rel in sorted(self.NAME_FLOOR_ONLY):
+            with self.subTest(module=rel):
+                tree = ast.parse((PROJECT_ROOT / rel).read_text(encoding="utf-8"))
+                imported = set()
+                for node in ast.walk(tree):
+                    if isinstance(node, ast.ImportFrom) and "aliases" in (node.module or ""):
+                        imported.update(a.name for a in node.names)
+                    if isinstance(node, ast.Import):
+                        for a in node.names:
+                            if "verification.aliases" in a.name:
+                                imported.add(a.name)
+                self.assertTrue(imported, f"{rel} is listed but imports nothing from the alias module")
+                self.assertEqual(
+                    imported - {"GENERIC_NAMES"}, set(),
+                    f"{rel} may import GENERIC_NAMES and nothing else from the alias module",
+                )
 
     def test_only_name_and_existence_evidence_may_consult_the_table(self):
         self.assertEqual(self.importers() - self.ALLOWED, set(),

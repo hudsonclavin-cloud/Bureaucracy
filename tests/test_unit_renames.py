@@ -222,3 +222,38 @@ class ParentheticalAcronymTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class GenericNameFloorTests(unittest.TestCase):
+    """One list, and it covers both spellings of an office.
+
+    `canonical_name_key` does not drop a "the" inside a name, so "Office of
+    Inspector General" and "Office of the Inspector General" are different
+    keys. Until 2026-09-21 only the second was on the floor, and the first is
+    the spelling most agencies use -- so the guard was open exactly where the
+    current Plum Book's 30 Offices of Inspector General would have walked
+    through it. `add_curated_nodes.py` also kept a second copy of the list,
+    which is how a fix in one place could miss the other.
+    """
+
+    def test_both_spellings_of_a_shared_office_are_refused(self) -> None:
+        from data_pipeline.verification.evidence import canonical_name_key
+
+        for name in (
+            "Office of Inspector General", "Office of the Inspector General",
+            "Office of General Counsel", "Office of the General Counsel",
+            "Inspector General", "General Counsel",
+        ):
+            with self.subTest(name=name):
+                self.assertIn(canonical_name_key(name), GENERIC_NAMES, name)
+
+    def test_the_node_writer_shares_the_one_list(self) -> None:
+        import importlib.util
+
+        spec = importlib.util.spec_from_file_location(
+            "add_curated_nodes", Path(__file__).resolve().parents[1] / "scripts" / "add_curated_nodes.py"
+        )
+        writer = importlib.util.module_from_spec(spec)
+        assert spec.loader is not None
+        spec.loader.exec_module(writer)
+        self.assertIs(writer.GENERIC_NAMES, GENERIC_NAMES)

@@ -124,13 +124,10 @@ DESCRIPTION_SOURCE = {
 
 MIN_NAME_TOKENS = 2
 #: The same list `rename_units_to_official_wording.py` refuses, for the same
-#: reason: a name that many units answer to identifies none of them.
-GENERIC_NAMES = frozenset({
-    "inspector general", "office of the inspector general", "general counsel",
-    "office of the general counsel", "chief financial officer", "chief of staff",
-    "chief information officer", "office of communications", "office of public affairs",
-    "about us", "leadership", "our mission", "contact us", "headquarters",
-})
+#: reason: a name that many units answer to identifies none of them. Imported
+#: rather than copied: this file kept its own duplicate until 2026-09-21, and
+#: the two drifted -- one list is the only way they cannot.
+from data_pipeline.verification.aliases import GENERIC_NAMES  # noqa: E402
 
 DEFAULT_COLOR = "#c84a4a"
 

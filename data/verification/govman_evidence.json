@@ -7,15 +7,15 @@
     "url": "https://www.govinfo.gov/content/pkg/GOVMAN-2025-12-31/xml/GOVMAN-2025-12-31.xml",
     "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138",
     "fetchedAt": "2026-09-20T02:40:27Z",
-    "derivedAt": "2026-09-21T16:29:03Z",
+    "derivedAt": "2026-09-21T17:30:49Z",
     "fixture": "tests/fixtures/govman/GOVMAN-2025-12-31.xml"
   },
   "report": {
     "entries": 231,
-    "organisations_matched": 170,
+    "organisations_matched": 186,
     "entry_names_several_entries": 0,
     "entry_names_several_nodes": 0,
-    "entry_names_no_node": 61,
+    "entry_names_no_node": 45,
     "organisations_matched_by_alias": 7,
     "posts_listed": 89,
     "posts_under_an_aliased_organisation": 4,
@@ -27,16 +27,16 @@
   },
   "organisationsReport": {
     "entries": 231,
-    "organisations_matched": 170,
+    "organisations_matched": 186,
     "entry_names_several_entries": 0,
     "entry_names_several_nodes": 0,
-    "entry_names_no_node": 61,
+    "entry_names_no_node": 45,
     "organisations_matched_by_alias": 7,
-    "organisations_listed": 170,
+    "organisations_listed": 186,
     "refused_no_access_id": 0,
-    "top_level_entries": 67,
-    "descriptions_extracted": 149,
-    "descriptions_mission_statement": 92,
+    "top_level_entries": 83,
+    "descriptions_extracted": 165,
+    "descriptions_mission_statement": 108,
     "descriptions_opening_paragraph": 57,
     "descriptions_truncated": 18,
     "descriptions_refused_opening_paragraph_does_not_name_the_unit": 14,
@@ -3748,6 +3748,27 @@
       "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-256",
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
+    "exec-ind-misc-administrative-conference-of-the-united-states": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Administrative Conference of the United States develops recommendations for improving the fairness and effectiveness of procedures by which Federal agencies administer regulatory, benefit, and other Government programs.",
+        "truncated": false,
+        "fullLength": 223
+      },
+      "source": "us_government_manual",
+      "nameAlias": null,
+      "nodeName": "Administrative Conference of the United States",
+      "listedName": "Administrative Conference of the United States",
+      "entityId": "127",
+      "parentListedName": null,
+      "parentEntityId": null,
+      "package": "GOVMAN-2025-12-31",
+      "edition": "2025-12-31",
+      "granule": "GOVMAN-2025-12-31-127",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-127",
+      "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+    },
     "exec-ind-cia": {
       "description": {
         "kind": "mission_statement",
@@ -3833,6 +3854,27 @@
       "edition": "2025-12-31",
       "granule": "GOVMAN-2025-12-31-133",
       "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-133",
+      "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+    },
+    "exec-ind-misc-defense-nuclear-facilities-safety-board": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Defense Nuclear Facilities Safety Board identifies the nature and consequences of public health and safety threats at the Department of Energy's defense nuclear facilities, elevates awareness of and information on such threats to the highest levels of governmental authority, and keeps the public informed.",
+        "truncated": false,
+        "fullLength": 310
+      },
+      "source": "us_government_manual",
+      "nameAlias": null,
+      "nodeName": "Defense Nuclear Facilities Safety Board",
+      "listedName": "Defense Nuclear Facilities Safety Board",
+      "entityId": "134",
+      "parentListedName": null,
+      "parentEntityId": null,
+      "package": "GOVMAN-2025-12-31",
+      "edition": "2025-12-31",
+      "granule": "GOVMAN-2025-12-31-134",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-134",
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-ind-epa": {
@@ -4024,6 +4066,27 @@
       "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-143",
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
+    "exec-ind-misc-federal-mine-safety-and-health-review-commission": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Federal Mine Safety and Health Review Commission ensures compliance with occupational safety and health standards in the Nation's surface and underground coal, metal, and nonmetal mines.",
+        "truncated": false,
+        "fullLength": 190
+      },
+      "source": "us_government_manual",
+      "nameAlias": null,
+      "nodeName": "Federal Mine Safety and Health Review Commission",
+      "listedName": "Federal Mine Safety and Health Review Commission",
+      "entityId": "146",
+      "parentListedName": null,
+      "parentEntityId": null,
+      "package": "GOVMAN-2025-12-31",
+      "edition": "2025-12-31",
+      "granule": "GOVMAN-2025-12-31-146",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-146",
+      "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+    },
     "exec-regulatory-fmc": {
       "description": {
         "kind": "mission_statement",
@@ -4045,6 +4108,27 @@
       "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-144",
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
+    "exec-ind-misc-federal-mediation-and-conciliation-service": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Federal Mediation and Conciliation Service helps labor and management resolve disputes in industries affecting commerce, offers training in cooperative processes to promote workplace stability and economic growth, and provides alternative dispute resolution services, training, negotiated rulemaking, and public policy facilitation to government entities.",
+        "truncated": false,
+        "fullLength": 359
+      },
+      "source": "us_government_manual",
+      "nameAlias": null,
+      "nodeName": "Federal Mediation and Conciliation Service",
+      "listedName": "Federal Mediation and Conciliation Service",
+      "entityId": "145",
+      "parentListedName": null,
+      "parentEntityId": null,
+      "package": "GOVMAN-2025-12-31",
+      "edition": "2025-12-31",
+      "granule": "GOVMAN-2025-12-31-145",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-145",
+      "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+    },
     "exec-regulatory-fed": {
       "description": {
         "kind": "mission_statement",
@@ -4064,6 +4148,27 @@
       "edition": "2025-12-31",
       "granule": "GOVMAN-2025-12-31-147",
       "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-147",
+      "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+    },
+    "exec-ind-misc-federal-retirement-thrift-investment-board": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Federal Retirement Thrift Investment Board administers the Thrift Savings Plan in the interest of its participants and beneficiaries.",
+        "truncated": false,
+        "fullLength": 137
+      },
+      "source": "us_government_manual",
+      "nameAlias": null,
+      "nodeName": "Federal Retirement Thrift Investment Board",
+      "listedName": "Federal Retirement Thrift Investment Board",
+      "entityId": "148",
+      "parentListedName": null,
+      "parentEntityId": null,
+      "package": "GOVMAN-2025-12-31",
+      "edition": "2025-12-31",
+      "granule": "GOVMAN-2025-12-31-148",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-148",
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-regulatory-ftc": {
@@ -4106,6 +4211,27 @@
       "edition": "2025-12-31",
       "granule": "GOVMAN-2025-12-31-150",
       "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-150",
+      "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+    },
+    "exec-ind-misc-inter-american-foundation": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Inter-American Foundation supports social and economic development in Latin America and the Caribbean.",
+        "truncated": false,
+        "fullLength": 106
+      },
+      "source": "us_government_manual",
+      "nameAlias": null,
+      "nodeName": "Inter-American Foundation",
+      "listedName": "Inter-American Foundation",
+      "entityId": "151",
+      "parentListedName": null,
+      "parentEntityId": null,
+      "package": "GOVMAN-2025-12-31",
+      "edition": "2025-12-31",
+      "granule": "GOVMAN-2025-12-31-151",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-151",
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-ind-nasa": {
@@ -4360,6 +4486,27 @@
       "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-162",
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
+    "exec-ind-misc-occupational-safety-and-health-review-commission": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Occupational Safety and Health Review Commission ensures the timely and fair resolution of cases involving the alleged exposure of American workers to unsafe or unhealthy working conditions.",
+        "truncated": false,
+        "fullLength": 194
+      },
+      "source": "us_government_manual",
+      "nameAlias": null,
+      "nodeName": "Occupational Safety and Health Review Commission",
+      "listedName": "Occupational Safety and Health Review Commission",
+      "entityId": "164",
+      "parentListedName": null,
+      "parentEntityId": null,
+      "package": "GOVMAN-2025-12-31",
+      "edition": "2025-12-31",
+      "granule": "GOVMAN-2025-12-31-164",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-164",
+      "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+    },
     "exec-regulatory-nrc": {
       "description": {
         "kind": "mission_statement",
@@ -4381,6 +4528,27 @@
       "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-163",
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
+    "exec-ind-misc-office-of-government-ethics": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Office of Government Ethics leads and oversees the executive branch program for preventing and resolving conflicts of interest.",
+        "truncated": false,
+        "fullLength": 131
+      },
+      "source": "us_government_manual",
+      "nameAlias": null,
+      "nodeName": "United States Office of Government Ethics",
+      "listedName": "Office of Government Ethics",
+      "entityId": "166",
+      "parentListedName": null,
+      "parentEntityId": null,
+      "package": "GOVMAN-2025-12-31",
+      "edition": "2025-12-31",
+      "granule": "GOVMAN-2025-12-31-166",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-166",
+      "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+    },
     "exec-ind-opm": {
       "description": {
         "kind": "mission_statement",
@@ -4400,6 +4568,27 @@
       "edition": "2025-12-31",
       "granule": "GOVMAN-2025-12-31-167",
       "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-167",
+      "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+    },
+    "exec-ind-misc-odni": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Office of the Director of National Intelligence oversees and coordinates the foreign and domestic activities of the Intelligence Community across the Federal Government.",
+        "truncated": false,
+        "fullLength": 173
+      },
+      "source": "us_government_manual",
+      "nameAlias": null,
+      "nodeName": "Office of the Director of National Intelligence",
+      "listedName": "Office of the Director of National Intelligence",
+      "entityId": "165",
+      "parentListedName": null,
+      "parentEntityId": null,
+      "package": "GOVMAN-2025-12-31",
+      "edition": "2025-12-31",
+      "granule": "GOVMAN-2025-12-31-165",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-165",
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-ind-misc-peace-corps": {
@@ -4570,6 +4759,27 @@
       "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-177",
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
+    "exec-ind-misc-surface-transportation-board": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Surface Transportation Board adjudicates and resolves railroad rate and service disputes and reviews proposals for railroad mergers.",
+        "truncated": false,
+        "fullLength": 136
+      },
+      "source": "us_government_manual",
+      "nameAlias": null,
+      "nodeName": "Surface Transportation Board",
+      "listedName": "Surface Transportation Board",
+      "entityId": "335",
+      "parentListedName": null,
+      "parentEntityId": null,
+      "package": "GOVMAN-2025-12-31",
+      "edition": "2025-12-31",
+      "granule": "GOVMAN-2025-12-31-335",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-335",
+      "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+    },
     "exec-ind-misc-tennessee-valley-authority-tva": {
       "description": {
         "kind": "mission_statement",
@@ -4589,6 +4799,48 @@
       "edition": "2025-12-31",
       "granule": "GOVMAN-2025-12-31-178",
       "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-178",
+      "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+    },
+    "exec-ind-misc-african-development-foundation": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The United States African Development Foundation provides seed capital and technical assistance to support African-led development that grows community enterprises.",
+        "truncated": false,
+        "fullLength": 164
+      },
+      "source": "us_government_manual",
+      "nameAlias": null,
+      "nodeName": "United States African Development Foundation",
+      "listedName": "United States African Development Foundation",
+      "entityId": "128",
+      "parentListedName": null,
+      "parentEntityId": null,
+      "package": "GOVMAN-2025-12-31",
+      "edition": "2025-12-31",
+      "granule": "GOVMAN-2025-12-31-128",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-128",
+      "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+    },
+    "exec-ind-misc-trade-and-development-agency": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Trade and Development Agency advances economic development and U.S. commercial interest in developing and middle-income countries.",
+        "truncated": false,
+        "fullLength": 134
+      },
+      "source": "us_government_manual",
+      "nameAlias": null,
+      "nodeName": "United States Trade and Development Agency",
+      "listedName": "Trade and Development Agency",
+      "entityId": "179",
+      "parentListedName": null,
+      "parentEntityId": null,
+      "package": "GOVMAN-2025-12-31",
+      "edition": "2025-12-31",
+      "granule": "GOVMAN-2025-12-31-179",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-179",
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-ind-misc-broadcasting-board-of-governors-usagm": {
@@ -4631,6 +4883,48 @@
       "edition": "2025-12-31",
       "granule": "GOVMAN-2025-12-31-180",
       "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-180",
+      "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+    },
+    "exec-ind-misc-commission-on-civil-rights": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Commission on Civil Rights informs the development of national civil rights policy and enhances enforcement of Federal civil rights laws.",
+        "truncated": false,
+        "fullLength": 141
+      },
+      "source": "us_government_manual",
+      "nameAlias": null,
+      "nodeName": "United States Commission on Civil Rights",
+      "listedName": "United States Commission on Civil Rights",
+      "entityId": "181",
+      "parentListedName": null,
+      "parentEntityId": null,
+      "package": "GOVMAN-2025-12-31",
+      "edition": "2025-12-31",
+      "granule": "GOVMAN-2025-12-31-181",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-181",
+      "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+    },
+    "exec-ind-misc-international-trade-commission": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The United States International Trade Commission provides the President, the U.S. Trade Representative, and the Congress with independent analysis of and information on tariffs, international trade, and the Nation's competitiveness; makes determinations in proceedings involving imports that may harm a domestic industry or violate U.S. intellectual property rights; and maintains the Harmonized Tariff Schedule of the United States.",
+        "truncated": false,
+        "fullLength": 433
+      },
+      "source": "us_government_manual",
+      "nameAlias": null,
+      "nodeName": "United States International Trade Commission",
+      "listedName": "United States International Trade Commission",
+      "entityId": "182",
+      "parentListedName": null,
+      "parentEntityId": null,
+      "package": "GOVMAN-2025-12-31",
+      "edition": "2025-12-31",
+      "granule": "GOVMAN-2025-12-31-182",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-182",
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-ind-misc-office-of-special-counsel-osc": {
@@ -4773,6 +5067,48 @@
       "granule": "GOVMAN-2025-12-31-213",
       "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-213",
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+    },
+    "exec-ind-misc-holocaust-memorial-museum": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The United States Holocaust Memorial Museum promotes documentation, study, and interpretation of the Holocaust and maintains a permanent living memorial to its victims.",
+        "truncated": false,
+        "fullLength": 168
+      },
+      "source": "us_government_manual",
+      "nameAlias": null,
+      "nodeName": "United States Holocaust Memorial Museum",
+      "listedName": "United States Holocaust Memorial Museum",
+      "entityId": "333",
+      "parentListedName": null,
+      "parentEntityId": null,
+      "package": "GOVMAN-2025-12-31",
+      "edition": "2025-12-31",
+      "granule": "GOVMAN-2025-12-31-333",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-333",
+      "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+    },
+    "exec-ind-misc-institute-of-peace": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The United States Institute of Peace prevents, mitigates, and resolves violent conflicts around the world.",
+        "truncated": false,
+        "fullLength": 106
+      },
+      "source": "us_government_manual",
+      "nameAlias": null,
+      "nodeName": "United States Institute of Peace",
+      "listedName": "United States Institute of Peace",
+      "entityId": "188",
+      "parentListedName": null,
+      "parentEntityId": null,
+      "package": "GOVMAN-2025-12-31",
+      "edition": "2025-12-31",
+      "granule": "GOVMAN-2025-12-31-188",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-188",
+      "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     }
   },
   "offices": {
@@ -4807,13 +5143,13 @@
   },
   "officesReport": {
     "top_level_entries_considered": 105,
-    "refused_entry_is_an_agency": 67,
-    "refused_name_reaches_no_post": 35,
+    "refused_entry_is_an_agency": 83,
+    "refused_name_reaches_no_post": 19,
     "refused_name_reaches_several_posts": 0,
     "refused_post_reached_by_several_entries": 0,
     "refused_post_sits_under_a_manual_agency": 0,
     "refused_no_access_id": 0,
-    "refused_caps_row_is_not_the_entrys_own_name": 32,
+    "refused_caps_row_is_not_the_entrys_own_name": 16,
     "offices_listed": 2,
     "offices_matched_by_alias": 1
   }

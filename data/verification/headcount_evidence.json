@@ -28,7 +28,7 @@
       }
     ],
     "agencies": 115,
-    "agencies_matched": 59,
+    "agencies_matched": 74,
     "subagencies_matched": 105,
     "total_employees": 2289472,
     "agency_total_rows_found": 0,
@@ -96,21 +96,9 @@
         "rows": 3
       },
       {
-        "agencyCode": "TC",
-        "listedName": "U.S. INTERNATIONAL TRADE COMMISSION",
-        "employees": 443,
-        "rows": 1
-      },
-      {
         "agencyCode": "GJ",
         "listedName": "PRESIDIO TRUST",
         "employees": 332,
-        "rows": 1
-      },
-      {
-        "agencyCode": "RH",
-        "listedName": "ARMED FORCES RETIREMENT HOME",
-        "employees": 311,
         "rows": 1
       },
       {
@@ -129,42 +117,6 @@
         "agencyCode": "FM",
         "listedName": "FED MEDIATION AND CONCILIATION SERVICE",
         "employees": 205,
-        "rows": 1
-      },
-      {
-        "agencyCode": "TW",
-        "listedName": "SURFACE TRANSPORTATION BOARD",
-        "employees": 126,
-        "rows": 1
-      },
-      {
-        "agencyCode": "BF",
-        "listedName": "DEFENSE NUCLEAR FACILITIES SAFETY BOARD",
-        "employees": 112,
-        "rows": 1
-      },
-      {
-        "agencyCode": "HD",
-        "listedName": "U.S. HOLOCAUST MEMORIAL MUSEUM",
-        "employees": 109,
-        "rows": 1
-      },
-      {
-        "agencyCode": "GG",
-        "listedName": "OFFICE OF GOVERNMENT ETHICS",
-        "employees": 72,
-        "rows": 1
-      },
-      {
-        "agencyCode": "CC",
-        "listedName": "COMMISSION ON CIVIL RIGHTS",
-        "employees": 60,
-        "rows": 1
-      },
-      {
-        "agencyCode": "EW",
-        "listedName": "TRADE AND DEVELOPMENT AGENCY",
-        "employees": 59,
         "rows": 1
       },
       {
@@ -216,21 +168,9 @@
         "rows": 1
       },
       {
-        "agencyCode": "IF",
-        "listedName": "INTER-AMERICAN FOUNDATION",
-        "employees": 36,
-        "rows": 1
-      },
-      {
         "agencyCode": "HB",
         "listedName": "CMTE FOR PURCH FRM PPLE BLIND OR SEV DIS",
         "employees": 35,
-        "rows": 1
-      },
-      {
-        "agencyCode": "AN",
-        "listedName": "AFRICAN DEVELOPMENT FOUNDATION",
-        "employees": 32,
         "rows": 1
       },
       {
@@ -252,12 +192,6 @@
         "rows": 1
       },
       {
-        "agencyCode": "MA",
-        "listedName": "MARINE MAMMAL COMMISSION",
-        "employees": 23,
-        "rows": 1
-      },
-      {
         "agencyCode": "EQ",
         "listedName": "COUNCIL ON ENVIR QUAL/OFC OF ENVIR QUAL",
         "employees": 23,
@@ -267,12 +201,6 @@
         "agencyCode": "GC",
         "listedName": "GULF COAST ECOSYSTEM RESTORATION COUNCIL",
         "employees": 23,
-        "rows": 1
-      },
-      {
-        "agencyCode": "BW",
-        "listedName": "NUCLEAR WASTE TECHNICAL REVIEW BOARD",
-        "employees": 22,
         "rows": 1
       },
       {
@@ -300,12 +228,6 @@
         "rows": 1
       },
       {
-        "agencyCode": "NK",
-        "listedName": "NATIONAL COUNCIL ON DISABILITY",
-        "employees": 18,
-        "rows": 1
-      },
-      {
         "agencyCode": "CX",
         "listedName": "NAT CMSN ON LIBRARIES AND INFO SCIENCE",
         "employees": 17,
@@ -327,18 +249,6 @@
         "agencyCode": "RE",
         "listedName": "OFC OF NAVAJO AND HOPI INDIAN RELOCATION",
         "employees": 16,
-        "rows": 1
-      },
-      {
-        "agencyCode": "HW",
-        "listedName": "U.S. INTERAGENCY COUNCIL ON HOMELESSNESS",
-        "employees": 13,
-        "rows": 1
-      },
-      {
-        "agencyCode": "CF",
-        "listedName": "COMMISSION OF FINE ARTS",
-        "employees": 12,
         "rows": 1
       },
       {
@@ -562,6 +472,14 @@
         "agencyRows": 1
       },
       {
+        "agencyCode": "TC",
+        "subagencyCode": "TC00",
+        "listedName": "U.S. INTERNATIONAL TRADE COMMISSION",
+        "employees": 443,
+        "carriedBy": "exec-ind-misc-international-trade-commission",
+        "agencyRows": 1
+      },
+      {
         "agencyCode": "TB",
         "subagencyCode": "TB00",
         "listedName": "NATIONAL TRANSPORTATION SAFETY BOARD",
@@ -591,6 +509,14 @@
         "listedName": "FARM CREDIT ADMINISTRATION",
         "employees": 333,
         "carriedBy": "exec-ind-misc-farm-credit-administration",
+        "agencyRows": 1
+      },
+      {
+        "agencyCode": "RH",
+        "subagencyCode": "RH00",
+        "listedName": "ARMED FORCES RETIREMENT HOME",
+        "employees": 311,
+        "carriedBy": "exec-ind-misc-armed-forces-retirement-home",
         "agencyRows": 1
       },
       {
@@ -642,11 +568,35 @@
         "agencyRows": 1
       },
       {
+        "agencyCode": "TW",
+        "subagencyCode": "TW00",
+        "listedName": "SURFACE TRANSPORTATION BOARD",
+        "employees": 126,
+        "carriedBy": "exec-ind-misc-surface-transportation-board",
+        "agencyRows": 1
+      },
+      {
         "agencyCode": "FW",
         "subagencyCode": "FW00",
         "listedName": "OFFICE OF SPECIAL COUNSEL",
         "employees": 123,
         "carriedBy": "exec-ind-misc-office-of-special-counsel-osc",
+        "agencyRows": 1
+      },
+      {
+        "agencyCode": "BF",
+        "subagencyCode": "BF00",
+        "listedName": "DEFENSE NUCLEAR FACILITIES SAFETY BOARD",
+        "employees": 112,
+        "carriedBy": "exec-ind-misc-defense-nuclear-facilities-safety-board",
+        "agencyRows": 1
+      },
+      {
+        "agencyCode": "HD",
+        "subagencyCode": "HD00",
+        "listedName": "U.S. HOLOCAUST MEMORIAL MUSEUM",
+        "employees": 109,
+        "carriedBy": "exec-ind-misc-holocaust-memorial-museum",
         "agencyRows": 1
       },
       {
@@ -682,6 +632,30 @@
         "agencyRows": 1
       },
       {
+        "agencyCode": "GG",
+        "subagencyCode": "GG00",
+        "listedName": "OFFICE OF GOVERNMENT ETHICS",
+        "employees": 72,
+        "carriedBy": "exec-ind-misc-office-of-government-ethics",
+        "agencyRows": 1
+      },
+      {
+        "agencyCode": "CC",
+        "subagencyCode": "CC00",
+        "listedName": "COMMISSION ON CIVIL RIGHTS",
+        "employees": 60,
+        "carriedBy": "exec-ind-misc-commission-on-civil-rights",
+        "agencyRows": 1
+      },
+      {
+        "agencyCode": "EW",
+        "subagencyCode": "EW00",
+        "listedName": "TRADE AND DEVELOPMENT AGENCY",
+        "employees": 59,
+        "carriedBy": "exec-ind-misc-trade-and-development-agency",
+        "agencyRows": 1
+      },
+      {
         "agencyCode": "QQ",
         "subagencyCode": "QQ00",
         "listedName": "OFFICE OF NATIONAL DRUG CONTROL POLICY",
@@ -698,11 +672,43 @@
         "agencyRows": 1
       },
       {
+        "agencyCode": "IF",
+        "subagencyCode": "IF00",
+        "listedName": "INTER-AMERICAN FOUNDATION",
+        "employees": 36,
+        "carriedBy": "exec-ind-misc-inter-american-foundation",
+        "agencyRows": 1
+      },
+      {
         "agencyCode": "NP",
         "subagencyCode": "NP00",
         "listedName": "NATIONAL CAPITAL PLANNING COMMISSION",
         "employees": 35,
         "carriedBy": "exec-ind-misc-national-capital-planning-commission-ncpc",
+        "agencyRows": 1
+      },
+      {
+        "agencyCode": "AN",
+        "subagencyCode": "AN00",
+        "listedName": "AFRICAN DEVELOPMENT FOUNDATION",
+        "employees": 32,
+        "carriedBy": "exec-ind-misc-african-development-foundation",
+        "agencyRows": 1
+      },
+      {
+        "agencyCode": "MA",
+        "subagencyCode": "MA00",
+        "listedName": "MARINE MAMMAL COMMISSION",
+        "employees": 23,
+        "carriedBy": "exec-ind-misc-marine-mammal-commission",
+        "agencyRows": 1
+      },
+      {
+        "agencyCode": "BW",
+        "subagencyCode": "BW00",
+        "listedName": "NUCLEAR WASTE TECHNICAL REVIEW BOARD",
+        "employees": 22,
+        "carriedBy": "exec-ind-misc-nuclear-waste-technical-review-board",
         "agencyRows": 1
       },
       {
@@ -714,11 +720,35 @@
         "agencyRows": 1
       },
       {
+        "agencyCode": "NK",
+        "subagencyCode": "NK00",
+        "listedName": "NATIONAL COUNCIL ON DISABILITY",
+        "employees": 18,
+        "carriedBy": "exec-ind-misc-national-council-on-disability",
+        "agencyRows": 1
+      },
+      {
         "agencyCode": "CE",
         "subagencyCode": "CE00",
         "listedName": "COUNCIL OF ECONOMIC ADVISERS",
         "employees": 17,
         "carriedBy": "exec-eop-cea",
+        "agencyRows": 1
+      },
+      {
+        "agencyCode": "HW",
+        "subagencyCode": "HW00",
+        "listedName": "U.S. INTERAGENCY COUNCIL ON HOMELESSNESS",
+        "employees": 13,
+        "carriedBy": "exec-ind-misc-interagency-council-on-homelessness",
+        "agencyRows": 1
+      },
+      {
+        "agencyCode": "CF",
+        "subagencyCode": "CF00",
+        "listedName": "COMMISSION OF FINE ARTS",
+        "employees": 12,
+        "carriedBy": "exec-ind-misc-commission-of-fine-arts",
         "agencyRows": 1
       }
     ],
@@ -859,6 +889,17 @@
         "reason": "its agency matched no node, so the placement is unverified"
       },
       {
+        "agencyCode": "RF",
+        "agencyListedName": "FED RETIREMENT THRIFT INVESTMENT BOARD",
+        "subagencyCode": "RF00",
+        "listedName": "FEDERAL RETIREMENT THRIFT INVESTMENT BOARD",
+        "employees": 236,
+        "nodes": [
+          "exec-ind-misc-federal-retirement-thrift-investment-board"
+        ],
+        "reason": "its agency matched no node, so the placement is unverified"
+      },
+      {
         "agencyCode": "AH",
         "agencyListedName": "NAT FOUNDATION ON ARTS AND HUMANITIES",
         "subagencyCode": "AH02",
@@ -866,6 +907,17 @@
         "employees": 208,
         "nodes": [
           "exec-ind-misc-national-endowment-for-the-humanities-neh"
+        ],
+        "reason": "its agency matched no node, so the placement is unverified"
+      },
+      {
+        "agencyCode": "FM",
+        "agencyListedName": "FED MEDIATION AND CONCILIATION SERVICE",
+        "subagencyCode": "FM00",
+        "listedName": "FEDERAL MEDIATION AND CONCILIATION SERVICE",
+        "employees": 205,
+        "nodes": [
+          "exec-ind-misc-federal-mediation-and-conciliation-service"
         ],
         "reason": "its agency matched no node, so the placement is unverified"
       },
@@ -892,6 +944,50 @@
         "reason": "its agency matched no node, so the placement is unverified"
       },
       {
+        "agencyCode": "HP",
+        "agencyListedName": "ADV COUNCIL ON HISTORIC PRESERVATION",
+        "subagencyCode": "HP00",
+        "listedName": "ADVISORY COUNCIL ON HISTORIC PRESERVATION",
+        "employees": 55,
+        "nodes": [
+          "exec-ind-misc-advisory-council-on-historic-preservation"
+        ],
+        "reason": "its agency matched no node, so the placement is unverified"
+      },
+      {
+        "agencyCode": "RS",
+        "agencyListedName": "FED MINE SAFETY AND HEALTH REVIEW CMSN",
+        "subagencyCode": "RS00",
+        "listedName": "FEDERAL MINE SAFETY AND HEALTH REVIEW COMMISSION",
+        "employees": 55,
+        "nodes": [
+          "exec-ind-misc-federal-mine-safety-and-health-review-commission"
+        ],
+        "reason": "its agency matched no node, so the placement is unverified"
+      },
+      {
+        "agencyCode": "OS",
+        "agencyListedName": "OCCUPATIONAL SAFETY & HEALTH REVIEW CMSN",
+        "subagencyCode": "OS00",
+        "listedName": "OCCUPATIONAL SAFETY AND HEALTH REVIEW COMMISSION",
+        "employees": 49,
+        "nodes": [
+          "exec-ind-misc-occupational-safety-and-health-review-commission"
+        ],
+        "reason": "its agency matched no node, so the placement is unverified"
+      },
+      {
+        "agencyCode": "RO",
+        "agencyListedName": "MEDICAID & CHIP PAYMENT & ACCESS COMM",
+        "subagencyCode": "RO00",
+        "listedName": "MEDICAID AND CHIP PAYMENT AND ACCESS COMMISSION",
+        "employees": 47,
+        "nodes": [
+          "exec-ind-misc-macpac"
+        ],
+        "reason": "its agency matched no node, so the placement is unverified"
+      },
+      {
         "agencyCode": "FJ",
         "agencyListedName": "CHEMICAL SAFETY/HAZARD INVESTIGATION BD",
         "subagencyCode": "FJ00",
@@ -910,6 +1006,39 @@
         "employees": 36,
         "nodes": [
           "exec-ind-misc-privacy-civil-liberties-oversight-board-pclob"
+        ],
+        "reason": "its agency matched no node, so the placement is unverified"
+      },
+      {
+        "agencyCode": "IG",
+        "agencyListedName": "COUNCIL OF INSP. GEN. ON INTEG.& EFFIC.",
+        "subagencyCode": "IG00",
+        "listedName": "COUNCIL OF THE INSPECTORS GENERAL ON INTEGRITY AND EFFICIENCY",
+        "employees": 31,
+        "nodes": [
+          "exec-ind-misc-cigie"
+        ],
+        "reason": "its agency matched no node, so the placement is unverified"
+      },
+      {
+        "agencyCode": "BH",
+        "agencyListedName": "CMSN FOR PRES OF AMERICA'S HERITAGE ABRD",
+        "subagencyCode": "BH00",
+        "listedName": "COMMISSION FOR THE PRESERVATION OF AMERICA'S HERITAGE ABROAD",
+        "employees": 18,
+        "nodes": [
+          "exec-ind-misc-heritage-abroad-commission"
+        ],
+        "reason": "its agency matched no node, so the placement is unverified"
+      },
+      {
+        "agencyCode": "UJ",
+        "agencyListedName": "JAPAN-UNITED STATES FRIENDSHIP CMSN",
+        "subagencyCode": "UJ00",
+        "listedName": "JAPAN-UNITED STATES FRIENDSHIP COMMISSION",
+        "employees": 12,
+        "nodes": [
+          "exec-ind-misc-japan-united-states-friendship-commission"
         ],
         "reason": "its agency matched no node, so the placement is unverified"
       }
@@ -959,7 +1088,9 @@
       "legislative branch",
       "national security division",
       "subcommittee on energy",
+      "subcommittee on environment",
       "subcommittee on health",
+      "subcommittee on oversight",
       "subcommittee on oversight and investigations",
       "transportation housing and urban development and related agencies",
       "va medical centers"
@@ -1140,7 +1271,7 @@
         "employees": 12267
       }
     ],
-    "matched_employees": 1653484,
+    "matched_employees": 1654932,
     "unmatched_subagencies": [
       {
         "agencyCode": "AF",
@@ -2303,7 +2434,7 @@
           "direction": "opm_higher"
         }
       ],
-      "no_curated_figure": 36,
+      "no_curated_figure": 51,
       "no_curated_figure_nodes": [
         {
           "node": "exec-independent-general-services-administration",
@@ -2414,6 +2545,12 @@
           "curatedText": null
         },
         {
+          "node": "exec-ind-misc-international-trade-commission",
+          "name": "United States International Trade Commission",
+          "opm": 443,
+          "curatedText": null
+        },
+        {
           "node": "exec-dept-defense-agency-national-defense-university",
           "name": "National Defense University",
           "opm": 431,
@@ -2429,6 +2566,12 @@
           "node": "exec-ind-misc-millennium-challenge-corporation",
           "name": "Millennium Challenge Corporation",
           "opm": 346,
+          "curatedText": null
+        },
+        {
+          "node": "exec-ind-misc-armed-forces-retirement-home",
+          "name": "Armed Forces Retirement Home",
+          "opm": 311,
           "curatedText": null
         },
         {
@@ -2480,15 +2623,51 @@
           "curatedText": null
         },
         {
+          "node": "exec-ind-misc-surface-transportation-board",
+          "name": "Surface Transportation Board",
+          "opm": 126,
+          "curatedText": null
+        },
+        {
           "node": "exec-dept-dot-great-lakes-saint-lawrence-seaway-development-corporatio",
           "name": "Great Lakes Saint Lawrence Seaway Development Corporation",
           "opm": 125,
           "curatedText": null
         },
         {
+          "node": "exec-ind-misc-defense-nuclear-facilities-safety-board",
+          "name": "Defense Nuclear Facilities Safety Board",
+          "opm": 112,
+          "curatedText": null
+        },
+        {
+          "node": "exec-ind-misc-holocaust-memorial-museum",
+          "name": "United States Holocaust Memorial Museum",
+          "opm": 109,
+          "curatedText": null
+        },
+        {
           "node": "exec-eop-nsc",
           "name": "National Security Council",
           "opm": 76,
+          "curatedText": null
+        },
+        {
+          "node": "exec-ind-misc-office-of-government-ethics",
+          "name": "United States Office of Government Ethics",
+          "opm": 72,
+          "curatedText": null
+        },
+        {
+          "node": "exec-ind-misc-commission-on-civil-rights",
+          "name": "United States Commission on Civil Rights",
+          "opm": 60,
+          "curatedText": null
+        },
+        {
+          "node": "exec-ind-misc-trade-and-development-agency",
+          "name": "United States Trade and Development Agency",
+          "opm": 59,
           "curatedText": null
         },
         {
@@ -2516,9 +2695,51 @@
           "curatedText": null
         },
         {
+          "node": "exec-ind-misc-inter-american-foundation",
+          "name": "Inter-American Foundation",
+          "opm": 36,
+          "curatedText": null
+        },
+        {
           "node": "exec-dept-doc-national-technical-information-service",
           "name": "National Technical Information Service",
           "opm": 34,
+          "curatedText": null
+        },
+        {
+          "node": "exec-ind-misc-african-development-foundation",
+          "name": "United States African Development Foundation",
+          "opm": 32,
+          "curatedText": null
+        },
+        {
+          "node": "exec-ind-misc-marine-mammal-commission",
+          "name": "Marine Mammal Commission",
+          "opm": 23,
+          "curatedText": null
+        },
+        {
+          "node": "exec-ind-misc-nuclear-waste-technical-review-board",
+          "name": "Nuclear Waste Technical Review Board",
+          "opm": 22,
+          "curatedText": null
+        },
+        {
+          "node": "exec-ind-misc-national-council-on-disability",
+          "name": "National Council on Disability",
+          "opm": 18,
+          "curatedText": null
+        },
+        {
+          "node": "exec-ind-misc-interagency-council-on-homelessness",
+          "name": "United States Interagency Council on Homelessness",
+          "opm": 13,
+          "curatedText": null
+        },
+        {
+          "node": "exec-ind-misc-commission-of-fine-arts",
+          "name": "United States Commission of Fine Arts",
+          "opm": 12,
           "curatedText": null
         }
       ],
@@ -6426,6 +6647,38 @@
         "employees": 508
       }
     },
+    "exec-ind-misc-international-trade-commission": {
+      "source": "opm_fedscope_employment",
+      "status": "listed",
+      "period": "2025-03",
+      "coverage": "EHRI includes data related to Federal civilian employees in the Executive Branch excluding some agencies such as the U.S. Postal Service and intelligence agencies. The Employment dataset only includes Federal employees in an active pay status.",
+      "coverageSource": "OPM, (Preliminary) March 2025 Employment Dataset data dictionary, Overview",
+      "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+      "checkedAt": "2026-09-08T19:50:51Z",
+      "file": "tests/fixtures/opm/fedscope/fedscope_employment_summary_2025-03.zip",
+      "level": "agency",
+      "listedName": "U.S. INTERNATIONAL TRADE COMMISSION",
+      "agencyCode": "TC",
+      "subagencyCode": null,
+      "employees": 443,
+      "subagencyRows": 1,
+      "components": [
+        {
+          "subagencyCode": "TC00",
+          "listedName": "U.S. INTERNATIONAL TRADE COMMISSION",
+          "employees": 443
+        }
+      ],
+      "previous": {
+        "period": "2024-09",
+        "employees": 440
+      },
+      "selfNamedRow": {
+        "subagencyCode": "TC00",
+        "listedName": "U.S. INTERNATIONAL TRADE COMMISSION",
+        "employees": 443
+      }
+    },
     "exec-ind-misc-national-transportation-safety-board-ntsb": {
       "source": "opm_fedscope_employment",
       "status": "listed",
@@ -6552,6 +6805,38 @@
         "subagencyCode": "FL00",
         "listedName": "FARM CREDIT ADMINISTRATION",
         "employees": 333
+      }
+    },
+    "exec-ind-misc-armed-forces-retirement-home": {
+      "source": "opm_fedscope_employment",
+      "status": "listed",
+      "period": "2025-03",
+      "coverage": "EHRI includes data related to Federal civilian employees in the Executive Branch excluding some agencies such as the U.S. Postal Service and intelligence agencies. The Employment dataset only includes Federal employees in an active pay status.",
+      "coverageSource": "OPM, (Preliminary) March 2025 Employment Dataset data dictionary, Overview",
+      "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+      "checkedAt": "2026-09-08T19:50:51Z",
+      "file": "tests/fixtures/opm/fedscope/fedscope_employment_summary_2025-03.zip",
+      "level": "agency",
+      "listedName": "ARMED FORCES RETIREMENT HOME",
+      "agencyCode": "RH",
+      "subagencyCode": null,
+      "employees": 311,
+      "subagencyRows": 1,
+      "components": [
+        {
+          "subagencyCode": "RH00",
+          "listedName": "ARMED FORCES RETIREMENT HOME",
+          "employees": 311
+        }
+      ],
+      "previous": {
+        "period": "2024-09",
+        "employees": 310
+      },
+      "selfNamedRow": {
+        "subagencyCode": "RH00",
+        "listedName": "ARMED FORCES RETIREMENT HOME",
+        "employees": 311
       }
     },
     "exec-ind-misc-federal-election-commission-fec": {
@@ -6746,6 +7031,38 @@
         "employees": 131
       }
     },
+    "exec-ind-misc-surface-transportation-board": {
+      "source": "opm_fedscope_employment",
+      "status": "listed",
+      "period": "2025-03",
+      "coverage": "EHRI includes data related to Federal civilian employees in the Executive Branch excluding some agencies such as the U.S. Postal Service and intelligence agencies. The Employment dataset only includes Federal employees in an active pay status.",
+      "coverageSource": "OPM, (Preliminary) March 2025 Employment Dataset data dictionary, Overview",
+      "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+      "checkedAt": "2026-09-08T19:50:51Z",
+      "file": "tests/fixtures/opm/fedscope/fedscope_employment_summary_2025-03.zip",
+      "level": "agency",
+      "listedName": "SURFACE TRANSPORTATION BOARD",
+      "agencyCode": "TW",
+      "subagencyCode": null,
+      "employees": 126,
+      "subagencyRows": 1,
+      "components": [
+        {
+          "subagencyCode": "TW00",
+          "listedName": "SURFACE TRANSPORTATION BOARD",
+          "employees": 126
+        }
+      ],
+      "previous": {
+        "period": "2024-09",
+        "employees": 121
+      },
+      "selfNamedRow": {
+        "subagencyCode": "TW00",
+        "listedName": "SURFACE TRANSPORTATION BOARD",
+        "employees": 126
+      }
+    },
     "exec-ind-misc-office-of-special-counsel-osc": {
       "source": "opm_fedscope_employment",
       "status": "listed",
@@ -6776,6 +7093,70 @@
         "subagencyCode": "FW00",
         "listedName": "OFFICE OF SPECIAL COUNSEL",
         "employees": 123
+      }
+    },
+    "exec-ind-misc-defense-nuclear-facilities-safety-board": {
+      "source": "opm_fedscope_employment",
+      "status": "listed",
+      "period": "2025-03",
+      "coverage": "EHRI includes data related to Federal civilian employees in the Executive Branch excluding some agencies such as the U.S. Postal Service and intelligence agencies. The Employment dataset only includes Federal employees in an active pay status.",
+      "coverageSource": "OPM, (Preliminary) March 2025 Employment Dataset data dictionary, Overview",
+      "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+      "checkedAt": "2026-09-08T19:50:51Z",
+      "file": "tests/fixtures/opm/fedscope/fedscope_employment_summary_2025-03.zip",
+      "level": "agency",
+      "listedName": "DEFENSE NUCLEAR FACILITIES SAFETY BOARD",
+      "agencyCode": "BF",
+      "subagencyCode": null,
+      "employees": 112,
+      "subagencyRows": 1,
+      "components": [
+        {
+          "subagencyCode": "BF00",
+          "listedName": "DEFENSE NUCLEAR FACILITIES SAFETY BOARD",
+          "employees": 112
+        }
+      ],
+      "previous": {
+        "period": "2024-09",
+        "employees": 108
+      },
+      "selfNamedRow": {
+        "subagencyCode": "BF00",
+        "listedName": "DEFENSE NUCLEAR FACILITIES SAFETY BOARD",
+        "employees": 112
+      }
+    },
+    "exec-ind-misc-holocaust-memorial-museum": {
+      "source": "opm_fedscope_employment",
+      "status": "listed",
+      "period": "2025-03",
+      "coverage": "EHRI includes data related to Federal civilian employees in the Executive Branch excluding some agencies such as the U.S. Postal Service and intelligence agencies. The Employment dataset only includes Federal employees in an active pay status.",
+      "coverageSource": "OPM, (Preliminary) March 2025 Employment Dataset data dictionary, Overview",
+      "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+      "checkedAt": "2026-09-08T19:50:51Z",
+      "file": "tests/fixtures/opm/fedscope/fedscope_employment_summary_2025-03.zip",
+      "level": "agency",
+      "listedName": "U.S. HOLOCAUST MEMORIAL MUSEUM",
+      "agencyCode": "HD",
+      "subagencyCode": null,
+      "employees": 109,
+      "subagencyRows": 1,
+      "components": [
+        {
+          "subagencyCode": "HD00",
+          "listedName": "U.S. HOLOCAUST MEMORIAL MUSEUM",
+          "employees": 109
+        }
+      ],
+      "previous": {
+        "period": "2024-09",
+        "employees": 111
+      },
+      "selfNamedRow": {
+        "subagencyCode": "HD00",
+        "listedName": "U.S. HOLOCAUST MEMORIAL MUSEUM",
+        "employees": 109
       }
     },
     "exec-ind-misc-federal-labor-relations-authority-flra": {
@@ -6906,6 +7287,102 @@
         "employees": 76
       }
     },
+    "exec-ind-misc-office-of-government-ethics": {
+      "source": "opm_fedscope_employment",
+      "status": "listed",
+      "period": "2025-03",
+      "coverage": "EHRI includes data related to Federal civilian employees in the Executive Branch excluding some agencies such as the U.S. Postal Service and intelligence agencies. The Employment dataset only includes Federal employees in an active pay status.",
+      "coverageSource": "OPM, (Preliminary) March 2025 Employment Dataset data dictionary, Overview",
+      "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+      "checkedAt": "2026-09-08T19:50:51Z",
+      "file": "tests/fixtures/opm/fedscope/fedscope_employment_summary_2025-03.zip",
+      "level": "agency",
+      "listedName": "OFFICE OF GOVERNMENT ETHICS",
+      "agencyCode": "GG",
+      "subagencyCode": null,
+      "employees": 72,
+      "subagencyRows": 1,
+      "components": [
+        {
+          "subagencyCode": "GG00",
+          "listedName": "OFFICE OF GOVERNMENT ETHICS",
+          "employees": 72
+        }
+      ],
+      "previous": {
+        "period": "2024-09",
+        "employees": 74
+      },
+      "selfNamedRow": {
+        "subagencyCode": "GG00",
+        "listedName": "OFFICE OF GOVERNMENT ETHICS",
+        "employees": 72
+      }
+    },
+    "exec-ind-misc-commission-on-civil-rights": {
+      "source": "opm_fedscope_employment",
+      "status": "listed",
+      "period": "2025-03",
+      "coverage": "EHRI includes data related to Federal civilian employees in the Executive Branch excluding some agencies such as the U.S. Postal Service and intelligence agencies. The Employment dataset only includes Federal employees in an active pay status.",
+      "coverageSource": "OPM, (Preliminary) March 2025 Employment Dataset data dictionary, Overview",
+      "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+      "checkedAt": "2026-09-08T19:50:51Z",
+      "file": "tests/fixtures/opm/fedscope/fedscope_employment_summary_2025-03.zip",
+      "level": "agency",
+      "listedName": "COMMISSION ON CIVIL RIGHTS",
+      "agencyCode": "CC",
+      "subagencyCode": null,
+      "employees": 60,
+      "subagencyRows": 1,
+      "components": [
+        {
+          "subagencyCode": "CC00",
+          "listedName": "COMMISSION ON CIVIL RIGHTS",
+          "employees": 60
+        }
+      ],
+      "previous": {
+        "period": "2024-09",
+        "employees": 62
+      },
+      "selfNamedRow": {
+        "subagencyCode": "CC00",
+        "listedName": "COMMISSION ON CIVIL RIGHTS",
+        "employees": 60
+      }
+    },
+    "exec-ind-misc-trade-and-development-agency": {
+      "source": "opm_fedscope_employment",
+      "status": "listed",
+      "period": "2025-03",
+      "coverage": "EHRI includes data related to Federal civilian employees in the Executive Branch excluding some agencies such as the U.S. Postal Service and intelligence agencies. The Employment dataset only includes Federal employees in an active pay status.",
+      "coverageSource": "OPM, (Preliminary) March 2025 Employment Dataset data dictionary, Overview",
+      "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+      "checkedAt": "2026-09-08T19:50:51Z",
+      "file": "tests/fixtures/opm/fedscope/fedscope_employment_summary_2025-03.zip",
+      "level": "agency",
+      "listedName": "TRADE AND DEVELOPMENT AGENCY",
+      "agencyCode": "EW",
+      "subagencyCode": null,
+      "employees": 59,
+      "subagencyRows": 1,
+      "components": [
+        {
+          "subagencyCode": "EW00",
+          "listedName": "TRADE AND DEVELOPMENT AGENCY",
+          "employees": 59
+        }
+      ],
+      "previous": {
+        "period": "2024-09",
+        "employees": 70
+      },
+      "selfNamedRow": {
+        "subagencyCode": "EW00",
+        "listedName": "TRADE AND DEVELOPMENT AGENCY",
+        "employees": 59
+      }
+    },
     "exec-eop-ondcp": {
       "source": "opm_fedscope_employment",
       "status": "listed",
@@ -6970,6 +7447,38 @@
         "employees": 38
       }
     },
+    "exec-ind-misc-inter-american-foundation": {
+      "source": "opm_fedscope_employment",
+      "status": "listed",
+      "period": "2025-03",
+      "coverage": "EHRI includes data related to Federal civilian employees in the Executive Branch excluding some agencies such as the U.S. Postal Service and intelligence agencies. The Employment dataset only includes Federal employees in an active pay status.",
+      "coverageSource": "OPM, (Preliminary) March 2025 Employment Dataset data dictionary, Overview",
+      "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+      "checkedAt": "2026-09-08T19:50:51Z",
+      "file": "tests/fixtures/opm/fedscope/fedscope_employment_summary_2025-03.zip",
+      "level": "agency",
+      "listedName": "INTER-AMERICAN FOUNDATION",
+      "agencyCode": "IF",
+      "subagencyCode": null,
+      "employees": 36,
+      "subagencyRows": 1,
+      "components": [
+        {
+          "subagencyCode": "IF00",
+          "listedName": "INTER-AMERICAN FOUNDATION",
+          "employees": 36
+        }
+      ],
+      "previous": {
+        "period": "2024-09",
+        "employees": 45
+      },
+      "selfNamedRow": {
+        "subagencyCode": "IF00",
+        "listedName": "INTER-AMERICAN FOUNDATION",
+        "employees": 36
+      }
+    },
     "exec-ind-misc-national-capital-planning-commission-ncpc": {
       "source": "opm_fedscope_employment",
       "status": "listed",
@@ -7000,6 +7509,102 @@
         "subagencyCode": "NP00",
         "listedName": "NATIONAL CAPITAL PLANNING COMMISSION",
         "employees": 35
+      }
+    },
+    "exec-ind-misc-african-development-foundation": {
+      "source": "opm_fedscope_employment",
+      "status": "listed",
+      "period": "2025-03",
+      "coverage": "EHRI includes data related to Federal civilian employees in the Executive Branch excluding some agencies such as the U.S. Postal Service and intelligence agencies. The Employment dataset only includes Federal employees in an active pay status.",
+      "coverageSource": "OPM, (Preliminary) March 2025 Employment Dataset data dictionary, Overview",
+      "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+      "checkedAt": "2026-09-08T19:50:51Z",
+      "file": "tests/fixtures/opm/fedscope/fedscope_employment_summary_2025-03.zip",
+      "level": "agency",
+      "listedName": "AFRICAN DEVELOPMENT FOUNDATION",
+      "agencyCode": "AN",
+      "subagencyCode": null,
+      "employees": 32,
+      "subagencyRows": 1,
+      "components": [
+        {
+          "subagencyCode": "AN00",
+          "listedName": "AFRICAN DEVELOPMENT FOUNDATION",
+          "employees": 32
+        }
+      ],
+      "previous": {
+        "period": "2024-09",
+        "employees": 30
+      },
+      "selfNamedRow": {
+        "subagencyCode": "AN00",
+        "listedName": "AFRICAN DEVELOPMENT FOUNDATION",
+        "employees": 32
+      }
+    },
+    "exec-ind-misc-marine-mammal-commission": {
+      "source": "opm_fedscope_employment",
+      "status": "listed",
+      "period": "2025-03",
+      "coverage": "EHRI includes data related to Federal civilian employees in the Executive Branch excluding some agencies such as the U.S. Postal Service and intelligence agencies. The Employment dataset only includes Federal employees in an active pay status.",
+      "coverageSource": "OPM, (Preliminary) March 2025 Employment Dataset data dictionary, Overview",
+      "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+      "checkedAt": "2026-09-08T19:50:51Z",
+      "file": "tests/fixtures/opm/fedscope/fedscope_employment_summary_2025-03.zip",
+      "level": "agency",
+      "listedName": "MARINE MAMMAL COMMISSION",
+      "agencyCode": "MA",
+      "subagencyCode": null,
+      "employees": 23,
+      "subagencyRows": 1,
+      "components": [
+        {
+          "subagencyCode": "MA00",
+          "listedName": "MARINE MAMMAL COMMISSION",
+          "employees": 23
+        }
+      ],
+      "previous": {
+        "period": "2024-09",
+        "employees": 24
+      },
+      "selfNamedRow": {
+        "subagencyCode": "MA00",
+        "listedName": "MARINE MAMMAL COMMISSION",
+        "employees": 23
+      }
+    },
+    "exec-ind-misc-nuclear-waste-technical-review-board": {
+      "source": "opm_fedscope_employment",
+      "status": "listed",
+      "period": "2025-03",
+      "coverage": "EHRI includes data related to Federal civilian employees in the Executive Branch excluding some agencies such as the U.S. Postal Service and intelligence agencies. The Employment dataset only includes Federal employees in an active pay status.",
+      "coverageSource": "OPM, (Preliminary) March 2025 Employment Dataset data dictionary, Overview",
+      "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+      "checkedAt": "2026-09-08T19:50:51Z",
+      "file": "tests/fixtures/opm/fedscope/fedscope_employment_summary_2025-03.zip",
+      "level": "agency",
+      "listedName": "NUCLEAR WASTE TECHNICAL REVIEW BOARD",
+      "agencyCode": "BW",
+      "subagencyCode": null,
+      "employees": 22,
+      "subagencyRows": 1,
+      "components": [
+        {
+          "subagencyCode": "BW00",
+          "listedName": "NUCLEAR WASTE TECHNICAL REVIEW BOARD",
+          "employees": 22
+        }
+      ],
+      "previous": {
+        "period": "2024-09",
+        "employees": 14
+      },
+      "selfNamedRow": {
+        "subagencyCode": "BW00",
+        "listedName": "NUCLEAR WASTE TECHNICAL REVIEW BOARD",
+        "employees": 22
       }
     },
     "exec-eop-ostp": {
@@ -7034,6 +7639,38 @@
         "employees": 20
       }
     },
+    "exec-ind-misc-national-council-on-disability": {
+      "source": "opm_fedscope_employment",
+      "status": "listed",
+      "period": "2025-03",
+      "coverage": "EHRI includes data related to Federal civilian employees in the Executive Branch excluding some agencies such as the U.S. Postal Service and intelligence agencies. The Employment dataset only includes Federal employees in an active pay status.",
+      "coverageSource": "OPM, (Preliminary) March 2025 Employment Dataset data dictionary, Overview",
+      "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+      "checkedAt": "2026-09-08T19:50:51Z",
+      "file": "tests/fixtures/opm/fedscope/fedscope_employment_summary_2025-03.zip",
+      "level": "agency",
+      "listedName": "NATIONAL COUNCIL ON DISABILITY",
+      "agencyCode": "NK",
+      "subagencyCode": null,
+      "employees": 18,
+      "subagencyRows": 1,
+      "components": [
+        {
+          "subagencyCode": "NK00",
+          "listedName": "NATIONAL COUNCIL ON DISABILITY",
+          "employees": 18
+        }
+      ],
+      "previous": {
+        "period": "2024-09",
+        "employees": 19
+      },
+      "selfNamedRow": {
+        "subagencyCode": "NK00",
+        "listedName": "NATIONAL COUNCIL ON DISABILITY",
+        "employees": 18
+      }
+    },
     "exec-eop-cea": {
       "source": "opm_fedscope_employment",
       "status": "listed",
@@ -7064,6 +7701,70 @@
         "subagencyCode": "CE00",
         "listedName": "COUNCIL OF ECONOMIC ADVISERS",
         "employees": 17
+      }
+    },
+    "exec-ind-misc-interagency-council-on-homelessness": {
+      "source": "opm_fedscope_employment",
+      "status": "listed",
+      "period": "2025-03",
+      "coverage": "EHRI includes data related to Federal civilian employees in the Executive Branch excluding some agencies such as the U.S. Postal Service and intelligence agencies. The Employment dataset only includes Federal employees in an active pay status.",
+      "coverageSource": "OPM, (Preliminary) March 2025 Employment Dataset data dictionary, Overview",
+      "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+      "checkedAt": "2026-09-08T19:50:51Z",
+      "file": "tests/fixtures/opm/fedscope/fedscope_employment_summary_2025-03.zip",
+      "level": "agency",
+      "listedName": "U.S. INTERAGENCY COUNCIL ON HOMELESSNESS",
+      "agencyCode": "HW",
+      "subagencyCode": null,
+      "employees": 13,
+      "subagencyRows": 1,
+      "components": [
+        {
+          "subagencyCode": "HW00",
+          "listedName": "U.S. INTERAGENCY COUNCIL ON HOMELESSNESS",
+          "employees": 13
+        }
+      ],
+      "previous": {
+        "period": "2024-09",
+        "employees": 16
+      },
+      "selfNamedRow": {
+        "subagencyCode": "HW00",
+        "listedName": "U.S. INTERAGENCY COUNCIL ON HOMELESSNESS",
+        "employees": 13
+      }
+    },
+    "exec-ind-misc-commission-of-fine-arts": {
+      "source": "opm_fedscope_employment",
+      "status": "listed",
+      "period": "2025-03",
+      "coverage": "EHRI includes data related to Federal civilian employees in the Executive Branch excluding some agencies such as the U.S. Postal Service and intelligence agencies. The Employment dataset only includes Federal employees in an active pay status.",
+      "coverageSource": "OPM, (Preliminary) March 2025 Employment Dataset data dictionary, Overview",
+      "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+      "checkedAt": "2026-09-08T19:50:51Z",
+      "file": "tests/fixtures/opm/fedscope/fedscope_employment_summary_2025-03.zip",
+      "level": "agency",
+      "listedName": "COMMISSION OF FINE ARTS",
+      "agencyCode": "CF",
+      "subagencyCode": null,
+      "employees": 12,
+      "subagencyRows": 1,
+      "components": [
+        {
+          "subagencyCode": "CF00",
+          "listedName": "COMMISSION OF FINE ARTS",
+          "employees": 12
+        }
+      ],
+      "previous": {
+        "period": "2024-09",
+        "employees": 12
+      },
+      "selfNamedRow": {
+        "subagencyCode": "CF00",
+        "listedName": "COMMISSION OF FINE ARTS",
+        "employees": 12
       }
     },
     "exec-dept-va-vha": {

@@ -115,9 +115,19 @@ MIN_ALIAS_TOKENS = 2
 #: 80, 71 and 47 times across 76 organisations, plus the words a `.gov`
 #: footer carries as standard furniture. `rename_units_to_official_wording.py`
 #: imports this list rather than keeping a second copy.
+#: A name many units answer to identifies none of them. Both spellings of
+#: each office are listed, because `canonical_name_key` does not drop a "the"
+#: inside a name: "Office of Inspector General" and "Office of the Inspector
+#: General" are two different keys, and until 2026-09-21 only the second was
+#: refused. The `the`-less spelling is the one most agencies actually use, so
+#: the floor was open exactly where it was needed -- found while adjudicating
+#: 30 Offices of Inspector General the current Plum Book names, each of which
+#: would otherwise have cleared it (CURATION.md 18.3).
 GENERIC_NAMES = frozenset({
-    "inspector general", "office of the inspector general", "general counsel",
-    "office of the general counsel", "chief financial officer", "chief of staff",
+    "inspector general", "office of the inspector general", "office of inspector general",
+    "general counsel", "office of the general counsel", "office of general counsel",
+    "chief financial officer", "office of the chief financial officer",
+    "office of the chief information officer", "chief of staff",
     "chief information officer", "office of communications", "office of public affairs",
     "about us", "leadership", "our mission", "contact us", "headquarters",
 })

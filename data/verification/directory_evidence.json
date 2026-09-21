@@ -25,7 +25,7 @@
     "directory_url": "https://www.federalregister.gov/api/v1/agencies.json",
     "fetched_at": "2026-09-08T19:19:15Z",
     "entries": 472,
-    "matched": 170,
+    "matched": 202,
     "ambiguous_entries": [],
     "ambiguous_names_in_graph": [
       "agriculture rural development food and drug administration and related agencies",
@@ -43,7 +43,7 @@
       "transportation housing and urban development and related agencies",
       "va medical centers"
     ],
-    "placements_listed": 82,
+    "placements_listed": 83,
     "placements_ancestor": 6,
     "placements_disagree": [
       {
@@ -53,11 +53,9 @@
       }
     ],
     "placements_parent_unmatched": 3,
-    "top_level_entries": 78,
+    "top_level_entries": 109,
     "unmatched_sample": [
       "ACTION",
-      "Administrative Conference of the United States",
-      "Advisory Council on Historic Preservation",
       "Advocacy and Outreach Office",
       "Aging Administration",
       "Air Force Department",
@@ -69,8 +67,6 @@
       "Appalachian States Low-Level Radioactive Waste Commission",
       "Appraisal Subcommittee of the Federal Financial Institutions Examination Council",
       "Architectural and Transportation Barriers Compliance Board",
-      "Arctic Research Commission",
-      "Armed Forces Retirement Home",
       "Arms Control and Disarmament Agency",
       "Army Department",
       "Assassination Records Review Board",
@@ -83,10 +79,7 @@
       "Census Monitoring Board",
       "Child Support Enforcement Office",
       "Christopher Columbus Quincentenary Jubilee Commission",
-      "Civil Rights Cold Case Records Review Board",
-      "Civil Rights Commission",
       "Commercial Space Transportation Office",
-      "Commission of Fine Arts",
       "Commission on Immigration Reform",
       "Commission on Protecting and Reducing Government Secrecy",
       "Commission on Review of Overseas Military Facility Structure of the United States",
@@ -106,15 +99,22 @@
       "Copyright Royalty Board",
       "Copyright Royalty Judges",
       "Corporation for National and Community Service",
-      "Council of the Inspectors General on Integrity and Efficiency",
-      "Council on Environmental Quality",
       "Counsel to the President",
-      "Court Services and Offender Supervision Agency for the District of Columbia",
       "Crime and Security in U.S. Seaports, Interagency Commission",
       "Customs Service",
       "Defense Acquisition Regulations System",
       "Defense Base Closure and Realignment Commission",
-      "Defense Criminal Investigative Service"
+      "Defense Criminal Investigative Service",
+      "Defense Investigative Service",
+      "Defense Mapping Agency",
+      "Defense Special Weapons Agency",
+      "Delaware River Basin Commission",
+      "Denali Commission",
+      "Disability Employment Policy Office",
+      "Economic Analysis Staff",
+      "Economic Research Service",
+      "Economics and Statistics Administration",
+      "Electronic Commerce Advisory Commission"
     ]
   },
   "senate_report": {
@@ -295,6 +295,16 @@
         "parentListedName": "Executive Office of the President"
       }
     },
+    "exec-ind-misc-administrative-conference-of-the-united-states": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 566,
+      "listedName": "Administrative Conference of the United States",
+      "url": "https://www.federalregister.gov/agencies/administrative-conference-of-the-united-states",
+      "agencyUrl": "http://www.acus.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
     "jud-support-aousc": {
       "source": "federal_register_agency_directory",
       "status": "listed",
@@ -302,6 +312,16 @@
       "listedName": "Administrative Office of United States Courts",
       "url": "https://www.federalregister.gov/agencies/administrative-office-of-united-states-courts",
       "agencyUrl": "http://www.uscourts.gov/FederalCourts/UnderstandingtheFederalCourts/AdministrativeOffice.aspx",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-ind-misc-advisory-council-on-historic-preservation": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 225,
+      "listedName": "Advisory Council on Historic Preservation",
+      "url": "https://www.federalregister.gov/agencies/advisory-council-on-historic-preservation",
+      "agencyUrl": "http://www.achp.gov/",
       "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
       "checkedAt": "2026-09-08T19:19:15Z"
     },
@@ -483,6 +503,26 @@
       "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
       "checkedAt": "2026-09-08T19:19:15Z"
     },
+    "exec-ind-misc-arctic-research-commission": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 29,
+      "listedName": "Arctic Research Commission",
+      "url": "https://www.federalregister.gov/agencies/arctic-research-commission",
+      "agencyUrl": "http://www.arctic.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-ind-misc-armed-forces-retirement-home": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 30,
+      "listedName": "Armed Forces Retirement Home",
+      "url": "https://www.federalregister.gov/agencies/armed-forces-retirement-home",
+      "agencyUrl": "https://www.afrh.gov/afrh/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
     "exec-dept-treasury-fiscal": {
       "source": "federal_register_agency_directory",
       "status": "listed",
@@ -583,6 +623,26 @@
         "parentListedName": "Health and Human Services Department"
       }
     },
+    "exec-ind-misc-civil-rights-cold-case-records-review-board": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 618,
+      "listedName": "Civil Rights Cold Case Records Review Board",
+      "url": "https://www.federalregister.gov/agencies/civil-rights-cold-case-records-review-board",
+      "agencyUrl": null,
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-ind-misc-commission-on-civil-rights": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 52,
+      "listedName": "Civil Rights Commission",
+      "url": "https://www.federalregister.gov/agencies/civil-rights-commission",
+      "agencyUrl": "http://www.usccr.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
     "exec-dept-dhs-uscg": {
       "source": "federal_register_agency_directory",
       "status": "listed",
@@ -606,6 +666,16 @@
       "listedName": "Commerce Department",
       "url": "https://www.federalregister.gov/agencies/commerce-department",
       "agencyUrl": "http://www.commerce.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-ind-misc-commission-of-fine-arts": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 57,
+      "listedName": "Commission of Fine Arts",
+      "url": "https://www.federalregister.gov/agencies/commission-of-fine-arts",
+      "agencyUrl": "http://www.cfa.gov/",
       "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
       "checkedAt": "2026-09-08T19:19:15Z"
     },
@@ -680,6 +750,42 @@
         "parentId": "leg-support-loc",
         "parentListedName": "Library of Congress"
       }
+    },
+    "exec-ind-misc-cigie": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 578,
+      "listedName": "Council of the Inspectors General on Integrity and Efficiency",
+      "url": "https://www.federalregister.gov/agencies/council-of-the-inspectors-general-on-integrity-and-efficiency",
+      "agencyUrl": "http://www.ignet.gov/cigie1.html",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-eop-ceq": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 92,
+      "listedName": "Council on Environmental Quality",
+      "url": "https://www.federalregister.gov/agencies/council-on-environmental-quality",
+      "agencyUrl": "https://www.whitehouse.gov/ceq/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Executive Office of the President",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-eop",
+        "parentListedName": "Executive Office of the President"
+      }
+    },
+    "exec-ind-misc-csosa": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 94,
+      "listedName": "Court Services and Offender Supervision Agency for the District of Columbia",
+      "url": "https://www.federalregister.gov/agencies/court-services-and-offender-supervision-agency-for-the-district-of-columbia",
+      "agencyUrl": "http://www.csosa.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
     },
     "exec-dept-defense-agency-dcaa": {
       "source": "federal_register_agency_directory",
@@ -762,6 +868,26 @@
         "distance": 2,
         "treeParentId": "exec-dept-defense-agencies"
       }
+    },
+    "exec-ind-misc-defense-nuclear-facilities-safety-board": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 109,
+      "listedName": "Defense Nuclear Facilities Safety Board",
+      "url": "https://www.federalregister.gov/agencies/defense-nuclear-facilities-safety-board",
+      "agencyUrl": "http://www.dnfsb.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-ind-misc-delta-regional-authority": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 624,
+      "listedName": "Delta Regional Authority",
+      "url": "https://www.federalregister.gov/agencies/delta-regional-authority",
+      "agencyUrl": "https://dra.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
     },
     "exec-dept-doj-dea": {
       "source": "federal_register_agency_directory",
@@ -1134,6 +1260,26 @@
       "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
       "checkedAt": "2026-09-08T19:19:15Z"
     },
+    "exec-ind-misc-federal-mediation-and-conciliation-service": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 179,
+      "listedName": "Federal Mediation and Conciliation Service",
+      "url": "https://www.federalregister.gov/agencies/federal-mediation-and-conciliation-service",
+      "agencyUrl": "http://www.fmcs.gov/internet/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-ind-misc-federal-mine-safety-and-health-review-commission": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 180,
+      "listedName": "Federal Mine Safety and Health Review Commission",
+      "url": "https://www.federalregister.gov/agencies/federal-mine-safety-and-health-review-commission",
+      "agencyUrl": "http://www.fmshrc.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
     "exec-eop-omb-office-of-federal-procurement-policy": {
       "source": "federal_register_agency_directory",
       "status": "listed",
@@ -1173,6 +1319,16 @@
       "listedName": "Federal Reserve System",
       "url": "https://www.federalregister.gov/agencies/federal-reserve-system",
       "agencyUrl": "http://www.federalreserve.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-ind-misc-federal-retirement-thrift-investment-board": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 189,
+      "listedName": "Federal Retirement Thrift Investment Board",
+      "url": "https://www.federalregister.gov/agencies/federal-retirement-thrift-investment-board",
+      "agencyUrl": "http://www.frtib.gov/",
       "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
       "checkedAt": "2026-09-08T19:19:15Z"
     },
@@ -1382,6 +1538,16 @@
       "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
       "checkedAt": "2026-09-08T19:19:15Z"
     },
+    "exec-ind-misc-office-of-government-ethics": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 215,
+      "listedName": "Government Ethics Office",
+      "url": "https://www.federalregister.gov/agencies/government-ethics-office",
+      "agencyUrl": "http://www.oge.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
     "leg-support-gpo": {
       "source": "federal_register_agency_directory",
       "status": "listed",
@@ -1389,6 +1555,16 @@
       "listedName": "Government Publishing Office",
       "url": "https://www.federalregister.gov/agencies/government-publishing-office",
       "agencyUrl": "http://www.gpo.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-ind-misc-truman-scholarship-foundation": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 220,
+      "listedName": "Harry S. Truman Scholarship Foundation",
+      "url": "https://www.federalregister.gov/agencies/harry-s-truman-scholarship-foundation",
+      "agencyUrl": "http://truman.gov/",
       "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
       "checkedAt": "2026-09-08T19:19:15Z"
     },
@@ -1497,6 +1673,16 @@
       "checkedAt": "2026-09-08T19:19:15Z",
       "parentListedName": "National Foundation on the Arts and the Humanities"
     },
+    "exec-ind-misc-inter-american-foundation": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 250,
+      "listedName": "Inter-American Foundation",
+      "url": "https://www.federalregister.gov/agencies/inter-american-foundation",
+      "agencyUrl": "http://www.iaf.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
     "exec-dept-doi": {
       "source": "federal_register_agency_directory",
       "status": "listed",
@@ -1538,6 +1724,36 @@
         "parentId": "exec-dept-doc",
         "parentListedName": "Commerce Department"
       }
+    },
+    "exec-ind-misc-international-trade-commission": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 262,
+      "listedName": "International Trade Commission",
+      "url": "https://www.federalregister.gov/agencies/international-trade-commission",
+      "agencyUrl": "http://usitc.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-ind-misc-madison-fellowship-foundation": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 263,
+      "listedName": "James Madison Memorial Fellowship Foundation",
+      "url": "https://www.federalregister.gov/agencies/james-madison-memorial-fellowship-foundation",
+      "agencyUrl": "http://www.jamesmadison.com/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-ind-misc-japan-united-states-friendship-commission": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 264,
+      "listedName": "Japan-United States Friendship Commission",
+      "url": "https://www.federalregister.gov/agencies/japan-united-states-friendship-commission",
+      "agencyUrl": "http://www.jusfc.gov/index.asp",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
     },
     "exec-dept-doj": {
       "source": "federal_register_agency_directory",
@@ -1637,6 +1853,16 @@
       "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
       "checkedAt": "2026-09-08T19:19:15Z"
     },
+    "exec-ind-misc-marine-mammal-commission": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 281,
+      "listedName": "Marine Mammal Commission",
+      "url": "https://www.federalregister.gov/agencies/marine-mammal-commission",
+      "agencyUrl": "http://www.mmc.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
     "exec-dept-dot-marad": {
       "source": "federal_register_agency_directory",
       "status": "listed",
@@ -1652,6 +1878,16 @@
         "parentId": "exec-dept-dot",
         "parentListedName": "Transportation Department"
       }
+    },
+    "exec-ind-misc-medpac": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 284,
+      "listedName": "Medicare Payment Advisory Commission",
+      "url": "https://www.federalregister.gov/agencies/medicare-payment-advisory-commission",
+      "agencyUrl": "http://medpac.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
     },
     "exec-ind-misc-merit-systems-protection-board-mspb": {
       "source": "federal_register_agency_directory",
@@ -1732,6 +1968,16 @@
       "listedName": "National Capital Planning Commission",
       "url": "https://www.federalregister.gov/agencies/national-capital-planning-commission",
       "agencyUrl": null,
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-ind-misc-national-council-on-disability": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 331,
+      "listedName": "National Council on Disability",
+      "url": "https://www.federalregister.gov/agencies/national-council-on-disability",
+      "agencyUrl": "https://ncd.gov/about",
       "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
       "checkedAt": "2026-09-08T19:19:15Z"
     },
@@ -1957,6 +2203,16 @@
         "parentListedName": "Agriculture Department"
       }
     },
+    "exec-ind-misc-northern-border-regional-commission": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 616,
+      "listedName": "Northern Border Regional Commission",
+      "url": "https://www.federalregister.gov/agencies/northern-border-regional-commission",
+      "agencyUrl": "https://www.nbrc.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
     "exec-regulatory-nrc": {
       "source": "federal_register_agency_directory",
       "status": "listed",
@@ -1964,6 +2220,16 @@
       "listedName": "Nuclear Regulatory Commission",
       "url": "https://www.federalregister.gov/agencies/nuclear-regulatory-commission",
       "agencyUrl": "https://www.nrc.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-ind-misc-nuclear-waste-technical-review-board": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 385,
+      "listedName": "Nuclear Waste Technical Review Board",
+      "url": "https://www.federalregister.gov/agencies/nuclear-waste-technical-review-board",
+      "agencyUrl": null,
       "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
       "checkedAt": "2026-09-08T19:19:15Z"
     },
@@ -1982,6 +2248,16 @@
         "parentId": "exec-dept-dol",
         "parentListedName": "Labor Department"
       }
+    },
+    "exec-ind-misc-occupational-safety-and-health-review-commission": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 387,
+      "listedName": "Occupational Safety and Health Review Commission",
+      "url": "https://www.federalregister.gov/agencies/occupational-safety-and-health-review-commission",
+      "agencyUrl": null,
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
     },
     "exec-dept-doi-boem": {
       "source": "federal_register_agency_directory",
@@ -2120,6 +2396,16 @@
       "listedName": "Privacy and Civil Liberties Oversight Board",
       "url": "https://www.federalregister.gov/agencies/privacy-and-civil-liberties-oversight-board",
       "agencyUrl": null,
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-ind-misc-public-buildings-reform-board": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 605,
+      "listedName": "Public Buildings Reform Board",
+      "url": "https://www.federalregister.gov/agencies/public-buildings-reform-board",
+      "agencyUrl": "https://www.pbrb.gov/",
       "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
       "checkedAt": "2026-09-08T19:19:15Z"
     },
@@ -2293,6 +2579,16 @@
         "parentListedName": "Interior Department"
       }
     },
+    "exec-ind-misc-surface-transportation-board": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 481,
+      "listedName": "Surface Transportation Board",
+      "url": "https://www.federalregister.gov/agencies/surface-transportation-board",
+      "agencyUrl": "https://www.stb.gov",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
     "exec-ind-misc-tennessee-valley-authority-tva": {
       "source": "federal_register_agency_directory",
       "status": "listed",
@@ -2309,6 +2605,16 @@
       "entryId": 487,
       "listedName": "The White House Office",
       "url": "https://www.federalregister.gov/agencies/the-white-house-office",
+      "agencyUrl": null,
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-ind-misc-trade-and-development-agency": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 490,
+      "listedName": "Trade and Development Agency",
+      "url": "https://www.federalregister.gov/agencies/trade-and-development-agency",
       "agencyUrl": null,
       "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
       "checkedAt": "2026-09-08T19:19:15Z"
@@ -2435,6 +2741,16 @@
         "treeParentId": "exec-dept-defense-agencies"
       }
     },
+    "exec-ind-misc-african-development-foundation": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 4,
+      "listedName": "United States African Development Foundation",
+      "url": "https://www.federalregister.gov/agencies/african-development-foundation",
+      "agencyUrl": "https://www.usadf.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
     "exec-ind-misc-broadcasting-board-of-governors-usagm": {
       "source": "federal_register_agency_directory",
       "status": "listed",
@@ -2442,6 +2758,16 @@
       "listedName": "United States Agency for Global Media",
       "url": "https://www.federalregister.gov/agencies/united-states-agency-for-global-media",
       "agencyUrl": "https://www.usagm.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-ind-misc-institute-of-peace": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 511,
+      "listedName": "United States Institute of Peace",
+      "url": "https://www.federalregister.gov/agencies/united-states-institute-of-peace",
+      "agencyUrl": null,
       "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
       "checkedAt": "2026-09-08T19:19:15Z"
     },

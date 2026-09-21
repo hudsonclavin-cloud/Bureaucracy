@@ -2181,3 +2181,308 @@ and nothing here changes that arithmetic.
   matcher change rather than a table, and it is the looseness that once let
   "Office of Science" match "Office of Science and Technology Policy". Four
   rows, each argued, cost nothing and can be read.
+
+## 18. The current Plum Book's own agency list, reconciled (2026-09-21)
+
+OPM's current PLUM export landed the same morning (`CLAUDE.md`, "The current
+Plum Book, read"; `docs/NETWORK_ACCESS.md` §12) and its first derivation reached
+**170 of the graph's 4,591 positions**. The binding constraint was not the title
+matcher: **96 of the export's 174 agency names reached no organisation node at
+all**, and 1,301 of its 9,797 live rows sat under them, so no position beneath
+one could be reached however well its title matched. That is the same shape as
+§13's Government Manual reconciliation, and this section disposes of all 96 the
+way §13 disposed of the Manual's 95.
+
+`data/audit/plum_unmatched_agencies_2026-09-21.json` is the table: every agency,
+its live-row count measured from the committed export, its canonical key, the
+disposition and the reasoning. The dispositions:
+
+| Disposition | Agencies | Live rows |
+|---|---:|---:|
+| Node added under a verified licence | 36 | 324 |
+| Node added, but the export spells the name otherwise | 3 | 8 |
+| The graph already has the unit under another name (alias candidate) | 4 | 57 |
+| An Office of Inspector General with no distinguishing name | 30 | 43 |
+| No licence reaches it — a real unit, no readable official page | 13 | 108 |
+| Constituted between governments; not a unit of the United States | 5 | 14 |
+| The owner is deciding these separately (Navy, Army, Air Force) | 3 | 240 |
+| Not one unit at all (Office of the Secretary of War) | 1 | 506 |
+| Not a unit (the Vice President's official residence) | 1 | 1 |
+
+**39 nodes were added**, every one under `official_page_label` and every one
+re-tested by `scripts/add_curated_nodes.py` on the run: the row proposes a page
+and the verifier's own `find_label_region_rule` decides, in the page's content
+region, under its robots policy and readable-text floor. 38 sit under
+`exec-ind-misc` ("Other Independent Agencies"), one — the Council on
+Environmental Quality — under `exec-eop`.
+
+The Government Manual could not license any of them, and the reason is
+structural rather than incidental: of its 231 entities **105 are printed at top
+level with no parent**, and every independent agency here is one of those, so
+`manual_files_it_under` has no chain with which to reach a proposed parent. The
+Manual licenses a placement only where it prints a hierarchy, which it does for
+departmental bureaus and not for independent establishments. Several of the 39
+will nonetheless earn `listed_in_us_government_manual` from the *organisation*
+route once `derive_govman_evidence` next runs, because the Manual does carry an
+entry of their name — the Holocaust Memorial Museum, the Commission on Civil
+Rights, the Surface Transportation Board, the International Trade Commission,
+the Institute of Peace, the FRTIB, the DNFSB, the FMSHRC, the OSHRC, the
+Inter-American Foundation, the African Development Foundation, the Trade and
+Development Agency, the FMCS, ACUS, the Office of Government Ethics and the
+ODNI. Licensing a node and verifying one are different acts, and this is the
+clearest case of it yet.
+
+**Eleven of the 39 are licensed by usa.gov's A-to-Z index rather than by the
+unit's own site**, and each says so on its row. Seven because the unit's own
+host cannot be read at all — `ushmm.org` and `usip.org` do not answer
+`robots.txt` from this sandbox, `dnfsb.gov`, `iaf.gov` and `acus.gov` answer it
+403 and are refused by this project's policy, `jusfc.gov` answers a redirect the
+fetcher does not follow, and `whitehouse.gov` serves a JavaScript shell of 50–55
+readable characters. Four because the unit's own readable page labels itself by
+a short form or an acronym and not by the name the export and the Manual use:
+`frtib.gov`, `ustda.gov`, `oge.gov`, `ncd.gov`, `jamesmadison.gov`, `csosa.gov`
+and `macpac.gov` are each allowed and readable and each failed the label test.
+`CLAUDE.md` already records usa.gov's index as a source of candidate pages
+rather than of claims; here it is not being believed, it is being *read* — the
+same label test runs against it as against any other page.
+
+**Eight real units were refused and are recorded rather than added**, which is
+the point of recording them: the President's Committee on the Arts and the
+Humanities (25 rows, `pcah.gov` unreachable), the U.S.-China Economic and
+Security Review Commission (14, `uscc.gov` readable and simply not carrying its
+own full name as a label on either page tried), the Goldwater Foundation (9,
+JavaScript shell), the Udall Foundation (9, labels its short form), the Utah
+Reclamation Mitigation and Conservation Commission (4), the Federal Permitting
+Improvement Steering Council (3), the Gulf Coast Ecosystem Restoration Council
+(1) and the Semiquincentennial Commission (1).
+
+**The five Executive Office units are one measurement worth keeping.** The
+export files the Office of the National Cyber Director (24 rows), the Office of
+the Vice President (11), the U.S. DOGE Service (4), the Office of Pandemic
+Preparedness and Response Policy (1) and the Intellectual Property Enforcement
+Coordinator (2) under its own `EXECUTIVE OFFICE OF THE PRESIDENT - <unit>` form,
+whose scoped rule found no unit of the name beneath the EOP because the graph
+has none. All five would have been added on one fetch each had `whitehouse.gov`
+served text: it is allowed by `robots.txt`, returns 200, and carries 24, 50 and
+55 readable characters on the three paths tried. The Manual carries **no
+Executive Office entries at all** — not the EOP, not the White House Office, not
+OMB — so that route is closed too. The CEQ is the one that landed, and only
+because usa.gov's index happens to list it.
+
+### 18.1 The Office of the Secretary of War: 506 rows, and nothing added
+
+This was the largest single block and the one this pass was most at risk of
+getting wrong. Nothing is added, for two independent reasons, either sufficient.
+
+**First, the export's bucket is not a unit.** Beneath
+`OFFICE OF THE SECRETARY OF WAR` the export files 42 rows under an organisation
+of the same name, and the offices of the Under Secretaries (Research and
+Engineering 39, Comptroller 29, Policy 25, Acquisition and Sustainment 14,
+Personnel and Readiness 13, Intelligence & Security 6), the Assistant
+Secretaries, Cost Assessment and Program Evaluation (23), the Department CIO
+(16), Administration and Management (12) and Washington Headquarters Services
+(15) — which genuinely are the Office of the Secretary. But it also files, in
+the same bucket:
+
+| Organisation in the export | Rows | Where this graph already carries it |
+|---|---:|---|
+| Defense Finance and Accounting Service | 20 | `exec-dept-defense-agencies` |
+| Defense Health Agency | 12 | `exec-dept-defense-agencies` |
+| Office of the Joint Chiefs of Staff | 8 | `exec-dept-defense-jcs` |
+| United States Court of Appeals for the Armed Forces | 7 | the judiciary |
+| Department of War Education Activity | 6 | `exec-dept-defense-agencies` |
+| Defense Commissary Agency | 5 | `exec-dept-defense-agencies` |
+| National Guard Bureau | 4 | `exec-dept-defense-agencies` |
+| Defense Advanced Research Projects Agency | 3 | `exec-dept-defense-agencies` |
+
+It is OPM's reporting bucket for the Department other than the three military
+departments, not an organisational unit. A single node carrying all 506 rows
+would file a DARPA director, a commissary chief executive and an Article I
+appellate judge inside the Secretary's immediate office. That is precisely the
+over-claim a 506-row attachment risks, and it is worse than no attachment.
+
+**Second, no licence reaches it.** Checked, not assumed:
+
+- the **Government Manual**, 2025-12-31 edition, committed at
+  `tests/fixtures/govman/` and digest-checked: no "Office of the Secretary"
+  entry among its 231 entities. Its Defense entries are the department itself,
+  the three military departments, "Defense Agencies" and the Joint Service
+  Schools;
+- the **Monthly Treasury Statement**: its only `Office of the Secretary` line
+  (classification 59309312, record date 2026-08-31) sits under the Department of
+  Transportation. There is no Defense one;
+- the **department's own pages**: `www.defense.gov`, `dod.defense.gov` and
+  `www.war.gov` each answer `robots.txt` with **403 on three attempts** and are
+  refused by this project's policy. No page can be read, so
+  `official_page_label` has nothing to test.
+
+### 18.2 Whether the department has been renamed: four documents against one
+
+§14.3 recorded one clause in OMB's FY2027 user's guide — "for technical reasons,
+the Department of War is referred to as the Department of Defense" — and
+deliberately did nothing about it. The PLUM export raises the same question from
+the other side, and this is what the documents in hand actually say.
+
+| Document | Fetched / edition | What it prints |
+|---|---|---|
+| United States Government Manual | 2025-12-31 edition | **Department of Defense** (entity 114), with Air Force, Army, Navy and "Defense Agencies" beneath it |
+| Federal Register agency directory | 2026-09-08 | **Defense Department**; no War Department entry |
+| Monthly Treasury Statement, Table 5 | record date 2026-08-31, fetched 2026-09-20 | **"Department of Defense--Military Programs"**, and "Department of Defense Medicare-Eligible Retiree Health Care Fund" |
+| USAspending toptier agency list | committed fixture | **Department of Defense** |
+| OPM PLUM current export | 2026-09-21 | **War** — "OFFICE OF THE SECRETARY OF WAR", "OFFICE OF THE DEPARTMENT OF WAR CHIEF INFORMATION OFFICER" |
+
+Four official documents, three of them more recent than the Manual, still print
+Defense; one prints War. The export is also **internally mixed**: it keeps
+`DEPARTMENT OF THE NAVY`, `DEPARTMENT OF THE ARMY`, `DEPARTMENT OF THE AIR
+FORCE`, `DEFENSE FINANCE AND ACCOUNTING SERVICE`, `DEFENSE HEALTH AGENCY`,
+`DEFENSE ADVANCED RESEARCH PROJECTS AGENCY` and
+`DEPARTMENT OF DEFENSE OFFICE OF THE INSPECTOR GENERAL` in the same file that
+spells the Secretary's office War.
+
+**So the graph's `Department of Defense (DoD)` is not renamed, and no node is
+created under either name.** The rule §9 sets is that a name must be carried by
+a source and re-checked against it; here the sources disagree, and the one that
+would settle it is the department's own page, which this project cannot read.
+§14.3's conclusion stands and is now backed by a measurement rather than a
+single sentence. Recorded so the next pass starts here.
+
+### 18.3 Thirty Offices of Inspector General, and the floor that nearly missed them
+
+The export files an Office of Inspector General as a peer agency of its
+department — 30 of them, 43 live rows. Every one is a real statutory office and
+this graph has a node for none of them; what it has is an `Inspector General`
+**position** under most of the parents, one of the stamped administrative titles
+`CLAUDE.md` documents, which names **80 nodes** here.
+
+None is added, because the name that identifies the unit is "Office of Inspector
+General" and it identifies thirty of them. The export's qualified string
+("Department of Labor Office of Inspector General") is OPM's own scoping, not a
+name any page carries as a label, so a node under it would be named by no
+source; and a node under the unit's own name would be exactly the generic name
+`GENERIC_NAMES` exists to refuse.
+
+**A defect in that floor, found by trying it.** `GENERIC_NAMES` in
+`scripts/add_curated_nodes.py` carries `"office of the inspector general"` and
+not the `the`-less `"office of inspector general"`, which is how most of these
+offices style themselves and what `canonical_name_key` returns for them. The
+floor would therefore **not** have refused these thirty; they are declined on
+the principle the floor exists for, not on its letter. Nothing is changed in the
+script here — a floor is a gate, and widening one is a code decision for the
+owner — but the gap is recorded so it is not rediscovered by something that goes
+through it.
+
+Two of the thirty do have distinguishing names of their own — the Office of the
+Special Inspector General for Pandemic Recovery (3 rows) and the Treasury
+Inspector General for Tax Administration (1) — and both are still declined,
+because the export's string is not that name, so a node under the official name
+would reach none of their rows. Real gaps, recorded.
+
+### 18.4 Five bodies constituted between governments
+
+The Great Lakes Fishery Commission (5 rows), the International Joint Commission
+(3), the Interstate Commission on the Potomac River Basin (3), the International
+Boundary and Water Commission (2) and the Asian Development Bank (1) are listed
+by OPM because federal appointments are made to them. None is a unit of the
+United States government: the first two and the fourth are established by treaty
+between the United States and Canada or Mexico, the third by an interstate
+compact, and the fifth is an international financial institution the Manual
+lists among international organizations rather than as part of the government.
+
+The IBWC is the closest call and is recorded as such: its **United States
+Section** is a federal agency on a `.gov` host with appropriated funds, and had
+the export named that section it would have been added. The export names the
+whole commission, and a node of that name would place a body constituted between
+two governments inside the United States government's tree. Left unresolved
+rather than guessed — the treatment §14.1 gives the PBGC and `CLAUDE.md` gives
+the Treasury's Tax Court line.
+
+### 18.5 What it moved, measured
+
+Re-running `scripts/derive_plum_current_evidence.py` against the curated file
+after the 39 nodes landed:
+
+| | Before | After |
+|---|---:|---:|
+| Agencies matched | 78 | **114** |
+| Agencies unmatched | 96 | **60** |
+| Live rows under an unmatched agency | 1,301 | **977** |
+| Organisations matched | 161 | **191** |
+| Positions listed | 170 | **170** |
+| Placements | 170 | **170** |
+| Pay records | 100 | **100** |
+
+**The published claims did not move at all, and that is the honest result rather
+than a disappointment.** It is exactly what §13 recorded when the 26 Manual
+units landed and the PLUM archive's records stayed at 129: the export lists
+*positions*, and these 39 nodes have no position children, so more of the
+export's organisations are now reachable and none of its rows reached a new
+post. A matching count is not a published claim. What the 39 nodes buy is what
+the 26 bought — a place for evidence to land when a later pass curates the posts
+beneath them, and, for the sixteen the Government Manual names, an existence
+method the moment the organisation route next runs.
+
+Three of the 39 added nodes are themselves still unmatched by the export, and
+deliberately: the ODNI, CIGIE and the Interagency Council on Homelessness are
+named as their own sources name them, not as the export spells them. Those three
+and the four units the graph already carried under another name are handed off
+in `data/audit/plum_alias_candidates_2026-09-21.md`; nothing was aliased here,
+and `plum_current.py` still has no alias table, which `CLAUDE.md` records as
+deliberate.
+
+**Nothing measured moved and nothing was superseded or renamed.** The curated
+file gained 39 nodes and lost nothing: `add_curated_nodes.py` only ever adds,
+and the diff is additions only. The cost cascade will reapportion
+`exec-ind-misc`'s pool across 70 children instead of 32 on the next build, which
+is the same honest consequence §13 records for the Manual's 26 — every sibling's
+*estimate* moves because real units now share the pool, and no measured figure
+does.
+
+### 18.6 The gains were not confined to the export, and one of them is publishable
+
+The same thing happened here that §1 and §13 record for the fifteen Treasury
+units and the Manual's twenty-six: other sources already held rows for these
+units and reached them the moment the nodes existed, with **no matcher change at
+all**.
+
+**OPM FedScope — 15 new published headcounts.** The employment table already
+carried an agency row for fifteen of the 39: the Holocaust Memorial Museum
+(109), the International Trade Commission (443), the Surface Transportation
+Board (126), the DNFSB (112), the Office of Government Ethics (72), the
+Commission on Civil Rights (60), the Trade and Development Agency (59), the
+Inter-American Foundation (36), the African Development Foundation (32), the
+Armed Forces Retirement Home (311), the Marine Mammal Commission (23), the
+Nuclear Waste Technical Review Board (22), the National Council on Disability
+(18), the Commission of Fine Arts (12) and the Interagency Council on
+Homelessness (13). Records go **164 → 179**, agencies matched **59 → 74**,
+and `compare_with_curated`'s "compared" is **unchanged at 128** — no figure that
+was already being compared moved; all fifteen are nodes with no curated
+`employees` of their own, so `no_curated_figure` goes 36 → 51. That is the
+honest state for a node whose whole basis is a page naming it.
+
+**Nine more headcounts are within reach and are refused, correctly.** FedScope
+abbreviates the *agency* row for nine of these units — `FED RETIREMENT THRIFT
+INVESTMENT BOARD`, `ADV COUNCIL ON HISTORIC PRESERVATION`, `CMSN FOR PRES OF
+AMERICA'S HERITAGE ABRD`, `FED MINE SAFETY AND HEALTH REVIEW CMSN`,
+`OCCUPATIONAL SAFETY & HEALTH REVIEW CMSN`, `MEDICAID & CHIP PAYMENT & ACCESS
+COMM`, `COUNCIL OF INSP. GEN. ON INTEG.& EFFIC.`, `FED MEDIATION AND
+CONCILIATION SERVICE`, `JAPAN-UNITED STATES FRIENDSHIP CMSN` — while the
+sub-agency row beneath spells the name out and does match the new node. The
+matcher refuses them (`unscoped_refused` 8 → 17) on the rule this file already
+records: a unique name is not evidence of placement. Undoing FedScope's agency
+abbreviations the way the leading `NATIONAL` is undone would reach all nine;
+that is a matcher decision for the owner and is deliberately not taken here.
+
+**The PLUM archive — 33 more agencies, no new record.** The archive of the
+previous administration files rows under almost all of these units too:
+agencies matched **70 → 103**, organisations **181 → 208**. Its published
+records stay at **129**, because none of the 39 has a position child for a row
+to reach. The same distinction §13 draws: a matching count is not a published
+claim.
+
+**What was and was not regenerated.** `data/verification/plum_current_evidence.json`
+was re-derived, and its 170 listings and 100 pay records came back
+byte-identical — only the `report` block's matching counts moved.
+`headcount_evidence.json` and `position_evidence.json` were **not** re-derived
+here, so the fifteen new FedScope headcounts are measured above but not yet
+written; whoever next runs `scripts/derive_headcount_evidence.py` will land
+them. `output/` was not rebuilt at all.

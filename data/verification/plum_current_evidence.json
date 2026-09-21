@@ -50,24 +50,14 @@
       "ST": 2,
       "FP": 1
     },
-    "agencies_matched": 79,
-    "agencies_matched_by_scoped_prefix": 7,
+    "agencies_matched": 115,
+    "agencies_matched_by_scoped_prefix": 8,
     "agencies_matched_by_alias": 1,
     "agencies_unmatched": [
-      "ADMINISTRATIVE CONFERENCE OF THE UNITED STATES",
-      "ADVISORY COUNCIL ON HISTORIC PRESERVATION",
-      "AFRICAN DEVELOPMENT FOUNDATION",
-      "ARCTIC RESEARCH COMMISSION",
-      "ARMED FORCES RETIREMENT HOME",
       "ASIAN DEVELOPMENT BANK",
       "BARRY GOLDWATER SCHOLARSHIP AND EXCELLENCE IN EDUCATION FOUNDATION",
-      "CIVIL RIGHTS COLD CASE RECORDS REVIEW BOARD",
-      "COMMISSION OF FINE ARTS",
       "CONSUMER FINANCIAL PROTECTION BUREAU",
       "COUNCIL OF INSPECTORS GENERAL ON INTEGRITY AND EFFICIENCY",
-      "COURT SERVICES AND OFFENDER SUPERVISION AGENCY FOR THE DISTRICT OF COLUMBIA",
-      "DEFENSE NUCLEAR FACILITIES SAFETY BOARD",
-      "DELTA REGIONAL AUTHORITY",
       "DEPARTMENT OF AGRICULTURE OFFICE OF THE INSPECTOR GENERAL",
       "DEPARTMENT OF DEFENSE OFFICE OF THE INSPECTOR GENERAL",
       "DEPARTMENT OF EDUCATION OFFICE OF THE INSPECTOR GENERAL",
@@ -88,7 +78,6 @@
       "DEPARTMENT OF TRANSPORTATION OFFICE OF THE INSPECTOR GENERAL",
       "DEPARTMENT OF VETERANS AFFAIRS OFFICE OF THE INSPECTOR GENERAL",
       "ENVIRONMENTAL PROTECTION AGENCY OFFICE OF THE INSPECTOR GENERAL",
-      "EXECUTIVE OFFICE OF THE PRESIDENT - COUNCIL ON ENVIRONMENTAL QUALITY",
       "EXECUTIVE OFFICE OF THE PRESIDENT - OFFICE OF THE NATIONAL CYBER DIRECTOR",
       "EXECUTIVE OFFICE OF THE PRESIDENT - OFFICE OF THE VICE PRESIDENT",
       "EXECUTIVE OFFICE OF THE PRESIDENT - OFFICIAL RESIDENCE OF THE VICE PRESIDENT",
@@ -97,68 +86,51 @@
       "EXPORT-IMPORT BANK OFFICE OF THE INSPECTOR GENERAL",
       "FEDERAL COMMUNICATIONS COMMISSION OFFICE OF THE INSPECTOR GENERAL",
       "FEDERAL ELECTION COMMISSION OFFICE OF THE INSPECTOR GENERAL",
-      "FEDERAL MEDIATION AND CONCILIATION SERVICE",
-      "FEDERAL MINE SAFETY AND HEALTH REVIEW COMMISSION",
       "FEDERAL PERMITTING IMPROVEMENT STEERING COUNCIL",
-      "FEDERAL RETIREMENT THRIFT INVESTMENT BOARD",
       "GENERAL SERVICES ADMINISTRATION OFFICE OF THE INSPECTOR GENERAL",
       "GREAT LAKES FISHERY COMMISSION",
       "GULF COAST ECOSYSTEM RESTORATION COUNCIL",
-      "HARRY S TRUMAN SCHOLARSHIP FOUNDATION",
       "INTELLECTUAL PROPERTY ENFORCEMENT COORDINATOR",
-      "INTER-AMERICAN FOUNDATION",
       "INTERAGENCY COUNCIL ON THE HOMELESS",
       "INTERNATIONAL BOUNDARY AND WATER COMMISSION",
       "INTERNATIONAL JOINT COMMISSION",
       "INTERSTATE COMMISSION ON THE POTOMAC RIVER BASIN",
-      "JAMES MADISON MEMORIAL FELLOWSHIP FOUNDATION",
-      "JAPAN UNITED STATES FRIENDSHIP COMMISSION",
-      "MARINE MAMMAL COMMISSION",
-      "MEDICAID AND CHIP PAYMENT AND ACCESS COMMISSION",
-      "MEDICARE PAYMENT ADVISORY COMMISSION",
       "MORRIS K. UDALL AND STEWART L. UDALL FOUNDATION",
       "NATIONAL AERONAUTICS AND SPACE ADMINISTRATION OFFICE OF THE INSPECTOR GENERAL",
-      "NATIONAL COUNCIL ON DISABILITY",
       "NATIONAL ENDOWMENT FOR THE HUMANITIES OFFICE OF THE INSPECTOR GENERAL",
-      "NORTHERN BORDER REGIONAL COMMISSION",
       "NUCLEAR REGULATORY COMMISSION OFFICE OF THE INSPECTOR GENERAL",
-      "NUCLEAR WASTE TECHNICAL REVIEW BOARD",
-      "OCCUPATIONAL SAFETY AND HEALTH REVIEW COMMISSION",
-      "OFFICE OF GOVERNMENT ETHICS",
       "OFFICE OF PANDEMIC PREPAREDNESS AND RESPONSE POLICY",
       "OFFICE OF PERSONNEL MANAGEMENT OFFICE OF THE INSPECTOR GENERAL",
       "OFFICE OF THE DIRECTOR FOR NATIONAL INTELLIGENCE",
       "OFFICE OF THE SECRETARY OF WAR",
       "PRESIDENTS COMMITTEE ON THE ARTS AND THE HUMANITIES",
       "PRIVACY AND CIVIL LIBERTIES AND OVERSIGHT BOARD",
-      "PUBLIC BUILDINGS REFORM BOARD",
       "RAILROAD RETIREMENT BOARD OFFICE OF THE INSPECTOR GENERAL",
       "SMALL BUSINESS ADMINISTRATION OFFICE OF THE INSPECTOR GENERAL",
       "SOCIAL SECURITY ADMINISTRATION OFFICE OF THE INSPECTOR GENERAL",
-      "SURFACE TRANSPORTATION BOARD",
       "TENNESSEE VALLEY AUTHORITY OFFICE OF THE INSPECTOR GENERAL",
-      "TRADE AND DEVELOPMENT AGENCY",
-      "U.S. ABILITYONE COMMISSION",
-      "U.S. ACCESS BOARD (ARCHITECTURAL AND TRANSPORTATION BARRIERS COMPLIANCE BOARD)",
       "U.S. AGENCY FOR INTERNATIONAL DEVELOPMENT OFFICE OF THE INSPECTOR GENERAL",
       "U.S. CHINA ECONOMIC AND SECURITY REVIEW COMMISSION",
-      "U.S. COMMISSION FOR THE PRESERVATION OF AMERICA&#039;S HERITAGE ABROAD",
-      "U.S. COMMISSION ON CIVIL RIGHTS",
-      "U.S. HOLOCAUST MEMORIAL MUSEUM",
-      "U.S. INSTITUTE OF PEACE",
-      "U.S. INTERNATIONAL TRADE COMMISSION",
       "U.S. SEMIQUINCENTENNIAL COMMISSION",
       "UTAH RECLAMATION MITIGATION AND CONSERVATION COMMISSION"
     ],
     "agencies_ambiguous": [],
-    "organizations_of_agency": 35,
-    "organizations_matched": 165,
+    "organizations_of_agency": 65,
+    "organizations_matched": 195,
     "organizations_matched_by_alias": 4,
-    "organizations_under_unmatched_agency": 247,
+    "organizations_under_unmatched_agency": 194,
     "organizations_unmatched": [
+      {
+        "agency": "ARMED FORCES RETIREMENT HOME",
+        "organization": "OFFICE OF THE CHIEF OPERATING OFFICER"
+      },
       {
         "agency": "CENTRAL INTELLIGENCE AGENCY",
         "organization": "OFFICE OF THE DIRECTOR"
+      },
+      {
+        "agency": "COMMISSION OF FINE ARTS",
+        "organization": "OFFICE OF THE SECRETARY"
       },
       {
         "agency": "COMMODITY FUTURES TRADING COMMISSION",
@@ -2793,6 +2765,14 @@
         "organization": "OFFICE OF THE MEMBERS"
       },
       {
+        "agency": "FEDERAL MEDIATION AND CONCILIATION SERVICE",
+        "organization": "OFFICE OF THE DIRECTOR"
+      },
+      {
+        "agency": "FEDERAL MINE SAFETY AND HEALTH REVIEW COMMISSION",
+        "organization": "OFFICE OF THE CHAIR AND COMMISSIONERS"
+      },
+      {
         "agency": "FEDERAL TRADE COMMISSION",
         "organization": "BUREAU OF COMPETITION"
       },
@@ -2907,6 +2887,10 @@
       {
         "agency": "GOVERNMENT PUBLISHING OFFICE",
         "organization": "SUPERINTENDENT OF DOCUMENTS"
+      },
+      {
+        "agency": "HARRY S TRUMAN SCHOLARSHIP FOUNDATION",
+        "organization": "OFFICE OF EXECUTIVE SECRETARY"
       },
       {
         "agency": "INSTITUTE OF MUSEUM AND LIBRARY SERVICES",
@@ -3267,6 +3251,14 @@
       {
         "agency": "NUCLEAR REGULATORY COMMISSION",
         "organization": "REGION IV"
+      },
+      {
+        "agency": "OCCUPATIONAL SAFETY AND HEALTH REVIEW COMMISSION",
+        "organization": "OFFICE OF COMMISSIONERS"
+      },
+      {
+        "agency": "OCCUPATIONAL SAFETY AND HEALTH REVIEW COMMISSION",
+        "organization": "OFFICE OF THE GENERAL COUNSEL"
       },
       {
         "agency": "OFFICE OF PERSONNEL MANAGEMENT",
@@ -3641,6 +3633,26 @@
         "organization": "BOARD OF DIRECTORS"
       },
       {
+        "agency": "TRADE AND DEVELOPMENT AGENCY",
+        "organization": "OFFICE OF THE DIRECTOR"
+      },
+      {
+        "agency": "TRADE AND DEVELOPMENT AGENCY",
+        "organization": "OFFICE OF THE GENERAL COUNSEL"
+      },
+      {
+        "agency": "U.S. ABILITYONE COMMISSION",
+        "organization": "COMMITTEE FOR PURCHASE FROM PEOPLE WHO ARE BLIND OR SEVERELY DISABLED"
+      },
+      {
+        "agency": "U.S. ACCESS BOARD (ARCHITECTURAL AND TRANSPORTATION BARRIERS COMPLIANCE BOARD)",
+        "organization": "OFFICE OF THE EXECUTIVE DIRECTOR"
+      },
+      {
+        "agency": "U.S. ACCESS BOARD (ARCHITECTURAL AND TRANSPORTATION BARRIERS COMPLIANCE BOARD)",
+        "organization": "Public Board"
+      },
+      {
         "agency": "U.S. AGENCY FOR GLOBAL MEDIA",
         "organization": "INTERNATIONAL BROADCASTING ADVISORY BOARD"
       },
@@ -3737,6 +3749,18 @@
         "organization": "OFFICE OF THE GENERAL COUNSEL"
       },
       {
+        "agency": "U.S. COMMISSION FOR THE PRESERVATION OF AMERICA&#039;S HERITAGE ABROAD",
+        "organization": "UNITED STATES COMMISSION FOR THE PRESERVATION OF AMERICA'S HERITAGE AB..."
+      },
+      {
+        "agency": "U.S. COMMISSION ON CIVIL RIGHTS",
+        "organization": "COMMISSIONERS"
+      },
+      {
+        "agency": "U.S. COMMISSION ON CIVIL RIGHTS",
+        "organization": "STAFF MEMBERS"
+      },
+      {
         "agency": "U.S. CONSUMER PRODUCT SAFETY COMMISSION",
         "organization": "OFFICE OF COMMISSIONERS"
       },
@@ -3759,6 +3783,10 @@
       {
         "agency": "U.S. CONSUMER PRODUCT SAFETY COMMISSION",
         "organization": "OFFICE OF RISK REDUCTION"
+      },
+      {
+        "agency": "U.S. INSTITUTE OF PEACE",
+        "organization": "BOARD OF DIRECTORS"
       },
       {
         "agency": "U.S. INTERNATIONAL DEVELOPMENT FINANCE CORPORATION",
@@ -3795,6 +3823,34 @@
       {
         "agency": "U.S. INTERNATIONAL DEVELOPMENT FINANCE CORPORATION",
         "organization": "SWORD"
+      },
+      {
+        "agency": "U.S. INTERNATIONAL TRADE COMMISSION",
+        "organization": "OFFICE OF COMMISSIONER JOHANSON"
+      },
+      {
+        "agency": "U.S. INTERNATIONAL TRADE COMMISSION",
+        "organization": "OFFICE OF COMMISSIONER KARPEL"
+      },
+      {
+        "agency": "U.S. INTERNATIONAL TRADE COMMISSION",
+        "organization": "OFFICE OF COMMISSIONER KEARNS"
+      },
+      {
+        "agency": "U.S. INTERNATIONAL TRADE COMMISSION",
+        "organization": "OFFICE OF COMMISSIONER PINKERT"
+      },
+      {
+        "agency": "U.S. INTERNATIONAL TRADE COMMISSION",
+        "organization": "OFFICE OF COMMISSIONER SCHMIDTLEIN"
+      },
+      {
+        "agency": "U.S. INTERNATIONAL TRADE COMMISSION",
+        "organization": "OFFICE OF INDUSTRY AND COMPETITIVENESS ANALYSIS"
+      },
+      {
+        "agency": "U.S. INTERNATIONAL TRADE COMMISSION",
+        "organization": "OFFICE OF THE CHAIRMAN"
       },
       {
         "agency": "WOODROW WILSON INTERNATIONAL CENTER FOR SCHOLARS",
@@ -4190,10 +4246,6 @@
         "rows": 83
       },
       {
-        "agency": "U.S. HOLOCAUST MEMORIAL MUSEUM",
-        "rows": 55
-      },
-      {
         "agency": "DEPARTMENT OF THE AIR FORCE",
         "rows": 54
       },
@@ -4206,60 +4258,16 @@
         "rows": 24
       },
       {
-        "agency": "MEDICAID AND CHIP PAYMENT AND ACCESS COMMISSION",
-        "rows": 22
-      },
-      {
-        "agency": "U.S. COMMISSION FOR THE PRESERVATION OF AMERICA&#039;S HERITAGE ABROAD",
-        "rows": 21
-      },
-      {
-        "agency": "U.S. COMMISSION ON CIVIL RIGHTS",
-        "rows": 20
-      },
-      {
         "agency": "EXPORT-IMPORT BANK",
         "rows": 18
-      },
-      {
-        "agency": "SURFACE TRANSPORTATION BOARD",
-        "rows": 15
-      },
-      {
-        "agency": "U.S. INTERNATIONAL TRADE COMMISSION",
-        "rows": 15
-      },
-      {
-        "agency": "U.S. ACCESS BOARD (ARCHITECTURAL AND TRANSPORTATION BARRIERS COMPLIANCE BOARD)",
-        "rows": 14
       },
       {
         "agency": "U.S. CHINA ECONOMIC AND SECURITY REVIEW COMMISSION",
         "rows": 14
       },
       {
-        "agency": "EXECUTIVE OFFICE OF THE PRESIDENT - COUNCIL ON ENVIRONMENTAL QUALITY",
-        "rows": 13
-      },
-      {
-        "agency": "NUCLEAR WASTE TECHNICAL REVIEW BOARD",
-        "rows": 12
-      },
-      {
-        "agency": "U.S. INSTITUTE OF PEACE",
-        "rows": 12
-      },
-      {
-        "agency": "ADVISORY COUNCIL ON HISTORIC PRESERVATION",
-        "rows": 11
-      },
-      {
         "agency": "EXECUTIVE OFFICE OF THE PRESIDENT - OFFICE OF THE VICE PRESIDENT",
         "rows": 11
-      },
-      {
-        "agency": "FEDERAL RETIREMENT THRIFT INVESTMENT BOARD",
-        "rows": 10
       },
       {
         "agency": "BARRY GOLDWATER SCHOLARSHIP AND EXCELLENCE IN EDUCATION FOUNDATION",
@@ -4270,32 +4278,80 @@
         "rows": 9
       },
       {
-        "agency": "NATIONAL COUNCIL ON DISABILITY",
-        "rows": 9
-      },
-      {
-        "agency": "COMMISSION OF FINE ARTS",
-        "rows": 8
-      },
-      {
-        "agency": "DEFENSE NUCLEAR FACILITIES SAFETY BOARD",
-        "rows": 8
-      },
-      {
-        "agency": "ARCTIC RESEARCH COMMISSION",
-        "rows": 7
-      },
-      {
-        "agency": "FEDERAL MINE SAFETY AND HEALTH REVIEW COMMISSION",
-        "rows": 7
-      },
-      {
-        "agency": "PUBLIC BUILDINGS REFORM BOARD",
-        "rows": 7
-      },
-      {
-        "agency": "INTER-AMERICAN FOUNDATION",
+        "agency": "OFFICE OF THE DIRECTOR FOR NATIONAL INTELLIGENCE",
         "rows": 6
+      },
+      {
+        "agency": "GREAT LAKES FISHERY COMMISSION",
+        "rows": 5
+      },
+      {
+        "agency": "PRIVACY AND CIVIL LIBERTIES AND OVERSIGHT BOARD",
+        "rows": 5
+      },
+      {
+        "agency": "DEPARTMENT OF LABOR OFFICE OF INSPECTOR GENERAL",
+        "rows": 4
+      },
+      {
+        "agency": "EXECUTIVE OFFICE OF THE PRESIDENT - U.S. DOGE SERVICE",
+        "rows": 4
+      },
+      {
+        "agency": "UTAH RECLAMATION MITIGATION AND CONSERVATION COMMISSION",
+        "rows": 4
+      },
+      {
+        "agency": "CONSUMER FINANCIAL PROTECTION BUREAU",
+        "rows": 3
+      },
+      {
+        "agency": "DEPARTMENT OF HOUSING AND URBAN DEVELOPMENT OFFICE OF THE INSPECTOR GENERAL",
+        "rows": 3
+      },
+      {
+        "agency": "DEPARTMENT OF THE TREASURY OFFICE OF THE SPECIAL INSPECTOR GENERAL FOR PANDEMIC RECOVERY",
+        "rows": 3
+      },
+      {
+        "agency": "FEDERAL PERMITTING IMPROVEMENT STEERING COUNCIL",
+        "rows": 3
+      },
+      {
+        "agency": "INTERNATIONAL JOINT COMMISSION",
+        "rows": 3
+      },
+      {
+        "agency": "INTERSTATE COMMISSION ON THE POTOMAC RIVER BASIN",
+        "rows": 3
+      },
+      {
+        "agency": "DEPARTMENT OF EDUCATION OFFICE OF THE INSPECTOR GENERAL",
+        "rows": 2
+      },
+      {
+        "agency": "DEPARTMENT OF ENERGY OFFICE OF THE INSPECTOR GENERAL",
+        "rows": 2
+      },
+      {
+        "agency": "DEPARTMENT OF THE TREASURY OFFICE OF THE INSPECTOR GENERAL",
+        "rows": 2
+      },
+      {
+        "agency": "FEDERAL COMMUNICATIONS COMMISSION OFFICE OF THE INSPECTOR GENERAL",
+        "rows": 2
+      },
+      {
+        "agency": "FEDERAL ELECTION COMMISSION OFFICE OF THE INSPECTOR GENERAL",
+        "rows": 2
+      },
+      {
+        "agency": "INTELLECTUAL PROPERTY ENFORCEMENT COORDINATOR",
+        "rows": 2
+      },
+      {
+        "agency": "INTERNATIONAL BOUNDARY AND WATER COMMISSION",
+        "rows": 2
       }
     ],
     "samples": [
