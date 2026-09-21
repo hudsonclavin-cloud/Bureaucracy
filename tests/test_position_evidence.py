@@ -147,6 +147,17 @@ class PostTitleFloorTests(unittest.TestCase):
         self.assertIsNone(uncheckable_reason_for_node(SEC))
         self.assertIsNone(uncheckable_reason_for_node(DEPT))
 
+    def test_an_address_is_never_a_label(self) -> None:
+        """usgs.gov/about/key-officials carries director@usgs.gov and the
+        leadership-page sweep of 2026-09-21 found the matcher reading it as
+        the label "Director, USGS". Both copies refuse it; the plain name
+        still passes so the rule cannot be hiding a broken matcher."""
+        key = canonical_name_key("Director, USGS")
+        self.assertFalse(label_matches(key, "director@usgs.gov"))
+        self.assertFalse(gate.label_names({"name": "Director, USGS"}, "director@usgs.gov"))
+        self.assertTrue(label_matches(key, "Director, USGS"))
+        self.assertTrue(gate.label_names({"name": "Director, USGS"}, "Director, USGS"))
+
     def test_the_gate_s_label_test_is_the_matcher_s_label_test(self) -> None:
         """The gate keeps a stdlib copy of `label_matches`, and a copy that
         drifts EITHER way is a fault: too loose lets a label for a different
@@ -167,6 +178,10 @@ class PostTitleFloorTests(unittest.TestCase):
             ("Inspector General", "Deputy Inspector General"),
             ("Sergeant at Arms", "Readiness"),
             ("Sergeant at Arms", ""),
+            # An address is never a label: "director@usgs.gov" reduces to
+            # "director usgs gov" and "gov" is a scaffold word.
+            ("Director, USGS", "director@usgs.gov"),
+            ("Director, USGS", "Director, USGS"),
         ]
         for name, matched in cases:
             with self.subTest(name=name, matched=matched):

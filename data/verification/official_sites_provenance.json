@@ -78,12 +78,15 @@
   "schemeUpgraded": true
  },
  "exec-dept-doc-bea": {
-  "url": "https://www.bea.gov/",
-  "source": "federal_register_agency_directory",
-  "listedName": "Economic Analysis Bureau",
-  "directoryFetchedAt": "2026-09-08T19:19:15Z",
-  "listedUrl": "http://www.bea.gov/",
-  "schemeUpgraded": true
+  "url": "https://www.bea.gov/about/leadership",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "nominatedFor": "exec-dept-doc-bea",
+  "basis": "leadership page labels 1 of the organisation's 4 checkable post titles in page content (1 not yet confirmed): 'Deputy Director' as 'Deputy Director'",
+  "confidence": "likely",
+  "run": "leadership-2026-09-21",
+  "nominatedAt": "2026-09-21T03:51:27Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
  },
  "exec-dept-doc-census": {
   "url": "https://www.census.gov/",
@@ -182,12 +185,15 @@
   "schemeUpgraded": true
  },
  "exec-dept-doj-fbi": {
-  "url": "https://www.fbi.gov/",
-  "source": "federal_register_agency_directory",
-  "listedName": "Federal Bureau of Investigation",
-  "directoryFetchedAt": "2026-09-08T19:19:15Z",
-  "listedUrl": "http://www.fbi.gov/",
-  "schemeUpgraded": true
+  "url": "https://www.fbi.gov/about/leadership-and-structure",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "nominatedFor": "exec-dept-doj-fbi",
+  "basis": "leadership page labels 2 of the organisation's 21 checkable post titles in page content (2 not yet confirmed): 'Deputy Director' as 'Office of the Director/Deputy Director/Associate Deputy Dire'; 'Associate Deputy Director' as 'Associate Deputy Director –'",
+  "confidence": "likely",
+  "run": "leadership-2026-09-21",
+  "nominatedAt": "2026-09-21T03:51:27Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
  },
  "exec-dept-dol-bls": {
   "url": "https://www.bls.gov/",
@@ -278,12 +284,15 @@
   "schemeUpgraded": true
  },
  "exec-dept-hhs-cdc": {
-  "url": "https://www.cdc.gov/",
-  "source": "federal_register_agency_directory",
-  "listedName": "Centers for Disease Control and Prevention",
-  "directoryFetchedAt": "2026-09-08T19:19:15Z",
-  "listedUrl": "http://www.cdc.gov/",
-  "schemeUpgraded": true
+  "url": "https://www.cdc.gov/about/organization/",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "nominatedFor": "exec-dept-hhs-cdc",
+  "basis": "leadership page labels 1 of the organisation's 13 checkable post titles in page content (1 not yet confirmed): 'Chief of Staff' as 'Chief of Staff'",
+  "confidence": "likely",
+  "run": "leadership-2026-09-21",
+  "nominatedAt": "2026-09-21T03:51:27Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
  },
  "exec-dept-hhs-cms": {
   "url": "https://www.cms.gov/",
@@ -467,14 +476,14 @@
   "schemeUpgraded": true
  },
  "exec-ind-misc-farm-credit-administration": {
-  "url": "https://www.fca.gov/",
+  "url": "https://www.fca.gov/about/leadership",
   "source": "agent_nomination",
   "role": "own_site",
   "nominatedFor": "exec-ind-misc-farm-credit-administration",
-  "basis": "The queued URL (fca.gov/index.html) 404s -- the page moved. Probed the bare domain root this session: readable (1,902 chars), verifier's label test matches in content exactly ('Farm Credit Administration'). | probe: 1902 readable chars, labelled=True, matched='Farm Credit Administration' [content] | verifier: Re-probed 2026-09-20: https://www.fca.gov/ reads 1,902 chars and the label test returns labelled, fragment 'Farm Credit Administration' exactly, region content. Host is .gov and not walled. The agency",
+  "basis": "leadership page labels 1 of the organisation's 5 checkable post titles in page content (1 not yet confirmed): 'Inspector General' as 'Inspector general'",
   "confidence": "likely",
-  "run": "sweep-2026-09-20",
-  "nominatedAt": "2026-09-20T23:44:26Z",
+  "run": "leadership-2026-09-21",
+  "nominatedAt": "2026-09-21T03:51:27Z",
   "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
  },
  "exec-ind-misc-federal-election-commission-fec": {
@@ -502,14 +511,14 @@
   "schemeUpgraded": true
  },
  "exec-ind-misc-national-credit-union-administration-ncua": {
-  "url": "https://www.ncua.gov/",
+  "url": "https://ncua.gov/about/leadership",
   "source": "agent_nomination",
   "role": "own_site",
   "nominatedFor": "exec-ind-misc-national-credit-union-administration-ncua",
-  "basis": "Probed https://www.ncua.gov/ with scripts/probe_candidate_pages.py this session: labelled, matched 'The National Credit Union Administration' in page content (3,488 readable chars). This is NCUA's own domain, not an index of it, so own_site is the correct role. | probe: 3488 readable chars, labelled=True, matched='The National Credit Union Administration' [content] | verifier: Re-probed this session: labelled, 'The National Credit Union Administration' in page content, 3,488 readable chars -- exactly what the basis claims. www.ncua.gov is .gov and not in walledHosts; it is ",
+  "basis": "leadership page labels 1 of the organisation's 5 checkable post titles in page content (1 not yet confirmed): 'General Counsel' as 'General Counsel'",
   "confidence": "likely",
-  "run": "sweep-2026-09-20",
-  "nominatedAt": "2026-09-20T23:44:26Z",
+  "run": "leadership-2026-09-21",
+  "nominatedAt": "2026-09-21T03:51:27Z",
   "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
  },
  "exec-ind-misc-national-endowment-for-the-arts-nea": {
@@ -836,13 +845,14 @@
   "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
  },
  "leg-house-cmte-education-the-workforce": {
-  "url": "https://edworkforce.house.gov/",
+  "url": "https://edworkforce.house.gov/subcommittees/",
   "source": "agent_nomination",
-  "role": "own_site",
-  "basis": "Following the common House committee domain pattern (committee-name.house.gov); the committee's full name suggests an 'edworkforce' abbreviation, but this is a guess, not a verified domain.",
-  "confidence": "speculative",
-  "run": "pass1",
-  "nominatedAt": "2026-09-09T23:43:03Z",
+  "role": "parent_listing",
+  "nominatedFor": "leg-house-cmte-education-the-workforce-sub-early-childhood-elementary-secondary-education",
+  "basis": "The committee's own Subcommittees page, fetched 2026-09-21 under the verifier's robots policy: labels the subcommittee in page content; the verifier's label test (with the committee fold) matched the curated name.",
+  "confidence": "likely",
+  "run": "leadership-2026-09-21",
+  "nominatedAt": "2026-09-21T03:17:11Z",
   "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
  },
  "leg-house-cmte-oversight-accountability": {
@@ -2627,13 +2637,14 @@
   "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
  },
  "exec-ind-misc-national-transportation-safety-board-ntsb": {
-  "url": "https://www.ntsb.gov/",
+  "url": "https://www.ntsb.gov/about/organization/Pages/default.aspx",
   "source": "agent_nomination",
   "role": "own_site",
-  "basis": "NOT fetched — tried https://www.ntsb.gov/ and https://www.ntsb.gov/about/Pages/default.aspx, both CONNECT tunnel failed with 403 (this session's proxy denies ntsb.gov by policy). ntsb.gov is NTSB's well-known official domain; unconfirmed by fetch.",
-  "confidence": "speculative",
-  "run": "brute1",
-  "nominatedAt": "2026-09-13T23:37:50Z",
+  "nominatedFor": "exec-ind-misc-national-transportation-safety-board-ntsb",
+  "basis": "leadership page labels 2 of the organisation's 5 checkable post titles in page content (2 not yet confirmed): 'General Counsel' as 'General Counsel'; 'Chief Financial Officer' as 'Chief Financial Officer'",
+  "confidence": "likely",
+  "run": "leadership-2026-09-21",
+  "nominatedAt": "2026-09-21T03:51:27Z",
   "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
  },
  "exec-ind-misc-peace-corps": {
@@ -3071,14 +3082,14 @@
   "nominatedFor": "exec-dept-ed-ocr"
  },
  "exec-dept-hud": {
-  "url": "https://www.hud.gov/aboutus/field-leadership",
+  "url": "https://www.hud.gov/aboutus/leadership",
   "source": "agent_nomination",
-  "role": "parent_listing",
-  "nominatedFor": "exec-dept-hud-region-i-new-england",
-  "basis": "HUD's own Field Leadership page enumerates the department's ten field regions and heads each one by its headquarters city, which is exactly the label the region node now carries after the 2026-09-19 rename (CURATION.md §9). It is the parent department's page listing its children, so it is nominated as a parent_listing and filed under the parent; the claim it can support is 'HUD's own page lists this region', not 'this is the region's own site'. Probed before nominating: the page reads 1,101 readable characters and labels all ten regions in content.",
+  "role": "own_site",
+  "nominatedFor": "exec-dept-hud",
+  "basis": "leadership page labels 4 of the organisation's 16 checkable post titles in page content (4 not yet confirmed): 'Chief of Staff' as 'Chief of Staff'; 'General Counsel' as 'General Counsel'; 'Chief Financial Officer' as 'Chief Financial Officer'; 'Chief Information Officer' as 'Chief Information Officer'",
   "confidence": "likely",
-  "run": "hud-regions-2026-09-19",
-  "nominatedAt": "2026-09-19T18:22:25Z",
+  "run": "leadership-2026-09-21",
+  "nominatedAt": "2026-09-21T03:51:27Z",
   "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
  },
  "exec-dept-va-bva": {
@@ -3984,14 +3995,14 @@
   "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
  },
  "exec-ind-nara": {
-  "url": "https://www.archives.gov/presidential-libraries",
+  "url": "https://www.archives.gov/about/organization",
   "source": "agent_nomination",
-  "role": "parent_listing",
-  "nominatedFor": "exec-ind-nara-george-w-bush-presidential-library-dallas-tx",
-  "basis": "NARA's own directory page (the parent's index of its 14 presidential libraries -- structurally identical to the energy.gov/national-laboratories case CLAUDE.md documents) labels this unit in content as 'George W. Bush Presidential Library', probed 2026-09-20 (4,651 readable chars). The prior 2026-09-13 recheck1 nomination cited this exact URL but filed it under role=official_list, which nominate.py promote files nowhere -- so the confirmation never reached the node and it is still recorded as inconclusive/only_an_ancestor_page_was_read today. Re-filing as parent_listing (correct role) should let it publish name_labelled_on_parent_official_page, same as CLAUDE.md's fix for the other 13 libraries this page lists. | probe: 4651 readable chars, labelled=True, matched='George W. Bush Presidential Library' [content] | verifier: Re-probed https://www.archives.gov/presidential-libraries --ids exec-ind-nara-george-w-bush-presidential-library-dallas-tx: labelled, as 'George W. Bush Presidential Library', region content, 4,651 re",
+  "role": "own_site",
+  "nominatedFor": "exec-ind-nara",
+  "basis": "leadership page labels 3 of the organisation's 11 checkable post titles in page content (3 not yet confirmed): 'Archivist of the United States' as 'Archivist of the United States'; 'Deputy Archivist' as 'Deputy Archivist of the United States'; 'General Counsel' as 'General Counsel'",
   "confidence": "likely",
-  "run": "sweep-2026-09-20",
-  "nominatedAt": "2026-09-20T23:44:26Z",
+  "run": "leadership-2026-09-21",
+  "nominatedAt": "2026-09-21T03:51:27Z",
   "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
  },
  "exec-ind-nsf-engineering-eng": {
@@ -4028,14 +4039,14 @@
   "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
  },
  "exec-regulatory-fdic": {
-  "url": "https://www.fdic.gov/",
+  "url": "https://www.fdic.gov/about/board-directors-senior-executives",
   "source": "agent_nomination",
   "role": "own_site",
   "nominatedFor": "exec-regulatory-fdic",
-  "basis": "Found by the adversarial verifier of the 2026-09-20 sweep while spot-checking a decline: probed with scripts/probe_candidate_pages.py, 4,560 readable chars, the verifier's own label test matches the curated name in CONTENT as 'FDIC: Federal Deposit Insurance Corporation'. The triage had tried only another page on the host.",
+  "basis": "leadership page labels 3 of the organisation's 8 checkable post titles in page content (3 not yet confirmed): 'General Counsel' as 'General Counsel'; 'Director — Division of Risk Management Supervision' as 'Director, Division of Risk Management Supervision'; 'Director — Division of Depositor & Consumer Protection' as 'Director, Division of Depositor and Consumer Protection'",
   "confidence": "likely",
-  "run": "sweep-2026-09-20",
-  "nominatedAt": "2026-09-20T23:44:26Z",
+  "run": "leadership-2026-09-21",
+  "nominatedAt": "2026-09-21T03:51:27Z",
   "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
  },
  "jud-district-sdny": {
@@ -4069,6 +4080,127 @@
   "confidence": "likely",
   "run": "probe-15",
   "nominatedAt": "2026-09-18T21:55:31Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "exec-ind-cia": {
+  "url": "https://www.cia.gov/about/organization/",
+  "source": "agent_nomination",
+  "role": "parent_listing",
+  "nominatedFor": "exec-ind-cia-directorate-of-analysis-da",
+  "basis": "CIA's own Organization page, fetched 2026-09-21: labels 'Directorate of Analysis' in page content; the verifier's label test matched the curated name.",
+  "confidence": "likely",
+  "run": "leadership-2026-09-21",
+  "nominatedAt": "2026-09-21T03:17:11Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "exec-ind-epa": {
+  "url": "https://www.epa.gov/aboutepa/epa-organization-chart",
+  "source": "agent_nomination",
+  "role": "parent_listing",
+  "nominatedFor": "exec-ind-epa-office-of-air-radiation-oar",
+  "basis": "EPA's own organization chart page, fetched 2026-09-21 under the verifier's robots policy: labels 'Office of Air and Radiation' in page content; the verifier's label test matched the curated name.",
+  "confidence": "likely",
+  "run": "leadership-2026-09-21",
+  "nominatedAt": "2026-09-21T03:17:11Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "exec-ind-nara-dwight-d-eisenhower-presidential-library-abilene-ks": {
+  "url": "https://www.eisenhowerlibrary.gov/",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "nominatedFor": "exec-ind-nara-dwight-d-eisenhower-presidential-library-abilene-ks",
+  "basis": "Fetched 2026-09-21 under the verifier's robots policy: answers 200, <title> 'Home | Eisenhower Presidential Library'; the library's own .gov site. Label test did not match the curated name; a page to check.",
+  "confidence": "likely",
+  "run": "leadership-2026-09-21",
+  "nominatedAt": "2026-09-21T03:17:11Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "exec-ind-nara-harry-s-truman-presidential-library-independence-mo": {
+  "url": "https://www.trumanlibrary.gov/",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "nominatedFor": "exec-ind-nara-harry-s-truman-presidential-library-independence-mo",
+  "basis": "Fetched 2026-09-21 under the verifier's robots policy: answers 200, <title> 'Welcome to the Harry S. Truman Presidential Library and Museum'; the library's own .gov site. Label test did not match the curated name on the homepage; a page to check.",
+  "confidence": "likely",
+  "run": "leadership-2026-09-21",
+  "nominatedAt": "2026-09-21T03:17:11Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "exec-ind-nara-herbert-hoover-presidential-library-west-branch-ia": {
+  "url": "https://hoover.archives.gov/",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "nominatedFor": "exec-ind-nara-herbert-hoover-presidential-library-west-branch-ia",
+  "basis": "Fetched 2026-09-21 under the verifier's robots policy: answers 200, <title> 'Herbert Hoover Presidential Library-Museum'; the library's own NARA-hosted site. The verifier's label test did not match the curated name on the homepage (the page says 'Library-Museum'), so this is a page to check, not a confirmation.",
+  "confidence": "likely",
+  "run": "leadership-2026-09-21",
+  "nominatedAt": "2026-09-21T03:17:11Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "exec-ind-nara-ronald-reagan-presidential-library-simi-valley-ca": {
+  "url": "https://www.reaganlibrary.gov/",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "nominatedFor": "exec-ind-nara-ronald-reagan-presidential-library-simi-valley-ca",
+  "basis": "Fetched 2026-09-21 under the verifier's robots policy: answers 200, <title> 'Ronald Reagan Presidential Library & Museum'; the library's own .gov site. Label test did not match the curated name on the homepage; a page to check.",
+  "confidence": "likely",
+  "run": "leadership-2026-09-21",
+  "nominatedAt": "2026-09-21T03:17:11Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "exec-ind-nara-william-j-clinton-presidential-library-little-rock-ar": {
+  "url": "https://www.clintonlibrary.gov/",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "nominatedFor": "exec-ind-nara-william-j-clinton-presidential-library-little-rock-ar",
+  "basis": "Fetched 2026-09-21 under the verifier's robots policy: answers 200, <title> 'Homepage | William J. Clinton Presidential Library and Museum'; the library's own .gov site. Label test did not match the curated name on the homepage; a page to check.",
+  "confidence": "likely",
+  "run": "leadership-2026-09-21",
+  "nominatedAt": "2026-09-21T03:17:11Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "exec-ind-nsf": {
+  "url": "https://www.nsf.gov/about/leadership",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "nominatedFor": "exec-ind-nsf",
+  "basis": "leadership page labels 4 of the organisation's 9 checkable post titles in page content (4 not yet confirmed): 'Chief of Staff' as 'Chief of Staff (Acting)'; 'General Counsel' as 'General Counsel'; 'Inspector General' as 'Inspector General (Acting)'; 'Chief Financial Officer' as 'Chief Financial Officer (Acting)'",
+  "confidence": "likely",
+  "run": "leadership-2026-09-21",
+  "nominatedAt": "2026-09-21T03:51:27Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "exec-regulatory-nrc": {
+  "url": "https://www.nrc.gov/about-nrc/organization-functions",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "nominatedFor": "exec-regulatory-nrc",
+  "basis": "leadership page labels 3 of the organisation's 9 checkable post titles in page content (3 not yet confirmed): 'Executive Director for Operations' as ', Executive Director for Operations'; 'General Counsel' as ', General Counsel'; 'Inspector General' as ', Inspector General'",
+  "confidence": "likely",
+  "run": "leadership-2026-09-21",
+  "nominatedAt": "2026-09-21T03:51:27Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-leadership": {
+  "url": "https://www.house.gov/leadership",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "nominatedFor": "leg-house-leadership",
+  "basis": "Fetched 2026-09-21 under the verifier's robots policy: answers 200, <title> 'Leadership | house.gov', the chamber's own leadership page. The label test did not match the curated name 'House Leadership' (the page's heading is 'Leadership'); the name appears in prose only. A page to check.",
+  "confidence": "speculative",
+  "run": "leadership-2026-09-21",
+  "nominatedAt": "2026-09-21T03:17:11Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-support-uscp": {
+  "url": "https://www.uscp.gov/about/leadership",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "nominatedFor": "leg-support-uscp",
+  "basis": "leadership page labels 2 of the organisation's 6 checkable post titles in page content (2 not yet confirmed): 'Chief of Police' as 'Chief of Police'; 'General Counsel' as 'General Counsel'",
+  "confidence": "likely",
+  "run": "leadership-2026-09-21",
+  "nominatedAt": "2026-09-21T03:51:27Z",
   "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
  }
 }

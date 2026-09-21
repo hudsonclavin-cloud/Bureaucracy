@@ -27,7 +27,8 @@
   "https://www.aoc.gov/explore-capitol-campus/buildings-grounds"
  ],
  "leg-support-uscp": [
-  "https://www.uscp.gov/the-department"
+  "https://www.uscp.gov/the-department",
+  "https://www.uscp.gov/about/leadership"
  ],
  "executive-branch": [
   "https://www.whitehouse.gov/government/executive-branch/"
@@ -82,7 +83,8 @@
   "https://www.hud.gov/about",
   "https://www.hud.gov/aboutus",
   "https://www.hud.gov/program_offices/field_policy_mgt/localoffices",
-  "https://www.hud.gov/aboutus/field-leadership"
+  "https://www.hud.gov/aboutus/field-leadership",
+  "https://www.hud.gov/aboutus/leadership"
  ],
  "exec-dept-dot": [
   "https://www.transportation.gov/about"
@@ -111,10 +113,13 @@
   "https://www.dhs.gov/about-dhs"
  ],
  "exec-ind-cia": [
-  "https://www.cia.gov/about/"
+  "https://www.cia.gov/about/",
+  "https://www.cia.gov/about/organization",
+  "https://www.cia.gov/about/organization/"
  ],
  "exec-ind-epa": [
-  "https://www.epa.gov/aboutepa"
+  "https://www.epa.gov/aboutepa",
+  "https://www.epa.gov/aboutepa/epa-organization-chart"
  ],
  "exec-ind-nasa": [
   "https://www.nasa.gov/about/",
@@ -155,14 +160,16 @@
   "https://www.sba.gov/counseling/local-assistance/"
  ],
  "exec-ind-nsf": [
-  "https://www.nsf.gov/about"
+  "https://www.nsf.gov/about",
+  "https://www.nsf.gov/about/leadership"
  ],
  "exec-ind-opm": [
   "https://www.opm.gov/about-us/"
  ],
  "exec-ind-nara": [
   "https://www.archives.gov/about",
-  "https://www.archives.gov/presidential-libraries"
+  "https://www.archives.gov/presidential-libraries",
+  "https://www.archives.gov/about/organization"
  ],
  "exec-regulatory-fed": [
   "https://www.federalreserve.gov/aboutthefed.htm"
@@ -177,7 +184,8 @@
   "https://www.ftc.gov/about-ftc"
  ],
  "exec-regulatory-nrc": [
-  "https://www.nrc.gov/about-nrc.html"
+  "https://www.nrc.gov/about-nrc.html",
+  "https://www.nrc.gov/about-nrc/organization-functions"
  ],
  "exec-regulatory-ferc": [
   "https://www.ferc.gov/about/what-ferc"
@@ -187,7 +195,8 @@
  ],
  "exec-regulatory-fdic": [
   "https://www.fdic.gov/about",
-  "https://www.fdic.gov/"
+  "https://www.fdic.gov/",
+  "https://www.fdic.gov/about/board-directors-senior-executives"
  ],
  "exec-regulatory-cftc": [
   "https://www.cftc.gov/About/AboutTheCommission"
@@ -241,7 +250,8 @@
  ],
  "exec-ind-misc-national-credit-union-administration-ncua": [
   "https://www.ncua.gov",
-  "https://www.ncua.gov/"
+  "https://www.ncua.gov/",
+  "https://ncua.gov/about/leadership"
  ],
  "exec-dept-defense-agency-dcaa": [
   "https://www.dcaa.mil/"
@@ -271,7 +281,8 @@
   "https://www.secretservice.gov/"
  ],
  "exec-dept-doc-bea": [
-  "https://www.bea.gov/"
+  "https://www.bea.gov/",
+  "https://www.bea.gov/about/leadership"
  ],
  "exec-dept-doc-census": [
   "https://www.census.gov/"
@@ -310,7 +321,8 @@
   "https://www.justice.gov/atr/"
  ],
  "exec-dept-doj-fbi": [
-  "https://www.fbi.gov/"
+  "https://www.fbi.gov/",
+  "https://www.fbi.gov/about/leadership-and-structure"
  ],
  "exec-dept-dol-bls": [
   "https://www.bls.gov/"
@@ -346,7 +358,8 @@
   "https://www.ahrq.gov/about/ahrqfact.htm"
  ],
  "exec-dept-hhs-cdc": [
-  "https://www.cdc.gov/"
+  "https://www.cdc.gov/",
+  "https://www.cdc.gov/about/organization/"
  ],
  "exec-dept-hhs-cms": [
   "https://www.cms.gov/"
@@ -411,7 +424,8 @@
  ],
  "exec-ind-misc-farm-credit-administration": [
   "https://www.fca.gov/index.html",
-  "https://www.fca.gov/"
+  "https://www.fca.gov/",
+  "https://www.fca.gov/about/leadership"
  ],
  "exec-ind-misc-federal-election-commission-fec": [
   "https://www.fec.gov/"
@@ -580,7 +594,8 @@
   "https://clerk.house.gov/"
  ],
  "leg-house-cmte-education-the-workforce": [
-  "https://edworkforce.house.gov/"
+  "https://edworkforce.house.gov/",
+  "https://edworkforce.house.gov/subcommittees/"
  ],
  "leg-house-cmte-oversight-accountability": [
   "https://oversight.house.gov/"
@@ -1148,7 +1163,8 @@
   "https://www.nlrb.gov/"
  ],
  "exec-ind-misc-national-transportation-safety-board-ntsb": [
-  "https://www.ntsb.gov/"
+  "https://www.ntsb.gov/",
+  "https://www.ntsb.gov/about/organization/Pages/default.aspx"
  ],
  "exec-ind-misc-peace-corps": [
   "https://www.peacecorps.gov/"
@@ -1569,5 +1585,23 @@
  ],
  "leg-house-cmte-foreign-affairs-sub-oversight-accountability": [
   "https://foreignaffairs.house.gov/subcommittees/oversight-and-intelligence-subcommittee-119th-congress"
+ ],
+ "exec-ind-nara-dwight-d-eisenhower-presidential-library-abilene-ks": [
+  "https://www.eisenhowerlibrary.gov/"
+ ],
+ "exec-ind-nara-harry-s-truman-presidential-library-independence-mo": [
+  "https://www.trumanlibrary.gov/"
+ ],
+ "exec-ind-nara-herbert-hoover-presidential-library-west-branch-ia": [
+  "https://hoover.archives.gov/"
+ ],
+ "exec-ind-nara-ronald-reagan-presidential-library-simi-valley-ca": [
+  "https://www.reaganlibrary.gov/"
+ ],
+ "exec-ind-nara-william-j-clinton-presidential-library-little-rock-ar": [
+  "https://www.clintonlibrary.gov/"
+ ],
+ "leg-house-leadership": [
+  "https://www.house.gov/leadership"
  ]
 }
