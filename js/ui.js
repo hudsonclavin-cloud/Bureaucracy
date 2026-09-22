@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20260921f";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260921f";
+import { createGovernmentGraph } from "./graph.js?v=20260922a";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260922a";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -2833,6 +2833,11 @@ function expandProgressively(targetDepth, scopeObj = null) {
       setText(dom.btnExpandAll, "Expand All Below");
       hideLoader();
       renderInfoPanel(state.graph.getSelectedNode());
+      // Only when the expansion was scoped to a node: a depth button expands
+      // the whole tree and has no brood to frame.
+      if (scopeObj) {
+        state.graph.frameBroodOf(scopeObj);
+      }
       return;
     }
 
@@ -2945,6 +2950,12 @@ function bindControls() {
       }
       hideLoader();
       renderInfoPanel(selected);
+      // Pressing Expand is a request to SEE the children, so the camera is
+      // allowed to pull back far enough to hold them -- which plain
+      // selection is not. Without this the White House Office's 249
+      // children were placed on a shell 374 units across and drawn as a fan
+      // of edges leaving the frame on every side.
+      state.graph.frameBroodOf(selected);
     };
     window.requestAnimationFrame(settle);
   });

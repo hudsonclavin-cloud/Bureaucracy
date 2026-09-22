@@ -2241,6 +2241,91 @@ Cache busting is manual: bump the `?v=` query string in `index.html` and in
 the imports at the top of `js/ui.js` and `js/graph.js` together after any JS
 change, or users run stale modules against new data.
 
+**Expanding a node drew its edges and not its children (since 2026-09-22).**
+Three rules that are each individually right combined into a state where
+expanding a node drew almost none of what it expanded. The White House Office
+carries 249 children; pressing "Expand All Below" on it put **4 of those 249
+on screen**, and what a reader saw was a fan of edges leaving the frame on
+every side with nothing at the end of any of them. Measured in a headless
+browser at 1400x900, by counting how many of that node's own child ids were
+in the drawn set, not reasoned about.
+
+The three: `getSpreadPositions` lays a brood on a shell whose radius is a
+function of DEPTH (`shellRadiusForDepth`, plus the crowding bump added the day
+before) — 374 units for this one; `focusNode` centres the selection and
+deliberately never pulls the camera outward, because a reader who zoomed in
+should stay in; and `lodManager.shouldRenderNode` caps drawn depth by a tier
+that is a function of camera DISTANCE. So the children were placed far outside
+a view the camera was not allowed to widen, and widening it by hand was
+exactly what dropped the tier and stopped them being drawn at all.
+
+`frameBroodOf` is the camera half and is called **only from an expansion** —
+`btnExpand`, and `expandProgressively` when it was scoped to a node, never
+from a depth button and never from plain selection, so the rule `focusNode`
+states still governs every other path. Pressing Expand is a request to see the
+children, so that one path may pull back. It frames the brood rather than the
+parent: `getSpreadPositions` uses a CONE (half-angle 0.42 radians, widening to
+0.95 for a large brood), so a camera centred on the parent puts the whole
+brood to one side and leaves half the frame empty — the focus point is the
+centroid of the parent and its children, and the fit radius the farthest of
+them from it. It reads `targetPos` rather than `pos`, since a brood expanded a
+frame ago is still animating out of the parent's own position and `pos` would
+fit the camera to a sphere of radius nearly zero.
+
+The camera half **alone makes it worse, measurably**: pulling back to hold the
+brood took the view from Office View to Branch View and the brood's own drawn
+count from 4 to **11 of 249** — the tier that draws those children is exactly
+the tier the camera left. Zooming out to see something cannot be the thing
+that hides it, so `isNodeRenderableAtCurrentLod` exempts the selected node's
+own children from the tier, the way it already exempts the selected node
+itself. Bounded to **one brood, never a subtree** — 249 nodes at the worst node
+in this graph — so the cost is the selection's child count and not a second
+copy of the tree. The two choices a reader makes above the tier still stand:
+an explicit depth filter wins (that is a reader saying how deep to go, not the
+camera guessing), and the verification toggles decide what may be shown at
+all.
+
+Both halves together: **235 of 249**. The remaining fourteen are the
+screen-tile density cap doing its job — 249 nodes in one frame is more than
+some tiles will hold — and how many it trims depends on where the camera
+happens to sit, so the same expansion run at the end of the smoke file's
+sequence rather than on its own drew 183. `scripts/frontend_smoke.mjs` expands
+that node from the served graph, pins the unverified toggle and the depth
+filter first (a toggle left off would correctly withhold most of the brood,
+and the exemption is deliberately subordinate to an explicit depth filter),
+and asserts that a majority of the brood is drawn. The bar is 60% rather than
+90% for the density cap's sake; the state it exists to catch scored 1.6%.
+
+**Labels were de-overlapped against each other and against the page's own
+panels against nothing (since 2026-09-22).** `suppressOverlappingLabels` has
+always hidden a label that collides with a higher-priority label; nothing
+compared one with the chrome drawn over the canvas. The same 1400x900 capture
+had "Executive Office of the President (EOP) (430)" sitting on top of the
+legend's colour key, two cluster labels sliced off by the right panel's edge,
+and a third under the left column's text. `getChromeRects` measures the eight
+panels from the DOM once a frame — `getBoundingClientRect`, canvas-relative,
+skipping anything not displayed — rather than writing coordinates down: the
+left column's width has changed three times this month, with the reading-guide
+button, the depth list and the stats block. A label overlapping one is hidden
+before the label-against-label pass runs. Geometry is untouched: a cluster
+ring that drifts behind the breadcrumb is where the data puts it, and moving
+it would be a lie about the scene; only the text the renderer chooses to draw
+is suppressed.
+
+**Still true and deliberately not changed: every node is the same size.**
+`nodeRadiusForDepth` takes a depth and returns the constant `NODE_RADIUS`, so
+the most available visual channel in the scene encodes nothing — the 159
+measured nodes are drawn exactly like the 4,657 with no figure. The obvious
+encoding is subtree size, and this file already records why that would be
+wrong: raw node count is "a compressed, noisy proxy for real size even when
+every title in it was independently curated", which is the reason the cost
+cascade discounts the administrative stamp rather than trusting depth. Putting
+that proxy on the loudest channel in the renderer would make the picture claim
+more than the data supports, which is the one thing this project does not do.
+Cost cannot be the encoding either: 4,657 nodes have no figure, and of those
+that do most are apportioned. Uniform size is the honest default, and it is
+recorded here as a decision rather than left looking like an oversight.
+
 **The key named 25 accounting lines as offices (since 2026-09-18).** A
 receipts line is created by the exporter and carried no colour of its own, so
 it took `DEFAULT_NODE["color"]` — the same `#666666` the 4,589 Position nodes

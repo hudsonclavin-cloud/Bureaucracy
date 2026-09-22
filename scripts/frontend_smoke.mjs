@@ -1481,6 +1481,53 @@ try {
     check(`the camera flies close enough to draw depth ${target.__depth}`, shownDepth >= (target.__depth || 0), depthLine);
   }
 
+  // Expanding a node has to put that node's children on screen. Two rules
+  // work together and each one alone makes it worse, so both are measured
+  // here on the widest brood in the graph (the White House Office's 249):
+  // the camera pulls back to hold the brood, and the brood is exempt from
+  // the distance-driven LOD tier that pulling back would otherwise drop it
+  // below. Measured 2026-09-22 at 1400x900, by expanding that node and
+  // counting how many of ITS OWN child ids are in the drawn set:
+  //
+  //   before          4 of 249     (a fan of edges and nothing at the end)
+  //   camera only    11 of 249     (pulled back past the tier that draws them)
+  //   both          235 of 249
+  //
+  // The bar is 60%, not 90%, and the gap is the screen-tile density cap
+  // doing its job: 249 nodes in one frame is more than some tiles will hold,
+  // and how many it trims depends on where the camera happens to sit. The
+  // same expansion run at the end of this file's sequence rather than alone
+  // drew 183. Either is the fix working; 4 is not.
+  {
+    // The brood's OWN ids in the drawn set, not the drawn total: ancestors,
+    // clusters and whatever else the camera happens to hold are not what
+    // this is asking about, and counting them made the figure depend on
+    // where the earlier checks left the view. The unverified toggle is
+    // re-checked first, since a toggle left off would correctly withhold
+    // most of this brood and the check would be measuring that instead.
+    await page.locator("#verification-toggles input").nth(0).check();
+    // ...and the depth filter is returned to "all", since the brood's
+    // exemption from the LOD tier is deliberately subordinate to an explicit
+    // depth filter: a reader who says "depth 4" is saying how deep to go, and
+    // an earlier check in this file leaves one set.
+    await page.locator('.depth-btn[data-depth="all"]').click();
+    await page.waitForTimeout(400);
+    await page.fill("#search-input", "White House Office");
+    await page.waitForTimeout(700);
+    await page.locator("#search-results .sr-item").first().click({ force: true });
+    await page.waitForTimeout(1200);
+    await page.click("#btn-expand-all");
+    await page.waitForTimeout(6000);
+    const brood = (allNodes.find((node) => node.id === "exec-eop-who")?.children || []).map((child) => child.id);
+    const drawnIds = new Set(await page.evaluate(() => window.__bureaucracy_drawn_node_ids__?.() || []));
+    const broodDrawn = brood.filter((id) => drawnIds.has(id)).length;
+    check("the graph still carries the wide brood this check is measured on", brood.length > 200, `${brood.length} children`);
+    check("expanding a node draws its children", broodDrawn >= brood.length * 0.6,
+      `${broodDrawn} of ${brood.length} children drawn after expanding their parent`);
+    await page.fill("#search-input", "");
+    await page.waitForTimeout(300);
+  }
+
   await page.fill("#search-input", "");
   check("no page errors", pageErrors.length === 0, pageErrors.join(" | "));
   await browser.close();

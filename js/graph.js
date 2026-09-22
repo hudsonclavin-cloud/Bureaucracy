@@ -1,5 +1,5 @@
 import * as THREE from "https://unpkg.com/three@0.160.1/build/three.module.js";
-import { createLodManager } from "./lodManager.js?v=20260921f";
+import { createLodManager } from "./lodManager.js?v=20260922a";
 
 const GOLDEN_ANGLE = Math.PI * (3 - Math.sqrt(5));
 const CAMERA_DISTANCE = 280;
@@ -863,8 +863,61 @@ export function createGovernmentGraph({
     return !(a.right < b.left || a.left > b.right || a.bottom < b.top || a.top > b.bottom);
   }
 
+  // The panels the page draws over the canvas. Labels have always been
+  // de-overlapped against each other and were never compared with these at
+  // all, so on 2026-09-22 a 1400x900 capture had "Executive Office of the
+  // President (EOP) (430)" sitting on top of the legend's colour key, two
+  // cluster labels sliced off by the right panel's edge, and a third under
+  // the left column's text.
+  // Measured from the DOM rather than written down as pixels: the panels are
+  // sized by their own content and the reading-guide button, the depth list
+  // and the stats block have each changed the left column's width this month.
+  const CHROME_ELEMENT_IDS = [
+    "left-stack",
+    "info-panel",
+    "breadcrumb",
+    "depth-ctrl",
+    "legend",
+    "stats",
+    "search-wrap",
+    "controls-hint",
+  ];
+  let chromeRectCache = { frame: -1, rects: [] };
+
+  function getChromeRects() {
+    if (chromeRectCache.frame === state.frame) {
+      return chromeRectCache.rects;
+    }
+    const canvasRect = renderer.domElement.getBoundingClientRect();
+    const rects = [];
+    for (const id of CHROME_ELEMENT_IDS) {
+      const element = document.getElementById(id);
+      if (!element) {
+        continue;
+      }
+      const style = window.getComputedStyle(element);
+      if (style.display === "none" || style.visibility === "hidden" || Number(style.opacity) === 0) {
+        continue;
+      }
+      const rect = element.getBoundingClientRect();
+      if (rect.width <= 0 || rect.height <= 0) {
+        continue;
+      }
+      // Canvas-relative, since label bounds are measured in canvas pixels.
+      rects.push({
+        left: rect.left - canvasRect.left,
+        right: rect.right - canvasRect.left,
+        top: rect.top - canvasRect.top,
+        bottom: rect.bottom - canvasRect.top,
+      });
+    }
+    chromeRectCache = { frame: state.frame, rects };
+    return rects;
+  }
+
   function suppressOverlappingLabels(candidates) {
     const accepted = [];
+    const chrome = getChromeRects();
     candidates.sort((a, b) => b.priority - a.priority);
     for (const candidate of candidates) {
       if (!candidate.sprite.visible) {
@@ -872,10 +925,18 @@ export function createGovernmentGraph({
       }
       const bounds = measureLabelBounds(candidate.sprite, candidate.priority);
       let blocked = false;
-      for (const acceptedBounds of accepted) {
-        if (labelBoundsIntersect(bounds, acceptedBounds)) {
+      for (const chromeBounds of chrome) {
+        if (labelBoundsIntersect(bounds, chromeBounds)) {
           blocked = true;
           break;
+        }
+      }
+      if (!blocked) {
+        for (const acceptedBounds of accepted) {
+          if (labelBoundsIntersect(bounds, acceptedBounds)) {
+            blocked = true;
+            break;
+          }
         }
       }
       candidate.sprite.visible = !blocked;
@@ -1997,6 +2058,66 @@ export function createGovernmentGraph({
     state.renderDirty = true;
   }
 
+  // Frame a node's children, rather than the node. `focusNode` centres the
+  // selection and never pulls the camera outward, which is right for a
+  // selection and wrong for an expansion: pressing "Expand All Below" on the
+  // White House Office, whose 249 children sit on a shell 374 units across,
+  // drew a fan of edges running off every side of the frame with nothing
+  // visible at the far end of any of them -- the children were placed, drawn
+  // and outside the view. Measured 2026-09-22 at 1400x900: 74 of 1,122 loaded
+  // nodes on screen after the expansion, against 249 children asked for.
+  //
+  // So an explicit expansion -- and only an expansion -- is allowed to pull
+  // the camera back far enough to hold the brood. The rule `focusNode`
+  // states still governs selection, where a reader who zoomed in stays in.
+  function frameBroodOf(nodeObj) {
+    if (!nodeObj) {
+      return;
+    }
+    const children = nodeObj.childObjs || [];
+    if (!children.length) {
+      focusNode(nodeObj);
+      return;
+    }
+    state.lastUserDrillAt = performance.now();
+    if (state.flyMode) {
+      focusNode(nodeObj);
+      return;
+    }
+    // Frame the brood, not the parent. `getSpreadPositions` lays children on
+    // a CONE rather than a full sphere -- a half-angle of 0.42 radians for a
+    // small brood, widening to 0.95 for a large one -- so a camera centred on
+    // the parent puts the whole brood to one side and leaves half the frame
+    // empty. The focus point is the middle of what has to be held: the
+    // parent and its children together.
+    //
+    // `targetPos`, not `pos`: a brood expanded a frame ago is still animating
+    // out of the parent's own position, so measuring `pos` would fit the
+    // camera to a sphere of radius nearly zero and slam it into the parent.
+    const centroid = new THREE.Vector3().copy(nodeObj.pos);
+    for (const childObj of children) {
+      centroid.add(childObj.targetPos || childObj.pos);
+    }
+    centroid.divideScalar(children.length + 1);
+    let reach = centroid.distanceTo(nodeObj.pos);
+    for (const childObj of children) {
+      const where = childObj.targetPos || childObj.pos;
+      reach = Math.max(reach, where.distanceTo(centroid));
+    }
+    if (reach <= 0) {
+      focusNode(nodeObj);
+      return;
+    }
+    state.camFocusTarget.copy(centroid);
+    // Vertical half-angle of the frustum, with a margin so the outermost
+    // child sits inside the frame and not on its edge.
+    const halfFov = THREE.MathUtils.degToRad(camera.fov) / 2;
+    const fitDistance = (reach * 1.25) / Math.max(Math.tan(halfFov), 0.05);
+    const fitZoom = CAMERA_DISTANCE / Math.max(fitDistance, 1);
+    state.targetZoom = THREE.MathUtils.clamp(fitZoom, 0.28, 10);
+    state.renderDirty = true;
+  }
+
   function setDepthFilter(depth) {
     state.manualDepthFilter = Number.isFinite(depth) ? Math.min(depth, MAX_DEPTH) : MAX_DEPTH;
     updateLodState();
@@ -2641,6 +2762,26 @@ export function createGovernmentGraph({
     if (nodeObj === state.selectedNode && nodeObj.visible) {
       return true;
     }
+    // ...and so are its own children, for the reason `frameBroodOf` exists.
+    // The tier is a function of camera DISTANCE, so pulling back far enough
+    // to hold a wide brood is exactly what drops the tier and stops the
+    // brood being drawn: framing the White House Office's 249 children took
+    // the view from Office View to Branch View and the drawn count from 74
+    // to 11. Zooming out to see something cannot be the thing that hides it.
+    //
+    // Bounded to one brood, never a subtree, so the cost is the selection's
+    // own child count -- 249 at the worst node in this graph. The two user
+    // choices above the tier still stand: an explicit depth filter wins
+    // (that is a reader saying how deep to go, not the camera guessing), and
+    // the verification toggles decide what may be shown at all.
+    if (
+      nodeObj.visible &&
+      state.selectedNode &&
+      nodeObj.parent === state.selectedNode &&
+      state.manualDepthFilter >= MAX_DEPTH
+    ) {
+      return shouldDisplayNodeByVerification(nodeObj.data);
+    }
     return lodManager.shouldRenderNode(nodeObj, state.lod) && shouldDisplayNodeByVerification(nodeObj.data);
   }
 
@@ -3270,6 +3411,7 @@ export function createGovernmentGraph({
       focusNode(state.selectedNode);
     },
     focusNode,
+    frameBroodOf,
     setFlyMode(enabled) {
       const nextEnabled = Boolean(enabled);
       if (nextEnabled === state.flyMode) {
