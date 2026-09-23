@@ -233,8 +233,11 @@ Rules that matter more than coverage:
    `range` and give the grade span as the join key — do not produce a midpoint.
 3. **Do not read across agencies.** An Inspector General's pay at one agency
    is not evidence about another's; answer per organisation as listed.
-4. A title marked `[×N]` stands for several holders in this graph. Answer the
-   pay system and document for it anyway; do not produce a single figure.
+4. A title marked `[×N]` stands for several holders in this graph. Give a
+   figure only where the document states ONE rate that applies to every
+   holder of the title by its own terms (a tier, a statutory rate, a roster
+   listing each holder at the same figure); otherwise answer the pay system,
+   the document and `range` or `none`. Never one holder's pay for the group.
 
 END with a section titled LOAD-BEARING NUMBERS: every figure you returned
 above, one line each, with the document URL it came from and whether it is
