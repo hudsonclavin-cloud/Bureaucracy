@@ -2017,6 +2017,102 @@ print, the two routes are asserted mutually exclusive, and the tests corrupt
 every dimension in turn — the swap, a different organisation, a dropped office
 half, an office half not in the statutory title, a re-parenting, a rename.
 
+**Schedule 6, and the two refusals it turns into figures (since
+2026-09-23).** `congressional_pay.py`'s own docstring records exactly what it
+could not reach: "**Not** the House's Speaker, Majority Leader or Minority
+Leader ... Left unpriced rather than guessed", and "**Not** the President of
+the Senate (Vice President) node ... this module has not read a source for
+it." Both refusals were about the network rather than the claim — the CRS
+reports carrying those figures are Cloudflare-blocked from here — and the
+figures were published the whole time on a host this project already reads.
+
+The annual pay-adjustment order attaches its schedules by number ("(b) The
+Vice President (3 U.S.C. 104) and the Congress (2 U.S.C. 4501) at Schedule
+6"), and the Office of the Law Revision Counsel reproduces them verbatim in
+the note to **5 U.S.C. 5332**. `uscode.house.gov` answers `robots.txt` 200 and
+`statutory_schedule.py` has read it since 2026-09-18, so this was one fetch of
+a host already in use. `us_code_pay_schedules.py` reads it,
+`scripts/derive_us_code_pay_schedule_evidence.py` writes the evidence, and the
+digest is recomputed from the bytes before a row is read.
+
+**Four offices priced, and four refusals that are the point.** The Vice
+President ($292,300), the Speaker of the House ($223,500), and the House
+Majority and Minority Leaders ($193,400) — 4 of 4,591 positions, **0.09%**,
+and the gate prints it on its own line so it cannot be read as anything
+grander. What is not priced matters more than what is:
+
+- **The three Senate leadership roles Schedule 6 also names are refused.**
+  They already carry `positionStatutoryPay` from senate.gov's own footnote,
+  and the field holds one source, so writing this one over that one would
+  replace a claim with a claim rather than add evidence. `apply_pay_evidence`
+  leaves any node another source has already priced alone, and the exporter
+  runs it *after* `congressional_pay` for that reason. The agreement is real
+  and is recorded rather than published twice: Schedule 6 prints 193,400 for
+  the President pro tempore and for the Senate's leaders, which is the figure
+  senate.gov states.
+- **The Vice President's Senate-leadership node is refused.** This graph
+  carries the office twice — `exec-vp` and
+  `leg-senate-leadership-president-of-the-senate-vice-president` — and
+  Schedule 6 states one salary for one officer. Pricing both would publish one
+  salary as two.
+- **No Member's seat is priced.** 174,000 is what Schedule 6 pays Senators,
+  Members, Delegates and the Resident Commissioner, and this graph curates no
+  seat node for any of them, for the reason `congressional_pay.py` already
+  records: "Individual Senator Offices (100)" is a staff-office grouping.
+- **Schedule 7 prices nothing, and is read anyway.** Every judicial tier it
+  names is already priced from uscourts.gov, or reaches only nodes stating a
+  multiplicity (`Circuit Judge (×28 active + senior judges)`), or reaches no
+  post node at all — the Court of International Trade has a court node and no
+  judge node. It is parsed and reported because "nobody looked" and "looked
+  and it reaches nothing" are different facts.
+
+**The corroboration is the quiet win.** One document carries the schedules
+three separate modules price from, and this is the only place the three can be
+compared. Schedule 5's five Executive Schedule levels equal OPM's Salary Table
+2026-EX to the dollar; Schedule 7's four judicial tiers equal uscourts.gov's
+own table to the dollar. Nothing is published from either — a second source
+for a figure already published changes no claim — but
+`tests/test_us_code_pay_schedules.py` pins both agreements, so a drift in
+either direction now fails a test instead of going unnoticed.
+
+**Which node a row names is a reviewed identification, so nothing here is
+better than a proxy.** Not one of the four matches its row by name: the Code
+says "Vice President" where this graph says "The Vice President of the United
+States", and "Speaker of the House of Representatives" where it says "Speaker
+of the House". `SCHEDULE_6_NODE_ROWS` is that table, and **the alias table is
+deliberately not consulted** — `aliases.py` is read by name and existence
+evidence only and by no join that lands a number, and this is a join that
+lands a number. Two of the four rows price two offices at once ("Majority
+leader and minority leader of the House of Representatives"), the same
+grouped shape as the Senate's footnote, so all four are filed
+`scopeMatch: proxy` and graded `partial`.
+
+**The scale, and a second grant of the narrowest rule.** Schedule 6 prints
+"$292,300" on its first row and "223,500" on the Speaker's: the currency mark
+sits once at the head of the column, which is exactly the typesetting
+`financial_evidence.COLUMN_HEAD_MARK_SOURCE_TYPES` was written for when OPM's
+GS table did the same thing. It is granted to a second source type here. The
+guarantee that rule asks of a derive step is structural rather than promised:
+`parse_pay_schedules` refuses a schedule whose first figure is unmarked or
+whose later figures are marked, so the two figures a record quotes are
+provably in one column of one table. The Vice President's own row carries the
+mark and takes the stronger `_prints_whole_dollars` rule instead; the panel
+shows which kind each record rests on.
+
+The gate mirrors Schedule 6's rows as literals (`US_CODE_SCHEDULE_6_RATES`,
+pinned equal to what the committed note prints), keyed by node id for a reason
+sharper than the Senate case: the House Majority and Minority Leaders are
+priced from **one row**, so they share a figure, a quote, a tier and a
+citation, and only the node's own identity tells them apart. It refuses a
+record whose quote does not carry the schedule's heading (193,400 appears
+three times in Schedule 6 alone), whose quote drops the effective line, whose
+bare figure is quoted without the marked head of its column, that prices a
+judicial node from this source, that carries notes which are not its own
+schedule row, or that puts a `uscode.house.gov` URL among the node's sources —
+the exact channel by which a five-row table carried 29 positions to `verified`
+on 2026-09-11. `tests/test_us_code_pay_schedules.py` corrupts each in turn.
+Positions carrying a single-source statutory rate went **18 → 22**.
+
 **Two more sources, each a single primary document rather than a join
 (since 2026-09-14).** `judicial_pay.py` and `congressional_pay.py` write a
 different field, `positionStatutoryPay`, because their claim is a different
@@ -2467,17 +2563,19 @@ subdivide measured money rather than invent it — which does not make a
 subdivision a measurement. **Since 2026-09-09 the site does not show one by
 default**, by the owner's decision: a node with no measured cost of its own
 shows no figure and says why, and ticking "Also show estimated shares of a
-parent's total" opts back in. The exception is a real salary — **380** of the
+parent's total" opts back in. The exception is a real salary — **385** of the
 4,591 positions carry a pay claim an official source states, counted on the
-published graph on 2026-09-21 after the current Plum Book landed: 99 from the
+published graph on 2026-09-23 after Schedule 6 landed: 99 from the
 Executive Schedule as 5 U.S.C. §§5312–5316 sets it, 166 from the White House
-roster, 87 the rate the current PLUM export prints for the one row under the
-title, 31 from a listing's level joined to OPM's table, 18 statutory, and 18 a
+roster, 88 the rate the current PLUM export prints for the one row under the
+title, 31 from a listing's level joined to OPM's table, 22 statutory (18 from
+uscourts.gov and senate.gov, 4 from Schedule 6 of the annual pay-adjustment
+order), and 18 a
 base-pay **range** rather than a rate (`positionGradePay`, counted separately
 because a range is not a rate and the panel says so; it read 32 until the
 current export supplied a printed figure for 14 of them, and a printed figure
 beats a band). A node may carry more than one of these, so the per-source
-figures sum past 380. Shown in the cost block under its own heading and never
+figures sum past 385. Shown in the cost block under its own heading and never
 headed COST.
 
 That figure read **354** until 2026-09-19 and was wrong: it added up the
@@ -2485,7 +2583,8 @@ That figure read **354** until 2026-09-19 and was wrong: it added up the
 and the archive's 46 pay records yield 30 published `positionPayRate` blocks
 because the rest carry a level or grade and no rate. The published count is
 what the site shows, so it is the one stated here; it was 310 before the §9
-renames, 311 after, and 380 once the current export was read. The estimates
+renames, 311 after, 380 once the current export was read, and 385 once
+Schedule 6 priced the Vice President and the House's three elected leaders. The estimates
 stay in `graph.json` because the cascade's arithmetic and the gate's
 child-sum checks are built on them, so a consumer of the JSON must read
 `cost_status`, not `resolved_total_amount` alone. The gate prints both

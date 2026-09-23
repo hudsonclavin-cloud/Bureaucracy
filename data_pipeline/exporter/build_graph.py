@@ -2479,6 +2479,7 @@ def build_graph(
     schedule_pay_evidence_path: str | Path | None = "default",
     judicial_pay_evidence_path: str | Path | None = "default",
     congressional_pay_evidence_path: str | Path | None = "default",
+    us_code_pay_schedule_evidence_path: str | Path | None = "default",
     whitehouse_pay_evidence_path: str | Path | None = "default",
     usaspending_evidence_path: str | Path | None = "default",
     net_cost_evidence_path: str | Path | None = "default",
@@ -2748,6 +2749,26 @@ def build_graph(
     validation["congressional_pay_evidence"] = apply_congressional_pay_evidence(
         graph, load_congressional_pay_evidence(resolved_congressional_pay_path) if resolved_congressional_pay_path else {}, index_tree=index_tree,
     )
+    # After the Senate's own schedule, deliberately: Schedule 6 names the
+    # three Senate leadership roles too, and `apply_pay_evidence` leaves a
+    # node another source has already priced alone. Running it first would
+    # swap one source's claim for another's and add no evidence.
+    from data_pipeline.verification.us_code_pay_schedules import (  # noqa: E402 — imports this module
+        DEFAULT_PAY_EVIDENCE_PATH as DEFAULT_US_CODE_PAY_SCHEDULE_EVIDENCE_PATH,
+        apply_pay_evidence as apply_us_code_pay_schedule_evidence,
+        load_pay_evidence as load_us_code_pay_schedule_evidence,
+    )
+
+    resolved_us_code_pay_schedule_path = (
+        DEFAULT_US_CODE_PAY_SCHEDULE_EVIDENCE_PATH
+        if us_code_pay_schedule_evidence_path == "default"
+        else us_code_pay_schedule_evidence_path
+    )
+    validation["us_code_pay_schedule_evidence"] = apply_us_code_pay_schedule_evidence(
+        graph,
+        load_us_code_pay_schedule_evidence(resolved_us_code_pay_schedule_path) if resolved_us_code_pay_schedule_path else {},
+        index_tree=index_tree,
+    )
     from data_pipeline.verification.whitehouse_pay import (  # noqa: E402 — whitehouse_pay imports this module
         DEFAULT_PAY_EVIDENCE_PATH as DEFAULT_WHITEHOUSE_PAY_EVIDENCE_PATH,
         apply_pay_evidence as apply_whitehouse_pay_evidence,
@@ -2929,6 +2950,7 @@ def build_graph(
     validation["grade_pay_evidence"]["stands_for_many_posts_after_pruning"] = multi_post_withdrawn
     validation["judicial_pay_evidence"]["stands_for_many_posts_after_pruning"] = multi_post_withdrawn
     validation["congressional_pay_evidence"]["stands_for_many_posts_after_pruning"] = multi_post_withdrawn
+    validation["us_code_pay_schedule_evidence"]["stands_for_many_posts_after_pruning"] = multi_post_withdrawn
     validation["whitehouse_pay_evidence"]["stands_for_many_posts_after_pruning"] = multi_post_withdrawn
     validity_report["audit_report"] = {"summary": deepcopy(audit_report.get("summary", {}))}
     validity_report["root_orphan_resolution"] = orphan_resolution

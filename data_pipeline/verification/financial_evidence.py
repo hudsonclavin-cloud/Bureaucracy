@@ -167,6 +167,13 @@ SOURCE_TYPES = {
     # congressional_pay.py.
     "uscourts_judicial_compensation",
     "senate_salary_schedule",
+    # The annual pay-adjustment order's own schedules, as the Office of the
+    # Law Revision Counsel reproduces them in the note to 5 U.S.C. 5332.
+    # Schedule 6 states the annual rate for the Vice President and for each
+    # chamber's elected offices — the two figures congressional_pay.py
+    # records as unreachable from senate.gov. See
+    # data_pipeline/verification/us_code_pay_schedules.py.
+    "us_code_pay_schedules",
     # A roster, not a rate schedule: the White House Office's statutory annual
     # report states what each listed person is paid, so a record from it is a
     # claim about an incumbent rather than about the office. See
@@ -191,6 +198,10 @@ SCALE_PRINTED_SOURCE_TYPES = {
     "opm_pay_table",
     "uscourts_judicial_compensation",
     "senate_salary_schedule",
+    # Schedule 6 prints "$292,300" on its first row; a record for that row
+    # carries the mark on its own figure and takes this rule. The rows
+    # beneath it are bare and take the column-head rule below.
+    "us_code_pay_schedules",
     "whitehouse_staff_report",
     # The export's cell prints "$228,000" and nothing in the file says
     # "dollars"; the mark attached to the record's own figure is the scale.
@@ -230,7 +241,14 @@ DICTIONARY_SCALED_SOURCE_TYPES = {
 #: validator checks that shape; the derive step is what guarantees the two
 #: figures sit in one column of one table, and the release gate re-reads the
 #: committed table. Kind: `currency_mark_on_the_columns_first_figure`.
-COLUMN_HEAD_MARK_SOURCE_TYPES = {"opm_pay_table"}
+#: Granted to a second source type on 2026-09-23 for the identical
+#: typesetting: the note to 5 U.S.C. 5332 prints "$292,300" on Schedule 6's
+#: first row and "223,500" on the Speaker's, one mark at the head of one
+#: column, and `us_code_pay_schedules` refuses to return a schedule whose
+#: first figure is unmarked or whose later figures are marked — so the two
+#: figures a record quotes are guaranteed to sit in one column of one table,
+#: which is what this rule asks the derive step to guarantee.
+COLUMN_HEAD_MARK_SOURCE_TYPES = {"opm_pay_table", "us_code_pay_schedules"}
 
 #: Which bases a source can actually report. A Congressional Justification
 #: cannot report an audited net cost; nothing stopped that being claimed.
@@ -250,6 +268,7 @@ SOURCE_BASES = {
     "opm_pay_table": {"basic_pay"},
     "uscourts_judicial_compensation": {"basic_pay"},
     "senate_salary_schedule": {"basic_pay"},
+    "us_code_pay_schedules": {"basic_pay"},
     "whitehouse_staff_report": {"basic_pay"},
     "opm_plum_current_export": {"basic_pay"},
 }

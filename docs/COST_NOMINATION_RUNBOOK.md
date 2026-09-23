@@ -62,7 +62,7 @@ can record is always a figure the nomination side can name.
 | `appropriations` | What did Congress enact? | `appropriations_act`, `omb_public_budget` | Enacted, but not yet spent, and often keyed by account rather than by organisation. |
 | `budget_request` | What did the agency ask for? | `congressional_justification` | **Not spending, and not even funding.** A request made before the year began, which Congress may cut, ignore, or supersede. It is the most granular figure available by organisation, and the least authoritative. |
 | `payroll` | What does this unit's staff cost? | `agency_financial_report`, `congressional_justification` | An input to cost, not cost. |
-| `basic_pay` | What does this post pay? | `opm_pay_table`, `uscourts_judicial_compensation`, `senate_salary_schedule`, `whitehouse_staff_report`, `opm_plum_current_export` | Compensation for one post. **Never** an organisation's cost. The last four are single primary documents that name a seat or a title directly; the PLUM export's row is an incumbency, so its figure is one listing's. |
+| `basic_pay` | What does this post pay? | `opm_pay_table`, `uscourts_judicial_compensation`, `senate_salary_schedule`, `us_code_pay_schedules`, `whitehouse_staff_report`, `opm_plum_current_export` | Compensation for one post. **Never** an organisation's cost. The last five are single primary documents that name a seat or a title directly; the PLUM export's row is an incumbency, so its figure is one listing's. |
 | `full_time_equivalents` | How many staff-years? | `congressional_justification` | Not money at all. Carried because budget tables report it beside the dollars, and because it is the honest answer when a unit's money cannot be separated but its staffing can. Never rendered with a currency symbol. |
 
 Nominate the metric that source actually reports. Do not nominate
@@ -120,6 +120,7 @@ name-keyed alias table and why every entry in it carries a section check.
 | `opm_pay_table` | The pay plan and level, e.g. `EX-II` |
 | `uscourts_judicial_compensation` | The tier as the U.S. Courts' table names it, e.g. `District Judges` |
 | `senate_salary_schedule` | The role as the Senate's footnote names it, e.g. `Majority Leader` |
+| `us_code_pay_schedules` | The office exactly as Schedule 6 prints it in the note to 5 U.S.C. 5332, e.g. `Speaker of the House of Representatives`. Two of its rows name two offices at once (`Majority leader and minority leader of the House of Representatives`), so a key can be a proxy for either and the record says which node it was identified with |
 | `whitehouse_staff_report` | The title exactly as the Annual Report to Congress on White House Staff prints it |
 | `opm_plum_current_export` | The Agency, Organization and Position Title exactly as OPM's current PLUM export prints them; a row is an incumbency, so the figure is one listing's and the record is a proxy |
 

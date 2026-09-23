@@ -6584,7 +6584,27 @@
     "verificationMethod": "name_labelled_on_its_organisations_official_page",
     "verificationMatchedIn": "content",
     "verificationSiteFrom": "leg-house-leadership",
-    "parentId": "leg-house-leadership"
+    "parentId": "leg-house-leadership",
+    "positionStatutoryPay": {
+      "source": "us_code_pay_schedules",
+      "sourceLabel": "Schedule 6 of the annual pay-adjustment order, as 5 U.S.C. 5332's note prints it",
+      "method": "office_named_in_schedule_6_of_the_annual_pay_adjustment_order",
+      "amount": 223500.0,
+      "rateText": "$223,500 (Schedule 6 — Vice President and Members Of Congress, Effective on the first day of the first applicable pay period beginning on or after January 1, 2026)",
+      "year": "2026",
+      "effective": "2026-01-01",
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Speaker of the House of Representatives",
+      "seatTier": "speaker of the house of representatives",
+      "quote": "Schedule 6 — Vice President and Members Of Congress · (Effective on the first day of the first applicable pay period beginning on or after January 1, 2026) · Vice President $292,300 · Speaker of the House of Representatives 223,500",
+      "footnotes": [
+        "Schedule 6 — Vice President and Members Of Congress · (Effective on the first day of the first applicable pay period beginning on or after January 1, 2026) · Vice President $292,300 · Speaker of the House of Representatives 223,500"
+      ],
+      "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5332&num=0&edition=prelim",
+      "checkedAt": "2026-09-23T14:35:38Z"
+    }
   },
   {
     "id": "leg-house-leadership-majority-leader",
@@ -6629,7 +6649,27 @@
     "verificationMethod": "name_labelled_on_its_organisations_official_page",
     "verificationMatchedIn": "content",
     "verificationSiteFrom": "leg-house-leadership",
-    "parentId": "leg-house-leadership"
+    "parentId": "leg-house-leadership",
+    "positionStatutoryPay": {
+      "source": "us_code_pay_schedules",
+      "sourceLabel": "Schedule 6 of the annual pay-adjustment order, as 5 U.S.C. 5332's note prints it",
+      "method": "office_named_in_schedule_6_of_the_annual_pay_adjustment_order",
+      "amount": 193400.0,
+      "rateText": "$193,400 (Schedule 6 — Vice President and Members Of Congress, Effective on the first day of the first applicable pay period beginning on or after January 1, 2026)",
+      "year": "2026",
+      "effective": "2026-01-01",
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Majority leader and minority leader of the House of Representatives",
+      "seatTier": "majority leader and minority leader of the house of representatives",
+      "quote": "Schedule 6 — Vice President and Members Of Congress · (Effective on the first day of the first applicable pay period beginning on or after January 1, 2026) · Vice President $292,300 · Majority leader and minority leader of the House of Representatives 193,400",
+      "footnotes": [
+        "Schedule 6 — Vice President and Members Of Congress · (Effective on the first day of the first applicable pay period beginning on or after January 1, 2026) · Vice President $292,300 · Majority leader and minority leader of the House of Representatives 193,400"
+      ],
+      "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5332&num=0&edition=prelim",
+      "checkedAt": "2026-09-23T14:35:38Z"
+    }
   },
   {
     "id": "leg-house-leadership-majority-whip",
@@ -17762,7 +17802,27 @@
       "gradedAtMost": "partial"
     },
     "evidenceVerifiedAt": "2025-12-31",
-    "parentId": "executive-branch"
+    "parentId": "executive-branch",
+    "positionStatutoryPay": {
+      "source": "us_code_pay_schedules",
+      "sourceLabel": "Schedule 6 of the annual pay-adjustment order, as 5 U.S.C. 5332's note prints it",
+      "method": "office_named_in_schedule_6_of_the_annual_pay_adjustment_order",
+      "amount": 292300.0,
+      "rateText": "$292,300 (Schedule 6 — Vice President and Members Of Congress, Effective on the first day of the first applicable pay period beginning on or after January 1, 2026)",
+      "year": "2026",
+      "effective": "2026-01-01",
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Vice President",
+      "seatTier": "vice president",
+      "quote": "Schedule 6 — Vice President and Members Of Congress · (Effective on the first day of the first applicable pay period beginning on or after January 1, 2026) · Vice President $292,300",
+      "footnotes": [
+        "Schedule 6 — Vice President and Members Of Congress · (Effective on the first day of the first applicable pay period beginning on or after January 1, 2026) · Vice President $292,300"
+      ],
+      "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5332&num=0&edition=prelim",
+      "checkedAt": "2026-09-23T14:35:38Z"
+    }
   },
   {
     "id": "exec-eop",
@@ -31503,15 +31563,15 @@
     ],
     "sourceTypes": [
       "us_government_manual",
-      "official_site",
       "federal_register_signature",
+      "official_site",
       "federal_register"
     ],
     "proofSourceCount": 5,
     "proofSourceTypes": [
       "us_government_manual",
-      "official_site",
       "federal_register_signature",
+      "official_site",
       "federal_register",
       "historical_documentation"
     ],
@@ -31575,7 +31635,6 @@
     },
     "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
     "evidenceVerifiedAt": "2026-09-01",
-    "parentId": "exec-dept-doj",
     "federalRegisterSignature": {
       "source": "federal_register_signature",
       "listedTitle": "Attorney General",
@@ -31591,7 +31650,8 @@
       "documentUrl": "https://www.federalregister.gov/d/2026-17815",
       "documentSha256": "1a2e31024a3da6f139b20fb4a0a42d1ced30f0d975dd23605983847badfda35d",
       "occurrences": 1
-    }
+    },
+    "parentId": "exec-dept-doj"
   },
   {
     "id": "exec-dept-doj-inspector-general",
@@ -52074,15 +52134,15 @@
     ],
     "sourceTypes": [
       "us_government_manual",
-      "official_site",
       "federal_register_signature",
+      "official_site",
       "federal_register"
     ],
     "proofSourceCount": 5,
     "proofSourceTypes": [
       "us_government_manual",
-      "official_site",
       "federal_register_signature",
+      "official_site",
       "federal_register",
       "historical_documentation"
     ],
@@ -52154,7 +52214,6 @@
     },
     "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
     "evidenceVerifiedAt": "2026-09-03",
-    "parentId": "exec-dept-dot",
     "federalRegisterSignature": {
       "source": "federal_register_signature",
       "listedTitle": "Secretary of Transportation",
@@ -52171,7 +52230,8 @@
       "documentUrl": "https://www.federalregister.gov/d/2026-18040",
       "documentSha256": "d6757a60b16b53c19a705403ca8d89f92482c1f0e99703f5a979e5668f9eaafb",
       "occurrences": 1
-    }
+    },
+    "parentId": "exec-dept-dot"
   },
   {
     "id": "exec-dept-dot-chief-of-staff",
@@ -79853,20 +79913,9 @@
     "sourceUrls": [
       "https://www.abilityone.gov/"
     ],
-    "evidenceUrls": [
-      "https://www.abilityone.gov/"
-    ],
     "sourceTypes": [
       "official_site"
     ],
-    "lastVerified": "2026-09-21T17:57:28+00:00",
-    "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationMatchedIn": "content",
-    "verificationSiteFrom": "exec-ind-misc-abilityone-commission",
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "official_site"
@@ -79875,7 +79924,6 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "placementCheckable": false,
     "resolved_total_amount": 94012555.51,
     "cost_status": "allocated",
     "cost_basis": "implied_budget_weight",
@@ -79884,6 +79932,18 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": "2026-09-21T17:57:28+00:00",
+    "evidenceUrls": [
+      "https://www.abilityone.gov/"
+    ],
+    "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-ind-misc-abilityone-commission",
+    "placementCheckable": false,
     "parentId": "exec-ind-misc"
   },
   {
@@ -80250,20 +80310,9 @@
     "sourceUrls": [
       "https://www.access-board.gov/about/"
     ],
-    "evidenceUrls": [
-      "https://www.access-board.gov/about/"
-    ],
     "sourceTypes": [
       "official_site"
     ],
-    "lastVerified": "2026-09-21T17:57:28+00:00",
-    "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationMatchedIn": "content",
-    "verificationSiteFrom": "exec-ind-misc-access-board",
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "official_site"
@@ -80272,7 +80321,6 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "placementCheckable": false,
     "resolved_total_amount": 94012555.51,
     "cost_status": "allocated",
     "cost_basis": "implied_budget_weight",
@@ -80281,6 +80329,18 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": "2026-09-21T17:57:28+00:00",
+    "evidenceUrls": [
+      "https://www.access-board.gov/about/"
+    ],
+    "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-ind-misc-access-board",
+    "placementCheckable": false,
     "parentId": "exec-ind-misc"
   },
   {
@@ -80799,20 +80859,9 @@
     "sourceUrls": [
       "https://www.heritageabroad.gov/"
     ],
-    "evidenceUrls": [
-      "https://www.heritageabroad.gov/"
-    ],
     "sourceTypes": [
       "official_site"
     ],
-    "lastVerified": "2026-09-21T17:57:28+00:00",
-    "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationMatchedIn": "content",
-    "verificationSiteFrom": "exec-ind-misc-heritage-abroad-commission",
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "official_site"
@@ -80821,7 +80870,6 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "placementCheckable": false,
     "resolved_total_amount": 94012555.51,
     "cost_status": "allocated",
     "cost_basis": "implied_budget_weight",
@@ -80830,6 +80878,18 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": "2026-09-21T17:57:28+00:00",
+    "evidenceUrls": [
+      "https://www.heritageabroad.gov/"
+    ],
+    "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-ind-misc-heritage-abroad-commission",
+    "placementCheckable": false,
     "parentId": "exec-ind-misc"
   },
   {
@@ -81381,20 +81441,9 @@
     "sourceUrls": [
       "https://www.usich.gov/"
     ],
-    "evidenceUrls": [
-      "https://www.usich.gov/"
-    ],
     "sourceTypes": [
       "official_site"
     ],
-    "lastVerified": "2026-09-21T17:57:28+00:00",
-    "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationMatchedIn": "content",
-    "verificationSiteFrom": "exec-ind-misc-interagency-council-on-homelessness",
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "official_site"
@@ -81403,6 +81452,25 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
+    "resolved_total_amount": 94012555.51,
+    "cost_status": "allocated",
+    "cost_basis": "implied_budget_weight",
+    "cost_validation": "estimated_from_parent",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": "2026-09-21T17:57:28+00:00",
+    "evidenceUrls": [
+      "https://www.usich.gov/"
+    ],
+    "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-ind-misc-interagency-council-on-homelessness",
     "placementCheckable": false,
     "employeesOfficial": 13,
     "employeesOfficialSource": {
@@ -81428,14 +81496,6 @@
         }
       ]
     },
-    "resolved_total_amount": 94012555.51,
-    "cost_status": "allocated",
-    "cost_basis": "implied_budget_weight",
-    "cost_validation": "estimated_from_parent",
-    "costVerificationStatus": "unverified",
-    "costConfidenceScore": 0.2,
-    "costVerificationReason": "estimated_from_parent",
-    "costSourceCount": 0,
     "parentId": "exec-ind-misc"
   },
   {
@@ -83004,15 +83064,15 @@
     ],
     "sourceTypes": [
       "us_government_manual",
-      "official_site",
       "federal_register_signature",
+      "official_site",
       "federal_register"
     ],
     "proofSourceCount": 5,
     "proofSourceTypes": [
       "us_government_manual",
-      "official_site",
       "federal_register_signature",
+      "official_site",
       "federal_register",
       "historical_documentation"
     ],
@@ -83080,7 +83140,6 @@
       "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-163",
       "tableFooter": "[For the Nuclear Regulatory Commission statement of organization, see the Code of Federal Regulations, Title 10, Part I]"
     },
-    "parentId": "exec-regulatory-nrc",
     "federalRegisterSignature": {
       "source": "federal_register_signature",
       "listedTitle": "Executive Director for Operations",
@@ -83096,7 +83155,8 @@
       "documentUrl": "https://www.federalregister.gov/d/2026-17445",
       "documentSha256": "59cbca60654c6754dfa83485f4a26a5d63fe46f5b8c25af56f5d54b1b4c6de7e",
       "occurrences": 1
-    }
+    },
+    "parentId": "exec-regulatory-nrc"
   },
   {
     "id": "exec-regulatory-nrc-general-counsel",

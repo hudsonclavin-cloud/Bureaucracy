@@ -1,0 +1,286 @@
+{
+  "_note": "Derived by scripts/derive_us_code_pay_schedule_evidence.py from one source: the note to 5 U.S.C. 5332, fetched 2026-09-23T14:35:38Z from https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5332&num=0&edition=prelim, which reproduces the annual pay-adjustment order's schedules verbatim. Schedule 6 states the rate for the Vice President and for each chamber's elected offices. A record is written only for the four curated nodes a reviewed table identifies: the Vice President, the Speaker of the House, and the House Majority and Minority Leaders — the offices congressional_pay.py records as unreachable from senate.gov. Not priced: the three Senate leadership roles Schedule 6 also names (already priced from senate.gov's own footnote; the two sources agree), the Vice President's separate Senate-leadership node (one officer, one salary, priced once), no Senator's or Member's seat (none is curated as its own position node), and nothing at all from Schedule 7 (every judicial tier it names is already priced from uscourts.gov, reaches only nodes stating a multiplicity, or reaches no post node). Basic pay is not the node's cost. Regenerate by re-running the script; never edit by hand.",
+  "source": {
+    "kind": "us_code_pay_schedules",
+    "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5332&num=0&edition=prelim",
+    "fetched_at": "2026-09-23T14:35:38Z",
+    "sha256": "6656771d1a4103ab85e484fac10490c67d0126d8ed11832b804510ff7c9a9e59",
+    "file": "tests/fixtures/uscode/pay_schedules_5_usc_5332.html",
+    "year": "2026",
+    "schedule": "us_code_pay_schedules"
+  },
+  "report": {
+    "source": "us_code_pay_schedules",
+    "year": "2026",
+    "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5332&num=0&edition=prelim",
+    "documentSha256": "6656771d1a4103ab85e484fac10490c67d0126d8ed11832b804510ff7c9a9e59",
+    "retrievedAt": "2026-09-23T14:35:38Z",
+    "schedulesRead": [
+      "5",
+      "6",
+      "7"
+    ],
+    "schedule6Rows": [
+      {
+        "office": "Vice President",
+        "printed": "$292,300",
+        "amount": 292300.0
+      },
+      {
+        "office": "Senators",
+        "printed": "174,000",
+        "amount": 174000.0
+      },
+      {
+        "office": "Members of the House of Representatives",
+        "printed": "174,000",
+        "amount": 174000.0
+      },
+      {
+        "office": "Delegates to the House of Representatives",
+        "printed": "174,000",
+        "amount": 174000.0
+      },
+      {
+        "office": "Resident Commissioner from Puerto Rico",
+        "printed": "174,000",
+        "amount": 174000.0
+      },
+      {
+        "office": "President pro tempore of the Senate",
+        "printed": "193,400",
+        "amount": 193400.0
+      },
+      {
+        "office": "Majority leader and minority leader of the Senate",
+        "printed": "193,400",
+        "amount": 193400.0
+      },
+      {
+        "office": "Majority leader and minority leader of the House of Representatives",
+        "printed": "193,400",
+        "amount": 193400.0
+      },
+      {
+        "office": "Speaker of the House of Representatives",
+        "printed": "223,500",
+        "amount": 223500.0
+      }
+    ],
+    "columnHead": {
+      "column": "Vice President and Members Of Congress",
+      "amountRaw": "292,300",
+      "text": "$292,300"
+    },
+    "considered": 9,
+    "priced": 4,
+    "pricedOffices": [
+      "Majority leader and minority leader of the House of Representatives",
+      "Speaker of the House of Representatives",
+      "Vice President"
+    ],
+    "notPriced": {
+      "Delegates to the House of Representatives": "no curated seat node",
+      "Majority leader and minority leader of the Senate": "already priced from senate.gov's own footnote",
+      "Members of the House of Representatives": "no curated seat node",
+      "President pro tempore of the Senate": "already priced from senate.gov's own footnote",
+      "Resident Commissioner from Puerto Rico": "no curated seat node",
+      "Senators": "no curated seat node; Individual Senator Offices is a staff grouping"
+    },
+    "refused": {},
+    "headMarked": "$292,300",
+    "schedule7Rows": [
+      {
+        "office": "Chief Justice of the United States",
+        "printed": "$320,700",
+        "amount": 320700.0
+      },
+      {
+        "office": "Associate Justices of the Supreme Court",
+        "printed": "306,600",
+        "amount": 306600.0
+      },
+      {
+        "office": "Circuit Judges",
+        "printed": "264,900",
+        "amount": 264900.0
+      },
+      {
+        "office": "District Judges",
+        "printed": "249,900",
+        "amount": 249900.0
+      },
+      {
+        "office": "Judges of the Court of International Trade",
+        "printed": "249,900",
+        "amount": 249900.0
+      }
+    ],
+    "schedule7Priced": 0,
+    "schedule7Reason": "every tier it names is already priced from uscourts.gov, or reaches only nodes stating a multiplicity, or reaches no post node at all (the Court of International Trade has a court node and no judge node)",
+    "schedule5Rows": [
+      {
+        "office": "Level I",
+        "printed": "$253,100",
+        "amount": 253100.0
+      },
+      {
+        "office": "Level II",
+        "printed": "228,000",
+        "amount": 228000.0
+      },
+      {
+        "office": "Level III",
+        "printed": "209,600",
+        "amount": 209600.0
+      },
+      {
+        "office": "Level IV",
+        "printed": "197,200",
+        "amount": 197200.0
+      },
+      {
+        "office": "Level V",
+        "printed": "184,900",
+        "amount": 184900.0
+      }
+    ],
+    "validated": 4,
+    "rejected": [],
+    "conflicts": [],
+    "double_counted": []
+  },
+  "nodes": {
+    "exec-vp": {
+      "nodeId": "exec-vp",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "basic_pay",
+      "amount": 292300.0,
+      "amountRaw": "292,300",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "Schedule 6 — Vice President and Members Of Congress · (Effective on the first day of the first applicable pay period beginning on or after January 1, 2026) · Vice President $292,300",
+      "quote": "Schedule 6 — Vice President and Members Of Congress · (Effective on the first day of the first applicable pay period beginning on or after January 1, 2026) · Vice President $292,300",
+      "fiscalYear": 2026,
+      "periodCoverage": "annual_rate",
+      "periodAsOf": "2026-01-01",
+      "amountScope": "Vice President",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "us_code_pay_schedules",
+      "sourceUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5332&num=0&edition=prelim",
+      "documentSha256": "6656771d1a4103ab85e484fac10490c67d0126d8ed11832b804510ff7c9a9e59",
+      "retrievedAt": "2026-09-23T14:35:38Z",
+      "locator": {
+        "page": "5 U.S.C. 5332 note",
+        "section": "Schedule 6 — Vice President and Members Of Congress"
+      },
+      "role": "vice president",
+      "year": "2026",
+      "rateText": "$292,300 (Schedule 6 — Vice President and Members Of Congress, Effective on the first day of the first applicable pay period beginning on or after January 1, 2026)",
+      "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+    },
+    "leg-house-leadership-majority-leader": {
+      "nodeId": "leg-house-leadership-majority-leader",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "basic_pay",
+      "amount": 193400.0,
+      "amountRaw": "193,400",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "Schedule 6 — Vice President and Members Of Congress · (Effective on the first day of the first applicable pay period beginning on or after January 1, 2026) · Vice President $292,300 · Majority leader and minority leader of the House of Representatives 193,400",
+      "quote": "Schedule 6 — Vice President and Members Of Congress · (Effective on the first day of the first applicable pay period beginning on or after January 1, 2026) · Vice President $292,300 · Majority leader and minority leader of the House of Representatives 193,400",
+      "fiscalYear": 2026,
+      "periodCoverage": "annual_rate",
+      "periodAsOf": "2026-01-01",
+      "amountScope": "Majority leader and minority leader of the House of Representatives",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "us_code_pay_schedules",
+      "sourceUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5332&num=0&edition=prelim",
+      "documentSha256": "6656771d1a4103ab85e484fac10490c67d0126d8ed11832b804510ff7c9a9e59",
+      "retrievedAt": "2026-09-23T14:35:38Z",
+      "locator": {
+        "page": "5 U.S.C. 5332 note",
+        "section": "Schedule 6 — Vice President and Members Of Congress"
+      },
+      "role": "majority leader and minority leader of the house of representatives",
+      "year": "2026",
+      "rateText": "$193,400 (Schedule 6 — Vice President and Members Of Congress, Effective on the first day of the first applicable pay period beginning on or after January 1, 2026)",
+      "columnHead": {
+        "column": "Vice President and Members Of Congress",
+        "amountRaw": "292,300",
+        "text": "$292,300"
+      },
+      "unitsEvidenceKind": "currency_mark_on_the_columns_first_figure"
+    },
+    "leg-house-leadership-minority-leader": {
+      "nodeId": "leg-house-leadership-minority-leader",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "basic_pay",
+      "amount": 193400.0,
+      "amountRaw": "193,400",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "Schedule 6 — Vice President and Members Of Congress · (Effective on the first day of the first applicable pay period beginning on or after January 1, 2026) · Vice President $292,300 · Majority leader and minority leader of the House of Representatives 193,400",
+      "quote": "Schedule 6 — Vice President and Members Of Congress · (Effective on the first day of the first applicable pay period beginning on or after January 1, 2026) · Vice President $292,300 · Majority leader and minority leader of the House of Representatives 193,400",
+      "fiscalYear": 2026,
+      "periodCoverage": "annual_rate",
+      "periodAsOf": "2026-01-01",
+      "amountScope": "Majority leader and minority leader of the House of Representatives",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "us_code_pay_schedules",
+      "sourceUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5332&num=0&edition=prelim",
+      "documentSha256": "6656771d1a4103ab85e484fac10490c67d0126d8ed11832b804510ff7c9a9e59",
+      "retrievedAt": "2026-09-23T14:35:38Z",
+      "locator": {
+        "page": "5 U.S.C. 5332 note",
+        "section": "Schedule 6 — Vice President and Members Of Congress"
+      },
+      "role": "majority leader and minority leader of the house of representatives",
+      "year": "2026",
+      "rateText": "$193,400 (Schedule 6 — Vice President and Members Of Congress, Effective on the first day of the first applicable pay period beginning on or after January 1, 2026)",
+      "columnHead": {
+        "column": "Vice President and Members Of Congress",
+        "amountRaw": "292,300",
+        "text": "$292,300"
+      },
+      "unitsEvidenceKind": "currency_mark_on_the_columns_first_figure"
+    },
+    "leg-house-leadership-speaker-of-the-house": {
+      "nodeId": "leg-house-leadership-speaker-of-the-house",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "basic_pay",
+      "amount": 223500.0,
+      "amountRaw": "223,500",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "Schedule 6 — Vice President and Members Of Congress · (Effective on the first day of the first applicable pay period beginning on or after January 1, 2026) · Vice President $292,300 · Speaker of the House of Representatives 223,500",
+      "quote": "Schedule 6 — Vice President and Members Of Congress · (Effective on the first day of the first applicable pay period beginning on or after January 1, 2026) · Vice President $292,300 · Speaker of the House of Representatives 223,500",
+      "fiscalYear": 2026,
+      "periodCoverage": "annual_rate",
+      "periodAsOf": "2026-01-01",
+      "amountScope": "Speaker of the House of Representatives",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "us_code_pay_schedules",
+      "sourceUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5332&num=0&edition=prelim",
+      "documentSha256": "6656771d1a4103ab85e484fac10490c67d0126d8ed11832b804510ff7c9a9e59",
+      "retrievedAt": "2026-09-23T14:35:38Z",
+      "locator": {
+        "page": "5 U.S.C. 5332 note",
+        "section": "Schedule 6 — Vice President and Members Of Congress"
+      },
+      "role": "speaker of the house of representatives",
+      "year": "2026",
+      "rateText": "$223,500 (Schedule 6 — Vice President and Members Of Congress, Effective on the first day of the first applicable pay period beginning on or after January 1, 2026)",
+      "columnHead": {
+        "column": "Vice President and Members Of Congress",
+        "amountRaw": "292,300",
+        "text": "$292,300"
+      },
+      "unitsEvidenceKind": "currency_mark_on_the_columns_first_figure"
+    }
+  }
+}

@@ -506,7 +506,43 @@ STATUTORY_PAY_NODE_TIERS = {
     "leg-senate-leadership-president-pro-tempore": "president pro tempore",
     "leg-senate-leadership-majority-leader": "majority leader",
     "leg-senate-leadership-minority-leader": "minority leader",
+    # Schedule 6 of the annual pay-adjustment order, as 5 U.S.C. 5332's note
+    # prints it. Keyed by id for the reason above and one sharper: the House
+    # Majority and Minority Leaders are priced from ONE row that names them
+    # together, so a record moved between them keeps a correct figure, a
+    # correct quote and a real statutory row, and only the node's own
+    # identity tells them apart. Pinned against
+    # `us_code_pay_schedules.SCHEDULE_6_NODE_ROWS` by
+    # tests/test_us_code_pay_schedules.py.
+    "exec-vp": "vice president",
+    "leg-house-leadership-speaker-of-the-house": "speaker of the house of representatives",
+    "leg-house-leadership-majority-leader": "majority leader and minority leader of the house of representatives",
+    "leg-house-leadership-minority-leader": "majority leader and minority leader of the house of representatives",
 }
+
+#: Schedule 6's own rows, mirrored stdlib-only the way EXECUTIVE_SCHEDULE_RATES
+#: mirrors OPM's five. Pinned equal to what the committed note prints by
+#: tests/test_us_code_pay_schedules.py, so the two cannot drift.
+US_CODE_SCHEDULE_6_YEAR = "2026"
+US_CODE_SCHEDULE_6_RATES = {
+    "vice president": 292_300.0,
+    "speaker of the house of representatives": 223_500.0,
+    "majority leader and minority leader of the house of representatives": 193_400.0,
+}
+#: The effective line the note prints beneath Schedule 6's heading. Every
+#: record quotes it, and the gate requires the quote to carry it: a rate with
+#: no effective date is a number, not a schedule entry.
+US_CODE_SCHEDULE_6_EFFECTIVE = (
+    "(Effective on the first day of the first applicable pay period beginning on or after January 1, 2026)"
+)
+#: The currency mark sits once, on the column's first figure. A record for a
+#: bare row must quote this head, which is what makes its own bare figure
+#: readable as dollars; see financial_evidence.COLUMN_HEAD_MARK_SOURCE_TYPES.
+US_CODE_SCHEDULE_6_COLUMN_HEAD = "$292,300"
+#: The schedule's own heading, as the note prints it. A record must quote it:
+#: "193,400" appears three times in Schedule 6 and also in Schedule 5's
+#: neighbourhood, and the heading is what ties a figure to this schedule.
+SCHEDULE_6_HEADING = "Schedule 6 — Vice President and Members Of Congress"
 
 STATUTORY_PAY_SOURCES = {
     "uscourts_judicial_compensation": {
@@ -522,6 +558,20 @@ STATUTORY_PAY_SOURCES = {
         "tiers": {role: SENATE_LEADERSHIP_RATE for role in SENATE_LEADERSHIP_ROLE_PHRASES},
         "footnotes": (SENATE_LEADERSHIP_FOOTNOTE,),
         "id_prefix": "leg-",
+    },
+    # The one source here that reaches two branches: Schedule 6 prices the
+    # Vice President under the executive and the House's leadership under the
+    # legislature, so `id_prefix` is a tuple. It is still a prefix check and
+    # not a free pass: nothing judicial may be priced from it.
+    "us_code_pay_schedules": {
+        "url": (
+            "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5332"
+            "&num=0&edition=prelim"
+        ),
+        "year": US_CODE_SCHEDULE_6_YEAR,
+        "tiers": US_CODE_SCHEDULE_6_RATES,
+        "footnotes": None,  # the record quotes the schedule itself; checked below
+        "id_prefix": ("exec-", "leg-"),
     },
 }
 
@@ -1562,7 +1612,10 @@ def statutory_pay_violations(node, pay, today, label):
         say("prices from source {!r}, which this pipeline does not produce".format(source))
         return out
     node_id = str(node.get("id") or "")
-    if not node_id.startswith(mirror["id_prefix"]):
+    prefixes = mirror["id_prefix"]
+    if isinstance(prefixes, str):
+        prefixes = (prefixes,)
+    if not node_id.startswith(tuple(prefixes)):
         say("prices from {!r}, which names no post outside the {!r} branch".format(source, mirror["id_prefix"]))
 
     if str(pay.get("year") or "") != mirror["year"]:
@@ -1592,15 +1645,43 @@ def statutory_pay_violations(node, pay, today, label):
 
     quote = str(pay.get("quote") or "")
     if expected is not None and "${:,.0f}".format(expected) not in quote:
-        say("quotes text that does not contain the figure it prices")
+        # Schedule 6 marks its column once, at the head, so every row beneath
+        # prints a bare figure; that case is checked against the head below.
+        if source != "us_code_pay_schedules":
+            say("quotes text that does not contain the figure it prices")
+        elif "{:,.0f}".format(expected) not in quote:
+            say("quotes text that does not contain the figure it prices")
     if source == "senate_salary_schedule":
         phrase = SENATE_LEADERSHIP_ROLE_PHRASES.get(tier)
         if phrase is None or phrase not in quote.casefold():
             say("prices a Senate leadership role its own quoted footnote does not name")
 
+    if source == "us_code_pay_schedules":
+        # A schedule row, not a footnoted table: what stands in for the note
+        # is the schedule's own heading and effective line, and the record
+        # must quote both. Without the effective line a reader cannot tell
+        # which year's order the figure comes from, and the figure alone is
+        # the same number every source in this file prints.
+        if SCHEDULE_6_HEADING.casefold() not in quote.casefold():
+            say("prices from Schedule 6 without quoting its heading")
+        if US_CODE_SCHEDULE_6_EFFECTIVE.casefold() not in quote.casefold():
+            say("prices from Schedule 6 without quoting the effective line the note prints")
+        if tier and tier not in quote.casefold():
+            say("prices an office its own quoted schedule row does not name")
+        # The bare rows are readable as dollars only because the column's
+        # first figure carries the mark; the record must carry it too.
+        if expected is not None and "${:,.0f}".format(expected) not in quote:
+            if US_CODE_SCHEDULE_6_COLUMN_HEAD not in quote:
+                say("prices a bare schedule figure without quoting the marked head of its column")
+
     footnotes = pay.get("footnotes")
     if not isinstance(footnotes, list):
         say("footnotes is not a list")
+    elif mirror["footnotes"] is None:
+        # This source's "footnotes" is its own quote, checked above; what
+        # must not happen is a record carrying notes from somewhere else.
+        if tuple(str(f).strip() for f in footnotes) != (quote.strip(),):
+            say("quotes notes that are not the schedule row it prices")
     elif tuple(str(f).strip() for f in footnotes) != mirror["footnotes"]:
         say("quotes notes the source does not carry")
 
