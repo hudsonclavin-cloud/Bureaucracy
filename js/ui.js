@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20260923a";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260923a";
+import { createGovernmentGraph } from "./graph.js?v=20260923b";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260923b";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -279,7 +279,7 @@ function summariseGraph(root) {
       count.posts += 1;
       if (String(node.cost_validation || "") === "post_is_not_a_budget_unit") count.postsWithoutFigure += 1;
       if (reportedPayOf(node) || currentPayOf(node) || node.positionPayRate || node.positionStatutoryPay
-        || node.positionReportedPay || gradePayOf(node) || tierPayOf(node)) {
+        || node.positionReportedPay || gradePayOf(node) || tierPayOf(node) || derivedPayOf(node)) {
         count.paidPosts += 1;
       }
     }
@@ -1187,6 +1187,60 @@ function renderStatutoryPay(data) {
   if (quote) add(` The source's own words: "${quote}"`);
 }
 
+// A figure NO document states. A statutory parity provision names the tier
+// this court's judges are paid at; the Judicial Compensation table states what
+// that tier pays. Rendered as its own block, and deliberately led by the fact
+// that it is a derivation rather than a quotation — every other pay block on
+// this site prints a number somebody published, and this one does not.
+//
+// The owner asked for the level of verification as a percentage saying how
+// many documents verify a claim. That is `pay.verification`, and it is printed
+// beside `documentsStatingTheFigure` on purpose: two official documents score
+// 80% on this project's own source arithmetic, and neither of them states the
+// number, which is exactly what a bare percentage would hide.
+function derivedPayOf(node) {
+  const pay = node.positionDerivedPay;
+  if (!pay || typeof pay !== "object" || typeof pay.amount !== "number") return null;
+  return pay;
+}
+
+function renderDerivedPay(data) {
+  let line = document.getElementById("info-derived-pay");
+  if (!line && dom.infoStats) {
+    line = document.createElement("div");
+    line.id = "info-derived-pay";
+    line.style.fontSize = "9px";
+    line.style.color = "#8f7a5d";
+    line.style.letterSpacing = "0.06em";
+    line.style.margin = "2px 0 8px";
+    dom.infoStats.insertAdjacentElement("afterend", line);
+  }
+  if (!line) return;
+  const pay = derivedPayOf(data);
+  if (!pay) {
+    if (line) line.replaceChildren();
+    return;
+  }
+  line.replaceChildren();
+  const add = (text) => line.appendChild(document.createTextNode(text));
+  const printed = pay.rateText || `$${pay.amount.toLocaleString()}`;
+  const documents = Array.isArray(pay.documents) ? pay.documents : [];
+  const verification = (pay.verification && typeof pay.verification === "object") ? pay.verification : {};
+  const count = Number(verification.documents || documents.length || 0);
+  const percent = Number(verification.percent || 0);
+  const stating = Number(verification.documentsStatingTheFigure || 0);
+
+  add(`DERIVED PAY — no single document states this figure. ${printed}${pay.year ? ` for ${pay.year}` : ""}.`);
+  add(` ${pay.statute || "A statutory parity provision"} states that every judge of ${pay.court || "this court"} is paid at the rate of ${pay.amountScope || "another court's judges"}; the U.S. Courts' Judicial Compensation table states what that tier pays. The figure is the join of the two.`);
+  add(` ${count} official document${count === 1 ? "" : "s"} verify it — ${percent}% on this project's own source scale, the same arithmetic the confidence figure above uses (0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one).`);
+  add(` ${stating === 0 ? "Neither of them states the figure" : `${stating} of them state the figure`}: the percentage measures how much official documentation this claim rests on, not the chance that it is right.`);
+  for (const document of documents) {
+    if (!document || typeof document !== "object") continue;
+    add(` ${document.citation || "A document"} — ${document.role || "supplies part of the figure"}: "${String(document.quote || "").trim()}"`);
+  }
+  add(" It names a tier, not this post by name, so it is a reviewed identification and never a verification. It is not this unit's cost: basic pay excludes benefits and is not a share of federal outlays.");
+}
+
 function renderReportedPay(data) {
   let line = document.getElementById("info-reported-pay");
   if (!line && dom.infoStats) {
@@ -1631,7 +1685,18 @@ function renderVerificationPanel(data, isRoot = false) {
     renderPlacementLine(data, isRoot);
   } else {
     setText(dom.verificationStatus, `Verification Status: ${status}`);
-    setText(dom.verificationConfidence, `Confidence: ${confidence.toFixed(2)} (${Math.round(confidence * 100)}%) · Sources: ${linkableSources.length}`);
+    // Led by the percentage and by how many documents produced it, because
+    // that is what the number actually is: verify_node_sources scores 0.4 for
+    // the first official document, +0.3 where one is an official site, and
+    // +0.1 for each further one. "Sources: 1" said the count and left the
+    // reader to guess what turned it into 0.70. A derived pay figure prints
+    // the same scale in its own block, so the two are comparable.
+    const documents = linkableSources.length;
+    setText(
+      dom.verificationConfidence,
+      `Verification: ${Math.round(confidence * 100)}% — ${documents} official document${documents === 1 ? "" : "s"}`
+      + ` (${confidence.toFixed(2)}: 0.4 for the first, +0.3 for an official site, +0.1 each further one)`,
+    );
     // What kind of check this was, not just when. "Its own official page
     // names it" and "its parent's page lists it" are different claims, and a
     // failed check is a third; the panel must not collapse them into a date.
@@ -2477,6 +2542,7 @@ function renderInfoPanel(nodeObj) {
   renderPositionListing(data);
   renderCurrentListing(data);
   renderStatutoryPay(data);
+  renderDerivedPay(data);
   renderSchedulePay(data);
   renderReportedPay(data);
   renderCountProvenance(data);

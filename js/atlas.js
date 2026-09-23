@@ -524,6 +524,18 @@ function describePay(node) {
       text: `${statutory.sourceLabel || "A primary official source"}${on ? ` (checked ${on})` : ""} states that ${statutory.amountScope || "this tier"} is paid ${printed}${statutory.year ? ` for ${statutory.year}` : ""}. That names a tier or a group of roles, not this specific post by name.`,
     });
   }
+  const derived = node.positionDerivedPay;
+  if (derived && typeof derived === "object" && typeof derived.amount === "number") {
+    const printed = derived.rateText || `$${derived.amount.toLocaleString("en-US")}`;
+    const verification = (derived.verification && typeof derived.verification === "object") ? derived.verification : {};
+    const documents = Array.isArray(derived.documents) ? derived.documents : [];
+    const count = Number(verification.documents || documents.length || 0);
+    const stating = Number(verification.documentsStatingTheFigure || 0);
+    blocks.push({
+      heading: "Derived pay — no single document states it",
+      text: `${derived.statute || "A statutory parity provision"} states that every judge of ${derived.court || "this court"} is paid at the rate of ${derived.amountScope || "another court's judges"}; the U.S. Courts' Judicial Compensation table states that tier pays ${printed}${derived.year ? ` for ${derived.year}` : ""}. ${count} official document${count === 1 ? "" : "s"} verify it — ${Number(verification.percent || 0)}% on this project's own source scale — and ${stating === 0 ? "neither states the figure" : `${stating} state${stating === 1 ? "s" : ""} the figure`}. The percentage measures how much official documentation the claim rests on, not the chance that it is right.`,
+    });
+  }
   const reported = node.positionReportedPay;
   if (reported && typeof reported === "object" && typeof reported.amount === "number") {
     const printed = reported.rateText || `$${reported.amount.toLocaleString("en-US")}`;

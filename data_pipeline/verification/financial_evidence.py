@@ -190,6 +190,13 @@ SOURCE_TYPES = {
     # about the one row listed under a title now, never about the office.
     # See data_pipeline/verification/plum_current.py.
     "opm_plum_current_export",
+    # Two documents, neither of which states the figure: a statutory parity
+    # provision names the tier an Article I court's judges are paid at, and
+    # the Judicial Compensation table states what that tier pays. The only
+    # source type here whose record is a derivation rather than a quotation;
+    # it says so on every record. See
+    # data_pipeline/verification/derived_pay.py.
+    "statutory_parity_derived_pay",
 }
 
 #: Documents that state their scale by *printing* it rather than by declaring
@@ -214,6 +221,10 @@ SCALE_PRINTED_SOURCE_TYPES = {
     # The export's cell prints "$228,000" and nothing in the file says
     # "dollars"; the mark attached to the record's own figure is the scale.
     "opm_plum_current_export",
+    # A derived record's own figure is the compensation table's, quoted with
+    # its row: "2026 $249,900 $264,900 ...". The mark is attached to it, so
+    # the scale comes off the same document the number does.
+    "statutory_parity_derived_pay",
 }
 
 #: A third way a source can state its scale, narrower still, and granted to
@@ -280,6 +291,7 @@ SOURCE_BASES = {
     "va_title38_pay_ranges": {"basic_pay"},
     "whitehouse_staff_report": {"basic_pay"},
     "opm_plum_current_export": {"basic_pay"},
+    "statutory_parity_derived_pay": {"basic_pay"},
 }
 
 SCOPE_MATCHES = {"exact", "parent", "child", "broader_account", "proxy", "ambiguous"}

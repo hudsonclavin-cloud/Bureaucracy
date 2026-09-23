@@ -220,6 +220,11 @@ EVIDENCE_OWNED_FIELDS = (
     # up for.
     "positionGradePay",
     "positionTierPay",
+    # Written by derived_pay.py: a figure no document states, held together
+    # by a parity provision and the compensation table. Withdrawn with the
+    # rest, so a repealed parity provision or a retired tier really does take
+    # the figure off the site rather than leaving it on the re-fed graph.
+    "positionDerivedPay",
     # Written by judicial_pay.py and congressional_pay.py, withdrawn here
     # with the rest for the same reason: a statutory-pay claim that is no
     # longer supported (the table stops naming this tier, the node is

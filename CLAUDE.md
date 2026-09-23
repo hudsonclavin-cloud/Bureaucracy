@@ -47,6 +47,7 @@ python scripts/derive_gs_pay_evidence.py --dry-run  # GS / SES / SL-ST base-pay 
 python scripts/derive_plum_current_evidence.py --dry-run  # OPM's CURRENT Plum Book export matched to position nodes; the incumbent columns are never read; writes nothing
 python scripts/derive_fr_signature_evidence.py --dry-run  # the title an official stated when signing a Federal Register document; the signer's NAME is never read; writes nothing
 python scripts/derive_judicial_pay_evidence.py --dry-run    # uscourts.gov's own compensation table; writes nothing
+python scripts/derive_derived_pay_evidence.py --dry-run     # a figure NO document states: a statutory parity provision joined to that table; writes nothing
 python scripts/derive_congressional_pay_evidence.py --dry-run  # senate.gov's own salary schedule; writes nothing
 python scripts/derive_whitehouse_pay_evidence.py --dry-run     # the White House Office's statutory staff roster; writes nothing
 python scripts/expand_whitehouse_office.py --dry-run           # what the roster would add to the curated WHO subtree; writes nothing
@@ -2092,6 +2093,102 @@ half is not the parent the tree gives it, a band moved to `VAMC Associate
 Director`, anything published as a rate, and a `va.gov/OHRM` URL among the
 node's sources. Positions carrying any pay claim went **385 → 457**.
 
+**A figure no document states, and the percentage that says so (since
+2026-09-23).** Every pay claim above publishes a number some document prints.
+`derived_pay.py` publishes one that none of them does, and it exists because
+`judicial_pay.py`'s own docstring named the refusal: it "will not price ... the
+specialized Article I courts (Tax Court, Court of Federal Claims, Court of
+International Trade, CAAF, CAVC). Their judges' pay follows other statutory
+provisions this module has not read a source for". The refusal was about not
+having read the provision. Congress wrote four, each one sentence naming
+another court's judges:
+
+- **26 U.S.C. 7443(c)(1)**, the Tax Court, at the district-judge rate;
+- **28 U.S.C. 172(b)**, the Court of Federal Claims, at the district-judge rate;
+- **10 U.S.C. 942(d)**, the CAAF, at the circuit-judge rate;
+- **38 U.S.C. 7253(e)**, the CAVC, at the district-judge rate.
+
+So the figure is a join: the statute names the tier, the Administrative
+Office's own Judicial Compensation table states what that tier pays, and
+**neither document states the number.** That is a weaker thing than a printed
+rate and the seventh pay field, `positionDerivedPay`, says so in as many words
+rather than presenting a derivation as a quotation. Four positions priced --
+0.09% of 4,591, printed on its own line by the gate so it cannot be read as
+anything grander -- and pay claims went **457 → 461**.
+
+**The percentage, which is the owner's ask and not a new scale.** The request
+was for the level of verification as a percentage saying how many documents
+verify a claim. `document_strength_percent` is `verify_node_sources`'
+arithmetic and nothing else: 0.4 for the first official document, +0.3 where
+one is an official site, +0.1 for each further one capped at 0.3 -- one
+document 70%, two 80%, three 90%. Reusing it rather than inventing a second
+scale is what makes the figure beside a derived rate comparable with the one
+the panel already prints beside a node's sources, and the panel's own line was
+reworded to lead with it (`Verification: 70% — 1 official document`) where it
+read `Confidence: 0.70 (70%) · Sources: 1` and left a reader to guess what
+turned the count into the score.
+
+What the percentage measures is how much official documentation the claim
+rests on, and on this field in particular it would be a lie read as anything
+else -- so every record also publishes `documentsStatingTheFigure: 0`, the
+panel prints it in the same breath, and the gate refuses a block that claims
+otherwise. Two documents scoring 80%, neither of which states the number, is
+exactly the situation a bare percentage would hide.
+
+**The research this was built from was wrong about one of the four, and the
+statute's own operative text is what caught it.** A research pass reported
+38 U.S.C. 7253(e)(1)-(2) as splitting the CAVC -- the chief judge at the
+*circuit* rate, the rest at the district rate. That is the section **as it
+read before amendment**, which uscode.house.gov prints in full inside the
+Amendments note under "Prior to amendment, text read as follows:". The current
+subsection (e) puts every judge of that court at the district rate. A
+substring search of the page finds the repealed sentence and cannot tell it
+from the law, so `operative_text` cuts each page at the first of "Historical
+and Revision Notes", "Editorial Notes" or "Statutory Notes", every quote must
+be found in what is left, and a quote found only below the line is **refused
+rather than fallen back on** -- the report says so in words
+(`only in the publisher's notes`). `tests/test_derived_pay.py` asserts both
+directions: each current sentence IS in its section's operative text, and the
+repealed one is NOT, though it is on the page. The gate mirrors the repealed
+sentence too and refuses it anywhere in the block.
+
+**The Court of International Trade is refused, and the refusal is the rule
+working.** 28 U.S.C. 252 states no parity: "Each shall receive a salary at an
+annual rate determined under section 225 of the Federal Salary Act of 1967
+(2 U.S.C. 351-361), as adjusted by section 461 of this title" -- a chain
+through two further documents this project has not read. CIT judges are in
+fact paid the district-judge rate, which is a thing this repository knows and
+cannot cite, the same position `CURATION.md` §8 puts "Secretary of the
+Treasury" in. The section is committed anyway, because "nobody looked" and
+"looked and it states no parity" are different facts.
+
+Every other seat is refused for the reason `judicial_pay.py` already gives:
+each of the four courts carries one single-post chief-judge node and a
+`Judge (×18)` / `(×15)` / `(×8)` / `(×4)` node stating a multiplicity, and one
+rate beside a panel describing a whole group reads as what one holder earns.
+A chief judge IS a judge of that court -- the provisions say "Each judge",
+with no chief's premium -- which is the reading `judicial_pay.py` already
+applies to Article III chief judges. The four service Courts of Criminal
+Appeals nested under the CAAF node are refused: their judges are commissioned
+officers paid under title 37, which nothing here has read.
+
+All four are `scopeMatch: proxy` and graded `partial`, and nothing writes
+`sourceUrls`, `sourceTypes`, `lastVerified` or `verificationMethod` -- the
+channel by which a five-row table carried 29 positions to `verified` on
+2026-09-11, asserted against the published graph. The gate mirrors each
+provision **by node id** for a reason sharper than the Senate case: **three of
+the four price the identical $249,900** from three different statutes, so a
+record moved between them keeps a correct figure, a correct tier and a real
+citation, and only the node's own identity tells them apart. It refuses a
+block whose sentence the section no longer prints, that names fewer or more
+than two documents, whose document claims to state the figure, whose
+percentage is not what the mirrored scale gives for the count it lists, that
+counts more documents than it lists, that claims a `verified` grade or an
+`exact` scope, that cites a statute its own document list does not name, that
+sits beside a measured cost, that verifies the post's existence or places it,
+or that puts either pay document among the node's own sources.
+`tests/test_derived_pay.py` corrupts each in turn.
+
 **Schedule 6, and the two refusals it turns into figures (since
 2026-09-23).** `congressional_pay.py`'s own docstring records exactly what it
 could not reach: "**Not** the House's Speaker, Majority Leader or Minority
@@ -2201,7 +2298,10 @@ Judge — a chief judge is paid as a judge of that tier, not at a distinct
 Executive Schedule level is. It refuses every node that states a
 multiplicity (351 circuit- and district-judge nodes), the specialized
 Article I courts (Tax Court, CFC, CIT, CAAF, CAVC — a different statutory
-basis this module has not read a source for), and one node the multi-post
+basis this module has not read a source for; four of those bases were read on
+2026-09-23 and `derived_pay.py` prices those courts' chief judges from them in
+a field of its own, which does not change what THIS table says), and one node
+the multi-post
 rule cannot see: `jud-district-structure-chief-judge`, a template describing
 every one of the 94 districts' structure rather than one district's actual
 chief judge, refused by id. `congressional_pay.py` reads `senate.gov`'s own
@@ -2638,10 +2738,11 @@ subdivide measured money rather than invent it — which does not make a
 subdivision a measurement. **Since 2026-09-09 the site does not show one by
 default**, by the owner's decision: a node with no measured cost of its own
 shows no figure and says why, and ticking "Also show estimated shares of a
-parent's total" opts back in. The exception is a real salary — **457** of the
+parent's total" opts back in. The exception is a real salary — **461** of the
 4,591 positions carry a pay claim an official source states, counted on the
-published graph on 2026-09-23 after Schedule 6 and the VA's Title 38 bands
-landed: 72 a Title 38 tier BAND rather than a rate (`positionTierPay`), 99 from the
+published graph on 2026-09-23 after Schedule 6, the VA's Title 38 bands and
+the Article I parity derivations landed: 4 a figure no document states
+(`positionDerivedPay`), 72 a Title 38 tier BAND rather than a rate (`positionTierPay`), 99 from the
 Executive Schedule as 5 U.S.C. §§5312–5316 sets it, 166 from the White House
 roster, 88 the rate the current PLUM export prints for the one row under the
 title, 31 from a listing's level joined to OPM's table, 22 statutory (18 from
@@ -2651,7 +2752,10 @@ base-pay **range** rather than a rate (`positionGradePay`, counted separately
 because a range is not a rate and the panel says so; it read 32 until the
 current export supplied a printed figure for 14 of them, and a printed figure
 beats a band). A node may carry more than one of these, so the per-source
-figures sum past 457. Shown in the cost block under its own heading and never
+figures sum past 457 — 461 since 2026-09-23, when four Article I chief judges
+took a figure NO document states (`positionDerivedPay`, a parity provision
+joined to the compensation table, publishing its document count and what that
+count is worth). Shown in the cost block under its own heading and never
 headed COST.
 
 That figure read **354** until 2026-09-19 and was wrong: it added up the
@@ -2659,13 +2763,14 @@ That figure read **354** until 2026-09-19 and was wrong: it added up the
 and the archive's 46 pay records yield 30 published `positionPayRate` blocks
 because the rest carry a level or grade and no rate. The published count is
 what the site shows, so it is the one stated here; it was 310 before the §9
-renames, 311 after, 380 once the current export was read, and 385 once
-Schedule 6 priced the Vice President and the House's three elected leaders. The estimates
+renames, 311 after, 380 once the current export was read, 385 once
+Schedule 6 priced the Vice President and the House's three elected leaders,
+457 once the VA's Title 38 bands landed, and 461 with the derived figures. The estimates
 stay in `graph.json` because the cascade's arithmetic and the gate's
 child-sum checks are built on them, so a consumer of the JSON must read
 `cost_status`, not `resolved_total_amount` alone. The gate prints both
-coverage numbers on every run so "789 nodes with a cost" cannot be read as
-789 known costs.
+coverage numbers on every run so "853 nodes with a cost" cannot be read as
+853 known costs.
 
 That document also works through **every one of Table 5's 78 section
 totals** and says why each does or does not reach a node, so the analysis

@@ -297,6 +297,61 @@ JUDICIAL_COMPENSATION_TIERS = {
 # against this mirror, empty or not.
 JUDICIAL_COMPENSATION_FOOTNOTES: tuple[str, ...] = ()
 
+# ---------------------------------------------------------------------------
+# A figure NO document states: the four statutory parity provisions, mirrored
+# by node id with the sentence each one prints and the tier it names. Keyed by
+# id for a reason sharper than the Senate case: three of the four price the
+# identical $249,900 from three different statutes, so a record moved between
+# them keeps a correct figure, a correct tier and a real citation, and only
+# the node's own identity tells them apart. Pinned against
+# `derived_pay.PARITY_PROVISIONS` — and against the committed sections' own
+# OPERATIVE text — by tests/test_derived_pay.py.
+DERIVED_PAY_SOURCE = "statutory_parity_derived_pay"
+DERIVED_PAY_METHOD = "parity_provision_joined_to_the_judicial_compensation_table"
+DERIVED_PAY_TABLE_URL = (
+    "https://www.uscourts.gov/about-federal-courts/about-federal-judges/judicial-compensation"
+)
+DERIVED_PAY_STATUTE_HOST = "uscode.house.gov"
+#: node id -> (citation, tier, the sentence the section's operative text prints)
+DERIVED_PAY_PROVISIONS = {
+    "jud-specialized-tax-chief-judge-tax-court": (
+        "26 U.S.C. 7443(c)(1)",
+        "district judges",
+        "Each judge shall receive salary at the same rate and in the same installments "
+        "as judges of the district courts of the United States.",
+    ),
+    "jud-specialized-claims-chief-judge-cfc": (
+        "28 U.S.C. 172(b)",
+        "district judges",
+        "Each judge shall receive a salary at the rate of pay, and in the same manner, "
+        "as judges of the district courts of the United States.",
+    ),
+    "jud-specialized-caaf-chief-judge-caaf": (
+        "10 U.S.C. 942(d)",
+        "circuit judges",
+        "Each judge of the court is entitled to the same salary and travel allowances as are, "
+        "and from time to time may be, provided for judges of the United States Courts of Appeals.",
+    ),
+    "jud-specialized-cavc-chief-judge-cavc": (
+        "38 U.S.C. 7253(e)",
+        "district judges",
+        "Each judge of the Court shall receive a salary at the same rate as is received by "
+        "judges of the United States district courts.",
+    ),
+}
+#: The sentence 38 U.S.C. 7253's Amendments note prints as the section's PRIOR
+#: text. It is on the page, it is not the law, and publishing it would put the
+#: CAVC's chief judge at the circuit rate. Refused outright wherever it is
+#: quoted, whatever else a record gets right.
+DERIVED_PAY_REPEALED_TEXT = (
+    "The chief judge of the Court shall receive a salary at the same rate as is received by "
+    "judges of the United States Courts of Appeals."
+)
+#: The project's own source arithmetic as a whole percentage, mirrored so the
+#: published figure cannot drift from the scale it names: one official
+#: document 70, two 80, three 90, four or more 100.
+DERIVED_PAY_STRENGTH_BY_COUNT = {1: 70, 2: 80, 3: 90}
+
 # The Senate's own year-by-year salary schedule, mirrored the same way and
 # pinned by tests/test_congressional_pay.py against
 # tests/fixtures/congress/senate_salaries_since_1789.html.
@@ -1745,6 +1800,160 @@ def tier_pay_violations(node, pay, today, label, parent_name):
     return out
 
 
+def derived_pay_violations(node, pay, today, label):
+    """Everything that must be true of a figure NO document states.
+
+    This is the only pay block in the project whose number is a join rather
+    than a quotation, so it gets two checks no other block needs: the record
+    must name BOTH documents and neither may claim to state the figure, and
+    the published percentage must be exactly what the mirrored scale gives
+    for the count of documents actually listed. A block that said "2
+    documents, 95%" would be inventing a scale, and one that said "2
+    documents" while listing one would be inventing a document.
+
+    The third is the one this whole module exists for: the sentence the
+    statute prints now, checked against the node's own id. 38 U.S.C. 7253's
+    page carries its repealed subsection beneath the law, and the repealed
+    text puts this court's chief judge at a different tier.
+    """
+    out = []
+    say = lambda text: out.append("{} {}".format(label(node), text))
+    if not isinstance(pay, dict):
+        say("positionDerivedPay {!r} is not a record".format(pay))
+        return out
+
+    type_text = str(node.get("type") or "").casefold()
+    if not any(word in type_text for word in ("position", "role", "office holder")):
+        say("carries a derived rate of basic pay but is a {!r}, not a post".format(node.get("type")))
+    if node.get("representsPosts"):
+        say("carries one post's derived rate but stands for several posts")
+
+    if str(pay.get("source") or "") != DERIVED_PAY_SOURCE:
+        say("prices from source {!r}, which this pipeline does not produce for a derived rate".format(pay.get("source")))
+        return out
+    if str(pay.get("method") or "") != DERIVED_PAY_METHOD:
+        say("claims method {!r}, not {!r}".format(pay.get("method"), DERIVED_PAY_METHOD))
+
+    node_id = str(node.get("id") or "")
+    provision = DERIVED_PAY_PROVISIONS.get(node_id)
+    if provision is None:
+        say("carries a derived rate on a node this pipeline has no parity provision for")
+        return out
+    citation, tier, sentence = provision
+    if str(pay.get("statute") or "") != citation:
+        say("cites {!r}; this node's parity provision is {!r}".format(pay.get("statute"), citation))
+    quoted_statute = str(pay.get("statuteQuote") or "")
+    if quoted_statute != sentence:
+        say("quotes a parity sentence that is not the one {} prints now".format(citation))
+    if str(pay.get("seatTier") or "") != tier:
+        say("prices tier {!r}; {} names {!r}".format(pay.get("seatTier"), citation, tier))
+
+    # The repealed text, refused wherever it appears in this block.
+    blob = " ".join(
+        str(value) for key, value in pay.items() if key != "documents" and isinstance(value, str)
+    )
+    documents = pay.get("documents")
+    if isinstance(documents, list):
+        for document in documents:
+            if isinstance(document, dict):
+                blob += " " + str(document.get("quote") or "")
+    if DERIVED_PAY_REPEALED_TEXT in blob:
+        say("quotes 38 U.S.C. 7253's REPEALED subsection, which the page prints beneath the law")
+
+    expected = JUDICIAL_COMPENSATION_TIERS.get(tier)
+    amount = pay.get("amount")
+    if isinstance(amount, bool) or not isinstance(amount, (int, float)):
+        say("publishes {!r} as a derived rate of basic pay".format(amount))
+    elif expected is None:
+        say("prices tier {!r}, which the mirrored table does not have".format(tier))
+    elif abs(float(amount) - expected) > 0.005:
+        say("publishes {:,.2f} for {!r}, which the table pays {:,.2f}".format(float(amount), tier, expected))
+    if expected is not None:
+        printed = "${:,.0f}".format(expected)
+        if str(pay.get("rateText") or "") != printed:
+            say("prints the rate as {!r}; the table prints {!r}".format(pay.get("rateText"), printed))
+        derivation = str(pay.get("derivation") or "")
+        if printed not in derivation or sentence not in derivation:
+            say("publishes a derivation that does not carry both the statute's sentence and the table's figure")
+
+    if str(pay.get("year") or "") != JUDICIAL_COMPENSATION_YEAR:
+        say("prices year {!r}, not {!r}".format(pay.get("year"), JUDICIAL_COMPENSATION_YEAR))
+    if str(pay.get("effective") or "") != "{}-01-01".format(JUDICIAL_COMPENSATION_YEAR):
+        say("dates the rate {!r}, not {!r}".format(
+            pay.get("effective"), "{}-01-01".format(JUDICIAL_COMPENSATION_YEAR)))
+
+    # Both documents, and neither of them claiming to state the figure.
+    if not isinstance(documents, list) or len(documents) != 2:
+        say("publishes a derived figure naming {!r} documents, not two".format(
+            len(documents) if isinstance(documents, list) else documents))
+        documents = []
+    urls = []
+    for document in documents:
+        if not isinstance(document, dict):
+            say("publishes a document entry that is not a record")
+            continue
+        url = str(document.get("url") or "")
+        urls.append(url)
+        if not url.startswith("https://"):
+            say("names a supporting document with no https citation ({!r})".format(url))
+        if not re.fullmatch(r"[0-9a-f]{64}", str(document.get("documentSha256") or "")):
+            say("names a supporting document with no digest")
+        if not str(document.get("quote") or "").strip():
+            say("names a supporting document it quotes nothing from")
+        if not str(document.get("role") or "").strip():
+            say("names a supporting document without saying what it supplies")
+        if document.get("statesTheFigure"):
+            say("claims a supporting document states the figure; neither of them does")
+    if urls and not any(DERIVED_PAY_STATUTE_HOST in url for url in urls):
+        say("publishes a derived figure with no parity provision behind it")
+    if urls and DERIVED_PAY_TABLE_URL not in urls:
+        say("publishes a derived figure with no compensation table behind it")
+    if urls and str(pay.get("url") or "") not in urls:
+        say("cites {!r} as its statute, which its own document list does not name".format(pay.get("url")))
+    if str(pay.get("tableUrl") or "") != DERIVED_PAY_TABLE_URL:
+        say("cites {!r} as the compensation table, not the one this pipeline reads".format(pay.get("tableUrl")))
+
+    verification = pay.get("verification")
+    if not isinstance(verification, dict):
+        say("publishes a derived figure with no statement of how many documents verify it")
+    else:
+        count = verification.get("documents")
+        if count != len(documents) or not isinstance(count, int) or isinstance(count, bool):
+            say("says {!r} documents verify it and lists {}".format(count, len(documents)))
+        elif verification.get("percent") != DERIVED_PAY_STRENGTH_BY_COUNT.get(count):
+            say("publishes {!r}% for {} documents; this project's own scale gives {!r}%".format(
+                verification.get("percent"), count, DERIVED_PAY_STRENGTH_BY_COUNT.get(count)))
+        if verification.get("documentsStatingTheFigure") != 0:
+            say("claims {!r} of its documents state the figure; none of them does".format(
+                verification.get("documentsStatingTheFigure")))
+        if not str(verification.get("scale") or "").strip():
+            say("publishes a percentage without saying what scale it is on")
+        if not str(verification.get("caution") or "").strip():
+            say("publishes a percentage with no sentence saying what it does not measure")
+
+    if str(pay.get("scopeMatch") or "") != "proxy":
+        say("claims scope {!r}; a figure no document states is never more than a proxy".format(pay.get("scopeMatch")))
+    if str(pay.get("financialEvidenceStatus") or "") != "partial":
+        say("grades a derived rate {!r}, not 'partial'".format(pay.get("financialEvidenceStatus")))
+
+    checked = str(pay.get("checkedAt") or "")
+    if not re.match(r"^\d{4}-\d{2}-\d{2}", checked) or checked[:10] > today:
+        say("claims a derived rate without a past retrieval date ({!r})".format(checked))
+
+    if str(node.get("cost_status") or "") in ("official", "root_total", "scaled_official"):
+        say("carries a derived rate and a measured cost status {!r}".format(node.get("cost_status")))
+    method = str(pay.get("method") or "")
+    if method and str(node.get("verificationMethod") or "") == method:
+        say("verifies its own existence with a pay figure no document states")
+    if method and str(node.get("placementMethod") or "") == method:
+        say("places itself with a pay figure no document states")
+    for source_url in node.get("sourceUrls") or []:
+        text = str(source_url)
+        if DERIVED_PAY_STATUTE_HOST in text or DERIVED_PAY_TABLE_URL == text:
+            say("counts a pay document among the sources that it exists")
+    return out
+
+
 def statutory_pay_violations(node, pay, today, label):
     """Everything that must be true of a single-source statutory pay claim.
 
@@ -2259,7 +2468,7 @@ ALIAS_FORBIDDEN_BLOCKS = (
     "usaspendingOutlays", "auditedNetCost", "ombBudget", "employeesOfficial",
     "employeesOfficialSource", "cost_weight_dispute", "positionPayRate",
     "positionGradePay", "positionStatutoryPay", "positionSchedulePay",
-    "positionReportedPay", "positionCurrentPay",
+    "positionReportedPay", "positionCurrentPay", "positionDerivedPay",
 )
 #: Deliberately only this feature's own rule and field. `usaspendingOutlays`
 #: carries a `nameAlias` of its OWN -- `USASPENDING_NAME_ALIASES`, a separate
@@ -3249,6 +3458,7 @@ def main(argv):
     bad_grade_pay = []
     bad_statutory_pay = []
     bad_tier_pay = []
+    bad_derived_pay = []
     bad_schedule_pay = []
     bad_reported_pay = []
     bad_usaspending = []
@@ -3473,6 +3683,14 @@ def main(argv):
         if tier_pay is not None:
             _tier_parent = tree_parents.get(str(node.get("id") or ""))
             bad_tier_pay.extend(tier_pay_violations(node, tier_pay, today, label, name_by_id.get(_tier_parent)))
+        # The one figure in this project no document states: a parity
+        # provision names the tier, the compensation table prices it. Checked
+        # against the section's own current sentence, mirrored by node id,
+        # and required to publish its document count and what that count is
+        # worth on this project's own scale.
+        derived_pay = node.get("positionDerivedPay")
+        if derived_pay is not None:
+            bad_derived_pay.extend(derived_pay_violations(node, derived_pay, today, label))
         # The same Executive Schedule rate from the other direction: current
         # law names the level, OPM's table prices it. Its own field and its
         # own mirror, keyed by node id.
@@ -3603,6 +3821,10 @@ def main(argv):
     gate.check("a base-pay range names the pay plan and grade the archive still reports and the bounds that table prints", bad_grade_pay)
     gate.check("a statutory pay rate is the mirrored source's own figure for the tier or role it names", bad_statutory_pay)
     gate.check("a pay-schedule tier band is the schedule's own bounds for the title it names, and is never a rate", bad_tier_pay)
+    gate.check(
+        "a derived rate names both documents, neither of which states it, and prices the tier its own statute does",
+        bad_derived_pay,
+    )
     gate.check("an Executive Schedule rate names the post the U.S. Code names, at the level the Code sets", bad_schedule_pay)
     gate.check("a reported pay rate is the roster's own figure for the title it names, and never zero", bad_reported_pay)
     gate.check("a File A gross outlay is the fixture's own figure for the key it names, dated, and never the cost", bad_usaspending)
@@ -4525,6 +4747,17 @@ def main(argv):
     by_source = Counter(str(n["positionStatutoryPay"].get("source") or "?") for n in statutory_paid)
     print("  statutory pay         : {:,} positions priced from a single primary source naming the seat directly ({})".format(
         len(statutory_paid), dict(by_source) or "none"))
+    derived_paid = [n for n in nodes if isinstance(n.get("positionDerivedPay"), dict)]
+    if derived_paid or DERIVED_PAY_PROVISIONS:
+        derived_counts = Counter(
+            int((n["positionDerivedPay"].get("verification") or {}).get("documents") or 0) for n in derived_paid)
+        print("  derived pay          : {:,} positions carry a figure NO document states — a statutory parity provision "
+              "names the tier, the compensation table prices it ({}); {:,} parity provisions are mirrored here, and the "
+              "Court of International Trade is not among them because 28 U.S.C. 252 states no parity".format(
+                  len(derived_paid),
+                  ", ".join("{} documents each, {}% on this project's own source scale".format(
+                      count, DERIVED_PAY_STRENGTH_BY_COUNT.get(count)) for count in sorted(derived_counts)) or "none",
+                  len(DERIVED_PAY_PROVISIONS)))
     reported_paid = [n for n in nodes if isinstance(n.get("positionReportedPay"), dict)]
     print("  reported pay         : {:,} White House Office positions carrying what the July 1 roster reports for the one person under that title".format(
         len(reported_paid)))

@@ -44,7 +44,13 @@ It will not price:
   Court of International Trade, CAAF, CAVC). Their judges' pay follows other
   statutory provisions this module has not read a source for; pricing them
   from the Article III table would be guessing that the numbers are the
-  same.
+  same. **Four of those provisions have since been read**, and
+  `derived_pay.py` prices those courts' chief judges from them in a field of
+  its own -- a figure NO document states, since the statute names a tier and
+  this table prices it. The refusal here stands unchanged: what that module
+  publishes is a derivation, labelled as one, and not something this table
+  says. The Court of International Trade is still unpriced, because
+  28 U.S.C. 252 states no parity at all.
 
 ## Basic pay is not the node's cost
 

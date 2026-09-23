@@ -575,7 +575,7 @@ def withdraw_pay_from_multi_post_nodes(root: dict[str, Any]) -> int:
         if node.get("representsPosts"):
             for field in ("positionPayRate", "positionStatutoryPay", "positionReportedPay",
                           "positionSchedulePay", "positionGradePay", "positionCurrentPay",
-                          "positionTierPay"):
+                          "positionTierPay", "positionDerivedPay"):
                 if node.pop(field, None) is not None:
                     withdrawn += 1
         stack.extend(node.get("children") or [])
