@@ -1826,7 +1826,8 @@ def colour_treasury_lines(root: dict[str, Any]) -> int:
 def annotate_stated_counts(root: dict[str, Any]) -> dict[str, Any]:
     """Say when a node's own name states that it stands for more than it shows.
 
-    Eight curated groupings state a count: four carry exactly what they claim
+    Seven curated groupings state a count (eight until "National Laboratories
+    (17)" was renamed on 2026-09-19): three carry exactly what they claim
     ("Mission Teams (15)" has fifteen children), and four do not — "Individual
     Senator Offices (100)" carries eighteen, "Individual Representative
     Offices (435)" fifteen, "District Offices (68)" four, "Federal Public

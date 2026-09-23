@@ -18,10 +18,10 @@ is the copy to trust; restated here as of 2026-09-23:
     the measured nodes cover 98.8% of the anchor, counting each only once
 
 Those numbers are the whole picture and they point in opposite directions.
-**2.5% of nodes** carry a figure a record names for them: the root's Treasury
-anchor, and the 136 Monthly Treasury Statement Table 5 lines applied to the
-nodes they name (25 of which are the receipts lines the exporter carries
-explicitly). But those nodes account for **98.4% of the money**. The apportioned figures are a subdivision of measured totals, not
+**2.9% of nodes** carry a figure a record names for them: the root's Treasury
+anchor, and the 159 Monthly Treasury Statement Table 5 lines applied to the
+nodes they name (29 of which are the receipts lines the exporter carries
+explicitly). But those nodes account for **98.8% of the money**. The apportioned figures are a subdivision of measured totals, not
 invented money — every one of them is some measured ancestor's dollars split
 among its children.
 

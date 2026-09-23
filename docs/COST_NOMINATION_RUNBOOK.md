@@ -9,16 +9,16 @@ this phase depends on what phase 1 established.
 
 ## Why this comes second
 
-137 of 5,402 nodes carry a cost a record names for them (the figure
-`python scripts/validate_published_graph.py` prints, which is the copy to
-trust). 650 carry a share of an ancestor's total, divided by budget, headcount
-or subtree size — which the site no longer shows by default, because a number
-nobody measured must not be the first thing a reader sees. The remaining 4,615
-carry no figure at all: 4,441 of them are posts, which have no budget to
-divide, so a cost nomination for one is never the unit's cost and only ever a
-rate of basic pay.
+160 of 5,510 nodes carry a cost a record names for them (137 of 5,402 on
+2026-09-18; the figure `python scripts/validate_published_graph.py` prints,
+which is the copy to trust). 693 carry a share of an ancestor's total, divided
+by budget, headcount or subtree size — which the site no longer shows by
+default, because a number nobody measured must not be the first thing a reader
+sees. The remaining 4,657 carry no figure at all: 4,591 of them are posts,
+which have no budget to divide, so a cost nomination for one is never the
+unit's cost and only ever a rate of basic pay.
 
-Getting past 137 needs one thing before any new data source: **a reviewed
+Getting past 160 needs one thing before any new data source: **a reviewed
 crosswalk from node to financial identifier.** `docs/EXACT_NODE_COSTS.md` sets
 that out. This phase builds it, one nomination at a time.
 
@@ -63,7 +63,7 @@ can record is always a figure the nomination side can name.
 | `budget_request` | What did the agency ask for? | `congressional_justification` | **Not spending, and not even funding.** A request made before the year began, which Congress may cut, ignore, or supersede. It is the most granular figure available by organisation, and the least authoritative. |
 | `payroll` | What does this unit's staff cost? | `agency_financial_report`, `congressional_justification` | An input to cost, not cost. |
 | `basic_pay` | What does this post pay? | `opm_pay_table`, `uscourts_judicial_compensation`, `senate_salary_schedule`, `us_code_pay_schedules`, `va_title38_pay_ranges`, `whitehouse_staff_report`, `opm_plum_current_export`, `statutory_parity_derived_pay` | Compensation for one post. **Never** an organisation's cost. Most are single primary documents that name a seat or a title directly; the PLUM export's row is an incumbency, so its figure is one listing's; `va_title38_pay_ranges` states a BAND rather than a rate and is published as one; `statutory_parity_derived_pay` is the one source here whose figure NO document states — a parity provision names the tier and the compensation table prices it — and every record carries both documents, the count and what that count is worth. |
-| `full_time_equivalents` | How many staff-years? | `congressional_justification` | Not money at all. Carried because budget tables report it beside the dollars, and because it is the honest answer when a unit's money cannot be separated but its staffing can. Never rendered with a currency symbol. |
+| `full_time_equivalents` | How many staff-years? | `congressional_justification` | Not money at all. Carried because budget tables report it beside the dollars, and because it is the honest answer when a unit's money cannot be separated but its staffing can. Never rendered with a currency symbol. `nominate.py record` refuses it as a metric — a headcount is not a cost identifier — and one refused record rejects the whole batch. |
 
 Nominate the metric that source actually reports. Do not nominate
 `audited_net_cost` and point at a Treasury outlay line; they are different
@@ -105,8 +105,10 @@ grep '"id": "exec-dept-ed-fsa"' data/audit/nominations/source-*.jsonl
 
 A key that a financial system uses to name this exact entity. **Stable codes,
 not names.** A name may propose a candidate and must never publish a
-financial fact on its own — that rule is why the graph has exactly one
-name-keyed alias table and why every entry in it carries a section check.
+financial fact on its own — that rule is why every name-keyed alias table
+that reaches money is reviewed entry by entry: `TREASURY_ROW_ALIASES` carries
+a section check, and `USASPENDING_NAME_ALIASES` publishes what it reaches as
+`partial`, never `verified`.
 
 | `system` | `key` should be |
 |---|---|
@@ -175,13 +177,17 @@ that reason. It is a useful finding, not a failure.
   },
   {
     "id": "exec-dept-doi-fws",
-    "noCandidate": true,
-    "reason": "The only Treasury line that reaches it is 'Fish and Wildlife and Parks', which also covers the National Park Service. That is the parent's key, not this node's."
+    "metric": "net_outlays",
+    "identifiers": [
+      {"system": "treasury_mts", "key": "United States Fish and Wildlife Service",
+       "basis": "Table 5 prints this line under 'Fish and Wildlife and Parks' in the Department of the Interior's section, where the graph puts the service. Not 'Total--Fish and Wildlife and Parks', which also covers the National Park Service: that is the grouping's key, not this node's.",
+       "confidence": "likely"}
+    ]
   },
   {
-    "id": "leg-senate-leadership",
+    "id": "exec-cabinet",
     "noCandidate": true,
-    "reason": "Phase 1 recorded this as a probable editorial grouping (node_type: unclear, senate.gov does not label a unit of this name). A grouping the government does not name has no account of its own."
+    "reason": "Phase 1 recorded this as a probable editorial grouping (node_type: unclear; phase 1b: editorial_grouping, no page read labels 'The Cabinet — Executive Departments'). A grouping the government does not name has no account of its own."
   }
 ]}
 ```
@@ -207,10 +213,12 @@ crosswalk entry becomes a published figure only when:
 None of that is your job. Your job is the crosswalk.
 
 For `usaspending_file_ab` the matcher exists (`scripts/derive_usaspending_evidence.py`):
-it applies a proposal only where the API's name and the node's reduce to the
-same canonical key, and holds every other proposal — an alias, an
-abbreviation, a bureau broader than the node — as `awaiting_review` with the
-confidence you gave it. A held proposal is not wasted; it is the list a
+it applies a proposal where the API's name and the node's reduce to the
+same canonical key, or where a reviewed entry in `USASPENDING_NAME_ALIASES`
+says the two names denote one unit (published `partial`, never `verified`),
+and holds every other proposal — an unreviewed alias or abbreviation, a
+bureau broader than the node — as `awaiting_review` with the confidence you
+gave it. A held proposal is not wasted; it is the list a
 curator reads. What it publishes is `gross_outlays`, beside the cost, never
 as it.
 

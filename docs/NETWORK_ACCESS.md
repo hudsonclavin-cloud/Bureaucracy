@@ -31,9 +31,11 @@ source is reachable now. Two consequences, both already true of the code:
   count on, which is why they are committed at all;
 - `scripts/fetch_fixture.py` writes a `.meta.json` for a refused fetch and no
   fixture, so a refusal is recorded with its date rather than looking like a
-  source nobody thought to try. `tests/fixtures/opm/pay/` is the first entry
+  source nobody thought to try. `tests/fixtures/opm/pay/` was the first entry
   made that way: OPM's Executive Schedule salary table, which would give 30
-  matched positions an official rate of pay, refused on 2026-09-09.
+  matched positions an official rate of pay, refused on 2026-09-09. The table
+  was fetched on 2026-09-11 and its `.meta.json` now records that fetch, so
+  the refusal survives only in git history (commit 202a500).
 
 Before concluding a host is blocked, try it — the list below is dated, not
 permanent:
@@ -84,7 +86,7 @@ actually runs in — see §0a, and check the id rather than trusting a name —
 then re-run `python scripts/verify_base_graph.py`. Nothing in the repository
 needs to change; the candidates are already committed.
 
-Two things to know before pasting:
+Three things to know before pasting:
 
 - **`scripts/probe_network_access.py --allowlist` emits the list**, live, so
   it never goes stale the way a hand-maintained block does. On 2026-09-11 it
@@ -183,7 +185,7 @@ congressional pay work:
 
 | Host | What it serves | What it would unlock |
 |---|---|---|
-| `uscode.house.gov` | the U.S. Code, 5 U.S.C. § 5332 Schedule 6 | the Speaker of the House ($223,500) and the House Majority and Minority Leaders ($193,400) — three curated position nodes that cannot be priced from the Senate's own salary page, whose footnote names only the three *Senate* leadership roles. Also 28 U.S.C. §§ 172(b) and 252, which give Court of Federal Claims and Court of International Trade judges the district-judge rate. |
+| `uscode.house.gov` | the U.S. Code, 5 U.S.C. § 5332 Schedule 6 | the Speaker of the House ($223,500) and the House Majority and Minority Leaders ($193,400) — three curated position nodes that cannot be priced from the Senate's own salary page, whose footnote names only the three *Senate* leadership roles. Also 28 U.S.C. §§ 172(b) and 252, which give Court of Federal Claims and Court of International Trade judges the district-judge rate. (Corrected 2026-09-23, once both sections were read and committed under `tests/fixtures/uscode/`: § 172(b) does state that parity, but § 252 states none — it sets the rate by reference to section 225 of the Federal Salary Act of 1967 — so the Court of International Trade's judges stay unpriced; see `derived_pay.py`.) |
 
 Two hosts here are refused **by the host, not by this session**, and no
 allowlist change fixes them: `www.congress.gov` and `crsreports.congress.gov`
@@ -504,7 +506,7 @@ Re-measured directly, because §7 says the wall is no longer the proxy and the
 right response to that is to retry the things the proxy used to refuse rather
 than carry the old list forward.
 
-    uscode.house.gov     robots.txt 200   — WAS NOT IN THIS FILE AT ALL
+    uscode.house.gov     robots.txt 200   — recorded as CONNECT 403 in §1b
     www.govinfo.gov      robots.txt 200   — recorded as CONNECT 403 in CLAUDE.md
     clerk.house.gov      robots.txt 404   — i.e. nothing published to obey; crawled
 
@@ -553,11 +555,14 @@ calls the unit so a rename can be argued from the page's own words.
     python scripts/probe_network_access.py --domains      # the same, as registrable domains
 
 The counts above are a snapshot; the causes are stable. A host that moves
-from group 1 to "reached" is the only change that raises coverage.
+from group 1 to "reached" was the only change that raised coverage while §1
+held; since §7 found no proxy refusal left, coverage has also moved through
+renames and documents read offline (§8, §11), which need no host at all.
 
 **Building an allowlist that does not go stale.** `--allowlist` is reactive:
 it names what is broken now, and a promoted nomination or a new curated page
-invalidates it. `--all-hosts` (247) and `--domains` (168) are the superset,
+invalidates it. `--all-hosts` (247 on 2026-09-15, 342 on 2026-09-23) and
+`--domains` (168 on 2026-09-15, 232 on 2026-09-23) are the superset,
 read from `official_sites.json`, the provenance file, every nomination
 ledger and every URL `evidence.json` has tried — so they already carry hosts
 nobody has fetched yet. The whole-estate answer is `*.gov` and `*.mil`, and
@@ -849,8 +854,9 @@ nothing is committed and the `.meta.json` records why.
 
 What matters is what is done with such a response, and the answer is nothing.
 It is **not the document**, so it is never parsed — the fetch deletes it,
-waits, and retries up to four times. Where the host never served the document,
-no `.txt` is committed and the `.meta.json` beside it carries the reason; the
-module counts those as `documents_not_committed` rather than dropping them, so
+waits, and retries, up to the twelve attempts above. Where the host never
+served the document, no `.txt` is committed and the `.meta.json` beside it
+carries the reason; the module counts those as
+`documents_refused_by_the_host` rather than dropping them, so
 the fixture set's own README and the derive step both state how many documents
 the listings name that the host would not hand over.

@@ -1,22 +1,30 @@
 # Curation proposals
 
 Changes to `data/federal_gov_complete_1.json` are the owner's to make; the
-pipeline never edits it, and nothing here has been applied. Each item says
+pipeline never edits it. Nothing here had been applied when this was
+first written; §3's merge (2026-09-18, `scripts/merge_duplicate_nodes.py`)
+and §1's fifteen units (2026-09-19, `scripts/add_curated_nodes.py`) have
+been since, and later sections say what they applied. Each item says
 what the evidence supports and what it does not. Official URLs listed are
 *candidates* for `data/verification/official_sites.json` — a URL there is a
 page to fetch, never evidence by itself; the verifier decides.
 
 Standing rule for every proposal below (from CLAUDE.md): a Treasury line is
 matched to a node only when the name identifies one line and one node, and
-an alias is added to `TREASURY_ROW_ALIASES` only when the line fits inside
-its parent's resolved amount. A node can be added without its line ever
+an alias is added to `TREASURY_ROW_ALIASES` only when the line belongs to
+the section of the node's ancestors, or the node is placed where the
+statement files it (until the cap went, §4, the test was that the line fit
+inside its parent's resolved amount). A node can be added without its line ever
 being applied; that is still an improvement, because the unit exists and
 the site can say so.
 
 ## 1. Units the Monthly Treasury Statement reports and the graph lacks
 
-Table 5 prints a line for each of these and no node carries the name, so
-no alias can reach the money. Amounts are FYTD net outlays through
+Table 5 prints a line for each of these and, when this was written, no node
+carried the name, so no alias could reach the money. All fifteen were added
+on 2026-09-19 by `scripts/add_curated_nodes.py` (licence
+`treasury_statement_line`), and each now publishes its line as
+`cost_status: official`. Amounts are FYTD net outlays through
 2026-07-31, read off `tests/fixtures/mts_table5_latest.json` — the
 statement verbatim, committed 2026-09-08. A negative figure is what the
 Treasury prints: net receipts exceeded spending (GSA's rents, for one).
@@ -84,14 +92,19 @@ unchanged.
 **Corporation for National and Community Service** is the statutory name
 of the unit the graph calls **AmeriCorps** (`exec-ind-misc-americorps`).
 This is an alias candidate for `TREASURY_ROW_ALIASES`, not a curation gap.
-It is blocked today by the alias rule: its parent, "Other Independent
-Agencies (25+)" (`exec-ind-misc`), currently resolves to *no amount at all*
-(see §4), so no line fits inside it. Add the alias once §4 is fixed and the
-parent carries a positive figure; the earlier attempt to publish this unit
+It was blocked, when this was written, by the alias rule then in force: its
+parent, "Other Independent Agencies (25+)" (`exec-ind-misc`), resolved to
+*no amount at all* (see §4), so no line fit inside it. Neither holds now:
+the parent carries a $14.42B estimate, the test is the same section, and
+Table 5 files this line under Independent Agencies, the section it files
+twelve of `exec-ind-misc`'s fifteen measured children under. The alias has
+simply not been added — `TREASURY_ROW_ALIASES` has no key for it, and
+AmeriCorps publishes an apportioned $1.37B; the earlier attempt to publish this unit
 as a fourth child of the root came from the crawler, not from the base
 graph, and is the reason `resolve_root_orphans` refuses root attachment.
 
-**U.S. Postal Service** (`exec-ind-usps`) is estimated at ≈ $19B while Table
+**U.S. Postal Service** (`exec-ind-usps`) was estimated at ≈ $19B when this was written (an
+apportioned $22.03B now) while Table
 5 prints the Postal Service's own off-budget line. The curated name is
 "U.S. Postal Service (USPS)" and the statement's label differs; a probe
 (`scripts/probe_treasury_rows.py`) will say which label it prints and
@@ -156,11 +169,15 @@ in curation:
   offsetting receipts (−$343.3B) sit beside the three branches. CLAUDE.md
   ("Cost cascade") has the design and the identity it rests on.
 
-What that leaves for curation is only what this document lists: the
-sixteen units above (their lines now sit, unapportioned, inside their
-sections' estimates), the AmeriCorps and Postal Service aliases, and the
-Coast Guard duplicate — whose $9.6B, ambiguous between two nodes, is still
-the largest single line the graph cannot place.
+What that left for curation, when this was written, was only what this
+document lists: the sixteen units above (their lines then sat,
+unapportioned, inside their sections' estimates), the AmeriCorps and Postal
+Service aliases, and the Coast Guard duplicate — whose $9.6B, ambiguous
+between two nodes, was then the largest single line the graph could not
+place. The Coast Guard was merged and its line applied on 2026-09-18 (§3),
+and the fifteen units of §1 were added on 2026-09-19 and each publishes its
+own line, `cost_status: official`; the AmeriCorps and Postal Service aliases
+are what is left.
 
 ## 5. What the government's own lists say about the curated graph (2026-09-08)
 
@@ -365,13 +382,21 @@ Commission (FERC)" (type Independent Regulatory Commission) under
 `exec-regulatory` "Independent Regulatory Commissions", a curated Division
 directly under the Executive Branch; DOE is not on its path.
 
-What the site does with it: the node carries `placementDirectoryDisagreement`
+What the site did with it on 2026-09-08: the node carried `placementDirectoryDisagreement`
 (`listedUnder: "Energy Department"`, `directoryParentId: exec-dept-doe`, the
-entry's URL, `checkedAt` 2026-09-08T19:19:15Z), `placementVerified` stays
+entry's URL, `checkedAt` 2026-09-08T19:19:15Z), `placementVerified` stayed
 null, the existence claim "The Federal Register's agency directory lists it"
-stands, and the Placement line reads: *The Federal Register's agency
+stood, and the Placement line read: *The Federal Register's agency
 directory files it under "Energy Department", not under its parent here —
-the two sources disagree, and neither is resolved.*
+the two sources disagree, and neither is resolved.* Since the Government
+Manual's organisation route landed (2026-09-20) the field holds the Manual's
+disagreement instead, written over the directory's (`source:
+us_government_manual`, `listedUnder: "Department of Energy"`, the same
+`directoryParentId`, granule GOVMAN-2025-12-31-207), so the panel now reads
+*The United States Government Manual files it under "Department of Energy",
+not under its parent here*; `placementVerified` is still null, the
+existence claim still stands, and the directory's own record still says
+`disagrees`.
 
 Both positions are defensible. [Likely, from general knowledge; not checked
 against any file here] FERC was created by the Department of Energy
@@ -536,15 +561,17 @@ Register's directory is a list of who publishes notices, the Senate's is a
 membership roll — and it is worded as itself, never as "verified". 202
 nodes carry it today (139 from the directory, 63 from the Senate list).
 
-*Not in the official list* — only the Senate's list can say this, because
-only it is complete for what it lists: every subcommittee of a committee is
-in that committee's file, so a graph subcommittee whose name is absent has
+*Not in the official list* — only a complete list can say this: the
+Senate's, and since 2026-09-13 the House Clerk's (§5.7). Each is complete
+for what it lists: every subcommittee of a committee is listed under it,
+so a graph subcommittee whose name is absent has
 been checked and not found *by name*. The panel says exactly that and shows
 the names the list does carry. It does not say the body has ceased to
 exist; a renamed subcommittee reads the same way, which is what §5.1 is for.
 The Federal Register's directory never produces this state, because an
 agency that has not published in the Register is simply not in it. 27 nodes
-carry it today.
+carried it on 2026-09-08; 17 carry it on 2026-09-23 (8 from the Senate's
+list, 9 from the House Clerk's).
 
 *Filed under an ancestor* — the directory names a parent that is above the
 node here but is not its immediate parent: the graph keeps the Defense
@@ -570,7 +597,9 @@ The pipeline stamps what the lists say onto the published copies of the
 nodes and withdraws those stamps the moment a re-fetched list stops saying
 it; it never renames, moves, adds or removes a node, and it never chooses
 between a list and the curated file. Every change this section suggests is
-the owner's to make by hand, and until it is made the site publishes the
+the owner's to make — not by hand, since the curated file is never
+hand-edited, but through the reviewed scripts that are its only writers
+(§3, §9, §16) — and until it is made the site publishes the
 difference as a difference.
 
 ### 5.7 The House Clerk's committee list (fetched 2026-09-13)
@@ -693,16 +722,22 @@ of the remaining `not_found` and `inconclusive` records, and they are curation.
 Following the salary work in `judicial_pay.py`, `congressional_pay.py` and
 `whitehouse_pay.py`, this is the standing account of which official pay
 sources can reach a node and which cannot, so the analysis is not redone.
-**23 of 4,382 position nodes carry a rate of pay from a primary source**: 15
-judicial, 3 congressional, 5 White House Office.
+**23 of 4,382 position nodes carried a rate of pay from a primary source**
+when this section was opened: 15 judicial, 3 congressional, 5 White House
+Office. The same day's expansion (§7.4) took the White House Office to 166,
+so 184 by the end of 2026-09-14.
 
 ### 7.1 Blocked on one allowlist entry — three House leadership nodes
 
-`uscode.house.gov` answers the proxy's CONNECT with 403 (see
+**Resolved (2026-09-23).** `us_code_pay_schedules.py` reads Schedule 6 from
+the note to 5 U.S.C. § 5332 (committed at
+`tests/fixtures/uscode/pay_schedules_5_usc_5332.html`), and the three nodes
+below carry `positionStatutoryPay` at exactly these rates. As written on
+2026-09-14: `uscode.house.gov` answered the proxy's CONNECT with 403 (see
 `docs/NETWORK_ACCESS.md` §1b). It serves 5 U.S.C. § 5332 Schedule 6, which
-states the statutory salaries of congressional leadership. Once the host is
-reachable, three curated nodes become priceable by a module that would be a
-near-clone of `congressional_pay.py`:
+states the statutory salaries of congressional leadership. Once the host was
+reachable, three curated nodes would become priceable by a module that would
+be a near-clone of `congressional_pay.py`:
 
 | Node | Post | Schedule 6 rate |
 |---|---|---|
@@ -732,16 +767,25 @@ bankruptcy and magistrate node in this graph states a multiplicity**
 multi-post rule refuses them all. Splitting those into individually named
 seats is curation; until then there is nothing for the rule to price.
 
-28 U.S.C. § 172(b) (Court of Federal Claims) and § 252 (Court of
-International Trade) give those judges the district-judge rate, and
-`jud-specialized-tax-chief-judge-tax-court` is a single-post node — but the
-statutory text is on `uscode.house.gov`, blocked as above.
+28 U.S.C. § 172(b) (Court of Federal Claims) gives those judges the
+district-judge rate; § 252 (Court of International Trade) does not — it sets
+the salary by reference to section 225 of the Federal Salary Act of 1967,
+which this paragraph misread as parity on 2026-09-14. The statutory text has
+been reachable since 2026-09-18, and since 2026-09-23 `derived_pay.py` prices
+the Tax Court (26 U.S.C. § 7443(c)(1)), the Court of Federal Claims, the CAAF
+and the CAVC from the committed sections:
+`jud-specialized-tax-chief-judge-tax-court` and seven other nodes carry
+`positionDerivedPay`, and the Court of International Trade is refused.
 
 ### 7.3 Structurally out of reach — the graph carries no pay key
 
-Three whole categories of official pay table cannot reach any node in this
-graph, for one shared reason: **the curated file records no pay grade, no SES
-status and no GS grade/step/duty station on any node.** Matching a node to a
+Three whole categories of official pay table could not reach any node in this
+graph on 2026-09-14, for one shared reason: **the curated file records no pay
+grade, no SES status and no GS grade/step/duty station on any node.** (The
+curated file still records none. Since 2026-09-21 `gs_pay.py` reaches the SES,
+SL/ST and GS tables through a different key — the pay plan and grade an OPM
+Plum Book listing reports — and 18 positions publish a base-pay range in
+`positionGradePay`: 16 SES, 1 SL, 1 GS-15.) Matching a node to a
 row would mean guessing which row it is, which is the inference this project
 refuses everywhere else.
 
@@ -784,12 +828,15 @@ claim this script cannot support. They remain unpriced.
 
 ### 7.5 What is still out of reach
 
-After the expansion, **166 of the 249** White House Office positions carry a
-rate. The rest are refused, each for a reason worth keeping:
+After the expansion, **166 of the 249** White House Office positions carried a
+rate; **188** do since 2026-09-23 (§19.4). The rest are refused, each for a
+reason worth keeping:
 
-- **54 stand for several posts.** A title the report lists several people
-  under gets one node and no rate: the salaries differ, and one figure on
-  such a node would read as what a single holder is paid.
+- **54 stood for several posts; 32 still carry no rate.** A title the report
+  lists several people under at differing salaries gets one node and no rate:
+  one figure on such a node would read as what a single holder is paid. The
+  other 22, whose every holder the report lists at one rate and whose count
+  is the node's own, carry that rate since 2026-09-23.
 - **21 curated nodes the report does not print.** `Chief Speechwriter`,
   `Director of Presidential Personnel`, `Director of Public Liaison`,
   `Director of Strategic Communications`, `Director of Scheduling & Advance`,
@@ -881,7 +928,9 @@ impossible while they were misnamed: Secretary of Labor (dol.gov), Secretary
 and Deputy Secretary of Energy (energy.gov), Secretary and Deputy Secretary
 of Veterans Affairs (va.gov). Confirmed positions went 20 -> 25.
 
-**Still templated: 13, because no official source in hand names the title.**
+**Still templated on 2026-09-15: 13, because no official source in hand named
+the title** (12 of them were renamed from 5 U.S.C. §§ 5312–5316 on 2026-09-18;
+only `Deputy Secretary of Department of Commerce` remains templated).
 Commerce, Education, Transportation, HHS and HUD (both posts each), and the
 Secretary side of Agriculture, the Interior and the Treasury. The archive
 files those heads as a bare "SECRETARY", which names the role and not the
@@ -941,9 +990,10 @@ only writer — the curated file is never hand-edited. The table is the same
 shape as `TREASURY_ROW_ALIASES` and `USASPENDING_NAME_ALIASES`: a reviewed
 identification with the basis written beside it, and re-checked against the
 source rather than trusted. **The table proposes; the page decides.** Every
-row is re-fetched and re-tested on every run, so a row cannot go stale
-silently, and the script refuses a row whose node no longer carries the name
-the row was written against.
+row not yet applied is re-fetched and re-tested on every run; a row whose
+node already carries the proposed name is recorded `already_applied` before
+any fetch, so its page is not re-read. The script refuses a row whose node no
+longer carries the name the row was written against.
 
 ### 9.1 What the renames actually were
 
@@ -998,9 +1048,12 @@ or from the Senate and House Clerk lists already committed under
 Antitrust & Consumer Rights` is the Senate's `Antitrust, Competition Policy,
 and Consumer Rights` reordered, and `House Committee on Oversight &
 Accountability` is the Clerk's `Oversight and Government Reform` — both
-already recorded in §5.7 as names the official lists spell differently.
+already recorded (§5.1 and §5.7 respectively) as names the official lists spell differently.
 
-**The remaining 21** are EPA's ten regions and five courts of appeals, below.
+**The remaining 21** are EPA's ten regions and five courts of appeals, below,
+and six rows this section does not itemise, among them NSF's Geosciences and
+Engineering directorates (§9.4 refers back to them); every one is in
+`data/curation/unit_renames.json`.
 
 ### 9.2 EPA's regions: the qualifier is EPA's, not the graph's
 
@@ -1036,7 +1089,10 @@ Court of Appeals`. Adopting those would break the family convention across
 thirteen sibling nodes to confirm six, and `First Circuit` is two generic
 tokens besides. Five renames and six principled refusals is the honest split;
 the refusals are not a coverage failure but a statement about what those
-courts' own sites print.
+courts' own sites print. The owner approved the six short forms the same day
+(commit 6563a9c), so `First Circuit`, `Third Circuit`, `Sixth Circuit`,
+`Eighth Circuit`, `Tenth Circuit` and `Eleventh Circuit` are the curated
+names now and the family carries both conventions (§15.1).
 
 ### 9.4 The 39 proposals declined, and why
 
@@ -1044,7 +1100,9 @@ courts' own sites print.
     by headquarters city — `Region VIII - Denver` — and the match requires
     dropping the `HUD` the graph uses to keep its regions apart from EPA's and
     Education's identically numbered ones. A family decision that trades ten
-    nodes' disambiguation for ten confirmations; left to the owner.
+    nodes' disambiguation for ten confirmations; left to the owner, who
+    approved all ten the same day (commit 6563a9c): the curated file now
+    carries HUD's own `Region I - Boston` through `Region X - Seattle`.
   - **VA's VISNs** (6). Proposed as bare `VISN 17` / `VISN 08`, matching only
     in site-wide navigation. Refusing them was right for a better reason than
     the one given at the time: the whole subtree was superseded, not misnamed.
@@ -1063,7 +1121,7 @@ courts' own sites print.
   - **A bare generic title** (5). `Inspector General` for the House OIG,
     `Chaplain`, `Environment`, `Sergeant at Arms`, `Library of Congress` for
     the AOC's buildings node. The first is the sharpest: `Inspector General`
-    names 72 nodes here and every `.gov` footer carries those words, which is
+    names 80 nodes here and every `.gov` footer carries those words, which is
     exactly the furniture match CLAUDE.md records the navigation rule refusing
     18 times. The script refuses these by rule (`GENERIC_NAMES`, and a
     two-token floor), not by taste.
@@ -1120,11 +1178,14 @@ never been allowed to buy `exact`.
 
 **The one loss is real and is not aliased away.** The Food and Nutrition
 Service lost its FedScope headcount record and its Administrator lost a PLUM
-record, because both of OPM's files are from March 2025 and September 2024 and
-still name the bureau the Food and Nutrition Service. The alternative was to
+record, because OPM's FedScope file (March 2025, September 2024 beside it)
+and its PLUM archive (January 2021 – January 2025) still name the bureau the
+Food and Nutrition Service. The alternative was to
 leave the graph stale about a rename USDA states on its own site, which is
-worse: the node now reads as the government reads it, and one official dataset
-has not caught up. A second alias mechanism was not built for one record.
+worse: the node now reads as USDA reads it, and OPM has not caught up — its
+current Plum Book export, read since 2026-09-21, still files 23 live rows
+under `FOOD AND NUTRITION SERVICE`, which `plum_current.py` reports
+unmatched. A second alias mechanism was not built for one record.
 Expect this shape again — a correctly adopted rename will strand older datasets
 until they are refreshed.
 
@@ -1298,8 +1359,10 @@ and forecasting to the President. **Three Senate-confirmed members.** ~30
 staff." The statute above says only the **chairman** is confirmed by the Senate;
 the other two are appointed by the President alone. The site publishes that
 sentence today as uncited prose, and it is false. Fixing it needs the same
-missing machinery — nothing here writes a curated description — which is itself
-worth noting: of the five sanctioned writers, none can correct a wrong sentence.
+missing machinery — the one script that has rewritten a hand-curated description,
+`merge_duplicate_nodes.py` (§3), carries only the two texts hard-coded beside
+its two merges — which is itself worth noting: of the six scripts that write
+the curated file, none can correct an arbitrary wrong sentence.
 
 ### 12.2 House Committee on Education & the Workforce — a disagreement between two official sources, not a stale name
 
@@ -1403,7 +1466,9 @@ Service Schools", "Federally Aided Corporations"); 3 are the
 civilian-department / uniformed-service distinction §5 already records; 4 are
 out of scope; 3 were left unsure rather than guessed — Economics and Statistics
 Administration, Defense Acquisition University and the Bureau of Indian
-Education.
+Education. That is 21, so with the 26 added the dispositions account for 47 of
+the 48: the commit that applied them (fa1575b) records that the hand-typed
+adjudication input "sent one candidate short".
 
 The first pass's reasoning is kept below, unchanged, because it is what the
 adjudication was run against.
@@ -1448,11 +1513,15 @@ and is not made here.
 ### 13.4 One placement disagreement, unresolved
 
 Of the 40 edges where both the Manual and the tree name a parent, 39 agree and
-**one disagrees**. Nothing is resolved either way and no field is published
-from it: the Manual's hierarchy was measured for this pass and found to add
-nothing the tree does not already evidence (all 40 agreeing edges already
-carry placement from another source), so no placement is derived from the
-Manual at all. Recorded here so the next pass need not re-measure it.
+**one disagrees**. Nothing is resolved either way and, on this pass, no field
+was published from it: the Manual's hierarchy was measured and found to add
+nothing the tree does not already evidence (all 39 agreeing edges already
+carry placement from another source), so no placement was derived from the
+Manual at all. That changed later the same day with the organisation route
+(§15.4): the gate now reports 4 nodes placed under their parent by the
+Manual's hierarchy and 1 filed elsewhere by it, the Federal Energy Regulatory
+Commission, which publishes a `placementDirectoryDisagreement`. Recorded here
+so the next pass need not re-measure it.
 
 ## 14. What OMB's Public Budget Database says, and the one placement it disputes (2026-09-20)
 
@@ -1479,8 +1548,9 @@ under the Legislative Branch what the graph curates under the judiciary.
 
 **"Bureau of Labor Statistics"** appears in this database under the Department
 of Commerce as well as under the Department of Labor. That is not an error in
-the file: OMB "adjusts [historical records] each year to conform to the agency
-and account structure of the current budget", and the BLS was a Commerce bureau
+the file: OMB's guide says "these historical records are adjusted each year to
+conform to the agency and account structure of the current budget", and the
+BLS was a Commerce bureau
 before 1913. The matcher refuses a bureau name several of OMB's agencies use,
 so neither row is published. Recorded because it is the clearest example of why
 a name is never enough on its own here.
@@ -1698,8 +1768,10 @@ Division, on a host that served its page at 00:33 and refused it at 21:00.
 **Open, recorded rather than guessed:**
 
 - **Ways & Means.** `<h2><span>Subcommittee On</span> <span>Tax</span></h2>`
-  parses as two fragments, so every Ways & Means subcommittee fails label
-  equality on its own committee's page. A parser rule joining *inline*
+  parses as two fragments, so a Ways & Means subcommittee fails label
+  equality on its own committee's page unless the committee fold rescues it:
+  the two-word seats (Social Security, Work & Welfare) are confirmed there
+  that way, and the one-word ones (Health, Oversight, Tax, Trade) never can be. A parser rule joining *inline*
   children inside one heading element — never across block elements, which is
   the "phrase spanning two DOM elements" case the adversarial review refused —
   would fix the family. A code decision for the owner.
@@ -1713,7 +1785,8 @@ Division, on a host that served its page at 00:33 and refused it at 21:00.
   own_site, so `--refile-misplaced` cannot reach it. Needs a hand refiling.
 - **Weaponization select subcommittee** expired with the 118th Congress;
   judiciary.house.gov names it only in an archived block. A supersession, not
-  a rename — the first honest entry for `mark_superseded_units.py`.
+  a rename — a candidate row for `mark_superseded_units.py`, whose table
+  already carried the eighteen VISN rows (§16.4 says why none was added).
 - **EERE**: energy.gov/eere now redirects to the Office of Critical Minerals
   and Energy Innovation. A rename or supersession lead.
 - **Bureau of Reclamation**: Table 5 prints it as a header with two lines
@@ -1788,9 +1861,11 @@ Three things the reading established that decided cases below:
   on Responsiveness and Accountability To Oversight" and the "Select
   Subcommittee on the Weaponization of the Federal Government" sit under the
   118th heading and not under the current one. §9's rename of the
-  Weaponization node, and the `name_labelled_on_own_official_page`
-  confirmation it then earned, rest on that archived block — the very thing
-  §9.4 declined a different proposal for.
+  Weaponization node (its `nameSource: named_on_its_own_official_page`)
+  rests on that archived block — the very thing §9.4 declined a different
+  proposal for. It earned no page confirmation: its evidence record is
+  `inconclusive` (`only_an_ancestor_page_was_read`) and it publishes no
+  `verificationMethod`.
 
 ### 16.1 Eleven renames, each licensed by the page the row names
 
@@ -1853,7 +1928,7 @@ the Senate's membership file. Nothing was named from a list alone.
 | House Oversight | Subcommittee on Federal Law Enforcement | docs.house.gov GO00 |
 | HPSCI | Subcommittee on the National Intelligence Enterprise | docs.house.gov IG00 (prints "the"; `subcommittee_key` sets it aside) |
 | HPSCI | Subcommittee on Open Source Intelligence | docs.house.gov IG00 |
-| HPSCI | Subcommittee on Oversight and Investigations | docs.house.gov IG00 (three other committees have one; a cross-parent duplicate is allowed, this committee had none) |
+| HPSCI | Subcommittee on Oversight and Investigations | docs.house.gov IG00 (four other committees have one; a cross-parent duplicate is allowed, this committee had none) |
 
 None of the eighteen collides with a sibling. The `jointly_measured_names`
 guard had nothing to say: no committee carries a Treasury line.
@@ -2064,6 +2139,14 @@ or the Manual's organisation route.
 | `exec-dept-dot-phmsa` | Pipeline & Hazardous Materials Safety Admin (PHMSA) | Pipeline and Hazardous Materials Safety Administration | §13.1; entry 247 prints "(PHMSA)" |
 | `exec-dept-defense-agency-darpa` | DARPA | Defense Advanced Research Projects Agency | The acronym, letter for letter; §13.3 records the same adjudication |
 
+Five more rows were added later the same day (commit 82d80c5) and are in
+neither this table nor the measurements below: the Export-Import Bank, the CFPB,
+the ODNI, CIGIE and the PCLOB. The CFPB row reverses the refusal §17.4 records.
+It now rests on the Manual's entry 321 rather than on 12 U.S.C. 5491, although
+the table's `_declined` list still carries the old refusal. The table holds 13
+rows now, all accepted. None of the five yet carries a `verificationAliasMatch`
+on the published graph: `govman_evidence.json` and `plum_current_evidence.json`
+have not been re-derived since.
 Measured on the two derivations and the rebuilt graph, before → after:
 
 - Manual entries matched to an organisation **163 → 170**; posts listed from
@@ -2169,7 +2252,10 @@ and nothing here changes that arithmetic.
   certainly one agency under its statutory name and its branding — but
   establishing that needs 12 U.S.C. 5491 itself, which this repository has not
   read. A word-order difference is not a spelling. Declined rather than
-  guessed; a committed section of the Code would settle it.
+  guessed; a committed section of the Code would settle it. (Reversed later
+  the same day, commit 82d80c5: `node_aliases.json` now accepts this row on
+  the Manual's entry 321 rather than the statute, though its own `_declined`
+  block still lists it.)
 - **`National Security Agency (NSA)` → `National Security Agency / Central
   Security Service`.** The Manual's entry 229 is a joint designation and its
   own opening paragraph says so: "The National Security Agency (NSA) was
@@ -2222,8 +2308,11 @@ level with no parent**, and every independent agency here is one of those, so
 `manual_files_it_under` has no chain with which to reach a proposed parent. The
 Manual licenses a placement only where it prints a hierarchy, which it does for
 departmental bureaus and not for independent establishments. Several of the 39
-will nonetheless earn `listed_in_us_government_manual` from the *organisation*
-route once `derive_govman_evidence` next runs, because the Manual does carry an
+were expected to earn `listed_in_us_government_manual` from the *organisation*
+route once `derive_govman_evidence` next ran (it ran the same day, in merge
+3ae6db7: all sixteen now carry the entry as `govmanEntry`, and one, the
+Holocaust Memorial Museum, takes it as its method; the other fifteen keep a
+method from another source), because the Manual does carry an
 entry of their name — the Holocaust Memorial Museum, the Commission on Civil
 Rights, the Surface Transportation Board, the International Trade Commission,
 the Institute of Peace, the FRTIB, the DNFSB, the FMSHRC, the OSHRC, the
@@ -2232,16 +2321,18 @@ Development Agency, the FMCS, ACUS, the Office of Government Ethics and the
 ODNI. Licensing a node and verifying one are different acts, and this is the
 clearest case of it yet.
 
-**Eleven of the 39 are licensed by usa.gov's A-to-Z index rather than by the
-unit's own site**, and each says so on its row. Seven because the unit's own
+**Fifteen of the 39 are licensed by usa.gov's A-to-Z index rather than by the
+unit's own site**, and each says so on its row. Eight because the unit's own
 host cannot be read at all — `ushmm.org` and `usip.org` do not answer
 `robots.txt` from this sandbox, `dnfsb.gov`, `iaf.gov` and `acus.gov` answer it
 403 and are refused by this project's policy, `jusfc.gov` answers a redirect the
-fetcher does not follow, and `whitehouse.gov` serves a JavaScript shell of 50–55
-readable characters. Four because the unit's own readable page labels itself by
-a short form or an acronym and not by the name the export and the Manual use:
-`frtib.gov`, `ustda.gov`, `oge.gov`, `ncd.gov`, `jamesmadison.gov`, `csosa.gov`
-and `macpac.gov` are each allowed and readable and each failed the label test.
+fetcher does not follow, and `whitehouse.gov` (50–55 readable characters) and
+`ncd.gov` serve a JavaScript shell below the readable-text floor. Six because the
+unit's own readable page labels itself by a short form or an acronym and not by
+the name the export and the Manual use: `frtib.gov`, `ustda.gov`, `oge.gov`,
+`jamesmadison.gov`, `csosa.gov` and `macpac.gov` are each allowed and readable
+and each failed the label test. MedPAC's row, the fifteenth, names no host of
+its own.
 `CLAUDE.md` already records usa.gov's index as a source of candidate pages
 rather than of claims; here it is not being believed, it is being *read* — the
 same label test runs against it as against any other page.
@@ -2292,7 +2383,7 @@ the same bucket:
 | United States Court of Appeals for the Armed Forces | 7 | the judiciary |
 | Department of War Education Activity | 6 | `exec-dept-defense-agencies` |
 | Defense Commissary Agency | 5 | `exec-dept-defense-agencies` |
-| National Guard Bureau | 4 | `exec-dept-defense-agencies` |
+| National Guard Bureau | 4 | no unit node; a `National Guard Bureau Chief` post under `exec-dept-defense-jcs` |
 | Defense Advanced Research Projects Agency | 3 | `exec-dept-defense-agencies` |
 
 It is OPM's reporting bucket for the Department other than the three military
@@ -2362,14 +2453,16 @@ source; and a node under the unit's own name would be exactly the generic name
 `GENERIC_NAMES` exists to refuse.
 
 **A defect in that floor, found by trying it.** `GENERIC_NAMES` in
-`scripts/add_curated_nodes.py` carries `"office of the inspector general"` and
+`scripts/add_curated_nodes.py` carried `"office of the inspector general"` and
 not the `the`-less `"office of inspector general"`, which is how most of these
 offices style themselves and what `canonical_name_key` returns for them. The
 floor would therefore **not** have refused these thirty; they are declined on
 the principle the floor exists for, not on its letter. Nothing is changed in the
 script here — a floor is a gate, and widening one is a code decision for the
 owner — but the gap is recorded so it is not rediscovered by something that goes
-through it.
+through it. (Closed the same day by the merge that integrated this section,
+3ae6db7: the script now imports the one `GENERIC_NAMES` in
+`data_pipeline/verification/aliases.py`, which carries both spellings.)
 
 Two of the thirty do have distinguishing names of their own — the Office of the
 Special Inspector General for Pandemic Recovery (3 rows) and the Treasury
@@ -2425,9 +2518,13 @@ Three of the 39 added nodes are themselves still unmatched by the export, and
 deliberately: the ODNI, CIGIE and the Interagency Council on Homelessness are
 named as their own sources name them, not as the export spells them. Those three
 and the four units the graph already carried under another name are handed off
-in `data/audit/plum_alias_candidates_2026-09-21.md`; nothing was aliased here,
-and `plum_current.py` still has no alias table, which `CLAUDE.md` records as
-deliberate.
+in `data/audit/plum_alias_candidates_2026-09-21.md`; nothing was aliased here.
+`plum_current.py` has no alias table of its own, but since §17 it consults the
+shared `data/curation/node_aliases.json`, and later the same day (commit
+82d80c5) that table took rows for the ODNI, CIGIE, the Export-Import Bank, the
+PCLOB and the CFPB and declined the Interagency Council on the Homeless as a
+succession claim. `plum_current_evidence.json` has not been re-derived since; a
+dry run now matches 120 agencies against its committed 115.
 
 **Nothing measured moved and nothing was superseded or renamed.** The curated
 file gained 39 nodes and lost nothing: `add_curated_nodes.py` only ever adds,
@@ -2483,9 +2580,12 @@ claim.
 was re-derived, and its 170 listings and 100 pay records came back
 byte-identical — only the `report` block's matching counts moved.
 `headcount_evidence.json` and `position_evidence.json` were **not** re-derived
-here, so the fifteen new FedScope headcounts are measured above but not yet
-written; whoever next runs `scripts/derive_headcount_evidence.py` will land
-them. `output/` was not rebuilt at all.
+here, so the fifteen new FedScope headcounts were measured above but not yet
+written, and `output/` was not rebuilt. Both happened the same day in the merge
+that integrated this section (3ae6db7): `headcount_evidence.json` now holds 179
+records and all fifteen publish `employeesOfficial`. `position_evidence.json` is
+still not re-derived — its report reads 70 agencies and 181 organisations — which
+moves no published record.
 
 ## 19. The third research pack, read against the documents (2026-09-23)
 
@@ -2596,4 +2696,31 @@ Recorded in `CLAUDE.md` and repeated here because the research pack could
 re-surface it: 38 U.S.C. § 7253(e) as it read *before amendment* — the chief
 judge at the circuit rate — is printed on the page in the Amendments note and
 is not the law. A quote is accepted only from the operative text, and the
-repealed sentence is refused by the gate wherever it appears.
+repealed sentence is refused by the gate wherever it appears in a derived-pay
+block.
+
+### 19.6 Which prompts have been run, and where the next one starts
+
+The pack is regenerated whenever a position gets priced, and its prompt
+numbers shift when it is, so a record of what was run has to name the commit
+the numbers came from.
+
+- **Run:** Prompt 0 and prompts 1–3 of the pack as committed at `77a13f6` —
+  the White House Office, the Federal Reserve, and VA Medical Centers under
+  VISNs 15–23. Nothing came back for that pack's prompt 4.
+- **In the pack as committed at `b25d64c`** (the same unpriced list as
+  `f5a1240`, with rule 4 reworded to the per-field multi-post rule), those
+  answers cover **prompts 1–5 in full** — prompts 1–2 are the same nodes, and
+  prompts 3–5 are the same 24 VA medical-centre titles under the other VISNs,
+  which the Title 38 answer and §19.2's refusal already decide — and the
+  **Federal Reserve block of prompt 6** (23 titles).
+- **Next:** prompt 6 without its Federal Reserve block, then 7–10, then a
+  yield check before 11 onward. The first batch covered 301 titles and yielded
+  one usable lead (§19.1, three posts priced).
+- **Held:** prompts 30, 32, 33 and 35–39 are dominated by committee chairs and
+  ranking members (438 posts, every one held by a Member of Congress) and by
+  committee staff. Asking about those title by title is several prompts spent
+  learning one fact; the chairs are an owner decision about a reviewed
+  identification (a chair is a Member, paid under Schedule 6, the chairmanship
+  adding nothing), not a research question.
+

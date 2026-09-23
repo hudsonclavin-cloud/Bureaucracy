@@ -121,7 +121,7 @@ python scripts/verify_base_graph.py --dry-run                # what it would fet
 python scripts/verify_base_graph.py                          # fetch and adjudicate
 python scripts/derive_usaspending_evidence.py --dry-run       # File A keys the crosswalk names by an equal name; read this
 python scripts/derive_usaspending_evidence.py                 # then write them (since 2026-09-17; beside the cost, never as it)
-python scripts/regenerate_published_graph.py --treasury-rows tests/fixtures/mts_table5_latest.json
+python scripts/regenerate_published_graph.py --treasury-rows tests/fixtures/mts_table5_2026-08-31.json   # the statement the published anchor names (__budgetSummary.statement_file); mts_table5_latest.json is the pinned 2026-07-31 test fixture and would roll the anchor back a month
 python -m pytest tests/ -q
 git add -A && git add -f output/graph.json output/expanded_nodes.json output/pipeline_stats.json
 git commit -q -m "Verify nominated pages" && git push
@@ -132,17 +132,12 @@ look at. **Report how many nominations became confirmations and how many did
 not** — the failure rate is the interesting number, because it says how good
 agent nomination actually is, and nobody knows that yet.
 
-Also try the one fetch that unlocks 30 more measured figures:
-
-```bash
-python scripts/fetch_fixture.py \
-  https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx \
-  opm/pay/executive_schedule_2026.html
-```
-
-If it succeeds, read `tests/fixtures/opm/pay/README.md` — it says exactly what
-a parser for that page must be honest about. Do not write the parser against a
-page you have not fetched.
+The one fetch this step used to ask for — OPM's Salary Table No. 2026-EX — was
+made on 2026-09-11 (`tests/fixtures/opm/pay/executive_schedule_2026.html`) and
+is read by `data_pipeline/verification/pay_tables.py`: 31 positions carry its
+rate, a salary and never a measured cost. Do not fetch it again;
+`tests/fixtures/opm/pay/README.md` records what the parser had to be honest
+about.
 
 ---
 

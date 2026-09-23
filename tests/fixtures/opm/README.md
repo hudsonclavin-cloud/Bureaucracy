@@ -3,7 +3,7 @@
 The U.S. Office of Personnel Management's own machine-readable data on federal
 positions (PLUM Reporting, the successor to the printed Plum Book) and on federal
 civilian employment by agency and sub-agency (FedScope), committed exactly as served
-so the graph's 4,382 position nodes and its uncited `employees` fields — the counts the
+so the graph's 4,591 position nodes (4,382 when this was written) and its uncited `employees` fields — the counts the
 cost cascade weights by — can be checked against official sources offline. Nothing here
 is interpreted. Each file is **verbatim; refreshed only by re-fetching, never edited by
 hand**.
@@ -116,7 +116,9 @@ it rather than a guess about it.
   (`$228,000` 720 rows, `$197,200` 435; 3,782 of the 8,546 ES rows carry a rate and 4,761
   carry nothing). **So it does carry a pay plan and a grade or level per position**, which is
   what `gs_pay.py` needs: 3,761 GS rows with a grade against the archive's one matched GS
-  post, once a matcher for this file exists.
+  post. The matcher now exists (`plum_current.py`, 173 positions listed) and none of the
+  posts it reaches is settled on the GS pay plan (three carry a GS row beside ES rows, so no
+  plan is published for them), so the one GS range still rests on the archive.
 - `Appointment Type` (count): CA 6,285; SC 3,861; NA 2,056; PAS 1,447; XS 1,372; PA 502;
   TA 125; CG 118; the rest under 100. Distinct `Agency`: 174 (the export names an
   `OFFICE OF THE SECRETARY OF WAR`, 781 rows, where the archive named the Office of the
@@ -137,8 +139,9 @@ refused the same way. No Plum PDF was obtained.
 `plum-archive-biden-administration.csv`, labelled "Biden Administration". It is the same
 publisher and the same reporting programme, but it is the **archive of the previous
 administration's positions and incumbencies, not the current edition** dated June 15,
-2026. It is committed as `plum/plum-archive-biden-administration.csv` because it is the only
-machine-readable PLUM file reachable from here; anything derived from it must say
+2026. It was committed as `plum/plum-archive-biden-administration.csv` because on 2026-09-08 it was the
+only machine-readable PLUM file reachable from here (the current export above landed on
+2026-09-21); anything derived from it must say
 "positions as archived for the Biden administration", never "current positions".
 
 - Encoding: UTF-8 with a byte-order mark; served as `application/octet-stream`.

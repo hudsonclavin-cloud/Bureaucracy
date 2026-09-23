@@ -29,14 +29,17 @@ file and refuses rather than guesses — a reshaped table (different columns),
 two tables on the page, a header/data cell mismatch, or a year printed twice
 all raise `Unreadable`.
 
-**15 positions are priced**, not the 202 judicial-branch position nodes this
-graph carries: the Chief Justice (the table's own "Chief Justice" column),
-and the thirteen named circuits' and SDNY's own Chief Judge, each priced at
-the tier a chief judge actually holds (a circuit's chief judge is a circuit
-judge, paid as one — Article III courts carry no separate "chief's salary"
-the way the House pays its Speaker more). Every other judicial position
-either states a multiplicity ("Circuit Judge (×28 active + senior judges)",
-"Associate Justice (×8)" — 351 of them) or is
+**17 positions are priced** (15 until 2026-09-23), not the 202 judicial-branch
+position nodes this graph carries: the Chief Justice (the table's own "Chief
+Justice" column), and the thirteen named circuits' and SDNY's own Chief Judge,
+each priced at the tier a chief judge actually holds (a circuit's chief judge
+is a circuit judge, paid as one — Article III courts carry no separate
+"chief's salary" the way the House pays its Speaker more); and, since
+2026-09-23, `Associate Justice (×8)` and SDNY's `District Judge (×28 active)`,
+where the tier rate applies to each holder alike (`holders`). Every other
+judicial position either states a multiplicity the table cannot price
+("Circuit Judge (×28 active + senior judges)" bundles senior judges, whose
+salary 28 U.S.C. 371(b)(2) sets apart) or is
 `jud-district-structure-chief-judge`, a node describing what every one of
 the 94 districts' structure looks like rather than naming one district's
 actual chief judge; that one is refused by id, since it carries no count in

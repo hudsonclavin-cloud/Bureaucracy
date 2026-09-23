@@ -81,8 +81,8 @@ you never see the same node twice.
 | A host that is not `.gov` or `.mil` | The verifier will not fetch it, so nominating it wastes everyone's time. usps.com and si.edu are the real homes of USPS and the Smithsonian — for those say `noCandidate` with reason `not_on_a_gov_host`. |
 | `fiscaldata.treasury.gov`, `api.usaspending.gov` | Data services. A record *about* a unit is never the unit's page. |
 | `confidence: "certain"` | You cannot read the page. See above. |
-| A URL already fetched for this node | The dossier's `urlsAlreadyTried` shows what happened. Nominate a different page, not the one that 404ed. |
-| A URL already a candidate for this node | It is already queued. |
+| A URL already fetched for this node, as `own_site` | The node's record in `data/verification/evidence.json` shows what happened; the dossier's `urlsAlreadyTried` lists only URLs still queued for the node, so without `--include-covered` it is always empty. Nominate a different page, not the one that 404ed. |
+| A URL already a candidate for this node, as `own_site` | It is already queued. Under another role it is accepted as a refiling, which `promote --refile-misplaced` acts on. |
 | A nomination with no `basis` | Say why you think this is the page. One sentence. |
 | A node that is not an organisation | Positions have no page of their own; `next` will not hand you one. |
 
@@ -110,8 +110,11 @@ only that the parent's page lists it. Valuable precisely where a unit has no
 site of its own, and it is the only thing that can evidence the **edge**.
 
 **`official_list`** — a government directory that enumerates units of this
-kind. Use sparingly; the Federal Register and Senate directories are already
-wired in.
+kind. Do not use it: `record` accepts it, but `promote` files it nowhere
+(`official_list_has_no_truthful_verifier_method`), because a directory is
+neither the unit's page nor its parent's and both verifier methods would
+misdescribe it. The Federal Register, Senate and House Clerk directories have
+their own modules. 20 nominations on file were refused this way.
 
 ### Where to look, in order
 
@@ -274,10 +277,13 @@ python scripts/nominate.py promote --kind source             # write the queue
 python scripts/verify_base_graph.py                          # fetch and adjudicate
 ```
 
-`promote` adds your URLs to `official_sites.json` and records every one in
+`promote` adds your URLs to `official_sites.json` and records each in
 `official_sites_provenance.json` with your run name, your basis and your
 confidence — so a confirmation that later turns out to rest on a bad
-nomination can be traced back to it. The verifier then decides.
+nomination can be traced back to it. That file holds one record per node, so
+a URL filed under a node that already has one replaces its record: on
+2026-09-23 the queue held 619 URLs under 533 nodes, and only 453 of those URLs
+had a provenance record naming them. The verifier then decides.
 
 ---
 

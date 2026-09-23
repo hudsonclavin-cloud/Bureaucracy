@@ -20,8 +20,11 @@ on every node and an honest statement of how that cost was obtained. The
 project's standing rule: never let the data or the UI claim more than the
 evidence supports. Measured costs are the root's Treasury anchor and the
 Monthly Treasury Statement Table 5 lines that name a node — 103 of the
-statement's 644 lines as of 2026-09-03. Every other node is an estimate
-apportioned from those figures, and must read as one.
+statement's 644 lines as of 2026-09-03. Every other node is either an
+estimate apportioned from those figures, and must read as one, or publishes
+no figure at all — on the graph as of 2026-09-23, 693 estimates and 4,657
+with none: every post, every superseded unit and what sits beneath it, and
+the unmeasured units beneath a Treasury pool that nets below zero.
 
 ## Commands
 
@@ -39,10 +42,10 @@ python scripts/rename_templated_post_titles.py --dry-run  # templated cabinet ti
 python scripts/probe_candidate_pages.py --uncovered        # organisations with no candidate page; read-only, no fetch
 python scripts/rename_units_to_official_wording.py --dry-run  # organisations -> the wording their own page carries; drives CURATION.md §9
 python -c "import sys;sys.path.insert(0,'.');from data_pipeline.exporter.build_graph import DEFAULT_BASE_GRAPH,load_base_graph;from data_pipeline.verification.aliases import load_alias_table;t=load_alias_table(load_base_graph(DEFAULT_BASE_GRAPH));print(len(t),t.refusals)"  # adjudicate data/curation/node_aliases.json; CURATION.md §17
-python scripts/add_curated_nodes.py --dry-run     # add a unit the graph lacks, licensed by the statement or a page; CURATION.md §1
+python scripts/add_curated_nodes.py --dry-run     # add a unit the graph lacks, licensed by the statement, a page or the Government Manual; CURATION.md §1
 python scripts/mark_superseded_units.py --dry-run # mark a unit the government has replaced; nothing is ever deleted
 python scripts/probe_network_access.py           # what this session can reach now, and whether a 403 was the proxy or the host
-python scripts/derive_pay_evidence.py --dry-run  # the salary table joined to the archive's levels; writes nothing
+python scripts/derive_pay_evidence.py --dry-run  # the salary table joined to the listings' levels (the current export's where it lists the post, else the archive's); writes nothing
 python scripts/derive_gs_pay_evidence.py --dry-run  # GS / SES / SL-ST base-pay RANGES for the listings' pay plans; writes nothing
 python scripts/derive_plum_current_evidence.py --dry-run  # OPM's CURRENT Plum Book export matched to position nodes; the incumbent columns are never read; writes nothing
 python scripts/derive_fr_signature_evidence.py --dry-run  # the title an official stated when signing a Federal Register document; the signer's NAME is never read; writes nothing
@@ -52,7 +55,7 @@ python scripts/report_unpriced_positions.py --dry-run        # every position wi
 python scripts/derive_congressional_pay_evidence.py --dry-run  # senate.gov's own salary schedule; writes nothing
 python scripts/derive_whitehouse_pay_evidence.py --dry-run     # the White House Office's statutory staff roster; writes nothing
 python scripts/expand_whitehouse_office.py --dry-run           # what the roster would add to the curated WHO subtree; writes nothing
-python scripts/derive_usaspending_evidence.py --dry-run   # File A gross outlays for the crosswalk's name-equal keys; writes nothing
+python scripts/derive_usaspending_evidence.py --dry-run   # File A gross outlays for the crosswalk's name-equal keys and its reviewed aliases; writes nothing
 python scripts/derive_net_cost_evidence.py --dry-run       # Treasury's audited Statement of Net Cost; writes nothing
 python scripts/derive_omb_budget_evidence.py --dry-run     # OMB's Public Budget Database, last COMPLETED year only; writes nothing
 python scripts/verify_base_graph.py --dry-run    # existence checks planned against official pages; no fetch, no write
@@ -79,7 +82,7 @@ PIPELINE_LOBBYING_PAGE_SIZE       default: 50
 PIPELINE_OFFICIAL_DIRECTORY_LIMIT default: 150
 PIPELINE_FEDERAL_REGISTER_PAGES   default: 3
 PIPELINE_FEDERAL_REGISTER_PAGE_SIZE default: 100
-PIPELINE_RUN_ONCE                 "1" (default) runs once; anything else loops daily (scheduler/nightly_update.py)
+PIPELINE_RUN_ONCE                 "1" (default) runs once; anything else loops daily (data_pipeline/scheduler/nightly_update.py)
 PIPELINE_ENABLE_TEMPLATE_LEADERSHIP "1" adds five template positions under every office to the review queue; off by default
 BUREAUCRACY_PIPELINE_UA           User-Agent sent by the crawlers
 LDA_API_KEY                       Senate LDA API key (lobbying crawler)
@@ -128,8 +131,9 @@ Two halves that communicate only through committed JSON in `output/`.
   `data/federal_gov_complete_1.json`, `annotate_proof_tree`,
   `drop_duplicate_child_rollups`, `annotate_resolved_costs`, then the gate
   (`NodeRequirements` ∩ `CostValidator` → `prune_tree_to_allowed_ids`),
-  `resolve_root_orphans`, and writes `graph.json`, `expanded_nodes.json`,
-  `expanded_edges.json`, `node_validity_report.json`.
+  `resolve_root_orphans`, and writes `graph.json`, `graph.min.json` (the
+  browser's copy), `expanded_nodes.json`, `expanded_edges.json`,
+  `node_validity_report.json`.
 
 ### Cost cascade (`annotate_resolved_costs`)
 
@@ -264,7 +268,11 @@ legislative support offices and NASA field centers with no shared parent
 pattern — neither is evidenced as the same mechanical copy the titles above
 are.
 
-`GENERIC_ADMINISTRATIVE_TITLES` in `build_graph.py` is that list, and
+`GENERIC_ADMINISTRATIVE_TITLES` in `build_graph.py` is that list plus five
+titles the paragraph above does not name — `Deputy Director`, `Deputy
+Director / Vice Chair`, `Chief Human Capital Officer`, `Director of
+Legislative Affairs` and `Director of Public Affairs`, sixteen in all, the
+five without the recurrence evidence recorded here for the other eleven — and
 `compute_subtree_sizes` now gives a Position node matching it — by exact
 string equality, never a substring, so `Inspector General (DoJ IG covers
 FBI)` and `Chief of Staff of the Air Force` keep counting — no weight toward
@@ -393,7 +401,7 @@ Five statuses in `evidence.json`, and only the first two are applied:
   them because the host refuses the crawler outright.
 - `not_checkable` — the curated name could never be evidence: a count label
   ("Individual Senator Offices (100)") or a name too generic to distinguish
-  anything ("Energy", "Defense", 16). Never fetched.
+  anything ("Energy", "Defense"; 13 on 2026-09-23, 16 before the 2026-09-19 renames). Never fetched.
 
   **The count-label floor refused any name containing a digit until
   2026-09-18**, which is a claim about the NAME — that no page could ever
@@ -468,7 +476,7 @@ fetched again — unless an explicit block for that parent says `not_listed`,
 which wins whichever is older: a retraction found by re-reading the very
 page the claim rested on must reach the site. A node whose parent has no
 entry in `official_sites.json` gets `placementCheckable: false` ("could not
-be checked", most of the graph: the fifteen departments sit under a curated
+be checked", 231 of the gate's 918 organisation edges on 2026-09-23: the fifteen departments sit under a curated
 "Cabinet" grouping) rather than "no evidence recorded", and the gate reports
 the three counts separately. A record the verifier wrote for the edge alone
 carries `status: placement_only`; the existence pass replaces such a record
@@ -564,8 +572,8 @@ read, each pinned in both directions by `tests/test_position_evidence.py`:
   unchanged, and a test asserts it stays unchanged.
 
 The label is published (`verificationMatchedText`) for a stronger reason than
-a committee's is: `General Counsel` is the name of **84** nodes in this graph
-and `Inspector General` of **72**, so the page it was found on and the exact
+a committee's is: `General Counsel` is the name of **92** nodes in this graph
+and `Inspector General` of **80**, so the page it was found on and the exact
 words on it are the only things tying a confirmation to this post rather than
 another's. The gate requires all four — the node is a post, the label is
 quoted, the label still names the node, and `verificationMatchedIn` is
@@ -629,7 +637,9 @@ does not exist.** Defense is the control case: it alone is curated as
 "Secretary of Defense", and it is the only one whose title could ever have
 matched.
 
-That is curation, and it is now half fixed.
+That is curation, and it was half fixed on 2026-09-15; since 2026-09-18, when
+the U.S. Code supplied twelve more titles, 27 of the 28 are fixed (see "The
+level half" below).
 `scripts/probe_post_titles.py` is the read-only probe that found it — the
 position analogue of `probe_treasury_rows.py`: it fetches an organisation's
 page, says which curated post titles the page labels, and lists
@@ -695,7 +705,9 @@ which is where a proposed name comes from.
 `data/curation/unit_renames.json` is the reviewed table and
 `scripts/rename_units_to_official_wording.py` is its only writer — the third
 sanctioned writer of the curated file, beside `rename_templated_post_titles.py`
-and `expand_whitehouse_office.py`. The table is the same shape as
+and `expand_whitehouse_office.py` (the fourth counting
+`merge_duplicate_nodes.py`, which on 2026-09-18 merged the duplicate units
+`CURATION.md` §3 records and is not otherwise named in this file). The table is the same shape as
 `TREASURY_ROW_ALIASES` and `USASPENDING_NAME_ALIASES`: a reviewed
 identification with the basis written beside it, and re-checked against the
 source rather than trusted. **The table proposes; the page decides** — every
@@ -706,7 +718,7 @@ A row is refused when the node no longer carries the name the row was written
 against, when the page does not label the proposed name, when the only match is
 in site-wide chrome and the row did not declare it, when the proposed name is a
 no-op under `canonical_name_key`, when it is one token or on `GENERIC_NAMES`
-(`Inspector General` names 72 nodes here and sits in every `.gov` footer), or
+(`Inspector General` names 80 nodes here and sits in every `.gov` footer), or
 when it collides with a **sibling's** name. The collision rule is scoped to
 siblings deliberately: the House and the Senate each name a subcommittee after
 the appropriations bill it writes, so one name for two seats in two chambers is
@@ -893,23 +905,30 @@ positive claim and needs a source that states it: the row quotes an official
 page's own words and the run re-fetches that page and refuses the row unless the
 quote is there now.
 
-**The table ships empty, and the reason is the point.** The case it was built for
-was the VA's Integrated Service Networks, and that case does not survive being
-checked — see `CURATION.md` §10. Nineteen nodes were nearly restructured on one
-true sentence.
+**The table holds eighteen rows, and how it got them is the point.** The case it
+was built for was the VA's Integrated Service Networks: asserted on one true
+sentence, retracted, then settled on a second VA host and the 301s the old pages
+return — see `CURATION.md` §10. All eighteen former networks are superseded as
+of 2026-07-14 with `supersededBy` empty, since the territories were redrawn
+rather than renumbered.
 
-**Directories — the government's own lists of itself.** The page method is
-near its ceiling: 71 organisations have a page of their own, twelve of the
-largest hosts refuse `robots.txt` and are refused in turn, 223 committees are
-never checked, and 520 edges hang under curated groupings with no page. `data_pipeline/verification/directories.py` adds
+**Directories — the government's own lists of itself.** When the first one
+landed (2026-09-08) the page method was near its ceiling: 71 organisations had
+a page of their own, twelve of the largest hosts refused `robots.txt` and were
+refused in turn, 223 committees were never checked, and 520 edges hung under
+curated groupings with no page. (Now: 532 organisations have a candidate page,
+69 hosts' `robots.txt` refusals (401/403) stand in `evidence.json`, all 240
+committees carry a record, and 231 edges sit under a parent with no page.) `data_pipeline/verification/directories.py` adds
 a second, weaker, honestly-labelled kind of evidence from structured
 official directories, the first being the Federal Register's agency
 directory (`api/v1/agencies.json`: every agency that publishes in the
 Register, with its parent and its own site). The directory is fetched
 verbatim and committed (`tests/fixtures/directories/`, refreshed only by
 re-fetching); `scripts/derive_directory_evidence.py` matches its entries
-to the curated organisations by canonical name — with the one rule the
+to the curated organisations by canonical name — with the rewrites the
 directory needs, "Energy Department" answering to "Department of Energy"
+(the same inversion for every head noun in `HEAD_NOUNS`) and a leading
+"United States" it often drops ("Coast Guard", "Mint")
 — one entry to one node or nothing, and writes
 `data/verification/directory_evidence.json`, each record saying what the
 directory lists: the name, the parent, the entry's page, dated by the
@@ -919,9 +938,11 @@ listed_in_federal_register_agency_directory` only where no page method
 exists, `directoryListing` always, and `placementMethod:
 listed_under_parent_in_federal_register_agency_directory` only when the
 directory's parent is the node the tree gives it. When the directory files
-a unit under a different parent the node carries
+a unit under an ancestor of its tree parent the node carries
+`placementDirectoryAncestor` and the panel says the grouping between is
+curated; under any other parent it carries
 `placementDirectoryDisagreement` and the panel says the two sources
-disagree; nothing is resolved either way, and the gate reports the three
+disagree; nothing is resolved either way, and the gate reports the four
 counts. A top-level directory entry (a department) claims nothing about
 the curated grouping above it. Withdrawal is the page module's: every
 field here is in `EVIDENCE_OWNED_FIELDS`, and the URL rides in
@@ -972,7 +993,8 @@ with a source, an id prefix and a list label). Its methods are
 `listed_under_committee_in_house_clerk_committee_list`, its negative is the
 same `not_in_official_list` with `verificationFailureSource.source:
 house_clerk_committee_list`, and the gate accepts that negative only with
-a clerk.house.gov URL. First run: 27 committees in the list, 18 matched
+one of the two chambers' list URLs (senate.gov or clerk.house.gov; it does
+not tie the House source to the Clerk's host). First run: 27 committees in the list, 18 matched
 (the joint committees and the Ethics Committee have no curated node;
 "Education and Workforce", "Oversight and Government Reform" and the
 Strategic Competition select committee are spelled differently from the
@@ -1022,7 +1044,8 @@ measurement did to each: the House Clerk's committee list **landed**
 **landed**; OPM's current Plum Book **landed** on 2026-09-21 and is read by
 `plum_current.py` beside the archive; and SAM.gov's Federal Hierarchy
 is reachable at last and still needs a key the owner would have to obtain.
-`data.opm.gov` and `www.usa.gov` answer too and nothing here has read either.
+`data.opm.gov` answers too and nothing here has read it; `www.usa.gov`'s
+A-to-Z index was crawled once on 2026-09-20, to nominate pages (below).
 
 **usa.gov's A-to-Z index, used to nominate and not as a source (since
 2026-09-20).** The binding constraint on verification has never been fetching;
@@ -1220,8 +1243,8 @@ not checked against any source", and the Manual carries, per entry, the
 government's own statement of what the unit is for. `entity_description_texts`
 in `govman.py` reads two elements and nothing else: `MissionStatement/
 Record[1]/Paragraph`, the element the publisher itself labels as the entry's
-mission statement (131 of 231 entries carry one, no sub-entity does, the
-longest is 544 characters, only the FIRST record is read because Congress's
+mission statement (131 of 231 entries carry one — 33 of them sub-entities,
+among them CRS, NOAA and BIS — the longest is 544 characters, only the FIRST record is read because Congress's
 second is history); otherwise the entry's opening paragraph — the first
 non-empty `Detail/Paragraph` under `ProgramAndActivities` in document order —
 and only when the **published** text carries the entry's printed name. The
@@ -1306,8 +1329,10 @@ table or it is not.
 **It is consulted by name and existence evidence only, and that is
 structural.** The page-label test in `evidence.py`, the Government Manual's
 entry join, the chambers' committee lists and the current PLUM export's agency
-scoping take an alias table explicitly. No join that lands a NUMBER may see
-one: not `headcounts.py`, not the Treasury row matching, not `usaspending.py`,
+scoping take an alias table explicitly, and the last can carry a printed rate
+with it: PHMSA's Deputy Administrator publishes the export's $197,200 on a
+listing its agency reached through the table, graded `partial`. No other join
+that lands a NUMBER may see one: not `headcounts.py`, not the Treasury row matching, not `usaspending.py`,
 `net_cost.py` or `omb_budget.py`. Each of those has its own reviewed table
 where a figure is at stake, and this file records why one table for both kinds
 of claim would be dangerous — FedScope's "DEPARTMENT OF THE ARMY" is a
@@ -1395,8 +1420,13 @@ table's own comment: this file records twice that the civilian department and
 the uniformed service are different units with different populations, so it is
 a semantic claim the owner is deciding separately, and a test asserts no row
 names any of the three. `Bureau of Consumer Financial Protection` →
-`Consumer Financial Protection Bureau` is a word-order difference whose basis
-would need 12 U.S.C. 5491, which this repository has not read. `National
+`Consumer Financial Protection Bureau` was declined first as a word-order
+difference whose basis would need 12 U.S.C. 5491, which this repository has not
+read; later the same day it was added on the Manual's own entry 321 instead, so
+the table now carries it among 13 rows and `NODE_ALIASES` mirrors it. The
+Manual evidence has not been re-derived since, so the published graph carries no
+alias match for it yet, and the file's `_declined` list and §17.4 still record
+the refusal. `National
 Security Agency (NSA)` → the Manual's joint `National Security Agency /
 Central Security Service` names a second body the graph has no node for — the
 shape `usaspending.BROADER_API_ENTITY` refuses.
@@ -1574,7 +1604,7 @@ independent stdlib parse, and re-resolves the agency list against the published
 organisations — so the scope the claim rests on is checked rather than copied.
 The parent is read off the **tree the gate is walking, never off `parentId`**,
 for the reason the scoped Executive Schedule claim already documents: `General
-Counsel` names 84 nodes here, so a record moved to another node of the same name
+Counsel` names 92 nodes here, so a record moved to another node of the same name
 keeps a real title, a real document and a real URL, and only the parent tells
 them apart. It refuses a block on a non-post, a renamed node, a document not in
 the fixtures, a digest or URL that is not the committed one, a title the
@@ -1614,8 +1644,10 @@ department's two "Deputy Assistant Secretary" rows among them). Nothing
 without a comma is stripped: "CHIEF COUNSEL FOR CYBERSECURITY AND
 INFRASTRUCTURE SECURITY AGENCY" stays whole. The exporter refuses a
 record whose node is not of the right kind, whose name has since changed,
-or that carries no date or URL — and, for a headcount, one its own
-descendants' records already exceed. The gate checks every field (a
+or that carries no date or URL. A headcount its own descendants' records
+already exceed is not refused: the derive step marks it
+`subtreeRecordsExceedIt` and the exporter publishes the flag beside it (none
+carries one now). The gate checks every field (a
 `.gov` URL, a period, a coverage sentence, a past date, a non-negative
 integer) and reports how many nodes carry each and how far the curated
 figures are from OPM's: **66 of the 133 differ by more than 10%.**
@@ -1631,7 +1663,8 @@ a different population. What is true is that the two disagree, so a node
 whose allocated share was divided by a curated headcount an OPM figure
 contradicts by more than 10% carries `cost_weight_dispute` — both figures,
 the period and the URL — and the panel prints them under the estimate with
-"the share was not recomputed from OPM's number". 11 shares carry one. It is
+"the share was not recomputed from OPM's number". 11 shares carried one when
+this landed; 10 do now. It is
 withdrawn on every build before it is recomputed, and dropped from any node
 that ends up with no share at all (the four EOP offices beneath a negative
 Treasury pool): a caveat about an estimate that does not exist is a claim
@@ -1652,8 +1685,8 @@ point: it is Executive-Branch civilians in an active pay status, excluding
 the Postal Service and the intelligence agencies — so it is *not* the
 number the curated `employees` fields hold, which mix civilians, uniformed
 members and contractors. That mismatch is the reason to have it: 124 of
-the matched nodes carry a curated figure, and only 55 of those are within
-10% of what OPM reports. Matching is scoped as the Federal Register's is —
+the matched nodes carried a curated figure when this landed, and only 55 of
+those were within 10% of what OPM reports; 128 of 179 and 59 now. Matching is scoped as the Federal Register's is —
 a sub-agency row only reaches a node beneath the node its agency matched —
 and three refusals were added after the first derivation published things
 that were false:
@@ -1700,8 +1733,10 @@ widened — `docs/NETWORK_ACCESS.md` §0a records that the earlier refusals came
 of editing the wrong cloud environment — and is committed verbatim at
 `tests/fixtures/opm/pay/executive_schedule_2026.html`, with the `.meta.json`
 its fetch wrote. `load_executive_schedule` **recomputes the digest from the
-bytes on disk and refuses a mismatch**, which is the only such check in the
-repository and the thing that makes a record's `documentSha256` a claim
+bytes on disk and refuses a mismatch**, which was the only such check in the
+repository when it landed (fourteen other verification modules make it now,
+`gs_pay`, `plum_current` and `statutory_schedule` among them) and is the
+thing that makes a record's `documentSha256` a claim
 rather than a copied string; a hand-entered table under an `opm.gov` URL
 would otherwise read on the site exactly like a fetched one.
 
@@ -1788,10 +1823,11 @@ archive itself prints a rate for a post that rate wins and no range is
 written (46 ES listings). `scopeMatch: proxy`, graded `partial`, every
 bound of every range through `financial_evidence.validate_record` against
 its node; nothing writes `sourceUrls`, `sourceTypes`, `lastVerified` or
-`verificationMethod`. **45 records** on the current evidence (1 GS, 43 SES,
-1 SL), of which **32 reach the published graph** — 13 sit on nodes that
-stand for several posts and the multi-post sweep takes the field with the
-other four.
+`verificationMethod`. **45 records** on the 2026-09-21 evidence (1 GS, 43 SES,
+1 SL), of which **32 reached the published graph**; **26** now (1 GS, 24 SES,
+1 SL), of which **18** are published — the other 8 sit on nodes that stand
+for several posts, and the multi-post sweep strips this field from them as
+an incumbency claim.
 
 **The GS table states its scale in one place, and the HTML is not it.** The
 web page prints bare integers (`22584`) and says "dollars" nowhere; the XML
@@ -1802,7 +1838,7 @@ vouch for grade 1 and nothing else, so an honest GS-15 record was unfilable,
 which `financial_evidence` names as the dangerous case. A fourth and
 narrowest rule, `COLUMN_HEAD_MARK_SOURCE_TYPES` (`unitsEvidenceKind:
 currency_mark_on_the_columns_first_figure`, granted to `opm_pay_table`
-only), files a record that quotes the column's first figure WITH its mark
+and, since Schedule 6 on 2026-09-23, `us_code_pay_schedules`), files a record that quotes the column's first figure WITH its mark
 and its own bare figure, names the column, and would have filed under the
 stronger rule had its own figure carried the mark — the validator checks that
 shape, `gs_pay` guarantees the two sit in one column, and the gate mirrors
@@ -1865,14 +1901,16 @@ keys only; every published string is the file's own. Two groups that are both
 the agency itself (the USPTO's rows sit under two spellings of its own name)
 feed one title index rather than cancelling each other as ambiguous.
 
-**No alias table.** The largest unmatched block is `OFFICE OF THE SECRETARY
+**No alias table, at first.** The largest unmatched block is `OFFICE OF THE SECRETARY
 OF WAR` (506 live rows, the archive's "Office of the Secretary of Defense"):
 this graph has no OSD node to alias it to, so an alias could reach nothing.
 `DEPARTMENT OF THE NAVY` / `ARMY` / `AIR FORCE` (240 rows) are the
 civilian-department against uniformed-service distinction this file already
-refuses for FedScope. 96 of 174 agencies are unmatched in all, and the dry
-run prints them by live rows so the coordinator can see what a node — not an
-alias — would buy.
+refuses for FedScope. 96 of 174 agencies were unmatched in all on the first
+derivation; 59 are now, and since 2026-09-21 the agency scoping also reads
+`node_aliases.json`, through which one agency and four organisations match.
+The dry run prints the unmatched by live rows so the coordinator can see
+what a node — not an alias — would buy.
 
 **What it publishes.** `positionCurrentListing` (method
 `listed_in_opm_current_plum_export`, the export's URL in `sourceUrls`, the
@@ -1893,7 +1931,9 @@ to the archive's: published only while the listing still reports the same
 figure, both in `EVIDENCE_OWNED_FIELDS` and `MINIMAL_GRAPH_FIELDS`, and it
 writes no `sourceUrls`, `sourceTypes`, `lastVerified` or
 `verificationMethod` and is never a cost. The multi-post sweep takes it with
-the other five pay fields.
+the other incumbency fields (`positionPayRate`, `positionGradePay`,
+`positionSchedulePay`); since 2026-09-23 the rule is per field and a tier
+rate stays (see "A rate that holds for every holder" below).
 
 **First derivation, measured on the evidence files (the graph is not
 rebuilt here).** 170 of 4,591 positions listed, 170 placements, **100 rates**
@@ -1968,7 +2008,7 @@ to publish, which is the wrong direction. Matching is canonical-key
 Secretary of the Army", and a containment test prices the second from the
 first, the same failure `whitehouse_pay.title_core` documents for `Press
 Secretary` inside `ASSISTANT PRESS SECRETARY`. A statutory title reaching two
-nodes prices neither ("General Counsel" names 84 nodes here); a title the
+nodes prices neither ("General Counsel" names 92 nodes here); a title the
 statute states several of ("Assistant Secretaries of Commerce (11)") prices
 none; and "Archivist of the United States", which the Code places at **both**
 §5314 and §5316, is dropped from the index rather than adjudicated.
@@ -2059,7 +2099,7 @@ Chief` at Tier 2, `Service Chief, Service Line Manager, ...` at Tier 3 — at
 **different ranges**, because the two tables cover different lists of clinical
 specialties: Table 1's Tier 3 is $165,000–$350,000 and Table 2's is
 $225,000–$400,000. This graph carries `Chief — Medicine Service`, `Chief —
-Surgery Service` and twenty more per medical centre, and choosing a table per
+Surgery Service` and fourteen more per medical centre, and choosing a table per
 node would mean reading "Surgery" against Table 2's "Surgery — Cardio-Thoracic,
 General, Hand, Neurosurgery, Orthopedic, Plastic, Thoracic, Transplant,
 Vascular" and calling it a match. The tell that this is assembly rather than
@@ -2163,10 +2203,13 @@ cannot cite, the same position `CURATION.md` §8 puts "Secretary of the
 Treasury" in. The section is committed anyway, because "nobody looked" and
 "looked and it states no parity" are different facts.
 
-Every other seat is refused for the reason `judicial_pay.py` already gives:
+Every other seat was refused at first for the reason `judicial_pay.py` gives:
 each of the four courts carries one single-post chief-judge node and a
 `Judge (×18)` / `(×15)` / `(×8)` / `(×4)` node stating a multiplicity, and one
 rate beside a panel describing a whole group reads as what one holder earns.
+The same day the per-field multi-post rule below reversed that for these four
+benches: `derived_pay.BENCH_NODES` gives each its chief judge's provision with
+a `holders` block, and 8 nodes carry the figure now.
 A chief judge IS a judge of that court -- the provisions say "Each judge",
 with no chief's premium -- which is the reading `judicial_pay.py` already
 applies to Article III chief judges. The four service Courts of Criminal
@@ -2219,8 +2262,10 @@ where there is one supplies the level or pay plan saying WHICH printed number
 applies — and `positionDerivedPay` declares **0**. The gate mirrors that per
 field, a test asserts `positionDerivedPay` is the only zero, and the panel
 prints the two in one sentence through a single helper
-(`payDocumentsSentence`) called from all eight renderers and from the atlas
-view, so no two pay blocks can describe the same thing differently again. The
+(`payDocumentsSentence`) called from all eight renderers in `js/ui.js`. The
+atlas view does not call it: `js/atlas.js` carries its own shorter copy,
+`payDocuments`, writes the derived block's sentence inline, and renders six
+of the eight fields (no `positionTierPay` or `positionGradePay`). The
 derived module stopped writing its own copy of the arithmetic when this
 landed: one code path for one number.
 
@@ -2239,10 +2284,11 @@ the multi-post rule below and the Federal Reserve rows); **4,099 do not**, and
   SYSTEM governs the title is a fact worth having.
 - **21** — OPM lists the position and the row prints no rate.
 
-The concentration is the useful part: **432** of the 3,313 sit under `VA
-Medical Centers` (the service chiefs `va_title38_pay.py` deliberately refuses,
-since choosing a Title 38 table per node would be this module deciding which
-VA service chiefs are doctors), 83 under the White House Office, 56 under
+The concentration is the useful part: **432** of the 4,099 sit under `VA
+Medical Centers`, 360 of them among the 3,313 (the service chiefs
+`va_title38_pay.py` deliberately refuses, since choosing a Title 38 table per
+node would be this module deciding which VA service chiefs are doctors), 61
+under the White House Office (83 before the multi-post rule), 56 under
 `Districts (multiple)`, and the rest spread across 734 organisations.
 
 `docs/UNPRICED_POSITIONS.md` is the complete inventory, generated, one line
@@ -2507,8 +2553,12 @@ Judges, Associate Justices, Chief Justice, current year first) and prices
 exactly the Chief Justice and every named circuit's or district's own Chief
 Judge — a chief judge is paid as a judge of that tier, not at a distinct
 "chief" rate, so this is not a proxy for a different post the way an
-Executive Schedule level is. It refuses every node that states a
-multiplicity (351 circuit- and district-judge nodes), the specialized
+Executive Schedule level is. It refused every node that states a
+multiplicity (351 circuit- and district-judge nodes) until 2026-09-23, when
+`classify_seat` began pricing the eight Associate Justices and a district's or
+circuit's own active bench (17 nodes priced from the table now); of the nodes
+stating a multiplicity it still refuses the 15 that name senior judges, and it
+still refuses the district-structure template, the specialized
 Article I courts (Tax Court, CFC, CIT, CAAF, CAVC — a different statutory
 basis this module has not read a source for; four of those bases were read on
 2026-09-23 and `derived_pay.py` prices those courts' chief judges from them in
@@ -2573,8 +2623,12 @@ the incumbent columns are never read — binds harder here, because this
 document names living people beside their salaries.
 
 Refusals: a title more than one person holds (two salaries make the figure
-undecidable); a node outside the `exec-eop-who` subtree, scoped as
-`headcounts.py` scopes a FedScope row; a node standing for several posts;
+undecidable — since 2026-09-23 refused only where the rows differ in rate,
+in terms or in printed spelling; see "A rate that holds for every holder"
+above); a node outside the `exec-eop-who` subtree, scoped as
+`headcounts.py` scopes a FedScope row; a node standing for several posts,
+unless (since 2026-09-23) the roster lists the title exactly as many times
+as the node's own (×N) states, all at one rate;
 and **a rate of $0.00**, which ten of the 408 rows carry — uncompensated
 appointees, the National Security Advisor among them. Zero is never
 published here, and an uncompensated arrangement is a fact about a person,
@@ -2598,9 +2652,10 @@ recovered by **shape**: a money pattern, the closed `EMPLOYEE`/`DETAILEE`
 and `Per Annum` vocabularies, a `LAST, FIRST M.` name, and the title as
 remainder. A row not yielding exactly one of each is refused — 8 of 408 are.
 
-The gate mirrors node id → (printed title, printed rate) in
-`WHITEHOUSE_REPORTED_PAY`, keyed by id for the reason the Senate leadership
-case established and more sharply: **four of the five priced posts are paid
+The gate first mirrored node id → (printed title, printed rate) in
+`WHITEHOUSE_REPORTED_PAY` (replaced the same day by the roster read below),
+keyed by id for the reason the Senate leadership case established and more
+sharply: **four of the five priced posts are paid
 the identical $195,200**, so a record moved between them would keep a correct
 figure, quote and pay basis. First run: 5 positions priced of the 27 the
 graph then carried under the White House Office — the binding limit being
@@ -2639,7 +2694,9 @@ file imports nothing from `data_pipeline`, by design), checks its digest, and
 `tests/test_whitehouse_pay.py` pins the two parsers equal on the real
 fixture. The role-swap defence is then structural rather than a mirror: the
 claimed title must be one the report prints, must be held by exactly one
-person, and must name this node by equality or with the rank folded off.
+person (or, since 2026-09-23, by exactly the N a `(×N)` node states, every
+one at one rate), and must name this node by equality or with the rank
+folded off.
 `CURATION.md` §7.4-7.5 record the run and what stays unpriced.
 
 The PLUM archive is the previous administration's reported positions
@@ -2648,7 +2705,8 @@ The PLUM archive is the previous administration's reported positions
 record and every proposed panel sentence names the archive and its period
 and says nothing about who holds a post now: the incumbent columns are
 never read. 91 of the graph's 4,382 position nodes matched a listed title
-under their own organisation; none matched across organisations.
+under their own organisation when this was written (129 of 4,591 now); none
+matched across organisations.
 
 Everything this module writes is listed in `EVIDENCE_OWNED_FIELDS`, with
 `evidenceUrls` (exactly the URLs it added to `sourceUrls`) and
@@ -2676,12 +2734,15 @@ The gate requires: every `lastVerified` a past ISO date; every
 `verificationMethod` backed by a URL and one this pipeline can produce; no
 node claiming a failed check beside a source; an `official_site` type backed
 by a `.gov`/`.mil` URL. Coverage is reported. The verifier obeys `robots.txt`
-and sends a User-Agent naming the project. It fails open in exactly one case,
-and it is the opposite of the one this line used to name: a host that answers
-that there is no robots.txt (404/410) is crawled, because nothing was
-published to obey. Every other non-2xx refuses — 401/403 by this project's
-choice, 5xx and a DNS/TLS/timeout failure because RFC 9309 §2.3.1.4 makes an
-undefined robots.txt a complete disallow. "Cannot be fetched at all" is
+and sends a User-Agent naming the project. It fails open in two cases, and
+the first is the opposite of the one this line used to name: a host that
+answers that there is no robots.txt (404/410, or any 4xx but 401/403) is
+crawled, because nothing was published to obey; the second, since
+2026-09-20, is a 401/403 from one of the two hosts
+`politeness.STANDARD_4XX_HOSTS` lists (escs.opm.gov, www.nga.mil), where RFC
+9309 §2.3.1.3 is followed as written. Every other non-2xx refuses — 401/403
+by this project's choice, 5xx and a DNS/TLS/timeout failure because RFC 9309
+§2.3.1.4 makes an undefined robots.txt a complete disallow. "Cannot be fetched at all" is
 therefore the case that refuses, not the case that fails open. A host that answers `robots.txt` itself with 401 or 403 is
 the one case that looks like "unreadable" but is not treated as such:
 `RobotFileParser` swallows that status and sets a blanket disallow with no
@@ -2700,14 +2761,16 @@ record may not do is quote a rule nobody read, so the reason distinguishes
 
 No bundler, no npm. ES modules loaded by the browser; Three.js comes from
 unpkg at runtime. `window.GRAPH_DATA_SOURCES` in `index.html` names the
-sources: `primary` (`output/graph.json`), `base` (the curated file, used
+sources: `primary` (`output/graph.min.json`), `base` (the curated file, used
 only if the primary is missing or malformed), `corporate` (null: the
 committed `data_expansion/corporate_expansion.json` is the template output
 of `expand_corporate_nodes.py` — invented positions — not EDGAR officers,
 so it is not merged until `extract_and_expand.py` has produced real ones).
 
-- `graphLoader.js` fetches primary/base, corporate, expanded nodes/edges and
-  candidates, merges the overlays into the tree (`safeAddChild` refuses a
+- `graphLoader.js` fetches primary/base and candidates, plus the corporate
+  and expanded nodes/edges overlays when `GRAPH_DATA_SOURCES` names them
+  (all three are null today, so none is fetched), merges the overlays into
+  the tree (`safeAddChild` refuses a
   second parent or a cycle), trims depth to 20, and attaches the candidate
   list separately.
 - `graph.js` renders: instanced meshes, sprite labels, Fibonacci-sphere child
@@ -2861,9 +2924,10 @@ both "No Sub-nodes" (disabled) and "Expand All Below" (also disabled) side by
 side, saying the same thing twice; "Trace Origin" re-rendered the same
 root-to-node path the breadcrumb already shows, as a second list, rather than
 only confirming the 3D glow path (`pathGlowPool` in graph.js) it actually
-adds; the depth buttons are a fixed HTML list (1–12) with no idea the loaded
-tree is only 8 levels deep (`state.maxDataDepth`, computed from `__meta`),
-so five of the twelve promised a jump the data cannot make; and a candidate
+adds; the depth buttons are a fixed HTML list (1–6, 8, 12) with no idea the
+loaded tree is only 8 levels deep (`state.maxDataDepth`, computed from
+`__meta`), so the 12 in each of its two rows promised a jump the data cannot
+make; and a candidate
 node's description and placement lines were blanked outright rather than
 saying what a reviewer actually needs — the discovery notice's own text and
 the crawler's `possibleParent` guess, each labelled as unreviewed rather than
@@ -2934,8 +2998,9 @@ Nothing anywhere reads `expanded_nodes.json` back in; a comment in
 wrong and is corrected — only `graph.json` is.
 
 GitHub Pages serves the repository root from `main`. Everything the page
-fetches is tracked: `index.html`, `js/`, `data/federal_gov_complete_1.json`,
-`output/graph.min.json` and the remaining `output/*.json` files. `.nojekyll` stops Pages running the
+fetches is tracked: `index.html`, `css/atlas.css`, `js/`,
+`data/federal_gov_complete_1.json`, `output/graph.min.json` and
+`output/candidate_nodes.json`. `.nojekyll` stops Pages running the
 content through Jekyll. The favicon is an inline `data:` URI rather than a
 file, so no request 404s. Two things load from outside the repo and are
 outside its control: Three.js from unpkg and the fonts from Google Fonts —
@@ -2946,8 +3011,9 @@ that one import is the only thing the smoke check cannot prove.
 ### Exact-node costs, and what the graph does not claim
 
 `docs/EXACT_NODE_COSTS.md` is the standing answer to "why is most of this
-graph an estimate". 139 of 5,402 nodes (2.6%) carry a cost a record names
-for them; those cover **98.4% of the anchor**, so the apportioned figures
+graph an estimate". 160 of 5,510 nodes (2.9%; 139 of 5,402 when this was
+first written) carry a cost a record names for them; those cover **98.8% of
+the anchor**, so the apportioned figures
 subdivide measured money rather than invent it — which does not make a
 subdivision a measurement. **Since 2026-09-09 the site does not show one by
 default**, by the owner's decision: a node with no measured cost of its own
@@ -2995,10 +3061,14 @@ coverage numbers on every run so "853 nodes with a cost" cannot be read as
 
 That document also works through **every one of Table 5's 78 section
 totals** and says why each does or does not reach a node, so the analysis
-need not be redone: 41 reach one, 17 are Treasury's own funds and
-groupings, 5 are object-class slices of a DoD total already applied, 9 are
-intermediate groupings covering several curated nodes each, and 5 name
-units the graph has no node for (curation, ~$78B). Exactly one alias was
+need not be redone: worked through on 2026-09-09 against the 2026-07-31
+statement, 41 reached one, 17 were Treasury's own funds and groupings, 5
+are object-class slices of a DoD total already applied, 9 are intermediate
+groupings covering several curated nodes each, and 5 named units the graph
+then had no node for (curation, ~$78B). All five — ACF, the Corps of
+Engineers, USAID, GSA and the Railroad Retirement Board — were added on
+2026-09-19 and carry their measured cost now, as does one of the 17,
+Interest on the Public Debt. Exactly one alias was
 addable and is added: `Office of Federal Student Aid` → `exec-dept-ed-fsa`,
 replacing a $13.37B apportioned share with the statement's measured
 $76.05B — a 5.7× correction on a real node, licensed by the same-section
@@ -3133,16 +3203,19 @@ ride on every record and on the panel:
   *net outlays*, cash out of the door.
 - **Period.** FY2025, a year that has **ended**. The anchor is the current year
   to date. The panel prints both dates rather than one.
-- **Scope.** 40 reporting entities, of which 7 name no unit of government —
+- **Scope.** 40 reporting entities, of which 5 name no unit of government —
   "Total" (the whole government, $7.3tn), "All other entities", "Security
-  Assistance Accounts", "Interest on Treasury Securities held by the public".
+  Assistance Accounts", "Interest on Treasury Securities held by the public",
+  "National Railroad Retirement Investment Trust".
   Those are refused by name rather than matched to the nearest node, for the
   reason `headcounts.py` refuses an agency whose whole entry is one other unit:
   aliasing the Total anywhere would publish the government's cost as one
   agency's.
 
 Matching is canonical-key **equality** and there is no alias table, because none
-is needed: **33 of the 40 rows reach exactly one node and none reaches two.**
+is needed: **34 of the 40 rows reach exactly one node and none reaches two**
+(33 until the Development Finance Corporation's rename on 2026-09-21; the
+Farm Credit System Insurance Corporation reaches none).
 The contrast it publishes is the useful part — the Department of the Treasury's
 audited net cost is **$296.8bn** beside **$1,520.3bn** of measured outlays, and
 the difference is interest on the public debt, which is cash out but not a
@@ -3314,14 +3387,17 @@ net-of-collections quote, and a citation that does not point at govinfo.
 
 ### Names that state a count
 
-Eight curated groupings state a number in their own name. Four carry it
+Seven curated groupings state a number in their own name (eight until
+"National Laboratories (17)" was renamed on 2026-09-19). Three carry it
 ("Mission Teams (15)"); four do not — Individual Senator Offices (100)
 carries 18, Individual Representative Offices (435) carries 15, District
 Offices (68) carries 4, Federal Public Defender Offices (82) carries 7 —
 and a reader who expanded one had nothing telling them the rest were
-absent. 742 position nodes carry a multiplicity instead (35 exact, 23 a
-range, 684 an unstated "×multiple"), each drawn as one node with one
-apportioned figure. `annotate_stated_counts` publishes the name's number
+absent. 793 position nodes carry a multiplicity instead (89 exact, 23 a
+range, 681 an unstated "×multiple"; 742, 35 and 684 when this was written),
+each drawn as one node and none with an apportioned figure: all 793 publish
+`unavailable` — 694 as `post_is_not_a_budget_unit` (the post rule, since
+2026-09-14), 72 as `unit_superseded`, 27 as `treasury_pool_negative`. `annotate_stated_counts` publishes the name's number
 beside the graph's (`statedChildCount`, `carriedChildCount`,
 `childrenIncomplete`, `representsPosts`); the panel says the rest are not
 in this graph at all, and that a multi-post node's figure is for the group
@@ -3334,8 +3410,11 @@ rename withdraws the claim.
 ### The three agent phases
 
 Three runbooks, run in order over the same nodes (5,195 when the runbooks
-were written; 5,402 today), each with a harness
-that refuses what it cannot adjudicate. All three write **only** to
+were written, 5,402 on 2026-09-18; 5,510 today), each with a harness
+that refuses what it cannot adjudicate — and since 2026-09-20 a fourth, phase
+1c's `EVIDENCE_TRIAGE_RUNBOOK.md`, which batches with `node_audit.py next`,
+records through `nominate.py record` and adds no writer. All four write
+**only** to
 `data/audit/`; none edits the curated file, the published graph or any
 evidence file, which is what makes it safe to point many agents at the whole
 tree.
@@ -3360,8 +3439,10 @@ nomination does is waste one fetch. Both refuse `confidence: certain`
 outright — an agent that cannot read the source has no way to earn it — and
 both refuse what could never be adjudicated at all: a host the verifier will
 not fetch, a dataset URL offered as a unit's own page, a URL already tried and
-failed, a metric outside the five (`net_outlays`, `audited_net_cost`,
-`obligations`, `budget_authority`, `basic_pay`), an identifier with no basis.
+failed, a metric outside `financial_evidence.BASES` (ten names since
+2026-09-10, when `COST_METRICS` was widened from the five `net_outlays`,
+`audited_net_cost`, `obligations`, `budget_authority`, `basic_pay`), an
+identifier with no basis.
 `nominate.py promote` is the only command that writes outside `data/audit/`:
 it adds candidates to the verifier's fetch queue and records each one's run,
 basis and confidence in `official_sites_provenance.json`. Two rules fixed by
@@ -3449,9 +3530,10 @@ never handed out for page nomination — 4,382 positions would produce 4,382
 identical refusals — but a position *can* carry a cost nomination, its rate of
 basic pay, which is never the unit's cost.
 
-The standing numbers this work exists to move: 294 of 807 organisations have
-no candidate page at all, so the verifier can never reach them; and 139 of
-5,402 nodes carry a cost identified for themselves. `nominate.py status --kind
+The standing numbers this work exists to move: 358 of 890 organisations have
+no candidate page at all, so the verifier can never reach them; and 160 of
+5,510 nodes carry a cost identified for themselves (294 of 807 and 139 of
+5,402 when this was written). `nominate.py status --kind
 source` prints the first and `validate_published_graph.py` the second; those
 are the copies to trust, and neither is restated by hand any more.
 
@@ -3477,7 +3559,8 @@ nothing else is. A `certain` or `likely` finding must carry evidence;
 gets raised without being dressed as a fact. Citable sources are the
 repository's own published files and `.gov`/`.mil` URLs. Seven checks per
 node with fixed vocabularies, and `no_evidence_in_repo` is the honest — and
-most common — answer, not a failure: 4,713 nodes carry no source at all.
+most common — answer, not a failure: 4,530 nodes carry no source at all
+(4,713 on 2026-09-20).
 `verify` re-checks every citation in the ledger against its source, since a
 file can change after a finding was accepted. The runbook's "do not report
 these" list matters as much as the rest: without it the sweep returns
@@ -3557,8 +3640,9 @@ these" list matters as much as the rest: without it the sweep returns
   the National Protection and Programs Directorate … in any … document, record
   or other paper of the United States" to be a reference to CISA — Table 5 is
   such a record; and `United States Agency for Global Media` → the node the
-  graph itself names "Broadcasting Board of Governors / USAGM", which needs no
-  outside source because the curated name already states the two are one unit.
+  graph then named "Broadcasting Board of Governors / USAGM", which needed no
+  outside source because the curated name stated the two are one unit (renamed
+  "U.S. Agency for Global Media" on 2026-09-19, whose key the line now equals).
   Both are filed by the statement under the section the graph gives the node. Since the receipts are carried explicitly a line
   always fits inside its own section's total — Federal Student Aid's $76B
   inside Education's $53B net beside the section's receipts — so "fits" is
@@ -3581,9 +3665,11 @@ Checked against the published graph on 2026-09-20 rather than restated.
 The one left is the **Corporation for National and Community Service**,
 which is the AmeriCorps alias case `CURATION.md` §2 records: the graph's
 node is named for the agency's current branding and the statement for its
-statutory name, and the record falls through to the rule beneath — the
-statement's line for it prints an outlay amount of `0.0`, and zero is never
-published as a measurement.
+statutory name, and `TREASURY_ROW_ALIASES` carries no row joining the two, so
+the statement's line for it ($941.2M on the 2026-08-31 statement) reaches no
+node and AmeriCorps publishes an `allocated` share. The `0.0` is the
+`outlay_amount` USAspending's toptier agency list prints for the agency, not
+this line's, and zero is never published as a measurement.
 
 A second, quieter gap surfaced the same day: a unit added under a licence
 that is not the Treasury's — the Office of Surface Mining Reclamation and

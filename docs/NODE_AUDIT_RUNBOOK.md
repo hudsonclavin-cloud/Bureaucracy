@@ -32,7 +32,10 @@ that a person who has not seen the node can act on it.
 
 ## The loop
 
-Run this until `status` says nothing remains.
+Run this until `next` hands back no nodes. (`status` computes "remaining" as
+nodes in the graph minus ledger records, and the ledger holds 15 records for
+nodes the graph no longer carries, so on 2026-09-23 it says 93 while `next`
+still has 108 to hand out.)
 
 ```bash
 python scripts/node_audit.py status                          # where you are
@@ -173,10 +176,13 @@ times buries the real findings:
 - **"The description has no citation."** True of all 5,155. Every panel
   already says "uncited prose — not checked against any source". Only report a
   description that is **contradicted** by evidence in the repo.
-- **"The cost is an estimate."** True of 4,885. Already labelled, and since
-  2026-09-09 not even shown by default.
-- **"This node has no sources."** True of 4,824 — that is what
-  `existence: no_evidence_in_repo` records. It is a check, not a finding.
+- **"The cost is an estimate."** True of 4,885 when this was written
+  (2026-09-10); 693 nodes carry an apportioned share on 2026-09-23. Already
+  labelled, and since 2026-09-09 not even shown by default.
+- **"This node has no sources."** True of 4,824 on 2026-09-18; 4,530 on
+  2026-09-23 carry no source URL (the gate's "no source recorded" line, which
+  also sets aside nodes with a checked-and-failed date, reads 4,490) — that is
+  what `existence: no_evidence_in_repo` records. It is a check, not a finding.
 - **"This grouping is editorial rather than official"** for the named
   groupings the graph already flags — `Individual Senator Offices (100)`,
   `District Offices (68)`, and the rest listed under **Names that state a
@@ -211,15 +217,19 @@ Each node in `next`'s output gives you:
   `childNames`, `siblingNames`
 - `otherNodesWithThisName` — other node ids sharing this exact name
 - `cost` — status, amount, basis, and the Treasury row name if any
-- `published_claims` — every claim the site currently makes about this node
-- `evidence_records` — what each evidence file holds for this node id
+- `published_claims` — the claims the site makes about this node, taken from a
+  fixed list of 25 fields in `scripts/node_audit.py`; the Government Manual,
+  current Plum Book, pay, USAspending, net-cost and OMB blocks are not among
+  them, so read those off `output/graph.json` directly
+- `evidence_records` — what four of the 19 `*evidence*.json` files in
+  `data/verification/` hold for this node id
 
 `evidence_records` is where the real work is. The four sources:
 
 | Key | What it is | What absence means |
 |---|---|---|
 | `evidence` | Page-label checks against official sites | Nothing. A page not read says nothing. |
-| `directory_evidence` | Federal Register agency directory, **and** the Senate committee list | For the Senate list, **absence is evidence** — it is complete. For the Federal Register, absence means only that the unit does not publish in the Register. |
+| `directory_evidence` | Federal Register agency directory, the Senate committee list, **and** the House Clerk's committee list | For the Senate and House Clerk lists, **absence is evidence** — both are complete. For the Federal Register, absence means only that the unit does not publish in the Register. |
 | `headcount_evidence` | OPM FedScope civilian employment | Absence means unmatched, not zero staff |
 | `position_evidence` | OPM PLUM archive of reported positions | Absence means unmatched. The archive is the **previous** administration's and is not complete for career posts. |
 
@@ -298,7 +308,7 @@ checks, `findings` always present (`[]` when clean):
       "name_currency": "no_evidence_in_repo",
       "node_type": "fits",
       "description": "contradicted",
-      "cost": "sound",
+      "cost": "measured_and_sound",
       "duplication": "distinct"
     },
     "findings": [

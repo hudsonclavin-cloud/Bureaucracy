@@ -38,8 +38,11 @@ claim about.)
 `scripts/derive_whitehouse_pay_evidence.py` into
 `data/verification/whitehouse_pay_evidence.json`.
 
-**5 of the graph's 27 White House Office position nodes are priced.** That is
-the honest ceiling, not a parser limitation — see the refusals below.
+**5 of the graph's 27 White House Office position nodes were priced on
+2026-09-14**, the first run. The subtree was rebuilt from this roster the same
+day (`scripts/expand_whitehouse_office.py`) and now carries 249 positions, 188
+of them priced — 22 of those for a title several people hold at one identical
+rate. The refusal counts below are the first run's.
 
 ## Read with the standard library, like every other fixture here
 
@@ -83,8 +86,9 @@ all-caps form.
 | Refusal | Count | Why |
 |---|---|---|
 | `no_row_carries_this_title` | 21 | The graph's 27-node White House Office is a sketch of a 400-person office; `Chief Speechwriter` and `Director of Presidential Personnel` are simply not titles the report prints. This is curation, not parsing. |
-| `reported_rate_is_zero` | 1 | Ten of the 408 rows read **$0.00** — uncompensated appointees, the National Security Advisor among them. Zero is never published as an amount here, and an uncompensated arrangement is a fact about one person, not about the post. |
-| `title_held_by_several_people` | 0 here | `SENIOR POLICY ADVISOR` appears 21 times and `STAFF ASSISTANT` 15, at differing salaries. Two salaries under one title make the figure undecidable, and this project does not resolve an ambiguity by picking one. |
+| `reported_rate_is_zero` | 7 (1 on 2026-09-14) | Ten of the 408 rows read **$0.00** — uncompensated appointees, the National Security Advisor among them. Zero is never published as an amount here, and an uncompensated arrangement is a fact about one person, not about the post. |
+| `title_held_by_several_people_at_different_rates` | 32 | `SENIOR POLICY ADVISOR` appears 21 times and `STAFF ASSISTANT` 15, at differing salaries. Two salaries under one title make the figure undecidable, and this project does not resolve an ambiguity by picking one. Named `title_held_by_several_people` (0 on 2026-09-14) until 2026-09-23. Since then a title the report lists for every holder at one identical rate (23 of its 58 multi-holder titles) is no longer refused on that ground, and 22 published records carry that rate for each holder (`holders`). |
+| `title_held_under_several_spellings` | 1 | Two printed titles fold onto one key; the record takes one printed title or nothing. |
 | `stands_for_several_posts` | — | The same rule `pay_tables.py` and `judicial_pay.py` enforce. |
 
 ## The rank prefix, folded — leading only, never contained
@@ -130,11 +134,14 @@ writes no `sourceUrls`, `sourceTypes`, `lastVerified` or `verificationMethod`.
 
 ## The gate mirror
 
-`WHITEHOUSE_REPORTED_PAY` in `scripts/validate_published_graph.py` maps node
-id → (the title the report prints, the rate beside it), and the gate checks
-the claimed title and amount against it. Keyed by **id**, not by amount:
-**four of the five priced posts are paid the identical $195,200**, so a record
-moved from one to another would keep a correct figure, a correct quote and a
-correct pay basis. Only a check tied to the node's own identity catches that —
-the same lesson the three equally-paid Senate leadership roles taught, which
-is why the mirror exists at all.
+`whitehouse_roster()` in `scripts/validate_published_graph.py` re-reads the
+committed report with a second, independent stdlib extraction (digest
+checked) and maps each title it prints to the rate and the number of people
+listed under it, and the gate checks the claimed title and amount against
+that. The first five records were mirrored as a literal keyed by **id**
+(`WHITEHOUSE_REPORTED_PAY`, since removed), because **four of the five priced
+posts are paid the identical $195,200**, so a record moved from one to another
+would keep a correct figure, a correct quote and a correct pay basis. The
+roster check closes the same hole another way: the claimed title must name
+this node, by equality or with the rank folded off — the same lesson the
+three equally-paid Senate leadership roles taught.

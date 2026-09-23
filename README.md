@@ -13,16 +13,21 @@ Live site: https://hudsonclavin-cloud.github.io/Bureaucracy/
 The measured figures in the published graph are the root's cost — the U.S.
 Treasury's fiscal-year-to-date net outlays from the Monthly Treasury
 Statement (FiscalData) — and the per-agency lines of that statement applied
-to the units they name: 103 of the statement's 644 lines, covering the
-cabinet departments, the major independent agencies and 60-odd bureaus and
-offices beneath them. Every other cost is the total
+to the units they name: 103 of the statement's 644 lines as of 2026-09-03,
+and 130 nodes carrying a line of the 2026-08-31 statement now, covering the
+cabinet departments, the major independent agencies and the bureaus and
+offices beneath them. Beside them sit 29 receipts lines the exporter carries
+explicitly: 28 under the units whose totals they net, and one for the
+government-wide offsetting receipts beside the three branches. Every other cost is the total
 apportioned downward through the tree, with a Treasury line beneath a unit
 acting as a floor on that unit's share. Siblings are split by reported budget where
 budgets are reported, by staff count where that is the best evidence, and
 by subtree size otherwise; a sibling without the figure its siblings report
 is given one implied from their typical per-node rate, and the panel says
-so. The site renders those as rounded estimates with an explicit "Estimate"
-badge. Only the root and the units the Monthly Treasury Statement names carry
+so. Since 2026-09-09 the site does not show those by default: a node with
+no measured cost of its own shows no figure and says why, and ticking "Also
+show estimated shares of a parent's total" renders them as rounded estimates
+with an explicit "Estimate" badge. Only the root and the units the Monthly Treasury Statement names carry
 "Measured". A line whose unit the graph does not have, or whose name the
 statement gives to several different lines, is left unmatched on purpose: its
 money stays in the remainder that is apportioned, which is a smaller claim
@@ -35,12 +40,18 @@ Nodes with no source URL attached say "No source recorded" rather than
 "unverified" — they were never checked, which is a different claim from
 checked-and-failed.
 
-A curated node earns a source one way: `scripts/verify_base_graph.py`
-fetches an official `.gov`/`.mil` page on a date and finds the node's name
-on it **as a label of its own** — a heading, a link, a list item whose text
-is the name, not the name buried in a sentence. The outcome is recorded in
-`data/verification/evidence.json` with the URL, the moment, and the page
-text that matched, and the exporter stamps it onto the node at build time.
+A curated node most often earns a source one way:
+`scripts/verify_base_graph.py` fetches an official `.gov`/`.mil` page on a
+date and finds the node's name on it **as a label of its own** — a heading,
+a link, a list item whose text is the name, not the name buried in a
+sentence. The outcome is recorded in `data/verification/evidence.json` with
+the URL, the moment, and the page text that matched, and the exporter stamps
+it onto the node at build time. That route gives 553 of the 944 verification
+methods on the published graph; the other 391 come from official documents
+read whole — the Federal Register's agency directory, the Senate's and the
+House Clerk's committee lists, OPM's PLUM archive and current export, and
+the U.S. Government Manual — each under a method of its own, which
+`python scripts/validate_published_graph.py` breaks down.
 
 Five outcomes, and only two of them say anything about a node: `confirmed`
 (a source and a "checked" date, saying whether it was the unit's own page or
@@ -49,8 +60,10 @@ date alone, shown as checked-and-failed), `inconclusive` (only a parent's
 page was read, which is not obliged to list it), `fetch_failed` (no page was
 read — a fact about the network, not the node), and `not_checkable` (the
 curated name is a count label like "Individual Senator Offices (100)" or a
-word like "Energy" that could match anything). The last three change
-nothing. A record that is withdrawn stops being published on the next build.
+word like "Energy" that could match anything). `inconclusive` and
+`not_checkable` change nothing; since 2026-09-20 `fetch_failed` publishes
+`verificationUnread` — which host, why and when the page could not be read —
+and never a source, a `lastVerified` date or a failed check. A record that is withdrawn stops being published on the next build.
 The candidate pages live in `data/verification/official_sites.json`; a URL
 there is something to check, not a claim.
 
@@ -113,8 +126,9 @@ python data_expansion/extract_and_expand.py
 data/federal_gov_complete_1.json      hand-curated base graph (5,170 nodes) — the trusted source of structure
 data_pipeline/                        Python pipeline (crawlers, processors, discovery, validators, exporter)
 data_expansion/corporate_expansion.json  template-generated corporation org chart; not served (see above)
-output/graph.json                     the gated, cost-annotated tree the site renders
-output/expanded_nodes.json            nodes the crawl added beyond the base graph (empty until one earns publication)
+output/graph.json                     the gated, cost-annotated tree; the pipeline's state file, re-fed on the next build
+output/graph.min.json                 graph.json without the fields js/ never reads — what the site actually fetches
+output/expanded_nodes.json            the crawl's export record (980 nodes, every one already in the tree); not fetched by the site
 output/expanded_edges.json            non-hierarchical relationships between published nodes
 output/candidate_nodes.json           discovery review queue; shown only behind "Show Candidate Nodes"
 output/pipeline_stats.json            summary of the last run

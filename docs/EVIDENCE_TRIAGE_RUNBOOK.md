@@ -219,7 +219,8 @@ the hostname.
 
 `evidence_records` in the batch usually already contains the answer, and
 reading it is the difference between a diagnosis and a guess. Across the 346
-organisations currently carrying no verification:
+organisations carrying no verification on 2026-09-20 (265 on 2026-09-23, 72
+of them with no record and no page queued — recompute before trusting a row):
 
 | What the record says | n | What it means | Your move |
 |---|---:|---|---|
@@ -258,9 +259,10 @@ Before proposing any cost record, know what the honest states are:
 
 Nominate a cost only when you can name a **specific record** — a Treasury
 Table 5 line, a USAspending File A key, an OMB account grouping, an audited
-net-cost row — that names **this unit** and not a broader one. The three
-scoping failures in `docs/COST_NOMINATION_RUNBOOK.md` are the ones to avoid,
-and the middle one is the Defense Agencies trap by another name:
+net-cost row — that names **this unit** and not a broader one.
+`docs/COST_NOMINATION_RUNBOOK.md` names three scoping failures (too broad, too
+narrow, a different population); the three this phase meets are these, and
+the middle one is the Defense Agencies trap by another name:
 
 1. the record names a **broader** entity (the VBA's USAspending key is
    "Benefits Programs", a $233bn grouping);
@@ -309,10 +311,16 @@ same true, useless sentence thousands of times and buries the real findings.
 
 ## Scope, sharding, and what a good run looks like
 
-Triage the **832 non-post, non-accounting-line nodes**. The other 4,621 are
+Triage the **832 non-post, non-accounting-line nodes** (889 on 2026-09-23,
+the root among them). The other 4,621 are
 positions and accounting lines whose empty state is decided by rule, and
 handing them out would produce thousands of identical refusals — the same
-reason phase 1b never hands out a position.
+reason phase 1b never hands out a position. The command below does not do
+that scoping: `node_audit.py next` filters no type and skips every node
+already in phase 1a's ledger (`data/audit/node_audit.jsonl`, 5,417 node ids
+on 2026-09-23), so it hands out only the 108 nodes 1a has not reached — 13
+or 14 per shard of 8 — and, since this phase writes nothing to that ledger,
+the same batch on every run.
 
 ```bash
 python scripts/node_audit.py next --count 25 --shard 3/8 > /tmp/batch.json
