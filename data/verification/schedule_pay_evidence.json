@@ -12,21 +12,27 @@
     "method": "level_assigned_by_5_usc_5312_5316",
     "table": "Salary Table No. 2026-EX",
     "effective": "2026-01-01",
-    "matched": 99,
-    "priced": 99,
+    "matched": 102,
+    "priced": 102,
     "refused": {},
     "priced_by_level": {
-      "I": 15,
-      "II": 17,
+      "I": 16,
+      "II": 19,
       "III": 10,
       "IV": 53,
       "V": 4
     },
     "matchRefusals": {
-      "no_such_post_directly_under_that_organisation": 66,
-      "office_part_is_a_bare_role_word": 55
+      "no_such_post_directly_under_that_organisation": 79,
+      "office_part_is_a_bare_role_word": 75
     },
     "scopedMatches": 61,
+    "reviewedMatches": 3,
+    "reviewedRows": [
+      "exec-regulatory-fed-chair-board-of-governors",
+      "exec-regulatory-fed-vice-chair-board-of-governors",
+      "exec-regulatory-fed-vice-chair-for-supervision"
+    ],
     "ambiguousStatutoryTitles": {
       "archivist of the united states": [
         "5 U.S.C. §5314",
@@ -34,7 +40,7 @@
       ]
     },
     "statutoryPositions": 415,
-    "validated": 99,
+    "validated": 102,
     "rejected": [],
     "conflicts": [],
     "double_counted": []
@@ -77,7 +83,8 @@
         "statutoryTitle": "Secretary of the Air Force",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5313&num=0&edition=prelim",
         "documentSha256": "5978491c31e39139944c452e8dd755928b42d37d5b7fbfbe03e1376ed54c7120",
-        "checkedAt": "2026-09-18T20:34:08Z"
+        "checkedAt": "2026-09-18T20:34:08Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -124,7 +131,8 @@
         "statutoryTitle": "Under Secretary of the Air Force",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5314&num=0&edition=prelim",
         "documentSha256": "9fb06a64237cc4224921b2bec6b5666066b73241c148fbec39182a595aa8ae92",
-        "checkedAt": "2026-09-18T20:34:21Z"
+        "checkedAt": "2026-09-18T20:34:21Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -171,7 +179,8 @@
         "statutoryTitle": "Deputy Director, National Security Agency",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5316&num=0&edition=prelim",
         "documentSha256": "9ab5ec55d48c11958802ac25731680772d2189fc2bdd9b4ae17dfd300ca7a49e",
-        "checkedAt": "2026-09-18T20:34:37Z"
+        "checkedAt": "2026-09-18T20:34:37Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -218,7 +227,8 @@
         "statutoryTitle": "Secretary of the Army",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5313&num=0&edition=prelim",
         "documentSha256": "5978491c31e39139944c452e8dd755928b42d37d5b7fbfbe03e1376ed54c7120",
-        "checkedAt": "2026-09-18T20:34:08Z"
+        "checkedAt": "2026-09-18T20:34:08Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -265,7 +275,8 @@
         "statutoryTitle": "Under Secretary of the Army",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5314&num=0&edition=prelim",
         "documentSha256": "9fb06a64237cc4224921b2bec6b5666066b73241c148fbec39182a595aa8ae92",
-        "checkedAt": "2026-09-18T20:34:21Z"
+        "checkedAt": "2026-09-18T20:34:21Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -312,7 +323,8 @@
         "statutoryTitle": "Deputy Secretary of Defense",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5313&num=0&edition=prelim",
         "documentSha256": "5978491c31e39139944c452e8dd755928b42d37d5b7fbfbe03e1376ed54c7120",
-        "checkedAt": "2026-09-18T20:34:08Z"
+        "checkedAt": "2026-09-18T20:34:08Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -359,7 +371,8 @@
         "statutoryTitle": "General Counsel of the Department of Defense",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
         "documentSha256": "9f7b1249fa099a07f4e79f8b67048225d5a093fdab886895bcf2497d0d8b3f76",
-        "checkedAt": "2026-09-18T20:34:27Z"
+        "checkedAt": "2026-09-18T20:34:27Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -406,7 +419,8 @@
         "statutoryTitle": "Secretary of the Navy",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5313&num=0&edition=prelim",
         "documentSha256": "5978491c31e39139944c452e8dd755928b42d37d5b7fbfbe03e1376ed54c7120",
-        "checkedAt": "2026-09-18T20:34:08Z"
+        "checkedAt": "2026-09-18T20:34:08Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -453,7 +467,8 @@
         "statutoryTitle": "Under Secretary of the Navy",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5314&num=0&edition=prelim",
         "documentSha256": "9fb06a64237cc4224921b2bec6b5666066b73241c148fbec39182a595aa8ae92",
-        "checkedAt": "2026-09-18T20:34:21Z"
+        "checkedAt": "2026-09-18T20:34:21Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -500,7 +515,8 @@
         "statutoryTitle": "Secretary of Defense",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5312&num=0&edition=prelim",
         "documentSha256": "211b3419d59cc091e45efeb3b43d6bfb6b1fa0ce27c63002a4b8b08ff21903d2",
-        "checkedAt": "2026-09-18T20:33:51Z"
+        "checkedAt": "2026-09-18T20:33:51Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -547,7 +563,8 @@
         "statutoryTitle": "Chief Financial Officer, Department of Homeland Security",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
         "documentSha256": "9f7b1249fa099a07f4e79f8b67048225d5a093fdab886895bcf2497d0d8b3f76",
-        "checkedAt": "2026-09-18T20:34:27Z"
+        "checkedAt": "2026-09-18T20:34:27Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -594,7 +611,8 @@
         "statutoryTitle": "Chief Information Officer, Department of Homeland Security",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
         "documentSha256": "9f7b1249fa099a07f4e79f8b67048225d5a093fdab886895bcf2497d0d8b3f76",
-        "checkedAt": "2026-09-18T20:34:27Z"
+        "checkedAt": "2026-09-18T20:34:27Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -641,7 +659,8 @@
         "statutoryTitle": "General Counsel, Department of Homeland Security",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
         "documentSha256": "9f7b1249fa099a07f4e79f8b67048225d5a093fdab886895bcf2497d0d8b3f76",
-        "checkedAt": "2026-09-18T20:34:27Z"
+        "checkedAt": "2026-09-18T20:34:27Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -688,7 +707,8 @@
         "statutoryTitle": "Deputy Administrator, Transportation Security Administration",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5314&num=0&edition=prelim",
         "documentSha256": "9fb06a64237cc4224921b2bec6b5666066b73241c148fbec39182a595aa8ae92",
-        "checkedAt": "2026-09-18T20:34:21Z"
+        "checkedAt": "2026-09-18T20:34:21Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -735,7 +755,8 @@
         "statutoryTitle": "Chief Financial Officer, Department of Commerce",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
         "documentSha256": "9f7b1249fa099a07f4e79f8b67048225d5a093fdab886895bcf2497d0d8b3f76",
-        "checkedAt": "2026-09-18T20:34:27Z"
+        "checkedAt": "2026-09-18T20:34:27Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -782,7 +803,8 @@
         "statutoryTitle": "Chief Information Officer, Department of Commerce",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
         "documentSha256": "9f7b1249fa099a07f4e79f8b67048225d5a093fdab886895bcf2497d0d8b3f76",
-        "checkedAt": "2026-09-18T20:34:27Z"
+        "checkedAt": "2026-09-18T20:34:27Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -829,7 +851,8 @@
         "statutoryTitle": "General Counsel of the Department of Commerce",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
         "documentSha256": "9f7b1249fa099a07f4e79f8b67048225d5a093fdab886895bcf2497d0d8b3f76",
-        "checkedAt": "2026-09-18T20:34:27Z"
+        "checkedAt": "2026-09-18T20:34:27Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -876,7 +899,8 @@
         "statutoryTitle": "Secretary of Commerce",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5312&num=0&edition=prelim",
         "documentSha256": "211b3419d59cc091e45efeb3b43d6bfb6b1fa0ce27c63002a4b8b08ff21903d2",
-        "checkedAt": "2026-09-18T20:33:51Z"
+        "checkedAt": "2026-09-18T20:33:51Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -923,7 +947,8 @@
         "statutoryTitle": "Chief Financial Officer, Department of Energy",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
         "documentSha256": "9f7b1249fa099a07f4e79f8b67048225d5a093fdab886895bcf2497d0d8b3f76",
-        "checkedAt": "2026-09-18T20:34:27Z"
+        "checkedAt": "2026-09-18T20:34:27Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -970,7 +995,8 @@
         "statutoryTitle": "Chief Information Officer, Department of Energy",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
         "documentSha256": "9f7b1249fa099a07f4e79f8b67048225d5a093fdab886895bcf2497d0d8b3f76",
-        "checkedAt": "2026-09-18T20:34:27Z"
+        "checkedAt": "2026-09-18T20:34:27Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -1017,7 +1043,8 @@
         "statutoryTitle": "Deputy Secretary of Energy",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5313&num=0&edition=prelim",
         "documentSha256": "5978491c31e39139944c452e8dd755928b42d37d5b7fbfbe03e1376ed54c7120",
-        "checkedAt": "2026-09-18T20:34:08Z"
+        "checkedAt": "2026-09-18T20:34:08Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -1064,7 +1091,8 @@
         "statutoryTitle": "General Counsel of the Department of Energy",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
         "documentSha256": "9f7b1249fa099a07f4e79f8b67048225d5a093fdab886895bcf2497d0d8b3f76",
-        "checkedAt": "2026-09-18T20:34:27Z"
+        "checkedAt": "2026-09-18T20:34:27Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -1111,7 +1139,8 @@
         "statutoryTitle": "Principal Deputy Administrator, National Nuclear Security Administration",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
         "documentSha256": "9f7b1249fa099a07f4e79f8b67048225d5a093fdab886895bcf2497d0d8b3f76",
-        "checkedAt": "2026-09-18T20:34:27Z"
+        "checkedAt": "2026-09-18T20:34:27Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -1158,7 +1187,8 @@
         "statutoryTitle": "Secretary of Energy",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5312&num=0&edition=prelim",
         "documentSha256": "211b3419d59cc091e45efeb3b43d6bfb6b1fa0ce27c63002a4b8b08ff21903d2",
-        "checkedAt": "2026-09-18T20:33:51Z"
+        "checkedAt": "2026-09-18T20:33:51Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -1205,7 +1235,8 @@
         "statutoryTitle": "Chief Financial Officer, Department of the Interior",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
         "documentSha256": "9f7b1249fa099a07f4e79f8b67048225d5a093fdab886895bcf2497d0d8b3f76",
-        "checkedAt": "2026-09-18T20:34:27Z"
+        "checkedAt": "2026-09-18T20:34:27Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -1252,7 +1283,8 @@
         "statutoryTitle": "Chief Information Officer, Department of the Interior",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
         "documentSha256": "9f7b1249fa099a07f4e79f8b67048225d5a093fdab886895bcf2497d0d8b3f76",
-        "checkedAt": "2026-09-18T20:34:27Z"
+        "checkedAt": "2026-09-18T20:34:27Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -1299,7 +1331,8 @@
         "statutoryTitle": "Deputy Secretary of the Interior",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5313&num=0&edition=prelim",
         "documentSha256": "5978491c31e39139944c452e8dd755928b42d37d5b7fbfbe03e1376ed54c7120",
-        "checkedAt": "2026-09-18T20:34:08Z"
+        "checkedAt": "2026-09-18T20:34:08Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -1346,7 +1379,8 @@
         "statutoryTitle": "Secretary of the Interior",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5312&num=0&edition=prelim",
         "documentSha256": "211b3419d59cc091e45efeb3b43d6bfb6b1fa0ce27c63002a4b8b08ff21903d2",
-        "checkedAt": "2026-09-18T20:33:51Z"
+        "checkedAt": "2026-09-18T20:33:51Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -1393,7 +1427,8 @@
         "statutoryTitle": "Chief Financial Officer, Department of Justice",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
         "documentSha256": "9f7b1249fa099a07f4e79f8b67048225d5a093fdab886895bcf2497d0d8b3f76",
-        "checkedAt": "2026-09-18T20:34:27Z"
+        "checkedAt": "2026-09-18T20:34:27Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -1440,7 +1475,8 @@
         "statutoryTitle": "Chief Information Officer, Department of Justice",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
         "documentSha256": "9f7b1249fa099a07f4e79f8b67048225d5a093fdab886895bcf2497d0d8b3f76",
-        "checkedAt": "2026-09-18T20:34:27Z"
+        "checkedAt": "2026-09-18T20:34:27Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -1487,7 +1523,8 @@
         "statutoryTitle": "Deputy Attorney General",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5313&num=0&edition=prelim",
         "documentSha256": "5978491c31e39139944c452e8dd755928b42d37d5b7fbfbe03e1376ed54c7120",
-        "checkedAt": "2026-09-18T20:34:08Z"
+        "checkedAt": "2026-09-18T20:34:08Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -1534,7 +1571,8 @@
         "statutoryTitle": "Attorney General",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5312&num=0&edition=prelim",
         "documentSha256": "211b3419d59cc091e45efeb3b43d6bfb6b1fa0ce27c63002a4b8b08ff21903d2",
-        "checkedAt": "2026-09-18T20:33:51Z"
+        "checkedAt": "2026-09-18T20:33:51Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -1581,7 +1619,8 @@
         "statutoryTitle": "Solicitor General of the United States",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5314&num=0&edition=prelim",
         "documentSha256": "9fb06a64237cc4224921b2bec6b5666066b73241c148fbec39182a595aa8ae92",
-        "checkedAt": "2026-09-18T20:34:21Z"
+        "checkedAt": "2026-09-18T20:34:21Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -1628,7 +1667,8 @@
         "statutoryTitle": "Chief Financial Officer, Department of Labor",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
         "documentSha256": "9f7b1249fa099a07f4e79f8b67048225d5a093fdab886895bcf2497d0d8b3f76",
-        "checkedAt": "2026-09-18T20:34:27Z"
+        "checkedAt": "2026-09-18T20:34:27Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -1675,7 +1715,8 @@
         "statutoryTitle": "Chief Information Officer, Department of Labor",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
         "documentSha256": "9f7b1249fa099a07f4e79f8b67048225d5a093fdab886895bcf2497d0d8b3f76",
-        "checkedAt": "2026-09-18T20:34:27Z"
+        "checkedAt": "2026-09-18T20:34:27Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -1722,7 +1763,8 @@
         "statutoryTitle": "Deputy Secretary of Labor",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5313&num=0&edition=prelim",
         "documentSha256": "5978491c31e39139944c452e8dd755928b42d37d5b7fbfbe03e1376ed54c7120",
-        "checkedAt": "2026-09-18T20:34:08Z"
+        "checkedAt": "2026-09-18T20:34:08Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -1769,7 +1811,8 @@
         "statutoryTitle": "Secretary of Labor",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5312&num=0&edition=prelim",
         "documentSha256": "211b3419d59cc091e45efeb3b43d6bfb6b1fa0ce27c63002a4b8b08ff21903d2",
-        "checkedAt": "2026-09-18T20:33:51Z"
+        "checkedAt": "2026-09-18T20:33:51Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -1816,7 +1859,8 @@
         "statutoryTitle": "Chief Financial Officer, Department of Transportation",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
         "documentSha256": "9f7b1249fa099a07f4e79f8b67048225d5a093fdab886895bcf2497d0d8b3f76",
-        "checkedAt": "2026-09-18T20:34:27Z"
+        "checkedAt": "2026-09-18T20:34:27Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -1863,7 +1907,8 @@
         "statutoryTitle": "Chief Information Officer, Department of Transportation",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
         "documentSha256": "9f7b1249fa099a07f4e79f8b67048225d5a093fdab886895bcf2497d0d8b3f76",
-        "checkedAt": "2026-09-18T20:34:27Z"
+        "checkedAt": "2026-09-18T20:34:27Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -1910,7 +1955,8 @@
         "statutoryTitle": "Deputy Secretary of Transportation",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5313&num=0&edition=prelim",
         "documentSha256": "5978491c31e39139944c452e8dd755928b42d37d5b7fbfbe03e1376ed54c7120",
-        "checkedAt": "2026-09-18T20:34:08Z"
+        "checkedAt": "2026-09-18T20:34:08Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -1957,7 +2003,8 @@
         "statutoryTitle": "Deputy Administrator, Federal Aviation Administration",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
         "documentSha256": "9f7b1249fa099a07f4e79f8b67048225d5a093fdab886895bcf2497d0d8b3f76",
-        "checkedAt": "2026-09-18T20:34:27Z"
+        "checkedAt": "2026-09-18T20:34:27Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -2004,7 +2051,8 @@
         "statutoryTitle": "General Counsel, Department of Transportation",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
         "documentSha256": "9f7b1249fa099a07f4e79f8b67048225d5a093fdab886895bcf2497d0d8b3f76",
-        "checkedAt": "2026-09-18T20:34:27Z"
+        "checkedAt": "2026-09-18T20:34:27Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -2051,7 +2099,8 @@
         "statutoryTitle": "Secretary of Transportation",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5312&num=0&edition=prelim",
         "documentSha256": "211b3419d59cc091e45efeb3b43d6bfb6b1fa0ce27c63002a4b8b08ff21903d2",
-        "checkedAt": "2026-09-18T20:33:51Z"
+        "checkedAt": "2026-09-18T20:33:51Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -2098,7 +2147,8 @@
         "statutoryTitle": "Chief Financial Officer, Department of Education",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
         "documentSha256": "9f7b1249fa099a07f4e79f8b67048225d5a093fdab886895bcf2497d0d8b3f76",
-        "checkedAt": "2026-09-18T20:34:27Z"
+        "checkedAt": "2026-09-18T20:34:27Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -2145,7 +2195,8 @@
         "statutoryTitle": "Chief Information Officer, Department of Education",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
         "documentSha256": "9f7b1249fa099a07f4e79f8b67048225d5a093fdab886895bcf2497d0d8b3f76",
-        "checkedAt": "2026-09-18T20:34:27Z"
+        "checkedAt": "2026-09-18T20:34:27Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -2192,7 +2243,8 @@
         "statutoryTitle": "Deputy Secretary of Education",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5313&num=0&edition=prelim",
         "documentSha256": "5978491c31e39139944c452e8dd755928b42d37d5b7fbfbe03e1376ed54c7120",
-        "checkedAt": "2026-09-18T20:34:08Z"
+        "checkedAt": "2026-09-18T20:34:08Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -2239,7 +2291,8 @@
         "statutoryTitle": "General Counsel, Department of Education",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
         "documentSha256": "9f7b1249fa099a07f4e79f8b67048225d5a093fdab886895bcf2497d0d8b3f76",
-        "checkedAt": "2026-09-18T20:34:27Z"
+        "checkedAt": "2026-09-18T20:34:27Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -2286,7 +2339,8 @@
         "statutoryTitle": "Secretary of Education",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5312&num=0&edition=prelim",
         "documentSha256": "211b3419d59cc091e45efeb3b43d6bfb6b1fa0ce27c63002a4b8b08ff21903d2",
-        "checkedAt": "2026-09-18T20:33:51Z"
+        "checkedAt": "2026-09-18T20:33:51Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -2333,7 +2387,8 @@
         "statutoryTitle": "Chief Financial Officer, Department of Health and Human Services",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
         "documentSha256": "9f7b1249fa099a07f4e79f8b67048225d5a093fdab886895bcf2497d0d8b3f76",
-        "checkedAt": "2026-09-18T20:34:27Z"
+        "checkedAt": "2026-09-18T20:34:27Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -2380,7 +2435,8 @@
         "statutoryTitle": "Chief Information Officer, Department of Health and Human Services",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
         "documentSha256": "9f7b1249fa099a07f4e79f8b67048225d5a093fdab886895bcf2497d0d8b3f76",
-        "checkedAt": "2026-09-18T20:34:27Z"
+        "checkedAt": "2026-09-18T20:34:27Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -2427,7 +2483,8 @@
         "statutoryTitle": "Deputy Secretary of Health and Human Services",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5313&num=0&edition=prelim",
         "documentSha256": "5978491c31e39139944c452e8dd755928b42d37d5b7fbfbe03e1376ed54c7120",
-        "checkedAt": "2026-09-18T20:34:08Z"
+        "checkedAt": "2026-09-18T20:34:08Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -2474,7 +2531,8 @@
         "statutoryTitle": "General Counsel of the Department of Health and Human Services",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
         "documentSha256": "9f7b1249fa099a07f4e79f8b67048225d5a093fdab886895bcf2497d0d8b3f76",
-        "checkedAt": "2026-09-18T20:34:27Z"
+        "checkedAt": "2026-09-18T20:34:27Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -2521,7 +2579,8 @@
         "statutoryTitle": "Secretary of Health and Human Services",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5312&num=0&edition=prelim",
         "documentSha256": "211b3419d59cc091e45efeb3b43d6bfb6b1fa0ce27c63002a4b8b08ff21903d2",
-        "checkedAt": "2026-09-18T20:33:51Z"
+        "checkedAt": "2026-09-18T20:33:51Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -2568,7 +2627,8 @@
         "statutoryTitle": "Chief Financial Officer, Department of Housing and Urban Development",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
         "documentSha256": "9f7b1249fa099a07f4e79f8b67048225d5a093fdab886895bcf2497d0d8b3f76",
-        "checkedAt": "2026-09-18T20:34:27Z"
+        "checkedAt": "2026-09-18T20:34:27Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -2615,7 +2675,8 @@
         "statutoryTitle": "Chief Information Officer, Department of Housing and Urban Development",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
         "documentSha256": "9f7b1249fa099a07f4e79f8b67048225d5a093fdab886895bcf2497d0d8b3f76",
-        "checkedAt": "2026-09-18T20:34:27Z"
+        "checkedAt": "2026-09-18T20:34:27Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -2662,7 +2723,8 @@
         "statutoryTitle": "Deputy Secretary of Housing and Urban Development",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5313&num=0&edition=prelim",
         "documentSha256": "5978491c31e39139944c452e8dd755928b42d37d5b7fbfbe03e1376ed54c7120",
-        "checkedAt": "2026-09-18T20:34:08Z"
+        "checkedAt": "2026-09-18T20:34:08Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -2709,7 +2771,8 @@
         "statutoryTitle": "General Counsel of the Department of Housing and Urban Development",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
         "documentSha256": "9f7b1249fa099a07f4e79f8b67048225d5a093fdab886895bcf2497d0d8b3f76",
-        "checkedAt": "2026-09-18T20:34:27Z"
+        "checkedAt": "2026-09-18T20:34:27Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -2756,7 +2819,8 @@
         "statutoryTitle": "Secretary of Housing and Urban Development",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5312&num=0&edition=prelim",
         "documentSha256": "211b3419d59cc091e45efeb3b43d6bfb6b1fa0ce27c63002a4b8b08ff21903d2",
-        "checkedAt": "2026-09-18T20:33:51Z"
+        "checkedAt": "2026-09-18T20:33:51Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -2803,7 +2867,8 @@
         "statutoryTitle": "Chief Financial Officer, Department of State",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
         "documentSha256": "9f7b1249fa099a07f4e79f8b67048225d5a093fdab886895bcf2497d0d8b3f76",
-        "checkedAt": "2026-09-18T20:34:27Z"
+        "checkedAt": "2026-09-18T20:34:27Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -2850,7 +2915,8 @@
         "statutoryTitle": "Chief Information Officer, Department of State",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
         "documentSha256": "9f7b1249fa099a07f4e79f8b67048225d5a093fdab886895bcf2497d0d8b3f76",
-        "checkedAt": "2026-09-18T20:34:27Z"
+        "checkedAt": "2026-09-18T20:34:27Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -2897,7 +2963,8 @@
         "statutoryTitle": "Deputy Secretary of State",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5313&num=0&edition=prelim",
         "documentSha256": "5978491c31e39139944c452e8dd755928b42d37d5b7fbfbe03e1376ed54c7120",
-        "checkedAt": "2026-09-18T20:34:08Z"
+        "checkedAt": "2026-09-18T20:34:08Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -2944,7 +3011,8 @@
         "statutoryTitle": "Secretary of State",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5312&num=0&edition=prelim",
         "documentSha256": "211b3419d59cc091e45efeb3b43d6bfb6b1fa0ce27c63002a4b8b08ff21903d2",
-        "checkedAt": "2026-09-18T20:33:51Z"
+        "checkedAt": "2026-09-18T20:33:51Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -2991,7 +3059,8 @@
         "statutoryTitle": "Chief Financial Officer, Department of the Treasury",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
         "documentSha256": "9f7b1249fa099a07f4e79f8b67048225d5a093fdab886895bcf2497d0d8b3f76",
-        "checkedAt": "2026-09-18T20:34:27Z"
+        "checkedAt": "2026-09-18T20:34:27Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -3038,7 +3107,8 @@
         "statutoryTitle": "Chief Information Officer, Department of the Treasury",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
         "documentSha256": "9f7b1249fa099a07f4e79f8b67048225d5a093fdab886895bcf2497d0d8b3f76",
-        "checkedAt": "2026-09-18T20:34:27Z"
+        "checkedAt": "2026-09-18T20:34:27Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -3085,7 +3155,8 @@
         "statutoryTitle": "Deputy Secretary of the Treasury",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5313&num=0&edition=prelim",
         "documentSha256": "5978491c31e39139944c452e8dd755928b42d37d5b7fbfbe03e1376ed54c7120",
-        "checkedAt": "2026-09-18T20:34:08Z"
+        "checkedAt": "2026-09-18T20:34:08Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -3132,7 +3203,8 @@
         "statutoryTitle": "General Counsel of the Department of the Treasury",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
         "documentSha256": "9f7b1249fa099a07f4e79f8b67048225d5a093fdab886895bcf2497d0d8b3f76",
-        "checkedAt": "2026-09-18T20:34:27Z"
+        "checkedAt": "2026-09-18T20:34:27Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -3179,7 +3251,8 @@
         "statutoryTitle": "Comptroller of the Currency",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5314&num=0&edition=prelim",
         "documentSha256": "9fb06a64237cc4224921b2bec6b5666066b73241c148fbec39182a595aa8ae92",
-        "checkedAt": "2026-09-18T20:34:21Z"
+        "checkedAt": "2026-09-18T20:34:21Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -3226,7 +3299,8 @@
         "statutoryTitle": "Secretary of the Treasury",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5312&num=0&edition=prelim",
         "documentSha256": "211b3419d59cc091e45efeb3b43d6bfb6b1fa0ce27c63002a4b8b08ff21903d2",
-        "checkedAt": "2026-09-18T20:33:51Z"
+        "checkedAt": "2026-09-18T20:33:51Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -3273,7 +3347,8 @@
         "statutoryTitle": "Chief Financial Officer, Department of Agriculture",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
         "documentSha256": "9f7b1249fa099a07f4e79f8b67048225d5a093fdab886895bcf2497d0d8b3f76",
-        "checkedAt": "2026-09-18T20:34:27Z"
+        "checkedAt": "2026-09-18T20:34:27Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -3320,7 +3395,8 @@
         "statutoryTitle": "Chief Information Officer, Department of Agriculture",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
         "documentSha256": "9f7b1249fa099a07f4e79f8b67048225d5a093fdab886895bcf2497d0d8b3f76",
-        "checkedAt": "2026-09-18T20:34:27Z"
+        "checkedAt": "2026-09-18T20:34:27Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -3367,7 +3443,8 @@
         "statutoryTitle": "Deputy Secretary of Agriculture",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5313&num=0&edition=prelim",
         "documentSha256": "5978491c31e39139944c452e8dd755928b42d37d5b7fbfbe03e1376ed54c7120",
-        "checkedAt": "2026-09-18T20:34:08Z"
+        "checkedAt": "2026-09-18T20:34:08Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -3414,7 +3491,8 @@
         "statutoryTitle": "General Counsel of the Department of Agriculture",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
         "documentSha256": "9f7b1249fa099a07f4e79f8b67048225d5a093fdab886895bcf2497d0d8b3f76",
-        "checkedAt": "2026-09-18T20:34:27Z"
+        "checkedAt": "2026-09-18T20:34:27Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -3461,7 +3539,8 @@
         "statutoryTitle": "Secretary of Agriculture",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5312&num=0&edition=prelim",
         "documentSha256": "211b3419d59cc091e45efeb3b43d6bfb6b1fa0ce27c63002a4b8b08ff21903d2",
-        "checkedAt": "2026-09-18T20:33:51Z"
+        "checkedAt": "2026-09-18T20:33:51Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -3508,7 +3587,8 @@
         "statutoryTitle": "Chairman, Board of Veterans' Appeals",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
         "documentSha256": "9f7b1249fa099a07f4e79f8b67048225d5a093fdab886895bcf2497d0d8b3f76",
-        "checkedAt": "2026-09-18T20:34:27Z"
+        "checkedAt": "2026-09-18T20:34:27Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -3555,7 +3635,8 @@
         "statutoryTitle": "Chief Financial Officer, Department of Veterans Affairs",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
         "documentSha256": "9f7b1249fa099a07f4e79f8b67048225d5a093fdab886895bcf2497d0d8b3f76",
-        "checkedAt": "2026-09-18T20:34:27Z"
+        "checkedAt": "2026-09-18T20:34:27Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -3602,7 +3683,8 @@
         "statutoryTitle": "Chief Information Officer, Department of Veterans Affairs",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
         "documentSha256": "9f7b1249fa099a07f4e79f8b67048225d5a093fdab886895bcf2497d0d8b3f76",
-        "checkedAt": "2026-09-18T20:34:27Z"
+        "checkedAt": "2026-09-18T20:34:27Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -3649,7 +3731,8 @@
         "statutoryTitle": "Deputy Secretary of Veterans Affairs",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5313&num=0&edition=prelim",
         "documentSha256": "5978491c31e39139944c452e8dd755928b42d37d5b7fbfbe03e1376ed54c7120",
-        "checkedAt": "2026-09-18T20:34:08Z"
+        "checkedAt": "2026-09-18T20:34:08Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -3696,7 +3779,8 @@
         "statutoryTitle": "General Counsel, Department of Veterans Affairs",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
         "documentSha256": "9f7b1249fa099a07f4e79f8b67048225d5a093fdab886895bcf2497d0d8b3f76",
-        "checkedAt": "2026-09-18T20:34:27Z"
+        "checkedAt": "2026-09-18T20:34:27Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -3743,7 +3827,8 @@
         "statutoryTitle": "Secretary of Veterans Affairs",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5312&num=0&edition=prelim",
         "documentSha256": "211b3419d59cc091e45efeb3b43d6bfb6b1fa0ce27c63002a4b8b08ff21903d2",
-        "checkedAt": "2026-09-18T20:33:51Z"
+        "checkedAt": "2026-09-18T20:33:51Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -3790,7 +3875,8 @@
         "statutoryTitle": "Deputy Director for Management, Office of Management and Budget",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5313&num=0&edition=prelim",
         "documentSha256": "5978491c31e39139944c452e8dd755928b42d37d5b7fbfbe03e1376ed54c7120",
-        "checkedAt": "2026-09-18T20:34:08Z"
+        "checkedAt": "2026-09-18T20:34:08Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -3837,7 +3923,8 @@
         "statutoryTitle": "Chief Agricultural Negotiator, Office of the United States Trade Representative",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5314&num=0&edition=prelim",
         "documentSha256": "9fb06a64237cc4224921b2bec6b5666066b73241c148fbec39182a595aa8ae92",
-        "checkedAt": "2026-09-18T20:34:21Z"
+        "checkedAt": "2026-09-18T20:34:21Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -3884,7 +3971,8 @@
         "statutoryTitle": "United States Trade Representative",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5312&num=0&edition=prelim",
         "documentSha256": "211b3419d59cc091e45efeb3b43d6bfb6b1fa0ce27c63002a4b8b08ff21903d2",
-        "checkedAt": "2026-09-18T20:33:51Z"
+        "checkedAt": "2026-09-18T20:33:51Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -3931,7 +4019,8 @@
         "statutoryTitle": "General Counsel of the Central Intelligence Agency",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
         "documentSha256": "9f7b1249fa099a07f4e79f8b67048225d5a093fdab886895bcf2497d0d8b3f76",
-        "checkedAt": "2026-09-18T20:34:27Z"
+        "checkedAt": "2026-09-18T20:34:27Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -3978,7 +4067,8 @@
         "statutoryTitle": "Chief Financial Officer, Environmental Protection Agency",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
         "documentSha256": "9f7b1249fa099a07f4e79f8b67048225d5a093fdab886895bcf2497d0d8b3f76",
-        "checkedAt": "2026-09-18T20:34:27Z"
+        "checkedAt": "2026-09-18T20:34:27Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -4025,7 +4115,8 @@
         "statutoryTitle": "Chief Information Officer, Environmental Protection Agency",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
         "documentSha256": "9f7b1249fa099a07f4e79f8b67048225d5a093fdab886895bcf2497d0d8b3f76",
-        "checkedAt": "2026-09-18T20:34:27Z"
+        "checkedAt": "2026-09-18T20:34:27Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -4072,7 +4163,8 @@
         "statutoryTitle": "Deputy Administrator of the Environmental Protection Agency",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5314&num=0&edition=prelim",
         "documentSha256": "9fb06a64237cc4224921b2bec6b5666066b73241c148fbec39182a595aa8ae92",
-        "checkedAt": "2026-09-18T20:34:21Z"
+        "checkedAt": "2026-09-18T20:34:21Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -4119,7 +4211,8 @@
         "statutoryTitle": "General Counsel of the Equal Employment Opportunity Commission",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5316&num=0&edition=prelim",
         "documentSha256": "9ab5ec55d48c11958802ac25731680772d2189fc2bdd9b4ae17dfd300ca7a49e",
-        "checkedAt": "2026-09-18T20:34:37Z"
+        "checkedAt": "2026-09-18T20:34:37Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -4166,7 +4259,8 @@
         "statutoryTitle": "General Counsel of the National Labor Relations Board",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
         "documentSha256": "9f7b1249fa099a07f4e79f8b67048225d5a093fdab886895bcf2497d0d8b3f76",
-        "checkedAt": "2026-09-18T20:34:27Z"
+        "checkedAt": "2026-09-18T20:34:27Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -4213,7 +4307,8 @@
         "statutoryTitle": "Associate Administrator of the National Aeronautics and Space Administration",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
         "documentSha256": "9f7b1249fa099a07f4e79f8b67048225d5a093fdab886895bcf2497d0d8b3f76",
-        "checkedAt": "2026-09-18T20:34:27Z"
+        "checkedAt": "2026-09-18T20:34:27Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -4260,7 +4355,8 @@
         "statutoryTitle": "Chief Financial Officer, National Aeronautics and Space Administration",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
         "documentSha256": "9f7b1249fa099a07f4e79f8b67048225d5a093fdab886895bcf2497d0d8b3f76",
-        "checkedAt": "2026-09-18T20:34:27Z"
+        "checkedAt": "2026-09-18T20:34:27Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -4307,7 +4403,8 @@
         "statutoryTitle": "Chief Information Officer, National Aeronautics and Space Administration",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
         "documentSha256": "9f7b1249fa099a07f4e79f8b67048225d5a093fdab886895bcf2497d0d8b3f76",
-        "checkedAt": "2026-09-18T20:34:27Z"
+        "checkedAt": "2026-09-18T20:34:27Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -4354,7 +4451,8 @@
         "statutoryTitle": "Deputy Administrator of the National Aeronautics and Space Administration",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5314&num=0&edition=prelim",
         "documentSha256": "9fb06a64237cc4224921b2bec6b5666066b73241c148fbec39182a595aa8ae92",
-        "checkedAt": "2026-09-18T20:34:21Z"
+        "checkedAt": "2026-09-18T20:34:21Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -4401,7 +4499,8 @@
         "statutoryTitle": "General Counsel of the National Aeronautics and Space Administration",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5316&num=0&edition=prelim",
         "documentSha256": "9ab5ec55d48c11958802ac25731680772d2189fc2bdd9b4ae17dfd300ca7a49e",
-        "checkedAt": "2026-09-18T20:34:37Z"
+        "checkedAt": "2026-09-18T20:34:37Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -4448,7 +4547,8 @@
         "statutoryTitle": "Chief Information Officer, National Science Foundation",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
         "documentSha256": "9f7b1249fa099a07f4e79f8b67048225d5a093fdab886895bcf2497d0d8b3f76",
-        "checkedAt": "2026-09-18T20:34:27Z"
+        "checkedAt": "2026-09-18T20:34:27Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -4495,7 +4595,8 @@
         "statutoryTitle": "Chief Information Officer, Office of Personnel Management",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
         "documentSha256": "9f7b1249fa099a07f4e79f8b67048225d5a093fdab886895bcf2497d0d8b3f76",
-        "checkedAt": "2026-09-18T20:34:27Z"
+        "checkedAt": "2026-09-18T20:34:27Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -4542,7 +4643,8 @@
         "statutoryTitle": "Deputy Director of the Office of Personnel Management",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5314&num=0&edition=prelim",
         "documentSha256": "9fb06a64237cc4224921b2bec6b5666066b73241c148fbec39182a595aa8ae92",
-        "checkedAt": "2026-09-18T20:34:21Z"
+        "checkedAt": "2026-09-18T20:34:21Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -4589,11 +4691,180 @@
         "statutoryTitle": "Deputy Administrator of the Small Business Administration",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
         "documentSha256": "9f7b1249fa099a07f4e79f8b67048225d5a093fdab886895bcf2497d0d8b3f76",
-        "checkedAt": "2026-09-18T20:34:27Z"
+        "checkedAt": "2026-09-18T20:34:27Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
       "rateText": "$197,200",
+      "tableFootnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+    },
+    "exec-regulatory-fed-chair-board-of-governors": {
+      "nodeId": "exec-regulatory-fed-chair-board-of-governors",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "basic_pay",
+      "amount": 253100.0,
+      "amountRaw": "253,100",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "Level I $253,100",
+      "quote": "Level I $253,100",
+      "fiscalYear": 2026,
+      "periodCoverage": "annual_rate",
+      "periodAsOf": "2026-01-01",
+      "amountScope": "Level I",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "opm_pay_table",
+      "sourceUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+      "retrievedAt": "2026-09-11T03:05:36Z",
+      "locator": {
+        "table": "Salary Table No. 2026-EX",
+        "row": "Level I",
+        "column": "Rate"
+      },
+      "levelClaim": {
+        "source": "us_code_executive_schedule",
+        "method": "level_assigned_by_5_usc_5312_5316_to_the_office_a_second_statute_identifies_this_post_as",
+        "scopedOffice": null,
+        "scopedOrganisation": null,
+        "scopedOrganisationId": null,
+        "payLevel": "I",
+        "citation": "5 U.S.C. §5312",
+        "section": "5312",
+        "statutoryTitle": "Chairman, Board of Governors of the Federal Reserve System",
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5312&num=0&edition=prelim",
+        "documentSha256": "211b3419d59cc091e45efeb3b43d6bfb6b1fa0ce27c63002a4b8b08ff21903d2",
+        "checkedAt": "2026-09-18T20:33:51Z",
+        "identification": {
+          "nodeName": "Chair, Board of Governors",
+          "basis": "the same office: 12 U.S.C. 242 designates one member of the Board to serve as Chairman of the Board, and 5 U.S.C. 5312 places that Chairman at Level I; the graph spells the title without gender and without the System's name",
+          "basisCitation": "12 U.S.C. 242",
+          "basisQuote": "1 shall be designated by the President, by and with the advice and consent of the Senate, to serve as Chairman of the Board for a term of 4 years",
+          "basisUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title12-section242&num=0&edition=prelim",
+          "basisSha256": "06efc50c578eaf135cc5b434e93127688f969a554bc142afb87c9144ee4efa8e",
+          "basisCheckedAt": "2026-09-23T19:48:44Z"
+        }
+      },
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "rateText": "$253,100",
+      "tableFootnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+    },
+    "exec-regulatory-fed-vice-chair-board-of-governors": {
+      "nodeId": "exec-regulatory-fed-vice-chair-board-of-governors",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "basic_pay",
+      "amount": 228000.0,
+      "amountRaw": "228,000",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "Level II $228,000",
+      "quote": "Level II $228,000",
+      "fiscalYear": 2026,
+      "periodCoverage": "annual_rate",
+      "periodAsOf": "2026-01-01",
+      "amountScope": "Level II",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "opm_pay_table",
+      "sourceUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+      "retrievedAt": "2026-09-11T03:05:36Z",
+      "locator": {
+        "table": "Salary Table No. 2026-EX",
+        "row": "Level II",
+        "column": "Rate"
+      },
+      "levelClaim": {
+        "source": "us_code_executive_schedule",
+        "method": "level_assigned_by_5_usc_5312_5316_to_the_office_a_second_statute_identifies_this_post_as",
+        "scopedOffice": null,
+        "scopedOrganisation": null,
+        "scopedOrganisationId": null,
+        "payLevel": "II",
+        "citation": "5 U.S.C. §5313",
+        "section": "5313",
+        "statutoryTitle": "Members, Board of Governors of the Federal Reserve System",
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5313&num=0&edition=prelim",
+        "documentSha256": "5978491c31e39139944c452e8dd755928b42d37d5b7fbfbe03e1376ed54c7120",
+        "checkedAt": "2026-09-18T20:34:08Z",
+        "identification": {
+          "nodeName": "Vice Chair, Board of Governors",
+          "basis": "a Vice Chairman is a member of the Board: 12 U.S.C. 242 designates the two Vice Chairmen from among the members, 5 U.S.C. 5313 places Members of the Board at Level II, and only the Chairman is placed separately (5312); 5314-5316 print no Federal Reserve entry",
+          "basisCitation": "12 U.S.C. 242",
+          "basisQuote": "2 shall be designated by the President, by and with the advice and consent of the Senate, to serve as Vice Chairmen of the Board",
+          "basisUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title12-section242&num=0&edition=prelim",
+          "basisSha256": "06efc50c578eaf135cc5b434e93127688f969a554bc142afb87c9144ee4efa8e",
+          "basisCheckedAt": "2026-09-23T19:48:44Z"
+        }
+      },
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "rateText": "$228,000",
+      "tableFootnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+    },
+    "exec-regulatory-fed-vice-chair-for-supervision": {
+      "nodeId": "exec-regulatory-fed-vice-chair-for-supervision",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "basic_pay",
+      "amount": 228000.0,
+      "amountRaw": "228,000",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "Level II $228,000",
+      "quote": "Level II $228,000",
+      "fiscalYear": 2026,
+      "periodCoverage": "annual_rate",
+      "periodAsOf": "2026-01-01",
+      "amountScope": "Level II",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "opm_pay_table",
+      "sourceUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+      "retrievedAt": "2026-09-11T03:05:36Z",
+      "locator": {
+        "table": "Salary Table No. 2026-EX",
+        "row": "Level II",
+        "column": "Rate"
+      },
+      "levelClaim": {
+        "source": "us_code_executive_schedule",
+        "method": "level_assigned_by_5_usc_5312_5316_to_the_office_a_second_statute_identifies_this_post_as",
+        "scopedOffice": null,
+        "scopedOrganisation": null,
+        "scopedOrganisationId": null,
+        "payLevel": "II",
+        "citation": "5 U.S.C. §5313",
+        "section": "5313",
+        "statutoryTitle": "Members, Board of Governors of the Federal Reserve System",
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5313&num=0&edition=prelim",
+        "documentSha256": "5978491c31e39139944c452e8dd755928b42d37d5b7fbfbe03e1376ed54c7120",
+        "checkedAt": "2026-09-18T20:34:08Z",
+        "identification": {
+          "nodeName": "Vice Chair for Supervision",
+          "basis": "the Vice Chairman for Supervision is one of the two Vice Chairmen 12 U.S.C. 242 designates from among the members, and 5 U.S.C. 5313 places Members of the Board at Level II",
+          "basisCitation": "12 U.S.C. 242",
+          "basisQuote": "1 of whom shall be designated Vice Chairman for Supervision",
+          "basisUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title12-section242&num=0&edition=prelim",
+          "basisSha256": "06efc50c578eaf135cc5b434e93127688f969a554bc142afb87c9144ee4efa8e",
+          "basisCheckedAt": "2026-09-23T19:48:44Z"
+        }
+      },
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "rateText": "$228,000",
       "tableFootnotes": [
         "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
       ],
@@ -4636,7 +4907,8 @@
         "statutoryTitle": "Executive Director for Operations, Nuclear Regulatory Commission",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
         "documentSha256": "9f7b1249fa099a07f4e79f8b67048225d5a093fdab886895bcf2497d0d8b3f76",
-        "checkedAt": "2026-09-18T20:34:27Z"
+        "checkedAt": "2026-09-18T20:34:27Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
@@ -4683,7 +4955,8 @@
         "statutoryTitle": "General Counsel of the Nuclear Regulatory Commission",
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5316&num=0&edition=prelim",
         "documentSha256": "9ab5ec55d48c11958802ac25731680772d2189fc2bdd9b4ae17dfd300ca7a49e",
-        "checkedAt": "2026-09-18T20:34:37Z"
+        "checkedAt": "2026-09-18T20:34:37Z",
+        "identification": null
       },
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",

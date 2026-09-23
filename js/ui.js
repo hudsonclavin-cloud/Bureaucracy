@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20260923c";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260923c";
+import { createGovernmentGraph } from "./graph.js?v=20260923d";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260923d";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -1045,6 +1045,7 @@ function renderTierPay(data, add) {
   } else {
     add(` This post is matched to that title by its own name and the parent it sits under, not by the schedule naming this node; the schedule names the title only.`);
   }
+  add(holdersSentence(pay));
   add(payDocumentsSentence(pay));
   if (pay.quote) add(` The schedule's own words: "${String(pay.quote).trim()}"`);
 }
@@ -1143,7 +1144,18 @@ function renderSchedulePay(data) {
   if (pay.scopedOffice && pay.scopedOrganisation) {
     add(` The Code writes that as one title; this graph splits it, so the figure was matched to "${pay.scopedOffice}" as the post of that name directly under ${pay.scopedOrganisation} — the organisation is half of what identifies it, because that title is not unique in this graph.`);
   }
-  add(" Two documents: the statute sets the level and the table sets the rate. Current law names the office, so this does not depend on who holds it — but it is a statutory rate of basic pay, not what the holder receives: it excludes benefits, any freeze the table notes below, and it is not a share of federal outlays, which is what every other figure in this graph means.");
+  // A reviewed identification: the Code's title is not this node's name and
+  // no matcher could join them, so a second statute says why they are one
+  // office. The panel prints the basis and the sentence it rests on, because
+  // "Members, Board of Governors" beside a node called "Vice Chair for
+  // Supervision" is otherwise a figure with no visible reason.
+  const identification = pay.identification && typeof pay.identification === "object" ? pay.identification : null;
+  if (identification) {
+    add(` That title is not this node's name, and no name match joined them: this is a reviewed identification — ${identification.basis || "recorded without a stated basis"}. ${identification.basisCitation || "The basis statute"} prints "${identification.basisQuote || ""}" in its operative text${identification.basisCheckedAt ? ` (read ${formatFetchDate(identification.basisCheckedAt)})` : ""}, and it is re-checked on every build.`);
+    add(" Three documents: the basis statute says which office this post is, the Executive Schedule sets that office's level, and the table sets the rate. Current law names the office, so this does not depend on who holds it — but it is a statutory rate of basic pay, not what the holder receives: it excludes benefits, any freeze the table notes below, and it is not a share of federal outlays, which is what every other figure in this graph means.");
+  } else {
+    add(" Two documents: the statute sets the level and the table sets the rate. Current law names the office, so this does not depend on who holds it — but it is a statutory rate of basic pay, not what the holder receives: it excludes benefits, any freeze the table notes below, and it is not a share of federal outlays, which is what every other figure in this graph means.");
+  }
   // Two nodes carry BOTH this block and the archive-derived one above, and
   // both agree. Printed as two silent paragraphs they read as two separate
   // figures; saying it is the same level reached twice is what they are.
@@ -1187,6 +1199,7 @@ function renderStatutoryPay(data) {
     : null;
   add(`${pay.sourceLabel || "A primary official source"}${on ? ` (checked ${on})` : ""} states that ${pay.amountScope || "this tier"} is paid ${printed}${pay.year ? ` for ${pay.year}` : ""}.`);
   add(" That names a tier or a group of roles, not this specific post by name, so it is one source's own account of what the tier pays — not a second, independent confirmation, and not this unit's cost: basic pay excludes benefits and is not a share of federal outlays.");
+  add(holdersSentence(pay));
   add(payDocumentsSentence(pay));
   const quote = String(pay.quote || "").trim();
   if (quote) add(` The source's own words: "${quote}"`);
@@ -1237,6 +1250,7 @@ function renderDerivedPay(data) {
 
   add(`DERIVED PAY — no single document states this figure. ${printed}${pay.year ? ` for ${pay.year}` : ""}.`);
   add(` ${pay.statute || "A statutory parity provision"} states that every judge of ${pay.court || "this court"} is paid at the rate of ${pay.amountScope || "another court's judges"}; the U.S. Courts' Judicial Compensation table states what that tier pays. The figure is the join of the two.`);
+  add(holdersSentence(pay));
   add(payDocumentsSentence(pay));
   for (const document of documents) {
     if (!document || typeof document !== "object") continue;
@@ -1252,6 +1266,25 @@ function renderDerivedPay(data) {
 // same "%". `documentsStatingTheFigure` rides beside it because on one field
 // it is ZERO — a derived rate's two documents between them imply a number
 // neither prints — and a bare percentage would hide exactly that.
+// A pay figure on a node that stands for several posts. The sweep keeps an
+// office-rate claim on such a node -- a statutory tier rate, a parity-derived
+// rate, a Title 38 band -- and stamps `holders` from the node's own stated
+// multiplicity, because the figure is the tier's and holds for each holder
+// alike. This sentence is what stops it reading as one person's pay or as the
+// group's combined pay. A roster figure carries `holders.uniformRate` only
+// when the report listed every holder at one identical rate.
+function holdersSentence(block) {
+  const holders = block && typeof block === "object" ? block.holders : null;
+  if (!holders || typeof holders !== "object") return "";
+  const text = String(holders.text || "").trim();
+  const count = Number.isInteger(holders.count) ? holders.count : null;
+  const who = count !== null ? `${count} posts` : text ? `several posts (${text})` : "several posts";
+  if (holders.uniformRate === true) {
+    return ` This node stands for ${who}, and the report lists every one of them at this same rate: the figure is each listed person's pay, not one person's and not the group's combined pay.`;
+  }
+  return ` This node stands for ${who}. The figure is the rate the source states for the office or tier and applies to each holder alike; it is not one person's pay and not the group's combined pay.`;
+}
+
 function payDocumentsSentence(block) {
   const verification = block && typeof block === "object" ? block.verification : null;
   if (!verification || typeof verification !== "object") return "";
@@ -1266,7 +1299,7 @@ function payDocumentsSentence(block) {
           ? "it states the figure itself"
           : "all of them state the figure itself"
         : `${stating} of them states the figure itself`;
-  return ` ${count} official document${count === 1 ? "" : "s"} verify this — ${Number(verification.percent || 0)}% on this project's own source scale (0.4 for the first, +0.3 for an official site, +0.1 each further one), and ${states}. That measures how much official documentation the figure rests on, not the chance that it is right.`;
+  return ` ${count} official document${count === 1 ? " verifies" : "s verify"} this — ${Number(verification.percent || 0)}% on this project's own source scale (0.4 for the first, +0.3 for an official site, +0.1 each further one), and ${states}. That measures how much official documentation the figure rests on, not the chance that it is right.`;
 }
 
 function renderReportedPay(data) {
@@ -1297,14 +1330,17 @@ function renderReportedPay(data) {
   // one title at different salaries.
   add(
     `${pay.sourceLabel || "The White House Office's own annual report to Congress"}` +
-      `${on ? ` (checked ${on})` : ""} lists one person under "${pay.reportedTitle || "this title"}"` +
+      `${on ? ` (checked ${on})` : ""} lists ${pay.holders && pay.holders.uniformRate === true && Number.isInteger(pay.holders.count) ? `${pay.holders.count} people` : "one person"} under "${pay.reportedTitle || "this title"}"` +
       `${pay.asOf ? `, as of ${pay.asOf}` : ""}, paid ${printed}${pay.payBasis ? ` ${String(pay.payBasis).toLowerCase()}` : ""}.`,
   );
-  add(" That is what the one person listed under this title is paid, not what the post pays whoever holds it: the report states each individual's own rate, and two people can share a title at different salaries.");
+  add(pay.holders && pay.holders.uniformRate === true
+    ? " That is what each person listed under this title is paid — the report states each individual's own rate, and here every one of them is the same figure — not what the post pays whoever holds it."
+    : " That is what the one person listed under this title is paid, not what the post pays whoever holds it: the report states each individual's own rate, and two people can share a title at different salaries.");
   if (pay.titleFolded) {
     add(" The report spells the title with its White House rank in front; that prefix is set aside to match this unit.");
   }
   add(" It is not this unit's cost — basic pay excludes benefits and is not a share of federal outlays — and it is not evidence that this post exists as the graph draws it.");
+  add(holdersSentence(pay));
   add(payDocumentsSentence(pay));
   const quote = String(pay.quote || "").trim();
   if (quote) add(` The report's own row: "${quote}"`);
@@ -2005,15 +2041,54 @@ function renderOriginTrace(nodeObj) {
   dom.originWrap.style.display = "block";
   dom.originList.replaceChildren();
 
-  // The root-to-node path is already the breadcrumb below the title, in the
-  // same order, each step also clickable — so this does not repeat it as a
-  // second list. What this button adds beyond the breadcrumb is the glowing
-  // path drawn through the 3D scene itself (see graph.js's pathGlowPool);
-  // this line only confirms that is now on.
+  // The full root-to-node path, every step by its whole name, each row a
+  // real button. This list was once removed as a duplicate of the breadcrumb;
+  // the owner asked for it back (2026-09-23), and the breadcrumb is not the
+  // same thing: it truncates any name past 28 characters, so on a deep post
+  // ("Chief — Environmental Management" under a VISN under the VHA) the
+  // breadcrumb shows six ellipses and this list shows six names. The glowing
+  // path through the 3D scene (graph.js's pathGlowPool) is what the button
+  // also switches on, and the line beneath the list says so.
+  const fragment = document.createDocumentFragment();
+  originTrace.forEach((item, index) => {
+    const row = document.createElement("div");
+    row.style.display = "flex";
+    row.style.alignItems = "flex-start";
+    row.style.gap = "8px";
+    row.style.color = item.data.color || "#d4c4a1";
+    row.style.paddingLeft = `${index * 10}px`;
+    row.style.lineHeight = "1.4";
+
+    const marker = document.createElement("span");
+    marker.textContent = index === 0 ? "•" : "→";
+    marker.style.color = "rgba(220, 210, 180, 0.75)";
+    marker.style.flex = "0 0 auto";
+    row.appendChild(marker);
+
+    const label = document.createElement("span");
+    label.textContent = item.data.name;
+    row.appendChild(label);
+
+    if (index === originTrace.length - 1) {
+      const here = document.createElement("span");
+      here.textContent = "(this node)";
+      here.style.color = "#9a8a6a";
+      here.style.fontSize = "9px";
+      here.style.marginLeft = "4px";
+      row.appendChild(here);
+    }
+
+    makeInteractiveRow(row, `Go to ${item.data.name}`, () => state.graph.setSelectedNode(item));
+    fragment.appendChild(row);
+  });
+  dom.originList.appendChild(fragment);
+
   const confirmation = document.createElement("div");
   confirmation.style.color = "#9a8a6a";
+  confirmation.style.fontSize = "9px";
   confirmation.style.lineHeight = "1.5";
-  confirmation.textContent = `Path from the root highlighted in the scene above (${originTrace.length} step${originTrace.length === 1 ? "" : "s"} — see the breadcrumb for the names).`;
+  confirmation.style.marginTop = "4px";
+  confirmation.textContent = `${originTrace.length} step${originTrace.length === 1 ? "" : "s"} from the root; the same path is highlighted in the scene above.`;
   dom.originList.appendChild(confirmation);
 
   setText(dom.btnTraceOrigin, "Hide Origin");

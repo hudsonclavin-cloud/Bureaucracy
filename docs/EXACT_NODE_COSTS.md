@@ -36,26 +36,41 @@ unverified`. The estimates remain in `graph.json` — the cascade's arithmetic
 and the gate's child-sum checks are built on them — so a consumer of the
 JSON must read `cost_status` and not `resolved_total_amount` alone.
 
-The one exception is a real salary. **461** position nodes carry a pay claim an
-official source states — 166 from the White House Office roster, 99 from the
-Executive Schedule as 5 U.S.C. §§5312–5316 sets it, 88 the rate OPM's current
-PLUM export prints for the one row under the title, 72 a Title 38 tier BAND
-rather than a rate, 31 from a listing's level joined to OPM's table, 22
-statutory, 18 a base-pay RANGE, and **4 a figure no single document states**.
-A node may carry more than one, so the per-source figures sum past 461. Each
-shows in place of the withheld estimate, under its own heading rather than
-COST, with the panel saying it is compensation for one post and not what the
-unit costs.
+The one exception is a real salary. **492** position nodes carry a pay claim an
+official source states — 188 from the White House Office roster (22 of them
+titles the roster lists N times at one rate, published for each holder), 102
+from the Executive Schedule as 5 U.S.C. §§5312–5316 sets it (3 of them through
+a reviewed identification 12 U.S.C. 242 backs, resting on three documents), 88
+the rate OPM's current PLUM export prints for the one row under the title, 72 a
+Title 38 tier BAND rather than a rate, 31 from a listing's level joined to
+OPM's table, 24 statutory, 18 a base-pay RANGE, and **8 a figure no single
+document states** (four Article I chief judges and, since the multi-post rule
+became per field on 2026-09-23, their four benches — `Judge (×18)` among them,
+because "Each judge shall receive salary at the same rate" is the bench's fact
+and not one holder's). A node may carry more than one, so the per-source
+figures sum past 492. Each shows in place of the withheld estimate, under its
+own heading rather than COST, with the panel saying it is compensation for one
+post — or, on a node standing for several, for each of its holders — and not
+what the unit costs. An incumbency-shaped claim (a listing, a row of the
+current export, one office's archived level) is still never published on a
+node standing for several posts, and a bench whose name bundles senior judges
+is refused because 28 U.S.C. 371(b)(2) sets an uncertified senior judge's salary
+by reference to a past year, adjusted under §461 — not necessarily the tier's
+current rate.
 
-Those last four are a claim shape nothing else here makes, and they are
-labelled as one. A statutory parity provision — 26 U.S.C. 7443(c)(1),
+Those last eight — four chief judges and their four benches — are a claim
+shape nothing else here makes, and they are labelled as one. A statutory parity provision — 26 U.S.C. 7443(c)(1),
 28 U.S.C. 172(b), 10 U.S.C. 942(d), 38 U.S.C. 7253(e) — states which tier of
 Article III judge an Article I court's judges are paid at, and the Judicial
 Compensation table states what that tier pays; the figure is the join, and
 neither document prints it. So the block publishes **how many documents verify
 it and what that count is worth on this project's own source arithmetic** (two
 official documents, 80%, the same scale `verify_node_sources` uses), beside an
-explicit count of how many of them state the figure: **none.** A percentage
+explicit count of how many of them state the figure: **none.** The one block
+that counts three is the other way round: a Federal Reserve post priced through
+a reviewed identification names the statute that says which office it is, the
+Executive Schedule section that sets that office's level and OPM's table, and
+exactly one of the three states the figure. A percentage
 read as a probability that the number is right would be a lie, and that pairing
 is what stops it being read that way. The Court of International Trade is not
 among them: 28 U.S.C. 252 states no parity, only a chain through the Federal

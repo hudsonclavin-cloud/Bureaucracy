@@ -120,6 +120,10 @@ ROWS = [
     ("POE, PAT", "EMPLOYEE", "$0.00", "Per Annum", "ASSISTANT TO THE PRESIDENT AND NATIONAL SECURITY ADVISOR"),
     ("ONE, ALICE", "EMPLOYEE", "$120,000.00", "Per Annum", "SENIOR POLICY ADVISOR"),
     ("TWO, BOB", "EMPLOYEE", "$130,000.00", "Per Annum", "SENIOR POLICY ADVISOR"),
+    # A title several people hold at ONE rate: decidable, and priced on the
+    # node whose name counts exactly these rows.
+    ("THREE, CAROL", "EMPLOYEE", "$83,500.00", "Per Annum", "WAR ROOM ASSOCIATE"),
+    ("FOUR, DAN", "EMPLOYEE", "$83,500.00", "Per Annum", "WAR ROOM ASSOCIATE"),
 ]
 
 
@@ -259,10 +263,12 @@ class BuildRecordTests(unittest.TestCase):
         records, _ = self._records()
         self.assertNotIn("exec-eop-who-national-security-advisor", records)
 
-    def test_a_multi_post_node_is_refused(self):
+    def test_a_multi_post_node_with_no_stated_count_is_not_priced(self):
+        """"(×multiple)" states no count, so no set of rows can be checked
+        against it; the title is looked up as written and finds nothing."""
         records, report = self._records()
         self.assertNotIn("exec-eop-who-senior-advisor-to-the-president-multiple", records)
-        self.assertEqual(report["refused"]["stands_for_several_posts"], 1)
+        self.assertGreaterEqual(report["refused"].get("no_row_carries_this_title", 0), 1)
 
     def test_a_like_named_node_outside_the_white_house_office_is_never_priced(self):
         records, _ = self._records()
@@ -280,7 +286,108 @@ class BuildRecordTests(unittest.TestCase):
             node_map, self.parsed, url=WHITEHOUSE_REPORT_URL, sha256="a" * 64,
             retrieved_at="2026-09-14T00:00:00Z", scope_ids=scoped_node_ids(root))
         self.assertNotIn("exec-eop-who-senior-policy-advisor", records)
-        self.assertEqual(report["refused"]["title_held_by_several_people"], 1)
+        self.assertEqual(report["refused"]["title_held_by_several_people_at_different_rates"], 1)
+
+    def test_the_counted_node_ignores_rows_under_other_printed_titles_in_its_bucket(self):
+        """The index files "SPECIAL ASSISTANT TO THE PRESIDENT AND WAR ROOM
+        ASSOCIATE" under WAR ROOM ASSOCIATE too. "War Room Associate (×2)"
+        counts the two rows printed as that title and nothing else, so a
+        folded row at another rate neither blocks the match nor joins it."""
+        from data_pipeline.exporter.build_graph import index_tree
+
+        parsed = json.loads(json.dumps(self.parsed))
+        extra = dict(next(r for r in parsed["rows"] if r["title"] == "WAR ROOM ASSOCIATE"))
+        extra.update({"title": "SPECIAL ASSISTANT TO THE PRESIDENT AND WAR ROOM ASSOCIATE",
+                      "amount": 133_500.0, "amountRaw": "$133,500.00", "rateText": "$133,500.00"})
+        parsed["rows"].append(extra)
+        root = json.loads(json.dumps(BASE))
+        who = next(n for n in _walk(root) if n["id"] == SCOPE_NODE_ID)
+        who["children"].append({"id": "exec-eop-who-war-room-associate-2", "name": "War Room Associate (\u00d72)",
+                                "type": "Position", "children": []})
+        node_map, _ = index_tree(root)
+        records, report = build_records(
+            node_map, parsed, url=WHITEHOUSE_REPORT_URL, sha256="a" * 64,
+            retrieved_at="2026-09-14T00:00:00Z", scope_ids=scoped_node_ids(root))
+        record = records["exec-eop-who-war-room-associate-2"]
+        self.assertEqual(record["holders"]["count"], 2)
+        self.assertEqual(record["amount"], 83_500.0)
+        self.assertEqual(record["reportedTitle"], "WAR ROOM ASSOCIATE")
+        # And the same node named for three would find only two printed rows.
+        who["children"][-1]["name"] = "War Room Associate (\u00d73)"
+        node_map, _ = index_tree(root)
+        records, report = build_records(
+            node_map, parsed, url=WHITEHOUSE_REPORT_URL, sha256="a" * 64,
+            retrieved_at="2026-09-14T00:00:00Z", scope_ids=scoped_node_ids(root))
+        self.assertNotIn("exec-eop-who-war-room-associate-2", records)
+
+    def test_two_appointments_that_fold_to_one_core_are_never_one_title(self):
+        """"ASSISTANT TO THE PRESIDENT AND X" and "DEPUTY ASSISTANT TO THE
+        PRESIDENT AND X" are two appointments; the folded index files both
+        under X. At one rate they must not become "X, listed 2 times"."""
+        from data_pipeline.exporter.build_graph import index_tree
+
+        parsed = json.loads(json.dumps(self.parsed))
+        template = dict(parsed["rows"][0])
+        for title in ("ASSISTANT TO THE PRESIDENT AND CHIEF OF STAFF",
+                      "DEPUTY ASSISTANT TO THE PRESIDENT AND CHIEF OF STAFF"):
+            row = dict(template)
+            row.update({"title": title, "amount": 195_200.0, "amountRaw": "$195,200.00",
+                        "rateText": "$195,200.00", "status": "EMPLOYEE", "payBasis": "Per Annum"})
+            parsed["rows"].append(row)
+        parsed["rows"] = [r for r in parsed["rows"]
+                          if r["title"] != "ASSISTANT TO THE PRESIDENT AND CHIEF OF STAFF" or r["amount"] == 195_200.0]
+        root = json.loads(json.dumps(BASE))
+        who = next(n for n in _walk(root) if n["id"] == SCOPE_NODE_ID)
+        who["children"] = [c for c in who["children"] if c["id"] != "exec-eop-who-chief-of-staff"]
+        who["children"].append({"id": "exec-eop-who-chief-of-staff", "name": "Chief of Staff",
+                                "type": "Position", "children": []})
+        node_map, _ = index_tree(root)
+        records, report = build_records(
+            node_map, parsed, url=WHITEHOUSE_REPORT_URL, sha256="a" * 64,
+            retrieved_at="2026-09-14T00:00:00Z", scope_ids=scoped_node_ids(root))
+        self.assertNotIn("exec-eop-who-chief-of-staff", records)
+        self.assertEqual(report["refused"]["title_held_under_several_spellings"], 1)
+
+    def test_a_title_several_people_hold_at_one_rate_prices_its_counted_node(self):
+        """Since 2026-09-23: when the report lists every holder of a title at
+        the same rate the figure is decidable, and the node named "<title>
+        (×N)" with N the report's own count carries it with `holders`."""
+        from data_pipeline.exporter.build_graph import index_tree
+
+        rows = self.parsed["rows"]
+        uniform = {}
+        for row in rows:
+            uniform.setdefault(row["title"], []).append(row)
+        title, group = next(
+            (t, g) for t, g in sorted(uniform.items())
+            if len(g) > 1 and len({float(r["amount"]) for r in g}) == 1 and float(g[0]["amount"]) > 0
+            and len({r["status"] for r in g}) == 1
+        )
+        root = json.loads(json.dumps(BASE))
+        who = next(n for n in _walk(root) if n["id"] == SCOPE_NODE_ID)
+        who["children"].append(
+            {"id": "exec-eop-who-uniform-test", "name": "{} (\u00d7{})".format(title.title(), len(group)),
+             "type": "Position", "children": []})
+        node_map, _ = index_tree(root)
+        records, report = build_records(
+            node_map, self.parsed, url=WHITEHOUSE_REPORT_URL, sha256="a" * 64,
+            retrieved_at="2026-09-14T00:00:00Z", scope_ids=scoped_node_ids(root))
+        self.assertIn("exec-eop-who-uniform-test", records)
+        record = records["exec-eop-who-uniform-test"]
+        self.assertEqual(record["holders"]["count"], len(group))
+        self.assertTrue(record["holders"]["uniformRate"])
+        self.assertEqual(record["amount"], float(group[0]["amount"]))
+        # A wrong count in the name is not a match: the count is the join.
+        root = json.loads(json.dumps(BASE))
+        who = next(n for n in _walk(root) if n["id"] == SCOPE_NODE_ID)
+        who["children"].append(
+            {"id": "exec-eop-who-uniform-test", "name": "{} (\u00d7{})".format(title.title(), len(group) + 1),
+             "type": "Position", "children": []})
+        node_map, _ = index_tree(root)
+        records, _ = build_records(
+            node_map, self.parsed, url=WHITEHOUSE_REPORT_URL, sha256="a" * 64,
+            retrieved_at="2026-09-14T00:00:00Z", scope_ids=scoped_node_ids(root))
+        self.assertNotIn("exec-eop-who-uniform-test", records)
 
     def test_no_record_carries_a_name_from_the_roster(self):
         records, _ = self._records()
@@ -370,6 +477,75 @@ class GateTests(unittest.TestCase):
     def test_an_honest_record_passes(self):
         self.assertEqual(self._check(), [])
 
+    def test_the_method_string_must_say_whose_figure_it_is(self):
+        """A uniform block under the one-person method, or a single-holder
+        block under the each-holder method, is refused; the two strings are
+        mirrored from the module."""
+        from data_pipeline.verification import whitehouse_pay as wp
+        from scripts.validate_published_graph import WHITEHOUSE_PAY_METHOD, WHITEHOUSE_PAY_METHOD_UNIFORM
+
+        self.assertEqual(WHITEHOUSE_PAY_METHOD, wp.PAY_METHOD)
+        self.assertEqual(WHITEHOUSE_PAY_METHOD_UNIFORM, wp.PAY_METHOD_UNIFORM)
+        self.assertTrue(any("method" in v for v in self._check(lambda n, p: p.__setitem__("method", wp.PAY_METHOD_UNIFORM))))
+
+        def uniform(node, pay):
+            node["name"] = "War Room Associate (\u00d73)"
+            node["id"] = "exec-eop-who-war-room-associate-3"
+            node["representsPosts"] = {"text": "\u00d73", "kind": "exact", "count": 3}
+            pay["reportedTitle"] = "WAR ROOM ASSOCIATE"
+            pay["amountScope"] = "WAR ROOM ASSOCIATE"
+            pay["amount"] = 83_500.0
+            pay["rateText"] = "$83,500.00"
+            pay["titleFolded"] = False
+            pay["method"] = wp.PAY_METHOD_UNIFORM
+            pay["quote"] = ("WAR ROOM ASSOCIATE; $83,500.00; Per Annum; EMPLOYEE (As of Date: Wednesday, July 1, 2026)"
+                            " \u2014 listed 3 times, each at $83,500.00")
+            pay["holders"] = {"text": "\u00d73", "kind": "exact", "count": 3, "uniformRate": True,
+                              "appliesToEachHolder": True, "note": "each"}
+        self.assertEqual([], self._check(uniform))
+
+        def uniform_wrong_method(node, pay):
+            uniform(node, pay)
+            pay["method"] = wp.PAY_METHOD
+        self.assertTrue(any("method" in v for v in self._check(uniform_wrong_method)))
+
+    def test_a_status_the_rows_do_not_print_is_refused(self):
+        """The status is published, so it is checked against this title's
+        rows, not only against the report's vocabulary."""
+        def flip(node, pay):
+            pay["reportedStatus"] = "DETAILEE"
+        self.assertTrue(any("the report prints" in v for v in self._check(flip)))
+
+    def test_a_uniform_count_that_is_not_a_whole_number_is_refused(self):
+        def fractional(node, pay):
+            node["name"] = "War Room Associate (\u00d73)"
+            node["id"] = "exec-eop-who-war-room-associate-3"
+            node["representsPosts"] = {"text": "\u00d73", "kind": "exact", "count": 3}
+            pay["reportedTitle"] = "WAR ROOM ASSOCIATE"
+            pay["amountScope"] = "WAR ROOM ASSOCIATE"
+            pay["amount"] = 83_500.0
+            pay["rateText"] = "$83,500.00"
+            pay["titleFolded"] = False
+            pay["method"] = "rate_reported_for_each_of_the_people_listed_under_this_title"
+            pay["quote"] = ("WAR ROOM ASSOCIATE; $83,500.00; Per Annum; EMPLOYEE (As of Date: Wednesday, July 1, 2026)"
+                            " \u2014 listed 3 times, each at $83,500.00")
+            pay["holders"] = {"text": "\u00d73", "kind": "exact", "count": 3, "uniformRate": True,
+                              "appliesToEachHolder": True, "note": "each"}
+        self.assertEqual([], self._check(fractional))
+
+        def fractional_count(node, pay):
+            fractional(node, pay)
+            pay["holders"]["count"] = 3.0
+        self.assertTrue(any("not a whole number" in v for v in self._check(fractional_count)))
+
+    def test_a_listed_n_times_suffix_must_match_the_roster(self):
+        """The quote's own count survives a stripped `holders` block, so it
+        is checked against the roster: a title listed once carries none."""
+        def suffix(node, pay):
+            pay["quote"] = pay["quote"] + " — listed 2 times, each at $195,200.00"
+        self.assertTrue(any("listed 2 times" in v for v in self._check(suffix)))
+
+
     def test_the_role_swap_between_equally_paid_posts_is_caught(self):
         # Four of the five priced posts are paid the identical $195,200, so a
         # record moved between them keeps a correct figure, quote and basis.
@@ -455,18 +631,36 @@ class GateTests(unittest.TestCase):
             if len(amounts) == 1:
                 self.assertAlmostEqual(roster[title][0], amounts[0], places=2, msg=title)
 
-    def test_every_published_record_is_a_title_one_person_holds(self):
+    def test_every_published_record_is_one_person_or_every_holder_at_one_rate(self):
+        """Since 2026-09-23 a title several people hold is priced when the
+        report lists every one of them at the same rate, and the record says
+        so in `holders`. A record without that block must still be a title
+        one person holds; a record with it must count exactly the people
+        listed, all at one figure."""
         evidence = json.loads(
             (Path(__file__).resolve().parents[1] / "data" / "verification"
              / "whitehouse_pay_evidence.json").read_text(encoding="utf-8"))
         roster = whitehouse_roster()
         self.assertTrue(evidence["nodes"])
+        uniform = 0
         for node_id, record in evidence["nodes"].items():
             entry = roster.get(whitehouse_canonical(record["reportedTitle"]))
             self.assertIsNotNone(entry, node_id)
-            self.assertEqual(entry[1], 1, f"{node_id} prices a title {entry[1]} people hold")
-            self.assertAlmostEqual(entry[0], float(record["amount"]), places=2, msg=node_id)
+            amount, held, distinct, statuses, bases = entry
+            self.assertEqual(record["reportedStatus"] in statuses, True, node_id)
+            self.assertIn(record["payBasis"], bases, node_id)
+            holders = record.get("holders")
+            if holders:
+                uniform += 1
+                self.assertTrue(holders.get("uniformRate"), node_id)
+                self.assertEqual(holders.get("count"), held, node_id)
+                self.assertEqual(distinct, 1, f"{node_id} claims a uniform rate; the report prints {distinct}")
+                self.assertGreater(held, 1, node_id)
+            else:
+                self.assertEqual(held, 1, f"{node_id} prices a title {held} people hold")
+            self.assertAlmostEqual(amount, float(record["amount"]), places=2, msg=node_id)
             self.assertGreater(float(record["amount"]), 0, node_id)
+        self.assertGreater(uniform, 0, "the 2026 report lists 23 titles at one rate across several holders; none was priced")
 
 
 class DeriveScriptTests(unittest.TestCase):

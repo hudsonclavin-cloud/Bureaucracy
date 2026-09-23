@@ -2190,7 +2190,7 @@ sits beside a measured cost, that verifies the post's existence or places it,
 or that puts either pay document among the node's own sources.
 `tests/test_derived_pay.py` corrupts each in turn.
 
-**The count on every pay field, and 4,130 positions that have none (since
+**The count on every pay field, and 4,099 positions that have none (since
 2026-09-23).** The derived block above publishes how many documents its figure
 rests on; the owner asked for the same on the rest, and the reason is that the
 distinction was real and stated only in prose a reader had to assemble.
@@ -2224,19 +2224,22 @@ view, so no two pay blocks can describe the same thing differently again. The
 derived module stopped writing its own copy of the arithmetic when this
 landed: one code path for one number.
 
-**And the gap this made visible, counted rather than estimated.** 461 of 4,591
-positions carry a pay claim; **4,130 do not**, and
+**And the gap this made visible, counted rather than estimated.** 492 of 4,591
+positions carry a pay claim (461 when this section was first written, before
+the multi-post rule below and the Federal Reserve rows); **4,099 do not**, and
 `scripts/report_unpriced_positions.py` says why for every one of them:
 
-- **3,316** — no pay document this project has read names the title at all.
+- **3,313** — no pay document this project has read names the title at all.
   Not a coverage gap somebody has not got to.
-- **793** — the node states a multiplicity (`Physician (×multiple)`,
-  `Judge (×18)`), which the rule `pay_tables.py` set refuses to put one rate
-  on. These can never be priced as they stand, and they are still listed,
-  because which pay SYSTEM governs the title is a fact worth having.
+- **765** — the node states a multiplicity (`Physician (×multiple)`) and no
+  claim that holds for every holder reaches it. Since the per-field rule
+  below, a tier rate, a parity rate, a band or a uniform roster line IS
+  published on such a node (`Judge (×18)` is priced now); what stays refused
+  is an incumbency-shaped claim. These are still listed, because which pay
+  SYSTEM governs the title is a fact worth having.
 - **21** — OPM lists the position and the row prints no rate.
 
-The concentration is the useful part: **432** of the 3,316 sit under `VA
+The concentration is the useful part: **432** of the 3,313 sit under `VA
 Medical Centers` (the service chiefs `va_title38_pay.py` deliberately refuses,
 since choosing a Title 38 table per node would be this module deciding which
 VA service chiefs are doctors), 83 under the White House Office, 56 under
@@ -2247,7 +2250,7 @@ per unpriced position with its id and its reason;
 `docs/PAY_SOURCE_RESEARCH_PROMPT_3.md` is a research prompt pack generated
 from the same list in the same run — a lead prompt asking which pay systems
 exist and where each is published, then **39 enumeration shards naming every
-one of the 4,130 titles**. `tests/test_unpriced_positions.py` asserts the
+one of the 4,099 titles**. `tests/test_unpriced_positions.py` asserts the
 coverage rather than trusting it: every unpriced id appears in the pack, no
 priced position appears in either document, and both documents are regenerated
 and compared byte-for-byte so a stale copy fails.
@@ -2359,6 +2362,141 @@ the exact channel by which a five-row table carried 29 positions to `verified`
 on 2026-09-11. `tests/test_us_code_pay_schedules.py` corrupts each in turn.
 Positions carrying a single-source statutory rate went **18 → 22**.
 
+**A rate that holds for every holder, and the multi-post rule made per field
+(since 2026-09-23).** Until this landed, `withdraw_pay_from_multi_post_nodes`
+stripped every one of the eight pay fields from a node stating a multiplicity,
+on one sentence of reasoning: "one rate beside a panel describing a whole group
+reads as what one holder earns". That is true of an *incumbency-shaped* claim
+and false of the others, and the owner's ask — "I want the Judge ×18" — was the
+case that made the difference visible. 26 U.S.C. 7443(c)(1) says "Each judge
+shall receive salary at the same rate … as judges of the district courts"; the
+figure is the bench's fact by the statute's own words, and refusing it on the
+`Judge (×18)` node while publishing it on the Chief Judge was the graph
+claiming less than the evidence supports, which is the same error in the other
+direction.
+
+So the sweep is now per field, and the three classes are declared in
+`pay_tables.py` so a new field cannot be added without deciding which it is:
+
+- `INCUMBENCY_PAY_FIELDS` — `positionPayRate`, `positionGradePay`,
+  `positionCurrentPay`, `positionSchedulePay` — are **stripped** from a
+  multi-post node as before. A listing, a row of the current export, a level
+  one archived office was at: each is one appointment's fact.
+- `OFFICE_RATE_PAY_FIELDS` — `positionStatutoryPay`, `positionDerivedPay`,
+  `positionTierPay` — are **kept**, stamped with a `holders` block (`text`,
+  `kind`, `count` or bounds, `appliesToEachHolder: true`, and a note) that
+  the panel prints as "for each of the N holders". A tier rate is paid to
+  every judge of the tier and a band bounds every holder.
+- `UNIFORM_ROSTER_PAY_FIELDS` — `positionReportedPay` — is kept **only** when
+  the roster lists the title N times at ONE rate and N equals the node's own
+  stated multiplicity; `holders.uniformRate` says so, and two people at two
+  rates still strip it, because then the figure is nobody's.
+
+**28 multi-post nodes priced**, each pinned in `tests/test_multi_post_pay.py`:
+the four Article I benches (`Judge (×18)`, `(×15)`, `(×8)`, `(×4)`) from their
+own courts' parity provisions (`derived_pay.BENCH_NODES` copies each chief
+judge's provision to its bench, and a bench moved to another court's
+provision is refused by node id); the eight Associate Justices and the
+Southern District of New York's `District Judge (×28 active)` from the
+compensation table (`judicial_pay.classify_seat` now prices a district's or
+circuit's own *active* bench); and 22 White House Office titles the roster
+lists N times at one rate — `Special Assistant (×4)` at $74,500,
+`Special Assistant to the President for Domestic Policy (×6)` at $121,500,
+`Presidential Speechwriter (×2)` at $110,500 (the last reached only once the
+review found the stripped-title lookup counting rows printed under OTHER
+titles in the same folded bucket, which had refused a title the report lists
+exactly twice at one rate as "no row carries this title").
+`whitehouse_pay.stated_multiplicity` reads the graph's own `(×N)` and accepts
+the stripped title only when the report carries exactly N rows for it, every
+row prints the same figure and every row prints the same TITLE
+(`title_held_by_several_people_at_different_rates`, `..._on_different_terms`
+and `title_held_under_several_spellings` are the three refusals — the third
+because the folded index files "Assistant to the President and X" and "Deputy
+Assistant to the President and X", two appointments, under one key, and at one
+rate they would read as one title listed twice; latent on the 2026 report,
+whose four fold-collision keys each print several rates — the one the new
+refusal catches, `Senior Associate Staff Secretary`, is listed once bare at
+$191,850 (a detailee) and once as a Special Assistant to the President at
+$121,500 (an employee), and was already refused for the rates — so it is refused before it can be live). The quote's own "listed N times" suffix is checked by the gate
+against the roster, so it cannot outlive a stripped `holders` block, and a
+uniform block on a node whose name states no count is withdrawn by the sweep
+rather than trimmed to one person's — the gate refuses the same block, and
+the two agree. A uniform record publishes its own method string
+(`rate_reported_for_each_of_the_people_listed_under_this_title`) and its
+document-count block is worded for each listed person, because the review
+found the one-person wording shipped beside a `holders` count of six; the
+gate mirrors both method strings and refuses either on the other's block. Pay claims went **461 → 488** on this, and to **491** with the
+Federal Reserve below, and to **492** when the lookup above was corrected.
+
+**One bench shape stays refused, and the statute is committed for it — with
+a correction the adversarial review made.** Thirteen `Circuit Judge (×N
+active + senior judges)` nodes bundle senior judges into the count. 28 U.S.C.
+371(b)(2) provides that a senior judge who does not meet subsection (e)'s
+certification "shall continue to receive the salary that he or she was
+receiving when he or she was last in active service or, if a certification
+under subsection (e) was made for such justice or judge, when such a
+certification was last in effect. The salary of such justice or judge shall
+be adjusted under section 461 of this title." A salary set by reference to a
+past year and adjusted since need not equal the tier's current rate, so one
+figure for such a bench would be false of some of its members. The first
+draft of this rule said the salary "may be frozen" and quoted only the first
+half of the provision; the review read the committed fixture's operative
+text and found the last sentence contradicts that word — the same shape as
+the CAVC repealed-text case, caught the same way. The refusal is worded to
+the section now, the test pins the §461 sentence beside the first, and
+nothing published changed: no figure rests on the reading either way.
+`tests/fixtures/uscode/senior_judges_28_usc_371.html` is committed,
+`judicial_pay.SENIOR_JUDGE_MARKER` refuses any judge node whose name says
+"senior" (`bundles_senior_judges_whose_salary_28_usc_371b2_sets_apart_from_
+the_tier_rate`), and the gate mirrors the marker and refuses such a block
+outright, pinned by a corruption test. Measured: 15 judge nodes name senior
+judges and none is priced.
+
+**The Federal Reserve, and a third route into the Executive Schedule.** The
+research pack (`CURATION.md` §19) reported the Fed Chair's salary as "$203,500
+per annum" from 12 U.S.C. 242. The section was fetched and **prints no dollar
+figure**; a test pins that against the bytes. What it prints is the
+identification the two existing matchers could not make: "Chair, Board of
+Governors" is not equal to the Code's "Chairman, Board of Governors of the
+Federal Reserve System" (§5312, Level I), and the two Vice Chairs are placed by
+a title that never names them — §5313's "Members, Board of Governors of the
+Federal Reserve System" (Level II) — with §242 the statute that designates the
+two Vice Chairmen from among the members. `statutory_schedule.REVIEWED_TITLE_
+ROWS` is the reviewed table (node → statutory title → the §242 sentence that
+says why), the same shape as `SCHEDULE_6_NODE_ROWS`, re-adjudicated on every
+run: the node must still carry the name the row was written against, the
+title must be one the committed sections print, the fixture's digest is
+recomputed, and the quote must be in the section's **operative** text — the
+page prints each designation sentence a second time in its Amendments note,
+and `tests/test_statutory_schedule.py` moves a sentence beneath the cut to
+show the row falls. Three posts priced under their own method
+(`level_assigned_by_5_usc_5312_5316_to_the_office_a_second_statute_identifies_
+this_post_as`), each resting on **three** documents — §242 identifies the
+office, §5312/§5313 sets its level, OPM's table prices it — of which one
+states the figure, so the count block reads 3 and 90% where every other
+schedule record reads 2 and 80%, and the panel prints the basis and the
+quoted sentence in words. `Governor (×4 members)` is reached by the same
+"Members" title and deliberately left unpriced: `positionSchedulePay` is
+incumbency-class, so a row would be written and withdrawn on every build;
+pricing a bench from a class title is a separate decision. The gate mirrors
+the three rows by node id (`US_CODE_REVIEWED_IDENTIFICATIONS`), re-reads the
+basis fixture with its own stdlib cut, and refuses a swap between the two
+Level II Vice Chairs, a renamed node, a scope claimed on a reviewed row, a
+reviewed identification on a node with no row, a basis quote found only in
+the notes, a digest that is not the committed section's, a `basis` sentence
+that is not the reviewed row's (the panel prints it as the reason the figure
+applies, so an unmirrored one was a fabricated-reason channel — an
+adversarial review found it passing with the opposite legal reading), and the
+ordinary method on a reviewed node; each route's own method string is now
+checked on every schedule record.
+
+**The panel's Trace Origin, restored.** A 2026-09-15 change reduced "Trace
+Origin" to a one-line confirmation on the grounds that the breadcrumb already
+showed the path. The owner wanted the full tree back: `renderOriginTrace` lists
+every step from the root to the node again, each row a keyboard-reachable
+button that selects that node, with the count and the glow-path confirmation
+beneath it.
+
 **Two more sources, each a single primary document rather than a join
 (since 2026-09-14).** `judicial_pay.py` and `congressional_pay.py` write a
 different field, `positionStatutoryPay`, because their claim is a different
@@ -2404,8 +2542,10 @@ tier or role that node is: three Senate leadership roles share one dollar
 figure and one shared footnote, so a record for the Majority Leader
 relabelled as the President Pro Tempore would still quote a footnote naming
 that role and price the same $193,400, and only a check tied to the node's
-own identity catches it. `withdraw_pay_from_multi_post_nodes` strips all three pay
-fields in one sweep, since the multi-post rule is the same rule on each.
+own identity catches it. `withdraw_pay_from_multi_post_nodes` used to strip all
+three pay fields in one sweep; since 2026-09-23 the rule is per field (see
+"A rate that holds for every holder" above) and a tier rate is KEPT on a bench
+node with a `holders` block, while an incumbency-shaped claim is still stripped.
 First run: 18 positions priced (15 judicial, 3 congressional), all
 `partial`, none `verified`.
 
@@ -2812,22 +2952,27 @@ subdivide measured money rather than invent it — which does not make a
 subdivision a measurement. **Since 2026-09-09 the site does not show one by
 default**, by the owner's decision: a node with no measured cost of its own
 shows no figure and says why, and ticking "Also show estimated shares of a
-parent's total" opts back in. The exception is a real salary — **461** of the
+parent's total" opts back in. The exception is a real salary — **492** of the
 4,591 positions carry a pay claim an official source states, counted on the
-published graph on 2026-09-23 after Schedule 6, the VA's Title 38 bands and
-the Article I parity derivations landed: 4 a figure no document states
-(`positionDerivedPay`), 72 a Title 38 tier BAND rather than a rate (`positionTierPay`), 99 from the
-Executive Schedule as 5 U.S.C. §§5312–5316 sets it, 166 from the White House
-roster, 88 the rate the current PLUM export prints for the one row under the
-title, 31 from a listing's level joined to OPM's table, 22 statutory (18 from
+published graph on 2026-09-23 after Schedule 6, the VA's Title 38 bands, the
+Article I parity derivations, the per-field multi-post rule and the Federal
+Reserve rows landed: 8 a figure no document states
+(`positionDerivedPay`, four chief judges and their four benches), 72 a Title 38 tier BAND rather than a rate (`positionTierPay`), 102 from the
+Executive Schedule as 5 U.S.C. §§5312–5316 sets it (3 of them through a
+reviewed identification 12 U.S.C. 242 backs), 188 from the White House
+roster (22 of them titles listed N times at one rate), 88 the rate the current PLUM export prints for the one row under the
+title, 31 from a listing's level joined to OPM's table, 24 statutory (20 from
 uscourts.gov and senate.gov, 4 from Schedule 6 of the annual pay-adjustment
 order), and 18 a
 base-pay **range** rather than a rate (`positionGradePay`, counted separately
 because a range is not a rate and the panel says so; it read 32 until the
 current export supplied a printed figure for 14 of them, and a printed figure
 beats a band). A node may carry more than one of these, so the per-source
-figures sum past 457 — 461 since 2026-09-23, when four Article I chief judges
-took a figure NO document states (`positionDerivedPay`, a parity provision
+figures sum past 492 — 461 on 2026-09-23 when four Article I chief judges
+took a figure NO document states, 488 the same day when the multi-post rule
+became per field, 491 with the Federal Reserve's three (`positionDerivedPay`
+was 4 and is 8, since each court's bench now takes its own parity provision)
+and 492 once the review corrected the roster lookup (`positionDerivedPay`, a parity provision
 joined to the compensation table, publishing its document count and what that
 count is worth). Shown in the cost block under its own heading and never
 headed COST.
@@ -2839,7 +2984,9 @@ because the rest carry a level or grade and no rate. The published count is
 what the site shows, so it is the one stated here; it was 310 before the §9
 renames, 311 after, 380 once the current export was read, 385 once
 Schedule 6 priced the Vice President and the House's three elected leaders,
-457 once the VA's Title 38 bands landed, and 461 with the derived figures. The estimates
+457 once the VA's Title 38 bands landed, 461 with the derived figures, 488 with
+the per-field multi-post rule, 491 with the Federal Reserve rows and 492 after
+the review. The estimates
 stay in `graph.json` because the cascade's arithmetic and the gate's
 child-sum checks are built on them, so a consumer of the JSON must read
 `cost_status`, not `resolved_total_amount` alone. The gate prints both

@@ -213,13 +213,24 @@ class ApplyTests(unittest.TestCase):
         for field in ("sourceUrls", "sourceTypes", "lastVerified", "verificationMethod", "verificationStatus"):
             self.assertNotIn(field, node_map["leg-senate-leadership-majority-leader"])
 
-    def test_multi_post_withdrawal_strips_positionStatutoryPay_too(self):
+    def test_multi_post_sweep_keeps_a_statutory_rate_and_the_gate_is_the_backstop(self):
+        """Since 2026-09-23 the sweep keeps a statutory rate on a multi-post
+        node (a tier rate holds for every holder) and stamps `holders`. A
+        mis-derived record on a node this pipeline has no tier for is caught
+        by the gate's id-keyed mirror instead, which is the check that ties a
+        statutory figure to the node's own identity."""
+        from scripts.validate_published_graph import statutory_pay_violations
+
         tree = json.loads(json.dumps(BASE))
         node_map = index_tree(tree)[0]
-        node_map["leg-senate-offices-regional-representative-4"]["positionStatutoryPay"] = {"amount": 193_400.0}
+        node_map["leg-senate-offices-regional-representative-4"]["positionStatutoryPay"] = {
+            "amount": 193_400.0, "source": "senate_salary_schedule"}
         withdrawn = withdraw_pay_from_multi_post_nodes(tree)
-        self.assertEqual(withdrawn, 1)
-        self.assertNotIn("positionStatutoryPay", index_tree(tree)[0]["leg-senate-offices-regional-representative-4"])
+        self.assertEqual(withdrawn, 0)
+        node = index_tree(tree)[0]["leg-senate-offices-regional-representative-4"]
+        self.assertIn("holders", node["positionStatutoryPay"])
+        violations = statutory_pay_violations(node, node["positionStatutoryPay"], "2099-01-01", lambda n: n["id"])
+        self.assertTrue(any("no known tier" in v for v in violations))
 
     def test_positionStatutoryPay_is_withdrawn_when_evidence_no_longer_supports_it(self):
         self.assertIn("positionStatutoryPay", EVIDENCE_OWNED_FIELDS)

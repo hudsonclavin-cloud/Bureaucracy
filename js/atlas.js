@@ -513,6 +513,10 @@ function describePay(node) {
       heading: "Executive Schedule rate",
       text: `${schedule.citation || "The United States Code"} places this post at Executive Schedule level ${schedule.payLevel}, naming it "${schedule.statutoryTitle}". OPM's ${schedule.table}${when}, pays ${printed} for ${schedule.amountScope}.${
         schedule.scopedOffice && schedule.scopedOrganisation ? ` Matched to "${schedule.scopedOffice}" as the post of that name directly under ${schedule.scopedOrganisation}.` : ""
+      }${
+        schedule.identification && typeof schedule.identification === "object"
+          ? ` That title is not this node's name: a reviewed identification — ${schedule.identification.basis || "no stated basis"}; ${schedule.identification.basisCitation || "the basis statute"} prints "${schedule.identification.basisQuote || ""}".`
+          : ""
       } A statutory rate of basic pay, not what the holder receives.${payDocuments(schedule)}`,
     });
   }
@@ -522,7 +526,7 @@ function describePay(node) {
     const on = formatDate(statutory.checkedAt);
     blocks.push({
       heading: "Statutory pay",
-      text: `${statutory.sourceLabel || "A primary official source"}${on ? ` (checked ${on})` : ""} states that ${statutory.amountScope || "this tier"} is paid ${printed}${statutory.year ? ` for ${statutory.year}` : ""}. That names a tier or a group of roles, not this specific post by name.${payDocuments(statutory)}`,
+      text: `${statutory.sourceLabel || "A primary official source"}${on ? ` (checked ${on})` : ""} states that ${statutory.amountScope || "this tier"} is paid ${printed}${statutory.year ? ` for ${statutory.year}` : ""}. That names a tier or a group of roles, not this specific post by name.${holdersNote(statutory)}${payDocuments(statutory)}`,
     });
   }
   const derived = node.positionDerivedPay;
@@ -534,7 +538,7 @@ function describePay(node) {
     const stating = Number(verification.documentsStatingTheFigure || 0);
     blocks.push({
       heading: "Derived pay — no single document states it",
-      text: `${derived.statute || "A statutory parity provision"} states that every judge of ${derived.court || "this court"} is paid at the rate of ${derived.amountScope || "another court's judges"}; the U.S. Courts' Judicial Compensation table states that tier pays ${printed}${derived.year ? ` for ${derived.year}` : ""}. ${count} official document${count === 1 ? "" : "s"} verify it — ${Number(verification.percent || 0)}% on this project's own source scale — and ${stating === 0 ? "neither states the figure" : `${stating} state${stating === 1 ? "s" : ""} the figure`}. The percentage measures how much official documentation the claim rests on, not the chance that it is right.`,
+      text: `${derived.statute || "A statutory parity provision"} states that every judge of ${derived.court || "this court"} is paid at the rate of ${derived.amountScope || "another court's judges"}; the U.S. Courts' Judicial Compensation table states that tier pays ${printed}${derived.year ? ` for ${derived.year}` : ""}. ${count} official document${count === 1 ? " verifies" : "s verify"} it — ${Number(verification.percent || 0)}% on this project's own source scale — and ${stating === 0 ? "neither states the figure" : `${stating} state${stating === 1 ? "s" : ""} the figure`}. The percentage measures how much official documentation the claim rests on, not the chance that it is right.${holdersNote(derived)}`,
     });
   }
   const reported = node.positionReportedPay;
@@ -543,7 +547,11 @@ function describePay(node) {
     const on = formatDate(reported.checkedAt);
     blocks.push({
       heading: "Reported pay",
-      text: `${reported.sourceLabel || "The White House Office's own annual report to Congress"}${on ? ` (checked ${on})` : ""} lists one person under "${reported.reportedTitle || "this title"}"${reported.asOf ? `, as of ${reported.asOf}` : ""}, paid ${printed}${reported.payBasis ? ` ${String(reported.payBasis).toLowerCase()}` : ""}. That is what the one person listed is paid, not what the post pays whoever holds it.${payDocuments(reported)}`,
+      text: `${reported.sourceLabel || "The White House Office's own annual report to Congress"}${on ? ` (checked ${on})` : ""} lists ${reported.holders && reported.holders.uniformRate === true && Number.isInteger(reported.holders.count) ? `${reported.holders.count} people` : "one person"} under "${reported.reportedTitle || "this title"}"${reported.asOf ? `, as of ${reported.asOf}` : ""}, paid ${printed}${reported.payBasis ? ` ${String(reported.payBasis).toLowerCase()}` : ""}.${
+        reported.holders && reported.holders.uniformRate === true
+          ? " That is what each person listed under this title is paid — the report states each individual's own rate, and here every one of them is the same figure — not what the post pays whoever holds it."
+          : " That is what the one person listed is paid, not what the post pays whoever holds it."
+      }${holdersNote(reported)}${payDocuments(reported)}`,
     });
   }
   return blocks;
@@ -557,13 +565,23 @@ function describePay(node) {
 // as `ui.js` appends it to every pay block in the panel. One sentence, the
 // same scale, so a reader comparing two rows in this view is comparing the
 // same thing.
+function holdersNote(block) {
+  const holders = block && typeof block === "object" ? block.holders : null;
+  if (!holders || typeof holders !== "object") return "";
+  const count = Number.isInteger(holders.count) ? holders.count : null;
+  const who = count !== null ? `${count} posts` : `several posts (${String(holders.text || "").trim()})`;
+  return holders.uniformRate === true
+    ? ` Stands for ${who}, every one listed at this same rate.`
+    : ` Stands for ${who}; the rate is the tier's and applies to each holder alike, not one person's pay and not the group's total.`;
+}
+
 function payDocuments(block) {
   const verification = block && typeof block === "object" ? block.verification : null;
   if (!verification || typeof verification !== "object") return "";
   const count = Number(verification.documents || 0);
   if (!count) return "";
   const stating = Number(verification.documentsStatingTheFigure || 0);
-  return ` ${count} official document${count === 1 ? "" : "s"} verify this — ${Number(verification.percent || 0)}% on this project's own source scale — and ${stating === 0 ? "none of them states the figure itself" : stating === count ? (count === 1 ? "it states the figure itself" : "all of them state the figure itself") : `${stating} of them states the figure itself`}.`;
+  return ` ${count} official document${count === 1 ? " verifies" : "s verify"} this — ${Number(verification.percent || 0)}% on this project's own source scale — and ${stating === 0 ? "none of them states the figure itself" : stating === count ? (count === 1 ? "it states the figure itself" : "all of them state the figure itself") : `${stating} of them states the figure itself`}.`;
 }
 
 function card(node, selectedId) {

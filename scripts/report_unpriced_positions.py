@@ -78,8 +78,13 @@ BRANCH_NAMES = {
 
 REASONS = {
     "multiplicity": (
-        "the node states a multiplicity (×N) and this project refuses to put one rate on it",
-        "A rate beside a panel describing a whole group reads as what one holder earns. Knowing "
+        "the node states a multiplicity (×N) and no claim that holds for every holder has reached it",
+        "Since 2026-09-23 a claim that holds for each holder by its own terms IS published on such a "
+        "node with a `holders` block -- a tier or parity rate paid to every judge of the tier, a band "
+        "every holder is within, or a roster listing every holder at one rate -- and 28 such nodes carry "
+        "one. What stays refused is an incumbency-shaped claim (one listing's level, one row of the "
+        "current export), because that is one appointment's figure and not the group's. For these nodes "
+        "no office-rate claim has reached them at all. Knowing "
         "which pay system governs the title is still useful -- it is what would let the graph "
         "carry the schedule rather than a rate -- so these are listed and asked about.",
     ),

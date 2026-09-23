@@ -548,36 +548,138 @@ def build_records(
     return records, report
 
 
+#: Pay fields whose claim is about ONE listing, one row or one appointment,
+#: and so cannot honestly sit on a node that stands for several posts: the
+#: archive's level joined to a table, a listing's pay plan joined to a range,
+#: the current export's row, and the statute placing one named office at a
+#: level. Always stripped from a multi-post node.
+INCUMBENCY_PAY_FIELDS = ("positionPayRate", "positionGradePay", "positionCurrentPay", "positionSchedulePay")
+
+#: Pay fields whose claim is about the OFFICE or the TIER and holds for every
+#: holder alike: a statutory tier rate, a parity-derived tier rate, a Title 38
+#: band. On a multi-post node these stay, stamped with `holders` so the panel
+#: says "each of the N is paid this" rather than "one of them is".
+OFFICE_RATE_PAY_FIELDS = ("positionStatutoryPay", "positionDerivedPay", "positionTierPay")
+
+#: A roster figure is one listed person's pay -- unless the roster lists every
+#: person under the title at the SAME rate, which the block must say itself
+#: (`holders.uniformRate`, `holders.count`) and the sweep checks against the
+#: count the node's own name states.
+UNIFORM_ROSTER_PAY_FIELDS = ("positionReportedPay",)
+
+
+def holders_for(represents: Mapping[str, Any]) -> dict[str, Any]:
+    """The `holders` block an office-rate pay claim carries on a multi-post
+    node: the multiplicity as the node's own name states it, and the sentence
+    that keeps the figure from reading as one holder's pay."""
+    block: dict[str, Any] = {
+        "text": str(represents.get("text") or ""),
+        "kind": str(represents.get("kind") or ""),
+        "appliesToEachHolder": True,
+        "note": (
+            "This node stands for several posts. The figure is the rate the source states for the "
+            "office or tier, and it applies to each holder alike; it is not one person's pay and "
+            "not the group's combined pay."
+        ),
+    }
+    for key in ("count", "low", "high", "as_written"):
+        if represents.get(key) is not None:
+            block[key] = represents[key]
+    return block
+
+
 def withdraw_pay_from_multi_post_nodes(root: dict[str, Any]) -> int:
-    """Take the rate off any node that stands for several posts.
+    """Reconcile every pay field with the multiplicity the node's name states.
 
     Run *after* `annotate_stated_counts`, which is the only thing that computes
-    `representsPosts`. The guard inside `apply_pay_evidence` cannot do this
-    job: that runs before the tree is pruned and before the counts are
-    annotated, so on a fresh build the field it tests does not exist yet and
-    the guard silently passes — a red team caught exactly that, with a rate
-    published on a node named "... (×4)" and `stands_for_many_posts: 0` in the
-    run record.
+    `representsPosts`. The guards inside the modules' own `apply_pay_evidence`
+    cannot do this job: those run before the tree is pruned and before the
+    counts are annotated, so on a fresh build the field they test does not
+    exist yet -- a red team caught exactly that, with a rate published on a
+    node named "... (×4)" and `stands_for_many_posts: 0` in the run record.
 
-    742 position nodes carry a multiplicity. One rate on such a node reads as
-    what a single holder is paid while the panel beside it describes a group.
+    Until 2026-09-23 this stripped every pay field from every multi-post node.
+    That was right for a listing's rate and wrong for a tier's: "District Judge
+    (×28 active)" carries 28 posts each paid the district-judge rate by statute,
+    and refusing to say so left the graph's largest priced groups blank. So the
+    rule is per field now:
 
-    Strips all three pay fields — `positionPayRate` (this module),
-    `positionStatutoryPay` (`judicial_pay.py`, `congressional_pay.py`) and
-    `positionReportedPay` (`whitehouse_pay.py`) — for the same reason on each:
-    a single generic guard, run once, after the tree carries the counts any of
-    those modules' own `apply_pay_evidence` ran too early to see.
+    - `INCUMBENCY_PAY_FIELDS` are stripped: one listing's level or row says
+      nothing about the other holders.
+    - `OFFICE_RATE_PAY_FIELDS` stay and gain `holders`, recomputed here from
+      `representsPosts` on every build so a rename that changes the count
+      changes the claim.
+    - `UNIFORM_ROSTER_PAY_FIELDS` stay only when the block itself says the
+      roster lists every holder at one rate and its count is the count the
+      name states; otherwise stripped.
+
+    A `holders` block on a node that does NOT stand for several posts is a
+    carry-over from a previous graph and is removed. A `representsPosts` that
+    is truthy but not the dict `annotate_stated_counts` writes is a
+    multiplicity nothing here can read, and every pay field is stripped from
+    it: a claim that holds "for each holder" needs a count it can state.
     """
     withdrawn = 0
     stack = [root]
     while stack:
         node = stack.pop()
-        if node.get("representsPosts"):
-            for field in ("positionPayRate", "positionStatutoryPay", "positionReportedPay",
-                          "positionSchedulePay", "positionGradePay", "positionCurrentPay",
-                          "positionTierPay", "positionDerivedPay"):
+        represents = node.get("representsPosts")
+        if represents and not isinstance(represents, dict):
+            # A multiplicity in a form this sweep cannot read (a bare count
+            # from an older build, say) is still a multiplicity. Nothing can
+            # say "for each of N holders" off it, so every pay field goes --
+            # the fail-safe reading, and the one the gate mirrors.
+            for field in INCUMBENCY_PAY_FIELDS + OFFICE_RATE_PAY_FIELDS + UNIFORM_ROSTER_PAY_FIELDS:
                 if node.pop(field, None) is not None:
                     withdrawn += 1
+        elif isinstance(represents, dict) and represents:
+            for field in INCUMBENCY_PAY_FIELDS:
+                if node.pop(field, None) is not None:
+                    withdrawn += 1
+            for field in OFFICE_RATE_PAY_FIELDS:
+                block = node.get(field)
+                if isinstance(block, dict):
+                    block["holders"] = holders_for(represents)
+            for field in UNIFORM_ROSTER_PAY_FIELDS:
+                block = node.get(field)
+                if not isinstance(block, dict):
+                    continue
+                holders = block.get("holders")
+                uniform = (
+                    isinstance(holders, dict)
+                    and holders.get("uniformRate") is True
+                    and represents.get("kind") == "exact"
+                    and isinstance(holders.get("count"), int)
+                    and holders.get("count") == represents.get("count")
+                    and str(holders.get("note") or "").strip() != ""
+                )
+                if uniform:
+                    holders["text"] = str(represents.get("text") or "")
+                    holders["kind"] = "exact"
+                    holders["appliesToEachHolder"] = True
+                else:
+                    node.pop(field, None)
+                    withdrawn += 1
+        else:
+            for field in OFFICE_RATE_PAY_FIELDS:
+                block = node.get(field)
+                if isinstance(block, dict) and "holders" in block:
+                    block.pop("holders", None)
+            for field in UNIFORM_ROSTER_PAY_FIELDS:
+                block = node.get(field)
+                if not isinstance(block, dict):
+                    continue
+                holders = block.get("holders")
+                if isinstance(holders, dict) and holders.get("uniformRate") is True:
+                    # "The report lists N people under this title" cannot be
+                    # restated as one person's pay by dropping the count: a
+                    # roster title that went from one holder to several lands
+                    # here until the node's own name states the count, and the
+                    # gate refuses the same block. Withdrawn, not trimmed.
+                    node.pop(field, None)
+                    withdrawn += 1
+                elif isinstance(block, dict) and "holders" in block:
+                    block.pop("holders", None)
         stack.extend(node.get("children") or [])
     return withdrawn
 

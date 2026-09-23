@@ -123,6 +123,9 @@ DEFAULT_PAY_EVIDENCE_PATH = (
 PAY_SOURCE = "whitehouse_staff_report"
 PAY_SOURCE_TYPE = "whitehouse_staff_report"
 PAY_METHOD = "rate_reported_for_the_one_person_listed_under_this_title"
+#: The same claim on a node the roster lists N times at one rate: each listed
+#: person's figure, never "one person" beside a count of six.
+PAY_METHOD_UNIFORM = "rate_reported_for_each_of_the_people_listed_under_this_title"
 
 #: The subtree the report covers. The document's own heading is "ANNUAL REPORT
 #: TO CONGRESS ON WHITE HOUSE OFFICE PERSONNEL"; the Executive Office of the
@@ -403,6 +406,24 @@ def load_staff_report(pdf_path: str | Path = DEFAULT_REPORT_PDF) -> dict[str, An
     return {"report": report, "url": url, "fetched_at": fetched_at, "sha256": digest, "file": str(path)}
 
 
+#: The multiplicity suffix `scripts/expand_whitehouse_office.py` writes on a
+#: node standing for several holders: " (×4)". Read only to set it aside for
+#: the roster lookup and to check the count; the same shape
+#: `build_graph.annotate_stated_counts` reads.
+_MULTIPLICITY_SUFFIX = re.compile(r"\s*\(\u00d7\s*(\d+)\s*\)\s*$")
+
+
+def stated_multiplicity(name: str) -> int | None:
+    """The N in a trailing "(×N)", or None when the name states none."""
+    match = _MULTIPLICITY_SUFFIX.search(str(name or ""))
+    return int(match.group(1)) if match else None
+
+
+def strip_multiplicity(name: str) -> str:
+    """The name with a trailing "(×N)" removed."""
+    return _MULTIPLICITY_SUFFIX.sub("", str(name or "")).strip()
+
+
 def canonical(text: str) -> str:
     """Upper-case, ampersand spelled out, punctuation dropped, spaces
     collapsed — so that "Director of Scheduling & Advance" and "DIRECTOR OF
@@ -500,17 +521,63 @@ def build_records(
         if str(node.get("type") or "").casefold() != "position":
             continue
         considered += 1
-        if node.get("representsPosts"):
-            refuse("stands_for_several_posts")
-            continue
-        key = canonical(str(node.get("name") or ""))
+        name = str(node.get("name") or "")
+        key = canonical(name)
         matches = index.get(key)
+        stated = stated_multiplicity(name)
+        if not matches and stated is not None:
+            # `scripts/expand_whitehouse_office.py` names a title several
+            # people hold "<title> (×N)", with N the report's own count. The
+            # parenthetical is the graph's, not the report's, so the lookup
+            # sets it aside -- and only accepts the rows when there are exactly
+            # N of them, so the count in the name is the join condition rather
+            # than decoration.
+            # Only rows PRINTED as that title: the index files a row under its
+            # folded spelling too, so the bucket for "PRESIDENTIAL
+            # SPEECHWRITER" also holds "SPECIAL ASSISTANT TO THE PRESIDENT AND
+            # PRESIDENTIAL SPEECHWRITER", and counting those refused a title
+            # the report lists exactly N times at one rate (found by review).
+            stripped_key = canonical(strip_multiplicity(name))
+            candidates = [m for m in index.get(stripped_key) or [] if canonical(m["title"]) == stripped_key]
+            if candidates and len(candidates) == stated:
+                matches = candidates
         if not matches:
             refuse("no_row_carries_this_title")
             continue
+        # A title several people hold WAS refused outright -- "two salaries
+        # make the figure undecidable" -- and that is right whenever the
+        # salaries differ. Measured on the 2026 report (2026-09-23): 58 titles
+        # are held by more than one person and 23 of them list every holder at
+        # one identical rate, so for those the figure is decidable and the
+        # honest claim is "the report lists all N people under this title at
+        # $X". The record says so (`holders`), the multi-post sweep keeps it
+        # only where N is the count the node's own name states, and the panel
+        # prints "N people" rather than "one person". Differing rates, or any
+        # holder at $0.00, still refuse.
         if len(matches) > 1:
-            refuse("title_held_by_several_people")
-            continue
+            # One PRINTED title, or nothing. `index_report_titles` files a row
+            # under its folded spelling too, so "ASSISTANT TO THE PRESIDENT
+            # AND X" and "DEPUTY ASSISTANT TO THE PRESIDENT AND X" -- two
+            # appointments, which CLAUDE.md records as different ones -- both
+            # land under X. At one rate they would otherwise read as one title
+            # listed twice, with the quote naming only the first. Latent on
+            # the 2026 report (its four fold-collision keys each print several
+            # rates) and refused before it can be live.
+            if len({str(m["title"]) for m in matches}) != 1:
+                refuse("title_held_under_several_spellings")
+                continue
+            amounts = {float(m["amount"]) for m in matches}
+            if len(amounts) != 1:
+                refuse("title_held_by_several_people_at_different_rates")
+                continue
+            if any(float(m["amount"]) <= 0 for m in matches):
+                refuse("reported_rate_is_zero")
+                continue
+            statuses = {str(m["status"]) for m in matches}
+            bases = {str(m["payBasis"]) for m in matches}
+            if len(statuses) != 1 or len(bases) != 1:
+                refuse("title_held_by_several_people_on_different_terms")
+                continue
         row = matches[0]
         if float(row["amount"]) <= 0:
             # Ten of the 2026 report's rows are $0.00. Zero is never published
@@ -523,6 +590,8 @@ def build_records(
             f"{row['title']}; {row['rateText']}; {row['payBasis']}; {row['status']} "
             f"(As of Date: {as_of})"
         )
+        if len(matches) > 1:
+            quote = f"{quote} — listed {len(matches)} times, each at {row['rateText']}"
         records[node_id] = {
             "nodeId": node_id,
             "financialEvidenceStatus": "partial",
@@ -559,6 +628,17 @@ def build_records(
             # matched on equality and the panel must not claim otherwise.
             "titleFolded": key != canonical(row["title"]),
         }
+        if len(matches) > 1:
+            records[node_id]["holders"] = {
+                "count": len(matches),
+                "uniformRate": True,
+                "appliesToEachHolder": True,
+                "note": (
+                    f"The report lists {len(matches)} people under this title, every one at "
+                    f"{row['rateText']}; the figure is each listed person's pay, not one person's "
+                    "and not the group's combined pay."
+                ),
+            }
 
     report_out = {
         "source": PAY_SOURCE,
@@ -613,7 +693,6 @@ def apply_pay_evidence(
         "priced": 0,
         "unknown_node": 0,
         "not_a_position": 0,
-        "stands_for_many_posts": 0,
         "outside_the_white_house_office": 0,
         "name_no_longer_matches": 0,
     }
@@ -625,9 +704,6 @@ def apply_pay_evidence(
         if str(node.get("type") or "").casefold() != "position":
             stats["not_a_position"] += 1
             continue
-        if node.get("representsPosts"):
-            stats["stands_for_many_posts"] += 1
-            continue
         if node_id not in in_scope or node_id == SCOPE_NODE_ID:
             stats["outside_the_white_house_office"] += 1
             continue
@@ -635,13 +711,18 @@ def apply_pay_evidence(
         # let it ride on a node the report's title no longer names — the same
         # guard `evidence.evidence_names_this_node` applies to page evidence.
         reported = str(record.get("reportedTitle") or "")
-        if canonical(str(node.get("name") or "")) not in (canonical(reported), title_core(reported)):
+        node_name = str(node.get("name") or "")
+        accepted = {canonical(node_name)}
+        if isinstance(record.get("holders"), dict) and stated_multiplicity(node_name) == record["holders"].get("count"):
+            accepted.add(canonical(strip_multiplicity(node_name)))
+        if not accepted & {canonical(reported), title_core(reported)}:
             stats["name_no_longer_matches"] += 1
             continue
+        uniform = isinstance(record.get("holders"), dict) and record["holders"].get("uniformRate") is True
         node["positionReportedPay"] = {
             "source": PAY_SOURCE,
             "sourceLabel": "the White House Office's own annual report to Congress on its personnel",
-            "method": PAY_METHOD,
+            "method": PAY_METHOD_UNIFORM if uniform else PAY_METHOD,
             "amount": record.get("amount"),
             "rateText": record.get("rateText"),
             "payBasis": record.get("payBasis"),
@@ -657,6 +738,10 @@ def apply_pay_evidence(
             "url": str(record.get("sourceUrl") or ""),
             "checkedAt": record.get("retrievedAt"),
         }
+        if isinstance(record.get("holders"), dict):
+            # Kept by the multi-post sweep only where this count is the count
+            # the node's own name states; stripped otherwise.
+            node["positionReportedPay"]["holders"] = dict(record["holders"])
         stats["priced"] += 1
         # Deliberately not written: sourceUrls, sourceTypes, lastVerified,
         # verificationMethod. A payroll roster says what someone is paid; it

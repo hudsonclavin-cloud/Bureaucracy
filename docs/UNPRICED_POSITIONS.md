@@ -8,19 +8,19 @@ checkable claim. `docs/PAY_SOURCE_RESEARCH_PROMPT_3.md` is generated from this
 same list in the same run.
 
 - position nodes in the published graph: **4,591**
-- carrying a pay claim an official document supports: **461**
-- carrying none: **4,130**
+- carrying a pay claim an official document supports: **492**
+- carrying none: **4,099**
 
 | reason | count | what it means |
 |---|---|---|
-| `unreached` | 3,316 | no source this project has read names the title at all. Not a coverage gap somebody has not got to: no pay document in the repository names this title under this organisation, so nothing could have reached it. |
-| `multiplicity` | 793 | the node states a multiplicity (×N) and this project refuses to put one rate on it. A rate beside a panel describing a whole group reads as what one holder earns. Knowing which pay system governs the title is still useful -- it is what would let the graph carry the schedule rather than a rate -- so these are listed and asked about. |
+| `unreached` | 3,313 | no source this project has read names the title at all. Not a coverage gap somebody has not got to: no pay document in the repository names this title under this organisation, so nothing could have reached it. |
+| `multiplicity` | 765 | the node states a multiplicity (×N) and no claim that holds for every holder has reached it. Since 2026-09-23 a claim that holds for each holder by its own terms IS published on such a node with a `holders` block -- a tier or parity rate paid to every judge of the tier, a band every holder is within, or a roster listing every holder at one rate -- and 28 such nodes carry one. What stays refused is an incumbency-shaped claim (one listing's level, one row of the current export), because that is one appointment's figure and not the group's. For these nodes no office-rate claim has reached them at all. Knowing which pay system governs the title is still useful -- it is what would let the graph carry the schedule rather than a rate -- so these are listed and asked about. |
 | `listed_no_rate` | 21 | OPM lists the position and the row prints no rate. The PLUM archive or the current export names the title under this organisation but the Level/Grade/Pay cell carries a rank or is empty, and no salary table this project has read prices that pay plan. |
 
 ---
 
 
-## White House Office  — 83 unpriced
+## White House Office  — 61 unpriced
 
 `exec-eop-who`
 
@@ -36,23 +36,16 @@ same list in the same run.
 - `exec-eop-who-associate-director-for-national-security-legislative-affairs-2` — Associate Director for National Security Legislative Affairs (×2) — `multiplicity`
 - `exec-eop-who-associate-director-of-intergovernmental-affairs-2` — Associate Director of Intergovernmental Affairs (×2) — `multiplicity`
 - `exec-eop-who-associate-director-of-special-projects-3` — Associate Director of Special Projects (×3) — `multiplicity`
-- `exec-eop-who-associate-policy-advisor-2` — Associate Policy Advisor (×2) — `multiplicity`
 - `exec-eop-who-chief-design-officer` — Chief Design Officer — `unreached`
 - `exec-eop-who-chief-speechwriter` — Chief Speechwriter — `unreached`
-- `exec-eop-who-deputy-assistant-to-the-president-and-principal-deputy-counsel-to-the-president-2` — Deputy Assistant to the President and Principal Deputy Counsel to the President (×2) — `multiplicity`
-- `exec-eop-who-deputy-assistant-to-the-president-for-domestic-policy-2` — Deputy Assistant to the President for Domestic Policy (×2) — `multiplicity`
-- `exec-eop-who-deputy-assistant-to-the-president-for-economic-policy-and-deputy-director-of-the-national-economic-council-3` — Deputy Assistant to the President for Economic Policy and Deputy Director of the National Economic Council (×3) — `multiplicity`
 - `exec-eop-who-deputy-associate-director-10` — Deputy Associate Director (×10) — `multiplicity`
 - `exec-eop-who-deputy-chief-of-staff-for-implementation` — Deputy Chief of Staff for Implementation — `unreached`
 - `exec-eop-who-deputy-chief-of-staff-for-policy` — Deputy Chief of Staff for Policy — `unreached`
 - `exec-eop-who-deputy-counsel-to-the-president-4` — Deputy Counsel to the President (×4) — `multiplicity`
 - `exec-eop-who-deputy-director-for-legislative-affairs-house` — Deputy Director for Legislative Affairs — House — `unreached`
 - `exec-eop-who-deputy-director-for-legislative-affairs-senate` — Deputy Director for Legislative Affairs — Senate — `unreached`
-- `exec-eop-who-deputy-director-of-correspondence-management-2` — Deputy Director of Correspondence Management (×2) — `multiplicity`
-- `exec-eop-who-deputy-director-of-digital-response-2` — Deputy Director of Digital Response (×2) — `multiplicity`
 - `exec-eop-who-deputy-national-security-advisor-2` — Deputy National Security Advisor (×2) — `multiplicity`
 - `exec-eop-who-deputy-press-secretary-2` — Deputy Press Secretary (×2) — `multiplicity`
-- `exec-eop-who-digital-associate-2` — Digital Associate (×2) — `multiplicity`
 - `exec-eop-who-director-of-legislative-affairs` — Director of Legislative Affairs — `unreached`
 - `exec-eop-who-director-of-presidential-personnel` — Director of Presidential Personnel — `unreached`
 - `exec-eop-who-director-of-public-liaison` — Director of Public Liaison — `unreached`
@@ -65,13 +58,10 @@ same list in the same run.
 - `exec-eop-who-executive-assistant-2` — Executive Assistant (×2) — `multiplicity`
 - `exec-eop-who-lead-advance-representative-3` — Lead Advance Representative (×3) — `multiplicity`
 - `exec-eop-who-lead-press-advance-representative-4` — Lead Press Advance Representative (×4) — `multiplicity`
-- `exec-eop-who-legislative-affairs-coordinator-2` — Legislative Affairs Coordinator (×2) — `multiplicity`
 - `exec-eop-who-national-security-advisor` — National Security Advisor — `unreached`
 - `exec-eop-who-pardon-czar` — Pardon Czar — `unreached`
 - `exec-eop-who-policy-advisor-6` — Policy Advisor (×6) — `multiplicity`
-- `exec-eop-who-presidential-speechwriter-2` — Presidential Speechwriter (×2) — `multiplicity`
 - `exec-eop-who-presidential-writer-5` — Presidential Writer (×5) — `multiplicity`
-- `exec-eop-who-press-assistant-2` — Press Assistant (×2) — `multiplicity`
 - `exec-eop-who-records-management-analyst-3` — Records Management Analyst (×3) — `multiplicity`
 - `exec-eop-who-records-management-specialist-3` — Records Management Specialist (×3) — `multiplicity`
 - `exec-eop-who-research-analyst-4` — Research Analyst (×4) — `multiplicity`
@@ -86,58 +76,15 @@ same list in the same run.
 - `exec-eop-who-senior-shift-lead-2` — Senior Shift Lead (×2) — `multiplicity`
 - `exec-eop-who-shift-lead-3` — Shift Lead (×3) — `multiplicity`
 - `exec-eop-who-social-secretary` — Social Secretary — `unreached`
-- `exec-eop-who-special-assistant-4` — Special Assistant (×4) — `multiplicity`
-- `exec-eop-who-special-assistant-operator-2` — Special Assistant Operator (×2) — `multiplicity`
 - `exec-eop-who-special-assistant-to-the-president-and-assistant-communications-director` — Special Assistant to the President and Assistant Communications Director — `unreached`
-- `exec-eop-who-special-assistant-to-the-president-and-deputy-director-of-intergovernmental-affairs-2` — Special Assistant to the President and Deputy Director of Intergovernmental Affairs (×2) — `multiplicity`
 - `exec-eop-who-special-assistant-to-the-president-and-deputy-executive-director-of-the-national-energy-dominance-council-2` — Special Assistant to the President and Deputy Executive Director of the National Energy Dominance Council (×2) — `multiplicity`
 - `exec-eop-who-special-assistant-to-the-president-and-grant-coordinator` — Special Assistant to the President and Grant Coordinator — `unreached`
-- `exec-eop-who-special-assistant-to-the-president-and-house-legislative-affairs-liaison-4` — Special Assistant to the President and House Legislative Affairs Liaison (×4) — `multiplicity`
 - `exec-eop-who-special-assistant-to-the-president-and-presidential-speechwriter-2` — Special Assistant to the President and Presidential Speechwriter (×2) — `multiplicity`
-- `exec-eop-who-special-assistant-to-the-president-and-senate-legislative-affairs-liaison-4` — Special Assistant to the President and Senate Legislative Affairs Liaison (×4) — `multiplicity`
 - `exec-eop-who-special-assistant-to-the-president-and-senior-policy-advisor-to-the-deputy-chief-of-staff-for-policy-3` — Special Assistant to the President and Senior Policy Advisor to the Deputy Chief of Staff for Policy (×3) — `multiplicity`
-- `exec-eop-who-special-assistant-to-the-president-for-domestic-policy-6` — Special Assistant to the President for Domestic Policy (×6) — `multiplicity`
-- `exec-eop-who-special-assistant-to-the-president-for-economic-policy-5` — Special Assistant to the President for Economic Policy (×5) — `multiplicity`
-- `exec-eop-who-special-assistant-to-the-president-for-legislative-affairs-2` — Special Assistant to the President for Legislative Affairs (×2) — `multiplicity`
-- `exec-eop-who-special-assistant-to-the-president-for-political-affairs-4` — Special Assistant to the President for Political Affairs (×4) — `multiplicity`
-- `exec-eop-who-special-assistant-to-the-president-for-presidential-personnel-6` — Special Assistant to the President for Presidential Personnel (×6) — `multiplicity`
-- `exec-eop-who-special-assistant-to-the-president-for-the-office-of-public-liaison-3` — Special Assistant to the President for the Office of Public Liaison (×3) — `multiplicity`
 - `exec-eop-who-staff-assistant-15` — Staff Assistant (×15) — `multiplicity`
 - `exec-eop-who-stenographer-5` — Stenographer (×5) — `multiplicity`
 - `exec-eop-who-supervisor-for-records-management-3` — Supervisor for Records Management (×3) — `multiplicity`
 - `exec-eop-who-travel-coordinator-4` — Travel Coordinator (×4) — `multiplicity`
-- `exec-eop-who-war-room-associate-3` — War Room Associate (×3) — `multiplicity`
-
-## Federal Reserve System  — 26 unpriced
-
-`exec-regulatory-fed`
-
-- `exec-regulatory-fed-chair-board-of-governors` — Chair, Board of Governors — `unreached`
-- `exec-regulatory-fed-director-of-banking-supervision-regulation` — Director of Banking Supervision & Regulation — `unreached`
-- `exec-regulatory-fed-director-of-consumer-community-affairs` — Director of Consumer & Community Affairs — `unreached`
-- `exec-regulatory-fed-director-of-financial-stability` — Director of Financial Stability — `unreached`
-- `exec-regulatory-fed-director-of-international-finance` — Director of International Finance — `unreached`
-- `exec-regulatory-fed-director-of-monetary-affairs` — Director of Monetary Affairs — `unreached`
-- `exec-regulatory-fed-director-of-research-statistics` — Director of Research & Statistics — `unreached`
-- `exec-regulatory-fed-fomc-economist` — FOMC Economist — `unreached`
-- `exec-regulatory-fed-fomc-secretary` — FOMC Secretary — `unreached`
-- `exec-regulatory-fed-general-counsel` — General Counsel — `unreached`
-- `exec-regulatory-fed-governor-4-members` — Governor (×4 members) — `multiplicity`
-- `exec-regulatory-fed-president-federal-reserve-bank-of-atlanta` — President — Federal Reserve Bank of Atlanta — `unreached`
-- `exec-regulatory-fed-president-federal-reserve-bank-of-boston` — President — Federal Reserve Bank of Boston — `unreached`
-- `exec-regulatory-fed-president-federal-reserve-bank-of-chicago` — President — Federal Reserve Bank of Chicago — `unreached`
-- `exec-regulatory-fed-president-federal-reserve-bank-of-cleveland` — President — Federal Reserve Bank of Cleveland — `unreached`
-- `exec-regulatory-fed-president-federal-reserve-bank-of-dallas` — President — Federal Reserve Bank of Dallas — `unreached`
-- `exec-regulatory-fed-president-federal-reserve-bank-of-kansas-city` — President — Federal Reserve Bank of Kansas City — `unreached`
-- `exec-regulatory-fed-president-federal-reserve-bank-of-minneapolis` — President — Federal Reserve Bank of Minneapolis — `unreached`
-- `exec-regulatory-fed-president-federal-reserve-bank-of-new-york-most-powerful-regional-bank` — President — Federal Reserve Bank of New York (most powerful regional bank) — `unreached`
-- `exec-regulatory-fed-president-federal-reserve-bank-of-philadelphia` — President — Federal Reserve Bank of Philadelphia — `unreached`
-- `exec-regulatory-fed-president-federal-reserve-bank-of-richmond` — President — Federal Reserve Bank of Richmond — `unreached`
-- `exec-regulatory-fed-president-federal-reserve-bank-of-san-francisco` — President — Federal Reserve Bank of San Francisco — `unreached`
-- `exec-regulatory-fed-president-federal-reserve-bank-of-st-louis` — President — Federal Reserve Bank of St. Louis — `unreached`
-- `exec-regulatory-fed-secretary-of-the-board` — Secretary of the Board — `unreached`
-- `exec-regulatory-fed-vice-chair-for-supervision` — Vice Chair for Supervision — `unreached`
-- `exec-regulatory-fed-vice-chair-board-of-governors` — Vice Chair, Board of Governors — `unreached`
 
 ## VA Medical Centers  — 24 unpriced
 
@@ -660,6 +607,34 @@ same list in the same run.
 - `exec-dept-va-vha-visn-1-new-england-vamc-social-worker-multiple` — Social Worker (×multiple) — `multiplicity`
 - `exec-dept-va-vha-visn-1-new-england-vamc-va-police-chief` — VA Police Chief — `unreached`
 - `exec-dept-va-vha-visn-1-new-england-vamc-vamc-associate-director-administrative` — VAMC Associate Director (Administrative) — `unreached`
+
+## Federal Reserve System  — 23 unpriced
+
+`exec-regulatory-fed`
+
+- `exec-regulatory-fed-director-of-banking-supervision-regulation` — Director of Banking Supervision & Regulation — `unreached`
+- `exec-regulatory-fed-director-of-consumer-community-affairs` — Director of Consumer & Community Affairs — `unreached`
+- `exec-regulatory-fed-director-of-financial-stability` — Director of Financial Stability — `unreached`
+- `exec-regulatory-fed-director-of-international-finance` — Director of International Finance — `unreached`
+- `exec-regulatory-fed-director-of-monetary-affairs` — Director of Monetary Affairs — `unreached`
+- `exec-regulatory-fed-director-of-research-statistics` — Director of Research & Statistics — `unreached`
+- `exec-regulatory-fed-fomc-economist` — FOMC Economist — `unreached`
+- `exec-regulatory-fed-fomc-secretary` — FOMC Secretary — `unreached`
+- `exec-regulatory-fed-general-counsel` — General Counsel — `unreached`
+- `exec-regulatory-fed-governor-4-members` — Governor (×4 members) — `multiplicity`
+- `exec-regulatory-fed-president-federal-reserve-bank-of-atlanta` — President — Federal Reserve Bank of Atlanta — `unreached`
+- `exec-regulatory-fed-president-federal-reserve-bank-of-boston` — President — Federal Reserve Bank of Boston — `unreached`
+- `exec-regulatory-fed-president-federal-reserve-bank-of-chicago` — President — Federal Reserve Bank of Chicago — `unreached`
+- `exec-regulatory-fed-president-federal-reserve-bank-of-cleveland` — President — Federal Reserve Bank of Cleveland — `unreached`
+- `exec-regulatory-fed-president-federal-reserve-bank-of-dallas` — President — Federal Reserve Bank of Dallas — `unreached`
+- `exec-regulatory-fed-president-federal-reserve-bank-of-kansas-city` — President — Federal Reserve Bank of Kansas City — `unreached`
+- `exec-regulatory-fed-president-federal-reserve-bank-of-minneapolis` — President — Federal Reserve Bank of Minneapolis — `unreached`
+- `exec-regulatory-fed-president-federal-reserve-bank-of-new-york-most-powerful-regional-bank` — President — Federal Reserve Bank of New York (most powerful regional bank) — `unreached`
+- `exec-regulatory-fed-president-federal-reserve-bank-of-philadelphia` — President — Federal Reserve Bank of Philadelphia — `unreached`
+- `exec-regulatory-fed-president-federal-reserve-bank-of-richmond` — President — Federal Reserve Bank of Richmond — `unreached`
+- `exec-regulatory-fed-president-federal-reserve-bank-of-san-francisco` — President — Federal Reserve Bank of San Francisco — `unreached`
+- `exec-regulatory-fed-president-federal-reserve-bank-of-st-louis` — President — Federal Reserve Bank of St. Louis — `unreached`
+- `exec-regulatory-fed-secretary-of-the-board` — Secretary of the Board — `unreached`
 
 ## Federal Bureau of Investigation (FBI)  — 21 unpriced
 
@@ -1779,36 +1754,6 @@ same list in the same run.
 - `exec-dept-ed-fsa-director-research-analytics-evaluation` — Director — Research, Analytics & Evaluation — `unreached`
 - `exec-dept-ed-fsa-financial-aid-specialist-multiple` — Financial Aid Specialist (×multiple) — `multiplicity`
 
-## Southern District of New York (S.D.N.Y.)  — 10 unpriced
-
-`jud-district-sdny`
-
-- `jud-district-sdny-bankruptcy-judge-12` — Bankruptcy Judge (×12) — `multiplicity`
-- `jud-district-sdny-chief-pretrial-services-officer` — Chief Pretrial Services Officer — `unreached`
-- `jud-district-sdny-chief-probation-officer` — Chief Probation Officer — `unreached`
-- `jud-district-sdny-clerk-of-court` — Clerk of Court — `unreached`
-- `jud-district-sdny-court-security-officer-multiple` — Court Security Officer (×multiple) — `multiplicity`
-- `jud-district-sdny-courtroom-deputy-multiple` — Courtroom Deputy (×multiple) — `multiplicity`
-- `jud-district-sdny-district-judge-28-active` — District Judge (×28 active) — `multiplicity`
-- `jud-district-sdny-law-clerk-2-4-per-judge` — Law Clerk (×2-4 per judge) — `multiplicity`
-- `jud-district-sdny-magistrate-judge-13` — Magistrate Judge (×13) — `multiplicity`
-- `jud-district-sdny-senior-judge-multiple` — Senior Judge (×multiple) — `multiplicity`
-
-## Supreme Court of the United States (SCOTUS)  — 10 unpriced
-
-`jud-scotus`
-
-- `jud-scotus-associate-justice-8` — Associate Justice (×8) — `multiplicity`
-- `jud-scotus-clerk-of-the-court` — Clerk of the Court — `unreached`
-- `jud-scotus-director-of-budget-personnel` — Director of Budget & Personnel — `unreached`
-- `jud-scotus-law-clerk-to-associate-justices-4-per-justice` — Law Clerk to Associate Justices (×4 per Justice) — `multiplicity`
-- `jud-scotus-law-clerk-to-chief-justice-4` — Law Clerk to Chief Justice (×4) — `multiplicity`
-- `jud-scotus-librarian-of-the-supreme-court` — Librarian of the Supreme Court — `unreached`
-- `jud-scotus-marshal-of-the-supreme-court` — Marshal of the Supreme Court — `unreached`
-- `jud-scotus-public-information-officer` — Public Information Officer — `unreached`
-- `jud-scotus-reporter-of-decisions` — Reporter of Decisions — `unreached`
-- `jud-scotus-supreme-court-police-chief` — Supreme Court Police Chief — `unreached`
-
 ## Transportation Security Administration (TSA)  — 10 unpriced
 
 `exec-dept-dhs-tsa`
@@ -2201,6 +2146,20 @@ same list in the same run.
 - `exec-ind-sba-inspector-general` — Inspector General — `unreached`
 - `exec-ind-sba-regional-administrator-10-regions` — Regional Administrator — 10 Regions — `unreached`
 
+## Southern District of New York (S.D.N.Y.)  — 9 unpriced
+
+`jud-district-sdny`
+
+- `jud-district-sdny-bankruptcy-judge-12` — Bankruptcy Judge (×12) — `multiplicity`
+- `jud-district-sdny-chief-pretrial-services-officer` — Chief Pretrial Services Officer — `unreached`
+- `jud-district-sdny-chief-probation-officer` — Chief Probation Officer — `unreached`
+- `jud-district-sdny-clerk-of-court` — Clerk of Court — `unreached`
+- `jud-district-sdny-court-security-officer-multiple` — Court Security Officer (×multiple) — `multiplicity`
+- `jud-district-sdny-courtroom-deputy-multiple` — Courtroom Deputy (×multiple) — `multiplicity`
+- `jud-district-sdny-law-clerk-2-4-per-judge` — Law Clerk (×2-4 per judge) — `multiplicity`
+- `jud-district-sdny-magistrate-judge-13` — Magistrate Judge (×13) — `multiplicity`
+- `jud-district-sdny-senior-judge-multiple` — Senior Judge (×multiple) — `multiplicity`
+
 ## Stennis Space Center (SSC)  — 9 unpriced
 
 `exec-ind-nasa-stennis-space-center-ssc`
@@ -2214,6 +2173,20 @@ same list in the same run.
 - `exec-ind-nasa-stennis-space-center-ssc-director-of-safety-mission-assurance` — Director of Safety & Mission Assurance — `unreached`
 - `exec-ind-nasa-stennis-space-center-ssc-program-manager-multiple` — Program Manager (×multiple) — `multiplicity`
 - `exec-ind-nasa-stennis-space-center-ssc-research-engineer-scientist-multiple` — Research Engineer / Scientist (×multiple) — `multiplicity`
+
+## Supreme Court of the United States (SCOTUS)  — 9 unpriced
+
+`jud-scotus`
+
+- `jud-scotus-clerk-of-the-court` — Clerk of the Court — `unreached`
+- `jud-scotus-director-of-budget-personnel` — Director of Budget & Personnel — `unreached`
+- `jud-scotus-law-clerk-to-associate-justices-4-per-justice` — Law Clerk to Associate Justices (×4 per Justice) — `multiplicity`
+- `jud-scotus-law-clerk-to-chief-justice-4` — Law Clerk to Chief Justice (×4) — `multiplicity`
+- `jud-scotus-librarian-of-the-supreme-court` — Librarian of the Supreme Court — `unreached`
+- `jud-scotus-marshal-of-the-supreme-court` — Marshal of the Supreme Court — `unreached`
+- `jud-scotus-public-information-officer` — Public Information Officer — `unreached`
+- `jud-scotus-reporter-of-decisions` — Reporter of Decisions — `unreached`
+- `jud-scotus-supreme-court-police-chief` — Supreme Court Police Chief — `unreached`
 
 ## U.S. Attorneys Office (USAO — 94 Districts)  — 9 unpriced
 
@@ -3566,17 +3539,6 @@ same list in the same run.
 - `leg-support-loc-copyright-director-of-operations` — Director of Operations — `unreached`
 - `leg-support-loc-copyright-register-of-copyrights-director` — Register of Copyrights & Director — `unreached`
 
-## Court of Appeals for the Armed Forces (CAAF)  — 6 unpriced
-
-`jud-specialized-caaf`
-
-- `jud-specialized-caaf-chief-judge-air-force-court-of-criminal-appeals` — Chief Judge — Air Force Court of Criminal Appeals — `unreached`
-- `jud-specialized-caaf-chief-judge-army-court-of-criminal-appeals` — Chief Judge — Army Court of Criminal Appeals — `unreached`
-- `jud-specialized-caaf-chief-judge-coast-guard-court-of-criminal-appeals` — Chief Judge — Coast Guard Court of Criminal Appeals — `unreached`
-- `jud-specialized-caaf-chief-judge-navy-marine-court-of-criminal-appeals` — Chief Judge — Navy-Marine Court of Criminal Appeals — `unreached`
-- `jud-specialized-caaf-clerk-of-the-court` — Clerk of the Court — `unreached`
-- `jud-specialized-caaf-judge-4` — Judge (×4) — `multiplicity`
-
 ## Dwight D. Eisenhower Presidential Library (Abilene, KS)  — 6 unpriced
 
 `exec-ind-nara-dwight-d-eisenhower-presidential-library-abilene-ks`
@@ -3933,6 +3895,16 @@ same list in the same run.
 - `exec-dept-doi-bsee-regional-director-gulf-of-mexico` — Regional Director — Gulf of Mexico — `unreached`
 - `exec-dept-doi-bsee-regional-director-pacific` — Regional Director — Pacific — `unreached`
 
+## Court of Appeals for the Armed Forces (CAAF)  — 5 unpriced
+
+`jud-specialized-caaf`
+
+- `jud-specialized-caaf-chief-judge-air-force-court-of-criminal-appeals` — Chief Judge — Air Force Court of Criminal Appeals — `unreached`
+- `jud-specialized-caaf-chief-judge-army-court-of-criminal-appeals` — Chief Judge — Army Court of Criminal Appeals — `unreached`
+- `jud-specialized-caaf-chief-judge-coast-guard-court-of-criminal-appeals` — Chief Judge — Coast Guard Court of Criminal Appeals — `unreached`
+- `jud-specialized-caaf-chief-judge-navy-marine-court-of-criminal-appeals` — Chief Judge — Navy-Marine Court of Criminal Appeals — `unreached`
+- `jud-specialized-caaf-clerk-of-the-court` — Clerk of the Court — `unreached`
+
 ## Export-Import Bank of the U.S.  — 5 unpriced
 
 `exec-ind-misc-export-import-bank-of-the-u-s`
@@ -4223,16 +4195,6 @@ same list in the same run.
 - `exec-ind-misc-tennessee-valley-authority-tva-general-counsel` — General Counsel — `unreached`
 - `exec-ind-misc-tennessee-valley-authority-tva-inspector-general` — Inspector General — `unreached`
 
-## U.S. Court of Federal Claims  — 5 unpriced
-
-`jud-specialized-claims`
-
-- `jud-specialized-claims-clerk-of-the-court` — Clerk of the Court — `unreached`
-- `jud-specialized-claims-judge-15` — Judge (×15) — `multiplicity`
-- `jud-specialized-claims-law-clerk-2-per-judge` — Law Clerk (×2 per judge) — `multiplicity`
-- `jud-specialized-claims-senior-judge-multiple` — Senior Judge (×multiple) — `multiplicity`
-- `jud-specialized-claims-special-master-multiple` — Special Master (×multiple) — `multiplicity`
-
 ## U.S. Fish & Wildlife Service (FWS)  — 5 unpriced
 
 `exec-dept-doi-fws`
@@ -4252,16 +4214,6 @@ same list in the same run.
 - `exec-ind-misc-u-s-international-development-finance-corp-dfc-director-administrator-chair-u-s-international-development-finance-corp` — Director / Administrator / Chair, U.S. International Development Finance Corp — `unreached`
 - `exec-ind-misc-u-s-international-development-finance-corp-dfc-general-counsel` — General Counsel — `unreached`
 - `exec-ind-misc-u-s-international-development-finance-corp-dfc-inspector-general` — Inspector General — `unreached`
-
-## U.S. Tax Court  — 5 unpriced
-
-`jud-specialized-tax`
-
-- `jud-specialized-tax-chief-counsel-irs-opposing` — Chief Counsel — IRS (opposing) — `unreached`
-- `jud-specialized-tax-clerk-of-the-court` — Clerk of the Court — `unreached`
-- `jud-specialized-tax-general-counsel` — General Counsel — `unreached`
-- `jud-specialized-tax-judge-18` — Judge (×18) — `multiplicity`
-- `jud-specialized-tax-special-trial-judge-multiple` — Special Trial Judge (×multiple) — `multiplicity`
 
 ## Agricultural Research Service (ARS)  — 4 unpriced
 
@@ -5703,6 +5655,15 @@ same list in the same run.
 - `exec-ind-misc-broadcasting-board-of-governors-usagm-director-administrator-chair-broadcasting-board-of-governors-usagm` — Director / Administrator / Chair, Broadcasting Board of Governors / USAGM — `unreached`
 - `exec-ind-misc-broadcasting-board-of-governors-usagm-inspector-general` — Inspector General — `unreached`
 
+## U.S. Court of Federal Claims  — 4 unpriced
+
+`jud-specialized-claims`
+
+- `jud-specialized-claims-clerk-of-the-court` — Clerk of the Court — `unreached`
+- `jud-specialized-claims-law-clerk-2-per-judge` — Law Clerk (×2 per judge) — `multiplicity`
+- `jud-specialized-claims-senior-judge-multiple` — Senior Judge (×multiple) — `multiplicity`
+- `jud-specialized-claims-special-master-multiple` — Special Master (×multiple) — `multiplicity`
+
 ## U.S. Mission to the United Nations  — 4 unpriced
 
 `exec-dept-state-u-s-mission-to-the-united-nations`
@@ -5720,6 +5681,15 @@ same list in the same run.
 - `leg-senate-cmte-select-committee-on-ethics-minority-staff-director-select-committee-on-ethics` — Minority Staff Director, Select Committee on Ethics — `unreached`
 - `leg-senate-cmte-select-committee-on-ethics-ranking-member-select-committee-on-ethics` — Ranking Member, Select Committee on Ethics — `unreached`
 - `leg-senate-cmte-select-committee-on-ethics-staff-director-select-committee-on-ethics` — Staff Director, Select Committee on Ethics — `unreached`
+
+## U.S. Tax Court  — 4 unpriced
+
+`jud-specialized-tax`
+
+- `jud-specialized-tax-chief-counsel-irs-opposing` — Chief Counsel — IRS (opposing) — `unreached`
+- `jud-specialized-tax-clerk-of-the-court` — Clerk of the Court — `unreached`
+- `jud-specialized-tax-general-counsel` — General Counsel — `unreached`
+- `jud-specialized-tax-special-trial-judge-multiple` — Special Trial Judge (×multiple) — `multiplicity`
 
 ## United States Senate Committee on the Judiciary  — 4 unpriced
 
@@ -5866,14 +5836,6 @@ same list in the same run.
 - `exec-ind-nsf-technology-innovation-partnerships-tip-convergence-accelerator-division-director-convergence-accelerator` — Division Director, Convergence Accelerator — `unreached`
 - `exec-ind-nsf-technology-innovation-partnerships-tip-convergence-accelerator-program-director-multiple` — Program Director (×multiple) — `multiplicity`
 - `exec-ind-nsf-technology-innovation-partnerships-tip-convergence-accelerator-program-officer-multiple` — Program Officer (×multiple) — `multiplicity`
-
-## Court of Appeals for Veterans Claims (CAVC)  — 3 unpriced
-
-`jud-specialized-cavc`
-
-- `jud-specialized-cavc-clerk-of-the-court` — Clerk of the Court — `unreached`
-- `jud-specialized-cavc-judge-8` — Judge (×8) — `multiplicity`
-- `jud-specialized-cavc-pro-se-staff-attorney-multiple` — Pro Se Staff Attorney (×multiple) — `multiplicity`
 
 ## Cybersecurity  — 3 unpriced
 
@@ -6851,6 +6813,13 @@ same list in the same run.
 
 - `leg-house-cmte-homeland-security-sub-counterterrorism-law-enforcement-intelligence-chair-subcommittee-on-counterterrorism-law-enforcement-intelligence` — Chair, Subcommittee on Counterterrorism, Law Enforcement & Intelligence — `unreached`
 - `leg-house-cmte-homeland-security-sub-counterterrorism-law-enforcement-intelligence-ranking-member-subcommittee-on-counterterrorism-law-enforcement-intelligence` — Ranking Member, Subcommittee on Counterterrorism, Law Enforcement & Intelligence — `unreached`
+
+## Court of Appeals for Veterans Claims (CAVC)  — 2 unpriced
+
+`jud-specialized-cavc`
+
+- `jud-specialized-cavc-clerk-of-the-court` — Clerk of the Court — `unreached`
+- `jud-specialized-cavc-pro-se-staff-attorney-multiple` — Pro Se Staff Attorney (×multiple) — `multiplicity`
 
 ## Directorate for Engineering (ENG)  — 2 unpriced
 

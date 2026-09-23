@@ -2486,3 +2486,114 @@ byte-identical — only the `report` block's matching counts moved.
 here, so the fifteen new FedScope headcounts are measured above but not yet
 written; whoever next runs `scripts/derive_headcount_evidence.py` will land
 them. `output/` was not rebuilt at all.
+
+## 19. The third research pack, read against the documents (2026-09-23)
+
+`docs/PAY_SOURCE_RESEARCH_PROMPT_3.md` was run: a lead prompt on which pay
+systems exist and where each is published, and enumeration shards naming every
+unpriced title. The owner pasted the answers to Prompt 0 and to the shards
+covering the White House Office, the Federal Reserve and VISNs 15–23. What
+follows is what each answer was checked against and what it did or did not
+license. The standing rule applies to research as it applies to a page: a
+figure is published only from a document this repository has read, and a
+research answer is a lead, never a source.
+
+### 19.1 The Federal Reserve: a figure the statute does not print
+
+The shard reported the Chair's salary as "$203,500 per annum | likely", citing
+12 U.S.C. § 242. The section was fetched (`tests/fixtures/uscode/
+fed_12_usc_242.html`, `robots.txt` allows the path, digest recorded) and it
+prints **no dollar figure at all**. `tests/test_statutory_schedule.py::
+ReviewedMirrorTests::test_the_section_prints_no_salary_figure` pins that
+against the committed bytes, so the claim cannot be re-introduced by anybody
+remembering the research rather than the page.
+
+What § 242 does print is the *identification*: "1 shall be designated by the
+President, by and with the advice and consent of the Senate, to serve as
+Chairman of the Board for a term of 4 years", "2 shall be designated … to serve
+as Vice Chairmen of the Board", and "1 of whom shall be designated Vice Chairman
+for Supervision". That is the document the route needed, because neither
+matcher in `statutory_schedule.py` could reach the three posts: the graph's
+"Chair, Board of Governors" is not equal to the Code's "Chairman, Board of
+Governors of the Federal Reserve System" (§ 5312, Level I), and the Vice Chairs
+are placed by a title that never names them — § 5313 prints "Members, Board of
+Governors of the Federal Reserve System" (Level II). `REVIEWED_TITLE_ROWS` is
+the reviewed table: node → statutory title, with the § 242 sentence that says
+why the node is that office, re-checked on every run in the section's
+*operative* text (the page prints each sentence a second time in its
+Amendments note, and the cut is what keeps a repealed sentence from ever
+counting). Three posts priced at the rates 5 U.S.C. §§ 5312–5313 joined to
+OPM's Salary Table 2026-EX give — $253,100 and $228,000 — each resting on
+**three** documents, of which one states the figure, graded `partial`.
+
+**"Governor (×4 members)" is deliberately not priced.** The same "Members"
+title reaches it, but it stands for several posts and `positionSchedulePay` is
+an incumbency-class field the multi-post sweep strips (§19.4), so a row would
+be written and withdrawn on every build. Pricing a bench from a class title is
+a separate decision and is left to the owner.
+
+### 19.2 VISNs 15–23: the shards contradict each other, and the module's refusal stands
+
+The VA shards priced service chiefs from the Title 38 tables by choosing a
+table per clinical specialty — and disagreed with one another about which table
+applies: one shard filed `Chief — Dental Service` at Table 1's Tier 2, another
+at Tier 3. That is exactly the failure `va_title38_pay.py` refuses by name:
+Tables 1 and 2 print the same leadership titles at *different* ranges because
+they cover different specialty lists, so choosing a table per node is this
+repository deciding which VA service chiefs are doctors. Two research passes
+reading the same PDF and reaching different tiers for one title is the
+measurement that the refusal is right, not an argument for relaxing it.
+Nothing was priced from these shards; `Chief — Dental Service` and the other
+service chiefs stay in `docs/UNPRICED_POSITIONS.md` under `unreached`.
+
+### 19.3 The White House Office: the shard cited last year's report
+
+The WHO shard cited the 2025 Annual Report to Congress on White House Staff.
+This repository reads the 2026 report (`tests/fixtures/whitehouse/`, the
+Section 6 disclosure as of July 1, 2026), which is the one already committed
+and gated. The shard added no document; what it did prompt was a re-read of
+the multi-holder titles, which §19.4 records.
+
+### 19.4 What the pack was actually good for: the multi-post rule, made per field
+
+Prompt 0's structural answer was right about one thing the graph had been
+getting wrong in the other direction: a rule written for one shape of claim
+had been applied to all eight pay fields. `withdraw_pay_from_multi_post_nodes`
+stripped **every** pay field from a node stating a multiplicity, on the
+reasoning that "one rate beside a panel describing a whole group reads as what
+one holder earns". That is true of an incumbency-shaped claim — a listing, a
+row of the current export, one office's archived level — and false of a claim
+that holds for every holder by its own terms:
+
+- a **tier or parity rate** (`positionStatutoryPay` from uscourts.gov,
+  `positionDerivedPay` from a parity provision) is paid to *every* judge of the
+  tier: "Each judge shall receive…";
+- a **band** (`positionTierPay`) states bounds every holder is within;
+- a **roster** (`positionReportedPay`) lists every holder by title, and where
+  all N are at one rate, the rate is the group's fact and not one person's.
+
+So the sweep is now per field (`pay_tables.INCUMBENCY_PAY_FIELDS` stripped;
+`OFFICE_RATE_PAY_FIELDS` kept and stamped with a `holders` block saying how
+many and that it applies to each; `UNIFORM_ROSTER_PAY_FIELDS` kept only when
+every holder is at one rate and the count equals the node's own stated
+multiplicity). **28 multi-post nodes priced**: `Judge (×18)` and the other
+three Article I benches from their courts' own parity provisions; the eight
+Associate Justices and a district's own active judges from the compensation
+table; and 22 White House Office titles the roster lists N times at one rate
+(`Special Assistant (×4)`, `Presidential Speechwriter (×2)`, …). The rule that stayed: a bench whose name bundles
+senior judges (`Circuit Judge (×28 active + senior judges)`) is refused, because
+28 U.S.C. § 371(b)(2) sets an uncertified senior judge's salary by reference to
+a past year (the salary last drawn in active service or when last certified,
+adjusted under § 461), not necessarily the tier's current rate, so one rate for
+the bench would be false of some of its members. (A first draft said "frozen";
+the section's last sentence says "adjusted", and the wording follows the
+section now.) `tests/fixtures/uscode/
+senior_judges_28_usc_371.html` is committed for that reason.
+
+### 19.5 Standing correction: the CAVC's repealed subsection
+
+Recorded in `CLAUDE.md` and repeated here because the research pack could
+re-surface it: 38 U.S.C. § 7253(e) as it read *before amendment* — the chief
+judge at the circuit rate — is printed on the page in the Amendments note and
+is not the law. A quote is accepted only from the operative text, and the
+repealed sentence is refused by the gate wherever it appears.

@@ -89,16 +89,25 @@ PAY_DOCUMENT_FIELDS: dict[str, dict[str, Any]] = {
         ),
     },
     "positionSchedulePay": {
-        "urlKeys": ("url", "statuteUrl"),
+        # The third key is present only on a reviewed identification
+        # (`statutory_schedule.REVIEWED_TITLE_ROWS`): the Code places
+        # "Members, Board of Governors" at Level II, and what makes the Vice
+        # Chair a member is a second statute. It is a document the level
+        # assignment rests on, so it is counted; the count is read off the
+        # block, so an ordinary record still counts two.
+        "urlKeys": ("url", "statuteUrl", ("identification", "basisUrl")),
         "roles": {
             "url": "states what that Executive Schedule level pays",
             "statuteUrl": "places this post at that level",
+            ("identification", "basisUrl"): "identifies this post as the office the Code places at that level",
         },
         "statesTheFigure": 1,
         "caution": (
-            "One document states the rate and the other is the statute that puts this post at "
-            "that level. The percentage measures how much official documentation the figure "
-            "rests on, not the chance that it is right."
+            "One document states the rate and another is the statute that puts this post at "
+            "that level; where a third is listed, it is the statute that says this post is the "
+            "office the Code names, because the Code's title is not this node's name. The "
+            "percentage measures how much official documentation the figure rests on, not the "
+            "chance that it is right."
         ),
     },
     "positionStatutoryPay": {
@@ -120,6 +129,16 @@ PAY_DOCUMENT_FIELDS: dict[str, dict[str, Any]] = {
             "official documentation it rests on, not the chance that it is right -- and what "
             "the roster reports is what one listed person is paid, not what the post pays "
             "whoever holds it."
+        ),
+        # The same block on a node the roster lists N times at one rate
+        # (`holders.uniformRate`): the figure is each listed person's, and the
+        # sentences must not call it one person's beside a count of six.
+        "uniformRoles": {"url": "states what each of the people listed under this title is paid"},
+        "uniformCaution": (
+            "One document states the figure outright. The percentage measures how much "
+            "official documentation it rests on, not the chance that it is right -- and what "
+            "the roster reports is what each of the people listed under this title is paid, "
+            "every one of them at this same figure, not what the post pays whoever holds it."
         ),
     },
     "positionCurrentPay": {
@@ -188,6 +207,12 @@ def _urls_at(block: Mapping[str, Any], key: Any) -> Iterable[str]:
                 yield value.strip()
 
 
+def _uniform_roster(block: Mapping[str, Any]) -> bool:
+    """A roster block that lists every holder at one rate says so in `holders`."""
+    holders = block.get("holders")
+    return isinstance(holders, Mapping) and holders.get("uniformRate") is True
+
+
 def count_documents(field: str, block: Mapping[str, Any]) -> tuple[int, list[dict[str, str]]]:
     """How many DISTINCT documents this block names, and what each supplies.
 
@@ -200,12 +225,13 @@ def count_documents(field: str, block: Mapping[str, Any]) -> tuple[int, list[dic
         return 0, []
     seen: list[str] = []
     roles: list[dict[str, str]] = []
+    role_words = spec.get("uniformRoles") if _uniform_roster(block) and spec.get("uniformRoles") else spec["roles"]
     for key in spec["urlKeys"]:
         for url in _urls_at(block, key):
             if url in seen:
                 continue
             seen.append(url)
-            role = spec["roles"].get(key)
+            role = role_words.get(key)
             roles.append({"url": url, "role": role} if role else {"url": url})
     return len(seen), roles
 
@@ -239,7 +265,7 @@ def annotate_pay_documents(root: dict[str, Any]) -> dict[str, int]:
                 "documentsStatingTheFigure": int(spec["statesTheFigure"]),
                 "percent": document_strength_percent(documents),
                 "scale": STRENGTH_SCALE,
-                "caution": spec["caution"],
+                "caution": (spec.get("uniformCaution") or spec["caution"]) if _uniform_roster(block) else spec["caution"],
                 "documentRoles": roles,
             }
             stats["annotated"] += 1

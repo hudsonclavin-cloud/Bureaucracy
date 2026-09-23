@@ -124,6 +124,25 @@ class CountTests(unittest.TestCase):
         self.assertEqual({TABLE, LISTING}, {r["url"] for r in roles})
         self.assertTrue(all(r.get("role") for r in roles))
 
+    def test_a_uniform_roster_block_is_worded_for_every_holder(self):
+        """The count block on `Special Assistant (×4)` must not call the
+        figure one person's beside a `holders` count of four."""
+        single = {"url": TABLE}
+        uniform = {"url": TABLE, "holders": {"count": 4, "uniformRate": True}}
+        _, single_roles = count_documents("positionReportedPay", single)
+        _, uniform_roles = count_documents("positionReportedPay", uniform)
+        self.assertIn("the one person", single_roles[0]["role"])
+        self.assertIn("each of the people", uniform_roles[0]["role"])
+        self.assertNotIn("one person", uniform_roles[0]["role"])
+        tree = {"id": "r", "name": "R", "type": "Foundation", "children": [
+            {"id": "a", "name": "A", "type": "Position", "positionReportedPay": dict(single)},
+            {"id": "b", "name": "B (×4)", "type": "Position", "positionReportedPay": dict(uniform)},
+        ]}
+        annotate_pay_documents(tree)
+        self.assertIn("one listed person", tree["children"][0]["positionReportedPay"]["verification"]["caution"])
+        self.assertIn("each of the people", tree["children"][1]["positionReportedPay"]["verification"]["caution"])
+        self.assertNotIn("one listed person", tree["children"][1]["positionReportedPay"]["verification"]["caution"])
+
     def test_a_single_document_counts_one(self):
         self.assertEqual(1, count_documents("positionStatutoryPay", {"url": TABLE})[0])
 
@@ -139,6 +158,21 @@ class CountTests(unittest.TestCase):
 
     def test_a_missing_second_url_drops_the_count(self):
         self.assertEqual(1, count_documents("positionPayRate", {"url": TABLE})[0])
+
+    def test_a_reviewed_identification_counts_its_basis_statute_as_a_third_document(self):
+        """The Fed's Vice Chairs are placed by "Members, Board of Governors"
+        and what makes a Vice Chair a member is 12 U.S.C. 242 -- a document
+        the level assignment rests on, counted only where the block carries
+        it, so an ordinary record still counts two."""
+        basis = "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title12-section242&num=0&edition=prelim"
+        count, roles = count_documents(
+            "positionSchedulePay",
+            {"url": TABLE, "statuteUrl": STATUTE, "identification": {"basisUrl": basis}})
+        self.assertEqual(3, count)
+        self.assertEqual({TABLE, STATUTE, basis}, {r["url"] for r in roles})
+        self.assertIn("identifies this post", next(r["role"] for r in roles if r["url"] == basis))
+        self.assertEqual(2, count_documents("positionSchedulePay", {"url": TABLE, "statuteUrl": STATUTE})[0])
+        self.assertEqual(2, count_documents("positionSchedulePay", {"url": TABLE, "statuteUrl": STATUTE, "identification": None})[0])
 
     def test_an_empty_url_is_not_a_document(self):
         self.assertEqual(0, count_documents("positionStatutoryPay", {"url": "  "})[0])
@@ -292,9 +326,33 @@ class PublishedGraphTests(unittest.TestCase):
                 node[field]["verification"]["documents"]
                 for node in self.nodes
                 if isinstance(node.get(field), dict)
+                and not isinstance(node[field].get("identification"), dict)
             }
             with self.subTest(field):
                 self.assertTrue(counts <= {2}, "{} published {}".format(field, counts))
+
+    def test_a_reviewed_schedule_record_publishes_three_and_nothing_else_does(self):
+        """The one three-document pay block: the Code's title is not the
+        node's name, so a second statute is the document that joins them, and
+        it is counted. Every three-count must be a reviewed identification and
+        every reviewed identification must count three."""
+        if not self.nodes:
+            self.skipTest("no published graph")
+        threes = set()
+        reviewed = set()
+        for node in self.nodes:
+            for field in PAY_DOCUMENT_FIELDS:
+                block = node.get(field)
+                if not isinstance(block, dict):
+                    continue
+                if block["verification"]["documents"] >= 3:
+                    threes.add((node.get("id"), field))
+                if field == "positionSchedulePay" and isinstance(block.get("identification"), dict):
+                    reviewed.add((node.get("id"), field))
+                    self.assertEqual(90, block["verification"]["percent"])
+                    self.assertEqual(1, block["verification"]["documentsStatingTheFigure"])
+        self.assertEqual(threes, reviewed)
+        self.assertTrue(reviewed, "no reviewed identification is published")
 
 
 if __name__ == "__main__":

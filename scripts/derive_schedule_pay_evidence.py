@@ -62,6 +62,7 @@ from data_pipeline.verification.statutory_schedule import (  # noqa: E402
     build_records,
     load_schedule,
     match_positions,
+    match_reviewed_rows,
     match_scoped_positions,
 )
 from datetime import date  # noqa: E402
@@ -99,6 +100,13 @@ def main(argv: list[str] | None = None) -> int:
     matching["matched"].update(scoped["matched"])
     for reason, items in scoped["refusals"].items():
         matching["refusals"].setdefault(reason, []).extend(items)
+    # The third route: reviewed identifications with a second statute behind
+    # each, re-adjudicated on every run and never over a node another route
+    # already priced.
+    reviewed = match_reviewed_rows(node_map, schedule, already_matched=matching["matched"])
+    matching["matched"].update(reviewed["matched"])
+    for reason, items in reviewed["refusals"].items():
+        matching["refusals"].setdefault(reason, []).extend(items)
     fiscal_year = federal_fiscal_year_of(date.fromisoformat(str(table["effective"])))
     records, report = build_records(
         matching["matched"], table,
@@ -107,6 +115,8 @@ def main(argv: list[str] | None = None) -> int:
     )
     report["matchRefusals"] = {k: len(v) for k, v in matching["refusals"].items()}
     report["scopedMatches"] = len(scoped["matched"])
+    report["reviewedMatches"] = len(reviewed["matched"])
+    report["reviewedRows"] = sorted(reviewed["matched"])
     report["ambiguousStatutoryTitles"] = schedule["ambiguous"]
     report["statutoryPositions"] = schedule["positions"]
 
@@ -144,8 +154,10 @@ def main(argv: list[str] | None = None) -> int:
     print(f"statute       : {schedule['positions']} positions across 5 sections; "
           f"{len(schedule['index'])} distinct titles, {len(schedule['ambiguous'])} ambiguous")
     print(f"salary table  : {table['table']}  {table['effectiveText']}")
-    print(f"matched nodes : {report['matched']} ({report['matched'] - report['scopedMatches']} by whole name, "
-          f"{report['scopedMatches']} scoped to their organisation)   priced {report['priced']}   "
+    print(f"matched nodes : {report['matched']} "
+          f"({report['matched'] - report['scopedMatches'] - report['reviewedMatches']} by whole name, "
+          f"{report['scopedMatches']} scoped to their organisation, "
+          f"{report['reviewedMatches']} by a reviewed identification a second statute backs)   priced {report['priced']}   "
           f"validated {report['validated']}")
     print(f"  by level    : {report['priced_by_level']}")
     for reason, count in sorted(report["matchRefusals"].items()):

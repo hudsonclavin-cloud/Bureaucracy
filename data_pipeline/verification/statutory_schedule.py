@@ -73,6 +73,7 @@ none of them, which the statute does not say.
 from __future__ import annotations
 
 import hashlib
+import html as html_module
 import json
 import re
 from collections.abc import Mapping
@@ -380,6 +381,168 @@ def match_positions(node_map: Mapping[str, Mapping[str, Any]], schedule: Mapping
 
 
 # --------------------------------------------------------------------------
+# The third route: a reviewed identification, with the document that makes it
+
+METHOD_REVIEWED = "level_assigned_by_5_usc_5312_5316_to_the_office_a_second_statute_identifies_this_post_as"
+
+#: Node id -> the statutory title the Code prints for it, and the BASIS: a
+#: second committed statute whose operative text says why this node is that
+#: office. Neither of the two matchers above can make these: "Chair, Board of
+#: Governors" is not equal to "Chairman, Board of Governors of the Federal
+#: Reserve System", and the scoped matcher's organisation half ("Board of
+#: Governors of the Federal Reserve System") is not the node's parent
+#: ("Federal Reserve System"). The Vice Chairs are placed by a title that
+#: never names them at all -- 5 U.S.C. 5313 prints "Members, Board of
+#: Governors of the Federal Reserve System" -- and what makes a Vice Chairman
+#: a member is 12 U.S.C. 242, which designates the two Vice Chairmen from
+#: among the members and places only the Chairman separately (5312).
+#:
+#: The same shape as `us_code_pay_schedules.SCHEDULE_6_NODE_ROWS`: a reviewed
+#: identification of which node a row names, filed `proxy` because a reviewed
+#: identification is not the source naming the node. It is re-checked on
+#: every run -- the title must be one the committed sections print, the basis
+#: quote must be in the basis section's OPERATIVE text, and the node must
+#: still carry the name the row was written against -- and the gate mirrors
+#: every row by node id. "Governor (×4 members)" is deliberately absent: the
+#: same "Members" title reaches it, but it stands for several posts and
+#: `positionSchedulePay` is not a field the multi-post sweep keeps
+#: (`pay_tables.INCUMBENCY_PAY_FIELDS`), so a row there would be stripped on
+#: every build; pricing a bench from a class title is a separate decision.
+REVIEWED_TITLE_ROWS: dict[str, dict[str, str]] = {
+    "exec-regulatory-fed-chair-board-of-governors": {
+        "nodeName": "Chair, Board of Governors",
+        "statutoryTitle": "Chairman, Board of Governors of the Federal Reserve System",
+        "basisCitation": "12 U.S.C. 242",
+        "basisFixture": "fed_12_usc_242.html",
+        "basisQuote": (
+            "1 shall be designated by the President, by and with the advice and consent of the Senate, "
+            "to serve as Chairman of the Board for a term of 4 years"
+        ),
+        "basis": (
+            "the same office: 12 U.S.C. 242 designates one member of the Board to serve as Chairman of the "
+            "Board, and 5 U.S.C. 5312 places that Chairman at Level I; the graph spells the title without "
+            "gender and without the System's name"
+        ),
+    },
+    "exec-regulatory-fed-vice-chair-board-of-governors": {
+        "nodeName": "Vice Chair, Board of Governors",
+        "statutoryTitle": "Members, Board of Governors of the Federal Reserve System",
+        "basisCitation": "12 U.S.C. 242",
+        "basisFixture": "fed_12_usc_242.html",
+        "basisQuote": (
+            "2 shall be designated by the President, by and with the advice and consent of the Senate, "
+            "to serve as Vice Chairmen of the Board"
+        ),
+        "basis": (
+            "a Vice Chairman is a member of the Board: 12 U.S.C. 242 designates the two Vice Chairmen from "
+            "among the members, 5 U.S.C. 5313 places Members of the Board at Level II, and only the Chairman "
+            "is placed separately (5312); 5314-5316 print no Federal Reserve entry"
+        ),
+    },
+    "exec-regulatory-fed-vice-chair-for-supervision": {
+        "nodeName": "Vice Chair for Supervision",
+        "statutoryTitle": "Members, Board of Governors of the Federal Reserve System",
+        "basisCitation": "12 U.S.C. 242",
+        "basisFixture": "fed_12_usc_242.html",
+        "basisQuote": "1 of whom shall be designated Vice Chairman for Supervision",
+        "basis": (
+            "the Vice Chairman for Supervision is one of the two Vice Chairmen 12 U.S.C. 242 designates from "
+            "among the members, and 5 U.S.C. 5313 places Members of the Board at Level II"
+        ),
+    },
+}
+
+
+def _operative_text(raw_html: str) -> str:
+    """The section's own text, cut at the publisher's notes -- the same rule
+    `derived_pay.operative_text` applies, restated here so this module does
+    not import that one. A quote found only beneath the law is repealed text."""
+    text = re.sub(r"(?is)<(script|style)\b.*?</\1>", " ", raw_html)
+    text = _SPACE.sub(" ", html_module.unescape(_TAGS.sub(" ", text))).strip()
+    start = re.search(r"\u00a7\s?\d+[A-Za-z]?\.", text)
+    body = text[start.start():] if start else text
+    cuts = [body.find(h) for h in ("Historical and Revision Notes", "Editorial Notes", "Statutory Notes")]
+    cuts = [c for c in cuts if c > 0]
+    return body[: min(cuts)].strip() if cuts else ""
+
+
+def load_basis_section(fixture: str, directory: str | Path = FIXTURE_DIR) -> dict[str, Any]:
+    """A committed basis section with its digest recomputed from the bytes."""
+    path = Path(directory) / fixture
+    meta_path = path.with_name(path.name + ".meta.json")
+    if not path.exists() or not meta_path.exists():
+        raise Unreadable(f"{fixture} or its .meta.json is not committed")
+    meta = json.loads(meta_path.read_text(encoding="utf-8"))
+    raw = path.read_bytes()
+    digest = hashlib.sha256(raw).hexdigest()
+    if digest != str(meta.get("sha256") or "").lower():
+        raise Unreadable(f"{fixture} does not match the digest its fetch recorded")
+    operative = _operative_text(raw.decode("utf-8", errors="replace"))
+    if not operative:
+        raise Unreadable(f"{fixture} carries no operative text this reader can separate from its notes")
+    return {"url": str(meta.get("url") or ""), "sha256": digest, "fetchedAt": str(meta.get("fetched_at") or ""),
+            "operative": operative}
+
+
+def match_reviewed_rows(
+    node_map: Mapping[str, Mapping[str, Any]],
+    schedule: Mapping[str, Any],
+    *,
+    already_matched: Mapping[str, Any] | None = None,
+    directory: str | Path = FIXTURE_DIR,
+) -> dict[str, Any]:
+    """The rows of `REVIEWED_TITLE_ROWS`, each re-adjudicated: the node still
+    carries the name the row was written against, the statutory title is one
+    the committed sections print, the basis quote is in the basis section's
+    operative text now, and no other route already priced the node."""
+    index = schedule["index"]
+    taken = set(already_matched or {})
+    matched: dict[str, dict[str, Any]] = {}
+    refusals: dict[str, list[str]] = {}
+    basis_cache: dict[str, dict[str, Any]] = {}
+    for node_id, row in sorted(REVIEWED_TITLE_ROWS.items()):
+        node = node_map.get(node_id)
+        if node is None:
+            refusals.setdefault("reviewed_row_names_no_node", []).append(node_id)
+            continue
+        if not is_post_node(node):
+            refusals.setdefault("reviewed_row_names_a_non_post", []).append(node_id)
+            continue
+        if canonical_name_key(node.get("name")) != canonical_name_key(row["nodeName"]):
+            refusals.setdefault("reviewed_row_node_renamed", []).append(node_id)
+            continue
+        if node_id in taken:
+            refusals.setdefault("reviewed_row_node_already_matched", []).append(node_id)
+            continue
+        position = index.get(canonical_name_key(row["statutoryTitle"]))
+        if position is None or position["title"] != row["statutoryTitle"]:
+            refusals.setdefault("reviewed_row_title_not_printed_by_the_code", []).append(node_id)
+            continue
+        try:
+            basis = basis_cache.get(row["basisFixture"]) or load_basis_section(row["basisFixture"], directory)
+        except Unreadable:
+            refusals.setdefault("reviewed_row_basis_unreadable", []).append(node_id)
+            continue
+        basis_cache[row["basisFixture"]] = basis
+        if row["basisQuote"] not in basis["operative"]:
+            refusals.setdefault("reviewed_row_basis_quote_not_in_operative_text", []).append(node_id)
+            continue
+        entry = dict(position)
+        entry["method"] = METHOD_REVIEWED
+        entry["identification"] = {
+            "nodeName": row["nodeName"],
+            "basis": row["basis"],
+            "basisCitation": row["basisCitation"],
+            "basisQuote": row["basisQuote"],
+            "basisUrl": basis["url"],
+            "basisSha256": basis["sha256"],
+            "basisCheckedAt": basis["fetchedAt"],
+        }
+        matched[node_id] = entry
+    return {"matched": matched, "refusals": {k: sorted(v) for k, v in sorted(refusals.items())}}
+
+
+# --------------------------------------------------------------------------
 # The record, and applying it
 
 
@@ -455,6 +618,9 @@ def build_records(
                 "url": position["url"],
                 "documentSha256": position["sha256"],
                 "checkedAt": position["fetchedAt"],
+                # Present only on a reviewed row: the second statute that
+                # makes this node the office the title names, quoted.
+                "identification": position.get("identification"),
             },
             "table": table["table"],
             "effectiveText": table["effectiveText"],
@@ -554,12 +720,19 @@ def apply_schedule_pay(
             if parent_map.get(node_id) != claim.get("scopedOrganisationId"):
                 stats["reparented_since_the_match"] += 1
                 continue
+        elif isinstance(claim.get("identification"), dict):
+            # A reviewed row was written against the node's name, not the
+            # statutory title, and that is the name a rename must withdraw.
+            if canonical_name_key(node.get("name")) != canonical_name_key(claim["identification"].get("nodeName")):
+                stats["renamed_since_the_match"] += 1
+                continue
         elif canonical_name_key(node.get("name")) != canonical_name_key(claim.get("statutoryTitle")):
             stats["renamed_since_the_match"] += 1
             continue
         node["positionSchedulePay"] = {
             "source": SOURCE,
-            "method": METHOD,
+            "method": claim.get("method") or METHOD,
+            "identification": dict(claim["identification"]) if isinstance(claim.get("identification"), dict) else None,
             "payLevel": claim.get("payLevel"),
             "citation": claim.get("citation"),
             "statutoryTitle": claim.get("statutoryTitle"),

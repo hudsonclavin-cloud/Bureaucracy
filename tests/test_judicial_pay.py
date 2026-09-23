@@ -155,14 +155,50 @@ class SeatClassificationTests(unittest.TestCase):
                          "circuit judges")
         self.assertEqual(classify_seat("jud-district-sdny-chief-judge-sdny", nodes["jud-district-sdny-chief-judge-sdny"])[0], "district judges")
 
-    def test_a_node_standing_for_several_posts_is_refused_however_its_id_looks(self):
+    def test_a_bench_of_active_judges_is_priced_at_its_tier(self):
+        """Since 2026-09-23: a tier rate is the office's and holds for every
+        judge alike, so "Associate Justice (×8)" and a district's "(×N active)"
+        bench are priced; the multi-post sweep stamps `holders` on them."""
         nodes = self._node_map()
         column, reason = classify_seat("jud-scotus-associate-justice-8", nodes["jud-scotus-associate-justice-8"])
-        self.assertIsNone(column)
-        self.assertEqual(reason, "stands_for_several_posts")
+        self.assertEqual(column, "associate justices")
+        self.assertEqual(reason, "every_associate_justice")
+        column, reason = classify_seat(
+            "jud-district-sdny-district-judge-28-active",
+            {"type": "Position", "name": "District Judge (\u00d728 active)"})
+        self.assertEqual(column, "district judges")
+        self.assertEqual(reason, "a_districts_own_active_judges")
+
+    def test_a_bench_that_bundles_senior_judges_is_refused_on_28_usc_371(self):
+        """28 U.S.C. 371(b)(2), committed at tests/fixtures/uscode/senior_judges_28_usc_371.html:
+        a senior judge who does not meet subsection (e) keeps the salary last
+        drawn in active service, so the current tier rate cannot be claimed
+        for each holder of a node that counts senior judges in."""
+        nodes = self._node_map()
         column, reason = classify_seat("jud-circuit-1st-circuit-circuit-judge-5-active", nodes["jud-circuit-1st-circuit-circuit-judge-5-active"])
         self.assertIsNone(column)
-        self.assertEqual(reason, "stands_for_several_posts")
+        self.assertEqual(reason, "bundles_senior_judges_whose_salary_28_usc_371b2_sets_apart_from_the_tier_rate")
+        column, reason = classify_seat(
+            "jud-district-sdny-senior-judge-multiple", {"type": "Position", "name": "Senior Judge (\u00d7multiple)"})
+        self.assertIsNone(column)
+        self.assertEqual(reason, "bundles_senior_judges_whose_salary_28_usc_371b2_sets_apart_from_the_tier_rate")
+
+    def test_the_senior_judge_rule_quotes_the_committed_statute(self):
+        from data_pipeline.verification.derived_pay import load_section
+
+        operative = load_section("senior_judges_28_usc_371.html")["operative"]
+        self.assertIn(
+            "shall continue to receive the salary that he or she was receiving when he or she was last in active service",
+            operative)
+        # The clause that qualifies it: not "frozen" -- adjusted. A quote that
+        # stopped before this sentence once put the word "frozen" into three
+        # documents here, and the review caught it against these bytes.
+        self.assertIn(
+            "when such a certification was last in effect. The salary of such justice or judge shall be "
+            "adjusted under section 461 of this title",
+            operative)
+        self.assertNotIn("frozen", operative.casefold())
+        self.assertIn("continue to receive the salary of the office if he or she meets the requirements of subsection (e)", operative)
 
     def test_the_generic_district_structure_template_is_refused_by_id(self):
         nodes = self._node_map()
@@ -192,13 +228,15 @@ class BuildAndValidateTests(unittest.TestCase):
         )
         self.assertEqual(set(records), {
             "jud-scotus-chief-justice-of-the-united-states",
+            "jud-scotus-associate-justice-8",
             "jud-circuit-1st-circuit-chief-judge-1st-circuit",
             "jud-district-sdny-chief-judge-sdny",
         })
         self.assertEqual(records["jud-scotus-chief-justice-of-the-united-states"]["amount"], 320_700.0)
         self.assertEqual(records["jud-scotus-chief-justice-of-the-united-states"]["scopeMatch"], "proxy")
-        self.assertEqual(report["priced"], 3)
-        self.assertEqual(report["refused"]["stands_for_several_posts"], 2)
+        self.assertEqual(records["jud-scotus-associate-justice-8"]["amount"], 306_600.0)
+        self.assertEqual(report["priced"], 4)
+        self.assertEqual(report["refused"]["bundles_senior_judges_whose_salary_28_usc_371b2_sets_apart_from_the_tier_rate"], 1)
         self.assertEqual(report["refused"]["generic_structure_template_not_a_specific_court"], 1)
 
     def test_every_priced_record_validates_and_is_never_verified(self):
@@ -219,7 +257,7 @@ class ApplyTests(unittest.TestCase):
         node_map = index_tree(tree)[0]
         records, _ = build_records(node_map, table, url=TABLE_URL, sha256="a" * 64, retrieved_at="2026-09-14T00:00:00Z")
         stats = apply_pay_evidence(tree, records)
-        self.assertEqual(stats["priced"], 3)
+        self.assertEqual(stats["priced"], 4)
         node_map = index_tree(tree)[0]
         pay = node_map["jud-scotus-chief-justice-of-the-united-states"]["positionStatutoryPay"]
         self.assertEqual(pay["amount"], 320_700.0)
@@ -238,14 +276,21 @@ class ApplyTests(unittest.TestCase):
         self.assertEqual(stats["not_a_position"], 1)
         self.assertEqual(stats["priced"], 0)
 
-    def test_multi_post_withdrawal_strips_positionStatutoryPay_too(self):
+    def test_multi_post_sweep_keeps_a_tier_rate_and_stamps_who_it_covers(self):
+        """A statutory tier rate is the office's, so the sweep keeps it on a
+        multi-post node and stamps `holders` from the node's own count --
+        and strips a listing-based field from the same node."""
         tree = json.loads(json.dumps(BASE))
         node_map = index_tree(tree)[0]
-        # Simulate a mis-derived record slipping onto a multi-post node.
         node_map["jud-scotus-associate-justice-8"]["positionStatutoryPay"] = {"amount": 306_600.0}
+        node_map["jud-scotus-associate-justice-8"]["positionPayRate"] = {"amount": 1.0}
         withdrawn = withdraw_pay_from_multi_post_nodes(tree)
         self.assertEqual(withdrawn, 1)
-        self.assertNotIn("positionStatutoryPay", index_tree(tree)[0]["jud-scotus-associate-justice-8"])
+        node = index_tree(tree)[0]["jud-scotus-associate-justice-8"]
+        self.assertNotIn("positionPayRate", node)
+        self.assertEqual(node["positionStatutoryPay"]["holders"]["count"], 8)
+        self.assertEqual(node["positionStatutoryPay"]["holders"]["text"], "\u00d78")
+        self.assertTrue(node["positionStatutoryPay"]["holders"]["appliesToEachHolder"])
 
     def test_positionStatutoryPay_is_withdrawn_when_evidence_no_longer_supports_it(self):
         self.assertIn("positionStatutoryPay", EVIDENCE_OWNED_FIELDS)
@@ -283,6 +328,34 @@ class GateTests(unittest.TestCase):
         node["positionStatutoryPay"]["checkedAt"] = "2026-09-14T00:00:00Z"
         violations = statutory_pay_violations(node, node["positionStatutoryPay"], "2026-09-15", _label)
         self.assertEqual(violations, [])
+
+    def test_a_block_on_a_bench_bundling_senior_judges_is_refused_by_name(self):
+        """The gate's own senior-judge line, pinned: a valid statutory block
+        moved onto a node whose name bundles senior judges is refused with
+        that message, whatever else the block gets right."""
+        from scripts.validate_published_graph import SENIOR_JUDGE_MARKER as GATE_MARKER
+        from data_pipeline.verification.judicial_pay import SENIOR_JUDGE_MARKER as MODULE_MARKER
+
+        self.assertEqual(GATE_MARKER.pattern, MODULE_MARKER.pattern)
+        self.assertEqual(GATE_MARKER.flags, MODULE_MARKER.flags)
+        tree = json.loads(json.dumps(BASE))
+        table = parse_judicial_compensation(PAGE)
+        node_map = index_tree(tree)[0]
+        records, _ = build_records(node_map, table, url=TABLE_URL, sha256="a" * 64, retrieved_at="2026-09-14T00:00:00Z")
+        apply_pay_evidence(tree, records)
+        good = index_tree(tree)[0]["jud-scotus-chief-justice-of-the-united-states"]["positionStatutoryPay"]
+        good["url"] = TABLE_URL
+        good["checkedAt"] = "2026-09-14T00:00:00Z"
+        for name in ("Circuit Judge (\u00d712 active + senior judges)", "Senior Judge (\u00d7multiple)"):
+            with self.subTest(name=name):
+                node = {"id": "jud-circuit-2nd-circuit-circuit-judge-12-active-senior-judges", "name": name,
+                        "type": "Position", "representsPosts": {"text": "\u00d712 active + senior judges", "kind": "unstated",
+                                                                 "as_written": "12 active + senior judges"}}
+                pay = json.loads(json.dumps(good))
+                pay["holders"] = {"text": node["representsPosts"]["text"], "kind": "unstated",
+                                  "as_written": "12 active + senior judges", "appliesToEachHolder": True, "note": "each"}
+                violations = statutory_pay_violations(node, pay, "2026-09-15", _label)
+                self.assertTrue(any("bundles senior judges" in v for v in violations), violations)
 
     def test_every_forgery_this_module_makes_possible_is_caught(self):
         tree = json.loads(json.dumps(BASE))
@@ -377,7 +450,10 @@ class DeriveScriptTests(unittest.TestCase):
         self.assertEqual(code, 0, out2.getvalue())
         graph = json.loads(result.graph_path.read_text(encoding="utf-8"))
         priced = [n for n in _walk(graph) if isinstance(n.get("positionStatutoryPay"), dict)]
-        self.assertEqual(len(priced), 3)
+        # The Chief Justice, one circuit's and one district's chief judge, and
+        # -- since 2026-09-23 -- the Associate Justices' bench, priced at its
+        # tier for each of the eight with `holders` saying so.
+        self.assertEqual(len(priced), 4)
 
 
 if __name__ == "__main__":

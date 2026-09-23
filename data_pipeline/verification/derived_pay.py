@@ -201,6 +201,23 @@ PARITY_PROVISIONS = {
     },
 }
 
+#: The same four provisions reach each court's bench node -- "Judge (×18)",
+#: "(×15)", "(×4)", "(×8)" -- because each says "Each judge", and a tier rate
+#: holds for every holder alike. Refused until 2026-09-23 under the blanket
+#: multi-post rule; the owner asked for them, and the sweep now keeps an
+#: office-rate claim on a multi-post node with a `holders` block saying it is
+#: each judge's rate and not one judge's. The Court of Federal Claims' "Senior
+#: Judge (×multiple)" is NOT here: a senior judge's pay there is 28 U.S.C.
+#: 178, which this repository has not read.
+BENCH_NODES = {
+    "jud-specialized-tax-judge-18": "jud-specialized-tax-chief-judge-tax-court",
+    "jud-specialized-claims-judge-15": "jud-specialized-claims-chief-judge-cfc",
+    "jud-specialized-caaf-judge-4": "jud-specialized-caaf-chief-judge-caaf",
+    "jud-specialized-cavc-judge-8": "jud-specialized-cavc-chief-judge-cavc",
+}
+for _bench, _chief in BENCH_NODES.items():
+    PARITY_PROVISIONS[_bench] = dict(PARITY_PROVISIONS[_chief])
+
 #: Read, and deliberately not priced, with the reason. Kept as data so the
 #: derive step can print it and a reviewer can see each is a decision.
 NOT_PRICED = {
@@ -344,9 +361,9 @@ def build_records(
         if str(node.get("type") or "").casefold() != "position":
             refusals[node_id] = "not a position"
             continue
-        if node.get("representsPosts"):
-            refusals[node_id] = "stands for several posts"
-            continue
+        # A bench node ("Judge (×18)") is priced: "Each judge" is paid the
+        # tier rate, and `pay_tables.withdraw_pay_from_multi_post_nodes`
+        # stamps `holders` on it after the counts are annotated.
 
         tier_label = provision["tier"].title()
         derivation = (
@@ -467,7 +484,6 @@ def apply_pay_evidence(
         "priced": 0,
         "unknown_node": 0,
         "not_a_position": 0,
-        "stands_for_many_posts": 0,
         "already_priced_by_another_source": 0,
     }
     for node_id, record in sorted(records.items()):
@@ -477,9 +493,6 @@ def apply_pay_evidence(
             continue
         if str(node.get("type") or "").casefold() != "position":
             stats["not_a_position"] += 1
-            continue
-        if node.get("representsPosts"):
-            stats["stands_for_many_posts"] += 1
             continue
         if isinstance(node.get("positionStatutoryPay"), dict) or isinstance(node.get("positionPayRate"), dict):
             stats["already_priced_by_another_source"] += 1

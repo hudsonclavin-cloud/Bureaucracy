@@ -87,6 +87,19 @@ EXPECTED_COLUMNS = ("year", "district judges", "circuit judges", "associate just
 #: it names no count, but it is a template describing every district's
 #: structure, not one district's actual chief judge.
 DISTRICT_STRUCTURE_TEMPLATE_ID = "jud-district-structure-chief-judge"
+#: Every node under the "All 94 District Courts -- Standard Structure"
+#: template describes what a district looks like rather than any district's
+#: actual bench, so none of them is a seat this table prices.
+DISTRICT_STRUCTURE_TEMPLATE_PREFIX = "jud-district-structure-"
+#: The one multi-post node the table's own "Associate Justices" column names.
+ASSOCIATE_JUSTICES_ID = "jud-scotus-associate-justice-8"
+#: A name that bundles senior judges into the count. 28 U.S.C. 371(b)(2)
+#: sets an uncertified senior judge's salary by reference to a past year --
+#: the salary "when he or she was last in active service" or when a
+#: certification "was last in effect", then "adjusted under section 461" --
+#: which need not equal the tier's current rate, so that rate cannot be
+#: claimed for each holder.
+SENIOR_JUDGE_MARKER = re.compile(r"\bsenior\b", re.IGNORECASE)
 
 _RATE_CELL = re.compile(r"^\$\s*([0-9][0-9,]*)$")
 _YEAR_CELL = re.compile(r"^(\d{4})")
@@ -295,17 +308,45 @@ def classify_seat(node_id: str, node: Mapping[str, Any]) -> tuple[str | None, st
     """
     if str(node.get("type") or "").casefold() != "position":
         return None, "not_a_position"
-    if node.get("representsPosts"):
-        return None, "stands_for_several_posts"
+    name = str(node.get("name") or "")
+    # A node standing for several judges IS priced since 2026-09-23 -- the
+    # tier rate is the office's and holds for each of them alike, and the
+    # multi-post sweep stamps `holders` so the panel says so -- with one
+    # refusal that is a statute's, not a preference. 28 U.S.C. 371(b)(2)
+    # (committed at tests/fixtures/uscode/senior_judges_28_usc_371.html): a
+    # senior judge who does not meet subsection (e) "shall continue to
+    # receive the salary that he or she was receiving when he or she was last
+    # in active service or, if a certification under subsection (e) was made
+    # for such justice or judge, when such a certification was last in
+    # effect. The salary of such justice or judge shall be adjusted under
+    # section 461 of this title." A salary set by reference to a past year
+    # and adjusted since is not necessarily this year's tier rate -- not
+    # "frozen", which an earlier draft of this rule said and the section's
+    # last sentence contradicts. So a node that bundles senior judges into
+    # its count cannot claim the current tier rate for each holder, and every
+    # circuit's "(×N active + senior judges)" node is refused on that
+    # provision rather than priced.
+    if SENIOR_JUDGE_MARKER.search(name):
+        return None, "bundles_senior_judges_whose_salary_28_usc_371b2_sets_apart_from_the_tier_rate"
     if node_id == "jud-scotus-chief-justice-of-the-united-states":
         return "chief justice", "the_chief_justice"
-    if node_id == DISTRICT_STRUCTURE_TEMPLATE_ID:
+    if node_id == ASSOCIATE_JUSTICES_ID:
+        return "associate justices", "every_associate_justice"
+    if node_id.startswith(DISTRICT_STRUCTURE_TEMPLATE_PREFIX):
         return None, "generic_structure_template_not_a_specific_court"
     if "-chief-judge-" in node_id:
         if node_id.startswith("jud-circuit-"):
             return "circuit judges", "a_circuit_s_own_chief_judge"
         if node_id.startswith("jud-district-"):
             return "district judges", "a_district_s_own_chief_judge"
+    if node_id.startswith("jud-district-") and "-district-judge-" in node_id:
+        # A named district's own bench, e.g. "District Judge (×28 active)":
+        # every judge in regular active service is paid the district-judge
+        # rate. The senior-judge rule above has already refused any node
+        # whose name bundles senior judges.
+        return "district judges", "a_districts_own_active_judges"
+    if node_id.startswith("jud-circuit-") and "-circuit-judge-" in node_id:
+        return "circuit judges", "a_circuits_own_active_judges"
     return None, "not_a_seat_this_table_prices"
 
 
@@ -400,7 +441,7 @@ def apply_pay_evidence(
 
         index_tree = _index_tree
     node_map, _ = index_tree(root)
-    stats = {"priced": 0, "unknown_node": 0, "not_a_position": 0, "stands_for_many_posts": 0}
+    stats = {"priced": 0, "unknown_node": 0, "not_a_position": 0}
     for node_id, record in sorted(records.items()):
         node = node_map.get(node_id)
         if node is None:
@@ -409,9 +450,9 @@ def apply_pay_evidence(
         if str(node.get("type") or "").casefold() != "position":
             stats["not_a_position"] += 1
             continue
-        if node.get("representsPosts"):
-            stats["stands_for_many_posts"] += 1
-            continue
+        # Multiplicity is reconciled by `pay_tables.withdraw_pay_from_multi_post_nodes`
+        # after the counts are annotated; a tier rate holds for every holder
+        # and is kept there with a `holders` block, so nothing is refused here.
         node["positionStatutoryPay"] = {
             "source": PAY_SOURCE,
             "sourceLabel": "the U.S. Courts' own Judicial Compensation table",

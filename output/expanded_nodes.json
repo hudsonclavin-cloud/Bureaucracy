@@ -22113,6 +22113,46 @@
     "placementParentId": "exec-eop-who",
     "placementMatchedText": "DEPUTY ASSISTANT TO THE PRESIDENT FOR DOMESTIC POLICY",
     "placementMethod": "listed_under_organization_in_opm_current_plum_export",
+    "positionReportedPay": {
+      "source": "whitehouse_staff_report",
+      "sourceLabel": "the White House Office's own annual report to Congress on its personnel",
+      "method": "rate_reported_for_each_of_the_people_listed_under_this_title",
+      "amount": 155000.0,
+      "rateText": "$155,000.00",
+      "payBasis": "Per Annum",
+      "reportedTitle": "DEPUTY ASSISTANT TO THE PRESIDENT FOR DOMESTIC POLICY",
+      "reportedStatus": "EMPLOYEE",
+      "titleFolded": true,
+      "asOf": "Wednesday, July 1, 2026",
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "DEPUTY ASSISTANT TO THE PRESIDENT FOR DOMESTIC POLICY",
+      "quote": "DEPUTY ASSISTANT TO THE PRESIDENT FOR DOMESTIC POLICY; $155,000.00; Per Annum; EMPLOYEE (As of Date: Wednesday, July 1, 2026) — listed 2 times, each at $155,000.00",
+      "url": "https://www.whitehouse.gov/wp-content/uploads/2026/07/2026-Annual-Report-to-Congress-on-White-House-Staff.pdf",
+      "checkedAt": "2026-09-14T17:52:39Z",
+      "holders": {
+        "count": 2,
+        "uniformRate": true,
+        "appliesToEachHolder": true,
+        "note": "The report lists 2 people under this title, every one at $155,000.00; the figure is each listed person's pay, not one person's and not the group's combined pay.",
+        "text": "×2",
+        "kind": "exact"
+      },
+      "verification": {
+        "documents": 1,
+        "documentsStatingTheFigure": 1,
+        "percent": 70,
+        "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+        "caution": "One document states the figure outright. The percentage measures how much official documentation it rests on, not the chance that it is right -- and what the roster reports is what each of the people listed under this title is paid, every one of them at this same figure, not what the post pays whoever holds it.",
+        "documentRoles": [
+          {
+            "url": "https://www.whitehouse.gov/wp-content/uploads/2026/07/2026-Annual-Report-to-Congress-on-White-House-Staff.pdf",
+            "role": "states what each of the people listed under this title is paid"
+          }
+        ]
+      }
+    },
     "representsPosts": {
       "text": "×2",
       "kind": "exact",
@@ -22193,6 +22233,46 @@
     "placementParentId": "exec-eop-who",
     "placementMatchedText": "DEPUTY ASSISTANT TO THE PRESIDENT FOR ECONOMIC POLICY AND DEPUTY DIRECTOR OF THE NATIONAL ECONOMIC COUNCIL",
     "placementMethod": "listed_under_organization_in_opm_current_plum_export",
+    "positionReportedPay": {
+      "source": "whitehouse_staff_report",
+      "sourceLabel": "the White House Office's own annual report to Congress on its personnel",
+      "method": "rate_reported_for_each_of_the_people_listed_under_this_title",
+      "amount": 155000.0,
+      "rateText": "$155,000.00",
+      "payBasis": "Per Annum",
+      "reportedTitle": "DEPUTY ASSISTANT TO THE PRESIDENT FOR ECONOMIC POLICY AND DEPUTY DIRECTOR OF THE NATIONAL ECONOMIC COUNCIL",
+      "reportedStatus": "EMPLOYEE",
+      "titleFolded": true,
+      "asOf": "Wednesday, July 1, 2026",
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "DEPUTY ASSISTANT TO THE PRESIDENT FOR ECONOMIC POLICY AND DEPUTY DIRECTOR OF THE NATIONAL ECONOMIC COUNCIL",
+      "quote": "DEPUTY ASSISTANT TO THE PRESIDENT FOR ECONOMIC POLICY AND DEPUTY DIRECTOR OF THE NATIONAL ECONOMIC COUNCIL; $155,000.00; Per Annum; EMPLOYEE (As of Date: Wednesday, July 1, 2026) — listed 3 times, each at $155,000.00",
+      "url": "https://www.whitehouse.gov/wp-content/uploads/2026/07/2026-Annual-Report-to-Congress-on-White-House-Staff.pdf",
+      "checkedAt": "2026-09-14T17:52:39Z",
+      "holders": {
+        "count": 3,
+        "uniformRate": true,
+        "appliesToEachHolder": true,
+        "note": "The report lists 3 people under this title, every one at $155,000.00; the figure is each listed person's pay, not one person's and not the group's combined pay.",
+        "text": "×3",
+        "kind": "exact"
+      },
+      "verification": {
+        "documents": 1,
+        "documentsStatingTheFigure": 1,
+        "percent": 70,
+        "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+        "caution": "One document states the figure outright. The percentage measures how much official documentation it rests on, not the chance that it is right -- and what the roster reports is what each of the people listed under this title is paid, every one of them at this same figure, not what the post pays whoever holds it.",
+        "documentRoles": [
+          {
+            "url": "https://www.whitehouse.gov/wp-content/uploads/2026/07/2026-Annual-Report-to-Congress-on-White-House-Staff.pdf",
+            "role": "states what each of the people listed under this title is paid"
+          }
+        ]
+      }
+    },
     "representsPosts": {
       "text": "×3",
       "kind": "exact",
@@ -23980,6 +24060,7 @@
     "positionSchedulePay": {
       "source": "us_code_executive_schedule",
       "method": "level_assigned_by_5_usc_5312_5316",
+      "identification": null,
       "payLevel": "I",
       "citation": "5 U.S.C. §5312",
       "statutoryTitle": "United States Trade Representative",
@@ -24009,7 +24090,7 @@
         "documentsStatingTheFigure": 1,
         "percent": 80,
         "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
-        "caution": "One document states the rate and the other is the statute that puts this post at that level. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+        "caution": "One document states the rate and another is the statute that puts this post at that level; where a third is listed, it is the statute that says this post is the office the Code names, because the Code's title is not this node's name. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
         "documentRoles": [
           {
             "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
@@ -25172,6 +25253,7 @@
     "positionSchedulePay": {
       "source": "us_code_executive_schedule",
       "method": "level_assigned_by_5_usc_5312_5316",
+      "identification": null,
       "payLevel": "I",
       "citation": "5 U.S.C. §5312",
       "statutoryTitle": "Secretary of State",
@@ -25201,7 +25283,7 @@
         "documentsStatingTheFigure": 1,
         "percent": 80,
         "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
-        "caution": "One document states the rate and the other is the statute that puts this post at that level. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+        "caution": "One document states the rate and another is the statute that puts this post at that level; where a third is listed, it is the statute that says this post is the office the Code names, because the Code's title is not this node's name. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
         "documentRoles": [
           {
             "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
@@ -25281,6 +25363,7 @@
     "positionSchedulePay": {
       "source": "us_code_executive_schedule",
       "method": "level_assigned_by_5_usc_5312_5316",
+      "identification": null,
       "payLevel": "II",
       "citation": "5 U.S.C. §5313",
       "statutoryTitle": "Deputy Secretary of State",
@@ -25310,7 +25393,7 @@
         "documentsStatingTheFigure": 1,
         "percent": 80,
         "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
-        "caution": "One document states the rate and the other is the statute that puts this post at that level. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+        "caution": "One document states the rate and another is the statute that puts this post at that level; where a third is listed, it is the statute that says this post is the office the Code names, because the Code's title is not this node's name. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
         "documentRoles": [
           {
             "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
@@ -27494,6 +27577,7 @@
     "positionSchedulePay": {
       "source": "us_code_executive_schedule",
       "method": "level_assigned_by_5_usc_5312_5316",
+      "identification": null,
       "payLevel": "I",
       "citation": "5 U.S.C. §5312",
       "statutoryTitle": "Secretary of the Treasury",
@@ -27523,7 +27607,7 @@
         "documentsStatingTheFigure": 1,
         "percent": 80,
         "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
-        "caution": "One document states the rate and the other is the statute that puts this post at that level. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+        "caution": "One document states the rate and another is the statute that puts this post at that level; where a third is listed, it is the statute that says this post is the office the Code names, because the Code's title is not this node's name. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
         "documentRoles": [
           {
             "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
@@ -30152,6 +30236,7 @@
     "positionSchedulePay": {
       "source": "us_code_executive_schedule",
       "method": "level_assigned_by_5_usc_5312_5316",
+      "identification": null,
       "payLevel": "I",
       "citation": "5 U.S.C. §5312",
       "statutoryTitle": "Secretary of Defense",
@@ -30181,7 +30266,7 @@
         "documentsStatingTheFigure": 1,
         "percent": 80,
         "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
-        "caution": "One document states the rate and the other is the statute that puts this post at that level. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+        "caution": "One document states the rate and another is the statute that puts this post at that level; where a third is listed, it is the statute that says this post is the office the Code names, because the Code's title is not this node's name. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
         "documentRoles": [
           {
             "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
@@ -30320,7 +30405,8 @@
     },
     "positionSchedulePay": {
       "source": "us_code_executive_schedule",
-      "method": "level_assigned_by_5_usc_5312_5316",
+      "method": "level_assigned_by_5_usc_5312_5316_to_this_post_in_this_organisation",
+      "identification": null,
       "payLevel": "IV",
       "citation": "5 U.S.C. §5315",
       "statutoryTitle": "General Counsel of the Department of Defense",
@@ -30350,7 +30436,7 @@
         "documentsStatingTheFigure": 1,
         "percent": 80,
         "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
-        "caution": "One document states the rate and the other is the statute that puts this post at that level. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+        "caution": "One document states the rate and another is the statute that puts this post at that level; where a third is listed, it is the statute that says this post is the office the Code names, because the Code's title is not this node's name. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
         "documentRoles": [
           {
             "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
@@ -32805,6 +32891,7 @@
     "positionSchedulePay": {
       "source": "us_code_executive_schedule",
       "method": "level_assigned_by_5_usc_5312_5316",
+      "identification": null,
       "payLevel": "I",
       "citation": "5 U.S.C. §5312",
       "statutoryTitle": "Attorney General",
@@ -32834,7 +32921,7 @@
         "documentsStatingTheFigure": 1,
         "percent": 80,
         "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
-        "caution": "One document states the rate and the other is the statute that puts this post at that level. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+        "caution": "One document states the rate and another is the statute that puts this post at that level; where a third is listed, it is the statute that says this post is the office the Code names, because the Code's title is not this node's name. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
         "documentRoles": [
           {
             "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
@@ -37917,6 +38004,7 @@
     "positionSchedulePay": {
       "source": "us_code_executive_schedule",
       "method": "level_assigned_by_5_usc_5312_5316",
+      "identification": null,
       "payLevel": "I",
       "citation": "5 U.S.C. §5312",
       "statutoryTitle": "Secretary of the Interior",
@@ -37946,7 +38034,7 @@
         "documentsStatingTheFigure": 1,
         "percent": 80,
         "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
-        "caution": "One document states the rate and the other is the statute that puts this post at that level. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+        "caution": "One document states the rate and another is the statute that puts this post at that level; where a third is listed, it is the statute that says this post is the office the Code names, because the Code's title is not this node's name. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
         "documentRoles": [
           {
             "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
@@ -46058,6 +46146,7 @@
     "positionSchedulePay": {
       "source": "us_code_executive_schedule",
       "method": "level_assigned_by_5_usc_5312_5316",
+      "identification": null,
       "payLevel": "I",
       "citation": "5 U.S.C. §5312",
       "statutoryTitle": "Secretary of Labor",
@@ -46087,7 +46176,7 @@
         "documentsStatingTheFigure": 1,
         "percent": 80,
         "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
-        "caution": "One document states the rate and the other is the statute that puts this post at that level. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+        "caution": "One document states the rate and another is the statute that puts this post at that level; where a third is listed, it is the statute that says this post is the office the Code names, because the Code's title is not this node's name. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
         "documentRoles": [
           {
             "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
@@ -46205,7 +46294,8 @@
     "lastVerified": "2025-12-31",
     "positionSchedulePay": {
       "source": "us_code_executive_schedule",
-      "method": "level_assigned_by_5_usc_5312_5316",
+      "method": "level_assigned_by_5_usc_5312_5316_to_this_post_in_this_organisation",
+      "identification": null,
       "payLevel": "IV",
       "citation": "5 U.S.C. §5315",
       "statutoryTitle": "Chief Financial Officer, Department of Labor",
@@ -46235,7 +46325,7 @@
         "documentsStatingTheFigure": 1,
         "percent": 80,
         "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
-        "caution": "One document states the rate and the other is the statute that puts this post at that level. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+        "caution": "One document states the rate and another is the statute that puts this post at that level; where a third is listed, it is the statute that says this post is the office the Code names, because the Code's title is not this node's name. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
         "documentRoles": [
           {
             "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
@@ -46304,7 +46394,8 @@
     "lastVerified": "2025-12-31",
     "positionSchedulePay": {
       "source": "us_code_executive_schedule",
-      "method": "level_assigned_by_5_usc_5312_5316",
+      "method": "level_assigned_by_5_usc_5312_5316_to_this_post_in_this_organisation",
+      "identification": null,
       "payLevel": "IV",
       "citation": "5 U.S.C. §5315",
       "statutoryTitle": "Chief Information Officer, Department of Labor",
@@ -46334,7 +46425,7 @@
         "documentsStatingTheFigure": 1,
         "percent": 80,
         "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
-        "caution": "One document states the rate and the other is the statute that puts this post at that level. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+        "caution": "One document states the rate and another is the statute that puts this post at that level; where a third is listed, it is the statute that says this post is the office the Code names, because the Code's title is not this node's name. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
         "documentRoles": [
           {
             "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
@@ -49004,6 +49095,7 @@
     "positionSchedulePay": {
       "source": "us_code_executive_schedule",
       "method": "level_assigned_by_5_usc_5312_5316",
+      "identification": null,
       "payLevel": "I",
       "citation": "5 U.S.C. §5312",
       "statutoryTitle": "Secretary of Health and Human Services",
@@ -49033,7 +49125,7 @@
         "documentsStatingTheFigure": 1,
         "percent": 80,
         "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
-        "caution": "One document states the rate and the other is the statute that puts this post at that level. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+        "caution": "One document states the rate and another is the statute that puts this post at that level; where a third is listed, it is the statute that says this post is the office the Code names, because the Code's title is not this node's name. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
         "documentRoles": [
           {
             "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
@@ -52494,7 +52586,8 @@
     "verificationSiteFrom": "exec-dept-hud",
     "positionSchedulePay": {
       "source": "us_code_executive_schedule",
-      "method": "level_assigned_by_5_usc_5312_5316",
+      "method": "level_assigned_by_5_usc_5312_5316_to_this_post_in_this_organisation",
+      "identification": null,
       "payLevel": "IV",
       "citation": "5 U.S.C. §5315",
       "statutoryTitle": "General Counsel of the Department of Housing and Urban Development",
@@ -52524,7 +52617,7 @@
         "documentsStatingTheFigure": 1,
         "percent": 80,
         "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
-        "caution": "One document states the rate and the other is the statute that puts this post at that level. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+        "caution": "One document states the rate and another is the statute that puts this post at that level; where a third is listed, it is the statute that says this post is the office the Code names, because the Code's title is not this node's name. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
         "documentRoles": [
           {
             "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
@@ -52584,7 +52677,8 @@
     "verificationSiteFrom": "exec-dept-hud",
     "positionSchedulePay": {
       "source": "us_code_executive_schedule",
-      "method": "level_assigned_by_5_usc_5312_5316",
+      "method": "level_assigned_by_5_usc_5312_5316_to_this_post_in_this_organisation",
+      "identification": null,
       "payLevel": "IV",
       "citation": "5 U.S.C. §5315",
       "statutoryTitle": "Chief Financial Officer, Department of Housing and Urban Development",
@@ -52614,7 +52708,7 @@
         "documentsStatingTheFigure": 1,
         "percent": 80,
         "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
-        "caution": "One document states the rate and the other is the statute that puts this post at that level. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+        "caution": "One document states the rate and another is the statute that puts this post at that level; where a third is listed, it is the statute that says this post is the office the Code names, because the Code's title is not this node's name. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
         "documentRoles": [
           {
             "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
@@ -52674,7 +52768,8 @@
     "verificationSiteFrom": "exec-dept-hud",
     "positionSchedulePay": {
       "source": "us_code_executive_schedule",
-      "method": "level_assigned_by_5_usc_5312_5316",
+      "method": "level_assigned_by_5_usc_5312_5316_to_this_post_in_this_organisation",
+      "identification": null,
       "payLevel": "IV",
       "citation": "5 U.S.C. §5315",
       "statutoryTitle": "Chief Information Officer, Department of Housing and Urban Development",
@@ -52704,7 +52799,7 @@
         "documentsStatingTheFigure": 1,
         "percent": 80,
         "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
-        "caution": "One document states the rate and the other is the statute that puts this post at that level. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+        "caution": "One document states the rate and another is the statute that puts this post at that level; where a third is listed, it is the statute that says this post is the office the Code names, because the Code's title is not this node's name. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
         "documentRoles": [
           {
             "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
@@ -54308,6 +54403,7 @@
     "positionSchedulePay": {
       "source": "us_code_executive_schedule",
       "method": "level_assigned_by_5_usc_5312_5316",
+      "identification": null,
       "payLevel": "I",
       "citation": "5 U.S.C. §5312",
       "statutoryTitle": "Secretary of Transportation",
@@ -54337,7 +54433,7 @@
         "documentsStatingTheFigure": 1,
         "percent": 80,
         "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
-        "caution": "One document states the rate and the other is the statute that puts this post at that level. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+        "caution": "One document states the rate and another is the statute that puts this post at that level; where a third is listed, it is the statute that says this post is the office the Code names, because the Code's title is not this node's name. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
         "documentRoles": [
           {
             "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
@@ -56442,6 +56538,7 @@
     "positionSchedulePay": {
       "source": "us_code_executive_schedule",
       "method": "level_assigned_by_5_usc_5312_5316",
+      "identification": null,
       "payLevel": "I",
       "citation": "5 U.S.C. §5312",
       "statutoryTitle": "Secretary of Energy",
@@ -56471,7 +56568,7 @@
         "documentsStatingTheFigure": 1,
         "percent": 80,
         "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
-        "caution": "One document states the rate and the other is the statute that puts this post at that level. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+        "caution": "One document states the rate and another is the statute that puts this post at that level; where a third is listed, it is the statute that says this post is the office the Code names, because the Code's title is not this node's name. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
         "documentRoles": [
           {
             "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
@@ -56544,6 +56641,7 @@
     "positionSchedulePay": {
       "source": "us_code_executive_schedule",
       "method": "level_assigned_by_5_usc_5312_5316",
+      "identification": null,
       "payLevel": "II",
       "citation": "5 U.S.C. §5313",
       "statutoryTitle": "Deputy Secretary of Energy",
@@ -56573,7 +56671,7 @@
         "documentsStatingTheFigure": 1,
         "percent": 80,
         "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
-        "caution": "One document states the rate and the other is the statute that puts this post at that level. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+        "caution": "One document states the rate and another is the statute that puts this post at that level; where a third is listed, it is the statute that says this post is the office the Code names, because the Code's title is not this node's name. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
         "documentRoles": [
           {
             "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
@@ -58577,6 +58675,7 @@
     "positionSchedulePay": {
       "source": "us_code_executive_schedule",
       "method": "level_assigned_by_5_usc_5312_5316",
+      "identification": null,
       "payLevel": "I",
       "citation": "5 U.S.C. §5312",
       "statutoryTitle": "Secretary of Education",
@@ -58606,7 +58705,7 @@
         "documentsStatingTheFigure": 1,
         "percent": 80,
         "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
-        "caution": "One document states the rate and the other is the statute that puts this post at that level. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+        "caution": "One document states the rate and another is the statute that puts this post at that level; where a third is listed, it is the statute that says this post is the office the Code names, because the Code's title is not this node's name. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
         "documentRoles": [
           {
             "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
@@ -60032,6 +60131,7 @@
     "positionSchedulePay": {
       "source": "us_code_executive_schedule",
       "method": "level_assigned_by_5_usc_5312_5316",
+      "identification": null,
       "payLevel": "I",
       "citation": "5 U.S.C. §5312",
       "statutoryTitle": "Secretary of Veterans Affairs",
@@ -60061,7 +60161,7 @@
         "documentsStatingTheFigure": 1,
         "percent": 80,
         "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
-        "caution": "One document states the rate and the other is the statute that puts this post at that level. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+        "caution": "One document states the rate and another is the statute that puts this post at that level; where a third is listed, it is the statute that says this post is the office the Code names, because the Code's title is not this node's name. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
         "documentRoles": [
           {
             "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
@@ -60124,6 +60224,7 @@
     "positionSchedulePay": {
       "source": "us_code_executive_schedule",
       "method": "level_assigned_by_5_usc_5312_5316",
+      "identification": null,
       "payLevel": "II",
       "citation": "5 U.S.C. §5313",
       "statutoryTitle": "Deputy Secretary of Veterans Affairs",
@@ -60153,7 +60254,7 @@
         "documentsStatingTheFigure": 1,
         "percent": 80,
         "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
-        "caution": "One document states the rate and the other is the statute that puts this post at that level. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+        "caution": "One document states the rate and another is the statute that puts this post at that level; where a third is listed, it is the statute that says this post is the office the Code names, because the Code's title is not this node's name. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
         "documentRoles": [
           {
             "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
@@ -61563,6 +61664,7 @@
     "positionSchedulePay": {
       "source": "us_code_executive_schedule",
       "method": "level_assigned_by_5_usc_5312_5316",
+      "identification": null,
       "payLevel": "IV",
       "citation": "5 U.S.C. §5315",
       "statutoryTitle": "Chairman, Board of Veterans' Appeals",
@@ -61592,7 +61694,7 @@
         "documentsStatingTheFigure": 1,
         "percent": 80,
         "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
-        "caution": "One document states the rate and the other is the statute that puts this post at that level. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+        "caution": "One document states the rate and another is the statute that puts this post at that level; where a third is listed, it is the statute that says this post is the office the Code names, because the Code's title is not this node's name. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
         "documentRoles": [
           {
             "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
@@ -62073,7 +62175,8 @@
     },
     "positionSchedulePay": {
       "source": "us_code_executive_schedule",
-      "method": "level_assigned_by_5_usc_5312_5316",
+      "method": "level_assigned_by_5_usc_5312_5316_to_this_post_in_this_organisation",
+      "identification": null,
       "payLevel": "IV",
       "citation": "5 U.S.C. §5315",
       "statutoryTitle": "General Counsel, Department of Homeland Security",
@@ -62103,7 +62206,7 @@
         "documentsStatingTheFigure": 1,
         "percent": 80,
         "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
-        "caution": "One document states the rate and the other is the statute that puts this post at that level. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+        "caution": "One document states the rate and another is the statute that puts this post at that level; where a third is listed, it is the statute that says this post is the office the Code names, because the Code's title is not this node's name. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
         "documentRoles": [
           {
             "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
@@ -63641,7 +63744,8 @@
     },
     "positionSchedulePay": {
       "source": "us_code_executive_schedule",
-      "method": "level_assigned_by_5_usc_5312_5316",
+      "method": "level_assigned_by_5_usc_5312_5316_to_this_post_in_this_organisation",
+      "identification": null,
       "payLevel": "III",
       "citation": "5 U.S.C. §5314",
       "statutoryTitle": "Deputy Administrator, Transportation Security Administration",
@@ -63671,7 +63775,7 @@
         "documentsStatingTheFigure": 1,
         "percent": 80,
         "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
-        "caution": "One document states the rate and the other is the statute that puts this post at that level. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+        "caution": "One document states the rate and another is the statute that puts this post at that level; where a third is listed, it is the statute that says this post is the office the Code names, because the Code's title is not this node's name. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
         "documentRoles": [
           {
             "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
@@ -66195,7 +66299,8 @@
     "verificationSiteFrom": "exec-ind-cia",
     "positionSchedulePay": {
       "source": "us_code_executive_schedule",
-      "method": "level_assigned_by_5_usc_5312_5316",
+      "method": "level_assigned_by_5_usc_5312_5316_to_this_post_in_this_organisation",
+      "identification": null,
       "payLevel": "IV",
       "citation": "5 U.S.C. §5315",
       "statutoryTitle": "General Counsel of the Central Intelligence Agency",
@@ -66225,7 +66330,7 @@
         "documentsStatingTheFigure": 1,
         "percent": 80,
         "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
-        "caution": "One document states the rate and the other is the statute that puts this post at that level. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+        "caution": "One document states the rate and another is the statute that puts this post at that level; where a third is listed, it is the statute that says this post is the office the Code names, because the Code's title is not this node's name. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
         "documentRoles": [
           {
             "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
@@ -66767,7 +66872,8 @@
     "lastVerified": "2025-12-31",
     "positionSchedulePay": {
       "source": "us_code_executive_schedule",
-      "method": "level_assigned_by_5_usc_5312_5316",
+      "method": "level_assigned_by_5_usc_5312_5316_to_this_post_in_this_organisation",
+      "identification": null,
       "payLevel": "IV",
       "citation": "5 U.S.C. §5315",
       "statutoryTitle": "Chief Financial Officer, Environmental Protection Agency",
@@ -66797,7 +66903,7 @@
         "documentsStatingTheFigure": 1,
         "percent": 80,
         "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
-        "caution": "One document states the rate and the other is the statute that puts this post at that level. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+        "caution": "One document states the rate and another is the statute that puts this post at that level; where a third is listed, it is the statute that says this post is the office the Code names, because the Code's title is not this node's name. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
         "documentRoles": [
           {
             "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
@@ -67987,7 +68093,8 @@
     "verificationSiteFrom": "exec-ind-nasa",
     "positionSchedulePay": {
       "source": "us_code_executive_schedule",
-      "method": "level_assigned_by_5_usc_5312_5316",
+      "method": "level_assigned_by_5_usc_5312_5316_to_this_post_in_this_organisation",
+      "identification": null,
       "payLevel": "III",
       "citation": "5 U.S.C. §5314",
       "statutoryTitle": "Deputy Administrator of the National Aeronautics and Space Administration",
@@ -68017,7 +68124,7 @@
         "documentsStatingTheFigure": 1,
         "percent": 80,
         "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
-        "caution": "One document states the rate and the other is the statute that puts this post at that level. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+        "caution": "One document states the rate and another is the statute that puts this post at that level; where a third is listed, it is the statute that says this post is the office the Code names, because the Code's title is not this node's name. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
         "documentRoles": [
           {
             "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
@@ -68077,7 +68184,8 @@
     "verificationSiteFrom": "exec-ind-nasa",
     "positionSchedulePay": {
       "source": "us_code_executive_schedule",
-      "method": "level_assigned_by_5_usc_5312_5316",
+      "method": "level_assigned_by_5_usc_5312_5316_to_this_post_in_this_organisation",
+      "identification": null,
       "payLevel": "IV",
       "citation": "5 U.S.C. §5315",
       "statutoryTitle": "Associate Administrator of the National Aeronautics and Space Administration",
@@ -68107,7 +68215,7 @@
         "documentsStatingTheFigure": 1,
         "percent": 80,
         "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
-        "caution": "One document states the rate and the other is the statute that puts this post at that level. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+        "caution": "One document states the rate and another is the statute that puts this post at that level; where a third is listed, it is the statute that says this post is the office the Code names, because the Code's title is not this node's name. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
         "documentRoles": [
           {
             "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
@@ -68212,7 +68320,8 @@
     "verificationSiteFrom": "exec-ind-nasa",
     "positionSchedulePay": {
       "source": "us_code_executive_schedule",
-      "method": "level_assigned_by_5_usc_5312_5316",
+      "method": "level_assigned_by_5_usc_5312_5316_to_this_post_in_this_organisation",
+      "identification": null,
       "payLevel": "V",
       "citation": "5 U.S.C. §5316",
       "statutoryTitle": "General Counsel of the National Aeronautics and Space Administration",
@@ -68242,7 +68351,7 @@
         "documentsStatingTheFigure": 1,
         "percent": 80,
         "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
-        "caution": "One document states the rate and the other is the statute that puts this post at that level. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+        "caution": "One document states the rate and another is the statute that puts this post at that level; where a third is listed, it is the statute that says this post is the office the Code names, because the Code's title is not this node's name. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
         "documentRoles": [
           {
             "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
@@ -68356,7 +68465,8 @@
     "verificationSiteFrom": "exec-ind-nasa",
     "positionSchedulePay": {
       "source": "us_code_executive_schedule",
-      "method": "level_assigned_by_5_usc_5312_5316",
+      "method": "level_assigned_by_5_usc_5312_5316_to_this_post_in_this_organisation",
+      "identification": null,
       "payLevel": "IV",
       "citation": "5 U.S.C. §5315",
       "statutoryTitle": "Chief Information Officer, National Aeronautics and Space Administration",
@@ -68386,7 +68496,7 @@
         "documentsStatingTheFigure": 1,
         "percent": 80,
         "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
-        "caution": "One document states the rate and the other is the statute that puts this post at that level. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+        "caution": "One document states the rate and another is the statute that puts this post at that level; where a third is listed, it is the statute that says this post is the office the Code names, because the Code's title is not this node's name. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
         "documentRoles": [
           {
             "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
@@ -76865,7 +76975,8 @@
     "lastVerified": "2025-12-31",
     "positionSchedulePay": {
       "source": "us_code_executive_schedule",
-      "method": "level_assigned_by_5_usc_5312_5316",
+      "method": "level_assigned_by_5_usc_5312_5316_to_this_post_in_this_organisation",
+      "identification": null,
       "payLevel": "IV",
       "citation": "5 U.S.C. §5315",
       "statutoryTitle": "General Counsel of the National Labor Relations Board",
@@ -76895,7 +77006,7 @@
         "documentsStatingTheFigure": 1,
         "percent": 80,
         "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
-        "caution": "One document states the rate and the other is the statute that puts this post at that level. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+        "caution": "One document states the rate and another is the statute that puts this post at that level; where a third is listed, it is the statute that says this post is the office the Code names, because the Code's title is not this node's name. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
         "documentRoles": [
           {
             "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
@@ -77315,7 +77426,8 @@
     "lastVerified": "2025-12-31",
     "positionSchedulePay": {
       "source": "us_code_executive_schedule",
-      "method": "level_assigned_by_5_usc_5312_5316",
+      "method": "level_assigned_by_5_usc_5312_5316_to_this_post_in_this_organisation",
+      "identification": null,
       "payLevel": "V",
       "citation": "5 U.S.C. §5316",
       "statutoryTitle": "General Counsel of the Equal Employment Opportunity Commission",
@@ -77345,7 +77457,7 @@
         "documentsStatingTheFigure": 1,
         "percent": 80,
         "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
-        "caution": "One document states the rate and the other is the statute that puts this post at that level. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+        "caution": "One document states the rate and another is the statute that puts this post at that level; where a third is listed, it is the statute that says this post is the office the Code names, because the Code's title is not this node's name. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
         "documentRoles": [
           {
             "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
@@ -85364,6 +85476,64 @@
     "verificationMethod": "name_labelled_on_its_organisations_official_page",
     "verificationMatchedIn": "content",
     "verificationSiteFrom": "exec-regulatory-fed",
+    "positionSchedulePay": {
+      "source": "us_code_executive_schedule",
+      "method": "level_assigned_by_5_usc_5312_5316_to_the_office_a_second_statute_identifies_this_post_as",
+      "identification": {
+        "nodeName": "Vice Chair for Supervision",
+        "basis": "the Vice Chairman for Supervision is one of the two Vice Chairmen 12 U.S.C. 242 designates from among the members, and 5 U.S.C. 5313 places Members of the Board at Level II",
+        "basisCitation": "12 U.S.C. 242",
+        "basisQuote": "1 of whom shall be designated Vice Chairman for Supervision",
+        "basisUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title12-section242&num=0&edition=prelim",
+        "basisSha256": "06efc50c578eaf135cc5b434e93127688f969a554bc142afb87c9144ee4efa8e",
+        "basisCheckedAt": "2026-09-23T19:48:44Z"
+      },
+      "payLevel": "II",
+      "citation": "5 U.S.C. §5313",
+      "statutoryTitle": "Members, Board of Governors of the Federal Reserve System",
+      "scopedOffice": null,
+      "scopedOrganisation": null,
+      "scopedOrganisationId": null,
+      "statuteUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5313&num=0&edition=prelim",
+      "statuteCheckedAt": "2026-09-18T20:34:08Z",
+      "amount": 228000.0,
+      "rateText": "$228,000",
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level II",
+      "quote": "Level II $228,000",
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-11T03:05:36Z",
+      "verification": {
+        "documents": 3,
+        "documentsStatingTheFigure": 1,
+        "percent": 90,
+        "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+        "caution": "One document states the rate and another is the statute that puts this post at that level; where a third is listed, it is the statute that says this post is the office the Code names, because the Code's title is not this node's name. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+        "documentRoles": [
+          {
+            "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+            "role": "states what that Executive Schedule level pays"
+          },
+          {
+            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5313&num=0&edition=prelim",
+            "role": "places this post at that level"
+          },
+          {
+            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title12-section242&num=0&edition=prelim",
+            "role": "identifies this post as the office the Code places at that level"
+          }
+        ]
+      }
+    },
     "parentId": "exec-regulatory-fed"
   },
   {
@@ -86145,7 +86315,8 @@
     "verificationSiteFrom": "exec-regulatory-nrc",
     "positionSchedulePay": {
       "source": "us_code_executive_schedule",
-      "method": "level_assigned_by_5_usc_5312_5316",
+      "method": "level_assigned_by_5_usc_5312_5316_to_this_post_in_this_organisation",
+      "identification": null,
       "payLevel": "IV",
       "citation": "5 U.S.C. §5315",
       "statutoryTitle": "Executive Director for Operations, Nuclear Regulatory Commission",
@@ -86175,7 +86346,7 @@
         "documentsStatingTheFigure": 1,
         "percent": 80,
         "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
-        "caution": "One document states the rate and the other is the statute that puts this post at that level. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+        "caution": "One document states the rate and another is the statute that puts this post at that level; where a third is listed, it is the statute that says this post is the office the Code names, because the Code's title is not this node's name. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
         "documentRoles": [
           {
             "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
@@ -86265,7 +86436,8 @@
     "verificationSiteFrom": "exec-regulatory-nrc",
     "positionSchedulePay": {
       "source": "us_code_executive_schedule",
-      "method": "level_assigned_by_5_usc_5312_5316",
+      "method": "level_assigned_by_5_usc_5312_5316_to_this_post_in_this_organisation",
+      "identification": null,
       "payLevel": "V",
       "citation": "5 U.S.C. §5316",
       "statutoryTitle": "General Counsel of the Nuclear Regulatory Commission",
@@ -86295,7 +86467,7 @@
         "documentsStatingTheFigure": 1,
         "percent": 80,
         "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
-        "caution": "One document states the rate and the other is the statute that puts this post at that level. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+        "caution": "One document states the rate and another is the statute that puts this post at that level; where a third is listed, it is the statute that says this post is the office the Code names, because the Code's title is not this node's name. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
         "documentRoles": [
           {
             "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",

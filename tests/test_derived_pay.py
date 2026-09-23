@@ -207,10 +207,17 @@ class MirrorTests(unittest.TestCase):
     def test_the_gate_mirrors_the_repealed_sentence(self):
         self.assertEqual(REPEALED_CAVC_CHIEF_JUDGE_TEXT, DERIVED_PAY_REPEALED_TEXT)
 
-    def test_three_provisions_price_the_identical_figure(self):
-        """Which is why the mirror is keyed by node id and not by figure."""
+    def test_six_provisions_price_the_identical_figure(self):
+        """Which is why the mirror is keyed by node id and not by figure:
+        three courts' chief judges and their benches, six nodes, one rate."""
         district = [n for n, p in PARITY_PROVISIONS.items() if p["tier"] == "district judges"]
-        self.assertEqual(3, len(district))
+        self.assertEqual(6, len(district))
+
+    def test_each_bench_takes_its_own_courts_provision(self):
+        from data_pipeline.verification.derived_pay import BENCH_NODES
+
+        for bench, chief in BENCH_NODES.items():
+            self.assertEqual(PARITY_PROVISIONS[bench], PARITY_PROVISIONS[chief])
 
     def test_the_court_of_international_trade_is_refused_and_says_why(self):
         self.assertNotIn("jud-specialized-intl-trade-chief-judge-cit", PARITY_PROVISIONS)
@@ -232,12 +239,15 @@ class MirrorTests(unittest.TestCase):
 
 
 class BuildTests(unittest.TestCase):
-    def test_four_records_and_no_more(self):
+    def test_eight_records_and_no_more(self):
+        """Four chief judges and four benches. The bench nodes are in the tree
+        only for the Tax Court here, so five reach the fixture; the CIT never."""
         records, report = _records()
-        self.assertEqual(4, len(records))
-        self.assertEqual(4, report["priced"])
+        self.assertEqual(5, len(records))
+        self.assertEqual(5, report["priced"])
         self.assertNotIn("jud-specialized-intl-trade-chief-judge-cit", records)
-        self.assertNotIn("jud-specialized-tax-judge-18", records)
+        self.assertIn("jud-specialized-tax-judge-18", records)
+        self.assertEqual(records["jud-specialized-tax-judge-18"]["amount"], records["jud-specialized-tax-chief-judge-tax-court"]["amount"])
 
     def test_each_record_carries_two_documents_neither_stating_the_figure(self):
         records, _ = _records()
@@ -278,7 +288,7 @@ class ApplyTests(unittest.TestCase):
         records, _ = _records()
         tree = _base_tree()
         stats = apply_pay_evidence(tree, records, index_tree=index_tree)
-        self.assertEqual(4, stats["priced"])
+        self.assertEqual(5, stats["priced"])
         # The document count, the percentage and the sentence saying what the
         # percentage does not measure are stamped by the shared pass that does
         # the same for every other pay field -- one code path for one number.
@@ -302,20 +312,23 @@ class ApplyTests(unittest.TestCase):
         node_map, _ = index_tree(tree)
         node_map["jud-specialized-tax-chief-judge-tax-court"]["positionStatutoryPay"] = {"source": "elsewhere"}
         stats = apply_pay_evidence(tree, records, index_tree=index_tree)
-        self.assertEqual(3, stats["priced"])
+        self.assertEqual(4, stats["priced"])
         self.assertEqual(1, stats["already_priced_by_another_source"])
         node_map, _ = index_tree(tree)
         self.assertIsNone(node_map["jud-specialized-tax-chief-judge-tax-court"].get("positionDerivedPay"))
 
-    def test_the_multi_post_sweep_strips_it(self):
+    def test_the_multi_post_sweep_keeps_it_and_stamps_holders(self):
+        """A parity-derived rate is the tier's and holds for each judge, so the
+        bench node keeps it with `holders` recomputed from its own count."""
         records, _ = _records()
         tree = _base_tree()
         apply_pay_evidence(tree, records, index_tree=index_tree)
+        self.assertEqual(0, withdraw_pay_from_multi_post_nodes(tree))
         node_map, _ = index_tree(tree)
-        node_map["jud-specialized-tax-chief-judge-tax-court"]["representsPosts"] = {"text": "×2"}
-        self.assertEqual(1, withdraw_pay_from_multi_post_nodes(tree))
-        node_map, _ = index_tree(tree)
-        self.assertIsNone(node_map["jud-specialized-tax-chief-judge-tax-court"].get("positionDerivedPay"))
+        bench = node_map["jud-specialized-tax-judge-18"]["positionDerivedPay"]
+        self.assertEqual(18, bench["holders"]["count"])
+        self.assertTrue(bench["holders"]["appliesToEachHolder"])
+        self.assertNotIn("holders", node_map["jud-specialized-tax-chief-judge-tax-court"]["positionDerivedPay"])
 
     def test_the_field_is_withdrawn_each_build_and_reaches_the_viewer(self):
         self.assertIn("positionDerivedPay", EVIDENCE_OWNED_FIELDS)
@@ -367,9 +380,20 @@ class GateTests(unittest.TestCase):
         organisation = dict(self.node, type="Specialized Court")
         self.assertTrue(any("not a post" in v for v in self._check(organisation)))
 
-    def test_a_record_on_a_multi_post_node_is_caught(self):
-        many = dict(self.node, representsPosts={"text": "×8"})
-        self.assertTrue(any("stands for several posts" in v for v in self._check(many)))
+    def test_a_record_on_a_multi_post_node_needs_a_holders_block(self):
+        many = dict(self.node, representsPosts={"text": "×8", "kind": "exact", "count": 8})
+        self.assertTrue(any("does not say the figure applies to each holder" in v for v in self._check(many)))
+        pay = copy.deepcopy(self.node["positionDerivedPay"])
+        pay["holders"] = {"text": "×8", "kind": "exact", "count": 8, "appliesToEachHolder": True, "note": "each"}
+        self.assertEqual([], self._check(many, pay))
+        pay["holders"]["text"] = "×9"
+        self.assertTrue(any("while its name states" in v for v in self._check(many, pay)))
+        pay["holders"]["text"] = "×8"
+        pay["holders"]["count"] = 7
+        self.assertTrue(any("covers count 7" in v for v in self._check(many, pay)), "the count is what the panel prints first")
+        pay["holders"]["count"] = 8
+        pay["holders"]["kind"] = "unstated"
+        self.assertTrue(any("files its" in v for v in self._check(many, pay)))
 
     def test_a_wrong_tier_is_caught(self):
         pay = copy.deepcopy(self.node["positionDerivedPay"])

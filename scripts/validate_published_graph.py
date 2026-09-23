@@ -161,6 +161,88 @@ US_CODE_EXECUTIVE_SCHEDULE = {
 US_CODE_SECTIONS = ("5312", "5313", "5314", "5315", "5316")
 US_CODE_HOST = "uscode.house.gov"
 
+# The third route into positionSchedulePay: a REVIEWED identification. Neither
+# matcher can make these -- "Chair, Board of Governors" is not equal to the
+# Code's "Chairman, Board of Governors of the Federal Reserve System", and the
+# two Vice Chairs are placed by a title that never names them ("Members,
+# Board of Governors ...", §5313). What makes a Vice Chairman a member is a
+# SECOND statute, 12 U.S.C. 242, and the row carries the sentence of it that
+# says so. Mirrored by node id with the name each row was written against and
+# the basis quote, and pinned equal to `statutory_schedule.REVIEWED_TITLE_ROWS`
+# by tests/test_statutory_schedule.py. The gate recomputes the basis fixture's
+# digest and re-finds the quote in the section's OPERATIVE text with its own
+# stdlib cut -- a quote found only beneath the law, in the publisher's notes,
+# is refused for the reason the CAVC's repealed subsection taught.
+US_CODE_SCHEDULE_METHOD = "level_assigned_by_5_usc_5312_5316"
+US_CODE_SCHEDULE_SCOPED_METHOD = "level_assigned_by_5_usc_5312_5316_to_this_post_in_this_organisation"
+US_CODE_REVIEWED_METHOD = (
+    "level_assigned_by_5_usc_5312_5316_to_the_office_a_second_statute_identifies_this_post_as"
+)
+US_CODE_BASIS_FIXTURE_DIR = PROJECT_ROOT / "tests" / "fixtures" / "uscode"
+#: node id -> (node name the row was written against, statutory title, level,
+#: section, basis citation, basis fixture, the basis section's own sentence,
+#: the reviewed basis in words -- printed by the panel as the reason the
+#: figure applies, so it is a fabricated-reason channel unless mirrored)
+US_CODE_REVIEWED_IDENTIFICATIONS = {
+    "exec-regulatory-fed-chair-board-of-governors": (
+        "Chair, Board of Governors",
+        "Chairman, Board of Governors of the Federal Reserve System", "I", "5312",
+        "12 U.S.C. 242", "fed_12_usc_242.html",
+        "1 shall be designated by the President, by and with the advice and consent of the Senate, "
+        "to serve as Chairman of the Board for a term of 4 years",
+        "the same office: 12 U.S.C. 242 designates one member of the Board to serve as Chairman of the "
+        "Board, and 5 U.S.C. 5312 places that Chairman at Level I; the graph spells the title without "
+        "gender and without the System's name",
+    ),
+    "exec-regulatory-fed-vice-chair-board-of-governors": (
+        "Vice Chair, Board of Governors",
+        "Members, Board of Governors of the Federal Reserve System", "II", "5313",
+        "12 U.S.C. 242", "fed_12_usc_242.html",
+        "2 shall be designated by the President, by and with the advice and consent of the Senate, "
+        "to serve as Vice Chairmen of the Board",
+        "a Vice Chairman is a member of the Board: 12 U.S.C. 242 designates the two Vice Chairmen from "
+        "among the members, 5 U.S.C. 5313 places Members of the Board at Level II, and only the Chairman "
+        "is placed separately (5312); 5314-5316 print no Federal Reserve entry",
+    ),
+    "exec-regulatory-fed-vice-chair-for-supervision": (
+        "Vice Chair for Supervision",
+        "Members, Board of Governors of the Federal Reserve System", "II", "5313",
+        "12 U.S.C. 242", "fed_12_usc_242.html",
+        "1 of whom shall be designated Vice Chairman for Supervision",
+        "the Vice Chairman for Supervision is one of the two Vice Chairmen 12 U.S.C. 242 designates from "
+        "among the members, and 5 U.S.C. 5313 places Members of the Board at Level II",
+    ),
+}
+_US_CODE_OPERATIVE_CACHE = {}
+
+
+def uscode_operative_text(path):
+    """A committed uscode.house.gov page's OPERATIVE text, stdlib-only.
+
+    Tags stripped, entities unescaped, whitespace folded, and cut at the first
+    of the publisher's note headings -- "Historical and Revision Notes",
+    "Editorial Notes", "Statutory Notes" -- so a sentence the page prints only
+    as prior or repealed text is not on the law's side of the line. Written
+    against the bytes rather than imported from the module it checks.
+    """
+    import html as _html
+
+    key = str(path)
+    if key not in _US_CODE_OPERATIVE_CACHE:
+        try:
+            raw = Path(path).read_text(encoding="utf-8", errors="replace")
+        except OSError:
+            _US_CODE_OPERATIVE_CACHE[key] = ""
+            return ""
+        text = re.sub(r"(?is)<(script|style)\b.*?</\1>", " ", raw)
+        text = re.sub(r"\s+", " ", _html.unescape(re.sub(r"<[^>]+>", " ", text))).strip()
+        start = re.search(r"\u00a7\s?\d+[A-Za-z]?\.", text)
+        body = text[start.start():] if start else text
+        cuts = [body.find(h) for h in ("Historical and Revision Notes", "Editorial Notes", "Statutory Notes")]
+        cuts = [c for c in cuts if c > 0]
+        _US_CODE_OPERATIVE_CACHE[key] = body[: min(cuts)].strip() if cuts else ""
+    return _US_CODE_OPERATIVE_CACHE[key]
+
 EXECUTIVE_SCHEDULE_PAY_PLAN = "EX"
 EXECUTIVE_SCHEDULE_EFFECTIVE = "2026-01-01"
 EXECUTIVE_SCHEDULE_EFFECTIVE_TEXT = "Effective January 2026"
@@ -339,6 +421,16 @@ DERIVED_PAY_PROVISIONS = {
         "judges of the United States district courts.",
     ),
 }
+#: Each court's bench node takes its chief judge's provision: "Each judge"
+#: covers them all. Mirrors derived_pay.BENCH_NODES.
+DERIVED_PAY_BENCHES = {
+    "jud-specialized-tax-judge-18": "jud-specialized-tax-chief-judge-tax-court",
+    "jud-specialized-claims-judge-15": "jud-specialized-claims-chief-judge-cfc",
+    "jud-specialized-caaf-judge-4": "jud-specialized-caaf-chief-judge-caaf",
+    "jud-specialized-cavc-judge-8": "jud-specialized-cavc-chief-judge-cavc",
+}
+for _bench, _chief in DERIVED_PAY_BENCHES.items():
+    DERIVED_PAY_PROVISIONS[_bench] = DERIVED_PAY_PROVISIONS[_chief]
 #: The sentence 38 U.S.C. 7253's Amendments note prints as the section's PRIOR
 #: text. It is on the page, it is not the law, and publishing it would put the
 #: CAVC's chief judge at the circuit rate. Refused outright wherever it is
@@ -366,7 +458,7 @@ DERIVED_PAY_STRENGTH_BY_COUNT = {1: 70, 2: 80, 3: 90, 4: 100}
 PAY_DOCUMENT_URL_KEYS = {
     "positionPayRate": ("url", ("levelSource", "url")),
     "positionGradePay": ("url", ("listingSource", "url")),
-    "positionSchedulePay": ("url", "statuteUrl"),
+    "positionSchedulePay": ("url", "statuteUrl", ("identification", "basisUrl")),
     "positionStatutoryPay": ("url",),
     "positionReportedPay": ("url",),
     "positionCurrentPay": ("url",),
@@ -593,6 +685,13 @@ STATUTORY_PAY_NODE_TIERS = {
     "jud-circuit-d-c-circuit-chief-judge-d-c-circuit": "circuit judges",
     "jud-circuit-federal-circuit-chief-judge-federal-circuit": "circuit judges",
     "jud-district-sdny-chief-judge-sdny": "district judges",
+    # Benches priced since 2026-09-23: every judge of the tier is paid the tier
+    # rate, and the block's `holders` says so. Circuit benches are absent on
+    # purpose -- each one's name bundles senior judges, whose salary 28 U.S.C.
+    # 371(b)(2) sets by reference to a past year (adjusted under §461), not
+    # necessarily the tier's current rate.
+    "jud-scotus-associate-justice-8": "associate justices",
+    "jud-district-sdny-district-judge-28-active": "district judges",
     "leg-senate-leadership-president-pro-tempore": "president pro tempore",
     "leg-senate-leadership-majority-leader": "majority leader",
     "leg-senate-leadership-minority-leader": "minority leader",
@@ -675,6 +774,8 @@ WHITEHOUSE_REPORT_URL = (
 )
 WHITEHOUSE_REPORT_AS_OF = "2026-07-01"
 WHITEHOUSE_REPORT_AS_OF_TEXT = "Wednesday, July 1, 2026"
+WHITEHOUSE_PAY_METHOD = "rate_reported_for_the_one_person_listed_under_this_title"
+WHITEHOUSE_PAY_METHOD_UNIFORM = "rate_reported_for_each_of_the_people_listed_under_this_title"
 WHITEHOUSE_REPORT_STATUSES = ("EMPLOYEE", "DETAILEE")
 WHITEHOUSE_REPORT_PAY_BASIS = "Per Annum"
 WHITEHOUSE_RANK_PREFIXES = (
@@ -797,11 +898,27 @@ def whitehouse_roster(path=None):
             if len(names) != 1 or len(titles) != 1:
                 continue
             value = float(amounts[0][1:].replace(",", ""))
-            entry = counts.setdefault(whitehouse_canonical(titles[0]), [value, 0])
+            entry = counts.setdefault(whitehouse_canonical(titles[0]), [value, 0, set(), set(), set()])
             entry[1] += 1
-    roster = {title: (value, held) for title, (value, held) in counts.items()}
+            entry[2].add(value)
+            entry[3].add(statuses[0])
+            entry[4].add(bases[0])
+    # (the first amount seen, how many people hold the title, how many
+    # DISTINCT amounts they are paid, the statuses printed, the pay bases
+    # printed). A title several people hold prices a node only when the
+    # distinct-amount figure is 1 -- every holder at one rate -- and the
+    # block says so in `holders`; the status and basis a block publishes
+    # must be the one the rows print, and a uniform claim needs one of each.
+    roster = {title: (value, held, len(distinct), frozenset(statuses), frozenset(bases))
+              for title, (value, held, distinct, statuses, bases) in counts.items()}
     _ROSTER_CACHE[key] = roster
     return roster
+
+
+#: The multiplicity suffix the expanded White House subtree writes on a node
+#: several people hold ("Special Assistant (×4)"); mirrors
+#: whitehouse_pay._MULTIPLICITY_SUFFIX.
+WHITEHOUSE_MULTIPLICITY_SUFFIX = re.compile(r"\s*\(\u00d7\s*(\d+)\s*\)\s*$")
 
 
 def whitehouse_canonical(text):
@@ -1435,8 +1552,7 @@ def reported_pay_violations(node, pay, today, label):
     type_text = str(node.get("type") or "").casefold()
     if not any(word in type_text for word in ("position", "role", "office holder")):
         say("carries a reported rate of basic pay but is a {!r}, not a post".format(node.get("type")))
-    if node.get("representsPosts"):
-        say("carries one person's reported pay but stands for several posts")
+    out.extend(holders_violations(node, pay, "positionReportedPay", label))
 
     source = str(pay.get("source") or "")
     if source != "whitehouse_staff_report":
@@ -1456,12 +1572,46 @@ def reported_pay_violations(node, pay, today, label):
     if entry is None:
         say("reports title {!r}, which the committed report does not print".format(reported_title))
         return out
-    expected_amount, held_by = entry
+    expected_amount, held_by, distinct_amounts, row_statuses, row_bases = entry
     expected_title = reported_title
-    # A title two people hold cannot price one node: the two salaries differ
-    # and nothing decides which is this post's.
+    holders = pay.get("holders") if isinstance(pay.get("holders"), dict) else None
+    # A title several people hold prices a node only when the report lists
+    # every one of them at the SAME rate and the block says so: then "each of
+    # the N is paid $X" is what the roster states. Differing rates decide
+    # nothing, and a uniform claim must count exactly the people listed.
     if held_by != 1:
-        say("prices a title the report lists {} people under".format(held_by))
+        if holders is None or holders.get("uniformRate") is not True:
+            say("prices a title the report lists {} people under".format(held_by))
+        else:
+            if distinct_amounts != 1:
+                say("claims every one of the {} people under this title is paid the same; the report prints {} different rates".format(held_by, distinct_amounts))
+            if len(row_statuses) != 1 or len(row_bases) != 1:
+                say("claims every one of the {} people under this title is on the same terms; the report prints {} status(es) and {} pay basis(es)".format(
+                    held_by, len(row_statuses), len(row_bases)))
+            if isinstance(holders.get("count"), bool) or not isinstance(holders.get("count"), int):
+                say("claims {!r} holders, which is not a whole number".format(holders.get("count")))
+            elif holders.get("count") != held_by:
+                say("claims {!r} holders; the report lists {}".format(holders.get("count"), held_by))
+    elif holders is not None and holders.get("uniformRate") is True:
+        say("claims a uniform rate across several holders for a title the report lists once")
+    # The method string is published, and it says whose figure this is: one
+    # listed person's, or each of the N listed people's. It must match the
+    # block's own `holders` claim, mirrored from whitehouse_pay.PAY_METHOD and
+    # PAY_METHOD_UNIFORM.
+    uniform_block = holders is not None and holders.get("uniformRate") is True
+    wanted_method = WHITEHOUSE_PAY_METHOD_UNIFORM if uniform_block else WHITEHOUSE_PAY_METHOD
+    if str(pay.get("method") or "") != wanted_method:
+        say("publishes method {!r} on a block whose holders claim calls for {!r}".format(pay.get("method"), wanted_method))
+    # The quote's own "listed N times" suffix is a claim too, and it survives
+    # a `holders` block being stripped: N must be the number of people the
+    # report lists under the printed title, and a title listed once carries
+    # no such suffix at all.
+    listed = re.search(r"\u2014 listed (\d+) times, each at ", str(pay.get("quote") or ""))
+    if listed and (int(listed.group(1)) != held_by or held_by == 1):
+        say("quotes the title as listed {} times; the report lists {} people under it".format(
+            listed.group(1), held_by))
+    if held_by != 1 and holders is not None and holders.get("uniformRate") is True and not listed:
+        say("claims a uniform rate across {} holders without quoting the roster's count".format(held_by))
     # The fold is what licensed the match in the first place, so the gate
     # re-derives it rather than trusting that it was applied: a title that no
     # longer folds onto this node's name is evidence for a different post.
@@ -1469,9 +1619,15 @@ def reported_pay_violations(node, pay, today, label):
     # ("Chief of Staff") and the nodes expanded from this same report are
     # named as it prints them ("Assistant to the President and Chief of
     # Staff"). Equality first, then the fold.
-    if whitehouse_canonical(node.get("name")) not in (
-        whitehouse_canonical(reported_title), whitehouse_title_core(reported_title)
-    ):
+    node_name = str(node.get("name") or "")
+    accepted_names = {whitehouse_canonical(node_name)}
+    stated = WHITEHOUSE_MULTIPLICITY_SUFFIX.search(node_name)
+    if stated and holders is not None and holders.get("count") == int(stated.group(1)):
+        # "<title> (×N)" is how the expanded subtree names a title N people
+        # hold; the suffix is the graph's, and is set aside only when it
+        # counts exactly what the block claims.
+        accepted_names.add(whitehouse_canonical(WHITEHOUSE_MULTIPLICITY_SUFFIX.sub("", node_name)))
+    if not accepted_names & {whitehouse_canonical(reported_title), whitehouse_title_core(reported_title)}:
         say("reports a title that does not name this node, with or without its rank prefix")
 
     amount = pay.get("amount")
@@ -1497,9 +1653,16 @@ def reported_pay_violations(node, pay, today, label):
     status = str(pay.get("reportedStatus") or "")
     if status not in WHITEHOUSE_REPORT_STATUSES:
         say("reports status {!r}, which the report does not use".format(status))
+    elif status not in row_statuses:
+        # The status is published, so it is checked against the rows for THIS
+        # title and not only against the report's vocabulary: an EMPLOYEE
+        # title relabelled DETAILEE passed every other check.
+        say("reports status {!r}; the report prints {} for this title".format(status, sorted(row_statuses)))
     basis = str(pay.get("payBasis") or "")
     if basis != WHITEHOUSE_REPORT_PAY_BASIS:
         say("reports pay basis {!r}, not {!r}".format(basis, WHITEHOUSE_REPORT_PAY_BASIS))
+    elif basis not in row_bases:
+        say("reports pay basis {!r}; the report prints {} for this title".format(basis, sorted(row_bases)))
 
     if str(pay.get("asOf") or "") != WHITEHOUSE_REPORT_AS_OF_TEXT:
         say("dates the roster {!r}, not {!r}".format(pay.get("asOf"), WHITEHOUSE_REPORT_AS_OF_TEXT))
@@ -1541,6 +1704,60 @@ def reported_pay_violations(node, pay, today, label):
     return out
 
 
+def reviewed_schedule_violations(node, pay, reviewed, today, label):
+    """A reviewed row is a claim about WHICH office a node is, and it needs
+    the second statute behind it: the sentence must be the row's, must be in
+    the committed section's operative text now, the file must still be the
+    bytes the fetch recorded, and the node must still carry the name the row
+    was written against. A rename withdraws it, as it does everywhere else."""
+    out = []
+    say = lambda text: out.append("{} {}".format(label(node), text))
+    node_name, title, level, section, citation, fixture, quote, basis = reviewed
+    if str(pay.get("method") or "") != US_CODE_REVIEWED_METHOD:
+        say("prices a reviewed identification under method {!r}, not {!r}".format(
+            pay.get("method"), US_CODE_REVIEWED_METHOD))
+    identification = pay.get("identification")
+    if not isinstance(identification, dict):
+        say("carries a level a reviewed identification assigned it and no identification block")
+        return out
+    if canonical_key(node.get("name")) != canonical_key(node_name):
+        say("is now called {!r}, not {!r}, the name its reviewed identification was written against".format(
+            node.get("name"), node_name))
+    if str(identification.get("nodeName") or "") != node_name:
+        say("records its identification against {!r}, not {!r}".format(identification.get("nodeName"), node_name))
+    if str(identification.get("basisCitation") or "") != citation:
+        say("cites {!r} as the basis of its identification; the row's basis is {!r}".format(
+            identification.get("basisCitation"), citation))
+    if str(identification.get("basisQuote") or "") != quote:
+        say("quotes a basis sentence that is not the one {} prints for this row".format(citation))
+    if not str(identification.get("basis") or "").strip():
+        say("carries a reviewed identification with no stated basis")
+    elif str(identification.get("basis")) != basis:
+        say("states a basis for its identification that is not the reviewed row's")
+    path = US_CODE_BASIS_FIXTURE_DIR / fixture
+    digest = fixture_digest(path)
+    if digest is None:
+        say("cites basis section {!r}, which is not committed".format(fixture))
+    elif str(identification.get("basisSha256") or "").lower() != digest:
+        say("names a basis digest that is not the committed section's")
+    operative = uscode_operative_text(path)
+    if not operative:
+        say("cites a basis section whose operative text this gate cannot separate from its notes")
+    elif quote not in operative:
+        say("rests on a sentence {} does not print in its operative text (only in the publisher's notes, or not at all)".format(citation))
+    basis_url = str(identification.get("basisUrl") or "")
+    parts = re.match(r"^(\d+) U\.S\.C\. (\d+[A-Za-z]?)$", citation)
+    expected_granule = "title{}-section{}".format(parts.group(1), parts.group(2)) if parts else ""
+    if host_of(basis_url) != US_CODE_HOST or not expected_granule or expected_granule not in basis_url:
+        say("does not link the section its identification rests on ({!r})".format(basis_url))
+    checked = str(identification.get("basisCheckedAt") or "")
+    if not re.match(r"^\d{4}-\d{2}-\d{2}", checked) or checked[:10] > today:
+        say("claims a reviewed identification without a past retrieval date ({!r})".format(checked))
+    if pay.get("scopedOffice") or pay.get("scopedOrganisationId") or pay.get("scopedOrganisation"):
+        say("claims a scope; a reviewed identification names the whole node and needs none")
+    return out
+
+
 def schedule_pay_violations(node, pay, today, label, tree_parent=None):
     """A rate whose LEVEL is current law and whose FIGURE is OPM's table.
 
@@ -1562,16 +1779,30 @@ def schedule_pay_violations(node, pay, today, label, tree_parent=None):
     type_text = str(node.get("type") or "").casefold()
     if not any(word in type_text for word in ("position", "role", "office holder")):
         say("carries a statutory rate of basic pay but is a {!r}, not a post".format(node.get("type")))
-    if node.get("representsPosts"):
-        say("carries one post's statutory rate but stands for several posts")
+    out.extend(holders_violations(node, pay, "positionSchedulePay", label))
 
     # Which post the Code actually names. Without this the figure is right and
     # the office is anybody's.
     expected = US_CODE_EXECUTIVE_SCHEDULE.get(node_id)
+    reviewed = US_CODE_REVIEWED_IDENTIFICATIONS.get(node_id)
+    if reviewed is not None:
+        # The third route: the row says which office the node is, and the
+        # checker says whether the second statute still backs that.
+        out.extend(reviewed_schedule_violations(node, pay, reviewed, today, label))
+        expected = (reviewed[1], reviewed[2], reviewed[3], None)
+    elif isinstance(pay.get("identification"), dict) or str(pay.get("method") or "") == US_CODE_REVIEWED_METHOD:
+        say("claims a reviewed identification this pipeline has no row for")
     if expected is None:
         say("carries a rate from the Executive Schedule; the Code names no such post for this node")
         return out
     title, level, section, scoped_org = expected
+    if reviewed is None:
+        # Each route publishes its own method string, and the panel prints a
+        # different sentence for each; a scoped record wearing the whole-name
+        # method would claim the Code names the node outright.
+        wanted = US_CODE_SCHEDULE_SCOPED_METHOD if scoped_org is not None else US_CODE_SCHEDULE_METHOD
+        if str(pay.get("method") or "") != wanted:
+            say("prices under method {!r}, not {!r}".format(pay.get("method"), wanted))
     if str(pay.get("statutoryTitle") or "") != title:
         say("quotes the Code as naming {!r}; §{} prints {!r}".format(pay.get("statutoryTitle"), section, title))
     # The node must still BE the office the statute named. A rename in the
@@ -1581,7 +1812,9 @@ def schedule_pay_violations(node, pay, today, label, tree_parent=None):
     # scoped one must still carry the office half AND still sit under the body
     # the statute named, because that placement is half of what identified it.
     if scoped_org is None:
-        if canonical_key(node.get("name")) != canonical_key(title):
+        # A reviewed row's rename guard is the row's own node name, checked
+        # above; its whole name is by construction NOT the statutory title.
+        if reviewed is None and canonical_key(node.get("name")) != canonical_key(title):
             say("is now called {!r}, which is not the statutory title {!r} its rate was looked up from".format(
                 node.get("name"), title))
         if pay.get("scopedOffice") or pay.get("scopedOrganisationId"):
@@ -1734,8 +1967,7 @@ def tier_pay_violations(node, pay, today, label, parent_name):
     type_text = str(node.get("type") or "").casefold()
     if not any(word in type_text for word in ("position", "role", "office holder")):
         say("carries a Title 38 pay band but is a {!r}, not a post".format(node.get("type")))
-    if node.get("representsPosts"):
-        say("carries one post's pay band but stands for several posts")
+    out.extend(holders_violations(node, pay, "positionTierPay", label))
 
     if str(pay.get("source") or "") != "va_title38_pay_ranges":
         say("prices from source {!r}, which this pipeline does not produce for a tier band".format(pay.get("source")))
@@ -1832,6 +2064,88 @@ def tier_pay_violations(node, pay, today, label, parent_name):
     for source_url in node.get("sourceUrls") or []:
         if "va.gov/OHRM" in str(source_url):
             say("counts the pay schedule among the sources that it exists")
+    return out
+
+
+#: Pay fields whose claim is the OFFICE's or the TIER's and holds for every
+#: holder alike, so a node standing for several posts may carry one -- with a
+#: `holders` block the sweep stamps from the node's own stated multiplicity.
+#: Mirrors pay_tables.OFFICE_RATE_PAY_FIELDS; pinned by tests/test_multi_post_pay.py.
+OFFICE_RATE_PAY_FIELDS = ("positionStatutoryPay", "positionDerivedPay", "positionTierPay")
+#: A roster figure may sit on a multi-post node only when the block itself says
+#: the roster lists every holder at one rate (mirrors pay_tables.UNIFORM_ROSTER_PAY_FIELDS).
+UNIFORM_ROSTER_PAY_FIELDS = ("positionReportedPay",)
+#: Never on a multi-post node: one listing's level, one listing's pay plan,
+#: one row's rate, one named office's statutory level.
+INCUMBENCY_PAY_FIELDS = ("positionPayRate", "positionGradePay", "positionCurrentPay", "positionSchedulePay")
+#: A judicial name that bundles senior judges into its count. 28 U.S.C.
+#: 371(b)(2) sets an uncertified senior judge's salary by reference to a past
+#: year -- the salary last drawn in active service or when last certified,
+#: adjusted under §461 -- so the tier's current rate cannot be claimed for
+#: each holder.
+SENIOR_JUDGE_MARKER = re.compile(r"\bsenior\b", re.IGNORECASE)
+
+
+def holders_violations(node, pay, field, label):
+    """What the multiplicity of a node requires of a pay block on it.
+
+    On a node that stands for several posts, an office-rate block must carry a
+    `holders` block that states the SAME multiplicity the node's name does and
+    says the figure applies to each holder; a roster block must additionally
+    say the roster listed every holder at one rate and count exactly what the
+    name counts. On a single-post node no block may carry `holders` at all --
+    that is a carry-over from a graph where the node stood for several.
+    """
+    out = []
+    say = lambda text: out.append("{} {}".format(label(node), text))
+    represents = node.get("representsPosts")
+    holders = pay.get("holders") if isinstance(pay, dict) else None
+    if represents:
+        if not isinstance(represents, dict):
+            # Truthy but not the record annotate_stated_counts writes: still
+            # a node that stands for several posts, and nothing about it can
+            # be checked, so nothing on it may carry a figure.
+            say("stands for several posts ({!r}) in a form this gate cannot read, and carries {}".format(represents, field))
+            return out
+        if field in INCUMBENCY_PAY_FIELDS:
+            say("carries {} but stands for several posts; that figure is one listing's".format(field))
+            return out
+        if not isinstance(holders, dict):
+            say("stands for several posts and its {} does not say the figure applies to each holder".format(field))
+            return out
+        if str(holders.get("text") or "") != str(represents.get("text") or ""):
+            say("says its {} covers {!r} holders while its name states {!r}".format(
+                field, holders.get("text"), represents.get("text")))
+        # The whole record `pay_tables.holders_for` copies, not the text
+        # alone: the panel prints `count` first and falls back to the text
+        # only when it is absent, so a count of 17 on a name stating ×18
+        # reads "stands for 17 posts" past a text-only check. Every key the
+        # multiplicity states must be the block's, and none the name does
+        # not state may appear.
+        if str(holders.get("kind") or "") != str(represents.get("kind") or ""):
+            say("files its {} holders as {!r} while its name's count is {!r}".format(
+                field, holders.get("kind"), represents.get("kind")))
+        for key in ("count", "low", "high", "as_written"):
+            stated = represents.get(key)
+            if stated is None:
+                if key in holders:
+                    say("says its {} holders have {} {!r}, which its name does not state".format(
+                        field, key, holders.get(key)))
+            elif holders.get(key) != stated:
+                say("says its {} covers {} {!r} while its name states {!r}".format(
+                    field, key, holders.get(key), stated))
+        if holders.get("appliesToEachHolder") is not True:
+            say("stands for several posts and its {} does not claim the figure for each holder".format(field))
+        if field in UNIFORM_ROSTER_PAY_FIELDS:
+            if holders.get("uniformRate") is not True:
+                say("carries one person's reported pay but stands for several posts")
+            if represents.get("kind") != "exact" or holders.get("count") != represents.get("count"):
+                say("claims a uniform roster rate for {!r} holders while its name states {!r}".format(
+                    holders.get("count"), represents.get("text")))
+        if not str(holders.get("note") or "").strip():
+            say("stands for several posts and its {} carries no sentence saying so".format(field))
+    elif isinstance(holders, dict):
+        say("carries a holders block on its {} but stands for one post".format(field))
     return out
 
 
@@ -1936,8 +2250,7 @@ def derived_pay_violations(node, pay, today, label):
     type_text = str(node.get("type") or "").casefold()
     if not any(word in type_text for word in ("position", "role", "office holder")):
         say("carries a derived rate of basic pay but is a {!r}, not a post".format(node.get("type")))
-    if node.get("representsPosts"):
-        say("carries one post's derived rate but stands for several posts")
+    out.extend(holders_violations(node, pay, "positionDerivedPay", label))
 
     if str(pay.get("source") or "") != DERIVED_PAY_SOURCE:
         say("prices from source {!r}, which this pipeline does not produce for a derived rate".format(pay.get("source")))
@@ -2085,8 +2398,10 @@ def statutory_pay_violations(node, pay, today, label):
     type_text = str(node.get("type") or "").casefold()
     if not any(word in type_text for word in ("position", "role", "office holder")):
         say("carries a statutory rate of basic pay but is a {!r}, not a post".format(node.get("type")))
-    if node.get("representsPosts"):
-        say("carries one post's rate but stands for several posts")
+    out.extend(holders_violations(node, pay, "positionStatutoryPay", label))
+    if SENIOR_JUDGE_MARKER.search(str(node.get("name") or "")) and str(pay.get("source") or "") == "uscourts_judicial_compensation":
+        say("bundles senior judges, whose salary 28 U.S.C. 371(b)(2) sets by reference to a past year "
+            "(adjusted under \u00a7461), not necessarily the tier's current rate")
 
     source = str(pay.get("source") or "")
     mirror = STATUTORY_PAY_SOURCES.get(source)
@@ -4861,11 +5176,14 @@ def main(argv):
         # enumerates 415 positions across the five sections. Saying "the Code
         # names N" off the mirror's length would report this graph's coverage
         # as the statute's contents.
+        reviewed_paid = [n for n in schedule_paid if isinstance(n["positionSchedulePay"].get("identification"), dict)]
         print("  U.S. Code schedule   : {:,} positions priced at the level 5 U.S.C. §§{}-{} sets for them ({}); "
-              "{:,} are mirrored here, which is how many of the Code's positions this graph has a node for".format(
+              "{:,} are mirrored here, which is how many of the Code's positions this graph has a node for; "
+              "{:,} of them rest on a reviewed identification a second statute backs ({:,} rows mirrored)".format(
                   len(schedule_paid), US_CODE_SECTIONS[0], US_CODE_SECTIONS[-1],
                   ", ".join("{} {}".format(k, sched_levels[k]) for k in ("I", "II", "III", "IV", "V") if sched_levels.get(k)) or "none",
-                  len(US_CODE_EXECUTIVE_SCHEDULE)))
+                  len(US_CODE_EXECUTIVE_SCHEDULE) + len(US_CODE_REVIEWED_IDENTIFICATIONS),
+                  len(reviewed_paid), len(US_CODE_REVIEWED_IDENTIFICATIONS)))
     statutory_paid = [n for n in nodes if isinstance(n.get("positionStatutoryPay"), dict)]
     by_source = Counter(str(n["positionStatutoryPay"].get("source") or "?") for n in statutory_paid)
     print("  statutory pay         : {:,} positions priced from a single primary source naming the seat directly ({})".format(
@@ -4882,8 +5200,12 @@ def main(argv):
                       count, DERIVED_PAY_STRENGTH_BY_COUNT.get(count)) for count in sorted(derived_counts)) or "none",
                   len(DERIVED_PAY_PROVISIONS)))
     reported_paid = [n for n in nodes if isinstance(n.get("positionReportedPay"), dict)]
-    print("  reported pay         : {:,} White House Office positions carrying what the July 1 roster reports for the one person under that title".format(
-        len(reported_paid)))
+    uniform_paid = [n for n in reported_paid
+                    if isinstance(n["positionReportedPay"].get("holders"), dict)
+                    and n["positionReportedPay"]["holders"].get("uniformRate") is True]
+    print("  reported pay         : {:,} White House Office positions carrying what the July 1 roster reports: "
+          "{:,} for the one person under that title, {:,} for every one of the N people listed under it at one rate".format(
+              len(reported_paid), len(reported_paid) - len(uniform_paid), len(uniform_paid)))
     print("  PLUM archive         : {:,} positions listed in the previous administration's archive; {:,} placements from it".format(
         len(listings), sum(1 for n in nodes if str(n.get("placementMethod") or "") == "listed_under_organization_in_opm_plum_archive")))
     current_listings = [n for n in nodes if isinstance(n.get("positionCurrentListing"), dict)]

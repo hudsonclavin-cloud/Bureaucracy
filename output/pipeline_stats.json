@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-23T19:05:01.905065+00:00",
+  "timestamp": "2026-09-23T20:58:41.883108+00:00",
   "mode": "offline_regeneration",
   "note": "Rebuilt from the curated base graph and the Treasury anchor already published; no crawler ran. See scripts/regenerate_published_graph.py.",
   "nodes_before": 5481,
@@ -197,7 +197,7 @@
       "not_validated": 0
     },
     "schedule_pay_evidence": {
-      "priced": 99,
+      "priced": 102,
       "priced_scoped": 61,
       "unknown_node": 0,
       "not_a_position": 0,
@@ -206,10 +206,9 @@
       "stands_for_many_posts": 0
     },
     "judicial_pay_evidence": {
-      "priced": 15,
+      "priced": 17,
       "unknown_node": 0,
       "not_a_position": 0,
-      "stands_for_many_posts": 0,
       "stands_for_many_posts_after_pruning": 0
     },
     "congressional_pay_evidence": {
@@ -235,18 +234,16 @@
       "stands_for_many_posts_after_pruning": 0
     },
     "derived_pay_evidence": {
-      "priced": 4,
+      "priced": 8,
       "unknown_node": 0,
       "not_a_position": 0,
-      "stands_for_many_posts": 0,
       "already_priced_by_another_source": 0,
       "stands_for_many_posts_after_pruning": 0
     },
     "whitehouse_pay_evidence": {
-      "priced": 166,
+      "priced": 188,
       "unknown_node": 0,
       "not_a_position": 0,
-      "stands_for_many_posts": 0,
       "outside_the_white_house_office": 0,
       "name_no_longer_matches": 0,
       "stands_for_many_posts_after_pruning": 0
@@ -342,16 +339,16 @@
       "not_capped_other_evidence": 1
     },
     "pay_documents": {
-      "annotated": 500,
+      "annotated": 531,
       "no_document": 0,
-      "positionDerivedPay": 4,
-      "positionStatutoryPay": 22,
-      "positionSchedulePay": 99,
+      "positionDerivedPay": 8,
+      "positionStatutoryPay": 24,
+      "positionSchedulePay": 102,
       "positionGradePay": 18,
       "positionCurrentPay": 88,
       "positionPayRate": 31,
       "positionTierPay": 72,
-      "positionReportedPay": 166
+      "positionReportedPay": 188
     },
     "budget_reconciliation": {
       "nodes_seen": 5510,
