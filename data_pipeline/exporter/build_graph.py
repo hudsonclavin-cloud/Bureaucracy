@@ -3001,6 +3001,16 @@ def build_graph(
     validation["us_code_pay_schedule_evidence"]["stands_for_many_posts_after_pruning"] = multi_post_withdrawn
     validation["va_title38_pay_evidence"]["stands_for_many_posts_after_pruning"] = multi_post_withdrawn
     validation["derived_pay_evidence"]["stands_for_many_posts_after_pruning"] = multi_post_withdrawn
+    # How many documents each pay figure rests on, and what that count is
+    # worth on this project's own source arithmetic. Last, deliberately: it
+    # counts the URLs a block actually ends up carrying, so it must run after
+    # every pay pass and after the multi-post sweep has withdrawn what it
+    # withdraws.
+    from data_pipeline.verification.pay_documents import (  # noqa: E402 — imports this module
+        annotate_pay_documents,
+    )
+
+    validation["pay_documents"] = annotate_pay_documents(graph)
     validation["whitehouse_pay_evidence"]["stands_for_many_posts_after_pruning"] = multi_post_withdrawn
     validity_report["audit_report"] = {"summary": deepcopy(audit_report.get("summary", {}))}
     validity_report["root_orphan_resolution"] = orphan_resolution

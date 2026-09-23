@@ -350,7 +350,42 @@ DERIVED_PAY_REPEALED_TEXT = (
 #: The project's own source arithmetic as a whole percentage, mirrored so the
 #: published figure cannot drift from the scale it names: one official
 #: document 70, two 80, three 90, four or more 100.
-DERIVED_PAY_STRENGTH_BY_COUNT = {1: 70, 2: 80, 3: 90}
+DERIVED_PAY_STRENGTH_BY_COUNT = {1: 70, 2: 80, 3: 90, 4: 100}
+
+# ---------------------------------------------------------------------------
+# The document count on EVERY pay field, mirrored from
+# `pay_documents.PAY_DOCUMENT_FIELDS` and pinned equal to it by
+# tests/test_pay_documents.py. Two things are checked and they are different
+# claims: the count is recomputed from the URLs the block itself carries, so a
+# block cannot say "2 documents" while naming one; and the number of them that
+# STATE the figure is the mirror's, so a derived figure cannot quietly start
+# claiming a document prints it.
+#: field -> where its documents' URLs live. A string is a top-level key, a
+#: 2-tuple is (nested block, key), and ("documents", "*", "url") is a list of
+#: document records.
+PAY_DOCUMENT_URL_KEYS = {
+    "positionPayRate": ("url", ("levelSource", "url")),
+    "positionGradePay": ("url", ("listingSource", "url")),
+    "positionSchedulePay": ("url", "statuteUrl"),
+    "positionStatutoryPay": ("url",),
+    "positionReportedPay": ("url",),
+    "positionCurrentPay": ("url",),
+    "positionTierPay": ("url",),
+    "positionDerivedPay": (("documents", "*", "url"),),
+}
+#: How many of a field's documents print the figure itself. Every printed rate
+#: or printed pair of bounds is 1; a derived figure is 0, and that difference
+#: is the whole reason the field exists.
+PAY_DOCUMENT_STATES_FIGURE = {
+    "positionPayRate": 1,
+    "positionGradePay": 1,
+    "positionSchedulePay": 1,
+    "positionStatutoryPay": 1,
+    "positionReportedPay": 1,
+    "positionCurrentPay": 1,
+    "positionTierPay": 1,
+    "positionDerivedPay": 0,
+}
 
 # The Senate's own year-by-year salary schedule, mirrored the same way and
 # pinned by tests/test_congressional_pay.py against
@@ -1797,6 +1832,82 @@ def tier_pay_violations(node, pay, today, label, parent_name):
     for source_url in node.get("sourceUrls") or []:
         if "va.gov/OHRM" in str(source_url):
             say("counts the pay schedule among the sources that it exists")
+    return out
+
+
+def _pay_document_urls(block, keys):
+    """The distinct document URLs a pay block carries, in the order its own
+    declared keys hold them. Recomputed here rather than trusted, which is the
+    point: a published count has to be a fact about the block."""
+    seen = []
+    for key in keys:
+        values = []
+        if isinstance(key, str):
+            values = [block.get(key)]
+        elif len(key) == 2:
+            nested = block.get(key[0])
+            values = [nested.get(key[1])] if isinstance(nested, dict) else []
+        else:
+            parent, marker, child = key
+            records = block.get(parent) if marker == "*" else None
+            if isinstance(records, list):
+                values = [r.get(child) for r in records if isinstance(r, dict)]
+        for value in values:
+            text = str(value or "").strip()
+            if text and text not in seen:
+                seen.append(text)
+    return seen
+
+
+def pay_document_violations(node, field, block, label):
+    """Everything that must be true of a pay block's document count.
+
+    Stamped on every pay field by `pay_documents.annotate_pay_documents`. The
+    count and the percentage are recomputed from the block's own URLs, and
+    `documentsStatingTheFigure` is the mirror's -- a derived figure's 0 is the
+    one thing on this block that makes its 80% readable as what it is.
+    """
+    out = []
+    say = lambda text: out.append("{} {}".format(label(node), text))
+    if not isinstance(block, dict):
+        return out
+    keys = PAY_DOCUMENT_URL_KEYS.get(field)
+    if keys is None:
+        say("carries pay field {!r}, which this pipeline does not count documents for".format(field))
+        return out
+    urls = _pay_document_urls(block, keys)
+    verification = block.get("verification")
+    if not isinstance(verification, dict):
+        say("publishes {} with no statement of how many documents verify it".format(field))
+        return out
+    count = verification.get("documents")
+    if isinstance(count, bool) or not isinstance(count, int) or count <= 0:
+        say("publishes {!r} as {}'s document count".format(count, field))
+        return out
+    if count != len(urls):
+        say("says {} documents verify its {} and carries {} citable URL(s)".format(count, field, len(urls)))
+    expected_percent = DERIVED_PAY_STRENGTH_BY_COUNT.get(count)
+    if expected_percent is None:
+        say("publishes a document count of {} on {}, which this project's scale does not cover".format(count, field))
+    elif verification.get("percent") != expected_percent:
+        say("publishes {!r}% for {} documents on {}; this project's own scale gives {!r}%".format(
+            verification.get("percent"), count, field, expected_percent))
+    expected_stating = PAY_DOCUMENT_STATES_FIGURE[field]
+    if verification.get("documentsStatingTheFigure") != expected_stating:
+        say("claims {!r} of its {} documents state the figure; {} is {}".format(
+            verification.get("documentsStatingTheFigure"), field, field, expected_stating))
+    if not str(verification.get("scale") or "").strip():
+        say("publishes a {} percentage without saying what scale it is on".format(field))
+    if not str(verification.get("caution") or "").strip():
+        say("publishes a {} percentage with no sentence saying what it does not measure".format(field))
+    roles = verification.get("documentRoles")
+    if not isinstance(roles, list) or len(roles) != len(urls):
+        say("names {!r} document roles for {} URL(s) on {}".format(
+            len(roles) if isinstance(roles, list) else roles, len(urls), field))
+    else:
+        for role in roles:
+            if not isinstance(role, dict) or str(role.get("url") or "") not in urls:
+                say("names a {} document role for a URL the block does not carry".format(field))
     return out
 
 
@@ -3459,6 +3570,7 @@ def main(argv):
     bad_statutory_pay = []
     bad_tier_pay = []
     bad_derived_pay = []
+    bad_pay_documents = []
     bad_schedule_pay = []
     bad_reported_pay = []
     bad_usaspending = []
@@ -3691,6 +3803,13 @@ def main(argv):
         derived_pay = node.get("positionDerivedPay")
         if derived_pay is not None:
             bad_derived_pay.extend(derived_pay_violations(node, derived_pay, today, label))
+        # And, on every pay field alike, how many documents the figure rests
+        # on: recomputed from the URLs the block itself carries, so a count
+        # is a fact about the block rather than a number somebody wrote down.
+        for _pay_field in PAY_DOCUMENT_URL_KEYS:
+            _pay_block = node.get(_pay_field)
+            if isinstance(_pay_block, dict):
+                bad_pay_documents.extend(pay_document_violations(node, _pay_field, _pay_block, label))
         # The same Executive Schedule rate from the other direction: current
         # law names the level, OPM's table prices it. Its own field and its
         # own mirror, keyed by node id.
@@ -3824,6 +3943,10 @@ def main(argv):
     gate.check(
         "a derived rate names both documents, neither of which states it, and prices the tier its own statute does",
         bad_derived_pay,
+    )
+    gate.check(
+        "every pay figure says how many documents it rests on, counted from the URLs it carries",
+        bad_pay_documents,
     )
     gate.check("an Executive Schedule rate names the post the U.S. Code names, at the level the Code sets", bad_schedule_pay)
     gate.check("a reported pay rate is the roster's own figure for the title it names, and never zero", bad_reported_pay)

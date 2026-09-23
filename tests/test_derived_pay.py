@@ -32,6 +32,7 @@ from data_pipeline.verification.derived_pay import (
     operative_text,
 )
 from data_pipeline.verification.judicial_pay import DEFAULT_TABLE_HTML, load_judicial_compensation
+from data_pipeline.verification.pay_documents import annotate_pay_documents
 from data_pipeline.verification.pay_tables import withdraw_pay_from_multi_post_nodes
 from scripts.validate_published_graph import (
     DERIVED_PAY_METHOD,
@@ -278,6 +279,10 @@ class ApplyTests(unittest.TestCase):
         tree = _base_tree()
         stats = apply_pay_evidence(tree, records, index_tree=index_tree)
         self.assertEqual(4, stats["priced"])
+        # The document count, the percentage and the sentence saying what the
+        # percentage does not measure are stamped by the shared pass that does
+        # the same for every other pay field -- one code path for one number.
+        annotate_pay_documents(tree)
         node_map, _ = index_tree(tree)
         for node_id in records:
             node = node_map[node_id]
@@ -324,6 +329,7 @@ class GateTests(unittest.TestCase):
         records, _ = _records()
         self.tree = _base_tree()
         apply_pay_evidence(self.tree, records, index_tree=index_tree)
+        annotate_pay_documents(self.tree)
         node_map, _ = index_tree(self.tree)
         self.node = node_map["jud-specialized-cavc-chief-judge-cavc"]
 

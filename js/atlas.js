@@ -489,7 +489,7 @@ function describePay(node) {
     const on = formatDate(current.exportFetchedAt);
     blocks.push({
       heading: "Pay — current Plum Book",
-      text: `OPM's current PLUM Reporting export${on ? ` (fetched ${on})` : ""} prints ${printed} for the one row listed under "${current.listedTitle || "this title"}". That is what that listing is paid, a row being an incumbency; not what the post pays whoever holds it, and not this unit's cost.`,
+      text: `OPM's current PLUM Reporting export${on ? ` (fetched ${on})` : ""} prints ${printed} for the one row listed under "${current.listedTitle || "this title"}". That is what that listing is paid, a row being an incumbency; not what the post pays whoever holds it, and not this unit's cost.${payDocuments(current)}`,
     });
   }
   const rate = node.positionPayRate;
@@ -503,6 +503,7 @@ function describePay(node) {
         ? `OPM's ${rate.table}${when}, pays ${printed} for ${rate.amountScope}. That is two documents, not one — the level is the current PLUM export's listing of this post, and the rate is a table's figure for that rank; the export prints no rate for this row, so this is not a figure for the post.`
         : `OPM's ${rate.table}${when}, pays ${printed} for ${rate.amountScope}. That is two documents, not one — the level is the archive's record of a period that ended, and the rate is from a table that took effect afterwards, so neither says what this post pays whoever holds it now.`,
     });
+    blocks[blocks.length - 1].text += payDocuments(rate);
   }
   const schedule = node.positionSchedulePay;
   if (schedule && typeof schedule === "object" && typeof schedule.amount === "number") {
@@ -512,7 +513,7 @@ function describePay(node) {
       heading: "Executive Schedule rate",
       text: `${schedule.citation || "The United States Code"} places this post at Executive Schedule level ${schedule.payLevel}, naming it "${schedule.statutoryTitle}". OPM's ${schedule.table}${when}, pays ${printed} for ${schedule.amountScope}.${
         schedule.scopedOffice && schedule.scopedOrganisation ? ` Matched to "${schedule.scopedOffice}" as the post of that name directly under ${schedule.scopedOrganisation}.` : ""
-      } A statutory rate of basic pay, not what the holder receives.`,
+      } A statutory rate of basic pay, not what the holder receives.${payDocuments(schedule)}`,
     });
   }
   const statutory = node.positionStatutoryPay;
@@ -521,7 +522,7 @@ function describePay(node) {
     const on = formatDate(statutory.checkedAt);
     blocks.push({
       heading: "Statutory pay",
-      text: `${statutory.sourceLabel || "A primary official source"}${on ? ` (checked ${on})` : ""} states that ${statutory.amountScope || "this tier"} is paid ${printed}${statutory.year ? ` for ${statutory.year}` : ""}. That names a tier or a group of roles, not this specific post by name.`,
+      text: `${statutory.sourceLabel || "A primary official source"}${on ? ` (checked ${on})` : ""} states that ${statutory.amountScope || "this tier"} is paid ${printed}${statutory.year ? ` for ${statutory.year}` : ""}. That names a tier or a group of roles, not this specific post by name.${payDocuments(statutory)}`,
     });
   }
   const derived = node.positionDerivedPay;
@@ -542,7 +543,7 @@ function describePay(node) {
     const on = formatDate(reported.checkedAt);
     blocks.push({
       heading: "Reported pay",
-      text: `${reported.sourceLabel || "The White House Office's own annual report to Congress"}${on ? ` (checked ${on})` : ""} lists one person under "${reported.reportedTitle || "this title"}"${reported.asOf ? `, as of ${reported.asOf}` : ""}, paid ${printed}${reported.payBasis ? ` ${String(reported.payBasis).toLowerCase()}` : ""}. That is what the one person listed is paid, not what the post pays whoever holds it.`,
+      text: `${reported.sourceLabel || "The White House Office's own annual report to Congress"}${on ? ` (checked ${on})` : ""} lists one person under "${reported.reportedTitle || "this title"}"${reported.asOf ? `, as of ${reported.asOf}` : ""}, paid ${printed}${reported.payBasis ? ` ${String(reported.payBasis).toLowerCase()}` : ""}. That is what the one person listed is paid, not what the post pays whoever holds it.${payDocuments(reported)}`,
     });
   }
   return blocks;
@@ -551,6 +552,19 @@ function describePay(node) {
 // ---------------------------------------------------------------------------
 // Rendering
 // ---------------------------------------------------------------------------
+
+// The document count and what it is worth, appended to every pay block here
+// as `ui.js` appends it to every pay block in the panel. One sentence, the
+// same scale, so a reader comparing two rows in this view is comparing the
+// same thing.
+function payDocuments(block) {
+  const verification = block && typeof block === "object" ? block.verification : null;
+  if (!verification || typeof verification !== "object") return "";
+  const count = Number(verification.documents || 0);
+  if (!count) return "";
+  const stating = Number(verification.documentsStatingTheFigure || 0);
+  return ` ${count} official document${count === 1 ? "" : "s"} verify this — ${Number(verification.percent || 0)}% on this project's own source scale — and ${stating === 0 ? "none of them states the figure itself" : stating === count ? (count === 1 ? "it states the figure itself" : "all of them state the figure itself") : `${stating} of them states the figure itself`}.`;
+}
 
 function card(node, selectedId) {
   const evidence = describeEvidence(node);

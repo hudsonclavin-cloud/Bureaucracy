@@ -507,17 +507,12 @@ def apply_pay_evidence(
             "url": str(record.get("sourceUrl") or ""),
             "tableUrl": str(record.get("tableUrl") or ""),
             "checkedAt": record.get("retrievedAt"),
-            "verification": {
-                "documents": len(documents),
-                "documentsStatingTheFigure": sum(1 for d in documents if d.get("statesTheFigure")),
-                "percent": document_strength_percent(len(documents)),
-                "scale": STRENGTH_SCALE,
-                "caution": (
-                    "The percentage measures how much official documentation this figure rests on, "
-                    "not the chance that it is right. No document here states the figure: one names "
-                    "the tier this post is paid at, the other states what that tier pays."
-                ),
-            },
+            # `verification` -- the document count, the percentage and the
+            # sentence saying what the percentage does not measure -- is
+            # stamped by `pay_documents.annotate_pay_documents`, which reads
+            # the count off `documents` here and does the same for every other
+            # pay field. One code path for one number: a second copy of the
+            # arithmetic living in this module is how the two would drift.
         }
         stats["priced"] += 1
         # Deliberately not written: sourceUrls, sourceTypes, lastVerified,

@@ -16,6 +16,7 @@ from contextlib import redirect_stdout
 from pathlib import Path
 
 from data_pipeline.exporter.build_graph import MINIMAL_GRAPH_FIELDS, build_graph, index_tree
+from data_pipeline.verification.pay_documents import annotate_pay_documents
 from data_pipeline.verification import financial_evidence as fe
 from data_pipeline.verification import gs_pay, pay_tables, plum_current, positions
 from data_pipeline.verification.evidence import EVIDENCE_OWNED_FIELDS, clear_evidence_fields
@@ -630,6 +631,11 @@ class ScriptBuildAndGateTests(unittest.TestCase):
             node[key] = value
         if mutate:
             mutate(graph, by_id)
+        # A pay block stamped by hand here would carry no document count, and
+        # the gate refuses that -- correctly, since a published figure has to
+        # say how many documents it rests on. Run the production pass rather
+        # than hand-writing the count, so this fixture cannot drift from it.
+        annotate_pay_documents(graph)
         path = self.tmp / "bad.json"
         path.write_text(json.dumps(graph), encoding="utf-8")
         return self._gate(path)

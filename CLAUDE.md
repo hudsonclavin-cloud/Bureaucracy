@@ -48,6 +48,7 @@ python scripts/derive_plum_current_evidence.py --dry-run  # OPM's CURRENT Plum B
 python scripts/derive_fr_signature_evidence.py --dry-run  # the title an official stated when signing a Federal Register document; the signer's NAME is never read; writes nothing
 python scripts/derive_judicial_pay_evidence.py --dry-run    # uscourts.gov's own compensation table; writes nothing
 python scripts/derive_derived_pay_evidence.py --dry-run     # a figure NO document states: a statutory parity provision joined to that table; writes nothing
+python scripts/report_unpriced_positions.py --dry-run        # every position with no pay claim, and the prompt pack that covers all of them
 python scripts/derive_congressional_pay_evidence.py --dry-run  # senate.gov's own salary schedule; writes nothing
 python scripts/derive_whitehouse_pay_evidence.py --dry-run     # the White House Office's statutory staff roster; writes nothing
 python scripts/expand_whitehouse_office.py --dry-run           # what the roster would add to the curated WHO subtree; writes nothing
@@ -2188,6 +2189,79 @@ counts more documents than it lists, that claims a `verified` grade or an
 sits beside a measured cost, that verifies the post's existence or places it,
 or that puts either pay document among the node's own sources.
 `tests/test_derived_pay.py` corrupts each in turn.
+
+**The count on every pay field, and 4,130 positions that have none (since
+2026-09-23).** The derived block above publishes how many documents its figure
+rests on; the owner asked for the same on the rest, and the reason is that the
+distinction was real and stated only in prose a reader had to assemble.
+`positionPayRate` is a two-document join (a listing states the level, OPM's
+table prices it) and `positionStatutoryPay` is one document's printed figure,
+and the panel said so in different words in different places.
+
+`pay_documents.py` is one pass over the finished tree, run after every pay
+pass and after the multi-post sweep, and **the count is read off the block
+rather than written down**: every pay block already carries the URL of each
+document it rests on — the table in `url`, the listing in `levelSource.url`,
+the statute in `statuteUrl`, both of a derived figure's in `documents[].url` —
+so `PAY_DOCUMENT_FIELDS` names those keys per field and the published count is
+the number of DISTINCT URLs actually there. A block whose second document went
+missing publishes 1 and 70%, not 2 and 80%, and a build that put one URL in
+both keys publishes 1, because it would be resting on one document. The gate
+recomputes the same set from its own mirror of those keys and refuses a count
+the block does not support.
+
+The second field is what keeps the percentage honest. Two documents scoring
+80% sounds stronger than one scoring 70% in every case, and on exactly one
+field it is weaker, so each field declares how many of its documents state the
+figure ITSELF: every printed rate and every printed pair of bounds declares
+**1** — the table or the roster prints the number, and the second document
+where there is one supplies the level or pay plan saying WHICH printed number
+applies — and `positionDerivedPay` declares **0**. The gate mirrors that per
+field, a test asserts `positionDerivedPay` is the only zero, and the panel
+prints the two in one sentence through a single helper
+(`payDocumentsSentence`) called from all eight renderers and from the atlas
+view, so no two pay blocks can describe the same thing differently again. The
+derived module stopped writing its own copy of the arithmetic when this
+landed: one code path for one number.
+
+**And the gap this made visible, counted rather than estimated.** 461 of 4,591
+positions carry a pay claim; **4,130 do not**, and
+`scripts/report_unpriced_positions.py` says why for every one of them:
+
+- **3,316** — no pay document this project has read names the title at all.
+  Not a coverage gap somebody has not got to.
+- **793** — the node states a multiplicity (`Physician (×multiple)`,
+  `Judge (×18)`), which the rule `pay_tables.py` set refuses to put one rate
+  on. These can never be priced as they stand, and they are still listed,
+  because which pay SYSTEM governs the title is a fact worth having.
+- **21** — OPM lists the position and the row prints no rate.
+
+The concentration is the useful part: **432** of the 3,316 sit under `VA
+Medical Centers` (the service chiefs `va_title38_pay.py` deliberately refuses,
+since choosing a Title 38 table per node would be this module deciding which
+VA service chiefs are doctors), 83 under the White House Office, 56 under
+`Districts (multiple)`, and the rest spread across 734 organisations.
+
+`docs/UNPRICED_POSITIONS.md` is the complete inventory, generated, one line
+per unpriced position with its id and its reason;
+`docs/PAY_SOURCE_RESEARCH_PROMPT_3.md` is a research prompt pack generated
+from the same list in the same run — a lead prompt asking which pay systems
+exist and where each is published, then **39 enumeration shards naming every
+one of the 4,130 titles**. `tests/test_unpriced_positions.py` asserts the
+coverage rather than trusting it: every unpriced id appears in the pack, no
+priced position appears in either document, and both documents are regenerated
+and compared byte-for-byte so a stale copy fails.
+
+Two things the pack does deliberately. **It asks for the DOCUMENT, not only
+the figure**: this pipeline cannot publish a number somebody reports, so
+"about $110,000" is unusable and "GS-0083, priced by OPM's Salary Table
+2026-GS at <url>, which states a range per grade" is directly actionable — it
+names a document to fetch, a join key, and what the document does and does not
+say. Salary aggregators are named in the prompt only to be refused. And the
+shards carry **no** follow-up-chain directive, which the lead prompt does:
+that directive is for exploratory prompts and is anti-signal on an enumeration
+pass, where expansion buries the per-title verdicts the shard exists to
+produce. A test pins that asymmetry.
 
 **Schedule 6, and the two refusals it turns into figures (since
 2026-09-23).** `congressional_pay.py`'s own docstring records exactly what it

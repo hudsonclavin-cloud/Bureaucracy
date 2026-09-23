@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-23T17:53:08.108297+00:00",
+  "timestamp": "2026-09-23T19:05:01.905065+00:00",
   "mode": "offline_regeneration",
   "note": "Rebuilt from the curated base graph and the Treasury anchor already published; no crawler ran. See scripts/regenerate_published_graph.py.",
   "nodes_before": 5481,
@@ -340,6 +340,18 @@
       "nodes_with_an_alias_match": 15,
       "capped_to_partial": 14,
       "not_capped_other_evidence": 1
+    },
+    "pay_documents": {
+      "annotated": 500,
+      "no_document": 0,
+      "positionDerivedPay": 4,
+      "positionStatutoryPay": 22,
+      "positionSchedulePay": 99,
+      "positionGradePay": 18,
+      "positionCurrentPay": 88,
+      "positionPayRate": 31,
+      "positionTierPay": 72,
+      "positionReportedPay": 166
     },
     "budget_reconciliation": {
       "nodes_seen": 5510,

@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20260923b";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260923b";
+import { createGovernmentGraph } from "./graph.js?v=20260923c";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260923c";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -1045,6 +1045,7 @@ function renderTierPay(data, add) {
   } else {
     add(` This post is matched to that title by its own name and the parent it sits under, not by the schedule naming this node; the schedule names the title only.`);
   }
+  add(payDocumentsSentence(pay));
   if (pay.quote) add(` The schedule's own words: "${String(pay.quote).trim()}"`);
 }
 
@@ -1070,6 +1071,7 @@ function renderGradePay(data, add) {
   add(planFromCurrent
     ? " Two documents, not one: the pay plan is the current PLUM export's listing of this post as it stands, and the range is from OPM's salary table for that pay plan; the export prints no rate for this row."
     : " Two documents, not one: the pay plan is the archive's record of a period that ended, and the range is from a table that took effect afterwards.");
+  add(payDocumentsSentence(pay));
   const notes = Array.isArray(pay.footnotes) ? pay.footnotes.filter((n) => String(n || "").trim()) : [];
   for (const note of notes) add(` The table's own note: "${String(note).trim()}"`);
 }
@@ -1097,6 +1099,7 @@ function renderTableRate(data, add) {
     ? " That is two documents, not one — the level is the current PLUM export's listing of this post as it stands, and the rate is from OPM's salary table for that level; the export itself prints no rate for this row, so this is a table's figure for a rank, not a figure for the post."
     : " That is two documents, not one — the level is the archive's record of a period that ended, and the rate is from a table that took effect afterwards, so neither says what this post pays whoever holds it now.");
   add(" A rate of basic pay is also not this unit's cost: it excludes benefits, and it is not a share of federal outlays, which is what every other figure in this graph means.");
+  add(payDocumentsSentence(rate));
   const notes = Array.isArray(rate.footnotes) ? rate.footnotes.filter((n) => String(n || "").trim()) : [];
   for (const note of notes) add(` The table's own note: "${String(note).trim()}"`);
 }
@@ -1148,6 +1151,7 @@ function renderSchedulePay(data) {
   if (archive && typeof archive === "object" && archive.payLevel === pay.payLevel) {
     add(` The block above reaches the same level independently: OPM's archive reported this post at level ${pay.payLevel} during the previous administration, and the Code places it there now. That is one level corroborated by two records, not two separate figures.`);
   }
+  add(payDocumentsSentence(pay));
   const notes = Array.isArray(pay.footnotes) ? pay.footnotes.filter((n) => String(n || "").trim()) : [];
   for (const note of notes) add(` The table's own note: "${String(note).trim()}"`);
 }
@@ -1183,6 +1187,7 @@ function renderStatutoryPay(data) {
     : null;
   add(`${pay.sourceLabel || "A primary official source"}${on ? ` (checked ${on})` : ""} states that ${pay.amountScope || "this tier"} is paid ${printed}${pay.year ? ` for ${pay.year}` : ""}.`);
   add(" That names a tier or a group of roles, not this specific post by name, so it is one source's own account of what the tier pays — not a second, independent confirmation, and not this unit's cost: basic pay excludes benefits and is not a share of federal outlays.");
+  add(payDocumentsSentence(pay));
   const quote = String(pay.quote || "").trim();
   if (quote) add(` The source's own words: "${quote}"`);
 }
@@ -1232,13 +1237,36 @@ function renderDerivedPay(data) {
 
   add(`DERIVED PAY — no single document states this figure. ${printed}${pay.year ? ` for ${pay.year}` : ""}.`);
   add(` ${pay.statute || "A statutory parity provision"} states that every judge of ${pay.court || "this court"} is paid at the rate of ${pay.amountScope || "another court's judges"}; the U.S. Courts' Judicial Compensation table states what that tier pays. The figure is the join of the two.`);
-  add(` ${count} official document${count === 1 ? "" : "s"} verify it — ${percent}% on this project's own source scale, the same arithmetic the confidence figure above uses (0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one).`);
-  add(` ${stating === 0 ? "Neither of them states the figure" : `${stating} of them state the figure`}: the percentage measures how much official documentation this claim rests on, not the chance that it is right.`);
+  add(payDocumentsSentence(pay));
   for (const document of documents) {
     if (!document || typeof document !== "object") continue;
     add(` ${document.citation || "A document"} — ${document.role || "supplies part of the figure"}: "${String(document.quote || "").trim()}"`);
   }
   add(" It names a tier, not this post by name, so it is a reviewed identification and never a verification. It is not this unit's cost: basic pay excludes benefits and is not a share of federal outlays.");
+}
+
+// How many documents a pay figure rests on, and what that count is worth on
+// this project's own source arithmetic — the same 0.4 / +0.3 / +0.1 scale the
+// verification box prints for a node's own sources, so the two percentages on
+// one panel mean the same thing rather than two different things wearing the
+// same "%". `documentsStatingTheFigure` rides beside it because on one field
+// it is ZERO — a derived rate's two documents between them imply a number
+// neither prints — and a bare percentage would hide exactly that.
+function payDocumentsSentence(block) {
+  const verification = block && typeof block === "object" ? block.verification : null;
+  if (!verification || typeof verification !== "object") return "";
+  const count = Number(verification.documents || 0);
+  if (!count) return "";
+  const stating = Number(verification.documentsStatingTheFigure || 0);
+  const states =
+    stating === 0
+      ? "none of them states the figure itself"
+      : stating === count
+        ? count === 1
+          ? "it states the figure itself"
+          : "all of them state the figure itself"
+        : `${stating} of them states the figure itself`;
+  return ` ${count} official document${count === 1 ? "" : "s"} verify this — ${Number(verification.percent || 0)}% on this project's own source scale (0.4 for the first, +0.3 for an official site, +0.1 each further one), and ${states}. That measures how much official documentation the figure rests on, not the chance that it is right.`;
 }
 
 function renderReportedPay(data) {
@@ -1277,6 +1305,7 @@ function renderReportedPay(data) {
     add(" The report spells the title with its White House rank in front; that prefix is set aside to match this unit.");
   }
   add(" It is not this unit's cost — basic pay excludes benefits and is not a share of federal outlays — and it is not evidence that this post exists as the graph draws it.");
+  add(payDocumentsSentence(pay));
   const quote = String(pay.quote || "").trim();
   if (quote) add(` The report's own row: "${quote}"`);
 }
@@ -2232,7 +2261,8 @@ function describeCost(node) {
   const payNote = current
     ? ` What is shown instead is a rate of basic pay: OPM's current PLUM Reporting export` +
       `${formatFetchDate(current.exportFetchedAt) ? ` (fetched ${formatFetchDate(current.exportFetchedAt)})` : ""}` +
-      ` prints ${current.rateText} for the one row listed under "${current.listedTitle}". That is what that listing is paid, a row being an incumbency; not what the post pays whoever holds it, and not what this unit costs.`
+      ` prints ${current.rateText} for the one row listed under "${current.listedTitle}". That is what that listing is paid, a row being an incumbency; not what the post pays whoever holds it, and not what this unit costs.` +
+      payDocumentsSentence(current)
     : pay
     ? ` What is shown instead is a rate of basic pay: OPM's PLUM archive reports ${pay.reportedPayText} for this post` +
       `${pay.edition ? ` (${pay.edition})` : ""}. That is compensation for one post, not what this unit costs.`
