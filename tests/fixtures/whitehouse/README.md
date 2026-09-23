@@ -42,7 +42,7 @@ claim about.)
 2026-09-14**, the first run. The subtree was rebuilt from this roster the same
 day (`scripts/expand_whitehouse_office.py`) and now carries 249 positions, 188
 of them priced — 22 of those for a title several people hold at one identical
-rate. The refusal counts below are the first run's.
+rate. The refusal counts below are the current run's (249 considered); the first run's (27 considered) are given in brackets for the two refusals whose counts it recorded differently, and `title_held_under_several_spellings` did not exist then.
 
 ## Read with the standard library, like every other fixture here
 
@@ -122,7 +122,7 @@ The report is person-level by statute. So a record here never says a post
 > July 1, 2026.
 
 Every record is `scopeMatch: "proxy"`, `financial_evidence.classify` grades
-all 5 `partial`, and none is `verified`. The field is `positionReportedPay` —
+all 188 `partial`, and none is `verified`. The field is `positionReportedPay` —
 a third field beside `positionPayRate` (a rank joined to a rate) and
 `positionStatutoryPay` (a statute's figure for an office), because it is a
 third claim shape and the release gate checks each against its own source's

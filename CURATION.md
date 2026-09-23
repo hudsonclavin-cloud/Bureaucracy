@@ -172,7 +172,7 @@ in curation:
 What that left for curation, when this was written, was only what this
 document lists: the sixteen units above (their lines then sat,
 unapportioned, inside their sections' estimates), the AmeriCorps and Postal
-Service aliases, and the Coast Guard duplicate — whose $9.6B, ambiguous
+Service aliases, and the Coast Guard duplicate — whose $10.9B, ambiguous
 between two nodes, was then the largest single line the graph could not
 place. The Coast Guard was merged and its line applied on 2026-09-18 (§3),
 and the fifteen units of §1 were added on 2026-09-19 and each publishes its
@@ -559,7 +559,7 @@ list, links the entry, and dates the claim by the day the list was fetched.
 It is a weaker claim than reading the unit's own page — the Federal
 Register's directory is a list of who publishes notices, the Senate's is a
 membership roll — and it is worded as itself, never as "verified". 202
-nodes carry it today (139 from the directory, 63 from the Senate list).
+nodes carried it on 2026-09-08 (139 from the directory, 63 from the Senate list).
 
 *Not in the official list* — only a complete list can say this: the
 Senate's, and since 2026-09-13 the House Clerk's (§5.7). Each is complete
@@ -2147,6 +2147,7 @@ the table's `_declined` list still carries the old refusal. The table holds 13
 rows now, all accepted. None of the five yet carries a `verificationAliasMatch`
 on the published graph: `govman_evidence.json` and `plum_current_evidence.json`
 have not been re-derived since.
+
 Measured on the two derivations and the rebuilt graph, before → after:
 
 - Manual entries matched to an organisation **163 → 170**; posts listed from
@@ -2581,7 +2582,7 @@ was re-derived, and its 170 listings and 100 pay records came back
 byte-identical — only the `report` block's matching counts moved.
 `headcount_evidence.json` and `position_evidence.json` were **not** re-derived
 here, so the fifteen new FedScope headcounts were measured above but not yet
-written, and `output/` was not rebuilt. Both happened the same day in the merge
+written, and `output/` was not rebuilt. The headcounts and the rebuild both happened the same day in the merge
 that integrated this section (3ae6db7): `headcount_evidence.json` now holds 179
 records and all fifteen publish `employeesOfficial`. `position_evidence.json` is
 still not re-derived — its report reads 70 agencies and 181 organisations — which

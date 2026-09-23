@@ -662,8 +662,8 @@ the generic title the post floor exists to refuse.
 nodes confirmed **5** against their departments' own pages — Secretary of
 Labor, Secretary and Deputy Secretary of Energy, Secretary and Deputy
 Secretary of Veterans Affairs — which was structurally impossible while they
-were misnamed. Confirmed positions went **20 → 25**. The other 13 stay
-templated because no source in hand names them: the archive files those heads
+were misnamed. Confirmed positions went **20 → 25**. The other 13 stayed templated until 2026-09-18 (one, the Deputy Secretary of
+Commerce, still is) because no source then in hand named them: the archive files those heads
 as a bare "SECRETARY", and seven of the fifteen department pages answer
 `robots.txt` with 401/403. "Secretary of the Treasury" is not in doubt as a
 fact; it is in doubt as something this repository can cite, and the rule that
@@ -705,9 +705,10 @@ which is where a proposed name comes from.
 `data/curation/unit_renames.json` is the reviewed table and
 `scripts/rename_units_to_official_wording.py` is its only writer — the third
 sanctioned writer of the curated file, beside `rename_templated_post_titles.py`
-and `expand_whitehouse_office.py` (the fourth counting
-`merge_duplicate_nodes.py`, which on 2026-09-18 merged the duplicate units
-`CURATION.md` §3 records and is not otherwise named in this file). The table is the same shape as
+and `expand_whitehouse_office.py` (`merge_duplicate_nodes.py`, which on
+2026-09-18 merged the duplicate units `CURATION.md` §3 records, also writes
+it; it is not otherwise named in this file and is left out of the ordinals
+here and below). The table is the same shape as
 `TREASURY_ROW_ALIASES` and `USASPENDING_NAME_ALIASES`: a reviewed
 identification with the basis written beside it, and re-checked against the
 source rather than trusted. **The table proposes; the page decides** — every
@@ -1326,7 +1327,8 @@ wording and the payoff must be real. An alias is the other move: the displayed
 name does not change and the matcher does not loosen — a name is either in the
 table or it is not.
 
-**It is consulted by name and existence evidence only, and that is
+**It is consulted by name and existence evidence only — with the one
+exception below, a rate riding on a listing it scoped — and that is
 structural.** The page-label test in `evidence.py`, the Government Manual's
 entry join, the chambers' committee lists and the current PLUM export's agency
 scoping take an alias table explicitly, and the last can carry a printed rate
@@ -1650,7 +1652,7 @@ already exceed is not refused: the derive step marks it
 carries one now). The gate checks every field (a
 `.gov` URL, a period, a coverage sentence, a past date, a non-negative
 integer) and reports how many nodes carry each and how far the curated
-figures are from OPM's: **66 of the 133 differ by more than 10%.**
+figures are from OPM's: **66 of the 133 differed by more than 10%** when this landed; 69 of 179 do now.
 
 **The cascade is not reweighted by them, and says so.** Seven sibling sets
 carry a FedScope record on every headcount-bearing member, so a swap was
@@ -2216,7 +2218,7 @@ applies to Article III chief judges. The four service Courts of Criminal
 Appeals nested under the CAAF node are refused: their judges are commissioned
 officers paid under title 37, which nothing here has read.
 
-All four are `scopeMatch: proxy` and graded `partial`, and nothing writes
+All eight are `scopeMatch: proxy` and graded `partial`, and nothing writes
 `sourceUrls`, `sourceTypes`, `lastVerified` or `verificationMethod` -- the
 channel by which a five-row table carried 29 positions to `verified` on
 2026-09-11, asserted against the published graph. The gate mirrors each
@@ -2558,7 +2560,7 @@ multiplicity (351 circuit- and district-judge nodes) until 2026-09-23, when
 `classify_seat` began pricing the eight Associate Justices and a district's or
 circuit's own active bench (17 nodes priced from the table now); of the nodes
 stating a multiplicity it still refuses the 15 that name senior judges, and it
-still refuses the district-structure template, the specialized
+still refuses the specialized
 Article I courts (Tax Court, CFC, CIT, CAAF, CAVC — a different statutory
 basis this module has not read a source for; four of those bases were read on
 2026-09-23 and `derived_pay.py` prices those courts' chief judges from them in
@@ -2746,7 +2748,7 @@ by this project's choice, 5xx and a DNS/TLS/timeout failure because RFC 9309
 therefore the case that refuses, not the case that fails open. A host that answers `robots.txt` itself with 401 or 403 is
 the one case that looks like "unreadable" but is not treated as such:
 `RobotFileParser` swallows that status and sets a blanket disallow with no
-rules parsed. The path stays refused — by this project's choice, not by the
+rules parsed. Outside those two hosts the path stays refused — by this project's choice, not by the
 standard: RFC 9309 §2.3.1.3 — committed at
 `tests/fixtures/standards/rfc9309.txt`, fetched 2026-09-15, digest recorded —
 treats 4xx as
@@ -3667,8 +3669,8 @@ which is the AmeriCorps alias case `CURATION.md` §2 records: the graph's
 node is named for the agency's current branding and the statement for its
 statutory name, and `TREASURY_ROW_ALIASES` carries no row joining the two, so
 the statement's line for it ($941.2M on the 2026-08-31 statement) reaches no
-node and AmeriCorps publishes an `allocated` share. The `0.0` is the
-`outlay_amount` USAspending's toptier agency list prints for the agency, not
+node and AmeriCorps publishes an `allocated` share. The `0.0` this section
+used to cite is the `outlay_amount` USAspending's toptier agency list prints for the agency, not
 this line's, and zero is never published as a measurement.
 
 A second, quieter gap surfaced the same day: a unit added under a licence

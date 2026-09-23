@@ -142,8 +142,8 @@ publishes the fixture's own figure in a block of its own, `usaspendingOutlays`
 — **37 organisations, 17 by toptier code and 20 by Treasury's bureau slug**,
 gross and fiscal-year-to-date, beside the cost and never as it (CLAUDE.md,
 "USAspending File A, beside the cost"). 9 proposals are held for review by
-name and one is refused for printing zero. The measured-cost count above is
-unchanged at 136 on purpose: a gross year-to-date outlay from a different
+name and one is refused for printing zero. The measured-cost count was left
+unchanged at 136 that day on purpose: a gross year-to-date outlay from a different
 system is not the Treasury net line this graph calls a cost, and the gate
 refuses the block wherever the two coincide. The other 572 are refused with the
 reason on the record, most often that the entity does not report under the

@@ -71,7 +71,7 @@ numbers about different things and the difference is often large.
 
 **On `budget_request` in particular.** Congressional Justifications are the
 only source that reports by office and budget activity *with organisation
-names attached*, which makes them the most promising route past 136 measured
+names attached*, which makes them the most promising route past 160 measured
 nodes. They are also the weakest basis in this table. Nominating one is
 correct; letting the site render it under a heading a reader parses as
 "what this costs" is not. The basis and the fiscal period travel with the

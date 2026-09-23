@@ -50,7 +50,7 @@ provisions this module has not read a source for, and pricing them from the
 Article III table would be guessing the numbers are the same.
 
 Every record is `scopeMatch: "proxy"` — the table names a tier, not this
-specific node — so `financial_evidence.classify` grades all 15 `partial`;
+specific node — so `financial_evidence.classify` grades all 17 `partial`;
 none is `verified`. Basic pay is not the node's cost, so it is published in
 `positionStatutoryPay` and never in the cost cascade; the release gate
 (`statutory_pay_violations`) checks the tier claimed against a
