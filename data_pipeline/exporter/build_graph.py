@@ -246,6 +246,9 @@ MINIMAL_GRAPH_FIELDS = (
     # the base-pay RANGE a salary table states for the listing's pay plan or
     # grade: a minimum and a maximum, never a rate, and never a cost
     "positionGradePay",
+    # a pay-schedule TIER band, from a schedule that names the title with no
+    # listing underneath it (the VA's Title 38 ranges)
+    "positionTierPay",
     # OPM's CURRENT PLUM export: the listing of the post as it stands now,
     # and the rate of basic pay that export prints for the one row under the
     # title -- a second document beside the archive's listing, never a cost
@@ -2480,6 +2483,7 @@ def build_graph(
     judicial_pay_evidence_path: str | Path | None = "default",
     congressional_pay_evidence_path: str | Path | None = "default",
     us_code_pay_schedule_evidence_path: str | Path | None = "default",
+    va_title38_pay_evidence_path: str | Path | None = "default",
     whitehouse_pay_evidence_path: str | Path | None = "default",
     usaspending_evidence_path: str | Path | None = "default",
     net_cost_evidence_path: str | Path | None = "default",
@@ -2769,6 +2773,25 @@ def build_graph(
         load_us_code_pay_schedule_evidence(resolved_us_code_pay_schedule_path) if resolved_us_code_pay_schedule_path else {},
         index_tree=index_tree,
     )
+    # A BAND rather than a rate, in its own field: see
+    # `va_title38_pay.apply_pay_evidence` for why it cannot share one with a
+    # claim whose withdrawal depends on a PLUM listing.
+    from data_pipeline.verification.va_title38_pay import (  # noqa: E402 — imports this module
+        DEFAULT_PAY_EVIDENCE_PATH as DEFAULT_VA_TITLE38_PAY_EVIDENCE_PATH,
+        apply_pay_evidence as apply_va_title38_pay_evidence,
+        load_pay_evidence as load_va_title38_pay_evidence,
+    )
+
+    resolved_va_title38_pay_path = (
+        DEFAULT_VA_TITLE38_PAY_EVIDENCE_PATH
+        if va_title38_pay_evidence_path == "default"
+        else va_title38_pay_evidence_path
+    )
+    validation["va_title38_pay_evidence"] = apply_va_title38_pay_evidence(
+        graph,
+        load_va_title38_pay_evidence(resolved_va_title38_pay_path) if resolved_va_title38_pay_path else {},
+        index_tree=index_tree,
+    )
     from data_pipeline.verification.whitehouse_pay import (  # noqa: E402 — whitehouse_pay imports this module
         DEFAULT_PAY_EVIDENCE_PATH as DEFAULT_WHITEHOUSE_PAY_EVIDENCE_PATH,
         apply_pay_evidence as apply_whitehouse_pay_evidence,
@@ -2951,6 +2974,7 @@ def build_graph(
     validation["judicial_pay_evidence"]["stands_for_many_posts_after_pruning"] = multi_post_withdrawn
     validation["congressional_pay_evidence"]["stands_for_many_posts_after_pruning"] = multi_post_withdrawn
     validation["us_code_pay_schedule_evidence"]["stands_for_many_posts_after_pruning"] = multi_post_withdrawn
+    validation["va_title38_pay_evidence"]["stands_for_many_posts_after_pruning"] = multi_post_withdrawn
     validation["whitehouse_pay_evidence"]["stands_for_many_posts_after_pruning"] = multi_post_withdrawn
     validity_report["audit_report"] = {"summary": deepcopy(audit_report.get("summary", {}))}
     validity_report["root_orphan_resolution"] = orphan_resolution

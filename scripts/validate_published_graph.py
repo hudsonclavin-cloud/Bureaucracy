@@ -1583,6 +1583,168 @@ def schedule_pay_violations(node, pay, today, label, tree_parent=None):
     return out
 
 
+#: The VA's Title 38 PAY TABLE 3, mirrored stdlib-only and pinned equal to
+#: what the committed PDF prints by tests/test_va_title38_pay.py. Keyed by the
+#: coverage title the table itself carries, because that is what a record
+#: claims to have matched.
+VA_TITLE38_TABLES = {
+    "3": "PAY TABLE 3- CHIEF OF STAFF AND NETWORK CHIEF MEDICAL OFFICERS",
+    "4": "PAY TABLE 4 \u0096 EXECUTIVE ASSIGNMENTS",
+}
+VA_TITLE38_EFFECTIVE = "2026-01-11"
+VA_TITLE38_EFFECTIVE_TEXT = "Effective January 11, 2026"
+VA_TITLE38_URL = "https://www.va.gov/OHRM/Pay/2026/PDOP/PayTables.pdf"
+#: coverage title -> (table, tier, minimum, maximum), for the titles this
+#: pipeline prices. Every one is a WHOLE printed item of that tier's coverage
+#: list, which tests/test_va_title38_pay.py checks against the committed PDF.
+VA_TITLE38_TIERS = {
+    "Network Chief Medical Officer": ("3", 1, 220_000.0, 400_000.0),
+    "Chief of Staff": ("3", 2, 200_000.0, 400_000.0),
+    "Deputy Chief Medical Officer, Deputy Chief of Staff": ("3", 3, 180_000.0, 375_000.0),
+    "Network Directors": ("4", 1, 145_000.0, 310_000.0),
+    "Medical Center Directors": ("4", 1, 145_000.0, 310_000.0),
+}
+#: Which curated name may claim which coverage title, and under what parent.
+#: A rule rather than a 36-row literal, because both families are
+#: one-per-facility and a literal would have to be regenerated whenever the
+#: VA opens or closes a medical centre -- but it is still keyed on the node's
+#: own name and its own parent, so a record moved to another node is caught.
+VA_TITLE38_WHOLE_NAME = {
+    "VAMC Chief of Staff (Medical)": ("Chief of Staff", "VA Medical Centers"),
+    "VAMC Director": ("Medical Center Directors", "VA Medical Centers"),
+}
+VA_TITLE38_SCOPED_OFFICE = {
+    "Chief Medical Officer": ("Network Chief Medical Officer", "VISN"),
+    "Network Director": ("Network Directors", "VISN"),
+}
+#: The document prints none of these anywhere, and a research pass claimed it
+#: printed the first two. A record claiming a band for one of them is the
+#: failure this check exists for.
+VA_TITLE38_NEVER_PRICED = (
+    "VAMC Associate Director (Administrative)",
+    "Associate Director for Patient Care Services (CNO)",
+)
+
+
+def tier_pay_violations(node, pay, today, label, parent_name):
+    """Everything that must be true of a pay-schedule TIER band.
+
+    A band is a weaker claim than a rate and needs one check a rate does not:
+    that it is never rendered, stored or described as a rate. The rest is the
+    shape every other pay block gets -- the mirror's own figures for the tier
+    claimed, the document's own words in the quote, a past retrieval date, the
+    citation this pipeline can produce, and no leak into the node's sources.
+    """
+    out = []
+    say = lambda text: out.append("{} {}".format(label(node), text))
+    if not isinstance(pay, dict):
+        say("positionTierPay {!r} is not a record".format(pay))
+        return out
+
+    type_text = str(node.get("type") or "").casefold()
+    if not any(word in type_text for word in ("position", "role", "office holder")):
+        say("carries a Title 38 pay band but is a {!r}, not a post".format(node.get("type")))
+    if node.get("representsPosts"):
+        say("carries one post's pay band but stands for several posts")
+
+    if str(pay.get("source") or "") != "va_title38_pay_ranges":
+        say("prices from source {!r}, which this pipeline does not produce for a tier band".format(pay.get("source")))
+        return out
+    if str(pay.get("kind") or "") != "title_38_tier":
+        say("claims band kind {!r}, not 'title_38_tier'".format(pay.get("kind")))
+
+    name = str(node.get("name") or "")
+    if name in VA_TITLE38_NEVER_PRICED:
+        say("carries a Title 38 band, and the schedule prints no title of this name at all")
+
+    coverage = str(pay.get("coverageTitle") or "")
+    rule = str(pay.get("matchRule") or "")
+    if rule == "whole_name_under_its_scoped_parent":
+        expected = VA_TITLE38_WHOLE_NAME.get(name)
+        if expected is None:
+            say("claims a whole-name Title 38 match on a name this pipeline does not price")
+        else:
+            if coverage != expected[0]:
+                say("claims coverage {!r}; this name answers to {!r}".format(coverage, expected[0]))
+            if str(parent_name or "") != expected[1]:
+                say("is priced under parent {!r}, not {!r}".format(parent_name, expected[1]))
+    elif rule == "office_scoped_to_its_own_parent":
+        office = name.partition(", ")[0].strip()
+        organisation = name.partition(", ")[2].strip()
+        expected = VA_TITLE38_SCOPED_OFFICE.get(office)
+        if expected is None:
+            say("claims a scoped Title 38 match on office {!r}, which this pipeline does not price".format(office))
+        elif coverage != expected[0]:
+            say("claims coverage {!r}; office {!r} answers to {!r}".format(coverage, office, expected[0]))
+        if not organisation or str(parent_name or "").strip() != organisation:
+            say("names organisation {!r} that is not the parent the tree gives it ({!r})".format(organisation, parent_name))
+    else:
+        say("claims match rule {!r}, which this pipeline does not produce".format(rule))
+
+    mirrored = VA_TITLE38_TIERS.get(coverage)
+    if mirrored is None:
+        say("claims coverage {!r}, which the mirrored tables do not print".format(coverage))
+    else:
+        table_number, tier, minimum, maximum = mirrored
+        if str(pay.get("table") or "") != VA_TITLE38_TABLES[table_number]:
+            say("cites table {!r}; {!r} is printed in {!r}".format(
+                pay.get("table"), coverage, VA_TITLE38_TABLES[table_number]))
+        if pay.get("tier") != tier:
+            say("claims tier {!r}; the table prints {!r} at tier {}".format(pay.get("tier"), coverage, tier))
+        for key, expected_value in (("minimum", minimum), ("maximum", maximum)):
+            value = pay.get(key)
+            if isinstance(value, bool) or not isinstance(value, (int, float)):
+                say("publishes {!r} as the band's {}".format(value, key))
+            elif abs(float(value) - expected_value) > 0.005:
+                say("publishes {:,.2f} as the {} for {!r}; the table prints {:,.2f}".format(
+                    float(value), key, coverage, expected_value))
+        printed = "${:,.0f} – ${:,.0f}".format(minimum, maximum)
+        if str(pay.get("rangeText") or "") != printed:
+            say("prints the band as {!r}; the table prints {!r}".format(pay.get("rangeText"), printed))
+
+    quote = str(pay.get("quote") or "")
+    if not any(label in quote for label in VA_TITLE38_TABLES.values()):
+        say("prices from the Title 38 schedule without quoting the table it read")
+    if VA_TITLE38_EFFECTIVE_TEXT not in quote:
+        say("prices a Title 38 band without quoting the effective line the schedule prints")
+    if mirrored is not None and coverage not in quote:
+        say("prices a coverage title its own quoted row does not name")
+
+    # A band is not a rate, and must never be describable as one.
+    for forbidden in ("amount", "rate", "rateText", "salary"):
+        if forbidden in pay:
+            say("carries {!r} beside a band; a range is never published as a rate".format(forbidden))
+    if not str(pay.get("note") or "").strip():
+        say("publishes a band with no sentence saying it is a band")
+
+    if str(pay.get("effective") or "") != VA_TITLE38_EFFECTIVE:
+        say("dates the band {!r}, not {!r}".format(pay.get("effective"), VA_TITLE38_EFFECTIVE))
+    if str(pay.get("scopeMatch") or "") != "proxy":
+        say("claims scope {!r}; which node a coverage title names is a reviewed rule, never more than a proxy".format(
+            pay.get("scopeMatch")))
+    if str(pay.get("financialEvidenceStatus") or "") != "partial":
+        say("grades a Title 38 band {!r}, not 'partial'".format(pay.get("financialEvidenceStatus")))
+
+    checked = str(pay.get("checkedAt") or "")
+    if not re.match(r"^\d{4}-\d{2}-\d{2}", checked) or checked[:10] > today:
+        say("claims a Title 38 band without a past retrieval date ({!r})".format(checked))
+    url = str(pay.get("url") or "")
+    if url != VA_TITLE38_URL:
+        say("cites {!r}, not the schedule this pipeline reads".format(url))
+
+    if str(node.get("cost_status") or "") in ("official", "root_total", "scaled_official"):
+        say("carries a Title 38 band and a measured cost status {!r}".format(node.get("cost_status")))
+    method = str(pay.get("method") or "")
+    if method and str(node.get("verificationMethod") or "") == method:
+        say("verifies its own existence with a pay schedule that names no unit")
+    if method and str(node.get("placementMethod") or "") == method:
+        say("places itself with a pay schedule that names no unit")
+    for source_url in node.get("sourceUrls") or []:
+        if "va.gov/OHRM" in str(source_url):
+            say("counts the pay schedule among the sources that it exists")
+    return out
+
+
 def statutory_pay_violations(node, pay, today, label):
     """Everything that must be true of a single-source statutory pay claim.
 
@@ -3086,6 +3248,7 @@ def main(argv):
     bad_table_pay = []
     bad_grade_pay = []
     bad_statutory_pay = []
+    bad_tier_pay = []
     bad_schedule_pay = []
     bad_reported_pay = []
     bad_usaspending = []
@@ -3302,6 +3465,14 @@ def main(argv):
         statutory_pay = node.get("positionStatutoryPay")
         if statutory_pay is not None:
             bad_statutory_pay.extend(statutory_pay_violations(node, statutory_pay, today, label))
+        # A pay-schedule TIER band: the VA's Title 38 ranges, which name a
+        # title and state bounds rather than a rate. Its parent is read off
+        # the tree the gate is walking, never off `parentId`, because both of
+        # its match rules are scope rules about that parent.
+        tier_pay = node.get("positionTierPay")
+        if tier_pay is not None:
+            _tier_parent = tree_parents.get(str(node.get("id") or ""))
+            bad_tier_pay.extend(tier_pay_violations(node, tier_pay, today, label, name_by_id.get(_tier_parent)))
         # The same Executive Schedule rate from the other direction: current
         # law names the level, OPM's table prices it. Its own field and its
         # own mirror, keyed by node id.
@@ -3431,6 +3602,7 @@ def main(argv):
     gate.check("a salary-table rate names a level the archive still reports and the rate that table prints", bad_table_pay)
     gate.check("a base-pay range names the pay plan and grade the archive still reports and the bounds that table prints", bad_grade_pay)
     gate.check("a statutory pay rate is the mirrored source's own figure for the tier or role it names", bad_statutory_pay)
+    gate.check("a pay-schedule tier band is the schedule's own bounds for the title it names, and is never a rate", bad_tier_pay)
     gate.check("an Executive Schedule rate names the post the U.S. Code names, at the level the Code sets", bad_schedule_pay)
     gate.check("a reported pay rate is the roster's own figure for the title it names, and never zero", bad_reported_pay)
     gate.check("a File A gross outlay is the fixture's own figure for the key it names, dated, and never the cost", bad_usaspending)

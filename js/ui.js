@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20260922a";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260922a";
+import { createGovernmentGraph } from "./graph.js?v=20260923a";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260923a";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -279,7 +279,7 @@ function summariseGraph(root) {
       count.posts += 1;
       if (String(node.cost_validation || "") === "post_is_not_a_budget_unit") count.postsWithoutFigure += 1;
       if (reportedPayOf(node) || currentPayOf(node) || node.positionPayRate || node.positionStatutoryPay
-        || node.positionReportedPay || gradePayOf(node)) {
+        || node.positionReportedPay || gradePayOf(node) || tierPayOf(node)) {
         count.paidPosts += 1;
       }
     }
@@ -998,6 +998,7 @@ function renderPositionListing(data) {
   // below; a node the archive never listed would otherwise lose them.
   if (!levelSourceIsCurrent(data.positionPayRate)) renderTableRate(data, add);
   if (!levelSourceIsCurrent(data.positionGradePay)) renderGradePay(data, add);
+  renderTierPay(data, add);
 }
 
 function levelSourceIsCurrent(block) {
@@ -1021,6 +1022,30 @@ function gradePayOf(node) {
 
 function formatGradeRange(pay) {
   return `$${Math.round(pay.minimum).toLocaleString()} – $${Math.round(pay.maximum).toLocaleString()}`;
+}
+
+// A pay-schedule TIER band. Same shape as a grade range and a different
+// claim: the VA's Title 38 schedule names the job title outright and states
+// the bounds within which an appointment may be set, so the sentence has to
+// say "range" and has to say that the schedule publishes no rate for anyone.
+function tierPayOf(node) {
+  const pay = node.positionTierPay;
+  if (!pay || typeof pay !== "object") return null;
+  return typeof pay.minimum === "number" && typeof pay.maximum === "number" ? pay : null;
+}
+
+function renderTierPay(data, add) {
+  const pay = tierPayOf(data);
+  if (!pay) return;
+  const range = `$${Math.round(pay.minimum).toLocaleString()} – $${Math.round(pay.maximum).toLocaleString()}`;
+  add(` Separately, ${pay.sourceLabel || "an official pay schedule"} place "${pay.coverageTitle}" in tier ${pay.tier}, ${range} a year (${pay.effectiveText || pay.effective}).`);
+  add(" That is a RANGE, not a rate: the schedule states the bounds within which an appointment may be set and does not publish what any holder is paid. It is not this unit's cost.");
+  if (pay.matchRule === "office_scoped_to_its_own_parent") {
+    add(` This post is matched to that title by its own name and the network it sits under, not by the schedule naming this node; the schedule names the title only.`);
+  } else {
+    add(` This post is matched to that title by its own name and the parent it sits under, not by the schedule naming this node; the schedule names the title only.`);
+  }
+  if (pay.quote) add(` The schedule's own words: "${String(pay.quote).trim()}"`);
 }
 
 function renderGradePay(data, add) {

@@ -174,6 +174,11 @@ SOURCE_TYPES = {
     # records as unreachable from senate.gov. See
     # data_pipeline/verification/us_code_pay_schedules.py.
     "us_code_pay_schedules",
+    # The VA's own Title 38 schedule of annual pay RANGES under 38 U.S.C.
+    # 7431. A band, never a rate: it states the bounds within which a VHA
+    # appointment may be set. See
+    # data_pipeline/verification/va_title38_pay.py.
+    "va_title38_pay_ranges",
     # A roster, not a rate schedule: the White House Office's statutory annual
     # report states what each listed person is paid, so a record from it is a
     # claim about an incumbent rather than about the office. See
@@ -202,6 +207,9 @@ SCALE_PRINTED_SOURCE_TYPES = {
     # carries the mark on its own figure and takes this rule. The rows
     # beneath it are bare and take the column-head rule below.
     "us_code_pay_schedules",
+    # Every VA tier row prints both bounds with the mark attached
+    # ("$220,000 $400,000"), so the record's own figure carries it.
+    "va_title38_pay_ranges",
     "whitehouse_staff_report",
     # The export's cell prints "$228,000" and nothing in the file says
     # "dollars"; the mark attached to the record's own figure is the scale.
@@ -269,6 +277,7 @@ SOURCE_BASES = {
     "uscourts_judicial_compensation": {"basic_pay"},
     "senate_salary_schedule": {"basic_pay"},
     "us_code_pay_schedules": {"basic_pay"},
+    "va_title38_pay_ranges": {"basic_pay"},
     "whitehouse_staff_report": {"basic_pay"},
     "opm_plum_current_export": {"basic_pay"},
 }

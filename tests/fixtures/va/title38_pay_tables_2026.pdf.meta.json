@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-09-23T16:07:06Z",
+ "url": "https://www.va.gov/OHRM/Pay/2026/PDOP/PayTables.pdf",
+ "status": 200,
+ "final_url": "https://www.va.gov/OHRM/Pay/2026/PDOP/PayTables.pdf",
+ "content_type": "application/pdf",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /OHRM/Pay/2026/PDOP/PayTables.pdf",
+ "bytes": 94852,
+ "sha256": "7dc0696e72cf89033d3fc17eace0d67639fbb9548ef62669e7c7cd2381bf8022",
+ "error": null
+}

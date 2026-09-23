@@ -219,6 +219,7 @@ EVIDENCE_OWNED_FIELDS = (
     # on the same build, or a range would outlive the pay plan it was looked
     # up for.
     "positionGradePay",
+    "positionTierPay",
     # Written by judicial_pay.py and congressional_pay.py, withdrawn here
     # with the rest for the same reason: a statutory-pay claim that is no
     # longer supported (the table stops naming this tier, the node is

@@ -2017,6 +2017,81 @@ print, the two routes are asserted mutually exclusive, and the tests corrupt
 every dimension in turn — the swap, a different organisation, a dropped office
 half, an office half not in the statutory title, a re-parenting, a rename.
 
+**The VA's Title 38 bands, and a correction I nearly published (since
+2026-09-23).** The VA Medical Centers block is the largest unpriced group of
+positions in this graph, and the Veterans Health Administration publishes
+`www.va.gov/OHRM/Pay/2026/PDOP/PayTables.pdf` — its annual pay RANGES under
+38 U.S.C. 7431, effective January 11, 2026, four tables of tiers each with a
+printed minimum, maximum and a coverage list. `va_title38_pay.py` reads it
+with the standard library alone, the route `whitehouse_pay.extract_text_runs`
+and `omb_budget.guide_text` already take.
+
+**A band is not a rate, and the sixth pay field exists to keep them apart.**
+`positionTierPay` states bounds within which an appointment may be set and
+says in its own `note` that the schedule publishes no rate for anybody; the
+panel prints "That is a RANGE, not a rate" and the gate refuses a block that
+carries an `amount`, a `rateText` or an empty note. It is its own field rather
+than `positionGradePay` for the reason `statutory_schedule.py` gives for not
+widening `positionPayRate`: that one is published only while a PLUM listing
+still reports the pay plan it was looked up from, and this one rests on a
+title printed in a schedule with no listing underneath it at all. Two
+withdrawal rules cannot share a field.
+
+**72 posts banded, from two of the four tables.** Table 3 names `Network
+Chief Medical Officer` (Tier 1, $220,000–$400,000) and `Chief of Staff`
+(Tier 2, $200,000–$400,000); Table 4's Tier 1 coverage list ends `...; Chief
+Officers (VHA CO); Network Directors; Medical Center Directors`
+($145,000–$310,000). Four curated families reach them, 18 nodes each:
+`VAMC Chief of Staff (Medical)` and `VAMC Director` under the `VA Medical
+Centers` grouping, and `Chief Medical Officer, VISN N` and `Network Director,
+VISN N` under their own VISN — the latter two split at the first comma with
+the organisation half required to name the node's own parent, the scoping
+`statutory_schedule.match_scoped_positions` uses, and that parent required to
+be typed `VISN`. A record may claim only a phrase that is a **whole printed
+item** of a tier's coverage list, never a substring of one, because Table 4's
+Tier 1 is seven items long.
+
+**Tables 1 and 2 are refused, and the refusal is the interesting one.** They
+print the same leadership titles — `Supervisor, Program Manager, Section
+Chief` at Tier 2, `Service Chief, Service Line Manager, ...` at Tier 3 — at
+**different ranges**, because the two tables cover different lists of clinical
+specialties: Table 1's Tier 3 is $165,000–$350,000 and Table 2's is
+$225,000–$400,000. This graph carries `Chief — Medicine Service`, `Chief —
+Surgery Service` and twenty more per medical centre, and choosing a table per
+node would mean reading "Surgery" against Table 2's "Surgery — Cardio-Thoracic,
+General, Hand, Neurosurgery, Orthopedic, Plastic, Thoracic, Transplant,
+Vascular" and calling it a match. The tell that this is assembly rather than
+selection is that the same curated family includes `Chief — Finance`, `Chief —
+Human Resources` and `Chief — Facilities Management`, which are not clinical
+specialties and appear in neither table: pricing the clinical ones would be
+this module deciding which VA service chiefs are doctors. `Associate Director`
+is printed nowhere in the document, so the 36 `VAMC Associate Director
+(Administrative)` and `Associate Director for Patient Care Services (CNO)`
+nodes are refused outright.
+
+**The correction, recorded because it nearly went the other way.** A research
+pass reported Table 4's Tier 1 as printing "Network Directors; Medical Center
+Directors". A first pass at this module checked that with an ad-hoc grep whose
+text reconstruction dropped runs, concluded **the opposite** — that the
+document prints neither phrase — wrote that into the module's docstring and
+the evidence file's note, and refused 36 nodes on it. The research was right
+and the check was wrong. What caught it was this repository's own habit of
+asserting a negative in a test against the committed bytes: the test said
+"these strings are absent", it failed on the real PDF, and the claim collapsed
+in the one place it could not be argued with. `tests/test_va_title38_pay.py`
+now asserts **both directions** — every priced title is present, `Associate
+Director` and `VISN` are absent — so neither rests on anybody's memory of a
+search. The word `VISN` really is absent, which is why identifying a Veterans
+Integrated Service Network with the schedule's "Network" stays a reviewed
+judgement and every one of the 72 is `scopeMatch: proxy`, graded `partial`.
+
+The gate mirrors each priced coverage phrase with its table, tier and both
+bounds, refuses a band whose table is not the one that prints its phrase, a
+band on a name the pipeline does not price, a scoped band whose organisation
+half is not the parent the tree gives it, a band moved to `VAMC Associate
+Director`, anything published as a rate, and a `va.gov/OHRM` URL among the
+node's sources. Positions carrying any pay claim went **385 → 457**.
+
 **Schedule 6, and the two refusals it turns into figures (since
 2026-09-23).** `congressional_pay.py`'s own docstring records exactly what it
 could not reach: "**Not** the House's Speaker, Majority Leader or Minority
@@ -2563,9 +2638,10 @@ subdivide measured money rather than invent it — which does not make a
 subdivision a measurement. **Since 2026-09-09 the site does not show one by
 default**, by the owner's decision: a node with no measured cost of its own
 shows no figure and says why, and ticking "Also show estimated shares of a
-parent's total" opts back in. The exception is a real salary — **385** of the
+parent's total" opts back in. The exception is a real salary — **457** of the
 4,591 positions carry a pay claim an official source states, counted on the
-published graph on 2026-09-23 after Schedule 6 landed: 99 from the
+published graph on 2026-09-23 after Schedule 6 and the VA's Title 38 bands
+landed: 72 a Title 38 tier BAND rather than a rate (`positionTierPay`), 99 from the
 Executive Schedule as 5 U.S.C. §§5312–5316 sets it, 166 from the White House
 roster, 88 the rate the current PLUM export prints for the one row under the
 title, 31 from a listing's level joined to OPM's table, 22 statutory (18 from
@@ -2575,7 +2651,7 @@ base-pay **range** rather than a rate (`positionGradePay`, counted separately
 because a range is not a rate and the panel says so; it read 32 until the
 current export supplied a printed figure for 14 of them, and a printed figure
 beats a band). A node may carry more than one of these, so the per-source
-figures sum past 385. Shown in the cost block under its own heading and never
+figures sum past 457. Shown in the cost block under its own heading and never
 headed COST.
 
 That figure read **354** until 2026-09-19 and was wrong: it added up the

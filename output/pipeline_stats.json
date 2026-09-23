@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-23T14:42:46.766929+00:00",
+  "timestamp": "2026-09-23T16:18:05.428386+00:00",
   "mode": "offline_regeneration",
   "note": "Rebuilt from the curated base graph and the Treasury anchor already published; no crawler ran. See scripts/regenerate_published_graph.py.",
   "nodes_before": 5481,
@@ -36,7 +36,7 @@
     "exported_node_count": 980,
     "exported_edge_count": 0,
     "nodes_removed_missing_parent": 0,
-    "nodes_reattached_to_root": 1,
+    "nodes_reattached_to_root": 0,
     "nodes_removed_structural_errors": 0,
     "final_node_count": 980,
     "orphan_nodes_detected": 0,
@@ -45,8 +45,8 @@
     "dropped_edges_missing_source": 0,
     "dropped_edges_missing_target": 0,
     "orphaned_parent_ids": 0,
-    "attached_to_root": 1,
-    "explicitly_root_attached_nodes": 1,
+    "attached_to_root": 0,
+    "explicitly_root_attached_nodes": 0,
     "relationship_counts": {},
     "verification_status_counts": {
       "partial": 409,
@@ -62,7 +62,7 @@
       "nodes_after_normalization": 980,
       "nodes_after_merge": 980,
       "nodes_removed_missing_parent": 0,
-      "nodes_reattached_to_root": 1,
+      "nodes_reattached_to_root": 0,
       "nodes_removed_structural_errors": 0,
       "final_node_count": 980,
       "nodes_removed_cost_validation": 0
@@ -225,6 +225,13 @@
       "not_a_position": 0,
       "stands_for_many_posts": 0,
       "already_priced_by_another_source": 0,
+      "stands_for_many_posts_after_pruning": 0
+    },
+    "va_title38_pay_evidence": {
+      "priced": 72,
+      "unknown_node": 0,
+      "not_a_position": 0,
+      "stands_for_many_posts": 0,
       "stands_for_many_posts_after_pruning": 0
     },
     "whitehouse_pay_evidence": {
