@@ -109,6 +109,21 @@ PAY_DOCUMENT_FIELDS: dict[str, dict[str, Any]] = {
             "percentage measures how much official documentation the figure rests on, not the "
             "chance that it is right."
         ),
+        # The same block priced from the Code's CLASS title on a node that
+        # stands for a bench (`classTitle`): the level is every member's, and
+        # the sentences must not call it "this post's" beside a holders count.
+        "classRoles": {
+            "url": "states what that Executive Schedule level pays",
+            "statuteUrl": "places every member of this body at that level",
+            ("identification", "basisUrl"): "composes the body of the members this node stands for",
+        },
+        "classCaution": (
+            "One document states the rate, another is the statute that places every member of "
+            "this body at that level, and the third is the statute that composes the body of "
+            "those members. The figure is each holder's by the Code's own class title, not one "
+            "appointment's; the percentage measures how much official documentation it rests "
+            "on, not the chance that it is right."
+        ),
     },
     "positionStatutoryPay": {
         "urlKeys": ("url",),
@@ -207,6 +222,11 @@ def _urls_at(block: Mapping[str, Any], key: Any) -> Iterable[str]:
                 yield value.strip()
 
 
+def _class_title(block: Mapping[str, Any]) -> bool:
+    """A schedule block priced from the Code's class title says so itself."""
+    return block.get("classTitle") is True
+
+
 def _uniform_roster(block: Mapping[str, Any]) -> bool:
     """A roster block that lists every holder at one rate says so in `holders`."""
     holders = block.get("holders")
@@ -225,7 +245,11 @@ def count_documents(field: str, block: Mapping[str, Any]) -> tuple[int, list[dic
         return 0, []
     seen: list[str] = []
     roles: list[dict[str, str]] = []
-    role_words = spec.get("uniformRoles") if _uniform_roster(block) and spec.get("uniformRoles") else spec["roles"]
+    role_words = spec["roles"]
+    if _uniform_roster(block) and spec.get("uniformRoles"):
+        role_words = spec["uniformRoles"]
+    elif _class_title(block) and spec.get("classRoles"):
+        role_words = spec["classRoles"]
     for key in spec["urlKeys"]:
         for url in _urls_at(block, key):
             if url in seen:
@@ -265,7 +289,11 @@ def annotate_pay_documents(root: dict[str, Any]) -> dict[str, int]:
                 "documentsStatingTheFigure": int(spec["statesTheFigure"]),
                 "percent": document_strength_percent(documents),
                 "scale": STRENGTH_SCALE,
-                "caution": (spec.get("uniformCaution") or spec["caution"]) if _uniform_roster(block) else spec["caution"],
+                "caution": (
+                    (spec.get("uniformCaution") or spec["caution"]) if _uniform_roster(block)
+                    else (spec.get("classCaution") or spec["caution"]) if _class_title(block)
+                    else spec["caution"]
+                ),
                 "documentRoles": roles,
             }
             stats["annotated"] += 1

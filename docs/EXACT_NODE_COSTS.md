@@ -36,13 +36,14 @@ unverified`. The estimates remain in `graph.json` — the cascade's arithmetic
 and the gate's child-sum checks are built on them — so a consumer of the
 JSON must read `cost_status` and not `resolved_total_amount` alone.
 
-The one exception is a real salary. **498** position nodes carry a pay claim an
+The one exception is a real salary. **513** position nodes carry a pay claim an
 official source states — 188 from the White House Office roster (22 of them
-titles the roster lists N times at one rate, published for each holder), 108
-from the Executive Schedule as 5 U.S.C. §§5312–5316 sets it (9 of them through
-a reviewed identification a second statute backs — 12 U.S.C. 242, 47 U.S.C.
-154, 15 U.S.C. 41, 26 U.S.C. 7803, 49 U.S.C. 106, 6 U.S.C. 112–113 — each
-resting on three documents), 88
+titles the roster lists N times at one rate, published for each holder), 123
+from the Executive Schedule as 5 U.S.C. §§5312–5316 sets it (24 of them through
+a reviewed identification a second statute backs, each resting on three
+documents; five of those are benches — the FCC's, FTC's, CFTC's and FERC's
+`Commissioner (×4)` and the Fed's `Governor (×4 members)` — priced from the
+Code's own "Members, …" class title for each holder alike), 88
 the rate OPM's current PLUM export prints for the one row under the title, 72 a
 Title 38 tier BAND rather than a rate, 31 from a listing's level joined to
 OPM's table, 24 statutory, 18 a base-pay RANGE, and **8 a figure no single
@@ -50,7 +51,7 @@ document states** (four Article I chief judges and, since the multi-post rule
 became per field on 2026-09-23, their four benches — `Judge (×18)` among them,
 because "Each judge shall receive salary at the same rate" is the bench's fact
 and not one holder's). A node may carry more than one, so the per-source
-figures sum past 498. Each shows in place of the withheld estimate, under its
+figures sum past 513. Each shows in place of the withheld estimate, under its
 own heading rather than COST, with the panel saying it is compensation for one
 post — or, on a node standing for several, for each of its holders — and not
 what the unit costs. An incumbency-shaped claim (a listing, a row of the
@@ -70,8 +71,8 @@ it and what that count is worth on this project's own source arithmetic** (two
 official documents, 80%, the same scale `verify_node_sources` uses), beside an
 explicit count of how many of them state the figure: **none.** The one block
 that counts three is the other way round: a post priced through a reviewed
-identification (the Fed's three, the FCC and FTC chairs, the Commissioner of
-Internal Revenue, the FAA Administrator, the DHS Secretary and Deputy Secretary)
+identification (24 posts and benches, from the Fed's Chair to the FEMA
+Administrator; `statutory_schedule.REVIEWED_TITLE_ROWS` is the list)
 names the statute that says which office it is, the
 Executive Schedule section that sets that office's level and OPM's table, and
 exactly one of the three states the figure. A percentage

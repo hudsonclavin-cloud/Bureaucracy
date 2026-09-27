@@ -19,6 +19,7 @@ from pathlib import Path
 
 from data_pipeline.exporter.build_graph import index_tree
 from data_pipeline.verification.pay_tables import (
+    CLASS_TITLE_PAY_FIELD,
     INCUMBENCY_PAY_FIELDS,
     OFFICE_RATE_PAY_FIELDS,
     UNIFORM_ROSTER_PAY_FIELDS,
@@ -48,6 +49,13 @@ def _tree():
              "positionGradePay": {"minimum": 1.0, "maximum": 2.0},
              "positionCurrentPay": {"amount": 1.0},
              "positionSchedulePay": {"amount": 1.0}},
+            {"id": "class-bench", "name": "Commissioner (×4)", "type": "Position",
+             "representsPosts": {"text": "×4", "kind": "exact", "count": 4},
+             # Priced from the Code's class title ("Members, ..."): the level
+             # is every member's, so the block stays and gains holders.
+             "positionSchedulePay": {"amount": 1.0, "classTitle": True, "statutoryTitle": "Members, Federal Trade Commission"}},
+            {"id": "class-single", "name": "Chair, FTC", "type": "Position",
+             "positionSchedulePay": {"amount": 1.0, "holders": {"text": "×4", "kind": "exact", "count": 4}}},
             {"id": "roster-uniform", "name": "Special Assistant (×4)", "type": "Position",
              "representsPosts": {"text": "×4", "kind": "exact", "count": 4},
              "positionReportedPay": {"amount": 1.0, "holders": {"count": 4, "uniformRate": True, "note": "each"}}},
@@ -93,6 +101,21 @@ class SweepTests(unittest.TestCase):
         bench = self.by_id["bench"]
         for field in INCUMBENCY_PAY_FIELDS:
             self.assertNotIn(field, bench)
+
+    def test_a_class_title_schedule_block_stays_on_a_bench_with_holders(self):
+        """The one per-record exception to the incumbency rule: a schedule
+        block marked classTitle is every member's level (since 2026-09-27)."""
+        bench = self.by_id["class-bench"]
+        pay = bench["positionSchedulePay"]
+        self.assertIs(pay["classTitle"], True)
+        self.assertEqual(pay["holders"]["count"], 4)
+        self.assertIs(pay["holders"]["appliesToEachHolder"], True)
+        # An unmarked schedule block on the other bench was stripped.
+        self.assertNotIn("positionSchedulePay", self.by_id["bench"])
+        # A carried-over holders block on a single post is removed.
+        self.assertNotIn("holders", self.by_id["class-single"]["positionSchedulePay"])
+        self.assertEqual(gate.CLASS_TITLE_PAY_FIELD, CLASS_TITLE_PAY_FIELD)
+        self.assertIn(CLASS_TITLE_PAY_FIELD, INCUMBENCY_PAY_FIELDS)
 
     def test_office_rate_fields_stay_and_gain_holders(self):
         bench = self.by_id["bench"]
@@ -270,10 +293,20 @@ class PublishedGraphTests(unittest.TestCase):
     def test_no_listing_based_figure_sits_on_a_multi_post_node(self):
         if not self.nodes:
             self.skipTest("no published graph")
+        class_benches = 0
         for node in self.nodes:
             if node.get("representsPosts"):
                 for field in INCUMBENCY_PAY_FIELDS:
+                    block = node.get(field)
+                    if field == CLASS_TITLE_PAY_FIELD and isinstance(block, dict) and block.get("classTitle") is True:
+                        # The one exception: a bench priced from the Code's
+                        # class title, with holders (since 2026-09-27).
+                        self.assertTrue(str(block.get("statutoryTitle") or "").startswith("Members, "), node.get("id"))
+                        self.assertIsInstance(block.get("holders"), dict, node.get("id"))
+                        class_benches += 1
+                        continue
                     self.assertNotIn(field, node, node.get("id"))
+        self.assertEqual(class_benches, 5, "the five class-title benches: FCC, FTC, CFTC, FERC, the Fed's Governors")
 
     def test_every_multi_post_pay_block_says_who_it_covers(self):
         if not self.nodes:

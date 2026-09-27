@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20260923d";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260923d";
+import { createGovernmentGraph } from "./graph.js?v=20260927a";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260927a";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -1163,6 +1163,14 @@ function renderSchedulePay(data) {
   if (archive && typeof archive === "object" && archive.payLevel === pay.payLevel) {
     add(` The block above reaches the same level independently: OPM's archive reported this post at level ${pay.payLevel} during the previous administration, and the Code places it there now. That is one level corroborated by two records, not two separate figures.`);
   }
+  // A bench priced from the Code's class title ("Members, Federal Trade
+  // Commission"): the level is every member's, and the sweep stamped
+  // `holders` from the node's own "(×N)". Without this sentence a Level IV
+  // rate beside "Commissioner (×4)" reads as one commissioner's pay.
+  if (pay.classTitle === true) {
+    add(` The Code's title here is a class title: it places every member of the body at that level, so the figure is not one appointment's.`);
+  }
+  add(holdersSentence(pay));
   add(payDocumentsSentence(pay));
   const notes = Array.isArray(pay.footnotes) ? pay.footnotes.filter((n) => String(n || "").trim()) : [];
   for (const note of notes) add(` The table's own note: "${String(note).trim()}"`);

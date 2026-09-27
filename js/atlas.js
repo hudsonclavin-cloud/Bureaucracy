@@ -517,7 +517,7 @@ function describePay(node) {
         schedule.identification && typeof schedule.identification === "object"
           ? ` That title is not this node's name: a reviewed identification — ${schedule.identification.basis || "no stated basis"}; ${schedule.identification.basisCitation || "the basis statute"} prints "${schedule.identification.basisQuote || ""}".`
           : ""
-      } A statutory rate of basic pay, not what the holder receives.${payDocuments(schedule)}`,
+      }${schedule.classTitle === true ? " The Code's title is a class title placing every member of the body at that level." : ""} A statutory rate of basic pay, not what the holder receives.${holdersNote(schedule)}${payDocuments(schedule)}`,
     });
   }
   const statutory = node.positionStatutoryPay;

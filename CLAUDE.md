@@ -1935,7 +1935,8 @@ writes no `sourceUrls`, `sourceTypes`, `lastVerified` or
 `verificationMethod` and is never a cost. The multi-post sweep takes it with
 the other incumbency fields (`positionPayRate`, `positionGradePay`,
 `positionSchedulePay`); since 2026-09-23 the rule is per field and a tier
-rate stays (see "A rate that holds for every holder" below).
+rate stays (see "A rate that holds for every holder" below), and since
+2026-09-27 so does a schedule block priced from the Code's class title.
 
 **First derivation, measured on the evidence files (the graph is not
 rebuilt here).** 170 of 4,591 positions listed, 170 placements, **100 rates**
@@ -2271,15 +2272,16 @@ of the eight fields (no `positionTierPay` or `positionGradePay`). The
 derived module stopped writing its own copy of the arithmetic when this
 landed: one code path for one number.
 
-**And the gap this made visible, counted rather than estimated.** 498 of 4,591
+**And the gap this made visible, counted rather than estimated.** 513 of 4,591
 positions carry a pay claim (461 when this section was first written, before
-the multi-post rule below and the Federal Reserve rows; 492 before the six
-reviewed rows of 2026-09-27); **4,093 do not**, and
+the multi-post rule below and the Federal Reserve rows; 492 before the
+reviewed rows of 2026-09-27, 498 before that day's class-title benches);
+**4,078 do not**, and
 `scripts/report_unpriced_positions.py` says why for every one of them:
 
-- **3,307** — no pay document this project has read names the title at all.
+- **3,297** — no pay document this project has read names the title at all.
   Not a coverage gap somebody has not got to.
-- **765** — the node states a multiplicity (`Physician (×multiple)`) and no
+- **760** — the node states a multiplicity (`Physician (×multiple)`) and no
   claim that holds for every holder reaches it. Since the per-field rule
   below, a tier rate, a parity rate, a band or a uniform roster line IS
   published on such a node (`Judge (×18)` is priced now); what stays refused
@@ -2287,7 +2289,7 @@ reviewed rows of 2026-09-27); **4,093 do not**, and
   SYSTEM governs the title is a fact worth having.
 - **21** — OPM lists the position and the row prints no rate.
 
-The concentration is the useful part: **432** of the 4,093 sit under `VA
+The concentration is the useful part: **432** of the 4,078 sit under `VA
 Medical Centers`, 360 of them among the 3,313 (the service chiefs
 `va_title38_pay.py` deliberately refuses, since choosing a Title 38 table per
 node would be this module deciding which VA service chiefs are doctors), 61
@@ -2299,7 +2301,7 @@ per unpriced position with its id and its reason;
 `docs/PAY_SOURCE_RESEARCH_PROMPT_3.md` is a research prompt pack generated
 from the same list in the same run — a lead prompt asking which pay systems
 exist and where each is published, then **39 enumeration shards naming every
-one of the 4,093 titles**. `tests/test_unpriced_positions.py` asserts the
+one of the 4,078 titles**. `tests/test_unpriced_positions.py` asserts the
 coverage rather than trusting it: every unpriced id appears in the pack, no
 priced position appears in either document, and both documents are regenerated
 and compared byte-for-byte so a stale copy fails.
@@ -2430,7 +2432,11 @@ So the sweep is now per field, and the three classes are declared in
 - `INCUMBENCY_PAY_FIELDS` — `positionPayRate`, `positionGradePay`,
   `positionCurrentPay`, `positionSchedulePay` — are **stripped** from a
   multi-post node as before. A listing, a row of the current export, a level
-  one archived office was at: each is one appointment's fact.
+  one archived office was at: each is one appointment's fact. One per-record
+  exception since 2026-09-27: a `positionSchedulePay` block marked
+  `classTitle`, priced from the Code's "Members, …" title, is every member's
+  level and stays with `holders` (`pay_tables.CLASS_TITLE_PAY_FIELD`; the
+  class-title section below).
 - `OFFICE_RATE_PAY_FIELDS` — `positionStatutoryPay`, `positionDerivedPay`,
   `positionTierPay` — are **kept**, stamped with a `holders` block (`text`,
   `kind`, `count` or bounds, `appliesToEachHolder: true`, and a note) that
@@ -2441,7 +2447,8 @@ So the sweep is now per field, and the three classes are declared in
   stated multiplicity; `holders.uniformRate` says so, and two people at two
   rates still strip it, because then the figure is nobody's.
 
-**28 multi-post nodes priced**, each pinned in `tests/test_multi_post_pay.py`:
+**28 multi-post nodes priced** on 2026-09-23 (33 since the five class-title
+benches of 2026-09-27), each pinned in `tests/test_multi_post_pay.py`:
 the four Article I benches (`Judge (×18)`, `(×15)`, `(×8)`, `(×4)`) from their
 own courts' parity provisions (`derived_pay.BENCH_NODES` copies each chief
 judge's provision to its bench, and a bench moved to another court's
@@ -2525,9 +2532,11 @@ office, §5312/§5313 sets its level, OPM's table prices it — of which one
 states the figure, so the count block reads 3 and 90% where every other
 schedule record reads 2 and 80%, and the panel prints the basis and the
 quoted sentence in words. `Governor (×4 members)` is reached by the same
-"Members" title and deliberately left unpriced: `positionSchedulePay` is
-incumbency-class, so a row would be written and withdrawn on every build;
-pricing a bench from a class title is a separate decision. The gate mirrors
+"Members" title and was deliberately left unpriced for four days:
+`positionSchedulePay` is incumbency-class, so a row would have been written
+and withdrawn on every build, and pricing a bench from a class title was
+recorded as a separate decision — which the owner made on 2026-09-27 (see
+"Benches priced from the Code's class title" below). The gate mirrors
 the three rows by node id (`US_CODE_REVIEWED_IDENTIFICATIONS`), re-reads the
 basis fixture with its own stdlib cut, and refuses a swap between the two
 Level II Vice Chairs, a renamed node, a scope claimed on a reviewed row, a
@@ -2559,9 +2568,9 @@ every run; 47 U.S.C. 154 is the one basis that states the level itself ("shall
 receive an annual salary at the annual rate payable from time to time for level
 III of the Executive Schedule"), and it agrees with §5314. The FCC's and FTC's
 `Commissioner (×4)` benches are reached by "Members, Federal Communications
-Commission" / "Members, Federal Trade Commission" (Level IV) and are left
-unpriced for the reason the Fed's Governors are: a bench priced from a class
-title is the open decision, not a row. Nine reviewed rows now; positions priced
+Commission" / "Members, Federal Trade Commission" (Level IV) and were left
+unpriced that morning for the reason the Fed's Governors were; the owner
+decided the same day, below. Nine reviewed rows then; positions priced
 from the Schedule **102 → 108**, pay claims **492 → 498**, unpriced **4,099 →
 4,093**. The test that doctors the Fed's section copies every basis fixture
 into the temporary directory first, so it now shows the other six rows standing
@@ -2583,6 +2592,82 @@ Schedule level II, which is a ceiling and not a rate, so no module reads them
 and nothing is published from them. The module's shape, should a DoD-published
 table ever answer, is `derived_pay.py`'s: Title 10 gives the post its grade,
 the table prices the grade, neither states the figure, and the panel says so.
+
+**Benches priced from the Code's class title (since 2026-09-27, the owner's
+decision).** The Executive Schedule places some offices one at a time
+("Chairman, Federal Trade Commission", Level III) and some as a class —
+"Members, Federal Trade Commission" (Level IV) is the office every one of
+the Commission's other four members holds, and 15 U.S.C. 41 is what composes
+the Commission of five Commissioners. This graph draws such a bench as one
+node, `Commissioner (×4)`, and until now nothing could price it: the
+reviewed route could name the class title, but `positionSchedulePay` is
+incumbency-class and the sweep stripped it. The owner's ask was to price
+the benches, and the reading is the one `derived_pay.BENCH_NODES` already
+applies to "Each judge shall receive salary at the same rate": the level is
+the office's by the statute's own words, so it is each holder's, not one
+appointment's.
+
+Rather than reclassifying the whole field — a singular statutory title on a
+node that states "(×N)" would then publish one office's level for N posts,
+and the whole-name and scoped routes could reach such a node — the exception
+is per record and declared three times over. A reviewed row carries
+`classTitle: True`; `match_reviewed_rows` refuses such a row unless the
+statutory title IS a class title (`is_class_title`: the Code's
+"Members, …" form, so "Independent Members, Thrift Depositor Protection
+Oversight Board" and every singular title are refused) and the node's own
+name states a multiplicity, and refuses an unmarked row on a node that
+states one, since the sweep would strip it on every build; the record and
+the published block carry `classTitle: True`, and only that mark lets
+`withdraw_pay_from_multi_post_nodes` keep the block, stamping `holders` from
+the node's own `representsPosts` exactly as it does for an office-rate field.
+The gate mirrors the mark by node id as the ninth element of each
+`US_CODE_REVIEWED_IDENTIFICATIONS` row and refuses: the mark on a row that
+prices one office, the mark outside a reviewed identification, a class-title
+row without the mark, a marked block whose title is not "Members, …", a
+marked block on a node that stands for one post, and a bench block without
+`holders` or with a count the name does not state. The panel and the atlas
+view say in words that the Code's title is a class title placing every
+member of the body at that level, then print the holders sentence, and the
+document-count block is reworded for a class (`classRoles` /
+`classCaution` in `pay_documents.py`: the third document "composes the body
+of the members this node stands for").
+
+**Five benches priced**, all `partial`, all `proxy`, each on three
+documents: the FCC's, FTC's, CFTC's and FERC's `Commissioner (×4)` at Level
+IV ($197,200) from 47 U.S.C. 154, 15 U.S.C. 41, 7 U.S.C. 2 and 42 U.S.C.
+7171 respectively, and the Fed's `Governor (×4 members)` at Level II
+($228,000) from 12 U.S.C. 241, which composes the Board of seven members.
+That section is also a trap worth recording: its operative text prints
+"shall each receive basic compensation at the rate of $15,000 per annum",
+the 1935 figure the Executive Schedule superseded, and a reader who searched
+the section for a salary would find it. The row's basis says so, nothing
+publishes it, and the figure comes from OPM's table as on every other
+schedule record. **Nine more single-post reviewed rows** landed with them,
+the Fed's shape each time, their basis sections committed under
+`tests/fixtures/uscode/`: the CFTC and FERC chairs (7 U.S.C. 2, 42 U.S.C.
+7171), the Director of OPM (5 U.S.C. 1102), the Commissioner and Deputy
+Commissioner of Social Security (42 U.S.C. 902 — whose subsection (b)(3)
+itself compensates the Deputy "at the rate provided for level II of the
+Executive Schedule", agreeing with §5313), the FEMA Administrator (6 U.S.C.
+313), the Director of the BLM (43 U.S.C. 1731), the Director and Deputy
+Director of the CIA (50 U.S.C. 3036, 3037) and the CMS Administrator
+(42 U.S.C. 1317). Twenty-four reviewed rows in all; positions priced from
+the Schedule **108 → 123**, pay claims **498 → 513**, unpriced **4,093 →
+4,078**, multi-post nodes priced **28 → 33**.
+
+**Read for the record, and deliberately not built on yet.** 5 U.S.C. 403(e)
+(the Inspector General Act) sets an Inspector General's basic pay at "the
+rate payable for level III of the Executive Schedule under section 5314 of
+this title, plus 3 percent" — a figure no document prints, one arithmetic
+step past even `derived_pay`'s join, and it would reach the 80 `Inspector
+General` nodes here. 31 U.S.C. 703(f) sets the Comptroller General's pay
+"equal to the rate for level II of the Executive Schedule" and the Deputy
+Comptroller General's at level III; neither title is printed in
+§§5312–5316, so the schedule route cannot reach them and a `derived_pay`
+shape (statute names the tier, OPM's table prices it, neither states the
+figure) would. Both sections are committed (`ig_5_usc_403.html`,
+`gao_31_usc_703.html`) so the next decision starts from the bytes; both are
+recorded in `CURATION.md` §19.8 with the rest of the batch's triage.
 
 **The panel's Trace Origin, restored.** A 2026-09-15 change reduced "Trace
 Origin" to a one-line confirmation on the grounds that the breadcrumb already
@@ -3066,16 +3151,19 @@ subdivide measured money rather than invent it — which does not make a
 subdivision a measurement. **Since 2026-09-09 the site does not show one by
 default**, by the owner's decision: a node with no measured cost of its own
 shows no figure and says why, and ticking "Also show estimated shares of a
-parent's total" opts back in. The exception is a real salary — **498** of the
+parent's total" opts back in. The exception is a real salary — **513** of the
 4,591 positions carry a pay claim an official source states, counted on the
 published graph on 2026-09-27 after Schedule 6, the VA's Title 38 bands, the
 Article I parity derivations, the per-field multi-post rule, the Federal
-Reserve rows and the six reviewed rows of the fourth research batch landed: 8 a figure no document states
-(`positionDerivedPay`, four chief judges and their four benches), 72 a Title 38 tier BAND rather than a rate (`positionTierPay`), 108 from the
-Executive Schedule as 5 U.S.C. §§5312–5316 sets it (9 of them through a
-reviewed identification a second statute backs — 12 U.S.C. 242 for the Fed's
-three, then 47 U.S.C. 154, 15 U.S.C. 41, 26 U.S.C. 7803, 49 U.S.C. 106 and
-6 U.S.C. 112–113), 188 from the White House
+Reserve rows, the reviewed rows of the fourth research batch and the five
+class-title benches landed: 8 a figure no document states
+(`positionDerivedPay`, four chief judges and their four benches), 72 a Title 38 tier BAND rather than a rate (`positionTierPay`), 123 from the
+Executive Schedule as 5 U.S.C. §§5312–5316 sets it (24 of them through a
+reviewed identification a second statute backs — 12 U.S.C. 241–242 for the
+Fed's four, then the FCC's, FTC's, CFTC's and FERC's chairs and benches, the
+IRS, FAA, DHS, OPM, SSA, FEMA, BLM, CIA and CMS principals; five of the 24
+are benches priced from the Code's "Members, …" class title for each
+holder), 188 from the White House
 roster (22 of them titles listed N times at one rate), 88 the rate the current PLUM export prints for the one row under the
 title, 31 from a listing's level joined to OPM's table, 24 statutory (20 from
 uscourts.gov and senate.gov, 4 from Schedule 6 of the annual pay-adjustment
@@ -3084,13 +3172,14 @@ base-pay **range** rather than a rate (`positionGradePay`, counted separately
 because a range is not a rate and the panel says so; it read 32 until the
 current export supplied a printed figure for 14 of them, and a printed figure
 beats a band). A node may carry more than one of these, so the per-source
-figures sum past 498 — 461 on 2026-09-23 when four Article I chief judges
+figures sum past 513 — 461 on 2026-09-23 when four Article I chief judges
 took a figure NO document states, 488 the same day when the multi-post rule
 became per field, 491 with the Federal Reserve's three (`positionDerivedPay`
 was 4 and is 8, since each court's bench now takes its own parity provision)
 492 once the review corrected the roster lookup (`positionDerivedPay`, a parity provision
 joined to the compensation table, publishing its document count and what that
-count is worth), and 498 on 2026-09-27 with the six reviewed rows. Shown in the cost block under its own heading and never
+count is worth), 498 on 2026-09-27 with the six reviewed rows, and 513 the
+same day with the five class-title benches and nine more reviewed rows. Shown in the cost block under its own heading and never
 headed COST.
 
 That figure read **354** until 2026-09-19 and was wrong: it added up the
@@ -3102,7 +3191,8 @@ renames, 311 after, 380 once the current export was read, 385 once
 Schedule 6 priced the Vice President and the House's three elected leaders,
 457 once the VA's Title 38 bands landed, 461 with the derived figures, 488 with
 the per-field multi-post rule, 491 with the Federal Reserve rows, 492 after
-the review and 498 with the six reviewed rows of 2026-09-27. The estimates
+the review, 498 with the six reviewed rows of 2026-09-27 and 513 with that
+day's class-title benches and nine more reviewed rows. The estimates
 stay in `graph.json` because the cascade's arithmetic and the gate's
 child-sum checks are built on them, so a consumer of the JSON must read
 `cost_status`, not `resolved_total_amount` alone. The gate prints both

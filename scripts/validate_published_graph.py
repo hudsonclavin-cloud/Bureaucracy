@@ -179,10 +179,17 @@ US_CODE_REVIEWED_METHOD = (
     "level_assigned_by_5_usc_5312_5316_to_the_office_a_second_statute_identifies_this_post_as"
 )
 US_CODE_BASIS_FIXTURE_DIR = PROJECT_ROOT / "tests" / "fixtures" / "uscode"
+#: Mirrors statutory_schedule.CLASS_TITLE_PREFIX: the only title shape a
+#: class-title row may cite.
+US_CODE_CLASS_TITLE_PREFIX = "Members, "
 #: node id -> (node name the row was written against, statutory title, level,
 #: section, basis citation, basis fixture, the basis section's own sentence,
 #: the reviewed basis in words -- printed by the panel as the reason the
-#: figure applies, so it is a fabricated-reason channel unless mirrored)
+#: figure applies, so it is a fabricated-reason channel unless mirrored --
+#: and whether the row prices a BENCH from the Code's class title: True only
+#: where the title is "Members, ..." and the node's name states "(×N)", and
+#: the one thing that lets a positionSchedulePay block stay on a multi-post
+#: node, with `holders`, instead of being stripped as one appointment's level)
 US_CODE_REVIEWED_IDENTIFICATIONS = {
     "exec-regulatory-fed-chair-board-of-governors": (
         "Chair, Board of Governors",
@@ -193,6 +200,7 @@ US_CODE_REVIEWED_IDENTIFICATIONS = {
         "the same office: 12 U.S.C. 242 designates one member of the Board to serve as Chairman of the "
         "Board, and 5 U.S.C. 5312 places that Chairman at Level I; the graph spells the title without "
         "gender and without the System's name",
+        False,
     ),
     "exec-regulatory-fed-vice-chair-board-of-governors": (
         "Vice Chair, Board of Governors",
@@ -203,6 +211,7 @@ US_CODE_REVIEWED_IDENTIFICATIONS = {
         "a Vice Chairman is a member of the Board: 12 U.S.C. 242 designates the two Vice Chairmen from "
         "among the members, 5 U.S.C. 5313 places Members of the Board at Level II, and only the Chairman "
         "is placed separately (5312); 5314-5316 print no Federal Reserve entry",
+        False,
     ),
     "exec-regulatory-fed-vice-chair-for-supervision": (
         "Vice Chair for Supervision",
@@ -211,6 +220,7 @@ US_CODE_REVIEWED_IDENTIFICATIONS = {
         "1 of whom shall be designated Vice Chairman for Supervision",
         "the Vice Chairman for Supervision is one of the two Vice Chairmen 12 U.S.C. 242 designates from "
         "among the members, and 5 U.S.C. 5313 places Members of the Board at Level II",
+        False,
     ),
     "exec-regulatory-fcc-chair-fcc": (
         "Chair, FCC",
@@ -218,6 +228,7 @@ US_CODE_REVIEWED_IDENTIFICATIONS = {
         "47 U.S.C. 154", "fcc_47_usc_154.html",
         "The Chairman of the Commission, during the period of his service as Chairman, shall receive an annual salary at the annual rate payable from time to time for level III of the Executive Schedule.",
         "the same office: 47 U.S.C. 154 itself pays the Chairman of the Commission at level III of the Executive Schedule, the level 5 U.S.C. 5314 prints for 'Chairman, Federal Communications Commission'; the graph spells the title without gender and names the Commission by its acronym",
+        False,
     ),
     "exec-regulatory-ftc-chair-ftc": (
         "Chair, FTC",
@@ -225,6 +236,7 @@ US_CODE_REVIEWED_IDENTIFICATIONS = {
         "15 U.S.C. 41", "ftc_15_usc_41.html",
         "The President shall choose a chairman from the Commission's membership.",
         "the same office: 15 U.S.C. 41 has the President choose a chairman from the Commission's membership, and 5 U.S.C. 5314 places that Chairman at Level III; the graph spells the title without gender and names the Commission by its acronym",
+        False,
     ),
     "exec-dept-treasury-irs-commissioner-irs": (
         "Commissioner, IRS",
@@ -232,6 +244,7 @@ US_CODE_REVIEWED_IDENTIFICATIONS = {
         "26 U.S.C. 7803", "irs_26_usc_7803.html",
         "There shall be in the Department of the Treasury a Commissioner of Internal Revenue who shall be appointed by the President, by and with the advice and consent of the Senate.",
         "the same office: 26 U.S.C. 7803 creates the Commissioner of Internal Revenue in the Department of the Treasury, and 5 U.S.C. 5314 places that Commissioner at Level III; the graph files the post under the Internal Revenue Service and names it by the Service's acronym",
+        False,
     ),
     "exec-dept-dot-faa-administrator-faa": (
         "Administrator, FAA",
@@ -239,6 +252,7 @@ US_CODE_REVIEWED_IDENTIFICATIONS = {
         "49 U.S.C. 106", "faa_49_usc_106.html",
         "The head of the Administration is the Administrator, who shall be appointed by the President, by and with the advice and consent of the Senate.",
         "the same office: 49 U.S.C. 106 makes the Administrator the head of the Federal Aviation Administration, and 5 U.S.C. 5313 places that Administrator at Level II; the graph names the Administration by its acronym",
+        False,
     ),
     "exec-dept-dhs-secretary-of-department-of-homeland-security-dhs": (
         "Secretary of the Department of Homeland Security",
@@ -246,6 +260,7 @@ US_CODE_REVIEWED_IDENTIFICATIONS = {
         "6 U.S.C. 112", "dhs_6_usc_112.html",
         "There is a Secretary of Homeland Security, appointed by the President, by and with the advice and consent of the Senate.",
         "the same office: 6 U.S.C. 112 creates the Secretary of Homeland Security, and 5 U.S.C. 5312 places that Secretary at Level I; the graph keeps OPM's archive spelling 'Secretary of the Department of Homeland Security' (CURATION.md §8), which whole-name equality cannot reach",
+        False,
     ),
     "exec-dept-dhs-deputy-secretary-of-department-of-homeland-security-dhs": (
         "Deputy Secretary of the Department of Homeland Security",
@@ -253,6 +268,127 @@ US_CODE_REVIEWED_IDENTIFICATIONS = {
         "6 U.S.C. 113", "dhs_6_usc_113.html",
         "A Deputy Secretary of Homeland Security, who shall be the Secretary's first assistant for purposes of subchapter III of chapter 33 of title 5 .",
         "the same office: 6 U.S.C. 113 provides for a Deputy Secretary of Homeland Security as the Secretary's first assistant, and 5 U.S.C. 5313 places that Deputy Secretary at Level II; the graph keeps OPM's archive spelling 'Deputy Secretary of the Department of Homeland Security' (CURATION.md §8), which whole-name equality cannot reach",
+        False,
+    ),
+    "exec-regulatory-fcc-commissioner-4": (
+        "Commissioner (×4)",
+        "Members, Federal Communications Commission", "IV", "5315",
+        "47 U.S.C. 154", "fcc_47_usc_154.html",
+        "shall be composed of five commissioners appointed by the President, by and with the advice and consent of the Senate, one of whom the President shall designate as chairman",
+        "a bench priced from its class title: 47 U.S.C. 154 composes the Commission of five commissioners, one of whom is designated chairman, so each of the other four is a member of the Commission, and 5 U.S.C. 5315 places 'Members, Federal Communications Commission' at Level IV; the level is the office's and holds for each of the four alike",
+        True,
+    ),
+    "exec-regulatory-ftc-commissioner-4": (
+        "Commissioner (×4)",
+        "Members, Federal Trade Commission", "IV", "5315",
+        "15 U.S.C. 41", "ftc_15_usc_41.html",
+        "which shall be composed of five Commissioners, who shall be appointed by the President, by and with the advice and consent of the Senate",
+        "a bench priced from its class title: 15 U.S.C. 41 composes the Commission of five Commissioners and has the President choose a chairman from among them, so each of the other four is a member of the Commission, and 5 U.S.C. 5315 places 'Members, Federal Trade Commission' at Level IV; the level is the office's and holds for each of the four alike",
+        True,
+    ),
+    "exec-regulatory-fed-governor-4-members": (
+        "Governor (×4 members)",
+        "Members, Board of Governors of the Federal Reserve System", "II", "5313",
+        "12 U.S.C. 241", "fed_12_usc_241.html",
+        "shall be composed of seven members, to be appointed by the President, by and with the advice and consent of the Senate",
+        "a bench priced from its class title: 12 U.S.C. 241 composes the Board of seven members, of whom 12 U.S.C. 242 designates a Chairman and two Vice Chairmen, so a Governor is one of the four members holding no designated office, and 5 U.S.C. 5313 places 'Members, Board of Governors of the Federal Reserve System' at Level II; the level is the office's and holds for each alike (the '$15,000 per annum' 12 U.S.C. 241 itself prints is the 1935 figure the Executive Schedule superseded, and nothing here publishes it)",
+        True,
+    ),
+    "exec-regulatory-cftc-commissioner-4": (
+        "Commissioner (×4)",
+        "Members, Commodity Futures Trading Commission", "IV", "5315",
+        "7 U.S.C. 2", "cftc_7_usc_2.html",
+        "The Commission shall be composed of five Commissioners who shall be appointed by the President, by and with the advice and consent of the Senate.",
+        "a bench priced from its class title: 7 U.S.C. 2 composes the Commission of five Commissioners and has the President appoint one of them as Chairman, so each of the other four is a member of the Commission, and 5 U.S.C. 5315 places 'Members, Commodity Futures Trading Commission' at Level IV; the level is the office's and holds for each of the four alike",
+        True,
+    ),
+    "exec-regulatory-ferc-commissioner-4": (
+        "Commissioner (×4)",
+        "Members, Federal Energy Regulatory Commission", "IV", "5315",
+        "42 U.S.C. 7171", "ferc_42_usc_7171.html",
+        "The Commission shall be composed of five members appointed by the President, by and with the advice and consent of the Senate.",
+        "a bench priced from its class title: 42 U.S.C. 7171 composes the Commission of five members and has the President designate one as Chairman, so each of the other four is a member of the Commission, and 5 U.S.C. 5315 places 'Members, Federal Energy Regulatory Commission' at Level IV; the level is the office's and holds for each of the four alike",
+        True,
+    ),
+    "exec-regulatory-cftc-chair-cftc": (
+        "Chair, CFTC",
+        "Chairman, Commodity Futures Trading Commission", "III", "5314",
+        "7 U.S.C. 2", "cftc_7_usc_2.html",
+        "The President shall appoint, by and with the advice and consent of the Senate, a member of the Commission as Chairman, who shall serve as Chairman at the pleasure of the President.",
+        "the same office: 7 U.S.C. 2 has the President appoint a member of the Commission as Chairman, and 5 U.S.C. 5314 places that Chairman at Level III; the graph spells the title without gender and names the Commission by its acronym",
+        False,
+    ),
+    "exec-regulatory-ferc-chair-ferc": (
+        "Chair, FERC",
+        "Chairman, Federal Energy Regulatory Commission", "III", "5314",
+        "42 U.S.C. 7171", "ferc_42_usc_7171.html",
+        "One of the members shall be designated by the President as Chairman.",
+        "the same office: 42 U.S.C. 7171 has the President designate one member of the Commission as Chairman, and 5 U.S.C. 5314 places that Chairman at Level III; the graph spells the title without gender and names the Commission by its acronym",
+        False,
+    ),
+    "exec-ind-opm-director-opm": (
+        "Director, OPM",
+        "Director of the Office of Personnel Management", "II", "5313",
+        "5 U.S.C. 1102", "opm_5_usc_1102.html",
+        "There is at the head of the Office of Personnel Management a Director of the Office of Personnel Management appointed by the President, by and with the advice and consent of the Senate.",
+        "the same office: 5 U.S.C. 1102 puts a Director of the Office of Personnel Management at the head of the Office, and 5 U.S.C. 5313 places that Director at Level II; the graph names the Office by its acronym",
+        False,
+    ),
+    "exec-ind-ssa-commissioner-ssa": (
+        "Commissioner, SSA",
+        "Commissioner of Social Security, Social Security Administration", "I", "5312",
+        "42 U.S.C. 902", "ssa_42_usc_902.html",
+        "There shall be in the Administration a Commissioner of Social Security",
+        "the same office: 42 U.S.C. 902 creates in the Social Security Administration a Commissioner of Social Security, and 5 U.S.C. 5312 places that Commissioner at Level I; the graph names the Administration by its acronym",
+        False,
+    ),
+    "exec-ind-ssa-deputy-commissioner-ssa": (
+        "Deputy Commissioner, SSA",
+        "Deputy Commissioner of Social Security, Social Security Administration", "II", "5313",
+        "42 U.S.C. 902", "ssa_42_usc_902.html",
+        "The Deputy Commissioner shall be compensated at the rate provided for level II of the Executive Schedule.",
+        "the same office: 42 U.S.C. 902 creates in the Social Security Administration a Deputy Commissioner of Social Security and itself compensates that office at level II of the Executive Schedule, the level 5 U.S.C. 5313 prints for it; the graph names the Administration by its acronym",
+        False,
+    ),
+    "exec-dept-dhs-fema-administrator-fema": (
+        "Administrator, FEMA",
+        "Administrator of the Federal Emergency Management Agency", "II", "5313",
+        "6 U.S.C. 313", "fema_6_usc_313.html",
+        "There is in the Department the Federal Emergency Management Agency, headed by an Administrator.",
+        "the same office: 6 U.S.C. 313 places the Federal Emergency Management Agency in the Department of Homeland Security headed by an Administrator, and 5 U.S.C. 5313 places that Administrator at Level II; the graph names the Agency by its acronym",
+        False,
+    ),
+    "exec-dept-doi-blm-director-blm": (
+        "Director, BLM",
+        "Director, Bureau of Land Management, Department of the Interior", "V", "5316",
+        "43 U.S.C. 1731", "blm_43_usc_1731.html",
+        "The Bureau of Land Management established by Reorganization Plan Numbered 3, of 1946 shall have as its head a Director.",
+        "the same office: 43 U.S.C. 1731 gives the Bureau of Land Management a Director as its head, and 5 U.S.C. 5316 places that Director at Level V; the graph names the Bureau by its acronym",
+        False,
+    ),
+    "exec-ind-cia-director-of-the-cia-dcia": (
+        "Director of the CIA (DCIA)",
+        "Director of the Central Intelligence Agency", "II", "5313",
+        "50 U.S.C. 3036", "cia_50_usc_3036.html",
+        "There is a Director of the Central Intelligence Agency who shall be appointed by the President, by and with the advice and consent of the Senate.",
+        "the same office: 50 U.S.C. 3036 creates the Director of the Central Intelligence Agency as head of the Agency, and 5 U.S.C. 5313 places that Director at Level II; the graph names the Agency by its acronym",
+        False,
+    ),
+    "exec-ind-cia-deputy-director-of-the-cia-ddcia": (
+        "Deputy Director of the CIA (DDCIA)",
+        "Deputy Director of the Central Intelligence Agency", "III", "5314",
+        "50 U.S.C. 3037", "cia_50_usc_3037.html",
+        "There is a Deputy Director of the Central Intelligence Agency who shall be appointed by the President",
+        "the same office: 50 U.S.C. 3037 creates the Deputy Director of the Central Intelligence Agency, and 5 U.S.C. 5314 places that Deputy Director at Level III; the graph names the Agency by its acronym",
+        False,
+    ),
+    "exec-dept-hhs-cms-administrator-cms": (
+        "Administrator, CMS",
+        "Administrator of the Centers for Medicare & Medicaid Services", "III", "5314",
+        "42 U.S.C. 1317", "cms_42_usc_1317.html",
+        "The Administrator of the Centers for Medicare & Medicaid Services shall be appointed by the President by and with the advice and consent of the Senate.",
+        "the same office: 42 U.S.C. 1317 provides for the appointment of the Administrator of the Centers for Medicare & Medicaid Services, and 5 U.S.C. 5314 places that Administrator at Level III; the graph names the Centers by their acronym",
+        False,
     ),
 }
 _US_CODE_OPERATIVE_CACHE = {}
@@ -1754,10 +1890,22 @@ def reviewed_schedule_violations(node, pay, reviewed, today, label):
     was written against. A rename withdraws it, as it does everywhere else."""
     out = []
     say = lambda text: out.append("{} {}".format(label(node), text))
-    node_name, title, level, section, citation, fixture, quote, basis = reviewed
+    node_name, title, level, section, citation, fixture, quote, basis, class_title = reviewed
     if str(pay.get("method") or "") != US_CODE_REVIEWED_METHOD:
         say("prices a reviewed identification under method {!r}, not {!r}".format(
             pay.get("method"), US_CODE_REVIEWED_METHOD))
+    # A bench priced from the Code's class title says so on the block, and
+    # only such a row may: the mark is what keeps the block on a multi-post
+    # node, so an unmirrored mark would price a bench from a singular title.
+    if class_title:
+        if pay.get("classTitle") is not True:
+            say("is priced from the class title {!r} without saying so (classTitle)".format(title))
+        if not title.startswith(US_CODE_CLASS_TITLE_PREFIX):
+            say("claims a class-title identification from {!r}, which is not a class title".format(title))
+        if not node.get("representsPosts"):
+            say("is priced from a class title as a bench but stands for one post")
+    elif "classTitle" in pay:
+        say("carries a classTitle mark on a reviewed row that prices one office")
     identification = pay.get("identification")
     if not isinstance(identification, dict):
         say("carries a level a reviewed identification assigned it and no identification block")
@@ -1834,6 +1982,8 @@ def schedule_pay_violations(node, pay, today, label, tree_parent=None):
         expected = (reviewed[1], reviewed[2], reviewed[3], None)
     elif isinstance(pay.get("identification"), dict) or str(pay.get("method") or "") == US_CODE_REVIEWED_METHOD:
         say("claims a reviewed identification this pipeline has no row for")
+    if reviewed is None and "classTitle" in pay:
+        say("carries a classTitle mark outside a reviewed identification")
     if expected is None:
         say("carries a rate from the Executive Schedule; the Code names no such post for this node")
         return out
@@ -2120,6 +2270,11 @@ UNIFORM_ROSTER_PAY_FIELDS = ("positionReportedPay",)
 #: Never on a multi-post node: one listing's level, one listing's pay plan,
 #: one row's rate, one named office's statutory level.
 INCUMBENCY_PAY_FIELDS = ("positionPayRate", "positionGradePay", "positionCurrentPay", "positionSchedulePay")
+#: The one exception, per record: a schedule block priced from the Code's
+#: CLASS title ("Members, ...") is every member's level and stays with
+#: `holders` (mirrors pay_tables.CLASS_TITLE_PAY_FIELD; the reviewed mirror
+#: above says which rows may carry the mark).
+CLASS_TITLE_PAY_FIELD = "positionSchedulePay"
 #: A judicial name that bundles senior judges into its count. 28 U.S.C.
 #: 371(b)(2) sets an uncertified senior judge's salary by reference to a past
 #: year -- the salary last drawn in active service or when last certified,
@@ -2149,7 +2304,9 @@ def holders_violations(node, pay, field, label):
             # be checked, so nothing on it may carry a figure.
             say("stands for several posts ({!r}) in a form this gate cannot read, and carries {}".format(represents, field))
             return out
-        if field in INCUMBENCY_PAY_FIELDS:
+        if field in INCUMBENCY_PAY_FIELDS and not (
+            field == CLASS_TITLE_PAY_FIELD and isinstance(pay, dict) and pay.get("classTitle") is True
+        ):
             say("carries {} but stands for several posts; that figure is one listing's".format(field))
             return out
         if not isinstance(holders, dict):

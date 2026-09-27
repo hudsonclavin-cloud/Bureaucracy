@@ -81,7 +81,7 @@ from html import unescape
 from pathlib import Path
 from typing import Any
 
-from data_pipeline.exporter.build_graph import canonical_name_key, is_post_node
+from data_pipeline.exporter.build_graph import STATED_MULTIPLICITY, canonical_name_key, is_post_node
 
 FIXTURE_DIR = Path(__file__).resolve().parents[2] / "tests" / "fixtures" / "uscode"
 DEFAULT_EVIDENCE_PATH = (
@@ -403,12 +403,24 @@ METHOD_REVIEWED = "level_assigned_by_5_usc_5312_5316_to_the_office_a_second_stat
 #: every run -- the title must be one the committed sections print, the basis
 #: quote must be in the basis section's OPERATIVE text, and the node must
 #: still carry the name the row was written against -- and the gate mirrors
-#: every row by node id. "Governor (×4 members)" is deliberately absent: the
-#: same "Members" title reaches it, but it stands for several posts and
-#: `positionSchedulePay` is not a field the multi-post sweep keeps
-#: (`pay_tables.INCUMBENCY_PAY_FIELDS`), so a row there would be stripped on
-#: every build; pricing a bench from a class title is a separate decision.
-REVIEWED_TITLE_ROWS: dict[str, dict[str, str]] = {
+#: every row by node id.
+#:
+#: A row marked `classTitle: True` prices a BENCH from the Code's class title
+#: (since 2026-09-27, on the owner's decision): "Members, Federal
+#: Communications Commission" is the office every one of the four
+#: commissioners holds, and 5 U.S.C. 5315 sets that office's level, so the
+#: figure is each holder's by the statute's own words rather than one
+#: appointment's -- the reading `derived_pay.BENCH_NODES` already applies to
+#: "Each judge shall receive salary at the same rate". Such a row is refused
+#: unless the statutory title IS a class title (`is_class_title`: the Code's
+#: "Members, ..." form) and the node's own name states a multiplicity; a row
+#: without the mark is refused on a node that states one. The record carries
+#: `classTitle: True`, which is the one thing that lets
+#: `pay_tables.withdraw_pay_from_multi_post_nodes` keep a `positionSchedulePay`
+#: block on a multi-post node -- with a `holders` block -- where every other
+#: schedule record (a singular title the Code names once) is stripped as an
+#: incumbency-shaped claim. The gate mirrors the mark by node id.
+REVIEWED_TITLE_ROWS: dict[str, dict[str, Any]] = {
     "exec-regulatory-fed-chair-board-of-governors": {
         "nodeName": "Chair, Board of Governors",
         "statutoryTitle": "Chairman, Board of Governors of the Federal Reserve System",
@@ -522,7 +534,211 @@ REVIEWED_TITLE_ROWS: dict[str, dict[str, str]] = {
             "the same office: 6 U.S.C. 113 provides for a Deputy Secretary of Homeland Security as the Secretary's first assistant, and 5 U.S.C. 5313 places that Deputy Secretary at Level II; the graph keeps OPM's archive spelling 'Deputy Secretary of the Department of Homeland Security' (CURATION.md §8), which whole-name equality cannot reach"
         ),
     },
+    "exec-regulatory-fcc-commissioner-4": {
+        "nodeName": "Commissioner (×4)",
+        "statutoryTitle": "Members, Federal Communications Commission",
+        "basisCitation": "47 U.S.C. 154",
+        "basisFixture": "fcc_47_usc_154.html",
+        "basisQuote": (
+            "shall be composed of five commissioners appointed by the President, by and with the advice and consent of the Senate, one of whom the President shall designate as chairman"
+        ),
+        "basis": (
+            "a bench priced from its class title: 47 U.S.C. 154 composes the Commission of five commissioners, one of whom is designated chairman, so each of the other four is a member of the Commission, and 5 U.S.C. 5315 places 'Members, Federal Communications Commission' at Level IV; the level is the office's and holds for each of the four alike"
+        ),
+        "classTitle": True,
+    },
+    "exec-regulatory-ftc-commissioner-4": {
+        "nodeName": "Commissioner (×4)",
+        "statutoryTitle": "Members, Federal Trade Commission",
+        "basisCitation": "15 U.S.C. 41",
+        "basisFixture": "ftc_15_usc_41.html",
+        "basisQuote": (
+            "which shall be composed of five Commissioners, who shall be appointed by the President, by and with the advice and consent of the Senate"
+        ),
+        "basis": (
+            "a bench priced from its class title: 15 U.S.C. 41 composes the Commission of five Commissioners and has the President choose a chairman from among them, so each of the other four is a member of the Commission, and 5 U.S.C. 5315 places 'Members, Federal Trade Commission' at Level IV; the level is the office's and holds for each of the four alike"
+        ),
+        "classTitle": True,
+    },
+    "exec-regulatory-fed-governor-4-members": {
+        "nodeName": "Governor (×4 members)",
+        "statutoryTitle": "Members, Board of Governors of the Federal Reserve System",
+        "basisCitation": "12 U.S.C. 241",
+        "basisFixture": "fed_12_usc_241.html",
+        "basisQuote": (
+            "shall be composed of seven members, to be appointed by the President, by and with the advice and consent of the Senate"
+        ),
+        "basis": (
+            "a bench priced from its class title: 12 U.S.C. 241 composes the Board of seven members, of whom 12 U.S.C. 242 designates a Chairman and two Vice Chairmen, so a Governor is one of the four members holding no designated office, and 5 U.S.C. 5313 places 'Members, Board of Governors of the Federal Reserve System' at Level II; the level is the office's and holds for each alike (the '$15,000 per annum' 12 U.S.C. 241 itself prints is the 1935 figure the Executive Schedule superseded, and nothing here publishes it)"
+        ),
+        "classTitle": True,
+    },
+    "exec-regulatory-cftc-commissioner-4": {
+        "nodeName": "Commissioner (×4)",
+        "statutoryTitle": "Members, Commodity Futures Trading Commission",
+        "basisCitation": "7 U.S.C. 2",
+        "basisFixture": "cftc_7_usc_2.html",
+        "basisQuote": (
+            "The Commission shall be composed of five Commissioners who shall be appointed by the President, by and with the advice and consent of the Senate."
+        ),
+        "basis": (
+            "a bench priced from its class title: 7 U.S.C. 2 composes the Commission of five Commissioners and has the President appoint one of them as Chairman, so each of the other four is a member of the Commission, and 5 U.S.C. 5315 places 'Members, Commodity Futures Trading Commission' at Level IV; the level is the office's and holds for each of the four alike"
+        ),
+        "classTitle": True,
+    },
+    "exec-regulatory-ferc-commissioner-4": {
+        "nodeName": "Commissioner (×4)",
+        "statutoryTitle": "Members, Federal Energy Regulatory Commission",
+        "basisCitation": "42 U.S.C. 7171",
+        "basisFixture": "ferc_42_usc_7171.html",
+        "basisQuote": (
+            "The Commission shall be composed of five members appointed by the President, by and with the advice and consent of the Senate."
+        ),
+        "basis": (
+            "a bench priced from its class title: 42 U.S.C. 7171 composes the Commission of five members and has the President designate one as Chairman, so each of the other four is a member of the Commission, and 5 U.S.C. 5315 places 'Members, Federal Energy Regulatory Commission' at Level IV; the level is the office's and holds for each of the four alike"
+        ),
+        "classTitle": True,
+    },
+    "exec-regulatory-cftc-chair-cftc": {
+        "nodeName": "Chair, CFTC",
+        "statutoryTitle": "Chairman, Commodity Futures Trading Commission",
+        "basisCitation": "7 U.S.C. 2",
+        "basisFixture": "cftc_7_usc_2.html",
+        "basisQuote": (
+            "The President shall appoint, by and with the advice and consent of the Senate, a member of the Commission as Chairman, who shall serve as Chairman at the pleasure of the President."
+        ),
+        "basis": (
+            "the same office: 7 U.S.C. 2 has the President appoint a member of the Commission as Chairman, and 5 U.S.C. 5314 places that Chairman at Level III; the graph spells the title without gender and names the Commission by its acronym"
+        ),
+    },
+    "exec-regulatory-ferc-chair-ferc": {
+        "nodeName": "Chair, FERC",
+        "statutoryTitle": "Chairman, Federal Energy Regulatory Commission",
+        "basisCitation": "42 U.S.C. 7171",
+        "basisFixture": "ferc_42_usc_7171.html",
+        "basisQuote": (
+            "One of the members shall be designated by the President as Chairman."
+        ),
+        "basis": (
+            "the same office: 42 U.S.C. 7171 has the President designate one member of the Commission as Chairman, and 5 U.S.C. 5314 places that Chairman at Level III; the graph spells the title without gender and names the Commission by its acronym"
+        ),
+    },
+    "exec-ind-opm-director-opm": {
+        "nodeName": "Director, OPM",
+        "statutoryTitle": "Director of the Office of Personnel Management",
+        "basisCitation": "5 U.S.C. 1102",
+        "basisFixture": "opm_5_usc_1102.html",
+        "basisQuote": (
+            "There is at the head of the Office of Personnel Management a Director of the Office of Personnel Management appointed by the President, by and with the advice and consent of the Senate."
+        ),
+        "basis": (
+            "the same office: 5 U.S.C. 1102 puts a Director of the Office of Personnel Management at the head of the Office, and 5 U.S.C. 5313 places that Director at Level II; the graph names the Office by its acronym"
+        ),
+    },
+    "exec-ind-ssa-commissioner-ssa": {
+        "nodeName": "Commissioner, SSA",
+        "statutoryTitle": "Commissioner of Social Security, Social Security Administration",
+        "basisCitation": "42 U.S.C. 902",
+        "basisFixture": "ssa_42_usc_902.html",
+        "basisQuote": (
+            "There shall be in the Administration a Commissioner of Social Security"
+        ),
+        "basis": (
+            "the same office: 42 U.S.C. 902 creates in the Social Security Administration a Commissioner of Social Security, and 5 U.S.C. 5312 places that Commissioner at Level I; the graph names the Administration by its acronym"
+        ),
+    },
+    "exec-ind-ssa-deputy-commissioner-ssa": {
+        "nodeName": "Deputy Commissioner, SSA",
+        "statutoryTitle": "Deputy Commissioner of Social Security, Social Security Administration",
+        "basisCitation": "42 U.S.C. 902",
+        "basisFixture": "ssa_42_usc_902.html",
+        "basisQuote": (
+            "The Deputy Commissioner shall be compensated at the rate provided for level II of the Executive Schedule."
+        ),
+        "basis": (
+            "the same office: 42 U.S.C. 902 creates in the Social Security Administration a Deputy Commissioner of Social Security and itself compensates that office at level II of the Executive Schedule, the level 5 U.S.C. 5313 prints for it; the graph names the Administration by its acronym"
+        ),
+    },
+    "exec-dept-dhs-fema-administrator-fema": {
+        "nodeName": "Administrator, FEMA",
+        "statutoryTitle": "Administrator of the Federal Emergency Management Agency",
+        "basisCitation": "6 U.S.C. 313",
+        "basisFixture": "fema_6_usc_313.html",
+        "basisQuote": (
+            "There is in the Department the Federal Emergency Management Agency, headed by an Administrator."
+        ),
+        "basis": (
+            "the same office: 6 U.S.C. 313 places the Federal Emergency Management Agency in the Department of Homeland Security headed by an Administrator, and 5 U.S.C. 5313 places that Administrator at Level II; the graph names the Agency by its acronym"
+        ),
+    },
+    "exec-dept-doi-blm-director-blm": {
+        "nodeName": "Director, BLM",
+        "statutoryTitle": "Director, Bureau of Land Management, Department of the Interior",
+        "basisCitation": "43 U.S.C. 1731",
+        "basisFixture": "blm_43_usc_1731.html",
+        "basisQuote": (
+            "The Bureau of Land Management established by Reorganization Plan Numbered 3, of 1946 shall have as its head a Director."
+        ),
+        "basis": (
+            "the same office: 43 U.S.C. 1731 gives the Bureau of Land Management a Director as its head, and 5 U.S.C. 5316 places that Director at Level V; the graph names the Bureau by its acronym"
+        ),
+    },
+    "exec-ind-cia-director-of-the-cia-dcia": {
+        "nodeName": "Director of the CIA (DCIA)",
+        "statutoryTitle": "Director of the Central Intelligence Agency",
+        "basisCitation": "50 U.S.C. 3036",
+        "basisFixture": "cia_50_usc_3036.html",
+        "basisQuote": (
+            "There is a Director of the Central Intelligence Agency who shall be appointed by the President, by and with the advice and consent of the Senate."
+        ),
+        "basis": (
+            "the same office: 50 U.S.C. 3036 creates the Director of the Central Intelligence Agency as head of the Agency, and 5 U.S.C. 5313 places that Director at Level II; the graph names the Agency by its acronym"
+        ),
+    },
+    "exec-ind-cia-deputy-director-of-the-cia-ddcia": {
+        "nodeName": "Deputy Director of the CIA (DDCIA)",
+        "statutoryTitle": "Deputy Director of the Central Intelligence Agency",
+        "basisCitation": "50 U.S.C. 3037",
+        "basisFixture": "cia_50_usc_3037.html",
+        "basisQuote": (
+            "There is a Deputy Director of the Central Intelligence Agency who shall be appointed by the President"
+        ),
+        "basis": (
+            "the same office: 50 U.S.C. 3037 creates the Deputy Director of the Central Intelligence Agency, and 5 U.S.C. 5314 places that Deputy Director at Level III; the graph names the Agency by its acronym"
+        ),
+    },
+    "exec-dept-hhs-cms-administrator-cms": {
+        "nodeName": "Administrator, CMS",
+        "statutoryTitle": "Administrator of the Centers for Medicare & Medicaid Services",
+        "basisCitation": "42 U.S.C. 1317",
+        "basisFixture": "cms_42_usc_1317.html",
+        "basisQuote": (
+            "The Administrator of the Centers for Medicare & Medicaid Services shall be appointed by the President by and with the advice and consent of the Senate."
+        ),
+        "basis": (
+            "the same office: 42 U.S.C. 1317 provides for the appointment of the Administrator of the Centers for Medicare & Medicaid Services, and 5 U.S.C. 5314 places that Administrator at Level III; the graph names the Centers by their acronym"
+        ),
+    },
 }
+
+
+#: The Code's class-title form: one entry placing every member of a body at
+#: one level ("Members, Federal Trade Commission"). The only shape a
+#: `classTitle` row may cite; "Independent Members, ..." and every singular
+#: title are refused, because a singular title names one office and the
+#: graph's "(×N)" node stands for N.
+CLASS_TITLE_PREFIX = "Members, "
+
+
+def is_class_title(title: str) -> bool:
+    """Whether a statutory title places a whole class of members at one level."""
+    return str(title or "").startswith(CLASS_TITLE_PREFIX)
+
+
+def states_a_multiplicity(name: str) -> bool:
+    """Whether a node's own name says it stands for several posts -- the same
+    "(×N)" the exporter's `annotate_stated_counts` reads."""
+    return STATED_MULTIPLICITY.search(str(name or "")) is not None
 
 
 def _operative_text(raw_html: str) -> str:
@@ -590,6 +806,21 @@ def match_reviewed_rows(
         if position is None or position["title"] != row["statutoryTitle"]:
             refusals.setdefault("reviewed_row_title_not_printed_by_the_code", []).append(node_id)
             continue
+        class_row = row.get("classTitle") is True
+        if class_row and not is_class_title(row["statutoryTitle"]):
+            # A bench may be priced only from a title that places every
+            # member of the body at one level; a singular title names one
+            # office, and N holders are not that office.
+            refusals.setdefault("reviewed_row_class_title_is_not_a_class_title", []).append(node_id)
+            continue
+        if class_row and not states_a_multiplicity(node.get("name")):
+            refusals.setdefault("reviewed_row_class_title_on_a_single_post", []).append(node_id)
+            continue
+        if not class_row and states_a_multiplicity(node.get("name")):
+            # The sweep would strip it on every build; a row that can never
+            # publish is a row nobody reviewed for what it would claim.
+            refusals.setdefault("reviewed_row_names_a_bench_without_a_class_title", []).append(node_id)
+            continue
         try:
             basis = basis_cache.get(row["basisFixture"]) or load_basis_section(row["basisFixture"], directory)
         except Unreadable:
@@ -601,6 +832,8 @@ def match_reviewed_rows(
             continue
         entry = dict(position)
         entry["method"] = METHOD_REVIEWED
+        if class_row:
+            entry["classTitle"] = True
         entry["identification"] = {
             "nodeName": row["nodeName"],
             "basis": row["basis"],
@@ -693,6 +926,9 @@ def build_records(
                 # Present only on a reviewed row: the second statute that
                 # makes this node the office the title names, quoted.
                 "identification": position.get("identification"),
+                # Present only on a class-title row: the level is every
+                # member's, so the multi-post sweep keeps the block.
+                **({"classTitle": True} if position.get("classTitle") is True else {}),
             },
             "table": table["table"],
             "effectiveText": table["effectiveText"],
@@ -772,14 +1008,16 @@ def apply_schedule_pay(
         if not is_post_node(node):
             stats["not_a_position"] += 1
             continue
-        if node.get("representsPosts"):
+        claim = record.get("levelClaim") or {}
+        if node.get("representsPosts") and claim.get("classTitle") is not True:
             # One rate on a node standing for several posts reads as what a
             # single holder is paid, against a panel that says the figure is
             # the group's. pay_tables.withdraw_pay_from_multi_post_nodes sweeps
             # this field too, after the counts exist; this is the earlier guard.
+            # A class-title row is the exception: the Code sets the level for
+            # every member of the body, and the sweep stamps `holders`.
             stats["stands_for_many_posts"] += 1
             continue
-        claim = record.get("levelClaim") or {}
         scoped_office = claim.get("scopedOffice")
         if scoped_office:
             # A scoped record rests on two things -- the node's own name and
@@ -828,6 +1066,9 @@ def apply_schedule_pay(
             "url": record.get("sourceUrl"),
             "checkedAt": record.get("retrievedAt"),
         }
+        if claim.get("classTitle") is True:
+            node["positionSchedulePay"]["classTitle"] = True
+            stats["priced_class_title"] = stats.get("priced_class_title", 0) + 1
         stats["priced"] += 1
         if scoped_office:
             stats["priced_scoped"] += 1

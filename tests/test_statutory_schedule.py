@@ -22,11 +22,14 @@ from __future__ import annotations
 
 import json
 import unittest
+import unittest.mock
 from datetime import date
 from pathlib import Path
 
 from data_pipeline.exporter.build_graph import canonical_name_key, index_tree
+from data_pipeline.exporter.build_graph import annotate_stated_counts
 from data_pipeline.verification import statutory_schedule as ss
+from data_pipeline.verification.pay_tables import holders_for
 from scripts.validate_published_graph import (
     EXECUTIVE_SCHEDULE_EFFECTIVE,
     EXECUTIVE_SCHEDULE_EFFECTIVE_TEXT,
@@ -418,8 +421,24 @@ class ItIsNotEvidenceThePostExistsTests(unittest.TestCase):
 
 
 def reviewed_node(node_id):
+    """The node a reviewed row was written against -- with the multiplicity
+    the exporter would stamp on it, read from the name by the exporter's own
+    `annotate_stated_counts`, because a class-title row prices a bench."""
     node_name = US_CODE_REVIEWED_IDENTIFICATIONS[node_id][0]
-    return {"id": node_id, "name": node_name, "type": "Position"}
+    node = {"id": node_id, "name": node_name, "type": "Position"}
+    probe = {"id": "root", "name": "Root", "type": "Foundation", "children": [dict(node)]}
+    annotate_stated_counts(probe)
+    if probe["children"][0].get("representsPosts"):
+        node["representsPosts"] = probe["children"][0]["representsPosts"]
+    return node
+
+
+def class_rows():
+    return sorted(node_id for node_id, row in US_CODE_REVIEWED_IDENTIFICATIONS.items() if row[8])
+
+
+def single_rows():
+    return sorted(node_id for node_id, row in US_CODE_REVIEWED_IDENTIFICATIONS.items() if not row[8])
 
 
 fed_node = reviewed_node  # the first three rows were the Federal Reserve's
@@ -434,7 +453,7 @@ def basis_url_for(citation):
 
 
 def good_reviewed_pay(node_id):
-    node_name, title, level, section, citation, fixture, quote, basis = US_CODE_REVIEWED_IDENTIFICATIONS[node_id]
+    node_name, title, level, section, citation, fixture, quote, basis, class_title = US_CODE_REVIEWED_IDENTIFICATIONS[node_id]
     row = ss.REVIEWED_TITLE_ROWS[node_id]
     pay = {
         "scopedOffice": None, "scopedOrganisation": None, "scopedOrganisationId": None,
@@ -465,6 +484,10 @@ def good_reviewed_pay(node_id):
         "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
         "checkedAt": "2026-09-11T00:00:00Z",
     }
+    if class_title:
+        # What the derive step stamps and what the sweep adds on the bench.
+        pay["classTitle"] = True
+        pay["holders"] = holders_for(reviewed_node(node_id)["representsPosts"])
     return pay
 
 
@@ -483,8 +506,16 @@ class ReviewedMirrorTests(unittest.TestCase):
         self.assertEqual(set(US_CODE_REVIEWED_IDENTIFICATIONS), set(ss.REVIEWED_TITLE_ROWS))
         for node_id, row in ss.REVIEWED_TITLE_ROWS.items():
             with self.subTest(node=node_id):
-                node_name, title, level, section, citation, fixture, quote, basis = US_CODE_REVIEWED_IDENTIFICATIONS[node_id]
+                node_name, title, level, section, citation, fixture, quote, basis, class_title = US_CODE_REVIEWED_IDENTIFICATIONS[node_id]
                 self.assertEqual(row["nodeName"], node_name)
+                self.assertEqual(row.get("classTitle") is True, class_title)
+                # A class-title row cites the Code's "Members, ..." form and
+                # nothing else, and prices a node whose own name states a
+                # bench; a single post may be identified as a member too (the
+                # Vice Chairs), which is why the first check is one-way.
+                if class_title:
+                    self.assertTrue(ss.is_class_title(title))
+                self.assertEqual(ss.states_a_multiplicity(node_name), class_title)
                 self.assertEqual(row["basis"], basis)
                 self.assertEqual(row["statutoryTitle"], title)
                 self.assertEqual(row["basisCitation"], citation)
@@ -508,7 +539,7 @@ class ReviewedMirrorTests(unittest.TestCase):
                 self.assertNotEqual(canonical_name_key(node_name), canonical_name_key(title))
 
     def test_every_basis_quote_is_in_the_committed_sections_operative_text_by_both_readers(self) -> None:
-        for node_id, (*_head, citation, fixture, quote, _basis) in sorted(US_CODE_REVIEWED_IDENTIFICATIONS.items()):
+        for node_id, (*_head, citation, fixture, quote, _basis, _class) in sorted(US_CODE_REVIEWED_IDENTIFICATIONS.items()):
             with self.subTest(node=node_id):
                 path = US_CODE_BASIS_FIXTURE_DIR / fixture
                 self.assertTrue(path.exists(), f"{fixture} is not committed")
@@ -546,17 +577,33 @@ class ReviewedMirrorTests(unittest.TestCase):
         self.assertNotIn("203,500", text)
 
     @unittest.skipUnless(GRAPH.exists(), "no published graph")
-    def test_the_governor_bench_is_deliberately_not_priced(self) -> None:
-        """'Members, Board of Governors' reaches 'Governor (×4 members)' as
-        surely as it reaches the Vice Chairs, and it is left alone:
-        positionSchedulePay is an incumbency-class field the multi-post sweep
-        strips, so a row there would be written and withdrawn on every build."""
+    def test_the_benches_are_priced_from_their_class_title_for_each_holder(self) -> None:
+        """Until 2026-09-27 'Governor (×4 members)' was deliberately left
+        unpriced, because positionSchedulePay is incumbency-class and the
+        sweep stripped it. The owner's decision: 'Members, Board of Governors'
+        is the office every Governor holds, so the bench is priced from the
+        class title and the block says it holds for each holder."""
         node_map, _ = index_tree(json.loads(GRAPH.read_text(encoding="utf-8")))
-        governor = node_map.get("exec-regulatory-fed-governor-4-members")
-        self.assertIsNotNone(governor)
-        self.assertTrue(governor.get("representsPosts"))
-        self.assertNotIn("exec-regulatory-fed-governor-4-members", US_CODE_REVIEWED_IDENTIFICATIONS)
-        self.assertIsNone(governor.get("positionSchedulePay"))
+        self.assertIn("exec-regulatory-fed-governor-4-members", class_rows())
+        for node_id in class_rows():
+            with self.subTest(node=node_id):
+                node = node_map[node_id]
+                self.assertTrue(node.get("representsPosts"))
+                pay = node.get("positionSchedulePay")
+                self.assertIsInstance(pay, dict)
+                self.assertIs(pay.get("classTitle"), True)
+                self.assertTrue(pay["statutoryTitle"].startswith("Members, "))
+                holders = pay.get("holders")
+                self.assertIsInstance(holders, dict)
+                self.assertIs(holders.get("appliesToEachHolder"), True)
+                self.assertEqual(holders.get("text"), node["representsPosts"].get("text"))
+                self.assertEqual(pay["verification"]["documents"], 3)
+        for node_id in single_rows():
+            with self.subTest(node=node_id):
+                pay = node_map[node_id].get("positionSchedulePay")
+                self.assertIsInstance(pay, dict)
+                self.assertNotIn("classTitle", pay)
+                self.assertNotIn("holders", pay)
 
     @unittest.skipUnless(GRAPH.exists(), "no published graph")
     def test_every_reviewed_post_is_published_under_the_reviewed_method(self) -> None:
@@ -617,6 +664,39 @@ class ReviewedMatchTests(unittest.TestCase):
         del self.node_map["exec-regulatory-fed-vice-chair-for-supervision"]
         result = ss.match_reviewed_rows(self.node_map, self.schedule)
         self.assertEqual(result["refusals"]["reviewed_row_names_no_node"], ["exec-regulatory-fed-vice-chair-for-supervision"])
+
+    def test_a_class_title_row_needs_a_bench_and_a_bench_needs_a_class_title(self) -> None:
+        """The two refusals that keep a class title where it belongs: a
+        row marked classTitle on a node whose name states one post, and a
+        plain row on a node whose name states several."""
+        bench = "exec-regulatory-fcc-commissioner-4"
+        single = "exec-regulatory-fcc-chair-fcc"
+        self.node_map[bench]["name"] = "Commissioner"  # the (×4) dropped
+        self.node_map[single]["name"] = "Chair, FCC (×2)"
+        result = ss.match_reviewed_rows(self.node_map, self.schedule)
+        self.assertEqual(result["refusals"]["reviewed_row_class_title_on_a_single_post"], [bench])
+        self.assertEqual(result["refusals"]["reviewed_row_names_a_bench_without_a_class_title"], [single])
+        self.assertNotIn(bench, result["matched"])
+        self.assertNotIn(single, result["matched"])
+        # The bench rows that were left alone carry the mark into the entry.
+        for node_id in class_rows():
+            if node_id != bench:
+                self.assertIs(result["matched"][node_id].get("classTitle"), True)
+        for node_id in single_rows():
+            if node_id != single:
+                self.assertNotIn("classTitle", result["matched"][node_id])
+
+    def test_a_class_title_row_on_a_singular_statutory_title_is_refused(self) -> None:
+        """Even with the (×4) in the name, a row may not call a singular
+        title a class: the Code names one office and the node stands for N."""
+        rows = ss.REVIEWED_TITLE_ROWS
+        doctored = dict(rows)
+        doctored["exec-regulatory-fcc-commissioner-4"] = dict(
+            rows["exec-regulatory-fcc-commissioner-4"], statutoryTitle="Chairman, Federal Communications Commission")
+        with unittest.mock.patch.object(ss, "REVIEWED_TITLE_ROWS", doctored):
+            result = ss.match_reviewed_rows(self.node_map, self.schedule)
+        self.assertEqual(result["refusals"]["reviewed_row_class_title_is_not_a_class_title"],
+                         ["exec-regulatory-fcc-commissioner-4"])
 
     def test_a_node_another_route_already_priced_is_refused(self) -> None:
         result = ss.match_reviewed_rows(self.node_map, self.schedule,
@@ -737,10 +817,35 @@ class ReviewedGateTests(unittest.TestCase):
                                                                  "amountScope": "Level I", "quote": "Level I  ${:,.0f}".format(EXECUTIVE_SCHEDULE_RATES["I"])}),
             "an exact scope": (None, {**good, "scopeMatch": "exact"}),
             "a verified grade": (None, {**good, "financialEvidenceStatus": "verified"}),
+            "a class-title mark on a row that prices one office": (None, {**good, "classTitle": True}),
         }
         for name, (node, pay) in cases.items():
             with self.subTest(case=name):
                 self.assertNotEqual(schedule_pay_violations(node or self.node, pay, REVIEWED_TODAY, label), [], name)
+
+    def test_each_way_a_class_title_bench_can_be_faked_is_refused(self) -> None:
+        bench_id = "exec-regulatory-fcc-commissioner-4"
+        bench = reviewed_node(bench_id)
+        good = good_reviewed_pay(bench_id)
+        self.assertEqual(schedule_pay_violations(bench, good, REVIEWED_TODAY, label), [])
+        single = {k: v for k, v in bench.items() if k != "representsPosts"}
+        single["name"] = "Commissioner"
+        cases = {
+            # The mark is what keeps the block on the bench; without it the
+            # block is one appointment's level standing for four.
+            "the bench without the class-title mark": (bench, {k: v for k, v in good.items() if k != "classTitle"}),
+            "the bench without a holders block": (bench, {k: v for k, v in good.items() if k != "holders"}),
+            "holders stating a count the name does not": (bench, {**good, "holders": {**good["holders"], "count": 5}}),
+            "the class title on a node that stands for one post": (single, good),
+            # Swapped onto the Chair: same Commission, Level IV against the
+            # Chair's Level III row, and the name check catches it too.
+            "the bench block on the Chair": (reviewed_node("exec-regulatory-fcc-chair-fcc"), good),
+            "the class title relabelled as the Chairman's title": (bench, {**good, "statutoryTitle": "Chairman, Federal Communications Commission"}),
+            "an ordinary-route record on the bench": (bench, {k: v for k, v in good.items() if k not in ("identification", "classTitle", "holders")} | {"method": ss.METHOD}),
+        }
+        for name, (node, pay) in cases.items():
+            with self.subTest(case=name):
+                self.assertNotEqual(schedule_pay_violations(node, pay, REVIEWED_TODAY, label), [], name)
 
     def test_a_reviewed_identification_on_an_ordinary_node_is_refused(self) -> None:
         node_id = GateTests.NODE_ID

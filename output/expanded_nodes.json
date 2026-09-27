@@ -66250,7 +66250,65 @@
     "verificationMethod": "name_labelled_on_its_organisations_official_page",
     "verificationMatchedIn": "content",
     "verificationSiteFrom": "exec-ind-cia",
-    "parentId": "exec-ind-cia"
+    "parentId": "exec-ind-cia",
+    "positionSchedulePay": {
+      "source": "us_code_executive_schedule",
+      "method": "level_assigned_by_5_usc_5312_5316_to_the_office_a_second_statute_identifies_this_post_as",
+      "identification": {
+        "nodeName": "Director of the CIA (DCIA)",
+        "basis": "the same office: 50 U.S.C. 3036 creates the Director of the Central Intelligence Agency as head of the Agency, and 5 U.S.C. 5313 places that Director at Level II; the graph names the Agency by its acronym",
+        "basisCitation": "50 U.S.C. 3036",
+        "basisQuote": "There is a Director of the Central Intelligence Agency who shall be appointed by the President, by and with the advice and consent of the Senate.",
+        "basisUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title50-section3036&num=0&edition=prelim",
+        "basisSha256": "069c212382c859c8f210b15c6f8a871467cdaddc066c636b441a069aaa9a17f0",
+        "basisCheckedAt": "2026-09-27T21:56:46Z"
+      },
+      "payLevel": "II",
+      "citation": "5 U.S.C. §5313",
+      "statutoryTitle": "Director of the Central Intelligence Agency",
+      "scopedOffice": null,
+      "scopedOrganisation": null,
+      "scopedOrganisationId": null,
+      "statuteUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5313&num=0&edition=prelim",
+      "statuteCheckedAt": "2026-09-18T20:34:08Z",
+      "amount": 228000.0,
+      "rateText": "$228,000",
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level II",
+      "quote": "Level II $228,000",
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-11T03:05:36Z",
+      "verification": {
+        "documents": 3,
+        "documentsStatingTheFigure": 1,
+        "percent": 90,
+        "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+        "caution": "One document states the rate and another is the statute that puts this post at that level; where a third is listed, it is the statute that says this post is the office the Code names, because the Code's title is not this node's name. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+        "documentRoles": [
+          {
+            "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+            "role": "states what that Executive Schedule level pays"
+          },
+          {
+            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5313&num=0&edition=prelim",
+            "role": "places this post at that level"
+          },
+          {
+            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title50-section3036&num=0&edition=prelim",
+            "role": "identifies this post as the office the Code places at that level"
+          }
+        ]
+      }
+    }
   },
   {
     "id": "exec-ind-cia-general-counsel",

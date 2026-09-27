@@ -2791,3 +2791,94 @@ of titles, have yielded nine reviewed rows and one walled document; prompts 11
 onward are worth running only if the owner still wants Executive Schedule
 coverage at that rate.
 
+### 19.8 The benches, priced from the Code's class title; the fifth batch triaged (2026-09-27)
+
+**The decision.** The owner: "price the ×4 benches from the class title."
+Five nodes stand for a bench the Code places as a class — "Members, Federal
+Communications Commission" and its FTC, CFTC and FERC counterparts at Level
+IV, "Members, Board of Governors of the Federal Reserve System" at Level II —
+and each is now priced for every holder from that title, on a reviewed row
+marked `classTitle` whose basis is the statute composing the body (47 U.S.C.
+154, 15 U.S.C. 41, 7 U.S.C. 2, 42 U.S.C. 7171, 12 U.S.C. 241). The mechanism
+and its guards are in `CLAUDE.md` ("Benches priced from the Code's class
+title"); the one point to record here is the trap in 12 U.S.C. 241, whose
+operative text still prints "shall each receive basic compensation at the
+rate of $15,000 per annum" — the 1935 figure. Nothing publishes it; the row's
+basis names it so nobody re-finds it later and thinks the module missed a
+printed rate.
+
+**Nine more single-post rows** from the fifth batch survived the same check
+as §19.7's: the Code prints the title, a second statute identifies the office,
+its section is committed and its quoted sentence is in the operative text by
+both readers. Chair, CFTC (III; 7 U.S.C. 2); Chair, FERC (III; 42 U.S.C.
+7171); Director, OPM (II; 5 U.S.C. 1102); Commissioner, SSA (I) and Deputy
+Commissioner, SSA (II; 42 U.S.C. 902 — subsection (b)(3) itself says "level
+II of the Executive Schedule", agreeing with §5313); Administrator, FEMA (II;
+6 U.S.C. 313); Director, BLM (V; 43 U.S.C. 1731); Director of the CIA (II;
+50 U.S.C. 3036) and Deputy Director of the CIA (III; 50 U.S.C. 3037);
+Administrator, CMS (III; 42 U.S.C. 1317). Reviewed rows 9 → 24; positions
+priced from the Schedule 108 → 123; pay claims 498 → 513; unpriced 4,093 →
+4,078.
+
+**What the batch got wrong, checked against the committed table.** Its
+OPM "pay-freeze memo" figures — $203,500 (I), $183,100 (II), $168,400 (III),
+$158,500 (IV), $148,500 (V) — are not the 2026 rates: Salary Table
+2026-EX, committed and pinned, prints $253,100, $228,000, $209,600,
+$197,200 and $184,900. Whatever year that memo's figures belong to (it was
+not fetched), they were quoted as if current on every SSA, OPM, NOAA, NNSA
+and CMS row and on the Vice President's Senate node ($235,100 against
+Schedule 6's $292,300). None was used; the level identifications
+behind them were checked against the Code instead, and where the Code
+prints the title a row was written on the Code, not the memo.
+
+**Refused, with the reason:**
+
+- **Eleven Senate leadership roles at $174,000** (whips, conference chairs,
+  policy and steering chairs, campaign committee chairs): that is a
+  Senator's pay under Schedule 6, and senate.gov's footnote names only the
+  three roles `congressional_pay.py` already prices. Pricing a whip as a
+  Member is the committee-chair decision §19.6 holds, not a new fact.
+- **NOAA Administrator, NNSA Administrator**: the Code prints neither
+  "Under Secretary of Commerce for Oceans and Atmosphere" nor "Under
+  Secretary for Nuclear Security" in §§5312–5316 as committed; only "Principal
+  Deputy Administrator, National Nuclear Security Administration" (IV), for
+  which the graph has no node. NNSA's two Deputy Administrators are not
+  printed at all.
+- **Archivist of the United States**: printed at both §5314 and §5316, which
+  `load_schedule` drops as ambiguous rather than adjudicating.
+- **Deputy USTRs (×3, three named nodes)**: the Code prints "Deputy United
+  States Trade Representatives (3)" — a counted plural the matcher refuses.
+  Identifying three individually named nodes with one counted class is a
+  further shape (each node IS one of the three), not the bench shape landed
+  today; deferred rather than stretched.
+- **Comptroller General and Deputy Comptroller General**: 31 U.S.C. 703(f)
+  was fetched and committed. It sets their pay "equal to the rate for level
+  II [and III] of the Executive Schedule", but §§5312–5316 do not print the
+  titles, so no reviewed row can reach them. This is `derived_pay.py`'s
+  shape — the statute names the tier, OPM's table prices it, neither states
+  the figure — and a module, not a row.
+- **Inspectors General (80 nodes)**: 5 U.S.C. 403(e) was fetched and
+  committed: "the rate payable for level III of the Executive Schedule under
+  section 5314 of this title, plus 3 percent". A figure no document prints,
+  reached by arithmetic on a printed one — a step further than `derived_pay`
+  goes. Not built; the section is in hand for when it is decided. The
+  batch's "5 U.S.C. 403(e)" citation was right and it printed no figure,
+  which is the honest form.
+- **The military rows** (Commandant, Sergeant Major, the combatant
+  commanders): §19.7, walled at every DoD host.
+- **CRS Director** "at the SL/ST maximum $228,000": a range's ceiling is not
+  a rate, and the graph carries no listing putting the post on that plan.
+- **SCOTUS officers** (28 U.S.C. 671–675), **FSA COO** (20 U.S.C. 1018),
+  **NASA Center Directors** (an SES tier designation), **Deputy U.S.
+  Marshals** (a special-rate table): each names a pay system and prints no
+  figure for the post, or prints a range with no listing to tie it to. The
+  bankruptcy and magistrate judges' "92 percent of district judge salary"
+  (28 U.S.C. 153, 634) is a derived percentage — `derived_pay`'s shape once
+  more, on two multi-post benches — and is a candidate, not a row.
+
+**Next:** the yield check stands. Prompts 11 onward can wait; three module
+decisions now carry more than any prompt would: the GAO/IG tier-reference
+shape (statute names the level, table prices it — 82 posts), the counted-class
+shape (Deputy USTRs), and whether committee chairs and Senate whips are
+Members paid under Schedule 6.
+

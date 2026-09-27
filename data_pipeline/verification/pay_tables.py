@@ -567,6 +567,21 @@ OFFICE_RATE_PAY_FIELDS = ("positionStatutoryPay", "positionDerivedPay", "positio
 #: count the node's own name states.
 UNIFORM_ROSTER_PAY_FIELDS = ("positionReportedPay",)
 
+#: The one incumbency-class field with a per-record exception. A schedule
+#: record priced from the Code's CLASS title ("Members, Federal Trade
+#: Commission", `statutory_schedule.REVIEWED_TITLE_ROWS` rows marked
+#: `classTitle`) states the level every member of the body holds, which is the
+#: office's fact and not one appointment's, so such a block is kept on a
+#: multi-post node with `holders`, exactly as an office-rate field is. The
+#: block says so itself (`classTitle: True`), the derive step writes the mark
+#: only for a row the matcher accepted as a class title on a node whose name
+#: states a multiplicity, and the gate refuses the mark anywhere else.
+CLASS_TITLE_PAY_FIELD = "positionSchedulePay"
+
+
+def is_class_title_block(field: str, block: Any) -> bool:
+    return field == CLASS_TITLE_PAY_FIELD and isinstance(block, dict) and block.get("classTitle") is True
+
 
 def holders_for(represents: Mapping[str, Any]) -> dict[str, Any]:
     """The `holders` block an office-rate pay claim carries on a multi-post
@@ -605,7 +620,9 @@ def withdraw_pay_from_multi_post_nodes(root: dict[str, Any]) -> int:
     rule is per field now:
 
     - `INCUMBENCY_PAY_FIELDS` are stripped: one listing's level or row says
-      nothing about the other holders.
+      nothing about the other holders -- except a `positionSchedulePay` block
+      marked `classTitle`, priced from the Code's "Members, ..." title, which
+      is every member's level and stays with `holders` (since 2026-09-27).
     - `OFFICE_RATE_PAY_FIELDS` stay and gain `holders`, recomputed here from
       `representsPosts` on every build so a rename that changes the count
       changes the claim.
@@ -634,6 +651,11 @@ def withdraw_pay_from_multi_post_nodes(root: dict[str, Any]) -> int:
                     withdrawn += 1
         elif isinstance(represents, dict) and represents:
             for field in INCUMBENCY_PAY_FIELDS:
+                if is_class_title_block(field, node.get(field)):
+                    # The Code set this level for every member of the body;
+                    # kept, and said so, the way an office-rate field is.
+                    node[field]["holders"] = holders_for(represents)
+                    continue
                 if node.pop(field, None) is not None:
                     withdrawn += 1
             for field in OFFICE_RATE_PAY_FIELDS:
@@ -661,7 +683,7 @@ def withdraw_pay_from_multi_post_nodes(root: dict[str, Any]) -> int:
                     node.pop(field, None)
                     withdrawn += 1
         else:
-            for field in OFFICE_RATE_PAY_FIELDS:
+            for field in OFFICE_RATE_PAY_FIELDS + (CLASS_TITLE_PAY_FIELD,):
                 block = node.get(field)
                 if isinstance(block, dict) and "holders" in block:
                     block.pop("holders", None)
