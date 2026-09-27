@@ -212,6 +212,48 @@ US_CODE_REVIEWED_IDENTIFICATIONS = {
         "the Vice Chairman for Supervision is one of the two Vice Chairmen 12 U.S.C. 242 designates from "
         "among the members, and 5 U.S.C. 5313 places Members of the Board at Level II",
     ),
+    "exec-regulatory-fcc-chair-fcc": (
+        "Chair, FCC",
+        "Chairman, Federal Communications Commission", "III", "5314",
+        "47 U.S.C. 154", "fcc_47_usc_154.html",
+        "The Chairman of the Commission, during the period of his service as Chairman, shall receive an annual salary at the annual rate payable from time to time for level III of the Executive Schedule.",
+        "the same office: 47 U.S.C. 154 itself pays the Chairman of the Commission at level III of the Executive Schedule, the level 5 U.S.C. 5314 prints for 'Chairman, Federal Communications Commission'; the graph spells the title without gender and names the Commission by its acronym",
+    ),
+    "exec-regulatory-ftc-chair-ftc": (
+        "Chair, FTC",
+        "Chairman, Federal Trade Commission", "III", "5314",
+        "15 U.S.C. 41", "ftc_15_usc_41.html",
+        "The President shall choose a chairman from the Commission's membership.",
+        "the same office: 15 U.S.C. 41 has the President choose a chairman from the Commission's membership, and 5 U.S.C. 5314 places that Chairman at Level III; the graph spells the title without gender and names the Commission by its acronym",
+    ),
+    "exec-dept-treasury-irs-commissioner-irs": (
+        "Commissioner, IRS",
+        "Commissioner of Internal Revenue", "III", "5314",
+        "26 U.S.C. 7803", "irs_26_usc_7803.html",
+        "There shall be in the Department of the Treasury a Commissioner of Internal Revenue who shall be appointed by the President, by and with the advice and consent of the Senate.",
+        "the same office: 26 U.S.C. 7803 creates the Commissioner of Internal Revenue in the Department of the Treasury, and 5 U.S.C. 5314 places that Commissioner at Level III; the graph files the post under the Internal Revenue Service and names it by the Service's acronym",
+    ),
+    "exec-dept-dot-faa-administrator-faa": (
+        "Administrator, FAA",
+        "Administrator, Federal Aviation Administration", "II", "5313",
+        "49 U.S.C. 106", "faa_49_usc_106.html",
+        "The head of the Administration is the Administrator, who shall be appointed by the President, by and with the advice and consent of the Senate.",
+        "the same office: 49 U.S.C. 106 makes the Administrator the head of the Federal Aviation Administration, and 5 U.S.C. 5313 places that Administrator at Level II; the graph names the Administration by its acronym",
+    ),
+    "exec-dept-dhs-secretary-of-department-of-homeland-security-dhs": (
+        "Secretary of the Department of Homeland Security",
+        "Secretary of Homeland Security", "I", "5312",
+        "6 U.S.C. 112", "dhs_6_usc_112.html",
+        "There is a Secretary of Homeland Security, appointed by the President, by and with the advice and consent of the Senate.",
+        "the same office: 6 U.S.C. 112 creates the Secretary of Homeland Security, and 5 U.S.C. 5312 places that Secretary at Level I; the graph keeps OPM's archive spelling 'Secretary of the Department of Homeland Security' (CURATION.md §8), which whole-name equality cannot reach",
+    ),
+    "exec-dept-dhs-deputy-secretary-of-department-of-homeland-security-dhs": (
+        "Deputy Secretary of the Department of Homeland Security",
+        "Deputy Secretary of Homeland Security", "II", "5313",
+        "6 U.S.C. 113", "dhs_6_usc_113.html",
+        "A Deputy Secretary of Homeland Security, who shall be the Secretary's first assistant for purposes of subchapter III of chapter 33 of title 5 .",
+        "the same office: 6 U.S.C. 113 provides for a Deputy Secretary of Homeland Security as the Secretary's first assistant, and 5 U.S.C. 5313 places that Deputy Secretary at Level II; the graph keeps OPM's archive spelling 'Deputy Secretary of the Department of Homeland Security' (CURATION.md §8), which whole-name equality cannot reach",
+    ),
 }
 _US_CODE_OPERATIVE_CACHE = {}
 

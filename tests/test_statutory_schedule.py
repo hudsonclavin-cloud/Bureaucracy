@@ -22,6 +22,7 @@ from __future__ import annotations
 
 import json
 import unittest
+from datetime import date
 from pathlib import Path
 
 from data_pipeline.exporter.build_graph import canonical_name_key, index_tree
@@ -416,9 +417,20 @@ class ItIsNotEvidenceThePostExistsTests(unittest.TestCase):
 # The third route: a reviewed identification backed by a second statute
 
 
-def fed_node(node_id):
+def reviewed_node(node_id):
     node_name = US_CODE_REVIEWED_IDENTIFICATIONS[node_id][0]
     return {"id": node_id, "name": node_name, "type": "Position"}
+
+
+fed_node = reviewed_node  # the first three rows were the Federal Reserve's
+
+
+def basis_url_for(citation):
+    """The uscode.house.gov granule a citation names -- derived, so a row
+    citing 47 U.S.C. 154 is not tested against the Fed's section."""
+    title, section = citation.split(" U.S.C. ")
+    return ("https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title{}-section{}"
+            "&num=0&edition=prelim".format(title, section))
 
 
 def good_reviewed_pay(node_id):
@@ -432,7 +444,7 @@ def good_reviewed_pay(node_id):
             "basis": basis,
             "basisCitation": citation,
             "basisQuote": quote,
-            "basisUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title12-section242&num=0&edition=prelim",
+            "basisUrl": basis_url_for(citation),
             "basisSha256": fixture_digest(US_CODE_BASIS_FIXTURE_DIR / fixture),
             "basisCheckedAt": "2026-09-23T19:48:44Z",
         },
@@ -456,7 +468,10 @@ def good_reviewed_pay(node_id):
     return pay
 
 
-REVIEWED_TODAY = "2026-09-23"
+# The reviewed rows' basis sections were fetched on 2026-09-23 (the Fed's) and
+# 2026-09-27 (the six that followed); the gate's own clock is the real date,
+# and a record can never be older than the fetch it rests on.
+REVIEWED_TODAY = date.today().isoformat()
 
 
 class ReviewedMirrorTests(unittest.TestCase):
@@ -544,7 +559,7 @@ class ReviewedMirrorTests(unittest.TestCase):
         self.assertIsNone(governor.get("positionSchedulePay"))
 
     @unittest.skipUnless(GRAPH.exists(), "no published graph")
-    def test_the_three_fed_posts_are_published_under_the_reviewed_method(self) -> None:
+    def test_every_reviewed_post_is_published_under_the_reviewed_method(self) -> None:
         node_map, _ = index_tree(json.loads(GRAPH.read_text(encoding="utf-8")))
         for node_id, (node_name, title, level, *_rest) in sorted(US_CODE_REVIEWED_IDENTIFICATIONS.items()):
             with self.subTest(node=node_id):
@@ -570,7 +585,7 @@ class ReviewedMatchTests(unittest.TestCase):
         for node_id in ss.REVIEWED_TITLE_ROWS:
             self.node_map[node_id] = dict(fed_node(node_id), parentId="exec-regulatory-fed")
 
-    def test_the_three_rows_match_and_carry_the_identification(self) -> None:
+    def test_every_row_matches_and_carries_the_identification(self) -> None:
         result = ss.match_reviewed_rows(self.node_map, self.schedule)
         self.assertEqual(set(result["matched"]), set(ss.REVIEWED_TITLE_ROWS))
         self.assertEqual(result["refusals"], {})
@@ -583,7 +598,7 @@ class ReviewedMatchTests(unittest.TestCase):
                 self.assertEqual(ident["nodeName"], row["nodeName"])
                 self.assertEqual(ident["basisCitation"], row["basisCitation"])
                 self.assertEqual(ident["basisQuote"], row["basisQuote"])
-                self.assertIn("title12-section242", ident["basisUrl"])
+                self.assertEqual(ident["basisUrl"], basis_url_for(row["basisCitation"]))
                 self.assertEqual(ident["basisSha256"], fixture_digest(US_CODE_BASIS_FIXTURE_DIR / row["basisFixture"]))
                 self.assertTrue(ident["basisCheckedAt"])
 
@@ -608,7 +623,16 @@ class ReviewedMatchTests(unittest.TestCase):
                                         already_matched={"exec-regulatory-fed-chair-board-of-governors": {}})
         self.assertEqual(result["refusals"]["reviewed_row_node_already_matched"],
                          ["exec-regulatory-fed-chair-board-of-governors"])
-        self.assertEqual(len(result["matched"]), 2)
+        self.assertEqual(len(result["matched"]), len(ss.REVIEWED_TITLE_ROWS) - 1)
+
+    FED_ROWS = frozenset(n for n, r in ss.REVIEWED_TITLE_ROWS.items() if r["basisFixture"] == "fed_12_usc_242.html")
+
+    def _copy_basis_fixtures(self, tmp):
+        """Every basis section the rows name, verbatim, so a test that
+        doctors one fixture says something about that fixture alone."""
+        for row in ss.REVIEWED_TITLE_ROWS.values():
+            for name in (row["basisFixture"], row["basisFixture"] + ".meta.json"):
+                (tmp / name).write_bytes((US_CODE_BASIS_FIXTURE_DIR / name).read_bytes())
 
     def _doctored_directory(self, transform):
         import hashlib
@@ -616,10 +640,9 @@ class ReviewedMatchTests(unittest.TestCase):
         from pathlib import Path as _Path
 
         tmp = _Path(tempfile.mkdtemp())
-        for name in ("fed_12_usc_242.html", "fed_12_usc_242.html.meta.json"):
-            (tmp / name).write_bytes((US_CODE_BASIS_FIXTURE_DIR / name).read_bytes())
+        self._copy_basis_fixtures(tmp)
         # The five Executive Schedule sections are read from the real
-        # directory; only the basis section is doctored.
+        # directory; only the Fed's basis section is doctored.
         raw = (tmp / "fed_12_usc_242.html").read_text(encoding="utf-8")
         doctored = transform(raw)
         (tmp / "fed_12_usc_242.html").write_text(doctored, encoding="utf-8")
@@ -647,21 +670,23 @@ class ReviewedMatchTests(unittest.TestCase):
                          ["exec-regulatory-fed-chair-board-of-governors"])
         # The doctored page still carries the sentence beneath the cut.
         self.assertIn(quote, (directory / "fed_12_usc_242.html").read_text(encoding="utf-8"))
-        # The other two rows, whose sentences were not moved, still match.
-        self.assertEqual(len(result["matched"]), 2)
+        # Every other row, whose sentence was not moved, still matches.
+        self.assertEqual(set(result["matched"]), set(ss.REVIEWED_TITLE_ROWS) - {"exec-regulatory-fed-chair-board-of-governors"})
 
     def test_an_edited_basis_section_is_refused_rather_than_rehashed(self) -> None:
         import tempfile
         from pathlib import Path as _Path
 
         tmp = _Path(tempfile.mkdtemp())
-        for name in ("fed_12_usc_242.html", "fed_12_usc_242.html.meta.json"):
-            (tmp / name).write_bytes((US_CODE_BASIS_FIXTURE_DIR / name).read_bytes())
+        self._copy_basis_fixtures(tmp)
         with (tmp / "fed_12_usc_242.html").open("a", encoding="utf-8") as handle:
             handle.write("<!-- one byte more -->")
         result = ss.match_reviewed_rows(self.node_map, self.schedule, directory=tmp)
-        self.assertEqual(result["matched"], {})
-        self.assertEqual(set(result["refusals"]["reviewed_row_basis_unreadable"]), set(ss.REVIEWED_TITLE_ROWS))
+        # The three Fed rows fall with their section; the six resting on
+        # other sections are untouched by it.
+        self.assertEqual(set(result["refusals"]["reviewed_row_basis_unreadable"]), self.FED_ROWS)
+        self.assertEqual(set(result["matched"]), set(ss.REVIEWED_TITLE_ROWS) - self.FED_ROWS)
+        self.assertEqual(len(self.FED_ROWS), 3)
 
 
 class ReviewedGateTests(unittest.TestCase):

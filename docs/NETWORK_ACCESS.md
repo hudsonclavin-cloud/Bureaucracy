@@ -860,3 +860,31 @@ carries the reason; the module counts those as
 `documents_refused_by_the_host` rather than dropping them, so
 the fixture set's own README and the derive step both state how many documents
 the listings name that the host would not hand over.
+
+## 14. 2026-09-27: the military basic-pay table, and eleven DoD hosts that refuse outright
+
+The fourth research batch (`CURATION.md` §19.7) named the Defense Finance and
+Accounting Service's basic-pay tables as the document that would price the
+uniformed principals this graph carries at the O-10 and E-9 rates. Measured
+rather than assumed, host by host, with `scripts/fetch_fixture.py` under the
+project's own User-Agent:
+
+| Host | `robots.txt` | the page |
+|---|---|---|
+| `www.dfas.mil` | 403, Akamai "Access Denied" | 403, same body |
+| `militarypay.defense.gov` | 403 | 403 |
+| `comptroller.defense.gov` | 403 | not tried past robots |
+| `www.dcms.uscg.mil`, `www.uscg.mil` | 403 | not tried past robots |
+| `www.jcs.mil`, `www.army.mil`, `www.navy.mil`, `www.af.mil`, `www.marines.mil`, `www.spaceforce.mil` | 403 | not tried past robots |
+
+The 403 body is `errors.edgesuite.net`'s, so it is the host's edge refusing
+the crawler and not the sandbox's proxy (which fails differently, §0a). This
+is the case §11 measured on 67 of 68 hosts: where `robots.txt` is refused the
+page is refused too, so the `STANDARD_4XX_HOSTS` permission §10 grants
+`escs.opm.gov` would change nothing here — that permission is for a host whose
+robots file is unavailable and whose pages answer. It was not granted.
+
+Each attempt is recorded in `tests/fixtures/dfas/*.meta.json` and the README
+beside them; the two sections of law the table rests on, 37 U.S.C. 203 and
+1009, were fetched from `uscode.house.gov` (which answers, §8) and committed,
+and neither prints a rate. Nothing is published from any of this.

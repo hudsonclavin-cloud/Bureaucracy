@@ -12,13 +12,13 @@
     "method": "level_assigned_by_5_usc_5312_5316",
     "table": "Salary Table No. 2026-EX",
     "effective": "2026-01-01",
-    "matched": 102,
-    "priced": 102,
+    "matched": 108,
+    "priced": 108,
     "refused": {},
     "priced_by_level": {
-      "I": 16,
-      "II": 19,
-      "III": 10,
+      "I": 17,
+      "II": 21,
+      "III": 13,
       "IV": 53,
       "V": 4
     },
@@ -27,11 +27,17 @@
       "office_part_is_a_bare_role_word": 75
     },
     "scopedMatches": 61,
-    "reviewedMatches": 3,
+    "reviewedMatches": 9,
     "reviewedRows": [
+      "exec-dept-dhs-deputy-secretary-of-department-of-homeland-security-dhs",
+      "exec-dept-dhs-secretary-of-department-of-homeland-security-dhs",
+      "exec-dept-dot-faa-administrator-faa",
+      "exec-dept-treasury-irs-commissioner-irs",
+      "exec-regulatory-fcc-chair-fcc",
       "exec-regulatory-fed-chair-board-of-governors",
       "exec-regulatory-fed-vice-chair-board-of-governors",
-      "exec-regulatory-fed-vice-chair-for-supervision"
+      "exec-regulatory-fed-vice-chair-for-supervision",
+      "exec-regulatory-ftc-chair-ftc"
     ],
     "ambiguousStatutoryTitles": {
       "archivist of the united states": [
@@ -40,7 +46,7 @@
       ]
     },
     "statutoryPositions": 415,
-    "validated": 102,
+    "validated": 108,
     "rejected": [],
     "conflicts": [],
     "double_counted": []
@@ -622,6 +628,62 @@
       ],
       "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
     },
+    "exec-dept-dhs-deputy-secretary-of-department-of-homeland-security-dhs": {
+      "nodeId": "exec-dept-dhs-deputy-secretary-of-department-of-homeland-security-dhs",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "basic_pay",
+      "amount": 228000.0,
+      "amountRaw": "228,000",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "Level II $228,000",
+      "quote": "Level II $228,000",
+      "fiscalYear": 2026,
+      "periodCoverage": "annual_rate",
+      "periodAsOf": "2026-01-01",
+      "amountScope": "Level II",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "opm_pay_table",
+      "sourceUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+      "retrievedAt": "2026-09-11T03:05:36Z",
+      "locator": {
+        "table": "Salary Table No. 2026-EX",
+        "row": "Level II",
+        "column": "Rate"
+      },
+      "levelClaim": {
+        "source": "us_code_executive_schedule",
+        "method": "level_assigned_by_5_usc_5312_5316_to_the_office_a_second_statute_identifies_this_post_as",
+        "scopedOffice": null,
+        "scopedOrganisation": null,
+        "scopedOrganisationId": null,
+        "payLevel": "II",
+        "citation": "5 U.S.C. §5313",
+        "section": "5313",
+        "statutoryTitle": "Deputy Secretary of Homeland Security",
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5313&num=0&edition=prelim",
+        "documentSha256": "5978491c31e39139944c452e8dd755928b42d37d5b7fbfbe03e1376ed54c7120",
+        "checkedAt": "2026-09-18T20:34:08Z",
+        "identification": {
+          "nodeName": "Deputy Secretary of the Department of Homeland Security",
+          "basis": "the same office: 6 U.S.C. 113 provides for a Deputy Secretary of Homeland Security as the Secretary's first assistant, and 5 U.S.C. 5313 places that Deputy Secretary at Level II; the graph keeps OPM's archive spelling 'Deputy Secretary of the Department of Homeland Security' (CURATION.md §8), which whole-name equality cannot reach",
+          "basisCitation": "6 U.S.C. 113",
+          "basisQuote": "A Deputy Secretary of Homeland Security, who shall be the Secretary's first assistant for purposes of subchapter III of chapter 33 of title 5 .",
+          "basisUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title6-section113&num=0&edition=prelim",
+          "basisSha256": "a4a6701ff0bd2e55f9f167572a665a6fb74cb45ed338ed6978f8db5205f06bd9",
+          "basisCheckedAt": "2026-09-27T21:27:38Z"
+        }
+      },
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "rateText": "$228,000",
+      "tableFootnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+    },
     "exec-dept-dhs-general-counsel": {
       "nodeId": "exec-dept-dhs-general-counsel",
       "financialEvidenceStatus": "partial",
@@ -665,6 +727,62 @@
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
       "rateText": "$197,200",
+      "tableFootnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+    },
+    "exec-dept-dhs-secretary-of-department-of-homeland-security-dhs": {
+      "nodeId": "exec-dept-dhs-secretary-of-department-of-homeland-security-dhs",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "basic_pay",
+      "amount": 253100.0,
+      "amountRaw": "253,100",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "Level I $253,100",
+      "quote": "Level I $253,100",
+      "fiscalYear": 2026,
+      "periodCoverage": "annual_rate",
+      "periodAsOf": "2026-01-01",
+      "amountScope": "Level I",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "opm_pay_table",
+      "sourceUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+      "retrievedAt": "2026-09-11T03:05:36Z",
+      "locator": {
+        "table": "Salary Table No. 2026-EX",
+        "row": "Level I",
+        "column": "Rate"
+      },
+      "levelClaim": {
+        "source": "us_code_executive_schedule",
+        "method": "level_assigned_by_5_usc_5312_5316_to_the_office_a_second_statute_identifies_this_post_as",
+        "scopedOffice": null,
+        "scopedOrganisation": null,
+        "scopedOrganisationId": null,
+        "payLevel": "I",
+        "citation": "5 U.S.C. §5312",
+        "section": "5312",
+        "statutoryTitle": "Secretary of Homeland Security",
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5312&num=0&edition=prelim",
+        "documentSha256": "211b3419d59cc091e45efeb3b43d6bfb6b1fa0ce27c63002a4b8b08ff21903d2",
+        "checkedAt": "2026-09-18T20:33:51Z",
+        "identification": {
+          "nodeName": "Secretary of the Department of Homeland Security",
+          "basis": "the same office: 6 U.S.C. 112 creates the Secretary of Homeland Security, and 5 U.S.C. 5312 places that Secretary at Level I; the graph keeps OPM's archive spelling 'Secretary of the Department of Homeland Security' (CURATION.md §8), which whole-name equality cannot reach",
+          "basisCitation": "6 U.S.C. 112",
+          "basisQuote": "There is a Secretary of Homeland Security, appointed by the President, by and with the advice and consent of the Senate.",
+          "basisUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title6-section112&num=0&edition=prelim",
+          "basisSha256": "13a904e808bf20a194602c883ac3517d8bd9194ef23f9ae6c7ca406c1f50ad29",
+          "basisCheckedAt": "2026-09-27T21:27:37Z"
+        }
+      },
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "rateText": "$253,100",
       "tableFootnotes": [
         "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
       ],
@@ -1966,6 +2084,62 @@
       ],
       "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
     },
+    "exec-dept-dot-faa-administrator-faa": {
+      "nodeId": "exec-dept-dot-faa-administrator-faa",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "basic_pay",
+      "amount": 228000.0,
+      "amountRaw": "228,000",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "Level II $228,000",
+      "quote": "Level II $228,000",
+      "fiscalYear": 2026,
+      "periodCoverage": "annual_rate",
+      "periodAsOf": "2026-01-01",
+      "amountScope": "Level II",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "opm_pay_table",
+      "sourceUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+      "retrievedAt": "2026-09-11T03:05:36Z",
+      "locator": {
+        "table": "Salary Table No. 2026-EX",
+        "row": "Level II",
+        "column": "Rate"
+      },
+      "levelClaim": {
+        "source": "us_code_executive_schedule",
+        "method": "level_assigned_by_5_usc_5312_5316_to_the_office_a_second_statute_identifies_this_post_as",
+        "scopedOffice": null,
+        "scopedOrganisation": null,
+        "scopedOrganisationId": null,
+        "payLevel": "II",
+        "citation": "5 U.S.C. §5313",
+        "section": "5313",
+        "statutoryTitle": "Administrator, Federal Aviation Administration",
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5313&num=0&edition=prelim",
+        "documentSha256": "5978491c31e39139944c452e8dd755928b42d37d5b7fbfbe03e1376ed54c7120",
+        "checkedAt": "2026-09-18T20:34:08Z",
+        "identification": {
+          "nodeName": "Administrator, FAA",
+          "basis": "the same office: 49 U.S.C. 106 makes the Administrator the head of the Federal Aviation Administration, and 5 U.S.C. 5313 places that Administrator at Level II; the graph names the Administration by its acronym",
+          "basisCitation": "49 U.S.C. 106",
+          "basisQuote": "The head of the Administration is the Administrator, who shall be appointed by the President, by and with the advice and consent of the Senate.",
+          "basisUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title49-section106&num=0&edition=prelim",
+          "basisSha256": "af36984ddf13fcef5599ce64afa8a12366840d61060df85b1d81640363ebc0e3",
+          "basisCheckedAt": "2026-09-27T21:27:35Z"
+        }
+      },
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "rateText": "$228,000",
+      "tableFootnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+    },
     "exec-dept-dot-faa-deputy-administrator": {
       "nodeId": "exec-dept-dot-faa-deputy-administrator",
       "financialEvidenceStatus": "partial",
@@ -3209,6 +3383,62 @@
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
       "rateText": "$197,200",
+      "tableFootnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+    },
+    "exec-dept-treasury-irs-commissioner-irs": {
+      "nodeId": "exec-dept-treasury-irs-commissioner-irs",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "basic_pay",
+      "amount": 209600.0,
+      "amountRaw": "209,600",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "Level III $209,600",
+      "quote": "Level III $209,600",
+      "fiscalYear": 2026,
+      "periodCoverage": "annual_rate",
+      "periodAsOf": "2026-01-01",
+      "amountScope": "Level III",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "opm_pay_table",
+      "sourceUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+      "retrievedAt": "2026-09-11T03:05:36Z",
+      "locator": {
+        "table": "Salary Table No. 2026-EX",
+        "row": "Level III",
+        "column": "Rate"
+      },
+      "levelClaim": {
+        "source": "us_code_executive_schedule",
+        "method": "level_assigned_by_5_usc_5312_5316_to_the_office_a_second_statute_identifies_this_post_as",
+        "scopedOffice": null,
+        "scopedOrganisation": null,
+        "scopedOrganisationId": null,
+        "payLevel": "III",
+        "citation": "5 U.S.C. §5314",
+        "section": "5314",
+        "statutoryTitle": "Commissioner of Internal Revenue",
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5314&num=0&edition=prelim",
+        "documentSha256": "9fb06a64237cc4224921b2bec6b5666066b73241c148fbec39182a595aa8ae92",
+        "checkedAt": "2026-09-18T20:34:21Z",
+        "identification": {
+          "nodeName": "Commissioner, IRS",
+          "basis": "the same office: 26 U.S.C. 7803 creates the Commissioner of Internal Revenue in the Department of the Treasury, and 5 U.S.C. 5314 places that Commissioner at Level III; the graph files the post under the Internal Revenue Service and names it by the Service's acronym",
+          "basisCitation": "26 U.S.C. 7803",
+          "basisQuote": "There shall be in the Department of the Treasury a Commissioner of Internal Revenue who shall be appointed by the President, by and with the advice and consent of the Senate.",
+          "basisUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section7803&num=0&edition=prelim",
+          "basisSha256": "83e9c1ffb0ce72f3f116da333a37c9cbd4480cac9ab6186507126a128d3f0d02",
+          "basisCheckedAt": "2026-09-27T21:27:32Z"
+        }
+      },
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "rateText": "$209,600",
       "tableFootnotes": [
         "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
       ],
@@ -4702,6 +4932,62 @@
       ],
       "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
     },
+    "exec-regulatory-fcc-chair-fcc": {
+      "nodeId": "exec-regulatory-fcc-chair-fcc",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "basic_pay",
+      "amount": 209600.0,
+      "amountRaw": "209,600",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "Level III $209,600",
+      "quote": "Level III $209,600",
+      "fiscalYear": 2026,
+      "periodCoverage": "annual_rate",
+      "periodAsOf": "2026-01-01",
+      "amountScope": "Level III",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "opm_pay_table",
+      "sourceUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+      "retrievedAt": "2026-09-11T03:05:36Z",
+      "locator": {
+        "table": "Salary Table No. 2026-EX",
+        "row": "Level III",
+        "column": "Rate"
+      },
+      "levelClaim": {
+        "source": "us_code_executive_schedule",
+        "method": "level_assigned_by_5_usc_5312_5316_to_the_office_a_second_statute_identifies_this_post_as",
+        "scopedOffice": null,
+        "scopedOrganisation": null,
+        "scopedOrganisationId": null,
+        "payLevel": "III",
+        "citation": "5 U.S.C. §5314",
+        "section": "5314",
+        "statutoryTitle": "Chairman, Federal Communications Commission",
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5314&num=0&edition=prelim",
+        "documentSha256": "9fb06a64237cc4224921b2bec6b5666066b73241c148fbec39182a595aa8ae92",
+        "checkedAt": "2026-09-18T20:34:21Z",
+        "identification": {
+          "nodeName": "Chair, FCC",
+          "basis": "the same office: 47 U.S.C. 154 itself pays the Chairman of the Commission at level III of the Executive Schedule, the level 5 U.S.C. 5314 prints for 'Chairman, Federal Communications Commission'; the graph spells the title without gender and names the Commission by its acronym",
+          "basisCitation": "47 U.S.C. 154",
+          "basisQuote": "The Chairman of the Commission, during the period of his service as Chairman, shall receive an annual salary at the annual rate payable from time to time for level III of the Executive Schedule.",
+          "basisUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title47-section154&num=0&edition=prelim",
+          "basisSha256": "f0945481f2575d2abc6bffa0d878f01dde6284dc283d6365aff768bf02d0a64b",
+          "basisCheckedAt": "2026-09-27T21:27:25Z"
+        }
+      },
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "rateText": "$209,600",
+      "tableFootnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+    },
     "exec-regulatory-fed-chair-board-of-governors": {
       "nodeId": "exec-regulatory-fed-chair-board-of-governors",
       "financialEvidenceStatus": "partial",
@@ -4865,6 +5151,62 @@
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
       "rateText": "$228,000",
+      "tableFootnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+    },
+    "exec-regulatory-ftc-chair-ftc": {
+      "nodeId": "exec-regulatory-ftc-chair-ftc",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "basic_pay",
+      "amount": 209600.0,
+      "amountRaw": "209,600",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "Level III $209,600",
+      "quote": "Level III $209,600",
+      "fiscalYear": 2026,
+      "periodCoverage": "annual_rate",
+      "periodAsOf": "2026-01-01",
+      "amountScope": "Level III",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "opm_pay_table",
+      "sourceUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+      "retrievedAt": "2026-09-11T03:05:36Z",
+      "locator": {
+        "table": "Salary Table No. 2026-EX",
+        "row": "Level III",
+        "column": "Rate"
+      },
+      "levelClaim": {
+        "source": "us_code_executive_schedule",
+        "method": "level_assigned_by_5_usc_5312_5316_to_the_office_a_second_statute_identifies_this_post_as",
+        "scopedOffice": null,
+        "scopedOrganisation": null,
+        "scopedOrganisationId": null,
+        "payLevel": "III",
+        "citation": "5 U.S.C. §5314",
+        "section": "5314",
+        "statutoryTitle": "Chairman, Federal Trade Commission",
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5314&num=0&edition=prelim",
+        "documentSha256": "9fb06a64237cc4224921b2bec6b5666066b73241c148fbec39182a595aa8ae92",
+        "checkedAt": "2026-09-18T20:34:21Z",
+        "identification": {
+          "nodeName": "Chair, FTC",
+          "basis": "the same office: 15 U.S.C. 41 has the President choose a chairman from the Commission's membership, and 5 U.S.C. 5314 places that Chairman at Level III; the graph spells the title without gender and names the Commission by its acronym",
+          "basisCitation": "15 U.S.C. 41",
+          "basisQuote": "The President shall choose a chairman from the Commission's membership.",
+          "basisUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title15-section41&num=0&edition=prelim",
+          "basisSha256": "ae3136504cb8293e2b4cc67606955ddbc0924579f9864c905ed4fff7c735b3b5",
+          "basisCheckedAt": "2026-09-27T21:27:30Z"
+        }
+      },
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "rateText": "$209,600",
       "tableFootnotes": [
         "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
       ],

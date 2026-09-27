@@ -2725,3 +2725,69 @@ the numbers came from.
   identification (a chair is a Member, paid under Schedule 6, the chairmanship
   adding nothing), not a research question.
 
+### 19.7 The fourth batch: six Executive Schedule rows survive, the military table is walled (2026-09-27)
+
+The owner pasted the answers to prompt 6 (without its Federal Reserve block)
+and prompts 7–10 of the pack as committed at `b25d64c`. Checked against the
+committed sections of 5 U.S.C. §§5312–5316 rather than taken on the answer's
+own grade:
+
+**What survived — six reviewed identifications**, each the Fed's shape (§19.1):
+the Code prints a title this graph does not, and a second statute says which
+office it is. All six basis sections were fetched from `uscode.house.gov` and
+committed under `tests/fixtures/uscode/`; every quoted sentence is in the
+section's operative text, above the publisher's notes, by both readers.
+
+| Node | Code title (level) | Basis | The sentence relied on |
+|---|---|---|---|
+| `Chair, FCC` | Chairman, Federal Communications Commission (III) | 47 U.S.C. 154 | "The Chairman of the Commission … shall receive an annual salary at the annual rate payable from time to time for level III of the Executive Schedule." |
+| `Chair, FTC` | Chairman, Federal Trade Commission (III) | 15 U.S.C. 41 | "The President shall choose a chairman from the Commission's membership." |
+| `Commissioner, IRS` | Commissioner of Internal Revenue (III) | 26 U.S.C. 7803 | "There shall be in the Department of the Treasury a Commissioner of Internal Revenue …" |
+| `Administrator, FAA` | Administrator, Federal Aviation Administration (II) | 49 U.S.C. 106 | "The head of the Administration is the Administrator …" |
+| `Secretary of the Department of Homeland Security` | Secretary of Homeland Security (I) | 6 U.S.C. 112 | "There is a Secretary of Homeland Security, appointed by the President …" |
+| `Deputy Secretary of the Department of Homeland Security` | Deputy Secretary of Homeland Security (II) | 6 U.S.C. 113 | "A Deputy Secretary of Homeland Security, who shall be the Secretary's first assistant …" |
+
+The FCC's is the one basis that states the level itself, and it agrees with
+§5314. The two DHS posts were unpriced only because §8 kept OPM's archive
+spelling ("of the Department of"), which whole-name equality cannot reach; a
+reviewed row prices them without renaming anything. Positions priced from the
+Schedule **102 → 108**, pay claims **492 → 498**, unpriced **4,099 → 4,093**.
+
+**What the batch got wrong, checked against the bytes.** Its "certain" grades
+were unreliable in the same way §19.1's dollar figure was: inspectors general
+are not printed in §§5312–5316 at all (their pay is set by a provision this
+repository has not read, so nothing here says what it is); the IRS Chief Counsel is printed at
+**Level V** (§5316), not IV; the Code prints no "Deputy Secretary of Commerce"
+(the refusal §8 already records) and no CDC Director. None of those was
+written into a row.
+
+**Left unpriced, deliberately.** "Members, Federal Communications Commission"
+and "Members, Federal Trade Commission" (Level IV, §5315) reach the two
+`Commissioner (×4)` benches exactly as "Members, Board of Governors" reaches the
+Fed's `Governor (×4 members)`; `positionSchedulePay` is incumbency-class and
+would be stripped on every build, so pricing a bench from a class title stays
+the owner's open decision (§19.6), now with three benches waiting on it rather
+than one.
+
+**The military basic-pay table: walled, recorded, not worked around.** The
+batch named DFAS's basic-pay tables as the document for the Joint Chiefs, the
+service chiefs and the senior enlisted advisers. `www.dfas.mil`,
+`militarypay.defense.gov`, `comptroller.defense.gov`, the Coast Guard's two
+hosts and all six service hosts answer `robots.txt` **and** the pay-table page
+with an Akamai 403 from this sandbox — the host refusing the crawler, not the
+proxy and not a rule. `tests/fixtures/dfas/README.md` records every attempt
+with `fetch_fixture.py`'s own `.meta.json`. What is committed is the law the
+table rests on, 37 U.S.C. 203 and 1009: §203(a)(2) caps O-7 to O-10 basic pay
+at the monthly equivalent of Executive Schedule level II, and a ceiling is not
+a rate, so nothing is published from either. The module, if a DoD-published
+table ever answers, is `derived_pay.py`'s shape — grade from Title 10, rate
+from the table, neither stating the figure — and it also has to settle a
+duplicate-office question the graph carries: each service chief sits both
+under the Joint Chiefs of Staff and under their own service, and one salary
+must not be published twice.
+
+**Next:** the yield check §19.6 called for. Two batches, ~40 prompts' worth
+of titles, have yielded nine reviewed rows and one walled document; prompts 11
+onward are worth running only if the owner still wants Executive Schedule
+coverage at that rate.
+

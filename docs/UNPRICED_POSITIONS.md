@@ -8,12 +8,12 @@ checkable claim. `docs/PAY_SOURCE_RESEARCH_PROMPT_3.md` is generated from this
 same list in the same run.
 
 - position nodes in the published graph: **4,591**
-- carrying a pay claim an official document supports: **492**
-- carrying none: **4,099**
+- carrying a pay claim an official document supports: **498**
+- carrying none: **4,093**
 
 | reason | count | what it means |
 |---|---|---|
-| `unreached` | 3,313 | no source this project has read names the title at all. Not a coverage gap somebody has not got to: no pay document in the repository names this title under this organisation, so nothing could have reached it. |
+| `unreached` | 3,307 | no source this project has read names the title at all. Not a coverage gap somebody has not got to: no pay document in the repository names this title under this organisation, so nothing could have reached it. |
 | `multiplicity` | 765 | the node states a multiplicity (×N) and no claim that holds for every holder has reached it. Since 2026-09-23 a claim that holds for each holder by its own terms IS published on such a node with a `holders` block -- a tier or parity rate paid to every judge of the tier, a band every holder is within, or a roster listing every holder at one rate -- and 28 such nodes carry one. What stays refused is an incumbency-shaped claim (one listing's level, one row of the current export), because that is one appointment's figure and not the group's. For these nodes no office-rate claim has reached them at all. Knowing which pay system governs the title is still useful -- it is what would let the graph carry the schedule rather than a rate -- so these are listed and asked about. |
 | `listed_no_rate` | 21 | OPM lists the position and the row prints no rate. The PLUM archive or the current export names the title under this organisation but the Level/Grade/Pay cell carries a rank or is empty, and no salary table this project has read prices that pay plan. |
 
@@ -864,27 +864,6 @@ same list in the same run.
 - `exec-dept-defense-sf-senior-enlisted-advisor` — Senior Enlisted Advisor — `unreached`
 - `exec-dept-defense-sf-vice-chief-of-space-operations` — Vice Chief of Space Operations — `unreached`
 
-## Federal Communications Commission (FCC)  — 16 unpriced
-
-`exec-regulatory-fcc`
-
-- `exec-regulatory-fcc-attorney-advisor-multiple` — Attorney Advisor (×multiple) — `multiplicity`
-- `exec-regulatory-fcc-chair-fcc` — Chair, FCC — `unreached`
-- `exec-regulatory-fcc-chief-of-staff` — Chief of Staff — `unreached`
-- `exec-regulatory-fcc-chief-consumer-governmental-affairs-bureau` — Chief — Consumer & Governmental Affairs Bureau — `unreached`
-- `exec-regulatory-fcc-chief-international-bureau` — Chief — International Bureau — `unreached`
-- `exec-regulatory-fcc-chief-media-bureau` — Chief — Media Bureau — `unreached`
-- `exec-regulatory-fcc-chief-office-of-engineering-technology` — Chief — Office of Engineering & Technology — `unreached`
-- `exec-regulatory-fcc-chief-public-safety-homeland-security-bureau` — Chief — Public Safety & Homeland Security Bureau — `unreached`
-- `exec-regulatory-fcc-chief-space-bureau` — Chief — Space Bureau — `unreached`
-- `exec-regulatory-fcc-chief-wireless-telecommunications-bureau` — Chief — Wireless Telecommunications Bureau — `unreached`
-- `exec-regulatory-fcc-chief-wireline-competition-bureau` — Chief — Wireline Competition Bureau — `unreached`
-- `exec-regulatory-fcc-commissioner-4` — Commissioner (×4) — `multiplicity`
-- `exec-regulatory-fcc-general-counsel` — General Counsel — `unreached`
-- `exec-regulatory-fcc-inspector-general` — Inspector General — `unreached`
-- `exec-regulatory-fcc-managing-director` — Managing Director — `unreached`
-- `exec-regulatory-fcc-spectrum-analyst-multiple` — Spectrum Analyst (×multiple) — `multiplicity`
-
 ## National Institutes of Health (NIH)  — 16 unpriced
 
 `exec-dept-hhs-nih`
@@ -947,6 +926,26 @@ same list in the same run.
 - `exec-dept-state-embassy-public-affairs-officer-pao` — Public Affairs Officer (PAO) — `unreached`
 - `exec-dept-state-embassy-regional-security-officer-rso` — Regional Security Officer (RSO) — `unreached`
 - `exec-dept-state-embassy-usaid-mission-director` — USAID Mission Director — `unreached`
+
+## Federal Communications Commission (FCC)  — 15 unpriced
+
+`exec-regulatory-fcc`
+
+- `exec-regulatory-fcc-attorney-advisor-multiple` — Attorney Advisor (×multiple) — `multiplicity`
+- `exec-regulatory-fcc-chief-of-staff` — Chief of Staff — `unreached`
+- `exec-regulatory-fcc-chief-consumer-governmental-affairs-bureau` — Chief — Consumer & Governmental Affairs Bureau — `unreached`
+- `exec-regulatory-fcc-chief-international-bureau` — Chief — International Bureau — `unreached`
+- `exec-regulatory-fcc-chief-media-bureau` — Chief — Media Bureau — `unreached`
+- `exec-regulatory-fcc-chief-office-of-engineering-technology` — Chief — Office of Engineering & Technology — `unreached`
+- `exec-regulatory-fcc-chief-public-safety-homeland-security-bureau` — Chief — Public Safety & Homeland Security Bureau — `unreached`
+- `exec-regulatory-fcc-chief-space-bureau` — Chief — Space Bureau — `unreached`
+- `exec-regulatory-fcc-chief-wireless-telecommunications-bureau` — Chief — Wireless Telecommunications Bureau — `unreached`
+- `exec-regulatory-fcc-chief-wireline-competition-bureau` — Chief — Wireline Competition Bureau — `unreached`
+- `exec-regulatory-fcc-commissioner-4` — Commissioner (×4) — `multiplicity`
+- `exec-regulatory-fcc-general-counsel` — General Counsel — `unreached`
+- `exec-regulatory-fcc-inspector-general` — Inspector General — `unreached`
+- `exec-regulatory-fcc-managing-director` — Managing Director — `unreached`
+- `exec-regulatory-fcc-spectrum-analyst-multiple` — Spectrum Analyst (×multiple) — `multiplicity`
 
 ## House Leadership  — 15 unpriced
 
@@ -1064,24 +1063,6 @@ same list in the same run.
 - `exec-dept-defense-executive-secretary` — Executive Secretary — `unreached`
 - `exec-dept-defense-inspector-general` — Inspector General — `unreached`
 
-## Department of Homeland Security (DHS)  — 13 unpriced
-
-`exec-dept-dhs`
-
-- `exec-dept-dhs-chief-human-capital-officer` — Chief Human Capital Officer — `unreached`
-- `exec-dept-dhs-chief-of-staff` — Chief of Staff — `unreached`
-- `exec-dept-dhs-deputy-cfo-controller` — Deputy CFO / Controller — `unreached`
-- `exec-dept-dhs-deputy-cio` — Deputy CIO — `unreached`
-- `exec-dept-dhs-deputy-general-counsel` — Deputy General Counsel — `unreached`
-- `exec-dept-dhs-deputy-inspector-general` — Deputy Inspector General — `unreached`
-- `exec-dept-dhs-deputy-secretary-of-department-of-homeland-security-dhs` — Deputy Secretary of the Department of Homeland Security — `unreached`
-- `exec-dept-dhs-director-of-legislative-affairs` — Director of Legislative Affairs — `unreached`
-- `exec-dept-dhs-director-of-public-affairs` — Director of Public Affairs — `unreached`
-- `exec-dept-dhs-diversity-inclusion-officer` — Diversity & Inclusion Officer — `unreached`
-- `exec-dept-dhs-executive-secretary` — Executive Secretary — `unreached`
-- `exec-dept-dhs-inspector-general` — Inspector General — `unreached`
-- `exec-dept-dhs-secretary-of-department-of-homeland-security-dhs` — Secretary of the Department of Homeland Security — `unreached`
-
 ## Federal Deposit Insurance Corporation (FDIC)  — 13 unpriced
 
 `exec-regulatory-fdic`
@@ -1117,24 +1098,6 @@ same list in the same run.
 - `exec-dept-hhs-fda-director-national-center-for-toxicological-research-nctr` — Director — National Center for Toxicological Research (NCTR) — `unreached`
 - `exec-dept-hhs-fda-pharmacologist-multiple` — Pharmacologist (×multiple) — `multiplicity`
 - `exec-dept-hhs-fda-regional-director-5-ora-regions` — Regional Director — 5 ORA Regions — `unreached`
-
-## Internal Revenue Service (IRS)  — 13 unpriced
-
-`exec-dept-treasury-irs`
-
-- `exec-dept-treasury-irs-chief-appeals-officer` — Chief Appeals Officer — `unreached`
-- `exec-dept-treasury-irs-chief-counsel` — Chief Counsel — `unreached`
-- `exec-dept-treasury-irs-chief-of-staff` — Chief of Staff — `unreached`
-- `exec-dept-treasury-irs-chief-criminal-investigation-ci` — Chief, Criminal Investigation (CI) — `listed_no_rate`
-- `exec-dept-treasury-irs-commissioner-irs` — Commissioner, IRS — `unreached`
-- `exec-dept-treasury-irs-commissioner-large-business-international-division` — Commissioner, Large Business & International Division — `unreached`
-- `exec-dept-treasury-irs-commissioner-small-business-self-employed-division` — Commissioner, Small Business/Self-Employed Division — `unreached`
-- `exec-dept-treasury-irs-commissioner-wage-investment-division` — Commissioner, Wage & Investment Division — `unreached`
-- `exec-dept-treasury-irs-deputy-commissioner-for-operations-support` — Deputy Commissioner for Operations Support — `unreached`
-- `exec-dept-treasury-irs-deputy-commissioner-for-services-enforcement` — Deputy Commissioner for Services & Enforcement — `unreached`
-- `exec-dept-treasury-irs-director-whistleblower-office` — Director, Whistleblower Office — `unreached`
-- `exec-dept-treasury-irs-national-taxpayer-advocate` — National Taxpayer Advocate — `unreached`
-- `exec-dept-treasury-irs-special-agent-in-charge-21-ci-field-offices` — Special Agent in Charge (×21 CI Field Offices) — `multiplicity`
 
 ## All 94 District Courts — Standard Structure  — 12 unpriced
 
@@ -1238,39 +1201,22 @@ same list in the same run.
 - `exec-dept-doi-general-counsel` — General Counsel — `unreached`
 - `exec-dept-doi-inspector-general` — Inspector General — `unreached`
 
-## Federal Aviation Administration (FAA)  — 12 unpriced
+## Internal Revenue Service (IRS)  — 12 unpriced
 
-`exec-dept-dot-faa`
+`exec-dept-treasury-irs`
 
-- `exec-dept-dot-faa-administrator-faa` — Administrator, FAA — `unreached`
-- `exec-dept-dot-faa-air-traffic-control-tower-manager-500` — Air Traffic Control Tower Manager (×500+) — `multiplicity`
-- `exec-dept-dot-faa-air-traffic-controller-14-000` — Air Traffic Controller (×14,000) — `multiplicity`
-- `exec-dept-dot-faa-air-traffic-manager-artcc-22-en-route-centers` — Air Traffic Manager — ARTCC (×22 en-route centers) — `multiplicity`
-- `exec-dept-dot-faa-associate-administrator-airports` — Associate Administrator — Airports — `unreached`
-- `exec-dept-dot-faa-associate-administrator-aviation-safety` — Associate Administrator — Aviation Safety — `unreached`
-- `exec-dept-dot-faa-associate-administrator-commercial-space-transportation` — Associate Administrator — Commercial Space Transportation — `unreached`
-- `exec-dept-dot-faa-associate-administrator-nextgen` — Associate Administrator — NextGen — `unreached`
-- `exec-dept-dot-faa-aviation-safety-inspector-multiple` — Aviation Safety Inspector (×multiple) — `multiplicity`
-- `exec-dept-dot-faa-coo-air-traffic-organization` — COO — Air Traffic Organization — `unreached`
-- `exec-dept-dot-faa-regional-administrator-9-regions` — Regional Administrator — 9 Regions — `unreached`
-- `exec-dept-dot-faa-tracon-facility-manager-multiple` — TRACON Facility Manager (×multiple) — `multiplicity`
-
-## Federal Trade Commission (FTC)  — 12 unpriced
-
-`exec-regulatory-ftc`
-
-- `exec-regulatory-ftc-chair-ftc` — Chair, FTC — `unreached`
-- `exec-regulatory-ftc-chief-advisor` — Chief Advisor — `unreached`
-- `exec-regulatory-ftc-commissioner-4` — Commissioner (×4) — `multiplicity`
-- `exec-regulatory-ftc-director-bureau-of-competition` — Director — Bureau of Competition — `unreached`
-- `exec-regulatory-ftc-director-bureau-of-consumer-protection` — Director — Bureau of Consumer Protection — `unreached`
-- `exec-regulatory-ftc-director-bureau-of-economics` — Director — Bureau of Economics — `unreached`
-- `exec-regulatory-ftc-economist-multiple` — Economist (×multiple) — `multiplicity`
-- `exec-regulatory-ftc-executive-director` — Executive Director — `unreached`
-- `exec-regulatory-ftc-general-counsel` — General Counsel — `unreached`
-- `exec-regulatory-ftc-inspector-general` — Inspector General — `unreached`
-- `exec-regulatory-ftc-regional-director-7-regional-offices` — Regional Director — 7 Regional Offices — `unreached`
-- `exec-regulatory-ftc-staff-attorney-multiple` — Staff Attorney (×multiple) — `multiplicity`
+- `exec-dept-treasury-irs-chief-appeals-officer` — Chief Appeals Officer — `unreached`
+- `exec-dept-treasury-irs-chief-counsel` — Chief Counsel — `unreached`
+- `exec-dept-treasury-irs-chief-of-staff` — Chief of Staff — `unreached`
+- `exec-dept-treasury-irs-chief-criminal-investigation-ci` — Chief, Criminal Investigation (CI) — `listed_no_rate`
+- `exec-dept-treasury-irs-commissioner-large-business-international-division` — Commissioner, Large Business & International Division — `unreached`
+- `exec-dept-treasury-irs-commissioner-small-business-self-employed-division` — Commissioner, Small Business/Self-Employed Division — `unreached`
+- `exec-dept-treasury-irs-commissioner-wage-investment-division` — Commissioner, Wage & Investment Division — `unreached`
+- `exec-dept-treasury-irs-deputy-commissioner-for-operations-support` — Deputy Commissioner for Operations Support — `unreached`
+- `exec-dept-treasury-irs-deputy-commissioner-for-services-enforcement` — Deputy Commissioner for Services & Enforcement — `unreached`
+- `exec-dept-treasury-irs-director-whistleblower-office` — Director, Whistleblower Office — `unreached`
+- `exec-dept-treasury-irs-national-taxpayer-advocate` — National Taxpayer Advocate — `unreached`
+- `exec-dept-treasury-irs-special-agent-in-charge-21-ci-field-offices` — Special Agent in Charge (×21 CI Field Offices) — `multiplicity`
 
 ## NOAA — National Oceanic & Atmospheric Administration  — 12 unpriced
 
@@ -1504,6 +1450,22 @@ same list in the same run.
 - `exec-dept-hhs-executive-secretary` — Executive Secretary — `unreached`
 - `exec-dept-hhs-inspector-general` — Inspector General — `unreached`
 
+## Department of Homeland Security (DHS)  — 11 unpriced
+
+`exec-dept-dhs`
+
+- `exec-dept-dhs-chief-human-capital-officer` — Chief Human Capital Officer — `unreached`
+- `exec-dept-dhs-chief-of-staff` — Chief of Staff — `unreached`
+- `exec-dept-dhs-deputy-cfo-controller` — Deputy CFO / Controller — `unreached`
+- `exec-dept-dhs-deputy-cio` — Deputy CIO — `unreached`
+- `exec-dept-dhs-deputy-general-counsel` — Deputy General Counsel — `unreached`
+- `exec-dept-dhs-deputy-inspector-general` — Deputy Inspector General — `unreached`
+- `exec-dept-dhs-director-of-legislative-affairs` — Director of Legislative Affairs — `unreached`
+- `exec-dept-dhs-director-of-public-affairs` — Director of Public Affairs — `unreached`
+- `exec-dept-dhs-diversity-inclusion-officer` — Diversity & Inclusion Officer — `unreached`
+- `exec-dept-dhs-executive-secretary` — Executive Secretary — `unreached`
+- `exec-dept-dhs-inspector-general` — Inspector General — `unreached`
+
 ## Department of Housing & Urban Development (HUD)  — 11 unpriced
 
 `exec-dept-hud`
@@ -1600,6 +1562,22 @@ same list in the same run.
 - `exec-dept-doj-dea-special-agent-multiple` — Special Agent (×multiple) — `multiplicity`
 - `exec-dept-doj-dea-special-agent-in-charge-21-domestic-division-offices` — Special Agent in Charge — 21 Domestic Division Offices — `unreached`
 
+## Federal Aviation Administration (FAA)  — 11 unpriced
+
+`exec-dept-dot-faa`
+
+- `exec-dept-dot-faa-air-traffic-control-tower-manager-500` — Air Traffic Control Tower Manager (×500+) — `multiplicity`
+- `exec-dept-dot-faa-air-traffic-controller-14-000` — Air Traffic Controller (×14,000) — `multiplicity`
+- `exec-dept-dot-faa-air-traffic-manager-artcc-22-en-route-centers` — Air Traffic Manager — ARTCC (×22 en-route centers) — `multiplicity`
+- `exec-dept-dot-faa-associate-administrator-airports` — Associate Administrator — Airports — `unreached`
+- `exec-dept-dot-faa-associate-administrator-aviation-safety` — Associate Administrator — Aviation Safety — `unreached`
+- `exec-dept-dot-faa-associate-administrator-commercial-space-transportation` — Associate Administrator — Commercial Space Transportation — `unreached`
+- `exec-dept-dot-faa-associate-administrator-nextgen` — Associate Administrator — NextGen — `unreached`
+- `exec-dept-dot-faa-aviation-safety-inspector-multiple` — Aviation Safety Inspector (×multiple) — `multiplicity`
+- `exec-dept-dot-faa-coo-air-traffic-organization` — COO — Air Traffic Organization — `unreached`
+- `exec-dept-dot-faa-regional-administrator-9-regions` — Regional Administrator — 9 Regions — `unreached`
+- `exec-dept-dot-faa-tracon-facility-manager-multiple` — TRACON Facility Manager (×multiple) — `multiplicity`
+
 ## Federal Energy Regulatory Commission (FERC)  — 11 unpriced
 
 `exec-regulatory-ferc`
@@ -1615,6 +1593,22 @@ same list in the same run.
 - `exec-regulatory-ferc-executive-director` — Executive Director — `unreached`
 - `exec-regulatory-ferc-general-counsel` — General Counsel — `unreached`
 - `exec-regulatory-ferc-inspector-general` — Inspector General — `unreached`
+
+## Federal Trade Commission (FTC)  — 11 unpriced
+
+`exec-regulatory-ftc`
+
+- `exec-regulatory-ftc-chief-advisor` — Chief Advisor — `unreached`
+- `exec-regulatory-ftc-commissioner-4` — Commissioner (×4) — `multiplicity`
+- `exec-regulatory-ftc-director-bureau-of-competition` — Director — Bureau of Competition — `unreached`
+- `exec-regulatory-ftc-director-bureau-of-consumer-protection` — Director — Bureau of Consumer Protection — `unreached`
+- `exec-regulatory-ftc-director-bureau-of-economics` — Director — Bureau of Economics — `unreached`
+- `exec-regulatory-ftc-economist-multiple` — Economist (×multiple) — `multiplicity`
+- `exec-regulatory-ftc-executive-director` — Executive Director — `unreached`
+- `exec-regulatory-ftc-general-counsel` — General Counsel — `unreached`
+- `exec-regulatory-ftc-inspector-general` — Inspector General — `unreached`
+- `exec-regulatory-ftc-regional-director-7-regional-offices` — Regional Director — 7 Regional Offices — `unreached`
+- `exec-regulatory-ftc-staff-attorney-multiple` — Staff Attorney (×multiple) — `multiplicity`
 
 ## Government Accountability Office (GAO)  — 11 unpriced
 
