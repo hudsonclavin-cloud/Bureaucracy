@@ -29,6 +29,7 @@ from data_pipeline.verification.tier_reference_pay import (
     PAY_METHOD,
     PAY_METHOD_PERCENT,
     PAY_SOURCE,
+    IES_COMPOSITION,
     TIER_REFERENCE_PROVISIONS,
     apply_pay_evidence,
     build_records,
@@ -40,12 +41,15 @@ from scripts.validate_published_graph import (
     OFFICE_RATE_PAY_FIELDS as GATE_OFFICE_RATE_PAY_FIELDS,
     PAY_DOCUMENT_STATES_FIGURE,
     PAY_DOCUMENT_URL_KEYS,
+    TIER_REFERENCE_COMPOSED_ROWS,
     TIER_REFERENCE_FIELD,
+    TIER_REFERENCE_IES_COMPOSITION,
     TIER_REFERENCE_IG_RULE,
     TIER_REFERENCE_METHOD,
     TIER_REFERENCE_METHOD_PERCENT,
     TIER_REFERENCE_ROWS,
     TIER_REFERENCE_SOURCE,
+    TIER_REFERENCE_TABLE_URL,
     US_CODE_BASIS_FIXTURE_DIR,
     tier_reference_establishments,
     tier_reference_pay_violations,
@@ -68,6 +72,21 @@ def _base_tree():
     return {
         "id": "the-constitution-of-the-united-states", "name": "The Constitution", "type": "Foundation",
         "children": [
+            # The GPO's two officers (44 U.S.C. 303) and the IES's Director
+            # and a centre Commissioner (20 U.S.C. 9514, 9517): reviewed rows
+            # since 2026-09-28. The NCER row rests on 9517(a)'s class sentence
+            # and carries 9511(c)(3) as its third document.
+            {"id": "leg-support-gpo", "name": "Government Publishing Office (GPO)", "type": "Agency",
+             "children": [
+                 {"id": "leg-support-gpo-director-gpo-public-printer", "name": "Director, GPO (Public Printer)", "type": "Position"},
+                 {"id": "leg-support-gpo-deputy-director-coo", "name": "Deputy Director / COO", "type": "Position"},
+             ]},
+            {"id": "exec-dept-ed-ies", "name": "Institute of Education Sciences (IES)", "type": "Bureau",
+             "children": [
+                 {"id": "exec-dept-ed-ies-director-ies", "name": "Director, IES", "type": "Position"},
+                 {"id": "exec-dept-ed-ies-commissioner-national-center-for-education-research-ncer",
+                  "name": "Commissioner — National Center for Education Research (NCER)", "type": "Position"},
+             ]},
             {"id": "leg-support-gao", "name": "Government Accountability Office (GAO)", "type": "Agency",
              "children": [
                  {"id": "leg-support-gao-comptroller-general-of-the-united-states",
@@ -122,6 +141,10 @@ def _records(tree=None):
 PRICED_IN_BASE_TREE = {
     "leg-support-gao-comptroller-general-of-the-united-states",
     "leg-support-gao-deputy-comptroller-general",
+    "leg-support-gpo-director-gpo-public-printer",
+    "leg-support-gpo-deputy-director-coo",
+    "exec-dept-ed-ies-director-ies",
+    "exec-dept-ed-ies-commissioner-national-center-for-education-research-ncer",
     "exec-dept-defense-inspector-general",
     "exec-dept-defense-agency-nsa-inspector-general",
 }
@@ -186,6 +209,18 @@ class MirrorTests(unittest.TestCase):
             self.assertEqual(0, row["percent"])
             self.assertIn(level, EXECUTIVE_SCHEDULE_RATES)
 
+    def test_the_gate_mirrors_the_composing_section_and_which_rows_need_it(self):
+        citation, fixture, sentence = TIER_REFERENCE_IES_COMPOSITION
+        self.assertEqual((IES_COMPOSITION["citation"], IES_COMPOSITION["fixture"], IES_COMPOSITION["quote"]),
+                         (citation, fixture, sentence))
+        composed = {n for n, row in TIER_REFERENCE_PROVISIONS.items() if row.get("composition")}
+        self.assertEqual(composed, TIER_REFERENCE_COMPOSED_ROWS)
+        self.assertEqual(2, len(composed))
+        for node_id in composed:
+            self.assertIs(TIER_REFERENCE_PROVISIONS[node_id]["composition"], IES_COMPOSITION)
+        # The NCES Commissioner is priced by 9517(b) by name and needs no such document.
+        self.assertNotIn("exec-dept-ed-ies-commissioner-national-center-for-education-statistics-nces", composed)
+
     def test_the_gate_mirrors_the_inspector_general_rule(self):
         citation, fixture, level, percent, sentence, est_citation, est_fixture, definition = TIER_REFERENCE_IG_RULE
         rule = INSPECTOR_GENERAL_RULE
@@ -216,9 +251,20 @@ class BuildTests(unittest.TestCase):
         self.assertEqual(PRICED_IN_BASE_TREE, set(records))
         # A bench-shaped IG is refused outright: 403(e) prices "an Inspector
         # General", and a node standing for several is not one.
-        self.assertEqual({"exec-ind-epa-inspector-general-bench": "stands for several posts"}, report["refused"])
-        self.assertEqual(2, report["pricedByReviewedRow"])
+        self.assertEqual("stands for several posts", report["refused"]["exec-ind-epa-inspector-general-bench"])
+        # The reviewed rows whose nodes this fixture tree does not carry are
+        # refused for that and nothing else.
+        self.assertEqual({node_id: "node not in the graph" for node_id in TIER_REFERENCE_PROVISIONS
+                          if node_id not in PRICED_IN_BASE_TREE},
+                         {k: v for k, v in report["refused"].items() if k != "exec-ind-epa-inspector-general-bench"})
+        self.assertEqual(6, report["pricedByReviewedRow"])
         self.assertEqual(2, report["pricedInspectorsGeneral"])
+        # The composed row carries three documents, the others two.
+        ncer = records["exec-dept-ed-ies-commissioner-national-center-for-education-research-ncer"]
+        self.assertEqual(3, len(ncer["documents"]))
+        self.assertEqual("20 U.S.C. 9511(c)(3)", ncer["documents"][2]["citation"])
+        self.assertEqual(2, len(records["exec-dept-ed-ies-director-ies"]["documents"]))
+        self.assertEqual(2, len(records["leg-support-gpo-director-gpo-public-printer"]["documents"]))
         # The stamped IG under DIA, the DFE's, the FBI's qualified one, the
         # bench, and AmeriCorps: each refused with the reason on the record.
         not_priced = report["notPriced"]
@@ -285,14 +331,17 @@ class ApplyTests(unittest.TestCase):
         records, _ = _records()
         tree = _base_tree()
         stats = apply_pay_evidence(tree, records, index_tree=index_tree)
-        self.assertEqual(4, stats["priced"])
+        self.assertEqual(8, stats["priced"])
         self.assertEqual(2, stats["priced_inspectors_general"])
         annotate_pay_documents(tree)
         node_map, _ = index_tree(tree)
         for node_id in records:
             node = node_map[node_id]
             pay = node[FIELD]
-            expected = 3 if pay["arithmetic"] else 2
+            # An IG's third document is 401(1)'s list; a composed row's is
+            # 9511(c)(3); every other row rests on the statute and the table.
+            composed = bool((TIER_REFERENCE_PROVISIONS.get(node_id) or {}).get("composition"))
+            expected = 3 if (pay["arithmetic"] or composed) else 2
             self.assertEqual(expected, pay["verification"]["documents"])
             self.assertEqual(DERIVED_PAY_STRENGTH_BY_COUNT[expected], pay["verification"]["percent"])
             self.assertEqual(0, pay["verification"]["documentsStatingTheFigure"])
@@ -306,7 +355,7 @@ class ApplyTests(unittest.TestCase):
         node_map, _ = index_tree(tree)
         node_map["exec-dept-defense-inspector-general"]["positionSchedulePay"] = {"source": "elsewhere"}
         stats = apply_pay_evidence(tree, records, index_tree=index_tree)
-        self.assertEqual(3, stats["priced"])
+        self.assertEqual(7, stats["priced"])
         self.assertEqual(1, stats["already_priced_by_another_source"])
 
     def test_an_ig_reparented_since_the_match_is_refused(self):
@@ -357,6 +406,8 @@ class GateTests(unittest.TestCase):
         cg_id = "leg-support-gao-comptroller-general-of-the-united-states"
         ig = self.node_map[ig_id][FIELD]
         cg = self.node_map[cg_id][FIELD]
+        ncer_id = "exec-dept-ed-ies-commissioner-national-center-for-education-research-ncer"
+        ncer = self.node_map[ncer_id][FIELD]
         good_arith = ig["arithmetic"]
         cases = {
             # Scope: the parent the tree gives the node, never the block's word.
@@ -382,6 +433,12 @@ class GateTests(unittest.TestCase):
             "another table": (cg_id, {**cg, "tableUrl": "https://www.opm.gov/other"}, "use-tree"),
             "a future retrieval": (cg_id, {**cg, "checkedAt": "2099-01-01T00:00:00Z"}, "use-tree"),
             "an unknown source": (cg_id, {**cg, "source": "somewhere"}, "use-tree"),
+            # The composed row: 9517(a) names no centre, so 9511(c)(3) must
+            # ride as the third document, quoted as printed.
+            "a composed row without its composing document": (ncer_id, {**ncer, "documents": ncer["documents"][:2]}, "use-tree"),
+            "a composed row misquoting the composing sentence": (ncer_id, {**ncer, "documents": ncer["documents"][:2] + [{**ncer["documents"][2], "quote": "The National Education Centers, which include the NCER"}]}, "use-tree"),
+            "a composing document on a row 9517(b) prices by name": ("exec-dept-ed-ies-director-ies", {**self.node_map["exec-dept-ed-ies-director-ies"][FIELD], "documents": self.node_map["exec-dept-ed-ies-director-ies"][FIELD]["documents"] + [ncer["documents"][2]]}, "use-tree"),
+            "a GPO row moved onto the other officer": ("leg-support-gpo-deputy-director-coo", self.node_map["leg-support-gpo-director-gpo-public-printer"][FIELD], "use-tree"),
         }
         for name, (node_id, pay, parent_name) in cases.items():
             with self.subTest(case=name):
@@ -408,10 +465,11 @@ class PublishedGraphTests(unittest.TestCase):
     def test_the_published_blocks_are_the_gao_officers_and_the_establishments_igs(self):
         node_map, parent_map = index_tree(json.loads(GRAPH.read_text(encoding="utf-8")))
         priced = {node_id: node for node_id, node in node_map.items() if isinstance(node.get(FIELD), dict)}
-        # 29 derived; the Department of Justice's IG carries OPM's archived
-        # listing with a printed level and rate (`positionPayRate`), which a
-        # figure set by reference never displaces, so 28 are published.
-        self.assertEqual(28, len(priced), sorted(priced))
+        # 35 derived (the GAO's two, the GPO's two, the IES's four, and 27
+        # IGs); the Department of Justice's IG carries OPM's archived listing
+        # with a printed level and rate (`positionPayRate`), which a figure
+        # set by reference never displaces, so 34 are published.
+        self.assertEqual(34, len(priced), sorted(priced))
         self.assertNotIn("exec-dept-doj-inspector-general", priced)
         self.assertIsInstance(node_map["exec-dept-doj-inspector-general"].get("positionPayRate"), dict)
         establishments = set(tier_reference_establishments(uscode_operative_text(US_CODE_BASIS_FIXTURE_DIR / "ig_5_usc_401.html")))
@@ -419,7 +477,10 @@ class PublishedGraphTests(unittest.TestCase):
             with self.subTest(node=node_id):
                 parent = node_map.get(parent_map.get(node_id) or "")
                 self.assertEqual([], tier_reference_pay_violations(node, node[FIELD], TODAY, _label, parent.get("name") if parent else None))
-                self.assertFalse(any("uscode.house.gov" in str(u) or "opm.gov" in str(u) for u in node.get("sourceUrls") or []))
+                # The pay documents never among the node's own sources; OPM's
+                # PLUM listings, a different document, may be.
+                self.assertFalse(any("uscode.house.gov" in str(u) or str(u) == TIER_REFERENCE_TABLE_URL
+                                     for u in node.get("sourceUrls") or []))
                 if node_id not in TIER_REFERENCE_PROVISIONS:
                     self.assertIn(node[FIELD]["identification"]["establishment"], establishments)
         # The stamped Defense-agency IGs, the DFEs' and the legislative ones

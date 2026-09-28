@@ -114,6 +114,24 @@ PAY_METHOD_PERCENT = (
 
 STATUTE_PUBLISHER = "Office of the Law Revision Counsel, U.S. House of Representatives"
 
+#: 20 U.S.C. 9517(a) prices "each Commissioner" of "the National Education
+#: Centers" and names none of them; 9511(c)(3) is the sentence that says which
+#: centers those are. A row that rests on the class sentence carries it as a
+#: third document, the way an Inspector General's record carries 401(1)'s
+#: establishment list; the NCES Commissioner is priced by 9517(b) by name and
+#: needs no such document.
+IES_COMPOSITION: dict[str, Any] = {
+    "citation": "20 U.S.C. 9511(c)(3)",
+    "fixture": "ies_20_usc_9511.html",
+    "role": "composes the National Education Centers whose Commissioners 20 U.S.C. 9517(a) prices",
+    "quote": (
+        "The National Education Centers, which include- (A) the National Center for Education Research (as "
+        "described in part B); (B) the National Center for Education Statistics (as described in part C); (C) "
+        "the National Center for Education Evaluation and Regional Assistance (as described in part D); and "
+        "(D) the National Center for Special Education Research (as described in part E)."
+    ),
+}
+
 #: The GAO's two officers: node id -> the row. `quote` is checked against
 #: 31 U.S.C. 703's operative text on every run; the node must still carry the
 #: name the row was written against; the level must be one OPM's table prints.
@@ -137,6 +155,79 @@ TIER_REFERENCE_PROVISIONS: dict[str, dict[str, Any]] = {
         "level": "III",
         "percent": 0,
         "quote": "Deputy Comptroller General is equal to the rate for level III of the Executive Schedule",
+    },
+    "leg-support-gpo-director-gpo-public-printer": {
+        "nodeName": "Director, GPO (Public Printer)",
+        "office": "Director of the Government Publishing Office",
+        "citation": "44 U.S.C. 303",
+        "fixture": "gpo_44_usc_303.html",
+        "subsection": "(first sentence)",
+        "level": "II",
+        "percent": 0,
+        "quote": (
+            "The annual rate of pay for the Director of the Government Publishing Office shall be a rate "
+            "which is equal to the rate for level II of the Executive Schedule"
+        ),
+    },
+    "leg-support-gpo-deputy-director-coo": {
+        "nodeName": "Deputy Director / COO",
+        "office": "Deputy Director of the Government Publishing Office",
+        "citation": "44 U.S.C. 303",
+        "fixture": "gpo_44_usc_303.html",
+        "subsection": "(second sentence)",
+        "level": "III",
+        "percent": 0,
+        "quote": (
+            "The annual rate of pay for the Deputy Director of the Government Publishing Office shall be a "
+            "rate which is equal to the rate for level III of such Executive Schedule."
+        ),
+    },
+    "exec-dept-ed-ies-director-ies": {
+        "nodeName": "Director, IES",
+        "office": "Director of the Institute of Education Sciences",
+        "citation": "20 U.S.C. 9514(c)",
+        "fixture": "ies_20_usc_9514.html",
+        "subsection": "(c) Pay",
+        "level": "II",
+        "percent": 0,
+        "quote": "The Director shall receive the rate of basic pay for level II of the Executive Schedule.",
+    },
+    "exec-dept-ed-ies-commissioner-national-center-for-education-statistics-nces": {
+        "nodeName": "Commissioner — National Center for Education Statistics (NCES)",
+        "office": "Commissioner for Education Statistics",
+        "citation": "20 U.S.C. 9517(b)(2)",
+        "fixture": "ies_20_usc_9517.html",
+        "subsection": "(b) Appointment of Commissioner for Education Statistics",
+        "level": "IV",
+        "percent": 0,
+        "quote": (
+            "The National Center for Education Statistics shall be headed by a Commissioner for Education "
+            "Statistics who shall be appointed by the President and who shall- (1) have substantial knowledge "
+            "of programs assisted by the National Center for Education Statistics; (2) receive the rate of "
+            "basic pay for level IV of the Executive Schedule;"
+        ),
+    },
+    "exec-dept-ed-ies-commissioner-national-center-for-education-research-ncer": {
+        "nodeName": "Commissioner — National Center for Education Research (NCER)",
+        "office": "Commissioner of the National Center for Education Research",
+        "citation": "20 U.S.C. 9517(a)(2)(A)",
+        "fixture": "ies_20_usc_9517.html",
+        "subsection": "(a)(2) Pay and qualifications",
+        "level": "IV",
+        "percent": 0,
+        "quote": "each Commissioner shall- (A) receive the rate of basic pay for level IV of the Executive Schedule;",
+        "composition": IES_COMPOSITION,
+    },
+    "exec-dept-ed-ies-commissioner-national-center-for-education-evaluation-ncee": {
+        "nodeName": "Commissioner — National Center for Education Evaluation (NCEE)",
+        "office": "Commissioner of the National Center for Education Evaluation and Regional Assistance",
+        "citation": "20 U.S.C. 9517(a)(2)(A)",
+        "fixture": "ies_20_usc_9517.html",
+        "subsection": "(a)(2) Pay and qualifications",
+        "level": "IV",
+        "percent": 0,
+        "quote": "each Commissioner shall- (A) receive the rate of basic pay for level IV of the Executive Schedule;",
+        "composition": IES_COMPOSITION,
     },
 }
 
@@ -295,7 +386,7 @@ def build_records(
     refusals: dict[str, str] = {}
     not_priced: dict[str, str] = {}
 
-    # --- the GAO rows ------------------------------------------------------
+    # --- the reviewed rows: the GAO's officers, the GPO's, the IES's ---------
     gao_sections: dict[str, dict[str, Any]] = {}
     for node_id, row in sorted(TIER_REFERENCE_PROVISIONS.items()):
         sec = gao_sections.get(row["fixture"])
@@ -323,11 +414,23 @@ def build_records(
         if level_row is None:
             refusals[node_id] = f"OPM's table does not print level {row['level']}"
             continue
+        extra_documents: list[dict[str, Any]] = []
+        composition = row.get("composition")
+        if composition:
+            comp_sec = gao_sections.get(composition["fixture"])
+            if comp_sec is None:
+                comp_sec = section(composition["fixture"])
+                gao_sections[composition["fixture"]] = comp_sec
+            if composition["quote"] not in comp_sec["operative"]:
+                where = "only in the publisher's notes" if composition["quote"] in comp_sec["whole"] else "nowhere on the page"
+                refusals[node_id] = f"{composition['citation']} no longer carries the composing sentence ({where})"
+                continue
+            extra_documents.append(_statute_document(comp_sec, composition["citation"], composition["quote"], composition["role"]))
         records[node_id] = _record(
             node_id, row["office"], row["citation"], row["subsection"], row["quote"], row["level"],
             int(row["percent"]), sec, level_row, table, fiscal_year,
             table_url=table_url, table_sha256=table_sha256, table_fetched_at=table_fetched_at,
-            extra_documents=[], identification={"kind": "reviewed_row", "nodeName": row["nodeName"]},
+            extra_documents=extra_documents, identification={"kind": "reviewed_row", "nodeName": row["nodeName"]},
         )
 
     # --- the Inspectors General ----------------------------------------------

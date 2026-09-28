@@ -129,11 +129,10 @@ def main(argv: list[str] | None = None) -> int:
         print(f"    not priced: {node_id} — {reason}")
     for line in rejected[:20]:
         print(f"  REJECTED {line}")
-    print(
-        f"Every record rests on {report['documentsPerRecord']} official documents "
-        f"({document_strength_percent(report['documentsPerRecord'])}% on {STRENGTH_SCALE}); "
-        f"{report['documentsStatingTheFigure']} of them state the figure."
-    )
+    for count, percent in sorted(report["documentStrengthPercent"].items()):
+        n = sum(1 for c in report["documentsPerRecord"].values() if c == int(count))
+        print(f"{n} record(s) rest on {count} official documents ({percent}% on {STRENGTH_SCALE}); "
+              "0 of them state the figure.")
     print("Every record is scoped 'proxy'. Basic pay is not the node's cost, and nothing here writes a source URL onto a node.")
 
     if args.dry_run:

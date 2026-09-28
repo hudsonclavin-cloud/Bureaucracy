@@ -329,6 +329,7 @@ class PublishedGraphTests(unittest.TestCase):
                 for node in self.nodes
                 if isinstance(node.get(field), dict)
                 and not isinstance(node[field].get("identification"), dict)
+                and not node[field].get("viaStatute")
             }
             with self.subTest(field):
                 self.assertTrue(counts <= {2}, "{} published {}".format(field, counts))
@@ -336,10 +337,13 @@ class PublishedGraphTests(unittest.TestCase):
     def test_a_reviewed_schedule_record_publishes_three_and_nothing_else_does(self):
         """The three-document pay blocks: a reviewed schedule identification
         (the Code's title is not the node's name, so a second statute joins
-        them and is counted) and, since 2026-09-28, an establishment's
-        Inspector General (5 U.S.C. 401's list is what scopes 403(e) to the
-        post, and is counted). Every three-count must be one of the two and
-        every one of the two must count three."""
+        them and is counted); since 2026-09-28, an establishment's Inspector
+        General (5 U.S.C. 401's list is what scopes 403(e) to the post, and is
+        counted), a tier-reference row priced from a class sentence that
+        names no centre (20 U.S.C. 9511(c)(3) does, and is counted), and a
+        derived rate reached through two statutes (the FJC's Director, 28
+        U.S.C. 626 -> 603). Every three-count must be one of the four and
+        every one of the four must count three."""
         if not self.nodes:
             self.skipTest("no published graph")
         threes = set()
@@ -355,7 +359,12 @@ class PublishedGraphTests(unittest.TestCase):
                     reviewed.add((node.get("id"), field))
                     self.assertEqual(90, block["verification"]["percent"])
                     self.assertEqual(1, block["verification"]["documentsStatingTheFigure"])
-                if field == "positionTierReferencePay" and isinstance(block.get("arithmetic"), dict):
+                if field == "positionTierReferencePay" and (
+                        isinstance(block.get("arithmetic"), dict) or len(block.get("documents") or []) == 3):
+                    reviewed.add((node.get("id"), field))
+                    self.assertEqual(90, block["verification"]["percent"])
+                    self.assertEqual(0, block["verification"]["documentsStatingTheFigure"])
+                if field == "positionDerivedPay" and block.get("viaStatute"):
                     reviewed.add((node.get("id"), field))
                     self.assertEqual(90, block["verification"]["percent"])
                     self.assertEqual(0, block["verification"]["documentsStatingTheFigure"])

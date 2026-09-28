@@ -201,6 +201,42 @@ PARITY_PROVISIONS = {
     },
 }
 
+#: Two OFFICES priced the same way, since 2026-09-28 on the owner's
+#: instruction: 28 U.S.C. 603 pays the Director of the Administrative Office
+#: "the same as the salary of a district judge", and 28 U.S.C. 626 pays the
+#: Director of the Federal Judicial Center "the same as that of the Director
+#: of the Administrative Office" -- a chain of two statutes to the tier, so
+#: that record rests on THREE documents (`via` is the middle one) and none of
+#: them states the figure. `subject` is what the statute's sentence is about,
+#: printed by the panel where a court row prints "every judge of <court>".
+PARITY_PROVISIONS["jud-support-aousc-director-aousc"] = {
+    "citation": "28 U.S.C. 603",
+    "fixture": "aousc_28_usc_603.html",
+    "court": None,
+    "subject": "the Director of the Administrative Office of the United States Courts",
+    "subsection": "Salaries",
+    "tier": "district judges",
+    "quote": "The salary of the Director shall be the same as the salary of a district judge.",
+}
+PARITY_PROVISIONS["jud-support-fjc-director-fjc"] = {
+    "citation": "28 U.S.C. 626",
+    "fixture": "fjc_28_usc_626.html",
+    "court": None,
+    "subject": "the Director of the Federal Judicial Center",
+    "subsection": "Compensation of the Director and Deputy Director",
+    "tier": "district judges",
+    "quote": (
+        "The compensation of the Director of the Federal Judicial Center shall be the same as that of "
+        "the Director of the Administrative Office of the United States Courts"
+    ),
+    "via": {
+        "citation": "28 U.S.C. 603",
+        "fixture": "aousc_28_usc_603.html",
+        "subject": "the Director of the Administrative Office of the United States Courts",
+        "quote": "The salary of the Director shall be the same as the salary of a district judge.",
+    },
+}
+
 #: The same four provisions reach each court's bench node -- "Judge (×18)",
 #: "(×15)", "(×4)", "(×8)" -- because each says "Each judge", and a tier rate
 #: holds for every holder alike. Refused until 2026-09-23 under the blanket
@@ -221,6 +257,15 @@ for _bench, _chief in BENCH_NODES.items():
 #: Read, and deliberately not priced, with the reason. Kept as data so the
 #: derive step can print it and a reviewer can see each is a decision.
 NOT_PRICED = {
+    "jud-support-aousc-deputy-director": (
+        "28 U.S.C. 603 sets the Deputy Director's salary at 92 percent of the Director's: arithmetic on "
+        "a figure that is itself a join, which this field does not publish"
+    ),
+    "jud-support-fjc-deputy-director": (
+        "28 U.S.C. 626 sets the Deputy Director's compensation at the Administrative Office Deputy "
+        "Director's, which 28 U.S.C. 603 sets at 92 percent of that Director's: two hops and arithmetic "
+        "on a figure that is itself a join, which this field does not publish"
+    ),
     "jud-specialized-intl-trade-chief-judge-cit": (
         "28 U.S.C. 252 states no parity: it sets the rate by reference to section 225 of the "
         "Federal Salary Act of 1967 as adjusted by 28 U.S.C. 461, a chain through documents "
@@ -350,6 +395,19 @@ def build_records(
             where = "only in the publisher's notes" if quote in section["whole"] else "nowhere on the page"
             refusals[node_id] = f"{provision['citation']} no longer carries the quoted sentence ({where})"
             continue
+        via = provision.get("via")
+        via_section = None
+        via_quote = ""
+        if via:
+            via_section = sections.get(via["fixture"])
+            if via_section is None:
+                via_section = load_section(via["fixture"])
+                sections[via["fixture"]] = via_section
+            via_quote = _collapse(via["quote"])
+            if via_quote not in via_section["operative"]:
+                where = "only in the publisher's notes" if via_quote in via_section["whole"] else "nowhere on the page"
+                refusals[node_id] = f"{via['citation']} no longer carries the quoted sentence ({where})"
+                continue
         tier = tiers.get(provision["tier"])
         if not tier:
             refusals[node_id] = f"the compensation table does not price {provision['tier']!r} for {year}"
@@ -366,13 +424,17 @@ def build_records(
         # stamps `holders` on it after the counts are annotated.
 
         tier_label = provision["tier"].title()
+        via_text = (
+            f"· {via['citation']}: “{via_quote}” " if via else ""
+        )
         derivation = (
             f"{provision['citation']} {provision['subsection']}: “{quote}” "
+            f"{via_text}"
             f"· Judicial Compensation {year}: {tier_label} {tier['rateText']}"
         )
         documents = [
             {
-                "role": "states the tier this post is paid at",
+                "role": ("states whose pay this post's equals" if via else "states the tier this post is paid at"),
                 "citation": provision["citation"],
                 "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
                 "title": f"{provision['citation']}, current through the prelim edition",
@@ -382,6 +444,17 @@ def build_records(
                 "retrievedAt": section["fetched_at"],
                 "statesTheFigure": False,
             },
+            *([{
+                "role": "states the tier that office is paid at",
+                "citation": via["citation"],
+                "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+                "title": f"{via['citation']}, current through the prelim edition",
+                "quote": via_quote,
+                "url": via_section["url"],
+                "documentSha256": via_section["sha256"],
+                "retrievedAt": via_section["fetched_at"],
+                "statesTheFigure": False,
+            }] if via else []),
             {
                 "role": "states what that tier pays",
                 "citation": f"Judicial Compensation, {year}",
@@ -422,9 +495,12 @@ def build_records(
             "documentSha256": section["sha256"],
             "retrievedAt": section["fetched_at"],
             "locator": {"section": provision["citation"], "subsection": provision["subsection"]},
-            "court": provision["court"],
+            "court": provision.get("court"),
+            "subject": provision.get("subject") or f"every judge of {provision.get('court')}",
             "statute": provision["citation"],
             "statuteQuote": quote,
+            "viaStatute": via["citation"] if via else None,
+            "viaQuote": via_quote or None,
             "seatTier": provision["tier"],
             "year": year,
             "rateText": tier["rateText"],
@@ -447,9 +523,14 @@ def build_records(
         },
         "considered": len(PARITY_PROVISIONS),
         "priced": len(records),
-        "documentsPerRecord": 2,
+        "documentsPerRecord": {
+            node_id: len(record["documents"]) for node_id, record in sorted(records.items())
+        },
         "documentsStatingTheFigure": 0,
-        "documentStrengthPercent": document_strength_percent(2),
+        "documentStrengthPercent": {
+            str(count): document_strength_percent(count)
+            for count in sorted({len(record["documents"]) for record in records.values()})
+        },
         "strengthScale": STRENGTH_SCALE,
         "refused": dict(sorted(refusals.items())),
         "notPriced": dict(sorted(NOT_PRICED.items())),
@@ -464,7 +545,9 @@ def apply_pay_evidence(
     *,
     index_tree: Any = None,
 ) -> dict[str, Any]:
-    """Stamp `positionDerivedPay` on the four Article I chief judges.
+    """Stamp `positionDerivedPay` on the Article I chief judges and benches,
+    and on the two judicial-branch office holders whose statutes pay them at a
+    judge's rate.
 
     Its own field rather than `positionStatutoryPay`, for the reason
     `statutory_schedule.py` gives for not widening `positionPayRate`: that
@@ -514,6 +597,9 @@ def apply_pay_evidence(
             "statute": record.get("statute"),
             "statuteQuote": record.get("statuteQuote"),
             "court": record.get("court"),
+            "subject": record.get("subject"),
+            "viaStatute": record.get("viaStatute"),
+            "viaQuote": record.get("viaQuote"),
             "derivation": record.get("derivation"),
             "quote": record.get("quote"),
             "documents": documents,

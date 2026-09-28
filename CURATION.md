@@ -3126,3 +3126,181 @@ Register of Copyrights) are four fetches; the four tier-reference candidates
 existing table. The two owner decisions still open are unchanged: the
 counted-class shape (CPSC's bench, the Deputy USTRs) and Members paid under
 Schedule 6 (committee chairs, the whips).
+
+### 19.11 The eight candidates of §19.10, in three tables; the eighth batch triaged (2026-09-28)
+
+**Added, on the owner's instruction: "add the eight candidates."** Fourteen
+basis sections were fetched from uscode.house.gov and eleven are committed;
+the three that turned out to be dead ends (28 U.S.C. 625, 627 and 628 — the
+FJC's staff, retirement and appropriations sections, none of them pay) were
+deleted rather than committed, the rule §19.10 applied to the NIST fetches.
+The eight fell into three tables, and two of them were not where the
+candidate list had put them.
+
+**Four reviewed Executive Schedule rows** (`statutory_schedule.REVIEWED_TITLE_ROWS`, §19.1's shape):
+
+| Node | Statutory title (level) | Basis |
+|---|---|---|
+| `Administrator, FHWA` | Administrator, Federal Highway Administration (II) | 49 U.S.C. 104(b)(1): "The head of the Administration is the Administrator" |
+| USPTO `Director / Under Secretary for IP` | Under Secretary of Commerce for Intellectual Property and Director of the United States Patent and Trademark Office (III) | 35 U.S.C. 3(a)(1): the Office's powers "vested in" that one joint title |
+| `Commissioner, BOR` | Commissioner of Reclamation, Department of the Interior (V) | 43 U.S.C. 373a: reclamation "administered by a Commissioner of Reclamation" |
+| `Register of Copyrights & Director` | Register of Copyrights (III) | 17 U.S.C. 701(a): "the Register of Copyrights as director of the Copyright Office" |
+
+The Register's is worth a line: the batch had cited 17 U.S.C. 701(f) as
+setting the pay by reference to Level III, which would have made it a
+tier-reference record. The Code prints "Register of Copyrights" on the
+Schedule itself at §5314, so it is a Schedule row with §701 as the basis, and
+§701(a)'s "as director of the Copyright Office" is what the graph's
+"& Director" stands for. The USPTO's bare `Deputy Director` node is left
+alone: the Code prints the Deputy's joint title (IV), but a row on a bare
+title is the shape the post floor exists to distrust, and the owner named
+the Director, not the Deputy.
+
+**Six tier-reference rows** (`tier_reference_pay.TIER_REFERENCE_PROVISIONS`,
+§19.9's shape; the table stopped being "the GAO's two officers"):
+
+| Node | Statute | Level |
+|---|---|---|
+| `Director, GPO (Public Printer)` | 44 U.S.C. 303, first sentence | II |
+| `Deputy Director / COO` (GPO) | 44 U.S.C. 303, second sentence | III |
+| `Director, IES` | 20 U.S.C. 9514(c) | II |
+| `Commissioner — NCES` | 20 U.S.C. 9517(b)(2), which names the Commissioner for Education Statistics | IV |
+| `Commissioner — NCER` | 20 U.S.C. 9517(a)(2)(A), "each Commissioner" of the National Education Centers, + 9511(c)(3) | IV |
+| `Commissioner — NCEE` | the same two sections | IV |
+
+The batch had graded the IES Director "Level II by 20 U.S.C. 9517"; the
+level was right and the section was the Commissioners'. §9514(c) is the
+Director's. And §9517(a) prices "each Commissioner" of "the National
+Education Centers" without naming one, so the NCER and NCEE rows carry a
+third document, 20 U.S.C. 9511(c)(3), the sentence that lists the four
+Centers — the way an Inspector General's record carries 401(1)'s list. The
+gate mirrors that sentence and the two rows that need it, and refuses a
+block that lacks it, misquotes it, or carries it on the NCES row, which
+§9517(b) prices by name. The GPO's `Deputy Director / COO` is the graph's own
+styling of the one Deputy Director §302 creates; the row is by node id and
+the name check is by canonical key.
+
+**One office priced in the derived field, and one through a chain.** The
+condition the candidate list set — "if 28 U.S.C. 628 sets the salary at a
+judicial tier's" — was not met. §628 is appropriations. **28 U.S.C. 626** is
+the section: "The compensation of the Director of the Federal Judicial
+Center shall be the same as that of the Director of the Administrative Office
+of the United States Courts", and **28 U.S.C. 603** sets that Director's
+salary "the same as the salary of a district judge". So:
+
+- `Director, AOUSC` is priced from §603 alone — one statute, the compensation
+  table, two documents, 80%, exactly the four courts' shape, with the record's
+  `subject` ("the Director of the Administrative Office …") printed where a
+  court row prints "every judge of <court>".
+- `Director, FJC` is priced through a **chain**: §626 → §603 → the table,
+  three documents, 90%, none stating the figure. The provision carries `via`,
+  the middle statute; the gate's mirror row grows a fourth element for it and
+  refuses a block that drops the middle document, misquotes it, or claims a
+  chain its provision does not make.
+- Both Deputies are refused and say why: §603 pays the AO's Deputy "92
+  percent of the salary of the Director", and §626 pays the FJC's Deputy what
+  the AO's Deputy is paid — arithmetic on a figure that is itself a join, which
+  this field does not publish.
+
+**Read and refused: the CBO.** 2 U.S.C. 601(a)(5)(A) pays the Director "at an
+annual rate of pay that is equal to the maximum rate of pay in effect under
+section 4575(f) of this title" — the Senate's own pay ceiling, a chain through
+a section this project has not read — and (B) the Deputy "$1,000 less than
+the annual rate of pay received by the Director". The section is committed as
+`cbo_2_usc_601.html` because "looked and it chains elsewhere" is a fact worth
+keeping; nothing is published from it.
+
+**Measured:** reviewed Schedule rows 37 → 41 and positions priced from the
+Schedule 136 → 140 (I 19, II 30, III 24, IV 61, V 6); tier-reference records
+28 → 34; derived records 8 → 10; pay claims **554 → 566**; unpriced
+**4,037 → 4,025** (3,246 unreached, 759 stating a multiplicity, 20 listed
+without a rate). Nothing measured moved. The only frontend change is the
+derived-pay sentence in the panel and the atlas, which now prints the
+record's subject and, on a chain, the middle statute; the cache stamp is
+`20260928b`.
+
+**The eighth batch, triaged.** It was a sweep of some 250 nodes and its
+findings are mostly the refusals the earlier batches already established,
+so the exceptions come first.
+
+*Checked against the committed Schedule sections — none of these is priced
+yet, and the check was done after a first draft of this section had asserted
+the opposite for several of them:*
+
+- **`Director, NSF` at Level II** — priced on 2026-09-28 (§19.10). The one
+  the batch reported that the graph already carries.
+- **`Librarian of Congress` at Level II** — the batch cites OPM's table, but
+  §§5312–5316 print no "Librarian of Congress" at any level; if the
+  Librarian's pay is set by a statute of the Library's own, that statute has
+  not been read and the post is a tier-reference candidate, not a Schedule
+  row. Refused on the batch's word.
+- **`Director, OFR` at Level III** — the batch cites 12 U.S.C. 5342 as
+  setting the pay by reference; the Code in fact prints "Director of the
+  Office of Financial Research" on the Schedule itself at §5314, so this is
+  a reviewed Schedule row with §5342 as its basis (one fetch), not a
+  tier-reference record. The OFR's `Chief Data Officer`, `Chief of Staff`,
+  `Deputy Director`, `Director — Research & Analysis` and `General Counsel`
+  are, per the batch, administratively determined under 5342(d)(2) — a
+  system with no printed figure — and stay refused.
+- **Reviewed-row candidates the Code confirms at the batch's level**, each
+  one basis fetch away and none added on the batch's word: `Administrator,
+  NASA` ("Administrator of the National Aeronautics and Space Administration",
+  II); `Administrator, FTA` ("Federal Transit Administrator", II);
+  `Administrator, FRA` (III); `Administrator, MARAD` (III); `Assistant
+  Secretary of Labor for Mine Safety` ("Assistant Secretary of Labor for Mine
+  Safety and Health", IV); `Chair, FMC` (III) and its `Commissioner (×4)`
+  ("Members, Federal Maritime Commission", IV, the class-title bench shape);
+  and the stamped `Director / Administrator / Chair, <agency>` heads of the
+  MSPB (III), the NCUA Board (III), the Peace Corps (III), the Selective
+  Service (IV), the FLRA (IV), the NEH (III), the NTSB (III), the Office of
+  Special Counsel (III), the PBGC (III) and the Postal Regulatory Commission
+  (III). The last group is the five-title template §19.9 documents: a row
+  would identify which of Director, Administrator or Chair the agency's own
+  statute creates, agency by agency, the FCC/FTC shape.
+- **Not on the Schedule under the batch's title**: the OSHA Assistant
+  Secretary (the Code prints the Review Commission's chair and members, not
+  the Assistant Secretary by name), the Export-Import Bank's head, the FCA's,
+  and the CSB's chair; and the **Assistant Attorneys General**, printed as
+  "Assistant Attorneys General (11)" at Level IV — the counted-class shape
+  the matcher refuses until the owner decides it.
+
+*Refused, with the reason:*
+
+- **`$158,500` "EX-IV payable" for every State Department Assistant Secretary,
+  the DOJ Assistant Attorneys General and the CSB Chair**, from OPM's pay-freeze
+  memo: the memo states a frozen payable rate for covered political appointees,
+  not the Schedule's rate for the office, and this project publishes the
+  official rate OPM's Salary Table 2026-EX prints ($197,200 for Level IV) with
+  the table's own freeze footnote beside it (see `pay_tables.py`). The same
+  figure has been refused in every batch since the fourth.
+- **`$174,000` for the Joint Economic Committee's Chair and Vice Chair**, from
+  the House Clerk's salary page: a Member's salary, which this graph publishes
+  for no Member's seat (§19.6, the held decision on chairs), and the Clerk's
+  page was not fetched.
+- **The TVA Board chair's "$50,000 per year"** from 16 U.S.C. 831a: the batch
+  itself notes the statute requires adjustments, and a node named `Director /
+  Administrator / Chair, Tennessee Valley Authority` is the stamped template
+  and not the Board's chair; not fetched.
+- **The PCLOB chair** — "board_or_commission_statutory" with no figure; 42
+  U.S.C. 2000ee was not fetched and prints, per the batch, no rate.
+- **Tax Court and Court of Federal Claims `Judge (×18)` / `(×15)` at
+  $249,900** — priced since 2026-09-23 from their own parity provisions
+  (`derived_pay.BENCH_NODES`); the CFC's `Senior Judge (×multiple)` stays
+  refused for the reason the module records (28 U.S.C. 178, unread). The Tax
+  Court's `Special Trial Judge (×multiple)`: the batch cites the court's
+  budget justification, which states a system and no figure.
+- **ATF agents and inspectors, the Capitol Police officers, GAO's analysts,
+  the Foreign Service officers, the USCIS, FSA, NRCS, FWS, BIA and HRSA
+  field titles, the presidential libraries' staff, the NSA's stamped five, the
+  DOE Office of Science associate directors, OFAC, TTB (whose Administrator
+  is SES with no printed figure), AmeriCorps, ABMC, ARC, NCPC, DFC and the
+  NSC** — each is a grade, a system, a range, a careers page or nothing; no
+  document states the post's figure. `unknown | — | none`, which the batch
+  itself says "does not mean the position is unpaid", is the honest state and
+  the one the graph already shows.
+
+**Next:** the reviewed-row candidates above are seventeen posts for about
+seventeen basis fetches — NASA, FTA, FRA, MARAD, MSHA, the OFR, the FMC's
+chair and bench, and the ten stamped heads — and the counted-class
+(Assistant Attorneys General, CPSC, PRC, NCUA members) and
+Members-under-Schedule-6 decisions are still the owner's.

@@ -113,7 +113,7 @@ def main(argv: list[str] | None = None) -> int:
     print(f"{loaded['table']['table']}, {loaded['table']['effectiveText']}, fetched {loaded['fetched_at']}")
     print(f"establishments 5 U.S.C. 401(1) names: {len(report['establishments'])}")
     print(f"Inspector General nodes considered: {report['inspectorGeneralNodesConsidered']}   "
-          f"priced {report['priced']} ({report['pricedByReviewedRow']} GAO rows, "
+          f"priced {report['priced']} ({report['pricedByReviewedRow']} reviewed rows, "
           f"{report['pricedInspectorsGeneral']} Inspectors General of an establishment)   validated {report['validated']}")
     for node_id, record in sorted(records.items()):
         print(f"    PRICED   {node_id}  {record['rateText']}")
@@ -130,7 +130,7 @@ def main(argv: list[str] | None = None) -> int:
     for line in rejected[:20]:
         print(f"  REJECTED {line}")
     print(
-        f"A GAO record rests on 2 official documents ({document_strength_percent(2)}%), an Inspector General's on 3 "
+        f"A reviewed row's record rests on 2 official documents ({document_strength_percent(2)}%), 3 where a composing section is needed, an Inspector General's on 3 "
         f"({document_strength_percent(3)}%), on {STRENGTH_SCALE}; 0 of them state the figure for the post."
     )
     print("Every record is scoped 'proxy'. Basic pay is not the node's cost, and nothing here writes a source URL onto a node.")

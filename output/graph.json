@@ -44351,6 +44351,64 @@
                       "budget": null,
                       "color": "#666666",
                       "children": [],
+                      "positionSchedulePay": {
+                        "source": "us_code_executive_schedule",
+                        "method": "level_assigned_by_5_usc_5312_5316_to_the_office_a_second_statute_identifies_this_post_as",
+                        "identification": {
+                          "nodeName": "Register of Copyrights & Director",
+                          "basis": "the same office: 17 U.S.C. 701 makes the Register of Copyrights the director of the Copyright Office of the Library of Congress, and 5 U.S.C. 5314 places the Register of Copyrights at Level III; the graph's '& Director' is the Office's own styling of that one post",
+                          "basisCitation": "17 U.S.C. 701",
+                          "basisQuote": "All administrative functions and duties under this title, except as otherwise specified, are the responsibility of the Register of Copyrights as director of the Copyright Office of the Library of Congress.",
+                          "basisUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section701&num=0&edition=prelim",
+                          "basisSha256": "5b0b0d150aede2aca7a0af84e46df0b7d9f08c0c228938ed9fc8dc85ddf4d667",
+                          "basisCheckedAt": "2026-09-28T19:22:39Z"
+                        },
+                        "payLevel": "III",
+                        "citation": "5 U.S.C. §5314",
+                        "statutoryTitle": "Register of Copyrights",
+                        "scopedOffice": null,
+                        "scopedOrganisation": null,
+                        "scopedOrganisationId": null,
+                        "statuteUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5314&num=0&edition=prelim",
+                        "statuteCheckedAt": "2026-09-18T20:34:21Z",
+                        "amount": 209600.0,
+                        "rateText": "$209,600",
+                        "table": "Salary Table No. 2026-EX",
+                        "effectiveText": "Effective January 2026",
+                        "effective": "2026-01-01",
+                        "fiscalYear": 2026,
+                        "costBasis": "basic_pay",
+                        "scopeMatch": "proxy",
+                        "financialEvidenceStatus": "partial",
+                        "amountScope": "Level III",
+                        "quote": "Level III $209,600",
+                        "footnotes": [
+                          "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+                        ],
+                        "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+                        "checkedAt": "2026-09-11T03:05:36Z",
+                        "verification": {
+                          "documents": 3,
+                          "documentsStatingTheFigure": 1,
+                          "percent": 90,
+                          "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+                          "caution": "One document states the rate and another is the statute that puts this post at that level; where a third is listed, it is the statute that says this post is the office the Code names, because the Code's title is not this node's name. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+                          "documentRoles": [
+                            {
+                              "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+                              "role": "states what that Executive Schedule level pays"
+                            },
+                            {
+                              "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5314&num=0&edition=prelim",
+                              "role": "places this post at that level"
+                            },
+                            {
+                              "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section701&num=0&edition=prelim",
+                              "role": "identifies this post as the office the Code places at that level"
+                            }
+                          ]
+                        }
+                      },
                       "sourceUrls": [],
                       "sourceTypes": [],
                       "sourceCount": 0,
@@ -44866,6 +44924,81 @@
                   "budget": null,
                   "color": "#666666",
                   "children": [],
+                  "positionTierReferencePay": {
+                    "source": "statutory_tier_reference_pay",
+                    "sourceLabel": "a statute setting the post's pay by reference to an Executive Schedule level, joined to OPM's table",
+                    "method": "pay_set_by_reference_to_an_executive_schedule_level_joined_to_opm_table",
+                    "amount": 228000.0,
+                    "rateText": "$228,000",
+                    "level": "II",
+                    "levelText": "Level II",
+                    "levelRateText": "$228,000",
+                    "levelAmount": 228000.0,
+                    "percent": 0,
+                    "arithmetic": null,
+                    "office": "Director of the Government Publishing Office",
+                    "statute": "44 U.S.C. 303",
+                    "statuteQuote": "The annual rate of pay for the Director of the Government Publishing Office shall be a rate which is equal to the rate for level II of the Executive Schedule",
+                    "identification": {
+                      "kind": "reviewed_row",
+                      "nodeName": "Director, GPO (Public Printer)"
+                    },
+                    "derivation": "44 U.S.C. 303 (first sentence): “The annual rate of pay for the Director of the Government Publishing Office shall be a rate which is equal to the rate for level II of the Executive Schedule” · Salary Table No. 2026-EX, Effective January 2026: Level II $228,000",
+                    "quote": "44 U.S.C. 303 (first sentence): “The annual rate of pay for the Director of the Government Publishing Office shall be a rate which is equal to the rate for level II of the Executive Schedule” · Salary Table No. 2026-EX, Effective January 2026: Level II $228,000",
+                    "documents": [
+                      {
+                        "role": "sets this post's basic pay by reference to Executive Schedule Level II",
+                        "citation": "44 U.S.C. 303",
+                        "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+                        "title": "44 U.S.C. 303, current through the prelim edition",
+                        "quote": "The annual rate of pay for the Director of the Government Publishing Office shall be a rate which is equal to the rate for level II of the Executive Schedule",
+                        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title44-section303&num=0&edition=prelim",
+                        "documentSha256": "070973f26ae3054f484678c8aa078dd1683a7ef6e0c35b0badfbe9ea44d93511",
+                        "retrievedAt": "2026-09-28T19:23:03Z",
+                        "statesTheFigure": false
+                      },
+                      {
+                        "role": "states what that Executive Schedule level pays",
+                        "citation": "Salary Table No. 2026-EX, Effective January 2026",
+                        "publisher": "U.S. Office of Personnel Management",
+                        "title": "Salary Table No. 2026-EX",
+                        "quote": "Level II $228,000",
+                        "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+                        "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+                        "retrievedAt": "2026-09-11T03:05:36Z",
+                        "statesTheFigure": false
+                      }
+                    ],
+                    "table": "Salary Table No. 2026-EX",
+                    "effectiveText": "Effective January 2026",
+                    "effective": "2026-01-01",
+                    "fiscalYear": 2026,
+                    "footnotes": [
+                      "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+                    ],
+                    "costBasis": "basic_pay",
+                    "scopeMatch": "proxy",
+                    "financialEvidenceStatus": "partial",
+                    "amountScope": "Level II",
+                    "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title44-section303&num=0&edition=prelim",
+                    "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+                    "checkedAt": "2026-09-28T19:23:03Z",
+                    "verification": {
+                      "documents": 2,
+                      "documentsStatingTheFigure": 0,
+                      "percent": 80,
+                      "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+                      "caution": "The percentage measures how much official documentation this figure rests on, not the chance that it is right. No document here states the figure for this post: a statute sets its pay by reference to an Executive Schedule level, and OPM's table states what that level pays; where the statute adds a percentage, the result is arithmetic this project performed and no document prints.",
+                      "documentRoles": [
+                        {
+                          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title44-section303&num=0&edition=prelim"
+                        },
+                        {
+                          "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx"
+                        }
+                      ]
+                    }
+                  },
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -44896,6 +45029,81 @@
                   "budget": null,
                   "color": "#666666",
                   "children": [],
+                  "positionTierReferencePay": {
+                    "source": "statutory_tier_reference_pay",
+                    "sourceLabel": "a statute setting the post's pay by reference to an Executive Schedule level, joined to OPM's table",
+                    "method": "pay_set_by_reference_to_an_executive_schedule_level_joined_to_opm_table",
+                    "amount": 209600.0,
+                    "rateText": "$209,600",
+                    "level": "III",
+                    "levelText": "Level III",
+                    "levelRateText": "$209,600",
+                    "levelAmount": 209600.0,
+                    "percent": 0,
+                    "arithmetic": null,
+                    "office": "Deputy Director of the Government Publishing Office",
+                    "statute": "44 U.S.C. 303",
+                    "statuteQuote": "The annual rate of pay for the Deputy Director of the Government Publishing Office shall be a rate which is equal to the rate for level III of such Executive Schedule.",
+                    "identification": {
+                      "kind": "reviewed_row",
+                      "nodeName": "Deputy Director / COO"
+                    },
+                    "derivation": "44 U.S.C. 303 (second sentence): “The annual rate of pay for the Deputy Director of the Government Publishing Office shall be a rate which is equal to the rate for level III of such Executive Schedule.” · Salary Table No. 2026-EX, Effective January 2026: Level III $209,600",
+                    "quote": "44 U.S.C. 303 (second sentence): “The annual rate of pay for the Deputy Director of the Government Publishing Office shall be a rate which is equal to the rate for level III of such Executive Schedule.” · Salary Table No. 2026-EX, Effective January 2026: Level III $209,600",
+                    "documents": [
+                      {
+                        "role": "sets this post's basic pay by reference to Executive Schedule Level III",
+                        "citation": "44 U.S.C. 303",
+                        "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+                        "title": "44 U.S.C. 303, current through the prelim edition",
+                        "quote": "The annual rate of pay for the Deputy Director of the Government Publishing Office shall be a rate which is equal to the rate for level III of such Executive Schedule.",
+                        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title44-section303&num=0&edition=prelim",
+                        "documentSha256": "070973f26ae3054f484678c8aa078dd1683a7ef6e0c35b0badfbe9ea44d93511",
+                        "retrievedAt": "2026-09-28T19:23:03Z",
+                        "statesTheFigure": false
+                      },
+                      {
+                        "role": "states what that Executive Schedule level pays",
+                        "citation": "Salary Table No. 2026-EX, Effective January 2026",
+                        "publisher": "U.S. Office of Personnel Management",
+                        "title": "Salary Table No. 2026-EX",
+                        "quote": "Level III $209,600",
+                        "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+                        "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+                        "retrievedAt": "2026-09-11T03:05:36Z",
+                        "statesTheFigure": false
+                      }
+                    ],
+                    "table": "Salary Table No. 2026-EX",
+                    "effectiveText": "Effective January 2026",
+                    "effective": "2026-01-01",
+                    "fiscalYear": 2026,
+                    "footnotes": [
+                      "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+                    ],
+                    "costBasis": "basic_pay",
+                    "scopeMatch": "proxy",
+                    "financialEvidenceStatus": "partial",
+                    "amountScope": "Level III",
+                    "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title44-section303&num=0&edition=prelim",
+                    "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+                    "checkedAt": "2026-09-28T19:23:03Z",
+                    "verification": {
+                      "documents": 2,
+                      "documentsStatingTheFigure": 0,
+                      "percent": 80,
+                      "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+                      "caution": "The percentage measures how much official documentation this figure rests on, not the chance that it is right. No document here states the figure for this post: a statute sets its pay by reference to an Executive Schedule level, and OPM's table states what that level pays; where the statute adds a percentage, the result is arithmetic this project performed and no document prints.",
+                      "documentRoles": [
+                        {
+                          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title44-section303&num=0&edition=prelim"
+                        },
+                        {
+                          "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx"
+                        }
+                      ]
+                    }
+                  },
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -113730,6 +113938,64 @@
                       "budget": null,
                       "color": "#666666",
                       "children": [],
+                      "positionSchedulePay": {
+                        "source": "us_code_executive_schedule",
+                        "method": "level_assigned_by_5_usc_5312_5316_to_the_office_a_second_statute_identifies_this_post_as",
+                        "identification": {
+                          "nodeName": "Commissioner, BOR",
+                          "basis": "the same office: 43 U.S.C. 373a puts the reclamation of arid lands under a Commissioner of Reclamation in the Department of the Interior, appointed by the President with the Senate's consent, and 5 U.S.C. 5316 places that Commissioner at Level V; the graph names the Bureau of Reclamation by its acronym",
+                          "basisCitation": "43 U.S.C. 373a",
+                          "basisQuote": "shall be administered by a Commissioner of Reclamation who shall be appointed by the President by and with the advice and consent of the Senate.",
+                          "basisUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title43-section373a&num=0&edition=prelim",
+                          "basisSha256": "d41a40fcbe1b965f805bf98199b4b108795a7dded3e97107711cc70945464264",
+                          "basisCheckedAt": "2026-09-28T19:22:31Z"
+                        },
+                        "payLevel": "V",
+                        "citation": "5 U.S.C. §5316",
+                        "statutoryTitle": "Commissioner of Reclamation, Department of the Interior",
+                        "scopedOffice": null,
+                        "scopedOrganisation": null,
+                        "scopedOrganisationId": null,
+                        "statuteUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5316&num=0&edition=prelim",
+                        "statuteCheckedAt": "2026-09-18T20:34:37Z",
+                        "amount": 184900.0,
+                        "rateText": "$184,900",
+                        "table": "Salary Table No. 2026-EX",
+                        "effectiveText": "Effective January 2026",
+                        "effective": "2026-01-01",
+                        "fiscalYear": 2026,
+                        "costBasis": "basic_pay",
+                        "scopeMatch": "proxy",
+                        "financialEvidenceStatus": "partial",
+                        "amountScope": "Level V",
+                        "quote": "Level V $184,900",
+                        "footnotes": [
+                          "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+                        ],
+                        "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+                        "checkedAt": "2026-09-11T03:05:36Z",
+                        "verification": {
+                          "documents": 3,
+                          "documentsStatingTheFigure": 1,
+                          "percent": 90,
+                          "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+                          "caution": "One document states the rate and another is the statute that puts this post at that level; where a third is listed, it is the statute that says this post is the office the Code names, because the Code's title is not this node's name. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+                          "documentRoles": [
+                            {
+                              "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+                              "role": "states what that Executive Schedule level pays"
+                            },
+                            {
+                              "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5316&num=0&edition=prelim",
+                              "role": "places this post at that level"
+                            },
+                            {
+                              "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title43-section373a&num=0&edition=prelim",
+                              "role": "identifies this post as the office the Code places at that level"
+                            }
+                          ]
+                        }
+                      },
                       "sourceUrls": [],
                       "sourceTypes": [],
                       "sourceCount": 0,
@@ -122734,6 +123000,64 @@
                       "budget": null,
                       "color": "#666666",
                       "children": [],
+                      "positionSchedulePay": {
+                        "source": "us_code_executive_schedule",
+                        "method": "level_assigned_by_5_usc_5312_5316_to_the_office_a_second_statute_identifies_this_post_as",
+                        "identification": {
+                          "nodeName": "Director / Under Secretary for IP",
+                          "basis": "the same office: 35 U.S.C. 3 vests the Office's powers and duties in one officer holding the joint title Under Secretary of Commerce for Intellectual Property and Director of the United States Patent and Trademark Office, and 5 U.S.C. 5314 places that joint title at Level III; the graph writes the two halves as 'Director / Under Secretary for IP'",
+                          "basisCitation": "35 U.S.C. 3",
+                          "basisQuote": "The powers and duties of the United States Patent and Trademark Office shall be vested in an Under Secretary of Commerce for Intellectual Property and Director of the United States Patent and Trademark Office (in this title referred to as the \"Director\"), who shall be a citizen of the United States and who shall be appointed by the President, by and with the advice and consent of the Senate.",
+                          "basisUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title35-section3&num=0&edition=prelim",
+                          "basisSha256": "aaeb93bdbdfd6bb62f240a7b181b047ca851279fa2ec87b770f769bcb28a4572",
+                          "basisCheckedAt": "2026-09-28T19:22:24Z"
+                        },
+                        "payLevel": "III",
+                        "citation": "5 U.S.C. §5314",
+                        "statutoryTitle": "Under Secretary of Commerce for Intellectual Property and Director of the United States Patent and Trademark Office",
+                        "scopedOffice": null,
+                        "scopedOrganisation": null,
+                        "scopedOrganisationId": null,
+                        "statuteUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5314&num=0&edition=prelim",
+                        "statuteCheckedAt": "2026-09-18T20:34:21Z",
+                        "amount": 209600.0,
+                        "rateText": "$209,600",
+                        "table": "Salary Table No. 2026-EX",
+                        "effectiveText": "Effective January 2026",
+                        "effective": "2026-01-01",
+                        "fiscalYear": 2026,
+                        "costBasis": "basic_pay",
+                        "scopeMatch": "proxy",
+                        "financialEvidenceStatus": "partial",
+                        "amountScope": "Level III",
+                        "quote": "Level III $209,600",
+                        "footnotes": [
+                          "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+                        ],
+                        "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+                        "checkedAt": "2026-09-11T03:05:36Z",
+                        "verification": {
+                          "documents": 3,
+                          "documentsStatingTheFigure": 1,
+                          "percent": 90,
+                          "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+                          "caution": "One document states the rate and another is the statute that puts this post at that level; where a third is listed, it is the statute that says this post is the office the Code names, because the Code's title is not this node's name. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+                          "documentRoles": [
+                            {
+                              "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+                              "role": "states what that Executive Schedule level pays"
+                            },
+                            {
+                              "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5314&num=0&edition=prelim",
+                              "role": "places this post at that level"
+                            },
+                            {
+                              "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title35-section3&num=0&edition=prelim",
+                              "role": "identifies this post as the office the Code places at that level"
+                            }
+                          ]
+                        }
+                      },
                       "sourceUrls": [],
                       "sourceTypes": [],
                       "sourceCount": 0,
@@ -142311,6 +142635,64 @@
                         "attempts": 1,
                         "detail": "HTTPError: HTTP Error 403: Forbidden"
                       },
+                      "positionSchedulePay": {
+                        "source": "us_code_executive_schedule",
+                        "method": "level_assigned_by_5_usc_5312_5316_to_the_office_a_second_statute_identifies_this_post_as",
+                        "identification": {
+                          "nodeName": "Administrator, FHWA",
+                          "basis": "the same office: 49 U.S.C. 104 makes the Administrator the head of the Federal Highway Administration, appointed by the President with the Senate's consent, and 5 U.S.C. 5313 places that Administrator at Level II; the graph names the Administration by its acronym",
+                          "basisCitation": "49 U.S.C. 104",
+                          "basisQuote": "The head of the Administration is the Administrator who is appointed by the President, by and with the advice and consent of the Senate.",
+                          "basisUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title49-section104&num=0&edition=prelim",
+                          "basisSha256": "7e8459420bce10bcaad9e18e994d583d7ff3f64abe437acb798625dd5749c92f",
+                          "basisCheckedAt": "2026-09-28T19:22:21Z"
+                        },
+                        "payLevel": "II",
+                        "citation": "5 U.S.C. §5313",
+                        "statutoryTitle": "Administrator, Federal Highway Administration",
+                        "scopedOffice": null,
+                        "scopedOrganisation": null,
+                        "scopedOrganisationId": null,
+                        "statuteUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5313&num=0&edition=prelim",
+                        "statuteCheckedAt": "2026-09-18T20:34:08Z",
+                        "amount": 228000.0,
+                        "rateText": "$228,000",
+                        "table": "Salary Table No. 2026-EX",
+                        "effectiveText": "Effective January 2026",
+                        "effective": "2026-01-01",
+                        "fiscalYear": 2026,
+                        "costBasis": "basic_pay",
+                        "scopeMatch": "proxy",
+                        "financialEvidenceStatus": "partial",
+                        "amountScope": "Level II",
+                        "quote": "Level II $228,000",
+                        "footnotes": [
+                          "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+                        ],
+                        "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+                        "checkedAt": "2026-09-11T03:05:36Z",
+                        "verification": {
+                          "documents": 3,
+                          "documentsStatingTheFigure": 1,
+                          "percent": 90,
+                          "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+                          "caution": "One document states the rate and another is the statute that puts this post at that level; where a third is listed, it is the statute that says this post is the office the Code names, because the Code's title is not this node's name. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+                          "documentRoles": [
+                            {
+                              "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+                              "role": "states what that Executive Schedule level pays"
+                            },
+                            {
+                              "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5313&num=0&edition=prelim",
+                              "role": "places this post at that level"
+                            },
+                            {
+                              "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title49-section104&num=0&edition=prelim",
+                              "role": "identifies this post as the office the Code places at that level"
+                            }
+                          ]
+                        }
+                      },
                       "sourceUrls": [],
                       "sourceTypes": [],
                       "sourceCount": 0,
@@ -155515,6 +155897,81 @@
                       "budget": null,
                       "color": "#666666",
                       "children": [],
+                      "positionTierReferencePay": {
+                        "source": "statutory_tier_reference_pay",
+                        "sourceLabel": "a statute setting the post's pay by reference to an Executive Schedule level, joined to OPM's table",
+                        "method": "pay_set_by_reference_to_an_executive_schedule_level_joined_to_opm_table",
+                        "amount": 228000.0,
+                        "rateText": "$228,000",
+                        "level": "II",
+                        "levelText": "Level II",
+                        "levelRateText": "$228,000",
+                        "levelAmount": 228000.0,
+                        "percent": 0,
+                        "arithmetic": null,
+                        "office": "Director of the Institute of Education Sciences",
+                        "statute": "20 U.S.C. 9514(c)",
+                        "statuteQuote": "The Director shall receive the rate of basic pay for level II of the Executive Schedule.",
+                        "identification": {
+                          "kind": "reviewed_row",
+                          "nodeName": "Director, IES"
+                        },
+                        "derivation": "20 U.S.C. 9514(c) (c) Pay: “The Director shall receive the rate of basic pay for level II of the Executive Schedule.” · Salary Table No. 2026-EX, Effective January 2026: Level II $228,000",
+                        "quote": "20 U.S.C. 9514(c) (c) Pay: “The Director shall receive the rate of basic pay for level II of the Executive Schedule.” · Salary Table No. 2026-EX, Effective January 2026: Level II $228,000",
+                        "documents": [
+                          {
+                            "role": "sets this post's basic pay by reference to Executive Schedule Level II",
+                            "citation": "20 U.S.C. 9514(c)",
+                            "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+                            "title": "20 U.S.C. 9514(c), current through the prelim edition",
+                            "quote": "The Director shall receive the rate of basic pay for level II of the Executive Schedule.",
+                            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title20-section9514&num=0&edition=prelim",
+                            "documentSha256": "e71c3571c5bd433c03aac7d4a3537d5a7106477a7241147732397e70aecc476a",
+                            "retrievedAt": "2026-09-28T19:24:56Z",
+                            "statesTheFigure": false
+                          },
+                          {
+                            "role": "states what that Executive Schedule level pays",
+                            "citation": "Salary Table No. 2026-EX, Effective January 2026",
+                            "publisher": "U.S. Office of Personnel Management",
+                            "title": "Salary Table No. 2026-EX",
+                            "quote": "Level II $228,000",
+                            "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+                            "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+                            "retrievedAt": "2026-09-11T03:05:36Z",
+                            "statesTheFigure": false
+                          }
+                        ],
+                        "table": "Salary Table No. 2026-EX",
+                        "effectiveText": "Effective January 2026",
+                        "effective": "2026-01-01",
+                        "fiscalYear": 2026,
+                        "footnotes": [
+                          "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+                        ],
+                        "costBasis": "basic_pay",
+                        "scopeMatch": "proxy",
+                        "financialEvidenceStatus": "partial",
+                        "amountScope": "Level II",
+                        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title20-section9514&num=0&edition=prelim",
+                        "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+                        "checkedAt": "2026-09-28T19:24:56Z",
+                        "verification": {
+                          "documents": 2,
+                          "documentsStatingTheFigure": 0,
+                          "percent": 80,
+                          "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+                          "caution": "The percentage measures how much official documentation this figure rests on, not the chance that it is right. No document here states the figure for this post: a statute sets its pay by reference to an Executive Schedule level, and OPM's table states what that level pays; where the statute adds a percentage, the result is arithmetic this project performed and no document prints.",
+                          "documentRoles": [
+                            {
+                              "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title20-section9514&num=0&edition=prelim"
+                            },
+                            {
+                              "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx"
+                            }
+                          ]
+                        }
+                      },
                       "sourceUrls": [],
                       "sourceTypes": [],
                       "sourceCount": 0,
@@ -155575,6 +156032,81 @@
                       "budget": null,
                       "color": "#666666",
                       "children": [],
+                      "positionTierReferencePay": {
+                        "source": "statutory_tier_reference_pay",
+                        "sourceLabel": "a statute setting the post's pay by reference to an Executive Schedule level, joined to OPM's table",
+                        "method": "pay_set_by_reference_to_an_executive_schedule_level_joined_to_opm_table",
+                        "amount": 197200.0,
+                        "rateText": "$197,200",
+                        "level": "IV",
+                        "levelText": "Level IV",
+                        "levelRateText": "$197,200",
+                        "levelAmount": 197200.0,
+                        "percent": 0,
+                        "arithmetic": null,
+                        "office": "Commissioner for Education Statistics",
+                        "statute": "20 U.S.C. 9517(b)(2)",
+                        "statuteQuote": "The National Center for Education Statistics shall be headed by a Commissioner for Education Statistics who shall be appointed by the President and who shall- (1) have substantial knowledge of programs assisted by the National Center for Education Statistics; (2) receive the rate of basic pay for level IV of the Executive Schedule;",
+                        "identification": {
+                          "kind": "reviewed_row",
+                          "nodeName": "Commissioner — National Center for Education Statistics (NCES)"
+                        },
+                        "derivation": "20 U.S.C. 9517(b)(2) (b) Appointment of Commissioner for Education Statistics: “The National Center for Education Statistics shall be headed by a Commissioner for Education Statistics who shall be appointed by the President and who shall- (1) have substantial knowledge of programs assisted by the National Center for Education Statistics; (2) receive the rate of basic pay for level IV of the Executive Schedule;” · Salary Table No. 2026-EX, Effective January 2026: Level IV $197,200",
+                        "quote": "20 U.S.C. 9517(b)(2) (b) Appointment of Commissioner for Education Statistics: “The National Center for Education Statistics shall be headed by a Commissioner for Education Statistics who shall be appointed by the President and who shall- (1) have substantial knowledge of programs assisted by the National Center for Education Statistics; (2) receive the rate of basic pay for level IV of the Executive Schedule;” · Salary Table No. 2026-EX, Effective January 2026: Level IV $197,200",
+                        "documents": [
+                          {
+                            "role": "sets this post's basic pay by reference to Executive Schedule Level IV",
+                            "citation": "20 U.S.C. 9517(b)(2)",
+                            "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+                            "title": "20 U.S.C. 9517(b)(2), current through the prelim edition",
+                            "quote": "The National Center for Education Statistics shall be headed by a Commissioner for Education Statistics who shall be appointed by the President and who shall- (1) have substantial knowledge of programs assisted by the National Center for Education Statistics; (2) receive the rate of basic pay for level IV of the Executive Schedule;",
+                            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title20-section9517&num=0&edition=prelim",
+                            "documentSha256": "943785936d67cb4660ca8cee1b41192d50cb43237564d2b2fb6a862a28878b9d",
+                            "retrievedAt": "2026-09-28T19:22:45Z",
+                            "statesTheFigure": false
+                          },
+                          {
+                            "role": "states what that Executive Schedule level pays",
+                            "citation": "Salary Table No. 2026-EX, Effective January 2026",
+                            "publisher": "U.S. Office of Personnel Management",
+                            "title": "Salary Table No. 2026-EX",
+                            "quote": "Level IV $197,200",
+                            "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+                            "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+                            "retrievedAt": "2026-09-11T03:05:36Z",
+                            "statesTheFigure": false
+                          }
+                        ],
+                        "table": "Salary Table No. 2026-EX",
+                        "effectiveText": "Effective January 2026",
+                        "effective": "2026-01-01",
+                        "fiscalYear": 2026,
+                        "footnotes": [
+                          "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+                        ],
+                        "costBasis": "basic_pay",
+                        "scopeMatch": "proxy",
+                        "financialEvidenceStatus": "partial",
+                        "amountScope": "Level IV",
+                        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title20-section9517&num=0&edition=prelim",
+                        "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+                        "checkedAt": "2026-09-28T19:22:45Z",
+                        "verification": {
+                          "documents": 2,
+                          "documentsStatingTheFigure": 0,
+                          "percent": 80,
+                          "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+                          "caution": "The percentage measures how much official documentation this figure rests on, not the chance that it is right. No document here states the figure for this post: a statute sets its pay by reference to an Executive Schedule level, and OPM's table states what that level pays; where the statute adds a percentage, the result is arithmetic this project performed and no document prints.",
+                          "documentRoles": [
+                            {
+                              "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title20-section9517&num=0&edition=prelim"
+                            },
+                            {
+                              "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx"
+                            }
+                          ]
+                        }
+                      },
                       "sourceUrls": [],
                       "sourceTypes": [],
                       "sourceCount": 0,
@@ -155605,6 +156137,95 @@
                       "budget": null,
                       "color": "#666666",
                       "children": [],
+                      "positionTierReferencePay": {
+                        "source": "statutory_tier_reference_pay",
+                        "sourceLabel": "a statute setting the post's pay by reference to an Executive Schedule level, joined to OPM's table",
+                        "method": "pay_set_by_reference_to_an_executive_schedule_level_joined_to_opm_table",
+                        "amount": 197200.0,
+                        "rateText": "$197,200",
+                        "level": "IV",
+                        "levelText": "Level IV",
+                        "levelRateText": "$197,200",
+                        "levelAmount": 197200.0,
+                        "percent": 0,
+                        "arithmetic": null,
+                        "office": "Commissioner of the National Center for Education Research",
+                        "statute": "20 U.S.C. 9517(a)(2)(A)",
+                        "statuteQuote": "each Commissioner shall- (A) receive the rate of basic pay for level IV of the Executive Schedule;",
+                        "identification": {
+                          "kind": "reviewed_row",
+                          "nodeName": "Commissioner — National Center for Education Research (NCER)"
+                        },
+                        "derivation": "20 U.S.C. 9517(a)(2)(A) (a)(2) Pay and qualifications: “each Commissioner shall- (A) receive the rate of basic pay for level IV of the Executive Schedule;” · Salary Table No. 2026-EX, Effective January 2026: Level IV $197,200",
+                        "quote": "20 U.S.C. 9517(a)(2)(A) (a)(2) Pay and qualifications: “each Commissioner shall- (A) receive the rate of basic pay for level IV of the Executive Schedule;” · Salary Table No. 2026-EX, Effective January 2026: Level IV $197,200",
+                        "documents": [
+                          {
+                            "role": "sets this post's basic pay by reference to Executive Schedule Level IV",
+                            "citation": "20 U.S.C. 9517(a)(2)(A)",
+                            "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+                            "title": "20 U.S.C. 9517(a)(2)(A), current through the prelim edition",
+                            "quote": "each Commissioner shall- (A) receive the rate of basic pay for level IV of the Executive Schedule;",
+                            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title20-section9517&num=0&edition=prelim",
+                            "documentSha256": "943785936d67cb4660ca8cee1b41192d50cb43237564d2b2fb6a862a28878b9d",
+                            "retrievedAt": "2026-09-28T19:22:45Z",
+                            "statesTheFigure": false
+                          },
+                          {
+                            "role": "states what that Executive Schedule level pays",
+                            "citation": "Salary Table No. 2026-EX, Effective January 2026",
+                            "publisher": "U.S. Office of Personnel Management",
+                            "title": "Salary Table No. 2026-EX",
+                            "quote": "Level IV $197,200",
+                            "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+                            "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+                            "retrievedAt": "2026-09-11T03:05:36Z",
+                            "statesTheFigure": false
+                          },
+                          {
+                            "role": "composes the National Education Centers whose Commissioners 20 U.S.C. 9517(a) prices",
+                            "citation": "20 U.S.C. 9511(c)(3)",
+                            "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+                            "title": "20 U.S.C. 9511(c)(3), current through the prelim edition",
+                            "quote": "The National Education Centers, which include- (A) the National Center for Education Research (as described in part B); (B) the National Center for Education Statistics (as described in part C); (C) the National Center for Education Evaluation and Regional Assistance (as described in part D); and (D) the National Center for Special Education Research (as described in part E).",
+                            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title20-section9511&num=0&edition=prelim",
+                            "documentSha256": "c8cd99f664d4c4034c0162dfc2a9b27dd5ec7ae8f4bdb2fe92acd9b662497129",
+                            "retrievedAt": "2026-09-28T19:28:31Z",
+                            "statesTheFigure": false
+                          }
+                        ],
+                        "table": "Salary Table No. 2026-EX",
+                        "effectiveText": "Effective January 2026",
+                        "effective": "2026-01-01",
+                        "fiscalYear": 2026,
+                        "footnotes": [
+                          "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+                        ],
+                        "costBasis": "basic_pay",
+                        "scopeMatch": "proxy",
+                        "financialEvidenceStatus": "partial",
+                        "amountScope": "Level IV",
+                        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title20-section9517&num=0&edition=prelim",
+                        "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+                        "checkedAt": "2026-09-28T19:22:45Z",
+                        "verification": {
+                          "documents": 3,
+                          "documentsStatingTheFigure": 0,
+                          "percent": 90,
+                          "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+                          "caution": "The percentage measures how much official documentation this figure rests on, not the chance that it is right. No document here states the figure for this post: a statute sets its pay by reference to an Executive Schedule level, and OPM's table states what that level pays; where the statute adds a percentage, the result is arithmetic this project performed and no document prints.",
+                          "documentRoles": [
+                            {
+                              "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title20-section9517&num=0&edition=prelim"
+                            },
+                            {
+                              "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx"
+                            },
+                            {
+                              "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title20-section9511&num=0&edition=prelim"
+                            }
+                          ]
+                        }
+                      },
                       "sourceUrls": [],
                       "sourceTypes": [],
                       "sourceCount": 0,
@@ -155720,6 +156341,95 @@
                         "checkedAt": "2026-09-21T03:02:16Z",
                         "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
                         "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6"
+                      },
+                      "positionTierReferencePay": {
+                        "source": "statutory_tier_reference_pay",
+                        "sourceLabel": "a statute setting the post's pay by reference to an Executive Schedule level, joined to OPM's table",
+                        "method": "pay_set_by_reference_to_an_executive_schedule_level_joined_to_opm_table",
+                        "amount": 197200.0,
+                        "rateText": "$197,200",
+                        "level": "IV",
+                        "levelText": "Level IV",
+                        "levelRateText": "$197,200",
+                        "levelAmount": 197200.0,
+                        "percent": 0,
+                        "arithmetic": null,
+                        "office": "Commissioner of the National Center for Education Evaluation and Regional Assistance",
+                        "statute": "20 U.S.C. 9517(a)(2)(A)",
+                        "statuteQuote": "each Commissioner shall- (A) receive the rate of basic pay for level IV of the Executive Schedule;",
+                        "identification": {
+                          "kind": "reviewed_row",
+                          "nodeName": "Commissioner — National Center for Education Evaluation (NCEE)"
+                        },
+                        "derivation": "20 U.S.C. 9517(a)(2)(A) (a)(2) Pay and qualifications: “each Commissioner shall- (A) receive the rate of basic pay for level IV of the Executive Schedule;” · Salary Table No. 2026-EX, Effective January 2026: Level IV $197,200",
+                        "quote": "20 U.S.C. 9517(a)(2)(A) (a)(2) Pay and qualifications: “each Commissioner shall- (A) receive the rate of basic pay for level IV of the Executive Schedule;” · Salary Table No. 2026-EX, Effective January 2026: Level IV $197,200",
+                        "documents": [
+                          {
+                            "role": "sets this post's basic pay by reference to Executive Schedule Level IV",
+                            "citation": "20 U.S.C. 9517(a)(2)(A)",
+                            "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+                            "title": "20 U.S.C. 9517(a)(2)(A), current through the prelim edition",
+                            "quote": "each Commissioner shall- (A) receive the rate of basic pay for level IV of the Executive Schedule;",
+                            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title20-section9517&num=0&edition=prelim",
+                            "documentSha256": "943785936d67cb4660ca8cee1b41192d50cb43237564d2b2fb6a862a28878b9d",
+                            "retrievedAt": "2026-09-28T19:22:45Z",
+                            "statesTheFigure": false
+                          },
+                          {
+                            "role": "states what that Executive Schedule level pays",
+                            "citation": "Salary Table No. 2026-EX, Effective January 2026",
+                            "publisher": "U.S. Office of Personnel Management",
+                            "title": "Salary Table No. 2026-EX",
+                            "quote": "Level IV $197,200",
+                            "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+                            "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+                            "retrievedAt": "2026-09-11T03:05:36Z",
+                            "statesTheFigure": false
+                          },
+                          {
+                            "role": "composes the National Education Centers whose Commissioners 20 U.S.C. 9517(a) prices",
+                            "citation": "20 U.S.C. 9511(c)(3)",
+                            "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+                            "title": "20 U.S.C. 9511(c)(3), current through the prelim edition",
+                            "quote": "The National Education Centers, which include- (A) the National Center for Education Research (as described in part B); (B) the National Center for Education Statistics (as described in part C); (C) the National Center for Education Evaluation and Regional Assistance (as described in part D); and (D) the National Center for Special Education Research (as described in part E).",
+                            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title20-section9511&num=0&edition=prelim",
+                            "documentSha256": "c8cd99f664d4c4034c0162dfc2a9b27dd5ec7ae8f4bdb2fe92acd9b662497129",
+                            "retrievedAt": "2026-09-28T19:28:31Z",
+                            "statesTheFigure": false
+                          }
+                        ],
+                        "table": "Salary Table No. 2026-EX",
+                        "effectiveText": "Effective January 2026",
+                        "effective": "2026-01-01",
+                        "fiscalYear": 2026,
+                        "footnotes": [
+                          "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+                        ],
+                        "costBasis": "basic_pay",
+                        "scopeMatch": "proxy",
+                        "financialEvidenceStatus": "partial",
+                        "amountScope": "Level IV",
+                        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title20-section9517&num=0&edition=prelim",
+                        "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+                        "checkedAt": "2026-09-28T19:22:45Z",
+                        "verification": {
+                          "documents": 3,
+                          "documentsStatingTheFigure": 0,
+                          "percent": 90,
+                          "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+                          "caution": "The percentage measures how much official documentation this figure rests on, not the chance that it is right. No document here states the figure for this post: a statute sets its pay by reference to an Executive Schedule level, and OPM's table states what that level pays; where the statute adds a percentage, the result is arithmetic this project performed and no document prints.",
+                          "documentRoles": [
+                            {
+                              "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title20-section9517&num=0&edition=prelim"
+                            },
+                            {
+                              "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx"
+                            },
+                            {
+                              "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title20-section9511&num=0&edition=prelim"
+                            }
+                          ]
+                        }
                       }
                     },
                     {
@@ -251995,6 +252705,9 @@
                     "statute": "26 U.S.C. 7443(c)(1)",
                     "statuteQuote": "Each judge shall receive salary at the same rate and in the same installments as judges of the district courts of the United States.",
                     "court": "U.S. Tax Court",
+                    "subject": "every judge of U.S. Tax Court",
+                    "viaStatute": null,
+                    "viaQuote": null,
                     "derivation": "26 U.S.C. 7443(c)(1) (c) Salary: “Each judge shall receive salary at the same rate and in the same installments as judges of the district courts of the United States.” · Judicial Compensation 2026: District Judges $249,900",
                     "quote": "26 U.S.C. 7443(c)(1) (c) Salary: “Each judge shall receive salary at the same rate and in the same installments as judges of the district courts of the United States.” · Judicial Compensation 2026: District Judges $249,900",
                     "documents": [
@@ -252086,6 +252799,9 @@
                     "statute": "26 U.S.C. 7443(c)(1)",
                     "statuteQuote": "Each judge shall receive salary at the same rate and in the same installments as judges of the district courts of the United States.",
                     "court": "U.S. Tax Court",
+                    "subject": "every judge of U.S. Tax Court",
+                    "viaStatute": null,
+                    "viaQuote": null,
                     "derivation": "26 U.S.C. 7443(c)(1) (c) Salary: “Each judge shall receive salary at the same rate and in the same installments as judges of the district courts of the United States.” · Judicial Compensation 2026: District Judges $249,900",
                     "quote": "26 U.S.C. 7443(c)(1) (c) Salary: “Each judge shall receive salary at the same rate and in the same installments as judges of the district courts of the United States.” · Judicial Compensation 2026: District Judges $249,900",
                     "documents": [
@@ -252430,6 +253146,9 @@
                     "statute": "28 U.S.C. 172(b)",
                     "statuteQuote": "Each judge shall receive a salary at the rate of pay, and in the same manner, as judges of the district courts of the United States.",
                     "court": "U.S. Court of Federal Claims",
+                    "subject": "every judge of U.S. Court of Federal Claims",
+                    "viaStatute": null,
+                    "viaQuote": null,
                     "derivation": "28 U.S.C. 172(b) (b): “Each judge shall receive a salary at the rate of pay, and in the same manner, as judges of the district courts of the United States.” · Judicial Compensation 2026: District Judges $249,900",
                     "quote": "28 U.S.C. 172(b) (b): “Each judge shall receive a salary at the rate of pay, and in the same manner, as judges of the district courts of the United States.” · Judicial Compensation 2026: District Judges $249,900",
                     "documents": [
@@ -252521,6 +253240,9 @@
                     "statute": "28 U.S.C. 172(b)",
                     "statuteQuote": "Each judge shall receive a salary at the rate of pay, and in the same manner, as judges of the district courts of the United States.",
                     "court": "U.S. Court of Federal Claims",
+                    "subject": "every judge of U.S. Court of Federal Claims",
+                    "viaStatute": null,
+                    "viaQuote": null,
                     "derivation": "28 U.S.C. 172(b) (b): “Each judge shall receive a salary at the rate of pay, and in the same manner, as judges of the district courts of the United States.” · Judicial Compensation 2026: District Judges $249,900",
                     "quote": "28 U.S.C. 172(b) (b): “Each judge shall receive a salary at the rate of pay, and in the same manner, as judges of the district courts of the United States.” · Judicial Compensation 2026: District Judges $249,900",
                     "documents": [
@@ -253168,6 +253890,9 @@
                     "statute": "10 U.S.C. 942(d)",
                     "statuteQuote": "Each judge of the court is entitled to the same salary and travel allowances as are, and from time to time may be, provided for judges of the United States Courts of Appeals.",
                     "court": "United States Court of Appeals for the Armed Forces",
+                    "subject": "every judge of United States Court of Appeals for the Armed Forces",
+                    "viaStatute": null,
+                    "viaQuote": null,
                     "derivation": "10 U.S.C. 942(d) (d) Pay and Allowances: “Each judge of the court is entitled to the same salary and travel allowances as are, and from time to time may be, provided for judges of the United States Courts of Appeals.” · Judicial Compensation 2026: Circuit Judges $264,900",
                     "quote": "10 U.S.C. 942(d) (d) Pay and Allowances: “Each judge of the court is entitled to the same salary and travel allowances as are, and from time to time may be, provided for judges of the United States Courts of Appeals.” · Judicial Compensation 2026: Circuit Judges $264,900",
                     "documents": [
@@ -253259,6 +253984,9 @@
                     "statute": "10 U.S.C. 942(d)",
                     "statuteQuote": "Each judge of the court is entitled to the same salary and travel allowances as are, and from time to time may be, provided for judges of the United States Courts of Appeals.",
                     "court": "United States Court of Appeals for the Armed Forces",
+                    "subject": "every judge of United States Court of Appeals for the Armed Forces",
+                    "viaStatute": null,
+                    "viaQuote": null,
                     "derivation": "10 U.S.C. 942(d) (d) Pay and Allowances: “Each judge of the court is entitled to the same salary and travel allowances as are, and from time to time may be, provided for judges of the United States Courts of Appeals.” · Judicial Compensation 2026: Circuit Judges $264,900",
                     "quote": "10 U.S.C. 942(d) (d) Pay and Allowances: “Each judge of the court is entitled to the same salary and travel allowances as are, and from time to time may be, provided for judges of the United States Courts of Appeals.” · Judicial Compensation 2026: Circuit Judges $264,900",
                     "documents": [
@@ -253577,6 +254305,9 @@
                     "statute": "38 U.S.C. 7253(e)",
                     "statuteQuote": "Each judge of the Court shall receive a salary at the same rate as is received by judges of the United States district courts.",
                     "court": "United States Court of Appeals for Veterans Claims",
+                    "subject": "every judge of United States Court of Appeals for Veterans Claims",
+                    "viaStatute": null,
+                    "viaQuote": null,
                     "derivation": "38 U.S.C. 7253(e) (e) Salary: “Each judge of the Court shall receive a salary at the same rate as is received by judges of the United States district courts.” · Judicial Compensation 2026: District Judges $249,900",
                     "quote": "38 U.S.C. 7253(e) (e) Salary: “Each judge of the Court shall receive a salary at the same rate as is received by judges of the United States district courts.” · Judicial Compensation 2026: District Judges $249,900",
                     "documents": [
@@ -253668,6 +254399,9 @@
                     "statute": "38 U.S.C. 7253(e)",
                     "statuteQuote": "Each judge of the Court shall receive a salary at the same rate as is received by judges of the United States district courts.",
                     "court": "United States Court of Appeals for Veterans Claims",
+                    "subject": "every judge of United States Court of Appeals for Veterans Claims",
+                    "viaStatute": null,
+                    "viaQuote": null,
                     "derivation": "38 U.S.C. 7253(e) (e) Salary: “Each judge of the Court shall receive a salary at the same rate as is received by judges of the United States district courts.” · Judicial Compensation 2026: District Judges $249,900",
                     "quote": "38 U.S.C. 7253(e) (e) Salary: “Each judge of the Court shall receive a salary at the same rate as is received by judges of the United States district courts.” · Judicial Compensation 2026: District Judges $249,900",
                     "documents": [
@@ -253995,6 +254729,70 @@
                     "checkedAt": "2026-09-21T05:26:27+00:00",
                     "attempts": 1,
                     "detail": "HTTPError: HTTP Error 404: Not Found"
+                  },
+                  "positionDerivedPay": {
+                    "source": "statutory_parity_derived_pay",
+                    "sourceLabel": "a statutory parity provision joined to the U.S. Courts' Judicial Compensation table",
+                    "method": "parity_provision_joined_to_the_judicial_compensation_table",
+                    "amount": 249900.0,
+                    "rateText": "$249,900",
+                    "year": "2026",
+                    "effective": "2026-01-01",
+                    "costBasis": "basic_pay",
+                    "scopeMatch": "proxy",
+                    "financialEvidenceStatus": "partial",
+                    "amountScope": "District Judges",
+                    "seatTier": "district judges",
+                    "statute": "28 U.S.C. 603",
+                    "statuteQuote": "The salary of the Director shall be the same as the salary of a district judge.",
+                    "court": null,
+                    "subject": "the Director of the Administrative Office of the United States Courts",
+                    "viaStatute": null,
+                    "viaQuote": null,
+                    "derivation": "28 U.S.C. 603 Salaries: “The salary of the Director shall be the same as the salary of a district judge.” · Judicial Compensation 2026: District Judges $249,900",
+                    "quote": "28 U.S.C. 603 Salaries: “The salary of the Director shall be the same as the salary of a district judge.” · Judicial Compensation 2026: District Judges $249,900",
+                    "documents": [
+                      {
+                        "role": "states the tier this post is paid at",
+                        "citation": "28 U.S.C. 603",
+                        "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+                        "title": "28 U.S.C. 603, current through the prelim edition",
+                        "quote": "The salary of the Director shall be the same as the salary of a district judge.",
+                        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title28-section603&num=0&edition=prelim",
+                        "documentSha256": "af01b512f3f8e6fe884eb769fa433b57e71af80a3b729d6bfa8c65e3cbc64332",
+                        "retrievedAt": "2026-09-28T19:25:24Z",
+                        "statesTheFigure": false
+                      },
+                      {
+                        "role": "states what that tier pays",
+                        "citation": "Judicial Compensation, 2026",
+                        "publisher": "Administrative Office of the United States Courts",
+                        "title": "Judicial Compensation",
+                        "quote": "Year District Judges Circuit Judges Associate Justices Chief Justice; 2026 $249,900 $264,900 $306,600 $320,700",
+                        "url": "https://www.uscourts.gov/about-federal-courts/about-federal-judges/judicial-compensation",
+                        "documentSha256": "014c9a66ad48a019ab127752e9cd46e4cec94da5e8e94d41a4eb9e785e96e494",
+                        "retrievedAt": "2026-09-14T15:20:14Z",
+                        "statesTheFigure": false
+                      }
+                    ],
+                    "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title28-section603&num=0&edition=prelim",
+                    "tableUrl": "https://www.uscourts.gov/about-federal-courts/about-federal-judges/judicial-compensation",
+                    "checkedAt": "2026-09-28T19:25:24Z",
+                    "verification": {
+                      "documents": 2,
+                      "documentsStatingTheFigure": 0,
+                      "percent": 80,
+                      "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+                      "caution": "The percentage measures how much official documentation this figure rests on, not the chance that it is right. No document here states the figure: one names the tier this post is paid at, the other states what that tier pays.",
+                      "documentRoles": [
+                        {
+                          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title28-section603&num=0&edition=prelim"
+                        },
+                        {
+                          "url": "https://www.uscourts.gov/about-federal-courts/about-federal-judges/judicial-compensation"
+                        }
+                      ]
+                    }
                   },
                   "sourceUrls": [],
                   "sourceTypes": [],
@@ -254683,6 +255481,84 @@
                   "budget": null,
                   "color": "#666666",
                   "children": [],
+                  "positionDerivedPay": {
+                    "source": "statutory_parity_derived_pay",
+                    "sourceLabel": "a statutory parity provision joined to the U.S. Courts' Judicial Compensation table",
+                    "method": "parity_provision_joined_to_the_judicial_compensation_table",
+                    "amount": 249900.0,
+                    "rateText": "$249,900",
+                    "year": "2026",
+                    "effective": "2026-01-01",
+                    "costBasis": "basic_pay",
+                    "scopeMatch": "proxy",
+                    "financialEvidenceStatus": "partial",
+                    "amountScope": "District Judges",
+                    "seatTier": "district judges",
+                    "statute": "28 U.S.C. 626",
+                    "statuteQuote": "The compensation of the Director of the Federal Judicial Center shall be the same as that of the Director of the Administrative Office of the United States Courts",
+                    "court": null,
+                    "subject": "the Director of the Federal Judicial Center",
+                    "viaStatute": "28 U.S.C. 603",
+                    "viaQuote": "The salary of the Director shall be the same as the salary of a district judge.",
+                    "derivation": "28 U.S.C. 626 Compensation of the Director and Deputy Director: “The compensation of the Director of the Federal Judicial Center shall be the same as that of the Director of the Administrative Office of the United States Courts” · 28 U.S.C. 603: “The salary of the Director shall be the same as the salary of a district judge.” · Judicial Compensation 2026: District Judges $249,900",
+                    "quote": "28 U.S.C. 626 Compensation of the Director and Deputy Director: “The compensation of the Director of the Federal Judicial Center shall be the same as that of the Director of the Administrative Office of the United States Courts” · 28 U.S.C. 603: “The salary of the Director shall be the same as the salary of a district judge.” · Judicial Compensation 2026: District Judges $249,900",
+                    "documents": [
+                      {
+                        "role": "states whose pay this post's equals",
+                        "citation": "28 U.S.C. 626",
+                        "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+                        "title": "28 U.S.C. 626, current through the prelim edition",
+                        "quote": "The compensation of the Director of the Federal Judicial Center shall be the same as that of the Director of the Administrative Office of the United States Courts",
+                        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title28-section626&num=0&edition=prelim",
+                        "documentSha256": "aa8cefffe28149c2a8a4689d1f47430c1b6ac50bde906dcfff2bbb4501aa017c",
+                        "retrievedAt": "2026-09-28T19:24:41Z",
+                        "statesTheFigure": false
+                      },
+                      {
+                        "role": "states the tier that office is paid at",
+                        "citation": "28 U.S.C. 603",
+                        "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+                        "title": "28 U.S.C. 603, current through the prelim edition",
+                        "quote": "The salary of the Director shall be the same as the salary of a district judge.",
+                        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title28-section603&num=0&edition=prelim",
+                        "documentSha256": "af01b512f3f8e6fe884eb769fa433b57e71af80a3b729d6bfa8c65e3cbc64332",
+                        "retrievedAt": "2026-09-28T19:25:24Z",
+                        "statesTheFigure": false
+                      },
+                      {
+                        "role": "states what that tier pays",
+                        "citation": "Judicial Compensation, 2026",
+                        "publisher": "Administrative Office of the United States Courts",
+                        "title": "Judicial Compensation",
+                        "quote": "Year District Judges Circuit Judges Associate Justices Chief Justice; 2026 $249,900 $264,900 $306,600 $320,700",
+                        "url": "https://www.uscourts.gov/about-federal-courts/about-federal-judges/judicial-compensation",
+                        "documentSha256": "014c9a66ad48a019ab127752e9cd46e4cec94da5e8e94d41a4eb9e785e96e494",
+                        "retrievedAt": "2026-09-14T15:20:14Z",
+                        "statesTheFigure": false
+                      }
+                    ],
+                    "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title28-section626&num=0&edition=prelim",
+                    "tableUrl": "https://www.uscourts.gov/about-federal-courts/about-federal-judges/judicial-compensation",
+                    "checkedAt": "2026-09-28T19:24:41Z",
+                    "verification": {
+                      "documents": 3,
+                      "documentsStatingTheFigure": 0,
+                      "percent": 90,
+                      "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+                      "caution": "The percentage measures how much official documentation this figure rests on, not the chance that it is right. No document here states the figure: one names the tier this post is paid at, the other states what that tier pays.",
+                      "documentRoles": [
+                        {
+                          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title28-section626&num=0&edition=prelim"
+                        },
+                        {
+                          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title28-section603&num=0&edition=prelim"
+                        },
+                        {
+                          "url": "https://www.uscourts.gov/about-federal-courts/about-federal-judges/judicial-compensation"
+                        }
+                      ]
+                    }
+                  },
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,

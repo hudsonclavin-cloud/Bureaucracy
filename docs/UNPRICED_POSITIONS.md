@@ -8,14 +8,14 @@ checkable claim. `docs/PAY_SOURCE_RESEARCH_PROMPT_3.md` is generated from this
 same list in the same run.
 
 - position nodes in the published graph: **4,591**
-- carrying a pay claim an official document supports: **554**
-- carrying none: **4,037**
+- carrying a pay claim an official document supports: **566**
+- carrying none: **4,025**
 
 | reason | count | what it means |
 |---|---|---|
-| `unreached` | 3,257 | no source this project has read names the title at all. Not a coverage gap somebody has not got to: no pay document in the repository names this title under this organisation, so nothing could have reached it. |
+| `unreached` | 3,246 | no source this project has read names the title at all. Not a coverage gap somebody has not got to: no pay document in the repository names this title under this organisation, so nothing could have reached it. |
 | `multiplicity` | 759 | the node states a multiplicity (×N) and no claim that holds for every holder has reached it. Since 2026-09-23 a claim that holds for each holder by its own terms IS published on such a node with a `holders` block -- a tier or parity rate paid to every judge of the tier, a band every holder is within, or a roster listing every holder at one rate -- and 28 such nodes carry one. What stays refused is an incumbency-shaped claim (one listing's level, one row of the current export), because that is one appointment's figure and not the group's. For these nodes no office-rate claim has reached them at all. Knowing which pay system governs the title is still useful -- it is what would let the graph carry the schedule rather than a rate -- so these are listed and asked about. |
-| `listed_no_rate` | 21 | OPM lists the position and the row prints no rate. The PLUM archive or the current export names the title under this organisation but the Level/Grade/Pay cell carries a rank or is empty, and no salary table this project has read prices that pay plan. |
+| `listed_no_rate` | 20 | OPM lists the position and the row prints no rate. The PLUM archive or the current export names the title under this organisation but the Level/Grade/Pay cell carries a rank or is empty, and no salary table this project has read prices that pay plan. |
 
 ---
 
@@ -986,25 +986,6 @@ same list in the same run.
 - `exec-dept-defense-navy-opnav-n8-programming` — OPNAV N8 (Programming) — `unreached`
 - `exec-dept-defense-navy-vice-chief-of-naval-operations` — Vice Chief of Naval Operations — `unreached`
 
-## Administrative Office of U.S. Courts (AOUSC)  — 14 unpriced
-
-`jud-support-aousc`
-
-- `jud-support-aousc-associate-director-judicial-services` — Associate Director — Judicial Services — `unreached`
-- `jud-support-aousc-associate-director-management-administrative-services` — Associate Director — Management & Administrative Services — `unreached`
-- `jud-support-aousc-associate-director-technology-services` — Associate Director — Technology Services — `unreached`
-- `jud-support-aousc-chief-financial-officer` — Chief Financial Officer — `unreached`
-- `jud-support-aousc-chief-human-resources-officer` — Chief Human Resources Officer — `unreached`
-- `jud-support-aousc-chief-information-officer` — Chief Information Officer — `unreached`
-- `jud-support-aousc-deputy-director` — Deputy Director — `unreached`
-- `jud-support-aousc-director-court-administration-policy` — Director — Court Administration Policy — `unreached`
-- `jud-support-aousc-director-court-services` — Director — Court Services — `unreached`
-- `jud-support-aousc-director-defender-services` — Director — Defender Services — `unreached`
-- `jud-support-aousc-director-human-resources` — Director — Human Resources — `unreached`
-- `jud-support-aousc-director-probation-pretrial-services` — Director — Probation & Pretrial Services — `unreached`
-- `jud-support-aousc-director-aousc` — Director, AOUSC — `unreached`
-- `jud-support-aousc-general-counsel` — General Counsel — `unreached`
-
 ## Customs & Border Protection (CBP)  — 14 unpriced
 
 `exec-dept-dhs-cbp`
@@ -1023,6 +1004,24 @@ same list in the same run.
 - `exec-dept-dhs-cbp-deputy-commissioner` — Deputy Commissioner — `listed_no_rate`
 - `exec-dept-dhs-cbp-director-20-field-offices-office-of-field-operations` — Director — 20 Field Offices (Office of Field Operations) — `unreached`
 - `exec-dept-dhs-cbp-port-director-328-ports-of-entry` — Port Director — 328 Ports of Entry — `unreached`
+
+## Administrative Office of U.S. Courts (AOUSC)  — 13 unpriced
+
+`jud-support-aousc`
+
+- `jud-support-aousc-associate-director-judicial-services` — Associate Director — Judicial Services — `unreached`
+- `jud-support-aousc-associate-director-management-administrative-services` — Associate Director — Management & Administrative Services — `unreached`
+- `jud-support-aousc-associate-director-technology-services` — Associate Director — Technology Services — `unreached`
+- `jud-support-aousc-chief-financial-officer` — Chief Financial Officer — `unreached`
+- `jud-support-aousc-chief-human-resources-officer` — Chief Human Resources Officer — `unreached`
+- `jud-support-aousc-chief-information-officer` — Chief Information Officer — `unreached`
+- `jud-support-aousc-deputy-director` — Deputy Director — `unreached`
+- `jud-support-aousc-director-court-administration-policy` — Director — Court Administration Policy — `unreached`
+- `jud-support-aousc-director-court-services` — Director — Court Services — `unreached`
+- `jud-support-aousc-director-defender-services` — Director — Defender Services — `unreached`
+- `jud-support-aousc-director-human-resources` — Director — Human Resources — `unreached`
+- `jud-support-aousc-director-probation-pretrial-services` — Director — Probation & Pretrial Services — `unreached`
+- `jud-support-aousc-general-counsel` — General Counsel — `unreached`
 
 ## Federal Communications Commission (FCC)  — 13 unpriced
 
@@ -2883,30 +2882,6 @@ same list in the same run.
 - `jud-circuit-11th-circuit-library-director` — Library Director — `unreached`
 - `jud-circuit-11th-circuit-staff-attorney-multiple` — Staff Attorney (×multiple) — `multiplicity`
 
-## Federal Highway Administration (FHWA)  — 7 unpriced
-
-`exec-dept-dot-fhwa`
-
-- `exec-dept-dot-fhwa-administrator-fhwa` — Administrator, FHWA — `unreached`
-- `exec-dept-dot-fhwa-associate-administrator-federal-lands-highway` — Associate Administrator — Federal Lands Highway — `unreached`
-- `exec-dept-dot-fhwa-associate-administrator-planning-environment-realty` — Associate Administrator — Planning, Environment & Realty — `unreached`
-- `exec-dept-dot-fhwa-chief-counsel` — Chief Counsel — `unreached`
-- `exec-dept-dot-fhwa-deputy-administrator` — Deputy Administrator — `unreached`
-- `exec-dept-dot-fhwa-division-administrator-52-state-divisions` — Division Administrator — 52 State Divisions — `unreached`
-- `exec-dept-dot-fhwa-highway-engineer-multiple` — Highway Engineer (×multiple) — `multiplicity`
-
-## Federal Judicial Center (FJC)  — 7 unpriced
-
-`jud-support-fjc`
-
-- `jud-support-fjc-deputy-director` — Deputy Director — `unreached`
-- `jud-support-fjc-director-court-history` — Director — Court History — `unreached`
-- `jud-support-fjc-director-education-division` — Director — Education Division — `unreached`
-- `jud-support-fjc-director-information-technology` — Director — Information Technology — `unreached`
-- `jud-support-fjc-director-research-division` — Director — Research Division — `unreached`
-- `jud-support-fjc-director-fjc` — Director, FJC — `unreached`
-- `jud-support-fjc-research-scientist-attorney-multiple` — Research Scientist / Attorney (×multiple) — `multiplicity`
-
 ## Federal Public Defender Offices (82)  — 7 unpriced
 
 `jud-support-fpd`
@@ -3351,18 +3326,6 @@ same list in the same run.
 - `jud-circuit-7th-circuit-library-director` — Library Director — `unreached`
 - `jud-circuit-7th-circuit-staff-attorney-multiple` — Staff Attorney (×multiple) — `multiplicity`
 
-## United States Patent and Trademark Office (USPTO)  — 7 unpriced
-
-`exec-dept-doc-uspto`
-
-- `exec-dept-doc-uspto-chief-administrative-trademark-judge-ttab` — Chief Administrative Trademark Judge (TTAB) — `unreached`
-- `exec-dept-doc-uspto-commissioner-for-patents` — Commissioner for Patents — `listed_no_rate`
-- `exec-dept-doc-uspto-commissioner-for-trademarks` — Commissioner for Trademarks — `unreached`
-- `exec-dept-doc-uspto-deputy-director` — Deputy Director — `unreached`
-- `exec-dept-doc-uspto-director-under-secretary-for-ip` — Director / Under Secretary for IP — `unreached`
-- `exec-dept-doc-uspto-patent-examiner-multiple` — Patent Examiner (×multiple) — `multiplicity`
-- `exec-dept-doc-uspto-trademark-examining-attorney-multiple` — Trademark Examining Attorney (×multiple) — `multiplicity`
-
 ## Animal & Plant Health Inspection Service (APHIS)  — 6 unpriced
 
 `exec-dept-usda-aphis`
@@ -3396,17 +3359,6 @@ same list in the same run.
 - `exec-dept-dol-bls-economist-multiple` — Economist (×multiple) — `multiplicity`
 - `exec-dept-dol-bls-survey-statistician-multiple` — Survey Statistician (×multiple) — `multiplicity`
 
-## Bureau of Reclamation (BOR)  — 6 unpriced
-
-`exec-dept-doi-bor`
-
-- `exec-dept-doi-bor-area-manager` — Area Manager — `unreached`
-- `exec-dept-doi-bor-civil-engineer` — Civil Engineer — `unreached`
-- `exec-dept-doi-bor-commissioner-bor` — Commissioner, BOR — `unreached`
-- `exec-dept-doi-bor-hydrologist` — Hydrologist — `unreached`
-- `exec-dept-doi-bor-regional-director-5-regions` — Regional Director — 5 Regions — `unreached`
-- `exec-dept-doi-bor-water-master` — Water Master — `unreached`
-
 ## Census Bureau  — 6 unpriced
 
 `exec-dept-doc-census`
@@ -3429,17 +3381,6 @@ same list in the same run.
 - `leg-support-cbo-director-cbo` — Director, CBO — `unreached`
 - `leg-support-cbo-general-counsel` — General Counsel — `unreached`
 
-## Copyright Office  — 6 unpriced
-
-`leg-support-loc-copyright`
-
-- `leg-support-loc-copyright-associate-register-for-policy-international-affairs` — Associate Register for Policy & International Affairs — `unreached`
-- `leg-support-loc-copyright-associate-register-for-public-innovation-technology` — Associate Register for Public Innovation & Technology — `unreached`
-- `leg-support-loc-copyright-associate-register-for-registration-recordation` — Associate Register for Registration & Recordation — `unreached`
-- `leg-support-loc-copyright-copyright-examiner-multiple` — Copyright Examiner (×multiple) — `multiplicity`
-- `leg-support-loc-copyright-director-of-operations` — Director of Operations — `unreached`
-- `leg-support-loc-copyright-register-of-copyrights-director` — Register of Copyrights & Director — `unreached`
-
 ## Dwight D. Eisenhower Presidential Library (Abilene, KS)  — 6 unpriced
 
 `exec-ind-nara-dwight-d-eisenhower-presidential-library-abilene-ks`
@@ -3450,6 +3391,28 @@ same list in the same run.
 - `exec-ind-nara-dwight-d-eisenhower-presidential-library-abilene-ks-director-dwight-d-eisenhower-presidential-library` — Director, Dwight D. Eisenhower Presidential Library — `unreached`
 - `exec-ind-nara-dwight-d-eisenhower-presidential-library-abilene-ks-museum-curator` — Museum Curator — `unreached`
 - `exec-ind-nara-dwight-d-eisenhower-presidential-library-abilene-ks-supervisory-archivist` — Supervisory Archivist — `unreached`
+
+## Federal Highway Administration (FHWA)  — 6 unpriced
+
+`exec-dept-dot-fhwa`
+
+- `exec-dept-dot-fhwa-associate-administrator-federal-lands-highway` — Associate Administrator — Federal Lands Highway — `unreached`
+- `exec-dept-dot-fhwa-associate-administrator-planning-environment-realty` — Associate Administrator — Planning, Environment & Realty — `unreached`
+- `exec-dept-dot-fhwa-chief-counsel` — Chief Counsel — `unreached`
+- `exec-dept-dot-fhwa-deputy-administrator` — Deputy Administrator — `unreached`
+- `exec-dept-dot-fhwa-division-administrator-52-state-divisions` — Division Administrator — 52 State Divisions — `unreached`
+- `exec-dept-dot-fhwa-highway-engineer-multiple` — Highway Engineer (×multiple) — `multiplicity`
+
+## Federal Judicial Center (FJC)  — 6 unpriced
+
+`jud-support-fjc`
+
+- `jud-support-fjc-deputy-director` — Deputy Director — `unreached`
+- `jud-support-fjc-director-court-history` — Director — Court History — `unreached`
+- `jud-support-fjc-director-education-division` — Director — Education Division — `unreached`
+- `jud-support-fjc-director-information-technology` — Director — Information Technology — `unreached`
+- `jud-support-fjc-director-research-division` — Director — Research Division — `unreached`
+- `jud-support-fjc-research-scientist-attorney-multiple` — Research Scientist / Attorney (×multiple) — `multiplicity`
 
 ## Financial Crimes Enforcement Network (FinCEN)  — 6 unpriced
 
@@ -3506,17 +3469,6 @@ same list in the same run.
 - `exec-ind-nara-gerald-r-ford-presidential-library-ann-arbor-mi-museum-curator` — Museum Curator — `unreached`
 - `exec-ind-nara-gerald-r-ford-presidential-library-ann-arbor-mi-supervisory-archivist` — Supervisory Archivist — `unreached`
 
-## Government Publishing Office (GPO)  — 6 unpriced
-
-`leg-support-gpo`
-
-- `leg-support-gpo-chief-financial-officer` — Chief Financial Officer — `unreached`
-- `leg-support-gpo-chief-information-officer` — Chief Information Officer — `unreached`
-- `leg-support-gpo-chief-of-staff` — Chief of Staff — `unreached`
-- `leg-support-gpo-deputy-director-coo` — Deputy Director / COO — `unreached`
-- `leg-support-gpo-director-gpo-public-printer` — Director, GPO (Public Printer) — `unreached`
-- `leg-support-gpo-general-counsel` — General Counsel — `unreached`
-
 ## Harry S. Truman Presidential Library (Independence, MO)  — 6 unpriced
 
 `exec-ind-nara-harry-s-truman-presidential-library-independence-mo`
@@ -3538,17 +3490,6 @@ same list in the same run.
 - `exec-ind-nara-herbert-hoover-presidential-library-west-branch-ia-director-herbert-hoover-presidential-library` — Director, Herbert Hoover Presidential Library — `unreached`
 - `exec-ind-nara-herbert-hoover-presidential-library-west-branch-ia-museum-curator` — Museum Curator — `unreached`
 - `exec-ind-nara-herbert-hoover-presidential-library-west-branch-ia-supervisory-archivist` — Supervisory Archivist — `unreached`
-
-## Institute of Education Sciences (IES)  — 6 unpriced
-
-`exec-dept-ed-ies`
-
-- `exec-dept-ed-ies-commissioner-national-center-for-education-evaluation-ncee` — Commissioner — National Center for Education Evaluation (NCEE) — `listed_no_rate`
-- `exec-dept-ed-ies-commissioner-national-center-for-education-research-ncer` — Commissioner — National Center for Education Research (NCER) — `unreached`
-- `exec-dept-ed-ies-commissioner-national-center-for-education-statistics-nces` — Commissioner — National Center for Education Statistics (NCES) — `unreached`
-- `exec-dept-ed-ies-deputy-director` — Deputy Director — `unreached`
-- `exec-dept-ed-ies-director-ies` — Director, IES — `unreached`
-- `exec-dept-ed-ies-statistician-research-scientist-multiple` — Statistician / Research Scientist (×multiple) — `multiplicity`
 
 ## International Trade Administration (ITA)  — 6 unpriced
 
@@ -3737,6 +3678,17 @@ same list in the same run.
 - `jud-support-ussc-general-counsel` — General Counsel — `unreached`
 - `jud-support-ussc-staff-director` — Staff Director — `unreached`
 
+## United States Patent and Trademark Office (USPTO)  — 6 unpriced
+
+`exec-dept-doc-uspto`
+
+- `exec-dept-doc-uspto-chief-administrative-trademark-judge-ttab` — Chief Administrative Trademark Judge (TTAB) — `unreached`
+- `exec-dept-doc-uspto-commissioner-for-patents` — Commissioner for Patents — `listed_no_rate`
+- `exec-dept-doc-uspto-commissioner-for-trademarks` — Commissioner for Trademarks — `unreached`
+- `exec-dept-doc-uspto-deputy-director` — Deputy Director — `unreached`
+- `exec-dept-doc-uspto-patent-examiner-multiple` — Patent Examiner (×multiple) — `multiplicity`
+- `exec-dept-doc-uspto-trademark-examining-attorney-multiple` — Trademark Examining Attorney (×multiple) — `multiplicity`
+
 ## William J. Clinton Presidential Library (Little Rock, AR)  — 6 unpriced
 
 `exec-ind-nara-william-j-clinton-presidential-library-little-rock-ar`
@@ -3808,6 +3760,16 @@ same list in the same run.
 - `exec-dept-doi-boem-petroleum-engineer` — Petroleum Engineer — `unreached`
 - `exec-dept-doi-boem-regional-director-3-regions` — Regional Director — 3 Regions — `unreached`
 
+## Bureau of Reclamation (BOR)  — 5 unpriced
+
+`exec-dept-doi-bor`
+
+- `exec-dept-doi-bor-area-manager` — Area Manager — `unreached`
+- `exec-dept-doi-bor-civil-engineer` — Civil Engineer — `unreached`
+- `exec-dept-doi-bor-hydrologist` — Hydrologist — `unreached`
+- `exec-dept-doi-bor-regional-director-5-regions` — Regional Director — 5 Regions — `unreached`
+- `exec-dept-doi-bor-water-master` — Water Master — `unreached`
+
 ## Bureau of Safety & Environmental Enforcement (BSEE)  — 5 unpriced
 
 `exec-dept-doi-bsee`
@@ -3817,6 +3779,16 @@ same list in the same run.
 - `exec-dept-doi-bsee-regional-director-alaska` — Regional Director — Alaska — `unreached`
 - `exec-dept-doi-bsee-regional-director-gulf-of-mexico` — Regional Director — Gulf of Mexico — `unreached`
 - `exec-dept-doi-bsee-regional-director-pacific` — Regional Director — Pacific — `unreached`
+
+## Copyright Office  — 5 unpriced
+
+`leg-support-loc-copyright`
+
+- `leg-support-loc-copyright-associate-register-for-policy-international-affairs` — Associate Register for Policy & International Affairs — `unreached`
+- `leg-support-loc-copyright-associate-register-for-public-innovation-technology` — Associate Register for Public Innovation & Technology — `unreached`
+- `leg-support-loc-copyright-associate-register-for-registration-recordation` — Associate Register for Registration & Recordation — `unreached`
+- `leg-support-loc-copyright-copyright-examiner-multiple` — Copyright Examiner (×multiple) — `multiplicity`
+- `leg-support-loc-copyright-director-of-operations` — Director of Operations — `unreached`
 
 ## Court of Appeals for the Armed Forces (CAAF)  — 5 unpriced
 
@@ -4765,6 +4737,15 @@ same list in the same run.
 - `exec-dept-hud-ginnie-chief-risk-officer` — Chief Risk Officer — `unreached`
 - `exec-dept-hud-ginnie-executive-vp-coo` — Executive VP / COO — `unreached`
 - `exec-dept-hud-ginnie-president-ginnie-mae` — President, Ginnie Mae — `unreached`
+
+## Government Publishing Office (GPO)  — 4 unpriced
+
+`leg-support-gpo`
+
+- `leg-support-gpo-chief-financial-officer` — Chief Financial Officer — `unreached`
+- `leg-support-gpo-chief-information-officer` — Chief Information Officer — `unreached`
+- `leg-support-gpo-chief-of-staff` — Chief of Staff — `unreached`
+- `leg-support-gpo-general-counsel` — General Counsel — `unreached`
 
 ## Hazardous Incident Response Division  — 4 unpriced
 
@@ -6800,6 +6781,13 @@ same list in the same run.
 
 - `exec-ind-nasa-exploration-systems-development-mission-directorate-deputy-associate-administrator-exploration-systems-development-mission-directorate` — Deputy Associate Administrator, Exploration Systems Development Mission Directorate — `unreached`
 - `exec-ind-nasa-exploration-systems-development-mission-directorate-program-director-multiple` — Program Director (×multiple) — `multiplicity`
+
+## Institute of Education Sciences (IES)  — 2 unpriced
+
+`exec-dept-ed-ies`
+
+- `exec-dept-ed-ies-deputy-director` — Deputy Director — `unreached`
+- `exec-dept-ed-ies-statistician-research-scientist-multiple` — Statistician / Research Scientist (×multiple) — `multiplicity`
 
 ## Labor, Health and Human Services, Education, and Related Agencies  — 2 unpriced
 

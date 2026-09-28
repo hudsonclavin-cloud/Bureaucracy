@@ -14,6 +14,26 @@
         "sha256": "bea4dd6d430c5148d0086bf25aef5cda0928821e85213dcf1d9f7205d5c4c015",
         "fetched_at": "2026-09-27T22:10:20Z"
       },
+      "gpo_44_usc_303.html": {
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title44-section303&num=0&edition=prelim",
+        "sha256": "070973f26ae3054f484678c8aa078dd1683a7ef6e0c35b0badfbe9ea44d93511",
+        "fetched_at": "2026-09-28T19:23:03Z"
+      },
+      "ies_20_usc_9511.html": {
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title20-section9511&num=0&edition=prelim",
+        "sha256": "c8cd99f664d4c4034c0162dfc2a9b27dd5ec7ae8f4bdb2fe92acd9b662497129",
+        "fetched_at": "2026-09-28T19:28:31Z"
+      },
+      "ies_20_usc_9514.html": {
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title20-section9514&num=0&edition=prelim",
+        "sha256": "e71c3571c5bd433c03aac7d4a3537d5a7106477a7241147732397e70aecc476a",
+        "fetched_at": "2026-09-28T19:24:56Z"
+      },
+      "ies_20_usc_9517.html": {
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title20-section9517&num=0&edition=prelim",
+        "sha256": "943785936d67cb4660ca8cee1b41192d50cb43237564d2b2fb6a862a28878b9d",
+        "fetched_at": "2026-09-28T19:22:45Z"
+      },
       "ig_5_usc_401.html": {
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section401&num=0&edition=prelim",
         "sha256": "3d4e3bdba96bd0b152c5feb3f006752a2693223726fce81d58ff9683497c4a1e",
@@ -63,9 +83,9 @@
       "National Reconnaissance Office"
     ],
     "inspectorGeneralNodesConsidered": 81,
-    "reviewedRows": 2,
-    "priced": 29,
-    "pricedByReviewedRow": 2,
+    "reviewedRows": 8,
+    "priced": 35,
+    "pricedByReviewedRow": 8,
     "pricedInspectorsGeneral": 27,
     "documentsStatingTheFigure": 0,
     "strengthScale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
@@ -130,7 +150,7 @@
       "not_an_establishment": "the node's organisation is not one 5 U.S.C. 401(1) lists, so 403(e) does not set its pay: a designated Federal entity's IG (5 U.S.C. 415, read and committed, prints no rate of pay), a Defense agency's stamped 'Inspector General' beneath the Department's own, a legislative office's, or the CIA's (5 U.S.C. 423, not read)",
       "americorps_named_only_in_the_alias_table": "5 U.S.C. 401(1) lists the Corporation for National and Community Service; this graph calls it AmeriCorps and carries the statutory name only in node_aliases.json, which no join that lands a number may read"
     },
-    "validated": 29,
+    "validated": 35,
     "rejected": [],
     "conflicts": [],
     "double_counted": []
@@ -1115,6 +1135,328 @@
       "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
       "tableRetrievedAt": "2026-09-11T03:05:36Z",
       "unitsEvidenceKind": "currency_mark_on_the_figure_the_record_is_computed_from"
+    },
+    "exec-dept-ed-ies-commissioner-national-center-for-education-evaluation-ncee": {
+      "nodeId": "exec-dept-ed-ies-commissioner-national-center-for-education-evaluation-ncee",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "basic_pay",
+      "amount": 197200.0,
+      "amountRaw": "197,200",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "Level IV $197,200",
+      "quote": "20 U.S.C. 9517(a)(2)(A) (a)(2) Pay and qualifications: “each Commissioner shall- (A) receive the rate of basic pay for level IV of the Executive Schedule;” · Salary Table No. 2026-EX, Effective January 2026: Level IV $197,200",
+      "fiscalYear": 2026,
+      "periodCoverage": "annual_rate",
+      "periodAsOf": "2026-01-01",
+      "amountScope": "Level IV",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "statutory_tier_reference_pay",
+      "sourceUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title20-section9517&num=0&edition=prelim",
+      "documentSha256": "943785936d67cb4660ca8cee1b41192d50cb43237564d2b2fb6a862a28878b9d",
+      "retrievedAt": "2026-09-28T19:22:45Z",
+      "locator": {
+        "section": "20 U.S.C. 9517(a)(2)(A)",
+        "subsection": "(a)(2) Pay and qualifications"
+      },
+      "method": "pay_set_by_reference_to_an_executive_schedule_level_joined_to_opm_table",
+      "office": "Commissioner of the National Center for Education Evaluation and Regional Assistance",
+      "statute": "20 U.S.C. 9517(a)(2)(A)",
+      "statuteQuote": "each Commissioner shall- (A) receive the rate of basic pay for level IV of the Executive Schedule;",
+      "level": "IV",
+      "levelText": "Level IV",
+      "levelRateText": "$197,200",
+      "levelAmount": 197200.0,
+      "percent": 0,
+      "arithmetic": null,
+      "rateText": "$197,200",
+      "derivation": "20 U.S.C. 9517(a)(2)(A) (a)(2) Pay and qualifications: “each Commissioner shall- (A) receive the rate of basic pay for level IV of the Executive Schedule;” · Salary Table No. 2026-EX, Effective January 2026: Level IV $197,200",
+      "identification": {
+        "kind": "reviewed_row",
+        "nodeName": "Commissioner — National Center for Education Evaluation (NCEE)"
+      },
+      "documents": [
+        {
+          "role": "sets this post's basic pay by reference to Executive Schedule Level IV",
+          "citation": "20 U.S.C. 9517(a)(2)(A)",
+          "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+          "title": "20 U.S.C. 9517(a)(2)(A), current through the prelim edition",
+          "quote": "each Commissioner shall- (A) receive the rate of basic pay for level IV of the Executive Schedule;",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title20-section9517&num=0&edition=prelim",
+          "documentSha256": "943785936d67cb4660ca8cee1b41192d50cb43237564d2b2fb6a862a28878b9d",
+          "retrievedAt": "2026-09-28T19:22:45Z",
+          "statesTheFigure": false
+        },
+        {
+          "role": "states what that Executive Schedule level pays",
+          "citation": "Salary Table No. 2026-EX, Effective January 2026",
+          "publisher": "U.S. Office of Personnel Management",
+          "title": "Salary Table No. 2026-EX",
+          "quote": "Level IV $197,200",
+          "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+          "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+          "retrievedAt": "2026-09-11T03:05:36Z",
+          "statesTheFigure": false
+        },
+        {
+          "role": "composes the National Education Centers whose Commissioners 20 U.S.C. 9517(a) prices",
+          "citation": "20 U.S.C. 9511(c)(3)",
+          "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+          "title": "20 U.S.C. 9511(c)(3), current through the prelim edition",
+          "quote": "The National Education Centers, which include- (A) the National Center for Education Research (as described in part B); (B) the National Center for Education Statistics (as described in part C); (C) the National Center for Education Evaluation and Regional Assistance (as described in part D); and (D) the National Center for Special Education Research (as described in part E).",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title20-section9511&num=0&edition=prelim",
+          "documentSha256": "c8cd99f664d4c4034c0162dfc2a9b27dd5ec7ae8f4bdb2fe92acd9b662497129",
+          "retrievedAt": "2026-09-28T19:28:31Z",
+          "statesTheFigure": false
+        }
+      ],
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "tableFootnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+      "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+    },
+    "exec-dept-ed-ies-commissioner-national-center-for-education-research-ncer": {
+      "nodeId": "exec-dept-ed-ies-commissioner-national-center-for-education-research-ncer",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "basic_pay",
+      "amount": 197200.0,
+      "amountRaw": "197,200",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "Level IV $197,200",
+      "quote": "20 U.S.C. 9517(a)(2)(A) (a)(2) Pay and qualifications: “each Commissioner shall- (A) receive the rate of basic pay for level IV of the Executive Schedule;” · Salary Table No. 2026-EX, Effective January 2026: Level IV $197,200",
+      "fiscalYear": 2026,
+      "periodCoverage": "annual_rate",
+      "periodAsOf": "2026-01-01",
+      "amountScope": "Level IV",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "statutory_tier_reference_pay",
+      "sourceUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title20-section9517&num=0&edition=prelim",
+      "documentSha256": "943785936d67cb4660ca8cee1b41192d50cb43237564d2b2fb6a862a28878b9d",
+      "retrievedAt": "2026-09-28T19:22:45Z",
+      "locator": {
+        "section": "20 U.S.C. 9517(a)(2)(A)",
+        "subsection": "(a)(2) Pay and qualifications"
+      },
+      "method": "pay_set_by_reference_to_an_executive_schedule_level_joined_to_opm_table",
+      "office": "Commissioner of the National Center for Education Research",
+      "statute": "20 U.S.C. 9517(a)(2)(A)",
+      "statuteQuote": "each Commissioner shall- (A) receive the rate of basic pay for level IV of the Executive Schedule;",
+      "level": "IV",
+      "levelText": "Level IV",
+      "levelRateText": "$197,200",
+      "levelAmount": 197200.0,
+      "percent": 0,
+      "arithmetic": null,
+      "rateText": "$197,200",
+      "derivation": "20 U.S.C. 9517(a)(2)(A) (a)(2) Pay and qualifications: “each Commissioner shall- (A) receive the rate of basic pay for level IV of the Executive Schedule;” · Salary Table No. 2026-EX, Effective January 2026: Level IV $197,200",
+      "identification": {
+        "kind": "reviewed_row",
+        "nodeName": "Commissioner — National Center for Education Research (NCER)"
+      },
+      "documents": [
+        {
+          "role": "sets this post's basic pay by reference to Executive Schedule Level IV",
+          "citation": "20 U.S.C. 9517(a)(2)(A)",
+          "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+          "title": "20 U.S.C. 9517(a)(2)(A), current through the prelim edition",
+          "quote": "each Commissioner shall- (A) receive the rate of basic pay for level IV of the Executive Schedule;",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title20-section9517&num=0&edition=prelim",
+          "documentSha256": "943785936d67cb4660ca8cee1b41192d50cb43237564d2b2fb6a862a28878b9d",
+          "retrievedAt": "2026-09-28T19:22:45Z",
+          "statesTheFigure": false
+        },
+        {
+          "role": "states what that Executive Schedule level pays",
+          "citation": "Salary Table No. 2026-EX, Effective January 2026",
+          "publisher": "U.S. Office of Personnel Management",
+          "title": "Salary Table No. 2026-EX",
+          "quote": "Level IV $197,200",
+          "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+          "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+          "retrievedAt": "2026-09-11T03:05:36Z",
+          "statesTheFigure": false
+        },
+        {
+          "role": "composes the National Education Centers whose Commissioners 20 U.S.C. 9517(a) prices",
+          "citation": "20 U.S.C. 9511(c)(3)",
+          "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+          "title": "20 U.S.C. 9511(c)(3), current through the prelim edition",
+          "quote": "The National Education Centers, which include- (A) the National Center for Education Research (as described in part B); (B) the National Center for Education Statistics (as described in part C); (C) the National Center for Education Evaluation and Regional Assistance (as described in part D); and (D) the National Center for Special Education Research (as described in part E).",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title20-section9511&num=0&edition=prelim",
+          "documentSha256": "c8cd99f664d4c4034c0162dfc2a9b27dd5ec7ae8f4bdb2fe92acd9b662497129",
+          "retrievedAt": "2026-09-28T19:28:31Z",
+          "statesTheFigure": false
+        }
+      ],
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "tableFootnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+      "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+    },
+    "exec-dept-ed-ies-commissioner-national-center-for-education-statistics-nces": {
+      "nodeId": "exec-dept-ed-ies-commissioner-national-center-for-education-statistics-nces",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "basic_pay",
+      "amount": 197200.0,
+      "amountRaw": "197,200",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "Level IV $197,200",
+      "quote": "20 U.S.C. 9517(b)(2) (b) Appointment of Commissioner for Education Statistics: “The National Center for Education Statistics shall be headed by a Commissioner for Education Statistics who shall be appointed by the President and who shall- (1) have substantial knowledge of programs assisted by the National Center for Education Statistics; (2) receive the rate of basic pay for level IV of the Executive Schedule;” · Salary Table No. 2026-EX, Effective January 2026: Level IV $197,200",
+      "fiscalYear": 2026,
+      "periodCoverage": "annual_rate",
+      "periodAsOf": "2026-01-01",
+      "amountScope": "Level IV",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "statutory_tier_reference_pay",
+      "sourceUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title20-section9517&num=0&edition=prelim",
+      "documentSha256": "943785936d67cb4660ca8cee1b41192d50cb43237564d2b2fb6a862a28878b9d",
+      "retrievedAt": "2026-09-28T19:22:45Z",
+      "locator": {
+        "section": "20 U.S.C. 9517(b)(2)",
+        "subsection": "(b) Appointment of Commissioner for Education Statistics"
+      },
+      "method": "pay_set_by_reference_to_an_executive_schedule_level_joined_to_opm_table",
+      "office": "Commissioner for Education Statistics",
+      "statute": "20 U.S.C. 9517(b)(2)",
+      "statuteQuote": "The National Center for Education Statistics shall be headed by a Commissioner for Education Statistics who shall be appointed by the President and who shall- (1) have substantial knowledge of programs assisted by the National Center for Education Statistics; (2) receive the rate of basic pay for level IV of the Executive Schedule;",
+      "level": "IV",
+      "levelText": "Level IV",
+      "levelRateText": "$197,200",
+      "levelAmount": 197200.0,
+      "percent": 0,
+      "arithmetic": null,
+      "rateText": "$197,200",
+      "derivation": "20 U.S.C. 9517(b)(2) (b) Appointment of Commissioner for Education Statistics: “The National Center for Education Statistics shall be headed by a Commissioner for Education Statistics who shall be appointed by the President and who shall- (1) have substantial knowledge of programs assisted by the National Center for Education Statistics; (2) receive the rate of basic pay for level IV of the Executive Schedule;” · Salary Table No. 2026-EX, Effective January 2026: Level IV $197,200",
+      "identification": {
+        "kind": "reviewed_row",
+        "nodeName": "Commissioner — National Center for Education Statistics (NCES)"
+      },
+      "documents": [
+        {
+          "role": "sets this post's basic pay by reference to Executive Schedule Level IV",
+          "citation": "20 U.S.C. 9517(b)(2)",
+          "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+          "title": "20 U.S.C. 9517(b)(2), current through the prelim edition",
+          "quote": "The National Center for Education Statistics shall be headed by a Commissioner for Education Statistics who shall be appointed by the President and who shall- (1) have substantial knowledge of programs assisted by the National Center for Education Statistics; (2) receive the rate of basic pay for level IV of the Executive Schedule;",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title20-section9517&num=0&edition=prelim",
+          "documentSha256": "943785936d67cb4660ca8cee1b41192d50cb43237564d2b2fb6a862a28878b9d",
+          "retrievedAt": "2026-09-28T19:22:45Z",
+          "statesTheFigure": false
+        },
+        {
+          "role": "states what that Executive Schedule level pays",
+          "citation": "Salary Table No. 2026-EX, Effective January 2026",
+          "publisher": "U.S. Office of Personnel Management",
+          "title": "Salary Table No. 2026-EX",
+          "quote": "Level IV $197,200",
+          "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+          "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+          "retrievedAt": "2026-09-11T03:05:36Z",
+          "statesTheFigure": false
+        }
+      ],
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "tableFootnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+      "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+    },
+    "exec-dept-ed-ies-director-ies": {
+      "nodeId": "exec-dept-ed-ies-director-ies",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "basic_pay",
+      "amount": 228000.0,
+      "amountRaw": "228,000",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "Level II $228,000",
+      "quote": "20 U.S.C. 9514(c) (c) Pay: “The Director shall receive the rate of basic pay for level II of the Executive Schedule.” · Salary Table No. 2026-EX, Effective January 2026: Level II $228,000",
+      "fiscalYear": 2026,
+      "periodCoverage": "annual_rate",
+      "periodAsOf": "2026-01-01",
+      "amountScope": "Level II",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "statutory_tier_reference_pay",
+      "sourceUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title20-section9514&num=0&edition=prelim",
+      "documentSha256": "e71c3571c5bd433c03aac7d4a3537d5a7106477a7241147732397e70aecc476a",
+      "retrievedAt": "2026-09-28T19:24:56Z",
+      "locator": {
+        "section": "20 U.S.C. 9514(c)",
+        "subsection": "(c) Pay"
+      },
+      "method": "pay_set_by_reference_to_an_executive_schedule_level_joined_to_opm_table",
+      "office": "Director of the Institute of Education Sciences",
+      "statute": "20 U.S.C. 9514(c)",
+      "statuteQuote": "The Director shall receive the rate of basic pay for level II of the Executive Schedule.",
+      "level": "II",
+      "levelText": "Level II",
+      "levelRateText": "$228,000",
+      "levelAmount": 228000.0,
+      "percent": 0,
+      "arithmetic": null,
+      "rateText": "$228,000",
+      "derivation": "20 U.S.C. 9514(c) (c) Pay: “The Director shall receive the rate of basic pay for level II of the Executive Schedule.” · Salary Table No. 2026-EX, Effective January 2026: Level II $228,000",
+      "identification": {
+        "kind": "reviewed_row",
+        "nodeName": "Director, IES"
+      },
+      "documents": [
+        {
+          "role": "sets this post's basic pay by reference to Executive Schedule Level II",
+          "citation": "20 U.S.C. 9514(c)",
+          "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+          "title": "20 U.S.C. 9514(c), current through the prelim edition",
+          "quote": "The Director shall receive the rate of basic pay for level II of the Executive Schedule.",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title20-section9514&num=0&edition=prelim",
+          "documentSha256": "e71c3571c5bd433c03aac7d4a3537d5a7106477a7241147732397e70aecc476a",
+          "retrievedAt": "2026-09-28T19:24:56Z",
+          "statesTheFigure": false
+        },
+        {
+          "role": "states what that Executive Schedule level pays",
+          "citation": "Salary Table No. 2026-EX, Effective January 2026",
+          "publisher": "U.S. Office of Personnel Management",
+          "title": "Salary Table No. 2026-EX",
+          "quote": "Level II $228,000",
+          "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+          "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+          "retrievedAt": "2026-09-11T03:05:36Z",
+          "statesTheFigure": false
+        }
+      ],
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "tableFootnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+      "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
     },
     "exec-dept-ed-inspector-general": {
       "nodeId": "exec-dept-ed-inspector-general",
@@ -2915,6 +3257,156 @@
           "publisher": "U.S. Office of Personnel Management",
           "title": "Salary Table No. 2026-EX",
           "quote": "Level III $209,600",
+          "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+          "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+          "retrievedAt": "2026-09-11T03:05:36Z",
+          "statesTheFigure": false
+        }
+      ],
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "tableFootnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+      "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+    },
+    "leg-support-gpo-deputy-director-coo": {
+      "nodeId": "leg-support-gpo-deputy-director-coo",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "basic_pay",
+      "amount": 209600.0,
+      "amountRaw": "209,600",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "Level III $209,600",
+      "quote": "44 U.S.C. 303 (second sentence): “The annual rate of pay for the Deputy Director of the Government Publishing Office shall be a rate which is equal to the rate for level III of such Executive Schedule.” · Salary Table No. 2026-EX, Effective January 2026: Level III $209,600",
+      "fiscalYear": 2026,
+      "periodCoverage": "annual_rate",
+      "periodAsOf": "2026-01-01",
+      "amountScope": "Level III",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "statutory_tier_reference_pay",
+      "sourceUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title44-section303&num=0&edition=prelim",
+      "documentSha256": "070973f26ae3054f484678c8aa078dd1683a7ef6e0c35b0badfbe9ea44d93511",
+      "retrievedAt": "2026-09-28T19:23:03Z",
+      "locator": {
+        "section": "44 U.S.C. 303",
+        "subsection": "(second sentence)"
+      },
+      "method": "pay_set_by_reference_to_an_executive_schedule_level_joined_to_opm_table",
+      "office": "Deputy Director of the Government Publishing Office",
+      "statute": "44 U.S.C. 303",
+      "statuteQuote": "The annual rate of pay for the Deputy Director of the Government Publishing Office shall be a rate which is equal to the rate for level III of such Executive Schedule.",
+      "level": "III",
+      "levelText": "Level III",
+      "levelRateText": "$209,600",
+      "levelAmount": 209600.0,
+      "percent": 0,
+      "arithmetic": null,
+      "rateText": "$209,600",
+      "derivation": "44 U.S.C. 303 (second sentence): “The annual rate of pay for the Deputy Director of the Government Publishing Office shall be a rate which is equal to the rate for level III of such Executive Schedule.” · Salary Table No. 2026-EX, Effective January 2026: Level III $209,600",
+      "identification": {
+        "kind": "reviewed_row",
+        "nodeName": "Deputy Director / COO"
+      },
+      "documents": [
+        {
+          "role": "sets this post's basic pay by reference to Executive Schedule Level III",
+          "citation": "44 U.S.C. 303",
+          "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+          "title": "44 U.S.C. 303, current through the prelim edition",
+          "quote": "The annual rate of pay for the Deputy Director of the Government Publishing Office shall be a rate which is equal to the rate for level III of such Executive Schedule.",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title44-section303&num=0&edition=prelim",
+          "documentSha256": "070973f26ae3054f484678c8aa078dd1683a7ef6e0c35b0badfbe9ea44d93511",
+          "retrievedAt": "2026-09-28T19:23:03Z",
+          "statesTheFigure": false
+        },
+        {
+          "role": "states what that Executive Schedule level pays",
+          "citation": "Salary Table No. 2026-EX, Effective January 2026",
+          "publisher": "U.S. Office of Personnel Management",
+          "title": "Salary Table No. 2026-EX",
+          "quote": "Level III $209,600",
+          "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+          "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+          "retrievedAt": "2026-09-11T03:05:36Z",
+          "statesTheFigure": false
+        }
+      ],
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "tableFootnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+      "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+    },
+    "leg-support-gpo-director-gpo-public-printer": {
+      "nodeId": "leg-support-gpo-director-gpo-public-printer",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "basic_pay",
+      "amount": 228000.0,
+      "amountRaw": "228,000",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "Level II $228,000",
+      "quote": "44 U.S.C. 303 (first sentence): “The annual rate of pay for the Director of the Government Publishing Office shall be a rate which is equal to the rate for level II of the Executive Schedule” · Salary Table No. 2026-EX, Effective January 2026: Level II $228,000",
+      "fiscalYear": 2026,
+      "periodCoverage": "annual_rate",
+      "periodAsOf": "2026-01-01",
+      "amountScope": "Level II",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "statutory_tier_reference_pay",
+      "sourceUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title44-section303&num=0&edition=prelim",
+      "documentSha256": "070973f26ae3054f484678c8aa078dd1683a7ef6e0c35b0badfbe9ea44d93511",
+      "retrievedAt": "2026-09-28T19:23:03Z",
+      "locator": {
+        "section": "44 U.S.C. 303",
+        "subsection": "(first sentence)"
+      },
+      "method": "pay_set_by_reference_to_an_executive_schedule_level_joined_to_opm_table",
+      "office": "Director of the Government Publishing Office",
+      "statute": "44 U.S.C. 303",
+      "statuteQuote": "The annual rate of pay for the Director of the Government Publishing Office shall be a rate which is equal to the rate for level II of the Executive Schedule",
+      "level": "II",
+      "levelText": "Level II",
+      "levelRateText": "$228,000",
+      "levelAmount": 228000.0,
+      "percent": 0,
+      "arithmetic": null,
+      "rateText": "$228,000",
+      "derivation": "44 U.S.C. 303 (first sentence): “The annual rate of pay for the Director of the Government Publishing Office shall be a rate which is equal to the rate for level II of the Executive Schedule” · Salary Table No. 2026-EX, Effective January 2026: Level II $228,000",
+      "identification": {
+        "kind": "reviewed_row",
+        "nodeName": "Director, GPO (Public Printer)"
+      },
+      "documents": [
+        {
+          "role": "sets this post's basic pay by reference to Executive Schedule Level II",
+          "citation": "44 U.S.C. 303",
+          "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+          "title": "44 U.S.C. 303, current through the prelim edition",
+          "quote": "The annual rate of pay for the Director of the Government Publishing Office shall be a rate which is equal to the rate for level II of the Executive Schedule",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title44-section303&num=0&edition=prelim",
+          "documentSha256": "070973f26ae3054f484678c8aa078dd1683a7ef6e0c35b0badfbe9ea44d93511",
+          "retrievedAt": "2026-09-28T19:23:03Z",
+          "statesTheFigure": false
+        },
+        {
+          "role": "states what that Executive Schedule level pays",
+          "citation": "Salary Table No. 2026-EX, Effective January 2026",
+          "publisher": "U.S. Office of Personnel Management",
+          "title": "Salary Table No. 2026-EX",
+          "quote": "Level II $228,000",
           "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
           "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
           "retrievedAt": "2026-09-11T03:05:36Z",

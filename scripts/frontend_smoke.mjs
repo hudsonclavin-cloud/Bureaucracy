@@ -1092,7 +1092,10 @@ try {
   // must print the statute's citation and its own title for the office, since
   // fifteen nodes share the identical Level I figure and the citation is the
   // only thing tying a figure to this post rather than another's.
-  const withSchedulePay = allNodes.find((n) => n.positionSchedulePay && typeof n.positionSchedulePay.amount === "number");
+  // A whole-name or scoped row: a reviewed identification prints a different
+  // sentence (three documents), and is checked on its own below.
+  const withSchedulePay = allNodes.find((n) => n.positionSchedulePay && typeof n.positionSchedulePay.amount === "number"
+    && !n.positionSchedulePay.identification);
   check("some position is priced at the level the U.S. Code sets", Boolean(withSchedulePay), "none");
   if (withSchedulePay) {
     await page.fill("#search-input", withSchedulePay.name.slice(0, 28));

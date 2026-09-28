@@ -122,6 +122,27 @@ def _base_tree():
                     },
                 ],
             },
+            # The two offices: one statute each to the tier for the AO's
+            # Director, two for the FJC's (28 U.S.C. 626 -> 603); the deputies
+            # are 92 percent of a join and stay unpriced.
+            {
+                "id": "jud-support-aousc",
+                "name": "Administrative Office of U.S. Courts (AOUSC)",
+                "type": "Judicial Support",
+                "children": [
+                    {"id": "jud-support-aousc-director-aousc", "name": "Director, AOUSC", "type": "Position"},
+                    {"id": "jud-support-aousc-deputy-director", "name": "Deputy Director", "type": "Position"},
+                ],
+            },
+            {
+                "id": "jud-support-fjc",
+                "name": "Federal Judicial Center (FJC)",
+                "type": "Judicial Support",
+                "children": [
+                    {"id": "jud-support-fjc-director-fjc", "name": "Director, FJC", "type": "Position"},
+                    {"id": "jud-support-fjc-deputy-director", "name": "Deputy Director", "type": "Position"},
+                ],
+            },
         ],
     }
 
@@ -199,10 +220,31 @@ class MirrorTests(unittest.TestCase):
     def test_the_gate_mirrors_every_provision_by_node_id(self):
         self.assertEqual(set(DERIVED_PAY_PROVISIONS), set(PARITY_PROVISIONS))
         for node_id, provision in PARITY_PROVISIONS.items():
-            citation, tier, sentence = DERIVED_PAY_PROVISIONS[node_id]
+            mirrored = DERIVED_PAY_PROVISIONS[node_id]
+            citation, tier, sentence = mirrored[:3]
             self.assertEqual(provision["citation"], citation)
             self.assertEqual(provision["tier"], tier)
             self.assertEqual(" ".join(provision["quote"].split()), sentence)
+            via = provision.get("via")
+            if via:
+                # A chain row mirrors its middle statute too.
+                self.assertEqual(4, len(mirrored), node_id)
+                self.assertEqual((via["citation"], " ".join(via["quote"].split())), mirrored[3])
+            else:
+                self.assertEqual(3, len(mirrored), node_id)
+
+    def test_exactly_one_provision_is_a_chain(self):
+        """28 U.S.C. 626 pays the FJC's Director what the AO's Director is
+        paid, and 28 U.S.C. 603 pays that Director as a district judge."""
+        chains = [n for n, p in PARITY_PROVISIONS.items() if p.get("via")]
+        self.assertEqual(["jud-support-fjc-director-fjc"], chains)
+        self.assertEqual("28 U.S.C. 603", PARITY_PROVISIONS["jud-support-fjc-director-fjc"]["via"]["citation"])
+        self.assertEqual("28 U.S.C. 603", PARITY_PROVISIONS["jud-support-aousc-director-aousc"]["citation"])
+
+    def test_the_deputies_are_refused_and_say_why(self):
+        for node_id in ("jud-support-aousc-deputy-director", "jud-support-fjc-deputy-director"):
+            self.assertNotIn(node_id, PARITY_PROVISIONS)
+            self.assertIn("92 percent", NOT_PRICED[node_id])
 
     def test_the_gate_mirrors_the_repealed_sentence(self):
         self.assertEqual(REPEALED_CAVC_CHIEF_JUDGE_TEXT, DERIVED_PAY_REPEALED_TEXT)
@@ -211,7 +253,7 @@ class MirrorTests(unittest.TestCase):
         """Which is why the mirror is keyed by node id and not by figure:
         three courts' chief judges and their benches, six nodes, one rate."""
         district = [n for n, p in PARITY_PROVISIONS.items() if p["tier"] == "district judges"]
-        self.assertEqual(6, len(district))
+        self.assertEqual(8, len(district))  # six judges' seats, and the two directors since 2026-09-28
 
     def test_each_bench_takes_its_own_courts_provision(self):
         from data_pipeline.verification.derived_pay import BENCH_NODES
@@ -239,21 +281,25 @@ class MirrorTests(unittest.TestCase):
 
 
 class BuildTests(unittest.TestCase):
-    def test_eight_records_and_no_more(self):
-        """Four chief judges and four benches. The bench nodes are in the tree
-        only for the Tax Court here, so five reach the fixture; the CIT never."""
+    def test_the_records_and_no_more(self):
+        """Four chief judges, four benches and two directors. The bench nodes
+        are in the tree only for the Tax Court here, so seven reach the
+        fixture; the CIT and the two deputies never."""
         records, report = _records()
-        self.assertEqual(5, len(records))
-        self.assertEqual(5, report["priced"])
+        self.assertEqual(7, len(records))
+        self.assertEqual(7, report["priced"])
+        self.assertNotIn("jud-support-aousc-deputy-director", records)
+        self.assertNotIn("jud-support-fjc-deputy-director", records)
         self.assertNotIn("jud-specialized-intl-trade-chief-judge-cit", records)
         self.assertIn("jud-specialized-tax-judge-18", records)
         self.assertEqual(records["jud-specialized-tax-judge-18"]["amount"], records["jud-specialized-tax-chief-judge-tax-court"]["amount"])
 
-    def test_each_record_carries_two_documents_neither_stating_the_figure(self):
+    def test_each_record_carries_its_documents_none_stating_the_figure(self):
         records, _ = _records()
         for node_id, record in records.items():
             with self.subTest(node_id):
-                self.assertEqual(2, len(record["documents"]))
+                expected = 3 if PARITY_PROVISIONS[node_id].get("via") else 2
+                self.assertEqual(expected, len(record["documents"]))
                 self.assertFalse(any(d["statesTheFigure"] for d in record["documents"]))
                 hosts = {d["url"] for d in record["documents"]}
                 self.assertTrue(any("uscode.house.gov" in url for url in hosts))
@@ -288,7 +334,7 @@ class ApplyTests(unittest.TestCase):
         records, _ = _records()
         tree = _base_tree()
         stats = apply_pay_evidence(tree, records, index_tree=index_tree)
-        self.assertEqual(5, stats["priced"])
+        self.assertEqual(7, stats["priced"])
         # The document count, the percentage and the sentence saying what the
         # percentage does not measure are stamped by the shared pass that does
         # the same for every other pay field -- one code path for one number.
@@ -297,8 +343,9 @@ class ApplyTests(unittest.TestCase):
         for node_id in records:
             node = node_map[node_id]
             pay = node["positionDerivedPay"]
-            self.assertEqual(2, pay["verification"]["documents"])
-            self.assertEqual(80, pay["verification"]["percent"])
+            expected = 3 if PARITY_PROVISIONS[node_id].get("via") else 2
+            self.assertEqual(expected, pay["verification"]["documents"])
+            self.assertEqual({2: 80, 3: 90}[expected], pay["verification"]["percent"])
             self.assertEqual(0, pay["verification"]["documentsStatingTheFigure"])
             # The channel that carried 29 positions to `verified` off a
             # five-row table on 2026-09-11.
@@ -312,7 +359,7 @@ class ApplyTests(unittest.TestCase):
         node_map, _ = index_tree(tree)
         node_map["jud-specialized-tax-chief-judge-tax-court"]["positionStatutoryPay"] = {"source": "elsewhere"}
         stats = apply_pay_evidence(tree, records, index_tree=index_tree)
-        self.assertEqual(4, stats["priced"])
+        self.assertEqual(6, stats["priced"])
         self.assertEqual(1, stats["already_priced_by_another_source"])
         node_map, _ = index_tree(tree)
         self.assertIsNone(node_map["jud-specialized-tax-chief-judge-tax-court"].get("positionDerivedPay"))
@@ -411,6 +458,36 @@ class GateTests(unittest.TestCase):
         pay = copy.deepcopy(self.node["positionDerivedPay"])
         pay["documents"] = pay["documents"][:1]
         self.assertTrue(any("not two" in v for v in self._check(pay=pay)))
+
+    def test_the_chain_row_passes_and_each_link_is_checked(self):
+        """The FJC's Director: three documents, 90%, and the middle statute
+        quoted as 28 U.S.C. 603 prints it now."""
+        node_map, _ = index_tree(self.tree)
+        fjc = node_map["jud-support-fjc-director-fjc"]
+        self.assertEqual([], self._check(fjc))
+        self.assertEqual(3, fjc["positionDerivedPay"]["verification"]["documents"])
+        self.assertEqual(90, fjc["positionDerivedPay"]["verification"]["percent"])
+        self.assertEqual("28 U.S.C. 603", fjc["positionDerivedPay"]["viaStatute"])
+        # The middle document dropped.
+        pay = copy.deepcopy(fjc["positionDerivedPay"])
+        pay["documents"] = [d for d in pay["documents"] if d["citation"] != "28 U.S.C. 603"]
+        pay["verification"]["documents"] = 2
+        pay["verification"]["percent"] = 80
+        self.assertTrue(any("document list does not carry" in v for v in self._check(fjc, pay)))
+        # The middle sentence misquoted.
+        pay = copy.deepcopy(fjc["positionDerivedPay"])
+        pay["viaQuote"] = "The salary of the Director shall be the same as the salary of a circuit judge."
+        self.assertTrue(any("without quoting the sentence" in v for v in self._check(fjc, pay)))
+        # A chain claimed on a node whose provision makes none.
+        node_map, _ = index_tree(self.tree)
+        ao = node_map["jud-support-aousc-director-aousc"]
+        self.assertEqual([], self._check(ao))
+        pay = copy.deepcopy(ao["positionDerivedPay"])
+        pay["viaStatute"] = "28 U.S.C. 603"
+        pay["viaQuote"] = "The salary of the Director shall be the same as the salary of a district judge."
+        self.assertTrue(any("does not make" in v for v in self._check(ao, pay)))
+        # The AO row is not a chain, and two documents is what it carries.
+        self.assertEqual(2, ao["positionDerivedPay"]["verification"]["documents"])
 
     def test_a_document_claiming_to_state_the_figure_is_caught(self):
         pay = copy.deepcopy(self.node["positionDerivedPay"])

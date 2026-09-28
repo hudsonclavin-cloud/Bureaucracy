@@ -3,6 +3,11 @@
   "source": {
     "kind": "statutory_parity_derived_pay",
     "sections": {
+      "aousc_28_usc_603.html": {
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title28-section603&num=0&edition=prelim",
+        "sha256": "af01b512f3f8e6fe884eb769fa433b57e71af80a3b729d6bfa8c65e3cbc64332",
+        "fetched_at": "2026-09-28T19:25:24Z"
+      },
       "caaf_10_usc_942.html": {
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title10-section942&num=0&edition=prelim",
         "sha256": "b571d7d900eb86deecbd7df2120592145073fa57581f85dc18619a13ebd38faa",
@@ -17,6 +22,11 @@
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title28-section172&num=0&edition=prelim",
         "sha256": "3782d16345039a86eeddcb6008839479a31c5f96a5a35f5892e6aeff4dedd78a",
         "fetched_at": "2026-09-23T17:38:27Z"
+      },
+      "fjc_28_usc_626.html": {
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title28-section626&num=0&edition=prelim",
+        "sha256": "aa8cefffe28149c2a8a4689d1f47430c1b6ac50bde906dcfff2bbb4501aa017c",
+        "fetched_at": "2026-09-28T19:24:41Z"
       },
       "tax_court_26_usc_7443.html": {
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section7443&num=0&edition=prelim",
@@ -31,9 +41,23 @@
       "file": "tests/fixtures/uscourts/judicial_compensation.html"
     },
     "year": "2026",
-    "documentsPerRecord": 2,
+    "documentsPerRecord": {
+      "jud-specialized-caaf-chief-judge-caaf": 2,
+      "jud-specialized-caaf-judge-4": 2,
+      "jud-specialized-cavc-chief-judge-cavc": 2,
+      "jud-specialized-cavc-judge-8": 2,
+      "jud-specialized-claims-chief-judge-cfc": 2,
+      "jud-specialized-claims-judge-15": 2,
+      "jud-specialized-tax-chief-judge-tax-court": 2,
+      "jud-specialized-tax-judge-18": 2,
+      "jud-support-aousc-director-aousc": 2,
+      "jud-support-fjc-director-fjc": 3
+    },
     "documentsStatingTheFigure": 0,
-    "documentStrengthPercent": 80,
+    "documentStrengthPercent": {
+      "2": 80,
+      "3": 90
+    },
     "strengthScale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3"
   },
   "report": {
@@ -43,6 +67,11 @@
     "tableSha256": "014c9a66ad48a019ab127752e9cd46e4cec94da5e8e94d41a4eb9e785e96e494",
     "tableRetrievedAt": "2026-09-14T15:20:14Z",
     "sections": {
+      "aousc_28_usc_603.html": {
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title28-section603&num=0&edition=prelim",
+        "sha256": "af01b512f3f8e6fe884eb769fa433b57e71af80a3b729d6bfa8c65e3cbc64332",
+        "fetched_at": "2026-09-28T19:25:24Z"
+      },
       "caaf_10_usc_942.html": {
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title10-section942&num=0&edition=prelim",
         "sha256": "b571d7d900eb86deecbd7df2120592145073fa57581f85dc18619a13ebd38faa",
@@ -58,24 +87,45 @@
         "sha256": "3782d16345039a86eeddcb6008839479a31c5f96a5a35f5892e6aeff4dedd78a",
         "fetched_at": "2026-09-23T17:38:27Z"
       },
+      "fjc_28_usc_626.html": {
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title28-section626&num=0&edition=prelim",
+        "sha256": "aa8cefffe28149c2a8a4689d1f47430c1b6ac50bde906dcfff2bbb4501aa017c",
+        "fetched_at": "2026-09-28T19:24:41Z"
+      },
       "tax_court_26_usc_7443.html": {
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section7443&num=0&edition=prelim",
         "sha256": "0c945fea2c6372286c13a5841318d1a1f5dabcca2622e08da01c53c8eb9a782d",
         "fetched_at": "2026-09-23T17:38:18Z"
       }
     },
-    "considered": 8,
-    "priced": 8,
-    "documentsPerRecord": 2,
+    "considered": 10,
+    "priced": 10,
+    "documentsPerRecord": {
+      "jud-specialized-caaf-chief-judge-caaf": 2,
+      "jud-specialized-caaf-judge-4": 2,
+      "jud-specialized-cavc-chief-judge-cavc": 2,
+      "jud-specialized-cavc-judge-8": 2,
+      "jud-specialized-claims-chief-judge-cfc": 2,
+      "jud-specialized-claims-judge-15": 2,
+      "jud-specialized-tax-chief-judge-tax-court": 2,
+      "jud-specialized-tax-judge-18": 2,
+      "jud-support-aousc-director-aousc": 2,
+      "jud-support-fjc-director-fjc": 3
+    },
     "documentsStatingTheFigure": 0,
-    "documentStrengthPercent": 80,
+    "documentStrengthPercent": {
+      "2": 80,
+      "3": 90
+    },
     "strengthScale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
     "refused": {},
     "notPriced": {
-      "jud-specialized-intl-trade-chief-judge-cit": "28 U.S.C. 252 states no parity: it sets the rate by reference to section 225 of the Federal Salary Act of 1967 as adjusted by 28 U.S.C. 461, a chain through documents this project has not read"
+      "jud-specialized-intl-trade-chief-judge-cit": "28 U.S.C. 252 states no parity: it sets the rate by reference to section 225 of the Federal Salary Act of 1967 as adjusted by 28 U.S.C. 461, a chain through documents this project has not read",
+      "jud-support-aousc-deputy-director": "28 U.S.C. 603 sets the Deputy Director's salary at 92 percent of the Director's: arithmetic on a figure that is itself a join, which this field does not publish",
+      "jud-support-fjc-deputy-director": "28 U.S.C. 626 sets the Deputy Director's compensation at the Administrative Office Deputy Director's, which 28 U.S.C. 603 sets at 92 percent of that Director's: two hops and arithmetic on a figure that is itself a join, which this field does not publish"
     },
     "repealedTextRefused": "The chief judge of the Court shall receive a salary at the same rate as is received by judges of the United States Courts of Appeals.",
-    "validated": 8,
+    "validated": 10,
     "rejected": [],
     "conflicts": [],
     "double_counted": []
@@ -106,8 +156,11 @@
         "subsection": "(d) Pay and Allowances"
       },
       "court": "United States Court of Appeals for the Armed Forces",
+      "subject": "every judge of United States Court of Appeals for the Armed Forces",
       "statute": "10 U.S.C. 942(d)",
       "statuteQuote": "Each judge of the court is entitled to the same salary and travel allowances as are, and from time to time may be, provided for judges of the United States Courts of Appeals.",
+      "viaStatute": null,
+      "viaQuote": null,
       "seatTier": "circuit judges",
       "year": "2026",
       "rateText": "$264,900",
@@ -166,8 +219,11 @@
         "subsection": "(d) Pay and Allowances"
       },
       "court": "United States Court of Appeals for the Armed Forces",
+      "subject": "every judge of United States Court of Appeals for the Armed Forces",
       "statute": "10 U.S.C. 942(d)",
       "statuteQuote": "Each judge of the court is entitled to the same salary and travel allowances as are, and from time to time may be, provided for judges of the United States Courts of Appeals.",
+      "viaStatute": null,
+      "viaQuote": null,
       "seatTier": "circuit judges",
       "year": "2026",
       "rateText": "$264,900",
@@ -226,8 +282,11 @@
         "subsection": "(e) Salary"
       },
       "court": "United States Court of Appeals for Veterans Claims",
+      "subject": "every judge of United States Court of Appeals for Veterans Claims",
       "statute": "38 U.S.C. 7253(e)",
       "statuteQuote": "Each judge of the Court shall receive a salary at the same rate as is received by judges of the United States district courts.",
+      "viaStatute": null,
+      "viaQuote": null,
       "seatTier": "district judges",
       "year": "2026",
       "rateText": "$249,900",
@@ -286,8 +345,11 @@
         "subsection": "(e) Salary"
       },
       "court": "United States Court of Appeals for Veterans Claims",
+      "subject": "every judge of United States Court of Appeals for Veterans Claims",
       "statute": "38 U.S.C. 7253(e)",
       "statuteQuote": "Each judge of the Court shall receive a salary at the same rate as is received by judges of the United States district courts.",
+      "viaStatute": null,
+      "viaQuote": null,
       "seatTier": "district judges",
       "year": "2026",
       "rateText": "$249,900",
@@ -346,8 +408,11 @@
         "subsection": "(b)"
       },
       "court": "U.S. Court of Federal Claims",
+      "subject": "every judge of U.S. Court of Federal Claims",
       "statute": "28 U.S.C. 172(b)",
       "statuteQuote": "Each judge shall receive a salary at the rate of pay, and in the same manner, as judges of the district courts of the United States.",
+      "viaStatute": null,
+      "viaQuote": null,
       "seatTier": "district judges",
       "year": "2026",
       "rateText": "$249,900",
@@ -406,8 +471,11 @@
         "subsection": "(b)"
       },
       "court": "U.S. Court of Federal Claims",
+      "subject": "every judge of U.S. Court of Federal Claims",
       "statute": "28 U.S.C. 172(b)",
       "statuteQuote": "Each judge shall receive a salary at the rate of pay, and in the same manner, as judges of the district courts of the United States.",
+      "viaStatute": null,
+      "viaQuote": null,
       "seatTier": "district judges",
       "year": "2026",
       "rateText": "$249,900",
@@ -466,8 +534,11 @@
         "subsection": "(c) Salary"
       },
       "court": "U.S. Tax Court",
+      "subject": "every judge of U.S. Tax Court",
       "statute": "26 U.S.C. 7443(c)(1)",
       "statuteQuote": "Each judge shall receive salary at the same rate and in the same installments as judges of the district courts of the United States.",
+      "viaStatute": null,
+      "viaQuote": null,
       "seatTier": "district judges",
       "year": "2026",
       "rateText": "$249,900",
@@ -526,8 +597,11 @@
         "subsection": "(c) Salary"
       },
       "court": "U.S. Tax Court",
+      "subject": "every judge of U.S. Tax Court",
       "statute": "26 U.S.C. 7443(c)(1)",
       "statuteQuote": "Each judge shall receive salary at the same rate and in the same installments as judges of the district courts of the United States.",
+      "viaStatute": null,
+      "viaQuote": null,
       "seatTier": "district judges",
       "year": "2026",
       "rateText": "$249,900",
@@ -542,6 +616,143 @@
           "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section7443&num=0&edition=prelim",
           "documentSha256": "0c945fea2c6372286c13a5841318d1a1f5dabcca2622e08da01c53c8eb9a782d",
           "retrievedAt": "2026-09-23T17:38:18Z",
+          "statesTheFigure": false
+        },
+        {
+          "role": "states what that tier pays",
+          "citation": "Judicial Compensation, 2026",
+          "publisher": "Administrative Office of the United States Courts",
+          "title": "Judicial Compensation",
+          "quote": "Year District Judges Circuit Judges Associate Justices Chief Justice; 2026 $249,900 $264,900 $306,600 $320,700",
+          "url": "https://www.uscourts.gov/about-federal-courts/about-federal-judges/judicial-compensation",
+          "documentSha256": "014c9a66ad48a019ab127752e9cd46e4cec94da5e8e94d41a4eb9e785e96e494",
+          "retrievedAt": "2026-09-14T15:20:14Z",
+          "statesTheFigure": false
+        }
+      ],
+      "tableUrl": "https://www.uscourts.gov/about-federal-courts/about-federal-judges/judicial-compensation",
+      "tableSha256": "014c9a66ad48a019ab127752e9cd46e4cec94da5e8e94d41a4eb9e785e96e494",
+      "tableRetrievedAt": "2026-09-14T15:20:14Z",
+      "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+    },
+    "jud-support-aousc-director-aousc": {
+      "nodeId": "jud-support-aousc-director-aousc",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "basic_pay",
+      "amount": 249900.0,
+      "amountRaw": "249,900",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "Year District Judges Circuit Judges Associate Justices Chief Justice; 2026 $249,900 $264,900 $306,600 $320,700",
+      "quote": "28 U.S.C. 603 Salaries: “The salary of the Director shall be the same as the salary of a district judge.” · Judicial Compensation 2026: District Judges $249,900",
+      "fiscalYear": 2026,
+      "periodCoverage": "annual_rate",
+      "periodAsOf": "2026-01-01",
+      "amountScope": "District Judges",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "statutory_parity_derived_pay",
+      "sourceUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title28-section603&num=0&edition=prelim",
+      "documentSha256": "af01b512f3f8e6fe884eb769fa433b57e71af80a3b729d6bfa8c65e3cbc64332",
+      "retrievedAt": "2026-09-28T19:25:24Z",
+      "locator": {
+        "section": "28 U.S.C. 603",
+        "subsection": "Salaries"
+      },
+      "court": null,
+      "subject": "the Director of the Administrative Office of the United States Courts",
+      "statute": "28 U.S.C. 603",
+      "statuteQuote": "The salary of the Director shall be the same as the salary of a district judge.",
+      "viaStatute": null,
+      "viaQuote": null,
+      "seatTier": "district judges",
+      "year": "2026",
+      "rateText": "$249,900",
+      "derivation": "28 U.S.C. 603 Salaries: “The salary of the Director shall be the same as the salary of a district judge.” · Judicial Compensation 2026: District Judges $249,900",
+      "documents": [
+        {
+          "role": "states the tier this post is paid at",
+          "citation": "28 U.S.C. 603",
+          "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+          "title": "28 U.S.C. 603, current through the prelim edition",
+          "quote": "The salary of the Director shall be the same as the salary of a district judge.",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title28-section603&num=0&edition=prelim",
+          "documentSha256": "af01b512f3f8e6fe884eb769fa433b57e71af80a3b729d6bfa8c65e3cbc64332",
+          "retrievedAt": "2026-09-28T19:25:24Z",
+          "statesTheFigure": false
+        },
+        {
+          "role": "states what that tier pays",
+          "citation": "Judicial Compensation, 2026",
+          "publisher": "Administrative Office of the United States Courts",
+          "title": "Judicial Compensation",
+          "quote": "Year District Judges Circuit Judges Associate Justices Chief Justice; 2026 $249,900 $264,900 $306,600 $320,700",
+          "url": "https://www.uscourts.gov/about-federal-courts/about-federal-judges/judicial-compensation",
+          "documentSha256": "014c9a66ad48a019ab127752e9cd46e4cec94da5e8e94d41a4eb9e785e96e494",
+          "retrievedAt": "2026-09-14T15:20:14Z",
+          "statesTheFigure": false
+        }
+      ],
+      "tableUrl": "https://www.uscourts.gov/about-federal-courts/about-federal-judges/judicial-compensation",
+      "tableSha256": "014c9a66ad48a019ab127752e9cd46e4cec94da5e8e94d41a4eb9e785e96e494",
+      "tableRetrievedAt": "2026-09-14T15:20:14Z",
+      "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+    },
+    "jud-support-fjc-director-fjc": {
+      "nodeId": "jud-support-fjc-director-fjc",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "basic_pay",
+      "amount": 249900.0,
+      "amountRaw": "249,900",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "Year District Judges Circuit Judges Associate Justices Chief Justice; 2026 $249,900 $264,900 $306,600 $320,700",
+      "quote": "28 U.S.C. 626 Compensation of the Director and Deputy Director: “The compensation of the Director of the Federal Judicial Center shall be the same as that of the Director of the Administrative Office of the United States Courts” · 28 U.S.C. 603: “The salary of the Director shall be the same as the salary of a district judge.” · Judicial Compensation 2026: District Judges $249,900",
+      "fiscalYear": 2026,
+      "periodCoverage": "annual_rate",
+      "periodAsOf": "2026-01-01",
+      "amountScope": "District Judges",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "statutory_parity_derived_pay",
+      "sourceUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title28-section626&num=0&edition=prelim",
+      "documentSha256": "aa8cefffe28149c2a8a4689d1f47430c1b6ac50bde906dcfff2bbb4501aa017c",
+      "retrievedAt": "2026-09-28T19:24:41Z",
+      "locator": {
+        "section": "28 U.S.C. 626",
+        "subsection": "Compensation of the Director and Deputy Director"
+      },
+      "court": null,
+      "subject": "the Director of the Federal Judicial Center",
+      "statute": "28 U.S.C. 626",
+      "statuteQuote": "The compensation of the Director of the Federal Judicial Center shall be the same as that of the Director of the Administrative Office of the United States Courts",
+      "viaStatute": "28 U.S.C. 603",
+      "viaQuote": "The salary of the Director shall be the same as the salary of a district judge.",
+      "seatTier": "district judges",
+      "year": "2026",
+      "rateText": "$249,900",
+      "derivation": "28 U.S.C. 626 Compensation of the Director and Deputy Director: “The compensation of the Director of the Federal Judicial Center shall be the same as that of the Director of the Administrative Office of the United States Courts” · 28 U.S.C. 603: “The salary of the Director shall be the same as the salary of a district judge.” · Judicial Compensation 2026: District Judges $249,900",
+      "documents": [
+        {
+          "role": "states whose pay this post's equals",
+          "citation": "28 U.S.C. 626",
+          "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+          "title": "28 U.S.C. 626, current through the prelim edition",
+          "quote": "The compensation of the Director of the Federal Judicial Center shall be the same as that of the Director of the Administrative Office of the United States Courts",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title28-section626&num=0&edition=prelim",
+          "documentSha256": "aa8cefffe28149c2a8a4689d1f47430c1b6ac50bde906dcfff2bbb4501aa017c",
+          "retrievedAt": "2026-09-28T19:24:41Z",
+          "statesTheFigure": false
+        },
+        {
+          "role": "states the tier that office is paid at",
+          "citation": "28 U.S.C. 603",
+          "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+          "title": "28 U.S.C. 603, current through the prelim edition",
+          "quote": "The salary of the Director shall be the same as the salary of a district judge.",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title28-section603&num=0&edition=prelim",
+          "documentSha256": "af01b512f3f8e6fe884eb769fa433b57e71af80a3b729d6bfa8c65e3cbc64332",
+          "retrievedAt": "2026-09-28T19:25:24Z",
           "statesTheFigure": false
         },
         {

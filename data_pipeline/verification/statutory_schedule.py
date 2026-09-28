@@ -876,6 +876,54 @@ REVIEWED_TITLE_ROWS: dict[str, dict[str, Any]] = {
             "the same office: 15 U.S.C. 2053 establishes the Consumer Product Safety Commission of five Commissioners and has the President appoint the Chairman from among them, and 5 U.S.C. 5314 places that Chairman at Level III; the graph writes 'Chair' where the Code writes 'Chairman' and names the Commission by its acronym"
         ),
     },
+    "exec-dept-dot-fhwa-administrator-fhwa": {
+        "nodeName": "Administrator, FHWA",
+        "statutoryTitle": "Administrator, Federal Highway Administration",
+        "basisCitation": "49 U.S.C. 104",
+        "basisFixture": "fhwa_49_usc_104.html",
+        "basisQuote": (
+            "The head of the Administration is the Administrator who is appointed by the President, by and with the advice and consent of the Senate."
+        ),
+        "basis": (
+            "the same office: 49 U.S.C. 104 makes the Administrator the head of the Federal Highway Administration, appointed by the President with the Senate's consent, and 5 U.S.C. 5313 places that Administrator at Level II; the graph names the Administration by its acronym"
+        ),
+    },
+    "exec-dept-doc-uspto-director-under-secretary-for-ip": {
+        "nodeName": "Director / Under Secretary for IP",
+        "statutoryTitle": "Under Secretary of Commerce for Intellectual Property and Director of the United States Patent and Trademark Office",
+        "basisCitation": "35 U.S.C. 3",
+        "basisFixture": "uspto_35_usc_3.html",
+        "basisQuote": (
+            "The powers and duties of the United States Patent and Trademark Office shall be vested in an Under Secretary of Commerce for Intellectual Property and Director of the United States Patent and Trademark Office (in this title referred to as the \"Director\"), who shall be a citizen of the United States and who shall be appointed by the President, by and with the advice and consent of the Senate."
+        ),
+        "basis": (
+            "the same office: 35 U.S.C. 3 vests the Office's powers and duties in one officer holding the joint title Under Secretary of Commerce for Intellectual Property and Director of the United States Patent and Trademark Office, and 5 U.S.C. 5314 places that joint title at Level III; the graph writes the two halves as 'Director / Under Secretary for IP'"
+        ),
+    },
+    "exec-dept-doi-bor-commissioner-bor": {
+        "nodeName": "Commissioner, BOR",
+        "statutoryTitle": "Commissioner of Reclamation, Department of the Interior",
+        "basisCitation": "43 U.S.C. 373a",
+        "basisFixture": "bor_43_usc_373a.html",
+        "basisQuote": (
+            "shall be administered by a Commissioner of Reclamation who shall be appointed by the President by and with the advice and consent of the Senate."
+        ),
+        "basis": (
+            "the same office: 43 U.S.C. 373a puts the reclamation of arid lands under a Commissioner of Reclamation in the Department of the Interior, appointed by the President with the Senate's consent, and 5 U.S.C. 5316 places that Commissioner at Level V; the graph names the Bureau of Reclamation by its acronym"
+        ),
+    },
+    "leg-support-loc-copyright-register-of-copyrights-director": {
+        "nodeName": "Register of Copyrights & Director",
+        "statutoryTitle": "Register of Copyrights",
+        "basisCitation": "17 U.S.C. 701",
+        "basisFixture": "copyright_17_usc_701.html",
+        "basisQuote": (
+            "All administrative functions and duties under this title, except as otherwise specified, are the responsibility of the Register of Copyrights as director of the Copyright Office of the Library of Congress."
+        ),
+        "basis": (
+            "the same office: 17 U.S.C. 701 makes the Register of Copyrights the director of the Copyright Office of the Library of Congress, and 5 U.S.C. 5314 places the Register of Copyrights at Level III; the graph's '& Director' is the Office's own styling of that one post"
+        ),
+    },
 }
 
 

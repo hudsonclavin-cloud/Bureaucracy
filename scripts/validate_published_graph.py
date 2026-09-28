@@ -494,6 +494,38 @@ US_CODE_REVIEWED_IDENTIFICATIONS = {
         "the same office: 15 U.S.C. 2053 establishes the Consumer Product Safety Commission of five Commissioners and has the President appoint the Chairman from among them, and 5 U.S.C. 5314 places that Chairman at Level III; the graph writes 'Chair' where the Code writes 'Chairman' and names the Commission by its acronym",
         False,
     ),
+    "exec-dept-dot-fhwa-administrator-fhwa": (
+        "Administrator, FHWA",
+        "Administrator, Federal Highway Administration", "II", "5313",
+        "49 U.S.C. 104", "fhwa_49_usc_104.html",
+        "The head of the Administration is the Administrator who is appointed by the President, by and with the advice and consent of the Senate.",
+        "the same office: 49 U.S.C. 104 makes the Administrator the head of the Federal Highway Administration, appointed by the President with the Senate's consent, and 5 U.S.C. 5313 places that Administrator at Level II; the graph names the Administration by its acronym",
+        False,
+    ),
+    "exec-dept-doc-uspto-director-under-secretary-for-ip": (
+        "Director / Under Secretary for IP",
+        "Under Secretary of Commerce for Intellectual Property and Director of the United States Patent and Trademark Office", "III", "5314",
+        "35 U.S.C. 3", "uspto_35_usc_3.html",
+        "The powers and duties of the United States Patent and Trademark Office shall be vested in an Under Secretary of Commerce for Intellectual Property and Director of the United States Patent and Trademark Office (in this title referred to as the \"Director\"), who shall be a citizen of the United States and who shall be appointed by the President, by and with the advice and consent of the Senate.",
+        "the same office: 35 U.S.C. 3 vests the Office's powers and duties in one officer holding the joint title Under Secretary of Commerce for Intellectual Property and Director of the United States Patent and Trademark Office, and 5 U.S.C. 5314 places that joint title at Level III; the graph writes the two halves as 'Director / Under Secretary for IP'",
+        False,
+    ),
+    "exec-dept-doi-bor-commissioner-bor": (
+        "Commissioner, BOR",
+        "Commissioner of Reclamation, Department of the Interior", "V", "5316",
+        "43 U.S.C. 373a", "bor_43_usc_373a.html",
+        "shall be administered by a Commissioner of Reclamation who shall be appointed by the President by and with the advice and consent of the Senate.",
+        "the same office: 43 U.S.C. 373a puts the reclamation of arid lands under a Commissioner of Reclamation in the Department of the Interior, appointed by the President with the Senate's consent, and 5 U.S.C. 5316 places that Commissioner at Level V; the graph names the Bureau of Reclamation by its acronym",
+        False,
+    ),
+    "leg-support-loc-copyright-register-of-copyrights-director": (
+        "Register of Copyrights & Director",
+        "Register of Copyrights", "III", "5314",
+        "17 U.S.C. 701", "copyright_17_usc_701.html",
+        "All administrative functions and duties under this title, except as otherwise specified, are the responsibility of the Register of Copyrights as director of the Copyright Office of the Library of Congress.",
+        "the same office: 17 U.S.C. 701 makes the Register of Copyrights the director of the Copyright Office of the Library of Congress, and 5 U.S.C. 5314 places the Register of Copyrights at Level III; the graph's '& Director' is the Office's own styling of that one post",
+        False,
+    ),
 }
 _US_CODE_OPERATIVE_CACHE = {}
 
@@ -713,6 +745,23 @@ DERIVED_PAY_BENCHES = {
 }
 for _bench, _chief in DERIVED_PAY_BENCHES.items():
     DERIVED_PAY_PROVISIONS[_bench] = DERIVED_PAY_PROVISIONS[_chief]
+#: Two judicial-branch offices paid at a judge's rate, since 2026-09-28. The
+#: FJC row is a CHAIN: 28 U.S.C. 626 pays its Director what the Administrative
+#: Office's Director is paid, and 28 U.S.C. 603 pays that Director as a
+#: district judge -- so the row carries a fourth element, (citation, sentence)
+#: of the middle statute, and the block must list THREE documents.
+DERIVED_PAY_PROVISIONS["jud-support-aousc-director-aousc"] = (
+    "28 U.S.C. 603",
+    "district judges",
+    "The salary of the Director shall be the same as the salary of a district judge.",
+)
+DERIVED_PAY_PROVISIONS["jud-support-fjc-director-fjc"] = (
+    "28 U.S.C. 626",
+    "district judges",
+    "The compensation of the Director of the Federal Judicial Center shall be the same as that of "
+    "the Director of the Administrative Office of the United States Courts",
+    ("28 U.S.C. 603", "The salary of the Director shall be the same as the salary of a district judge."),
+)
 #: The sentence 38 U.S.C. 7253's Amendments note prints as the section's PRIOR
 #: text. It is on the page, it is not the law, and publishing it would put the
 #: CAVC's chief judge at the circuit rate. Refused outright wherever it is
@@ -2562,6 +2611,57 @@ TIER_REFERENCE_ROWS = {
         "gao_31_usc_703.html", "III",
         "Deputy Comptroller General is equal to the rate for level III of the Executive Schedule",
     ),
+    "leg-support-gpo-director-gpo-public-printer": (
+        "Director, GPO (Public Printer)", "Director of the Government Publishing Office", "44 U.S.C. 303",
+        "gpo_44_usc_303.html", "II",
+        "The annual rate of pay for the Director of the Government Publishing Office shall be a rate "
+        "which is equal to the rate for level II of the Executive Schedule",
+    ),
+    "leg-support-gpo-deputy-director-coo": (
+        "Deputy Director / COO", "Deputy Director of the Government Publishing Office", "44 U.S.C. 303",
+        "gpo_44_usc_303.html", "III",
+        "The annual rate of pay for the Deputy Director of the Government Publishing Office shall be a "
+        "rate which is equal to the rate for level III of such Executive Schedule.",
+    ),
+    "exec-dept-ed-ies-director-ies": (
+        "Director, IES", "Director of the Institute of Education Sciences", "20 U.S.C. 9514(c)",
+        "ies_20_usc_9514.html", "II",
+        "The Director shall receive the rate of basic pay for level II of the Executive Schedule.",
+    ),
+    "exec-dept-ed-ies-commissioner-national-center-for-education-statistics-nces": (
+        "Commissioner — National Center for Education Statistics (NCES)", "Commissioner for Education Statistics",
+        "20 U.S.C. 9517(b)(2)", "ies_20_usc_9517.html", "IV",
+        "The National Center for Education Statistics shall be headed by a Commissioner for Education "
+        "Statistics who shall be appointed by the President and who shall- (1) have substantial knowledge "
+        "of programs assisted by the National Center for Education Statistics; (2) receive the rate of "
+        "basic pay for level IV of the Executive Schedule;",
+    ),
+    "exec-dept-ed-ies-commissioner-national-center-for-education-research-ncer": (
+        "Commissioner — National Center for Education Research (NCER)",
+        "Commissioner of the National Center for Education Research", "20 U.S.C. 9517(a)(2)(A)",
+        "ies_20_usc_9517.html", "IV",
+        "each Commissioner shall- (A) receive the rate of basic pay for level IV of the Executive Schedule;",
+    ),
+    "exec-dept-ed-ies-commissioner-national-center-for-education-evaluation-ncee": (
+        "Commissioner — National Center for Education Evaluation (NCEE)",
+        "Commissioner of the National Center for Education Evaluation and Regional Assistance", "20 U.S.C. 9517(a)(2)(A)",
+        "ies_20_usc_9517.html", "IV",
+        "each Commissioner shall- (A) receive the rate of basic pay for level IV of the Executive Schedule;",
+    ),
+}
+#: Rows priced from 20 U.S.C. 9517(a)'s class sentence ("each Commissioner" of
+#: the National Education Centers) carry 9511(c)(3), the sentence that names
+#: those centers, as a third document. Mirrors tier_reference_pay.IES_COMPOSITION.
+TIER_REFERENCE_IES_COMPOSITION = (
+    "20 U.S.C. 9511(c)(3)", "ies_20_usc_9511.html",
+    "The National Education Centers, which include- (A) the National Center for Education Research (as "
+    "described in part B); (B) the National Center for Education Statistics (as described in part C); (C) "
+    "the National Center for Education Evaluation and Regional Assistance (as described in part D); and "
+    "(D) the National Center for Special Education Research (as described in part E).",
+)
+TIER_REFERENCE_COMPOSED_ROWS = {
+    "exec-dept-ed-ies-commissioner-national-center-for-education-research-ncer",
+    "exec-dept-ed-ies-commissioner-national-center-for-education-evaluation-ncee",
 }
 #: The Inspector General Act's rule: (citation, fixture, level, percent, the
 #: sentence 5 U.S.C. 403's operative text prints, the establishments citation,
@@ -2639,7 +2739,7 @@ def tier_reference_pay_violations(node, pay, today, label, tree_parent_name=None
         node_name, office, citation, fixture, level, sentence = row
         percent = 0
         if str(pay.get("method") or "") != TIER_REFERENCE_METHOD:
-            say("prices a GAO row under method {!r}, not {!r}".format(pay.get("method"), TIER_REFERENCE_METHOD))
+            say("prices a reviewed row under method {!r}, not {!r}".format(pay.get("method"), TIER_REFERENCE_METHOD))
         if canonical_key(node.get("name")) != canonical_key(node_name):
             say("is now called {!r}, not {!r}, the name its row was written against".format(node.get("name"), node_name))
         if identification.get("kind") != "reviewed_row" or str(identification.get("nodeName") or "") != node_name:
@@ -2649,6 +2749,19 @@ def tier_reference_pay_violations(node, pay, today, label, tree_parent_name=None
         if str(pay.get("office") or "") != office:
             say("names office {!r}; the row is {!r}".format(pay.get("office"), office))
         expected_documents = 2
+        if node_id in TIER_REFERENCE_COMPOSED_ROWS:
+            # 9517(a) prices "each Commissioner" of centers it does not name;
+            # the block must carry 9511(c)(3), which does, and quote it as the
+            # committed section prints it now.
+            comp_citation, comp_fixture, comp_sentence = TIER_REFERENCE_IES_COMPOSITION
+            comp_operative = uscode_operative_text(US_CODE_BASIS_FIXTURE_DIR / comp_fixture)
+            if comp_sentence not in comp_operative:
+                say("rests on a composing sentence {} no longer prints in its operative text".format(comp_citation))
+            composing = [d for d in (pay.get("documents") or []) if isinstance(d, dict)
+                         and str(d.get("citation") or "") == comp_citation]
+            if len(composing) != 1 or str(composing[0].get("quote") or "") != comp_sentence:
+                say("prices a Commissioner from 9517(a)'s class sentence without quoting {} as its third document".format(comp_citation))
+            expected_documents = 3
     else:
         citation, fixture, level, percent, sentence, est_citation, est_fixture, definition = TIER_REFERENCE_IG_RULE
         if canonical_key(node.get("name")) != canonical_key(TIER_REFERENCE_IG_TITLE):
@@ -2836,7 +2949,8 @@ def derived_pay_violations(node, pay, today, label):
     if provision is None:
         say("carries a derived rate on a node this pipeline has no parity provision for")
         return out
-    citation, tier, sentence = provision
+    citation, tier, sentence = provision[:3]
+    via = provision[3] if len(provision) > 3 else None
     if str(pay.get("statute") or "") != citation:
         say("cites {!r}; this node's parity provision is {!r}".format(pay.get("statute"), citation))
     quoted_statute = str(pay.get("statuteQuote") or "")
@@ -2879,10 +2993,23 @@ def derived_pay_violations(node, pay, today, label):
         say("dates the rate {!r}, not {!r}".format(
             pay.get("effective"), "{}-01-01".format(JUDICIAL_COMPENSATION_YEAR)))
 
-    # Both documents, and neither of them claiming to state the figure.
-    if not isinstance(documents, list) or len(documents) != 2:
-        say("publishes a derived figure naming {!r} documents, not two".format(
-            len(documents) if isinstance(documents, list) else documents))
+    # Every document -- two, or three on a chain -- and none of them
+    # claiming to state the figure.
+    expected_documents = 3 if via else 2
+    if via:
+        via_citation, via_sentence = via
+        if str(pay.get("viaStatute") or "") != via_citation or str(pay.get("viaQuote") or "") != via_sentence:
+            say("prices through {} without quoting the sentence it prints now".format(via_citation))
+        middle = [d for d in (documents if isinstance(documents, list) else []) if isinstance(d, dict)
+                  and str(d.get("citation") or "") == via_citation]
+        if len(middle) != 1 or str(middle[0].get("quote") or "") != via_sentence:
+            say("names a chain through {} that its own document list does not carry".format(via_citation))
+    elif pay.get("viaStatute") or pay.get("viaQuote"):
+        say("claims a chain through {!r} that this node's provision does not make".format(pay.get("viaStatute")))
+    if not isinstance(documents, list) or len(documents) != expected_documents:
+        say("publishes a derived figure naming {!r} documents, not {}".format(
+            len(documents) if isinstance(documents, list) else documents,
+            "three" if expected_documents == 3 else "two"))
         documents = []
     urls = []
     for document in documents:
@@ -5784,13 +5911,13 @@ def main(argv):
               "names the tier, the compensation table prices it ({}); {:,} parity provisions are mirrored here, and the "
               "Court of International Trade is not among them because 28 U.S.C. 252 states no parity".format(
                   len(derived_paid),
-                  ", ".join("{} documents each, {}% on this project's own source scale".format(
-                      count, DERIVED_PAY_STRENGTH_BY_COUNT.get(count)) for count in sorted(derived_counts)) or "none",
+                  "; ".join("{} on {} documents, {}% on this project's own source scale".format(
+                      derived_counts[count], count, DERIVED_PAY_STRENGTH_BY_COUNT.get(count)) for count in sorted(derived_counts)) or "none",
                   len(DERIVED_PAY_PROVISIONS)))
     reference_paid = [n for n in nodes if isinstance(n.get("positionTierReferencePay"), dict)]
     reference_igs = [n for n in reference_paid if (n["positionTierReferencePay"].get("identification") or {}).get("kind") != "reviewed_row"]
     print("  tier-reference pay   : {:,} positions priced from a statute that sets pay by reference to an Executive Schedule "
-          "level ({:,} GAO rows mirrored by id; {:,} Inspectors General of an establishment 5 U.S.C. 401(1) lists, each "
+          "level ({:,} reviewed rows mirrored by id — the GAO's, the GPO's and the IES's officers; {:,} Inspectors General of an establishment 5 U.S.C. 401(1) lists, each "
           "Level III plus 3 percent, arithmetic no document prints); 0 documents state any figure".format(
               len(reference_paid), len(reference_paid) - len(reference_igs), len(reference_igs)))
     reported_paid = [n for n in nodes if isinstance(n.get("positionReportedPay"), dict)]

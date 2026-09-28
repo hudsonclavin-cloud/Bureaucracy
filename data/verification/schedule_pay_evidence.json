@@ -12,31 +12,34 @@
     "method": "level_assigned_by_5_usc_5312_5316",
     "table": "Salary Table No. 2026-EX",
     "effective": "2026-01-01",
-    "matched": 136,
-    "priced": 136,
+    "matched": 140,
+    "priced": 140,
     "refused": {},
     "priced_by_level": {
       "I": 19,
-      "II": 29,
-      "III": 22,
+      "II": 30,
+      "III": 24,
       "IV": 61,
-      "V": 5
+      "V": 6
     },
     "matchRefusals": {
       "no_such_post_directly_under_that_organisation": 79,
       "office_part_is_a_bare_role_word": 75
     },
     "scopedMatches": 61,
-    "reviewedMatches": 37,
+    "reviewedMatches": 41,
     "reviewedRows": [
       "exec-dept-dhs-deputy-secretary-of-department-of-homeland-security-dhs",
       "exec-dept-dhs-fema-administrator-fema",
       "exec-dept-dhs-secretary-of-department-of-homeland-security-dhs",
       "exec-dept-doc-census-director-census-bureau",
       "exec-dept-doc-nist-director-nist",
+      "exec-dept-doc-uspto-director-under-secretary-for-ip",
       "exec-dept-doi-blm-director-blm",
+      "exec-dept-doi-bor-commissioner-bor",
       "exec-dept-dol-bls-commissioner-bls",
       "exec-dept-dot-faa-administrator-faa",
+      "exec-dept-dot-fhwa-administrator-fhwa",
       "exec-dept-hhs-cms-administrator-cms",
       "exec-dept-treasury-irs-commissioner-irs",
       "exec-eop-cea-chair-cea",
@@ -65,7 +68,8 @@
       "exec-regulatory-ftc-chair-ftc",
       "exec-regulatory-ftc-commissioner-4",
       "exec-regulatory-nrc-chair-nrc",
-      "exec-regulatory-nrc-commissioner-4"
+      "exec-regulatory-nrc-commissioner-4",
+      "leg-support-loc-copyright-register-of-copyrights-director"
     ],
     "ambiguousStatutoryTitles": {
       "archivist of the united states": [
@@ -74,7 +78,7 @@
       ]
     },
     "statutoryPositions": 415,
-    "validated": 136,
+    "validated": 140,
     "rejected": [],
     "conflicts": [],
     "double_counted": []
@@ -1224,6 +1228,62 @@
       ],
       "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
     },
+    "exec-dept-doc-uspto-director-under-secretary-for-ip": {
+      "nodeId": "exec-dept-doc-uspto-director-under-secretary-for-ip",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "basic_pay",
+      "amount": 209600.0,
+      "amountRaw": "209,600",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "Level III $209,600",
+      "quote": "Level III $209,600",
+      "fiscalYear": 2026,
+      "periodCoverage": "annual_rate",
+      "periodAsOf": "2026-01-01",
+      "amountScope": "Level III",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "opm_pay_table",
+      "sourceUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+      "retrievedAt": "2026-09-11T03:05:36Z",
+      "locator": {
+        "table": "Salary Table No. 2026-EX",
+        "row": "Level III",
+        "column": "Rate"
+      },
+      "levelClaim": {
+        "source": "us_code_executive_schedule",
+        "method": "level_assigned_by_5_usc_5312_5316_to_the_office_a_second_statute_identifies_this_post_as",
+        "scopedOffice": null,
+        "scopedOrganisation": null,
+        "scopedOrganisationId": null,
+        "payLevel": "III",
+        "citation": "5 U.S.C. §5314",
+        "section": "5314",
+        "statutoryTitle": "Under Secretary of Commerce for Intellectual Property and Director of the United States Patent and Trademark Office",
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5314&num=0&edition=prelim",
+        "documentSha256": "9fb06a64237cc4224921b2bec6b5666066b73241c148fbec39182a595aa8ae92",
+        "checkedAt": "2026-09-18T20:34:21Z",
+        "identification": {
+          "nodeName": "Director / Under Secretary for IP",
+          "basis": "the same office: 35 U.S.C. 3 vests the Office's powers and duties in one officer holding the joint title Under Secretary of Commerce for Intellectual Property and Director of the United States Patent and Trademark Office, and 5 U.S.C. 5314 places that joint title at Level III; the graph writes the two halves as 'Director / Under Secretary for IP'",
+          "basisCitation": "35 U.S.C. 3",
+          "basisQuote": "The powers and duties of the United States Patent and Trademark Office shall be vested in an Under Secretary of Commerce for Intellectual Property and Director of the United States Patent and Trademark Office (in this title referred to as the \"Director\"), who shall be a citizen of the United States and who shall be appointed by the President, by and with the advice and consent of the Senate.",
+          "basisUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title35-section3&num=0&edition=prelim",
+          "basisSha256": "aaeb93bdbdfd6bb62f240a7b181b047ca851279fa2ec87b770f769bcb28a4572",
+          "basisCheckedAt": "2026-09-28T19:22:24Z"
+        }
+      },
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "rateText": "$209,600",
+      "tableFootnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+    },
     "exec-dept-doe-chief-financial-officer": {
       "nodeId": "exec-dept-doe-chief-financial-officer",
       "financialEvidenceStatus": "partial",
@@ -1558,6 +1618,62 @@
           "basisUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title43-section1731&num=0&edition=prelim",
           "basisSha256": "b17b9cc61bd5ca2084b9d21a2529b904b3503728302bebaee5f2d0dc998e9a51",
           "basisCheckedAt": "2026-09-27T21:56:41Z"
+        }
+      },
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "rateText": "$184,900",
+      "tableFootnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+    },
+    "exec-dept-doi-bor-commissioner-bor": {
+      "nodeId": "exec-dept-doi-bor-commissioner-bor",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "basic_pay",
+      "amount": 184900.0,
+      "amountRaw": "184,900",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "Level V $184,900",
+      "quote": "Level V $184,900",
+      "fiscalYear": 2026,
+      "periodCoverage": "annual_rate",
+      "periodAsOf": "2026-01-01",
+      "amountScope": "Level V",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "opm_pay_table",
+      "sourceUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+      "retrievedAt": "2026-09-11T03:05:36Z",
+      "locator": {
+        "table": "Salary Table No. 2026-EX",
+        "row": "Level V",
+        "column": "Rate"
+      },
+      "levelClaim": {
+        "source": "us_code_executive_schedule",
+        "method": "level_assigned_by_5_usc_5312_5316_to_the_office_a_second_statute_identifies_this_post_as",
+        "scopedOffice": null,
+        "scopedOrganisation": null,
+        "scopedOrganisationId": null,
+        "payLevel": "V",
+        "citation": "5 U.S.C. §5316",
+        "section": "5316",
+        "statutoryTitle": "Commissioner of Reclamation, Department of the Interior",
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5316&num=0&edition=prelim",
+        "documentSha256": "9ab5ec55d48c11958802ac25731680772d2189fc2bdd9b4ae17dfd300ca7a49e",
+        "checkedAt": "2026-09-18T20:34:37Z",
+        "identification": {
+          "nodeName": "Commissioner, BOR",
+          "basis": "the same office: 43 U.S.C. 373a puts the reclamation of arid lands under a Commissioner of Reclamation in the Department of the Interior, appointed by the President with the Senate's consent, and 5 U.S.C. 5316 places that Commissioner at Level V; the graph names the Bureau of Reclamation by its acronym",
+          "basisCitation": "43 U.S.C. 373a",
+          "basisQuote": "shall be administered by a Commissioner of Reclamation who shall be appointed by the President by and with the advice and consent of the Senate.",
+          "basisUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title43-section373a&num=0&edition=prelim",
+          "basisSha256": "d41a40fcbe1b965f805bf98199b4b108795a7dded3e97107711cc70945464264",
+          "basisCheckedAt": "2026-09-28T19:22:31Z"
         }
       },
       "table": "Salary Table No. 2026-EX",
@@ -2491,6 +2607,62 @@
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
       "rateText": "$197,200",
+      "tableFootnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+    },
+    "exec-dept-dot-fhwa-administrator-fhwa": {
+      "nodeId": "exec-dept-dot-fhwa-administrator-fhwa",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "basic_pay",
+      "amount": 228000.0,
+      "amountRaw": "228,000",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "Level II $228,000",
+      "quote": "Level II $228,000",
+      "fiscalYear": 2026,
+      "periodCoverage": "annual_rate",
+      "periodAsOf": "2026-01-01",
+      "amountScope": "Level II",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "opm_pay_table",
+      "sourceUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+      "retrievedAt": "2026-09-11T03:05:36Z",
+      "locator": {
+        "table": "Salary Table No. 2026-EX",
+        "row": "Level II",
+        "column": "Rate"
+      },
+      "levelClaim": {
+        "source": "us_code_executive_schedule",
+        "method": "level_assigned_by_5_usc_5312_5316_to_the_office_a_second_statute_identifies_this_post_as",
+        "scopedOffice": null,
+        "scopedOrganisation": null,
+        "scopedOrganisationId": null,
+        "payLevel": "II",
+        "citation": "5 U.S.C. §5313",
+        "section": "5313",
+        "statutoryTitle": "Administrator, Federal Highway Administration",
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5313&num=0&edition=prelim",
+        "documentSha256": "5978491c31e39139944c452e8dd755928b42d37d5b7fbfbe03e1376ed54c7120",
+        "checkedAt": "2026-09-18T20:34:08Z",
+        "identification": {
+          "nodeName": "Administrator, FHWA",
+          "basis": "the same office: 49 U.S.C. 104 makes the Administrator the head of the Federal Highway Administration, appointed by the President with the Senate's consent, and 5 U.S.C. 5313 places that Administrator at Level II; the graph names the Administration by its acronym",
+          "basisCitation": "49 U.S.C. 104",
+          "basisQuote": "The head of the Administration is the Administrator who is appointed by the President, by and with the advice and consent of the Senate.",
+          "basisUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title49-section104&num=0&edition=prelim",
+          "basisSha256": "7e8459420bce10bcaad9e18e994d583d7ff3f64abe437acb798625dd5749c92f",
+          "basisCheckedAt": "2026-09-28T19:22:21Z"
+        }
+      },
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "rateText": "$228,000",
       "tableFootnotes": [
         "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
       ],
@@ -6905,6 +7077,62 @@
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
       "rateText": "$184,900",
+      "tableFootnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+    },
+    "leg-support-loc-copyright-register-of-copyrights-director": {
+      "nodeId": "leg-support-loc-copyright-register-of-copyrights-director",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "basic_pay",
+      "amount": 209600.0,
+      "amountRaw": "209,600",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "Level III $209,600",
+      "quote": "Level III $209,600",
+      "fiscalYear": 2026,
+      "periodCoverage": "annual_rate",
+      "periodAsOf": "2026-01-01",
+      "amountScope": "Level III",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "opm_pay_table",
+      "sourceUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+      "retrievedAt": "2026-09-11T03:05:36Z",
+      "locator": {
+        "table": "Salary Table No. 2026-EX",
+        "row": "Level III",
+        "column": "Rate"
+      },
+      "levelClaim": {
+        "source": "us_code_executive_schedule",
+        "method": "level_assigned_by_5_usc_5312_5316_to_the_office_a_second_statute_identifies_this_post_as",
+        "scopedOffice": null,
+        "scopedOrganisation": null,
+        "scopedOrganisationId": null,
+        "payLevel": "III",
+        "citation": "5 U.S.C. §5314",
+        "section": "5314",
+        "statutoryTitle": "Register of Copyrights",
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5314&num=0&edition=prelim",
+        "documentSha256": "9fb06a64237cc4224921b2bec6b5666066b73241c148fbec39182a595aa8ae92",
+        "checkedAt": "2026-09-18T20:34:21Z",
+        "identification": {
+          "nodeName": "Register of Copyrights & Director",
+          "basis": "the same office: 17 U.S.C. 701 makes the Register of Copyrights the director of the Copyright Office of the Library of Congress, and 5 U.S.C. 5314 places the Register of Copyrights at Level III; the graph's '& Director' is the Office's own styling of that one post",
+          "basisCitation": "17 U.S.C. 701",
+          "basisQuote": "All administrative functions and duties under this title, except as otherwise specified, are the responsibility of the Register of Copyrights as director of the Copyright Office of the Library of Congress.",
+          "basisUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section701&num=0&edition=prelim",
+          "basisSha256": "5b0b0d150aede2aca7a0af84e46df0b7d9f08c0c228938ed9fc8dc85ddf4d667",
+          "basisCheckedAt": "2026-09-28T19:22:39Z"
+        }
+      },
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "rateText": "$209,600",
       "tableFootnotes": [
         "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
       ],
