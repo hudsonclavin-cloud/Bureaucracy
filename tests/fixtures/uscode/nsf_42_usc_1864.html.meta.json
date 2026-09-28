@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-09-28T19:01:49Z",
+ "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section1864&num=0&edition=prelim",
+ "status": 200,
+ "final_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section1864&num=0&edition=prelim",
+ "content_type": "text/html;charset=UTF-8",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /view.xhtml",
+ "bytes": 163577,
+ "sha256": "65e1da7ddeab4ff7f32e913e216041a60c0912935b4f293c11c6cc4655ee04f6",
+ "error": null
+}

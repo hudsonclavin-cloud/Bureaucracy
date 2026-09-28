@@ -8,13 +8,13 @@ checkable claim. `docs/PAY_SOURCE_RESEARCH_PROMPT_3.md` is generated from this
 same list in the same run.
 
 - position nodes in the published graph: **4,591**
-- carrying a pay claim an official document supports: **541**
-- carrying none: **4,050**
+- carrying a pay claim an official document supports: **554**
+- carrying none: **4,037**
 
 | reason | count | what it means |
 |---|---|---|
-| `unreached` | 3,269 | no source this project has read names the title at all. Not a coverage gap somebody has not got to: no pay document in the repository names this title under this organisation, so nothing could have reached it. |
-| `multiplicity` | 760 | the node states a multiplicity (×N) and no claim that holds for every holder has reached it. Since 2026-09-23 a claim that holds for each holder by its own terms IS published on such a node with a `holders` block -- a tier or parity rate paid to every judge of the tier, a band every holder is within, or a roster listing every holder at one rate -- and 28 such nodes carry one. What stays refused is an incumbency-shaped claim (one listing's level, one row of the current export), because that is one appointment's figure and not the group's. For these nodes no office-rate claim has reached them at all. Knowing which pay system governs the title is still useful -- it is what would let the graph carry the schedule rather than a rate -- so these are listed and asked about. |
+| `unreached` | 3,257 | no source this project has read names the title at all. Not a coverage gap somebody has not got to: no pay document in the repository names this title under this organisation, so nothing could have reached it. |
+| `multiplicity` | 759 | the node states a multiplicity (×N) and no claim that holds for every holder has reached it. Since 2026-09-23 a claim that holds for each holder by its own terms IS published on such a node with a `holders` block -- a tier or parity rate paid to every judge of the tier, a band every holder is within, or a roster listing every holder at one rate -- and 28 such nodes carry one. What stays refused is an incumbency-shaped claim (one listing's level, one row of the current export), because that is one appointment's figure and not the group's. For these nodes no office-rate claim has reached them at all. Knowing which pay system governs the title is still useful -- it is what would let the graph carry the schedule rather than a rate -- so these are listed and asked about. |
 | `listed_no_rate` | 21 | OPM lists the position and the row prints no rate. The PLUM archive or the current export names the title under this organisation but the Level/Grade/Pay cell carries a rank or is empty, and no salary table this project has read prices that pay plan. |
 
 ---
@@ -2024,20 +2024,6 @@ same list in the same run.
 - `exec-ind-nasa-marshall-space-flight-center-msfc-program-manager-multiple` — Program Manager (×multiple) — `multiplicity`
 - `exec-ind-nasa-marshall-space-flight-center-msfc-research-engineer-scientist-multiple` — Research Engineer / Scientist (×multiple) — `multiplicity`
 
-## National Institute of Standards and Technology (NIST)  — 9 unpriced
-
-`exec-dept-doc-nist`
-
-- `exec-dept-doc-nist-chips-program-director` — CHIPS Program Director — `unreached`
-- `exec-dept-doc-nist-deputy-director` — Deputy Director — `unreached`
-- `exec-dept-doc-nist-director-communications-technology-lab` — Director — Communications Technology Lab — `unreached`
-- `exec-dept-doc-nist-director-engineering-laboratory` — Director — Engineering Laboratory — `unreached`
-- `exec-dept-doc-nist-director-information-technology-laboratory` — Director — Information Technology Laboratory — `unreached`
-- `exec-dept-doc-nist-director-material-measurement-laboratory` — Director — Material Measurement Laboratory — `unreached`
-- `exec-dept-doc-nist-director-physical-measurement-laboratory` — Director — Physical Measurement Laboratory — `unreached`
-- `exec-dept-doc-nist-director-nist` — Director, NIST — `unreached`
-- `exec-dept-doc-nist-research-scientist-multiple` — Research Scientist (×multiple) — `multiplicity`
-
 ## Social Security Administration (SSA)  — 9 unpriced
 
 `exec-ind-ssa`
@@ -2214,19 +2200,6 @@ same list in the same run.
 - `exec-regulatory-cftc-executive-director` — Executive Director — `listed_no_rate`
 - `exec-regulatory-cftc-general-counsel` — General Counsel — `unreached`
 - `exec-regulatory-cftc-inspector-general` — Inspector General — `unreached`
-
-## Consumer Product Safety Commission (CPSC)  — 8 unpriced
-
-`exec-regulatory-cpsc`
-
-- `exec-regulatory-cpsc-chair-cpsc` — Chair, CPSC — `unreached`
-- `exec-regulatory-cpsc-commissioner-4` — Commissioner (×4) — `multiplicity`
-- `exec-regulatory-cpsc-compliance-officer-safety-analyst-multiple` — Compliance Officer / Safety Analyst (×multiple) — `multiplicity`
-- `exec-regulatory-cpsc-director-office-of-compliance-field-operations` — Director — Office of Compliance & Field Operations — `unreached`
-- `exec-regulatory-cpsc-director-office-of-hazard-identification-reduction` — Director — Office of Hazard Identification & Reduction — `unreached`
-- `exec-regulatory-cpsc-executive-director` — Executive Director — `unreached`
-- `exec-regulatory-cpsc-general-counsel` — General Counsel — `unreached`
-- `exec-regulatory-cpsc-inspector-general` — Inspector General — `unreached`
 
 ## Cooper Hewitt (Smithsonian Design Museum)  — 8 unpriced
 
@@ -2410,6 +2383,19 @@ same list in the same run.
 - `exec-eop-nec-senior-director-international-economics` — Senior Director — International Economics — `unreached`
 - `exec-eop-nec-senior-director-labor-workforce` — Senior Director — Labor & Workforce — `unreached`
 
+## National Institute of Standards and Technology (NIST)  — 8 unpriced
+
+`exec-dept-doc-nist`
+
+- `exec-dept-doc-nist-chips-program-director` — CHIPS Program Director — `unreached`
+- `exec-dept-doc-nist-deputy-director` — Deputy Director — `unreached`
+- `exec-dept-doc-nist-director-communications-technology-lab` — Director — Communications Technology Lab — `unreached`
+- `exec-dept-doc-nist-director-engineering-laboratory` — Director — Engineering Laboratory — `unreached`
+- `exec-dept-doc-nist-director-information-technology-laboratory` — Director — Information Technology Laboratory — `unreached`
+- `exec-dept-doc-nist-director-material-measurement-laboratory` — Director — Material Measurement Laboratory — `unreached`
+- `exec-dept-doc-nist-director-physical-measurement-laboratory` — Director — Physical Measurement Laboratory — `unreached`
+- `exec-dept-doc-nist-research-scientist-multiple` — Research Scientist (×multiple) — `multiplicity`
+
 ## National Museum of African American History & Culture  — 8 unpriced
 
 `exec-ind-smithsonian-national-museum-of-african-american-history-culture`
@@ -2514,19 +2500,6 @@ same list in the same run.
 - `exec-ind-smithsonian-national-postal-museum-head-of-education` — Head of Education — `unreached`
 - `exec-ind-smithsonian-national-postal-museum-head-of-facilities` — Head of Facilities — `unreached`
 
-## National Science Foundation (NSF)  — 8 unpriced
-
-`exec-ind-nsf`
-
-- `exec-ind-nsf-chief-financial-officer` — Chief Financial Officer — `unreached`
-- `exec-ind-nsf-chief-of-staff` — Chief of Staff — `unreached`
-- `exec-ind-nsf-deputy-director-nsf` — Deputy Director, NSF — `unreached`
-- `exec-ind-nsf-director-office-of-budget-finance-award-management` — Director — Office of Budget, Finance & Award Management — `unreached`
-- `exec-ind-nsf-director-office-of-integrative-activities` — Director — Office of Integrative Activities — `unreached`
-- `exec-ind-nsf-director-nsf` — Director, NSF — `unreached`
-- `exec-ind-nsf-general-counsel` — General Counsel — `unreached`
-- `exec-ind-nsf-inspector-general` — Inspector General — `unreached`
-
 ## National Zoo  — 8 unpriced
 
 `exec-ind-smithsonian-national-zoo`
@@ -2539,19 +2512,6 @@ same list in the same run.
 - `exec-ind-smithsonian-national-zoo-head-of-collections-management` — Head of Collections Management — `unreached`
 - `exec-ind-smithsonian-national-zoo-head-of-education` — Head of Education — `unreached`
 - `exec-ind-smithsonian-national-zoo-head-of-facilities` — Head of Facilities — `unreached`
-
-## Nuclear Regulatory Commission (NRC)  — 8 unpriced
-
-`exec-regulatory-nrc`
-
-- `exec-regulatory-nrc-chair-nrc` — Chair, NRC — `unreached`
-- `exec-regulatory-nrc-commissioner-4` — Commissioner (×4) — `multiplicity`
-- `exec-regulatory-nrc-director-office-of-nuclear-material-safety-safeguards` — Director — Office of Nuclear Material Safety & Safeguards — `unreached`
-- `exec-regulatory-nrc-director-office-of-nuclear-reactor-regulation` — Director — Office of Nuclear Reactor Regulation — `unreached`
-- `exec-regulatory-nrc-director-office-of-nuclear-regulatory-research` — Director — Office of Nuclear Regulatory Research — `unreached`
-- `exec-regulatory-nrc-director-office-of-nuclear-security-incident-response` — Director — Office of Nuclear Security & Incident Response — `unreached`
-- `exec-regulatory-nrc-nuclear-reactor-regulation-specialist-multiple` — Nuclear Reactor Regulation Specialist (×multiple) — `multiplicity`
-- `exec-regulatory-nrc-regional-director-4-regions` — Regional Director — 4 Regions — `unreached`
 
 ## Office of Administration  — 8 unpriced
 
@@ -2579,19 +2539,6 @@ same list in the same run.
 - `exec-dept-doe-eere-director-weatherization-intergovernmental-programs` — Director — Weatherization & Intergovernmental Programs — `unreached`
 - `exec-dept-doe-eere-director-wind-energy-technologies` — Director — Wind Energy Technologies — `unreached`
 
-## Office of National Drug Control Policy  — 8 unpriced
-
-`exec-eop-ondcp`
-
-- `exec-eop-ondcp-chief-of-staff` — Chief of Staff — `unreached`
-- `exec-eop-ondcp-deputy-director` — Deputy Director — `unreached`
-- `exec-eop-ondcp-director-drug-czar` — Director (Drug Czar) — `unreached`
-- `exec-eop-ondcp-director-demand-reduction` — Director — Demand Reduction — `unreached`
-- `exec-eop-ondcp-director-research-data-evaluation` — Director — Research/Data/Evaluation — `unreached`
-- `exec-eop-ondcp-director-state-local-tribal-affairs` — Director — State/Local/Tribal Affairs — `unreached`
-- `exec-eop-ondcp-director-supply-reduction` — Director — Supply Reduction — `unreached`
-- `exec-eop-ondcp-general-counsel` — General Counsel — `unreached`
-
 ## Office of the Comptroller of the Currency (OCC)  — 8 unpriced
 
 `exec-dept-treasury-occ`
@@ -2617,19 +2564,6 @@ same list in the same run.
 - `exec-ind-smithsonian-renwick-gallery-head-of-collections-management` — Head of Collections Management — `unreached`
 - `exec-ind-smithsonian-renwick-gallery-head-of-education` — Head of Education — `unreached`
 - `exec-ind-smithsonian-renwick-gallery-head-of-facilities` — Head of Facilities — `unreached`
-
-## Small Business Administration (SBA)  — 8 unpriced
-
-`exec-ind-sba`
-
-- `exec-ind-sba-administrator-sba` — Administrator, SBA — `unreached`
-- `exec-ind-sba-associate-administrator-capital-access` — Associate Administrator — Capital Access — `unreached`
-- `exec-ind-sba-associate-administrator-disaster-assistance` — Associate Administrator — Disaster Assistance — `unreached`
-- `exec-ind-sba-associate-administrator-entrepreneurial-development` — Associate Administrator — Entrepreneurial Development — `unreached`
-- `exec-ind-sba-associate-administrator-government-contracting-business-development` — Associate Administrator — Government Contracting & Business Development — `unreached`
-- `exec-ind-sba-chief-of-staff` — Chief of Staff — `unreached`
-- `exec-ind-sba-general-counsel` — General Counsel — `unreached`
-- `exec-ind-sba-regional-administrator-10-regions` — Regional Administrator — 10 Regions — `unreached`
 
 ## Smithsonian Astrophysical Observatory  — 8 unpriced
 
@@ -2745,18 +2679,6 @@ same list in the same run.
 - `exec-dept-doe-brookhaven-national-laboratory-postdoctoral-researcher-multiple` — Postdoctoral Researcher (×multiple) — `multiplicity`
 - `exec-dept-doe-brookhaven-national-laboratory-principal-scientist-researcher-multiple` — Principal Scientist / Researcher (×multiple) — `multiplicity`
 
-## Bureau of Labor Statistics (BLS)  — 7 unpriced
-
-`exec-dept-dol-bls`
-
-- `exec-dept-dol-bls-commissioner-bls` — Commissioner, BLS — `unreached`
-- `exec-dept-dol-bls-deputy-commissioner` — Deputy Commissioner — `unreached`
-- `exec-dept-dol-bls-director-office-of-employment-unemployment-statistics` — Director — Office of Employment & Unemployment Statistics — `unreached`
-- `exec-dept-dol-bls-director-office-of-prices-living-conditions` — Director — Office of Prices & Living Conditions — `unreached`
-- `exec-dept-dol-bls-director-office-of-productivity-technology` — Director — Office of Productivity & Technology — `unreached`
-- `exec-dept-dol-bls-economist-multiple` — Economist (×multiple) — `multiplicity`
-- `exec-dept-dol-bls-survey-statistician-multiple` — Survey Statistician (×multiple) — `multiplicity`
-
 ## Bureau of the Fiscal Service  — 7 unpriced
 
 `exec-dept-treasury-fiscal`
@@ -2768,18 +2690,6 @@ same list in the same run.
 - `exec-dept-treasury-fiscal-director-finance-administration` — Director, Finance & Administration — `unreached`
 - `exec-dept-treasury-fiscal-director-government-wide-accounting` — Director, Government-wide Accounting — `unreached`
 - `exec-dept-treasury-fiscal-director-payments-management` — Director, Payments Management — `unreached`
-
-## Census Bureau  — 7 unpriced
-
-`exec-dept-doc-census`
-
-- `exec-dept-doc-census-associate-director-decennial-census-programs` — Associate Director — Decennial Census Programs — `unreached`
-- `exec-dept-doc-census-associate-director-demographic-programs` — Associate Director — Demographic Programs — `unreached`
-- `exec-dept-doc-census-associate-director-economic-programs` — Associate Director — Economic Programs — `unreached`
-- `exec-dept-doc-census-deputy-director-coo` — Deputy Director & COO — `unreached`
-- `exec-dept-doc-census-director-census-bureau` — Director, Census Bureau — `unreached`
-- `exec-dept-doc-census-regional-director-12-regional-offices` — Regional Director — 12 Regional Offices — `unreached`
-- `exec-dept-doc-census-statistician-demographer-multiple` — Statistician / Demographer (×multiple) — `multiplicity`
 
 ## Central Intelligence Agency (CIA)  — 7 unpriced
 
@@ -2793,17 +2703,17 @@ same list in the same run.
 - `exec-ind-cia-director-sherman-kent-school-training` — Director — Sherman Kent School (Training) — `unreached`
 - `exec-ind-cia-inspector-general` — Inspector General — `unreached`
 
-## Council of Economic Advisers  — 7 unpriced
+## Consumer Product Safety Commission (CPSC)  — 7 unpriced
 
-`exec-eop-cea`
+`exec-regulatory-cpsc`
 
-- `exec-eop-cea-chair-cea` — Chair, CEA — `unreached`
-- `exec-eop-cea-chief-economist` — Chief Economist — `unreached`
-- `exec-eop-cea-chief-of-staff` — Chief of Staff — `listed_no_rate`
-- `exec-eop-cea-economist-multiple` — Economist (×multiple) — `multiplicity`
-- `exec-eop-cea-member-cea-1` — Member, CEA — `unreached`
-- `exec-eop-cea-member-cea` — Member, CEA — `unreached`
-- `exec-eop-cea-senior-economist-multiple` — Senior Economist (×multiple) — `multiplicity`
+- `exec-regulatory-cpsc-commissioner-4` — Commissioner (×4) — `multiplicity`
+- `exec-regulatory-cpsc-compliance-officer-safety-analyst-multiple` — Compliance Officer / Safety Analyst (×multiple) — `multiplicity`
+- `exec-regulatory-cpsc-director-office-of-compliance-field-operations` — Director — Office of Compliance & Field Operations — `unreached`
+- `exec-regulatory-cpsc-director-office-of-hazard-identification-reduction` — Director — Office of Hazard Identification & Reduction — `unreached`
+- `exec-regulatory-cpsc-executive-director` — Executive Director — `unreached`
+- `exec-regulatory-cpsc-general-counsel` — General Counsel — `unreached`
+- `exec-regulatory-cpsc-inspector-general` — Inspector General — `unreached`
 
 ## Cybersecurity & Infrastructure Security Agency (CISA)  — 7 unpriced
 
@@ -3189,6 +3099,18 @@ same list in the same run.
 - `exec-dept-doe-em-site-manager-savannah-river-site-aiken-sc` — Site Manager — Savannah River Site (Aiken, SC) — `unreached`
 - `exec-dept-doe-em-site-manager-waste-isolation-pilot-plant-carlsbad-nm` — Site Manager — Waste Isolation Pilot Plant (Carlsbad, NM) — `unreached`
 
+## Office of National Drug Control Policy  — 7 unpriced
+
+`exec-eop-ondcp`
+
+- `exec-eop-ondcp-chief-of-staff` — Chief of Staff — `unreached`
+- `exec-eop-ondcp-deputy-director` — Deputy Director — `unreached`
+- `exec-eop-ondcp-director-demand-reduction` — Director — Demand Reduction — `unreached`
+- `exec-eop-ondcp-director-research-data-evaluation` — Director — Research/Data/Evaluation — `unreached`
+- `exec-eop-ondcp-director-state-local-tribal-affairs` — Director — State/Local/Tribal Affairs — `unreached`
+- `exec-eop-ondcp-director-supply-reduction` — Director — Supply Reduction — `unreached`
+- `exec-eop-ondcp-general-counsel` — General Counsel — `unreached`
+
 ## Office of Operations — Field Structure  — 7 unpriced
 
 `exec-ind-ssa-field-ops`
@@ -3296,6 +3218,18 @@ same list in the same run.
 - `jud-circuit-6th-circuit-law-clerk-3-per-active-judge` — Law Clerk (×3 per active judge) — `multiplicity`
 - `jud-circuit-6th-circuit-library-director` — Library Director — `unreached`
 - `jud-circuit-6th-circuit-staff-attorney-multiple` — Staff Attorney (×multiple) — `multiplicity`
+
+## Small Business Administration (SBA)  — 7 unpriced
+
+`exec-ind-sba`
+
+- `exec-ind-sba-associate-administrator-capital-access` — Associate Administrator — Capital Access — `unreached`
+- `exec-ind-sba-associate-administrator-disaster-assistance` — Associate Administrator — Disaster Assistance — `unreached`
+- `exec-ind-sba-associate-administrator-entrepreneurial-development` — Associate Administrator — Entrepreneurial Development — `unreached`
+- `exec-ind-sba-associate-administrator-government-contracting-business-development` — Associate Administrator — Government Contracting & Business Development — `unreached`
+- `exec-ind-sba-chief-of-staff` — Chief of Staff — `unreached`
+- `exec-ind-sba-general-counsel` — General Counsel — `unreached`
+- `exec-ind-sba-regional-administrator-10-regions` — Regional Administrator — 10 Regions — `unreached`
 
 ## Tenth Circuit  — 7 unpriced
 
@@ -3451,6 +3385,17 @@ same list in the same run.
 - `exec-ind-nara-barack-obama-presidential-library-chicago-il-museum-curator` — Museum Curator — `unreached`
 - `exec-ind-nara-barack-obama-presidential-library-chicago-il-supervisory-archivist` — Supervisory Archivist — `unreached`
 
+## Bureau of Labor Statistics (BLS)  — 6 unpriced
+
+`exec-dept-dol-bls`
+
+- `exec-dept-dol-bls-deputy-commissioner` — Deputy Commissioner — `unreached`
+- `exec-dept-dol-bls-director-office-of-employment-unemployment-statistics` — Director — Office of Employment & Unemployment Statistics — `unreached`
+- `exec-dept-dol-bls-director-office-of-prices-living-conditions` — Director — Office of Prices & Living Conditions — `unreached`
+- `exec-dept-dol-bls-director-office-of-productivity-technology` — Director — Office of Productivity & Technology — `unreached`
+- `exec-dept-dol-bls-economist-multiple` — Economist (×multiple) — `multiplicity`
+- `exec-dept-dol-bls-survey-statistician-multiple` — Survey Statistician (×multiple) — `multiplicity`
+
 ## Bureau of Reclamation (BOR)  — 6 unpriced
 
 `exec-dept-doi-bor`
@@ -3461,6 +3406,17 @@ same list in the same run.
 - `exec-dept-doi-bor-hydrologist` — Hydrologist — `unreached`
 - `exec-dept-doi-bor-regional-director-5-regions` — Regional Director — 5 Regions — `unreached`
 - `exec-dept-doi-bor-water-master` — Water Master — `unreached`
+
+## Census Bureau  — 6 unpriced
+
+`exec-dept-doc-census`
+
+- `exec-dept-doc-census-associate-director-decennial-census-programs` — Associate Director — Decennial Census Programs — `unreached`
+- `exec-dept-doc-census-associate-director-demographic-programs` — Associate Director — Demographic Programs — `unreached`
+- `exec-dept-doc-census-associate-director-economic-programs` — Associate Director — Economic Programs — `unreached`
+- `exec-dept-doc-census-deputy-director-coo` — Deputy Director & COO — `unreached`
+- `exec-dept-doc-census-regional-director-12-regional-offices` — Regional Director — 12 Regional Offices — `unreached`
+- `exec-dept-doc-census-statistician-demographer-multiple` — Statistician / Demographer (×multiple) — `multiplicity`
 
 ## Congressional Budget Office (CBO)  — 6 unpriced
 
@@ -3670,6 +3626,28 @@ same list in the same run.
 - `exec-dept-defense-agency-nro-deputy-director-national-reconnaissance-office-nro` — Deputy Director, National Reconnaissance Office (NRO) — `unreached`
 - `exec-dept-defense-agency-nro-director-national-reconnaissance-office-nro` — Director, National Reconnaissance Office (NRO) — `unreached`
 - `exec-dept-defense-agency-nro-general-counsel` — General Counsel — `unreached`
+
+## National Science Foundation (NSF)  — 6 unpriced
+
+`exec-ind-nsf`
+
+- `exec-ind-nsf-chief-financial-officer` — Chief Financial Officer — `unreached`
+- `exec-ind-nsf-chief-of-staff` — Chief of Staff — `unreached`
+- `exec-ind-nsf-director-office-of-budget-finance-award-management` — Director — Office of Budget, Finance & Award Management — `unreached`
+- `exec-ind-nsf-director-office-of-integrative-activities` — Director — Office of Integrative Activities — `unreached`
+- `exec-ind-nsf-general-counsel` — General Counsel — `unreached`
+- `exec-ind-nsf-inspector-general` — Inspector General — `unreached`
+
+## Nuclear Regulatory Commission (NRC)  — 6 unpriced
+
+`exec-regulatory-nrc`
+
+- `exec-regulatory-nrc-director-office-of-nuclear-material-safety-safeguards` — Director — Office of Nuclear Material Safety & Safeguards — `unreached`
+- `exec-regulatory-nrc-director-office-of-nuclear-reactor-regulation` — Director — Office of Nuclear Reactor Regulation — `unreached`
+- `exec-regulatory-nrc-director-office-of-nuclear-regulatory-research` — Director — Office of Nuclear Regulatory Research — `unreached`
+- `exec-regulatory-nrc-director-office-of-nuclear-security-incident-response` — Director — Office of Nuclear Security & Incident Response — `unreached`
+- `exec-regulatory-nrc-nuclear-reactor-regulation-specialist-multiple` — Nuclear Reactor Regulation Specialist (×multiple) — `multiplicity`
+- `exec-regulatory-nrc-regional-director-4-regions` — Regional Director — 4 Regions — `unreached`
 
 ## Office of Financial Research (OFR)  — 6 unpriced
 
@@ -4364,6 +4342,15 @@ same list in the same run.
 - `leg-support-gao-congressional-relations-assistant-director-congressional-relations` — Assistant Director, Congressional Relations — `unreached`
 - `leg-support-gao-congressional-relations-managing-director-congressional-relations` — Managing Director, Congressional Relations — `unreached`
 - `leg-support-gao-congressional-relations-senior-analyst-congressional-relations-multiple` — Senior Analyst, Congressional Relations (×multiple) — `multiplicity`
+
+## Council of Economic Advisers  — 4 unpriced
+
+`exec-eop-cea`
+
+- `exec-eop-cea-chief-economist` — Chief Economist — `unreached`
+- `exec-eop-cea-chief-of-staff` — Chief of Staff — `listed_no_rate`
+- `exec-eop-cea-economist-multiple` — Economist (×multiple) — `multiplicity`
+- `exec-eop-cea-senior-economist-multiple` — Senior Economist (×multiple) — `multiplicity`
 
 ## Criminal Division  — 4 unpriced
 

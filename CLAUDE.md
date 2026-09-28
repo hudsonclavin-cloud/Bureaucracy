@@ -2276,16 +2276,17 @@ of the nine fields (no `positionTierPay` or `positionGradePay`). The
 derived module stopped writing its own copy of the arithmetic when this
 landed: one code path for one number.
 
-**And the gap this made visible, counted rather than estimated.** 541 of 4,591
+**And the gap this made visible, counted rather than estimated.** 554 of 4,591
 positions carry a pay claim (461 when this section was first written, before
 the multi-post rule below and the Federal Reserve rows; 492 before the
 reviewed rows of 2026-09-27, 498 before that day's class-title benches, 513
-before the tier-reference module of 2026-09-28); **4,050 do not**, and
+before the tier-reference module of 2026-09-28, 541 before that day's
+thirteen reviewed rows); **4,037 do not**, and
 `scripts/report_unpriced_positions.py` says why for every one of them:
 
-- **3,269** — no pay document this project has read names the title at all.
+- **3,257** — no pay document this project has read names the title at all.
   Not a coverage gap somebody has not got to.
-- **760** — the node states a multiplicity (`Physician (×multiple)`) and no
+- **759** — the node states a multiplicity (`Physician (×multiple)`) and no
   claim that holds for every holder reaches it. Since the per-field rule
   below, a tier rate, a parity rate, a band or a uniform roster line IS
   published on such a node (`Judge (×18)` is priced now); what stays refused
@@ -2293,7 +2294,7 @@ before the tier-reference module of 2026-09-28); **4,050 do not**, and
   SYSTEM governs the title is a fact worth having.
 - **21** — OPM lists the position and the row prints no rate.
 
-The concentration is the useful part: **432** of the 4,050 sit under `VA
+The concentration is the useful part: **432** of the 4,037 sit under `VA
 Medical Centers`, 360 of them among the 3,313 (the service chiefs
 `va_title38_pay.py` deliberately refuses, since choosing a Title 38 table per
 node would be this module deciding which VA service chiefs are doctors), 61
@@ -2305,7 +2306,7 @@ per unpriced position with its id and its reason;
 `docs/PAY_SOURCE_RESEARCH_PROMPT_3.md` is a research prompt pack generated
 from the same list in the same run — a lead prompt asking which pay systems
 exist and where each is published, then **39 enumeration shards naming every
-one of the 4,050 titles**. `tests/test_unpriced_positions.py` asserts the
+one of the 4,037 titles**. `tests/test_unpriced_positions.py` asserts the
 coverage rather than trusting it: every unpriced id appears in the pack, no
 priced position appears in either document, and both documents are regenerated
 and compared byte-for-byte so a stale copy fails.
@@ -2738,6 +2739,56 @@ inflated percentage, a verified grade, an exact scope, a rate beside another
 pay field, and a statute or table URL among the node's own sources.
 `tests/test_tier_reference_pay.py` corrupts each in turn; pay claims
 **513 → 541**, unpriced **4,078 → 4,050**.
+
+**Thirteen more reviewed rows, from §19.9's candidate list (since
+2026-09-28, the owner's decision).** `CURATION.md` §19.9 closed by listing
+the posts whose Executive Schedule title the committed sections print under a
+name this graph does not use, and called them fifteen; counted by node id
+when the rows were written, they are **thirteen** — one of them a bench of
+four — and the correction is recorded rather than the count restated. Each
+is the Fed's shape: the Code prints the title, a second statute says which
+office it is, and the row's basis quote is re-found in that section's
+operative text by both readers on every run. Ten basis sections were
+committed under `tests/fixtures/uscode/` for them, and two of the fetches
+are worth a line each. **The NIST Director took three fetches to cite.** The
+Code's own title carries the identification ("Under Secretary of Commerce
+for Standards and Technology, who also serves as Director of the National
+Institute of Standards and Technology", Level III), but a reviewed row needs
+a second statute, and 15 U.S.C. 272 (establishment) and 274 (the Director's
+powers) print no Under Secretary at all: the 2010 reauthorization struck the
+appointment sentence out of §274, and the chapter's own table of contents
+puts it at **15 U.S.C. 273a**, whose subsection (d) reads "The Under
+Secretary shall serve as the Director of the Institute". The three dead
+ends (§§272, 274 and 278, the last the Visiting Committee) are not
+committed; the section that says it is. **The ONDCP Director's
+provision moved too.** 21 U.S.C. 1702(b), which the sixth batch would have
+cited, was struck in 2018 — the Code says so in its Amendments note — and
+the Director is now at 21 U.S.C. 1703(a)(1)(A): "There shall be at the head
+of the Office a Director". §1702 is committed beside it because it is the
+section that establishes the Office the Director heads, and because "looked
+and it no longer says so" is a fact worth keeping.
+
+The thirteen: the NIST Director (III); the NRC's Chair (II) and its
+`Commissioner (×4)` bench from the class title "Members, Nuclear Regulatory
+Commission" (III, the sixth class-title bench, 42 U.S.C. 5841 composing the
+Commission of five); the SBA Administrator (III, 15 U.S.C. 633); the NSF
+Director (II) and Deputy Director (III), whose own sections — 42 U.S.C. 1864
+and 1864a — each set the office's basic pay at the level the Schedule
+prints, the SSA Deputy's shape; the ONDCP Director (I); the BLS Commissioner
+(IV, 29 U.S.C. 3), whose Schedule title the Code prints as "The 2
+Commissioner of Labor Statistics, Department of Labor" with its own footnote
+saying the word "The" probably should not appear, and which this project
+publishes as printed rather than corrected; the Census Director (IV, 13
+U.S.C. 21); the CEA Chair (II) and its two single `Member, CEA` nodes from
+"Members, Council of Economic Advisers" (IV) — the Vice-Chair shape, one row
+per node, no class mark, because each node stands for one post; and the
+CPSC Chair (III, 15 U.S.C. 2053). CPSC's own `Commissioner (×4)` stays out:
+the Code prints "Members, Consumer Product Safety Commission (4)", the
+counted-class shape the matcher refuses until the owner decides it. Nothing
+in the matcher, the gate or the sweep changed; the one test that moved
+counts the class-title benches and reads six now. Reviewed rows **24 → 37**,
+positions priced from the Schedule **123 → 136**, pay claims **541 → 554**,
+unpriced **4,050 → 4,037**, multi-post nodes priced **33 → 34**.
 
 **The panel's Trace Origin, restored.** A 2026-09-15 change reduced "Trace
 Origin" to a one-line confirmation on the grounds that the breadcrumb already
@@ -3221,22 +3272,24 @@ subdivide measured money rather than invent it — which does not make a
 subdivision a measurement. **Since 2026-09-09 the site does not show one by
 default**, by the owner's decision: a node with no measured cost of its own
 shows no figure and says why, and ticking "Also show estimated shares of a
-parent's total" opts back in. The exception is a real salary — **541** of the
+parent's total" opts back in. The exception is a real salary — **554** of the
 4,591 positions carry a pay claim an official source states, counted on the
 published graph on 2026-09-28 after Schedule 6, the VA's Title 38 bands, the
 Article I parity derivations, the per-field multi-post rule, the Federal
-Reserve rows, the reviewed rows of the fourth research batch, the five
-class-title benches and the tier-reference module landed: 8 a figure no document states
+Reserve rows, the reviewed rows of the fourth research batch, the six
+class-title benches, the tier-reference module and the thirteen reviewed rows
+of §19.9's list landed: 8 a figure no document states
 (`positionDerivedPay`, four chief judges and their four benches), 28 a rate a
 statute sets by REFERENCE to an Executive Schedule level (`positionTierReferencePay`:
 the GAO's two officers, and 26 Inspectors General at Level III plus the Act's
-3 percent, arithmetic no document prints), 72 a Title 38 tier BAND rather than a rate (`positionTierPay`), 123 from the
-Executive Schedule as 5 U.S.C. §§5312–5316 sets it (24 of them through a
+3 percent, arithmetic no document prints), 72 a Title 38 tier BAND rather than a rate (`positionTierPay`), 136 from the
+Executive Schedule as 5 U.S.C. §§5312–5316 sets it (37 of them through a
 reviewed identification a second statute backs — 12 U.S.C. 241–242 for the
-Fed's four, then the FCC's, FTC's, CFTC's and FERC's chairs and benches, the
-IRS, FAA, DHS, OPM, SSA, FEMA, BLM, CIA and CMS principals; five of the 24
-are benches priced from the Code's "Members, …" class title for each
-holder), 188 from the White House
+Fed's four, then the FCC's, FTC's, CFTC's, FERC's and NRC's chairs and
+benches, the IRS, FAA, DHS, OPM, SSA, FEMA, BLM, CIA, CMS, NIST, SBA, NSF,
+ONDCP, BLS, Census, CEA and CPSC principals; six of the 37 are benches
+priced from the Code's "Members, …" class title for each holder), 188 from
+the White House
 roster (22 of them titles listed N times at one rate), 88 the rate the current PLUM export prints for the one row under the
 title, 31 from a listing's level joined to OPM's table, 24 statutory (20 from
 uscourts.gov and senate.gov, 4 from Schedule 6 of the annual pay-adjustment
@@ -3245,16 +3298,17 @@ base-pay **range** rather than a rate (`positionGradePay`, counted separately
 because a range is not a rate and the panel says so; it read 32 until the
 current export supplied a printed figure for 14 of them, and a printed figure
 beats a band). A node may carry more than one of these, so the per-source
-figures sum past 541 — 461 on 2026-09-23 when four Article I chief judges
+figures sum past 554 — 461 on 2026-09-23 when four Article I chief judges
 took a figure NO document states, 488 the same day when the multi-post rule
 became per field, 491 with the Federal Reserve's three (`positionDerivedPay`
 was 4 and is 8, since each court's bench now takes its own parity provision)
 492 once the review corrected the roster lookup (`positionDerivedPay`, a parity provision
 joined to the compensation table, publishing its document count and what that
 count is worth), 498 on 2026-09-27 with the six reviewed rows, 513 the
-same day with the five class-title benches and nine more reviewed rows, and
-541 on 2026-09-28 with the tier-reference module. Shown in the cost block under its own heading and never
-headed COST.
+same day with the five class-title benches and nine more reviewed rows, 541
+on 2026-09-28 with the tier-reference module, and 554 the same day with the
+thirteen reviewed rows of §19.9's list. Shown in the cost block under its own
+heading and never headed COST.
 
 That figure read **354** until 2026-09-19 and was wrong: it added up the
 *records* each source derives rather than counting the nodes that publish one,
@@ -3266,8 +3320,9 @@ Schedule 6 priced the Vice President and the House's three elected leaders,
 457 once the VA's Title 38 bands landed, 461 with the derived figures, 488 with
 the per-field multi-post rule, 491 with the Federal Reserve rows, 492 after
 the review, 498 with the six reviewed rows of 2026-09-27, 513 with that
-day's class-title benches and nine more reviewed rows, and 541 on 2026-09-28
-with the GAO's officers and 26 Inspectors General. The estimates
+day's class-title benches and nine more reviewed rows, 541 on 2026-09-28
+with the GAO's officers and 26 Inspectors General, and 554 the same day with
+the thirteen reviewed rows. The estimates
 stay in `graph.json` because the cascade's arithmetic and the gate's
 child-sum checks are built on them, so a consumer of the JSON must read
 `cost_status`, not `resolved_total_amount` alone. The gate prints both

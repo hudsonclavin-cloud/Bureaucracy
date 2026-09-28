@@ -15799,22 +15799,6 @@
       "attempts": 1,
       "detail": "PermissionError: robots.txt disallows this path (www.gao.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
     },
-    "evidenceUrls": [
-      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-075"
-    ],
-    "govmanListing": {
-      "source": "us_government_manual",
-      "listedTitle": "COMPTROLLER GENERAL OF THE UNITED STATES",
-      "listedUnder": "Government Accountability Office",
-      "edition": "2025-12-31",
-      "package": "GOVMAN-2025-12-31",
-      "granule": "GOVMAN-2025-12-31-075",
-      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-075",
-      "tableFooter": null
-    },
-    "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
-    "evidenceVerifiedAt": "2025-12-31",
-    "parentId": "leg-support-gao",
     "positionTierReferencePay": {
       "source": "statutory_tier_reference_pay",
       "sourceLabel": "a statute setting the post's pay by reference to an Executive Schedule level, joined to OPM's table",
@@ -15889,7 +15873,23 @@
           }
         ]
       }
-    }
+    },
+    "evidenceUrls": [
+      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-075"
+    ],
+    "govmanListing": {
+      "source": "us_government_manual",
+      "listedTitle": "COMPTROLLER GENERAL OF THE UNITED STATES",
+      "listedUnder": "Government Accountability Office",
+      "edition": "2025-12-31",
+      "package": "GOVMAN-2025-12-31",
+      "granule": "GOVMAN-2025-12-31-075",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-075",
+      "tableFooter": null
+    },
+    "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
+    "evidenceVerifiedAt": "2025-12-31",
+    "parentId": "leg-support-gao"
   },
   {
     "id": "leg-support-gao-chief-operating-officer",
@@ -25605,22 +25605,6 @@
       "attempts": 1,
       "detail": "PermissionError: robots.txt disallows this path (www.state.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
     },
-    "evidenceUrls": [
-      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-123"
-    ],
-    "govmanListing": {
-      "source": "us_government_manual",
-      "listedTitle": "Inspector General",
-      "listedUnder": "Department of State",
-      "edition": "2025-12-31",
-      "package": "GOVMAN-2025-12-31",
-      "granule": "GOVMAN-2025-12-31-123",
-      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-123",
-      "tableFooter": "The above list of key personnel was updated 6–2020."
-    },
-    "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
-    "evidenceVerifiedAt": "2025-12-31",
-    "parentId": "exec-dept-state",
     "positionTierReferencePay": {
       "source": "statutory_tier_reference_pay",
       "sourceLabel": "a statute setting the post's pay by reference to an Executive Schedule level, joined to OPM's table",
@@ -25721,7 +25705,23 @@
           }
         ]
       }
-    }
+    },
+    "evidenceUrls": [
+      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-123"
+    ],
+    "govmanListing": {
+      "source": "us_government_manual",
+      "listedTitle": "Inspector General",
+      "listedUnder": "Department of State",
+      "edition": "2025-12-31",
+      "package": "GOVMAN-2025-12-31",
+      "granule": "GOVMAN-2025-12-31-123",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-123",
+      "tableFooter": "The above list of key personnel was updated 6–2020."
+    },
+    "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
+    "evidenceVerifiedAt": "2025-12-31",
+    "parentId": "exec-dept-state"
   },
   {
     "id": "exec-dept-state-bureau-of-african-affairs-deputy-assistant-secretary-2-4-bureau-of-african-affairs",
@@ -27910,7 +27910,6 @@
     "verificationMethod": "name_labelled_on_its_organisations_official_page",
     "verificationMatchedIn": "content",
     "verificationSiteFrom": "exec-dept-treasury",
-    "parentId": "exec-dept-treasury",
     "positionTierReferencePay": {
       "source": "statutory_tier_reference_pay",
       "sourceLabel": "a statute setting the post's pay by reference to an Executive Schedule level, joined to OPM's table",
@@ -28011,7 +28010,8 @@
           }
         ]
       }
-    }
+    },
+    "parentId": "exec-dept-treasury"
   },
   {
     "id": "exec-dept-treasury-irs",
@@ -30618,22 +30618,6 @@
       "attempts": 1,
       "detail": "PermissionError: robots.txt disallows this path (www.defense.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
     },
-    "evidenceUrls": [
-      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-114"
-    ],
-    "govmanListing": {
-      "source": "us_government_manual",
-      "listedTitle": "Inspector General",
-      "listedUnder": "Department of Defense",
-      "edition": "2025-12-31",
-      "package": "GOVMAN-2025-12-31",
-      "granule": "GOVMAN-2025-12-31-114",
-      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-114",
-      "tableFooter": null
-    },
-    "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
-    "evidenceVerifiedAt": "2025-12-31",
-    "parentId": "exec-dept-defense",
     "positionTierReferencePay": {
       "source": "statutory_tier_reference_pay",
       "sourceLabel": "a statute setting the post's pay by reference to an Executive Schedule level, joined to OPM's table",
@@ -30734,7 +30718,23 @@
           }
         ]
       }
-    }
+    },
+    "evidenceUrls": [
+      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-114"
+    ],
+    "govmanListing": {
+      "source": "us_government_manual",
+      "listedTitle": "Inspector General",
+      "listedUnder": "Department of Defense",
+      "edition": "2025-12-31",
+      "package": "GOVMAN-2025-12-31",
+      "granule": "GOVMAN-2025-12-31-114",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-114",
+      "tableFooter": null
+    },
+    "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
+    "evidenceVerifiedAt": "2025-12-31",
+    "parentId": "exec-dept-defense"
   },
   {
     "id": "exec-dept-defense-general-counsel",
@@ -41761,22 +41761,6 @@
       "attempts": 1,
       "detail": "PermissionError: robots.txt disallows this path (www.usda.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
     },
-    "evidenceUrls": [
-      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-322"
-    ],
-    "govmanListing": {
-      "source": "us_government_manual",
-      "listedTitle": "Inspector General",
-      "listedUnder": "Department of Agriculture",
-      "edition": "2025-12-31",
-      "package": "GOVMAN-2025-12-31",
-      "granule": "GOVMAN-2025-12-31-322",
-      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-322",
-      "tableFooter": "[For the Department of Agriculture statement of organization, see the Code of Federal Regulations, Title 7, Part 2]"
-    },
-    "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
-    "evidenceVerifiedAt": "2025-12-31",
-    "parentId": "exec-dept-usda",
     "positionTierReferencePay": {
       "source": "statutory_tier_reference_pay",
       "sourceLabel": "a statute setting the post's pay by reference to an Executive Schedule level, joined to OPM's table",
@@ -41877,7 +41861,23 @@
           }
         ]
       }
-    }
+    },
+    "evidenceUrls": [
+      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-322"
+    ],
+    "govmanListing": {
+      "source": "us_government_manual",
+      "listedTitle": "Inspector General",
+      "listedUnder": "Department of Agriculture",
+      "edition": "2025-12-31",
+      "package": "GOVMAN-2025-12-31",
+      "granule": "GOVMAN-2025-12-31-322",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-322",
+      "tableFooter": "[For the Department of Agriculture statement of organization, see the Code of Federal Regulations, Title 7, Part 2]"
+    },
+    "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
+    "evidenceVerifiedAt": "2025-12-31",
+    "parentId": "exec-dept-usda"
   },
   {
     "id": "exec-dept-usda-fsa",
@@ -44174,22 +44174,6 @@
       "attempts": 1,
       "detail": "PermissionError: robots.txt disallows this path (www.commerce.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
     },
-    "evidenceUrls": [
-      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-113"
-    ],
-    "govmanListing": {
-      "source": "us_government_manual",
-      "listedTitle": "INSPECTOR GENERAL",
-      "listedUnder": "Department of Commerce",
-      "edition": "2025-12-31",
-      "package": "GOVMAN-2025-12-31",
-      "granule": "GOVMAN-2025-12-31-113",
-      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-113",
-      "tableFooter": null
-    },
-    "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
-    "evidenceVerifiedAt": "2025-12-31",
-    "parentId": "exec-dept-doc",
     "positionTierReferencePay": {
       "source": "statutory_tier_reference_pay",
       "sourceLabel": "a statute setting the post's pay by reference to an Executive Schedule level, joined to OPM's table",
@@ -44290,7 +44274,23 @@
           }
         ]
       }
-    }
+    },
+    "evidenceUrls": [
+      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-113"
+    ],
+    "govmanListing": {
+      "source": "us_government_manual",
+      "listedTitle": "INSPECTOR GENERAL",
+      "listedUnder": "Department of Commerce",
+      "edition": "2025-12-31",
+      "package": "GOVMAN-2025-12-31",
+      "granule": "GOVMAN-2025-12-31-113",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-113",
+      "tableFooter": null
+    },
+    "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
+    "evidenceVerifiedAt": "2025-12-31",
+    "parentId": "exec-dept-doc"
   },
   {
     "id": "exec-dept-doc-census",
@@ -46818,22 +46818,6 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2025-12-31",
-    "evidenceUrls": [
-      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-323"
-    ],
-    "govmanListing": {
-      "source": "us_government_manual",
-      "listedTitle": "Inspector General",
-      "listedUnder": "Department of Labor",
-      "edition": "2025-12-31",
-      "package": "GOVMAN-2025-12-31",
-      "granule": "GOVMAN-2025-12-31-323",
-      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-323",
-      "tableFooter": "The above list of key personnel was updated 10–2020."
-    },
-    "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
-    "evidenceVerifiedAt": "2025-12-31",
-    "parentId": "exec-dept-dol",
     "positionTierReferencePay": {
       "source": "statutory_tier_reference_pay",
       "sourceLabel": "a statute setting the post's pay by reference to an Executive Schedule level, joined to OPM's table",
@@ -46934,7 +46918,23 @@
           }
         ]
       }
-    }
+    },
+    "evidenceUrls": [
+      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-323"
+    ],
+    "govmanListing": {
+      "source": "us_government_manual",
+      "listedTitle": "Inspector General",
+      "listedUnder": "Department of Labor",
+      "edition": "2025-12-31",
+      "package": "GOVMAN-2025-12-31",
+      "granule": "GOVMAN-2025-12-31-323",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-323",
+      "tableFooter": "The above list of key personnel was updated 10–2020."
+    },
+    "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
+    "evidenceVerifiedAt": "2025-12-31",
+    "parentId": "exec-dept-dol"
   },
   {
     "id": "exec-dept-dol-chief-financial-officer",
@@ -53205,22 +53205,6 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2025-12-31",
-    "evidenceUrls": [
-      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-119"
-    ],
-    "govmanListing": {
-      "source": "us_government_manual",
-      "listedTitle": "Inspector General",
-      "listedUnder": "Department of Housing and Urban Development",
-      "edition": "2025-12-31",
-      "package": "GOVMAN-2025-12-31",
-      "granule": "GOVMAN-2025-12-31-119",
-      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-119",
-      "tableFooter": null
-    },
-    "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
-    "evidenceVerifiedAt": "2025-12-31",
-    "parentId": "exec-dept-hud",
     "positionTierReferencePay": {
       "source": "statutory_tier_reference_pay",
       "sourceLabel": "a statute setting the post's pay by reference to an Executive Schedule level, joined to OPM's table",
@@ -53321,7 +53305,23 @@
           }
         ]
       }
-    }
+    },
+    "evidenceUrls": [
+      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-119"
+    ],
+    "govmanListing": {
+      "source": "us_government_manual",
+      "listedTitle": "Inspector General",
+      "listedUnder": "Department of Housing and Urban Development",
+      "edition": "2025-12-31",
+      "package": "GOVMAN-2025-12-31",
+      "granule": "GOVMAN-2025-12-31-119",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-119",
+      "tableFooter": null
+    },
+    "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
+    "evidenceVerifiedAt": "2025-12-31",
+    "parentId": "exec-dept-hud"
   },
   {
     "id": "exec-dept-hud-general-counsel",
@@ -55370,22 +55370,6 @@
       "attempts": 1,
       "detail": "PermissionError: robots.txt disallows this path (www.transportation.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was"
     },
-    "evidenceUrls": [
-      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-124"
-    ],
-    "govmanListing": {
-      "source": "us_government_manual",
-      "listedTitle": "Inspector General",
-      "listedUnder": "Department of Transportation",
-      "edition": "2025-12-31",
-      "package": "GOVMAN-2025-12-31",
-      "granule": "GOVMAN-2025-12-31-124",
-      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-124",
-      "tableFooter": "The above list of key personnel was updated 9–2021."
-    },
-    "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
-    "evidenceVerifiedAt": "2025-12-31",
-    "parentId": "exec-dept-dot",
     "positionTierReferencePay": {
       "source": "statutory_tier_reference_pay",
       "sourceLabel": "a statute setting the post's pay by reference to an Executive Schedule level, joined to OPM's table",
@@ -55486,7 +55470,23 @@
           }
         ]
       }
-    }
+    },
+    "evidenceUrls": [
+      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-124"
+    ],
+    "govmanListing": {
+      "source": "us_government_manual",
+      "listedTitle": "Inspector General",
+      "listedUnder": "Department of Transportation",
+      "edition": "2025-12-31",
+      "package": "GOVMAN-2025-12-31",
+      "granule": "GOVMAN-2025-12-31-124",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-124",
+      "tableFooter": "The above list of key personnel was updated 9–2021."
+    },
+    "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
+    "evidenceVerifiedAt": "2025-12-31",
+    "parentId": "exec-dept-dot"
   },
   {
     "id": "exec-dept-dot-faa",
@@ -57660,22 +57660,6 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2025-12-31",
-    "evidenceUrls": [
-      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-116"
-    ],
-    "govmanListing": {
-      "source": "us_government_manual",
-      "listedTitle": "Inspector General",
-      "listedUnder": "Department of Energy",
-      "edition": "2025-12-31",
-      "package": "GOVMAN-2025-12-31",
-      "granule": "GOVMAN-2025-12-31-116",
-      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-116",
-      "tableFooter": "The above list of key personnel was updated 1–2022."
-    },
-    "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
-    "evidenceVerifiedAt": "2025-12-31",
-    "parentId": "exec-dept-doe",
     "positionTierReferencePay": {
       "source": "statutory_tier_reference_pay",
       "sourceLabel": "a statute setting the post's pay by reference to an Executive Schedule level, joined to OPM's table",
@@ -57776,7 +57760,23 @@
           }
         ]
       }
-    }
+    },
+    "evidenceUrls": [
+      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-116"
+    ],
+    "govmanListing": {
+      "source": "us_government_manual",
+      "listedTitle": "Inspector General",
+      "listedUnder": "Department of Energy",
+      "edition": "2025-12-31",
+      "package": "GOVMAN-2025-12-31",
+      "granule": "GOVMAN-2025-12-31-116",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-116",
+      "tableFooter": "The above list of key personnel was updated 1–2022."
+    },
+    "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
+    "evidenceVerifiedAt": "2025-12-31",
+    "parentId": "exec-dept-doe"
   },
   {
     "id": "exec-dept-doe-nnsa",
@@ -67863,17 +67863,6 @@
     "verificationMethod": "name_labelled_on_its_organisations_official_page",
     "verificationMatchedIn": "content",
     "verificationSiteFrom": "exec-ind-epa",
-    "govmanListing": {
-      "source": "us_government_manual",
-      "listedTitle": "Inspector General",
-      "listedUnder": "Environmental Protection Agency",
-      "edition": "2025-12-31",
-      "package": "GOVMAN-2025-12-31",
-      "granule": "GOVMAN-2025-12-31-135",
-      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-135",
-      "tableFooter": "The above list of key personnel was updated 7–2021."
-    },
-    "parentId": "exec-ind-epa",
     "positionTierReferencePay": {
       "source": "statutory_tier_reference_pay",
       "sourceLabel": "a statute setting the post's pay by reference to an Executive Schedule level, joined to OPM's table",
@@ -67974,7 +67963,18 @@
           }
         ]
       }
-    }
+    },
+    "govmanListing": {
+      "source": "us_government_manual",
+      "listedTitle": "Inspector General",
+      "listedUnder": "Environmental Protection Agency",
+      "edition": "2025-12-31",
+      "package": "GOVMAN-2025-12-31",
+      "granule": "GOVMAN-2025-12-31-135",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-135",
+      "tableFooter": "The above list of key personnel was updated 7–2021."
+    },
+    "parentId": "exec-ind-epa"
   },
   {
     "id": "exec-ind-epa-chief-financial-officer",
@@ -69546,22 +69546,6 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2025-12-31",
-    "evidenceUrls": [
-      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-153"
-    ],
-    "govmanListing": {
-      "source": "us_government_manual",
-      "listedTitle": "Inspector General",
-      "listedUnder": "National Aeronautics and Space Administration",
-      "edition": "2025-12-31",
-      "package": "GOVMAN-2025-12-31",
-      "granule": "GOVMAN-2025-12-31-153",
-      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-153",
-      "tableFooter": null
-    },
-    "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
-    "evidenceVerifiedAt": "2025-12-31",
-    "parentId": "exec-ind-nasa",
     "positionTierReferencePay": {
       "source": "statutory_tier_reference_pay",
       "sourceLabel": "a statute setting the post's pay by reference to an Executive Schedule level, joined to OPM's table",
@@ -69662,7 +69646,23 @@
           }
         ]
       }
-    }
+    },
+    "evidenceUrls": [
+      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-153"
+    ],
+    "govmanListing": {
+      "source": "us_government_manual",
+      "listedTitle": "Inspector General",
+      "listedUnder": "National Aeronautics and Space Administration",
+      "edition": "2025-12-31",
+      "package": "GOVMAN-2025-12-31",
+      "granule": "GOVMAN-2025-12-31-153",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-153",
+      "tableFooter": null
+    },
+    "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
+    "evidenceVerifiedAt": "2025-12-31",
+    "parentId": "exec-ind-nasa"
   },
   {
     "id": "exec-ind-nasa-chief-information-officer",
@@ -71678,22 +71678,6 @@
       "attempts": 1,
       "detail": "PermissionError: robots.txt disallows this path (www.ssa.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
     },
-    "evidenceUrls": [
-      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-177"
-    ],
-    "govmanListing": {
-      "source": "us_government_manual",
-      "listedTitle": "Inspector General",
-      "listedUnder": "Social Security Administration",
-      "edition": "2025-12-31",
-      "package": "GOVMAN-2025-12-31",
-      "granule": "GOVMAN-2025-12-31-177",
-      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-177",
-      "tableFooter": "The above list of key personnel was updated 02–2018."
-    },
-    "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
-    "evidenceVerifiedAt": "2025-12-31",
-    "parentId": "exec-ind-ssa",
     "positionTierReferencePay": {
       "source": "statutory_tier_reference_pay",
       "sourceLabel": "a statute setting the post's pay by reference to an Executive Schedule level, joined to OPM's table",
@@ -71794,7 +71778,23 @@
           }
         ]
       }
-    }
+    },
+    "evidenceUrls": [
+      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-177"
+    ],
+    "govmanListing": {
+      "source": "us_government_manual",
+      "listedTitle": "Inspector General",
+      "listedUnder": "Social Security Administration",
+      "edition": "2025-12-31",
+      "package": "GOVMAN-2025-12-31",
+      "granule": "GOVMAN-2025-12-31-177",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-177",
+      "tableFooter": "The above list of key personnel was updated 02–2018."
+    },
+    "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
+    "evidenceVerifiedAt": "2025-12-31",
+    "parentId": "exec-ind-ssa"
   },
   {
     "id": "exec-ind-ssa--treasury-receipts",
@@ -82007,17 +82007,6 @@
     "verificationMethod": "name_labelled_on_its_organisations_official_page",
     "verificationMatchedIn": "content",
     "verificationSiteFrom": "exec-ind-misc-tennessee-valley-authority-tva",
-    "govmanListing": {
-      "source": "us_government_manual",
-      "listedTitle": "Inspector General",
-      "listedUnder": "Tennessee Valley Authority",
-      "edition": "2025-12-31",
-      "package": "GOVMAN-2025-12-31",
-      "granule": "GOVMAN-2025-12-31-178",
-      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-178",
-      "tableFooter": "The above list of key personnel was updated 8–2020."
-    },
-    "parentId": "exec-ind-misc-tennessee-valley-authority-tva",
     "positionTierReferencePay": {
       "source": "statutory_tier_reference_pay",
       "sourceLabel": "a statute setting the post's pay by reference to an Executive Schedule level, joined to OPM's table",
@@ -82118,7 +82107,18 @@
           }
         ]
       }
-    }
+    },
+    "govmanListing": {
+      "source": "us_government_manual",
+      "listedTitle": "Inspector General",
+      "listedUnder": "Tennessee Valley Authority",
+      "edition": "2025-12-31",
+      "package": "GOVMAN-2025-12-31",
+      "granule": "GOVMAN-2025-12-31-178",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-178",
+      "tableFooter": "The above list of key personnel was updated 8–2020."
+    },
+    "parentId": "exec-ind-misc-tennessee-valley-authority-tva"
   },
   {
     "id": "exec-ind-misc-appalachian-regional-commission-arc",
@@ -87382,22 +87382,6 @@
       "attempts": 1,
       "detail": "PermissionError: robots.txt disallows this path (www.fcc.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
     },
-    "evidenceUrls": [
-      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-139"
-    ],
-    "govmanListing": {
-      "source": "us_government_manual",
-      "listedTitle": "Inspector General",
-      "listedUnder": "Federal Communications Commission",
-      "edition": "2025-12-31",
-      "package": "GOVMAN-2025-12-31",
-      "granule": "GOVMAN-2025-12-31-139",
-      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-139",
-      "tableFooter": "The above list of key personnel was updated 10–2018."
-    },
-    "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
-    "evidenceVerifiedAt": "2025-12-31",
-    "parentId": "exec-regulatory-fcc",
     "positionTierReferencePay": {
       "source": "statutory_tier_reference_pay",
       "sourceLabel": "a statute setting the post's pay by reference to an Executive Schedule level, joined to OPM's table",
@@ -87498,7 +87482,23 @@
           }
         ]
       }
-    }
+    },
+    "evidenceUrls": [
+      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-139"
+    ],
+    "govmanListing": {
+      "source": "us_government_manual",
+      "listedTitle": "Inspector General",
+      "listedUnder": "Federal Communications Commission",
+      "edition": "2025-12-31",
+      "package": "GOVMAN-2025-12-31",
+      "granule": "GOVMAN-2025-12-31-139",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-139",
+      "tableFooter": "The above list of key personnel was updated 10–2018."
+    },
+    "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
+    "evidenceVerifiedAt": "2025-12-31",
+    "parentId": "exec-regulatory-fcc"
   },
   {
     "id": "exec-regulatory-ftc",
@@ -88086,17 +88086,6 @@
     "verificationMethod": "name_labelled_on_its_organisations_official_page",
     "verificationMatchedIn": "content",
     "verificationSiteFrom": "exec-regulatory-nrc",
-    "govmanListing": {
-      "source": "us_government_manual",
-      "listedTitle": "Inspector General",
-      "listedUnder": "Nuclear Regulatory Commission",
-      "edition": "2025-12-31",
-      "package": "GOVMAN-2025-12-31",
-      "granule": "GOVMAN-2025-12-31-163",
-      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-163",
-      "tableFooter": "[For the Nuclear Regulatory Commission statement of organization, see the Code of Federal Regulations, Title 10, Part I]"
-    },
-    "parentId": "exec-regulatory-nrc",
     "positionTierReferencePay": {
       "source": "statutory_tier_reference_pay",
       "sourceLabel": "a statute setting the post's pay by reference to an Executive Schedule level, joined to OPM's table",
@@ -88197,7 +88186,18 @@
           }
         ]
       }
-    }
+    },
+    "govmanListing": {
+      "source": "us_government_manual",
+      "listedTitle": "Inspector General",
+      "listedUnder": "Nuclear Regulatory Commission",
+      "edition": "2025-12-31",
+      "package": "GOVMAN-2025-12-31",
+      "granule": "GOVMAN-2025-12-31-163",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-163",
+      "tableFooter": "[For the Nuclear Regulatory Commission statement of organization, see the Code of Federal Regulations, Title 10, Part I]"
+    },
+    "parentId": "exec-regulatory-nrc"
   },
   {
     "id": "exec-regulatory-ferc",
@@ -88766,22 +88766,6 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2025-12-31",
-    "evidenceUrls": [
-      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-140"
-    ],
-    "govmanListing": {
-      "source": "us_government_manual",
-      "listedTitle": "Inspector General",
-      "listedUnder": "Federal Deposit Insurance Corporation",
-      "edition": "2025-12-31",
-      "package": "GOVMAN-2025-12-31",
-      "granule": "GOVMAN-2025-12-31-140",
-      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-140",
-      "tableFooter": "The above list of key personnel was updated 02–2018."
-    },
-    "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
-    "evidenceVerifiedAt": "2025-12-31",
-    "parentId": "exec-regulatory-fdic",
     "positionTierReferencePay": {
       "source": "statutory_tier_reference_pay",
       "sourceLabel": "a statute setting the post's pay by reference to an Executive Schedule level, joined to OPM's table",
@@ -88882,7 +88866,23 @@
           }
         ]
       }
-    }
+    },
+    "evidenceUrls": [
+      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-140"
+    ],
+    "govmanListing": {
+      "source": "us_government_manual",
+      "listedTitle": "Inspector General",
+      "listedUnder": "Federal Deposit Insurance Corporation",
+      "edition": "2025-12-31",
+      "package": "GOVMAN-2025-12-31",
+      "granule": "GOVMAN-2025-12-31-140",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-140",
+      "tableFooter": "The above list of key personnel was updated 02–2018."
+    },
+    "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
+    "evidenceVerifiedAt": "2025-12-31",
+    "parentId": "exec-regulatory-fdic"
   },
   {
     "id": "exec-regulatory-fdic-director-division-of-risk-management-supervision",

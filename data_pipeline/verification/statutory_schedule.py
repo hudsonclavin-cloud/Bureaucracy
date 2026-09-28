@@ -719,6 +719,163 @@ REVIEWED_TITLE_ROWS: dict[str, dict[str, Any]] = {
             "the same office: 42 U.S.C. 1317 provides for the appointment of the Administrator of the Centers for Medicare & Medicaid Services, and 5 U.S.C. 5314 places that Administrator at Level III; the graph names the Centers by their acronym"
         ),
     },
+    "exec-dept-doc-nist-director-nist": {
+        "nodeName": "Director, NIST",
+        "statutoryTitle": "Under Secretary of Commerce for Standards and Technology, who also serves as Director of the National Institute of Standards and Technology",
+        "basisCitation": "15 U.S.C. 273a",
+        "basisFixture": "nist_15_usc_273a.html",
+        "basisQuote": (
+            "The Under Secretary shall serve as the Director of the Institute and shall perform such duties as required of the Director by the Secretary under this chapter or by law."
+        ),
+        "basis": (
+            "the same office: 15 U.S.C. 273a creates in the Department of Commerce an Under Secretary of Commerce for Standards and Technology who shall serve as the Director of the Institute, and itself compensates that office at level III of the Executive Schedule, the level 5 U.S.C. 5314 prints for the joint title; the graph names the post by the Director half of that title and the Institute by its acronym"
+        ),
+    },
+    "exec-regulatory-nrc-chair-nrc": {
+        "nodeName": "Chair, NRC",
+        "statutoryTitle": "Chairman, Nuclear Regulatory Commission",
+        "basisCitation": "42 U.S.C. 5841",
+        "basisFixture": "nrc_42_usc_5841.html",
+        "basisQuote": (
+            "The President shall designate one member of the Commission as Chairman thereof to serve as such during the pleasure of the President."
+        ),
+        "basis": (
+            "the same office: 42 U.S.C. 5841 establishes the Nuclear Regulatory Commission of five members and has the President designate one of them as Chairman, and 5 U.S.C. 5313 places that Chairman at Level II; the graph writes 'Chair' where the Code writes 'Chairman' and names the Commission by its acronym"
+        ),
+    },
+    "exec-regulatory-nrc-commissioner-4": {
+        "nodeName": "Commissioner (×4)",
+        "statutoryTitle": "Members, Nuclear Regulatory Commission",
+        "basisCitation": "42 U.S.C. 5841",
+        "basisFixture": "nrc_42_usc_5841.html",
+        "basisQuote": (
+            "There is established an independent regulatory commission to be known as the Nuclear Regulatory Commission which shall be composed of five members, each of whom shall be a citizen of the United States."
+        ),
+        "basis": (
+            "a bench priced from its class title: 42 U.S.C. 5841 composes the Nuclear Regulatory Commission of five members, one of whom the President designates as Chairman, so each of the other four is a member of the Commission, and 5 U.S.C. 5314 places 'Members, Nuclear Regulatory Commission' at Level III; the level is the office's and holds for each of the four alike"
+        ),
+        "classTitle": True,
+    },
+    "exec-ind-sba-administrator-sba": {
+        "nodeName": "Administrator, SBA",
+        "statutoryTitle": "Administrator of the Small Business Administration",
+        "basisCitation": "15 U.S.C. 633",
+        "basisFixture": "sba_15_usc_633.html",
+        "basisQuote": (
+            "The management of the Administration shall be vested in an Administrator who shall be appointed from civilian life by the President, by and with the advice and consent of the Senate,"
+        ),
+        "basis": (
+            "the same office: 15 U.S.C. 633 vests the management of the Small Business Administration in an Administrator appointed by the President with the Senate's consent, and 5 U.S.C. 5314 places that Administrator at Level III; the graph names the Administration by its acronym"
+        ),
+    },
+    "exec-ind-nsf-director-nsf": {
+        "nodeName": "Director, NSF",
+        "statutoryTitle": "Director of the National Science Foundation",
+        "basisCitation": "42 U.S.C. 1864",
+        "basisFixture": "nsf_42_usc_1864.html",
+        "basisQuote": (
+            "The Director shall receive basic pay at the rate provided for level II of the Executive Schedule under section 5313 of title 5"
+        ),
+        "basis": (
+            "the same office: 42 U.S.C. 1864 provides for the Director of the Foundation, appointed by the President with the Senate's consent, and itself sets that Director's basic pay at level II of the Executive Schedule, the level 5 U.S.C. 5313 prints for it; the graph names the Foundation by its acronym"
+        ),
+    },
+    "exec-ind-nsf-deputy-director-nsf": {
+        "nodeName": "Deputy Director, NSF",
+        "statutoryTitle": "Deputy Director, National Science Foundation",
+        "basisCitation": "42 U.S.C. 1864a",
+        "basisFixture": "nsf_42_usc_1864a.html",
+        "basisQuote": (
+            "The Deputy Director shall receive basic pay at the rate provided for level III of the Executive Schedule under section 5314 of title 5"
+        ),
+        "basis": (
+            "the same office: 42 U.S.C. 1864a provides for a Deputy Director of the Foundation, appointed by the President with the Senate's consent, and itself sets that Deputy Director's basic pay at level III of the Executive Schedule, the level 5 U.S.C. 5314 prints for it; the graph names the Foundation by its acronym"
+        ),
+    },
+    "exec-eop-ondcp-director-drug-czar": {
+        "nodeName": "Director (Drug Czar)",
+        "statutoryTitle": "Director of National Drug Control Policy",
+        "basisCitation": "21 U.S.C. 1703",
+        "basisFixture": "ondcp_21_usc_1703.html",
+        "basisQuote": (
+            "There shall be at the head of the Office a Director who shall hold the same rank and status as the head of an executive department listed in section 101 of title 5"
+        ),
+        "basis": (
+            "the same office: 21 U.S.C. 1703 puts a Director at the head of the Office of National Drug Control Policy, the Office 21 U.S.C. 1702 establishes in the Executive Office of the President and the node above this one, and 5 U.S.C. 5312 places the Director of National Drug Control Policy at Level I; the graph names the post by its informal label in brackets"
+        ),
+    },
+    "exec-dept-dol-bls-commissioner-bls": {
+        "nodeName": "Commissioner, BLS",
+        "statutoryTitle": "The 2 Commissioner of Labor Statistics, Department of Labor",
+        "basisCitation": "29 U.S.C. 3",
+        "basisFixture": "bls_29_usc_3.html",
+        "basisQuote": (
+            "The Bureau of Labor Statistics shall be under the charge of a Commissioner of Labor Statistics, who shall be appointed by the President, by and with the advice and consent of the Senate;"
+        ),
+        "basis": (
+            "the same office: 29 U.S.C. 3 puts the Bureau of Labor Statistics under the charge of a Commissioner of Labor Statistics appointed by the President with the Senate's consent, and 5 U.S.C. 5315 places that Commissioner at Level IV, printing the title with a leading 'The' and the footnote mark '2' (the Code's own note: the word 'The' probably should not appear), which the index keeps as printed; the graph names the Bureau by its acronym"
+        ),
+    },
+    "exec-dept-doc-census-director-census-bureau": {
+        "nodeName": "Director, Census Bureau",
+        "statutoryTitle": "Director, Bureau of the Census, Department of Commerce",
+        "basisCitation": "13 U.S.C. 21",
+        "basisFixture": "census_13_usc_21.html",
+        "basisQuote": (
+            "The Bureau shall be headed by a Director of the Census, appointed by the President, by and with the advice and consent of the Senate, without regard to political affiliation."
+        ),
+        "basis": (
+            "the same office: 13 U.S.C. 21 puts a Director of the Census at the head of the Bureau, appointed by the President with the Senate's consent, and 5 U.S.C. 5315 places the Director of the Bureau of the Census at Level IV; the graph writes 'Census Bureau' where the Code writes 'Bureau of the Census'"
+        ),
+    },
+    "exec-eop-cea-chair-cea": {
+        "nodeName": "Chair, CEA",
+        "statutoryTitle": "Chairman, Council of Economic Advisers",
+        "basisCitation": "15 U.S.C. 1023",
+        "basisFixture": "cea_15_usc_1023.html",
+        "basisQuote": (
+            "The Council shall be composed of three members, of whom- (A) 1 shall be the chairman who shall be appointed by the President by and with the advice and consent of the Senate; and (B) 2 shall be appointed by the President."
+        ),
+        "basis": (
+            "the same office: 15 U.S.C. 1023 composes the Council of Economic Advisers of three members, one of whom is the chairman appointed by the President with the Senate's consent, and 5 U.S.C. 5313 places that Chairman at Level II; the graph writes 'Chair' where the Code writes 'Chairman' and names the Council by its acronym"
+        ),
+    },
+    "exec-eop-cea-member-cea": {
+        "nodeName": "Member, CEA",
+        "statutoryTitle": "Members, Council of Economic Advisers",
+        "basisCitation": "15 U.S.C. 1023",
+        "basisFixture": "cea_15_usc_1023.html",
+        "basisQuote": (
+            "The Council shall be composed of three members, of whom- (A) 1 shall be the chairman who shall be appointed by the President by and with the advice and consent of the Senate; and (B) 2 shall be appointed by the President."
+        ),
+        "basis": (
+            "the same office: 15 U.S.C. 1023 composes the Council of Economic Advisers of three members, two of them appointed by the President beside the chairman, and 5 U.S.C. 5315 places 'Members, Council of Economic Advisers' at Level IV, the office each of the two holds; this graph draws the two as one node each, and the Code names the office once for both"
+        ),
+    },
+    "exec-eop-cea-member-cea-1": {
+        "nodeName": "Member, CEA",
+        "statutoryTitle": "Members, Council of Economic Advisers",
+        "basisCitation": "15 U.S.C. 1023",
+        "basisFixture": "cea_15_usc_1023.html",
+        "basisQuote": (
+            "The Council shall be composed of three members, of whom- (A) 1 shall be the chairman who shall be appointed by the President by and with the advice and consent of the Senate; and (B) 2 shall be appointed by the President."
+        ),
+        "basis": (
+            "the same office: 15 U.S.C. 1023 composes the Council of Economic Advisers of three members, two of them appointed by the President beside the chairman, and 5 U.S.C. 5315 places 'Members, Council of Economic Advisers' at Level IV, the office each of the two holds; this graph draws the two as one node each, and the Code names the office once for both"
+        ),
+    },
+    "exec-regulatory-cpsc-chair-cpsc": {
+        "nodeName": "Chair, CPSC",
+        "statutoryTitle": "Chairman, Consumer Product Safety Commission",
+        "basisCitation": "15 U.S.C. 2053",
+        "basisFixture": "cpsc_15_usc_2053.html",
+        "basisQuote": (
+            "The Chairman shall be appointed by the President, by and with the advice and consent of the Senate, from among the members of the Commission."
+        ),
+        "basis": (
+            "the same office: 15 U.S.C. 2053 establishes the Consumer Product Safety Commission of five Commissioners and has the President appoint the Chairman from among them, and 5 U.S.C. 5314 places that Chairman at Level III; the graph writes 'Chair' where the Code writes 'Chairman' and names the Commission by its acronym"
+        ),
+    },
 }
 
 

@@ -2980,3 +2980,149 @@ fetches on a host that answers; the counted-class shape (Deputy USTRs, the
 CPSC bench) and the Members-paid-under-Schedule-6 decision (chairs, whips)
 are the two decisions still open.
 
+
+### 19.10 Thirteen reviewed rows from §19.9's list; the seventh batch triaged (2026-09-28)
+
+**Added, on the owner's instruction: "add the fifteen reviewed rows."** §19.9
+called its candidate list fifteen posts; counted by node id when the rows were
+written it is **thirteen**, one of them a bench of four, and the miscount is
+recorded here rather than the list restated. The rows are the Fed's shape
+(§19.1): the Code prints the title, a second statute identifies the office,
+and the quote is re-found in that section's operative text on every run by
+the module and by the gate's own reader. Ten basis sections fetched and
+committed under `tests/fixtures/uscode/`; every fetch answered.
+
+| Node | Statutory title (level) | Basis |
+|---|---|---|
+| `Director, NIST` | Under Secretary of Commerce for Standards and Technology, who also serves as Director of the National Institute of Standards and Technology (III) | 15 U.S.C. 273a(d): "The Under Secretary shall serve as the Director of the Institute" |
+| `Chair, NRC` | Chairman, Nuclear Regulatory Commission (II) | 42 U.S.C. 5841(a)(1): the President designates one member as Chairman |
+| NRC `Commissioner (×4)` | Members, Nuclear Regulatory Commission (III), class title | 42 U.S.C. 5841(a)(1): "composed of five members" |
+| `Administrator, SBA` | Administrator of the Small Business Administration (III) | 15 U.S.C. 633(b)(1): management "vested in an Administrator" |
+| `Director, NSF` | Director of the National Science Foundation (II) | 42 U.S.C. 1864(a): the section itself sets basic pay at level II |
+| `Deputy Director, NSF` | Deputy Director, National Science Foundation (III) | 42 U.S.C. 1864a: the section itself sets basic pay at level III |
+| `Director (Drug Czar)` | Director of National Drug Control Policy (I) | 21 U.S.C. 1703(a)(1)(A): "at the head of the Office a Director" |
+| `Commissioner, BLS` | The 2 Commissioner of Labor Statistics, Department of Labor (IV) | 29 U.S.C. 3: the Bureau "under the charge of a Commissioner of Labor Statistics" |
+| `Director, Census Bureau` | Director, Bureau of the Census, Department of Commerce (IV) | 13 U.S.C. 21(a)(1): "headed by a Director of the Census" |
+| `Chair, CEA` | Chairman, Council of Economic Advisers (II) | 15 U.S.C. 1023(a)(2): three members, one the chairman |
+| `Member, CEA` (two nodes) | Members, Council of Economic Advisers (IV), one row per node, no class mark | 15 U.S.C. 1023(a)(2): "2 shall be appointed by the President" |
+| `Chair, CPSC` | Chairman, Consumer Product Safety Commission (III) | 15 U.S.C. 2053(a): the Chairman appointed "from among the members" |
+
+**Three things the fetches settled that the list had assumed.**
+
+- **The NIST identification is in a section the list did not name.** The
+  Code's Schedule title carries it in its own words, but a reviewed row needs
+  the second statute, and neither 15 U.S.C. 272 (establishment) nor 274 (the
+  Director's powers) prints "Under Secretary" anywhere, notes included: the
+  America COMPETES Reauthorization Act of 2010 struck the appointment
+  sentence out of §274, which the Code's Amendments note records, and put the
+  office at **15 U.S.C. 273a**, found from the chapter's own table of
+  contents. §273a also compensates the Under Secretary at level III itself.
+  The three dead-end fetches (§§272, 274 and 278 — the last is the Visiting
+  Committee on Advanced Technology) were deleted rather than committed; the
+  section that says it is committed.
+- **The ONDCP Director is no longer where the batch put him.** 21 U.S.C.
+  1702(b) "related to Director of National Drug Control Policy and Deputy
+  Directors" and was struck by Pub. L. 115–271 in 2018; the Director is now
+  at 21 U.S.C. 1703(a)(1)(A). Both sections are committed: §1703 is the basis,
+  and §1702 is the one that establishes the Office the Director heads.
+- **The BLS title is published with the Code's own typo.** §5315 prints "The
+  <sup>2</sup> Commissioner of Labor Statistics, Department of Labor" and
+  footnotes it: "The word 'The' probably should not appear." The index keeps
+  the title as printed, so the record's `statutoryTitle` reads "The 2
+  Commissioner of Labor Statistics, Department of Labor", and the row's basis
+  says why. Correcting it would be editing a quotation.
+
+**Measured:** reviewed rows 24 → 37; positions priced from the Schedule
+123 → 136 (I 19, II 29, III 22, IV 61, V 5); pay claims **541 → 554**;
+unpriced **4,050 → 4,037** (3,257 unreached, 759 stating a multiplicity, 21
+listed without a rate); class-title benches 5 → 6; multi-post nodes priced
+33 → 34. Nothing measured moved, nothing outside `positionSchedulePay` changed,
+and no matcher, gate rule or sweep rule changed — the gate mirror gained
+thirteen 9-tuples and the one test that counts class benches reads six.
+
+**Still refused from the same list:** CPSC's `Commissioner (×4)`, whose
+Schedule title is the counted plural "Members, Consumer Product Safety
+Commission (4)" — the counted-class shape (§19.8, with the Deputy USTRs) the
+matcher refuses until the owner decides it; and the three NRC office
+directors, printed by the Code and curated here as "Director — Office of
+Nuclear Reactor Regulation", which no route reaches without a rename.
+
+**The seventh batch, triaged.** It was mostly systems and ranges, and the
+refusals are the ones §19.7–19.9 already made, with the exceptions worth a
+row or a module noted first.
+
+*Candidates the committed Code confirms, for the next round (reviewed-row
+shape, one basis fetch each):*
+
+- **`Administrator, FHWA`** — the Code prints "Administrator, Federal
+  Highway Administration" at Level II, as the batch said; the basis is
+  whichever section of title 49 puts an Administrator at the head of the
+  Administration (the batch names §104; not fetched). The batch's Deputy is printed too ("Deputy
+  Federal Highway Administrator", IV) and reaches nothing: this graph has no
+  such node.
+- **USPTO's `Director / Under Secretary for IP`** — "Under Secretary of
+  Commerce for Intellectual Property and Director of the United States Patent
+  and Trademark Office" (III), the batch's grade; the basis would be the
+  section of title 35 that creates the office (the batch names §3; not
+  fetched). Its bare `Deputy Director` node answers to the Deputy Under
+  Secretary title (IV), though a row on a bare title is the shape the post floor
+  exists to distrust and should be reviewed as such.
+- **`Commissioner, BOR`** — "Commissioner of Reclamation, Department of the
+  Interior" at **Level V**, as the batch said; the basis section has not been
+  identified from here and must be fetched, not assumed.
+- **`Register of Copyrights & Director`** — the batch cited 17 U.S.C. 701(f)
+  as setting the pay by reference to level III. The Code ALSO prints
+  "Register of Copyrights" on the Schedule itself at §5314 (III), so this is a
+  reviewed row and not a tier-reference record, with §701 as the basis —
+  §701(a) styles the Register "as director of the Copyright Office", which is
+  the graph's "& Director".
+
+*Candidates that are the tier-reference shape (§19.9), if the sections say
+what the batch reports; none fetched this round:* the **IES Director** (the
+batch: Level II by 20 U.S.C. 9517) and its commissioners; the **CBO
+Director** (2 U.S.C. 601); the **GPO Director** (II) and Deputy (III) under
+44 U.S.C. — none of these titles is printed on the Schedule, so if their
+statutes set pay by reference to a level the record belongs in
+`positionTierReferencePay` with `documentsStatingTheFigure: 0`. The **FJC
+Director**, if 28 U.S.C. 628 sets the salary at a judicial tier's, is the
+`derived_pay.py` shape instead. Each is one fetch and a reviewed row in the
+relevant module's table, not a research question.
+
+*Already done, which the batch reported as open:* the **CAAF `Judge (×4)`**
+bench at the circuit-judge rate — priced since 2026-09-23 from 10 U.S.C.
+942(d) (`derived_pay.BENCH_NODES`), $264,900 beside its Chief Judge.
+
+*Refused, with the reason:*
+
+- **DoD agencies "via the PLUM Book"** (DCSA, DISA, DTRA, the rest): the
+  current export lists their principals on the ES pay plan with no figure in
+  the rate column, and a listing that prints no rate is what `listed_no_rate`
+  already counts; the archive's ES rows are the same. A pay plan is a system,
+  not a figure.
+- **Circuit-court staff at CL/JSP grades, and the AUSA/AD charts again**: a
+  grade names a system and a range; no document states the post's figure.
+- **Circuit-judge benches "at $264,900"**: the thirteen `Circuit Judge (×N
+  active + senior judges)` nodes bundle senior judges, whose salary 28 U.S.C.
+  371(b)(2) sets apart from the tier rate (§19.8); a circuit's own *active*
+  bench is already priced from the compensation table where the graph
+  curates one.
+- **The Federal Public Defenders (×82)**: the batch reports 18 U.S.C.
+  3006A(g)(2)(A) as fixing the compensation at a rate not to exceed the
+  district's United States attorney's — if so, a ceiling and not a rate, the
+  37 U.S.C. 203(a)(2) shape, and the section was not fetched to check it.
+- **ICE, MDA, NETL, NGA and NHTSA "ranges from USAJOBS"**: a vacancy posting
+  is not a pay document — it states one job's advertised band on one day,
+  names no post this graph carries, and is not a publisher this project
+  reads. Refused as the prompt pack itself says salary aggregators are.
+- **The DOE laboratories and JPL as "not federally paid"**: §19.9's
+  refusal stands; a contractor-operated laboratory's staff are not on any
+  federal pay document, and the DOE page was not fetched.
+- **FNS (now the Food and Nutrition Administration) and PFPA**: SES posts on
+  no schedule the Code prints; nothing to cite.
+
+**Next:** the four reviewed-row candidates above (FHWA, USPTO, BOR, the
+Register of Copyrights) are four fetches; the four tier-reference candidates
+(IES, CBO, GPO, plus the FJC as derived) are four more, each a row in an
+existing table. The two owner decisions still open are unchanged: the
+counted-class shape (CPSC's bench, the Deputy USTRs) and Members paid under
+Schedule 6 (committee chairs, the whips).

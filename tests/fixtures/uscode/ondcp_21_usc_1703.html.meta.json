@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-09-28T19:03:19Z",
+ "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title21-section1703&num=0&edition=prelim",
+ "status": 200,
+ "final_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title21-section1703&num=0&edition=prelim",
+ "content_type": "text/html;charset=UTF-8",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /view.xhtml",
+ "bytes": 236575,
+ "sha256": "c34fe23282a63b08b5c428b75928e9a3f203cfe18c2a4955110b12dde9bc96fd",
+ "error": null
+}
