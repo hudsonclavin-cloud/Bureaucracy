@@ -541,6 +541,18 @@ function describePay(node) {
       text: `${derived.statute || "A statutory parity provision"} states that every judge of ${derived.court || "this court"} is paid at the rate of ${derived.amountScope || "another court's judges"}; the U.S. Courts' Judicial Compensation table states that tier pays ${printed}${derived.year ? ` for ${derived.year}` : ""}. ${count} official document${count === 1 ? " verifies" : "s verify"} it — ${Number(verification.percent || 0)}% on this project's own source scale — and ${stating === 0 ? "neither states the figure" : `${stating} state${stating === 1 ? "s" : ""} the figure`}. The percentage measures how much official documentation the claim rests on, not the chance that it is right.${holdersNote(derived)}`,
     });
   }
+  const reference = node.positionTierReferencePay;
+  if (reference && typeof reference === "object" && typeof reference.amount === "number") {
+    const printed = reference.rateText || `$${reference.amount.toLocaleString("en-US")}`;
+    const arithmetic = reference.arithmetic && typeof reference.arithmetic === "object" ? reference.arithmetic : null;
+    const identification = reference.identification && typeof reference.identification === "object" ? reference.identification : {};
+    blocks.push({
+      heading: "Pay set by reference to a level — no document states it",
+      text: arithmetic
+        ? `${reference.statute || "The statute"} sets an Inspector General's basic pay at the rate for Executive Schedule ${reference.levelText || `Level ${reference.level}`} plus ${arithmetic.percent} percent; OPM's ${reference.table || "table"} prints ${arithmetic.baseText || reference.levelRateText} for that level. ${arithmetic.baseText || reference.levelRateText} + ${arithmetic.percent}% = ${printed}, arithmetic this project performed and no document prints.${identification.establishment ? ` 5 U.S.C. 401(1) lists ${identification.establishment} as an establishment whose Inspector General that section covers.` : ""}${holdersNote(reference)}${payDocuments(reference)}`
+        : `${reference.statute || "The statute"} sets the ${reference.office || "post"}'s pay equal to the rate for Executive Schedule ${reference.levelText || `Level ${reference.level}`}; OPM's ${reference.table || "table"} prints ${printed} for that level. The post is not itself on the Schedule.${holdersNote(reference)}${payDocuments(reference)}`,
+    });
+  }
   const reported = node.positionReportedPay;
   if (reported && typeof reported === "object" && typeof reported.amount === "number") {
     const printed = reported.rateText || `$${reported.amount.toLocaleString("en-US")}`;

@@ -642,6 +642,7 @@ PAY_DOCUMENT_URL_KEYS = {
     "positionCurrentPay": ("url",),
     "positionTierPay": ("url",),
     "positionDerivedPay": (("documents", "*", "url"),),
+    "positionTierReferencePay": (("documents", "*", "url"),),
 }
 #: How many of a field's documents print the figure itself. Every printed rate
 #: or printed pair of bounds is 1; a derived figure is 0, and that difference
@@ -655,6 +656,7 @@ PAY_DOCUMENT_STATES_FIGURE = {
     "positionCurrentPay": 1,
     "positionTierPay": 1,
     "positionDerivedPay": 0,
+    "positionTierReferencePay": 0,
 }
 
 # The Senate's own year-by-year salary schedule, mirrored the same way and
@@ -2263,7 +2265,7 @@ def tier_pay_violations(node, pay, today, label, parent_name):
 #: holder alike, so a node standing for several posts may carry one -- with a
 #: `holders` block the sweep stamps from the node's own stated multiplicity.
 #: Mirrors pay_tables.OFFICE_RATE_PAY_FIELDS; pinned by tests/test_multi_post_pay.py.
-OFFICE_RATE_PAY_FIELDS = ("positionStatutoryPay", "positionDerivedPay", "positionTierPay")
+OFFICE_RATE_PAY_FIELDS = ("positionStatutoryPay", "positionDerivedPay", "positionTierPay", "positionTierReferencePay")
 #: A roster figure may sit on a multi-post node only when the block itself says
 #: the roster lists every holder at one rate (mirrors pay_tables.UNIFORM_ROSTER_PAY_FIELDS).
 UNIFORM_ROSTER_PAY_FIELDS = ("positionReportedPay",)
@@ -2421,6 +2423,274 @@ def pay_document_violations(node, field, block, label):
         for role in roles:
             if not isinstance(role, dict) or str(role.get("url") or "") not in urls:
                 say("names a {} document role for a URL the block does not carry".format(field))
+    return out
+
+
+# A statute that sets a post's pay BY REFERENCE to an Executive Schedule level
+# the post is not itself placed at, joined to OPM's table for the level. The
+# derived shape from the other side of the Schedule, mirrored two ways: the
+# GAO's two officers by node id, and the Inspector General Act's rate as a
+# RULE whose scope is 5 U.S.C. 401(1)'s own list of establishments -- parsed
+# here from the committed section with this file's own reader, independently
+# of the module, and pinned equal to it by tests/test_tier_reference_pay.py.
+# An Inspector General's figure is arithmetic on a printed one ($209,600 plus
+# 3 percent), which no document prints; the block carries the arithmetic and
+# the gate recomputes it.
+TIER_REFERENCE_FIELD = "positionTierReferencePay"
+TIER_REFERENCE_SOURCE = "statutory_tier_reference_pay"
+TIER_REFERENCE_METHOD = "pay_set_by_reference_to_an_executive_schedule_level_joined_to_opm_table"
+TIER_REFERENCE_METHOD_PERCENT = (
+    "pay_set_by_reference_to_an_executive_schedule_level_plus_a_statutory_percentage_joined_to_opm_table"
+)
+TIER_REFERENCE_TABLE_URL = (
+    "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx"
+)
+#: node id -> (node name the row was written against, office, citation,
+#: fixture, level, the sentence 31 U.S.C. 703's operative text prints)
+TIER_REFERENCE_ROWS = {
+    "leg-support-gao-comptroller-general-of-the-united-states": (
+        "Comptroller General of the United States", "Comptroller General", "31 U.S.C. 703(f)(1)",
+        "gao_31_usc_703.html", "II",
+        "Comptroller General is equal to the rate for level II of the Executive Schedule",
+    ),
+    "leg-support-gao-deputy-comptroller-general": (
+        "Deputy Comptroller General", "Deputy Comptroller General", "31 U.S.C. 703(f)(2)",
+        "gao_31_usc_703.html", "III",
+        "Deputy Comptroller General is equal to the rate for level III of the Executive Schedule",
+    ),
+}
+#: The Inspector General Act's rule: (citation, fixture, level, percent, the
+#: sentence 5 U.S.C. 403's operative text prints, the establishments citation,
+#: its fixture, the definition sentence 5 U.S.C. 401 prints).
+TIER_REFERENCE_IG_RULE = (
+    "5 U.S.C. 403(e)", "ig_5_usc_403.html", "III", 3,
+    "The annual rate of basic pay for an Inspector General (as defined under section 401 of this "
+    "title ) shall be the rate payable for level III of the Executive Schedule under section 5314 "
+    "of this title , plus 3 percent.",
+    "5 U.S.C. 401(1)", "ig_5_usc_401.html",
+    'The term "Inspector General" means the Inspector General of an establishment.',
+)
+TIER_REFERENCE_IG_TITLE = "Inspector General"
+_TIER_REFERENCE_ESTABLISHMENT_RE = re.compile(r'The term "establishment" means (.+?), as the case may be\.')
+
+
+def tier_reference_establishments(operative_401):
+    """The establishments 5 U.S.C. 401(1) names, read off the committed
+    section's own definition sentence with this file's reader: the
+    departments come compressed ("the Department of Agriculture, Commerce,
+    ...") and are expanded one per item; the agencies follow written out."""
+    match = _TIER_REFERENCE_ESTABLISHMENT_RE.search(operative_401 or "")
+    if match is None:
+        return []
+    segments = [segment.strip() for segment in match.group(1).split(";")]
+    if len(segments) != 2 or not segments[0].startswith("the Department of "):
+        return []
+
+    def items(text):
+        out = []
+        for part in text.split(","):
+            part = part.strip()
+            if part.startswith("or "):
+                part = part[3:].strip()
+            if part:
+                out.append(part)
+        return out
+
+    names = ["Department of {}".format(item) for item in items(segments[0][len("the Department of "):])]
+    names.extend(item[4:] if item.startswith("the ") else item for item in items(segments[1]))
+    return names
+
+
+def tier_reference_pay_violations(node, pay, today, label, tree_parent_name=None):
+    """Everything that must be true of a figure set by reference to a level.
+
+    Two shapes, one field. A GAO row is mirrored by node id and must quote
+    the sentence 31 U.S.C. 703 prints now, price the level it names at OPM's
+    rate for that level, and carry no arithmetic. An Inspector General's
+    block must sit on a node named exactly "Inspector General" whose parent
+    IN THE TREE reduces to one of the establishments 5 U.S.C. 401(1) lists --
+    re-parsed here from the committed bytes -- must quote 403(e)'s sentence,
+    and must publish the arithmetic the gate recomputes: Level III's rate
+    plus 3 percent, to the cent. Neither shape may claim that any document
+    states the figure.
+    """
+    out = []
+    say = lambda text: out.append("{} {}".format(label(node), text))
+    if not isinstance(pay, dict):
+        say("{} {!r} is not a record".format(TIER_REFERENCE_FIELD, pay))
+        return out
+    type_text = str(node.get("type") or "").casefold()
+    if not any(word in type_text for word in ("position", "role", "office holder")):
+        say("carries a rate set by reference to a level but is a {!r}, not a post".format(node.get("type")))
+    out.extend(holders_violations(node, pay, TIER_REFERENCE_FIELD, label))
+    if str(pay.get("source") or "") != TIER_REFERENCE_SOURCE:
+        say("prices from source {!r}, which this pipeline does not produce for a tier-reference rate".format(pay.get("source")))
+        return out
+
+    node_id = str(node.get("id") or "")
+    identification = pay.get("identification") if isinstance(pay.get("identification"), dict) else {}
+    row = TIER_REFERENCE_ROWS.get(node_id)
+    arithmetic = pay.get("arithmetic")
+    if row is not None:
+        node_name, office, citation, fixture, level, sentence = row
+        percent = 0
+        if str(pay.get("method") or "") != TIER_REFERENCE_METHOD:
+            say("prices a GAO row under method {!r}, not {!r}".format(pay.get("method"), TIER_REFERENCE_METHOD))
+        if canonical_key(node.get("name")) != canonical_key(node_name):
+            say("is now called {!r}, not {!r}, the name its row was written against".format(node.get("name"), node_name))
+        if identification.get("kind") != "reviewed_row" or str(identification.get("nodeName") or "") != node_name:
+            say("does not identify itself as the reviewed row for {!r}".format(node_name))
+        if arithmetic is not None:
+            say("carries arithmetic on a row whose statute states the level's rate outright")
+        if str(pay.get("office") or "") != office:
+            say("names office {!r}; the row is {!r}".format(pay.get("office"), office))
+        expected_documents = 2
+    else:
+        citation, fixture, level, percent, sentence, est_citation, est_fixture, definition = TIER_REFERENCE_IG_RULE
+        if canonical_key(node.get("name")) != canonical_key(TIER_REFERENCE_IG_TITLE):
+            say("carries the Inspector General Act's rate but is named {!r}".format(node.get("name")))
+            return out
+        if str(pay.get("method") or "") != TIER_REFERENCE_METHOD_PERCENT:
+            say("prices an Inspector General under method {!r}, not {!r}".format(pay.get("method"), TIER_REFERENCE_METHOD_PERCENT))
+        establishments = tier_reference_establishments(uscode_operative_text(US_CODE_BASIS_FIXTURE_DIR / est_fixture))
+        if not establishments:
+            say("rests on 5 U.S.C. 401(1)'s establishment list, which this gate cannot read from the committed section")
+        keys = {canonical_key(name): name for name in establishments}
+        parent_key = canonical_key(tree_parent_name or "")
+        if not tree_parent_name or parent_key not in keys:
+            say("sits under {!r}, which 5 U.S.C. 401(1) does not list as an establishment".format(tree_parent_name))
+        elif str(identification.get("establishment") or "") != keys[parent_key]:
+            say("names establishment {!r}; its organisation in the tree is 5 U.S.C. 401(1)'s {!r}".format(
+                identification.get("establishment"), keys[parent_key]))
+        if identification.get("kind") != "establishment_listed_in_5_usc_401":
+            say("does not identify itself as an establishment's Inspector General")
+        if canonical_key(identification.get("organisationName")) != parent_key:
+            say("records its organisation as {!r}; the tree gives it {!r}".format(
+                identification.get("organisationName"), tree_parent_name))
+        definition_text = uscode_operative_text(US_CODE_BASIS_FIXTURE_DIR / est_fixture)
+        if definition not in definition_text:
+            say("rests on a definition 5 U.S.C. 401 no longer prints in its operative text")
+        if not isinstance(arithmetic, dict):
+            say("prices an Inspector General without publishing the arithmetic 403(e) requires")
+        expected_documents = 3
+
+    if str(pay.get("statute") or "") != citation:
+        say("cites {!r}; this block's statute is {!r}".format(pay.get("statute"), citation))
+    if str(pay.get("statuteQuote") or "") != sentence:
+        say("quotes a sentence that is not the one {} prints for this rule".format(citation))
+    operative = uscode_operative_text(US_CODE_BASIS_FIXTURE_DIR / fixture)
+    if not operative:
+        say("cites {!r}, whose operative text this gate cannot separate from its notes".format(fixture))
+    elif sentence not in operative:
+        say("rests on a sentence {} does not print in its operative text".format(citation))
+    if str(pay.get("level") or "") != level:
+        say("prices level {!r}; {} names {!r}".format(pay.get("level"), citation, level))
+    if pay.get("percent") != percent:
+        say("applies {!r} percent; {} states {!r}".format(pay.get("percent"), citation, percent))
+    base = EXECUTIVE_SCHEDULE_RATES.get(level)
+    expected_amount = round(base * (100 + percent) / 100.0, 2) if base is not None else None
+    amount = pay.get("amount")
+    if base is None:
+        say("prices level {!r}, which the mirrored table does not have".format(level))
+    elif isinstance(amount, bool) or not isinstance(amount, (int, float)):
+        say("publishes {!r} as a rate of basic pay".format(amount))
+    elif abs(float(amount) - expected_amount) > 0.005:
+        say("publishes {:,.2f}; level {} at {:,.0f} plus {} percent is {:,.2f}".format(
+            float(amount), level, base, percent, expected_amount))
+    if base is not None:
+        if pay.get("levelAmount") != base or str(pay.get("levelRateText") or "") != "${:,.0f}".format(base):
+            say("states the level's rate as {!r}; the table prints {!r}".format(pay.get("levelRateText"), "${:,.0f}".format(base)))
+        printed = "${:,.0f}".format(expected_amount) if float(expected_amount).is_integer() else "${:,.2f}".format(expected_amount)
+        if str(pay.get("rateText") or "") != printed:
+            say("prints the rate as {!r}; the computation gives {!r}".format(pay.get("rateText"), printed))
+        derivation = str(pay.get("derivation") or "")
+        if sentence not in derivation or "${:,.0f}".format(base) not in derivation:
+            say("publishes a derivation that does not carry both the statute's sentence and the table's figure")
+        if isinstance(arithmetic, dict):
+            if arithmetic.get("operation") != "plus_percent" or arithmetic.get("percent") != percent:
+                say("publishes arithmetic that is not 'plus {} percent'".format(percent))
+            if arithmetic.get("baseAmount") != base or str(arithmetic.get("baseText") or "") != "${:,.0f}".format(base):
+                say("computes from a base that is not the table's rate for level {}".format(level))
+            if arithmetic.get("result") != expected_amount or arithmetic.get("result") != amount:
+                say("publishes a computed result that is not the base plus the percentage, or not the amount published")
+            if not str(arithmetic.get("note") or "").strip():
+                say("publishes arithmetic without a sentence saying no document prints the result")
+    if str(pay.get("table") or "") != EXECUTIVE_SCHEDULE_TABLE:
+        say("cites table {!r}, not {!r}".format(pay.get("table"), EXECUTIVE_SCHEDULE_TABLE))
+    if str(pay.get("effective") or "") != EXECUTIVE_SCHEDULE_EFFECTIVE:
+        say("dates the rate {!r}, not {!r}".format(pay.get("effective"), EXECUTIVE_SCHEDULE_EFFECTIVE))
+    if str(pay.get("tableUrl") or "") != TIER_REFERENCE_TABLE_URL:
+        say("cites {!r} as the table, not the one this pipeline reads".format(pay.get("tableUrl")))
+
+    documents = pay.get("documents")
+    if not isinstance(documents, list) or len(documents) != expected_documents:
+        say("names {!r} documents, not {}".format(len(documents) if isinstance(documents, list) else documents, expected_documents))
+        documents = []
+    urls = []
+    for document in documents:
+        if not isinstance(document, dict):
+            say("publishes a document entry that is not a record")
+            continue
+        url = str(document.get("url") or "")
+        urls.append(url)
+        if not url.startswith("https://"):
+            say("names a supporting document with no https citation ({!r})".format(url))
+        if not re.fullmatch(r"[0-9a-f]{64}", str(document.get("documentSha256") or "")):
+            say("names a supporting document with no digest")
+        if not str(document.get("quote") or "").strip():
+            say("names a supporting document it quotes nothing from")
+        if not str(document.get("role") or "").strip():
+            say("names a supporting document without saying what it supplies")
+        if document.get("statesTheFigure"):
+            say("claims a supporting document states the figure; none of them does")
+    if urls and not any(US_CODE_HOST in url for url in urls):
+        say("publishes a tier-reference figure with no statute behind it")
+    if urls and TIER_REFERENCE_TABLE_URL not in urls:
+        say("publishes a tier-reference figure with no OPM table behind it")
+    if urls and str(pay.get("url") or "") not in urls:
+        say("cites {!r} as its statute, which its own document list does not name".format(pay.get("url")))
+    if urls and US_CODE_HOST not in str(pay.get("url") or ""):
+        say("cites a statute on a host other than uscode.house.gov")
+
+    verification = pay.get("verification")
+    if not isinstance(verification, dict):
+        say("publishes a tier-reference figure with no statement of how many documents verify it")
+    else:
+        count = verification.get("documents")
+        if count != len(documents) or not isinstance(count, int) or isinstance(count, bool):
+            say("says {!r} documents verify it and lists {}".format(count, len(documents)))
+        elif verification.get("percent") != DERIVED_PAY_STRENGTH_BY_COUNT.get(count):
+            say("publishes {!r}% for {} documents; this project's own scale gives {!r}%".format(
+                verification.get("percent"), count, DERIVED_PAY_STRENGTH_BY_COUNT.get(count)))
+        if verification.get("documentsStatingTheFigure") != 0:
+            say("claims {!r} of its documents state the figure; none of them does".format(
+                verification.get("documentsStatingTheFigure")))
+        if not str(verification.get("scale") or "").strip():
+            say("publishes a percentage without saying what scale it is on")
+        if not str(verification.get("caution") or "").strip():
+            say("publishes a percentage with no sentence saying what it does not measure")
+
+    if str(pay.get("scopeMatch") or "") != "proxy":
+        say("claims scope {!r}; a figure set by reference to a level is never more than a proxy".format(pay.get("scopeMatch")))
+    if str(pay.get("financialEvidenceStatus") or "") != "partial":
+        say("grades a tier-reference rate {!r}, not 'partial'".format(pay.get("financialEvidenceStatus")))
+    checked = str(pay.get("checkedAt") or "")
+    if not re.match(r"^\d{4}-\d{2}-\d{2}", checked) or checked[:10] > today:
+        say("claims a tier-reference rate without a past retrieval date ({!r})".format(checked))
+    if str(node.get("cost_status") or "") in ("official", "root_total", "scaled_official"):
+        say("carries a tier-reference rate and a measured cost status {!r}".format(node.get("cost_status")))
+    method = str(pay.get("method") or "")
+    if method and str(node.get("verificationMethod") or "") == method:
+        say("verifies its own existence with a pay figure")
+    if method and str(node.get("placementMethod") or "") == method:
+        say("places itself with a pay figure")
+    for source_url in node.get("sourceUrls") or []:
+        text = str(source_url)
+        if US_CODE_HOST in text or TIER_REFERENCE_TABLE_URL == text:
+            say("counts a pay document among the sources that it exists")
+    for other in ("positionStatutoryPay", "positionPayRate", "positionSchedulePay", "positionDerivedPay"):
+        if isinstance(node.get(other), dict):
+            say("carries a tier-reference rate beside {}; two figures for one post".format(other))
     return out
 
 
@@ -3094,6 +3364,7 @@ ALIAS_FORBIDDEN_BLOCKS = (
     "employeesOfficialSource", "cost_weight_dispute", "positionPayRate",
     "positionGradePay", "positionStatutoryPay", "positionSchedulePay",
     "positionReportedPay", "positionCurrentPay", "positionDerivedPay",
+    "positionTierReferencePay",
 )
 #: Deliberately only this feature's own rule and field. `usaspendingOutlays`
 #: carries a `nameAlias` of its OWN -- `USASPENDING_NAME_ALIASES`, a separate
@@ -4084,6 +4355,7 @@ def main(argv):
     bad_statutory_pay = []
     bad_tier_pay = []
     bad_derived_pay = []
+    bad_tier_reference_pay = []
     bad_pay_documents = []
     bad_schedule_pay = []
     bad_reported_pay = []
@@ -4317,6 +4589,14 @@ def main(argv):
         derived_pay = node.get("positionDerivedPay")
         if derived_pay is not None:
             bad_derived_pay.extend(derived_pay_violations(node, derived_pay, today, label))
+        # A rate set by REFERENCE to an Executive Schedule level: the GAO's
+        # officers by node id, and an establishment's Inspector General by
+        # 5 U.S.C. 401's own list, scoped to the parent the tree gives it.
+        tier_reference_pay = node.get("positionTierReferencePay")
+        if tier_reference_pay is not None:
+            _reference_parent = tree_parents.get(str(node.get("id") or ""))
+            bad_tier_reference_pay.extend(tier_reference_pay_violations(
+                node, tier_reference_pay, today, label, name_by_id.get(_reference_parent)))
         # And, on every pay field alike, how many documents the figure rests
         # on: recomputed from the URLs the block itself carries, so a count
         # is a fact about the block rather than a number somebody wrote down.
@@ -4457,6 +4737,11 @@ def main(argv):
     gate.check(
         "a derived rate names both documents, neither of which states it, and prices the tier its own statute does",
         bad_derived_pay,
+    )
+    gate.check(
+        "a rate set by reference to an Executive Schedule level is the table's rate for the level its statute names, "
+        "an Inspector General's only under an establishment 5 U.S.C. 401 lists, with its arithmetic in the open",
+        bad_tier_reference_pay,
     )
     gate.check(
         "every pay figure says how many documents it rests on, counted from the URLs it carries",
@@ -5398,6 +5683,12 @@ def main(argv):
                   ", ".join("{} documents each, {}% on this project's own source scale".format(
                       count, DERIVED_PAY_STRENGTH_BY_COUNT.get(count)) for count in sorted(derived_counts)) or "none",
                   len(DERIVED_PAY_PROVISIONS)))
+    reference_paid = [n for n in nodes if isinstance(n.get("positionTierReferencePay"), dict)]
+    reference_igs = [n for n in reference_paid if (n["positionTierReferencePay"].get("identification") or {}).get("kind") != "reviewed_row"]
+    print("  tier-reference pay   : {:,} positions priced from a statute that sets pay by reference to an Executive Schedule "
+          "level ({:,} GAO rows mirrored by id; {:,} Inspectors General of an establishment 5 U.S.C. 401(1) lists, each "
+          "Level III plus 3 percent, arithmetic no document prints); 0 documents state any figure".format(
+              len(reference_paid), len(reference_paid) - len(reference_igs), len(reference_igs)))
     reported_paid = [n for n in nodes if isinstance(n.get("positionReportedPay"), dict)]
     uniform_paid = [n for n in reported_paid
                     if isinstance(n["positionReportedPay"].get("holders"), dict)

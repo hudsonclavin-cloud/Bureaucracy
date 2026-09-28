@@ -2882,3 +2882,101 @@ shape (statute names the level, table prices it — 82 posts), the counted-class
 shape (Deputy USTRs), and whether committee chairs and Senate whips are
 Members paid under Schedule 6.
 
+### 19.9 The tier-reference module; the sixth batch triaged (2026-09-28)
+
+**Built, on the owner's instruction: "build the tier-reference module for
+GAO and the IGs."** `data_pipeline/verification/tier_reference_pay.py`,
+`scripts/derive_tier_reference_pay_evidence.py`, the ninth pay field
+`positionTierReferencePay`. The shape and its guards are in `CLAUDE.md`
+("Pay set BY REFERENCE to a level"); what belongs here is what the
+statute's own list decided and what it refused.
+
+**29 derived, 28 published.** The Comptroller General at Level II
+($228,000) and the Deputy at Level III ($209,600) from 31 U.S.C. 703(f), and
+27 Inspectors General at Level III plus 3 percent — **$215,888, a figure no
+document prints** — from 5 U.S.C. 403(e), scoped by 401(1)'s own list of
+establishments: fifteen departments, and the EPA, NASA, OPM, the SBA, the
+SSA, the FCC, the NRC, the FDIC, the TVA, the Export-Import Bank, the NSA and
+the NRO. The Department of Justice's IG is derived and not published,
+because it carries OPM's archived listing with a printed level and rate and
+a figure set by reference never displaces a printed one.
+
+**54 `Inspector General` nodes refused, and the list is the reason, not a
+judgement about the node.** The stamped IGs under DIA, NGA, DARPA, DLA,
+DCAA, DCMA, DCSA, DISA, DTRA, MDA, DFAS, DHA, DoDEA and PFPA — none is an
+establishment; the designated Federal entities' (NLRB, EEOC, FEC, EAC, OSC,
+MSPB, FLRA, NMB, CSB, PCLOB, PRC, the FCA, the NCUA, the PBGC, the ARC, the
+NCPC, the ABMC, the SEC, the FTC, FERC, the CPSC, the CFTC, the FMC, the
+NTSB, USAGM, the NEA, the NEH, the DFC, the Peace Corps, the Selective
+Service, the Smithsonian, NARA, NSF) — 5 U.S.C. 415 was fetched and
+committed and its operative text prints no rate of pay, so "looked and it
+states none" is what the refusal rests on; the legislative branch's four
+(GAO, the Library, the Architect, the Capitol Police), which 401(2) excludes
+by name; the CIA's, whose statute is 5 U.S.C. 423 and has not been read (the
+batch's "403(e) via 423(a)(1)" was not checked and is not relied on); the
+FBI's `Inspector General (DoJ IG covers FBI)`, under a bureau; and
+AmeriCorps, whose IG the Act does cover — 401(1) says "the Corporation for
+National and Community Service" — but reaches only through the alias table,
+which no join that lands a number may read. That last is a real cost of a
+rule this repository chose, recorded as such.
+
+**The sixth batch, triaged against the committed Code.** Its level
+identifications were right this time and its dollar figures were the
+pay-freeze memo's again ($168,400, $183,100, $158,500, $203,500 — not the
+2026 table's); none was used. What the Code prints, and what a reviewed row
+could reach once its basis section is fetched (none was, this round):
+
+- **Director, NIST** — the Code's own title says the identification:
+  "Under Secretary of Commerce for Standards and Technology, who also serves
+  as Director of the National Institute of Standards and Technology" (III).
+- **Chair, NRC** — "Chairman, Nuclear Regulatory Commission" (II); **NRC
+  `Commissioner (×4)`** — "Members, Nuclear Regulatory Commission" (III), the
+  class-title bench shape §19.8 landed; the three NRC office directors the
+  batch graded IV are printed ("Director of Nuclear Reactor Regulation,
+  Nuclear Regulatory Commission" and two more) and reach nothing because the
+  graph writes "Director — Office of Nuclear Reactor Regulation".
+- **Administrator, SBA** (III); **Director, NSF** (II) and **Deputy
+  Director, NSF** (III); **Director (Drug Czar)**, ONDCP — "Director of
+  National Drug Control Policy" (I); **Commissioner, BLS** (IV, printed with
+  a footnote mark as "The 2 Commissioner of Labor Statistics"); **Director,
+  Census Bureau** (IV); **Chair, CEA** (II) and the two single `Member, CEA`
+  nodes — "Members, Council of Economic Advisers" (IV), the Vice-Chair shape;
+  **Chair, CPSC** (III). CPSC's `Commissioner (×4)` is "Members, Consumer
+  Product Safety Commission (4)" — a counted plural the matcher refuses, so
+  that bench stays out until the counted-class shape is decided.
+
+**Refused, with the reason:**
+
+- **USPS officers at $342,280 / $313,000 / $346,780** from 8-K filings:
+  those are named individuals' compensation disclosures, person-level by
+  construction; this project never publishes a figure tied to a person's
+  name, and USPS is not on any pay system this repository reads.
+- **USPS Board of Governors** "$30,000 a year plus $300 a day": a statutory
+  figure (39 U.S.C. 202) printed on a web page, on a node standing for nine
+  members — a `positionStatutoryPay`-shaped candidate needing the statute
+  read, and a `holders` block; not a row.
+- **Director, NEC at $195,200 from the White House roster**: the roster
+  module is scoped to the White House Office subtree, as `headcounts.py`
+  scopes a FedScope row, and the NEC is a sibling office; widening the scope
+  is a decision, not a match.
+- **AUSAs on the AD pay-plan charts, the JCT chief of staff (2 U.S.C. 4302),
+  NASA centre directors, the USMS special-rate table, the Mint, the BEP, the
+  House Clerk's office, the Smithsonian museums** (whose curated structure is
+  itself a repeated template, and whose staff "can sit side by side" on
+  federal and trust rolls, as the batch itself notes): each names a system or
+  a range and no figure for the post, or no document at all.
+- **JPL and the DOE laboratories as "not federally paid"**: a curation fact
+  worth having — contractor-operated laboratories' staff are not federal
+  employees and no federal pay document can ever price them — and one this
+  repository cannot publish from a research answer; the DOE page the batch
+  cites was not fetched.
+- **The combatant commanders at "$18,999.90 per month"**: DFAS, walled
+  (§19.7); and a monthly basic-pay figure for O-10 is capped by 37 U.S.C.
+  203(a)(2) at the monthly equivalent of Level II, which is the ceiling and
+  not necessarily the rate.
+
+**Next:** the candidate rows above are fifteen posts for eleven basis
+fetches on a host that answers; the counted-class shape (Deputy USTRs, the
+CPSC bench) and the Members-paid-under-Schedule-6 decision (chairs, whips)
+are the two decisions still open.
+

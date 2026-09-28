@@ -8,12 +8,12 @@ checkable claim. `docs/PAY_SOURCE_RESEARCH_PROMPT_3.md` is generated from this
 same list in the same run.
 
 - position nodes in the published graph: **4,591**
-- carrying a pay claim an official document supports: **513**
-- carrying none: **4,078**
+- carrying a pay claim an official document supports: **541**
+- carrying none: **4,050**
 
 | reason | count | what it means |
 |---|---|---|
-| `unreached` | 3,297 | no source this project has read names the title at all. Not a coverage gap somebody has not got to: no pay document in the repository names this title under this organisation, so nothing could have reached it. |
+| `unreached` | 3,269 | no source this project has read names the title at all. Not a coverage gap somebody has not got to: no pay document in the repository names this title under this organisation, so nothing could have reached it. |
 | `multiplicity` | 760 | the node states a multiplicity (×N) and no claim that holds for every holder has reached it. Since 2026-09-23 a claim that holds for each holder by its own terms IS published on such a node with a `holders` block -- a tier or parity rate paid to every judge of the tier, a band every holder is within, or a roster listing every holder at one rate -- and 28 such nodes carry one. What stays refused is an incumbency-shaped claim (one listing's level, one row of the current export), because that is one appointment's figure and not the group's. For these nodes no office-rate claim has reached them at all. Knowing which pay system governs the title is still useful -- it is what would let the graph carry the schedule rather than a rate -- so these are listed and asked about. |
 | `listed_no_rate` | 21 | OPM lists the position and the row prints no rate. The PLUM archive or the current export names the title under this organisation but the Level/Grade/Pay cell carries a rank or is empty, and no salary table this project has read prices that pay plan. |
 
@@ -1024,7 +1024,7 @@ same list in the same run.
 - `exec-dept-dhs-cbp-director-20-field-offices-office-of-field-operations` — Director — 20 Field Offices (Office of Field Operations) — `unreached`
 - `exec-dept-dhs-cbp-port-director-328-ports-of-entry` — Port Director — 328 Ports of Entry — `unreached`
 
-## Federal Communications Commission (FCC)  — 14 unpriced
+## Federal Communications Commission (FCC)  — 13 unpriced
 
 `exec-regulatory-fcc`
 
@@ -1039,45 +1039,8 @@ same list in the same run.
 - `exec-regulatory-fcc-chief-wireless-telecommunications-bureau` — Chief — Wireless Telecommunications Bureau — `unreached`
 - `exec-regulatory-fcc-chief-wireline-competition-bureau` — Chief — Wireline Competition Bureau — `unreached`
 - `exec-regulatory-fcc-general-counsel` — General Counsel — `unreached`
-- `exec-regulatory-fcc-inspector-general` — Inspector General — `unreached`
 - `exec-regulatory-fcc-managing-director` — Managing Director — `unreached`
 - `exec-regulatory-fcc-spectrum-analyst-multiple` — Spectrum Analyst (×multiple) — `multiplicity`
-
-## Department of Defense (DoD)  — 13 unpriced
-
-`exec-dept-defense`
-
-- `exec-dept-defense-chief-financial-officer` — Chief Financial Officer — `unreached`
-- `exec-dept-defense-chief-human-capital-officer` — Chief Human Capital Officer — `unreached`
-- `exec-dept-defense-chief-information-officer` — Chief Information Officer — `unreached`
-- `exec-dept-defense-chief-of-staff` — Chief of Staff — `unreached`
-- `exec-dept-defense-deputy-cfo-controller` — Deputy CFO / Controller — `unreached`
-- `exec-dept-defense-deputy-cio` — Deputy CIO — `unreached`
-- `exec-dept-defense-deputy-general-counsel` — Deputy General Counsel — `unreached`
-- `exec-dept-defense-deputy-inspector-general` — Deputy Inspector General — `unreached`
-- `exec-dept-defense-director-of-legislative-affairs` — Director of Legislative Affairs — `unreached`
-- `exec-dept-defense-director-of-public-affairs` — Director of Public Affairs — `unreached`
-- `exec-dept-defense-diversity-inclusion-officer` — Diversity & Inclusion Officer — `unreached`
-- `exec-dept-defense-executive-secretary` — Executive Secretary — `unreached`
-- `exec-dept-defense-inspector-general` — Inspector General — `unreached`
-
-## Federal Deposit Insurance Corporation (FDIC)  — 13 unpriced
-
-`exec-regulatory-fdic`
-
-- `exec-regulatory-fdic-bank-examiner-multiple` — Bank Examiner (×multiple) — `multiplicity`
-- `exec-regulatory-fdic-ceo-coo` — CEO (COO) — `unreached`
-- `exec-regulatory-fdic-cfo` — CFO — `unreached`
-- `exec-regulatory-fdic-cio` — CIO — `unreached`
-- `exec-regulatory-fdic-chair-fdic` — Chair, FDIC — `unreached`
-- `exec-regulatory-fdic-director-3` — Director (×3) — `multiplicity`
-- `exec-regulatory-fdic-director-division-of-depositor-consumer-protection` — Director — Division of Depositor & Consumer Protection — `unreached`
-- `exec-regulatory-fdic-director-division-of-resolutions-receiverships` — Director — Division of Resolutions & Receiverships — `unreached`
-- `exec-regulatory-fdic-director-division-of-risk-management-supervision` — Director — Division of Risk Management Supervision — `unreached`
-- `exec-regulatory-fdic-general-counsel` — General Counsel — `unreached`
-- `exec-regulatory-fdic-inspector-general` — Inspector General — `unreached`
-- `exec-regulatory-fdic-regional-director-8-regions` — Regional Director — 8 Regions — `unreached`
-- `exec-regulatory-fdic-vice-chair` — Vice Chair — `unreached`
 
 ## Food & Drug Administration (FDA)  — 13 unpriced
 
@@ -1131,73 +1094,39 @@ same list in the same run.
 - `exec-dept-hhs-cdc-principal-deputy-director` — Principal Deputy Director — `unreached`
 - `exec-dept-hhs-cdc-public-health-advisor-multiple` — Public Health Advisor (×multiple) — `multiplicity`
 
-## Department of Commerce  — 12 unpriced
+## Department of Defense (DoD)  — 12 unpriced
 
-`exec-dept-doc`
+`exec-dept-defense`
 
-- `exec-dept-doc-chief-human-capital-officer` — Chief Human Capital Officer — `unreached`
-- `exec-dept-doc-chief-of-staff` — Chief of Staff — `unreached`
-- `exec-dept-doc-deputy-cfo-controller` — Deputy CFO / Controller — `unreached`
-- `exec-dept-doc-deputy-cio` — Deputy CIO — `unreached`
-- `exec-dept-doc-deputy-general-counsel` — Deputy General Counsel — `unreached`
-- `exec-dept-doc-deputy-inspector-general` — Deputy Inspector General — `unreached`
-- `exec-dept-doc-deputy-secretary-of-department-of-commerce` — Deputy Secretary of Department of Commerce — `unreached`
-- `exec-dept-doc-director-of-legislative-affairs` — Director of Legislative Affairs — `unreached`
-- `exec-dept-doc-director-of-public-affairs` — Director of Public Affairs — `unreached`
-- `exec-dept-doc-diversity-inclusion-officer` — Diversity & Inclusion Officer — `unreached`
-- `exec-dept-doc-executive-secretary` — Executive Secretary — `unreached`
-- `exec-dept-doc-inspector-general` — Inspector General — `unreached`
+- `exec-dept-defense-chief-financial-officer` — Chief Financial Officer — `unreached`
+- `exec-dept-defense-chief-human-capital-officer` — Chief Human Capital Officer — `unreached`
+- `exec-dept-defense-chief-information-officer` — Chief Information Officer — `unreached`
+- `exec-dept-defense-chief-of-staff` — Chief of Staff — `unreached`
+- `exec-dept-defense-deputy-cfo-controller` — Deputy CFO / Controller — `unreached`
+- `exec-dept-defense-deputy-cio` — Deputy CIO — `unreached`
+- `exec-dept-defense-deputy-general-counsel` — Deputy General Counsel — `unreached`
+- `exec-dept-defense-deputy-inspector-general` — Deputy Inspector General — `unreached`
+- `exec-dept-defense-director-of-legislative-affairs` — Director of Legislative Affairs — `unreached`
+- `exec-dept-defense-director-of-public-affairs` — Director of Public Affairs — `unreached`
+- `exec-dept-defense-diversity-inclusion-officer` — Diversity & Inclusion Officer — `unreached`
+- `exec-dept-defense-executive-secretary` — Executive Secretary — `unreached`
 
-## Department of Labor (DOL)  — 12 unpriced
+## Federal Deposit Insurance Corporation (FDIC)  — 12 unpriced
 
-`exec-dept-dol`
+`exec-regulatory-fdic`
 
-- `exec-dept-dol-chief-human-capital-officer` — Chief Human Capital Officer — `unreached`
-- `exec-dept-dol-chief-of-staff` — Chief of Staff — `unreached`
-- `exec-dept-dol-deputy-cfo-controller` — Deputy CFO / Controller — `unreached`
-- `exec-dept-dol-deputy-cio` — Deputy CIO — `unreached`
-- `exec-dept-dol-deputy-general-counsel` — Deputy General Counsel — `unreached`
-- `exec-dept-dol-deputy-inspector-general` — Deputy Inspector General — `unreached`
-- `exec-dept-dol-director-of-legislative-affairs` — Director of Legislative Affairs — `unreached`
-- `exec-dept-dol-director-of-public-affairs` — Director of Public Affairs — `unreached`
-- `exec-dept-dol-diversity-inclusion-officer` — Diversity & Inclusion Officer — `unreached`
-- `exec-dept-dol-executive-secretary` — Executive Secretary — `unreached`
-- `exec-dept-dol-general-counsel` — General Counsel — `unreached`
-- `exec-dept-dol-inspector-general` — Inspector General — `unreached`
-
-## Department of State  — 12 unpriced
-
-`exec-dept-state`
-
-- `exec-dept-state-chief-human-capital-officer` — Chief Human Capital Officer — `unreached`
-- `exec-dept-state-chief-of-staff` — Chief of Staff — `unreached`
-- `exec-dept-state-deputy-cfo-controller` — Deputy CFO / Controller — `unreached`
-- `exec-dept-state-deputy-cio` — Deputy CIO — `unreached`
-- `exec-dept-state-deputy-general-counsel` — Deputy General Counsel — `unreached`
-- `exec-dept-state-deputy-inspector-general` — Deputy Inspector General — `unreached`
-- `exec-dept-state-director-of-legislative-affairs` — Director of Legislative Affairs — `unreached`
-- `exec-dept-state-director-of-public-affairs` — Director of Public Affairs — `unreached`
-- `exec-dept-state-diversity-inclusion-officer` — Diversity & Inclusion Officer — `unreached`
-- `exec-dept-state-executive-secretary` — Executive Secretary — `unreached`
-- `exec-dept-state-general-counsel` — General Counsel — `unreached`
-- `exec-dept-state-inspector-general` — Inspector General — `unreached`
-
-## Department of the Interior (DOI)  — 12 unpriced
-
-`exec-dept-doi`
-
-- `exec-dept-doi-chief-human-capital-officer` — Chief Human Capital Officer — `unreached`
-- `exec-dept-doi-chief-of-staff` — Chief of Staff — `unreached`
-- `exec-dept-doi-deputy-cfo-controller` — Deputy CFO / Controller — `unreached`
-- `exec-dept-doi-deputy-cio` — Deputy CIO — `unreached`
-- `exec-dept-doi-deputy-general-counsel` — Deputy General Counsel — `unreached`
-- `exec-dept-doi-deputy-inspector-general` — Deputy Inspector General — `unreached`
-- `exec-dept-doi-director-of-legislative-affairs` — Director of Legislative Affairs — `unreached`
-- `exec-dept-doi-director-of-public-affairs` — Director of Public Affairs — `unreached`
-- `exec-dept-doi-diversity-inclusion-officer` — Diversity & Inclusion Officer — `unreached`
-- `exec-dept-doi-executive-secretary` — Executive Secretary — `unreached`
-- `exec-dept-doi-general-counsel` — General Counsel — `unreached`
-- `exec-dept-doi-inspector-general` — Inspector General — `unreached`
+- `exec-regulatory-fdic-bank-examiner-multiple` — Bank Examiner (×multiple) — `multiplicity`
+- `exec-regulatory-fdic-ceo-coo` — CEO (COO) — `unreached`
+- `exec-regulatory-fdic-cfo` — CFO — `unreached`
+- `exec-regulatory-fdic-cio` — CIO — `unreached`
+- `exec-regulatory-fdic-chair-fdic` — Chair, FDIC — `unreached`
+- `exec-regulatory-fdic-director-3` — Director (×3) — `multiplicity`
+- `exec-regulatory-fdic-director-division-of-depositor-consumer-protection` — Director — Division of Depositor & Consumer Protection — `unreached`
+- `exec-regulatory-fdic-director-division-of-resolutions-receiverships` — Director — Division of Resolutions & Receiverships — `unreached`
+- `exec-regulatory-fdic-director-division-of-risk-management-supervision` — Director — Division of Risk Management Supervision — `unreached`
+- `exec-regulatory-fdic-general-counsel` — General Counsel — `unreached`
+- `exec-regulatory-fdic-regional-director-8-regions` — Regional Director — 8 Regions — `unreached`
+- `exec-regulatory-fdic-vice-chair` — Vice Chair — `unreached`
 
 ## Internal Revenue Service (IRS)  — 12 unpriced
 
@@ -1334,101 +1263,21 @@ same list in the same run.
 - `leg-house-cao-director-of-supply-services` — Director of Supply Services — `unreached`
 - `leg-house-cao-director-of-travel` — Director of Travel — `unreached`
 
-## Department of Agriculture (USDA)  — 11 unpriced
+## Department of Commerce  — 11 unpriced
 
-`exec-dept-usda`
+`exec-dept-doc`
 
-- `exec-dept-usda-chief-human-capital-officer` — Chief Human Capital Officer — `unreached`
-- `exec-dept-usda-chief-of-staff` — Chief of Staff — `unreached`
-- `exec-dept-usda-deputy-cfo-controller` — Deputy CFO / Controller — `unreached`
-- `exec-dept-usda-deputy-cio` — Deputy CIO — `unreached`
-- `exec-dept-usda-deputy-general-counsel` — Deputy General Counsel — `unreached`
-- `exec-dept-usda-deputy-inspector-general` — Deputy Inspector General — `unreached`
-- `exec-dept-usda-director-of-legislative-affairs` — Director of Legislative Affairs — `unreached`
-- `exec-dept-usda-director-of-public-affairs` — Director of Public Affairs — `unreached`
-- `exec-dept-usda-diversity-inclusion-officer` — Diversity & Inclusion Officer — `unreached`
-- `exec-dept-usda-executive-secretary` — Executive Secretary — `unreached`
-- `exec-dept-usda-inspector-general` — Inspector General — `unreached`
-
-## Department of Education  — 11 unpriced
-
-`exec-dept-ed`
-
-- `exec-dept-ed-chief-human-capital-officer` — Chief Human Capital Officer — `unreached`
-- `exec-dept-ed-chief-of-staff` — Chief of Staff — `unreached`
-- `exec-dept-ed-deputy-cfo-controller` — Deputy CFO / Controller — `unreached`
-- `exec-dept-ed-deputy-cio` — Deputy CIO — `unreached`
-- `exec-dept-ed-deputy-general-counsel` — Deputy General Counsel — `unreached`
-- `exec-dept-ed-deputy-inspector-general` — Deputy Inspector General — `unreached`
-- `exec-dept-ed-director-of-legislative-affairs` — Director of Legislative Affairs — `unreached`
-- `exec-dept-ed-director-of-public-affairs` — Director of Public Affairs — `unreached`
-- `exec-dept-ed-diversity-inclusion-officer` — Diversity & Inclusion Officer — `unreached`
-- `exec-dept-ed-executive-secretary` — Executive Secretary — `unreached`
-- `exec-dept-ed-inspector-general` — Inspector General — `unreached`
-
-## Department of Energy (DOE)  — 11 unpriced
-
-`exec-dept-doe`
-
-- `exec-dept-doe-chief-human-capital-officer` — Chief Human Capital Officer — `unreached`
-- `exec-dept-doe-chief-of-staff` — Chief of Staff — `unreached`
-- `exec-dept-doe-deputy-cfo-controller` — Deputy CFO / Controller — `unreached`
-- `exec-dept-doe-deputy-cio` — Deputy CIO — `unreached`
-- `exec-dept-doe-deputy-general-counsel` — Deputy General Counsel — `unreached`
-- `exec-dept-doe-deputy-inspector-general` — Deputy Inspector General — `unreached`
-- `exec-dept-doe-director-of-legislative-affairs` — Director of Legislative Affairs — `unreached`
-- `exec-dept-doe-director-of-public-affairs` — Director of Public Affairs — `unreached`
-- `exec-dept-doe-diversity-inclusion-officer` — Diversity & Inclusion Officer — `unreached`
-- `exec-dept-doe-executive-secretary` — Executive Secretary — `unreached`
-- `exec-dept-doe-inspector-general` — Inspector General — `unreached`
-
-## Department of Health & Human Services (HHS)  — 11 unpriced
-
-`exec-dept-hhs`
-
-- `exec-dept-hhs-chief-human-capital-officer` — Chief Human Capital Officer — `unreached`
-- `exec-dept-hhs-chief-of-staff` — Chief of Staff — `unreached`
-- `exec-dept-hhs-deputy-cfo-controller` — Deputy CFO / Controller — `unreached`
-- `exec-dept-hhs-deputy-cio` — Deputy CIO — `unreached`
-- `exec-dept-hhs-deputy-general-counsel` — Deputy General Counsel — `unreached`
-- `exec-dept-hhs-deputy-inspector-general` — Deputy Inspector General — `unreached`
-- `exec-dept-hhs-director-of-legislative-affairs` — Director of Legislative Affairs — `unreached`
-- `exec-dept-hhs-director-of-public-affairs` — Director of Public Affairs — `unreached`
-- `exec-dept-hhs-diversity-inclusion-officer` — Diversity & Inclusion Officer — `unreached`
-- `exec-dept-hhs-executive-secretary` — Executive Secretary — `unreached`
-- `exec-dept-hhs-inspector-general` — Inspector General — `unreached`
-
-## Department of Homeland Security (DHS)  — 11 unpriced
-
-`exec-dept-dhs`
-
-- `exec-dept-dhs-chief-human-capital-officer` — Chief Human Capital Officer — `unreached`
-- `exec-dept-dhs-chief-of-staff` — Chief of Staff — `unreached`
-- `exec-dept-dhs-deputy-cfo-controller` — Deputy CFO / Controller — `unreached`
-- `exec-dept-dhs-deputy-cio` — Deputy CIO — `unreached`
-- `exec-dept-dhs-deputy-general-counsel` — Deputy General Counsel — `unreached`
-- `exec-dept-dhs-deputy-inspector-general` — Deputy Inspector General — `unreached`
-- `exec-dept-dhs-director-of-legislative-affairs` — Director of Legislative Affairs — `unreached`
-- `exec-dept-dhs-director-of-public-affairs` — Director of Public Affairs — `unreached`
-- `exec-dept-dhs-diversity-inclusion-officer` — Diversity & Inclusion Officer — `unreached`
-- `exec-dept-dhs-executive-secretary` — Executive Secretary — `unreached`
-- `exec-dept-dhs-inspector-general` — Inspector General — `unreached`
-
-## Department of Housing & Urban Development (HUD)  — 11 unpriced
-
-`exec-dept-hud`
-
-- `exec-dept-hud-chief-human-capital-officer` — Chief Human Capital Officer — `unreached`
-- `exec-dept-hud-chief-of-staff` — Chief of Staff — `unreached`
-- `exec-dept-hud-deputy-cfo-controller` — Deputy CFO / Controller — `unreached`
-- `exec-dept-hud-deputy-cio` — Deputy CIO — `unreached`
-- `exec-dept-hud-deputy-general-counsel` — Deputy General Counsel — `unreached`
-- `exec-dept-hud-deputy-inspector-general` — Deputy Inspector General — `unreached`
-- `exec-dept-hud-director-of-legislative-affairs` — Director of Legislative Affairs — `unreached`
-- `exec-dept-hud-director-of-public-affairs` — Director of Public Affairs — `unreached`
-- `exec-dept-hud-diversity-inclusion-officer` — Diversity & Inclusion Officer — `unreached`
-- `exec-dept-hud-executive-secretary` — Executive Secretary — `unreached`
-- `exec-dept-hud-inspector-general` — Inspector General — `unreached`
+- `exec-dept-doc-chief-human-capital-officer` — Chief Human Capital Officer — `unreached`
+- `exec-dept-doc-chief-of-staff` — Chief of Staff — `unreached`
+- `exec-dept-doc-deputy-cfo-controller` — Deputy CFO / Controller — `unreached`
+- `exec-dept-doc-deputy-cio` — Deputy CIO — `unreached`
+- `exec-dept-doc-deputy-general-counsel` — Deputy General Counsel — `unreached`
+- `exec-dept-doc-deputy-inspector-general` — Deputy Inspector General — `unreached`
+- `exec-dept-doc-deputy-secretary-of-department-of-commerce` — Deputy Secretary of Department of Commerce — `unreached`
+- `exec-dept-doc-director-of-legislative-affairs` — Director of Legislative Affairs — `unreached`
+- `exec-dept-doc-director-of-public-affairs` — Director of Public Affairs — `unreached`
+- `exec-dept-doc-diversity-inclusion-officer` — Diversity & Inclusion Officer — `unreached`
+- `exec-dept-doc-executive-secretary` — Executive Secretary — `unreached`
 
 ## Department of Justice (DOJ)  — 11 unpriced
 
@@ -1446,53 +1295,53 @@ same list in the same run.
 - `exec-dept-doj-executive-secretary` — Executive Secretary — `unreached`
 - `exec-dept-doj-general-counsel` — General Counsel — `unreached`
 
-## Department of Transportation (DOT)  — 11 unpriced
+## Department of Labor (DOL)  — 11 unpriced
 
-`exec-dept-dot`
+`exec-dept-dol`
 
-- `exec-dept-dot-chief-human-capital-officer` — Chief Human Capital Officer — `unreached`
-- `exec-dept-dot-chief-of-staff` — Chief of Staff — `unreached`
-- `exec-dept-dot-deputy-cfo-controller` — Deputy CFO / Controller — `unreached`
-- `exec-dept-dot-deputy-cio` — Deputy CIO — `unreached`
-- `exec-dept-dot-deputy-general-counsel` — Deputy General Counsel — `unreached`
-- `exec-dept-dot-deputy-inspector-general` — Deputy Inspector General — `unreached`
-- `exec-dept-dot-director-of-legislative-affairs` — Director of Legislative Affairs — `unreached`
-- `exec-dept-dot-director-of-public-affairs` — Director of Public Affairs — `unreached`
-- `exec-dept-dot-diversity-inclusion-officer` — Diversity & Inclusion Officer — `unreached`
-- `exec-dept-dot-executive-secretary` — Executive Secretary — `unreached`
-- `exec-dept-dot-inspector-general` — Inspector General — `unreached`
+- `exec-dept-dol-chief-human-capital-officer` — Chief Human Capital Officer — `unreached`
+- `exec-dept-dol-chief-of-staff` — Chief of Staff — `unreached`
+- `exec-dept-dol-deputy-cfo-controller` — Deputy CFO / Controller — `unreached`
+- `exec-dept-dol-deputy-cio` — Deputy CIO — `unreached`
+- `exec-dept-dol-deputy-general-counsel` — Deputy General Counsel — `unreached`
+- `exec-dept-dol-deputy-inspector-general` — Deputy Inspector General — `unreached`
+- `exec-dept-dol-director-of-legislative-affairs` — Director of Legislative Affairs — `unreached`
+- `exec-dept-dol-director-of-public-affairs` — Director of Public Affairs — `unreached`
+- `exec-dept-dol-diversity-inclusion-officer` — Diversity & Inclusion Officer — `unreached`
+- `exec-dept-dol-executive-secretary` — Executive Secretary — `unreached`
+- `exec-dept-dol-general-counsel` — General Counsel — `unreached`
 
-## Department of Veterans Affairs (VA)  — 11 unpriced
+## Department of State  — 11 unpriced
 
-`exec-dept-va`
+`exec-dept-state`
 
-- `exec-dept-va-chief-human-capital-officer` — Chief Human Capital Officer — `unreached`
-- `exec-dept-va-chief-of-staff` — Chief of Staff — `unreached`
-- `exec-dept-va-deputy-cfo-controller` — Deputy CFO / Controller — `unreached`
-- `exec-dept-va-deputy-cio` — Deputy CIO — `unreached`
-- `exec-dept-va-deputy-general-counsel` — Deputy General Counsel — `unreached`
-- `exec-dept-va-deputy-inspector-general` — Deputy Inspector General — `unreached`
-- `exec-dept-va-director-of-legislative-affairs` — Director of Legislative Affairs — `unreached`
-- `exec-dept-va-director-of-public-affairs` — Director of Public Affairs — `unreached`
-- `exec-dept-va-diversity-inclusion-officer` — Diversity & Inclusion Officer — `unreached`
-- `exec-dept-va-executive-secretary` — Executive Secretary — `unreached`
-- `exec-dept-va-inspector-general` — Inspector General — `unreached`
+- `exec-dept-state-chief-human-capital-officer` — Chief Human Capital Officer — `unreached`
+- `exec-dept-state-chief-of-staff` — Chief of Staff — `unreached`
+- `exec-dept-state-deputy-cfo-controller` — Deputy CFO / Controller — `unreached`
+- `exec-dept-state-deputy-cio` — Deputy CIO — `unreached`
+- `exec-dept-state-deputy-general-counsel` — Deputy General Counsel — `unreached`
+- `exec-dept-state-deputy-inspector-general` — Deputy Inspector General — `unreached`
+- `exec-dept-state-director-of-legislative-affairs` — Director of Legislative Affairs — `unreached`
+- `exec-dept-state-director-of-public-affairs` — Director of Public Affairs — `unreached`
+- `exec-dept-state-diversity-inclusion-officer` — Diversity & Inclusion Officer — `unreached`
+- `exec-dept-state-executive-secretary` — Executive Secretary — `unreached`
+- `exec-dept-state-general-counsel` — General Counsel — `unreached`
 
-## Department of the Treasury  — 11 unpriced
+## Department of the Interior (DOI)  — 11 unpriced
 
-`exec-dept-treasury`
+`exec-dept-doi`
 
-- `exec-dept-treasury-chief-human-capital-officer` — Chief Human Capital Officer — `unreached`
-- `exec-dept-treasury-chief-of-staff` — Chief of Staff — `unreached`
-- `exec-dept-treasury-deputy-cfo-controller` — Deputy CFO / Controller — `unreached`
-- `exec-dept-treasury-deputy-cio` — Deputy CIO — `unreached`
-- `exec-dept-treasury-deputy-general-counsel` — Deputy General Counsel — `unreached`
-- `exec-dept-treasury-deputy-inspector-general` — Deputy Inspector General — `unreached`
-- `exec-dept-treasury-director-of-legislative-affairs` — Director of Legislative Affairs — `unreached`
-- `exec-dept-treasury-director-of-public-affairs` — Director of Public Affairs — `unreached`
-- `exec-dept-treasury-diversity-inclusion-officer` — Diversity & Inclusion Officer — `unreached`
-- `exec-dept-treasury-executive-secretary` — Executive Secretary — `unreached`
-- `exec-dept-treasury-inspector-general` — Inspector General — `unreached`
+- `exec-dept-doi-chief-human-capital-officer` — Chief Human Capital Officer — `unreached`
+- `exec-dept-doi-chief-of-staff` — Chief of Staff — `unreached`
+- `exec-dept-doi-deputy-cfo-controller` — Deputy CFO / Controller — `unreached`
+- `exec-dept-doi-deputy-cio` — Deputy CIO — `unreached`
+- `exec-dept-doi-deputy-general-counsel` — Deputy General Counsel — `unreached`
+- `exec-dept-doi-deputy-inspector-general` — Deputy Inspector General — `unreached`
+- `exec-dept-doi-director-of-legislative-affairs` — Director of Legislative Affairs — `unreached`
+- `exec-dept-doi-director-of-public-affairs` — Director of Public Affairs — `unreached`
+- `exec-dept-doi-diversity-inclusion-officer` — Diversity & Inclusion Officer — `unreached`
+- `exec-dept-doi-executive-secretary` — Executive Secretary — `unreached`
+- `exec-dept-doi-general-counsel` — General Counsel — `unreached`
 
 ## Drug Enforcement Administration (DEA)  — 11 unpriced
 
@@ -1526,22 +1375,6 @@ same list in the same run.
 - `exec-dept-dot-faa-regional-administrator-9-regions` — Regional Administrator — 9 Regions — `unreached`
 - `exec-dept-dot-faa-tracon-facility-manager-multiple` — TRACON Facility Manager (×multiple) — `multiplicity`
 
-## Government Accountability Office (GAO)  — 11 unpriced
-
-`leg-support-gao`
-
-- `leg-support-gao-chief-administrative-officer` — Chief Administrative Officer — `unreached`
-- `leg-support-gao-chief-financial-officer` — Chief Financial Officer — `unreached`
-- `leg-support-gao-chief-human-capital-officer` — Chief Human Capital Officer — `unreached`
-- `leg-support-gao-chief-information-officer` — Chief Information Officer — `unreached`
-- `leg-support-gao-chief-operating-officer` — Chief Operating Officer — `unreached`
-- `leg-support-gao-comptroller-general-of-the-united-states` — Comptroller General of the United States — `unreached`
-- `leg-support-gao-deputy-comptroller-general` — Deputy Comptroller General — `unreached`
-- `leg-support-gao-director-of-congressional-relations` — Director of Congressional Relations — `unreached`
-- `leg-support-gao-director-of-public-affairs` — Director of Public Affairs — `unreached`
-- `leg-support-gao-general-counsel` — General Counsel — `unreached`
-- `leg-support-gao-inspector-general` — Inspector General — `unreached`
-
 ## National Archives & Records Administration (NARA)  — 11 unpriced
 
 `exec-ind-nara`
@@ -1557,22 +1390,6 @@ same list in the same run.
 - `exec-ind-nara-executive-for-research-services` — Executive for Research Services — `unreached`
 - `exec-ind-nara-general-counsel` — General Counsel — `unreached`
 - `exec-ind-nara-inspector-general` — Inspector General — `unreached`
-
-## Office of Personnel Management (OPM)  — 11 unpriced
-
-`exec-ind-opm`
-
-- `exec-ind-opm-associate-director-employee-services-hr-solutions` — Associate Director — Employee Services (HR Solutions) — `unreached`
-- `exec-ind-opm-associate-director-healthcare-insurance` — Associate Director — Healthcare & Insurance — `unreached`
-- `exec-ind-opm-associate-director-merit-system-accountability-compliance` — Associate Director — Merit System Accountability & Compliance — `unreached`
-- `exec-ind-opm-associate-director-retirement-services` — Associate Director — Retirement Services — `unreached`
-- `exec-ind-opm-chief-financial-officer` — Chief Financial Officer — `unreached`
-- `exec-ind-opm-chief-of-staff` — Chief of Staff — `unreached`
-- `exec-ind-opm-director-federal-investigative-services-background-checks` — Director — Federal Investigative Services (background checks) — `unreached`
-- `exec-ind-opm-director-usajobs-program` — Director — USAJobs Program — `unreached`
-- `exec-ind-opm-general-counsel` — General Counsel — `unreached`
-- `exec-ind-opm-inspector-general` — Inspector General — `unreached`
-- `exec-ind-opm-senior-executive-service-ses-designee` — Senior Executive Service (SES) Designee — `unreached`
 
 ## Office of the U.S. Trade Representative  — 11 unpriced
 
@@ -1620,6 +1437,141 @@ same list in the same run.
 - `leg-support-loc-crs-senior-specialist-multiple` — Senior Specialist (×multiple) — `multiplicity`
 - `leg-support-loc-crs-specialist-multiple` — Specialist (×multiple) — `multiplicity`
 
+## Department of Agriculture (USDA)  — 10 unpriced
+
+`exec-dept-usda`
+
+- `exec-dept-usda-chief-human-capital-officer` — Chief Human Capital Officer — `unreached`
+- `exec-dept-usda-chief-of-staff` — Chief of Staff — `unreached`
+- `exec-dept-usda-deputy-cfo-controller` — Deputy CFO / Controller — `unreached`
+- `exec-dept-usda-deputy-cio` — Deputy CIO — `unreached`
+- `exec-dept-usda-deputy-general-counsel` — Deputy General Counsel — `unreached`
+- `exec-dept-usda-deputy-inspector-general` — Deputy Inspector General — `unreached`
+- `exec-dept-usda-director-of-legislative-affairs` — Director of Legislative Affairs — `unreached`
+- `exec-dept-usda-director-of-public-affairs` — Director of Public Affairs — `unreached`
+- `exec-dept-usda-diversity-inclusion-officer` — Diversity & Inclusion Officer — `unreached`
+- `exec-dept-usda-executive-secretary` — Executive Secretary — `unreached`
+
+## Department of Education  — 10 unpriced
+
+`exec-dept-ed`
+
+- `exec-dept-ed-chief-human-capital-officer` — Chief Human Capital Officer — `unreached`
+- `exec-dept-ed-chief-of-staff` — Chief of Staff — `unreached`
+- `exec-dept-ed-deputy-cfo-controller` — Deputy CFO / Controller — `unreached`
+- `exec-dept-ed-deputy-cio` — Deputy CIO — `unreached`
+- `exec-dept-ed-deputy-general-counsel` — Deputy General Counsel — `unreached`
+- `exec-dept-ed-deputy-inspector-general` — Deputy Inspector General — `unreached`
+- `exec-dept-ed-director-of-legislative-affairs` — Director of Legislative Affairs — `unreached`
+- `exec-dept-ed-director-of-public-affairs` — Director of Public Affairs — `unreached`
+- `exec-dept-ed-diversity-inclusion-officer` — Diversity & Inclusion Officer — `unreached`
+- `exec-dept-ed-executive-secretary` — Executive Secretary — `unreached`
+
+## Department of Energy (DOE)  — 10 unpriced
+
+`exec-dept-doe`
+
+- `exec-dept-doe-chief-human-capital-officer` — Chief Human Capital Officer — `unreached`
+- `exec-dept-doe-chief-of-staff` — Chief of Staff — `unreached`
+- `exec-dept-doe-deputy-cfo-controller` — Deputy CFO / Controller — `unreached`
+- `exec-dept-doe-deputy-cio` — Deputy CIO — `unreached`
+- `exec-dept-doe-deputy-general-counsel` — Deputy General Counsel — `unreached`
+- `exec-dept-doe-deputy-inspector-general` — Deputy Inspector General — `unreached`
+- `exec-dept-doe-director-of-legislative-affairs` — Director of Legislative Affairs — `unreached`
+- `exec-dept-doe-director-of-public-affairs` — Director of Public Affairs — `unreached`
+- `exec-dept-doe-diversity-inclusion-officer` — Diversity & Inclusion Officer — `unreached`
+- `exec-dept-doe-executive-secretary` — Executive Secretary — `unreached`
+
+## Department of Health & Human Services (HHS)  — 10 unpriced
+
+`exec-dept-hhs`
+
+- `exec-dept-hhs-chief-human-capital-officer` — Chief Human Capital Officer — `unreached`
+- `exec-dept-hhs-chief-of-staff` — Chief of Staff — `unreached`
+- `exec-dept-hhs-deputy-cfo-controller` — Deputy CFO / Controller — `unreached`
+- `exec-dept-hhs-deputy-cio` — Deputy CIO — `unreached`
+- `exec-dept-hhs-deputy-general-counsel` — Deputy General Counsel — `unreached`
+- `exec-dept-hhs-deputy-inspector-general` — Deputy Inspector General — `unreached`
+- `exec-dept-hhs-director-of-legislative-affairs` — Director of Legislative Affairs — `unreached`
+- `exec-dept-hhs-director-of-public-affairs` — Director of Public Affairs — `unreached`
+- `exec-dept-hhs-diversity-inclusion-officer` — Diversity & Inclusion Officer — `unreached`
+- `exec-dept-hhs-executive-secretary` — Executive Secretary — `unreached`
+
+## Department of Homeland Security (DHS)  — 10 unpriced
+
+`exec-dept-dhs`
+
+- `exec-dept-dhs-chief-human-capital-officer` — Chief Human Capital Officer — `unreached`
+- `exec-dept-dhs-chief-of-staff` — Chief of Staff — `unreached`
+- `exec-dept-dhs-deputy-cfo-controller` — Deputy CFO / Controller — `unreached`
+- `exec-dept-dhs-deputy-cio` — Deputy CIO — `unreached`
+- `exec-dept-dhs-deputy-general-counsel` — Deputy General Counsel — `unreached`
+- `exec-dept-dhs-deputy-inspector-general` — Deputy Inspector General — `unreached`
+- `exec-dept-dhs-director-of-legislative-affairs` — Director of Legislative Affairs — `unreached`
+- `exec-dept-dhs-director-of-public-affairs` — Director of Public Affairs — `unreached`
+- `exec-dept-dhs-diversity-inclusion-officer` — Diversity & Inclusion Officer — `unreached`
+- `exec-dept-dhs-executive-secretary` — Executive Secretary — `unreached`
+
+## Department of Housing & Urban Development (HUD)  — 10 unpriced
+
+`exec-dept-hud`
+
+- `exec-dept-hud-chief-human-capital-officer` — Chief Human Capital Officer — `unreached`
+- `exec-dept-hud-chief-of-staff` — Chief of Staff — `unreached`
+- `exec-dept-hud-deputy-cfo-controller` — Deputy CFO / Controller — `unreached`
+- `exec-dept-hud-deputy-cio` — Deputy CIO — `unreached`
+- `exec-dept-hud-deputy-general-counsel` — Deputy General Counsel — `unreached`
+- `exec-dept-hud-deputy-inspector-general` — Deputy Inspector General — `unreached`
+- `exec-dept-hud-director-of-legislative-affairs` — Director of Legislative Affairs — `unreached`
+- `exec-dept-hud-director-of-public-affairs` — Director of Public Affairs — `unreached`
+- `exec-dept-hud-diversity-inclusion-officer` — Diversity & Inclusion Officer — `unreached`
+- `exec-dept-hud-executive-secretary` — Executive Secretary — `unreached`
+
+## Department of Transportation (DOT)  — 10 unpriced
+
+`exec-dept-dot`
+
+- `exec-dept-dot-chief-human-capital-officer` — Chief Human Capital Officer — `unreached`
+- `exec-dept-dot-chief-of-staff` — Chief of Staff — `unreached`
+- `exec-dept-dot-deputy-cfo-controller` — Deputy CFO / Controller — `unreached`
+- `exec-dept-dot-deputy-cio` — Deputy CIO — `unreached`
+- `exec-dept-dot-deputy-general-counsel` — Deputy General Counsel — `unreached`
+- `exec-dept-dot-deputy-inspector-general` — Deputy Inspector General — `unreached`
+- `exec-dept-dot-director-of-legislative-affairs` — Director of Legislative Affairs — `unreached`
+- `exec-dept-dot-director-of-public-affairs` — Director of Public Affairs — `unreached`
+- `exec-dept-dot-diversity-inclusion-officer` — Diversity & Inclusion Officer — `unreached`
+- `exec-dept-dot-executive-secretary` — Executive Secretary — `unreached`
+
+## Department of Veterans Affairs (VA)  — 10 unpriced
+
+`exec-dept-va`
+
+- `exec-dept-va-chief-human-capital-officer` — Chief Human Capital Officer — `unreached`
+- `exec-dept-va-chief-of-staff` — Chief of Staff — `unreached`
+- `exec-dept-va-deputy-cfo-controller` — Deputy CFO / Controller — `unreached`
+- `exec-dept-va-deputy-cio` — Deputy CIO — `unreached`
+- `exec-dept-va-deputy-general-counsel` — Deputy General Counsel — `unreached`
+- `exec-dept-va-deputy-inspector-general` — Deputy Inspector General — `unreached`
+- `exec-dept-va-director-of-legislative-affairs` — Director of Legislative Affairs — `unreached`
+- `exec-dept-va-director-of-public-affairs` — Director of Public Affairs — `unreached`
+- `exec-dept-va-diversity-inclusion-officer` — Diversity & Inclusion Officer — `unreached`
+- `exec-dept-va-executive-secretary` — Executive Secretary — `unreached`
+
+## Department of the Treasury  — 10 unpriced
+
+`exec-dept-treasury`
+
+- `exec-dept-treasury-chief-human-capital-officer` — Chief Human Capital Officer — `unreached`
+- `exec-dept-treasury-chief-of-staff` — Chief of Staff — `unreached`
+- `exec-dept-treasury-deputy-cfo-controller` — Deputy CFO / Controller — `unreached`
+- `exec-dept-treasury-deputy-cio` — Deputy CIO — `unreached`
+- `exec-dept-treasury-deputy-general-counsel` — Deputy General Counsel — `unreached`
+- `exec-dept-treasury-deputy-inspector-general` — Deputy Inspector General — `unreached`
+- `exec-dept-treasury-director-of-legislative-affairs` — Director of Legislative Affairs — `unreached`
+- `exec-dept-treasury-director-of-public-affairs` — Director of Public Affairs — `unreached`
+- `exec-dept-treasury-diversity-inclusion-officer` — Diversity & Inclusion Officer — `unreached`
+- `exec-dept-treasury-executive-secretary` — Executive Secretary — `unreached`
+
 ## Federal Law Enforcement Training Centers (FLETC)  — 10 unpriced
 
 `exec-dept-dhs-fletc`
@@ -1665,20 +1617,20 @@ same list in the same run.
 - `exec-regulatory-ftc-regional-director-7-regional-offices` — Regional Director — 7 Regional Offices — `unreached`
 - `exec-regulatory-ftc-staff-attorney-multiple` — Staff Attorney (×multiple) — `multiplicity`
 
-## Social Security Administration (SSA)  — 10 unpriced
+## Office of Personnel Management (OPM)  — 10 unpriced
 
-`exec-ind-ssa`
+`exec-ind-opm`
 
-- `exec-ind-ssa-chief-actuary` — Chief Actuary — `unreached`
-- `exec-ind-ssa-chief-of-staff` — Chief of Staff — `unreached`
-- `exec-ind-ssa-deputy-commissioner-budget-finance-management` — Deputy Commissioner — Budget, Finance & Management — `unreached`
-- `exec-ind-ssa-deputy-commissioner-communications` — Deputy Commissioner — Communications — `unreached`
-- `exec-ind-ssa-deputy-commissioner-human-resources` — Deputy Commissioner — Human Resources — `unreached`
-- `exec-ind-ssa-deputy-commissioner-operations` — Deputy Commissioner — Operations — `unreached`
-- `exec-ind-ssa-deputy-commissioner-retirement-disability-policy` — Deputy Commissioner — Retirement & Disability Policy — `unreached`
-- `exec-ind-ssa-deputy-commissioner-systems-cio` — Deputy Commissioner — Systems (CIO) — `unreached`
-- `exec-ind-ssa-general-counsel` — General Counsel — `unreached`
-- `exec-ind-ssa-inspector-general` — Inspector General — `unreached`
+- `exec-ind-opm-associate-director-employee-services-hr-solutions` — Associate Director — Employee Services (HR Solutions) — `unreached`
+- `exec-ind-opm-associate-director-healthcare-insurance` — Associate Director — Healthcare & Insurance — `unreached`
+- `exec-ind-opm-associate-director-merit-system-accountability-compliance` — Associate Director — Merit System Accountability & Compliance — `unreached`
+- `exec-ind-opm-associate-director-retirement-services` — Associate Director — Retirement Services — `unreached`
+- `exec-ind-opm-chief-financial-officer` — Chief Financial Officer — `unreached`
+- `exec-ind-opm-chief-of-staff` — Chief of Staff — `unreached`
+- `exec-ind-opm-director-federal-investigative-services-background-checks` — Director — Federal Investigative Services (background checks) — `unreached`
+- `exec-ind-opm-director-usajobs-program` — Director — USAJobs Program — `unreached`
+- `exec-ind-opm-general-counsel` — General Counsel — `unreached`
+- `exec-ind-opm-senior-executive-service-ses-designee` — Senior Executive Service (SES) Designee — `unreached`
 
 ## Transportation Security Administration (TSA)  — 10 unpriced
 
@@ -1988,6 +1940,20 @@ same list in the same run.
 - `exec-ind-nasa-goddard-space-flight-center-gsfc-program-manager-multiple` — Program Manager (×multiple) — `multiplicity`
 - `exec-ind-nasa-goddard-space-flight-center-gsfc-research-engineer-scientist-multiple` — Research Engineer / Scientist (×multiple) — `multiplicity`
 
+## Government Accountability Office (GAO)  — 9 unpriced
+
+`leg-support-gao`
+
+- `leg-support-gao-chief-administrative-officer` — Chief Administrative Officer — `unreached`
+- `leg-support-gao-chief-financial-officer` — Chief Financial Officer — `unreached`
+- `leg-support-gao-chief-human-capital-officer` — Chief Human Capital Officer — `unreached`
+- `leg-support-gao-chief-information-officer` — Chief Information Officer — `unreached`
+- `leg-support-gao-chief-operating-officer` — Chief Operating Officer — `unreached`
+- `leg-support-gao-director-of-congressional-relations` — Director of Congressional Relations — `unreached`
+- `leg-support-gao-director-of-public-affairs` — Director of Public Affairs — `unreached`
+- `leg-support-gao-general-counsel` — General Counsel — `unreached`
+- `leg-support-gao-inspector-general` — Inspector General — `unreached`
+
 ## Jet Propulsion Laboratory (JPL)  — 9 unpriced
 
 `exec-ind-nasa-jet-propulsion-laboratory-jpl`
@@ -2072,33 +2038,19 @@ same list in the same run.
 - `exec-dept-doc-nist-director-nist` — Director, NIST — `unreached`
 - `exec-dept-doc-nist-research-scientist-multiple` — Research Scientist (×multiple) — `multiplicity`
 
-## Nuclear Regulatory Commission (NRC)  — 9 unpriced
+## Social Security Administration (SSA)  — 9 unpriced
 
-`exec-regulatory-nrc`
+`exec-ind-ssa`
 
-- `exec-regulatory-nrc-chair-nrc` — Chair, NRC — `unreached`
-- `exec-regulatory-nrc-commissioner-4` — Commissioner (×4) — `multiplicity`
-- `exec-regulatory-nrc-director-office-of-nuclear-material-safety-safeguards` — Director — Office of Nuclear Material Safety & Safeguards — `unreached`
-- `exec-regulatory-nrc-director-office-of-nuclear-reactor-regulation` — Director — Office of Nuclear Reactor Regulation — `unreached`
-- `exec-regulatory-nrc-director-office-of-nuclear-regulatory-research` — Director — Office of Nuclear Regulatory Research — `unreached`
-- `exec-regulatory-nrc-director-office-of-nuclear-security-incident-response` — Director — Office of Nuclear Security & Incident Response — `unreached`
-- `exec-regulatory-nrc-inspector-general` — Inspector General — `unreached`
-- `exec-regulatory-nrc-nuclear-reactor-regulation-specialist-multiple` — Nuclear Reactor Regulation Specialist (×multiple) — `multiplicity`
-- `exec-regulatory-nrc-regional-director-4-regions` — Regional Director — 4 Regions — `unreached`
-
-## Small Business Administration (SBA)  — 9 unpriced
-
-`exec-ind-sba`
-
-- `exec-ind-sba-administrator-sba` — Administrator, SBA — `unreached`
-- `exec-ind-sba-associate-administrator-capital-access` — Associate Administrator — Capital Access — `unreached`
-- `exec-ind-sba-associate-administrator-disaster-assistance` — Associate Administrator — Disaster Assistance — `unreached`
-- `exec-ind-sba-associate-administrator-entrepreneurial-development` — Associate Administrator — Entrepreneurial Development — `unreached`
-- `exec-ind-sba-associate-administrator-government-contracting-business-development` — Associate Administrator — Government Contracting & Business Development — `unreached`
-- `exec-ind-sba-chief-of-staff` — Chief of Staff — `unreached`
-- `exec-ind-sba-general-counsel` — General Counsel — `unreached`
-- `exec-ind-sba-inspector-general` — Inspector General — `unreached`
-- `exec-ind-sba-regional-administrator-10-regions` — Regional Administrator — 10 Regions — `unreached`
+- `exec-ind-ssa-chief-actuary` — Chief Actuary — `unreached`
+- `exec-ind-ssa-chief-of-staff` — Chief of Staff — `unreached`
+- `exec-ind-ssa-deputy-commissioner-budget-finance-management` — Deputy Commissioner — Budget, Finance & Management — `unreached`
+- `exec-ind-ssa-deputy-commissioner-communications` — Deputy Commissioner — Communications — `unreached`
+- `exec-ind-ssa-deputy-commissioner-human-resources` — Deputy Commissioner — Human Resources — `unreached`
+- `exec-ind-ssa-deputy-commissioner-operations` — Deputy Commissioner — Operations — `unreached`
+- `exec-ind-ssa-deputy-commissioner-retirement-disability-policy` — Deputy Commissioner — Retirement & Disability Policy — `unreached`
+- `exec-ind-ssa-deputy-commissioner-systems-cio` — Deputy Commissioner — Systems (CIO) — `unreached`
+- `exec-ind-ssa-general-counsel` — General Counsel — `unreached`
 
 ## Southern District of New York (S.D.N.Y.)  — 9 unpriced
 
@@ -2588,6 +2540,19 @@ same list in the same run.
 - `exec-ind-smithsonian-national-zoo-head-of-education` — Head of Education — `unreached`
 - `exec-ind-smithsonian-national-zoo-head-of-facilities` — Head of Facilities — `unreached`
 
+## Nuclear Regulatory Commission (NRC)  — 8 unpriced
+
+`exec-regulatory-nrc`
+
+- `exec-regulatory-nrc-chair-nrc` — Chair, NRC — `unreached`
+- `exec-regulatory-nrc-commissioner-4` — Commissioner (×4) — `multiplicity`
+- `exec-regulatory-nrc-director-office-of-nuclear-material-safety-safeguards` — Director — Office of Nuclear Material Safety & Safeguards — `unreached`
+- `exec-regulatory-nrc-director-office-of-nuclear-reactor-regulation` — Director — Office of Nuclear Reactor Regulation — `unreached`
+- `exec-regulatory-nrc-director-office-of-nuclear-regulatory-research` — Director — Office of Nuclear Regulatory Research — `unreached`
+- `exec-regulatory-nrc-director-office-of-nuclear-security-incident-response` — Director — Office of Nuclear Security & Incident Response — `unreached`
+- `exec-regulatory-nrc-nuclear-reactor-regulation-specialist-multiple` — Nuclear Reactor Regulation Specialist (×multiple) — `multiplicity`
+- `exec-regulatory-nrc-regional-director-4-regions` — Regional Director — 4 Regions — `unreached`
+
 ## Office of Administration  — 8 unpriced
 
 `exec-eop-onadm`
@@ -2652,6 +2617,19 @@ same list in the same run.
 - `exec-ind-smithsonian-renwick-gallery-head-of-collections-management` — Head of Collections Management — `unreached`
 - `exec-ind-smithsonian-renwick-gallery-head-of-education` — Head of Education — `unreached`
 - `exec-ind-smithsonian-renwick-gallery-head-of-facilities` — Head of Facilities — `unreached`
+
+## Small Business Administration (SBA)  — 8 unpriced
+
+`exec-ind-sba`
+
+- `exec-ind-sba-administrator-sba` — Administrator, SBA — `unreached`
+- `exec-ind-sba-associate-administrator-capital-access` — Associate Administrator — Capital Access — `unreached`
+- `exec-ind-sba-associate-administrator-disaster-assistance` — Associate Administrator — Disaster Assistance — `unreached`
+- `exec-ind-sba-associate-administrator-entrepreneurial-development` — Associate Administrator — Entrepreneurial Development — `unreached`
+- `exec-ind-sba-associate-administrator-government-contracting-business-development` — Associate Administrator — Government Contracting & Business Development — `unreached`
+- `exec-ind-sba-chief-of-staff` — Chief of Staff — `unreached`
+- `exec-ind-sba-general-counsel` — General Counsel — `unreached`
+- `exec-ind-sba-regional-administrator-10-regions` — Regional Administrator — 10 Regions — `unreached`
 
 ## Smithsonian Astrophysical Observatory  — 8 unpriced
 
@@ -3187,18 +3165,6 @@ same list in the same run.
 - `exec-dept-doe-national-renewable-energy-laboratory-postdoctoral-researcher-multiple` — Postdoctoral Researcher (×multiple) — `multiplicity`
 - `exec-dept-doe-national-renewable-energy-laboratory-principal-scientist-researcher-multiple` — Principal Scientist / Researcher (×multiple) — `multiplicity`
 
-## National Reconnaissance Office (NRO)  — 7 unpriced
-
-`exec-dept-defense-agency-nro`
-
-- `exec-dept-defense-agency-nro-chief-financial-officer` — Chief Financial Officer — `unreached`
-- `exec-dept-defense-agency-nro-chief-information-officer` — Chief Information Officer — `unreached`
-- `exec-dept-defense-agency-nro-chief-of-staff` — Chief of Staff — `unreached`
-- `exec-dept-defense-agency-nro-deputy-director-national-reconnaissance-office-nro` — Deputy Director, National Reconnaissance Office (NRO) — `unreached`
-- `exec-dept-defense-agency-nro-director-national-reconnaissance-office-nro` — Director, National Reconnaissance Office (NRO) — `unreached`
-- `exec-dept-defense-agency-nro-general-counsel` — General Counsel — `unreached`
-- `exec-dept-defense-agency-nro-inspector-general` — Inspector General — `unreached`
-
 ## Oak Ridge National Laboratory  — 7 unpriced
 
 `exec-dept-doe-oak-ridge-national-laboratory`
@@ -3694,16 +3660,16 @@ same list in the same run.
 - `exec-ind-nara-lyndon-b-johnson-presidential-library-austin-tx-museum-curator` — Museum Curator — `unreached`
 - `exec-ind-nara-lyndon-b-johnson-presidential-library-austin-tx-supervisory-archivist` — Supervisory Archivist — `unreached`
 
-## National Security Agency (NSA)  — 6 unpriced
+## National Reconnaissance Office (NRO)  — 6 unpriced
 
-`exec-dept-defense-agency-nsa`
+`exec-dept-defense-agency-nro`
 
-- `exec-dept-defense-agency-nsa-chief-financial-officer` — Chief Financial Officer — `unreached`
-- `exec-dept-defense-agency-nsa-chief-information-officer` — Chief Information Officer — `unreached`
-- `exec-dept-defense-agency-nsa-chief-of-staff` — Chief of Staff — `unreached`
-- `exec-dept-defense-agency-nsa-director-national-security-agency-nsa` — Director, National Security Agency (NSA) — `unreached`
-- `exec-dept-defense-agency-nsa-general-counsel` — General Counsel — `unreached`
-- `exec-dept-defense-agency-nsa-inspector-general` — Inspector General — `unreached`
+- `exec-dept-defense-agency-nro-chief-financial-officer` — Chief Financial Officer — `unreached`
+- `exec-dept-defense-agency-nro-chief-information-officer` — Chief Information Officer — `unreached`
+- `exec-dept-defense-agency-nro-chief-of-staff` — Chief of Staff — `unreached`
+- `exec-dept-defense-agency-nro-deputy-director-national-reconnaissance-office-nro` — Deputy Director, National Reconnaissance Office (NRO) — `unreached`
+- `exec-dept-defense-agency-nro-director-national-reconnaissance-office-nro` — Director, National Reconnaissance Office (NRO) — `unreached`
+- `exec-dept-defense-agency-nro-general-counsel` — General Counsel — `unreached`
 
 ## Office of Financial Research (OFR)  — 6 unpriced
 
@@ -3884,16 +3850,6 @@ same list in the same run.
 - `jud-specialized-caaf-chief-judge-navy-marine-court-of-criminal-appeals` — Chief Judge — Navy-Marine Court of Criminal Appeals — `unreached`
 - `jud-specialized-caaf-clerk-of-the-court` — Clerk of the Court — `unreached`
 
-## Export-Import Bank of the U.S.  — 5 unpriced
-
-`exec-ind-misc-export-import-bank-of-the-u-s`
-
-- `exec-ind-misc-export-import-bank-of-the-u-s-chief-financial-officer` — Chief Financial Officer — `unreached`
-- `exec-ind-misc-export-import-bank-of-the-u-s-deputy-director-vice-chair` — Deputy Director / Vice Chair — `unreached`
-- `exec-ind-misc-export-import-bank-of-the-u-s-director-administrator-chair-export-import-bank-of-the-u-s` — Director / Administrator / Chair, Export-Import Bank of the U.S. — `unreached`
-- `exec-ind-misc-export-import-bank-of-the-u-s-general-counsel` — General Counsel — `unreached`
-- `exec-ind-misc-export-import-bank-of-the-u-s-inspector-general` — Inspector General — `unreached`
-
 ## Farm Credit Administration  — 5 unpriced
 
 `exec-ind-misc-farm-credit-administration`
@@ -4004,16 +3960,6 @@ same list in the same run.
 - `exec-dept-dol-msha-district-manager-12` — District Manager (×12) — `multiplicity`
 - `exec-dept-dol-msha-mine-inspector-multiple` — Mine Inspector (×multiple) — `multiplicity`
 
-## National Aeronautics & Space Administration (NASA)  — 5 unpriced
-
-`exec-ind-nasa`
-
-- `exec-ind-nasa-administrator-nasa` — Administrator, NASA — `unreached`
-- `exec-ind-nasa-chief-scientist` — Chief Scientist — `unreached`
-- `exec-ind-nasa-chief-technologist` — Chief Technologist — `unreached`
-- `exec-ind-nasa-chief-of-staff` — Chief of Staff — `unreached`
-- `exec-ind-nasa-inspector-general` — Inspector General — `unreached`
-
 ## National Capital Planning Commission (NCPC)  — 5 unpriced
 
 `exec-ind-misc-national-capital-planning-commission-ncpc`
@@ -4043,6 +3989,16 @@ same list in the same run.
 - `exec-ind-misc-national-endowment-for-the-humanities-neh-director-administrator-chair-national-endowment-for-the-humanities` — Director / Administrator / Chair, National Endowment for the Humanities — `unreached`
 - `exec-ind-misc-national-endowment-for-the-humanities-neh-general-counsel` — General Counsel — `listed_no_rate`
 - `exec-ind-misc-national-endowment-for-the-humanities-neh-inspector-general` — Inspector General — `unreached`
+
+## National Security Agency (NSA)  — 5 unpriced
+
+`exec-dept-defense-agency-nsa`
+
+- `exec-dept-defense-agency-nsa-chief-financial-officer` — Chief Financial Officer — `unreached`
+- `exec-dept-defense-agency-nsa-chief-information-officer` — Chief Information Officer — `unreached`
+- `exec-dept-defense-agency-nsa-chief-of-staff` — Chief of Staff — `unreached`
+- `exec-dept-defense-agency-nsa-director-national-security-agency-nsa` — Director, National Security Agency (NSA) — `unreached`
+- `exec-dept-defense-agency-nsa-general-counsel` — General Counsel — `unreached`
 
 ## National Security Council  — 5 unpriced
 
@@ -4163,16 +4119,6 @@ same list in the same run.
 - `exec-dept-hhs-samhsa-director-center-for-mental-health-services` — Director — Center for Mental Health Services — `unreached`
 - `exec-dept-hhs-samhsa-director-center-for-substance-abuse-prevention` — Director — Center for Substance Abuse Prevention — `unreached`
 - `exec-dept-hhs-samhsa-director-center-for-substance-abuse-treatment` — Director — Center for Substance Abuse Treatment — `unreached`
-
-## Tennessee Valley Authority (TVA)  — 5 unpriced
-
-`exec-ind-misc-tennessee-valley-authority-tva`
-
-- `exec-ind-misc-tennessee-valley-authority-tva-chief-financial-officer` — Chief Financial Officer — `unreached`
-- `exec-ind-misc-tennessee-valley-authority-tva-deputy-director-vice-chair` — Deputy Director / Vice Chair — `unreached`
-- `exec-ind-misc-tennessee-valley-authority-tva-director-administrator-chair-tennessee-valley-authority` — Director / Administrator / Chair, Tennessee Valley Authority — `unreached`
-- `exec-ind-misc-tennessee-valley-authority-tva-general-counsel` — General Counsel — `unreached`
-- `exec-ind-misc-tennessee-valley-authority-tva-inspector-general` — Inspector General — `unreached`
 
 ## U.S. Fish & Wildlife Service (FWS)  — 5 unpriced
 
@@ -4743,15 +4689,6 @@ same list in the same run.
 - `exec-dept-doj-div-enrd-section-chief-multiple` — Section Chief (×multiple) — `multiplicity`
 - `exec-dept-doj-div-enrd-trial-attorney-ausa-multiple` — Trial Attorney / AUSA (×multiple) — `multiplicity`
 
-## Environmental Protection Agency (EPA)  — 4 unpriced
-
-`exec-ind-epa`
-
-- `exec-ind-epa-administrator-epa` — Administrator, EPA — `unreached`
-- `exec-ind-epa-chief-of-staff` — Chief of Staff — `unreached`
-- `exec-ind-epa-general-counsel` — General Counsel — `unreached`
-- `exec-ind-epa-inspector-general` — Inspector General — `unreached`
-
 ## Equal Employment Opportunity Commission (EEOC)  — 4 unpriced
 
 `exec-ind-misc-equal-employment-opportunity-commission-eeoc`
@@ -4760,6 +4697,15 @@ same list in the same run.
 - `exec-ind-misc-equal-employment-opportunity-commission-eeoc-deputy-director-vice-chair` — Deputy Director / Vice Chair — `unreached`
 - `exec-ind-misc-equal-employment-opportunity-commission-eeoc-director-administrator-chair-equal-employment-opportunity-commission` — Director / Administrator / Chair, Equal Employment Opportunity Commission — `unreached`
 - `exec-ind-misc-equal-employment-opportunity-commission-eeoc-inspector-general` — Inspector General — `unreached`
+
+## Export-Import Bank of the U.S.  — 4 unpriced
+
+`exec-ind-misc-export-import-bank-of-the-u-s`
+
+- `exec-ind-misc-export-import-bank-of-the-u-s-chief-financial-officer` — Chief Financial Officer — `unreached`
+- `exec-ind-misc-export-import-bank-of-the-u-s-deputy-director-vice-chair` — Deputy Director / Vice Chair — `unreached`
+- `exec-ind-misc-export-import-bank-of-the-u-s-director-administrator-chair-export-import-bank-of-the-u-s` — Director / Administrator / Chair, Export-Import Bank of the U.S. — `unreached`
+- `exec-ind-misc-export-import-bank-of-the-u-s-general-counsel` — General Counsel — `unreached`
 
 ## Federal Housing Administration (FHA)  — 4 unpriced
 
@@ -5102,6 +5048,15 @@ same list in the same run.
 - `leg-support-cbo-microeconomic-studies-division-chief-microeconomic-studies-division` — Chief, Microeconomic Studies Division — `unreached`
 - `leg-support-cbo-microeconomic-studies-division-deputy-chief-microeconomic-studies-division` — Deputy Chief, Microeconomic Studies Division — `unreached`
 - `leg-support-cbo-microeconomic-studies-division-senior-analyst-microeconomic-studies-division-multiple` — Senior Analyst, Microeconomic Studies Division (×multiple) — `multiplicity`
+
+## National Aeronautics & Space Administration (NASA)  — 4 unpriced
+
+`exec-ind-nasa`
+
+- `exec-ind-nasa-administrator-nasa` — Administrator, NASA — `unreached`
+- `exec-ind-nasa-chief-scientist` — Chief Scientist — `unreached`
+- `exec-ind-nasa-chief-technologist` — Chief Technologist — `unreached`
+- `exec-ind-nasa-chief-of-staff` — Chief of Staff — `unreached`
 
 ## National Cemetery Administration (NCA)  — 4 unpriced
 
@@ -5625,6 +5580,15 @@ same list in the same run.
 - `exec-dept-doj-div-tax-section-chief-multiple` — Section Chief (×multiple) — `multiplicity`
 - `exec-dept-doj-div-tax-trial-attorney-ausa-multiple` — Trial Attorney / AUSA (×multiple) — `multiplicity`
 
+## Tennessee Valley Authority (TVA)  — 4 unpriced
+
+`exec-ind-misc-tennessee-valley-authority-tva`
+
+- `exec-ind-misc-tennessee-valley-authority-tva-chief-financial-officer` — Chief Financial Officer — `unreached`
+- `exec-ind-misc-tennessee-valley-authority-tva-deputy-director-vice-chair` — Deputy Director / Vice Chair — `unreached`
+- `exec-ind-misc-tennessee-valley-authority-tva-director-administrator-chair-tennessee-valley-authority` — Director / Administrator / Chair, Tennessee Valley Authority — `unreached`
+- `exec-ind-misc-tennessee-valley-authority-tva-general-counsel` — General Counsel — `unreached`
+
 ## U.S. Agency for Global Media  — 4 unpriced
 
 `exec-ind-misc-broadcasting-board-of-governors-usagm`
@@ -6103,6 +6067,14 @@ same list in the same run.
 - `leg-senate-cmte-finance-sub-energy-natural-resources-infrastructure-chair-subcommittee-on-energy-natural-resources-infrastructure` — Chair, Subcommittee on Energy, Natural Resources & Infrastructure — `unreached`
 - `leg-senate-cmte-finance-sub-energy-natural-resources-infrastructure-ranking-member-subcommittee-on-energy-natural-resources-infrastructure` — Ranking Member, Subcommittee on Energy, Natural Resources & Infrastructure — `unreached`
 - `leg-senate-cmte-finance-sub-energy-natural-resources-infrastructure-staff-director-subcommittee-on-energy-natural-resources-infrastructure` — Staff Director, Subcommittee on Energy, Natural Resources & Infrastructure — `unreached`
+
+## Environmental Protection Agency (EPA)  — 3 unpriced
+
+`exec-ind-epa`
+
+- `exec-ind-epa-administrator-epa` — Administrator, EPA — `unreached`
+- `exec-ind-epa-chief-of-staff` — Chief of Staff — `unreached`
+- `exec-ind-epa-general-counsel` — General Counsel — `unreached`
 
 ## Europe & Regional Security Cooperation  — 3 unpriced
 

@@ -225,6 +225,12 @@ EVIDENCE_OWNED_FIELDS = (
     # rest, so a repealed parity provision or a retired tier really does take
     # the figure off the site rather than leaving it on the re-fed graph.
     "positionDerivedPay",
+    # Written by tier_reference_pay.py: a statute sets the post's pay by
+    # reference to an Executive Schedule level (the GAO's officers; the
+    # Inspectors General of 5 U.S.C. 401's establishments). Withdrawn with
+    # the rest so a repealed reference or a delisted establishment takes the
+    # figure off the site.
+    "positionTierReferencePay",
     # Written by judicial_pay.py and congressional_pay.py, withdrawn here
     # with the rest for the same reason: a statutory-pay claim that is no
     # longer supported (the table stops naming this tier, the node is

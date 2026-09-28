@@ -559,7 +559,7 @@ INCUMBENCY_PAY_FIELDS = ("positionPayRate", "positionGradePay", "positionCurrent
 #: holder alike: a statutory tier rate, a parity-derived tier rate, a Title 38
 #: band. On a multi-post node these stay, stamped with `holders` so the panel
 #: says "each of the N is paid this" rather than "one of them is".
-OFFICE_RATE_PAY_FIELDS = ("positionStatutoryPay", "positionDerivedPay", "positionTierPay")
+OFFICE_RATE_PAY_FIELDS = ("positionStatutoryPay", "positionDerivedPay", "positionTierPay", "positionTierReferencePay")
 
 #: A roster figure is one listed person's pay -- unless the roster lists every
 #: person under the title at the SAME rate, which the block must say itself

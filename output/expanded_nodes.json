@@ -15814,7 +15814,82 @@
     },
     "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
     "evidenceVerifiedAt": "2025-12-31",
-    "parentId": "leg-support-gao"
+    "parentId": "leg-support-gao",
+    "positionTierReferencePay": {
+      "source": "statutory_tier_reference_pay",
+      "sourceLabel": "a statute setting the post's pay by reference to an Executive Schedule level, joined to OPM's table",
+      "method": "pay_set_by_reference_to_an_executive_schedule_level_joined_to_opm_table",
+      "amount": 228000.0,
+      "rateText": "$228,000",
+      "level": "II",
+      "levelText": "Level II",
+      "levelRateText": "$228,000",
+      "levelAmount": 228000.0,
+      "percent": 0,
+      "arithmetic": null,
+      "office": "Comptroller General",
+      "statute": "31 U.S.C. 703(f)(1)",
+      "statuteQuote": "Comptroller General is equal to the rate for level II of the Executive Schedule",
+      "identification": {
+        "kind": "reviewed_row",
+        "nodeName": "Comptroller General of the United States"
+      },
+      "derivation": "31 U.S.C. 703(f)(1) (f): “Comptroller General is equal to the rate for level II of the Executive Schedule” · Salary Table No. 2026-EX, Effective January 2026: Level II $228,000",
+      "quote": "31 U.S.C. 703(f)(1) (f): “Comptroller General is equal to the rate for level II of the Executive Schedule” · Salary Table No. 2026-EX, Effective January 2026: Level II $228,000",
+      "documents": [
+        {
+          "role": "sets this post's basic pay by reference to Executive Schedule Level II",
+          "citation": "31 U.S.C. 703(f)(1)",
+          "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+          "title": "31 U.S.C. 703(f)(1), current through the prelim edition",
+          "quote": "Comptroller General is equal to the rate for level II of the Executive Schedule",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title31-section703&num=0&edition=prelim",
+          "documentSha256": "bea4dd6d430c5148d0086bf25aef5cda0928821e85213dcf1d9f7205d5c4c015",
+          "retrievedAt": "2026-09-27T22:10:20Z",
+          "statesTheFigure": false
+        },
+        {
+          "role": "states what that Executive Schedule level pays",
+          "citation": "Salary Table No. 2026-EX, Effective January 2026",
+          "publisher": "U.S. Office of Personnel Management",
+          "title": "Salary Table No. 2026-EX",
+          "quote": "Level II $228,000",
+          "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+          "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+          "retrievedAt": "2026-09-11T03:05:36Z",
+          "statesTheFigure": false
+        }
+      ],
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level II",
+      "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title31-section703&num=0&edition=prelim",
+      "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-27T22:10:20Z",
+      "verification": {
+        "documents": 2,
+        "documentsStatingTheFigure": 0,
+        "percent": 80,
+        "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+        "caution": "The percentage measures how much official documentation this figure rests on, not the chance that it is right. No document here states the figure for this post: a statute sets its pay by reference to an Executive Schedule level, and OPM's table states what that level pays; where the statute adds a percentage, the result is arithmetic this project performed and no document prints.",
+        "documentRoles": [
+          {
+            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title31-section703&num=0&edition=prelim"
+          },
+          {
+            "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx"
+          }
+        ]
+      }
+    }
   },
   {
     "id": "leg-support-gao-chief-operating-officer",
@@ -25545,7 +25620,108 @@
     },
     "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
     "evidenceVerifiedAt": "2025-12-31",
-    "parentId": "exec-dept-state"
+    "parentId": "exec-dept-state",
+    "positionTierReferencePay": {
+      "source": "statutory_tier_reference_pay",
+      "sourceLabel": "a statute setting the post's pay by reference to an Executive Schedule level, joined to OPM's table",
+      "method": "pay_set_by_reference_to_an_executive_schedule_level_plus_a_statutory_percentage_joined_to_opm_table",
+      "amount": 215888.0,
+      "rateText": "$215,888",
+      "level": "III",
+      "levelText": "Level III",
+      "levelRateText": "$209,600",
+      "levelAmount": 209600.0,
+      "percent": 3,
+      "arithmetic": {
+        "operation": "plus_percent",
+        "baseAmount": 209600.0,
+        "baseAmountRaw": "209,600",
+        "baseText": "$209,600",
+        "baseLevel": "III",
+        "percent": 3,
+        "result": 215888.0,
+        "resultText": "$215,888",
+        "note": "No document prints $215,888. 5 U.S.C. 403(e) sets the rate at Level III's plus 3 percent, and Salary Table No. 2026-EX prints $209,600 for Level III; the figure is that arithmetic and nothing more."
+      },
+      "office": "Inspector General",
+      "statute": "5 U.S.C. 403(e)",
+      "statuteQuote": "The annual rate of basic pay for an Inspector General (as defined under section 401 of this title ) shall be the rate payable for level III of the Executive Schedule under section 5314 of this title , plus 3 percent.",
+      "identification": {
+        "kind": "establishment_listed_in_5_usc_401",
+        "establishment": "Department of State",
+        "organisationId": "exec-dept-state",
+        "organisationName": "Department of State"
+      },
+      "derivation": "5 U.S.C. 403(e) (e) Rate of Pay: “The annual rate of basic pay for an Inspector General (as defined under section 401 of this title ) shall be the rate payable for level III of the Executive Schedule under section 5314 of this title , plus 3 percent.” · Salary Table No. 2026-EX, Effective January 2026: Level III $209,600 · $209,600 + 3% = $215,888",
+      "quote": "5 U.S.C. 403(e) (e) Rate of Pay: “The annual rate of basic pay for an Inspector General (as defined under section 401 of this title ) shall be the rate payable for level III of the Executive Schedule under section 5314 of this title , plus 3 percent.” · Salary Table No. 2026-EX, Effective January 2026: Level III $209,600 · $209,600 + 3% = $215,888",
+      "documents": [
+        {
+          "role": "sets this post's basic pay by reference to Executive Schedule Level III, plus 3 percent",
+          "citation": "5 U.S.C. 403(e)",
+          "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+          "title": "5 U.S.C. 403(e), current through the prelim edition",
+          "quote": "The annual rate of basic pay for an Inspector General (as defined under section 401 of this title ) shall be the rate payable for level III of the Executive Schedule under section 5314 of this title , plus 3 percent.",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section403&num=0&edition=prelim",
+          "documentSha256": "03a99dce101efc898df802eb8a3b5f73636e82f65b8f12370755c83fe0d05a12",
+          "retrievedAt": "2026-09-27T22:10:09Z",
+          "statesTheFigure": false
+        },
+        {
+          "role": "states what that Executive Schedule level pays",
+          "citation": "Salary Table No. 2026-EX, Effective January 2026",
+          "publisher": "U.S. Office of Personnel Management",
+          "title": "Salary Table No. 2026-EX",
+          "quote": "Level III $209,600",
+          "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+          "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+          "retrievedAt": "2026-09-11T03:05:36Z",
+          "statesTheFigure": false
+        },
+        {
+          "role": "lists the establishments whose Inspector General 403(e) prices, and this post's organisation is one of them",
+          "citation": "5 U.S.C. 401(1)",
+          "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+          "title": "5 U.S.C. 401(1), current through the prelim edition",
+          "quote": "The term \"Inspector General\" means the Inspector General of an establishment. The term \"establishment\" means the Department of Agriculture, Commerce, Defense, Education, Energy, Health and Human Services, Housing and Urban Development, the Interior, Justice, Labor, State, Transportation, Homeland Security, the Treasury, or Veterans Affairs; the Agency for International Development, the Community Development Financial Institutions Fund, the Environmental Protection Agency, the Federal Communications Commission, the Federal Emergency Management Agency, the General Services Administration, the National Aeronautics and Space Administration, the Nuclear Regulatory Commission, the Office of Personnel Management, the Railroad Retirement Board, the Federal Deposit Insurance Corporation, the Small Business Administration, the Corporation for National and Community Service, the Social Security Administration, the Federal Housing Finance Agency, the Tennessee Valley Authority, the Export-Import Bank of the United States, the Commissions established under section 15301 of title 40 , the National Security Agency, or the National Reconnaissance Office, as the case may be.",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section401&num=0&edition=prelim",
+          "documentSha256": "3d4e3bdba96bd0b152c5feb3f006752a2693223726fce81d58ff9683497c4a1e",
+          "retrievedAt": "2026-09-28T17:40:54Z",
+          "statesTheFigure": false
+        }
+      ],
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level III plus 3 percent",
+      "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section403&num=0&edition=prelim",
+      "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-27T22:10:09Z",
+      "verification": {
+        "documents": 3,
+        "documentsStatingTheFigure": 0,
+        "percent": 90,
+        "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+        "caution": "The percentage measures how much official documentation this figure rests on, not the chance that it is right. No document here states the figure for this post: a statute sets its pay by reference to an Executive Schedule level, and OPM's table states what that level pays; where the statute adds a percentage, the result is arithmetic this project performed and no document prints.",
+        "documentRoles": [
+          {
+            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section403&num=0&edition=prelim"
+          },
+          {
+            "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx"
+          },
+          {
+            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section401&num=0&edition=prelim"
+          }
+        ]
+      }
+    }
   },
   {
     "id": "exec-dept-state-bureau-of-african-affairs-deputy-assistant-secretary-2-4-bureau-of-african-affairs",
@@ -27734,7 +27910,108 @@
     "verificationMethod": "name_labelled_on_its_organisations_official_page",
     "verificationMatchedIn": "content",
     "verificationSiteFrom": "exec-dept-treasury",
-    "parentId": "exec-dept-treasury"
+    "parentId": "exec-dept-treasury",
+    "positionTierReferencePay": {
+      "source": "statutory_tier_reference_pay",
+      "sourceLabel": "a statute setting the post's pay by reference to an Executive Schedule level, joined to OPM's table",
+      "method": "pay_set_by_reference_to_an_executive_schedule_level_plus_a_statutory_percentage_joined_to_opm_table",
+      "amount": 215888.0,
+      "rateText": "$215,888",
+      "level": "III",
+      "levelText": "Level III",
+      "levelRateText": "$209,600",
+      "levelAmount": 209600.0,
+      "percent": 3,
+      "arithmetic": {
+        "operation": "plus_percent",
+        "baseAmount": 209600.0,
+        "baseAmountRaw": "209,600",
+        "baseText": "$209,600",
+        "baseLevel": "III",
+        "percent": 3,
+        "result": 215888.0,
+        "resultText": "$215,888",
+        "note": "No document prints $215,888. 5 U.S.C. 403(e) sets the rate at Level III's plus 3 percent, and Salary Table No. 2026-EX prints $209,600 for Level III; the figure is that arithmetic and nothing more."
+      },
+      "office": "Inspector General",
+      "statute": "5 U.S.C. 403(e)",
+      "statuteQuote": "The annual rate of basic pay for an Inspector General (as defined under section 401 of this title ) shall be the rate payable for level III of the Executive Schedule under section 5314 of this title , plus 3 percent.",
+      "identification": {
+        "kind": "establishment_listed_in_5_usc_401",
+        "establishment": "Department of the Treasury",
+        "organisationId": "exec-dept-treasury",
+        "organisationName": "Department of the Treasury"
+      },
+      "derivation": "5 U.S.C. 403(e) (e) Rate of Pay: “The annual rate of basic pay for an Inspector General (as defined under section 401 of this title ) shall be the rate payable for level III of the Executive Schedule under section 5314 of this title , plus 3 percent.” · Salary Table No. 2026-EX, Effective January 2026: Level III $209,600 · $209,600 + 3% = $215,888",
+      "quote": "5 U.S.C. 403(e) (e) Rate of Pay: “The annual rate of basic pay for an Inspector General (as defined under section 401 of this title ) shall be the rate payable for level III of the Executive Schedule under section 5314 of this title , plus 3 percent.” · Salary Table No. 2026-EX, Effective January 2026: Level III $209,600 · $209,600 + 3% = $215,888",
+      "documents": [
+        {
+          "role": "sets this post's basic pay by reference to Executive Schedule Level III, plus 3 percent",
+          "citation": "5 U.S.C. 403(e)",
+          "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+          "title": "5 U.S.C. 403(e), current through the prelim edition",
+          "quote": "The annual rate of basic pay for an Inspector General (as defined under section 401 of this title ) shall be the rate payable for level III of the Executive Schedule under section 5314 of this title , plus 3 percent.",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section403&num=0&edition=prelim",
+          "documentSha256": "03a99dce101efc898df802eb8a3b5f73636e82f65b8f12370755c83fe0d05a12",
+          "retrievedAt": "2026-09-27T22:10:09Z",
+          "statesTheFigure": false
+        },
+        {
+          "role": "states what that Executive Schedule level pays",
+          "citation": "Salary Table No. 2026-EX, Effective January 2026",
+          "publisher": "U.S. Office of Personnel Management",
+          "title": "Salary Table No. 2026-EX",
+          "quote": "Level III $209,600",
+          "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+          "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+          "retrievedAt": "2026-09-11T03:05:36Z",
+          "statesTheFigure": false
+        },
+        {
+          "role": "lists the establishments whose Inspector General 403(e) prices, and this post's organisation is one of them",
+          "citation": "5 U.S.C. 401(1)",
+          "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+          "title": "5 U.S.C. 401(1), current through the prelim edition",
+          "quote": "The term \"Inspector General\" means the Inspector General of an establishment. The term \"establishment\" means the Department of Agriculture, Commerce, Defense, Education, Energy, Health and Human Services, Housing and Urban Development, the Interior, Justice, Labor, State, Transportation, Homeland Security, the Treasury, or Veterans Affairs; the Agency for International Development, the Community Development Financial Institutions Fund, the Environmental Protection Agency, the Federal Communications Commission, the Federal Emergency Management Agency, the General Services Administration, the National Aeronautics and Space Administration, the Nuclear Regulatory Commission, the Office of Personnel Management, the Railroad Retirement Board, the Federal Deposit Insurance Corporation, the Small Business Administration, the Corporation for National and Community Service, the Social Security Administration, the Federal Housing Finance Agency, the Tennessee Valley Authority, the Export-Import Bank of the United States, the Commissions established under section 15301 of title 40 , the National Security Agency, or the National Reconnaissance Office, as the case may be.",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section401&num=0&edition=prelim",
+          "documentSha256": "3d4e3bdba96bd0b152c5feb3f006752a2693223726fce81d58ff9683497c4a1e",
+          "retrievedAt": "2026-09-28T17:40:54Z",
+          "statesTheFigure": false
+        }
+      ],
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level III plus 3 percent",
+      "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section403&num=0&edition=prelim",
+      "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-27T22:10:09Z",
+      "verification": {
+        "documents": 3,
+        "documentsStatingTheFigure": 0,
+        "percent": 90,
+        "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+        "caution": "The percentage measures how much official documentation this figure rests on, not the chance that it is right. No document here states the figure for this post: a statute sets its pay by reference to an Executive Schedule level, and OPM's table states what that level pays; where the statute adds a percentage, the result is arithmetic this project performed and no document prints.",
+        "documentRoles": [
+          {
+            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section403&num=0&edition=prelim"
+          },
+          {
+            "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx"
+          },
+          {
+            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section401&num=0&edition=prelim"
+          }
+        ]
+      }
+    }
   },
   {
     "id": "exec-dept-treasury-irs",
@@ -30356,7 +30633,108 @@
     },
     "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
     "evidenceVerifiedAt": "2025-12-31",
-    "parentId": "exec-dept-defense"
+    "parentId": "exec-dept-defense",
+    "positionTierReferencePay": {
+      "source": "statutory_tier_reference_pay",
+      "sourceLabel": "a statute setting the post's pay by reference to an Executive Schedule level, joined to OPM's table",
+      "method": "pay_set_by_reference_to_an_executive_schedule_level_plus_a_statutory_percentage_joined_to_opm_table",
+      "amount": 215888.0,
+      "rateText": "$215,888",
+      "level": "III",
+      "levelText": "Level III",
+      "levelRateText": "$209,600",
+      "levelAmount": 209600.0,
+      "percent": 3,
+      "arithmetic": {
+        "operation": "plus_percent",
+        "baseAmount": 209600.0,
+        "baseAmountRaw": "209,600",
+        "baseText": "$209,600",
+        "baseLevel": "III",
+        "percent": 3,
+        "result": 215888.0,
+        "resultText": "$215,888",
+        "note": "No document prints $215,888. 5 U.S.C. 403(e) sets the rate at Level III's plus 3 percent, and Salary Table No. 2026-EX prints $209,600 for Level III; the figure is that arithmetic and nothing more."
+      },
+      "office": "Inspector General",
+      "statute": "5 U.S.C. 403(e)",
+      "statuteQuote": "The annual rate of basic pay for an Inspector General (as defined under section 401 of this title ) shall be the rate payable for level III of the Executive Schedule under section 5314 of this title , plus 3 percent.",
+      "identification": {
+        "kind": "establishment_listed_in_5_usc_401",
+        "establishment": "Department of Defense",
+        "organisationId": "exec-dept-defense",
+        "organisationName": "Department of Defense (DoD)"
+      },
+      "derivation": "5 U.S.C. 403(e) (e) Rate of Pay: “The annual rate of basic pay for an Inspector General (as defined under section 401 of this title ) shall be the rate payable for level III of the Executive Schedule under section 5314 of this title , plus 3 percent.” · Salary Table No. 2026-EX, Effective January 2026: Level III $209,600 · $209,600 + 3% = $215,888",
+      "quote": "5 U.S.C. 403(e) (e) Rate of Pay: “The annual rate of basic pay for an Inspector General (as defined under section 401 of this title ) shall be the rate payable for level III of the Executive Schedule under section 5314 of this title , plus 3 percent.” · Salary Table No. 2026-EX, Effective January 2026: Level III $209,600 · $209,600 + 3% = $215,888",
+      "documents": [
+        {
+          "role": "sets this post's basic pay by reference to Executive Schedule Level III, plus 3 percent",
+          "citation": "5 U.S.C. 403(e)",
+          "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+          "title": "5 U.S.C. 403(e), current through the prelim edition",
+          "quote": "The annual rate of basic pay for an Inspector General (as defined under section 401 of this title ) shall be the rate payable for level III of the Executive Schedule under section 5314 of this title , plus 3 percent.",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section403&num=0&edition=prelim",
+          "documentSha256": "03a99dce101efc898df802eb8a3b5f73636e82f65b8f12370755c83fe0d05a12",
+          "retrievedAt": "2026-09-27T22:10:09Z",
+          "statesTheFigure": false
+        },
+        {
+          "role": "states what that Executive Schedule level pays",
+          "citation": "Salary Table No. 2026-EX, Effective January 2026",
+          "publisher": "U.S. Office of Personnel Management",
+          "title": "Salary Table No. 2026-EX",
+          "quote": "Level III $209,600",
+          "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+          "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+          "retrievedAt": "2026-09-11T03:05:36Z",
+          "statesTheFigure": false
+        },
+        {
+          "role": "lists the establishments whose Inspector General 403(e) prices, and this post's organisation is one of them",
+          "citation": "5 U.S.C. 401(1)",
+          "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+          "title": "5 U.S.C. 401(1), current through the prelim edition",
+          "quote": "The term \"Inspector General\" means the Inspector General of an establishment. The term \"establishment\" means the Department of Agriculture, Commerce, Defense, Education, Energy, Health and Human Services, Housing and Urban Development, the Interior, Justice, Labor, State, Transportation, Homeland Security, the Treasury, or Veterans Affairs; the Agency for International Development, the Community Development Financial Institutions Fund, the Environmental Protection Agency, the Federal Communications Commission, the Federal Emergency Management Agency, the General Services Administration, the National Aeronautics and Space Administration, the Nuclear Regulatory Commission, the Office of Personnel Management, the Railroad Retirement Board, the Federal Deposit Insurance Corporation, the Small Business Administration, the Corporation for National and Community Service, the Social Security Administration, the Federal Housing Finance Agency, the Tennessee Valley Authority, the Export-Import Bank of the United States, the Commissions established under section 15301 of title 40 , the National Security Agency, or the National Reconnaissance Office, as the case may be.",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section401&num=0&edition=prelim",
+          "documentSha256": "3d4e3bdba96bd0b152c5feb3f006752a2693223726fce81d58ff9683497c4a1e",
+          "retrievedAt": "2026-09-28T17:40:54Z",
+          "statesTheFigure": false
+        }
+      ],
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level III plus 3 percent",
+      "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section403&num=0&edition=prelim",
+      "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-27T22:10:09Z",
+      "verification": {
+        "documents": 3,
+        "documentsStatingTheFigure": 0,
+        "percent": 90,
+        "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+        "caution": "The percentage measures how much official documentation this figure rests on, not the chance that it is right. No document here states the figure for this post: a statute sets its pay by reference to an Executive Schedule level, and OPM's table states what that level pays; where the statute adds a percentage, the result is arithmetic this project performed and no document prints.",
+        "documentRoles": [
+          {
+            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section403&num=0&edition=prelim"
+          },
+          {
+            "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx"
+          },
+          {
+            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section401&num=0&edition=prelim"
+          }
+        ]
+      }
+    }
   },
   {
     "id": "exec-dept-defense-general-counsel",
@@ -41398,7 +41776,108 @@
     },
     "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
     "evidenceVerifiedAt": "2025-12-31",
-    "parentId": "exec-dept-usda"
+    "parentId": "exec-dept-usda",
+    "positionTierReferencePay": {
+      "source": "statutory_tier_reference_pay",
+      "sourceLabel": "a statute setting the post's pay by reference to an Executive Schedule level, joined to OPM's table",
+      "method": "pay_set_by_reference_to_an_executive_schedule_level_plus_a_statutory_percentage_joined_to_opm_table",
+      "amount": 215888.0,
+      "rateText": "$215,888",
+      "level": "III",
+      "levelText": "Level III",
+      "levelRateText": "$209,600",
+      "levelAmount": 209600.0,
+      "percent": 3,
+      "arithmetic": {
+        "operation": "plus_percent",
+        "baseAmount": 209600.0,
+        "baseAmountRaw": "209,600",
+        "baseText": "$209,600",
+        "baseLevel": "III",
+        "percent": 3,
+        "result": 215888.0,
+        "resultText": "$215,888",
+        "note": "No document prints $215,888. 5 U.S.C. 403(e) sets the rate at Level III's plus 3 percent, and Salary Table No. 2026-EX prints $209,600 for Level III; the figure is that arithmetic and nothing more."
+      },
+      "office": "Inspector General",
+      "statute": "5 U.S.C. 403(e)",
+      "statuteQuote": "The annual rate of basic pay for an Inspector General (as defined under section 401 of this title ) shall be the rate payable for level III of the Executive Schedule under section 5314 of this title , plus 3 percent.",
+      "identification": {
+        "kind": "establishment_listed_in_5_usc_401",
+        "establishment": "Department of Agriculture",
+        "organisationId": "exec-dept-usda",
+        "organisationName": "Department of Agriculture (USDA)"
+      },
+      "derivation": "5 U.S.C. 403(e) (e) Rate of Pay: “The annual rate of basic pay for an Inspector General (as defined under section 401 of this title ) shall be the rate payable for level III of the Executive Schedule under section 5314 of this title , plus 3 percent.” · Salary Table No. 2026-EX, Effective January 2026: Level III $209,600 · $209,600 + 3% = $215,888",
+      "quote": "5 U.S.C. 403(e) (e) Rate of Pay: “The annual rate of basic pay for an Inspector General (as defined under section 401 of this title ) shall be the rate payable for level III of the Executive Schedule under section 5314 of this title , plus 3 percent.” · Salary Table No. 2026-EX, Effective January 2026: Level III $209,600 · $209,600 + 3% = $215,888",
+      "documents": [
+        {
+          "role": "sets this post's basic pay by reference to Executive Schedule Level III, plus 3 percent",
+          "citation": "5 U.S.C. 403(e)",
+          "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+          "title": "5 U.S.C. 403(e), current through the prelim edition",
+          "quote": "The annual rate of basic pay for an Inspector General (as defined under section 401 of this title ) shall be the rate payable for level III of the Executive Schedule under section 5314 of this title , plus 3 percent.",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section403&num=0&edition=prelim",
+          "documentSha256": "03a99dce101efc898df802eb8a3b5f73636e82f65b8f12370755c83fe0d05a12",
+          "retrievedAt": "2026-09-27T22:10:09Z",
+          "statesTheFigure": false
+        },
+        {
+          "role": "states what that Executive Schedule level pays",
+          "citation": "Salary Table No. 2026-EX, Effective January 2026",
+          "publisher": "U.S. Office of Personnel Management",
+          "title": "Salary Table No. 2026-EX",
+          "quote": "Level III $209,600",
+          "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+          "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+          "retrievedAt": "2026-09-11T03:05:36Z",
+          "statesTheFigure": false
+        },
+        {
+          "role": "lists the establishments whose Inspector General 403(e) prices, and this post's organisation is one of them",
+          "citation": "5 U.S.C. 401(1)",
+          "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+          "title": "5 U.S.C. 401(1), current through the prelim edition",
+          "quote": "The term \"Inspector General\" means the Inspector General of an establishment. The term \"establishment\" means the Department of Agriculture, Commerce, Defense, Education, Energy, Health and Human Services, Housing and Urban Development, the Interior, Justice, Labor, State, Transportation, Homeland Security, the Treasury, or Veterans Affairs; the Agency for International Development, the Community Development Financial Institutions Fund, the Environmental Protection Agency, the Federal Communications Commission, the Federal Emergency Management Agency, the General Services Administration, the National Aeronautics and Space Administration, the Nuclear Regulatory Commission, the Office of Personnel Management, the Railroad Retirement Board, the Federal Deposit Insurance Corporation, the Small Business Administration, the Corporation for National and Community Service, the Social Security Administration, the Federal Housing Finance Agency, the Tennessee Valley Authority, the Export-Import Bank of the United States, the Commissions established under section 15301 of title 40 , the National Security Agency, or the National Reconnaissance Office, as the case may be.",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section401&num=0&edition=prelim",
+          "documentSha256": "3d4e3bdba96bd0b152c5feb3f006752a2693223726fce81d58ff9683497c4a1e",
+          "retrievedAt": "2026-09-28T17:40:54Z",
+          "statesTheFigure": false
+        }
+      ],
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level III plus 3 percent",
+      "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section403&num=0&edition=prelim",
+      "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-27T22:10:09Z",
+      "verification": {
+        "documents": 3,
+        "documentsStatingTheFigure": 0,
+        "percent": 90,
+        "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+        "caution": "The percentage measures how much official documentation this figure rests on, not the chance that it is right. No document here states the figure for this post: a statute sets its pay by reference to an Executive Schedule level, and OPM's table states what that level pays; where the statute adds a percentage, the result is arithmetic this project performed and no document prints.",
+        "documentRoles": [
+          {
+            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section403&num=0&edition=prelim"
+          },
+          {
+            "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx"
+          },
+          {
+            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section401&num=0&edition=prelim"
+          }
+        ]
+      }
+    }
   },
   {
     "id": "exec-dept-usda-fsa",
@@ -43710,7 +44189,108 @@
     },
     "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
     "evidenceVerifiedAt": "2025-12-31",
-    "parentId": "exec-dept-doc"
+    "parentId": "exec-dept-doc",
+    "positionTierReferencePay": {
+      "source": "statutory_tier_reference_pay",
+      "sourceLabel": "a statute setting the post's pay by reference to an Executive Schedule level, joined to OPM's table",
+      "method": "pay_set_by_reference_to_an_executive_schedule_level_plus_a_statutory_percentage_joined_to_opm_table",
+      "amount": 215888.0,
+      "rateText": "$215,888",
+      "level": "III",
+      "levelText": "Level III",
+      "levelRateText": "$209,600",
+      "levelAmount": 209600.0,
+      "percent": 3,
+      "arithmetic": {
+        "operation": "plus_percent",
+        "baseAmount": 209600.0,
+        "baseAmountRaw": "209,600",
+        "baseText": "$209,600",
+        "baseLevel": "III",
+        "percent": 3,
+        "result": 215888.0,
+        "resultText": "$215,888",
+        "note": "No document prints $215,888. 5 U.S.C. 403(e) sets the rate at Level III's plus 3 percent, and Salary Table No. 2026-EX prints $209,600 for Level III; the figure is that arithmetic and nothing more."
+      },
+      "office": "Inspector General",
+      "statute": "5 U.S.C. 403(e)",
+      "statuteQuote": "The annual rate of basic pay for an Inspector General (as defined under section 401 of this title ) shall be the rate payable for level III of the Executive Schedule under section 5314 of this title , plus 3 percent.",
+      "identification": {
+        "kind": "establishment_listed_in_5_usc_401",
+        "establishment": "Department of Commerce",
+        "organisationId": "exec-dept-doc",
+        "organisationName": "Department of Commerce"
+      },
+      "derivation": "5 U.S.C. 403(e) (e) Rate of Pay: “The annual rate of basic pay for an Inspector General (as defined under section 401 of this title ) shall be the rate payable for level III of the Executive Schedule under section 5314 of this title , plus 3 percent.” · Salary Table No. 2026-EX, Effective January 2026: Level III $209,600 · $209,600 + 3% = $215,888",
+      "quote": "5 U.S.C. 403(e) (e) Rate of Pay: “The annual rate of basic pay for an Inspector General (as defined under section 401 of this title ) shall be the rate payable for level III of the Executive Schedule under section 5314 of this title , plus 3 percent.” · Salary Table No. 2026-EX, Effective January 2026: Level III $209,600 · $209,600 + 3% = $215,888",
+      "documents": [
+        {
+          "role": "sets this post's basic pay by reference to Executive Schedule Level III, plus 3 percent",
+          "citation": "5 U.S.C. 403(e)",
+          "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+          "title": "5 U.S.C. 403(e), current through the prelim edition",
+          "quote": "The annual rate of basic pay for an Inspector General (as defined under section 401 of this title ) shall be the rate payable for level III of the Executive Schedule under section 5314 of this title , plus 3 percent.",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section403&num=0&edition=prelim",
+          "documentSha256": "03a99dce101efc898df802eb8a3b5f73636e82f65b8f12370755c83fe0d05a12",
+          "retrievedAt": "2026-09-27T22:10:09Z",
+          "statesTheFigure": false
+        },
+        {
+          "role": "states what that Executive Schedule level pays",
+          "citation": "Salary Table No. 2026-EX, Effective January 2026",
+          "publisher": "U.S. Office of Personnel Management",
+          "title": "Salary Table No. 2026-EX",
+          "quote": "Level III $209,600",
+          "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+          "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+          "retrievedAt": "2026-09-11T03:05:36Z",
+          "statesTheFigure": false
+        },
+        {
+          "role": "lists the establishments whose Inspector General 403(e) prices, and this post's organisation is one of them",
+          "citation": "5 U.S.C. 401(1)",
+          "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+          "title": "5 U.S.C. 401(1), current through the prelim edition",
+          "quote": "The term \"Inspector General\" means the Inspector General of an establishment. The term \"establishment\" means the Department of Agriculture, Commerce, Defense, Education, Energy, Health and Human Services, Housing and Urban Development, the Interior, Justice, Labor, State, Transportation, Homeland Security, the Treasury, or Veterans Affairs; the Agency for International Development, the Community Development Financial Institutions Fund, the Environmental Protection Agency, the Federal Communications Commission, the Federal Emergency Management Agency, the General Services Administration, the National Aeronautics and Space Administration, the Nuclear Regulatory Commission, the Office of Personnel Management, the Railroad Retirement Board, the Federal Deposit Insurance Corporation, the Small Business Administration, the Corporation for National and Community Service, the Social Security Administration, the Federal Housing Finance Agency, the Tennessee Valley Authority, the Export-Import Bank of the United States, the Commissions established under section 15301 of title 40 , the National Security Agency, or the National Reconnaissance Office, as the case may be.",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section401&num=0&edition=prelim",
+          "documentSha256": "3d4e3bdba96bd0b152c5feb3f006752a2693223726fce81d58ff9683497c4a1e",
+          "retrievedAt": "2026-09-28T17:40:54Z",
+          "statesTheFigure": false
+        }
+      ],
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level III plus 3 percent",
+      "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section403&num=0&edition=prelim",
+      "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-27T22:10:09Z",
+      "verification": {
+        "documents": 3,
+        "documentsStatingTheFigure": 0,
+        "percent": 90,
+        "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+        "caution": "The percentage measures how much official documentation this figure rests on, not the chance that it is right. No document here states the figure for this post: a statute sets its pay by reference to an Executive Schedule level, and OPM's table states what that level pays; where the statute adds a percentage, the result is arithmetic this project performed and no document prints.",
+        "documentRoles": [
+          {
+            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section403&num=0&edition=prelim"
+          },
+          {
+            "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx"
+          },
+          {
+            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section401&num=0&edition=prelim"
+          }
+        ]
+      }
+    }
   },
   {
     "id": "exec-dept-doc-census",
@@ -46253,7 +46833,108 @@
     },
     "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
     "evidenceVerifiedAt": "2025-12-31",
-    "parentId": "exec-dept-dol"
+    "parentId": "exec-dept-dol",
+    "positionTierReferencePay": {
+      "source": "statutory_tier_reference_pay",
+      "sourceLabel": "a statute setting the post's pay by reference to an Executive Schedule level, joined to OPM's table",
+      "method": "pay_set_by_reference_to_an_executive_schedule_level_plus_a_statutory_percentage_joined_to_opm_table",
+      "amount": 215888.0,
+      "rateText": "$215,888",
+      "level": "III",
+      "levelText": "Level III",
+      "levelRateText": "$209,600",
+      "levelAmount": 209600.0,
+      "percent": 3,
+      "arithmetic": {
+        "operation": "plus_percent",
+        "baseAmount": 209600.0,
+        "baseAmountRaw": "209,600",
+        "baseText": "$209,600",
+        "baseLevel": "III",
+        "percent": 3,
+        "result": 215888.0,
+        "resultText": "$215,888",
+        "note": "No document prints $215,888. 5 U.S.C. 403(e) sets the rate at Level III's plus 3 percent, and Salary Table No. 2026-EX prints $209,600 for Level III; the figure is that arithmetic and nothing more."
+      },
+      "office": "Inspector General",
+      "statute": "5 U.S.C. 403(e)",
+      "statuteQuote": "The annual rate of basic pay for an Inspector General (as defined under section 401 of this title ) shall be the rate payable for level III of the Executive Schedule under section 5314 of this title , plus 3 percent.",
+      "identification": {
+        "kind": "establishment_listed_in_5_usc_401",
+        "establishment": "Department of Labor",
+        "organisationId": "exec-dept-dol",
+        "organisationName": "Department of Labor (DOL)"
+      },
+      "derivation": "5 U.S.C. 403(e) (e) Rate of Pay: “The annual rate of basic pay for an Inspector General (as defined under section 401 of this title ) shall be the rate payable for level III of the Executive Schedule under section 5314 of this title , plus 3 percent.” · Salary Table No. 2026-EX, Effective January 2026: Level III $209,600 · $209,600 + 3% = $215,888",
+      "quote": "5 U.S.C. 403(e) (e) Rate of Pay: “The annual rate of basic pay for an Inspector General (as defined under section 401 of this title ) shall be the rate payable for level III of the Executive Schedule under section 5314 of this title , plus 3 percent.” · Salary Table No. 2026-EX, Effective January 2026: Level III $209,600 · $209,600 + 3% = $215,888",
+      "documents": [
+        {
+          "role": "sets this post's basic pay by reference to Executive Schedule Level III, plus 3 percent",
+          "citation": "5 U.S.C. 403(e)",
+          "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+          "title": "5 U.S.C. 403(e), current through the prelim edition",
+          "quote": "The annual rate of basic pay for an Inspector General (as defined under section 401 of this title ) shall be the rate payable for level III of the Executive Schedule under section 5314 of this title , plus 3 percent.",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section403&num=0&edition=prelim",
+          "documentSha256": "03a99dce101efc898df802eb8a3b5f73636e82f65b8f12370755c83fe0d05a12",
+          "retrievedAt": "2026-09-27T22:10:09Z",
+          "statesTheFigure": false
+        },
+        {
+          "role": "states what that Executive Schedule level pays",
+          "citation": "Salary Table No. 2026-EX, Effective January 2026",
+          "publisher": "U.S. Office of Personnel Management",
+          "title": "Salary Table No. 2026-EX",
+          "quote": "Level III $209,600",
+          "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+          "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+          "retrievedAt": "2026-09-11T03:05:36Z",
+          "statesTheFigure": false
+        },
+        {
+          "role": "lists the establishments whose Inspector General 403(e) prices, and this post's organisation is one of them",
+          "citation": "5 U.S.C. 401(1)",
+          "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+          "title": "5 U.S.C. 401(1), current through the prelim edition",
+          "quote": "The term \"Inspector General\" means the Inspector General of an establishment. The term \"establishment\" means the Department of Agriculture, Commerce, Defense, Education, Energy, Health and Human Services, Housing and Urban Development, the Interior, Justice, Labor, State, Transportation, Homeland Security, the Treasury, or Veterans Affairs; the Agency for International Development, the Community Development Financial Institutions Fund, the Environmental Protection Agency, the Federal Communications Commission, the Federal Emergency Management Agency, the General Services Administration, the National Aeronautics and Space Administration, the Nuclear Regulatory Commission, the Office of Personnel Management, the Railroad Retirement Board, the Federal Deposit Insurance Corporation, the Small Business Administration, the Corporation for National and Community Service, the Social Security Administration, the Federal Housing Finance Agency, the Tennessee Valley Authority, the Export-Import Bank of the United States, the Commissions established under section 15301 of title 40 , the National Security Agency, or the National Reconnaissance Office, as the case may be.",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section401&num=0&edition=prelim",
+          "documentSha256": "3d4e3bdba96bd0b152c5feb3f006752a2693223726fce81d58ff9683497c4a1e",
+          "retrievedAt": "2026-09-28T17:40:54Z",
+          "statesTheFigure": false
+        }
+      ],
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level III plus 3 percent",
+      "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section403&num=0&edition=prelim",
+      "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-27T22:10:09Z",
+      "verification": {
+        "documents": 3,
+        "documentsStatingTheFigure": 0,
+        "percent": 90,
+        "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+        "caution": "The percentage measures how much official documentation this figure rests on, not the chance that it is right. No document here states the figure for this post: a statute sets its pay by reference to an Executive Schedule level, and OPM's table states what that level pays; where the statute adds a percentage, the result is arithmetic this project performed and no document prints.",
+        "documentRoles": [
+          {
+            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section403&num=0&edition=prelim"
+          },
+          {
+            "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx"
+          },
+          {
+            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section401&num=0&edition=prelim"
+          }
+        ]
+      }
+    }
   },
   {
     "id": "exec-dept-dol-chief-financial-officer",
@@ -52539,7 +53220,108 @@
     },
     "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
     "evidenceVerifiedAt": "2025-12-31",
-    "parentId": "exec-dept-hud"
+    "parentId": "exec-dept-hud",
+    "positionTierReferencePay": {
+      "source": "statutory_tier_reference_pay",
+      "sourceLabel": "a statute setting the post's pay by reference to an Executive Schedule level, joined to OPM's table",
+      "method": "pay_set_by_reference_to_an_executive_schedule_level_plus_a_statutory_percentage_joined_to_opm_table",
+      "amount": 215888.0,
+      "rateText": "$215,888",
+      "level": "III",
+      "levelText": "Level III",
+      "levelRateText": "$209,600",
+      "levelAmount": 209600.0,
+      "percent": 3,
+      "arithmetic": {
+        "operation": "plus_percent",
+        "baseAmount": 209600.0,
+        "baseAmountRaw": "209,600",
+        "baseText": "$209,600",
+        "baseLevel": "III",
+        "percent": 3,
+        "result": 215888.0,
+        "resultText": "$215,888",
+        "note": "No document prints $215,888. 5 U.S.C. 403(e) sets the rate at Level III's plus 3 percent, and Salary Table No. 2026-EX prints $209,600 for Level III; the figure is that arithmetic and nothing more."
+      },
+      "office": "Inspector General",
+      "statute": "5 U.S.C. 403(e)",
+      "statuteQuote": "The annual rate of basic pay for an Inspector General (as defined under section 401 of this title ) shall be the rate payable for level III of the Executive Schedule under section 5314 of this title , plus 3 percent.",
+      "identification": {
+        "kind": "establishment_listed_in_5_usc_401",
+        "establishment": "Department of Housing and Urban Development",
+        "organisationId": "exec-dept-hud",
+        "organisationName": "Department of Housing & Urban Development (HUD)"
+      },
+      "derivation": "5 U.S.C. 403(e) (e) Rate of Pay: “The annual rate of basic pay for an Inspector General (as defined under section 401 of this title ) shall be the rate payable for level III of the Executive Schedule under section 5314 of this title , plus 3 percent.” · Salary Table No. 2026-EX, Effective January 2026: Level III $209,600 · $209,600 + 3% = $215,888",
+      "quote": "5 U.S.C. 403(e) (e) Rate of Pay: “The annual rate of basic pay for an Inspector General (as defined under section 401 of this title ) shall be the rate payable for level III of the Executive Schedule under section 5314 of this title , plus 3 percent.” · Salary Table No. 2026-EX, Effective January 2026: Level III $209,600 · $209,600 + 3% = $215,888",
+      "documents": [
+        {
+          "role": "sets this post's basic pay by reference to Executive Schedule Level III, plus 3 percent",
+          "citation": "5 U.S.C. 403(e)",
+          "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+          "title": "5 U.S.C. 403(e), current through the prelim edition",
+          "quote": "The annual rate of basic pay for an Inspector General (as defined under section 401 of this title ) shall be the rate payable for level III of the Executive Schedule under section 5314 of this title , plus 3 percent.",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section403&num=0&edition=prelim",
+          "documentSha256": "03a99dce101efc898df802eb8a3b5f73636e82f65b8f12370755c83fe0d05a12",
+          "retrievedAt": "2026-09-27T22:10:09Z",
+          "statesTheFigure": false
+        },
+        {
+          "role": "states what that Executive Schedule level pays",
+          "citation": "Salary Table No. 2026-EX, Effective January 2026",
+          "publisher": "U.S. Office of Personnel Management",
+          "title": "Salary Table No. 2026-EX",
+          "quote": "Level III $209,600",
+          "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+          "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+          "retrievedAt": "2026-09-11T03:05:36Z",
+          "statesTheFigure": false
+        },
+        {
+          "role": "lists the establishments whose Inspector General 403(e) prices, and this post's organisation is one of them",
+          "citation": "5 U.S.C. 401(1)",
+          "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+          "title": "5 U.S.C. 401(1), current through the prelim edition",
+          "quote": "The term \"Inspector General\" means the Inspector General of an establishment. The term \"establishment\" means the Department of Agriculture, Commerce, Defense, Education, Energy, Health and Human Services, Housing and Urban Development, the Interior, Justice, Labor, State, Transportation, Homeland Security, the Treasury, or Veterans Affairs; the Agency for International Development, the Community Development Financial Institutions Fund, the Environmental Protection Agency, the Federal Communications Commission, the Federal Emergency Management Agency, the General Services Administration, the National Aeronautics and Space Administration, the Nuclear Regulatory Commission, the Office of Personnel Management, the Railroad Retirement Board, the Federal Deposit Insurance Corporation, the Small Business Administration, the Corporation for National and Community Service, the Social Security Administration, the Federal Housing Finance Agency, the Tennessee Valley Authority, the Export-Import Bank of the United States, the Commissions established under section 15301 of title 40 , the National Security Agency, or the National Reconnaissance Office, as the case may be.",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section401&num=0&edition=prelim",
+          "documentSha256": "3d4e3bdba96bd0b152c5feb3f006752a2693223726fce81d58ff9683497c4a1e",
+          "retrievedAt": "2026-09-28T17:40:54Z",
+          "statesTheFigure": false
+        }
+      ],
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level III plus 3 percent",
+      "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section403&num=0&edition=prelim",
+      "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-27T22:10:09Z",
+      "verification": {
+        "documents": 3,
+        "documentsStatingTheFigure": 0,
+        "percent": 90,
+        "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+        "caution": "The percentage measures how much official documentation this figure rests on, not the chance that it is right. No document here states the figure for this post: a statute sets its pay by reference to an Executive Schedule level, and OPM's table states what that level pays; where the statute adds a percentage, the result is arithmetic this project performed and no document prints.",
+        "documentRoles": [
+          {
+            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section403&num=0&edition=prelim"
+          },
+          {
+            "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx"
+          },
+          {
+            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section401&num=0&edition=prelim"
+          }
+        ]
+      }
+    }
   },
   {
     "id": "exec-dept-hud-general-counsel",
@@ -54603,7 +55385,108 @@
     },
     "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
     "evidenceVerifiedAt": "2025-12-31",
-    "parentId": "exec-dept-dot"
+    "parentId": "exec-dept-dot",
+    "positionTierReferencePay": {
+      "source": "statutory_tier_reference_pay",
+      "sourceLabel": "a statute setting the post's pay by reference to an Executive Schedule level, joined to OPM's table",
+      "method": "pay_set_by_reference_to_an_executive_schedule_level_plus_a_statutory_percentage_joined_to_opm_table",
+      "amount": 215888.0,
+      "rateText": "$215,888",
+      "level": "III",
+      "levelText": "Level III",
+      "levelRateText": "$209,600",
+      "levelAmount": 209600.0,
+      "percent": 3,
+      "arithmetic": {
+        "operation": "plus_percent",
+        "baseAmount": 209600.0,
+        "baseAmountRaw": "209,600",
+        "baseText": "$209,600",
+        "baseLevel": "III",
+        "percent": 3,
+        "result": 215888.0,
+        "resultText": "$215,888",
+        "note": "No document prints $215,888. 5 U.S.C. 403(e) sets the rate at Level III's plus 3 percent, and Salary Table No. 2026-EX prints $209,600 for Level III; the figure is that arithmetic and nothing more."
+      },
+      "office": "Inspector General",
+      "statute": "5 U.S.C. 403(e)",
+      "statuteQuote": "The annual rate of basic pay for an Inspector General (as defined under section 401 of this title ) shall be the rate payable for level III of the Executive Schedule under section 5314 of this title , plus 3 percent.",
+      "identification": {
+        "kind": "establishment_listed_in_5_usc_401",
+        "establishment": "Department of Transportation",
+        "organisationId": "exec-dept-dot",
+        "organisationName": "Department of Transportation (DOT)"
+      },
+      "derivation": "5 U.S.C. 403(e) (e) Rate of Pay: “The annual rate of basic pay for an Inspector General (as defined under section 401 of this title ) shall be the rate payable for level III of the Executive Schedule under section 5314 of this title , plus 3 percent.” · Salary Table No. 2026-EX, Effective January 2026: Level III $209,600 · $209,600 + 3% = $215,888",
+      "quote": "5 U.S.C. 403(e) (e) Rate of Pay: “The annual rate of basic pay for an Inspector General (as defined under section 401 of this title ) shall be the rate payable for level III of the Executive Schedule under section 5314 of this title , plus 3 percent.” · Salary Table No. 2026-EX, Effective January 2026: Level III $209,600 · $209,600 + 3% = $215,888",
+      "documents": [
+        {
+          "role": "sets this post's basic pay by reference to Executive Schedule Level III, plus 3 percent",
+          "citation": "5 U.S.C. 403(e)",
+          "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+          "title": "5 U.S.C. 403(e), current through the prelim edition",
+          "quote": "The annual rate of basic pay for an Inspector General (as defined under section 401 of this title ) shall be the rate payable for level III of the Executive Schedule under section 5314 of this title , plus 3 percent.",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section403&num=0&edition=prelim",
+          "documentSha256": "03a99dce101efc898df802eb8a3b5f73636e82f65b8f12370755c83fe0d05a12",
+          "retrievedAt": "2026-09-27T22:10:09Z",
+          "statesTheFigure": false
+        },
+        {
+          "role": "states what that Executive Schedule level pays",
+          "citation": "Salary Table No. 2026-EX, Effective January 2026",
+          "publisher": "U.S. Office of Personnel Management",
+          "title": "Salary Table No. 2026-EX",
+          "quote": "Level III $209,600",
+          "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+          "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+          "retrievedAt": "2026-09-11T03:05:36Z",
+          "statesTheFigure": false
+        },
+        {
+          "role": "lists the establishments whose Inspector General 403(e) prices, and this post's organisation is one of them",
+          "citation": "5 U.S.C. 401(1)",
+          "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+          "title": "5 U.S.C. 401(1), current through the prelim edition",
+          "quote": "The term \"Inspector General\" means the Inspector General of an establishment. The term \"establishment\" means the Department of Agriculture, Commerce, Defense, Education, Energy, Health and Human Services, Housing and Urban Development, the Interior, Justice, Labor, State, Transportation, Homeland Security, the Treasury, or Veterans Affairs; the Agency for International Development, the Community Development Financial Institutions Fund, the Environmental Protection Agency, the Federal Communications Commission, the Federal Emergency Management Agency, the General Services Administration, the National Aeronautics and Space Administration, the Nuclear Regulatory Commission, the Office of Personnel Management, the Railroad Retirement Board, the Federal Deposit Insurance Corporation, the Small Business Administration, the Corporation for National and Community Service, the Social Security Administration, the Federal Housing Finance Agency, the Tennessee Valley Authority, the Export-Import Bank of the United States, the Commissions established under section 15301 of title 40 , the National Security Agency, or the National Reconnaissance Office, as the case may be.",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section401&num=0&edition=prelim",
+          "documentSha256": "3d4e3bdba96bd0b152c5feb3f006752a2693223726fce81d58ff9683497c4a1e",
+          "retrievedAt": "2026-09-28T17:40:54Z",
+          "statesTheFigure": false
+        }
+      ],
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level III plus 3 percent",
+      "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section403&num=0&edition=prelim",
+      "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-27T22:10:09Z",
+      "verification": {
+        "documents": 3,
+        "documentsStatingTheFigure": 0,
+        "percent": 90,
+        "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+        "caution": "The percentage measures how much official documentation this figure rests on, not the chance that it is right. No document here states the figure for this post: a statute sets its pay by reference to an Executive Schedule level, and OPM's table states what that level pays; where the statute adds a percentage, the result is arithmetic this project performed and no document prints.",
+        "documentRoles": [
+          {
+            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section403&num=0&edition=prelim"
+          },
+          {
+            "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx"
+          },
+          {
+            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section401&num=0&edition=prelim"
+          }
+        ]
+      }
+    }
   },
   {
     "id": "exec-dept-dot-faa",
@@ -56792,7 +57675,108 @@
     },
     "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
     "evidenceVerifiedAt": "2025-12-31",
-    "parentId": "exec-dept-doe"
+    "parentId": "exec-dept-doe",
+    "positionTierReferencePay": {
+      "source": "statutory_tier_reference_pay",
+      "sourceLabel": "a statute setting the post's pay by reference to an Executive Schedule level, joined to OPM's table",
+      "method": "pay_set_by_reference_to_an_executive_schedule_level_plus_a_statutory_percentage_joined_to_opm_table",
+      "amount": 215888.0,
+      "rateText": "$215,888",
+      "level": "III",
+      "levelText": "Level III",
+      "levelRateText": "$209,600",
+      "levelAmount": 209600.0,
+      "percent": 3,
+      "arithmetic": {
+        "operation": "plus_percent",
+        "baseAmount": 209600.0,
+        "baseAmountRaw": "209,600",
+        "baseText": "$209,600",
+        "baseLevel": "III",
+        "percent": 3,
+        "result": 215888.0,
+        "resultText": "$215,888",
+        "note": "No document prints $215,888. 5 U.S.C. 403(e) sets the rate at Level III's plus 3 percent, and Salary Table No. 2026-EX prints $209,600 for Level III; the figure is that arithmetic and nothing more."
+      },
+      "office": "Inspector General",
+      "statute": "5 U.S.C. 403(e)",
+      "statuteQuote": "The annual rate of basic pay for an Inspector General (as defined under section 401 of this title ) shall be the rate payable for level III of the Executive Schedule under section 5314 of this title , plus 3 percent.",
+      "identification": {
+        "kind": "establishment_listed_in_5_usc_401",
+        "establishment": "Department of Energy",
+        "organisationId": "exec-dept-doe",
+        "organisationName": "Department of Energy (DOE)"
+      },
+      "derivation": "5 U.S.C. 403(e) (e) Rate of Pay: “The annual rate of basic pay for an Inspector General (as defined under section 401 of this title ) shall be the rate payable for level III of the Executive Schedule under section 5314 of this title , plus 3 percent.” · Salary Table No. 2026-EX, Effective January 2026: Level III $209,600 · $209,600 + 3% = $215,888",
+      "quote": "5 U.S.C. 403(e) (e) Rate of Pay: “The annual rate of basic pay for an Inspector General (as defined under section 401 of this title ) shall be the rate payable for level III of the Executive Schedule under section 5314 of this title , plus 3 percent.” · Salary Table No. 2026-EX, Effective January 2026: Level III $209,600 · $209,600 + 3% = $215,888",
+      "documents": [
+        {
+          "role": "sets this post's basic pay by reference to Executive Schedule Level III, plus 3 percent",
+          "citation": "5 U.S.C. 403(e)",
+          "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+          "title": "5 U.S.C. 403(e), current through the prelim edition",
+          "quote": "The annual rate of basic pay for an Inspector General (as defined under section 401 of this title ) shall be the rate payable for level III of the Executive Schedule under section 5314 of this title , plus 3 percent.",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section403&num=0&edition=prelim",
+          "documentSha256": "03a99dce101efc898df802eb8a3b5f73636e82f65b8f12370755c83fe0d05a12",
+          "retrievedAt": "2026-09-27T22:10:09Z",
+          "statesTheFigure": false
+        },
+        {
+          "role": "states what that Executive Schedule level pays",
+          "citation": "Salary Table No. 2026-EX, Effective January 2026",
+          "publisher": "U.S. Office of Personnel Management",
+          "title": "Salary Table No. 2026-EX",
+          "quote": "Level III $209,600",
+          "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+          "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+          "retrievedAt": "2026-09-11T03:05:36Z",
+          "statesTheFigure": false
+        },
+        {
+          "role": "lists the establishments whose Inspector General 403(e) prices, and this post's organisation is one of them",
+          "citation": "5 U.S.C. 401(1)",
+          "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+          "title": "5 U.S.C. 401(1), current through the prelim edition",
+          "quote": "The term \"Inspector General\" means the Inspector General of an establishment. The term \"establishment\" means the Department of Agriculture, Commerce, Defense, Education, Energy, Health and Human Services, Housing and Urban Development, the Interior, Justice, Labor, State, Transportation, Homeland Security, the Treasury, or Veterans Affairs; the Agency for International Development, the Community Development Financial Institutions Fund, the Environmental Protection Agency, the Federal Communications Commission, the Federal Emergency Management Agency, the General Services Administration, the National Aeronautics and Space Administration, the Nuclear Regulatory Commission, the Office of Personnel Management, the Railroad Retirement Board, the Federal Deposit Insurance Corporation, the Small Business Administration, the Corporation for National and Community Service, the Social Security Administration, the Federal Housing Finance Agency, the Tennessee Valley Authority, the Export-Import Bank of the United States, the Commissions established under section 15301 of title 40 , the National Security Agency, or the National Reconnaissance Office, as the case may be.",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section401&num=0&edition=prelim",
+          "documentSha256": "3d4e3bdba96bd0b152c5feb3f006752a2693223726fce81d58ff9683497c4a1e",
+          "retrievedAt": "2026-09-28T17:40:54Z",
+          "statesTheFigure": false
+        }
+      ],
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level III plus 3 percent",
+      "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section403&num=0&edition=prelim",
+      "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-27T22:10:09Z",
+      "verification": {
+        "documents": 3,
+        "documentsStatingTheFigure": 0,
+        "percent": 90,
+        "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+        "caution": "The percentage measures how much official documentation this figure rests on, not the chance that it is right. No document here states the figure for this post: a statute sets its pay by reference to an Executive Schedule level, and OPM's table states what that level pays; where the statute adds a percentage, the result is arithmetic this project performed and no document prints.",
+        "documentRoles": [
+          {
+            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section403&num=0&edition=prelim"
+          },
+          {
+            "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx"
+          },
+          {
+            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section401&num=0&edition=prelim"
+          }
+        ]
+      }
+    }
   },
   {
     "id": "exec-dept-doe-nnsa",
@@ -66250,7 +67234,6 @@
     "verificationMethod": "name_labelled_on_its_organisations_official_page",
     "verificationMatchedIn": "content",
     "verificationSiteFrom": "exec-ind-cia",
-    "parentId": "exec-ind-cia",
     "positionSchedulePay": {
       "source": "us_code_executive_schedule",
       "method": "level_assigned_by_5_usc_5312_5316_to_the_office_a_second_statute_identifies_this_post_as",
@@ -66308,7 +67291,8 @@
           }
         ]
       }
-    }
+    },
+    "parentId": "exec-ind-cia"
   },
   {
     "id": "exec-ind-cia-general-counsel",
@@ -66889,7 +67873,108 @@
       "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-135",
       "tableFooter": "The above list of key personnel was updated 7–2021."
     },
-    "parentId": "exec-ind-epa"
+    "parentId": "exec-ind-epa",
+    "positionTierReferencePay": {
+      "source": "statutory_tier_reference_pay",
+      "sourceLabel": "a statute setting the post's pay by reference to an Executive Schedule level, joined to OPM's table",
+      "method": "pay_set_by_reference_to_an_executive_schedule_level_plus_a_statutory_percentage_joined_to_opm_table",
+      "amount": 215888.0,
+      "rateText": "$215,888",
+      "level": "III",
+      "levelText": "Level III",
+      "levelRateText": "$209,600",
+      "levelAmount": 209600.0,
+      "percent": 3,
+      "arithmetic": {
+        "operation": "plus_percent",
+        "baseAmount": 209600.0,
+        "baseAmountRaw": "209,600",
+        "baseText": "$209,600",
+        "baseLevel": "III",
+        "percent": 3,
+        "result": 215888.0,
+        "resultText": "$215,888",
+        "note": "No document prints $215,888. 5 U.S.C. 403(e) sets the rate at Level III's plus 3 percent, and Salary Table No. 2026-EX prints $209,600 for Level III; the figure is that arithmetic and nothing more."
+      },
+      "office": "Inspector General",
+      "statute": "5 U.S.C. 403(e)",
+      "statuteQuote": "The annual rate of basic pay for an Inspector General (as defined under section 401 of this title ) shall be the rate payable for level III of the Executive Schedule under section 5314 of this title , plus 3 percent.",
+      "identification": {
+        "kind": "establishment_listed_in_5_usc_401",
+        "establishment": "Environmental Protection Agency",
+        "organisationId": "exec-ind-epa",
+        "organisationName": "Environmental Protection Agency (EPA)"
+      },
+      "derivation": "5 U.S.C. 403(e) (e) Rate of Pay: “The annual rate of basic pay for an Inspector General (as defined under section 401 of this title ) shall be the rate payable for level III of the Executive Schedule under section 5314 of this title , plus 3 percent.” · Salary Table No. 2026-EX, Effective January 2026: Level III $209,600 · $209,600 + 3% = $215,888",
+      "quote": "5 U.S.C. 403(e) (e) Rate of Pay: “The annual rate of basic pay for an Inspector General (as defined under section 401 of this title ) shall be the rate payable for level III of the Executive Schedule under section 5314 of this title , plus 3 percent.” · Salary Table No. 2026-EX, Effective January 2026: Level III $209,600 · $209,600 + 3% = $215,888",
+      "documents": [
+        {
+          "role": "sets this post's basic pay by reference to Executive Schedule Level III, plus 3 percent",
+          "citation": "5 U.S.C. 403(e)",
+          "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+          "title": "5 U.S.C. 403(e), current through the prelim edition",
+          "quote": "The annual rate of basic pay for an Inspector General (as defined under section 401 of this title ) shall be the rate payable for level III of the Executive Schedule under section 5314 of this title , plus 3 percent.",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section403&num=0&edition=prelim",
+          "documentSha256": "03a99dce101efc898df802eb8a3b5f73636e82f65b8f12370755c83fe0d05a12",
+          "retrievedAt": "2026-09-27T22:10:09Z",
+          "statesTheFigure": false
+        },
+        {
+          "role": "states what that Executive Schedule level pays",
+          "citation": "Salary Table No. 2026-EX, Effective January 2026",
+          "publisher": "U.S. Office of Personnel Management",
+          "title": "Salary Table No. 2026-EX",
+          "quote": "Level III $209,600",
+          "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+          "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+          "retrievedAt": "2026-09-11T03:05:36Z",
+          "statesTheFigure": false
+        },
+        {
+          "role": "lists the establishments whose Inspector General 403(e) prices, and this post's organisation is one of them",
+          "citation": "5 U.S.C. 401(1)",
+          "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+          "title": "5 U.S.C. 401(1), current through the prelim edition",
+          "quote": "The term \"Inspector General\" means the Inspector General of an establishment. The term \"establishment\" means the Department of Agriculture, Commerce, Defense, Education, Energy, Health and Human Services, Housing and Urban Development, the Interior, Justice, Labor, State, Transportation, Homeland Security, the Treasury, or Veterans Affairs; the Agency for International Development, the Community Development Financial Institutions Fund, the Environmental Protection Agency, the Federal Communications Commission, the Federal Emergency Management Agency, the General Services Administration, the National Aeronautics and Space Administration, the Nuclear Regulatory Commission, the Office of Personnel Management, the Railroad Retirement Board, the Federal Deposit Insurance Corporation, the Small Business Administration, the Corporation for National and Community Service, the Social Security Administration, the Federal Housing Finance Agency, the Tennessee Valley Authority, the Export-Import Bank of the United States, the Commissions established under section 15301 of title 40 , the National Security Agency, or the National Reconnaissance Office, as the case may be.",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section401&num=0&edition=prelim",
+          "documentSha256": "3d4e3bdba96bd0b152c5feb3f006752a2693223726fce81d58ff9683497c4a1e",
+          "retrievedAt": "2026-09-28T17:40:54Z",
+          "statesTheFigure": false
+        }
+      ],
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level III plus 3 percent",
+      "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section403&num=0&edition=prelim",
+      "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-27T22:10:09Z",
+      "verification": {
+        "documents": 3,
+        "documentsStatingTheFigure": 0,
+        "percent": 90,
+        "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+        "caution": "The percentage measures how much official documentation this figure rests on, not the chance that it is right. No document here states the figure for this post: a statute sets its pay by reference to an Executive Schedule level, and OPM's table states what that level pays; where the statute adds a percentage, the result is arithmetic this project performed and no document prints.",
+        "documentRoles": [
+          {
+            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section403&num=0&edition=prelim"
+          },
+          {
+            "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx"
+          },
+          {
+            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section401&num=0&edition=prelim"
+          }
+        ]
+      }
+    }
   },
   {
     "id": "exec-ind-epa-chief-financial-officer",
@@ -68476,7 +69561,108 @@
     },
     "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
     "evidenceVerifiedAt": "2025-12-31",
-    "parentId": "exec-ind-nasa"
+    "parentId": "exec-ind-nasa",
+    "positionTierReferencePay": {
+      "source": "statutory_tier_reference_pay",
+      "sourceLabel": "a statute setting the post's pay by reference to an Executive Schedule level, joined to OPM's table",
+      "method": "pay_set_by_reference_to_an_executive_schedule_level_plus_a_statutory_percentage_joined_to_opm_table",
+      "amount": 215888.0,
+      "rateText": "$215,888",
+      "level": "III",
+      "levelText": "Level III",
+      "levelRateText": "$209,600",
+      "levelAmount": 209600.0,
+      "percent": 3,
+      "arithmetic": {
+        "operation": "plus_percent",
+        "baseAmount": 209600.0,
+        "baseAmountRaw": "209,600",
+        "baseText": "$209,600",
+        "baseLevel": "III",
+        "percent": 3,
+        "result": 215888.0,
+        "resultText": "$215,888",
+        "note": "No document prints $215,888. 5 U.S.C. 403(e) sets the rate at Level III's plus 3 percent, and Salary Table No. 2026-EX prints $209,600 for Level III; the figure is that arithmetic and nothing more."
+      },
+      "office": "Inspector General",
+      "statute": "5 U.S.C. 403(e)",
+      "statuteQuote": "The annual rate of basic pay for an Inspector General (as defined under section 401 of this title ) shall be the rate payable for level III of the Executive Schedule under section 5314 of this title , plus 3 percent.",
+      "identification": {
+        "kind": "establishment_listed_in_5_usc_401",
+        "establishment": "National Aeronautics and Space Administration",
+        "organisationId": "exec-ind-nasa",
+        "organisationName": "National Aeronautics & Space Administration (NASA)"
+      },
+      "derivation": "5 U.S.C. 403(e) (e) Rate of Pay: “The annual rate of basic pay for an Inspector General (as defined under section 401 of this title ) shall be the rate payable for level III of the Executive Schedule under section 5314 of this title , plus 3 percent.” · Salary Table No. 2026-EX, Effective January 2026: Level III $209,600 · $209,600 + 3% = $215,888",
+      "quote": "5 U.S.C. 403(e) (e) Rate of Pay: “The annual rate of basic pay for an Inspector General (as defined under section 401 of this title ) shall be the rate payable for level III of the Executive Schedule under section 5314 of this title , plus 3 percent.” · Salary Table No. 2026-EX, Effective January 2026: Level III $209,600 · $209,600 + 3% = $215,888",
+      "documents": [
+        {
+          "role": "sets this post's basic pay by reference to Executive Schedule Level III, plus 3 percent",
+          "citation": "5 U.S.C. 403(e)",
+          "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+          "title": "5 U.S.C. 403(e), current through the prelim edition",
+          "quote": "The annual rate of basic pay for an Inspector General (as defined under section 401 of this title ) shall be the rate payable for level III of the Executive Schedule under section 5314 of this title , plus 3 percent.",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section403&num=0&edition=prelim",
+          "documentSha256": "03a99dce101efc898df802eb8a3b5f73636e82f65b8f12370755c83fe0d05a12",
+          "retrievedAt": "2026-09-27T22:10:09Z",
+          "statesTheFigure": false
+        },
+        {
+          "role": "states what that Executive Schedule level pays",
+          "citation": "Salary Table No. 2026-EX, Effective January 2026",
+          "publisher": "U.S. Office of Personnel Management",
+          "title": "Salary Table No. 2026-EX",
+          "quote": "Level III $209,600",
+          "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+          "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+          "retrievedAt": "2026-09-11T03:05:36Z",
+          "statesTheFigure": false
+        },
+        {
+          "role": "lists the establishments whose Inspector General 403(e) prices, and this post's organisation is one of them",
+          "citation": "5 U.S.C. 401(1)",
+          "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+          "title": "5 U.S.C. 401(1), current through the prelim edition",
+          "quote": "The term \"Inspector General\" means the Inspector General of an establishment. The term \"establishment\" means the Department of Agriculture, Commerce, Defense, Education, Energy, Health and Human Services, Housing and Urban Development, the Interior, Justice, Labor, State, Transportation, Homeland Security, the Treasury, or Veterans Affairs; the Agency for International Development, the Community Development Financial Institutions Fund, the Environmental Protection Agency, the Federal Communications Commission, the Federal Emergency Management Agency, the General Services Administration, the National Aeronautics and Space Administration, the Nuclear Regulatory Commission, the Office of Personnel Management, the Railroad Retirement Board, the Federal Deposit Insurance Corporation, the Small Business Administration, the Corporation for National and Community Service, the Social Security Administration, the Federal Housing Finance Agency, the Tennessee Valley Authority, the Export-Import Bank of the United States, the Commissions established under section 15301 of title 40 , the National Security Agency, or the National Reconnaissance Office, as the case may be.",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section401&num=0&edition=prelim",
+          "documentSha256": "3d4e3bdba96bd0b152c5feb3f006752a2693223726fce81d58ff9683497c4a1e",
+          "retrievedAt": "2026-09-28T17:40:54Z",
+          "statesTheFigure": false
+        }
+      ],
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level III plus 3 percent",
+      "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section403&num=0&edition=prelim",
+      "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-27T22:10:09Z",
+      "verification": {
+        "documents": 3,
+        "documentsStatingTheFigure": 0,
+        "percent": 90,
+        "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+        "caution": "The percentage measures how much official documentation this figure rests on, not the chance that it is right. No document here states the figure for this post: a statute sets its pay by reference to an Executive Schedule level, and OPM's table states what that level pays; where the statute adds a percentage, the result is arithmetic this project performed and no document prints.",
+        "documentRoles": [
+          {
+            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section403&num=0&edition=prelim"
+          },
+          {
+            "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx"
+          },
+          {
+            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section401&num=0&edition=prelim"
+          }
+        ]
+      }
+    }
   },
   {
     "id": "exec-ind-nasa-chief-information-officer",
@@ -70507,7 +71693,108 @@
     },
     "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
     "evidenceVerifiedAt": "2025-12-31",
-    "parentId": "exec-ind-ssa"
+    "parentId": "exec-ind-ssa",
+    "positionTierReferencePay": {
+      "source": "statutory_tier_reference_pay",
+      "sourceLabel": "a statute setting the post's pay by reference to an Executive Schedule level, joined to OPM's table",
+      "method": "pay_set_by_reference_to_an_executive_schedule_level_plus_a_statutory_percentage_joined_to_opm_table",
+      "amount": 215888.0,
+      "rateText": "$215,888",
+      "level": "III",
+      "levelText": "Level III",
+      "levelRateText": "$209,600",
+      "levelAmount": 209600.0,
+      "percent": 3,
+      "arithmetic": {
+        "operation": "plus_percent",
+        "baseAmount": 209600.0,
+        "baseAmountRaw": "209,600",
+        "baseText": "$209,600",
+        "baseLevel": "III",
+        "percent": 3,
+        "result": 215888.0,
+        "resultText": "$215,888",
+        "note": "No document prints $215,888. 5 U.S.C. 403(e) sets the rate at Level III's plus 3 percent, and Salary Table No. 2026-EX prints $209,600 for Level III; the figure is that arithmetic and nothing more."
+      },
+      "office": "Inspector General",
+      "statute": "5 U.S.C. 403(e)",
+      "statuteQuote": "The annual rate of basic pay for an Inspector General (as defined under section 401 of this title ) shall be the rate payable for level III of the Executive Schedule under section 5314 of this title , plus 3 percent.",
+      "identification": {
+        "kind": "establishment_listed_in_5_usc_401",
+        "establishment": "Social Security Administration",
+        "organisationId": "exec-ind-ssa",
+        "organisationName": "Social Security Administration (SSA)"
+      },
+      "derivation": "5 U.S.C. 403(e) (e) Rate of Pay: “The annual rate of basic pay for an Inspector General (as defined under section 401 of this title ) shall be the rate payable for level III of the Executive Schedule under section 5314 of this title , plus 3 percent.” · Salary Table No. 2026-EX, Effective January 2026: Level III $209,600 · $209,600 + 3% = $215,888",
+      "quote": "5 U.S.C. 403(e) (e) Rate of Pay: “The annual rate of basic pay for an Inspector General (as defined under section 401 of this title ) shall be the rate payable for level III of the Executive Schedule under section 5314 of this title , plus 3 percent.” · Salary Table No. 2026-EX, Effective January 2026: Level III $209,600 · $209,600 + 3% = $215,888",
+      "documents": [
+        {
+          "role": "sets this post's basic pay by reference to Executive Schedule Level III, plus 3 percent",
+          "citation": "5 U.S.C. 403(e)",
+          "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+          "title": "5 U.S.C. 403(e), current through the prelim edition",
+          "quote": "The annual rate of basic pay for an Inspector General (as defined under section 401 of this title ) shall be the rate payable for level III of the Executive Schedule under section 5314 of this title , plus 3 percent.",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section403&num=0&edition=prelim",
+          "documentSha256": "03a99dce101efc898df802eb8a3b5f73636e82f65b8f12370755c83fe0d05a12",
+          "retrievedAt": "2026-09-27T22:10:09Z",
+          "statesTheFigure": false
+        },
+        {
+          "role": "states what that Executive Schedule level pays",
+          "citation": "Salary Table No. 2026-EX, Effective January 2026",
+          "publisher": "U.S. Office of Personnel Management",
+          "title": "Salary Table No. 2026-EX",
+          "quote": "Level III $209,600",
+          "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+          "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+          "retrievedAt": "2026-09-11T03:05:36Z",
+          "statesTheFigure": false
+        },
+        {
+          "role": "lists the establishments whose Inspector General 403(e) prices, and this post's organisation is one of them",
+          "citation": "5 U.S.C. 401(1)",
+          "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+          "title": "5 U.S.C. 401(1), current through the prelim edition",
+          "quote": "The term \"Inspector General\" means the Inspector General of an establishment. The term \"establishment\" means the Department of Agriculture, Commerce, Defense, Education, Energy, Health and Human Services, Housing and Urban Development, the Interior, Justice, Labor, State, Transportation, Homeland Security, the Treasury, or Veterans Affairs; the Agency for International Development, the Community Development Financial Institutions Fund, the Environmental Protection Agency, the Federal Communications Commission, the Federal Emergency Management Agency, the General Services Administration, the National Aeronautics and Space Administration, the Nuclear Regulatory Commission, the Office of Personnel Management, the Railroad Retirement Board, the Federal Deposit Insurance Corporation, the Small Business Administration, the Corporation for National and Community Service, the Social Security Administration, the Federal Housing Finance Agency, the Tennessee Valley Authority, the Export-Import Bank of the United States, the Commissions established under section 15301 of title 40 , the National Security Agency, or the National Reconnaissance Office, as the case may be.",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section401&num=0&edition=prelim",
+          "documentSha256": "3d4e3bdba96bd0b152c5feb3f006752a2693223726fce81d58ff9683497c4a1e",
+          "retrievedAt": "2026-09-28T17:40:54Z",
+          "statesTheFigure": false
+        }
+      ],
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level III plus 3 percent",
+      "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section403&num=0&edition=prelim",
+      "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-27T22:10:09Z",
+      "verification": {
+        "documents": 3,
+        "documentsStatingTheFigure": 0,
+        "percent": 90,
+        "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+        "caution": "The percentage measures how much official documentation this figure rests on, not the chance that it is right. No document here states the figure for this post: a statute sets its pay by reference to an Executive Schedule level, and OPM's table states what that level pays; where the statute adds a percentage, the result is arithmetic this project performed and no document prints.",
+        "documentRoles": [
+          {
+            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section403&num=0&edition=prelim"
+          },
+          {
+            "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx"
+          },
+          {
+            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section401&num=0&edition=prelim"
+          }
+        ]
+      }
+    }
   },
   {
     "id": "exec-ind-ssa--treasury-receipts",
@@ -80730,7 +82017,108 @@
       "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-178",
       "tableFooter": "The above list of key personnel was updated 8–2020."
     },
-    "parentId": "exec-ind-misc-tennessee-valley-authority-tva"
+    "parentId": "exec-ind-misc-tennessee-valley-authority-tva",
+    "positionTierReferencePay": {
+      "source": "statutory_tier_reference_pay",
+      "sourceLabel": "a statute setting the post's pay by reference to an Executive Schedule level, joined to OPM's table",
+      "method": "pay_set_by_reference_to_an_executive_schedule_level_plus_a_statutory_percentage_joined_to_opm_table",
+      "amount": 215888.0,
+      "rateText": "$215,888",
+      "level": "III",
+      "levelText": "Level III",
+      "levelRateText": "$209,600",
+      "levelAmount": 209600.0,
+      "percent": 3,
+      "arithmetic": {
+        "operation": "plus_percent",
+        "baseAmount": 209600.0,
+        "baseAmountRaw": "209,600",
+        "baseText": "$209,600",
+        "baseLevel": "III",
+        "percent": 3,
+        "result": 215888.0,
+        "resultText": "$215,888",
+        "note": "No document prints $215,888. 5 U.S.C. 403(e) sets the rate at Level III's plus 3 percent, and Salary Table No. 2026-EX prints $209,600 for Level III; the figure is that arithmetic and nothing more."
+      },
+      "office": "Inspector General",
+      "statute": "5 U.S.C. 403(e)",
+      "statuteQuote": "The annual rate of basic pay for an Inspector General (as defined under section 401 of this title ) shall be the rate payable for level III of the Executive Schedule under section 5314 of this title , plus 3 percent.",
+      "identification": {
+        "kind": "establishment_listed_in_5_usc_401",
+        "establishment": "Tennessee Valley Authority",
+        "organisationId": "exec-ind-misc-tennessee-valley-authority-tva",
+        "organisationName": "Tennessee Valley Authority (TVA)"
+      },
+      "derivation": "5 U.S.C. 403(e) (e) Rate of Pay: “The annual rate of basic pay for an Inspector General (as defined under section 401 of this title ) shall be the rate payable for level III of the Executive Schedule under section 5314 of this title , plus 3 percent.” · Salary Table No. 2026-EX, Effective January 2026: Level III $209,600 · $209,600 + 3% = $215,888",
+      "quote": "5 U.S.C. 403(e) (e) Rate of Pay: “The annual rate of basic pay for an Inspector General (as defined under section 401 of this title ) shall be the rate payable for level III of the Executive Schedule under section 5314 of this title , plus 3 percent.” · Salary Table No. 2026-EX, Effective January 2026: Level III $209,600 · $209,600 + 3% = $215,888",
+      "documents": [
+        {
+          "role": "sets this post's basic pay by reference to Executive Schedule Level III, plus 3 percent",
+          "citation": "5 U.S.C. 403(e)",
+          "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+          "title": "5 U.S.C. 403(e), current through the prelim edition",
+          "quote": "The annual rate of basic pay for an Inspector General (as defined under section 401 of this title ) shall be the rate payable for level III of the Executive Schedule under section 5314 of this title , plus 3 percent.",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section403&num=0&edition=prelim",
+          "documentSha256": "03a99dce101efc898df802eb8a3b5f73636e82f65b8f12370755c83fe0d05a12",
+          "retrievedAt": "2026-09-27T22:10:09Z",
+          "statesTheFigure": false
+        },
+        {
+          "role": "states what that Executive Schedule level pays",
+          "citation": "Salary Table No. 2026-EX, Effective January 2026",
+          "publisher": "U.S. Office of Personnel Management",
+          "title": "Salary Table No. 2026-EX",
+          "quote": "Level III $209,600",
+          "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+          "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+          "retrievedAt": "2026-09-11T03:05:36Z",
+          "statesTheFigure": false
+        },
+        {
+          "role": "lists the establishments whose Inspector General 403(e) prices, and this post's organisation is one of them",
+          "citation": "5 U.S.C. 401(1)",
+          "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+          "title": "5 U.S.C. 401(1), current through the prelim edition",
+          "quote": "The term \"Inspector General\" means the Inspector General of an establishment. The term \"establishment\" means the Department of Agriculture, Commerce, Defense, Education, Energy, Health and Human Services, Housing and Urban Development, the Interior, Justice, Labor, State, Transportation, Homeland Security, the Treasury, or Veterans Affairs; the Agency for International Development, the Community Development Financial Institutions Fund, the Environmental Protection Agency, the Federal Communications Commission, the Federal Emergency Management Agency, the General Services Administration, the National Aeronautics and Space Administration, the Nuclear Regulatory Commission, the Office of Personnel Management, the Railroad Retirement Board, the Federal Deposit Insurance Corporation, the Small Business Administration, the Corporation for National and Community Service, the Social Security Administration, the Federal Housing Finance Agency, the Tennessee Valley Authority, the Export-Import Bank of the United States, the Commissions established under section 15301 of title 40 , the National Security Agency, or the National Reconnaissance Office, as the case may be.",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section401&num=0&edition=prelim",
+          "documentSha256": "3d4e3bdba96bd0b152c5feb3f006752a2693223726fce81d58ff9683497c4a1e",
+          "retrievedAt": "2026-09-28T17:40:54Z",
+          "statesTheFigure": false
+        }
+      ],
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level III plus 3 percent",
+      "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section403&num=0&edition=prelim",
+      "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-27T22:10:09Z",
+      "verification": {
+        "documents": 3,
+        "documentsStatingTheFigure": 0,
+        "percent": 90,
+        "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+        "caution": "The percentage measures how much official documentation this figure rests on, not the chance that it is right. No document here states the figure for this post: a statute sets its pay by reference to an Executive Schedule level, and OPM's table states what that level pays; where the statute adds a percentage, the result is arithmetic this project performed and no document prints.",
+        "documentRoles": [
+          {
+            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section403&num=0&edition=prelim"
+          },
+          {
+            "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx"
+          },
+          {
+            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section401&num=0&edition=prelim"
+          }
+        ]
+      }
+    }
   },
   {
     "id": "exec-ind-misc-appalachian-regional-commission-arc",
@@ -86009,7 +87397,108 @@
     },
     "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
     "evidenceVerifiedAt": "2025-12-31",
-    "parentId": "exec-regulatory-fcc"
+    "parentId": "exec-regulatory-fcc",
+    "positionTierReferencePay": {
+      "source": "statutory_tier_reference_pay",
+      "sourceLabel": "a statute setting the post's pay by reference to an Executive Schedule level, joined to OPM's table",
+      "method": "pay_set_by_reference_to_an_executive_schedule_level_plus_a_statutory_percentage_joined_to_opm_table",
+      "amount": 215888.0,
+      "rateText": "$215,888",
+      "level": "III",
+      "levelText": "Level III",
+      "levelRateText": "$209,600",
+      "levelAmount": 209600.0,
+      "percent": 3,
+      "arithmetic": {
+        "operation": "plus_percent",
+        "baseAmount": 209600.0,
+        "baseAmountRaw": "209,600",
+        "baseText": "$209,600",
+        "baseLevel": "III",
+        "percent": 3,
+        "result": 215888.0,
+        "resultText": "$215,888",
+        "note": "No document prints $215,888. 5 U.S.C. 403(e) sets the rate at Level III's plus 3 percent, and Salary Table No. 2026-EX prints $209,600 for Level III; the figure is that arithmetic and nothing more."
+      },
+      "office": "Inspector General",
+      "statute": "5 U.S.C. 403(e)",
+      "statuteQuote": "The annual rate of basic pay for an Inspector General (as defined under section 401 of this title ) shall be the rate payable for level III of the Executive Schedule under section 5314 of this title , plus 3 percent.",
+      "identification": {
+        "kind": "establishment_listed_in_5_usc_401",
+        "establishment": "Federal Communications Commission",
+        "organisationId": "exec-regulatory-fcc",
+        "organisationName": "Federal Communications Commission (FCC)"
+      },
+      "derivation": "5 U.S.C. 403(e) (e) Rate of Pay: “The annual rate of basic pay for an Inspector General (as defined under section 401 of this title ) shall be the rate payable for level III of the Executive Schedule under section 5314 of this title , plus 3 percent.” · Salary Table No. 2026-EX, Effective January 2026: Level III $209,600 · $209,600 + 3% = $215,888",
+      "quote": "5 U.S.C. 403(e) (e) Rate of Pay: “The annual rate of basic pay for an Inspector General (as defined under section 401 of this title ) shall be the rate payable for level III of the Executive Schedule under section 5314 of this title , plus 3 percent.” · Salary Table No. 2026-EX, Effective January 2026: Level III $209,600 · $209,600 + 3% = $215,888",
+      "documents": [
+        {
+          "role": "sets this post's basic pay by reference to Executive Schedule Level III, plus 3 percent",
+          "citation": "5 U.S.C. 403(e)",
+          "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+          "title": "5 U.S.C. 403(e), current through the prelim edition",
+          "quote": "The annual rate of basic pay for an Inspector General (as defined under section 401 of this title ) shall be the rate payable for level III of the Executive Schedule under section 5314 of this title , plus 3 percent.",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section403&num=0&edition=prelim",
+          "documentSha256": "03a99dce101efc898df802eb8a3b5f73636e82f65b8f12370755c83fe0d05a12",
+          "retrievedAt": "2026-09-27T22:10:09Z",
+          "statesTheFigure": false
+        },
+        {
+          "role": "states what that Executive Schedule level pays",
+          "citation": "Salary Table No. 2026-EX, Effective January 2026",
+          "publisher": "U.S. Office of Personnel Management",
+          "title": "Salary Table No. 2026-EX",
+          "quote": "Level III $209,600",
+          "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+          "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+          "retrievedAt": "2026-09-11T03:05:36Z",
+          "statesTheFigure": false
+        },
+        {
+          "role": "lists the establishments whose Inspector General 403(e) prices, and this post's organisation is one of them",
+          "citation": "5 U.S.C. 401(1)",
+          "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+          "title": "5 U.S.C. 401(1), current through the prelim edition",
+          "quote": "The term \"Inspector General\" means the Inspector General of an establishment. The term \"establishment\" means the Department of Agriculture, Commerce, Defense, Education, Energy, Health and Human Services, Housing and Urban Development, the Interior, Justice, Labor, State, Transportation, Homeland Security, the Treasury, or Veterans Affairs; the Agency for International Development, the Community Development Financial Institutions Fund, the Environmental Protection Agency, the Federal Communications Commission, the Federal Emergency Management Agency, the General Services Administration, the National Aeronautics and Space Administration, the Nuclear Regulatory Commission, the Office of Personnel Management, the Railroad Retirement Board, the Federal Deposit Insurance Corporation, the Small Business Administration, the Corporation for National and Community Service, the Social Security Administration, the Federal Housing Finance Agency, the Tennessee Valley Authority, the Export-Import Bank of the United States, the Commissions established under section 15301 of title 40 , the National Security Agency, or the National Reconnaissance Office, as the case may be.",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section401&num=0&edition=prelim",
+          "documentSha256": "3d4e3bdba96bd0b152c5feb3f006752a2693223726fce81d58ff9683497c4a1e",
+          "retrievedAt": "2026-09-28T17:40:54Z",
+          "statesTheFigure": false
+        }
+      ],
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level III plus 3 percent",
+      "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section403&num=0&edition=prelim",
+      "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-27T22:10:09Z",
+      "verification": {
+        "documents": 3,
+        "documentsStatingTheFigure": 0,
+        "percent": 90,
+        "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+        "caution": "The percentage measures how much official documentation this figure rests on, not the chance that it is right. No document here states the figure for this post: a statute sets its pay by reference to an Executive Schedule level, and OPM's table states what that level pays; where the statute adds a percentage, the result is arithmetic this project performed and no document prints.",
+        "documentRoles": [
+          {
+            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section403&num=0&edition=prelim"
+          },
+          {
+            "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx"
+          },
+          {
+            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section401&num=0&edition=prelim"
+          }
+        ]
+      }
+    }
   },
   {
     "id": "exec-regulatory-ftc",
@@ -86607,7 +88096,108 @@
       "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-163",
       "tableFooter": "[For the Nuclear Regulatory Commission statement of organization, see the Code of Federal Regulations, Title 10, Part I]"
     },
-    "parentId": "exec-regulatory-nrc"
+    "parentId": "exec-regulatory-nrc",
+    "positionTierReferencePay": {
+      "source": "statutory_tier_reference_pay",
+      "sourceLabel": "a statute setting the post's pay by reference to an Executive Schedule level, joined to OPM's table",
+      "method": "pay_set_by_reference_to_an_executive_schedule_level_plus_a_statutory_percentage_joined_to_opm_table",
+      "amount": 215888.0,
+      "rateText": "$215,888",
+      "level": "III",
+      "levelText": "Level III",
+      "levelRateText": "$209,600",
+      "levelAmount": 209600.0,
+      "percent": 3,
+      "arithmetic": {
+        "operation": "plus_percent",
+        "baseAmount": 209600.0,
+        "baseAmountRaw": "209,600",
+        "baseText": "$209,600",
+        "baseLevel": "III",
+        "percent": 3,
+        "result": 215888.0,
+        "resultText": "$215,888",
+        "note": "No document prints $215,888. 5 U.S.C. 403(e) sets the rate at Level III's plus 3 percent, and Salary Table No. 2026-EX prints $209,600 for Level III; the figure is that arithmetic and nothing more."
+      },
+      "office": "Inspector General",
+      "statute": "5 U.S.C. 403(e)",
+      "statuteQuote": "The annual rate of basic pay for an Inspector General (as defined under section 401 of this title ) shall be the rate payable for level III of the Executive Schedule under section 5314 of this title , plus 3 percent.",
+      "identification": {
+        "kind": "establishment_listed_in_5_usc_401",
+        "establishment": "Nuclear Regulatory Commission",
+        "organisationId": "exec-regulatory-nrc",
+        "organisationName": "Nuclear Regulatory Commission (NRC)"
+      },
+      "derivation": "5 U.S.C. 403(e) (e) Rate of Pay: “The annual rate of basic pay for an Inspector General (as defined under section 401 of this title ) shall be the rate payable for level III of the Executive Schedule under section 5314 of this title , plus 3 percent.” · Salary Table No. 2026-EX, Effective January 2026: Level III $209,600 · $209,600 + 3% = $215,888",
+      "quote": "5 U.S.C. 403(e) (e) Rate of Pay: “The annual rate of basic pay for an Inspector General (as defined under section 401 of this title ) shall be the rate payable for level III of the Executive Schedule under section 5314 of this title , plus 3 percent.” · Salary Table No. 2026-EX, Effective January 2026: Level III $209,600 · $209,600 + 3% = $215,888",
+      "documents": [
+        {
+          "role": "sets this post's basic pay by reference to Executive Schedule Level III, plus 3 percent",
+          "citation": "5 U.S.C. 403(e)",
+          "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+          "title": "5 U.S.C. 403(e), current through the prelim edition",
+          "quote": "The annual rate of basic pay for an Inspector General (as defined under section 401 of this title ) shall be the rate payable for level III of the Executive Schedule under section 5314 of this title , plus 3 percent.",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section403&num=0&edition=prelim",
+          "documentSha256": "03a99dce101efc898df802eb8a3b5f73636e82f65b8f12370755c83fe0d05a12",
+          "retrievedAt": "2026-09-27T22:10:09Z",
+          "statesTheFigure": false
+        },
+        {
+          "role": "states what that Executive Schedule level pays",
+          "citation": "Salary Table No. 2026-EX, Effective January 2026",
+          "publisher": "U.S. Office of Personnel Management",
+          "title": "Salary Table No. 2026-EX",
+          "quote": "Level III $209,600",
+          "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+          "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+          "retrievedAt": "2026-09-11T03:05:36Z",
+          "statesTheFigure": false
+        },
+        {
+          "role": "lists the establishments whose Inspector General 403(e) prices, and this post's organisation is one of them",
+          "citation": "5 U.S.C. 401(1)",
+          "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+          "title": "5 U.S.C. 401(1), current through the prelim edition",
+          "quote": "The term \"Inspector General\" means the Inspector General of an establishment. The term \"establishment\" means the Department of Agriculture, Commerce, Defense, Education, Energy, Health and Human Services, Housing and Urban Development, the Interior, Justice, Labor, State, Transportation, Homeland Security, the Treasury, or Veterans Affairs; the Agency for International Development, the Community Development Financial Institutions Fund, the Environmental Protection Agency, the Federal Communications Commission, the Federal Emergency Management Agency, the General Services Administration, the National Aeronautics and Space Administration, the Nuclear Regulatory Commission, the Office of Personnel Management, the Railroad Retirement Board, the Federal Deposit Insurance Corporation, the Small Business Administration, the Corporation for National and Community Service, the Social Security Administration, the Federal Housing Finance Agency, the Tennessee Valley Authority, the Export-Import Bank of the United States, the Commissions established under section 15301 of title 40 , the National Security Agency, or the National Reconnaissance Office, as the case may be.",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section401&num=0&edition=prelim",
+          "documentSha256": "3d4e3bdba96bd0b152c5feb3f006752a2693223726fce81d58ff9683497c4a1e",
+          "retrievedAt": "2026-09-28T17:40:54Z",
+          "statesTheFigure": false
+        }
+      ],
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level III plus 3 percent",
+      "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section403&num=0&edition=prelim",
+      "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-27T22:10:09Z",
+      "verification": {
+        "documents": 3,
+        "documentsStatingTheFigure": 0,
+        "percent": 90,
+        "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+        "caution": "The percentage measures how much official documentation this figure rests on, not the chance that it is right. No document here states the figure for this post: a statute sets its pay by reference to an Executive Schedule level, and OPM's table states what that level pays; where the statute adds a percentage, the result is arithmetic this project performed and no document prints.",
+        "documentRoles": [
+          {
+            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section403&num=0&edition=prelim"
+          },
+          {
+            "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx"
+          },
+          {
+            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section401&num=0&edition=prelim"
+          }
+        ]
+      }
+    }
   },
   {
     "id": "exec-regulatory-ferc",
@@ -87191,7 +88781,108 @@
     },
     "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
     "evidenceVerifiedAt": "2025-12-31",
-    "parentId": "exec-regulatory-fdic"
+    "parentId": "exec-regulatory-fdic",
+    "positionTierReferencePay": {
+      "source": "statutory_tier_reference_pay",
+      "sourceLabel": "a statute setting the post's pay by reference to an Executive Schedule level, joined to OPM's table",
+      "method": "pay_set_by_reference_to_an_executive_schedule_level_plus_a_statutory_percentage_joined_to_opm_table",
+      "amount": 215888.0,
+      "rateText": "$215,888",
+      "level": "III",
+      "levelText": "Level III",
+      "levelRateText": "$209,600",
+      "levelAmount": 209600.0,
+      "percent": 3,
+      "arithmetic": {
+        "operation": "plus_percent",
+        "baseAmount": 209600.0,
+        "baseAmountRaw": "209,600",
+        "baseText": "$209,600",
+        "baseLevel": "III",
+        "percent": 3,
+        "result": 215888.0,
+        "resultText": "$215,888",
+        "note": "No document prints $215,888. 5 U.S.C. 403(e) sets the rate at Level III's plus 3 percent, and Salary Table No. 2026-EX prints $209,600 for Level III; the figure is that arithmetic and nothing more."
+      },
+      "office": "Inspector General",
+      "statute": "5 U.S.C. 403(e)",
+      "statuteQuote": "The annual rate of basic pay for an Inspector General (as defined under section 401 of this title ) shall be the rate payable for level III of the Executive Schedule under section 5314 of this title , plus 3 percent.",
+      "identification": {
+        "kind": "establishment_listed_in_5_usc_401",
+        "establishment": "Federal Deposit Insurance Corporation",
+        "organisationId": "exec-regulatory-fdic",
+        "organisationName": "Federal Deposit Insurance Corporation (FDIC)"
+      },
+      "derivation": "5 U.S.C. 403(e) (e) Rate of Pay: “The annual rate of basic pay for an Inspector General (as defined under section 401 of this title ) shall be the rate payable for level III of the Executive Schedule under section 5314 of this title , plus 3 percent.” · Salary Table No. 2026-EX, Effective January 2026: Level III $209,600 · $209,600 + 3% = $215,888",
+      "quote": "5 U.S.C. 403(e) (e) Rate of Pay: “The annual rate of basic pay for an Inspector General (as defined under section 401 of this title ) shall be the rate payable for level III of the Executive Schedule under section 5314 of this title , plus 3 percent.” · Salary Table No. 2026-EX, Effective January 2026: Level III $209,600 · $209,600 + 3% = $215,888",
+      "documents": [
+        {
+          "role": "sets this post's basic pay by reference to Executive Schedule Level III, plus 3 percent",
+          "citation": "5 U.S.C. 403(e)",
+          "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+          "title": "5 U.S.C. 403(e), current through the prelim edition",
+          "quote": "The annual rate of basic pay for an Inspector General (as defined under section 401 of this title ) shall be the rate payable for level III of the Executive Schedule under section 5314 of this title , plus 3 percent.",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section403&num=0&edition=prelim",
+          "documentSha256": "03a99dce101efc898df802eb8a3b5f73636e82f65b8f12370755c83fe0d05a12",
+          "retrievedAt": "2026-09-27T22:10:09Z",
+          "statesTheFigure": false
+        },
+        {
+          "role": "states what that Executive Schedule level pays",
+          "citation": "Salary Table No. 2026-EX, Effective January 2026",
+          "publisher": "U.S. Office of Personnel Management",
+          "title": "Salary Table No. 2026-EX",
+          "quote": "Level III $209,600",
+          "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+          "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+          "retrievedAt": "2026-09-11T03:05:36Z",
+          "statesTheFigure": false
+        },
+        {
+          "role": "lists the establishments whose Inspector General 403(e) prices, and this post's organisation is one of them",
+          "citation": "5 U.S.C. 401(1)",
+          "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+          "title": "5 U.S.C. 401(1), current through the prelim edition",
+          "quote": "The term \"Inspector General\" means the Inspector General of an establishment. The term \"establishment\" means the Department of Agriculture, Commerce, Defense, Education, Energy, Health and Human Services, Housing and Urban Development, the Interior, Justice, Labor, State, Transportation, Homeland Security, the Treasury, or Veterans Affairs; the Agency for International Development, the Community Development Financial Institutions Fund, the Environmental Protection Agency, the Federal Communications Commission, the Federal Emergency Management Agency, the General Services Administration, the National Aeronautics and Space Administration, the Nuclear Regulatory Commission, the Office of Personnel Management, the Railroad Retirement Board, the Federal Deposit Insurance Corporation, the Small Business Administration, the Corporation for National and Community Service, the Social Security Administration, the Federal Housing Finance Agency, the Tennessee Valley Authority, the Export-Import Bank of the United States, the Commissions established under section 15301 of title 40 , the National Security Agency, or the National Reconnaissance Office, as the case may be.",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section401&num=0&edition=prelim",
+          "documentSha256": "3d4e3bdba96bd0b152c5feb3f006752a2693223726fce81d58ff9683497c4a1e",
+          "retrievedAt": "2026-09-28T17:40:54Z",
+          "statesTheFigure": false
+        }
+      ],
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level III plus 3 percent",
+      "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section403&num=0&edition=prelim",
+      "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-27T22:10:09Z",
+      "verification": {
+        "documents": 3,
+        "documentsStatingTheFigure": 0,
+        "percent": 90,
+        "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+        "caution": "The percentage measures how much official documentation this figure rests on, not the chance that it is right. No document here states the figure for this post: a statute sets its pay by reference to an Executive Schedule level, and OPM's table states what that level pays; where the statute adds a percentage, the result is arithmetic this project performed and no document prints.",
+        "documentRoles": [
+          {
+            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section403&num=0&edition=prelim"
+          },
+          {
+            "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx"
+          },
+          {
+            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section401&num=0&edition=prelim"
+          }
+        ]
+      }
+    }
   },
   {
     "id": "exec-regulatory-fdic-director-division-of-risk-management-supervision",

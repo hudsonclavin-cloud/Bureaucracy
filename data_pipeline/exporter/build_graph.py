@@ -253,6 +253,10 @@ MINIMAL_GRAPH_FIELDS = (
     # tier, the Judicial Compensation table prices the tier, and the block
     # carries both documents, the count and what that count is worth
     "positionDerivedPay",
+    # a statute sets the post's pay by reference to an Executive Schedule
+    # level, and OPM's table prices the level; an Inspector General's adds
+    # the Act's 3 percent, arithmetic the block carries in the open
+    "positionTierReferencePay",
     # OPM's CURRENT PLUM export: the listing of the post as it stands now,
     # and the rate of basic pay that export prints for the one row under the
     # title -- a second document beside the archive's listing, never a cost
@@ -2490,6 +2494,7 @@ def build_graph(
     us_code_pay_schedule_evidence_path: str | Path | None = "default",
     va_title38_pay_evidence_path: str | Path | None = "default",
     derived_pay_evidence_path: str | Path | None = "default",
+    tier_reference_pay_evidence_path: str | Path | None = "default",
     whitehouse_pay_evidence_path: str | Path | None = "default",
     usaspending_evidence_path: str | Path | None = "default",
     net_cost_evidence_path: str | Path | None = "default",
@@ -2818,6 +2823,26 @@ def build_graph(
         load_derived_pay_evidence(resolved_derived_pay_path) if resolved_derived_pay_path else {},
         index_tree=index_tree,
     )
+    # After every printed-rate source and after the Executive Schedule's own
+    # route, because it leaves a node any of those already priced alone: a
+    # figure set by reference to a level never displaces one the level's
+    # own list or a printed table gives the post directly.
+    from data_pipeline.verification.tier_reference_pay import (  # noqa: E402 — imports this module
+        DEFAULT_PAY_EVIDENCE_PATH as DEFAULT_TIER_REFERENCE_PAY_EVIDENCE_PATH,
+        apply_pay_evidence as apply_tier_reference_pay_evidence,
+        load_pay_evidence as load_tier_reference_pay_evidence,
+    )
+
+    resolved_tier_reference_pay_path = (
+        DEFAULT_TIER_REFERENCE_PAY_EVIDENCE_PATH
+        if tier_reference_pay_evidence_path == "default"
+        else tier_reference_pay_evidence_path
+    )
+    validation["tier_reference_pay_evidence"] = apply_tier_reference_pay_evidence(
+        graph,
+        load_tier_reference_pay_evidence(resolved_tier_reference_pay_path) if resolved_tier_reference_pay_path else {},
+        index_tree=index_tree,
+    )
     from data_pipeline.verification.whitehouse_pay import (  # noqa: E402 — whitehouse_pay imports this module
         DEFAULT_PAY_EVIDENCE_PATH as DEFAULT_WHITEHOUSE_PAY_EVIDENCE_PATH,
         apply_pay_evidence as apply_whitehouse_pay_evidence,
@@ -3002,6 +3027,7 @@ def build_graph(
     validation["us_code_pay_schedule_evidence"]["stands_for_many_posts_after_pruning"] = multi_post_withdrawn
     validation["va_title38_pay_evidence"]["stands_for_many_posts_after_pruning"] = multi_post_withdrawn
     validation["derived_pay_evidence"]["stands_for_many_posts_after_pruning"] = multi_post_withdrawn
+    validation["tier_reference_pay_evidence"]["stands_for_many_posts_after_pruning"] = multi_post_withdrawn
     # How many documents each pay figure rests on, and what that count is
     # worth on this project's own source arithmetic. Last, deliberately: it
     # counts the URLs a block actually ends up carrying, so it must run after

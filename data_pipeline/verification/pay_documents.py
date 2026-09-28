@@ -186,6 +186,25 @@ PAY_DOCUMENT_FIELDS: dict[str, dict[str, Any]] = {
             "the tier this post is paid at, the other states what that tier pays."
         ),
     },
+    "positionTierReferencePay": {
+        # The derived shape again, from the other side of the Executive
+        # Schedule: a statute sets the post's pay by reference to a level the
+        # post is not itself placed at, OPM's table prices the level, and --
+        # for an Inspector General -- the statute adds 3 percent, which no
+        # document prints. Three documents on an IG record: 5 U.S.C. 401(1)'s
+        # establishment list is what scopes the claim to this post's
+        # organisation.
+        "urlKeys": (("documents", "*", "url"),),
+        "roles": {},
+        "statesTheFigure": 0,
+        "caution": (
+            "The percentage measures how much official documentation this figure rests on, "
+            "not the chance that it is right. No document here states the figure for this post: "
+            "a statute sets its pay by reference to an Executive Schedule level, and OPM's table "
+            "states what that level pays; where the statute adds a percentage, the result is "
+            "arithmetic this project performed and no document prints."
+        ),
+    },
 }
 
 #: Every pay field, in the order the panel prints them. Kept beside the table

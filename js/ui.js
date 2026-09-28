@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20260927a";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260927a";
+import { createGovernmentGraph } from "./graph.js?v=20260928a";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260928a";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -1228,6 +1228,62 @@ function derivedPayOf(node) {
   const pay = node.positionDerivedPay;
   if (!pay || typeof pay !== "object" || typeof pay.amount !== "number") return null;
   return pay;
+}
+
+function tierReferencePayOf(node) {
+  const pay = node.positionTierReferencePay;
+  if (!pay || typeof pay !== "object" || typeof pay.amount !== "number") return null;
+  return pay;
+}
+
+// A statute that sets the post's pay BY REFERENCE to an Executive Schedule
+// level the post is not itself placed at -- 31 U.S.C. 703(f) for the GAO's
+// officers, 5 U.S.C. 403(e) for an establishment's Inspector General -- joined
+// to OPM's table for the level. No document states the figure for the post,
+// and an Inspector General's is arithmetic on a printed one (Level III plus 3
+// percent), so the block carries that arithmetic and the panel prints it as a
+// computation, never as a quotation.
+function renderTierReferencePay(data) {
+  let line = document.getElementById("info-tier-reference-pay");
+  if (!line && dom.infoStats) {
+    line = document.createElement("div");
+    line.id = "info-tier-reference-pay";
+    line.style.fontSize = "9px";
+    line.style.color = "#8f7a5d";
+    line.style.letterSpacing = "0.06em";
+    line.style.margin = "2px 0 8px";
+    dom.infoStats.insertAdjacentElement("afterend", line);
+  }
+  if (!line) return;
+  const pay = tierReferencePayOf(data);
+  if (!pay) {
+    if (line) line.replaceChildren();
+    return;
+  }
+  line.replaceChildren();
+  const add = (text) => line.appendChild(document.createTextNode(text));
+  const printed = pay.rateText || `$${pay.amount.toLocaleString()}`;
+  const documents = Array.isArray(pay.documents) ? pay.documents : [];
+  const arithmetic = pay.arithmetic && typeof pay.arithmetic === "object" ? pay.arithmetic : null;
+  const identification = pay.identification && typeof pay.identification === "object" ? pay.identification : {};
+  add(`PAY SET BY REFERENCE TO A LEVEL — no document states this figure for this post. ${printed}${pay.effectiveText ? `, ${String(pay.effectiveText).replace(/^Effective\b/, "effective")}` : ""}.`);
+  if (arithmetic) {
+    add(` ${pay.statute || "The statute"} sets an Inspector General's basic pay at the rate for Executive Schedule ${pay.levelText || `Level ${pay.level}`} plus ${arithmetic.percent} percent; OPM's ${pay.table || "table"} prints ${arithmetic.baseText || pay.levelRateText} for that level. ${arithmetic.baseText || pay.levelRateText} + ${arithmetic.percent}% = ${arithmetic.resultText || printed} — arithmetic this project performed, printed by no document.`);
+    if (identification.establishment) {
+      add(` It applies here because 5 U.S.C. 401(1) lists ${identification.establishment} as an establishment whose Inspector General that section covers, and this post sits directly under it.`);
+    }
+  } else {
+    add(` ${pay.statute || "The statute"} sets the ${pay.office || "post"}'s pay equal to the rate for Executive Schedule ${pay.levelText || `Level ${pay.level}`}; OPM's ${pay.table || "table"} prints ${pay.levelRateText || printed} for that level. The post is not itself on the Schedule — its pay is set by reference to one of the Schedule's tiers.`);
+  }
+  add(holdersSentence(pay));
+  add(payDocumentsSentence(pay));
+  for (const document of documents) {
+    if (!document || typeof document !== "object") continue;
+    add(` ${document.citation || "A document"} — ${document.role || "supplies part of the figure"}: "${String(document.quote || "").trim()}"`);
+  }
+  add(" It names a level, not this post by name, so it is never a verification that the post exists. It is not this unit's cost: basic pay excludes benefits and is not a share of federal outlays.");
+  const notes = Array.isArray(pay.footnotes) ? pay.footnotes.filter((n) => String(n || "").trim()) : [];
+  for (const note of notes) add(` The table's own note: "${String(note).trim()}"`);
 }
 
 function renderDerivedPay(data) {
@@ -2656,6 +2712,7 @@ function renderInfoPanel(nodeObj) {
   renderCurrentListing(data);
   renderStatutoryPay(data);
   renderDerivedPay(data);
+  renderTierReferencePay(data);
   renderSchedulePay(data);
   renderReportedPay(data);
   renderCountProvenance(data);

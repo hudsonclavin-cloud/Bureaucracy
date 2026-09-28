@@ -51,6 +51,7 @@ python scripts/derive_plum_current_evidence.py --dry-run  # OPM's CURRENT Plum B
 python scripts/derive_fr_signature_evidence.py --dry-run  # the title an official stated when signing a Federal Register document; the signer's NAME is never read; writes nothing
 python scripts/derive_judicial_pay_evidence.py --dry-run    # uscourts.gov's own compensation table; writes nothing
 python scripts/derive_derived_pay_evidence.py --dry-run     # a figure NO document states: a statutory parity provision joined to that table; writes nothing
+python scripts/derive_tier_reference_pay_evidence.py --dry-run  # pay a statute sets BY REFERENCE to an Executive Schedule level (GAO's officers; the IG Act's Level III + 3%), joined to OPM's table; writes nothing
 python scripts/report_unpriced_positions.py --dry-run        # every position with no pay claim, and the prompt pack that covers all of them
 python scripts/derive_congressional_pay_evidence.py --dry-run  # senate.gov's own salary schedule; writes nothing
 python scripts/derive_whitehouse_pay_evidence.py --dry-run     # the White House Office's statutory staff roster; writes nothing
@@ -2262,24 +2263,27 @@ field it is weaker, so each field declares how many of its documents state the
 figure ITSELF: every printed rate and every printed pair of bounds declares
 **1** — the table or the roster prints the number, and the second document
 where there is one supplies the level or pay plan saying WHICH printed number
-applies — and `positionDerivedPay` declares **0**. The gate mirrors that per
-field, a test asserts `positionDerivedPay` is the only zero, and the panel
-prints the two in one sentence through a single helper
-(`payDocumentsSentence`) called from all eight renderers in `js/ui.js`. The
+applies — and `positionDerivedPay` declares **0**, as does
+`positionTierReferencePay` since 2026-09-28 (a statute sets the pay by
+reference to a level; the table prices the level; no document states the
+post's figure, and an Inspector General's is arithmetic besides). The gate
+mirrors that per field, a test asserts those two are the only zeros, and the
+panel prints the two in one sentence through a single helper
+(`payDocumentsSentence`) called from all nine renderers in `js/ui.js`. The
 atlas view does not call it: `js/atlas.js` carries its own shorter copy,
-`payDocuments`, writes the derived block's sentence inline, and renders six
-of the eight fields (no `positionTierPay` or `positionGradePay`). The
+`payDocuments`, writes the derived block's sentence inline, and renders seven
+of the nine fields (no `positionTierPay` or `positionGradePay`). The
 derived module stopped writing its own copy of the arithmetic when this
 landed: one code path for one number.
 
-**And the gap this made visible, counted rather than estimated.** 513 of 4,591
+**And the gap this made visible, counted rather than estimated.** 541 of 4,591
 positions carry a pay claim (461 when this section was first written, before
 the multi-post rule below and the Federal Reserve rows; 492 before the
-reviewed rows of 2026-09-27, 498 before that day's class-title benches);
-**4,078 do not**, and
+reviewed rows of 2026-09-27, 498 before that day's class-title benches, 513
+before the tier-reference module of 2026-09-28); **4,050 do not**, and
 `scripts/report_unpriced_positions.py` says why for every one of them:
 
-- **3,297** — no pay document this project has read names the title at all.
+- **3,269** — no pay document this project has read names the title at all.
   Not a coverage gap somebody has not got to.
 - **760** — the node states a multiplicity (`Physician (×multiple)`) and no
   claim that holds for every holder reaches it. Since the per-field rule
@@ -2289,7 +2293,7 @@ reviewed rows of 2026-09-27, 498 before that day's class-title benches);
   SYSTEM governs the title is a fact worth having.
 - **21** — OPM lists the position and the row prints no rate.
 
-The concentration is the useful part: **432** of the 4,078 sit under `VA
+The concentration is the useful part: **432** of the 4,050 sit under `VA
 Medical Centers`, 360 of them among the 3,313 (the service chiefs
 `va_title38_pay.py` deliberately refuses, since choosing a Title 38 table per
 node would be this module deciding which VA service chiefs are doctors), 61
@@ -2301,7 +2305,7 @@ per unpriced position with its id and its reason;
 `docs/PAY_SOURCE_RESEARCH_PROMPT_3.md` is a research prompt pack generated
 from the same list in the same run — a lead prompt asking which pay systems
 exist and where each is published, then **39 enumeration shards naming every
-one of the 4,078 titles**. `tests/test_unpriced_positions.py` asserts the
+one of the 4,050 titles**. `tests/test_unpriced_positions.py` asserts the
 coverage rather than trusting it: every unpriced id appears in the pack, no
 priced position appears in either document, and both documents are regenerated
 and compared byte-for-byte so a stale copy fails.
@@ -2438,7 +2442,8 @@ So the sweep is now per field, and the three classes are declared in
   level and stays with `holders` (`pay_tables.CLASS_TITLE_PAY_FIELD`; the
   class-title section below).
 - `OFFICE_RATE_PAY_FIELDS` — `positionStatutoryPay`, `positionDerivedPay`,
-  `positionTierPay` — are **kept**, stamped with a `holders` block (`text`,
+  `positionTierPay` and, since 2026-09-28, `positionTierReferencePay` — are
+  **kept**, stamped with a `holders` block (`text`,
   `kind`, `count` or bounds, `appliesToEachHolder: true`, and a note) that
   the panel prints as "for each of the N holders". A tier rate is paid to
   every judge of the tier and a band bounds every holder.
@@ -2655,19 +2660,84 @@ Director of the CIA (50 U.S.C. 3036, 3037) and the CMS Administrator
 the Schedule **108 → 123**, pay claims **498 → 513**, unpriced **4,093 →
 4,078**, multi-post nodes priced **28 → 33**.
 
-**Read for the record, and deliberately not built on yet.** 5 U.S.C. 403(e)
+**Pay set BY REFERENCE to a level: the GAO's officers and the Inspectors
+General (`tier_reference_pay.py`, since 2026-09-28, the owner's decision).**
+Two sections read on 2026-09-27 and recorded rather than built on: 31 U.S.C.
+703(f) sets the Comptroller General's pay "equal to the rate for level II of
+the Executive Schedule" and the Deputy's at level III, and 5 U.S.C. 403(e)
 (the Inspector General Act) sets an Inspector General's basic pay at "the
 rate payable for level III of the Executive Schedule under section 5314 of
-this title, plus 3 percent" — a figure no document prints, one arithmetic
-step past even `derived_pay`'s join, and it would reach the 80 `Inspector
-General` nodes here. 31 U.S.C. 703(f) sets the Comptroller General's pay
-"equal to the rate for level II of the Executive Schedule" and the Deputy
-Comptroller General's at level III; neither title is printed in
-§§5312–5316, so the schedule route cannot reach them and a `derived_pay`
-shape (statute names the tier, OPM's table prices it, neither states the
-figure) would. Both sections are committed (`ig_5_usc_403.html`,
-`gao_31_usc_703.html`) so the next decision starts from the bytes; both are
-recorded in `CURATION.md` §19.8 with the rest of the batch's triage.
+this title, plus 3 percent". Neither office is ON the Schedule — §§5312–5316
+print none of these titles, so `statutory_schedule.py` can never reach them —
+their pay is set by reference to one of its tiers. That is `derived_pay.py`'s
+shape from the other side of the Schedule, with OPM's Salary Table No.
+2026-EX standing where the Judicial Compensation table stood: the statute
+names the tier, the table prices the tier, and **no document states the
+figure for the post**. So it is a ninth pay field, `positionTierReferencePay`,
+office-rate class, publishing `documentsStatingTheFigure: 0` and the count
+of documents it rests on with what that count is worth on the project's own
+scale — its own field rather than a widening of `positionDerivedPay`, for the
+reason that module gives for not widening `positionStatutoryPay`: that gate
+mirrors four parity provisions against the uscourts.gov table, and folding a
+different table, a different statute shape and an arithmetic step into it
+would loosen checks already guarding eight published records.
+
+**An Inspector General's figure is arithmetic on a printed one, and the
+block says so.** $209,600 × 1.03 = $215,888, which no document prints. The
+record carries the arithmetic in the open (`arithmetic`: the base as the
+table prints it, the percentage as the statute states it, the result), the
+panel prints "$209,600 + 3% = $215,888 — arithmetic this project performed,
+printed by no document", and `financial_evidence` accepts it under a fifth
+scale rule granted to this source type alone,
+`COMPUTED_FROM_MARKED_FIGURE_SOURCE_TYPES` (`unitsEvidenceKind:
+currency_mark_on_the_figure_the_record_is_computed_from`): the base must
+carry the currency mark ATTACHED in the evidence exactly as
+`_prints_whole_dollars` demands of a record's own figure, the record's own
+figure must NOT be printed with a mark anywhere in it, and the figure must
+equal the computation to the cent. A GAO record's figure is the level's own
+printed row and takes the ordinary printed-mark rule.
+
+**Which Inspectors General, decided by the statute's own list.** 403(e)
+prices "an Inspector General (as defined under section 401 of this title)";
+401(4) defines that as "the Inspector General of an establishment"; 401(1)
+lists the establishments by name — fifteen departments (printed compressed,
+"the Department of Agriculture, Commerce, Defense, …") and some two dozen
+agencies. `parse_establishments` reads that sentence off the committed
+section on every run, the gate parses it again with its own reader
+(`tier_reference_establishments`, pinned equal), and a node is priced only
+when it is named exactly `Inspector General`, sits DIRECTLY under an
+organisation whose name reduces to a listed establishment, and stands for one
+post. That guard is what keeps the stamp out: this file records that
+`Inspector General` names 80 nodes here and most are a copied administrative
+stamp under DIA, NGA, DARPA, DLA and the other Defense agencies, and none of
+those is an establishment. Measured: **81 IG nodes considered, 27 priced**,
+54 refused with the reason on the record — the designated Federal entities'
+(5 U.S.C. 415, read and committed, prints no rate of pay: the NLRB, the FEC,
+the NEA, the CPSC, the SEC and the rest), the CIA's (5 U.S.C. 423, not read),
+the legislative branch's (the GAO's own, the Library's, the Architect's, the
+Capitol Police's), the FBI's qualified `Inspector General (DoJ IG covers
+FBI)`, and AmeriCorps — which 401(1) lists as the Corporation for National
+and Community Service, a name this graph carries only in the alias table,
+and `aliases.py` is read by no join that lands a number. The NSA's and NRO's
+ARE establishments by name and are priced, though they sit among the stamped
+agencies; the list decides, not the neighbourhood.
+
+**28 published of 29 derived**, and the one difference is the leave-alone
+rule working: the Department of Justice's IG carries OPM's archived listing
+with a printed level and rate (`positionPayRate`), and a figure set by
+reference never displaces a printed one. The gate mirrors the GAO rows by
+node id and the IG rule with its establishment list, reads the parent off
+the tree it is walking, recomputes the arithmetic from
+`EXECUTIVE_SCHEDULE_RATES`, and refuses: an IG under a Defense agency or a
+DFE, a block naming another establishment than the tree's, an IG block
+without arithmetic or a GAO row with it, a percentage the Act does not state,
+a result that is not the base plus the percentage, a base that is not the
+table's Level III, a GAO row moved onto the other officer or priced at the
+wrong level, a dropped document, one claiming to state the figure, an
+inflated percentage, a verified grade, an exact scope, a rate beside another
+pay field, and a statute or table URL among the node's own sources.
+`tests/test_tier_reference_pay.py` corrupts each in turn; pay claims
+**513 → 541**, unpriced **4,078 → 4,050**.
 
 **The panel's Trace Origin, restored.** A 2026-09-15 change reduced "Trace
 Origin" to a one-line confirmation on the grounds that the breadcrumb already
@@ -3151,13 +3221,16 @@ subdivide measured money rather than invent it — which does not make a
 subdivision a measurement. **Since 2026-09-09 the site does not show one by
 default**, by the owner's decision: a node with no measured cost of its own
 shows no figure and says why, and ticking "Also show estimated shares of a
-parent's total" opts back in. The exception is a real salary — **513** of the
+parent's total" opts back in. The exception is a real salary — **541** of the
 4,591 positions carry a pay claim an official source states, counted on the
-published graph on 2026-09-27 after Schedule 6, the VA's Title 38 bands, the
+published graph on 2026-09-28 after Schedule 6, the VA's Title 38 bands, the
 Article I parity derivations, the per-field multi-post rule, the Federal
-Reserve rows, the reviewed rows of the fourth research batch and the five
-class-title benches landed: 8 a figure no document states
-(`positionDerivedPay`, four chief judges and their four benches), 72 a Title 38 tier BAND rather than a rate (`positionTierPay`), 123 from the
+Reserve rows, the reviewed rows of the fourth research batch, the five
+class-title benches and the tier-reference module landed: 8 a figure no document states
+(`positionDerivedPay`, four chief judges and their four benches), 28 a rate a
+statute sets by REFERENCE to an Executive Schedule level (`positionTierReferencePay`:
+the GAO's two officers, and 26 Inspectors General at Level III plus the Act's
+3 percent, arithmetic no document prints), 72 a Title 38 tier BAND rather than a rate (`positionTierPay`), 123 from the
 Executive Schedule as 5 U.S.C. §§5312–5316 sets it (24 of them through a
 reviewed identification a second statute backs — 12 U.S.C. 241–242 for the
 Fed's four, then the FCC's, FTC's, CFTC's and FERC's chairs and benches, the
@@ -3172,14 +3245,15 @@ base-pay **range** rather than a rate (`positionGradePay`, counted separately
 because a range is not a rate and the panel says so; it read 32 until the
 current export supplied a printed figure for 14 of them, and a printed figure
 beats a band). A node may carry more than one of these, so the per-source
-figures sum past 513 — 461 on 2026-09-23 when four Article I chief judges
+figures sum past 541 — 461 on 2026-09-23 when four Article I chief judges
 took a figure NO document states, 488 the same day when the multi-post rule
 became per field, 491 with the Federal Reserve's three (`positionDerivedPay`
 was 4 and is 8, since each court's bench now takes its own parity provision)
 492 once the review corrected the roster lookup (`positionDerivedPay`, a parity provision
 joined to the compensation table, publishing its document count and what that
-count is worth), 498 on 2026-09-27 with the six reviewed rows, and 513 the
-same day with the five class-title benches and nine more reviewed rows. Shown in the cost block under its own heading and never
+count is worth), 498 on 2026-09-27 with the six reviewed rows, 513 the
+same day with the five class-title benches and nine more reviewed rows, and
+541 on 2026-09-28 with the tier-reference module. Shown in the cost block under its own heading and never
 headed COST.
 
 That figure read **354** until 2026-09-19 and was wrong: it added up the
@@ -3191,8 +3265,9 @@ renames, 311 after, 380 once the current export was read, 385 once
 Schedule 6 priced the Vice President and the House's three elected leaders,
 457 once the VA's Title 38 bands landed, 461 with the derived figures, 488 with
 the per-field multi-post rule, 491 with the Federal Reserve rows, 492 after
-the review, 498 with the six reviewed rows of 2026-09-27 and 513 with that
-day's class-title benches and nine more reviewed rows. The estimates
+the review, 498 with the six reviewed rows of 2026-09-27, 513 with that
+day's class-title benches and nine more reviewed rows, and 541 on 2026-09-28
+with the GAO's officers and 26 Inspectors General. The estimates
 stay in `graph.json` because the cascade's arithmetic and the gate's
 child-sum checks are built on them, so a consumer of the JSON must read
 `cost_status`, not `resolved_total_amount` alone. The gate prints both

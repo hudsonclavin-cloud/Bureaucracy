@@ -197,6 +197,13 @@ SOURCE_TYPES = {
     # it says so on every record. See
     # data_pipeline/verification/derived_pay.py.
     "statutory_parity_derived_pay",
+    # A statute sets a post's pay by REFERENCE to an Executive Schedule level
+    # the post is not itself placed at (31 U.S.C. 703(f): "equal to the rate
+    # for level II"; 5 U.S.C. 403(e): "level III ... plus 3 percent"), and
+    # OPM's table prices the level. The derived shape again, with an
+    # arithmetic step on the IG rule. See
+    # data_pipeline/verification/tier_reference_pay.py.
+    "statutory_tier_reference_pay",
 }
 
 #: Documents that state their scale by *printing* it rather than by declaring
@@ -225,7 +232,24 @@ SCALE_PRINTED_SOURCE_TYPES = {
     # its row: "2026 $249,900 $264,900 ...". The mark is attached to it, so
     # the scale comes off the same document the number does.
     "statutory_parity_derived_pay",
+    # A GAO record's own figure is OPM's level row, "Level II $228,000", the
+    # mark attached. An Inspector General's is NOT printed anywhere and takes
+    # the computed-figure rule below instead.
+    "statutory_tier_reference_pay",
 }
+
+#: The narrowest rule of all, granted to exactly one source type: a record
+#: whose figure NO document prints, because a statute sets it as a printed
+#: figure plus a percentage -- 5 U.S.C. 403(e), "the rate payable for level
+#: III of the Executive Schedule ... plus 3 percent". The record declares the
+#: arithmetic in the open (`arithmetic`: the base as the table prints it, the
+#: percentage as the statute states it, the result), the base must carry the
+#: currency mark ATTACHED in the evidence exactly as `_prints_whole_dollars`
+#: demands of a record's own figure, and the record's own figure must equal
+#: the base times (100 + percent) / 100 to the cent. Tried last, so a figure
+#: that is itself printed always takes a stronger kind; recorded in
+#: `unitsEvidenceKind` so a reviewer can see which records rest on it.
+COMPUTED_FROM_MARKED_FIGURE_SOURCE_TYPES = {"statutory_tier_reference_pay"}
 
 #: A third way a source can state its scale, narrower still, and granted to
 #: exactly one source type: a machine-readable API whose publisher states no
@@ -292,6 +316,7 @@ SOURCE_BASES = {
     "whitehouse_staff_report": {"basic_pay"},
     "opm_plum_current_export": {"basic_pay"},
     "statutory_parity_derived_pay": {"basic_pay"},
+    "statutory_tier_reference_pay": {"basic_pay"},
 }
 
 SCOPE_MATCHES = {"exact", "parent", "child", "broader_account", "proxy", "ambiguous"}
@@ -419,6 +444,45 @@ def _dictionary_states_scale(record: Mapping[str, Any], evidence: str, source_ty
     if not _SHA256.match(_text(source.get("sha256")).lower()) or not _text(source.get("file")):
         return ""
     return f"{field} -> {element}"
+
+
+def _computed_from_marked_figure(
+    record: Mapping[str, Any], evidence: str, amount_raw: Any, source_type: str, units: str
+) -> str:
+    """Whether the record's figure is arithmetic on a figure the document
+    prints with its mark attached. See `COMPUTED_FROM_MARKED_FIGURE_SOURCE_TYPES`.
+
+    Returns the base's printed text, or "" when the evidence does not show
+    this. Four things, all required: an `arithmetic` block naming the
+    operation (`plus_percent` only), the base's printed digits and a whole
+    percentage; the base printed WITH its mark in the evidence; the record's
+    own figure NOT printed with a mark in the evidence (then the stronger rule
+    would have matched); and the record's own figure equal to the computation
+    to the cent, so a record cannot declare one sum and publish another.
+    """
+    if units != "usd" or source_type not in COMPUTED_FROM_MARKED_FIGURE_SOURCE_TYPES:
+        return ""
+    arithmetic = record.get("arithmetic")
+    if not isinstance(arithmetic, Mapping) or _text(arithmetic.get("operation")) != "plus_percent":
+        return ""
+    base_raw = _text(arithmetic.get("baseAmountRaw"))
+    percent = arithmetic.get("percent")
+    if not re.fullmatch(r"[\d,]+(?:\.\d{1,2})?", base_raw):
+        return ""
+    if isinstance(percent, bool) or not isinstance(percent, int) or not (0 < percent <= 100):
+        return ""
+    base_match = re.search(rf"\$\s*{re.escape(base_raw)}(?![\d,]|\.\d)", evidence)
+    if base_match is None:
+        return ""
+    raw = _text(amount_raw)
+    if not raw or not re.fullmatch(r"[\d,]+(?:\.\d{1,2})?", raw) or raw == base_raw:
+        return ""
+    if re.search(rf"\$\s*{re.escape(raw)}(?![\d,]|\.\d)", evidence):
+        return ""
+    expected = round(float(base_raw.replace(",", "")) * (100 + percent) / 100.0, 2)
+    if abs(float(raw.replace(",", "")) - expected) > 0.005:
+        return ""
+    return base_match.group(0)
 
 
 def _column_head_prints_dollars(
@@ -697,7 +761,10 @@ def validate_record(
         column_head = "" if (printed or dictionary) else _column_head_prints_dollars(
             record, units_evidence, record.get("amountRaw"), source_type, units
         )
-        if not printed and not dictionary and not column_head:
+        computed = "" if (printed or dictionary or column_head) else _computed_from_marked_figure(
+            record, units_evidence, record.get("amountRaw"), source_type, units
+        )
+        if not printed and not dictionary and not column_head and not computed:
             raise Rejected(
                 f"{node_id}: unitsEvidence {record.get('unitsEvidence')!r} states no scale "
                 f"(expected one of {UNIT_PHRASES[units]})"
@@ -706,8 +773,10 @@ def validate_record(
             units_evidence_kind = "currency_mark_on_the_printed_figure"
         elif dictionary:
             units_evidence_kind = "publishers_data_dictionary"
-        else:
+        elif column_head:
             units_evidence_kind = "currency_mark_on_the_columns_first_figure"
+        else:
+            units_evidence_kind = "currency_mark_on_the_figure_the_record_is_computed_from"
     else:
         if stated != units:
             raise Rejected(

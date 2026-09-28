@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-27T22:09:43.550540+00:00",
+  "timestamp": "2026-09-28T17:50:57.577705+00:00",
   "mode": "offline_regeneration",
   "note": "Rebuilt from the curated base graph and the Treasury anchor already published; no crawler ran. See scripts/regenerate_published_graph.py.",
   "nodes_before": 5481,
@@ -241,6 +241,16 @@
       "already_priced_by_another_source": 0,
       "stands_for_many_posts_after_pruning": 0
     },
+    "tier_reference_pay_evidence": {
+      "priced": 28,
+      "priced_inspectors_general": 26,
+      "unknown_node": 0,
+      "not_a_position": 0,
+      "renamed_since_the_match": 0,
+      "reparented_since_the_match": 0,
+      "already_priced_by_another_source": 1,
+      "stands_for_many_posts_after_pruning": 0
+    },
     "whitehouse_pay_evidence": {
       "priced": 188,
       "unknown_node": 0,
@@ -340,11 +350,12 @@
       "not_capped_other_evidence": 1
     },
     "pay_documents": {
-      "annotated": 552,
+      "annotated": 580,
       "no_document": 0,
       "positionDerivedPay": 8,
       "positionStatutoryPay": 24,
       "positionSchedulePay": 123,
+      "positionTierReferencePay": 28,
       "positionGradePay": 18,
       "positionCurrentPay": 88,
       "positionPayRate": 31,
