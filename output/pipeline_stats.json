@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-28T19:31:17.424483+00:00",
+  "timestamp": "2026-09-28T22:34:06.850201+00:00",
   "mode": "offline_regeneration",
   "note": "Rebuilt from the curated base graph and the Treasury anchor already published; no crawler ran. See scripts/regenerate_published_graph.py.",
   "nodes_before": 5481,
@@ -197,14 +197,14 @@
       "not_validated": 0
     },
     "schedule_pay_evidence": {
-      "priced": 140,
+      "priced": 160,
       "priced_scoped": 61,
       "unknown_node": 0,
       "not_a_position": 0,
       "renamed_since_the_match": 0,
       "reparented_since_the_match": 0,
       "stands_for_many_posts": 0,
-      "priced_class_title": 6
+      "priced_class_title": 7
     },
     "judicial_pay_evidence": {
       "priced": 17,
@@ -242,7 +242,7 @@
       "stands_for_many_posts_after_pruning": 0
     },
     "tier_reference_pay_evidence": {
-      "priced": 34,
+      "priced": 36,
       "priced_inspectors_general": 26,
       "unknown_node": 0,
       "not_a_position": 0,
@@ -350,12 +350,12 @@
       "not_capped_other_evidence": 1
     },
     "pay_documents": {
-      "annotated": 605,
+      "annotated": 627,
       "no_document": 0,
       "positionDerivedPay": 10,
       "positionStatutoryPay": 24,
-      "positionSchedulePay": 140,
-      "positionTierReferencePay": 34,
+      "positionSchedulePay": 160,
+      "positionTierReferencePay": 36,
       "positionGradePay": 18,
       "positionCurrentPay": 88,
       "positionPayRate": 31,

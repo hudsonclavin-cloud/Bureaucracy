@@ -199,6 +199,25 @@ class SectionTests(unittest.TestCase):
         self.assertIsNone(re.search(r"rate of (basic )?pay|Executive Schedule", text))
 
 
+class SectionNumberingTests(unittest.TestCase):
+    """2 U.S.C. 136a–2 is numbered with an en-dash and a second number, and
+    until 2026-09-28 none of the three operative-text readers found its
+    heading, so the Librarian's section read as page chrome."""
+
+    def test_the_en_dashed_section_is_read_by_every_reader(self):
+        from data_pipeline.verification.statutory_schedule import load_basis_section
+
+        quote = TIER_REFERENCE_PROVISIONS["leg-support-loc-librarian-of-congress"]["quote"]
+        for name, text in (
+            ("tier_reference_pay", load_section("loc_2_usc_136a-2.html")["operative"]),
+            ("statutory_schedule", load_basis_section("loc_2_usc_136a-2.html")["operative"]),
+            ("gate", uscode_operative_text(US_CODE_BASIS_FIXTURE_DIR / "loc_2_usc_136a-2.html")),
+        ):
+            with self.subTest(reader=name):
+                self.assertTrue(text.startswith("§136a–2."), text[:40])
+                self.assertIn(quote, text)
+
+
 class MirrorTests(unittest.TestCase):
     def test_the_gate_mirrors_the_gao_rows_by_node_id(self):
         self.assertEqual(set(TIER_REFERENCE_ROWS), set(TIER_REFERENCE_PROVISIONS))
@@ -465,11 +484,12 @@ class PublishedGraphTests(unittest.TestCase):
     def test_the_published_blocks_are_the_gao_officers_and_the_establishments_igs(self):
         node_map, parent_map = index_tree(json.loads(GRAPH.read_text(encoding="utf-8")))
         priced = {node_id: node for node_id, node in node_map.items() if isinstance(node.get(FIELD), dict)}
-        # 35 derived (the GAO's two, the GPO's two, the IES's four, and 27
-        # IGs); the Department of Justice's IG carries OPM's archived listing
-        # with a printed level and rate (`positionPayRate`), which a figure
-        # set by reference never displaces, so 34 are published.
-        self.assertEqual(34, len(priced), sorted(priced))
+        # 37 derived (the GAO's two, the GPO's two, the IES's four, the FCA
+        # Board's Chairman, the Librarian of Congress, and 27 IGs); the
+        # Department of Justice's IG carries OPM's archived listing with a
+        # printed level and rate (`positionPayRate`), which a figure set by
+        # reference never displaces, so 36 are published.
+        self.assertEqual(36, len(priced), sorted(priced))
         self.assertNotIn("exec-dept-doj-inspector-general", priced)
         self.assertIsInstance(node_map["exec-dept-doj-inspector-general"].get("positionPayRate"), dict)
         establishments = set(tier_reference_establishments(uscode_operative_text(US_CODE_BASIS_FIXTURE_DIR / "ig_5_usc_401.html")))

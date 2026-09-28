@@ -302,7 +302,7 @@ def operative_text(raw_html: str) -> str:
     """
     text = re.sub(r"(?is)<(script|style)\b.*?</\1>", " ", raw_html)
     text = _collapse(html_module.unescape(re.sub(r"<[^>]+>", " ", text)))
-    start = re.search(r"§\s?\d+[A-Za-z]?\.", text)
+    start = re.search(r"§\s?\d+[A-Za-z]?(?:[-\u2013]\d+)?\.", text)
     if start is None:
         raise Unreadable("the page carries no section heading")
     body = text[start.start() :]

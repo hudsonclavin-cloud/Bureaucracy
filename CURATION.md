@@ -3259,10 +3259,14 @@ the opposite for several of them:*
   statute creates, agency by agency, the FCC/FTC shape.
 - **Not on the Schedule under the batch's title**: the OSHA Assistant
   Secretary (the Code prints the Review Commission's chair and members, not
-  the Assistant Secretary by name), the Export-Import Bank's head, the FCA's,
-  and the CSB's chair; and the **Assistant Attorneys General**, printed as
-  "Assistant Attorneys General (11)" at Level IV — the counted-class shape
-  the matcher refuses until the owner decides it.
+  the Assistant Secretary by name) and the CSB's chair; and the **Assistant
+  Attorneys General**, printed as "Assistant Attorneys General (11)" at Level
+  IV — the counted-class shape the matcher refuses until the owner decides
+  it. *Corrected the same day (§19.12):* this bullet first listed the
+  Export-Import Bank's head and the FCA's here too, on a search of the
+  index for "export-import" and nothing for "farm credit"; the Code prints
+  "President of the Export-Import Bank of Washington" (III) and "Governor of
+  the Farm Credit Administration" (III), both at the batch's level.
 
 *Refused, with the reason:*
 
@@ -3303,4 +3307,123 @@ the opposite for several of them:*
 seventeen basis fetches — NASA, FTA, FRA, MARAD, MSHA, the OFR, the FMC's
 chair and bench, and the ten stamped heads — and the counted-class
 (Assistant Attorneys General, CPSC, PRC, NCUA members) and
-Members-under-Schedule-6 decisions are still the owner's.
+Members-under-Schedule-6 decisions are still the owner's. (Done the same
+day: §19.12.)
+
+### 19.12 Every batch's leads, accounted for; the eighth batch's rows landed (2026-09-28)
+
+**The owner's ask: "make sure that you used everything from the perplexity
+responses I gave to you so far."** So this section is a ledger rather than a
+triage: every lead any batch carried that the committed Code could confirm,
+and its disposition, batch by batch. Where a lead was still open it is closed
+here; where it stays open it says what decision or document it waits on.
+
+**Batch 4 (§19.7).** Six reviewed rows (FCC, FTC, IRS, FAA, DHS ×2) — landed
+that day. The FCC and FTC benches — landed in §19.8. DFAS — walled,
+recorded, still walled. Nothing outstanding.
+
+**Batch 5 (§19.8).** Nine reviewed rows and five class benches — landed. The
+GAO's officers and the Inspectors General — the tier-reference module,
+§19.9. Refused and unchanged: NOAA and NNSA (not on the Schedule), the
+Archivist (ambiguous in the Code), the CRS Director (a range's ceiling),
+SCOTUS officers, the FSA COO, NASA centre directors, Deputy Marshals (systems
+without a figure), the Senate whips and committee chairs (the Members
+decision). **Still open, and now buildable:** the bankruptcy and magistrate
+judges at "92 percent of the salary of a judge of the district court" (28
+U.S.C. 153(a), 634(a)) — arithmetic on a printed tier rate, which is exactly
+the shape `tier_reference_pay.py` publishes for an Inspector General's Level
+III plus 3 percent; the difference is the table (uscourts.gov, not OPM) and
+the field, so it is a variant of `derived_pay.py` carrying `arithmetic`, on
+two multi-post benches, and a module decision the owner has not made. The
+Deputy USTRs — the counted-class decision.
+
+**Batch 6 (§19.9).** Thirteen reviewed rows — landed in §19.10. Refused and
+unchanged: USPS officers (person-level 8-K figures), the USPS Board's
+statutory "$30,000 a year plus $300 a day" (39 U.S.C. 202 — a dollar figure
+printed in a statute, which no module here reads; a `positionStatutoryPay`
+source of a new kind and a nine-member board, still a decision), the NEC
+Director from the White House roster (a scope decision), AUSAs, JCT, the
+Smithsonian, JPL and the DOE laboratories, the combatant commanders (DFAS).
+
+**Batch 7 (§19.10).** The eight candidates — landed in §19.11 (four Schedule
+rows, six tier-reference rows, the AO and FJC Directors), the CBO read and
+refused. The one lead left there — **the USPTO's bare `Deputy Director`,
+"Deputy Under Secretary of Commerce for Intellectual Property and Deputy
+Director of the United States Patent and Trademark Office" (IV) by 35 U.S.C.
+3(b)(1)** — is landed here: a reviewed row is keyed to the node by id, so
+the floor that refuses a bare title as page evidence does not apply to it,
+and the section was already committed.
+
+**Batch 8 (§19.11).** The seventeen candidates the Code confirmed, plus the
+two §19.11 wrongly said it did not, are landed here as **twenty reviewed
+Schedule rows** (the USPTO Deputy among them) and **two tier-reference
+rows**. Twenty-three sections were fetched; three were wrong guesses and were
+deleted rather than committed (46 U.S.C. 301 is the conforming-changes
+section, not the Commission's; 5 U.S.C. 1201 composes the MSPB but its
+Chairman is at §1203; 50 U.S.C. 3803 is liability for service, the Director
+is at §3809), so twenty are committed.
+
+*Reviewed Schedule rows* (level; basis): NASA's Administrator (II; 51 U.S.C.
+20111), the FTA's ("Federal Transit Administrator", II; 49 U.S.C. 107), the
+FRA's (III; 49 U.S.C. 103), MARAD's (III; 49 U.S.C. 109), the Assistant
+Secretary of Labor for Mine Safety and Health (IV; 29 U.S.C. 557a), the OFR
+Director (III; 12 U.S.C. 5342, which itself compensates the Director at
+Level III), the FMC's Chair (III) and its `Commissioner (×4)` bench from
+"Members, Federal Maritime Commission" (IV, the seventh class-title bench;
+46 U.S.C. 46101), and ten of the stamped `Director / Administrator / Chair,
+<agency>` heads, each identified with the office the agency's own statute
+puts at its head: the MSPB's Chairman (III; 5 U.S.C. 1203), the NCUA Board's
+Chairman (III; 12 U.S.C. 1752a), the Director of the Peace Corps (III; 22
+U.S.C. 2503), the Director of Selective Service (IV; 50 U.S.C. 3809), the
+FLRA's Chairman (IV; 5 U.S.C. 7104), the NEH's chairperson (III; 20 U.S.C.
+956), the NTSB's Chairman (III; 49 U.S.C. 1111), the Special Counsel (III; 5
+U.S.C. 1211), the PBGC's Director (III; 29 U.S.C. 1302), the PRC's Chairman
+(III; 39 U.S.C. 502), and the Export-Import Bank's President (III; 12 U.S.C.
+635a). The last is the one row whose identification leans on a fact outside
+its operative text: the Schedule still prints "President of the
+Export-Import Bank **of Washington**", the Bank's name before Pub. L. 90–267
+renamed it in 1968, which the Code records in the notes to 12 U.S.C. 635 and
+nowhere in §635a's operative text. There is one Export-Import Bank and one
+President of it; the row's basis says what it rests on. On the stamped
+template: `Director / Administrator / Chair, <agency>` is one node standing
+for whichever of those three the agency actually has, and each row names
+which one the statute creates — the template is not being priced, the office
+under it is.
+
+*Tier-reference rows:* the FCA Board's Chairman — the Schedule prints
+"Governor of the Farm Credit Administration" (III), an office 12 U.S.C. 2242
+no longer has (the Administration is managed by a three-member Board), so no
+Schedule row is honest; but §2242(d) itself sets the Chairman's compensation
+"at the rate prescribed for level III of the Executive Schedule", which is
+the tier-reference shape, and the row prices the head the template stands
+for from that sentence. And the **Librarian of Congress** at Level II from 2
+U.S.C. 136a–2(1) — §19.11 had refused it because the Schedule prints no
+Librarian; the batch's Level II was right and the section is the Library's
+own. The Deputy Librarian is refused: §136a–2(2) pays "the greater of" Level
+III and the SL/ST maximum, a maximum of two documents rather than a rate.
+
+**A reader defect the Librarian's section exposed.** 2 U.S.C. 136a–2 is
+numbered with an en-dash and a second number, and all three operative-text
+readers — `derived_pay.operative_text`, `statutory_schedule`'s and the gate's
+own — matched a section heading as `§<digits><letter>.`, so none found the
+heading and the module read the page chrome as the law. The pattern now
+admits the dashed suffix in all three, and `tests/test_tier_reference_pay.py`
+asserts each reader starts the Librarian's operative text at "§136a–2."
+and finds the pay sentence in it.
+
+**Measured:** reviewed Schedule rows 41 → 61 and positions priced from the
+Schedule 140 → 160 (I 19, II 32, III 37, IV 66, V 6); tier-reference records
+34 → 36; class-title benches 6 → 7; multi-post nodes priced 34 → 35; pay
+claims **566 → 588**; unpriced **4,025 → 4,003** (3,225 unreached, 758
+stating a multiplicity, 20 listed without a rate). Nothing measured moved
+and no frontend file changed.
+
+**Still open after this section, all of them decisions and not fetches:**
+the counted-class shape (Assistant Attorneys General (11), Assistant
+Secretaries of State, the CPSC's, PRC's and NCUA's members, the Deputy
+USTRs); Members of Congress paid under Schedule 6 (committee chairs, the
+Senate whips, the JEC's chair and vice chair); the bankruptcy and magistrate
+judges' 92-percent arithmetic on the district-judge rate; the USPS Board's
+statutory stipend; and the Deputy Librarian's "greater of". Every other lead
+in eight batches is either published or refused with its reason on the
+record.

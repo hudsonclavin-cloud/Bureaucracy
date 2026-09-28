@@ -36,20 +36,22 @@ unverified`. The estimates remain in `graph.json` — the cascade's arithmetic
 and the gate's child-sum checks are built on them — so a consumer of the
 JSON must read `cost_status` and not `resolved_total_amount` alone.
 
-The one exception is a real salary. **566** position nodes carry a pay claim an
+The one exception is a real salary. **588** position nodes carry a pay claim an
 official source states — 188 from the White House Office roster (22 of them
-titles the roster lists N times at one rate, published for each holder), 140
-from the Executive Schedule as 5 U.S.C. §§5312–5316 sets it (41 of them through
+titles the roster lists N times at one rate, published for each holder), 160
+from the Executive Schedule as 5 U.S.C. §§5312–5316 sets it (61 of them through
 a reviewed identification a second statute backs, each resting on three
-documents; six of those are benches — the FCC's, FTC's, CFTC's, FERC's and
-NRC's `Commissioner (×4)` and the Fed's `Governor (×4 members)` — priced from
-the Code's own "Members, …" class title for each holder alike), 88
-the rate OPM's current PLUM export prints for the one row under the title, 34 a
+documents; seven of those are benches — the FCC's, FTC's, CFTC's, FERC's,
+NRC's and FMC's `Commissioner (×4)` and the Fed's `Governor (×4 members)` —
+priced from the Code's own "Members, …" class title for each holder alike), 88
+the rate OPM's current PLUM export prints for the one row under the title, 36 a
 rate a statute sets by REFERENCE to an Executive Schedule level the post is not
 itself placed at (`positionTierReferencePay`: the Comptroller General and the
 Deputy at 31 U.S.C. 703(f)'s levels II and III, the GPO's Director and Deputy
 at 44 U.S.C. 303's levels II and III, the IES Director at 20 U.S.C. 9514's
-Level II and its three Commissioners at 9517's Level IV, and 26 Inspectors
+Level II and its three Commissioners at 9517's Level IV, the FCA Board's
+Chairman at 12 U.S.C. 2242(d)'s Level III, the Librarian of Congress at 2
+U.S.C. 136a–2's Level II, and 26 Inspectors
 General of the establishments 5 U.S.C. 401(1) lists at Level III plus the
 Act's 3 percent — $215,888, arithmetic the block carries in the open and no
 document prints), 72 a Title 38 tier BAND rather than a rate, 31 from a
@@ -62,7 +64,7 @@ Director of the Administrative Office of the U.S. Courts, paid by 28 U.S.C.
 603 as a district judge, and the Director of the Federal Judicial Center,
 paid by 28 U.S.C. 626 what the AO's Director is paid: a chain of two statutes
 and the table, three documents, none stating the figure). A node may carry
-more than one, so the per-source figures sum past 566. Each shows in place of
+more than one, so the per-source figures sum past 588. Each shows in place of
 the withheld estimate, under its
 own heading rather than COST, with the panel saying it is compensation for one
 post — or, on a node standing for several, for each of its holders — and not

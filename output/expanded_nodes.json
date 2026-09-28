@@ -16395,7 +16395,82 @@
     },
     "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
     "evidenceVerifiedAt": "2025-12-31",
-    "parentId": "leg-support-loc"
+    "parentId": "leg-support-loc",
+    "positionTierReferencePay": {
+      "source": "statutory_tier_reference_pay",
+      "sourceLabel": "a statute setting the post's pay by reference to an Executive Schedule level, joined to OPM's table",
+      "method": "pay_set_by_reference_to_an_executive_schedule_level_joined_to_opm_table",
+      "amount": 228000.0,
+      "rateText": "$228,000",
+      "level": "II",
+      "levelText": "Level II",
+      "levelRateText": "$228,000",
+      "levelAmount": 228000.0,
+      "percent": 0,
+      "arithmetic": null,
+      "office": "Librarian of Congress",
+      "statute": "2 U.S.C. 136a-2(1)",
+      "statuteQuote": "the Librarian of Congress shall be compensated at an annual rate of pay which is equal to the annual rate of basic pay payable for positions at level II of the Executive Schedule under section 5313 of title 5",
+      "identification": {
+        "kind": "reviewed_row",
+        "nodeName": "Librarian of Congress"
+      },
+      "derivation": "2 U.S.C. 136a-2(1) (1): “the Librarian of Congress shall be compensated at an annual rate of pay which is equal to the annual rate of basic pay payable for positions at level II of the Executive Schedule under section 5313 of title 5” · Salary Table No. 2026-EX, Effective January 2026: Level II $228,000",
+      "quote": "2 U.S.C. 136a-2(1) (1): “the Librarian of Congress shall be compensated at an annual rate of pay which is equal to the annual rate of basic pay payable for positions at level II of the Executive Schedule under section 5313 of title 5” · Salary Table No. 2026-EX, Effective January 2026: Level II $228,000",
+      "documents": [
+        {
+          "role": "sets this post's basic pay by reference to Executive Schedule Level II",
+          "citation": "2 U.S.C. 136a-2(1)",
+          "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+          "title": "2 U.S.C. 136a-2(1), current through the prelim edition",
+          "quote": "the Librarian of Congress shall be compensated at an annual rate of pay which is equal to the annual rate of basic pay payable for positions at level II of the Executive Schedule under section 5313 of title 5",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title2-section136a-2&num=0&edition=prelim",
+          "documentSha256": "8174515f9f6de4dce27da726eb9b0bb48ea7d2bd7bc32133cf351c36e30d8522",
+          "retrievedAt": "2026-09-28T22:29:11Z",
+          "statesTheFigure": false
+        },
+        {
+          "role": "states what that Executive Schedule level pays",
+          "citation": "Salary Table No. 2026-EX, Effective January 2026",
+          "publisher": "U.S. Office of Personnel Management",
+          "title": "Salary Table No. 2026-EX",
+          "quote": "Level II $228,000",
+          "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+          "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+          "retrievedAt": "2026-09-11T03:05:36Z",
+          "statesTheFigure": false
+        }
+      ],
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level II",
+      "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title2-section136a-2&num=0&edition=prelim",
+      "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-28T22:29:11Z",
+      "verification": {
+        "documents": 2,
+        "documentsStatingTheFigure": 0,
+        "percent": 80,
+        "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+        "caution": "The percentage measures how much official documentation this figure rests on, not the chance that it is right. No document here states the figure for this post: a statute sets its pay by reference to an Executive Schedule level, and OPM's table states what that level pays; where the statute adds a percentage, the result is arithmetic this project performed and no document prints.",
+        "documentRoles": [
+          {
+            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title2-section136a-2&num=0&edition=prelim"
+          },
+          {
+            "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx"
+          }
+        ]
+      }
+    }
   },
   {
     "id": "leg-support-loc-chief-of-staff",
@@ -60684,7 +60759,6 @@
       "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
       "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6"
     },
-    "parentId": "exec-dept-ed-ies",
     "positionTierReferencePay": {
       "source": "statutory_tier_reference_pay",
       "sourceLabel": "a statute setting the post's pay by reference to an Executive Schedule level, joined to OPM's table",
@@ -60773,7 +60847,8 @@
           }
         ]
       }
-    }
+    },
+    "parentId": "exec-dept-ed-ies"
   },
   {
     "id": "exec-dept-ed--treasury-receipts",

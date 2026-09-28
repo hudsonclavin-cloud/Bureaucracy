@@ -43637,6 +43637,81 @@
                   "confidenceScore": 0.7,
                   "verificationStatus": "partial",
                   "lastVerified": "2025-12-31",
+                  "positionTierReferencePay": {
+                    "source": "statutory_tier_reference_pay",
+                    "sourceLabel": "a statute setting the post's pay by reference to an Executive Schedule level, joined to OPM's table",
+                    "method": "pay_set_by_reference_to_an_executive_schedule_level_joined_to_opm_table",
+                    "amount": 228000.0,
+                    "rateText": "$228,000",
+                    "level": "II",
+                    "levelText": "Level II",
+                    "levelRateText": "$228,000",
+                    "levelAmount": 228000.0,
+                    "percent": 0,
+                    "arithmetic": null,
+                    "office": "Librarian of Congress",
+                    "statute": "2 U.S.C. 136a-2(1)",
+                    "statuteQuote": "the Librarian of Congress shall be compensated at an annual rate of pay which is equal to the annual rate of basic pay payable for positions at level II of the Executive Schedule under section 5313 of title 5",
+                    "identification": {
+                      "kind": "reviewed_row",
+                      "nodeName": "Librarian of Congress"
+                    },
+                    "derivation": "2 U.S.C. 136a-2(1) (1): “the Librarian of Congress shall be compensated at an annual rate of pay which is equal to the annual rate of basic pay payable for positions at level II of the Executive Schedule under section 5313 of title 5” · Salary Table No. 2026-EX, Effective January 2026: Level II $228,000",
+                    "quote": "2 U.S.C. 136a-2(1) (1): “the Librarian of Congress shall be compensated at an annual rate of pay which is equal to the annual rate of basic pay payable for positions at level II of the Executive Schedule under section 5313 of title 5” · Salary Table No. 2026-EX, Effective January 2026: Level II $228,000",
+                    "documents": [
+                      {
+                        "role": "sets this post's basic pay by reference to Executive Schedule Level II",
+                        "citation": "2 U.S.C. 136a-2(1)",
+                        "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+                        "title": "2 U.S.C. 136a-2(1), current through the prelim edition",
+                        "quote": "the Librarian of Congress shall be compensated at an annual rate of pay which is equal to the annual rate of basic pay payable for positions at level II of the Executive Schedule under section 5313 of title 5",
+                        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title2-section136a-2&num=0&edition=prelim",
+                        "documentSha256": "8174515f9f6de4dce27da726eb9b0bb48ea7d2bd7bc32133cf351c36e30d8522",
+                        "retrievedAt": "2026-09-28T22:29:11Z",
+                        "statesTheFigure": false
+                      },
+                      {
+                        "role": "states what that Executive Schedule level pays",
+                        "citation": "Salary Table No. 2026-EX, Effective January 2026",
+                        "publisher": "U.S. Office of Personnel Management",
+                        "title": "Salary Table No. 2026-EX",
+                        "quote": "Level II $228,000",
+                        "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+                        "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+                        "retrievedAt": "2026-09-11T03:05:36Z",
+                        "statesTheFigure": false
+                      }
+                    ],
+                    "table": "Salary Table No. 2026-EX",
+                    "effectiveText": "Effective January 2026",
+                    "effective": "2026-01-01",
+                    "fiscalYear": 2026,
+                    "footnotes": [
+                      "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+                    ],
+                    "costBasis": "basic_pay",
+                    "scopeMatch": "proxy",
+                    "financialEvidenceStatus": "partial",
+                    "amountScope": "Level II",
+                    "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title2-section136a-2&num=0&edition=prelim",
+                    "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+                    "checkedAt": "2026-09-28T22:29:11Z",
+                    "verification": {
+                      "documents": 2,
+                      "documentsStatingTheFigure": 0,
+                      "percent": 80,
+                      "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+                      "caution": "The percentage measures how much official documentation this figure rests on, not the chance that it is right. No document here states the figure for this post: a statute sets its pay by reference to an Executive Schedule level, and OPM's table states what that level pays; where the statute adds a percentage, the result is arithmetic this project performed and no document prints.",
+                      "documentRoles": [
+                        {
+                          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title2-section136a-2&num=0&edition=prelim"
+                        },
+                        {
+                          "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx"
+                        }
+                      ]
+                    }
+                  },
                   "evidenceUrls": [
                     "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-077"
                   ],
@@ -83670,6 +83745,64 @@
                       "budget": null,
                       "color": "#666666",
                       "children": [],
+                      "positionSchedulePay": {
+                        "source": "us_code_executive_schedule",
+                        "method": "level_assigned_by_5_usc_5312_5316_to_the_office_a_second_statute_identifies_this_post_as",
+                        "identification": {
+                          "nodeName": "Director, OFR",
+                          "basis": "the same office: 12 U.S.C. 5342 puts a Director at the head of the Office of Financial Research in the Department of the Treasury and itself compensates that Director at Level III of the Executive Schedule, the level 5 U.S.C. 5314 prints for it; the graph names the Office by its acronym",
+                          "basisCitation": "12 U.S.C. 5342",
+                          "basisQuote": "The Office shall be headed by a Director, who shall be appointed by the President, by and with the advice and consent of the Senate.",
+                          "basisUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title12-section5342&num=0&edition=prelim",
+                          "basisSha256": "7ed75c985410d01d919f42500057337b5377e7b9cd2566f7a069a952376656ba",
+                          "basisCheckedAt": "2026-09-28T22:24:21Z"
+                        },
+                        "payLevel": "III",
+                        "citation": "5 U.S.C. §5314",
+                        "statutoryTitle": "Director of the Office of Financial Research",
+                        "scopedOffice": null,
+                        "scopedOrganisation": null,
+                        "scopedOrganisationId": null,
+                        "statuteUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5314&num=0&edition=prelim",
+                        "statuteCheckedAt": "2026-09-18T20:34:21Z",
+                        "amount": 209600.0,
+                        "rateText": "$209,600",
+                        "table": "Salary Table No. 2026-EX",
+                        "effectiveText": "Effective January 2026",
+                        "effective": "2026-01-01",
+                        "fiscalYear": 2026,
+                        "costBasis": "basic_pay",
+                        "scopeMatch": "proxy",
+                        "financialEvidenceStatus": "partial",
+                        "amountScope": "Level III",
+                        "quote": "Level III $209,600",
+                        "footnotes": [
+                          "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+                        ],
+                        "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+                        "checkedAt": "2026-09-11T03:05:36Z",
+                        "verification": {
+                          "documents": 3,
+                          "documentsStatingTheFigure": 1,
+                          "percent": 90,
+                          "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+                          "caution": "One document states the rate and another is the statute that puts this post at that level; where a third is listed, it is the statute that says this post is the office the Code names, because the Code's title is not this node's name. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+                          "documentRoles": [
+                            {
+                              "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+                              "role": "states what that Executive Schedule level pays"
+                            },
+                            {
+                              "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5314&num=0&edition=prelim",
+                              "role": "places this post at that level"
+                            },
+                            {
+                              "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title12-section5342&num=0&edition=prelim",
+                              "role": "identifies this post as the office the Code places at that level"
+                            }
+                          ]
+                        }
+                      },
                       "sourceUrls": [],
                       "sourceTypes": [],
                       "sourceCount": 0,
@@ -123088,6 +123221,64 @@
                       "budget": null,
                       "color": "#666666",
                       "children": [],
+                      "positionSchedulePay": {
+                        "source": "us_code_executive_schedule",
+                        "method": "level_assigned_by_5_usc_5312_5316_to_the_office_a_second_statute_identifies_this_post_as",
+                        "identification": {
+                          "nodeName": "Deputy Director",
+                          "basis": "the same office: 35 U.S.C. 3(b)(1) creates one officer holding the joint title Deputy Under Secretary of Commerce for Intellectual Property and Deputy Director of the United States Patent and Trademark Office, and 5 U.S.C. 5315 places that joint title at Level IV; the graph writes the bare 'Deputy Director' under the Office, and the row is keyed to that node by id",
+                          "basisCitation": "35 U.S.C. 3",
+                          "basisQuote": "The Secretary of Commerce, upon nomination by the Director, shall appoint a Deputy Under Secretary of Commerce for Intellectual Property and Deputy Director of the United States Patent and Trademark Office",
+                          "basisUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title35-section3&num=0&edition=prelim",
+                          "basisSha256": "aaeb93bdbdfd6bb62f240a7b181b047ca851279fa2ec87b770f769bcb28a4572",
+                          "basisCheckedAt": "2026-09-28T19:22:24Z"
+                        },
+                        "payLevel": "IV",
+                        "citation": "5 U.S.C. §5315",
+                        "statutoryTitle": "Deputy Under Secretary of Commerce for Intellectual Property and Deputy Director of the United States Patent and Trademark Office",
+                        "scopedOffice": null,
+                        "scopedOrganisation": null,
+                        "scopedOrganisationId": null,
+                        "statuteUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
+                        "statuteCheckedAt": "2026-09-18T20:34:27Z",
+                        "amount": 197200.0,
+                        "rateText": "$197,200",
+                        "table": "Salary Table No. 2026-EX",
+                        "effectiveText": "Effective January 2026",
+                        "effective": "2026-01-01",
+                        "fiscalYear": 2026,
+                        "costBasis": "basic_pay",
+                        "scopeMatch": "proxy",
+                        "financialEvidenceStatus": "partial",
+                        "amountScope": "Level IV",
+                        "quote": "Level IV $197,200",
+                        "footnotes": [
+                          "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+                        ],
+                        "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+                        "checkedAt": "2026-09-11T03:05:36Z",
+                        "verification": {
+                          "documents": 3,
+                          "documentsStatingTheFigure": 1,
+                          "percent": 90,
+                          "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+                          "caution": "One document states the rate and another is the statute that puts this post at that level; where a third is listed, it is the statute that says this post is the office the Code names, because the Code's title is not this node's name. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+                          "documentRoles": [
+                            {
+                              "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+                              "role": "states what that Executive Schedule level pays"
+                            },
+                            {
+                              "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
+                              "role": "places this post at that level"
+                            },
+                            {
+                              "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title35-section3&num=0&edition=prelim",
+                              "role": "identifies this post as the office the Code places at that level"
+                            }
+                          ]
+                        }
+                      },
                       "sourceUrls": [],
                       "sourceTypes": [],
                       "sourceCount": 0,
@@ -128388,6 +128579,64 @@
                       "budget": null,
                       "color": "#666666",
                       "children": [],
+                      "positionSchedulePay": {
+                        "source": "us_code_executive_schedule",
+                        "method": "level_assigned_by_5_usc_5312_5316_to_the_office_a_second_statute_identifies_this_post_as",
+                        "identification": {
+                          "nodeName": "Assistant Secretary of Labor for Mine Safety",
+                          "basis": "the same office: 29 U.S.C. 557a puts the Mine Safety and Health Administration under an Assistant Secretary of Labor for Mine Safety and Health, and 5 U.S.C. 5315 places that Assistant Secretary at Level IV; the graph's name drops the words 'and Health'",
+                          "basisCitation": "29 U.S.C. 557a",
+                          "basisQuote": "There is established in the Department of Labor a Mine Safety and Health Administration to be headed by an Assistant Secretary of Labor for Mine Safety and Health appointed by the President, by and with the advice and consent of the Senate.",
+                          "basisUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title29-section557a&num=0&edition=prelim",
+                          "basisSha256": "be852d388eb8145e1d4b30fd4dab783e6536bf74c6b545228e936a18ab21cc85",
+                          "basisCheckedAt": "2026-09-28T22:23:57Z"
+                        },
+                        "payLevel": "IV",
+                        "citation": "5 U.S.C. §5315",
+                        "statutoryTitle": "Assistant Secretary of Labor for Mine Safety and Health",
+                        "scopedOffice": null,
+                        "scopedOrganisation": null,
+                        "scopedOrganisationId": null,
+                        "statuteUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
+                        "statuteCheckedAt": "2026-09-18T20:34:27Z",
+                        "amount": 197200.0,
+                        "rateText": "$197,200",
+                        "table": "Salary Table No. 2026-EX",
+                        "effectiveText": "Effective January 2026",
+                        "effective": "2026-01-01",
+                        "fiscalYear": 2026,
+                        "costBasis": "basic_pay",
+                        "scopeMatch": "proxy",
+                        "financialEvidenceStatus": "partial",
+                        "amountScope": "Level IV",
+                        "quote": "Level IV $197,200",
+                        "footnotes": [
+                          "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+                        ],
+                        "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+                        "checkedAt": "2026-09-11T03:05:36Z",
+                        "verification": {
+                          "documents": 3,
+                          "documentsStatingTheFigure": 1,
+                          "percent": 90,
+                          "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+                          "caution": "One document states the rate and another is the statute that puts this post at that level; where a third is listed, it is the statute that says this post is the office the Code names, because the Code's title is not this node's name. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+                          "documentRoles": [
+                            {
+                              "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+                              "role": "states what that Executive Schedule level pays"
+                            },
+                            {
+                              "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
+                              "role": "places this post at that level"
+                            },
+                            {
+                              "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title29-section557a&num=0&edition=prelim",
+                              "role": "identifies this post as the office the Code places at that level"
+                            }
+                          ]
+                        }
+                      },
                       "sourceUrls": [],
                       "sourceTypes": [],
                       "sourceCount": 0,
@@ -143519,6 +143768,64 @@
                         "attempts": 1,
                         "detail": "PermissionError: robots.txt disallows this path (www.fra.dot.gov/robots.txt could not be reached (URLError); refused: an undefined robots.txt is a complete disa"
                       },
+                      "positionSchedulePay": {
+                        "source": "us_code_executive_schedule",
+                        "method": "level_assigned_by_5_usc_5312_5316_to_the_office_a_second_statute_identifies_this_post_as",
+                        "identification": {
+                          "nodeName": "Administrator, FRA",
+                          "basis": "the same office: 49 U.S.C. 103 makes the Administrator the head of the Federal Railroad Administration, appointed by the President with the Senate's consent, and 5 U.S.C. 5314 places that Administrator at Level III; the graph names the Administration by its acronym",
+                          "basisCitation": "49 U.S.C. 103",
+                          "basisQuote": "The head of the Administration shall be the Administrator who shall be appointed by the President, by and with the advice and consent of the Senate,",
+                          "basisUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title49-section103&num=0&edition=prelim",
+                          "basisSha256": "ef08ee4162e16b14cffbb87033cd9226a1d2250169b72162422a65b5e3c255ba",
+                          "basisCheckedAt": "2026-09-28T22:23:18Z"
+                        },
+                        "payLevel": "III",
+                        "citation": "5 U.S.C. §5314",
+                        "statutoryTitle": "Administrator, Federal Railroad Administration",
+                        "scopedOffice": null,
+                        "scopedOrganisation": null,
+                        "scopedOrganisationId": null,
+                        "statuteUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5314&num=0&edition=prelim",
+                        "statuteCheckedAt": "2026-09-18T20:34:21Z",
+                        "amount": 209600.0,
+                        "rateText": "$209,600",
+                        "table": "Salary Table No. 2026-EX",
+                        "effectiveText": "Effective January 2026",
+                        "effective": "2026-01-01",
+                        "fiscalYear": 2026,
+                        "costBasis": "basic_pay",
+                        "scopeMatch": "proxy",
+                        "financialEvidenceStatus": "partial",
+                        "amountScope": "Level III",
+                        "quote": "Level III $209,600",
+                        "footnotes": [
+                          "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+                        ],
+                        "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+                        "checkedAt": "2026-09-11T03:05:36Z",
+                        "verification": {
+                          "documents": 3,
+                          "documentsStatingTheFigure": 1,
+                          "percent": 90,
+                          "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+                          "caution": "One document states the rate and another is the statute that puts this post at that level; where a third is listed, it is the statute that says this post is the office the Code names, because the Code's title is not this node's name. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+                          "documentRoles": [
+                            {
+                              "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+                              "role": "states what that Executive Schedule level pays"
+                            },
+                            {
+                              "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5314&num=0&edition=prelim",
+                              "role": "places this post at that level"
+                            },
+                            {
+                              "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title49-section103&num=0&edition=prelim",
+                              "role": "identifies this post as the office the Code places at that level"
+                            }
+                          ]
+                        }
+                      },
                       "sourceUrls": [],
                       "sourceTypes": [],
                       "sourceCount": 0,
@@ -144225,6 +144532,64 @@
                         "checkedAt": "2026-09-21T05:26:27+00:00",
                         "attempts": 1,
                         "detail": "PermissionError: robots.txt disallows this path (www.fta.dot.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+                      },
+                      "positionSchedulePay": {
+                        "source": "us_code_executive_schedule",
+                        "method": "level_assigned_by_5_usc_5312_5316_to_the_office_a_second_statute_identifies_this_post_as",
+                        "identification": {
+                          "nodeName": "Administrator, FTA",
+                          "basis": "the same office: 49 U.S.C. 107 makes the Administrator the head of the Federal Transit Administration, appointed by the President with the Senate's consent, and 5 U.S.C. 5313 places the Federal Transit Administrator at Level II; the graph names the Administration by its acronym",
+                          "basisCitation": "49 U.S.C. 107",
+                          "basisQuote": "The head of the Administration is the Administrator who is appointed by the President, by and with the advice and consent of the Senate.",
+                          "basisUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title49-section107&num=0&edition=prelim",
+                          "basisSha256": "9f85766d94f4bc5a14de4cd7466fa13e6ceac32b124ec13edc4710c890f7d522",
+                          "basisCheckedAt": "2026-09-28T22:23:03Z"
+                        },
+                        "payLevel": "II",
+                        "citation": "5 U.S.C. §5313",
+                        "statutoryTitle": "Federal Transit Administrator",
+                        "scopedOffice": null,
+                        "scopedOrganisation": null,
+                        "scopedOrganisationId": null,
+                        "statuteUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5313&num=0&edition=prelim",
+                        "statuteCheckedAt": "2026-09-18T20:34:08Z",
+                        "amount": 228000.0,
+                        "rateText": "$228,000",
+                        "table": "Salary Table No. 2026-EX",
+                        "effectiveText": "Effective January 2026",
+                        "effective": "2026-01-01",
+                        "fiscalYear": 2026,
+                        "costBasis": "basic_pay",
+                        "scopeMatch": "proxy",
+                        "financialEvidenceStatus": "partial",
+                        "amountScope": "Level II",
+                        "quote": "Level II $228,000",
+                        "footnotes": [
+                          "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+                        ],
+                        "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+                        "checkedAt": "2026-09-11T03:05:36Z",
+                        "verification": {
+                          "documents": 3,
+                          "documentsStatingTheFigure": 1,
+                          "percent": 90,
+                          "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+                          "caution": "One document states the rate and another is the statute that puts this post at that level; where a third is listed, it is the statute that says this post is the office the Code names, because the Code's title is not this node's name. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+                          "documentRoles": [
+                            {
+                              "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+                              "role": "states what that Executive Schedule level pays"
+                            },
+                            {
+                              "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5313&num=0&edition=prelim",
+                              "role": "places this post at that level"
+                            },
+                            {
+                              "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title49-section107&num=0&edition=prelim",
+                              "role": "identifies this post as the office the Code places at that level"
+                            }
+                          ]
+                        }
                       },
                       "sourceUrls": [],
                       "sourceTypes": [],
@@ -145048,6 +145413,64 @@
                         "checkedAt": "2026-09-21T05:26:27+00:00",
                         "attempts": 1,
                         "detail": "PermissionError: robots.txt disallows this path (www.marad.dot.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen"
+                      },
+                      "positionSchedulePay": {
+                        "source": "us_code_executive_schedule",
+                        "method": "level_assigned_by_5_usc_5312_5316_to_the_office_a_second_statute_identifies_this_post_as",
+                        "identification": {
+                          "nodeName": "Administrator, MARAD",
+                          "basis": "the same office: 49 U.S.C. 109 makes the Maritime Administrator the head of the Maritime Administration, appointed by the President with the Senate's consent, and 5 U.S.C. 5314 places that Administrator at Level III; the graph names the Administration by its acronym",
+                          "basisCitation": "49 U.S.C. 109",
+                          "basisQuote": "The head of the Maritime Administration is the Maritime Administrator, who is appointed by the President by and with the advice and consent of the Senate.",
+                          "basisUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title49-section109&num=0&edition=prelim",
+                          "basisSha256": "a18f702d5a663fbcc82e6d7eb05b72c6d95baeadaca110dfd3fedb476c59eb60",
+                          "basisCheckedAt": "2026-09-28T22:23:39Z"
+                        },
+                        "payLevel": "III",
+                        "citation": "5 U.S.C. §5314",
+                        "statutoryTitle": "Administrator, Maritime Administration",
+                        "scopedOffice": null,
+                        "scopedOrganisation": null,
+                        "scopedOrganisationId": null,
+                        "statuteUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5314&num=0&edition=prelim",
+                        "statuteCheckedAt": "2026-09-18T20:34:21Z",
+                        "amount": 209600.0,
+                        "rateText": "$209,600",
+                        "table": "Salary Table No. 2026-EX",
+                        "effectiveText": "Effective January 2026",
+                        "effective": "2026-01-01",
+                        "fiscalYear": 2026,
+                        "costBasis": "basic_pay",
+                        "scopeMatch": "proxy",
+                        "financialEvidenceStatus": "partial",
+                        "amountScope": "Level III",
+                        "quote": "Level III $209,600",
+                        "footnotes": [
+                          "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+                        ],
+                        "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+                        "checkedAt": "2026-09-11T03:05:36Z",
+                        "verification": {
+                          "documents": 3,
+                          "documentsStatingTheFigure": 1,
+                          "percent": 90,
+                          "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+                          "caution": "One document states the rate and another is the statute that puts this post at that level; where a third is listed, it is the statute that says this post is the office the Code names, because the Code's title is not this node's name. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+                          "documentRoles": [
+                            {
+                              "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+                              "role": "states what that Executive Schedule level pays"
+                            },
+                            {
+                              "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5314&num=0&edition=prelim",
+                              "role": "places this post at that level"
+                            },
+                            {
+                              "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title49-section109&num=0&edition=prelim",
+                              "role": "identifies this post as the office the Code places at that level"
+                            }
+                          ]
+                        }
                       },
                       "sourceUrls": [],
                       "sourceTypes": [],
@@ -195731,6 +196154,64 @@
                   "budget": null,
                   "color": "#666666",
                   "children": [],
+                  "positionSchedulePay": {
+                    "source": "us_code_executive_schedule",
+                    "method": "level_assigned_by_5_usc_5312_5316_to_the_office_a_second_statute_identifies_this_post_as",
+                    "identification": {
+                      "nodeName": "Administrator, NASA",
+                      "basis": "the same office: 51 U.S.C. 20111 puts an Administrator at the head of the National Aeronautics and Space Administration, appointed by the President with the Senate's consent, and 5 U.S.C. 5313 places that Administrator at Level II; the graph names the Administration by its acronym",
+                      "basisCitation": "51 U.S.C. 20111",
+                      "basisQuote": "The Administration shall be headed by an Administrator, who shall be appointed from civilian life by the President by and with the advice and consent of the Senate.",
+                      "basisUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title51-section20111&num=0&edition=prelim",
+                      "basisSha256": "20034417cab16f9d0655f2fd2aa7802a51999f429405cdaa0b8a47a1c7cf4059",
+                      "basisCheckedAt": "2026-09-28T22:22:36Z"
+                    },
+                    "payLevel": "II",
+                    "citation": "5 U.S.C. §5313",
+                    "statutoryTitle": "Administrator of the National Aeronautics and Space Administration",
+                    "scopedOffice": null,
+                    "scopedOrganisation": null,
+                    "scopedOrganisationId": null,
+                    "statuteUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5313&num=0&edition=prelim",
+                    "statuteCheckedAt": "2026-09-18T20:34:08Z",
+                    "amount": 228000.0,
+                    "rateText": "$228,000",
+                    "table": "Salary Table No. 2026-EX",
+                    "effectiveText": "Effective January 2026",
+                    "effective": "2026-01-01",
+                    "fiscalYear": 2026,
+                    "costBasis": "basic_pay",
+                    "scopeMatch": "proxy",
+                    "financialEvidenceStatus": "partial",
+                    "amountScope": "Level II",
+                    "quote": "Level II $228,000",
+                    "footnotes": [
+                      "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+                    ],
+                    "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+                    "checkedAt": "2026-09-11T03:05:36Z",
+                    "verification": {
+                      "documents": 3,
+                      "documentsStatingTheFigure": 1,
+                      "percent": 90,
+                      "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+                      "caution": "One document states the rate and another is the statute that puts this post at that level; where a third is listed, it is the statute that says this post is the office the Code names, because the Code's title is not this node's name. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+                      "documentRoles": [
+                        {
+                          "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+                          "role": "states what that Executive Schedule level pays"
+                        },
+                        {
+                          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5313&num=0&edition=prelim",
+                          "role": "places this post at that level"
+                        },
+                        {
+                          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title51-section20111&num=0&edition=prelim",
+                          "role": "identifies this post as the office the Code places at that level"
+                        }
+                      ]
+                    }
+                  },
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -224398,6 +224879,64 @@
                         "attempts": 1,
                         "detail": "HTTPError: HTTP Error 403: Forbidden"
                       },
+                      "positionSchedulePay": {
+                        "source": "us_code_executive_schedule",
+                        "method": "level_assigned_by_5_usc_5312_5316_to_the_office_a_second_statute_identifies_this_post_as",
+                        "identification": {
+                          "nodeName": "Director / Administrator / Chair, Peace Corps",
+                          "basis": "the same office: 22 U.S.C. 2503 provides for a Director of the Peace Corps appointed by the President with the Senate's consent, through whom the President exercises the chapter's functions, and 5 U.S.C. 5314 places that Director at Level III; the graph names the post with its stamped 'Director / Administrator / Chair' template and the agency by name, and the Director is the head the template stands for",
+                          "basisCitation": "22 U.S.C. 2503",
+                          "basisQuote": "The President may appoint, by and with the advice and consent of the Senate, a Director of the Peace Corps and a Deputy Director of the Peace Corps.",
+                          "basisUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title22-section2503&num=0&edition=prelim",
+                          "basisSha256": "e56b2d3566f6654d512231624f15d0edaee0176fd5defb92f14f3d6f2d94350f",
+                          "basisCheckedAt": "2026-09-28T22:25:28Z"
+                        },
+                        "payLevel": "III",
+                        "citation": "5 U.S.C. §5314",
+                        "statutoryTitle": "Director of the Peace Corps",
+                        "scopedOffice": null,
+                        "scopedOrganisation": null,
+                        "scopedOrganisationId": null,
+                        "statuteUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5314&num=0&edition=prelim",
+                        "statuteCheckedAt": "2026-09-18T20:34:21Z",
+                        "amount": 209600.0,
+                        "rateText": "$209,600",
+                        "table": "Salary Table No. 2026-EX",
+                        "effectiveText": "Effective January 2026",
+                        "effective": "2026-01-01",
+                        "fiscalYear": 2026,
+                        "costBasis": "basic_pay",
+                        "scopeMatch": "proxy",
+                        "financialEvidenceStatus": "partial",
+                        "amountScope": "Level III",
+                        "quote": "Level III $209,600",
+                        "footnotes": [
+                          "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+                        ],
+                        "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+                        "checkedAt": "2026-09-11T03:05:36Z",
+                        "verification": {
+                          "documents": 3,
+                          "documentsStatingTheFigure": 1,
+                          "percent": 90,
+                          "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+                          "caution": "One document states the rate and another is the statute that puts this post at that level; where a third is listed, it is the statute that says this post is the office the Code names, because the Code's title is not this node's name. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+                          "documentRoles": [
+                            {
+                              "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+                              "role": "states what that Executive Schedule level pays"
+                            },
+                            {
+                              "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5314&num=0&edition=prelim",
+                              "role": "places this post at that level"
+                            },
+                            {
+                              "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title22-section2503&num=0&edition=prelim",
+                              "role": "identifies this post as the office the Code places at that level"
+                            }
+                          ]
+                        }
+                      },
                       "sourceUrls": [],
                       "sourceTypes": [],
                       "sourceCount": 0,
@@ -225140,6 +225679,64 @@
                       "budget": null,
                       "color": "#666666",
                       "children": [],
+                      "positionSchedulePay": {
+                        "source": "us_code_executive_schedule",
+                        "method": "level_assigned_by_5_usc_5312_5316_to_the_office_a_second_statute_identifies_this_post_as",
+                        "identification": {
+                          "nodeName": "Director / Administrator / Chair, Selective Service System",
+                          "basis": "the same office: 50 U.S.C. 3809 establishes the Selective Service System with a Director of Selective Service as its head, and 5 U.S.C. 5315 places that Director at Level IV; the graph names the post with its stamped 'Director / Administrator / Chair' template and the agency by name, and the Director is the head the template stands for",
+                          "basisCitation": "50 U.S.C. 3809",
+                          "basisQuote": "There is established in the executive branch of the Government an agency to be known as the Selective Service System, and a Director of Selective Service who shall be the head thereof.",
+                          "basisUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title50-section3809&num=0&edition=prelim",
+                          "basisSha256": "6711b7ba0ba3521e48e3e4ad05fb126fdc20b70846f2c1d288319f2967e13f85",
+                          "basisCheckedAt": "2026-09-28T22:30:57Z"
+                        },
+                        "payLevel": "IV",
+                        "citation": "5 U.S.C. §5315",
+                        "statutoryTitle": "Director of Selective Service",
+                        "scopedOffice": null,
+                        "scopedOrganisation": null,
+                        "scopedOrganisationId": null,
+                        "statuteUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
+                        "statuteCheckedAt": "2026-09-18T20:34:27Z",
+                        "amount": 197200.0,
+                        "rateText": "$197,200",
+                        "table": "Salary Table No. 2026-EX",
+                        "effectiveText": "Effective January 2026",
+                        "effective": "2026-01-01",
+                        "fiscalYear": 2026,
+                        "costBasis": "basic_pay",
+                        "scopeMatch": "proxy",
+                        "financialEvidenceStatus": "partial",
+                        "amountScope": "Level IV",
+                        "quote": "Level IV $197,200",
+                        "footnotes": [
+                          "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+                        ],
+                        "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+                        "checkedAt": "2026-09-11T03:05:36Z",
+                        "verification": {
+                          "documents": 3,
+                          "documentsStatingTheFigure": 1,
+                          "percent": 90,
+                          "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+                          "caution": "One document states the rate and another is the statute that puts this post at that level; where a third is listed, it is the statute that says this post is the office the Code names, because the Code's title is not this node's name. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+                          "documentRoles": [
+                            {
+                              "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+                              "role": "states what that Executive Schedule level pays"
+                            },
+                            {
+                              "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
+                              "role": "places this post at that level"
+                            },
+                            {
+                              "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title50-section3809&num=0&edition=prelim",
+                              "role": "identifies this post as the office the Code places at that level"
+                            }
+                          ]
+                        }
+                      },
                       "sourceUrls": [],
                       "sourceTypes": [],
                       "sourceCount": 0,
@@ -225431,6 +226028,64 @@
                       "budget": null,
                       "color": "#666666",
                       "children": [],
+                      "positionSchedulePay": {
+                        "source": "us_code_executive_schedule",
+                        "method": "level_assigned_by_5_usc_5312_5316_to_the_office_a_second_statute_identifies_this_post_as",
+                        "identification": {
+                          "nodeName": "Director / Administrator / Chair, Export-Import Bank of the U.S.",
+                          "basis": "the same office: 12 U.S.C. 635a creates a President of the Export-Import Bank of the United States as the Bank's chief executive officer, and 5 U.S.C. 5314 places the 'President of the Export-Import Bank of Washington' at Level III — the Schedule keeps the Bank's name before Pub. L. 90-267 renamed it in 1968, a rename the Code records in the notes to 12 U.S.C. 635 and this row relies on; the graph names the post with its stamped 'Director / Administrator / Chair' template and the agency by name, and the Bank's President is the head the template stands for",
+                          "basisCitation": "12 U.S.C. 635a",
+                          "basisQuote": "There shall be a President of the Export-Import Bank of the United States, who shall be appointed by the President of the United States by and with the advice and consent of the Senate, and who shall serve as chief executive officer",
+                          "basisUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title12-section635a&num=0&edition=prelim",
+                          "basisSha256": "c1a7e4ed3a5fe83af75953f049552cb54935de54bf9c24c3ef2b2fea63713f7d",
+                          "basisCheckedAt": "2026-09-28T22:28:29Z"
+                        },
+                        "payLevel": "III",
+                        "citation": "5 U.S.C. §5314",
+                        "statutoryTitle": "President of the Export-Import Bank of Washington",
+                        "scopedOffice": null,
+                        "scopedOrganisation": null,
+                        "scopedOrganisationId": null,
+                        "statuteUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5314&num=0&edition=prelim",
+                        "statuteCheckedAt": "2026-09-18T20:34:21Z",
+                        "amount": 209600.0,
+                        "rateText": "$209,600",
+                        "table": "Salary Table No. 2026-EX",
+                        "effectiveText": "Effective January 2026",
+                        "effective": "2026-01-01",
+                        "fiscalYear": 2026,
+                        "costBasis": "basic_pay",
+                        "scopeMatch": "proxy",
+                        "financialEvidenceStatus": "partial",
+                        "amountScope": "Level III",
+                        "quote": "Level III $209,600",
+                        "footnotes": [
+                          "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+                        ],
+                        "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+                        "checkedAt": "2026-09-11T03:05:36Z",
+                        "verification": {
+                          "documents": 3,
+                          "documentsStatingTheFigure": 1,
+                          "percent": 90,
+                          "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+                          "caution": "One document states the rate and another is the statute that puts this post at that level; where a third is listed, it is the statute that says this post is the office the Code names, because the Code's title is not this node's name. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+                          "documentRoles": [
+                            {
+                              "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+                              "role": "states what that Executive Schedule level pays"
+                            },
+                            {
+                              "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5314&num=0&edition=prelim",
+                              "role": "places this post at that level"
+                            },
+                            {
+                              "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title12-section635a&num=0&edition=prelim",
+                              "role": "identifies this post as the office the Code places at that level"
+                            }
+                          ]
+                        }
+                      },
                       "sourceUrls": [],
                       "sourceTypes": [],
                       "sourceCount": 0,
@@ -226630,6 +227285,64 @@
                       "budget": null,
                       "color": "#666666",
                       "children": [],
+                      "positionSchedulePay": {
+                        "source": "us_code_executive_schedule",
+                        "method": "level_assigned_by_5_usc_5312_5316_to_the_office_a_second_statute_identifies_this_post_as",
+                        "identification": {
+                          "nodeName": "Director / Administrator / Chair, National Endowment for the Humanities",
+                          "basis": "the same office: 20 U.S.C. 956 puts a chairperson at the head of the National Endowment for the Humanities, appointed by the President with the Senate's consent, and 5 U.S.C. 5314 places the Chairman of the Endowment at Level III; the graph names the post with its stamped 'Director / Administrator / Chair' template and the agency by name, and the chairperson is the head the template stands for",
+                          "basisCitation": "20 U.S.C. 956",
+                          "basisQuote": "The Endowment shall be headed by a chairperson, who shall be appointed by the President, by and with the advice and consent of the Senate.",
+                          "basisUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title20-section956&num=0&edition=prelim",
+                          "basisSha256": "4fe15978a56e0a7068345bd5f0d92ff8a812eb8e59063e6f937e802eb2103f7d",
+                          "basisCheckedAt": "2026-09-28T22:26:24Z"
+                        },
+                        "payLevel": "III",
+                        "citation": "5 U.S.C. §5314",
+                        "statutoryTitle": "Chairman of the National Endowment for the Humanities",
+                        "scopedOffice": null,
+                        "scopedOrganisation": null,
+                        "scopedOrganisationId": null,
+                        "statuteUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5314&num=0&edition=prelim",
+                        "statuteCheckedAt": "2026-09-18T20:34:21Z",
+                        "amount": 209600.0,
+                        "rateText": "$209,600",
+                        "table": "Salary Table No. 2026-EX",
+                        "effectiveText": "Effective January 2026",
+                        "effective": "2026-01-01",
+                        "fiscalYear": 2026,
+                        "costBasis": "basic_pay",
+                        "scopeMatch": "proxy",
+                        "financialEvidenceStatus": "partial",
+                        "amountScope": "Level III",
+                        "quote": "Level III $209,600",
+                        "footnotes": [
+                          "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+                        ],
+                        "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+                        "checkedAt": "2026-09-11T03:05:36Z",
+                        "verification": {
+                          "documents": 3,
+                          "documentsStatingTheFigure": 1,
+                          "percent": 90,
+                          "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+                          "caution": "One document states the rate and another is the statute that puts this post at that level; where a third is listed, it is the statute that says this post is the office the Code names, because the Code's title is not this node's name. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+                          "documentRoles": [
+                            {
+                              "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+                              "role": "states what that Executive Schedule level pays"
+                            },
+                            {
+                              "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5314&num=0&edition=prelim",
+                              "role": "places this post at that level"
+                            },
+                            {
+                              "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title20-section956&num=0&edition=prelim",
+                              "role": "identifies this post as the office the Code places at that level"
+                            }
+                          ]
+                        }
+                      },
                       "sourceUrls": [],
                       "sourceTypes": [],
                       "sourceCount": 0,
@@ -227480,6 +228193,64 @@
                       "budget": null,
                       "color": "#666666",
                       "children": [],
+                      "positionSchedulePay": {
+                        "source": "us_code_executive_schedule",
+                        "method": "level_assigned_by_5_usc_5312_5316_to_the_office_a_second_statute_identifies_this_post_as",
+                        "identification": {
+                          "nodeName": "Director / Administrator / Chair, National Transportation Safety Board",
+                          "basis": "the same office: 49 U.S.C. 1111 composes the National Transportation Safety Board of five members and has the President designate a Chairman with the Senate's consent, and 5 U.S.C. 5314 places that Chairman at Level III; the graph names the post with its stamped 'Director / Administrator / Chair' template and the agency by name, and the Chairman is the head the template stands for",
+                          "basisCitation": "49 U.S.C. 1111",
+                          "basisQuote": "The President shall designate, by and with the advice and consent of the Senate, a Chairman of the Board.",
+                          "basisUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title49-section1111&num=0&edition=prelim",
+                          "basisSha256": "d56699ee656d4bd2531961c7efa59ba76eae98c4ff0add6ae1f31e3f05fc2427",
+                          "basisCheckedAt": "2026-09-28T22:26:55Z"
+                        },
+                        "payLevel": "III",
+                        "citation": "5 U.S.C. §5314",
+                        "statutoryTitle": "Chairman, National Transportation Safety Board",
+                        "scopedOffice": null,
+                        "scopedOrganisation": null,
+                        "scopedOrganisationId": null,
+                        "statuteUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5314&num=0&edition=prelim",
+                        "statuteCheckedAt": "2026-09-18T20:34:21Z",
+                        "amount": 209600.0,
+                        "rateText": "$209,600",
+                        "table": "Salary Table No. 2026-EX",
+                        "effectiveText": "Effective January 2026",
+                        "effective": "2026-01-01",
+                        "fiscalYear": 2026,
+                        "costBasis": "basic_pay",
+                        "scopeMatch": "proxy",
+                        "financialEvidenceStatus": "partial",
+                        "amountScope": "Level III",
+                        "quote": "Level III $209,600",
+                        "footnotes": [
+                          "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+                        ],
+                        "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+                        "checkedAt": "2026-09-11T03:05:36Z",
+                        "verification": {
+                          "documents": 3,
+                          "documentsStatingTheFigure": 1,
+                          "percent": 90,
+                          "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+                          "caution": "One document states the rate and another is the statute that puts this post at that level; where a third is listed, it is the statute that says this post is the office the Code names, because the Code's title is not this node's name. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+                          "documentRoles": [
+                            {
+                              "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+                              "role": "states what that Executive Schedule level pays"
+                            },
+                            {
+                              "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5314&num=0&edition=prelim",
+                              "role": "places this post at that level"
+                            },
+                            {
+                              "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title49-section1111&num=0&edition=prelim",
+                              "role": "identifies this post as the office the Code places at that level"
+                            }
+                          ]
+                        }
+                      },
                       "sourceUrls": [],
                       "sourceTypes": [],
                       "sourceCount": 0,
@@ -228723,6 +229494,64 @@
                       "budget": null,
                       "color": "#666666",
                       "children": [],
+                      "positionSchedulePay": {
+                        "source": "us_code_executive_schedule",
+                        "method": "level_assigned_by_5_usc_5312_5316_to_the_office_a_second_statute_identifies_this_post_as",
+                        "identification": {
+                          "nodeName": "Director / Administrator / Chair, Office of Special Counsel",
+                          "basis": "the same office: 5 U.S.C. 1211 establishes the Office of Special Counsel headed by the Special Counsel, appointed by the President with the Senate's consent, and 5 U.S.C. 5314 places the Special Counsel at Level III; the graph names the post with its stamped 'Director / Administrator / Chair' template and the agency by name, and the Special Counsel is the head the template stands for",
+                          "basisCitation": "5 U.S.C. 1211",
+                          "basisQuote": "There is established the Office of Special Counsel, which shall be headed by the Special Counsel.",
+                          "basisUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section1211&num=0&edition=prelim",
+                          "basisSha256": "433963aac35fa9b795978b01c39ecc78fbfe705e2fd7cee55d101e1173899eb2",
+                          "basisCheckedAt": "2026-09-28T22:27:17Z"
+                        },
+                        "payLevel": "III",
+                        "citation": "5 U.S.C. §5314",
+                        "statutoryTitle": "Special Counsel of the Office of Special Counsel",
+                        "scopedOffice": null,
+                        "scopedOrganisation": null,
+                        "scopedOrganisationId": null,
+                        "statuteUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5314&num=0&edition=prelim",
+                        "statuteCheckedAt": "2026-09-18T20:34:21Z",
+                        "amount": 209600.0,
+                        "rateText": "$209,600",
+                        "table": "Salary Table No. 2026-EX",
+                        "effectiveText": "Effective January 2026",
+                        "effective": "2026-01-01",
+                        "fiscalYear": 2026,
+                        "costBasis": "basic_pay",
+                        "scopeMatch": "proxy",
+                        "financialEvidenceStatus": "partial",
+                        "amountScope": "Level III",
+                        "quote": "Level III $209,600",
+                        "footnotes": [
+                          "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+                        ],
+                        "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+                        "checkedAt": "2026-09-11T03:05:36Z",
+                        "verification": {
+                          "documents": 3,
+                          "documentsStatingTheFigure": 1,
+                          "percent": 90,
+                          "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+                          "caution": "One document states the rate and another is the statute that puts this post at that level; where a third is listed, it is the statute that says this post is the office the Code names, because the Code's title is not this node's name. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+                          "documentRoles": [
+                            {
+                              "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+                              "role": "states what that Executive Schedule level pays"
+                            },
+                            {
+                              "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5314&num=0&edition=prelim",
+                              "role": "places this post at that level"
+                            },
+                            {
+                              "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section1211&num=0&edition=prelim",
+                              "role": "identifies this post as the office the Code places at that level"
+                            }
+                          ]
+                        }
+                      },
                       "sourceUrls": [],
                       "sourceTypes": [],
                       "sourceCount": 0,
@@ -229037,6 +229866,64 @@
                       "budget": null,
                       "color": "#666666",
                       "children": [],
+                      "positionSchedulePay": {
+                        "source": "us_code_executive_schedule",
+                        "method": "level_assigned_by_5_usc_5312_5316_to_the_office_a_second_statute_identifies_this_post_as",
+                        "identification": {
+                          "nodeName": "Director / Administrator / Chair, Merit Systems Protection Board",
+                          "basis": "the same office: 5 U.S.C. 1203 has the President appoint one member of the Merit Systems Protection Board as its Chairman, the Board's chief executive and administrative officer, and 5 U.S.C. 5314 places that Chairman at Level III; the graph names the post with its stamped 'Director / Administrator / Chair' template and the agency by name, and the Chairman is the head the template stands for",
+                          "basisCitation": "5 U.S.C. 1203",
+                          "basisQuote": "The President shall from time to time appoint, by and with the advice and consent of the Senate, one of the members of the Merit Systems Protection Board as the Chairman of the Board.",
+                          "basisUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section1203&num=0&edition=prelim",
+                          "basisSha256": "9f6af1e57869e3c5e3ff1fb13b7381dc9da065a2768824302b028aab8bd4e664",
+                          "basisCheckedAt": "2026-09-28T22:30:41Z"
+                        },
+                        "payLevel": "III",
+                        "citation": "5 U.S.C. §5314",
+                        "statutoryTitle": "Chairman of the Merit Systems Protection Board",
+                        "scopedOffice": null,
+                        "scopedOrganisation": null,
+                        "scopedOrganisationId": null,
+                        "statuteUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5314&num=0&edition=prelim",
+                        "statuteCheckedAt": "2026-09-18T20:34:21Z",
+                        "amount": 209600.0,
+                        "rateText": "$209,600",
+                        "table": "Salary Table No. 2026-EX",
+                        "effectiveText": "Effective January 2026",
+                        "effective": "2026-01-01",
+                        "fiscalYear": 2026,
+                        "costBasis": "basic_pay",
+                        "scopeMatch": "proxy",
+                        "financialEvidenceStatus": "partial",
+                        "amountScope": "Level III",
+                        "quote": "Level III $209,600",
+                        "footnotes": [
+                          "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+                        ],
+                        "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+                        "checkedAt": "2026-09-11T03:05:36Z",
+                        "verification": {
+                          "documents": 3,
+                          "documentsStatingTheFigure": 1,
+                          "percent": 90,
+                          "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+                          "caution": "One document states the rate and another is the statute that puts this post at that level; where a third is listed, it is the statute that says this post is the office the Code names, because the Code's title is not this node's name. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+                          "documentRoles": [
+                            {
+                              "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+                              "role": "states what that Executive Schedule level pays"
+                            },
+                            {
+                              "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5314&num=0&edition=prelim",
+                              "role": "places this post at that level"
+                            },
+                            {
+                              "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section1203&num=0&edition=prelim",
+                              "role": "identifies this post as the office the Code places at that level"
+                            }
+                          ]
+                        }
+                      },
                       "sourceUrls": [],
                       "sourceTypes": [],
                       "sourceCount": 0,
@@ -229351,6 +230238,64 @@
                       "budget": null,
                       "color": "#666666",
                       "children": [],
+                      "positionSchedulePay": {
+                        "source": "us_code_executive_schedule",
+                        "method": "level_assigned_by_5_usc_5312_5316_to_the_office_a_second_statute_identifies_this_post_as",
+                        "identification": {
+                          "nodeName": "Director / Administrator / Chair, Federal Labor Relations Authority",
+                          "basis": "the same office: 5 U.S.C. 7104 composes the Federal Labor Relations Authority of three members and has the President designate one as Chairman, the Authority's chief executive and administrative officer, and 5 U.S.C. 5315 places that Chairman at Level IV; the graph names the post with its stamped 'Director / Administrator / Chair' template and the agency by name, and the Chairman is the head the template stands for",
+                          "basisCitation": "5 U.S.C. 7104",
+                          "basisQuote": "The President shall designate one member to serve as Chairman of the Authority.",
+                          "basisUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section7104&num=0&edition=prelim",
+                          "basisSha256": "867f0450620797ea4f0950fdb16a136e9da6d6563f3bd11472eb1b798d53cc94",
+                          "basisCheckedAt": "2026-09-28T22:26:07Z"
+                        },
+                        "payLevel": "IV",
+                        "citation": "5 U.S.C. §5315",
+                        "statutoryTitle": "Chairman, Federal Labor Relations Authority",
+                        "scopedOffice": null,
+                        "scopedOrganisation": null,
+                        "scopedOrganisationId": null,
+                        "statuteUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
+                        "statuteCheckedAt": "2026-09-18T20:34:27Z",
+                        "amount": 197200.0,
+                        "rateText": "$197,200",
+                        "table": "Salary Table No. 2026-EX",
+                        "effectiveText": "Effective January 2026",
+                        "effective": "2026-01-01",
+                        "fiscalYear": 2026,
+                        "costBasis": "basic_pay",
+                        "scopeMatch": "proxy",
+                        "financialEvidenceStatus": "partial",
+                        "amountScope": "Level IV",
+                        "quote": "Level IV $197,200",
+                        "footnotes": [
+                          "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+                        ],
+                        "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+                        "checkedAt": "2026-09-11T03:05:36Z",
+                        "verification": {
+                          "documents": 3,
+                          "documentsStatingTheFigure": 1,
+                          "percent": 90,
+                          "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+                          "caution": "One document states the rate and another is the statute that puts this post at that level; where a third is listed, it is the statute that says this post is the office the Code names, because the Code's title is not this node's name. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+                          "documentRoles": [
+                            {
+                              "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+                              "role": "states what that Executive Schedule level pays"
+                            },
+                            {
+                              "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
+                              "role": "places this post at that level"
+                            },
+                            {
+                              "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section7104&num=0&edition=prelim",
+                              "role": "identifies this post as the office the Code places at that level"
+                            }
+                          ]
+                        }
+                      },
                       "sourceUrls": [],
                       "sourceTypes": [],
                       "sourceCount": 0,
@@ -231535,6 +232480,64 @@
                       "budget": null,
                       "color": "#666666",
                       "children": [],
+                      "positionSchedulePay": {
+                        "source": "us_code_executive_schedule",
+                        "method": "level_assigned_by_5_usc_5312_5316_to_the_office_a_second_statute_identifies_this_post_as",
+                        "identification": {
+                          "nodeName": "Director / Administrator / Chair, U.S. Postal Rate Commission / Postal Regulatory Commission",
+                          "basis": "the same office: 39 U.S.C. 502 composes the Postal Regulatory Commission of five Commissioners, one of whom the President designates as Chairman, and 5 U.S.C. 5314 places that Chairman at Level III; the graph names the post with its stamped 'Director / Administrator / Chair' template and the agency by name with the Commission's former name beside its current one, and the Chairman is the head the template stands for",
+                          "basisCitation": "39 U.S.C. 502",
+                          "basisQuote": "One of the Commissioners shall be designated as Chairman by, and shall serve in the position of Chairman at the pleasure of, the President.",
+                          "basisUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title39-section502&num=0&edition=prelim",
+                          "basisSha256": "8d54bd2d904d91daf14b55214fb6673ad03d0bb6516afdabadbbf1d13f1c02f7",
+                          "basisCheckedAt": "2026-09-28T22:28:14Z"
+                        },
+                        "payLevel": "III",
+                        "citation": "5 U.S.C. §5314",
+                        "statutoryTitle": "Chairman, Postal Regulatory Commission",
+                        "scopedOffice": null,
+                        "scopedOrganisation": null,
+                        "scopedOrganisationId": null,
+                        "statuteUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5314&num=0&edition=prelim",
+                        "statuteCheckedAt": "2026-09-18T20:34:21Z",
+                        "amount": 209600.0,
+                        "rateText": "$209,600",
+                        "table": "Salary Table No. 2026-EX",
+                        "effectiveText": "Effective January 2026",
+                        "effective": "2026-01-01",
+                        "fiscalYear": 2026,
+                        "costBasis": "basic_pay",
+                        "scopeMatch": "proxy",
+                        "financialEvidenceStatus": "partial",
+                        "amountScope": "Level III",
+                        "quote": "Level III $209,600",
+                        "footnotes": [
+                          "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+                        ],
+                        "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+                        "checkedAt": "2026-09-11T03:05:36Z",
+                        "verification": {
+                          "documents": 3,
+                          "documentsStatingTheFigure": 1,
+                          "percent": 90,
+                          "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+                          "caution": "One document states the rate and another is the statute that puts this post at that level; where a third is listed, it is the statute that says this post is the office the Code names, because the Code's title is not this node's name. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+                          "documentRoles": [
+                            {
+                              "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+                              "role": "states what that Executive Schedule level pays"
+                            },
+                            {
+                              "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5314&num=0&edition=prelim",
+                              "role": "places this post at that level"
+                            },
+                            {
+                              "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title39-section502&num=0&edition=prelim",
+                              "role": "identifies this post as the office the Code places at that level"
+                            }
+                          ]
+                        }
+                      },
                       "sourceUrls": [],
                       "sourceTypes": [],
                       "sourceCount": 0,
@@ -232080,6 +233083,81 @@
                       "budget": null,
                       "color": "#666666",
                       "children": [],
+                      "positionTierReferencePay": {
+                        "source": "statutory_tier_reference_pay",
+                        "sourceLabel": "a statute setting the post's pay by reference to an Executive Schedule level, joined to OPM's table",
+                        "method": "pay_set_by_reference_to_an_executive_schedule_level_joined_to_opm_table",
+                        "amount": 209600.0,
+                        "rateText": "$209,600",
+                        "level": "III",
+                        "levelText": "Level III",
+                        "levelRateText": "$209,600",
+                        "levelAmount": 209600.0,
+                        "percent": 0,
+                        "arithmetic": null,
+                        "office": "Chairman of the Farm Credit Administration Board",
+                        "statute": "12 U.S.C. 2242(d)",
+                        "statuteQuote": "The Chairman of the Board shall receive compensation at the rate prescribed for level III of the Executive Schedule under section 5314 of title 5",
+                        "identification": {
+                          "kind": "reviewed_row",
+                          "nodeName": "Director / Administrator / Chair, Farm Credit Administration"
+                        },
+                        "derivation": "12 U.S.C. 2242(d) (d) Compensation: “The Chairman of the Board shall receive compensation at the rate prescribed for level III of the Executive Schedule under section 5314 of title 5” · Salary Table No. 2026-EX, Effective January 2026: Level III $209,600",
+                        "quote": "12 U.S.C. 2242(d) (d) Compensation: “The Chairman of the Board shall receive compensation at the rate prescribed for level III of the Executive Schedule under section 5314 of title 5” · Salary Table No. 2026-EX, Effective January 2026: Level III $209,600",
+                        "documents": [
+                          {
+                            "role": "sets this post's basic pay by reference to Executive Schedule Level III",
+                            "citation": "12 U.S.C. 2242(d)",
+                            "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+                            "title": "12 U.S.C. 2242(d), current through the prelim edition",
+                            "quote": "The Chairman of the Board shall receive compensation at the rate prescribed for level III of the Executive Schedule under section 5314 of title 5",
+                            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title12-section2242&num=0&edition=prelim",
+                            "documentSha256": "f208e825ce504a5e546a0f05c3cdec666bb454b3a74a0d2a02507b96753adadc",
+                            "retrievedAt": "2026-09-28T22:28:49Z",
+                            "statesTheFigure": false
+                          },
+                          {
+                            "role": "states what that Executive Schedule level pays",
+                            "citation": "Salary Table No. 2026-EX, Effective January 2026",
+                            "publisher": "U.S. Office of Personnel Management",
+                            "title": "Salary Table No. 2026-EX",
+                            "quote": "Level III $209,600",
+                            "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+                            "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+                            "retrievedAt": "2026-09-11T03:05:36Z",
+                            "statesTheFigure": false
+                          }
+                        ],
+                        "table": "Salary Table No. 2026-EX",
+                        "effectiveText": "Effective January 2026",
+                        "effective": "2026-01-01",
+                        "fiscalYear": 2026,
+                        "footnotes": [
+                          "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+                        ],
+                        "costBasis": "basic_pay",
+                        "scopeMatch": "proxy",
+                        "financialEvidenceStatus": "partial",
+                        "amountScope": "Level III",
+                        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title12-section2242&num=0&edition=prelim",
+                        "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+                        "checkedAt": "2026-09-28T22:28:49Z",
+                        "verification": {
+                          "documents": 2,
+                          "documentsStatingTheFigure": 0,
+                          "percent": 80,
+                          "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+                          "caution": "The percentage measures how much official documentation this figure rests on, not the chance that it is right. No document here states the figure for this post: a statute sets its pay by reference to an Executive Schedule level, and OPM's table states what that level pays; where the statute adds a percentage, the result is arithmetic this project performed and no document prints.",
+                          "documentRoles": [
+                            {
+                              "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title12-section2242&num=0&edition=prelim"
+                            },
+                            {
+                              "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx"
+                            }
+                          ]
+                        }
+                      },
                       "sourceUrls": [],
                       "sourceTypes": [],
                       "sourceCount": 0,
@@ -232416,6 +233494,64 @@
                       "budget": null,
                       "color": "#666666",
                       "children": [],
+                      "positionSchedulePay": {
+                        "source": "us_code_executive_schedule",
+                        "method": "level_assigned_by_5_usc_5312_5316_to_the_office_a_second_statute_identifies_this_post_as",
+                        "identification": {
+                          "nodeName": "Director / Administrator / Chair, National Credit Union Administration",
+                          "basis": "the same office: 12 U.S.C. 1752a puts the National Credit Union Administration under the management of a three-member Board whose Chairman the President designates, and 5 U.S.C. 5314 places that Chairman at Level III; the graph names the post with its stamped 'Director / Administrator / Chair' template and the agency by name, and the Board's Chairman is the head the template stands for",
+                          "basisCitation": "12 U.S.C. 1752a",
+                          "basisQuote": "In appointing the members of the Board, the President shall designate the Chairman.",
+                          "basisUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title12-section1752a&num=0&edition=prelim",
+                          "basisSha256": "cb2c04a50143977a335306e54acf961407a919c2ef24f76210dcdd3010408e14",
+                          "basisCheckedAt": "2026-09-28T22:25:12Z"
+                        },
+                        "payLevel": "III",
+                        "citation": "5 U.S.C. §5314",
+                        "statutoryTitle": "Chairman, National Credit Union Administration Board",
+                        "scopedOffice": null,
+                        "scopedOrganisation": null,
+                        "scopedOrganisationId": null,
+                        "statuteUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5314&num=0&edition=prelim",
+                        "statuteCheckedAt": "2026-09-18T20:34:21Z",
+                        "amount": 209600.0,
+                        "rateText": "$209,600",
+                        "table": "Salary Table No. 2026-EX",
+                        "effectiveText": "Effective January 2026",
+                        "effective": "2026-01-01",
+                        "fiscalYear": 2026,
+                        "costBasis": "basic_pay",
+                        "scopeMatch": "proxy",
+                        "financialEvidenceStatus": "partial",
+                        "amountScope": "Level III",
+                        "quote": "Level III $209,600",
+                        "footnotes": [
+                          "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+                        ],
+                        "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+                        "checkedAt": "2026-09-11T03:05:36Z",
+                        "verification": {
+                          "documents": 3,
+                          "documentsStatingTheFigure": 1,
+                          "percent": 90,
+                          "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+                          "caution": "One document states the rate and another is the statute that puts this post at that level; where a third is listed, it is the statute that says this post is the office the Code names, because the Code's title is not this node's name. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+                          "documentRoles": [
+                            {
+                              "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+                              "role": "states what that Executive Schedule level pays"
+                            },
+                            {
+                              "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5314&num=0&edition=prelim",
+                              "role": "places this post at that level"
+                            },
+                            {
+                              "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title12-section1752a&num=0&edition=prelim",
+                              "role": "identifies this post as the office the Code places at that level"
+                            }
+                          ]
+                        }
+                      },
                       "sourceUrls": [],
                       "sourceTypes": [],
                       "sourceCount": 0,
@@ -232787,6 +233923,64 @@
                       "budget": null,
                       "color": "#666666",
                       "children": [],
+                      "positionSchedulePay": {
+                        "source": "us_code_executive_schedule",
+                        "method": "level_assigned_by_5_usc_5312_5316_to_the_office_a_second_statute_identifies_this_post_as",
+                        "identification": {
+                          "nodeName": "Director / Administrator / Chair, Pension Benefit Guaranty Corporation",
+                          "basis": "the same office: 29 U.S.C. 1302 has the Pension Benefit Guaranty Corporation administered by a Director appointed by the President with the Senate's consent, and 5 U.S.C. 5314 places that Director at Level III; the graph names the post with its stamped 'Director / Administrator / Chair' template and the agency by name, and the Director is the head the template stands for",
+                          "basisCitation": "29 U.S.C. 1302",
+                          "basisQuote": "the corporation shall be administered by a Director, who shall be appointed by the President, by and with the advice and consent of the Senate,",
+                          "basisUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title29-section1302&num=0&edition=prelim",
+                          "basisSha256": "861a118df21eb52a63bec81788b23ec144a01826686d062b25f260d0b41579e2",
+                          "basisCheckedAt": "2026-09-28T22:27:37Z"
+                        },
+                        "payLevel": "III",
+                        "citation": "5 U.S.C. §5314",
+                        "statutoryTitle": "Director, Pension Benefit Guaranty Corporation",
+                        "scopedOffice": null,
+                        "scopedOrganisation": null,
+                        "scopedOrganisationId": null,
+                        "statuteUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5314&num=0&edition=prelim",
+                        "statuteCheckedAt": "2026-09-18T20:34:21Z",
+                        "amount": 209600.0,
+                        "rateText": "$209,600",
+                        "table": "Salary Table No. 2026-EX",
+                        "effectiveText": "Effective January 2026",
+                        "effective": "2026-01-01",
+                        "fiscalYear": 2026,
+                        "costBasis": "basic_pay",
+                        "scopeMatch": "proxy",
+                        "financialEvidenceStatus": "partial",
+                        "amountScope": "Level III",
+                        "quote": "Level III $209,600",
+                        "footnotes": [
+                          "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+                        ],
+                        "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+                        "checkedAt": "2026-09-11T03:05:36Z",
+                        "verification": {
+                          "documents": 3,
+                          "documentsStatingTheFigure": 1,
+                          "percent": 90,
+                          "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+                          "caution": "One document states the rate and another is the statute that puts this post at that level; where a third is listed, it is the statute that says this post is the office the Code names, because the Code's title is not this node's name. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+                          "documentRoles": [
+                            {
+                              "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+                              "role": "states what that Executive Schedule level pays"
+                            },
+                            {
+                              "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5314&num=0&edition=prelim",
+                              "role": "places this post at that level"
+                            },
+                            {
+                              "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title29-section1302&num=0&edition=prelim",
+                              "role": "identifies this post as the office the Code places at that level"
+                            }
+                          ]
+                        }
+                      },
                       "sourceUrls": [],
                       "sourceTypes": [],
                       "sourceCount": 0,
@@ -245927,6 +247121,64 @@
                     "attempts": 1,
                     "detail": "no_readable_text"
                   },
+                  "positionSchedulePay": {
+                    "source": "us_code_executive_schedule",
+                    "method": "level_assigned_by_5_usc_5312_5316_to_the_office_a_second_statute_identifies_this_post_as",
+                    "identification": {
+                      "nodeName": "Chair, FMC",
+                      "basis": "the same office: 46 U.S.C. 46101 composes the Federal Maritime Commission of five Commissioners and has the President designate one of them as Chairman, and 5 U.S.C. 5314 places that Chairman at Level III; the graph writes 'Chair' where the Code writes 'Chairman' and names the Commission by its acronym",
+                      "basisCitation": "46 U.S.C. 46101",
+                      "basisQuote": "The President shall designate one of the Commissioners as Chairman.",
+                      "basisUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title46-section46101&num=0&edition=prelim",
+                      "basisSha256": "9ad44f5b953a91cc86373a0d369725c664831003bce5c9698783404bf2b5dc26",
+                      "basisCheckedAt": "2026-09-28T22:30:26Z"
+                    },
+                    "payLevel": "III",
+                    "citation": "5 U.S.C. §5314",
+                    "statutoryTitle": "Chairman, Federal Maritime Commission",
+                    "scopedOffice": null,
+                    "scopedOrganisation": null,
+                    "scopedOrganisationId": null,
+                    "statuteUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5314&num=0&edition=prelim",
+                    "statuteCheckedAt": "2026-09-18T20:34:21Z",
+                    "amount": 209600.0,
+                    "rateText": "$209,600",
+                    "table": "Salary Table No. 2026-EX",
+                    "effectiveText": "Effective January 2026",
+                    "effective": "2026-01-01",
+                    "fiscalYear": 2026,
+                    "costBasis": "basic_pay",
+                    "scopeMatch": "proxy",
+                    "financialEvidenceStatus": "partial",
+                    "amountScope": "Level III",
+                    "quote": "Level III $209,600",
+                    "footnotes": [
+                      "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+                    ],
+                    "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+                    "checkedAt": "2026-09-11T03:05:36Z",
+                    "verification": {
+                      "documents": 3,
+                      "documentsStatingTheFigure": 1,
+                      "percent": 90,
+                      "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+                      "caution": "One document states the rate and another is the statute that puts this post at that level; where a third is listed, it is the statute that says this post is the office the Code names, because the Code's title is not this node's name. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+                      "documentRoles": [
+                        {
+                          "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+                          "role": "states what that Executive Schedule level pays"
+                        },
+                        {
+                          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5314&num=0&edition=prelim",
+                          "role": "places this post at that level"
+                        },
+                        {
+                          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title46-section46101&num=0&edition=prelim",
+                          "role": "identifies this post as the office the Code places at that level"
+                        }
+                      ]
+                    }
+                  },
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -245957,6 +247209,72 @@
                   "budget": null,
                   "color": "#666666",
                   "children": [],
+                  "positionSchedulePay": {
+                    "source": "us_code_executive_schedule",
+                    "method": "level_assigned_by_5_usc_5312_5316_to_the_office_a_second_statute_identifies_this_post_as",
+                    "identification": {
+                      "nodeName": "Commissioner (×4)",
+                      "basis": "a bench priced from its class title: 46 U.S.C. 46101 composes the Federal Maritime Commission of five Commissioners, one of whom the President designates as Chairman, so each of the other four is a member of the Commission, and 5 U.S.C. 5315 places 'Members, Federal Maritime Commission' at Level IV; the level is the office's and holds for each of the four alike",
+                      "basisCitation": "46 U.S.C. 46101",
+                      "basisQuote": "The Commission is composed of 5 Commissioners, appointed by the President by and with the advice and consent of the Senate.",
+                      "basisUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title46-section46101&num=0&edition=prelim",
+                      "basisSha256": "9ad44f5b953a91cc86373a0d369725c664831003bce5c9698783404bf2b5dc26",
+                      "basisCheckedAt": "2026-09-28T22:30:26Z"
+                    },
+                    "payLevel": "IV",
+                    "citation": "5 U.S.C. §5315",
+                    "statutoryTitle": "Members, Federal Maritime Commission",
+                    "scopedOffice": null,
+                    "scopedOrganisation": null,
+                    "scopedOrganisationId": null,
+                    "statuteUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
+                    "statuteCheckedAt": "2026-09-18T20:34:27Z",
+                    "amount": 197200.0,
+                    "rateText": "$197,200",
+                    "table": "Salary Table No. 2026-EX",
+                    "effectiveText": "Effective January 2026",
+                    "effective": "2026-01-01",
+                    "fiscalYear": 2026,
+                    "costBasis": "basic_pay",
+                    "scopeMatch": "proxy",
+                    "financialEvidenceStatus": "partial",
+                    "amountScope": "Level IV",
+                    "quote": "Level IV $197,200",
+                    "footnotes": [
+                      "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+                    ],
+                    "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+                    "checkedAt": "2026-09-11T03:05:36Z",
+                    "classTitle": true,
+                    "holders": {
+                      "text": "×4",
+                      "kind": "exact",
+                      "appliesToEachHolder": true,
+                      "note": "This node stands for several posts. The figure is the rate the source states for the office or tier, and it applies to each holder alike; it is not one person's pay and not the group's combined pay.",
+                      "count": 4
+                    },
+                    "verification": {
+                      "documents": 3,
+                      "documentsStatingTheFigure": 1,
+                      "percent": 90,
+                      "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+                      "caution": "One document states the rate, another is the statute that places every member of this body at that level, and the third is the statute that composes the body of those members. The figure is each holder's by the Code's own class title, not one appointment's; the percentage measures how much official documentation it rests on, not the chance that it is right.",
+                      "documentRoles": [
+                        {
+                          "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+                          "role": "states what that Executive Schedule level pays"
+                        },
+                        {
+                          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
+                          "role": "places every member of this body at that level"
+                        },
+                        {
+                          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title46-section46101&num=0&edition=prelim",
+                          "role": "composes the body of the members this node stands for"
+                        }
+                      ]
+                    }
+                  },
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,

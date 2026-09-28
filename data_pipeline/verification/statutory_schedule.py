@@ -924,6 +924,247 @@ REVIEWED_TITLE_ROWS: dict[str, dict[str, Any]] = {
             "the same office: 17 U.S.C. 701 makes the Register of Copyrights the director of the Copyright Office of the Library of Congress, and 5 U.S.C. 5314 places the Register of Copyrights at Level III; the graph's '& Director' is the Office's own styling of that one post"
         ),
     },
+    "exec-ind-nasa-administrator-nasa": {
+        "nodeName": "Administrator, NASA",
+        "statutoryTitle": "Administrator of the National Aeronautics and Space Administration",
+        "basisCitation": "51 U.S.C. 20111",
+        "basisFixture": "nasa_51_usc_20111.html",
+        "basisQuote": (
+            "The Administration shall be headed by an Administrator, who shall be appointed from civilian life by the President by and with the advice and consent of the Senate."
+        ),
+        "basis": (
+            "the same office: 51 U.S.C. 20111 puts an Administrator at the head of the National Aeronautics and Space Administration, appointed by the President with the Senate's consent, and 5 U.S.C. 5313 places that Administrator at Level II; the graph names the Administration by its acronym"
+        ),
+    },
+    "exec-dept-dot-fta-administrator-fta": {
+        "nodeName": "Administrator, FTA",
+        "statutoryTitle": "Federal Transit Administrator",
+        "basisCitation": "49 U.S.C. 107",
+        "basisFixture": "fta_49_usc_107.html",
+        "basisQuote": (
+            "The head of the Administration is the Administrator who is appointed by the President, by and with the advice and consent of the Senate."
+        ),
+        "basis": (
+            "the same office: 49 U.S.C. 107 makes the Administrator the head of the Federal Transit Administration, appointed by the President with the Senate's consent, and 5 U.S.C. 5313 places the Federal Transit Administrator at Level II; the graph names the Administration by its acronym"
+        ),
+    },
+    "exec-dept-dot-fra-administrator-fra": {
+        "nodeName": "Administrator, FRA",
+        "statutoryTitle": "Administrator, Federal Railroad Administration",
+        "basisCitation": "49 U.S.C. 103",
+        "basisFixture": "fra_49_usc_103.html",
+        "basisQuote": (
+            "The head of the Administration shall be the Administrator who shall be appointed by the President, by and with the advice and consent of the Senate,"
+        ),
+        "basis": (
+            "the same office: 49 U.S.C. 103 makes the Administrator the head of the Federal Railroad Administration, appointed by the President with the Senate's consent, and 5 U.S.C. 5314 places that Administrator at Level III; the graph names the Administration by its acronym"
+        ),
+    },
+    "exec-dept-dot-marad-administrator-marad": {
+        "nodeName": "Administrator, MARAD",
+        "statutoryTitle": "Administrator, Maritime Administration",
+        "basisCitation": "49 U.S.C. 109",
+        "basisFixture": "marad_49_usc_109.html",
+        "basisQuote": (
+            "The head of the Maritime Administration is the Maritime Administrator, who is appointed by the President by and with the advice and consent of the Senate."
+        ),
+        "basis": (
+            "the same office: 49 U.S.C. 109 makes the Maritime Administrator the head of the Maritime Administration, appointed by the President with the Senate's consent, and 5 U.S.C. 5314 places that Administrator at Level III; the graph names the Administration by its acronym"
+        ),
+    },
+    "exec-dept-dol-msha-assistant-secretary-of-labor-for-mine-safety": {
+        "nodeName": "Assistant Secretary of Labor for Mine Safety",
+        "statutoryTitle": "Assistant Secretary of Labor for Mine Safety and Health",
+        "basisCitation": "29 U.S.C. 557a",
+        "basisFixture": "msha_29_usc_557a.html",
+        "basisQuote": (
+            "There is established in the Department of Labor a Mine Safety and Health Administration to be headed by an Assistant Secretary of Labor for Mine Safety and Health appointed by the President, by and with the advice and consent of the Senate."
+        ),
+        "basis": (
+            "the same office: 29 U.S.C. 557a puts the Mine Safety and Health Administration under an Assistant Secretary of Labor for Mine Safety and Health, and 5 U.S.C. 5315 places that Assistant Secretary at Level IV; the graph's name drops the words 'and Health'"
+        ),
+    },
+    "exec-dept-treasury-ofr-director-ofr": {
+        "nodeName": "Director, OFR",
+        "statutoryTitle": "Director of the Office of Financial Research",
+        "basisCitation": "12 U.S.C. 5342",
+        "basisFixture": "ofr_12_usc_5342.html",
+        "basisQuote": (
+            "The Office shall be headed by a Director, who shall be appointed by the President, by and with the advice and consent of the Senate."
+        ),
+        "basis": (
+            "the same office: 12 U.S.C. 5342 puts a Director at the head of the Office of Financial Research in the Department of the Treasury and itself compensates that Director at Level III of the Executive Schedule, the level 5 U.S.C. 5314 prints for it; the graph names the Office by its acronym"
+        ),
+    },
+    "exec-regulatory-fmc-chair-fmc": {
+        "nodeName": "Chair, FMC",
+        "statutoryTitle": "Chairman, Federal Maritime Commission",
+        "basisCitation": "46 U.S.C. 46101",
+        "basisFixture": "fmc_46_usc_46101.html",
+        "basisQuote": (
+            "The President shall designate one of the Commissioners as Chairman."
+        ),
+        "basis": (
+            "the same office: 46 U.S.C. 46101 composes the Federal Maritime Commission of five Commissioners and has the President designate one of them as Chairman, and 5 U.S.C. 5314 places that Chairman at Level III; the graph writes 'Chair' where the Code writes 'Chairman' and names the Commission by its acronym"
+        ),
+    },
+    "exec-regulatory-fmc-commissioner-4": {
+        "nodeName": "Commissioner (×4)",
+        "statutoryTitle": "Members, Federal Maritime Commission",
+        "basisCitation": "46 U.S.C. 46101",
+        "basisFixture": "fmc_46_usc_46101.html",
+        "basisQuote": (
+            "The Commission is composed of 5 Commissioners, appointed by the President by and with the advice and consent of the Senate."
+        ),
+        "basis": (
+            "a bench priced from its class title: 46 U.S.C. 46101 composes the Federal Maritime Commission of five Commissioners, one of whom the President designates as Chairman, so each of the other four is a member of the Commission, and 5 U.S.C. 5315 places 'Members, Federal Maritime Commission' at Level IV; the level is the office's and holds for each of the four alike"
+        ),
+        "classTitle": True,
+    },
+    "exec-ind-misc-merit-systems-protection-board-mspb-director-administrator-chair-merit-systems-protection-board": {
+        "nodeName": "Director / Administrator / Chair, Merit Systems Protection Board",
+        "statutoryTitle": "Chairman of the Merit Systems Protection Board",
+        "basisCitation": "5 U.S.C. 1203",
+        "basisFixture": "mspb_5_usc_1203.html",
+        "basisQuote": (
+            "The President shall from time to time appoint, by and with the advice and consent of the Senate, one of the members of the Merit Systems Protection Board as the Chairman of the Board."
+        ),
+        "basis": (
+            "the same office: 5 U.S.C. 1203 has the President appoint one member of the Merit Systems Protection Board as its Chairman, the Board's chief executive and administrative officer, and 5 U.S.C. 5314 places that Chairman at Level III; the graph names the post with its stamped 'Director / Administrator / Chair' template and the agency by name, and the Chairman is the head the template stands for"
+        ),
+    },
+    "exec-ind-misc-national-credit-union-administration-ncua-director-administrator-chair-national-credit-union-administration": {
+        "nodeName": "Director / Administrator / Chair, National Credit Union Administration",
+        "statutoryTitle": "Chairman, National Credit Union Administration Board",
+        "basisCitation": "12 U.S.C. 1752a",
+        "basisFixture": "ncua_12_usc_1752a.html",
+        "basisQuote": (
+            "In appointing the members of the Board, the President shall designate the Chairman."
+        ),
+        "basis": (
+            "the same office: 12 U.S.C. 1752a puts the National Credit Union Administration under the management of a three-member Board whose Chairman the President designates, and 5 U.S.C. 5314 places that Chairman at Level III; the graph names the post with its stamped 'Director / Administrator / Chair' template and the agency by name, and the Board's Chairman is the head the template stands for"
+        ),
+    },
+    "exec-ind-misc-peace-corps-director-administrator-chair-peace-corps": {
+        "nodeName": "Director / Administrator / Chair, Peace Corps",
+        "statutoryTitle": "Director of the Peace Corps",
+        "basisCitation": "22 U.S.C. 2503",
+        "basisFixture": "peacecorps_22_usc_2503.html",
+        "basisQuote": (
+            "The President may appoint, by and with the advice and consent of the Senate, a Director of the Peace Corps and a Deputy Director of the Peace Corps."
+        ),
+        "basis": (
+            "the same office: 22 U.S.C. 2503 provides for a Director of the Peace Corps appointed by the President with the Senate's consent, through whom the President exercises the chapter's functions, and 5 U.S.C. 5314 places that Director at Level III; the graph names the post with its stamped 'Director / Administrator / Chair' template and the agency by name, and the Director is the head the template stands for"
+        ),
+    },
+    "exec-ind-misc-selective-service-system-director-administrator-chair-selective-service-system": {
+        "nodeName": "Director / Administrator / Chair, Selective Service System",
+        "statutoryTitle": "Director of Selective Service",
+        "basisCitation": "50 U.S.C. 3809",
+        "basisFixture": "sss_50_usc_3809.html",
+        "basisQuote": (
+            "There is established in the executive branch of the Government an agency to be known as the Selective Service System, and a Director of Selective Service who shall be the head thereof."
+        ),
+        "basis": (
+            "the same office: 50 U.S.C. 3809 establishes the Selective Service System with a Director of Selective Service as its head, and 5 U.S.C. 5315 places that Director at Level IV; the graph names the post with its stamped 'Director / Administrator / Chair' template and the agency by name, and the Director is the head the template stands for"
+        ),
+    },
+    "exec-ind-misc-federal-labor-relations-authority-flra-director-administrator-chair-federal-labor-relations-authority": {
+        "nodeName": "Director / Administrator / Chair, Federal Labor Relations Authority",
+        "statutoryTitle": "Chairman, Federal Labor Relations Authority",
+        "basisCitation": "5 U.S.C. 7104",
+        "basisFixture": "flra_5_usc_7104.html",
+        "basisQuote": (
+            "The President shall designate one member to serve as Chairman of the Authority."
+        ),
+        "basis": (
+            "the same office: 5 U.S.C. 7104 composes the Federal Labor Relations Authority of three members and has the President designate one as Chairman, the Authority's chief executive and administrative officer, and 5 U.S.C. 5315 places that Chairman at Level IV; the graph names the post with its stamped 'Director / Administrator / Chair' template and the agency by name, and the Chairman is the head the template stands for"
+        ),
+    },
+    "exec-ind-misc-national-endowment-for-the-humanities-neh-director-administrator-chair-national-endowment-for-the-humanities": {
+        "nodeName": "Director / Administrator / Chair, National Endowment for the Humanities",
+        "statutoryTitle": "Chairman of the National Endowment for the Humanities",
+        "basisCitation": "20 U.S.C. 956",
+        "basisFixture": "neh_20_usc_956.html",
+        "basisQuote": (
+            "The Endowment shall be headed by a chairperson, who shall be appointed by the President, by and with the advice and consent of the Senate."
+        ),
+        "basis": (
+            "the same office: 20 U.S.C. 956 puts a chairperson at the head of the National Endowment for the Humanities, appointed by the President with the Senate's consent, and 5 U.S.C. 5314 places the Chairman of the Endowment at Level III; the graph names the post with its stamped 'Director / Administrator / Chair' template and the agency by name, and the chairperson is the head the template stands for"
+        ),
+    },
+    "exec-ind-misc-national-transportation-safety-board-ntsb-director-administrator-chair-national-transportation-safety-board": {
+        "nodeName": "Director / Administrator / Chair, National Transportation Safety Board",
+        "statutoryTitle": "Chairman, National Transportation Safety Board",
+        "basisCitation": "49 U.S.C. 1111",
+        "basisFixture": "ntsb_49_usc_1111.html",
+        "basisQuote": (
+            "The President shall designate, by and with the advice and consent of the Senate, a Chairman of the Board."
+        ),
+        "basis": (
+            "the same office: 49 U.S.C. 1111 composes the National Transportation Safety Board of five members and has the President designate a Chairman with the Senate's consent, and 5 U.S.C. 5314 places that Chairman at Level III; the graph names the post with its stamped 'Director / Administrator / Chair' template and the agency by name, and the Chairman is the head the template stands for"
+        ),
+    },
+    "exec-ind-misc-office-of-special-counsel-osc-director-administrator-chair-office-of-special-counsel": {
+        "nodeName": "Director / Administrator / Chair, Office of Special Counsel",
+        "statutoryTitle": "Special Counsel of the Office of Special Counsel",
+        "basisCitation": "5 U.S.C. 1211",
+        "basisFixture": "osc_5_usc_1211.html",
+        "basisQuote": (
+            "There is established the Office of Special Counsel, which shall be headed by the Special Counsel."
+        ),
+        "basis": (
+            "the same office: 5 U.S.C. 1211 establishes the Office of Special Counsel headed by the Special Counsel, appointed by the President with the Senate's consent, and 5 U.S.C. 5314 places the Special Counsel at Level III; the graph names the post with its stamped 'Director / Administrator / Chair' template and the agency by name, and the Special Counsel is the head the template stands for"
+        ),
+    },
+    "exec-ind-misc-pension-benefit-guaranty-corporation-pbgc-director-administrator-chair-pension-benefit-guaranty-corporation": {
+        "nodeName": "Director / Administrator / Chair, Pension Benefit Guaranty Corporation",
+        "statutoryTitle": "Director, Pension Benefit Guaranty Corporation",
+        "basisCitation": "29 U.S.C. 1302",
+        "basisFixture": "pbgc_29_usc_1302.html",
+        "basisQuote": (
+            "the corporation shall be administered by a Director, who shall be appointed by the President, by and with the advice and consent of the Senate,"
+        ),
+        "basis": (
+            "the same office: 29 U.S.C. 1302 has the Pension Benefit Guaranty Corporation administered by a Director appointed by the President with the Senate's consent, and 5 U.S.C. 5314 places that Director at Level III; the graph names the post with its stamped 'Director / Administrator / Chair' template and the agency by name, and the Director is the head the template stands for"
+        ),
+    },
+    "exec-ind-misc-u-s-postal-rate-commission-postal-regulatory-commission-director-administrator-chair-u-s-postal-rate-commission-postal-regulatory-commission": {
+        "nodeName": "Director / Administrator / Chair, U.S. Postal Rate Commission / Postal Regulatory Commission",
+        "statutoryTitle": "Chairman, Postal Regulatory Commission",
+        "basisCitation": "39 U.S.C. 502",
+        "basisFixture": "prc_39_usc_502.html",
+        "basisQuote": (
+            "One of the Commissioners shall be designated as Chairman by, and shall serve in the position of Chairman at the pleasure of, the President."
+        ),
+        "basis": (
+            "the same office: 39 U.S.C. 502 composes the Postal Regulatory Commission of five Commissioners, one of whom the President designates as Chairman, and 5 U.S.C. 5314 places that Chairman at Level III; the graph names the post with its stamped 'Director / Administrator / Chair' template and the agency by name with the Commission's former name beside its current one, and the Chairman is the head the template stands for"
+        ),
+    },
+    "exec-ind-misc-export-import-bank-of-the-u-s-director-administrator-chair-export-import-bank-of-the-u-s": {
+        "nodeName": "Director / Administrator / Chair, Export-Import Bank of the U.S.",
+        "statutoryTitle": "President of the Export-Import Bank of Washington",
+        "basisCitation": "12 U.S.C. 635a",
+        "basisFixture": "exim_12_usc_635a.html",
+        "basisQuote": (
+            "There shall be a President of the Export-Import Bank of the United States, who shall be appointed by the President of the United States by and with the advice and consent of the Senate, and who shall serve as chief executive officer"
+        ),
+        "basis": (
+            "the same office: 12 U.S.C. 635a creates a President of the Export-Import Bank of the United States as the Bank's chief executive officer, and 5 U.S.C. 5314 places the 'President of the Export-Import Bank of Washington' at Level III — the Schedule keeps the Bank's name before Pub. L. 90-267 renamed it in 1968, a rename the Code records in the notes to 12 U.S.C. 635 and this row relies on; the graph names the post with its stamped 'Director / Administrator / Chair' template and the agency by name, and the Bank's President is the head the template stands for"
+        ),
+    },
+    "exec-dept-doc-uspto-deputy-director": {
+        "nodeName": "Deputy Director",
+        "statutoryTitle": "Deputy Under Secretary of Commerce for Intellectual Property and Deputy Director of the United States Patent and Trademark Office",
+        "basisCitation": "35 U.S.C. 3",
+        "basisFixture": "uspto_35_usc_3.html",
+        "basisQuote": (
+            "The Secretary of Commerce, upon nomination by the Director, shall appoint a Deputy Under Secretary of Commerce for Intellectual Property and Deputy Director of the United States Patent and Trademark Office"
+        ),
+        "basis": (
+            "the same office: 35 U.S.C. 3(b)(1) creates one officer holding the joint title Deputy Under Secretary of Commerce for Intellectual Property and Deputy Director of the United States Patent and Trademark Office, and 5 U.S.C. 5315 places that joint title at Level IV; the graph writes the bare 'Deputy Director' under the Office, and the row is keyed to that node by id"
+        ),
+    },
 }
 
 
@@ -952,7 +1193,7 @@ def _operative_text(raw_html: str) -> str:
     not import that one. A quote found only beneath the law is repealed text."""
     text = re.sub(r"(?is)<(script|style)\b.*?</\1>", " ", raw_html)
     text = _SPACE.sub(" ", html_module.unescape(_TAGS.sub(" ", text))).strip()
-    start = re.search(r"\u00a7\s?\d+[A-Za-z]?\.", text)
+    start = re.search(r"\u00a7\s?\d+[A-Za-z]?(?:[-\u2013]\d+)?\.", text)
     body = text[start.start():] if start else text
     cuts = [body.find(h) for h in ("Historical and Revision Notes", "Editorial Notes", "Statutory Notes")]
     cuts = [c for c in cuts if c > 0]

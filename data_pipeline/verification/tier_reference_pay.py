@@ -229,6 +229,30 @@ TIER_REFERENCE_PROVISIONS: dict[str, dict[str, Any]] = {
         "quote": "each Commissioner shall- (A) receive the rate of basic pay for level IV of the Executive Schedule;",
         "composition": IES_COMPOSITION,
     },
+    "exec-ind-misc-farm-credit-administration-director-administrator-chair-farm-credit-administration": {
+        "nodeName": "Director / Administrator / Chair, Farm Credit Administration",
+        "office": "Chairman of the Farm Credit Administration Board",
+        "citation": "12 U.S.C. 2242(d)",
+        "fixture": "fca_12_usc_2242.html",
+        "subsection": "(d) Compensation",
+        "level": "III",
+        "percent": 0,
+        "quote": (
+            "The Chairman of the Board shall receive compensation at the rate prescribed for level III of the Executive Schedule under section 5314 of title 5"
+        ),
+    },
+    "leg-support-loc-librarian-of-congress": {
+        "nodeName": "Librarian of Congress",
+        "office": "Librarian of Congress",
+        "citation": "2 U.S.C. 136a-2(1)",
+        "fixture": "loc_2_usc_136a-2.html",
+        "subsection": "(1)",
+        "level": "II",
+        "percent": 0,
+        "quote": (
+            "the Librarian of Congress shall be compensated at an annual rate of pay which is equal to the annual rate of basic pay payable for positions at level II of the Executive Schedule under section 5313 of title 5"
+        ),
+    },
 }
 
 #: The Inspector General Act's rate, and the section that says whose.

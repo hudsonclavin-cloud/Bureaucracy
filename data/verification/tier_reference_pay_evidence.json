@@ -9,6 +9,11 @@
     "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
     "tableRetrievedAt": "2026-09-11T03:05:36Z",
     "sections": {
+      "fca_12_usc_2242.html": {
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title12-section2242&num=0&edition=prelim",
+        "sha256": "f208e825ce504a5e546a0f05c3cdec666bb454b3a74a0d2a02507b96753adadc",
+        "fetched_at": "2026-09-28T22:28:49Z"
+      },
       "gao_31_usc_703.html": {
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title31-section703&num=0&edition=prelim",
         "sha256": "bea4dd6d430c5148d0086bf25aef5cda0928821e85213dcf1d9f7205d5c4c015",
@@ -43,6 +48,11 @@
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section403&num=0&edition=prelim",
         "sha256": "03a99dce101efc898df802eb8a3b5f73636e82f65b8f12370755c83fe0d05a12",
         "fetched_at": "2026-09-27T22:10:09Z"
+      },
+      "loc_2_usc_136a-2.html": {
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title2-section136a-2&num=0&edition=prelim",
+        "sha256": "8174515f9f6de4dce27da726eb9b0bb48ea7d2bd7bc32133cf351c36e30d8522",
+        "fetched_at": "2026-09-28T22:29:11Z"
       }
     },
     "establishments": [
@@ -83,9 +93,9 @@
       "National Reconnaissance Office"
     ],
     "inspectorGeneralNodesConsidered": 81,
-    "reviewedRows": 8,
-    "priced": 35,
-    "pricedByReviewedRow": 8,
+    "reviewedRows": 10,
+    "priced": 37,
+    "pricedByReviewedRow": 10,
     "pricedInspectorsGeneral": 27,
     "documentsStatingTheFigure": 0,
     "strengthScale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
@@ -150,7 +160,7 @@
       "not_an_establishment": "the node's organisation is not one 5 U.S.C. 401(1) lists, so 403(e) does not set its pay: a designated Federal entity's IG (5 U.S.C. 415, read and committed, prints no rate of pay), a Defense agency's stamped 'Inspector General' beneath the Department's own, a legislative office's, or the CIA's (5 U.S.C. 423, not read)",
       "americorps_named_only_in_the_alias_table": "5 U.S.C. 401(1) lists the Corporation for National and Community Service; this graph calls it AmeriCorps and carries the statutory name only in node_aliases.json, which no join that lands a number may read"
     },
-    "validated": 35,
+    "validated": 37,
     "rejected": [],
     "conflicts": [],
     "double_counted": []
@@ -2340,6 +2350,81 @@
       "tableRetrievedAt": "2026-09-11T03:05:36Z",
       "unitsEvidenceKind": "currency_mark_on_the_figure_the_record_is_computed_from"
     },
+    "exec-ind-misc-farm-credit-administration-director-administrator-chair-farm-credit-administration": {
+      "nodeId": "exec-ind-misc-farm-credit-administration-director-administrator-chair-farm-credit-administration",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "basic_pay",
+      "amount": 209600.0,
+      "amountRaw": "209,600",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "Level III $209,600",
+      "quote": "12 U.S.C. 2242(d) (d) Compensation: “The Chairman of the Board shall receive compensation at the rate prescribed for level III of the Executive Schedule under section 5314 of title 5” · Salary Table No. 2026-EX, Effective January 2026: Level III $209,600",
+      "fiscalYear": 2026,
+      "periodCoverage": "annual_rate",
+      "periodAsOf": "2026-01-01",
+      "amountScope": "Level III",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "statutory_tier_reference_pay",
+      "sourceUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title12-section2242&num=0&edition=prelim",
+      "documentSha256": "f208e825ce504a5e546a0f05c3cdec666bb454b3a74a0d2a02507b96753adadc",
+      "retrievedAt": "2026-09-28T22:28:49Z",
+      "locator": {
+        "section": "12 U.S.C. 2242(d)",
+        "subsection": "(d) Compensation"
+      },
+      "method": "pay_set_by_reference_to_an_executive_schedule_level_joined_to_opm_table",
+      "office": "Chairman of the Farm Credit Administration Board",
+      "statute": "12 U.S.C. 2242(d)",
+      "statuteQuote": "The Chairman of the Board shall receive compensation at the rate prescribed for level III of the Executive Schedule under section 5314 of title 5",
+      "level": "III",
+      "levelText": "Level III",
+      "levelRateText": "$209,600",
+      "levelAmount": 209600.0,
+      "percent": 0,
+      "arithmetic": null,
+      "rateText": "$209,600",
+      "derivation": "12 U.S.C. 2242(d) (d) Compensation: “The Chairman of the Board shall receive compensation at the rate prescribed for level III of the Executive Schedule under section 5314 of title 5” · Salary Table No. 2026-EX, Effective January 2026: Level III $209,600",
+      "identification": {
+        "kind": "reviewed_row",
+        "nodeName": "Director / Administrator / Chair, Farm Credit Administration"
+      },
+      "documents": [
+        {
+          "role": "sets this post's basic pay by reference to Executive Schedule Level III",
+          "citation": "12 U.S.C. 2242(d)",
+          "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+          "title": "12 U.S.C. 2242(d), current through the prelim edition",
+          "quote": "The Chairman of the Board shall receive compensation at the rate prescribed for level III of the Executive Schedule under section 5314 of title 5",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title12-section2242&num=0&edition=prelim",
+          "documentSha256": "f208e825ce504a5e546a0f05c3cdec666bb454b3a74a0d2a02507b96753adadc",
+          "retrievedAt": "2026-09-28T22:28:49Z",
+          "statesTheFigure": false
+        },
+        {
+          "role": "states what that Executive Schedule level pays",
+          "citation": "Salary Table No. 2026-EX, Effective January 2026",
+          "publisher": "U.S. Office of Personnel Management",
+          "title": "Salary Table No. 2026-EX",
+          "quote": "Level III $209,600",
+          "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+          "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+          "retrievedAt": "2026-09-11T03:05:36Z",
+          "statesTheFigure": false
+        }
+      ],
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "tableFootnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+      "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+    },
     "exec-ind-misc-tennessee-valley-authority-tva-inspector-general": {
       "nodeId": "exec-ind-misc-tennessee-valley-authority-tva-inspector-general",
       "financialEvidenceStatus": "partial",
@@ -3399,6 +3484,81 @@
           "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title44-section303&num=0&edition=prelim",
           "documentSha256": "070973f26ae3054f484678c8aa078dd1683a7ef6e0c35b0badfbe9ea44d93511",
           "retrievedAt": "2026-09-28T19:23:03Z",
+          "statesTheFigure": false
+        },
+        {
+          "role": "states what that Executive Schedule level pays",
+          "citation": "Salary Table No. 2026-EX, Effective January 2026",
+          "publisher": "U.S. Office of Personnel Management",
+          "title": "Salary Table No. 2026-EX",
+          "quote": "Level II $228,000",
+          "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+          "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+          "retrievedAt": "2026-09-11T03:05:36Z",
+          "statesTheFigure": false
+        }
+      ],
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "tableFootnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+      "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+    },
+    "leg-support-loc-librarian-of-congress": {
+      "nodeId": "leg-support-loc-librarian-of-congress",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "basic_pay",
+      "amount": 228000.0,
+      "amountRaw": "228,000",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "Level II $228,000",
+      "quote": "2 U.S.C. 136a-2(1) (1): “the Librarian of Congress shall be compensated at an annual rate of pay which is equal to the annual rate of basic pay payable for positions at level II of the Executive Schedule under section 5313 of title 5” · Salary Table No. 2026-EX, Effective January 2026: Level II $228,000",
+      "fiscalYear": 2026,
+      "periodCoverage": "annual_rate",
+      "periodAsOf": "2026-01-01",
+      "amountScope": "Level II",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "statutory_tier_reference_pay",
+      "sourceUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title2-section136a-2&num=0&edition=prelim",
+      "documentSha256": "8174515f9f6de4dce27da726eb9b0bb48ea7d2bd7bc32133cf351c36e30d8522",
+      "retrievedAt": "2026-09-28T22:29:11Z",
+      "locator": {
+        "section": "2 U.S.C. 136a-2(1)",
+        "subsection": "(1)"
+      },
+      "method": "pay_set_by_reference_to_an_executive_schedule_level_joined_to_opm_table",
+      "office": "Librarian of Congress",
+      "statute": "2 U.S.C. 136a-2(1)",
+      "statuteQuote": "the Librarian of Congress shall be compensated at an annual rate of pay which is equal to the annual rate of basic pay payable for positions at level II of the Executive Schedule under section 5313 of title 5",
+      "level": "II",
+      "levelText": "Level II",
+      "levelRateText": "$228,000",
+      "levelAmount": 228000.0,
+      "percent": 0,
+      "arithmetic": null,
+      "rateText": "$228,000",
+      "derivation": "2 U.S.C. 136a-2(1) (1): “the Librarian of Congress shall be compensated at an annual rate of pay which is equal to the annual rate of basic pay payable for positions at level II of the Executive Schedule under section 5313 of title 5” · Salary Table No. 2026-EX, Effective January 2026: Level II $228,000",
+      "identification": {
+        "kind": "reviewed_row",
+        "nodeName": "Librarian of Congress"
+      },
+      "documents": [
+        {
+          "role": "sets this post's basic pay by reference to Executive Schedule Level II",
+          "citation": "2 U.S.C. 136a-2(1)",
+          "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+          "title": "2 U.S.C. 136a-2(1), current through the prelim edition",
+          "quote": "the Librarian of Congress shall be compensated at an annual rate of pay which is equal to the annual rate of basic pay payable for positions at level II of the Executive Schedule under section 5313 of title 5",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title2-section136a-2&num=0&edition=prelim",
+          "documentSha256": "8174515f9f6de4dce27da726eb9b0bb48ea7d2bd7bc32133cf351c36e30d8522",
+          "retrievedAt": "2026-09-28T22:29:11Z",
           "statesTheFigure": false
         },
         {

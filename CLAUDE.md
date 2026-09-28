@@ -2276,18 +2276,19 @@ of the nine fields (no `positionTierPay` or `positionGradePay`). The
 derived module stopped writing its own copy of the arithmetic when this
 landed: one code path for one number.
 
-**And the gap this made visible, counted rather than estimated.** 566 of 4,591
+**And the gap this made visible, counted rather than estimated.** 588 of 4,591
 positions carry a pay claim (461 when this section was first written, before
 the multi-post rule below and the Federal Reserve rows; 492 before the
 reviewed rows of 2026-09-27, 498 before that day's class-title benches, 513
 before the tier-reference module of 2026-09-28, 541 before that day's
-thirteen reviewed rows, 554 before the eight candidates of §19.10); **4,025
+thirteen reviewed rows, 554 before the eight candidates of §19.10, 566
+before the twenty-two rows §19.12 closed the eighth batch with); **4,003
 do not**, and `scripts/report_unpriced_positions.py` says why for every one
 of them:
 
-- **3,246** — no pay document this project has read names the title at all.
+- **3,225** — no pay document this project has read names the title at all.
   Not a coverage gap somebody has not got to.
-- **759** — the node states a multiplicity (`Physician (×multiple)`) and no
+- **758** — the node states a multiplicity (`Physician (×multiple)`) and no
   claim that holds for every holder reaches it. Since the per-field rule
   below, a tier rate, a parity rate, a band or a uniform roster line IS
   published on such a node (`Judge (×18)` is priced now); what stays refused
@@ -2295,7 +2296,7 @@ of them:
   SYSTEM governs the title is a fact worth having.
 - **20** — OPM lists the position and the row prints no rate.
 
-The concentration is the useful part: **432** of the 4,025 sit under `VA
+The concentration is the useful part: **432** of the 4,003 sit under `VA
 Medical Centers`, 360 of them among the 3,313 (the service chiefs
 `va_title38_pay.py` deliberately refuses, since choosing a Title 38 table per
 node would be this module deciding which VA service chiefs are doctors), 61
@@ -2307,7 +2308,7 @@ per unpriced position with its id and its reason;
 `docs/PAY_SOURCE_RESEARCH_PROMPT_3.md` is a research prompt pack generated
 from the same list in the same run — a lead prompt asking which pay systems
 exist and where each is published, then **39 enumeration shards naming every
-one of the 4,025 titles**. `tests/test_unpriced_positions.py` asserts the
+one of the 4,003 titles**. `tests/test_unpriced_positions.py` asserts the
 coverage rather than trusting it: every unpriced id appears in the pack, no
 priced position appears in either document, and both documents are regenerated
 and compared byte-for-byte so a stale copy fails.
@@ -2838,6 +2839,31 @@ refused: 2 U.S.C. 601(a)(5) sets the pay at "the maximum rate of pay in
 effect under section 4575(f)", a chain through a section this project has
 not read, and the Deputy's at $1,000 less than that.
 
+**Every batch's leads accounted for (since 2026-09-28, the owner's ask).**
+`CURATION.md` §19.12 is the ledger: each of the eight research batches, what
+it yielded, and where each lead ended up. Closing it landed **twenty more
+reviewed Schedule rows** — NASA, FTA, FRA, MARAD and MSHA's heads, the OFR
+Director, the FMC's Chair and its `Commissioner (×4)` bench (the seventh
+class-title bench), the USPTO's bare `Deputy Director` (a row is keyed by
+id, so the bare-title floor that governs page evidence does not apply), and
+ten of the stamped `Director / Administrator / Chair, <agency>` heads — the
+MSPB, the NCUA Board, the Peace Corps, Selective Service, the FLRA, the NEH,
+the NTSB, the Special Counsel, the PBGC, the PRC and the Export-Import
+Bank's President — each row naming which of the three offices the agency's
+own statute creates, so the office under the template is priced and never
+the template. The Export-Import row is the one whose identification leans
+on a fact outside its operative text: the Schedule still prints the Bank's
+pre-1968 name ("of Washington"), and the row says so. **Two tier-reference
+rows** with them: the FCA Board's Chairman, because the Schedule prints a
+"Governor of the Farm Credit Administration" the statute no longer has
+while 12 U.S.C. 2242(d) itself pays the Chairman at Level III; and the
+Librarian of Congress at Level II from 2 U.S.C. 136a–2. That section is
+numbered with an en-dash, and none of the three operative-text readers
+matched such a heading — the Librarian's section read as page chrome until
+the pattern admitted a dashed suffix in all three, pinned by a test.
+Reviewed rows **41 → 61**, Schedule-priced **140 → 160**, tier-reference
+**34 → 36**, pay claims **566 → 588**, unpriced **4,025 → 4,003**.
+
 **The panel's Trace Origin, restored.** A 2026-09-15 change reduced "Trace
 Origin" to a one-line confirmation on the grounds that the breadcrumb already
 showed the path. The owner wanted the full tree back: `renderOriginTrace` lists
@@ -3320,27 +3346,31 @@ subdivide measured money rather than invent it — which does not make a
 subdivision a measurement. **Since 2026-09-09 the site does not show one by
 default**, by the owner's decision: a node with no measured cost of its own
 shows no figure and says why, and ticking "Also show estimated shares of a
-parent's total" opts back in. The exception is a real salary — **566** of the
+parent's total" opts back in. The exception is a real salary — **588** of the
 4,591 positions carry a pay claim an official source states, counted on the
 published graph on 2026-09-28 after Schedule 6, the VA's Title 38 bands, the
 Article I parity derivations, the per-field multi-post rule, the Federal
 Reserve rows, the reviewed rows of the fourth research batch, the six
 class-title benches, the tier-reference module, the thirteen reviewed rows
-of §19.9's list and the eight candidates of §19.10 landed: 10 a figure no
+of §19.9's list, the eight candidates of §19.10 and the twenty-two rows that
+closed the eighth batch (§19.12) landed: 10 a figure no
 document states (`positionDerivedPay`, four chief judges and their four
 benches, the Administrative Office's Director, and the Federal Judicial
-Center's Director through a chain of two statutes), 34 a rate a
+Center's Director through a chain of two statutes), 36 a rate a
 statute sets by REFERENCE to an Executive Schedule level (`positionTierReferencePay`:
 the GAO's two officers, the GPO's two, the IES's Director and three
-Commissioners, and 26 Inspectors General at Level III plus the Act's
-3 percent, arithmetic no document prints), 72 a Title 38 tier BAND rather than a rate (`positionTierPay`), 140 from the
-Executive Schedule as 5 U.S.C. §§5312–5316 sets it (41 of them through a
+Commissioners, the FCA Board's Chairman, the Librarian of Congress, and 26
+Inspectors General at Level III plus the Act's
+3 percent, arithmetic no document prints), 72 a Title 38 tier BAND rather than a rate (`positionTierPay`), 160 from the
+Executive Schedule as 5 U.S.C. §§5312–5316 sets it (61 of them through a
 reviewed identification a second statute backs — 12 U.S.C. 241–242 for the
-Fed's four, then the FCC's, FTC's, CFTC's, FERC's and NRC's chairs and
-benches, the IRS, FAA, DHS, OPM, SSA, FEMA, BLM, CIA, CMS, NIST, SBA, NSF,
-ONDCP, BLS, Census, CEA, CPSC, FHWA, USPTO and Reclamation principals and
-the Register of Copyrights; six of the 41 are benches
-priced from the Code's "Members, …" class title for each holder), 188 from
+Fed's four, then the FCC's, FTC's, CFTC's, FERC's, NRC's and FMC's chairs
+and benches, the IRS, FAA, DHS, OPM, SSA, FEMA, BLM, CIA, CMS, NIST, SBA,
+NSF, ONDCP, BLS, Census, CEA, CPSC, FHWA, USPTO, Reclamation, NASA, FTA,
+FRA, MARAD, MSHA and OFR principals, the Register of Copyrights, and ten
+stamped agency heads from the MSPB to the Export-Import Bank; seven of the
+61 are benches priced from the Code's "Members, …" class title for each
+holder), 188 from
 the White House
 roster (22 of them titles listed N times at one rate), 88 the rate the current PLUM export prints for the one row under the
 title, 31 from a listing's level joined to OPM's table, 24 statutory (20 from
@@ -3350,7 +3380,7 @@ base-pay **range** rather than a rate (`positionGradePay`, counted separately
 because a range is not a rate and the panel says so; it read 32 until the
 current export supplied a printed figure for 14 of them, and a printed figure
 beats a band). A node may carry more than one of these, so the per-source
-figures sum past 566 — 461 on 2026-09-23 when four Article I chief judges
+figures sum past 588 — 461 on 2026-09-23 when four Article I chief judges
 took a figure NO document states, 488 the same day when the multi-post rule
 became per field, 491 with the Federal Reserve's three (`positionDerivedPay`
 was 4 and is 8, since each court's bench now takes its own parity provision)
@@ -3359,8 +3389,9 @@ joined to the compensation table, publishing its document count and what that
 count is worth), 498 on 2026-09-27 with the six reviewed rows, 513 the
 same day with the five class-title benches and nine more reviewed rows, 541
 on 2026-09-28 with the tier-reference module, 554 the same day with the
-thirteen reviewed rows of §19.9's list, and 566 with the eight candidates of
-§19.10. Shown in the cost block under its own heading and never headed COST.
+thirteen reviewed rows of §19.9's list, 566 with the eight candidates of
+§19.10, and 588 with the twenty-two rows of §19.12. Shown in the cost block
+under its own heading and never headed COST.
 
 That figure read **354** until 2026-09-19 and was wrong: it added up the
 *records* each source derives rather than counting the nodes that publish one,
@@ -3374,7 +3405,8 @@ the per-field multi-post rule, 491 with the Federal Reserve rows, 492 after
 the review, 498 with the six reviewed rows of 2026-09-27, 513 with that
 day's class-title benches and nine more reviewed rows, 541 on 2026-09-28
 with the GAO's officers and 26 Inspectors General, 554 the same day with
-the thirteen reviewed rows, and 566 with the eight candidates. The estimates
+the thirteen reviewed rows, 566 with the eight candidates, and 588 with the
+twenty-two rows that closed the eighth batch. The estimates
 stay in `graph.json` because the cascade's arithmetic and the gate's
 child-sum checks are built on them, so a consumer of the JSON must read
 `cost_status`, not `resolved_total_amount` alone. The gate prints both
