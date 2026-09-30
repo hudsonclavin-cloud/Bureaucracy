@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20260930b";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260930b";
+import { createGovernmentGraph } from "./graph.js?v=20260930c";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260930c";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -1150,7 +1150,23 @@ function renderSchedulePay(data) {
   // "Members, Board of Governors" beside a node called "Vice Chair for
   // Supervision" is otherwise a figure with no visible reason.
   const identification = pay.identification && typeof pay.identification === "object" ? pay.identification : null;
-  if (identification) {
+  const counted = pay.countedClass && typeof pay.countedClass === "object" ? pay.countedClass : null;
+  if (counted) {
+    // One office of a COUNTED class: the Code places N offices at one level
+    // and names none of them, so the panel says exactly what ties this node
+    // to the class — its own name and placement, reviewed — and how many of
+    // the N this graph names, and whether a second statute composes the
+    // class or names this office itself.
+    add(` The Code places that as a class of ${counted.statedPosts} offices at one level and names none of them; this post is priced as one of them because its own name is the class's singular office, "${counted.singular}", and it sits inside ${counted.scopeName || counted.scopeId} — a reviewed membership, re-checked on every build, and this graph names ${counted.membersInGraph} of the ${counted.statedPosts} the Code counts.`);
+    if (identification && identification.basisCitation) {
+      add(` ${identification.basisCitation} composes the class: "${identification.basisQuote || ""}"${identification.basisCheckedAt ? ` (read ${formatFetchDate(identification.basisCheckedAt)})` : ""}.`);
+      if (counted.namedAs) add(` The same section names this office itself: "${counted.namedAs}".`);
+      add(" Three documents: the Code places the class and counts it, the composing statute creates the offices, and the table sets the rate.");
+    } else {
+      add(` No statute composing the class has been read here${identification && identification.basis ? ` (${identification.basis})` : ""}, so this rests on two documents: the Code places the class and counts it, and the table sets the rate.`);
+    }
+    add(" A statutory rate of basic pay, not what the holder receives: it excludes benefits, any freeze the table notes below, and it is not a share of federal outlays, which is what every other figure in this graph means.");
+  } else if (identification) {
     add(` That title is not this node's name, and no name match joined them: this is a reviewed identification — ${identification.basis || "recorded without a stated basis"}. ${identification.basisCitation || "The basis statute"} prints "${identification.basisQuote || ""}" in its operative text${identification.basisCheckedAt ? ` (read ${formatFetchDate(identification.basisCheckedAt)})` : ""}, and it is re-checked on every build.`);
     add(" Three documents: the basis statute says which office this post is, the Executive Schedule sets that office's level, and the table sets the rate. Current law names the office, so this does not depend on who holds it — but it is a statutory rate of basic pay, not what the holder receives: it excludes benefits, any freeze the table notes below, and it is not a share of federal outlays, which is what every other figure in this graph means.");
   } else {

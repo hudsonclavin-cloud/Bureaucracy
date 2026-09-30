@@ -61,6 +61,7 @@ from data_pipeline.verification.statutory_schedule import (  # noqa: E402
     Unreadable as ScheduleUnreadable,
     build_records,
     load_schedule,
+    match_counted_classes,
     match_positions,
     match_reviewed_rows,
     match_scoped_positions,
@@ -91,7 +92,7 @@ def main(argv: list[str] | None = None) -> int:
         return 1
     table = loaded["table"]
 
-    node_map, _ = index_tree(load_base_graph(args.base_graph))
+    node_map, parent_map = index_tree(load_base_graph(args.base_graph))
     matching = match_positions(node_map, schedule)
     # The second route, for the titles the Code writes as "<office>,
     # <organisation>". Run after the first and handed what it took, so a node
@@ -107,6 +108,14 @@ def main(argv: list[str] | None = None) -> int:
     matching["matched"].update(reviewed["matched"])
     for reason, items in reviewed["refusals"].items():
         matching["refusals"].setdefault(reason, []).extend(items)
+    # The fourth route: the members of a COUNTED class ("Assistant Attorneys
+    # General (11)"), each a reviewed membership re-adjudicated on every run,
+    # never over a node another route already priced, and never more members
+    # than the Code counts.
+    counted = match_counted_classes(node_map, parent_map, schedule, already_matched=matching["matched"])
+    matching["matched"].update(counted["matched"])
+    for reason, items in counted["refusals"].items():
+        matching["refusals"].setdefault(reason, []).extend(items)
     fiscal_year = federal_fiscal_year_of(date.fromisoformat(str(table["effective"])))
     records, report = build_records(
         matching["matched"], table,
@@ -117,6 +126,9 @@ def main(argv: list[str] | None = None) -> int:
     report["scopedMatches"] = len(scoped["matched"])
     report["reviewedMatches"] = len(reviewed["matched"])
     report["reviewedRows"] = sorted(reviewed["matched"])
+    report["countedClassMatches"] = len(counted["matched"])
+    report["countedClasses"] = counted["classes"]
+    report["countedClassMembers"] = sorted(counted["matched"])
     report["ambiguousStatutoryTitles"] = schedule["ambiguous"]
     report["statutoryPositions"] = schedule["positions"]
 
@@ -155,9 +167,10 @@ def main(argv: list[str] | None = None) -> int:
           f"{len(schedule['index'])} distinct titles, {len(schedule['ambiguous'])} ambiguous")
     print(f"salary table  : {table['table']}  {table['effectiveText']}")
     print(f"matched nodes : {report['matched']} "
-          f"({report['matched'] - report['scopedMatches'] - report['reviewedMatches']} by whole name, "
+          f"({report['matched'] - report['scopedMatches'] - report['reviewedMatches'] - report['countedClassMatches']} by whole name, "
           f"{report['scopedMatches']} scoped to their organisation, "
-          f"{report['reviewedMatches']} by a reviewed identification a second statute backs)   priced {report['priced']}   "
+          f"{report['reviewedMatches']} by a reviewed identification a second statute backs, "
+          f"{report['countedClassMatches']} as members of a counted class)   priced {report['priced']}   "
           f"validated {report['validated']}")
     print(f"  by level    : {report['priced_by_level']}")
     for reason, count in sorted(report["matchRefusals"].items()):

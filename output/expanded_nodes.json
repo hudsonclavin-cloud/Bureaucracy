@@ -37003,6 +37003,74 @@
         ]
       }
     },
+    "positionSchedulePay": {
+      "source": "us_code_executive_schedule",
+      "method": "level_assigned_by_5_usc_5312_5316_to_a_counted_class_of_offices_this_post_is_one_of",
+      "identification": {
+        "nodeName": "Assistant Attorney General, National Security Division",
+        "basis": "5 U.S.C. 5315 places the eleven Assistant Attorneys General at Level IV as a class and names none of them; 28 U.S.C. 506 creates the eleven offices; each of these nodes is named as the Assistant Attorney General heading one of the Department's litigating divisions",
+        "basisCitation": "28 U.S.C. 506",
+        "basisQuote": "The President shall appoint, by and with the advice and consent of the Senate, 11 Assistant Attorneys General, who shall assist the Attorney General in the performance of his duties.",
+        "basisUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title28-section506&num=0&edition=prelim",
+        "basisSha256": "2eed67ffe9d2ded9197f8d255486ddd967a974e58be3882885992a2df4a51d23",
+        "basisCheckedAt": "2026-09-30T05:07:46Z"
+      },
+      "countedClass": {
+        "codeTitle": "Assistant Attorneys General (11)",
+        "statedPosts": 11,
+        "membersInGraph": 7,
+        "singular": "Assistant Attorney General",
+        "scopeId": "exec-dept-doj",
+        "scopeName": "Department of Justice (DOJ)",
+        "namedAs": null,
+        "compositionCitation": "28 U.S.C. 506"
+      },
+      "payLevel": "IV",
+      "citation": "5 U.S.C. §5315",
+      "statutoryTitle": "Assistant Attorneys General (11)",
+      "scopedOffice": null,
+      "scopedOrganisation": null,
+      "scopedOrganisationId": null,
+      "statuteUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
+      "statuteCheckedAt": "2026-09-18T20:34:27Z",
+      "amount": 197200.0,
+      "rateText": "$197,200",
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level IV",
+      "quote": "Level IV $197,200",
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-11T03:05:36Z",
+      "verification": {
+        "documents": 3,
+        "documentsStatingTheFigure": 1,
+        "percent": 90,
+        "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+        "caution": "One document states the rate and another is the statute that places every office of this class at that level without naming any of them; where a third is listed, it is the statute that composes the class. That this post is one of the class rests on its own name and where it sits, which a reviewed table records and every build re-checks. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+        "documentRoles": [
+          {
+            "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+            "role": "states what that Executive Schedule level pays"
+          },
+          {
+            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
+            "role": "places every office of this class at that level, and counts them"
+          },
+          {
+            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title28-section506&num=0&edition=prelim",
+            "role": "composes the class of offices this post is one of"
+          }
+        ]
+      }
+    },
     "parentId": "exec-dept-doj-div-nsd"
   },
   {
@@ -48066,6 +48134,74 @@
         ]
       }
     },
+    "positionSchedulePay": {
+      "source": "us_code_executive_schedule",
+      "method": "level_assigned_by_5_usc_5312_5316_to_a_counted_class_of_offices_this_post_is_one_of",
+      "identification": {
+        "nodeName": "Assistant Secretary for Employment & Training",
+        "basis": "5 U.S.C. 5315 places the Assistant Secretaries of Labor at Level IV as a class of ten (its paragraph goes on to name the one for Veterans' Employment and Training, which is why the title parser reads it as a single post and the printed words are checked directly); 29 U.S.C. 553 establishes nine of the offices and names the one for Occupational Safety and Health; each node is named as an Assistant Secretary heading one of the Department's agencies",
+        "basisCitation": "29 U.S.C. 553",
+        "basisQuote": "There are established in the Department of Labor nine offices of Assistant Secretary of Labor, which shall be filled by appointment by the President, by and with the advice and consent of the Senate.",
+        "basisUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title29-section553&num=0&edition=prelim",
+        "basisSha256": "2f465facbd2f3c2bfd6c74e54292fe6d09fc06fc3022cd39ac29aacf6205f8b9",
+        "basisCheckedAt": "2026-09-30T05:07:53Z"
+      },
+      "countedClass": {
+        "codeTitle": "Assistant Secretaries of Labor (10)",
+        "statedPosts": 10,
+        "membersInGraph": 3,
+        "singular": "Assistant Secretary",
+        "scopeId": "exec-dept-dol",
+        "scopeName": "Department of Labor (DOL)",
+        "namedAs": null,
+        "compositionCitation": "29 U.S.C. 553"
+      },
+      "payLevel": "IV",
+      "citation": "5 U.S.C. §5315",
+      "statutoryTitle": "Assistant Secretaries of Labor (10)",
+      "scopedOffice": null,
+      "scopedOrganisation": null,
+      "scopedOrganisationId": null,
+      "statuteUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
+      "statuteCheckedAt": "2026-09-18T20:34:27Z",
+      "amount": 197200.0,
+      "rateText": "$197,200",
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level IV",
+      "quote": "Level IV $197,200",
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-11T03:05:36Z",
+      "verification": {
+        "documents": 3,
+        "documentsStatingTheFigure": 1,
+        "percent": 90,
+        "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+        "caution": "One document states the rate and another is the statute that places every office of this class at that level without naming any of them; where a third is listed, it is the statute that composes the class. That this post is one of the class rests on its own name and where it sits, which a reviewed table records and every build re-checks. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+        "documentRoles": [
+          {
+            "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+            "role": "states what that Executive Schedule level pays"
+          },
+          {
+            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
+            "role": "places every office of this class at that level, and counts them"
+          },
+          {
+            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title29-section553&num=0&edition=prelim",
+            "role": "composes the class of offices this post is one of"
+          }
+        ]
+      }
+    },
     "parentId": "exec-dept-dol-eta"
   },
   {
@@ -53987,6 +54123,74 @@
         ]
       }
     },
+    "positionSchedulePay": {
+      "source": "us_code_executive_schedule",
+      "method": "level_assigned_by_5_usc_5312_5316_to_a_counted_class_of_offices_this_post_is_one_of",
+      "identification": {
+        "nodeName": "Assistant Secretary for Public & Indian Housing",
+        "basis": "5 U.S.C. 5315 places the Assistant Secretaries of Housing and Urban Development at Level IV as a class of eight; 42 U.S.C. 3533(a) establishes seven Assistant Secretaries (the two documents disagree by one, and the Code's own count is the bound used here) and names the Federal Housing Commissioner as one of them; each node is named as the Assistant Secretary heading one of the Department's programme offices",
+        "basisCitation": "42 U.S.C. 3533",
+        "basisQuote": "There shall be in the Department a Deputy Secretary, 7 Assistant Secretaries, and a General Counsel, who shall be appointed by the President by and with the advice and consent of the Senate",
+        "basisUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section3533&num=0&edition=prelim",
+        "basisSha256": "20e45d97312f86f01bf391f970a6743b846be9a8259bdd4c10a9468b518d7524",
+        "basisCheckedAt": "2026-09-30T05:07:57Z"
+      },
+      "countedClass": {
+        "codeTitle": "Assistant Secretaries of Housing and Urban Development (8)",
+        "statedPosts": 8,
+        "membersInGraph": 4,
+        "singular": "Assistant Secretary",
+        "scopeId": "exec-dept-hud",
+        "scopeName": "Department of Housing & Urban Development (HUD)",
+        "namedAs": null,
+        "compositionCitation": "42 U.S.C. 3533"
+      },
+      "payLevel": "IV",
+      "citation": "5 U.S.C. §5315",
+      "statutoryTitle": "Assistant Secretaries of Housing and Urban Development (8)",
+      "scopedOffice": null,
+      "scopedOrganisation": null,
+      "scopedOrganisationId": null,
+      "statuteUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
+      "statuteCheckedAt": "2026-09-18T20:34:27Z",
+      "amount": 197200.0,
+      "rateText": "$197,200",
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level IV",
+      "quote": "Level IV $197,200",
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-11T03:05:36Z",
+      "verification": {
+        "documents": 3,
+        "documentsStatingTheFigure": 1,
+        "percent": 90,
+        "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+        "caution": "One document states the rate and another is the statute that places every office of this class at that level without naming any of them; where a third is listed, it is the statute that composes the class. That this post is one of the class rests on its own name and where it sits, which a reviewed table records and every build re-checks. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+        "documentRoles": [
+          {
+            "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+            "role": "states what that Executive Schedule level pays"
+          },
+          {
+            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
+            "role": "places every office of this class at that level, and counts them"
+          },
+          {
+            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section3533&num=0&edition=prelim",
+            "role": "composes the class of offices this post is one of"
+          }
+        ]
+      }
+    },
     "parentId": "exec-dept-hud-pih"
   },
   {
@@ -54201,6 +54405,74 @@
         ]
       }
     },
+    "positionSchedulePay": {
+      "source": "us_code_executive_schedule",
+      "method": "level_assigned_by_5_usc_5312_5316_to_a_counted_class_of_offices_this_post_is_one_of",
+      "identification": {
+        "nodeName": "Assistant Secretary for Community Planning & Development",
+        "basis": "5 U.S.C. 5315 places the Assistant Secretaries of Housing and Urban Development at Level IV as a class of eight; 42 U.S.C. 3533(a) establishes seven Assistant Secretaries (the two documents disagree by one, and the Code's own count is the bound used here) and names the Federal Housing Commissioner as one of them; each node is named as the Assistant Secretary heading one of the Department's programme offices",
+        "basisCitation": "42 U.S.C. 3533",
+        "basisQuote": "There shall be in the Department a Deputy Secretary, 7 Assistant Secretaries, and a General Counsel, who shall be appointed by the President by and with the advice and consent of the Senate",
+        "basisUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section3533&num=0&edition=prelim",
+        "basisSha256": "20e45d97312f86f01bf391f970a6743b846be9a8259bdd4c10a9468b518d7524",
+        "basisCheckedAt": "2026-09-30T05:07:57Z"
+      },
+      "countedClass": {
+        "codeTitle": "Assistant Secretaries of Housing and Urban Development (8)",
+        "statedPosts": 8,
+        "membersInGraph": 4,
+        "singular": "Assistant Secretary",
+        "scopeId": "exec-dept-hud",
+        "scopeName": "Department of Housing & Urban Development (HUD)",
+        "namedAs": null,
+        "compositionCitation": "42 U.S.C. 3533"
+      },
+      "payLevel": "IV",
+      "citation": "5 U.S.C. §5315",
+      "statutoryTitle": "Assistant Secretaries of Housing and Urban Development (8)",
+      "scopedOffice": null,
+      "scopedOrganisation": null,
+      "scopedOrganisationId": null,
+      "statuteUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
+      "statuteCheckedAt": "2026-09-18T20:34:27Z",
+      "amount": 197200.0,
+      "rateText": "$197,200",
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level IV",
+      "quote": "Level IV $197,200",
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-11T03:05:36Z",
+      "verification": {
+        "documents": 3,
+        "documentsStatingTheFigure": 1,
+        "percent": 90,
+        "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+        "caution": "One document states the rate and another is the statute that places every office of this class at that level without naming any of them; where a third is listed, it is the statute that composes the class. That this post is one of the class rests on its own name and where it sits, which a reviewed table records and every build re-checks. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+        "documentRoles": [
+          {
+            "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+            "role": "states what that Executive Schedule level pays"
+          },
+          {
+            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
+            "role": "places every office of this class at that level, and counts them"
+          },
+          {
+            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section3533&num=0&edition=prelim",
+            "role": "composes the class of offices this post is one of"
+          }
+        ]
+      }
+    },
     "parentId": "exec-dept-hud-cpd"
   },
   {
@@ -54349,6 +54621,74 @@
           {
             "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
             "role": "states the level this post is at"
+          }
+        ]
+      }
+    },
+    "positionSchedulePay": {
+      "source": "us_code_executive_schedule",
+      "method": "level_assigned_by_5_usc_5312_5316_to_a_counted_class_of_offices_this_post_is_one_of",
+      "identification": {
+        "nodeName": "Assistant Secretary for Fair Housing & Equal Opportunity",
+        "basis": "5 U.S.C. 5315 places the Assistant Secretaries of Housing and Urban Development at Level IV as a class of eight; 42 U.S.C. 3533(a) establishes seven Assistant Secretaries (the two documents disagree by one, and the Code's own count is the bound used here) and names the Federal Housing Commissioner as one of them; each node is named as the Assistant Secretary heading one of the Department's programme offices",
+        "basisCitation": "42 U.S.C. 3533",
+        "basisQuote": "There shall be in the Department a Deputy Secretary, 7 Assistant Secretaries, and a General Counsel, who shall be appointed by the President by and with the advice and consent of the Senate",
+        "basisUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section3533&num=0&edition=prelim",
+        "basisSha256": "20e45d97312f86f01bf391f970a6743b846be9a8259bdd4c10a9468b518d7524",
+        "basisCheckedAt": "2026-09-30T05:07:57Z"
+      },
+      "countedClass": {
+        "codeTitle": "Assistant Secretaries of Housing and Urban Development (8)",
+        "statedPosts": 8,
+        "membersInGraph": 4,
+        "singular": "Assistant Secretary",
+        "scopeId": "exec-dept-hud",
+        "scopeName": "Department of Housing & Urban Development (HUD)",
+        "namedAs": null,
+        "compositionCitation": "42 U.S.C. 3533"
+      },
+      "payLevel": "IV",
+      "citation": "5 U.S.C. §5315",
+      "statutoryTitle": "Assistant Secretaries of Housing and Urban Development (8)",
+      "scopedOffice": null,
+      "scopedOrganisation": null,
+      "scopedOrganisationId": null,
+      "statuteUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
+      "statuteCheckedAt": "2026-09-18T20:34:27Z",
+      "amount": 197200.0,
+      "rateText": "$197,200",
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level IV",
+      "quote": "Level IV $197,200",
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-11T03:05:36Z",
+      "verification": {
+        "documents": 3,
+        "documentsStatingTheFigure": 1,
+        "percent": 90,
+        "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+        "caution": "One document states the rate and another is the statute that places every office of this class at that level without naming any of them; where a third is listed, it is the statute that composes the class. That this post is one of the class rests on its own name and where it sits, which a reviewed table records and every build re-checks. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+        "documentRoles": [
+          {
+            "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+            "role": "states what that Executive Schedule level pays"
+          },
+          {
+            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
+            "role": "places every office of this class at that level, and counts them"
+          },
+          {
+            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section3533&num=0&edition=prelim",
+            "role": "composes the class of offices this post is one of"
           }
         ]
       }
@@ -56803,6 +57143,64 @@
     "placementParentId": "exec-dept-dot-phmsa",
     "placementMatchedText": "ADMINISTRATOR",
     "placementMethod": "listed_under_organization_in_opm_current_plum_export",
+    "positionSchedulePay": {
+      "source": "us_code_executive_schedule",
+      "method": "level_assigned_by_5_usc_5312_5316_to_the_office_a_second_statute_identifies_this_post_as",
+      "identification": {
+        "nodeName": "Administrator, PHMSA",
+        "basis": "the same office: 49 U.S.C. 108(c) makes the Administrator the head of the Pipeline and Hazardous Materials Safety Administration, and 5 U.S.C. 5314 places that Administrator at Level III; the graph names the Administration by its acronym, and OPM's current export lists the post at EX-III under it",
+        "basisCitation": "49 U.S.C. 108",
+        "basisQuote": "The head of the Administration shall be the Administrator who shall be appointed by the President, by and with the advice and consent of the Senate",
+        "basisUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title49-section108&num=0&edition=prelim",
+        "basisSha256": "a1f1e944e0f6b2bef795e309d338966ecebc19cc31ee1c27d6ff127959492404",
+        "basisCheckedAt": "2026-09-30T05:09:43Z"
+      },
+      "payLevel": "III",
+      "citation": "5 U.S.C. §5314",
+      "statutoryTitle": "Administrator, Pipeline and Hazardous Materials Safety Administration",
+      "scopedOffice": null,
+      "scopedOrganisation": null,
+      "scopedOrganisationId": null,
+      "statuteUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5314&num=0&edition=prelim",
+      "statuteCheckedAt": "2026-09-18T20:34:21Z",
+      "amount": 209600.0,
+      "rateText": "$209,600",
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level III",
+      "quote": "Level III $209,600",
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-11T03:05:36Z",
+      "verification": {
+        "documents": 3,
+        "documentsStatingTheFigure": 1,
+        "percent": 90,
+        "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+        "caution": "One document states the rate and another is the statute that puts this post at that level; where a third is listed, it is the statute that says this post is the office the Code names, because the Code's title is not this node's name. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+        "documentRoles": [
+          {
+            "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+            "role": "states what that Executive Schedule level pays"
+          },
+          {
+            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5314&num=0&edition=prelim",
+            "role": "places this post at that level"
+          },
+          {
+            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title49-section108&num=0&edition=prelim",
+            "role": "identifies this post as the office the Code places at that level"
+          }
+        ]
+      }
+    },
     "parentId": "exec-dept-dot-phmsa"
   },
   {
@@ -60193,6 +60591,74 @@
           {
             "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
             "role": "states the level this post is at"
+          }
+        ]
+      }
+    },
+    "positionSchedulePay": {
+      "source": "us_code_executive_schedule",
+      "method": "level_assigned_by_5_usc_5312_5316_to_a_counted_class_of_offices_this_post_is_one_of",
+      "identification": {
+        "nodeName": "Assistant Secretary for Civil Rights",
+        "basis": "5 U.S.C. 5315 places the Assistant Secretaries of Education at Level IV as a class of ten; 20 U.S.C. 3412(b) establishes the offices and names each of these two by title; each node is named as the Assistant Secretary heading one of the Department's principal offices",
+        "basisCitation": "20 U.S.C. 3412",
+        "basisQuote": "There shall be in the Department- (A) an Assistant Secretary for Elementary and Secondary Education; (B) an Assistant Secretary for Postsecondary Education; (C) an Assistant Secretary for Career, Technical, and Adult Education; (D) an Assistant Secretary for Special Education and Rehabilitative Services; (E) an Assistant Secretary for Civil Rights",
+        "basisUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title20-section3412&num=0&edition=prelim",
+        "basisSha256": "746a945f59b71df80017bb1d194d2dda16fcfb8ac7233d3aca06934e713d3e7f",
+        "basisCheckedAt": "2026-09-30T05:07:53Z"
+      },
+      "countedClass": {
+        "codeTitle": "Assistant Secretaries of Education (10)",
+        "statedPosts": 10,
+        "membersInGraph": 2,
+        "singular": "Assistant Secretary",
+        "scopeId": "exec-dept-ed",
+        "scopeName": "Department of Education",
+        "namedAs": "(E) an Assistant Secretary for Civil Rights",
+        "compositionCitation": "20 U.S.C. 3412"
+      },
+      "payLevel": "IV",
+      "citation": "5 U.S.C. §5315",
+      "statutoryTitle": "Assistant Secretaries of Education (10)",
+      "scopedOffice": null,
+      "scopedOrganisation": null,
+      "scopedOrganisationId": null,
+      "statuteUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
+      "statuteCheckedAt": "2026-09-18T20:34:27Z",
+      "amount": 197200.0,
+      "rateText": "$197,200",
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level IV",
+      "quote": "Level IV $197,200",
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-11T03:05:36Z",
+      "verification": {
+        "documents": 3,
+        "documentsStatingTheFigure": 1,
+        "percent": 90,
+        "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+        "caution": "One document states the rate and another is the statute that places every office of this class at that level without naming any of them; where a third is listed, it is the statute that composes the class. That this post is one of the class rests on its own name and where it sits, which a reviewed table records and every build re-checks. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+        "documentRoles": [
+          {
+            "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+            "role": "states what that Executive Schedule level pays"
+          },
+          {
+            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
+            "role": "places every office of this class at that level, and counts them"
+          },
+          {
+            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title20-section3412&num=0&edition=prelim",
+            "role": "composes the class of offices this post is one of"
           }
         ]
       }
@@ -77159,6 +77625,64 @@
       "checkedAt": "2026-09-21T03:02:16Z",
       "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
       "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6"
+    },
+    "positionSchedulePay": {
+      "source": "us_code_executive_schedule",
+      "method": "level_assigned_by_5_usc_5312_5316_to_the_office_a_second_statute_identifies_this_post_as",
+      "identification": {
+        "nodeName": "Director / Administrator / Chair, National Endowment for the Arts",
+        "basis": "the same office: 20 U.S.C. 954(b)(1) has the Endowment headed by the Chairperson of the National Endowment for the Arts, and 5 U.S.C. 5314 places that Chairman at Level III; the graph's stamped 'Director / Administrator / Chair' template stands for that Chairperson, the only one of the three offices the Act creates, spelt with gender by the Schedule and without by the Act",
+        "basisCitation": "20 U.S.C. 954",
+        "basisQuote": "The Endowment shall be headed by a chairperson, to be known as the Chairperson of the National Endowment for the Arts, who shall be appointed by the President, by and with the advice and consent of the Senate.",
+        "basisUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title20-section954&num=0&edition=prelim",
+        "basisSha256": "0d3546430e03d194703fb9c581e71d7799e5ed5f18c8142f866e042c2fbc491a",
+        "basisCheckedAt": "2026-09-30T05:08:24Z"
+      },
+      "payLevel": "III",
+      "citation": "5 U.S.C. §5314",
+      "statutoryTitle": "Chairman of the National Endowment for the Arts the incumbent of which also serves as Chairman of the National Council on the Arts",
+      "scopedOffice": null,
+      "scopedOrganisation": null,
+      "scopedOrganisationId": null,
+      "statuteUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5314&num=0&edition=prelim",
+      "statuteCheckedAt": "2026-09-18T20:34:21Z",
+      "amount": 209600.0,
+      "rateText": "$209,600",
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level III",
+      "quote": "Level III $209,600",
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-11T03:05:36Z",
+      "verification": {
+        "documents": 3,
+        "documentsStatingTheFigure": 1,
+        "percent": 90,
+        "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+        "caution": "One document states the rate and another is the statute that puts this post at that level; where a third is listed, it is the statute that says this post is the office the Code names, because the Code's title is not this node's name. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+        "documentRoles": [
+          {
+            "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+            "role": "states what that Executive Schedule level pays"
+          },
+          {
+            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5314&num=0&edition=prelim",
+            "role": "places this post at that level"
+          },
+          {
+            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title20-section954&num=0&edition=prelim",
+            "role": "identifies this post as the office the Code places at that level"
+          }
+        ]
+      }
     },
     "parentId": "exec-ind-misc-national-endowment-for-the-arts-nea"
   },

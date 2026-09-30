@@ -190,6 +190,131 @@ US_CODE_CLASS_TITLE_PREFIX = "Members, "
 #: where the title is "Members, ..." and the node's name states "(×N)", and
 #: the one thing that lets a positionSchedulePay block stay on a multi-post
 #: node, with `holders`, instead of being stripped as one appointment's level)
+#: A COUNTED class of offices, mirrored from `statutory_schedule.COUNTED_CLASSES`
+#: and pinned equal to it by tests/test_counted_classes.py: which section
+#: prints the class, the singular office a member's name must begin with,
+#: the organisation every member must sit inside, the statute that composes
+#: the class (or None), and the reviewed member ids with the sentence the
+#: composing statute names the office by (or None). The Code's own count is
+#: read off the title on every run and never written down.
+#: The exporter's own "(×N)" reader, mirrored stdlib-only: what a node's name
+#: says about how many posts it stands for.
+US_CODE_STATED_MULTIPLICITY = re.compile(r"\(\s*[\u00d7x]\s*([^)]+?)\s*\)", re.IGNORECASE)
+US_CODE_SECTIONS_LEVELS = {'5312': 'I', '5313': 'II', '5314': 'III', '5315': 'IV', '5316': 'V'}
+US_CODE_COUNTED_METHOD = 'level_assigned_by_5_usc_5312_5316_to_a_counted_class_of_offices_this_post_is_one_of'
+US_CODE_COUNTED_CLASS_SEPARATORS = (', ', ' for ', ' of the ', ' of ', ' — ', ' / ', ' - ')
+US_CODE_COUNTED_CLASSES = {
+    'Assistant Attorneys General (11)': {
+        "section": '5315', "singular": 'Assistant Attorney General', "scopeId": 'exec-dept-doj',
+        "departmentWords": (),
+        "composition": ('28 U.S.C. 506', 'aag_28_usc_506.html',
+                        'The President shall appoint, by and with the advice and consent of the Senate, 11 Assistant Attorneys General, who shall assist the Attorney General in the performance of his duties.'),
+        "basis": "5 U.S.C. 5315 places the eleven Assistant Attorneys General at Level IV as a class and names none of them; 28 U.S.C. 506 creates the eleven offices; each of these nodes is named as the Assistant Attorney General heading one of the Department's litigating divisions",
+        "members": {
+            'exec-dept-doj-div-antitrust-assistant-attorney-general-antitrust-division': None,
+            'exec-dept-doj-div-civil-assistant-attorney-general-civil-division': None,
+            'exec-dept-doj-div-civil-rights-assistant-attorney-general-civil-rights-division': None,
+            'exec-dept-doj-div-criminal-assistant-attorney-general-criminal-division': None,
+            'exec-dept-doj-div-enrd-assistant-attorney-general-environment-natural-resources-division': None,
+            'exec-dept-doj-div-nsd-assistant-attorney-general-national-security-division': None,
+            'exec-dept-doj-div-tax-assistant-attorney-general-tax-division': None,
+        },
+    },
+    'Assistant Administrators, Environmental Protection Agency (8)': {
+        "section": '5315', "singular": 'Assistant Administrator', "scopeId": 'exec-ind-epa',
+        "departmentWords": (),
+        "composition": None,
+        "basis": "5 U.S.C. 5315 places the Agency's eight Assistant Administrators at Level IV as a class and names none of them (it also prints two of them under older office names, at the same level); no statute composing the class has been read here, so the record rests on the Code and the table alone; each node is named as the Assistant Administrator heading one of the Agency's national programme offices",
+        "members": {
+            'exec-ind-epa-office-of-air-radiation-oar-assistant-administrator-office-of-air-radiation': None,
+            'exec-ind-epa-office-of-water-ow-assistant-administrator-office-of-water': None,
+            'exec-ind-epa-office-of-land-emergency-management-olem-assistant-administrator-office-of-land-emergency-management': None,
+            'exec-ind-epa-office-of-chemical-safety-pollution-prevention-ocspp-assistant-administrator-office-of-chemical-safety-pollution-prevention': None,
+            'exec-ind-epa-office-of-research-development-ord-assistant-administrator-office-of-research-development': None,
+            'exec-ind-epa-office-of-enforcement-compliance-assurance-oeca-assistant-administrator-office-of-enforcement-compliance-assurance': None,
+            'exec-ind-epa-office-of-international-tribal-affairs-oita-assistant-administrator-office-of-international-tribal-affairs': None,
+        },
+    },
+    'Assistant Secretaries of State (24)': {
+        "section": '5315', "singular": 'Assistant Secretary', "scopeId": 'exec-dept-state',
+        "departmentWords": ('State',),
+        "composition": ('22 U.S.C. 2651a', 'state_22_usc_2651a.html',
+                        'There shall be in the Department of State not more than 24 Assistant Secretaries of State who shall be compensated at the rate provided for at level IV of the Executive Schedule under section 5315 of title 5'),
+        "basis": "5 U.S.C. 5315 places the Assistant Secretaries of State at Level IV as a class of not more than 24 (the section prints the class inside a longer paragraph naming four other officials, which the title parser sets aside, so the printed words are checked directly); 22 U.S.C. 2651a(c) composes the class at the same level and itself names eight of these bureaux' heads as Assistant Secretaries; each node is named as the Assistant Secretary heading one bureau",
+        "members": {
+            'exec-dept-state-bureau-of-african-affairs-assistant-secretary-bureau-of-african-affairs': 'The Assistant Secretary for African Affairs shall be the head of the Bureau of African Affairs.',
+            'exec-dept-state-bureau-of-east-asian-pacific-affairs-assistant-secretary-bureau-of-east-asian-pacific-affairs': 'The Assistant Secretary for East Asian and Pacific Affairs shall be the head of the Bureau of East Asian and Pacific Affairs.',
+            'exec-dept-state-bureau-of-european-eurasian-affairs-assistant-secretary-bureau-of-european-eurasian-affairs': 'The Assistant Secretary for European and Eurasian Affairs shall be the head of the Bureau of European and Eurasian Affairs.',
+            'exec-dept-state-bureau-of-near-eastern-affairs-assistant-secretary-bureau-of-near-eastern-affairs': 'The Assistant Secretary for Near Eastern Affairs shall be the head of the Bureau of Near Eastern Affairs.',
+            'exec-dept-state-bureau-of-south-central-asian-affairs-assistant-secretary-bureau-of-south-central-asian-affairs': 'The Assistant Secretary for South and Central Asian Affairs shall be the head of the Bureau of South and Central Asian Affairs.',
+            'exec-dept-state-bureau-of-western-hemisphere-affairs-assistant-secretary-bureau-of-western-hemisphere-affairs': 'The Assistant Secretary for Western Hemisphere Affairs shall be the head of the Bureau of Western Hemisphere Affairs.',
+            'exec-dept-state-bureau-of-international-organization-affairs-assistant-secretary-bureau-of-international-organization-affairs': 'The Assistant Secretary for International Organization Affairs shall be the head of the Bureau of International Organization Affairs.',
+            'exec-dept-state-bureau-of-consular-affairs-assistant-secretary-bureau-of-consular-affairs': 'The Assistant Secretary for Consular Affairs shall be the head of the Bureau of Consular Affairs.',
+            'exec-dept-state-bureau-of-arms-control-verification-compliance-assistant-secretary-bureau-of-arms-control-verification-compliance': None,
+            'exec-dept-state-bureau-of-international-security-nonproliferation-assistant-secretary-bureau-of-international-security-nonproliferation': None,
+            'exec-dept-state-bureau-of-political-military-affairs-assistant-secretary-bureau-of-political-military-affairs': None,
+            'exec-dept-state-bureau-of-diplomatic-security-assistant-secretary-bureau-of-diplomatic-security': None,
+            'exec-dept-state-bureau-of-global-public-affairs-assistant-secretary-bureau-of-global-public-affairs': None,
+        },
+    },
+    'Assistant Secretaries of Labor (10)': {
+        "section": '5315', "singular": 'Assistant Secretary', "scopeId": 'exec-dept-dol',
+        "departmentWords": ('Labor',),
+        "composition": ('29 U.S.C. 553', 'labor_29_usc_553.html',
+                        'There are established in the Department of Labor nine offices of Assistant Secretary of Labor, which shall be filled by appointment by the President, by and with the advice and consent of the Senate.'),
+        "basis": "5 U.S.C. 5315 places the Assistant Secretaries of Labor at Level IV as a class of ten (its paragraph goes on to name the one for Veterans' Employment and Training, which is why the title parser reads it as a single post and the printed words are checked directly); 29 U.S.C. 553 establishes nine of the offices and names the one for Occupational Safety and Health; each node is named as an Assistant Secretary heading one of the Department's agencies",
+        "members": {
+            'exec-dept-dol-osha-assistant-secretary-of-labor-for-occupational-safety-health': 'One of such Assistant Secretaries shall be an Assistant Secretary of Labor for Occupational Safety and Health.',
+            'exec-dept-dol-eta-assistant-secretary-for-employment-training': None,
+            'exec-dept-dol-ebsa-assistant-secretary-of-labor-for-ebsa': None,
+        },
+    },
+    'Assistant Secretaries of Education (10)': {
+        "section": '5315', "singular": 'Assistant Secretary', "scopeId": 'exec-dept-ed',
+        "departmentWords": ('Education',),
+        "composition": ('20 U.S.C. 3412', 'education_20_usc_3412.html',
+                        'There shall be in the Department- (A) an Assistant Secretary for Elementary and Secondary Education; (B) an Assistant Secretary for Postsecondary Education; (C) an Assistant Secretary for Career, Technical, and Adult Education; (D) an Assistant Secretary for Special Education and Rehabilitative Services; (E) an Assistant Secretary for Civil Rights'),
+        "basis": "5 U.S.C. 5315 places the Assistant Secretaries of Education at Level IV as a class of ten; 20 U.S.C. 3412(b) establishes the offices and names each of these two by title; each node is named as the Assistant Secretary heading one of the Department's principal offices",
+        "members": {
+            'exec-dept-ed-oese-assistant-secretary-for-oese': '(A) an Assistant Secretary for Elementary and Secondary Education',
+            'exec-dept-ed-ocr-assistant-secretary-for-civil-rights': '(E) an Assistant Secretary for Civil Rights',
+        },
+    },
+    'Assistant Secretaries of Housing and Urban Development (8)': {
+        "section": '5315', "singular": 'Assistant Secretary', "scopeId": 'exec-dept-hud',
+        "departmentWords": ('Housing and Urban Development', 'Housing & Urban Development', 'HUD'),
+        "composition": ('42 U.S.C. 3533', 'hud_42_usc_3533.html',
+                        'There shall be in the Department a Deputy Secretary, 7 Assistant Secretaries, and a General Counsel, who shall be appointed by the President by and with the advice and consent of the Senate'),
+        "basis": "5 U.S.C. 5315 places the Assistant Secretaries of Housing and Urban Development at Level IV as a class of eight; 42 U.S.C. 3533(a) establishes seven Assistant Secretaries (the two documents disagree by one, and the Code's own count is the bound used here) and names the Federal Housing Commissioner as one of them; each node is named as the Assistant Secretary heading one of the Department's programme offices",
+        "members": {
+            'exec-dept-hud-fha-assistant-secretary-for-housing-fha-commissioner': 'There shall be in the Department a Federal Housing Commissioner, who shall be one of the Assistant Secretaries, who shall head a Federal Housing Administration within the Department',
+            'exec-dept-hud-pih-assistant-secretary-for-public-indian-housing': None,
+            'exec-dept-hud-cpd-assistant-secretary-for-community-planning-development': None,
+            'exec-dept-hud-fheo-assistant-secretary-for-fair-housing-equal-opportunity': None,
+        },
+    },
+    'Assistant Secretaries of Energy (8)': {
+        "section": '5315', "singular": 'Assistant Secretary', "scopeId": 'exec-dept-doe',
+        "departmentWords": ('Energy',),
+        "composition": ('42 U.S.C. 7133', 'energy_42_usc_7133.html',
+                        'There shall be in the Department 8 Assistant Secretaries, each of whom shall be appointed by the President, by and with the advice and consent of the Senate; who shall be compensated at the rate provided for at level IV of the Executive Schedule under section 5315 of title 5'),
+        "basis": "5 U.S.C. 5315 places the Assistant Secretaries of Energy at Level IV as a class of eight; 42 U.S.C. 7133(a) establishes the eight at the same level and assigns their functions without naming the offices; each node is named as the Assistant Secretary heading one of the Department's programme offices",
+        "members": {
+            'exec-dept-doe-eere-assistant-secretary-eere': None,
+            'exec-dept-doe-em-assistant-secretary-for-environmental-management': None,
+        },
+    },
+    'Assistant Secretaries of Commerce (11)': {
+        "section": '5315', "singular": 'Assistant Secretary', "scopeId": 'exec-dept-doc',
+        "departmentWords": ('Commerce',),
+        "composition": None,
+        "basis": "5 U.S.C. 5315 places the Assistant Secretaries of Commerce at Level IV as a class of eleven and names none of them; no statute composing the class has been read here (15 U.S.C. 1506 was read and adds one office to those 'now provided for by law' without counting them), so the record rests on the Code and the table alone; each node is named as an Assistant Secretary heading one of the International Trade Administration's units",
+        "members": {
+            'exec-dept-doc-ita-assistant-secretary-global-markets': None,
+            'exec-dept-doc-ita-assistant-secretary-enforcement-compliance': None,
+        },
+    },
+}
 US_CODE_REVIEWED_IDENTIFICATIONS = {
     "exec-regulatory-fed-chair-board-of-governors": (
         "Chair, Board of Governors",
@@ -685,6 +810,118 @@ US_CODE_REVIEWED_IDENTIFICATIONS = {
         "The Secretary of Commerce, upon nomination by the Director, shall appoint a Deputy Under Secretary of Commerce for Intellectual Property and Deputy Director of the United States Patent and Trademark Office",
         "the same office: 35 U.S.C. 3(b)(1) creates one officer holding the joint title Deputy Under Secretary of Commerce for Intellectual Property and Deputy Director of the United States Patent and Trademark Office, and 5 U.S.C. 5315 places that joint title at Level IV; the graph writes the bare 'Deputy Director' under the Office, and the row is keyed to that node by id",
         False,
+    ),
+    'exec-ind-misc-equal-employment-opportunity-commission-eeoc-director-administrator-chair-equal-employment-opportunity-commission': (
+        'Director / Administrator / Chair, Equal Employment Opportunity Commission',
+        'Chairman, Equal Employment Opportunity Commission', 'III', '5314',
+        '42 U.S.C. 2000e-4', 'eeoc_42_usc_2000e-4.html',
+        'The President shall designate one member to serve as Chairman of the Commission, and one member to serve as Vice Chairman.',
+        "the same office: 42 U.S.C. 2000e-4(a) has the President designate one member of the Commission as its Chairman, and 5 U.S.C. 5314 places 'Chairman, Equal Employment Opportunity Commission' at Level III; the graph's stamped 'Director / Administrator / Chair' template stands for that Chairman, the only one of the three offices the Act creates",
+        False,
+    ),
+    'exec-ind-misc-equal-employment-opportunity-commission-eeoc-deputy-director-vice-chair': (
+        'Deputy Director / Vice Chair',
+        'Members, Equal Employment Opportunity Commission (4)', 'IV', '5315',
+        '42 U.S.C. 2000e-4', 'eeoc_42_usc_2000e-4.html',
+        'The President shall designate one member to serve as Chairman of the Commission, and one member to serve as Vice Chairman.',
+        "a Vice Chairman is a member of the Commission: 42 U.S.C. 2000e-4(a) has the President designate one member as Vice Chairman, 5 U.S.C. 5315 places the four members other than the Chairman at Level IV as 'Members, Equal Employment Opportunity Commission (4)', and only the Chairman is placed separately (5314); the graph's stamped 'Deputy Director / Vice Chair' template stands for that Vice Chairman, the one such office the Act creates",
+        False,
+    ),
+    'exec-ind-misc-national-mediation-board-nmb-director-administrator-chair-national-mediation-board': (
+        'Director / Administrator / Chair, National Mediation Board',
+        'Chairman, National Mediation Board', 'III', '5314',
+        '45 U.S.C. 154', 'nmb_45_usc_154.html',
+        'The Mediation Board shall annually designate a member to act as chairman.',
+        "the same office: 45 U.S.C. 154 Second has the Board annually designate a member to act as chairman, and 5 U.S.C. 5314 places 'Chairman, National Mediation Board' at Level III; the graph's stamped 'Director / Administrator / Chair' template stands for that chairman, the only one of the three offices the Act creates",
+        False,
+    ),
+    'exec-ind-misc-national-endowment-for-the-arts-nea-director-administrator-chair-national-endowment-for-the-arts': (
+        'Director / Administrator / Chair, National Endowment for the Arts',
+        'Chairman of the National Endowment for the Arts the incumbent of which also serves as Chairman of the National Council on the Arts', 'III', '5314',
+        '20 U.S.C. 954', 'nea_20_usc_954.html',
+        'The Endowment shall be headed by a chairperson, to be known as the Chairperson of the National Endowment for the Arts, who shall be appointed by the President, by and with the advice and consent of the Senate.',
+        "the same office: 20 U.S.C. 954(b)(1) has the Endowment headed by the Chairperson of the National Endowment for the Arts, and 5 U.S.C. 5314 places that Chairman at Level III; the graph's stamped 'Director / Administrator / Chair' template stands for that Chairperson, the only one of the three offices the Act creates, spelt with gender by the Schedule and without by the Act",
+        False,
+    ),
+    'exec-dept-hud-ginnie-president-ginnie-mae': (
+        'President, Ginnie Mae',
+        'President, Government National Mortgage Association, Department of Housing and Urban Development', 'IV', '5315',
+        '12 U.S.C. 1723', 'ginnie_12_usc_1723.html',
+        'There is hereby established in the Department of Housing and Urban Development the position of President, Government National Mortgage Association, who shall be appointed by the President, by and with the advice and consent of the Senate.',
+        'the same office: 12 U.S.C. 1723(a) establishes in the Department the position of President, Government National Mortgage Association, and 5 U.S.C. 5315 places it at Level IV; the graph names the Association by the name it trades under',
+        False,
+    ),
+    'exec-dept-dol-whd-administrator-whd': (
+        'Administrator, WHD',
+        'Administrator, Wage and Hour Division, Department of Labor', 'IV', '5315',
+        '29 U.S.C. 204', 'whd_29_usc_204.html',
+        'There is created in the Department of Labor a Wage and Hour Division which shall be under the direction of an Administrator, to be known as the Administrator of the Wage and Hour Division',
+        'the same office: 29 U.S.C. 204(a) creates the Wage and Hour Division under the direction of the Administrator of the Wage and Hour Division, and 5 U.S.C. 5315 places that Administrator at Level IV; the graph names the Division by its acronym',
+        False,
+    ),
+    'exec-eop-omb-office-of-federal-procurement-policy-administrator-chief-office-of-federal-procurement-policy': (
+        'Administrator / Chief, Office of Federal Procurement Policy',
+        'Administrator for Federal Procurement Policy', 'III', '5314',
+        '41 U.S.C. 1102', 'ofpp_41_usc_1102.html',
+        'The head of the Office of Federal Procurement Policy is the Administrator for Federal Procurement Policy.',
+        "the same office: 41 U.S.C. 1102(a) makes the Administrator for Federal Procurement Policy the head of the Office, and 5 U.S.C. 5314 places that Administrator at Level III; the graph's templated 'Administrator / Chief' stands for the head of the Office, which is that Administrator",
+        False,
+    ),
+    'exec-eop-omb-office-of-federal-financial-management-administrator-chief-office-of-federal-financial-management': (
+        'Administrator / Chief, Office of Federal Financial Management',
+        'Controller, Office of Federal Financial Management, Office of Management and Budget', 'III', '5314',
+        '31 U.S.C. 504', 'offm_31_usc_504.html',
+        'There shall be at the head of the Office of Federal Financial Management a Controller, who shall be appointed by the President, by and with the advice and consent of the Senate.',
+        "the same office: 31 U.S.C. 504(b) puts a Controller at the head of the Office of Federal Financial Management, and 5 U.S.C. 5314 places that Controller at Level III; the graph's templated 'Administrator / Chief' stands for the head of the Office, which the statute styles Controller",
+        False,
+    ),
+    'exec-eop-omb-office-of-e-government-it-federal-cio-administrator-chief-office-of-e-government-it-federal-cio': (
+        'Administrator / Chief, Office of E-Government & IT (Federal CIO)',
+        'Administrator of the Office of Electronic Government', 'III', '5314',
+        '44 U.S.C. 3602', 'egov_44_usc_3602.html',
+        'There shall be at the head of the Office an Administrator who shall be appointed by the President.',
+        "the same office: 44 U.S.C. 3602(a)-(b) establishes the Office of Electronic Government in the Office of Management and Budget with an Administrator at its head, and 5 U.S.C. 5314 places that Administrator at Level III; the graph's templated 'Administrator / Chief' stands for the head of the Office, which it names as the Office of E-Government & IT",
+        False,
+    ),
+    'exec-eop-omb-director-omb': (
+        'Director, OMB',
+        'Director of the Office of Management and Budget', 'I', '5312',
+        '31 U.S.C. 502', 'omb_31_usc_502.html',
+        'The head of the Office of Management and Budget is the Director of the Office of Management and Budget.',
+        'the same office: 31 U.S.C. 502(a) makes the Director the head of the Office, and 5 U.S.C. 5312 places the Director of the Office of Management and Budget at Level I; the graph names the Office by its acronym',
+        False,
+    ),
+    'exec-eop-omb-deputy-director-omb': (
+        'Deputy Director, OMB',
+        'Deputy Director of the Office of Management and Budget', 'II', '5313',
+        '31 U.S.C. 502', 'omb_31_usc_502.html',
+        'The Office has a Deputy Director of the Office of Management and Budget, appointed by the President, by and with the advice and consent of the Senate.',
+        'the same office: 31 U.S.C. 502(b) gives the Office a Deputy Director, and 5 U.S.C. 5313 places the Deputy Director of the Office of Management and Budget at Level II (the Deputy Director for Management is placed separately and is a separate node here); the graph names the Office by its acronym',
+        False,
+    ),
+    'exec-dept-dot-phmsa-administrator-phmsa': (
+        'Administrator, PHMSA',
+        'Administrator, Pipeline and Hazardous Materials Safety Administration', 'III', '5314',
+        '49 U.S.C. 108', 'phmsa_49_usc_108.html',
+        'The head of the Administration shall be the Administrator who shall be appointed by the President, by and with the advice and consent of the Senate',
+        "the same office: 49 U.S.C. 108(c) makes the Administrator the head of the Pipeline and Hazardous Materials Safety Administration, and 5 U.S.C. 5314 places that Administrator at Level III; the graph names the Administration by its acronym, and OPM's current export lists the post at EX-III under it",
+        False,
+    ),
+    'exec-regulatory-cpsc-commissioner-4': (
+        'Commissioner (×4)',
+        'Members, Consumer Product Safety Commission (4)', 'IV', '5315',
+        '15 U.S.C. 2053', 'cpsc_15_usc_2053.html',
+        'An independent regulatory commission is hereby established, to be known as the Consumer Product Safety Commission, consisting of five Commissioners who shall be appointed by the President, by and with the advice and consent of the Senate.',
+        "a class title: 5 U.S.C. 5315 places 'Members, Consumer Product Safety Commission (4)' at Level IV, the four Commissioners other than the Chairman (placed separately at 5314), and 15 U.S.C. 2053(a) composes the Commission of five Commissioners; the graph's bench of four is exactly the four the Code counts, and the count is checked on every run",
+        True,
+    ),
+    'exec-regulatory-sec-commissioner-4': (
+        'Commissioner (×4)',
+        'Members, Securities and Exchange Commission', 'IV', '5315',
+        '15 U.S.C. 78d', 'sec_15_usc_78d.html',
+        'to be composed of five commissioners to be appointed by the President by and with the advice and consent of the Senate',
+        "a class title: 5 U.S.C. 5315 places 'Members, Securities and Exchange Commission' at Level IV, and the Chairman separately at 5314; 15 U.S.C. 78d(a) composes the Commission of five commissioners, so the bench of four is the members other than the Chairman",
+        True,
     ),
 }
 _US_CODE_OPERATIVE_CACHE = {}
@@ -2272,7 +2509,9 @@ def reviewed_schedule_violations(node, pay, reviewed, today, label):
     elif quote not in operative:
         say("rests on a sentence {} does not print in its operative text (only in the publisher's notes, or not at all)".format(citation))
     basis_url = str(identification.get("basisUrl") or "")
-    parts = re.match(r"^(\d+) U\.S\.C\. (\d+[A-Za-z]?)$", citation)
+    # A section number may carry a letter and a dashed suffix (42 U.S.C.
+    # 2000e-4, 2 U.S.C. 136a-2); the granule id prints both.
+    parts = re.match(r"^(\d+) U\.S\.C\. (\d+[A-Za-z]?(?:-\d+)?)$", citation)
     expected_granule = "title{}-section{}".format(parts.group(1), parts.group(2)) if parts else ""
     if host_of(basis_url) != US_CODE_HOST or not expected_granule or expected_granule not in basis_url:
         say("does not link the section its identification rests on ({!r})".format(basis_url))
@@ -2284,7 +2523,146 @@ def reviewed_schedule_violations(node, pay, reviewed, today, label):
     return out
 
 
-def schedule_pay_violations(node, pay, today, label, tree_parent=None):
+
+def counted_class_member_name_reason(name, singular, department_words):
+    """Mirror of `statutory_schedule.counted_class_member_name_reason`, stdlib
+    only: the singular office first and whole, then a closed separator, and a
+    name that says "of <department>" must name the class's own."""
+    text = str(name or "")
+    if US_CODE_STATED_MULTIPLICITY.search(text):
+        return "names a bench, not one post"
+    if "(" in text:
+        return "carries a parenthetical qualifier"
+    if not text.startswith(singular):
+        return "does not begin with the class's singular office"
+    rest = text[len(singular):]
+    if not rest:
+        return None
+    separator = next((sep for sep in US_CODE_COUNTED_CLASS_SEPARATORS if rest.startswith(sep)), None)
+    if separator is None:
+        return "does not separate the office from its qualifier"
+    if separator in (" of ", " of the "):
+        after = rest[len(separator):]
+        for word in department_words:
+            if after == word or any(after.startswith(word + sep) for sep in US_CODE_COUNTED_CLASS_SEPARATORS):
+                return None
+        return "names a department that is not the class's own"
+    return None
+
+
+def counted_class_schedule_violations(node, pay, spec, today, label, tree_parents):
+    """A member of a counted class: the Code places N offices at one level and
+    names none, so everything that ties THIS node to the class is checked here
+    -- the class is mirrored, the node id is a reviewed member, the name is the
+    singular office, the node sits inside the class's organisation on the tree
+    the gate is walking, no listing on it says otherwise, the class title with
+    its count is what the section prints, and the composing statute, where
+    there is one, still prints the sentence quoted. The count itself is
+    checked across the whole graph after the walk."""
+    out = []
+    say = lambda text: out.append("{} {}".format(label(node), text))
+    node_id = str(node.get("id") or "")
+    counted = pay.get("countedClass")
+    if not isinstance(counted, dict):
+        say("prices under the counted-class method with no countedClass block")
+        return out
+    code_title = str(counted.get("codeTitle") or "")
+    if spec is None:
+        say("claims membership of counted class {!r}, which this pipeline has no table for".format(code_title))
+        return out
+    if str(pay.get("method") or "") != US_CODE_COUNTED_METHOD:
+        say("prices a counted-class membership under method {!r}, not {!r}".format(pay.get("method"), US_CODE_COUNTED_METHOD))
+    if node_id not in spec["members"]:
+        say("is priced as a member of {!r}, a class the reviewed table does not list it in".format(code_title))
+    if node.get("representsPosts"):
+        say("is priced as one office of a counted class but stands for several posts")
+    if "classTitle" in pay:
+        say("carries a classTitle mark on a counted-class membership")
+    if pay.get("scopedOffice") or pay.get("scopedOrganisationId") or pay.get("scopedOrganisation"):
+        say("claims a scope; a counted-class membership names the whole node and needs none")
+    why = counted_class_member_name_reason(node.get("name"), spec["singular"], tuple(spec["departmentWords"]))
+    if why:
+        say("is now called {!r}, which {} ({!r})".format(node.get("name"), why, spec["singular"]))
+    # Placement, off the tree the gate is walking.
+    seen = []
+    current = tree_parents.get(node_id) if isinstance(tree_parents, dict) else None
+    while current and current not in seen:
+        seen.append(current)
+        current = tree_parents.get(current)
+    if spec["scopeId"] not in seen:
+        say("sits outside {!r}, the organisation whose counted class it is priced from".format(spec["scopeId"]))
+    if str(counted.get("scopeId") or "") != spec["scopeId"]:
+        say("names {!r} as its class's organisation; the table says {!r}".format(counted.get("scopeId"), spec["scopeId"]))
+    if str(counted.get("singular") or "") != spec["singular"]:
+        say("names {!r} as its class's singular office; the table says {!r}".format(counted.get("singular"), spec["singular"]))
+    # The class title, with its count, as the section prints it.
+    section = spec["section"]
+    printed = uscode_operative_text(US_CODE_BASIS_FIXTURE_DIR / "exec_schedule_{}.html".format(section))
+    if not printed or code_title not in printed:
+        say("is priced from {!r}, which §{} does not print in its operative text".format(code_title, section))
+    found = re.search(r"\((\d+)\)", code_title)
+    if not found:
+        say("is priced from {!r}, which states no count".format(code_title))
+    elif counted.get("statedPosts") != int(found.group(1)):
+        say("says the Code counts {!r} offices; the title states {}".format(counted.get("statedPosts"), found.group(1)))
+    members = counted.get("membersInGraph")
+    if isinstance(members, bool) or not isinstance(members, int) or members < 1 or (found and members > int(found.group(1))):
+        say("says this graph names {!r} members of the class; the Code counts {}".format(members, found.group(1) if found else "?"))
+    # A listing on the node that says another pay plan or level wins.
+    for field, level_key in (("positionListing", "payLevel"), ("positionCurrentListing", "level")):
+        listing = node.get(field)
+        if isinstance(listing, dict):
+            plan = str(listing.get("payPlan") or "").strip().upper()
+            listed = str(listing.get(level_key) or "").strip().upper()
+            if plan and plan != "EX":
+                say("is priced as one of {!r} while its {} reports pay plan {}".format(code_title, field, plan))
+            if listed and listed != US_CODE_SECTIONS_LEVELS.get(section):
+                say("is priced as one of {!r} while its {} reports Level {}".format(code_title, field, listed))
+    # The composing statute, where the table has one; none where it has none.
+    identification = pay.get("identification")
+    if not isinstance(identification, dict):
+        say("carries a counted-class membership with no identification block")
+        return out
+    if str(identification.get("basis") or "") != spec["basis"]:
+        say("states a basis for its class membership that is not the reviewed table's")
+    named_as = spec["members"].get(node_id)
+    if (counted.get("namedAs") or None) != named_as:
+        say("quotes {!r} as the sentence naming this office; the table records {!r}".format(counted.get("namedAs"), named_as))
+    composition = spec["composition"]
+    if composition is None:
+        if identification.get("basisUrl") or identification.get("basisCitation") or identification.get("basisQuote"):
+            say("cites a composing statute for a class the table records none for")
+        return out
+    citation, fixture, quote = composition
+    if str(identification.get("basisCitation") or "") != citation:
+        say("cites {!r} as composing its class; the table says {!r}".format(identification.get("basisCitation"), citation))
+    if str(identification.get("basisQuote") or "") != quote:
+        say("quotes a composing sentence that is not the one {} prints for this class".format(citation))
+    path = US_CODE_BASIS_FIXTURE_DIR / fixture
+    digest = fixture_digest(path)
+    if digest is None:
+        say("cites composing section {!r}, which is not committed".format(fixture))
+    elif str(identification.get("basisSha256") or "").lower() != digest:
+        say("names a composing-section digest that is not the committed section's")
+    operative = uscode_operative_text(path)
+    if not operative:
+        say("cites a composing section whose operative text this gate cannot separate from its notes")
+    else:
+        if quote not in operative:
+            say("rests on a composing sentence {} does not print in its operative text".format(citation))
+        if named_as and named_as not in operative:
+            say("rests on a naming sentence {} does not print in its operative text".format(citation))
+    basis_url = str(identification.get("basisUrl") or "")
+    parts = re.match(r"^(\d+) U\.S\.C\. (\d+[A-Za-z]?(?:-\d+)?)$", citation)
+    expected_granule = "title{}-section{}".format(parts.group(1), parts.group(2)) if parts else ""
+    if host_of(basis_url) != US_CODE_HOST or not expected_granule or expected_granule not in basis_url:
+        say("does not link the section its class membership rests on ({!r})".format(basis_url))
+    checked = str(identification.get("basisCheckedAt") or "")
+    if not re.match(r"^\d{4}-\d{2}-\d{2}", checked) or checked[:10] > today:
+        say("claims a counted-class membership without a past retrieval date ({!r})".format(checked))
+    return out
+
+def schedule_pay_violations(node, pay, today, label, tree_parent=None, tree_parents=None):
     """A rate whose LEVEL is current law and whose FIGURE is OPM's table.
 
     A different claim from `positionPayRate`, which reads the level off the
@@ -2311,20 +2689,31 @@ def schedule_pay_violations(node, pay, today, label, tree_parent=None):
     # the office is anybody's.
     expected = US_CODE_EXECUTIVE_SCHEDULE.get(node_id)
     reviewed = US_CODE_REVIEWED_IDENTIFICATIONS.get(node_id)
-    if reviewed is not None:
+    counted_spec = None
+    if isinstance(pay.get("countedClass"), dict) or str(pay.get("method") or "") == US_CODE_COUNTED_METHOD:
+        # The fourth route: one office of a counted class. Its own checker
+        # says whether the node is still a member; the rate half below is the
+        # same table and the same rules as every other schedule record.
+        counted_spec = US_CODE_COUNTED_CLASSES.get(str((pay.get("countedClass") or {}).get("codeTitle") or ""))
+        out.extend(counted_class_schedule_violations(node, pay, counted_spec, today, label, tree_parents or {}))
+        if counted_spec is None:
+            return out
+        expected = (str(pay["countedClass"].get("codeTitle") or ""), US_CODE_SECTIONS_LEVELS[counted_spec["section"]],
+                    counted_spec["section"], None)
+    elif reviewed is not None:
         # The third route: the row says which office the node is, and the
         # checker says whether the second statute still backs that.
         out.extend(reviewed_schedule_violations(node, pay, reviewed, today, label))
         expected = (reviewed[1], reviewed[2], reviewed[3], None)
     elif isinstance(pay.get("identification"), dict) or str(pay.get("method") or "") == US_CODE_REVIEWED_METHOD:
         say("claims a reviewed identification this pipeline has no row for")
-    if reviewed is None and "classTitle" in pay:
+    if reviewed is None and counted_spec is None and "classTitle" in pay:
         say("carries a classTitle mark outside a reviewed identification")
     if expected is None:
         say("carries a rate from the Executive Schedule; the Code names no such post for this node")
         return out
     title, level, section, scoped_org = expected
-    if reviewed is None:
+    if reviewed is None and counted_spec is None:
         # Each route publishes its own method string, and the panel prints a
         # different sentence for each; a scoped record wearing the whole-name
         # method would claim the Code names the node outright.
@@ -2342,7 +2731,7 @@ def schedule_pay_violations(node, pay, today, label, tree_parent=None):
     if scoped_org is None:
         # A reviewed row's rename guard is the row's own node name, checked
         # above; its whole name is by construction NOT the statutory title.
-        if reviewed is None and canonical_key(node.get("name")) != canonical_key(title):
+        if reviewed is None and counted_spec is None and canonical_key(node.get("name")) != canonical_key(title):
             say("is now called {!r}, which is not the statutory title {!r} its rate was looked up from".format(
                 node.get("name"), title))
         if pay.get("scopedOffice") or pay.get("scopedOrganisationId"):
@@ -5084,7 +5473,7 @@ def main(argv):
         if schedule_pay is not None:
             bad_schedule_pay.extend(schedule_pay_violations(
                 node, schedule_pay, today, label,
-                tree_parent=tree_parents.get(str(node.get("id") or ""))))
+                tree_parent=tree_parents.get(str(node.get("id") or "")), tree_parents=tree_parents))
         # A roster row — what one listed person is paid — beside both of the
         # above; again its own field, its own mirror, its own rules.
         reported_pay = node.get("positionReportedPay")
@@ -5220,6 +5609,19 @@ def main(argv):
         "every pay figure says how many documents it rests on, counted from the URLs it carries",
         bad_pay_documents,
     )
+    # A counted class prices at most N members across the WHOLE graph: the
+    # Code says how many such offices exist, and a graph carrying more nodes
+    # priced as members than the Code counts is wrong about at least one.
+    _counted_members = Counter()
+    for _n in nodes:
+        _sp = _n.get("positionSchedulePay")
+        if isinstance(_sp, dict) and isinstance(_sp.get("countedClass"), dict):
+            _counted_members[str(_sp["countedClass"].get("codeTitle") or "")] += 1
+    for _title, _members in sorted(_counted_members.items()):
+        _found = re.search(r"\((\d+)\)", _title)
+        if _found and _members > int(_found.group(1)):
+            bad_schedule_pay.append("counted class {!r}: {} nodes are priced as members; the Code counts {}".format(
+                _title, _members, _found.group(1)))
     gate.check("an Executive Schedule rate names the post the U.S. Code names, at the level the Code sets", bad_schedule_pay)
     gate.check("a reported pay rate is the roster's own figure for the title it names, and never zero", bad_reported_pay)
     gate.check("a File A gross outlay is the fixture's own figure for the key it names, dated, and never the cost", bad_usaspending)
@@ -6133,14 +6535,18 @@ def main(argv):
         # enumerates 415 positions across the five sections. Saying "the Code
         # names N" off the mirror's length would report this graph's coverage
         # as the statute's contents.
-        reviewed_paid = [n for n in schedule_paid if isinstance(n["positionSchedulePay"].get("identification"), dict)]
+        counted_paid = [n for n in schedule_paid if isinstance(n["positionSchedulePay"].get("countedClass"), dict)]
+        reviewed_paid = [n for n in schedule_paid if isinstance(n["positionSchedulePay"].get("identification"), dict)
+                         and n not in counted_paid]
         print("  U.S. Code schedule   : {:,} positions priced at the level 5 U.S.C. §§{}-{} sets for them ({}); "
               "{:,} are mirrored here, which is how many of the Code's positions this graph has a node for; "
-              "{:,} of them rest on a reviewed identification a second statute backs ({:,} rows mirrored)".format(
+              "{:,} of them rest on a reviewed identification a second statute backs ({:,} rows mirrored); "
+              "{:,} are members of a counted class the Code places without naming them ({:,} classes, {:,} members mirrored)".format(
                   len(schedule_paid), US_CODE_SECTIONS[0], US_CODE_SECTIONS[-1],
                   ", ".join("{} {}".format(k, sched_levels[k]) for k in ("I", "II", "III", "IV", "V") if sched_levels.get(k)) or "none",
-                  len(US_CODE_EXECUTIVE_SCHEDULE) + len(US_CODE_REVIEWED_IDENTIFICATIONS),
-                  len(reviewed_paid), len(US_CODE_REVIEWED_IDENTIFICATIONS)))
+                  len(US_CODE_EXECUTIVE_SCHEDULE) + len(US_CODE_REVIEWED_IDENTIFICATIONS) + sum(len(c["members"]) for c in US_CODE_COUNTED_CLASSES.values()),
+                  len(reviewed_paid), len(US_CODE_REVIEWED_IDENTIFICATIONS),
+                  len(counted_paid), len(US_CODE_COUNTED_CLASSES), sum(len(c["members"]) for c in US_CODE_COUNTED_CLASSES.values())))
     statutory_paid = [n for n in nodes if isinstance(n.get("positionStatutoryPay"), dict)]
     by_source = Counter(str(n["positionStatutoryPay"].get("source") or "?") for n in statutory_paid)
     print("  statutory pay         : {:,} positions priced from a single primary source naming the seat directly ({})".format(

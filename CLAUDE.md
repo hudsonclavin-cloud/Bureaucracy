@@ -2014,7 +2014,8 @@ first, the same failure `whitehouse_pay.title_core` documents for `Press
 Secretary` inside `ASSISTANT PRESS SECRETARY`. A statutory title reaching two
 nodes prices neither ("General Counsel" names 92 nodes here); a title the
 statute states several of ("Assistant Secretaries of Commerce (11)") prices
-none; and "Archivist of the United States", which the Code places at **both**
+none by name (since 2026-09-30 the counted-class route below prices its
+reviewed members); and "Archivist of the United States", which the Code places at **both**
 §5314 and §5316, is dropped from the index rather than adjudicated.
 
 **A second route, scoped the way a FedScope row is.** Whole-name equality
@@ -2276,28 +2277,29 @@ of the nine fields (no `positionTierPay` or `positionGradePay`). The
 derived module stopped writing its own copy of the arithmetic when this
 landed: one code path for one number.
 
-**And the gap this made visible, counted rather than estimated.** 590 of 4,591
+**And the gap this made visible, counted rather than estimated.** 638 of 4,591
 positions carry a pay claim (461 when this section was first written, before
 the multi-post rule below and the Federal Reserve rows; 492 before the
 reviewed rows of 2026-09-27, 498 before that day's class-title benches, 513
 before the tier-reference module of 2026-09-28, 541 before that day's
 thirteen reviewed rows, 554 before the eight candidates of §19.10, 566
 before the twenty-two rows §19.12 closed the eighth batch with, 588 before
-the bankruptcy judges of 2026-09-30); **4,001
+the bankruptcy judges of 2026-09-30, 590 before that day's counted classes
+and the ninth batch's rows); **3,953
 do not**, and `scripts/report_unpriced_positions.py` says why for every one
 of them:
 
-- **3,225** — no pay document this project has read names the title at all.
+- **3,181** — no pay document this project has read names the title at all.
   Not a coverage gap somebody has not got to.
-- **756** — the node states a multiplicity (`Physician (×multiple)`) and no
+- **754** — the node states a multiplicity (`Physician (×multiple)`) and no
   claim that holds for every holder reaches it. Since the per-field rule
   below, a tier rate, a parity rate, a band or a uniform roster line IS
   published on such a node (`Judge (×18)` is priced now); what stays refused
   is an incumbency-shaped claim. These are still listed, because which pay
   SYSTEM governs the title is a fact worth having.
-- **20** — OPM lists the position and the row prints no rate.
+- **18** — OPM lists the position and the row prints no rate.
 
-The concentration is the useful part: **432** of the 4,001 sit under `VA
+The concentration is the useful part: **432** of the 3,953 sit under `VA
 Medical Centers`, 360 of them among the 3,313 (the service chiefs
 `va_title38_pay.py` deliberately refuses, since choosing a Title 38 table per
 node would be this module deciding which VA service chiefs are doctors), 61
@@ -2309,7 +2311,7 @@ per unpriced position with its id and its reason;
 `docs/PAY_SOURCE_RESEARCH_PROMPT_3.md` is a research prompt pack generated
 from the same list in the same run — a lead prompt asking which pay systems
 exist and where each is published, then **38 enumeration shards naming every
-one of the 4,001 titles** (39 and 4,003 until 2026-09-30). The multiplicity
+one of the 3,953 titles** (39 and 4,003 until 2026-09-30). The multiplicity
 reason's "N such nodes carry one" is read off the graph on each run since
 2026-09-30; it had said 28 since 2026-09-23 while the graph carried 37. `tests/test_unpriced_positions.py` asserts the
 coverage rather than trusting it: every unpriced id appears in the pack, no
@@ -2788,9 +2790,9 @@ publishes as printed rather than corrected; the Census Director (IV, 13
 U.S.C. 21); the CEA Chair (II) and its two single `Member, CEA` nodes from
 "Members, Council of Economic Advisers" (IV) — the Vice-Chair shape, one row
 per node, no class mark, because each node stands for one post; and the
-CPSC Chair (III, 15 U.S.C. 2053). CPSC's own `Commissioner (×4)` stays out:
-the Code prints "Members, Consumer Product Safety Commission (4)", the
-counted-class shape the matcher refuses until the owner decides it. Nothing
+CPSC Chair (III, 15 U.S.C. 2053). CPSC's own `Commissioner (×4)` stayed out
+until 2026-09-30: the Code prints "Members, Consumer Product Safety
+Commission (4)", the counted-class shape the owner decided that day (below). Nothing
 in the matcher, the gate or the sweep changed; the one test that moved
 counts the class-title benches and reads six now. Reviewed rows **24 → 37**,
 positions priced from the Schedule **123 → 136**, pay claims **541 → 554**,
@@ -2925,6 +2927,98 @@ Director's, equal to a district judge's by the same section), where the
 bankruptcy percentage is taken of the table's own printed figure. Derived
 records **10 → 12**, pay claims **588 → 590**, unpriced **4,003 → 4,001**,
 multi-post nodes priced **35 → 37**.
+
+**A counted class of offices, and the fourteen rows the ninth batch bought
+(since 2026-09-30, the owner's decision).** The Code places some offices one
+at a time and some as a counted class: "Assistant Attorneys General (11)" at
+Level IV places eleven offices at once and names none of them, and 44 such
+titles stand across the five sections. Every route refused them — the
+whole-name route because the title states several posts, the scoped route
+because it names no organisation, the reviewed route because a bench row
+needs a "Members, …" title — and `CURATION.md` §19.12 carried the shape as
+the first of its open decisions. The owner decided it; the shape is the
+fourth route, `match_counted_classes`, and it is narrower than a name and
+wider than a bench. A member is priced only when the Code's own section
+prints the class title with its count (checked as printed words, because
+the title parser sets the State paragraph aside — "Assistant Secretaries of
+State (24) and 4 other State Department officials…" — and the Labor one
+carries a proviso); the node is a single post whose name is the class's
+singular office first and whole, then a separator from a closed list, and
+where the name says "of <department>" that department is the class's own
+(so an "Assistant Secretary of Defense for Policy" curated under Labor
+would be refused, not priced as one of Labor's ten); the node sits inside the
+organisation the class belongs to, walked up the tree; no listing on the
+node (OPM's archive or the current export) reports another pay plan or
+level — a listing that says ES wins, and an EX listing at the class's level
+corroborates; the graph names no more members than the Code counts; and
+**the node id is in `COUNTED_CLASSES`**, because which nodes are members is
+a review and not a rule. That last condition is what the State Department
+proved necessary: its stamp names an "Assistant Secretary" over the Foreign
+Service Institute, the Office of the Chief of Protocol and the U.S. Mission
+to the United Nations, whose heads are a Director, an Ambassador and a
+Permanent Representative, and a name rule alone would have priced the
+template. The three are declined in `CURATION.md` §19.14 with the reason, as
+is SAMHSA's "(dual-hat)" Assistant Secretary, refused structurally by the
+parenthetical rule.
+
+Where a second statute composes the class it is the record's third document
+— 28 U.S.C. 506's "11 Assistant Attorneys General", 22 U.S.C. 2651a(c)'s "not
+more than 24 Assistant Secretaries of State … at level IV", 29 U.S.C. 553's
+nine offices, 20 U.S.C. 3412(b)'s list, 42 U.S.C. 3533(a)'s seven, 42 U.S.C.
+7133(a)'s eight — and where that statute names the office itself the sentence
+rides on the record as `namedAs`: 2651a says which Assistant Secretary heads
+which bureau for eight of State's thirteen, 3412 names Education's two by
+title, 553 names OSHA's, and 3533 says the Federal Housing Commissioner "shall
+be one of the Assistant Secretaries". Two classes have no composing statute
+in hand — the EPA's Assistant Administrators (Reorganization Plan No. 3 of
+1970 is not a section of the Code) and Commerce's Assistant Secretaries (15
+U.S.C. 1506 was read and adds one office to those "now provided for by law"
+without counting them) — and those records rest on two documents and say so.
+HUD's organic act says seven Assistant Secretaries where the Schedule counts
+eight; the record quotes the seven and the bound used is the Schedule's own,
+recorded rather than reconciled. **40 members priced across eight classes**
+(State 13, DOJ 7, EPA 7, HUD 4, Labor 3, Education 2, Energy 2, Commerce 2),
+six of them already carrying OPM's archived EX-IV listing and now both
+blocks, agreeing; 34 posts priced for the first time. The gate mirrors the
+whole table (`US_CODE_COUNTED_CLASSES`), reads the class title off the
+section's own operative text, walks the tree for the scope, re-checks the
+name rule, the listing, the composing sentence, the naming sentence, the
+digest and the granule, and after the walk counts members per class across
+the whole graph against the Code's N; `tests/test_counted_classes.py`
+corrupts each in turn and asserts on the real base graph that every member
+passes the rule and sits in its scope.
+
+The same decision settled the counted BENCH shape: a "Members, X (N)" title
+may price a `Commissioner (×N)` node through a class-title reviewed row only
+when the bench's own count equals the Code's, checked in the matcher and
+the gate (`reviewed_row_bench_count_disagrees_with_the_code`), so the CPSC's
+four are priced from "Members, Consumer Product Safety Commission (4)" with
+15 U.S.C. 2053 composing the Commission of five. The ninth research batch
+then bought **fourteen reviewed rows** in the shapes this file already has:
+the SEC's bench from "Members, Securities and Exchange Commission" (15
+U.S.C. 78d composes it of five); the EEOC's Chairman (III) and its Vice
+Chairman as one of "Members, Equal Employment Opportunity Commission (4)"
+(IV), both from 42 U.S.C. 2000e-4(a)'s designation sentence; the NMB's
+chairman (45 U.S.C. 154 Second); the NEA's Chairperson, whom the Schedule
+still spells Chairman (20 U.S.C. 954(b)); the President of Ginnie Mae (12
+U.S.C. 1723); the Wage and Hour Administrator (29 U.S.C. 204); the OMB's
+Director (I) and Deputy Director (II) from 31 U.S.C. 502, and its three
+templated "Administrator / Chief" office heads — the Administrator for
+Federal Procurement Policy (41 U.S.C. 1102; §1101 was fetched first and
+names no Administrator, so it is not committed), the Controller of Federal
+Financial Management (31 U.S.C. 504) and the Administrator of Electronic
+Government (44 U.S.C. 3602); and the PHMSA Administrator (49 U.S.C. 108,
+which the current export already lists at EX-III). Declined with reasons in
+§19.14: the NCUA's and PRC's stamped Vice Chairs (neither statute
+designates one), the SEC's Chair (78d does not designate the Chairman; that
+is a 1950 reorganization plan), the EPA's Administrator (no organic section
+of the Code to cite), and every Member of Congress the batch priced at
+$174,000 as a committee chair or ranking member, which is the Members
+decision still open. The reviewed checker's granule regex now admits a
+dashed section number (2000e-4), which the EEOC rows needed. Reviewed rows
+**61 → 75**, Schedule-priced **160 → 214**, class-title benches **7 → 9**,
+pay claims **590 → 638**, unpriced **4,001 → 3,953**, multi-post nodes
+priced **37 → 39**.
 
 **The panel's Trace Origin, restored.** A 2026-09-15 change reduced "Trace
 Origin" to a one-line confirmation on the grounds that the breadcrumb already
@@ -3443,15 +3537,15 @@ subdivide measured money rather than invent it — which does not make a
 subdivision a measurement. **Since 2026-09-09 the site does not show one by
 default**, by the owner's decision: a node with no measured cost of its own
 shows no figure and says why, and ticking "Also show estimated shares of a
-parent's total" opts back in. The exception is a real salary — **590** of the
+parent's total" opts back in. The exception is a real salary — **638** of the
 4,591 positions carry a pay claim an official source states, counted on the
 published graph on 2026-09-30 after Schedule 6, the VA's Title 38 bands, the
 Article I parity derivations, the per-field multi-post rule, the Federal
 Reserve rows, the reviewed rows of the fourth research batch, the six
 class-title benches, the tier-reference module, the thirteen reviewed rows
 of §19.9's list, the eight candidates of §19.10 and the twenty-two rows that
-closed the eighth batch (§19.12), and the bankruptcy judges of 2026-09-30,
-landed: 12 a figure no
+closed the eighth batch (§19.12), the bankruptcy judges of 2026-09-30 and
+that day's counted classes and ninth-batch rows, landed: 12 a figure no
 document states (`positionDerivedPay`, four chief judges and their four
 benches, the Administrative Office's Director, the Federal Judicial
 Center's Director through a chain of two statutes, and two bankruptcy
@@ -3461,16 +3555,23 @@ statute sets by REFERENCE to an Executive Schedule level (`positionTierReference
 the GAO's two officers, the GPO's two, the IES's Director and three
 Commissioners, the FCA Board's Chairman, the Librarian of Congress, and 26
 Inspectors General at Level III plus the Act's
-3 percent, arithmetic no document prints), 72 a Title 38 tier BAND rather than a rate (`positionTierPay`), 160 from the
-Executive Schedule as 5 U.S.C. §§5312–5316 sets it (61 of them through a
+3 percent, arithmetic no document prints), 72 a Title 38 tier BAND rather than a rate (`positionTierPay`), 214 from the
+Executive Schedule as 5 U.S.C. §§5312–5316 sets it (75 of them through a
 reviewed identification a second statute backs — 12 U.S.C. 241–242 for the
 Fed's four, then the FCC's, FTC's, CFTC's, FERC's, NRC's and FMC's chairs
 and benches, the IRS, FAA, DHS, OPM, SSA, FEMA, BLM, CIA, CMS, NIST, SBA,
 NSF, ONDCP, BLS, Census, CEA, CPSC, FHWA, USPTO, Reclamation, NASA, FTA,
 FRA, MARAD, MSHA and OFR principals, the Register of Copyrights, and ten
-stamped agency heads from the MSPB to the Export-Import Bank; seven of the
-61 are benches priced from the Code's "Members, …" class title for each
-holder), 188 from
+stamped agency heads from the MSPB to the Export-Import Bank, and since
+2026-09-30 the EEOC's, NMB's and NEA's heads, the EEOC's Vice Chairman,
+Ginnie Mae's President, the Wage and Hour Administrator, the OMB's
+Director, Deputy Director and three office heads, and the PHMSA
+Administrator; nine of the 75 are benches priced from the Code's "Members,
+…" class title for each holder, the CPSC's and SEC's among them since
+2026-09-30 — and 40 more as reviewed members of a COUNTED class the Code
+places without naming, "Assistant Attorneys General (11)" and seven more,
+each on the Code, the table and, for six of the eight classes, the statute
+that composes the class), 188 from
 the White House
 roster (22 of them titles listed N times at one rate), 88 the rate the current PLUM export prints for the one row under the
 title, 31 from a listing's level joined to OPM's table, 24 statutory (20 from
@@ -3490,8 +3591,9 @@ count is worth), 498 on 2026-09-27 with the six reviewed rows, 513 the
 same day with the five class-title benches and nine more reviewed rows, 541
 on 2026-09-28 with the tier-reference module, 554 the same day with the
 thirteen reviewed rows of §19.9's list, 566 with the eight candidates of
-§19.10, 588 with the twenty-two rows of §19.12, and 590 with the bankruptcy
-benches of 2026-09-30. Shown in the cost block
+§19.10, 588 with the twenty-two rows of §19.12, 590 with the bankruptcy
+benches of 2026-09-30, and 638 with that day's counted classes and
+ninth-batch rows. Shown in the cost block
 under its own heading and never headed COST.
 
 That figure read **354** until 2026-09-19 and was wrong: it added up the
@@ -3507,8 +3609,8 @@ the review, 498 with the six reviewed rows of 2026-09-27, 513 with that
 day's class-title benches and nine more reviewed rows, 541 on 2026-09-28
 with the GAO's officers and 26 Inspectors General, 554 the same day with
 the thirteen reviewed rows, 566 with the eight candidates, 588 with the
-twenty-two rows that closed the eighth batch, and 590 with the bankruptcy
-benches. The estimates
+twenty-two rows that closed the eighth batch, 590 with the bankruptcy
+benches, and 638 with the counted classes and the ninth batch's rows. The estimates
 stay in `graph.json` because the cascade's arithmetic and the gate's
 child-sum checks are built on them, so a consumer of the JSON must read
 `cost_status`, not `resolved_total_amount` alone. The gate prints both

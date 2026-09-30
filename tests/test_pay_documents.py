@@ -356,6 +356,13 @@ class PublishedGraphTests(unittest.TestCase):
                 if block["verification"]["documents"] >= 3:
                     threes.add((node.get("id"), field))
                 if field == "positionSchedulePay" and isinstance(block.get("identification"), dict):
+                    # A counted-class member (since 2026-09-30) carries the
+                    # identification block whether or not a composing statute
+                    # was read: three documents only where one was.
+                    if isinstance(block.get("countedClass"), dict) and not block["identification"].get("basisUrl"):
+                        self.assertEqual(80, block["verification"]["percent"], node.get("id"))
+                        self.assertEqual(2, block["verification"]["documents"], node.get("id"))
+                        continue
                     reviewed.add((node.get("id"), field))
                     self.assertEqual(90, block["verification"]["percent"])
                     self.assertEqual(1, block["verification"]["documentsStatingTheFigure"])

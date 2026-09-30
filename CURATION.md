@@ -3500,6 +3500,125 @@ prompt-pack shards 39 → 38. The unpriced report's "N such nodes carry one"
 sentence is read off the graph since this section; it had said 28 since
 2026-09-23 while the graph carried 37. Nothing measured moved.
 
-**Still open after this section:** the counted-class shape; Members of
-Congress paid under Schedule 6; the USPS Board's statutory stipend; the Deputy
-Librarian's "greater of".
+**Still open after this section:** the counted-class shape (decided the same
+day, §19.14); Members of Congress paid under Schedule 6; the USPS Board's
+statutory stipend; the Deputy Librarian's "greater of".
+
+### 19.14 The counted-class shape decided; the ninth batch triaged (2026-09-30)
+
+The owner's instruction was "decide the counted-class shape and price them",
+with a ninth Perplexity batch pasted after it. The Code prints 44 titles of
+the form "<class> (N)" across §§5312–5316 — "Assistant Attorneys General
+(11)", "Assistant Secretaries of Labor (10)", "Members, Consumer Product
+Safety Commission (4)" — and every route refused them. The decision, built
+as `statutory_schedule.match_counted_classes` and recorded in `CLAUDE.md`:
+a member is priced only when the section prints the class title with its
+count, the node is a single post named as the class's singular office and
+nothing else, it sits inside the class's organisation, no listing on it
+reports another pay plan or level, the graph names no more members than the
+Code counts, and the node id is in the reviewed table `COUNTED_CLASSES`.
+Where a statute composes the class it is the third document; where it names
+the office itself the sentence rides on the record.
+
+**Eight classes, 40 members priced, 34 of them for the first time** (six
+already carried OPM's archived EX-IV listing and now carry both blocks,
+agreeing):
+
+| Class | Composing statute | Members priced | Declined |
+|---|---|---|---|
+| Assistant Attorneys General (11), IV | 28 U.S.C. 506 | 7 (Antitrust, Civil, Civil Rights, Criminal, ENRD, NSD, Tax) | — |
+| Assistant Administrators, EPA (8), IV | none read (Reorganization Plan No. 3 of 1970 is not a section of the Code); the Schedule also prints two of them under older names at the same level | 7 (OAR, OW, OLEM, OCSPP, ORD, OECA, OITA) | — |
+| Assistant Secretaries of State (24), IV | 22 U.S.C. 2651a(c), which itself sets Level IV and names eight bureau heads | 13 | FSI, Office of the Chief of Protocol, U.S. Mission to the UN: the State stamp names an "Assistant Secretary" over each, and their heads are a Director, an Ambassador and a Permanent Representative |
+| Assistant Secretaries of Labor (10), IV | 29 U.S.C. 553 (nine offices; names OSHA's) | 3 (OSHA, ETA, EBSA); MSHA's is a reviewed row already | — |
+| Assistant Secretaries of Education (10), IV | 20 U.S.C. 3412(b), naming both by title | 2 (OESE, OCR) | — |
+| Assistant Secretaries of HUD (8), IV | 42 U.S.C. 3533(a): SEVEN, where the Schedule counts eight; the Federal Housing Commissioner "shall be one of the Assistant Secretaries" | 4 (FHA Commissioner, PIH, CPD, FHEO) | — |
+| Assistant Secretaries of Energy (8), IV | 42 U.S.C. 7133(a), which itself sets Level IV | 2 (EERE, EM) | — |
+| Assistant Secretaries of Commerce (11), IV | none read: 15 U.S.C. 1506 adds one office to those "now provided for by law" and was not committed | 2 (ITA's Global Markets; Enforcement & Compliance) | — |
+
+Also declined, structurally or by review: SAMHSA's "Assistant Secretary for
+Mental Health & Substance Use (dual-hat)" — the parenthetical rule refuses
+it, and whether that office is one of HHS's six is not something read here;
+NASA's five mission-directorate Associate Administrators against
+"Associate Administrators, NASA (7)" (V) and the SBA's four against
+"Associate Administrators of the SBA (4)" (V) — the current export lists
+the NASA ones it lists on the ES plan, so the class's membership is
+contested by the one document that could settle it, and the SBA's are
+declined on the same doubt; "Under Secretaries of State / Energy / the
+Treasury", "Deputy United States Trade Representatives (3)", "Assistant
+Directors of OMB (3)", "Additional officers, OMB (6)" and the rest of the
+44 reach no node in this graph or name no office ("Additional officers").
+The State class's title is printed inside a longer paragraph ("… (24) and 4
+other State Department officials to be appointed …") that the title parser
+sets aside, so the counted route checks the printed words directly; Labor's
+paragraph carries a proviso naming the VETS Assistant Secretary and is read
+the same way. 22 U.S.C. 2652, the batch's composition section for State,
+was fetched, is REPEALED, and was deleted rather than committed.
+
+**The counted bench.** A "Members, X (N)" class-title row now requires the
+bench's own count to equal N (`reviewed_row_bench_count_disagrees_with_the_
+code`, mirrored in the gate), and on that rule the CPSC's `Commissioner (×4)`
+is priced from "Members, Consumer Product Safety Commission (4)" with 15
+U.S.C. 2053 (already committed) composing the Commission of five.
+
+**The ninth batch, triaged.** It priced 24 ids and named systems for ~200
+more; every lead is accounted for here.
+
+- **Landed as reviewed rows (14, the Fed's shape).** EEOC Chairman (III) and
+  Vice Chairman as one of "Members, EEOC (4)" (IV), both on 42 U.S.C.
+  2000e-4(a)'s "The President shall designate one member to serve as
+  Chairman of the Commission, and one member to serve as Vice Chairman";
+  NMB chairman (III, 45 U.S.C. 154 Second); NEA Chairperson (III, 20 U.S.C.
+  954(b), the Schedule spelling it Chairman); President of Ginnie Mae (IV,
+  12 U.S.C. 1723); Wage and Hour Administrator (IV, 29 U.S.C. 204); OMB
+  Director (I) and Deputy Director (II), 31 U.S.C. 502; the OMB's three
+  templated "Administrator / Chief" heads — Federal Procurement Policy (III,
+  41 U.S.C. 1102; §1101 names no Administrator and was deleted), the
+  Controller of Federal Financial Management (III, 31 U.S.C. 504), the
+  Administrator of Electronic Government (III, 44 U.S.C. 3602); PHMSA
+  Administrator (III, 49 U.S.C. 108, first fetch reset by the host, second
+  served); the SEC's `Commissioner (×4)` bench from "Members, SEC" (IV, 15
+  U.S.C. 78d(a)); and the CPSC bench above.
+- **Landed through the counted class:** EBSA's, ENRD's, Tax's, OESE's and
+  the FHA Commissioner's rows.
+- **Declined.** The NCUA's and PRC's stamped "Deputy Director / Vice Chair":
+  12 U.S.C. 1752a designates a Chairman and no Vice Chairman (the Board's
+  three members are read and committed; nothing here says which member the
+  stamp stands for), and 39 U.S.C. 502 was not fetched on the same doubt.
+  The SEC's `Chair, SEC`: 15 U.S.C. 78d composes the Commission and does
+  not designate its Chairman (Reorganization Plan No. 10 of 1950 does),
+  so no basis sentence exists in a section of the Code. The EPA's
+  `Administrator, EPA` at "Administrator of the Environmental Protection
+  Agency" (II): the Agency has no organic section of the Code to cite. The
+  USAGM CEO: 22 U.S.C. 6203 is not on the Schedule and was not read. The
+  two "$158,500 / $168,400 frozen payable" figures from OPM's pay-freeze
+  memo: a memo about certain political appointees' payable rates is
+  person-level, and the table's own freeze footnote already rides on every
+  Schedule record.
+- **Members of Congress at $174,000 (every committee chair and ranking
+  member, ~150 nodes, from a CRS report, senate.gov's salary page and the
+  Clerk's Salary.pdf): still the open Members decision** recorded in §19.12.
+  The sources are real; what is undecided is whether a committee-chair node
+  is a seat.
+- **Leads, not rows.** The EPA's ten regional administrators and deputies
+  as SES in the 2024 Plum Book (govinfo PDFs): the archive `positions.py`
+  reads is the same document, and those rows did not reach the nodes by
+  name — an alias/organisation problem for the archive matcher, not a pay
+  row. FISC judges and the presiding judge at the district-judge rate: 50
+  U.S.C. 1803(a) designates district judges, which is `derived_pay.py`'s
+  shape with a composition sentence; not read here. BVA Veterans Law
+  Judges and Vice Chairman under 38 U.S.C. 7101A: not read. GAO's analysts
+  and directors on GAO's own pay bands, NSF programme directors at the AD-4
+  band on nsf.gov's careers page, the CAVC clerk's 2023 vacancy range:
+  each names a system and prints no figure a record could quote, or a
+  recruitment range that is not the post's rate. Foreign Service officers
+  and Capitol Police ranks: systems named, documents not.
+
+Counted on the rebuilt graph: reviewed rows 61 → 75, Schedule-priced
+160 → 214 (40 as counted-class members, 9 class-title benches), pay claims
+590 → 638, unpriced 4,001 → 3,953 (3,181 unreached, 754 stating a
+multiplicity, 18 listed without a rate), multi-post nodes priced 37 → 39.
+
+**Still open after this section:** Members of Congress paid under Schedule 6
+(now the largest single lead, ~150 chair and ranking-member nodes); the USPS
+Board's statutory stipend; the Deputy Librarian's "greater of"; the FISC and
+BVA derivations above.

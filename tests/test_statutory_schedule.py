@@ -37,6 +37,7 @@ from scripts.validate_published_graph import (
     EXECUTIVE_SCHEDULE_RATES,
     EXECUTIVE_SCHEDULE_TABLE,
     US_CODE_BASIS_FIXTURE_DIR,
+    US_CODE_COUNTED_CLASSES,
     US_CODE_EXECUTIVE_SCHEDULE,
     US_CODE_HOST,
     US_CODE_REVIEWED_IDENTIFICATIONS,
@@ -209,10 +210,19 @@ class MirrorTests(unittest.TestCase):
     def test_the_mirror_covers_exactly_the_published_nodes(self) -> None:
         node_map, _ = index_tree(json.loads(GRAPH.read_text(encoding="utf-8")))
         published = {i for i, n in node_map.items() if isinstance(n.get("positionSchedulePay"), dict)}
-        self.assertEqual(published, set(US_CODE_EXECUTIVE_SCHEDULE) | set(US_CODE_REVIEWED_IDENTIFICATIONS),
+        # Since 2026-09-30 the fourth route prices the reviewed members of a
+        # COUNTED class; those are mirrored by class rather than by row.
+        counted = {i for spec in US_CODE_COUNTED_CLASSES.values() for i in spec["members"]}
+        counted_published = {i for i in published
+                             if isinstance(node_map[i]["positionSchedulePay"].get("countedClass"), dict)}
+        self.assertTrue(counted_published <= counted, "a counted-class member the table does not list")
+        self.assertEqual(published - counted_published,
+                         set(US_CODE_EXECUTIVE_SCHEDULE) | set(US_CODE_REVIEWED_IDENTIFICATIONS),
                          "a node carries a schedule rate the gate has no mirror for, or the reverse")
         self.assertFalse(set(US_CODE_EXECUTIVE_SCHEDULE) & set(US_CODE_REVIEWED_IDENTIFICATIONS),
                          "a node is in both mirrors; the routes are exclusive")
+        self.assertFalse(counted & (set(US_CODE_EXECUTIVE_SCHEDULE) | set(US_CODE_REVIEWED_IDENTIFICATIONS)),
+                         "a counted-class member is also mirrored by row; the routes are exclusive")
 
     @unittest.skipUnless(GRAPH.exists(), "no published graph")
     def test_fifteen_nodes_share_one_figure_which_is_why_the_mirror_is_keyed_by_id(self) -> None:

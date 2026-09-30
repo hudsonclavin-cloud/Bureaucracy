@@ -36,13 +36,17 @@ unverified`. The estimates remain in `graph.json` — the cascade's arithmetic
 and the gate's child-sum checks are built on them — so a consumer of the
 JSON must read `cost_status` and not `resolved_total_amount` alone.
 
-The one exception is a real salary. **590** position nodes carry a pay claim an
+The one exception is a real salary. **638** position nodes carry a pay claim an
 official source states — 188 from the White House Office roster (22 of them
-titles the roster lists N times at one rate, published for each holder), 160
-from the Executive Schedule as 5 U.S.C. §§5312–5316 sets it (61 of them through
+titles the roster lists N times at one rate, published for each holder), 214
+from the Executive Schedule as 5 U.S.C. §§5312–5316 sets it (75 of them through
 a reviewed identification a second statute backs, each resting on three
-documents; seven of those are benches — the FCC's, FTC's, CFTC's, FERC's,
-NRC's and FMC's `Commissioner (×4)` and the Fed's `Governor (×4 members)` —
+documents; nine of those are benches — the FCC's, FTC's, CFTC's, FERC's,
+NRC's, FMC's, CPSC's and SEC's `Commissioner (×4)` and the Fed's `Governor (×4
+members)` — and, since 2026-09-30, 40 as reviewed members of a COUNTED class
+the Code places without naming, "Assistant Attorneys General (11)" and seven
+more, on the Code, the table and, where one has been read, the statute that
+composes the class —
 priced from the Code's own "Members, …" class title for each holder alike), 88
 the rate OPM's current PLUM export prints for the one row under the title, 36 a
 rate a statute sets by REFERENCE to an Executive Schedule level the post is not
@@ -71,7 +75,7 @@ $249,900 × 92% = $229,908, arithmetic the block carries in the open and no
 document prints; the magistrate judges are refused because 28 U.S.C. 634(a)
 sets "up to" that percentage, a ceiling the Judicial Conference fixes a figure
 beneath). A node may carry
-more than one, so the per-source figures sum past 590. Each shows in place of
+more than one, so the per-source figures sum past 638. Each shows in place of
 the withheld estimate, under its
 own heading rather than COST, with the panel saying it is compensation for one
 post — or, on a node standing for several, for each of its holders — and not

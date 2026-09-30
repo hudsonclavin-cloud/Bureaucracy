@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-09-30T05:09:44Z",
+ "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title22-section2651a&num=0&edition=prelim",
+ "status": 200,
+ "final_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title22-section2651a&num=0&edition=prelim",
+ "content_type": "text/html;charset=UTF-8",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /view.xhtml",
+ "bytes": 401720,
+ "sha256": "7252a359d996e09830cc1e4126753e7e1e9555b4e3b53a724574cc1517e7c6f2",
+ "error": null
+}

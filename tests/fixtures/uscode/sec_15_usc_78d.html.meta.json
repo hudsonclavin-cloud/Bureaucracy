@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-09-30T05:08:14Z",
+ "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title15-section78d&num=0&edition=prelim",
+ "status": 200,
+ "final_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title15-section78d&num=0&edition=prelim",
+ "content_type": "text/html;charset=UTF-8",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /view.xhtml",
+ "bytes": 200355,
+ "sha256": "0869b2078fed78fe87abfa7be60a9a786e92b21426f7cd95a40c0b472f5c09a8",
+ "error": null
+}

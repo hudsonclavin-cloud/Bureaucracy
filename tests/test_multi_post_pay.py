@@ -307,7 +307,7 @@ class PublishedGraphTests(unittest.TestCase):
                         class_benches += 1
                         continue
                     self.assertNotIn(field, node, node.get("id"))
-        self.assertEqual(class_benches, 7, "the seven class-title benches: FCC, FTC, CFTC, FERC, the NRC, the FMC, the Fed's Governors")
+        self.assertEqual(class_benches, 9, "the nine class-title benches: FCC, FTC, CFTC, FERC, the NRC, the FMC, the Fed's Governors, and since 2026-09-30 the CPSC's and the SEC's")
 
     def test_every_multi_post_pay_block_says_who_it_covers(self):
         if not self.nodes:

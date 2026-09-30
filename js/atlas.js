@@ -514,7 +514,9 @@ function describePay(node) {
       text: `${schedule.citation || "The United States Code"} places this post at Executive Schedule level ${schedule.payLevel}, naming it "${schedule.statutoryTitle}". OPM's ${schedule.table}${when}, pays ${printed} for ${schedule.amountScope}.${
         schedule.scopedOffice && schedule.scopedOrganisation ? ` Matched to "${schedule.scopedOffice}" as the post of that name directly under ${schedule.scopedOrganisation}.` : ""
       }${
-        schedule.identification && typeof schedule.identification === "object"
+        schedule.countedClass && typeof schedule.countedClass === "object"
+          ? ` That is a counted class of ${schedule.countedClass.statedPosts} offices the Code names none of; this post is priced as one of them on its own name ("${schedule.countedClass.singular}") and its place inside ${schedule.countedClass.scopeName || schedule.countedClass.scopeId}, a reviewed membership (${schedule.countedClass.membersInGraph} of the ${schedule.countedClass.statedPosts} are in this graph).${schedule.identification && schedule.identification.basisCitation ? ` ${schedule.identification.basisCitation} composes the class: "${schedule.identification.basisQuote || ""}".` : " No statute composing the class has been read here."}${schedule.countedClass.namedAs ? ` It also names this office: "${schedule.countedClass.namedAs}".` : ""}`
+          : schedule.identification && typeof schedule.identification === "object"
           ? ` That title is not this node's name: a reviewed identification — ${schedule.identification.basis || "no stated basis"}; ${schedule.identification.basisCitation || "the basis statute"} prints "${schedule.identification.basisQuote || ""}".`
           : ""
       }${schedule.classTitle === true ? " The Code's title is a class title placing every member of the body at that level." : ""} A statutory rate of basic pay, not what the holder receives.${holdersNote(schedule)}${payDocuments(schedule)}`,

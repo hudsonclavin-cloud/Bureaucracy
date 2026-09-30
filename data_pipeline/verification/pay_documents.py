@@ -124,6 +124,24 @@ PAY_DOCUMENT_FIELDS: dict[str, dict[str, Any]] = {
             "appointment's; the percentage measures how much official documentation it rests "
             "on, not the chance that it is right."
         ),
+        # A single post priced as one member of a COUNTED class ("Assistant
+        # Attorneys General (11)"): the Code places the class and names no
+        # member, so which post this is rests on the node's own name and
+        # placement, reviewed; where a third document is listed it composes
+        # the class, and it may also name this office.
+        "countedRoles": {
+            "url": "states what that Executive Schedule level pays",
+            "statuteUrl": "places every office of this class at that level, and counts them",
+            ("identification", "basisUrl"): "composes the class of offices this post is one of",
+        },
+        "countedCaution": (
+            "One document states the rate and another is the statute that places every office "
+            "of this class at that level without naming any of them; where a third is listed, it "
+            "is the statute that composes the class. That this post is one of the class rests on "
+            "its own name and where it sits, which a reviewed table records and every build "
+            "re-checks. The percentage measures how much official documentation the figure "
+            "rests on, not the chance that it is right."
+        ),
     },
     "positionStatutoryPay": {
         "urlKeys": ("url",),
@@ -262,6 +280,11 @@ def _percent_of_tier(block: Mapping[str, Any]) -> bool:
     return isinstance(arithmetic, Mapping) and arithmetic.get("operation") == "percent_of"
 
 
+def _counted_class(block: Mapping[str, Any]) -> bool:
+    """A schedule block priced as one member of a counted class says so itself."""
+    return isinstance(block.get("countedClass"), Mapping)
+
+
 def _uniform_roster(block: Mapping[str, Any]) -> bool:
     """A roster block that lists every holder at one rate says so in `holders`."""
     holders = block.get("holders")
@@ -285,6 +308,8 @@ def count_documents(field: str, block: Mapping[str, Any]) -> tuple[int, list[dic
         role_words = spec["uniformRoles"]
     elif _class_title(block) and spec.get("classRoles"):
         role_words = spec["classRoles"]
+    elif _counted_class(block) and spec.get("countedRoles"):
+        role_words = spec["countedRoles"]
     for key in spec["urlKeys"]:
         for url in _urls_at(block, key):
             if url in seen:
@@ -327,6 +352,7 @@ def annotate_pay_documents(root: dict[str, Any]) -> dict[str, int]:
                 "caution": (
                     (spec.get("uniformCaution") or spec["caution"]) if _uniform_roster(block)
                     else (spec.get("classCaution") or spec["caution"]) if _class_title(block)
+                    else (spec.get("countedCaution") or spec["caution"]) if _counted_class(block)
                     else (spec.get("percentCaution") or spec["caution"]) if _percent_of_tier(block)
                     else spec["caution"]
                 ),

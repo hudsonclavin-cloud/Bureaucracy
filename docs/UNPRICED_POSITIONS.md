@@ -8,14 +8,14 @@ checkable claim. `docs/PAY_SOURCE_RESEARCH_PROMPT_3.md` is generated from this
 same list in the same run.
 
 - position nodes in the published graph: **4,591**
-- carrying a pay claim an official document supports: **590**
-- carrying none: **4,001**
+- carrying a pay claim an official document supports: **638**
+- carrying none: **3,953**
 
 | reason | count | what it means |
 |---|---|---|
-| `unreached` | 3,225 | no source this project has read names the title at all. Not a coverage gap somebody has not got to: no pay document in the repository names this title under this organisation, so nothing could have reached it. |
-| `multiplicity` | 756 | the node states a multiplicity (×N) and no claim that holds for every holder has reached it. Since 2026-09-23 a claim that holds for each holder by its own terms IS published on such a node with a `holders` block -- a tier or parity rate paid to every judge of the tier, a band every holder is within, or a roster listing every holder at one rate -- and 37 such nodes carry one. What stays refused is an incumbency-shaped claim (one listing's level, one row of the current export), because that is one appointment's figure and not the group's. For these nodes no office-rate claim has reached them at all. Knowing which pay system governs the title is still useful -- it is what would let the graph carry the schedule rather than a rate -- so these are listed and asked about. |
-| `listed_no_rate` | 20 | OPM lists the position and the row prints no rate. The PLUM archive or the current export names the title under this organisation but the Level/Grade/Pay cell carries a rank or is empty, and no salary table this project has read prices that pay plan. |
+| `unreached` | 3,181 | no source this project has read names the title at all. Not a coverage gap somebody has not got to: no pay document in the repository names this title under this organisation, so nothing could have reached it. |
+| `multiplicity` | 754 | the node states a multiplicity (×N) and no claim that holds for every holder has reached it. Since 2026-09-23 a claim that holds for each holder by its own terms IS published on such a node with a `holders` block -- a tier or parity rate paid to every judge of the tier, a band every holder is within, or a roster listing every holder at one rate -- and 39 such nodes carry one. What stays refused is an incumbency-shaped claim (one listing's level, one row of the current export), because that is one appointment's figure and not the group's. For these nodes no office-rate claim has reached them at all. Knowing which pay system governs the title is still useful -- it is what would let the graph carry the schedule rather than a rate -- so these are listed and asked about. |
+| `listed_no_rate` | 18 | OPM lists the position and the row prints no rate. The PLUM archive or the current export names the title under this organisation but the Level/Grade/Pay cell carries a rank or is empty, and no salary table this project has read prices that pay plan. |
 
 ---
 
@@ -661,30 +661,6 @@ same list in the same run.
 - `exec-dept-doj-fbi-special-agent-in-charge-sac-56-field-offices` — Special Agent in Charge (SAC) — 56 Field Offices — `unreached`
 - `exec-dept-doj-fbi-supervisory-special-agent-ssa-squad-level` — Supervisory Special Agent (SSA) — Squad Level — `unreached`
 
-## Securities & Exchange Commission (SEC)  — 19 unpriced
-
-`exec-regulatory-sec`
-
-- `exec-regulatory-sec-cfo` — CFO — `unreached`
-- `exec-regulatory-sec-cio` — CIO — `unreached`
-- `exec-regulatory-sec-chair-sec` — Chair, SEC — `unreached`
-- `exec-regulatory-sec-chief-accountant` — Chief Accountant — `unreached`
-- `exec-regulatory-sec-commissioner-4` — Commissioner (×4) — `multiplicity`
-- `exec-regulatory-sec-director-division-of-corporation-finance` — Director — Division of Corporation Finance — `unreached`
-- `exec-regulatory-sec-director-division-of-economic-risk-analysis` — Director — Division of Economic & Risk Analysis — `unreached`
-- `exec-regulatory-sec-director-division-of-enforcement` — Director — Division of Enforcement — `unreached`
-- `exec-regulatory-sec-director-division-of-investment-management` — Director — Division of Investment Management — `unreached`
-- `exec-regulatory-sec-director-division-of-trading-markets` — Director — Division of Trading & Markets — `unreached`
-- `exec-regulatory-sec-director-office-of-compliance-inspections-examinations` — Director — Office of Compliance Inspections & Examinations — `unreached`
-- `exec-regulatory-sec-director-office-of-credit-ratings` — Director — Office of Credit Ratings — `unreached`
-- `exec-regulatory-sec-director-office-of-municipal-securities` — Director — Office of Municipal Securities — `unreached`
-- `exec-regulatory-sec-financial-examiner-multiple` — Financial Examiner (×multiple) — `multiplicity`
-- `exec-regulatory-sec-general-counsel` — General Counsel — `unreached`
-- `exec-regulatory-sec-inspector-general` — Inspector General — `unreached`
-- `exec-regulatory-sec-regional-director-11-regional-offices` — Regional Director — 11 Regional Offices — `unreached`
-- `exec-regulatory-sec-secretary-of-the-commission` — Secretary of the Commission — `unreached`
-- `exec-regulatory-sec-senior-staff-attorney-multiple` — Senior Staff Attorney (×multiple) — `multiplicity`
-
 ## Bureau of Prisons (BOP)  — 18 unpriced
 
 `exec-dept-doj-bop`
@@ -730,6 +706,29 @@ same list in the same run.
 - `leg-senate-offices-senior-legislative-assistant-3` — Senior Legislative Assistant (×3) — `multiplicity`
 - `leg-senate-offices-staff-assistant` — Staff Assistant — `unreached`
 - `leg-senate-offices-state-director` — State Director — `unreached`
+
+## Securities & Exchange Commission (SEC)  — 18 unpriced
+
+`exec-regulatory-sec`
+
+- `exec-regulatory-sec-cfo` — CFO — `unreached`
+- `exec-regulatory-sec-cio` — CIO — `unreached`
+- `exec-regulatory-sec-chair-sec` — Chair, SEC — `unreached`
+- `exec-regulatory-sec-chief-accountant` — Chief Accountant — `unreached`
+- `exec-regulatory-sec-director-division-of-corporation-finance` — Director — Division of Corporation Finance — `unreached`
+- `exec-regulatory-sec-director-division-of-economic-risk-analysis` — Director — Division of Economic & Risk Analysis — `unreached`
+- `exec-regulatory-sec-director-division-of-enforcement` — Director — Division of Enforcement — `unreached`
+- `exec-regulatory-sec-director-division-of-investment-management` — Director — Division of Investment Management — `unreached`
+- `exec-regulatory-sec-director-division-of-trading-markets` — Director — Division of Trading & Markets — `unreached`
+- `exec-regulatory-sec-director-office-of-compliance-inspections-examinations` — Director — Office of Compliance Inspections & Examinations — `unreached`
+- `exec-regulatory-sec-director-office-of-credit-ratings` — Director — Office of Credit Ratings — `unreached`
+- `exec-regulatory-sec-director-office-of-municipal-securities` — Director — Office of Municipal Securities — `unreached`
+- `exec-regulatory-sec-financial-examiner-multiple` — Financial Examiner (×multiple) — `multiplicity`
+- `exec-regulatory-sec-general-counsel` — General Counsel — `unreached`
+- `exec-regulatory-sec-inspector-general` — Inspector General — `unreached`
+- `exec-regulatory-sec-regional-director-11-regional-offices` — Regional Director — 11 Regional Offices — `unreached`
+- `exec-regulatory-sec-secretary-of-the-commission` — Secretary of the Commission — `unreached`
+- `exec-regulatory-sec-senior-staff-attorney-multiple` — Senior Staff Attorney (×multiple) — `multiplicity`
 
 ## Joint Chiefs of Staff  — 17 unpriced
 
@@ -2510,19 +2509,6 @@ same list in the same run.
 - `exec-eop-onadm-director-of-mail-messenger-operations` — Director of Mail & Messenger Operations — `unreached`
 - `exec-eop-onadm-director-office-of-administration` — Director, Office of Administration — `unreached`
 
-## Office of Energy Efficiency & Renewable Energy (EERE)  — 8 unpriced
-
-`exec-dept-doe-eere`
-
-- `exec-dept-doe-eere-assistant-secretary-eere` — Assistant Secretary, EERE — `unreached`
-- `exec-dept-doe-eere-deputy-assistant-secretary` — Deputy Assistant Secretary — `unreached`
-- `exec-dept-doe-eere-director-building-technologies` — Director — Building Technologies — `unreached`
-- `exec-dept-doe-eere-director-hydrogen-fuel-cell-technologies` — Director — Hydrogen & Fuel Cell Technologies — `unreached`
-- `exec-dept-doe-eere-director-solar-energy-technologies` — Director — Solar Energy Technologies — `unreached`
-- `exec-dept-doe-eere-director-vehicle-technologies` — Director — Vehicle Technologies — `unreached`
-- `exec-dept-doe-eere-director-weatherization-intergovernmental-programs` — Director — Weatherization & Intergovernmental Programs — `unreached`
-- `exec-dept-doe-eere-director-wind-energy-technologies` — Director — Wind Energy Technologies — `unreached`
-
 ## Office of the Comptroller of the Currency (OCC)  — 8 unpriced
 
 `exec-dept-treasury-occ`
@@ -2699,18 +2685,6 @@ same list in the same run.
 - `exec-ind-cia-director-of-public-affairs` — Director of Public Affairs — `unreached`
 - `exec-ind-cia-director-sherman-kent-school-training` — Director — Sherman Kent School (Training) — `unreached`
 - `exec-ind-cia-inspector-general` — Inspector General — `unreached`
-
-## Consumer Product Safety Commission (CPSC)  — 7 unpriced
-
-`exec-regulatory-cpsc`
-
-- `exec-regulatory-cpsc-commissioner-4` — Commissioner (×4) — `multiplicity`
-- `exec-regulatory-cpsc-compliance-officer-safety-analyst-multiple` — Compliance Officer / Safety Analyst (×multiple) — `multiplicity`
-- `exec-regulatory-cpsc-director-office-of-compliance-field-operations` — Director — Office of Compliance & Field Operations — `unreached`
-- `exec-regulatory-cpsc-director-office-of-hazard-identification-reduction` — Director — Office of Hazard Identification & Reduction — `unreached`
-- `exec-regulatory-cpsc-executive-director` — Executive Director — `unreached`
-- `exec-regulatory-cpsc-general-counsel` — General Counsel — `unreached`
-- `exec-regulatory-cpsc-inspector-general` — Inspector General — `unreached`
 
 ## Cybersecurity & Infrastructure Security Agency (CISA)  — 7 unpriced
 
@@ -3060,17 +3034,17 @@ same list in the same run.
 - `exec-dept-doe-oak-ridge-national-laboratory-postdoctoral-researcher-multiple` — Postdoctoral Researcher (×multiple) — `multiplicity`
 - `exec-dept-doe-oak-ridge-national-laboratory-principal-scientist-researcher-multiple` — Principal Scientist / Researcher (×multiple) — `multiplicity`
 
-## Office of Environmental Management (EM)  — 7 unpriced
+## Office of Energy Efficiency & Renewable Energy (EERE)  — 7 unpriced
 
-`exec-dept-doe-em`
+`exec-dept-doe-eere`
 
-- `exec-dept-doe-em-assistant-secretary-for-environmental-management` — Assistant Secretary for Environmental Management — `unreached`
-- `exec-dept-doe-em-deputy-assistant-secretary` — Deputy Assistant Secretary — `unreached`
-- `exec-dept-doe-em-site-manager-hanford-site-richland-wa-largest-em-site` — Site Manager — Hanford Site (Richland, WA) — largest EM site — `unreached`
-- `exec-dept-doe-em-site-manager-idaho-site-idaho-falls-id` — Site Manager — Idaho Site (Idaho Falls, ID) — `unreached`
-- `exec-dept-doe-em-site-manager-oak-ridge-reservation-oak-ridge-tn` — Site Manager — Oak Ridge Reservation (Oak Ridge, TN) — `unreached`
-- `exec-dept-doe-em-site-manager-savannah-river-site-aiken-sc` — Site Manager — Savannah River Site (Aiken, SC) — `unreached`
-- `exec-dept-doe-em-site-manager-waste-isolation-pilot-plant-carlsbad-nm` — Site Manager — Waste Isolation Pilot Plant (Carlsbad, NM) — `unreached`
+- `exec-dept-doe-eere-deputy-assistant-secretary` — Deputy Assistant Secretary — `unreached`
+- `exec-dept-doe-eere-director-building-technologies` — Director — Building Technologies — `unreached`
+- `exec-dept-doe-eere-director-hydrogen-fuel-cell-technologies` — Director — Hydrogen & Fuel Cell Technologies — `unreached`
+- `exec-dept-doe-eere-director-solar-energy-technologies` — Director — Solar Energy Technologies — `unreached`
+- `exec-dept-doe-eere-director-vehicle-technologies` — Director — Vehicle Technologies — `unreached`
+- `exec-dept-doe-eere-director-weatherization-intergovernmental-programs` — Director — Weatherization & Intergovernmental Programs — `unreached`
+- `exec-dept-doe-eere-director-wind-energy-technologies` — Director — Wind Energy Technologies — `unreached`
 
 ## Office of National Drug Control Policy  — 7 unpriced
 
@@ -3379,6 +3353,17 @@ same list in the same run.
 - `leg-support-cbo-director-cbo` — Director, CBO — `unreached`
 - `leg-support-cbo-general-counsel` — General Counsel — `unreached`
 
+## Consumer Product Safety Commission (CPSC)  — 6 unpriced
+
+`exec-regulatory-cpsc`
+
+- `exec-regulatory-cpsc-compliance-officer-safety-analyst-multiple` — Compliance Officer / Safety Analyst (×multiple) — `multiplicity`
+- `exec-regulatory-cpsc-director-office-of-compliance-field-operations` — Director — Office of Compliance & Field Operations — `unreached`
+- `exec-regulatory-cpsc-director-office-of-hazard-identification-reduction` — Director — Office of Hazard Identification & Reduction — `unreached`
+- `exec-regulatory-cpsc-executive-director` — Executive Director — `unreached`
+- `exec-regulatory-cpsc-general-counsel` — General Counsel — `unreached`
+- `exec-regulatory-cpsc-inspector-general` — Inspector General — `unreached`
+
 ## Dwight D. Eisenhower Presidential Library (Abilene, KS)  — 6 unpriced
 
 `exec-ind-nara-dwight-d-eisenhower-presidential-library-abilene-ks`
@@ -3489,17 +3474,6 @@ same list in the same run.
 - `exec-ind-nara-herbert-hoover-presidential-library-west-branch-ia-museum-curator` — Museum Curator — `unreached`
 - `exec-ind-nara-herbert-hoover-presidential-library-west-branch-ia-supervisory-archivist` — Supervisory Archivist — `unreached`
 
-## International Trade Administration (ITA)  — 6 unpriced
-
-`exec-dept-doc-ita`
-
-- `exec-dept-doc-ita-assistant-secretary-enforcement-compliance` — Assistant Secretary — Enforcement & Compliance — `unreached`
-- `exec-dept-doc-ita-assistant-secretary-global-markets` — Assistant Secretary — Global Markets — `unreached`
-- `exec-dept-doc-ita-commercial-officer-multiple` — Commercial Officer (×multiple) — `multiplicity`
-- `exec-dept-doc-ita-deputy-under-secretary` — Deputy Under Secretary — `unreached`
-- `exec-dept-doc-ita-director-100-export-assistance-centers` — Director — 100+ Export Assistance Centers — `unreached`
-- `exec-dept-doc-ita-under-secretary-for-international-trade` — Under Secretary for International Trade — `unreached`
-
 ## Jimmy Carter Presidential Library (Atlanta, GA)  — 6 unpriced
 
 `exec-ind-nara-jimmy-carter-presidential-library-atlanta-ga`
@@ -3576,6 +3550,17 @@ same list in the same run.
 - `exec-regulatory-nrc-director-office-of-nuclear-security-incident-response` — Director — Office of Nuclear Security & Incident Response — `unreached`
 - `exec-regulatory-nrc-nuclear-reactor-regulation-specialist-multiple` — Nuclear Reactor Regulation Specialist (×multiple) — `multiplicity`
 - `exec-regulatory-nrc-regional-director-4-regions` — Regional Director — 4 Regions — `unreached`
+
+## Office of Environmental Management (EM)  — 6 unpriced
+
+`exec-dept-doe-em`
+
+- `exec-dept-doe-em-deputy-assistant-secretary` — Deputy Assistant Secretary — `unreached`
+- `exec-dept-doe-em-site-manager-hanford-site-richland-wa-largest-em-site` — Site Manager — Hanford Site (Richland, WA) — largest EM site — `unreached`
+- `exec-dept-doe-em-site-manager-idaho-site-idaho-falls-id` — Site Manager — Idaho Site (Idaho Falls, ID) — `unreached`
+- `exec-dept-doe-em-site-manager-oak-ridge-reservation-oak-ridge-tn` — Site Manager — Oak Ridge Reservation (Oak Ridge, TN) — `unreached`
+- `exec-dept-doe-em-site-manager-savannah-river-site-aiken-sc` — Site Manager — Savannah River Site (Aiken, SC) — `unreached`
+- `exec-dept-doe-em-site-manager-waste-isolation-pilot-plant-carlsbad-nm` — Site Manager — Waste Isolation Pilot Plant (Carlsbad, NM) — `unreached`
 
 ## Office of Foreign Assets Control (OFAC)  — 6 unpriced
 
@@ -3845,16 +3830,6 @@ same list in the same run.
 - `exec-dept-usda-nrcs-soil-conservationist` — Soil Conservationist — `unreached`
 - `exec-dept-usda-nrcs-state-conservationist-50-states` — State Conservationist — 50 states — `unreached`
 
-## Occupational Safety & Health Administration (OSHA)  — 5 unpriced
-
-`exec-dept-dol-osha`
-
-- `exec-dept-dol-osha-area-director-85-area-offices` — Area Director — 85 Area Offices — `unreached`
-- `exec-dept-dol-osha-assistant-secretary-of-labor-for-occupational-safety-health` — Assistant Secretary of Labor for Occupational Safety & Health — `unreached`
-- `exec-dept-dol-osha-compliance-safety-health-officer-csho-inspector-multiple` — Compliance Safety & Health Officer (CSHO) — Inspector (×multiple) — `multiplicity`
-- `exec-dept-dol-osha-deputy-assistant-secretary` — Deputy Assistant Secretary — `unreached`
-- `exec-dept-dol-osha-regional-administrator-10-regions` — Regional Administrator — 10 Regions — `unreached`
-
 ## Office of Financial Research (OFR)  — 5 unpriced
 
 `exec-dept-treasury-ofr`
@@ -3934,15 +3909,6 @@ same list in the same run.
 - `exec-dept-usda-ars-research-leader-multiple-locations` — Research Leader (×multiple locations) — `multiplicity`
 - `exec-dept-usda-ars-research-scientist-chemist-biologist-multiple` — Research Scientist / Chemist / Biologist (×multiple) — `multiplicity`
 
-## Antitrust Division  — 4 unpriced
-
-`exec-dept-doj-div-antitrust`
-
-- `exec-dept-doj-div-antitrust-assistant-attorney-general-antitrust-division` — Assistant Attorney General, Antitrust Division — `unreached`
-- `exec-dept-doj-div-antitrust-deputy-assistant-attorney-general-3-5` — Deputy Assistant Attorney General (×3-5) — `multiplicity`
-- `exec-dept-doj-div-antitrust-section-chief-multiple` — Section Chief (×multiple) — `multiplicity`
-- `exec-dept-doj-div-antitrust-trial-attorney-ausa-multiple` — Trial Attorney / AUSA (×multiple) — `multiplicity`
-
 ## Architect of the Capitol  — 4 unpriced
 
 `leg-support-aoc`
@@ -3979,15 +3945,6 @@ same list in the same run.
 - `leg-support-cbo-budget-review-division-deputy-chief-budget-review-division` — Deputy Chief, Budget Review Division — `unreached`
 - `leg-support-cbo-budget-review-division-senior-analyst-budget-review-division-multiple` — Senior Analyst, Budget Review Division (×multiple) — `multiplicity`
 
-## Bureau of African Affairs  — 4 unpriced
-
-`exec-dept-state-bureau-of-african-affairs`
-
-- `exec-dept-state-bureau-of-african-affairs-assistant-secretary-bureau-of-african-affairs` — Assistant Secretary, Bureau of African Affairs — `unreached`
-- `exec-dept-state-bureau-of-african-affairs-deputy-assistant-secretary-2-4-bureau-of-african-affairs` — Deputy Assistant Secretary (×2-4), Bureau of African Affairs — `multiplicity`
-- `exec-dept-state-bureau-of-african-affairs-foreign-service-officer-multiple` — Foreign Service Officer (×multiple) — `multiplicity`
-- `exec-dept-state-bureau-of-african-affairs-office-director-multiple-bureau-of-african-affairs` — Office Director (×multiple), Bureau of African Affairs — `multiplicity`
-
 ## Bureau of Alcohol, Tobacco, Firearms & Explosives (ATF)  — 4 unpriced
 
 `exec-dept-doj-atf`
@@ -3997,114 +3954,6 @@ same list in the same run.
 - `exec-dept-doj-atf-special-agent-multiple` — Special Agent (×multiple) — `multiplicity`
 - `exec-dept-doj-atf-special-agent-in-charge-25-field-divisions` — Special Agent in Charge — 25 Field Divisions — `unreached`
 
-## Bureau of Arms Control, Verification & Compliance  — 4 unpriced
-
-`exec-dept-state-bureau-of-arms-control-verification-compliance`
-
-- `exec-dept-state-bureau-of-arms-control-verification-compliance-assistant-secretary-bureau-of-arms-control-verification-compliance` — Assistant Secretary, Bureau of Arms Control, Verification & Compliance — `unreached`
-- `exec-dept-state-bureau-of-arms-control-verification-compliance-deputy-assistant-secretary-2-4-bureau-of-arms-control-verification-compliance` — Deputy Assistant Secretary (×2-4), Bureau of Arms Control, Verification & Compliance — `multiplicity`
-- `exec-dept-state-bureau-of-arms-control-verification-compliance-foreign-service-officer-multiple` — Foreign Service Officer (×multiple) — `multiplicity`
-- `exec-dept-state-bureau-of-arms-control-verification-compliance-office-director-multiple-bureau-of-arms-control-verification-compliance` — Office Director (×multiple), Bureau of Arms Control, Verification & Compliance — `multiplicity`
-
-## Bureau of Consular Affairs  — 4 unpriced
-
-`exec-dept-state-bureau-of-consular-affairs`
-
-- `exec-dept-state-bureau-of-consular-affairs-assistant-secretary-bureau-of-consular-affairs` — Assistant Secretary, Bureau of Consular Affairs — `unreached`
-- `exec-dept-state-bureau-of-consular-affairs-deputy-assistant-secretary-2-4-bureau-of-consular-affairs` — Deputy Assistant Secretary (×2-4), Bureau of Consular Affairs — `multiplicity`
-- `exec-dept-state-bureau-of-consular-affairs-foreign-service-officer-multiple` — Foreign Service Officer (×multiple) — `multiplicity`
-- `exec-dept-state-bureau-of-consular-affairs-office-director-multiple-bureau-of-consular-affairs` — Office Director (×multiple), Bureau of Consular Affairs — `multiplicity`
-
-## Bureau of Diplomatic Security  — 4 unpriced
-
-`exec-dept-state-bureau-of-diplomatic-security`
-
-- `exec-dept-state-bureau-of-diplomatic-security-assistant-secretary-bureau-of-diplomatic-security` — Assistant Secretary, Bureau of Diplomatic Security — `unreached`
-- `exec-dept-state-bureau-of-diplomatic-security-deputy-assistant-secretary-2-4-bureau-of-diplomatic-security` — Deputy Assistant Secretary (×2-4), Bureau of Diplomatic Security — `multiplicity`
-- `exec-dept-state-bureau-of-diplomatic-security-foreign-service-officer-multiple` — Foreign Service Officer (×multiple) — `multiplicity`
-- `exec-dept-state-bureau-of-diplomatic-security-office-director-multiple-bureau-of-diplomatic-security` — Office Director (×multiple), Bureau of Diplomatic Security — `multiplicity`
-
-## Bureau of East Asian & Pacific Affairs  — 4 unpriced
-
-`exec-dept-state-bureau-of-east-asian-pacific-affairs`
-
-- `exec-dept-state-bureau-of-east-asian-pacific-affairs-assistant-secretary-bureau-of-east-asian-pacific-affairs` — Assistant Secretary, Bureau of East Asian & Pacific Affairs — `unreached`
-- `exec-dept-state-bureau-of-east-asian-pacific-affairs-deputy-assistant-secretary-2-4-bureau-of-east-asian-pacific-affairs` — Deputy Assistant Secretary (×2-4), Bureau of East Asian & Pacific Affairs — `multiplicity`
-- `exec-dept-state-bureau-of-east-asian-pacific-affairs-foreign-service-officer-multiple` — Foreign Service Officer (×multiple) — `multiplicity`
-- `exec-dept-state-bureau-of-east-asian-pacific-affairs-office-director-multiple-bureau-of-east-asian-pacific-affairs` — Office Director (×multiple), Bureau of East Asian & Pacific Affairs — `multiplicity`
-
-## Bureau of European & Eurasian Affairs  — 4 unpriced
-
-`exec-dept-state-bureau-of-european-eurasian-affairs`
-
-- `exec-dept-state-bureau-of-european-eurasian-affairs-assistant-secretary-bureau-of-european-eurasian-affairs` — Assistant Secretary, Bureau of European & Eurasian Affairs — `unreached`
-- `exec-dept-state-bureau-of-european-eurasian-affairs-deputy-assistant-secretary-2-4-bureau-of-european-eurasian-affairs` — Deputy Assistant Secretary (×2-4), Bureau of European & Eurasian Affairs — `multiplicity`
-- `exec-dept-state-bureau-of-european-eurasian-affairs-foreign-service-officer-multiple` — Foreign Service Officer (×multiple) — `multiplicity`
-- `exec-dept-state-bureau-of-european-eurasian-affairs-office-director-multiple-bureau-of-european-eurasian-affairs` — Office Director (×multiple), Bureau of European & Eurasian Affairs — `multiplicity`
-
-## Bureau of Global Public Affairs  — 4 unpriced
-
-`exec-dept-state-bureau-of-global-public-affairs`
-
-- `exec-dept-state-bureau-of-global-public-affairs-assistant-secretary-bureau-of-global-public-affairs` — Assistant Secretary, Bureau of Global Public Affairs — `unreached`
-- `exec-dept-state-bureau-of-global-public-affairs-deputy-assistant-secretary-2-4-bureau-of-global-public-affairs` — Deputy Assistant Secretary (×2-4), Bureau of Global Public Affairs — `multiplicity`
-- `exec-dept-state-bureau-of-global-public-affairs-foreign-service-officer-multiple` — Foreign Service Officer (×multiple) — `multiplicity`
-- `exec-dept-state-bureau-of-global-public-affairs-office-director-multiple-bureau-of-global-public-affairs` — Office Director (×multiple), Bureau of Global Public Affairs — `multiplicity`
-
-## Bureau of International Organization Affairs  — 4 unpriced
-
-`exec-dept-state-bureau-of-international-organization-affairs`
-
-- `exec-dept-state-bureau-of-international-organization-affairs-assistant-secretary-bureau-of-international-organization-affairs` — Assistant Secretary, Bureau of International Organization Affairs — `unreached`
-- `exec-dept-state-bureau-of-international-organization-affairs-deputy-assistant-secretary-2-4-bureau-of-international-organization-affairs` — Deputy Assistant Secretary (×2-4), Bureau of International Organization Affairs — `multiplicity`
-- `exec-dept-state-bureau-of-international-organization-affairs-foreign-service-officer-multiple` — Foreign Service Officer (×multiple) — `multiplicity`
-- `exec-dept-state-bureau-of-international-organization-affairs-office-director-multiple-bureau-of-international-organization-affairs` — Office Director (×multiple), Bureau of International Organization Affairs — `multiplicity`
-
-## Bureau of International Security & Nonproliferation  — 4 unpriced
-
-`exec-dept-state-bureau-of-international-security-nonproliferation`
-
-- `exec-dept-state-bureau-of-international-security-nonproliferation-assistant-secretary-bureau-of-international-security-nonproliferation` — Assistant Secretary, Bureau of International Security & Nonproliferation — `unreached`
-- `exec-dept-state-bureau-of-international-security-nonproliferation-deputy-assistant-secretary-2-4-bureau-of-international-security-nonproliferation` — Deputy Assistant Secretary (×2-4), Bureau of International Security & Nonproliferation — `multiplicity`
-- `exec-dept-state-bureau-of-international-security-nonproliferation-foreign-service-officer-multiple` — Foreign Service Officer (×multiple) — `multiplicity`
-- `exec-dept-state-bureau-of-international-security-nonproliferation-office-director-multiple-bureau-of-international-security-nonproliferation` — Office Director (×multiple), Bureau of International Security & Nonproliferation — `multiplicity`
-
-## Bureau of Near Eastern Affairs  — 4 unpriced
-
-`exec-dept-state-bureau-of-near-eastern-affairs`
-
-- `exec-dept-state-bureau-of-near-eastern-affairs-assistant-secretary-bureau-of-near-eastern-affairs` — Assistant Secretary, Bureau of Near Eastern Affairs — `unreached`
-- `exec-dept-state-bureau-of-near-eastern-affairs-deputy-assistant-secretary-2-4-bureau-of-near-eastern-affairs` — Deputy Assistant Secretary (×2-4), Bureau of Near Eastern Affairs — `multiplicity`
-- `exec-dept-state-bureau-of-near-eastern-affairs-foreign-service-officer-multiple` — Foreign Service Officer (×multiple) — `multiplicity`
-- `exec-dept-state-bureau-of-near-eastern-affairs-office-director-multiple-bureau-of-near-eastern-affairs` — Office Director (×multiple), Bureau of Near Eastern Affairs — `multiplicity`
-
-## Bureau of Political-Military Affairs  — 4 unpriced
-
-`exec-dept-state-bureau-of-political-military-affairs`
-
-- `exec-dept-state-bureau-of-political-military-affairs-assistant-secretary-bureau-of-political-military-affairs` — Assistant Secretary, Bureau of Political-Military Affairs — `unreached`
-- `exec-dept-state-bureau-of-political-military-affairs-deputy-assistant-secretary-2-4-bureau-of-political-military-affairs` — Deputy Assistant Secretary (×2-4), Bureau of Political-Military Affairs — `multiplicity`
-- `exec-dept-state-bureau-of-political-military-affairs-foreign-service-officer-multiple` — Foreign Service Officer (×multiple) — `multiplicity`
-- `exec-dept-state-bureau-of-political-military-affairs-office-director-multiple-bureau-of-political-military-affairs` — Office Director (×multiple), Bureau of Political-Military Affairs — `multiplicity`
-
-## Bureau of South & Central Asian Affairs  — 4 unpriced
-
-`exec-dept-state-bureau-of-south-central-asian-affairs`
-
-- `exec-dept-state-bureau-of-south-central-asian-affairs-assistant-secretary-bureau-of-south-central-asian-affairs` — Assistant Secretary, Bureau of South & Central Asian Affairs — `unreached`
-- `exec-dept-state-bureau-of-south-central-asian-affairs-deputy-assistant-secretary-2-4-bureau-of-south-central-asian-affairs` — Deputy Assistant Secretary (×2-4), Bureau of South & Central Asian Affairs — `multiplicity`
-- `exec-dept-state-bureau-of-south-central-asian-affairs-foreign-service-officer-multiple` — Foreign Service Officer (×multiple) — `multiplicity`
-- `exec-dept-state-bureau-of-south-central-asian-affairs-office-director-multiple-bureau-of-south-central-asian-affairs` — Office Director (×multiple), Bureau of South & Central Asian Affairs — `multiplicity`
-
-## Bureau of Western Hemisphere Affairs  — 4 unpriced
-
-`exec-dept-state-bureau-of-western-hemisphere-affairs`
-
-- `exec-dept-state-bureau-of-western-hemisphere-affairs-assistant-secretary-bureau-of-western-hemisphere-affairs` — Assistant Secretary, Bureau of Western Hemisphere Affairs — `unreached`
-- `exec-dept-state-bureau-of-western-hemisphere-affairs-deputy-assistant-secretary-2-4-bureau-of-western-hemisphere-affairs` — Deputy Assistant Secretary (×2-4), Bureau of Western Hemisphere Affairs — `multiplicity`
-- `exec-dept-state-bureau-of-western-hemisphere-affairs-foreign-service-officer-multiple` — Foreign Service Officer (×multiple) — `multiplicity`
-- `exec-dept-state-bureau-of-western-hemisphere-affairs-office-director-multiple-bureau-of-western-hemisphere-affairs` — Office Director (×multiple), Bureau of Western Hemisphere Affairs — `multiplicity`
-
 ## Chemical Safety & Hazard Investigation Board (CSB)  — 4 unpriced
 
 `exec-ind-misc-chemical-safety-hazard-investigation-board-csb`
@@ -4113,24 +3962,6 @@ same list in the same run.
 - `exec-ind-misc-chemical-safety-hazard-investigation-board-csb-deputy-director-vice-chair` — Deputy Director / Vice Chair — `unreached`
 - `exec-ind-misc-chemical-safety-hazard-investigation-board-csb-director-administrator-chair-chemical-safety-hazard-investigation-board` — Director / Administrator / Chair, Chemical Safety & Hazard Investigation Board — `unreached`
 - `exec-ind-misc-chemical-safety-hazard-investigation-board-csb-inspector-general` — Inspector General — `unreached`
-
-## Civil Division  — 4 unpriced
-
-`exec-dept-doj-div-civil`
-
-- `exec-dept-doj-div-civil-assistant-attorney-general-civil-division` — Assistant Attorney General, Civil Division — `unreached`
-- `exec-dept-doj-div-civil-deputy-assistant-attorney-general-3-5` — Deputy Assistant Attorney General (×3-5) — `multiplicity`
-- `exec-dept-doj-div-civil-section-chief-multiple` — Section Chief (×multiple) — `multiplicity`
-- `exec-dept-doj-div-civil-trial-attorney-ausa-multiple` — Trial Attorney / AUSA (×multiple) — `multiplicity`
-
-## Civil Rights Division  — 4 unpriced
-
-`exec-dept-doj-div-civil-rights`
-
-- `exec-dept-doj-div-civil-rights-assistant-attorney-general-civil-rights-division` — Assistant Attorney General, Civil Rights Division — `unreached`
-- `exec-dept-doj-div-civil-rights-deputy-assistant-attorney-general-3-5` — Deputy Assistant Attorney General (×3-5) — `multiplicity`
-- `exec-dept-doj-div-civil-rights-section-chief-multiple` — Section Chief (×multiple) — `multiplicity`
-- `exec-dept-doj-div-civil-rights-trial-attorney-ausa-multiple` — Trial Attorney / AUSA (×multiple) — `multiplicity`
 
 ## Communications Division  — 4 unpriced
 
@@ -4158,15 +3989,6 @@ same list in the same run.
 - `exec-eop-cea-chief-of-staff` — Chief of Staff — `listed_no_rate`
 - `exec-eop-cea-economist-multiple` — Economist (×multiple) — `multiplicity`
 - `exec-eop-cea-senior-economist-multiple` — Senior Economist (×multiple) — `multiplicity`
-
-## Criminal Division  — 4 unpriced
-
-`exec-dept-doj-div-criminal`
-
-- `exec-dept-doj-div-criminal-assistant-attorney-general-criminal-division` — Assistant Attorney General, Criminal Division — `unreached`
-- `exec-dept-doj-div-criminal-deputy-assistant-attorney-general-3-5` — Deputy Assistant Attorney General (×3-5) — `multiplicity`
-- `exec-dept-doj-div-criminal-section-chief-multiple` — Section Chief (×multiple) — `multiplicity`
-- `exec-dept-doj-div-criminal-trial-attorney-ausa-multiple` — Trial Attorney / AUSA (×multiple) — `multiplicity`
 
 ## Criminal Investigative Division  — 4 unpriced
 
@@ -4456,15 +4278,6 @@ same list in the same run.
 - `leg-support-gao-education-workforce-income-security-managing-director-education-workforce-income-security` — Managing Director, Education, Workforce & Income Security — `unreached`
 - `leg-support-gao-education-workforce-income-security-senior-analyst-education-workforce-income-security-multiple` — Senior Analyst, Education, Workforce & Income Security (×multiple) — `multiplicity`
 
-## Employee Benefits Security Administration (EBSA)  — 4 unpriced
-
-`exec-dept-dol-ebsa`
-
-- `exec-dept-dol-ebsa-assistant-secretary-of-labor-for-ebsa` — Assistant Secretary of Labor for EBSA — `unreached`
-- `exec-dept-dol-ebsa-benefits-advisor-multiple` — Benefits Advisor (×multiple) — `multiplicity`
-- `exec-dept-dol-ebsa-criminal-investigator-multiple` — Criminal Investigator (×multiple) — `multiplicity`
-- `exec-dept-dol-ebsa-regional-director-10-regions` — Regional Director — 10 Regions — `unreached`
-
 ## Employment & Training Administration (ETA)  — 4 unpriced
 
 `exec-dept-dol-eta`
@@ -4474,24 +4287,6 @@ same list in the same run.
 - `exec-dept-dol-eta-deputy-assistant-secretary` — Deputy Assistant Secretary — `unreached`
 - `exec-dept-dol-eta-grant-officer-multiple` — Grant Officer (×multiple) — `multiplicity`
 
-## Environment & Natural Resources Division  — 4 unpriced
-
-`exec-dept-doj-div-enrd`
-
-- `exec-dept-doj-div-enrd-assistant-attorney-general-environment-natural-resources-division` — Assistant Attorney General, Environment & Natural Resources Division — `unreached`
-- `exec-dept-doj-div-enrd-deputy-assistant-attorney-general-3-5` — Deputy Assistant Attorney General (×3-5) — `multiplicity`
-- `exec-dept-doj-div-enrd-section-chief-multiple` — Section Chief (×multiple) — `multiplicity`
-- `exec-dept-doj-div-enrd-trial-attorney-ausa-multiple` — Trial Attorney / AUSA (×multiple) — `multiplicity`
-
-## Equal Employment Opportunity Commission (EEOC)  — 4 unpriced
-
-`exec-ind-misc-equal-employment-opportunity-commission-eeoc`
-
-- `exec-ind-misc-equal-employment-opportunity-commission-eeoc-chief-financial-officer` — Chief Financial Officer — `unreached`
-- `exec-ind-misc-equal-employment-opportunity-commission-eeoc-deputy-director-vice-chair` — Deputy Director / Vice Chair — `unreached`
-- `exec-ind-misc-equal-employment-opportunity-commission-eeoc-director-administrator-chair-equal-employment-opportunity-commission` — Director / Administrator / Chair, Equal Employment Opportunity Commission — `unreached`
-- `exec-ind-misc-equal-employment-opportunity-commission-eeoc-inspector-general` — Inspector General — `unreached`
-
 ## Farm Credit Administration  — 4 unpriced
 
 `exec-ind-misc-farm-credit-administration`
@@ -4500,15 +4295,6 @@ same list in the same run.
 - `exec-ind-misc-farm-credit-administration-deputy-director-vice-chair` — Deputy Director / Vice Chair — `unreached`
 - `exec-ind-misc-farm-credit-administration-general-counsel` — General Counsel — `unreached`
 - `exec-ind-misc-farm-credit-administration-inspector-general` — Inspector General — `unreached`
-
-## Federal Housing Administration (FHA)  — 4 unpriced
-
-`exec-dept-hud-fha`
-
-- `exec-dept-hud-fha-assistant-secretary-for-housing-fha-commissioner` — Assistant Secretary for Housing / FHA Commissioner — `unreached`
-- `exec-dept-hud-fha-deputy-assistant-secretary-multifamily-housing` — Deputy Assistant Secretary — Multifamily Housing — `unreached`
-- `exec-dept-hud-fha-deputy-assistant-secretary-single-family-housing` — Deputy Assistant Secretary — Single Family Housing — `unreached`
-- `exec-dept-hud-fha-homeownership-center-director-4-centers` — Homeownership Center Director (×4 centers) — `multiplicity`
 
 ## Federal Labor Relations Authority (FLRA)  — 4 unpriced
 
@@ -4590,15 +4376,6 @@ same list in the same run.
 - `leg-support-gao-forensic-audits-investigative-service-assistant-director-forensic-audits-investigative-service` — Assistant Director, Forensic Audits & Investigative Service — `unreached`
 - `leg-support-gao-forensic-audits-investigative-service-managing-director-forensic-audits-investigative-service` — Managing Director, Forensic Audits & Investigative Service — `unreached`
 - `leg-support-gao-forensic-audits-investigative-service-senior-analyst-forensic-audits-investigative-service-multiple` — Senior Analyst, Forensic Audits & Investigative Service (×multiple) — `multiplicity`
-
-## Ginnie Mae  — 4 unpriced
-
-`exec-dept-hud-ginnie`
-
-- `exec-dept-hud-ginnie-chief-financial-officer` — Chief Financial Officer — `unreached`
-- `exec-dept-hud-ginnie-chief-risk-officer` — Chief Risk Officer — `unreached`
-- `exec-dept-hud-ginnie-executive-vp-coo` — Executive VP / COO — `unreached`
-- `exec-dept-hud-ginnie-president-ginnie-mae` — President, Ginnie Mae — `unreached`
 
 ## Government Publishing Office (GPO)  — 4 unpriced
 
@@ -4852,6 +4629,15 @@ same list in the same run.
 - `leg-support-gao-international-affairs-trade-managing-director-international-affairs-trade` — Managing Director, International Affairs & Trade — `unreached`
 - `leg-support-gao-international-affairs-trade-senior-analyst-international-affairs-trade-multiple` — Senior Analyst, International Affairs & Trade (×multiple) — `multiplicity`
 
+## International Trade Administration (ITA)  — 4 unpriced
+
+`exec-dept-doc-ita`
+
+- `exec-dept-doc-ita-commercial-officer-multiple` — Commercial Officer (×multiple) — `multiplicity`
+- `exec-dept-doc-ita-deputy-under-secretary` — Deputy Under Secretary — `unreached`
+- `exec-dept-doc-ita-director-100-export-assistance-centers` — Director — 100+ Export Assistance Centers — `unreached`
+- `exec-dept-doc-ita-under-secretary-for-international-trade` — Under Secretary for International Trade — `unreached`
+
 ## K-9 Unit  — 4 unpriced
 
 `leg-support-uscp-k-9-unit`
@@ -4924,15 +4710,6 @@ same list in the same run.
 - `exec-ind-misc-national-credit-union-administration-ncua-general-counsel` — General Counsel — `unreached`
 - `exec-ind-misc-national-credit-union-administration-ncua-inspector-general` — Inspector General — `unreached`
 
-## National Endowment for the Arts (NEA)  — 4 unpriced
-
-`exec-ind-misc-national-endowment-for-the-arts-nea`
-
-- `exec-ind-misc-national-endowment-for-the-arts-nea-chief-financial-officer` — Chief Financial Officer — `unreached`
-- `exec-ind-misc-national-endowment-for-the-arts-nea-deputy-director-vice-chair` — Deputy Director / Vice Chair — `unreached`
-- `exec-ind-misc-national-endowment-for-the-arts-nea-director-administrator-chair-national-endowment-for-the-arts` — Director / Administrator / Chair, National Endowment for the Arts — `listed_no_rate`
-- `exec-ind-misc-national-endowment-for-the-arts-nea-inspector-general` — Inspector General — `unreached`
-
 ## National Endowment for the Humanities (NEH)  — 4 unpriced
 
 `exec-ind-misc-national-endowment-for-the-humanities-neh`
@@ -4941,15 +4718,6 @@ same list in the same run.
 - `exec-ind-misc-national-endowment-for-the-humanities-neh-deputy-director-vice-chair` — Deputy Director / Vice Chair — `unreached`
 - `exec-ind-misc-national-endowment-for-the-humanities-neh-general-counsel` — General Counsel — `listed_no_rate`
 - `exec-ind-misc-national-endowment-for-the-humanities-neh-inspector-general` — Inspector General — `unreached`
-
-## National Mediation Board (NMB)  — 4 unpriced
-
-`exec-ind-misc-national-mediation-board-nmb`
-
-- `exec-ind-misc-national-mediation-board-nmb-chief-financial-officer` — Chief Financial Officer — `unreached`
-- `exec-ind-misc-national-mediation-board-nmb-deputy-director-vice-chair` — Deputy Director / Vice Chair — `unreached`
-- `exec-ind-misc-national-mediation-board-nmb-director-administrator-chair-national-mediation-board` — Director / Administrator / Chair, National Mediation Board — `unreached`
-- `exec-ind-misc-national-mediation-board-nmb-inspector-general` — Inspector General — `unreached`
 
 ## National Security Division  — 4 unpriced
 
@@ -4978,95 +4746,14 @@ same list in the same run.
 - `leg-support-gao-natural-resources-environment-managing-director-natural-resources-environment` — Managing Director, Natural Resources & Environment — `unreached`
 - `leg-support-gao-natural-resources-environment-senior-analyst-natural-resources-environment-multiple` — Senior Analyst, Natural Resources & Environment (×multiple) — `multiplicity`
 
-## Office of Air & Radiation (OAR)  — 4 unpriced
+## Occupational Safety & Health Administration (OSHA)  — 4 unpriced
 
-`exec-ind-epa-office-of-air-radiation-oar`
+`exec-dept-dol-osha`
 
-- `exec-ind-epa-office-of-air-radiation-oar-assistant-administrator-office-of-air-radiation` — Assistant Administrator, Office of Air & Radiation — `unreached`
-- `exec-ind-epa-office-of-air-radiation-oar-deputy-assistant-administrator` — Deputy Assistant Administrator — `unreached`
-- `exec-ind-epa-office-of-air-radiation-oar-director-division-multiple` — Director — Division (×multiple) — `multiplicity`
-- `exec-ind-epa-office-of-air-radiation-oar-environmental-scientist-engineer-multiple` — Environmental Scientist / Engineer (×multiple) — `multiplicity`
-
-## Office of Chemical Safety & Pollution Prevention (OCSPP)  — 4 unpriced
-
-`exec-ind-epa-office-of-chemical-safety-pollution-prevention-ocspp`
-
-- `exec-ind-epa-office-of-chemical-safety-pollution-prevention-ocspp-assistant-administrator-office-of-chemical-safety-pollution-prevention` — Assistant Administrator, Office of Chemical Safety & Pollution Prevention — `unreached`
-- `exec-ind-epa-office-of-chemical-safety-pollution-prevention-ocspp-deputy-assistant-administrator` — Deputy Assistant Administrator — `unreached`
-- `exec-ind-epa-office-of-chemical-safety-pollution-prevention-ocspp-director-division-multiple` — Director — Division (×multiple) — `multiplicity`
-- `exec-ind-epa-office-of-chemical-safety-pollution-prevention-ocspp-environmental-scientist-engineer-multiple` — Environmental Scientist / Engineer (×multiple) — `multiplicity`
-
-## Office of E-Government & IT (Federal CIO)  — 4 unpriced
-
-`exec-eop-omb-office-of-e-government-it-federal-cio`
-
-- `exec-eop-omb-office-of-e-government-it-federal-cio-administrator-chief-office-of-e-government-it-federal-cio` — Administrator / Chief, Office of E-Government & IT (Federal CIO) — `unreached`
-- `exec-eop-omb-office-of-e-government-it-federal-cio-budget-examiner-multiple` — Budget Examiner (×multiple) — `multiplicity`
-- `exec-eop-omb-office-of-e-government-it-federal-cio-deputy-administrator-office-of-e-government-it-federal-cio` — Deputy Administrator, Office of E-Government & IT (Federal CIO) — `unreached`
-- `exec-eop-omb-office-of-e-government-it-federal-cio-program-associate-director-multiple` — Program Associate Director (×multiple) — `multiplicity`
-
-## Office of Elementary & Secondary Education (OESE)  — 4 unpriced
-
-`exec-dept-ed-oese`
-
-- `exec-dept-ed-oese-assistant-secretary-for-oese` — Assistant Secretary for OESE — `unreached`
-- `exec-dept-ed-oese-director-school-improvement` — Director — School Improvement — `unreached`
-- `exec-dept-ed-oese-director-title-i-program` — Director — Title I Program — `unreached`
-- `exec-dept-ed-oese-education-program-specialist-multiple` — Education Program Specialist (×multiple) — `multiplicity`
-
-## Office of Enforcement & Compliance Assurance (OECA)  — 4 unpriced
-
-`exec-ind-epa-office-of-enforcement-compliance-assurance-oeca`
-
-- `exec-ind-epa-office-of-enforcement-compliance-assurance-oeca-assistant-administrator-office-of-enforcement-compliance-assurance` — Assistant Administrator, Office of Enforcement & Compliance Assurance — `unreached`
-- `exec-ind-epa-office-of-enforcement-compliance-assurance-oeca-deputy-assistant-administrator` — Deputy Assistant Administrator — `unreached`
-- `exec-ind-epa-office-of-enforcement-compliance-assurance-oeca-director-division-multiple` — Director — Division (×multiple) — `multiplicity`
-- `exec-ind-epa-office-of-enforcement-compliance-assurance-oeca-environmental-scientist-engineer-multiple` — Environmental Scientist / Engineer (×multiple) — `multiplicity`
-
-## Office of Federal Financial Management  — 4 unpriced
-
-`exec-eop-omb-office-of-federal-financial-management`
-
-- `exec-eop-omb-office-of-federal-financial-management-administrator-chief-office-of-federal-financial-management` — Administrator / Chief, Office of Federal Financial Management — `unreached`
-- `exec-eop-omb-office-of-federal-financial-management-budget-examiner-multiple` — Budget Examiner (×multiple) — `multiplicity`
-- `exec-eop-omb-office-of-federal-financial-management-deputy-administrator-office-of-federal-financial-management` — Deputy Administrator, Office of Federal Financial Management — `unreached`
-- `exec-eop-omb-office-of-federal-financial-management-program-associate-director-multiple` — Program Associate Director (×multiple) — `multiplicity`
-
-## Office of Federal Procurement Policy  — 4 unpriced
-
-`exec-eop-omb-office-of-federal-procurement-policy`
-
-- `exec-eop-omb-office-of-federal-procurement-policy-administrator-chief-office-of-federal-procurement-policy` — Administrator / Chief, Office of Federal Procurement Policy — `unreached`
-- `exec-eop-omb-office-of-federal-procurement-policy-budget-examiner-multiple` — Budget Examiner (×multiple) — `multiplicity`
-- `exec-eop-omb-office-of-federal-procurement-policy-deputy-administrator-office-of-federal-procurement-policy` — Deputy Administrator, Office of Federal Procurement Policy — `unreached`
-- `exec-eop-omb-office-of-federal-procurement-policy-program-associate-director-multiple` — Program Associate Director (×multiple) — `multiplicity`
-
-## Office of International & Tribal Affairs (OITA)  — 4 unpriced
-
-`exec-ind-epa-office-of-international-tribal-affairs-oita`
-
-- `exec-ind-epa-office-of-international-tribal-affairs-oita-assistant-administrator-office-of-international-tribal-affairs` — Assistant Administrator, Office of International & Tribal Affairs — `unreached`
-- `exec-ind-epa-office-of-international-tribal-affairs-oita-deputy-assistant-administrator` — Deputy Assistant Administrator — `unreached`
-- `exec-ind-epa-office-of-international-tribal-affairs-oita-director-division-multiple` — Director — Division (×multiple) — `multiplicity`
-- `exec-ind-epa-office-of-international-tribal-affairs-oita-environmental-scientist-engineer-multiple` — Environmental Scientist / Engineer (×multiple) — `multiplicity`
-
-## Office of Land & Emergency Management (OLEM)  — 4 unpriced
-
-`exec-ind-epa-office-of-land-emergency-management-olem`
-
-- `exec-ind-epa-office-of-land-emergency-management-olem-assistant-administrator-office-of-land-emergency-management` — Assistant Administrator, Office of Land & Emergency Management — `unreached`
-- `exec-ind-epa-office-of-land-emergency-management-olem-deputy-assistant-administrator` — Deputy Assistant Administrator — `unreached`
-- `exec-ind-epa-office-of-land-emergency-management-olem-director-division-multiple` — Director — Division (×multiple) — `multiplicity`
-- `exec-ind-epa-office-of-land-emergency-management-olem-environmental-scientist-engineer-multiple` — Environmental Scientist / Engineer (×multiple) — `multiplicity`
-
-## Office of Management and Budget (OMB)  — 4 unpriced
-
-`exec-eop-omb`
-
-- `exec-eop-omb-chief-of-staff` — Chief of Staff — `unreached`
-- `exec-eop-omb-deputy-director-omb` — Deputy Director, OMB — `unreached`
-- `exec-eop-omb-director-omb` — Director, OMB — `unreached`
-- `exec-eop-omb-general-counsel` — General Counsel — `unreached`
+- `exec-dept-dol-osha-area-director-85-area-offices` — Area Director — 85 Area Offices — `unreached`
+- `exec-dept-dol-osha-compliance-safety-health-officer-csho-inspector-multiple` — Compliance Safety & Health Officer (CSHO) — Inspector (×multiple) — `multiplicity`
+- `exec-dept-dol-osha-deputy-assistant-secretary` — Deputy Assistant Secretary — `unreached`
+- `exec-dept-dol-osha-regional-administrator-10-regions` — Regional Administrator — 10 Regions — `unreached`
 
 ## Office of Professional Responsibility  — 4 unpriced
 
@@ -5077,15 +4764,6 @@ same list in the same run.
 - `leg-support-uscp-office-of-professional-responsibility-officer-office-of-professional-responsibility-multiple` — Officer, Office of Professional Responsibility (×multiple) — `multiplicity`
 - `leg-support-uscp-office-of-professional-responsibility-sergeant-office-of-professional-responsibility-multiple` — Sergeant, Office of Professional Responsibility (×multiple) — `multiplicity`
 
-## Office of Research & Development (ORD)  — 4 unpriced
-
-`exec-ind-epa-office-of-research-development-ord`
-
-- `exec-ind-epa-office-of-research-development-ord-assistant-administrator-office-of-research-development` — Assistant Administrator, Office of Research & Development — `unreached`
-- `exec-ind-epa-office-of-research-development-ord-deputy-assistant-administrator` — Deputy Assistant Administrator — `unreached`
-- `exec-ind-epa-office-of-research-development-ord-director-division-multiple` — Director — Division (×multiple) — `multiplicity`
-- `exec-ind-epa-office-of-research-development-ord-environmental-scientist-engineer-multiple` — Environmental Scientist / Engineer (×multiple) — `multiplicity`
-
 ## Office of Special Counsel (OSC)  — 4 unpriced
 
 `exec-ind-misc-office-of-special-counsel-osc`
@@ -5094,15 +4772,6 @@ same list in the same run.
 - `exec-ind-misc-office-of-special-counsel-osc-deputy-director-vice-chair` — Deputy Director / Vice Chair — `unreached`
 - `exec-ind-misc-office-of-special-counsel-osc-general-counsel` — General Counsel — `unreached`
 - `exec-ind-misc-office-of-special-counsel-osc-inspector-general` — Inspector General — `unreached`
-
-## Office of Water (OW)  — 4 unpriced
-
-`exec-ind-epa-office-of-water-ow`
-
-- `exec-ind-epa-office-of-water-ow-assistant-administrator-office-of-water` — Assistant Administrator, Office of Water — `unreached`
-- `exec-ind-epa-office-of-water-ow-deputy-assistant-administrator` — Deputy Assistant Administrator — `unreached`
-- `exec-ind-epa-office-of-water-ow-director-division-multiple` — Director — Division (×multiple) — `multiplicity`
-- `exec-ind-epa-office-of-water-ow-environmental-scientist-engineer-multiple` — Environmental Scientist / Engineer (×multiple) — `multiplicity`
 
 ## Office of the Chief of Protocol  — 4 unpriced
 
@@ -5157,15 +4826,6 @@ same list in the same run.
 - `leg-support-gao-physical-infrastructure-assistant-director-physical-infrastructure` — Assistant Director, Physical Infrastructure — `unreached`
 - `leg-support-gao-physical-infrastructure-managing-director-physical-infrastructure` — Managing Director, Physical Infrastructure — `unreached`
 - `leg-support-gao-physical-infrastructure-senior-analyst-physical-infrastructure-multiple` — Senior Analyst, Physical Infrastructure (×multiple) — `multiplicity`
-
-## Pipeline & Hazardous Materials Safety Admin (PHMSA)  — 4 unpriced
-
-`exec-dept-dot-phmsa`
-
-- `exec-dept-dot-phmsa-administrator-phmsa` — Administrator, PHMSA — `listed_no_rate`
-- `exec-dept-dot-phmsa-associate-administrator-pipelines-hazardous-materials` — Associate Administrator — Pipelines & Hazardous Materials — `unreached`
-- `exec-dept-dot-phmsa-pipeline-safety-inspector-multiple` — Pipeline Safety Inspector (×multiple) — `multiplicity`
-- `exec-dept-dot-phmsa-regional-director-5-regions` — Regional Director — 5 Regions — `unreached`
 
 ## Postal Regulatory Commission  — 4 unpriced
 
@@ -5491,15 +5151,6 @@ same list in the same run.
 - `leg-support-cbo-tax-analysis-division-deputy-chief-tax-analysis-division` — Deputy Chief, Tax Analysis Division — `unreached`
 - `leg-support-cbo-tax-analysis-division-senior-analyst-tax-analysis-division-multiple` — Senior Analyst, Tax Analysis Division (×multiple) — `multiplicity`
 
-## Tax Division  — 4 unpriced
-
-`exec-dept-doj-div-tax`
-
-- `exec-dept-doj-div-tax-assistant-attorney-general-tax-division` — Assistant Attorney General, Tax Division — `unreached`
-- `exec-dept-doj-div-tax-deputy-assistant-attorney-general-3-5` — Deputy Assistant Attorney General (×3-5) — `multiplicity`
-- `exec-dept-doj-div-tax-section-chief-multiple` — Section Chief (×multiple) — `multiplicity`
-- `exec-dept-doj-div-tax-trial-attorney-ausa-multiple` — Trial Attorney / AUSA (×multiple) — `multiplicity`
-
 ## Tennessee Valley Authority (TVA)  — 4 unpriced
 
 `exec-ind-misc-tennessee-valley-authority-tva`
@@ -5563,15 +5214,6 @@ same list in the same run.
 - `leg-senate-cmte-judiciary-ranking-member-judiciary` — Ranking Member, Judiciary — `unreached`
 - `leg-senate-cmte-judiciary-staff-director-judiciary` — Staff Director, Judiciary — `unreached`
 
-## Wage & Hour Division (WHD)  — 4 unpriced
-
-`exec-dept-dol-whd`
-
-- `exec-dept-dol-whd-administrator-whd` — Administrator, WHD — `unreached`
-- `exec-dept-dol-whd-district-director-50-districts` — District Director — 50+ districts — `unreached`
-- `exec-dept-dol-whd-regional-administrator-5-regions` — Regional Administrator — 5 Regions — `unreached`
-- `exec-dept-dol-whd-wage-hour-investigator-multiple` — Wage & Hour Investigator (×multiple) — `multiplicity`
-
 ## Africa & Global Health Policy  — 3 unpriced
 
 `leg-senate-cmte-foreign-relations-sub-africa-global-health-policy`
@@ -5595,6 +5237,14 @@ same list in the same run.
 - `leg-senate-cmte-armed-services-sub-airland-chair-subcommittee-on-airland` — Chair, Subcommittee on Airland — `unreached`
 - `leg-senate-cmte-armed-services-sub-airland-ranking-member-subcommittee-on-airland` — Ranking Member, Subcommittee on Airland — `unreached`
 - `leg-senate-cmte-armed-services-sub-airland-staff-director-subcommittee-on-airland` — Staff Director, Subcommittee on Airland — `unreached`
+
+## Antitrust Division  — 3 unpriced
+
+`exec-dept-doj-div-antitrust`
+
+- `exec-dept-doj-div-antitrust-deputy-assistant-attorney-general-3-5` — Deputy Assistant Attorney General (×3-5) — `multiplicity`
+- `exec-dept-doj-div-antitrust-section-chief-multiple` — Section Chief (×multiple) — `multiplicity`
+- `exec-dept-doj-div-antitrust-trial-attorney-ausa-multiple` — Trial Attorney / AUSA (×multiple) — `multiplicity`
 
 ## Antitrust, Competition Policy, and Consumer Rights  — 3 unpriced
 
@@ -5628,6 +5278,46 @@ same list in the same run.
 - `leg-senate-cmte-homeland-security-governmental-affairs-sub-government-operations-border-management-ranking-member-subcommittee-on-government-operations-border-management` — Ranking Member, Subcommittee on Government Operations & Border Management — `unreached`
 - `leg-senate-cmte-homeland-security-governmental-affairs-sub-government-operations-border-management-staff-director-subcommittee-on-government-operations-border-management` — Staff Director, Subcommittee on Government Operations & Border Management — `unreached`
 
+## Bureau of African Affairs  — 3 unpriced
+
+`exec-dept-state-bureau-of-african-affairs`
+
+- `exec-dept-state-bureau-of-african-affairs-deputy-assistant-secretary-2-4-bureau-of-african-affairs` — Deputy Assistant Secretary (×2-4), Bureau of African Affairs — `multiplicity`
+- `exec-dept-state-bureau-of-african-affairs-foreign-service-officer-multiple` — Foreign Service Officer (×multiple) — `multiplicity`
+- `exec-dept-state-bureau-of-african-affairs-office-director-multiple-bureau-of-african-affairs` — Office Director (×multiple), Bureau of African Affairs — `multiplicity`
+
+## Bureau of Arms Control, Verification & Compliance  — 3 unpriced
+
+`exec-dept-state-bureau-of-arms-control-verification-compliance`
+
+- `exec-dept-state-bureau-of-arms-control-verification-compliance-deputy-assistant-secretary-2-4-bureau-of-arms-control-verification-compliance` — Deputy Assistant Secretary (×2-4), Bureau of Arms Control, Verification & Compliance — `multiplicity`
+- `exec-dept-state-bureau-of-arms-control-verification-compliance-foreign-service-officer-multiple` — Foreign Service Officer (×multiple) — `multiplicity`
+- `exec-dept-state-bureau-of-arms-control-verification-compliance-office-director-multiple-bureau-of-arms-control-verification-compliance` — Office Director (×multiple), Bureau of Arms Control, Verification & Compliance — `multiplicity`
+
+## Bureau of Consular Affairs  — 3 unpriced
+
+`exec-dept-state-bureau-of-consular-affairs`
+
+- `exec-dept-state-bureau-of-consular-affairs-deputy-assistant-secretary-2-4-bureau-of-consular-affairs` — Deputy Assistant Secretary (×2-4), Bureau of Consular Affairs — `multiplicity`
+- `exec-dept-state-bureau-of-consular-affairs-foreign-service-officer-multiple` — Foreign Service Officer (×multiple) — `multiplicity`
+- `exec-dept-state-bureau-of-consular-affairs-office-director-multiple-bureau-of-consular-affairs` — Office Director (×multiple), Bureau of Consular Affairs — `multiplicity`
+
+## Bureau of Diplomatic Security  — 3 unpriced
+
+`exec-dept-state-bureau-of-diplomatic-security`
+
+- `exec-dept-state-bureau-of-diplomatic-security-deputy-assistant-secretary-2-4-bureau-of-diplomatic-security` — Deputy Assistant Secretary (×2-4), Bureau of Diplomatic Security — `multiplicity`
+- `exec-dept-state-bureau-of-diplomatic-security-foreign-service-officer-multiple` — Foreign Service Officer (×multiple) — `multiplicity`
+- `exec-dept-state-bureau-of-diplomatic-security-office-director-multiple-bureau-of-diplomatic-security` — Office Director (×multiple), Bureau of Diplomatic Security — `multiplicity`
+
+## Bureau of East Asian & Pacific Affairs  — 3 unpriced
+
+`exec-dept-state-bureau-of-east-asian-pacific-affairs`
+
+- `exec-dept-state-bureau-of-east-asian-pacific-affairs-deputy-assistant-secretary-2-4-bureau-of-east-asian-pacific-affairs` — Deputy Assistant Secretary (×2-4), Bureau of East Asian & Pacific Affairs — `multiplicity`
+- `exec-dept-state-bureau-of-east-asian-pacific-affairs-foreign-service-officer-multiple` — Foreign Service Officer (×multiple) — `multiplicity`
+- `exec-dept-state-bureau-of-east-asian-pacific-affairs-office-director-multiple-bureau-of-east-asian-pacific-affairs` — Office Director (×multiple), Bureau of East Asian & Pacific Affairs — `multiplicity`
+
 ## Bureau of Economic Analysis (BEA)  — 3 unpriced
 
 `exec-dept-doc-bea`
@@ -5635,6 +5325,70 @@ same list in the same run.
 - `exec-dept-doc-bea-chief-statistician` — Chief Statistician — `unreached`
 - `exec-dept-doc-bea-deputy-director` — Deputy Director — `unreached`
 - `exec-dept-doc-bea-national-accounts-economist-multiple` — National Accounts Economist (×multiple) — `multiplicity`
+
+## Bureau of European & Eurasian Affairs  — 3 unpriced
+
+`exec-dept-state-bureau-of-european-eurasian-affairs`
+
+- `exec-dept-state-bureau-of-european-eurasian-affairs-deputy-assistant-secretary-2-4-bureau-of-european-eurasian-affairs` — Deputy Assistant Secretary (×2-4), Bureau of European & Eurasian Affairs — `multiplicity`
+- `exec-dept-state-bureau-of-european-eurasian-affairs-foreign-service-officer-multiple` — Foreign Service Officer (×multiple) — `multiplicity`
+- `exec-dept-state-bureau-of-european-eurasian-affairs-office-director-multiple-bureau-of-european-eurasian-affairs` — Office Director (×multiple), Bureau of European & Eurasian Affairs — `multiplicity`
+
+## Bureau of Global Public Affairs  — 3 unpriced
+
+`exec-dept-state-bureau-of-global-public-affairs`
+
+- `exec-dept-state-bureau-of-global-public-affairs-deputy-assistant-secretary-2-4-bureau-of-global-public-affairs` — Deputy Assistant Secretary (×2-4), Bureau of Global Public Affairs — `multiplicity`
+- `exec-dept-state-bureau-of-global-public-affairs-foreign-service-officer-multiple` — Foreign Service Officer (×multiple) — `multiplicity`
+- `exec-dept-state-bureau-of-global-public-affairs-office-director-multiple-bureau-of-global-public-affairs` — Office Director (×multiple), Bureau of Global Public Affairs — `multiplicity`
+
+## Bureau of International Organization Affairs  — 3 unpriced
+
+`exec-dept-state-bureau-of-international-organization-affairs`
+
+- `exec-dept-state-bureau-of-international-organization-affairs-deputy-assistant-secretary-2-4-bureau-of-international-organization-affairs` — Deputy Assistant Secretary (×2-4), Bureau of International Organization Affairs — `multiplicity`
+- `exec-dept-state-bureau-of-international-organization-affairs-foreign-service-officer-multiple` — Foreign Service Officer (×multiple) — `multiplicity`
+- `exec-dept-state-bureau-of-international-organization-affairs-office-director-multiple-bureau-of-international-organization-affairs` — Office Director (×multiple), Bureau of International Organization Affairs — `multiplicity`
+
+## Bureau of International Security & Nonproliferation  — 3 unpriced
+
+`exec-dept-state-bureau-of-international-security-nonproliferation`
+
+- `exec-dept-state-bureau-of-international-security-nonproliferation-deputy-assistant-secretary-2-4-bureau-of-international-security-nonproliferation` — Deputy Assistant Secretary (×2-4), Bureau of International Security & Nonproliferation — `multiplicity`
+- `exec-dept-state-bureau-of-international-security-nonproliferation-foreign-service-officer-multiple` — Foreign Service Officer (×multiple) — `multiplicity`
+- `exec-dept-state-bureau-of-international-security-nonproliferation-office-director-multiple-bureau-of-international-security-nonproliferation` — Office Director (×multiple), Bureau of International Security & Nonproliferation — `multiplicity`
+
+## Bureau of Near Eastern Affairs  — 3 unpriced
+
+`exec-dept-state-bureau-of-near-eastern-affairs`
+
+- `exec-dept-state-bureau-of-near-eastern-affairs-deputy-assistant-secretary-2-4-bureau-of-near-eastern-affairs` — Deputy Assistant Secretary (×2-4), Bureau of Near Eastern Affairs — `multiplicity`
+- `exec-dept-state-bureau-of-near-eastern-affairs-foreign-service-officer-multiple` — Foreign Service Officer (×multiple) — `multiplicity`
+- `exec-dept-state-bureau-of-near-eastern-affairs-office-director-multiple-bureau-of-near-eastern-affairs` — Office Director (×multiple), Bureau of Near Eastern Affairs — `multiplicity`
+
+## Bureau of Political-Military Affairs  — 3 unpriced
+
+`exec-dept-state-bureau-of-political-military-affairs`
+
+- `exec-dept-state-bureau-of-political-military-affairs-deputy-assistant-secretary-2-4-bureau-of-political-military-affairs` — Deputy Assistant Secretary (×2-4), Bureau of Political-Military Affairs — `multiplicity`
+- `exec-dept-state-bureau-of-political-military-affairs-foreign-service-officer-multiple` — Foreign Service Officer (×multiple) — `multiplicity`
+- `exec-dept-state-bureau-of-political-military-affairs-office-director-multiple-bureau-of-political-military-affairs` — Office Director (×multiple), Bureau of Political-Military Affairs — `multiplicity`
+
+## Bureau of South & Central Asian Affairs  — 3 unpriced
+
+`exec-dept-state-bureau-of-south-central-asian-affairs`
+
+- `exec-dept-state-bureau-of-south-central-asian-affairs-deputy-assistant-secretary-2-4-bureau-of-south-central-asian-affairs` — Deputy Assistant Secretary (×2-4), Bureau of South & Central Asian Affairs — `multiplicity`
+- `exec-dept-state-bureau-of-south-central-asian-affairs-foreign-service-officer-multiple` — Foreign Service Officer (×multiple) — `multiplicity`
+- `exec-dept-state-bureau-of-south-central-asian-affairs-office-director-multiple-bureau-of-south-central-asian-affairs` — Office Director (×multiple), Bureau of South & Central Asian Affairs — `multiplicity`
+
+## Bureau of Western Hemisphere Affairs  — 3 unpriced
+
+`exec-dept-state-bureau-of-western-hemisphere-affairs`
+
+- `exec-dept-state-bureau-of-western-hemisphere-affairs-deputy-assistant-secretary-2-4-bureau-of-western-hemisphere-affairs` — Deputy Assistant Secretary (×2-4), Bureau of Western Hemisphere Affairs — `multiplicity`
+- `exec-dept-state-bureau-of-western-hemisphere-affairs-foreign-service-officer-multiple` — Foreign Service Officer (×multiple) — `multiplicity`
+- `exec-dept-state-bureau-of-western-hemisphere-affairs-office-director-multiple-bureau-of-western-hemisphere-affairs` — Office Director (×multiple), Bureau of Western Hemisphere Affairs — `multiplicity`
 
 ## Chemical Safety, Waste Management, Environmental Justice & Regulatory Oversight  — 3 unpriced
 
@@ -5659,6 +5413,22 @@ same list in the same run.
 - `leg-senate-cmte-health-education-labor-pensions-sub-children-families-chair-subcommittee-on-children-families` — Chair, Subcommittee on Children & Families — `unreached`
 - `leg-senate-cmte-health-education-labor-pensions-sub-children-families-ranking-member-subcommittee-on-children-families` — Ranking Member, Subcommittee on Children & Families — `unreached`
 - `leg-senate-cmte-health-education-labor-pensions-sub-children-families-staff-director-subcommittee-on-children-families` — Staff Director, Subcommittee on Children & Families — `unreached`
+
+## Civil Division  — 3 unpriced
+
+`exec-dept-doj-div-civil`
+
+- `exec-dept-doj-div-civil-deputy-assistant-attorney-general-3-5` — Deputy Assistant Attorney General (×3-5) — `multiplicity`
+- `exec-dept-doj-div-civil-section-chief-multiple` — Section Chief (×multiple) — `multiplicity`
+- `exec-dept-doj-div-civil-trial-attorney-ausa-multiple` — Trial Attorney / AUSA (×multiple) — `multiplicity`
+
+## Civil Rights Division  — 3 unpriced
+
+`exec-dept-doj-div-civil-rights`
+
+- `exec-dept-doj-div-civil-rights-deputy-assistant-attorney-general-3-5` — Deputy Assistant Attorney General (×3-5) — `multiplicity`
+- `exec-dept-doj-div-civil-rights-section-chief-multiple` — Section Chief (×multiple) — `multiplicity`
+- `exec-dept-doj-div-civil-rights-trial-attorney-ausa-multiple` — Trial Attorney / AUSA (×multiple) — `multiplicity`
 
 ## Clean Air, Climate, and Nuclear Innovation and Safety  — 3 unpriced
 
@@ -5699,6 +5469,14 @@ same list in the same run.
 - `exec-ind-nsf-technology-innovation-partnerships-tip-convergence-accelerator-division-director-convergence-accelerator` — Division Director, Convergence Accelerator — `unreached`
 - `exec-ind-nsf-technology-innovation-partnerships-tip-convergence-accelerator-program-director-multiple` — Program Director (×multiple) — `multiplicity`
 - `exec-ind-nsf-technology-innovation-partnerships-tip-convergence-accelerator-program-officer-multiple` — Program Officer (×multiple) — `multiplicity`
+
+## Criminal Division  — 3 unpriced
+
+`exec-dept-doj-div-criminal`
+
+- `exec-dept-doj-div-criminal-deputy-assistant-attorney-general-3-5` — Deputy Assistant Attorney General (×3-5) — `multiplicity`
+- `exec-dept-doj-div-criminal-section-chief-multiple` — Section Chief (×multiple) — `multiplicity`
+- `exec-dept-doj-div-criminal-trial-attorney-ausa-multiple` — Trial Attorney / AUSA (×multiple) — `multiplicity`
 
 ## Cybersecurity  — 3 unpriced
 
@@ -5964,6 +5742,14 @@ same list in the same run.
 - `leg-senate-cmte-homeland-security-governmental-affairs-sub-emerging-threats-spending-oversight-ranking-member-subcommittee-on-emerging-threats-spending-oversight` — Ranking Member, Subcommittee on Emerging Threats & Spending Oversight — `unreached`
 - `leg-senate-cmte-homeland-security-governmental-affairs-sub-emerging-threats-spending-oversight-staff-director-subcommittee-on-emerging-threats-spending-oversight` — Staff Director, Subcommittee on Emerging Threats & Spending Oversight — `unreached`
 
+## Employee Benefits Security Administration (EBSA)  — 3 unpriced
+
+`exec-dept-dol-ebsa`
+
+- `exec-dept-dol-ebsa-benefits-advisor-multiple` — Benefits Advisor (×multiple) — `multiplicity`
+- `exec-dept-dol-ebsa-criminal-investigator-multiple` — Criminal Investigator (×multiple) — `multiplicity`
+- `exec-dept-dol-ebsa-regional-director-10-regions` — Regional Director — 10 Regions — `unreached`
+
 ## Employment & Workplace Safety  — 3 unpriced
 
 `leg-senate-cmte-health-education-labor-pensions-sub-employment-workplace-safety`
@@ -5987,6 +5773,14 @@ same list in the same run.
 - `leg-senate-cmte-finance-sub-energy-natural-resources-infrastructure-chair-subcommittee-on-energy-natural-resources-infrastructure` — Chair, Subcommittee on Energy, Natural Resources & Infrastructure — `unreached`
 - `leg-senate-cmte-finance-sub-energy-natural-resources-infrastructure-ranking-member-subcommittee-on-energy-natural-resources-infrastructure` — Ranking Member, Subcommittee on Energy, Natural Resources & Infrastructure — `unreached`
 - `leg-senate-cmte-finance-sub-energy-natural-resources-infrastructure-staff-director-subcommittee-on-energy-natural-resources-infrastructure` — Staff Director, Subcommittee on Energy, Natural Resources & Infrastructure — `unreached`
+
+## Environment & Natural Resources Division  — 3 unpriced
+
+`exec-dept-doj-div-enrd`
+
+- `exec-dept-doj-div-enrd-deputy-assistant-attorney-general-3-5` — Deputy Assistant Attorney General (×3-5) — `multiplicity`
+- `exec-dept-doj-div-enrd-section-chief-multiple` — Section Chief (×multiple) — `multiplicity`
+- `exec-dept-doj-div-enrd-trial-attorney-ausa-multiple` — Trial Attorney / AUSA (×multiple) — `multiplicity`
 
 ## Environmental Protection Agency (EPA)  — 3 unpriced
 
@@ -6019,6 +5813,14 @@ same list in the same run.
 - `exec-ind-misc-federal-election-commission-fec-deputy-director-vice-chair` — Deputy Director / Vice Chair — `unreached`
 - `exec-ind-misc-federal-election-commission-fec-director-administrator-chair-federal-election-commission` — Director / Administrator / Chair, Federal Election Commission — `unreached`
 - `exec-ind-misc-federal-election-commission-fec-inspector-general` — Inspector General — `unreached`
+
+## Federal Housing Administration (FHA)  — 3 unpriced
+
+`exec-dept-hud-fha`
+
+- `exec-dept-hud-fha-deputy-assistant-secretary-multifamily-housing` — Deputy Assistant Secretary — Multifamily Housing — `unreached`
+- `exec-dept-hud-fha-deputy-assistant-secretary-single-family-housing` — Deputy Assistant Secretary — Single Family Housing — `unreached`
+- `exec-dept-hud-fha-homeownership-center-director-4-centers` — Homeownership Center Director (×4 centers) — `multiplicity`
 
 ## Federal Maritime Commission (FMC)  — 3 unpriced
 
@@ -6067,6 +5869,14 @@ same list in the same run.
 - `leg-senate-cmte-agriculture-nutrition-and-forestry-sub-food-nutrition-specialty-crops-agricultural-research-chair-subcommittee-on-food-nutrition-specialty-crops-agricultural-research` — Chair, Subcommittee on Food & Nutrition, Specialty Crops & Agricultural Research — `unreached`
 - `leg-senate-cmte-agriculture-nutrition-and-forestry-sub-food-nutrition-specialty-crops-agricultural-research-ranking-member-subcommittee-on-food-nutrition-specialty-crops-agricultural-research` — Ranking Member, Subcommittee on Food & Nutrition, Specialty Crops & Agricultural Research — `unreached`
 - `leg-senate-cmte-agriculture-nutrition-and-forestry-sub-food-nutrition-specialty-crops-agricultural-research-staff-director-subcommittee-on-food-nutrition-specialty-crops-agricultural-research` — Staff Director, Subcommittee on Food & Nutrition, Specialty Crops & Agricultural Research — `unreached`
+
+## Ginnie Mae  — 3 unpriced
+
+`exec-dept-hud-ginnie`
+
+- `exec-dept-hud-ginnie-chief-financial-officer` — Chief Financial Officer — `unreached`
+- `exec-dept-hud-ginnie-chief-risk-officer` — Chief Risk Officer — `unreached`
+- `exec-dept-hud-ginnie-executive-vp-coo` — Executive VP / COO — `unreached`
 
 ## Health Care  — 3 unpriced
 
@@ -6316,6 +6126,14 @@ same list in the same run.
 - `exec-ind-nsf-social-behavioral-economic-sciences-sbe-national-center-for-science-engineering-statistics-program-director-multiple` — Program Director (×multiple) — `multiplicity`
 - `exec-ind-nsf-social-behavioral-economic-sciences-sbe-national-center-for-science-engineering-statistics-program-officer-multiple` — Program Officer (×multiple) — `multiplicity`
 
+## National Endowment for the Arts (NEA)  — 3 unpriced
+
+`exec-ind-misc-national-endowment-for-the-arts-nea`
+
+- `exec-ind-misc-national-endowment-for-the-arts-nea-chief-financial-officer` — Chief Financial Officer — `unreached`
+- `exec-ind-misc-national-endowment-for-the-arts-nea-deputy-director-vice-chair` — Deputy Director / Vice Chair — `unreached`
+- `exec-ind-misc-national-endowment-for-the-arts-nea-inspector-general` — Inspector General — `unreached`
+
 ## National Labor Relations Board (NLRB — independent)  — 3 unpriced
 
 `exec-ind-misc-national-labor-relations-board-nlrb-independent`
@@ -6323,6 +6141,14 @@ same list in the same run.
 - `exec-ind-misc-national-labor-relations-board-nlrb-independent-deputy-director-vice-chair` — Deputy Director / Vice Chair — `unreached`
 - `exec-ind-misc-national-labor-relations-board-nlrb-independent-director-administrator-chair-national-labor-relations-board` — Director / Administrator / Chair, National Labor Relations Board — `unreached`
 - `exec-ind-misc-national-labor-relations-board-nlrb-independent-inspector-general` — Inspector General — `unreached`
+
+## National Mediation Board (NMB)  — 3 unpriced
+
+`exec-ind-misc-national-mediation-board-nmb`
+
+- `exec-ind-misc-national-mediation-board-nmb-chief-financial-officer` — Chief Financial Officer — `unreached`
+- `exec-ind-misc-national-mediation-board-nmb-deputy-director-vice-chair` — Deputy Director / Vice Chair — `unreached`
+- `exec-ind-misc-national-mediation-board-nmb-inspector-general` — Inspector General — `unreached`
 
 ## National Parks  — 3 unpriced
 
@@ -6380,6 +6206,22 @@ same list in the same run.
 - `exec-ind-nsf-computer-information-science-engineering-cise-advanced-cyberinfrastructure-program-director-multiple` — Program Director (×multiple) — `multiplicity`
 - `exec-ind-nsf-computer-information-science-engineering-cise-advanced-cyberinfrastructure-program-officer-multiple` — Program Officer (×multiple) — `multiplicity`
 
+## Office of Air & Radiation (OAR)  — 3 unpriced
+
+`exec-ind-epa-office-of-air-radiation-oar`
+
+- `exec-ind-epa-office-of-air-radiation-oar-deputy-assistant-administrator` — Deputy Assistant Administrator — `unreached`
+- `exec-ind-epa-office-of-air-radiation-oar-director-division-multiple` — Director — Division (×multiple) — `multiplicity`
+- `exec-ind-epa-office-of-air-radiation-oar-environmental-scientist-engineer-multiple` — Environmental Scientist / Engineer (×multiple) — `multiplicity`
+
+## Office of Chemical Safety & Pollution Prevention (OCSPP)  — 3 unpriced
+
+`exec-ind-epa-office-of-chemical-safety-pollution-prevention-ocspp`
+
+- `exec-ind-epa-office-of-chemical-safety-pollution-prevention-ocspp-deputy-assistant-administrator` — Deputy Assistant Administrator — `unreached`
+- `exec-ind-epa-office-of-chemical-safety-pollution-prevention-ocspp-director-division-multiple` — Director — Division (×multiple) — `multiplicity`
+- `exec-ind-epa-office-of-chemical-safety-pollution-prevention-ocspp-environmental-scientist-engineer-multiple` — Environmental Scientist / Engineer (×multiple) — `multiplicity`
+
 ## Office of Community Planning & Development (CPD)  — 3 unpriced
 
 `exec-dept-hud-cpd`
@@ -6387,6 +6229,30 @@ same list in the same run.
 - `exec-dept-hud-cpd-director-cdbg-program` — Director — CDBG Program — `unreached`
 - `exec-dept-hud-cpd-director-home-program` — Director — HOME Program — `unreached`
 - `exec-dept-hud-cpd-director-homeless-assistance-programs` — Director — Homeless Assistance Programs — `unreached`
+
+## Office of E-Government & IT (Federal CIO)  — 3 unpriced
+
+`exec-eop-omb-office-of-e-government-it-federal-cio`
+
+- `exec-eop-omb-office-of-e-government-it-federal-cio-budget-examiner-multiple` — Budget Examiner (×multiple) — `multiplicity`
+- `exec-eop-omb-office-of-e-government-it-federal-cio-deputy-administrator-office-of-e-government-it-federal-cio` — Deputy Administrator, Office of E-Government & IT (Federal CIO) — `unreached`
+- `exec-eop-omb-office-of-e-government-it-federal-cio-program-associate-director-multiple` — Program Associate Director (×multiple) — `multiplicity`
+
+## Office of Elementary & Secondary Education (OESE)  — 3 unpriced
+
+`exec-dept-ed-oese`
+
+- `exec-dept-ed-oese-director-school-improvement` — Director — School Improvement — `unreached`
+- `exec-dept-ed-oese-director-title-i-program` — Director — Title I Program — `unreached`
+- `exec-dept-ed-oese-education-program-specialist-multiple` — Education Program Specialist (×multiple) — `multiplicity`
+
+## Office of Enforcement & Compliance Assurance (OECA)  — 3 unpriced
+
+`exec-ind-epa-office-of-enforcement-compliance-assurance-oeca`
+
+- `exec-ind-epa-office-of-enforcement-compliance-assurance-oeca-deputy-assistant-administrator` — Deputy Assistant Administrator — `unreached`
+- `exec-ind-epa-office-of-enforcement-compliance-assurance-oeca-director-division-multiple` — Director — Division (×multiple) — `multiplicity`
+- `exec-ind-epa-office-of-enforcement-compliance-assurance-oeca-environmental-scientist-engineer-multiple` — Environmental Scientist / Engineer (×multiple) — `multiplicity`
 
 ## Office of Fair Housing & Equal Opportunity (FHEO)  — 3 unpriced
 
@@ -6404,6 +6270,22 @@ same list in the same run.
 - `exec-dept-dol-ofccp-district-director-multiple` — District Director (×multiple) — `multiplicity`
 - `exec-dept-dol-ofccp-regional-director-6-regions` — Regional Director — 6 Regions — `unreached`
 
+## Office of Federal Financial Management  — 3 unpriced
+
+`exec-eop-omb-office-of-federal-financial-management`
+
+- `exec-eop-omb-office-of-federal-financial-management-budget-examiner-multiple` — Budget Examiner (×multiple) — `multiplicity`
+- `exec-eop-omb-office-of-federal-financial-management-deputy-administrator-office-of-federal-financial-management` — Deputy Administrator, Office of Federal Financial Management — `unreached`
+- `exec-eop-omb-office-of-federal-financial-management-program-associate-director-multiple` — Program Associate Director (×multiple) — `multiplicity`
+
+## Office of Federal Procurement Policy  — 3 unpriced
+
+`exec-eop-omb-office-of-federal-procurement-policy`
+
+- `exec-eop-omb-office-of-federal-procurement-policy-budget-examiner-multiple` — Budget Examiner (×multiple) — `multiplicity`
+- `exec-eop-omb-office-of-federal-procurement-policy-deputy-administrator-office-of-federal-procurement-policy` — Deputy Administrator, Office of Federal Procurement Policy — `unreached`
+- `exec-eop-omb-office-of-federal-procurement-policy-program-associate-director-multiple` — Program Associate Director (×multiple) — `multiplicity`
+
 ## Office of Information and Regulatory Affairs (OIRA)  — 3 unpriced
 
 `exec-eop-omb-oira-office-of-information-regulatory-affairs`
@@ -6412,6 +6294,22 @@ same list in the same run.
 - `exec-eop-omb-oira-office-of-information-regulatory-affairs-deputy-administrator-oira` — Deputy Administrator, OIRA — `unreached`
 - `exec-eop-omb-oira-office-of-information-regulatory-affairs-program-associate-director-multiple` — Program Associate Director (×multiple) — `multiplicity`
 
+## Office of International & Tribal Affairs (OITA)  — 3 unpriced
+
+`exec-ind-epa-office-of-international-tribal-affairs-oita`
+
+- `exec-ind-epa-office-of-international-tribal-affairs-oita-deputy-assistant-administrator` — Deputy Assistant Administrator — `unreached`
+- `exec-ind-epa-office-of-international-tribal-affairs-oita-director-division-multiple` — Director — Division (×multiple) — `multiplicity`
+- `exec-ind-epa-office-of-international-tribal-affairs-oita-environmental-scientist-engineer-multiple` — Environmental Scientist / Engineer (×multiple) — `multiplicity`
+
+## Office of Land & Emergency Management (OLEM)  — 3 unpriced
+
+`exec-ind-epa-office-of-land-emergency-management-olem`
+
+- `exec-ind-epa-office-of-land-emergency-management-olem-deputy-assistant-administrator` — Deputy Assistant Administrator — `unreached`
+- `exec-ind-epa-office-of-land-emergency-management-olem-director-division-multiple` — Director — Division (×multiple) — `multiplicity`
+- `exec-ind-epa-office-of-land-emergency-management-olem-environmental-scientist-engineer-multiple` — Environmental Scientist / Engineer (×multiple) — `multiplicity`
+
 ## Office of Public & Indian Housing (PIH)  — 3 unpriced
 
 `exec-dept-hud-pih`
@@ -6419,6 +6317,22 @@ same list in the same run.
 - `exec-dept-hud-pih-deputy-assistant-secretary-field-operations` — Deputy Assistant Secretary — Field Operations — `unreached`
 - `exec-dept-hud-pih-public-housing-director-local-phas` — Public Housing Director (×local PHAs) — `multiplicity`
 - `exec-dept-hud-pih-regional-director-10-regions` — Regional Director — 10 Regions — `unreached`
+
+## Office of Research & Development (ORD)  — 3 unpriced
+
+`exec-ind-epa-office-of-research-development-ord`
+
+- `exec-ind-epa-office-of-research-development-ord-deputy-assistant-administrator` — Deputy Assistant Administrator — `unreached`
+- `exec-ind-epa-office-of-research-development-ord-director-division-multiple` — Director — Division (×multiple) — `multiplicity`
+- `exec-ind-epa-office-of-research-development-ord-environmental-scientist-engineer-multiple` — Environmental Scientist / Engineer (×multiple) — `multiplicity`
+
+## Office of Water (OW)  — 3 unpriced
+
+`exec-ind-epa-office-of-water-ow`
+
+- `exec-ind-epa-office-of-water-ow-deputy-assistant-administrator` — Deputy Assistant Administrator — `unreached`
+- `exec-ind-epa-office-of-water-ow-director-division-multiple` — Director — Division (×multiple) — `multiplicity`
+- `exec-ind-epa-office-of-water-ow-environmental-scientist-engineer-multiple` — Environmental Scientist / Engineer (×multiple) — `multiplicity`
 
 ## Permanent Subcommittee on Investigations  — 3 unpriced
 
@@ -6435,6 +6349,14 @@ same list in the same run.
 - `leg-senate-cmte-armed-services-sub-personnel-chair-subcommittee-on-personnel` — Chair, Subcommittee on Personnel — `unreached`
 - `leg-senate-cmte-armed-services-sub-personnel-ranking-member-subcommittee-on-personnel` — Ranking Member, Subcommittee on Personnel — `unreached`
 - `leg-senate-cmte-armed-services-sub-personnel-staff-director-subcommittee-on-personnel` — Staff Director, Subcommittee on Personnel — `unreached`
+
+## Pipeline & Hazardous Materials Safety Admin (PHMSA)  — 3 unpriced
+
+`exec-dept-dot-phmsa`
+
+- `exec-dept-dot-phmsa-associate-administrator-pipelines-hazardous-materials` — Associate Administrator — Pipelines & Hazardous Materials — `unreached`
+- `exec-dept-dot-phmsa-pipeline-safety-inspector-multiple` — Pipeline Safety Inspector (×multiple) — `multiplicity`
+- `exec-dept-dot-phmsa-regional-director-5-regions` — Regional Director — 5 Regions — `unreached`
 
 ## Primary Health & Retirement Security  — 3 unpriced
 
@@ -6580,6 +6502,14 @@ same list in the same run.
 - `leg-senate-cmte-commerce-science-transportation-sub-surface-transportation-maritime-freight-ports-ranking-member-subcommittee-on-surface-transportation-maritime-freight-ports` — Ranking Member, Subcommittee on Surface Transportation, Maritime, Freight & Ports — `unreached`
 - `leg-senate-cmte-commerce-science-transportation-sub-surface-transportation-maritime-freight-ports-staff-director-subcommittee-on-surface-transportation-maritime-freight-ports` — Staff Director, Subcommittee on Surface Transportation, Maritime, Freight & Ports — `unreached`
 
+## Tax Division  — 3 unpriced
+
+`exec-dept-doj-div-tax`
+
+- `exec-dept-doj-div-tax-deputy-assistant-attorney-general-3-5` — Deputy Assistant Attorney General (×3-5) — `multiplicity`
+- `exec-dept-doj-div-tax-section-chief-multiple` — Section Chief (×multiple) — `multiplicity`
+- `exec-dept-doj-div-tax-trial-attorney-ausa-multiple` — Trial Attorney / AUSA (×multiple) — `multiplicity`
+
 ## Taxation & IRS Oversight  — 3 unpriced
 
 `leg-senate-cmte-finance-sub-taxation-irs-oversight`
@@ -6643,6 +6573,14 @@ same list in the same run.
 - `jud-specialized-intl-trade-chief-judge-cit` — Chief Judge, CIT — `unreached`
 - `jud-specialized-intl-trade-clerk-of-the-court` — Clerk of the Court — `unreached`
 - `jud-specialized-intl-trade-judge-8` — Judge (×8) — `multiplicity`
+
+## Wage & Hour Division (WHD)  — 3 unpriced
+
+`exec-dept-dol-whd`
+
+- `exec-dept-dol-whd-district-director-50-districts` — District Director — 50+ districts — `unreached`
+- `exec-dept-dol-whd-regional-administrator-5-regions` — Regional Administrator — 5 Regions — `unreached`
+- `exec-dept-dol-whd-wage-hour-investigator-multiple` — Wage & Hour Investigator (×multiple) — `multiplicity`
 
 ## Water & Power  — 3 unpriced
 
@@ -6751,6 +6689,13 @@ same list in the same run.
 - `leg-house-cmte-appropriations-sub-energy-water-development-chair-subcommittee-on-energy-water-development` — Chair, Subcommittee on Energy & Water Development — `unreached`
 - `leg-house-cmte-appropriations-sub-energy-water-development-ranking-member-subcommittee-on-energy-water-development` — Ranking Member, Subcommittee on Energy & Water Development — `unreached`
 
+## Equal Employment Opportunity Commission (EEOC)  — 2 unpriced
+
+`exec-ind-misc-equal-employment-opportunity-commission-eeoc`
+
+- `exec-ind-misc-equal-employment-opportunity-commission-eeoc-chief-financial-officer` — Chief Financial Officer — `unreached`
+- `exec-ind-misc-equal-employment-opportunity-commission-eeoc-inspector-general` — Inspector General — `unreached`
+
 ## Exploration Systems Development Mission Directorate  — 2 unpriced
 
 `exec-ind-nasa-exploration-systems-development-mission-directorate`
@@ -6806,6 +6751,13 @@ same list in the same run.
 
 - `exec-dept-ed-ocr-civil-rights-attorney-investigator-multiple` — Civil Rights Attorney / Investigator (×multiple) — `multiplicity`
 - `exec-dept-ed-ocr-regional-director-12-regional-offices` — Regional Director — 12 Regional Offices — `unreached`
+
+## Office of Management and Budget (OMB)  — 2 unpriced
+
+`exec-eop-omb`
+
+- `exec-eop-omb-chief-of-staff` — Chief of Staff — `unreached`
+- `exec-eop-omb-general-counsel` — General Counsel — `unreached`
 
 ## Office of the Solicitor General  — 2 unpriced
 
