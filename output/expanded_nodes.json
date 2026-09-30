@@ -16380,22 +16380,6 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2025-12-31",
-    "evidenceUrls": [
-      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-077"
-    ],
-    "govmanListing": {
-      "source": "us_government_manual",
-      "listedTitle": "LIBRARIAN OF CONGRESS",
-      "listedUnder": "Library of Congress",
-      "edition": "2025-12-31",
-      "package": "GOVMAN-2025-12-31",
-      "granule": "GOVMAN-2025-12-31-077",
-      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-077",
-      "tableFooter": null
-    },
-    "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
-    "evidenceVerifiedAt": "2025-12-31",
-    "parentId": "leg-support-loc",
     "positionTierReferencePay": {
       "source": "statutory_tier_reference_pay",
       "sourceLabel": "a statute setting the post's pay by reference to an Executive Schedule level, joined to OPM's table",
@@ -16470,7 +16454,23 @@
           }
         ]
       }
-    }
+    },
+    "evidenceUrls": [
+      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-077"
+    ],
+    "govmanListing": {
+      "source": "us_government_manual",
+      "listedTitle": "LIBRARIAN OF CONGRESS",
+      "listedUnder": "Library of Congress",
+      "edition": "2025-12-31",
+      "package": "GOVMAN-2025-12-31",
+      "granule": "GOVMAN-2025-12-31-077",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-077",
+      "tableFooter": null
+    },
+    "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
+    "evidenceVerifiedAt": "2025-12-31",
+    "parentId": "leg-support-loc"
   },
   {
     "id": "leg-support-loc-chief-of-staff",

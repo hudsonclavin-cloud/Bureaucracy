@@ -8,13 +8,13 @@ checkable claim. `docs/PAY_SOURCE_RESEARCH_PROMPT_3.md` is generated from this
 same list in the same run.
 
 - position nodes in the published graph: **4,591**
-- carrying a pay claim an official document supports: **588**
-- carrying none: **4,003**
+- carrying a pay claim an official document supports: **590**
+- carrying none: **4,001**
 
 | reason | count | what it means |
 |---|---|---|
 | `unreached` | 3,225 | no source this project has read names the title at all. Not a coverage gap somebody has not got to: no pay document in the repository names this title under this organisation, so nothing could have reached it. |
-| `multiplicity` | 758 | the node states a multiplicity (×N) and no claim that holds for every holder has reached it. Since 2026-09-23 a claim that holds for each holder by its own terms IS published on such a node with a `holders` block -- a tier or parity rate paid to every judge of the tier, a band every holder is within, or a roster listing every holder at one rate -- and 28 such nodes carry one. What stays refused is an incumbency-shaped claim (one listing's level, one row of the current export), because that is one appointment's figure and not the group's. For these nodes no office-rate claim has reached them at all. Knowing which pay system governs the title is still useful -- it is what would let the graph carry the schedule rather than a rate -- so these are listed and asked about. |
+| `multiplicity` | 756 | the node states a multiplicity (×N) and no claim that holds for every holder has reached it. Since 2026-09-23 a claim that holds for each holder by its own terms IS published on such a node with a `holders` block -- a tier or parity rate paid to every judge of the tier, a band every holder is within, or a roster listing every holder at one rate -- and 37 such nodes carry one. What stays refused is an incumbency-shaped claim (one listing's level, one row of the current export), because that is one appointment's figure and not the group's. For these nodes no office-rate claim has reached them at all. Knowing which pay system governs the title is still useful -- it is what would let the graph carry the schedule rather than a rate -- so these are listed and asked about. |
 | `listed_no_rate` | 20 | OPM lists the position and the row prints no rate. The PLUM archive or the current export names the title under this organisation but the Level/Grade/Pay cell carries a rank or is empty, and no salary table this project has read prices that pay plan. |
 
 ---
@@ -1059,23 +1059,6 @@ same list in the same run.
 - `exec-dept-hhs-fda-pharmacologist-multiple` — Pharmacologist (×multiple) — `multiplicity`
 - `exec-dept-hhs-fda-regional-director-5-ora-regions` — Regional Director — 5 ORA Regions — `unreached`
 
-## All 94 District Courts — Standard Structure  — 12 unpriced
-
-`jud-district-structure`
-
-- `jud-district-structure-bankruptcy-judge-varies` — Bankruptcy Judge (×varies) — `multiplicity`
-- `jud-district-structure-chief-judge` — Chief Judge — `unreached`
-- `jud-district-structure-chief-pretrial-services-officer` — Chief Pretrial Services Officer — `unreached`
-- `jud-district-structure-chief-u-s-probation-officer` — Chief U.S. Probation Officer — `unreached`
-- `jud-district-structure-clerk-of-court` — Clerk of Court — `unreached`
-- `jud-district-structure-court-reporter-ecro` — Court Reporter / ECRO — `unreached`
-- `jud-district-structure-court-security-officer-cso` — Court Security Officer (CSO) — `unreached`
-- `jud-district-structure-courtroom-deputy-clerk` — Courtroom Deputy Clerk — `unreached`
-- `jud-district-structure-district-judge-varies-per-district` — District Judge (×varies per district) — `multiplicity`
-- `jud-district-structure-law-clerk-2-4-per-judge` — Law Clerk (×2-4 per judge) — `multiplicity`
-- `jud-district-structure-magistrate-judge-varies` — Magistrate Judge (×varies) — `multiplicity`
-- `jud-district-structure-u-s-probation-officer-multiple` — U.S. Probation Officer (×multiple) — `multiplicity`
-
 ## Centers for Disease Control & Prevention (CDC)  — 12 unpriced
 
 `exec-dept-hhs-cdc`
@@ -1245,6 +1228,22 @@ same list in the same run.
 - `exec-dept-va-vba-rating-veterans-service-representative-multiple` — Rating Veterans Service Representative (×multiple) — `multiplicity`
 - `exec-dept-va-vba-regional-office-director-56-regional-offices` — Regional Office Director — 56 Regional Offices — `unreached`
 - `exec-dept-va-vba-veterans-service-representative-multiple` — Veterans Service Representative (×multiple) — `multiplicity`
+
+## All 94 District Courts — Standard Structure  — 11 unpriced
+
+`jud-district-structure`
+
+- `jud-district-structure-chief-judge` — Chief Judge — `unreached`
+- `jud-district-structure-chief-pretrial-services-officer` — Chief Pretrial Services Officer — `unreached`
+- `jud-district-structure-chief-u-s-probation-officer` — Chief U.S. Probation Officer — `unreached`
+- `jud-district-structure-clerk-of-court` — Clerk of Court — `unreached`
+- `jud-district-structure-court-reporter-ecro` — Court Reporter / ECRO — `unreached`
+- `jud-district-structure-court-security-officer-cso` — Court Security Officer (CSO) — `unreached`
+- `jud-district-structure-courtroom-deputy-clerk` — Courtroom Deputy Clerk — `unreached`
+- `jud-district-structure-district-judge-varies-per-district` — District Judge (×varies per district) — `multiplicity`
+- `jud-district-structure-law-clerk-2-4-per-judge` — Law Clerk (×2-4 per judge) — `multiplicity`
+- `jud-district-structure-magistrate-judge-varies` — Magistrate Judge (×varies) — `multiplicity`
+- `jud-district-structure-u-s-probation-officer-multiple` — U.S. Probation Officer (×multiple) — `multiplicity`
 
 ## Chief Administrative Officer  — 11 unpriced
 
@@ -2037,20 +2036,6 @@ same list in the same run.
 - `exec-ind-ssa-deputy-commissioner-systems-cio` — Deputy Commissioner — Systems (CIO) — `unreached`
 - `exec-ind-ssa-general-counsel` — General Counsel — `unreached`
 
-## Southern District of New York (S.D.N.Y.)  — 9 unpriced
-
-`jud-district-sdny`
-
-- `jud-district-sdny-bankruptcy-judge-12` — Bankruptcy Judge (×12) — `multiplicity`
-- `jud-district-sdny-chief-pretrial-services-officer` — Chief Pretrial Services Officer — `unreached`
-- `jud-district-sdny-chief-probation-officer` — Chief Probation Officer — `unreached`
-- `jud-district-sdny-clerk-of-court` — Clerk of Court — `unreached`
-- `jud-district-sdny-court-security-officer-multiple` — Court Security Officer (×multiple) — `multiplicity`
-- `jud-district-sdny-courtroom-deputy-multiple` — Courtroom Deputy (×multiple) — `multiplicity`
-- `jud-district-sdny-law-clerk-2-4-per-judge` — Law Clerk (×2-4 per judge) — `multiplicity`
-- `jud-district-sdny-magistrate-judge-13` — Magistrate Judge (×13) — `multiplicity`
-- `jud-district-sdny-senior-judge-multiple` — Senior Judge (×multiple) — `multiplicity`
-
 ## Stennis Space Center (SSC)  — 9 unpriced
 
 `exec-ind-nasa-stennis-space-center-ssc`
@@ -2641,6 +2626,19 @@ same list in the same run.
 - `exec-ind-smithsonian-smithsonian-tropical-research-institute-head-of-collections-management` — Head of Collections Management — `unreached`
 - `exec-ind-smithsonian-smithsonian-tropical-research-institute-head-of-education` — Head of Education — `unreached`
 - `exec-ind-smithsonian-smithsonian-tropical-research-institute-head-of-facilities` — Head of Facilities — `unreached`
+
+## Southern District of New York (S.D.N.Y.)  — 8 unpriced
+
+`jud-district-sdny`
+
+- `jud-district-sdny-chief-pretrial-services-officer` — Chief Pretrial Services Officer — `unreached`
+- `jud-district-sdny-chief-probation-officer` — Chief Probation Officer — `unreached`
+- `jud-district-sdny-clerk-of-court` — Clerk of Court — `unreached`
+- `jud-district-sdny-court-security-officer-multiple` — Court Security Officer (×multiple) — `multiplicity`
+- `jud-district-sdny-courtroom-deputy-multiple` — Courtroom Deputy (×multiple) — `multiplicity`
+- `jud-district-sdny-law-clerk-2-4-per-judge` — Law Clerk (×2-4 per judge) — `multiplicity`
+- `jud-district-sdny-magistrate-judge-13` — Magistrate Judge (×13) — `multiplicity`
+- `jud-district-sdny-senior-judge-multiple` — Senior Judge (×multiple) — `multiplicity`
 
 ## Ames National Laboratory  — 7 unpriced
 

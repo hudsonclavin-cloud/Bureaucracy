@@ -81,7 +81,7 @@ REASONS = {
         "the node states a multiplicity (×N) and no claim that holds for every holder has reached it",
         "Since 2026-09-23 a claim that holds for each holder by its own terms IS published on such a "
         "node with a `holders` block -- a tier or parity rate paid to every judge of the tier, a band "
-        "every holder is within, or a roster listing every holder at one rate -- and 28 such nodes carry "
+        "every holder is within, or a roster listing every holder at one rate -- and {multi_priced} such nodes carry "
         "one. What stays refused is an incumbency-shaped claim (one listing's level, one row of the "
         "current export), because that is one appointment's figure and not the group's. For these nodes "
         "no office-rate claim has reached them at all. Knowing "
@@ -128,6 +128,7 @@ def collect(graph):
     """Every position with no pay claim, grouped by its parent organisation."""
     groups: dict[tuple[str, str], list[dict]] = defaultdict(list)
     priced = 0
+    multi_priced = 0
     positions = 0
     for node, parent in walk(graph):
         if "position" not in str(node.get("type") or "").casefold():
@@ -135,6 +136,8 @@ def collect(graph):
         positions += 1
         if any(isinstance(node.get(field), dict) for field in PAY_FIELDS):
             priced += 1
+            if node.get("representsPosts"):
+                multi_priced += 1
             continue
         key = (str((parent or {}).get("id") or "?"), str((parent or {}).get("name") or "?"))
         groups[key].append(
@@ -149,7 +152,7 @@ def collect(graph):
                 ),
             }
         )
-    return groups, positions, priced
+    return groups, positions, priced, multi_priced
 
 
 def shard(groups, per_shard: int):
@@ -245,7 +248,7 @@ official-published or third-party-estimated."""
 
 
 def render_prompts(shards, totals) -> str:
-    positions, priced, unpriced, reason_counts = totals
+    positions, priced, unpriced, reason_counts, multi_priced = totals
     out: list[str] = []
     w = out.append
     w("# Pay-source research prompt pack — every unpriced position")
@@ -264,6 +267,7 @@ def render_prompts(shards, totals) -> str:
     w("")
     for reason, count in sorted(reason_counts.items(), key=lambda kv: -kv[1]):
         headline, detail = REASONS[reason]
+        detail = detail.format(multi_priced=multi_priced)
         w(f"- **{count:,}** — {headline}. {detail}")
     w("")
     w("## How to run this pack")
@@ -348,7 +352,7 @@ def render_prompts(shards, totals) -> str:
 
 
 def render_inventory(groups, totals) -> str:
-    positions, priced, unpriced, reason_counts = totals
+    positions, priced, unpriced, reason_counts, multi_priced = totals
     out: list[str] = []
     w = out.append
     w("# Positions with no pay claim")
@@ -368,6 +372,7 @@ def render_inventory(groups, totals) -> str:
     w("|---|---|---|")
     for reason, count in sorted(reason_counts.items(), key=lambda kv: -kv[1]):
         headline, detail = REASONS[reason]
+        detail = detail.format(multi_priced=multi_priced)
         w(f"| `{reason}` | {count:,} | {headline}. {detail} |")
     w("")
     w("---")
@@ -397,12 +402,12 @@ def main(argv: list[str] | None = None) -> int:
         print(f"refused: {args.graph} does not exist")
         return 1
     graph = json.loads(args.graph.read_text(encoding="utf-8"))
-    groups, positions, priced = collect(graph)
+    groups, positions, priced, multi_priced = collect(graph)
     rows = [row for group in groups.values() for row in group]
     reason_counts: dict[str, int] = defaultdict(int)
     for row in rows:
         reason_counts[row["reason"]] += 1
-    totals = (positions, priced, len(rows), dict(reason_counts))
+    totals = (positions, priced, len(rows), dict(reason_counts), multi_priced)
     shards = shard(groups, args.shard_titles)
 
     print(f"positions {positions:,}  priced {priced:,}  unpriced {len(rows):,}")

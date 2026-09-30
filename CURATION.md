@@ -767,6 +767,11 @@ bankruptcy and magistrate node in this graph states a multiplicity**
 multi-post rule refuses them all. Splitting those into individually named
 seats is curation; until then there is nothing for the rule to price.
 
+*Superseded on 2026-09-30 (§19.13).* The multi-post rule became per field on
+2026-09-23, and on the owner's instruction the bankruptcy benches are priced
+at $229,908 from §153(a) with the arithmetic in the open; the magistrate
+benches stay unpriced because §634(a)'s "up to" is a ceiling, not a rate.
+
 28 U.S.C. § 172(b) (Court of Federal Claims) gives those judges the
 district-judge rate; § 252 (Court of International Trade) does not — it sets
 the salary by reference to section 225 of the Federal Salary Act of 1967,
@@ -3423,7 +3428,78 @@ the counted-class shape (Assistant Attorneys General (11), Assistant
 Secretaries of State, the CPSC's, PRC's and NCUA's members, the Deputy
 USTRs); Members of Congress paid under Schedule 6 (committee chairs, the
 Senate whips, the JEC's chair and vice chair); the bankruptcy and magistrate
-judges' 92-percent arithmetic on the district-judge rate; the USPS Board's
+judges' 92-percent arithmetic on the district-judge rate (decided 2026-09-30,
+§19.13: the bankruptcy benches priced, the magistrate benches refused on the
+statute's "up to"); the USPS Board's
 statutory stipend; and the Deputy Librarian's "greater of". Every other lead
 in eight batches is either published or refused with its reason on the
 record.
+
+### 19.13 The bankruptcy judges at 92 percent; the magistrate judges refused (2026-09-30)
+
+The owner's instruction was "price the bankruptcy and magistrate judges at 92
+percent". Both sections were fetched (`tests/fixtures/uscode/
+bankruptcy_judges_28_usc_153.html`, `magistrate_judges_28_usc_634.html`) and
+read in their operative text before anything was built, and they do not say
+the same thing.
+
+**28 U.S.C. 153(a) — priced.** "Each bankruptcy judge shall serve on a
+full-time basis and shall receive as full compensation for his services, a
+salary at an annual rate that is equal to 92 percent of the salary of a judge
+of the district court of the United States as determined pursuant to section
+135." A rate, stated for every holder. The Judicial Compensation table prints
+$249,900 for district judges; 92 percent of it is **$229,908**, which no
+document prints. Two nodes carry it, both benches under the per-field
+multi-post rule with a `holders` block: `Bankruptcy Judge (×12)` under the
+Southern District of New York (`jud-district-sdny-bankruptcy-judge-12`) and
+`Bankruptcy Judge (×varies)` under the standard district structure
+(`jud-district-structure-bankruptcy-judge-varies`), the second because the
+statute says "each bankruptcy judge" wherever the judge sits. The field is
+`positionDerivedPay` with `percentOf: 92` and an `arithmetic` block
+(`percent_of`), the shape the tier-reference module publishes for an
+Inspector General's "plus 3 percent"; `financial_evidence` gained the second
+operation and the second grantee for its computed-from-a-marked-figure rule,
+and the gate mirrors the two rows by node id (`DERIVED_PAY_PERCENT_OF`). Two
+documents, 80 percent on the project's scale, `documentsStatingTheFigure: 0`,
+`partial`, `proxy`.
+
+**28 U.S.C. 634(a) — refused.** "Officers appointed under this chapter shall
+receive, as full compensation for their services, salaries to be fixed by the
+conference pursuant to section 633, at rates for full-time United States
+magistrate judges up to an annual rate equal to 92 percent of the salary of a
+judge of the district court of the United States, as determined pursuant to
+section 135, and at rates for part-time magistrate judges of not less than an
+annual salary of $100, nor more than one-half the maximum salary payable to a
+full-time magistrate judge." That is a **ceiling**, and the Judicial
+Conference fixes the figure beneath it: 92 percent is the most a full-time
+magistrate judge may be paid, not what one is paid, and a part-time
+magistrate judge may be paid anything from $100 to half the full-time
+maximum. No document this project has read states what the Conference fixed,
+so `Magistrate Judge (×13)` (S.D.N.Y.) and `Magistrate Judge (×varies)` stay
+unpriced with the reason on the record (`derived_pay.NOT_PRICED`), and
+`tests/test_derived_pay.py` asserts against the committed bytes that "up to
+an annual rate" is in §634's operative text and not in §153's. The research
+batches and the instruction both put the two benches together at 92 percent;
+the statute puts only one of them there. Should the Conference's own schedule
+be found on a `.gov` host — the Administrative Office publishes one — a
+magistrate judge's figure would be a printed rate and belong in
+`positionStatutoryPay`, not here.
+
+**Also refused, and reworded rather than reopened:** the AO's Deputy Director
+is 92 percent of the Director's under the same 28 U.S.C. 603 that pays the
+Director as a district judge. The reason used to read "arithmetic on a figure
+that is itself a join, which this field does not publish", and this field now
+does publish a percentage; the difference is that the bankruptcy percentage is
+taken of the table's own printed figure and the Deputy's would be taken of a
+join. The record says so now.
+
+**Counted on the rebuilt graph:** derived records 10 → 12, pay claims
+588 → 590, unpriced 4,003 → 4,001 (3,225 unreached, 756 stating a
+multiplicity, 20 listed without a rate), multi-post nodes priced 35 → 37,
+prompt-pack shards 39 → 38. The unpriced report's "N such nodes carry one"
+sentence is read off the graph since this section; it had said 28 since
+2026-09-23 while the graph carried 37. Nothing measured moved.
+
+**Still open after this section:** the counted-class shape; Members of
+Congress paid under Schedule 6; the USPS Board's statutory stipend; the Deputy
+Librarian's "greater of".

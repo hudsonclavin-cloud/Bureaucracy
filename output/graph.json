@@ -253254,6 +253254,89 @@
                   "budget": null,
                   "color": "#666666",
                   "children": [],
+                  "positionDerivedPay": {
+                    "source": "statutory_parity_derived_pay",
+                    "sourceLabel": "a statutory parity provision joined to the U.S. Courts' Judicial Compensation table",
+                    "method": "parity_provision_joined_to_the_judicial_compensation_table",
+                    "amount": 229908.0,
+                    "rateText": "$229,908",
+                    "year": "2026",
+                    "effective": "2026-01-01",
+                    "costBasis": "basic_pay",
+                    "scopeMatch": "proxy",
+                    "financialEvidenceStatus": "partial",
+                    "amountScope": "92 percent of District Judges",
+                    "seatTier": "district judges",
+                    "statute": "28 U.S.C. 153(a)",
+                    "statuteQuote": "Each bankruptcy judge shall serve on a full-time basis and shall receive as full compensation for his services, a salary at an annual rate that is equal to 92 percent of the salary of a judge of the district court of the United States as determined pursuant to section 135",
+                    "court": null,
+                    "subject": "every bankruptcy judge of the Southern District of New York",
+                    "viaStatute": null,
+                    "viaQuote": null,
+                    "percentOf": 92,
+                    "arithmetic": {
+                      "operation": "percent_of",
+                      "baseAmount": 249900.0,
+                      "baseAmountRaw": "249,900",
+                      "baseText": "$249,900",
+                      "baseTier": "district judges",
+                      "percent": 92,
+                      "result": 229908.0,
+                      "resultText": "$229,908",
+                      "note": "No document prints $229,908. 28 U.S.C. 153(a) sets the rate at 92 percent of a district judge's, and Judicial Compensation 2026 prints $249,900 for District Judges; the figure is that arithmetic and nothing more."
+                    },
+                    "derivation": "28 U.S.C. 153(a) (a): “Each bankruptcy judge shall serve on a full-time basis and shall receive as full compensation for his services, a salary at an annual rate that is equal to 92 percent of the salary of a judge of the district court of the United States as determined pursuant to section 135” · Judicial Compensation 2026: District Judges $249,900 × 92% = $229,908",
+                    "quote": "28 U.S.C. 153(a) (a): “Each bankruptcy judge shall serve on a full-time basis and shall receive as full compensation for his services, a salary at an annual rate that is equal to 92 percent of the salary of a judge of the district court of the United States as determined pursuant to section 135” · Judicial Compensation 2026: District Judges $249,900 × 92% = $229,908",
+                    "documents": [
+                      {
+                        "role": "states the percentage of the tier this post is paid at",
+                        "citation": "28 U.S.C. 153(a)",
+                        "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+                        "title": "28 U.S.C. 153(a), current through the prelim edition",
+                        "quote": "Each bankruptcy judge shall serve on a full-time basis and shall receive as full compensation for his services, a salary at an annual rate that is equal to 92 percent of the salary of a judge of the district court of the United States as determined pursuant to section 135",
+                        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title28-section153&num=0&edition=prelim",
+                        "documentSha256": "b9bf9fd73aa72798261f90add40b0ca37da2e15abb20c8ae9c45563b43a5c127",
+                        "retrievedAt": "2026-09-30T02:07:56Z",
+                        "statesTheFigure": false
+                      },
+                      {
+                        "role": "states what that tier pays",
+                        "citation": "Judicial Compensation, 2026",
+                        "publisher": "Administrative Office of the United States Courts",
+                        "title": "Judicial Compensation",
+                        "quote": "Year District Judges Circuit Judges Associate Justices Chief Justice; 2026 $249,900 $264,900 $306,600 $320,700",
+                        "url": "https://www.uscourts.gov/about-federal-courts/about-federal-judges/judicial-compensation",
+                        "documentSha256": "014c9a66ad48a019ab127752e9cd46e4cec94da5e8e94d41a4eb9e785e96e494",
+                        "retrievedAt": "2026-09-14T15:20:14Z",
+                        "statesTheFigure": false
+                      }
+                    ],
+                    "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title28-section153&num=0&edition=prelim",
+                    "tableUrl": "https://www.uscourts.gov/about-federal-courts/about-federal-judges/judicial-compensation",
+                    "checkedAt": "2026-09-30T02:07:56Z",
+                    "holders": {
+                      "text": "×12",
+                      "kind": "exact",
+                      "appliesToEachHolder": true,
+                      "note": "This node stands for several posts. The figure is the rate the source states for the office or tier, and it applies to each holder alike; it is not one person's pay and not the group's combined pay.",
+                      "count": 12
+                    },
+                    "verification": {
+                      "documents": 2,
+                      "documentsStatingTheFigure": 0,
+                      "percent": 80,
+                      "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+                      "caution": "The percentage measures how much official documentation this figure rests on, not the chance that it is right. No document here states the figure: one states the percentage of a tier this post is paid, the other states what that tier pays, and the figure is that arithmetic, which neither prints.",
+                      "documentRoles": [
+                        {
+                          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title28-section153&num=0&edition=prelim"
+                        },
+                        {
+                          "url": "https://www.uscourts.gov/about-federal-courts/about-federal-judges/judicial-compensation"
+                        }
+                      ]
+                    }
+                  },
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -253636,6 +253719,89 @@
                   "budget": null,
                   "color": "#666666",
                   "children": [],
+                  "positionDerivedPay": {
+                    "source": "statutory_parity_derived_pay",
+                    "sourceLabel": "a statutory parity provision joined to the U.S. Courts' Judicial Compensation table",
+                    "method": "parity_provision_joined_to_the_judicial_compensation_table",
+                    "amount": 229908.0,
+                    "rateText": "$229,908",
+                    "year": "2026",
+                    "effective": "2026-01-01",
+                    "costBasis": "basic_pay",
+                    "scopeMatch": "proxy",
+                    "financialEvidenceStatus": "partial",
+                    "amountScope": "92 percent of District Judges",
+                    "seatTier": "district judges",
+                    "statute": "28 U.S.C. 153(a)",
+                    "statuteQuote": "Each bankruptcy judge shall serve on a full-time basis and shall receive as full compensation for his services, a salary at an annual rate that is equal to 92 percent of the salary of a judge of the district court of the United States as determined pursuant to section 135",
+                    "court": null,
+                    "subject": "every bankruptcy judge, in every district",
+                    "viaStatute": null,
+                    "viaQuote": null,
+                    "percentOf": 92,
+                    "arithmetic": {
+                      "operation": "percent_of",
+                      "baseAmount": 249900.0,
+                      "baseAmountRaw": "249,900",
+                      "baseText": "$249,900",
+                      "baseTier": "district judges",
+                      "percent": 92,
+                      "result": 229908.0,
+                      "resultText": "$229,908",
+                      "note": "No document prints $229,908. 28 U.S.C. 153(a) sets the rate at 92 percent of a district judge's, and Judicial Compensation 2026 prints $249,900 for District Judges; the figure is that arithmetic and nothing more."
+                    },
+                    "derivation": "28 U.S.C. 153(a) (a): “Each bankruptcy judge shall serve on a full-time basis and shall receive as full compensation for his services, a salary at an annual rate that is equal to 92 percent of the salary of a judge of the district court of the United States as determined pursuant to section 135” · Judicial Compensation 2026: District Judges $249,900 × 92% = $229,908",
+                    "quote": "28 U.S.C. 153(a) (a): “Each bankruptcy judge shall serve on a full-time basis and shall receive as full compensation for his services, a salary at an annual rate that is equal to 92 percent of the salary of a judge of the district court of the United States as determined pursuant to section 135” · Judicial Compensation 2026: District Judges $249,900 × 92% = $229,908",
+                    "documents": [
+                      {
+                        "role": "states the percentage of the tier this post is paid at",
+                        "citation": "28 U.S.C. 153(a)",
+                        "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+                        "title": "28 U.S.C. 153(a), current through the prelim edition",
+                        "quote": "Each bankruptcy judge shall serve on a full-time basis and shall receive as full compensation for his services, a salary at an annual rate that is equal to 92 percent of the salary of a judge of the district court of the United States as determined pursuant to section 135",
+                        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title28-section153&num=0&edition=prelim",
+                        "documentSha256": "b9bf9fd73aa72798261f90add40b0ca37da2e15abb20c8ae9c45563b43a5c127",
+                        "retrievedAt": "2026-09-30T02:07:56Z",
+                        "statesTheFigure": false
+                      },
+                      {
+                        "role": "states what that tier pays",
+                        "citation": "Judicial Compensation, 2026",
+                        "publisher": "Administrative Office of the United States Courts",
+                        "title": "Judicial Compensation",
+                        "quote": "Year District Judges Circuit Judges Associate Justices Chief Justice; 2026 $249,900 $264,900 $306,600 $320,700",
+                        "url": "https://www.uscourts.gov/about-federal-courts/about-federal-judges/judicial-compensation",
+                        "documentSha256": "014c9a66ad48a019ab127752e9cd46e4cec94da5e8e94d41a4eb9e785e96e494",
+                        "retrievedAt": "2026-09-14T15:20:14Z",
+                        "statesTheFigure": false
+                      }
+                    ],
+                    "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title28-section153&num=0&edition=prelim",
+                    "tableUrl": "https://www.uscourts.gov/about-federal-courts/about-federal-judges/judicial-compensation",
+                    "checkedAt": "2026-09-30T02:07:56Z",
+                    "holders": {
+                      "text": "×varies",
+                      "kind": "unstated",
+                      "appliesToEachHolder": true,
+                      "note": "This node stands for several posts. The figure is the rate the source states for the office or tier, and it applies to each holder alike; it is not one person's pay and not the group's combined pay.",
+                      "as_written": "varies"
+                    },
+                    "verification": {
+                      "documents": 2,
+                      "documentsStatingTheFigure": 0,
+                      "percent": 80,
+                      "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+                      "caution": "The percentage measures how much official documentation this figure rests on, not the chance that it is right. No document here states the figure: one states the percentage of a tier this post is paid, the other states what that tier pays, and the figure is that arithmetic, which neither prints.",
+                      "documentRoles": [
+                        {
+                          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title28-section153&num=0&edition=prelim"
+                        },
+                        {
+                          "url": "https://www.uscourts.gov/about-federal-courts/about-federal-judges/judicial-compensation"
+                        }
+                      ]
+                    }
+                  },
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -254026,6 +254192,8 @@
                     "subject": "every judge of U.S. Tax Court",
                     "viaStatute": null,
                     "viaQuote": null,
+                    "percentOf": null,
+                    "arithmetic": null,
                     "derivation": "26 U.S.C. 7443(c)(1) (c) Salary: “Each judge shall receive salary at the same rate and in the same installments as judges of the district courts of the United States.” · Judicial Compensation 2026: District Judges $249,900",
                     "quote": "26 U.S.C. 7443(c)(1) (c) Salary: “Each judge shall receive salary at the same rate and in the same installments as judges of the district courts of the United States.” · Judicial Compensation 2026: District Judges $249,900",
                     "documents": [
@@ -254120,6 +254288,8 @@
                     "subject": "every judge of U.S. Tax Court",
                     "viaStatute": null,
                     "viaQuote": null,
+                    "percentOf": null,
+                    "arithmetic": null,
                     "derivation": "26 U.S.C. 7443(c)(1) (c) Salary: “Each judge shall receive salary at the same rate and in the same installments as judges of the district courts of the United States.” · Judicial Compensation 2026: District Judges $249,900",
                     "quote": "26 U.S.C. 7443(c)(1) (c) Salary: “Each judge shall receive salary at the same rate and in the same installments as judges of the district courts of the United States.” · Judicial Compensation 2026: District Judges $249,900",
                     "documents": [
@@ -254467,6 +254637,8 @@
                     "subject": "every judge of U.S. Court of Federal Claims",
                     "viaStatute": null,
                     "viaQuote": null,
+                    "percentOf": null,
+                    "arithmetic": null,
                     "derivation": "28 U.S.C. 172(b) (b): “Each judge shall receive a salary at the rate of pay, and in the same manner, as judges of the district courts of the United States.” · Judicial Compensation 2026: District Judges $249,900",
                     "quote": "28 U.S.C. 172(b) (b): “Each judge shall receive a salary at the rate of pay, and in the same manner, as judges of the district courts of the United States.” · Judicial Compensation 2026: District Judges $249,900",
                     "documents": [
@@ -254561,6 +254733,8 @@
                     "subject": "every judge of U.S. Court of Federal Claims",
                     "viaStatute": null,
                     "viaQuote": null,
+                    "percentOf": null,
+                    "arithmetic": null,
                     "derivation": "28 U.S.C. 172(b) (b): “Each judge shall receive a salary at the rate of pay, and in the same manner, as judges of the district courts of the United States.” · Judicial Compensation 2026: District Judges $249,900",
                     "quote": "28 U.S.C. 172(b) (b): “Each judge shall receive a salary at the rate of pay, and in the same manner, as judges of the district courts of the United States.” · Judicial Compensation 2026: District Judges $249,900",
                     "documents": [
@@ -255211,6 +255385,8 @@
                     "subject": "every judge of United States Court of Appeals for the Armed Forces",
                     "viaStatute": null,
                     "viaQuote": null,
+                    "percentOf": null,
+                    "arithmetic": null,
                     "derivation": "10 U.S.C. 942(d) (d) Pay and Allowances: “Each judge of the court is entitled to the same salary and travel allowances as are, and from time to time may be, provided for judges of the United States Courts of Appeals.” · Judicial Compensation 2026: Circuit Judges $264,900",
                     "quote": "10 U.S.C. 942(d) (d) Pay and Allowances: “Each judge of the court is entitled to the same salary and travel allowances as are, and from time to time may be, provided for judges of the United States Courts of Appeals.” · Judicial Compensation 2026: Circuit Judges $264,900",
                     "documents": [
@@ -255305,6 +255481,8 @@
                     "subject": "every judge of United States Court of Appeals for the Armed Forces",
                     "viaStatute": null,
                     "viaQuote": null,
+                    "percentOf": null,
+                    "arithmetic": null,
                     "derivation": "10 U.S.C. 942(d) (d) Pay and Allowances: “Each judge of the court is entitled to the same salary and travel allowances as are, and from time to time may be, provided for judges of the United States Courts of Appeals.” · Judicial Compensation 2026: Circuit Judges $264,900",
                     "quote": "10 U.S.C. 942(d) (d) Pay and Allowances: “Each judge of the court is entitled to the same salary and travel allowances as are, and from time to time may be, provided for judges of the United States Courts of Appeals.” · Judicial Compensation 2026: Circuit Judges $264,900",
                     "documents": [
@@ -255626,6 +255804,8 @@
                     "subject": "every judge of United States Court of Appeals for Veterans Claims",
                     "viaStatute": null,
                     "viaQuote": null,
+                    "percentOf": null,
+                    "arithmetic": null,
                     "derivation": "38 U.S.C. 7253(e) (e) Salary: “Each judge of the Court shall receive a salary at the same rate as is received by judges of the United States district courts.” · Judicial Compensation 2026: District Judges $249,900",
                     "quote": "38 U.S.C. 7253(e) (e) Salary: “Each judge of the Court shall receive a salary at the same rate as is received by judges of the United States district courts.” · Judicial Compensation 2026: District Judges $249,900",
                     "documents": [
@@ -255720,6 +255900,8 @@
                     "subject": "every judge of United States Court of Appeals for Veterans Claims",
                     "viaStatute": null,
                     "viaQuote": null,
+                    "percentOf": null,
+                    "arithmetic": null,
                     "derivation": "38 U.S.C. 7253(e) (e) Salary: “Each judge of the Court shall receive a salary at the same rate as is received by judges of the United States district courts.” · Judicial Compensation 2026: District Judges $249,900",
                     "quote": "38 U.S.C. 7253(e) (e) Salary: “Each judge of the Court shall receive a salary at the same rate as is received by judges of the United States district courts.” · Judicial Compensation 2026: District Judges $249,900",
                     "documents": [
@@ -256067,6 +256249,8 @@
                     "subject": "the Director of the Administrative Office of the United States Courts",
                     "viaStatute": null,
                     "viaQuote": null,
+                    "percentOf": null,
+                    "arithmetic": null,
                     "derivation": "28 U.S.C. 603 Salaries: “The salary of the Director shall be the same as the salary of a district judge.” · Judicial Compensation 2026: District Judges $249,900",
                     "quote": "28 U.S.C. 603 Salaries: “The salary of the Director shall be the same as the salary of a district judge.” · Judicial Compensation 2026: District Judges $249,900",
                     "documents": [
@@ -256818,6 +257002,8 @@
                     "subject": "the Director of the Federal Judicial Center",
                     "viaStatute": "28 U.S.C. 603",
                     "viaQuote": "The salary of the Director shall be the same as the salary of a district judge.",
+                    "percentOf": null,
+                    "arithmetic": null,
                     "derivation": "28 U.S.C. 626 Compensation of the Director and Deputy Director: “The compensation of the Director of the Federal Judicial Center shall be the same as that of the Director of the Administrative Office of the United States Courts” · 28 U.S.C. 603: “The salary of the Director shall be the same as the salary of a district judge.” · Judicial Compensation 2026: District Judges $249,900",
                     "quote": "28 U.S.C. 626 Compensation of the Director and Deputy Director: “The compensation of the Director of the Federal Judicial Center shall be the same as that of the Director of the Administrative Office of the United States Courts” · 28 U.S.C. 603: “The salary of the Director shall be the same as the salary of a district judge.” · Judicial Compensation 2026: District Judges $249,900",
                     "documents": [

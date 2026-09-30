@@ -36,6 +36,7 @@ from data_pipeline.verification.pay_documents import annotate_pay_documents
 from data_pipeline.verification.pay_tables import withdraw_pay_from_multi_post_nodes
 from scripts.validate_published_graph import (
     DERIVED_PAY_METHOD,
+    DERIVED_PAY_PERCENT_OF,
     DERIVED_PAY_PROVISIONS,
     DERIVED_PAY_REPEALED_TEXT,
     DERIVED_PAY_SOURCE,
@@ -118,6 +119,30 @@ def _base_tree():
                         "children": [
                             {"id": "jud-specialized-intl-trade-chief-judge-cit",
                              "name": "Chief Judge, CIT", "type": "Position"},
+                        ],
+                    },
+                ],
+            },
+            # A district court's bankruptcy bench, paid 92 percent of a
+            # district judge's salary by 28 U.S.C. 153(a) -- a percentage OF
+            # the tier -- and its magistrate bench, which 28 U.S.C. 634(a)
+            # caps at 92 percent ("up to") and which stays unpriced.
+            {
+                "id": "jud-district",
+                "name": "U.S. District Courts (94 Districts)",
+                "type": "Court",
+                "children": [
+                    {
+                        "id": "jud-district-sdny",
+                        "name": "Southern District of New York (S.D.N.Y.)",
+                        "type": "District Court",
+                        "children": [
+                            {"id": "jud-district-sdny-bankruptcy-judge-12", "name": "Bankruptcy Judge (×12)",
+                             "type": "Position",
+                             "representsPosts": {"text": "×12", "kind": "exact", "count": 12}},
+                            {"id": "jud-district-sdny-magistrate-judge-13", "name": "Magistrate Judge (×13)",
+                             "type": "Position",
+                             "representsPosts": {"text": "×13", "kind": "exact", "count": 13}},
                         ],
                     },
                 ],
@@ -241,6 +266,38 @@ class MirrorTests(unittest.TestCase):
         self.assertEqual("28 U.S.C. 603", PARITY_PROVISIONS["jud-support-fjc-director-fjc"]["via"]["citation"])
         self.assertEqual("28 U.S.C. 603", PARITY_PROVISIONS["jud-support-aousc-director-aousc"]["citation"])
 
+    def test_the_bankruptcy_rows_are_the_only_percentage_rows_and_the_gate_mirrors_them(self):
+        """28 U.S.C. 153(a): 92 percent OF the district-judge rate. Keyed by
+        node id in both places, so a parity row cannot acquire a percentage
+        and a percentage row cannot lose one."""
+        percent_rows = {n: p["percentOf"] for n, p in PARITY_PROVISIONS.items() if p.get("percentOf")}
+        self.assertEqual(
+            {"jud-district-sdny-bankruptcy-judge-12": 92, "jud-district-structure-bankruptcy-judge-varies": 92},
+            percent_rows)
+        self.assertEqual(percent_rows, DERIVED_PAY_PERCENT_OF)
+        for node_id in percent_rows:
+            self.assertEqual("28 U.S.C. 153(a)", PARITY_PROVISIONS[node_id]["citation"])
+            self.assertEqual("district judges", PARITY_PROVISIONS[node_id]["tier"])
+            self.assertIn("92 percent of the salary of a judge of the district court", PARITY_PROVISIONS[node_id]["quote"])
+            self.assertFalse(PARITY_PROVISIONS[node_id].get("via"))
+
+    def test_the_magistrate_judges_are_refused_because_the_statute_sets_a_ceiling(self):
+        """28 U.S.C. 634(a) pays full-time magistrate judges "up to" 92
+        percent, fixed by the Judicial Conference: a ceiling, not a rate.
+        Checked against the committed section, not asserted."""
+        for node_id in ("jud-district-sdny-magistrate-judge-13", "jud-district-structure-magistrate-judge-varies"):
+            self.assertNotIn(node_id, PARITY_PROVISIONS)
+            self.assertIn("up to", NOT_PRICED[node_id])
+            self.assertIn("ceiling", NOT_PRICED[node_id])
+        operative = load_section("magistrate_judges_28_usc_634.html")["operative"]
+        self.assertIn("up to an annual rate equal to 92 percent of the salary of a judge of the district court", operative)
+        self.assertIn("salaries to be fixed by the conference pursuant to section 633", operative)
+        self.assertIn("not less than an annual salary of $100, nor more than one-half the maximum salary", operative)
+        # And the bankruptcy section says "equal to", with no ceiling word.
+        bankruptcy = load_section("bankruptcy_judges_28_usc_153.html")["operative"]
+        self.assertIn("equal to 92 percent of the salary of a judge of the district court", bankruptcy)
+        self.assertNotIn("up to an annual rate", bankruptcy)
+
     def test_the_deputies_are_refused_and_say_why(self):
         for node_id in ("jud-support-aousc-deputy-director", "jud-support-fjc-deputy-director"):
             self.assertNotIn(node_id, PARITY_PROVISIONS)
@@ -253,7 +310,11 @@ class MirrorTests(unittest.TestCase):
         """Which is why the mirror is keyed by node id and not by figure:
         three courts' chief judges and their benches, six nodes, one rate."""
         district = [n for n, p in PARITY_PROVISIONS.items() if p["tier"] == "district judges"]
-        self.assertEqual(8, len(district))  # six judges' seats, and the two directors since 2026-09-28
+        # six judges' seats, the two directors since 2026-09-28, and the two
+        # bankruptcy benches since 2026-09-30 (a percentage of the same tier)
+        self.assertEqual(10, len(district))
+        at_the_rate = [n for n in district if not PARITY_PROVISIONS[n].get("percentOf")]
+        self.assertEqual(8, len(at_the_rate))
 
     def test_each_bench_takes_its_own_courts_provision(self):
         from data_pipeline.verification.derived_pay import BENCH_NODES
@@ -286,8 +347,9 @@ class BuildTests(unittest.TestCase):
         are in the tree only for the Tax Court here, so seven reach the
         fixture; the CIT and the two deputies never."""
         records, report = _records()
-        self.assertEqual(7, len(records))
-        self.assertEqual(7, report["priced"])
+        self.assertEqual(8, len(records))
+        self.assertEqual(8, report["priced"])
+        self.assertNotIn("jud-district-sdny-magistrate-judge-13", records)
         self.assertNotIn("jud-support-aousc-deputy-director", records)
         self.assertNotIn("jud-support-fjc-deputy-director", records)
         self.assertNotIn("jud-specialized-intl-trade-chief-judge-cit", records)
@@ -309,8 +371,57 @@ class BuildTests(unittest.TestCase):
         records, _ = _records()
         for node_id, record in records.items():
             with self.subTest(node_id):
-                self.assertAlmostEqual(
-                    JUDICIAL_COMPENSATION_TIERS[record["seatTier"]], record["amount"], places=2)
+                tier_amount = JUDICIAL_COMPENSATION_TIERS[record["seatTier"]]
+                percent = PARITY_PROVISIONS[node_id].get("percentOf")
+                expected = round(tier_amount * percent / 100.0, 2) if percent else tier_amount
+                self.assertAlmostEqual(expected, record["amount"], places=2)
+
+    def test_the_bankruptcy_figure_is_the_arithmetic_shown_in_the_open(self):
+        """$249,900 × 92% = $229,908: a figure no document prints, carried
+        with its base, its percentage and its result, and filed through the
+        validator's computed-from-a-marked-figure rule."""
+        records, _ = _records()
+        record = records["jud-district-sdny-bankruptcy-judge-12"]
+        base = JUDICIAL_COMPENSATION_TIERS["district judges"]
+        self.assertEqual(round(base * 0.92, 2), record["amount"])
+        self.assertEqual(92, record["percentOf"])
+        arithmetic = record["arithmetic"]
+        self.assertEqual("percent_of", arithmetic["operation"])
+        self.assertEqual(base, arithmetic["baseAmount"])
+        self.assertEqual("district judges", arithmetic["baseTier"])
+        self.assertEqual(record["amount"], arithmetic["result"])
+        self.assertEqual(record["rateText"], arithmetic["resultText"])
+        self.assertIn("No document prints", arithmetic["note"])
+        self.assertIn("92 percent of", record["amountScope"])
+        self.assertIn(" × 92% = ", record["derivation"])
+        self.assertIn(record["rateText"], record["derivation"])
+        # The validator files it under the computed-from-a-marked-figure
+        # rule: the base is printed with its mark in the evidence, the result
+        # is not, and the result is the arithmetic to the cent.
+        from data_pipeline.verification import financial_evidence as fe
+
+        node_map, _ = index_tree(_base_tree())
+        out = fe.validate_record(record, node_map["jud-district-sdny-bankruptcy-judge-12"])
+        self.assertEqual("currency_mark_on_the_figure_the_record_is_computed_from", out["unitsEvidenceKind"])
+        self.assertEqual("partial", fe.classify(out))
+        # The parity rows carry no arithmetic and take the printed-mark rule.
+        parity = records["jud-specialized-tax-chief-judge-tax-court"]
+        self.assertIsNone(parity["arithmetic"])
+        self.assertIsNone(parity["percentOf"])
+        parity_out = fe.validate_record(parity, node_map["jud-specialized-tax-chief-judge-tax-court"])
+        self.assertNotEqual(out["unitsEvidenceKind"], parity_out["unitsEvidenceKind"])
+        # And a result that is not the arithmetic is refused by the validator
+        # itself, before any gate sees it.
+        tampered = copy.deepcopy(record)
+        tampered["amount"] = 230_000.0
+        tampered["amountRaw"] = "230,000"
+        tampered["arithmetic"]["result"] = 230_000.0
+        with self.assertRaises(fe.Rejected):
+            fe.validate_record(tampered, node_map["jud-district-sdny-bankruptcy-judge-12"])
+        # Two documents, neither stating the figure -- and here it is literally
+        # true of the table too, which prints the base and not the result.
+        self.assertEqual(2, len(record["documents"]))
+        self.assertTrue(all(not d["statesTheFigure"] for d in record["documents"]))
 
     def test_a_provision_whose_sentence_has_changed_is_refused_not_guessed(self):
         loaded, compensation = _compensation()
@@ -334,7 +445,7 @@ class ApplyTests(unittest.TestCase):
         records, _ = _records()
         tree = _base_tree()
         stats = apply_pay_evidence(tree, records, index_tree=index_tree)
-        self.assertEqual(7, stats["priced"])
+        self.assertEqual(8, stats["priced"])
         # The document count, the percentage and the sentence saying what the
         # percentage does not measure are stamped by the shared pass that does
         # the same for every other pay field -- one code path for one number.
@@ -359,7 +470,7 @@ class ApplyTests(unittest.TestCase):
         node_map, _ = index_tree(tree)
         node_map["jud-specialized-tax-chief-judge-tax-court"]["positionStatutoryPay"] = {"source": "elsewhere"}
         stats = apply_pay_evidence(tree, records, index_tree=index_tree)
-        self.assertEqual(6, stats["priced"])
+        self.assertEqual(7, stats["priced"])
         self.assertEqual(1, stats["already_priced_by_another_source"])
         node_map, _ = index_tree(tree)
         self.assertIsNone(node_map["jud-specialized-tax-chief-judge-tax-court"].get("positionDerivedPay"))
@@ -376,6 +487,21 @@ class ApplyTests(unittest.TestCase):
         self.assertEqual(18, bench["holders"]["count"])
         self.assertTrue(bench["holders"]["appliesToEachHolder"])
         self.assertNotIn("holders", node_map["jud-specialized-tax-chief-judge-tax-court"]["positionDerivedPay"])
+        # The bankruptcy bench keeps its percentage figure the same way: the
+        # statute says "each bankruptcy judge", and the block carries the
+        # arithmetic through the sweep.
+        bankruptcy = node_map["jud-district-sdny-bankruptcy-judge-12"]["positionDerivedPay"]
+        self.assertEqual(12, bankruptcy["holders"]["count"])
+        self.assertEqual(92, bankruptcy["percentOf"])
+        self.assertEqual("percent_of", bankruptcy["arithmetic"]["operation"])
+        # And the document-count pass words its caution for the arithmetic.
+        annotate_pay_documents(tree)
+        node_map, _ = index_tree(tree)
+        caution = node_map["jud-district-sdny-bankruptcy-judge-12"]["positionDerivedPay"]["verification"]["caution"]
+        self.assertIn("the percentage of a tier this post is paid", caution)
+        self.assertIn("which neither prints", caution)
+        parity_caution = node_map["jud-specialized-tax-judge-18"]["positionDerivedPay"]["verification"]["caution"]
+        self.assertNotIn("which neither prints", parity_caution)
 
     def test_the_field_is_withdrawn_each_build_and_reaches_the_viewer(self):
         self.assertIn("positionDerivedPay", EVIDENCE_OWNED_FIELDS)
@@ -389,6 +515,9 @@ class GateTests(unittest.TestCase):
         records, _ = _records()
         self.tree = _base_tree()
         apply_pay_evidence(self.tree, records, index_tree=index_tree)
+        # The exporter's order: the multi-post sweep stamps `holders` on the
+        # bench nodes, then the shared pass counts the documents.
+        withdraw_pay_from_multi_post_nodes(self.tree)
         annotate_pay_documents(self.tree)
         node_map, _ = index_tree(self.tree)
         self.node = node_map["jud-specialized-cavc-chief-judge-cavc"]
@@ -488,6 +617,74 @@ class GateTests(unittest.TestCase):
         self.assertTrue(any("does not make" in v for v in self._check(ao, pay)))
         # The AO row is not a chain, and two documents is what it carries.
         self.assertEqual(2, ao["positionDerivedPay"]["verification"]["documents"])
+
+    def test_the_percentage_row_passes_and_each_part_of_the_arithmetic_is_checked(self):
+        """The bankruptcy bench: 92 percent of the tier, the arithmetic in
+        the open, and every element of it tied to the mirror."""
+        node_map, _ = index_tree(self.tree)
+        bench = node_map["jud-district-sdny-bankruptcy-judge-12"]
+        self.assertEqual([], self._check(bench))
+        honest = bench["positionDerivedPay"]
+        self.assertEqual(round(JUDICIAL_COMPENSATION_TIERS["district judges"] * 0.92, 2), honest["amount"])
+
+        # The tier's own rate published as the figure: a parity claim wearing
+        # a percentage row's citation.
+        pay = copy.deepcopy(honest)
+        pay["amount"] = JUDICIAL_COMPENSATION_TIERS["district judges"]
+        pay["arithmetic"]["result"] = pay["amount"]
+        self.assertTrue(any("as 92 percent of" in v for v in self._check(bench, pay)))
+
+        # The arithmetic dropped.
+        pay = copy.deepcopy(honest)
+        pay["arithmetic"] = None
+        self.assertTrue(any("without showing the arithmetic" in v for v in self._check(bench, pay)))
+
+        # A different percentage, in the block and in its arithmetic.
+        pay = copy.deepcopy(honest)
+        pay["percentOf"] = 95
+        pay["arithmetic"]["percent"] = 95
+        self.assertTrue(any("claims 95 percent" in v for v in self._check(bench, pay)))
+
+        # A base that is not the table's figure for the tier.
+        pay = copy.deepcopy(honest)
+        pay["arithmetic"]["baseAmount"] = 264_900.0
+        self.assertTrue(any("takes its percentage of" in v for v in self._check(bench, pay)))
+
+        # A result that is not the percentage of the base.
+        pay = copy.deepcopy(honest)
+        pay["arithmetic"]["result"] = 230_000.0
+        self.assertTrue(any("shows a result" in v for v in self._check(bench, pay)))
+
+        # The other operation the validator knows, on a row that is not it.
+        pay = copy.deepcopy(honest)
+        pay["arithmetic"]["operation"] = "plus_percent"
+        self.assertTrue(any("not 'percent_of'" in v for v in self._check(bench, pay)))
+
+        # A scope that does not say it is a percentage.
+        pay = copy.deepcopy(honest)
+        pay["amountScope"] = "District Judges"
+        self.assertTrue(any("does not say it is 92 percent" in v for v in self._check(bench, pay)))
+
+        # The note gone.
+        pay = copy.deepcopy(honest)
+        pay["arithmetic"]["note"] = ""
+        self.assertTrue(any("no document prints the result" in v for v in self._check(bench, pay)))
+
+        # And the arithmetic block moved onto a parity row is refused there.
+        parity = copy.deepcopy(self.node["positionDerivedPay"])
+        parity["arithmetic"] = copy.deepcopy(honest["arithmetic"])
+        parity["percentOf"] = 92
+        self.assertTrue(any("arithmetic on a parity provision" in v for v in self._check(pay=parity)))
+
+    def test_a_percentage_record_moved_to_the_magistrate_bench_is_caught(self):
+        """Same court, same count shape, a real statute -- and no provision:
+        28 U.S.C. 634(a) is a ceiling."""
+        node_map, _ = index_tree(self.tree)
+        magistrates = node_map["jud-district-sdny-magistrate-judge-13"]
+        moved = copy.deepcopy(node_map["jud-district-sdny-bankruptcy-judge-12"]["positionDerivedPay"])
+        moved["holders"]["count"] = 13
+        moved["holders"]["text"] = "×13"
+        self.assertTrue(any("no parity provision" in v for v in self._check(magistrates, moved)))
 
     def test_a_document_claiming_to_state_the_figure_is_caught(self):
         pay = copy.deepcopy(self.node["positionDerivedPay"])

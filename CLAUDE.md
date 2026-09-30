@@ -2276,19 +2276,20 @@ of the nine fields (no `positionTierPay` or `positionGradePay`). The
 derived module stopped writing its own copy of the arithmetic when this
 landed: one code path for one number.
 
-**And the gap this made visible, counted rather than estimated.** 588 of 4,591
+**And the gap this made visible, counted rather than estimated.** 590 of 4,591
 positions carry a pay claim (461 when this section was first written, before
 the multi-post rule below and the Federal Reserve rows; 492 before the
 reviewed rows of 2026-09-27, 498 before that day's class-title benches, 513
 before the tier-reference module of 2026-09-28, 541 before that day's
 thirteen reviewed rows, 554 before the eight candidates of §19.10, 566
-before the twenty-two rows §19.12 closed the eighth batch with); **4,003
+before the twenty-two rows §19.12 closed the eighth batch with, 588 before
+the bankruptcy judges of 2026-09-30); **4,001
 do not**, and `scripts/report_unpriced_positions.py` says why for every one
 of them:
 
 - **3,225** — no pay document this project has read names the title at all.
   Not a coverage gap somebody has not got to.
-- **758** — the node states a multiplicity (`Physician (×multiple)`) and no
+- **756** — the node states a multiplicity (`Physician (×multiple)`) and no
   claim that holds for every holder reaches it. Since the per-field rule
   below, a tier rate, a parity rate, a band or a uniform roster line IS
   published on such a node (`Judge (×18)` is priced now); what stays refused
@@ -2296,7 +2297,7 @@ of them:
   SYSTEM governs the title is a fact worth having.
 - **20** — OPM lists the position and the row prints no rate.
 
-The concentration is the useful part: **432** of the 4,003 sit under `VA
+The concentration is the useful part: **432** of the 4,001 sit under `VA
 Medical Centers`, 360 of them among the 3,313 (the service chiefs
 `va_title38_pay.py` deliberately refuses, since choosing a Title 38 table per
 node would be this module deciding which VA service chiefs are doctors), 61
@@ -2307,8 +2308,10 @@ under the White House Office (83 before the multi-post rule), 56 under
 per unpriced position with its id and its reason;
 `docs/PAY_SOURCE_RESEARCH_PROMPT_3.md` is a research prompt pack generated
 from the same list in the same run — a lead prompt asking which pay systems
-exist and where each is published, then **39 enumeration shards naming every
-one of the 4,003 titles**. `tests/test_unpriced_positions.py` asserts the
+exist and where each is published, then **38 enumeration shards naming every
+one of the 4,001 titles** (39 and 4,003 until 2026-09-30). The multiplicity
+reason's "N such nodes carry one" is read off the graph on each run since
+2026-09-30; it had said 28 since 2026-09-23 while the graph carried 37. `tests/test_unpriced_positions.py` asserts the
 coverage rather than trusting it: every unpriced id appears in the pack, no
 priced position appears in either document, and both documents are regenerated
 and compared byte-for-byte so a stale copy fails.
@@ -2691,7 +2694,8 @@ record carries the arithmetic in the open (`arithmetic`: the base as the
 table prints it, the percentage as the statute states it, the result), the
 panel prints "$209,600 + 3% = $215,888 — arithmetic this project performed,
 printed by no document", and `financial_evidence` accepts it under a fifth
-scale rule granted to this source type alone,
+scale rule granted to this source type alone (and, since 2026-09-30, to
+the derived module's percent-of records, below),
 `COMPUTED_FROM_MARKED_FIGURE_SOURCE_TYPES` (`unitsEvidenceKind:
 currency_mark_on_the_figure_the_record_is_computed_from`): the base must
 carry the currency mark ATTACHED in the evidence exactly as
@@ -2863,6 +2867,64 @@ matched such a heading — the Librarian's section read as page chrome until
 the pattern admitted a dashed suffix in all three, pinned by a test.
 Reviewed rows **41 → 61**, Schedule-priced **140 → 160**, tier-reference
 **34 → 36**, pay claims **566 → 588**, unpriced **4,025 → 4,003**.
+
+**The bankruptcy judges at 92 percent, and the magistrate judges refused
+(since 2026-09-30, the owner's decision).** `CURATION.md` §7.2 had recorded
+both benches as reaching zero nodes under the old blanket multi-post rule,
+and §19.12 left them as the one "still open" item that was a build rather than
+a decision once the owner made it. The owner asked for both at 92 percent.
+One of the two statutes says that and one does not, and the difference is the
+whole of what this section records. **28 U.S.C. 153(a)** pays "each bankruptcy
+judge" "a salary at an annual rate that is equal to 92 percent of the salary
+of a judge of the district court": a rate, for every holder, by the
+statute's own words. **28 U.S.C. 634(a)** pays magistrate judges "salaries to
+be fixed by the conference pursuant to section 633, at rates for full-time
+United States magistrate judges **up to** an annual rate equal to 92 percent"
+of the same, and part-time magistrate judges "not less than an annual salary
+of $100, nor more than one-half the maximum". That is a ceiling the Judicial
+Conference sets a figure beneath, and no document here states what it
+fixed. Both sections are committed under `tests/fixtures/uscode/`; the
+bankruptcy judges are priced and the magistrate judges are refused, with the
+reason on the record (`derived_pay.NOT_PRICED`) and a test asserting both
+directions against the operative text — "up to an annual rate" is in §634
+and not in §153.
+
+The figure is **$249,900 × 92% = $229,908**, which no document prints, so it
+is `positionDerivedPay`'s shape with one step more: the parity provisions
+join a statute naming a tier to the table pricing it, and this row multiplies
+the table's printed figure by a percentage the statute states. The record
+carries `percentOf` and an `arithmetic` block (`operation: percent_of`, the
+base as the table prints it, the tier, the percentage, the result, and a
+note saying no document prints it), the same open arithmetic the
+tier-reference module publishes for an Inspector General's "plus 3 percent",
+and `financial_evidence` accepts it under the same computed-from-a-marked-
+figure rule, which gained a second operation (`percent_of` beside
+`plus_percent`) and a second grantee (`statutory_parity_derived_pay`); the
+validator recomputes base × percent / 100 and refuses a result that is not
+it. The gate mirrors the two rows by node id in `DERIVED_PAY_PERCENT_OF`,
+computes the expected figure from the mirrored tier, and refuses: the tier's
+own rate published as the figure, a dropped arithmetic block, a percentage
+the statute does not state, a base that is not the table's figure for the
+tier, a result that is not the percentage of the base, the other operation,
+a scope that does not say it is a percentage, an empty note, an arithmetic
+block on a parity row, and the record moved to the magistrate bench of the
+same court — which has the same count shape and a real statute and no
+provision. The panel and the atlas print the multiplication in words, and
+the document-count pass words the caution for it ("the figure is that
+arithmetic, which neither prints"). Two documents, 80% on the project's
+scale, neither stating the figure — here literally true of the table too.
+
+**Two nodes, both benches.** `Bankruptcy Judge (×12)` under the Southern
+District of New York and `Bankruptcy Judge (×varies)` under the standard
+district structure, which stands for every district's bankruptcy judges and
+is priced because §153(a) says "each bankruptcy judge" wherever the judge
+sits; the office-rate sweep stamps `holders` on both, exact 12 and unstated.
+The AO's Deputy Director stays refused and its reason now says why the two
+cases differ: that one is 92 percent of a figure that is itself a join (the
+Director's, equal to a district judge's by the same section), where the
+bankruptcy percentage is taken of the table's own printed figure. Derived
+records **10 → 12**, pay claims **588 → 590**, unpriced **4,003 → 4,001**,
+multi-post nodes priced **35 → 37**.
 
 **The panel's Trace Origin, restored.** A 2026-09-15 change reduced "Trace
 Origin" to a one-line confirmation on the grounds that the breadcrumb already
@@ -3172,6 +3234,41 @@ and the exemption is deliberately subordinate to an explicit depth filter),
 and asserts that a majority of the brood is drawn. The bar is 60% rather than
 90% for the density cap's sake; the state it exists to catch scored 1.6%.
 
+**That 235 was a transient, and the density cap was undoing the fix (found
+and fixed 2026-09-30).** The smoke check sampled the drawn set once, six
+seconds after the click, and on the slower renderer of that day's sandbox it
+flapped: 146, 148 and 153 of 249 on the working tree against a bar of 150,
+and 138 on the committed HEAD, so it was not the day's change. Sampling the
+same expansion every few seconds instead — with the LOD label and the
+"density-hidden" count read off the page beside it — showed what the single
+sample had been measuring. The expansion itself finishes in three seconds;
+the brood is then admitted as the camera pulls back through Office, Agency
+and Branch View (48 drawn at two seconds, 163 at six, 239 at twenty, holding
+there to twenty-five); and then, from thirty seconds on, "density-hidden"
+climbs 10 → 244 and the brood falls 239 → 26. That is `applyDensityCap`
+trimming the brood to `nodesPerTile` at the pulled-back tier — two per tile at
+Branch View — once `DENSITY_HOLD_FRAMES` (80 frames, landed 2026-09-21) has
+expired, which on a software renderer at a few frames a second takes about
+twenty-five seconds and in a real browser at 60 frames a second takes just
+over one. So the 235 measured on 2026-09-22 sat inside the hold, and what a
+reader with a real GPU saw after pressing Expand was the brood appear and
+then, a second and a half later, 90% of it vanish — the state the fix
+existed to cure, with a delay in front of it.
+
+The exemption `isNodeRenderableAtCurrentLod` already grants the selected
+node's own children from the LOD tier is now granted from the density cap
+too, in `applyDensityCap`, on the same reasoning and with the same bound:
+one brood, never a subtree, and a reader who pressed Expand asked to see
+these. The cap's job is the pile a reader did not ask for. And the smoke
+check measures the SETTLED state rather than a snapshot: it waits for the
+expansion to finish (the button reads "Expand All Below" again), then thirty
+seconds for any hold to expire on a renderer of any speed, then polls until
+three consecutive samples agree, and prints every sample with its result
+under `measurements` so a passing run is a number and not just "ok". On the
+old code that check settles at 26 of 249 and fails, which is what it should
+have done all along; with the exemption it settled at **249 of 249**, on a
+run made while the test suite was contending for the same four cores.
+
 **Labels were de-overlapped against each other and against the page's own
 panels against nothing (since 2026-09-22).** `suppressOverlappingLabels` has
 always hidden a label that collides with a higher-priority label; nothing
@@ -3346,17 +3443,20 @@ subdivide measured money rather than invent it — which does not make a
 subdivision a measurement. **Since 2026-09-09 the site does not show one by
 default**, by the owner's decision: a node with no measured cost of its own
 shows no figure and says why, and ticking "Also show estimated shares of a
-parent's total" opts back in. The exception is a real salary — **588** of the
+parent's total" opts back in. The exception is a real salary — **590** of the
 4,591 positions carry a pay claim an official source states, counted on the
-published graph on 2026-09-28 after Schedule 6, the VA's Title 38 bands, the
+published graph on 2026-09-30 after Schedule 6, the VA's Title 38 bands, the
 Article I parity derivations, the per-field multi-post rule, the Federal
 Reserve rows, the reviewed rows of the fourth research batch, the six
 class-title benches, the tier-reference module, the thirteen reviewed rows
 of §19.9's list, the eight candidates of §19.10 and the twenty-two rows that
-closed the eighth batch (§19.12) landed: 10 a figure no
+closed the eighth batch (§19.12), and the bankruptcy judges of 2026-09-30,
+landed: 12 a figure no
 document states (`positionDerivedPay`, four chief judges and their four
-benches, the Administrative Office's Director, and the Federal Judicial
-Center's Director through a chain of two statutes), 36 a rate a
+benches, the Administrative Office's Director, the Federal Judicial
+Center's Director through a chain of two statutes, and two bankruptcy
+benches at 28 U.S.C. 153(a)'s 92 percent of the district-judge rate,
+arithmetic the block carries in the open), 36 a rate a
 statute sets by REFERENCE to an Executive Schedule level (`positionTierReferencePay`:
 the GAO's two officers, the GPO's two, the IES's Director and three
 Commissioners, the FCA Board's Chairman, the Librarian of Congress, and 26
@@ -3380,7 +3480,7 @@ base-pay **range** rather than a rate (`positionGradePay`, counted separately
 because a range is not a rate and the panel says so; it read 32 until the
 current export supplied a printed figure for 14 of them, and a printed figure
 beats a band). A node may carry more than one of these, so the per-source
-figures sum past 588 — 461 on 2026-09-23 when four Article I chief judges
+figures sum past 590 — 461 on 2026-09-23 when four Article I chief judges
 took a figure NO document states, 488 the same day when the multi-post rule
 became per field, 491 with the Federal Reserve's three (`positionDerivedPay`
 was 4 and is 8, since each court's bench now takes its own parity provision)
@@ -3390,7 +3490,8 @@ count is worth), 498 on 2026-09-27 with the six reviewed rows, 513 the
 same day with the five class-title benches and nine more reviewed rows, 541
 on 2026-09-28 with the tier-reference module, 554 the same day with the
 thirteen reviewed rows of §19.9's list, 566 with the eight candidates of
-§19.10, and 588 with the twenty-two rows of §19.12. Shown in the cost block
+§19.10, 588 with the twenty-two rows of §19.12, and 590 with the bankruptcy
+benches of 2026-09-30. Shown in the cost block
 under its own heading and never headed COST.
 
 That figure read **354** until 2026-09-19 and was wrong: it added up the
@@ -3405,8 +3506,9 @@ the per-field multi-post rule, 491 with the Federal Reserve rows, 492 after
 the review, 498 with the six reviewed rows of 2026-09-27, 513 with that
 day's class-title benches and nine more reviewed rows, 541 on 2026-09-28
 with the GAO's officers and 26 Inspectors General, 554 the same day with
-the thirteen reviewed rows, 566 with the eight candidates, and 588 with the
-twenty-two rows that closed the eighth batch. The estimates
+the thirteen reviewed rows, 566 with the eight candidates, 588 with the
+twenty-two rows that closed the eighth batch, and 590 with the bankruptcy
+benches. The estimates
 stay in `graph.json` because the cascade's arithmetic and the gate's
 child-sum checks are built on them, so a consumer of the JSON must read
 `cost_status`, not `resolved_total_amount` alone. The gate prints both

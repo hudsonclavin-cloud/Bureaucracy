@@ -36,7 +36,7 @@ unverified`. The estimates remain in `graph.json` — the cascade's arithmetic
 and the gate's child-sum checks are built on them — so a consumer of the
 JSON must read `cost_status` and not `resolved_total_amount` alone.
 
-The one exception is a real salary. **588** position nodes carry a pay claim an
+The one exception is a real salary. **590** position nodes carry a pay claim an
 official source states — 188 from the White House Office roster (22 of them
 titles the roster lists N times at one rate, published for each holder), 160
 from the Executive Schedule as 5 U.S.C. §§5312–5316 sets it (61 of them through
@@ -56,15 +56,22 @@ General of the establishments 5 U.S.C. 401(1) lists at Level III plus the
 Act's 3 percent — $215,888, arithmetic the block carries in the open and no
 document prints), 72 a Title 38 tier BAND rather than a rate, 31 from a
 listing's level joined to OPM's table, 24 statutory, 18 a base-pay RANGE, and
-**10 a figure no single document states** (four Article I chief judges and,
+**12 a figure no single document states** (four Article I chief judges and,
 since the multi-post rule became per field on 2026-09-23, their four benches —
 `Judge (×18)` among them, because "Each judge shall receive salary at the same
 rate" is the bench's fact and not one holder's — and, since 2026-09-28, the
 Director of the Administrative Office of the U.S. Courts, paid by 28 U.S.C.
 603 as a district judge, and the Director of the Federal Judicial Center,
 paid by 28 U.S.C. 626 what the AO's Director is paid: a chain of two statutes
-and the table, three documents, none stating the figure). A node may carry
-more than one, so the per-source figures sum past 588. Each shows in place of
+and the table, three documents, none stating the figure; and, since
+2026-09-30, two bankruptcy benches — the Southern District of New York's
+`Bankruptcy Judge (×12)` and the standard district structure's — at 28 U.S.C.
+153(a)'s "92 percent of the salary of a judge of the district court",
+$249,900 × 92% = $229,908, arithmetic the block carries in the open and no
+document prints; the magistrate judges are refused because 28 U.S.C. 634(a)
+sets "up to" that percentage, a ceiling the Judicial Conference fixes a figure
+beneath). A node may carry
+more than one, so the per-source figures sum past 590. Each shows in place of
 the withheld estimate, under its
 own heading rather than COST, with the panel saying it is compensation for one
 post — or, on a node standing for several, for each of its holders — and not

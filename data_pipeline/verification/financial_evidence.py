@@ -249,7 +249,11 @@ SCALE_PRINTED_SOURCE_TYPES = {
 #: the base times (100 + percent) / 100 to the cent. Tried last, so a figure
 #: that is itself printed always takes a stronger kind; recorded in
 #: `unitsEvidenceKind` so a reviewer can see which records rest on it.
-COMPUTED_FROM_MARKED_FIGURE_SOURCE_TYPES = {"statutory_tier_reference_pay"}
+#: Two operations, each the statute's own words: "plus 3 percent" (the
+#: Inspector General Act) and "92 percent of" (28 U.S.C. 153 for bankruptcy
+#: judges). A record names which, and the rule recomputes accordingly.
+COMPUTED_FROM_MARKED_FIGURE_SOURCE_TYPES = {"statutory_tier_reference_pay", "statutory_parity_derived_pay"}
+COMPUTED_OPERATIONS = ("plus_percent", "percent_of")
 
 #: A third way a source can state its scale, narrower still, and granted to
 #: exactly one source type: a machine-readable API whose publisher states no
@@ -454,7 +458,8 @@ def _computed_from_marked_figure(
 
     Returns the base's printed text, or "" when the evidence does not show
     this. Four things, all required: an `arithmetic` block naming the
-    operation (`plus_percent` only), the base's printed digits and a whole
+    operation (`plus_percent`: base plus the percentage; `percent_of`: the
+    percentage of the base), the base's printed digits and a whole
     percentage; the base printed WITH its mark in the evidence; the record's
     own figure NOT printed with a mark in the evidence (then the stronger rule
     would have matched); and the record's own figure equal to the computation
@@ -463,7 +468,8 @@ def _computed_from_marked_figure(
     if units != "usd" or source_type not in COMPUTED_FROM_MARKED_FIGURE_SOURCE_TYPES:
         return ""
     arithmetic = record.get("arithmetic")
-    if not isinstance(arithmetic, Mapping) or _text(arithmetic.get("operation")) != "plus_percent":
+    operation = _text(arithmetic.get("operation")) if isinstance(arithmetic, Mapping) else ""
+    if operation not in COMPUTED_OPERATIONS:
         return ""
     base_raw = _text(arithmetic.get("baseAmountRaw"))
     percent = arithmetic.get("percent")
@@ -479,7 +485,8 @@ def _computed_from_marked_figure(
         return ""
     if re.search(rf"\$\s*{re.escape(raw)}(?![\d,]|\.\d)", evidence):
         return ""
-    expected = round(float(base_raw.replace(",", "")) * (100 + percent) / 100.0, 2)
+    base = float(base_raw.replace(",", ""))
+    expected = round(base * (100 + percent) / 100.0, 2) if operation == "plus_percent" else round(base * percent / 100.0, 2)
     if abs(float(raw.replace(",", "")) - expected) > 0.005:
         return ""
     return base_match.group(0)

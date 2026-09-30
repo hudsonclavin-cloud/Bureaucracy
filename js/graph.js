@@ -1,5 +1,5 @@
 import * as THREE from "https://unpkg.com/three@0.160.1/build/three.module.js";
-import { createLodManager } from "./lodManager.js?v=20260928b";
+import { createLodManager } from "./lodManager.js?v=20260930b";
 
 const GOLDEN_ANGLE = Math.PI * (3 - Math.sqrt(5));
 const CAMERA_DISTANCE = 280;
@@ -804,6 +804,22 @@ export function createGovernmentGraph({
       for (const entry of entries) {
         if (entry.importanceScore >= 250_000) {
           allowed.add(entry.data.id);
+        }
+      }
+    }
+    // The selected node's own children are exempt from the cap, for the
+    // reason `isNodeRenderableAtCurrentLod` exempts them from the tier and
+    // with the same bound: one brood, never a subtree. Framing a wide brood
+    // pulls the camera back to a tier whose tiles keep two nodes each, so
+    // the cap was quietly undoing the exemption -- measured on 2026-09-30 on
+    // the White House Office's 249 children: 239 drawn while the hold below
+    // lasted, then 26 once it expired, with 244 "density-hidden". A reader
+    // who pressed Expand asked to see these; the cap's job is the pile a
+    // reader did not ask for.
+    if (state.selectedNode && !state.selectedNode.isCluster) {
+      for (const nodeObj of nodeObjs) {
+        if (nodeObj.parent === state.selectedNode) {
+          allowed.add(nodeObj.data.id);
         }
       }
     }

@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20260928b";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260928b";
+import { createGovernmentGraph } from "./graph.js?v=20260930b";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260930b";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -1316,6 +1316,9 @@ function renderDerivedPay(data) {
   const subject = pay.subject || `every judge of ${pay.court || "this court"}`;
   if (pay.viaStatute) {
     add(` ${pay.statute || "A statutory parity provision"} states that ${subject} is paid what another office is paid; ${pay.viaStatute} states that that office is paid at the rate of ${pay.amountScope || "a judicial tier"}; the U.S. Courts' Judicial Compensation table states what that tier pays. The figure is the join of the three.`);
+  } else if (pay.arithmetic && typeof pay.arithmetic === "object" && pay.arithmetic.operation === "percent_of") {
+    const arithmetic = pay.arithmetic;
+    add(` ${pay.statute || "A statutory provision"} states that ${subject} is paid ${arithmetic.percent} percent of the salary of ${arithmetic.baseTier || "a judicial tier"}; the U.S. Courts' Judicial Compensation table prints ${arithmetic.baseText || "a figure"} for that tier. ${arithmetic.baseText || "That figure"} × ${arithmetic.percent}% = ${printed} — arithmetic this project performed, printed by no document.`);
   } else {
     add(` ${pay.statute || "A statutory parity provision"} states that ${subject} is paid at the rate of ${pay.amountScope || "another court's judges"}; the U.S. Courts' Judicial Compensation table states what that tier pays. The figure is the join of the two.`);
   }

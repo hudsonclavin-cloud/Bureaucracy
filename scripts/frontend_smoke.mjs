@@ -94,6 +94,11 @@ const server = http.createServer((req, res) => {
 
 await new Promise((resolve) => server.listen(PORT, "127.0.0.1", resolve));
 const failures = [];
+// Figures worth printing whether or not their check passed: a count that
+// sits near its bar is only legible as a number, and a passing run that
+// printed nothing left the next investigator with "it passed" and no way to
+// tell 235 from 151.
+const measurements = {};
 const check = (name, ok, detail) => {
   if (!ok) failures.push(`${name}: ${detail}`);
 };
@@ -906,7 +911,13 @@ try {
     await page.fill("#search-input", generated.name.slice(0, 30));
     await page.waitForTimeout(600);
     await page.locator("#search-results .sr-item").first().click();
-    await page.waitForTimeout(800);
+    // The panel renders after the selection's fly-in; on a slow renderer
+    // 800ms was not always enough and this check once failed on an empty
+    // line (2026-09-30). Wait for the line to carry text, up to five seconds.
+    await page.waitForFunction(
+      () => (document.getElementById("info-desc-provenance")?.textContent || "").trim().length > 0,
+      null, { timeout: 5000 },
+    ).catch(() => {});
     const note = await text("#info-desc-provenance");
     check("a sourced description says which document it came from",
       /generated from the White House Office's own annual report/.test(note), note);
@@ -1520,13 +1531,45 @@ try {
     await page.locator("#search-results .sr-item").first().click({ force: true });
     await page.waitForTimeout(1200);
     await page.click("#btn-expand-all");
-    await page.waitForTimeout(6000);
     const brood = (allNodes.find((node) => node.id === "exec-eop-who")?.children || []).map((child) => child.id);
-    const drawnIds = new Set(await page.evaluate(() => window.__bureaucracy_drawn_node_ids__?.() || []));
-    const broodDrawn = brood.filter((id) => drawnIds.has(id)).length;
+    // The SETTLED count, not a snapshot. This used to sample once at six
+    // seconds, and on 2026-09-30 that turned out to measure a transient
+    // twice over: on a slow renderer the brood was still being admitted at
+    // six seconds (48 at two, 163 at six, 239 at twenty), and the 235 the
+    // fix was measured at on 2026-09-22 sat inside the density cap's hold
+    // (80 frames), after which the cap at the pulled-back tier trimmed the
+    // brood to 26 of 249. So: wait for the expansion to finish (the button
+    // reads "Expand All Below" again), then thirty seconds for any hold to
+    // expire on a renderer of any speed, then poll until three consecutive
+    // samples agree. Every sample is printed with the result.
+    const countDrawn = async () => {
+      const ids = new Set(await page.evaluate(() => window.__bureaucracy_drawn_node_ids__?.() || []));
+      return brood.filter((id) => ids.has(id)).length;
+    };
+    const t0 = Date.now();
+    const samples = [];
+    for (let i = 0; i < 30; i += 1) {
+      await page.waitForTimeout(1000);
+      const label = await page.evaluate(() => (document.getElementById("btn-expand-all")?.textContent || "").trim());
+      if (label === "Expand All Below") break;
+    }
+    samples.push(`expansion done +${Date.now() - t0}ms: ${await countDrawn()}`);
+    await page.waitForTimeout(30000);
+    let broodDrawn = await countDrawn();
+    samples.push(`+${Date.now() - t0}ms: ${broodDrawn}`);
+    let agreed = 1;
+    for (let i = 0; i < 20 && agreed < 3; i += 1) {
+      await page.waitForTimeout(2000);
+      const next = await countDrawn();
+      agreed = next === broodDrawn ? agreed + 1 : 1;
+      broodDrawn = next;
+      samples.push(`+${Date.now() - t0}ms: ${broodDrawn}`);
+    }
+    measurements.whiteHouseOfficeBroodDrawn = `${broodDrawn} of ${brood.length}, settled`;
+    measurements.whiteHouseOfficeBroodSamples = samples;
     check("the graph still carries the wide brood this check is measured on", brood.length > 200, `${brood.length} children`);
     check("expanding a node draws its children", broodDrawn >= brood.length * 0.6,
-      `${broodDrawn} of ${brood.length} children drawn after expanding their parent`);
+      `${broodDrawn} of ${brood.length} children drawn after expanding their parent, once settled`);
     await page.fill("#search-input", "");
     await page.waitForTimeout(300);
   }
@@ -1539,5 +1582,5 @@ try {
 } finally {
   server.close();
 }
-console.log(JSON.stringify({ ok: failures.length === 0, failures }, null, 2));
+console.log(JSON.stringify({ ok: failures.length === 0, failures, measurements }, null, 2));
 process.exit(failures.length === 0 ? 0 : 1);

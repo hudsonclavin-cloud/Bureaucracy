@@ -185,6 +185,16 @@ PAY_DOCUMENT_FIELDS: dict[str, dict[str, Any]] = {
             "not the chance that it is right. No document here states the figure: one names "
             "the tier this post is paid at, the other states what that tier pays."
         ),
+        # A record carrying `arithmetic` (28 U.S.C. 153(a)'s bankruptcy judges,
+        # 92 percent of the district-judge rate) rests on the same two
+        # documents and is one step further from either: the table prints the
+        # base, and the result is this project's multiplication.
+        "percentCaution": (
+            "The percentage measures how much official documentation this figure rests on, "
+            "not the chance that it is right. No document here states the figure: one states "
+            "the percentage of a tier this post is paid, the other states what that tier pays, "
+            "and the figure is that arithmetic, which neither prints."
+        ),
     },
     "positionTierReferencePay": {
         # The derived shape again, from the other side of the Executive
@@ -244,6 +254,12 @@ def _urls_at(block: Mapping[str, Any], key: Any) -> Iterable[str]:
 def _class_title(block: Mapping[str, Any]) -> bool:
     """A schedule block priced from the Code's class title says so itself."""
     return block.get("classTitle") is True
+
+
+def _percent_of_tier(block: Mapping[str, Any]) -> bool:
+    """A derived block that is a percentage of the tier carries the arithmetic."""
+    arithmetic = block.get("arithmetic")
+    return isinstance(arithmetic, Mapping) and arithmetic.get("operation") == "percent_of"
 
 
 def _uniform_roster(block: Mapping[str, Any]) -> bool:
@@ -311,6 +327,7 @@ def annotate_pay_documents(root: dict[str, Any]) -> dict[str, int]:
                 "caution": (
                     (spec.get("uniformCaution") or spec["caution"]) if _uniform_roster(block)
                     else (spec.get("classCaution") or spec["caution"]) if _class_title(block)
+                    else (spec.get("percentCaution") or spec["caution"]) if _percent_of_tier(block)
                     else spec["caution"]
                 ),
                 "documentRoles": roles,

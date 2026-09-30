@@ -922,6 +922,27 @@ DERIVED_PAY_PROVISIONS["jud-support-fjc-director-fjc"] = (
     "the Director of the Administrative Office of the United States Courts",
     ("28 U.S.C. 603", "The salary of the Director shall be the same as the salary of a district judge."),
 )
+#: A percentage OF the tier, since 2026-09-30: 28 U.S.C. 153(a) pays "each
+#: bankruptcy judge" 92 percent of a district judge's salary. The block carries
+#: the arithmetic in the open and the figure is checked as base * percent /
+#: 100 to the cent against the mirrored table; the row is keyed by node id and
+#: the percentage mirrored beside it, so a parity row cannot acquire a
+#: percentage and a percentage row cannot drop one. The magistrate judges'
+#: section (28 U.S.C. 634(a)) is committed and deliberately NOT here: it sets a
+#: CEILING ("up to" 92 percent), fixed by the Judicial Conference, not a rate.
+DERIVED_PAY_BANKRUPTCY_SENTENCE = (
+    "Each bankruptcy judge shall serve on a full-time basis and shall receive as full compensation "
+    "for his services, a salary at an annual rate that is equal to 92 percent of the salary of a "
+    "judge of the district court of the United States as determined pursuant to section 135"
+)
+for _node_id in ("jud-district-sdny-bankruptcy-judge-12", "jud-district-structure-bankruptcy-judge-varies"):
+    DERIVED_PAY_PROVISIONS[_node_id] = ("28 U.S.C. 153(a)", "district judges", DERIVED_PAY_BANKRUPTCY_SENTENCE)
+#: node id -> the whole percentage of the tier the statute pays. Every other
+#: derived row is paid AT the tier and must carry no arithmetic block.
+DERIVED_PAY_PERCENT_OF = {
+    "jud-district-sdny-bankruptcy-judge-12": 92,
+    "jud-district-structure-bankruptcy-judge-varies": 92,
+}
 #: The sentence 38 U.S.C. 7253's Amendments note prints as the section's PRIOR
 #: text. It is on the page, it is not the law, and publishing it would put the
 #: CAVC's chief judge at the circuit rate. Refused outright wherever it is
@@ -3141,21 +3162,72 @@ def derived_pay_violations(node, pay, today, label):
     if DERIVED_PAY_REPEALED_TEXT in blob:
         say("quotes 38 U.S.C. 7253's REPEALED subsection, which the page prints beneath the law")
 
-    expected = JUDICIAL_COMPENSATION_TIERS.get(tier)
+    tier_amount = JUDICIAL_COMPENSATION_TIERS.get(tier)
+    percent_of = DERIVED_PAY_PERCENT_OF.get(node_id)
+    arithmetic = pay.get("arithmetic")
+    if tier_amount is None:
+        expected = None
+    elif percent_of is not None:
+        expected = round(tier_amount * percent_of / 100.0, 2)
+    else:
+        expected = tier_amount
     amount = pay.get("amount")
     if isinstance(amount, bool) or not isinstance(amount, (int, float)):
         say("publishes {!r} as a derived rate of basic pay".format(amount))
     elif expected is None:
         say("prices tier {!r}, which the mirrored table does not have".format(tier))
     elif abs(float(amount) - expected) > 0.005:
-        say("publishes {:,.2f} for {!r}, which the table pays {:,.2f}".format(float(amount), tier, expected))
+        if percent_of is not None:
+            say("publishes {:,.2f} as {} percent of {!r}, which is {:,.2f}".format(
+                float(amount), percent_of, tier, expected))
+        else:
+            say("publishes {:,.2f} for {!r}, which the table pays {:,.2f}".format(float(amount), tier, expected))
     if expected is not None:
-        printed = "${:,.0f}".format(expected)
+        printed = "${:,.2f}".format(expected) if abs(expected - round(expected)) > 0.005 else "${:,.0f}".format(expected)
+        tier_printed = "${:,.0f}".format(tier_amount)
         if str(pay.get("rateText") or "") != printed:
-            say("prints the rate as {!r}; the table prints {!r}".format(pay.get("rateText"), printed))
+            say("prints the rate as {!r}; {} gives {!r}".format(
+                pay.get("rateText"), "the arithmetic" if percent_of is not None else "the table", printed))
         derivation = str(pay.get("derivation") or "")
         if printed not in derivation or sentence not in derivation:
-            say("publishes a derivation that does not carry both the statute's sentence and the table's figure")
+            say("publishes a derivation that does not carry both the statute's sentence and the figure")
+        if percent_of is not None and tier_printed not in derivation:
+            say("publishes a derivation that does not carry the table's own figure the percentage is taken of")
+
+    # A percentage row carries its arithmetic in the open; a parity row
+    # carries none. The block's own percentage is the mirrored one, its base
+    # is the table's figure for the tier, and its result is the figure it
+    # publishes.
+    if percent_of is None:
+        if arithmetic is not None or pay.get("percentOf") is not None:
+            say("publishes arithmetic on a parity provision that pays the tier's rate itself")
+    else:
+        if pay.get("percentOf") != percent_of:
+            say("claims {!r} percent of the tier; {} says {}".format(pay.get("percentOf"), citation, percent_of))
+        if not isinstance(arithmetic, dict):
+            say("publishes a percentage of a tier without showing the arithmetic")
+        else:
+            if str(arithmetic.get("operation") or "") != "percent_of":
+                say("shows arithmetic of kind {!r}, not 'percent_of'".format(arithmetic.get("operation")))
+            if arithmetic.get("percent") != percent_of:
+                say("shows {!r} percent in its arithmetic; {} says {}".format(
+                    arithmetic.get("percent"), citation, percent_of))
+            base = arithmetic.get("baseAmount")
+            if isinstance(base, bool) or not isinstance(base, (int, float)) or tier_amount is None \
+                    or abs(float(base) - tier_amount) > 0.005:
+                say("takes its percentage of {!r}, not the table's {!r} for {!r}".format(base, tier_amount, tier))
+            if str(arithmetic.get("baseTier") or "") != tier:
+                say("names {!r} as the tier its percentage is taken of, not {!r}".format(arithmetic.get("baseTier"), tier))
+            result = arithmetic.get("result")
+            if isinstance(result, bool) or not isinstance(result, (int, float)) or expected is None \
+                    or abs(float(result) - expected) > 0.005 or (isinstance(amount, (int, float))
+                                                                  and abs(float(result) - float(amount)) > 0.005):
+                say("shows a result ({!r}) that is not the percentage of the base, or not the figure it publishes".format(result))
+            if not str(arithmetic.get("note") or "").strip():
+                say("shows arithmetic without saying that no document prints the result")
+        scope = str(pay.get("amountScope") or "")
+        if "{} percent".format(percent_of) not in scope:
+            say("scopes the figure as {!r}, which does not say it is {} percent of the tier".format(scope, percent_of))
 
     if str(pay.get("year") or "") != JUDICIAL_COMPENSATION_YEAR:
         say("prices year {!r}, not {!r}".format(pay.get("year"), JUDICIAL_COMPENSATION_YEAR))

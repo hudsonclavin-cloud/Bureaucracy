@@ -38,7 +38,7 @@ class CollectTests(unittest.TestCase):
         graph = _graph()
         if graph is None:
             self.skipTest("no published graph")
-        groups, positions, priced = collect(graph)
+        groups, positions, priced, multi_priced = collect(graph)
         listed = {row["id"] for rows in groups.values() for row in rows}
         stack = [graph]
         while stack:
@@ -52,7 +52,7 @@ class CollectTests(unittest.TestCase):
         graph = _graph()
         if graph is None:
             self.skipTest("no published graph")
-        groups, _, _ = collect(graph)
+        groups, _, _, _ = collect(graph)
         listed = {row["id"] for rows in groups.values() for row in rows}
         stack = [graph]
         missing = []
@@ -70,7 +70,7 @@ class CollectTests(unittest.TestCase):
         graph = _graph()
         if graph is None:
             self.skipTest("no published graph")
-        groups, _, _ = collect(graph)
+        groups, _, _, _ = collect(graph)
         for rows in groups.values():
             for row in rows:
                 self.assertIn(row["reason"], REASONS)
@@ -124,12 +124,12 @@ class GeneratedDocumentTests(unittest.TestCase):
         graph = _graph()
         if graph is None or not PROMPTS.exists():
             self.skipTest("no published graph or no prompt pack")
-        groups, positions, priced = collect(graph)
+        groups, positions, priced, multi_priced = collect(graph)
         rows = [row for group in groups.values() for row in group]
         counts: dict[str, int] = {}
         for row in rows:
             counts[row["reason"]] = counts.get(row["reason"], 0) + 1
-        expected = render_prompts(shard(groups, 110), (positions, priced, len(rows), counts))
+        expected = render_prompts(shard(groups, 110), (positions, priced, len(rows), counts, multi_priced))
         self.assertEqual(
             expected, PROMPTS.read_text(encoding="utf-8"),
             "docs/PAY_SOURCE_RESEARCH_PROMPT_3.md is stale; re-run scripts/report_unpriced_positions.py")
@@ -138,22 +138,27 @@ class GeneratedDocumentTests(unittest.TestCase):
         graph = _graph()
         if graph is None or not INVENTORY.exists():
             self.skipTest("no published graph or no inventory")
-        groups, positions, priced = collect(graph)
+        groups, positions, priced, multi_priced = collect(graph)
         rows = [row for group in groups.values() for row in group]
         counts: dict[str, int] = {}
         for row in rows:
             counts[row["reason"]] = counts.get(row["reason"], 0) + 1
-        expected = render_inventory(groups, (positions, priced, len(rows), counts))
+        expected = render_inventory(groups, (positions, priced, len(rows), counts, multi_priced))
         self.assertEqual(
             expected, INVENTORY.read_text(encoding="utf-8"),
             "docs/UNPRICED_POSITIONS.md is stale; re-run scripts/report_unpriced_positions.py")
+        # The multiplicity reason's "N such nodes carry one" is read off the
+        # graph, not written down: it said 28 from 2026-09-23 until 2026-09-30
+        # while the graph carried 37.
+        self.assertGreater(multi_priced, 0)
+        self.assertIn(f"and {multi_priced} such nodes carry one", expected)
 
     def test_every_unpriced_node_id_appears_in_the_prompt_pack(self):
         graph = _graph()
         if graph is None or not PROMPTS.exists():
             self.skipTest("no published graph or no prompt pack")
         text = PROMPTS.read_text(encoding="utf-8")
-        groups, _, _ = collect(graph)
+        groups, _, _, _ = collect(graph)
         missing = [row["id"] for rows in groups.values() for row in rows if row["id"] not in text]
         self.assertEqual([], missing[:20])
 

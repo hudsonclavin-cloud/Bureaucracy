@@ -237,6 +237,36 @@ PARITY_PROVISIONS["jud-support-fjc-director-fjc"] = {
     },
 }
 
+#: A percentage OF the tier, since 2026-09-30 on the owner's instruction:
+#: 28 U.S.C. 153(a) pays "each bankruptcy judge" a salary "equal to 92
+#: percent of the salary of a judge of the district court". The figure is
+#: arithmetic on the table's printed rate -- the shape
+#: `tier_reference_pay.py` publishes for an Inspector General's "plus 3
+#: percent" -- and the record carries it in the open (`arithmetic`) under the
+#: validator's computed-from-a-marked-figure rule. Two nodes: the Southern
+#: District of New York's bench, and the standard-structure template's, which
+#: stands for every district's bankruptcy judges and is priced because the
+#: statute says "each bankruptcy judge" wherever the judge sits.
+BANKRUPTCY_JUDGE_QUOTE = (
+    "Each bankruptcy judge shall serve on a full-time basis and shall receive as full compensation "
+    "for his services, a salary at an annual rate that is equal to 92 percent of the salary of a "
+    "judge of the district court of the United States as determined pursuant to section 135"
+)
+for _node_id, _subject in (
+    ("jud-district-sdny-bankruptcy-judge-12", "every bankruptcy judge of the Southern District of New York"),
+    ("jud-district-structure-bankruptcy-judge-varies", "every bankruptcy judge, in every district"),
+):
+    PARITY_PROVISIONS[_node_id] = {
+        "citation": "28 U.S.C. 153(a)",
+        "fixture": "bankruptcy_judges_28_usc_153.html",
+        "court": None,
+        "subject": _subject,
+        "subsection": "(a)",
+        "tier": "district judges",
+        "percentOf": 92,
+        "quote": BANKRUPTCY_JUDGE_QUOTE,
+    }
+
 #: The same four provisions reach each court's bench node -- "Judge (×18)",
 #: "(×15)", "(×4)", "(×8)" -- because each says "Each judge", and a tier rate
 #: holds for every holder alike. Refused until 2026-09-23 under the blanket
@@ -257,9 +287,23 @@ for _bench, _chief in BENCH_NODES.items():
 #: Read, and deliberately not priced, with the reason. Kept as data so the
 #: derive step can print it and a reviewer can see each is a decision.
 NOT_PRICED = {
+    "jud-district-sdny-magistrate-judge-13": (
+        "28 U.S.C. 634(a) sets full-time magistrate judges' salaries \"at rates ... up to an annual rate "
+        "equal to 92 percent of the salary of a judge of the district court\", fixed by the Judicial "
+        "Conference: a ceiling and not a rate, and part-time magistrate judges are paid between $100 and "
+        "half the full-time maximum; no document here states what the Conference fixed"
+    ),
+    "jud-district-structure-magistrate-judge-varies": (
+        "28 U.S.C. 634(a) sets full-time magistrate judges' salaries \"at rates ... up to an annual rate "
+        "equal to 92 percent of the salary of a judge of the district court\", fixed by the Judicial "
+        "Conference: a ceiling and not a rate, and part-time magistrate judges are paid between $100 and "
+        "half the full-time maximum; no document here states what the Conference fixed"
+    ),
     "jud-support-aousc-deputy-director": (
         "28 U.S.C. 603 sets the Deputy Director's salary at 92 percent of the Director's: arithmetic on "
-        "a figure that is itself a join, which this field does not publish"
+        "a figure that is itself a join (the Director's, equal to a district judge's by the same section), "
+        "which this field does not publish -- unlike 28 U.S.C. 153(a)'s bankruptcy judges, whose 92 "
+        "percent is taken of the table's own printed figure"
     ),
     "jud-support-fjc-deputy-director": (
         "28 U.S.C. 626 sets the Deputy Director's compensation at the Administrative Office Deputy "
@@ -427,14 +471,44 @@ def build_records(
         via_text = (
             f"· {via['citation']}: “{via_quote}” " if via else ""
         )
+        percent_of = provision.get("percentOf")
+        base_amount = float(tier["amount"])
+        if percent_of:
+            amount = round(base_amount * percent_of / 100.0, 2)
+            amount_raw = "{:,.0f}".format(amount) if float(amount).is_integer() else "{:,.2f}".format(amount)
+            rate_text = "${}".format(amount_raw)
+            arithmetic = {
+                "operation": "percent_of",
+                "baseAmount": base_amount,
+                "baseAmountRaw": str(tier["amountRaw"]),
+                "baseText": str(tier["rateText"]),
+                "baseTier": provision["tier"],
+                "percent": int(percent_of),
+                "result": amount,
+                "resultText": rate_text,
+                "note": (
+                    f"No document prints {rate_text}. {provision['citation']} sets the rate at {percent_of} percent "
+                    f"of a district judge's, and Judicial Compensation {year} prints {tier['rateText']} for "
+                    f"{tier_label}; the figure is that arithmetic and nothing more."
+                ),
+            }
+            arithmetic_text = f" × {percent_of}% = {rate_text}"
+        else:
+            amount = base_amount
+            amount_raw = tier["amountRaw"]
+            rate_text = tier["rateText"]
+            arithmetic = None
+            arithmetic_text = ""
         derivation = (
             f"{provision['citation']} {provision['subsection']}: “{quote}” "
             f"{via_text}"
-            f"· Judicial Compensation {year}: {tier_label} {tier['rateText']}"
+            f"· Judicial Compensation {year}: {tier_label} {tier['rateText']}{arithmetic_text}"
         )
         documents = [
             {
-                "role": ("states whose pay this post's equals" if via else "states the tier this post is paid at"),
+                "role": ("states whose pay this post's equals" if via
+                         else f"states the percentage of the tier this post is paid at" if percent_of
+                         else "states the tier this post is paid at"),
                 "citation": provision["citation"],
                 "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
                 "title": f"{provision['citation']}, current through the prelim edition",
@@ -471,8 +545,8 @@ def build_records(
             "nodeId": node_id,
             "financialEvidenceStatus": "partial",
             "costBasis": "basic_pay",
-            "amount": float(tier["amount"]),
-            "amountRaw": tier["amountRaw"],
+            "amount": amount,
+            "amountRaw": amount_raw,
             "units": "usd",
             "normalizedMultiplier": 1,
             # The mark is printed on the figure in the compensation table's own
@@ -482,7 +556,9 @@ def build_records(
             "fiscalYear": int(year),
             "periodCoverage": "annual_rate",
             "periodAsOf": f"{year}-01-01",
-            "amountScope": tier_label,
+            "amountScope": f"{percent_of} percent of {tier_label}" if percent_of else tier_label,
+            "percentOf": int(percent_of) if percent_of else None,
+            "arithmetic": arithmetic,
             # Never "exact", and not for the usual reason alone: no document
             # here states this figure for this post at all.
             "scopeMatch": "proxy",
@@ -503,7 +579,7 @@ def build_records(
             "viaQuote": via_quote or None,
             "seatTier": provision["tier"],
             "year": year,
-            "rateText": tier["rateText"],
+            "rateText": rate_text,
             "derivation": derivation,
             "documents": documents,
             "tableUrl": table_url,
@@ -600,6 +676,8 @@ def apply_pay_evidence(
             "subject": record.get("subject"),
             "viaStatute": record.get("viaStatute"),
             "viaQuote": record.get("viaQuote"),
+            "percentOf": record.get("percentOf"),
+            "arithmetic": dict(record["arithmetic"]) if isinstance(record.get("arithmetic"), dict) else None,
             "derivation": record.get("derivation"),
             "quote": record.get("quote"),
             "documents": documents,
