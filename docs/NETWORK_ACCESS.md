@@ -888,3 +888,27 @@ Each attempt is recorded in `tests/fixtures/dfas/*.meta.json` and the README
 beside them; the two sections of law the table rests on, 37 U.S.C. 203 and
 1009, were fetched from `uscode.house.gov` (which answers, §8) and committed,
 and neither prints a rate. Nothing is published from any of this.
+
+## 15. 2026-09-30: uscode.house.gov closing every tunnel, the evening the Members' offices were priced
+
+Four sections the ninth research batch's remaining leads need — 50 U.S.C.
+1803 (the FISC's judges), 38 U.S.C. 7101A (the Board of Veterans' Appeals),
+22 U.S.C. 6203 (the USAGM's CEO) and 39 U.S.C. 202 (the Postal Service's
+Board of Governors) — were fetched with `scripts/fetch_fixture.py` at
+23:26 UTC and again four times over the following hour, and every attempt
+failed the same way: `URLError: [Errno 104] Connection reset by peer`. The
+proxy's own status page records each one as `ws_closed_mid_exchange`,
+"tunnel closed (code 1006, Connection ended) after 11s; 517 B sent, 39 B
+received", for `uscode.house.gov:443` alone. Measured against two other
+hosts in the same minutes, `www.govinfo.gov/robots.txt` answered 200 and
+`www.senate.gov/robots.txt` 302, so it is that host (or the relay's path to
+it) and not the proxy or the sandbox. The host had answered the same script
+some fifty times over the previous twelve days, most recently that morning
+for the ninth batch's seventeen sections.
+
+Nothing was worked around and nothing was recorded as a fixture: an
+error-only `.meta.json` says only that a fetch failed, and it is not
+committed. The leads stay open in `CURATION.md` §19.15 with the section
+each needs named, so the next session that finds the host answering can
+fetch them in four commands.
+

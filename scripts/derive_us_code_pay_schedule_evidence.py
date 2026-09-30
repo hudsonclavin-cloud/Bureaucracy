@@ -65,9 +65,10 @@ def main(argv: list[str] | None = None) -> int:
         return 1
     schedules = loaded["schedules"]
 
-    node_map, _ = index_tree(load_base_graph(args.base_graph))
+    node_map, parent_map = index_tree(load_base_graph(args.base_graph))
     records, report = build_records(
-        node_map, schedules, url=loaded["url"], sha256=loaded["sha256"], retrieved_at=loaded["fetched_at"]
+        node_map, schedules, url=loaded["url"], sha256=loaded["sha256"], retrieved_at=loaded["fetched_at"],
+        parent_map=parent_map,
     )
 
     validated: dict[str, dict] = {}
@@ -97,6 +98,8 @@ def main(argv: list[str] | None = None) -> int:
     report["conflicts"] = fe.detect_conflicts(validated.values())
     report["double_counted"] = fe.double_counted(validated.values())
 
+    validated_seats = sum(1 for r in validated.values() if isinstance(r.get("memberSeat"), dict))
+    report["memberSeatsValidated"] = validated_seats
     print(f"5 U.S.C. 5332 note, schedules {', '.join(report['schedulesRead'])}, year {report['year']}, fetched {loaded['fetched_at']}")
     print(f"  the column's mark sits once, on its first figure: {report['headMarked']}")
     print("Schedule 6 rows:")
@@ -111,6 +114,19 @@ def main(argv: list[str] | None = None) -> int:
         print("  refused:")
         for reason, count in report["refused"].items():
             print(f"    {count:5d}  {reason}")
+    seats = report.get("memberSeats") or {}
+    print(
+        "Members' offices priced at the seat rate: {}  ({} committee posts, {} leadership offices; "
+        "Senate {}, House {})".format(
+            seats.get("priced", 0),
+            (seats.get("byKind") or {}).get("committee_post", 0),
+            (seats.get("byKind") or {}).get("leadership_office", 0),
+            (seats.get("byChamber") or {}).get("leg-senate", 0),
+            (seats.get("byChamber") or {}).get("leg-house", 0),
+        )
+    )
+    for reason, count in (seats.get("refused") or {}).items():
+        print(f"    not priced ({count}): {reason}")
     for line in rejected[:20]:
         print(f"  REJECTED {line}")
     if report["conflicts"]:
@@ -145,7 +161,12 @@ def main(argv: list[str] | None = None) -> int:
             "pay-adjustment order's schedules verbatim. Schedule 6 states the rate for the Vice President and "
             "for each chamber's elected offices. A record is written only for the four curated nodes a reviewed "
             "table identifies: the Vice President, the Speaker of the House, and the House Majority and Minority "
-            "Leaders — the offices congressional_pay.py records as unreachable from senate.gov. Not priced: the "
+            "Leaders — the offices congressional_pay.py records as unreachable from senate.gov — and, since "
+            "2026-09-30 by the owner's decision, for every post a Member of Congress holds: each committee's Chair "
+            "and Ranking Member (found by rule: the name's role prefix under a Committee or Subcommittee parent, "
+            "the chamber read off the tree) and the leadership offices MEMBER_LEADERSHIP_NODES lists by id, each "
+            "priced at the seat rate of its chamber's row (Senators; Members of the House of Representatives) "
+            "under its own method, because Schedule 6 prints no separate rate for those offices. Not priced: the "
             "three Senate leadership roles Schedule 6 also names (already priced from senate.gov's own footnote; "
             "the two sources agree), the Vice President's separate Senate-leadership node (one officer, one "
             "salary, priced once), no Senator's or Member's seat (none is curated as its own position node), and "

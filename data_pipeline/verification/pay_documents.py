@@ -152,6 +152,19 @@ PAY_DOCUMENT_FIELDS: dict[str, dict[str, Any]] = {
             "official documentation it rests on, not the chance that it is right, and the "
             "source names a tier or a group of roles rather than this post by name."
         ),
+        # The same block on an office a Member of Congress holds (a committee
+        # chair, a whip), priced at the SEAT rate since 2026-09-30: Schedule 6
+        # states what a Senator or a Member is paid, and that this post is a
+        # Member's is a reviewed rule, not anything the schedule says.
+        "memberSeatRoles": {"url": "states what a seat in this chamber is paid"},
+        "memberSeatCaution": (
+            "One document states the figure outright, for the SEAT: Schedule 6 prints what a "
+            "Senator or a Member of the House is paid and no separate rate for this office. "
+            "That this post is a Member's, and so is paid the seat rate and nothing more, is a "
+            "reviewed rule this project applies, not a document naming the post. The percentage "
+            "measures how much official documentation the figure rests on, not the chance that "
+            "it is right."
+        ),
     },
     "positionReportedPay": {
         "urlKeys": ("url",),
@@ -285,6 +298,12 @@ def _counted_class(block: Mapping[str, Any]) -> bool:
     return isinstance(block.get("countedClass"), Mapping)
 
 
+def _member_seat(block: Mapping[str, Any]) -> bool:
+    """A statutory block that prices an office a Member holds at the seat rate
+    says so in `memberSeat`."""
+    return isinstance(block.get("memberSeat"), Mapping)
+
+
 def _uniform_roster(block: Mapping[str, Any]) -> bool:
     """A roster block that lists every holder at one rate says so in `holders`."""
     holders = block.get("holders")
@@ -310,6 +329,8 @@ def count_documents(field: str, block: Mapping[str, Any]) -> tuple[int, list[dic
         role_words = spec["classRoles"]
     elif _counted_class(block) and spec.get("countedRoles"):
         role_words = spec["countedRoles"]
+    elif _member_seat(block) and spec.get("memberSeatRoles"):
+        role_words = spec["memberSeatRoles"]
     for key in spec["urlKeys"]:
         for url in _urls_at(block, key):
             if url in seen:
@@ -354,6 +375,7 @@ def annotate_pay_documents(root: dict[str, Any]) -> dict[str, int]:
                     else (spec.get("classCaution") or spec["caution"]) if _class_title(block)
                     else (spec.get("countedCaution") or spec["caution"]) if _counted_class(block)
                     else (spec.get("percentCaution") or spec["caution"]) if _percent_of_tier(block)
+                    else (spec.get("memberSeatCaution") or spec["caution"]) if _member_seat(block)
                     else spec["caution"]
                 ),
                 "documentRoles": roles,

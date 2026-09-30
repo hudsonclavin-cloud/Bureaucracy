@@ -32,7 +32,10 @@ module prices exactly those three and nothing else:
 - **Not** the Assistant Majority/Minority Leader (the party whips). The
   footnote does not name them, and this module does not guess that an
   unnamed role gets either the leaders' rate or the base rate — an
-  unconfirmed number is worse than an honest gap.
+  unconfirmed number is worse than an honest gap. (Since 2026-09-30 those
+  offices ARE priced, at the Senator's seat rate from Schedule 6, by
+  `us_code_pay_schedules.py`'s member-seat rule and the owner's decision;
+  the footnote still names none of them and this module still prices none.)
 - **Not** the House's Speaker, Majority Leader or Minority Leader. Search
   results describing House-side figures were not traced to a fetched
   official source this session could reach (`clerk.house.gov`'s own Salary

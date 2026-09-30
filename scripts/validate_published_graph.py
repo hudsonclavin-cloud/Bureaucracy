@@ -1468,7 +1468,77 @@ US_CODE_SCHEDULE_6_RATES = {
     "vice president": 292_300.0,
     "speaker of the house of representatives": 223_500.0,
     "majority leader and minority leader of the house of representatives": 193_400.0,
+    # The seat rows, priced since 2026-09-30 for the offices Members hold
+    # (committee chairs and ranking members, the whips, the conference and
+    # caucus chairs) under the member-seat method below, never by node id.
+    "senators": 174_000.0,
+    "members of the house of representatives": 174_000.0,
 }
+#: The offices Members of Congress hold, priced at the SEAT rate of their
+#: chamber's row since 2026-09-30 (the owner's decision; see
+#: us_code_pay_schedules.py's docstring). Mirrored as a RULE rather than as
+#: 461 ids: the method, the chamber rows, the role prefixes a committee post's
+#: name must begin with, the parent types it must sit under, and the reviewed
+#: leadership table by id. Pinned equal to the module's by
+#: tests/test_us_code_pay_schedules.py.
+US_CODE_MEMBER_SEAT_METHOD = (
+    "member_of_congress_priced_at_the_seat_rate_of_schedule_6_of_the_annual_pay_adjustment_order"
+)
+US_CODE_MEMBER_SEAT_ROWS = {
+    "leg-senate": "senators",
+    "leg-house": "members of the house of representatives",
+}
+US_CODE_MEMBER_ROLE_PREFIXES = ("Chair, ", "Ranking Member, ")
+US_CODE_MEMBER_COMMITTEE_TYPES = ("committee", "subcommittee")
+US_CODE_MEMBER_LEADERSHIP_NODES = {
+    "leg-senate-leadership-majority-whip": "leg-senate",
+    "leg-senate-leadership-minority-whip": "leg-senate",
+    "leg-senate-leadership-assistant-majority-leader": "leg-senate",
+    "leg-senate-leadership-assistant-minority-leader": "leg-senate",
+    "leg-senate-leadership-majority-conference-chair": "leg-senate",
+    "leg-senate-leadership-minority-conference-chair": "leg-senate",
+    "leg-senate-leadership-majority-conference-secretary": "leg-senate",
+    "leg-senate-leadership-majority-policy-committee-chair": "leg-senate",
+    "leg-senate-leadership-minority-policy-committee-chair": "leg-senate",
+    "leg-senate-leadership-majority-steering-committee-chair": "leg-senate",
+    "leg-senate-leadership-majority-campaign-committee-chair": "leg-senate",
+    "leg-house-leadership-speaker-pro-tempore": "leg-house",
+    "leg-house-leadership-majority-whip": "leg-house",
+    "leg-house-leadership-minority-whip": "leg-house",
+    "leg-house-leadership-chief-deputy-majority-whip": "leg-house",
+    "leg-house-leadership-chief-deputy-minority-whip": "leg-house",
+    "leg-house-leadership-democratic-caucus-chair": "leg-house",
+    "leg-house-leadership-democratic-caucus-vice-chair": "leg-house",
+    "leg-house-leadership-republican-conference-chair": "leg-house",
+    "leg-house-leadership-republican-conference-vice-chair": "leg-house",
+    "leg-house-leadership-republican-conference-secretary": "leg-house",
+    "leg-house-leadership-democratic-steering-policy-committee-chair": "leg-house",
+    "leg-house-leadership-republican-study-committee-chair": "leg-house",
+    "leg-house-leadership-house-freedom-caucus-chair": "leg-house",
+    "leg-house-leadership-new-democrat-coalition-chair": "leg-house",
+}
+#: Posts the rule refuses by name (the module's MEMBER_SEATS_NOT_PRICED).
+US_CODE_MEMBER_SEATS_NOT_PRICED = (
+    "leg-house-leadership-problem-solvers-caucus-co-chairs",
+    "leg-senate-leadership-president-of-the-senate-vice-president",
+    "leg-joint-econ-chair-alternates-senate-house",
+    "leg-joint-econ-vice-chair",
+)
+#: The panel prints a member-seat block's `basis` as the reason the seat rate
+#: applies, so an unmirrored basis would be a fabricated-reason channel (the
+#: lesson the reviewed Schedule rows taught). Every basis must carry the
+#: schedule's own list of the offices it prices separately, must say the
+#: identification is a reviewed rule, and on a House seat must note the
+#: Delegate and Resident Commissioner rows.
+US_CODE_MEMBER_SEAT_SEPARATE_RATES = (
+    "Schedule 6 prints a separate rate only for the Vice President, the Speaker, the majority and "
+    "minority leaders of each chamber and the President pro tempore"
+)
+US_CODE_MEMBER_SEAT_REVIEWED_WORDS = "a reviewed rule, not a document naming this post"
+US_CODE_HOUSE_SEAT_ROWS_NOTE = (
+    "Schedule 6 prints the same 174,000 for Delegates to the House of Representatives and for the "
+    "Resident Commissioner from Puerto Rico, so a seat held by either is priced the same."
+)
 #: The effective line the note prints beneath Schedule 6's heading. Every
 #: record quotes it, and the gate requires the quote to carry it: a rate with
 #: no effective date is a number, not a schedule entry.
@@ -3709,7 +3779,96 @@ def derived_pay_violations(node, pay, today, label):
     return out
 
 
-def statutory_pay_violations(node, pay, today, label):
+def member_seat_chamber(node_id, tree_parents):
+    """The chamber grouping among a node's ancestors, off the tree the gate
+    is walking; None outside both chambers (a joint committee)."""
+    seen = set()
+    current = tree_parents.get(node_id) if isinstance(tree_parents, dict) else None
+    while current and current not in seen:
+        if current in US_CODE_MEMBER_SEAT_ROWS:
+            return current
+        seen.add(current)
+        current = tree_parents.get(current)
+    return None
+
+
+def member_seat_violations(node, pay, label, tree_parents, type_by_id, name_by_id):
+    """Everything that must be true of a Schedule 6 block that prices an
+    office a Member holds at the SEAT rate rather than at a row naming the
+    office: the rule mirrored above, checked off the tree, plus the basis
+    the panel prints."""
+    out = []
+    say = lambda text: out.append("{} {}".format(label(node), text))
+    node_id = str(node.get("id") or "")
+    name = str(node.get("name") or "")
+    if str(pay.get("method") or "") != US_CODE_MEMBER_SEAT_METHOD:
+        say("carries a memberSeat block under method {!r}, not the member-seat method".format(pay.get("method")))
+    seat = pay.get("memberSeat")
+    if not isinstance(seat, dict):
+        say("is priced as a Member's seat with no memberSeat block saying whose seat and why")
+        return out
+    if str(pay.get("source") or "") != "us_code_pay_schedules":
+        say("prices a Member's seat from {!r}, not Schedule 6".format(pay.get("source")))
+    if node_id in STATUTORY_PAY_NODE_TIERS:
+        say("has a Schedule 6 row of its own and may not be priced as a Member's seat")
+    if node_id in US_CODE_MEMBER_SEATS_NOT_PRICED:
+        say("is a post the member-seat rule refuses by name")
+    if node.get("representsPosts"):
+        say("stands for several posts and is priced as one Member's seat")
+    if not isinstance(tree_parents, dict) or not isinstance(type_by_id, dict):
+        say("is priced as a Member's seat and the gate was handed no tree to read its chamber off")
+        return out
+    chamber = member_seat_chamber(node_id, tree_parents)
+    if chamber is None:
+        say("sits under neither chamber grouping (a joint committee?) and is priced as a Member's seat")
+    else:
+        expected_row = US_CODE_MEMBER_SEAT_ROWS[chamber]
+        if str(seat.get("chamber") or "") != chamber:
+            say("says its seat is in {!r}; the tree puts it in {!r}".format(seat.get("chamber"), chamber))
+        if str(seat.get("row") or "").casefold() != expected_row:
+            say("names row {!r} for a seat in {!r}".format(seat.get("row"), chamber))
+        if str(pay.get("seatTier") or "") != expected_row:
+            say("prices tier {!r} for a seat in {!r}, whose row is {!r}".format(pay.get("seatTier"), chamber, expected_row))
+        if str(pay.get("amountScope") or "").casefold() != expected_row:
+            say("scopes the figure to {!r}, not the chamber's row".format(pay.get("amountScope")))
+    kind = str(seat.get("kind") or "")
+    parent_id = tree_parents.get(node_id) or ""
+    parent_type = str(type_by_id.get(parent_id) or "").casefold()
+    if node_id in US_CODE_MEMBER_LEADERSHIP_NODES:
+        if kind != "leadership_office":
+            say("is a listed leadership office filed as {!r}".format(kind))
+        if chamber is not None and US_CODE_MEMBER_LEADERSHIP_NODES[node_id] != chamber:
+            say("is a leadership office the table places in {!r}, now under {!r}".format(
+                US_CODE_MEMBER_LEADERSHIP_NODES[node_id], chamber))
+        if str(seat.get("role") or "") != name:
+            say("names its office {!r}; the node is {!r}".format(seat.get("role"), name))
+    else:
+        if kind != "committee_post":
+            say("is not a listed leadership office and is filed as {!r}".format(kind))
+        prefix = next((p for p in US_CODE_MEMBER_ROLE_PREFIXES if name.startswith(p)), None)
+        if prefix is None:
+            say("is named {!r}, which begins with no Member-role prefix".format(name))
+        else:
+            if str(seat.get("role") or "") != prefix[:-2]:
+                say("names its role {!r}; the name says {!r}".format(seat.get("role"), prefix[:-2]))
+            if str(seat.get("body") or "") != name[len(prefix):].strip():
+                say("names its body {!r}; the name says {!r}".format(seat.get("body"), name[len(prefix):].strip()))
+        if parent_type not in US_CODE_MEMBER_COMMITTEE_TYPES:
+            say("sits under a {!r} ({!r}), not a committee, and is priced as its chair or ranking member".format(
+                type_by_id.get(parent_id), (name_by_id or {}).get(parent_id)))
+    basis = str(seat.get("basis") or "")
+    if US_CODE_MEMBER_SEAT_SEPARATE_RATES not in basis:
+        say("gives a basis that does not carry the schedule's own list of the offices it prices separately")
+    if US_CODE_MEMBER_SEAT_REVIEWED_WORDS not in basis:
+        say("gives a basis that does not say the identification is a reviewed rule")
+    if "never read" not in basis:
+        say("gives a basis that does not say the holder is never read")
+    if chamber == "leg-house" and US_CODE_HOUSE_SEAT_ROWS_NOTE not in basis:
+        say("prices a House seat without noting the Delegate and Resident Commissioner rows")
+    return out
+
+
+def statutory_pay_violations(node, pay, today, label, tree_parents=None, type_by_id=None, name_by_id=None):
     """Everything that must be true of a single-source statutory pay claim.
 
     Unlike `table_pay_violations`, there is no archive underneath this to
@@ -3752,7 +3911,17 @@ def statutory_pay_violations(node, pay, today, label):
         say("dates the rate {!r}, not {!r}".format(pay.get("effective"), "{}-01-01".format(mirror["year"])))
 
     tier = str(pay.get("seatTier") or "")
-    expected_tier_for_node = STATUTORY_PAY_NODE_TIERS.get(node_id)
+    member_seat = str(pay.get("method") or "") == US_CODE_MEMBER_SEAT_METHOD or isinstance(pay.get("memberSeat"), dict)
+    if member_seat:
+        # An office a Member holds, priced at the seat rate: the tier is the
+        # chamber's row, read off the tree, and the rule is checked there.
+        out.extend(member_seat_violations(node, pay, label, tree_parents, type_by_id, name_by_id))
+        chamber = member_seat_chamber(node_id, tree_parents)
+        expected_tier_for_node = US_CODE_MEMBER_SEAT_ROWS.get(chamber) if chamber else None
+    else:
+        expected_tier_for_node = STATUTORY_PAY_NODE_TIERS.get(node_id)
+        if source == "us_code_pay_schedules" and tier in US_CODE_MEMBER_SEAT_ROWS.values():
+            say("prices a Member's seat row without the member-seat method and its block")
     if expected_tier_for_node is None:
         say("prices a node this pipeline has no known tier for")
     elif tier != expected_tier_for_node:
@@ -4878,6 +5047,10 @@ def main(argv):
     # filing check: the export names the organisation it files a title under,
     # and the gate compares that with the parent the tree actually gives.
     name_by_id = {str(node.get("id") or ""): node.get("name") for node, _ in pairs}
+    # The parent's TYPE, off the same walk, for the member-seat rule: a
+    # committee's chair or ranking member is priced at the seat rate only
+    # under a parent typed Committee or Subcommittee.
+    type_by_id = {str(node.get("id") or ""): node.get("type") for node, _ in pairs}
     # The same index by node, built here rather than 600 lines down, because
     # the alias checks need to read the OWNER of a row off the graph: an
     # organisation-scoped match belongs to an ancestor, and the rename guard
@@ -5434,7 +5607,9 @@ def main(argv):
         # rules, checked against its own mirror.
         statutory_pay = node.get("positionStatutoryPay")
         if statutory_pay is not None:
-            bad_statutory_pay.extend(statutory_pay_violations(node, statutory_pay, today, label))
+            bad_statutory_pay.extend(statutory_pay_violations(
+                node, statutory_pay, today, label,
+                tree_parents=tree_parents, type_by_id=type_by_id, name_by_id=name_by_id))
         # A pay-schedule TIER band: the VA's Title 38 ranges, which name a
         # title and state bounds rather than a rate. Its parent is read off
         # the tree the gate is walking, never off `parentId`, because both of
@@ -6549,8 +6724,13 @@ def main(argv):
                   len(counted_paid), len(US_CODE_COUNTED_CLASSES), sum(len(c["members"]) for c in US_CODE_COUNTED_CLASSES.values())))
     statutory_paid = [n for n in nodes if isinstance(n.get("positionStatutoryPay"), dict)]
     by_source = Counter(str(n["positionStatutoryPay"].get("source") or "?") for n in statutory_paid)
-    print("  statutory pay         : {:,} positions priced from a single primary source naming the seat directly ({})".format(
-        len(statutory_paid), dict(by_source) or "none"))
+    member_seats = [n for n in statutory_paid if isinstance(n["positionStatutoryPay"].get("memberSeat"), dict)]
+    seat_kinds = Counter(str(n["positionStatutoryPay"]["memberSeat"].get("kind") or "?") for n in member_seats)
+    print("  statutory pay         : {:,} positions priced from a single primary source naming the seat directly ({}); "
+          "{:,} of them are offices a Member of Congress holds, priced at the SEAT rate by rule ({}; {:,} leadership "
+          "offices mirrored by id), not at a row naming the office".format(
+        len(statutory_paid), dict(by_source) or "none", len(member_seats), dict(seat_kinds) or "none",
+        len(US_CODE_MEMBER_LEADERSHIP_NODES)))
     derived_paid = [n for n in nodes if isinstance(n.get("positionDerivedPay"), dict)]
     if derived_paid or DERIVED_PAY_PROVISIONS:
         derived_counts = Counter(

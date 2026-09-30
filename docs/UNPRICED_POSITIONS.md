@@ -8,12 +8,12 @@ checkable claim. `docs/PAY_SOURCE_RESEARCH_PROMPT_3.md` is generated from this
 same list in the same run.
 
 - position nodes in the published graph: **4,591**
-- carrying a pay claim an official document supports: **638**
-- carrying none: **3,953**
+- carrying a pay claim an official document supports: **1,099**
+- carrying none: **3,492**
 
 | reason | count | what it means |
 |---|---|---|
-| `unreached` | 3,181 | no source this project has read names the title at all. Not a coverage gap somebody has not got to: no pay document in the repository names this title under this organisation, so nothing could have reached it. |
+| `unreached` | 2,720 | no source this project has read names the title at all. Not a coverage gap somebody has not got to: no pay document in the repository names this title under this organisation, so nothing could have reached it. |
 | `multiplicity` | 754 | the node states a multiplicity (×N) and no claim that holds for every holder has reached it. Since 2026-09-23 a claim that holds for each holder by its own terms IS published on such a node with a `holders` block -- a tier or parity rate paid to every judge of the tier, a band every holder is within, or a roster listing every holder at one rate -- and 39 such nodes carry one. What stays refused is an incumbency-shaped claim (one listing's level, one row of the current export), because that is one appointment's figure and not the group's. For these nodes no office-rate claim has reached them at all. Knowing which pay system governs the title is still useful -- it is what would let the graph carry the schedule rather than a rate -- so these are listed and asked about. |
 | `listed_no_rate` | 18 | OPM lists the position and the row prints no rate. The PLUM archive or the current export names the title under this organisation but the Level/Grade/Pay cell carries a rank or is empty, and no salary table this project has read prices that pay plan. |
 
@@ -925,26 +925,6 @@ same list in the same run.
 - `exec-dept-state-embassy-regional-security-officer-rso` — Regional Security Officer (RSO) — `unreached`
 - `exec-dept-state-embassy-usaid-mission-director` — USAID Mission Director — `unreached`
 
-## House Leadership  — 15 unpriced
-
-`leg-house-leadership`
-
-- `leg-house-leadership-chief-deputy-majority-whip` — Chief Deputy Majority Whip — `unreached`
-- `leg-house-leadership-chief-deputy-minority-whip` — Chief Deputy Minority Whip — `unreached`
-- `leg-house-leadership-democratic-caucus-chair` — Democratic Caucus Chair — `unreached`
-- `leg-house-leadership-democratic-caucus-vice-chair` — Democratic Caucus Vice Chair — `unreached`
-- `leg-house-leadership-democratic-steering-policy-committee-chair` — Democratic Steering & Policy Committee Chair — `unreached`
-- `leg-house-leadership-house-freedom-caucus-chair` — House Freedom Caucus Chair — `unreached`
-- `leg-house-leadership-majority-whip` — Majority Whip — `unreached`
-- `leg-house-leadership-minority-whip` — Minority Whip — `unreached`
-- `leg-house-leadership-new-democrat-coalition-chair` — New Democrat Coalition Chair — `unreached`
-- `leg-house-leadership-problem-solvers-caucus-co-chairs` — Problem Solvers Caucus Co-Chairs — `unreached`
-- `leg-house-leadership-republican-conference-chair` — Republican Conference Chair — `unreached`
-- `leg-house-leadership-republican-conference-secretary` — Republican Conference Secretary — `unreached`
-- `leg-house-leadership-republican-conference-vice-chair` — Republican Conference Vice Chair — `unreached`
-- `leg-house-leadership-republican-study-committee-chair` — Republican Study Committee Chair — `unreached`
-- `leg-house-leadership-speaker-pro-tempore` — Speaker Pro Tempore — `unreached`
-
 ## Individual Representative Offices (435)  — 15 unpriced
 
 `leg-house-offices`
@@ -1176,23 +1156,6 @@ same list in the same run.
 - `exec-dept-doi-nps-regional-director-7-nps-regions` — Regional Director — 7 NPS Regions — `unreached`
 - `exec-dept-doi-nps-resource-management-specialist` — Resource Management Specialist — `unreached`
 - `exec-dept-doi-nps-superintendent-park-units-425` — Superintendent — Park Units (×425+) — `multiplicity`
-
-## Senate Leadership  — 12 unpriced
-
-`leg-senate-leadership`
-
-- `leg-senate-leadership-assistant-majority-leader` — Assistant Majority Leader — `unreached`
-- `leg-senate-leadership-assistant-minority-leader` — Assistant Minority Leader — `unreached`
-- `leg-senate-leadership-majority-campaign-committee-chair` — Majority Campaign Committee Chair — `unreached`
-- `leg-senate-leadership-majority-conference-chair` — Majority Conference Chair — `unreached`
-- `leg-senate-leadership-majority-conference-secretary` — Majority Conference Secretary — `unreached`
-- `leg-senate-leadership-majority-policy-committee-chair` — Majority Policy Committee Chair — `unreached`
-- `leg-senate-leadership-majority-steering-committee-chair` — Majority Steering Committee Chair — `unreached`
-- `leg-senate-leadership-majority-whip` — Majority Whip — `unreached`
-- `leg-senate-leadership-minority-conference-chair` — Minority Conference Chair — `unreached`
-- `leg-senate-leadership-minority-policy-committee-chair` — Minority Policy Committee Chair — `unreached`
-- `leg-senate-leadership-minority-whip` — Minority Whip — `unreached`
-- `leg-senate-leadership-president-of-the-senate-vice-president` — President of the Senate (Vice President) — `unreached`
 
 ## U.S. Secret Service (USSS)  — 12 unpriced
 
@@ -4422,186 +4385,6 @@ same list in the same run.
 - `leg-support-gao-homeland-security-justice-managing-director-homeland-security-justice` — Managing Director, Homeland Security & Justice — `unreached`
 - `leg-support-gao-homeland-security-justice-senior-analyst-homeland-security-justice-multiple` — Senior Analyst, Homeland Security & Justice (×multiple) — `multiplicity`
 
-## House Committee on Agriculture  — 4 unpriced
-
-`leg-house-cmte-agriculture`
-
-- `leg-house-cmte-agriculture-chair-agriculture` — Chair, Agriculture — `unreached`
-- `leg-house-cmte-agriculture-minority-staff-director-agriculture` — Minority Staff Director, Agriculture — `unreached`
-- `leg-house-cmte-agriculture-ranking-member-agriculture` — Ranking Member, Agriculture — `unreached`
-- `leg-house-cmte-agriculture-staff-director-agriculture` — Staff Director, Agriculture — `unreached`
-
-## House Committee on Appropriations  — 4 unpriced
-
-`leg-house-cmte-appropriations`
-
-- `leg-house-cmte-appropriations-chair-appropriations` — Chair, Appropriations — `unreached`
-- `leg-house-cmte-appropriations-minority-staff-director-appropriations` — Minority Staff Director, Appropriations — `unreached`
-- `leg-house-cmte-appropriations-ranking-member-appropriations` — Ranking Member, Appropriations — `unreached`
-- `leg-house-cmte-appropriations-staff-director-appropriations` — Staff Director, Appropriations — `unreached`
-
-## House Committee on Armed Services  — 4 unpriced
-
-`leg-house-cmte-armed-services`
-
-- `leg-house-cmte-armed-services-chair-armed-services` — Chair, Armed Services — `unreached`
-- `leg-house-cmte-armed-services-minority-staff-director-armed-services` — Minority Staff Director, Armed Services — `unreached`
-- `leg-house-cmte-armed-services-ranking-member-armed-services` — Ranking Member, Armed Services — `unreached`
-- `leg-house-cmte-armed-services-staff-director-armed-services` — Staff Director, Armed Services — `unreached`
-
-## House Committee on Budget  — 4 unpriced
-
-`leg-house-cmte-budget`
-
-- `leg-house-cmte-budget-chair-budget` — Chair, Budget — `unreached`
-- `leg-house-cmte-budget-minority-staff-director-budget` — Minority Staff Director, Budget — `unreached`
-- `leg-house-cmte-budget-ranking-member-budget` — Ranking Member, Budget — `unreached`
-- `leg-house-cmte-budget-staff-director-budget` — Staff Director, Budget — `unreached`
-
-## House Committee on Education & the Workforce  — 4 unpriced
-
-`leg-house-cmte-education-the-workforce`
-
-- `leg-house-cmte-education-the-workforce-chair-education-the-workforce` — Chair, Education & the Workforce — `unreached`
-- `leg-house-cmte-education-the-workforce-minority-staff-director-education-the-workforce` — Minority Staff Director, Education & the Workforce — `unreached`
-- `leg-house-cmte-education-the-workforce-ranking-member-education-the-workforce` — Ranking Member, Education & the Workforce — `unreached`
-- `leg-house-cmte-education-the-workforce-staff-director-education-the-workforce` — Staff Director, Education & the Workforce — `unreached`
-
-## House Committee on Energy & Commerce  — 4 unpriced
-
-`leg-house-cmte-energy-commerce`
-
-- `leg-house-cmte-energy-commerce-chair-energy-commerce` — Chair, Energy & Commerce — `unreached`
-- `leg-house-cmte-energy-commerce-minority-staff-director-energy-commerce` — Minority Staff Director, Energy & Commerce — `unreached`
-- `leg-house-cmte-energy-commerce-ranking-member-energy-commerce` — Ranking Member, Energy & Commerce — `unreached`
-- `leg-house-cmte-energy-commerce-staff-director-energy-commerce` — Staff Director, Energy & Commerce — `unreached`
-
-## House Committee on Financial Services  — 4 unpriced
-
-`leg-house-cmte-financial-services`
-
-- `leg-house-cmte-financial-services-chair-financial-services` — Chair, Financial Services — `unreached`
-- `leg-house-cmte-financial-services-minority-staff-director-financial-services` — Minority Staff Director, Financial Services — `unreached`
-- `leg-house-cmte-financial-services-ranking-member-financial-services` — Ranking Member, Financial Services — `unreached`
-- `leg-house-cmte-financial-services-staff-director-financial-services` — Staff Director, Financial Services — `unreached`
-
-## House Committee on Foreign Affairs  — 4 unpriced
-
-`leg-house-cmte-foreign-affairs`
-
-- `leg-house-cmte-foreign-affairs-chair-foreign-affairs` — Chair, Foreign Affairs — `unreached`
-- `leg-house-cmte-foreign-affairs-minority-staff-director-foreign-affairs` — Minority Staff Director, Foreign Affairs — `unreached`
-- `leg-house-cmte-foreign-affairs-ranking-member-foreign-affairs` — Ranking Member, Foreign Affairs — `unreached`
-- `leg-house-cmte-foreign-affairs-staff-director-foreign-affairs` — Staff Director, Foreign Affairs — `unreached`
-
-## House Committee on Homeland Security  — 4 unpriced
-
-`leg-house-cmte-homeland-security`
-
-- `leg-house-cmte-homeland-security-chair-homeland-security` — Chair, Homeland Security — `unreached`
-- `leg-house-cmte-homeland-security-minority-staff-director-homeland-security` — Minority Staff Director, Homeland Security — `unreached`
-- `leg-house-cmte-homeland-security-ranking-member-homeland-security` — Ranking Member, Homeland Security — `unreached`
-- `leg-house-cmte-homeland-security-staff-director-homeland-security` — Staff Director, Homeland Security — `unreached`
-
-## House Committee on House Administration  — 4 unpriced
-
-`leg-house-cmte-house-administration`
-
-- `leg-house-cmte-house-administration-chair-house-administration` — Chair, House Administration — `unreached`
-- `leg-house-cmte-house-administration-minority-staff-director-house-administration` — Minority Staff Director, House Administration — `unreached`
-- `leg-house-cmte-house-administration-ranking-member-house-administration` — Ranking Member, House Administration — `unreached`
-- `leg-house-cmte-house-administration-staff-director-house-administration` — Staff Director, House Administration — `unreached`
-
-## House Committee on Judiciary  — 4 unpriced
-
-`leg-house-cmte-judiciary`
-
-- `leg-house-cmte-judiciary-chair-judiciary` — Chair, Judiciary — `unreached`
-- `leg-house-cmte-judiciary-minority-staff-director-judiciary` — Minority Staff Director, Judiciary — `unreached`
-- `leg-house-cmte-judiciary-ranking-member-judiciary` — Ranking Member, Judiciary — `unreached`
-- `leg-house-cmte-judiciary-staff-director-judiciary` — Staff Director, Judiciary — `unreached`
-
-## House Committee on Natural Resources  — 4 unpriced
-
-`leg-house-cmte-natural-resources`
-
-- `leg-house-cmte-natural-resources-chair-natural-resources` — Chair, Natural Resources — `unreached`
-- `leg-house-cmte-natural-resources-minority-staff-director-natural-resources` — Minority Staff Director, Natural Resources — `unreached`
-- `leg-house-cmte-natural-resources-ranking-member-natural-resources` — Ranking Member, Natural Resources — `unreached`
-- `leg-house-cmte-natural-resources-staff-director-natural-resources` — Staff Director, Natural Resources — `unreached`
-
-## House Committee on Oversight and Government Reform  — 4 unpriced
-
-`leg-house-cmte-oversight-accountability`
-
-- `leg-house-cmte-oversight-accountability-chair-oversight-accountability` — Chair, Oversight & Accountability — `unreached`
-- `leg-house-cmte-oversight-accountability-minority-staff-director-oversight-accountability` — Minority Staff Director, Oversight & Accountability — `unreached`
-- `leg-house-cmte-oversight-accountability-ranking-member-oversight-accountability` — Ranking Member, Oversight & Accountability — `unreached`
-- `leg-house-cmte-oversight-accountability-staff-director-oversight-accountability` — Staff Director, Oversight & Accountability — `unreached`
-
-## House Committee on Rules  — 4 unpriced
-
-`leg-house-cmte-rules`
-
-- `leg-house-cmte-rules-chair-rules` — Chair, Rules — `unreached`
-- `leg-house-cmte-rules-minority-staff-director-rules` — Minority Staff Director, Rules — `unreached`
-- `leg-house-cmte-rules-ranking-member-rules` — Ranking Member, Rules — `unreached`
-- `leg-house-cmte-rules-staff-director-rules` — Staff Director, Rules — `unreached`
-
-## House Committee on Science, Space & Technology  — 4 unpriced
-
-`leg-house-cmte-science-space-technology`
-
-- `leg-house-cmte-science-space-technology-chair-science-space-technology` — Chair, Science, Space & Technology — `unreached`
-- `leg-house-cmte-science-space-technology-minority-staff-director-science-space-technology` — Minority Staff Director, Science, Space & Technology — `unreached`
-- `leg-house-cmte-science-space-technology-ranking-member-science-space-technology` — Ranking Member, Science, Space & Technology — `unreached`
-- `leg-house-cmte-science-space-technology-staff-director-science-space-technology` — Staff Director, Science, Space & Technology — `unreached`
-
-## House Committee on Small Business  — 4 unpriced
-
-`leg-house-cmte-small-business`
-
-- `leg-house-cmte-small-business-chair-small-business` — Chair, Small Business — `unreached`
-- `leg-house-cmte-small-business-minority-staff-director-small-business` — Minority Staff Director, Small Business — `unreached`
-- `leg-house-cmte-small-business-ranking-member-small-business` — Ranking Member, Small Business — `unreached`
-- `leg-house-cmte-small-business-staff-director-small-business` — Staff Director, Small Business — `unreached`
-
-## House Committee on Transportation & Infrastructure  — 4 unpriced
-
-`leg-house-cmte-transportation-infrastructure`
-
-- `leg-house-cmte-transportation-infrastructure-chair-transportation-infrastructure` — Chair, Transportation & Infrastructure — `unreached`
-- `leg-house-cmte-transportation-infrastructure-minority-staff-director-transportation-infrastructure` — Minority Staff Director, Transportation & Infrastructure — `unreached`
-- `leg-house-cmte-transportation-infrastructure-ranking-member-transportation-infrastructure` — Ranking Member, Transportation & Infrastructure — `unreached`
-- `leg-house-cmte-transportation-infrastructure-staff-director-transportation-infrastructure` — Staff Director, Transportation & Infrastructure — `unreached`
-
-## House Committee on Veterans' Affairs  — 4 unpriced
-
-`leg-house-cmte-veterans-affairs`
-
-- `leg-house-cmte-veterans-affairs-chair-veterans-affairs` — Chair, Veterans' Affairs — `unreached`
-- `leg-house-cmte-veterans-affairs-minority-staff-director-veterans-affairs` — Minority Staff Director, Veterans' Affairs — `unreached`
-- `leg-house-cmte-veterans-affairs-ranking-member-veterans-affairs` — Ranking Member, Veterans' Affairs — `unreached`
-- `leg-house-cmte-veterans-affairs-staff-director-veterans-affairs` — Staff Director, Veterans' Affairs — `unreached`
-
-## House Committee on Ways & Means  — 4 unpriced
-
-`leg-house-cmte-ways-means`
-
-- `leg-house-cmte-ways-means-chair-ways-means` — Chair, Ways & Means — `unreached`
-- `leg-house-cmte-ways-means-minority-staff-director-ways-means` — Minority Staff Director, Ways & Means — `unreached`
-- `leg-house-cmte-ways-means-ranking-member-ways-means` — Ranking Member, Ways & Means — `unreached`
-- `leg-house-cmte-ways-means-staff-director-ways-means` — Staff Director, Ways & Means — `unreached`
-
-## House Permanent Select Committee on Intelligence  — 4 unpriced
-
-`leg-house-cmte-permanent-select-committee-on-intelligence`
-
-- `leg-house-cmte-permanent-select-committee-on-intelligence-chair-permanent-select-committee-on-intelligence` — Chair, Permanent Select Committee on Intelligence — `unreached`
-- `leg-house-cmte-permanent-select-committee-on-intelligence-minority-staff-director-permanent-select-committee-on-intelligence` — Minority Staff Director, Permanent Select Committee on Intelligence — `unreached`
-- `leg-house-cmte-permanent-select-committee-on-intelligence-ranking-member-permanent-select-committee-on-intelligence` — Ranking Member, Permanent Select Committee on Intelligence — `unreached`
-- `leg-house-cmte-permanent-select-committee-on-intelligence-staff-director-permanent-select-committee-on-intelligence` — Staff Director, Permanent Select Committee on Intelligence — `unreached`
-
 ## Information Technology & Cybersecurity  — 4 unpriced
 
 `leg-support-gao-information-technology-cybersecurity`
@@ -4953,15 +4736,6 @@ same list in the same run.
 - `leg-support-gao-science-technology-assessment-analytics-managing-director-science-technology-assessment-analytics` — Managing Director, Science, Technology Assessment & Analytics — `unreached`
 - `leg-support-gao-science-technology-assessment-analytics-senior-analyst-science-technology-assessment-analytics-multiple` — Senior Analyst, Science, Technology Assessment & Analytics (×multiple) — `multiplicity`
 
-## Select Committee on the Strategic Competition Between the United States and the Chinese Communist Party  — 4 unpriced
-
-`leg-house-cmte-select-committee-on-the-chinese-communist-party`
-
-- `leg-house-cmte-select-committee-on-the-chinese-communist-party-chair-select-committee-on-the-chinese-communist-party` — Chair, Select Committee on the Chinese Communist Party — `unreached`
-- `leg-house-cmte-select-committee-on-the-chinese-communist-party-minority-staff-director-select-committee-on-the-chinese-communist-party` — Minority Staff Director, Select Committee on the Chinese Communist Party — `unreached`
-- `leg-house-cmte-select-committee-on-the-chinese-communist-party-ranking-member-select-committee-on-the-chinese-communist-party` — Ranking Member, Select Committee on the Chinese Communist Party — `unreached`
-- `leg-house-cmte-select-committee-on-the-chinese-communist-party-staff-director-select-committee-on-the-chinese-communist-party` — Staff Director, Select Committee on the Chinese Communist Party — `unreached`
-
 ## Selective Service System  — 4 unpriced
 
 `exec-ind-misc-selective-service-system`
@@ -4970,168 +4744,6 @@ same list in the same run.
 - `exec-ind-misc-selective-service-system-deputy-director-vice-chair` — Deputy Director / Vice Chair — `unreached`
 - `exec-ind-misc-selective-service-system-general-counsel` — General Counsel — `unreached`
 - `exec-ind-misc-selective-service-system-inspector-general` — Inspector General — `unreached`
-
-## Senate Committee on Agriculture, Nutrition, and Forestry  — 4 unpriced
-
-`leg-senate-cmte-agriculture-nutrition-and-forestry`
-
-- `leg-senate-cmte-agriculture-nutrition-and-forestry-chair-agriculture-nutrition-and-forestry` — Chair, Agriculture, Nutrition, and Forestry — `unreached`
-- `leg-senate-cmte-agriculture-nutrition-and-forestry-minority-staff-director-agriculture-nutrition-and-forestry` — Minority Staff Director, Agriculture, Nutrition, and Forestry — `unreached`
-- `leg-senate-cmte-agriculture-nutrition-and-forestry-ranking-member-agriculture-nutrition-and-forestry` — Ranking Member, Agriculture, Nutrition, and Forestry — `unreached`
-- `leg-senate-cmte-agriculture-nutrition-and-forestry-staff-director-agriculture-nutrition-and-forestry` — Staff Director, Agriculture, Nutrition, and Forestry — `unreached`
-
-## Senate Committee on Appropriations  — 4 unpriced
-
-`leg-senate-cmte-appropriations`
-
-- `leg-senate-cmte-appropriations-chair-appropriations` — Chair, Appropriations — `unreached`
-- `leg-senate-cmte-appropriations-minority-staff-director-appropriations` — Minority Staff Director, Appropriations — `unreached`
-- `leg-senate-cmte-appropriations-ranking-member-appropriations` — Ranking Member, Appropriations — `unreached`
-- `leg-senate-cmte-appropriations-staff-director-appropriations` — Staff Director, Appropriations — `unreached`
-
-## Senate Committee on Armed Services  — 4 unpriced
-
-`leg-senate-cmte-armed-services`
-
-- `leg-senate-cmte-armed-services-chair-armed-services` — Chair, Armed Services — `unreached`
-- `leg-senate-cmte-armed-services-minority-staff-director-armed-services` — Minority Staff Director, Armed Services — `unreached`
-- `leg-senate-cmte-armed-services-ranking-member-armed-services` — Ranking Member, Armed Services — `unreached`
-- `leg-senate-cmte-armed-services-staff-director-armed-services` — Staff Director, Armed Services — `unreached`
-
-## Senate Committee on Banking, Housing & Urban Affairs  — 4 unpriced
-
-`leg-senate-cmte-banking-housing-urban-affairs`
-
-- `leg-senate-cmte-banking-housing-urban-affairs-chair-banking-housing-urban-affairs` — Chair, Banking, Housing & Urban Affairs — `unreached`
-- `leg-senate-cmte-banking-housing-urban-affairs-minority-staff-director-banking-housing-urban-affairs` — Minority Staff Director, Banking, Housing & Urban Affairs — `unreached`
-- `leg-senate-cmte-banking-housing-urban-affairs-ranking-member-banking-housing-urban-affairs` — Ranking Member, Banking, Housing & Urban Affairs — `unreached`
-- `leg-senate-cmte-banking-housing-urban-affairs-staff-director-banking-housing-urban-affairs` — Staff Director, Banking, Housing & Urban Affairs — `unreached`
-
-## Senate Committee on Commerce, Science & Transportation  — 4 unpriced
-
-`leg-senate-cmte-commerce-science-transportation`
-
-- `leg-senate-cmte-commerce-science-transportation-chair-commerce-science-transportation` — Chair, Commerce, Science & Transportation — `unreached`
-- `leg-senate-cmte-commerce-science-transportation-minority-staff-director-commerce-science-transportation` — Minority Staff Director, Commerce, Science & Transportation — `unreached`
-- `leg-senate-cmte-commerce-science-transportation-ranking-member-commerce-science-transportation` — Ranking Member, Commerce, Science & Transportation — `unreached`
-- `leg-senate-cmte-commerce-science-transportation-staff-director-commerce-science-transportation` — Staff Director, Commerce, Science & Transportation — `unreached`
-
-## Senate Committee on Energy & Natural Resources  — 4 unpriced
-
-`leg-senate-cmte-energy-natural-resources`
-
-- `leg-senate-cmte-energy-natural-resources-chair-energy-natural-resources` — Chair, Energy & Natural Resources — `unreached`
-- `leg-senate-cmte-energy-natural-resources-minority-staff-director-energy-natural-resources` — Minority Staff Director, Energy & Natural Resources — `unreached`
-- `leg-senate-cmte-energy-natural-resources-ranking-member-energy-natural-resources` — Ranking Member, Energy & Natural Resources — `unreached`
-- `leg-senate-cmte-energy-natural-resources-staff-director-energy-natural-resources` — Staff Director, Energy & Natural Resources — `unreached`
-
-## Senate Committee on Environment & Public Works  — 4 unpriced
-
-`leg-senate-cmte-environment-public-works`
-
-- `leg-senate-cmte-environment-public-works-chair-environment-public-works` — Chair, Environment & Public Works — `unreached`
-- `leg-senate-cmte-environment-public-works-minority-staff-director-environment-public-works` — Minority Staff Director, Environment & Public Works — `unreached`
-- `leg-senate-cmte-environment-public-works-ranking-member-environment-public-works` — Ranking Member, Environment & Public Works — `unreached`
-- `leg-senate-cmte-environment-public-works-staff-director-environment-public-works` — Staff Director, Environment & Public Works — `unreached`
-
-## Senate Committee on Finance  — 4 unpriced
-
-`leg-senate-cmte-finance`
-
-- `leg-senate-cmte-finance-chair-finance` — Chair, Finance — `unreached`
-- `leg-senate-cmte-finance-minority-staff-director-finance` — Minority Staff Director, Finance — `unreached`
-- `leg-senate-cmte-finance-ranking-member-finance` — Ranking Member, Finance — `unreached`
-- `leg-senate-cmte-finance-staff-director-finance` — Staff Director, Finance — `unreached`
-
-## Senate Committee on Foreign Relations  — 4 unpriced
-
-`leg-senate-cmte-foreign-relations`
-
-- `leg-senate-cmte-foreign-relations-chair-foreign-relations` — Chair, Foreign Relations — `unreached`
-- `leg-senate-cmte-foreign-relations-minority-staff-director-foreign-relations` — Minority Staff Director, Foreign Relations — `unreached`
-- `leg-senate-cmte-foreign-relations-ranking-member-foreign-relations` — Ranking Member, Foreign Relations — `unreached`
-- `leg-senate-cmte-foreign-relations-staff-director-foreign-relations` — Staff Director, Foreign Relations — `unreached`
-
-## Senate Committee on Health, Education, Labor & Pensions  — 4 unpriced
-
-`leg-senate-cmte-health-education-labor-pensions`
-
-- `leg-senate-cmte-health-education-labor-pensions-chair-health-education-labor-pensions` — Chair, Health, Education, Labor & Pensions — `unreached`
-- `leg-senate-cmte-health-education-labor-pensions-minority-staff-director-health-education-labor-pensions` — Minority Staff Director, Health, Education, Labor & Pensions — `unreached`
-- `leg-senate-cmte-health-education-labor-pensions-ranking-member-health-education-labor-pensions` — Ranking Member, Health, Education, Labor & Pensions — `unreached`
-- `leg-senate-cmte-health-education-labor-pensions-staff-director-health-education-labor-pensions` — Staff Director, Health, Education, Labor & Pensions — `unreached`
-
-## Senate Committee on Homeland Security & Governmental Affairs  — 4 unpriced
-
-`leg-senate-cmte-homeland-security-governmental-affairs`
-
-- `leg-senate-cmte-homeland-security-governmental-affairs-chair-homeland-security-governmental-affairs` — Chair, Homeland Security & Governmental Affairs — `unreached`
-- `leg-senate-cmte-homeland-security-governmental-affairs-minority-staff-director-homeland-security-governmental-affairs` — Minority Staff Director, Homeland Security & Governmental Affairs — `unreached`
-- `leg-senate-cmte-homeland-security-governmental-affairs-ranking-member-homeland-security-governmental-affairs` — Ranking Member, Homeland Security & Governmental Affairs — `unreached`
-- `leg-senate-cmte-homeland-security-governmental-affairs-staff-director-homeland-security-governmental-affairs` — Staff Director, Homeland Security & Governmental Affairs — `unreached`
-
-## Senate Committee on Indian Affairs  — 4 unpriced
-
-`leg-senate-cmte-indian-affairs`
-
-- `leg-senate-cmte-indian-affairs-chair-indian-affairs` — Chair, Indian Affairs — `unreached`
-- `leg-senate-cmte-indian-affairs-minority-staff-director-indian-affairs` — Minority Staff Director, Indian Affairs — `unreached`
-- `leg-senate-cmte-indian-affairs-ranking-member-indian-affairs` — Ranking Member, Indian Affairs — `unreached`
-- `leg-senate-cmte-indian-affairs-staff-director-indian-affairs` — Staff Director, Indian Affairs — `unreached`
-
-## Senate Committee on Rules & Administration  — 4 unpriced
-
-`leg-senate-cmte-rules-administration`
-
-- `leg-senate-cmte-rules-administration-chair-rules-administration` — Chair, Rules & Administration — `unreached`
-- `leg-senate-cmte-rules-administration-minority-staff-director-rules-administration` — Minority Staff Director, Rules & Administration — `unreached`
-- `leg-senate-cmte-rules-administration-ranking-member-rules-administration` — Ranking Member, Rules & Administration — `unreached`
-- `leg-senate-cmte-rules-administration-staff-director-rules-administration` — Staff Director, Rules & Administration — `unreached`
-
-## Senate Committee on Small Business & Entrepreneurship  — 4 unpriced
-
-`leg-senate-cmte-small-business-entrepreneurship`
-
-- `leg-senate-cmte-small-business-entrepreneurship-chair-small-business-entrepreneurship` — Chair, Small Business & Entrepreneurship — `unreached`
-- `leg-senate-cmte-small-business-entrepreneurship-minority-staff-director-small-business-entrepreneurship` — Minority Staff Director, Small Business & Entrepreneurship — `unreached`
-- `leg-senate-cmte-small-business-entrepreneurship-ranking-member-small-business-entrepreneurship` — Ranking Member, Small Business & Entrepreneurship — `unreached`
-- `leg-senate-cmte-small-business-entrepreneurship-staff-director-small-business-entrepreneurship` — Staff Director, Small Business & Entrepreneurship — `unreached`
-
-## Senate Committee on Veterans' Affairs  — 4 unpriced
-
-`leg-senate-cmte-veterans-affairs`
-
-- `leg-senate-cmte-veterans-affairs-chair-veterans-affairs` — Chair, Veterans' Affairs — `unreached`
-- `leg-senate-cmte-veterans-affairs-minority-staff-director-veterans-affairs` — Minority Staff Director, Veterans' Affairs — `unreached`
-- `leg-senate-cmte-veterans-affairs-ranking-member-veterans-affairs` — Ranking Member, Veterans' Affairs — `unreached`
-- `leg-senate-cmte-veterans-affairs-staff-director-veterans-affairs` — Staff Director, Veterans' Affairs — `unreached`
-
-## Senate Committee on the Budget  — 4 unpriced
-
-`leg-senate-cmte-budget`
-
-- `leg-senate-cmte-budget-chair-budget` — Chair, Budget — `unreached`
-- `leg-senate-cmte-budget-minority-staff-director-budget` — Minority Staff Director, Budget — `unreached`
-- `leg-senate-cmte-budget-ranking-member-budget` — Ranking Member, Budget — `unreached`
-- `leg-senate-cmte-budget-staff-director-budget` — Staff Director, Budget — `unreached`
-
-## Senate Select Committee on Intelligence  — 4 unpriced
-
-`leg-senate-cmte-select-committee-on-intelligence`
-
-- `leg-senate-cmte-select-committee-on-intelligence-chair-select-committee-on-intelligence` — Chair, Select Committee on Intelligence — `unreached`
-- `leg-senate-cmte-select-committee-on-intelligence-minority-staff-director-select-committee-on-intelligence` — Minority Staff Director, Select Committee on Intelligence — `unreached`
-- `leg-senate-cmte-select-committee-on-intelligence-ranking-member-select-committee-on-intelligence` — Ranking Member, Select Committee on Intelligence — `unreached`
-- `leg-senate-cmte-select-committee-on-intelligence-staff-director-select-committee-on-intelligence` — Staff Director, Select Committee on Intelligence — `unreached`
-
-## Senate Special Committee on Aging  — 4 unpriced
-
-`leg-senate-cmte-special-committee-on-aging`
-
-- `leg-senate-cmte-special-committee-on-aging-chair-special-committee-on-aging` — Chair, Special Committee on Aging — `unreached`
-- `leg-senate-cmte-special-committee-on-aging-minority-staff-director-special-committee-on-aging` — Minority Staff Director, Special Committee on Aging — `unreached`
-- `leg-senate-cmte-special-committee-on-aging-ranking-member-special-committee-on-aging` — Ranking Member, Special Committee on Aging — `unreached`
-- `leg-senate-cmte-special-committee-on-aging-staff-director-special-committee-on-aging` — Staff Director, Special Committee on Aging — `unreached`
 
 ## Strategic Issues  — 4 unpriced
 
@@ -5187,15 +4799,6 @@ same list in the same run.
 - `exec-dept-state-u-s-mission-to-the-united-nations-foreign-service-officer-multiple` — Foreign Service Officer (×multiple) — `multiplicity`
 - `exec-dept-state-u-s-mission-to-the-united-nations-office-director-multiple-u-s-mission-to-the-united-nations` — Office Director (×multiple), U.S. Mission to the United Nations — `multiplicity`
 
-## U.S. Senate Select Committee on Ethics  — 4 unpriced
-
-`leg-senate-cmte-select-committee-on-ethics`
-
-- `leg-senate-cmte-select-committee-on-ethics-chair-select-committee-on-ethics` — Chair, Select Committee on Ethics — `unreached`
-- `leg-senate-cmte-select-committee-on-ethics-minority-staff-director-select-committee-on-ethics` — Minority Staff Director, Select Committee on Ethics — `unreached`
-- `leg-senate-cmte-select-committee-on-ethics-ranking-member-select-committee-on-ethics` — Ranking Member, Select Committee on Ethics — `unreached`
-- `leg-senate-cmte-select-committee-on-ethics-staff-director-select-committee-on-ethics` — Staff Director, Select Committee on Ethics — `unreached`
-
 ## U.S. Tax Court  — 4 unpriced
 
 `jud-specialized-tax`
@@ -5205,39 +4808,6 @@ same list in the same run.
 - `jud-specialized-tax-general-counsel` — General Counsel — `unreached`
 - `jud-specialized-tax-special-trial-judge-multiple` — Special Trial Judge (×multiple) — `multiplicity`
 
-## United States Senate Committee on the Judiciary  — 4 unpriced
-
-`leg-senate-cmte-judiciary`
-
-- `leg-senate-cmte-judiciary-chair-judiciary` — Chair, Judiciary — `unreached`
-- `leg-senate-cmte-judiciary-minority-staff-director-judiciary` — Minority Staff Director, Judiciary — `unreached`
-- `leg-senate-cmte-judiciary-ranking-member-judiciary` — Ranking Member, Judiciary — `unreached`
-- `leg-senate-cmte-judiciary-staff-director-judiciary` — Staff Director, Judiciary — `unreached`
-
-## Africa & Global Health Policy  — 3 unpriced
-
-`leg-senate-cmte-foreign-relations-sub-africa-global-health-policy`
-
-- `leg-senate-cmte-foreign-relations-sub-africa-global-health-policy-chair-subcommittee-on-africa-global-health-policy` — Chair, Subcommittee on Africa & Global Health Policy — `unreached`
-- `leg-senate-cmte-foreign-relations-sub-africa-global-health-policy-ranking-member-subcommittee-on-africa-global-health-policy` — Ranking Member, Subcommittee on Africa & Global Health Policy — `unreached`
-- `leg-senate-cmte-foreign-relations-sub-africa-global-health-policy-staff-director-subcommittee-on-africa-global-health-policy` — Staff Director, Subcommittee on Africa & Global Health Policy — `unreached`
-
-## Agriculture, Rural Development, Food and Drug Administration, and Related Agencies  — 3 unpriced
-
-`leg-senate-cmte-appropriations-sub-agriculture-rural-development-fda-related-agencies`
-
-- `leg-senate-cmte-appropriations-sub-agriculture-rural-development-fda-related-agencies-chair-subcommittee-on-agriculture-rural-development-fda-related-agencies` — Chair, Subcommittee on Agriculture, Rural Development, FDA & Related Agencies — `unreached`
-- `leg-senate-cmte-appropriations-sub-agriculture-rural-development-fda-related-agencies-ranking-member-subcommittee-on-agriculture-rural-development-fda-related-agencies` — Ranking Member, Subcommittee on Agriculture, Rural Development, FDA & Related Agencies — `unreached`
-- `leg-senate-cmte-appropriations-sub-agriculture-rural-development-fda-related-agencies-staff-director-subcommittee-on-agriculture-rural-development-fda-related-agencies` — Staff Director, Subcommittee on Agriculture, Rural Development, FDA & Related Agencies — `unreached`
-
-## Airland  — 3 unpriced
-
-`leg-senate-cmte-armed-services-sub-airland`
-
-- `leg-senate-cmte-armed-services-sub-airland-chair-subcommittee-on-airland` — Chair, Subcommittee on Airland — `unreached`
-- `leg-senate-cmte-armed-services-sub-airland-ranking-member-subcommittee-on-airland` — Ranking Member, Subcommittee on Airland — `unreached`
-- `leg-senate-cmte-armed-services-sub-airland-staff-director-subcommittee-on-airland` — Staff Director, Subcommittee on Airland — `unreached`
-
 ## Antitrust Division  — 3 unpriced
 
 `exec-dept-doj-div-antitrust`
@@ -5246,22 +4816,6 @@ same list in the same run.
 - `exec-dept-doj-div-antitrust-section-chief-multiple` — Section Chief (×multiple) — `multiplicity`
 - `exec-dept-doj-div-antitrust-trial-attorney-ausa-multiple` — Trial Attorney / AUSA (×multiple) — `multiplicity`
 
-## Antitrust, Competition Policy, and Consumer Rights  — 3 unpriced
-
-`leg-senate-cmte-judiciary-sub-competition-policy-antitrust-consumer-rights`
-
-- `leg-senate-cmte-judiciary-sub-competition-policy-antitrust-consumer-rights-chair-subcommittee-on-competition-policy-antitrust-consumer-rights` — Chair, Subcommittee on Competition Policy, Antitrust & Consumer Rights — `unreached`
-- `leg-senate-cmte-judiciary-sub-competition-policy-antitrust-consumer-rights-ranking-member-subcommittee-on-competition-policy-antitrust-consumer-rights` — Ranking Member, Subcommittee on Competition Policy, Antitrust & Consumer Rights — `unreached`
-- `leg-senate-cmte-judiciary-sub-competition-policy-antitrust-consumer-rights-staff-director-subcommittee-on-competition-policy-antitrust-consumer-rights` — Staff Director, Subcommittee on Competition Policy, Antitrust & Consumer Rights — `unreached`
-
-## Aviation, Space, & Innovation  — 3 unpriced
-
-`leg-senate-cmte-commerce-science-transportation-sub-aviation-safety-operations-innovation`
-
-- `leg-senate-cmte-commerce-science-transportation-sub-aviation-safety-operations-innovation-chair-subcommittee-on-aviation-safety-operations-innovation` — Chair, Subcommittee on Aviation Safety, Operations & Innovation — `unreached`
-- `leg-senate-cmte-commerce-science-transportation-sub-aviation-safety-operations-innovation-ranking-member-subcommittee-on-aviation-safety-operations-innovation` — Ranking Member, Subcommittee on Aviation Safety, Operations & Innovation — `unreached`
-- `leg-senate-cmte-commerce-science-transportation-sub-aviation-safety-operations-innovation-staff-director-subcommittee-on-aviation-safety-operations-innovation` — Staff Director, Subcommittee on Aviation Safety, Operations & Innovation — `unreached`
-
 ## Board of Veterans Appeals (BVA)  — 3 unpriced
 
 `exec-dept-va-bva`
@@ -5269,14 +4823,6 @@ same list in the same run.
 - `exec-dept-va-bva-staff-attorney-law-clerk-multiple` — Staff Attorney / Law Clerk (×multiple) — `multiplicity`
 - `exec-dept-va-bva-veterans-law-judge-multiple` — Veterans Law Judge (×multiple) — `multiplicity`
 - `exec-dept-va-bva-vice-chairman` — Vice Chairman — `unreached`
-
-## Border Management, Federal Workforce, and Regulatory Affairs  — 3 unpriced
-
-`leg-senate-cmte-homeland-security-governmental-affairs-sub-government-operations-border-management`
-
-- `leg-senate-cmte-homeland-security-governmental-affairs-sub-government-operations-border-management-chair-subcommittee-on-government-operations-border-management` — Chair, Subcommittee on Government Operations & Border Management — `unreached`
-- `leg-senate-cmte-homeland-security-governmental-affairs-sub-government-operations-border-management-ranking-member-subcommittee-on-government-operations-border-management` — Ranking Member, Subcommittee on Government Operations & Border Management — `unreached`
-- `leg-senate-cmte-homeland-security-governmental-affairs-sub-government-operations-border-management-staff-director-subcommittee-on-government-operations-border-management` — Staff Director, Subcommittee on Government Operations & Border Management — `unreached`
 
 ## Bureau of African Affairs  — 3 unpriced
 
@@ -5390,14 +4936,6 @@ same list in the same run.
 - `exec-dept-state-bureau-of-western-hemisphere-affairs-foreign-service-officer-multiple` — Foreign Service Officer (×multiple) — `multiplicity`
 - `exec-dept-state-bureau-of-western-hemisphere-affairs-office-director-multiple-bureau-of-western-hemisphere-affairs` — Office Director (×multiple), Bureau of Western Hemisphere Affairs — `multiplicity`
 
-## Chemical Safety, Waste Management, Environmental Justice & Regulatory Oversight  — 3 unpriced
-
-`leg-senate-cmte-environment-public-works-sub-chemical-safety-waste-management-environmental-justice-regulatory-oversight`
-
-- `leg-senate-cmte-environment-public-works-sub-chemical-safety-waste-management-environmental-justice-regulatory-oversight-chair-subcommittee-on-chemical-safety-waste-management-environmental-justice-regulatory-oversight` — Chair, Subcommittee on Chemical Safety, Waste Management, Environmental Justice & Regulatory Oversight — `unreached`
-- `leg-senate-cmte-environment-public-works-sub-chemical-safety-waste-management-environmental-justice-regulatory-oversight-ranking-member-subcommittee-on-chemical-safety-waste-management-environmental-justice-regulatory-oversight` — Ranking Member, Subcommittee on Chemical Safety, Waste Management, Environmental Justice & Regulatory Oversight — `unreached`
-- `leg-senate-cmte-environment-public-works-sub-chemical-safety-waste-management-environmental-justice-regulatory-oversight-staff-director-subcommittee-on-chemical-safety-waste-management-environmental-justice-regulatory-oversight` — Staff Director, Subcommittee on Chemical Safety, Waste Management, Environmental Justice & Regulatory Oversight — `unreached`
-
 ## Chemical, Bioengineering, Energy and Transport Systems (CBET)  — 3 unpriced
 
 `exec-ind-nsf-engineering-eng-chemical-bioengineering-environmental-transport-systems`
@@ -5405,14 +4943,6 @@ same list in the same run.
 - `exec-ind-nsf-engineering-eng-chemical-bioengineering-environmental-transport-systems-division-director-chemical-bioengineering-environmental-transport-systems` — Division Director, Chemical, Bioengineering, Environmental & Transport Systems — `unreached`
 - `exec-ind-nsf-engineering-eng-chemical-bioengineering-environmental-transport-systems-program-director-multiple` — Program Director (×multiple) — `multiplicity`
 - `exec-ind-nsf-engineering-eng-chemical-bioengineering-environmental-transport-systems-program-officer-multiple` — Program Officer (×multiple) — `multiplicity`
-
-## Children & Families  — 3 unpriced
-
-`leg-senate-cmte-health-education-labor-pensions-sub-children-families`
-
-- `leg-senate-cmte-health-education-labor-pensions-sub-children-families-chair-subcommittee-on-children-families` — Chair, Subcommittee on Children & Families — `unreached`
-- `leg-senate-cmte-health-education-labor-pensions-sub-children-families-ranking-member-subcommittee-on-children-families` — Ranking Member, Subcommittee on Children & Families — `unreached`
-- `leg-senate-cmte-health-education-labor-pensions-sub-children-families-staff-director-subcommittee-on-children-families` — Staff Director, Subcommittee on Children & Families — `unreached`
 
 ## Civil Division  — 3 unpriced
 
@@ -5430,38 +4960,6 @@ same list in the same run.
 - `exec-dept-doj-div-civil-rights-section-chief-multiple` — Section Chief (×multiple) — `multiplicity`
 - `exec-dept-doj-div-civil-rights-trial-attorney-ausa-multiple` — Trial Attorney / AUSA (×multiple) — `multiplicity`
 
-## Clean Air, Climate, and Nuclear Innovation and Safety  — 3 unpriced
-
-`leg-senate-cmte-environment-public-works-sub-clean-air-climate-nuclear-safety`
-
-- `leg-senate-cmte-environment-public-works-sub-clean-air-climate-nuclear-safety-chair-subcommittee-on-clean-air-climate-nuclear-safety` — Chair, Subcommittee on Clean Air, Climate & Nuclear Safety — `unreached`
-- `leg-senate-cmte-environment-public-works-sub-clean-air-climate-nuclear-safety-ranking-member-subcommittee-on-clean-air-climate-nuclear-safety` — Ranking Member, Subcommittee on Clean Air, Climate & Nuclear Safety — `unreached`
-- `leg-senate-cmte-environment-public-works-sub-clean-air-climate-nuclear-safety-staff-director-subcommittee-on-clean-air-climate-nuclear-safety` — Staff Director, Subcommittee on Clean Air, Climate & Nuclear Safety — `unreached`
-
-## Commerce, Justice, Science & Related Agencies  — 3 unpriced
-
-`leg-senate-cmte-appropriations-sub-commerce-justice-science-related-agencies`
-
-- `leg-senate-cmte-appropriations-sub-commerce-justice-science-related-agencies-chair-subcommittee-on-commerce-justice-science-related-agencies` — Chair, Subcommittee on Commerce, Justice, Science & Related Agencies — `unreached`
-- `leg-senate-cmte-appropriations-sub-commerce-justice-science-related-agencies-ranking-member-subcommittee-on-commerce-justice-science-related-agencies` — Ranking Member, Subcommittee on Commerce, Justice, Science & Related Agencies — `unreached`
-- `leg-senate-cmte-appropriations-sub-commerce-justice-science-related-agencies-staff-director-subcommittee-on-commerce-justice-science-related-agencies` — Staff Director, Subcommittee on Commerce, Justice, Science & Related Agencies — `unreached`
-
-## Constitution  — 3 unpriced
-
-`leg-senate-cmte-judiciary-sub-constitution`
-
-- `leg-senate-cmte-judiciary-sub-constitution-chair-subcommittee-on-constitution` — Chair, Subcommittee on Constitution — `unreached`
-- `leg-senate-cmte-judiciary-sub-constitution-ranking-member-subcommittee-on-constitution` — Ranking Member, Subcommittee on Constitution — `unreached`
-- `leg-senate-cmte-judiciary-sub-constitution-staff-director-subcommittee-on-constitution` — Staff Director, Subcommittee on Constitution — `unreached`
-
-## Consumer Protection, Technology, & Data Privacy  — 3 unpriced
-
-`leg-senate-cmte-commerce-science-transportation-sub-consumer-protection-product-safety-data-security`
-
-- `leg-senate-cmte-commerce-science-transportation-sub-consumer-protection-product-safety-data-security-chair-subcommittee-on-consumer-protection-product-safety-data-security` — Chair, Subcommittee on Consumer Protection, Product Safety & Data Security — `unreached`
-- `leg-senate-cmte-commerce-science-transportation-sub-consumer-protection-product-safety-data-security-ranking-member-subcommittee-on-consumer-protection-product-safety-data-security` — Ranking Member, Subcommittee on Consumer Protection, Product Safety & Data Security — `unreached`
-- `leg-senate-cmte-commerce-science-transportation-sub-consumer-protection-product-safety-data-security-staff-director-subcommittee-on-consumer-protection-product-safety-data-security` — Staff Director, Subcommittee on Consumer Protection, Product Safety & Data Security — `unreached`
-
 ## Convergence Accelerator  — 3 unpriced
 
 `exec-ind-nsf-technology-innovation-partnerships-tip-convergence-accelerator`
@@ -5477,22 +4975,6 @@ same list in the same run.
 - `exec-dept-doj-div-criminal-deputy-assistant-attorney-general-3-5` — Deputy Assistant Attorney General (×3-5) — `multiplicity`
 - `exec-dept-doj-div-criminal-section-chief-multiple` — Section Chief (×multiple) — `multiplicity`
 - `exec-dept-doj-div-criminal-trial-attorney-ausa-multiple` — Trial Attorney / AUSA (×multiple) — `multiplicity`
-
-## Cybersecurity  — 3 unpriced
-
-`leg-senate-cmte-armed-services-sub-cybersecurity`
-
-- `leg-senate-cmte-armed-services-sub-cybersecurity-chair-subcommittee-on-cybersecurity` — Chair, Subcommittee on Cybersecurity — `unreached`
-- `leg-senate-cmte-armed-services-sub-cybersecurity-ranking-member-subcommittee-on-cybersecurity` — Ranking Member, Subcommittee on Cybersecurity — `unreached`
-- `leg-senate-cmte-armed-services-sub-cybersecurity-staff-director-subcommittee-on-cybersecurity` — Staff Director, Subcommittee on Cybersecurity — `unreached`
-
-## Defense  — 3 unpriced
-
-`leg-senate-cmte-appropriations-sub-defense`
-
-- `leg-senate-cmte-appropriations-sub-defense-chair-subcommittee-on-defense` — Chair, Subcommittee on Defense — `unreached`
-- `leg-senate-cmte-appropriations-sub-defense-ranking-member-subcommittee-on-defense` — Ranking Member, Subcommittee on Defense — `unreached`
-- `leg-senate-cmte-appropriations-sub-defense-staff-director-subcommittee-on-defense` — Staff Director, Subcommittee on Defense — `unreached`
 
 ## Division of Astronomical Sciences  — 3 unpriced
 
@@ -5702,22 +5184,6 @@ same list in the same run.
 - `exec-ind-nsf-education-human-resources-ehr-undergraduate-education-program-director-multiple` — Program Director (×multiple) — `multiplicity`
 - `exec-ind-nsf-education-human-resources-ehr-undergraduate-education-program-officer-multiple` — Program Officer (×multiple) — `multiplicity`
 
-## East Asia, The Pacific & International Cybersecurity Policy  — 3 unpriced
-
-`leg-senate-cmte-foreign-relations-sub-east-asia-the-pacific-international-cybersecurity-policy`
-
-- `leg-senate-cmte-foreign-relations-sub-east-asia-the-pacific-international-cybersecurity-policy-chair-subcommittee-on-east-asia-the-pacific-international-cybersecurity-policy` — Chair, Subcommittee on East Asia, The Pacific & International Cybersecurity Policy — `unreached`
-- `leg-senate-cmte-foreign-relations-sub-east-asia-the-pacific-international-cybersecurity-policy-ranking-member-subcommittee-on-east-asia-the-pacific-international-cybersecurity-policy` — Ranking Member, Subcommittee on East Asia, The Pacific & International Cybersecurity Policy — `unreached`
-- `leg-senate-cmte-foreign-relations-sub-east-asia-the-pacific-international-cybersecurity-policy-staff-director-subcommittee-on-east-asia-the-pacific-international-cybersecurity-policy` — Staff Director, Subcommittee on East Asia, The Pacific & International Cybersecurity Policy — `unreached`
-
-## Economic Policy  — 3 unpriced
-
-`leg-senate-cmte-banking-housing-urban-affairs-sub-economic-policy`
-
-- `leg-senate-cmte-banking-housing-urban-affairs-sub-economic-policy-chair-subcommittee-on-economic-policy` — Chair, Subcommittee on Economic Policy — `unreached`
-- `leg-senate-cmte-banking-housing-urban-affairs-sub-economic-policy-ranking-member-subcommittee-on-economic-policy` — Ranking Member, Subcommittee on Economic Policy — `unreached`
-- `leg-senate-cmte-banking-housing-urban-affairs-sub-economic-policy-staff-director-subcommittee-on-economic-policy` — Staff Director, Subcommittee on Economic Policy — `unreached`
-
 ## Election Assistance Commission (EAC)  — 3 unpriced
 
 `exec-ind-misc-election-assistance-commission-eac`
@@ -5726,22 +5192,6 @@ same list in the same run.
 - `exec-ind-misc-election-assistance-commission-eac-director-administrator-chair-election-assistance-commission` — Director / Administrator / Chair, Election Assistance Commission — `unreached`
 - `exec-ind-misc-election-assistance-commission-eac-inspector-general` — Inspector General — `unreached`
 
-## Emerging Threats & Capabilities  — 3 unpriced
-
-`leg-senate-cmte-armed-services-sub-emerging-threats-capabilities`
-
-- `leg-senate-cmte-armed-services-sub-emerging-threats-capabilities-chair-subcommittee-on-emerging-threats-capabilities` — Chair, Subcommittee on Emerging Threats & Capabilities — `unreached`
-- `leg-senate-cmte-armed-services-sub-emerging-threats-capabilities-ranking-member-subcommittee-on-emerging-threats-capabilities` — Ranking Member, Subcommittee on Emerging Threats & Capabilities — `unreached`
-- `leg-senate-cmte-armed-services-sub-emerging-threats-capabilities-staff-director-subcommittee-on-emerging-threats-capabilities` — Staff Director, Subcommittee on Emerging Threats & Capabilities — `unreached`
-
-## Emerging Threats & Spending Oversight  — 3 unpriced
-
-`leg-senate-cmte-homeland-security-governmental-affairs-sub-emerging-threats-spending-oversight`
-
-- `leg-senate-cmte-homeland-security-governmental-affairs-sub-emerging-threats-spending-oversight-chair-subcommittee-on-emerging-threats-spending-oversight` — Chair, Subcommittee on Emerging Threats & Spending Oversight — `unreached`
-- `leg-senate-cmte-homeland-security-governmental-affairs-sub-emerging-threats-spending-oversight-ranking-member-subcommittee-on-emerging-threats-spending-oversight` — Ranking Member, Subcommittee on Emerging Threats & Spending Oversight — `unreached`
-- `leg-senate-cmte-homeland-security-governmental-affairs-sub-emerging-threats-spending-oversight-staff-director-subcommittee-on-emerging-threats-spending-oversight` — Staff Director, Subcommittee on Emerging Threats & Spending Oversight — `unreached`
-
 ## Employee Benefits Security Administration (EBSA)  — 3 unpriced
 
 `exec-dept-dol-ebsa`
@@ -5749,30 +5199,6 @@ same list in the same run.
 - `exec-dept-dol-ebsa-benefits-advisor-multiple` — Benefits Advisor (×multiple) — `multiplicity`
 - `exec-dept-dol-ebsa-criminal-investigator-multiple` — Criminal Investigator (×multiple) — `multiplicity`
 - `exec-dept-dol-ebsa-regional-director-10-regions` — Regional Director — 10 Regions — `unreached`
-
-## Employment & Workplace Safety  — 3 unpriced
-
-`leg-senate-cmte-health-education-labor-pensions-sub-employment-workplace-safety`
-
-- `leg-senate-cmte-health-education-labor-pensions-sub-employment-workplace-safety-chair-subcommittee-on-employment-workplace-safety` — Chair, Subcommittee on Employment & Workplace Safety — `unreached`
-- `leg-senate-cmte-health-education-labor-pensions-sub-employment-workplace-safety-ranking-member-subcommittee-on-employment-workplace-safety` — Ranking Member, Subcommittee on Employment & Workplace Safety — `unreached`
-- `leg-senate-cmte-health-education-labor-pensions-sub-employment-workplace-safety-staff-director-subcommittee-on-employment-workplace-safety` — Staff Director, Subcommittee on Employment & Workplace Safety — `unreached`
-
-## Energy & Water Development  — 3 unpriced
-
-`leg-senate-cmte-appropriations-sub-energy-water-development`
-
-- `leg-senate-cmte-appropriations-sub-energy-water-development-chair-subcommittee-on-energy-water-development` — Chair, Subcommittee on Energy & Water Development — `unreached`
-- `leg-senate-cmte-appropriations-sub-energy-water-development-ranking-member-subcommittee-on-energy-water-development` — Ranking Member, Subcommittee on Energy & Water Development — `unreached`
-- `leg-senate-cmte-appropriations-sub-energy-water-development-staff-director-subcommittee-on-energy-water-development` — Staff Director, Subcommittee on Energy & Water Development — `unreached`
-
-## Energy, Natural Resources & Infrastructure  — 3 unpriced
-
-`leg-senate-cmte-finance-sub-energy-natural-resources-infrastructure`
-
-- `leg-senate-cmte-finance-sub-energy-natural-resources-infrastructure-chair-subcommittee-on-energy-natural-resources-infrastructure` — Chair, Subcommittee on Energy, Natural Resources & Infrastructure — `unreached`
-- `leg-senate-cmte-finance-sub-energy-natural-resources-infrastructure-ranking-member-subcommittee-on-energy-natural-resources-infrastructure` — Ranking Member, Subcommittee on Energy, Natural Resources & Infrastructure — `unreached`
-- `leg-senate-cmte-finance-sub-energy-natural-resources-infrastructure-staff-director-subcommittee-on-energy-natural-resources-infrastructure` — Staff Director, Subcommittee on Energy, Natural Resources & Infrastructure — `unreached`
 
 ## Environment & Natural Resources Division  — 3 unpriced
 
@@ -5789,14 +5215,6 @@ same list in the same run.
 - `exec-ind-epa-administrator-epa` — Administrator, EPA — `unreached`
 - `exec-ind-epa-chief-of-staff` — Chief of Staff — `unreached`
 - `exec-ind-epa-general-counsel` — General Counsel — `unreached`
-
-## Europe & Regional Security Cooperation  — 3 unpriced
-
-`leg-senate-cmte-foreign-relations-sub-europe-regional-security-cooperation`
-
-- `leg-senate-cmte-foreign-relations-sub-europe-regional-security-cooperation-chair-subcommittee-on-europe-regional-security-cooperation` — Chair, Subcommittee on Europe & Regional Security Cooperation — `unreached`
-- `leg-senate-cmte-foreign-relations-sub-europe-regional-security-cooperation-ranking-member-subcommittee-on-europe-regional-security-cooperation` — Ranking Member, Subcommittee on Europe & Regional Security Cooperation — `unreached`
-- `leg-senate-cmte-foreign-relations-sub-europe-regional-security-cooperation-staff-director-subcommittee-on-europe-regional-security-cooperation` — Staff Director, Subcommittee on Europe & Regional Security Cooperation — `unreached`
 
 ## Export-Import Bank of the U.S.  — 3 unpriced
 
@@ -5830,46 +5248,6 @@ same list in the same run.
 - `exec-regulatory-fmc-inspector-general` — Inspector General — `unreached`
 - `exec-regulatory-fmc-managing-director` — Managing Director — `unreached`
 
-## Financial Institutions & Consumer Protection  — 3 unpriced
-
-`leg-senate-cmte-banking-housing-urban-affairs-sub-financial-institutions-consumer-protection`
-
-- `leg-senate-cmte-banking-housing-urban-affairs-sub-financial-institutions-consumer-protection-chair-subcommittee-on-financial-institutions-consumer-protection` — Chair, Subcommittee on Financial Institutions & Consumer Protection — `unreached`
-- `leg-senate-cmte-banking-housing-urban-affairs-sub-financial-institutions-consumer-protection-ranking-member-subcommittee-on-financial-institutions-consumer-protection` — Ranking Member, Subcommittee on Financial Institutions & Consumer Protection — `unreached`
-- `leg-senate-cmte-banking-housing-urban-affairs-sub-financial-institutions-consumer-protection-staff-director-subcommittee-on-financial-institutions-consumer-protection` — Staff Director, Subcommittee on Financial Institutions & Consumer Protection — `unreached`
-
-## Financial Services & General Government  — 3 unpriced
-
-`leg-senate-cmte-appropriations-sub-financial-services-general-government`
-
-- `leg-senate-cmte-appropriations-sub-financial-services-general-government-chair-subcommittee-on-financial-services-general-government` — Chair, Subcommittee on Financial Services & General Government — `unreached`
-- `leg-senate-cmte-appropriations-sub-financial-services-general-government-ranking-member-subcommittee-on-financial-services-general-government` — Ranking Member, Subcommittee on Financial Services & General Government — `unreached`
-- `leg-senate-cmte-appropriations-sub-financial-services-general-government-staff-director-subcommittee-on-financial-services-general-government` — Staff Director, Subcommittee on Financial Services & General Government — `unreached`
-
-## Fiscal Responsibility & Economic Growth  — 3 unpriced
-
-`leg-senate-cmte-finance-sub-fiscal-responsibility-economic-growth`
-
-- `leg-senate-cmte-finance-sub-fiscal-responsibility-economic-growth-chair-subcommittee-on-fiscal-responsibility-economic-growth` — Chair, Subcommittee on Fiscal Responsibility & Economic Growth — `unreached`
-- `leg-senate-cmte-finance-sub-fiscal-responsibility-economic-growth-ranking-member-subcommittee-on-fiscal-responsibility-economic-growth` — Ranking Member, Subcommittee on Fiscal Responsibility & Economic Growth — `unreached`
-- `leg-senate-cmte-finance-sub-fiscal-responsibility-economic-growth-staff-director-subcommittee-on-fiscal-responsibility-economic-growth` — Staff Director, Subcommittee on Fiscal Responsibility & Economic Growth — `unreached`
-
-## Fisheries, Water & Wildlife  — 3 unpriced
-
-`leg-senate-cmte-environment-public-works-sub-fisheries-water-wildlife`
-
-- `leg-senate-cmte-environment-public-works-sub-fisheries-water-wildlife-chair-subcommittee-on-fisheries-water-wildlife` — Chair, Subcommittee on Fisheries, Water & Wildlife — `unreached`
-- `leg-senate-cmte-environment-public-works-sub-fisheries-water-wildlife-ranking-member-subcommittee-on-fisheries-water-wildlife` — Ranking Member, Subcommittee on Fisheries, Water & Wildlife — `unreached`
-- `leg-senate-cmte-environment-public-works-sub-fisheries-water-wildlife-staff-director-subcommittee-on-fisheries-water-wildlife` — Staff Director, Subcommittee on Fisheries, Water & Wildlife — `unreached`
-
-## Food and Nutrition, Specialty Crops, Organics, and Research  — 3 unpriced
-
-`leg-senate-cmte-agriculture-nutrition-and-forestry-sub-food-nutrition-specialty-crops-agricultural-research`
-
-- `leg-senate-cmte-agriculture-nutrition-and-forestry-sub-food-nutrition-specialty-crops-agricultural-research-chair-subcommittee-on-food-nutrition-specialty-crops-agricultural-research` — Chair, Subcommittee on Food & Nutrition, Specialty Crops & Agricultural Research — `unreached`
-- `leg-senate-cmte-agriculture-nutrition-and-forestry-sub-food-nutrition-specialty-crops-agricultural-research-ranking-member-subcommittee-on-food-nutrition-specialty-crops-agricultural-research` — Ranking Member, Subcommittee on Food & Nutrition, Specialty Crops & Agricultural Research — `unreached`
-- `leg-senate-cmte-agriculture-nutrition-and-forestry-sub-food-nutrition-specialty-crops-agricultural-research-staff-director-subcommittee-on-food-nutrition-specialty-crops-agricultural-research` — Staff Director, Subcommittee on Food & Nutrition, Specialty Crops & Agricultural Research — `unreached`
-
 ## Ginnie Mae  — 3 unpriced
 
 `exec-dept-hud-ginnie`
@@ -5878,38 +5256,6 @@ same list in the same run.
 - `exec-dept-hud-ginnie-chief-risk-officer` — Chief Risk Officer — `unreached`
 - `exec-dept-hud-ginnie-executive-vp-coo` — Executive VP / COO — `unreached`
 
-## Health Care  — 3 unpriced
-
-`leg-senate-cmte-finance-sub-health-care`
-
-- `leg-senate-cmte-finance-sub-health-care-chair-subcommittee-on-health-care` — Chair, Subcommittee on Health Care — `unreached`
-- `leg-senate-cmte-finance-sub-health-care-ranking-member-subcommittee-on-health-care` — Ranking Member, Subcommittee on Health Care — `unreached`
-- `leg-senate-cmte-finance-sub-health-care-staff-director-subcommittee-on-health-care` — Staff Director, Subcommittee on Health Care — `unreached`
-
-## Homeland Security  — 3 unpriced
-
-`leg-senate-cmte-appropriations-sub-homeland-security`
-
-- `leg-senate-cmte-appropriations-sub-homeland-security-chair-subcommittee-on-homeland-security` — Chair, Subcommittee on Homeland Security — `unreached`
-- `leg-senate-cmte-appropriations-sub-homeland-security-ranking-member-subcommittee-on-homeland-security` — Ranking Member, Subcommittee on Homeland Security — `unreached`
-- `leg-senate-cmte-appropriations-sub-homeland-security-staff-director-subcommittee-on-homeland-security` — Staff Director, Subcommittee on Homeland Security — `unreached`
-
-## Housing, Transportation & Community Development  — 3 unpriced
-
-`leg-senate-cmte-banking-housing-urban-affairs-sub-housing-transportation-community-development`
-
-- `leg-senate-cmte-banking-housing-urban-affairs-sub-housing-transportation-community-development-chair-subcommittee-on-housing-transportation-community-development` — Chair, Subcommittee on Housing, Transportation & Community Development — `unreached`
-- `leg-senate-cmte-banking-housing-urban-affairs-sub-housing-transportation-community-development-ranking-member-subcommittee-on-housing-transportation-community-development` — Ranking Member, Subcommittee on Housing, Transportation & Community Development — `unreached`
-- `leg-senate-cmte-banking-housing-urban-affairs-sub-housing-transportation-community-development-staff-director-subcommittee-on-housing-transportation-community-development` — Staff Director, Subcommittee on Housing, Transportation & Community Development — `unreached`
-
-## Human Rights & the Law  — 3 unpriced
-
-`leg-senate-cmte-judiciary-sub-human-rights-the-law`
-
-- `leg-senate-cmte-judiciary-sub-human-rights-the-law-chair-subcommittee-on-human-rights-the-law` — Chair, Subcommittee on Human Rights & the Law — `unreached`
-- `leg-senate-cmte-judiciary-sub-human-rights-the-law-ranking-member-subcommittee-on-human-rights-the-law` — Ranking Member, Subcommittee on Human Rights & the Law — `unreached`
-- `leg-senate-cmte-judiciary-sub-human-rights-the-law-staff-director-subcommittee-on-human-rights-the-law` — Staff Director, Subcommittee on Human Rights & the Law — `unreached`
-
 ## Indian Health Service (IHS)  — 3 unpriced
 
 `exec-dept-hhs-ihs`
@@ -5917,62 +5263,6 @@ same list in the same run.
 - `exec-dept-hhs-ihs-area-director-12-ihs-areas` — Area Director — 12 IHS Areas — `unreached`
 - `exec-dept-hhs-ihs-chief-medical-officer` — Chief Medical Officer — `unreached`
 - `exec-dept-hhs-ihs-chief-nursing-officer` — Chief Nursing Officer — `unreached`
-
-## Intellectual Property  — 3 unpriced
-
-`leg-senate-cmte-judiciary-sub-intellectual-property`
-
-- `leg-senate-cmte-judiciary-sub-intellectual-property-chair-subcommittee-on-intellectual-property` — Chair, Subcommittee on Intellectual Property — `unreached`
-- `leg-senate-cmte-judiciary-sub-intellectual-property-ranking-member-subcommittee-on-intellectual-property` — Ranking Member, Subcommittee on Intellectual Property — `unreached`
-- `leg-senate-cmte-judiciary-sub-intellectual-property-staff-director-subcommittee-on-intellectual-property` — Staff Director, Subcommittee on Intellectual Property — `unreached`
-
-## Interior, Environment & Related Agencies  — 3 unpriced
-
-`leg-senate-cmte-appropriations-sub-interior-environment-related-agencies`
-
-- `leg-senate-cmte-appropriations-sub-interior-environment-related-agencies-chair-subcommittee-on-interior-environment-related-agencies` — Chair, Subcommittee on Interior, Environment & Related Agencies — `unreached`
-- `leg-senate-cmte-appropriations-sub-interior-environment-related-agencies-ranking-member-subcommittee-on-interior-environment-related-agencies` — Ranking Member, Subcommittee on Interior, Environment & Related Agencies — `unreached`
-- `leg-senate-cmte-appropriations-sub-interior-environment-related-agencies-staff-director-subcommittee-on-interior-environment-related-agencies` — Staff Director, Subcommittee on Interior, Environment & Related Agencies — `unreached`
-
-## International Trade, Customs & Global Competitiveness  — 3 unpriced
-
-`leg-senate-cmte-finance-sub-international-trade-customs-global-competitiveness`
-
-- `leg-senate-cmte-finance-sub-international-trade-customs-global-competitiveness-chair-subcommittee-on-international-trade-customs-global-competitiveness` — Chair, Subcommittee on International Trade, Customs & Global Competitiveness — `unreached`
-- `leg-senate-cmte-finance-sub-international-trade-customs-global-competitiveness-ranking-member-subcommittee-on-international-trade-customs-global-competitiveness` — Ranking Member, Subcommittee on International Trade, Customs & Global Competitiveness — `unreached`
-- `leg-senate-cmte-finance-sub-international-trade-customs-global-competitiveness-staff-director-subcommittee-on-international-trade-customs-global-competitiveness` — Staff Director, Subcommittee on International Trade, Customs & Global Competitiveness — `unreached`
-
-## Labor, Health and Human Services, Education, and Related Agencies  — 3 unpriced
-
-`leg-senate-cmte-appropriations-sub-labor-hhs-education-related-agencies`
-
-- `leg-senate-cmte-appropriations-sub-labor-hhs-education-related-agencies-chair-subcommittee-on-labor-hhs-education-related-agencies` — Chair, Subcommittee on Labor, HHS, Education & Related Agencies — `unreached`
-- `leg-senate-cmte-appropriations-sub-labor-hhs-education-related-agencies-ranking-member-subcommittee-on-labor-hhs-education-related-agencies` — Ranking Member, Subcommittee on Labor, HHS, Education & Related Agencies — `unreached`
-- `leg-senate-cmte-appropriations-sub-labor-hhs-education-related-agencies-staff-director-subcommittee-on-labor-hhs-education-related-agencies` — Staff Director, Subcommittee on Labor, HHS, Education & Related Agencies — `unreached`
-
-## Legislative Branch  — 3 unpriced
-
-`leg-senate-cmte-appropriations-sub-legislative-branch`
-
-- `leg-senate-cmte-appropriations-sub-legislative-branch-chair-subcommittee-on-legislative-branch` — Chair, Subcommittee on Legislative Branch — `unreached`
-- `leg-senate-cmte-appropriations-sub-legislative-branch-ranking-member-subcommittee-on-legislative-branch` — Ranking Member, Subcommittee on Legislative Branch — `unreached`
-- `leg-senate-cmte-appropriations-sub-legislative-branch-staff-director-subcommittee-on-legislative-branch` — Staff Director, Subcommittee on Legislative Branch — `unreached`
-
-## Military Construction, Veterans Affairs & Related Agencies  — 3 unpriced
-
-`leg-senate-cmte-appropriations-sub-military-construction-veterans-affairs-related-agencies`
-
-- `leg-senate-cmte-appropriations-sub-military-construction-veterans-affairs-related-agencies-chair-subcommittee-on-military-construction-veterans-affairs-related-agencies` — Chair, Subcommittee on Military Construction, Veterans Affairs & Related Agencies — `unreached`
-- `leg-senate-cmte-appropriations-sub-military-construction-veterans-affairs-related-agencies-ranking-member-subcommittee-on-military-construction-veterans-affairs-related-agencies` — Ranking Member, Subcommittee on Military Construction, Veterans Affairs & Related Agencies — `unreached`
-- `leg-senate-cmte-appropriations-sub-military-construction-veterans-affairs-related-agencies-staff-director-subcommittee-on-military-construction-veterans-affairs-related-agencies` — Staff Director, Subcommittee on Military Construction, Veterans Affairs & Related Agencies — `unreached`
-
-## Multilateral International Development, Multilateral Institutions & International Economic, Energy & Environmental Policy  — 3 unpriced
-
-`leg-senate-cmte-foreign-relations-sub-multilateral-international-development-multilateral-institutions-international-economic-energy-environmental-policy`
-
-- `leg-senate-cmte-foreign-relations-sub-multilateral-international-development-multilateral-institutions-international-economic-energy-environmental-policy-chair-subcommittee-on-multilateral-international-development-multilateral-institutions-international-economic-energy-environmental-policy` — Chair, Subcommittee on Multilateral International Development, Multilateral Institutions & International Economic, Energy & Environmental Policy — `unreached`
-- `leg-senate-cmte-foreign-relations-sub-multilateral-international-development-multilateral-institutions-international-economic-energy-environmental-policy-ranking-member-subcommittee-on-multilateral-international-development-multilateral-institutions-international-economic-energy-environmental-policy` — Ranking Member, Subcommittee on Multilateral International Development, Multilateral Institutions & International Economic, Energy & Environmental Policy — `unreached`
-- `leg-senate-cmte-foreign-relations-sub-multilateral-international-development-multilateral-institutions-international-economic-energy-environmental-policy-staff-director-subcommittee-on-multilateral-international-development-multilateral-institutions-international-economic-energy-environmental-policy` — Staff Director, Subcommittee on Multilateral International Development, Multilateral Institutions & International Economic, Energy & Environmental Policy — `unreached`
 
 ## NSC Directorate: Africa  — 3 unpriced
 
@@ -6150,22 +5440,6 @@ same list in the same run.
 - `exec-ind-misc-national-mediation-board-nmb-deputy-director-vice-chair` — Deputy Director / Vice Chair — `unreached`
 - `exec-ind-misc-national-mediation-board-nmb-inspector-general` — Inspector General — `unreached`
 
-## National Parks  — 3 unpriced
-
-`leg-senate-cmte-energy-natural-resources-sub-national-parks`
-
-- `leg-senate-cmte-energy-natural-resources-sub-national-parks-chair-subcommittee-on-national-parks` — Chair, Subcommittee on National Parks — `unreached`
-- `leg-senate-cmte-energy-natural-resources-sub-national-parks-ranking-member-subcommittee-on-national-parks` — Ranking Member, Subcommittee on National Parks — `unreached`
-- `leg-senate-cmte-energy-natural-resources-sub-national-parks-staff-director-subcommittee-on-national-parks` — Staff Director, Subcommittee on National Parks — `unreached`
-
-## National Security & International Trade & Finance  — 3 unpriced
-
-`leg-senate-cmte-banking-housing-urban-affairs-sub-national-security-international-trade-finance`
-
-- `leg-senate-cmte-banking-housing-urban-affairs-sub-national-security-international-trade-finance-chair-subcommittee-on-national-security-international-trade-finance` — Chair, Subcommittee on National Security & International Trade & Finance — `unreached`
-- `leg-senate-cmte-banking-housing-urban-affairs-sub-national-security-international-trade-finance-ranking-member-subcommittee-on-national-security-international-trade-finance` — Ranking Member, Subcommittee on National Security & International Trade & Finance — `unreached`
-- `leg-senate-cmte-banking-housing-urban-affairs-sub-national-security-international-trade-finance-staff-director-subcommittee-on-national-security-international-trade-finance` — Staff Director, Subcommittee on National Security & International Trade & Finance — `unreached`
-
 ## National Security Division  — 3 unpriced
 
 `exec-dept-doj-div-nsd`
@@ -6181,22 +5455,6 @@ same list in the same run.
 - `exec-dept-doc-ntia-administrator-ntia` — Administrator, NTIA — `unreached`
 - `exec-dept-doc-ntia-associate-administrator-spectrum-management` — Associate Administrator — Spectrum Management — `unreached`
 - `exec-dept-doc-ntia-deputy-administrator` — Deputy Administrator — `unreached`
-
-## Near East, South Asia, Central Asia & Counterterrorism  — 3 unpriced
-
-`leg-senate-cmte-foreign-relations-sub-near-east-south-asia-central-asia-counterterrorism`
-
-- `leg-senate-cmte-foreign-relations-sub-near-east-south-asia-central-asia-counterterrorism-chair-subcommittee-on-near-east-south-asia-central-asia-counterterrorism` — Chair, Subcommittee on Near East, South Asia, Central Asia & Counterterrorism — `unreached`
-- `leg-senate-cmte-foreign-relations-sub-near-east-south-asia-central-asia-counterterrorism-ranking-member-subcommittee-on-near-east-south-asia-central-asia-counterterrorism` — Ranking Member, Subcommittee on Near East, South Asia, Central Asia & Counterterrorism — `unreached`
-- `leg-senate-cmte-foreign-relations-sub-near-east-south-asia-central-asia-counterterrorism-staff-director-subcommittee-on-near-east-south-asia-central-asia-counterterrorism` — Staff Director, Subcommittee on Near East, South Asia, Central Asia & Counterterrorism — `unreached`
-
-## Oceans, Fisheries, Climate Change & Manufacturing  — 3 unpriced
-
-`leg-senate-cmte-commerce-science-transportation-sub-oceans-fisheries-climate-change-manufacturing`
-
-- `leg-senate-cmte-commerce-science-transportation-sub-oceans-fisheries-climate-change-manufacturing-chair-subcommittee-on-oceans-fisheries-climate-change-manufacturing` — Chair, Subcommittee on Oceans, Fisheries, Climate Change & Manufacturing — `unreached`
-- `leg-senate-cmte-commerce-science-transportation-sub-oceans-fisheries-climate-change-manufacturing-ranking-member-subcommittee-on-oceans-fisheries-climate-change-manufacturing` — Ranking Member, Subcommittee on Oceans, Fisheries, Climate Change & Manufacturing — `unreached`
-- `leg-senate-cmte-commerce-science-transportation-sub-oceans-fisheries-climate-change-manufacturing-staff-director-subcommittee-on-oceans-fisheries-climate-change-manufacturing` — Staff Director, Subcommittee on Oceans, Fisheries, Climate Change & Manufacturing — `unreached`
 
 ## Office of Advanced Cyberinfrastructure  — 3 unpriced
 
@@ -6334,22 +5592,6 @@ same list in the same run.
 - `exec-ind-epa-office-of-water-ow-director-division-multiple` — Director — Division (×multiple) — `multiplicity`
 - `exec-ind-epa-office-of-water-ow-environmental-scientist-engineer-multiple` — Environmental Scientist / Engineer (×multiple) — `multiplicity`
 
-## Permanent Subcommittee on Investigations  — 3 unpriced
-
-`leg-senate-cmte-homeland-security-governmental-affairs-sub-investigations-subcommittee-on-permanent-investigations`
-
-- `leg-senate-cmte-homeland-security-governmental-affairs-sub-investigations-subcommittee-on-permanent-investigations-chair-subcommittee-on-investigations-subcommittee-on-permanent-investigations` — Chair, Subcommittee on Investigations & Subcommittee on Permanent Investigations — `unreached`
-- `leg-senate-cmte-homeland-security-governmental-affairs-sub-investigations-subcommittee-on-permanent-investigations-ranking-member-subcommittee-on-investigations-subcommittee-on-permanent-investigations` — Ranking Member, Subcommittee on Investigations & Subcommittee on Permanent Investigations — `unreached`
-- `leg-senate-cmte-homeland-security-governmental-affairs-sub-investigations-subcommittee-on-permanent-investigations-staff-director-subcommittee-on-investigations-subcommittee-on-permanent-investigations` — Staff Director, Subcommittee on Investigations & Subcommittee on Permanent Investigations — `unreached`
-
-## Personnel  — 3 unpriced
-
-`leg-senate-cmte-armed-services-sub-personnel`
-
-- `leg-senate-cmte-armed-services-sub-personnel-chair-subcommittee-on-personnel` — Chair, Subcommittee on Personnel — `unreached`
-- `leg-senate-cmte-armed-services-sub-personnel-ranking-member-subcommittee-on-personnel` — Ranking Member, Subcommittee on Personnel — `unreached`
-- `leg-senate-cmte-armed-services-sub-personnel-staff-director-subcommittee-on-personnel` — Staff Director, Subcommittee on Personnel — `unreached`
-
 ## Pipeline & Hazardous Materials Safety Admin (PHMSA)  — 3 unpriced
 
 `exec-dept-dot-phmsa`
@@ -6357,70 +5599,6 @@ same list in the same run.
 - `exec-dept-dot-phmsa-associate-administrator-pipelines-hazardous-materials` — Associate Administrator — Pipelines & Hazardous Materials — `unreached`
 - `exec-dept-dot-phmsa-pipeline-safety-inspector-multiple` — Pipeline Safety Inspector (×multiple) — `multiplicity`
 - `exec-dept-dot-phmsa-regional-director-5-regions` — Regional Director — 5 Regions — `unreached`
-
-## Primary Health & Retirement Security  — 3 unpriced
-
-`leg-senate-cmte-health-education-labor-pensions-sub-primary-health-retirement-security`
-
-- `leg-senate-cmte-health-education-labor-pensions-sub-primary-health-retirement-security-chair-subcommittee-on-primary-health-retirement-security` — Chair, Subcommittee on Primary Health & Retirement Security — `unreached`
-- `leg-senate-cmte-health-education-labor-pensions-sub-primary-health-retirement-security-ranking-member-subcommittee-on-primary-health-retirement-security` — Ranking Member, Subcommittee on Primary Health & Retirement Security — `unreached`
-- `leg-senate-cmte-health-education-labor-pensions-sub-primary-health-retirement-security-staff-director-subcommittee-on-primary-health-retirement-security` — Staff Director, Subcommittee on Primary Health & Retirement Security — `unreached`
-
-## Privacy, Technology & the Law  — 3 unpriced
-
-`leg-senate-cmte-judiciary-sub-privacy-technology-the-law`
-
-- `leg-senate-cmte-judiciary-sub-privacy-technology-the-law-chair-subcommittee-on-privacy-technology-the-law` — Chair, Subcommittee on Privacy, Technology & the Law — `unreached`
-- `leg-senate-cmte-judiciary-sub-privacy-technology-the-law-ranking-member-subcommittee-on-privacy-technology-the-law` — Ranking Member, Subcommittee on Privacy, Technology & the Law — `unreached`
-- `leg-senate-cmte-judiciary-sub-privacy-technology-the-law-staff-director-subcommittee-on-privacy-technology-the-law` — Staff Director, Subcommittee on Privacy, Technology & the Law — `unreached`
-
-## Public Lands, Forests & Mining  — 3 unpriced
-
-`leg-senate-cmte-energy-natural-resources-sub-public-lands-forests-mining`
-
-- `leg-senate-cmte-energy-natural-resources-sub-public-lands-forests-mining-chair-subcommittee-on-public-lands-forests-mining` — Chair, Subcommittee on Public Lands, Forests & Mining — `unreached`
-- `leg-senate-cmte-energy-natural-resources-sub-public-lands-forests-mining-ranking-member-subcommittee-on-public-lands-forests-mining` — Ranking Member, Subcommittee on Public Lands, Forests & Mining — `unreached`
-- `leg-senate-cmte-energy-natural-resources-sub-public-lands-forests-mining-staff-director-subcommittee-on-public-lands-forests-mining` — Staff Director, Subcommittee on Public Lands, Forests & Mining — `unreached`
-
-## Readiness & Management Support  — 3 unpriced
-
-`leg-senate-cmte-armed-services-sub-readiness-management-support`
-
-- `leg-senate-cmte-armed-services-sub-readiness-management-support-chair-subcommittee-on-readiness-management-support` — Chair, Subcommittee on Readiness & Management Support — `unreached`
-- `leg-senate-cmte-armed-services-sub-readiness-management-support-ranking-member-subcommittee-on-readiness-management-support` — Ranking Member, Subcommittee on Readiness & Management Support — `unreached`
-- `leg-senate-cmte-armed-services-sub-readiness-management-support-staff-director-subcommittee-on-readiness-management-support` — Staff Director, Subcommittee on Readiness & Management Support — `unreached`
-
-## Science & Space  — 3 unpriced
-
-`leg-senate-cmte-commerce-science-transportation-sub-science-space`
-
-- `leg-senate-cmte-commerce-science-transportation-sub-science-space-chair-subcommittee-on-science-space` — Chair, Subcommittee on Science & Space — `unreached`
-- `leg-senate-cmte-commerce-science-transportation-sub-science-space-ranking-member-subcommittee-on-science-space` — Ranking Member, Subcommittee on Science & Space — `unreached`
-- `leg-senate-cmte-commerce-science-transportation-sub-science-space-staff-director-subcommittee-on-science-space` — Staff Director, Subcommittee on Science & Space — `unreached`
-
-## Seapower  — 3 unpriced
-
-`leg-senate-cmte-armed-services-sub-seapower`
-
-- `leg-senate-cmte-armed-services-sub-seapower-chair-subcommittee-on-seapower` — Chair, Subcommittee on Seapower — `unreached`
-- `leg-senate-cmte-armed-services-sub-seapower-ranking-member-subcommittee-on-seapower` — Ranking Member, Subcommittee on Seapower — `unreached`
-- `leg-senate-cmte-armed-services-sub-seapower-staff-director-subcommittee-on-seapower` — Staff Director, Subcommittee on Seapower — `unreached`
-
-## Securities, Insurance & Investment  — 3 unpriced
-
-`leg-senate-cmte-banking-housing-urban-affairs-sub-securities-insurance-investment`
-
-- `leg-senate-cmte-banking-housing-urban-affairs-sub-securities-insurance-investment-chair-subcommittee-on-securities-insurance-investment` — Chair, Subcommittee on Securities, Insurance & Investment — `unreached`
-- `leg-senate-cmte-banking-housing-urban-affairs-sub-securities-insurance-investment-ranking-member-subcommittee-on-securities-insurance-investment` — Ranking Member, Subcommittee on Securities, Insurance & Investment — `unreached`
-- `leg-senate-cmte-banking-housing-urban-affairs-sub-securities-insurance-investment-staff-director-subcommittee-on-securities-insurance-investment` — Staff Director, Subcommittee on Securities, Insurance & Investment — `unreached`
-
-## Social Security, Pensions & Family Policy  — 3 unpriced
-
-`leg-senate-cmte-finance-sub-social-security-pensions-family-policy`
-
-- `leg-senate-cmte-finance-sub-social-security-pensions-family-policy-chair-subcommittee-on-social-security-pensions-family-policy` — Chair, Subcommittee on Social Security, Pensions & Family Policy — `unreached`
-- `leg-senate-cmte-finance-sub-social-security-pensions-family-policy-ranking-member-subcommittee-on-social-security-pensions-family-policy` — Ranking Member, Subcommittee on Social Security, Pensions & Family Policy — `unreached`
-- `leg-senate-cmte-finance-sub-social-security-pensions-family-policy-staff-director-subcommittee-on-social-security-pensions-family-policy` — Staff Director, Subcommittee on Social Security, Pensions & Family Policy — `unreached`
 
 ## Space Operations Mission Directorate  — 3 unpriced
 
@@ -6430,78 +5608,6 @@ same list in the same run.
 - `exec-ind-nasa-space-operations-mission-directorate-deputy-associate-administrator-space-operations-mission-directorate` — Deputy Associate Administrator, Space Operations Mission Directorate — `unreached`
 - `exec-ind-nasa-space-operations-mission-directorate-program-director-multiple` — Program Director (×multiple) — `multiplicity`
 
-## State Department & USAID Management, International Operations & Bilateral International Development  — 3 unpriced
-
-`leg-senate-cmte-foreign-relations-sub-state-department-usaid-management-international-operations-bilateral-international-development`
-
-- `leg-senate-cmte-foreign-relations-sub-state-department-usaid-management-international-operations-bilateral-international-development-chair-subcommittee-on-state-department-usaid-management-international-operations-bilateral-international-development` — Chair, Subcommittee on State Department & USAID Management, International Operations & Bilateral International Development — `unreached`
-- `leg-senate-cmte-foreign-relations-sub-state-department-usaid-management-international-operations-bilateral-international-development-ranking-member-subcommittee-on-state-department-usaid-management-international-operations-bilateral-international-development` — Ranking Member, Subcommittee on State Department & USAID Management, International Operations & Bilateral International Development — `unreached`
-- `leg-senate-cmte-foreign-relations-sub-state-department-usaid-management-international-operations-bilateral-international-development-staff-director-subcommittee-on-state-department-usaid-management-international-operations-bilateral-international-development` — Staff Director, Subcommittee on State Department & USAID Management, International Operations & Bilateral International Development — `unreached`
-
-## State, Foreign Operations & Related Programs  — 3 unpriced
-
-`leg-senate-cmte-appropriations-sub-state-foreign-operations-related-programs`
-
-- `leg-senate-cmte-appropriations-sub-state-foreign-operations-related-programs-chair-subcommittee-on-state-foreign-operations-related-programs` — Chair, Subcommittee on State, Foreign Operations & Related Programs — `unreached`
-- `leg-senate-cmte-appropriations-sub-state-foreign-operations-related-programs-ranking-member-subcommittee-on-state-foreign-operations-related-programs` — Ranking Member, Subcommittee on State, Foreign Operations & Related Programs — `unreached`
-- `leg-senate-cmte-appropriations-sub-state-foreign-operations-related-programs-staff-director-subcommittee-on-state-foreign-operations-related-programs` — Staff Director, Subcommittee on State, Foreign Operations & Related Programs — `unreached`
-
-## Strategic Forces  — 3 unpriced
-
-`leg-senate-cmte-armed-services-sub-strategic-forces`
-
-- `leg-senate-cmte-armed-services-sub-strategic-forces-chair-subcommittee-on-strategic-forces` — Chair, Subcommittee on Strategic Forces — `unreached`
-- `leg-senate-cmte-armed-services-sub-strategic-forces-ranking-member-subcommittee-on-strategic-forces` — Ranking Member, Subcommittee on Strategic Forces — `unreached`
-- `leg-senate-cmte-armed-services-sub-strategic-forces-staff-director-subcommittee-on-strategic-forces` — Staff Director, Subcommittee on Strategic Forces — `unreached`
-
-## Subcommittee on Border Security and Immigration  — 3 unpriced
-
-`leg-senate-cmte-judiciary-sub-immigration-citizenship-border-safety`
-
-- `leg-senate-cmte-judiciary-sub-immigration-citizenship-border-safety-chair-subcommittee-on-immigration-citizenship-border-safety` — Chair, Subcommittee on Immigration, Citizenship & Border Safety — `unreached`
-- `leg-senate-cmte-judiciary-sub-immigration-citizenship-border-safety-ranking-member-subcommittee-on-immigration-citizenship-border-safety` — Ranking Member, Subcommittee on Immigration, Citizenship & Border Safety — `unreached`
-- `leg-senate-cmte-judiciary-sub-immigration-citizenship-border-safety-staff-director-subcommittee-on-immigration-citizenship-border-safety` — Staff Director, Subcommittee on Immigration, Citizenship & Border Safety — `unreached`
-
-## Subcommittee on Crime and Counterterrorism  — 3 unpriced
-
-`leg-senate-cmte-judiciary-sub-criminal-justice-counterterrorism`
-
-- `leg-senate-cmte-judiciary-sub-criminal-justice-counterterrorism-chair-subcommittee-on-criminal-justice-counterterrorism` — Chair, Subcommittee on Criminal Justice & Counterterrorism — `unreached`
-- `leg-senate-cmte-judiciary-sub-criminal-justice-counterterrorism-ranking-member-subcommittee-on-criminal-justice-counterterrorism` — Ranking Member, Subcommittee on Criminal Justice & Counterterrorism — `unreached`
-- `leg-senate-cmte-judiciary-sub-criminal-justice-counterterrorism-staff-director-subcommittee-on-criminal-justice-counterterrorism` — Staff Director, Subcommittee on Criminal Justice & Counterterrorism — `unreached`
-
-## Subcommittee on Energy  — 3 unpriced
-
-`leg-senate-cmte-energy-natural-resources-sub-energy`
-
-- `leg-senate-cmte-energy-natural-resources-sub-energy-chair-subcommittee-on-energy` — Chair, Subcommittee on Energy — `unreached`
-- `leg-senate-cmte-energy-natural-resources-sub-energy-ranking-member-subcommittee-on-energy` — Ranking Member, Subcommittee on Energy — `unreached`
-- `leg-senate-cmte-energy-natural-resources-sub-energy-staff-director-subcommittee-on-energy` — Staff Director, Subcommittee on Energy — `unreached`
-
-## Subcommittee on Livestock, Dairy, Poultry, and Food Safety  — 3 unpriced
-
-`leg-senate-cmte-agriculture-nutrition-and-forestry-sub-livestock-dairy-poultry-local-food-systems-food-safety-security`
-
-- `leg-senate-cmte-agriculture-nutrition-and-forestry-sub-livestock-dairy-poultry-local-food-systems-food-safety-security-chair-subcommittee-on-livestock-dairy-poultry-local-food-systems-food-safety-security` — Chair, Subcommittee on Livestock, Dairy, Poultry, Local Food Systems & Food Safety & Security — `unreached`
-- `leg-senate-cmte-agriculture-nutrition-and-forestry-sub-livestock-dairy-poultry-local-food-systems-food-safety-security-ranking-member-subcommittee-on-livestock-dairy-poultry-local-food-systems-food-safety-security` — Ranking Member, Subcommittee on Livestock, Dairy, Poultry, Local Food Systems & Food Safety & Security — `unreached`
-- `leg-senate-cmte-agriculture-nutrition-and-forestry-sub-livestock-dairy-poultry-local-food-systems-food-safety-security-staff-director-subcommittee-on-livestock-dairy-poultry-local-food-systems-food-safety-security` — Staff Director, Subcommittee on Livestock, Dairy, Poultry, Local Food Systems & Food Safety & Security — `unreached`
-
-## Subcommittee on Rural Development, Energy, and Credit  — 3 unpriced
-
-`leg-senate-cmte-agriculture-nutrition-and-forestry-sub-rural-development-energy`
-
-- `leg-senate-cmte-agriculture-nutrition-and-forestry-sub-rural-development-energy-chair-subcommittee-on-rural-development-energy` — Chair, Subcommittee on Rural Development & Energy — `unreached`
-- `leg-senate-cmte-agriculture-nutrition-and-forestry-sub-rural-development-energy-ranking-member-subcommittee-on-rural-development-energy` — Ranking Member, Subcommittee on Rural Development & Energy — `unreached`
-- `leg-senate-cmte-agriculture-nutrition-and-forestry-sub-rural-development-energy-staff-director-subcommittee-on-rural-development-energy` — Staff Director, Subcommittee on Rural Development & Energy — `unreached`
-
-## Surface Transportation, Maritime, Freight & Ports  — 3 unpriced
-
-`leg-senate-cmte-commerce-science-transportation-sub-surface-transportation-maritime-freight-ports`
-
-- `leg-senate-cmte-commerce-science-transportation-sub-surface-transportation-maritime-freight-ports-chair-subcommittee-on-surface-transportation-maritime-freight-ports` — Chair, Subcommittee on Surface Transportation, Maritime, Freight & Ports — `unreached`
-- `leg-senate-cmte-commerce-science-transportation-sub-surface-transportation-maritime-freight-ports-ranking-member-subcommittee-on-surface-transportation-maritime-freight-ports` — Ranking Member, Subcommittee on Surface Transportation, Maritime, Freight & Ports — `unreached`
-- `leg-senate-cmte-commerce-science-transportation-sub-surface-transportation-maritime-freight-ports-staff-director-subcommittee-on-surface-transportation-maritime-freight-ports` — Staff Director, Subcommittee on Surface Transportation, Maritime, Freight & Ports — `unreached`
-
 ## Tax Division  — 3 unpriced
 
 `exec-dept-doj-div-tax`
@@ -6509,62 +5615,6 @@ same list in the same run.
 - `exec-dept-doj-div-tax-deputy-assistant-attorney-general-3-5` — Deputy Assistant Attorney General (×3-5) — `multiplicity`
 - `exec-dept-doj-div-tax-section-chief-multiple` — Section Chief (×multiple) — `multiplicity`
 - `exec-dept-doj-div-tax-trial-attorney-ausa-multiple` — Trial Attorney / AUSA (×multiple) — `multiplicity`
-
-## Taxation & IRS Oversight  — 3 unpriced
-
-`leg-senate-cmte-finance-sub-taxation-irs-oversight`
-
-- `leg-senate-cmte-finance-sub-taxation-irs-oversight-chair-subcommittee-on-taxation-irs-oversight` — Chair, Subcommittee on Taxation & IRS Oversight — `unreached`
-- `leg-senate-cmte-finance-sub-taxation-irs-oversight-ranking-member-subcommittee-on-taxation-irs-oversight` — Ranking Member, Subcommittee on Taxation & IRS Oversight — `unreached`
-- `leg-senate-cmte-finance-sub-taxation-irs-oversight-staff-director-subcommittee-on-taxation-irs-oversight` — Staff Director, Subcommittee on Taxation & IRS Oversight — `unreached`
-
-## Telecommunications and Media  — 3 unpriced
-
-`leg-senate-cmte-commerce-science-transportation-sub-communications-media-broadband`
-
-- `leg-senate-cmte-commerce-science-transportation-sub-communications-media-broadband-chair-subcommittee-on-communications-media-broadband` — Chair, Subcommittee on Communications, Media & Broadband — `unreached`
-- `leg-senate-cmte-commerce-science-transportation-sub-communications-media-broadband-ranking-member-subcommittee-on-communications-media-broadband` — Ranking Member, Subcommittee on Communications, Media & Broadband — `unreached`
-- `leg-senate-cmte-commerce-science-transportation-sub-communications-media-broadband-staff-director-subcommittee-on-communications-media-broadband` — Staff Director, Subcommittee on Communications, Media & Broadband — `unreached`
-
-## The Subcommittee on Commodities, Derivatives, Risk Management, and Trade  — 3 unpriced
-
-`leg-senate-cmte-agriculture-nutrition-and-forestry-sub-commodities-risk-management-trade`
-
-- `leg-senate-cmte-agriculture-nutrition-and-forestry-sub-commodities-risk-management-trade-chair-subcommittee-on-commodities-risk-management-trade` — Chair, Subcommittee on Commodities, Risk Management & Trade — `unreached`
-- `leg-senate-cmte-agriculture-nutrition-and-forestry-sub-commodities-risk-management-trade-ranking-member-subcommittee-on-commodities-risk-management-trade` — Ranking Member, Subcommittee on Commodities, Risk Management & Trade — `unreached`
-- `leg-senate-cmte-agriculture-nutrition-and-forestry-sub-commodities-risk-management-trade-staff-director-subcommittee-on-commodities-risk-management-trade` — Staff Director, Subcommittee on Commodities, Risk Management & Trade — `unreached`
-
-## The Subcommittee on Conservation, Forestry, Natural Resources, and Biotechnology  — 3 unpriced
-
-`leg-senate-cmte-agriculture-nutrition-and-forestry-sub-conservation-climate-forestry-natural-resources`
-
-- `leg-senate-cmte-agriculture-nutrition-and-forestry-sub-conservation-climate-forestry-natural-resources-chair-subcommittee-on-conservation-climate-forestry-natural-resources` — Chair, Subcommittee on Conservation, Climate, Forestry & Natural Resources — `unreached`
-- `leg-senate-cmte-agriculture-nutrition-and-forestry-sub-conservation-climate-forestry-natural-resources-ranking-member-subcommittee-on-conservation-climate-forestry-natural-resources` — Ranking Member, Subcommittee on Conservation, Climate, Forestry & Natural Resources — `unreached`
-- `leg-senate-cmte-agriculture-nutrition-and-forestry-sub-conservation-climate-forestry-natural-resources-staff-director-subcommittee-on-conservation-climate-forestry-natural-resources` — Staff Director, Subcommittee on Conservation, Climate, Forestry & Natural Resources — `unreached`
-
-## Tourism, Trade & Export Promotion  — 3 unpriced
-
-`leg-senate-cmte-commerce-science-transportation-sub-tourism-trade-export-promotion`
-
-- `leg-senate-cmte-commerce-science-transportation-sub-tourism-trade-export-promotion-chair-subcommittee-on-tourism-trade-export-promotion` — Chair, Subcommittee on Tourism, Trade & Export Promotion — `unreached`
-- `leg-senate-cmte-commerce-science-transportation-sub-tourism-trade-export-promotion-ranking-member-subcommittee-on-tourism-trade-export-promotion` — Ranking Member, Subcommittee on Tourism, Trade & Export Promotion — `unreached`
-- `leg-senate-cmte-commerce-science-transportation-sub-tourism-trade-export-promotion-staff-director-subcommittee-on-tourism-trade-export-promotion` — Staff Director, Subcommittee on Tourism, Trade & Export Promotion — `unreached`
-
-## Transportation & Infrastructure  — 3 unpriced
-
-`leg-senate-cmte-environment-public-works-sub-transportation-infrastructure`
-
-- `leg-senate-cmte-environment-public-works-sub-transportation-infrastructure-chair-subcommittee-on-transportation-infrastructure` — Chair, Subcommittee on Transportation & Infrastructure — `unreached`
-- `leg-senate-cmte-environment-public-works-sub-transportation-infrastructure-ranking-member-subcommittee-on-transportation-infrastructure` — Ranking Member, Subcommittee on Transportation & Infrastructure — `unreached`
-- `leg-senate-cmte-environment-public-works-sub-transportation-infrastructure-staff-director-subcommittee-on-transportation-infrastructure` — Staff Director, Subcommittee on Transportation & Infrastructure — `unreached`
-
-## Transportation, Housing and Urban Development, and Related Agencies  — 3 unpriced
-
-`leg-senate-cmte-appropriations-sub-transportation-hud-related-agencies`
-
-- `leg-senate-cmte-appropriations-sub-transportation-hud-related-agencies-chair-subcommittee-on-transportation-hud-related-agencies` — Chair, Subcommittee on Transportation, HUD & Related Agencies — `unreached`
-- `leg-senate-cmte-appropriations-sub-transportation-hud-related-agencies-ranking-member-subcommittee-on-transportation-hud-related-agencies` — Ranking Member, Subcommittee on Transportation, HUD & Related Agencies — `unreached`
-- `leg-senate-cmte-appropriations-sub-transportation-hud-related-agencies-staff-director-subcommittee-on-transportation-hud-related-agencies` — Staff Director, Subcommittee on Transportation, HUD & Related Agencies — `unreached`
 
 ## U.S. Court of International Trade (CIT)  — 3 unpriced
 
@@ -6582,22 +5632,6 @@ same list in the same run.
 - `exec-dept-dol-whd-regional-administrator-5-regions` — Regional Administrator — 5 Regions — `unreached`
 - `exec-dept-dol-whd-wage-hour-investigator-multiple` — Wage & Hour Investigator (×multiple) — `multiplicity`
 
-## Water & Power  — 3 unpriced
-
-`leg-senate-cmte-energy-natural-resources-sub-water-power`
-
-- `leg-senate-cmte-energy-natural-resources-sub-water-power-chair-subcommittee-on-water-power` — Chair, Subcommittee on Water & Power — `unreached`
-- `leg-senate-cmte-energy-natural-resources-sub-water-power-ranking-member-subcommittee-on-water-power` — Ranking Member, Subcommittee on Water & Power — `unreached`
-- `leg-senate-cmte-energy-natural-resources-sub-water-power-staff-director-subcommittee-on-water-power` — Staff Director, Subcommittee on Water & Power — `unreached`
-
-## Western Hemisphere, Transnational Crime, Civilian Security, Democracy, Human Rights & Global Women's Issues  — 3 unpriced
-
-`leg-senate-cmte-foreign-relations-sub-western-hemisphere-transnational-crime-civilian-security-democracy-human-rights-global-womens-issues`
-
-- `leg-senate-cmte-foreign-relations-sub-western-hemisphere-transnational-crime-civilian-security-democracy-human-rights-global-womens-issues-chair-subcommittee-on-western-hemisphere-transnational-crime-civilian-security-democracy-human-rights-global-womens-issues` — Chair, Subcommittee on Western Hemisphere, Transnational Crime, Civilian Security, Democracy, Human Rights & Global Women's Issues — `unreached`
-- `leg-senate-cmte-foreign-relations-sub-western-hemisphere-transnational-crime-civilian-security-democracy-human-rights-global-womens-issues-ranking-member-subcommittee-on-western-hemisphere-transnational-crime-civilian-security-democracy-human-rights-global-womens-issues` — Ranking Member, Subcommittee on Western Hemisphere, Transnational Crime, Civilian Security, Democracy, Human Rights & Global Women's Issues — `unreached`
-- `leg-senate-cmte-foreign-relations-sub-western-hemisphere-transnational-crime-civilian-security-democracy-human-rights-global-womens-issues-staff-director-subcommittee-on-western-hemisphere-transnational-crime-civilian-security-democracy-human-rights-global-womens-issues` — Staff Director, Subcommittee on Western Hemisphere, Transnational Crime, Civilian Security, Democracy, Human Rights & Global Women's Issues — `unreached`
-
 ## Aeronautics Research Mission Directorate  — 2 unpriced
 
 `exec-ind-nasa-aeronautics-research-mission-directorate`
@@ -6605,26 +5639,12 @@ same list in the same run.
 - `exec-ind-nasa-aeronautics-research-mission-directorate-deputy-associate-administrator-aeronautics-research-mission-directorate` — Deputy Associate Administrator, Aeronautics Research Mission Directorate — `unreached`
 - `exec-ind-nasa-aeronautics-research-mission-directorate-program-director-multiple` — Program Director (×multiple) — `multiplicity`
 
-## Africa Subcommittee  — 2 unpriced
-
-`leg-house-cmte-foreign-affairs-sub-africa`
-
-- `leg-house-cmte-foreign-affairs-sub-africa-chair-subcommittee-on-africa` — Chair, Subcommittee on Africa — `unreached`
-- `leg-house-cmte-foreign-affairs-sub-africa-ranking-member-subcommittee-on-africa` — Ranking Member, Subcommittee on Africa — `unreached`
-
 ## Agency for Healthcare Research & Quality (AHRQ)  — 2 unpriced
 
 `exec-dept-hhs-ahrq`
 
 - `exec-dept-hhs-ahrq-deputy-director` — Deputy Director — `unreached`
 - `exec-dept-hhs-ahrq-director-center-for-evidence-practice-improvement` — Director — Center for Evidence & Practice Improvement — `unreached`
-
-## Agriculture, Rural Development, Food and Drug Administration, and Related Agencies  — 2 unpriced
-
-`leg-house-cmte-appropriations-sub-agriculture-rural-development-fda-related-agencies`
-
-- `leg-house-cmte-appropriations-sub-agriculture-rural-development-fda-related-agencies-chair-subcommittee-on-agriculture-rural-development-fda-related-agencies` — Chair, Subcommittee on Agriculture, Rural Development, FDA & Related Agencies — `unreached`
-- `leg-house-cmte-appropriations-sub-agriculture-rural-development-fda-related-agencies-ranking-member-subcommittee-on-agriculture-rural-development-fda-related-agencies` — Ranking Member, Subcommittee on Agriculture, Rural Development, FDA & Related Agencies — `unreached`
 
 ## Biological Sciences (BIO)  — 2 unpriced
 
@@ -6639,13 +5659,6 @@ same list in the same run.
 
 - `exec-ind-nsf-computer-information-science-engineering-cise-assistant-director-computer-information-science-engineering-cise` — Assistant Director, Computer & Information Science & Engineering (CISE) — `unreached`
 - `exec-ind-nsf-computer-information-science-engineering-cise-deputy-assistant-director` — Deputy Assistant Director — `unreached`
-
-## Counterterrorism and Intelligence  — 2 unpriced
-
-`leg-house-cmte-homeland-security-sub-counterterrorism-law-enforcement-intelligence`
-
-- `leg-house-cmte-homeland-security-sub-counterterrorism-law-enforcement-intelligence-chair-subcommittee-on-counterterrorism-law-enforcement-intelligence` — Chair, Subcommittee on Counterterrorism, Law Enforcement & Intelligence — `unreached`
-- `leg-house-cmte-homeland-security-sub-counterterrorism-law-enforcement-intelligence-ranking-member-subcommittee-on-counterterrorism-law-enforcement-intelligence` — Ranking Member, Subcommittee on Counterterrorism, Law Enforcement & Intelligence — `unreached`
 
 ## Court of Appeals for Veterans Claims (CAVC)  — 2 unpriced
 
@@ -6675,20 +5688,6 @@ same list in the same run.
 - `exec-ind-nsf-education-human-resources-ehr-assistant-director-education-human-resources-ehr` — Assistant Director, Education & Human Resources (EHR) — `unreached`
 - `exec-ind-nsf-education-human-resources-ehr-deputy-assistant-director` — Deputy Assistant Director — `listed_no_rate`
 
-## East Asia and Pacific Subcommittee  — 2 unpriced
-
-`leg-house-cmte-foreign-affairs-sub-indo-pacific`
-
-- `leg-house-cmte-foreign-affairs-sub-indo-pacific-chair-subcommittee-on-indo-pacific` — Chair, Subcommittee on Indo-Pacific — `unreached`
-- `leg-house-cmte-foreign-affairs-sub-indo-pacific-ranking-member-subcommittee-on-indo-pacific` — Ranking Member, Subcommittee on Indo-Pacific — `unreached`
-
-## Energy and Water Development and Related Agencies  — 2 unpriced
-
-`leg-house-cmte-appropriations-sub-energy-water-development`
-
-- `leg-house-cmte-appropriations-sub-energy-water-development-chair-subcommittee-on-energy-water-development` — Chair, Subcommittee on Energy & Water Development — `unreached`
-- `leg-house-cmte-appropriations-sub-energy-water-development-ranking-member-subcommittee-on-energy-water-development` — Ranking Member, Subcommittee on Energy & Water Development — `unreached`
-
 ## Equal Employment Opportunity Commission (EEOC)  — 2 unpriced
 
 `exec-ind-misc-equal-employment-opportunity-commission-eeoc`
@@ -6703,6 +5702,146 @@ same list in the same run.
 - `exec-ind-nasa-exploration-systems-development-mission-directorate-deputy-associate-administrator-exploration-systems-development-mission-directorate` — Deputy Associate Administrator, Exploration Systems Development Mission Directorate — `unreached`
 - `exec-ind-nasa-exploration-systems-development-mission-directorate-program-director-multiple` — Program Director (×multiple) — `multiplicity`
 
+## House Committee on Agriculture  — 2 unpriced
+
+`leg-house-cmte-agriculture`
+
+- `leg-house-cmte-agriculture-minority-staff-director-agriculture` — Minority Staff Director, Agriculture — `unreached`
+- `leg-house-cmte-agriculture-staff-director-agriculture` — Staff Director, Agriculture — `unreached`
+
+## House Committee on Appropriations  — 2 unpriced
+
+`leg-house-cmte-appropriations`
+
+- `leg-house-cmte-appropriations-minority-staff-director-appropriations` — Minority Staff Director, Appropriations — `unreached`
+- `leg-house-cmte-appropriations-staff-director-appropriations` — Staff Director, Appropriations — `unreached`
+
+## House Committee on Armed Services  — 2 unpriced
+
+`leg-house-cmte-armed-services`
+
+- `leg-house-cmte-armed-services-minority-staff-director-armed-services` — Minority Staff Director, Armed Services — `unreached`
+- `leg-house-cmte-armed-services-staff-director-armed-services` — Staff Director, Armed Services — `unreached`
+
+## House Committee on Budget  — 2 unpriced
+
+`leg-house-cmte-budget`
+
+- `leg-house-cmte-budget-minority-staff-director-budget` — Minority Staff Director, Budget — `unreached`
+- `leg-house-cmte-budget-staff-director-budget` — Staff Director, Budget — `unreached`
+
+## House Committee on Education & the Workforce  — 2 unpriced
+
+`leg-house-cmte-education-the-workforce`
+
+- `leg-house-cmte-education-the-workforce-minority-staff-director-education-the-workforce` — Minority Staff Director, Education & the Workforce — `unreached`
+- `leg-house-cmte-education-the-workforce-staff-director-education-the-workforce` — Staff Director, Education & the Workforce — `unreached`
+
+## House Committee on Energy & Commerce  — 2 unpriced
+
+`leg-house-cmte-energy-commerce`
+
+- `leg-house-cmte-energy-commerce-minority-staff-director-energy-commerce` — Minority Staff Director, Energy & Commerce — `unreached`
+- `leg-house-cmte-energy-commerce-staff-director-energy-commerce` — Staff Director, Energy & Commerce — `unreached`
+
+## House Committee on Financial Services  — 2 unpriced
+
+`leg-house-cmte-financial-services`
+
+- `leg-house-cmte-financial-services-minority-staff-director-financial-services` — Minority Staff Director, Financial Services — `unreached`
+- `leg-house-cmte-financial-services-staff-director-financial-services` — Staff Director, Financial Services — `unreached`
+
+## House Committee on Foreign Affairs  — 2 unpriced
+
+`leg-house-cmte-foreign-affairs`
+
+- `leg-house-cmte-foreign-affairs-minority-staff-director-foreign-affairs` — Minority Staff Director, Foreign Affairs — `unreached`
+- `leg-house-cmte-foreign-affairs-staff-director-foreign-affairs` — Staff Director, Foreign Affairs — `unreached`
+
+## House Committee on Homeland Security  — 2 unpriced
+
+`leg-house-cmte-homeland-security`
+
+- `leg-house-cmte-homeland-security-minority-staff-director-homeland-security` — Minority Staff Director, Homeland Security — `unreached`
+- `leg-house-cmte-homeland-security-staff-director-homeland-security` — Staff Director, Homeland Security — `unreached`
+
+## House Committee on House Administration  — 2 unpriced
+
+`leg-house-cmte-house-administration`
+
+- `leg-house-cmte-house-administration-minority-staff-director-house-administration` — Minority Staff Director, House Administration — `unreached`
+- `leg-house-cmte-house-administration-staff-director-house-administration` — Staff Director, House Administration — `unreached`
+
+## House Committee on Judiciary  — 2 unpriced
+
+`leg-house-cmte-judiciary`
+
+- `leg-house-cmte-judiciary-minority-staff-director-judiciary` — Minority Staff Director, Judiciary — `unreached`
+- `leg-house-cmte-judiciary-staff-director-judiciary` — Staff Director, Judiciary — `unreached`
+
+## House Committee on Natural Resources  — 2 unpriced
+
+`leg-house-cmte-natural-resources`
+
+- `leg-house-cmte-natural-resources-minority-staff-director-natural-resources` — Minority Staff Director, Natural Resources — `unreached`
+- `leg-house-cmte-natural-resources-staff-director-natural-resources` — Staff Director, Natural Resources — `unreached`
+
+## House Committee on Oversight and Government Reform  — 2 unpriced
+
+`leg-house-cmte-oversight-accountability`
+
+- `leg-house-cmte-oversight-accountability-minority-staff-director-oversight-accountability` — Minority Staff Director, Oversight & Accountability — `unreached`
+- `leg-house-cmte-oversight-accountability-staff-director-oversight-accountability` — Staff Director, Oversight & Accountability — `unreached`
+
+## House Committee on Rules  — 2 unpriced
+
+`leg-house-cmte-rules`
+
+- `leg-house-cmte-rules-minority-staff-director-rules` — Minority Staff Director, Rules — `unreached`
+- `leg-house-cmte-rules-staff-director-rules` — Staff Director, Rules — `unreached`
+
+## House Committee on Science, Space & Technology  — 2 unpriced
+
+`leg-house-cmte-science-space-technology`
+
+- `leg-house-cmte-science-space-technology-minority-staff-director-science-space-technology` — Minority Staff Director, Science, Space & Technology — `unreached`
+- `leg-house-cmte-science-space-technology-staff-director-science-space-technology` — Staff Director, Science, Space & Technology — `unreached`
+
+## House Committee on Small Business  — 2 unpriced
+
+`leg-house-cmte-small-business`
+
+- `leg-house-cmte-small-business-minority-staff-director-small-business` — Minority Staff Director, Small Business — `unreached`
+- `leg-house-cmte-small-business-staff-director-small-business` — Staff Director, Small Business — `unreached`
+
+## House Committee on Transportation & Infrastructure  — 2 unpriced
+
+`leg-house-cmte-transportation-infrastructure`
+
+- `leg-house-cmte-transportation-infrastructure-minority-staff-director-transportation-infrastructure` — Minority Staff Director, Transportation & Infrastructure — `unreached`
+- `leg-house-cmte-transportation-infrastructure-staff-director-transportation-infrastructure` — Staff Director, Transportation & Infrastructure — `unreached`
+
+## House Committee on Veterans' Affairs  — 2 unpriced
+
+`leg-house-cmte-veterans-affairs`
+
+- `leg-house-cmte-veterans-affairs-minority-staff-director-veterans-affairs` — Minority Staff Director, Veterans' Affairs — `unreached`
+- `leg-house-cmte-veterans-affairs-staff-director-veterans-affairs` — Staff Director, Veterans' Affairs — `unreached`
+
+## House Committee on Ways & Means  — 2 unpriced
+
+`leg-house-cmte-ways-means`
+
+- `leg-house-cmte-ways-means-minority-staff-director-ways-means` — Minority Staff Director, Ways & Means — `unreached`
+- `leg-house-cmte-ways-means-staff-director-ways-means` — Staff Director, Ways & Means — `unreached`
+
+## House Permanent Select Committee on Intelligence  — 2 unpriced
+
+`leg-house-cmte-permanent-select-committee-on-intelligence`
+
+- `leg-house-cmte-permanent-select-committee-on-intelligence-minority-staff-director-permanent-select-committee-on-intelligence` — Minority Staff Director, Permanent Select Committee on Intelligence — `unreached`
+- `leg-house-cmte-permanent-select-committee-on-intelligence-staff-director-permanent-select-committee-on-intelligence` — Staff Director, Permanent Select Committee on Intelligence — `unreached`
+
 ## Institute of Education Sciences (IES)  — 2 unpriced
 
 `exec-dept-ed-ies`
@@ -6710,40 +5849,12 @@ same list in the same run.
 - `exec-dept-ed-ies-deputy-director` — Deputy Director — `unreached`
 - `exec-dept-ed-ies-statistician-research-scientist-multiple` — Statistician / Research Scientist (×multiple) — `multiplicity`
 
-## Labor, Health and Human Services, Education, and Related Agencies  — 2 unpriced
-
-`leg-house-cmte-appropriations-sub-labor-hhs-education-related-agencies`
-
-- `leg-house-cmte-appropriations-sub-labor-hhs-education-related-agencies-chair-subcommittee-on-labor-hhs-education-related-agencies` — Chair, Subcommittee on Labor, HHS & Education & Related Agencies — `unreached`
-- `leg-house-cmte-appropriations-sub-labor-hhs-education-related-agencies-ranking-member-subcommittee-on-labor-hhs-education-related-agencies` — Ranking Member, Subcommittee on Labor, HHS & Education & Related Agencies — `unreached`
-
 ## Mathematical & Physical Sciences (MPS)  — 2 unpriced
 
 `exec-ind-nsf-mathematical-physical-sciences-mps`
 
 - `exec-ind-nsf-mathematical-physical-sciences-mps-assistant-director-mathematical-physical-sciences-mps` — Assistant Director, Mathematical & Physical Sciences (MPS) — `unreached`
 - `exec-ind-nsf-mathematical-physical-sciences-mps-deputy-assistant-director` — Deputy Assistant Director — `unreached`
-
-## Middle East and North Africa Subcommittee  — 2 unpriced
-
-`leg-house-cmte-foreign-affairs-sub-middle-east-north-africa-central-asia`
-
-- `leg-house-cmte-foreign-affairs-sub-middle-east-north-africa-central-asia-chair-subcommittee-on-middle-east-north-africa-central-asia` — Chair, Subcommittee on Middle East, North Africa & Central Asia — `unreached`
-- `leg-house-cmte-foreign-affairs-sub-middle-east-north-africa-central-asia-ranking-member-subcommittee-on-middle-east-north-africa-central-asia` — Ranking Member, Subcommittee on Middle East, North Africa & Central Asia — `unreached`
-
-## National Security, Department of State, and Related Programs  — 2 unpriced
-
-`leg-house-cmte-appropriations-sub-state-foreign-operations-related-programs`
-
-- `leg-house-cmte-appropriations-sub-state-foreign-operations-related-programs-chair-subcommittee-on-state-foreign-operations-related-programs` — Chair, Subcommittee on State, Foreign Operations & Related Programs — `unreached`
-- `leg-house-cmte-appropriations-sub-state-foreign-operations-related-programs-ranking-member-subcommittee-on-state-foreign-operations-related-programs` — Ranking Member, Subcommittee on State, Foreign Operations & Related Programs — `unreached`
-
-## Nutrition and Foreign Agriculture  — 2 unpriced
-
-`leg-house-cmte-agriculture-sub-nutrition-foreign-agriculture-horticulture`
-
-- `leg-house-cmte-agriculture-sub-nutrition-foreign-agriculture-horticulture-chair-subcommittee-on-nutrition-foreign-agriculture-horticulture` — Chair, Subcommittee on Nutrition, Foreign Agriculture & Horticulture — `unreached`
-- `leg-house-cmte-agriculture-sub-nutrition-foreign-agriculture-horticulture-ranking-member-subcommittee-on-nutrition-foreign-agriculture-horticulture` — Ranking Member, Subcommittee on Nutrition, Foreign Agriculture & Horticulture — `unreached`
 
 ## Office for Civil Rights (OCR)  — 2 unpriced
 
@@ -6766,13 +5877,6 @@ same list in the same run.
 - `exec-dept-doj-solicitor-assistant-to-the-solicitor-general-multiple` — Assistant to the Solicitor General (×multiple) — `multiplicity`
 - `exec-dept-doj-solicitor-deputy-solicitor-general-4` — Deputy Solicitor General (×4) — `multiplicity`
 
-## Oversight and Intelligence Subcommittee  — 2 unpriced
-
-`leg-house-cmte-foreign-affairs-sub-oversight-accountability`
-
-- `leg-house-cmte-foreign-affairs-sub-oversight-accountability-chair-subcommittee-on-oversight-accountability` — Chair, Subcommittee on Oversight & Accountability — `unreached`
-- `leg-house-cmte-foreign-affairs-sub-oversight-accountability-ranking-member-subcommittee-on-oversight-accountability` — Ranking Member, Subcommittee on Oversight & Accountability — `unreached`
-
 ## Science Mission Directorate  — 2 unpriced
 
 `exec-ind-nasa-science-mission-directorate`
@@ -6780,12 +5884,138 @@ same list in the same run.
 - `exec-ind-nasa-science-mission-directorate-deputy-associate-administrator-science-mission-directorate` — Deputy Associate Administrator, Science Mission Directorate — `unreached`
 - `exec-ind-nasa-science-mission-directorate-program-director-multiple` — Program Director (×multiple) — `multiplicity`
 
-## Select Subcommittee on the Weaponization of the Federal Government  — 2 unpriced
+## Select Committee on the Strategic Competition Between the United States and the Chinese Communist Party  — 2 unpriced
 
-`leg-house-cmte-judiciary-sub-weaponization-of-the-federal-government`
+`leg-house-cmte-select-committee-on-the-chinese-communist-party`
 
-- `leg-house-cmte-judiciary-sub-weaponization-of-the-federal-government-chair-subcommittee-on-weaponization-of-the-federal-government` — Chair, Subcommittee on Weaponization of the Federal Government — `unreached`
-- `leg-house-cmte-judiciary-sub-weaponization-of-the-federal-government-ranking-member-subcommittee-on-weaponization-of-the-federal-government` — Ranking Member, Subcommittee on Weaponization of the Federal Government — `unreached`
+- `leg-house-cmte-select-committee-on-the-chinese-communist-party-minority-staff-director-select-committee-on-the-chinese-communist-party` — Minority Staff Director, Select Committee on the Chinese Communist Party — `unreached`
+- `leg-house-cmte-select-committee-on-the-chinese-communist-party-staff-director-select-committee-on-the-chinese-communist-party` — Staff Director, Select Committee on the Chinese Communist Party — `unreached`
+
+## Senate Committee on Agriculture, Nutrition, and Forestry  — 2 unpriced
+
+`leg-senate-cmte-agriculture-nutrition-and-forestry`
+
+- `leg-senate-cmte-agriculture-nutrition-and-forestry-minority-staff-director-agriculture-nutrition-and-forestry` — Minority Staff Director, Agriculture, Nutrition, and Forestry — `unreached`
+- `leg-senate-cmte-agriculture-nutrition-and-forestry-staff-director-agriculture-nutrition-and-forestry` — Staff Director, Agriculture, Nutrition, and Forestry — `unreached`
+
+## Senate Committee on Appropriations  — 2 unpriced
+
+`leg-senate-cmte-appropriations`
+
+- `leg-senate-cmte-appropriations-minority-staff-director-appropriations` — Minority Staff Director, Appropriations — `unreached`
+- `leg-senate-cmte-appropriations-staff-director-appropriations` — Staff Director, Appropriations — `unreached`
+
+## Senate Committee on Armed Services  — 2 unpriced
+
+`leg-senate-cmte-armed-services`
+
+- `leg-senate-cmte-armed-services-minority-staff-director-armed-services` — Minority Staff Director, Armed Services — `unreached`
+- `leg-senate-cmte-armed-services-staff-director-armed-services` — Staff Director, Armed Services — `unreached`
+
+## Senate Committee on Banking, Housing & Urban Affairs  — 2 unpriced
+
+`leg-senate-cmte-banking-housing-urban-affairs`
+
+- `leg-senate-cmte-banking-housing-urban-affairs-minority-staff-director-banking-housing-urban-affairs` — Minority Staff Director, Banking, Housing & Urban Affairs — `unreached`
+- `leg-senate-cmte-banking-housing-urban-affairs-staff-director-banking-housing-urban-affairs` — Staff Director, Banking, Housing & Urban Affairs — `unreached`
+
+## Senate Committee on Commerce, Science & Transportation  — 2 unpriced
+
+`leg-senate-cmte-commerce-science-transportation`
+
+- `leg-senate-cmte-commerce-science-transportation-minority-staff-director-commerce-science-transportation` — Minority Staff Director, Commerce, Science & Transportation — `unreached`
+- `leg-senate-cmte-commerce-science-transportation-staff-director-commerce-science-transportation` — Staff Director, Commerce, Science & Transportation — `unreached`
+
+## Senate Committee on Energy & Natural Resources  — 2 unpriced
+
+`leg-senate-cmte-energy-natural-resources`
+
+- `leg-senate-cmte-energy-natural-resources-minority-staff-director-energy-natural-resources` — Minority Staff Director, Energy & Natural Resources — `unreached`
+- `leg-senate-cmte-energy-natural-resources-staff-director-energy-natural-resources` — Staff Director, Energy & Natural Resources — `unreached`
+
+## Senate Committee on Environment & Public Works  — 2 unpriced
+
+`leg-senate-cmte-environment-public-works`
+
+- `leg-senate-cmte-environment-public-works-minority-staff-director-environment-public-works` — Minority Staff Director, Environment & Public Works — `unreached`
+- `leg-senate-cmte-environment-public-works-staff-director-environment-public-works` — Staff Director, Environment & Public Works — `unreached`
+
+## Senate Committee on Finance  — 2 unpriced
+
+`leg-senate-cmte-finance`
+
+- `leg-senate-cmte-finance-minority-staff-director-finance` — Minority Staff Director, Finance — `unreached`
+- `leg-senate-cmte-finance-staff-director-finance` — Staff Director, Finance — `unreached`
+
+## Senate Committee on Foreign Relations  — 2 unpriced
+
+`leg-senate-cmte-foreign-relations`
+
+- `leg-senate-cmte-foreign-relations-minority-staff-director-foreign-relations` — Minority Staff Director, Foreign Relations — `unreached`
+- `leg-senate-cmte-foreign-relations-staff-director-foreign-relations` — Staff Director, Foreign Relations — `unreached`
+
+## Senate Committee on Health, Education, Labor & Pensions  — 2 unpriced
+
+`leg-senate-cmte-health-education-labor-pensions`
+
+- `leg-senate-cmte-health-education-labor-pensions-minority-staff-director-health-education-labor-pensions` — Minority Staff Director, Health, Education, Labor & Pensions — `unreached`
+- `leg-senate-cmte-health-education-labor-pensions-staff-director-health-education-labor-pensions` — Staff Director, Health, Education, Labor & Pensions — `unreached`
+
+## Senate Committee on Homeland Security & Governmental Affairs  — 2 unpriced
+
+`leg-senate-cmte-homeland-security-governmental-affairs`
+
+- `leg-senate-cmte-homeland-security-governmental-affairs-minority-staff-director-homeland-security-governmental-affairs` — Minority Staff Director, Homeland Security & Governmental Affairs — `unreached`
+- `leg-senate-cmte-homeland-security-governmental-affairs-staff-director-homeland-security-governmental-affairs` — Staff Director, Homeland Security & Governmental Affairs — `unreached`
+
+## Senate Committee on Indian Affairs  — 2 unpriced
+
+`leg-senate-cmte-indian-affairs`
+
+- `leg-senate-cmte-indian-affairs-minority-staff-director-indian-affairs` — Minority Staff Director, Indian Affairs — `unreached`
+- `leg-senate-cmte-indian-affairs-staff-director-indian-affairs` — Staff Director, Indian Affairs — `unreached`
+
+## Senate Committee on Rules & Administration  — 2 unpriced
+
+`leg-senate-cmte-rules-administration`
+
+- `leg-senate-cmte-rules-administration-minority-staff-director-rules-administration` — Minority Staff Director, Rules & Administration — `unreached`
+- `leg-senate-cmte-rules-administration-staff-director-rules-administration` — Staff Director, Rules & Administration — `unreached`
+
+## Senate Committee on Small Business & Entrepreneurship  — 2 unpriced
+
+`leg-senate-cmte-small-business-entrepreneurship`
+
+- `leg-senate-cmte-small-business-entrepreneurship-minority-staff-director-small-business-entrepreneurship` — Minority Staff Director, Small Business & Entrepreneurship — `unreached`
+- `leg-senate-cmte-small-business-entrepreneurship-staff-director-small-business-entrepreneurship` — Staff Director, Small Business & Entrepreneurship — `unreached`
+
+## Senate Committee on Veterans' Affairs  — 2 unpriced
+
+`leg-senate-cmte-veterans-affairs`
+
+- `leg-senate-cmte-veterans-affairs-minority-staff-director-veterans-affairs` — Minority Staff Director, Veterans' Affairs — `unreached`
+- `leg-senate-cmte-veterans-affairs-staff-director-veterans-affairs` — Staff Director, Veterans' Affairs — `unreached`
+
+## Senate Committee on the Budget  — 2 unpriced
+
+`leg-senate-cmte-budget`
+
+- `leg-senate-cmte-budget-minority-staff-director-budget` — Minority Staff Director, Budget — `unreached`
+- `leg-senate-cmte-budget-staff-director-budget` — Staff Director, Budget — `unreached`
+
+## Senate Select Committee on Intelligence  — 2 unpriced
+
+`leg-senate-cmte-select-committee-on-intelligence`
+
+- `leg-senate-cmte-select-committee-on-intelligence-minority-staff-director-select-committee-on-intelligence` — Minority Staff Director, Select Committee on Intelligence — `unreached`
+- `leg-senate-cmte-select-committee-on-intelligence-staff-director-select-committee-on-intelligence` — Staff Director, Select Committee on Intelligence — `unreached`
+
+## Senate Special Committee on Aging  — 2 unpriced
+
+`leg-senate-cmte-special-committee-on-aging`
+
+- `leg-senate-cmte-special-committee-on-aging-minority-staff-director-special-committee-on-aging` — Minority Staff Director, Special Committee on Aging — `unreached`
+- `leg-senate-cmte-special-committee-on-aging-staff-director-special-committee-on-aging` — Staff Director, Special Committee on Aging — `unreached`
 
 ## Social, Behavioral & Economic Sciences (SBE)  — 2 unpriced
 
@@ -6801,671 +6031,6 @@ same list in the same run.
 - `exec-ind-nasa-space-technology-mission-directorate-deputy-associate-administrator-space-technology-mission-directorate` — Deputy Associate Administrator, Space Technology Mission Directorate — `unreached`
 - `exec-ind-nasa-space-technology-mission-directorate-program-director-multiple` — Program Director (×multiple) — `multiplicity`
 
-## Subcommittee on Administrative State, Regulatory Reform & Antitrust  — 2 unpriced
-
-`leg-house-cmte-judiciary-sub-administrative-state-regulatory-reform-antitrust`
-
-- `leg-house-cmte-judiciary-sub-administrative-state-regulatory-reform-antitrust-chair-subcommittee-on-administrative-state-regulatory-reform-antitrust` — Chair, Subcommittee on Administrative State, Regulatory Reform & Antitrust — `unreached`
-- `leg-house-cmte-judiciary-sub-administrative-state-regulatory-reform-antitrust-ranking-member-subcommittee-on-administrative-state-regulatory-reform-antitrust` — Ranking Member, Subcommittee on Administrative State, Regulatory Reform & Antitrust — `unreached`
-
-## Subcommittee on Aviation  — 2 unpriced
-
-`leg-house-cmte-transportation-infrastructure-sub-aviation`
-
-- `leg-house-cmte-transportation-infrastructure-sub-aviation-chair-subcommittee-on-aviation` — Chair, Subcommittee on Aviation — `unreached`
-- `leg-house-cmte-transportation-infrastructure-sub-aviation-ranking-member-subcommittee-on-aviation` — Ranking Member, Subcommittee on Aviation — `unreached`
-
-## Subcommittee on Benefits  — 2 unpriced
-
-`leg-house-cmte-veterans-affairs-sub-benefits`
-
-- `leg-house-cmte-veterans-affairs-sub-benefits-chair-subcommittee-on-benefits` — Chair, Subcommittee on Benefits — `unreached`
-- `leg-house-cmte-veterans-affairs-sub-benefits-ranking-member-subcommittee-on-benefits` — Ranking Member, Subcommittee on Benefits — `unreached`
-
-## Subcommittee on Border Security & Enforcement  — 2 unpriced
-
-`leg-house-cmte-homeland-security-sub-border-security-enforcement`
-
-- `leg-house-cmte-homeland-security-sub-border-security-enforcement-chair-subcommittee-on-border-security-enforcement` — Chair, Subcommittee on Border Security & Enforcement — `unreached`
-- `leg-house-cmte-homeland-security-sub-border-security-enforcement-ranking-member-subcommittee-on-border-security-enforcement` — Ranking Member, Subcommittee on Border Security & Enforcement — `unreached`
-
-## Subcommittee on Capital Markets  — 2 unpriced
-
-`leg-house-cmte-financial-services-sub-capital-markets`
-
-- `leg-house-cmte-financial-services-sub-capital-markets-chair-subcommittee-on-capital-markets` — Chair, Subcommittee on Capital Markets — `unreached`
-- `leg-house-cmte-financial-services-sub-capital-markets-ranking-member-subcommittee-on-capital-markets` — Ranking Member, Subcommittee on Capital Markets — `unreached`
-
-## Subcommittee on Central Intelligence Agency  — 2 unpriced
-
-`leg-house-cmte-intelligence-sub-central-intelligence-agency`
-
-- `leg-house-cmte-intelligence-sub-central-intelligence-agency-chair-subcommittee-on-central-intelligence-agency` — Chair, Subcommittee on Central Intelligence Agency — `unreached`
-- `leg-house-cmte-intelligence-sub-central-intelligence-agency-ranking-member-subcommittee-on-central-intelligence-agency` — Ranking Member, Subcommittee on Central Intelligence Agency — `unreached`
-
-## Subcommittee on Coast Guard & Maritime Transportation  — 2 unpriced
-
-`leg-house-cmte-transportation-infrastructure-sub-coast-guard-maritime-transportation`
-
-- `leg-house-cmte-transportation-infrastructure-sub-coast-guard-maritime-transportation-chair-subcommittee-on-coast-guard-maritime-transportation` — Chair, Subcommittee on Coast Guard & Maritime Transportation — `unreached`
-- `leg-house-cmte-transportation-infrastructure-sub-coast-guard-maritime-transportation-ranking-member-subcommittee-on-coast-guard-maritime-transportation` — Ranking Member, Subcommittee on Coast Guard & Maritime Transportation — `unreached`
-
-## Subcommittee on Commerce, Justice, Science & Related Agencies  — 2 unpriced
-
-`leg-house-cmte-appropriations-sub-commerce-justice-science-related-agencies`
-
-- `leg-house-cmte-appropriations-sub-commerce-justice-science-related-agencies-chair-subcommittee-on-commerce-justice-science-related-agencies` — Chair, Subcommittee on Commerce, Justice, Science & Related Agencies — `unreached`
-- `leg-house-cmte-appropriations-sub-commerce-justice-science-related-agencies-ranking-member-subcommittee-on-commerce-justice-science-related-agencies` — Ranking Member, Subcommittee on Commerce, Justice, Science & Related Agencies — `unreached`
-
-## Subcommittee on Commerce, Manufacturing, and Trade  — 2 unpriced
-
-`leg-house-cmte-energy-commerce-sub-innovation-data-commerce`
-
-- `leg-house-cmte-energy-commerce-sub-innovation-data-commerce-chair-subcommittee-on-innovation-data-commerce` — Chair, Subcommittee on Innovation, Data & Commerce — `unreached`
-- `leg-house-cmte-energy-commerce-sub-innovation-data-commerce-ranking-member-subcommittee-on-innovation-data-commerce` — Ranking Member, Subcommittee on Innovation, Data & Commerce — `unreached`
-
-## Subcommittee on Committees  — 2 unpriced
-
-`leg-house-cmte-house-administration-sub-committees`
-
-- `leg-house-cmte-house-administration-sub-committees-chair-subcommittee-on-committees` — Chair, Subcommittee on Committees — `unreached`
-- `leg-house-cmte-house-administration-sub-committees-ranking-member-subcommittee-on-committees` — Ranking Member, Subcommittee on Committees — `unreached`
-
-## Subcommittee on Commodity Markets, Digital Assets & Rural Development  — 2 unpriced
-
-`leg-house-cmte-agriculture-sub-commodity-markets-digital-assets-rural-development`
-
-- `leg-house-cmte-agriculture-sub-commodity-markets-digital-assets-rural-development-chair-subcommittee-on-commodity-markets-digital-assets-rural-development` — Chair, Subcommittee on Commodity Markets, Digital Assets & Rural Development — `unreached`
-- `leg-house-cmte-agriculture-sub-commodity-markets-digital-assets-rural-development-ranking-member-subcommittee-on-commodity-markets-digital-assets-rural-development` — Ranking Member, Subcommittee on Commodity Markets, Digital Assets & Rural Development — `unreached`
-
-## Subcommittee on Communications & Technology  — 2 unpriced
-
-`leg-house-cmte-energy-commerce-sub-communications-technology`
-
-- `leg-house-cmte-energy-commerce-sub-communications-technology-chair-subcommittee-on-communications-technology` — Chair, Subcommittee on Communications & Technology — `unreached`
-- `leg-house-cmte-energy-commerce-sub-communications-technology-ranking-member-subcommittee-on-communications-technology` — Ranking Member, Subcommittee on Communications & Technology — `unreached`
-
-## Subcommittee on Conservation, Research & Biotechnology  — 2 unpriced
-
-`leg-house-cmte-agriculture-sub-conservation-research-biotechnology`
-
-- `leg-house-cmte-agriculture-sub-conservation-research-biotechnology-chair-subcommittee-on-conservation-research-biotechnology` — Chair, Subcommittee on Conservation, Research & Biotechnology — `unreached`
-- `leg-house-cmte-agriculture-sub-conservation-research-biotechnology-ranking-member-subcommittee-on-conservation-research-biotechnology` — Ranking Member, Subcommittee on Conservation, Research & Biotechnology — `unreached`
-
-## Subcommittee on Constitution & Limited Government  — 2 unpriced
-
-`leg-house-cmte-judiciary-sub-constitution-limited-government`
-
-- `leg-house-cmte-judiciary-sub-constitution-limited-government-chair-subcommittee-on-constitution-limited-government` — Chair, Subcommittee on Constitution & Limited Government — `unreached`
-- `leg-house-cmte-judiciary-sub-constitution-limited-government-ranking-member-subcommittee-on-constitution-limited-government` — Ranking Member, Subcommittee on Constitution & Limited Government — `unreached`
-
-## Subcommittee on Contracting & Infrastructure  — 2 unpriced
-
-`leg-house-cmte-small-business-sub-contracting-infrastructure`
-
-- `leg-house-cmte-small-business-sub-contracting-infrastructure-chair-subcommittee-on-contracting-infrastructure` — Chair, Subcommittee on Contracting & Infrastructure — `unreached`
-- `leg-house-cmte-small-business-sub-contracting-infrastructure-ranking-member-subcommittee-on-contracting-infrastructure` — Ranking Member, Subcommittee on Contracting & Infrastructure — `unreached`
-
-## Subcommittee on Courts, Intellectual Property, Artificial Intelligence, and the Internet  — 2 unpriced
-
-`leg-house-cmte-judiciary-sub-courts-intellectual-property-the-internet`
-
-- `leg-house-cmte-judiciary-sub-courts-intellectual-property-the-internet-chair-subcommittee-on-courts-intellectual-property-the-internet` — Chair, Subcommittee on Courts, Intellectual Property & the Internet — `unreached`
-- `leg-house-cmte-judiciary-sub-courts-intellectual-property-the-internet-ranking-member-subcommittee-on-courts-intellectual-property-the-internet` — Ranking Member, Subcommittee on Courts, Intellectual Property & the Internet — `unreached`
-
-## Subcommittee on Crime & Federal Government Surveillance  — 2 unpriced
-
-`leg-house-cmte-judiciary-sub-crime-federal-government-surveillance`
-
-- `leg-house-cmte-judiciary-sub-crime-federal-government-surveillance-chair-subcommittee-on-crime-federal-government-surveillance` — Chair, Subcommittee on Crime & Federal Government Surveillance — `unreached`
-- `leg-house-cmte-judiciary-sub-crime-federal-government-surveillance-ranking-member-subcommittee-on-crime-federal-government-surveillance` — Ranking Member, Subcommittee on Crime & Federal Government Surveillance — `unreached`
-
-## Subcommittee on Cyber, Information Technologies, and Innovation  — 2 unpriced
-
-`leg-house-cmte-armed-services-sub-cyber-information-technology-innovation`
-
-- `leg-house-cmte-armed-services-sub-cyber-information-technology-innovation-chair-subcommittee-on-cyber-information-technology-innovation` — Chair, Subcommittee on Cyber, Information Technology & Innovation — `unreached`
-- `leg-house-cmte-armed-services-sub-cyber-information-technology-innovation-ranking-member-subcommittee-on-cyber-information-technology-innovation` — Ranking Member, Subcommittee on Cyber, Information Technology & Innovation — `unreached`
-
-## Subcommittee on Cybersecurity & Infrastructure Protection  — 2 unpriced
-
-`leg-house-cmte-homeland-security-sub-cybersecurity-infrastructure-protection`
-
-- `leg-house-cmte-homeland-security-sub-cybersecurity-infrastructure-protection-chair-subcommittee-on-cybersecurity-infrastructure-protection` — Chair, Subcommittee on Cybersecurity & Infrastructure Protection — `unreached`
-- `leg-house-cmte-homeland-security-sub-cybersecurity-infrastructure-protection-ranking-member-subcommittee-on-cybersecurity-infrastructure-protection` — Ranking Member, Subcommittee on Cybersecurity & Infrastructure Protection — `unreached`
-
-## Subcommittee on Cybersecurity, Information Technology & Government Innovation  — 2 unpriced
-
-`leg-house-cmte-oversight-accountability-sub-cybersecurity-information-technology-government-innovation`
-
-- `leg-house-cmte-oversight-accountability-sub-cybersecurity-information-technology-government-innovation-chair-subcommittee-on-cybersecurity-information-technology-government-innovation` — Chair, Subcommittee on Cybersecurity, Information Technology & Government Innovation — `unreached`
-- `leg-house-cmte-oversight-accountability-sub-cybersecurity-information-technology-government-innovation-ranking-member-subcommittee-on-cybersecurity-information-technology-government-innovation` — Ranking Member, Subcommittee on Cybersecurity, Information Technology & Government Innovation — `unreached`
-
-## Subcommittee on Defense  — 2 unpriced
-
-`leg-house-cmte-appropriations-sub-defense`
-
-- `leg-house-cmte-appropriations-sub-defense-chair-subcommittee-on-defense` — Chair, Subcommittee on Defense — `unreached`
-- `leg-house-cmte-appropriations-sub-defense-ranking-member-subcommittee-on-defense` — Ranking Member, Subcommittee on Defense — `unreached`
-
-## Subcommittee on Defense Intelligence and Overhead Architecture  — 2 unpriced
-
-`leg-house-cmte-intelligence-sub-defense-intelligence-warfighter-support`
-
-- `leg-house-cmte-intelligence-sub-defense-intelligence-warfighter-support-chair-subcommittee-on-defense-intelligence-warfighter-support` — Chair, Subcommittee on Defense Intelligence & Warfighter Support — `unreached`
-- `leg-house-cmte-intelligence-sub-defense-intelligence-warfighter-support-ranking-member-subcommittee-on-defense-intelligence-warfighter-support` — Ranking Member, Subcommittee on Defense Intelligence & Warfighter Support — `unreached`
-
-## Subcommittee on Digital Assets, Financial Technology & Artificial Intelligence  — 2 unpriced
-
-`leg-house-cmte-financial-services-sub-digital-assets-financial-technology-artificial-intelligence`
-
-- `leg-house-cmte-financial-services-sub-digital-assets-financial-technology-artificial-intelligence-chair-subcommittee-on-digital-assets-financial-technology-artificial-intelligence` — Chair, Subcommittee on Digital Assets, Financial Technology & Artificial Intelligence — `unreached`
-- `leg-house-cmte-financial-services-sub-digital-assets-financial-technology-artificial-intelligence-ranking-member-subcommittee-on-digital-assets-financial-technology-artificial-intelligence` — Ranking Member, Subcommittee on Digital Assets, Financial Technology & Artificial Intelligence — `unreached`
-
-## Subcommittee on Disability Assistance & Memorial Affairs  — 2 unpriced
-
-`leg-house-cmte-veterans-affairs-sub-disability-assistance-memorial-affairs`
-
-- `leg-house-cmte-veterans-affairs-sub-disability-assistance-memorial-affairs-chair-subcommittee-on-disability-assistance-memorial-affairs` — Chair, Subcommittee on Disability Assistance & Memorial Affairs — `unreached`
-- `leg-house-cmte-veterans-affairs-sub-disability-assistance-memorial-affairs-ranking-member-subcommittee-on-disability-assistance-memorial-affairs` — Ranking Member, Subcommittee on Disability Assistance & Memorial Affairs — `unreached`
-
-## Subcommittee on Early Childhood, Elementary & Secondary Education  — 2 unpriced
-
-`leg-house-cmte-education-the-workforce-sub-early-childhood-elementary-secondary-education`
-
-- `leg-house-cmte-education-the-workforce-sub-early-childhood-elementary-secondary-education-chair-subcommittee-on-early-childhood-elementary-secondary-education` — Chair, Subcommittee on Early Childhood, Elementary & Secondary Education — `unreached`
-- `leg-house-cmte-education-the-workforce-sub-early-childhood-elementary-secondary-education-ranking-member-subcommittee-on-early-childhood-elementary-secondary-education` — Ranking Member, Subcommittee on Early Childhood, Elementary & Secondary Education — `unreached`
-
-## Subcommittee on Economic Development, Public Buildings & Emergency Management  — 2 unpriced
-
-`leg-house-cmte-transportation-infrastructure-sub-economic-development-public-buildings-emergency-management`
-
-- `leg-house-cmte-transportation-infrastructure-sub-economic-development-public-buildings-emergency-management-chair-subcommittee-on-economic-development-public-buildings-emergency-management` — Chair, Subcommittee on Economic Development, Public Buildings & Emergency Management — `unreached`
-- `leg-house-cmte-transportation-infrastructure-sub-economic-development-public-buildings-emergency-management-ranking-member-subcommittee-on-economic-development-public-buildings-emergency-management` — Ranking Member, Subcommittee on Economic Development, Public Buildings & Emergency Management — `unreached`
-
-## Subcommittee on Economic Growth, Energy Policy & Regulatory Affairs  — 2 unpriced
-
-`leg-house-cmte-oversight-accountability-sub-economic-growth-energy-policy-regulatory-affairs`
-
-- `leg-house-cmte-oversight-accountability-sub-economic-growth-energy-policy-regulatory-affairs-chair-subcommittee-on-economic-growth-energy-policy-regulatory-affairs` — Chair, Subcommittee on Economic Growth, Energy Policy & Regulatory Affairs — `unreached`
-- `leg-house-cmte-oversight-accountability-sub-economic-growth-energy-policy-regulatory-affairs-ranking-member-subcommittee-on-economic-growth-energy-policy-regulatory-affairs` — Ranking Member, Subcommittee on Economic Growth, Energy Policy & Regulatory Affairs — `unreached`
-
-## Subcommittee on Economic Growth, Tax & Capital Access  — 2 unpriced
-
-`leg-house-cmte-small-business-sub-economic-growth-tax-capital-access`
-
-- `leg-house-cmte-small-business-sub-economic-growth-tax-capital-access-chair-subcommittee-on-economic-growth-tax-capital-access` — Chair, Subcommittee on Economic Growth, Tax & Capital Access — `unreached`
-- `leg-house-cmte-small-business-sub-economic-growth-tax-capital-access-ranking-member-subcommittee-on-economic-growth-tax-capital-access` — Ranking Member, Subcommittee on Economic Growth, Tax & Capital Access — `unreached`
-
-## Subcommittee on Economic Opportunity  — 2 unpriced
-
-`leg-house-cmte-veterans-affairs-sub-economic-opportunity`
-
-- `leg-house-cmte-veterans-affairs-sub-economic-opportunity-chair-subcommittee-on-economic-opportunity` — Chair, Subcommittee on Economic Opportunity — `unreached`
-- `leg-house-cmte-veterans-affairs-sub-economic-opportunity-ranking-member-subcommittee-on-economic-opportunity` — Ranking Member, Subcommittee on Economic Opportunity — `unreached`
-
-## Subcommittee on Elections  — 2 unpriced
-
-`leg-house-cmte-house-administration-sub-elections`
-
-- `leg-house-cmte-house-administration-sub-elections-chair-subcommittee-on-elections` — Chair, Subcommittee on Elections — `unreached`
-- `leg-house-cmte-house-administration-sub-elections-ranking-member-subcommittee-on-elections` — Ranking Member, Subcommittee on Elections — `unreached`
-
-## Subcommittee on Emergency Management & Technology  — 2 unpriced
-
-`leg-house-cmte-homeland-security-sub-emergency-management-technology`
-
-- `leg-house-cmte-homeland-security-sub-emergency-management-technology-chair-subcommittee-on-emergency-management-technology` — Chair, Subcommittee on Emergency Management & Technology — `unreached`
-- `leg-house-cmte-homeland-security-sub-emergency-management-technology-ranking-member-subcommittee-on-emergency-management-technology` — Ranking Member, Subcommittee on Emergency Management & Technology — `unreached`
-
-## Subcommittee on Energy  — 2 unpriced
-
-`leg-house-cmte-science-space-technology-sub-energy`
-
-- `leg-house-cmte-science-space-technology-sub-energy-chair-subcommittee-on-energy` — Chair, Subcommittee on Energy — `unreached`
-- `leg-house-cmte-science-space-technology-sub-energy-ranking-member-subcommittee-on-energy` — Ranking Member, Subcommittee on Energy — `unreached`
-
-## Subcommittee on Energy  — 2 unpriced
-
-`leg-house-cmte-energy-commerce-sub-energy-climate-grid-security`
-
-- `leg-house-cmte-energy-commerce-sub-energy-climate-grid-security-chair-subcommittee-on-energy-climate-grid-security` — Chair, Subcommittee on Energy, Climate & Grid Security — `unreached`
-- `leg-house-cmte-energy-commerce-sub-energy-climate-grid-security-ranking-member-subcommittee-on-energy-climate-grid-security` — Ranking Member, Subcommittee on Energy, Climate & Grid Security — `unreached`
-
-## Subcommittee on Energy & Mineral Resources  — 2 unpriced
-
-`leg-house-cmte-natural-resources-sub-energy-mineral-resources`
-
-- `leg-house-cmte-natural-resources-sub-energy-mineral-resources-chair-subcommittee-on-energy-mineral-resources` — Chair, Subcommittee on Energy & Mineral Resources — `unreached`
-- `leg-house-cmte-natural-resources-sub-energy-mineral-resources-ranking-member-subcommittee-on-energy-mineral-resources` — Ranking Member, Subcommittee on Energy & Mineral Resources — `unreached`
-
-## Subcommittee on Environment  — 2 unpriced
-
-`leg-house-cmte-science-space-technology-sub-environment`
-
-- `leg-house-cmte-science-space-technology-sub-environment-chair-subcommittee-on-environment` — Chair, Subcommittee on Environment — `unreached`
-- `leg-house-cmte-science-space-technology-sub-environment-ranking-member-subcommittee-on-environment` — Ranking Member, Subcommittee on Environment — `unreached`
-
-## Subcommittee on Environment  — 2 unpriced
-
-`leg-house-cmte-energy-commerce-sub-environment-manufacturing-critical-materials`
-
-- `leg-house-cmte-energy-commerce-sub-environment-manufacturing-critical-materials-chair-subcommittee-on-environment-manufacturing-critical-materials` — Chair, Subcommittee on Environment, Manufacturing & Critical Materials — `unreached`
-- `leg-house-cmte-energy-commerce-sub-environment-manufacturing-critical-materials-ranking-member-subcommittee-on-environment-manufacturing-critical-materials` — Ranking Member, Subcommittee on Environment, Manufacturing & Critical Materials — `unreached`
-
-## Subcommittee on Federal Lands  — 2 unpriced
-
-`leg-house-cmte-natural-resources-sub-federal-lands`
-
-- `leg-house-cmte-natural-resources-sub-federal-lands-chair-subcommittee-on-federal-lands` — Chair, Subcommittee on Federal Lands — `unreached`
-- `leg-house-cmte-natural-resources-sub-federal-lands-ranking-member-subcommittee-on-federal-lands` — Ranking Member, Subcommittee on Federal Lands — `unreached`
-
-## Subcommittee on Financial Institutions  — 2 unpriced
-
-`leg-house-cmte-financial-services-sub-financial-institutions-monetary-policy`
-
-- `leg-house-cmte-financial-services-sub-financial-institutions-monetary-policy-chair-subcommittee-on-financial-institutions-monetary-policy` — Chair, Subcommittee on Financial Institutions & Monetary Policy — `unreached`
-- `leg-house-cmte-financial-services-sub-financial-institutions-monetary-policy-ranking-member-subcommittee-on-financial-institutions-monetary-policy` — Ranking Member, Subcommittee on Financial Institutions & Monetary Policy — `unreached`
-
-## Subcommittee on Financial Services & General Government  — 2 unpriced
-
-`leg-house-cmte-appropriations-sub-financial-services-general-government`
-
-- `leg-house-cmte-appropriations-sub-financial-services-general-government-chair-subcommittee-on-financial-services-general-government` — Chair, Subcommittee on Financial Services & General Government — `unreached`
-- `leg-house-cmte-appropriations-sub-financial-services-general-government-ranking-member-subcommittee-on-financial-services-general-government` — Ranking Member, Subcommittee on Financial Services & General Government — `unreached`
-
-## Subcommittee on General Farm Commodities, Risk Management & Credit  — 2 unpriced
-
-`leg-house-cmte-agriculture-sub-general-farm-commodities-risk-management-credit`
-
-- `leg-house-cmte-agriculture-sub-general-farm-commodities-risk-management-credit-chair-subcommittee-on-general-farm-commodities-risk-management-credit` — Chair, Subcommittee on General Farm Commodities, Risk Management & Credit — `unreached`
-- `leg-house-cmte-agriculture-sub-general-farm-commodities-risk-management-credit-ranking-member-subcommittee-on-general-farm-commodities-risk-management-credit` — Ranking Member, Subcommittee on General Farm Commodities, Risk Management & Credit — `unreached`
-
-## Subcommittee on Global Health, Global Human Rights & International Organizations  — 2 unpriced
-
-`leg-house-cmte-foreign-affairs-sub-global-health-global-human-rights-international-organizations`
-
-- `leg-house-cmte-foreign-affairs-sub-global-health-global-human-rights-international-organizations-chair-subcommittee-on-global-health-global-human-rights-international-organizations` — Chair, Subcommittee on Global Health, Global Human Rights & International Organizations — `unreached`
-- `leg-house-cmte-foreign-affairs-sub-global-health-global-human-rights-international-organizations-ranking-member-subcommittee-on-global-health-global-human-rights-international-organizations` — Ranking Member, Subcommittee on Global Health, Global Human Rights & International Organizations — `unreached`
-
-## Subcommittee on Government Operations  — 2 unpriced
-
-`leg-house-cmte-oversight-accountability-sub-government-operations-the-federal-workforce`
-
-- `leg-house-cmte-oversight-accountability-sub-government-operations-the-federal-workforce-chair-subcommittee-on-government-operations-the-federal-workforce` — Chair, Subcommittee on Government Operations & the Federal Workforce — `unreached`
-- `leg-house-cmte-oversight-accountability-sub-government-operations-the-federal-workforce-ranking-member-subcommittee-on-government-operations-the-federal-workforce` — Ranking Member, Subcommittee on Government Operations & the Federal Workforce — `unreached`
-
-## Subcommittee on Health  — 2 unpriced
-
-`leg-house-cmte-ways-means-sub-health`
-
-- `leg-house-cmte-ways-means-sub-health-chair-subcommittee-on-health` — Chair, Subcommittee on Health — `unreached`
-- `leg-house-cmte-ways-means-sub-health-ranking-member-subcommittee-on-health` — Ranking Member, Subcommittee on Health — `unreached`
-
-## Subcommittee on Health  — 2 unpriced
-
-`leg-house-cmte-veterans-affairs-sub-health`
-
-- `leg-house-cmte-veterans-affairs-sub-health-chair-subcommittee-on-health` — Chair, Subcommittee on Health — `unreached`
-- `leg-house-cmte-veterans-affairs-sub-health-ranking-member-subcommittee-on-health` — Ranking Member, Subcommittee on Health — `unreached`
-
-## Subcommittee on Health  — 2 unpriced
-
-`leg-house-cmte-energy-commerce-sub-health`
-
-- `leg-house-cmte-energy-commerce-sub-health-chair-subcommittee-on-health` — Chair, Subcommittee on Health — `unreached`
-- `leg-house-cmte-energy-commerce-sub-health-ranking-member-subcommittee-on-health` — Ranking Member, Subcommittee on Health — `unreached`
-
-## Subcommittee on Health Care & Financial Services  — 2 unpriced
-
-`leg-house-cmte-oversight-accountability-sub-health-care-financial-services`
-
-- `leg-house-cmte-oversight-accountability-sub-health-care-financial-services-chair-subcommittee-on-health-care-financial-services` — Chair, Subcommittee on Health Care & Financial Services — `unreached`
-- `leg-house-cmte-oversight-accountability-sub-health-care-financial-services-ranking-member-subcommittee-on-health-care-financial-services` — Ranking Member, Subcommittee on Health Care & Financial Services — `unreached`
-
-## Subcommittee on Health, Employment, Labor & Pensions  — 2 unpriced
-
-`leg-house-cmte-education-the-workforce-sub-health-employment-labor-pensions`
-
-- `leg-house-cmte-education-the-workforce-sub-health-employment-labor-pensions-chair-subcommittee-on-health-employment-labor-pensions` — Chair, Subcommittee on Health, Employment, Labor & Pensions — `unreached`
-- `leg-house-cmte-education-the-workforce-sub-health-employment-labor-pensions-ranking-member-subcommittee-on-health-employment-labor-pensions` — Ranking Member, Subcommittee on Health, Employment, Labor & Pensions — `unreached`
-
-## Subcommittee on Higher Education & Workforce Development  — 2 unpriced
-
-`leg-house-cmte-education-the-workforce-sub-higher-education-workforce-development`
-
-- `leg-house-cmte-education-the-workforce-sub-higher-education-workforce-development-chair-subcommittee-on-higher-education-workforce-development` — Chair, Subcommittee on Higher Education & Workforce Development — `unreached`
-- `leg-house-cmte-education-the-workforce-sub-higher-education-workforce-development-ranking-member-subcommittee-on-higher-education-workforce-development` — Ranking Member, Subcommittee on Higher Education & Workforce Development — `unreached`
-
-## Subcommittee on Highways & Transit  — 2 unpriced
-
-`leg-house-cmte-transportation-infrastructure-sub-highways-transit`
-
-- `leg-house-cmte-transportation-infrastructure-sub-highways-transit-chair-subcommittee-on-highways-transit` — Chair, Subcommittee on Highways & Transit — `unreached`
-- `leg-house-cmte-transportation-infrastructure-sub-highways-transit-ranking-member-subcommittee-on-highways-transit` — Ranking Member, Subcommittee on Highways & Transit — `unreached`
-
-## Subcommittee on Homeland Security  — 2 unpriced
-
-`leg-house-cmte-appropriations-sub-homeland-security`
-
-- `leg-house-cmte-appropriations-sub-homeland-security-chair-subcommittee-on-homeland-security` — Chair, Subcommittee on Homeland Security — `unreached`
-- `leg-house-cmte-appropriations-sub-homeland-security-ranking-member-subcommittee-on-homeland-security` — Ranking Member, Subcommittee on Homeland Security — `unreached`
-
-## Subcommittee on Horticulture, Farm Inputs & Subcommittee on Precision Agriculture  — 2 unpriced
-
-`leg-house-cmte-agriculture-sub-horticulture-farm-inputs-subcommittee-on-precision-agriculture`
-
-- `leg-house-cmte-agriculture-sub-horticulture-farm-inputs-subcommittee-on-precision-agriculture-chair-subcommittee-on-horticulture-farm-inputs-subcommittee-on-precision-agriculture` — Chair, Subcommittee on Horticulture, Farm Inputs & Subcommittee on Precision Agriculture — `unreached`
-- `leg-house-cmte-agriculture-sub-horticulture-farm-inputs-subcommittee-on-precision-agriculture-ranking-member-subcommittee-on-horticulture-farm-inputs-subcommittee-on-precision-agriculture` — Ranking Member, Subcommittee on Horticulture, Farm Inputs & Subcommittee on Precision Agriculture — `unreached`
-
-## Subcommittee on Housing & Insurance  — 2 unpriced
-
-`leg-house-cmte-financial-services-sub-housing-insurance`
-
-- `leg-house-cmte-financial-services-sub-housing-insurance-chair-subcommittee-on-housing-insurance` — Chair, Subcommittee on Housing & Insurance — `unreached`
-- `leg-house-cmte-financial-services-sub-housing-insurance-ranking-member-subcommittee-on-housing-insurance` — Ranking Member, Subcommittee on Housing & Insurance — `unreached`
-
-## Subcommittee on Immigration Integrity, Security & Enforcement  — 2 unpriced
-
-`leg-house-cmte-judiciary-sub-immigration-integrity-security-enforcement`
-
-- `leg-house-cmte-judiciary-sub-immigration-integrity-security-enforcement-chair-subcommittee-on-immigration-integrity-security-enforcement` — Chair, Subcommittee on Immigration Integrity, Security & Enforcement — `unreached`
-- `leg-house-cmte-judiciary-sub-immigration-integrity-security-enforcement-ranking-member-subcommittee-on-immigration-integrity-security-enforcement` — Ranking Member, Subcommittee on Immigration Integrity, Security & Enforcement — `unreached`
-
-## Subcommittee on Indian & Insular Affairs  — 2 unpriced
-
-`leg-house-cmte-natural-resources-sub-indian-insular-affairs`
-
-- `leg-house-cmte-natural-resources-sub-indian-insular-affairs-chair-subcommittee-on-indian-insular-affairs` — Chair, Subcommittee on Indian & Insular Affairs — `unreached`
-- `leg-house-cmte-natural-resources-sub-indian-insular-affairs-ranking-member-subcommittee-on-indian-insular-affairs` — Ranking Member, Subcommittee on Indian & Insular Affairs — `unreached`
-
-## Subcommittee on Innovation, Entrepreneurship & Workforce Development  — 2 unpriced
-
-`leg-house-cmte-small-business-sub-innovation-entrepreneurship-workforce-development`
-
-- `leg-house-cmte-small-business-sub-innovation-entrepreneurship-workforce-development-chair-subcommittee-on-innovation-entrepreneurship-workforce-development` — Chair, Subcommittee on Innovation, Entrepreneurship & Workforce Development — `unreached`
-- `leg-house-cmte-small-business-sub-innovation-entrepreneurship-workforce-development-ranking-member-subcommittee-on-innovation-entrepreneurship-workforce-development` — Ranking Member, Subcommittee on Innovation, Entrepreneurship & Workforce Development — `unreached`
-
-## Subcommittee on Interior, Environment & Related Agencies  — 2 unpriced
-
-`leg-house-cmte-appropriations-sub-interior-environment-related-agencies`
-
-- `leg-house-cmte-appropriations-sub-interior-environment-related-agencies-chair-subcommittee-on-interior-environment-related-agencies` — Chair, Subcommittee on Interior, Environment & Related Agencies — `unreached`
-- `leg-house-cmte-appropriations-sub-interior-environment-related-agencies-ranking-member-subcommittee-on-interior-environment-related-agencies` — Ranking Member, Subcommittee on Interior, Environment & Related Agencies — `unreached`
-
-## Subcommittee on Investigations & Oversight  — 2 unpriced
-
-`leg-house-cmte-science-space-technology-sub-investigations-oversight`
-
-- `leg-house-cmte-science-space-technology-sub-investigations-oversight-chair-subcommittee-on-investigations-oversight` — Chair, Subcommittee on Investigations & Oversight — `unreached`
-- `leg-house-cmte-science-space-technology-sub-investigations-oversight-ranking-member-subcommittee-on-investigations-oversight` — Ranking Member, Subcommittee on Investigations & Oversight — `unreached`
-
-## Subcommittee on Legislative & Budget Process  — 2 unpriced
-
-`leg-house-cmte-rules-sub-legislative-budget-process`
-
-- `leg-house-cmte-rules-sub-legislative-budget-process-chair-subcommittee-on-legislative-budget-process` — Chair, Subcommittee on Legislative & Budget Process — `unreached`
-- `leg-house-cmte-rules-sub-legislative-budget-process-ranking-member-subcommittee-on-legislative-budget-process` — Ranking Member, Subcommittee on Legislative & Budget Process — `unreached`
-
-## Subcommittee on Legislative Branch  — 2 unpriced
-
-`leg-house-cmte-appropriations-sub-legislative-branch`
-
-- `leg-house-cmte-appropriations-sub-legislative-branch-chair-subcommittee-on-legislative-branch` — Chair, Subcommittee on Legislative Branch — `unreached`
-- `leg-house-cmte-appropriations-sub-legislative-branch-ranking-member-subcommittee-on-legislative-branch` — Ranking Member, Subcommittee on Legislative Branch — `unreached`
-
-## Subcommittee on Livestock, Dairy & Poultry  — 2 unpriced
-
-`leg-house-cmte-agriculture-sub-livestock-dairy-poultry`
-
-- `leg-house-cmte-agriculture-sub-livestock-dairy-poultry-chair-subcommittee-on-livestock-dairy-poultry` — Chair, Subcommittee on Livestock, Dairy & Poultry — `unreached`
-- `leg-house-cmte-agriculture-sub-livestock-dairy-poultry-ranking-member-subcommittee-on-livestock-dairy-poultry` — Ranking Member, Subcommittee on Livestock, Dairy & Poultry — `unreached`
-
-## Subcommittee on Military & Foreign Affairs  — 2 unpriced
-
-`leg-house-cmte-oversight-accountability-sub-military-foreign-affairs`
-
-- `leg-house-cmte-oversight-accountability-sub-military-foreign-affairs-chair-subcommittee-on-military-foreign-affairs` — Chair, Subcommittee on Military & Foreign Affairs — `unreached`
-- `leg-house-cmte-oversight-accountability-sub-military-foreign-affairs-ranking-member-subcommittee-on-military-foreign-affairs` — Ranking Member, Subcommittee on Military & Foreign Affairs — `unreached`
-
-## Subcommittee on Military Construction, Veterans Affairs & Related Agencies  — 2 unpriced
-
-`leg-house-cmte-appropriations-sub-military-construction-veterans-affairs-related-agencies`
-
-- `leg-house-cmte-appropriations-sub-military-construction-veterans-affairs-related-agencies-chair-subcommittee-on-military-construction-veterans-affairs-related-agencies` — Chair, Subcommittee on Military Construction, Veterans Affairs & Related Agencies — `unreached`
-- `leg-house-cmte-appropriations-sub-military-construction-veterans-affairs-related-agencies-ranking-member-subcommittee-on-military-construction-veterans-affairs-related-agencies` — Ranking Member, Subcommittee on Military Construction, Veterans Affairs & Related Agencies — `unreached`
-
-## Subcommittee on Military Personnel  — 2 unpriced
-
-`leg-house-cmte-armed-services-sub-military-personnel`
-
-- `leg-house-cmte-armed-services-sub-military-personnel-chair-subcommittee-on-military-personnel` — Chair, Subcommittee on Military Personnel — `unreached`
-- `leg-house-cmte-armed-services-sub-military-personnel-ranking-member-subcommittee-on-military-personnel` — Ranking Member, Subcommittee on Military Personnel — `unreached`
-
-## Subcommittee on National Security, Illicit Finance & International Financial Institutions  — 2 unpriced
-
-`leg-house-cmte-financial-services-sub-national-security-illicit-finance-international-financial-institutions`
-
-- `leg-house-cmte-financial-services-sub-national-security-illicit-finance-international-financial-institutions-chair-subcommittee-on-national-security-illicit-finance-international-financial-institutions` — Chair, Subcommittee on National Security, Illicit Finance & International Financial Institutions — `unreached`
-- `leg-house-cmte-financial-services-sub-national-security-illicit-finance-international-financial-institutions-ranking-member-subcommittee-on-national-security-illicit-finance-international-financial-institutions` — Ranking Member, Subcommittee on National Security, Illicit Finance & International Financial Institutions — `unreached`
-
-## Subcommittee on National Security, the Border & Foreign Affairs  — 2 unpriced
-
-`leg-house-cmte-oversight-accountability-sub-national-security-the-border-foreign-affairs`
-
-- `leg-house-cmte-oversight-accountability-sub-national-security-the-border-foreign-affairs-chair-subcommittee-on-national-security-the-border-foreign-affairs` — Chair, Subcommittee on National Security, the Border & Foreign Affairs — `unreached`
-- `leg-house-cmte-oversight-accountability-sub-national-security-the-border-foreign-affairs-ranking-member-subcommittee-on-national-security-the-border-foreign-affairs` — Ranking Member, Subcommittee on National Security, the Border & Foreign Affairs — `unreached`
-
-## Subcommittee on Oversight  — 2 unpriced
-
-`leg-house-cmte-ways-means-sub-oversight`
-
-- `leg-house-cmte-ways-means-sub-oversight-chair-subcommittee-on-oversight` — Chair, Subcommittee on Oversight — `unreached`
-- `leg-house-cmte-ways-means-sub-oversight-ranking-member-subcommittee-on-oversight` — Ranking Member, Subcommittee on Oversight — `unreached`
-
-## Subcommittee on Oversight & Investigations  — 2 unpriced
-
-`leg-house-cmte-veterans-affairs-sub-oversight-investigations`
-
-- `leg-house-cmte-veterans-affairs-sub-oversight-investigations-chair-subcommittee-on-oversight-investigations` — Chair, Subcommittee on Oversight & Investigations — `unreached`
-- `leg-house-cmte-veterans-affairs-sub-oversight-investigations-ranking-member-subcommittee-on-oversight-investigations` — Ranking Member, Subcommittee on Oversight & Investigations — `unreached`
-
-## Subcommittee on Oversight & Investigations  — 2 unpriced
-
-`leg-house-cmte-natural-resources-sub-oversight-investigations`
-
-- `leg-house-cmte-natural-resources-sub-oversight-investigations-chair-subcommittee-on-oversight-investigations` — Chair, Subcommittee on Oversight & Investigations — `unreached`
-- `leg-house-cmte-natural-resources-sub-oversight-investigations-ranking-member-subcommittee-on-oversight-investigations` — Ranking Member, Subcommittee on Oversight & Investigations — `unreached`
-
-## Subcommittee on Oversight & Investigations  — 2 unpriced
-
-`leg-house-cmte-financial-services-sub-oversight-investigations`
-
-- `leg-house-cmte-financial-services-sub-oversight-investigations-chair-subcommittee-on-oversight-investigations` — Chair, Subcommittee on Oversight & Investigations — `unreached`
-- `leg-house-cmte-financial-services-sub-oversight-investigations-ranking-member-subcommittee-on-oversight-investigations` — Ranking Member, Subcommittee on Oversight & Investigations — `unreached`
-
-## Subcommittee on Oversight & Investigations  — 2 unpriced
-
-`leg-house-cmte-energy-commerce-sub-oversight-investigations`
-
-- `leg-house-cmte-energy-commerce-sub-oversight-investigations-chair-subcommittee-on-oversight-investigations` — Chair, Subcommittee on Oversight & Investigations — `unreached`
-- `leg-house-cmte-energy-commerce-sub-oversight-investigations-ranking-member-subcommittee-on-oversight-investigations` — Ranking Member, Subcommittee on Oversight & Investigations — `unreached`
-
-## Subcommittee on Oversight, Investigations & Accountability  — 2 unpriced
-
-`leg-house-cmte-homeland-security-sub-oversight-investigations-accountability`
-
-- `leg-house-cmte-homeland-security-sub-oversight-investigations-accountability-chair-subcommittee-on-oversight-investigations-accountability` — Chair, Subcommittee on Oversight, Investigations & Accountability — `unreached`
-- `leg-house-cmte-homeland-security-sub-oversight-investigations-accountability-ranking-member-subcommittee-on-oversight-investigations-accountability` — Ranking Member, Subcommittee on Oversight, Investigations & Accountability — `unreached`
-
-## Subcommittee on Oversight, Investigations & Regulations  — 2 unpriced
-
-`leg-house-cmte-small-business-sub-oversight-investigations-regulations`
-
-- `leg-house-cmte-small-business-sub-oversight-investigations-regulations-chair-subcommittee-on-oversight-investigations-regulations` — Chair, Subcommittee on Oversight, Investigations & Regulations — `unreached`
-- `leg-house-cmte-small-business-sub-oversight-investigations-regulations-ranking-member-subcommittee-on-oversight-investigations-regulations` — Ranking Member, Subcommittee on Oversight, Investigations & Regulations — `unreached`
-
-## Subcommittee on Railroads, Pipelines & Hazardous Materials  — 2 unpriced
-
-`leg-house-cmte-transportation-infrastructure-sub-railroads-pipelines-hazardous-materials`
-
-- `leg-house-cmte-transportation-infrastructure-sub-railroads-pipelines-hazardous-materials-chair-subcommittee-on-railroads-pipelines-hazardous-materials` — Chair, Subcommittee on Railroads, Pipelines & Hazardous Materials — `unreached`
-- `leg-house-cmte-transportation-infrastructure-sub-railroads-pipelines-hazardous-materials-ranking-member-subcommittee-on-railroads-pipelines-hazardous-materials` — Ranking Member, Subcommittee on Railroads, Pipelines & Hazardous Materials — `unreached`
-
-## Subcommittee on Readiness  — 2 unpriced
-
-`leg-house-cmte-armed-services-sub-readiness`
-
-- `leg-house-cmte-armed-services-sub-readiness-chair-subcommittee-on-readiness` — Chair, Subcommittee on Readiness — `unreached`
-- `leg-house-cmte-armed-services-sub-readiness-ranking-member-subcommittee-on-readiness` — Ranking Member, Subcommittee on Readiness — `unreached`
-
-## Subcommittee on Research & Technology  — 2 unpriced
-
-`leg-house-cmte-science-space-technology-sub-research-technology`
-
-- `leg-house-cmte-science-space-technology-sub-research-technology-chair-subcommittee-on-research-technology` — Chair, Subcommittee on Research & Technology — `unreached`
-- `leg-house-cmte-science-space-technology-sub-research-technology-ranking-member-subcommittee-on-research-technology` — Ranking Member, Subcommittee on Research & Technology — `unreached`
-
-## Subcommittee on Responsiveness & Accountability to Americans  — 2 unpriced
-
-`leg-house-cmte-judiciary-sub-responsiveness-accountability-to-americans`
-
-- `leg-house-cmte-judiciary-sub-responsiveness-accountability-to-americans-chair-subcommittee-on-responsiveness-accountability-to-americans` — Chair, Subcommittee on Responsiveness & Accountability to Americans — `unreached`
-- `leg-house-cmte-judiciary-sub-responsiveness-accountability-to-americans-ranking-member-subcommittee-on-responsiveness-accountability-to-americans` — Ranking Member, Subcommittee on Responsiveness & Accountability to Americans — `unreached`
-
-## Subcommittee on Rules and Organization of the House  — 2 unpriced
-
-`leg-house-cmte-rules-sub-rules-the-organization-of-the-house`
-
-- `leg-house-cmte-rules-sub-rules-the-organization-of-the-house-chair-subcommittee-on-rules-the-organization-of-the-house` — Chair, Subcommittee on Rules & the Organization of the House — `unreached`
-- `leg-house-cmte-rules-sub-rules-the-organization-of-the-house-ranking-member-subcommittee-on-rules-the-organization-of-the-house` — Ranking Member, Subcommittee on Rules & the Organization of the House — `unreached`
-
-## Subcommittee on Rural Development, Energy & Supply Chains  — 2 unpriced
-
-`leg-house-cmte-small-business-sub-rural-development-energy-supply-chains`
-
-- `leg-house-cmte-small-business-sub-rural-development-energy-supply-chains-chair-subcommittee-on-rural-development-energy-supply-chains` — Chair, Subcommittee on Rural Development, Energy & Supply Chains — `unreached`
-- `leg-house-cmte-small-business-sub-rural-development-energy-supply-chains-ranking-member-subcommittee-on-rural-development-energy-supply-chains` — Ranking Member, Subcommittee on Rural Development, Energy & Supply Chains — `unreached`
-
-## Subcommittee on Seapower & Projection Forces  — 2 unpriced
-
-`leg-house-cmte-armed-services-sub-seapower-projection-forces`
-
-- `leg-house-cmte-armed-services-sub-seapower-projection-forces-chair-subcommittee-on-seapower-projection-forces` — Chair, Subcommittee on Seapower & Projection Forces — `unreached`
-- `leg-house-cmte-armed-services-sub-seapower-projection-forces-ranking-member-subcommittee-on-seapower-projection-forces` — Ranking Member, Subcommittee on Seapower & Projection Forces — `unreached`
-
-## Subcommittee on Select Revenue Measures  — 2 unpriced
-
-`leg-house-cmte-ways-means-sub-select-revenue-measures`
-
-- `leg-house-cmte-ways-means-sub-select-revenue-measures-chair-subcommittee-on-select-revenue-measures` — Chair, Subcommittee on Select Revenue Measures — `unreached`
-- `leg-house-cmte-ways-means-sub-select-revenue-measures-ranking-member-subcommittee-on-select-revenue-measures` — Ranking Member, Subcommittee on Select Revenue Measures — `unreached`
-
-## Subcommittee on Social Security  — 2 unpriced
-
-`leg-house-cmte-ways-means-sub-social-security`
-
-- `leg-house-cmte-ways-means-sub-social-security-chair-subcommittee-on-social-security` — Chair, Subcommittee on Social Security — `unreached`
-- `leg-house-cmte-ways-means-sub-social-security-ranking-member-subcommittee-on-social-security` — Ranking Member, Subcommittee on Social Security — `unreached`
-
-## Subcommittee on Space & Aeronautics  — 2 unpriced
-
-`leg-house-cmte-science-space-technology-sub-space-aeronautics`
-
-- `leg-house-cmte-science-space-technology-sub-space-aeronautics-chair-subcommittee-on-space-aeronautics` — Chair, Subcommittee on Space & Aeronautics — `unreached`
-- `leg-house-cmte-science-space-technology-sub-space-aeronautics-ranking-member-subcommittee-on-space-aeronautics` — Ranking Member, Subcommittee on Space & Aeronautics — `unreached`
-
-## Subcommittee on Strategic Forces  — 2 unpriced
-
-`leg-house-cmte-armed-services-sub-strategic-forces`
-
-- `leg-house-cmte-armed-services-sub-strategic-forces-chair-subcommittee-on-strategic-forces` — Chair, Subcommittee on Strategic Forces — `unreached`
-- `leg-house-cmte-armed-services-sub-strategic-forces-ranking-member-subcommittee-on-strategic-forces` — Ranking Member, Subcommittee on Strategic Forces — `unreached`
-
-## Subcommittee on Strategic Technologies & Advanced Research  — 2 unpriced
-
-`leg-house-cmte-intelligence-sub-strategic-technologies-advanced-research`
-
-- `leg-house-cmte-intelligence-sub-strategic-technologies-advanced-research-chair-subcommittee-on-strategic-technologies-advanced-research` — Chair, Subcommittee on Strategic Technologies & Advanced Research — `unreached`
-- `leg-house-cmte-intelligence-sub-strategic-technologies-advanced-research-ranking-member-subcommittee-on-strategic-technologies-advanced-research` — Ranking Member, Subcommittee on Strategic Technologies & Advanced Research — `unreached`
-
-## Subcommittee on Tactical Air & Land Forces  — 2 unpriced
-
-`leg-house-cmte-armed-services-sub-tactical-air-land-forces`
-
-- `leg-house-cmte-armed-services-sub-tactical-air-land-forces-chair-subcommittee-on-tactical-air-land-forces` — Chair, Subcommittee on Tactical Air & Land Forces — `unreached`
-- `leg-house-cmte-armed-services-sub-tactical-air-land-forces-ranking-member-subcommittee-on-tactical-air-land-forces` — Ranking Member, Subcommittee on Tactical Air & Land Forces — `unreached`
-
-## Subcommittee on Tax  — 2 unpriced
-
-`leg-house-cmte-ways-means-sub-tax`
-
-- `leg-house-cmte-ways-means-sub-tax-chair-subcommittee-on-tax` — Chair, Subcommittee on Tax — `unreached`
-- `leg-house-cmte-ways-means-sub-tax-ranking-member-subcommittee-on-tax` — Ranking Member, Subcommittee on Tax — `unreached`
-
-## Subcommittee on Technology Modernization  — 2 unpriced
-
-`leg-house-cmte-veterans-affairs-sub-technology-modernization`
-
-- `leg-house-cmte-veterans-affairs-sub-technology-modernization-chair-subcommittee-on-technology-modernization` — Chair, Subcommittee on Technology Modernization — `unreached`
-- `leg-house-cmte-veterans-affairs-sub-technology-modernization-ranking-member-subcommittee-on-technology-modernization` — Ranking Member, Subcommittee on Technology Modernization — `unreached`
-
-## Subcommittee on The Western Hemisphere  — 2 unpriced
-
-`leg-house-cmte-foreign-affairs-sub-the-western-hemisphere`
-
-- `leg-house-cmte-foreign-affairs-sub-the-western-hemisphere-chair-subcommittee-on-the-western-hemisphere` — Chair, Subcommittee on The Western Hemisphere — `unreached`
-- `leg-house-cmte-foreign-affairs-sub-the-western-hemisphere-ranking-member-subcommittee-on-the-western-hemisphere` — Ranking Member, Subcommittee on The Western Hemisphere — `unreached`
-
-## Subcommittee on Trade  — 2 unpriced
-
-`leg-house-cmte-ways-means-sub-trade`
-
-- `leg-house-cmte-ways-means-sub-trade-chair-subcommittee-on-trade` — Chair, Subcommittee on Trade — `unreached`
-- `leg-house-cmte-ways-means-sub-trade-ranking-member-subcommittee-on-trade` — Ranking Member, Subcommittee on Trade — `unreached`
-
-## Subcommittee on Transportation & Maritime Security  — 2 unpriced
-
-`leg-house-cmte-homeland-security-sub-transportation-maritime-security`
-
-- `leg-house-cmte-homeland-security-sub-transportation-maritime-security-chair-subcommittee-on-transportation-maritime-security` — Chair, Subcommittee on Transportation & Maritime Security — `unreached`
-- `leg-house-cmte-homeland-security-sub-transportation-maritime-security-ranking-member-subcommittee-on-transportation-maritime-security` — Ranking Member, Subcommittee on Transportation & Maritime Security — `unreached`
-
-## Subcommittee on Water Resources & Environment  — 2 unpriced
-
-`leg-house-cmte-transportation-infrastructure-sub-water-resources-environment`
-
-- `leg-house-cmte-transportation-infrastructure-sub-water-resources-environment-chair-subcommittee-on-water-resources-environment` — Chair, Subcommittee on Water Resources & Environment — `unreached`
-- `leg-house-cmte-transportation-infrastructure-sub-water-resources-environment-ranking-member-subcommittee-on-water-resources-environment` — Ranking Member, Subcommittee on Water Resources & Environment — `unreached`
-
-## Subcommittee on Water, Wildlife & Fisheries  — 2 unpriced
-
-`leg-house-cmte-natural-resources-sub-water-wildlife-fisheries`
-
-- `leg-house-cmte-natural-resources-sub-water-wildlife-fisheries-chair-subcommittee-on-water-wildlife-fisheries` — Chair, Subcommittee on Water, Wildlife & Fisheries — `unreached`
-- `leg-house-cmte-natural-resources-sub-water-wildlife-fisheries-ranking-member-subcommittee-on-water-wildlife-fisheries` — Ranking Member, Subcommittee on Water, Wildlife & Fisheries — `unreached`
-
-## Subcommittee on Work and Welfare  — 2 unpriced
-
-`leg-house-cmte-ways-means-sub-worker-family-support`
-
-- `leg-house-cmte-ways-means-sub-worker-family-support-chair-subcommittee-on-worker-family-support` — Chair, Subcommittee on Worker & Family Support — `unreached`
-- `leg-house-cmte-ways-means-sub-worker-family-support-ranking-member-subcommittee-on-worker-family-support` — Ranking Member, Subcommittee on Worker & Family Support — `unreached`
-
-## Subcommittee on Workforce & Environmental Regulation  — 2 unpriced
-
-`leg-house-cmte-education-the-workforce-sub-workforce-environmental-regulation`
-
-- `leg-house-cmte-education-the-workforce-sub-workforce-environmental-regulation-chair-subcommittee-on-workforce-environmental-regulation` — Chair, Subcommittee on Workforce & Environmental Regulation — `unreached`
-- `leg-house-cmte-education-the-workforce-sub-workforce-environmental-regulation-ranking-member-subcommittee-on-workforce-environmental-regulation` — Ranking Member, Subcommittee on Workforce & Environmental Regulation — `unreached`
-
-## Subcommittee on the National Security Agency and Cyber  — 2 unpriced
-
-`leg-house-cmte-intelligence-sub-nsa-cybersecurity`
-
-- `leg-house-cmte-intelligence-sub-nsa-cybersecurity-chair-subcommittee-on-nsa-cybersecurity` — Chair, Subcommittee on NSA & Cybersecurity — `unreached`
-- `leg-house-cmte-intelligence-sub-nsa-cybersecurity-ranking-member-subcommittee-on-nsa-cybersecurity` — Ranking Member, Subcommittee on NSA & Cybersecurity — `unreached`
-
 ## Technology, Innovation & Partnerships (TIP)  — 2 unpriced
 
 `exec-ind-nsf-technology-innovation-partnerships-tip`
@@ -7473,12 +6038,19 @@ same list in the same run.
 - `exec-ind-nsf-technology-innovation-partnerships-tip-assistant-director-technology-innovation-partnerships-tip` — Assistant Director, Technology, Innovation & Partnerships (TIP) — `unreached`
 - `exec-ind-nsf-technology-innovation-partnerships-tip-deputy-assistant-director` — Deputy Assistant Director — `unreached`
 
-## Transportation, Housing and Urban Development, and Related Agencies  — 2 unpriced
+## U.S. Senate Select Committee on Ethics  — 2 unpriced
 
-`leg-house-cmte-appropriations-sub-transportation-hud-related-agencies`
+`leg-senate-cmte-select-committee-on-ethics`
 
-- `leg-house-cmte-appropriations-sub-transportation-hud-related-agencies-chair-subcommittee-on-transportation-hud-related-agencies` — Chair, Subcommittee on Transportation, HUD & Related Agencies — `unreached`
-- `leg-house-cmte-appropriations-sub-transportation-hud-related-agencies-ranking-member-subcommittee-on-transportation-hud-related-agencies` — Ranking Member, Subcommittee on Transportation, HUD & Related Agencies — `unreached`
+- `leg-senate-cmte-select-committee-on-ethics-minority-staff-director-select-committee-on-ethics` — Minority Staff Director, Select Committee on Ethics — `unreached`
+- `leg-senate-cmte-select-committee-on-ethics-staff-director-select-committee-on-ethics` — Staff Director, Select Committee on Ethics — `unreached`
+
+## United States Senate Committee on the Judiciary  — 2 unpriced
+
+`leg-senate-cmte-judiciary`
+
+- `leg-senate-cmte-judiciary-minority-staff-director-judiciary` — Minority Staff Director, Judiciary — `unreached`
+- `leg-senate-cmte-judiciary-staff-director-judiciary` — Staff Director, Judiciary — `unreached`
 
 ## Veterans Health Administration (VHA)  — 2 unpriced
 
@@ -7487,11 +6059,431 @@ same list in the same run.
 - `exec-dept-va-vha-deputy-under-secretary-community-care` — Deputy Under Secretary — Community Care — `unreached`
 - `exec-dept-va-vha-principal-deputy-under-secretary-for-health` — Principal Deputy Under Secretary for Health — `unreached`
 
+## Africa & Global Health Policy  — 1 unpriced
+
+`leg-senate-cmte-foreign-relations-sub-africa-global-health-policy`
+
+- `leg-senate-cmte-foreign-relations-sub-africa-global-health-policy-staff-director-subcommittee-on-africa-global-health-policy` — Staff Director, Subcommittee on Africa & Global Health Policy — `unreached`
+
+## Agriculture, Rural Development, Food and Drug Administration, and Related Agencies  — 1 unpriced
+
+`leg-senate-cmte-appropriations-sub-agriculture-rural-development-fda-related-agencies`
+
+- `leg-senate-cmte-appropriations-sub-agriculture-rural-development-fda-related-agencies-staff-director-subcommittee-on-agriculture-rural-development-fda-related-agencies` — Staff Director, Subcommittee on Agriculture, Rural Development, FDA & Related Agencies — `unreached`
+
+## Airland  — 1 unpriced
+
+`leg-senate-cmte-armed-services-sub-airland`
+
+- `leg-senate-cmte-armed-services-sub-airland-staff-director-subcommittee-on-airland` — Staff Director, Subcommittee on Airland — `unreached`
+
+## Antitrust, Competition Policy, and Consumer Rights  — 1 unpriced
+
+`leg-senate-cmte-judiciary-sub-competition-policy-antitrust-consumer-rights`
+
+- `leg-senate-cmte-judiciary-sub-competition-policy-antitrust-consumer-rights-staff-director-subcommittee-on-competition-policy-antitrust-consumer-rights` — Staff Director, Subcommittee on Competition Policy, Antitrust & Consumer Rights — `unreached`
+
+## Aviation, Space, & Innovation  — 1 unpriced
+
+`leg-senate-cmte-commerce-science-transportation-sub-aviation-safety-operations-innovation`
+
+- `leg-senate-cmte-commerce-science-transportation-sub-aviation-safety-operations-innovation-staff-director-subcommittee-on-aviation-safety-operations-innovation` — Staff Director, Subcommittee on Aviation Safety, Operations & Innovation — `unreached`
+
+## Border Management, Federal Workforce, and Regulatory Affairs  — 1 unpriced
+
+`leg-senate-cmte-homeland-security-governmental-affairs-sub-government-operations-border-management`
+
+- `leg-senate-cmte-homeland-security-governmental-affairs-sub-government-operations-border-management-staff-director-subcommittee-on-government-operations-border-management` — Staff Director, Subcommittee on Government Operations & Border Management — `unreached`
+
+## Chemical Safety, Waste Management, Environmental Justice & Regulatory Oversight  — 1 unpriced
+
+`leg-senate-cmte-environment-public-works-sub-chemical-safety-waste-management-environmental-justice-regulatory-oversight`
+
+- `leg-senate-cmte-environment-public-works-sub-chemical-safety-waste-management-environmental-justice-regulatory-oversight-staff-director-subcommittee-on-chemical-safety-waste-management-environmental-justice-regulatory-oversight` — Staff Director, Subcommittee on Chemical Safety, Waste Management, Environmental Justice & Regulatory Oversight — `unreached`
+
+## Children & Families  — 1 unpriced
+
+`leg-senate-cmte-health-education-labor-pensions-sub-children-families`
+
+- `leg-senate-cmte-health-education-labor-pensions-sub-children-families-staff-director-subcommittee-on-children-families` — Staff Director, Subcommittee on Children & Families — `unreached`
+
+## Clean Air, Climate, and Nuclear Innovation and Safety  — 1 unpriced
+
+`leg-senate-cmte-environment-public-works-sub-clean-air-climate-nuclear-safety`
+
+- `leg-senate-cmte-environment-public-works-sub-clean-air-climate-nuclear-safety-staff-director-subcommittee-on-clean-air-climate-nuclear-safety` — Staff Director, Subcommittee on Clean Air, Climate & Nuclear Safety — `unreached`
+
+## Commerce, Justice, Science & Related Agencies  — 1 unpriced
+
+`leg-senate-cmte-appropriations-sub-commerce-justice-science-related-agencies`
+
+- `leg-senate-cmte-appropriations-sub-commerce-justice-science-related-agencies-staff-director-subcommittee-on-commerce-justice-science-related-agencies` — Staff Director, Subcommittee on Commerce, Justice, Science & Related Agencies — `unreached`
+
+## Constitution  — 1 unpriced
+
+`leg-senate-cmte-judiciary-sub-constitution`
+
+- `leg-senate-cmte-judiciary-sub-constitution-staff-director-subcommittee-on-constitution` — Staff Director, Subcommittee on Constitution — `unreached`
+
+## Consumer Protection, Technology, & Data Privacy  — 1 unpriced
+
+`leg-senate-cmte-commerce-science-transportation-sub-consumer-protection-product-safety-data-security`
+
+- `leg-senate-cmte-commerce-science-transportation-sub-consumer-protection-product-safety-data-security-staff-director-subcommittee-on-consumer-protection-product-safety-data-security` — Staff Director, Subcommittee on Consumer Protection, Product Safety & Data Security — `unreached`
+
+## Cybersecurity  — 1 unpriced
+
+`leg-senate-cmte-armed-services-sub-cybersecurity`
+
+- `leg-senate-cmte-armed-services-sub-cybersecurity-staff-director-subcommittee-on-cybersecurity` — Staff Director, Subcommittee on Cybersecurity — `unreached`
+
+## Defense  — 1 unpriced
+
+`leg-senate-cmte-appropriations-sub-defense`
+
+- `leg-senate-cmte-appropriations-sub-defense-staff-director-subcommittee-on-defense` — Staff Director, Subcommittee on Defense — `unreached`
+
+## East Asia, The Pacific & International Cybersecurity Policy  — 1 unpriced
+
+`leg-senate-cmte-foreign-relations-sub-east-asia-the-pacific-international-cybersecurity-policy`
+
+- `leg-senate-cmte-foreign-relations-sub-east-asia-the-pacific-international-cybersecurity-policy-staff-director-subcommittee-on-east-asia-the-pacific-international-cybersecurity-policy` — Staff Director, Subcommittee on East Asia, The Pacific & International Cybersecurity Policy — `unreached`
+
+## Economic Policy  — 1 unpriced
+
+`leg-senate-cmte-banking-housing-urban-affairs-sub-economic-policy`
+
+- `leg-senate-cmte-banking-housing-urban-affairs-sub-economic-policy-staff-director-subcommittee-on-economic-policy` — Staff Director, Subcommittee on Economic Policy — `unreached`
+
+## Emerging Threats & Capabilities  — 1 unpriced
+
+`leg-senate-cmte-armed-services-sub-emerging-threats-capabilities`
+
+- `leg-senate-cmte-armed-services-sub-emerging-threats-capabilities-staff-director-subcommittee-on-emerging-threats-capabilities` — Staff Director, Subcommittee on Emerging Threats & Capabilities — `unreached`
+
+## Emerging Threats & Spending Oversight  — 1 unpriced
+
+`leg-senate-cmte-homeland-security-governmental-affairs-sub-emerging-threats-spending-oversight`
+
+- `leg-senate-cmte-homeland-security-governmental-affairs-sub-emerging-threats-spending-oversight-staff-director-subcommittee-on-emerging-threats-spending-oversight` — Staff Director, Subcommittee on Emerging Threats & Spending Oversight — `unreached`
+
+## Employment & Workplace Safety  — 1 unpriced
+
+`leg-senate-cmte-health-education-labor-pensions-sub-employment-workplace-safety`
+
+- `leg-senate-cmte-health-education-labor-pensions-sub-employment-workplace-safety-staff-director-subcommittee-on-employment-workplace-safety` — Staff Director, Subcommittee on Employment & Workplace Safety — `unreached`
+
+## Energy & Water Development  — 1 unpriced
+
+`leg-senate-cmte-appropriations-sub-energy-water-development`
+
+- `leg-senate-cmte-appropriations-sub-energy-water-development-staff-director-subcommittee-on-energy-water-development` — Staff Director, Subcommittee on Energy & Water Development — `unreached`
+
+## Energy, Natural Resources & Infrastructure  — 1 unpriced
+
+`leg-senate-cmte-finance-sub-energy-natural-resources-infrastructure`
+
+- `leg-senate-cmte-finance-sub-energy-natural-resources-infrastructure-staff-director-subcommittee-on-energy-natural-resources-infrastructure` — Staff Director, Subcommittee on Energy, Natural Resources & Infrastructure — `unreached`
+
+## Europe & Regional Security Cooperation  — 1 unpriced
+
+`leg-senate-cmte-foreign-relations-sub-europe-regional-security-cooperation`
+
+- `leg-senate-cmte-foreign-relations-sub-europe-regional-security-cooperation-staff-director-subcommittee-on-europe-regional-security-cooperation` — Staff Director, Subcommittee on Europe & Regional Security Cooperation — `unreached`
+
 ## Executive Branch  — 1 unpriced
 
 `executive-branch`
 
 - `exec-president` — The President of the United States — `unreached`
+
+## Financial Institutions & Consumer Protection  — 1 unpriced
+
+`leg-senate-cmte-banking-housing-urban-affairs-sub-financial-institutions-consumer-protection`
+
+- `leg-senate-cmte-banking-housing-urban-affairs-sub-financial-institutions-consumer-protection-staff-director-subcommittee-on-financial-institutions-consumer-protection` — Staff Director, Subcommittee on Financial Institutions & Consumer Protection — `unreached`
+
+## Financial Services & General Government  — 1 unpriced
+
+`leg-senate-cmte-appropriations-sub-financial-services-general-government`
+
+- `leg-senate-cmte-appropriations-sub-financial-services-general-government-staff-director-subcommittee-on-financial-services-general-government` — Staff Director, Subcommittee on Financial Services & General Government — `unreached`
+
+## Fiscal Responsibility & Economic Growth  — 1 unpriced
+
+`leg-senate-cmte-finance-sub-fiscal-responsibility-economic-growth`
+
+- `leg-senate-cmte-finance-sub-fiscal-responsibility-economic-growth-staff-director-subcommittee-on-fiscal-responsibility-economic-growth` — Staff Director, Subcommittee on Fiscal Responsibility & Economic Growth — `unreached`
+
+## Fisheries, Water & Wildlife  — 1 unpriced
+
+`leg-senate-cmte-environment-public-works-sub-fisheries-water-wildlife`
+
+- `leg-senate-cmte-environment-public-works-sub-fisheries-water-wildlife-staff-director-subcommittee-on-fisheries-water-wildlife` — Staff Director, Subcommittee on Fisheries, Water & Wildlife — `unreached`
+
+## Food and Nutrition, Specialty Crops, Organics, and Research  — 1 unpriced
+
+`leg-senate-cmte-agriculture-nutrition-and-forestry-sub-food-nutrition-specialty-crops-agricultural-research`
+
+- `leg-senate-cmte-agriculture-nutrition-and-forestry-sub-food-nutrition-specialty-crops-agricultural-research-staff-director-subcommittee-on-food-nutrition-specialty-crops-agricultural-research` — Staff Director, Subcommittee on Food & Nutrition, Specialty Crops & Agricultural Research — `unreached`
+
+## Health Care  — 1 unpriced
+
+`leg-senate-cmte-finance-sub-health-care`
+
+- `leg-senate-cmte-finance-sub-health-care-staff-director-subcommittee-on-health-care` — Staff Director, Subcommittee on Health Care — `unreached`
+
+## Homeland Security  — 1 unpriced
+
+`leg-senate-cmte-appropriations-sub-homeland-security`
+
+- `leg-senate-cmte-appropriations-sub-homeland-security-staff-director-subcommittee-on-homeland-security` — Staff Director, Subcommittee on Homeland Security — `unreached`
+
+## House Leadership  — 1 unpriced
+
+`leg-house-leadership`
+
+- `leg-house-leadership-problem-solvers-caucus-co-chairs` — Problem Solvers Caucus Co-Chairs — `unreached`
+
+## Housing, Transportation & Community Development  — 1 unpriced
+
+`leg-senate-cmte-banking-housing-urban-affairs-sub-housing-transportation-community-development`
+
+- `leg-senate-cmte-banking-housing-urban-affairs-sub-housing-transportation-community-development-staff-director-subcommittee-on-housing-transportation-community-development` — Staff Director, Subcommittee on Housing, Transportation & Community Development — `unreached`
+
+## Human Rights & the Law  — 1 unpriced
+
+`leg-senate-cmte-judiciary-sub-human-rights-the-law`
+
+- `leg-senate-cmte-judiciary-sub-human-rights-the-law-staff-director-subcommittee-on-human-rights-the-law` — Staff Director, Subcommittee on Human Rights & the Law — `unreached`
+
+## Intellectual Property  — 1 unpriced
+
+`leg-senate-cmte-judiciary-sub-intellectual-property`
+
+- `leg-senate-cmte-judiciary-sub-intellectual-property-staff-director-subcommittee-on-intellectual-property` — Staff Director, Subcommittee on Intellectual Property — `unreached`
+
+## Interior, Environment & Related Agencies  — 1 unpriced
+
+`leg-senate-cmte-appropriations-sub-interior-environment-related-agencies`
+
+- `leg-senate-cmte-appropriations-sub-interior-environment-related-agencies-staff-director-subcommittee-on-interior-environment-related-agencies` — Staff Director, Subcommittee on Interior, Environment & Related Agencies — `unreached`
+
+## International Trade, Customs & Global Competitiveness  — 1 unpriced
+
+`leg-senate-cmte-finance-sub-international-trade-customs-global-competitiveness`
+
+- `leg-senate-cmte-finance-sub-international-trade-customs-global-competitiveness-staff-director-subcommittee-on-international-trade-customs-global-competitiveness` — Staff Director, Subcommittee on International Trade, Customs & Global Competitiveness — `unreached`
+
+## Labor, Health and Human Services, Education, and Related Agencies  — 1 unpriced
+
+`leg-senate-cmte-appropriations-sub-labor-hhs-education-related-agencies`
+
+- `leg-senate-cmte-appropriations-sub-labor-hhs-education-related-agencies-staff-director-subcommittee-on-labor-hhs-education-related-agencies` — Staff Director, Subcommittee on Labor, HHS, Education & Related Agencies — `unreached`
+
+## Legislative Branch  — 1 unpriced
+
+`leg-senate-cmte-appropriations-sub-legislative-branch`
+
+- `leg-senate-cmte-appropriations-sub-legislative-branch-staff-director-subcommittee-on-legislative-branch` — Staff Director, Subcommittee on Legislative Branch — `unreached`
+
+## Military Construction, Veterans Affairs & Related Agencies  — 1 unpriced
+
+`leg-senate-cmte-appropriations-sub-military-construction-veterans-affairs-related-agencies`
+
+- `leg-senate-cmte-appropriations-sub-military-construction-veterans-affairs-related-agencies-staff-director-subcommittee-on-military-construction-veterans-affairs-related-agencies` — Staff Director, Subcommittee on Military Construction, Veterans Affairs & Related Agencies — `unreached`
+
+## Multilateral International Development, Multilateral Institutions & International Economic, Energy & Environmental Policy  — 1 unpriced
+
+`leg-senate-cmte-foreign-relations-sub-multilateral-international-development-multilateral-institutions-international-economic-energy-environmental-policy`
+
+- `leg-senate-cmte-foreign-relations-sub-multilateral-international-development-multilateral-institutions-international-economic-energy-environmental-policy-staff-director-subcommittee-on-multilateral-international-development-multilateral-institutions-international-economic-energy-environmental-policy` — Staff Director, Subcommittee on Multilateral International Development, Multilateral Institutions & International Economic, Energy & Environmental Policy — `unreached`
+
+## National Parks  — 1 unpriced
+
+`leg-senate-cmte-energy-natural-resources-sub-national-parks`
+
+- `leg-senate-cmte-energy-natural-resources-sub-national-parks-staff-director-subcommittee-on-national-parks` — Staff Director, Subcommittee on National Parks — `unreached`
+
+## National Security & International Trade & Finance  — 1 unpriced
+
+`leg-senate-cmte-banking-housing-urban-affairs-sub-national-security-international-trade-finance`
+
+- `leg-senate-cmte-banking-housing-urban-affairs-sub-national-security-international-trade-finance-staff-director-subcommittee-on-national-security-international-trade-finance` — Staff Director, Subcommittee on National Security & International Trade & Finance — `unreached`
+
+## Near East, South Asia, Central Asia & Counterterrorism  — 1 unpriced
+
+`leg-senate-cmte-foreign-relations-sub-near-east-south-asia-central-asia-counterterrorism`
+
+- `leg-senate-cmte-foreign-relations-sub-near-east-south-asia-central-asia-counterterrorism-staff-director-subcommittee-on-near-east-south-asia-central-asia-counterterrorism` — Staff Director, Subcommittee on Near East, South Asia, Central Asia & Counterterrorism — `unreached`
+
+## Oceans, Fisheries, Climate Change & Manufacturing  — 1 unpriced
+
+`leg-senate-cmte-commerce-science-transportation-sub-oceans-fisheries-climate-change-manufacturing`
+
+- `leg-senate-cmte-commerce-science-transportation-sub-oceans-fisheries-climate-change-manufacturing-staff-director-subcommittee-on-oceans-fisheries-climate-change-manufacturing` — Staff Director, Subcommittee on Oceans, Fisheries, Climate Change & Manufacturing — `unreached`
+
+## Permanent Subcommittee on Investigations  — 1 unpriced
+
+`leg-senate-cmte-homeland-security-governmental-affairs-sub-investigations-subcommittee-on-permanent-investigations`
+
+- `leg-senate-cmte-homeland-security-governmental-affairs-sub-investigations-subcommittee-on-permanent-investigations-staff-director-subcommittee-on-investigations-subcommittee-on-permanent-investigations` — Staff Director, Subcommittee on Investigations & Subcommittee on Permanent Investigations — `unreached`
+
+## Personnel  — 1 unpriced
+
+`leg-senate-cmte-armed-services-sub-personnel`
+
+- `leg-senate-cmte-armed-services-sub-personnel-staff-director-subcommittee-on-personnel` — Staff Director, Subcommittee on Personnel — `unreached`
+
+## Primary Health & Retirement Security  — 1 unpriced
+
+`leg-senate-cmte-health-education-labor-pensions-sub-primary-health-retirement-security`
+
+- `leg-senate-cmte-health-education-labor-pensions-sub-primary-health-retirement-security-staff-director-subcommittee-on-primary-health-retirement-security` — Staff Director, Subcommittee on Primary Health & Retirement Security — `unreached`
+
+## Privacy, Technology & the Law  — 1 unpriced
+
+`leg-senate-cmte-judiciary-sub-privacy-technology-the-law`
+
+- `leg-senate-cmte-judiciary-sub-privacy-technology-the-law-staff-director-subcommittee-on-privacy-technology-the-law` — Staff Director, Subcommittee on Privacy, Technology & the Law — `unreached`
+
+## Public Lands, Forests & Mining  — 1 unpriced
+
+`leg-senate-cmte-energy-natural-resources-sub-public-lands-forests-mining`
+
+- `leg-senate-cmte-energy-natural-resources-sub-public-lands-forests-mining-staff-director-subcommittee-on-public-lands-forests-mining` — Staff Director, Subcommittee on Public Lands, Forests & Mining — `unreached`
+
+## Readiness & Management Support  — 1 unpriced
+
+`leg-senate-cmte-armed-services-sub-readiness-management-support`
+
+- `leg-senate-cmte-armed-services-sub-readiness-management-support-staff-director-subcommittee-on-readiness-management-support` — Staff Director, Subcommittee on Readiness & Management Support — `unreached`
+
+## Science & Space  — 1 unpriced
+
+`leg-senate-cmte-commerce-science-transportation-sub-science-space`
+
+- `leg-senate-cmte-commerce-science-transportation-sub-science-space-staff-director-subcommittee-on-science-space` — Staff Director, Subcommittee on Science & Space — `unreached`
+
+## Seapower  — 1 unpriced
+
+`leg-senate-cmte-armed-services-sub-seapower`
+
+- `leg-senate-cmte-armed-services-sub-seapower-staff-director-subcommittee-on-seapower` — Staff Director, Subcommittee on Seapower — `unreached`
+
+## Securities, Insurance & Investment  — 1 unpriced
+
+`leg-senate-cmte-banking-housing-urban-affairs-sub-securities-insurance-investment`
+
+- `leg-senate-cmte-banking-housing-urban-affairs-sub-securities-insurance-investment-staff-director-subcommittee-on-securities-insurance-investment` — Staff Director, Subcommittee on Securities, Insurance & Investment — `unreached`
+
+## Senate Leadership  — 1 unpriced
+
+`leg-senate-leadership`
+
+- `leg-senate-leadership-president-of-the-senate-vice-president` — President of the Senate (Vice President) — `unreached`
+
+## Social Security, Pensions & Family Policy  — 1 unpriced
+
+`leg-senate-cmte-finance-sub-social-security-pensions-family-policy`
+
+- `leg-senate-cmte-finance-sub-social-security-pensions-family-policy-staff-director-subcommittee-on-social-security-pensions-family-policy` — Staff Director, Subcommittee on Social Security, Pensions & Family Policy — `unreached`
+
+## State Department & USAID Management, International Operations & Bilateral International Development  — 1 unpriced
+
+`leg-senate-cmte-foreign-relations-sub-state-department-usaid-management-international-operations-bilateral-international-development`
+
+- `leg-senate-cmte-foreign-relations-sub-state-department-usaid-management-international-operations-bilateral-international-development-staff-director-subcommittee-on-state-department-usaid-management-international-operations-bilateral-international-development` — Staff Director, Subcommittee on State Department & USAID Management, International Operations & Bilateral International Development — `unreached`
+
+## State, Foreign Operations & Related Programs  — 1 unpriced
+
+`leg-senate-cmte-appropriations-sub-state-foreign-operations-related-programs`
+
+- `leg-senate-cmte-appropriations-sub-state-foreign-operations-related-programs-staff-director-subcommittee-on-state-foreign-operations-related-programs` — Staff Director, Subcommittee on State, Foreign Operations & Related Programs — `unreached`
+
+## Strategic Forces  — 1 unpriced
+
+`leg-senate-cmte-armed-services-sub-strategic-forces`
+
+- `leg-senate-cmte-armed-services-sub-strategic-forces-staff-director-subcommittee-on-strategic-forces` — Staff Director, Subcommittee on Strategic Forces — `unreached`
+
+## Subcommittee on Border Security and Immigration  — 1 unpriced
+
+`leg-senate-cmte-judiciary-sub-immigration-citizenship-border-safety`
+
+- `leg-senate-cmte-judiciary-sub-immigration-citizenship-border-safety-staff-director-subcommittee-on-immigration-citizenship-border-safety` — Staff Director, Subcommittee on Immigration, Citizenship & Border Safety — `unreached`
+
+## Subcommittee on Crime and Counterterrorism  — 1 unpriced
+
+`leg-senate-cmte-judiciary-sub-criminal-justice-counterterrorism`
+
+- `leg-senate-cmte-judiciary-sub-criminal-justice-counterterrorism-staff-director-subcommittee-on-criminal-justice-counterterrorism` — Staff Director, Subcommittee on Criminal Justice & Counterterrorism — `unreached`
+
+## Subcommittee on Energy  — 1 unpriced
+
+`leg-senate-cmte-energy-natural-resources-sub-energy`
+
+- `leg-senate-cmte-energy-natural-resources-sub-energy-staff-director-subcommittee-on-energy` — Staff Director, Subcommittee on Energy — `unreached`
+
+## Subcommittee on Livestock, Dairy, Poultry, and Food Safety  — 1 unpriced
+
+`leg-senate-cmte-agriculture-nutrition-and-forestry-sub-livestock-dairy-poultry-local-food-systems-food-safety-security`
+
+- `leg-senate-cmte-agriculture-nutrition-and-forestry-sub-livestock-dairy-poultry-local-food-systems-food-safety-security-staff-director-subcommittee-on-livestock-dairy-poultry-local-food-systems-food-safety-security` — Staff Director, Subcommittee on Livestock, Dairy, Poultry, Local Food Systems & Food Safety & Security — `unreached`
+
+## Subcommittee on Rural Development, Energy, and Credit  — 1 unpriced
+
+`leg-senate-cmte-agriculture-nutrition-and-forestry-sub-rural-development-energy`
+
+- `leg-senate-cmte-agriculture-nutrition-and-forestry-sub-rural-development-energy-staff-director-subcommittee-on-rural-development-energy` — Staff Director, Subcommittee on Rural Development & Energy — `unreached`
+
+## Surface Transportation, Maritime, Freight & Ports  — 1 unpriced
+
+`leg-senate-cmte-commerce-science-transportation-sub-surface-transportation-maritime-freight-ports`
+
+- `leg-senate-cmte-commerce-science-transportation-sub-surface-transportation-maritime-freight-ports-staff-director-subcommittee-on-surface-transportation-maritime-freight-ports` — Staff Director, Subcommittee on Surface Transportation, Maritime, Freight & Ports — `unreached`
+
+## Taxation & IRS Oversight  — 1 unpriced
+
+`leg-senate-cmte-finance-sub-taxation-irs-oversight`
+
+- `leg-senate-cmte-finance-sub-taxation-irs-oversight-staff-director-subcommittee-on-taxation-irs-oversight` — Staff Director, Subcommittee on Taxation & IRS Oversight — `unreached`
+
+## Telecommunications and Media  — 1 unpriced
+
+`leg-senate-cmte-commerce-science-transportation-sub-communications-media-broadband`
+
+- `leg-senate-cmte-commerce-science-transportation-sub-communications-media-broadband-staff-director-subcommittee-on-communications-media-broadband` — Staff Director, Subcommittee on Communications, Media & Broadband — `unreached`
+
+## The Subcommittee on Commodities, Derivatives, Risk Management, and Trade  — 1 unpriced
+
+`leg-senate-cmte-agriculture-nutrition-and-forestry-sub-commodities-risk-management-trade`
+
+- `leg-senate-cmte-agriculture-nutrition-and-forestry-sub-commodities-risk-management-trade-staff-director-subcommittee-on-commodities-risk-management-trade` — Staff Director, Subcommittee on Commodities, Risk Management & Trade — `unreached`
+
+## The Subcommittee on Conservation, Forestry, Natural Resources, and Biotechnology  — 1 unpriced
+
+`leg-senate-cmte-agriculture-nutrition-and-forestry-sub-conservation-climate-forestry-natural-resources`
+
+- `leg-senate-cmte-agriculture-nutrition-and-forestry-sub-conservation-climate-forestry-natural-resources-staff-director-subcommittee-on-conservation-climate-forestry-natural-resources` — Staff Director, Subcommittee on Conservation, Climate, Forestry & Natural Resources — `unreached`
+
+## Tourism, Trade & Export Promotion  — 1 unpriced
+
+`leg-senate-cmte-commerce-science-transportation-sub-tourism-trade-export-promotion`
+
+- `leg-senate-cmte-commerce-science-transportation-sub-tourism-trade-export-promotion-staff-director-subcommittee-on-tourism-trade-export-promotion` — Staff Director, Subcommittee on Tourism, Trade & Export Promotion — `unreached`
+
+## Transportation & Infrastructure  — 1 unpriced
+
+`leg-senate-cmte-environment-public-works-sub-transportation-infrastructure`
+
+- `leg-senate-cmte-environment-public-works-sub-transportation-infrastructure-staff-director-subcommittee-on-transportation-infrastructure` — Staff Director, Subcommittee on Transportation & Infrastructure — `unreached`
+
+## Transportation, Housing and Urban Development, and Related Agencies  — 1 unpriced
+
+`leg-senate-cmte-appropriations-sub-transportation-hud-related-agencies`
+
+- `leg-senate-cmte-appropriations-sub-transportation-hud-related-agencies-staff-director-subcommittee-on-transportation-hud-related-agencies` — Staff Director, Subcommittee on Transportation, HUD & Related Agencies — `unreached`
 
 ## USPS Capital Metro Area  — 1 unpriced
 
@@ -7642,4 +6634,16 @@ same list in the same run.
 `exec-dept-va-vha-visn-9-mid-south`
 
 - `exec-dept-va-vha-visn-9-mid-south-network-cfo-visn-9-mid-south` — Network CFO, VISN 9 — Mid South — `unreached`
+
+## Water & Power  — 1 unpriced
+
+`leg-senate-cmte-energy-natural-resources-sub-water-power`
+
+- `leg-senate-cmte-energy-natural-resources-sub-water-power-staff-director-subcommittee-on-water-power` — Staff Director, Subcommittee on Water & Power — `unreached`
+
+## Western Hemisphere, Transnational Crime, Civilian Security, Democracy, Human Rights & Global Women's Issues  — 1 unpriced
+
+`leg-senate-cmte-foreign-relations-sub-western-hemisphere-transnational-crime-civilian-security-democracy-human-rights-global-womens-issues`
+
+- `leg-senate-cmte-foreign-relations-sub-western-hemisphere-transnational-crime-civilian-security-democracy-human-rights-global-womens-issues-staff-director-subcommittee-on-western-hemisphere-transnational-crime-civilian-security-democracy-human-rights-global-womens-issues` — Staff Director, Subcommittee on Western Hemisphere, Transnational Crime, Civilian Security, Democracy, Human Rights & Global Women's Issues — `unreached`
 

@@ -526,9 +526,12 @@ function describePay(node) {
   if (statutory && typeof statutory === "object" && typeof statutory.amount === "number") {
     const printed = statutory.rateText || `$${statutory.amount.toLocaleString("en-US")}`;
     const on = formatDate(statutory.checkedAt);
+    const seat = statutory.memberSeat && typeof statutory.memberSeat === "object" ? statutory.memberSeat : null;
     blocks.push({
-      heading: "Statutory pay",
-      text: `${statutory.sourceLabel || "A primary official source"}${on ? ` (checked ${on})` : ""} states that ${statutory.amountScope || "this tier"} is paid ${printed}${statutory.year ? ` for ${statutory.year}` : ""}. That names a tier or a group of roles, not this specific post by name.${holdersNote(statutory)}${payDocuments(statutory)}`,
+      heading: seat ? "Statutory pay — a Member's seat, not the office" : "Statutory pay",
+      text: seat
+        ? `${statutory.sourceLabel || "Schedule 6"}${on ? ` (checked ${on})` : ""} prints ${printed} on its row "${seat.row || statutory.amountScope || "Members"}"${statutory.year ? ` for ${statutory.year}` : ""}. ${seat.basis || "The holder of this office is a Member of the chamber and Schedule 6 prints no separate rate for it."}${holdersNote(statutory)}${payDocuments(statutory)}`
+        : `${statutory.sourceLabel || "A primary official source"}${on ? ` (checked ${on})` : ""} states that ${statutory.amountScope || "this tier"} is paid ${printed}${statutory.year ? ` for ${statutory.year}` : ""}. That names a tier or a group of roles, not this specific post by name.${holdersNote(statutory)}${payDocuments(statutory)}`,
     });
   }
   const derived = node.positionDerivedPay;

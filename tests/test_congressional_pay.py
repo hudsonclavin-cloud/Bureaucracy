@@ -348,6 +348,10 @@ class DeriveScriptTests(unittest.TestCase):
             edges_output_path=self.tmp / "e.json", validity_report_output_path=self.tmp / "v.json",
             reuse_existing_graph_payload=False, enforce_export_gate=True,
             evidence_path=None, sites_path=None, congressional_pay_evidence_path=out_path,
+            # Only THIS module's evidence: since 2026-09-30 the Schedule 6
+            # module prices the whips in this tree at the seat rate, and the
+            # count below is the Senate footnote's three and nothing else.
+            us_code_pay_schedule_evidence_path=None,
         )
         out2 = io.StringIO()
         with redirect_stdout(out2):

@@ -2277,7 +2277,7 @@ of the nine fields (no `positionTierPay` or `positionGradePay`). The
 derived module stopped writing its own copy of the arithmetic when this
 landed: one code path for one number.
 
-**And the gap this made visible, counted rather than estimated.** 638 of 4,591
+**And the gap this made visible, counted rather than estimated.** 1,099 of 4,591
 positions carry a pay claim (461 when this section was first written, before
 the multi-post rule below and the Federal Reserve rows; 492 before the
 reviewed rows of 2026-09-27, 498 before that day's class-title benches, 513
@@ -2285,11 +2285,12 @@ before the tier-reference module of 2026-09-28, 541 before that day's
 thirteen reviewed rows, 554 before the eight candidates of §19.10, 566
 before the twenty-two rows §19.12 closed the eighth batch with, 588 before
 the bankruptcy judges of 2026-09-30, 590 before that day's counted classes
-and the ninth batch's rows); **3,953
+and the ninth batch's rows, 638 before the 461 offices Members of Congress
+hold were priced at the seat rate the same day); **3,492
 do not**, and `scripts/report_unpriced_positions.py` says why for every one
 of them:
 
-- **3,181** — no pay document this project has read names the title at all.
+- **2,720** — no pay document this project has read names the title at all.
   Not a coverage gap somebody has not got to.
 - **754** — the node states a multiplicity (`Physician (×multiple)`) and no
   claim that holds for every holder reaches it. Since the per-field rule
@@ -2299,19 +2300,21 @@ of them:
   SYSTEM governs the title is a fact worth having.
 - **18** — OPM lists the position and the row prints no rate.
 
-The concentration is the useful part: **432** of the 3,953 sit under `VA
-Medical Centers`, 360 of them among the 3,313 (the service chiefs
+The concentration is the useful part: **432** of the 3,492 sit under `VA
+Medical Centers`, 360 of them among the 2,720 (the service chiefs
 `va_title38_pay.py` deliberately refuses, since choosing a Title 38 table per
 node would be this module deciding which VA service chiefs are doctors), 61
 under the White House Office (83 before the multi-post rule), 56 under
-`Districts (multiple)`, and the rest spread across 734 organisations.
+`Districts (multiple)`, and the rest spread across 627 organisations (734
+before the committee chairs and ranking members were priced).
 
 `docs/UNPRICED_POSITIONS.md` is the complete inventory, generated, one line
 per unpriced position with its id and its reason;
 `docs/PAY_SOURCE_RESEARCH_PROMPT_3.md` is a research prompt pack generated
 from the same list in the same run — a lead prompt asking which pay systems
-exist and where each is published, then **38 enumeration shards naming every
-one of the 3,953 titles** (39 and 4,003 until 2026-09-30). The multiplicity
+exist and where each is published, then **34 enumeration shards naming every
+one of the 3,492 titles** (39 and 4,003 until 2026-09-30, 38 and 3,953 until
+that evening's Members decision). The multiplicity
 reason's "N such nodes carry one" is read off the graph on each run since
 2026-09-30; it had said 28 since 2026-09-23 while the graph carried 37. `tests/test_unpriced_positions.py` asserts the
 coverage rather than trusting it: every unpriced id appears in the pack, no
@@ -2367,10 +2370,13 @@ grander. What is not priced matters more than what is:
   `leg-senate-leadership-president-of-the-senate-vice-president` — and
   Schedule 6 states one salary for one officer. Pricing both would publish one
   salary as two.
-- **No Member's seat is priced.** 174,000 is what Schedule 6 pays Senators,
-  Members, Delegates and the Resident Commissioner, and this graph curates no
-  seat node for any of them, for the reason `congressional_pay.py` already
-  records: "Individual Senator Offices (100)" is a staff-office grouping.
+- **No Member's SEAT is priced as such.** 174,000 is what Schedule 6 pays
+  Senators, Members, Delegates and the Resident Commissioner, and this graph
+  curates no seat node for any of them, for the reason `congressional_pay.py`
+  already records: "Individual Senator Offices (100)" is a staff-office
+  grouping. The OFFICES Members hold are another matter, and since
+  2026-09-30 they are priced at that rate — see "The offices Members of
+  Congress hold" below.
 - **Schedule 7 prices nothing, and is read anyway.** Every judicial tier it
   names is already priced from uscourts.gov, or reaches only nodes stating a
   multiplicity (`Circuit Judge (×28 active + senior judges)`), or reaches no
@@ -3020,6 +3026,73 @@ dashed section number (2000e-4), which the EEOC rows needed. Reviewed rows
 pay claims **590 → 638**, unpriced **4,001 → 3,953**, multi-post nodes
 priced **37 → 39**.
 
+**The offices Members of Congress hold, priced at the seat rate (since
+2026-09-30, the owner's decision).** Every research batch since the fourth
+reported the same figure for the same posts — $174,000 for every committee
+chair and ranking member, from senate.gov's salary page, the House Clerk's
+Salary.pdf and CRS RL30064 — and every batch was held under one question,
+carried from `CURATION.md` §19.6 to §19.14 as the largest open lead: is a
+committee-chair node a seat? The premise was never in doubt and this file
+had already recorded it as a finding (§7.1 of the ledger: "a Member who
+holds one of those posts is paid the Member rate. Neither is a committee
+chair separately compensated") — recorded as a reason NOT to price them.
+The owner decided the other way, keeping the premise: a committee's chair
+and ranking member ARE Members of the chamber that constitutes the
+committee, Schedule 6 prints a separate rate only for the Vice President,
+the Speaker, the majority and minority leaders of each chamber and the
+President pro tempore, and none for a committee chair, a ranking member, a
+whip or a conference chair, so those offices are priced at the seat's own
+rate and nothing is added for holding them.
+
+It is a rule, not a table, and the gate mirrors the rule. A **committee
+post** is a single-post Position whose name begins `Chair, ` or `Ranking
+Member, ` and whose tree parent is typed Committee or Subcommittee — 436
+nodes, 218 of each; `Staff Director` and `Minority Staff Director` share
+those parents and are never reached. A **leadership office** is one of the
+25 nodes `MEMBER_LEADERSHIP_NODES` lists by id under a chamber's Leadership
+grouping: the Senate's eleven (the whips, the assistant leaders, the
+conference chairs and secretary, the policy, steering and campaign
+committee chairs — the "eleven Senate leadership roles" the fourth batch
+reported and §19.7 refused as "the committee-chair decision") and the
+House's fourteen. **The chamber is read off the tree, never off the name**:
+`leg-senate` prices from the row "Senators", `leg-house` from "Members of
+the House of Representatives", and every House record notes that the
+Delegate and Resident Commissioner rows print the same 174,000, since a
+subcommittee chair could in principle be a Delegate. Four posts are refused
+by name: the Joint Economic Committee's Chair, which alternates between the
+chambers by Congress, and its Vice Chair — the figure would be the same
+either way, but a record names one row, and which chamber the holder sits
+in is a fact about a person this project never reads; the Problem Solvers
+Caucus's "Co-Chairs" node, two people in a form the multi-post rule cannot
+read; and the Senate's "President of the Senate (Vice President)", the
+office `exec-vp` already carries at its own row.
+
+The record is its own method (`METHOD_MEMBER_SEAT`), carries a `memberSeat`
+block with the role, the body, the chamber and the basis in words, and the
+panel leads with "PRICED AS A MEMBER'S SEAT, NOT FOR THE OFFICE". The
+document count is one document stating the figure — for the SEAT — and the
+caution says that the post being a Member's is a reviewed rule this project
+applies, not a document naming the post; `scopeMatch` is `proxy` and the
+grade `partial`. The gate (`member_seat_violations`) reads the parent's type
+and the chamber off the tree it is walking and refuses a seat block on a
+leadership office that has its own Schedule 6 row, on a node outside both
+chambers, on a post whose name has no Member-role prefix, under a parent
+that is not a committee, on a node that stands for several posts, at the
+other chamber's row, with a role or body the name does not say, with a
+basis that lacks the schedule's own list of separately priced offices or
+does not say it is a rule, and a seat row priced without the method;
+`tests/test_us_code_pay_schedules.py` corrupts each in turn and asserts on
+the published graph that every qualifying chair and ranking member carries
+one and no staff director does. **461 priced** (436 committee posts, 25
+leadership offices; Senate 191, House 270): pay claims **638 → 1,099**,
+unpriced **3,953 → 3,492**, and the positions no document reaches
+**3,181 → 2,720**. The four U.S. Code sections the ninth batch's remaining
+leads need (50 U.S.C. 1803, 38 U.S.C. 7101A, 22 U.S.C. 6203, 39 U.S.C. 202)
+could not be fetched the same evening: `uscode.house.gov` closed every
+tunnel after 11 seconds with 39 bytes received, while govinfo answered 200
+and senate.gov 302, so it is that host and not the proxy
+(`docs/NETWORK_ACCESS.md` §15); `CURATION.md` §19.15 carries each lead.
+
 **The panel's Trace Origin, restored.** A 2026-09-15 change reduced "Trace
 Origin" to a one-line confirmation on the grounds that the breadcrumb already
 showed the path. The owner wanted the full tree back: `renderOriginTrace` lists
@@ -3537,7 +3610,7 @@ subdivide measured money rather than invent it — which does not make a
 subdivision a measurement. **Since 2026-09-09 the site does not show one by
 default**, by the owner's decision: a node with no measured cost of its own
 shows no figure and says why, and ticking "Also show estimated shares of a
-parent's total" opts back in. The exception is a real salary — **638** of the
+parent's total" opts back in. The exception is a real salary — **1,099** of the
 4,591 positions carry a pay claim an official source states, counted on the
 published graph on 2026-09-30 after Schedule 6, the VA's Title 38 bands, the
 Article I parity derivations, the per-field multi-post rule, the Federal
@@ -3574,9 +3647,12 @@ each on the Code, the table and, for six of the eight classes, the statute
 that composes the class), 188 from
 the White House
 roster (22 of them titles listed N times at one rate), 88 the rate the current PLUM export prints for the one row under the
-title, 31 from a listing's level joined to OPM's table, 24 statutory (20 from
+title, 31 from a listing's level joined to OPM's table, 485 statutory (20 from
 uscourts.gov and senate.gov, 4 from Schedule 6 of the annual pay-adjustment
-order), and 18 a
+order naming the office, and since 2026-09-30 the 461 offices Members of
+Congress hold — every committee's chair and ranking member, the whips, the
+conference and caucus chairs — at Schedule 6's SEAT rate for their chamber,
+by the owner's decision and a rule the gate mirrors), and 18 a
 base-pay **range** rather than a rate (`positionGradePay`, counted separately
 because a range is not a rate and the panel says so; it read 32 until the
 current export supplied a printed figure for 14 of them, and a printed figure
@@ -3592,9 +3668,9 @@ same day with the five class-title benches and nine more reviewed rows, 541
 on 2026-09-28 with the tier-reference module, 554 the same day with the
 thirteen reviewed rows of §19.9's list, 566 with the eight candidates of
 §19.10, 588 with the twenty-two rows of §19.12, 590 with the bankruptcy
-benches of 2026-09-30, and 638 with that day's counted classes and
-ninth-batch rows. Shown in the cost block
-under its own heading and never headed COST.
+benches of 2026-09-30, 638 with that day's counted classes and
+ninth-batch rows, and 1,099 with the Members' offices the same evening. Shown
+in the cost block under its own heading and never headed COST.
 
 That figure read **354** until 2026-09-19 and was wrong: it added up the
 *records* each source derives rather than counting the nodes that publish one,
@@ -3610,7 +3686,8 @@ day's class-title benches and nine more reviewed rows, 541 on 2026-09-28
 with the GAO's officers and 26 Inspectors General, 554 the same day with
 the thirteen reviewed rows, 566 with the eight candidates, 588 with the
 twenty-two rows that closed the eighth batch, 590 with the bankruptcy
-benches, and 638 with the counted classes and the ninth batch's rows. The estimates
+benches, 638 with the counted classes and the ninth batch's rows, and 1,099
+with the offices Members of Congress hold. The estimates
 stay in `graph.json` because the cascade's arithmetic and the gate's
 child-sum checks are built on them, so a consumer of the JSON must read
 `cost_status`, not `resolved_total_amount` alone. The gate prints both

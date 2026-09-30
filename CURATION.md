@@ -3622,3 +3622,140 @@ multiplicity, 18 listed without a rate), multi-post nodes priced 37 → 39.
 (now the largest single lead, ~150 chair and ranking-member nodes); the USPS
 Board's statutory stipend; the Deputy Librarian's "greater of"; the FISC and
 BVA derivations above.
+
+### 19.15 The offices Members of Congress hold, priced at the seat rate; every remaining lead placed (2026-09-30, evening)
+
+**The decision.** Every batch since the fourth reported $174,000 for every
+committee chair and ranking member — senate.gov's SenateSalariesSince1789
+page, the House Clerk's Salary.pdf, CRS RL30064 — and §19.6 through §19.14
+held the lot under one question: is a committee-chair node a seat? The
+premise was recorded in §7.1 as a finding ("a Member who holds one of those
+posts is paid the Member rate. Neither is a committee chair separately
+compensated") and used there as the reason NOT to price them. The owner
+decided the other way, keeping the premise. A committee's chair and ranking
+member are Members of the chamber that constitutes the committee; Schedule 6
+prints a separate rate only for the Vice President, the Speaker, the
+majority and minority leaders of each chamber and the President pro tempore,
+and none for a committee chair, a ranking member, a whip or a conference
+chair; so those offices are priced at the seat's own rate and nothing is
+added for holding them. The §19.7 refusal of "eleven Senate leadership roles
+at $174,000" said in terms that "pricing a whip as a Member is the
+committee-chair decision"; it is the same decision, and it is made.
+
+**The rule, not a table.** `us_code_pay_schedules.match_member_seats`
+reaches two shapes. A **committee post** is a single-post Position whose
+name begins `Chair, ` or `Ranking Member, ` under a parent typed Committee
+or Subcommittee: 436 nodes, 218 of each, and the `Staff Director` /
+`Minority Staff Director` nodes beside them are never reached. A
+**leadership office** is one of 25 nodes listed by id
+(`MEMBER_LEADERSHIP_NODES`) under a chamber's Leadership grouping: the
+Senate's eleven (both whips, both assistant leaders, both conference chairs,
+the conference secretary, both policy committee chairs, the steering and
+campaign committee chairs) and the House's fourteen (the Speaker pro
+tempore, both whips, both chief deputy whips, the Democratic Caucus chair
+and vice chair, the Republican Conference chair, vice chair and secretary,
+the Steering & Policy chair, and the Republican Study Committee, Freedom
+Caucus and New Democrat Coalition chairs). **The chamber is read off the
+tree**: `leg-senate` prices from "Senators", `leg-house` from "Members of the
+House of Representatives", and every House record notes that the Delegate
+and Resident Commissioner rows print the same 174,000. Each record carries
+its own method and a `memberSeat` block with the role, the body, the chamber
+and the basis in words; the panel leads with "PRICED AS A MEMBER'S SEAT, NOT
+FOR THE OFFICE"; the document count is one document stating the figure for
+the seat, with a caution saying the identification is a reviewed rule and
+not a document naming the post; `scopeMatch: proxy`, graded `partial`. The
+gate mirrors the rule and refuses the forgeries `CLAUDE.md` lists;
+`tests/test_us_code_pay_schedules.py` pins both directions and asserts on
+the published graph that every qualifying chair and ranking member carries a
+seat and no staff director does.
+
+**Four posts refused by name**, each a decision and not a gap:
+
+- **The Joint Economic Committee's Chair and Vice Chair.** The chair
+  alternates between the chambers by Congress and the vice chair is from the
+  other chamber. Schedule 6 prints one figure for both rows, so the number
+  would be the same either way — but a record names one row, and which
+  chamber the holder sits in is a fact about a person this project never
+  reads. §19.11 refused the same two from the Clerk's page on the held
+  decision; they stay refused on this narrower ground.
+- **Problem Solvers Caucus Co-Chairs.** Two people in a form the multi-post
+  rule cannot read (the name states no `(×N)`); the figure would be each
+  co-chair's, and nothing on the node says how many there are.
+- **President of the Senate (Vice President).** The office `exec-vp` already
+  carries at Schedule 6's own Vice President row; one officer, one salary,
+  priced once (§19.6).
+
+One curation note, recorded rather than fixed: the Senate Leadership
+grouping carries both `Majority Whip` and `Assistant Majority Leader` (and
+the minority pair), which in the Senate are two names for one office. Both
+are priced, each as a Senator's seat, so no published figure is wrong; but a
+reader counting priced posts is counting that office twice, and whether to
+merge the pair is a `merge_duplicate_nodes.py` question for §3, not a pay
+question.
+
+**Counted on the rebuilt graph:** 461 offices priced (436 committee posts,
+25 leadership offices; Senate 191, House 270); statutory-pay positions
+24 → 485; pay claims **638 → 1,099**; unpriced **3,953 → 3,492**
+(2,720 unreached, 754 stating a multiplicity, 18 listed without a rate);
+organisations with an unpriced position 734 → 627; the prompt pack's shards
+38 → 34. Nothing measured moved and no organisation's estimate moved: a
+post is not a budget unit and takes no share.
+
+**Every other lead from the nine batches, placed.** The owner asked that
+nothing from the Perplexity responses be left unplaced before the next
+batch. Read against §19.12's ledger and §19.14's triage, what remained was
+this, and each is now either built, declined with its reason, or blocked by
+one named fetch:
+
+- **FISC judges and the presiding judge at the district-judge rate
+  (50 U.S.C. 1803(a)).** The shape is `derived_pay.py`'s with a composition
+  sentence: the section designates eleven district judges, and this graph
+  carries the presiding judge and a `FISC Judge (×10 assigned district
+  judges)` node, which is the statute's eleven. **Blocked by the fetch**:
+  `uscode.house.gov` closed every tunnel this evening
+  (`docs/NETWORK_ACCESS.md` §15). Not built on memory; the section must be
+  read first, because "district judges designated to the court" and "paid
+  as district judges" are different claims and only the operative text says
+  which the statute makes.
+- **BVA Veterans Law Judges and Vice Chairman (38 U.S.C. 7101A).** The
+  research reported the section as setting pay by reference to a grade or
+  level. **Blocked by the same fetch**; the shape, if the section says so,
+  is `tier_reference_pay.py`'s.
+- **USAGM CEO (22 U.S.C. 6203).** The batch said the section sets Level III;
+  §5314 as committed does not print the office (§19.14). **Blocked by the
+  same fetch**; if the section sets the pay by reference, the tier-reference
+  shape; if it names nothing, declined.
+- **The USPS Board of Governors' stipend (39 U.S.C. 202).** Two things stand
+  against it before the fetch: the graph's node is `USPS Board of Governors
+  (9 members)`, a body standing for nine, and "$30,000 a year plus $300 a
+  day" is not an annual rate of basic pay — the per-diem half is nobody's
+  figure until somebody's attendance is known, which is person-level.
+  **Blocked by the same fetch** for the reading; expected outcome: declined.
+- **The Deputy Librarian's "greater of".** Declined in §19.11 and unchanged:
+  §136a–2(2) pays "the greater of" two figures, and choosing one is
+  arithmetic on a comparison no document performs.
+- **The EPA's ten regional administrators and deputies as SES in the 2024
+  Plum Book.** Re-checked on the published graph: none of the twenty nodes
+  carries a PLUM listing from the archive or the current export, so the
+  rows exist and do not reach the nodes by name — an organisation/alias
+  question for `positions.py`'s matcher and not a pay row (§19.14 stands).
+  Were they listed, the ES plan states a range and no rate, and
+  `gs_pay.py` would publish the SES band.
+- **NASA's and the SBA's Associate Administrators against the Code's counted
+  classes.** Re-checked against the current export: NASA's five
+  mission-directorate Associate Administrators are listed on the ES plan
+  (four with a printed rate, which they publish; one without), so the Level
+  V class is contradicted by the one document that could settle it, and the
+  SBA's four carry no listing at all and stay declined on the same doubt
+  (§19.14 stands).
+- **The NCUA's and PRC's Vice Chairs, the SEC's Chair, the EPA's
+  Administrator, the pay-freeze memo's "$158,500 / $168,400", the
+  GAO/NSF/CAVC bands, Foreign Service and Capitol Police systems.** Declined
+  in §19.14 with the reason on each; nothing new was reported and nothing
+  changes.
+
+**Still open after this section:** exactly four fetches — 50 U.S.C. 1803,
+38 U.S.C. 7101A, 22 U.S.C. 6203 and 39 U.S.C. 202 — each in one
+`fetch_fixture.py` command once the host answers, and each with its shape
+decided above. No lead from the nine batches is undecided. The next batch
+can start.

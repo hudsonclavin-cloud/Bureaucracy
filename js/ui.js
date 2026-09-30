@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20260930c";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260930c";
+import { createGovernmentGraph } from "./graph.js?v=20260930d";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260930d";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -1221,8 +1221,20 @@ function renderStatutoryPay(data) {
   const on = pay.checkedAt
     ? new Date(pay.checkedAt).toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" })
     : null;
-  add(`${pay.sourceLabel || "A primary official source"}${on ? ` (checked ${on})` : ""} states that ${pay.amountScope || "this tier"} is paid ${printed}${pay.year ? ` for ${pay.year}` : ""}.`);
-  add(" That names a tier or a group of roles, not this specific post by name, so it is one source's own account of what the tier pays — not a second, independent confirmation, and not this unit's cost: basic pay excludes benefits and is not a share of federal outlays.");
+  const seat = pay.memberSeat && typeof pay.memberSeat === "object" ? pay.memberSeat : null;
+  if (seat) {
+    // An office a Member of Congress holds -- a committee chair or ranking
+    // member, a whip, a conference chair -- priced at the SEAT rate of its
+    // chamber's row, never at a row naming the office. The basis is the
+    // reviewed rule in the pipeline's own words, and the block says the
+    // identification is a rule, not a document naming this post.
+    add(`PRICED AS A MEMBER'S SEAT, NOT FOR THE OFFICE — ${pay.sourceLabel || "Schedule 6"}${on ? ` (checked ${on})` : ""} prints ${printed} on its row "${seat.row || pay.amountScope || "Members"}"${pay.year ? ` for ${pay.year}` : ""}. `);
+    add(seat.basis || "The holder of this office is a Member of the chamber and Schedule 6 prints no separate rate for it.");
+    add(" It is not this unit's cost: basic pay excludes benefits and is not a share of federal outlays.");
+  } else {
+    add(`${pay.sourceLabel || "A primary official source"}${on ? ` (checked ${on})` : ""} states that ${pay.amountScope || "this tier"} is paid ${printed}${pay.year ? ` for ${pay.year}` : ""}.`);
+    add(" That names a tier or a group of roles, not this specific post by name, so it is one source's own account of what the tier pays — not a second, independent confirmation, and not this unit's cost: basic pay excludes benefits and is not a share of federal outlays.");
+  }
   add(holdersSentence(pay));
   add(payDocumentsSentence(pay));
   const quote = String(pay.quote || "").trim();

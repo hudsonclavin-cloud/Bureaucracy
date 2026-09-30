@@ -36,8 +36,16 @@ unverified`. The estimates remain in `graph.json` — the cascade's arithmetic
 and the gate's child-sum checks are built on them — so a consumer of the
 JSON must read `cost_status` and not `resolved_total_amount` alone.
 
-The one exception is a real salary. **638** position nodes carry a pay claim an
-official source states — 188 from the White House Office roster (22 of them
+The one exception is a real salary. **1,099** position nodes carry a pay claim an
+official source states — 461 the offices Members of Congress hold (every
+committee's chair and ranking member in both chambers, the whips, the
+conference and caucus chairs), priced since 2026-09-30 by the owner's decision
+at Schedule 6's SEAT rate for their chamber ($174,000), because Schedule 6
+prints a separate rate only for the Vice President, the Speaker, each
+chamber's leaders and the President pro tempore and none for those offices;
+the panel leads with "priced as a Member's seat, not for the office", and the
+two joint-committee posts are refused because which chamber their holder sits
+in is a fact about a person this project never reads — 188 from the White House Office roster (22 of them
 titles the roster lists N times at one rate, published for each holder), 214
 from the Executive Schedule as 5 U.S.C. §§5312–5316 sets it (75 of them through
 a reviewed identification a second statute backs, each resting on three
@@ -59,7 +67,8 @@ U.S.C. 136a–2's Level II, and 26 Inspectors
 General of the establishments 5 U.S.C. 401(1) lists at Level III plus the
 Act's 3 percent — $215,888, arithmetic the block carries in the open and no
 document prints), 72 a Title 38 tier BAND rather than a rate, 31 from a
-listing's level joined to OPM's table, 24 statutory, 18 a base-pay RANGE, and
+listing's level joined to OPM's table, 24 statutory at a row naming the office
+(uscourts.gov, senate.gov and Schedule 6), 18 a base-pay RANGE, and
 **12 a figure no single document states** (four Article I chief judges and,
 since the multi-post rule became per field on 2026-09-23, their four benches —
 `Judge (×18)` among them, because "Each judge shall receive salary at the same
@@ -75,7 +84,7 @@ $249,900 × 92% = $229,908, arithmetic the block carries in the open and no
 document prints; the magistrate judges are refused because 28 U.S.C. 634(a)
 sets "up to" that percentage, a ceiling the Judicial Conference fixes a figure
 beneath). A node may carry
-more than one, so the per-source figures sum past 638. Each shows in place of
+more than one, so the per-source figures sum past 1,099. Each shows in place of
 the withheld estimate, under its
 own heading rather than COST, with the panel saying it is compensation for one
 post — or, on a node standing for several, for each of its holders — and not
