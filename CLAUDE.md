@@ -2277,7 +2277,7 @@ of the nine fields (no `positionTierPay` or `positionGradePay`). The
 derived module stopped writing its own copy of the arithmetic when this
 landed: one code path for one number.
 
-**And the gap this made visible, counted rather than estimated.** 1,102 of 4,591
+**And the gap this made visible, counted rather than estimated.** 1,105 of 4,591
 positions carry a pay claim (461 when this section was first written, before
 the multi-post rule below and the Federal Reserve rows; 492 before the
 reviewed rows of 2026-09-27, 498 before that day's class-title benches, 513
@@ -2287,13 +2287,15 @@ before the twenty-two rows §19.12 closed the eighth batch with, 588 before
 the bankruptcy judges of 2026-09-30, 590 before that day's counted classes
 and the ninth batch's rows, 638 before the 461 offices Members of Congress
 hold were priced at the seat rate the same day, 1,099 before the Court of
-International Trade and the Ex-Im Vice Chair of 2026-10-05); **3,489
+International Trade and the Ex-Im Vice Chair of 2026-10-05, 1,102 before the
+Tax Court's special trial judges and the two judicial-support Deputy
+Directors the same day); **3,486
 do not**, and `scripts/report_unpriced_positions.py` says why for every one
 of them:
 
-- **2,718** — no pay document this project has read names the title at all.
+- **2,716** — no pay document this project has read names the title at all.
   Not a coverage gap somebody has not got to.
-- **753** — the node states a multiplicity (`Physician (×multiple)`) and no
+- **752** — the node states a multiplicity (`Physician (×multiple)`) and no
   claim that holds for every holder reaches it. Since the per-field rule
   below, a tier rate, a parity rate, a band or a uniform roster line IS
   published on such a node (`Judge (×18)` is priced now); what stays refused
@@ -2301,8 +2303,8 @@ of them:
   SYSTEM governs the title is a fact worth having.
 - **18** — OPM lists the position and the row prints no rate.
 
-The concentration is the useful part: **432** of the 3,489 sit under `VA
-Medical Centers`, 360 of them among the 2,718 (the service chiefs
+The concentration is the useful part: **432** of the 3,486 sit under `VA
+Medical Centers`, 360 of them among the 2,716 (the service chiefs
 `va_title38_pay.py` deliberately refuses, since choosing a Title 38 table per
 node would be this module deciding which VA service chiefs are doctors), 61
 under the White House Office (83 before the multi-post rule), 56 under
@@ -2314,8 +2316,9 @@ per unpriced position with its id and its reason;
 `docs/PAY_SOURCE_RESEARCH_PROMPT_3.md` is a research prompt pack generated
 from the same list in the same run — a lead prompt asking which pay systems
 exist and where each is published, then **34 enumeration shards naming every
-one of the 3,489 titles** (39 and 4,003 until 2026-09-30, 38 and 3,953 until
-that evening's Members decision, 34 and 3,492 until 2026-10-05). The multiplicity
+one of the 3,486 titles** (39 and 4,003 until 2026-09-30, 38 and 3,953 until
+that evening's Members decision, 34 and 3,492 until 2026-10-05, 34 and 3,489
+until that day's special trial judges). The multiplicity
 reason's "N such nodes carry one" is read off the graph on each run since
 2026-09-30; it had said 28 since 2026-09-23 while the graph carried 37. `tests/test_unpriced_positions.py` asserts the
 coverage rather than trusting it: every unpriced id appears in the pack, no
@@ -2864,8 +2867,10 @@ documents, 90% on the project's scale, none stating the figure. The gate's
 mirror row grows a fourth element for the chain and refuses a block that
 drops the middle document, misquotes it, or claims a chain its provision
 does not make; the two Deputies (92 percent of the Director's, under both
-sections) are refused with the reason on the record, arithmetic on a join
-being a thing this field does not publish. The panel and the atlas print
+sections) were refused with the reason on the record, arithmetic on a join
+being a thing this field did not publish — until 2026-10-05, when the owner
+decided the shape for the Tax Court's special trial judges and both were
+priced with them (see "A percentage of a join" below). The panel and the atlas print
 the subject and the chain in words. Derived records **8 → 10**; pay claims
 **554 → 566**, unpriced **4,037 → 4,025**. The CBO Director was read and
 refused: 2 U.S.C. 601(a)(5) sets the pay at "the maximum rate of pay in
@@ -2948,12 +2953,62 @@ District of New York and `Bankruptcy Judge (×varies)` under the standard
 district structure, which stands for every district's bankruptcy judges and
 is priced because §153(a) says "each bankruptcy judge" wherever the judge
 sits; the office-rate sweep stamps `holders` on both, exact 12 and unstated.
-The AO's Deputy Director stays refused and its reason now says why the two
-cases differ: that one is 92 percent of a figure that is itself a join (the
-Director's, equal to a district judge's by the same section), where the
-bankruptcy percentage is taken of the table's own printed figure. Derived
+The AO's Deputy Director stayed refused that day and its reason said why the
+two cases differ: that one is 92 percent of a figure that is itself a join
+(the Director's, equal to a district judge's by the same section), where the
+bankruptcy percentage is taken of the table's own printed figure; the owner
+decided that shape on 2026-10-05 (below). Derived
 records **10 → 12**, pay claims **588 → 590**, unpriced **4,003 → 4,001**,
 multi-post nodes priced **35 → 37**.
+
+**A percentage of a join, from a host that was under maintenance (since
+2026-10-05, the owner's decision).** The bankruptcy section above ends on the
+one shape `derived_pay.py` still refused: a percentage taken not of the
+table's printed figure but of a figure that is itself a join. `CURATION.md`
+§19.16 carried it as the one open decision, with three nodes behind it, and
+the owner decided it with "price the special trial judges". **26 U.S.C.
+7443A(d)** pays "Each special trial judge … at a rate equal to 90 percent of
+the rate for judges of the Tax Court", and a Tax Court judge's rate is itself
+26 U.S.C. 7443(c)(1)'s parity to a district judge's; the AO's Deputy
+Director is 92 percent of a Director whom 28 U.S.C. 603 pays as a district
+judge, in two sentences of one section with an unrelated sentence between;
+the FJC's Deputy is paid by 28 U.S.C. 626 what the AO's Deputy is paid. So
+the chain rule the FJC Director already used (`via`, the middle statute)
+and the percent-of rule the bankruptcy judges already used now compose: a
+provision may carry `percentOf` and `via` together, a `quote` may be a tuple
+of sentences from one section, each re-found separately in the operative
+text and published joined by " … ", and `percentOfWhat` says in words what
+the percentage is of ("a Tax Court judge's salary, which 26 U.S.C. 7443(c)(1)
+sets at a district judge's"). The arithmetic is the same open block the
+bankruptcy records carry — $249,900 × 90% = **$224,910** for the special trial
+judges, × 92% = **$229,908** for both Deputies — and no document prints any of
+the three. The special trial judges are a `(×multiple)` node, so the
+office-rate sweep stamps `holders` on it and the figure reads as every
+special trial judge's by the statute's own "Each".
+
+**The seven fetches, retried, and the route taken instead.** 50 U.S.C. 1803,
+38 U.S.C. 7101A, 22 U.S.C. 6203, 39 U.S.C. 202, 26 U.S.C. 7443A, 52 U.S.C.
+20923 and 52 U.S.C. 30106 were fetched from `uscode.house.gov` again and every
+one came back HTTP 200 with the same 14,615-byte "Under Maintenance" page as
+the morning's attempt; all seven stubs were deleted with their `.meta.json`
+files before anything read them (`docs/NETWORK_ACCESS.md` §15). The one
+section this decision needed was taken from the **Government Publishing
+Office's own rendering of the 2024 edition of the Code** on `www.govinfo.gov`,
+a host this project already reads the Government Manual and OMB's database
+from, whose `robots.txt` allows the path, and whose link service
+(`/link/uscode/26/7443A?link-type=html`) resolves to the granule rather than
+to a URL guessed from the chapter structure (the first guess, `partII`, was a
+404 behind a redirect). `operative_text` cuts that rendering at the same
+"Editorial Notes" heading, so the quote is checked against the law and not
+the notes exactly as on the OLRC's pages. `STATUTE_HOSTS` is the closed list
+of the two hosts a derived-pay statute may be read from, each record names
+its publisher and edition, and the gate mirrors the list and refuses a statute
+cited to any other host. The other six sections were not fetched from
+govinfo: nothing in hand needed them that evening, and each is a lead
+`CURATION.md` §19.15–§19.17 names with its section, which the next session
+can take by either host. Derived records **12 → 15** (12 on two documents at
+80%, 3 on three at 90%, none stating the figure); pay claims **1,102 →
+1,105**, unpriced **3,489 → 3,486**, multi-post nodes priced **40 → 41**.
 
 **A counted class of offices, and the fourteen rows the ninth batch bought
 (since 2026-09-30, the owner's decision).** The Code places some offices one
@@ -3136,7 +3191,10 @@ refuses, and leads that name a pay SYSTEM with no document naming the post
 ranges, a DOJ vacancy announcement's GS-15 range, Title 38 for the IHS's
 officers), each declined in `CURATION.md` §19.16 for the reason the earlier
 batches' copies were. Pay claims **1,099 → 1,102**, unpriced
-**3,492 → 3,489**, multi-post nodes priced **39 → 40**.
+**3,492 → 3,489**, multi-post nodes priced **39 → 40**. The same evening the
+seven sections were retried and the host was still under maintenance; the
+special trial judges' section came from govinfo instead and the
+percentage-of-a-join shape was decided — see "A percentage of a join" above.
 
 **The panel's Trace Origin, restored.** A 2026-09-15 change reduced "Trace
 Origin" to a one-line confirmation on the grounds that the breadcrumb already
@@ -3655,20 +3713,23 @@ subdivide measured money rather than invent it — which does not make a
 subdivision a measurement. **Since 2026-09-09 the site does not show one by
 default**, by the owner's decision: a node with no measured cost of its own
 shows no figure and says why, and ticking "Also show estimated shares of a
-parent's total" opts back in. The exception is a real salary — **1,102** of the
+parent's total" opts back in. The exception is a real salary — **1,105** of the
 4,591 positions carry a pay claim an official source states, counted on the
-published graph on 2026-09-30 after Schedule 6, the VA's Title 38 bands, the
+published graph on 2026-10-05 after Schedule 6, the VA's Title 38 bands, the
 Article I parity derivations, the per-field multi-post rule, the Federal
 Reserve rows, the reviewed rows of the fourth research batch, the six
 class-title benches, the tier-reference module, the thirteen reviewed rows
 of §19.9's list, the eight candidates of §19.10 and the twenty-two rows that
 closed the eighth batch (§19.12), the bankruptcy judges of 2026-09-30 and
-that day's counted classes and ninth-batch rows, landed: 12 a figure no
+that day's counted classes and ninth-batch rows, landed: 15 a figure no
 document states (`positionDerivedPay`, four chief judges and their four
 benches, the Administrative Office's Director, the Federal Judicial
-Center's Director through a chain of two statutes, and two bankruptcy
+Center's Director through a chain of two statutes, two bankruptcy
 benches at 28 U.S.C. 153(a)'s 92 percent of the district-judge rate,
-arithmetic the block carries in the open), 36 a rate a
+arithmetic the block carries in the open, and since 2026-10-05 the Tax
+Court's special trial judges at 26 U.S.C. 7443A(d)'s 90 percent of a Tax
+Court judge's own parity rate and the AO's and FJC's Deputy Directors at 92
+percent of a Director paid as a district judge — a percentage of a join), 36 a rate a
 statute sets by REFERENCE to an Executive Schedule level (`positionTierReferencePay`:
 the GAO's two officers, the GPO's two, the IES's Director and three
 Commissioners, the FCA Board's Chairman, the Librarian of Congress, and 26
@@ -3716,10 +3777,11 @@ on 2026-09-28 with the tier-reference module, 554 the same day with the
 thirteen reviewed rows of §19.9's list, 566 with the eight candidates of
 §19.10, 588 with the twenty-two rows of §19.12, 590 with the bankruptcy
 benches of 2026-09-30, 638 with that day's counted classes and
-ninth-batch rows, 1,099 with the Members' offices the same evening, and 1,102
+ninth-batch rows, 1,099 with the Members' offices the same evening, 1,102
 on 2026-10-05 with the Court of International Trade's two judge nodes and the
-Ex-Im Bank's Vice Chair. Shown in the cost block under its own heading and
-never headed COST.
+Ex-Im Bank's Vice Chair, and 1,105 the same evening with the Tax Court's
+special trial judges and the two judicial-support Deputy Directors. Shown in
+the cost block under its own heading and never headed COST.
 
 That figure read **354** until 2026-09-19 and was wrong: it added up the
 *records* each source derives rather than counting the nodes that publish one,
@@ -3736,8 +3798,9 @@ with the GAO's officers and 26 Inspectors General, 554 the same day with
 the thirteen reviewed rows, 566 with the eight candidates, 588 with the
 twenty-two rows that closed the eighth batch, 590 with the bankruptcy
 benches, 638 with the counted classes and the ninth batch's rows, 1,099
-with the offices Members of Congress hold, and 1,102 with the Court of
-International Trade and the Ex-Im Vice Chair. The estimates
+with the offices Members of Congress hold, 1,102 with the Court of
+International Trade and the Ex-Im Vice Chair, and 1,105 with the special
+trial judges and the two Deputy Directors. The estimates
 stay in `graph.json` because the cascade's arithmetic and the gate's
 child-sum checks are built on them, so a consumer of the JSON must read
 `cost_status`, not `resolved_total_amount` alone. The gate prints both

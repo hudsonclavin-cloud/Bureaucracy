@@ -1113,6 +1113,11 @@ DERIVED_PAY_TABLE_URL = (
     "https://www.uscourts.gov/about-federal-courts/about-federal-judges/judicial-compensation"
 )
 DERIVED_PAY_STATUTE_HOST = "uscode.house.gov"
+#: The hosts a derived row's statute may be read from (mirrors
+#: derived_pay.STATUTE_HOSTS): the OLRC's prelim edition, and since 2026-10-05
+#: the Government Publishing Office's annual edition, read when the first host
+#: served nothing but a maintenance page.
+DERIVED_PAY_STATUTE_HOSTS = ("uscode.house.gov", "www.govinfo.gov")
 #: node id -> (citation, tier, the sentence the section's operative text prints)
 DERIVED_PAY_PROVISIONS = {
     "jud-specialized-tax-chief-judge-tax-court": (
@@ -1182,11 +1187,47 @@ DERIVED_PAY_BANKRUPTCY_SENTENCE = (
 )
 for _node_id in ("jud-district-sdny-bankruptcy-judge-12", "jud-district-structure-bankruptcy-judge-varies"):
     DERIVED_PAY_PROVISIONS[_node_id] = ("28 U.S.C. 153(a)", "district judges", DERIVED_PAY_BANKRUPTCY_SENTENCE)
+#: A percentage of a JOIN, since 2026-10-05 (the owner's decision): the Tax
+#: Court's special trial judges at 26 U.S.C. 7443A(d)'s 90 percent of a Tax
+#: Court judge's rate, which 7443(c)(1) sets at a district judge's; the AO's
+#: Deputy at 28 U.S.C. 603's 92 percent of a Director paid as a district judge
+#: (two sentences of one section, joined by " … "); and the FJC's Deputy, paid
+#: by 28 U.S.C. 626 what the AO's Deputy is paid. A chain row's fourth element
+#: is the middle statute; the percentage is mirrored beside each by node id.
+DERIVED_PAY_SPECIAL_TRIAL_SENTENCE = (
+    "Each special trial judge shall receive salary— (1) at a rate equal to 90 percent of the rate for "
+    "judges of the Tax Court, and (2) in the same installments as such judges."
+)
+DERIVED_PAY_AO_SENTENCES = (
+    "The salary of the Director shall be the same as the salary of a district judge. … "
+    "The salary of the Deputy Director shall be 92 percent of the salary of the Director."
+)
+DERIVED_PAY_PROVISIONS["jud-specialized-tax-special-trial-judge-multiple"] = (
+    "26 U.S.C. 7443A(d)",
+    "district judges",
+    DERIVED_PAY_SPECIAL_TRIAL_SENTENCE,
+    ("26 U.S.C. 7443(c)(1)", DERIVED_PAY_PROVISIONS["jud-specialized-tax-chief-judge-tax-court"][2]),
+)
+DERIVED_PAY_PROVISIONS["jud-support-aousc-deputy-director"] = (
+    "28 U.S.C. 603",
+    "district judges",
+    DERIVED_PAY_AO_SENTENCES,
+)
+DERIVED_PAY_PROVISIONS["jud-support-fjc-deputy-director"] = (
+    "28 U.S.C. 626",
+    "district judges",
+    "The compensation of the Deputy Director of the Federal Judicial Center shall be the same as that of "
+    "the Deputy Director of the Administrative Office of the United States Courts.",
+    ("28 U.S.C. 603", DERIVED_PAY_AO_SENTENCES),
+)
 #: node id -> the whole percentage of the tier the statute pays. Every other
 #: derived row is paid AT the tier and must carry no arithmetic block.
 DERIVED_PAY_PERCENT_OF = {
     "jud-district-sdny-bankruptcy-judge-12": 92,
     "jud-district-structure-bankruptcy-judge-varies": 92,
+    "jud-specialized-tax-special-trial-judge-multiple": 90,
+    "jud-support-aousc-deputy-director": 92,
+    "jud-support-fjc-deputy-director": 92,
 }
 #: The sentence 38 U.S.C. 7253's Amendments note prints as the section's PRIOR
 #: text. It is on the page, it is not the law, and publishing it would put the
@@ -3757,8 +3798,11 @@ def derived_pay_violations(node, pay, today, label):
             say("names a supporting document without saying what it supplies")
         if document.get("statesTheFigure"):
             say("claims a supporting document states the figure; neither of them does")
-    if urls and not any(DERIVED_PAY_STATUTE_HOST in url for url in urls):
+    if urls and not any(host in url for url in urls for host in DERIVED_PAY_STATUTE_HOSTS):
         say("publishes a derived figure with no parity provision behind it")
+    for url in urls:
+        if url != DERIVED_PAY_TABLE_URL and not any(host in url for host in DERIVED_PAY_STATUTE_HOSTS):
+            say("cites a statute on {!r}, a host this pipeline does not read the Code from".format(url))
     if urls and DERIVED_PAY_TABLE_URL not in urls:
         say("publishes a derived figure with no compensation table behind it")
     if urls and str(pay.get("url") or "") not in urls:
@@ -3802,7 +3846,7 @@ def derived_pay_violations(node, pay, today, label):
         say("places itself with a pay figure no document states")
     for source_url in node.get("sourceUrls") or []:
         text = str(source_url)
-        if DERIVED_PAY_STATUTE_HOST in text or DERIVED_PAY_TABLE_URL == text:
+        if any(host in text for host in DERIVED_PAY_STATUTE_HOSTS) or DERIVED_PAY_TABLE_URL == text:
             say("counts a pay document among the sources that it exists")
     return out
 

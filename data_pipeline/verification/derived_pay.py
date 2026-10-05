@@ -98,6 +98,21 @@ would be a lie read that way, so every record also carries
 Two documents scoring 80% neither of which states the number is exactly the
 situation a bare percentage would hide.
 
+## A percentage of a join (since 2026-10-05, the owner's decision)
+
+The bankruptcy judges (28 U.S.C. 153(a), 92 percent of a district judge's)
+take a percentage of the table's own printed figure. Three posts take a
+percentage of a figure that is itself a join: the Tax Court's special trial
+judges (26 U.S.C. 7443A(d), 90 percent of a Tax Court judge's, which
+7443(c)(1) sets at a district judge's), the AO's Deputy Director (28 U.S.C.
+603, 92 percent of a Director the same section pays as a district judge) and
+the FJC's Deputy Director (28 U.S.C. 626, paid what the AO's Deputy is paid).
+Those were refused until the owner decided the shape; now a provision may
+carry `percentOf` and `via` together, a `quote` may be a tuple of sentences
+from one section (each re-found in the operative text on its own), and the
+record names every document in the chain and says that none states the
+figure. See the comment above `SPECIAL_TRIAL_JUDGE_QUOTE`.
+
 Basic pay is not the node's cost, for the reason `pay_tables.py` states, and
 nothing here writes `sourceUrls`, `sourceTypes`, `lastVerified` or
 `verificationMethod` -- the channel by which a five-row table carried 29
@@ -271,6 +286,117 @@ for _node_id, _subject in (
         "quote": BANKRUPTCY_JUDGE_QUOTE,
     }
 
+#: A percentage of a JOIN, since 2026-10-05 on the owner's decision. Until
+#: then a figure that was "arithmetic on a figure that is itself a join" was
+#: refused here, and the refusal named the two Deputies. The owner asked for
+#: the Tax Court's special trial judges, whose 26 U.S.C. 7443A(d) pays "90
+#: percent of the rate for judges of the Tax Court" -- and a Tax Court judge's
+#: rate is itself 26 U.S.C. 7443(c)(1)'s parity to a district judge's. That is
+#: the same shape as the AO's Deputy (92 percent of the Director's, whom the
+#: same section pays as a district judge) and the FJC's Deputy (paid what the
+#: AO's Deputy is paid), so all three are priced by one rule: a `via` statute
+#: may sit between the percentage and the tier, every sentence of the chain is
+#: re-found in its section's operative text on every run, the arithmetic is in
+#: the open, and the record names every document, none of which states the
+#: figure. A `quote` may be a tuple of sentences from one section when the law
+#: needs two of them (28 U.S.C. 603 pays the Director as a district judge in
+#: one sentence and the Deputy at 92 percent of the Director in another, with
+#: an unrelated sentence between); each is checked separately and the record
+#: prints them joined by " … ".
+#:
+#: 26 U.S.C. 7443A was fetched from the Government Publishing Office's own
+#: rendering of the 2024 edition of the Code on www.govinfo.gov, because
+#: uscode.house.gov answered every request on 2026-10-05 with an "Under
+#: Maintenance" page (docs/NETWORK_ACCESS.md §15). The record names the
+#: publisher and the edition; `STATUTE_HOSTS` is the closed list of hosts a
+#: statute may be read from, and the gate mirrors it.
+SPECIAL_TRIAL_JUDGE_QUOTE = (
+    "Each special trial judge shall receive salary— (1) at a rate equal to 90 percent of the rate for "
+    "judges of the Tax Court, and (2) in the same installments as such judges."
+)
+AO_DIRECTOR_QUOTE = "The salary of the Director shall be the same as the salary of a district judge."
+AO_DEPUTY_QUOTE = "The salary of the Deputy Director shall be 92 percent of the salary of the Director."
+FJC_DEPUTY_QUOTE = (
+    "The compensation of the Deputy Director of the Federal Judicial Center shall be the same as that of "
+    "the Deputy Director of the Administrative Office of the United States Courts."
+)
+PARITY_PROVISIONS["jud-specialized-tax-special-trial-judge-multiple"] = {
+    "citation": "26 U.S.C. 7443A(d)",
+    "fixture": "tax_special_trial_26_usc_7443A_govinfo2024.html",
+    "court": None,
+    "subject": "every special trial judge of the U.S. Tax Court",
+    "subsection": "(d) Salary",
+    "tier": "district judges",
+    "percentOf": 90,
+    "percentOfWhat": "a Tax Court judge's salary, which 26 U.S.C. 7443(c)(1) sets at a district judge's",
+    "quote": SPECIAL_TRIAL_JUDGE_QUOTE,
+    "via": {
+        "citation": "26 U.S.C. 7443(c)(1)",
+        "fixture": "tax_court_26_usc_7443.html",
+        "subject": "every judge of the U.S. Tax Court",
+        "quote": PARITY_PROVISIONS["jud-specialized-tax-chief-judge-tax-court"]["quote"],
+    },
+}
+PARITY_PROVISIONS["jud-support-aousc-deputy-director"] = {
+    "citation": "28 U.S.C. 603",
+    "fixture": "aousc_28_usc_603.html",
+    "court": None,
+    "subject": "the Deputy Director of the Administrative Office of the United States Courts",
+    "subsection": "Salaries",
+    "tier": "district judges",
+    "percentOf": 92,
+    "percentOfWhat": "the Director's salary, which the same section sets at a district judge's",
+    "quote": (AO_DIRECTOR_QUOTE, AO_DEPUTY_QUOTE),
+}
+PARITY_PROVISIONS["jud-support-fjc-deputy-director"] = {
+    "citation": "28 U.S.C. 626",
+    "fixture": "fjc_28_usc_626.html",
+    "court": None,
+    "subject": "the Deputy Director of the Federal Judicial Center",
+    "subsection": "Compensation of the Director and Deputy Director",
+    "tier": "district judges",
+    "percentOf": 92,
+    "percentOfWhat": (
+        "the Administrative Office Deputy Director's salary, which 28 U.S.C. 603 sets at 92 percent of a "
+        "Director paid as a district judge"
+    ),
+    "quote": FJC_DEPUTY_QUOTE,
+    "via": {
+        "citation": "28 U.S.C. 603",
+        "fixture": "aousc_28_usc_603.html",
+        "subject": "the Deputy Director of the Administrative Office of the United States Courts",
+        "quote": (AO_DIRECTOR_QUOTE, AO_DEPUTY_QUOTE),
+    },
+}
+
+#: The hosts a statute may be read from, and the publisher each one is. The
+#: Office of the Law Revision Counsel's prelim edition is the first choice;
+#: the Government Publishing Office's annual edition is the same text as of
+#: its edition year, read when the first host is down. Mirrored in the gate.
+STATUTE_HOSTS = ("uscode.house.gov", "www.govinfo.gov")
+
+
+def statute_publisher(url: str) -> tuple[str, str]:
+    """(publisher, edition words) for a committed statute's URL."""
+    if "www.govinfo.gov" in url:
+        match = re.search(r"USCODE-(\d{4})", url)
+        edition = f"{match.group(1)} edition of the United States Code" if match else "an edition of the United States Code"
+        return ("U.S. Government Publishing Office", edition)
+    return ("Office of the Law Revision Counsel, U.S. House of Representatives", "current through the prelim edition")
+
+
+def quote_parts(quote: Any) -> list[str]:
+    """A provision's quote as its sentences, whitespace collapsed: a string is
+    one sentence, a tuple is several from one section."""
+    if isinstance(quote, (list, tuple)):
+        return [_collapse(str(part)) for part in quote]
+    return [_collapse(str(quote))]
+
+
+def joined_quote(quote: Any) -> str:
+    return " … ".join(quote_parts(quote))
+
+
 #: The same four provisions reach each court's bench node -- "Judge (×18)",
 #: "(×15)", "(×4)", "(×8)" -- because each says "Each judge", and a tier rate
 #: holds for every holder alike. Refused until 2026-09-23 under the blanket
@@ -302,17 +428,6 @@ NOT_PRICED = {
         "equal to 92 percent of the salary of a judge of the district court\", fixed by the Judicial "
         "Conference: a ceiling and not a rate, and part-time magistrate judges are paid between $100 and "
         "half the full-time maximum; no document here states what the Conference fixed"
-    ),
-    "jud-support-aousc-deputy-director": (
-        "28 U.S.C. 603 sets the Deputy Director's salary at 92 percent of the Director's: arithmetic on "
-        "a figure that is itself a join (the Director's, equal to a district judge's by the same section), "
-        "which this field does not publish -- unlike 28 U.S.C. 153(a)'s bankruptcy judges, whose 92 "
-        "percent is taken of the table's own printed figure"
-    ),
-    "jud-support-fjc-deputy-director": (
-        "28 U.S.C. 626 sets the Deputy Director's compensation at the Administrative Office Deputy "
-        "Director's, which 28 U.S.C. 603 sets at 92 percent of that Director's: two hops and arithmetic "
-        "on a figure that is itself a join, which this field does not publish"
     ),
     "jud-specialized-intl-trade-chief-judge-cit": (
         "28 U.S.C. 252 states no parity: it sets the rate by reference to section 225 of the "
@@ -435,14 +550,15 @@ def build_records(
         if section is None:
             section = load_section(provision["fixture"])
             sections[provision["fixture"]] = section
-        quote = _collapse(provision["quote"])
-        if quote not in section["operative"]:
+        missing = [part for part in quote_parts(provision["quote"]) if part not in section["operative"]]
+        if missing:
             # Never fall back to the whole page. If the sentence is only in
             # the notes it is repealed text, which is the exact way the
             # research this was built from got the CAVC wrong.
-            where = "only in the publisher's notes" if quote in section["whole"] else "nowhere on the page"
+            where = "only in the publisher's notes" if missing[0] in section["whole"] else "nowhere on the page"
             refusals[node_id] = f"{provision['citation']} no longer carries the quoted sentence ({where})"
             continue
+        quote = joined_quote(provision["quote"])
         via = provision.get("via")
         via_section = None
         via_quote = ""
@@ -451,11 +567,12 @@ def build_records(
             if via_section is None:
                 via_section = load_section(via["fixture"])
                 sections[via["fixture"]] = via_section
-            via_quote = _collapse(via["quote"])
-            if via_quote not in via_section["operative"]:
-                where = "only in the publisher's notes" if via_quote in via_section["whole"] else "nowhere on the page"
+            via_missing = [part for part in quote_parts(via["quote"]) if part not in via_section["operative"]]
+            if via_missing:
+                where = "only in the publisher's notes" if via_missing[0] in via_section["whole"] else "nowhere on the page"
                 refusals[node_id] = f"{via['citation']} no longer carries the quoted sentence ({where})"
                 continue
+            via_quote = joined_quote(via["quote"])
         tier = tiers.get(provision["tier"])
         if not tier:
             refusals[node_id] = f"the compensation table does not price {provision['tier']!r} for {year}"
@@ -477,6 +594,7 @@ def build_records(
         )
         percent_of = provision.get("percentOf")
         base_amount = float(tier["amount"])
+        percent_of_what = provision.get("percentOfWhat") or "a district judge's"
         if percent_of:
             amount = round(base_amount * percent_of / 100.0, 2)
             amount_raw = "{:,.0f}".format(amount) if float(amount).is_integer() else "{:,.2f}".format(amount)
@@ -492,8 +610,8 @@ def build_records(
                 "resultText": rate_text,
                 "note": (
                     f"No document prints {rate_text}. {provision['citation']} sets the rate at {percent_of} percent "
-                    f"of a district judge's, and Judicial Compensation {year} prints {tier['rateText']} for "
-                    f"{tier_label}; the figure is that arithmetic and nothing more."
+                    f"of {percent_of_what}, and Judicial Compensation {year} "
+                    f"prints {tier['rateText']} for {tier_label}; the figure is that arithmetic and nothing more."
                 ),
             }
             arithmetic_text = f" × {percent_of}% = {rate_text}"
@@ -508,14 +626,17 @@ def build_records(
             f"{via_text}"
             f"· Judicial Compensation {year}: {tier_label} {tier['rateText']}{arithmetic_text}"
         )
+        publisher, edition = statute_publisher(section["url"])
         documents = [
             {
-                "role": ("states whose pay this post's equals" if via
+                "role": (f"states the percentage of another office's pay this post is paid" if (via and percent_of)
+                         else "states whose pay this post's equals" if via
                          else f"states the percentage of the tier this post is paid at" if percent_of
                          else "states the tier this post is paid at"),
                 "citation": provision["citation"],
-                "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
-                "title": f"{provision['citation']}, current through the prelim edition",
+                "publisher": publisher,
+                "edition": edition,
+                "title": f"{provision['citation']}, {edition}",
                 "quote": quote,
                 "url": section["url"],
                 "documentSha256": section["sha256"],
@@ -525,8 +646,9 @@ def build_records(
             *([{
                 "role": "states the tier that office is paid at",
                 "citation": via["citation"],
-                "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
-                "title": f"{via['citation']}, current through the prelim edition",
+                "publisher": statute_publisher(via_section["url"])[0],
+                "edition": statute_publisher(via_section["url"])[1],
+                "title": f"{via['citation']}, {statute_publisher(via_section['url'])[1]}",
                 "quote": via_quote,
                 "url": via_section["url"],
                 "documentSha256": via_section["sha256"],
@@ -562,6 +684,7 @@ def build_records(
             "periodAsOf": f"{year}-01-01",
             "amountScope": f"{percent_of} percent of {tier_label}" if percent_of else tier_label,
             "percentOf": int(percent_of) if percent_of else None,
+            "percentOfWhat": provision.get("percentOfWhat") if percent_of else None,
             "arithmetic": arithmetic,
             # Never "exact", and not for the usual reason alone: no document
             # here states this figure for this post at all.
@@ -681,6 +804,7 @@ def apply_pay_evidence(
             "viaStatute": record.get("viaStatute"),
             "viaQuote": record.get("viaQuote"),
             "percentOf": record.get("percentOf"),
+            "percentOfWhat": record.get("percentOfWhat"),
             "arithmetic": dict(record["arithmetic"]) if isinstance(record.get("arithmetic"), dict) else None,
             "derivation": record.get("derivation"),
             "quote": record.get("quote"),

@@ -8,13 +8,13 @@ checkable claim. `docs/PAY_SOURCE_RESEARCH_PROMPT_3.md` is generated from this
 same list in the same run.
 
 - position nodes in the published graph: **4,591**
-- carrying a pay claim an official document supports: **1,102**
-- carrying none: **3,489**
+- carrying a pay claim an official document supports: **1,105**
+- carrying none: **3,486**
 
 | reason | count | what it means |
 |---|---|---|
-| `unreached` | 2,718 | no source this project has read names the title at all. Not a coverage gap somebody has not got to: no pay document in the repository names this title under this organisation, so nothing could have reached it. |
-| `multiplicity` | 753 | the node states a multiplicity (×N) and no claim that holds for every holder has reached it. Since 2026-09-23 a claim that holds for each holder by its own terms IS published on such a node with a `holders` block -- a tier or parity rate paid to every judge of the tier, a band every holder is within, or a roster listing every holder at one rate -- and 40 such nodes carry one. What stays refused is an incumbency-shaped claim (one listing's level, one row of the current export), because that is one appointment's figure and not the group's. For these nodes no office-rate claim has reached them at all. Knowing which pay system governs the title is still useful -- it is what would let the graph carry the schedule rather than a rate -- so these are listed and asked about. |
+| `unreached` | 2,716 | no source this project has read names the title at all. Not a coverage gap somebody has not got to: no pay document in the repository names this title under this organisation, so nothing could have reached it. |
+| `multiplicity` | 752 | the node states a multiplicity (×N) and no claim that holds for every holder has reached it. Since 2026-09-23 a claim that holds for each holder by its own terms IS published on such a node with a `holders` block -- a tier or parity rate paid to every judge of the tier, a band every holder is within, or a roster listing every holder at one rate -- and 41 such nodes carry one. What stays refused is an incumbency-shaped claim (one listing's level, one row of the current export), because that is one appointment's figure and not the group's. For these nodes no office-rate claim has reached them at all. Knowing which pay system governs the title is still useful -- it is what would let the graph carry the schedule rather than a rate -- so these are listed and asked about. |
 | `listed_no_rate` | 18 | OPM lists the position and the row prints no rate. The PLUM archive or the current export names the title under this organisation but the Level/Grade/Pay cell carries a rank or is empty, and no salary table this project has read prices that pay plan. |
 
 ---
@@ -984,24 +984,6 @@ same list in the same run.
 - `exec-dept-dhs-cbp-director-20-field-offices-office-of-field-operations` — Director — 20 Field Offices (Office of Field Operations) — `unreached`
 - `exec-dept-dhs-cbp-port-director-328-ports-of-entry` — Port Director — 328 Ports of Entry — `unreached`
 
-## Administrative Office of U.S. Courts (AOUSC)  — 13 unpriced
-
-`jud-support-aousc`
-
-- `jud-support-aousc-associate-director-judicial-services` — Associate Director — Judicial Services — `unreached`
-- `jud-support-aousc-associate-director-management-administrative-services` — Associate Director — Management & Administrative Services — `unreached`
-- `jud-support-aousc-associate-director-technology-services` — Associate Director — Technology Services — `unreached`
-- `jud-support-aousc-chief-financial-officer` — Chief Financial Officer — `unreached`
-- `jud-support-aousc-chief-human-resources-officer` — Chief Human Resources Officer — `unreached`
-- `jud-support-aousc-chief-information-officer` — Chief Information Officer — `unreached`
-- `jud-support-aousc-deputy-director` — Deputy Director — `unreached`
-- `jud-support-aousc-director-court-administration-policy` — Director — Court Administration Policy — `unreached`
-- `jud-support-aousc-director-court-services` — Director — Court Services — `unreached`
-- `jud-support-aousc-director-defender-services` — Director — Defender Services — `unreached`
-- `jud-support-aousc-director-human-resources` — Director — Human Resources — `unreached`
-- `jud-support-aousc-director-probation-pretrial-services` — Director — Probation & Pretrial Services — `unreached`
-- `jud-support-aousc-general-counsel` — General Counsel — `unreached`
-
 ## Federal Communications Commission (FCC)  — 13 unpriced
 
 `exec-regulatory-fcc`
@@ -1037,6 +1019,23 @@ same list in the same run.
 - `exec-dept-hhs-fda-director-national-center-for-toxicological-research-nctr` — Director — National Center for Toxicological Research (NCTR) — `unreached`
 - `exec-dept-hhs-fda-pharmacologist-multiple` — Pharmacologist (×multiple) — `multiplicity`
 - `exec-dept-hhs-fda-regional-director-5-ora-regions` — Regional Director — 5 ORA Regions — `unreached`
+
+## Administrative Office of U.S. Courts (AOUSC)  — 12 unpriced
+
+`jud-support-aousc`
+
+- `jud-support-aousc-associate-director-judicial-services` — Associate Director — Judicial Services — `unreached`
+- `jud-support-aousc-associate-director-management-administrative-services` — Associate Director — Management & Administrative Services — `unreached`
+- `jud-support-aousc-associate-director-technology-services` — Associate Director — Technology Services — `unreached`
+- `jud-support-aousc-chief-financial-officer` — Chief Financial Officer — `unreached`
+- `jud-support-aousc-chief-human-resources-officer` — Chief Human Resources Officer — `unreached`
+- `jud-support-aousc-chief-information-officer` — Chief Information Officer — `unreached`
+- `jud-support-aousc-director-court-administration-policy` — Director — Court Administration Policy — `unreached`
+- `jud-support-aousc-director-court-services` — Director — Court Services — `unreached`
+- `jud-support-aousc-director-defender-services` — Director — Defender Services — `unreached`
+- `jud-support-aousc-director-human-resources` — Director — Human Resources — `unreached`
+- `jud-support-aousc-director-probation-pretrial-services` — Director — Probation & Pretrial Services — `unreached`
+- `jud-support-aousc-general-counsel` — General Counsel — `unreached`
 
 ## Centers for Disease Control & Prevention (CDC)  — 12 unpriced
 
@@ -3349,17 +3348,6 @@ same list in the same run.
 - `exec-dept-dot-fhwa-division-administrator-52-state-divisions` — Division Administrator — 52 State Divisions — `unreached`
 - `exec-dept-dot-fhwa-highway-engineer-multiple` — Highway Engineer (×multiple) — `multiplicity`
 
-## Federal Judicial Center (FJC)  — 6 unpriced
-
-`jud-support-fjc`
-
-- `jud-support-fjc-deputy-director` — Deputy Director — `unreached`
-- `jud-support-fjc-director-court-history` — Director — Court History — `unreached`
-- `jud-support-fjc-director-education-division` — Director — Education Division — `unreached`
-- `jud-support-fjc-director-information-technology` — Director — Information Technology — `unreached`
-- `jud-support-fjc-director-research-division` — Director — Research Division — `unreached`
-- `jud-support-fjc-research-scientist-attorney-multiple` — Research Scientist / Attorney (×multiple) — `multiplicity`
-
 ## Financial Crimes Enforcement Network (FinCEN)  — 6 unpriced
 
 `exec-dept-treasury-fincen`
@@ -3722,6 +3710,16 @@ same list in the same run.
 - `exec-dept-usda-fsa-deputy-administrator` — Deputy Administrator — `unreached`
 - `exec-dept-usda-fsa-farm-loan-officer` — Farm Loan Officer — `unreached`
 - `exec-dept-usda-fsa-state-executive-director-50-states` — State Executive Director — 50 states — `unreached`
+
+## Federal Judicial Center (FJC)  — 5 unpriced
+
+`jud-support-fjc`
+
+- `jud-support-fjc-director-court-history` — Director — Court History — `unreached`
+- `jud-support-fjc-director-education-division` — Director — Education Division — `unreached`
+- `jud-support-fjc-director-information-technology` — Director — Information Technology — `unreached`
+- `jud-support-fjc-director-research-division` — Director — Research Division — `unreached`
+- `jud-support-fjc-research-scientist-attorney-multiple` — Research Scientist / Attorney (×multiple) — `multiplicity`
 
 ## Federal Motor Carrier Safety Admin (FMCSA)  — 5 unpriced
 
@@ -4799,15 +4797,6 @@ same list in the same run.
 - `exec-dept-state-u-s-mission-to-the-united-nations-foreign-service-officer-multiple` — Foreign Service Officer (×multiple) — `multiplicity`
 - `exec-dept-state-u-s-mission-to-the-united-nations-office-director-multiple-u-s-mission-to-the-united-nations` — Office Director (×multiple), U.S. Mission to the United Nations — `multiplicity`
 
-## U.S. Tax Court  — 4 unpriced
-
-`jud-specialized-tax`
-
-- `jud-specialized-tax-chief-counsel-irs-opposing` — Chief Counsel — IRS (opposing) — `unreached`
-- `jud-specialized-tax-clerk-of-the-court` — Clerk of the Court — `unreached`
-- `jud-specialized-tax-general-counsel` — General Counsel — `unreached`
-- `jud-specialized-tax-special-trial-judge-multiple` — Special Trial Judge (×multiple) — `multiplicity`
-
 ## Antitrust Division  — 3 unpriced
 
 `exec-dept-doj-div-antitrust`
@@ -5607,6 +5596,14 @@ same list in the same run.
 - `exec-dept-doj-div-tax-deputy-assistant-attorney-general-3-5` — Deputy Assistant Attorney General (×3-5) — `multiplicity`
 - `exec-dept-doj-div-tax-section-chief-multiple` — Section Chief (×multiple) — `multiplicity`
 - `exec-dept-doj-div-tax-trial-attorney-ausa-multiple` — Trial Attorney / AUSA (×multiple) — `multiplicity`
+
+## U.S. Tax Court  — 3 unpriced
+
+`jud-specialized-tax`
+
+- `jud-specialized-tax-chief-counsel-irs-opposing` — Chief Counsel — IRS (opposing) — `unreached`
+- `jud-specialized-tax-clerk-of-the-court` — Clerk of the Court — `unreached`
+- `jud-specialized-tax-general-counsel` — General Counsel — `unreached`
 
 ## Wage & Hour Division (WHD)  — 3 unpriced
 

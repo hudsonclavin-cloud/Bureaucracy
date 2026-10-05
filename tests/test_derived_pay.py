@@ -20,6 +20,10 @@ from pathlib import Path
 from data_pipeline.exporter.build_graph import MINIMAL_GRAPH_FIELDS, index_tree
 from data_pipeline.verification.evidence import EVIDENCE_OWNED_FIELDS
 from data_pipeline.verification.derived_pay import (
+    STATUTE_HOSTS,
+    joined_quote,
+    quote_parts,
+    statute_publisher,
     NOT_PRICED,
     PARITY_PROVISIONS,
     REPEALED_CAVC_CHIEF_JUDGE_TEXT,
@@ -35,6 +39,7 @@ from data_pipeline.verification.judicial_pay import DEFAULT_TABLE_HTML, load_jud
 from data_pipeline.verification.pay_documents import annotate_pay_documents
 from data_pipeline.verification.pay_tables import withdraw_pay_from_multi_post_nodes
 from scripts.validate_published_graph import (
+    DERIVED_PAY_STATUTE_HOSTS,
     DERIVED_PAY_METHOD,
     DERIVED_PAY_PERCENT_OF,
     DERIVED_PAY_PROVISIONS,
@@ -83,6 +88,9 @@ def _base_tree():
                              "name": "Chief Judge, Tax Court", "type": "Position"},
                             {"id": "jud-specialized-tax-judge-18", "name": "Judge (×18)", "type": "Position",
                              "representsPosts": {"text": "×18", "kind": "exact", "count": 18}},
+                            {"id": "jud-specialized-tax-special-trial-judge-multiple", "name": "Special Trial Judge (×multiple)",
+                             "type": "Position",
+                             "representsPosts": {"text": "×multiple", "kind": "unstated"}},
                         ],
                     },
                     {
@@ -148,8 +156,8 @@ def _base_tree():
                 ],
             },
             # The two offices: one statute each to the tier for the AO's
-            # Director, two for the FJC's (28 U.S.C. 626 -> 603); the deputies
-            # are 92 percent of a join and stay unpriced.
+            # Director, two for the FJC's (28 U.S.C. 626 -> 603); since
+            # 2026-10-05 the deputies are priced too, at 92 percent of a join.
             {
                 "id": "jud-support-aousc",
                 "name": "Administrative Office of U.S. Courts (AOUSC)",
@@ -191,7 +199,13 @@ class OperativeTextTests(unittest.TestCase):
         for node_id, provision in PARITY_PROVISIONS.items():
             with self.subTest(node_id):
                 section = load_section(provision["fixture"])
-                self.assertIn(provision["quote"], section["operative"])
+                for part in quote_parts(provision["quote"]):
+                    self.assertIn(part, section["operative"])
+                via = provision.get("via")
+                if via:
+                    via_section = load_section(via["fixture"])
+                    for part in quote_parts(via["quote"]):
+                        self.assertIn(part, via_section["operative"])
 
     def test_the_repealed_cavc_sentence_is_on_the_page_and_not_in_the_law(self):
         """The whole reason `operative_text` exists.
@@ -218,7 +232,7 @@ class OperativeTextTests(unittest.TestCase):
             with self.subTest(provision["fixture"]):
                 section = load_section(provision["fixture"])
                 self.assertEqual(64, len(section["sha256"]))
-                self.assertTrue(section["url"].startswith("https://uscode.house.gov/"))
+                self.assertTrue(any(section["url"].startswith(f"https://{host}/") for host in STATUTE_HOSTS), section["url"])
 
 
 class ScaleTests(unittest.TestCase):
@@ -249,37 +263,78 @@ class MirrorTests(unittest.TestCase):
             citation, tier, sentence = mirrored[:3]
             self.assertEqual(provision["citation"], citation)
             self.assertEqual(provision["tier"], tier)
-            self.assertEqual(" ".join(provision["quote"].split()), sentence)
+            self.assertEqual(joined_quote(provision["quote"]), sentence)
             via = provision.get("via")
             if via:
                 # A chain row mirrors its middle statute too.
                 self.assertEqual(4, len(mirrored), node_id)
-                self.assertEqual((via["citation"], " ".join(via["quote"].split())), mirrored[3])
+                self.assertEqual((via["citation"], joined_quote(via["quote"])), mirrored[3])
             else:
                 self.assertEqual(3, len(mirrored), node_id)
 
-    def test_exactly_one_provision_is_a_chain(self):
+    def test_the_three_chains_and_what_each_passes_through(self):
         """28 U.S.C. 626 pays the FJC's Director what the AO's Director is
-        paid, and 28 U.S.C. 603 pays that Director as a district judge."""
-        chains = [n for n, p in PARITY_PROVISIONS.items() if p.get("via")]
-        self.assertEqual(["jud-support-fjc-director-fjc"], chains)
-        self.assertEqual("28 U.S.C. 603", PARITY_PROVISIONS["jud-support-fjc-director-fjc"]["via"]["citation"])
+        paid, and 28 U.S.C. 603 pays that Director as a district judge; since
+        2026-10-05 the FJC's Deputy chains through the same section, and the
+        Tax Court's special trial judges through 26 U.S.C. 7443(c)(1)."""
+        chains = {n: p["via"]["citation"] for n, p in PARITY_PROVISIONS.items() if p.get("via")}
+        self.assertEqual({
+            "jud-support-fjc-director-fjc": "28 U.S.C. 603",
+            "jud-support-fjc-deputy-director": "28 U.S.C. 603",
+            "jud-specialized-tax-special-trial-judge-multiple": "26 U.S.C. 7443(c)(1)",
+        }, chains)
         self.assertEqual("28 U.S.C. 603", PARITY_PROVISIONS["jud-support-aousc-director-aousc"]["citation"])
 
-    def test_the_bankruptcy_rows_are_the_only_percentage_rows_and_the_gate_mirrors_them(self):
-        """28 U.S.C. 153(a): 92 percent OF the district-judge rate. Keyed by
-        node id in both places, so a parity row cannot acquire a percentage
-        and a percentage row cannot lose one."""
+    def test_the_percentage_rows_and_the_gate_mirror_them(self):
+        """28 U.S.C. 153(a): 92 percent OF the district-judge rate; since
+        2026-10-05 three percentages of a JOIN beside them. Keyed by node id
+        in both places, so a parity row cannot acquire a percentage and a
+        percentage row cannot lose one."""
         percent_rows = {n: p["percentOf"] for n, p in PARITY_PROVISIONS.items() if p.get("percentOf")}
-        self.assertEqual(
-            {"jud-district-sdny-bankruptcy-judge-12": 92, "jud-district-structure-bankruptcy-judge-varies": 92},
-            percent_rows)
+        self.assertEqual({
+            "jud-district-sdny-bankruptcy-judge-12": 92,
+            "jud-district-structure-bankruptcy-judge-varies": 92,
+            "jud-specialized-tax-special-trial-judge-multiple": 90,
+            "jud-support-aousc-deputy-director": 92,
+            "jud-support-fjc-deputy-director": 92,
+        }, percent_rows)
         self.assertEqual(percent_rows, DERIVED_PAY_PERCENT_OF)
-        for node_id in percent_rows:
+        for node_id in ("jud-district-sdny-bankruptcy-judge-12", "jud-district-structure-bankruptcy-judge-varies"):
             self.assertEqual("28 U.S.C. 153(a)", PARITY_PROVISIONS[node_id]["citation"])
             self.assertEqual("district judges", PARITY_PROVISIONS[node_id]["tier"])
             self.assertIn("92 percent of the salary of a judge of the district court", PARITY_PROVISIONS[node_id]["quote"])
             self.assertFalse(PARITY_PROVISIONS[node_id].get("via"))
+        # Every percentage of a join says in words what the percentage is of.
+        for node_id in ("jud-specialized-tax-special-trial-judge-multiple", "jud-support-aousc-deputy-director",
+                        "jud-support-fjc-deputy-director"):
+            self.assertTrue(PARITY_PROVISIONS[node_id].get("percentOfWhat"), node_id)
+
+    def test_the_special_trial_judges_statute_says_ninety_percent_of_a_tax_court_judge(self):
+        """Read off the GPO's 2024-edition rendering of 26 U.S.C. 7443A, the
+        host the OLRC's prelim edition was down for; both sentences of the
+        chain are in the operative text of their sections."""
+        section = load_section("tax_special_trial_26_usc_7443A_govinfo2024.html")
+        self.assertIn("www.govinfo.gov", section["url"])
+        self.assertIn("USCODE-2024", section["url"])
+        self.assertIn("90 percent of the rate for judges of the Tax Court", section["operative"])
+        self.assertEqual(("U.S. Government Publishing Office", "2024 edition of the United States Code"),
+                         statute_publisher(section["url"]))
+        self.assertEqual("Office of the Law Revision Counsel, U.S. House of Representatives",
+                         statute_publisher(load_section("tax_court_26_usc_7443.html")["url"])[0])
+        self.assertEqual(("uscode.house.gov", "www.govinfo.gov"), STATUTE_HOSTS)
+        self.assertEqual(tuple(STATUTE_HOSTS), tuple(DERIVED_PAY_STATUTE_HOSTS))
+
+    def test_the_two_sentences_of_28_usc_603_are_each_in_the_law_and_not_contiguous(self):
+        """The Deputy's row needs the Director's sentence and the Deputy's,
+        and an unrelated sentence sits between them, which is why a quote may
+        be a tuple checked part by part rather than one span."""
+        operative = load_section("aousc_28_usc_603.html")["operative"]
+        parts = quote_parts(PARITY_PROVISIONS["jud-support-aousc-deputy-director"]["quote"])
+        self.assertEqual(2, len(parts))
+        for part in parts:
+            self.assertIn(part, operative)
+        self.assertNotIn(" ".join(parts), operative)
+        self.assertIn(" … ", joined_quote(parts))
 
     def test_the_magistrate_judges_are_refused_because_the_statute_sets_a_ceiling(self):
         """28 U.S.C. 634(a) pays full-time magistrate judges "up to" 92
@@ -298,10 +353,11 @@ class MirrorTests(unittest.TestCase):
         self.assertIn("equal to 92 percent of the salary of a judge of the district court", bankruptcy)
         self.assertNotIn("up to an annual rate", bankruptcy)
 
-    def test_the_deputies_are_refused_and_say_why(self):
+    def test_the_deputies_are_priced_and_no_longer_refused(self):
         for node_id in ("jud-support-aousc-deputy-director", "jud-support-fjc-deputy-director"):
-            self.assertNotIn(node_id, PARITY_PROVISIONS)
-            self.assertIn("92 percent", NOT_PRICED[node_id])
+            self.assertIn(node_id, PARITY_PROVISIONS)
+            self.assertNotIn(node_id, NOT_PRICED)
+            self.assertEqual(92, PARITY_PROVISIONS[node_id]["percentOf"])
 
     def test_the_gate_mirrors_the_repealed_sentence(self):
         self.assertEqual(REPEALED_CAVC_CHIEF_JUDGE_TEXT, DERIVED_PAY_REPEALED_TEXT)
@@ -310,9 +366,11 @@ class MirrorTests(unittest.TestCase):
         """Which is why the mirror is keyed by node id and not by figure:
         three courts' chief judges and their benches, six nodes, one rate."""
         district = [n for n, p in PARITY_PROVISIONS.items() if p["tier"] == "district judges"]
-        # six judges' seats, the two directors since 2026-09-28, and the two
-        # bankruptcy benches since 2026-09-30 (a percentage of the same tier)
-        self.assertEqual(10, len(district))
+        # six judges' seats, the two directors since 2026-09-28, the two
+        # bankruptcy benches since 2026-09-30 (a percentage of the same tier),
+        # and since 2026-10-05 the special trial judges and the two deputies
+        # (a percentage of a join to the same tier)
+        self.assertEqual(13, len(district))
         at_the_rate = [n for n in district if not PARITY_PROVISIONS[n].get("percentOf")]
         self.assertEqual(8, len(at_the_rate))
 
@@ -347,12 +405,22 @@ class BuildTests(unittest.TestCase):
         are in the tree only for the Tax Court here, so seven reach the
         fixture; the CIT and the two deputies never."""
         records, report = _records()
-        self.assertEqual(8, len(records))
-        self.assertEqual(8, report["priced"])
+        self.assertEqual(11, len(records))
+        self.assertEqual(11, report["priced"])
         self.assertNotIn("jud-district-sdny-magistrate-judge-13", records)
-        self.assertNotIn("jud-support-aousc-deputy-director", records)
-        self.assertNotIn("jud-support-fjc-deputy-director", records)
+        self.assertIn("jud-support-aousc-deputy-director", records)
+        self.assertIn("jud-support-fjc-deputy-director", records)
+        self.assertIn("jud-specialized-tax-special-trial-judge-multiple", records)
         self.assertNotIn("jud-specialized-intl-trade-chief-judge-cit", records)
+        special = records["jud-specialized-tax-special-trial-judge-multiple"]
+        self.assertEqual(round(records["jud-specialized-tax-judge-18"]["amount"] * 0.9, 2), special["amount"])
+        self.assertEqual(3, len(special["documents"]))
+        self.assertEqual("26 U.S.C. 7443(c)(1)", special["viaStatute"])
+        self.assertEqual("U.S. Government Publishing Office", special["documents"][0]["publisher"])
+        self.assertEqual(2, len(records["jud-support-aousc-deputy-director"]["documents"]))
+        self.assertEqual(3, len(records["jud-support-fjc-deputy-director"]["documents"]))
+        self.assertEqual(records["jud-support-aousc-deputy-director"]["amount"],
+                         records["jud-support-fjc-deputy-director"]["amount"])
         self.assertIn("jud-specialized-tax-judge-18", records)
         self.assertEqual(records["jud-specialized-tax-judge-18"]["amount"], records["jud-specialized-tax-chief-judge-tax-court"]["amount"])
 
@@ -445,7 +513,7 @@ class ApplyTests(unittest.TestCase):
         records, _ = _records()
         tree = _base_tree()
         stats = apply_pay_evidence(tree, records, index_tree=index_tree)
-        self.assertEqual(8, stats["priced"])
+        self.assertEqual(11, stats["priced"])
         # The document count, the percentage and the sentence saying what the
         # percentage does not measure are stamped by the shared pass that does
         # the same for every other pay field -- one code path for one number.
@@ -470,7 +538,7 @@ class ApplyTests(unittest.TestCase):
         node_map, _ = index_tree(tree)
         node_map["jud-specialized-tax-chief-judge-tax-court"]["positionStatutoryPay"] = {"source": "elsewhere"}
         stats = apply_pay_evidence(tree, records, index_tree=index_tree)
-        self.assertEqual(7, stats["priced"])
+        self.assertEqual(10, stats["priced"])
         self.assertEqual(1, stats["already_priced_by_another_source"])
         node_map, _ = index_tree(tree)
         self.assertIsNone(node_map["jud-specialized-tax-chief-judge-tax-court"].get("positionDerivedPay"))
@@ -675,6 +743,50 @@ class GateTests(unittest.TestCase):
         parity["arithmetic"] = copy.deepcopy(honest["arithmetic"])
         parity["percentOf"] = 92
         self.assertTrue(any("arithmetic on a parity provision" in v for v in self._check(pay=parity)))
+
+    def test_the_percentage_of_a_join_passes_and_each_link_and_the_arithmetic_are_checked(self):
+        """The special trial judges: 90 percent of a Tax Court judge's rate,
+        which 26 U.S.C. 7443(c)(1) sets at a district judge's -- three
+        documents, 90%, none stating the figure, the statute read from the
+        GPO's edition. The FJC's Deputy chains through 603's two sentences."""
+        node_map, _ = index_tree(self.tree)
+        special = node_map["jud-specialized-tax-special-trial-judge-multiple"]
+        self.assertEqual([], self._check(special))
+        pay = special["positionDerivedPay"]
+        self.assertEqual(3, pay["verification"]["documents"])
+        self.assertEqual(90, pay["verification"]["percent"])
+        self.assertEqual(0, pay["verification"]["documentsStatingTheFigure"])
+        self.assertEqual(90, pay["arithmetic"]["percent"])
+        self.assertEqual(round(249_900.0 * 0.9, 2), pay["amount"])
+        self.assertIn("www.govinfo.gov", pay["url"])
+        self.assertIn("holders", pay)
+        # The chain's middle document dropped.
+        forged = copy.deepcopy(pay)
+        forged["documents"] = [d for d in forged["documents"] if d["citation"] != "26 U.S.C. 7443(c)(1)"]
+        forged["verification"]["documents"] = 2
+        forged["verification"]["percent"] = 80
+        self.assertTrue(any("document list does not carry" in v for v in self._check(special, forged)))
+        # The percentage dropped: the tier's own rate published as the figure.
+        forged = copy.deepcopy(pay)
+        forged["amount"] = 249_900.0
+        forged["rateText"] = "$249,900"
+        self.assertTrue(self._check(special, forged))
+        # The statute read from a host this pipeline does not read the Code from.
+        forged = copy.deepcopy(pay)
+        forged["documents"][0]["url"] = forged["documents"][0]["url"].replace("www.govinfo.gov", "law.cornell.edu")
+        forged["url"] = forged["documents"][0]["url"]
+        self.assertTrue(any("host this pipeline does not read" in v for v in self._check(special, forged)))
+        # Moved onto the Tax Court's own bench, whose provision is the parity.
+        bench = node_map["jud-specialized-tax-judge-18"]
+        out = self._check(bench, pay)
+        self.assertTrue(any("not the one" in v for v in out), out)
+        # The two Deputies.
+        for node_id, documents in (("jud-support-aousc-deputy-director", 2), ("jud-support-fjc-deputy-director", 3)):
+            node = node_map[node_id]
+            self.assertEqual([], self._check(node), node_id)
+            self.assertEqual(documents, node["positionDerivedPay"]["verification"]["documents"])
+            self.assertEqual(round(249_900.0 * 0.92, 2), node["positionDerivedPay"]["amount"])
+            self.assertIn(" … ", node["positionDerivedPay"]["derivation"])
 
     def test_a_percentage_record_moved_to_the_magistrate_bench_is_caught(self):
         """Same court, same count shape, a real statute -- and no provision:

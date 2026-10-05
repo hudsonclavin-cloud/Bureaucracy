@@ -3880,4 +3880,88 @@ U.S.C. 1803, 38 U.S.C. 7101A, 22 U.S.C. 6203, 39 U.S.C. 202, 26 U.S.C. 7443A,
 the host serves sections again, and `load_basis_section` will refuse a
 maintenance page by its empty operative text if one is ever committed by
 mistake; and one decision, the percentage-of-a-join shape (the AO's and FJC's
-deputies, the Tax Court's special trial judges). The next batch can start.
+deputies, the Tax Court's special trial judges). Both were taken up the same evening; see §19.17.
+
+### 19.17 The special trial judges, and a percentage of a join (2026-10-05, evening)
+
+**The decision.** The owner's instruction was "retry the seven fetches and
+price the special trial judges". §19.16 had left the percentage-of-a-join
+shape as the one open decision: `derived_pay.py` priced a percentage of the
+compensation table's own printed figure (the bankruptcy judges, §19.15) and
+refused a percentage of a figure that is itself a join, naming the AO's and
+FJC's Deputy Directors as the two posts refused on it. The special trial
+judges are the same shape — 26 U.S.C. 7443A(d) pays "90 percent of the rate
+for judges of the Tax Court", and a Tax Court judge's rate is 26 U.S.C.
+7443(c)(1)'s parity to a district judge's, so the percentage is of a join —
+and pricing them is deciding the shape. All three are priced by one rule
+rather than three exceptions.
+
+**The seven fetches.** 50 U.S.C. 1803, 38 U.S.C. 7101A, 22 U.S.C. 6203, 39
+U.S.C. 202, 26 U.S.C. 7443A, 52 U.S.C. 20923 and 52 U.S.C. 30106 were
+retried against `uscode.house.gov` and every one came back as it had in the
+morning: HTTP 200 and the 14,615-byte "Under Maintenance" page. Seven stubs
+deleted with their `.meta.json` files, nothing committed, `docs/NETWORK_ACCESS.md`
+§15. The one section the decision needed was then taken from the Government
+Publishing Office's rendering of the **2024 edition** of the Code on
+`www.govinfo.gov` — a host this repository already reads the Government
+Manual and OMB's Public Budget Database from, whose `robots.txt` allows
+`/content/pkg/`. The link service `https://www.govinfo.gov/link/uscode/26/7443A?link-type=html`
+resolved to the granule
+`USCODE-2024-title26/html/USCODE-2024-title26-subtitleF-chap76-subchapC-partI-sec7443A.htm`
+(a URL guessed from the chapter structure, `partII`, was a 404 behind a
+redirect to `/error`, which is why the link service and not a guess is the
+route recorded). Committed as
+`tests/fixtures/uscode/tax_special_trial_26_usc_7443A_govinfo2024.html`, 9,412
+bytes, sha256 `a6a6274d…05db`, fetched 18:44 UTC. GPO's rendering prints the
+same "Editorial Notes" heading the OLRC's does, so `operative_text` cuts it at
+the same place and the quote is checked against the law and not the notes. The
+record names the publisher and the edition; `derived_pay.STATUTE_HOSTS` is the
+closed list of the two hosts, and the gate refuses a statute cited to any
+other.
+
+**What the sections say, read against the operative text.**
+
+- **26 U.S.C. 7443A(d)**: "Each special trial judge shall receive salary—
+  (1) at a rate equal to 90 percent of the rate for judges of the Tax Court,
+  and (2) in the same installments as such judges." A rate, for every special
+  trial judge, by the statute's own "Each".
+- **26 U.S.C. 7443(c)(1)**, already committed: the Tax Court judge's parity to
+  a district judge's rate — the middle statute of the chain.
+- **28 U.S.C. 603**, already committed, in two sentences with an unrelated
+  sentence between: "The salary of the Director shall be the same as the
+  salary of a district judge." and "The salary of the Deputy Director shall be
+  92 percent of the salary of the Director." Both are re-found in the
+  operative text separately and the record prints them joined by " … ";
+  `tests/test_derived_pay.py` asserts they are each in the law and not
+  contiguous.
+- **28 U.S.C. 626**, already committed: "The compensation of the Deputy
+  Director of the Federal Judicial Center shall be the same as that of the
+  Deputy Director of the Administrative Office of the United States Courts."
+  — a chain through §603 to the tier.
+
+**Three nodes priced**, each `positionDerivedPay`, `scopeMatch: proxy`,
+graded `partial`, arithmetic in the open, no document stating the figure:
+
+| Node | Figure | Documents | Chain |
+|---|---|---|---|
+| `Special Trial Judge (×multiple)`, U.S. Tax Court | $249,900 × 90% = **$224,910**, for each holder | 3 (90%) | 7443A(d) → 7443(c)(1) → table |
+| `Deputy Director`, Administrative Office of the U.S. Courts | $249,900 × 92% = **$229,908** | 2 (80%) | 603 (two sentences) → table |
+| `Deputy Director`, Federal Judicial Center | $249,900 × 92% = **$229,908** | 3 (90%) | 626 → 603 → table |
+
+The `NOT_PRICED` reasons the two Deputies carried are withdrawn. The
+magistrate judges (§634(a)'s "up to") and the Court of International Trade
+(§252 states no parity; Schedule 7 prices it, §19.16) stay refused in this
+module for the reasons §19.15 and §19.16 record, and nothing else in the
+batch moved.
+
+Counted on the rebuilt graph: derived records **12 → 15**, pay claims
+**1,102 → 1,105**, unpriced **3,489 → 3,486** (2,716 unreached, 752 stating
+a multiplicity, 18 listed without a rate), multi-post nodes priced **40 → 41**.
+
+**Still open after this section:** six sections — 50 U.S.C. 1803, 38 U.S.C.
+7101A, 22 U.S.C. 6203, 39 U.S.C. 202, 52 U.S.C. 20923, 52 U.S.C. 30106 — each
+one `fetch_fixture.py` command against either host (govinfo's link service
+`/link/uscode/<title>/<section>?link-type=html` resolves the granule when the
+OLRC's host is down), with the lead each serves named in §19.15 and §19.16.
+No decision is open. The next batch can start.
+

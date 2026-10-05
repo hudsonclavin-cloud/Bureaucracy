@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-10-05T18:44:50Z",
+ "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleF-chap76-subchapC-partI-sec7443A.htm",
+ "status": 200,
+ "final_url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleF-chap76-subchapC-partI-sec7443A.htm",
+ "content_type": "text/html",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleF-chap76-subchapC-partI-sec7443A.htm",
+ "bytes": 9412,
+ "sha256": "a6a6274d370dfa80dd1ff508a60f47357e0865a715c484f9f96ace23f08005db",
+ "error": null
+}

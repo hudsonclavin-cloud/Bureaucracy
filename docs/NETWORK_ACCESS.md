@@ -923,3 +923,22 @@ text. All seven were deleted with their `.meta.json` files before anything
 read them; nothing is committed, and a maintenance page is not a fact about
 any section. The leads stay as `CURATION.md` §19.15 and §19.16 record them.
 
+**The same evening, the second retry and the route around it.** All seven
+were fetched again and all seven answered 200 with the same maintenance
+page; seven more stubs deleted unread. The one section the evening's work
+needed, 26 U.S.C. 7443A, was taken instead from the Government Publishing
+Office's rendering of the 2024 edition of the Code on `www.govinfo.gov`,
+a host already in use here for the Government Manual (§11) and OMB's
+database. Its `robots.txt` allows `/content/pkg/`; the link service
+`https://www.govinfo.gov/link/uscode/26/7443A?link-type=html` redirected to
+the granule
+`/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleF-chap76-subchapC-partI-sec7443A.htm`
+(9,412 bytes, 200, `text/html`), where a URL guessed from the chapter
+structure had 404ed behind a redirect to `/error`. The fixture is committed
+with the govinfo URL as its `url` and `final_url`, the record names GPO and
+the edition, and `derived_pay.STATUTE_HOSTS` closes the list of hosts a
+statute may be read from at those two. The six other sections were not
+fetched from govinfo that evening — nothing in hand needed them — and the
+link service is the route the next session should take if the OLRC's host
+is still down (`CURATION.md` §19.17).
+

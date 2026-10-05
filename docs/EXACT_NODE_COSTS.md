@@ -36,7 +36,7 @@ unverified`. The estimates remain in `graph.json` — the cascade's arithmetic
 and the gate's child-sum checks are built on them — so a consumer of the
 JSON must read `cost_status` and not `resolved_total_amount` alone.
 
-The one exception is a real salary. **1,102** position nodes carry a pay claim an
+The one exception is a real salary. **1,105** position nodes carry a pay claim an
 official source states — 461 the offices Members of Congress hold (every
 committee's chair and ranking member in both chambers, the whips, the
 conference and caucus chairs), priced since 2026-09-30 by the owner's decision
@@ -72,7 +72,7 @@ or tier (uscourts.gov, senate.gov, Schedule 6 and, since 2026-10-05, Schedule 7'
 "Judges of the Court of International Trade" for the CIT's chief judge and its
 bench of eight — the one judicial tier uscourts.gov's own table does not print),
 18 a base-pay RANGE, and
-**12 a figure no single document states** (four Article I chief judges and,
+**15 a figure no single document states** (four Article I chief judges and,
 since the multi-post rule became per field on 2026-09-23, their four benches —
 `Judge (×18)` among them, because "Each judge shall receive salary at the same
 rate" is the bench's fact and not one holder's — and, since 2026-09-28, the
@@ -86,8 +86,16 @@ and the table, three documents, none stating the figure; and, since
 $249,900 × 92% = $229,908, arithmetic the block carries in the open and no
 document prints; the magistrate judges are refused because 28 U.S.C. 634(a)
 sets "up to" that percentage, a ceiling the Judicial Conference fixes a figure
-beneath). A node may carry
-more than one, so the per-source figures sum past 1,102. Each shows in place of
+beneath; and, since 2026-10-05 by the owner's decision, a percentage of a
+JOIN — the Tax Court's `Special Trial Judge (×multiple)` at 26 U.S.C.
+7443A(d)'s 90 percent of a Tax Court judge's rate, itself 7443(c)(1)'s parity
+to a district judge's, $249,900 × 90% = $224,910 for each; and the Deputy
+Directors of the Administrative Office and the Federal Judicial Center at 28
+U.S.C. 603's 92 percent of a Director paid as a district judge, $229,908,
+the FJC's through §626 — three documents each for the chains, none stating the
+figure, 7443A read from GPO's 2024-edition rendering on govinfo because the
+OLRC's host was under maintenance). A node may carry
+more than one, so the per-source figures sum past 1,105. Each shows in place of
 the withheld estimate, under its
 own heading rather than COST, with the panel saying it is compensation for one
 post — or, on a node standing for several, for each of its holders — and not
