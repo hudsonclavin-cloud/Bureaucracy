@@ -2277,7 +2277,7 @@ of the nine fields (no `positionTierPay` or `positionGradePay`). The
 derived module stopped writing its own copy of the arithmetic when this
 landed: one code path for one number.
 
-**And the gap this made visible, counted rather than estimated.** 1,105 of 4,591
+**And the gap this made visible, counted rather than estimated.** 1,110 of 4,591
 positions carry a pay claim (461 when this section was first written, before
 the multi-post rule below and the Federal Reserve rows; 492 before the
 reviewed rows of 2026-09-27, 498 before that day's class-title benches, 513
@@ -2289,11 +2289,12 @@ and the ninth batch's rows, 638 before the 461 offices Members of Congress
 hold were priced at the seat rate the same day, 1,099 before the Court of
 International Trade and the Ex-Im Vice Chair of 2026-10-05, 1,102 before the
 Tax Court's special trial judges and the two judicial-support Deputy
-Directors the same day); **3,486
+Directors the same day, 1,105 before the USAGM's CEO and the EAC's and FEC's
+chairs and vice chairs that evening); **3,481
 do not**, and `scripts/report_unpriced_positions.py` says why for every one
 of them:
 
-- **2,716** — no pay document this project has read names the title at all.
+- **2,711** — no pay document this project has read names the title at all.
   Not a coverage gap somebody has not got to.
 - **752** — the node states a multiplicity (`Physician (×multiple)`) and no
   claim that holds for every holder reaches it. Since the per-field rule
@@ -2303,8 +2304,8 @@ of them:
   SYSTEM governs the title is a fact worth having.
 - **18** — OPM lists the position and the row prints no rate.
 
-The concentration is the useful part: **432** of the 3,486 sit under `VA
-Medical Centers`, 360 of them among the 2,716 (the service chiefs
+The concentration is the useful part: **432** of the 3,481 sit under `VA
+Medical Centers`, 360 of them among the 2,711 (the service chiefs
 `va_title38_pay.py` deliberately refuses, since choosing a Title 38 table per
 node would be this module deciding which VA service chiefs are doctors), 61
 under the White House Office (83 before the multi-post rule), 56 under
@@ -2316,9 +2317,10 @@ per unpriced position with its id and its reason;
 `docs/PAY_SOURCE_RESEARCH_PROMPT_3.md` is a research prompt pack generated
 from the same list in the same run — a lead prompt asking which pay systems
 exist and where each is published, then **34 enumeration shards naming every
-one of the 3,486 titles** (39 and 4,003 until 2026-09-30, 38 and 3,953 until
+one of the 3,481 titles** (39 and 4,003 until 2026-09-30, 38 and 3,953 until
 that evening's Members decision, 34 and 3,492 until 2026-10-05, 34 and 3,489
-until that day's special trial judges). The multiplicity
+until that day's special trial judges, 34 and 3,486 until its six govinfo
+sections). The multiplicity
 reason's "N such nodes carry one" is read off the graph on each run since
 2026-09-30; it had said 28 since 2026-09-23 while the graph carried 37. `tests/test_unpriced_positions.py` asserts the
 coverage rather than trusting it: every unpriced id appears in the pack, no
@@ -2761,6 +2763,52 @@ and `aliases.py` is read by no join that lands a number. The NSA's and NRO's
 ARE establishments by name and are priced, though they sit among the stamped
 agencies; the list decides, not the neighbourhood.
 
+**Three bodies whose own section names the office under the stamp (since
+2026-10-05, the owner's "fetch the six sections from govinfo and keep
+going").** `CURATION.md` §19.15 and §19.16 had left six sections unread
+behind the OLRC host's maintenance page. Fetched from the Government
+Publishing Office's 2024-edition rendering on `www.govinfo.gov` through its
+link service, three of them are this module's shape and two of those are
+stamped titles: **22 U.S.C. 6203(b)(3)** pays the U.S. Agency for Global
+Media's Chief Executive Officer "at the annual rate of basic pay for level
+III"; **52 U.S.C. 20923(d)(1)** pays "Each member" of the Election
+Assistance Commission at Level IV; **52 U.S.C. 30106(a)(4)** pays the
+Federal Election Commission's members, other than its two ex officio ones,
+"compensation equivalent to the compensation paid at level IV". The graph
+draws each head as `Director / Administrator / Chair, <agency>` with a
+`Deputy Director / Vice Chair` beside it, and the rule the reviewed Schedule
+rows set for that stamp applies: it is priced only where the body's own
+statute names which office stands under it. Here that sentence is in the
+same section as the pay sentence — 6203(b)(1) makes the CEO the head of the
+Agency; 20923(c)(1) and 30106(a)(5) have each commission choose its chair
+and vice chair "from among its members" — so a row carries
+`identificationQuote`, re-found in the operative text on every run and
+published as `identification.statuteIdentifies`, which the panel prints as
+the sentence that says what the template stands for. It is not a second
+document and the record counts two. The pair reading (a Chair and a Vice
+Chair, not a Director and a Deputy) is the one the statutes support: each
+creates a chairman and a vice chairman together and no deputy to its staff
+director, whose own pay 30106(f) caps "at a rate not to exceed" Level IV — a
+ceiling, which prices nothing, and the FEC's `General Counsel` (capped at
+Level V) already carries OPM's archived listing. A statute document now
+names its publisher and edition from its URL (`derived_pay.statute_publisher`),
+the gate accepts a Code granule from either host, and — because govinfo also
+publishes the Government Manual, whose URL sits legitimately among many
+nodes' own sources — the gate's leak check keys on `is_us_code_document_url`
+(the OLRC host, or a govinfo path carrying `USCODE-`), not on the host; the
+first version keyed on the host and refused seventeen honest nodes. The
+other three sections price nothing and `CURATION.md` §19.18 says why: 50
+U.S.C. 1803(a) designates "11 district court judges" and states no pay (and
+nothing in it bars a senior judge, whose salary §371(b)(2) sets apart); 38
+U.S.C. 7101A(b) names a pay SYSTEM, "rates equivalent to the rates payable
+under section 5372 of title 5", with a carve-out for members in the SES it
+does not name; 39 U.S.C. 202(a)(1) pays a Governor "$30,000 a year plus $300
+a day for not more than 42 days of meetings", a stipend and an attendance
+figure, not an annual rate. Five priced (USAGM's CEO $209,600; the four
+commissioners $197,200 each), all `partial`, all `proxy`; tier-reference
+records **37 → 42**, published **36 → 41**, reviewed rows **10 → 15**; pay
+claims **1,105 → 1,110**, unpriced **3,486 → 3,481**.
+
 **28 published of 29 derived**, and the one difference is the leave-alone
 rule working: the Department of Justice's IG carries OPM's archived listing
 with a printed level and rate (`positionPayRate`), and a figure set by
@@ -3009,6 +3057,11 @@ govinfo: nothing in hand needed them that evening, and each is a lead
 can take by either host. Derived records **12 → 15** (12 on two documents at
 80%, 3 on three at 90%, none stating the figure); pay claims **1,102 →
 1,105**, unpriced **3,489 → 3,486**, multi-post nodes priced **40 → 41**.
+The six sections the OLRC host would not serve were then fetched from
+govinfo the same evening, on the owner's instruction, and three of them
+priced five posts through the tier-reference module (the paragraph "Three
+bodies whose own section names the office under the stamp" above); the
+other three are declined in `CURATION.md` §19.18.
 
 **A counted class of offices, and the fourteen rows the ninth batch bought
 (since 2026-09-30, the owner's decision).** The Code places some offices one
@@ -3713,7 +3766,7 @@ subdivide measured money rather than invent it — which does not make a
 subdivision a measurement. **Since 2026-09-09 the site does not show one by
 default**, by the owner's decision: a node with no measured cost of its own
 shows no figure and says why, and ticking "Also show estimated shares of a
-parent's total" opts back in. The exception is a real salary — **1,105** of the
+parent's total" opts back in. The exception is a real salary — **1,110** of the
 4,591 positions carry a pay claim an official source states, counted on the
 published graph on 2026-10-05 after Schedule 6, the VA's Title 38 bands, the
 Article I parity derivations, the per-field multi-post rule, the Federal
@@ -3729,10 +3782,12 @@ benches at 28 U.S.C. 153(a)'s 92 percent of the district-judge rate,
 arithmetic the block carries in the open, and since 2026-10-05 the Tax
 Court's special trial judges at 26 U.S.C. 7443A(d)'s 90 percent of a Tax
 Court judge's own parity rate and the AO's and FJC's Deputy Directors at 92
-percent of a Director paid as a district judge — a percentage of a join), 36 a rate a
+percent of a Director paid as a district judge — a percentage of a join), 41 a rate a
 statute sets by REFERENCE to an Executive Schedule level (`positionTierReferencePay`:
 the GAO's two officers, the GPO's two, the IES's Director and three
-Commissioners, the FCA Board's Chairman, the Librarian of Congress, and 26
+Commissioners, the FCA Board's Chairman, the Librarian of Congress, since
+2026-10-05 the USAGM's Chief Executive Officer and the EAC's and FEC's chairs
+and vice chairs from sections read on govinfo, and 26
 Inspectors General at Level III plus the Act's
 3 percent, arithmetic no document prints), 72 a Title 38 tier BAND rather than a rate (`positionTierPay`), 215 from the
 Executive Schedule as 5 U.S.C. §§5312–5316 sets it (76 of them through a
@@ -3779,8 +3834,10 @@ thirteen reviewed rows of §19.9's list, 566 with the eight candidates of
 benches of 2026-09-30, 638 with that day's counted classes and
 ninth-batch rows, 1,099 with the Members' offices the same evening, 1,102
 on 2026-10-05 with the Court of International Trade's two judge nodes and the
-Ex-Im Bank's Vice Chair, and 1,105 the same evening with the Tax Court's
-special trial judges and the two judicial-support Deputy Directors. Shown in
+Ex-Im Bank's Vice Chair, 1,105 the same evening with the Tax Court's
+special trial judges and the two judicial-support Deputy Directors, and 1,110
+with the USAGM's CEO and the EAC's and FEC's chairs and vice chairs from the
+six sections govinfo served. Shown in
 the cost block under its own heading and never headed COST.
 
 That figure read **354** until 2026-09-19 and was wrong: it added up the
@@ -3799,8 +3856,9 @@ the thirteen reviewed rows, 566 with the eight candidates, 588 with the
 twenty-two rows that closed the eighth batch, 590 with the bankruptcy
 benches, 638 with the counted classes and the ninth batch's rows, 1,099
 with the offices Members of Congress hold, 1,102 with the Court of
-International Trade and the Ex-Im Vice Chair, and 1,105 with the special
-trial judges and the two Deputy Directors. The estimates
+International Trade and the Ex-Im Vice Chair, 1,105 with the special
+trial judges and the two Deputy Directors, and 1,110 with the five posts the
+govinfo sections priced. The estimates
 stay in `graph.json` because the cascade's arithmetic and the gate's
 child-sum checks are built on them, so a consumer of the JSON must read
 `cost_status`, not `resolved_total_amount` alone. The gate prints both

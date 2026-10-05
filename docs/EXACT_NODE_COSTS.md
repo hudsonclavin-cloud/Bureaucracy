@@ -36,7 +36,7 @@ unverified`. The estimates remain in `graph.json` — the cascade's arithmetic
 and the gate's child-sum checks are built on them — so a consumer of the
 JSON must read `cost_status` and not `resolved_total_amount` alone.
 
-The one exception is a real salary. **1,105** position nodes carry a pay claim an
+The one exception is a real salary. **1,110** position nodes carry a pay claim an
 official source states — 461 the offices Members of Congress hold (every
 committee's chair and ranking member in both chambers, the whips, the
 conference and caucus chairs), priced since 2026-09-30 by the owner's decision
@@ -63,7 +63,13 @@ Deputy at 31 U.S.C. 703(f)'s levels II and III, the GPO's Director and Deputy
 at 44 U.S.C. 303's levels II and III, the IES Director at 20 U.S.C. 9514's
 Level II and its three Commissioners at 9517's Level IV, the FCA Board's
 Chairman at 12 U.S.C. 2242(d)'s Level III, the Librarian of Congress at 2
-U.S.C. 136a–2's Level II, and 26 Inspectors
+U.S.C. 136a–2's Level II, since 2026-10-05 the U.S. Agency for Global Media's
+Chief Executive Officer at 22 U.S.C. 6203(b)(3)'s Level III and the Election
+Assistance Commission's and Federal Election Commission's chairs and vice
+chairs at 52 U.S.C. 20923(d)(1)'s and 30106(a)(4)'s Level IV — each a stamped
+`Director / Administrator / Chair` or `Deputy Director / Vice Chair` title
+priced only because the same section says which office stands under it, read
+from GPO's 2024-edition rendering on govinfo — and 26 Inspectors
 General of the establishments 5 U.S.C. 401(1) lists at Level III plus the
 Act's 3 percent — $215,888, arithmetic the block carries in the open and no
 document prints), 72 a Title 38 tier BAND rather than a rate, 31 from a
@@ -95,7 +101,7 @@ U.S.C. 603's 92 percent of a Director paid as a district judge, $229,908,
 the FJC's through §626 — three documents each for the chains, none stating the
 figure, 7443A read from GPO's 2024-edition rendering on govinfo because the
 OLRC's host was under maintenance). A node may carry
-more than one, so the per-source figures sum past 1,105. Each shows in place of
+more than one, so the per-source figures sum past 1,110. Each shows in place of
 the withheld estimate, under its
 own heading rather than COST, with the panel saying it is compensation for one
 post — or, on a node standing for several, for each of its holders — and not

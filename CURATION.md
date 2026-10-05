@@ -3963,5 +3963,109 @@ a multiplicity, 18 listed without a rate), multi-post nodes priced **40 → 41**
 one `fetch_fixture.py` command against either host (govinfo's link service
 `/link/uscode/<title>/<section>?link-type=html` resolves the granule when the
 OLRC's host is down), with the lead each serves named in §19.15 and §19.16.
-No decision is open. The next batch can start.
+Fetched from govinfo the same evening; see §19.18.
+
+### 19.18 The six sections, read from govinfo: three price five posts, three price nothing (2026-10-05, later)
+
+**The instruction** was "fetch the six sections from govinfo and keep
+going". Each was resolved through govinfo's link service and committed from
+GPO's rendering of the 2024 edition (`docs/NETWORK_ACCESS.md` §15 has the
+granules and sizes). Read against the operative text, each section says
+exactly one thing about pay, and the six fall into two groups.
+
+**Three are the tier-reference shape, and two of the three fall under the
+stamp rule.**
+
+- **22 U.S.C. 6203(b)(3)**: "A Chief Executive Officer appointed pursuant to
+  paragraph (1) shall be compensated at the annual rate of basic pay for level
+  III of the Executive Schedule under section 5314 of title 5." §19.14 had
+  declined the USAGM CEO because §5314 prints no such office; it does not need
+  to — this section sets the pay by reference, which is `tier_reference_pay.py`'s
+  shape. The graph's node is the stamped `Director / Administrator / Chair,
+  Broadcasting Board of Governors / USAGM`, and (b)(1) of the same section
+  says what stands under it: "The head of the United States Agency for Global
+  Media shall be a Chief Executive Officer, who shall be appointed by the
+  President, by and with the advice and consent of the Senate." Priced at
+  Level III, **$209,600**.
+- **52 U.S.C. 20923(d)(1)**: "Each member of the Commission shall be
+  compensated at the annual rate of basic pay prescribed for level IV of the
+  Executive Schedule under section 5315 of title 5." (c)(1): "The Commission
+  shall select a chair and vice chair from among its members for a term of 1
+  year, except that the chair and vice chair may not be affiliated with the
+  same political party." So the EAC's chair and vice chair are members and
+  (d)(1) prices them. The stamped `Director / Administrator / Chair, Election
+  Assistance Commission` and `Deputy Director / Vice Chair` are read as the
+  Chair and the Vice Chair, the pair the statute creates; the EAC's Executive
+  Director (20924) has no statutory deputy, so the "Director / Deputy
+  Director" reading has nothing to pair with. Both at Level IV, **$197,200**.
+- **52 U.S.C. 30106(a)(4)**: "Members of the Commission (other than the
+  Secretary of the Senate and the Clerk of the House of Representatives)
+  shall receive compensation equivalent to the compensation paid at level IV
+  of the Executive Schedule (5 U.S.C. 5315)." (a)(5): "The Commission shall
+  elect a chairman and a vice chairman from among its members (other than the
+  Secretary of the Senate and the Clerk of the House of Representatives) for
+  a term of one year." The same pair reading, for the same reason: (f) gives
+  the FEC a staff director and a general counsel, paid "at a rate not to
+  exceed" Levels IV and V — ceilings, which price nothing — and no deputy.
+  The batch's own row cited "§30106(a)(6)", which does not exist; (a)(4) and
+  (a)(5) are the sentences. Both at Level IV, **$197,200**. The FEC's
+  `General Counsel` already carries OPM's archived listing ($184,900, the
+  Level V figure the ceiling names) and is left as it is.
+
+Each of the five rows carries `identificationQuote`, the second sentence of
+its own section, re-found in the operative text on every run and published as
+`identification.statuteIdentifies`; it is not a second document, so the
+record rests on two (80%) with neither stating the figure. The derive step
+records the publisher as the Government Publishing Office and the edition as
+2024, and the gate now accepts a Code granule from either host — keyed on the
+granule, not the host, because govinfo also serves the Government Manual
+whose URL sits among many nodes' own sources; a host-keyed first version
+refused seventeen honest Inspector General blocks and was corrected before
+anything was published.
+
+**Three price nothing, each for a reason in the text.**
+
+- **50 U.S.C. 1803(a)** — the FISC. "The Chief Justice of the United States
+  shall publicly designate 11 district court judges from at least seven of
+  the United States judicial circuits … who shall constitute a court". That
+  is composition and jurisdiction; the section's only sentence about
+  compensation is (i)(11), an amicus's, "at such rate as the court considers
+  appropriate". The judges' pay is each one's own district judgeship, which
+  this section neither sets nor restates, and nothing in it limits
+  designation to judges in active service — a senior district judge remains a
+  "district court judge", and this file already refuses one figure for a
+  bench that may include senior judges because 28 U.S.C. 371(b)(2) sets their
+  salary apart from the tier's. `Presiding Judge, FISC` and `FISC Judge (×10
+  assigned district judges)` stay unpriced; the lead §19.15 carried as "the
+  shape is `derived_pay.py`'s with a composition sentence" was wrong about
+  the shape, because the section makes no parity claim to join.
+- **38 U.S.C. 7101A(b)** — the Board of Veterans' Appeals. "Members of the
+  Board (other than the Chairman and any member of the Board who is a member
+  of the Senior Executive Service) shall, in accordance with regulations
+  prescribed by the Secretary, be paid basic pay at rates equivalent to the
+  rates payable under section 5372 of title 5." That names a pay SYSTEM (the
+  administrative law judge system, several levels and steps OPM sets) and no
+  rate, and carves out members in the SES without naming which. `Veterans
+  Law Judge (×multiple)` cannot take a band "for each holder" when the
+  statute says some holders are paid under another system, and `Vice
+  Chairman` is a member whose system the section leaves to the carve-out.
+  Declined. A band from OPM's ALJ table on a node the carve-out does not
+  reach would be a new decision, and there is no such node.
+- **39 U.S.C. 202(a)(1)** — the Postal Service's Governors. "Each Governor
+  shall receive a salary of $30,000 a year plus $300 a day for not more than
+  42 days of meetings each year". A stipend plus an attendance figure is not
+  an annual rate of basic pay; the per-diem half is nobody's figure until
+  somebody's attendance is known, and `USPS Board of Governors (9 members)`
+  is a body of nine. (c) and (d) leave the Postmaster General's and Deputy
+  Postmaster General's pay to be "fixed by the Governors", stating no figure.
+  Declined, as §19.15 expected.
+
+Counted on the rebuilt graph: tier-reference records **37 → 42**, published
+**36 → 41** (the DOJ IG's archived listing still wins), reviewed rows **10 →
+15**; pay claims **1,105 → 1,110**, unpriced **3,486 → 3,481** (2,711
+unreached, 752 stating a multiplicity, 18 listed without a rate).
+
+**Still open after this section:** nothing from the ten batches. Every lead
+is built, declined with its reason here, or — the FISC and the BVA —
+declined on the section's own text. The next batch can start.
 

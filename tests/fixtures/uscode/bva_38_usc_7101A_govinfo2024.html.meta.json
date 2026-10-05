@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-10-05T18:59:32Z",
+ "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partV-chap71-sec7101A.htm",
+ "status": 200,
+ "final_url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partV-chap71-sec7101A.htm",
+ "content_type": "text/html",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partV-chap71-sec7101A.htm",
+ "bytes": 11175,
+ "sha256": "9e02c608c5654c54a3a49a8e8e0900e17e64203019cb290521fd8b40b8185ea8",
+ "error": null
+}

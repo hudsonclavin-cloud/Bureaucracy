@@ -8,12 +8,12 @@ checkable claim. `docs/PAY_SOURCE_RESEARCH_PROMPT_3.md` is generated from this
 same list in the same run.
 
 - position nodes in the published graph: **4,591**
-- carrying a pay claim an official document supports: **1,105**
-- carrying none: **3,486**
+- carrying a pay claim an official document supports: **1,110**
+- carrying none: **3,481**
 
 | reason | count | what it means |
 |---|---|---|
-| `unreached` | 2,716 | no source this project has read names the title at all. Not a coverage gap somebody has not got to: no pay document in the repository names this title under this organisation, so nothing could have reached it. |
+| `unreached` | 2,711 | no source this project has read names the title at all. Not a coverage gap somebody has not got to: no pay document in the repository names this title under this organisation, so nothing could have reached it. |
 | `multiplicity` | 752 | the node states a multiplicity (×N) and no claim that holds for every holder has reached it. Since 2026-09-23 a claim that holds for each holder by its own terms IS published on such a node with a `holders` block -- a tier or parity rate paid to every judge of the tier, a band every holder is within, or a roster listing every holder at one rate -- and 41 such nodes carry one. What stays refused is an incumbency-shaped claim (one listing's level, one row of the current export), because that is one appointment's figure and not the group's. For these nodes no office-rate claim has reached them at all. Knowing which pay system governs the title is still useful -- it is what would let the graph carry the schedule rather than a rate -- so these are listed and asked about. |
 | `listed_no_rate` | 18 | OPM lists the position and the row prints no rate. The PLUM archive or the current export names the title under this organisation but the Level/Grade/Pay cell carries a rank or is empty, and no salary table this project has read prices that pay plan. |
 
@@ -4770,15 +4770,6 @@ same list in the same run.
 - `exec-ind-misc-tennessee-valley-authority-tva-director-administrator-chair-tennessee-valley-authority` — Director / Administrator / Chair, Tennessee Valley Authority — `unreached`
 - `exec-ind-misc-tennessee-valley-authority-tva-general-counsel` — General Counsel — `unreached`
 
-## U.S. Agency for Global Media  — 4 unpriced
-
-`exec-ind-misc-broadcasting-board-of-governors-usagm`
-
-- `exec-ind-misc-broadcasting-board-of-governors-usagm-chief-financial-officer` — Chief Financial Officer — `unreached`
-- `exec-ind-misc-broadcasting-board-of-governors-usagm-deputy-director-vice-chair` — Deputy Director / Vice Chair — `unreached`
-- `exec-ind-misc-broadcasting-board-of-governors-usagm-director-administrator-chair-broadcasting-board-of-governors-usagm` — Director / Administrator / Chair, Broadcasting Board of Governors / USAGM — `unreached`
-- `exec-ind-misc-broadcasting-board-of-governors-usagm-inspector-general` — Inspector General — `unreached`
-
 ## U.S. Court of Federal Claims  — 4 unpriced
 
 `jud-specialized-claims`
@@ -5173,14 +5164,6 @@ same list in the same run.
 - `exec-ind-nsf-education-human-resources-ehr-undergraduate-education-program-director-multiple` — Program Director (×multiple) — `multiplicity`
 - `exec-ind-nsf-education-human-resources-ehr-undergraduate-education-program-officer-multiple` — Program Officer (×multiple) — `multiplicity`
 
-## Election Assistance Commission (EAC)  — 3 unpriced
-
-`exec-ind-misc-election-assistance-commission-eac`
-
-- `exec-ind-misc-election-assistance-commission-eac-deputy-director-vice-chair` — Deputy Director / Vice Chair — `unreached`
-- `exec-ind-misc-election-assistance-commission-eac-director-administrator-chair-election-assistance-commission` — Director / Administrator / Chair, Election Assistance Commission — `unreached`
-- `exec-ind-misc-election-assistance-commission-eac-inspector-general` — Inspector General — `unreached`
-
 ## Employee Benefits Security Administration (EBSA)  — 3 unpriced
 
 `exec-dept-dol-ebsa`
@@ -5204,14 +5187,6 @@ same list in the same run.
 - `exec-ind-epa-administrator-epa` — Administrator, EPA — `unreached`
 - `exec-ind-epa-chief-of-staff` — Chief of Staff — `unreached`
 - `exec-ind-epa-general-counsel` — General Counsel — `unreached`
-
-## Federal Election Commission (FEC)  — 3 unpriced
-
-`exec-ind-misc-federal-election-commission-fec`
-
-- `exec-ind-misc-federal-election-commission-fec-deputy-director-vice-chair` — Deputy Director / Vice Chair — `unreached`
-- `exec-ind-misc-federal-election-commission-fec-director-administrator-chair-federal-election-commission` — Director / Administrator / Chair, Federal Election Commission — `unreached`
-- `exec-ind-misc-federal-election-commission-fec-inspector-general` — Inspector General — `unreached`
 
 ## Federal Housing Administration (FHA)  — 3 unpriced
 
@@ -5596,6 +5571,14 @@ same list in the same run.
 - `exec-dept-doj-div-tax-deputy-assistant-attorney-general-3-5` — Deputy Assistant Attorney General (×3-5) — `multiplicity`
 - `exec-dept-doj-div-tax-section-chief-multiple` — Section Chief (×multiple) — `multiplicity`
 - `exec-dept-doj-div-tax-trial-attorney-ausa-multiple` — Trial Attorney / AUSA (×multiple) — `multiplicity`
+
+## U.S. Agency for Global Media  — 3 unpriced
+
+`exec-ind-misc-broadcasting-board-of-governors-usagm`
+
+- `exec-ind-misc-broadcasting-board-of-governors-usagm-chief-financial-officer` — Chief Financial Officer — `unreached`
+- `exec-ind-misc-broadcasting-board-of-governors-usagm-deputy-director-vice-chair` — Deputy Director / Vice Chair — `unreached`
+- `exec-ind-misc-broadcasting-board-of-governors-usagm-inspector-general` — Inspector General — `unreached`
 
 ## U.S. Tax Court  — 3 unpriced
 
@@ -6143,6 +6126,12 @@ same list in the same run.
 
 - `leg-senate-cmte-banking-housing-urban-affairs-sub-economic-policy-staff-director-subcommittee-on-economic-policy` — Staff Director, Subcommittee on Economic Policy — `unreached`
 
+## Election Assistance Commission (EAC)  — 1 unpriced
+
+`exec-ind-misc-election-assistance-commission-eac`
+
+- `exec-ind-misc-election-assistance-commission-eac-inspector-general` — Inspector General — `unreached`
+
 ## Emerging Threats & Capabilities  — 1 unpriced
 
 `leg-senate-cmte-armed-services-sub-emerging-threats-capabilities`
@@ -6184,6 +6173,12 @@ same list in the same run.
 `executive-branch`
 
 - `exec-president` — The President of the United States — `unreached`
+
+## Federal Election Commission (FEC)  — 1 unpriced
+
+`exec-ind-misc-federal-election-commission-fec`
+
+- `exec-ind-misc-federal-election-commission-fec-inspector-general` — Inspector General — `unreached`
 
 ## Financial Institutions & Consumer Protection  — 1 unpriced
 

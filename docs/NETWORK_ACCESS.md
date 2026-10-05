@@ -942,3 +942,22 @@ fetched from govinfo that evening — nothing in hand needed them — and the
 link service is the route the next session should take if the OLRC's host
 is still down (`CURATION.md` §19.17).
 
+**Later the same evening, the six.** On the owner's instruction the other
+six were fetched the same way, each resolved through the link service first:
+
+| Section | Granule on www.govinfo.gov (2024 edition) | Bytes |
+|---|---|---|
+| 50 U.S.C. 1803 | `USCODE-2024-title50-chap36-subchapI-sec1803.htm` | 35,263 |
+| 38 U.S.C. 7101A | `USCODE-2024-title38-partV-chap71-sec7101A.htm` | 11,175 |
+| 22 U.S.C. 6203 | `USCODE-2024-title22-chap71-sec6203.htm` | 11,295 |
+| 39 U.S.C. 202 | `USCODE-2024-title39-partI-chap2-sec202.htm` | 14,839 |
+| 52 U.S.C. 20923 | `USCODE-2024-title52-subtitleII-chap209-subchapII-partA-subpart1-sec20923.htm` | 6,511 |
+| 52 U.S.C. 30106 | `USCODE-2024-title52-subtitleIII-chap301-subchapI-sec30106.htm` | 21,066 |
+
+All six answered 200 `text/html` at 18:59 UTC, two seconds apart, each
+committed under `tests/fixtures/uscode/` with the `_govinfo2024` suffix and
+its `.meta.json`. Every one prints the same "Editorial Notes" heading the
+OLRC's pages do, so `operative_text` cuts them at the same place. What each
+says, and what was built from it, is `CURATION.md` §19.18. Nothing on the
+OLRC's host was retried a third time.
+

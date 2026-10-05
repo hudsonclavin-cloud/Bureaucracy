@@ -13,7 +13,7 @@ from pathlib import Path
 
 from data_pipeline.exporter.build_graph import MINIMAL_GRAPH_FIELDS, index_tree
 from data_pipeline.verification import financial_evidence as fe
-from data_pipeline.verification.derived_pay import load_section
+from data_pipeline.verification.derived_pay import STATUTE_HOSTS, load_section, statute_publisher
 from data_pipeline.verification.evidence import EVIDENCE_OWNED_FIELDS
 from data_pipeline.verification.pay_documents import PAY_DOCUMENT_FIELDS, annotate_pay_documents
 from data_pipeline.verification.pay_tables import (
@@ -43,6 +43,7 @@ from scripts.validate_published_graph import (
     PAY_DOCUMENT_URL_KEYS,
     TIER_REFERENCE_COMPOSED_ROWS,
     TIER_REFERENCE_FIELD,
+    TIER_REFERENCE_IDENTIFICATIONS,
     TIER_REFERENCE_IES_COMPOSITION,
     TIER_REFERENCE_IG_RULE,
     TIER_REFERENCE_METHOD,
@@ -51,6 +52,7 @@ from scripts.validate_published_graph import (
     TIER_REFERENCE_SOURCE,
     TIER_REFERENCE_TABLE_URL,
     US_CODE_BASIS_FIXTURE_DIR,
+    is_us_code_document_url,
     tier_reference_establishments,
     tier_reference_pay_violations,
     uscode_operative_text,
@@ -122,6 +124,28 @@ def _base_tree():
              "children": [
                  {"id": "exec-ind-misc-americorps-inspector-general", "name": "Inspector General", "type": "Position"},
              ]},
+            # Three bodies whose own section names the office under the
+            # stamped title (2026-10-05): the USAGM's CEO, the EAC's and the
+            # FEC's chair and vice chair.
+            {"id": "exec-ind-misc-broadcasting-board-of-governors-usagm", "name": "U.S. Agency for Global Media", "type": "Independent Agency",
+             "children": [
+                 {"id": "exec-ind-misc-broadcasting-board-of-governors-usagm-director-administrator-chair-broadcasting-board-of-governors-usagm",
+                  "name": "Director / Administrator / Chair, Broadcasting Board of Governors / USAGM", "type": "Position"},
+             ]},
+            {"id": "exec-ind-misc-election-assistance-commission-eac", "name": "Election Assistance Commission (EAC)", "type": "Independent Agency",
+             "children": [
+                 {"id": "exec-ind-misc-election-assistance-commission-eac-director-administrator-chair-election-assistance-commission",
+                  "name": "Director / Administrator / Chair, Election Assistance Commission", "type": "Position"},
+                 {"id": "exec-ind-misc-election-assistance-commission-eac-deputy-director-vice-chair",
+                  "name": "Deputy Director / Vice Chair", "type": "Position"},
+             ]},
+            {"id": "exec-ind-misc-federal-election-commission-fec", "name": "Federal Election Commission (FEC)", "type": "Independent Agency",
+             "children": [
+                 {"id": "exec-ind-misc-federal-election-commission-fec-director-administrator-chair-federal-election-commission",
+                  "name": "Director / Administrator / Chair, Federal Election Commission", "type": "Position"},
+                 {"id": "exec-ind-misc-federal-election-commission-fec-deputy-director-vice-chair",
+                  "name": "Deputy Director / Vice Chair", "type": "Position"},
+             ]},
             {"id": "exec-ind-epa", "name": "Environmental Protection Agency (EPA)", "type": "Agency",
              "children": [
                  {"id": "exec-ind-epa-inspector-general-bench", "name": "Inspector General (×2)", "type": "Position",
@@ -147,7 +171,13 @@ PRICED_IN_BASE_TREE = {
     "exec-dept-ed-ies-commissioner-national-center-for-education-research-ncer",
     "exec-dept-defense-inspector-general",
     "exec-dept-defense-agency-nsa-inspector-general",
+    "exec-ind-misc-broadcasting-board-of-governors-usagm-director-administrator-chair-broadcasting-board-of-governors-usagm",
+    "exec-ind-misc-election-assistance-commission-eac-director-administrator-chair-election-assistance-commission",
+    "exec-ind-misc-election-assistance-commission-eac-deputy-director-vice-chair",
+    "exec-ind-misc-federal-election-commission-fec-director-administrator-chair-federal-election-commission",
+    "exec-ind-misc-federal-election-commission-fec-deputy-director-vice-chair",
 }
+STAMPED_IN_BASE_TREE = {node_id for node_id in PRICED_IN_BASE_TREE if node_id in TIER_REFERENCE_IDENTIFICATIONS}
 
 
 class SectionTests(unittest.TestCase):
@@ -228,6 +258,45 @@ class MirrorTests(unittest.TestCase):
             self.assertEqual(0, row["percent"])
             self.assertIn(level, EXECUTIVE_SCHEDULE_RATES)
 
+    def test_the_gate_mirrors_the_identifying_sentence_of_every_stamped_row(self):
+        with_identification = {n: row["identificationQuote"] for n, row in TIER_REFERENCE_PROVISIONS.items()
+                               if row.get("identificationQuote")}
+        self.assertEqual(with_identification, TIER_REFERENCE_IDENTIFICATIONS)
+        self.assertEqual(5, len(with_identification))
+        for node_id, sentence in with_identification.items():
+            row = TIER_REFERENCE_PROVISIONS[node_id]
+            with self.subTest(node=node_id):
+                # The identifying sentence is in the SAME section as the pay
+                # sentence, in its operative text, by both readers.
+                section = load_section(row["fixture"])
+                self.assertIn(sentence, section["operative"])
+                self.assertIn(sentence, uscode_operative_text(US_CODE_BASIS_FIXTURE_DIR / row["fixture"]))
+                self.assertNotEqual(sentence, row["quote"])
+                # A stamped title, never a name the statute prints.
+                self.assertTrue(row["nodeName"].startswith(("Director / Administrator / Chair", "Deputy Director / Vice Chair")))
+                self.assertIn("www.govinfo.gov", section["url"])
+
+    def test_a_code_granule_on_govinfo_is_a_statute_and_the_manual_on_govinfo_is_not(self):
+        self.assertTrue(is_us_code_document_url("https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title31-section703"))
+        self.assertTrue(is_us_code_document_url("https://www.govinfo.gov/content/pkg/USCODE-2024-title52/html/USCODE-2024-title52-subtitleII-chap209-subchapII-partA-subpart1-sec20923.htm"))
+        self.assertFalse(is_us_code_document_url("https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-072"))
+        self.assertFalse(is_us_code_document_url("https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/xls/BUDGET-2027-DB-2.xlsx"))
+        self.assertFalse(is_us_code_document_url("https://www.law.cornell.edu/uscode/text/52/20923"))
+
+    def test_the_three_sections_came_from_govinfo_and_say_so(self):
+        for fixture in ("usagm_22_usc_6203_govinfo2024.html", "eac_52_usc_20923_govinfo2024.html", "fec_52_usc_30106_govinfo2024.html"):
+            section = load_section(fixture)
+            self.assertTrue(any(host in section["url"] for host in STATUTE_HOSTS))
+            publisher, edition = statute_publisher(section["url"])
+            self.assertEqual("U.S. Government Publishing Office", publisher)
+            self.assertEqual("2024 edition of the United States Code", edition)
+        # The pair reading: each statute creates a chairman and a vice
+        # chairman together, and 30106 pays the members OTHER than the two
+        # ex officio ones, whom (a)(5) also excludes from the chairmanship.
+        fec = load_section("fec_52_usc_30106_govinfo2024.html")["operative"]
+        self.assertIn("(other than the Secretary of the Senate and the Clerk of the House of Representatives) shall receive compensation", fec)
+        self.assertIn("The staff director shall be paid at a rate not to exceed", fec)  # a ceiling, not priced
+
     def test_the_gate_mirrors_the_composing_section_and_which_rows_need_it(self):
         citation, fixture, sentence = TIER_REFERENCE_IES_COMPOSITION
         self.assertEqual((IES_COMPOSITION["citation"], IES_COMPOSITION["fixture"], IES_COMPOSITION["quote"]),
@@ -276,7 +345,18 @@ class BuildTests(unittest.TestCase):
         self.assertEqual({node_id: "node not in the graph" for node_id in TIER_REFERENCE_PROVISIONS
                           if node_id not in PRICED_IN_BASE_TREE},
                          {k: v for k, v in report["refused"].items() if k != "exec-ind-epa-inspector-general-bench"})
-        self.assertEqual(6, report["pricedByReviewedRow"])
+        self.assertEqual(11, report["pricedByReviewedRow"])
+        for node_id in STAMPED_IN_BASE_TREE:
+            record = records[node_id]
+            self.assertEqual(2, len(record["documents"]))
+            self.assertEqual(TIER_REFERENCE_IDENTIFICATIONS[node_id], record["identification"]["statuteIdentifies"])
+            self.assertEqual(record["office"], record["identification"]["office"])
+            self.assertEqual("U.S. Government Publishing Office", record["documents"][0]["publisher"])
+            self.assertIn("2024 edition", record["documents"][0]["title"])
+        self.assertNotIn("statuteIdentifies", records["leg-support-gao-comptroller-general-of-the-united-states"]["identification"])
+        self.assertEqual(EXECUTIVE_SCHEDULE_RATES["III"], records["exec-ind-misc-broadcasting-board-of-governors-usagm-director-administrator-chair-broadcasting-board-of-governors-usagm"]["amount"])
+        for node_id in STAMPED_IN_BASE_TREE - {"exec-ind-misc-broadcasting-board-of-governors-usagm-director-administrator-chair-broadcasting-board-of-governors-usagm"}:
+            self.assertEqual(EXECUTIVE_SCHEDULE_RATES["IV"], records[node_id]["amount"])
         self.assertEqual(2, report["pricedInspectorsGeneral"])
         # The composed row carries three documents, the others two.
         ncer = records["exec-dept-ed-ies-commissioner-national-center-for-education-research-ncer"]
@@ -324,7 +404,37 @@ class BuildTests(unittest.TestCase):
             self.assertEqual("partial", fe.classify(out))
             kinds[node_id] = out["unitsEvidenceKind"]
         self.assertEqual("currency_mark_on_the_printed_figure", kinds["leg-support-gao-comptroller-general-of-the-united-states"])
+        self.assertEqual("currency_mark_on_the_printed_figure", kinds["exec-ind-misc-federal-election-commission-fec-deputy-director-vice-chair"])
         self.assertEqual("currency_mark_on_the_figure_the_record_is_computed_from", kinds["exec-dept-defense-inspector-general"])
+
+    def test_a_stamped_row_falls_when_its_section_stops_naming_the_office(self):
+        import shutil
+        import tempfile
+        from data_pipeline.verification.tier_reference_pay import FIXTURE_DIR
+        node_id = "exec-ind-misc-election-assistance-commission-eac-deputy-director-vice-chair"
+        row = TIER_REFERENCE_PROVISIONS[node_id]
+        with tempfile.TemporaryDirectory() as tmp:
+            for path in FIXTURE_DIR.iterdir():
+                shutil.copy(path, Path(tmp) / path.name)
+            doctored = Path(tmp) / row["fixture"]
+            raw = doctored.read_bytes()
+            needle = b"from among its members"
+            self.assertIn(needle, raw)
+            doctored.write_bytes(raw.replace(needle, b"from outside its membership"))
+            import hashlib
+            meta_path = Path(tmp) / (row["fixture"] + ".meta.json")
+            meta = json.loads(meta_path.read_text(encoding="utf-8"))
+            meta["sha256"] = hashlib.sha256(doctored.read_bytes()).hexdigest()
+            meta_path.write_text(json.dumps(meta), encoding="utf-8")
+            loaded = load_executive_schedule()
+            node_map, parent_map = index_tree(_base_tree())
+            fiscal_year = federal_fiscal_year_of(date.fromisoformat(str(loaded["table"]["effective"])))
+            records, report = build_records(node_map, parent_map, loaded, fiscal_year=fiscal_year, directory=tmp)
+        self.assertNotIn(node_id, records)
+        self.assertIn("identifying the office", report["refused"][node_id])
+        # The pay sentence is untouched, so the refusal is the identification's alone,
+        # and the GAO row from another section stands.
+        self.assertIn("leg-support-gao-comptroller-general-of-the-united-states", records)
 
     def test_the_validator_refuses_a_computed_figure_that_is_not_the_arithmetic(self):
         records, _ = _records()
@@ -350,7 +460,7 @@ class ApplyTests(unittest.TestCase):
         records, _ = _records()
         tree = _base_tree()
         stats = apply_pay_evidence(tree, records, index_tree=index_tree)
-        self.assertEqual(8, stats["priced"])
+        self.assertEqual(13, stats["priced"])
         self.assertEqual(2, stats["priced_inspectors_general"])
         annotate_pay_documents(tree)
         node_map, _ = index_tree(tree)
@@ -374,7 +484,7 @@ class ApplyTests(unittest.TestCase):
         node_map, _ = index_tree(tree)
         node_map["exec-dept-defense-inspector-general"]["positionSchedulePay"] = {"source": "elsewhere"}
         stats = apply_pay_evidence(tree, records, index_tree=index_tree)
-        self.assertEqual(7, stats["priced"])
+        self.assertEqual(12, stats["priced"])
         self.assertEqual(1, stats["already_priced_by_another_source"])
 
     def test_an_ig_reparented_since_the_match_is_refused(self):
@@ -427,6 +537,8 @@ class GateTests(unittest.TestCase):
         cg = self.node_map[cg_id][FIELD]
         ncer_id = "exec-dept-ed-ies-commissioner-national-center-for-education-research-ncer"
         ncer = self.node_map[ncer_id][FIELD]
+        eac_vice_id = "exec-ind-misc-election-assistance-commission-eac-deputy-director-vice-chair"
+        eac_vice = self.node_map[eac_vice_id][FIELD]
         good_arith = ig["arithmetic"]
         cases = {
             # Scope: the parent the tree gives the node, never the block's word.
@@ -458,6 +570,15 @@ class GateTests(unittest.TestCase):
             "a composed row misquoting the composing sentence": (ncer_id, {**ncer, "documents": ncer["documents"][:2] + [{**ncer["documents"][2], "quote": "The National Education Centers, which include the NCER"}]}, "use-tree"),
             "a composing document on a row 9517(b) prices by name": ("exec-dept-ed-ies-director-ies", {**self.node_map["exec-dept-ed-ies-director-ies"][FIELD], "documents": self.node_map["exec-dept-ed-ies-director-ies"][FIELD]["documents"] + [ncer["documents"][2]]}, "use-tree"),
             "a GPO row moved onto the other officer": ("leg-support-gpo-deputy-director-coo", self.node_map["leg-support-gpo-director-gpo-public-printer"][FIELD], "use-tree"),
+            # The stamped rows: the identifying sentence must be quoted, must
+            # be the section's, and a block cannot move between the two
+            # bodies' identically named vice chairs.
+            "a stamped row without the identifying sentence": (eac_vice_id, {**eac_vice, "identification": {k: v for k, v in eac_vice["identification"].items() if k != "statuteIdentifies"}}, "use-tree"),
+            "a stamped row quoting an identifying sentence the section does not print": (eac_vice_id, {**eac_vice, "identification": {**eac_vice["identification"], "statuteIdentifies": "The Commission shall select a chair from outside its membership."}}, "use-tree"),
+            "a stamped row identifying another office": (eac_vice_id, {**eac_vice, "identification": {**eac_vice["identification"], "office": "Executive Director of the Election Assistance Commission"}}, "use-tree"),
+            "the EAC's vice chair block moved onto the FEC's identically named node": ("exec-ind-misc-federal-election-commission-fec-deputy-director-vice-chair", eac_vice, "use-tree"),
+            "an identifying sentence on a row that has none": (cg_id, {**cg, "identification": {**cg["identification"], "statuteIdentifies": "Comptroller General is the head of the GAO"}}, "use-tree"),
+            "a statute on a host this pipeline does not read": (eac_vice_id, {**eac_vice, "url": "https://www.law.cornell.edu/uscode/text/52/20923", "documents": [{**eac_vice["documents"][0], "url": "https://www.law.cornell.edu/uscode/text/52/20923"}] + eac_vice["documents"][1:]}, "use-tree"),
         }
         for name, (node_id, pay, parent_name) in cases.items():
             with self.subTest(case=name):
@@ -484,12 +605,15 @@ class PublishedGraphTests(unittest.TestCase):
     def test_the_published_blocks_are_the_gao_officers_and_the_establishments_igs(self):
         node_map, parent_map = index_tree(json.loads(GRAPH.read_text(encoding="utf-8")))
         priced = {node_id: node for node_id, node in node_map.items() if isinstance(node.get(FIELD), dict)}
-        # 37 derived (the GAO's two, the GPO's two, the IES's four, the FCA
-        # Board's Chairman, the Librarian of Congress, and 27 IGs); the
+        # 42 derived (the GAO's two, the GPO's two, the IES's four, the FCA
+        # Board's Chairman, the Librarian of Congress, the USAGM's CEO, the
+        # EAC's and the FEC's chair and vice chair, and 27 IGs); the
         # Department of Justice's IG carries OPM's archived listing with a
         # printed level and rate (`positionPayRate`), which a figure set by
-        # reference never displaces, so 36 are published.
-        self.assertEqual(36, len(priced), sorted(priced))
+        # reference never displaces, so 41 are published.
+        self.assertEqual(41, len(priced), sorted(priced))
+        for node_id in TIER_REFERENCE_IDENTIFICATIONS:
+            self.assertIn(node_id, priced)
         self.assertNotIn("exec-dept-doj-inspector-general", priced)
         self.assertIsInstance(node_map["exec-dept-doj-inspector-general"].get("positionPayRate"), dict)
         establishments = set(tier_reference_establishments(uscode_operative_text(US_CODE_BASIS_FIXTURE_DIR / "ig_5_usc_401.html")))
@@ -499,7 +623,9 @@ class PublishedGraphTests(unittest.TestCase):
                 self.assertEqual([], tier_reference_pay_violations(node, node[FIELD], TODAY, _label, parent.get("name") if parent else None))
                 # The pay documents never among the node's own sources; OPM's
                 # PLUM listings, a different document, may be.
-                self.assertFalse(any("uscode.house.gov" in str(u) or str(u) == TIER_REFERENCE_TABLE_URL
+                # A govinfo URL may sit there legitimately: the Government
+                # Manual is published on the same host. A Code granule may not.
+                self.assertFalse(any(is_us_code_document_url(u) or str(u) == TIER_REFERENCE_TABLE_URL
                                      for u in node.get("sourceUrls") or []))
                 if node_id not in TIER_REFERENCE_PROVISIONS:
                     self.assertIn(node[FIELD]["identification"]["establishment"], establishments)

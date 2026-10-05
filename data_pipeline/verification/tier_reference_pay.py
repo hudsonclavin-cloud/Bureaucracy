@@ -71,6 +71,32 @@ for National and Community Service -- a name this graph carries only in the
 alias table, and `aliases.py` is read by name and existence evidence only,
 never by a join that lands a number.
 
+## Three bodies whose statute names the office under the stamp (since 2026-10-05)
+
+22 U.S.C. 6203(b)(3) pays the Chief Executive Officer of the U.S. Agency for
+Global Media at Level III; 52 U.S.C. 20923(d)(1) pays "Each member" of the
+Election Assistance Commission at Level IV; 52 U.S.C. 30106(a)(4) pays the
+Federal Election Commission's members (other than its two ex officio ones) at
+Level IV. None of the three is on the Schedule, so this module's shape. The
+graph draws each body's head with the stamped `Director / Administrator /
+Chair, <agency>` and `Deputy Director / Vice Chair` titles, and the rule the
+reviewed Schedule rows set applies: the stamp is priced only where the body's
+own statute names which office stands under it, and here that sentence is in
+the SAME section as the pay sentence -- 6203(b)(1) makes the CEO the head of
+the Agency, 20923(c)(1) and 30106(a)(5) have each commission choose its chair
+and vice chair "from among its members", whose pay the next sentence sets. So
+a row may carry `identificationQuote`, a second sentence of its own section
+re-found in the operative text on every run and published in the block's
+`identification` as `statuteIdentifies`; it is not a second document, and the
+record counts two. The pair reading -- Chair and Vice Chair rather than a
+Director and a Deputy -- is the one the statutes support: each creates a
+chairman and a vice chairman as a pair and no deputy to its staff director.
+
+All three sections were read from the Government Publishing Office's rendering
+of the 2024 edition on www.govinfo.gov (uscode.house.gov was under
+maintenance; docs/NETWORK_ACCESS.md §15), so a statute document names its
+publisher and edition through `derived_pay.statute_publisher`.
+
 ## Every rule the other pay modules keep
 
 `scopeMatch: proxy` and `partial` on every record: the statute names an
@@ -95,6 +121,7 @@ from data_pipeline.verification.derived_pay import (
     Unreadable,
     document_strength_percent,
     load_section,
+    statute_publisher,
 )
 
 FIXTURE_DIR = Path(__file__).resolve().parents[2] / "tests" / "fixtures" / "uscode"
@@ -112,6 +139,9 @@ PAY_METHOD_PERCENT = (
     "pay_set_by_reference_to_an_executive_schedule_level_plus_a_statutory_percentage_joined_to_opm_table"
 )
 
+#: The publisher and edition a statute document names come from its URL
+#: (`derived_pay.statute_publisher`): the OLRC's prelim pages, or GPO's
+#: rendering of a dated edition on www.govinfo.gov.
 STATUTE_PUBLISHER = "Office of the Law Revision Counsel, U.S. House of Representatives"
 
 #: 20 U.S.C. 9517(a) prices "each Commissioner" of "the National Education
@@ -241,6 +271,95 @@ TIER_REFERENCE_PROVISIONS: dict[str, dict[str, Any]] = {
             "The Chairman of the Board shall receive compensation at the rate prescribed for level III of the Executive Schedule under section 5314 of title 5"
         ),
     },
+    # --- 2026-10-05: three bodies whose own section names the office under
+    # --- the stamp, read from govinfo's 2024 edition ------------------------
+    "exec-ind-misc-broadcasting-board-of-governors-usagm-director-administrator-chair-broadcasting-board-of-governors-usagm": {
+        "nodeName": "Director / Administrator / Chair, Broadcasting Board of Governors / USAGM",
+        "office": "Chief Executive Officer of the United States Agency for Global Media",
+        "citation": "22 U.S.C. 6203(b)(3)",
+        "fixture": "usagm_22_usc_6203_govinfo2024.html",
+        "subsection": "(b)(3) Compensation",
+        "level": "III",
+        "percent": 0,
+        "quote": (
+            "A Chief Executive Officer appointed pursuant to paragraph (1) shall be compensated at the annual "
+            "rate of basic pay for level III of the Executive Schedule under section 5314 of title 5."
+        ),
+        "identificationQuote": (
+            "The head of the United States Agency for Global Media shall be a Chief Executive Officer, who shall "
+            "be appointed by the President, by and with the advice and consent of the Senate."
+        ),
+    },
+    "exec-ind-misc-election-assistance-commission-eac-director-administrator-chair-election-assistance-commission": {
+        "nodeName": "Director / Administrator / Chair, Election Assistance Commission",
+        "office": "Chair of the Election Assistance Commission, a member of the Commission",
+        "citation": "52 U.S.C. 20923(d)(1)",
+        "fixture": "eac_52_usc_20923_govinfo2024.html",
+        "subsection": "(d)(1) Compensation",
+        "level": "IV",
+        "percent": 0,
+        "quote": (
+            "Each member of the Commission shall be compensated at the annual rate of basic pay prescribed for "
+            "level IV of the Executive Schedule under section 5315 of title 5."
+        ),
+        "identificationQuote": (
+            "The Commission shall select a chair and vice chair from among its members for a term of 1 year, "
+            "except that the chair and vice chair may not be affiliated with the same political party."
+        ),
+    },
+    "exec-ind-misc-election-assistance-commission-eac-deputy-director-vice-chair": {
+        "nodeName": "Deputy Director / Vice Chair",
+        "office": "Vice Chair of the Election Assistance Commission, a member of the Commission",
+        "citation": "52 U.S.C. 20923(d)(1)",
+        "fixture": "eac_52_usc_20923_govinfo2024.html",
+        "subsection": "(d)(1) Compensation",
+        "level": "IV",
+        "percent": 0,
+        "quote": (
+            "Each member of the Commission shall be compensated at the annual rate of basic pay prescribed for "
+            "level IV of the Executive Schedule under section 5315 of title 5."
+        ),
+        "identificationQuote": (
+            "The Commission shall select a chair and vice chair from among its members for a term of 1 year, "
+            "except that the chair and vice chair may not be affiliated with the same political party."
+        ),
+    },
+    "exec-ind-misc-federal-election-commission-fec-director-administrator-chair-federal-election-commission": {
+        "nodeName": "Director / Administrator / Chair, Federal Election Commission",
+        "office": "Chairman of the Federal Election Commission, a member of the Commission",
+        "citation": "52 U.S.C. 30106(a)(4)",
+        "fixture": "fec_52_usc_30106_govinfo2024.html",
+        "subsection": "(a)(4)",
+        "level": "IV",
+        "percent": 0,
+        "quote": (
+            "Members of the Commission (other than the Secretary of the Senate and the Clerk of the House of "
+            "Representatives) shall receive compensation equivalent to the compensation paid at level IV of the "
+            "Executive Schedule (5 U.S.C. 5315)."
+        ),
+        "identificationQuote": (
+            "The Commission shall elect a chairman and a vice chairman from among its members (other than the "
+            "Secretary of the Senate and the Clerk of the House of Representatives) for a term of one year."
+        ),
+    },
+    "exec-ind-misc-federal-election-commission-fec-deputy-director-vice-chair": {
+        "nodeName": "Deputy Director / Vice Chair",
+        "office": "Vice Chairman of the Federal Election Commission, a member of the Commission",
+        "citation": "52 U.S.C. 30106(a)(4)",
+        "fixture": "fec_52_usc_30106_govinfo2024.html",
+        "subsection": "(a)(4)",
+        "level": "IV",
+        "percent": 0,
+        "quote": (
+            "Members of the Commission (other than the Secretary of the Senate and the Clerk of the House of "
+            "Representatives) shall receive compensation equivalent to the compensation paid at level IV of the "
+            "Executive Schedule (5 U.S.C. 5315)."
+        ),
+        "identificationQuote": (
+            "The Commission shall elect a chairman and a vice chairman from among its members (other than the "
+            "Secretary of the Senate and the Clerk of the House of Representatives) for a term of one year."
+        ),
+    },
     "leg-support-loc-librarian-of-congress": {
         "nodeName": "Librarian of Congress",
         "office": "Librarian of Congress",
@@ -352,11 +471,13 @@ def _rate_text(amount: float) -> str:
 
 
 def _statute_document(section: Mapping[str, Any], citation: str, quote: str, role: str) -> dict[str, Any]:
+    publisher, edition = statute_publisher(str(section["url"]))
     return {
         "role": role,
         "citation": citation,
-        "publisher": STATUTE_PUBLISHER,
-        "title": f"{citation}, current through the prelim edition",
+        "publisher": publisher,
+        "edition": edition,
+        "title": f"{citation}, {edition}",
         "quote": quote,
         "url": section["url"],
         "documentSha256": section["sha256"],
@@ -438,6 +559,15 @@ def build_records(
         if level_row is None:
             refusals[node_id] = f"OPM's table does not print level {row['level']}"
             continue
+        identification: dict[str, Any] = {"kind": "reviewed_row", "nodeName": row["nodeName"]}
+        identifies = row.get("identificationQuote")
+        if identifies:
+            if identifies not in sec["operative"]:
+                where = "only in the publisher's notes" if identifies in sec["whole"] else "nowhere on the page"
+                refusals[node_id] = f"{row['citation']}'s section no longer carries the sentence identifying the office ({where})"
+                continue
+            identification["statuteIdentifies"] = identifies
+            identification["office"] = row["office"]
         extra_documents: list[dict[str, Any]] = []
         composition = row.get("composition")
         if composition:
@@ -454,7 +584,7 @@ def build_records(
             node_id, row["office"], row["citation"], row["subsection"], row["quote"], row["level"],
             int(row["percent"]), sec, level_row, table, fiscal_year,
             table_url=table_url, table_sha256=table_sha256, table_fetched_at=table_fetched_at,
-            extra_documents=extra_documents, identification={"kind": "reviewed_row", "nodeName": row["nodeName"]},
+            extra_documents=extra_documents, identification=identification,
         )
 
     # --- the Inspectors General ----------------------------------------------

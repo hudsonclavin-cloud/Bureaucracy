@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-10-05T18:59:29Z",
+ "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap36-subchapI-sec1803.htm",
+ "status": 200,
+ "final_url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap36-subchapI-sec1803.htm",
+ "content_type": "text/html",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap36-subchapI-sec1803.htm",
+ "bytes": 35263,
+ "sha256": "21337b374a0e1415800be7bfbb88b3667844f0067aadd049dcc830dde8d70f7f",
+ "error": null
+}

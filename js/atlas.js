@@ -560,7 +560,7 @@ function describePay(node) {
       heading: "Pay set by reference to a level — no document states it",
       text: arithmetic
         ? `${reference.statute || "The statute"} sets an Inspector General's basic pay at the rate for Executive Schedule ${reference.levelText || `Level ${reference.level}`} plus ${arithmetic.percent} percent; OPM's ${reference.table || "table"} prints ${arithmetic.baseText || reference.levelRateText} for that level. ${arithmetic.baseText || reference.levelRateText} + ${arithmetic.percent}% = ${printed}, arithmetic this project performed and no document prints.${identification.establishment ? ` 5 U.S.C. 401(1) lists ${identification.establishment} as an establishment whose Inspector General that section covers.` : ""}${holdersNote(reference)}${payDocuments(reference)}`
-        : `${reference.statute || "The statute"} sets the ${reference.office || "post"}'s pay equal to the rate for Executive Schedule ${reference.levelText || `Level ${reference.level}`}; OPM's ${reference.table || "table"} prints ${printed} for that level. The post is not itself on the Schedule.${holdersNote(reference)}${payDocuments(reference)}`,
+        : `${reference.statute || "The statute"} sets the ${reference.office || "post"}'s pay equal to the rate for Executive Schedule ${reference.levelText || `Level ${reference.level}`}; OPM's ${reference.table || "table"} prints ${printed} for that level. The post is not itself on the Schedule.${identification.statuteIdentifies ? ` The graph's title is a template; the same section names the office under it: "${String(identification.statuteIdentifies).trim()}"` : ""}${holdersNote(reference)}${payDocuments(reference)}`,
     });
   }
   const reported = node.positionReportedPay;

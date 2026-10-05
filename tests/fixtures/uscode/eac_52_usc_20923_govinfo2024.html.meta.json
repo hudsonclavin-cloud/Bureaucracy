@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-10-05T18:59:40Z",
+ "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title52/html/USCODE-2024-title52-subtitleII-chap209-subchapII-partA-subpart1-sec20923.htm",
+ "status": 200,
+ "final_url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title52/html/USCODE-2024-title52-subtitleII-chap209-subchapII-partA-subpart1-sec20923.htm",
+ "content_type": "text/html",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /content/pkg/USCODE-2024-title52/html/USCODE-2024-title52-subtitleII-chap209-subchapII-partA-subpart1-sec20923.htm",
+ "bytes": 6511,
+ "sha256": "b1574ca9403b54dd0d6c56258ad4871077129f5aedbbc4cfce7ea9d9b5239186",
+ "error": null
+}

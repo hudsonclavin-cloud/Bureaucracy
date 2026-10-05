@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-10-05T18:59:35Z",
+ "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title22/html/USCODE-2024-title22-chap71-sec6203.htm",
+ "status": 200,
+ "final_url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title22/html/USCODE-2024-title22-chap71-sec6203.htm",
+ "content_type": "text/html",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /content/pkg/USCODE-2024-title22/html/USCODE-2024-title22-chap71-sec6203.htm",
+ "bytes": 11295,
+ "sha256": "97701b80deeaa5d078ebabe8a4d30e678af9d7e2841687932b5ab412d5fdcdb6",
+ "error": null
+}

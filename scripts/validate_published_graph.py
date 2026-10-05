@@ -1118,6 +1118,18 @@ DERIVED_PAY_STATUTE_HOST = "uscode.house.gov"
 #: the Government Publishing Office's annual edition, read when the first host
 #: served nothing but a maintenance page.
 DERIVED_PAY_STATUTE_HOSTS = ("uscode.house.gov", "www.govinfo.gov")
+
+
+def is_us_code_document_url(url):
+    """A URL this pipeline reads a section of the Code from: the OLRC's own
+    host, or GPO's rendering of a dated edition on www.govinfo.gov -- whose
+    package id carries "USCODE-". govinfo also publishes the Government Manual
+    and OMB's database, which are not statutes and may sit among a node's own
+    sources, so the host alone is not the test."""
+    text = str(url or "")
+    if "uscode.house.gov" in text:
+        return True
+    return "www.govinfo.gov" in text and ("USCODE-" in text or "/link/uscode/" in text)
 #: node id -> (citation, tier, the sentence the section's operative text prints)
 DERIVED_PAY_PROVISIONS = {
     "jud-specialized-tax-chief-judge-tax-court": (
@@ -3362,6 +3374,45 @@ TIER_REFERENCE_ROWS = {
         "fca_12_usc_2242.html", "III",
         "The Chairman of the Board shall receive compensation at the rate prescribed for level III of the Executive Schedule under section 5314 of title 5",
     ),
+    # 2026-10-05: three bodies whose own section names the office under the
+    # stamp; sections read from GPO's 2024 edition on www.govinfo.gov.
+    "exec-ind-misc-broadcasting-board-of-governors-usagm-director-administrator-chair-broadcasting-board-of-governors-usagm": (
+        "Director / Administrator / Chair, Broadcasting Board of Governors / USAGM",
+        "Chief Executive Officer of the United States Agency for Global Media", "22 U.S.C. 6203(b)(3)",
+        "usagm_22_usc_6203_govinfo2024.html", "III",
+        "A Chief Executive Officer appointed pursuant to paragraph (1) shall be compensated at the annual "
+        "rate of basic pay for level III of the Executive Schedule under section 5314 of title 5.",
+    ),
+    "exec-ind-misc-election-assistance-commission-eac-director-administrator-chair-election-assistance-commission": (
+        "Director / Administrator / Chair, Election Assistance Commission",
+        "Chair of the Election Assistance Commission, a member of the Commission", "52 U.S.C. 20923(d)(1)",
+        "eac_52_usc_20923_govinfo2024.html", "IV",
+        "Each member of the Commission shall be compensated at the annual rate of basic pay prescribed for "
+        "level IV of the Executive Schedule under section 5315 of title 5.",
+    ),
+    "exec-ind-misc-election-assistance-commission-eac-deputy-director-vice-chair": (
+        "Deputy Director / Vice Chair",
+        "Vice Chair of the Election Assistance Commission, a member of the Commission", "52 U.S.C. 20923(d)(1)",
+        "eac_52_usc_20923_govinfo2024.html", "IV",
+        "Each member of the Commission shall be compensated at the annual rate of basic pay prescribed for "
+        "level IV of the Executive Schedule under section 5315 of title 5.",
+    ),
+    "exec-ind-misc-federal-election-commission-fec-director-administrator-chair-federal-election-commission": (
+        "Director / Administrator / Chair, Federal Election Commission",
+        "Chairman of the Federal Election Commission, a member of the Commission", "52 U.S.C. 30106(a)(4)",
+        "fec_52_usc_30106_govinfo2024.html", "IV",
+        "Members of the Commission (other than the Secretary of the Senate and the Clerk of the House of "
+        "Representatives) shall receive compensation equivalent to the compensation paid at level IV of the "
+        "Executive Schedule (5 U.S.C. 5315).",
+    ),
+    "exec-ind-misc-federal-election-commission-fec-deputy-director-vice-chair": (
+        "Deputy Director / Vice Chair",
+        "Vice Chairman of the Federal Election Commission, a member of the Commission", "52 U.S.C. 30106(a)(4)",
+        "fec_52_usc_30106_govinfo2024.html", "IV",
+        "Members of the Commission (other than the Secretary of the Senate and the Clerk of the House of "
+        "Representatives) shall receive compensation equivalent to the compensation paid at level IV of the "
+        "Executive Schedule (5 U.S.C. 5315).",
+    ),
     "leg-support-loc-librarian-of-congress": (
         "Librarian of Congress", "Librarian of Congress", "2 U.S.C. 136a-2(1)",
         "loc_2_usc_136a-2.html", "II",
@@ -3378,6 +3429,34 @@ TIER_REFERENCE_IES_COMPOSITION = (
     "the National Center for Education Evaluation and Regional Assistance (as described in part D); and "
     "(D) the National Center for Special Education Research (as described in part E).",
 )
+#: A stamped title (`Director / Administrator / Chair, <agency>`, `Deputy
+#: Director / Vice Chair`) is priced only where the body's own section names
+#: the office under it: node id -> the sentence, in the SAME section as the
+#: row's pay sentence, that the block must carry as identification.statuteIdentifies
+#: and that the section's operative text must still print. Mirrors each
+#: row's `identificationQuote` in tier_reference_pay.TIER_REFERENCE_PROVISIONS.
+TIER_REFERENCE_IDENTIFICATIONS = {
+    "exec-ind-misc-broadcasting-board-of-governors-usagm-director-administrator-chair-broadcasting-board-of-governors-usagm": (
+        "The head of the United States Agency for Global Media shall be a Chief Executive Officer, who shall "
+        "be appointed by the President, by and with the advice and consent of the Senate."
+    ),
+    "exec-ind-misc-election-assistance-commission-eac-director-administrator-chair-election-assistance-commission": (
+        "The Commission shall select a chair and vice chair from among its members for a term of 1 year, "
+        "except that the chair and vice chair may not be affiliated with the same political party."
+    ),
+    "exec-ind-misc-election-assistance-commission-eac-deputy-director-vice-chair": (
+        "The Commission shall select a chair and vice chair from among its members for a term of 1 year, "
+        "except that the chair and vice chair may not be affiliated with the same political party."
+    ),
+    "exec-ind-misc-federal-election-commission-fec-director-administrator-chair-federal-election-commission": (
+        "The Commission shall elect a chairman and a vice chairman from among its members (other than the "
+        "Secretary of the Senate and the Clerk of the House of Representatives) for a term of one year."
+    ),
+    "exec-ind-misc-federal-election-commission-fec-deputy-director-vice-chair": (
+        "The Commission shall elect a chairman and a vice chairman from among its members (other than the "
+        "Secretary of the Senate and the Clerk of the House of Representatives) for a term of one year."
+    ),
+}
 TIER_REFERENCE_COMPOSED_ROWS = {
     "exec-dept-ed-ies-commissioner-national-center-for-education-research-ncer",
     "exec-dept-ed-ies-commissioner-national-center-for-education-evaluation-ncee",
@@ -3467,6 +3546,18 @@ def tier_reference_pay_violations(node, pay, today, label, tree_parent_name=None
             say("carries arithmetic on a row whose statute states the level's rate outright")
         if str(pay.get("office") or "") != office:
             say("names office {!r}; the row is {!r}".format(pay.get("office"), office))
+        identifies = TIER_REFERENCE_IDENTIFICATIONS.get(node_id)
+        if identifies is not None:
+            # A stamped title: the block must carry the section's own sentence
+            # naming the office under it, and the section must still print it.
+            if str(identification.get("statuteIdentifies") or "") != identifies:
+                say("prices a stamped title without quoting the sentence of {} that names the office under it".format(citation))
+            elif identifies not in uscode_operative_text(US_CODE_BASIS_FIXTURE_DIR / fixture):
+                say("rests on an identifying sentence {} no longer prints in its operative text".format(citation))
+            if str(identification.get("office") or "") != office:
+                say("identifies the office as {!r}; the row is {!r}".format(identification.get("office"), office))
+        elif identification.get("statuteIdentifies"):
+            say("quotes an identifying sentence on a row that has none")
         expected_documents = 2
         if node_id in TIER_REFERENCE_COMPOSED_ROWS:
             # 9517(a) prices "each Commissioner" of centers it does not name;
@@ -3579,14 +3670,17 @@ def tier_reference_pay_violations(node, pay, today, label, tree_parent_name=None
             say("names a supporting document without saying what it supplies")
         if document.get("statesTheFigure"):
             say("claims a supporting document states the figure; none of them does")
-    if urls and not any(US_CODE_HOST in url for url in urls):
+    if urls and not any(is_us_code_document_url(url) for url in urls):
         say("publishes a tier-reference figure with no statute behind it")
     if urls and TIER_REFERENCE_TABLE_URL not in urls:
         say("publishes a tier-reference figure with no OPM table behind it")
     if urls and str(pay.get("url") or "") not in urls:
         say("cites {!r} as its statute, which its own document list does not name".format(pay.get("url")))
-    if urls and US_CODE_HOST not in str(pay.get("url") or ""):
-        say("cites a statute on a host other than uscode.house.gov")
+    if urls and not is_us_code_document_url(pay.get("url")):
+        say("cites a statute on a host this pipeline does not read the Code from")
+    for url in urls:
+        if url != TIER_REFERENCE_TABLE_URL and not is_us_code_document_url(url):
+            say("names a document on {!r}, a host this pipeline does not read the Code from".format(url))
 
     verification = pay.get("verification")
     if not isinstance(verification, dict):
@@ -3622,7 +3716,7 @@ def tier_reference_pay_violations(node, pay, today, label, tree_parent_name=None
         say("places itself with a pay figure")
     for source_url in node.get("sourceUrls") or []:
         text = str(source_url)
-        if US_CODE_HOST in text or TIER_REFERENCE_TABLE_URL == text:
+        if is_us_code_document_url(text) or TIER_REFERENCE_TABLE_URL == text:
             say("counts a pay document among the sources that it exists")
     for other in ("positionStatutoryPay", "positionPayRate", "positionSchedulePay", "positionDerivedPay"):
         if isinstance(node.get(other), dict):
@@ -3798,10 +3892,10 @@ def derived_pay_violations(node, pay, today, label):
             say("names a supporting document without saying what it supplies")
         if document.get("statesTheFigure"):
             say("claims a supporting document states the figure; neither of them does")
-    if urls and not any(host in url for url in urls for host in DERIVED_PAY_STATUTE_HOSTS):
+    if urls and not any(is_us_code_document_url(url) for url in urls):
         say("publishes a derived figure with no parity provision behind it")
     for url in urls:
-        if url != DERIVED_PAY_TABLE_URL and not any(host in url for host in DERIVED_PAY_STATUTE_HOSTS):
+        if url != DERIVED_PAY_TABLE_URL and not is_us_code_document_url(url):
             say("cites a statute on {!r}, a host this pipeline does not read the Code from".format(url))
     if urls and DERIVED_PAY_TABLE_URL not in urls:
         say("publishes a derived figure with no compensation table behind it")
@@ -3846,7 +3940,7 @@ def derived_pay_violations(node, pay, today, label):
         say("places itself with a pay figure no document states")
     for source_url in node.get("sourceUrls") or []:
         text = str(source_url)
-        if any(host in text for host in DERIVED_PAY_STATUTE_HOSTS) or DERIVED_PAY_TABLE_URL == text:
+        if is_us_code_document_url(text) or DERIVED_PAY_TABLE_URL == text:
             say("counts a pay document among the sources that it exists")
     return out
 
@@ -6834,7 +6928,7 @@ def main(argv):
     reference_paid = [n for n in nodes if isinstance(n.get("positionTierReferencePay"), dict)]
     reference_igs = [n for n in reference_paid if (n["positionTierReferencePay"].get("identification") or {}).get("kind") != "reviewed_row"]
     print("  tier-reference pay   : {:,} positions priced from a statute that sets pay by reference to an Executive Schedule "
-          "level ({:,} reviewed rows mirrored by id — the GAO's, the GPO's and the IES's officers; {:,} Inspectors General of an establishment 5 U.S.C. 401(1) lists, each "
+          "level ({:,} reviewed rows mirrored by id — the GAO's, the GPO's and the IES's officers, the FCA's Chairman, the Librarian, and the USAGM's, EAC's and FEC's stamped heads; {:,} Inspectors General of an establishment 5 U.S.C. 401(1) lists, each "
           "Level III plus 3 percent, arithmetic no document prints); 0 documents state any figure".format(
               len(reference_paid), len(reference_paid) - len(reference_igs), len(reference_igs)))
     reported_paid = [n for n in nodes if isinstance(n.get("positionReportedPay"), dict)]

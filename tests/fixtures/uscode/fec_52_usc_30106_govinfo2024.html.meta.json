@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-10-05T18:59:42Z",
+ "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title52/html/USCODE-2024-title52-subtitleIII-chap301-subchapI-sec30106.htm",
+ "status": 200,
+ "final_url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title52/html/USCODE-2024-title52-subtitleIII-chap301-subchapI-sec30106.htm",
+ "content_type": "text/html",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /content/pkg/USCODE-2024-title52/html/USCODE-2024-title52-subtitleIII-chap301-subchapI-sec30106.htm",
+ "bytes": 21066,
+ "sha256": "2a92f594e686259610c8dfa55e1d98ae63a7ec7af67fce947e5251dacbe2f1f8",
+ "error": null
+}

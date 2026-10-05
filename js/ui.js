@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20261005a";
-import { loadMergedGraphData } from "./graphLoader.js?v=20261005a";
+import { createGovernmentGraph } from "./graph.js?v=20261005b";
+import { loadMergedGraphData } from "./graphLoader.js?v=20261005b";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -1302,6 +1302,9 @@ function renderTierReferencePay(data) {
     }
   } else {
     add(` ${pay.statute || "The statute"} sets the ${pay.office || "post"}'s pay equal to the rate for Executive Schedule ${pay.levelText || `Level ${pay.level}`}; OPM's ${pay.table || "table"} prints ${pay.levelRateText || printed} for that level. The post is not itself on the Schedule — its pay is set by reference to one of the Schedule's tiers.`);
+    if (identification.statuteIdentifies) {
+      add(` The graph's title for this post is a template; the same section says which office stands under it: "${String(identification.statuteIdentifies).trim()}"`);
+    }
   }
   add(holdersSentence(pay));
   add(payDocumentsSentence(pay));
