@@ -204,6 +204,10 @@ SOURCE_TYPES = {
     # arithmetic step on the IG rule. See
     # data_pipeline/verification/tier_reference_pay.py.
     "statutory_tier_reference_pay",
+    # A section of the U.S. Code that states an office's salary in dollars in
+    # its own operative text -- 3 U.S.C. 102, the President -- read for the
+    # one office it names. See data_pipeline/verification/us_code_stated_pay.py.
+    "us_code_stated_rate",
 }
 
 #: Documents that state their scale by *printing* it rather than by declaring
@@ -236,6 +240,9 @@ SCALE_PRINTED_SOURCE_TYPES = {
     # mark attached. An Inspector General's is NOT printed anywhere and takes
     # the computed-figure rule below instead.
     "statutory_tier_reference_pay",
+    # 3 U.S.C. 102 prints "$400,000 a year" and says "dollars" nowhere; the
+    # mark attached to the record's own figure is the scale.
+    "us_code_stated_rate",
 }
 
 #: The narrowest rule of all, granted to exactly one source type: a record
@@ -321,6 +328,7 @@ SOURCE_BASES = {
     "opm_plum_current_export": {"basic_pay"},
     "statutory_parity_derived_pay": {"basic_pay"},
     "statutory_tier_reference_pay": {"basic_pay"},
+    "us_code_stated_rate": {"basic_pay"},
 }
 
 SCOPE_MATCHES = {"exact", "parent", "child", "broader_account", "proxy", "ambiguous"}

@@ -165,6 +165,16 @@ PAY_DOCUMENT_FIELDS: dict[str, dict[str, Any]] = {
             "measures how much official documentation the figure rests on, not the chance that "
             "it is right."
         ),
+        # The same block where the section names the office itself and states
+        # its salary (3 U.S.C. 102, the President, since 2026-10-05): the
+        # sentence must not say the source names only a tier.
+        "statesOfficeRoles": {"url": "names the office and states what it is paid"},
+        "statesOfficeCaution": (
+            "One document states the figure outright and names the office itself. Which node of "
+            "this graph that office is remains a reviewed identification, so the claim is graded a "
+            "proxy. The percentage measures how much official documentation the figure rests on, "
+            "not the chance that it is right."
+        ),
     },
     "positionReportedPay": {
         "urlKeys": ("url",),
@@ -304,6 +314,11 @@ def _member_seat(block: Mapping[str, Any]) -> bool:
     return isinstance(block.get("memberSeat"), Mapping)
 
 
+def _states_the_office(block: Mapping[str, Any]) -> bool:
+    """A statutory block whose section names the office itself says so."""
+    return block.get("statesTheOffice") is True
+
+
 def _uniform_roster(block: Mapping[str, Any]) -> bool:
     """A roster block that lists every holder at one rate says so in `holders`."""
     holders = block.get("holders")
@@ -331,6 +346,8 @@ def count_documents(field: str, block: Mapping[str, Any]) -> tuple[int, list[dic
         role_words = spec["countedRoles"]
     elif _member_seat(block) and spec.get("memberSeatRoles"):
         role_words = spec["memberSeatRoles"]
+    elif _states_the_office(block) and spec.get("statesOfficeRoles"):
+        role_words = spec["statesOfficeRoles"]
     for key in spec["urlKeys"]:
         for url in _urls_at(block, key):
             if url in seen:
@@ -376,6 +393,7 @@ def annotate_pay_documents(root: dict[str, Any]) -> dict[str, int]:
                     else (spec.get("countedCaution") or spec["caution"]) if _counted_class(block)
                     else (spec.get("percentCaution") or spec["caution"]) if _percent_of_tier(block)
                     else (spec.get("memberSeatCaution") or spec["caution"]) if _member_seat(block)
+                    else (spec.get("statesOfficeCaution") or spec["caution"]) if _states_the_office(block)
                     else spec["caution"]
                 ),
                 "documentRoles": roles,

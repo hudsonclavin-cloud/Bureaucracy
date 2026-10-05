@@ -4067,5 +4067,82 @@ unreached, 752 stating a multiplicity, 18 listed without a rate).
 
 **Still open after this section:** nothing from the ten batches. Every lead
 is built, declined with its reason here, or — the FISC and the BVA —
-declined on the section's own text. The next batch can start.
+declined on the section's own text. The eleventh came the same night; see §19.19.
+
+### 19.19 The eleventh batch: 130 House chairs already priced, the President's salary from 3 U.S.C. 102, and four declines (2026-10-05, night)
+
+**The owner marked these as the last of the Perplexity responses.** Read
+against the graph by id rather than by title:
+
+**130 House committee and subcommittee chairs and ranking members at
+$174,000.** Every one of the 130 ids exists and every one already carries the
+member-seat record (§19.15): checked by id, 130 priced, 0 missing, 0
+unpriced. The batch cites two documents the project had not: the House
+Ethics Committee's 2026 Annual Pay Memo (`ethics.house.gov/wp-content/
+uploads/2026/01/2026-Annual-Pay-Memo.pdf`) and the OLRC's chapter page for
+2 U.S.C. chapter 45. Neither is fetched: each would be a second document for
+a figure Schedule 6 already states for the seat, and a second source for a
+published figure changes no claim here; the member-seat caution is about the
+rule that makes the post a Member's, which no pay memo settles.
+
+**The President, 3 U.S.C. 102 — built.** The batch gave the figure as
+"certain" from the OLRC's chapter page; the section was fetched from GPO's
+2024-edition rendering on govinfo instead (the OLRC host was still under
+maintenance) and reads, in its operative text: "The President shall receive
+in full for his services during the term for which he shall have been elected
+compensation in the aggregate amount of $400,000 a year, to be paid monthly,
+and in addition an expense allowance of $50,000 to assist in defraying
+expenses relating to or resulting from the discharge of his official duties."
+That is a fourth shape for `positionStatutoryPay`: the section names the
+office itself and states the figure, where every earlier source printed a
+figure beside a tier. `us_code_stated_pay.py` is the module, one reviewed row
+keyed by node id (`exec-president`; the Code says "The President" and the
+graph "The President of the United States"), graded `partial` and `proxy`
+exactly as the Vice President's Schedule 6 row is. **The $50,000 expense
+allowance is not published** — the same sentence says it reverts to the
+Treasury when unused and is not income — and the gate refuses a block
+carrying it, because the validator alone would not: the digits are in the
+quote. The record also re-finds the section's own credit for the 1999
+amendment that set the figure (Pub. L. 106–58, title VI, §644(a)), so the
+year on the record is the year the section was read and the figure is not
+claimed to have been set then. Pay claims **1,110 → 1,111**, unpriced
+**3,481 → 3,480**, statutory-pay positions **487 → 488**.
+
+**Declined, with the reason.**
+
+- **NSF's Assistant Director for TIP at AD-5, "$202,542–$209,600", from
+  nsf.gov's careers page** — a recruitment page's band for a pay plan, naming
+  no post; §19.14 stands. The Deputy Assistant Director: the batch itself
+  offers nothing.
+- **The VA's `Deputy Under Secretary — Community Care` at Table 4 Tier 1
+  ($145,000–$310,000)**, cited to `AnnualPayRanges.pdf`. The committed
+  `PayTables.pdf` Table 4 Tier 1 coverage list, read off the bytes, is:
+  "Deputy Under Secretary for Health; Assistant Under Secretaries for Health;
+  Associate Deputy Under Secretary for Health; Assistant Deputy Under
+  Secretary for Health; Chief Officers (VHA CO); Network Directors; Medical
+  Center Directors". A record may claim only a whole printed item, and the
+  node's name is not "Deputy Under Secretary for Health"; whether the Deputy
+  Under Secretary for Community Care is one of the Deputy Under Secretaries
+  for Health is a fact about VHA's structure no document in hand states.
+  Declined. (The extractor renders two items as "Deput y Under Secretary for
+  Health" and "Associate Deputy Un der Secretary for Health" — the text-run
+  split `va_title38_pay.py`'s docstring already records — so a future match
+  would have to repair that before it could test equality.)
+- **`Principal Deputy Under Secretary for Health`**: the batch says
+  "unknown", and Table 4 prints no "Principal" item; the whole-item rule
+  refuses containment in "Deputy Under Secretary for Health". Declined.
+- **The USPS area vice presidents, "not federally paid"**: the Postal
+  Service sets its own pay under 39 U.S.C. 1003 and publishes no schedule
+  this project has read; nothing to cite. The VISN Network CFOs: "unknown",
+  nothing offered.
+
+Counted on the rebuilt graph: pay claims **1,110 → 1,111**, unpriced
+**3,481 → 3,480** (2,710 unreached, 752 stating a multiplicity, 18 listed
+without a rate).
+
+**Still open after this section:** nothing. The owner said these were the
+last Perplexity responses; every lead across the eleven batches is built,
+declined with its reason in this file, or declined on the section's own
+text. `docs/PAY_SOURCE_RESEARCH_PROMPT_3.md` carries the 3,480 titles still
+unpriced should a twelfth batch be wanted.
 

@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20261005b";
-import { loadMergedGraphData } from "./graphLoader.js?v=20261005b";
+import { createGovernmentGraph } from "./graph.js?v=20261005c";
+import { loadMergedGraphData } from "./graphLoader.js?v=20261005c";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -1231,6 +1231,13 @@ function renderStatutoryPay(data) {
     add(`PRICED AS A MEMBER'S SEAT, NOT FOR THE OFFICE — ${pay.sourceLabel || "Schedule 6"}${on ? ` (checked ${on})` : ""} prints ${printed} on its row "${seat.row || pay.amountScope || "Members"}"${pay.year ? ` for ${pay.year}` : ""}. `);
     add(seat.basis || "The holder of this office is a Member of the chamber and Schedule 6 prints no separate rate for it.");
     add(" It is not this unit's cost: basic pay excludes benefits and is not a share of federal outlays.");
+  } else if (pay.statesTheOffice === true) {
+    // A section of the Code that names the office itself and states its
+    // salary (3 U.S.C. 102, the President). Stronger than a tier row, and
+    // still a reviewed identification of which node that office is.
+    add(`${pay.sourceLabel || "A section of the United States Code"}${on ? ` (checked ${on})` : ""} states that ${pay.office || pay.amountScope || "the office"} receives ${printed}.`);
+    add(" The section names the office itself; which node of this graph that office is remains a reviewed identification, so the claim is graded a proxy. It is not this unit's cost: basic pay excludes benefits and is not a share of federal outlays.");
+    if (pay.notPublished) add(` ${String(pay.notPublished).trim()}`);
   } else {
     add(`${pay.sourceLabel || "A primary official source"}${on ? ` (checked ${on})` : ""} states that ${pay.amountScope || "this tier"} is paid ${printed}${pay.year ? ` for ${pay.year}` : ""}.`);
     add(" That names a tier or a group of roles, not this specific post by name, so it is one source's own account of what the tier pays — not a second, independent confirmation, and not this unit's cost: basic pay excludes benefits and is not a share of federal outlays.");

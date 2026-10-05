@@ -52,6 +52,7 @@ python scripts/derive_fr_signature_evidence.py --dry-run  # the title an officia
 python scripts/derive_judicial_pay_evidence.py --dry-run    # uscourts.gov's own compensation table; writes nothing
 python scripts/derive_derived_pay_evidence.py --dry-run     # a figure NO document states: a statutory parity provision joined to that table; writes nothing
 python scripts/derive_tier_reference_pay_evidence.py --dry-run  # pay a statute sets BY REFERENCE to an Executive Schedule level (GAO's officers; the IG Act's Level III + 3%), joined to OPM's table; writes nothing
+python scripts/derive_us_code_stated_pay_evidence.py --dry-run   # an office's salary a Code section states in dollars (3 U.S.C. 102, the President); writes nothing
 python scripts/report_unpriced_positions.py --dry-run        # every position with no pay claim, and the prompt pack that covers all of them
 python scripts/derive_congressional_pay_evidence.py --dry-run  # senate.gov's own salary schedule; writes nothing
 python scripts/derive_whitehouse_pay_evidence.py --dry-run     # the White House Office's statutory staff roster; writes nothing
@@ -2277,7 +2278,7 @@ of the nine fields (no `positionTierPay` or `positionGradePay`). The
 derived module stopped writing its own copy of the arithmetic when this
 landed: one code path for one number.
 
-**And the gap this made visible, counted rather than estimated.** 1,110 of 4,591
+**And the gap this made visible, counted rather than estimated.** 1,111 of 4,591
 positions carry a pay claim (461 when this section was first written, before
 the multi-post rule below and the Federal Reserve rows; 492 before the
 reviewed rows of 2026-09-27, 498 before that day's class-title benches, 513
@@ -2290,11 +2291,12 @@ hold were priced at the seat rate the same day, 1,099 before the Court of
 International Trade and the Ex-Im Vice Chair of 2026-10-05, 1,102 before the
 Tax Court's special trial judges and the two judicial-support Deputy
 Directors the same day, 1,105 before the USAGM's CEO and the EAC's and FEC's
-chairs and vice chairs that evening); **3,481
+chairs and vice chairs that evening, 1,110 before the President's own salary
+from 3 U.S.C. 102 the same night); **3,480
 do not**, and `scripts/report_unpriced_positions.py` says why for every one
 of them:
 
-- **2,711** — no pay document this project has read names the title at all.
+- **2,710** — no pay document this project has read names the title at all.
   Not a coverage gap somebody has not got to.
 - **752** — the node states a multiplicity (`Physician (×multiple)`) and no
   claim that holds for every holder reaches it. Since the per-field rule
@@ -2304,8 +2306,8 @@ of them:
   SYSTEM governs the title is a fact worth having.
 - **18** — OPM lists the position and the row prints no rate.
 
-The concentration is the useful part: **432** of the 3,481 sit under `VA
-Medical Centers`, 360 of them among the 2,711 (the service chiefs
+The concentration is the useful part: **432** of the 3,480 sit under `VA
+Medical Centers`, 360 of them among the 2,710 (the service chiefs
 `va_title38_pay.py` deliberately refuses, since choosing a Title 38 table per
 node would be this module deciding which VA service chiefs are doctors), 61
 under the White House Office (83 before the multi-post rule), 56 under
@@ -2317,10 +2319,10 @@ per unpriced position with its id and its reason;
 `docs/PAY_SOURCE_RESEARCH_PROMPT_3.md` is a research prompt pack generated
 from the same list in the same run — a lead prompt asking which pay systems
 exist and where each is published, then **34 enumeration shards naming every
-one of the 3,481 titles** (39 and 4,003 until 2026-09-30, 38 and 3,953 until
+one of the 3,480 titles** (39 and 4,003 until 2026-09-30, 38 and 3,953 until
 that evening's Members decision, 34 and 3,492 until 2026-10-05, 34 and 3,489
 until that day's special trial judges, 34 and 3,486 until its six govinfo
-sections). The multiplicity
+sections, 34 and 3,481 until the President's salary). The multiplicity
 reason's "N such nodes carry one" is read off the graph on each run since
 2026-09-30; it had said 28 since 2026-09-23 while the graph carried 37. `tests/test_unpriced_positions.py` asserts the
 coverage rather than trusting it: every unpriced id appears in the pack, no
@@ -3249,6 +3251,53 @@ seven sections were retried and the host was still under maintenance; the
 special trial judges' section came from govinfo instead and the
 percentage-of-a-join shape was decided — see "A percentage of a join" above.
 
+**The President's salary, stated by the Code itself (`us_code_stated_pay.py`,
+since 2026-10-05, the eleventh research batch).** Every `positionStatutoryPay`
+claim came from a document printing a figure beside a TIER or a group of
+roles — uscourts.gov's table, senate.gov's footnote, the schedules in 5 U.S.C.
+5332's note. **3 U.S.C. 102** is a fourth shape: the section names the office
+itself and states the figure in its own operative text, "The President shall
+receive in full for his services during the term for which he shall have been
+elected compensation in the aggregate amount of $400,000 a year, to be paid
+monthly, and in addition an expense allowance of $50,000 …". Read from GPO's
+2024-edition rendering on govinfo (the OLRC host was still under maintenance),
+through `derived_pay.load_section`, so the digest is recomputed and the
+sentence is re-found in the operative text on every run, and the section's
+own credit for the 1999 amendment that set the figure (Pub. L. 106–58
+§644(a)) is re-found beside it, so "the figure has stood since then" is read
+off the page. One reviewed row (`STATED_RATE_ROWS`, keyed by node id, because
+the Code says "The President" and the graph "The President of the United
+States" and no name rule is loosened to join them), one record, graded
+`partial` and `proxy` exactly as the Vice President's Schedule 6 row is, so
+the two offices read alike. **The $50,000 is not published**: the same
+sentence calls it an expense allowance that reverts to the Treasury when
+unused and is not income, the block carries that refusal in words
+(`notPublished`), and the gate refuses a block whose figure is anything but
+the mirrored $400,000 — the validator alone would pass $50,000, since the
+sentence prints it. The block says `statesTheOffice: true`, the panel and the
+atlas print "the section names the office itself" instead of the tier
+sentence, `pay_documents` words the caution for it, and the gate refuses that
+flag on any other source. Source type `us_code_stated_rate` joins the
+validator's lists; the gate's `STATUTORY_PAY_SOURCES` and
+`STATUTORY_PAY_NODE_TIERS` mirror it; `tests/test_us_code_stated_pay.py`
+corrupts each dimension — the allowance filed as the rate, a figure the
+section does not print, the block moved onto the Vice President, a foreign
+host, the flag on a Schedule 6 record. Pay claims **1,110 → 1,111**, unpriced
+**3,481 → 3,480**; statutory-pay positions **487 → 488**.
+
+The rest of that batch, in `CURATION.md` §19.19: its 130 House committee
+chairs and ranking members were checked by id and every one already carries
+the member-seat record (the batch's new citation, the House Ethics
+Committee's 2026 pay memo, would be a second document for a figure Schedule 6
+already states, and changes no claim); NSF's AD-5 recruitment band stays
+declined (§19.14); the VA's `Deputy Under Secretary — Community Care` and
+`Principal Deputy Under Secretary for Health` stay unpriced because Table 4
+Tier 1 prints "Deputy Under Secretary for Health" as a whole item and
+neither node's name is that item (and the PDF's text runs split the words,
+"Deput y Under Secretary", a reconstruction artefact `va_title38_pay.py` does
+not repair); the USPS area vice presidents and the VISN CFOs name no
+document.
+
 **The panel's Trace Origin, restored.** A 2026-09-15 change reduced "Trace
 Origin" to a one-line confirmation on the grounds that the breadcrumb already
 showed the path. The owner wanted the full tree back: `renderOriginTrace` lists
@@ -3766,7 +3815,7 @@ subdivide measured money rather than invent it — which does not make a
 subdivision a measurement. **Since 2026-09-09 the site does not show one by
 default**, by the owner's decision: a node with no measured cost of its own
 shows no figure and says why, and ticking "Also show estimated shares of a
-parent's total" opts back in. The exception is a real salary — **1,110** of the
+parent's total" opts back in. The exception is a real salary — **1,111** of the
 4,591 positions carry a pay claim an official source states, counted on the
 published graph on 2026-10-05 after Schedule 6, the VA's Title 38 bands, the
 Article I parity derivations, the per-field multi-post rule, the Federal
@@ -3808,11 +3857,12 @@ each on the Code, the table and, for six of the eight classes, the statute
 that composes the class), 188 from
 the White House
 roster (22 of them titles listed N times at one rate), 88 the rate the current PLUM export prints for the one row under the
-title, 31 from a listing's level joined to OPM's table, 487 statutory (20 from
+title, 31 from a listing's level joined to OPM's table, 488 statutory (20 from
 uscourts.gov and senate.gov, 4 from Schedule 6 of the annual pay-adjustment
 order naming the office, 2 from its Schedule 7 since 2026-10-05 — the Court
 of International Trade's chief judge and bench, the one judicial tier
-uscourts.gov's table does not print — and since 2026-09-30 the 461 offices Members of
+uscourts.gov's table does not print — 1 the President's own salary as 3
+U.S.C. 102 states it in dollars, since the same night, and since 2026-09-30 the 461 offices Members of
 Congress hold — every committee's chair and ranking member, the whips, the
 conference and caucus chairs — at Schedule 6's SEAT rate for their chamber,
 by the owner's decision and a rule the gate mirrors), and 18 a
@@ -3835,9 +3885,10 @@ benches of 2026-09-30, 638 with that day's counted classes and
 ninth-batch rows, 1,099 with the Members' offices the same evening, 1,102
 on 2026-10-05 with the Court of International Trade's two judge nodes and the
 Ex-Im Bank's Vice Chair, 1,105 the same evening with the Tax Court's
-special trial judges and the two judicial-support Deputy Directors, and 1,110
+special trial judges and the two judicial-support Deputy Directors, 1,110
 with the USAGM's CEO and the EAC's and FEC's chairs and vice chairs from the
-six sections govinfo served. Shown in
+six sections govinfo served, and 1,111 with the President's salary from 3
+U.S.C. 102. Shown in
 the cost block under its own heading and never headed COST.
 
 That figure read **354** until 2026-09-19 and was wrong: it added up the
@@ -3857,8 +3908,8 @@ twenty-two rows that closed the eighth batch, 590 with the bankruptcy
 benches, 638 with the counted classes and the ninth batch's rows, 1,099
 with the offices Members of Congress hold, 1,102 with the Court of
 International Trade and the Ex-Im Vice Chair, 1,105 with the special
-trial judges and the two Deputy Directors, and 1,110 with the five posts the
-govinfo sections priced. The estimates
+trial judges and the two Deputy Directors, 1,110 with the five posts the
+govinfo sections priced, and 1,111 with the President. The estimates
 stay in `graph.json` because the cascade's arithmetic and the gate's
 child-sum checks are built on them, so a consumer of the JSON must read
 `cost_status`, not `resolved_total_amount` alone. The gate prints both

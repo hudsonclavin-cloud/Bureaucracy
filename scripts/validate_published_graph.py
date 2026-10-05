@@ -1516,6 +1516,9 @@ STATUTORY_PAY_NODE_TIERS = {
     # `us_code_pay_schedules.SCHEDULE_6_NODE_ROWS` by
     # tests/test_us_code_pay_schedules.py.
     "exec-vp": "vice president",
+    # 3 U.S.C. 102 states the President's salary outright (since 2026-10-05);
+    # pinned against us_code_stated_pay.STATED_RATE_ROWS.
+    "exec-president": "the president",
     "leg-house-leadership-speaker-of-the-house": "speaker of the house of representatives",
     "leg-house-leadership-majority-leader": "majority leader and minority leader of the house of representatives",
     "leg-house-leadership-minority-leader": "majority leader and minority leader of the house of representatives",
@@ -1632,6 +1635,28 @@ US_CODE_SCHEDULE_7_RATES = {
 US_CODE_SCHEDULE_7_EFFECTIVE = US_CODE_SCHEDULE_6_EFFECTIVE
 US_CODE_SCHEDULE_7_COLUMN_HEAD = "$320,700"
 
+#: A section of the Code that states an office's salary in dollars, read for
+#: the one office it names (since 2026-10-05): 3 U.S.C. 102, the President.
+#: Mirrors us_code_stated_pay.STATED_RATE_ROWS by node id -- the section's
+#: "The President" is joined to the graph's node by review, never by name --
+#: and the sentence must be in the committed section's operative text, re-read
+#: here. The $50,000 expense allowance in the same sentence is not a rate of
+#: pay and a block carrying it is refused by the amount check.
+US_CODE_STATED_RATE_URL = (
+    "https://www.govinfo.gov/content/pkg/USCODE-2024-title3/html/USCODE-2024-title3-chap2-sec102.htm"
+)
+US_CODE_STATED_RATE_FIXTURE = "president_3_usc_102_govinfo2024.html"
+US_CODE_STATED_RATE_SENTENCE = (
+    "The President shall receive in full for his services during the term for which he shall have been "
+    "elected compensation in the aggregate amount of $400,000 a year, to be paid monthly, and in addition "
+    "an expense allowance of $50,000 to assist in defraying expenses relating to or resulting from the "
+    "discharge of his official duties."
+)
+US_CODE_STATED_RATE_YEAR = "2026"
+US_CODE_STATED_RATE_ROWS = {
+    "exec-president": ("The President of the United States", "The President", "the president", "3 U.S.C. 102", 400_000.0),
+}
+
 STATUTORY_PAY_SOURCES = {
     "uscourts_judicial_compensation": {
         "url": "https://www.uscourts.gov/about-federal-courts/about-federal-judges/judicial-compensation",
@@ -1663,6 +1688,13 @@ STATUTORY_PAY_SOURCES = {
         # (one row) the judiciary. Which schedule a record may price from is
         # decided by its tier below, and never crosses.
         "id_prefix": ("exec-", "leg-", "jud-"),
+    },
+    "us_code_stated_rate": {
+        "url": US_CODE_STATED_RATE_URL,
+        "year": US_CODE_STATED_RATE_YEAR,
+        "tiers": {tier: amount for (_n, _o, tier, _c, amount) in US_CODE_STATED_RATE_ROWS.values()},
+        "footnotes": None,  # the record quotes the section's own sentence; checked below
+        "id_prefix": "exec-",
     },
 }
 
@@ -4153,6 +4185,49 @@ def statutory_pay_violations(node, pay, today, label, tree_parents=None, type_by
         if expected is not None and "${:,.0f}".format(expected) not in quote:
             if column_head not in quote:
                 say("prices a bare schedule figure without quoting the marked head of its column")
+
+    if source == "us_code_stated_rate":
+        # The section names the office and states the figure in one sentence,
+        # re-read off the committed bytes; the block must say the section
+        # names the office, name the mirrored office, and identify the node
+        # it is on as the reviewed row's.
+        row = US_CODE_STATED_RATE_ROWS.get(node_id)
+        if row is None:
+            say("prices from a Code section that states a rate for no office this graph has a reviewed row for")
+        else:
+            node_name, office, row_tier, citation, _amount = row
+            if canonical_key(node.get("name")) != canonical_key(node_name):
+                say("is now called {!r}, not {!r}, the name its row was written against".format(node.get("name"), node_name))
+            identification = pay.get("identification") if isinstance(pay.get("identification"), dict) else {}
+            if identification.get("kind") != "reviewed_row" or str(identification.get("nodeName") or "") != node_name:
+                say("does not identify itself as the reviewed row for {!r}".format(node_name))
+            if str(pay.get("office") or "") != office:
+                say("names office {!r}; the row is {!r}".format(pay.get("office"), office))
+            if str(pay.get("statute") or "") != citation:
+                say("cites {!r}; the row is {!r}".format(pay.get("statute"), citation))
+            if tier != row_tier:
+                say("prices tier {!r}; the row is {!r}".format(tier, row_tier))
+        if pay.get("statesTheOffice") is not True:
+            say("prices from a section that names the office without saying so")
+        if quote != US_CODE_STATED_RATE_SENTENCE:
+            say("quotes a sentence that is not the one 3 U.S.C. 102 prints")
+        operative = uscode_operative_text(US_CODE_BASIS_FIXTURE_DIR / US_CODE_STATED_RATE_FIXTURE)
+        if not operative:
+            say("cites a section whose operative text this gate cannot separate from its notes")
+        elif US_CODE_STATED_RATE_SENTENCE not in operative:
+            say("rests on a sentence 3 U.S.C. 102 does not print in its operative text")
+        if not is_us_code_document_url(pay.get("url")):
+            say("cites a statute on a host this pipeline does not read the Code from")
+        if pay.get("memberSeat") is not None:
+            say("carries a memberSeat block on an office that is not a Member's")
+        # Which node the section's "The President" is remains a reviewed
+        # identification, so the record is never more than a proxy.
+        if str(pay.get("scopeMatch") or "") != "proxy":
+            say("claims scope {!r}; a reviewed identification of the office is never more than a proxy".format(pay.get("scopeMatch")))
+        if str(pay.get("financialEvidenceStatus") or "") != "partial":
+            say("grades a stated-rate record {!r}, not 'partial'".format(pay.get("financialEvidenceStatus")))
+    elif pay.get("statesTheOffice"):
+        say("claims its source names the office itself; only a Code section stating the rate may")
 
     footnotes = pay.get("footnotes")
     if not isinstance(footnotes, list):

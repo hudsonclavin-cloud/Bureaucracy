@@ -18035,7 +18035,52 @@
     },
     "verificationMethod": "listed_as_its_own_entry_in_us_government_manual",
     "evidenceVerifiedAt": "2025-12-31",
-    "parentId": "executive-branch"
+    "parentId": "executive-branch",
+    "positionStatutoryPay": {
+      "source": "us_code_stated_rate",
+      "sourceLabel": "3 U.S.C. 102, as printed in the 2024 edition of the United States Code",
+      "method": "rate_stated_for_the_office_by_the_us_code_section_itself",
+      "amount": 400000.0,
+      "rateText": "$400,000 a year",
+      "year": "2026",
+      "effective": "2026-01-01",
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "The President",
+      "seatTier": "the president",
+      "office": "The President",
+      "statute": "3 U.S.C. 102",
+      "statesTheOffice": true,
+      "identification": {
+        "kind": "reviewed_row",
+        "nodeName": "The President of the United States"
+      },
+      "publisher": "U.S. Government Publishing Office",
+      "edition": "2024 edition of the United States Code",
+      "readOn": "2026-10-05",
+      "notPublished": "The same sentence states an expense allowance of $50,000, which the section says reverts to the Treasury when unused and is not income; it is not compensation and is not published.",
+      "amendmentCredit": "Pub. L. 106–58, title VI, §644(a), Sept. 29, 1999, 113 Stat. 478",
+      "quote": "The President shall receive in full for his services during the term for which he shall have been elected compensation in the aggregate amount of $400,000 a year, to be paid monthly, and in addition an expense allowance of $50,000 to assist in defraying expenses relating to or resulting from the discharge of his official duties.",
+      "footnotes": [
+        "The President shall receive in full for his services during the term for which he shall have been elected compensation in the aggregate amount of $400,000 a year, to be paid monthly, and in addition an expense allowance of $50,000 to assist in defraying expenses relating to or resulting from the discharge of his official duties."
+      ],
+      "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title3/html/USCODE-2024-title3-chap2-sec102.htm",
+      "checkedAt": "2026-10-05T19:33:11Z",
+      "verification": {
+        "documents": 1,
+        "documentsStatingTheFigure": 1,
+        "percent": 70,
+        "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+        "caution": "One document states the figure outright and names the office itself. Which node of this graph that office is remains a reviewed identification, so the claim is graded a proxy. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+        "documentRoles": [
+          {
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title3/html/USCODE-2024-title3-chap2-sec102.htm",
+            "role": "names the office and states what it is paid"
+          }
+        ]
+      }
+    }
   },
   {
     "id": "exec-vp",

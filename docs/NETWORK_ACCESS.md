@@ -959,5 +959,8 @@ committed under `tests/fixtures/uscode/` with the `_govinfo2024` suffix and
 its `.meta.json`. Every one prints the same "Editorial Notes" heading the
 OLRC's pages do, so `operative_text` cuts them at the same place. What each
 says, and what was built from it, is `CURATION.md` §19.18. Nothing on the
-OLRC's host was retried a third time.
+OLRC's host was retried a third time. One more section followed the same
+route that night for the eleventh batch: 3 U.S.C. 102 (the President's
+compensation), `USCODE-2024-title3-chap2-sec102.htm`, 77,567 bytes, 200,
+19:33 UTC (`CURATION.md` §19.19).
 

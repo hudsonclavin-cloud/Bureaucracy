@@ -36,7 +36,7 @@ unverified`. The estimates remain in `graph.json` — the cascade's arithmetic
 and the gate's child-sum checks are built on them — so a consumer of the
 JSON must read `cost_status` and not `resolved_total_amount` alone.
 
-The one exception is a real salary. **1,110** position nodes carry a pay claim an
+The one exception is a real salary. **1,111** position nodes carry a pay claim an
 official source states — 461 the offices Members of Congress hold (every
 committee's chair and ranking member in both chambers, the whips, the
 conference and caucus chairs), priced since 2026-09-30 by the owner's decision
@@ -101,7 +101,8 @@ U.S.C. 603's 92 percent of a Director paid as a district judge, $229,908,
 the FJC's through §626 — three documents each for the chains, none stating the
 figure, 7443A read from GPO's 2024-edition rendering on govinfo because the
 OLRC's host was under maintenance). A node may carry
-more than one, so the per-source figures sum past 1,110. Each shows in place of
+more than one, so the per-source figures sum past 1,111 (the President's $400,000,
+stated by 3 U.S.C. 102 itself since 2026-10-05, among them). Each shows in place of
 the withheld estimate, under its
 own heading rather than COST, with the panel saying it is compensation for one
 post — or, on a node standing for several, for each of its holders — and not

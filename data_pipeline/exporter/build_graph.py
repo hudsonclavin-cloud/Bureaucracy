@@ -2492,6 +2492,7 @@ def build_graph(
     judicial_pay_evidence_path: str | Path | None = "default",
     congressional_pay_evidence_path: str | Path | None = "default",
     us_code_pay_schedule_evidence_path: str | Path | None = "default",
+    us_code_stated_pay_evidence_path: str | Path | None = "default",
     va_title38_pay_evidence_path: str | Path | None = "default",
     derived_pay_evidence_path: str | Path | None = "default",
     tier_reference_pay_evidence_path: str | Path | None = "default",
@@ -2782,6 +2783,25 @@ def build_graph(
     validation["us_code_pay_schedule_evidence"] = apply_us_code_pay_schedule_evidence(
         graph,
         load_us_code_pay_schedule_evidence(resolved_us_code_pay_schedule_path) if resolved_us_code_pay_schedule_path else {},
+        index_tree=index_tree,
+    )
+    # A section of the Code that states an office's salary outright -- 3
+    # U.S.C. 102, the President -- in the same field, after every other
+    # single-document source so the leave-alone rule holds in one direction.
+    from data_pipeline.verification.us_code_stated_pay import (  # noqa: E402 — imports this module
+        DEFAULT_PAY_EVIDENCE_PATH as DEFAULT_US_CODE_STATED_PAY_EVIDENCE_PATH,
+        apply_pay_evidence as apply_us_code_stated_pay_evidence,
+        load_pay_evidence as load_us_code_stated_pay_evidence,
+    )
+
+    resolved_us_code_stated_pay_path = (
+        DEFAULT_US_CODE_STATED_PAY_EVIDENCE_PATH
+        if us_code_stated_pay_evidence_path == "default"
+        else us_code_stated_pay_evidence_path
+    )
+    validation["us_code_stated_pay_evidence"] = apply_us_code_stated_pay_evidence(
+        graph,
+        load_us_code_stated_pay_evidence(resolved_us_code_stated_pay_path) if resolved_us_code_stated_pay_path else {},
         index_tree=index_tree,
     )
     # A BAND rather than a rate, in its own field: see

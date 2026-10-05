@@ -1,0 +1,75 @@
+{
+  "_note": "Derived by scripts/derive_us_code_stated_pay_evidence.py from committed sections of the United States Code that state an office's salary in dollars: 3 U.S.C. 102 for the President ($400,000 a year; the $50,000 expense allowance in the same sentence is not compensation and is not published). One record per reviewed row (1), each re-found in the section's operative text on every run. Basic pay is not the node's cost. Regenerate by re-running the script; never edit by hand.",
+  "source": {
+    "kind": "us_code_stated_rate",
+    "sections": {
+      "president_3_usc_102_govinfo2024.html": {
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title3/html/USCODE-2024-title3-chap2-sec102.htm",
+        "sha256": "43c0e35fcf93bf6f8aa5fa289632d81652e5f43f58a2ae03e7d94896cefe3d79",
+        "fetched_at": "2026-10-05T19:33:11Z"
+      }
+    },
+    "readOn": "2026-10-05"
+  },
+  "report": {
+    "source": "us_code_stated_rate",
+    "sections": {
+      "president_3_usc_102_govinfo2024.html": {
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title3/html/USCODE-2024-title3-chap2-sec102.htm",
+        "sha256": "43c0e35fcf93bf6f8aa5fa289632d81652e5f43f58a2ae03e7d94896cefe3d79",
+        "fetched_at": "2026-10-05T19:33:11Z"
+      }
+    },
+    "reviewedRows": 1,
+    "priced": 1,
+    "refused": {},
+    "validated": 1,
+    "rejected": [],
+    "conflicts": [],
+    "double_counted": []
+  },
+  "nodes": {
+    "exec-president": {
+      "nodeId": "exec-president",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "basic_pay",
+      "amount": 400000.0,
+      "amountRaw": "400,000",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "The President shall receive in full for his services during the term for which he shall have been elected compensation in the aggregate amount of $400,000 a year, to be paid monthly, and in addition an expense allowance of $50,000 to assist in defraying expenses relating to or resulting from the discharge of his official duties.",
+      "quote": "The President shall receive in full for his services during the term for which he shall have been elected compensation in the aggregate amount of $400,000 a year, to be paid monthly, and in addition an expense allowance of $50,000 to assist in defraying expenses relating to or resulting from the discharge of his official duties.",
+      "fiscalYear": 2026,
+      "periodCoverage": "annual_rate",
+      "periodAsOf": "2026-01-01",
+      "amountScope": "The President",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "us_code_stated_rate",
+      "sourceUrl": "https://www.govinfo.gov/content/pkg/USCODE-2024-title3/html/USCODE-2024-title3-chap2-sec102.htm",
+      "documentSha256": "43c0e35fcf93bf6f8aa5fa289632d81652e5f43f58a2ae03e7d94896cefe3d79",
+      "retrievedAt": "2026-10-05T19:33:11Z",
+      "locator": {
+        "section": "3 U.S.C. 102",
+        "subsection": "Compensation of the President"
+      },
+      "office": "The President",
+      "tier": "the president",
+      "statute": "3 U.S.C. 102",
+      "statuteQuote": "The President shall receive in full for his services during the term for which he shall have been elected compensation in the aggregate amount of $400,000 a year, to be paid monthly, and in addition an expense allowance of $50,000 to assist in defraying expenses relating to or resulting from the discharge of his official duties.",
+      "statesTheOffice": true,
+      "identification": {
+        "kind": "reviewed_row",
+        "nodeName": "The President of the United States"
+      },
+      "publisher": "U.S. Government Publishing Office",
+      "edition": "2024 edition of the United States Code",
+      "year": "2026",
+      "readOn": "2026-10-05",
+      "rateText": "$400,000 a year",
+      "notPublished": "The same sentence states an expense allowance of $50,000, which the section says reverts to the Treasury when unused and is not income; it is not compensation and is not published.",
+      "amendmentCredit": "Pub. L. 106–58, title VI, §644(a), Sept. 29, 1999, 113 Stat. 478",
+      "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+    }
+  }
+}

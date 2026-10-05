@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-10-05T19:33:11Z",
+ "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title3/html/USCODE-2024-title3-chap2-sec102.htm",
+ "status": 200,
+ "final_url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title3/html/USCODE-2024-title3-chap2-sec102.htm",
+ "content_type": "text/html",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /content/pkg/USCODE-2024-title3/html/USCODE-2024-title3-chap2-sec102.htm",
+ "bytes": 77567,
+ "sha256": "43c0e35fcf93bf6f8aa5fa289632d81652e5f43f58a2ae03e7d94896cefe3d79",
+ "error": null
+}

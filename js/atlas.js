@@ -528,10 +528,12 @@ function describePay(node) {
     const on = formatDate(statutory.checkedAt);
     const seat = statutory.memberSeat && typeof statutory.memberSeat === "object" ? statutory.memberSeat : null;
     blocks.push({
-      heading: seat ? "Statutory pay — a Member's seat, not the office" : "Statutory pay",
+      heading: seat ? "Statutory pay — a Member's seat, not the office" : statutory.statesTheOffice === true ? "Statutory pay — the section names the office" : "Statutory pay",
       text: seat
         ? `${statutory.sourceLabel || "Schedule 6"}${on ? ` (checked ${on})` : ""} prints ${printed} on its row "${seat.row || statutory.amountScope || "Members"}"${statutory.year ? ` for ${statutory.year}` : ""}. ${seat.basis || "The holder of this office is a Member of the chamber and Schedule 6 prints no separate rate for it."}${holdersNote(statutory)}${payDocuments(statutory)}`
-        : `${statutory.sourceLabel || "A primary official source"}${on ? ` (checked ${on})` : ""} states that ${statutory.amountScope || "this tier"} is paid ${printed}${statutory.year ? ` for ${statutory.year}` : ""}. That names a tier or a group of roles, not this specific post by name.${holdersNote(statutory)}${payDocuments(statutory)}`,
+        : statutory.statesTheOffice === true
+          ? `${statutory.sourceLabel || "A section of the United States Code"}${on ? ` (checked ${on})` : ""} states that ${statutory.office || statutory.amountScope || "the office"} receives ${printed}. The section names the office itself; which node of this graph that office is remains a reviewed identification, so the claim is graded a proxy.${statutory.notPublished ? ` ${String(statutory.notPublished).trim()}` : ""}${holdersNote(statutory)}${payDocuments(statutory)}`
+          : `${statutory.sourceLabel || "A primary official source"}${on ? ` (checked ${on})` : ""} states that ${statutory.amountScope || "this tier"} is paid ${printed}${statutory.year ? ` for ${statutory.year}` : ""}. That names a tier or a group of roles, not this specific post by name.${holdersNote(statutory)}${payDocuments(statutory)}`,
     });
   }
   const derived = node.positionDerivedPay;
