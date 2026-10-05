@@ -51,13 +51,20 @@ above as unreachable.
   hold -- every committee's chair and ranking member, the whips, the
   conference and caucus chairs -- and since 2026-09-30 those are priced at
   the seat rate by the rule in the section below.
-- **Schedule 7 prices nothing, and is still read.** Every tier it names is
-  already priced from uscourts.gov, or reaches only nodes that state a
-  multiplicity (`Circuit Judge (×28 active + senior judges)`), or reaches no
-  post node at all --- the Court of International Trade has a court node and
-  no judge node. It is parsed anyway and its rows are reported, because
-  "nobody looked" and "looked and it reaches nothing" are different facts,
-  and because its agreement with uscourts.gov is worth recording.
+- **Schedule 7 priced nothing until 2026-10-05, and the reason given was
+  wrong.** This docstring said the Court of International Trade "has a court
+  node and no judge node". It has two: `Chief Judge, CIT` and `Judge (×8)`,
+  both unpriced, because 28 U.S.C. 252 states no parity (`derived_pay.py`
+  refuses it) and uscourts.gov's table prints no CIT row (`judicial_pay.py`
+  refuses it). Schedule 7 prints one — "Judges of the Court of International
+  Trade 249,900" — and the tenth research batch's CIT lead is what made
+  somebody look at the graph rather than the docstring. `SCHEDULE_7_NODE_ROWS`
+  prices exactly those two, the chief judge as a judge of that court (the
+  reading `judicial_pay.py` applies to every Article III chief judge) and the
+  bench for each holder, since `positionStatutoryPay` is an office-rate field.
+  The other four Schedule 7 rows still price nothing: each tier is already
+  priced from uscourts.gov, or reaches only benches that bundle senior judges.
+  Its agreement with uscourts.gov, to the dollar, is pinned by a test.
 
 ## Members of Congress, priced at the seat rate (since 2026-09-30, the owner's decision)
 
@@ -172,6 +179,25 @@ PAY_SOURCE = "us_code_pay_schedules"
 PAY_SOURCE_TYPE = "us_code_pay_schedules"
 PAY_METHOD = "office_named_in_schedule_6_of_the_annual_pay_adjustment_order"
 SCHEDULE_LABEL = "Schedule 6 — Vice President and Members Of Congress"
+SCHEDULE_7_LABEL = "Schedule 7 — Judicial Salaries"
+
+#: Node id -> the Schedule 7 row that prices it (since 2026-10-05). Reviewed
+#: by id for the reason SCHEDULE_6_NODE_ROWS is: the row names a tier, not a
+#: node, and a chief judge is a judge of the court (28 U.S.C. 252 sets one
+#: salary for "each" judge). Mirrored in the gate's STATUTORY_PAY_NODE_TIERS.
+SCHEDULE_7_NODE_ROWS = {
+    "jud-specialized-intl-trade-chief-judge-cit": "Judges of the Court of International Trade",
+    "jud-specialized-intl-trade-judge-8": "Judges of the Court of International Trade",
+}
+SCHEDULE_7_ROWS_NOT_PRICED = {
+    "Chief Justice of the United States": "already priced from uscourts.gov's own compensation table",
+    "Associate Justices of the Supreme Court": "already priced from uscourts.gov's own compensation table",
+    "Circuit Judges": (
+        "the circuits' chief judges are already priced from uscourts.gov; every circuit bench bundles "
+        "senior judges, whose salary 28 U.S.C. 371(b)(2) sets apart from the tier rate"
+    ),
+    "District Judges": "already priced from uscourts.gov's own compensation table",
+}
 
 #: Node id -> the words Schedule 6 prints for that office. An explicit,
 #: reviewed map rather than a name-matching rule, for the reason
@@ -709,6 +735,66 @@ def build_records(
                 record["columnHead"] = dict(schedule["columnHead"])
             records[node_id] = record
 
+    schedule7 = schedules.get("7")
+    schedule7_priced: list[str] = []
+    if schedule7 is not None:
+        heading7 = "Schedule {} — {}".format(schedule7["number"], schedule7["title"])
+        if heading7 != SCHEDULE_7_LABEL:
+            raise Unreadable(f"Schedule 7 is headed {heading7!r}, not {SCHEDULE_7_LABEL!r}; the note has been reorganised")
+        by_office7 = {row["office"]: row for row in schedule7["rows"]}
+        year7 = str(schedule7["year"])
+        for node_id, office in sorted(SCHEDULE_7_NODE_ROWS.items()):
+            row = by_office7.get(office)
+            if row is None:
+                refuse("schedule_7_does_not_print_this_tier")
+                continue
+            node = node_map.get(node_id)
+            if node is None:
+                refuse("node_not_in_graph")
+                continue
+            if str(node.get("type") or "").casefold() != "position":
+                refuse("not_a_position")
+                continue
+            if not node_id.startswith("jud-"):
+                refuse("schedule_7_names_judicial_tiers_only")
+                continue
+            # A bench (`Judge (×8)`) is priced on purpose: the row is the
+            # tier's rate for every judge of the court, and the office-rate
+            # sweep stamps `holders` on it.
+            quote = _quote_for(schedule7, row)
+            record = {
+                "nodeId": node_id,
+                "financialEvidenceStatus": "partial",
+                "costBasis": "basic_pay",
+                "amount": float(row["amount"]),
+                "amountRaw": row["amountRaw"],
+                "units": "usd",
+                "normalizedMultiplier": 1,
+                "unitsEvidence": quote,
+                "quote": quote,
+                "fiscalYear": int(year7),
+                "periodCoverage": "annual_rate",
+                "periodAsOf": f"{year7}-01-01",
+                "amountScope": office,
+                # The row names a tier, and which node is a judge of that
+                # court is a reviewed identification: proxy, never exact.
+                "scopeMatch": "proxy",
+                "rollupRole": "line",
+                "sourceType": PAY_SOURCE_TYPE,
+                "sourceUrl": url,
+                "documentSha256": sha256,
+                "retrievedAt": retrieved_at,
+                "locator": {"page": "5 U.S.C. 5332 note", "section": SCHEDULE_7_LABEL},
+                "role": office.casefold(),
+                "year": year7,
+                "schedule": "7",
+                "rateText": "${} ({}, {})".format(row["amountRaw"], SCHEDULE_7_LABEL, schedule7["effective"].strip("()")),
+            }
+            if not row["marked"]:
+                record["columnHead"] = dict(schedule7["columnHead"])
+            records[node_id] = record
+            schedule7_priced.append(node_id)
+
     considered = {row["office"] for row in schedule["rows"]}
     priced_offices = {SCHEDULE_6_NODE_ROWS[node_id] for node_id in records if node_id in SCHEDULE_6_NODE_ROWS}
     priced_offices |= {match["row"] for node_id, match in member_matches.items() if node_id in records}
@@ -752,11 +838,18 @@ def build_records(
             {"office": row["office"], "printed": row["printed"], "amount": row["amount"]}
             for row in schedules["7"]["rows"]
         ]
-        report["schedule7Priced"] = 0
+        report["schedule7Priced"] = len(schedule7_priced)
+        report["schedule7PricedNodes"] = sorted(schedule7_priced)
+        report["schedule7NotPriced"] = {
+            row["office"]: SCHEDULE_7_ROWS_NOT_PRICED.get(row["office"], "not in the reviewed table")
+            for row in schedules["7"]["rows"]
+            if row["office"] not in set(SCHEDULE_7_NODE_ROWS.values())
+        }
         report["schedule7Reason"] = (
-            "every tier it names is already priced from uscourts.gov, or reaches only nodes stating a "
-            "multiplicity, or reaches no post node at all (the Court of International Trade has a court "
-            "node and no judge node)"
+            "the Court of International Trade's chief judge and its bench of eight are priced from the row "
+            "'Judges of the Court of International Trade' (since 2026-10-05); every other tier it names is "
+            "already priced from uscourts.gov's own table, or reaches only circuit benches that bundle "
+            "senior judges"
         )
     if "5" in schedules:
         report["schedule5Rows"] = [
@@ -793,6 +886,7 @@ def apply_pay_evidence(
         "stands_for_many_posts": 0,
         "already_priced_by_another_source": 0,
         "member_seats": 0,
+        "schedule_7": 0,
     }
     for node_id, record in sorted(records.items()):
         node = node_map.get(node_id)
@@ -802,7 +896,10 @@ def apply_pay_evidence(
         if str(node.get("type") or "").casefold() != "position":
             stats["not_a_position"] += 1
             continue
-        if node.get("representsPosts"):
+        if node.get("representsPosts") and str(record.get("schedule") or "6") != "7":
+            # A Schedule 6 row is one office's rate; a Schedule 7 row is a
+            # tier's rate for every judge of the court, and the office-rate
+            # sweep stamps `holders` on a bench that carries it.
             stats["stands_for_many_posts"] += 1
             continue
         if isinstance(node.get("positionStatutoryPay"), dict):
@@ -829,6 +926,12 @@ def apply_pay_evidence(
         if isinstance(record.get("memberSeat"), dict):
             node["positionStatutoryPay"]["memberSeat"] = dict(record["memberSeat"])
             stats["member_seats"] = stats.get("member_seats", 0) + 1
+        if str(record.get("schedule") or "") == "7":
+            node["positionStatutoryPay"]["schedule"] = "7"
+            node["positionStatutoryPay"]["sourceLabel"] = (
+                "Schedule 7 of the annual pay-adjustment order, as 5 U.S.C. 5332's note prints it"
+            )
+            stats["schedule_7"] = stats.get("schedule_7", 0) + 1
         stats["priced"] += 1
         # Deliberately not written: sourceUrls, sourceTypes, lastVerified,
         # verificationMethod — see `judicial_pay.apply_pay_evidence`.

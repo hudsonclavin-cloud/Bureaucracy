@@ -49,8 +49,12 @@ It will not price:
   its own -- a figure NO document states, since the statute names a tier and
   this table prices it. The refusal here stands unchanged: what that module
   publishes is a derivation, labelled as one, and not something this table
-  says. The Court of International Trade is still unpriced, because
-  28 U.S.C. 252 states no parity at all.
+  says. The Court of International Trade is not reached by that derivation
+  either, because 28 U.S.C. 252 states no parity at all; since 2026-10-05 its
+  chief judge and bench are priced by `us_code_pay_schedules.py` from the
+  one row this table does not print -- Schedule 7 of the pay-adjustment
+  order's "Judges of the Court of International Trade" -- and THIS table
+  still says nothing about them.
 
 ## Basic pay is not the node's cost
 

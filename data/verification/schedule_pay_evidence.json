@@ -12,14 +12,14 @@
     "method": "level_assigned_by_5_usc_5312_5316",
     "table": "Salary Table No. 2026-EX",
     "effective": "2026-01-01",
-    "matched": 214,
-    "priced": 214,
+    "matched": 215,
+    "priced": 215,
     "refused": {},
     "priced_by_level": {
       "I": 20,
       "II": 33,
       "III": 44,
-      "IV": 111,
+      "IV": 112,
       "V": 6
     },
     "matchRefusals": {
@@ -27,7 +27,7 @@
       "office_part_is_a_bare_role_word": 75
     },
     "scopedMatches": 61,
-    "reviewedMatches": 75,
+    "reviewedMatches": 76,
     "reviewedRows": [
       "exec-dept-dhs-deputy-secretary-of-department-of-homeland-security-dhs",
       "exec-dept-dhs-fema-administrator-fema",
@@ -64,6 +64,7 @@
       "exec-ind-cia-director-of-the-cia-dcia",
       "exec-ind-misc-equal-employment-opportunity-commission-eeoc-deputy-director-vice-chair",
       "exec-ind-misc-equal-employment-opportunity-commission-eeoc-director-administrator-chair-equal-employment-opportunity-commission",
+      "exec-ind-misc-export-import-bank-of-the-u-s-deputy-director-vice-chair",
       "exec-ind-misc-export-import-bank-of-the-u-s-director-administrator-chair-export-import-bank-of-the-u-s",
       "exec-ind-misc-federal-labor-relations-authority-flra-director-administrator-chair-federal-labor-relations-authority",
       "exec-ind-misc-merit-systems-protection-board-mspb-director-administrator-chair-merit-systems-protection-board",
@@ -189,7 +190,7 @@
       ]
     },
     "statutoryPositions": 415,
-    "validated": 214,
+    "validated": 215,
     "rejected": [],
     "conflicts": [],
     "double_counted": []
@@ -8966,6 +8967,62 @@
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
       "rateText": "$184,900",
+      "tableFootnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+    },
+    "exec-ind-misc-export-import-bank-of-the-u-s-deputy-director-vice-chair": {
+      "nodeId": "exec-ind-misc-export-import-bank-of-the-u-s-deputy-director-vice-chair",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "basic_pay",
+      "amount": 197200.0,
+      "amountRaw": "197,200",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "Level IV $197,200",
+      "quote": "Level IV $197,200",
+      "fiscalYear": 2026,
+      "periodCoverage": "annual_rate",
+      "periodAsOf": "2026-01-01",
+      "amountScope": "Level IV",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "opm_pay_table",
+      "sourceUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+      "retrievedAt": "2026-09-11T03:05:36Z",
+      "locator": {
+        "table": "Salary Table No. 2026-EX",
+        "row": "Level IV",
+        "column": "Rate"
+      },
+      "levelClaim": {
+        "source": "us_code_executive_schedule",
+        "method": "level_assigned_by_5_usc_5312_5316_to_the_office_a_second_statute_identifies_this_post_as",
+        "scopedOffice": null,
+        "scopedOrganisation": null,
+        "scopedOrganisationId": null,
+        "payLevel": "IV",
+        "citation": "5 U.S.C. §5315",
+        "section": "5315",
+        "statutoryTitle": "First Vice President of the Export-Import Bank of Washington",
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
+        "documentSha256": "9f7b1249fa099a07f4e79f8b67048225d5a093fdab886895bcf2497d0d8b3f76",
+        "checkedAt": "2026-09-18T20:34:27Z",
+        "identification": {
+          "nodeName": "Deputy Director / Vice Chair",
+          "basis": "the same office: 12 U.S.C. 635a(b) creates a First Vice President of the Export-Import Bank of the United States and 635a(c)(1) seats that officer on the Board as its Vice Chairman, and 5 U.S.C. 5315 places the 'First Vice President of the Export-Import Bank of Washington' at Level IV — the Schedule keeps the Bank's pre-1968 name, the rename the President's row already relies on; the graph names the post with its stamped 'Deputy Director / Vice Chair' template under the Bank, and the First Vice President is the Vice Chairman the template stands for",
+          "basisCitation": "12 U.S.C. 635a",
+          "basisQuote": "There shall be a Board of Directors of the Bank consisting of the President of the Export-Import Bank of the United States, who shall serve as Chairman, the First Vice President who shall serve as Vice Chairman, and three additional persons appointed by the President of the United States by and with the advice and consent of the Senate.",
+          "basisUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title12-section635a&num=0&edition=prelim",
+          "basisSha256": "c1a7e4ed3a5fe83af75953f049552cb54935de54bf9c24c3ef2b2fea63713f7d",
+          "basisCheckedAt": "2026-09-28T22:28:29Z"
+        }
+      },
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "rateText": "$197,200",
       "tableFootnotes": [
         "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
       ],

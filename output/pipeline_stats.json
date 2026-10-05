@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-30T23:42:37.923974+00:00",
+  "timestamp": "2026-10-05T17:43:52.717717+00:00",
   "mode": "offline_regeneration",
   "note": "Rebuilt from the curated base graph and the Treasury anchor already published; no crawler ran. See scripts/regenerate_published_graph.py.",
   "nodes_before": 5481,
@@ -197,7 +197,7 @@
       "not_validated": 0
     },
     "schedule_pay_evidence": {
-      "priced": 214,
+      "priced": 215,
       "priced_scoped": 61,
       "unknown_node": 0,
       "not_a_position": 0,
@@ -220,12 +220,13 @@
       "stands_for_many_posts_after_pruning": 0
     },
     "us_code_pay_schedule_evidence": {
-      "priced": 465,
+      "priced": 467,
       "unknown_node": 0,
       "not_a_position": 0,
       "stands_for_many_posts": 0,
       "already_priced_by_another_source": 0,
       "member_seats": 461,
+      "schedule_7": 2,
       "stands_for_many_posts_after_pruning": 0
     },
     "va_title38_pay_evidence": {
@@ -351,11 +352,11 @@
       "not_capped_other_evidence": 1
     },
     "pay_documents": {
-      "annotated": 1144,
+      "annotated": 1147,
       "no_document": 0,
       "positionDerivedPay": 12,
-      "positionStatutoryPay": 485,
-      "positionSchedulePay": 214,
+      "positionStatutoryPay": 487,
+      "positionSchedulePay": 215,
       "positionTierReferencePay": 36,
       "positionGradePay": 18,
       "positionCurrentPay": 88,

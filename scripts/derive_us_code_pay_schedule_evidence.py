@@ -146,6 +146,10 @@ def main(argv: list[str] | None = None) -> int:
         for row in report.get("schedule7Rows", []):
             print(f"    {row['printed']:>10s}  {row['office']}")
         print(f"  priced from Schedule 7: {report['schedule7Priced']} — {report['schedule7Reason']}")
+        for node_id in report.get("schedule7PricedNodes", []):
+            print(f"    PRICED   {node_id}")
+        for office, reason in (report.get("schedule7NotPriced") or {}).items():
+            print(f"    not priced: {office} — {reason}")
     print("Every record is scoped 'proxy'. Basic pay is not the node's cost, and nothing here writes a source URL onto a node.")
 
     if args.dry_run:
@@ -170,8 +174,10 @@ def main(argv: list[str] | None = None) -> int:
             "three Senate leadership roles Schedule 6 also names (already priced from senate.gov's own footnote; "
             "the two sources agree), the Vice President's separate Senate-leadership node (one officer, one "
             "salary, priced once), no Senator's or Member's seat (none is curated as its own position node), and "
-            "nothing at all from Schedule 7 (every judicial tier it names is already priced from uscourts.gov, "
-            "reaches only nodes stating a multiplicity, or reaches no post node). Basic pay is not the node's "
+            "and, from Schedule 7, since 2026-10-05, only the Court of International Trade's chief judge and bench "
+            "from the row 'Judges of the Court of International Trade' (every other judicial tier it names is "
+            "already priced from uscourts.gov or reaches only circuit benches that bundle senior judges). Basic "
+            "pay is not the node's "
             "cost. Regenerate by re-running the script; never edit by hand."
         ),
         "source": {

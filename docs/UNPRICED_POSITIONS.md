@@ -8,13 +8,13 @@ checkable claim. `docs/PAY_SOURCE_RESEARCH_PROMPT_3.md` is generated from this
 same list in the same run.
 
 - position nodes in the published graph: **4,591**
-- carrying a pay claim an official document supports: **1,099**
-- carrying none: **3,492**
+- carrying a pay claim an official document supports: **1,102**
+- carrying none: **3,489**
 
 | reason | count | what it means |
 |---|---|---|
-| `unreached` | 2,720 | no source this project has read names the title at all. Not a coverage gap somebody has not got to: no pay document in the repository names this title under this organisation, so nothing could have reached it. |
-| `multiplicity` | 754 | the node states a multiplicity (×N) and no claim that holds for every holder has reached it. Since 2026-09-23 a claim that holds for each holder by its own terms IS published on such a node with a `holders` block -- a tier or parity rate paid to every judge of the tier, a band every holder is within, or a roster listing every holder at one rate -- and 39 such nodes carry one. What stays refused is an incumbency-shaped claim (one listing's level, one row of the current export), because that is one appointment's figure and not the group's. For these nodes no office-rate claim has reached them at all. Knowing which pay system governs the title is still useful -- it is what would let the graph carry the schedule rather than a rate -- so these are listed and asked about. |
+| `unreached` | 2,718 | no source this project has read names the title at all. Not a coverage gap somebody has not got to: no pay document in the repository names this title under this organisation, so nothing could have reached it. |
+| `multiplicity` | 753 | the node states a multiplicity (×N) and no claim that holds for every holder has reached it. Since 2026-09-23 a claim that holds for each holder by its own terms IS published on such a node with a `holders` block -- a tier or parity rate paid to every judge of the tier, a band every holder is within, or a roster listing every holder at one rate -- and 40 such nodes carry one. What stays refused is an incumbency-shaped claim (one listing's level, one row of the current export), because that is one appointment's figure and not the group's. For these nodes no office-rate claim has reached them at all. Knowing which pay system governs the title is still useful -- it is what would let the graph carry the schedule rather than a rate -- so these are listed and asked about. |
 | `listed_no_rate` | 18 | OPM lists the position and the row prints no rate. The PLUM archive or the current export names the title under this organisation but the Level/Grade/Pay cell carries a rank or is empty, and no salary table this project has read prices that pay plan. |
 
 ---
@@ -5216,14 +5216,6 @@ same list in the same run.
 - `exec-ind-epa-chief-of-staff` — Chief of Staff — `unreached`
 - `exec-ind-epa-general-counsel` — General Counsel — `unreached`
 
-## Export-Import Bank of the U.S.  — 3 unpriced
-
-`exec-ind-misc-export-import-bank-of-the-u-s`
-
-- `exec-ind-misc-export-import-bank-of-the-u-s-chief-financial-officer` — Chief Financial Officer — `unreached`
-- `exec-ind-misc-export-import-bank-of-the-u-s-deputy-director-vice-chair` — Deputy Director / Vice Chair — `unreached`
-- `exec-ind-misc-export-import-bank-of-the-u-s-general-counsel` — General Counsel — `unreached`
-
 ## Federal Election Commission (FEC)  — 3 unpriced
 
 `exec-ind-misc-federal-election-commission-fec`
@@ -5616,14 +5608,6 @@ same list in the same run.
 - `exec-dept-doj-div-tax-section-chief-multiple` — Section Chief (×multiple) — `multiplicity`
 - `exec-dept-doj-div-tax-trial-attorney-ausa-multiple` — Trial Attorney / AUSA (×multiple) — `multiplicity`
 
-## U.S. Court of International Trade (CIT)  — 3 unpriced
-
-`jud-specialized-intl-trade`
-
-- `jud-specialized-intl-trade-chief-judge-cit` — Chief Judge, CIT — `unreached`
-- `jud-specialized-intl-trade-clerk-of-the-court` — Clerk of the Court — `unreached`
-- `jud-specialized-intl-trade-judge-8` — Judge (×8) — `multiplicity`
-
 ## Wage & Hour Division (WHD)  — 3 unpriced
 
 `exec-dept-dol-whd`
@@ -5701,6 +5685,13 @@ same list in the same run.
 
 - `exec-ind-nasa-exploration-systems-development-mission-directorate-deputy-associate-administrator-exploration-systems-development-mission-directorate` — Deputy Associate Administrator, Exploration Systems Development Mission Directorate — `unreached`
 - `exec-ind-nasa-exploration-systems-development-mission-directorate-program-director-multiple` — Program Director (×multiple) — `multiplicity`
+
+## Export-Import Bank of the U.S.  — 2 unpriced
+
+`exec-ind-misc-export-import-bank-of-the-u-s`
+
+- `exec-ind-misc-export-import-bank-of-the-u-s-chief-financial-officer` — Chief Financial Officer — `unreached`
+- `exec-ind-misc-export-import-bank-of-the-u-s-general-counsel` — General Counsel — `unreached`
 
 ## House Committee on Agriculture  — 2 unpriced
 
@@ -6484,6 +6475,12 @@ same list in the same run.
 `leg-senate-cmte-appropriations-sub-transportation-hud-related-agencies`
 
 - `leg-senate-cmte-appropriations-sub-transportation-hud-related-agencies-staff-director-subcommittee-on-transportation-hud-related-agencies` — Staff Director, Subcommittee on Transportation, HUD & Related Agencies — `unreached`
+
+## U.S. Court of International Trade (CIT)  — 1 unpriced
+
+`jud-specialized-intl-trade`
+
+- `jud-specialized-intl-trade-clerk-of-the-court` — Clerk of the Court — `unreached`
 
 ## USPS Capital Metro Area  — 1 unpriced
 

@@ -60,9 +60,13 @@ chain through two further documents and an adjustment this project has not
 read. CIT judges are in fact paid the district-judge rate; that is a thing
 this repository knows and cannot cite, which is the same position
 `CURATION.md` puts "Secretary of the Treasury" in. So `jud-specialized-intl-
-trade-chief-judge-cit` stays unpriced and the section is committed anyway,
+trade-chief-judge-cit` is refused HERE and the section is committed anyway,
 because "nobody looked" and "looked and it states no parity" are different
-facts.
+facts. (Since 2026-10-05 that post and the court's bench are priced by
+`us_code_pay_schedules.py` from a document that states the figure outright --
+Schedule 7's row "Judges of the Court of International Trade" -- which is a
+different field's claim and changes nothing about what this module can
+derive from §252.)
 
 ## Four nodes, and every other seat refused for the reason judicial_pay gives
 

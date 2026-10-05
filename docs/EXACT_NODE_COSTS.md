@@ -36,7 +36,7 @@ unverified`. The estimates remain in `graph.json` — the cascade's arithmetic
 and the gate's child-sum checks are built on them — so a consumer of the
 JSON must read `cost_status` and not `resolved_total_amount` alone.
 
-The one exception is a real salary. **1,099** position nodes carry a pay claim an
+The one exception is a real salary. **1,102** position nodes carry a pay claim an
 official source states — 461 the offices Members of Congress hold (every
 committee's chair and ranking member in both chambers, the whips, the
 conference and caucus chairs), priced since 2026-09-30 by the owner's decision
@@ -67,8 +67,11 @@ U.S.C. 136a–2's Level II, and 26 Inspectors
 General of the establishments 5 U.S.C. 401(1) lists at Level III plus the
 Act's 3 percent — $215,888, arithmetic the block carries in the open and no
 document prints), 72 a Title 38 tier BAND rather than a rate, 31 from a
-listing's level joined to OPM's table, 24 statutory at a row naming the office
-(uscourts.gov, senate.gov and Schedule 6), 18 a base-pay RANGE, and
+listing's level joined to OPM's table, 26 statutory at a row naming the office
+or tier (uscourts.gov, senate.gov, Schedule 6 and, since 2026-10-05, Schedule 7's
+"Judges of the Court of International Trade" for the CIT's chief judge and its
+bench of eight — the one judicial tier uscourts.gov's own table does not print),
+18 a base-pay RANGE, and
 **12 a figure no single document states** (four Article I chief judges and,
 since the multi-post rule became per field on 2026-09-23, their four benches —
 `Judge (×18)` among them, because "Each judge shall receive salary at the same
@@ -84,7 +87,7 @@ $249,900 × 92% = $229,908, arithmetic the block carries in the open and no
 document prints; the magistrate judges are refused because 28 U.S.C. 634(a)
 sets "up to" that percentage, a ceiling the Judicial Conference fixes a figure
 beneath). A node may carry
-more than one, so the per-source figures sum past 1,099. Each shows in place of
+more than one, so the per-source figures sum past 1,102. Each shows in place of
 the withheld estimate, under its
 own heading rather than COST, with the panel saying it is compensation for one
 post — or, on a node standing for several, for each of its holders — and not
@@ -113,7 +116,12 @@ exactly one of the three states the figure. A percentage
 read as a probability that the number is right would be a lie, and that pairing
 is what stops it being read that way. The Court of International Trade is not
 among them: 28 U.S.C. 252 states no parity, only a chain through the Federal
-Salary Act of 1967, so its chief judge stays unpriced.
+Salary Act of 1967, so no derivation reaches its chief judge. Since 2026-10-05
+that post and the court's `Judge (×8)` bench are priced instead from a document
+that states the figure outright — Schedule 7 of the annual pay-adjustment order,
+as 5 U.S.C. 5332's note prints it, whose row "Judges of the Court of
+International Trade" reads 249,900 — a single-document statutory claim and not
+a derivation.
 
 Both coverage figures are printed by `scripts/validate_published_graph.py`
 on every run, so "853 nodes with a cost" can never be read as 853 known

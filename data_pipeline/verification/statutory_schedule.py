@@ -1153,6 +1153,18 @@ REVIEWED_TITLE_ROWS: dict[str, dict[str, Any]] = {
             "the same office: 12 U.S.C. 635a creates a President of the Export-Import Bank of the United States as the Bank's chief executive officer, and 5 U.S.C. 5314 places the 'President of the Export-Import Bank of Washington' at Level III — the Schedule keeps the Bank's name before Pub. L. 90-267 renamed it in 1968, a rename the Code records in the notes to 12 U.S.C. 635 and this row relies on; the graph names the post with its stamped 'Director / Administrator / Chair' template and the agency by name, and the Bank's President is the head the template stands for"
         ),
     },
+    "exec-ind-misc-export-import-bank-of-the-u-s-deputy-director-vice-chair": {
+        "nodeName": "Deputy Director / Vice Chair",
+        "statutoryTitle": "First Vice President of the Export-Import Bank of Washington",
+        "basisCitation": "12 U.S.C. 635a",
+        "basisFixture": "exim_12_usc_635a.html",
+        "basisQuote": (
+            "There shall be a Board of Directors of the Bank consisting of the President of the Export-Import Bank of the United States, who shall serve as Chairman, the First Vice President who shall serve as Vice Chairman, and three additional persons appointed by the President of the United States by and with the advice and consent of the Senate."
+        ),
+        "basis": (
+            "the same office: 12 U.S.C. 635a(b) creates a First Vice President of the Export-Import Bank of the United States and 635a(c)(1) seats that officer on the Board as its Vice Chairman, and 5 U.S.C. 5315 places the 'First Vice President of the Export-Import Bank of Washington' at Level IV — the Schedule keeps the Bank's pre-1968 name, the rename the President's row already relies on; the graph names the post with its stamped 'Deputy Director / Vice Chair' template under the Bank, and the First Vice President is the Vice Chairman the template stands for"
+        ),
+    },
     "exec-dept-doc-uspto-deputy-director": {
         "nodeName": "Deputy Director",
         "statutoryTitle": "Deputy Under Secretary of Commerce for Intellectual Property and Deputy Director of the United States Patent and Trademark Office",

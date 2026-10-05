@@ -803,6 +803,14 @@ US_CODE_REVIEWED_IDENTIFICATIONS = {
         "the same office: 12 U.S.C. 635a creates a President of the Export-Import Bank of the United States as the Bank's chief executive officer, and 5 U.S.C. 5314 places the 'President of the Export-Import Bank of Washington' at Level III — the Schedule keeps the Bank's name before Pub. L. 90-267 renamed it in 1968, a rename the Code records in the notes to 12 U.S.C. 635 and this row relies on; the graph names the post with its stamped 'Director / Administrator / Chair' template and the agency by name, and the Bank's President is the head the template stands for",
         False,
     ),
+    "exec-ind-misc-export-import-bank-of-the-u-s-deputy-director-vice-chair": (
+        "Deputy Director / Vice Chair",
+        "First Vice President of the Export-Import Bank of Washington", "IV", "5315",
+        "12 U.S.C. 635a", "exim_12_usc_635a.html",
+        "There shall be a Board of Directors of the Bank consisting of the President of the Export-Import Bank of the United States, who shall serve as Chairman, the First Vice President who shall serve as Vice Chairman, and three additional persons appointed by the President of the United States by and with the advice and consent of the Senate.",
+        "the same office: 12 U.S.C. 635a(b) creates a First Vice President of the Export-Import Bank of the United States and 635a(c)(1) seats that officer on the Board as its Vice Chairman, and 5 U.S.C. 5315 places the 'First Vice President of the Export-Import Bank of Washington' at Level IV — the Schedule keeps the Bank's pre-1968 name, the rename the President's row already relies on; the graph names the post with its stamped 'Deputy Director / Vice Chair' template under the Bank, and the First Vice President is the Vice Chairman the template stands for",
+        False,
+    ),
     "exec-dept-doc-uspto-deputy-director": (
         "Deputy Director",
         "Deputy Under Secretary of Commerce for Intellectual Property and Deputy Director of the United States Patent and Trademark Office", "IV", "5315",
@@ -1458,6 +1466,12 @@ STATUTORY_PAY_NODE_TIERS = {
     "leg-house-leadership-speaker-of-the-house": "speaker of the house of representatives",
     "leg-house-leadership-majority-leader": "majority leader and minority leader of the house of representatives",
     "leg-house-leadership-minority-leader": "majority leader and minority leader of the house of representatives",
+    # Schedule 7 of the same note, since 2026-10-05: the one judicial tier
+    # uscourts.gov's table does not print. The chief judge is a judge of the
+    # court and the bench of eight carries the rate for each holder; pinned
+    # against `us_code_pay_schedules.SCHEDULE_7_NODE_ROWS`.
+    "jud-specialized-intl-trade-chief-judge-cit": "judges of the court of international trade",
+    "jud-specialized-intl-trade-judge-8": "judges of the court of international trade",
 }
 
 #: Schedule 6's own rows, mirrored stdlib-only the way EXECUTIVE_SCHEDULE_RATES
@@ -1553,6 +1567,17 @@ US_CODE_SCHEDULE_6_COLUMN_HEAD = "$292,300"
 #: "193,400" appears three times in Schedule 6 and also in Schedule 5's
 #: neighbourhood, and the heading is what ties a figure to this schedule.
 SCHEDULE_6_HEADING = "Schedule 6 — Vice President and Members Of Congress"
+#: Schedule 7 of the same note, mirrored for the one row it prices (since
+#: 2026-10-05): "249,900" is also the District Judges row, so the heading,
+#: the effective line and the marked head of ITS column ($320,700, the Chief
+#: Justice's row) are what tie a record to this schedule and this row. Pinned
+#: equal to the note by tests/test_us_code_pay_schedules.py.
+SCHEDULE_7_HEADING = "Schedule 7 — Judicial Salaries"
+US_CODE_SCHEDULE_7_RATES = {
+    "judges of the court of international trade": 249_900.0,
+}
+US_CODE_SCHEDULE_7_EFFECTIVE = US_CODE_SCHEDULE_6_EFFECTIVE
+US_CODE_SCHEDULE_7_COLUMN_HEAD = "$320,700"
 
 STATUTORY_PAY_SOURCES = {
     "uscourts_judicial_compensation": {
@@ -1579,9 +1604,12 @@ STATUTORY_PAY_SOURCES = {
             "&num=0&edition=prelim"
         ),
         "year": US_CODE_SCHEDULE_6_YEAR,
-        "tiers": US_CODE_SCHEDULE_6_RATES,
+        "tiers": {**US_CODE_SCHEDULE_6_RATES, **US_CODE_SCHEDULE_7_RATES},
         "footnotes": None,  # the record quotes the schedule itself; checked below
-        "id_prefix": ("exec-", "leg-"),
+        # Schedule 6 reaches the executive and the legislature; Schedule 7
+        # (one row) the judiciary. Which schedule a record may price from is
+        # decided by its tier below, and never crosses.
+        "id_prefix": ("exec-", "leg-", "jud-"),
     },
 }
 
@@ -3958,17 +3986,34 @@ def statutory_pay_violations(node, pay, today, label, tree_parents=None, type_by
         # is the schedule's own heading and effective line, and the record
         # must quote both. Without the effective line a reader cannot tell
         # which year's order the figure comes from, and the figure alone is
-        # the same number every source in this file prints.
-        if SCHEDULE_6_HEADING.casefold() not in quote.casefold():
-            say("prices from Schedule 6 without quoting its heading")
-        if US_CODE_SCHEDULE_6_EFFECTIVE.casefold() not in quote.casefold():
-            say("prices from Schedule 6 without quoting the effective line the note prints")
+        # the same number every source in this file prints. Which schedule
+        # is decided by the tier: Schedule 7's one mirrored row is judicial
+        # and nothing judicial may be priced from Schedule 6, or vice versa.
+        judicial_tier = tier in US_CODE_SCHEDULE_7_RATES
+        if judicial_tier:
+            heading, effective, column_head, number = (
+                SCHEDULE_7_HEADING, US_CODE_SCHEDULE_7_EFFECTIVE, US_CODE_SCHEDULE_7_COLUMN_HEAD, "7")
+            if not node_id.startswith("jud-"):
+                say("prices a Schedule 7 judicial salary row on a node outside the judiciary")
+            if str(pay.get("schedule") or "") != "7":
+                say("prices a Schedule 7 row without saying so")
+        else:
+            heading, effective, column_head, number = (
+                SCHEDULE_6_HEADING, US_CODE_SCHEDULE_6_EFFECTIVE, US_CODE_SCHEDULE_6_COLUMN_HEAD, "6")
+            if node_id.startswith("jud-"):
+                say("prices a Schedule 6 row on a judicial node, outside the branches Schedule 6 names")
+            if str(pay.get("schedule") or "6") != "6":
+                say("claims a schedule other than 6 for an office Schedule 6 names")
+        if heading.casefold() not in quote.casefold():
+            say("prices from Schedule {} without quoting its heading".format(number))
+        if effective.casefold() not in quote.casefold():
+            say("prices from Schedule {} without quoting the effective line the note prints".format(number))
         if tier and tier not in quote.casefold():
             say("prices an office its own quoted schedule row does not name")
         # The bare rows are readable as dollars only because the column's
         # first figure carries the mark; the record must carry it too.
         if expected is not None and "${:,.0f}".format(expected) not in quote:
-            if US_CODE_SCHEDULE_6_COLUMN_HEAD not in quote:
+            if column_head not in quote:
                 say("prices a bare schedule figure without quoting the marked head of its column")
 
     footnotes = pay.get("footnotes")

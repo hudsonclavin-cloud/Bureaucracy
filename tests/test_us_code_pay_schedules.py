@@ -815,3 +815,199 @@ class MemberSeatPublishedGraphTests(unittest.TestCase):
             self.assertFalse([u for u in (node.get("sourceUrls") or []) if "uscode.house.gov" in str(u)])
             self.assertNotIn(node.get("cost_status"), ("official", "root_total", "scaled_official"))
         self.assertEqual(seen, 461)
+
+
+# ---------------------------------------------------------------------------
+# Schedule 7, since 2026-10-05: the one judicial tier uscourts.gov's table does
+# not print. The Court of International Trade's chief judge and bench are priced
+# from "Judges of the Court of International Trade"; nothing else judicial may be
+# priced from this note, and nothing from Schedule 7 may land outside the
+# judiciary.
+
+from data_pipeline.verification.pay_tables import withdraw_pay_from_multi_post_nodes  # noqa: E402
+from data_pipeline.verification.us_code_pay_schedules import (  # noqa: E402
+    SCHEDULE_7_LABEL,
+    SCHEDULE_7_NODE_ROWS,
+    SCHEDULE_7_ROWS_NOT_PRICED,
+)
+from scripts.validate_published_graph import (  # noqa: E402
+    SCHEDULE_7_HEADING,
+    US_CODE_SCHEDULE_7_COLUMN_HEAD,
+    US_CODE_SCHEDULE_7_EFFECTIVE,
+    US_CODE_SCHEDULE_7_RATES,
+)
+
+
+def _cit_tree():
+    return {
+        "id": "the-constitution-of-the-united-states",
+        "name": "The Constitution",
+        "type": "Foundation",
+        "children": [
+            {
+                "id": "judicial-branch", "name": "Judicial Branch", "type": "Branch",
+                "children": [
+                    {
+                        "id": "jud-specialized", "name": "Specialized Courts", "type": "Grouping",
+                        "children": [
+                            {
+                                "id": "jud-specialized-intl-trade", "name": "U.S. Court of International Trade (CIT)",
+                                "type": "Specialized Court",
+                                "children": [
+                                    {"id": "jud-specialized-intl-trade-chief-judge-cit", "name": "Chief Judge, CIT", "type": "Position"},
+                                    {"id": "jud-specialized-intl-trade-judge-8", "name": "Judge (×8)", "type": "Position",
+                                     "representsPosts": {"text": "×8", "kind": "exact", "count": 8}},
+                                    {"id": "jud-specialized-intl-trade-clerk-of-the-court", "name": "Clerk of the Court", "type": "Position"},
+                                ],
+                            },
+                            {
+                                "id": "jud-specialized-tax", "name": "U.S. Tax Court", "type": "Specialized Court",
+                                "children": [
+                                    {"id": "jud-specialized-tax-chief-judge-tax-court", "name": "Chief Judge, Tax Court", "type": "Position"},
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+        ],
+    }
+
+
+class Schedule7MirrorTests(unittest.TestCase):
+    def test_the_gate_s_schedule_7_mirror_equals_the_note(self):
+        schedule = parse_pay_schedules(PAGE)["schedules"]["7"]
+        self.assertEqual("Schedule 7 — {}".format(schedule["title"]), SCHEDULE_7_HEADING)
+        self.assertEqual(SCHEDULE_7_LABEL, SCHEDULE_7_HEADING)
+        self.assertEqual(schedule["effective"], US_CODE_SCHEDULE_7_EFFECTIVE)
+        self.assertEqual(schedule["columnHead"]["text"], US_CODE_SCHEDULE_7_COLUMN_HEAD)
+        rows = {r["office"].casefold(): r["amount"] for r in schedule["rows"]}
+        for tier, rate in US_CODE_SCHEDULE_7_RATES.items():
+            self.assertEqual(rows[tier], rate)
+        # Every row the module prices is one the gate mirrors, and the rows
+        # it does not price are accounted for by name.
+        for node_id, office in SCHEDULE_7_NODE_ROWS.items():
+            self.assertEqual(STATUTORY_PAY_NODE_TIERS[node_id], office.casefold())
+            self.assertIn(office.casefold(), US_CODE_SCHEDULE_7_RATES)
+            self.assertTrue(node_id.startswith("jud-"))
+        self.assertEqual(
+            set(SCHEDULE_7_ROWS_NOT_PRICED) | set(SCHEDULE_7_NODE_ROWS.values()),
+            {r["office"] for r in schedule["rows"]},
+        )
+
+    def test_the_cit_row_prints_the_district_judge_figure(self):
+        # The same number as the District Judges row, which is why the
+        # heading and the marked head of Schedule 7's column are required.
+        rows = {r["office"]: r["amount"] for r in parse_pay_schedules(PAGE)["schedules"]["7"]["rows"]}
+        self.assertEqual(rows["Judges of the Court of International Trade"], rows["District Judges"])
+        self.assertEqual(rows["Judges of the Court of International Trade"], 249_900.0)
+
+
+class Schedule7Tests(unittest.TestCase):
+    def _records(self, tree):
+        node_map, parent_map = index_tree(tree)
+        return build_records(
+            node_map, parse_pay_schedules(PAGE)["schedules"],
+            url=SCHEDULE_URL, sha256="a" * 64, retrieved_at="2026-10-05T00:00:00Z", parent_map=parent_map,
+        )
+
+    def test_the_chief_judge_and_the_bench_are_priced_and_nothing_else_judicial_is(self):
+        records, report = self._records(_cit_tree())
+        self.assertEqual(sorted(n for n in records if n.startswith("jud-")), sorted(SCHEDULE_7_NODE_ROWS))
+        self.assertEqual(report["schedule7Priced"], 2)
+        chief = records["jud-specialized-intl-trade-chief-judge-cit"]
+        self.assertEqual(chief["amount"], 249_900.0)
+        self.assertEqual(chief["role"], "judges of the court of international trade")
+        self.assertEqual(chief["schedule"], "7")
+        self.assertIn(SCHEDULE_7_HEADING, chief["quote"])
+        self.assertIn(US_CODE_SCHEDULE_7_COLUMN_HEAD, chief["quote"])
+        self.assertEqual(chief["scopeMatch"], "proxy")
+        self.assertNotIn("jud-specialized-intl-trade-clerk-of-the-court", records)
+        self.assertNotIn("jud-specialized-tax-chief-judge-tax-court", records)
+
+    def test_the_bench_is_applied_and_keeps_the_rate_for_each_holder(self):
+        tree = _cit_tree()
+        records, _ = self._records(tree)
+        stats = apply_pay_evidence(tree, records)
+        self.assertEqual(stats["schedule_7"], 2)
+        withdraw_pay_from_multi_post_nodes(tree)
+        node_map = index_tree(tree)[0]
+        bench = node_map["jud-specialized-intl-trade-judge-8"]["positionStatutoryPay"]
+        self.assertEqual(bench["schedule"], "7")
+        self.assertEqual(bench["holders"]["count"], 8)
+        self.assertTrue(bench["holders"]["appliesToEachHolder"])
+        self.assertNotIn("holders", node_map["jud-specialized-intl-trade-chief-judge-cit"]["positionStatutoryPay"])
+        self.assertNotIn("sourceUrls", node_map["jud-specialized-intl-trade-chief-judge-cit"])
+
+    def _applied(self):
+        tree = _cit_tree()
+        records, _ = self._records(tree)
+        apply_pay_evidence(tree, records)
+        withdraw_pay_from_multi_post_nodes(tree)
+        node_map, parent_map = index_tree(tree)
+        return node_map, dict(parent_map)
+
+    def test_honest_schedule_7_records_pass_the_gate(self):
+        node_map, parents = self._applied()
+        for node_id in SCHEDULE_7_NODE_ROWS:
+            node = node_map[node_id]
+            self.assertEqual(statutory_pay_violations(node, node["positionStatutoryPay"], "2026-10-05", _label,
+                                                      tree_parents=parents, type_by_id={}, name_by_id={}), [])
+
+    def test_every_forgery_schedule_7_makes_possible_is_caught(self):
+        node_map, parents = self._applied()
+        chief = node_map["jud-specialized-intl-trade-chief-judge-cit"]
+        base = chief["positionStatutoryPay"]
+        attacks = {
+            "the schedule mark dropped": {k: v for k, v in base.items() if k != "schedule"},
+            "the District Judges row claimed instead": {**base, "seatTier": "district judges", "amountScope": "District Judges"},
+            "quote without Schedule 7's heading": {**base, "quote": base["quote"].replace(SCHEDULE_7_HEADING, SCHEDULE_6_HEADING),
+                                                   "footnotes": [base["quote"].replace(SCHEDULE_7_HEADING, SCHEDULE_6_HEADING)]},
+            "quote without the marked head of Schedule 7's column": {
+                **base, "quote": base["quote"].replace(US_CODE_SCHEDULE_7_COLUMN_HEAD, "320,700"),
+                "footnotes": [base["quote"].replace(US_CODE_SCHEDULE_7_COLUMN_HEAD, "320,700")]},
+            "a Schedule 6 office claimed on a judge": {**base, "seatTier": "vice president", "schedule": "6"},
+        }
+        for name, pay in attacks.items():
+            with self.subTest(attack=name):
+                out = statutory_pay_violations(chief, pay, "2026-10-05", _label, tree_parents=parents, type_by_id={}, name_by_id={})
+                self.assertTrue(out, f"{name} was not caught")
+
+    def test_a_schedule_7_record_moved_to_another_court_s_judge_is_caught(self):
+        node_map, parents = self._applied()
+        chief = node_map["jud-specialized-intl-trade-chief-judge-cit"]
+        tax = node_map["jud-specialized-tax-chief-judge-tax-court"]
+        out = statutory_pay_violations(tax, chief["positionStatutoryPay"], "2026-10-05", _label,
+                                       tree_parents=parents, type_by_id={}, name_by_id={})
+        self.assertTrue(any("no known tier" in v for v in out), out)
+
+    def test_a_schedule_7_record_on_a_non_judicial_node_is_caught(self):
+        node_map, parents = self._applied()
+        chief = dict(node_map["jud-specialized-intl-trade-chief-judge-cit"])
+        chief["id"] = "exec-vp"
+        out = statutory_pay_violations(chief, chief["positionStatutoryPay"], "2026-10-05", _label,
+                                       tree_parents=parents, type_by_id={}, name_by_id={})
+        self.assertTrue(any("outside the judiciary" in v for v in out), out)
+
+
+class Schedule7PublishedGraphTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        path = PROJECT_ROOT / "output" / "graph.json"
+        if not path.exists():
+            raise unittest.SkipTest("no published graph to check")
+        cls.nodes = index_tree(json.loads(path.read_text(encoding="utf-8")))[0]
+
+    def test_the_cit_s_chief_judge_and_bench_carry_schedule_7_and_nothing_else_judicial_does(self):
+        for node_id in SCHEDULE_7_NODE_ROWS:
+            pay = self.nodes[node_id].get("positionStatutoryPay")
+            self.assertIsInstance(pay, dict, node_id)
+            self.assertEqual(pay.get("source"), "us_code_pay_schedules")
+            self.assertEqual(pay.get("schedule"), "7")
+            self.assertEqual(pay.get("amount"), 249_900.0)
+            self.assertFalse([u for u in (self.nodes[node_id].get("sourceUrls") or []) if "uscode.house.gov" in str(u)])
+        self.assertEqual(self.nodes["jud-specialized-intl-trade-judge-8"]["positionStatutoryPay"]["holders"]["count"], 8)
+        for node_id, node in self.nodes.items():
+            pay = node.get("positionStatutoryPay")
+            if node_id.startswith("jud-") and isinstance(pay, dict) and pay.get("source") == "us_code_pay_schedules":
+                self.assertIn(node_id, SCHEDULE_7_NODE_ROWS)

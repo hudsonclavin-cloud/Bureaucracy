@@ -2277,7 +2277,7 @@ of the nine fields (no `positionTierPay` or `positionGradePay`). The
 derived module stopped writing its own copy of the arithmetic when this
 landed: one code path for one number.
 
-**And the gap this made visible, counted rather than estimated.** 1,099 of 4,591
+**And the gap this made visible, counted rather than estimated.** 1,102 of 4,591
 positions carry a pay claim (461 when this section was first written, before
 the multi-post rule below and the Federal Reserve rows; 492 before the
 reviewed rows of 2026-09-27, 498 before that day's class-title benches, 513
@@ -2286,13 +2286,14 @@ thirteen reviewed rows, 554 before the eight candidates of §19.10, 566
 before the twenty-two rows §19.12 closed the eighth batch with, 588 before
 the bankruptcy judges of 2026-09-30, 590 before that day's counted classes
 and the ninth batch's rows, 638 before the 461 offices Members of Congress
-hold were priced at the seat rate the same day); **3,492
+hold were priced at the seat rate the same day, 1,099 before the Court of
+International Trade and the Ex-Im Vice Chair of 2026-10-05); **3,489
 do not**, and `scripts/report_unpriced_positions.py` says why for every one
 of them:
 
-- **2,720** — no pay document this project has read names the title at all.
+- **2,718** — no pay document this project has read names the title at all.
   Not a coverage gap somebody has not got to.
-- **754** — the node states a multiplicity (`Physician (×multiple)`) and no
+- **753** — the node states a multiplicity (`Physician (×multiple)`) and no
   claim that holds for every holder reaches it. Since the per-field rule
   below, a tier rate, a parity rate, a band or a uniform roster line IS
   published on such a node (`Judge (×18)` is priced now); what stays refused
@@ -2300,8 +2301,8 @@ of them:
   SYSTEM governs the title is a fact worth having.
 - **18** — OPM lists the position and the row prints no rate.
 
-The concentration is the useful part: **432** of the 3,492 sit under `VA
-Medical Centers`, 360 of them among the 2,720 (the service chiefs
+The concentration is the useful part: **432** of the 3,489 sit under `VA
+Medical Centers`, 360 of them among the 2,718 (the service chiefs
 `va_title38_pay.py` deliberately refuses, since choosing a Title 38 table per
 node would be this module deciding which VA service chiefs are doctors), 61
 under the White House Office (83 before the multi-post rule), 56 under
@@ -2313,8 +2314,8 @@ per unpriced position with its id and its reason;
 `docs/PAY_SOURCE_RESEARCH_PROMPT_3.md` is a research prompt pack generated
 from the same list in the same run — a lead prompt asking which pay systems
 exist and where each is published, then **34 enumeration shards naming every
-one of the 3,492 titles** (39 and 4,003 until 2026-09-30, 38 and 3,953 until
-that evening's Members decision). The multiplicity
+one of the 3,489 titles** (39 and 4,003 until 2026-09-30, 38 and 3,953 until
+that evening's Members decision, 34 and 3,492 until 2026-10-05). The multiplicity
 reason's "N such nodes carry one" is read off the graph on each run since
 2026-09-30; it had said 28 since 2026-09-23 while the graph carried 37. `tests/test_unpriced_positions.py` asserts the
 coverage rather than trusting it: every unpriced id appears in the pack, no
@@ -2377,12 +2378,32 @@ grander. What is not priced matters more than what is:
   grouping. The OFFICES Members hold are another matter, and since
   2026-09-30 they are priced at that rate — see "The offices Members of
   Congress hold" below.
-- **Schedule 7 prices nothing, and is read anyway.** Every judicial tier it
-  names is already priced from uscourts.gov, or reaches only nodes stating a
-  multiplicity (`Circuit Judge (×28 active + senior judges)`), or reaches no
-  post node at all — the Court of International Trade has a court node and no
-  judge node. It is parsed and reported because "nobody looked" and "looked
-  and it reaches nothing" are different facts.
+- **Schedule 7 priced nothing until 2026-10-05, and the stated reason was
+  wrong.** This bullet used to say the Court of International Trade "has a
+  court node and no judge node". It has two — `Chief Judge, CIT` and `Judge
+  (×8)` — and they were the only Article I judges in the graph with no pay
+  claim at all: 28 U.S.C. 252 states no parity (`derived_pay.py` refuses
+  them) and uscourts.gov's table prints no CIT row (`judicial_pay.py`
+  refuses them). Schedule 7 prints one, "Judges of the Court of International
+  Trade 249,900", and the tenth research batch's CIT lead is what made the
+  graph get checked rather than the docstring. `SCHEDULE_7_NODE_ROWS` prices
+  exactly those two under the same `positionStatutoryPay` field: the chief
+  judge as a judge of that court (the reading `judicial_pay.py` applies to
+  every Article III chief judge) and the bench for each of its eight holders,
+  since the field is office-rate class. The record says `schedule: "7"`, quotes
+  Schedule 7's own heading, effective line and the marked head of ITS column
+  ($320,700, the Chief Justice's row — 249,900 is also the District Judges
+  row, so the heading is what ties the figure to the CIT), and the gate
+  refuses a Schedule 7 tier on a node outside the judiciary, a Schedule 6
+  office on a judicial node, the District Judges row claimed in its place, a
+  dropped schedule mark, and the record moved to the Tax Court's chief judge.
+  The other four Schedule 7 rows still price nothing: each tier is already
+  priced from uscourts.gov, or reaches only circuit benches that bundle senior
+  judges. The batch's own figures for the CIT ($243,300 and $231,700, citing
+  28 U.S.C. 135) were wrong twice over — §135 is the district judges' salary
+  section, and neither figure is the 2026 rate — and are recorded in
+  `CURATION.md` §19.16 as the lead that pointed at the right nodes with the
+  wrong numbers.
 
 **The corroboration is the quiet win.** One document carries the schedules
 three separate modules price from, and this is the only place the three can be
@@ -3093,6 +3114,30 @@ tunnel after 11 seconds with 39 bytes received, while govinfo answered 200
 and senate.gov 302, so it is that host and not the proxy
 (`docs/NETWORK_ACCESS.md` §15); `CURATION.md` §19.15 carries each lead.
 
+**The tenth batch, and a host that answers 200 with nothing (2026-10-05).**
+The retry of those four fetches, and of three more sections the tenth batch
+named (26 U.S.C. 7443A for the Tax Court's special trial judges, 52 U.S.C.
+20923 for the Election Assistance Commission, 52 U.S.C. 30106 for the FEC),
+came back HTTP 200 with a 14,615-byte page titled "Under Maintenance" — the
+same page for a section already committed — so `fetch_fixture.py` recorded
+seven successes that were nothing of the kind. All seven were deleted
+unread; `docs/NETWORK_ACCESS.md` §15 records it, and a maintenance page is a
+fact about the host's evening and not about any section. What the batch
+bought without the host: the **Ex-Im Bank's Vice Chair**, a reviewed row on
+the section already committed for its President — 12 U.S.C. 635a(c)(1) seats
+"the First Vice President who shall serve as Vice Chairman" on the Board, and
+§5315 places the "First Vice President of the Export-Import Bank of
+Washington" at Level IV (reviewed rows **75 → 76**, Schedule-priced
+**214 → 215**); and the **Court of International Trade** from Schedule 7
+(above). The rest of the batch is 230-odd committee chairs and ranking
+members the member-seat rule already prices, the staff directors it already
+refuses, and leads that name a pay SYSTEM with no document naming the post
+(SES bands for deputies and chiefs of staff, NSF's AD-3/AD-4 recruitment
+ranges, a DOJ vacancy announcement's GS-15 range, Title 38 for the IHS's
+officers), each declined in `CURATION.md` §19.16 for the reason the earlier
+batches' copies were. Pay claims **1,099 → 1,102**, unpriced
+**3,492 → 3,489**, multi-post nodes priced **39 → 40**.
+
 **The panel's Trace Origin, restored.** A 2026-09-15 change reduced "Trace
 Origin" to a one-line confirmation on the grounds that the breadcrumb already
 showed the path. The owner wanted the full tree back: `renderOriginTrace` lists
@@ -3610,7 +3655,7 @@ subdivide measured money rather than invent it — which does not make a
 subdivision a measurement. **Since 2026-09-09 the site does not show one by
 default**, by the owner's decision: a node with no measured cost of its own
 shows no figure and says why, and ticking "Also show estimated shares of a
-parent's total" opts back in. The exception is a real salary — **1,099** of the
+parent's total" opts back in. The exception is a real salary — **1,102** of the
 4,591 positions carry a pay claim an official source states, counted on the
 published graph on 2026-09-30 after Schedule 6, the VA's Title 38 bands, the
 Article I parity derivations, the per-field multi-post rule, the Federal
@@ -3628,8 +3673,8 @@ statute sets by REFERENCE to an Executive Schedule level (`positionTierReference
 the GAO's two officers, the GPO's two, the IES's Director and three
 Commissioners, the FCA Board's Chairman, the Librarian of Congress, and 26
 Inspectors General at Level III plus the Act's
-3 percent, arithmetic no document prints), 72 a Title 38 tier BAND rather than a rate (`positionTierPay`), 214 from the
-Executive Schedule as 5 U.S.C. §§5312–5316 sets it (75 of them through a
+3 percent, arithmetic no document prints), 72 a Title 38 tier BAND rather than a rate (`positionTierPay`), 215 from the
+Executive Schedule as 5 U.S.C. §§5312–5316 sets it (76 of them through a
 reviewed identification a second statute backs — 12 U.S.C. 241–242 for the
 Fed's four, then the FCC's, FTC's, CFTC's, FERC's, NRC's and FMC's chairs
 and benches, the IRS, FAA, DHS, OPM, SSA, FEMA, BLM, CIA, CMS, NIST, SBA,
@@ -3647,9 +3692,11 @@ each on the Code, the table and, for six of the eight classes, the statute
 that composes the class), 188 from
 the White House
 roster (22 of them titles listed N times at one rate), 88 the rate the current PLUM export prints for the one row under the
-title, 31 from a listing's level joined to OPM's table, 485 statutory (20 from
+title, 31 from a listing's level joined to OPM's table, 487 statutory (20 from
 uscourts.gov and senate.gov, 4 from Schedule 6 of the annual pay-adjustment
-order naming the office, and since 2026-09-30 the 461 offices Members of
+order naming the office, 2 from its Schedule 7 since 2026-10-05 — the Court
+of International Trade's chief judge and bench, the one judicial tier
+uscourts.gov's table does not print — and since 2026-09-30 the 461 offices Members of
 Congress hold — every committee's chair and ranking member, the whips, the
 conference and caucus chairs — at Schedule 6's SEAT rate for their chamber,
 by the owner's decision and a rule the gate mirrors), and 18 a
@@ -3669,8 +3716,10 @@ on 2026-09-28 with the tier-reference module, 554 the same day with the
 thirteen reviewed rows of §19.9's list, 566 with the eight candidates of
 §19.10, 588 with the twenty-two rows of §19.12, 590 with the bankruptcy
 benches of 2026-09-30, 638 with that day's counted classes and
-ninth-batch rows, and 1,099 with the Members' offices the same evening. Shown
-in the cost block under its own heading and never headed COST.
+ninth-batch rows, 1,099 with the Members' offices the same evening, and 1,102
+on 2026-10-05 with the Court of International Trade's two judge nodes and the
+Ex-Im Bank's Vice Chair. Shown in the cost block under its own heading and
+never headed COST.
 
 That figure read **354** until 2026-09-19 and was wrong: it added up the
 *records* each source derives rather than counting the nodes that publish one,
@@ -3686,8 +3735,9 @@ day's class-title benches and nine more reviewed rows, 541 on 2026-09-28
 with the GAO's officers and 26 Inspectors General, 554 the same day with
 the thirteen reviewed rows, 566 with the eight candidates, 588 with the
 twenty-two rows that closed the eighth batch, 590 with the bankruptcy
-benches, 638 with the counted classes and the ninth batch's rows, and 1,099
-with the offices Members of Congress hold. The estimates
+benches, 638 with the counted classes and the ninth batch's rows, 1,099
+with the offices Members of Congress hold, and 1,102 with the Court of
+International Trade and the Ex-Im Vice Chair. The estimates
 stay in `graph.json` because the cascade's arithmetic and the gate's
 child-sum checks are built on them, so a consumer of the JSON must read
 `cost_status`, not `resolved_total_amount` alone. The gate prints both

@@ -912,3 +912,14 @@ committed. The leads stay open in `CURATION.md` §19.15 with the section
 each needs named, so the next session that finds the host answering can
 fetch them in four commands.
 
+**2026-10-05, the retry.** The host answered every one of the four — and
+three more sections the tenth research batch named (26 U.S.C. 7443A,
+52 U.S.C. 20923, 52 U.S.C. 30106) — with HTTP **200** and a 14,615-byte page
+titled "Under Maintenance", the same page for a section already committed
+(5 U.S.C. 5312 came back as 14,173 bytes of the same thing). A 200 with a
+`text/html` body is what `fetch_fixture.py` records as a success, so seven
+"fixtures" were written and every one of them yields an empty operative
+text. All seven were deleted with their `.meta.json` files before anything
+read them; nothing is committed, and a maintenance page is not a fact about
+any section. The leads stay as `CURATION.md` §19.15 and §19.16 record them.
+

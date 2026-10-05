@@ -3759,3 +3759,125 @@ one named fetch:
 `fetch_fixture.py` command once the host answers, and each with its shape
 decided above. No lead from the nine batches is undecided. The next batch
 can start.
+
+### 19.16 The tenth batch: the Court of International Trade from Schedule 7, the Ex-Im Vice Chair, and a host under maintenance (2026-10-05)
+
+**The four fetches, retried, and seven stubs deleted.** `uscode.house.gov`
+answered every request this morning — the four sections §19.15 left open and
+three more this batch named — with HTTP 200 and a 14,615-byte page titled
+"Under Maintenance", the same page for 5 U.S.C. 5312, which is committed and
+real. `fetch_fixture.py` wrote seven "fixtures" on those 200s; each yields an
+empty operative text; all seven were deleted with their `.meta.json` before
+anything read them (`docs/NETWORK_ACCESS.md` §15). So the FISC, BVA, USAGM and
+USPS leads stand exactly as §19.15 placed them, and two of this batch's
+leads join them, each with its shape decided:
+
+- **The Tax Court's special trial judges, 26 U.S.C. 7443A.** The batch names
+  the section and no figure. If §7443A(d) pays a special trial judge a
+  percentage of a Tax Court judge's salary — which is itself 26 U.S.C.
+  7443(c)(1)'s parity to the district-judge rate — the shape is a percentage of
+  a JOIN, the shape §19.11 refused for the AO's and FJC's deputies
+  ("arithmetic on a figure that is itself a join, which this field does not
+  publish"). Three nodes now wait on that one decision, and it is the owner's:
+  the arithmetic is honest and open, the objection is only that two statutes
+  and a table and a multiplication is a longer chain than any record here
+  carries. **Open, blocked by the fetch and then by that decision.**
+- **The Election Assistance Commission, 52 U.S.C. 20923.** The batch reports
+  the section compensating each commissioner "at the annual rate of basic pay
+  payable for level IV of the Executive Schedule". The EAC is on no Schedule
+  section this project has committed, so if the section says that it is the
+  tier-reference shape (`tier_reference_pay.py`), for the two stamped nodes
+  `Director / Administrator / Chair, EAC` and `Deputy Director / Vice Chair`
+  as the Chair and Vice Chair the section elects from among the members.
+  **Open, blocked by the fetch.**
+- **The FEC's Chair and Vice Chair, 52 U.S.C. 30106.** §§5312–5316 as
+  committed print no Federal Election Commission title at all (grep'd rather
+  than remembered), so the Schedule cannot reach them; whether §30106 sets the
+  members' pay by reference to a level is what the section would say.
+  **Open, blocked by the fetch.** The batch's own row for the Chair gives no
+  figure and cites §30106(a)(6), which — if the section numbers as the batch
+  says — is the rotating one-year chairmanship, not pay.
+
+**Built without the host: two things.**
+
+- **The Ex-Im Bank's Vice Chair** (`exec-ind-misc-export-import-bank-of-the-u-s-deputy-director-vice-chair`,
+  Level IV). The batch reported it at EX-IV on OPM's table alone; the
+  identification is in a section already committed for the Bank's President:
+  12 U.S.C. 635a(b) creates "a First Vice President of the Bank" and 635a(c)(1)
+  seats "the First Vice President who shall serve as Vice Chairman" on the
+  Board, and §5315 places the "First Vice President of the Export-Import Bank
+  of Washington" at Level IV — the Bank's pre-1968 name, the same rename the
+  President's row already relies on. One reviewed row, the Fed's shape; the
+  stamped "Deputy Director / Vice Chair" template under the Bank is that
+  Vice Chairman. Reviewed rows **75 → 76**.
+- **The Court of International Trade's judges, from Schedule 7.** The batch's
+  two CIT rows were wrong twice: they cite 28 U.S.C. 135, which is the
+  DISTRICT judges' salary section (the CIT's is §252, read in §19.6 and
+  stating no parity), and they give $243,300 and $231,700, neither of which is
+  any 2026 judicial rate. What the lead was right about is that the nodes
+  exist. `CLAUDE.md` and the Schedule 6 module's docstring both said the CIT
+  "has a court node and no judge node"; it has `Chief Judge, CIT` and
+  `Judge (×8)`, and nobody had looked at the graph. Schedule 7 of the same
+  note this project has read since 2026-09-23 prints "Judges of the Court of
+  International Trade 249,900" — the one judicial tier uscourts.gov's own table
+  does not print, which is why `judicial_pay.py` could never reach it and why
+  Schedule 7 had "priced nothing". `SCHEDULE_7_NODE_ROWS` prices exactly those
+  two under `positionStatutoryPay` with `schedule: "7"`: the chief judge as a
+  judge of that court, the bench for each of eight holders (the field is
+  office-rate class). The gate's mirror grows the row, Schedule 7's heading
+  and the marked head of ITS column ($320,700), and refuses the District
+  Judges row claimed in the CIT's place, a Schedule 7 tier outside the
+  judiciary, a Schedule 6 office on a judge, the mark dropped, and the record
+  moved to the Tax Court's chief judge. `derived_pay.py`'s refusal of the CIT
+  under §252 stands unchanged — that module still cannot derive it; a document
+  that states the figure outright is a different claim. Multi-post nodes
+  priced **39 → 40**.
+
+**The rest of the batch, placed.** Some 230 Senate and House committee chairs
+and ranking members at $174,000 from senate.gov and the Clerk's Salary.pdf —
+every one already priced by §19.15's member-seat rule, checked against the
+published graph rather than assumed (the rule's published-graph test asserts
+every qualifying node carries a seat). Every staff director and minority staff
+director: "none", which agrees with the rule never reaching them. Declined,
+each for a reason an earlier section already gives:
+
+- **SES "ranges" on some forty deputies, chiefs of staff, general counsels
+  and regional heads** (DOJ division DAAGs, State's DASes, EPA's and the FMC's
+  officers, Ginnie Mae's, HUD's, PHMSA's, WHD's, IHS's area directors, NASA's
+  and NSF's deputies) from OPM's ES table: `gs_pay.py` publishes an SES band
+  only where a PLUM listing reports the ES plan for the post, because the
+  table names a pay system and no post, and "likely SES" is a guess about which
+  system. Where the current export lists one of these on ES the band is
+  already published or a printed rate stands in its place; the rest need a
+  listing, not a row.
+- **NSF's AD-3 and AD-4 ranges** from nsf.gov's careers page, on every
+  division director and programme director: a recruitment page's band for a
+  pay plan, naming no post (§19.14 stands).
+- **DOJ Criminal Division trial attorneys at GS-15** from one vacancy
+  announcement: one posting's grade for one opening is not the system the
+  `(×multiple)` node's holders are on, and the GS range would need a listing.
+- **The EPA Administrator at EX-II**: the batch cites OPM's table and nothing
+  identifying the office; §5313 does print "Administrator of the Environmental
+  Protection Agency", and the one identifying document would be
+  Reorganization Plan No. 3 of 1970, which is not a section of the Code. Stays
+  declined (§19.14) rather than priced from a name match the whole-name route
+  refuses because the graph writes "Administrator, EPA".
+- **The FEC's Deputy Director / Vice Chair at EX-IV, "speculative"**: the
+  Schedule does not print the FEC; see the §30106 lead above.
+- **IHS's Chief Medical and Chief Nursing Officers as Title 38**: a system
+  named, no document.
+- **NSC directors, BEA's, IES's, OCR's, OMB's and the Solicitor General's
+  staff, CAVC and Tax Court clerks and counsel: "unknown"** — nothing offered,
+  nothing to decide.
+
+Counted on the rebuilt graph: pay claims **1,099 → 1,102**, unpriced
+**3,492 → 3,489** (2,718 unreached, 753 stating a multiplicity, 18 listed
+without a rate), statutory-pay positions 485 → 487, Schedule-priced 214 → 215.
+
+**Still open after this section:** the same four fetches plus three — 50
+U.S.C. 1803, 38 U.S.C. 7101A, 22 U.S.C. 6203, 39 U.S.C. 202, 26 U.S.C. 7443A,
+52 U.S.C. 20923, 52 U.S.C. 30106 — each one `fetch_fixture.py` command once
+the host serves sections again, and `load_basis_section` will refuse a
+maintenance page by its empty operative text if one is ever committed by
+mistake; and one decision, the percentage-of-a-join shape (the AO's and FJC's
+deputies, the Tax Court's special trial judges). The next batch can start.

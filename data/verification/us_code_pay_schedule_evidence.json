@@ -1,5 +1,5 @@
 {
-  "_note": "Derived by scripts/derive_us_code_pay_schedule_evidence.py from one source: the note to 5 U.S.C. 5332, fetched 2026-09-23T14:35:38Z from https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5332&num=0&edition=prelim, which reproduces the annual pay-adjustment order's schedules verbatim. Schedule 6 states the rate for the Vice President and for each chamber's elected offices. A record is written only for the four curated nodes a reviewed table identifies: the Vice President, the Speaker of the House, and the House Majority and Minority Leaders — the offices congressional_pay.py records as unreachable from senate.gov — and, since 2026-09-30 by the owner's decision, for every post a Member of Congress holds: each committee's Chair and Ranking Member (found by rule: the name's role prefix under a Committee or Subcommittee parent, the chamber read off the tree) and the leadership offices MEMBER_LEADERSHIP_NODES lists by id, each priced at the seat rate of its chamber's row (Senators; Members of the House of Representatives) under its own method, because Schedule 6 prints no separate rate for those offices. Not priced: the three Senate leadership roles Schedule 6 also names (already priced from senate.gov's own footnote; the two sources agree), the Vice President's separate Senate-leadership node (one officer, one salary, priced once), no Senator's or Member's seat (none is curated as its own position node), and nothing at all from Schedule 7 (every judicial tier it names is already priced from uscourts.gov, reaches only nodes stating a multiplicity, or reaches no post node). Basic pay is not the node's cost. Regenerate by re-running the script; never edit by hand.",
+  "_note": "Derived by scripts/derive_us_code_pay_schedule_evidence.py from one source: the note to 5 U.S.C. 5332, fetched 2026-09-23T14:35:38Z from https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5332&num=0&edition=prelim, which reproduces the annual pay-adjustment order's schedules verbatim. Schedule 6 states the rate for the Vice President and for each chamber's elected offices. A record is written only for the four curated nodes a reviewed table identifies: the Vice President, the Speaker of the House, and the House Majority and Minority Leaders — the offices congressional_pay.py records as unreachable from senate.gov — and, since 2026-09-30 by the owner's decision, for every post a Member of Congress holds: each committee's Chair and Ranking Member (found by rule: the name's role prefix under a Committee or Subcommittee parent, the chamber read off the tree) and the leadership offices MEMBER_LEADERSHIP_NODES lists by id, each priced at the seat rate of its chamber's row (Senators; Members of the House of Representatives) under its own method, because Schedule 6 prints no separate rate for those offices. Not priced: the three Senate leadership roles Schedule 6 also names (already priced from senate.gov's own footnote; the two sources agree), the Vice President's separate Senate-leadership node (one officer, one salary, priced once), no Senator's or Member's seat (none is curated as its own position node), and and, from Schedule 7, since 2026-10-05, only the Court of International Trade's chief judge and bench from the row 'Judges of the Court of International Trade' (every other judicial tier it names is already priced from uscourts.gov or reaches only circuit benches that bundle senior judges). Basic pay is not the node's cost. Regenerate by re-running the script; never edit by hand.",
   "source": {
     "kind": "us_code_pay_schedules",
     "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5332&num=0&edition=prelim",
@@ -73,7 +73,7 @@
       "text": "$292,300"
     },
     "considered": 9,
-    "priced": 465,
+    "priced": 467,
     "pricedOffices": [
       "Majority leader and minority leader of the House of Representatives",
       "Members of the House of Representatives",
@@ -134,8 +134,18 @@
         "amount": 249900.0
       }
     ],
-    "schedule7Priced": 0,
-    "schedule7Reason": "every tier it names is already priced from uscourts.gov, or reaches only nodes stating a multiplicity, or reaches no post node at all (the Court of International Trade has a court node and no judge node)",
+    "schedule7Priced": 2,
+    "schedule7PricedNodes": [
+      "jud-specialized-intl-trade-chief-judge-cit",
+      "jud-specialized-intl-trade-judge-8"
+    ],
+    "schedule7NotPriced": {
+      "Chief Justice of the United States": "already priced from uscourts.gov's own compensation table",
+      "Associate Justices of the Supreme Court": "already priced from uscourts.gov's own compensation table",
+      "Circuit Judges": "the circuits' chief judges are already priced from uscourts.gov; every circuit bench bundles senior judges, whose salary 28 U.S.C. 371(b)(2) sets apart from the tier rate",
+      "District Judges": "already priced from uscourts.gov's own compensation table"
+    },
+    "schedule7Reason": "the Court of International Trade's chief judge and its bench of eight are priced from the row 'Judges of the Court of International Trade' (since 2026-10-05); every other tier it names is already priced from uscourts.gov's own table, or reaches only circuit benches that bundle senior judges",
     "schedule5Rows": [
       {
         "office": "Level I",
@@ -163,7 +173,7 @@
         "amount": 184900.0
       }
     ],
-    "validated": 465,
+    "validated": 467,
     "rejected": [],
     "conflicts": [],
     "double_counted": [],
@@ -198,6 +208,76 @@
       "year": "2026",
       "rateText": "$292,300 (Schedule 6 — Vice President and Members Of Congress, Effective on the first day of the first applicable pay period beginning on or after January 1, 2026)",
       "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+    },
+    "jud-specialized-intl-trade-chief-judge-cit": {
+      "nodeId": "jud-specialized-intl-trade-chief-judge-cit",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "basic_pay",
+      "amount": 249900.0,
+      "amountRaw": "249,900",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "Schedule 7 — Judicial Salaries · (Effective on the first day of the first applicable pay period beginning on or after January 1, 2026) · Chief Justice of the United States $320,700 · Judges of the Court of International Trade 249,900",
+      "quote": "Schedule 7 — Judicial Salaries · (Effective on the first day of the first applicable pay period beginning on or after January 1, 2026) · Chief Justice of the United States $320,700 · Judges of the Court of International Trade 249,900",
+      "fiscalYear": 2026,
+      "periodCoverage": "annual_rate",
+      "periodAsOf": "2026-01-01",
+      "amountScope": "Judges of the Court of International Trade",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "us_code_pay_schedules",
+      "sourceUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5332&num=0&edition=prelim",
+      "documentSha256": "6656771d1a4103ab85e484fac10490c67d0126d8ed11832b804510ff7c9a9e59",
+      "retrievedAt": "2026-09-23T14:35:38Z",
+      "locator": {
+        "page": "5 U.S.C. 5332 note",
+        "section": "Schedule 7 — Judicial Salaries"
+      },
+      "role": "judges of the court of international trade",
+      "year": "2026",
+      "schedule": "7",
+      "rateText": "$249,900 (Schedule 7 — Judicial Salaries, Effective on the first day of the first applicable pay period beginning on or after January 1, 2026)",
+      "columnHead": {
+        "column": "Judicial Salaries",
+        "amountRaw": "320,700",
+        "text": "$320,700"
+      },
+      "unitsEvidenceKind": "currency_mark_on_the_columns_first_figure"
+    },
+    "jud-specialized-intl-trade-judge-8": {
+      "nodeId": "jud-specialized-intl-trade-judge-8",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "basic_pay",
+      "amount": 249900.0,
+      "amountRaw": "249,900",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "Schedule 7 — Judicial Salaries · (Effective on the first day of the first applicable pay period beginning on or after January 1, 2026) · Chief Justice of the United States $320,700 · Judges of the Court of International Trade 249,900",
+      "quote": "Schedule 7 — Judicial Salaries · (Effective on the first day of the first applicable pay period beginning on or after January 1, 2026) · Chief Justice of the United States $320,700 · Judges of the Court of International Trade 249,900",
+      "fiscalYear": 2026,
+      "periodCoverage": "annual_rate",
+      "periodAsOf": "2026-01-01",
+      "amountScope": "Judges of the Court of International Trade",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "us_code_pay_schedules",
+      "sourceUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5332&num=0&edition=prelim",
+      "documentSha256": "6656771d1a4103ab85e484fac10490c67d0126d8ed11832b804510ff7c9a9e59",
+      "retrievedAt": "2026-09-23T14:35:38Z",
+      "locator": {
+        "page": "5 U.S.C. 5332 note",
+        "section": "Schedule 7 — Judicial Salaries"
+      },
+      "role": "judges of the court of international trade",
+      "year": "2026",
+      "schedule": "7",
+      "rateText": "$249,900 (Schedule 7 — Judicial Salaries, Effective on the first day of the first applicable pay period beginning on or after January 1, 2026)",
+      "columnHead": {
+        "column": "Judicial Salaries",
+        "amountRaw": "320,700",
+        "text": "$320,700"
+      },
+      "unitsEvidenceKind": "currency_mark_on_the_columns_first_figure"
     },
     "leg-house-cmte-agriculture-chair-agriculture": {
       "nodeId": "leg-house-cmte-agriculture-chair-agriculture",

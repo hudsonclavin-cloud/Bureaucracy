@@ -248626,6 +248626,64 @@
                       "budget": null,
                       "color": "#666666",
                       "children": [],
+                      "positionSchedulePay": {
+                        "source": "us_code_executive_schedule",
+                        "method": "level_assigned_by_5_usc_5312_5316_to_the_office_a_second_statute_identifies_this_post_as",
+                        "identification": {
+                          "nodeName": "Deputy Director / Vice Chair",
+                          "basis": "the same office: 12 U.S.C. 635a(b) creates a First Vice President of the Export-Import Bank of the United States and 635a(c)(1) seats that officer on the Board as its Vice Chairman, and 5 U.S.C. 5315 places the 'First Vice President of the Export-Import Bank of Washington' at Level IV — the Schedule keeps the Bank's pre-1968 name, the rename the President's row already relies on; the graph names the post with its stamped 'Deputy Director / Vice Chair' template under the Bank, and the First Vice President is the Vice Chairman the template stands for",
+                          "basisCitation": "12 U.S.C. 635a",
+                          "basisQuote": "There shall be a Board of Directors of the Bank consisting of the President of the Export-Import Bank of the United States, who shall serve as Chairman, the First Vice President who shall serve as Vice Chairman, and three additional persons appointed by the President of the United States by and with the advice and consent of the Senate.",
+                          "basisUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title12-section635a&num=0&edition=prelim",
+                          "basisSha256": "c1a7e4ed3a5fe83af75953f049552cb54935de54bf9c24c3ef2b2fea63713f7d",
+                          "basisCheckedAt": "2026-09-28T22:28:29Z"
+                        },
+                        "payLevel": "IV",
+                        "citation": "5 U.S.C. §5315",
+                        "statutoryTitle": "First Vice President of the Export-Import Bank of Washington",
+                        "scopedOffice": null,
+                        "scopedOrganisation": null,
+                        "scopedOrganisationId": null,
+                        "statuteUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
+                        "statuteCheckedAt": "2026-09-18T20:34:27Z",
+                        "amount": 197200.0,
+                        "rateText": "$197,200",
+                        "table": "Salary Table No. 2026-EX",
+                        "effectiveText": "Effective January 2026",
+                        "effective": "2026-01-01",
+                        "fiscalYear": 2026,
+                        "costBasis": "basic_pay",
+                        "scopeMatch": "proxy",
+                        "financialEvidenceStatus": "partial",
+                        "amountScope": "Level IV",
+                        "quote": "Level IV $197,200",
+                        "footnotes": [
+                          "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+                        ],
+                        "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+                        "checkedAt": "2026-09-11T03:05:36Z",
+                        "verification": {
+                          "documents": 3,
+                          "documentsStatingTheFigure": 1,
+                          "percent": 90,
+                          "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+                          "caution": "One document states the rate and another is the statute that puts this post at that level; where a third is listed, it is the statute that says this post is the office the Code names, because the Code's title is not this node's name. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+                          "documentRoles": [
+                            {
+                              "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+                              "role": "states what that Executive Schedule level pays"
+                            },
+                            {
+                              "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
+                              "role": "places this post at that level"
+                            },
+                            {
+                              "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title12-section635a&num=0&edition=prelim",
+                              "role": "identifies this post as the office the Code places at that level"
+                            }
+                          ]
+                        }
+                      },
                       "sourceUrls": [],
                       "sourceTypes": [],
                       "sourceCount": 0,
@@ -277906,6 +277964,40 @@
                   "budget": null,
                   "color": "#666666",
                   "children": [],
+                  "positionStatutoryPay": {
+                    "source": "us_code_pay_schedules",
+                    "sourceLabel": "Schedule 7 of the annual pay-adjustment order, as 5 U.S.C. 5332's note prints it",
+                    "method": "office_named_in_schedule_6_of_the_annual_pay_adjustment_order",
+                    "amount": 249900.0,
+                    "rateText": "$249,900 (Schedule 7 — Judicial Salaries, Effective on the first day of the first applicable pay period beginning on or after January 1, 2026)",
+                    "year": "2026",
+                    "effective": "2026-01-01",
+                    "costBasis": "basic_pay",
+                    "scopeMatch": "proxy",
+                    "financialEvidenceStatus": "partial",
+                    "amountScope": "Judges of the Court of International Trade",
+                    "seatTier": "judges of the court of international trade",
+                    "quote": "Schedule 7 — Judicial Salaries · (Effective on the first day of the first applicable pay period beginning on or after January 1, 2026) · Chief Justice of the United States $320,700 · Judges of the Court of International Trade 249,900",
+                    "footnotes": [
+                      "Schedule 7 — Judicial Salaries · (Effective on the first day of the first applicable pay period beginning on or after January 1, 2026) · Chief Justice of the United States $320,700 · Judges of the Court of International Trade 249,900"
+                    ],
+                    "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5332&num=0&edition=prelim",
+                    "checkedAt": "2026-09-23T14:35:38Z",
+                    "schedule": "7",
+                    "verification": {
+                      "documents": 1,
+                      "documentsStatingTheFigure": 1,
+                      "percent": 70,
+                      "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+                      "caution": "One document states the figure outright. The percentage measures how much official documentation it rests on, not the chance that it is right, and the source names a tier or a group of roles rather than this post by name.",
+                      "documentRoles": [
+                        {
+                          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5332&num=0&edition=prelim",
+                          "role": "states what this seat or role is paid"
+                        }
+                      ]
+                    }
+                  },
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -277936,6 +278028,47 @@
                   "budget": null,
                   "color": "#666666",
                   "children": [],
+                  "positionStatutoryPay": {
+                    "source": "us_code_pay_schedules",
+                    "sourceLabel": "Schedule 7 of the annual pay-adjustment order, as 5 U.S.C. 5332's note prints it",
+                    "method": "office_named_in_schedule_6_of_the_annual_pay_adjustment_order",
+                    "amount": 249900.0,
+                    "rateText": "$249,900 (Schedule 7 — Judicial Salaries, Effective on the first day of the first applicable pay period beginning on or after January 1, 2026)",
+                    "year": "2026",
+                    "effective": "2026-01-01",
+                    "costBasis": "basic_pay",
+                    "scopeMatch": "proxy",
+                    "financialEvidenceStatus": "partial",
+                    "amountScope": "Judges of the Court of International Trade",
+                    "seatTier": "judges of the court of international trade",
+                    "quote": "Schedule 7 — Judicial Salaries · (Effective on the first day of the first applicable pay period beginning on or after January 1, 2026) · Chief Justice of the United States $320,700 · Judges of the Court of International Trade 249,900",
+                    "footnotes": [
+                      "Schedule 7 — Judicial Salaries · (Effective on the first day of the first applicable pay period beginning on or after January 1, 2026) · Chief Justice of the United States $320,700 · Judges of the Court of International Trade 249,900"
+                    ],
+                    "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5332&num=0&edition=prelim",
+                    "checkedAt": "2026-09-23T14:35:38Z",
+                    "schedule": "7",
+                    "holders": {
+                      "text": "×8",
+                      "kind": "exact",
+                      "appliesToEachHolder": true,
+                      "note": "This node stands for several posts. The figure is the rate the source states for the office or tier, and it applies to each holder alike; it is not one person's pay and not the group's combined pay.",
+                      "count": 8
+                    },
+                    "verification": {
+                      "documents": 1,
+                      "documentsStatingTheFigure": 1,
+                      "percent": 70,
+                      "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+                      "caution": "One document states the figure outright. The percentage measures how much official documentation it rests on, not the chance that it is right, and the source names a tier or a group of roles rather than this post by name.",
+                      "documentRoles": [
+                        {
+                          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5332&num=0&edition=prelim",
+                          "role": "states what this seat or role is paid"
+                        }
+                      ]
+                    }
+                  },
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
