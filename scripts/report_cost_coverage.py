@@ -101,9 +101,10 @@ CLASSES = {
     ),
     "salary": (
         "Salary — a pay claim an official document supports",
-        "A position carrying at least one of the nine pay fields: a printed rate, a schedule level "
+        "A position carrying at least one of the ten pay fields: a printed rate, a schedule level "
         "priced by OPM's table, a statutory rate, a roster figure, a derivation the block carries "
-        "in the open, or a range. Since 2026-10-05 it is the post's headline figure, headed as pay "
+        "in the open, twelve months of a printed monthly military rate, or a range. Since 2026-10-05 "
+        "it is the post's headline figure, headed as pay "
         "and never as COST.",
         "Nothing to do for the node; each pay field is re-derived from its committed document on "
         "every run and withdrawn when the document stops supporting it.",

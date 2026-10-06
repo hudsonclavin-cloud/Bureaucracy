@@ -8,12 +8,12 @@ checkable claim. `docs/PAY_SOURCE_RESEARCH_PROMPT_3.md` is generated from this
 same list in the same run.
 
 - position nodes in the published graph: **4,591**
-- carrying a pay claim an official document supports: **1,193**
-- carrying none: **3,398**
+- carrying a pay claim an official document supports: **1,196**
+- carrying none: **3,395**
 
 | reason | count | what it means |
 |---|---|---|
-| `unreached` | 2,630 | no source this project has read names the title at all. Not a coverage gap somebody has not got to: no pay document in the repository names this title under this organisation, so nothing could have reached it. |
+| `unreached` | 2,627 | no source this project has read names the title at all. Not a coverage gap somebody has not got to: no pay document in the repository names this title under this organisation, so nothing could have reached it. |
 | `multiplicity` | 750 | the node states a multiplicity (×N) and no claim that holds for every holder has reached it. Since 2026-09-23 a claim that holds for each holder by its own terms IS published on such a node with a `holders` block -- a tier or parity rate paid to every judge of the tier, a band every holder is within, or a roster listing every holder at one rate -- and 43 such nodes carry one. What stays refused is an incumbency-shaped claim (one listing's level, one row of the current export), because that is one appointment's figure and not the group's. For these nodes no office-rate claim has reached them at all. Knowing which pay system governs the title is still useful -- it is what would let the graph carry the schedule rather than a rate -- so these are listed and asked about. |
 | `listed_no_rate` | 18 | OPM lists the position and the row prints no rate. The PLUM archive or the current export names the title under this organisation but the Level/Grade/Pay cell carries a rank or is empty, and no salary table this project has read prices that pay plan. |
 
@@ -928,24 +928,6 @@ same list in the same run.
 - `exec-dept-dhs-uscg-sector-commander-multiple` — Sector Commander (×multiple) — `multiplicity`
 - `exec-dept-dhs-uscg-station-commander-multiple` — Station Commander (×multiple) — `multiplicity`
 
-## Food & Drug Administration (FDA)  — 13 unpriced
-
-`exec-dept-hhs-fda`
-
-- `exec-dept-hhs-fda-associate-commissioner-regulatory-affairs-ora` — Associate Commissioner — Regulatory Affairs (ORA) — `unreached`
-- `exec-dept-hhs-fda-chief-counsel` — Chief Counsel — `unreached`
-- `exec-dept-hhs-fda-commissioner-fda` — Commissioner, FDA — `unreached`
-- `exec-dept-hhs-fda-consumer-safety-officer-multiple` — Consumer Safety Officer (×multiple) — `multiplicity`
-- `exec-dept-hhs-fda-deputy-commissioner` — Deputy Commissioner — `unreached`
-- `exec-dept-hhs-fda-director-center-for-biologics-evaluation-research-cber` — Director — Center for Biologics Evaluation & Research (CBER) — `unreached`
-- `exec-dept-hhs-fda-director-center-for-devices-radiological-health-cdrh` — Director — Center for Devices & Radiological Health (CDRH) — `unreached`
-- `exec-dept-hhs-fda-director-center-for-drug-evaluation-research-cder` — Director — Center for Drug Evaluation & Research (CDER) — `unreached`
-- `exec-dept-hhs-fda-director-center-for-food-safety-applied-nutrition-cfsan` — Director — Center for Food Safety & Applied Nutrition (CFSAN) — `unreached`
-- `exec-dept-hhs-fda-director-center-for-veterinary-medicine-cvm` — Director — Center for Veterinary Medicine (CVM) — `unreached`
-- `exec-dept-hhs-fda-director-national-center-for-toxicological-research-nctr` — Director — National Center for Toxicological Research (NCTR) — `unreached`
-- `exec-dept-hhs-fda-pharmacologist-multiple` — Pharmacologist (×multiple) — `multiplicity`
-- `exec-dept-hhs-fda-regional-director-5-ora-regions` — Regional Director — 5 ORA Regions — `unreached`
-
 ## U.S. Army  — 13 unpriced
 
 `exec-dept-defense-army`
@@ -998,22 +980,22 @@ same list in the same run.
 - `exec-dept-hhs-cdc-principal-deputy-director` — Principal Deputy Director — `unreached`
 - `exec-dept-hhs-cdc-public-health-advisor-multiple` — Public Health Advisor (×multiple) — `multiplicity`
 
-## NOAA — National Oceanic & Atmospheric Administration  — 12 unpriced
+## Food & Drug Administration (FDA)  — 12 unpriced
 
-`exec-dept-doc-noaa`
+`exec-dept-hhs-fda`
 
-- `exec-dept-doc-noaa-administrator-noaa` — Administrator, NOAA — `unreached`
-- `exec-dept-doc-noaa-chief-scientist` — Chief Scientist — `unreached`
-- `exec-dept-doc-noaa-deputy-administrator` — Deputy Administrator — `unreached`
-- `exec-dept-doc-noaa-director-nesdis-satellite-operations` — Director — NESDIS (satellite operations) — `unreached`
-- `exec-dept-doc-noaa-director-national-marine-fisheries-service-nmfs` — Director — National Marine Fisheries Service (NMFS) — `unreached`
-- `exec-dept-doc-noaa-director-national-ocean-service-nos` — Director — National Ocean Service (NOS) — `unreached`
-- `exec-dept-doc-noaa-director-national-weather-service-nws` — Director — National Weather Service (NWS) — `unreached`
-- `exec-dept-doc-noaa-director-office-of-oceanic-atmospheric-research-oar` — Director — Office of Oceanic & Atmospheric Research (OAR) — `unreached`
-- `exec-dept-doc-noaa-meteorologist-multiple` — Meteorologist (×multiple) — `multiplicity`
-- `exec-dept-doc-noaa-meteorologist-in-charge-122-weather-forecast-offices` — Meteorologist-in-Charge — 122 Weather Forecast Offices — `unreached`
-- `exec-dept-doc-noaa-national-hurricane-center-director` — National Hurricane Center Director — `unreached`
-- `exec-dept-doc-noaa-oceanographer-multiple` — Oceanographer (×multiple) — `multiplicity`
+- `exec-dept-hhs-fda-associate-commissioner-regulatory-affairs-ora` — Associate Commissioner — Regulatory Affairs (ORA) — `unreached`
+- `exec-dept-hhs-fda-chief-counsel` — Chief Counsel — `unreached`
+- `exec-dept-hhs-fda-consumer-safety-officer-multiple` — Consumer Safety Officer (×multiple) — `multiplicity`
+- `exec-dept-hhs-fda-deputy-commissioner` — Deputy Commissioner — `unreached`
+- `exec-dept-hhs-fda-director-center-for-biologics-evaluation-research-cber` — Director — Center for Biologics Evaluation & Research (CBER) — `unreached`
+- `exec-dept-hhs-fda-director-center-for-devices-radiological-health-cdrh` — Director — Center for Devices & Radiological Health (CDRH) — `unreached`
+- `exec-dept-hhs-fda-director-center-for-drug-evaluation-research-cder` — Director — Center for Drug Evaluation & Research (CDER) — `unreached`
+- `exec-dept-hhs-fda-director-center-for-food-safety-applied-nutrition-cfsan` — Director — Center for Food Safety & Applied Nutrition (CFSAN) — `unreached`
+- `exec-dept-hhs-fda-director-center-for-veterinary-medicine-cvm` — Director — Center for Veterinary Medicine (CVM) — `unreached`
+- `exec-dept-hhs-fda-director-national-center-for-toxicological-research-nctr` — Director — National Center for Toxicological Research (NCTR) — `unreached`
+- `exec-dept-hhs-fda-pharmacologist-multiple` — Pharmacologist (×multiple) — `multiplicity`
+- `exec-dept-hhs-fda-regional-director-5-ora-regions` — Regional Director — 5 ORA Regions — `unreached`
 
 ## National Park Service (NPS)  — 12 unpriced
 
@@ -1241,6 +1223,22 @@ same list in the same run.
 - `exec-dept-treasury-irs-director-whistleblower-office` — Director, Whistleblower Office — `unreached`
 - `exec-dept-treasury-irs-national-taxpayer-advocate` — National Taxpayer Advocate — `unreached`
 - `exec-dept-treasury-irs-special-agent-in-charge-21-ci-field-offices` — Special Agent in Charge (×21 CI Field Offices) — `multiplicity`
+
+## NOAA — National Oceanic & Atmospheric Administration  — 11 unpriced
+
+`exec-dept-doc-noaa`
+
+- `exec-dept-doc-noaa-chief-scientist` — Chief Scientist — `unreached`
+- `exec-dept-doc-noaa-deputy-administrator` — Deputy Administrator — `unreached`
+- `exec-dept-doc-noaa-director-nesdis-satellite-operations` — Director — NESDIS (satellite operations) — `unreached`
+- `exec-dept-doc-noaa-director-national-marine-fisheries-service-nmfs` — Director — National Marine Fisheries Service (NMFS) — `unreached`
+- `exec-dept-doc-noaa-director-national-ocean-service-nos` — Director — National Ocean Service (NOS) — `unreached`
+- `exec-dept-doc-noaa-director-national-weather-service-nws` — Director — National Weather Service (NWS) — `unreached`
+- `exec-dept-doc-noaa-director-office-of-oceanic-atmospheric-research-oar` — Director — Office of Oceanic & Atmospheric Research (OAR) — `unreached`
+- `exec-dept-doc-noaa-meteorologist-multiple` — Meteorologist (×multiple) — `multiplicity`
+- `exec-dept-doc-noaa-meteorologist-in-charge-122-weather-forecast-offices` — Meteorologist-in-Charge — 122 Weather Forecast Offices — `unreached`
+- `exec-dept-doc-noaa-national-hurricane-center-director` — National Hurricane Center Director — `unreached`
+- `exec-dept-doc-noaa-oceanographer-multiple` — Oceanographer (×multiple) — `multiplicity`
 
 ## National Nuclear Security Administration (NNSA)  — 11 unpriced
 
@@ -1484,21 +1482,6 @@ same list in the same run.
 - `exec-dept-ed-fsa-director-portfolio-risk-management` — Director — Portfolio Risk Management — `unreached`
 - `exec-dept-ed-fsa-director-research-analytics-evaluation` — Director — Research, Analytics & Evaluation — `unreached`
 - `exec-dept-ed-fsa-financial-aid-specialist-multiple` — Financial Aid Specialist (×multiple) — `multiplicity`
-
-## National Archives & Records Administration (NARA)  — 10 unpriced
-
-`exec-ind-nara`
-
-- `exec-ind-nara-archivist-of-the-united-states` — Archivist of the United States — `unreached`
-- `exec-ind-nara-chief-of-staff` — Chief of Staff — `unreached`
-- `exec-ind-nara-deputy-archivist` — Deputy Archivist — `unreached`
-- `exec-ind-nara-director-federal-register` — Director — Federal Register — `unreached`
-- `exec-ind-nara-director-information-services-cio` — Director — Information Services (CIO) — `unreached`
-- `exec-ind-nara-director-national-personnel-records-center` — Director — National Personnel Records Center — `unreached`
-- `exec-ind-nara-executive-for-agency-services` — Executive for Agency Services — `unreached`
-- `exec-ind-nara-executive-for-legislative-archives-presidential-libraries-museum-services` — Executive for Legislative Archives, Presidential Libraries & Museum Services — `unreached`
-- `exec-ind-nara-executive-for-research-services` — Executive for Research Services — `unreached`
-- `exec-ind-nara-inspector-general` — Inspector General — `unreached`
 
 ## Transportation Security Administration (TSA)  — 10 unpriced
 
@@ -1832,6 +1815,20 @@ same list in the same run.
 - `exec-ind-nasa-marshall-space-flight-center-msfc-director-of-safety-mission-assurance` — Director of Safety & Mission Assurance — `unreached`
 - `exec-ind-nasa-marshall-space-flight-center-msfc-program-manager-multiple` — Program Manager (×multiple) — `multiplicity`
 - `exec-ind-nasa-marshall-space-flight-center-msfc-research-engineer-scientist-multiple` — Research Engineer / Scientist (×multiple) — `multiplicity`
+
+## National Archives & Records Administration (NARA)  — 9 unpriced
+
+`exec-ind-nara`
+
+- `exec-ind-nara-chief-of-staff` — Chief of Staff — `unreached`
+- `exec-ind-nara-deputy-archivist` — Deputy Archivist — `unreached`
+- `exec-ind-nara-director-federal-register` — Director — Federal Register — `unreached`
+- `exec-ind-nara-director-information-services-cio` — Director — Information Services (CIO) — `unreached`
+- `exec-ind-nara-director-national-personnel-records-center` — Director — National Personnel Records Center — `unreached`
+- `exec-ind-nara-executive-for-agency-services` — Executive for Agency Services — `unreached`
+- `exec-ind-nara-executive-for-legislative-archives-presidential-libraries-museum-services` — Executive for Legislative Archives, Presidential Libraries & Museum Services — `unreached`
+- `exec-ind-nara-executive-for-research-services` — Executive for Research Services — `unreached`
+- `exec-ind-nara-inspector-general` — Inspector General — `unreached`
 
 ## Office of Personnel Management (OPM)  — 9 unpriced
 

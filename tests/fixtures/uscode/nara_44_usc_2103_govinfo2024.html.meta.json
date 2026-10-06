@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-10-06T01:26:18Z",
+ "url": "https://www.govinfo.gov/link/uscode/44/2103?link-type=html",
+ "status": 200,
+ "final_url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title44/html/USCODE-2024-title44-chap21-sec2103.htm",
+ "content_type": "text/html",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /link/uscode/44/2103",
+ "bytes": 3629,
+ "sha256": "c77c927fb72d7b4103b07df7dec436696869334156c38954b2a2a467b13683c4",
+ "error": null
+}

@@ -151,6 +151,18 @@ def _base_tree():
                  {"id": "exec-ind-epa-inspector-general-bench", "name": "Inspector General (×2)", "type": "Position",
                   "representsPosts": {"text": "×2", "kind": "exact", "count": 2}},
              ]},
+            # 2026-10-06: two principals whose own section sets Level III --
+            # the NOAA Administrator (15 U.S.C. 1503b, the NNSA shape with an
+            # identifying sentence) and the Archivist of the United States
+            # (44 U.S.C. 2103(b), the Librarian's shape).
+            {"id": "exec-dept-doc-noaa", "name": "NOAA — National Oceanic & Atmospheric Administration", "type": "Bureau",
+             "children": [
+                 {"id": "exec-dept-doc-noaa-administrator-noaa", "name": "Administrator, NOAA", "type": "Position"},
+             ]},
+            {"id": "exec-ind-nara", "name": "National Archives & Records Administration (NARA)", "type": "Agency",
+             "children": [
+                 {"id": "exec-ind-nara-archivist-of-the-united-states", "name": "Archivist of the United States", "type": "Position"},
+             ]},
         ],
     }
 
@@ -176,8 +188,12 @@ PRICED_IN_BASE_TREE = {
     "exec-ind-misc-election-assistance-commission-eac-deputy-director-vice-chair",
     "exec-ind-misc-federal-election-commission-fec-director-administrator-chair-federal-election-commission",
     "exec-ind-misc-federal-election-commission-fec-deputy-director-vice-chair",
+    "exec-dept-doc-noaa-administrator-noaa",
+    "exec-ind-nara-archivist-of-the-united-states",
 }
 STAMPED_IN_BASE_TREE = {node_id for node_id in PRICED_IN_BASE_TREE if node_id in TIER_REFERENCE_IDENTIFICATIONS}
+NOAA_ID = "exec-dept-doc-noaa-administrator-noaa"
+ARCHIVIST_ID = "exec-ind-nara-archivist-of-the-united-states"
 
 
 class SectionTests(unittest.TestCase):
@@ -189,12 +205,69 @@ class SectionTests(unittest.TestCase):
             ("gao_31_usc_703.html", TIER_REFERENCE_PROVISIONS["leg-support-gao-deputy-comptroller-general"]["quote"]),
             ("ig_5_usc_403.html", INSPECTOR_GENERAL_RULE["quote"]),
             ("ig_5_usc_401.html", INSPECTOR_GENERAL_RULE["definitionQuote"]),
+            # 2026-10-06: NOAA's pay and identifying sentences, the Archivist's pay sentence.
+            ("noaa_15_usc_1503b_govinfo2024.html", TIER_REFERENCE_PROVISIONS[NOAA_ID]["quote"]),
+            ("noaa_15_usc_1503b_govinfo2024.html", TIER_REFERENCE_PROVISIONS[NOAA_ID]["identificationQuote"]),
+            ("nara_44_usc_2103_govinfo2024.html", TIER_REFERENCE_PROVISIONS[ARCHIVIST_ID]["quote"]),
         ):
-            with self.subTest(fixture=fixture):
+            with self.subTest(fixture=fixture, quote=quote[:40]):
                 module_text = load_section(fixture)["operative"]
                 gate_text = uscode_operative_text(US_CODE_BASIS_FIXTURE_DIR / fixture)
                 self.assertEqual(module_text, gate_text)
                 self.assertIn(quote, module_text)
+
+    def test_the_noaa_section_names_the_administrator_then_pays_the_under_secretary_at_level_iii(self):
+        """15 U.S.C. 1503b (2026-10-06): one section, two sentences. The first
+        makes the Under Secretary of Commerce for Oceans and Atmosphere the
+        Administrator of NOAA -- the title this graph carries -- and the
+        second pays the Under Secretary at Level III. The section prints no
+        figure and prints "Level" with a capital L, which the row quotes as
+        printed rather than normalising."""
+        row = TIER_REFERENCE_PROVISIONS[NOAA_ID]
+        section = load_section(row["fixture"])
+        text = section["operative"]
+        self.assertIn("who shall serve as the Administrator of the National Oceanic and Atmospheric Administration", text)
+        self.assertIn("Level III of the Executive Schedule Pay Rates (5 U.S.C. 5314)", text)
+        self.assertLess(text.index(row["identificationQuote"]), text.index(row["quote"]))
+        self.assertNotIn("$", text)
+        self.assertEqual("III", row["level"])
+        self.assertEqual(0, row["percent"])
+        # The Schedule's own §5314 lists the Under Secretary and says the same
+        # thing; it is corroboration the row does not lean on.
+        self.assertIn("Under Secretary of Commerce for Oceans and Atmosphere, the incumbent of which also serves as "
+                      "Administrator of the National Oceanic and Atmospheric Administration",
+                      load_section("exec_schedule_5314.html")["operative"])
+        self.assertTrue(any(host in section["url"] for host in STATUTE_HOSTS))
+        self.assertEqual("U.S. Government Publishing Office", statute_publisher(section["url"])[0])
+
+    def test_the_archivists_section_states_level_iii_in_its_own_words_and_the_schedule_lists_the_title_twice(self):
+        """44 U.S.C. 2103 (2026-10-06): (a) names the office in full, (b) pays
+        "The Archivist" at Level III, and the section prints no figure. The
+        Schedule itself prints "Archivist of the United States" at BOTH §5314
+        and §5316, which is why `statutory_schedule.py` prices the post for
+        nobody; this row rests on 2103(b) alone, and the test pins both the
+        reason the other route is closed and the fact this one does not
+        resolve it."""
+        from data_pipeline.verification.statutory_schedule import load_schedule
+
+        row = TIER_REFERENCE_PROVISIONS[ARCHIVIST_ID]
+        section = load_section(row["fixture"])
+        text = section["operative"]
+        self.assertIn("(a) The Archivist of the United States shall be appointed by the President by and with the "
+                      "advice and consent of the Senate.", text)
+        self.assertIn("(b) The Archivist shall be compensated at the rate provided for level III of the Executive "
+                      "Schedule under section 5314 of title 5.", text)
+        self.assertNotIn("$", text)
+        self.assertNotIn("identificationQuote", row)  # the node IS the office the section names
+        self.assertEqual(canonical_name_key(row["nodeName"]), canonical_name_key(row["office"]))
+        self.assertEqual("III", row["level"])
+        for fixture in ("exec_schedule_5314.html", "exec_schedule_5316.html"):
+            self.assertIn("Archivist of the United States.", load_section(fixture)["operative"], fixture)
+        schedule = load_schedule()
+        self.assertIn(canonical_name_key("Archivist of the United States"), schedule["ambiguous"])
+        self.assertNotIn(canonical_name_key("Archivist of the United States"), schedule["index"])
+        self.assertTrue(any(host in section["url"] for host in STATUTE_HOSTS))
+        self.assertEqual("U.S. Government Publishing Office", statute_publisher(section["url"])[0])
 
     def test_the_inspector_general_act_states_level_iii_plus_three_percent_and_no_figure(self):
         text = load_section("ig_5_usc_403.html")["operative"]
@@ -273,8 +346,10 @@ class MirrorTests(unittest.TestCase):
         # prices carries the sentence of its own section naming the office.
         # Nine with the NNSA Administrator (2026-10-06), whose own section
         # says the Under Secretary for Nuclear Security it pays IS the
-        # Administrator this graph names.
-        self.assertEqual(9, len(with_identification))
+        # Administrator this graph names; ten with the NOAA Administrator the
+        # same day, 15 U.S.C. 1503b's Under Secretary of Commerce for Oceans
+        # and Atmosphere "who shall serve as the Administrator".
+        self.assertEqual(10, len(with_identification))
         for node_id, sentence in with_identification.items():
             row = TIER_REFERENCE_PROVISIONS[node_id]
             with self.subTest(node=node_id):
@@ -291,7 +366,7 @@ class MirrorTests(unittest.TestCase):
                 self.assertNotEqual(canonical_name_key(row["nodeName"]), canonical_name_key(row["office"]))
                 self.assertTrue(
                     row["nodeName"].startswith(("Director / Administrator / Chair", "Deputy Director / Vice Chair"))
-                    or node_id == "exec-dept-doe-nnsa-administrator-nnsa"
+                    or node_id in ("exec-dept-doe-nnsa-administrator-nnsa", NOAA_ID)
                 )
                 self.assertIn("www.govinfo.gov", section["url"])
 
@@ -309,6 +384,17 @@ class MirrorTests(unittest.TestCase):
             publisher, edition = statute_publisher(section["url"])
             self.assertEqual("U.S. Government Publishing Office", publisher)
             self.assertEqual("2024 edition of the United States Code", edition)
+        # The two sections of 2026-10-06 came through govinfo's link service,
+        # whose meta records the link URL: the publisher is read off it, and
+        # the 2024 granule it resolved to is in `final_url` beside it.
+        for fixture in ("noaa_15_usc_1503b_govinfo2024.html", "nara_44_usc_2103_govinfo2024.html"):
+            section = load_section(fixture)
+            self.assertTrue(any(host in section["url"] for host in STATUTE_HOSTS))
+            self.assertIn("/link/uscode/", section["url"])
+            self.assertEqual("U.S. Government Publishing Office", statute_publisher(section["url"])[0])
+            meta = json.loads((US_CODE_BASIS_FIXTURE_DIR / (fixture + ".meta.json")).read_text(encoding="utf-8"))
+            self.assertIn("USCODE-2024", str(meta.get("final_url")))
+            self.assertEqual(200, meta.get("status"))
         # The pair reading: each statute creates a chairman and a vice
         # chairman together, and 30106 pays the members OTHER than the two
         # ex officio ones, whom (a)(5) also excludes from the chairmanship.
@@ -364,17 +450,48 @@ class BuildTests(unittest.TestCase):
         self.assertEqual({node_id: "node not in the graph" for node_id in TIER_REFERENCE_PROVISIONS
                           if node_id not in PRICED_IN_BASE_TREE},
                          {k: v for k, v in report["refused"].items() if k != "exec-ind-epa-inspector-general-bench"})
-        self.assertEqual(11, report["pricedByReviewedRow"])
+        # 13 since 2026-10-06: the NOAA Administrator and the Archivist.
+        self.assertEqual(13, report["pricedByReviewedRow"])
         for node_id in STAMPED_IN_BASE_TREE:
             record = records[node_id]
             self.assertEqual(2, len(record["documents"]))
             self.assertEqual(TIER_REFERENCE_IDENTIFICATIONS[node_id], record["identification"]["statuteIdentifies"])
             self.assertEqual(record["office"], record["identification"]["office"])
             self.assertEqual("U.S. Government Publishing Office", record["documents"][0]["publisher"])
-            self.assertIn("2024 edition", record["documents"][0]["title"])
+            # Since 2026-10-06 the edition is read off the granule the fetch
+            # resolved to: a fixture fetched through govinfo's link service
+            # records the link URL as `url` and the USCODE-2024 granule as
+            # `final_url`, and the record names the 2024 edition either way
+            # rather than "an edition of the United States Code".
+            self.assertIn("2024 edition of the United States Code", record["documents"][0]["title"])
+            self.assertEqual("2024 edition of the United States Code", record["documents"][0]["edition"])
+            if "USCODE-2024" not in record["documents"][0]["url"]:
+                self.assertIn("/link/uscode/", record["documents"][0]["url"])
         self.assertNotIn("statuteIdentifies", records["leg-support-gao-comptroller-general-of-the-united-states"]["identification"])
-        self.assertEqual(EXECUTIVE_SCHEDULE_RATES["III"], records["exec-ind-misc-broadcasting-board-of-governors-usagm-director-administrator-chair-broadcasting-board-of-governors-usagm"]["amount"])
-        for node_id in STAMPED_IN_BASE_TREE - {"exec-ind-misc-broadcasting-board-of-governors-usagm-director-administrator-chair-broadcasting-board-of-governors-usagm"}:
+        # The two rows of 2026-10-06: both Level III, two documents each, the
+        # NOAA row carrying the sentence that makes the Under Secretary the
+        # Administrator and the Archivist's carrying none.
+        noaa, archivist = records[NOAA_ID], records[ARCHIVIST_ID]
+        for record in (noaa, archivist):
+            self.assertEqual(EXECUTIVE_SCHEDULE_RATES["III"], record["amount"])
+            self.assertEqual("III", record["level"])
+            self.assertIsNone(record["arithmetic"])
+            self.assertEqual(PAY_METHOD, record["method"])
+            self.assertEqual(2, len(record["documents"]))
+            self.assertEqual("reviewed_row", record["identification"]["kind"])
+        self.assertEqual(TIER_REFERENCE_PROVISIONS[NOAA_ID]["identificationQuote"], noaa["identification"]["statuteIdentifies"])
+        self.assertEqual("15 U.S.C. 1503b", noaa["statute"])
+        self.assertNotIn("statuteIdentifies", archivist["identification"])
+        self.assertEqual("44 U.S.C. 2103(b)", archivist["statute"])
+        self.assertIn(NOAA_ID, STAMPED_IN_BASE_TREE)
+        self.assertNotIn(ARCHIVIST_ID, STAMPED_IN_BASE_TREE)
+        # Two of the stamped-shape rows are Level III -- the USAGM's CEO and,
+        # since 2026-10-06, NOAA's Under Secretary -- and the commissions' chairs
+        # and vice chairs Level IV.
+        level_iii = {"exec-ind-misc-broadcasting-board-of-governors-usagm-director-administrator-chair-broadcasting-board-of-governors-usagm", NOAA_ID}
+        for node_id in level_iii:
+            self.assertEqual(EXECUTIVE_SCHEDULE_RATES["III"], records[node_id]["amount"])
+        for node_id in STAMPED_IN_BASE_TREE - level_iii:
             self.assertEqual(EXECUTIVE_SCHEDULE_RATES["IV"], records[node_id]["amount"])
         self.assertEqual(2, report["pricedInspectorsGeneral"])
         # The composed row carries three documents, the others two.
@@ -455,6 +572,62 @@ class BuildTests(unittest.TestCase):
         # and the GAO row from another section stands.
         self.assertIn("leg-support-gao-comptroller-general-of-the-united-states", records)
 
+    def _records_with_doctored_fixtures(self, replacements):
+        """Rebuild against a copy of the fixture directory in which each
+        (fixture, needle, replacement) has been applied, with the meta's
+        digest recomputed so the doctoring is the only thing that changed."""
+        import hashlib
+        import shutil
+        import tempfile
+        from data_pipeline.verification.tier_reference_pay import FIXTURE_DIR
+        with tempfile.TemporaryDirectory() as tmp:
+            for path in FIXTURE_DIR.iterdir():
+                shutil.copy(path, Path(tmp) / path.name)
+            for fixture, needle, replacement in replacements:
+                doctored = Path(tmp) / fixture
+                raw = doctored.read_bytes()
+                self.assertEqual(1, raw.count(needle), (fixture, needle))
+                doctored.write_bytes(raw.replace(needle, replacement))
+                meta_path = Path(tmp) / (fixture + ".meta.json")
+                meta = json.loads(meta_path.read_text(encoding="utf-8"))
+                meta["sha256"] = hashlib.sha256(doctored.read_bytes()).hexdigest()
+                meta_path.write_text(json.dumps(meta), encoding="utf-8")
+            loaded = load_executive_schedule()
+            node_map, parent_map = index_tree(_base_tree())
+            fiscal_year = federal_fiscal_year_of(date.fromisoformat(str(loaded["table"]["effective"])))
+            return build_records(node_map, parent_map, loaded, fiscal_year=fiscal_year, directory=tmp)
+
+    def test_the_noaa_and_archivist_rows_fall_when_their_sections_state_another_level(self):
+        """Both rows rest on the level their section states (2026-10-06). A
+        section doctored to say Level IV no longer prints the quoted sentence,
+        and the row is refused rather than re-priced; every other row stands."""
+        records, report = self._records_with_doctored_fixtures([
+            ("noaa_15_usc_1503b_govinfo2024.html",
+             b"Level III of the Executive Schedule Pay Rates", b"Level IV of the Executive Schedule Pay Rates"),
+            ("nara_44_usc_2103_govinfo2024.html",
+             b"level III of the Executive Schedule under section 5314 of title 5",
+             b"level IV of the Executive Schedule under section 5315 of title 5"),
+        ])
+        for node_id in (NOAA_ID, ARCHIVIST_ID):
+            self.assertNotIn(node_id, records)
+            self.assertIn("no longer carries the quoted sentence", report["refused"][node_id])
+            self.assertIn("nowhere on the page", report["refused"][node_id])
+        self.assertEqual(PRICED_IN_BASE_TREE - {NOAA_ID, ARCHIVIST_ID}, set(records))
+
+    def test_the_noaa_row_falls_when_its_section_stops_making_the_under_secretary_the_administrator(self):
+        """The pay sentence alone prices an Under Secretary of Commerce; what
+        ties it to the node named "Administrator, NOAA" is the sentence before
+        it, and the row falls with that sentence while the Archivist's,
+        which needs none, stands."""
+        records, report = self._records_with_doctored_fixtures([
+            ("noaa_15_usc_1503b_govinfo2024.html",
+             b"who shall serve as the Administrator of the National Oceanic and Atmospheric Administration",
+             b"who shall serve as the Deputy Administrator of the National Oceanic and Atmospheric Administration"),
+        ])
+        self.assertNotIn(NOAA_ID, records)
+        self.assertIn("identifying the office", report["refused"][NOAA_ID])
+        self.assertIn(ARCHIVIST_ID, records)
+
     def test_the_validator_refuses_a_computed_figure_that_is_not_the_arithmetic(self):
         records, _ = _records()
         node_map, _ = index_tree(_base_tree())
@@ -479,7 +652,7 @@ class ApplyTests(unittest.TestCase):
         records, _ = _records()
         tree = _base_tree()
         stats = apply_pay_evidence(tree, records, index_tree=index_tree)
-        self.assertEqual(13, stats["priced"])
+        self.assertEqual(15, stats["priced"])  # 13 + the NOAA Administrator and the Archivist (2026-10-06)
         self.assertEqual(2, stats["priced_inspectors_general"])
         annotate_pay_documents(tree)
         node_map, _ = index_tree(tree)
@@ -503,7 +676,7 @@ class ApplyTests(unittest.TestCase):
         node_map, _ = index_tree(tree)
         node_map["exec-dept-defense-inspector-general"]["positionSchedulePay"] = {"source": "elsewhere"}
         stats = apply_pay_evidence(tree, records, index_tree=index_tree)
-        self.assertEqual(12, stats["priced"])
+        self.assertEqual(14, stats["priced"])
         self.assertEqual(1, stats["already_priced_by_another_source"])
 
     def test_an_ig_reparented_since_the_match_is_refused(self):
@@ -558,8 +731,23 @@ class GateTests(unittest.TestCase):
         ncer = self.node_map[ncer_id][FIELD]
         eac_vice_id = "exec-ind-misc-election-assistance-commission-eac-deputy-director-vice-chair"
         eac_vice = self.node_map[eac_vice_id][FIELD]
+        noaa = self.node_map[NOAA_ID][FIELD]
+        archivist = self.node_map[ARCHIVIST_ID][FIELD]
         good_arith = ig["arithmetic"]
         cases = {
+            # 2026-10-06: the Archivist cannot be priced at the Schedule's
+            # OTHER listing of the title (§5316, Level V) -- 2103(b) says III;
+            # the two Level III blocks cannot swap, since the row is keyed by
+            # id; and the NOAA row cannot drop or alter the sentence that
+            # makes the Under Secretary the Administrator this graph names.
+            "the Archivist priced at the Schedule's other listing, Level V": (ARCHIVIST_ID, {**archivist, "level": "V"}, "use-tree"),
+            "the Archivist's block moved onto the NOAA Administrator": (NOAA_ID, archivist, "use-tree"),
+            "the NOAA block moved onto the Archivist": (ARCHIVIST_ID, noaa, "use-tree"),
+            "the NOAA row without the sentence making the Under Secretary the Administrator": (NOAA_ID, {**noaa, "identification": {k: v for k, v in noaa["identification"].items() if k != "statuteIdentifies"}}, "use-tree"),
+            "the NOAA row quoting an identifying sentence the section does not print": (NOAA_ID, {**noaa, "identification": {**noaa["identification"], "statuteIdentifies": "The Under Secretary shall serve as the Deputy Administrator of the National Oceanic and Atmospheric Administration."}}, "use-tree"),
+            "the NOAA row identifying another office": (NOAA_ID, {**noaa, "identification": {**noaa["identification"], "office": "Assistant Secretary of Commerce for Oceans and Atmosphere"}}, "use-tree"),
+            "the Archivist's row given an identifying sentence it has none of": (ARCHIVIST_ID, {**archivist, "identification": {**archivist["identification"], "statuteIdentifies": "The Archivist of the United States shall be appointed by the President by and with the advice and consent of the Senate."}}, "use-tree"),
+            "the NOAA row misquoting the pay sentence with a lower-case level": (NOAA_ID, {**noaa, "statuteQuote": noaa["statuteQuote"].replace("Level III", "level III")}, "use-tree"),
             # Scope: the parent the tree gives the node, never the block's word.
             "an IG under a Defense agency 401 does not list": (ig_id, ig, "Defense Intelligence Agency (DIA)"),
             "an IG under a designated Federal entity": (ig_id, ig, "National Labor Relations Board (NLRB — independent)"),
@@ -643,10 +831,18 @@ class PublishedGraphTests(unittest.TestCase):
         # Chief of the Capitol Police (2 U.S.C. 1902) and the GAO's General
         # Counsel (31 U.S.C. 731(c)) as reviewed rows; 45 with the NNSA
         # Administrator (42 U.S.C. 7132(c)) from the same batch's
-        # remaining-departments cluster.
-        self.assertEqual(45, len(priced), sorted(priced))
+        # remaining-departments cluster; 47 later on 2026-10-06, when the NOAA
+        # Administrator (15 U.S.C. 1503b, whose Under Secretary of Commerce
+        # for Oceans and Atmosphere "shall serve as the Administrator", at
+        # Level III) and the Archivist of the United States (44 U.S.C.
+        # 2103(b), Level III in the section's own words) landed as reviewed
+        # rows -- neither node carried any pay field before, so the
+        # leave-alone rule did not apply and both publish.
+        self.assertEqual(47, len(priced), sorted(priced))
         for added in ("exec-dept-dhs-usss-chief-uniformed-division",
                       "exec-dept-doe-nnsa-administrator-nnsa",
+                      NOAA_ID,
+                      ARCHIVIST_ID,
                       "leg-support-aoc-architect-of-the-capitol",
                       "leg-support-uscp-chief-of-police",
                       "leg-support-gao-general-counsel",

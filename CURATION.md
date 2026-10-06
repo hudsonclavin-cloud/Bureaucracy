@@ -4787,8 +4787,120 @@ Schedule-priced posts **230 → 236**; tier-reference rows **19 → 23**, record
 1,039, `verified` 538, `partial` 454. `docs/COST_COVERAGE.md` puts the 5,510
 nodes in their classes: 160 measured, 693 estimates (240 committees, 42 beside
 a sourced non-cost figure, 411 bare), 1,193 salaries, 3,398 unpriced posts by
-reason, 30 beneath a negative pool, 36 replaced units.
+reason, 30 beneath a negative pool, 36 replaced units. *Later that morning the
+Code title scan's rows (below) took pay claims to **1,196**, unpriced to
+**3,395** (no document names the title **2,627**), reviewed Schedule rows to
+**98** and Schedule-priced posts to **237**, tier-reference rows to **25**,
+records **52**, published **47**.*
 
-**Still running when this paragraph was written (2026-10-06, morning):** the
-Code title scan and the Treasury alias candidates. Their results are appended
-below as they land.
+**The Code title scan: 221 Executive Schedule titles that reach no record,
+and four defects in this repository's own reading of the Code.** The scan ran
+`statutory_schedule.load_schedule()` on the five committed sections (415
+positions printed, 413 indexed — the Archivist's title is dropped as
+ambiguous, §5314 and §5316 both printing it), compared the index with
+`schedule_pay_evidence.json` (231 records on 196 distinct titles that
+morning), and checked every one of the 221 unmatched titles against the
+unpriced positions and their organisations. What it found about the
+REPOSITORY first, each verified against the committed bytes before being
+written here. **(1) `parse_section` cannot see seven real titles.** It skips a
+list item longer than `MAX_TITLE_CHARS` (140) or not ending in a full stop;
+five titles exceed the bound — "Under Secretary of Commerce for Oceans and
+Atmosphere, the incumbent of which also serves as Administrator of the
+National Oceanic and Atmospheric Administration" (§5314, 162 characters),
+the NOAA Assistant Secretary / Deputy Administrator (§5315, 173), the
+five-title Commerce Under Secretaries item (§5314, 252), the DoD CIO with its
+proviso (§5315, 214) and the NNSA's "Additional Deputy Administrators (3)"
+(§5315, 183) — and two end in a footnote reference instead of a stop,
+"Commissioner of Food and Drugs, Department of Health and Human Services 1"
+(§5315) and "Under Secretary of Education 2" (§5314). §19.7's bullet saying
+the Code prints no "Under Secretary of Commerce for Oceans and Atmosphere"
+was therefore wrong, and is corrected in place with the date: the Code
+printed it and the parser never showed it. The footnote case is a defect
+and is fixed with this batch (below); the length bound is left where it is,
+because the five long items are exactly the ones that carry provisos and
+joint titles the parser would have to split, and splitting is the
+production of a title this file refuses by name. **(2) The export
+contradicts the Code for three groups**, read by header index for Agency,
+Organization, Position Title, Position Status, Level/Grade/Pay and Pay Plan
+only: the NRC's three office directors (Nuclear Reactor Regulation, Nuclear
+Material Safety and Safeguards, Nuclear Regulatory Research) are listed on
+the ES plan at $228,000 where §5315 places them at Level IV; the SBA's
+Associate Administrators — twelve of them, under sub-organisations such as
+"OFFICE OF CAPITAL ACCESS" that this graph has no node for — and OPM's
+Associate Directors are on the ES plan where the Code prints a Level V
+class; the NRO's Director is EX IV in the export and Level III in §5314.
+§19.14's statement that the SBA's four "carry no listing at all" was wrong
+and is corrected in place. None of the three groups is priced from either
+document: a reviewed Schedule row on a title the one listing that could
+corroborate it contradicts is a claim this project will not make, and the
+listings sit under organisations the matcher does not reach (a sub-office
+named for the post's QUALIFIER — "Office of Capital Access" under
+"Associate Administrator for Capital Access" — is not the office-named-for-
+the-post rule, and widening that rule is a decision, recorded here). **(3)
+Thirty-one organisations the Code names exist in the graph with no position
+beneath them** — ODNI, USAID, GSA, the STB, the RRB, the DNFSB, the FMCS,
+OSHRC, FMSHRC, the USITC, the FRTIB, USTDA, OGE, FHFA, the MCC, IMLS, the
+Parole Commission, the Commission on Civil Rights, the ACHP, the Seaway
+Corporation, BIS, OJP and ACF among them — so some sixty of the 221 titles
+are node-adding leads for `add_curated_nodes.py`, not matching leads; a
+further ~110 name offices nothing in the graph is named for (Under and
+Assistant Secretaries across nine departments, the DHS Under Secretaries, the
+service General Counsels), and ~30 are defunct bodies the Code still prints
+(the Office of Emergency Planning, the Renegotiation Board, the Subversive
+Activities Control Board, the Office of Thrift Supervision, the Bureau of
+Mines). **(4) Two posts need no Schedule title at all**: 44 U.S.C. 2103(b)
+pays the Archivist by reference to Level III — which settles the Archivist's
+pay without adjudicating the Code's double listing — and 15 U.S.C. 1503b
+both pays the Under Secretary for Oceans and Atmosphere by reference to
+Level III and says that officer "shall serve as the Administrator of the
+National Oceanic and Atmospheric Administration"; both are the NNSA
+Administrator's tier-reference shape and both landed with this batch
+(«TIERREF_LANDED»).
+
+**What the scan priced, and what it declined.** Landed: the Archivist and
+the NOAA Administrator (tier-reference, above); the FDA's Commissioner as a
+reviewed Schedule row at Level IV — "Commissioner of Food and Drugs,
+Department of Health and Human Services", visible to the index once the
+footnote reference is set aside, with 21 U.S.C. 393(d)(1) the section that
+creates the office; and the IRS Chief Counsel, the NHTSA
+Administrator and Deputy, the FMCSA and FHWA Deputies and the NNSA
+Administrator, which the scan found independently and the judiciary and
+departments clusters had already landed that morning. Declined, each with
+its reason: the NOAA Deputy Administrator (a 173-character item the parser
+cannot see, and the office rests on Reorganization Plan No. 4 of 1970, a
+document kind this repository has not read); the Deputy Archivist (2103
+places the post in the career Senior Executive Service — a pay SYSTEM, not a
+rate); the NNSA's two Senate-confirmed Deputy Administrators (the "(3)" item
+is over the bound and carries a Naval Reactors proviso excluding the third,
+so neither the counted-class route nor a reviewed row can read it); the FTA
+Deputy Administrator (§5316 prints it, 49 U.S.C. 107 names no deputy); the
+NRO Director, the NRC directors, the SBA and OPM associate officials and the
+SEC Chair (the Code-against-export contradictions above; the SEC Chair's
+reviewed row was declined in §19.14 and the export's EX III listing sits
+under a sub-organisation the matcher does not reach); the DoD CIO (§19.20
+above, the 164-character proviso); the Interior's and Labor's Solicitors
+against the stamped `General Counsel` nodes (the Code prints a Solicitor;
+identifying the stamp with it is the judgement the stamp rule refuses, as
+§19.14 refused the Legal Adviser); the three Deputy U.S. Trade
+Representatives as a counted class — 19 U.S.C. 2171(b)(2) composes exactly
+three and §5314 prints "Deputy United States Trade Representatives (3)",
+but the graph names the nodes "Deputy USTR — …", an abbreviation the
+counted-class name rule rightly refuses; a rename candidate, recorded, and
+no sanctioned writer renames a post from the Code today; the Smithsonian
+Astrophysical Observatory's Director and NOAA's Chief Scientist (§5316
+prints both; no second statute identifies either and the scoped route does
+not reach them); four stamped `Deputy Director / Vice Chair` nodes (NLRB,
+NMB, FCA, NCUA) whose own committed sections designate no vice chairman;
+ONDCP's three "Director — …" nodes against the Code's stale "Deputy
+Director for Demand Reduction / Supply Reduction / State and Local Affairs"
+titles — 21 U.S.C. 1703 as committed provides Coordinators, not those
+deputies, and the graph's nodes are a different rank; OSTP's four Deputy
+Directors against the Code's one; the IRS's two Deputy Commissioners against
+the Code's one; the FBI's Associate Deputy Director and five Executive
+Assistant Directors against "Associate Director" and "Assistants to the
+Director (2)"; and the DoD's stamped `Deputy CFO / Controller` against
+"Deputy Under Secretary of Defense (Comptroller)", which no statute names
+a Deputy CFO.
+
+**The Treasury alias cluster's results are recorded in the paragraphs that
+follow.**

@@ -1006,6 +1006,14 @@ Navy chapter's table of contents lists) and for dashed section numbers such as
 `.meta.json` records the link URL as `url` and the granule as `final_url`, so
 `derived_pay.load_section` now returns `final_url` and the edition a document
 names is read off the address that served the bytes rather than off the link.
+Three more sections came the same way later that morning, for the Code title
+scan's leads: 15 U.S.C. 1503b (the NOAA Administrator), 44 U.S.C. 2103 (the
+Archivist) and 21 U.S.C. 393 (the FDA Commissioner), each a real 2024-edition
+granule and not a maintenance page. `tier_reference_pay.py` had still been
+reading the edition off the link URL alone — ten of its records said "an
+edition of the United States Code" where the meta's `final_url` named the 2024
+granule — and reads `final_url` since the same morning, so all fifteen of its
+govinfo documents now name the edition.
 
 **Refused on robots, not read.** The judiciary cluster found `ecfr.gov`'s
 renderer API disallowed by that host's `robots.txt` and discarded its content

@@ -109,6 +109,24 @@ _SPACE = re.compile(r"\s+")
 _MULTIPLICITY = re.compile(r"\((\d+)\)\s*$")
 #: A heading rather than a position ("Level II of the Executive Schedule applies…").
 _HEADING = re.compile(r"^level\s+[ivx]+\b", re.IGNORECASE)
+#: The Code's footnote-reference element, exactly as the five committed
+#: sections print it: an optional &nbsp; or space, then
+#: <sup><a href="#5315_1_target" name="5315_1">1</a></sup>. Only one that
+#: CLOSES the paragraph is stripped (since 2026-10-06). The Office of the Law
+#: Revision Counsel prints two positions with the mark standing where the
+#: full stop should be -- "Commissioner of Food and Drugs, Department of
+#: Health and Human Services" (§5315) and "Under Secretary of Education"
+#: (§5314), its own footnotes on both reading "So in original. Probably should
+#: be followed by a period." -- and a third with the mark AFTER the full stop
+#: ("...Acquisition, Technology, and Logistics.", §5314). Read as text the
+#: digit survived ("...Human Services 1", "...Logistics.1"), the full-stop
+#: rule skipped all three, and three real titles were invisible to the index.
+#: A mark anywhere else in a paragraph is kept as printed: §5315's "The 2
+#: Commissioner of Labor Statistics, Department of Labor" is indexed under
+#: exactly those words, and the Bureau's reviewed row keys on them.
+_TRAILING_FOOTNOTE_REF = re.compile(
+    r'(?:&nbsp;|\s)*<sup>\s*<a href="#\d{4}_\d+_target" name="\d{4}_\d+">\d+</a>\s*</sup>\s*$'
+)
 #: Titles longer than this are sentences -- provisos, effective-date notes.
 MAX_TITLE_CHARS = 140
 MIN_TITLE_CHARS = 6
@@ -122,13 +140,25 @@ def _text_of(fragment: str) -> str:
     return _SPACE.sub(" ", unescape(_TAGS.sub("", fragment))).strip()
 
 
+def _strip_trailing_footnote_reference(fragment: str) -> tuple[str, bool]:
+    """A body paragraph with a CLOSING footnote-reference element removed, and
+    whether one was there. A mark anywhere else in the paragraph is left as
+    printed; a bare digit or a <sup> that is not the Code's own element is
+    never touched."""
+    stripped = _TRAILING_FOOTNOTE_REF.sub("", fragment, count=1)
+    return stripped, stripped != fragment
+
+
 def parse_section(html: str, *, section: str) -> dict[str, Any]:
     """The positions one section of the Executive Schedule enumerates.
 
     Deliberately shallow: the statute prints one position per body paragraph
-    ending in a full stop, and anything that is not that shape is reported
-    rather than interpreted. A parser that tried to read the provisos would be
-    reading law, which is not a thing this repository does.
+    ending in a full stop -- or, for three items, in a footnote-reference mark
+    standing where the full stop should be, which the Code's own footnote says
+    ("So in original. Probably should be followed by a period."; see
+    `_TRAILING_FOOTNOTE_REF`) -- and anything that is not that shape is
+    reported rather than interpreted. A parser that tried to read the provisos
+    would be reading law, which is not a thing this repository does.
     """
     level = SECTION_LEVELS.get(section)
     if not level:
@@ -136,13 +166,19 @@ def parse_section(html: str, *, section: str) -> dict[str, Any]:
     positions: list[dict[str, Any]] = []
     skipped: list[str] = []
     for fragment in _BODY.findall(html):
-        text = _text_of(fragment)
+        body, closed_by_footnote_mark = _strip_trailing_footnote_reference(fragment)
+        text = _text_of(body)
         if not text or _HEADING.match(text):
             continue
-        if not text.endswith("."):
+        if text.endswith("."):
+            title = text[:-1].strip()
+        elif closed_by_footnote_mark:
+            # 2026-10-06: the Code's own footnote says a period should follow,
+            # so the closing mark terminates the item as the full stop would.
+            title = text
+        else:
             skipped.append(text[:120])
             continue
-        title = text[:-1].strip()
         if not (MIN_TITLE_CHARS <= len(title) <= MAX_TITLE_CHARS):
             skipped.append(text[:120])
             continue
@@ -1155,6 +1191,27 @@ REVIEWED_TITLE_ROWS: dict[str, dict[str, Any]] = {
         ),
         "basis": (
             "the same office: 49 U.S.C. 104(b)(2) gives the Federal Highway Administration one Deputy Federal Highway Administrator, appointed by the Secretary with the President's approval, and 5 U.S.C. 5315 places that officer at Level IV; the graph names the post bare 'Deputy Administrator' under the Administration's own node, and a row is keyed by id"
+        ),
+    },
+    # --- 2026-10-06, the twelfth batch's health cluster: the Commissioner of
+    # --- Food and Drugs. §5315 prints the title with a footnote mark standing
+    # --- where its full stop should be ("So in original. Probably should be
+    # --- followed by a period."), which kept it out of the index until the
+    # --- parser learned to read a closing mark the same day. The basis
+    # --- section was read from govinfo's 2024 edition (the OLRC host was under
+    # --- maintenance). The current PLUM export lists the title at EX-IV under
+    # --- the Administration, but no listing reaches the node, which the graph
+    # --- names "Commissioner, FDA"; the row is the node's only pay claim.
+    "exec-dept-hhs-fda-commissioner-fda": {
+        "nodeName": "Commissioner, FDA",
+        "statutoryTitle": "Commissioner of Food and Drugs, Department of Health and Human Services",
+        "basisCitation": "21 U.S.C. 393",
+        "basisFixture": "fda_21_usc_393_govinfo2024.html",
+        "basisQuote": (
+            'There shall be in the Administration a Commissioner of Food and Drugs (hereinafter in this section referred to as the "Commissioner") who shall be appointed by the President by and with the advice and consent of the Senate.'
+        ),
+        "basis": (
+            "the same office: 21 U.S.C. 393(d)(1) creates in the Food and Drug Administration a Commissioner of Food and Drugs appointed by the President with the Senate's advice and consent, and 5 U.S.C. 5315 places the Commissioner of Food and Drugs, Department of Health and Human Services at Level IV, printing the title with a footnote mark standing where its full stop should be (the Code's own note: 'So in original. Probably should be followed by a period.'); the graph names the post with the Administration's acronym"
         ),
     },
     "exec-dept-doc-uspto-director-under-secretary-for-ip": {

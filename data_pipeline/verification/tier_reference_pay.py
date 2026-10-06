@@ -97,6 +97,24 @@ of the 2024 edition on www.govinfo.gov (uscode.house.gov was under
 maintenance; docs/NETWORK_ACCESS.md §15), so a statute document names its
 publisher and edition through `derived_pay.statute_publisher`.
 
+## Two principals whose own section does both jobs (since 2026-10-06)
+
+15 U.S.C. 1503b and 44 U.S.C. 2103(b), read from govinfo's 2024 edition, each
+set a post's pay at Level III in one sentence of their own. The first is the
+NNSA Administrator's shape: the sentence BEFORE the pay sentence makes the
+Under Secretary of Commerce for Oceans and Atmosphere "the Administrator of
+the National Oceanic and Atmospheric Administration", the title this graph
+carries, so the row carries that sentence as its `identificationQuote` and
+is refused the moment the section stops saying so. The second is the
+Librarian's: 2103(a) names the office in full ("The Archivist of the United
+States shall be appointed by the President") and 2103(b) pays "The
+Archivist" in the section's own short form, so the node IS the office the
+section names and the row needs no identification. 5 U.S.C. 5314 and 5316
+BOTH print "Archivist of the United States", which is why
+`statutory_schedule.py` drops that title from its index as ambiguous rather
+than adjudicate an amendment; this row rests on 2103(b) alone and settles
+nothing about the Schedule's double listing.
+
 ## Every rule the other pay modules keep
 
 `scopeMatch: proxy` and `partial` on every record: the statute names an
@@ -497,6 +515,66 @@ TIER_REFERENCE_PROVISIONS: dict[str, dict[str, Any]] = {
             "under section 2402 of title 50."
         ),
     },
+    # --- 2026-10-06: two principals whose own section sets the rate at Level
+    # --- III, read from govinfo's 2024 edition (uscode.house.gov was under
+    # --- maintenance; docs/NETWORK_ACCESS.md §15).
+    # The Commerce Department's Under Secretary for Oceans and Atmosphere, the
+    # NNSA Administrator's shape: 15 U.S.C. 1503b pays the Under Secretary at
+    # Level III and, in the sentence before, makes that officer "the
+    # Administrator of the National Oceanic and Atmospheric Administration" --
+    # the title this graph carries -- so the row carries that sentence as its
+    # identification. The Code prints "Level III of the Executive Schedule Pay
+    # Rates (5 U.S.C. 5314)" with a capital L and is quoted as printed. §5314
+    # itself lists the Under Secretary ("the incumbent of which also serves as
+    # Administrator of the National Oceanic and Atmospheric Administration"),
+    # which agrees and is not leaned on: the row rests on 1503b and the table.
+    "exec-dept-doc-noaa-administrator-noaa": {
+        "nodeName": "Administrator, NOAA",
+        "office": (
+            "Under Secretary of Commerce for Oceans and Atmosphere, who serves as the Administrator of the "
+            "National Oceanic and Atmospheric Administration"
+        ),
+        "citation": "15 U.S.C. 1503b",
+        "fixture": "noaa_15_usc_1503b_govinfo2024.html",
+        "subsection": "(second sentence)",
+        "level": "III",
+        "percent": 0,
+        "quote": (
+            "The Under Secretary shall be appointed by the President by and with the advice and consent of the "
+            "Senate and shall be compensated at the rate now or hereafter provided for Level III of the Executive "
+            "Schedule Pay Rates (5 U.S.C. 5314)."
+        ),
+        "identificationQuote": (
+            "There shall be in the Department of Commerce an Under Secretary of Commerce for Oceans and Atmosphere "
+            "who shall serve as the Administrator of the National Oceanic and Atmospheric Administration established "
+            "by Reorganization Plan No. 4 of 1970 [5 U.S.C. App.] and perform such duties as the Secretary of "
+            "Commerce shall prescribe."
+        ),
+    },
+    # The Archivist of the United States, the Librarian's shape: 44 U.S.C.
+    # 2103(b) sets the pay at Level III in so many words, and 2103(a) names
+    # the office in full ("The Archivist of the United States shall be
+    # appointed by the President"); (b) uses the section's short form "The
+    # Archivist". No identification sentence, because the node IS the office
+    # the section names. 5 U.S.C. 5314 and 5316 BOTH print "Archivist of the
+    # United States", which is why statutory_schedule.py drops that title from
+    # its index as ambiguous rather than adjudicate an amendment; this row
+    # rests on 2103(b) alone and settles nothing about the Schedule's double
+    # listing -- 2103(b)'s Level III happens to agree with §5314 and not
+    # §5316, and the row does not lean on that either.
+    "exec-ind-nara-archivist-of-the-united-states": {
+        "nodeName": "Archivist of the United States",
+        "office": "Archivist of the United States",
+        "citation": "44 U.S.C. 2103(b)",
+        "fixture": "nara_44_usc_2103_govinfo2024.html",
+        "subsection": "(b)",
+        "level": "III",
+        "percent": 0,
+        "quote": (
+            "The Archivist shall be compensated at the rate provided for level III of the Executive Schedule "
+            "under section 5314 of title 5."
+        ),
+    },
 }
 
 #: The Inspector General Act's rate, and the section that says whose.
@@ -596,7 +674,11 @@ def _rate_text(amount: float) -> str:
 
 
 def _statute_document(section: Mapping[str, Any], citation: str, quote: str, role: str) -> dict[str, Any]:
-    publisher, edition = statute_publisher(str(section["url"]))
+    # The edition is read off the granule the fetch resolved to (`final_url`)
+    # when the recorded URL is the link service's: ten of this module's own
+    # records published "an edition of the United States Code" for sections
+    # whose meta names the 2024 granule, until 2026-10-06.
+    publisher, edition = statute_publisher(str(section["url"]), str(section.get("final_url") or ""))
     return {
         "role": role,
         "citation": citation,
@@ -818,6 +900,7 @@ def _load_section_from(path: Path) -> dict[str, Any]:
     decoded = raw.decode("utf-8", errors="replace")
     return {
         "file": str(path), "url": str(meta.get("url") or ""), "fetched_at": str(meta.get("fetched_at") or ""),
+        "final_url": str(meta.get("final_url") or meta.get("url") or ""),
         "sha256": digest, "operative": operative_text(decoded),
         "whole": _collapse(html_module.unescape(re.sub(r"<[^>]+>", " ", decoded))),
     }

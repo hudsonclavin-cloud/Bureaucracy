@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-10-06T01:26:17Z",
+ "url": "https://www.govinfo.gov/link/uscode/15/1503b?link-type=html",
+ "status": 200,
+ "final_url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap40-sec1503b.htm",
+ "content_type": "text/html",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /link/uscode/15/1503b",
+ "bytes": 3637,
+ "sha256": "638ee58c3d31fb3da9cc7e80e22c5d1d982f7c0bb60465119e939c8ca31124a4",
+ "error": null
+}

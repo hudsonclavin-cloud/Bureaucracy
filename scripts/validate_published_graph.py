@@ -837,6 +837,14 @@ US_CODE_REVIEWED_IDENTIFICATIONS = {
         "the same office: 49 U.S.C. 104(b)(2) gives the Federal Highway Administration one Deputy Federal Highway Administrator, appointed by the Secretary with the President's approval, and 5 U.S.C. 5315 places that officer at Level IV; the graph names the post bare 'Deputy Administrator' under the Administration's own node, and a row is keyed by id",
         False,
     ),
+    "exec-dept-hhs-fda-commissioner-fda": (
+        "Commissioner, FDA",
+        "Commissioner of Food and Drugs, Department of Health and Human Services", "IV", "5315",
+        "21 U.S.C. 393", "fda_21_usc_393_govinfo2024.html",
+        'There shall be in the Administration a Commissioner of Food and Drugs (hereinafter in this section referred to as the "Commissioner") who shall be appointed by the President by and with the advice and consent of the Senate.',
+        "the same office: 21 U.S.C. 393(d)(1) creates in the Food and Drug Administration a Commissioner of Food and Drugs appointed by the President with the Senate's advice and consent, and 5 U.S.C. 5315 places the Commissioner of Food and Drugs, Department of Health and Human Services at Level IV, printing the title with a footnote mark standing where its full stop should be (the Code's own note: 'So in original. Probably should be followed by a period.'); the graph names the post with the Administration's acronym",
+        False,
+    ),
     "exec-dept-doc-uspto-director-under-secretary-for-ip": (
         "Director / Under Secretary for IP",
         "Under Secretary of Commerce for Intellectual Property and Director of the United States Patent and Trademark Office", "III", "5314",
@@ -3863,6 +3871,28 @@ TIER_REFERENCE_ROWS = {
         "The Under Secretary shall be compensated at the rate provided for at level III of the Executive "
         "Schedule under section 5314 of title 5.",
     ),
+    # 2026-10-06: two principals whose own section sets the rate at Level III
+    # (govinfo, 2024 edition). The NOAA Administrator is the NNSA shape -- the
+    # section's first sentence makes the Under Secretary it pays the
+    # Administrator, mirrored in TIER_REFERENCE_IDENTIFICATIONS. The Archivist
+    # is the Librarian's: 2103(a) names the office and 2103(b) pays it. 5 U.S.C.
+    # 5314 and 5316 both print "Archivist of the United States"; this row
+    # rests on 2103(b) alone and settles nothing about that double listing.
+    "exec-dept-doc-noaa-administrator-noaa": (
+        "Administrator, NOAA",
+        "Under Secretary of Commerce for Oceans and Atmosphere, who serves as the Administrator of the "
+        "National Oceanic and Atmospheric Administration",
+        "15 U.S.C. 1503b", "noaa_15_usc_1503b_govinfo2024.html", "III",
+        "The Under Secretary shall be appointed by the President by and with the advice and consent of the "
+        "Senate and shall be compensated at the rate now or hereafter provided for Level III of the Executive "
+        "Schedule Pay Rates (5 U.S.C. 5314).",
+    ),
+    "exec-ind-nara-archivist-of-the-united-states": (
+        "Archivist of the United States", "Archivist of the United States", "44 U.S.C. 2103(b)",
+        "nara_44_usc_2103_govinfo2024.html", "III",
+        "The Archivist shall be compensated at the rate provided for level III of the Executive Schedule "
+        "under section 5314 of title 5.",
+    ),
 }
 #: Rows priced from 20 U.S.C. 9517(a)'s class sentence ("each Commissioner" of
 #: the National Education Centers) carry 9511(c)(3), the sentence that names
@@ -3884,6 +3914,12 @@ TIER_REFERENCE_IDENTIFICATIONS = {
     "exec-dept-doe-nnsa-administrator-nnsa": (
         "The Under Secretary for Nuclear Security shall serve as the Administrator for Nuclear Security "
         "under section 2402 of title 50."
+    ),
+    "exec-dept-doc-noaa-administrator-noaa": (
+        "There shall be in the Department of Commerce an Under Secretary of Commerce for Oceans and Atmosphere "
+        "who shall serve as the Administrator of the National Oceanic and Atmospheric Administration established "
+        "by Reorganization Plan No. 4 of 1970 [5 U.S.C. App.] and perform such duties as the Secretary of "
+        "Commerce shall prescribe."
     ),
     "exec-ind-misc-americorps-director-administrator-chair-americorps": (
         "The Corporation shall be headed by an individual who shall serve as Chief Executive Officer of the Corporation, and who shall be appointed by the President, by and with the advice and consent of the Senate."

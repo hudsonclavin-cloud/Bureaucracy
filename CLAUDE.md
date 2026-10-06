@@ -2064,6 +2064,12 @@ tier-reference rows, **41 → 45** published; the Sentencing Commission's Chair
 at the circuit-judge rate and the two magistrate benches at 92 percent — a
 ceiling 28 U.S.C. 634(a) sets and the compensation table's own Explanatory
 Note resolves — as derived rows, **15 → 18**; unpriced **3,433 → 3,398**.
+Later the same morning the Code title scan's three rows took pay claims
+**1,193 → 1,196** and unpriced **3,398 → 3,395**: the FDA's Commissioner as a
+reviewed Schedule row (**97 → 98** rows, **236 → 237** priced) on a title the
+parser could not see until a footnote-mark rule was fixed, and the NOAA
+Administrator and the Archivist as tier-reference rows (**45 → 47** published)
+— see "Titles the Code prints with a footnote mark" below.
 `CURATION.md` §19.20 carries every cluster and every decline.
 
 **The level half, from current law instead of a closed archive (since
@@ -2386,13 +2392,16 @@ chairs and vice chairs that evening, 1,110 before the President's own salary
 from 3 U.S.C. 102 the same night, 1,111 before the twelfth batch's
 current-export rules and its nineteen reviewed and tier-reference rows later
 that night, which took it to 1,158, and 1,158 before the batch's later
-clusters the next morning, which took it to 1,193); **3,398
-do not** (3,480 before that night, 3,433 before the morning), and `scripts/report_unpriced_positions.py`
+clusters the next morning, which took it to 1,193, and 1,193 before the Code
+title scan's three rows later that morning, which took it to 1,196); **3,395
+do not** (3,480 before that night, 3,433 before the morning, 3,398 before the
+scan's rows), and `scripts/report_unpriced_positions.py`
 says why for every one of them:
 
-- **2,630** — no pay document this project has read names the title at all.
+- **2,627** — no pay document this project has read names the title at all.
   Not a coverage gap somebody has not got to. (2,710 before the
-  current-export rules and the twelfth batch's rows of 2026-10-05; 2,663
+  current-export rules and the twelfth batch's rows of 2026-10-05; 2,630
+  before the Code title scan's rows later on 2026-10-06; 2,663
   before its later clusters of 2026-10-06.)
 - **750** — the node states a multiplicity (`Physician (×multiple)`) and no
   claim that holds for every holder reaches it. Since the per-field rule
@@ -2402,8 +2411,8 @@ says why for every one of them:
   SYSTEM governs the title is a fact worth having.
 - **18** — OPM lists the position and the row prints no rate.
 
-The concentration is the useful part: **432** of the 3,398 sit under `VA
-Medical Centers`, 360 of them among the 2,630 (the service chiefs
+The concentration is the useful part: **432** of the 3,395 sit under `VA
+Medical Centers`, 360 of them among the 2,627 (the service chiefs
 `va_title38_pay.py` deliberately refuses, since choosing a Title 38 table per
 node would be this module deciding which VA service chiefs are doctors), 61
 under the White House Office (83 before the multi-post rule), 56 under
@@ -2415,7 +2424,8 @@ per unpriced position with its id and its reason;
 `docs/PAY_SOURCE_RESEARCH_PROMPT_3.md` is a research prompt pack generated
 from the same list in the same run — a lead prompt asking which pay systems
 exist and where each is published, then **33 enumeration shards naming every
-one of the 3,398 titles** (33 and 3,433 until the morning of 2026-10-06,
+one of the 3,395 titles** (33 and 3,398 until the Code title scan's rows
+later on 2026-10-06, 33 and 3,433 until that morning,
 39 and 4,003 until 2026-09-30, 38 and 3,953 until
 that evening's Members decision, 34 and 3,492 until 2026-10-05, 34 and 3,489
 until that day's special trial judges, 34 and 3,486 until its six govinfo
@@ -2822,6 +2832,76 @@ flat, a document claiming to state the figure, a block on a JCS copy, a
 each in turn. The panel heads the figure "PAY — MILITARY BASIC PAY, 12 × THE
 MONTHLY RATE" and prints the monthly figure, the multiplication, the grade
 sentence and the $100 beside it.
+
+**Titles the Code prints with a footnote mark where a full stop should be,
+and the parser that could not see them (since 2026-10-06).** The twelfth
+batch's Code title scan compared `statutory_schedule.load_schedule()`'s index
+against the five committed sections and found the index short of what the Code
+prints: `parse_section` accepts a list item only when its text ends in a full
+stop, and the Office of the Law Revision Counsel prints four items with a
+footnote reference — `&nbsp;<sup><a …>1</a></sup>`, an element whose digit
+survives tag-stripping as " 1" — two of them IN PLACE of the stop. Both carry
+the Code's own footnote, "So in original. Probably should be followed by a
+period." So "Commissioner of Food and Drugs, Department of Health and Human
+Services" (§5315, Level IV) and "Under Secretary of Education" (§5314, Level
+III) were never indexed, and `CURATION.md` §19.7 had recorded that the Code
+prints no NOAA Under Secretary when §5314 does — in a 162-character item over
+`MAX_TITLE_CHARS`, which the parser also skips. Two rules were measured before
+one was built. Dropping every footnote element admits neither title (with the
+element gone the item still has no stop) and FELLS the BLS reviewed row, which
+deliberately keys on the printed "The 2 Commissioner of Labor Statistics,
+Department of Labor" — a mid-text mark the Code's footnote says "probably
+should not appear" and this project publishes as printed. The rule built
+strips a TRAILING footnote-reference element only, before `_text_of`, and
+treats the item as closed by it; a mark after a full stop yields the title
+without the digit, a mid-text mark is never touched, and nothing looser (a bare
+trailing digit, a `<sup>` without the Code's anchor shape, an over-long item)
+changes anything. Measured: 415 → 418 positions, 413 → 416 indexed, 9 → 6
+skipped, exactly three titles added and none removed — the two above and
+"Principal Deputy Under Secretary of Defense for Acquisition, Technology, and
+Logistics" (§5314, whose establishing section the Code's own note says was
+repealed in 2011, printed and therefore indexed like the thirty other defunct
+titles the Schedule still carries) — zero existing records changed, and none
+of the three reaches a node by the whole-name or scoped route. The 140-character
+bound is left alone: the five items over it are exactly the ones carrying
+provisos and joint titles the parser would have to split, and splitting is the
+production of a title this file refuses by name. `tests/test_statutory_schedule.py::FootnoteMarkTests`
+pins the four marks as the pages print them, the three titles, the BLS row
+unchanged and the bound.
+
+**One reviewed row rides on it and two tier-reference rows need no Schedule
+title at all.** The FDA's Commissioner (`Commissioner, FDA`) is priced from
+the title the fix made visible, with 21 U.S.C. 393(d)(1) — "There shall be in
+the Administration a Commissioner of Food and Drugs …" — the section that
+creates the office; the current PLUM export lists "COMMISSIONER OF FOOD AND
+DRUGS" at EX-IV under the FDA, which corroborates the level and reaches no
+node, since the archive's strip reads only a trailing ", <organisation>".
+Reviewed rows **97 → 98**, Schedule-priced **236 → 237**. The NOAA
+Administrator and the Archivist of the United States are the NNSA
+Administrator's and the Librarian's shapes: 15 U.S.C. 1503b both pays the
+Under Secretary of Commerce for Oceans and Atmosphere "at the rate now or
+hereafter provided for Level III of the Executive Schedule Pay Rates (5 U.S.C.
+5314)" and says that officer "shall serve as the Administrator of the National
+Oceanic and Atmospheric Administration" — the identification sentence rides
+on the record as it does for the NNSA — and 44 U.S.C. 2103(b) pays the
+Archivist "at the rate provided for level III of the Executive Schedule under
+section 5314 of title 5". The Archivist's row rests on 2103(b) alone and
+settles nothing about the Schedule's double listing of the title at §5314 and
+§5316, which `statutory_schedule.py` still drops as ambiguous; the row's
+comment says so. Both fixtures and the FDA's came from govinfo's 2024-edition
+rendering through the link service (`docs/NETWORK_ACCESS.md` §16), and the
+fetch surfaced a precision gap this module had carried since 2026-10-05: it read
+the edition off the link URL alone, so ten of its records said "an edition of
+the United States Code" where the meta's `final_url` named the 2024 granule.
+It reads `final_url` since, and all fifteen of its govinfo documents name the
+edition. Tier-reference rows **23 → 25**, published **45 → 47**. Pay claims
+**1,193 → 1,196**, unpriced **3,398 → 3,395**. `CURATION.md` §19.20
+carries the scan's other twenty-three leads and why each was declined: the
+export contradicting the Code on the NRC's office directors, the SBA's and
+OPM's associate officials and the NRO's Director; thirty-one organisations the
+Code names that carry no post node; the Deputy U.S. Trade Representatives'
+counted class blocked on the graph's abbreviation "Deputy USTR"; and the
+Solicitors the Code prints where the graph stamps a General Counsel.
 
 **Benches priced from the Code's class title (since 2026-09-27, the owner's
 decision).** The Executive Schedule places some offices one at a time
@@ -4052,8 +4132,9 @@ subdivide measured money rather than invent it — which does not make a
 subdivision a measurement. **Since 2026-09-09 the site does not show one by
 default**, by the owner's decision: a node with no measured cost of its own
 shows no figure and says why, and ticking "Also show estimated shares of a
-parent's total" opts back in. The exception is a real salary — **1,193** of the
-4,591 positions carry a pay claim an official source states (1,158 before the
+parent's total" opts back in. The exception is a real salary — **1,196** of the
+4,591 positions carry a pay claim an official source states (1,193 before the
+Code title scan's three rows landed later on 2026-10-06, 1,158 before the
 twelfth batch's later clusters landed on the morning of 2026-10-06, 1,111
 before its current-export rules and its nineteen rows landed late on
 2026-10-05), counted on the
@@ -4088,15 +4169,17 @@ Inspectors General at Level III plus the Act's
 2026-10-05, when the current export's office-named-for-the-post rule gave
 the GPO's Director and the Treasury's, Commerce's and Energy's Inspectors
 General a listed level the table prices, which a figure set by reference
-never displaces, and 45 the next morning), 22 twelve months of the uniformed
+never displaces, 45 the next morning, and 47 later that morning with the
+NOAA Administrator from 15 U.S.C. 1503b and the Archivist from 44 U.S.C.
+2103(b)), 22 twelve months of the uniformed
 services' MONTHLY basic pay (`positionMilitaryPay`, since 2026-10-06:
 Schedule 8 of the pay-adjustment order joined to the statute that fixes a
 post's grade, or naming the post in its own footnote — the Joint Chiefs'
 Chairman and Vice Chairman, the service chiefs and vice chiefs, the Coast
 Guard's Commandant and Vice Commandant, the Chief of the National Guard
 Bureau, two combatant commanders and five senior enlisted advisers, the
-annual figure arithmetic no document prints), 72 a Title 38 tier BAND rather than a rate (`positionTierPay`), 236 from the
-Executive Schedule as 5 U.S.C. §§5312–5316 sets it (97 of them through a
+annual figure arithmetic no document prints), 72 a Title 38 tier BAND rather than a rate (`positionTierPay`), 237 from the
+Executive Schedule as 5 U.S.C. §§5312–5316 sets it (98 of them through a
 reviewed identification a second statute backs — 12 U.S.C. 241–242 for the
 Fed's four, then the FCC's, FTC's, CFTC's, FERC's, NRC's and FMC's chairs
 and benches, the IRS, FAA, DHS, OPM, SSA, FEMA, BLM, CIA, CMS, NIST, SBA,
@@ -4109,7 +4192,9 @@ Director, Deputy Director and three office heads, and the PHMSA
 Administrator, and since 2026-10-06 the Department of Defense's Chief
 Financial Officer as the Under Secretary of Defense (Comptroller), the IRS
 Chief Counsel, the NHTSA Administrator and Deputy Administrator and the
-FMCSA's and FHWA's Deputy Administrators; nine of the 75 are benches priced from the Code's "Members,
+FMCSA's and FHWA's Deputy Administrators, and later that morning the FDA's
+Commissioner on a title the Code prints with a footnote mark in place of its
+full stop; nine of the 75 are benches priced from the Code's "Members,
 …" class title for each holder, the CPSC's and SEC's among them since
 2026-09-30 — and 40 more as reviewed members of a COUNTED class the Code
 places without naming, "Assistant Attorneys General (11)" and seven more,
@@ -4155,7 +4240,8 @@ current-export rules and its nineteen reviewed and tier-reference rows, and
 1,193 on the morning of 2026-10-06 with the batch's later clusters — the
 uniformed services, the Defense Comptroller, the legislative-branch officers,
 the Sentencing Commission's Chair, the magistrate benches and the
-Transportation deputies. Shown in
+Transportation deputies — and 1,196 later that morning with the Code title
+scan's FDA Commissioner, NOAA Administrator and Archivist. Shown in
 the cost block under its own heading and never headed COST — and, since the
 same night, as the post's headline figure where it has no cost.
 
@@ -4178,8 +4264,9 @@ with the offices Members of Congress hold, 1,102 with the Court of
 International Trade and the Ex-Im Vice Chair, 1,105 with the special
 trial judges and the two Deputy Directors, 1,110 with the five posts the
 govinfo sections priced, 1,111 with the President, 1,158 with the
-twelfth batch's current-export rules and rows, and 1,193 with its later
-clusters the next morning. The estimates
+twelfth batch's current-export rules and rows, 1,193 with its later
+clusters the next morning, and 1,196 with the Code title scan's three rows
+later that morning. The estimates
 stay in `graph.json` because the cascade's arithmetic and the gate's
 child-sum checks are built on them, so a consumer of the JSON must read
 `cost_status`, not `resolved_total_amount` alone. The gate prints both

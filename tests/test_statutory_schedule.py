@@ -21,6 +21,7 @@ threshold. Nothing here writes that field, and a test says so.
 from __future__ import annotations
 
 import json
+import re
 import unittest
 import unittest.mock
 from datetime import date
@@ -117,6 +118,151 @@ class StatuteParsingTests(unittest.TestCase):
             for position in block["positions"]:
                 with self.subTest(title=position["title"]):
                     self.assertFalse(position["title"].lower().startswith("level "))
+
+
+# --------------------------------------------------------------------------
+# 2026-10-06: a footnote mark standing where the full stop should be. Four
+# footnote-reference elements sit in the five committed sections, and the
+# parser used to read each as a digit -- "...Human Services 1" failed the
+# full-stop rule and three real titles were invisible to the index. The Code's
+# own footnotes on two of them read "So in original. Probably should be
+# followed by a period." A CLOSING mark is now stripped and closes the item;
+# a mark anywhere else is kept as printed, because a reviewed row keys on it.
+
+
+class FootnoteMarkTests(unittest.TestCase):
+    FDA = "Commissioner of Food and Drugs, Department of Health and Human Services"
+    EDUCATION = "Under Secretary of Education"
+    PRINCIPAL_DEPUTY = "Principal Deputy Under Secretary of Defense for Acquisition, Technology, and Logistics"
+    BLS = "The 2 Commissioner of Labor Statistics, Department of Labor"
+    FOOTNOTE = "So in original. Probably should be followed by a period."
+    MARK = '<sup><a href="#{section}_{n}_target" name="{section}_{n}">{n}</a></sup>'
+
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.schedule = ss.load_schedule()
+        cls.raw = {s: (US_CODE_BASIS_FIXTURE_DIR / f"exec_schedule_{s}.html").read_text(encoding="utf-8")
+                   for s in ss.SECTION_LEVELS}
+
+    def test_the_marks_are_what_the_pages_print(self) -> None:
+        """Four marks in all, each the same element: an anchor inside a <sup>.
+        Two stand where the full stop should be, one follows it, one sits
+        mid-title. Pinned so a re-fetched section that prints them otherwise
+        fails here rather than silently changing what the parser sees."""
+        self.assertIn("Human Services&nbsp;" + self.MARK.format(section="5315", n="1") + "\n</p>", self.raw["5315"])
+        self.assertIn("Under Secretary of Education&nbsp;" + self.MARK.format(section="5314", n="2") + "\n</p>", self.raw["5314"])
+        self.assertIn("Technology, and Logistics." + self.MARK.format(section="5314", n="1") + "\n</p>", self.raw["5314"])
+        self.assertIn("The&nbsp;" + self.MARK.format(section="5315", n="2") + " Commissioner of Labor Statistics, Department of Labor.</p>",
+                      self.raw["5315"])
+        self.assertEqual(sum(raw.count('<sup><a href="#') for raw in self.raw.values()), 4)
+        self.assertEqual(self.raw["5314"].count(self.FOOTNOTE), 1)
+        self.assertEqual(self.raw["5315"].count(self.FOOTNOTE), 1)
+        # Read as text, the digit survives and the full-stop rule refuses the item.
+        for section, needle in (("5315", "Human Services&nbsp;<sup>"), ("5314", "Education&nbsp;<sup>"),
+                                ("5314", "Logistics.<sup>")):
+            start = self.raw[section].rfind('<p class="statutory-body', 0, self.raw[section].find(needle))
+            end = self.raw[section].find("</p>", start)
+            fragment = ss._BODY.findall(self.raw[section][start:end + 4])[0]
+            with self.subTest(needle=needle):
+                self.assertFalse(ss._text_of(fragment).endswith("."))
+                body, closed = ss._strip_trailing_footnote_reference(fragment)
+                self.assertTrue(closed)
+                self.assertNotIn("<sup>", body)
+
+    def test_the_three_titles_the_code_closes_with_a_footnote_mark_are_indexed(self) -> None:
+        for title, level, section in ((self.FDA, "IV", "5315"), (self.EDUCATION, "III", "5314"),
+                                      (self.PRINCIPAL_DEPUTY, "III", "5314")):
+            with self.subTest(title=title):
+                position = self.schedule["index"].get(canonical_name_key(title))
+                self.assertIsNotNone(position, f"{title!r} is not indexed")
+                self.assertEqual((position["title"], position["level"], position["section"], position["statedPosts"]),
+                                 (title, level, section, 1))
+                self.assertNotIn(canonical_name_key(title), self.schedule["ambiguous"])
+
+    def test_a_mark_after_a_full_stop_yields_the_title_without_the_digit(self) -> None:
+        self.assertIn(canonical_name_key(self.PRINCIPAL_DEPUTY), self.schedule["index"])
+        titles = [p["title"] for b in self.schedule["sections"].values() for p in b["positions"]]
+        self.assertNotIn(self.PRINCIPAL_DEPUTY + "1", titles)
+        self.assertNotIn(self.PRINCIPAL_DEPUTY + ".1", titles)
+        # No indexed title ends in a bare digit: the mark is never read as text.
+        self.assertEqual([t for t in titles if re.search(r"\s\d+$", t)], [])
+
+    def test_a_mark_in_the_middle_of_a_title_is_kept_as_printed(self) -> None:
+        """The Bureau of Labor Statistics' row keys on the printed words; a
+        rule that dropped every mark would have felled it (measured: 236 -> 235
+        records, `reviewed_row_title_not_printed_by_the_code`)."""
+        position = self.schedule["index"].get(canonical_name_key(self.BLS))
+        self.assertIsNotNone(position)
+        self.assertEqual((position["title"], position["key"], position["level"]),
+                         (self.BLS, "2 commissioner of labor statistics department of labor", "IV"))
+        self.assertNotIn(canonical_name_key("The Commissioner of Labor Statistics, Department of Labor"), self.schedule["index"])
+        self.assertEqual(ss.REVIEWED_TITLE_ROWS["exec-dept-dol-bls-commissioner-bls"]["statutoryTitle"], self.BLS)
+        self.assertEqual(US_CODE_REVIEWED_IDENTIFICATIONS["exec-dept-dol-bls-commissioner-bls"][1], self.BLS)
+        start = self.raw["5315"].find('<p class="statutory-body-1em">The&nbsp;<sup>')
+        fragment = ss._BODY.findall(self.raw["5315"][start:self.raw["5315"].find("</p>", start) + 4])[0]
+        body, closed = ss._strip_trailing_footnote_reference(fragment)
+        self.assertEqual((body, closed), (fragment, False))
+
+    def test_skipped_fell_from_nine_to_six_and_the_proviso_stays_skipped(self) -> None:
+        """Measured on 2026-10-06: 415 positions / 413 titles / 9 skipped
+        before, 418 / 416 / 6 after, 1 ambiguous either way. The 213-character
+        Chief Information Officer proviso in §5315 is still over
+        MAX_TITLE_CHARS and still skipped; that rule did not move."""
+        skipped = {s: b["skipped"] for s, b in self.schedule["sections"].items()}
+        self.assertEqual({s: len(v) for s, v in skipped.items()}, {"5312": 0, "5313": 0, "5314": 2, "5315": 4, "5316": 0})
+        self.assertEqual((self.schedule["positions"], len(self.schedule["index"]), len(self.schedule["ambiguous"])),
+                         (418, 416, 1))
+        flat = [s for v in skipped.values() for s in v]
+        for title in (self.FDA, self.EDUCATION, self.PRINCIPAL_DEPUTY):
+            self.assertFalse(any(s.startswith(title) for s in flat), title)
+        self.assertTrue(any(s.startswith("Chief Information Officer, Department of Defense (unless") for s in skipped["5315"]))
+        self.assertGreater(len(DefenseComptrollerRowTests.CIO_TITLE), ss.MAX_TITLE_CHARS)
+        self.assertEqual(ss.MAX_TITLE_CHARS, 140)
+
+    def test_the_rule_is_the_element_and_nothing_looser(self) -> None:
+        """On synthetic paragraphs: a closing element closes the item, with or
+        without a full stop before it; a mid-text element is kept as text; a
+        bare trailing digit, a <sup> that is not the Code's element, and a
+        closing element on an over-long item or a heading each change nothing."""
+        mark = self.MARK.format(section="5315", n="7")
+        html = (
+            '<p class="statutory-body">Level IV of the Executive Schedule applies to&nbsp;' + mark + '\n</p>'
+            '<p class="statutory-body-1em">Director of Example Affairs&nbsp;' + mark + '\n</p>'
+            '<p class="statutory-body-1em">Deputy Director of Example Affairs.' + mark + '</p>'
+            '<p class="statutory-body-1em">The&nbsp;' + mark + ' Keeper of Example Records.</p>'
+            '<p class="statutory-body-1em">Assistant Keeper of Example Records 7</p>'
+            '<p class="statutory-body-1em">Second Assistant Keeper of Example Records<sup>7</sup></p>'
+            '<p class="statutory-body-1em">Third Assistant Keeper of Example Records<sup><a href="#note7">7</a></sup></p>'
+            '<p class="statutory-body-1em">' + ("Very " * 30) + 'Long Office of Example Affairs&nbsp;' + mark + '</p>'
+            '<p class="statutory-body-1em">Keeper of Nothing</p>'
+        )
+        parsed = ss.parse_section(html, section="5315")
+        self.assertEqual([p["title"] for p in parsed["positions"]],
+                         ["Director of Example Affairs", "Deputy Director of Example Affairs", "The 7 Keeper of Example Records"])
+        self.assertEqual(len(parsed["skipped"]), 5)
+        self.assertTrue(parsed["skipped"][0].startswith("Assistant Keeper of Example Records 7"))
+        self.assertTrue(parsed["skipped"][1].startswith("Second Assistant Keeper of Example Records7"))
+        self.assertTrue(parsed["skipped"][2].startswith("Third Assistant Keeper of Example Records7"))
+        self.assertTrue(parsed["skipped"][3].startswith("Very Very"))
+        self.assertEqual(parsed["skipped"][4], "Keeper of Nothing")
+
+    def test_the_three_titles_reach_no_node_on_their_own(self) -> None:
+        """An indexed title reaches a node only by key equality or through a
+        reviewed row keyed by id; measured on the real base graph, the three
+        titles the mark hid reach nothing by the whole-name or scoped route,
+        and the derived records are the same 236 as before plus the FDA
+        Commissioner's reviewed row."""
+        from data_pipeline.exporter.build_graph import DEFAULT_BASE_GRAPH, load_base_graph
+
+        node_map, _ = index_tree(load_base_graph(DEFAULT_BASE_GRAPH))
+        whole = ss.match_positions(node_map, self.schedule)["matched"]
+        scoped = ss.match_scoped_positions(node_map, self.schedule, already_matched=whole)
+        for title in (self.FDA, self.EDUCATION, self.PRINCIPAL_DEPUTY):
+            key = canonical_name_key(title)
+            with self.subTest(title=title):
+                self.assertEqual([n for n, p in whole.items() if p["key"] == key], [])
+                self.assertEqual([n for n, p in scoped["matched"].items() if p["key"] == key], [])
+        self.assertIn(self.FDA, scoped["refusals"]["no_such_post_directly_under_that_organisation"])
 
 
 class MatchingTests(unittest.TestCase):
@@ -1329,6 +1475,219 @@ class IrsChiefCounselRowTests(unittest.TestCase):
         self.assertNotIn(self.QUOTE, ss.load_basis_section(self.FIXTURE, tmp)["operative"])
         self.assertNotIn(self.QUOTE, uscode_operative_text(tmp / self.FIXTURE))
         self.assertIn(self.QUOTE, uscode_operative_text(US_CODE_BASIS_FIXTURE_DIR / self.FIXTURE))
+
+
+# --------------------------------------------------------------------------
+# The twelfth batch's health cluster (2026-10-06): the Commissioner of Food and
+# Drugs, priced from 5 U.S.C. 5315's own title through 21 U.S.C. 393(d)(1).
+# Reviewed rows 97 -> 98, Schedule-priced nodes 236 -> 237. The two
+# published-graph comparisons above -- MirrorTests.test_the_mirror_covers_
+# exactly_the_published_nodes and ItIsNotEvidenceThePostExistsTests.test_no_
+# priced_node_carries_the_figure_as_a_cost -- read output/graph.json and pass
+# only once the graph is regenerated with the new evidence file.
+
+
+class FdaCommissionerRowTests(unittest.TestCase):
+    """§5315 prints 'Commissioner of Food and Drugs, Department of Health and
+    Human Services' with a footnote mark where its full stop should be, so
+    until the parser read a closing mark the title was not in the index and no
+    row could cite it. The graph names the post 'Commissioner, FDA', which no
+    route reaches by name. Pinned here: the title and its level, the sentence
+    393(d)(1) prints in its OPERATIVE text by both readers, the section's
+    provenance (govinfo's 2024 edition, the OLRC host being under
+    maintenance), the record applied as the exporter applies it and passing
+    the gate, the gate's refusal of the same record on the Deputy Commissioner
+    and on other commissioners, and a doctored basis fixture felling the row."""
+
+    NODE_ID = "exec-dept-hhs-fda-commissioner-fda"
+    PARENT_ID = "exec-dept-hhs-fda"
+    DEPUTY_ID = "exec-dept-hhs-fda-deputy-commissioner"
+    FIXTURE = "fda_21_usc_393_govinfo2024.html"
+    TITLE = "Commissioner of Food and Drugs, Department of Health and Human Services"
+    QUOTE = ('There shall be in the Administration a Commissioner of Food and Drugs (hereinafter in this section '
+             'referred to as the "Commissioner") who shall be appointed by the President by and with the advice '
+             'and consent of the Senate.')
+
+    @classmethod
+    def setUpClass(cls) -> None:
+        from data_pipeline.exporter.build_graph import DEFAULT_BASE_GRAPH, load_base_graph
+
+        cls.schedule = ss.load_schedule()
+        cls.node_map, cls.parent_map = index_tree(load_base_graph(DEFAULT_BASE_GRAPH))
+
+    def test_the_row_is_what_the_code_prints(self) -> None:
+        row = ss.REVIEWED_TITLE_ROWS[self.NODE_ID]
+        self.assertEqual(row["nodeName"], "Commissioner, FDA")
+        self.assertEqual(row["statutoryTitle"], self.TITLE)
+        self.assertEqual((row["basisCitation"], row["basisFixture"], row["basisQuote"]),
+                         ("21 U.S.C. 393", self.FIXTURE, self.QUOTE))
+        self.assertNotIn("classTitle", row)
+        self.assertIn("Level IV", row["basis"])
+        self.assertIn("So in original. Probably should be followed by a period.", row["basis"])
+        position = self.schedule["index"][canonical_name_key(self.TITLE)]
+        self.assertEqual((position["title"], position["level"], position["section"], position["statedPosts"]),
+                         (self.TITLE, "IV", "5315", 1))
+        self.assertNotIn(canonical_name_key(self.TITLE), self.schedule["ambiguous"])
+        # The sentence is the law, not the notes, by both readers, and it is
+        # 393(d)(1)'s own words -- the parenthetical and "by and with the
+        # advice and consent" included, because a tidied copy is not a quote.
+        operative = ss.load_basis_section(self.FIXTURE)["operative"]
+        self.assertIn(self.QUOTE, operative)
+        self.assertIn("(d) Commissioner (1) Appointment " + self.QUOTE, operative)
+        self.assertIn(self.QUOTE, uscode_operative_text(US_CODE_BASIS_FIXTURE_DIR / self.FIXTURE))
+        self.assertNotIn("Editorial Notes", operative)
+        self.assertEqual(US_CODE_REVIEWED_IDENTIFICATIONS[self.NODE_ID][:4], ("Commissioner, FDA", self.TITLE, "IV", "5315"))
+        self.assertEqual(US_CODE_REVIEWED_IDENTIFICATIONS[self.NODE_ID][4:7], ("21 U.S.C. 393", self.FIXTURE, self.QUOTE))
+        self.assertEqual(US_CODE_REVIEWED_IDENTIFICATIONS[self.NODE_ID][7:], (row["basis"], False))
+
+    def test_the_section_is_govinfos_2024_edition_and_not_a_maintenance_page(self) -> None:
+        meta = json.loads((US_CODE_BASIS_FIXTURE_DIR / (self.FIXTURE + ".meta.json")).read_text(encoding="utf-8"))
+        self.assertEqual(meta["url"], "https://www.govinfo.gov/link/uscode/21/393?link-type=html")
+        self.assertEqual(meta["status"], 200)
+        self.assertIn("USCODE-2024-title21", meta["final_url"])
+        self.assertTrue(meta["final_url"].endswith("-sec393.htm"))
+        self.assertTrue(us_code_url_names_section(meta["url"], "21 U.S.C. 393"))
+        raw = (US_CODE_BASIS_FIXTURE_DIR / self.FIXTURE).read_text(encoding="utf-8")
+        self.assertNotIn("Under Maintenance", raw)
+        self.assertNotIn("Page Not Found", raw)
+        self.assertIn("<strong>Editorial Notes</strong>", raw)
+        self.assertEqual(fixture_digest(US_CODE_BASIS_FIXTURE_DIR / self.FIXTURE), meta["sha256"])
+
+    def test_the_row_matches_on_the_real_graph_and_only_through_the_reviewed_route(self) -> None:
+        whole = ss.match_positions(self.node_map, self.schedule)["matched"]
+        scoped = ss.match_scoped_positions(self.node_map, self.schedule, already_matched=whole)
+        self.assertNotIn(self.NODE_ID, whole)
+        self.assertNotIn(self.NODE_ID, scoped["matched"])
+        # The scoped route splits the title at its comma, finds the Department
+        # and no direct child of it called "Commissioner of Food and Drugs".
+        self.assertIn(self.TITLE, scoped["refusals"]["no_such_post_directly_under_that_organisation"])
+        result = ss.match_reviewed_rows(self.node_map, self.schedule, already_matched={**whole, **scoped["matched"]})
+        self.assertIn(self.NODE_ID, result["matched"])
+        entry = result["matched"][self.NODE_ID]
+        self.assertEqual(entry["method"], ss.METHOD_REVIEWED)
+        self.assertEqual((entry["title"], entry["level"], entry["section"]), (self.TITLE, "IV", "5315"))
+        self.assertNotIn("classTitle", entry)
+        ident = entry["identification"]
+        self.assertEqual(ident["nodeName"], "Commissioner, FDA")
+        self.assertEqual(ident["basisCitation"], "21 U.S.C. 393")
+        self.assertEqual(ident["basisQuote"], self.QUOTE)
+        self.assertTrue(us_code_url_names_section(ident["basisUrl"], "21 U.S.C. 393"))
+        self.assertEqual(ident["basisSha256"], fixture_digest(US_CODE_BASIS_FIXTURE_DIR / self.FIXTURE))
+        # One post, directly under the Administration.
+        self.assertEqual(self.parent_map[self.NODE_ID], self.PARENT_ID)
+        self.assertEqual(self.node_map[self.PARENT_ID]["name"], "Food & Drug Administration (FDA)")
+        self.assertFalse(ss.states_a_multiplicity(self.node_map[self.NODE_ID]["name"]))
+        self.assertNotIn(self.NODE_ID, US_CODE_EXECUTIVE_SCHEDULE)
+        self.assertNotIn(self.NODE_ID, {i for spec in US_CODE_COUNTED_CLASSES.values() for i in spec["members"]})
+
+    def test_the_derived_record_applied_to_the_node_passes_the_gate(self) -> None:
+        """Built from the real statute and the real table, validated, applied
+        the way the exporter applies it, and gated -- Level IV, $197,200."""
+        from data_pipeline.verification import financial_evidence as fe
+        from data_pipeline.verification.pay_tables import (
+            DEFAULT_PAY_TABLE_HTML,
+            federal_fiscal_year_of,
+            load_executive_schedule,
+        )
+
+        loaded = load_executive_schedule(DEFAULT_PAY_TABLE_HTML)
+        matched = ss.match_reviewed_rows(self.node_map, self.schedule)["matched"]
+        fiscal_year = federal_fiscal_year_of(date.fromisoformat(str(loaded["table"]["effective"])))
+        records, _report = ss.build_records(
+            {self.NODE_ID: matched[self.NODE_ID]}, loaded["table"],
+            table_url=loaded["url"], table_sha256=loaded["sha256"],
+            retrieved_at=loaded["fetched_at"], fiscal_year=fiscal_year,
+        )
+        node = {k: v for k, v in self.node_map[self.NODE_ID].items() if k != "children"}
+        record = fe.validate_record(records[self.NODE_ID], node)
+        self.assertEqual(fe.classify(record), "partial")
+        record["financialEvidenceStatus"] = "partial"
+        for key in ("levelClaim", "rateText", "effectiveText", "table", "tableFootnotes"):
+            record[key] = records[self.NODE_ID][key]
+        probe = {"id": "root", "name": "Root", "type": "Foundation", "children": [
+            {"id": self.PARENT_ID, "name": "Food & Drug Administration (FDA)", "type": "Agency",
+             "children": [node]}]}
+        stats = ss.apply_schedule_pay(probe, {self.NODE_ID: record})
+        self.assertEqual(stats["priced"], 1)
+        applied = probe["children"][0]["children"][0]
+        pay = applied["positionSchedulePay"]
+        self.assertEqual((pay["payLevel"], pay["amount"], pay["statutoryTitle"], pay["method"]),
+                         ("IV", EXECUTIVE_SCHEDULE_RATES["IV"], self.TITLE, ss.METHOD_REVIEWED))
+        self.assertEqual(pay["amount"], 197_200.0)
+        self.assertEqual((pay["scopeMatch"], pay["financialEvidenceStatus"]), ("proxy", "partial"))
+        self.assertNotIn("classTitle", pay)
+        self.assertEqual(schedule_pay_violations(applied, pay, REVIEWED_TODAY, label), [])
+        for field in ("sourceUrls", "sourceTypes", "lastVerified", "verificationMethod"):
+            self.assertNotIn(field, applied)
+
+    def test_the_record_on_the_deputy_and_on_other_commissioners_is_refused(self) -> None:
+        good = good_reviewed_pay(self.NODE_ID)
+        self.assertEqual(schedule_pay_violations(reviewed_node(self.NODE_ID), good, REVIEWED_TODAY, label), [])
+        self.assertEqual(schedule_pay_violations(self.node_map[self.NODE_ID], good, REVIEWED_TODAY, label), [])
+        deputy = self.node_map[self.DEPUTY_ID]
+        self.assertEqual((deputy["name"], self.parent_map[self.DEPUTY_ID]), ("Deputy Commissioner", self.PARENT_ID))
+        out = schedule_pay_violations(deputy, good, REVIEWED_TODAY, label)
+        self.assertNotEqual(out, [])
+        self.assertTrue(any("no row for" in v or "names no such post" in v for v in out), out)
+        # Renamed to the row's own name, the Deputy is still refused: keyed by id.
+        self.assertNotEqual(schedule_pay_violations({**deputy, "name": "Commissioner, FDA"}, good, REVIEWED_TODAY, label), [])
+        for other in ("exec-dept-treasury-irs-commissioner-irs", "exec-dept-hhs-cms-administrator-cms",
+                      "exec-dept-doi-bor-commissioner-bor", "exec-ind-ssa-commissioner-ssa"):
+            with self.subTest(node=other):
+                self.assertNotEqual(schedule_pay_violations(self.node_map[other], good, REVIEWED_TODAY, label), [])
+        # And another commissioner's record on this node.
+        self.assertNotEqual(schedule_pay_violations(self.node_map[self.NODE_ID],
+                                                    good_reviewed_pay("exec-dept-doi-bor-commissioner-bor"),
+                                                    REVIEWED_TODAY, label), [])
+        # Module side: renamed or gone, the row prices nothing.
+        renamed = {self.NODE_ID: {**self.node_map[self.NODE_ID], "name": "Commissioner of Food and Drugs"}}
+        self.assertEqual(ss.match_reviewed_rows(renamed, self.schedule)["refusals"]["reviewed_row_node_renamed"],
+                         [self.NODE_ID])
+        self.assertIn(self.NODE_ID, ss.match_reviewed_rows({}, self.schedule)["refusals"]["reviewed_row_names_no_node"])
+
+    def test_the_sentence_moved_beneath_the_notes_cut_fells_the_row_and_leaves_the_others(self) -> None:
+        """Move 393(d)(1)'s sentence into the Editorial Notes, re-sign the
+        digest, and the row falls while the page still carries the sentence;
+        the NHTSA Administrator's row, read from the same publisher's rendering
+        of another section, stands."""
+        import hashlib
+        import tempfile
+
+        tmp = Path(tempfile.mkdtemp())
+        for row in ss.REVIEWED_TITLE_ROWS.values():
+            for name in (row["basisFixture"], row["basisFixture"] + ".meta.json"):
+                (tmp / name).write_bytes((US_CODE_BASIS_FIXTURE_DIR / name).read_bytes())
+        raw = (tmp / self.FIXTURE).read_text(encoding="utf-8")
+        head, sep, tail = raw.partition("<strong>Editorial Notes</strong>")
+        self.assertTrue(sep)
+        # The page prints the sentence's quotation marks as &quot;, so the raw
+        # HTML is searched and edited in that form; both readers unescape.
+        printed = self.QUOTE.replace('"', "&quot;")
+        self.assertIn(printed, head)
+        self.assertNotIn(self.QUOTE, raw)
+        self.assertNotIn(printed, tail)
+        doctored = (head.replace(printed, "The Commissioner shall be appointed as the Secretary prescribes.")
+                    + sep + "<p>" + printed + "</p>" + tail)
+        (tmp / self.FIXTURE).write_text(doctored, encoding="utf-8")
+        meta_path = tmp / (self.FIXTURE + ".meta.json")
+        meta = json.loads(meta_path.read_text(encoding="utf-8"))
+        meta["sha256"] = hashlib.sha256(doctored.encode("utf-8")).hexdigest()
+        meta_path.write_text(json.dumps(meta), encoding="utf-8")
+        nhtsa = "exec-dept-dot-nhtsa-administrator-nhtsa"
+        node_map = {self.NODE_ID: dict(self.node_map[self.NODE_ID]), nhtsa: dict(self.node_map[nhtsa])}
+        result = ss.match_reviewed_rows(node_map, self.schedule, directory=tmp)
+        self.assertNotIn(self.NODE_ID, result["matched"])
+        self.assertIn(nhtsa, result["matched"])
+        self.assertEqual(result["refusals"]["reviewed_row_basis_quote_not_in_operative_text"], [self.NODE_ID])
+        self.assertIn(printed, (tmp / self.FIXTURE).read_text(encoding="utf-8"))
+        self.assertNotIn(self.QUOTE, ss.load_basis_section(self.FIXTURE, tmp)["operative"])
+        self.assertNotIn(self.QUOTE, uscode_operative_text(tmp / self.FIXTURE))
+        self.assertIn(self.QUOTE, uscode_operative_text(US_CODE_BASIS_FIXTURE_DIR / self.FIXTURE))
+        # The gate refuses the same misquote on the committed fixture.
+        bad = good_reviewed_pay(self.NODE_ID)
+        bad["identification"]["basisQuote"] = "The Commissioner shall be appointed as the Secretary prescribes."
+        out = schedule_pay_violations(self.node_map[self.NODE_ID], bad, REVIEWED_TODAY, label)
+        self.assertTrue(any("not the one 21 U.S.C. 393 prints" in v for v in out), out)
 
 
 if __name__ == "__main__":

@@ -55,8 +55,10 @@ by `scripts/report_cost_coverage.py`, puts every one of the 5,510 nodes in
 exactly one class — measured, estimate, salary, unpriced post by reason, or
 no figure with its reason — with the document route that would move each.
 
-The one exception is a real salary. **1,193** position nodes carry a pay claim an
-official source states (1,158 before the twelfth batch's later clusters of
+The one exception is a real salary. **1,196** position nodes carry a pay claim an
+official source states (1,193 before the Code title scan's three rows of
+2026-10-06 — the FDA Commissioner, the NOAA Administrator and the Archivist —
+1,158 before the twelfth batch's later clusters of
 2026-10-06, which priced the uniformed services' principals from Schedule 8 of
 the pay-adjustment order — twelve months of a printed monthly rate, arithmetic
 no document prints — the Defense Comptroller, the IRS Chief Counsel, four
@@ -75,8 +77,8 @@ chamber's leaders and the President pro tempore and none for those offices;
 the panel leads with "priced as a Member's seat, not for the office", and the
 two joint-committee posts are refused because which chamber their holder sits
 in is a fact about a person this project never reads — 188 from the White House Office roster (22 of them
-titles the roster lists N times at one rate, published for each holder), 236
-from the Executive Schedule as 5 U.S.C. §§5312–5316 sets it (97 of them through
+titles the roster lists N times at one rate, published for each holder), 237
+from the Executive Schedule as 5 U.S.C. §§5312–5316 sets it (98 of them through
 a reviewed identification a second statute backs, each resting on three
 documents; nine of those are benches — the FCC's, FTC's, CFTC's, FERC's,
 NRC's, FMC's, CPSC's and SEC's `Commissioner (×4)` and the Fed's `Governor (×4
@@ -86,9 +88,11 @@ more, on the Code, the table and, where one has been read, the statute that
 composes the class —
 priced from the Code's own "Members, …" class title for each holder alike), 128
 the rate OPM's current PLUM export prints for the one row under the title (88
-until the office-named-for-the-post rule and the rank fold of 2026-10-05), 45 a
+until the office-named-for-the-post rule and the rank fold of 2026-10-05), 47 a
 rate a statute sets by REFERENCE to an Executive Schedule level the post is not
-itself placed at (`positionTierReferencePay`: the Comptroller General and the
+itself placed at (`positionTierReferencePay`, 45 until the Code title scan's
+NOAA Administrator at 15 U.S.C. 1503b and Archivist at 44 U.S.C. 2103(b) landed
+later on 2026-10-06: the Comptroller General and the
 Deputy at 31 U.S.C. 703(f)'s levels II and III, the GPO's Director and Deputy
 at 44 U.S.C. 303's levels II and III, the IES Director at 20 U.S.C. 9514's
 Level II and its three Commissioners at 9517's Level IV, the FCA Board's
@@ -143,7 +147,7 @@ U.S.C. 603's 92 percent of a Director paid as a district judge, $229,908,
 the FJC's through §626 — three documents each for the chains, none stating the
 figure, 7443A read from GPO's 2024-edition rendering on govinfo because the
 OLRC's host was under maintenance). A node may carry
-more than one, so the per-source figures sum past 1,193 (the President's $400,000,
+more than one, so the per-source figures sum past 1,196 (the President's $400,000,
 stated by 3 U.S.C. 102 itself since 2026-10-05, among them). Each shows in place of
 the withheld estimate, under its
 own heading rather than COST, with the panel saying it is compensation for one
