@@ -1312,13 +1312,24 @@ function renderTierReferencePay(data) {
   const arithmetic = pay.arithmetic && typeof pay.arithmetic === "object" ? pay.arithmetic : null;
   const identification = pay.identification && typeof pay.identification === "object" ? pay.identification : {};
   add(`PAY SET BY REFERENCE TO A LEVEL — no document states this figure for this post. ${printed}${pay.effectiveText ? `, ${String(pay.effectiveText).replace(/^Effective\b/, "effective")}` : ""}.`);
-  if (arithmetic) {
+  if (arithmetic && arithmetic.operation === "minus_dollars") {
+    // A stated number of dollars below another officer whose own pay is set
+    // by reference to a level (2 U.S.C. 1808(c)(3) and three more): the
+    // subtraction is this project's, printed as a computation.
+    const ref = pay.referencedOfficer && typeof pay.referencedOfficer === "object" ? pay.referencedOfficer : {};
+    const refOffice = arithmetic.baseOffice || ref.office || "another officer";
+    add(` ${pay.statute || "The statute"} sets this post's basic pay at ${arithmetic.minusDollarsText || `$${arithmetic.minusDollars}`} less than the ${refOffice}'s; ${ref.statute || "another statute"}${ref.viaStatute ? `, through ${ref.viaStatute},` : ""} sets the ${refOffice}'s at the rate for Executive Schedule ${pay.levelText || `Level ${pay.level}`}, and OPM's ${pay.table || "table"} prints ${arithmetic.baseText || pay.levelRateText} for that level. ${arithmetic.baseText || pay.levelRateText} − ${arithmetic.minusDollarsText || `$${arithmetic.minusDollars}`} = ${arithmetic.resultText || printed} — arithmetic this project performed, printed by no document. The figure is published only while the ${refOffice}'s own figure is.`);
+  } else if (arithmetic) {
     add(` ${pay.statute || "The statute"} sets an Inspector General's basic pay at the rate for Executive Schedule ${pay.levelText || `Level ${pay.level}`} plus ${arithmetic.percent} percent; OPM's ${pay.table || "table"} prints ${arithmetic.baseText || pay.levelRateText} for that level. ${arithmetic.baseText || pay.levelRateText} + ${arithmetic.percent}% = ${arithmetic.resultText || printed} — arithmetic this project performed, printed by no document.`);
     if (identification.establishment) {
       add(` It applies here because 5 U.S.C. 401(1) lists ${identification.establishment} as an establishment whose Inspector General that section covers, and this post sits directly under it.`);
     }
   } else {
-    add(` ${pay.statute || "The statute"} sets the ${pay.office || "post"}'s pay equal to the rate for Executive Schedule ${pay.levelText || `Level ${pay.level}`}; OPM's ${pay.table || "table"} prints ${pay.levelRateText || printed} for that level. The post is not itself on the Schedule — its pay is set by reference to one of the Schedule's tiers.`);
+    if (pay.viaStatute) {
+      add(` ${pay.statute || "The statute"} sets the ${pay.office || "post"}'s pay equal to a rate ${pay.viaStatute} sets at Executive Schedule ${pay.levelText || `Level ${pay.level}`}; OPM's ${pay.table || "table"} prints ${pay.levelRateText || printed} for that level. The post is not itself on the Schedule — its pay reaches one of the Schedule's tiers through two statutes.`);
+    } else {
+      add(` ${pay.statute || "The statute"} sets the ${pay.office || "post"}'s pay equal to the rate for Executive Schedule ${pay.levelText || `Level ${pay.level}`}; OPM's ${pay.table || "table"} prints ${pay.levelRateText || printed} for that level. The post is not itself on the Schedule — its pay is set by reference to one of the Schedule's tiers.`);
+    }
     if (identification.statuteIdentifies) {
       add(` The graph's title for this post is a template; the same section says which office stands under it: "${String(identification.statuteIdentifies).trim()}"`);
     }
@@ -2672,9 +2683,13 @@ function standInNote(standIn) {
     case "schedule":
       note = ` What is shown instead is the Executive Schedule rate: ${block.citation || "the United States Code"} places "${block.statutoryTitle || "this office"}" at level ${block.payLevel || "?"}, and OPM's ${block.table || "salary table"} pays ${printed} for that level. A statutory rate of basic pay, not what the holder receives and not what this unit costs.`;
       break;
-    case "tierReference":
-      note = ` What is shown instead is pay a statute sets by reference: ${block.statute || "a statute"} ties this post to Executive Schedule ${block.levelText || `level ${block.level}`}${block.percent ? ` plus ${block.percent} percent` : ""}, and OPM's table prices that level${block.percent ? "; the result is arithmetic this project performed" : ""}. No document states ${printed} for the post itself, and it is not what this unit costs.`;
+    case "tierReference": {
+      const minus = block.arithmetic && typeof block.arithmetic === "object" && block.arithmetic.operation === "minus_dollars" ? block.arithmetic : null;
+      note = minus
+        ? ` What is shown instead is pay a statute sets by reference: ${block.statute || "a statute"} pays this post ${minus.minusDollarsText || `$${minus.minusDollars}`} less than the ${minus.baseOffice || "officer it names"}, whose pay is tied to Executive Schedule ${block.levelText || `level ${block.level}`}, and OPM's table prices that level; the subtraction is arithmetic this project performed. No document states ${printed} for the post itself, and it is not what this unit costs.`
+        : ` What is shown instead is pay a statute sets by reference: ${block.statute || "a statute"} ties this post${block.viaStatute ? `, through ${block.viaStatute},` : ""} to Executive Schedule ${block.levelText || `level ${block.level}`}${block.percent ? ` plus ${block.percent} percent` : ""}, and OPM's table prices that level${block.percent ? "; the result is arithmetic this project performed" : ""}. No document states ${printed} for the post itself, and it is not what this unit costs.`;
       break;
+    }
     case "derived":
       note = ` What is shown instead is a figure no document states: ${block.statute || "a statutory provision"} sets the pay at ${block.amountScope || "another tier's rate"}, the U.S. Courts' Judicial Compensation table prices that tier, and ${printed} is the join${block.arithmetic && typeof block.arithmetic === "object" ? ", with the statute's percentage applied" : ""}. Not what this unit costs.`;
       break;

@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-10-06T04:14:55Z",
+ "url": "https://www.govinfo.gov/link/uscode/2/4575?link-type=html",
+ "status": 200,
+ "final_url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title2/html/USCODE-2024-title2-chap45-subchapIII-partA-sec4575.htm",
+ "content_type": "text/html",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /link/uscode/2/4575",
+ "bytes": 174343,
+ "sha256": "c675e55f2f76292eb83e9ef814a4988a920461e7a91c79bc63b6211046166ebb",
+ "error": null
+}

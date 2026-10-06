@@ -3893,6 +3893,72 @@ TIER_REFERENCE_ROWS = {
         "The Archivist shall be compensated at the rate provided for level III of the Executive Schedule "
         "under section 5314 of title 5.",
     ),
+    # 2026-10-07, the owner's decision: the CBO's Director, a chain of two
+    # statutes to Level II -- 601(a)(5)(A) pays "the maximum rate of pay in
+    # effect under section 4575(f)", whose sentence is mirrored in
+    # TIER_REFERENCE_VIA.
+    "leg-support-cbo-director-cbo": (
+        "Director, CBO", "Director of the Congressional Budget Office", "2 U.S.C. 601(a)(5)(A)",
+        "cbo_2_usc_601.html", "II",
+        "The Director shall receive compensation at an annual rate of pay that is equal to the maximum rate "
+        "of pay in effect under section 4575(f) of this title .",
+    ),
+}
+TIER_REFERENCE_METHOD_VIA = (
+    "pay_set_through_a_second_statute_by_reference_to_an_executive_schedule_level_joined_to_opm_table"
+)
+TIER_REFERENCE_METHOD_MINUS = (
+    "pay_set_at_a_stated_dollar_amount_less_than_another_officers_rate_set_by_reference_to_an_executive_schedule_level"
+)
+#: A row that reaches its level through a SECOND statute: node id -> (the
+#: middle statute's citation, its fixture, the parts of its sentence the
+#: block must quote joined by " … ", each re-found in the section's operative
+#: text). Mirrors each row's `via` in tier_reference_pay.TIER_REFERENCE_PROVISIONS.
+TIER_REFERENCE_VIA = {
+    "leg-support-cbo-director-cbo": (
+        "2 U.S.C. 4575(f)", "cbo_2_usc_4575_govinfo2024.html", (
+            "(f) General limitation No officer or employee whose compensation is disbursed by the Secretary "
+            "of the Senate shall be paid gross compensation at a rate less than",
+            "or in excess of the annual rate of basic pay in effect for level II of the Executive Schedule "
+            "under section 5313 of title 5, unless expressly authorized by law.",
+        ),
+    ),
+}
+#: A post paid a stated number of dollars LESS than an officer a row above
+#: prices: node id -> (node name the row was written against, office,
+#: citation, fixture, the sentence the section's operative text prints, the
+#: referenced officer's node id, the dollar amount). The base is that
+#: officer's mirrored level; the published graph must carry the officer's own
+#: block at exactly that base. Mirrors each row's `minusDollars`.
+TIER_REFERENCE_MINUS_ROWS = {
+    "leg-support-aoc-inspector-general": (
+        "Inspector General", "Inspector General of the Architect of the Capitol", "2 U.S.C. 1808(c)(3)",
+        "aoc_2_usc_1808_govinfo2024.html",
+        "The Inspector General shall be paid at an annual rate of pay equal to $1,500 less than the annual "
+        "rate of pay of the Architect of the Capitol.",
+        "leg-support-aoc-architect-of-the-capitol", 1500,
+    ),
+    "leg-support-uscp-inspector-general": (
+        "Inspector General", "Inspector General of the United States Capitol Police", "2 U.S.C. 1909(b)(4)",
+        "uscp_2_usc_1909_govinfo2024.html",
+        "The Inspector General shall be paid at an annual rate equal to $1,000 less than the annual rate of "
+        "pay in effect for the Chief of the Capitol Police.",
+        "leg-support-uscp-chief-of-police", 1000,
+    ),
+    "leg-support-gao-inspector-general": (
+        "Inspector General", "Inspector General for the Government Accountability Office", "31 U.S.C. 705(b)(4)",
+        "gao_31_usc_705_govinfo2024.html",
+        "The Inspector General shall be paid at an annual rate of pay equal to $5,000 less than the annual "
+        "rate of pay of the Comptroller General",
+        "leg-support-gao-comptroller-general-of-the-united-states", 5000,
+    ),
+    "leg-support-cbo-deputy-director-cbo": (
+        "Deputy Director, CBO", "Deputy Director of the Congressional Budget Office", "2 U.S.C. 601(a)(5)(B)",
+        "cbo_2_usc_601.html",
+        "The Deputy Director shall receive compensation at an annual rate of pay that is $1,000 less than "
+        "the annual rate of pay received by the Director, as determined under subparagraph (A).",
+        "leg-support-cbo-director-cbo", 1000,
+    ),
 }
 #: Rows priced from 20 U.S.C. 9517(a)'s class sentence ("each Commissioner" of
 #: the National Education Centers) carry 9511(c)(3), the sentence that names
@@ -3997,8 +4063,16 @@ def tier_reference_establishments(operative_401):
     return names
 
 
-def tier_reference_pay_violations(node, pay, today, label, tree_parent_name=None):
+def tier_reference_pay_violations(node, pay, today, label, tree_parent_name=None, node_by_id=None):
     """Everything that must be true of a figure set by reference to a level.
+
+    Since 2026-10-07 two more shapes: a row reaching its level through a
+    second statute (TIER_REFERENCE_VIA, the CBO's Director), and a post paid a
+    stated number of dollars less than an officer a row prices
+    (TIER_REFERENCE_MINUS_ROWS). The second is recomputed from the referenced
+    officer's mirrored level, and `node_by_id` -- the published graph by id --
+    must show that officer's own block at exactly that base; without it the
+    gate cannot confirm the base and says so.
 
     Two shapes, one field. A GAO row is mirrored by node id and must quote
     the sentence 31 U.S.C. 703 prints now, price the level it names at OPM's
@@ -4026,15 +4100,69 @@ def tier_reference_pay_violations(node, pay, today, label, tree_parent_name=None
     node_id = str(node.get("id") or "")
     identification = pay.get("identification") if isinstance(pay.get("identification"), dict) else {}
     row = TIER_REFERENCE_ROWS.get(node_id)
+    minus_row = TIER_REFERENCE_MINUS_ROWS.get(node_id)
     arithmetic = pay.get("arithmetic")
-    if row is not None:
+    minus = None
+    if minus_row is not None:
+        node_name, office, citation, fixture, sentence, ref_id, minus = minus_row
+        ref_row = TIER_REFERENCE_ROWS.get(ref_id)
+        percent = 0
+        if ref_row is None or (len(ref_row) > 6 and int(ref_row[6])):
+            say("subtracts from {!r}, which no mirrored row prices at a level's own rate".format(ref_id))
+            return out
+        ref_name, ref_office, ref_citation, ref_fixture, level, ref_sentence = ref_row[:6]
+        if str(pay.get("method") or "") != TIER_REFERENCE_METHOD_MINUS:
+            say("prices a stated amount less than another officer under method {!r}, not {!r}".format(
+                pay.get("method"), TIER_REFERENCE_METHOD_MINUS))
+        if canonical_key(node.get("name")) != canonical_key(node_name):
+            say("is now called {!r}, not {!r}, the name its row was written against".format(node.get("name"), node_name))
+        if identification.get("kind") != "reviewed_row" or str(identification.get("nodeName") or "") != node_name:
+            say("does not identify itself as the reviewed row for {!r}".format(node_name))
+        if identification.get("statuteIdentifies"):
+            say("quotes an identifying sentence on a row that has none")
+        if str(pay.get("office") or "") != office:
+            say("names office {!r}; the row is {!r}".format(pay.get("office"), office))
+        if "${:,}".format(minus) not in sentence:
+            say("mirrors a sentence that does not print the {} it subtracts".format("${:,}".format(minus)))
+        if not isinstance(arithmetic, dict):
+            say("prices a post {} below the {}'s without publishing the arithmetic".format("${:,}".format(minus), ref_office))
+        referenced = pay.get("referencedOfficer") if isinstance(pay.get("referencedOfficer"), dict) else {}
+        if str(referenced.get("nodeId") or "") != ref_id:
+            say("names {!r} as the officer it is computed from; its row names {!r}".format(referenced.get("nodeId"), ref_id))
+        ref_base = EXECUTIVE_SCHEDULE_RATES.get(level)
+        # The base must be on the published graph: the referenced officer's
+        # own block, at exactly the level's rate. A subtraction whose base was
+        # displaced, renamed or withdrawn is a figure computed from nothing.
+        if node_by_id is None:
+            say("cannot be checked against the {}'s own published block".format(ref_office))
+        else:
+            ref_node = node_by_id.get(ref_id)
+            ref_block = ref_node.get(TIER_REFERENCE_FIELD) if isinstance(ref_node, dict) else None
+            if not isinstance(ref_block, dict):
+                say("is computed from the {}'s figure, and {!r} publishes none".format(ref_office, ref_id))
+            elif ref_block.get("amount") != ref_base or ref_block.get("arithmetic") is not None:
+                say("is computed from {!r}, which publishes {!r}, not {}'s rate".format(
+                    ref_id, ref_block.get("amount"), level))
+        operative_sources = {fixture, ref_fixture}
+        via_ref = TIER_REFERENCE_VIA.get(ref_id)
+        if via_ref is not None:
+            operative_sources.add(via_ref[1])
+        expected_documents = len(operative_sources) + 1
+        quoted = " ".join(str(d.get("quote") or "") for d in (pay.get("documents") or []) if isinstance(d, dict))
+        if ref_sentence not in quoted:
+            say("does not quote the sentence of {} that sets the {}'s pay it is computed from".format(ref_citation, ref_office))
+        if via_ref is not None and " … ".join(via_ref[2]) not in quoted:
+            say("does not quote {}, the second statute the {}'s level rests on".format(via_ref[0], ref_office))
+    elif row is not None:
         # A seventh element is the percentage the row's statute adds to the
         # level's rate (42 U.S.C. 12651c(b): "plus 3 percent", the Inspector
         # General Act's shape on a reviewed row); absent, the statute states
         # the level's rate outright and the block may carry no arithmetic.
         node_name, office, citation, fixture, level, sentence = row[:6]
         percent = int(row[6]) if len(row) > 6 else 0
-        expected_method = TIER_REFERENCE_METHOD_PERCENT if percent else TIER_REFERENCE_METHOD
+        via = TIER_REFERENCE_VIA.get(node_id)
+        expected_method = (TIER_REFERENCE_METHOD_PERCENT if percent
+                           else TIER_REFERENCE_METHOD_VIA if via is not None else TIER_REFERENCE_METHOD)
         if str(pay.get("method") or "") != expected_method:
             say("prices a reviewed row under method {!r}, not {!r}".format(pay.get("method"), expected_method))
         if canonical_key(node.get("name")) != canonical_key(node_name):
@@ -4073,6 +4201,22 @@ def tier_reference_pay_violations(node, pay, today, label, tree_parent_name=None
             if len(composing) != 1 or str(composing[0].get("quote") or "") != comp_sentence:
                 say("prices a Commissioner from 9517(a)'s class sentence without quoting {} as its third document".format(comp_citation))
             expected_documents = 3
+        if via is not None:
+            # A chain: the middle statute's sentence must ride as its own
+            # document, quoted as the committed section prints it now.
+            via_citation, via_fixture, via_parts = via
+            via_operative = uscode_operative_text(US_CODE_BASIS_FIXTURE_DIR / via_fixture)
+            if any(part not in via_operative for part in via_parts):
+                say("rests on a sentence {} no longer prints in its operative text".format(via_citation))
+            middle = [d for d in (pay.get("documents") or []) if isinstance(d, dict)
+                      and str(d.get("citation") or "") == via_citation]
+            if len(middle) != 1 or str(middle[0].get("quote") or "") != " … ".join(via_parts):
+                say("reaches its level through {} without quoting it as a document".format(via_citation))
+            if str(pay.get("viaStatute") or "") != via_citation:
+                say("names {!r} as its second statute; the row's is {!r}".format(pay.get("viaStatute"), via_citation))
+            expected_documents = 3
+        elif pay.get("viaStatute"):
+            say("names a second statute on a row that reaches its level directly")
     else:
         citation, fixture, level, percent, sentence, est_citation, est_fixture, definition = TIER_REFERENCE_IG_RULE
         if canonical_key(node.get("name")) != canonical_key(TIER_REFERENCE_IG_TITLE):
@@ -4116,15 +4260,24 @@ def tier_reference_pay_violations(node, pay, today, label, tree_parent_name=None
     if pay.get("percent") != percent:
         say("applies {!r} percent; {} states {!r}".format(pay.get("percent"), citation, percent))
     base = EXECUTIVE_SCHEDULE_RATES.get(level)
-    expected_amount = round(base * (100 + percent) / 100.0, 2) if base is not None else None
+    if base is None:
+        expected_amount = None
+    elif minus is not None:
+        expected_amount = round(base - minus, 2)
+    else:
+        expected_amount = round(base * (100 + percent) / 100.0, 2)
     amount = pay.get("amount")
     if base is None:
         say("prices level {!r}, which the mirrored table does not have".format(level))
     elif isinstance(amount, bool) or not isinstance(amount, (int, float)):
         say("publishes {!r} as a rate of basic pay".format(amount))
     elif abs(float(amount) - expected_amount) > 0.005:
-        say("publishes {:,.2f}; level {} at {:,.0f} plus {} percent is {:,.2f}".format(
-            float(amount), level, base, percent, expected_amount))
+        if minus is not None:
+            say("publishes {:,.2f}; level {} at {:,.0f} less ${:,} is {:,.2f}".format(
+                float(amount), level, base, minus, expected_amount))
+        else:
+            say("publishes {:,.2f}; level {} at {:,.0f} plus {} percent is {:,.2f}".format(
+                float(amount), level, base, percent, expected_amount))
     if base is not None:
         if pay.get("levelAmount") != base or str(pay.get("levelRateText") or "") != "${:,.0f}".format(base):
             say("states the level's rate as {!r}; the table prints {!r}".format(pay.get("levelRateText"), "${:,.0f}".format(base)))
@@ -4134,7 +4287,25 @@ def tier_reference_pay_violations(node, pay, today, label, tree_parent_name=None
         derivation = str(pay.get("derivation") or "")
         if sentence not in derivation or "${:,.0f}".format(base) not in derivation:
             say("publishes a derivation that does not carry both the statute's sentence and the table's figure")
-        if isinstance(arithmetic, dict):
+        if isinstance(arithmetic, dict) and minus is not None:
+            if arithmetic.get("operation") != "minus_dollars":
+                say("publishes arithmetic that is not 'minus_dollars'")
+            if (isinstance(arithmetic.get("minusDollars"), bool) or arithmetic.get("minusDollars") != minus
+                    or str(arithmetic.get("minusDollarsText") or "") != "${:,}".format(minus)):
+                say("subtracts {!r}; {} states {}".format(arithmetic.get("minusDollars"), citation, "${:,}".format(minus)))
+            if arithmetic.get("percent") not in (None, 0):
+                say("publishes a percentage on a subtraction")
+            if arithmetic.get("baseAmount") != base or str(arithmetic.get("baseText") or "") != "${:,.0f}".format(base):
+                say("computes from a base that is not the referenced officer's level {} rate".format(level))
+            if str(arithmetic.get("baseNodeId") or "") != minus_row[5]:
+                say("computes from {!r}'s figure; its row names {!r}".format(arithmetic.get("baseNodeId"), minus_row[5]))
+            if arithmetic.get("result") != expected_amount or arithmetic.get("result") != amount:
+                say("publishes a computed result that is not the base less the statute's amount, or not the amount published")
+            if not str(arithmetic.get("note") or "").strip():
+                say("publishes arithmetic without a sentence saying no document prints the result")
+            if "${:,}".format(minus) not in derivation:
+                say("publishes a derivation that does not carry the amount the statute subtracts")
+        elif isinstance(arithmetic, dict):
             if arithmetic.get("operation") != "plus_percent" or arithmetic.get("percent") != percent:
                 say("publishes arithmetic that is not 'plus {} percent'".format(percent))
             if arithmetic.get("baseAmount") != base or str(arithmetic.get("baseText") or "") != "${:,.0f}".format(base):
@@ -4171,6 +4342,11 @@ def tier_reference_pay_violations(node, pay, today, label, tree_parent_name=None
             say("names a supporting document without saying what it supplies")
         if document.get("statesTheFigure"):
             say("claims a supporting document states the figure; none of them does")
+    if len(set(urls)) != len(urls):
+        # One document is one entry: two sentences of one section (the CBO
+        # Deputy's and the Director's) ride in one entry, so the entry count
+        # is the count of distinct documents the percentage is computed from.
+        say("lists one document more than once")
     if urls and not any(is_us_code_document_url(url) for url in urls):
         say("publishes a tier-reference figure with no statute behind it")
     if urls and TIER_REFERENCE_TABLE_URL not in urls:
@@ -7331,7 +7507,7 @@ def main(argv):
         if tier_reference_pay is not None:
             _reference_parent = tree_parents.get(str(node.get("id") or ""))
             bad_tier_reference_pay.extend(tier_reference_pay_violations(
-                node, tier_reference_pay, today, label, name_by_id.get(_reference_parent)))
+                node, tier_reference_pay, today, label, name_by_id.get(_reference_parent), node_by_id=by_id))
         # Military basic pay: Schedule 8's monthly rate for the grade a statute
         # fixes (reviewed rows by node id) or for the post its footnote names,
         # times twelve, re-parsed from the committed note by this file's own
@@ -8594,10 +8770,16 @@ def main(argv):
                   len(DERIVED_PAY_PROVISIONS)))
     reference_paid = [n for n in nodes if isinstance(n.get("positionTierReferencePay"), dict)]
     reference_igs = [n for n in reference_paid if (n["positionTierReferencePay"].get("identification") or {}).get("kind") != "reviewed_row"]
+    reference_minus = [n for n in reference_paid
+                       if (n["positionTierReferencePay"].get("arithmetic") or {}).get("operation") == "minus_dollars"]
+    reference_via = [n for n in reference_paid if n["positionTierReferencePay"].get("viaStatute")]
     print("  tier-reference pay   : {:,} positions priced from a statute that sets pay by reference to an Executive Schedule "
-          "level ({:,} reviewed rows mirrored by id — the GAO's, the GPO's and the IES's officers, the FCA's Chairman, the Librarian, and the USAGM's, EAC's and FEC's stamped heads; {:,} Inspectors General of an establishment 5 U.S.C. 401(1) lists, each "
+          "level ({:,} reviewed rows mirrored by id — the GAO's, the GPO's and the IES's officers, the FCA's Chairman, the Librarian, and the USAGM's, EAC's and FEC's stamped heads; "
+          "{:,} of them through a second statute and {:,} a stated number of dollars below an officer priced here, arithmetic no document prints; "
+          "{:,} Inspectors General of an establishment 5 U.S.C. 401(1) lists, each "
           "Level III plus 3 percent, arithmetic no document prints); 0 documents state any figure".format(
-              len(reference_paid), len(reference_paid) - len(reference_igs), len(reference_igs)))
+              len(reference_paid), len(reference_paid) - len(reference_igs), len(reference_via), len(reference_minus),
+              len(reference_igs)))
     military_paid = [n for n in nodes if isinstance(n.get("positionMilitaryPay"), dict)]
     military_by_grade = [n for n in military_paid
                          if (n["positionMilitaryPay"].get("identification") or {}).get("kind") == MILITARY_PAY_KIND_GRADE]

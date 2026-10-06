@@ -271,10 +271,21 @@ SCALE_PRINTED_SOURCE_TYPES = {
 #: record names the factor (`arithmetic.factor`, always 12), the monthly figure
 #: must carry its mark in the evidence, and the result must equal base x 12 to
 #: the cent; no percentage is read for this operation.
+#: A fourth operation since 2026-10-07, granted to the tier-reference source
+#: type alone (`MINUS_DOLLARS_SOURCE_TYPES`): a statute that pays a post a
+#: stated number of dollars LESS than another officer's rate -- 2 U.S.C.
+#: 1808(c)(3), "$1,500 less than the annual rate of pay of the Architect of the
+#: Capitol". The base is that officer's own figure, which OPM's table prints
+#: with its mark ("Level II $228,000"); the subtracted amount is the statute's
+#: (`arithmetic.minusDollars`, a whole positive number of dollars) and must be
+#: printed WITH its mark in the record's own quote; the result must equal base
+#: minus that amount to the cent, stay positive, and be printed with a mark
+#: nowhere in the evidence. No percentage is read for this operation.
 COMPUTED_FROM_MARKED_FIGURE_SOURCE_TYPES = {
     "statutory_tier_reference_pay", "statutory_parity_derived_pay", "military_basic_pay_schedule",
 }
-COMPUTED_OPERATIONS = ("plus_percent", "percent_of", "monthly_times_12")
+COMPUTED_OPERATIONS = ("plus_percent", "percent_of", "monthly_times_12", "minus_dollars")
+MINUS_DOLLARS_SOURCE_TYPES = {"statutory_tier_reference_pay"}
 MONTHLY_TIMES_12_FACTOR = 12
 
 #: A third way a source can state its scale, narrower still, and granted to
@@ -483,8 +494,9 @@ def _computed_from_marked_figure(
     Returns the base's printed text, or "" when the evidence does not show
     this. Four things, all required: an `arithmetic` block naming the
     operation (`plus_percent`: base plus the percentage; `percent_of`: the
-    percentage of the base), the base's printed digits and a whole
-    percentage; the base printed WITH its mark in the evidence; the record's
+    percentage of the base; `monthly_times_12`; `minus_dollars`: base less a
+    dollar amount the record's own quote prints with its mark), the base's
+    printed digits and a whole percentage where one is read; the base printed WITH its mark in the evidence; the record's
     own figure NOT printed with a mark in the evidence (then the stronger rule
     would have matched); and the record's own figure equal to the computation
     to the cent, so a record cannot declare one sum and publish another.
@@ -507,6 +519,21 @@ def _computed_from_marked_figure(
             return ""
         if percent not in (None, 0):
             return ""
+    elif operation == "minus_dollars":
+        # A stated number of dollars less than another officer's rate. The
+        # amount is the statute's and must sit in the record's own quote with
+        # its mark attached ("$1,500 less than"), so a record cannot subtract
+        # a figure no sentence it quotes prints.
+        if source_type not in MINUS_DOLLARS_SOURCE_TYPES:
+            return ""
+        minus = arithmetic.get("minusDollars")
+        if isinstance(minus, bool) or not isinstance(minus, int) or minus <= 0:
+            return ""
+        if percent not in (None, 0):
+            return ""
+        minus_text = "{:,}".format(minus)
+        if not re.search(rf"\$\s*{re.escape(minus_text)}(?![\d,]|\.\d)", _text(record.get("quote"))):
+            return ""
     elif isinstance(percent, bool) or not isinstance(percent, int) or not (0 < percent <= 100):
         return ""
     base_match = re.search(rf"\$\s*{re.escape(base_raw)}(?![\d,]|\.\d)", evidence)
@@ -520,6 +547,10 @@ def _computed_from_marked_figure(
     base = float(base_raw.replace(",", ""))
     if operation == "monthly_times_12":
         expected = round(base * MONTHLY_TIMES_12_FACTOR, 2)
+    elif operation == "minus_dollars":
+        expected = round(base - arithmetic["minusDollars"], 2)
+        if expected <= 0:
+            return ""
     elif operation == "plus_percent":
         expected = round(base * (100 + percent) / 100.0, 2)
     else:

@@ -342,6 +342,94 @@ class ColumnHeadMarkTestCase(unittest.TestCase):
             ), ORG)
 
 
+class MinusDollarsTestCase(unittest.TestCase):
+    """The computed-figure rule's fourth operation (2026-10-07): a statute
+    pays a post a stated number of dollars LESS than another officer -- 2
+    U.S.C. 1808(c)(3), "$1,500 less than the annual rate of pay of the
+    Architect of the Capitol" -- whose own figure OPM's table prints with its
+    mark. Both directions: the honest record files, and each way of dressing
+    a different figure as the subtraction is refused."""
+
+    def _ig(self, **over):
+        record = {
+            "nodeId": "leg-support-aoc-inspector-general",
+            "amount": 226500.0, "amountRaw": "226,500", "units": "usd",
+            "normalizedMultiplier": 1,
+            "unitsEvidence": "Level II $228,000",
+            "arithmetic": {
+                "operation": "minus_dollars", "baseAmount": 228000.0, "baseAmountRaw": "228,000",
+                "baseText": "$228,000", "minusDollars": 1500, "minusDollarsText": "$1,500",
+                "result": 226500.0,
+            },
+            "costBasis": "basic_pay", "fiscalYear": 2026,
+            "periodCoverage": "annual_rate", "periodAsOf": "2026-01-01",
+            "amountScope": "$1,500 less than the Architect of the Capitol's rate (Level II)",
+            "scopeMatch": "proxy", "rollupRole": "line",
+            "sourceType": "statutory_tier_reference_pay",
+            "sourceUrl": "https://www.govinfo.gov/link/uscode/2/1808?link-type=html",
+            "documentSha256": "c" * 64, "retrievedAt": "2026-10-05T00:00:00Z",
+            "locator": {"section": "2 U.S.C. 1808(c)(3)"},
+            "quote": (
+                "2 U.S.C. 1808(c)(3): “The Inspector General shall be paid at an annual rate of pay equal to "
+                "$1,500 less than the annual rate of pay of the Architect of the Capitol.” · Level II $228,000 · "
+                "$228,000 − $1,500 = $226,500"
+            ),
+            "financialEvidenceStatus": "partial",
+        }
+        record.update(over)
+        return record
+
+    def _ig_post(self):
+        return {"id": "leg-support-aoc-inspector-general", "name": "Inspector General", "type": "Position"}
+
+    def test_the_computed_result_files_under_the_computed_kind(self):
+        out = fe.validate_record(self._ig(), self._ig_post())
+        self.assertEqual(out["unitsEvidenceKind"], "currency_mark_on_the_figure_the_record_is_computed_from")
+        self.assertEqual(fe.classify(out), "partial")
+        self.assertIn("minus_dollars", fe.COMPUTED_OPERATIONS)
+        self.assertEqual({"statutory_tier_reference_pay"}, fe.MINUS_DOLLARS_SOURCE_TYPES)
+
+    def test_a_result_off_by_a_dollar_is_refused(self):
+        with self.assertRaises(fe.Rejected):
+            fe.validate_record(self._ig(
+                amount=226501.0, amountRaw="226,501",
+                quote=self._ig()["quote"].replace("226,500", "226,501"),
+            ), self._ig_post())
+
+    def test_a_figure_printed_with_a_mark_is_not_a_computation(self):
+        # Printed with its mark in the evidence, the figure would be the
+        # document's own; the stronger rule takes it and the arithmetic is
+        # not what files it -- and a record claiming the computation for a
+        # printed figure is not what this rule accepts.
+        record = self._ig(unitsEvidence="Level II $228,000; $226,500")
+        self.assertEqual("", fe._computed_from_marked_figure(
+            record, record["unitsEvidence"], record["amountRaw"], record["sourceType"], "usd"))
+        out = fe.validate_record(record, self._ig_post())
+        self.assertEqual(out["unitsEvidenceKind"], "currency_mark_on_the_printed_figure")
+
+    def test_an_amount_the_quote_does_not_print_is_refused(self):
+        # The statute says $1,500; a record subtracting $2,500 and publishing
+        # $225,500 has no sentence printing what it subtracted.
+        with self.assertRaises(fe.Rejected):
+            fe.validate_record(self._ig(
+                amount=225500.0, amountRaw="225,500",
+                arithmetic={**self._ig()["arithmetic"], "minusDollars": 2500, "result": 225500.0},
+                quote=self._ig()["quote"].replace("= $226,500", "= $225,500"),
+            ), self._ig_post())
+
+    def test_a_base_the_evidence_does_not_print_with_its_mark_is_refused(self):
+        with self.assertRaises(fe.Rejected):
+            fe.validate_record(self._ig(unitsEvidence="Level II 228,000"), self._ig_post())
+
+    def test_a_percentage_on_a_subtraction_is_refused(self):
+        with self.assertRaises(fe.Rejected):
+            fe.validate_record(self._ig(arithmetic={**self._ig()["arithmetic"], "percent": 3}), self._ig_post())
+
+    def test_the_operation_is_granted_to_the_tier_reference_source_only(self):
+        with self.assertRaises(fe.Rejected):
+            fe.validate_record(self._ig(sourceType="statutory_parity_derived_pay"), self._ig_post())
+
+
 class SourceAndBasisTestCase(unittest.TestCase):
     def test_a_source_cannot_report_a_basis_it_does_not_produce(self):
         with self.assertRaises(fe.Rejected):

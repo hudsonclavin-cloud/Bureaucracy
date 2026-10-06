@@ -115,6 +115,50 @@ BOTH print "Archivist of the United States", which is why
 than adjudicate an amendment; this row rests on 2103(b) alone and settles
 nothing about the Schedule's double listing.
 
+## A chain of two statutes, and a stated number of dollars less (since 2026-10-07)
+
+The owner's decision on the five leads `CURATION.md` §19.20 recorded from the
+twelfth batch's congressional-staff cluster. Two shapes, both read from the
+committed sections' operative text:
+
+- **A chain.** 2 U.S.C. 601(a)(5)(A) pays the Director of the Congressional
+  Budget Office "the maximum rate of pay in effect under section 4575(f)", and
+  2 U.S.C. 4575(f) -- the Senate's general limitation -- sets that maximum at
+  "the annual rate of basic pay in effect for level II of the Executive
+  Schedule". So a row may carry `via`, the middle statute, the shape
+  `derived_pay.py` publishes for the Federal Judicial Center's Director: each
+  sentence of the chain is re-found in its section's operative text on every
+  run, the record names three documents (601, 4575, OPM's table), none of
+  which states the figure, and it publishes under `PAY_METHOD_VIA`.
+- **Minus a stated number of dollars.** Four posts are paid a stated amount
+  LESS than another officer whose own pay this module already sets by
+  reference to a level: the Architect of the Capitol's Inspector General at
+  "$1,500 less than the annual rate of pay of the Architect of the Capitol"
+  (2 U.S.C. 1808(c)(3)), the Capitol Police's at "$1,000 less than the annual
+  rate of pay in effect for the Chief of the Capitol Police" (2 U.S.C.
+  1909(b)(4)), the GAO's at "$5,000 less than the annual rate of pay of the
+  Comptroller General" (31 U.S.C. 705(b)(4)), and the CBO's Deputy Director at
+  "$1,000 less than the annual rate of pay received by the Director"
+  (2 U.S.C. 601(a)(5)(B)). A row carries `minusDollars` with the referenced
+  officer's node id, and the dollar amount must be printed in the row's own
+  quoted sentence. The record carries the arithmetic in the open (operation
+  `minus_dollars`), lists every document the base rests on beside its own
+  section -- one entry per distinct document, so the CBO Deputy's two
+  sentences of 601 are one document, and every such record rests on three --
+  and `financial_evidence` accepts it under the computed-figure rule's fourth
+  operation, granted to this source type alone.
+
+**The base cannot outlive the officer it is read from.** The figure is
+computed from the referenced officer's OWN record in the same derivation, and
+is refused when that record is (`referenced_officer_not_priced_here`); and
+`apply_pay_evidence` stamps it only after the referenced node carries its own
+block at exactly that base on the build being published. A referenced
+officer displaced by another pay source, renamed, or withdrawn takes the
+subtraction with it, and the gate refuses a minus block whose referenced
+officer's published block is absent or at another figure. Computing the base
+afresh from the referenced row's level would have kept a $226,500 on the
+Architect's Inspector General with nothing on the Architect.
+
 ## Every rule the other pay modules keep
 
 `scopeMatch: proxy` and `partial` on every record: the statute names an
@@ -138,7 +182,9 @@ from data_pipeline.verification.derived_pay import (
     STRENGTH_SCALE,
     Unreadable,
     document_strength_percent,
+    joined_quote,
     load_section,
+    quote_parts,
     statute_publisher,
 )
 
@@ -155,6 +201,16 @@ PAY_METHOD = "pay_set_by_reference_to_an_executive_schedule_level_joined_to_opm_
 #: The same, plus a percentage the statute states: a figure no document prints.
 PAY_METHOD_PERCENT = (
     "pay_set_by_reference_to_an_executive_schedule_level_plus_a_statutory_percentage_joined_to_opm_table"
+)
+#: A statute sets the post's pay equal to a rate a SECOND statute sets at a
+#: level (2 U.S.C. 601(a)(5)(A) through 4575(f)); the table prices the level.
+PAY_METHOD_VIA = (
+    "pay_set_through_a_second_statute_by_reference_to_an_executive_schedule_level_joined_to_opm_table"
+)
+#: A statute sets the post's pay a stated number of dollars below another
+#: officer's, whose own pay this module sets by reference to a level.
+PAY_METHOD_MINUS = (
+    "pay_set_at_a_stated_dollar_amount_less_than_another_officers_rate_set_by_reference_to_an_executive_schedule_level"
 )
 
 #: The publisher and edition a statute document names come from its URL
@@ -447,8 +503,8 @@ TIER_REFERENCE_PROVISIONS: dict[str, dict[str, Any]] = {
     # --- more officers whose own section sets the rate at a level, read from
     # --- govinfo's 2024 edition. The "$X less than" officers beside them (the
     # --- AOC's, the Capitol Police's and the GAO's Inspectors General, the
-    # --- CBO's Deputy Director) are a subtraction on a join this module does
-    # --- not yet publish; CURATION.md §19.20 records them as the next decision.
+    # --- CBO's Deputy Director) are priced since 2026-10-07 by the
+    # --- `minusDollars` rows below, on the owner's decision.
     "leg-support-aoc-architect-of-the-capitol": {
         "nodeName": "Architect of the Capitol",
         "office": "Architect of the Capitol",
@@ -574,6 +630,96 @@ TIER_REFERENCE_PROVISIONS: dict[str, dict[str, Any]] = {
             "The Archivist shall be compensated at the rate provided for level III of the Executive Schedule "
             "under section 5314 of title 5."
         ),
+    },
+    # --- 2026-10-07, the owner's decision on CURATION.md §19.20's
+    # --- congressional-staff leads. The CBO's Director is a chain of two
+    # --- statutes to Level II: 601(a)(5)(A) pays "the maximum rate of pay in
+    # --- effect under section 4575(f)", and 4575(f), the Senate's general
+    # --- limitation, sets that maximum at Level II's rate. 601 is the OLRC's
+    # --- prelim page (committed 2026-09-28); 4575 is govinfo's 2024 edition.
+    "leg-support-cbo-director-cbo": {
+        "nodeName": "Director, CBO",
+        "office": "Director of the Congressional Budget Office",
+        "citation": "2 U.S.C. 601(a)(5)(A)",
+        "fixture": "cbo_2_usc_601.html",
+        "subsection": "(a)(5)(A)",
+        "level": "II",
+        "percent": 0,
+        "quote": (
+            "The Director shall receive compensation at an annual rate of pay that is equal to the maximum rate "
+            "of pay in effect under section 4575(f) of this title ."
+        ),
+        "statuteRole": "sets this post's basic pay equal to the maximum rate of pay 2 U.S.C. 4575(f) sets",
+        "via": {
+            "citation": "2 U.S.C. 4575(f)",
+            "fixture": "cbo_2_usc_4575_govinfo2024.html",
+            "role": "sets that maximum rate of pay at the rate for Executive Schedule Level II",
+            # Two parts of one sentence: the statute prints a minimum between
+            # them ("$3,293") followed by a footnote mark, which this record
+            # neither needs nor publishes.
+            "quote": (
+                "(f) General limitation No officer or employee whose compensation is disbursed by the Secretary "
+                "of the Senate shall be paid gross compensation at a rate less than",
+                "or in excess of the annual rate of basic pay in effect for level II of the Executive Schedule "
+                "under section 5313 of title 5, unless expressly authorized by law.",
+            ),
+        },
+    },
+    # --- Four posts paid a stated number of dollars LESS than an officer this
+    # --- table already prices. Each row names that officer by node id; the
+    # --- dollar amount must be printed in the row's own sentence, and the base
+    # --- is the referenced officer's own record (see the module docstring).
+    "leg-support-aoc-inspector-general": {
+        "nodeName": "Inspector General",
+        "office": "Inspector General of the Architect of the Capitol",
+        "citation": "2 U.S.C. 1808(c)(3)",
+        "fixture": "aoc_2_usc_1808_govinfo2024.html",
+        "subsection": "(c)(3) Compensation",
+        "percent": 0,
+        "quote": (
+            "The Inspector General shall be paid at an annual rate of pay equal to $1,500 less than the annual "
+            "rate of pay of the Architect of the Capitol."
+        ),
+        "minusDollars": {"amount": 1500, "referencedNodeId": "leg-support-aoc-architect-of-the-capitol"},
+    },
+    "leg-support-uscp-inspector-general": {
+        "nodeName": "Inspector General",
+        "office": "Inspector General of the United States Capitol Police",
+        "citation": "2 U.S.C. 1909(b)(4)",
+        "fixture": "uscp_2_usc_1909_govinfo2024.html",
+        "subsection": "(b)(4) Salary",
+        "percent": 0,
+        "quote": (
+            "The Inspector General shall be paid at an annual rate equal to $1,000 less than the annual rate of "
+            "pay in effect for the Chief of the Capitol Police."
+        ),
+        "minusDollars": {"amount": 1000, "referencedNodeId": "leg-support-uscp-chief-of-police"},
+    },
+    "leg-support-gao-inspector-general": {
+        "nodeName": "Inspector General",
+        "office": "Inspector General for the Government Accountability Office",
+        "citation": "31 U.S.C. 705(b)(4)",
+        "fixture": "gao_31_usc_705_govinfo2024.html",
+        "subsection": "(b)(4)",
+        "percent": 0,
+        "quote": (
+            "The Inspector General shall be paid at an annual rate of pay equal to $5,000 less than the annual "
+            "rate of pay of the Comptroller General"
+        ),
+        "minusDollars": {"amount": 5000, "referencedNodeId": "leg-support-gao-comptroller-general-of-the-united-states"},
+    },
+    "leg-support-cbo-deputy-director-cbo": {
+        "nodeName": "Deputy Director, CBO",
+        "office": "Deputy Director of the Congressional Budget Office",
+        "citation": "2 U.S.C. 601(a)(5)(B)",
+        "fixture": "cbo_2_usc_601.html",
+        "subsection": "(a)(5)(B)",
+        "percent": 0,
+        "quote": (
+            "The Deputy Director shall receive compensation at an annual rate of pay that is $1,000 less than "
+            "the annual rate of pay received by the Director, as determined under subparagraph (A)."
+        ),
+        "minusDollars": {"amount": 1000, "referencedNodeId": "leg-support-cbo-director-cbo"},
     },
 }
 
@@ -740,27 +886,37 @@ def build_records(
 
     # --- the reviewed rows: the GAO's officers, the GPO's, the IES's ---------
     gao_sections: dict[str, dict[str, Any]] = {}
-    for node_id, row in sorted(TIER_REFERENCE_PROVISIONS.items()):
-        sec = gao_sections.get(row["fixture"])
+
+    def cached(fixture: str) -> dict[str, Any]:
+        sec = gao_sections.get(fixture)
         if sec is None:
-            sec = section(row["fixture"])
-            gao_sections[row["fixture"]] = sec
+            sec = section(fixture)
+            gao_sections[fixture] = sec
+        return sec
+
+    def row_refusal(node_id: str, row: Mapping[str, Any], sec: Mapping[str, Any]) -> str | None:
+        """The checks every reviewed row makes before it is priced."""
         if row["quote"] not in sec["operative"]:
             where = "only in the publisher's notes" if row["quote"] in sec["whole"] else "nowhere on the page"
-            refusals[node_id] = f"{row['citation']} no longer carries the quoted sentence ({where})"
-            continue
+            return f"{row['citation']} no longer carries the quoted sentence ({where})"
         node = node_map.get(node_id)
         if node is None:
-            refusals[node_id] = "node not in the graph"
-            continue
+            return "node not in the graph"
         if not is_post_node(node):
-            refusals[node_id] = "not a position"
-            continue
+            return "not a position"
         if canonical_name_key(node.get("name")) != canonical_name_key(row["nodeName"]):
-            refusals[node_id] = f"renamed since the row was written (row: {row['nodeName']!r}, node: {node.get('name')!r})"
-            continue
+            return f"renamed since the row was written (row: {row['nodeName']!r}, node: {node.get('name')!r})"
         if STATED_MULTIPLICITY.search(str(node.get("name") or "")):
-            refusals[node_id] = "stands for several posts; a single office's rate is not each holder's"
+            return "stands for several posts; a single office's rate is not each holder's"
+        return None
+
+    for node_id, row in sorted(TIER_REFERENCE_PROVISIONS.items()):
+        if row.get("minusDollars"):
+            continue  # priced below, once every row it may reference is
+        sec = cached(row["fixture"])
+        refusal = row_refusal(node_id, row, sec)
+        if refusal:
+            refusals[node_id] = refusal
             continue
         level_row = levels.get(row["level"])
         if level_row is None:
@@ -787,12 +943,55 @@ def build_records(
                 refusals[node_id] = f"{composition['citation']} no longer carries the composing sentence ({where})"
                 continue
             extra_documents.append(_statute_document(comp_sec, composition["citation"], composition["quote"], composition["role"]))
+        via = row.get("via")
+        via_document: dict[str, Any] | None = None
+        if via:
+            # A chain: every sentence of the middle statute is re-found in its
+            # own operative text, the way `derived_pay` reads a `via` row.
+            via_sec = cached(via["fixture"])
+            missing = [part for part in quote_parts(via["quote"]) if part not in via_sec["operative"]]
+            if missing:
+                where = "only in the publisher's notes" if missing[0] in via_sec["whole"] else "nowhere on the page"
+                refusals[node_id] = f"{via['citation']} no longer carries the quoted sentence ({where})"
+                continue
+            via_document = _statute_document(via_sec, via["citation"], joined_quote(via["quote"]), via["role"])
         records[node_id] = _record(
             node_id, row["office"], row["citation"], row["subsection"], row["quote"], row["level"],
             int(row["percent"]), sec, level_row, table, fiscal_year,
             table_url=table_url, table_sha256=table_sha256, table_fetched_at=table_fetched_at,
             extra_documents=extra_documents, identification=identification,
+            via=via, via_document=via_document, statute_role=row.get("statuteRole"),
         )
+
+    # --- a stated number of dollars less than an officer priced above --------
+    for node_id, row in sorted(TIER_REFERENCE_PROVISIONS.items()):
+        minus = row.get("minusDollars")
+        if not minus:
+            continue
+        sec = cached(row["fixture"])
+        refusal = row_refusal(node_id, row, sec)
+        if refusal:
+            refusals[node_id] = refusal
+            continue
+        dollars = int(minus["amount"])
+        dollars_text = "${:,}".format(dollars)
+        if dollars_text not in row["quote"]:
+            refusals[node_id] = f"{row['citation']}'s quoted sentence does not print the {dollars_text} the row subtracts"
+            continue
+        ref_id = str(minus["referencedNodeId"])
+        ref_record = records.get(ref_id)
+        if ref_record is None:
+            # The base is the referenced officer's own figure, derived here; a
+            # subtraction with nothing to subtract from is not published.
+            refusals[node_id] = (
+                f"referenced_officer_not_priced_here: {ref_id} carries no record of this module "
+                f"({refusals.get(ref_id, 'no row')}), so there is no base to subtract {dollars_text} from"
+            )
+            continue
+        if ref_record.get("arithmetic") is not None:
+            refusals[node_id] = f"{ref_id}'s own figure is arithmetic; a subtraction is taken only from a level's printed rate"
+            continue
+        records[node_id] = _minus_record(node_id, row, sec, ref_record, dollars, fiscal_year)
 
     # --- the Inspectors General ----------------------------------------------
     rule = INSPECTOR_GENERAL_RULE
@@ -815,6 +1014,11 @@ def build_records(
         if canonical_name_key(node.get("name")) != ig_key or not is_post_node(node):
             continue
         ig_considered += 1
+        if node_id in TIER_REFERENCE_PROVISIONS:
+            # The legislative branch's Inspectors General are not 401(1)'s;
+            # their own sections price three of them (the `minusDollars`
+            # rows), and a row's outcome is reported above, not here.
+            continue
         if not establishments or level_row is None:
             continue
         if STATED_MULTIPLICITY.search(str(node.get("name") or "")):
@@ -867,6 +1071,8 @@ def build_records(
         "priced": len(records),
         "pricedByReviewedRow": sum(1 for r in records.values() if r["identification"]["kind"] == "reviewed_row"),
         "pricedInspectorsGeneral": sum(1 for r in records.values() if r["identification"]["kind"] != "reviewed_row"),
+        "pricedThroughASecondStatute": sum(1 for r in records.values() if r.get("viaStatute")),
+        "pricedAtAStatedAmountLess": sum(1 for r in records.values() if _is_minus(r)),
         "documentsStatingTheFigure": 0,
         "strengthScale": STRENGTH_SCALE,
         "refused": dict(sorted(refusals.items())),
@@ -911,7 +1117,11 @@ def _record(
     section: Mapping[str, Any], level_row: Mapping[str, Any], table: Mapping[str, Any], fiscal_year: int,
     *, table_url: str, table_sha256: str, table_fetched_at: str,
     extra_documents: list[dict[str, Any]], identification: dict[str, Any],
+    via: Mapping[str, Any] | None = None, via_document: dict[str, Any] | None = None,
+    statute_role: str | None = None,
 ) -> dict[str, Any]:
+    if via and percent:
+        raise Unreadable(f"{node_id}: a chain row that also adds a percentage is not a shape this module publishes")
     base = float(level_row["amount"])
     amount = _computed_amount(base, percent) if percent else base
     amount_raw = "{:,.0f}".format(amount) if float(amount).is_integer() else "{:,.2f}".format(amount)
@@ -942,15 +1152,18 @@ def _record(
     else:
         arithmetic = None
         amount_scope = level_text
+        via_text = f" · {via['citation']}: “{via_document['quote']}”" if (via and via_document) else ""
         derivation = (
-            f"{citation} {subsection}: “{quote}” · {table['table']}, {table['effectiveText']}: "
+            f"{citation} {subsection}: “{quote}”{via_text} · {table['table']}, {table['effectiveText']}: "
             f"{level_row['rowText']}"
         )
-        method = PAY_METHOD
+        method = PAY_METHOD_VIA if via else PAY_METHOD
     documents = [
         _statute_document(section, citation, quote,
-                          f"sets this post's basic pay by reference to Executive Schedule {level_text}"
-                          + (f", plus {percent} percent" if percent else "")),
+                          statute_role or (
+                              f"sets this post's basic pay by reference to Executive Schedule {level_text}"
+                              + (f", plus {percent} percent" if percent else ""))),
+        *([via_document] if via_document else []),
         _table_document(table, level_row, url=table_url, sha256=table_sha256, fetched_at=table_fetched_at),
         *extra_documents,
     ]
@@ -1000,7 +1213,136 @@ def _record(
         "tableUrl": table_url,
         "tableSha256": table_sha256,
         "tableRetrievedAt": table_fetched_at,
+        "viaStatute": via["citation"] if via else None,
+        "viaQuote": via_document["quote"] if via_document else None,
     }
+
+
+def _minus_record(
+    node_id: str, row: Mapping[str, Any], section: Mapping[str, Any], ref_record: Mapping[str, Any],
+    dollars: int, fiscal_year: int,
+) -> dict[str, Any]:
+    """A post paid `dollars` less than the officer `ref_record` prices.
+
+    The base is the referenced officer's own figure -- the level's printed
+    rate on that officer's record, with the mark OPM's table prints -- and the
+    record names every document that base rests on beside its own section,
+    one entry per distinct document: the CBO Deputy's sentence and the
+    Director's are two sentences of one section, so they are one document.
+    """
+    base = float(ref_record["amount"])
+    amount = round(base - dollars, 2)
+    amount_raw = "{:,.0f}".format(amount) if float(amount).is_integer() else "{:,.2f}".format(amount)
+    rate_text = _rate_text(amount)
+    dollars_text = "${:,}".format(dollars)
+    ref_office = str(ref_record["office"])
+    level_text = str(ref_record["levelText"])
+    citation = row["citation"]
+    note = (
+        f"No document prints {rate_text}. {citation} sets the rate at {dollars_text} less than the "
+        f"{ref_office}'s; {ref_record['statute']}"
+        + (f", through {ref_record['viaStatute']}," if ref_record.get("viaStatute") else "")
+        + f" sets the {ref_office}'s at {level_text}'s rate, and {ref_record['table']} prints "
+        f"{ref_record['levelRateText']} for {level_text}; the figure is that arithmetic and nothing more."
+    )
+    arithmetic = {
+        "operation": "minus_dollars",
+        "baseAmount": base,
+        "baseAmountRaw": str(ref_record["amountRaw"]),
+        "baseText": str(ref_record["rateText"]),
+        "baseLevel": str(ref_record["level"]),
+        "baseOffice": ref_office,
+        "baseNodeId": str(ref_record["nodeId"]),
+        "minusDollars": int(dollars),
+        "minusDollarsText": dollars_text,
+        "result": amount,
+        "resultText": rate_text,
+        "note": note,
+    }
+    derivation = (
+        f"{citation} {row['subsection']}: “{row['quote']}” · {ref_record['derivation']} · "
+        f"{ref_record['rateText']} − {dollars_text} = {rate_text}"
+    )
+    documents: list[dict[str, Any]] = [
+        _statute_document(section, citation, row["quote"],
+                          f"sets this post's basic pay at {dollars_text} less than the {ref_office}'s"),
+    ]
+    for ref_document in ref_record.get("documents") or []:
+        entry = dict(ref_document)
+        entry["role"] = str(entry.get("role") or "").replace("this post's", f"the {ref_office}'s")
+        same = next((d for d in documents if d["url"] == entry["url"]), None)
+        if same is not None:
+            # One document, two sentences: the entry carries both, and the
+            # count of distinct documents is the count of entries.
+            same["citation"] = f"{same['citation']} and {entry['citation']}"
+            same["title"] = f"{same['citation']}, {same['edition']}"
+            same["quote"] = f"{same['quote']} … {entry['quote']}"
+            same["role"] = f"{same['role']}; and {entry['role']}"
+            continue
+        documents.append(entry)
+    return {
+        "nodeId": node_id,
+        "financialEvidenceStatus": "partial",
+        "costBasis": "basic_pay",
+        "amount": amount,
+        "amountRaw": amount_raw,
+        "units": "usd",
+        "normalizedMultiplier": 1,
+        # The level's row, which prints the BASE with its mark; the record's
+        # own figure is printed nowhere, which is what the computed-figure
+        # rule's `minus_dollars` operation requires.
+        "unitsEvidence": str(ref_record["unitsEvidence"]),
+        "quote": derivation,
+        "fiscalYear": int(fiscal_year),
+        "periodCoverage": "annual_rate",
+        "periodAsOf": str(ref_record["periodAsOf"]),
+        "amountScope": f"{dollars_text} less than the {ref_office}'s rate ({level_text})",
+        "scopeMatch": "proxy",
+        "rollupRole": "line",
+        "sourceType": PAY_SOURCE_TYPE,
+        "sourceUrl": section["url"],
+        "documentSha256": section["sha256"],
+        "retrievedAt": section["fetched_at"],
+        "locator": {"section": citation, "subsection": row["subsection"]},
+        "method": PAY_METHOD_MINUS,
+        "office": row["office"],
+        "statute": citation,
+        "statuteQuote": row["quote"],
+        "level": str(ref_record["level"]),
+        "levelText": level_text,
+        "levelRateText": str(ref_record["levelRateText"]),
+        "levelAmount": float(ref_record["levelAmount"]),
+        "percent": 0,
+        "arithmetic": arithmetic,
+        "rateText": rate_text,
+        "derivation": derivation,
+        "identification": {"kind": "reviewed_row", "nodeName": row["nodeName"]},
+        "referencedOfficer": {
+            "nodeId": str(ref_record["nodeId"]),
+            "office": ref_office,
+            "statute": str(ref_record["statute"]),
+            "statuteQuote": str(ref_record["statuteQuote"]),
+            "viaStatute": ref_record.get("viaStatute"),
+            "amount": base,
+            "rateText": str(ref_record["rateText"]),
+            "level": str(ref_record["level"]),
+        },
+        "documents": documents,
+        "table": ref_record["table"],
+        "effectiveText": ref_record["effectiveText"],
+        "effective": str(ref_record["effective"]),
+        "tableFootnotes": list(ref_record.get("tableFootnotes") or []),
+        "tableUrl": ref_record["tableUrl"],
+        "tableSha256": ref_record["tableSha256"],
+        "tableRetrievedAt": ref_record["tableRetrievedAt"],
+        "viaStatute": None,
+        "viaQuote": None,
+    }
+
+
+def _is_minus(record: Mapping[str, Any]) -> bool:
+    arithmetic = record.get("arithmetic")
+    return isinstance(arithmetic, Mapping) and arithmetic.get("operation") == "minus_dollars"
 
 
 def apply_pay_evidence(
@@ -1025,8 +1367,22 @@ def apply_pay_evidence(
         "renamed_since_the_match": 0,
         "reparented_since_the_match": 0,
         "already_priced_by_another_source": 0,
+        "priced_at_a_stated_amount_less": 0,
+        "referenced_officer_not_priced": 0,
     }
-    for node_id, record in sorted(records.items()):
+    # A figure computed from another officer's is stamped only after that
+    # officer's own block is, and only at exactly the base it was computed
+    # from: the subtraction cannot outlive what it subtracts from.
+    ordered = sorted(records.items(), key=lambda item: (_is_minus(item[1]), item[0]))
+    for node_id, record in ordered:
+        if _is_minus(record):
+            arithmetic = record.get("arithmetic") or {}
+            ref_node = node_map.get(str(arithmetic.get("baseNodeId") or ""))
+            ref_block = ref_node.get(FIELD) if ref_node is not None else None
+            if (not isinstance(ref_block, dict) or ref_block.get("amount") != arithmetic.get("baseAmount")
+                    or ref_block.get("arithmetic") is not None):
+                stats["referenced_officer_not_priced"] += 1
+                continue
         node = node_map.get(node_id)
         if node is None:
             stats["unknown_node"] += 1
@@ -1083,6 +1439,12 @@ def apply_pay_evidence(
             "checkedAt": record.get("retrievedAt"),
             # `verification` is stamped by pay_documents.annotate_pay_documents.
         }
+        if record.get("viaStatute"):
+            node[FIELD]["viaStatute"] = record.get("viaStatute")
+            node[FIELD]["viaQuote"] = record.get("viaQuote")
+        if isinstance(record.get("referencedOfficer"), dict):
+            node[FIELD]["referencedOfficer"] = dict(record["referencedOfficer"])
+            stats["priced_at_a_stated_amount_less"] += 1
         stats["priced"] += 1
         if identification.get("kind") != "reviewed_row":
             stats["priced_inspectors_general"] += 1

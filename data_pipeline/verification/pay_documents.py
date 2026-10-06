@@ -255,6 +255,23 @@ PAY_DOCUMENT_FIELDS: dict[str, dict[str, Any]] = {
             "states what that level pays; where the statute adds a percentage, the result is "
             "arithmetic this project performed and no document prints."
         ),
+        # Since 2026-10-07: a chain of two statutes to the level (2 U.S.C.
+        # 601(a)(5)(A) through 4575(f)), and a stated number of dollars less
+        # than another officer's figure (2 U.S.C. 1808(c)(3) and three more).
+        "viaCaution": (
+            "The percentage measures how much official documentation this figure rests on, "
+            "not the chance that it is right. No document here states the figure for this post: "
+            "one statute sets its pay equal to a rate a second statute sets at an Executive "
+            "Schedule level, and OPM's table states what that level pays."
+        ),
+        "minusCaution": (
+            "The percentage measures how much official documentation this figure rests on, "
+            "not the chance that it is right. No document here states the figure for this post: "
+            "its statute sets its pay a stated number of dollars below another officer's, that "
+            "officer's pay is set by reference to an Executive Schedule level, and OPM's table "
+            "states what that level pays; the subtraction is arithmetic this project performed "
+            "and no document prints."
+        ),
     },
     "positionMilitaryPay": {
         # Schedule 8 of the pay-adjustment order prints the uniformed services'
@@ -330,6 +347,20 @@ def _percent_of_tier(block: Mapping[str, Any]) -> bool:
     """A derived block that is a percentage of the tier carries the arithmetic."""
     arithmetic = block.get("arithmetic")
     return isinstance(arithmetic, Mapping) and arithmetic.get("operation") == "percent_of"
+
+
+def _minus_dollars(block: Mapping[str, Any]) -> bool:
+    """A tier-reference block a stated number of dollars below another
+    officer's figure carries that arithmetic."""
+    arithmetic = block.get("arithmetic")
+    return isinstance(arithmetic, Mapping) and arithmetic.get("operation") == "minus_dollars"
+
+
+def _via_statute(block: Mapping[str, Any]) -> bool:
+    """A tier-reference block that reaches its level through a second statute
+    names it. (A derived block's `viaStatute` takes no caution of its own: its
+    field declares none, so the lookup below falls back to the field's.)"""
+    return bool(block.get("viaStatute"))
 
 
 def _counted_class(block: Mapping[str, Any]) -> bool:
@@ -428,6 +459,8 @@ def annotate_pay_documents(root: dict[str, Any]) -> dict[str, int]:
                     else (spec.get("classCaution") or spec["caution"]) if _class_title(block)
                     else (spec.get("countedCaution") or spec["caution"]) if _counted_class(block)
                     else (spec.get("percentCaution") or spec["caution"]) if _percent_of_tier(block)
+                    else (spec.get("minusCaution") or spec["caution"]) if _minus_dollars(block)
+                    else (spec.get("viaCaution") or spec["caution"]) if _via_statute(block)
                     else (spec.get("memberSeatCaution") or spec["caution"]) if _member_seat(block)
                     else (spec.get("statesOfficeCaution") or spec["caution"]) if _states_the_office(block)
                     else (spec.get("footnoteCaution") or spec["caution"]) if _named_in_footnote(block)
