@@ -6410,7 +6410,6 @@
     "verificationMethod": "name_labelled_on_its_organisations_official_page",
     "verificationMatchedIn": "content",
     "verificationSiteFrom": "leg-senate-admin-saa",
-    "parentId": "leg-senate-admin-saa",
     "positionTierReferencePay": {
       "source": "statutory_tier_reference_pay",
       "sourceLabel": "a statute setting the post's pay by reference to an Executive Schedule level, joined to OPM's table",
@@ -6510,7 +6509,8 @@
           }
         ]
       }
-    }
+    },
+    "parentId": "leg-senate-admin-saa"
   },
   {
     "id": "leg-senate-admin-chaplain",
@@ -15556,7 +15556,6 @@
     "verificationMethod": "name_labelled_on_its_organisations_official_page",
     "verificationMatchedIn": "content",
     "verificationSiteFrom": "leg-house-cao",
-    "parentId": "leg-house-cao",
     "positionTierReferencePay": {
       "source": "statutory_tier_reference_pay",
       "sourceLabel": "a statute setting the post's pay by reference to an Executive Schedule level, joined to OPM's table",
@@ -15655,7 +15654,8 @@
           }
         ]
       }
-    }
+    },
+    "parentId": "leg-house-cao"
   },
   {
     "id": "leg-house-parliamentarian",
@@ -16462,22 +16462,6 @@
       "attempts": 1,
       "detail": "PermissionError: robots.txt disallows this path (www.gao.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
     },
-    "evidenceUrls": [
-      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-075"
-    ],
-    "govmanListing": {
-      "source": "us_government_manual",
-      "listedTitle": "Inspector General",
-      "listedUnder": "Government Accountability Office",
-      "edition": "2025-12-31",
-      "package": "GOVMAN-2025-12-31",
-      "granule": "GOVMAN-2025-12-31-075",
-      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-075",
-      "tableFooter": "The key personnel table was updated 2–2019."
-    },
-    "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
-    "evidenceVerifiedAt": "2025-12-31",
-    "parentId": "leg-support-gao",
     "positionTierReferencePay": {
       "source": "statutory_tier_reference_pay",
       "sourceLabel": "a statute setting the post's pay by reference to an Executive Schedule level, joined to OPM's table",
@@ -16591,7 +16575,23 @@
           }
         ]
       }
-    }
+    },
+    "evidenceUrls": [
+      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-075"
+    ],
+    "govmanListing": {
+      "source": "us_government_manual",
+      "listedTitle": "Inspector General",
+      "listedUnder": "Government Accountability Office",
+      "edition": "2025-12-31",
+      "package": "GOVMAN-2025-12-31",
+      "granule": "GOVMAN-2025-12-31-075",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-075",
+      "tableFooter": "The key personnel table was updated 2–2019."
+    },
+    "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
+    "evidenceVerifiedAt": "2025-12-31",
+    "parentId": "leg-support-gao"
   },
   {
     "id": "leg-support-cbo",
@@ -32454,6 +32454,8 @@
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
     "costSourceCount": 1,
+    "treasury_section": "Department of the Treasury",
+    "treasury_classification_id": "59309531",
     "sourceCount": 4,
     "confidenceScore": 1.0,
     "verificationStatus": "verified",
@@ -32477,8 +32479,6 @@
       }
     ],
     "treasury_header_sum_note": "The statement prints no total line for this unit; the figure is the sum of the 2 lines it prints beneath the unit's header, listed below.",
-    "treasury_section": "Department of the Treasury",
-    "treasury_classification_id": "59309531",
     "lastVerified": "2026-09-20T00:33:15+00:00",
     "evidenceUrls": [
       "https://www.ttb.gov",
@@ -41129,6 +41129,18 @@
     "sourceCount": 3,
     "confidenceScore": 0.9,
     "verificationStatus": "verified",
+    "rollup_total_amount": 462550050.1,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Community Oriented Policing Services",
+    "budget_as_of": "2026-08-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "treasury_counted_in_header_sum": "exec-dept-doj-office-justice-programs",
+    "treasury_counted_in_header_sum_note": "The statement prints this unit's line beneath the \"Office of Justice Programs\" header, and the lines beneath that header are summed into the published figure of Office of Justice Programs, so the same money is already inside it; it is shown here, measured, and kept out of the arithmetic of Department of Justice (DOJ) so it is never counted twice.",
+    "treasury_section": "Department of Justice",
+    "treasury_classification_id": "59309181",
     "lastVerified": "2026-09-20T23:47:06+00:00",
     "evidenceUrls": [
       "https://cops.usdoj.gov/",
@@ -41422,6 +41434,8 @@
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
     "costSourceCount": 1,
+    "treasury_section": "Department of Justice",
+    "treasury_classification_id": "59309177",
     "sourceCount": 4,
     "confidenceScore": 1.0,
     "verificationStatus": "verified",
@@ -41453,8 +41467,6 @@
       }
     ],
     "treasury_header_sum_note": "The statement prints no total line for this unit; the figure is the sum of the 4 lines it prints beneath the unit's header, listed below.",
-    "treasury_section": "Department of Justice",
-    "treasury_classification_id": "59309177",
     "lastVerified": "2026-09-20T23:47:06+00:00",
     "evidenceUrls": [
       "https://www.ojp.gov/",
@@ -42487,6 +42499,8 @@
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
     "costSourceCount": 1,
+    "treasury_section": "Department of the Interior",
+    "treasury_classification_id": "59309088",
     "sourceCount": 4,
     "confidenceScore": 1.0,
     "verificationStatus": "verified",
@@ -42510,8 +42524,6 @@
       }
     ],
     "treasury_header_sum_note": "The statement prints no total line for this unit; the figure is the sum of the 2 lines it prints beneath the unit's header, listed below.",
-    "treasury_section": "Department of the Interior",
-    "treasury_classification_id": "59309088",
     "lastVerified": "2026-09-20T00:33:15+00:00",
     "evidenceUrls": [
       "https://www.blm.gov/",
@@ -43793,6 +43805,8 @@
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
     "costSourceCount": 1,
+    "treasury_section": "Department of the Interior",
+    "treasury_classification_id": "59309103",
     "sourceCount": 4,
     "confidenceScore": 1.0,
     "verificationStatus": "verified",
@@ -43816,8 +43830,6 @@
       }
     ],
     "treasury_header_sum_note": "The statement prints no total line for this unit; the figure is the sum of the 2 lines it prints beneath the unit's header, listed below.",
-    "treasury_section": "Department of the Interior",
-    "treasury_classification_id": "59309103",
     "lastVerified": "2026-09-20T00:33:15+00:00",
     "evidenceUrls": [
       "https://www.usbr.gov/",
@@ -46466,6 +46478,8 @@
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
     "costSourceCount": 1,
+    "treasury_section": "Department of Agriculture",
+    "treasury_classification_id": "59308536",
     "sourceCount": 3,
     "confidenceScore": 0.9,
     "verificationStatus": "verified",
@@ -46493,8 +46507,6 @@
       }
     ],
     "treasury_header_sum_note": "The statement prints no total line for this unit; the figure is the sum of the 3 lines it prints beneath the unit's header, listed below.",
-    "treasury_section": "Department of Agriculture",
-    "treasury_classification_id": "59308536",
     "lastVerified": "2026-09-20T00:33:15+00:00",
     "evidenceUrls": [
       "https://www.nrcs.usda.gov/",
@@ -49177,45 +49189,6 @@
       "attempts": 1,
       "detail": "PermissionError: robots.txt disallows this path (www.noaa.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
     },
-    "evidenceUrls": [
-      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-264"
-    ],
-    "govmanListing": {
-      "source": "us_government_manual",
-      "listedTitle": "Chief Scientist",
-      "listedUnder": "National Oceanic and Atmospheric Administration",
-      "edition": "2025-12-31",
-      "package": "GOVMAN-2025-12-31",
-      "granule": "GOVMAN-2025-12-31-264",
-      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-264",
-      "tableFooter": "The above list of key personnel was updated 6–2022."
-    },
-    "verificationAliasMatch": {
-      "alias": "National Oceanic and Atmospheric Administration",
-      "basis": "The same words, in the graph's own '<ACRONYM> — <name>' typography, which no document carries. The United States Government Manual's entry 264 is headed 'National Oceanic and Atmospheric Administration' and its opening paragraph reads 'On October 3, 1970, Reorganization Plan No. 4 of 1970 (5 U.S.C. app.) formed the National Oceanic and Atmospheric Administration (NOAA).', printing the acronym the curated name leads with. CURATION.md §13.3 records the 2026-09-20 second-round adjudication finding this node already carries that agency under its acronym.",
-      "matchedText": "National Oceanic and Atmospheric Administration",
-      "scope": "organisation",
-      "source": "us_government_manual",
-      "owner": "exec-dept-doc-noaa",
-      "urls": [
-        "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-264"
-      ],
-      "matches": [
-        {
-          "source": "us_government_manual",
-          "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-264",
-          "alias": "National Oceanic and Atmospheric Administration",
-          "basis": "The same words, in the graph's own '<ACRONYM> — <name>' typography, which no document carries. The United States Government Manual's entry 264 is headed 'National Oceanic and Atmospheric Administration' and its opening paragraph reads 'On October 3, 1970, Reorganization Plan No. 4 of 1970 (5 U.S.C. app.) formed the National Oceanic and Atmospheric Administration (NOAA).', printing the acronym the curated name leads with. CURATION.md §13.3 records the 2026-09-20 second-round adjudication finding this node already carries that agency under its acronym.",
-          "matchedText": "National Oceanic and Atmospheric Administration",
-          "scope": "organisation",
-          "owner": "exec-dept-doc-noaa"
-        }
-      ],
-      "gradedAtMost": "partial"
-    },
-    "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
-    "evidenceVerifiedAt": "2025-12-31",
-    "parentId": "exec-dept-doc-noaa",
     "positionTierReferencePay": {
       "source": "statutory_tier_reference_pay",
       "sourceLabel": "a statute setting the post's pay by reference to an Executive Schedule level, joined to OPM's table",
@@ -49312,7 +49285,46 @@
           }
         ]
       }
-    }
+    },
+    "evidenceUrls": [
+      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-264"
+    ],
+    "govmanListing": {
+      "source": "us_government_manual",
+      "listedTitle": "Chief Scientist",
+      "listedUnder": "National Oceanic and Atmospheric Administration",
+      "edition": "2025-12-31",
+      "package": "GOVMAN-2025-12-31",
+      "granule": "GOVMAN-2025-12-31-264",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-264",
+      "tableFooter": "The above list of key personnel was updated 6–2022."
+    },
+    "verificationAliasMatch": {
+      "alias": "National Oceanic and Atmospheric Administration",
+      "basis": "The same words, in the graph's own '<ACRONYM> — <name>' typography, which no document carries. The United States Government Manual's entry 264 is headed 'National Oceanic and Atmospheric Administration' and its opening paragraph reads 'On October 3, 1970, Reorganization Plan No. 4 of 1970 (5 U.S.C. app.) formed the National Oceanic and Atmospheric Administration (NOAA).', printing the acronym the curated name leads with. CURATION.md §13.3 records the 2026-09-20 second-round adjudication finding this node already carries that agency under its acronym.",
+      "matchedText": "National Oceanic and Atmospheric Administration",
+      "scope": "organisation",
+      "source": "us_government_manual",
+      "owner": "exec-dept-doc-noaa",
+      "urls": [
+        "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-264"
+      ],
+      "matches": [
+        {
+          "source": "us_government_manual",
+          "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-264",
+          "alias": "National Oceanic and Atmospheric Administration",
+          "basis": "The same words, in the graph's own '<ACRONYM> — <name>' typography, which no document carries. The United States Government Manual's entry 264 is headed 'National Oceanic and Atmospheric Administration' and its opening paragraph reads 'On October 3, 1970, Reorganization Plan No. 4 of 1970 (5 U.S.C. app.) formed the National Oceanic and Atmospheric Administration (NOAA).', printing the acronym the curated name leads with. CURATION.md §13.3 records the 2026-09-20 second-round adjudication finding this node already carries that agency under its acronym.",
+          "matchedText": "National Oceanic and Atmospheric Administration",
+          "scope": "organisation",
+          "owner": "exec-dept-doc-noaa"
+        }
+      ],
+      "gradedAtMost": "partial"
+    },
+    "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
+    "evidenceVerifiedAt": "2025-12-31",
+    "parentId": "exec-dept-doc-noaa"
   },
   {
     "id": "exec-dept-doc-nist",
@@ -58062,7 +58074,7 @@
     "cost_status": "official",
     "cost_basis": "treasury_rollup",
     "cost_validation": "matched_official_rollup",
-    "child_cost_basis": "employees",
+    "child_cost_basis": "subtree",
     "costVerificationStatus": "verified",
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
@@ -58166,7 +58178,6 @@
       "package": "BUDGET-2027-DB",
       "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
     },
-    "child_cost_basis_implied": true,
     "parentId": "exec-cabinet"
   },
   {
@@ -59116,6 +59127,24 @@
     "sourceCount": 2,
     "confidenceScore": 0.8,
     "verificationStatus": "verified",
+    "rollup_total_amount": -1839035438.49,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Government National Mortgage Association:",
+    "budget_as_of": "2026-08-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "treasury_header_sum": true,
+    "treasury_component_rows": [
+      {
+        "name": "Guarantees of Mortgage-Backed Securities",
+        "amount": -1839035438.49
+      }
+    ],
+    "treasury_header_sum_note": "The statement prints no total line for this unit; the figure is the sum of the 1 line it prints beneath the unit's header, listed below.",
+    "treasury_section": "Department of Housing and Urban Development",
+    "treasury_classification_id": "59309061",
     "lastVerified": "2026-09-20T00:33:15+00:00",
     "evidenceUrls": [
       "https://www.ginniemae.gov/"
@@ -59131,6 +59160,7 @@
     "placementMatchedText": "Ginnie Mae",
     "placementMethod": "name_labelled_on_parent_official_page",
     "placementMatchedIn": "content",
+    "treasury_pool_negative": -1839035438.49,
     "parentId": "exec-dept-hud"
   },
   {
@@ -64742,6 +64772,8 @@
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
     "costSourceCount": 1,
+    "treasury_section": "Department of Energy",
+    "treasury_classification_id": "59308790",
     "sourceCount": 3,
     "confidenceScore": 0.9,
     "verificationStatus": "verified",
@@ -64773,8 +64805,6 @@
       }
     ],
     "treasury_header_sum_note": "The statement prints no total line for this unit; the figure is the sum of the 4 lines it prints beneath the unit's header, listed below.",
-    "treasury_section": "Department of Energy",
-    "treasury_classification_id": "59308790",
     "lastVerified": "2026-09-20T00:33:15+00:00",
     "evidenceUrls": [
       "https://www.energy.gov/nnsa/national-nuclear-security-administration",
@@ -68960,6 +68990,8 @@
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
     "costSourceCount": 1,
+    "treasury_section": "Department of Veterans Affairs",
+    "treasury_classification_id": "59309636",
     "sourceCount": 2,
     "confidenceScore": 0.8,
     "verificationStatus": "verified",
@@ -68995,8 +69027,6 @@
       }
     ],
     "treasury_header_sum_note": "The statement prints no total line for this unit; the figure is the sum of the 5 lines it prints beneath the unit's header, listed below.",
-    "treasury_section": "Department of Veterans Affairs",
-    "treasury_classification_id": "59309636",
     "lastVerified": "2026-09-20T00:33:15+00:00",
     "evidenceUrls": [
       "https://www.va.gov/health"
@@ -80673,6 +80703,8 @@
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
     "costSourceCount": 1,
+    "treasury_section": "Independent Agencies",
+    "treasury_classification_id": "59310014",
     "sourceCount": 3,
     "confidenceScore": 0.9,
     "verificationStatus": "verified",
@@ -80700,8 +80732,6 @@
       }
     ],
     "treasury_header_sum_note": "The statement prints no total line for this unit; the figure is the sum of the 3 lines it prints beneath the unit's header, listed below.",
-    "treasury_section": "Independent Agencies",
-    "treasury_classification_id": "59310014",
     "lastVerified": "2026-09-08T19:19:15Z",
     "placementVerified": false,
     "placementParentId": "exec-independent",
@@ -85976,6 +86006,8 @@
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
     "costSourceCount": 1,
+    "treasury_section": "Independent Agencies",
+    "treasury_classification_id": "59309942",
     "sourceCount": 2,
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
@@ -85987,8 +86019,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "treasury_section": "Independent Agencies",
-    "treasury_classification_id": "59309942",
     "lastVerified": "2025-12-31",
     "verificationUnread": {
       "kind": "host_refuses_crawler",
@@ -94210,7 +94240,30 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "evidenceVerifiedAt": "2025-12-31",
-    "parentId": "exec-ind-misc"
+    "parentId": "exec-ind-misc",
+    "ombBudget": {
+      "source": "omb_public_budget_database",
+      "level": "agency",
+      "listedAgency": "United States Holocaust Memorial Museum",
+      "listedBureau": null,
+      "cgacAgencyCode": null,
+      "cgacAgencyCodeCount": 2,
+      "rowSelection": "every account row OMB files under this unit for the year, on-budget and off-budget together, including the negative offsetting-receipt rows",
+      "documentSha256": "3fc01dd04bff12c425ce72cb54e259726b7769d8c04767dcd4e16743ca77ce4e",
+      "fiscalYear": 2025,
+      "outlays": 66000000.0,
+      "budgetAuthority": 65000000.0,
+      "unitsQuote": "Data for budget authority, outlays, offsetting receipts, and governmental receipts are shown in thousands of dollars.",
+      "precisionNote": "the file data from FY 1995 through FY 2031 represent the Budget amounts multiplied by one thousand to convert the amounts to thousands ; detail below millions is not available.",
+      "treasuryQuote": "The totals are generally consistent with data published in the Monthly Treasury Statement",
+      "treasuryDifferencesQuote": "Differences between the Treasury publications and the Budget arise from a small number of reporting and classification corrections made subsequent to the Treasury publications and some conceptual differences between OMB and Treasury reporting.",
+      "netQuote": "Budget authority and outlay amounts are reported net of any offsetting collections, such as fees, fines, and penalties.",
+      "signQuote": "Outlays are usually positive values. Offsetting receipts are usually negative values .",
+      "outlayAccountRows": 6,
+      "budgetAuthorityAccountRows": 6,
+      "package": "BUDGET-2027-DB",
+      "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
+    }
   },
   {
     "id": "exec-ind-misc-commission-on-civil-rights",
@@ -94324,7 +94377,30 @@
       "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-181",
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
-    "parentId": "exec-ind-misc"
+    "parentId": "exec-ind-misc",
+    "ombBudget": {
+      "source": "omb_public_budget_database",
+      "level": "agency",
+      "listedAgency": "Commission on Civil Rights",
+      "listedBureau": null,
+      "cgacAgencyCode": "326",
+      "cgacAgencyCodeCount": 1,
+      "rowSelection": "every account row OMB files under this unit for the year, on-budget and off-budget together, including the negative offsetting-receipt rows",
+      "documentSha256": "3fc01dd04bff12c425ce72cb54e259726b7769d8c04767dcd4e16743ca77ce4e",
+      "fiscalYear": 2025,
+      "outlays": 15000000.0,
+      "budgetAuthority": 14000000.0,
+      "unitsQuote": "Data for budget authority, outlays, offsetting receipts, and governmental receipts are shown in thousands of dollars.",
+      "precisionNote": "the file data from FY 1995 through FY 2031 represent the Budget amounts multiplied by one thousand to convert the amounts to thousands ; detail below millions is not available.",
+      "treasuryQuote": "The totals are generally consistent with data published in the Monthly Treasury Statement",
+      "treasuryDifferencesQuote": "Differences between the Treasury publications and the Budget arise from a small number of reporting and classification corrections made subsequent to the Treasury publications and some conceptual differences between OMB and Treasury reporting.",
+      "netQuote": "Budget authority and outlay amounts are reported net of any offsetting collections, such as fees, fines, and penalties.",
+      "signQuote": "Outlays are usually positive values. Offsetting receipts are usually negative values .",
+      "outlayAccountRows": 1,
+      "budgetAuthorityAccountRows": 1,
+      "package": "BUDGET-2027-DB",
+      "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
+    }
   },
   {
     "id": "exec-ind-misc-surface-transportation-board",
@@ -94438,7 +94514,30 @@
       "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-335",
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
-    "parentId": "exec-ind-misc"
+    "parentId": "exec-ind-misc",
+    "ombBudget": {
+      "source": "omb_public_budget_database",
+      "level": "agency",
+      "listedAgency": "Surface Transportation Board",
+      "listedBureau": null,
+      "cgacAgencyCode": "472",
+      "cgacAgencyCodeCount": 1,
+      "rowSelection": "every account row OMB files under this unit for the year, on-budget and off-budget together, including the negative offsetting-receipt rows",
+      "documentSha256": "3fc01dd04bff12c425ce72cb54e259726b7769d8c04767dcd4e16743ca77ce4e",
+      "fiscalYear": 2025,
+      "outlays": 45000000.0,
+      "budgetAuthority": 46000000.0,
+      "unitsQuote": "Data for budget authority, outlays, offsetting receipts, and governmental receipts are shown in thousands of dollars.",
+      "precisionNote": "the file data from FY 1995 through FY 2031 represent the Budget amounts multiplied by one thousand to convert the amounts to thousands ; detail below millions is not available.",
+      "treasuryQuote": "The totals are generally consistent with data published in the Monthly Treasury Statement",
+      "treasuryDifferencesQuote": "Differences between the Treasury publications and the Budget arise from a small number of reporting and classification corrections made subsequent to the Treasury publications and some conceptual differences between OMB and Treasury reporting.",
+      "netQuote": "Budget authority and outlay amounts are reported net of any offsetting collections, such as fees, fines, and penalties.",
+      "signQuote": "Outlays are usually positive values. Offsetting receipts are usually negative values .",
+      "outlayAccountRows": 1,
+      "budgetAuthorityAccountRows": 1,
+      "package": "BUDGET-2027-DB",
+      "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
+    }
   },
   {
     "id": "exec-ind-misc-international-trade-commission",
@@ -94552,7 +94651,30 @@
       "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-182",
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
-    "parentId": "exec-ind-misc"
+    "parentId": "exec-ind-misc",
+    "ombBudget": {
+      "source": "omb_public_budget_database",
+      "level": "agency",
+      "listedAgency": "International Trade Commission",
+      "listedBureau": null,
+      "cgacAgencyCode": "034",
+      "cgacAgencyCodeCount": 1,
+      "rowSelection": "every account row OMB files under this unit for the year, on-budget and off-budget together, including the negative offsetting-receipt rows",
+      "documentSha256": "3fc01dd04bff12c425ce72cb54e259726b7769d8c04767dcd4e16743ca77ce4e",
+      "fiscalYear": 2025,
+      "outlays": 131000000.0,
+      "budgetAuthority": 122000000.0,
+      "unitsQuote": "Data for budget authority, outlays, offsetting receipts, and governmental receipts are shown in thousands of dollars.",
+      "precisionNote": "the file data from FY 1995 through FY 2031 represent the Budget amounts multiplied by one thousand to convert the amounts to thousands ; detail below millions is not available.",
+      "treasuryQuote": "The totals are generally consistent with data published in the Monthly Treasury Statement",
+      "treasuryDifferencesQuote": "Differences between the Treasury publications and the Budget arise from a small number of reporting and classification corrections made subsequent to the Treasury publications and some conceptual differences between OMB and Treasury reporting.",
+      "netQuote": "Budget authority and outlay amounts are reported net of any offsetting collections, such as fees, fines, and penalties.",
+      "signQuote": "Outlays are usually positive values. Offsetting receipts are usually negative values .",
+      "outlayAccountRows": 1,
+      "budgetAuthorityAccountRows": 1,
+      "package": "BUDGET-2027-DB",
+      "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
+    }
   },
   {
     "id": "exec-ind-misc-institute-of-peace",
@@ -94638,7 +94760,30 @@
       "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-188",
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
-    "parentId": "exec-ind-misc"
+    "parentId": "exec-ind-misc",
+    "ombBudget": {
+      "source": "omb_public_budget_database",
+      "level": "agency",
+      "listedAgency": "United States Institute of Peace",
+      "listedBureau": null,
+      "cgacAgencyCode": "458",
+      "cgacAgencyCodeCount": 1,
+      "rowSelection": "every account row OMB files under this unit for the year, on-budget and off-budget together, including the negative offsetting-receipt rows",
+      "documentSha256": "3fc01dd04bff12c425ce72cb54e259726b7769d8c04767dcd4e16743ca77ce4e",
+      "fiscalYear": 2025,
+      "outlays": 45000000.0,
+      "budgetAuthority": 42000000.0,
+      "unitsQuote": "Data for budget authority, outlays, offsetting receipts, and governmental receipts are shown in thousands of dollars.",
+      "precisionNote": "the file data from FY 1995 through FY 2031 represent the Budget amounts multiplied by one thousand to convert the amounts to thousands ; detail below millions is not available.",
+      "treasuryQuote": "The totals are generally consistent with data published in the Monthly Treasury Statement",
+      "treasuryDifferencesQuote": "Differences between the Treasury publications and the Budget arise from a small number of reporting and classification corrections made subsequent to the Treasury publications and some conceptual differences between OMB and Treasury reporting.",
+      "netQuote": "Budget authority and outlay amounts are reported net of any offsetting collections, such as fees, fines, and penalties.",
+      "signQuote": "Outlays are usually positive values. Offsetting receipts are usually negative values .",
+      "outlayAccountRows": 4,
+      "budgetAuthorityAccountRows": 4,
+      "package": "BUDGET-2027-DB",
+      "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
+    }
   },
   {
     "id": "exec-ind-misc-federal-retirement-thrift-investment-board",
@@ -94724,7 +94869,30 @@
       "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-148",
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
-    "parentId": "exec-ind-misc"
+    "parentId": "exec-ind-misc",
+    "ombBudget": {
+      "source": "omb_public_budget_database",
+      "level": "agency",
+      "listedAgency": "Federal Retirement Thrift Investment Board",
+      "listedBureau": null,
+      "cgacAgencyCode": "026",
+      "cgacAgencyCodeCount": 1,
+      "rowSelection": "every account row OMB files under this unit for the year, on-budget and off-budget together, including the negative offsetting-receipt rows",
+      "documentSha256": "3fc01dd04bff12c425ce72cb54e259726b7769d8c04767dcd4e16743ca77ce4e",
+      "fiscalYear": 2025,
+      "outlays": -33000000.0,
+      "budgetAuthority": null,
+      "unitsQuote": "Data for budget authority, outlays, offsetting receipts, and governmental receipts are shown in thousands of dollars.",
+      "precisionNote": "the file data from FY 1995 through FY 2031 represent the Budget amounts multiplied by one thousand to convert the amounts to thousands ; detail below millions is not available.",
+      "treasuryQuote": "The totals are generally consistent with data published in the Monthly Treasury Statement",
+      "treasuryDifferencesQuote": "Differences between the Treasury publications and the Budget arise from a small number of reporting and classification corrections made subsequent to the Treasury publications and some conceptual differences between OMB and Treasury reporting.",
+      "netQuote": "Budget authority and outlay amounts are reported net of any offsetting collections, such as fees, fines, and penalties.",
+      "signQuote": "Outlays are usually positive values. Offsetting receipts are usually negative values .",
+      "outlayAccountRows": 3,
+      "budgetAuthorityAccountRows": 3,
+      "package": "BUDGET-2027-DB",
+      "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
+    }
   },
   {
     "id": "exec-ind-misc-defense-nuclear-facilities-safety-board",
@@ -94834,7 +95002,30 @@
       "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-134",
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
-    "parentId": "exec-ind-misc"
+    "parentId": "exec-ind-misc",
+    "ombBudget": {
+      "source": "omb_public_budget_database",
+      "level": "agency",
+      "listedAgency": "Defense Nuclear Facilities Safety Board",
+      "listedBureau": null,
+      "cgacAgencyCode": "347",
+      "cgacAgencyCodeCount": 1,
+      "rowSelection": "every account row OMB files under this unit for the year, on-budget and off-budget together, including the negative offsetting-receipt rows",
+      "documentSha256": "3fc01dd04bff12c425ce72cb54e259726b7769d8c04767dcd4e16743ca77ce4e",
+      "fiscalYear": 2025,
+      "outlays": 44000000.0,
+      "budgetAuthority": 42000000.0,
+      "unitsQuote": "Data for budget authority, outlays, offsetting receipts, and governmental receipts are shown in thousands of dollars.",
+      "precisionNote": "the file data from FY 1995 through FY 2031 represent the Budget amounts multiplied by one thousand to convert the amounts to thousands ; detail below millions is not available.",
+      "treasuryQuote": "The totals are generally consistent with data published in the Monthly Treasury Statement",
+      "treasuryDifferencesQuote": "Differences between the Treasury publications and the Budget arise from a small number of reporting and classification corrections made subsequent to the Treasury publications and some conceptual differences between OMB and Treasury reporting.",
+      "netQuote": "Budget authority and outlay amounts are reported net of any offsetting collections, such as fees, fines, and penalties.",
+      "signQuote": "Outlays are usually positive values. Offsetting receipts are usually negative values .",
+      "outlayAccountRows": 1,
+      "budgetAuthorityAccountRows": 1,
+      "package": "BUDGET-2027-DB",
+      "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
+    }
   },
   {
     "id": "exec-ind-misc-federal-mine-safety-and-health-review-commission",
@@ -94924,7 +95115,30 @@
       "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-146",
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
-    "parentId": "exec-ind-misc"
+    "parentId": "exec-ind-misc",
+    "ombBudget": {
+      "source": "omb_public_budget_database",
+      "level": "agency",
+      "listedAgency": "Federal Mine Safety and Health Review Commission",
+      "listedBureau": null,
+      "cgacAgencyCode": "368",
+      "cgacAgencyCodeCount": 1,
+      "rowSelection": "every account row OMB files under this unit for the year, on-budget and off-budget together, including the negative offsetting-receipt rows",
+      "documentSha256": "3fc01dd04bff12c425ce72cb54e259726b7769d8c04767dcd4e16743ca77ce4e",
+      "fiscalYear": 2025,
+      "outlays": 16000000.0,
+      "budgetAuthority": 18000000.0,
+      "unitsQuote": "Data for budget authority, outlays, offsetting receipts, and governmental receipts are shown in thousands of dollars.",
+      "precisionNote": "the file data from FY 1995 through FY 2031 represent the Budget amounts multiplied by one thousand to convert the amounts to thousands ; detail below millions is not available.",
+      "treasuryQuote": "The totals are generally consistent with data published in the Monthly Treasury Statement",
+      "treasuryDifferencesQuote": "Differences between the Treasury publications and the Budget arise from a small number of reporting and classification corrections made subsequent to the Treasury publications and some conceptual differences between OMB and Treasury reporting.",
+      "netQuote": "Budget authority and outlay amounts are reported net of any offsetting collections, such as fees, fines, and penalties.",
+      "signQuote": "Outlays are usually positive values. Offsetting receipts are usually negative values .",
+      "outlayAccountRows": 1,
+      "budgetAuthorityAccountRows": 1,
+      "package": "BUDGET-2027-DB",
+      "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
+    }
   },
   {
     "id": "exec-ind-misc-inter-american-foundation",
@@ -95124,7 +95338,30 @@
       "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-164",
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
-    "parentId": "exec-ind-misc"
+    "parentId": "exec-ind-misc",
+    "ombBudget": {
+      "source": "omb_public_budget_database",
+      "level": "agency",
+      "listedAgency": "Occupational Safety and Health Review Commission",
+      "listedBureau": null,
+      "cgacAgencyCode": "432",
+      "cgacAgencyCodeCount": 1,
+      "rowSelection": "every account row OMB files under this unit for the year, on-budget and off-budget together, including the negative offsetting-receipt rows",
+      "documentSha256": "3fc01dd04bff12c425ce72cb54e259726b7769d8c04767dcd4e16743ca77ce4e",
+      "fiscalYear": 2025,
+      "outlays": 14000000.0,
+      "budgetAuthority": 15000000.0,
+      "unitsQuote": "Data for budget authority, outlays, offsetting receipts, and governmental receipts are shown in thousands of dollars.",
+      "precisionNote": "the file data from FY 1995 through FY 2031 represent the Budget amounts multiplied by one thousand to convert the amounts to thousands ; detail below millions is not available.",
+      "treasuryQuote": "The totals are generally consistent with data published in the Monthly Treasury Statement",
+      "treasuryDifferencesQuote": "Differences between the Treasury publications and the Budget arise from a small number of reporting and classification corrections made subsequent to the Treasury publications and some conceptual differences between OMB and Treasury reporting.",
+      "netQuote": "Budget authority and outlay amounts are reported net of any offsetting collections, such as fees, fines, and penalties.",
+      "signQuote": "Outlays are usually positive values. Offsetting receipts are usually negative values .",
+      "outlayAccountRows": 1,
+      "budgetAuthorityAccountRows": 1,
+      "package": "BUDGET-2027-DB",
+      "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
+    }
   },
   {
     "id": "exec-ind-misc-odni",
@@ -95534,7 +95771,30 @@
       "parentListedName": null,
       "checkedAt": "2026-09-08T19:19:15Z"
     },
-    "parentId": "exec-ind-misc"
+    "parentId": "exec-ind-misc",
+    "ombBudget": {
+      "source": "omb_public_budget_database",
+      "level": "agency",
+      "listedAgency": "Public Buildings Reform Board",
+      "listedBureau": null,
+      "cgacAgencyCode": "290",
+      "cgacAgencyCodeCount": 1,
+      "rowSelection": "every account row OMB files under this unit for the year, on-budget and off-budget together, including the negative offsetting-receipt rows",
+      "documentSha256": "3fc01dd04bff12c425ce72cb54e259726b7769d8c04767dcd4e16743ca77ce4e",
+      "fiscalYear": 2025,
+      "outlays": 3000000.0,
+      "budgetAuthority": 4000000.0,
+      "unitsQuote": "Data for budget authority, outlays, offsetting receipts, and governmental receipts are shown in thousands of dollars.",
+      "precisionNote": "the file data from FY 1995 through FY 2031 represent the Budget amounts multiplied by one thousand to convert the amounts to thousands ; detail below millions is not available.",
+      "treasuryQuote": "The totals are generally consistent with data published in the Monthly Treasury Statement",
+      "treasuryDifferencesQuote": "Differences between the Treasury publications and the Budget arise from a small number of reporting and classification corrections made subsequent to the Treasury publications and some conceptual differences between OMB and Treasury reporting.",
+      "netQuote": "Budget authority and outlay amounts are reported net of any offsetting collections, such as fees, fines, and penalties.",
+      "signQuote": "Outlays are usually positive values. Offsetting receipts are usually negative values .",
+      "outlayAccountRows": 1,
+      "budgetAuthorityAccountRows": 1,
+      "package": "BUDGET-2027-DB",
+      "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
+    }
   },
   {
     "id": "exec-ind-misc-federal-mediation-and-conciliation-service",
@@ -95624,7 +95884,30 @@
       "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-145",
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
-    "parentId": "exec-ind-misc"
+    "parentId": "exec-ind-misc",
+    "ombBudget": {
+      "source": "omb_public_budget_database",
+      "level": "agency",
+      "listedAgency": "Federal Mediation and Conciliation Service",
+      "listedBureau": null,
+      "cgacAgencyCode": "093",
+      "cgacAgencyCodeCount": 1,
+      "rowSelection": "every account row OMB files under this unit for the year, on-budget and off-budget together, including the negative offsetting-receipt rows",
+      "documentSha256": "3fc01dd04bff12c425ce72cb54e259726b7769d8c04767dcd4e16743ca77ce4e",
+      "fiscalYear": 2025,
+      "outlays": 49000000.0,
+      "budgetAuthority": 54000000.0,
+      "unitsQuote": "Data for budget authority, outlays, offsetting receipts, and governmental receipts are shown in thousands of dollars.",
+      "precisionNote": "the file data from FY 1995 through FY 2031 represent the Budget amounts multiplied by one thousand to convert the amounts to thousands ; detail below millions is not available.",
+      "treasuryQuote": "The totals are generally consistent with data published in the Monthly Treasury Statement",
+      "treasuryDifferencesQuote": "Differences between the Treasury publications and the Budget arise from a small number of reporting and classification corrections made subsequent to the Treasury publications and some conceptual differences between OMB and Treasury reporting.",
+      "netQuote": "Budget authority and outlay amounts are reported net of any offsetting collections, such as fees, fines, and penalties.",
+      "signQuote": "Outlays are usually positive values. Offsetting receipts are usually negative values .",
+      "outlayAccountRows": 1,
+      "budgetAuthorityAccountRows": 1,
+      "package": "BUDGET-2027-DB",
+      "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
+    }
   },
   {
     "id": "exec-ind-misc-administrative-conference-of-the-united-states",
@@ -95710,7 +95993,30 @@
       "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-127",
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
-    "parentId": "exec-ind-misc"
+    "parentId": "exec-ind-misc",
+    "ombBudget": {
+      "source": "omb_public_budget_database",
+      "level": "agency",
+      "listedAgency": "Administrative Conference of the United States",
+      "listedBureau": null,
+      "cgacAgencyCode": "302",
+      "cgacAgencyCodeCount": 1,
+      "rowSelection": "every account row OMB files under this unit for the year, on-budget and off-budget together, including the negative offsetting-receipt rows",
+      "documentSha256": "3fc01dd04bff12c425ce72cb54e259726b7769d8c04767dcd4e16743ca77ce4e",
+      "fiscalYear": 2025,
+      "outlays": 3000000.0,
+      "budgetAuthority": 3000000.0,
+      "unitsQuote": "Data for budget authority, outlays, offsetting receipts, and governmental receipts are shown in thousands of dollars.",
+      "precisionNote": "the file data from FY 1995 through FY 2031 represent the Budget amounts multiplied by one thousand to convert the amounts to thousands ; detail below millions is not available.",
+      "treasuryQuote": "The totals are generally consistent with data published in the Monthly Treasury Statement",
+      "treasuryDifferencesQuote": "Differences between the Treasury publications and the Budget arise from a small number of reporting and classification corrections made subsequent to the Treasury publications and some conceptual differences between OMB and Treasury reporting.",
+      "netQuote": "Budget authority and outlay amounts are reported net of any offsetting collections, such as fees, fines, and penalties.",
+      "signQuote": "Outlays are usually positive values. Offsetting receipts are usually negative values .",
+      "outlayAccountRows": 3,
+      "budgetAuthorityAccountRows": 3,
+      "package": "BUDGET-2027-DB",
+      "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
+    }
   },
   {
     "id": "exec-ind-misc-office-of-government-ethics",
@@ -95820,7 +96126,30 @@
       "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-166",
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
-    "parentId": "exec-ind-misc"
+    "parentId": "exec-ind-misc",
+    "ombBudget": {
+      "source": "omb_public_budget_database",
+      "level": "agency",
+      "listedAgency": "Office of Government Ethics",
+      "listedBureau": null,
+      "cgacAgencyCode": "434",
+      "cgacAgencyCodeCount": 1,
+      "rowSelection": "every account row OMB files under this unit for the year, on-budget and off-budget together, including the negative offsetting-receipt rows",
+      "documentSha256": "3fc01dd04bff12c425ce72cb54e259726b7769d8c04767dcd4e16743ca77ce4e",
+      "fiscalYear": 2025,
+      "outlays": 21000000.0,
+      "budgetAuthority": 23000000.0,
+      "unitsQuote": "Data for budget authority, outlays, offsetting receipts, and governmental receipts are shown in thousands of dollars.",
+      "precisionNote": "the file data from FY 1995 through FY 2031 represent the Budget amounts multiplied by one thousand to convert the amounts to thousands ; detail below millions is not available.",
+      "treasuryQuote": "The totals are generally consistent with data published in the Monthly Treasury Statement",
+      "treasuryDifferencesQuote": "Differences between the Treasury publications and the Budget arise from a small number of reporting and classification corrections made subsequent to the Treasury publications and some conceptual differences between OMB and Treasury reporting.",
+      "netQuote": "Budget authority and outlay amounts are reported net of any offsetting collections, such as fees, fines, and penalties.",
+      "signQuote": "Outlays are usually positive values. Offsetting receipts are usually negative values .",
+      "outlayAccountRows": 1,
+      "budgetAuthorityAccountRows": 1,
+      "package": "BUDGET-2027-DB",
+      "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
+    }
   },
   {
     "id": "exec-ind-misc-access-board",
@@ -95868,7 +96197,30 @@
     "verificationMatchedIn": "content",
     "verificationSiteFrom": "exec-ind-misc-access-board",
     "placementCheckable": false,
-    "parentId": "exec-ind-misc"
+    "parentId": "exec-ind-misc",
+    "ombBudget": {
+      "source": "omb_public_budget_database",
+      "level": "agency",
+      "listedAgency": "Access Board",
+      "listedBureau": null,
+      "cgacAgencyCode": "310",
+      "cgacAgencyCodeCount": 1,
+      "rowSelection": "every account row OMB files under this unit for the year, on-budget and off-budget together, including the negative offsetting-receipt rows",
+      "documentSha256": "3fc01dd04bff12c425ce72cb54e259726b7769d8c04767dcd4e16743ca77ce4e",
+      "fiscalYear": 2025,
+      "outlays": 9000000.0,
+      "budgetAuthority": 10000000.0,
+      "unitsQuote": "Data for budget authority, outlays, offsetting receipts, and governmental receipts are shown in thousands of dollars.",
+      "precisionNote": "the file data from FY 1995 through FY 2031 represent the Budget amounts multiplied by one thousand to convert the amounts to thousands ; detail below millions is not available.",
+      "treasuryQuote": "The totals are generally consistent with data published in the Monthly Treasury Statement",
+      "treasuryDifferencesQuote": "Differences between the Treasury publications and the Budget arise from a small number of reporting and classification corrections made subsequent to the Treasury publications and some conceptual differences between OMB and Treasury reporting.",
+      "netQuote": "Budget authority and outlay amounts are reported net of any offsetting collections, such as fees, fines, and penalties.",
+      "signQuote": "Outlays are usually positive values. Offsetting receipts are usually negative values .",
+      "outlayAccountRows": 1,
+      "budgetAuthorityAccountRows": 1,
+      "package": "BUDGET-2027-DB",
+      "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
+    }
   },
   {
     "id": "exec-ind-misc-nuclear-waste-technical-review-board",
@@ -95955,7 +96307,30 @@
         }
       ]
     },
-    "parentId": "exec-ind-misc"
+    "parentId": "exec-ind-misc",
+    "ombBudget": {
+      "source": "omb_public_budget_database",
+      "level": "agency",
+      "listedAgency": "Nuclear Waste Technical Review Board",
+      "listedBureau": null,
+      "cgacAgencyCode": "431",
+      "cgacAgencyCodeCount": 1,
+      "rowSelection": "every account row OMB files under this unit for the year, on-budget and off-budget together, including the negative offsetting-receipt rows",
+      "documentSha256": "3fc01dd04bff12c425ce72cb54e259726b7769d8c04767dcd4e16743ca77ce4e",
+      "fiscalYear": 2025,
+      "outlays": 4000000.0,
+      "budgetAuthority": 4000000.0,
+      "unitsQuote": "Data for budget authority, outlays, offsetting receipts, and governmental receipts are shown in thousands of dollars.",
+      "precisionNote": "the file data from FY 1995 through FY 2031 represent the Budget amounts multiplied by one thousand to convert the amounts to thousands ; detail below millions is not available.",
+      "treasuryQuote": "The totals are generally consistent with data published in the Monthly Treasury Statement",
+      "treasuryDifferencesQuote": "Differences between the Treasury publications and the Budget arise from a small number of reporting and classification corrections made subsequent to the Treasury publications and some conceptual differences between OMB and Treasury reporting.",
+      "netQuote": "Budget authority and outlay amounts are reported net of any offsetting collections, such as fees, fines, and penalties.",
+      "signQuote": "Outlays are usually positive values. Offsetting receipts are usually negative values .",
+      "outlayAccountRows": 2,
+      "budgetAuthorityAccountRows": 2,
+      "package": "BUDGET-2027-DB",
+      "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
+    }
   },
   {
     "id": "exec-ind-misc-advisory-council-on-historic-preservation",
@@ -96018,7 +96393,30 @@
       "parentListedName": null,
       "checkedAt": "2026-09-08T19:19:15Z"
     },
-    "parentId": "exec-ind-misc"
+    "parentId": "exec-ind-misc",
+    "ombBudget": {
+      "source": "omb_public_budget_database",
+      "level": "agency",
+      "listedAgency": "Advisory Council on Historic Preservation",
+      "listedBureau": null,
+      "cgacAgencyCode": "306",
+      "cgacAgencyCodeCount": 1,
+      "rowSelection": "every account row OMB files under this unit for the year, on-budget and off-budget together, including the negative offsetting-receipt rows",
+      "documentSha256": "3fc01dd04bff12c425ce72cb54e259726b7769d8c04767dcd4e16743ca77ce4e",
+      "fiscalYear": 2025,
+      "outlays": 9000000.0,
+      "budgetAuthority": 9000000.0,
+      "unitsQuote": "Data for budget authority, outlays, offsetting receipts, and governmental receipts are shown in thousands of dollars.",
+      "precisionNote": "the file data from FY 1995 through FY 2031 represent the Budget amounts multiplied by one thousand to convert the amounts to thousands ; detail below millions is not available.",
+      "treasuryQuote": "The totals are generally consistent with data published in the Monthly Treasury Statement",
+      "treasuryDifferencesQuote": "Differences between the Treasury publications and the Budget arise from a small number of reporting and classification corrections made subsequent to the Treasury publications and some conceptual differences between OMB and Treasury reporting.",
+      "netQuote": "Budget authority and outlay amounts are reported net of any offsetting collections, such as fees, fines, and penalties.",
+      "signQuote": "Outlays are usually positive values. Offsetting receipts are usually negative values .",
+      "outlayAccountRows": 4,
+      "budgetAuthorityAccountRows": 4,
+      "package": "BUDGET-2027-DB",
+      "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
+    }
   },
   {
     "id": "exec-ind-misc-national-council-on-disability",
@@ -96099,7 +96497,30 @@
         }
       ]
     },
-    "parentId": "exec-ind-misc"
+    "parentId": "exec-ind-misc",
+    "ombBudget": {
+      "source": "omb_public_budget_database",
+      "level": "agency",
+      "listedAgency": "National Council on Disability",
+      "listedBureau": null,
+      "cgacAgencyCode": "413",
+      "cgacAgencyCodeCount": 1,
+      "rowSelection": "every account row OMB files under this unit for the year, on-budget and off-budget together, including the negative offsetting-receipt rows",
+      "documentSha256": "3fc01dd04bff12c425ce72cb54e259726b7769d8c04767dcd4e16743ca77ce4e",
+      "fiscalYear": 2025,
+      "outlays": 3000000.0,
+      "budgetAuthority": 4000000.0,
+      "unitsQuote": "Data for budget authority, outlays, offsetting receipts, and governmental receipts are shown in thousands of dollars.",
+      "precisionNote": "the file data from FY 1995 through FY 2031 represent the Budget amounts multiplied by one thousand to convert the amounts to thousands ; detail below millions is not available.",
+      "treasuryQuote": "The totals are generally consistent with data published in the Monthly Treasury Statement",
+      "treasuryDifferencesQuote": "Differences between the Treasury publications and the Budget arise from a small number of reporting and classification corrections made subsequent to the Treasury publications and some conceptual differences between OMB and Treasury reporting.",
+      "netQuote": "Budget authority and outlay amounts are reported net of any offsetting collections, such as fees, fines, and penalties.",
+      "signQuote": "Outlays are usually positive values. Offsetting receipts are usually negative values .",
+      "outlayAccountRows": 3,
+      "budgetAuthorityAccountRows": 3,
+      "package": "BUDGET-2027-DB",
+      "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
+    }
   },
   {
     "id": "exec-ind-misc-commission-of-fine-arts",
@@ -96186,7 +96607,30 @@
         }
       ]
     },
-    "parentId": "exec-ind-misc"
+    "parentId": "exec-ind-misc",
+    "ombBudget": {
+      "source": "omb_public_budget_database",
+      "level": "agency",
+      "listedAgency": "Commission of Fine Arts",
+      "listedBureau": null,
+      "cgacAgencyCode": "323",
+      "cgacAgencyCodeCount": 1,
+      "rowSelection": "every account row OMB files under this unit for the year, on-budget and off-budget together, including the negative offsetting-receipt rows",
+      "documentSha256": "3fc01dd04bff12c425ce72cb54e259726b7769d8c04767dcd4e16743ca77ce4e",
+      "fiscalYear": 2025,
+      "outlays": 9000000.0,
+      "budgetAuthority": 9000000.0,
+      "unitsQuote": "Data for budget authority, outlays, offsetting receipts, and governmental receipts are shown in thousands of dollars.",
+      "precisionNote": "the file data from FY 1995 through FY 2031 represent the Budget amounts multiplied by one thousand to convert the amounts to thousands ; detail below millions is not available.",
+      "treasuryQuote": "The totals are generally consistent with data published in the Monthly Treasury Statement",
+      "treasuryDifferencesQuote": "Differences between the Treasury publications and the Budget arise from a small number of reporting and classification corrections made subsequent to the Treasury publications and some conceptual differences between OMB and Treasury reporting.",
+      "netQuote": "Budget authority and outlay amounts are reported net of any offsetting collections, such as fees, fines, and penalties.",
+      "signQuote": "Outlays are usually positive values. Offsetting receipts are usually negative values .",
+      "outlayAccountRows": 2,
+      "budgetAuthorityAccountRows": 2,
+      "package": "BUDGET-2027-DB",
+      "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
+    }
   },
   {
     "id": "exec-ind-misc-arctic-research-commission",
@@ -96312,7 +96756,30 @@
       "parentListedName": null,
       "checkedAt": "2026-09-08T19:19:15Z"
     },
-    "parentId": "exec-ind-misc"
+    "parentId": "exec-ind-misc",
+    "ombBudget": {
+      "source": "omb_public_budget_database",
+      "level": "agency",
+      "listedAgency": "Harry S Truman Scholarship Foundation",
+      "listedBureau": null,
+      "cgacAgencyCode": "372",
+      "cgacAgencyCodeCount": 1,
+      "rowSelection": "every account row OMB files under this unit for the year, on-budget and off-budget together, including the negative offsetting-receipt rows",
+      "documentSha256": "3fc01dd04bff12c425ce72cb54e259726b7769d8c04767dcd4e16743ca77ce4e",
+      "fiscalYear": 2025,
+      "outlays": 3000000.0,
+      "budgetAuthority": 5000000.0,
+      "unitsQuote": "Data for budget authority, outlays, offsetting receipts, and governmental receipts are shown in thousands of dollars.",
+      "precisionNote": "the file data from FY 1995 through FY 2031 represent the Budget amounts multiplied by one thousand to convert the amounts to thousands ; detail below millions is not available.",
+      "treasuryQuote": "The totals are generally consistent with data published in the Monthly Treasury Statement",
+      "treasuryDifferencesQuote": "Differences between the Treasury publications and the Budget arise from a small number of reporting and classification corrections made subsequent to the Treasury publications and some conceptual differences between OMB and Treasury reporting.",
+      "netQuote": "Budget authority and outlay amounts are reported net of any offsetting collections, such as fees, fines, and penalties.",
+      "signQuote": "Outlays are usually positive values. Offsetting receipts are usually negative values .",
+      "outlayAccountRows": 4,
+      "budgetAuthorityAccountRows": 4,
+      "package": "BUDGET-2027-DB",
+      "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
+    }
   },
   {
     "id": "exec-ind-misc-madison-fellowship-foundation",
@@ -96369,7 +96836,30 @@
     },
     "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
     "verificationMethod": "listed_in_federal_register_agency_directory",
-    "parentId": "exec-ind-misc"
+    "parentId": "exec-ind-misc",
+    "ombBudget": {
+      "source": "omb_public_budget_database",
+      "level": "agency",
+      "listedAgency": "James Madison Memorial Fellowship Foundation",
+      "listedBureau": null,
+      "cgacAgencyCode": "381",
+      "cgacAgencyCodeCount": 1,
+      "rowSelection": "every account row OMB files under this unit for the year, on-budget and off-budget together, including the negative offsetting-receipt rows",
+      "documentSha256": "3fc01dd04bff12c425ce72cb54e259726b7769d8c04767dcd4e16743ca77ce4e",
+      "fiscalYear": 2025,
+      "outlays": 3000000.0,
+      "budgetAuthority": 2000000.0,
+      "unitsQuote": "Data for budget authority, outlays, offsetting receipts, and governmental receipts are shown in thousands of dollars.",
+      "precisionNote": "the file data from FY 1995 through FY 2031 represent the Budget amounts multiplied by one thousand to convert the amounts to thousands ; detail below millions is not available.",
+      "treasuryQuote": "The totals are generally consistent with data published in the Monthly Treasury Statement",
+      "treasuryDifferencesQuote": "Differences between the Treasury publications and the Budget arise from a small number of reporting and classification corrections made subsequent to the Treasury publications and some conceptual differences between OMB and Treasury reporting.",
+      "netQuote": "Budget authority and outlay amounts are reported net of any offsetting collections, such as fees, fines, and penalties.",
+      "signQuote": "Outlays are usually positive values. Offsetting receipts are usually negative values .",
+      "outlayAccountRows": 4,
+      "budgetAuthorityAccountRows": 4,
+      "package": "BUDGET-2027-DB",
+      "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
+    }
   },
   {
     "id": "exec-ind-misc-heritage-abroad-commission",
@@ -96561,7 +97051,30 @@
         }
       ]
     },
-    "parentId": "exec-ind-misc"
+    "parentId": "exec-ind-misc",
+    "ombBudget": {
+      "source": "omb_public_budget_database",
+      "level": "agency",
+      "listedAgency": "Marine Mammal Commission",
+      "listedBureau": null,
+      "cgacAgencyCode": "387",
+      "cgacAgencyCodeCount": 1,
+      "rowSelection": "every account row OMB files under this unit for the year, on-budget and off-budget together, including the negative offsetting-receipt rows",
+      "documentSha256": "3fc01dd04bff12c425ce72cb54e259726b7769d8c04767dcd4e16743ca77ce4e",
+      "fiscalYear": 2025,
+      "outlays": 5000000.0,
+      "budgetAuthority": 5000000.0,
+      "unitsQuote": "Data for budget authority, outlays, offsetting receipts, and governmental receipts are shown in thousands of dollars.",
+      "precisionNote": "the file data from FY 1995 through FY 2031 represent the Budget amounts multiplied by one thousand to convert the amounts to thousands ; detail below millions is not available.",
+      "treasuryQuote": "The totals are generally consistent with data published in the Monthly Treasury Statement",
+      "treasuryDifferencesQuote": "Differences between the Treasury publications and the Budget arise from a small number of reporting and classification corrections made subsequent to the Treasury publications and some conceptual differences between OMB and Treasury reporting.",
+      "netQuote": "Budget authority and outlay amounts are reported net of any offsetting collections, such as fees, fines, and penalties.",
+      "signQuote": "Outlays are usually positive values. Offsetting receipts are usually negative values .",
+      "outlayAccountRows": 1,
+      "budgetAuthorityAccountRows": 1,
+      "package": "BUDGET-2027-DB",
+      "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
+    }
   },
   {
     "id": "exec-ind-misc-csosa",
@@ -96618,7 +97131,30 @@
     },
     "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
     "verificationMethod": "listed_in_federal_register_agency_directory",
-    "parentId": "exec-ind-misc"
+    "parentId": "exec-ind-misc",
+    "ombBudget": {
+      "source": "omb_public_budget_database",
+      "level": "agency",
+      "listedAgency": "Court Services and Offender Supervision Agency for the District of Columbia",
+      "listedBureau": null,
+      "cgacAgencyCode": "511",
+      "cgacAgencyCodeCount": 1,
+      "rowSelection": "every account row OMB files under this unit for the year, on-budget and off-budget together, including the negative offsetting-receipt rows",
+      "documentSha256": "3fc01dd04bff12c425ce72cb54e259726b7769d8c04767dcd4e16743ca77ce4e",
+      "fiscalYear": 2025,
+      "outlays": 275000000.0,
+      "budgetAuthority": 286000000.0,
+      "unitsQuote": "Data for budget authority, outlays, offsetting receipts, and governmental receipts are shown in thousands of dollars.",
+      "precisionNote": "the file data from FY 1995 through FY 2031 represent the Budget amounts multiplied by one thousand to convert the amounts to thousands ; detail below millions is not available.",
+      "treasuryQuote": "The totals are generally consistent with data published in the Monthly Treasury Statement",
+      "treasuryDifferencesQuote": "Differences between the Treasury publications and the Budget arise from a small number of reporting and classification corrections made subsequent to the Treasury publications and some conceptual differences between OMB and Treasury reporting.",
+      "netQuote": "Budget authority and outlay amounts are reported net of any offsetting collections, such as fees, fines, and penalties.",
+      "signQuote": "Outlays are usually positive values. Offsetting receipts are usually negative values .",
+      "outlayAccountRows": 2,
+      "budgetAuthorityAccountRows": 1,
+      "package": "BUDGET-2027-DB",
+      "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
+    }
   },
   {
     "id": "exec-ind-misc-armed-forces-retirement-home",
@@ -96768,7 +97304,30 @@
       "parentListedName": null,
       "checkedAt": "2026-09-08T19:19:15Z"
     },
-    "parentId": "exec-ind-misc"
+    "parentId": "exec-ind-misc",
+    "ombBudget": {
+      "source": "omb_public_budget_database",
+      "level": "agency",
+      "listedAgency": "Council of the Inspectors General on Integrity and Efficiency",
+      "listedBureau": null,
+      "cgacAgencyCode": "542",
+      "cgacAgencyCodeCount": 1,
+      "rowSelection": "every account row OMB files under this unit for the year, on-budget and off-budget together, including the negative offsetting-receipt rows",
+      "documentSha256": "3fc01dd04bff12c425ce72cb54e259726b7769d8c04767dcd4e16743ca77ce4e",
+      "fiscalYear": 2025,
+      "outlays": 11000000.0,
+      "budgetAuthority": 3000000.0,
+      "unitsQuote": "Data for budget authority, outlays, offsetting receipts, and governmental receipts are shown in thousands of dollars.",
+      "precisionNote": "the file data from FY 1995 through FY 2031 represent the Budget amounts multiplied by one thousand to convert the amounts to thousands ; detail below millions is not available.",
+      "treasuryQuote": "The totals are generally consistent with data published in the Monthly Treasury Statement",
+      "treasuryDifferencesQuote": "Differences between the Treasury publications and the Budget arise from a small number of reporting and classification corrections made subsequent to the Treasury publications and some conceptual differences between OMB and Treasury reporting.",
+      "netQuote": "Budget authority and outlay amounts are reported net of any offsetting collections, such as fees, fines, and penalties.",
+      "signQuote": "Outlays are usually positive values. Offsetting receipts are usually negative values .",
+      "outlayAccountRows": 4,
+      "budgetAuthorityAccountRows": 4,
+      "package": "BUDGET-2027-DB",
+      "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
+    }
   },
   {
     "id": "exec-ind-misc-delta-regional-authority",
@@ -96831,7 +97390,30 @@
       "parentListedName": null,
       "checkedAt": "2026-09-08T19:19:15Z"
     },
-    "parentId": "exec-ind-misc"
+    "parentId": "exec-ind-misc",
+    "ombBudget": {
+      "source": "omb_public_budget_database",
+      "level": "agency",
+      "listedAgency": "Delta Regional Authority",
+      "listedBureau": null,
+      "cgacAgencyCode": "517",
+      "cgacAgencyCodeCount": 1,
+      "rowSelection": "every account row OMB files under this unit for the year, on-budget and off-budget together, including the negative offsetting-receipt rows",
+      "documentSha256": "3fc01dd04bff12c425ce72cb54e259726b7769d8c04767dcd4e16743ca77ce4e",
+      "fiscalYear": 2025,
+      "outlays": 56000000.0,
+      "budgetAuthority": 41000000.0,
+      "unitsQuote": "Data for budget authority, outlays, offsetting receipts, and governmental receipts are shown in thousands of dollars.",
+      "precisionNote": "the file data from FY 1995 through FY 2031 represent the Budget amounts multiplied by one thousand to convert the amounts to thousands ; detail below millions is not available.",
+      "treasuryQuote": "The totals are generally consistent with data published in the Monthly Treasury Statement",
+      "treasuryDifferencesQuote": "Differences between the Treasury publications and the Budget arise from a small number of reporting and classification corrections made subsequent to the Treasury publications and some conceptual differences between OMB and Treasury reporting.",
+      "netQuote": "Budget authority and outlay amounts are reported net of any offsetting collections, such as fees, fines, and penalties.",
+      "signQuote": "Outlays are usually positive values. Offsetting receipts are usually negative values .",
+      "outlayAccountRows": 3,
+      "budgetAuthorityAccountRows": 1,
+      "package": "BUDGET-2027-DB",
+      "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
+    }
   },
   {
     "id": "exec-ind-misc-northern-border-regional-commission",
@@ -96894,7 +97476,30 @@
       "parentListedName": null,
       "checkedAt": "2026-09-08T19:19:15Z"
     },
-    "parentId": "exec-ind-misc"
+    "parentId": "exec-ind-misc",
+    "ombBudget": {
+      "source": "omb_public_budget_database",
+      "level": "agency",
+      "listedAgency": "Northern Border Regional Commission",
+      "listedBureau": null,
+      "cgacAgencyCode": "573",
+      "cgacAgencyCodeCount": 1,
+      "rowSelection": "every account row OMB files under this unit for the year, on-budget and off-budget together, including the negative offsetting-receipt rows",
+      "documentSha256": "3fc01dd04bff12c425ce72cb54e259726b7769d8c04767dcd4e16743ca77ce4e",
+      "fiscalYear": 2025,
+      "outlays": 25000000.0,
+      "budgetAuthority": 46000000.0,
+      "unitsQuote": "Data for budget authority, outlays, offsetting receipts, and governmental receipts are shown in thousands of dollars.",
+      "precisionNote": "the file data from FY 1995 through FY 2031 represent the Budget amounts multiplied by one thousand to convert the amounts to thousands ; detail below millions is not available.",
+      "treasuryQuote": "The totals are generally consistent with data published in the Monthly Treasury Statement",
+      "treasuryDifferencesQuote": "Differences between the Treasury publications and the Budget arise from a small number of reporting and classification corrections made subsequent to the Treasury publications and some conceptual differences between OMB and Treasury reporting.",
+      "netQuote": "Budget authority and outlay amounts are reported net of any offsetting collections, such as fees, fines, and penalties.",
+      "signQuote": "Outlays are usually positive values. Offsetting receipts are usually negative values .",
+      "outlayAccountRows": 2,
+      "budgetAuthorityAccountRows": 1,
+      "package": "BUDGET-2027-DB",
+      "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
+    }
   },
   {
     "id": "exec-ind-misc-japan-united-states-friendship-commission",
@@ -96951,7 +97556,30 @@
     },
     "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
     "verificationMethod": "listed_in_federal_register_agency_directory",
-    "parentId": "exec-ind-misc"
+    "parentId": "exec-ind-misc",
+    "ombBudget": {
+      "source": "omb_public_budget_database",
+      "level": "agency",
+      "listedAgency": "Japan-United States Friendship Commission",
+      "listedBureau": null,
+      "cgacAgencyCode": "382",
+      "cgacAgencyCodeCount": 1,
+      "rowSelection": "every account row OMB files under this unit for the year, on-budget and off-budget together, including the negative offsetting-receipt rows",
+      "documentSha256": "3fc01dd04bff12c425ce72cb54e259726b7769d8c04767dcd4e16743ca77ce4e",
+      "fiscalYear": 2025,
+      "outlays": 2000000.0,
+      "budgetAuthority": 2000000.0,
+      "unitsQuote": "Data for budget authority, outlays, offsetting receipts, and governmental receipts are shown in thousands of dollars.",
+      "precisionNote": "the file data from FY 1995 through FY 2031 represent the Budget amounts multiplied by one thousand to convert the amounts to thousands ; detail below millions is not available.",
+      "treasuryQuote": "The totals are generally consistent with data published in the Monthly Treasury Statement",
+      "treasuryDifferencesQuote": "Differences between the Treasury publications and the Budget arise from a small number of reporting and classification corrections made subsequent to the Treasury publications and some conceptual differences between OMB and Treasury reporting.",
+      "netQuote": "Budget authority and outlay amounts are reported net of any offsetting collections, such as fees, fines, and penalties.",
+      "signQuote": "Outlays are usually positive values. Offsetting receipts are usually negative values .",
+      "outlayAccountRows": 5,
+      "budgetAuthorityAccountRows": 5,
+      "package": "BUDGET-2027-DB",
+      "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
+    }
   },
   {
     "id": "exec-ind-misc-interagency-council-on-homelessness",
@@ -97023,7 +97651,30 @@
         }
       ]
     },
-    "parentId": "exec-ind-misc"
+    "parentId": "exec-ind-misc",
+    "ombBudget": {
+      "source": "omb_public_budget_database",
+      "level": "agency",
+      "listedAgency": "United States Interagency Council on Homelessness",
+      "listedBureau": null,
+      "cgacAgencyCode": "376",
+      "cgacAgencyCodeCount": 1,
+      "rowSelection": "every account row OMB files under this unit for the year, on-budget and off-budget together, including the negative offsetting-receipt rows",
+      "documentSha256": "3fc01dd04bff12c425ce72cb54e259726b7769d8c04767dcd4e16743ca77ce4e",
+      "fiscalYear": 2025,
+      "outlays": 3000000.0,
+      "budgetAuthority": 4000000.0,
+      "unitsQuote": "Data for budget authority, outlays, offsetting receipts, and governmental receipts are shown in thousands of dollars.",
+      "precisionNote": "the file data from FY 1995 through FY 2031 represent the Budget amounts multiplied by one thousand to convert the amounts to thousands ; detail below millions is not available.",
+      "treasuryQuote": "The totals are generally consistent with data published in the Monthly Treasury Statement",
+      "treasuryDifferencesQuote": "Differences between the Treasury publications and the Budget arise from a small number of reporting and classification corrections made subsequent to the Treasury publications and some conceptual differences between OMB and Treasury reporting.",
+      "netQuote": "Budget authority and outlay amounts are reported net of any offsetting collections, such as fees, fines, and penalties.",
+      "signQuote": "Outlays are usually positive values. Offsetting receipts are usually negative values .",
+      "outlayAccountRows": 1,
+      "budgetAuthorityAccountRows": 1,
+      "package": "BUDGET-2027-DB",
+      "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
+    }
   },
   {
     "id": "exec-ind-misc-civil-rights-cold-case-records-review-board",
@@ -97086,7 +97737,30 @@
       "parentListedName": null,
       "checkedAt": "2026-09-08T19:19:15Z"
     },
-    "parentId": "exec-ind-misc"
+    "parentId": "exec-ind-misc",
+    "ombBudget": {
+      "source": "omb_public_budget_database",
+      "level": "agency",
+      "listedAgency": "Civil Rights Cold Case Records Review Board",
+      "listedBureau": null,
+      "cgacAgencyCode": "130",
+      "cgacAgencyCodeCount": 1,
+      "rowSelection": "every account row OMB files under this unit for the year, on-budget and off-budget together, including the negative offsetting-receipt rows",
+      "documentSha256": "3fc01dd04bff12c425ce72cb54e259726b7769d8c04767dcd4e16743ca77ce4e",
+      "fiscalYear": 2025,
+      "outlays": 1000000.0,
+      "budgetAuthority": null,
+      "unitsQuote": "Data for budget authority, outlays, offsetting receipts, and governmental receipts are shown in thousands of dollars.",
+      "precisionNote": "the file data from FY 1995 through FY 2031 represent the Budget amounts multiplied by one thousand to convert the amounts to thousands ; detail below millions is not available.",
+      "treasuryQuote": "The totals are generally consistent with data published in the Monthly Treasury Statement",
+      "treasuryDifferencesQuote": "Differences between the Treasury publications and the Budget arise from a small number of reporting and classification corrections made subsequent to the Treasury publications and some conceptual differences between OMB and Treasury reporting.",
+      "netQuote": "Budget authority and outlay amounts are reported net of any offsetting collections, such as fees, fines, and penalties.",
+      "signQuote": "Outlays are usually positive values. Offsetting receipts are usually negative values .",
+      "outlayAccountRows": 1,
+      "budgetAuthorityAccountRows": 0,
+      "package": "BUDGET-2027-DB",
+      "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
+    }
   },
   {
     "id": "exec-independent-general-services-administration",
@@ -98271,6 +98945,8 @@
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
     "costSourceCount": 1,
+    "treasury_section": "Independent Agencies",
+    "treasury_classification_id": "59309961",
     "sourceCount": 3,
     "confidenceScore": 0.9,
     "verificationStatus": "verified",
@@ -98298,8 +98974,6 @@
       }
     ],
     "treasury_header_sum_note": "The statement prints no total line for this unit; the figure is the sum of the 3 lines it prints beneath the unit's header, listed below.",
-    "treasury_section": "Independent Agencies",
-    "treasury_classification_id": "59309961",
     "lastVerified": "2026-09-08T19:19:15Z",
     "verificationUnread": {
       "kind": "host_refuses_crawler",
@@ -101892,20 +102566,25 @@
     "treasurySectionAtAdd": "Independent Agencies",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
-      "https://www.federalregister.gov/agencies/consumer-financial-protection-bureau"
+      "https://www.federalregister.gov/agencies/consumer-financial-protection-bureau",
+      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-321"
     ],
     "sourceTypes": [
       "treasury_outlays",
       "government_dataset",
       "federal_register_directory",
-      "federal_register"
+      "federal_register",
+      "us_government_manual",
+      "official_site"
     ],
-    "proofSourceCount": 6,
+    "proofSourceCount": 8,
     "proofSourceTypes": [
       "treasury_outlays",
       "government_dataset",
       "federal_register_directory",
       "federal_register",
+      "us_government_manual",
+      "official_site",
       "official_financial_record",
       "historical_documentation"
     ],
@@ -101923,8 +102602,8 @@
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
     "costSourceCount": 1,
-    "sourceCount": 2,
-    "confidenceScore": 0.5,
+    "sourceCount": 3,
+    "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "rollup_total_amount": 403988335.89,
     "budget_source": "Treasury MTS Table 5",
@@ -101937,7 +102616,8 @@
     "lastVerified": "2026-09-08T19:19:15Z",
     "placementCheckable": false,
     "evidenceUrls": [
-      "https://www.federalregister.gov/agencies/consumer-financial-protection-bureau"
+      "https://www.federalregister.gov/agencies/consumer-financial-protection-bureau",
+      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-321"
     ],
     "directoryListing": {
       "source": "federal_register_agency_directory",
@@ -101972,7 +102652,53 @@
       "package": "BUDGET-2027-DB",
       "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
     },
-    "parentId": "exec-regulatory"
+    "parentId": "exec-regulatory",
+    "govmanEntry": {
+      "source": "us_government_manual",
+      "listedName": "Consumer Financial Protection Bureau",
+      "parentListedName": null,
+      "edition": "2025-12-31",
+      "package": "GOVMAN-2025-12-31",
+      "granule": "GOVMAN-2025-12-31-321",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-321"
+    },
+    "descriptionOfficial": {
+      "text": "The Consumer Financial Protection Bureau (CFPB) helps consumer finance markets work by making rules more effective, by consistently and fairly enforcing those rules, and by empowering consumers to take more control over their economic lives.",
+      "kind": "mission_statement",
+      "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+      "truncated": false,
+      "fullLength": 241,
+      "source": "us_government_manual",
+      "listedName": "Consumer Financial Protection Bureau",
+      "edition": "2025-12-31",
+      "package": "GOVMAN-2025-12-31",
+      "granule": "GOVMAN-2025-12-31-321",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-321",
+      "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+    },
+    "verificationAliasMatch": {
+      "alias": "Consumer Financial Protection Bureau",
+      "basis": "Two official documents, two word orders, one bureau. The Monthly Treasury Statement and this graph print 'Bureau of Consumer Financial Protection'; the United States Government Manual's entry 321 is headed 'Consumer Financial Protection Bureau', and OPM's current PLUM export files its rows under that heading too. The identification does not rest on the statute: it rests on the Manual's own entry, which is committed at tests/fixtures/govman/ and re-read on every run.",
+      "matchedText": "Consumer Financial Protection Bureau",
+      "scope": "node",
+      "source": "us_government_manual",
+      "owner": "exec-regulatory-bureau-of-consumer-financial-protection",
+      "urls": [
+        "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-321"
+      ],
+      "matches": [
+        {
+          "source": "us_government_manual",
+          "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-321",
+          "alias": "Consumer Financial Protection Bureau",
+          "basis": "Two official documents, two word orders, one bureau. The Monthly Treasury Statement and this graph print 'Bureau of Consumer Financial Protection'; the United States Government Manual's entry 321 is headed 'Consumer Financial Protection Bureau', and OPM's current PLUM export files its rows under that heading too. The identification does not rest on the statute: it rests on the Manual's own entry, which is committed at tests/fixtures/govman/ and re-read on every run.",
+          "matchedText": "Consumer Financial Protection Bureau",
+          "scope": "node",
+          "owner": "exec-regulatory-bureau-of-consumer-financial-protection"
+        }
+      ],
+      "gradedAtMost": "partial"
+    }
   },
   {
     "id": "judicial-branch",

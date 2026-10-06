@@ -7,16 +7,16 @@
     "url": "https://www.govinfo.gov/content/pkg/GOVMAN-2025-12-31/xml/GOVMAN-2025-12-31.xml",
     "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138",
     "fetchedAt": "2026-09-20T02:40:27Z",
-    "derivedAt": "2026-09-21T17:30:49Z",
+    "derivedAt": "2026-10-06T05:06:09Z",
     "fixture": "tests/fixtures/govman/GOVMAN-2025-12-31.xml"
   },
   "report": {
     "entries": 231,
-    "organisations_matched": 186,
+    "organisations_matched": 187,
     "entry_names_several_entries": 0,
     "entry_names_several_nodes": 0,
-    "entry_names_no_node": 45,
-    "organisations_matched_by_alias": 7,
+    "entry_names_no_node": 44,
+    "organisations_matched_by_alias": 8,
     "posts_listed": 89,
     "posts_under_an_aliased_organisation": 4,
     "refused_title_not_listed": 1062,
@@ -27,16 +27,16 @@
   },
   "organisationsReport": {
     "entries": 231,
-    "organisations_matched": 186,
+    "organisations_matched": 187,
     "entry_names_several_entries": 0,
     "entry_names_several_nodes": 0,
-    "entry_names_no_node": 45,
-    "organisations_matched_by_alias": 7,
-    "organisations_listed": 186,
+    "entry_names_no_node": 44,
+    "organisations_matched_by_alias": 8,
+    "organisations_listed": 187,
     "refused_no_access_id": 0,
-    "top_level_entries": 83,
-    "descriptions_extracted": 165,
-    "descriptions_mission_statement": 108,
+    "top_level_entries": 84,
+    "descriptions_extracted": 166,
+    "descriptions_mission_statement": 109,
     "descriptions_opening_paragraph": 57,
     "descriptions_truncated": 18,
     "descriptions_refused_opening_paragraph_does_not_name_the_unit": 14,
@@ -3811,6 +3811,30 @@
       "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-131",
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
+    "exec-regulatory-bureau-of-consumer-financial-protection": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Consumer Financial Protection Bureau (CFPB) helps consumer finance markets work by making rules more effective, by consistently and fairly enforcing those rules, and by empowering consumers to take more control over their economic lives.",
+        "truncated": false,
+        "fullLength": 241
+      },
+      "source": "us_government_manual",
+      "nameAlias": {
+        "alias": "Consumer Financial Protection Bureau",
+        "basis": "Two official documents, two word orders, one bureau. The Monthly Treasury Statement and this graph print 'Bureau of Consumer Financial Protection'; the United States Government Manual's entry 321 is headed 'Consumer Financial Protection Bureau', and OPM's current PLUM export files its rows under that heading too. The identification does not rest on the statute: it rests on the Manual's own entry, which is committed at tests/fixtures/govman/ and re-read on every run."
+      },
+      "nodeName": "Bureau of Consumer Financial Protection",
+      "listedName": "Consumer Financial Protection Bureau",
+      "entityId": "321",
+      "parentListedName": null,
+      "parentEntityId": null,
+      "package": "GOVMAN-2025-12-31",
+      "edition": "2025-12-31",
+      "granule": "GOVMAN-2025-12-31-321",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-321",
+      "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+    },
     "exec-regulatory-cpsc": {
       "description": {
         "kind": "mission_statement",
@@ -5143,13 +5167,13 @@
   },
   "officesReport": {
     "top_level_entries_considered": 105,
-    "refused_entry_is_an_agency": 83,
-    "refused_name_reaches_no_post": 19,
+    "refused_entry_is_an_agency": 84,
+    "refused_name_reaches_no_post": 18,
     "refused_name_reaches_several_posts": 0,
     "refused_post_reached_by_several_entries": 0,
     "refused_post_sits_under_a_manual_agency": 0,
     "refused_no_access_id": 0,
-    "refused_caps_row_is_not_the_entrys_own_name": 16,
+    "refused_caps_row_is_not_the_entrys_own_name": 14,
     "offices_listed": 2,
     "offices_matched_by_alias": 1
   }

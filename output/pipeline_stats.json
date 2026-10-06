@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-06T04:51:56.470107+00:00",
+  "timestamp": "2026-10-06T05:06:36.642222+00:00",
   "mode": "offline_regeneration",
   "note": "Rebuilt from the curated base graph and the Treasury anchor already published; no crawler ran. See scripts/regenerate_published_graph.py.",
   "nodes_before": 5481,
@@ -22,12 +22,12 @@
   "promoted_nodes_written": 0,
   "promotion_stats": {},
   "verification_breakdown": {
-    "partial": 445,
-    "verified": 547,
+    "partial": 444,
+    "verified": 548,
     "unverified": 4518
   },
   "average_confidence_score": 0.76,
-  "verified_node_count": 546,
+  "verified_node_count": 547,
   "treasury_total_fetched": false,
   "build_validation": {
     "initial_node_count": 1039,
@@ -49,11 +49,11 @@
     "explicitly_root_attached_nodes": 1,
     "relationship_counts": {},
     "verification_status_counts": {
-      "partial": 445,
-      "verified": 547,
+      "partial": 444,
+      "verified": 548,
       "unverified": 4518
     },
-    "verified_node_count": 546,
+    "verified_node_count": 547,
     "dropped_placeholder_nodes": 0,
     "average_confidence_score": 0.76,
     "pipeline_summary": {
@@ -171,7 +171,7 @@
           "amount": 462550050.1
         }
       ],
-      "stale_rollups_cleared": 140,
+      "stale_rollups_cleared": 142,
       "synthetic_receipts_cleared": 29,
       "carried_forward_citations_restored": 0,
       "unmatched_sample": [
@@ -604,12 +604,12 @@
       "organisation_alias_row_withdrawn": 0
     },
     "govman_org_evidence": {
-      "listed": 186,
+      "listed": 187,
       "unknown_node": 0,
       "stale_name": 0,
       "is_a_post": 0,
-      "urls_added": 186,
-      "method_kept": 157,
+      "urls_added": 187,
+      "method_kept": 158,
       "method_set": 29,
       "failed_checks_withdrawn": 0,
       "placements_listed": 4,
@@ -617,8 +617,8 @@
       "placements_unresolved": 44,
       "placements_already_evidenced": 49,
       "top_level": 81,
-      "descriptions_published": 165,
-      "placements_refused_alias": 7
+      "descriptions_published": 166,
+      "placements_refused_alias": 8
     },
     "govman_office_evidence": {
       "listed": 2,
@@ -642,7 +642,7 @@
       "failed_checks_withdrawn": 0
     },
     "omb_budget_evidence": {
-      "applied": 149,
+      "applied": 177,
       "unknown_node": 0,
       "stale_name": 0,
       "is_a_post": 0,
@@ -672,8 +672,8 @@
       "statement_file": "tests/fixtures/mts_table5_2026-08-31.json"
     },
     "alias_matches": {
-      "nodes_with_an_alias_match": 18,
-      "capped_to_partial": 17,
+      "nodes_with_an_alias_match": 19,
+      "capped_to_partial": 18,
       "not_capped_other_evidence": 1
     },
     "pay_documents": {
@@ -765,8 +765,8 @@
     "graph_summary": {
       "verified_treasury_total": 6811043257196.1,
       "verification_status_counts": {
-        "partial": 445,
-        "verified": 547,
+        "partial": 444,
+        "verified": 548,
         "unverified": 4518
       },
       "cost_status_counts": {
@@ -847,8 +847,8 @@
           "unverified": 5338
         },
         "verification_status_counts": {
-          "partial": 445,
-          "verified": 547,
+          "partial": 444,
+          "verified": 548,
           "unverified": 4518
         },
         "proof_status_counts": {
@@ -869,11 +869,11 @@
       "trusted_exceptions_applied": 4862
     },
     "export_verification_status_counts": {
-      "partial": 445,
-      "verified": 547,
+      "partial": 444,
+      "verified": 548,
       "unverified": 4518
     },
-    "export_verified_node_count": 547,
+    "export_verified_node_count": 548,
     "export_average_confidence_score": 0.76,
     "pre_export_audit_summary": {
       "total_nodes": 5510,
@@ -905,8 +905,8 @@
         "unverified": 5338
       },
       "verification_status_counts": {
-        "partial": 445,
-        "verified": 547,
+        "partial": 444,
+        "verified": 548,
         "unverified": 4518
       },
       "proof_status_counts": {

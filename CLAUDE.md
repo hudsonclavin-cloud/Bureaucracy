@@ -1508,9 +1508,11 @@ read; later the same day it was added on the Manual's own entry 321 instead, so
 the table now carries it among 13 rows and `NODE_ALIASES` mirrors it (14
 since 2026-10-05: the Bureau of Prisons answers to "Federal Bureau of
 Prisons", the name OPM's current export files its 72 rows under, §19.20). The
-Manual evidence has not been re-derived since, so the published graph carries no
-alias match for it yet, and the file's `_declined` list and §17.4 still record
-the refusal. `National
+Manual evidence was not re-derived until 2026-10-07, so for two weeks the
+published graph carried no alias match for it; since then the CFPB carries the
+Manual's entry, its official description and the alias match, held at
+`partial` by the cap, and the file's `_declined` list and §17.4 still record
+the earlier refusal. `National
 Security Agency (NSA)` → the Manual's joint `National Security Agency /
 Central Security Service` names a second body the graph has no node for — the
 shape `usaspending.BROADER_API_ENTITY` refuses.
@@ -4831,8 +4833,13 @@ and off-budget together, including the negative offsetting-receipt rows"), and
 the gate refuses a block that does not. A figure whose selection rule is not
 stated cannot be audited.
 
-**133 organisations carry a figure** (61 agency, 72 bureau), **39 of which
-publish no measured cost of their own**. A measure the package carries no row
+**177 organisations carry a figure** (90 agency, 87 bureau), **64 of which
+publish no measured cost of their own** (133, 61, 72 and 39 when this landed;
+the 28 added on 2026-10-07 came of re-deriving a committed file that had gone
+stale against its own code: all 28 are small independent bodies added on
+2026-09-21 when the current Plum Book's agency list was reconciled, each
+licensed by its name on an official page, and none had been matched against
+OMB's rows since). A measure the package carries no row
 for is published as ABSENT, never as zero: the two member files do not cover
 the same units — the Farm Credit Administration has outlay rows and no
 budget-authority rows — and the first version defaulted the missing one to 0.0,

@@ -5169,9 +5169,14 @@ for the wrong section.
 derive script against `main` before any of this landed showed three evidence
 files stale against their own code: the Government Manual join (the CFPB's
 alias row of 2026-09-21 now matches, 186 → 187 organisations), OMB's budget
-database (its match report and record set differ from the committed file; the
-cause is not yet established), and
+database (28 records added, none changed or removed: the 28 small
+independent bodies added on 2026-09-21 in the current Plum Book's agency
+reconciliation, which no derivation had matched against OMB's rows since), and
 the PLUM archive's positions (agencies matched 70 → 103 on the report, records
 unchanged at 129). None of the six decisions depends on them, so they were
 restored for this build and are refreshed in a commit of their own, measured
-by what each moves on the graph.
+by what each moves on the graph. **Refreshed the same day**: on the rebuild
+28 organisations gain an OMB block (177 in all, 64 of them with no measured
+cost of their own), the CFPB gains the Manual's entry, its official
+description and its alias match (held at `partial`), the PLUM archive's
+records are unchanged, and no cost figure moves. Gate clean.

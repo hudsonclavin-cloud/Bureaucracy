@@ -21,8 +21,8 @@ on every run; nothing here is a number somebody reports.
 | Measured — a Treasury accounting line | 30 | The receipts and transfers the Monthly Treasury Statement nets inside a unit's published total, carried as explicit children so the arithmetic closes, plus Interest on the Public Debt and the government-wide offsetting receipts. Not organisations. | Nothing to do: these ARE the statement's own lines. |
 | Measured — the Treasury's own figure for the unit | 142 | The root's anchor and every Table 5 line applied to the node it names (`cost_status: official`). The only costs this graph calls measured. | Nothing to do for the node; the statement is re-fetched and re-applied on each run. |
 | Estimate — a committee or subcommittee | 240 | An apportioned share of the chamber's measured total. No line of Table 5 names a committee, so no Treasury alias can ever reach one of these. | The documents that state committee spending are the chambers' own: the House's quarterly Statement of Disbursements (disbursements.house.gov) and the Senate's semiannual Report of the Secretary of the Senate (senate.gov). Both are large PDFs on `.gov` hosts, neither has been fetched, and the figure each prints is disbursements for a period — a basis `financial_evidence.BASES` would have to name, beside its own heading, never as Table 5 net outlays. A reviewed decision before any build. |
-| Estimate — with a sourced figure already published beside it | 34 | An apportioned share, and beside it at least one figure an official source states for this unit under its own heading: USAspending File A gross outlays (fiscal year to date), OMB's Public Budget Database outlays (last completed year, summed over the unit's account rows), or Treasury's audited Statement of Net Cost (last completed year). Each is on the panel today; none is headed COST, because each measures something different from the Treasury's net outlays on a different clock. | The decision is the owner's, not a build: whether the headline may fall back to one of these, labelled by its basis and period, when the Treasury prints no line — the same move the panel makes since 2026-10-05 for a post's salary. Measured on the 94 nodes that carry both, not one OMB FY2025 figure agrees with the Treasury line within 1%, so a fallback would be a different number under a different label, never the same claim. |
-| Estimate — no sourced figure of any kind | 407 | An apportioned share of an ancestor's measured total, divided among siblings by budget, headcount or subtree size. Table 5 stops at the bureau, so divisions, regional offices, laboratories, centres and the courts beneath a circuit print no line of their own. | Three routes, in order of reach: OMB's Public Budget Database bureau rows (committed; 72 bureaus matched so far, more need a node whose name the file carries); USAspending File B by Treasury Account Symbol, which reaches programme level and has not been fetched; an agency's own Agency Financial Report. Each yields a figure beside the estimate, not a cost, until the decision above is made. |
+| Estimate — with a sourced figure already published beside it | 62 | An apportioned share, and beside it at least one figure an official source states for this unit under its own heading: USAspending File A gross outlays (fiscal year to date), OMB's Public Budget Database outlays (last completed year, summed over the unit's account rows), or Treasury's audited Statement of Net Cost (last completed year). Each is on the panel today; none is headed COST, because each measures something different from the Treasury's net outlays on a different clock. | The decision is the owner's, not a build: whether the headline may fall back to one of these, labelled by its basis and period, when the Treasury prints no line — the same move the panel makes since 2026-10-05 for a post's salary. Measured on the 94 nodes that carry both, not one OMB FY2025 figure agrees with the Treasury line within 1%, so a fallback would be a different number under a different label, never the same claim. |
+| Estimate — no sourced figure of any kind | 379 | An apportioned share of an ancestor's measured total, divided among siblings by budget, headcount or subtree size. Table 5 stops at the bureau, so divisions, regional offices, laboratories, centres and the courts beneath a circuit print no line of their own. | Three routes, in order of reach: OMB's Public Budget Database bureau rows (committed; 72 bureaus matched so far, more need a node whose name the file carries); USAspending File B by Treasury Account Symbol, which reaches programme level and has not been fetched; an agency's own Agency Financial Report. Each yields a figure beside the estimate, not a cost, until the decision above is made. |
 | Salary — a pay claim an official document supports | 1,231 | A position carrying at least one of the ten pay fields: a printed rate, a schedule level priced by OPM's table, a statutory rate, a roster figure, a derivation the block carries in the open, twelve months of a printed monthly military rate, or a range. Since 2026-10-05 it is the post's headline figure, headed as pay and never as COST. | Nothing to do for the node; each pay field is re-derived from its committed document on every run and withdrawn when the document stops supporting it. |
 | Post with no figure — stands for several holders | 750 | The node's name states a multiplicity and no claim that holds for every holder has reached it. An incumbency-shaped claim (one listing's level, one row of the current export) is refused on such a node because it is one appointment's figure, not the group's. | A tier, a statutory rate, a parity provision or a roster listing every holder at one figure IS published on such a node with a `holders` block. Finding which pay SYSTEM governs the title is the useful step: it lets the graph carry the schedule rather than a rate. `docs/UNPRICED_POSITIONS.md` lists every one. |
 | Post with no figure — OPM lists it and prints no rate | 18 | The PLUM archive or the current export names the title under this organisation but the Level/Grade/Pay cell carries a rank or is empty, and no salary table this project has read prices that pay plan. | A salary table for the pay plan (AD, OT and the others) where OPM publishes one; most of these plans have none, and the honest state is a listing with no figure. |
@@ -39,7 +39,7 @@ Where Table 5 stops is visible in which TYPES carry an estimate and no line:
 |---|---|---|---|
 | Subcommittee | 0 | 0 | 195 |
 | Division | 115 | 0 | 0 |
-| Independent Agency | 39 | 15 | 0 |
+| Independent Agency | 11 | 43 | 0 |
 | Committee | 0 | 0 | 45 |
 | Regional Office | 35 | 0 | 0 |
 | Bureau | 32 | 2 | 0 |
@@ -501,7 +501,7 @@ An apportioned share of the chamber's measured total. No line of Table 5 names a
 - `leg-senate-cmte-judiciary-sub-criminal-justice-counterterrorism` — Subcommittee on Crime and Counterterrorism (Subcommittee; under United States Senate Committee on the Judiciary)
 - `leg-senate-cmte-judiciary-sub-federal-courts-oversight-agency-action-federal-rights` — Subcommittee on Federal Courts, Oversight, Agency Action, and Federal Rights (Subcommittee; under United States Senate Committee on the Judiciary)
 
-## Estimate — with a sourced figure already published beside it — 34
+## Estimate — with a sourced figure already published beside it — 62
 
 An apportioned share, and beside it at least one figure an official source states for this unit under its own heading: USAspending File A gross outlays (fiscal year to date), OMB's Public Budget Database outlays (last completed year, summed over the unit's account rows), or Treasury's audited Statement of Net Cost (last completed year). Each is on the panel today; none is headed COST, because each measures something different from the Treasury's net outlays on a different clock.
 
@@ -525,24 +525,52 @@ An apportioned share, and beside it at least one figure an official source state
 - `jud-support-ussc` — U.S. Sentencing Commission (USSC) (Agency; under Judicial Support Organizations) — beside it: ombBudget
 - `exec-dept-defense-af` — U.S. Air Force (Military Branch; under Military Departments & Services) — beside it: usaspendingOutlays
 - `exec-dept-defense-army` — U.S. Army (Military Branch; under Military Departments & Services) — beside it: usaspendingOutlays
+- `exec-ind-misc-administrative-conference-of-the-united-states` — Administrative Conference of the United States (Independent Agency; under Other Independent Agencies (25+)) — beside it: ombBudget
+- `exec-ind-misc-advisory-council-on-historic-preservation` — Advisory Council on Historic Preservation (Independent Agency; under Other Independent Agencies (25+)) — beside it: ombBudget
 - `exec-ind-misc-american-battle-monuments-commission-abmc` — American Battle Monuments Commission (ABMC) (Independent Agency; under Other Independent Agencies (25+)) — beside it: usaspendingOutlays
 - `exec-ind-misc-appalachian-regional-commission-arc` — Appalachian Regional Commission (ARC) (Independent Agency; under Other Independent Agencies (25+)) — beside it: usaspendingOutlays, ombBudget
 - `exec-ind-misc-chemical-safety-hazard-investigation-board-csb` — Chemical Safety & Hazard Investigation Board (CSB) (Independent Agency; under Other Independent Agencies (25+)) — beside it: usaspendingOutlays, ombBudget
+- `exec-ind-misc-civil-rights-cold-case-records-review-board` — Civil Rights Cold Case Records Review Board (Independent Agency; under Other Independent Agencies (25+)) — beside it: ombBudget
+- `exec-ind-misc-cigie` — Council of the Inspectors General on Integrity and Efficiency (Independent Agency; under Other Independent Agencies (25+)) — beside it: ombBudget
+- `exec-ind-misc-csosa` — Court Services and Offender Supervision Agency for the District of Columbia (Independent Agency; under Other Independent Agencies (25+)) — beside it: ombBudget
+- `exec-ind-misc-defense-nuclear-facilities-safety-board` — Defense Nuclear Facilities Safety Board (Independent Agency; under Other Independent Agencies (25+)) — beside it: ombBudget
+- `exec-ind-misc-delta-regional-authority` — Delta Regional Authority (Independent Agency; under Other Independent Agencies (25+)) — beside it: ombBudget
 - `exec-ind-misc-election-assistance-commission-eac` — Election Assistance Commission (EAC) (Independent Agency; under Other Independent Agencies (25+)) — beside it: usaspendingOutlays, ombBudget
 - `exec-ind-misc-farm-credit-administration` — Farm Credit Administration (Independent Agency; under Other Independent Agencies (25+)) — beside it: ombBudget
 - `exec-ind-misc-federal-election-commission-fec` — Federal Election Commission (FEC) (Independent Agency; under Other Independent Agencies (25+)) — beside it: usaspendingOutlays, ombBudget
 - `exec-ind-misc-federal-labor-relations-authority-flra` — Federal Labor Relations Authority (FLRA) (Independent Agency; under Other Independent Agencies (25+)) — beside it: usaspendingOutlays, ombBudget
+- `exec-ind-misc-federal-mediation-and-conciliation-service` — Federal Mediation and Conciliation Service (Independent Agency; under Other Independent Agencies (25+)) — beside it: ombBudget
+- `exec-ind-misc-federal-mine-safety-and-health-review-commission` — Federal Mine Safety and Health Review Commission (Independent Agency; under Other Independent Agencies (25+)) — beside it: ombBudget
+- `exec-ind-misc-federal-retirement-thrift-investment-board` — Federal Retirement Thrift Investment Board (Independent Agency; under Other Independent Agencies (25+)) — beside it: ombBudget
+- `exec-ind-misc-truman-scholarship-foundation` — Harry S. Truman Scholarship Foundation (Independent Agency; under Other Independent Agencies (25+)) — beside it: ombBudget
+- `exec-ind-misc-madison-fellowship-foundation` — James Madison Memorial Fellowship Foundation (Independent Agency; under Other Independent Agencies (25+)) — beside it: ombBudget
+- `exec-ind-misc-japan-united-states-friendship-commission` — Japan-United States Friendship Commission (Independent Agency; under Other Independent Agencies (25+)) — beside it: ombBudget
+- `exec-ind-misc-marine-mammal-commission` — Marine Mammal Commission (Independent Agency; under Other Independent Agencies (25+)) — beside it: ombBudget
 - `exec-ind-misc-merit-systems-protection-board-mspb` — Merit Systems Protection Board (MSPB) (Independent Agency; under Other Independent Agencies (25+)) — beside it: usaspendingOutlays, ombBudget
 - `exec-ind-misc-national-capital-planning-commission-ncpc` — National Capital Planning Commission (NCPC) (Independent Agency; under Other Independent Agencies (25+)) — beside it: usaspendingOutlays, ombBudget
+- `exec-ind-misc-national-council-on-disability` — National Council on Disability (Independent Agency; under Other Independent Agencies (25+)) — beside it: ombBudget
 - `exec-ind-misc-national-mediation-board-nmb` — National Mediation Board (NMB) (Independent Agency; under Other Independent Agencies (25+)) — beside it: usaspendingOutlays, ombBudget
 - `exec-ind-misc-national-transportation-safety-board-ntsb` — National Transportation Safety Board (NTSB) (Independent Agency; under Other Independent Agencies (25+)) — beside it: usaspendingOutlays, ombBudget
+- `exec-ind-misc-northern-border-regional-commission` — Northern Border Regional Commission (Independent Agency; under Other Independent Agencies (25+)) — beside it: ombBudget
+- `exec-ind-misc-nuclear-waste-technical-review-board` — Nuclear Waste Technical Review Board (Independent Agency; under Other Independent Agencies (25+)) — beside it: ombBudget
+- `exec-ind-misc-occupational-safety-and-health-review-commission` — Occupational Safety and Health Review Commission (Independent Agency; under Other Independent Agencies (25+)) — beside it: ombBudget
 - `exec-ind-misc-office-of-special-counsel-osc` — Office of Special Counsel (OSC) (Independent Agency; under Other Independent Agencies (25+)) — beside it: usaspendingOutlays, ombBudget
 - `exec-ind-misc-privacy-civil-liberties-oversight-board-pclob` — Privacy & Civil Liberties Oversight Board (PCLOB) (Independent Agency; under Other Independent Agencies (25+)) — beside it: usaspendingOutlays, ombBudget
+- `exec-ind-misc-public-buildings-reform-board` — Public Buildings Reform Board (Independent Agency; under Other Independent Agencies (25+)) — beside it: ombBudget
 - `exec-ind-misc-selective-service-system` — Selective Service System (Independent Agency; under Other Independent Agencies (25+)) — beside it: usaspendingOutlays
+- `exec-ind-misc-surface-transportation-board` — Surface Transportation Board (Independent Agency; under Other Independent Agencies (25+)) — beside it: ombBudget
+- `exec-ind-misc-access-board` — U.S. Access Board (Architectural and Transportation Barriers Compliance Board) (Independent Agency; under Other Independent Agencies (25+)) — beside it: ombBudget
 - `exec-ind-misc-u-s-international-development-finance-corp-dfc` — U.S. International Development Finance Corporation (Independent Agency; under Other Independent Agencies (25+)) — beside it: usaspendingOutlays, auditedNetCost
+- `exec-ind-misc-commission-of-fine-arts` — United States Commission of Fine Arts (Independent Agency; under Other Independent Agencies (25+)) — beside it: ombBudget
+- `exec-ind-misc-commission-on-civil-rights` — United States Commission on Civil Rights (Independent Agency; under Other Independent Agencies (25+)) — beside it: ombBudget
+- `exec-ind-misc-holocaust-memorial-museum` — United States Holocaust Memorial Museum (Independent Agency; under Other Independent Agencies (25+)) — beside it: ombBudget
+- `exec-ind-misc-institute-of-peace` — United States Institute of Peace (Independent Agency; under Other Independent Agencies (25+)) — beside it: ombBudget
+- `exec-ind-misc-interagency-council-on-homelessness` — United States Interagency Council on Homelessness (Independent Agency; under Other Independent Agencies (25+)) — beside it: ombBudget
+- `exec-ind-misc-international-trade-commission` — United States International Trade Commission (Independent Agency; under Other Independent Agencies (25+)) — beside it: ombBudget
+- `exec-ind-misc-office-of-government-ethics` — United States Office of Government Ethics (Independent Agency; under Other Independent Agencies (25+)) — beside it: ombBudget
 - `jud-specialized-cavc` — Court of Appeals for Veterans Claims (CAVC) (Specialized Court; under Specialized Federal Courts) — beside it: usaspendingOutlays
 
-## Estimate — no sourced figure of any kind — 407
+## Estimate — no sourced figure of any kind — 379
 
 An apportioned share of an ancestor's measured total, divided among siblings by budget, headcount or subtree size. Table 5 stops at the bureau, so divisions, regional offices, laboratories, centres and the courts beneath a circuit print no line of their own.
 
@@ -811,44 +839,16 @@ An apportioned share of an ancestor's measured total, divided among siblings by 
 - `exec-eop-omb-office-of-federal-procurement-policy` — Office of Federal Procurement Policy (Division; under Office of Management and Budget (OMB))
 - `exec-eop-omb-oira-office-of-information-regulatory-affairs` — Office of Information and Regulatory Affairs (OIRA) (Division; under Office of Management and Budget (OMB))
 - `exec-eop-omb-performance-personnel-management` — Performance & Personnel Management (Division; under Office of Management and Budget (OMB))
-- `exec-ind-misc-administrative-conference-of-the-united-states` — Administrative Conference of the United States (Independent Agency; under Other Independent Agencies (25+))
-- `exec-ind-misc-advisory-council-on-historic-preservation` — Advisory Council on Historic Preservation (Independent Agency; under Other Independent Agencies (25+))
 - `exec-ind-misc-armed-forces-retirement-home` — Armed Forces Retirement Home (Independent Agency; under Other Independent Agencies (25+))
-- `exec-ind-misc-civil-rights-cold-case-records-review-board` — Civil Rights Cold Case Records Review Board (Independent Agency; under Other Independent Agencies (25+))
-- `exec-ind-misc-cigie` — Council of the Inspectors General on Integrity and Efficiency (Independent Agency; under Other Independent Agencies (25+))
-- `exec-ind-misc-csosa` — Court Services and Offender Supervision Agency for the District of Columbia (Independent Agency; under Other Independent Agencies (25+))
-- `exec-ind-misc-defense-nuclear-facilities-safety-board` — Defense Nuclear Facilities Safety Board (Independent Agency; under Other Independent Agencies (25+))
-- `exec-ind-misc-delta-regional-authority` — Delta Regional Authority (Independent Agency; under Other Independent Agencies (25+))
-- `exec-ind-misc-federal-mediation-and-conciliation-service` — Federal Mediation and Conciliation Service (Independent Agency; under Other Independent Agencies (25+))
-- `exec-ind-misc-federal-mine-safety-and-health-review-commission` — Federal Mine Safety and Health Review Commission (Independent Agency; under Other Independent Agencies (25+))
-- `exec-ind-misc-federal-retirement-thrift-investment-board` — Federal Retirement Thrift Investment Board (Independent Agency; under Other Independent Agencies (25+))
-- `exec-ind-misc-truman-scholarship-foundation` — Harry S. Truman Scholarship Foundation (Independent Agency; under Other Independent Agencies (25+))
 - `exec-ind-misc-inter-american-foundation` — Inter-American Foundation (Independent Agency; under Other Independent Agencies (25+))
-- `exec-ind-misc-madison-fellowship-foundation` — James Madison Memorial Fellowship Foundation (Independent Agency; under Other Independent Agencies (25+))
-- `exec-ind-misc-japan-united-states-friendship-commission` — Japan-United States Friendship Commission (Independent Agency; under Other Independent Agencies (25+))
-- `exec-ind-misc-marine-mammal-commission` — Marine Mammal Commission (Independent Agency; under Other Independent Agencies (25+))
 - `exec-ind-misc-macpac` — Medicaid and CHIP Payment and Access Commission (Independent Agency; under Other Independent Agencies (25+))
 - `exec-ind-misc-medpac` — Medicare Payment Advisory Commission (Independent Agency; under Other Independent Agencies (25+))
-- `exec-ind-misc-national-council-on-disability` — National Council on Disability (Independent Agency; under Other Independent Agencies (25+))
-- `exec-ind-misc-northern-border-regional-commission` — Northern Border Regional Commission (Independent Agency; under Other Independent Agencies (25+))
-- `exec-ind-misc-nuclear-waste-technical-review-board` — Nuclear Waste Technical Review Board (Independent Agency; under Other Independent Agencies (25+))
-- `exec-ind-misc-occupational-safety-and-health-review-commission` — Occupational Safety and Health Review Commission (Independent Agency; under Other Independent Agencies (25+))
 - `exec-ind-misc-odni` — Office of the Director of National Intelligence (Independent Agency; under Other Independent Agencies (25+))
 - `exec-ind-misc-u-s-postal-rate-commission-postal-regulatory-commission` — Postal Regulatory Commission (Independent Agency; under Other Independent Agencies (25+))
-- `exec-ind-misc-public-buildings-reform-board` — Public Buildings Reform Board (Independent Agency; under Other Independent Agencies (25+))
-- `exec-ind-misc-surface-transportation-board` — Surface Transportation Board (Independent Agency; under Other Independent Agencies (25+))
 - `exec-ind-misc-abilityone-commission` — U.S. AbilityOne Commission (Independent Agency; under Other Independent Agencies (25+))
-- `exec-ind-misc-access-board` — U.S. Access Board (Architectural and Transportation Barriers Compliance Board) (Independent Agency; under Other Independent Agencies (25+))
 - `exec-ind-misc-african-development-foundation` — United States African Development Foundation (Independent Agency; under Other Independent Agencies (25+))
 - `exec-ind-misc-arctic-research-commission` — United States Arctic Research Commission (Independent Agency; under Other Independent Agencies (25+))
 - `exec-ind-misc-heritage-abroad-commission` — United States Commission for the Preservation of America's Heritage Abroad (Independent Agency; under Other Independent Agencies (25+))
-- `exec-ind-misc-commission-of-fine-arts` — United States Commission of Fine Arts (Independent Agency; under Other Independent Agencies (25+))
-- `exec-ind-misc-commission-on-civil-rights` — United States Commission on Civil Rights (Independent Agency; under Other Independent Agencies (25+))
-- `exec-ind-misc-holocaust-memorial-museum` — United States Holocaust Memorial Museum (Independent Agency; under Other Independent Agencies (25+))
-- `exec-ind-misc-institute-of-peace` — United States Institute of Peace (Independent Agency; under Other Independent Agencies (25+))
-- `exec-ind-misc-interagency-council-on-homelessness` — United States Interagency Council on Homelessness (Independent Agency; under Other Independent Agencies (25+))
-- `exec-ind-misc-international-trade-commission` — United States International Trade Commission (Independent Agency; under Other Independent Agencies (25+))
-- `exec-ind-misc-office-of-government-ethics` — United States Office of Government Ethics (Independent Agency; under Other Independent Agencies (25+))
 - `exec-ind-misc-trade-and-development-agency` — United States Trade and Development Agency (Independent Agency; under Other Independent Agencies (25+))
 - `leg-senate-admin-legal` — Office of Senate Legal Counsel (Office; under Senate Administrative Offices)
 - `leg-senate-admin-physician` — Office of the Senate Physician (Office; under Senate Administrative Offices)
