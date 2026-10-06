@@ -67,12 +67,11 @@ CLASSES = {
         "Estimate — a committee or subcommittee",
         "An apportioned share of the chamber's measured total. No line of Table 5 names a "
         "committee, so no Treasury alias can ever reach one of these.",
-        "The documents that state committee spending are the chambers' own: the House's quarterly "
-        "Statement of Disbursements (disbursements.house.gov) and the Senate's semiannual Report of "
-        "the Secretary of the Senate (senate.gov). Both are large PDFs on `.gov` hosts, neither has "
-        "been fetched, and the figure each prints is disbursements for a period — a basis "
-        "`financial_evidence.BASES` would have to name, beside its own heading, never as Table 5 net "
-        "outlays. A reviewed decision before any build.",
+        "Since 2026-10-07 a committee carries `committeeDisbursements` beside the estimate: what its "
+        "chamber paid out for the committee's account over a stated period, from the House's "
+        "Statement of Disbursements and the Report of the Secretary of the Senate (40 of the 41 "
+        "chamber committees). A different basis on a different clock, never a cost. Subcommittees "
+        "have no figure of their own in either document.",
     ),
     "estimate_beside_sourced_figure": (
         "Estimate — with a sourced figure already published beside it",

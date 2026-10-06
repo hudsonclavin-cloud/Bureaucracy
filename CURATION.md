@@ -5268,5 +5268,16 @@ accepted as written):
    above; built in parallel and recorded below when it lands.
 3. **A sourced non-cost figure may head an organisation's panel**, labelled by
    basis and period — built in parallel, recorded below.
-4. **Committee disbursements as a new basis** — feasibility measured first,
-   recorded below.
+4. **Committee disbursements as a new basis** — built the same day. 40 of
+   the 41 chamber committees carry `committeeDisbursements`: the House's 21
+   from its Statement of Disbursements for April 1 – June 30, 2026
+   ($45,701,952.54 in all), the Senate's 19 from the Report of the Secretary of
+   the Senate for October 1, 2025 – March 31, 2026 ($69,106,197.81). Each is a
+   sum of totals the chamber prints, every component listed. Declined: Senate
+   Appropriations (funded from Part I, not read), the joint committees, House
+   Ethics and the Republican Study Committee (no node), every subcommittee, and
+   the House's prior-year accounts (printed only beside named payees). The 40
+   estimates on these nodes sum to $2.48bn of FYTD outlays against $114.8m
+   disbursed over a quarter and a half-year: different periods and not the
+   whole of a committee's cost, so no ratio is published, but the gap is more
+   than an order of magnitude and points at the subtree-size apportionment.
