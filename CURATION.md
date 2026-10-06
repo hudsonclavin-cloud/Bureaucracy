@@ -2848,7 +2848,15 @@ prints the title a row was written on the Code, not the memo.
   Secretary for Nuclear Security" in §§5312–5316 as committed; only "Principal
   Deputy Administrator, National Nuclear Security Administration" (IV), for
   which the graph has no node. NNSA's two Deputy Administrators are not
-  printed at all.
+  printed at all. *Corrected 2026-10-06 (§19.20, the Code title scan): §5314
+  DOES print "Under Secretary of Commerce for Oceans and Atmosphere, the
+  incumbent of which also serves as Administrator of the National Oceanic and
+  Atmospheric Administration" — 162 characters, over the parser's
+  `MAX_TITLE_CHARS` of 140, so `load_schedule` never showed it, and this
+  bullet mistook the parser's silence for the Code's. §5315 prints "Additional
+  Deputy Administrators (3)" for the NNSA under the same bound. Both posts are
+  priced since 2026-10-06 through the tier-reference shape instead (42 U.S.C.
+  7132(c) and 15 U.S.C. 1503b), which needs no Schedule title.*
 - **Archivist of the United States**: printed at both §5314 and §5316, which
   `load_schedule` drops as ambiguous rather than adjudicating.
 - **Deputy USTRs (×3, three named nodes)**: the Code prints "Deputy United
@@ -3750,6 +3758,11 @@ one named fetch:
   (four with a printed rate, which they publish; one without), so the Level
   V class is contradicted by the one document that could settle it, and the
   SBA's four carry no listing at all and stay declined on the same doubt
+  (*corrected 2026-10-06, §19.20: they ARE listed — the export files twelve
+  SBA Associate Administrators on the ES plan under sub-organisations the
+  graph has no node for, "OFFICE OF CAPITAL ACCESS" among them, so the
+  matcher never reached them; the doubt about the Level V class stands, now
+  on the same contradiction NASA's rows raise*)
   (§19.14 stands).
 - **The NCUA's and PRC's Vice Chairs, the SEC's Chair, the EPA's
   Administrator, the pay-freeze memo's "$158,500 / $168,400", the
