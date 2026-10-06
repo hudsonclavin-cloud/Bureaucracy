@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-10-06T04:16:55Z",
+ "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-app-reorganiz.htm",
+ "status": 200,
+ "final_url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-app-reorganiz.htm",
+ "content_type": "text/html",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-app-reorganiz.htm",
+ "bytes": 1386766,
+ "sha256": "71eadef8ca108d8da8faac8033fe8476475ee9beec0e391d3c20145b6528c398",
+ "error": null
+}

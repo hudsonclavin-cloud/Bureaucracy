@@ -115,6 +115,12 @@ def main(argv: list[str] | None = None) -> int:
     print(f"Inspector General nodes considered: {report['inspectorGeneralNodesConsidered']}   "
           f"priced {report['priced']} ({report['pricedByReviewedRow']} reviewed rows, "
           f"{report['pricedInspectorsGeneral']} Inspectors General of an establishment)   validated {report['validated']}")
+    # Since 2026-10-07: rows whose pay a Reorganization Plan or a chamber's pay
+    # order sets, read by notes_instruments.py from one instrument at a time.
+    print(f"priced from an instrument outside the Code's sections: {report['pricedByInstrument']} of "
+          f"{report['instrumentRows']} rows")
+    for instrument_id, instrument in report["instruments"].items():
+        print(f"    {instrument['name']}  ({instrument['url']}, sha256 {instrument['sha256'][:12]}…)")
     for node_id, record in sorted(records.items()):
         print(f"    PRICED   {node_id}  {record['rateText']}")
         print(f"             {record['derivation']}")
@@ -124,7 +130,7 @@ def main(argv: list[str] | None = None) -> int:
     for reason in report["notPriced"].values():
         key = reason.split(": ", 1)[1][:60] if ": " in reason else reason[:60]
         kinds[key] = kinds.get(key, 0) + 1
-    print(f"not priced: {len(report['notPriced'])} Inspector General nodes, none of them an establishment's")
+    print(f"not priced: {len(report['notPriced'])} nodes read and declined, each with its reason")
     for key, count in sorted(kinds.items(), key=lambda kv: -kv[1]):
         print(f"    {count:>3}  {key}…")
     for line in rejected[:20]:
@@ -143,9 +149,10 @@ def main(argv: list[str] | None = None) -> int:
     write_json_file(args.out, {
         "_note": (
             "Derived by scripts/derive_tier_reference_pay_evidence.py from committed U.S. Code sections and "
-            "OPM's Salary Table No. 2026-EX. No document states these figures for these posts: a statute sets "
-            "each post's pay by reference to an Executive Schedule level (the Inspector General Act adds 3 "
-            "percent) and the table prices the level. Never a cost; never a source that the post exists."
+            "OPM's Salary Table No. 2026-EX. No document states these figures for these posts: a statute -- or "
+            "a Reorganization Plan or a chamber's pay order the Code prints outside its sections -- sets each "
+            "post's pay by reference to an Executive Schedule level (the Inspector General Act adds 3 percent) "
+            "and the table prices the level. Never a cost; never a source that the post exists."
         ),
         "source": report["source"],
         "report": report,

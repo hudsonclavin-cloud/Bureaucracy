@@ -31,6 +31,7 @@ from data_pipeline.verification.tier_reference_pay import (
     PAY_SOURCE,
     IES_COMPOSITION,
     TIER_REFERENCE_PROVISIONS,
+    INSTRUMENT_PROVISIONS,
     apply_pay_evidence,
     build_records,
     parse_establishments,
@@ -447,7 +448,10 @@ class BuildTests(unittest.TestCase):
         self.assertEqual("stands for several posts", report["refused"]["exec-ind-epa-inspector-general-bench"])
         # The reviewed rows whose nodes this fixture tree does not carry are
         # refused for that and nothing else.
-        self.assertEqual({node_id: "node not in the graph" for node_id in TIER_REFERENCE_PROVISIONS
+        # 2026-10-07: the instrument rows (Reorganization Plans, the chambers'
+        # pay orders; tests/test_notes_instruments.py) name nodes this tree
+        # does not carry either, and are refused for that alone.
+        self.assertEqual({node_id: "node not in the graph" for node_id in {**TIER_REFERENCE_PROVISIONS, **INSTRUMENT_PROVISIONS}
                           if node_id not in PRICED_IN_BASE_TREE},
                          {k: v for k, v in report["refused"].items() if k != "exec-ind-epa-inspector-general-bench"})
         # 13 since 2026-10-06: the NOAA Administrator and the Archivist.
@@ -838,7 +842,17 @@ class PublishedGraphTests(unittest.TestCase):
         # 2103(b), Level III in the section's own words) landed as reviewed
         # rows -- neither node carried any pay field before, so the
         # leave-alone rule did not apply and both publish.
-        self.assertEqual(47, len(priced), sorted(priced))
+        # 54 since 2026-10-07 (passes only after the coordinator's regenerate):
+        # seven posts whose pay an instrument the Code prints outside its
+        # sections sets -- NOAA's Deputy Administrator and Chief Scientist
+        # (Reorganization Plan No. 4 of 1970), the Deputy Secretary of
+        # Commerce (No. 3 of 1979), the Secretary of the Senate and the
+        # Senate's Sergeant at Arms (the Order of the President pro tempore of
+        # March 25, 2024), the Clerk and the CAO of the House (the Order of
+        # the Speaker of January 17, 2025). None carried a pay field before.
+        self.assertEqual(54, len(priced), sorted(priced))
+        for node_id in INSTRUMENT_PROVISIONS:
+            self.assertIn(node_id, priced)
         for added in ("exec-dept-dhs-usss-chief-uniformed-division",
                       "exec-dept-doe-nnsa-administrator-nnsa",
                       NOAA_ID,
@@ -873,7 +887,7 @@ class PublishedGraphTests(unittest.TestCase):
                 # Manual is published on the same host. A Code granule may not.
                 self.assertFalse(any(is_us_code_document_url(u) or str(u) == TIER_REFERENCE_TABLE_URL
                                      for u in node.get("sourceUrls") or []))
-                if node_id not in TIER_REFERENCE_PROVISIONS:
+                if node_id not in TIER_REFERENCE_PROVISIONS and node_id not in INSTRUMENT_PROVISIONS:
                     self.assertIn(node[FIELD]["identification"]["establishment"], establishments)
         # The stamped Defense-agency IGs, the DFEs' and the legislative ones
         # are not among them.

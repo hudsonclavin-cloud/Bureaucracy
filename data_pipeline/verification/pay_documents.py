@@ -255,6 +255,16 @@ PAY_DOCUMENT_FIELDS: dict[str, dict[str, Any]] = {
             "states what that level pays; where the statute adds a percentage, the result is "
             "arithmetic this project performed and no document prints."
         ),
+        # Since 2026-10-07: a Reorganization Plan or a chamber's pay order,
+        # which the Code prints outside its sections, sets the pay instead of
+        # a statute (notes_instruments.py).
+        "instrumentCaution": (
+            "The percentage measures how much official documentation this figure rests on, "
+            "not the chance that it is right. No document here states the figure for this post: "
+            "an instrument the United States Code prints outside its sections -- a Reorganization "
+            "Plan, or a chamber's pay order reprinted in a Statutory Note -- sets its pay by reference "
+            "to an Executive Schedule level, and OPM's table states what that level pays."
+        ),
     },
     "positionMilitaryPay": {
         # Schedule 8 of the pay-adjustment order prints the uniformed services'
@@ -355,6 +365,12 @@ def _named_in_footnote(block: Mapping[str, Any]) -> bool:
     return isinstance(identification, Mapping) and identification.get("kind") == "named_in_footnote"
 
 
+def _instrument_based(block: Mapping[str, Any]) -> bool:
+    """A block whose pay an instrument outside the Code's sections sets (a
+    Reorganization Plan, a chamber's pay order) carries the instrument."""
+    return isinstance(block.get("instrument"), Mapping)
+
+
 def _uniform_roster(block: Mapping[str, Any]) -> bool:
     """A roster block that lists every holder at one rate says so in `holders`."""
     holders = block.get("holders")
@@ -431,6 +447,7 @@ def annotate_pay_documents(root: dict[str, Any]) -> dict[str, int]:
                     else (spec.get("memberSeatCaution") or spec["caution"]) if _member_seat(block)
                     else (spec.get("statesOfficeCaution") or spec["caution"]) if _states_the_office(block)
                     else (spec.get("footnoteCaution") or spec["caution"]) if _named_in_footnote(block)
+                    else (spec.get("instrumentCaution") or spec["caution"]) if _instrument_based(block)
                     else spec["caution"]
                 ),
                 "documentRoles": roles,

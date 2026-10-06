@@ -42,6 +42,7 @@ from scripts.validate_published_graph import (
     US_CODE_EXECUTIVE_SCHEDULE,
     US_CODE_HOST,
     US_CODE_REVIEWED_IDENTIFICATIONS,
+    US_CODE_REVIEWED_INSTRUMENT_IDENTIFICATIONS,
     US_CODE_REVIEWED_METHOD,
     US_CODE_SCHEDULE_METHOD,
     US_CODE_SCHEDULE_SCOPED_METHOD,
@@ -363,8 +364,12 @@ class MirrorTests(unittest.TestCase):
         counted_published = {i for i in published
                              if isinstance(node_map[i]["positionSchedulePay"].get("countedClass"), dict)}
         self.assertTrue(counted_published <= counted, "a counted-class member the table does not list")
+        # 2026-10-07: the SEC's Chairman, a reviewed row whose basis is a
+        # Reorganization Plan, is mirrored apart (US_CODE_REVIEWED_INSTRUMENT_
+        # IDENTIFICATIONS); passes only once output/ is regenerated with it.
         self.assertEqual(published - counted_published,
-                         set(US_CODE_EXECUTIVE_SCHEDULE) | set(US_CODE_REVIEWED_IDENTIFICATIONS),
+                         set(US_CODE_EXECUTIVE_SCHEDULE) | set(US_CODE_REVIEWED_IDENTIFICATIONS)
+                         | set(US_CODE_REVIEWED_INSTRUMENT_IDENTIFICATIONS),
                          "a node carries a schedule rate the gate has no mirror for, or the reverse")
         self.assertFalse(set(US_CODE_EXECUTIVE_SCHEDULE) & set(US_CODE_REVIEWED_IDENTIFICATIONS),
                          "a node is in both mirrors; the routes are exclusive")
@@ -788,12 +793,20 @@ class ReviewedMatchTests(unittest.TestCase):
         }
         for node_id in ss.REVIEWED_TITLE_ROWS:
             self.node_map[node_id] = dict(fed_node(node_id), parentId="exec-regulatory-fed")
+        # 2026-10-07: the reviewed rows whose basis is a Reorganization Plan
+        # (the SEC's Chairman) run through the same matcher; their basis is
+        # checked in tests/test_notes_instruments.py.
+        for node_id, row in ss.REVIEWED_INSTRUMENT_ROWS.items():
+            self.node_map[node_id] = {"id": node_id, "name": row["nodeName"], "type": "Position"}
 
     def test_every_row_matches_and_carries_the_identification(self) -> None:
         result = ss.match_reviewed_rows(self.node_map, self.schedule)
-        self.assertEqual(set(result["matched"]), set(ss.REVIEWED_TITLE_ROWS))
+        self.assertEqual(set(result["matched"]), set(ss.REVIEWED_TITLE_ROWS) | set(ss.REVIEWED_INSTRUMENT_ROWS))
         self.assertEqual(result["refusals"], {})
         for node_id, entry in result["matched"].items():
+            if node_id in ss.REVIEWED_INSTRUMENT_ROWS:
+                self.assertEqual(entry["identification"]["basisDocumentKind"], "reorganization_plan")
+                continue
             with self.subTest(node=node_id):
                 row = ss.REVIEWED_TITLE_ROWS[node_id]
                 self.assertEqual(entry["method"], ss.METHOD_REVIEWED)
@@ -867,14 +880,16 @@ class ReviewedMatchTests(unittest.TestCase):
                                         already_matched={"exec-regulatory-fed-chair-board-of-governors": {}})
         self.assertEqual(result["refusals"]["reviewed_row_node_already_matched"],
                          ["exec-regulatory-fed-chair-board-of-governors"])
-        self.assertEqual(len(result["matched"]), len(ss.REVIEWED_TITLE_ROWS) - 1)
+        # + the Plan-based rows since 2026-10-07.
+        self.assertEqual(len(result["matched"]), len(ss.REVIEWED_TITLE_ROWS) + len(ss.REVIEWED_INSTRUMENT_ROWS) - 1)
 
     FED_ROWS = frozenset(n for n, r in ss.REVIEWED_TITLE_ROWS.items() if r["basisFixture"] == "fed_12_usc_242.html")
 
     def _copy_basis_fixtures(self, tmp):
         """Every basis section the rows name, verbatim, so a test that
         doctors one fixture says something about that fixture alone."""
-        for row in ss.REVIEWED_TITLE_ROWS.values():
+        # 2026-10-07: and the page each Plan-based row's instrument is on.
+        for row in list(ss.REVIEWED_TITLE_ROWS.values()) + list(ss.REVIEWED_INSTRUMENT_ROWS.values()):
             for name in (row["basisFixture"], row["basisFixture"] + ".meta.json"):
                 (tmp / name).write_bytes((US_CODE_BASIS_FIXTURE_DIR / name).read_bytes())
 
@@ -915,7 +930,7 @@ class ReviewedMatchTests(unittest.TestCase):
         # The doctored page still carries the sentence beneath the cut.
         self.assertIn(quote, (directory / "fed_12_usc_242.html").read_text(encoding="utf-8"))
         # Every other row, whose sentence was not moved, still matches.
-        self.assertEqual(set(result["matched"]), set(ss.REVIEWED_TITLE_ROWS) - {"exec-regulatory-fed-chair-board-of-governors"})
+        self.assertEqual(set(result["matched"]), (set(ss.REVIEWED_TITLE_ROWS) | set(ss.REVIEWED_INSTRUMENT_ROWS)) - {"exec-regulatory-fed-chair-board-of-governors"})
 
     def test_an_edited_basis_section_is_refused_rather_than_rehashed(self) -> None:
         import tempfile
@@ -929,7 +944,7 @@ class ReviewedMatchTests(unittest.TestCase):
         # The three Fed rows fall with their section; the six resting on
         # other sections are untouched by it.
         self.assertEqual(set(result["refusals"]["reviewed_row_basis_unreadable"]), self.FED_ROWS)
-        self.assertEqual(set(result["matched"]), set(ss.REVIEWED_TITLE_ROWS) - self.FED_ROWS)
+        self.assertEqual(set(result["matched"]), (set(ss.REVIEWED_TITLE_ROWS) | set(ss.REVIEWED_INSTRUMENT_ROWS)) - self.FED_ROWS)
         self.assertEqual(len(self.FED_ROWS), 3)
 
 

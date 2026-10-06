@@ -1726,6 +1726,45 @@ def load_basis_section(fixture: str, directory: str | Path = FIXTURE_DIR) -> dic
             "operative": operative}
 
 
+#: Since 2026-10-07 (the owner's decision, CURATION.md §19.20): reviewed rows
+#: whose BASIS is not a section of the Code but an instrument the Code prints
+#: outside its sections -- here a Reorganization Plan in Title 5's Appendix --
+#: read by `notes_instruments.py`, which locates the one plan by its own
+#: printed heading. Kept apart from `REVIEWED_TITLE_ROWS` because every check
+#: on those reads a section's operative text, and an Appendix page has none;
+#: the gate mirrors these in `US_CODE_REVIEWED_INSTRUMENT_IDENTIFICATIONS`.
+#: The identification carries `basisDocumentKind` and the instrument's name,
+#: date and issuer.
+REVIEWED_INSTRUMENT_ROWS: dict[str, dict[str, Any]] = {
+    # §19.14 declined the SEC's Chairman because 15 U.S.C. 78d does not
+    # designate one; Reorganization Plan No. 10 of 1950 does. §1(a) transfers
+    # the Commission's executive and administrative functions "to the
+    # Chairman of the Commission", and §3 transfers to the President the
+    # choosing of "a Chairman from among the Commissioners composing the
+    # Commission"; 5 U.S.C. 5314 places "Chairman, Securities and Exchange
+    # Commission" at Level III.
+    "exec-regulatory-sec-chair-sec": {
+        "nodeName": "Chair, SEC",
+        "statutoryTitle": "Chairman, Securities and Exchange Commission",
+        "basisCitation": "Reorganization Plan No. 10 of 1950, §3",
+        "basisInstrument": "reorganization-plan-no-10-of-1950",
+        "basisFixture": "reorganization_plans_5_usc_app_govinfo2024.html",
+        "basisQuote": (
+            "The functions of the Commission with respect to choosing a Chairman from among the Commissioners "
+            "composing the Commission are hereby transferred to the President."
+        ),
+        "basis": (
+            "the office under the graph's 'Chair' is the Chairman: Reorganization Plan No. 10 of 1950, a plan "
+            "the President transmitted under the Reorganization Act of 1949 and which took effect May 24, 1950, "
+            "transfers to the President the choosing of a Chairman from among the Commissioners (§3) and vests "
+            "the Commission's executive and administrative functions in that Chairman (§1(a)); 5 U.S.C. 5314 "
+            "places the Chairman, Securities and Exchange Commission at Level III; 15 U.S.C. 78d composes the "
+            "Commission and designates no Chairman, which is why the basis is the Plan"
+        ),
+    },
+}
+
+
 def match_reviewed_rows(
     node_map: Mapping[str, Mapping[str, Any]],
     schedule: Mapping[str, Any],
@@ -1742,7 +1781,7 @@ def match_reviewed_rows(
     matched: dict[str, dict[str, Any]] = {}
     refusals: dict[str, list[str]] = {}
     basis_cache: dict[str, dict[str, Any]] = {}
-    for node_id, row in sorted(REVIEWED_TITLE_ROWS.items()):
+    for node_id, row in sorted({**REVIEWED_TITLE_ROWS, **REVIEWED_INSTRUMENT_ROWS}.items()):
         node = node_map.get(node_id)
         if node is None:
             refusals.setdefault("reviewed_row_names_no_node", []).append(node_id)
@@ -1786,15 +1825,36 @@ def match_reviewed_rows(
             if not bench.isdigit() or int(bench) != position["statedPosts"]:
                 refusals.setdefault("reviewed_row_bench_count_disagrees_with_the_code", []).append(node_id)
                 continue
-        try:
-            basis = basis_cache.get(row["basisFixture"]) or load_basis_section(row["basisFixture"], directory)
-        except Unreadable:
-            refusals.setdefault("reviewed_row_basis_unreadable", []).append(node_id)
-            continue
-        basis_cache[row["basisFixture"]] = basis
-        if row["basisQuote"] not in basis["operative"]:
-            refusals.setdefault("reviewed_row_basis_quote_not_in_operative_text", []).append(node_id)
-            continue
+        instrument_id = row.get("basisInstrument")
+        if instrument_id:
+            # An instrument outside the Code's sections: the quote must be the
+            # instrument's own words, found inside the one plan its heading
+            # names -- never elsewhere on the Appendix page, never inside the
+            # publisher's square-bracketed insertions.
+            from data_pipeline.verification import notes_instruments
+
+            try:
+                instrument = basis_cache.get("instrument:" + instrument_id) or notes_instruments.load_instrument(
+                    instrument_id, directory)
+            except notes_instruments.Unreadable:
+                refusals.setdefault("reviewed_row_basis_unreadable", []).append(node_id)
+                continue
+            basis_cache["instrument:" + instrument_id] = instrument
+            if notes_instruments.where_is(instrument, row["basisQuote"]) is not None:
+                refusals.setdefault("reviewed_row_basis_quote_not_in_its_instrument", []).append(node_id)
+                continue
+            basis = {"url": instrument["url"], "sha256": instrument["sha256"], "fetchedAt": instrument["fetched_at"]}
+        else:
+            try:
+                basis = basis_cache.get(row["basisFixture"]) or load_basis_section(row["basisFixture"], directory)
+            except Unreadable:
+                refusals.setdefault("reviewed_row_basis_unreadable", []).append(node_id)
+                continue
+            basis_cache[row["basisFixture"]] = basis
+            if row["basisQuote"] not in basis["operative"]:
+                refusals.setdefault("reviewed_row_basis_quote_not_in_operative_text", []).append(node_id)
+                continue
+            instrument = None
         entry = dict(position)
         entry["method"] = METHOD_REVIEWED
         if class_row:
@@ -1808,6 +1868,11 @@ def match_reviewed_rows(
             "basisSha256": basis["sha256"],
             "basisCheckedAt": basis["fetchedAt"],
         }
+        if instrument is not None:
+            from data_pipeline.verification.notes_instruments import instrument_block
+
+            entry["identification"]["basisDocumentKind"] = instrument["kind"]
+            entry["identification"]["basisInstrument"] = instrument_block(instrument)
         matched[node_id] = entry
     return {"matched": matched, "refusals": {k: sorted(v) for k, v in sorted(refusals.items())}}
 

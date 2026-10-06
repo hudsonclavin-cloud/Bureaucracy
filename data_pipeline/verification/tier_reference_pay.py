@@ -115,6 +115,22 @@ BOTH print "Archivist of the United States", which is why
 than adjudicate an amendment; this row rests on 2103(b) alone and settles
 nothing about the Schedule's double listing.
 
+## Instruments the Code prints outside its sections (since 2026-10-07)
+
+Reorganization Plan No. 4 of 1970 pays NOAA's Deputy Administrator at Level
+IV and its Chief Scientist at Level V; Reorganization Plan No. 3 of 1979 pays
+the Deputy Secretary of Commerce at Level II; the Order of the President pro
+tempore of March 25, 2024 and the Order of the Speaker of January 17, 2025 put
+the Secretary of the Senate, the Senate's Sergeant at Arms and Doorkeeper, the
+Clerk of the House and the House's Chief Administrative Officer at Level II.
+None is a section of the Code: the Plans sit in Title 5's Appendix and the
+orders only in the Statutory Notes, beneath the cut `operative_text` makes.
+`notes_instruments.py` reads each as ONE instrument located by its own
+printed heading, and `INSTRUMENT_PROVISIONS` carries the rows; each record
+names the instrument, its date and its issuer, and a pay-order record carries
+the caution that a later order of the chamber, which this repository has not
+read, may have changed the rate.
+
 ## Every rule the other pay modules keep
 
 `scopeMatch: proxy` and `partial` on every record: the statute names an
@@ -140,6 +156,11 @@ from data_pipeline.verification.derived_pay import (
     document_strength_percent,
     load_section,
     statute_publisher,
+)
+from data_pipeline.verification.notes_instruments import (
+    instrument_block,
+    load_instrument,
+    where_is,
 )
 
 FIXTURE_DIR = Path(__file__).resolve().parents[2] / "tests" / "fixtures" / "uscode"
@@ -577,6 +598,181 @@ TIER_REFERENCE_PROVISIONS: dict[str, dict[str, Any]] = {
     },
 }
 
+#: Since 2026-10-07 (the owner's decision, CURATION.md §19.20): posts whose
+#: pay an INSTRUMENT the Code prints outside its sections sets by reference to
+#: a level -- a Reorganization Plan in Title 5's Appendix, or a chamber's pay
+#: order reprinted in a Statutory Note. Read by `notes_instruments.py`, which
+#: locates the one instrument by its own printed heading and never reads the
+#: notes in general; `quote` must be the instrument's own words, outside the
+#: publisher's square-bracketed insertions and never from an Amendments note.
+#: `definitionQuote`, where present, is the instrument's own definition of the
+#: term the pay sentence uses ("annual rate for level II"), re-found the same
+#: way. Each row is keyed by node id: "Chief Administrative Officer" names the
+#: GAO's post as well as the House's, "Legislative Counsel" names a Senator's
+#: staff post that is not the Senate's Legislative Counsel, and each chamber's
+#: officers are drawn twice here, once as an Office and once as the post.
+INSTRUMENT_PROVISIONS: dict[str, dict[str, Any]] = {
+    # Reorganization Plan No. 4 of 1970, §2: the Administrator at Level III
+    # (already priced from 15 U.S.C. 1503b and left alone), the Deputy
+    # Administrator at Level IV, the Chief Scientist at Level V. 5 U.S.C. 5315
+    # and 5316 agree ("Assistant Secretary of Commerce for Oceans and
+    # Atmosphere, the incumbent of which also serves as Deputy Administrator";
+    # "Chief Scientist, National Oceanic and Atmospheric Administration") and
+    # are not leaned on: the row rests on the Plan and the table.
+    "exec-dept-doc-noaa-deputy-administrator": {
+        "nodeName": "Deputy Administrator",
+        "office": "Deputy Administrator of the National Oceanic and Atmospheric Administration",
+        "instrument": "reorganization-plan-no-4-of-1970",
+        "citation": "Reorganization Plan No. 4 of 1970",
+        "subsection": "§2(c)",
+        "level": "IV",
+        "percent": 0,
+        "quote": (
+            "There shall be in the Administration a Deputy Administrator of the National Oceanic and Atmospheric "
+            "Administration who shall be appointed by the President, by and with the advice and consent of the "
+            "Senate, and shall be compensated at the rate now or hereafter provided for Level IV of the Executive "
+            "Schedule Pay Rates (5 U.S.C. 5315)."
+        ),
+    },
+    "exec-dept-doc-noaa-chief-scientist": {
+        "nodeName": "Chief Scientist",
+        "office": "Chief Scientist of the National Oceanic and Atmospheric Administration",
+        "instrument": "reorganization-plan-no-4-of-1970",
+        "citation": "Reorganization Plan No. 4 of 1970",
+        "subsection": "§2(d)",
+        "level": "V",
+        "percent": 0,
+        "quote": (
+            "There shall be in the Administration a Chief Scientist of the National Oceanic and Atmospheric "
+            "Administration who shall be appointed by the President and shall be compensated at the rate now or "
+            "hereafter provided for Level V of the Executive Schedule Pay Rates (5 U.S.C. 5316)."
+        ),
+    },
+    # Reorganization Plan No. 3 of 1979, §2(b)(1): the Deputy Secretary of
+    # Commerce, an office the Executive Schedule does not print (CURATION.md
+    # §8, §19.7), paid at the rate for Level II. The graph's name is still the
+    # template CURATION.md §8 left; the row is keyed by id. The same section's
+    # Under Secretary for International Trade (Level III, §2(c)) has no node
+    # here and none is added.
+    "exec-dept-doc-deputy-secretary-of-department-of-commerce": {
+        "nodeName": "Deputy Secretary of Department of Commerce",
+        "office": "Deputy Secretary of Commerce",
+        "instrument": "reorganization-plan-no-3-of-1979",
+        "citation": "Reorganization Plan No. 3 of 1979",
+        "subsection": "§2(b)(1)",
+        "level": "II",
+        "percent": 0,
+        "quote": (
+            'There shall be in the Department of Commerce (hereinafter referred to as the "Department") a Deputy '
+            "Secretary appointed by the President, by and with the advice and consent of the Senate. The Deputy "
+            "Secretary shall receive compensation at the rate payable for Level II of the Executive Schedule "
+            "[5 U.S.C. 5313], and shall perform such duties and exercise such powers as the Secretary may from "
+            "time to time prescribe."
+        ),
+    },
+    # The Order of the President pro tempore of March 25, 2024 (a Statutory
+    # Note to 2 U.S.C. 4571): sec. 2(a) puts the Secretary of the Senate, the
+    # Sergeant at Arms and Doorkeeper and the Legislative Counsel at "the
+    # annual rate for level II", which sec. 1(2) defines. The Senate's
+    # Legislative Counsel and its Chaplain have no post node here (the Chaplain
+    # is an Office node; "Legislative Counsel" under the Senators' offices is a
+    # Senator's own staff post), so neither is priced.
+    "leg-senate-admin-secretary-secretary-of-the-senate": {
+        "nodeName": "Secretary of the Senate",
+        "office": "Secretary of the Senate",
+        "instrument": "order-of-the-president-pro-tempore-2024-03-25",
+        "citation": "Order of the President pro tempore of the Senate of March 25, 2024",
+        "subsection": "sec. 2(a)",
+        "level": "II",
+        "percent": 0,
+        "quote": (
+            "The annual rates of compensation of the Secretary of the Senate, the Sergeant at Arms and "
+            "Doorkeeper, and the Legislative Counsel shall each be equal to the annual rate for level II."
+        ),
+        "definitionQuote": (
+            'the term "annual rate for level II" means the annual rate of basic pay for level II of the '
+            "Executive Schedule under section 5313 of title 5, United States Code, including any adjustment to "
+            "such rate after the date of this Order"
+        ),
+    },
+    "leg-senate-admin-saa-sergeant-at-arms": {
+        "nodeName": "Sergeant at Arms",
+        "office": "Sergeant at Arms and Doorkeeper of the Senate",
+        "instrument": "order-of-the-president-pro-tempore-2024-03-25",
+        "citation": "Order of the President pro tempore of the Senate of March 25, 2024",
+        "subsection": "sec. 2(a)",
+        "level": "II",
+        "percent": 0,
+        "quote": (
+            "The annual rates of compensation of the Secretary of the Senate, the Sergeant at Arms and "
+            "Doorkeeper, and the Legislative Counsel shall each be equal to the annual rate for level II."
+        ),
+        "definitionQuote": (
+            'the term "annual rate for level II" means the annual rate of basic pay for level II of the '
+            "Executive Schedule under section 5313 of title 5, United States Code, including any adjustment to "
+            "such rate after the date of this Order"
+        ),
+    },
+    # The Order of the Speaker of January 17, 2025 (a Statutory Note to 2
+    # U.S.C. 4532): sec. 1(a) puts the Clerk, the Sergeant-at-Arms, the Chief
+    # Administrative Officer, the Chaplain, the General Counsel, the Inspector
+    # General, the Director of Interparliamentary Affairs and the Attending
+    # Physician at Level II. Only the Clerk and the CAO are post nodes here;
+    # the Sergeant at Arms, the Chaplain, the Inspector General and the
+    # Attending Physician are Office nodes, and nothing is priced on an Office.
+    "leg-house-clerk-clerk-of-the-house": {
+        "nodeName": "Clerk of the House",
+        "office": "Clerk of the House of Representatives",
+        "instrument": "order-of-the-speaker-2025-01-17",
+        "citation": "Order of the Speaker of the House of Representatives of January 17, 2025",
+        "subsection": "sec. 1(a)",
+        "level": "II",
+        "percent": 0,
+        "quote": (
+            "The annual rate of pay for the Clerk, the Sergeant-at-Arms, the Chief Administrative Officer, the "
+            "Chaplain, the General Counsel to the House, the Inspector General, the Director of Interparliamentary "
+            "Affairs, the Attending Physician, and one additional position in the Office of the Sergeant at Arms "
+            "with duties related to emergency preparedness, planning and operations shall be equal to the annual "
+            "rate of basic pay for level II of the Executive Schedule under section 5313 of title 5, United States "
+            "Code, including any adjustment to such rate after the date of this Order."
+        ),
+    },
+    "leg-house-cao-chief-administrative-officer": {
+        "nodeName": "Chief Administrative Officer",
+        "office": "Chief Administrative Officer of the House of Representatives",
+        "instrument": "order-of-the-speaker-2025-01-17",
+        "citation": "Order of the Speaker of the House of Representatives of January 17, 2025",
+        "subsection": "sec. 1(a)",
+        "level": "II",
+        "percent": 0,
+        "quote": (
+            "The annual rate of pay for the Clerk, the Sergeant-at-Arms, the Chief Administrative Officer, the "
+            "Chaplain, the General Counsel to the House, the Inspector General, the Director of Interparliamentary "
+            "Affairs, the Attending Physician, and one additional position in the Office of the Sergeant at Arms "
+            "with duties related to emergency preparedness, planning and operations shall be equal to the annual "
+            "rate of basic pay for level II of the Executive Schedule under section 5313 of title 5, United States "
+            "Code, including any adjustment to such rate after the date of this Order."
+        ),
+    },
+}
+
+#: Read from an instrument and deliberately not priced, with the reason.
+INSTRUMENT_NOT_PRICED = {
+    "exec-ind-epa-administrator-epa": (
+        "Reorganization Plan No. 3 of 1970, §1(b), creates the office (\"There shall be at the head of the "
+        "Agency the Administrator of the Environmental Protection Agency\") and states no rate or level; the "
+        "node already carries OPM's listed rate, which a figure set by reference never displaces"
+    ),
+    "exec-dept-doc-noaa-administrator-noaa": (
+        "Reorganization Plan No. 4 of 1970, §2(b), sets the Administrator at Level III; 15 U.S.C. 1503b already "
+        "prices the same office at the same level and is left as it is"
+    ),
+    "leg-senate-offices-legislative-counsel": (
+        "a Senator's own staff post named 'Legislative Counsel', not the Senate's Legislative Counsel whom the "
+        "Order of the President pro tempore names; the Senate's office has no node here"
+    ),
+}
+
 #: The Inspector General Act's rate, and the section that says whose.
 INSPECTOR_GENERAL_RULE: dict[str, Any] = {
     "title": "Inspector General",
@@ -794,6 +990,56 @@ def build_records(
             extra_documents=extra_documents, identification=identification,
         )
 
+    # --- rows whose pay an instrument outside the Code's sections sets -------
+    instruments: dict[str, dict[str, Any]] = {}
+    for node_id, row in sorted(INSTRUMENT_PROVISIONS.items()):
+        instrument = instruments.get(row["instrument"])
+        if instrument is None:
+            try:
+                instrument = load_instrument(row["instrument"], directory)
+            except Unreadable as error:
+                refusals[node_id] = f"{row['citation']}: {error}"
+                continue
+            instruments[row["instrument"]] = instrument
+        where = where_is(instrument, row["quote"])
+        if where is not None:
+            refusals[node_id] = f"{instrument['name']} does not carry the quoted sentence ({where})"
+            continue
+        definition = row.get("definitionQuote")
+        if definition:
+            where = where_is(instrument, definition)
+            if where is not None:
+                refusals[node_id] = f"{instrument['name']} does not carry the definition the row quotes ({where})"
+                continue
+        node = node_map.get(node_id)
+        if node is None:
+            refusals[node_id] = "node not in the graph"
+            continue
+        if not is_post_node(node):
+            refusals[node_id] = "not a position"
+            continue
+        if canonical_name_key(node.get("name")) != canonical_name_key(row["nodeName"]):
+            refusals[node_id] = f"renamed since the row was written (row: {row['nodeName']!r}, node: {node.get('name')!r})"
+            continue
+        if STATED_MULTIPLICITY.search(str(node.get("name") or "")):
+            refusals[node_id] = "stands for several posts; a single office's rate is not each holder's"
+            continue
+        level_row = levels.get(row["level"])
+        if level_row is None:
+            refusals[node_id] = f"OPM's table does not print level {row['level']}"
+            continue
+        identification = {"kind": "reviewed_row", "nodeName": row["nodeName"], "office": row["office"]}
+        if definition:
+            identification["instrumentDefines"] = definition
+        records[node_id] = _record(
+            node_id, row["office"], row["citation"], row["subsection"], row["quote"], row["level"],
+            int(row["percent"]), instrument, level_row, table, fiscal_year,
+            table_url=table_url, table_sha256=table_sha256, table_fetched_at=table_fetched_at,
+            extra_documents=[], identification=identification, instrument=instrument,
+        )
+    for node_id, reason in INSTRUMENT_NOT_PRICED.items():
+        not_priced[node_id] = reason
+
     # --- the Inspectors General ----------------------------------------------
     rule = INSPECTOR_GENERAL_RULE
     sec_403 = section(rule["fixture"])
@@ -861,9 +1107,15 @@ def build_records(
             name: {"url": s["url"], "sha256": s["sha256"], "fetched_at": s["fetched_at"]}
             for name, s in sorted({**gao_sections, rule["fixture"]: sec_403, rule["establishmentsFixture"]: sec_401}.items())
         },
+        "instruments": {
+            instrument_id: {"name": i["name"], "url": i["url"], "sha256": i["sha256"], "fetched_at": i["fetched_at"]}
+            for instrument_id, i in sorted(instruments.items())
+        },
         "establishments": establishments,
         "inspectorGeneralNodesConsidered": ig_considered,
         "reviewedRows": len(TIER_REFERENCE_PROVISIONS),
+        "instrumentRows": len(INSTRUMENT_PROVISIONS),
+        "pricedByInstrument": sum(1 for r in records.values() if isinstance(r.get("instrument"), dict)),
         "priced": len(records),
         "pricedByReviewedRow": sum(1 for r in records.values() if r["identification"]["kind"] == "reviewed_row"),
         "pricedInspectorsGeneral": sum(1 for r in records.values() if r["identification"]["kind"] != "reviewed_row"),
@@ -911,6 +1163,7 @@ def _record(
     section: Mapping[str, Any], level_row: Mapping[str, Any], table: Mapping[str, Any], fiscal_year: int,
     *, table_url: str, table_sha256: str, table_fetched_at: str,
     extra_documents: list[dict[str, Any]], identification: dict[str, Any],
+    instrument: Mapping[str, Any] | None = None,
 ) -> dict[str, Any]:
     base = float(level_row["amount"])
     amount = _computed_amount(base, percent) if percent else base
@@ -947,10 +1200,11 @@ def _record(
             f"{level_row['rowText']}"
         )
         method = PAY_METHOD
+    role = (f"sets this post's basic pay by reference to Executive Schedule {level_text}"
+            + (f", plus {percent} percent" if percent else ""))
     documents = [
-        _statute_document(section, citation, quote,
-                          f"sets this post's basic pay by reference to Executive Schedule {level_text}"
-                          + (f", plus {percent} percent" if percent else "")),
+        _instrument_document(instrument, f"{citation}, {subsection}", quote, role) if instrument is not None
+        else _statute_document(section, citation, quote, role),
         _table_document(table, level_row, url=table_url, sha256=table_sha256, fetched_at=table_fetched_at),
         *extra_documents,
     ]
@@ -1000,7 +1254,36 @@ def _record(
         "tableUrl": table_url,
         "tableSha256": table_sha256,
         "tableRetrievedAt": table_fetched_at,
+        # Present only where an instrument outside the Code's sections sets
+        # the pay: its name, date and issuer as printed, and -- for a pay
+        # order -- the caution that a later order may have changed it.
+        **({"instrument": instrument_block(instrument)} if instrument is not None else {}),
     }
+
+
+def _instrument_document(instrument: Mapping[str, Any], citation: str, quote: str, role: str) -> dict[str, Any]:
+    """The instrument as a document a figure rests on: named by its own
+    heading, dated and attributed as printed, and cited to the page the Code
+    prints it on."""
+    document = {
+        "role": role,
+        "citation": citation,
+        "publisher": instrument["publisher"],
+        "edition": instrument["edition"],
+        "title": f"{instrument['name']}, as printed in {instrument['printedIn']}",
+        "quote": quote,
+        "url": instrument["url"],
+        "documentSha256": instrument["sha256"],
+        "retrievedAt": instrument["fetched_at"],
+        "statesTheFigure": False,
+        "instrumentKind": instrument["kind"],
+        "instrumentName": instrument["name"],
+        "instrumentIssuer": instrument["issuer"],
+        "instrumentDate": instrument["date"],
+    }
+    if instrument.get("laterOrderCaution"):
+        document["laterOrderCaution"] = instrument["laterOrderCaution"]
+    return document
 
 
 def apply_pay_evidence(
@@ -1083,6 +1366,8 @@ def apply_pay_evidence(
             "checkedAt": record.get("retrievedAt"),
             # `verification` is stamped by pay_documents.annotate_pay_documents.
         }
+        if isinstance(record.get("instrument"), dict):
+            node[FIELD]["instrument"] = dict(record["instrument"])
         stats["priced"] += 1
         if identification.get("kind") != "reviewed_row":
             stats["priced_inspectors_general"] += 1
