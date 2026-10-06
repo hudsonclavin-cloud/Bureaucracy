@@ -257,6 +257,10 @@ class IsolationTests(unittest.TestCase):
         "scripts/derive_directory_evidence.py",
         "scripts/derive_plum_current_evidence.py",
         "scripts/rename_units_to_official_wording.py",
+        # Since 2026-10-07: the post-rename writer, for the same reason as the
+        # unit-rename writer above -- it imports GENERIC_NAMES to refuse a
+        # generic proposed name, and lands no figure.
+        "scripts/rename_posts_to_printed_titles.py",
         "scripts/add_curated_nodes.py",
         "tests/test_node_aliases.py",
         "tests/test_govman.py",
@@ -268,6 +272,7 @@ class IsolationTests(unittest.TestCase):
     NAME_FLOOR_ONLY = {
         "scripts/add_curated_nodes.py",
         "scripts/rename_units_to_official_wording.py",
+        "scripts/rename_posts_to_printed_titles.py",
     }
     #: Every join in this project that publishes a NUMBER. Each already has
     #: its own reviewed table where a figure is at stake.
