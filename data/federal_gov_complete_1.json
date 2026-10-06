@@ -17474,33 +17474,42 @@
                 },
                 {
                   "id": "exec-eop-ustr-deputy-ustr-wto-multilateral-affairs",
-                  "name": "Deputy USTR — WTO & Multilateral Affairs",
+                  "name": "Deputy United States Trade Representative — WTO & Multilateral Affairs",
                   "type": "Position",
                   "desc": "Federal position: Deputy USTR — WTO & Multilateral Affairs",
                   "employees": null,
                   "budget": null,
                   "color": "#666666",
-                  "children": []
+                  "children": [],
+                  "nameSource": "office_spelled_as_the_executive_schedule_class_title_prints_it",
+                  "nameSourceDetail": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5314&num=0&edition=prelim",
+                  "nameMatchedText": "Deputy United States Trade Representatives (3)"
                 },
                 {
                   "id": "exec-eop-ustr-deputy-ustr-americas",
-                  "name": "Deputy USTR — Americas",
+                  "name": "Deputy United States Trade Representative — Americas",
                   "type": "Position",
                   "desc": "Federal position: Deputy USTR — Americas",
                   "employees": null,
                   "budget": null,
                   "color": "#666666",
-                  "children": []
+                  "children": [],
+                  "nameSource": "office_spelled_as_the_executive_schedule_class_title_prints_it",
+                  "nameSourceDetail": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5314&num=0&edition=prelim",
+                  "nameMatchedText": "Deputy United States Trade Representatives (3)"
                 },
                 {
                   "id": "exec-eop-ustr-deputy-ustr-asia",
-                  "name": "Deputy USTR — Asia",
+                  "name": "Deputy United States Trade Representative — Asia",
                   "type": "Position",
                   "desc": "Federal position: Deputy USTR — Asia",
                   "employees": null,
                   "budget": null,
                   "color": "#666666",
-                  "children": []
+                  "children": [],
+                  "nameSource": "office_spelled_as_the_executive_schedule_class_title_prints_it",
+                  "nameSourceDetail": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5314&num=0&edition=prelim",
+                  "nameMatchedText": "Deputy United States Trade Representatives (3)"
                 },
                 {
                   "id": "exec-eop-ustr-chief-of-staff",
@@ -21354,13 +21363,16 @@
                         },
                         {
                           "id": "exec-dept-defense-sf-senior-enlisted-advisor",
-                          "name": "Senior Enlisted Advisor",
+                          "name": "Chief Master Sergeant of the Space Force",
                           "type": "Position",
                           "desc": "Federal position: Senior Enlisted Advisor",
                           "employees": null,
                           "budget": null,
                           "color": "#666666",
-                          "children": []
+                          "children": [],
+                          "nameSource": "named_in_schedule_8_of_the_pay_adjustment_order",
+                          "nameSourceDetail": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5332&num=0&edition=prelim",
+                          "nameMatchedText": "Chief Master Sergeant of the Space Force"
                         },
                         {
                           "id": "exec-dept-defense-sf-commander-space-operations-command",

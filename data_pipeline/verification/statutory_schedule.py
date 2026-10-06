@@ -1996,6 +1996,33 @@ COUNTED_CLASSES: dict[str, dict[str, Any]] = {
             'exec-dept-doc-ita-assistant-secretary-enforcement-compliance': None,
         },
     },
+    # 2026-10-07, the owner's decision: the three Deputy USTRs. The graph had
+    # written the office as "Deputy USTR — <qualifier>", which no rule here
+    # could read as one of this class; scripts/rename_posts_to_printed_titles.py
+    # renamed them (data/curation/post_renames.json) to the singular the
+    # Code's class title spells out, keeping the graph's own qualifier after
+    # the dash, which stays uncited. 19 U.S.C. 2171(b)(2), read from GPO's
+    # 2024 edition on govinfo, composes the three offices. OPM's current
+    # export lists three "DEPUTY UNITED STATES TRADE REPRESENTATIVE (RANK OF
+    # AMBASSADOR)" rows at EX-III under sub-organisations this graph has no
+    # node for, which corroborates the level and reaches none of these nodes.
+    'Deputy United States Trade Representatives (3)': {
+        "section": '5314',
+        "singular": 'Deputy United States Trade Representative',
+        "scopeId": 'exec-eop-ustr',
+        "departmentWords": (),
+        "composition": {"citation": '19 U.S.C. 2171', "fixture": 'ustr_19_usc_2171_govinfo2024.html', "quote": (
+            'There shall be in the Office three Deputy United States Trade Representatives, one Chief Agricultural Negotiator, and one Chief Innovation and Intellectual Property Negotiator, who shall be appointed by the President, by and with the advice and consent of the Senate.'
+        )},
+        "basis": (
+            "5 U.S.C. 5314 places the three Deputy United States Trade Representatives at Level III as a class and names none of them; 19 U.S.C. 2171(b)(2) establishes the three offices in the Office of the United States Trade Representative; each node is named as one Deputy United States Trade Representative, and the qualifier after the dash, which says which portfolio, is the graph's own and is not checked against any source"
+        ),
+        "members": {
+            'exec-eop-ustr-deputy-ustr-wto-multilateral-affairs': None,
+            'exec-eop-ustr-deputy-ustr-americas': None,
+            'exec-eop-ustr-deputy-ustr-asia': None,
+        },
+    },
 }
 
 

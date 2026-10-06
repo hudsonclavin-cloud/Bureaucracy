@@ -392,6 +392,89 @@ class GateTests(unittest.TestCase):
         self.assertTrue(any("cites a composing statute for a class the table records none for" in v for v in found))
 
 
+
+USTR_CLASS = "Deputy United States Trade Representatives (3)"
+#: 19 U.S.C. 2171 was fetched on 2026-10-06, after the file's TODAY; the gate
+#: refuses a retrieval date in its future, so these checks run as of 2026-10-07.
+USTR_TODAY = "2026-10-07"
+USTR_MEMBERS = (
+    "exec-eop-ustr-deputy-ustr-wto-multilateral-affairs",
+    "exec-eop-ustr-deputy-ustr-americas",
+    "exec-eop-ustr-deputy-ustr-asia",
+)
+
+
+class DeputyTradeRepresentativesTests(unittest.TestCase):
+    """The class added on 2026-10-07, on the REAL curated file: the three
+    "Deputy USTR — <portfolio>" nodes, renamed by
+    scripts/rename_posts_to_printed_titles.py to the singular the Code's class
+    title spells out, are priced at Level III ($209,600) on three documents --
+    §5314, 19 U.S.C. 2171 (read from govinfo) and OPM's table. These pass on
+    the commit that renames them: they read the curated file, not output/."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.tree = copy.deepcopy(load_base_graph(DEFAULT_BASE_GRAPH))
+        node_map, parent_map = index_tree(cls.tree)
+        cls.found = ss.match_counted_classes(node_map, parent_map, ss.load_schedule())
+        loaded = load_executive_schedule()
+        cls.records, _ = ss.build_records(
+            {i: e for i, e in cls.found["matched"].items() if i in USTR_MEMBERS}, loaded["table"],
+            table_url=loaded["url"], table_sha256=loaded["sha256"], retrieved_at=loaded["fetched_at"], fiscal_year=2026)
+        ss.apply_schedule_pay(cls.tree, cls.records, index_tree=index_tree)
+        annotate_pay_documents(cls.tree)
+        cls.node_map, cls.parents = index_tree(cls.tree)
+
+    def test_the_three_are_matched_at_level_iii_on_the_composing_section(self):
+        self.assertEqual({"count": 3, "members": 3}, self.found["classes"][USTR_CLASS])
+        for node_id in USTR_MEMBERS:
+            with self.subTest(node_id):
+                entry = self.found["matched"][node_id]
+                self.assertEqual("III", entry["level"])
+                self.assertEqual("5314", entry["section"])
+                self.assertEqual(3, entry["countedClass"]["statedPosts"])
+                self.assertEqual("19 U.S.C. 2171", entry["identification"]["basisCitation"])
+                self.assertTrue(entry["identification"]["basisUrl"].startswith("https://www.govinfo.gov/link/uscode/19/2171"))
+                self.assertTrue(self.node_map[node_id]["name"].startswith("Deputy United States Trade Representative \u2014 "))
+
+    def test_each_is_priced_at_209600_on_three_documents_and_passes_the_gate(self):
+        for node_id in USTR_MEMBERS:
+            with self.subTest(node_id):
+                pay = self.node_map[node_id]["positionSchedulePay"]
+                self.assertEqual(EXECUTIVE_SCHEDULE_RATES["III"], pay["amount"])
+                self.assertEqual(209600.0, pay["amount"])
+                self.assertEqual(3, pay["verification"]["documents"])
+                self.assertEqual(90, pay["verification"]["percent"])
+                self.assertEqual(1, pay["verification"]["documentsStatingTheFigure"])
+                self.assertEqual([], schedule_pay_violations(
+                    self.node_map[node_id], pay, USTR_TODAY, _label,
+                    tree_parent=self.parents.get(node_id), tree_parents=self.parents))
+
+    def test_the_gate_still_refuses_a_composing_url_for_another_section(self):
+        node_id = USTR_MEMBERS[0]
+        pay = copy.deepcopy(self.node_map[node_id]["positionSchedulePay"])
+        pay["identification"]["basisUrl"] = "https://www.govinfo.gov/link/uscode/19/2172?link-type=html"
+        found = schedule_pay_violations(self.node_map[node_id], pay, USTR_TODAY, _label,
+                                        tree_parent=self.parents.get(node_id), tree_parents=self.parents)
+        self.assertTrue(any("does not link the section" in v for v in found), found)
+
+    def test_the_old_abbreviated_name_is_refused_by_the_name_rule(self):
+        for reason_fn in (ss.counted_class_member_name_reason, gate_name_reason):
+            self.assertEqual("does not begin with the class's singular office",
+                             reason_fn("Deputy USTR \u2014 Asia", "Deputy United States Trade Representative", ()))
+            self.assertIsNone(reason_fn("Deputy United States Trade Representative \u2014 Asia",
+                                        "Deputy United States Trade Representative", ()))
+
+    def test_no_listing_on_the_three_contradicts_the_class(self):
+        # OPM's current export lists three EX-III "DEPUTY UNITED STATES TRADE
+        # REPRESENTATIVE (RANK OF AMBASSADOR)" rows under sub-organisations this
+        # graph has no node for; none reaches these nodes, and an EX-III
+        # listing would corroborate rather than contradict.
+        for node_id in USTR_MEMBERS:
+            self.assertIsNone(ss.listing_contradicts_level(self.node_map[node_id], "III"))
+            self.assertIsNotNone(ss.listing_contradicts_level(
+                dict(self.node_map[node_id], positionCurrentListing={"payPlan": "ES", "level": ""}), "III"))
+
 @unittest.skipUnless(GRAPH.exists(), "no published graph")
 class PublishedGraphTests(unittest.TestCase):
     def setUp(self):

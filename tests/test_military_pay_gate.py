@@ -125,7 +125,9 @@ class MirrorTests(unittest.TestCase):
     def test_the_gates_not_priced_ids_cover_the_modules_and_name_real_posts(self):
         node_map, _ = index_tree(load_base_graph(DEFAULT_BASE_GRAPH))
         module_node_ids = {key for key in mp.NOT_PRICED if key in node_map}
-        self.assertEqual(2, len(module_node_ids), module_node_ids)
+        # 2026-10-07: 2 -> 1; the Space Force's adviser was renamed and priced.
+        self.assertEqual(1, len(module_node_ids), module_node_ids)
+        self.assertNotIn("exec-dept-defense-sf-senior-enlisted-advisor", gate.MILITARY_NOT_PRICED_NODE_IDS)
         self.assertTrue(module_node_ids <= gate.MILITARY_NOT_PRICED_NODE_IDS)
         # The nine combatant commanders without a grade statute and the six
         # JCS copies of the service chiefs are named by id here, and every id
@@ -134,7 +136,7 @@ class MirrorTests(unittest.TestCase):
         copies = {i for i in gate.MILITARY_NOT_PRICED_NODE_IDS if i.startswith("exec-dept-defense-jcs-")}
         self.assertEqual(9, len(commanders))
         self.assertEqual(6, len(copies))
-        self.assertEqual(17, len(gate.MILITARY_NOT_PRICED_NODE_IDS))
+        self.assertEqual(16, len(gate.MILITARY_NOT_PRICED_NODE_IDS))  # 17 until 2026-10-07
         for node_id in gate.MILITARY_NOT_PRICED_NODE_IDS:
             with self.subTest(node=node_id):
                 self.assertIn(node_id, node_map)
@@ -273,11 +275,12 @@ class GateTests(unittest.TestCase):
         return gate.military_pay_violations(
             node, pay if pay is not None else node[FIELD], TODAY, _label, parent.get("name") if parent else None)
 
-    def test_the_real_records_price_seventeen_grades_and_five_footnote_posts(self):
-        self.assertEqual(22, len(self.records))
+    def test_the_real_records_price_seventeen_grades_and_six_footnote_posts(self):
+        # 22 and 5 until the 2026-10-07 rename of the Space Force's adviser.
+        self.assertEqual(23, len(self.records))
         kinds = [r["identification"]["kind"] for r in self.records.values()]
         self.assertEqual(17, kinds.count("grade_fixed_by_statute"))
-        self.assertEqual(5, kinds.count("named_in_footnote"))
+        self.assertEqual(6, kinds.count("named_in_footnote"))
         self.assertEqual(set(mp.GRADE_PROVISIONS), {i for i, r in self.records.items() if r["identification"]["kind"] == "grade_fixed_by_statute"})
         for node_id in gate.MILITARY_NOT_PRICED_NODE_IDS:
             self.assertNotIn(node_id, self.records)

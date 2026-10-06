@@ -53,10 +53,14 @@ between a listed title and exactly one position node in the graph, and the one
 printed item that names two offices at once -- "Master Chief Petty Officer of
 the Navy or Coast Guard" -- is read as both by a rule declared once
 (`_NAVY_OR_COAST_GUARD`), with the whole printed item quoted on the record. The
-graph's "Senior Enlisted Advisor" under the Space Force is NOT priced: the
-footnote prints "Chief Master Sergeant of the Space Force", and identifying
-the generic curated title with that office needs a document this repository
-has not read; it is recorded as a rename candidate instead.
+graph's generic "Senior Enlisted Advisor" under the Space Force was not priced
+until 2026-10-07: the footnote prints "Chief Master Sergeant of the Space
+Force", and the two are not equal. On the owner's decision the node was
+renamed to the footnote's title by `scripts/rename_posts_to_printed_titles.py`
+(`data/curation/post_renames.json`, a reviewed row re-checked against this
+footnote on every run), and this route now reaches it by plain equality like
+the other five. Which office the generic curated title stood for is the
+owner's identification, recorded on the row; no document here states it.
 
 ## A row must be flat before one figure may stand for it
 
@@ -385,12 +389,11 @@ GRADE_PROVISIONS: dict[str, dict[str, Any]] = {
 #: Read, and deliberately not priced, with the reason -- printed by the derive
 #: step so each is visibly a decision rather than an omission.
 NOT_PRICED: dict[str, str] = {
-    "exec-dept-defense-sf-senior-enlisted-advisor": (
-        "Schedule 8's footnote prints 'Chief Master Sergeant of the Space Force'; the graph's generic 'Senior "
-        "Enlisted Advisor' is not that title by equality and no document in hand says which office stands "
-        "under it (10 U.S.C. 9084 leaves the Office of the Chief of Space Operations' organisation to the "
-        "Secretary of the Air Force). A rename candidate, not a pricing"
-    ),
+    # The Space Force's "Senior Enlisted Advisor" sat here until 2026-10-07 ("a
+    # rename candidate, not a pricing"); the owner decided the rename, the node
+    # is now "Chief Master Sergeant of the Space Force" as Schedule 8's footnote
+    # prints it (scripts/rename_posts_to_printed_titles.py), and the footnote
+    # route prices it by equality.
     "exec-dept-defense-agency-nga-director-national-geospatial-intelligence-agency-nga": (
         "10 U.S.C. 441(b)(3) fixes lieutenant general or vice admiral only IF an officer of the armed forces "
         "holds the post, which is a fact about a person this project never reads"

@@ -190,18 +190,31 @@ class RecordTests(unittest.TestCase):
     def setUpClass(cls):
         cls.node_map, cls.parent_map, cls.loaded, cls.records, cls.report = _real_records()
 
-    def test_twenty_two_posts_are_priced_seventeen_by_grade_and_five_by_the_footnote(self):
-        self.assertEqual(22, len(self.records))
+    # 2026-10-07: 22 -> 23 and 5 -> 6. The Space Force's "Senior Enlisted
+    # Advisor" was renamed to the footnote's own "Chief Master Sergeant of the
+    # Space Force" (scripts/rename_posts_to_printed_titles.py), and the
+    # footnote route reaches it by equality. Read off the curated file, so this
+    # passes on the commit that renames it.
+    def test_twenty_three_posts_are_priced_seventeen_by_grade_and_six_by_the_footnote(self):
+        self.assertEqual(23, len(self.records))
         self.assertEqual(17, self.report["pricedByGrade"])
-        self.assertEqual(5, self.report["pricedByFootnote"])
+        self.assertEqual(6, self.report["pricedByFootnote"])
         self.assertEqual({}, self.report["refused"])
 
-    def test_the_space_force_adviser_and_the_jcs_copies_are_not_priced(self):
-        for node_id in JCS_COPIES + ("exec-dept-defense-sf-senior-enlisted-advisor",
-                                     "exec-dept-defense-agency-nga-director-national-geospatial-intelligence-agency-nga"):
+    def test_the_jcs_copies_and_the_nga_director_are_not_priced(self):
+        for node_id in JCS_COPIES + ("exec-dept-defense-agency-nga-director-national-geospatial-intelligence-agency-nga",):
             self.assertNotIn(node_id, self.records)
-        self.assertIn("Chief Master Sergeant of the Space Force", self.report["footnoteTitlesUnmatched"])
-        self.assertIn("exec-dept-defense-sf-senior-enlisted-advisor", NOT_PRICED)
+
+    def test_the_space_force_chief_master_sergeant_is_priced_by_the_footnote_after_the_rename(self):
+        node_id = "exec-dept-defense-sf-senior-enlisted-advisor"
+        self.assertNotIn(node_id, NOT_PRICED)
+        self.assertEqual("Chief Master Sergeant of the Space Force", self.node_map[node_id]["name"])
+        self.assertNotIn("Chief Master Sergeant of the Space Force", self.report["footnoteTitlesUnmatched"])
+        record = self.records[node_id]
+        self.assertEqual("named_in_footnote", record["identification"]["kind"])
+        self.assertEqual("Chief Master Sergeant of the Space Force", record["identification"]["printedItem"])
+        self.assertAlmostEqual(11166.90, record["monthly"]["amount"], places=2)
+        self.assertAlmostEqual(134002.80, record["amount"], places=2)
 
     def test_every_annual_figure_is_twelve_months_of_a_printed_one_and_no_document_states_it(self):
         for node_id, record in self.records.items():
@@ -285,7 +298,7 @@ class RecordTests(unittest.TestCase):
             records, report = build_records(self.node_map, self.parent_map, self.loaded, fiscal_year=2026, directory=directory)
         self.assertNotIn(CJCS, records)
         self.assertIn("only in the publisher's notes", report["refused"][CJCS])
-        self.assertEqual(21, len(records))
+        self.assertEqual(22, len(records))  # 21 until the 2026-10-07 rename
 
     def test_a_renamed_node_refuses_the_row(self):
         node_map = {k: dict(v) for k, v in self.node_map.items()}
@@ -305,7 +318,7 @@ class RecordTests(unittest.TestCase):
             self.skipTest("the doctored cell was not in the O-10 row")
         loaded = dict(self.loaded, schedule=schedule)
         records, report = build_records(self.node_map, self.parent_map, loaded, fiscal_year=2026)
-        self.assertEqual(5, len(records), "only the footnote route survives a non-flat O-10 row")
+        self.assertEqual(6, len(records), "only the footnote route survives a non-flat O-10 row")  # 5 until 2026-10-07
         self.assertIn("varies with years of service", report["refused"][CJCS])
 
     def test_a_footnote_title_reaching_two_nodes_prices_neither(self):
@@ -328,9 +341,9 @@ class ApplyTests(unittest.TestCase):
     def test_the_blocks_land_on_the_twenty_two_nodes_and_nowhere_else(self):
         tree = self._tree()
         stats = apply_pay_evidence(tree, self.records, index_tree=index_tree)
-        self.assertEqual(22, stats["priced"])
+        self.assertEqual(23, stats["priced"])  # 22 until the 2026-10-07 rename
         self.assertEqual(17, stats["priced_by_grade"])
-        self.assertEqual(5, stats["priced_by_footnote"])
+        self.assertEqual(6, stats["priced_by_footnote"])
         node_map, _ = index_tree(tree)
         carrying = {node_id for node_id, node in node_map.items() if isinstance(node.get(FIELD), dict)}
         self.assertEqual(set(self.records), carrying)
@@ -350,7 +363,7 @@ class ApplyTests(unittest.TestCase):
         node_map, _ = index_tree(tree)
         node_map[CJCS]["positionStatutoryPay"] = {"amount": 1.0}
         stats = apply_pay_evidence(tree, self.records, index_tree=index_tree)
-        self.assertEqual(21, stats["priced"])
+        self.assertEqual(22, stats["priced"])  # 21 until the 2026-10-07 rename
         self.assertEqual(1, stats["already_priced_by_another_source"])
         self.assertNotIn(FIELD, node_map[CJCS])
 
@@ -428,9 +441,11 @@ class PublishedGraphTests(unittest.TestCase):
             cls.nodes[node["id"]] = node
             stack.extend(node.get("children") or [])
 
-    def test_twenty_two_posts_carry_the_field_and_the_jcs_copies_do_not(self):
+    # 2026-10-07: 22 -> 23 with the Space Force's Chief Master Sergeant. Reads
+    # the PUBLISHED graph, so it passes only once output/ is regenerated.
+    def test_twenty_three_posts_carry_the_field_and_the_jcs_copies_do_not(self):
         carrying = {node_id for node_id, node in self.nodes.items() if isinstance(node.get(FIELD), dict)}
-        self.assertEqual(22, len(carrying), sorted(carrying))
+        self.assertEqual(23, len(carrying), sorted(carrying))
         for node_id in JCS_COPIES:
             self.assertNotIn(FIELD, self.nodes[node_id])
         self.assertAlmostEqual(227998.80, self.nodes[CJCS][FIELD]["amount"], places=2)

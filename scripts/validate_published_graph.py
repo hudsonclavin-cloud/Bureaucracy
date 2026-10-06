@@ -314,6 +314,21 @@ US_CODE_COUNTED_CLASSES = {
             'exec-dept-doc-ita-assistant-secretary-enforcement-compliance': None,
         },
     },
+    # 2026-10-07: the three Deputy USTRs, renamed to the Code's singular by
+    # scripts/rename_posts_to_printed_titles.py; 19 U.S.C. 2171 is read from
+    # govinfo, which is why the composing-URL check below accepts either host.
+    'Deputy United States Trade Representatives (3)': {
+        "section": '5314', "singular": 'Deputy United States Trade Representative', "scopeId": 'exec-eop-ustr',
+        "departmentWords": (),
+        "composition": ('19 U.S.C. 2171', 'ustr_19_usc_2171_govinfo2024.html',
+                        'There shall be in the Office three Deputy United States Trade Representatives, one Chief Agricultural Negotiator, and one Chief Innovation and Intellectual Property Negotiator, who shall be appointed by the President, by and with the advice and consent of the Senate.'),
+        "basis": "5 U.S.C. 5314 places the three Deputy United States Trade Representatives at Level III as a class and names none of them; 19 U.S.C. 2171(b)(2) establishes the three offices in the Office of the United States Trade Representative; each node is named as one Deputy United States Trade Representative, and the qualifier after the dash, which says which portfolio, is the graph's own and is not checked against any source",
+        "members": {
+            'exec-eop-ustr-deputy-ustr-wto-multilateral-affairs': None,
+            'exec-eop-ustr-deputy-ustr-americas': None,
+            'exec-eop-ustr-deputy-ustr-asia': None,
+        },
+    },
 }
 US_CODE_REVIEWED_IDENTIFICATIONS = {
     # The twelfth batch's Defense cluster (2026-10-06): the Department's
@@ -3205,9 +3220,10 @@ def counted_class_schedule_violations(node, pay, spec, today, label, tree_parent
         if named_as and named_as not in operative:
             say("rests on a naming sentence {} does not print in its operative text".format(citation))
     basis_url = str(identification.get("basisUrl") or "")
-    parts = re.match(r"^(\d+) U\.S\.C\. (\d+[A-Za-z]?(?:-\d+)?)$", citation)
-    expected_granule = "title{}-section{}".format(parts.group(1), parts.group(2)) if parts else ""
-    if host_of(basis_url) != US_CODE_HOST or not expected_granule or expected_granule not in basis_url:
+    # Either host the Code is read from (since 2026-10-07, when the first
+    # class composed by a section read from govinfo landed: 19 U.S.C. 2171),
+    # the same test the reviewed-row checker has applied since 2026-10-05.
+    if not us_code_url_names_section(basis_url, citation):
         say("does not link the section its class membership rests on ({!r})".format(basis_url))
     checked = str(identification.get("basisCheckedAt") or "")
     if not re.match(r"^\d{4}-\d{2}-\d{2}", checked) or checked[:10] > today:
@@ -4405,8 +4421,10 @@ MILITARY_GRADE_ROWS = {
 MILITARY_FOOTNOTE_ITEM_RULE = re.compile(r"^(?P<title>.+) of the Navy or Coast Guard$")
 #: Posts this pipeline deliberately does not price from Schedule 8, each with
 #: the reason military_pay.NOT_PRICED records; a block on any of them is
-#: refused outright. The Space Force's generic "Senior Enlisted Advisor" (the
-#: footnote prints "Chief Master Sergeant of the Space Force"); the NGA
+#: refused outright. (The Space Force's generic "Senior Enlisted Advisor"
+#: sat here until 2026-10-07, when the owner's rename to the footnote's own
+#: "Chief Master Sergeant of the Space Force" let the footnote route price it
+#: by equality.) The NGA
 #: Director (10 U.S.C. 441(b)(3) fixes a grade only IF an officer holds the
 #: post, a fact about a person); the nine combatant commanders whose grade no
 #: statute fixes (10 U.S.C. 164 fixes none; 601(a) names no post; the
@@ -4415,7 +4433,6 @@ MILITARY_FOOTNOTE_ITEM_RULE = re.compile(r"^(?P<title>.+) of the Navy or Coast G
 #: the Commandant of the Coast Guard, since one salary on two nodes is the
 #: rule the Vice President's Senate-leadership node set.
 MILITARY_NOT_PRICED_NODE_IDS = frozenset({
-    "exec-dept-defense-sf-senior-enlisted-advisor",
     "exec-dept-defense-agency-nga-director-national-geospatial-intelligence-agency-nga",
     "exec-dept-defense-cocom-usafricom-commander-ccdr-usafricom",
     "exec-dept-defense-cocom-uscentcom-commander-ccdr-uscentcom",

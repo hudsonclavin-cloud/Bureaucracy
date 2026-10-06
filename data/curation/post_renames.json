@@ -1,0 +1,81 @@
+{
+ "_comment": [
+  "Posts renamed to the title a committed official document prints, so the pay routes that join by",
+  "name can reach them. scripts/rename_posts_to_printed_titles.py is the only writer of these renames;",
+  "the curated file is never hand-edited. Every row is re-checked against its committed fixture on every",
+  "run (digest recomputed from the bytes): the table proposes, the document decides. 'from' is the name",
+  "the row was written against; a node that no longer carries it is left alone. 'parentId' is the parent",
+  "the row was written against; a node moved elsewhere is left alone.",
+  "Licences: 'schedule_8_footnote_title' -- 'printed' must be one printed item of the enlisted footnote to",
+  "Schedule 8 in the note to 5 U.S.C. 5332, read exactly as military_pay.py reads it, and 'to' must be that",
+  "item. 'us_code_counted_class_title' -- 'printed' must be a counted class title ('... (N)') in the",
+  "section's OPERATIVE text, 'singular' must be that title's plural noun phrase with its trailing 's'",
+  "removed, 'to' must be the singular, a separator from statutory_schedule.COUNTED_CLASS_SEPARATORS and the",
+  "qualifier the node already carries after the same separator, and 'composedBy' (a second section) must",
+  "print its quote in its operative text. No more rows may cite one class than the class title counts."
+ ],
+ "renames": [
+  {
+   "id": "exec-dept-defense-sf-senior-enlisted-advisor",
+   "from": "Senior Enlisted Advisor",
+   "to": "Chief Master Sergeant of the Space Force",
+   "parentId": "exec-dept-defense-sf",
+   "licence": "schedule_8_footnote_title",
+   "fixture": "tests/fixtures/uscode/pay_schedules_5_usc_5332.html",
+   "printed": "Chief Master Sergeant of the Space Force",
+   "basis": "The owner's decision (2026-10-07): the U.S. Space Force's senior enlisted advisor is the office Schedule 8 of the pay-adjustment order (reproduced in the note to 5 U.S.C. 5332) names in its enlisted footnote as 'Chief Master Sergeant of the Space Force', beside the Sergeant Major of the Army, the Chief Master Sergeant of the Air Force and the others this graph already names that way. The footnote prints the title; which office the graph's generic 'Senior Enlisted Advisor' stood for is the owner's identification and no document here states it. 10 U.S.C. 9083 (committed as sf_10_usc_9083_govinfo2024.html) was read and names only the Vice Chief of Space Operations, so it is not cited.",
+   "addedOn": "2026-10-07"
+  },
+  {
+   "id": "exec-eop-ustr-deputy-ustr-wto-multilateral-affairs",
+   "from": "Deputy USTR — WTO & Multilateral Affairs",
+   "to": "Deputy United States Trade Representative — WTO & Multilateral Affairs",
+   "parentId": "exec-eop-ustr",
+   "licence": "us_code_counted_class_title",
+   "fixture": "tests/fixtures/uscode/exec_schedule_5314.html",
+   "printed": "Deputy United States Trade Representatives (3)",
+   "singular": "Deputy United States Trade Representative",
+   "composedBy": {
+    "citation": "19 U.S.C. 2171",
+    "fixture": "tests/fixtures/uscode/ustr_19_usc_2171_govinfo2024.html",
+    "quote": "There shall be in the Office three Deputy United States Trade Representatives, one Chief Agricultural Negotiator, and one Chief Innovation and Intellectual Property Negotiator, who shall be appointed by the President, by and with the advice and consent of the Senate."
+   },
+   "basis": "The owner's decision (2026-10-07): 'USTR' is the graph's abbreviation of the office 5 U.S.C. 5314 prints as the class 'Deputy United States Trade Representatives (3)' and 19 U.S.C. 2171(b)(2) establishes. Only the abbreviation is spelled out; the qualifier after the dash is the graph's own and stays uncited.",
+   "addedOn": "2026-10-07"
+  },
+  {
+   "id": "exec-eop-ustr-deputy-ustr-americas",
+   "from": "Deputy USTR — Americas",
+   "to": "Deputy United States Trade Representative — Americas",
+   "parentId": "exec-eop-ustr",
+   "licence": "us_code_counted_class_title",
+   "fixture": "tests/fixtures/uscode/exec_schedule_5314.html",
+   "printed": "Deputy United States Trade Representatives (3)",
+   "singular": "Deputy United States Trade Representative",
+   "composedBy": {
+    "citation": "19 U.S.C. 2171",
+    "fixture": "tests/fixtures/uscode/ustr_19_usc_2171_govinfo2024.html",
+    "quote": "There shall be in the Office three Deputy United States Trade Representatives, one Chief Agricultural Negotiator, and one Chief Innovation and Intellectual Property Negotiator, who shall be appointed by the President, by and with the advice and consent of the Senate."
+   },
+   "basis": "The owner's decision (2026-10-07): 'USTR' is the graph's abbreviation of the office 5 U.S.C. 5314 prints as the class 'Deputy United States Trade Representatives (3)' and 19 U.S.C. 2171(b)(2) establishes. Only the abbreviation is spelled out; the qualifier after the dash is the graph's own and stays uncited.",
+   "addedOn": "2026-10-07"
+  },
+  {
+   "id": "exec-eop-ustr-deputy-ustr-asia",
+   "from": "Deputy USTR — Asia",
+   "to": "Deputy United States Trade Representative — Asia",
+   "parentId": "exec-eop-ustr",
+   "licence": "us_code_counted_class_title",
+   "fixture": "tests/fixtures/uscode/exec_schedule_5314.html",
+   "printed": "Deputy United States Trade Representatives (3)",
+   "singular": "Deputy United States Trade Representative",
+   "composedBy": {
+    "citation": "19 U.S.C. 2171",
+    "fixture": "tests/fixtures/uscode/ustr_19_usc_2171_govinfo2024.html",
+    "quote": "There shall be in the Office three Deputy United States Trade Representatives, one Chief Agricultural Negotiator, and one Chief Innovation and Intellectual Property Negotiator, who shall be appointed by the President, by and with the advice and consent of the Senate."
+   },
+   "basis": "The owner's decision (2026-10-07): 'USTR' is the graph's abbreviation of the office 5 U.S.C. 5314 prints as the class 'Deputy United States Trade Representatives (3)' and 19 U.S.C. 2171(b)(2) establishes. Only the abbreviation is spelled out; the qualifier after the dash is the graph's own and stays uncited.",
+   "addedOn": "2026-10-07"
+  }
+ ]
+}
