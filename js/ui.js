@@ -1001,8 +1001,15 @@ function renderPositionListing(data) {
   // level. Where that was the current export, they are printed in its block
   // below; a node the archive never listed would otherwise lose them.
   if (!levelSourceIsCurrent(data.positionPayRate)) renderTableRate(data, add);
-  if (!levelSourceIsCurrent(data.positionGradePay)) renderGradePay(data, add);
+  if (!levelSourceIsCurrent(data.positionGradePay) && !levelSourceIsVacancy(data.positionGradePay)) renderGradePay(data, add);
   renderTierPay(data, add);
+}
+
+// A range whose grade comes from USAJOBS vacancy announcements
+// (positionVacancyListing) is printed in that listing's own block.
+function levelSourceIsVacancy(block) {
+  if (!block || typeof block !== "object") return false;
+  return Boolean(block.listingSource && block.listingSource.source === "usajobs_vacancy_announcements");
 }
 
 function levelSourceIsCurrent(block) {
@@ -1073,9 +1080,17 @@ function renderGradePay(data, add) {
     add(" The archive does not say which kind of agency employs the post, so both rows are shown; a band is not a rate, and the table names no post.");
   }
   const planFromCurrent = pay.listingSource && pay.listingSource.source === "opm_plum_current_export";
-  add(planFromCurrent
-    ? " Two documents, not one: the pay plan is the current PLUM export's listing of this post as it stands, and the range is from OPM's salary table for that pay plan; the export prints no rate for this row."
-    : " Two documents, not one: the pay plan is the archive's record of a period that ended, and the range is from a table that took effect afterwards.");
+  if (levelSourceIsVacancy(pay)) {
+    // The grade comes from USAJOBS vacancy announcements for the title
+    // family, not from a report of this post; the block's own sentence says
+    // how many, and that the range is nobody's pay.
+    if (pay.vacancyStatement) add(` ${pay.vacancyStatement}`);
+    add(" The grade is what the announcements state for vacancies of this title at other facilities; none names this post, and their own salaries, which carry a duty station's locality pay, are not shown.");
+  } else {
+    add(planFromCurrent
+      ? " Two documents, not one: the pay plan is the current PLUM export's listing of this post as it stands, and the range is from OPM's salary table for that pay plan; the export prints no rate for this row."
+      : " Two documents, not one: the pay plan is the archive's record of a period that ended, and the range is from a table that took effect afterwards.");
+  }
   add(payDocumentsSentence(pay));
   const notes = Array.isArray(pay.footnotes) ? pay.footnotes.filter((n) => String(n || "").trim()) : [];
   for (const note of notes) add(` The table's own note: "${String(note).trim()}"`);
@@ -1631,6 +1646,41 @@ function renderCurrentListing(data) {
   add("A Vacant row is still a listed position. This says nothing about who holds the post: the export's name columns are never read.");
   if (levelSourceIsCurrent(data.positionPayRate)) renderTableRate(data, add);
   if (levelSourceIsCurrent(data.positionGradePay)) renderGradePay(data, add);
+}
+
+// USAJOBS vacancy announcements listing a title family at a pay plan and
+// grade. A listing of the TITLE, not of this post: each announcement is one
+// vacancy at one facility, none names this node, and the identification of
+// the family is reviewed. It verifies nothing, and no announcement's salary
+// is shown -- the range beneath it is OPM's base range for the grade.
+function renderVacancyListing(data) {
+  let line = document.getElementById("info-vacancy-listing");
+  if (!line && dom.infoStats) {
+    line = document.createElement("div");
+    line.id = "info-vacancy-listing";
+    line.style.fontSize = "9px";
+    line.style.color = "#8f7a5d";
+    line.style.letterSpacing = "0.06em";
+    line.style.margin = "2px 0 8px";
+    dom.infoStats.insertAdjacentElement("afterend", line);
+  }
+  if (!line) return;
+  const listing = data.positionVacancyListing;
+  if (!listing || typeof listing !== "object") {
+    line.replaceChildren();
+    return;
+  }
+  line.replaceChildren();
+  const add = (text) => line.appendChild(document.createTextNode(text));
+  const announcements = Array.isArray(listing.announcements) ? listing.announcements : [];
+  const on = formatFetchDate(listing.checkedAt);
+  add(`VACANCY ANNOUNCEMENTS: ${announcements.length} USAJOBS announcements${on ? `, fetched by ${on},` : ""} list a post of this title family at ${listing.payPlan}-${listing.payLevel}`);
+  const places = announcements
+    .filter((a) => a && typeof a === "object")
+    .map((a) => `${a.hiringOrganization}${Array.isArray(a.locations) && a.locations.length ? ` (${a.locations.join(", ")})` : ""}, opened ${a.openDate}, "${a.title}"`);
+  if (places.length) add(`: ${places.join("; ")}`);
+  add(". Each states the pay plan and grade of one vacancy at one facility. None names this post; that this node is the title they advertise is a reviewed identification, so the listing says nothing about whether this post exists or who holds it. Their own salaries include a duty station's locality pay and are not shown.");
+  if (levelSourceIsVacancy(data.positionGradePay)) renderGradePay(data, add);
 }
 
 function renderDescriptionProvenance(data, isClusteredView) {
@@ -3124,6 +3174,7 @@ function renderInfoPanel(nodeObj) {
   renderHeadcountProvenance(data);
   renderPositionListing(data);
   renderCurrentListing(data);
+  renderVacancyListing(data);
   renderStatutoryPay(data);
   renderDerivedPay(data);
   renderTierReferencePay(data);

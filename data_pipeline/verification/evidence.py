@@ -206,6 +206,11 @@ EVIDENCE_OWNED_FIELDS = (
     # carries -- or carries at another figure -- stops being published.
     "positionCurrentListing",
     "positionCurrentPay",
+    # Written by usajobs.py (since 2026-10-07): the pay plan and grade every
+    # committed USAJOBS announcement for a reviewed title family states. The
+    # GS range gs_pay.py hangs off it is withdrawn with it on every build, so
+    # a family whose announcements stop agreeing stops being ranged.
+    "positionVacancyListing",
     "employeesOfficial",
     "employeesOfficialSource",
     # Written by pay_tables.py. It is a gloss on positionListing directly

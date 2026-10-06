@@ -270,6 +270,10 @@ MINIMAL_GRAPH_FIELDS = (
     # and the rate of basic pay that export prints for the one row under the
     # title -- a second document beside the archive's listing, never a cost
     "positionCurrentListing", "positionCurrentPay",
+    # USAJOBS vacancy announcements listing a title family at a pay plan and
+    # grade: the listing a GS base range hangs off where no PLUM listing
+    # reports the post. Not evidence the node exists, and never a salary
+    "positionVacancyListing",
     # the Government Manual's listing of a post in its own agency's entry,
     # with the leadership table's own "updated" footer, which the panel
     # prints because some tables are years older than the edition
@@ -2597,6 +2601,7 @@ def build_graph(
     pay_evidence_path: str | Path | None = "default",
     grade_pay_evidence_path: str | Path | None = "default",
     plum_current_evidence_path: str | Path | None = "default",
+    vacancy_listing_evidence_path: str | Path | None = "default",
     schedule_pay_evidence_path: str | Path | None = "default",
     judicial_pay_evidence_path: str | Path | None = "default",
     congressional_pay_evidence_path: str | Path | None = "default",
@@ -2791,6 +2796,24 @@ def build_graph(
     )
     plum_current_evidence = load_plum_current_evidence(resolved_plum_current_path) if resolved_plum_current_path else {"nodes": {}, "pay": {}}
     validation["plum_current_evidence"] = apply_current_listing(graph, plum_current_evidence["nodes"], index_tree=index_tree)
+    # USAJOBS vacancy announcements, where every committed announcement for a
+    # reviewed title family states the same pay plan and grade (usajobs.py,
+    # since 2026-10-07). A listing of the title family and nothing more: it
+    # writes no source URL, no verification method and no placement. Applied
+    # before the salary-table range below, which hangs off it exactly as it
+    # hangs off a PLUM listing and is withdrawn with it.
+    from data_pipeline.verification.usajobs import (  # noqa: E402 — usajobs imports this module
+        DEFAULT_EVIDENCE_PATH as DEFAULT_VACANCY_EVIDENCE_PATH,
+        apply_vacancy_listing,
+        load_evidence as load_vacancy_evidence,
+    )
+
+    resolved_vacancy_path = (
+        DEFAULT_VACANCY_EVIDENCE_PATH if vacancy_listing_evidence_path == "default" else vacancy_listing_evidence_path
+    )
+    validation["vacancy_listing_evidence"] = apply_vacancy_listing(
+        graph, load_vacancy_evidence(resolved_vacancy_path) if resolved_vacancy_path else {}, index_tree=index_tree,
+    )
     # The salary table last of all, because it is a gloss on the listing above
     # and is published only where that listing still reports the same level.
     from data_pipeline.verification.pay_tables import (  # noqa: E402 — pay_tables imports this module

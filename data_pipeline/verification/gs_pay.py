@@ -30,6 +30,21 @@ post"). So a range is published only where the archive gives a pay plan (and,
 for GS, a grade) and NO rate. The 46 ES listings that carry a rate keep it and
 gain nothing here; the 43 that carry only the pay plan gain the band.
 
+## A third listing: USAJOBS vacancy announcements (since 2026-10-07)
+
+By the owner's decision a USAJOBS vacancy listing (`usajobs.py`,
+`positionVacancyListing`) may stand where a PLUM listing stands, for a node
+no PLUM listing reports: where at least two committed announcements for a
+reviewed title family all print the same pay plan and grade, the family's
+members are ranged from this table exactly as a PLUM-listed post is, under
+their own method string, with the announcements named in `listingSource`
+and a sentence (`vacancyStatement`) saying how many there are and that the
+range is base pay before locality and nobody's pay. Only a General Schedule
+grade is ranged this way, and the announcements' own salaries -- locality
+ranges for one duty station -- are never read. The range is withdrawn with
+the listing, and with it whenever the listing stops resting on the same
+announcements.
+
 ## The scale of the GS table, and why the PDF is the cited document
 
 The HTML rendering of the GS table prints bare integers ("22584") with no
@@ -105,6 +120,27 @@ METHOD_BY_KIND = {
     KIND_SES: "pay_system_range_for_the_pay_plan_reported_in_the_plum_archive",
     KIND_SLST: "pay_system_range_for_the_pay_plan_reported_in_the_plum_archive",
 }
+
+#: Since 2026-10-07 (the owner's decision) a USAJOBS vacancy listing may stand
+#: where a PLUM listing stands: `usajobs.py` reads the announcements, and the
+#: range hangs off `positionVacancyListing` exactly as it hangs off a PLUM
+#: listing -- withdrawn with it. Its own method string, because the claim
+#: names a different kind of document: announcements of vacancies in a title
+#: family, not a report of this post.
+VACANCY_LISTING_SOURCE = "usajobs_vacancy_announcements"
+VACANCY_LISTING_FIELD = "positionVacancyListing"
+METHOD_GS_FROM_VACANCIES = "base_range_for_the_grade_every_usajobs_announcement_for_the_title_family_states"
+
+
+def grade_listing_field_for(source: Any) -> str | None:
+    """Which published field carries the listing a range claim names: the
+    two PLUM listings through `positions.listing_field_for`, and the USAJOBS
+    vacancy listing, which only this module reads."""
+    if str(source or "") == VACANCY_LISTING_SOURCE:
+        return VACANCY_LISTING_FIELD
+    from data_pipeline.verification.positions import listing_field_for
+
+    return listing_field_for(source)
 
 #: The General Schedule has fifteen grades and ten steps. A table printing a
 #: sixteenth grade or an eleventh step has been restructured.
@@ -632,7 +668,7 @@ def eligible(record: Mapping[str, Any], tables: Mapping[str, Mapping[str, Any]])
 
 def listing_claim(record: Mapping[str, Any]) -> dict[str, Any]:
     pay_plan, level = _listing_of(record)
-    return {
+    claim = {
         "payPlan": pay_plan,
         "payLevel": level or None,
         "listedTitle": record.get("listedTitle"),
@@ -643,6 +679,18 @@ def listing_claim(record: Mapping[str, Any]) -> dict[str, Any]:
         "checkedAt": record.get("checkedAt"),
         "valuesFrom": record.get("valuesFrom"),
     }
+    if record.get("source") == VACANCY_LISTING_SOURCE:
+        # Which announcements, at which facilities: the block says in words
+        # how many announcements list the title family at the grade, and the
+        # gate checks the list against the listing it hangs off.
+        claim["family"] = record.get("family")
+        claim["announcementCount"] = record.get("announcementCount")
+        claim["announcements"] = [
+            {"id": a.get("id"), "url": a.get("url"), "hiringOrganization": a.get("hiringOrganization"),
+             "locations": list(a.get("locations") or []), "openDate": a.get("openDate")}
+            for a in (record.get("announcements") or []) if isinstance(a, Mapping)
+        ]
+    return claim
 
 
 def _bound_record(
@@ -856,9 +904,10 @@ def apply_grade_pay(
         # Which document reported the pay plan: the archive's listing or the
         # current export's (positions.LISTING_FIELD_BY_SOURCE). The range is
         # tied to that listing and withdrawn with it, never the other one.
-        from data_pipeline.verification.positions import any_listing_reports_a_rate, listing_field_for
+        from data_pipeline.verification.positions import any_listing_reports_a_rate
 
-        listing = node.get(listing_field_for(claim.get("source")) or "positionListing")
+        from_vacancies = claim.get("source") == VACANCY_LISTING_SOURCE
+        listing = node.get(grade_listing_field_for(claim.get("source")) or "positionListing")
         if not isinstance(listing, Mapping):
             stats["no_listing_published"] += 1
             continue
@@ -867,6 +916,16 @@ def apply_grade_pay(
             continue
         listed_plan = str(listing.get("payPlan") or "")
         listed_level = str(listing.get("payLevel") or "")
+        if from_vacancies and (
+            kind != KIND_GS
+            or [a.get("id") for a in (listing.get("announcements") or []) if isinstance(a, Mapping)]
+            != [a.get("id") for a in (claim.get("announcements") or []) if isinstance(a, Mapping)]
+        ):
+            # A vacancy listing ranges a General Schedule grade and nothing
+            # else, and only while it still rests on the announcements the
+            # record was derived from.
+            stats["listing_reports_a_different_plan_or_grade"] += 1
+            continue
         if kind not in KINDS or listed_plan != str(claim.get("payPlan") or "") or listed_plan not in PAY_PLANS_BY_KIND[kind]:
             stats["listing_reports_a_different_plan_or_grade"] += 1
             continue
@@ -891,7 +950,7 @@ def apply_grade_pay(
             continue
         block: dict[str, Any] = {
             "source": SOURCE,
-            "method": METHOD_BY_KIND[kind],
+            "method": METHOD_GS_FROM_VACANCIES if from_vacancies else METHOD_BY_KIND[kind],
             "kind": kind,
             "payPlan": listed_plan,
             "grade": record.get("grade"),
@@ -917,6 +976,8 @@ def apply_grade_pay(
                 "listedTitle": claim.get("listedTitle"),
                 "url": claim.get("url"),
                 "checkedAt": claim.get("checkedAt"),
+                **({key: json.loads(json.dumps(claim.get(key)))
+                    for key in ("family", "announcementCount", "announcements")} if from_vacancies else {}),
             },
             "url": record.get("sourceUrl"),
             "documentSha256": record.get("documentSha256"),
@@ -934,6 +995,14 @@ def apply_grade_pay(
             }
         else:
             block["rows"] = [dict(r) for r in (record.get("rows") or [])]
+        if from_vacancies:
+            count = len(claim.get("announcements") or [])
+            block["vacancyStatement"] = (
+                f"{count} USAJOBS announcements, each for one vacancy at one facility, list a post of this "
+                f"title family at GS-{record.get('grade')}; the range is OPM's base General Schedule range "
+                "for that grade before locality, not any announcement's salary and not anyone's pay."
+            )
+            stats["ranged_from_vacancy_listings"] = stats.get("ranged_from_vacancy_listings", 0) + 1
         node["positionGradePay"] = block
         stats["ranged"] += 1
         stats["ranged_by_kind"][kind] += 1

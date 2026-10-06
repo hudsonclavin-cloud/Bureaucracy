@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-10-06T04:16:39Z",
+ "url": "https://www.usajobs.gov/job/848110500",
+ "status": 200,
+ "final_url": "https://www.usajobs.gov/job/848110500",
+ "content_type": "text/html; charset=utf-8",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /job/848110500",
+ "bytes": 131259,
+ "sha256": "feee1da21bd92d70dae71fbc553051f1f191e655406b759abeb303cb33200b24",
+ "error": null
+}
