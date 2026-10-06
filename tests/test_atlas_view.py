@@ -83,6 +83,29 @@ def test_apportioned_estimates_are_withheld_in_the_panels_words():
     assert ATLAS.index("function headerSumLinesText(") < ATLAS.index("function describeCost(")
 
 
+def test_a_sourced_figure_of_another_kind_heads_an_unmeasured_organisation_and_never_an_estimate():
+    # Since 2026-10-07 an unmeasured organisation carrying File A, OMB or
+    # audited net cost is headed by that figure. Its formatter is its own,
+    # reached only from describeSourcedFigure, and that function reads the
+    # three blocks' own figures and never the apportioned amount.
+    start = ATLAS.index("function describeSourcedFigure(node) {")
+    end = ATLAS.index("// Pay. A rate of basic pay")
+    body = ATLAS[start:end]
+    assert ATLAS.count("formatSourcedFigure(") == 1 + body.count("formatSourcedFigure(")
+    assert "resolved_total_amount" not in body
+    assert "allocated" not in body
+    for field in ('"usaspendingOutlays", "amount"', '"ombBudget", "outlays"', '"auditedNetCost", "netCostUsd"'):
+        assert field in ATLAS, field
+    # The order mirrors the panel's declared constant, File A first.
+    assert ATLAS.index('["fileA", "usaspendingOutlays"') < ATLAS.index('["omb", "ombBudget"') < ATLAS.index('["audited", "auditedNetCost"')
+    assert UI.index('["fileA", (node) => nonZeroBlock(node.usaspendingOutlays') < UI.index('["omb", (node) => nonZeroBlock(node.ombBudget') < UI.index('["audited", (node) => nonZeroBlock(node.auditedNetCost')
+    # Never headed Cost, never on a post, and the same badge in both views.
+    assert 'row(cost.term || "Cost"' in ATLAS
+    assert "if (isPost(node)" in body
+    badge = "No measured cost; a sourced figure of another kind is shown"
+    assert badge in ATLAS and badge in UI
+
+
 def test_a_post_says_the_panels_sentence_and_shows_pay_under_its_own_heading():
     post_sentence = "This is a post, not a unit of government. No federal financial system reports spending for an individual post"
     assert post_sentence in UI

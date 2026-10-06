@@ -143,6 +143,28 @@ try {
     return n;
   };
 
+  // Which sourced figure of another kind heads an unmeasured organisation's
+  // panel, recomputed here from the served graph in the order js/ui.js
+  // declares (SOURCED_FIGURE_STAND_IN_ORDER) so the checks below hold the
+  // page to the data rather than to itself.
+  const SOURCED_FIGURE_KINDS = ["fileA", "omb", "audited"];
+  const SOURCED_FIGURE_FIELDS = { fileA: ["usaspendingOutlays", "amount"], omb: ["ombBudget", "outlays"], audited: ["auditedNetCost", "netCostUsd"] };
+  const sourcedFigureAmountOf = (n, kind) => {
+    const [field, amountField] = SOURCED_FIGURE_FIELDS[kind];
+    const block = n[field];
+    const amount = block && typeof block === "object" ? block[amountField] : null;
+    return typeof amount === "number" && Number.isFinite(amount) && amount !== 0 ? amount : null;
+  };
+  const sourcedKindOf = (n) => {
+    if (["official", "root_total"].includes(String(n.cost_status || ""))) return null;
+    if (/position|\brole\b|office holder/i.test(String(n.type || ""))) return null;
+    if (String(n.synthetic || "") || /treasury accounting line/i.test(String(n.type || ""))) return null;
+    if (String(n.lifecycle || "") === "superseded" || String(n.cost_validation || "") === "unit_superseded") return null;
+    return SOURCED_FIGURE_KINDS.find((kind) => sourcedFigureAmountOf(n, kind) !== null) || null;
+  };
+  const signedDollars = (amount) => `${amount < 0 ? "-" : ""}$${Math.round(Math.abs(amount)).toLocaleString("en-US")}`;
+  const hasSourcedFigureBlock = (n) => Boolean(n.usaspendingOutlays || n.ombBudget || n.auditedNetCost);
+
   // "How to read this" — the first-visit explainer. A fresh browser context
   // has an empty localStorage, so this is exactly the state a first-time
   // visitor arrives in, and it must be on screen before anything else is
@@ -155,7 +177,7 @@ try {
   const guideText = await text("#reading-guide-card");
   check("the guide says why most nodes show no figure", /Monthly Treasury Statement/.test(guideText), guideText.slice(0, 200));
   check("the guide says the estimates are withheld", /stay\s+hidden until you ask for them/.test(guideText), guideText.slice(0, 400));
-  check("the guide says the withheld box reveals nothing for the rest", /have no figure at all and never will/.test(guideText), guideText.slice(0, 600));
+  check("the guide says the withheld box reveals nothing for the rest", /have no cost figure at all and never will/.test(guideText), guideText.slice(0, 600));
   check("the guide says a post gets no share of outlays", /no position is given a share/.test(guideText), guideText.slice(0, 600));
   check("the guide says most entries carry no source", /entries carry a link to a source/.test(guideText.replace(/\s+/g, " ")), guideText.slice(0, 900));
   check("the guide says why a post carries no source", /declining to claim what it cannot show/.test(guideText.replace(/\s+/g, " ")), guideText.slice(0, 1200));
@@ -315,6 +337,30 @@ try {
     check("the cost's source is not offered as existence evidence", !/fiscaldata/i.test(evidenceRow) && (await page.locator('#atlas-detail .detail-row:nth-child(2) a[href*="fiscaldata.treasury.gov"]').count()) === 0, evidenceRow);
     check("the cost's source has its own row", (await page.locator('#atlas-detail a[href*="fiscaldata.treasury.gov"]').count()) >= 1 && /Evidence of the cost, not of the unit's existence/.test(await text("#atlas-detail")), "no cost-source row");
     check("the directory has no 'open primary evidence' link", !/Open primary evidence/i.test(await text("#atlas-detail")), "link present");
+  }
+
+  // An organisation with no measured cost headed by a sourced figure of
+  // another kind (the owner's decision of 2026-10-07): the directory's row is
+  // named for the measure, never "Cost", carries the block's own figure and
+  // year, and its source sits on a row of its own.
+  // The stylesheet upper-cases the term and innerText reports the rendered
+  // text, so the match is case-insensitive.
+  const directorySourcedTerms = { fileA: /^Gross outlays — USAspending File A$/i, omb: /^Outlays — OMB Public Budget Database$/i, audited: /^Audited net cost — Treasury Statement of Net Cost$/i };
+  for (const kind of SOURCED_FIGURE_KINDS) {
+    const node = allNodes.find((n) => sourcedKindOf(n) === kind && reachable(n));
+    if (!node) {
+      measurements[`directorySourcedFigure_${kind}`] = "skipped: no reachable organisation in the served graph is headed by this kind";
+      continue;
+    }
+    check(`the directory opens an organisation headed by a sourced figure (${kind})`, await openInDirectory(node), node.name);
+    const term = await rowText(".cost-row dt");
+    const costRow = await rowText(".cost-row dd");
+    const figure = sourcedFigureAmountOf(node, kind);
+    check(`the directory names the measure, not Cost (${kind})`, directorySourcedTerms[kind].test(term) && !/^cost$/i.test(term), term);
+    check(`the directory prints the block's own figure (${kind})`, costRow.includes(signedDollars(figure).replace(/^-/, "−")), `${costRow} / ${signedDollars(figure)}`);
+    check(`the directory badge says a sourced figure of another kind is shown (${kind})`, /No measured cost; a sourced figure of another kind is shown/.test(costRow), costRow);
+    check(`the directory does not call the figure measured (${kind})`, !/\bMeasured\b/.test(costRow), costRow);
+    check(`the directory gives the figure's source its own row (${kind})`, /Evidence of this figure, which is not the unit's cost/.test(await text("#atlas-detail")), "no figure-source row");
   }
 
   // A replaced unit is hidden until asked for, and labelled when shown.
@@ -791,8 +837,10 @@ try {
 
   // The exact-costs-only view: with it on, an apportioned share is not shown
   // as a figure at all, and the panel says why.
+  // Not one headed by a sourced figure of another kind: that node's badge
+  // names the figure it shows, and is checked on its own below.
   const allocatedNode = allNodes.find((n) => n.cost_status === "allocated" && n.resolved_total_amount > 1e6
-    && !n.positionListing && nameCounts.get(n.name) === 1);
+    && !n.positionListing && !hasSourcedFigureBlock(n) && nameCounts.get(n.name) === 1);
   check("some node carries an apportioned share", Boolean(allocatedNode), "none");
   const clickEstimateToggle = () => setEstimatesShown(true);
   if (allocatedNode) {
@@ -841,6 +889,111 @@ try {
     check("a measured cost is shown by default", /\$[\d,]+/.test(stats), stats.slice(0, 300));
     check("a measured cost is not withheld", !/no cost known/i.test(stats), stats.slice(0, 300));
   }
+
+  // Since 2026-10-07 an organisation with no measured cost that carries a
+  // sourced figure of another kind — File A's gross outlays, OMB's sum of
+  // account rows for a completed year, Treasury's audited net cost — is
+  // headed by it, in the order js/ui.js declares, under a heading naming the
+  // measure and never COST (the audited statement's own measure is "net
+  // cost", and that name is the only COST its label may carry). One node of
+  // each kind the served graph has; a kind no node is headed by is recorded
+  // under `measurements` rather than failed on the absence of data.
+  const sourcedHeads = {
+    fileA: /^GROSS OUTLAYS — USASPENDING FILE A$/,
+    omb: /^OUTLAYS — OMB PUBLIC BUDGET DATABASE$/,
+    audited: /^AUDITED NET COST — TREASURY STATEMENT OF NET COST$/,
+  };
+  const sourcedCounts = {};
+  for (const kind of SOURCED_FIGURE_KINDS) sourcedCounts[kind] = allNodes.filter((n) => sourcedKindOf(n) === kind).length;
+  measurements.sourcedFigureHeadlines = sourcedCounts;
+  for (const kind of SOURCED_FIGURE_KINDS) {
+    // Prefer a node that also carries a withheld estimate, so the reveal
+    // button can be checked beside the new headline.
+    const candidates = allNodes.filter((n) => sourcedKindOf(n) === kind && unique(n));
+    const node = candidates.find((n) => n.cost_status === "allocated") || candidates[0];
+    if (!node) {
+      measurements[`sourcedFigure_${kind}`] = "skipped: no organisation in the served graph is headed by this kind";
+      continue;
+    }
+    const figure = sourcedFigureAmountOf(node, kind);
+    await openByName(node.name);
+    const head = await text("#info-stats .info-cost-label");
+    const amount = await text("#info-stats .info-cost-amount");
+    const stats = await text("#info-stats .info-cost");
+    measurements[`sourcedFigure_${kind}`] = { id: node.id, head, amount: amount.split("\n")[0] };
+    check(`a sourced figure is the organisation's headline (${kind})`, amount.split("\n")[0] === signedDollars(figure), `${amount} / ${signedDollars(figure)}`);
+    check(`the headline names the measure (${kind})`, sourcedHeads[kind].test(head), head);
+    check(`the headline is never headed COST (${kind})`, !/COST/.test(head.replace(/NET COST/g, "")) && !/^(ANNUAL )?COST$/.test(head), head);
+    check(`the badge says a sourced figure of another kind is shown (${kind})`, /No measured cost; a sourced figure of another kind is shown/i.test(stats), stats.slice(0, 400));
+    check(`the badge is not the measured one (${kind})`, (await page.locator("#info-stats .info-cost-badge.is-measured").count()) === 0, "measured badge drawn");
+    check(`the headline is not called Not available (${kind})`, !/Not available/.test(amount), amount);
+    const period = await text("#info-stats .info-cost-period");
+    const block = node[SOURCED_FIGURE_FIELDS[kind][0]];
+    check(`the period line is read off the block (${kind})`, period.includes(`FY${block.fiscalYear}`) && (kind !== "fileA" || period.includes(block.periodAsOf)) && (kind !== "audited" || period.includes(block.statementDate)), period);
+    check(`the period line says it is not the cost (${kind})`, /not the cost/.test(period), period);
+    if (kind === "omb") {
+      check("the OMB headline says the figure is a sum of account rows OMB never prints", period.includes(`the sum of ${block.outlayAccountRows.toLocaleString("en-US")} account rows`) && /not a figure OMB prints/.test(period), period);
+    }
+    if (node.cost_status === "allocated") {
+      check(`the estimate stays withheld beside the sourced headline (${kind})`, /share of an ancestor's measured total/.test(stats) && !/≈\s*\$/.test(stats), stats.slice(0, 600));
+      const reveal = page.locator("#info-stats .info-cost-reveal");
+      check(`the reveal button stays beside the sourced headline (${kind})`, (await reveal.count()) === 1, `${await reveal.count()} buttons`);
+      if ((await reveal.count()) === 1) {
+        await reveal.first().click();
+        await page.waitForTimeout(300);
+        const revealed = await text("#info-stats .info-cost");
+        check(`the button shows the estimate in the headline's place (${kind})`, /≈\s*\$/.test(revealed) && /ESTIMATE/i.test(revealed), revealed.slice(0, 300));
+        await setEstimatesShown(false);
+        await page.waitForTimeout(200);
+      }
+    }
+  }
+
+  // A negative OMB figure is shown as the database gives it, with OMB's own
+  // sentence saying amounts are net of offsetting collections.
+  const negativeOmb = allNodes.find((n) => sourcedKindOf(n) === "omb" && n.ombBudget.outlays < 0 && unique(n));
+  if (negativeOmb) {
+    await openByName(negativeOmb.name);
+    const amount = await text("#info-stats .info-cost-amount");
+    const note = await text("#info-stats .info-cost-note");
+    check("a negative OMB figure is the headline as given, sign leading", amount.split("\n")[0] === signedDollars(negativeOmb.ombBudget.outlays), amount);
+    check("a negative OMB figure carries OMB's net-of-collections sentence", note.includes(String(negativeOmb.ombBudget.netQuote).trim()), note);
+    measurements.sourcedFigureNegativeOmb = negativeOmb.id;
+  } else {
+    measurements.sourcedFigureNegativeOmb = "skipped: no organisation headed by OMB nets below zero";
+  }
+
+  // A unit beneath a negative Treasury pool has no estimate and may take a
+  // sourced figure; it is offered no reveal button, because there is
+  // nothing to reveal.
+  const poolNegativeSourced = allNodes.find((n) => sourcedKindOf(n) && n.cost_validation === "treasury_pool_negative" && unique(n));
+  if (poolNegativeSourced) {
+    await openByName(poolNegativeSourced.name);
+    const amount = await text("#info-stats .info-cost-amount");
+    const kind = sourcedKindOf(poolNegativeSourced);
+    check("a unit beneath a negative pool is headed by its sourced figure", amount.split("\n")[0] === signedDollars(sourcedFigureAmountOf(poolNegativeSourced, kind)), amount);
+    check("a unit beneath a negative pool is offered no estimate", (await page.locator("#info-stats .info-cost-reveal").count()) === 0, "reveal button drawn");
+  } else {
+    measurements.sourcedFigurePoolNegative = "skipped: no unit beneath a negative pool carries a sourced figure";
+  }
+
+  // A measured node carrying the same blocks keeps the Treasury's figure as
+  // its headline: the sourced figure never displaces a measurement.
+  const measuredWithBlocks = allNodes.find((n) => n.cost_status === "official" && n.costVerificationStatus === "verified"
+    && !n.synthetic && n.ombBudget && unique(n));
+  check("some measured node carries an OMB figure beside it", Boolean(measuredWithBlocks), "none");
+  if (measuredWithBlocks) {
+    await openByName(measuredWithBlocks.name);
+    const head = await text("#info-stats .info-cost-label");
+    const amount = await text("#info-stats .info-cost-amount");
+    check("a measured node's headline is still its Treasury figure", amount.split("\n")[0] === signedDollars(Number(measuredWithBlocks.resolved_total_amount)), amount);
+    check("a measured node is still headed as a cost", /^(ANNUAL )?COST$/.test(head), head);
+    check("a measured node still wears the measured badge", (await page.locator("#info-stats .info-cost-badge.is-measured").count()) === 1, "no measured badge");
+  }
+
+  // A post never takes an organisation's figure, whatever it carries.
+  const postsWithBlocks = allNodes.filter((n) => /position/i.test(String(n.type || "")) && hasSourcedFigureBlock(n)).length;
+  measurements.postsCarryingSourcedFigureBlocks = postsWithBlocks;
 
   // A position with a real reported rate of pay shows it in place of the
   // withheld estimate, under a heading that is not the word COST.
@@ -1032,7 +1185,8 @@ try {
   // — below a cent, or beneath a unit whose net outlays are negative.
   const belowPrecision = allNodes.find((n) => n.cost_validation === "allocation_below_precision" && !/position/i.test(n.type || ""))
     || allNodes.find((n) => n.cost_validation === "allocation_below_precision");
-  const poolNegative = allNodes.find((n) => n.cost_validation === "treasury_pool_negative");
+  // Not one headed by a sourced figure of another kind (checked on its own above).
+  const poolNegative = allNodes.find((n) => n.cost_validation === "treasury_pool_negative" && !sourcedKindOf(n));
   const unavailableNode = belowPrecision || poolNegative;
   check("some node is published unavailable for a stated reason", Boolean(unavailableNode), "none");
   if (unavailableNode) {
@@ -1264,6 +1418,18 @@ try {
   // the card must count the nodes that actually hold a share.
   const estimateCounts = /([\d,]+) apportioned estimates/.exec(provenanceLine);
   check("the provenance line counts apportioned estimates", Boolean(estimateCounts), provenanceLine);
+  // The organisations headed by a sourced figure of another kind are a group
+  // of their own in both the line and the card, never counted as measured.
+  const expectedSourced = allNodes.filter((n) => n !== graphJson && sourcedKindOf(n)).length;
+  const lineSourced = /([\d,]+) organisations without a measured cost headed instead by a sourced figure of another kind/.exec(provenanceLine);
+  check("the provenance line counts the sourced-figure headlines as their own group",
+    Boolean(lineSourced) && Number(lineSourced[1].replace(/,/g, "")) === expectedSourced,
+    `${lineSourced ? lineSourced[1] : "absent"} shown, ${expectedSourced} in the served graph`);
+  const guideSourced = /([\d,]+) organisations without a measured cost show, at the top of their panel, a figure of another kind/.exec(guideText.replace(/\s+/g, " "));
+  check("the guide counts the same sourced-figure headlines",
+    Boolean(guideSourced) && Number(guideSourced[1].replace(/,/g, "")) === expectedSourced,
+    `${guideSourced ? guideSourced[1] : "absent"} in the card, ${expectedSourced} in the served graph`);
+  measurements.sourcedFigureHeadlineTotal = expectedSourced;
   if (estimateCounts) {
     const expectedAllocated = allNodes.filter((n) => String(n.cost_status || "") === "allocated").length;
     check(
