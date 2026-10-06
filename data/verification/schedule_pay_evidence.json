@@ -12,13 +12,13 @@
     "method": "level_assigned_by_5_usc_5312_5316",
     "table": "Salary Table No. 2026-EX",
     "effective": "2026-01-01",
-    "matched": 237,
-    "priced": 237,
+    "matched": 241,
+    "priced": 241,
     "refused": {},
     "priced_by_level": {
       "I": 20,
       "II": 36,
-      "III": 49,
+      "III": 53,
       "IV": 122,
       "V": 10
     },
@@ -27,7 +27,7 @@
       "office_part_is_a_bare_role_word": 75
     },
     "scopedMatches": 61,
-    "reviewedMatches": 98,
+    "reviewedMatches": 99,
     "reviewedRows": [
       "exec-dept-defense-chief-financial-officer",
       "exec-dept-dhs-cisa-executive-assistant-director-cybersecurity",
@@ -125,10 +125,11 @@
       "exec-regulatory-ftc-commissioner-4",
       "exec-regulatory-nrc-chair-nrc",
       "exec-regulatory-nrc-commissioner-4",
+      "exec-regulatory-sec-chair-sec",
       "exec-regulatory-sec-commissioner-4",
       "leg-support-loc-copyright-register-of-copyrights-director"
     ],
-    "countedClassMatches": 40,
+    "countedClassMatches": 43,
     "countedClasses": {
       "Assistant Attorneys General (11)": {
         "count": 11,
@@ -161,6 +162,10 @@
       "Assistant Secretaries of Commerce (11)": {
         "count": 11,
         "members": 2
+      },
+      "Deputy United States Trade Representatives (3)": {
+        "count": 3,
+        "members": 3
       }
     },
     "countedClassMembers": [
@@ -197,6 +202,9 @@
       "exec-dept-state-bureau-of-political-military-affairs-assistant-secretary-bureau-of-political-military-affairs",
       "exec-dept-state-bureau-of-south-central-asian-affairs-assistant-secretary-bureau-of-south-central-asian-affairs",
       "exec-dept-state-bureau-of-western-hemisphere-affairs-assistant-secretary-bureau-of-western-hemisphere-affairs",
+      "exec-eop-ustr-deputy-ustr-americas",
+      "exec-eop-ustr-deputy-ustr-asia",
+      "exec-eop-ustr-deputy-ustr-wto-multilateral-affairs",
       "exec-ind-epa-office-of-air-radiation-oar-assistant-administrator-office-of-air-radiation",
       "exec-ind-epa-office-of-chemical-safety-pollution-prevention-ocspp-assistant-administrator-office-of-chemical-safety-pollution-prevention",
       "exec-ind-epa-office-of-enforcement-compliance-assurance-oeca-assistant-administrator-office-of-enforcement-compliance-assurance",
@@ -212,7 +220,7 @@
       ]
     },
     "statutoryPositions": 418,
-    "validated": 237,
+    "validated": 241,
     "rejected": [],
     "conflicts": [],
     "double_counted": []
@@ -8748,6 +8756,204 @@
       ],
       "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
     },
+    "exec-eop-ustr-deputy-ustr-americas": {
+      "nodeId": "exec-eop-ustr-deputy-ustr-americas",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "basic_pay",
+      "amount": 209600.0,
+      "amountRaw": "209,600",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "Level III $209,600",
+      "quote": "Level III $209,600",
+      "fiscalYear": 2026,
+      "periodCoverage": "annual_rate",
+      "periodAsOf": "2026-01-01",
+      "amountScope": "Level III",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "opm_pay_table",
+      "sourceUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+      "retrievedAt": "2026-09-11T03:05:36Z",
+      "locator": {
+        "table": "Salary Table No. 2026-EX",
+        "row": "Level III",
+        "column": "Rate"
+      },
+      "levelClaim": {
+        "source": "us_code_executive_schedule",
+        "method": "level_assigned_by_5_usc_5312_5316_to_a_counted_class_of_offices_this_post_is_one_of",
+        "scopedOffice": null,
+        "scopedOrganisation": null,
+        "scopedOrganisationId": null,
+        "payLevel": "III",
+        "citation": "5 U.S.C. §5314",
+        "section": "5314",
+        "statutoryTitle": "Deputy United States Trade Representatives (3)",
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5314&num=0&edition=prelim",
+        "documentSha256": "9fb06a64237cc4224921b2bec6b5666066b73241c148fbec39182a595aa8ae92",
+        "checkedAt": "2026-09-18T20:34:21Z",
+        "identification": {
+          "nodeName": "Deputy United States Trade Representative — Americas",
+          "basis": "5 U.S.C. 5314 places the three Deputy United States Trade Representatives at Level III as a class and names none of them; 19 U.S.C. 2171(b)(2) establishes the three offices in the Office of the United States Trade Representative; each node is named as one Deputy United States Trade Representative, and the qualifier after the dash, which says which portfolio, is the graph's own and is not checked against any source",
+          "basisCitation": "19 U.S.C. 2171",
+          "basisQuote": "There shall be in the Office three Deputy United States Trade Representatives, one Chief Agricultural Negotiator, and one Chief Innovation and Intellectual Property Negotiator, who shall be appointed by the President, by and with the advice and consent of the Senate.",
+          "basisUrl": "https://www.govinfo.gov/link/uscode/19/2171?link-type=html",
+          "basisSha256": "5385a977706c715da8591f06eae5dfac2163ab783b93c480eeff793eeb3264bc",
+          "basisCheckedAt": "2026-10-06T04:16:15Z"
+        },
+        "countedClass": {
+          "codeTitle": "Deputy United States Trade Representatives (3)",
+          "statedPosts": 3,
+          "membersInGraph": 3,
+          "singular": "Deputy United States Trade Representative",
+          "scopeId": "exec-eop-ustr",
+          "scopeName": "Office of the U.S. Trade Representative",
+          "namedAs": null,
+          "compositionCitation": "19 U.S.C. 2171"
+        }
+      },
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "rateText": "$209,600",
+      "tableFootnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+    },
+    "exec-eop-ustr-deputy-ustr-asia": {
+      "nodeId": "exec-eop-ustr-deputy-ustr-asia",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "basic_pay",
+      "amount": 209600.0,
+      "amountRaw": "209,600",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "Level III $209,600",
+      "quote": "Level III $209,600",
+      "fiscalYear": 2026,
+      "periodCoverage": "annual_rate",
+      "periodAsOf": "2026-01-01",
+      "amountScope": "Level III",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "opm_pay_table",
+      "sourceUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+      "retrievedAt": "2026-09-11T03:05:36Z",
+      "locator": {
+        "table": "Salary Table No. 2026-EX",
+        "row": "Level III",
+        "column": "Rate"
+      },
+      "levelClaim": {
+        "source": "us_code_executive_schedule",
+        "method": "level_assigned_by_5_usc_5312_5316_to_a_counted_class_of_offices_this_post_is_one_of",
+        "scopedOffice": null,
+        "scopedOrganisation": null,
+        "scopedOrganisationId": null,
+        "payLevel": "III",
+        "citation": "5 U.S.C. §5314",
+        "section": "5314",
+        "statutoryTitle": "Deputy United States Trade Representatives (3)",
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5314&num=0&edition=prelim",
+        "documentSha256": "9fb06a64237cc4224921b2bec6b5666066b73241c148fbec39182a595aa8ae92",
+        "checkedAt": "2026-09-18T20:34:21Z",
+        "identification": {
+          "nodeName": "Deputy United States Trade Representative — Asia",
+          "basis": "5 U.S.C. 5314 places the three Deputy United States Trade Representatives at Level III as a class and names none of them; 19 U.S.C. 2171(b)(2) establishes the three offices in the Office of the United States Trade Representative; each node is named as one Deputy United States Trade Representative, and the qualifier after the dash, which says which portfolio, is the graph's own and is not checked against any source",
+          "basisCitation": "19 U.S.C. 2171",
+          "basisQuote": "There shall be in the Office three Deputy United States Trade Representatives, one Chief Agricultural Negotiator, and one Chief Innovation and Intellectual Property Negotiator, who shall be appointed by the President, by and with the advice and consent of the Senate.",
+          "basisUrl": "https://www.govinfo.gov/link/uscode/19/2171?link-type=html",
+          "basisSha256": "5385a977706c715da8591f06eae5dfac2163ab783b93c480eeff793eeb3264bc",
+          "basisCheckedAt": "2026-10-06T04:16:15Z"
+        },
+        "countedClass": {
+          "codeTitle": "Deputy United States Trade Representatives (3)",
+          "statedPosts": 3,
+          "membersInGraph": 3,
+          "singular": "Deputy United States Trade Representative",
+          "scopeId": "exec-eop-ustr",
+          "scopeName": "Office of the U.S. Trade Representative",
+          "namedAs": null,
+          "compositionCitation": "19 U.S.C. 2171"
+        }
+      },
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "rateText": "$209,600",
+      "tableFootnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+    },
+    "exec-eop-ustr-deputy-ustr-wto-multilateral-affairs": {
+      "nodeId": "exec-eop-ustr-deputy-ustr-wto-multilateral-affairs",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "basic_pay",
+      "amount": 209600.0,
+      "amountRaw": "209,600",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "Level III $209,600",
+      "quote": "Level III $209,600",
+      "fiscalYear": 2026,
+      "periodCoverage": "annual_rate",
+      "periodAsOf": "2026-01-01",
+      "amountScope": "Level III",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "opm_pay_table",
+      "sourceUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+      "retrievedAt": "2026-09-11T03:05:36Z",
+      "locator": {
+        "table": "Salary Table No. 2026-EX",
+        "row": "Level III",
+        "column": "Rate"
+      },
+      "levelClaim": {
+        "source": "us_code_executive_schedule",
+        "method": "level_assigned_by_5_usc_5312_5316_to_a_counted_class_of_offices_this_post_is_one_of",
+        "scopedOffice": null,
+        "scopedOrganisation": null,
+        "scopedOrganisationId": null,
+        "payLevel": "III",
+        "citation": "5 U.S.C. §5314",
+        "section": "5314",
+        "statutoryTitle": "Deputy United States Trade Representatives (3)",
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5314&num=0&edition=prelim",
+        "documentSha256": "9fb06a64237cc4224921b2bec6b5666066b73241c148fbec39182a595aa8ae92",
+        "checkedAt": "2026-09-18T20:34:21Z",
+        "identification": {
+          "nodeName": "Deputy United States Trade Representative — WTO & Multilateral Affairs",
+          "basis": "5 U.S.C. 5314 places the three Deputy United States Trade Representatives at Level III as a class and names none of them; 19 U.S.C. 2171(b)(2) establishes the three offices in the Office of the United States Trade Representative; each node is named as one Deputy United States Trade Representative, and the qualifier after the dash, which says which portfolio, is the graph's own and is not checked against any source",
+          "basisCitation": "19 U.S.C. 2171",
+          "basisQuote": "There shall be in the Office three Deputy United States Trade Representatives, one Chief Agricultural Negotiator, and one Chief Innovation and Intellectual Property Negotiator, who shall be appointed by the President, by and with the advice and consent of the Senate.",
+          "basisUrl": "https://www.govinfo.gov/link/uscode/19/2171?link-type=html",
+          "basisSha256": "5385a977706c715da8591f06eae5dfac2163ab783b93c480eeff793eeb3264bc",
+          "basisCheckedAt": "2026-10-06T04:16:15Z"
+        },
+        "countedClass": {
+          "codeTitle": "Deputy United States Trade Representatives (3)",
+          "statedPosts": 3,
+          "membersInGraph": 3,
+          "singular": "Deputy United States Trade Representative",
+          "scopeId": "exec-eop-ustr",
+          "scopeName": "Office of the U.S. Trade Representative",
+          "namedAs": null,
+          "compositionCitation": "19 U.S.C. 2171"
+        }
+      },
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "rateText": "$209,600",
+      "tableFootnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+    },
     "exec-eop-ustr-u-s-trade-representative-ambassador": {
       "nodeId": "exec-eop-ustr-u-s-trade-representative-ambassador",
       "financialEvidenceStatus": "partial",
@@ -12989,6 +13195,79 @@
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
       "rateText": "$184,900",
+      "tableFootnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+    },
+    "exec-regulatory-sec-chair-sec": {
+      "nodeId": "exec-regulatory-sec-chair-sec",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "basic_pay",
+      "amount": 209600.0,
+      "amountRaw": "209,600",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "Level III $209,600",
+      "quote": "Level III $209,600",
+      "fiscalYear": 2026,
+      "periodCoverage": "annual_rate",
+      "periodAsOf": "2026-01-01",
+      "amountScope": "Level III",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "opm_pay_table",
+      "sourceUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+      "retrievedAt": "2026-09-11T03:05:36Z",
+      "locator": {
+        "table": "Salary Table No. 2026-EX",
+        "row": "Level III",
+        "column": "Rate"
+      },
+      "levelClaim": {
+        "source": "us_code_executive_schedule",
+        "method": "level_assigned_by_5_usc_5312_5316_to_the_office_a_second_statute_identifies_this_post_as",
+        "scopedOffice": null,
+        "scopedOrganisation": null,
+        "scopedOrganisationId": null,
+        "payLevel": "III",
+        "citation": "5 U.S.C. §5314",
+        "section": "5314",
+        "statutoryTitle": "Chairman, Securities and Exchange Commission",
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5314&num=0&edition=prelim",
+        "documentSha256": "9fb06a64237cc4224921b2bec6b5666066b73241c148fbec39182a595aa8ae92",
+        "checkedAt": "2026-09-18T20:34:21Z",
+        "identification": {
+          "nodeName": "Chair, SEC",
+          "basis": "the office under the graph's 'Chair' is the Chairman: Reorganization Plan No. 10 of 1950, a plan the President transmitted under the Reorganization Act of 1949 and which took effect May 24, 1950, transfers to the President the choosing of a Chairman from among the Commissioners (§3) and vests the Commission's executive and administrative functions in that Chairman (§1(a)); 5 U.S.C. 5314 places the Chairman, Securities and Exchange Commission at Level III; 15 U.S.C. 78d composes the Commission and designates no Chairman, which is why the basis is the Plan",
+          "basisCitation": "Reorganization Plan No. 10 of 1950, §3",
+          "basisQuote": "The functions of the Commission with respect to choosing a Chairman from among the Commissioners composing the Commission are hereby transferred to the President.",
+          "basisUrl": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-app-reorganiz.htm",
+          "basisSha256": "71eadef8ca108d8da8faac8033fe8476475ee9beec0e391d3c20145b6528c398",
+          "basisCheckedAt": "2026-10-06T04:16:55Z",
+          "basisDocumentKind": "reorganization_plan",
+          "basisInstrument": {
+            "id": "reorganization-plan-no-10-of-1950",
+            "kind": "reorganization_plan",
+            "kindWords": "a Reorganization Plan, transmitted by the President under chapter 9 of Title 5 and in effect, which the United States Code prints in Title 5's Appendix rather than as a section of the Code",
+            "name": "Reorganization Plan No. 10 of 1950",
+            "heading": "REORGANIZATION PLAN NO. 10 OF 1950",
+            "issuer": "the President",
+            "date": "March 13, 1950",
+            "effective": "Eff. May 24, 1950, 15 F.R. 3175, 64 Stat. 1265",
+            "printedIn": "5 U.S.C. App., Reorganization Plans",
+            "publisher": "U.S. Government Publishing Office",
+            "edition": "2024 edition of the United States Code",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-app-reorganiz.htm",
+            "documentSha256": "71eadef8ca108d8da8faac8033fe8476475ee9beec0e391d3c20145b6528c398",
+            "retrievedAt": "2026-10-06T04:16:55Z"
+          }
+        }
+      },
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "rateText": "$209,600",
       "tableFootnotes": [
         "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
       ],

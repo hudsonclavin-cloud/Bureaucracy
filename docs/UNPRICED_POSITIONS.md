@@ -8,12 +8,12 @@ checkable claim. `docs/PAY_SOURCE_RESEARCH_PROMPT_3.md` is generated from this
 same list in the same run.
 
 - position nodes in the published graph: **4,591**
-- carrying a pay claim an official document supports: **1,196**
-- carrying none: **3,395**
+- carrying a pay claim an official document supports: **1,231**
+- carrying none: **3,360**
 
 | reason | count | what it means |
 |---|---|---|
-| `unreached` | 2,627 | no source this project has read names the title at all. Not a coverage gap somebody has not got to: no pay document in the repository names this title under this organisation, so nothing could have reached it. |
+| `unreached` | 2,592 | no source this project has read names the title at all. Not a coverage gap somebody has not got to: no pay document in the repository names this title under this organisation, so nothing could have reached it. |
 | `multiplicity` | 750 | the node states a multiplicity (×N) and no claim that holds for every holder has reached it. Since 2026-09-23 a claim that holds for each holder by its own terms IS published on such a node with a `holders` block -- a tier or parity rate paid to every judge of the tier, a band every holder is within, or a roster listing every holder at one rate -- and 43 such nodes carry one. What stays refused is an incumbency-shaped claim (one listing's level, one row of the current export), because that is one appointment's figure and not the group's. For these nodes no office-rate claim has reached them at all. Knowing which pay system governs the title is still useful -- it is what would let the graph carry the schedule rather than a rate -- so these are listed and asked about. |
 | `listed_no_rate` | 18 | OPM lists the position and the row prints no rate. The PLUM archive or the current export names the title under this organisation but the Level/Grade/Pay cell carries a rank or is empty, and no salary table this project has read prices that pay plan. |
 
@@ -85,7 +85,7 @@ same list in the same run.
 - `exec-eop-who-supervisor-for-records-management-3` — Supervisor for Records Management (×3) — `multiplicity`
 - `exec-eop-who-travel-coordinator-4` — Travel Coordinator (×4) — `multiplicity`
 
-## VA Medical Centers  — 24 unpriced
+## VA Medical Centers  — 23 unpriced
 
 `exec-dept-va-vha-visn-23-midwest-vamc`
 
@@ -112,9 +112,8 @@ same list in the same run.
 - `exec-dept-va-vha-visn-23-midwest-vamc-physician-multiple` — Physician (×multiple) — `multiplicity`
 - `exec-dept-va-vha-visn-23-midwest-vamc-social-worker-multiple` — Social Worker (×multiple) — `multiplicity`
 - `exec-dept-va-vha-visn-23-midwest-vamc-va-police-chief` — VA Police Chief — `unreached`
-- `exec-dept-va-vha-visn-23-midwest-vamc-vamc-associate-director-administrative` — VAMC Associate Director (Administrative) — `unreached`
 
-## VA Medical Centers  — 24 unpriced
+## VA Medical Centers  — 23 unpriced
 
 `exec-dept-va-vha-visn-22-desert-pacific-vamc`
 
@@ -141,9 +140,8 @@ same list in the same run.
 - `exec-dept-va-vha-visn-22-desert-pacific-vamc-physician-multiple` — Physician (×multiple) — `multiplicity`
 - `exec-dept-va-vha-visn-22-desert-pacific-vamc-social-worker-multiple` — Social Worker (×multiple) — `multiplicity`
 - `exec-dept-va-vha-visn-22-desert-pacific-vamc-va-police-chief` — VA Police Chief — `unreached`
-- `exec-dept-va-vha-visn-22-desert-pacific-vamc-vamc-associate-director-administrative` — VAMC Associate Director (Administrative) — `unreached`
 
-## VA Medical Centers  — 24 unpriced
+## VA Medical Centers  — 23 unpriced
 
 `exec-dept-va-vha-visn-21-sierra-pacific-vamc`
 
@@ -170,9 +168,8 @@ same list in the same run.
 - `exec-dept-va-vha-visn-21-sierra-pacific-vamc-physician-multiple` — Physician (×multiple) — `multiplicity`
 - `exec-dept-va-vha-visn-21-sierra-pacific-vamc-social-worker-multiple` — Social Worker (×multiple) — `multiplicity`
 - `exec-dept-va-vha-visn-21-sierra-pacific-vamc-va-police-chief` — VA Police Chief — `unreached`
-- `exec-dept-va-vha-visn-21-sierra-pacific-vamc-vamc-associate-director-administrative` — VAMC Associate Director (Administrative) — `unreached`
 
-## VA Medical Centers  — 24 unpriced
+## VA Medical Centers  — 23 unpriced
 
 `exec-dept-va-vha-visn-20-northwest-vamc`
 
@@ -199,9 +196,8 @@ same list in the same run.
 - `exec-dept-va-vha-visn-20-northwest-vamc-physician-multiple` — Physician (×multiple) — `multiplicity`
 - `exec-dept-va-vha-visn-20-northwest-vamc-social-worker-multiple` — Social Worker (×multiple) — `multiplicity`
 - `exec-dept-va-vha-visn-20-northwest-vamc-va-police-chief` — VA Police Chief — `unreached`
-- `exec-dept-va-vha-visn-20-northwest-vamc-vamc-associate-director-administrative` — VAMC Associate Director (Administrative) — `unreached`
 
-## VA Medical Centers  — 24 unpriced
+## VA Medical Centers  — 23 unpriced
 
 `exec-dept-va-vha-visn-19-rocky-mountain-vamc`
 
@@ -228,9 +224,8 @@ same list in the same run.
 - `exec-dept-va-vha-visn-19-rocky-mountain-vamc-physician-multiple` — Physician (×multiple) — `multiplicity`
 - `exec-dept-va-vha-visn-19-rocky-mountain-vamc-social-worker-multiple` — Social Worker (×multiple) — `multiplicity`
 - `exec-dept-va-vha-visn-19-rocky-mountain-vamc-va-police-chief` — VA Police Chief — `unreached`
-- `exec-dept-va-vha-visn-19-rocky-mountain-vamc-vamc-associate-director-administrative` — VAMC Associate Director (Administrative) — `unreached`
 
-## VA Medical Centers  — 24 unpriced
+## VA Medical Centers  — 23 unpriced
 
 `exec-dept-va-vha-visn-17-texas-vamc`
 
@@ -257,9 +252,8 @@ same list in the same run.
 - `exec-dept-va-vha-visn-17-texas-vamc-physician-multiple` — Physician (×multiple) — `multiplicity`
 - `exec-dept-va-vha-visn-17-texas-vamc-social-worker-multiple` — Social Worker (×multiple) — `multiplicity`
 - `exec-dept-va-vha-visn-17-texas-vamc-va-police-chief` — VA Police Chief — `unreached`
-- `exec-dept-va-vha-visn-17-texas-vamc-vamc-associate-director-administrative` — VAMC Associate Director (Administrative) — `unreached`
 
-## VA Medical Centers  — 24 unpriced
+## VA Medical Centers  — 23 unpriced
 
 `exec-dept-va-vha-visn-16-south-central-vamc`
 
@@ -286,9 +280,8 @@ same list in the same run.
 - `exec-dept-va-vha-visn-16-south-central-vamc-physician-multiple` — Physician (×multiple) — `multiplicity`
 - `exec-dept-va-vha-visn-16-south-central-vamc-social-worker-multiple` — Social Worker (×multiple) — `multiplicity`
 - `exec-dept-va-vha-visn-16-south-central-vamc-va-police-chief` — VA Police Chief — `unreached`
-- `exec-dept-va-vha-visn-16-south-central-vamc-vamc-associate-director-administrative` — VAMC Associate Director (Administrative) — `unreached`
 
-## VA Medical Centers  — 24 unpriced
+## VA Medical Centers  — 23 unpriced
 
 `exec-dept-va-vha-visn-15-heartland-vamc`
 
@@ -315,9 +308,8 @@ same list in the same run.
 - `exec-dept-va-vha-visn-15-heartland-vamc-physician-multiple` — Physician (×multiple) — `multiplicity`
 - `exec-dept-va-vha-visn-15-heartland-vamc-social-worker-multiple` — Social Worker (×multiple) — `multiplicity`
 - `exec-dept-va-vha-visn-15-heartland-vamc-va-police-chief` — VA Police Chief — `unreached`
-- `exec-dept-va-vha-visn-15-heartland-vamc-vamc-associate-director-administrative` — VAMC Associate Director (Administrative) — `unreached`
 
-## VA Medical Centers  — 24 unpriced
+## VA Medical Centers  — 23 unpriced
 
 `exec-dept-va-vha-visn-12-great-lakes-vamc`
 
@@ -344,9 +336,8 @@ same list in the same run.
 - `exec-dept-va-vha-visn-12-great-lakes-vamc-physician-multiple` — Physician (×multiple) — `multiplicity`
 - `exec-dept-va-vha-visn-12-great-lakes-vamc-social-worker-multiple` — Social Worker (×multiple) — `multiplicity`
 - `exec-dept-va-vha-visn-12-great-lakes-vamc-va-police-chief` — VA Police Chief — `unreached`
-- `exec-dept-va-vha-visn-12-great-lakes-vamc-vamc-associate-director-administrative` — VAMC Associate Director (Administrative) — `unreached`
 
-## VA Medical Centers  — 24 unpriced
+## VA Medical Centers  — 23 unpriced
 
 `exec-dept-va-vha-visn-10-great-lakes-vamc`
 
@@ -373,9 +364,8 @@ same list in the same run.
 - `exec-dept-va-vha-visn-10-great-lakes-vamc-physician-multiple` — Physician (×multiple) — `multiplicity`
 - `exec-dept-va-vha-visn-10-great-lakes-vamc-social-worker-multiple` — Social Worker (×multiple) — `multiplicity`
 - `exec-dept-va-vha-visn-10-great-lakes-vamc-va-police-chief` — VA Police Chief — `unreached`
-- `exec-dept-va-vha-visn-10-great-lakes-vamc-vamc-associate-director-administrative` — VAMC Associate Director (Administrative) — `unreached`
 
-## VA Medical Centers  — 24 unpriced
+## VA Medical Centers  — 23 unpriced
 
 `exec-dept-va-vha-visn-9-mid-south-vamc`
 
@@ -402,9 +392,8 @@ same list in the same run.
 - `exec-dept-va-vha-visn-9-mid-south-vamc-physician-multiple` — Physician (×multiple) — `multiplicity`
 - `exec-dept-va-vha-visn-9-mid-south-vamc-social-worker-multiple` — Social Worker (×multiple) — `multiplicity`
 - `exec-dept-va-vha-visn-9-mid-south-vamc-va-police-chief` — VA Police Chief — `unreached`
-- `exec-dept-va-vha-visn-9-mid-south-vamc-vamc-associate-director-administrative` — VAMC Associate Director (Administrative) — `unreached`
 
-## VA Medical Centers  — 24 unpriced
+## VA Medical Centers  — 23 unpriced
 
 `exec-dept-va-vha-visn-8-sunshine-fl-vamc`
 
@@ -431,9 +420,8 @@ same list in the same run.
 - `exec-dept-va-vha-visn-8-sunshine-fl-vamc-physician-multiple` — Physician (×multiple) — `multiplicity`
 - `exec-dept-va-vha-visn-8-sunshine-fl-vamc-social-worker-multiple` — Social Worker (×multiple) — `multiplicity`
 - `exec-dept-va-vha-visn-8-sunshine-fl-vamc-va-police-chief` — VA Police Chief — `unreached`
-- `exec-dept-va-vha-visn-8-sunshine-fl-vamc-vamc-associate-director-administrative` — VAMC Associate Director (Administrative) — `unreached`
 
-## VA Medical Centers  — 24 unpriced
+## VA Medical Centers  — 23 unpriced
 
 `exec-dept-va-vha-visn-7-southeast-vamc`
 
@@ -460,9 +448,8 @@ same list in the same run.
 - `exec-dept-va-vha-visn-7-southeast-vamc-physician-multiple` — Physician (×multiple) — `multiplicity`
 - `exec-dept-va-vha-visn-7-southeast-vamc-social-worker-multiple` — Social Worker (×multiple) — `multiplicity`
 - `exec-dept-va-vha-visn-7-southeast-vamc-va-police-chief` — VA Police Chief — `unreached`
-- `exec-dept-va-vha-visn-7-southeast-vamc-vamc-associate-director-administrative` — VAMC Associate Director (Administrative) — `unreached`
 
-## VA Medical Centers  — 24 unpriced
+## VA Medical Centers  — 23 unpriced
 
 `exec-dept-va-vha-visn-6-mid-atlantic-health-care-vamc`
 
@@ -489,9 +476,8 @@ same list in the same run.
 - `exec-dept-va-vha-visn-6-mid-atlantic-health-care-vamc-physician-multiple` — Physician (×multiple) — `multiplicity`
 - `exec-dept-va-vha-visn-6-mid-atlantic-health-care-vamc-social-worker-multiple` — Social Worker (×multiple) — `multiplicity`
 - `exec-dept-va-vha-visn-6-mid-atlantic-health-care-vamc-va-police-chief` — VA Police Chief — `unreached`
-- `exec-dept-va-vha-visn-6-mid-atlantic-health-care-vamc-vamc-associate-director-administrative` — VAMC Associate Director (Administrative) — `unreached`
 
-## VA Medical Centers  — 24 unpriced
+## VA Medical Centers  — 23 unpriced
 
 `exec-dept-va-vha-visn-5-capitol-health-care-network-vamc`
 
@@ -518,9 +504,8 @@ same list in the same run.
 - `exec-dept-va-vha-visn-5-capitol-health-care-network-vamc-physician-multiple` — Physician (×multiple) — `multiplicity`
 - `exec-dept-va-vha-visn-5-capitol-health-care-network-vamc-social-worker-multiple` — Social Worker (×multiple) — `multiplicity`
 - `exec-dept-va-vha-visn-5-capitol-health-care-network-vamc-va-police-chief` — VA Police Chief — `unreached`
-- `exec-dept-va-vha-visn-5-capitol-health-care-network-vamc-vamc-associate-director-administrative` — VAMC Associate Director (Administrative) — `unreached`
 
-## VA Medical Centers  — 24 unpriced
+## VA Medical Centers  — 23 unpriced
 
 `exec-dept-va-vha-visn-4-visn-4-vamc`
 
@@ -547,9 +532,8 @@ same list in the same run.
 - `exec-dept-va-vha-visn-4-visn-4-vamc-physician-multiple` — Physician (×multiple) — `multiplicity`
 - `exec-dept-va-vha-visn-4-visn-4-vamc-social-worker-multiple` — Social Worker (×multiple) — `multiplicity`
 - `exec-dept-va-vha-visn-4-visn-4-vamc-va-police-chief` — VA Police Chief — `unreached`
-- `exec-dept-va-vha-visn-4-visn-4-vamc-vamc-associate-director-administrative` — VAMC Associate Director (Administrative) — `unreached`
 
-## VA Medical Centers  — 24 unpriced
+## VA Medical Centers  — 23 unpriced
 
 `exec-dept-va-vha-visn-2-mid-atlantic-vamc`
 
@@ -576,9 +560,8 @@ same list in the same run.
 - `exec-dept-va-vha-visn-2-mid-atlantic-vamc-physician-multiple` — Physician (×multiple) — `multiplicity`
 - `exec-dept-va-vha-visn-2-mid-atlantic-vamc-social-worker-multiple` — Social Worker (×multiple) — `multiplicity`
 - `exec-dept-va-vha-visn-2-mid-atlantic-vamc-va-police-chief` — VA Police Chief — `unreached`
-- `exec-dept-va-vha-visn-2-mid-atlantic-vamc-vamc-associate-director-administrative` — VAMC Associate Director (Administrative) — `unreached`
 
-## VA Medical Centers  — 24 unpriced
+## VA Medical Centers  — 23 unpriced
 
 `exec-dept-va-vha-visn-1-new-england-vamc`
 
@@ -605,7 +588,6 @@ same list in the same run.
 - `exec-dept-va-vha-visn-1-new-england-vamc-physician-multiple` — Physician (×multiple) — `multiplicity`
 - `exec-dept-va-vha-visn-1-new-england-vamc-social-worker-multiple` — Social Worker (×multiple) — `multiplicity`
 - `exec-dept-va-vha-visn-1-new-england-vamc-va-police-chief` — VA Police Chief — `unreached`
-- `exec-dept-va-vha-visn-1-new-england-vamc-vamc-associate-director-administrative` — VAMC Associate Director (Administrative) — `unreached`
 
 ## Federal Reserve System  — 22 unpriced
 
@@ -683,13 +665,12 @@ same list in the same run.
 - `leg-senate-offices-staff-assistant` — Staff Assistant — `unreached`
 - `leg-senate-offices-state-director` — State Director — `unreached`
 
-## Securities & Exchange Commission (SEC)  — 18 unpriced
+## Securities & Exchange Commission (SEC)  — 17 unpriced
 
 `exec-regulatory-sec`
 
 - `exec-regulatory-sec-cfo` — CFO — `unreached`
 - `exec-regulatory-sec-cio` — CIO — `unreached`
-- `exec-regulatory-sec-chair-sec` — Chair, SEC — `unreached`
 - `exec-regulatory-sec-chief-accountant` — Chief Accountant — `unreached`
 - `exec-regulatory-sec-director-division-of-corporation-finance` — Director — Division of Corporation Finance — `unreached`
 - `exec-regulatory-sec-director-division-of-economic-risk-analysis` — Director — Division of Economic & Risk Analysis — `unreached`
@@ -705,50 +686,6 @@ same list in the same run.
 - `exec-regulatory-sec-regional-director-11-regional-offices` — Regional Director — 11 Regional Offices — `unreached`
 - `exec-regulatory-sec-secretary-of-the-commission` — Secretary of the Commission — `unreached`
 - `exec-regulatory-sec-senior-staff-attorney-multiple` — Senior Staff Attorney (×multiple) — `multiplicity`
-
-## Secretary of the Senate  — 17 unpriced
-
-`leg-senate-admin-secretary`
-
-- `leg-senate-admin-secretary-assistant-secretary-of-the-senate` — Assistant Secretary of the Senate — `unreached`
-- `leg-senate-admin-secretary-bill-clerk` — Bill Clerk — `unreached`
-- `leg-senate-admin-secretary-deputy-secretary-of-the-senate` — Deputy Secretary of the Senate — `unreached`
-- `leg-senate-admin-secretary-director-of-finance` — Director of Finance — `unreached`
-- `leg-senate-admin-secretary-director-of-human-resources` — Director of Human Resources — `unreached`
-- `leg-senate-admin-secretary-director-of-public-records` — Director of Public Records — `unreached`
-- `leg-senate-admin-secretary-director-of-senate-security` — Director of Senate Security — `unreached`
-- `leg-senate-admin-secretary-director-of-the-capitol-printing-folding-room` — Director of the Capitol Printing & Folding Room — `unreached`
-- `leg-senate-admin-secretary-director-of-the-page-program` — Director of the Page Program — `unreached`
-- `leg-senate-admin-secretary-enrolling-clerk` — Enrolling Clerk — `unreached`
-- `leg-senate-admin-secretary-executive-clerk` — Executive Clerk — `unreached`
-- `leg-senate-admin-secretary-journal-clerk` — Journal Clerk — `unreached`
-- `leg-senate-admin-secretary-legislative-information-officer` — Legislative Information Officer — `unreached`
-- `leg-senate-admin-secretary-secretary-of-the-senate` — Secretary of the Senate — `unreached`
-- `leg-senate-admin-secretary-senate-curator` — Senate Curator — `unreached`
-- `leg-senate-admin-secretary-senate-historian` — Senate Historian — `unreached`
-- `leg-senate-admin-secretary-senate-librarian` — Senate Librarian — `unreached`
-
-## Sergeant at Arms of the Senate  — 17 unpriced
-
-`leg-senate-admin-saa`
-
-- `leg-senate-admin-saa-assistant-saa-capitol-division` — Assistant SAA — Capitol Division — `unreached`
-- `leg-senate-admin-saa-assistant-saa-senate-division` — Assistant SAA — Senate Division — `unreached`
-- `leg-senate-admin-saa-capitol-police-liaison-officer` — Capitol Police Liaison Officer — `unreached`
-- `leg-senate-admin-saa-deputy-sergeant-at-arms` — Deputy Sergeant at Arms — `unreached`
-- `leg-senate-admin-saa-director-of-capitol-services` — Director of Capitol Services — `unreached`
-- `leg-senate-admin-saa-director-of-doorkeeper-operations` — Director of Doorkeeper Operations — `unreached`
-- `leg-senate-admin-saa-director-of-id-credentialing` — Director of ID & Credentialing — `unreached`
-- `leg-senate-admin-saa-director-of-mailing-services` — Director of Mailing Services — `unreached`
-- `leg-senate-admin-saa-director-of-senate-hair-care-services` — Director of Senate Hair Care Services — `unreached`
-- `leg-senate-admin-saa-director-of-senate-parking` — Director of Senate Parking — `unreached`
-- `leg-senate-admin-saa-director-of-senate-photo-studio` — Director of Senate Photo Studio — `unreached`
-- `leg-senate-admin-saa-director-of-senate-post-office` — Director of Senate Post Office — `unreached`
-- `leg-senate-admin-saa-director-of-senate-recording-studio` — Director of Senate Recording Studio — `unreached`
-- `leg-senate-admin-saa-director-of-senate-restaurants` — Director of Senate Restaurants — `unreached`
-- `leg-senate-admin-saa-director-of-telecommunications` — Director of Telecommunications — `unreached`
-- `leg-senate-admin-saa-director-of-web-technology-innovation` — Director of Web Technology & Innovation — `unreached`
-- `leg-senate-admin-saa-sergeant-at-arms` — Sergeant at Arms — `unreached`
 
 ## National Institutes of Health (NIH)  — 16 unpriced
 
@@ -770,6 +707,48 @@ same list in the same run.
 - `exec-dept-hhs-nih-principal-deputy-director` — Principal Deputy Director — `unreached`
 - `exec-dept-hhs-nih-program-officer-multiple` — Program Officer (×multiple) — `multiplicity`
 - `exec-dept-hhs-nih-scientific-review-officer-multiple` — Scientific Review Officer (×multiple) — `multiplicity`
+
+## Secretary of the Senate  — 16 unpriced
+
+`leg-senate-admin-secretary`
+
+- `leg-senate-admin-secretary-assistant-secretary-of-the-senate` — Assistant Secretary of the Senate — `unreached`
+- `leg-senate-admin-secretary-bill-clerk` — Bill Clerk — `unreached`
+- `leg-senate-admin-secretary-deputy-secretary-of-the-senate` — Deputy Secretary of the Senate — `unreached`
+- `leg-senate-admin-secretary-director-of-finance` — Director of Finance — `unreached`
+- `leg-senate-admin-secretary-director-of-human-resources` — Director of Human Resources — `unreached`
+- `leg-senate-admin-secretary-director-of-public-records` — Director of Public Records — `unreached`
+- `leg-senate-admin-secretary-director-of-senate-security` — Director of Senate Security — `unreached`
+- `leg-senate-admin-secretary-director-of-the-capitol-printing-folding-room` — Director of the Capitol Printing & Folding Room — `unreached`
+- `leg-senate-admin-secretary-director-of-the-page-program` — Director of the Page Program — `unreached`
+- `leg-senate-admin-secretary-enrolling-clerk` — Enrolling Clerk — `unreached`
+- `leg-senate-admin-secretary-executive-clerk` — Executive Clerk — `unreached`
+- `leg-senate-admin-secretary-journal-clerk` — Journal Clerk — `unreached`
+- `leg-senate-admin-secretary-legislative-information-officer` — Legislative Information Officer — `unreached`
+- `leg-senate-admin-secretary-senate-curator` — Senate Curator — `unreached`
+- `leg-senate-admin-secretary-senate-historian` — Senate Historian — `unreached`
+- `leg-senate-admin-secretary-senate-librarian` — Senate Librarian — `unreached`
+
+## Sergeant at Arms of the Senate  — 16 unpriced
+
+`leg-senate-admin-saa`
+
+- `leg-senate-admin-saa-assistant-saa-capitol-division` — Assistant SAA — Capitol Division — `unreached`
+- `leg-senate-admin-saa-assistant-saa-senate-division` — Assistant SAA — Senate Division — `unreached`
+- `leg-senate-admin-saa-capitol-police-liaison-officer` — Capitol Police Liaison Officer — `unreached`
+- `leg-senate-admin-saa-deputy-sergeant-at-arms` — Deputy Sergeant at Arms — `unreached`
+- `leg-senate-admin-saa-director-of-capitol-services` — Director of Capitol Services — `unreached`
+- `leg-senate-admin-saa-director-of-doorkeeper-operations` — Director of Doorkeeper Operations — `unreached`
+- `leg-senate-admin-saa-director-of-id-credentialing` — Director of ID & Credentialing — `unreached`
+- `leg-senate-admin-saa-director-of-mailing-services` — Director of Mailing Services — `unreached`
+- `leg-senate-admin-saa-director-of-senate-hair-care-services` — Director of Senate Hair Care Services — `unreached`
+- `leg-senate-admin-saa-director-of-senate-parking` — Director of Senate Parking — `unreached`
+- `leg-senate-admin-saa-director-of-senate-photo-studio` — Director of Senate Photo Studio — `unreached`
+- `leg-senate-admin-saa-director-of-senate-post-office` — Director of Senate Post Office — `unreached`
+- `leg-senate-admin-saa-director-of-senate-recording-studio` — Director of Senate Recording Studio — `unreached`
+- `leg-senate-admin-saa-director-of-senate-restaurants` — Director of Senate Restaurants — `unreached`
+- `leg-senate-admin-saa-director-of-telecommunications` — Director of Telecommunications — `unreached`
+- `leg-senate-admin-saa-director-of-web-technology-innovation` — Director of Web Technology & Innovation — `unreached`
 
 ## U.S. Embassies & Consulates (180+)  — 16 unpriced
 
@@ -831,26 +810,6 @@ same list in the same run.
 - `leg-house-offices-scheduler` — Scheduler — `unreached`
 - `leg-house-offices-senior-legislative-assistant-2` — Senior Legislative Assistant (×2) — `multiplicity`
 - `leg-house-offices-staff-assistant` — Staff Assistant — `unreached`
-
-## U.S. Space Force  — 15 unpriced
-
-`exec-dept-defense-sf`
-
-- `exec-dept-defense-sf-commander-space-operations-command` — Commander — Space Operations Command — `unreached`
-- `exec-dept-defense-sf-commander-space-systems-command` — Commander — Space Systems Command — `unreached`
-- `exec-dept-defense-sf-commander-space-training-readiness-command` — Commander — Space Training & Readiness Command — `unreached`
-- `exec-dept-defense-sf-delta-1-space-domain-awareness` — Delta 1 — Space Domain Awareness — `unreached`
-- `exec-dept-defense-sf-delta-10-space-electromagnetic-warfare` — Delta 10 — Space Electromagnetic Warfare — `unreached`
-- `exec-dept-defense-sf-delta-11-space-battle-management` — Delta 11 — Space Battle Management — `unreached`
-- `exec-dept-defense-sf-delta-18-advanced-capabilities` — Delta 18 — Advanced Capabilities — `unreached`
-- `exec-dept-defense-sf-delta-2-intelligence` — Delta 2 — Intelligence — `unreached`
-- `exec-dept-defense-sf-delta-3-space-electronic-warfare` — Delta 3 — Space Electronic Warfare — `unreached`
-- `exec-dept-defense-sf-delta-5-command-control` — Delta 5 — Command & Control — `unreached`
-- `exec-dept-defense-sf-delta-6-cyber-operations` — Delta 6 — Cyber Operations — `unreached`
-- `exec-dept-defense-sf-delta-7-isr-cyber` — Delta 7 — ISR & Cyber — `unreached`
-- `exec-dept-defense-sf-delta-8-satellite-communications` — Delta 8 — Satellite Communications — `unreached`
-- `exec-dept-defense-sf-delta-9-missile-warning` — Delta 9 — Missile Warning — `unreached`
-- `exec-dept-defense-sf-senior-enlisted-advisor` — Senior Enlisted Advisor — `unreached`
 
 ## Customs & Border Protection (CBP)  — 14 unpriced
 
@@ -927,6 +886,25 @@ same list in the same run.
 - `exec-dept-dhs-uscg-rescue-swimmer-aviation-survival-technician` — Rescue Swimmer / Aviation Survival Technician — `unreached`
 - `exec-dept-dhs-uscg-sector-commander-multiple` — Sector Commander (×multiple) — `multiplicity`
 - `exec-dept-dhs-uscg-station-commander-multiple` — Station Commander (×multiple) — `multiplicity`
+
+## U.S. Space Force  — 14 unpriced
+
+`exec-dept-defense-sf`
+
+- `exec-dept-defense-sf-commander-space-operations-command` — Commander — Space Operations Command — `unreached`
+- `exec-dept-defense-sf-commander-space-systems-command` — Commander — Space Systems Command — `unreached`
+- `exec-dept-defense-sf-commander-space-training-readiness-command` — Commander — Space Training & Readiness Command — `unreached`
+- `exec-dept-defense-sf-delta-1-space-domain-awareness` — Delta 1 — Space Domain Awareness — `unreached`
+- `exec-dept-defense-sf-delta-10-space-electromagnetic-warfare` — Delta 10 — Space Electromagnetic Warfare — `unreached`
+- `exec-dept-defense-sf-delta-11-space-battle-management` — Delta 11 — Space Battle Management — `unreached`
+- `exec-dept-defense-sf-delta-18-advanced-capabilities` — Delta 18 — Advanced Capabilities — `unreached`
+- `exec-dept-defense-sf-delta-2-intelligence` — Delta 2 — Intelligence — `unreached`
+- `exec-dept-defense-sf-delta-3-space-electronic-warfare` — Delta 3 — Space Electronic Warfare — `unreached`
+- `exec-dept-defense-sf-delta-5-command-control` — Delta 5 — Command & Control — `unreached`
+- `exec-dept-defense-sf-delta-6-cyber-operations` — Delta 6 — Cyber Operations — `unreached`
+- `exec-dept-defense-sf-delta-7-isr-cyber` — Delta 7 — ISR & Cyber — `unreached`
+- `exec-dept-defense-sf-delta-8-satellite-communications` — Delta 8 — Satellite Communications — `unreached`
+- `exec-dept-defense-sf-delta-9-missile-warning` — Delta 9 — Missile Warning — `unreached`
 
 ## U.S. Army  — 13 unpriced
 
@@ -1047,38 +1025,6 @@ same list in the same run.
 - `exec-dept-va-vba-rating-veterans-service-representative-multiple` — Rating Veterans Service Representative (×multiple) — `multiplicity`
 - `exec-dept-va-vba-regional-office-director-56-regional-offices` — Regional Office Director — 56 Regional Offices — `unreached`
 - `exec-dept-va-vba-veterans-service-representative-multiple` — Veterans Service Representative (×multiple) — `multiplicity`
-
-## Chief Administrative Officer  — 11 unpriced
-
-`leg-house-cao`
-
-- `leg-house-cao-chief-administrative-officer` — Chief Administrative Officer — `unreached`
-- `leg-house-cao-deputy-cao` — Deputy CAO — `unreached`
-- `leg-house-cao-director-of-child-care-center` — Director of Child Care Center — `unreached`
-- `leg-house-cao-director-of-congressional-record-index` — Director of Congressional Record Index — `unreached`
-- `leg-house-cao-director-of-finance` — Director of Finance — `unreached`
-- `leg-house-cao-director-of-human-resources` — Director of Human Resources — `unreached`
-- `leg-house-cao-director-of-it-customer-support` — Director of IT Customer Support — `unreached`
-- `leg-house-cao-director-of-payroll-benefits` — Director of Payroll & Benefits — `unreached`
-- `leg-house-cao-director-of-photography` — Director of Photography — `unreached`
-- `leg-house-cao-director-of-supply-services` — Director of Supply Services — `unreached`
-- `leg-house-cao-director-of-travel` — Director of Travel — `unreached`
-
-## Department of Commerce  — 11 unpriced
-
-`exec-dept-doc`
-
-- `exec-dept-doc-chief-human-capital-officer` — Chief Human Capital Officer — `unreached`
-- `exec-dept-doc-chief-of-staff` — Chief of Staff — `unreached`
-- `exec-dept-doc-deputy-cfo-controller` — Deputy CFO / Controller — `unreached`
-- `exec-dept-doc-deputy-cio` — Deputy CIO — `unreached`
-- `exec-dept-doc-deputy-general-counsel` — Deputy General Counsel — `unreached`
-- `exec-dept-doc-deputy-inspector-general` — Deputy Inspector General — `unreached`
-- `exec-dept-doc-deputy-secretary-of-department-of-commerce` — Deputy Secretary of Department of Commerce — `unreached`
-- `exec-dept-doc-director-of-legislative-affairs` — Director of Legislative Affairs — `unreached`
-- `exec-dept-doc-director-of-public-affairs` — Director of Public Affairs — `unreached`
-- `exec-dept-doc-diversity-inclusion-officer` — Diversity & Inclusion Officer — `unreached`
-- `exec-dept-doc-executive-secretary` — Executive Secretary — `unreached`
 
 ## Department of Defense (DoD)  — 11 unpriced
 
@@ -1224,22 +1170,6 @@ same list in the same run.
 - `exec-dept-treasury-irs-national-taxpayer-advocate` — National Taxpayer Advocate — `unreached`
 - `exec-dept-treasury-irs-special-agent-in-charge-21-ci-field-offices` — Special Agent in Charge (×21 CI Field Offices) — `multiplicity`
 
-## NOAA — National Oceanic & Atmospheric Administration  — 11 unpriced
-
-`exec-dept-doc-noaa`
-
-- `exec-dept-doc-noaa-chief-scientist` — Chief Scientist — `unreached`
-- `exec-dept-doc-noaa-deputy-administrator` — Deputy Administrator — `unreached`
-- `exec-dept-doc-noaa-director-nesdis-satellite-operations` — Director — NESDIS (satellite operations) — `unreached`
-- `exec-dept-doc-noaa-director-national-marine-fisheries-service-nmfs` — Director — National Marine Fisheries Service (NMFS) — `unreached`
-- `exec-dept-doc-noaa-director-national-ocean-service-nos` — Director — National Ocean Service (NOS) — `unreached`
-- `exec-dept-doc-noaa-director-national-weather-service-nws` — Director — National Weather Service (NWS) — `unreached`
-- `exec-dept-doc-noaa-director-office-of-oceanic-atmospheric-research-oar` — Director — Office of Oceanic & Atmospheric Research (OAR) — `unreached`
-- `exec-dept-doc-noaa-meteorologist-multiple` — Meteorologist (×multiple) — `multiplicity`
-- `exec-dept-doc-noaa-meteorologist-in-charge-122-weather-forecast-offices` — Meteorologist-in-Charge — 122 Weather Forecast Offices — `unreached`
-- `exec-dept-doc-noaa-national-hurricane-center-director` — National Hurricane Center Director — `unreached`
-- `exec-dept-doc-noaa-oceanographer-multiple` — Oceanographer (×multiple) — `multiplicity`
-
 ## National Nuclear Security Administration (NNSA)  — 11 unpriced
 
 `exec-dept-doe-nnsa`
@@ -1255,22 +1185,6 @@ same list in the same run.
 - `exec-dept-doe-nnsa-site-manager-sandia-national-laboratories` — Site Manager — Sandia National Laboratories — `unreached`
 - `exec-dept-doe-nnsa-site-manager-savannah-river-site` — Site Manager — Savannah River Site — `unreached`
 - `exec-dept-doe-nnsa-site-manager-y-12-national-security-complex` — Site Manager — Y-12 National Security Complex — `unreached`
-
-## Office of the U.S. Trade Representative  — 11 unpriced
-
-`exec-eop-ustr`
-
-- `exec-eop-ustr-deputy-ustr-americas` — Deputy USTR — Americas — `unreached`
-- `exec-eop-ustr-deputy-ustr-asia` — Deputy USTR — Asia — `unreached`
-- `exec-eop-ustr-deputy-ustr-wto-multilateral-affairs` — Deputy USTR — WTO & Multilateral Affairs — `unreached`
-- `exec-eop-ustr-director-china` — Director — China — `unreached`
-- `exec-eop-ustr-director-congressional-affairs` — Director — Congressional Affairs — `unreached`
-- `exec-eop-ustr-director-environment` — Director — Environment — `unreached`
-- `exec-eop-ustr-director-europe-middle-east` — Director — Europe & Middle East — `unreached`
-- `exec-eop-ustr-director-intellectual-property` — Director — Intellectual Property — `unreached`
-- `exec-eop-ustr-director-japan-korea-apec` — Director — Japan, Korea & APEC — `unreached`
-- `exec-eop-ustr-director-labor` — Director — Labor — `unreached`
-- `exec-eop-ustr-general-counsel` — General Counsel — `unreached`
 
 ## U.S. Secret Service (USSS)  — 11 unpriced
 
@@ -1318,6 +1232,21 @@ same list in the same run.
 - `exec-dept-hhs-cms-medical-officer-multiple` — Medical Officer (×multiple) — `multiplicity`
 - `exec-dept-hhs-cms-regional-administrator-10-regions` — Regional Administrator — 10 Regions — `unreached`
 
+## Chief Administrative Officer  — 10 unpriced
+
+`leg-house-cao`
+
+- `leg-house-cao-deputy-cao` — Deputy CAO — `unreached`
+- `leg-house-cao-director-of-child-care-center` — Director of Child Care Center — `unreached`
+- `leg-house-cao-director-of-congressional-record-index` — Director of Congressional Record Index — `unreached`
+- `leg-house-cao-director-of-finance` — Director of Finance — `unreached`
+- `leg-house-cao-director-of-human-resources` — Director of Human Resources — `unreached`
+- `leg-house-cao-director-of-it-customer-support` — Director of IT Customer Support — `unreached`
+- `leg-house-cao-director-of-payroll-benefits` — Director of Payroll & Benefits — `unreached`
+- `leg-house-cao-director-of-photography` — Director of Photography — `unreached`
+- `leg-house-cao-director-of-supply-services` — Director of Supply Services — `unreached`
+- `leg-house-cao-director-of-travel` — Director of Travel — `unreached`
+
 ## Congressional Research Service  — 10 unpriced
 
 `leg-support-loc-crs`
@@ -1347,6 +1276,21 @@ same list in the same run.
 - `exec-dept-usda-director-of-public-affairs` — Director of Public Affairs — `unreached`
 - `exec-dept-usda-diversity-inclusion-officer` — Diversity & Inclusion Officer — `unreached`
 - `exec-dept-usda-executive-secretary` — Executive Secretary — `unreached`
+
+## Department of Commerce  — 10 unpriced
+
+`exec-dept-doc`
+
+- `exec-dept-doc-chief-human-capital-officer` — Chief Human Capital Officer — `unreached`
+- `exec-dept-doc-chief-of-staff` — Chief of Staff — `unreached`
+- `exec-dept-doc-deputy-cfo-controller` — Deputy CFO / Controller — `unreached`
+- `exec-dept-doc-deputy-cio` — Deputy CIO — `unreached`
+- `exec-dept-doc-deputy-general-counsel` — Deputy General Counsel — `unreached`
+- `exec-dept-doc-deputy-inspector-general` — Deputy Inspector General — `unreached`
+- `exec-dept-doc-director-of-legislative-affairs` — Director of Legislative Affairs — `unreached`
+- `exec-dept-doc-director-of-public-affairs` — Director of Public Affairs — `unreached`
+- `exec-dept-doc-diversity-inclusion-officer` — Diversity & Inclusion Officer — `unreached`
+- `exec-dept-doc-executive-secretary` — Executive Secretary — `unreached`
 
 ## Department of Education  — 10 unpriced
 
@@ -1816,6 +1760,20 @@ same list in the same run.
 - `exec-ind-nasa-marshall-space-flight-center-msfc-program-manager-multiple` — Program Manager (×multiple) — `multiplicity`
 - `exec-ind-nasa-marshall-space-flight-center-msfc-research-engineer-scientist-multiple` — Research Engineer / Scientist (×multiple) — `multiplicity`
 
+## NOAA — National Oceanic & Atmospheric Administration  — 9 unpriced
+
+`exec-dept-doc-noaa`
+
+- `exec-dept-doc-noaa-director-nesdis-satellite-operations` — Director — NESDIS (satellite operations) — `unreached`
+- `exec-dept-doc-noaa-director-national-marine-fisheries-service-nmfs` — Director — National Marine Fisheries Service (NMFS) — `unreached`
+- `exec-dept-doc-noaa-director-national-ocean-service-nos` — Director — National Ocean Service (NOS) — `unreached`
+- `exec-dept-doc-noaa-director-national-weather-service-nws` — Director — National Weather Service (NWS) — `unreached`
+- `exec-dept-doc-noaa-director-office-of-oceanic-atmospheric-research-oar` — Director — Office of Oceanic & Atmospheric Research (OAR) — `unreached`
+- `exec-dept-doc-noaa-meteorologist-multiple` — Meteorologist (×multiple) — `multiplicity`
+- `exec-dept-doc-noaa-meteorologist-in-charge-122-weather-forecast-offices` — Meteorologist-in-Charge — 122 Weather Forecast Offices — `unreached`
+- `exec-dept-doc-noaa-national-hurricane-center-director` — National Hurricane Center Director — `unreached`
+- `exec-dept-doc-noaa-oceanographer-multiple` — Oceanographer (×multiple) — `multiplicity`
+
 ## National Archives & Records Administration (NARA)  — 9 unpriced
 
 `exec-ind-nara`
@@ -2009,19 +1967,6 @@ same list in the same run.
 - `exec-dept-treasury-bep-superintendent-dc-facility` — Superintendent, DC Facility — `unreached`
 - `exec-dept-treasury-bep-superintendent-fort-worth-facility` — Superintendent, Fort Worth Facility — `unreached`
 
-## Clerk of the House  — 8 unpriced
-
-`leg-house-clerk`
-
-- `leg-house-clerk-clerk-of-the-house` — Clerk of the House — `unreached`
-- `leg-house-clerk-deputy-clerk` — Deputy Clerk — `unreached`
-- `leg-house-clerk-director-of-communications` — Director of Communications — `unreached`
-- `leg-house-clerk-director-of-finance` — Director of Finance — `unreached`
-- `leg-house-clerk-director-of-house-history-preservation` — Director of House History & Preservation — `unreached`
-- `leg-house-clerk-director-of-human-resources` — Director of Human Resources — `unreached`
-- `leg-house-clerk-director-of-information-systems` — Director of Information Systems — `unreached`
-- `leg-house-clerk-director-of-legislative-resource-center` — Director of Legislative Resource Center — `unreached`
-
 ## Commodity Futures Trading Commission (CFTC)  — 8 unpriced
 
 `exec-regulatory-cftc`
@@ -2177,19 +2122,6 @@ same list in the same run.
 - `exec-dept-usda-fs-forest-supervisor-154-national-forests` — Forest Supervisor — 154 National Forests — `unreached`
 - `exec-dept-usda-fs-law-enforcement-officer` — Law Enforcement Officer — `unreached`
 - `exec-dept-usda-fs-regional-forester-9-regions` — Regional Forester — 9 Regions — `unreached`
-
-## Government Accountability Office (GAO)  — 8 unpriced
-
-`leg-support-gao`
-
-- `leg-support-gao-chief-administrative-officer` — Chief Administrative Officer — `unreached`
-- `leg-support-gao-chief-financial-officer` — Chief Financial Officer — `unreached`
-- `leg-support-gao-chief-human-capital-officer` — Chief Human Capital Officer — `unreached`
-- `leg-support-gao-chief-information-officer` — Chief Information Officer — `unreached`
-- `leg-support-gao-chief-operating-officer` — Chief Operating Officer — `unreached`
-- `leg-support-gao-director-of-congressional-relations` — Director of Congressional Relations — `unreached`
-- `leg-support-gao-director-of-public-affairs` — Director of Public Affairs — `unreached`
-- `leg-support-gao-inspector-general` — Inspector General — `unreached`
 
 ## Hirshhorn Museum & Sculpture Garden  — 8 unpriced
 
@@ -2412,6 +2344,19 @@ same list in the same run.
 - `exec-dept-treasury-occ-senior-deputy-comptroller-management-cfo` — Senior Deputy Comptroller — Management & CFO — `unreached`
 - `exec-dept-treasury-occ-senior-deputy-comptroller-midsize-community-bank-supervision` — Senior Deputy Comptroller — Midsize & Community Bank Supervision — `unreached`
 
+## Office of the U.S. Trade Representative  — 8 unpriced
+
+`exec-eop-ustr`
+
+- `exec-eop-ustr-director-china` — Director — China — `unreached`
+- `exec-eop-ustr-director-congressional-affairs` — Director — Congressional Affairs — `unreached`
+- `exec-eop-ustr-director-environment` — Director — Environment — `unreached`
+- `exec-eop-ustr-director-europe-middle-east` — Director — Europe & Middle East — `unreached`
+- `exec-eop-ustr-director-intellectual-property` — Director — Intellectual Property — `unreached`
+- `exec-eop-ustr-director-japan-korea-apec` — Director — Japan, Korea & APEC — `unreached`
+- `exec-eop-ustr-director-labor` — Director — Labor — `unreached`
+- `exec-eop-ustr-general-counsel` — General Counsel — `unreached`
+
 ## Renwick Gallery  — 8 unpriced
 
 `exec-ind-smithsonian-renwick-gallery`
@@ -2562,6 +2507,18 @@ same list in the same run.
 - `exec-ind-cia-director-of-public-affairs` — Director of Public Affairs — `unreached`
 - `exec-ind-cia-director-sherman-kent-school-training` — Director — Sherman Kent School (Training) — `unreached`
 - `exec-ind-cia-inspector-general` — Inspector General — `unreached`
+
+## Clerk of the House  — 7 unpriced
+
+`leg-house-clerk`
+
+- `leg-house-clerk-deputy-clerk` — Deputy Clerk — `unreached`
+- `leg-house-clerk-director-of-communications` — Director of Communications — `unreached`
+- `leg-house-clerk-director-of-finance` — Director of Finance — `unreached`
+- `leg-house-clerk-director-of-house-history-preservation` — Director of House History & Preservation — `unreached`
+- `leg-house-clerk-director-of-human-resources` — Director of Human Resources — `unreached`
+- `leg-house-clerk-director-of-information-systems` — Director of Information Systems — `unreached`
+- `leg-house-clerk-director-of-legislative-resource-center` — Director of Legislative Resource Center — `unreached`
 
 ## DARPA  — 7 unpriced
 
@@ -2778,6 +2735,18 @@ same list in the same run.
 - `exec-dept-usda-fns-deputy-administrator` — Deputy Administrator — `unreached`
 - `exec-dept-usda-fns-nutritionist-multiple` — Nutritionist (×multiple) — `multiplicity`
 - `exec-dept-usda-fns-regional-administrator-7-regions` — Regional Administrator — 7 Regions — `unreached`
+
+## Government Accountability Office (GAO)  — 7 unpriced
+
+`leg-support-gao`
+
+- `leg-support-gao-chief-administrative-officer` — Chief Administrative Officer — `unreached`
+- `leg-support-gao-chief-financial-officer` — Chief Financial Officer — `unreached`
+- `leg-support-gao-chief-human-capital-officer` — Chief Human Capital Officer — `unreached`
+- `leg-support-gao-chief-information-officer` — Chief Information Officer — `unreached`
+- `leg-support-gao-chief-operating-officer` — Chief Operating Officer — `unreached`
+- `leg-support-gao-director-of-congressional-relations` — Director of Congressional Relations — `unreached`
+- `leg-support-gao-director-of-public-affairs` — Director of Public Affairs — `unreached`
 
 ## Idaho National Laboratory  — 7 unpriced
 
@@ -3194,17 +3163,6 @@ same list in the same run.
 - `exec-dept-doc-census-deputy-director-coo` — Deputy Director & COO — `unreached`
 - `exec-dept-doc-census-regional-director-12-regional-offices` — Regional Director — 12 Regional Offices — `unreached`
 - `exec-dept-doc-census-statistician-demographer-multiple` — Statistician / Demographer (×multiple) — `multiplicity`
-
-## Congressional Budget Office (CBO)  — 6 unpriced
-
-`leg-support-cbo`
-
-- `leg-support-cbo-chief-information-officer` — Chief Information Officer — `unreached`
-- `leg-support-cbo-chief-of-staff` — Chief of Staff — `unreached`
-- `leg-support-cbo-deputy-director-cbo` — Deputy Director, CBO — `unreached`
-- `leg-support-cbo-director-of-communications` — Director of Communications — `unreached`
-- `leg-support-cbo-director-cbo` — Director, CBO — `unreached`
-- `leg-support-cbo-general-counsel` — General Counsel — `unreached`
 
 ## Dwight D. Eisenhower Presidential Library (Abilene, KS)  — 6 unpriced
 
@@ -3709,16 +3667,6 @@ same list in the same run.
 - `exec-dept-hhs-samhsa-director-center-for-substance-abuse-prevention` — Director — Center for Substance Abuse Prevention — `unreached`
 - `exec-dept-hhs-samhsa-director-center-for-substance-abuse-treatment` — Director — Center for Substance Abuse Treatment — `unreached`
 
-## U.S. Capitol Police  — 5 unpriced
-
-`leg-support-uscp`
-
-- `leg-support-uscp-assistant-chief-operations` — Assistant Chief — Operations — `unreached`
-- `leg-support-uscp-deputy-chief-professional-responsibility` — Deputy Chief — Professional Responsibility — `unreached`
-- `leg-support-uscp-deputy-chief-uniformed-operations` — Deputy Chief — Uniformed Operations — `unreached`
-- `leg-support-uscp-general-counsel` — General Counsel — `unreached`
-- `leg-support-uscp-inspector-general` — Inspector General — `unreached`
-
 ## U.S. Fish & Wildlife Service (FWS)  — 5 unpriced
 
 `exec-dept-doi-fws`
@@ -3820,6 +3768,15 @@ same list in the same run.
 - `leg-support-uscp-communications-division-lieutenant-communications-division-multiple` — Lieutenant, Communications Division (×multiple) — `multiplicity`
 - `leg-support-uscp-communications-division-officer-communications-division-multiple` — Officer, Communications Division (×multiple) — `multiplicity`
 - `leg-support-uscp-communications-division-sergeant-communications-division-multiple` — Sergeant, Communications Division (×multiple) — `multiplicity`
+
+## Congressional Budget Office (CBO)  — 4 unpriced
+
+`leg-support-cbo`
+
+- `leg-support-cbo-chief-information-officer` — Chief Information Officer — `unreached`
+- `leg-support-cbo-chief-of-staff` — Chief of Staff — `unreached`
+- `leg-support-cbo-director-of-communications` — Director of Communications — `unreached`
+- `leg-support-cbo-general-counsel` — General Counsel — `unreached`
 
 ## Congressional Relations  — 4 unpriced
 
@@ -4613,6 +4570,15 @@ same list in the same run.
 - `exec-ind-misc-tennessee-valley-authority-tva-director-administrator-chair-tennessee-valley-authority` — Director / Administrator / Chair, Tennessee Valley Authority — `unreached`
 - `exec-ind-misc-tennessee-valley-authority-tva-general-counsel` — General Counsel — `unreached`
 
+## U.S. Capitol Police  — 4 unpriced
+
+`leg-support-uscp`
+
+- `leg-support-uscp-assistant-chief-operations` — Assistant Chief — Operations — `unreached`
+- `leg-support-uscp-deputy-chief-professional-responsibility` — Deputy Chief — Professional Responsibility — `unreached`
+- `leg-support-uscp-deputy-chief-uniformed-operations` — Deputy Chief — Uniformed Operations — `unreached`
+- `leg-support-uscp-general-counsel` — General Counsel — `unreached`
+
 ## U.S. Court of Federal Claims  — 4 unpriced
 
 `jud-specialized-claims`
@@ -4646,14 +4612,6 @@ same list in the same run.
 - `exec-dept-doj-div-antitrust-deputy-assistant-attorney-general-3-5` — Deputy Assistant Attorney General (×3-5) — `multiplicity`
 - `exec-dept-doj-div-antitrust-section-chief-multiple` — Section Chief (×multiple) — `multiplicity`
 - `exec-dept-doj-div-antitrust-trial-attorney-ausa-multiple` — Trial Attorney / AUSA (×multiple) — `multiplicity`
-
-## Architect of the Capitol  — 3 unpriced
-
-`leg-support-aoc`
-
-- `leg-support-aoc-assistant-architect-of-the-capitol` — Assistant Architect of the Capitol — `unreached`
-- `leg-support-aoc-chief-of-staff` — Chief of Staff — `unreached`
-- `leg-support-aoc-inspector-general` — Inspector General — `unreached`
 
 ## Board of Veterans Appeals (BVA)  — 3 unpriced
 
@@ -5484,6 +5442,13 @@ same list in the same run.
 
 - `exec-dept-hhs-ahrq-deputy-director` — Deputy Director — `unreached`
 - `exec-dept-hhs-ahrq-director-center-for-evidence-practice-improvement` — Director — Center for Evidence & Practice Improvement — `unreached`
+
+## Architect of the Capitol  — 2 unpriced
+
+`leg-support-aoc`
+
+- `leg-support-aoc-assistant-architect-of-the-capitol` — Assistant Architect of the Capitol — `unreached`
+- `leg-support-aoc-chief-of-staff` — Chief of Staff — `unreached`
 
 ## Biological Sciences (BIO)  — 2 unpriced
 

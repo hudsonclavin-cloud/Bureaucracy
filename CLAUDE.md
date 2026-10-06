@@ -2469,15 +2469,17 @@ from 3 U.S.C. 102 the same night, 1,111 before the twelfth batch's
 current-export rules and its nineteen reviewed and tier-reference rows later
 that night, which took it to 1,158, and 1,158 before the batch's later
 clusters the next morning, which took it to 1,193, and 1,193 before the Code
-title scan's three rows later that morning, which took it to 1,196); **3,395
-do not** (3,480 before that night, 3,433 before the morning, 3,398 before the
-scan's rows), and `scripts/report_unpriced_positions.py`
+title scan's three rows later that morning, which took it to 1,196, and 1,196
+before the owner's six decisions of 2026-10-07, which took it to 1,231);
+**3,360 do not** (3,480 before that night, 3,433 before the morning, 3,398
+before the scan's rows, 3,395 before the decisions), and `scripts/report_unpriced_positions.py`
 says why for every one of them:
 
-- **2,627** — no pay document this project has read names the title at all.
+- **2,592** — no pay document this project has read names the title at all.
   Not a coverage gap somebody has not got to. (2,710 before the
   current-export rules and the twelfth batch's rows of 2026-10-05; 2,630
-  before the Code title scan's rows later on 2026-10-06; 2,663
+  before the Code title scan's rows later on 2026-10-06; 2,627 before the
+  owner's six decisions of 2026-10-07; 2,663
   before its later clusters of 2026-10-06.)
 - **750** — the node states a multiplicity (`Physician (×multiple)`) and no
   claim that holds for every holder reaches it. Since the per-field rule
@@ -2487,8 +2489,9 @@ says why for every one of them:
   SYSTEM governs the title is a fact worth having.
 - **18** — OPM lists the position and the row prints no rate.
 
-The concentration is the useful part: **432** of the 3,395 sit under `VA
-Medical Centers`, 360 of them among the 2,627 (the service chiefs
+The concentration is the useful part: **414** of the 3,360 sit under `VA
+Medical Centers` (432 before the 18 USAJOBS-graded Associate Directors), 360
+of them among the 2,592 (the service chiefs
 `va_title38_pay.py` deliberately refuses, since choosing a Title 38 table per
 node would be this module deciding which VA service chiefs are doctors), 61
 under the White House Office (83 before the multi-post rule), 56 under
@@ -2500,7 +2503,8 @@ per unpriced position with its id and its reason;
 `docs/PAY_SOURCE_RESEARCH_PROMPT_3.md` is a research prompt pack generated
 from the same list in the same run — a lead prompt asking which pay systems
 exist and where each is published, then **33 enumeration shards naming every
-one of the 3,395 titles** (33 and 3,398 until the Code title scan's rows
+one of the 3,360 titles** (33 and 3,395 until the owner's six decisions of
+2026-10-07, 33 and 3,398 until the Code title scan's rows
 later on 2026-10-06, 33 and 3,433 until that morning,
 39 and 4,003 until 2026-09-30, 38 and 3,953 until
 that evening's Members decision, 34 and 3,492 until 2026-10-05, 34 and 3,489
@@ -2978,6 +2982,172 @@ OPM's associate officials and the NRO's Director; thirty-one organisations the
 Code names that carry no post node; the Deputy U.S. Trade Representatives'
 counted class blocked on the graph's abbreviation "Deputy USTR"; and the
 Solicitors the Code prints where the graph stamps a General Counsel.
+
+**Posts renamed to the title a committed document prints (since 2026-10-07,
+the owner's decision).** Two leads the twelfth batch left as "rename
+candidates" were blocked on a name and nothing else: the Space Force's
+`Senior Enlisted Advisor`, whose office Schedule 8's enlisted footnote prints
+as "Chief Master Sergeant of the Space Force", and the three `Deputy USTR — …`
+nodes, which §5314 places as the counted class "Deputy United States Trade
+Representatives (3)" at Level III and 19 U.S.C. 2171 composes ("There shall be
+in the Office three Deputy United States Trade Representatives, …"). No
+sanctioned writer renamed a post from a Code document, so
+`scripts/rename_posts_to_printed_titles.py` is one, the sixth writer of the
+curated file, with `data/curation/post_renames.json` its reviewed table: each
+row names the node, its current name, the proposed name and the committed
+document and verbatim string that license it. Every run recomputes the
+fixture's digest and re-reads the string (inside Schedule 8 as
+`military_pay.load_schedule_8` parses it, or in a Code section's operative
+text), and refuses a row whose node no longer carries the stated name or has
+moved, that is not a post, that is a no-op under `canonical_name_key`, a
+single token, generic, or a sibling's name; a counted-class row must keep the
+graph's own qualifier after the separator unchanged and spell out only the
+part before it, which must equal the class title's singular. It never
+re-types, re-parents or removes, and a second run applies nothing. The Space
+Force row's basis says in words that treating the curated "Senior Enlisted
+Advisor" as that office is the owner's identification and no document states
+it. The renames priced all four through routes that already existed: the
+footnote route of `military_pay.py` at $11,166.90 a month ($134,002.80 a
+year, one document, 70%), and a ninth counted class at Level III ($209,600,
+three documents, 90%). The current PLUM export lists three "DEPUTY UNITED
+STATES TRADE REPRESENTATIVE (RANK OF AMBASSADOR)" rows at EX-III under
+sub-organisations the graph has no node for, so it corroborates the level and
+reaches no post. A per-node diff showed nothing else move: no page, Manual,
+PLUM or signature record of the four was lost. The gate's counted-class check
+had required a composing statute on the OLRC host; it now takes the same
+either-host test the reviewed-row checker uses, pinned against a govinfo URL
+for the wrong section.
+
+**The owner's six decisions of 2026-10-07, and the one this repository did
+not carry out as asked.** The twelfth batch closed by listing six decisions
+only the owner could make; the owner made all six the same morning, and five
+landed as asked.
+
+**The COPS Office was not re-parented, because the Government Manual says
+where it sits.** The decision was "yes to the re-parent": move the Office of
+Community Oriented Policing Services under the Office of Justice Programs, so
+its Treasury line ($462,550,050.10, printed beneath OJP's header) could apply
+without being counted twice. Checked before anything was built, the Manual's
+entry files COPS among the Justice Department's own offices ("Offices /
+Boards") and OJP among its bureaus. The Treasury's header is an appropriation
+grouping, not an organisation chart, and a re-parent would have made the
+graph contradict the government's own handbook to make the arithmetic
+convenient. So the decision's intent was built instead: a printed line that
+is a component of a header sum applied to one node may also be applied to a
+different organisation node it names, provided that node is neither the
+holder nor its ancestor or descendant. The node is `official` with the exact
+line, stamped `treasury_counted_in_header_sum` with the holder's id and a
+generated sentence saying the same money is already inside the holder's
+figure, and kept out of its parent's arithmetic by the route external-section
+lines take. The gate re-derives every stamp from the committed statement and
+refuses an unstamped measured node whose line sits inside a header sum that
+does not contain it — the silent double count this rule exists to prevent.
+COPS reached its line through a `TREASURY_ROW_ALIASES` row (the node's name
+contains the line's; the Manual's entry 290). OJP is unchanged at
+$4,518,129,781.85, and the Department of Justice's thirteen unlined
+organisations each rose 1.64%, because COPS's old apportioned share went back
+to the pool and its measured money was not subtracted a second time.
+
+**Ginnie Mae, through the one alias a header sum may take.** Header sums took
+no alias by design. The owner chose to alias the statement's "Government
+National Mortgage Association:" header (one line, "Guarantees of
+Mortgage-Backed Securities", −$1,839,035,438.49) to the node named "Ginnie
+Mae", on 12 U.S.C. 1716b's statutory name and the Manual's HUD entry. It is
+the only key in `TREASURY_HEADER_SUM_ALIAS_KEYS`; every other alias is still
+refused on a header, and the gate mirrors it by node id. The figure is
+negative and is published as the statement prints it, the Mint's rule, and
+the node's own unlined children become `treasury_pool_negative`. The
+consequence is worth stating plainly because it looks wrong at first: HUD's
+twelve unlined organisations (FHA, FHEO and the ten regions) each rose
+51.25%, from $263.1m to $398.0m. HUD's published figure is the statement's
+net, and a measured child that nets $1.84bn below zero means everything else
+in HUD spent that much more than the net shows; the cascade divides that
+remainder among the unlined units by subtree size, the same weak proxy this
+file already records, now applied to a larger and more honest pool.
+
+**A stated number of dollars less, and a chain through a second statute.**
+Four posts are paid an amount LESS than another officer whose pay this
+project already sets by reference to a level: the Architect of the Capitol's
+Inspector General at "$1,500 less than the annual rate of pay of the
+Architect of the Capitol" (2 U.S.C. 1808(c)(3), $226,500), the Capitol
+Police's at "$1,000 less than the annual rate of pay in effect for the Chief
+of the Capitol Police" (2 U.S.C. 1909(b)(4), $227,000), the GAO's at "$5,000
+less than the annual rate of pay of the Comptroller General" (31 U.S.C.
+705(b)(4), $223,000), and the CBO's Deputy Director at "$1,000 less than the
+annual rate of pay received by the Director" (2 U.S.C. 601(a)(5)(B),
+$227,000). The CBO's Director is the fifth: 601(a)(5)(A) pays "the maximum
+rate of pay in effect under section 4575(f)", and 4575(f) sets that maximum
+at Level II, a chain row ($228,000). `financial_evidence` gained a fourth
+computed operation, `minus_dollars`, granted to the tier-reference source
+type: the dollar amount must be printed with its mark in the record's own
+quote, the result must equal base minus amount to the cent, and the record's
+own figure must be printed nowhere. **The base cannot outlive the officer it
+is read from**: a subtraction is computed only from the referenced officer's
+own record in the same derivation, stamped only after that officer's block is
+on the graph at exactly that base, and the gate refuses one whose officer
+publishes nothing or another figure. Every record rests on three documents,
+none stating the figure; the CBO Deputy's two sentences of 601 are one
+document.
+
+**A reader for instruments the Code prints outside its sections.**
+`notes_instruments.py` reads two document classes this project had refused:
+Reorganization Plans, which sit in Title 5's Appendix, and the chambers' pay
+orders, which the Code prints only in its Statutory Notes, below the cut
+`operative_text` makes to keep repealed amendment text out. Reading notes
+generally would let that text through, so the reader locates ONE instrument
+by its own printed heading (once, and only once), takes it to the next
+heading of its kind, removes any Amendments note inside the range, cuts at
+"Prior to amendment", refuses a quote found only inside GPO's bracketed
+insertions, and drops the signature paragraphs before any text is formed.
+Eight posts priced: NOAA's Deputy Administrator (Level IV) and Chief
+Scientist (Level V) from Reorganization Plan No. 4 of 1970, the Deputy
+Secretary of Commerce (Level II) from No. 3 of 1979 — the office §8 recorded
+as absent from §5313, which it is, because the Plan sets its pay by
+reference — and the SEC's Chair as a reviewed Schedule row whose basis is
+Plan No. 10 of 1950; the Secretary of the Senate and the Senate's Sergeant at
+Arms from the Order of the President pro tempore of March 25, 2024, and the
+Clerk and the Chief Administrative Officer of the House from the Order of the
+Speaker of January 17, 2025, each at Level II. Every pay-order record carries
+the caution that it is the order the 2024 edition of the Code reprints and a
+later order, which this project has not read, may have changed the rate; the
+panel prints it. Plan No. 3 of 1970 creates the EPA's Administrator and
+states no level, so that node keeps the rate it already had. The posts the
+orders name that exist here only as office nodes (the House Sergeant-at-Arms,
+the Chaplains, the House Inspector General) are not priced, and the gate
+refuses a block moved between a post and the office node of the same name.
+
+**USAJOBS announcements as a listing of a post's grade.** The owner asked
+whether USAJOBS can be used because it is a `.gov` host. The host is OPM's,
+so the publisher is official; what an announcement states is narrower than
+that suggests — the pay plan, grade and series of one vacancy at one
+facility, often a temporary detail, with that locality's salary range. So it
+is used for exactly that and no more: `usajobs.py` reads the title, agency,
+pay scale and grade, series, location and dates, never the HR contact (a
+sentinel test plants one and asserts it appears nowhere) and never the
+salary; a reviewed table maps a curated title family to its announcements,
+and the family is priced only when at least two announcements agree on one
+plan and grade. The figure is OPM's 2026 GS-15 BASE range ($126,384–$164,301,
+before locality), through `gs_pay.py`, with the announcements as the listing
+the range rests on. Five announcements at five medical centres list
+"Associate (Medical Center) Director" at GS-15, series 0670, so the 18
+`VAMC Associate Director (Administrative)` nodes carry the range; the
+`Network CFO` family has one announcement and is refused; the Associate
+Director for Patient Care Services is Title 38 Nurse V, which has no national
+range, and is declined. The listing writes no source URL and no verification
+method — no announcement names a node, and a Montana vacancy cannot confirm a
+template node under a VISN the VA has replaced — and the five announcements
+count as one listing, so the range rests on two documents (80%), not six.
+
+**What the six decisions bought, measured on the rebuild.** Pay claims
+**1,196 → 1,231** of 4,591 positions; unpriced **3,395 → 3,360** (no document
+names the title **2,627 → 2,592**); Schedule-priced posts **237 → 241** (the
+three Deputy U.S. Trade Representatives as a ninth counted class and the SEC's
+Chair on a Plan-based reviewed row); tier-reference **47 → 59** (five
+subtractions and chains, seven instrument rows); military **22 → 23**; GS and
+SES ranges **22 → 40**, eighteen of them from USAJOBS; measured nodes **170 →
+172** (COPS and Ginnie Mae), estimates **683 → 681**; `verified` 539 → 547 and
+`partial` 453 → 445 on the existing arithmetic. `CURATION.md` §19.21 records
+each decision, what was built and what was declined.
 
 **Benches priced from the Code's class title (since 2026-09-27, the owner's
 decision).** The Executive Schedule places some offices one at a time
@@ -4201,16 +4371,17 @@ that one import is the only thing the smoke check cannot prove.
 ### Exact-node costs, and what the graph does not claim
 
 `docs/EXACT_NODE_COSTS.md` is the standing answer to "why is most of this
-graph an estimate". 170 of 5,510 nodes (3.1%; 139 of 5,402 when this was
+graph an estimate". 172 of 5,510 nodes (3.1%; 139 of 5,402 when this was
 first written, 160 until the nine header sums and the AmeriCorps alias of
-2026-10-06) carry a cost a record names for them; those cover **99.0% of
+2026-10-06, 170 until COPS and Ginnie Mae on 2026-10-07) carry a cost a record names for them; those cover **99.0% of
 the anchor**, so the apportioned figures
 subdivide measured money rather than invent it — which does not make a
 subdivision a measurement. **Since 2026-09-09 the site does not show one by
 default**, by the owner's decision: a node with no measured cost of its own
 shows no figure and says why, and ticking "Also show estimated shares of a
-parent's total" opts back in. The exception is a real salary — **1,196** of the
-4,591 positions carry a pay claim an official source states (1,193 before the
+parent's total" opts back in. The exception is a real salary — **1,231** of the
+4,591 positions carry a pay claim an official source states (1,196 before the
+owner's six decisions of 2026-10-07, 1,193 before the
 Code title scan's three rows landed later on 2026-10-06, 1,158 before the
 twelfth batch's later clusters landed on the morning of 2026-10-06, 1,111
 before its current-export rules and its nineteen rows landed late on
@@ -4342,8 +4513,9 @@ International Trade and the Ex-Im Vice Chair, 1,105 with the special
 trial judges and the two Deputy Directors, 1,110 with the five posts the
 govinfo sections priced, 1,111 with the President, 1,158 with the
 twelfth batch's current-export rules and rows, 1,193 with its later
-clusters the next morning, and 1,196 with the Code title scan's three rows
-later that morning. The estimates
+clusters the next morning, 1,196 with the Code title scan's three rows
+later that morning, and 1,231 with the owner's six decisions of 2026-10-07.
+The estimates
 stay in `graph.json` because the cascade's arithmetic and the gate's
 child-sum checks are built on them, so a consumer of the JSON must read
 `cost_status`, not `resolved_total_amount` alone. The gate prints both
@@ -4822,7 +4994,7 @@ identical refusals — but a position *can* carry a cost nomination, its rate of
 basic pay, which is never the unit's cost.
 
 The standing numbers this work exists to move: 358 of 890 organisations have
-no candidate page at all, so the verifier can never reach them; and 170 of
+no candidate page at all, so the verifier can never reach them; and 172 of
 5,510 nodes carry a cost identified for themselves (294 of 807 and 139 of
 5,402 when this was written). `nominate.py status --kind
 source` prints the first and `validate_published_graph.py` the second; those

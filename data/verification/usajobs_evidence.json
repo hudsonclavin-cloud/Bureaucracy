@@ -1,0 +1,3264 @@
+{
+  "_note": "Derived by scripts/derive_usajobs_evidence.py from USAJOBS vacancy announcements committed under tests/fixtures/usajobs/ (digests recomputed before reading) and the reviewed table data_pipeline/verification/usajobs.VACANCY_FAMILIES. A family is listed only when at least two announcements list it and every one states the same pay plan and grade. A listing says which pay plan and grade the announcements state for a title family; it names no node, verifies nothing, and carries no salary: the announcements' salaries are locality ranges for one duty station and are never read, and the agency contact is never read. Regenerate by re-running the script; never edit by hand.",
+  "source": "usajobs_vacancy_announcements",
+  "report": {
+    "source": "usajobs_vacancy_announcements",
+    "families": {
+      "vamc_associate_director_administrative": {
+        "verdict": "listed",
+        "members": 18,
+        "announcements": [
+          "848110500",
+          "848756100",
+          "860101900",
+          "863018500",
+          "880101300"
+        ],
+        "notes": [],
+        "listed": 18
+      },
+      "network_cfo_visn": {
+        "verdict": "fewer_than_two_announcements",
+        "members": 18,
+        "announcements": [
+          "880695200"
+        ],
+        "notes": [
+          "1 announcement(s); one posting is one vacancy, and a range needs the title's grade"
+        ]
+      }
+    },
+    "declined": [
+      {
+        "family": "associate_director_for_patient_care_services_cno",
+        "nodeName": "Associate Director for Patient Care Services (CNO)",
+        "reason": "The twelfth research batch's VA cluster records the post as a Title 38 nurse executive (Nurse V), not a General Schedule post, and Nurse V has no national range: none of the committed salary tables prices it (the VA's Title 38 pay ranges this project reads cover physicians, dentists, podiatrists and optometrists, and print no 'Associate Director'). An announcement could only supply a grade nothing here bounds. Declined without a fetch."
+      }
+    ],
+    "listed": 18
+  },
+  "nodes": {
+    "exec-dept-va-vha-visn-1-new-england-vamc-vamc-associate-director-administrative": {
+      "source": "usajobs_vacancy_announcements",
+      "method": "pay_plan_and_grade_stated_by_every_usajobs_announcement_for_the_title_family",
+      "family": "vamc_associate_director_administrative",
+      "familyRule": "whole_name_under_parent",
+      "basis": "Each announcement advertises the Associate Director of a VA medical centre or health care system -- the administrative associate director beside the Medical Center Director, the Chief of Staff and the Associate Director for Patient Care Services -- in series 0670, Health System Administration. This graph's 'VAMC Associate Director (Administrative)' is that post, drawn once per VISN grouping as a template; the identification is reviewed, and no announcement names a node here.",
+      "payPlan": "GS",
+      "level": "15",
+      "payLevel": "15",
+      "payPlanAndLevelOnOneRow": true,
+      "reportedPay": null,
+      "series": "0670",
+      "listedTitle": null,
+      "listedTitles": [
+        "Health System Administrator (Associate Director) - Detail NTE 1 Year",
+        "Health System Administrator- Associate Medical Center Director",
+        "Health Systems Administrator (Associate Director)",
+        "Health Systems Administrator (Associate Director) - Not to Exceed 1 Year"
+      ],
+      "announcementCount": 5,
+      "announcements": [
+        {
+          "id": "848110500",
+          "url": "https://www.usajobs.gov/job/848110500",
+          "title": "Health Systems Administrator (Associate Director) - Not to Exceed 1 Year",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Kansas City VA Medical Center",
+          "locations": [
+            "Kansas City, MO"
+          ],
+          "openDate": "2025-10-14",
+          "closeDate": "2025-10-20",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "feee1da21bd92d70dae71fbc553051f1f191e655406b759abeb303cb33200b24",
+          "fetchedAt": "2026-10-06T04:16:39Z"
+        },
+        {
+          "id": "848756100",
+          "url": "https://www.usajobs.gov/job/848756100",
+          "title": "Health System Administrator- Associate Medical Center Director",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Murfreesboro, TN"
+          ],
+          "openDate": "2025-10-24",
+          "closeDate": "2025-11-03",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "04d6b0e04e99667d2dbd952c9ca24c33f1d706e4e1a30080cb4b7931b4ea865a",
+          "fetchedAt": "2026-10-06T04:16:47Z"
+        },
+        {
+          "id": "860101900",
+          "url": "https://www.usajobs.gov/job/860101900",
+          "title": "Health Systems Administrator (Associate Director) - Not to Exceed 1 Year",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Marion VA Health Care System",
+          "locations": [
+            "Evansville, IL",
+            "Marion, IL"
+          ],
+          "openDate": "2026-03-05",
+          "closeDate": "2026-03-10",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "48b0d5624b3d20fe14c87f91e493932fa72acf2d6e47cbb24c35cf2571a23f80",
+          "fetchedAt": "2026-10-06T04:16:43Z"
+        },
+        {
+          "id": "863018500",
+          "url": "https://www.usajobs.gov/job/863018500",
+          "title": "Health System Administrator (Associate Director) - Detail NTE 1 Year",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "South Texas VA Health Care System (STVHCS)",
+          "locations": [
+            "San Antonio, TX"
+          ],
+          "openDate": "2026-03-30",
+          "closeDate": "2026-04-03",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "9dc46e571391811c03ff7c7895c4632c0ec6ea95d28765a4d24f77233c8cc188",
+          "fetchedAt": "2026-10-06T04:16:35Z"
+        },
+        {
+          "id": "880101300",
+          "url": "https://www.usajobs.gov/job/880101300",
+          "title": "Health Systems Administrator (Associate Director)",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Fort Harrison, MT"
+          ],
+          "openDate": "2026-08-11",
+          "closeDate": "2026-08-21",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "2399d8f0cf9cde9f502ddc91631e0e930291bd27fc40988298d100c7b98cd4da",
+          "fetchedAt": "2026-10-06T04:16:51Z"
+        }
+      ],
+      "facilities": [
+        {
+          "id": "848110500",
+          "hiringOrganization": "Kansas City VA Medical Center",
+          "locations": [
+            "Kansas City, MO"
+          ]
+        },
+        {
+          "id": "848756100",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Murfreesboro, TN"
+          ]
+        },
+        {
+          "id": "860101900",
+          "hiringOrganization": "Marion VA Health Care System",
+          "locations": [
+            "Evansville, IL",
+            "Marion, IL"
+          ]
+        },
+        {
+          "id": "863018500",
+          "hiringOrganization": "South Texas VA Health Care System (STVHCS)",
+          "locations": [
+            "San Antonio, TX"
+          ]
+        },
+        {
+          "id": "880101300",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Fort Harrison, MT"
+          ]
+        }
+      ],
+      "edition": "USAJOBS vacancy announcements 848110500, 848756100, 860101900, 863018500, 880101300",
+      "period": "announcements opened 2025-10-14 to 2026-08-11",
+      "url": "https://www.usajobs.gov/job/848110500",
+      "checkedAt": "2026-10-06T04:16:51Z",
+      "valuesFrom": "vacancy_announcements",
+      "statement": "5 USAJOBS announcements, at Kansas City VA Medical Center (Kansas City, MO); Veterans Health Administration (Murfreesboro, TN); Marion VA Health Care System (Evansville, IL, Marion, IL); South Texas VA Health Care System (STVHCS) (San Antonio, TX); Veterans Health Administration (Fort Harrison, MT), list a post of this title family at GS-15. Each states the pay plan and grade of one vacancy at one facility on a date; none names this node, and the identification of the title family is reviewed. The announcements' own salaries include locality pay and are not published here.",
+      "nodeId": "exec-dept-va-vha-visn-1-new-england-vamc-vamc-associate-director-administrative"
+    },
+    "exec-dept-va-vha-visn-10-great-lakes-vamc-vamc-associate-director-administrative": {
+      "source": "usajobs_vacancy_announcements",
+      "method": "pay_plan_and_grade_stated_by_every_usajobs_announcement_for_the_title_family",
+      "family": "vamc_associate_director_administrative",
+      "familyRule": "whole_name_under_parent",
+      "basis": "Each announcement advertises the Associate Director of a VA medical centre or health care system -- the administrative associate director beside the Medical Center Director, the Chief of Staff and the Associate Director for Patient Care Services -- in series 0670, Health System Administration. This graph's 'VAMC Associate Director (Administrative)' is that post, drawn once per VISN grouping as a template; the identification is reviewed, and no announcement names a node here.",
+      "payPlan": "GS",
+      "level": "15",
+      "payLevel": "15",
+      "payPlanAndLevelOnOneRow": true,
+      "reportedPay": null,
+      "series": "0670",
+      "listedTitle": null,
+      "listedTitles": [
+        "Health System Administrator (Associate Director) - Detail NTE 1 Year",
+        "Health System Administrator- Associate Medical Center Director",
+        "Health Systems Administrator (Associate Director)",
+        "Health Systems Administrator (Associate Director) - Not to Exceed 1 Year"
+      ],
+      "announcementCount": 5,
+      "announcements": [
+        {
+          "id": "848110500",
+          "url": "https://www.usajobs.gov/job/848110500",
+          "title": "Health Systems Administrator (Associate Director) - Not to Exceed 1 Year",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Kansas City VA Medical Center",
+          "locations": [
+            "Kansas City, MO"
+          ],
+          "openDate": "2025-10-14",
+          "closeDate": "2025-10-20",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "feee1da21bd92d70dae71fbc553051f1f191e655406b759abeb303cb33200b24",
+          "fetchedAt": "2026-10-06T04:16:39Z"
+        },
+        {
+          "id": "848756100",
+          "url": "https://www.usajobs.gov/job/848756100",
+          "title": "Health System Administrator- Associate Medical Center Director",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Murfreesboro, TN"
+          ],
+          "openDate": "2025-10-24",
+          "closeDate": "2025-11-03",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "04d6b0e04e99667d2dbd952c9ca24c33f1d706e4e1a30080cb4b7931b4ea865a",
+          "fetchedAt": "2026-10-06T04:16:47Z"
+        },
+        {
+          "id": "860101900",
+          "url": "https://www.usajobs.gov/job/860101900",
+          "title": "Health Systems Administrator (Associate Director) - Not to Exceed 1 Year",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Marion VA Health Care System",
+          "locations": [
+            "Evansville, IL",
+            "Marion, IL"
+          ],
+          "openDate": "2026-03-05",
+          "closeDate": "2026-03-10",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "48b0d5624b3d20fe14c87f91e493932fa72acf2d6e47cbb24c35cf2571a23f80",
+          "fetchedAt": "2026-10-06T04:16:43Z"
+        },
+        {
+          "id": "863018500",
+          "url": "https://www.usajobs.gov/job/863018500",
+          "title": "Health System Administrator (Associate Director) - Detail NTE 1 Year",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "South Texas VA Health Care System (STVHCS)",
+          "locations": [
+            "San Antonio, TX"
+          ],
+          "openDate": "2026-03-30",
+          "closeDate": "2026-04-03",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "9dc46e571391811c03ff7c7895c4632c0ec6ea95d28765a4d24f77233c8cc188",
+          "fetchedAt": "2026-10-06T04:16:35Z"
+        },
+        {
+          "id": "880101300",
+          "url": "https://www.usajobs.gov/job/880101300",
+          "title": "Health Systems Administrator (Associate Director)",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Fort Harrison, MT"
+          ],
+          "openDate": "2026-08-11",
+          "closeDate": "2026-08-21",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "2399d8f0cf9cde9f502ddc91631e0e930291bd27fc40988298d100c7b98cd4da",
+          "fetchedAt": "2026-10-06T04:16:51Z"
+        }
+      ],
+      "facilities": [
+        {
+          "id": "848110500",
+          "hiringOrganization": "Kansas City VA Medical Center",
+          "locations": [
+            "Kansas City, MO"
+          ]
+        },
+        {
+          "id": "848756100",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Murfreesboro, TN"
+          ]
+        },
+        {
+          "id": "860101900",
+          "hiringOrganization": "Marion VA Health Care System",
+          "locations": [
+            "Evansville, IL",
+            "Marion, IL"
+          ]
+        },
+        {
+          "id": "863018500",
+          "hiringOrganization": "South Texas VA Health Care System (STVHCS)",
+          "locations": [
+            "San Antonio, TX"
+          ]
+        },
+        {
+          "id": "880101300",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Fort Harrison, MT"
+          ]
+        }
+      ],
+      "edition": "USAJOBS vacancy announcements 848110500, 848756100, 860101900, 863018500, 880101300",
+      "period": "announcements opened 2025-10-14 to 2026-08-11",
+      "url": "https://www.usajobs.gov/job/848110500",
+      "checkedAt": "2026-10-06T04:16:51Z",
+      "valuesFrom": "vacancy_announcements",
+      "statement": "5 USAJOBS announcements, at Kansas City VA Medical Center (Kansas City, MO); Veterans Health Administration (Murfreesboro, TN); Marion VA Health Care System (Evansville, IL, Marion, IL); South Texas VA Health Care System (STVHCS) (San Antonio, TX); Veterans Health Administration (Fort Harrison, MT), list a post of this title family at GS-15. Each states the pay plan and grade of one vacancy at one facility on a date; none names this node, and the identification of the title family is reviewed. The announcements' own salaries include locality pay and are not published here.",
+      "nodeId": "exec-dept-va-vha-visn-10-great-lakes-vamc-vamc-associate-director-administrative"
+    },
+    "exec-dept-va-vha-visn-12-great-lakes-vamc-vamc-associate-director-administrative": {
+      "source": "usajobs_vacancy_announcements",
+      "method": "pay_plan_and_grade_stated_by_every_usajobs_announcement_for_the_title_family",
+      "family": "vamc_associate_director_administrative",
+      "familyRule": "whole_name_under_parent",
+      "basis": "Each announcement advertises the Associate Director of a VA medical centre or health care system -- the administrative associate director beside the Medical Center Director, the Chief of Staff and the Associate Director for Patient Care Services -- in series 0670, Health System Administration. This graph's 'VAMC Associate Director (Administrative)' is that post, drawn once per VISN grouping as a template; the identification is reviewed, and no announcement names a node here.",
+      "payPlan": "GS",
+      "level": "15",
+      "payLevel": "15",
+      "payPlanAndLevelOnOneRow": true,
+      "reportedPay": null,
+      "series": "0670",
+      "listedTitle": null,
+      "listedTitles": [
+        "Health System Administrator (Associate Director) - Detail NTE 1 Year",
+        "Health System Administrator- Associate Medical Center Director",
+        "Health Systems Administrator (Associate Director)",
+        "Health Systems Administrator (Associate Director) - Not to Exceed 1 Year"
+      ],
+      "announcementCount": 5,
+      "announcements": [
+        {
+          "id": "848110500",
+          "url": "https://www.usajobs.gov/job/848110500",
+          "title": "Health Systems Administrator (Associate Director) - Not to Exceed 1 Year",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Kansas City VA Medical Center",
+          "locations": [
+            "Kansas City, MO"
+          ],
+          "openDate": "2025-10-14",
+          "closeDate": "2025-10-20",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "feee1da21bd92d70dae71fbc553051f1f191e655406b759abeb303cb33200b24",
+          "fetchedAt": "2026-10-06T04:16:39Z"
+        },
+        {
+          "id": "848756100",
+          "url": "https://www.usajobs.gov/job/848756100",
+          "title": "Health System Administrator- Associate Medical Center Director",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Murfreesboro, TN"
+          ],
+          "openDate": "2025-10-24",
+          "closeDate": "2025-11-03",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "04d6b0e04e99667d2dbd952c9ca24c33f1d706e4e1a30080cb4b7931b4ea865a",
+          "fetchedAt": "2026-10-06T04:16:47Z"
+        },
+        {
+          "id": "860101900",
+          "url": "https://www.usajobs.gov/job/860101900",
+          "title": "Health Systems Administrator (Associate Director) - Not to Exceed 1 Year",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Marion VA Health Care System",
+          "locations": [
+            "Evansville, IL",
+            "Marion, IL"
+          ],
+          "openDate": "2026-03-05",
+          "closeDate": "2026-03-10",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "48b0d5624b3d20fe14c87f91e493932fa72acf2d6e47cbb24c35cf2571a23f80",
+          "fetchedAt": "2026-10-06T04:16:43Z"
+        },
+        {
+          "id": "863018500",
+          "url": "https://www.usajobs.gov/job/863018500",
+          "title": "Health System Administrator (Associate Director) - Detail NTE 1 Year",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "South Texas VA Health Care System (STVHCS)",
+          "locations": [
+            "San Antonio, TX"
+          ],
+          "openDate": "2026-03-30",
+          "closeDate": "2026-04-03",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "9dc46e571391811c03ff7c7895c4632c0ec6ea95d28765a4d24f77233c8cc188",
+          "fetchedAt": "2026-10-06T04:16:35Z"
+        },
+        {
+          "id": "880101300",
+          "url": "https://www.usajobs.gov/job/880101300",
+          "title": "Health Systems Administrator (Associate Director)",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Fort Harrison, MT"
+          ],
+          "openDate": "2026-08-11",
+          "closeDate": "2026-08-21",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "2399d8f0cf9cde9f502ddc91631e0e930291bd27fc40988298d100c7b98cd4da",
+          "fetchedAt": "2026-10-06T04:16:51Z"
+        }
+      ],
+      "facilities": [
+        {
+          "id": "848110500",
+          "hiringOrganization": "Kansas City VA Medical Center",
+          "locations": [
+            "Kansas City, MO"
+          ]
+        },
+        {
+          "id": "848756100",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Murfreesboro, TN"
+          ]
+        },
+        {
+          "id": "860101900",
+          "hiringOrganization": "Marion VA Health Care System",
+          "locations": [
+            "Evansville, IL",
+            "Marion, IL"
+          ]
+        },
+        {
+          "id": "863018500",
+          "hiringOrganization": "South Texas VA Health Care System (STVHCS)",
+          "locations": [
+            "San Antonio, TX"
+          ]
+        },
+        {
+          "id": "880101300",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Fort Harrison, MT"
+          ]
+        }
+      ],
+      "edition": "USAJOBS vacancy announcements 848110500, 848756100, 860101900, 863018500, 880101300",
+      "period": "announcements opened 2025-10-14 to 2026-08-11",
+      "url": "https://www.usajobs.gov/job/848110500",
+      "checkedAt": "2026-10-06T04:16:51Z",
+      "valuesFrom": "vacancy_announcements",
+      "statement": "5 USAJOBS announcements, at Kansas City VA Medical Center (Kansas City, MO); Veterans Health Administration (Murfreesboro, TN); Marion VA Health Care System (Evansville, IL, Marion, IL); South Texas VA Health Care System (STVHCS) (San Antonio, TX); Veterans Health Administration (Fort Harrison, MT), list a post of this title family at GS-15. Each states the pay plan and grade of one vacancy at one facility on a date; none names this node, and the identification of the title family is reviewed. The announcements' own salaries include locality pay and are not published here.",
+      "nodeId": "exec-dept-va-vha-visn-12-great-lakes-vamc-vamc-associate-director-administrative"
+    },
+    "exec-dept-va-vha-visn-15-heartland-vamc-vamc-associate-director-administrative": {
+      "source": "usajobs_vacancy_announcements",
+      "method": "pay_plan_and_grade_stated_by_every_usajobs_announcement_for_the_title_family",
+      "family": "vamc_associate_director_administrative",
+      "familyRule": "whole_name_under_parent",
+      "basis": "Each announcement advertises the Associate Director of a VA medical centre or health care system -- the administrative associate director beside the Medical Center Director, the Chief of Staff and the Associate Director for Patient Care Services -- in series 0670, Health System Administration. This graph's 'VAMC Associate Director (Administrative)' is that post, drawn once per VISN grouping as a template; the identification is reviewed, and no announcement names a node here.",
+      "payPlan": "GS",
+      "level": "15",
+      "payLevel": "15",
+      "payPlanAndLevelOnOneRow": true,
+      "reportedPay": null,
+      "series": "0670",
+      "listedTitle": null,
+      "listedTitles": [
+        "Health System Administrator (Associate Director) - Detail NTE 1 Year",
+        "Health System Administrator- Associate Medical Center Director",
+        "Health Systems Administrator (Associate Director)",
+        "Health Systems Administrator (Associate Director) - Not to Exceed 1 Year"
+      ],
+      "announcementCount": 5,
+      "announcements": [
+        {
+          "id": "848110500",
+          "url": "https://www.usajobs.gov/job/848110500",
+          "title": "Health Systems Administrator (Associate Director) - Not to Exceed 1 Year",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Kansas City VA Medical Center",
+          "locations": [
+            "Kansas City, MO"
+          ],
+          "openDate": "2025-10-14",
+          "closeDate": "2025-10-20",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "feee1da21bd92d70dae71fbc553051f1f191e655406b759abeb303cb33200b24",
+          "fetchedAt": "2026-10-06T04:16:39Z"
+        },
+        {
+          "id": "848756100",
+          "url": "https://www.usajobs.gov/job/848756100",
+          "title": "Health System Administrator- Associate Medical Center Director",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Murfreesboro, TN"
+          ],
+          "openDate": "2025-10-24",
+          "closeDate": "2025-11-03",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "04d6b0e04e99667d2dbd952c9ca24c33f1d706e4e1a30080cb4b7931b4ea865a",
+          "fetchedAt": "2026-10-06T04:16:47Z"
+        },
+        {
+          "id": "860101900",
+          "url": "https://www.usajobs.gov/job/860101900",
+          "title": "Health Systems Administrator (Associate Director) - Not to Exceed 1 Year",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Marion VA Health Care System",
+          "locations": [
+            "Evansville, IL",
+            "Marion, IL"
+          ],
+          "openDate": "2026-03-05",
+          "closeDate": "2026-03-10",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "48b0d5624b3d20fe14c87f91e493932fa72acf2d6e47cbb24c35cf2571a23f80",
+          "fetchedAt": "2026-10-06T04:16:43Z"
+        },
+        {
+          "id": "863018500",
+          "url": "https://www.usajobs.gov/job/863018500",
+          "title": "Health System Administrator (Associate Director) - Detail NTE 1 Year",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "South Texas VA Health Care System (STVHCS)",
+          "locations": [
+            "San Antonio, TX"
+          ],
+          "openDate": "2026-03-30",
+          "closeDate": "2026-04-03",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "9dc46e571391811c03ff7c7895c4632c0ec6ea95d28765a4d24f77233c8cc188",
+          "fetchedAt": "2026-10-06T04:16:35Z"
+        },
+        {
+          "id": "880101300",
+          "url": "https://www.usajobs.gov/job/880101300",
+          "title": "Health Systems Administrator (Associate Director)",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Fort Harrison, MT"
+          ],
+          "openDate": "2026-08-11",
+          "closeDate": "2026-08-21",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "2399d8f0cf9cde9f502ddc91631e0e930291bd27fc40988298d100c7b98cd4da",
+          "fetchedAt": "2026-10-06T04:16:51Z"
+        }
+      ],
+      "facilities": [
+        {
+          "id": "848110500",
+          "hiringOrganization": "Kansas City VA Medical Center",
+          "locations": [
+            "Kansas City, MO"
+          ]
+        },
+        {
+          "id": "848756100",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Murfreesboro, TN"
+          ]
+        },
+        {
+          "id": "860101900",
+          "hiringOrganization": "Marion VA Health Care System",
+          "locations": [
+            "Evansville, IL",
+            "Marion, IL"
+          ]
+        },
+        {
+          "id": "863018500",
+          "hiringOrganization": "South Texas VA Health Care System (STVHCS)",
+          "locations": [
+            "San Antonio, TX"
+          ]
+        },
+        {
+          "id": "880101300",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Fort Harrison, MT"
+          ]
+        }
+      ],
+      "edition": "USAJOBS vacancy announcements 848110500, 848756100, 860101900, 863018500, 880101300",
+      "period": "announcements opened 2025-10-14 to 2026-08-11",
+      "url": "https://www.usajobs.gov/job/848110500",
+      "checkedAt": "2026-10-06T04:16:51Z",
+      "valuesFrom": "vacancy_announcements",
+      "statement": "5 USAJOBS announcements, at Kansas City VA Medical Center (Kansas City, MO); Veterans Health Administration (Murfreesboro, TN); Marion VA Health Care System (Evansville, IL, Marion, IL); South Texas VA Health Care System (STVHCS) (San Antonio, TX); Veterans Health Administration (Fort Harrison, MT), list a post of this title family at GS-15. Each states the pay plan and grade of one vacancy at one facility on a date; none names this node, and the identification of the title family is reviewed. The announcements' own salaries include locality pay and are not published here.",
+      "nodeId": "exec-dept-va-vha-visn-15-heartland-vamc-vamc-associate-director-administrative"
+    },
+    "exec-dept-va-vha-visn-16-south-central-vamc-vamc-associate-director-administrative": {
+      "source": "usajobs_vacancy_announcements",
+      "method": "pay_plan_and_grade_stated_by_every_usajobs_announcement_for_the_title_family",
+      "family": "vamc_associate_director_administrative",
+      "familyRule": "whole_name_under_parent",
+      "basis": "Each announcement advertises the Associate Director of a VA medical centre or health care system -- the administrative associate director beside the Medical Center Director, the Chief of Staff and the Associate Director for Patient Care Services -- in series 0670, Health System Administration. This graph's 'VAMC Associate Director (Administrative)' is that post, drawn once per VISN grouping as a template; the identification is reviewed, and no announcement names a node here.",
+      "payPlan": "GS",
+      "level": "15",
+      "payLevel": "15",
+      "payPlanAndLevelOnOneRow": true,
+      "reportedPay": null,
+      "series": "0670",
+      "listedTitle": null,
+      "listedTitles": [
+        "Health System Administrator (Associate Director) - Detail NTE 1 Year",
+        "Health System Administrator- Associate Medical Center Director",
+        "Health Systems Administrator (Associate Director)",
+        "Health Systems Administrator (Associate Director) - Not to Exceed 1 Year"
+      ],
+      "announcementCount": 5,
+      "announcements": [
+        {
+          "id": "848110500",
+          "url": "https://www.usajobs.gov/job/848110500",
+          "title": "Health Systems Administrator (Associate Director) - Not to Exceed 1 Year",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Kansas City VA Medical Center",
+          "locations": [
+            "Kansas City, MO"
+          ],
+          "openDate": "2025-10-14",
+          "closeDate": "2025-10-20",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "feee1da21bd92d70dae71fbc553051f1f191e655406b759abeb303cb33200b24",
+          "fetchedAt": "2026-10-06T04:16:39Z"
+        },
+        {
+          "id": "848756100",
+          "url": "https://www.usajobs.gov/job/848756100",
+          "title": "Health System Administrator- Associate Medical Center Director",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Murfreesboro, TN"
+          ],
+          "openDate": "2025-10-24",
+          "closeDate": "2025-11-03",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "04d6b0e04e99667d2dbd952c9ca24c33f1d706e4e1a30080cb4b7931b4ea865a",
+          "fetchedAt": "2026-10-06T04:16:47Z"
+        },
+        {
+          "id": "860101900",
+          "url": "https://www.usajobs.gov/job/860101900",
+          "title": "Health Systems Administrator (Associate Director) - Not to Exceed 1 Year",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Marion VA Health Care System",
+          "locations": [
+            "Evansville, IL",
+            "Marion, IL"
+          ],
+          "openDate": "2026-03-05",
+          "closeDate": "2026-03-10",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "48b0d5624b3d20fe14c87f91e493932fa72acf2d6e47cbb24c35cf2571a23f80",
+          "fetchedAt": "2026-10-06T04:16:43Z"
+        },
+        {
+          "id": "863018500",
+          "url": "https://www.usajobs.gov/job/863018500",
+          "title": "Health System Administrator (Associate Director) - Detail NTE 1 Year",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "South Texas VA Health Care System (STVHCS)",
+          "locations": [
+            "San Antonio, TX"
+          ],
+          "openDate": "2026-03-30",
+          "closeDate": "2026-04-03",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "9dc46e571391811c03ff7c7895c4632c0ec6ea95d28765a4d24f77233c8cc188",
+          "fetchedAt": "2026-10-06T04:16:35Z"
+        },
+        {
+          "id": "880101300",
+          "url": "https://www.usajobs.gov/job/880101300",
+          "title": "Health Systems Administrator (Associate Director)",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Fort Harrison, MT"
+          ],
+          "openDate": "2026-08-11",
+          "closeDate": "2026-08-21",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "2399d8f0cf9cde9f502ddc91631e0e930291bd27fc40988298d100c7b98cd4da",
+          "fetchedAt": "2026-10-06T04:16:51Z"
+        }
+      ],
+      "facilities": [
+        {
+          "id": "848110500",
+          "hiringOrganization": "Kansas City VA Medical Center",
+          "locations": [
+            "Kansas City, MO"
+          ]
+        },
+        {
+          "id": "848756100",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Murfreesboro, TN"
+          ]
+        },
+        {
+          "id": "860101900",
+          "hiringOrganization": "Marion VA Health Care System",
+          "locations": [
+            "Evansville, IL",
+            "Marion, IL"
+          ]
+        },
+        {
+          "id": "863018500",
+          "hiringOrganization": "South Texas VA Health Care System (STVHCS)",
+          "locations": [
+            "San Antonio, TX"
+          ]
+        },
+        {
+          "id": "880101300",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Fort Harrison, MT"
+          ]
+        }
+      ],
+      "edition": "USAJOBS vacancy announcements 848110500, 848756100, 860101900, 863018500, 880101300",
+      "period": "announcements opened 2025-10-14 to 2026-08-11",
+      "url": "https://www.usajobs.gov/job/848110500",
+      "checkedAt": "2026-10-06T04:16:51Z",
+      "valuesFrom": "vacancy_announcements",
+      "statement": "5 USAJOBS announcements, at Kansas City VA Medical Center (Kansas City, MO); Veterans Health Administration (Murfreesboro, TN); Marion VA Health Care System (Evansville, IL, Marion, IL); South Texas VA Health Care System (STVHCS) (San Antonio, TX); Veterans Health Administration (Fort Harrison, MT), list a post of this title family at GS-15. Each states the pay plan and grade of one vacancy at one facility on a date; none names this node, and the identification of the title family is reviewed. The announcements' own salaries include locality pay and are not published here.",
+      "nodeId": "exec-dept-va-vha-visn-16-south-central-vamc-vamc-associate-director-administrative"
+    },
+    "exec-dept-va-vha-visn-17-texas-vamc-vamc-associate-director-administrative": {
+      "source": "usajobs_vacancy_announcements",
+      "method": "pay_plan_and_grade_stated_by_every_usajobs_announcement_for_the_title_family",
+      "family": "vamc_associate_director_administrative",
+      "familyRule": "whole_name_under_parent",
+      "basis": "Each announcement advertises the Associate Director of a VA medical centre or health care system -- the administrative associate director beside the Medical Center Director, the Chief of Staff and the Associate Director for Patient Care Services -- in series 0670, Health System Administration. This graph's 'VAMC Associate Director (Administrative)' is that post, drawn once per VISN grouping as a template; the identification is reviewed, and no announcement names a node here.",
+      "payPlan": "GS",
+      "level": "15",
+      "payLevel": "15",
+      "payPlanAndLevelOnOneRow": true,
+      "reportedPay": null,
+      "series": "0670",
+      "listedTitle": null,
+      "listedTitles": [
+        "Health System Administrator (Associate Director) - Detail NTE 1 Year",
+        "Health System Administrator- Associate Medical Center Director",
+        "Health Systems Administrator (Associate Director)",
+        "Health Systems Administrator (Associate Director) - Not to Exceed 1 Year"
+      ],
+      "announcementCount": 5,
+      "announcements": [
+        {
+          "id": "848110500",
+          "url": "https://www.usajobs.gov/job/848110500",
+          "title": "Health Systems Administrator (Associate Director) - Not to Exceed 1 Year",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Kansas City VA Medical Center",
+          "locations": [
+            "Kansas City, MO"
+          ],
+          "openDate": "2025-10-14",
+          "closeDate": "2025-10-20",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "feee1da21bd92d70dae71fbc553051f1f191e655406b759abeb303cb33200b24",
+          "fetchedAt": "2026-10-06T04:16:39Z"
+        },
+        {
+          "id": "848756100",
+          "url": "https://www.usajobs.gov/job/848756100",
+          "title": "Health System Administrator- Associate Medical Center Director",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Murfreesboro, TN"
+          ],
+          "openDate": "2025-10-24",
+          "closeDate": "2025-11-03",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "04d6b0e04e99667d2dbd952c9ca24c33f1d706e4e1a30080cb4b7931b4ea865a",
+          "fetchedAt": "2026-10-06T04:16:47Z"
+        },
+        {
+          "id": "860101900",
+          "url": "https://www.usajobs.gov/job/860101900",
+          "title": "Health Systems Administrator (Associate Director) - Not to Exceed 1 Year",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Marion VA Health Care System",
+          "locations": [
+            "Evansville, IL",
+            "Marion, IL"
+          ],
+          "openDate": "2026-03-05",
+          "closeDate": "2026-03-10",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "48b0d5624b3d20fe14c87f91e493932fa72acf2d6e47cbb24c35cf2571a23f80",
+          "fetchedAt": "2026-10-06T04:16:43Z"
+        },
+        {
+          "id": "863018500",
+          "url": "https://www.usajobs.gov/job/863018500",
+          "title": "Health System Administrator (Associate Director) - Detail NTE 1 Year",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "South Texas VA Health Care System (STVHCS)",
+          "locations": [
+            "San Antonio, TX"
+          ],
+          "openDate": "2026-03-30",
+          "closeDate": "2026-04-03",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "9dc46e571391811c03ff7c7895c4632c0ec6ea95d28765a4d24f77233c8cc188",
+          "fetchedAt": "2026-10-06T04:16:35Z"
+        },
+        {
+          "id": "880101300",
+          "url": "https://www.usajobs.gov/job/880101300",
+          "title": "Health Systems Administrator (Associate Director)",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Fort Harrison, MT"
+          ],
+          "openDate": "2026-08-11",
+          "closeDate": "2026-08-21",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "2399d8f0cf9cde9f502ddc91631e0e930291bd27fc40988298d100c7b98cd4da",
+          "fetchedAt": "2026-10-06T04:16:51Z"
+        }
+      ],
+      "facilities": [
+        {
+          "id": "848110500",
+          "hiringOrganization": "Kansas City VA Medical Center",
+          "locations": [
+            "Kansas City, MO"
+          ]
+        },
+        {
+          "id": "848756100",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Murfreesboro, TN"
+          ]
+        },
+        {
+          "id": "860101900",
+          "hiringOrganization": "Marion VA Health Care System",
+          "locations": [
+            "Evansville, IL",
+            "Marion, IL"
+          ]
+        },
+        {
+          "id": "863018500",
+          "hiringOrganization": "South Texas VA Health Care System (STVHCS)",
+          "locations": [
+            "San Antonio, TX"
+          ]
+        },
+        {
+          "id": "880101300",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Fort Harrison, MT"
+          ]
+        }
+      ],
+      "edition": "USAJOBS vacancy announcements 848110500, 848756100, 860101900, 863018500, 880101300",
+      "period": "announcements opened 2025-10-14 to 2026-08-11",
+      "url": "https://www.usajobs.gov/job/848110500",
+      "checkedAt": "2026-10-06T04:16:51Z",
+      "valuesFrom": "vacancy_announcements",
+      "statement": "5 USAJOBS announcements, at Kansas City VA Medical Center (Kansas City, MO); Veterans Health Administration (Murfreesboro, TN); Marion VA Health Care System (Evansville, IL, Marion, IL); South Texas VA Health Care System (STVHCS) (San Antonio, TX); Veterans Health Administration (Fort Harrison, MT), list a post of this title family at GS-15. Each states the pay plan and grade of one vacancy at one facility on a date; none names this node, and the identification of the title family is reviewed. The announcements' own salaries include locality pay and are not published here.",
+      "nodeId": "exec-dept-va-vha-visn-17-texas-vamc-vamc-associate-director-administrative"
+    },
+    "exec-dept-va-vha-visn-19-rocky-mountain-vamc-vamc-associate-director-administrative": {
+      "source": "usajobs_vacancy_announcements",
+      "method": "pay_plan_and_grade_stated_by_every_usajobs_announcement_for_the_title_family",
+      "family": "vamc_associate_director_administrative",
+      "familyRule": "whole_name_under_parent",
+      "basis": "Each announcement advertises the Associate Director of a VA medical centre or health care system -- the administrative associate director beside the Medical Center Director, the Chief of Staff and the Associate Director for Patient Care Services -- in series 0670, Health System Administration. This graph's 'VAMC Associate Director (Administrative)' is that post, drawn once per VISN grouping as a template; the identification is reviewed, and no announcement names a node here.",
+      "payPlan": "GS",
+      "level": "15",
+      "payLevel": "15",
+      "payPlanAndLevelOnOneRow": true,
+      "reportedPay": null,
+      "series": "0670",
+      "listedTitle": null,
+      "listedTitles": [
+        "Health System Administrator (Associate Director) - Detail NTE 1 Year",
+        "Health System Administrator- Associate Medical Center Director",
+        "Health Systems Administrator (Associate Director)",
+        "Health Systems Administrator (Associate Director) - Not to Exceed 1 Year"
+      ],
+      "announcementCount": 5,
+      "announcements": [
+        {
+          "id": "848110500",
+          "url": "https://www.usajobs.gov/job/848110500",
+          "title": "Health Systems Administrator (Associate Director) - Not to Exceed 1 Year",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Kansas City VA Medical Center",
+          "locations": [
+            "Kansas City, MO"
+          ],
+          "openDate": "2025-10-14",
+          "closeDate": "2025-10-20",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "feee1da21bd92d70dae71fbc553051f1f191e655406b759abeb303cb33200b24",
+          "fetchedAt": "2026-10-06T04:16:39Z"
+        },
+        {
+          "id": "848756100",
+          "url": "https://www.usajobs.gov/job/848756100",
+          "title": "Health System Administrator- Associate Medical Center Director",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Murfreesboro, TN"
+          ],
+          "openDate": "2025-10-24",
+          "closeDate": "2025-11-03",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "04d6b0e04e99667d2dbd952c9ca24c33f1d706e4e1a30080cb4b7931b4ea865a",
+          "fetchedAt": "2026-10-06T04:16:47Z"
+        },
+        {
+          "id": "860101900",
+          "url": "https://www.usajobs.gov/job/860101900",
+          "title": "Health Systems Administrator (Associate Director) - Not to Exceed 1 Year",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Marion VA Health Care System",
+          "locations": [
+            "Evansville, IL",
+            "Marion, IL"
+          ],
+          "openDate": "2026-03-05",
+          "closeDate": "2026-03-10",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "48b0d5624b3d20fe14c87f91e493932fa72acf2d6e47cbb24c35cf2571a23f80",
+          "fetchedAt": "2026-10-06T04:16:43Z"
+        },
+        {
+          "id": "863018500",
+          "url": "https://www.usajobs.gov/job/863018500",
+          "title": "Health System Administrator (Associate Director) - Detail NTE 1 Year",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "South Texas VA Health Care System (STVHCS)",
+          "locations": [
+            "San Antonio, TX"
+          ],
+          "openDate": "2026-03-30",
+          "closeDate": "2026-04-03",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "9dc46e571391811c03ff7c7895c4632c0ec6ea95d28765a4d24f77233c8cc188",
+          "fetchedAt": "2026-10-06T04:16:35Z"
+        },
+        {
+          "id": "880101300",
+          "url": "https://www.usajobs.gov/job/880101300",
+          "title": "Health Systems Administrator (Associate Director)",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Fort Harrison, MT"
+          ],
+          "openDate": "2026-08-11",
+          "closeDate": "2026-08-21",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "2399d8f0cf9cde9f502ddc91631e0e930291bd27fc40988298d100c7b98cd4da",
+          "fetchedAt": "2026-10-06T04:16:51Z"
+        }
+      ],
+      "facilities": [
+        {
+          "id": "848110500",
+          "hiringOrganization": "Kansas City VA Medical Center",
+          "locations": [
+            "Kansas City, MO"
+          ]
+        },
+        {
+          "id": "848756100",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Murfreesboro, TN"
+          ]
+        },
+        {
+          "id": "860101900",
+          "hiringOrganization": "Marion VA Health Care System",
+          "locations": [
+            "Evansville, IL",
+            "Marion, IL"
+          ]
+        },
+        {
+          "id": "863018500",
+          "hiringOrganization": "South Texas VA Health Care System (STVHCS)",
+          "locations": [
+            "San Antonio, TX"
+          ]
+        },
+        {
+          "id": "880101300",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Fort Harrison, MT"
+          ]
+        }
+      ],
+      "edition": "USAJOBS vacancy announcements 848110500, 848756100, 860101900, 863018500, 880101300",
+      "period": "announcements opened 2025-10-14 to 2026-08-11",
+      "url": "https://www.usajobs.gov/job/848110500",
+      "checkedAt": "2026-10-06T04:16:51Z",
+      "valuesFrom": "vacancy_announcements",
+      "statement": "5 USAJOBS announcements, at Kansas City VA Medical Center (Kansas City, MO); Veterans Health Administration (Murfreesboro, TN); Marion VA Health Care System (Evansville, IL, Marion, IL); South Texas VA Health Care System (STVHCS) (San Antonio, TX); Veterans Health Administration (Fort Harrison, MT), list a post of this title family at GS-15. Each states the pay plan and grade of one vacancy at one facility on a date; none names this node, and the identification of the title family is reviewed. The announcements' own salaries include locality pay and are not published here.",
+      "nodeId": "exec-dept-va-vha-visn-19-rocky-mountain-vamc-vamc-associate-director-administrative"
+    },
+    "exec-dept-va-vha-visn-2-mid-atlantic-vamc-vamc-associate-director-administrative": {
+      "source": "usajobs_vacancy_announcements",
+      "method": "pay_plan_and_grade_stated_by_every_usajobs_announcement_for_the_title_family",
+      "family": "vamc_associate_director_administrative",
+      "familyRule": "whole_name_under_parent",
+      "basis": "Each announcement advertises the Associate Director of a VA medical centre or health care system -- the administrative associate director beside the Medical Center Director, the Chief of Staff and the Associate Director for Patient Care Services -- in series 0670, Health System Administration. This graph's 'VAMC Associate Director (Administrative)' is that post, drawn once per VISN grouping as a template; the identification is reviewed, and no announcement names a node here.",
+      "payPlan": "GS",
+      "level": "15",
+      "payLevel": "15",
+      "payPlanAndLevelOnOneRow": true,
+      "reportedPay": null,
+      "series": "0670",
+      "listedTitle": null,
+      "listedTitles": [
+        "Health System Administrator (Associate Director) - Detail NTE 1 Year",
+        "Health System Administrator- Associate Medical Center Director",
+        "Health Systems Administrator (Associate Director)",
+        "Health Systems Administrator (Associate Director) - Not to Exceed 1 Year"
+      ],
+      "announcementCount": 5,
+      "announcements": [
+        {
+          "id": "848110500",
+          "url": "https://www.usajobs.gov/job/848110500",
+          "title": "Health Systems Administrator (Associate Director) - Not to Exceed 1 Year",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Kansas City VA Medical Center",
+          "locations": [
+            "Kansas City, MO"
+          ],
+          "openDate": "2025-10-14",
+          "closeDate": "2025-10-20",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "feee1da21bd92d70dae71fbc553051f1f191e655406b759abeb303cb33200b24",
+          "fetchedAt": "2026-10-06T04:16:39Z"
+        },
+        {
+          "id": "848756100",
+          "url": "https://www.usajobs.gov/job/848756100",
+          "title": "Health System Administrator- Associate Medical Center Director",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Murfreesboro, TN"
+          ],
+          "openDate": "2025-10-24",
+          "closeDate": "2025-11-03",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "04d6b0e04e99667d2dbd952c9ca24c33f1d706e4e1a30080cb4b7931b4ea865a",
+          "fetchedAt": "2026-10-06T04:16:47Z"
+        },
+        {
+          "id": "860101900",
+          "url": "https://www.usajobs.gov/job/860101900",
+          "title": "Health Systems Administrator (Associate Director) - Not to Exceed 1 Year",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Marion VA Health Care System",
+          "locations": [
+            "Evansville, IL",
+            "Marion, IL"
+          ],
+          "openDate": "2026-03-05",
+          "closeDate": "2026-03-10",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "48b0d5624b3d20fe14c87f91e493932fa72acf2d6e47cbb24c35cf2571a23f80",
+          "fetchedAt": "2026-10-06T04:16:43Z"
+        },
+        {
+          "id": "863018500",
+          "url": "https://www.usajobs.gov/job/863018500",
+          "title": "Health System Administrator (Associate Director) - Detail NTE 1 Year",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "South Texas VA Health Care System (STVHCS)",
+          "locations": [
+            "San Antonio, TX"
+          ],
+          "openDate": "2026-03-30",
+          "closeDate": "2026-04-03",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "9dc46e571391811c03ff7c7895c4632c0ec6ea95d28765a4d24f77233c8cc188",
+          "fetchedAt": "2026-10-06T04:16:35Z"
+        },
+        {
+          "id": "880101300",
+          "url": "https://www.usajobs.gov/job/880101300",
+          "title": "Health Systems Administrator (Associate Director)",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Fort Harrison, MT"
+          ],
+          "openDate": "2026-08-11",
+          "closeDate": "2026-08-21",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "2399d8f0cf9cde9f502ddc91631e0e930291bd27fc40988298d100c7b98cd4da",
+          "fetchedAt": "2026-10-06T04:16:51Z"
+        }
+      ],
+      "facilities": [
+        {
+          "id": "848110500",
+          "hiringOrganization": "Kansas City VA Medical Center",
+          "locations": [
+            "Kansas City, MO"
+          ]
+        },
+        {
+          "id": "848756100",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Murfreesboro, TN"
+          ]
+        },
+        {
+          "id": "860101900",
+          "hiringOrganization": "Marion VA Health Care System",
+          "locations": [
+            "Evansville, IL",
+            "Marion, IL"
+          ]
+        },
+        {
+          "id": "863018500",
+          "hiringOrganization": "South Texas VA Health Care System (STVHCS)",
+          "locations": [
+            "San Antonio, TX"
+          ]
+        },
+        {
+          "id": "880101300",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Fort Harrison, MT"
+          ]
+        }
+      ],
+      "edition": "USAJOBS vacancy announcements 848110500, 848756100, 860101900, 863018500, 880101300",
+      "period": "announcements opened 2025-10-14 to 2026-08-11",
+      "url": "https://www.usajobs.gov/job/848110500",
+      "checkedAt": "2026-10-06T04:16:51Z",
+      "valuesFrom": "vacancy_announcements",
+      "statement": "5 USAJOBS announcements, at Kansas City VA Medical Center (Kansas City, MO); Veterans Health Administration (Murfreesboro, TN); Marion VA Health Care System (Evansville, IL, Marion, IL); South Texas VA Health Care System (STVHCS) (San Antonio, TX); Veterans Health Administration (Fort Harrison, MT), list a post of this title family at GS-15. Each states the pay plan and grade of one vacancy at one facility on a date; none names this node, and the identification of the title family is reviewed. The announcements' own salaries include locality pay and are not published here.",
+      "nodeId": "exec-dept-va-vha-visn-2-mid-atlantic-vamc-vamc-associate-director-administrative"
+    },
+    "exec-dept-va-vha-visn-20-northwest-vamc-vamc-associate-director-administrative": {
+      "source": "usajobs_vacancy_announcements",
+      "method": "pay_plan_and_grade_stated_by_every_usajobs_announcement_for_the_title_family",
+      "family": "vamc_associate_director_administrative",
+      "familyRule": "whole_name_under_parent",
+      "basis": "Each announcement advertises the Associate Director of a VA medical centre or health care system -- the administrative associate director beside the Medical Center Director, the Chief of Staff and the Associate Director for Patient Care Services -- in series 0670, Health System Administration. This graph's 'VAMC Associate Director (Administrative)' is that post, drawn once per VISN grouping as a template; the identification is reviewed, and no announcement names a node here.",
+      "payPlan": "GS",
+      "level": "15",
+      "payLevel": "15",
+      "payPlanAndLevelOnOneRow": true,
+      "reportedPay": null,
+      "series": "0670",
+      "listedTitle": null,
+      "listedTitles": [
+        "Health System Administrator (Associate Director) - Detail NTE 1 Year",
+        "Health System Administrator- Associate Medical Center Director",
+        "Health Systems Administrator (Associate Director)",
+        "Health Systems Administrator (Associate Director) - Not to Exceed 1 Year"
+      ],
+      "announcementCount": 5,
+      "announcements": [
+        {
+          "id": "848110500",
+          "url": "https://www.usajobs.gov/job/848110500",
+          "title": "Health Systems Administrator (Associate Director) - Not to Exceed 1 Year",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Kansas City VA Medical Center",
+          "locations": [
+            "Kansas City, MO"
+          ],
+          "openDate": "2025-10-14",
+          "closeDate": "2025-10-20",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "feee1da21bd92d70dae71fbc553051f1f191e655406b759abeb303cb33200b24",
+          "fetchedAt": "2026-10-06T04:16:39Z"
+        },
+        {
+          "id": "848756100",
+          "url": "https://www.usajobs.gov/job/848756100",
+          "title": "Health System Administrator- Associate Medical Center Director",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Murfreesboro, TN"
+          ],
+          "openDate": "2025-10-24",
+          "closeDate": "2025-11-03",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "04d6b0e04e99667d2dbd952c9ca24c33f1d706e4e1a30080cb4b7931b4ea865a",
+          "fetchedAt": "2026-10-06T04:16:47Z"
+        },
+        {
+          "id": "860101900",
+          "url": "https://www.usajobs.gov/job/860101900",
+          "title": "Health Systems Administrator (Associate Director) - Not to Exceed 1 Year",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Marion VA Health Care System",
+          "locations": [
+            "Evansville, IL",
+            "Marion, IL"
+          ],
+          "openDate": "2026-03-05",
+          "closeDate": "2026-03-10",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "48b0d5624b3d20fe14c87f91e493932fa72acf2d6e47cbb24c35cf2571a23f80",
+          "fetchedAt": "2026-10-06T04:16:43Z"
+        },
+        {
+          "id": "863018500",
+          "url": "https://www.usajobs.gov/job/863018500",
+          "title": "Health System Administrator (Associate Director) - Detail NTE 1 Year",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "South Texas VA Health Care System (STVHCS)",
+          "locations": [
+            "San Antonio, TX"
+          ],
+          "openDate": "2026-03-30",
+          "closeDate": "2026-04-03",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "9dc46e571391811c03ff7c7895c4632c0ec6ea95d28765a4d24f77233c8cc188",
+          "fetchedAt": "2026-10-06T04:16:35Z"
+        },
+        {
+          "id": "880101300",
+          "url": "https://www.usajobs.gov/job/880101300",
+          "title": "Health Systems Administrator (Associate Director)",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Fort Harrison, MT"
+          ],
+          "openDate": "2026-08-11",
+          "closeDate": "2026-08-21",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "2399d8f0cf9cde9f502ddc91631e0e930291bd27fc40988298d100c7b98cd4da",
+          "fetchedAt": "2026-10-06T04:16:51Z"
+        }
+      ],
+      "facilities": [
+        {
+          "id": "848110500",
+          "hiringOrganization": "Kansas City VA Medical Center",
+          "locations": [
+            "Kansas City, MO"
+          ]
+        },
+        {
+          "id": "848756100",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Murfreesboro, TN"
+          ]
+        },
+        {
+          "id": "860101900",
+          "hiringOrganization": "Marion VA Health Care System",
+          "locations": [
+            "Evansville, IL",
+            "Marion, IL"
+          ]
+        },
+        {
+          "id": "863018500",
+          "hiringOrganization": "South Texas VA Health Care System (STVHCS)",
+          "locations": [
+            "San Antonio, TX"
+          ]
+        },
+        {
+          "id": "880101300",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Fort Harrison, MT"
+          ]
+        }
+      ],
+      "edition": "USAJOBS vacancy announcements 848110500, 848756100, 860101900, 863018500, 880101300",
+      "period": "announcements opened 2025-10-14 to 2026-08-11",
+      "url": "https://www.usajobs.gov/job/848110500",
+      "checkedAt": "2026-10-06T04:16:51Z",
+      "valuesFrom": "vacancy_announcements",
+      "statement": "5 USAJOBS announcements, at Kansas City VA Medical Center (Kansas City, MO); Veterans Health Administration (Murfreesboro, TN); Marion VA Health Care System (Evansville, IL, Marion, IL); South Texas VA Health Care System (STVHCS) (San Antonio, TX); Veterans Health Administration (Fort Harrison, MT), list a post of this title family at GS-15. Each states the pay plan and grade of one vacancy at one facility on a date; none names this node, and the identification of the title family is reviewed. The announcements' own salaries include locality pay and are not published here.",
+      "nodeId": "exec-dept-va-vha-visn-20-northwest-vamc-vamc-associate-director-administrative"
+    },
+    "exec-dept-va-vha-visn-21-sierra-pacific-vamc-vamc-associate-director-administrative": {
+      "source": "usajobs_vacancy_announcements",
+      "method": "pay_plan_and_grade_stated_by_every_usajobs_announcement_for_the_title_family",
+      "family": "vamc_associate_director_administrative",
+      "familyRule": "whole_name_under_parent",
+      "basis": "Each announcement advertises the Associate Director of a VA medical centre or health care system -- the administrative associate director beside the Medical Center Director, the Chief of Staff and the Associate Director for Patient Care Services -- in series 0670, Health System Administration. This graph's 'VAMC Associate Director (Administrative)' is that post, drawn once per VISN grouping as a template; the identification is reviewed, and no announcement names a node here.",
+      "payPlan": "GS",
+      "level": "15",
+      "payLevel": "15",
+      "payPlanAndLevelOnOneRow": true,
+      "reportedPay": null,
+      "series": "0670",
+      "listedTitle": null,
+      "listedTitles": [
+        "Health System Administrator (Associate Director) - Detail NTE 1 Year",
+        "Health System Administrator- Associate Medical Center Director",
+        "Health Systems Administrator (Associate Director)",
+        "Health Systems Administrator (Associate Director) - Not to Exceed 1 Year"
+      ],
+      "announcementCount": 5,
+      "announcements": [
+        {
+          "id": "848110500",
+          "url": "https://www.usajobs.gov/job/848110500",
+          "title": "Health Systems Administrator (Associate Director) - Not to Exceed 1 Year",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Kansas City VA Medical Center",
+          "locations": [
+            "Kansas City, MO"
+          ],
+          "openDate": "2025-10-14",
+          "closeDate": "2025-10-20",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "feee1da21bd92d70dae71fbc553051f1f191e655406b759abeb303cb33200b24",
+          "fetchedAt": "2026-10-06T04:16:39Z"
+        },
+        {
+          "id": "848756100",
+          "url": "https://www.usajobs.gov/job/848756100",
+          "title": "Health System Administrator- Associate Medical Center Director",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Murfreesboro, TN"
+          ],
+          "openDate": "2025-10-24",
+          "closeDate": "2025-11-03",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "04d6b0e04e99667d2dbd952c9ca24c33f1d706e4e1a30080cb4b7931b4ea865a",
+          "fetchedAt": "2026-10-06T04:16:47Z"
+        },
+        {
+          "id": "860101900",
+          "url": "https://www.usajobs.gov/job/860101900",
+          "title": "Health Systems Administrator (Associate Director) - Not to Exceed 1 Year",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Marion VA Health Care System",
+          "locations": [
+            "Evansville, IL",
+            "Marion, IL"
+          ],
+          "openDate": "2026-03-05",
+          "closeDate": "2026-03-10",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "48b0d5624b3d20fe14c87f91e493932fa72acf2d6e47cbb24c35cf2571a23f80",
+          "fetchedAt": "2026-10-06T04:16:43Z"
+        },
+        {
+          "id": "863018500",
+          "url": "https://www.usajobs.gov/job/863018500",
+          "title": "Health System Administrator (Associate Director) - Detail NTE 1 Year",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "South Texas VA Health Care System (STVHCS)",
+          "locations": [
+            "San Antonio, TX"
+          ],
+          "openDate": "2026-03-30",
+          "closeDate": "2026-04-03",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "9dc46e571391811c03ff7c7895c4632c0ec6ea95d28765a4d24f77233c8cc188",
+          "fetchedAt": "2026-10-06T04:16:35Z"
+        },
+        {
+          "id": "880101300",
+          "url": "https://www.usajobs.gov/job/880101300",
+          "title": "Health Systems Administrator (Associate Director)",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Fort Harrison, MT"
+          ],
+          "openDate": "2026-08-11",
+          "closeDate": "2026-08-21",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "2399d8f0cf9cde9f502ddc91631e0e930291bd27fc40988298d100c7b98cd4da",
+          "fetchedAt": "2026-10-06T04:16:51Z"
+        }
+      ],
+      "facilities": [
+        {
+          "id": "848110500",
+          "hiringOrganization": "Kansas City VA Medical Center",
+          "locations": [
+            "Kansas City, MO"
+          ]
+        },
+        {
+          "id": "848756100",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Murfreesboro, TN"
+          ]
+        },
+        {
+          "id": "860101900",
+          "hiringOrganization": "Marion VA Health Care System",
+          "locations": [
+            "Evansville, IL",
+            "Marion, IL"
+          ]
+        },
+        {
+          "id": "863018500",
+          "hiringOrganization": "South Texas VA Health Care System (STVHCS)",
+          "locations": [
+            "San Antonio, TX"
+          ]
+        },
+        {
+          "id": "880101300",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Fort Harrison, MT"
+          ]
+        }
+      ],
+      "edition": "USAJOBS vacancy announcements 848110500, 848756100, 860101900, 863018500, 880101300",
+      "period": "announcements opened 2025-10-14 to 2026-08-11",
+      "url": "https://www.usajobs.gov/job/848110500",
+      "checkedAt": "2026-10-06T04:16:51Z",
+      "valuesFrom": "vacancy_announcements",
+      "statement": "5 USAJOBS announcements, at Kansas City VA Medical Center (Kansas City, MO); Veterans Health Administration (Murfreesboro, TN); Marion VA Health Care System (Evansville, IL, Marion, IL); South Texas VA Health Care System (STVHCS) (San Antonio, TX); Veterans Health Administration (Fort Harrison, MT), list a post of this title family at GS-15. Each states the pay plan and grade of one vacancy at one facility on a date; none names this node, and the identification of the title family is reviewed. The announcements' own salaries include locality pay and are not published here.",
+      "nodeId": "exec-dept-va-vha-visn-21-sierra-pacific-vamc-vamc-associate-director-administrative"
+    },
+    "exec-dept-va-vha-visn-22-desert-pacific-vamc-vamc-associate-director-administrative": {
+      "source": "usajobs_vacancy_announcements",
+      "method": "pay_plan_and_grade_stated_by_every_usajobs_announcement_for_the_title_family",
+      "family": "vamc_associate_director_administrative",
+      "familyRule": "whole_name_under_parent",
+      "basis": "Each announcement advertises the Associate Director of a VA medical centre or health care system -- the administrative associate director beside the Medical Center Director, the Chief of Staff and the Associate Director for Patient Care Services -- in series 0670, Health System Administration. This graph's 'VAMC Associate Director (Administrative)' is that post, drawn once per VISN grouping as a template; the identification is reviewed, and no announcement names a node here.",
+      "payPlan": "GS",
+      "level": "15",
+      "payLevel": "15",
+      "payPlanAndLevelOnOneRow": true,
+      "reportedPay": null,
+      "series": "0670",
+      "listedTitle": null,
+      "listedTitles": [
+        "Health System Administrator (Associate Director) - Detail NTE 1 Year",
+        "Health System Administrator- Associate Medical Center Director",
+        "Health Systems Administrator (Associate Director)",
+        "Health Systems Administrator (Associate Director) - Not to Exceed 1 Year"
+      ],
+      "announcementCount": 5,
+      "announcements": [
+        {
+          "id": "848110500",
+          "url": "https://www.usajobs.gov/job/848110500",
+          "title": "Health Systems Administrator (Associate Director) - Not to Exceed 1 Year",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Kansas City VA Medical Center",
+          "locations": [
+            "Kansas City, MO"
+          ],
+          "openDate": "2025-10-14",
+          "closeDate": "2025-10-20",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "feee1da21bd92d70dae71fbc553051f1f191e655406b759abeb303cb33200b24",
+          "fetchedAt": "2026-10-06T04:16:39Z"
+        },
+        {
+          "id": "848756100",
+          "url": "https://www.usajobs.gov/job/848756100",
+          "title": "Health System Administrator- Associate Medical Center Director",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Murfreesboro, TN"
+          ],
+          "openDate": "2025-10-24",
+          "closeDate": "2025-11-03",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "04d6b0e04e99667d2dbd952c9ca24c33f1d706e4e1a30080cb4b7931b4ea865a",
+          "fetchedAt": "2026-10-06T04:16:47Z"
+        },
+        {
+          "id": "860101900",
+          "url": "https://www.usajobs.gov/job/860101900",
+          "title": "Health Systems Administrator (Associate Director) - Not to Exceed 1 Year",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Marion VA Health Care System",
+          "locations": [
+            "Evansville, IL",
+            "Marion, IL"
+          ],
+          "openDate": "2026-03-05",
+          "closeDate": "2026-03-10",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "48b0d5624b3d20fe14c87f91e493932fa72acf2d6e47cbb24c35cf2571a23f80",
+          "fetchedAt": "2026-10-06T04:16:43Z"
+        },
+        {
+          "id": "863018500",
+          "url": "https://www.usajobs.gov/job/863018500",
+          "title": "Health System Administrator (Associate Director) - Detail NTE 1 Year",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "South Texas VA Health Care System (STVHCS)",
+          "locations": [
+            "San Antonio, TX"
+          ],
+          "openDate": "2026-03-30",
+          "closeDate": "2026-04-03",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "9dc46e571391811c03ff7c7895c4632c0ec6ea95d28765a4d24f77233c8cc188",
+          "fetchedAt": "2026-10-06T04:16:35Z"
+        },
+        {
+          "id": "880101300",
+          "url": "https://www.usajobs.gov/job/880101300",
+          "title": "Health Systems Administrator (Associate Director)",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Fort Harrison, MT"
+          ],
+          "openDate": "2026-08-11",
+          "closeDate": "2026-08-21",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "2399d8f0cf9cde9f502ddc91631e0e930291bd27fc40988298d100c7b98cd4da",
+          "fetchedAt": "2026-10-06T04:16:51Z"
+        }
+      ],
+      "facilities": [
+        {
+          "id": "848110500",
+          "hiringOrganization": "Kansas City VA Medical Center",
+          "locations": [
+            "Kansas City, MO"
+          ]
+        },
+        {
+          "id": "848756100",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Murfreesboro, TN"
+          ]
+        },
+        {
+          "id": "860101900",
+          "hiringOrganization": "Marion VA Health Care System",
+          "locations": [
+            "Evansville, IL",
+            "Marion, IL"
+          ]
+        },
+        {
+          "id": "863018500",
+          "hiringOrganization": "South Texas VA Health Care System (STVHCS)",
+          "locations": [
+            "San Antonio, TX"
+          ]
+        },
+        {
+          "id": "880101300",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Fort Harrison, MT"
+          ]
+        }
+      ],
+      "edition": "USAJOBS vacancy announcements 848110500, 848756100, 860101900, 863018500, 880101300",
+      "period": "announcements opened 2025-10-14 to 2026-08-11",
+      "url": "https://www.usajobs.gov/job/848110500",
+      "checkedAt": "2026-10-06T04:16:51Z",
+      "valuesFrom": "vacancy_announcements",
+      "statement": "5 USAJOBS announcements, at Kansas City VA Medical Center (Kansas City, MO); Veterans Health Administration (Murfreesboro, TN); Marion VA Health Care System (Evansville, IL, Marion, IL); South Texas VA Health Care System (STVHCS) (San Antonio, TX); Veterans Health Administration (Fort Harrison, MT), list a post of this title family at GS-15. Each states the pay plan and grade of one vacancy at one facility on a date; none names this node, and the identification of the title family is reviewed. The announcements' own salaries include locality pay and are not published here.",
+      "nodeId": "exec-dept-va-vha-visn-22-desert-pacific-vamc-vamc-associate-director-administrative"
+    },
+    "exec-dept-va-vha-visn-23-midwest-vamc-vamc-associate-director-administrative": {
+      "source": "usajobs_vacancy_announcements",
+      "method": "pay_plan_and_grade_stated_by_every_usajobs_announcement_for_the_title_family",
+      "family": "vamc_associate_director_administrative",
+      "familyRule": "whole_name_under_parent",
+      "basis": "Each announcement advertises the Associate Director of a VA medical centre or health care system -- the administrative associate director beside the Medical Center Director, the Chief of Staff and the Associate Director for Patient Care Services -- in series 0670, Health System Administration. This graph's 'VAMC Associate Director (Administrative)' is that post, drawn once per VISN grouping as a template; the identification is reviewed, and no announcement names a node here.",
+      "payPlan": "GS",
+      "level": "15",
+      "payLevel": "15",
+      "payPlanAndLevelOnOneRow": true,
+      "reportedPay": null,
+      "series": "0670",
+      "listedTitle": null,
+      "listedTitles": [
+        "Health System Administrator (Associate Director) - Detail NTE 1 Year",
+        "Health System Administrator- Associate Medical Center Director",
+        "Health Systems Administrator (Associate Director)",
+        "Health Systems Administrator (Associate Director) - Not to Exceed 1 Year"
+      ],
+      "announcementCount": 5,
+      "announcements": [
+        {
+          "id": "848110500",
+          "url": "https://www.usajobs.gov/job/848110500",
+          "title": "Health Systems Administrator (Associate Director) - Not to Exceed 1 Year",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Kansas City VA Medical Center",
+          "locations": [
+            "Kansas City, MO"
+          ],
+          "openDate": "2025-10-14",
+          "closeDate": "2025-10-20",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "feee1da21bd92d70dae71fbc553051f1f191e655406b759abeb303cb33200b24",
+          "fetchedAt": "2026-10-06T04:16:39Z"
+        },
+        {
+          "id": "848756100",
+          "url": "https://www.usajobs.gov/job/848756100",
+          "title": "Health System Administrator- Associate Medical Center Director",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Murfreesboro, TN"
+          ],
+          "openDate": "2025-10-24",
+          "closeDate": "2025-11-03",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "04d6b0e04e99667d2dbd952c9ca24c33f1d706e4e1a30080cb4b7931b4ea865a",
+          "fetchedAt": "2026-10-06T04:16:47Z"
+        },
+        {
+          "id": "860101900",
+          "url": "https://www.usajobs.gov/job/860101900",
+          "title": "Health Systems Administrator (Associate Director) - Not to Exceed 1 Year",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Marion VA Health Care System",
+          "locations": [
+            "Evansville, IL",
+            "Marion, IL"
+          ],
+          "openDate": "2026-03-05",
+          "closeDate": "2026-03-10",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "48b0d5624b3d20fe14c87f91e493932fa72acf2d6e47cbb24c35cf2571a23f80",
+          "fetchedAt": "2026-10-06T04:16:43Z"
+        },
+        {
+          "id": "863018500",
+          "url": "https://www.usajobs.gov/job/863018500",
+          "title": "Health System Administrator (Associate Director) - Detail NTE 1 Year",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "South Texas VA Health Care System (STVHCS)",
+          "locations": [
+            "San Antonio, TX"
+          ],
+          "openDate": "2026-03-30",
+          "closeDate": "2026-04-03",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "9dc46e571391811c03ff7c7895c4632c0ec6ea95d28765a4d24f77233c8cc188",
+          "fetchedAt": "2026-10-06T04:16:35Z"
+        },
+        {
+          "id": "880101300",
+          "url": "https://www.usajobs.gov/job/880101300",
+          "title": "Health Systems Administrator (Associate Director)",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Fort Harrison, MT"
+          ],
+          "openDate": "2026-08-11",
+          "closeDate": "2026-08-21",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "2399d8f0cf9cde9f502ddc91631e0e930291bd27fc40988298d100c7b98cd4da",
+          "fetchedAt": "2026-10-06T04:16:51Z"
+        }
+      ],
+      "facilities": [
+        {
+          "id": "848110500",
+          "hiringOrganization": "Kansas City VA Medical Center",
+          "locations": [
+            "Kansas City, MO"
+          ]
+        },
+        {
+          "id": "848756100",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Murfreesboro, TN"
+          ]
+        },
+        {
+          "id": "860101900",
+          "hiringOrganization": "Marion VA Health Care System",
+          "locations": [
+            "Evansville, IL",
+            "Marion, IL"
+          ]
+        },
+        {
+          "id": "863018500",
+          "hiringOrganization": "South Texas VA Health Care System (STVHCS)",
+          "locations": [
+            "San Antonio, TX"
+          ]
+        },
+        {
+          "id": "880101300",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Fort Harrison, MT"
+          ]
+        }
+      ],
+      "edition": "USAJOBS vacancy announcements 848110500, 848756100, 860101900, 863018500, 880101300",
+      "period": "announcements opened 2025-10-14 to 2026-08-11",
+      "url": "https://www.usajobs.gov/job/848110500",
+      "checkedAt": "2026-10-06T04:16:51Z",
+      "valuesFrom": "vacancy_announcements",
+      "statement": "5 USAJOBS announcements, at Kansas City VA Medical Center (Kansas City, MO); Veterans Health Administration (Murfreesboro, TN); Marion VA Health Care System (Evansville, IL, Marion, IL); South Texas VA Health Care System (STVHCS) (San Antonio, TX); Veterans Health Administration (Fort Harrison, MT), list a post of this title family at GS-15. Each states the pay plan and grade of one vacancy at one facility on a date; none names this node, and the identification of the title family is reviewed. The announcements' own salaries include locality pay and are not published here.",
+      "nodeId": "exec-dept-va-vha-visn-23-midwest-vamc-vamc-associate-director-administrative"
+    },
+    "exec-dept-va-vha-visn-4-visn-4-vamc-vamc-associate-director-administrative": {
+      "source": "usajobs_vacancy_announcements",
+      "method": "pay_plan_and_grade_stated_by_every_usajobs_announcement_for_the_title_family",
+      "family": "vamc_associate_director_administrative",
+      "familyRule": "whole_name_under_parent",
+      "basis": "Each announcement advertises the Associate Director of a VA medical centre or health care system -- the administrative associate director beside the Medical Center Director, the Chief of Staff and the Associate Director for Patient Care Services -- in series 0670, Health System Administration. This graph's 'VAMC Associate Director (Administrative)' is that post, drawn once per VISN grouping as a template; the identification is reviewed, and no announcement names a node here.",
+      "payPlan": "GS",
+      "level": "15",
+      "payLevel": "15",
+      "payPlanAndLevelOnOneRow": true,
+      "reportedPay": null,
+      "series": "0670",
+      "listedTitle": null,
+      "listedTitles": [
+        "Health System Administrator (Associate Director) - Detail NTE 1 Year",
+        "Health System Administrator- Associate Medical Center Director",
+        "Health Systems Administrator (Associate Director)",
+        "Health Systems Administrator (Associate Director) - Not to Exceed 1 Year"
+      ],
+      "announcementCount": 5,
+      "announcements": [
+        {
+          "id": "848110500",
+          "url": "https://www.usajobs.gov/job/848110500",
+          "title": "Health Systems Administrator (Associate Director) - Not to Exceed 1 Year",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Kansas City VA Medical Center",
+          "locations": [
+            "Kansas City, MO"
+          ],
+          "openDate": "2025-10-14",
+          "closeDate": "2025-10-20",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "feee1da21bd92d70dae71fbc553051f1f191e655406b759abeb303cb33200b24",
+          "fetchedAt": "2026-10-06T04:16:39Z"
+        },
+        {
+          "id": "848756100",
+          "url": "https://www.usajobs.gov/job/848756100",
+          "title": "Health System Administrator- Associate Medical Center Director",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Murfreesboro, TN"
+          ],
+          "openDate": "2025-10-24",
+          "closeDate": "2025-11-03",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "04d6b0e04e99667d2dbd952c9ca24c33f1d706e4e1a30080cb4b7931b4ea865a",
+          "fetchedAt": "2026-10-06T04:16:47Z"
+        },
+        {
+          "id": "860101900",
+          "url": "https://www.usajobs.gov/job/860101900",
+          "title": "Health Systems Administrator (Associate Director) - Not to Exceed 1 Year",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Marion VA Health Care System",
+          "locations": [
+            "Evansville, IL",
+            "Marion, IL"
+          ],
+          "openDate": "2026-03-05",
+          "closeDate": "2026-03-10",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "48b0d5624b3d20fe14c87f91e493932fa72acf2d6e47cbb24c35cf2571a23f80",
+          "fetchedAt": "2026-10-06T04:16:43Z"
+        },
+        {
+          "id": "863018500",
+          "url": "https://www.usajobs.gov/job/863018500",
+          "title": "Health System Administrator (Associate Director) - Detail NTE 1 Year",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "South Texas VA Health Care System (STVHCS)",
+          "locations": [
+            "San Antonio, TX"
+          ],
+          "openDate": "2026-03-30",
+          "closeDate": "2026-04-03",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "9dc46e571391811c03ff7c7895c4632c0ec6ea95d28765a4d24f77233c8cc188",
+          "fetchedAt": "2026-10-06T04:16:35Z"
+        },
+        {
+          "id": "880101300",
+          "url": "https://www.usajobs.gov/job/880101300",
+          "title": "Health Systems Administrator (Associate Director)",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Fort Harrison, MT"
+          ],
+          "openDate": "2026-08-11",
+          "closeDate": "2026-08-21",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "2399d8f0cf9cde9f502ddc91631e0e930291bd27fc40988298d100c7b98cd4da",
+          "fetchedAt": "2026-10-06T04:16:51Z"
+        }
+      ],
+      "facilities": [
+        {
+          "id": "848110500",
+          "hiringOrganization": "Kansas City VA Medical Center",
+          "locations": [
+            "Kansas City, MO"
+          ]
+        },
+        {
+          "id": "848756100",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Murfreesboro, TN"
+          ]
+        },
+        {
+          "id": "860101900",
+          "hiringOrganization": "Marion VA Health Care System",
+          "locations": [
+            "Evansville, IL",
+            "Marion, IL"
+          ]
+        },
+        {
+          "id": "863018500",
+          "hiringOrganization": "South Texas VA Health Care System (STVHCS)",
+          "locations": [
+            "San Antonio, TX"
+          ]
+        },
+        {
+          "id": "880101300",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Fort Harrison, MT"
+          ]
+        }
+      ],
+      "edition": "USAJOBS vacancy announcements 848110500, 848756100, 860101900, 863018500, 880101300",
+      "period": "announcements opened 2025-10-14 to 2026-08-11",
+      "url": "https://www.usajobs.gov/job/848110500",
+      "checkedAt": "2026-10-06T04:16:51Z",
+      "valuesFrom": "vacancy_announcements",
+      "statement": "5 USAJOBS announcements, at Kansas City VA Medical Center (Kansas City, MO); Veterans Health Administration (Murfreesboro, TN); Marion VA Health Care System (Evansville, IL, Marion, IL); South Texas VA Health Care System (STVHCS) (San Antonio, TX); Veterans Health Administration (Fort Harrison, MT), list a post of this title family at GS-15. Each states the pay plan and grade of one vacancy at one facility on a date; none names this node, and the identification of the title family is reviewed. The announcements' own salaries include locality pay and are not published here.",
+      "nodeId": "exec-dept-va-vha-visn-4-visn-4-vamc-vamc-associate-director-administrative"
+    },
+    "exec-dept-va-vha-visn-5-capitol-health-care-network-vamc-vamc-associate-director-administrative": {
+      "source": "usajobs_vacancy_announcements",
+      "method": "pay_plan_and_grade_stated_by_every_usajobs_announcement_for_the_title_family",
+      "family": "vamc_associate_director_administrative",
+      "familyRule": "whole_name_under_parent",
+      "basis": "Each announcement advertises the Associate Director of a VA medical centre or health care system -- the administrative associate director beside the Medical Center Director, the Chief of Staff and the Associate Director for Patient Care Services -- in series 0670, Health System Administration. This graph's 'VAMC Associate Director (Administrative)' is that post, drawn once per VISN grouping as a template; the identification is reviewed, and no announcement names a node here.",
+      "payPlan": "GS",
+      "level": "15",
+      "payLevel": "15",
+      "payPlanAndLevelOnOneRow": true,
+      "reportedPay": null,
+      "series": "0670",
+      "listedTitle": null,
+      "listedTitles": [
+        "Health System Administrator (Associate Director) - Detail NTE 1 Year",
+        "Health System Administrator- Associate Medical Center Director",
+        "Health Systems Administrator (Associate Director)",
+        "Health Systems Administrator (Associate Director) - Not to Exceed 1 Year"
+      ],
+      "announcementCount": 5,
+      "announcements": [
+        {
+          "id": "848110500",
+          "url": "https://www.usajobs.gov/job/848110500",
+          "title": "Health Systems Administrator (Associate Director) - Not to Exceed 1 Year",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Kansas City VA Medical Center",
+          "locations": [
+            "Kansas City, MO"
+          ],
+          "openDate": "2025-10-14",
+          "closeDate": "2025-10-20",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "feee1da21bd92d70dae71fbc553051f1f191e655406b759abeb303cb33200b24",
+          "fetchedAt": "2026-10-06T04:16:39Z"
+        },
+        {
+          "id": "848756100",
+          "url": "https://www.usajobs.gov/job/848756100",
+          "title": "Health System Administrator- Associate Medical Center Director",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Murfreesboro, TN"
+          ],
+          "openDate": "2025-10-24",
+          "closeDate": "2025-11-03",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "04d6b0e04e99667d2dbd952c9ca24c33f1d706e4e1a30080cb4b7931b4ea865a",
+          "fetchedAt": "2026-10-06T04:16:47Z"
+        },
+        {
+          "id": "860101900",
+          "url": "https://www.usajobs.gov/job/860101900",
+          "title": "Health Systems Administrator (Associate Director) - Not to Exceed 1 Year",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Marion VA Health Care System",
+          "locations": [
+            "Evansville, IL",
+            "Marion, IL"
+          ],
+          "openDate": "2026-03-05",
+          "closeDate": "2026-03-10",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "48b0d5624b3d20fe14c87f91e493932fa72acf2d6e47cbb24c35cf2571a23f80",
+          "fetchedAt": "2026-10-06T04:16:43Z"
+        },
+        {
+          "id": "863018500",
+          "url": "https://www.usajobs.gov/job/863018500",
+          "title": "Health System Administrator (Associate Director) - Detail NTE 1 Year",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "South Texas VA Health Care System (STVHCS)",
+          "locations": [
+            "San Antonio, TX"
+          ],
+          "openDate": "2026-03-30",
+          "closeDate": "2026-04-03",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "9dc46e571391811c03ff7c7895c4632c0ec6ea95d28765a4d24f77233c8cc188",
+          "fetchedAt": "2026-10-06T04:16:35Z"
+        },
+        {
+          "id": "880101300",
+          "url": "https://www.usajobs.gov/job/880101300",
+          "title": "Health Systems Administrator (Associate Director)",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Fort Harrison, MT"
+          ],
+          "openDate": "2026-08-11",
+          "closeDate": "2026-08-21",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "2399d8f0cf9cde9f502ddc91631e0e930291bd27fc40988298d100c7b98cd4da",
+          "fetchedAt": "2026-10-06T04:16:51Z"
+        }
+      ],
+      "facilities": [
+        {
+          "id": "848110500",
+          "hiringOrganization": "Kansas City VA Medical Center",
+          "locations": [
+            "Kansas City, MO"
+          ]
+        },
+        {
+          "id": "848756100",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Murfreesboro, TN"
+          ]
+        },
+        {
+          "id": "860101900",
+          "hiringOrganization": "Marion VA Health Care System",
+          "locations": [
+            "Evansville, IL",
+            "Marion, IL"
+          ]
+        },
+        {
+          "id": "863018500",
+          "hiringOrganization": "South Texas VA Health Care System (STVHCS)",
+          "locations": [
+            "San Antonio, TX"
+          ]
+        },
+        {
+          "id": "880101300",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Fort Harrison, MT"
+          ]
+        }
+      ],
+      "edition": "USAJOBS vacancy announcements 848110500, 848756100, 860101900, 863018500, 880101300",
+      "period": "announcements opened 2025-10-14 to 2026-08-11",
+      "url": "https://www.usajobs.gov/job/848110500",
+      "checkedAt": "2026-10-06T04:16:51Z",
+      "valuesFrom": "vacancy_announcements",
+      "statement": "5 USAJOBS announcements, at Kansas City VA Medical Center (Kansas City, MO); Veterans Health Administration (Murfreesboro, TN); Marion VA Health Care System (Evansville, IL, Marion, IL); South Texas VA Health Care System (STVHCS) (San Antonio, TX); Veterans Health Administration (Fort Harrison, MT), list a post of this title family at GS-15. Each states the pay plan and grade of one vacancy at one facility on a date; none names this node, and the identification of the title family is reviewed. The announcements' own salaries include locality pay and are not published here.",
+      "nodeId": "exec-dept-va-vha-visn-5-capitol-health-care-network-vamc-vamc-associate-director-administrative"
+    },
+    "exec-dept-va-vha-visn-6-mid-atlantic-health-care-vamc-vamc-associate-director-administrative": {
+      "source": "usajobs_vacancy_announcements",
+      "method": "pay_plan_and_grade_stated_by_every_usajobs_announcement_for_the_title_family",
+      "family": "vamc_associate_director_administrative",
+      "familyRule": "whole_name_under_parent",
+      "basis": "Each announcement advertises the Associate Director of a VA medical centre or health care system -- the administrative associate director beside the Medical Center Director, the Chief of Staff and the Associate Director for Patient Care Services -- in series 0670, Health System Administration. This graph's 'VAMC Associate Director (Administrative)' is that post, drawn once per VISN grouping as a template; the identification is reviewed, and no announcement names a node here.",
+      "payPlan": "GS",
+      "level": "15",
+      "payLevel": "15",
+      "payPlanAndLevelOnOneRow": true,
+      "reportedPay": null,
+      "series": "0670",
+      "listedTitle": null,
+      "listedTitles": [
+        "Health System Administrator (Associate Director) - Detail NTE 1 Year",
+        "Health System Administrator- Associate Medical Center Director",
+        "Health Systems Administrator (Associate Director)",
+        "Health Systems Administrator (Associate Director) - Not to Exceed 1 Year"
+      ],
+      "announcementCount": 5,
+      "announcements": [
+        {
+          "id": "848110500",
+          "url": "https://www.usajobs.gov/job/848110500",
+          "title": "Health Systems Administrator (Associate Director) - Not to Exceed 1 Year",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Kansas City VA Medical Center",
+          "locations": [
+            "Kansas City, MO"
+          ],
+          "openDate": "2025-10-14",
+          "closeDate": "2025-10-20",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "feee1da21bd92d70dae71fbc553051f1f191e655406b759abeb303cb33200b24",
+          "fetchedAt": "2026-10-06T04:16:39Z"
+        },
+        {
+          "id": "848756100",
+          "url": "https://www.usajobs.gov/job/848756100",
+          "title": "Health System Administrator- Associate Medical Center Director",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Murfreesboro, TN"
+          ],
+          "openDate": "2025-10-24",
+          "closeDate": "2025-11-03",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "04d6b0e04e99667d2dbd952c9ca24c33f1d706e4e1a30080cb4b7931b4ea865a",
+          "fetchedAt": "2026-10-06T04:16:47Z"
+        },
+        {
+          "id": "860101900",
+          "url": "https://www.usajobs.gov/job/860101900",
+          "title": "Health Systems Administrator (Associate Director) - Not to Exceed 1 Year",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Marion VA Health Care System",
+          "locations": [
+            "Evansville, IL",
+            "Marion, IL"
+          ],
+          "openDate": "2026-03-05",
+          "closeDate": "2026-03-10",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "48b0d5624b3d20fe14c87f91e493932fa72acf2d6e47cbb24c35cf2571a23f80",
+          "fetchedAt": "2026-10-06T04:16:43Z"
+        },
+        {
+          "id": "863018500",
+          "url": "https://www.usajobs.gov/job/863018500",
+          "title": "Health System Administrator (Associate Director) - Detail NTE 1 Year",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "South Texas VA Health Care System (STVHCS)",
+          "locations": [
+            "San Antonio, TX"
+          ],
+          "openDate": "2026-03-30",
+          "closeDate": "2026-04-03",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "9dc46e571391811c03ff7c7895c4632c0ec6ea95d28765a4d24f77233c8cc188",
+          "fetchedAt": "2026-10-06T04:16:35Z"
+        },
+        {
+          "id": "880101300",
+          "url": "https://www.usajobs.gov/job/880101300",
+          "title": "Health Systems Administrator (Associate Director)",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Fort Harrison, MT"
+          ],
+          "openDate": "2026-08-11",
+          "closeDate": "2026-08-21",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "2399d8f0cf9cde9f502ddc91631e0e930291bd27fc40988298d100c7b98cd4da",
+          "fetchedAt": "2026-10-06T04:16:51Z"
+        }
+      ],
+      "facilities": [
+        {
+          "id": "848110500",
+          "hiringOrganization": "Kansas City VA Medical Center",
+          "locations": [
+            "Kansas City, MO"
+          ]
+        },
+        {
+          "id": "848756100",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Murfreesboro, TN"
+          ]
+        },
+        {
+          "id": "860101900",
+          "hiringOrganization": "Marion VA Health Care System",
+          "locations": [
+            "Evansville, IL",
+            "Marion, IL"
+          ]
+        },
+        {
+          "id": "863018500",
+          "hiringOrganization": "South Texas VA Health Care System (STVHCS)",
+          "locations": [
+            "San Antonio, TX"
+          ]
+        },
+        {
+          "id": "880101300",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Fort Harrison, MT"
+          ]
+        }
+      ],
+      "edition": "USAJOBS vacancy announcements 848110500, 848756100, 860101900, 863018500, 880101300",
+      "period": "announcements opened 2025-10-14 to 2026-08-11",
+      "url": "https://www.usajobs.gov/job/848110500",
+      "checkedAt": "2026-10-06T04:16:51Z",
+      "valuesFrom": "vacancy_announcements",
+      "statement": "5 USAJOBS announcements, at Kansas City VA Medical Center (Kansas City, MO); Veterans Health Administration (Murfreesboro, TN); Marion VA Health Care System (Evansville, IL, Marion, IL); South Texas VA Health Care System (STVHCS) (San Antonio, TX); Veterans Health Administration (Fort Harrison, MT), list a post of this title family at GS-15. Each states the pay plan and grade of one vacancy at one facility on a date; none names this node, and the identification of the title family is reviewed. The announcements' own salaries include locality pay and are not published here.",
+      "nodeId": "exec-dept-va-vha-visn-6-mid-atlantic-health-care-vamc-vamc-associate-director-administrative"
+    },
+    "exec-dept-va-vha-visn-7-southeast-vamc-vamc-associate-director-administrative": {
+      "source": "usajobs_vacancy_announcements",
+      "method": "pay_plan_and_grade_stated_by_every_usajobs_announcement_for_the_title_family",
+      "family": "vamc_associate_director_administrative",
+      "familyRule": "whole_name_under_parent",
+      "basis": "Each announcement advertises the Associate Director of a VA medical centre or health care system -- the administrative associate director beside the Medical Center Director, the Chief of Staff and the Associate Director for Patient Care Services -- in series 0670, Health System Administration. This graph's 'VAMC Associate Director (Administrative)' is that post, drawn once per VISN grouping as a template; the identification is reviewed, and no announcement names a node here.",
+      "payPlan": "GS",
+      "level": "15",
+      "payLevel": "15",
+      "payPlanAndLevelOnOneRow": true,
+      "reportedPay": null,
+      "series": "0670",
+      "listedTitle": null,
+      "listedTitles": [
+        "Health System Administrator (Associate Director) - Detail NTE 1 Year",
+        "Health System Administrator- Associate Medical Center Director",
+        "Health Systems Administrator (Associate Director)",
+        "Health Systems Administrator (Associate Director) - Not to Exceed 1 Year"
+      ],
+      "announcementCount": 5,
+      "announcements": [
+        {
+          "id": "848110500",
+          "url": "https://www.usajobs.gov/job/848110500",
+          "title": "Health Systems Administrator (Associate Director) - Not to Exceed 1 Year",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Kansas City VA Medical Center",
+          "locations": [
+            "Kansas City, MO"
+          ],
+          "openDate": "2025-10-14",
+          "closeDate": "2025-10-20",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "feee1da21bd92d70dae71fbc553051f1f191e655406b759abeb303cb33200b24",
+          "fetchedAt": "2026-10-06T04:16:39Z"
+        },
+        {
+          "id": "848756100",
+          "url": "https://www.usajobs.gov/job/848756100",
+          "title": "Health System Administrator- Associate Medical Center Director",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Murfreesboro, TN"
+          ],
+          "openDate": "2025-10-24",
+          "closeDate": "2025-11-03",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "04d6b0e04e99667d2dbd952c9ca24c33f1d706e4e1a30080cb4b7931b4ea865a",
+          "fetchedAt": "2026-10-06T04:16:47Z"
+        },
+        {
+          "id": "860101900",
+          "url": "https://www.usajobs.gov/job/860101900",
+          "title": "Health Systems Administrator (Associate Director) - Not to Exceed 1 Year",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Marion VA Health Care System",
+          "locations": [
+            "Evansville, IL",
+            "Marion, IL"
+          ],
+          "openDate": "2026-03-05",
+          "closeDate": "2026-03-10",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "48b0d5624b3d20fe14c87f91e493932fa72acf2d6e47cbb24c35cf2571a23f80",
+          "fetchedAt": "2026-10-06T04:16:43Z"
+        },
+        {
+          "id": "863018500",
+          "url": "https://www.usajobs.gov/job/863018500",
+          "title": "Health System Administrator (Associate Director) - Detail NTE 1 Year",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "South Texas VA Health Care System (STVHCS)",
+          "locations": [
+            "San Antonio, TX"
+          ],
+          "openDate": "2026-03-30",
+          "closeDate": "2026-04-03",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "9dc46e571391811c03ff7c7895c4632c0ec6ea95d28765a4d24f77233c8cc188",
+          "fetchedAt": "2026-10-06T04:16:35Z"
+        },
+        {
+          "id": "880101300",
+          "url": "https://www.usajobs.gov/job/880101300",
+          "title": "Health Systems Administrator (Associate Director)",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Fort Harrison, MT"
+          ],
+          "openDate": "2026-08-11",
+          "closeDate": "2026-08-21",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "2399d8f0cf9cde9f502ddc91631e0e930291bd27fc40988298d100c7b98cd4da",
+          "fetchedAt": "2026-10-06T04:16:51Z"
+        }
+      ],
+      "facilities": [
+        {
+          "id": "848110500",
+          "hiringOrganization": "Kansas City VA Medical Center",
+          "locations": [
+            "Kansas City, MO"
+          ]
+        },
+        {
+          "id": "848756100",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Murfreesboro, TN"
+          ]
+        },
+        {
+          "id": "860101900",
+          "hiringOrganization": "Marion VA Health Care System",
+          "locations": [
+            "Evansville, IL",
+            "Marion, IL"
+          ]
+        },
+        {
+          "id": "863018500",
+          "hiringOrganization": "South Texas VA Health Care System (STVHCS)",
+          "locations": [
+            "San Antonio, TX"
+          ]
+        },
+        {
+          "id": "880101300",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Fort Harrison, MT"
+          ]
+        }
+      ],
+      "edition": "USAJOBS vacancy announcements 848110500, 848756100, 860101900, 863018500, 880101300",
+      "period": "announcements opened 2025-10-14 to 2026-08-11",
+      "url": "https://www.usajobs.gov/job/848110500",
+      "checkedAt": "2026-10-06T04:16:51Z",
+      "valuesFrom": "vacancy_announcements",
+      "statement": "5 USAJOBS announcements, at Kansas City VA Medical Center (Kansas City, MO); Veterans Health Administration (Murfreesboro, TN); Marion VA Health Care System (Evansville, IL, Marion, IL); South Texas VA Health Care System (STVHCS) (San Antonio, TX); Veterans Health Administration (Fort Harrison, MT), list a post of this title family at GS-15. Each states the pay plan and grade of one vacancy at one facility on a date; none names this node, and the identification of the title family is reviewed. The announcements' own salaries include locality pay and are not published here.",
+      "nodeId": "exec-dept-va-vha-visn-7-southeast-vamc-vamc-associate-director-administrative"
+    },
+    "exec-dept-va-vha-visn-8-sunshine-fl-vamc-vamc-associate-director-administrative": {
+      "source": "usajobs_vacancy_announcements",
+      "method": "pay_plan_and_grade_stated_by_every_usajobs_announcement_for_the_title_family",
+      "family": "vamc_associate_director_administrative",
+      "familyRule": "whole_name_under_parent",
+      "basis": "Each announcement advertises the Associate Director of a VA medical centre or health care system -- the administrative associate director beside the Medical Center Director, the Chief of Staff and the Associate Director for Patient Care Services -- in series 0670, Health System Administration. This graph's 'VAMC Associate Director (Administrative)' is that post, drawn once per VISN grouping as a template; the identification is reviewed, and no announcement names a node here.",
+      "payPlan": "GS",
+      "level": "15",
+      "payLevel": "15",
+      "payPlanAndLevelOnOneRow": true,
+      "reportedPay": null,
+      "series": "0670",
+      "listedTitle": null,
+      "listedTitles": [
+        "Health System Administrator (Associate Director) - Detail NTE 1 Year",
+        "Health System Administrator- Associate Medical Center Director",
+        "Health Systems Administrator (Associate Director)",
+        "Health Systems Administrator (Associate Director) - Not to Exceed 1 Year"
+      ],
+      "announcementCount": 5,
+      "announcements": [
+        {
+          "id": "848110500",
+          "url": "https://www.usajobs.gov/job/848110500",
+          "title": "Health Systems Administrator (Associate Director) - Not to Exceed 1 Year",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Kansas City VA Medical Center",
+          "locations": [
+            "Kansas City, MO"
+          ],
+          "openDate": "2025-10-14",
+          "closeDate": "2025-10-20",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "feee1da21bd92d70dae71fbc553051f1f191e655406b759abeb303cb33200b24",
+          "fetchedAt": "2026-10-06T04:16:39Z"
+        },
+        {
+          "id": "848756100",
+          "url": "https://www.usajobs.gov/job/848756100",
+          "title": "Health System Administrator- Associate Medical Center Director",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Murfreesboro, TN"
+          ],
+          "openDate": "2025-10-24",
+          "closeDate": "2025-11-03",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "04d6b0e04e99667d2dbd952c9ca24c33f1d706e4e1a30080cb4b7931b4ea865a",
+          "fetchedAt": "2026-10-06T04:16:47Z"
+        },
+        {
+          "id": "860101900",
+          "url": "https://www.usajobs.gov/job/860101900",
+          "title": "Health Systems Administrator (Associate Director) - Not to Exceed 1 Year",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Marion VA Health Care System",
+          "locations": [
+            "Evansville, IL",
+            "Marion, IL"
+          ],
+          "openDate": "2026-03-05",
+          "closeDate": "2026-03-10",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "48b0d5624b3d20fe14c87f91e493932fa72acf2d6e47cbb24c35cf2571a23f80",
+          "fetchedAt": "2026-10-06T04:16:43Z"
+        },
+        {
+          "id": "863018500",
+          "url": "https://www.usajobs.gov/job/863018500",
+          "title": "Health System Administrator (Associate Director) - Detail NTE 1 Year",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "South Texas VA Health Care System (STVHCS)",
+          "locations": [
+            "San Antonio, TX"
+          ],
+          "openDate": "2026-03-30",
+          "closeDate": "2026-04-03",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "9dc46e571391811c03ff7c7895c4632c0ec6ea95d28765a4d24f77233c8cc188",
+          "fetchedAt": "2026-10-06T04:16:35Z"
+        },
+        {
+          "id": "880101300",
+          "url": "https://www.usajobs.gov/job/880101300",
+          "title": "Health Systems Administrator (Associate Director)",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Fort Harrison, MT"
+          ],
+          "openDate": "2026-08-11",
+          "closeDate": "2026-08-21",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "2399d8f0cf9cde9f502ddc91631e0e930291bd27fc40988298d100c7b98cd4da",
+          "fetchedAt": "2026-10-06T04:16:51Z"
+        }
+      ],
+      "facilities": [
+        {
+          "id": "848110500",
+          "hiringOrganization": "Kansas City VA Medical Center",
+          "locations": [
+            "Kansas City, MO"
+          ]
+        },
+        {
+          "id": "848756100",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Murfreesboro, TN"
+          ]
+        },
+        {
+          "id": "860101900",
+          "hiringOrganization": "Marion VA Health Care System",
+          "locations": [
+            "Evansville, IL",
+            "Marion, IL"
+          ]
+        },
+        {
+          "id": "863018500",
+          "hiringOrganization": "South Texas VA Health Care System (STVHCS)",
+          "locations": [
+            "San Antonio, TX"
+          ]
+        },
+        {
+          "id": "880101300",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Fort Harrison, MT"
+          ]
+        }
+      ],
+      "edition": "USAJOBS vacancy announcements 848110500, 848756100, 860101900, 863018500, 880101300",
+      "period": "announcements opened 2025-10-14 to 2026-08-11",
+      "url": "https://www.usajobs.gov/job/848110500",
+      "checkedAt": "2026-10-06T04:16:51Z",
+      "valuesFrom": "vacancy_announcements",
+      "statement": "5 USAJOBS announcements, at Kansas City VA Medical Center (Kansas City, MO); Veterans Health Administration (Murfreesboro, TN); Marion VA Health Care System (Evansville, IL, Marion, IL); South Texas VA Health Care System (STVHCS) (San Antonio, TX); Veterans Health Administration (Fort Harrison, MT), list a post of this title family at GS-15. Each states the pay plan and grade of one vacancy at one facility on a date; none names this node, and the identification of the title family is reviewed. The announcements' own salaries include locality pay and are not published here.",
+      "nodeId": "exec-dept-va-vha-visn-8-sunshine-fl-vamc-vamc-associate-director-administrative"
+    },
+    "exec-dept-va-vha-visn-9-mid-south-vamc-vamc-associate-director-administrative": {
+      "source": "usajobs_vacancy_announcements",
+      "method": "pay_plan_and_grade_stated_by_every_usajobs_announcement_for_the_title_family",
+      "family": "vamc_associate_director_administrative",
+      "familyRule": "whole_name_under_parent",
+      "basis": "Each announcement advertises the Associate Director of a VA medical centre or health care system -- the administrative associate director beside the Medical Center Director, the Chief of Staff and the Associate Director for Patient Care Services -- in series 0670, Health System Administration. This graph's 'VAMC Associate Director (Administrative)' is that post, drawn once per VISN grouping as a template; the identification is reviewed, and no announcement names a node here.",
+      "payPlan": "GS",
+      "level": "15",
+      "payLevel": "15",
+      "payPlanAndLevelOnOneRow": true,
+      "reportedPay": null,
+      "series": "0670",
+      "listedTitle": null,
+      "listedTitles": [
+        "Health System Administrator (Associate Director) - Detail NTE 1 Year",
+        "Health System Administrator- Associate Medical Center Director",
+        "Health Systems Administrator (Associate Director)",
+        "Health Systems Administrator (Associate Director) - Not to Exceed 1 Year"
+      ],
+      "announcementCount": 5,
+      "announcements": [
+        {
+          "id": "848110500",
+          "url": "https://www.usajobs.gov/job/848110500",
+          "title": "Health Systems Administrator (Associate Director) - Not to Exceed 1 Year",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Kansas City VA Medical Center",
+          "locations": [
+            "Kansas City, MO"
+          ],
+          "openDate": "2025-10-14",
+          "closeDate": "2025-10-20",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "feee1da21bd92d70dae71fbc553051f1f191e655406b759abeb303cb33200b24",
+          "fetchedAt": "2026-10-06T04:16:39Z"
+        },
+        {
+          "id": "848756100",
+          "url": "https://www.usajobs.gov/job/848756100",
+          "title": "Health System Administrator- Associate Medical Center Director",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Murfreesboro, TN"
+          ],
+          "openDate": "2025-10-24",
+          "closeDate": "2025-11-03",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "04d6b0e04e99667d2dbd952c9ca24c33f1d706e4e1a30080cb4b7931b4ea865a",
+          "fetchedAt": "2026-10-06T04:16:47Z"
+        },
+        {
+          "id": "860101900",
+          "url": "https://www.usajobs.gov/job/860101900",
+          "title": "Health Systems Administrator (Associate Director) - Not to Exceed 1 Year",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Marion VA Health Care System",
+          "locations": [
+            "Evansville, IL",
+            "Marion, IL"
+          ],
+          "openDate": "2026-03-05",
+          "closeDate": "2026-03-10",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "48b0d5624b3d20fe14c87f91e493932fa72acf2d6e47cbb24c35cf2571a23f80",
+          "fetchedAt": "2026-10-06T04:16:43Z"
+        },
+        {
+          "id": "863018500",
+          "url": "https://www.usajobs.gov/job/863018500",
+          "title": "Health System Administrator (Associate Director) - Detail NTE 1 Year",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "South Texas VA Health Care System (STVHCS)",
+          "locations": [
+            "San Antonio, TX"
+          ],
+          "openDate": "2026-03-30",
+          "closeDate": "2026-04-03",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "9dc46e571391811c03ff7c7895c4632c0ec6ea95d28765a4d24f77233c8cc188",
+          "fetchedAt": "2026-10-06T04:16:35Z"
+        },
+        {
+          "id": "880101300",
+          "url": "https://www.usajobs.gov/job/880101300",
+          "title": "Health Systems Administrator (Associate Director)",
+          "department": "Department of Veterans Affairs",
+          "agency": "Veterans Health Administration",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Fort Harrison, MT"
+          ],
+          "openDate": "2026-08-11",
+          "closeDate": "2026-08-21",
+          "payScaleAndGrade": "GS 15",
+          "series": [
+            {
+              "code": "0670",
+              "name": "Health System Administration"
+            }
+          ],
+          "documentSha256": "2399d8f0cf9cde9f502ddc91631e0e930291bd27fc40988298d100c7b98cd4da",
+          "fetchedAt": "2026-10-06T04:16:51Z"
+        }
+      ],
+      "facilities": [
+        {
+          "id": "848110500",
+          "hiringOrganization": "Kansas City VA Medical Center",
+          "locations": [
+            "Kansas City, MO"
+          ]
+        },
+        {
+          "id": "848756100",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Murfreesboro, TN"
+          ]
+        },
+        {
+          "id": "860101900",
+          "hiringOrganization": "Marion VA Health Care System",
+          "locations": [
+            "Evansville, IL",
+            "Marion, IL"
+          ]
+        },
+        {
+          "id": "863018500",
+          "hiringOrganization": "South Texas VA Health Care System (STVHCS)",
+          "locations": [
+            "San Antonio, TX"
+          ]
+        },
+        {
+          "id": "880101300",
+          "hiringOrganization": "Veterans Health Administration",
+          "locations": [
+            "Fort Harrison, MT"
+          ]
+        }
+      ],
+      "edition": "USAJOBS vacancy announcements 848110500, 848756100, 860101900, 863018500, 880101300",
+      "period": "announcements opened 2025-10-14 to 2026-08-11",
+      "url": "https://www.usajobs.gov/job/848110500",
+      "checkedAt": "2026-10-06T04:16:51Z",
+      "valuesFrom": "vacancy_announcements",
+      "statement": "5 USAJOBS announcements, at Kansas City VA Medical Center (Kansas City, MO); Veterans Health Administration (Murfreesboro, TN); Marion VA Health Care System (Evansville, IL, Marion, IL); South Texas VA Health Care System (STVHCS) (San Antonio, TX); Veterans Health Administration (Fort Harrison, MT), list a post of this title family at GS-15. Each states the pay plan and grade of one vacancy at one facility on a date; none names this node, and the identification of the title family is reviewed. The announcements' own salaries include locality pay and are not published here.",
+      "nodeId": "exec-dept-va-vha-visn-9-mid-south-vamc-vamc-associate-director-administrative"
+    }
+  }
+}

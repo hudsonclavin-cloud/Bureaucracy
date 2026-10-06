@@ -11,22 +11,22 @@ this project publishes is one a committed document states and a matcher re-deriv
 on every run; nothing here is a number somebody reports.
 
 - nodes in the published graph: **5,510**
-- showing a figure a document states (measured cost or salary): **1,366**
-- carrying an apportioned estimate, withheld unless asked for: **683**
-- positions no document prices: **3,395**
+- showing a figure a document states (measured cost or salary): **1,403**
+- carrying an apportioned estimate, withheld unless asked for: **681**
+- positions no document prices: **3,360**
 - no figure now and none from any route (negative pool, replaced unit, below a cent): **66**
 
 | class | nodes | what it means | route |
 |---|---|---|---|
 | Measured — a Treasury accounting line | 30 | The receipts and transfers the Monthly Treasury Statement nets inside a unit's published total, carried as explicit children so the arithmetic closes, plus Interest on the Public Debt and the government-wide offsetting receipts. Not organisations. | Nothing to do: these ARE the statement's own lines. |
-| Measured — the Treasury's own figure for the unit | 140 | The root's anchor and every Table 5 line applied to the node it names (`cost_status: official`). The only costs this graph calls measured. | Nothing to do for the node; the statement is re-fetched and re-applied on each run. |
+| Measured — the Treasury's own figure for the unit | 142 | The root's anchor and every Table 5 line applied to the node it names (`cost_status: official`). The only costs this graph calls measured. | Nothing to do for the node; the statement is re-fetched and re-applied on each run. |
 | Estimate — a committee or subcommittee | 240 | An apportioned share of the chamber's measured total. No line of Table 5 names a committee, so no Treasury alias can ever reach one of these. | The documents that state committee spending are the chambers' own: the House's quarterly Statement of Disbursements (disbursements.house.gov) and the Senate's semiannual Report of the Secretary of the Senate (senate.gov). Both are large PDFs on `.gov` hosts, neither has been fetched, and the figure each prints is disbursements for a period — a basis `financial_evidence.BASES` would have to name, beside its own heading, never as Table 5 net outlays. A reviewed decision before any build. |
 | Estimate — with a sourced figure already published beside it | 34 | An apportioned share, and beside it at least one figure an official source states for this unit under its own heading: USAspending File A gross outlays (fiscal year to date), OMB's Public Budget Database outlays (last completed year, summed over the unit's account rows), or Treasury's audited Statement of Net Cost (last completed year). Each is on the panel today; none is headed COST, because each measures something different from the Treasury's net outlays on a different clock. | The decision is the owner's, not a build: whether the headline may fall back to one of these, labelled by its basis and period, when the Treasury prints no line — the same move the panel makes since 2026-10-05 for a post's salary. Measured on the 94 nodes that carry both, not one OMB FY2025 figure agrees with the Treasury line within 1%, so a fallback would be a different number under a different label, never the same claim. |
-| Estimate — no sourced figure of any kind | 409 | An apportioned share of an ancestor's measured total, divided among siblings by budget, headcount or subtree size. Table 5 stops at the bureau, so divisions, regional offices, laboratories, centres and the courts beneath a circuit print no line of their own. | Three routes, in order of reach: OMB's Public Budget Database bureau rows (committed; 72 bureaus matched so far, more need a node whose name the file carries); USAspending File B by Treasury Account Symbol, which reaches programme level and has not been fetched; an agency's own Agency Financial Report. Each yields a figure beside the estimate, not a cost, until the decision above is made. |
-| Salary — a pay claim an official document supports | 1,196 | A position carrying at least one of the ten pay fields: a printed rate, a schedule level priced by OPM's table, a statutory rate, a roster figure, a derivation the block carries in the open, twelve months of a printed monthly military rate, or a range. Since 2026-10-05 it is the post's headline figure, headed as pay and never as COST. | Nothing to do for the node; each pay field is re-derived from its committed document on every run and withdrawn when the document stops supporting it. |
+| Estimate — no sourced figure of any kind | 407 | An apportioned share of an ancestor's measured total, divided among siblings by budget, headcount or subtree size. Table 5 stops at the bureau, so divisions, regional offices, laboratories, centres and the courts beneath a circuit print no line of their own. | Three routes, in order of reach: OMB's Public Budget Database bureau rows (committed; 72 bureaus matched so far, more need a node whose name the file carries); USAspending File B by Treasury Account Symbol, which reaches programme level and has not been fetched; an agency's own Agency Financial Report. Each yields a figure beside the estimate, not a cost, until the decision above is made. |
+| Salary — a pay claim an official document supports | 1,231 | A position carrying at least one of the ten pay fields: a printed rate, a schedule level priced by OPM's table, a statutory rate, a roster figure, a derivation the block carries in the open, twelve months of a printed monthly military rate, or a range. Since 2026-10-05 it is the post's headline figure, headed as pay and never as COST. | Nothing to do for the node; each pay field is re-derived from its committed document on every run and withdrawn when the document stops supporting it. |
 | Post with no figure — stands for several holders | 750 | The node's name states a multiplicity and no claim that holds for every holder has reached it. An incumbency-shaped claim (one listing's level, one row of the current export) is refused on such a node because it is one appointment's figure, not the group's. | A tier, a statutory rate, a parity provision or a roster listing every holder at one figure IS published on such a node with a `holders` block. Finding which pay SYSTEM governs the title is the useful step: it lets the graph carry the schedule rather than a rate. `docs/UNPRICED_POSITIONS.md` lists every one. |
 | Post with no figure — OPM lists it and prints no rate | 18 | The PLUM archive or the current export names the title under this organisation but the Level/Grade/Pay cell carries a rank or is empty, and no salary table this project has read prices that pay plan. | A salary table for the pay plan (AD, OT and the others) where OPM publishes one; most of these plans have none, and the honest state is a listing with no figure. |
-| Post with no figure — no document this project has read names the title | 2,627 | Not a coverage gap somebody has not got to: no pay document in the repository names this title under this organisation, so nothing could have reached it. | The research prompt pack `docs/PAY_SOURCE_RESEARCH_PROMPT_3.md` names every one of these titles and asks for the DOCUMENT, not the figure. Research batches are run against it, and what each bought — and what each got wrong — is in `CURATION.md` §19. |
+| Post with no figure — no document this project has read names the title | 2,592 | Not a coverage gap somebody has not got to: no pay document in the repository names this title under this organisation, so nothing could have reached it. | The research prompt pack `docs/PAY_SOURCE_RESEARCH_PROMPT_3.md` names every one of these titles and asks for the DOCUMENT, not the figure. Research batches are run against it, and what each bought — and what each got wrong — is in `CURATION.md` §19. |
 | No figure — beneath a Treasury pool that nets below zero | 30 | The unit above publishes the Treasury's net figure and its measured lines already reach or exceed it (the Executive Office of the President nets to −$1.24bn), so nothing remains to apportion. Published `unavailable` rather than a guess. | USAspending File A gross outlays already sit beside the blank for several EOP offices. A cost would need the Treasury to print a line for the unit, which it does not. |
 | No figure — a unit the government has replaced | 36 | Marked `lifecycle: superseded` from an official page's own words. Kept with its sources as a record of what the government used to be; takes no share and gives none. | Never: a replaced unit has no current cost by construction. |
 | No figure — the share rounds below one cent | 0 | An apportioned share so small it rounds below a cent, published `unavailable` rather than $0. | Moves only when the pool above it is re-divided. |
@@ -43,11 +43,11 @@ Where Table 5 stops is visible in which TYPES carry an estimate and no line:
 | Committee | 0 | 0 | 45 |
 | Regional Office | 35 | 0 | 0 |
 | Bureau | 32 | 2 | 0 |
-| Office | 29 | 2 | 0 |
+| Office | 28 | 2 | 0 |
 | Museum/Unit | 24 | 0 | 0 |
 | Defense Agency | 22 | 0 | 0 |
 | National Laboratory | 17 | 0 | 0 |
-| Agency | 8 | 7 | 0 |
+| Agency | 7 | 7 | 0 |
 | Presidential Library | 14 | 0 | 0 |
 | Circuit Court | 13 | 0 | 0 |
 | Directorate | 12 | 0 | 0 |
@@ -105,7 +105,7 @@ The receipts and transfers the Monthly Treasury Statement nets inside a unit's p
 - `exec-ind-ssa--treasury-receipts` — Offsetting receipts and intrabudgetary transactions (Treasury accounting line; under Social Security Administration (SSA))
 - `treasury-undistributed-offsetting-receipts` — Undistributed offsetting receipts (Treasury accounting line; under The Constitution of the United States)
 
-## Measured — the Treasury's own figure for the unit — 140
+## Measured — the Treasury's own figure for the unit — 142
 
 The root's anchor and every Table 5 line applied to the node it names (`cost_status: official`). The only costs this graph calls measured.
 
@@ -156,12 +156,14 @@ The root's anchor and every Table 5 line applied to the node it names (`cost_sta
 - `exec-dept-dhs-uscis` — U.S. Citizenship & Immigration Services (USCIS) (Component Agency; under Department of Homeland Security (DHS)) — beside it: ombBudget
 - `exec-dept-dhs-uscg` — U.S. Coast Guard (Component Agency; under Department of Homeland Security (DHS)) — beside it: ombBudget
 - `exec-dept-dhs-usss` — U.S. Secret Service (USSS) (Component Agency; under Department of Homeland Security (DHS)) — beside it: ombBudget
+- `exec-dept-hud-ginnie` — Ginnie Mae (Agency; under Department of Housing & Urban Development (HUD))
 - `exec-dept-hud-cpd` — Office of Community Planning & Development (CPD) (Office; under Department of Housing & Urban Development (HUD))
 - `exec-dept-hud-pih` — Office of Public & Indian Housing (PIH) (Office; under Department of Housing & Urban Development (HUD))
 - `exec-dept-doj-atf` — Bureau of Alcohol, Tobacco, Firearms & Explosives (ATF) (Bureau; under Department of Justice (DOJ)) — beside it: ombBudget
 - `exec-dept-doj-bop` — Bureau of Prisons (BOP) (Bureau; under Department of Justice (DOJ))
 - `exec-dept-doj-dea` — Drug Enforcement Administration (DEA) (Bureau; under Department of Justice (DOJ)) — beside it: ombBudget
 - `exec-dept-doj-fbi` — Federal Bureau of Investigation (FBI) (Bureau; under Department of Justice (DOJ)) — beside it: ombBudget
+- `exec-dept-doj-office-community-oriented-policing-services` — Office of Community Oriented Policing Services (Office; under Department of Justice (DOJ))
 - `exec-dept-doj-office-justice-programs` — Office of Justice Programs (Office; under Department of Justice (DOJ))
 - `exec-dept-doj-usao` — U.S. Attorneys Office (USAO — 94 Districts) (Bureau; under Department of Justice (DOJ))
 - `exec-dept-doj-usms` — U.S. Marshals Service (USMS) (Bureau; under Department of Justice (DOJ))
@@ -540,7 +542,7 @@ An apportioned share, and beside it at least one figure an official source state
 - `exec-ind-misc-u-s-international-development-finance-corp-dfc` — U.S. International Development Finance Corporation (Independent Agency; under Other Independent Agencies (25+)) — beside it: usaspendingOutlays, auditedNetCost
 - `jud-specialized-cavc` — Court of Appeals for Veterans Claims (CAVC) (Specialized Court; under Specialized Federal Courts) — beside it: usaspendingOutlays
 
-## Estimate — no sourced figure of any kind — 409
+## Estimate — no sourced figure of any kind — 407
 
 An apportioned share of an ancestor's measured total, divided among siblings by budget, headcount or subtree size. Table 5 stops at the bureau, so divisions, regional offices, laboratories, centres and the courts beneath a circuit print no line of their own.
 
@@ -617,7 +619,6 @@ An apportioned share of an ancestor's measured total, divided among siblings by 
 - `exec-dept-doe-sc` — Office of Science (SC) (Office; under Department of Energy (DOE))
 - `exec-dept-hhs-agency-toxic-substances-disease-registry` — Agency for Toxic Substances and Disease Registry (Operating Division; under Department of Health & Human Services (HHS))
 - `exec-dept-hud-fha` — Federal Housing Administration (FHA) (Agency; under Department of Housing & Urban Development (HUD))
-- `exec-dept-hud-ginnie` — Ginnie Mae (Agency; under Department of Housing & Urban Development (HUD))
 - `exec-dept-hud-region-i-new-england` — Region I - Boston (Regional Office; under Department of Housing & Urban Development (HUD))
 - `exec-dept-hud-region-ii-new-york` — Region II - New York (Regional Office; under Department of Housing & Urban Development (HUD))
 - `exec-dept-hud-region-iii-mid-atlantic` — Region III - Philadelphia (Regional Office; under Department of Housing & Urban Development (HUD))
@@ -637,7 +638,6 @@ An apportioned share of an ancestor's measured total, divided among siblings by 
 - `exec-dept-doj-foreign-claims-settlement-commission` — Foreign Claims Settlement Commission of the United States (Office; under Department of Justice (DOJ))
 - `exec-dept-doj-international-criminal-police-organization-washington` — International Criminal Police Organization (INTERPOL)-Washington (Bureau; under Department of Justice (DOJ))
 - `exec-dept-doj-div-nsd` — National Security Division (Division; under Department of Justice (DOJ))
-- `exec-dept-doj-office-community-oriented-policing-services` — Office of Community Oriented Policing Services (Office; under Department of Justice (DOJ))
 - `exec-dept-doj-solicitor` — Office of the Solicitor General (Office; under Department of Justice (DOJ))
 - `exec-dept-doj-office-violence-against-women` — Office on Violence Against Women (Office; under Department of Justice (DOJ))
 - `exec-dept-doj-div-tax` — Tax Division (Division; under Department of Justice (DOJ))
@@ -956,7 +956,7 @@ An apportioned share of an ancestor's measured total, divided among siblings by 
 - `exec-dept-va-vha-visn-4` — VISN 4 (Regional Office; under Veterans Integrated Service Networks)
 - `exec-dept-va-vha-visn-5` — VISN 5 (Regional Office; under Veterans Integrated Service Networks)
 
-## Salary — a pay claim an official document supports — 1,196
+## Salary — a pay claim an official document supports — 1,231
 
 A position carrying at least one of the ten pay fields: a printed rate, a schedule level priced by OPM's table, a statutory rate, a roster figure, a derivation the block carries in the open, twelve months of a printed monthly military rate, or a range. Since 2026-10-05 it is the post's headline figure, headed as pay and never as COST.
 
@@ -980,7 +980,7 @@ The PLUM archive or the current export names the title under this organisation b
 
 Listed one per line, with its reason, in `docs/UNPRICED_POSITIONS.md`; not repeated here.
 
-## Post with no figure — no document this project has read names the title — 2,627
+## Post with no figure — no document this project has read names the title — 2,592
 
 Not a coverage gap somebody has not got to: no pay document in the repository names this title under this organisation, so nothing could have reached it.
 

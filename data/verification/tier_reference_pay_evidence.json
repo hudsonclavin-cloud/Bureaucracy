@@ -1,5 +1,5 @@
 {
-  "_note": "Derived by scripts/derive_tier_reference_pay_evidence.py from committed U.S. Code sections and OPM's Salary Table No. 2026-EX. No document states these figures for these posts: a statute sets each post's pay by reference to an Executive Schedule level (the Inspector General Act adds 3 percent) and the table prices the level. Never a cost; never a source that the post exists.",
+  "_note": "Derived by scripts/derive_tier_reference_pay_evidence.py from committed U.S. Code sections and OPM's Salary Table No. 2026-EX. No document states these figures for these posts: a statute -- or a Reorganization Plan or a chamber's pay order the Code prints outside its sections -- sets each post's pay by reference to an Executive Schedule level (the Inspector General Act adds 3 percent) and the table prices the level. Never a cost; never a source that the post exists.",
   "source": "statutory_tier_reference_pay",
   "report": {
     "source": "statutory_tier_reference_pay",
@@ -14,10 +14,25 @@
         "sha256": "a53d25abfa1198cc60e1f460c4eb596cc27327f9413200722e600733ea052932",
         "fetched_at": "2026-10-06T00:45:19Z"
       },
+      "aoc_2_usc_1808_govinfo2024.html": {
+        "url": "https://www.govinfo.gov/link/uscode/2/1808?link-type=html",
+        "sha256": "ec9b50b5a0f26906083a613a161bdef125426b0f5d0fa85d876df8c4b9223fcb",
+        "fetched_at": "2026-10-06T04:14:59Z"
+      },
       "arc_40_usc_14301_govinfo2024.html": {
         "url": "https://www.govinfo.gov/link/uscode/40/14301?link-type=html",
         "sha256": "5e8475437bcdabd78a19ce48200de5a5ed444a160d8a28760d94c17049651583",
         "fetched_at": "2026-10-06T00:00:05Z"
+      },
+      "cbo_2_usc_4575_govinfo2024.html": {
+        "url": "https://www.govinfo.gov/link/uscode/2/4575?link-type=html",
+        "sha256": "c675e55f2f76292eb83e9ef814a4988a920461e7a91c79bc63b6211046166ebb",
+        "fetched_at": "2026-10-06T04:14:55Z"
+      },
+      "cbo_2_usc_601.html": {
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title2-section601&num=0&edition=prelim",
+        "sha256": "4d4eb282f660737360e3cda081b5a5f436fece16c788a9e0272265aa531c8b44",
+        "fetched_at": "2026-09-28T19:22:49Z"
       },
       "cncs_42_usc_12651c_govinfo2024.html": {
         "url": "https://www.govinfo.gov/link/uscode/42/12651c?link-type=html",
@@ -48,6 +63,11 @@
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title31-section703&num=0&edition=prelim",
         "sha256": "bea4dd6d430c5148d0086bf25aef5cda0928821e85213dcf1d9f7205d5c4c015",
         "fetched_at": "2026-09-27T22:10:20Z"
+      },
+      "gao_31_usc_705_govinfo2024.html": {
+        "url": "https://www.govinfo.gov/link/uscode/31/705?link-type=html",
+        "sha256": "962ddbe5e310e1f65f058a4b664c65392fffea6f59f2983dd6c3311a9a3ea172",
+        "fetched_at": "2026-10-06T04:15:06Z"
       },
       "gao_31_usc_731_govinfo2024.html": {
         "url": "https://www.govinfo.gov/link/uscode/31/731?link-type=html",
@@ -114,10 +134,41 @@
         "sha256": "12042655e60800ad7b365c88e3739389817beac3651722d382bdfecfb19676b9",
         "fetched_at": "2026-10-06T00:45:22Z"
       },
+      "uscp_2_usc_1909_govinfo2024.html": {
+        "url": "https://www.govinfo.gov/link/uscode/2/1909?link-type=html",
+        "sha256": "78b95278387a810e98d08997e4512913b29ae2dacd62648ec95e65aeb2605008",
+        "fetched_at": "2026-10-06T04:15:02Z"
+      },
       "usss_5_usc_10203_govinfo2024.html": {
         "url": "https://www.govinfo.gov/link/uscode/5/10203?link-type=html",
         "sha256": "eed9f242e958af0ad5a0c7fbaee96ea4bf8ba91626507fe5052a5f0b0804b6c6",
         "fetched_at": "2026-10-05T23:55:45Z"
+      }
+    },
+    "instruments": {
+      "order-of-the-president-pro-tempore-2024-03-25": {
+        "name": "Order of the President pro tempore of the Senate of March 25, 2024",
+        "url": "https://www.govinfo.gov/link/uscode/2/4571?link-type=html",
+        "sha256": "50349db7e89f961318d989825dbb13cb7f5582f4a2bfd044002fac345e4dddbe",
+        "fetched_at": "2026-10-06T04:15:06Z"
+      },
+      "order-of-the-speaker-2025-01-17": {
+        "name": "Order of the Speaker of the House of Representatives of January 17, 2025",
+        "url": "https://www.govinfo.gov/link/uscode/2/4532?link-type=html",
+        "sha256": "802953ae6bec884d13c4460e39f90bc72dea2d6f7b2d47dfcceff866046f92be",
+        "fetched_at": "2026-10-06T04:15:07Z"
+      },
+      "reorganization-plan-no-3-of-1979": {
+        "name": "Reorganization Plan No. 3 of 1979",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-app-reorganiz.htm",
+        "sha256": "71eadef8ca108d8da8faac8033fe8476475ee9beec0e391d3c20145b6528c398",
+        "fetched_at": "2026-10-06T04:16:55Z"
+      },
+      "reorganization-plan-no-4-of-1970": {
+        "name": "Reorganization Plan No. 4 of 1970",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-app-reorganiz.htm",
+        "sha256": "71eadef8ca108d8da8faac8033fe8476475ee9beec0e391d3c20145b6528c398",
+        "fetched_at": "2026-10-06T04:16:55Z"
       }
     },
     "establishments": [
@@ -158,10 +209,14 @@
       "National Reconnaissance Office"
     ],
     "inspectorGeneralNodesConsidered": 81,
-    "reviewedRows": 25,
-    "priced": 52,
-    "pricedByReviewedRow": 25,
+    "reviewedRows": 30,
+    "instrumentRows": 7,
+    "pricedByInstrument": 7,
+    "priced": 64,
+    "pricedByReviewedRow": 37,
     "pricedInspectorsGeneral": 27,
+    "pricedThroughASecondStatute": 1,
+    "pricedAtAStatedAmountLess": 4,
     "documentsStatingTheFigure": 0,
     "strengthScale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
     "refused": {},
@@ -180,8 +235,10 @@
       "exec-dept-defense-agency-mda-inspector-general": "Missile Defense Agency (MDA): the node's organisation is not one 5 U.S.C. 401(1) lists, so 403(e) does not set its pay: a designated Federal entity's IG (5 U.S.C. 415, read and committed, prints no rate of pay), a Defense agency's stamped 'Inspector General' beneath the Department's own, a legislative office's, or the CIA's (5 U.S.C. 423, not read)",
       "exec-dept-defense-agency-nga-inspector-general": "National Geospatial-Intelligence Agency (NGA): the node's organisation is not one 5 U.S.C. 401(1) lists, so 403(e) does not set its pay: a designated Federal entity's IG (5 U.S.C. 415, read and committed, prints no rate of pay), a Defense agency's stamped 'Inspector General' beneath the Department's own, a legislative office's, or the CIA's (5 U.S.C. 423, not read)",
       "exec-dept-defense-agency-pfpa-inspector-general": "Pentagon Force Protection Agency (PFPA): the node's organisation is not one 5 U.S.C. 401(1) lists, so 403(e) does not set its pay: a designated Federal entity's IG (5 U.S.C. 415, read and committed, prints no rate of pay), a Defense agency's stamped 'Inspector General' beneath the Department's own, a legislative office's, or the CIA's (5 U.S.C. 423, not read)",
+      "exec-dept-doc-noaa-administrator-noaa": "Reorganization Plan No. 4 of 1970, §2(b), sets the Administrator at Level III; 15 U.S.C. 1503b already prices the same office at the same level and is left as it is",
       "exec-dept-doj-fbi-inspector-general-doj-ig-covers-fbi": "Federal Bureau of Investigation (FBI): the node's organisation is not one 5 U.S.C. 401(1) lists, so 403(e) does not set its pay: a designated Federal entity's IG (5 U.S.C. 415, read and committed, prints no rate of pay), a Defense agency's stamped 'Inspector General' beneath the Department's own, a legislative office's, or the CIA's (5 U.S.C. 423, not read)",
       "exec-ind-cia-inspector-general": "Central Intelligence Agency (CIA): the node's organisation is not one 5 U.S.C. 401(1) lists, so 403(e) does not set its pay: a designated Federal entity's IG (5 U.S.C. 415, read and committed, prints no rate of pay), a Defense agency's stamped 'Inspector General' beneath the Department's own, a legislative office's, or the CIA's (5 U.S.C. 423, not read)",
+      "exec-ind-epa-administrator-epa": "Reorganization Plan No. 3 of 1970, §1(b), creates the office (\"There shall be at the head of the Agency the Administrator of the Environmental Protection Agency\") and states no rate or level; the node already carries OPM's listed rate, which a figure set by reference never displaces",
       "exec-ind-misc-american-battle-monuments-commission-abmc-inspector-general": "American Battle Monuments Commission (ABMC): the node's organisation is not one 5 U.S.C. 401(1) lists, so 403(e) does not set its pay: a designated Federal entity's IG (5 U.S.C. 415, read and committed, prints no rate of pay), a Defense agency's stamped 'Inspector General' beneath the Department's own, a legislative office's, or the CIA's (5 U.S.C. 423, not read)",
       "exec-ind-misc-americorps-inspector-general": "AmeriCorps: 5 U.S.C. 401(1) lists the Corporation for National and Community Service; this graph calls it AmeriCorps and carries the statutory name only in node_aliases.json, which no join that lands a number may read",
       "exec-ind-misc-appalachian-regional-commission-arc-inspector-general": "Appalachian Regional Commission (ARC): the node's organisation is not one 5 U.S.C. 401(1) lists, so 403(e) does not set its pay: a designated Federal entity's IG (5 U.S.C. 415, read and committed, prints no rate of pay), a Defense agency's stamped 'Inspector General' beneath the Department's own, a legislative office's, or the CIA's (5 U.S.C. 423, not read)",
@@ -216,16 +273,14 @@
       "exec-regulatory-fmc-inspector-general": "Federal Maritime Commission (FMC): the node's organisation is not one 5 U.S.C. 401(1) lists, so 403(e) does not set its pay: a designated Federal entity's IG (5 U.S.C. 415, read and committed, prints no rate of pay), a Defense agency's stamped 'Inspector General' beneath the Department's own, a legislative office's, or the CIA's (5 U.S.C. 423, not read)",
       "exec-regulatory-ftc-inspector-general": "Federal Trade Commission (FTC): the node's organisation is not one 5 U.S.C. 401(1) lists, so 403(e) does not set its pay: a designated Federal entity's IG (5 U.S.C. 415, read and committed, prints no rate of pay), a Defense agency's stamped 'Inspector General' beneath the Department's own, a legislative office's, or the CIA's (5 U.S.C. 423, not read)",
       "exec-regulatory-sec-inspector-general": "Securities & Exchange Commission (SEC): the node's organisation is not one 5 U.S.C. 401(1) lists, so 403(e) does not set its pay: a designated Federal entity's IG (5 U.S.C. 415, read and committed, prints no rate of pay), a Defense agency's stamped 'Inspector General' beneath the Department's own, a legislative office's, or the CIA's (5 U.S.C. 423, not read)",
-      "leg-support-aoc-inspector-general": "Architect of the Capitol: the node's organisation is not one 5 U.S.C. 401(1) lists, so 403(e) does not set its pay: a designated Federal entity's IG (5 U.S.C. 415, read and committed, prints no rate of pay), a Defense agency's stamped 'Inspector General' beneath the Department's own, a legislative office's, or the CIA's (5 U.S.C. 423, not read)",
-      "leg-support-gao-inspector-general": "Government Accountability Office (GAO): the node's organisation is not one 5 U.S.C. 401(1) lists, so 403(e) does not set its pay: a designated Federal entity's IG (5 U.S.C. 415, read and committed, prints no rate of pay), a Defense agency's stamped 'Inspector General' beneath the Department's own, a legislative office's, or the CIA's (5 U.S.C. 423, not read)",
-      "leg-support-loc-inspector-general": "Library of Congress: the node's organisation is not one 5 U.S.C. 401(1) lists, so 403(e) does not set its pay: a designated Federal entity's IG (5 U.S.C. 415, read and committed, prints no rate of pay), a Defense agency's stamped 'Inspector General' beneath the Department's own, a legislative office's, or the CIA's (5 U.S.C. 423, not read)",
-      "leg-support-uscp-inspector-general": "U.S. Capitol Police: the node's organisation is not one 5 U.S.C. 401(1) lists, so 403(e) does not set its pay: a designated Federal entity's IG (5 U.S.C. 415, read and committed, prints no rate of pay), a Defense agency's stamped 'Inspector General' beneath the Department's own, a legislative office's, or the CIA's (5 U.S.C. 423, not read)"
+      "leg-senate-offices-legislative-counsel": "a Senator's own staff post named 'Legislative Counsel', not the Senate's Legislative Counsel whom the Order of the President pro tempore names; the Senate's office has no node here",
+      "leg-support-loc-inspector-general": "Library of Congress: the node's organisation is not one 5 U.S.C. 401(1) lists, so 403(e) does not set its pay: a designated Federal entity's IG (5 U.S.C. 415, read and committed, prints no rate of pay), a Defense agency's stamped 'Inspector General' beneath the Department's own, a legislative office's, or the CIA's (5 U.S.C. 423, not read)"
     },
     "notPricedKinds": {
       "not_an_establishment": "the node's organisation is not one 5 U.S.C. 401(1) lists, so 403(e) does not set its pay: a designated Federal entity's IG (5 U.S.C. 415, read and committed, prints no rate of pay), a Defense agency's stamped 'Inspector General' beneath the Department's own, a legislative office's, or the CIA's (5 U.S.C. 423, not read)",
       "americorps_named_only_in_the_alias_table": "5 U.S.C. 401(1) lists the Corporation for National and Community Service; this graph calls it AmeriCorps and carries the statutory name only in node_aliases.json, which no join that lands a number may read"
     },
-    "validated": 52,
+    "validated": 64,
     "rejected": [],
     "conflicts": [],
     "double_counted": []
@@ -329,6 +384,8 @@
       "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
       "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
       "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "viaStatute": null,
+      "viaQuote": null,
       "unitsEvidenceKind": "currency_mark_on_the_figure_the_record_is_computed_from"
     },
     "exec-dept-defense-agency-nsa-inspector-general": {
@@ -429,6 +486,8 @@
       "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
       "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
       "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "viaStatute": null,
+      "viaQuote": null,
       "unitsEvidenceKind": "currency_mark_on_the_figure_the_record_is_computed_from"
     },
     "exec-dept-defense-inspector-general": {
@@ -529,6 +588,8 @@
       "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
       "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
       "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "viaStatute": null,
+      "viaQuote": null,
       "unitsEvidenceKind": "currency_mark_on_the_figure_the_record_is_computed_from"
     },
     "exec-dept-dhs-inspector-general": {
@@ -629,6 +690,8 @@
       "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
       "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
       "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "viaStatute": null,
+      "viaQuote": null,
       "unitsEvidenceKind": "currency_mark_on_the_figure_the_record_is_computed_from"
     },
     "exec-dept-dhs-usss-chief-uniformed-division": {
@@ -705,6 +768,107 @@
       "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
       "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
       "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "viaStatute": null,
+      "viaQuote": null,
+      "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+    },
+    "exec-dept-doc-deputy-secretary-of-department-of-commerce": {
+      "nodeId": "exec-dept-doc-deputy-secretary-of-department-of-commerce",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "basic_pay",
+      "amount": 228000.0,
+      "amountRaw": "228,000",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "Level II $228,000",
+      "quote": "Reorganization Plan No. 3 of 1979 §2(b)(1): “There shall be in the Department of Commerce (hereinafter referred to as the \"Department\") a Deputy Secretary appointed by the President, by and with the advice and consent of the Senate. The Deputy Secretary shall receive compensation at the rate payable for Level II of the Executive Schedule [5 U.S.C. 5313], and shall perform such duties and exercise such powers as the Secretary may from time to time prescribe.” · Salary Table No. 2026-EX, Effective January 2026: Level II $228,000",
+      "fiscalYear": 2026,
+      "periodCoverage": "annual_rate",
+      "periodAsOf": "2026-01-01",
+      "amountScope": "Level II",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "statutory_tier_reference_pay",
+      "sourceUrl": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-app-reorganiz.htm",
+      "documentSha256": "71eadef8ca108d8da8faac8033fe8476475ee9beec0e391d3c20145b6528c398",
+      "retrievedAt": "2026-10-06T04:16:55Z",
+      "locator": {
+        "section": "Reorganization Plan No. 3 of 1979",
+        "subsection": "§2(b)(1)"
+      },
+      "method": "pay_set_by_reference_to_an_executive_schedule_level_joined_to_opm_table",
+      "office": "Deputy Secretary of Commerce",
+      "statute": "Reorganization Plan No. 3 of 1979",
+      "statuteQuote": "There shall be in the Department of Commerce (hereinafter referred to as the \"Department\") a Deputy Secretary appointed by the President, by and with the advice and consent of the Senate. The Deputy Secretary shall receive compensation at the rate payable for Level II of the Executive Schedule [5 U.S.C. 5313], and shall perform such duties and exercise such powers as the Secretary may from time to time prescribe.",
+      "level": "II",
+      "levelText": "Level II",
+      "levelRateText": "$228,000",
+      "levelAmount": 228000.0,
+      "percent": 0,
+      "arithmetic": null,
+      "rateText": "$228,000",
+      "derivation": "Reorganization Plan No. 3 of 1979 §2(b)(1): “There shall be in the Department of Commerce (hereinafter referred to as the \"Department\") a Deputy Secretary appointed by the President, by and with the advice and consent of the Senate. The Deputy Secretary shall receive compensation at the rate payable for Level II of the Executive Schedule [5 U.S.C. 5313], and shall perform such duties and exercise such powers as the Secretary may from time to time prescribe.” · Salary Table No. 2026-EX, Effective January 2026: Level II $228,000",
+      "identification": {
+        "kind": "reviewed_row",
+        "nodeName": "Deputy Secretary of Department of Commerce",
+        "office": "Deputy Secretary of Commerce"
+      },
+      "documents": [
+        {
+          "role": "sets this post's basic pay by reference to Executive Schedule Level II",
+          "citation": "Reorganization Plan No. 3 of 1979, §2(b)(1)",
+          "publisher": "U.S. Government Publishing Office",
+          "edition": "2024 edition of the United States Code",
+          "title": "Reorganization Plan No. 3 of 1979, as printed in 5 U.S.C. App., Reorganization Plans",
+          "quote": "There shall be in the Department of Commerce (hereinafter referred to as the \"Department\") a Deputy Secretary appointed by the President, by and with the advice and consent of the Senate. The Deputy Secretary shall receive compensation at the rate payable for Level II of the Executive Schedule [5 U.S.C. 5313], and shall perform such duties and exercise such powers as the Secretary may from time to time prescribe.",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-app-reorganiz.htm",
+          "documentSha256": "71eadef8ca108d8da8faac8033fe8476475ee9beec0e391d3c20145b6528c398",
+          "retrievedAt": "2026-10-06T04:16:55Z",
+          "statesTheFigure": false,
+          "instrumentKind": "reorganization_plan",
+          "instrumentName": "Reorganization Plan No. 3 of 1979",
+          "instrumentIssuer": "the President",
+          "instrumentDate": "September 25, 1979"
+        },
+        {
+          "role": "states what that Executive Schedule level pays",
+          "citation": "Salary Table No. 2026-EX, Effective January 2026",
+          "publisher": "U.S. Office of Personnel Management",
+          "title": "Salary Table No. 2026-EX",
+          "quote": "Level II $228,000",
+          "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+          "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+          "retrievedAt": "2026-09-11T03:05:36Z",
+          "statesTheFigure": false
+        }
+      ],
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "tableFootnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+      "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "viaStatute": null,
+      "viaQuote": null,
+      "instrument": {
+        "id": "reorganization-plan-no-3-of-1979",
+        "kind": "reorganization_plan",
+        "kindWords": "a Reorganization Plan, transmitted by the President under chapter 9 of Title 5 and in effect, which the United States Code prints in Title 5's Appendix rather than as a section of the Code",
+        "name": "Reorganization Plan No. 3 of 1979",
+        "heading": "REORGANIZATION PLAN NO. 3 OF 1979",
+        "issuer": "the President",
+        "date": "September 25, 1979",
+        "effective": "44 F.R. 69273, 93 Stat. 1381, as amended Pub. L. 97–195, §1(c)(6), June 16, 1982, 96 Stat. 115; Pub. L. 97–377, title I, §122, Dec. 21, 1982, 96 Stat. 1913; Pub. L. 117–328, div. BB, title VI, §604, Dec. 29, 2022, 136 Stat. 5566",
+        "printedIn": "5 U.S.C. App., Reorganization Plans",
+        "publisher": "U.S. Government Publishing Office",
+        "edition": "2024 edition of the United States Code",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-app-reorganiz.htm",
+        "documentSha256": "71eadef8ca108d8da8faac8033fe8476475ee9beec0e391d3c20145b6528c398",
+        "retrievedAt": "2026-10-06T04:16:55Z"
+      },
       "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
     },
     "exec-dept-doc-inspector-general": {
@@ -805,6 +969,8 @@
       "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
       "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
       "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "viaStatute": null,
+      "viaQuote": null,
       "unitsEvidenceKind": "currency_mark_on_the_figure_the_record_is_computed_from"
     },
     "exec-dept-doc-noaa-administrator-noaa": {
@@ -883,6 +1049,206 @@
       "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
       "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
       "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "viaStatute": null,
+      "viaQuote": null,
+      "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+    },
+    "exec-dept-doc-noaa-chief-scientist": {
+      "nodeId": "exec-dept-doc-noaa-chief-scientist",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "basic_pay",
+      "amount": 184900.0,
+      "amountRaw": "184,900",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "Level V $184,900",
+      "quote": "Reorganization Plan No. 4 of 1970 §2(d): “There shall be in the Administration a Chief Scientist of the National Oceanic and Atmospheric Administration who shall be appointed by the President and shall be compensated at the rate now or hereafter provided for Level V of the Executive Schedule Pay Rates (5 U.S.C. 5316).” · Salary Table No. 2026-EX, Effective January 2026: Level V $184,900",
+      "fiscalYear": 2026,
+      "periodCoverage": "annual_rate",
+      "periodAsOf": "2026-01-01",
+      "amountScope": "Level V",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "statutory_tier_reference_pay",
+      "sourceUrl": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-app-reorganiz.htm",
+      "documentSha256": "71eadef8ca108d8da8faac8033fe8476475ee9beec0e391d3c20145b6528c398",
+      "retrievedAt": "2026-10-06T04:16:55Z",
+      "locator": {
+        "section": "Reorganization Plan No. 4 of 1970",
+        "subsection": "§2(d)"
+      },
+      "method": "pay_set_by_reference_to_an_executive_schedule_level_joined_to_opm_table",
+      "office": "Chief Scientist of the National Oceanic and Atmospheric Administration",
+      "statute": "Reorganization Plan No. 4 of 1970",
+      "statuteQuote": "There shall be in the Administration a Chief Scientist of the National Oceanic and Atmospheric Administration who shall be appointed by the President and shall be compensated at the rate now or hereafter provided for Level V of the Executive Schedule Pay Rates (5 U.S.C. 5316).",
+      "level": "V",
+      "levelText": "Level V",
+      "levelRateText": "$184,900",
+      "levelAmount": 184900.0,
+      "percent": 0,
+      "arithmetic": null,
+      "rateText": "$184,900",
+      "derivation": "Reorganization Plan No. 4 of 1970 §2(d): “There shall be in the Administration a Chief Scientist of the National Oceanic and Atmospheric Administration who shall be appointed by the President and shall be compensated at the rate now or hereafter provided for Level V of the Executive Schedule Pay Rates (5 U.S.C. 5316).” · Salary Table No. 2026-EX, Effective January 2026: Level V $184,900",
+      "identification": {
+        "kind": "reviewed_row",
+        "nodeName": "Chief Scientist",
+        "office": "Chief Scientist of the National Oceanic and Atmospheric Administration"
+      },
+      "documents": [
+        {
+          "role": "sets this post's basic pay by reference to Executive Schedule Level V",
+          "citation": "Reorganization Plan No. 4 of 1970, §2(d)",
+          "publisher": "U.S. Government Publishing Office",
+          "edition": "2024 edition of the United States Code",
+          "title": "Reorganization Plan No. 4 of 1970, as printed in 5 U.S.C. App., Reorganization Plans",
+          "quote": "There shall be in the Administration a Chief Scientist of the National Oceanic and Atmospheric Administration who shall be appointed by the President and shall be compensated at the rate now or hereafter provided for Level V of the Executive Schedule Pay Rates (5 U.S.C. 5316).",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-app-reorganiz.htm",
+          "documentSha256": "71eadef8ca108d8da8faac8033fe8476475ee9beec0e391d3c20145b6528c398",
+          "retrievedAt": "2026-10-06T04:16:55Z",
+          "statesTheFigure": false,
+          "instrumentKind": "reorganization_plan",
+          "instrumentName": "Reorganization Plan No. 4 of 1970",
+          "instrumentIssuer": "the President",
+          "instrumentDate": "July 9, 1970"
+        },
+        {
+          "role": "states what that Executive Schedule level pays",
+          "citation": "Salary Table No. 2026-EX, Effective January 2026",
+          "publisher": "U.S. Office of Personnel Management",
+          "title": "Salary Table No. 2026-EX",
+          "quote": "Level V $184,900",
+          "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+          "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+          "retrievedAt": "2026-09-11T03:05:36Z",
+          "statesTheFigure": false
+        }
+      ],
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "tableFootnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+      "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "viaStatute": null,
+      "viaQuote": null,
+      "instrument": {
+        "id": "reorganization-plan-no-4-of-1970",
+        "kind": "reorganization_plan",
+        "kindWords": "a Reorganization Plan, transmitted by the President under chapter 9 of Title 5 and in effect, which the United States Code prints in Title 5's Appendix rather than as a section of the Code",
+        "name": "Reorganization Plan No. 4 of 1970",
+        "heading": "REORGANIZATION PLAN NO. 4 OF 1970",
+        "issuer": "the President",
+        "date": "July 9, 1970",
+        "effective": "Eff. Oct. 3, 1970, 35 F.R. 15627, 84 Stat. 2090, as amended Pub. L. 94–461, §4(c)(1), Oct. 8, 1976, 90 Stat. 1969; Pub. L. 95–219, §3(a)(1), Dec. 28, 1977, 91 Stat. 1613; Pub. L. 98–498, title III, §320(c)(3), Oct. 19, 1984, 98 Stat. 2309; Pub. L. 99–659, title IV, §407(d), Nov. 14, 1986, 100 Stat. 3739; Pub. L. 112–166, §2(b)(1), Aug. 10, 2012, 126 Stat. 1283",
+        "printedIn": "5 U.S.C. App., Reorganization Plans",
+        "publisher": "U.S. Government Publishing Office",
+        "edition": "2024 edition of the United States Code",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-app-reorganiz.htm",
+        "documentSha256": "71eadef8ca108d8da8faac8033fe8476475ee9beec0e391d3c20145b6528c398",
+        "retrievedAt": "2026-10-06T04:16:55Z"
+      },
+      "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+    },
+    "exec-dept-doc-noaa-deputy-administrator": {
+      "nodeId": "exec-dept-doc-noaa-deputy-administrator",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "basic_pay",
+      "amount": 197200.0,
+      "amountRaw": "197,200",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "Level IV $197,200",
+      "quote": "Reorganization Plan No. 4 of 1970 §2(c): “There shall be in the Administration a Deputy Administrator of the National Oceanic and Atmospheric Administration who shall be appointed by the President, by and with the advice and consent of the Senate, and shall be compensated at the rate now or hereafter provided for Level IV of the Executive Schedule Pay Rates (5 U.S.C. 5315).” · Salary Table No. 2026-EX, Effective January 2026: Level IV $197,200",
+      "fiscalYear": 2026,
+      "periodCoverage": "annual_rate",
+      "periodAsOf": "2026-01-01",
+      "amountScope": "Level IV",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "statutory_tier_reference_pay",
+      "sourceUrl": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-app-reorganiz.htm",
+      "documentSha256": "71eadef8ca108d8da8faac8033fe8476475ee9beec0e391d3c20145b6528c398",
+      "retrievedAt": "2026-10-06T04:16:55Z",
+      "locator": {
+        "section": "Reorganization Plan No. 4 of 1970",
+        "subsection": "§2(c)"
+      },
+      "method": "pay_set_by_reference_to_an_executive_schedule_level_joined_to_opm_table",
+      "office": "Deputy Administrator of the National Oceanic and Atmospheric Administration",
+      "statute": "Reorganization Plan No. 4 of 1970",
+      "statuteQuote": "There shall be in the Administration a Deputy Administrator of the National Oceanic and Atmospheric Administration who shall be appointed by the President, by and with the advice and consent of the Senate, and shall be compensated at the rate now or hereafter provided for Level IV of the Executive Schedule Pay Rates (5 U.S.C. 5315).",
+      "level": "IV",
+      "levelText": "Level IV",
+      "levelRateText": "$197,200",
+      "levelAmount": 197200.0,
+      "percent": 0,
+      "arithmetic": null,
+      "rateText": "$197,200",
+      "derivation": "Reorganization Plan No. 4 of 1970 §2(c): “There shall be in the Administration a Deputy Administrator of the National Oceanic and Atmospheric Administration who shall be appointed by the President, by and with the advice and consent of the Senate, and shall be compensated at the rate now or hereafter provided for Level IV of the Executive Schedule Pay Rates (5 U.S.C. 5315).” · Salary Table No. 2026-EX, Effective January 2026: Level IV $197,200",
+      "identification": {
+        "kind": "reviewed_row",
+        "nodeName": "Deputy Administrator",
+        "office": "Deputy Administrator of the National Oceanic and Atmospheric Administration"
+      },
+      "documents": [
+        {
+          "role": "sets this post's basic pay by reference to Executive Schedule Level IV",
+          "citation": "Reorganization Plan No. 4 of 1970, §2(c)",
+          "publisher": "U.S. Government Publishing Office",
+          "edition": "2024 edition of the United States Code",
+          "title": "Reorganization Plan No. 4 of 1970, as printed in 5 U.S.C. App., Reorganization Plans",
+          "quote": "There shall be in the Administration a Deputy Administrator of the National Oceanic and Atmospheric Administration who shall be appointed by the President, by and with the advice and consent of the Senate, and shall be compensated at the rate now or hereafter provided for Level IV of the Executive Schedule Pay Rates (5 U.S.C. 5315).",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-app-reorganiz.htm",
+          "documentSha256": "71eadef8ca108d8da8faac8033fe8476475ee9beec0e391d3c20145b6528c398",
+          "retrievedAt": "2026-10-06T04:16:55Z",
+          "statesTheFigure": false,
+          "instrumentKind": "reorganization_plan",
+          "instrumentName": "Reorganization Plan No. 4 of 1970",
+          "instrumentIssuer": "the President",
+          "instrumentDate": "July 9, 1970"
+        },
+        {
+          "role": "states what that Executive Schedule level pays",
+          "citation": "Salary Table No. 2026-EX, Effective January 2026",
+          "publisher": "U.S. Office of Personnel Management",
+          "title": "Salary Table No. 2026-EX",
+          "quote": "Level IV $197,200",
+          "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+          "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+          "retrievedAt": "2026-09-11T03:05:36Z",
+          "statesTheFigure": false
+        }
+      ],
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "tableFootnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+      "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "viaStatute": null,
+      "viaQuote": null,
+      "instrument": {
+        "id": "reorganization-plan-no-4-of-1970",
+        "kind": "reorganization_plan",
+        "kindWords": "a Reorganization Plan, transmitted by the President under chapter 9 of Title 5 and in effect, which the United States Code prints in Title 5's Appendix rather than as a section of the Code",
+        "name": "Reorganization Plan No. 4 of 1970",
+        "heading": "REORGANIZATION PLAN NO. 4 OF 1970",
+        "issuer": "the President",
+        "date": "July 9, 1970",
+        "effective": "Eff. Oct. 3, 1970, 35 F.R. 15627, 84 Stat. 2090, as amended Pub. L. 94–461, §4(c)(1), Oct. 8, 1976, 90 Stat. 1969; Pub. L. 95–219, §3(a)(1), Dec. 28, 1977, 91 Stat. 1613; Pub. L. 98–498, title III, §320(c)(3), Oct. 19, 1984, 98 Stat. 2309; Pub. L. 99–659, title IV, §407(d), Nov. 14, 1986, 100 Stat. 3739; Pub. L. 112–166, §2(b)(1), Aug. 10, 2012, 126 Stat. 1283",
+        "printedIn": "5 U.S.C. App., Reorganization Plans",
+        "publisher": "U.S. Government Publishing Office",
+        "edition": "2024 edition of the United States Code",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-app-reorganiz.htm",
+        "documentSha256": "71eadef8ca108d8da8faac8033fe8476475ee9beec0e391d3c20145b6528c398",
+        "retrievedAt": "2026-10-06T04:16:55Z"
+      },
       "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
     },
     "exec-dept-doe-inspector-general": {
@@ -983,6 +1349,8 @@
       "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
       "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
       "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "viaStatute": null,
+      "viaQuote": null,
       "unitsEvidenceKind": "currency_mark_on_the_figure_the_record_is_computed_from"
     },
     "exec-dept-doe-nnsa-administrator-nnsa": {
@@ -1061,6 +1429,8 @@
       "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
       "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
       "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "viaStatute": null,
+      "viaQuote": null,
       "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
     },
     "exec-dept-doi-inspector-general": {
@@ -1161,6 +1531,8 @@
       "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
       "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
       "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "viaStatute": null,
+      "viaQuote": null,
       "unitsEvidenceKind": "currency_mark_on_the_figure_the_record_is_computed_from"
     },
     "exec-dept-doj-inspector-general": {
@@ -1261,6 +1633,8 @@
       "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
       "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
       "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "viaStatute": null,
+      "viaQuote": null,
       "unitsEvidenceKind": "currency_mark_on_the_figure_the_record_is_computed_from"
     },
     "exec-dept-dol-inspector-general": {
@@ -1361,6 +1735,8 @@
       "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
       "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
       "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "viaStatute": null,
+      "viaQuote": null,
       "unitsEvidenceKind": "currency_mark_on_the_figure_the_record_is_computed_from"
     },
     "exec-dept-dot-inspector-general": {
@@ -1461,6 +1837,8 @@
       "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
       "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
       "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "viaStatute": null,
+      "viaQuote": null,
       "unitsEvidenceKind": "currency_mark_on_the_figure_the_record_is_computed_from"
     },
     "exec-dept-ed-ies-commissioner-national-center-for-education-evaluation-ncee": {
@@ -1549,6 +1927,8 @@
       "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
       "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
       "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "viaStatute": null,
+      "viaQuote": null,
       "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
     },
     "exec-dept-ed-ies-commissioner-national-center-for-education-research-ncer": {
@@ -1637,6 +2017,8 @@
       "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
       "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
       "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "viaStatute": null,
+      "viaQuote": null,
       "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
     },
     "exec-dept-ed-ies-commissioner-national-center-for-education-statistics-nces": {
@@ -1713,6 +2095,8 @@
       "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
       "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
       "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "viaStatute": null,
+      "viaQuote": null,
       "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
     },
     "exec-dept-ed-ies-director-ies": {
@@ -1789,6 +2173,8 @@
       "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
       "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
       "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "viaStatute": null,
+      "viaQuote": null,
       "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
     },
     "exec-dept-ed-inspector-general": {
@@ -1889,6 +2275,8 @@
       "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
       "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
       "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "viaStatute": null,
+      "viaQuote": null,
       "unitsEvidenceKind": "currency_mark_on_the_figure_the_record_is_computed_from"
     },
     "exec-dept-hhs-inspector-general": {
@@ -1989,6 +2377,8 @@
       "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
       "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
       "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "viaStatute": null,
+      "viaQuote": null,
       "unitsEvidenceKind": "currency_mark_on_the_figure_the_record_is_computed_from"
     },
     "exec-dept-hud-inspector-general": {
@@ -2089,6 +2479,8 @@
       "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
       "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
       "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "viaStatute": null,
+      "viaQuote": null,
       "unitsEvidenceKind": "currency_mark_on_the_figure_the_record_is_computed_from"
     },
     "exec-dept-state-inspector-general": {
@@ -2189,6 +2581,8 @@
       "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
       "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
       "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "viaStatute": null,
+      "viaQuote": null,
       "unitsEvidenceKind": "currency_mark_on_the_figure_the_record_is_computed_from"
     },
     "exec-dept-treasury-inspector-general": {
@@ -2289,6 +2683,8 @@
       "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
       "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
       "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "viaStatute": null,
+      "viaQuote": null,
       "unitsEvidenceKind": "currency_mark_on_the_figure_the_record_is_computed_from"
     },
     "exec-dept-usda-inspector-general": {
@@ -2389,6 +2785,8 @@
       "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
       "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
       "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "viaStatute": null,
+      "viaQuote": null,
       "unitsEvidenceKind": "currency_mark_on_the_figure_the_record_is_computed_from"
     },
     "exec-dept-va-inspector-general": {
@@ -2489,6 +2887,8 @@
       "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
       "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
       "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "viaStatute": null,
+      "viaQuote": null,
       "unitsEvidenceKind": "currency_mark_on_the_figure_the_record_is_computed_from"
     },
     "exec-ind-epa-inspector-general": {
@@ -2589,6 +2989,8 @@
       "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
       "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
       "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "viaStatute": null,
+      "viaQuote": null,
       "unitsEvidenceKind": "currency_mark_on_the_figure_the_record_is_computed_from"
     },
     "exec-ind-misc-americorps-director-administrator-chair-americorps": {
@@ -2677,6 +3079,8 @@
       "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
       "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
       "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "viaStatute": null,
+      "viaQuote": null,
       "unitsEvidenceKind": "currency_mark_on_the_figure_the_record_is_computed_from"
     },
     "exec-ind-misc-appalachian-regional-commission-arc-director-administrator-chair-appalachian-regional-commission": {
@@ -2755,6 +3159,8 @@
       "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
       "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
       "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "viaStatute": null,
+      "viaQuote": null,
       "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
     },
     "exec-ind-misc-broadcasting-board-of-governors-usagm-director-administrator-chair-broadcasting-board-of-governors-usagm": {
@@ -2833,6 +3239,8 @@
       "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
       "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
       "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "viaStatute": null,
+      "viaQuote": null,
       "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
     },
     "exec-ind-misc-election-assistance-commission-eac-deputy-director-vice-chair": {
@@ -2911,6 +3319,8 @@
       "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
       "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
       "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "viaStatute": null,
+      "viaQuote": null,
       "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
     },
     "exec-ind-misc-election-assistance-commission-eac-director-administrator-chair-election-assistance-commission": {
@@ -2989,6 +3399,8 @@
       "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
       "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
       "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "viaStatute": null,
+      "viaQuote": null,
       "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
     },
     "exec-ind-misc-export-import-bank-of-the-u-s-inspector-general": {
@@ -3089,6 +3501,8 @@
       "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
       "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
       "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "viaStatute": null,
+      "viaQuote": null,
       "unitsEvidenceKind": "currency_mark_on_the_figure_the_record_is_computed_from"
     },
     "exec-ind-misc-farm-credit-administration-director-administrator-chair-farm-credit-administration": {
@@ -3165,6 +3579,8 @@
       "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
       "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
       "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "viaStatute": null,
+      "viaQuote": null,
       "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
     },
     "exec-ind-misc-federal-election-commission-fec-deputy-director-vice-chair": {
@@ -3243,6 +3659,8 @@
       "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
       "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
       "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "viaStatute": null,
+      "viaQuote": null,
       "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
     },
     "exec-ind-misc-federal-election-commission-fec-director-administrator-chair-federal-election-commission": {
@@ -3321,6 +3739,8 @@
       "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
       "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
       "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "viaStatute": null,
+      "viaQuote": null,
       "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
     },
     "exec-ind-misc-privacy-civil-liberties-oversight-board-pclob-director-administrator-chair-privacy-civil-liberties-oversight-board": {
@@ -3399,6 +3819,8 @@
       "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
       "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
       "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "viaStatute": null,
+      "viaQuote": null,
       "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
     },
     "exec-ind-misc-tennessee-valley-authority-tva-inspector-general": {
@@ -3499,6 +3921,8 @@
       "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
       "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
       "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "viaStatute": null,
+      "viaQuote": null,
       "unitsEvidenceKind": "currency_mark_on_the_figure_the_record_is_computed_from"
     },
     "exec-ind-nara-archivist-of-the-united-states": {
@@ -3575,6 +3999,8 @@
       "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
       "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
       "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "viaStatute": null,
+      "viaQuote": null,
       "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
     },
     "exec-ind-nasa-inspector-general": {
@@ -3675,6 +4101,8 @@
       "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
       "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
       "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "viaStatute": null,
+      "viaQuote": null,
       "unitsEvidenceKind": "currency_mark_on_the_figure_the_record_is_computed_from"
     },
     "exec-ind-opm-inspector-general": {
@@ -3775,6 +4203,8 @@
       "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
       "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
       "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "viaStatute": null,
+      "viaQuote": null,
       "unitsEvidenceKind": "currency_mark_on_the_figure_the_record_is_computed_from"
     },
     "exec-ind-sba-inspector-general": {
@@ -3875,6 +4305,8 @@
       "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
       "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
       "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "viaStatute": null,
+      "viaQuote": null,
       "unitsEvidenceKind": "currency_mark_on_the_figure_the_record_is_computed_from"
     },
     "exec-ind-ssa-inspector-general": {
@@ -3975,6 +4407,8 @@
       "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
       "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
       "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "viaStatute": null,
+      "viaQuote": null,
       "unitsEvidenceKind": "currency_mark_on_the_figure_the_record_is_computed_from"
     },
     "exec-regulatory-fcc-inspector-general": {
@@ -4075,6 +4509,8 @@
       "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
       "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
       "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "viaStatute": null,
+      "viaQuote": null,
       "unitsEvidenceKind": "currency_mark_on_the_figure_the_record_is_computed_from"
     },
     "exec-regulatory-fdic-inspector-general": {
@@ -4175,6 +4611,8 @@
       "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
       "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
       "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "viaStatute": null,
+      "viaQuote": null,
       "unitsEvidenceKind": "currency_mark_on_the_figure_the_record_is_computed_from"
     },
     "exec-regulatory-nrc-inspector-general": {
@@ -4275,7 +4713,415 @@
       "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
       "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
       "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "viaStatute": null,
+      "viaQuote": null,
       "unitsEvidenceKind": "currency_mark_on_the_figure_the_record_is_computed_from"
+    },
+    "leg-house-cao-chief-administrative-officer": {
+      "nodeId": "leg-house-cao-chief-administrative-officer",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "basic_pay",
+      "amount": 228000.0,
+      "amountRaw": "228,000",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "Level II $228,000",
+      "quote": "Order of the Speaker of the House of Representatives of January 17, 2025 sec. 1(a): “The annual rate of pay for the Clerk, the Sergeant-at-Arms, the Chief Administrative Officer, the Chaplain, the General Counsel to the House, the Inspector General, the Director of Interparliamentary Affairs, the Attending Physician, and one additional position in the Office of the Sergeant at Arms with duties related to emergency preparedness, planning and operations shall be equal to the annual rate of basic pay for level II of the Executive Schedule under section 5313 of title 5, United States Code, including any adjustment to such rate after the date of this Order.” · Salary Table No. 2026-EX, Effective January 2026: Level II $228,000",
+      "fiscalYear": 2026,
+      "periodCoverage": "annual_rate",
+      "periodAsOf": "2026-01-01",
+      "amountScope": "Level II",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "statutory_tier_reference_pay",
+      "sourceUrl": "https://www.govinfo.gov/link/uscode/2/4532?link-type=html",
+      "documentSha256": "802953ae6bec884d13c4460e39f90bc72dea2d6f7b2d47dfcceff866046f92be",
+      "retrievedAt": "2026-10-06T04:15:07Z",
+      "locator": {
+        "section": "Order of the Speaker of the House of Representatives of January 17, 2025",
+        "subsection": "sec. 1(a)"
+      },
+      "method": "pay_set_by_reference_to_an_executive_schedule_level_joined_to_opm_table",
+      "office": "Chief Administrative Officer of the House of Representatives",
+      "statute": "Order of the Speaker of the House of Representatives of January 17, 2025",
+      "statuteQuote": "The annual rate of pay for the Clerk, the Sergeant-at-Arms, the Chief Administrative Officer, the Chaplain, the General Counsel to the House, the Inspector General, the Director of Interparliamentary Affairs, the Attending Physician, and one additional position in the Office of the Sergeant at Arms with duties related to emergency preparedness, planning and operations shall be equal to the annual rate of basic pay for level II of the Executive Schedule under section 5313 of title 5, United States Code, including any adjustment to such rate after the date of this Order.",
+      "level": "II",
+      "levelText": "Level II",
+      "levelRateText": "$228,000",
+      "levelAmount": 228000.0,
+      "percent": 0,
+      "arithmetic": null,
+      "rateText": "$228,000",
+      "derivation": "Order of the Speaker of the House of Representatives of January 17, 2025 sec. 1(a): “The annual rate of pay for the Clerk, the Sergeant-at-Arms, the Chief Administrative Officer, the Chaplain, the General Counsel to the House, the Inspector General, the Director of Interparliamentary Affairs, the Attending Physician, and one additional position in the Office of the Sergeant at Arms with duties related to emergency preparedness, planning and operations shall be equal to the annual rate of basic pay for level II of the Executive Schedule under section 5313 of title 5, United States Code, including any adjustment to such rate after the date of this Order.” · Salary Table No. 2026-EX, Effective January 2026: Level II $228,000",
+      "identification": {
+        "kind": "reviewed_row",
+        "nodeName": "Chief Administrative Officer",
+        "office": "Chief Administrative Officer of the House of Representatives"
+      },
+      "documents": [
+        {
+          "role": "sets this post's basic pay by reference to Executive Schedule Level II",
+          "citation": "Order of the Speaker of the House of Representatives of January 17, 2025, sec. 1(a)",
+          "publisher": "U.S. Government Publishing Office",
+          "edition": "2024 edition of the United States Code",
+          "title": "Order of the Speaker of the House of Representatives of January 17, 2025, as printed in a Statutory Note to 2 U.S.C. 4532, 2024 edition of the United States Code",
+          "quote": "The annual rate of pay for the Clerk, the Sergeant-at-Arms, the Chief Administrative Officer, the Chaplain, the General Counsel to the House, the Inspector General, the Director of Interparliamentary Affairs, the Attending Physician, and one additional position in the Office of the Sergeant at Arms with duties related to emergency preparedness, planning and operations shall be equal to the annual rate of basic pay for level II of the Executive Schedule under section 5313 of title 5, United States Code, including any adjustment to such rate after the date of this Order.",
+          "url": "https://www.govinfo.gov/link/uscode/2/4532?link-type=html",
+          "documentSha256": "802953ae6bec884d13c4460e39f90bc72dea2d6f7b2d47dfcceff866046f92be",
+          "retrievedAt": "2026-10-06T04:15:07Z",
+          "statesTheFigure": false,
+          "instrumentKind": "chamber_pay_order",
+          "instrumentName": "Order of the Speaker of the House of Representatives of January 17, 2025",
+          "instrumentIssuer": "the Speaker of the House of Representatives",
+          "instrumentDate": "January 17, 2025",
+          "laterOrderCaution": "This is the Order of the Speaker of the House of Representatives of January 17, 2025, as the 2024 edition of the United States Code reprints it in a Statutory Note to 2 U.S.C. 4532. A later order of the Speaker exists that this repository has not read, and it may have changed this rate."
+        },
+        {
+          "role": "states what that Executive Schedule level pays",
+          "citation": "Salary Table No. 2026-EX, Effective January 2026",
+          "publisher": "U.S. Office of Personnel Management",
+          "title": "Salary Table No. 2026-EX",
+          "quote": "Level II $228,000",
+          "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+          "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+          "retrievedAt": "2026-09-11T03:05:36Z",
+          "statesTheFigure": false
+        }
+      ],
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "tableFootnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+      "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "viaStatute": null,
+      "viaQuote": null,
+      "instrument": {
+        "id": "order-of-the-speaker-2025-01-17",
+        "kind": "chamber_pay_order",
+        "kindWords": "a pay order issued under a statute by the officer the statute names, which the United States Code reprints only in a Statutory Note beneath a section, not as a section of the Code",
+        "name": "Order of the Speaker of the House of Representatives of January 17, 2025",
+        "heading": "Order of the Speaker of the House of Representatives",
+        "issuer": "the Speaker of the House of Representatives",
+        "date": "January 17, 2025",
+        "effective": "This Order shall be effective January 1, 2025, and each provision herein shall continue in place until such time as it is superseded by the issuance of a future Order.",
+        "printedIn": "a Statutory Note to 2 U.S.C. 4532, 2024 edition of the United States Code",
+        "publisher": "U.S. Government Publishing Office",
+        "edition": "2024 edition of the United States Code",
+        "url": "https://www.govinfo.gov/link/uscode/2/4532?link-type=html",
+        "documentSha256": "802953ae6bec884d13c4460e39f90bc72dea2d6f7b2d47dfcceff866046f92be",
+        "retrievedAt": "2026-10-06T04:15:07Z",
+        "laterOrderCaution": "This is the Order of the Speaker of the House of Representatives of January 17, 2025, as the 2024 edition of the United States Code reprints it in a Statutory Note to 2 U.S.C. 4532. A later order of the Speaker exists that this repository has not read, and it may have changed this rate."
+      },
+      "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+    },
+    "leg-house-clerk-clerk-of-the-house": {
+      "nodeId": "leg-house-clerk-clerk-of-the-house",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "basic_pay",
+      "amount": 228000.0,
+      "amountRaw": "228,000",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "Level II $228,000",
+      "quote": "Order of the Speaker of the House of Representatives of January 17, 2025 sec. 1(a): “The annual rate of pay for the Clerk, the Sergeant-at-Arms, the Chief Administrative Officer, the Chaplain, the General Counsel to the House, the Inspector General, the Director of Interparliamentary Affairs, the Attending Physician, and one additional position in the Office of the Sergeant at Arms with duties related to emergency preparedness, planning and operations shall be equal to the annual rate of basic pay for level II of the Executive Schedule under section 5313 of title 5, United States Code, including any adjustment to such rate after the date of this Order.” · Salary Table No. 2026-EX, Effective January 2026: Level II $228,000",
+      "fiscalYear": 2026,
+      "periodCoverage": "annual_rate",
+      "periodAsOf": "2026-01-01",
+      "amountScope": "Level II",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "statutory_tier_reference_pay",
+      "sourceUrl": "https://www.govinfo.gov/link/uscode/2/4532?link-type=html",
+      "documentSha256": "802953ae6bec884d13c4460e39f90bc72dea2d6f7b2d47dfcceff866046f92be",
+      "retrievedAt": "2026-10-06T04:15:07Z",
+      "locator": {
+        "section": "Order of the Speaker of the House of Representatives of January 17, 2025",
+        "subsection": "sec. 1(a)"
+      },
+      "method": "pay_set_by_reference_to_an_executive_schedule_level_joined_to_opm_table",
+      "office": "Clerk of the House of Representatives",
+      "statute": "Order of the Speaker of the House of Representatives of January 17, 2025",
+      "statuteQuote": "The annual rate of pay for the Clerk, the Sergeant-at-Arms, the Chief Administrative Officer, the Chaplain, the General Counsel to the House, the Inspector General, the Director of Interparliamentary Affairs, the Attending Physician, and one additional position in the Office of the Sergeant at Arms with duties related to emergency preparedness, planning and operations shall be equal to the annual rate of basic pay for level II of the Executive Schedule under section 5313 of title 5, United States Code, including any adjustment to such rate after the date of this Order.",
+      "level": "II",
+      "levelText": "Level II",
+      "levelRateText": "$228,000",
+      "levelAmount": 228000.0,
+      "percent": 0,
+      "arithmetic": null,
+      "rateText": "$228,000",
+      "derivation": "Order of the Speaker of the House of Representatives of January 17, 2025 sec. 1(a): “The annual rate of pay for the Clerk, the Sergeant-at-Arms, the Chief Administrative Officer, the Chaplain, the General Counsel to the House, the Inspector General, the Director of Interparliamentary Affairs, the Attending Physician, and one additional position in the Office of the Sergeant at Arms with duties related to emergency preparedness, planning and operations shall be equal to the annual rate of basic pay for level II of the Executive Schedule under section 5313 of title 5, United States Code, including any adjustment to such rate after the date of this Order.” · Salary Table No. 2026-EX, Effective January 2026: Level II $228,000",
+      "identification": {
+        "kind": "reviewed_row",
+        "nodeName": "Clerk of the House",
+        "office": "Clerk of the House of Representatives"
+      },
+      "documents": [
+        {
+          "role": "sets this post's basic pay by reference to Executive Schedule Level II",
+          "citation": "Order of the Speaker of the House of Representatives of January 17, 2025, sec. 1(a)",
+          "publisher": "U.S. Government Publishing Office",
+          "edition": "2024 edition of the United States Code",
+          "title": "Order of the Speaker of the House of Representatives of January 17, 2025, as printed in a Statutory Note to 2 U.S.C. 4532, 2024 edition of the United States Code",
+          "quote": "The annual rate of pay for the Clerk, the Sergeant-at-Arms, the Chief Administrative Officer, the Chaplain, the General Counsel to the House, the Inspector General, the Director of Interparliamentary Affairs, the Attending Physician, and one additional position in the Office of the Sergeant at Arms with duties related to emergency preparedness, planning and operations shall be equal to the annual rate of basic pay for level II of the Executive Schedule under section 5313 of title 5, United States Code, including any adjustment to such rate after the date of this Order.",
+          "url": "https://www.govinfo.gov/link/uscode/2/4532?link-type=html",
+          "documentSha256": "802953ae6bec884d13c4460e39f90bc72dea2d6f7b2d47dfcceff866046f92be",
+          "retrievedAt": "2026-10-06T04:15:07Z",
+          "statesTheFigure": false,
+          "instrumentKind": "chamber_pay_order",
+          "instrumentName": "Order of the Speaker of the House of Representatives of January 17, 2025",
+          "instrumentIssuer": "the Speaker of the House of Representatives",
+          "instrumentDate": "January 17, 2025",
+          "laterOrderCaution": "This is the Order of the Speaker of the House of Representatives of January 17, 2025, as the 2024 edition of the United States Code reprints it in a Statutory Note to 2 U.S.C. 4532. A later order of the Speaker exists that this repository has not read, and it may have changed this rate."
+        },
+        {
+          "role": "states what that Executive Schedule level pays",
+          "citation": "Salary Table No. 2026-EX, Effective January 2026",
+          "publisher": "U.S. Office of Personnel Management",
+          "title": "Salary Table No. 2026-EX",
+          "quote": "Level II $228,000",
+          "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+          "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+          "retrievedAt": "2026-09-11T03:05:36Z",
+          "statesTheFigure": false
+        }
+      ],
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "tableFootnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+      "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "viaStatute": null,
+      "viaQuote": null,
+      "instrument": {
+        "id": "order-of-the-speaker-2025-01-17",
+        "kind": "chamber_pay_order",
+        "kindWords": "a pay order issued under a statute by the officer the statute names, which the United States Code reprints only in a Statutory Note beneath a section, not as a section of the Code",
+        "name": "Order of the Speaker of the House of Representatives of January 17, 2025",
+        "heading": "Order of the Speaker of the House of Representatives",
+        "issuer": "the Speaker of the House of Representatives",
+        "date": "January 17, 2025",
+        "effective": "This Order shall be effective January 1, 2025, and each provision herein shall continue in place until such time as it is superseded by the issuance of a future Order.",
+        "printedIn": "a Statutory Note to 2 U.S.C. 4532, 2024 edition of the United States Code",
+        "publisher": "U.S. Government Publishing Office",
+        "edition": "2024 edition of the United States Code",
+        "url": "https://www.govinfo.gov/link/uscode/2/4532?link-type=html",
+        "documentSha256": "802953ae6bec884d13c4460e39f90bc72dea2d6f7b2d47dfcceff866046f92be",
+        "retrievedAt": "2026-10-06T04:15:07Z",
+        "laterOrderCaution": "This is the Order of the Speaker of the House of Representatives of January 17, 2025, as the 2024 edition of the United States Code reprints it in a Statutory Note to 2 U.S.C. 4532. A later order of the Speaker exists that this repository has not read, and it may have changed this rate."
+      },
+      "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+    },
+    "leg-senate-admin-saa-sergeant-at-arms": {
+      "nodeId": "leg-senate-admin-saa-sergeant-at-arms",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "basic_pay",
+      "amount": 228000.0,
+      "amountRaw": "228,000",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "Level II $228,000",
+      "quote": "Order of the President pro tempore of the Senate of March 25, 2024 sec. 2(a): “The annual rates of compensation of the Secretary of the Senate, the Sergeant at Arms and Doorkeeper, and the Legislative Counsel shall each be equal to the annual rate for level II.” · Salary Table No. 2026-EX, Effective January 2026: Level II $228,000",
+      "fiscalYear": 2026,
+      "periodCoverage": "annual_rate",
+      "periodAsOf": "2026-01-01",
+      "amountScope": "Level II",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "statutory_tier_reference_pay",
+      "sourceUrl": "https://www.govinfo.gov/link/uscode/2/4571?link-type=html",
+      "documentSha256": "50349db7e89f961318d989825dbb13cb7f5582f4a2bfd044002fac345e4dddbe",
+      "retrievedAt": "2026-10-06T04:15:06Z",
+      "locator": {
+        "section": "Order of the President pro tempore of the Senate of March 25, 2024",
+        "subsection": "sec. 2(a)"
+      },
+      "method": "pay_set_by_reference_to_an_executive_schedule_level_joined_to_opm_table",
+      "office": "Sergeant at Arms and Doorkeeper of the Senate",
+      "statute": "Order of the President pro tempore of the Senate of March 25, 2024",
+      "statuteQuote": "The annual rates of compensation of the Secretary of the Senate, the Sergeant at Arms and Doorkeeper, and the Legislative Counsel shall each be equal to the annual rate for level II.",
+      "level": "II",
+      "levelText": "Level II",
+      "levelRateText": "$228,000",
+      "levelAmount": 228000.0,
+      "percent": 0,
+      "arithmetic": null,
+      "rateText": "$228,000",
+      "derivation": "Order of the President pro tempore of the Senate of March 25, 2024 sec. 2(a): “The annual rates of compensation of the Secretary of the Senate, the Sergeant at Arms and Doorkeeper, and the Legislative Counsel shall each be equal to the annual rate for level II.” · Salary Table No. 2026-EX, Effective January 2026: Level II $228,000",
+      "identification": {
+        "kind": "reviewed_row",
+        "nodeName": "Sergeant at Arms",
+        "office": "Sergeant at Arms and Doorkeeper of the Senate",
+        "instrumentDefines": "the term \"annual rate for level II\" means the annual rate of basic pay for level II of the Executive Schedule under section 5313 of title 5, United States Code, including any adjustment to such rate after the date of this Order"
+      },
+      "documents": [
+        {
+          "role": "sets this post's basic pay by reference to Executive Schedule Level II",
+          "citation": "Order of the President pro tempore of the Senate of March 25, 2024, sec. 2(a)",
+          "publisher": "U.S. Government Publishing Office",
+          "edition": "2024 edition of the United States Code",
+          "title": "Order of the President pro tempore of the Senate of March 25, 2024, as printed in a Statutory Note to 2 U.S.C. 4571, 2024 edition of the United States Code",
+          "quote": "The annual rates of compensation of the Secretary of the Senate, the Sergeant at Arms and Doorkeeper, and the Legislative Counsel shall each be equal to the annual rate for level II.",
+          "url": "https://www.govinfo.gov/link/uscode/2/4571?link-type=html",
+          "documentSha256": "50349db7e89f961318d989825dbb13cb7f5582f4a2bfd044002fac345e4dddbe",
+          "retrievedAt": "2026-10-06T04:15:06Z",
+          "statesTheFigure": false,
+          "instrumentKind": "chamber_pay_order",
+          "instrumentName": "Order of the President pro tempore of the Senate of March 25, 2024",
+          "instrumentIssuer": "the President pro tempore of the Senate",
+          "instrumentDate": "March 25, 2024",
+          "laterOrderCaution": "This is the Order of the President pro tempore of the Senate of March 25, 2024, as the 2024 edition of the United States Code reprints it in a Statutory Note to 2 U.S.C. 4571. A later order of the President pro tempore exists that this repository has not read, and it may have changed this rate."
+        },
+        {
+          "role": "states what that Executive Schedule level pays",
+          "citation": "Salary Table No. 2026-EX, Effective January 2026",
+          "publisher": "U.S. Office of Personnel Management",
+          "title": "Salary Table No. 2026-EX",
+          "quote": "Level II $228,000",
+          "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+          "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+          "retrievedAt": "2026-09-11T03:05:36Z",
+          "statesTheFigure": false
+        }
+      ],
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "tableFootnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+      "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "viaStatute": null,
+      "viaQuote": null,
+      "instrument": {
+        "id": "order-of-the-president-pro-tempore-2024-03-25",
+        "kind": "chamber_pay_order",
+        "kindWords": "a pay order issued under a statute by the officer the statute names, which the United States Code reprints only in a Statutory Note beneath a section, not as a section of the Code",
+        "name": "Order of the President pro tempore of the Senate of March 25, 2024",
+        "heading": "Order of the President Pro Tempore of the United States Senate",
+        "issuer": "the President pro tempore of the Senate",
+        "date": "March 25, 2024",
+        "effective": "Sections 1 through 10 of this Order are effective on and after January 1, 2024.",
+        "printedIn": "a Statutory Note to 2 U.S.C. 4571, 2024 edition of the United States Code",
+        "publisher": "U.S. Government Publishing Office",
+        "edition": "2024 edition of the United States Code",
+        "url": "https://www.govinfo.gov/link/uscode/2/4571?link-type=html",
+        "documentSha256": "50349db7e89f961318d989825dbb13cb7f5582f4a2bfd044002fac345e4dddbe",
+        "retrievedAt": "2026-10-06T04:15:06Z",
+        "laterOrderCaution": "This is the Order of the President pro tempore of the Senate of March 25, 2024, as the 2024 edition of the United States Code reprints it in a Statutory Note to 2 U.S.C. 4571. A later order of the President pro tempore exists that this repository has not read, and it may have changed this rate."
+      },
+      "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+    },
+    "leg-senate-admin-secretary-secretary-of-the-senate": {
+      "nodeId": "leg-senate-admin-secretary-secretary-of-the-senate",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "basic_pay",
+      "amount": 228000.0,
+      "amountRaw": "228,000",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "Level II $228,000",
+      "quote": "Order of the President pro tempore of the Senate of March 25, 2024 sec. 2(a): “The annual rates of compensation of the Secretary of the Senate, the Sergeant at Arms and Doorkeeper, and the Legislative Counsel shall each be equal to the annual rate for level II.” · Salary Table No. 2026-EX, Effective January 2026: Level II $228,000",
+      "fiscalYear": 2026,
+      "periodCoverage": "annual_rate",
+      "periodAsOf": "2026-01-01",
+      "amountScope": "Level II",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "statutory_tier_reference_pay",
+      "sourceUrl": "https://www.govinfo.gov/link/uscode/2/4571?link-type=html",
+      "documentSha256": "50349db7e89f961318d989825dbb13cb7f5582f4a2bfd044002fac345e4dddbe",
+      "retrievedAt": "2026-10-06T04:15:06Z",
+      "locator": {
+        "section": "Order of the President pro tempore of the Senate of March 25, 2024",
+        "subsection": "sec. 2(a)"
+      },
+      "method": "pay_set_by_reference_to_an_executive_schedule_level_joined_to_opm_table",
+      "office": "Secretary of the Senate",
+      "statute": "Order of the President pro tempore of the Senate of March 25, 2024",
+      "statuteQuote": "The annual rates of compensation of the Secretary of the Senate, the Sergeant at Arms and Doorkeeper, and the Legislative Counsel shall each be equal to the annual rate for level II.",
+      "level": "II",
+      "levelText": "Level II",
+      "levelRateText": "$228,000",
+      "levelAmount": 228000.0,
+      "percent": 0,
+      "arithmetic": null,
+      "rateText": "$228,000",
+      "derivation": "Order of the President pro tempore of the Senate of March 25, 2024 sec. 2(a): “The annual rates of compensation of the Secretary of the Senate, the Sergeant at Arms and Doorkeeper, and the Legislative Counsel shall each be equal to the annual rate for level II.” · Salary Table No. 2026-EX, Effective January 2026: Level II $228,000",
+      "identification": {
+        "kind": "reviewed_row",
+        "nodeName": "Secretary of the Senate",
+        "office": "Secretary of the Senate",
+        "instrumentDefines": "the term \"annual rate for level II\" means the annual rate of basic pay for level II of the Executive Schedule under section 5313 of title 5, United States Code, including any adjustment to such rate after the date of this Order"
+      },
+      "documents": [
+        {
+          "role": "sets this post's basic pay by reference to Executive Schedule Level II",
+          "citation": "Order of the President pro tempore of the Senate of March 25, 2024, sec. 2(a)",
+          "publisher": "U.S. Government Publishing Office",
+          "edition": "2024 edition of the United States Code",
+          "title": "Order of the President pro tempore of the Senate of March 25, 2024, as printed in a Statutory Note to 2 U.S.C. 4571, 2024 edition of the United States Code",
+          "quote": "The annual rates of compensation of the Secretary of the Senate, the Sergeant at Arms and Doorkeeper, and the Legislative Counsel shall each be equal to the annual rate for level II.",
+          "url": "https://www.govinfo.gov/link/uscode/2/4571?link-type=html",
+          "documentSha256": "50349db7e89f961318d989825dbb13cb7f5582f4a2bfd044002fac345e4dddbe",
+          "retrievedAt": "2026-10-06T04:15:06Z",
+          "statesTheFigure": false,
+          "instrumentKind": "chamber_pay_order",
+          "instrumentName": "Order of the President pro tempore of the Senate of March 25, 2024",
+          "instrumentIssuer": "the President pro tempore of the Senate",
+          "instrumentDate": "March 25, 2024",
+          "laterOrderCaution": "This is the Order of the President pro tempore of the Senate of March 25, 2024, as the 2024 edition of the United States Code reprints it in a Statutory Note to 2 U.S.C. 4571. A later order of the President pro tempore exists that this repository has not read, and it may have changed this rate."
+        },
+        {
+          "role": "states what that Executive Schedule level pays",
+          "citation": "Salary Table No. 2026-EX, Effective January 2026",
+          "publisher": "U.S. Office of Personnel Management",
+          "title": "Salary Table No. 2026-EX",
+          "quote": "Level II $228,000",
+          "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+          "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+          "retrievedAt": "2026-09-11T03:05:36Z",
+          "statesTheFigure": false
+        }
+      ],
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "tableFootnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+      "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "viaStatute": null,
+      "viaQuote": null,
+      "instrument": {
+        "id": "order-of-the-president-pro-tempore-2024-03-25",
+        "kind": "chamber_pay_order",
+        "kindWords": "a pay order issued under a statute by the officer the statute names, which the United States Code reprints only in a Statutory Note beneath a section, not as a section of the Code",
+        "name": "Order of the President pro tempore of the Senate of March 25, 2024",
+        "heading": "Order of the President Pro Tempore of the United States Senate",
+        "issuer": "the President pro tempore of the Senate",
+        "date": "March 25, 2024",
+        "effective": "Sections 1 through 10 of this Order are effective on and after January 1, 2024.",
+        "printedIn": "a Statutory Note to 2 U.S.C. 4571, 2024 edition of the United States Code",
+        "publisher": "U.S. Government Publishing Office",
+        "edition": "2024 edition of the United States Code",
+        "url": "https://www.govinfo.gov/link/uscode/2/4571?link-type=html",
+        "documentSha256": "50349db7e89f961318d989825dbb13cb7f5582f4a2bfd044002fac345e4dddbe",
+        "retrievedAt": "2026-10-06T04:15:06Z",
+        "laterOrderCaution": "This is the Order of the President pro tempore of the Senate of March 25, 2024, as the 2024 edition of the United States Code reprints it in a Statutory Note to 2 U.S.C. 4571. A later order of the President pro tempore exists that this repository has not read, and it may have changed this rate."
+      },
+      "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
     },
     "leg-support-aoc-architect-of-the-capitol": {
       "nodeId": "leg-support-aoc-architect-of-the-capitol",
@@ -4351,6 +5197,324 @@
       "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
       "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
       "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "viaStatute": null,
+      "viaQuote": null,
+      "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+    },
+    "leg-support-aoc-inspector-general": {
+      "nodeId": "leg-support-aoc-inspector-general",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "basic_pay",
+      "amount": 226500.0,
+      "amountRaw": "226,500",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "Level II $228,000",
+      "quote": "2 U.S.C. 1808(c)(3) (c)(3) Compensation: “The Inspector General shall be paid at an annual rate of pay equal to $1,500 less than the annual rate of pay of the Architect of the Capitol.” · 2 U.S.C. 1802 (the section's one sentence): “The compensation of the Architect of the Capitol shall be at an annual rate which is equal to the annual rate of basic pay for level II of the Executive Schedule under section 5313 of title 5.” · Salary Table No. 2026-EX, Effective January 2026: Level II $228,000 · $228,000 − $1,500 = $226,500",
+      "fiscalYear": 2026,
+      "periodCoverage": "annual_rate",
+      "periodAsOf": "2026-01-01",
+      "amountScope": "$1,500 less than the Architect of the Capitol's rate (Level II)",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "statutory_tier_reference_pay",
+      "sourceUrl": "https://www.govinfo.gov/link/uscode/2/1808?link-type=html",
+      "documentSha256": "ec9b50b5a0f26906083a613a161bdef125426b0f5d0fa85d876df8c4b9223fcb",
+      "retrievedAt": "2026-10-06T04:14:59Z",
+      "locator": {
+        "section": "2 U.S.C. 1808(c)(3)",
+        "subsection": "(c)(3) Compensation"
+      },
+      "method": "pay_set_at_a_stated_dollar_amount_less_than_another_officers_rate_set_by_reference_to_an_executive_schedule_level",
+      "office": "Inspector General of the Architect of the Capitol",
+      "statute": "2 U.S.C. 1808(c)(3)",
+      "statuteQuote": "The Inspector General shall be paid at an annual rate of pay equal to $1,500 less than the annual rate of pay of the Architect of the Capitol.",
+      "level": "II",
+      "levelText": "Level II",
+      "levelRateText": "$228,000",
+      "levelAmount": 228000.0,
+      "percent": 0,
+      "arithmetic": {
+        "operation": "minus_dollars",
+        "baseAmount": 228000.0,
+        "baseAmountRaw": "228,000",
+        "baseText": "$228,000",
+        "baseLevel": "II",
+        "baseOffice": "Architect of the Capitol",
+        "baseNodeId": "leg-support-aoc-architect-of-the-capitol",
+        "minusDollars": 1500,
+        "minusDollarsText": "$1,500",
+        "result": 226500.0,
+        "resultText": "$226,500",
+        "note": "No document prints $226,500. 2 U.S.C. 1808(c)(3) sets the rate at $1,500 less than the Architect of the Capitol's; 2 U.S.C. 1802 sets the Architect of the Capitol's at Level II's rate, and Salary Table No. 2026-EX prints $228,000 for Level II; the figure is that arithmetic and nothing more."
+      },
+      "rateText": "$226,500",
+      "derivation": "2 U.S.C. 1808(c)(3) (c)(3) Compensation: “The Inspector General shall be paid at an annual rate of pay equal to $1,500 less than the annual rate of pay of the Architect of the Capitol.” · 2 U.S.C. 1802 (the section's one sentence): “The compensation of the Architect of the Capitol shall be at an annual rate which is equal to the annual rate of basic pay for level II of the Executive Schedule under section 5313 of title 5.” · Salary Table No. 2026-EX, Effective January 2026: Level II $228,000 · $228,000 − $1,500 = $226,500",
+      "identification": {
+        "kind": "reviewed_row",
+        "nodeName": "Inspector General"
+      },
+      "referencedOfficer": {
+        "nodeId": "leg-support-aoc-architect-of-the-capitol",
+        "office": "Architect of the Capitol",
+        "statute": "2 U.S.C. 1802",
+        "statuteQuote": "The compensation of the Architect of the Capitol shall be at an annual rate which is equal to the annual rate of basic pay for level II of the Executive Schedule under section 5313 of title 5.",
+        "viaStatute": null,
+        "amount": 228000.0,
+        "rateText": "$228,000",
+        "level": "II"
+      },
+      "documents": [
+        {
+          "role": "sets this post's basic pay at $1,500 less than the Architect of the Capitol's",
+          "citation": "2 U.S.C. 1808(c)(3)",
+          "publisher": "U.S. Government Publishing Office",
+          "edition": "2024 edition of the United States Code",
+          "title": "2 U.S.C. 1808(c)(3), 2024 edition of the United States Code",
+          "quote": "The Inspector General shall be paid at an annual rate of pay equal to $1,500 less than the annual rate of pay of the Architect of the Capitol.",
+          "url": "https://www.govinfo.gov/link/uscode/2/1808?link-type=html",
+          "documentSha256": "ec9b50b5a0f26906083a613a161bdef125426b0f5d0fa85d876df8c4b9223fcb",
+          "retrievedAt": "2026-10-06T04:14:59Z",
+          "statesTheFigure": false
+        },
+        {
+          "role": "sets the Architect of the Capitol's basic pay by reference to Executive Schedule Level II",
+          "citation": "2 U.S.C. 1802",
+          "publisher": "U.S. Government Publishing Office",
+          "edition": "2024 edition of the United States Code",
+          "title": "2 U.S.C. 1802, 2024 edition of the United States Code",
+          "quote": "The compensation of the Architect of the Capitol shall be at an annual rate which is equal to the annual rate of basic pay for level II of the Executive Schedule under section 5313 of title 5.",
+          "url": "https://www.govinfo.gov/link/uscode/2/1802?link-type=html",
+          "documentSha256": "a53d25abfa1198cc60e1f460c4eb596cc27327f9413200722e600733ea052932",
+          "retrievedAt": "2026-10-06T00:45:19Z",
+          "statesTheFigure": false
+        },
+        {
+          "role": "states what that Executive Schedule level pays",
+          "citation": "Salary Table No. 2026-EX, Effective January 2026",
+          "publisher": "U.S. Office of Personnel Management",
+          "title": "Salary Table No. 2026-EX",
+          "quote": "Level II $228,000",
+          "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+          "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+          "retrievedAt": "2026-09-11T03:05:36Z",
+          "statesTheFigure": false
+        }
+      ],
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "tableFootnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+      "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "viaStatute": null,
+      "viaQuote": null,
+      "unitsEvidenceKind": "currency_mark_on_the_figure_the_record_is_computed_from"
+    },
+    "leg-support-cbo-deputy-director-cbo": {
+      "nodeId": "leg-support-cbo-deputy-director-cbo",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "basic_pay",
+      "amount": 227000.0,
+      "amountRaw": "227,000",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "Level II $228,000",
+      "quote": "2 U.S.C. 601(a)(5)(B) (a)(5)(B): “The Deputy Director shall receive compensation at an annual rate of pay that is $1,000 less than the annual rate of pay received by the Director, as determined under subparagraph (A).” · 2 U.S.C. 601(a)(5)(A) (a)(5)(A): “The Director shall receive compensation at an annual rate of pay that is equal to the maximum rate of pay in effect under section 4575(f) of this title .” · 2 U.S.C. 4575(f): “(f) General limitation No officer or employee whose compensation is disbursed by the Secretary of the Senate shall be paid gross compensation at a rate less than … or in excess of the annual rate of basic pay in effect for level II of the Executive Schedule under section 5313 of title 5, unless expressly authorized by law.” · Salary Table No. 2026-EX, Effective January 2026: Level II $228,000 · $228,000 − $1,000 = $227,000",
+      "fiscalYear": 2026,
+      "periodCoverage": "annual_rate",
+      "periodAsOf": "2026-01-01",
+      "amountScope": "$1,000 less than the Director of the Congressional Budget Office's rate (Level II)",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "statutory_tier_reference_pay",
+      "sourceUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title2-section601&num=0&edition=prelim",
+      "documentSha256": "4d4eb282f660737360e3cda081b5a5f436fece16c788a9e0272265aa531c8b44",
+      "retrievedAt": "2026-09-28T19:22:49Z",
+      "locator": {
+        "section": "2 U.S.C. 601(a)(5)(B)",
+        "subsection": "(a)(5)(B)"
+      },
+      "method": "pay_set_at_a_stated_dollar_amount_less_than_another_officers_rate_set_by_reference_to_an_executive_schedule_level",
+      "office": "Deputy Director of the Congressional Budget Office",
+      "statute": "2 U.S.C. 601(a)(5)(B)",
+      "statuteQuote": "The Deputy Director shall receive compensation at an annual rate of pay that is $1,000 less than the annual rate of pay received by the Director, as determined under subparagraph (A).",
+      "level": "II",
+      "levelText": "Level II",
+      "levelRateText": "$228,000",
+      "levelAmount": 228000.0,
+      "percent": 0,
+      "arithmetic": {
+        "operation": "minus_dollars",
+        "baseAmount": 228000.0,
+        "baseAmountRaw": "228,000",
+        "baseText": "$228,000",
+        "baseLevel": "II",
+        "baseOffice": "Director of the Congressional Budget Office",
+        "baseNodeId": "leg-support-cbo-director-cbo",
+        "minusDollars": 1000,
+        "minusDollarsText": "$1,000",
+        "result": 227000.0,
+        "resultText": "$227,000",
+        "note": "No document prints $227,000. 2 U.S.C. 601(a)(5)(B) sets the rate at $1,000 less than the Director of the Congressional Budget Office's; 2 U.S.C. 601(a)(5)(A), through 2 U.S.C. 4575(f), sets the Director of the Congressional Budget Office's at Level II's rate, and Salary Table No. 2026-EX prints $228,000 for Level II; the figure is that arithmetic and nothing more."
+      },
+      "rateText": "$227,000",
+      "derivation": "2 U.S.C. 601(a)(5)(B) (a)(5)(B): “The Deputy Director shall receive compensation at an annual rate of pay that is $1,000 less than the annual rate of pay received by the Director, as determined under subparagraph (A).” · 2 U.S.C. 601(a)(5)(A) (a)(5)(A): “The Director shall receive compensation at an annual rate of pay that is equal to the maximum rate of pay in effect under section 4575(f) of this title .” · 2 U.S.C. 4575(f): “(f) General limitation No officer or employee whose compensation is disbursed by the Secretary of the Senate shall be paid gross compensation at a rate less than … or in excess of the annual rate of basic pay in effect for level II of the Executive Schedule under section 5313 of title 5, unless expressly authorized by law.” · Salary Table No. 2026-EX, Effective January 2026: Level II $228,000 · $228,000 − $1,000 = $227,000",
+      "identification": {
+        "kind": "reviewed_row",
+        "nodeName": "Deputy Director, CBO"
+      },
+      "referencedOfficer": {
+        "nodeId": "leg-support-cbo-director-cbo",
+        "office": "Director of the Congressional Budget Office",
+        "statute": "2 U.S.C. 601(a)(5)(A)",
+        "statuteQuote": "The Director shall receive compensation at an annual rate of pay that is equal to the maximum rate of pay in effect under section 4575(f) of this title .",
+        "viaStatute": "2 U.S.C. 4575(f)",
+        "amount": 228000.0,
+        "rateText": "$228,000",
+        "level": "II"
+      },
+      "documents": [
+        {
+          "role": "sets this post's basic pay at $1,000 less than the Director of the Congressional Budget Office's; and sets the Director of the Congressional Budget Office's basic pay equal to the maximum rate of pay 2 U.S.C. 4575(f) sets",
+          "citation": "2 U.S.C. 601(a)(5)(B) and 2 U.S.C. 601(a)(5)(A)",
+          "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+          "edition": "current through the prelim edition",
+          "title": "2 U.S.C. 601(a)(5)(B) and 2 U.S.C. 601(a)(5)(A), current through the prelim edition",
+          "quote": "The Deputy Director shall receive compensation at an annual rate of pay that is $1,000 less than the annual rate of pay received by the Director, as determined under subparagraph (A). … The Director shall receive compensation at an annual rate of pay that is equal to the maximum rate of pay in effect under section 4575(f) of this title .",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title2-section601&num=0&edition=prelim",
+          "documentSha256": "4d4eb282f660737360e3cda081b5a5f436fece16c788a9e0272265aa531c8b44",
+          "retrievedAt": "2026-09-28T19:22:49Z",
+          "statesTheFigure": false
+        },
+        {
+          "role": "sets that maximum rate of pay at the rate for Executive Schedule Level II",
+          "citation": "2 U.S.C. 4575(f)",
+          "publisher": "U.S. Government Publishing Office",
+          "edition": "2024 edition of the United States Code",
+          "title": "2 U.S.C. 4575(f), 2024 edition of the United States Code",
+          "quote": "(f) General limitation No officer or employee whose compensation is disbursed by the Secretary of the Senate shall be paid gross compensation at a rate less than … or in excess of the annual rate of basic pay in effect for level II of the Executive Schedule under section 5313 of title 5, unless expressly authorized by law.",
+          "url": "https://www.govinfo.gov/link/uscode/2/4575?link-type=html",
+          "documentSha256": "c675e55f2f76292eb83e9ef814a4988a920461e7a91c79bc63b6211046166ebb",
+          "retrievedAt": "2026-10-06T04:14:55Z",
+          "statesTheFigure": false
+        },
+        {
+          "role": "states what that Executive Schedule level pays",
+          "citation": "Salary Table No. 2026-EX, Effective January 2026",
+          "publisher": "U.S. Office of Personnel Management",
+          "title": "Salary Table No. 2026-EX",
+          "quote": "Level II $228,000",
+          "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+          "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+          "retrievedAt": "2026-09-11T03:05:36Z",
+          "statesTheFigure": false
+        }
+      ],
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "tableFootnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+      "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "viaStatute": null,
+      "viaQuote": null,
+      "unitsEvidenceKind": "currency_mark_on_the_figure_the_record_is_computed_from"
+    },
+    "leg-support-cbo-director-cbo": {
+      "nodeId": "leg-support-cbo-director-cbo",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "basic_pay",
+      "amount": 228000.0,
+      "amountRaw": "228,000",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "Level II $228,000",
+      "quote": "2 U.S.C. 601(a)(5)(A) (a)(5)(A): “The Director shall receive compensation at an annual rate of pay that is equal to the maximum rate of pay in effect under section 4575(f) of this title .” · 2 U.S.C. 4575(f): “(f) General limitation No officer or employee whose compensation is disbursed by the Secretary of the Senate shall be paid gross compensation at a rate less than … or in excess of the annual rate of basic pay in effect for level II of the Executive Schedule under section 5313 of title 5, unless expressly authorized by law.” · Salary Table No. 2026-EX, Effective January 2026: Level II $228,000",
+      "fiscalYear": 2026,
+      "periodCoverage": "annual_rate",
+      "periodAsOf": "2026-01-01",
+      "amountScope": "Level II",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "statutory_tier_reference_pay",
+      "sourceUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title2-section601&num=0&edition=prelim",
+      "documentSha256": "4d4eb282f660737360e3cda081b5a5f436fece16c788a9e0272265aa531c8b44",
+      "retrievedAt": "2026-09-28T19:22:49Z",
+      "locator": {
+        "section": "2 U.S.C. 601(a)(5)(A)",
+        "subsection": "(a)(5)(A)"
+      },
+      "method": "pay_set_through_a_second_statute_by_reference_to_an_executive_schedule_level_joined_to_opm_table",
+      "office": "Director of the Congressional Budget Office",
+      "statute": "2 U.S.C. 601(a)(5)(A)",
+      "statuteQuote": "The Director shall receive compensation at an annual rate of pay that is equal to the maximum rate of pay in effect under section 4575(f) of this title .",
+      "level": "II",
+      "levelText": "Level II",
+      "levelRateText": "$228,000",
+      "levelAmount": 228000.0,
+      "percent": 0,
+      "arithmetic": null,
+      "rateText": "$228,000",
+      "derivation": "2 U.S.C. 601(a)(5)(A) (a)(5)(A): “The Director shall receive compensation at an annual rate of pay that is equal to the maximum rate of pay in effect under section 4575(f) of this title .” · 2 U.S.C. 4575(f): “(f) General limitation No officer or employee whose compensation is disbursed by the Secretary of the Senate shall be paid gross compensation at a rate less than … or in excess of the annual rate of basic pay in effect for level II of the Executive Schedule under section 5313 of title 5, unless expressly authorized by law.” · Salary Table No. 2026-EX, Effective January 2026: Level II $228,000",
+      "identification": {
+        "kind": "reviewed_row",
+        "nodeName": "Director, CBO"
+      },
+      "documents": [
+        {
+          "role": "sets this post's basic pay equal to the maximum rate of pay 2 U.S.C. 4575(f) sets",
+          "citation": "2 U.S.C. 601(a)(5)(A)",
+          "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+          "edition": "current through the prelim edition",
+          "title": "2 U.S.C. 601(a)(5)(A), current through the prelim edition",
+          "quote": "The Director shall receive compensation at an annual rate of pay that is equal to the maximum rate of pay in effect under section 4575(f) of this title .",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title2-section601&num=0&edition=prelim",
+          "documentSha256": "4d4eb282f660737360e3cda081b5a5f436fece16c788a9e0272265aa531c8b44",
+          "retrievedAt": "2026-09-28T19:22:49Z",
+          "statesTheFigure": false
+        },
+        {
+          "role": "sets that maximum rate of pay at the rate for Executive Schedule Level II",
+          "citation": "2 U.S.C. 4575(f)",
+          "publisher": "U.S. Government Publishing Office",
+          "edition": "2024 edition of the United States Code",
+          "title": "2 U.S.C. 4575(f), 2024 edition of the United States Code",
+          "quote": "(f) General limitation No officer or employee whose compensation is disbursed by the Secretary of the Senate shall be paid gross compensation at a rate less than … or in excess of the annual rate of basic pay in effect for level II of the Executive Schedule under section 5313 of title 5, unless expressly authorized by law.",
+          "url": "https://www.govinfo.gov/link/uscode/2/4575?link-type=html",
+          "documentSha256": "c675e55f2f76292eb83e9ef814a4988a920461e7a91c79bc63b6211046166ebb",
+          "retrievedAt": "2026-10-06T04:14:55Z",
+          "statesTheFigure": false
+        },
+        {
+          "role": "states what that Executive Schedule level pays",
+          "citation": "Salary Table No. 2026-EX, Effective January 2026",
+          "publisher": "U.S. Office of Personnel Management",
+          "title": "Salary Table No. 2026-EX",
+          "quote": "Level II $228,000",
+          "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+          "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+          "retrievedAt": "2026-09-11T03:05:36Z",
+          "statesTheFigure": false
+        }
+      ],
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "tableFootnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+      "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "viaStatute": "2 U.S.C. 4575(f)",
+      "viaQuote": "(f) General limitation No officer or employee whose compensation is disbursed by the Secretary of the Senate shall be paid gross compensation at a rate less than … or in excess of the annual rate of basic pay in effect for level II of the Executive Schedule under section 5313 of title 5, unless expressly authorized by law.",
       "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
     },
     "leg-support-gao-comptroller-general-of-the-united-states": {
@@ -4427,6 +5591,8 @@
       "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
       "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
       "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "viaStatute": null,
+      "viaQuote": null,
       "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
     },
     "leg-support-gao-deputy-comptroller-general": {
@@ -4503,6 +5669,8 @@
       "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
       "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
       "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "viaStatute": null,
+      "viaQuote": null,
       "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
     },
     "leg-support-gao-general-counsel": {
@@ -4579,7 +5747,122 @@
       "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
       "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
       "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "viaStatute": null,
+      "viaQuote": null,
       "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+    },
+    "leg-support-gao-inspector-general": {
+      "nodeId": "leg-support-gao-inspector-general",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "basic_pay",
+      "amount": 223000.0,
+      "amountRaw": "223,000",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "Level II $228,000",
+      "quote": "31 U.S.C. 705(b)(4) (b)(4): “The Inspector General shall be paid at an annual rate of pay equal to $5,000 less than the annual rate of pay of the Comptroller General” · 31 U.S.C. 703(f)(1) (f): “Comptroller General is equal to the rate for level II of the Executive Schedule” · Salary Table No. 2026-EX, Effective January 2026: Level II $228,000 · $228,000 − $5,000 = $223,000",
+      "fiscalYear": 2026,
+      "periodCoverage": "annual_rate",
+      "periodAsOf": "2026-01-01",
+      "amountScope": "$5,000 less than the Comptroller General's rate (Level II)",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "statutory_tier_reference_pay",
+      "sourceUrl": "https://www.govinfo.gov/link/uscode/31/705?link-type=html",
+      "documentSha256": "962ddbe5e310e1f65f058a4b664c65392fffea6f59f2983dd6c3311a9a3ea172",
+      "retrievedAt": "2026-10-06T04:15:06Z",
+      "locator": {
+        "section": "31 U.S.C. 705(b)(4)",
+        "subsection": "(b)(4)"
+      },
+      "method": "pay_set_at_a_stated_dollar_amount_less_than_another_officers_rate_set_by_reference_to_an_executive_schedule_level",
+      "office": "Inspector General for the Government Accountability Office",
+      "statute": "31 U.S.C. 705(b)(4)",
+      "statuteQuote": "The Inspector General shall be paid at an annual rate of pay equal to $5,000 less than the annual rate of pay of the Comptroller General",
+      "level": "II",
+      "levelText": "Level II",
+      "levelRateText": "$228,000",
+      "levelAmount": 228000.0,
+      "percent": 0,
+      "arithmetic": {
+        "operation": "minus_dollars",
+        "baseAmount": 228000.0,
+        "baseAmountRaw": "228,000",
+        "baseText": "$228,000",
+        "baseLevel": "II",
+        "baseOffice": "Comptroller General",
+        "baseNodeId": "leg-support-gao-comptroller-general-of-the-united-states",
+        "minusDollars": 5000,
+        "minusDollarsText": "$5,000",
+        "result": 223000.0,
+        "resultText": "$223,000",
+        "note": "No document prints $223,000. 31 U.S.C. 705(b)(4) sets the rate at $5,000 less than the Comptroller General's; 31 U.S.C. 703(f)(1) sets the Comptroller General's at Level II's rate, and Salary Table No. 2026-EX prints $228,000 for Level II; the figure is that arithmetic and nothing more."
+      },
+      "rateText": "$223,000",
+      "derivation": "31 U.S.C. 705(b)(4) (b)(4): “The Inspector General shall be paid at an annual rate of pay equal to $5,000 less than the annual rate of pay of the Comptroller General” · 31 U.S.C. 703(f)(1) (f): “Comptroller General is equal to the rate for level II of the Executive Schedule” · Salary Table No. 2026-EX, Effective January 2026: Level II $228,000 · $228,000 − $5,000 = $223,000",
+      "identification": {
+        "kind": "reviewed_row",
+        "nodeName": "Inspector General"
+      },
+      "referencedOfficer": {
+        "nodeId": "leg-support-gao-comptroller-general-of-the-united-states",
+        "office": "Comptroller General",
+        "statute": "31 U.S.C. 703(f)(1)",
+        "statuteQuote": "Comptroller General is equal to the rate for level II of the Executive Schedule",
+        "viaStatute": null,
+        "amount": 228000.0,
+        "rateText": "$228,000",
+        "level": "II"
+      },
+      "documents": [
+        {
+          "role": "sets this post's basic pay at $5,000 less than the Comptroller General's",
+          "citation": "31 U.S.C. 705(b)(4)",
+          "publisher": "U.S. Government Publishing Office",
+          "edition": "2024 edition of the United States Code",
+          "title": "31 U.S.C. 705(b)(4), 2024 edition of the United States Code",
+          "quote": "The Inspector General shall be paid at an annual rate of pay equal to $5,000 less than the annual rate of pay of the Comptroller General",
+          "url": "https://www.govinfo.gov/link/uscode/31/705?link-type=html",
+          "documentSha256": "962ddbe5e310e1f65f058a4b664c65392fffea6f59f2983dd6c3311a9a3ea172",
+          "retrievedAt": "2026-10-06T04:15:06Z",
+          "statesTheFigure": false
+        },
+        {
+          "role": "sets the Comptroller General's basic pay by reference to Executive Schedule Level II",
+          "citation": "31 U.S.C. 703(f)(1)",
+          "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+          "edition": "current through the prelim edition",
+          "title": "31 U.S.C. 703(f)(1), current through the prelim edition",
+          "quote": "Comptroller General is equal to the rate for level II of the Executive Schedule",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title31-section703&num=0&edition=prelim",
+          "documentSha256": "bea4dd6d430c5148d0086bf25aef5cda0928821e85213dcf1d9f7205d5c4c015",
+          "retrievedAt": "2026-09-27T22:10:20Z",
+          "statesTheFigure": false
+        },
+        {
+          "role": "states what that Executive Schedule level pays",
+          "citation": "Salary Table No. 2026-EX, Effective January 2026",
+          "publisher": "U.S. Office of Personnel Management",
+          "title": "Salary Table No. 2026-EX",
+          "quote": "Level II $228,000",
+          "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+          "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+          "retrievedAt": "2026-09-11T03:05:36Z",
+          "statesTheFigure": false
+        }
+      ],
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "tableFootnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+      "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "viaStatute": null,
+      "viaQuote": null,
+      "unitsEvidenceKind": "currency_mark_on_the_figure_the_record_is_computed_from"
     },
     "leg-support-gpo-deputy-director-coo": {
       "nodeId": "leg-support-gpo-deputy-director-coo",
@@ -4655,6 +5938,8 @@
       "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
       "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
       "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "viaStatute": null,
+      "viaQuote": null,
       "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
     },
     "leg-support-gpo-director-gpo-public-printer": {
@@ -4731,6 +6016,8 @@
       "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
       "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
       "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "viaStatute": null,
+      "viaQuote": null,
       "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
     },
     "leg-support-loc-librarian-of-congress": {
@@ -4807,6 +6094,8 @@
       "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
       "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
       "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "viaStatute": null,
+      "viaQuote": null,
       "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
     },
     "leg-support-uscp-chief-of-police": {
@@ -4883,7 +6172,122 @@
       "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
       "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
       "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "viaStatute": null,
+      "viaQuote": null,
       "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+    },
+    "leg-support-uscp-inspector-general": {
+      "nodeId": "leg-support-uscp-inspector-general",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "basic_pay",
+      "amount": 227000.0,
+      "amountRaw": "227,000",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "Level II $228,000",
+      "quote": "2 U.S.C. 1909(b)(4) (b)(4) Salary: “The Inspector General shall be paid at an annual rate equal to $1,000 less than the annual rate of pay in effect for the Chief of the Capitol Police.” · 2 U.S.C. 1902 (the section's one sentence): “The annual rate of pay for the Chief of the Capitol Police shall be the amount equal to the annual rate of basic pay for level II of the Executive Schedule under section 5313 of title 5.” · Salary Table No. 2026-EX, Effective January 2026: Level II $228,000 · $228,000 − $1,000 = $227,000",
+      "fiscalYear": 2026,
+      "periodCoverage": "annual_rate",
+      "periodAsOf": "2026-01-01",
+      "amountScope": "$1,000 less than the Chief of the Capitol Police's rate (Level II)",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "statutory_tier_reference_pay",
+      "sourceUrl": "https://www.govinfo.gov/link/uscode/2/1909?link-type=html",
+      "documentSha256": "78b95278387a810e98d08997e4512913b29ae2dacd62648ec95e65aeb2605008",
+      "retrievedAt": "2026-10-06T04:15:02Z",
+      "locator": {
+        "section": "2 U.S.C. 1909(b)(4)",
+        "subsection": "(b)(4) Salary"
+      },
+      "method": "pay_set_at_a_stated_dollar_amount_less_than_another_officers_rate_set_by_reference_to_an_executive_schedule_level",
+      "office": "Inspector General of the United States Capitol Police",
+      "statute": "2 U.S.C. 1909(b)(4)",
+      "statuteQuote": "The Inspector General shall be paid at an annual rate equal to $1,000 less than the annual rate of pay in effect for the Chief of the Capitol Police.",
+      "level": "II",
+      "levelText": "Level II",
+      "levelRateText": "$228,000",
+      "levelAmount": 228000.0,
+      "percent": 0,
+      "arithmetic": {
+        "operation": "minus_dollars",
+        "baseAmount": 228000.0,
+        "baseAmountRaw": "228,000",
+        "baseText": "$228,000",
+        "baseLevel": "II",
+        "baseOffice": "Chief of the Capitol Police",
+        "baseNodeId": "leg-support-uscp-chief-of-police",
+        "minusDollars": 1000,
+        "minusDollarsText": "$1,000",
+        "result": 227000.0,
+        "resultText": "$227,000",
+        "note": "No document prints $227,000. 2 U.S.C. 1909(b)(4) sets the rate at $1,000 less than the Chief of the Capitol Police's; 2 U.S.C. 1902 sets the Chief of the Capitol Police's at Level II's rate, and Salary Table No. 2026-EX prints $228,000 for Level II; the figure is that arithmetic and nothing more."
+      },
+      "rateText": "$227,000",
+      "derivation": "2 U.S.C. 1909(b)(4) (b)(4) Salary: “The Inspector General shall be paid at an annual rate equal to $1,000 less than the annual rate of pay in effect for the Chief of the Capitol Police.” · 2 U.S.C. 1902 (the section's one sentence): “The annual rate of pay for the Chief of the Capitol Police shall be the amount equal to the annual rate of basic pay for level II of the Executive Schedule under section 5313 of title 5.” · Salary Table No. 2026-EX, Effective January 2026: Level II $228,000 · $228,000 − $1,000 = $227,000",
+      "identification": {
+        "kind": "reviewed_row",
+        "nodeName": "Inspector General"
+      },
+      "referencedOfficer": {
+        "nodeId": "leg-support-uscp-chief-of-police",
+        "office": "Chief of the Capitol Police",
+        "statute": "2 U.S.C. 1902",
+        "statuteQuote": "The annual rate of pay for the Chief of the Capitol Police shall be the amount equal to the annual rate of basic pay for level II of the Executive Schedule under section 5313 of title 5.",
+        "viaStatute": null,
+        "amount": 228000.0,
+        "rateText": "$228,000",
+        "level": "II"
+      },
+      "documents": [
+        {
+          "role": "sets this post's basic pay at $1,000 less than the Chief of the Capitol Police's",
+          "citation": "2 U.S.C. 1909(b)(4)",
+          "publisher": "U.S. Government Publishing Office",
+          "edition": "2024 edition of the United States Code",
+          "title": "2 U.S.C. 1909(b)(4), 2024 edition of the United States Code",
+          "quote": "The Inspector General shall be paid at an annual rate equal to $1,000 less than the annual rate of pay in effect for the Chief of the Capitol Police.",
+          "url": "https://www.govinfo.gov/link/uscode/2/1909?link-type=html",
+          "documentSha256": "78b95278387a810e98d08997e4512913b29ae2dacd62648ec95e65aeb2605008",
+          "retrievedAt": "2026-10-06T04:15:02Z",
+          "statesTheFigure": false
+        },
+        {
+          "role": "sets the Chief of the Capitol Police's basic pay by reference to Executive Schedule Level II",
+          "citation": "2 U.S.C. 1902",
+          "publisher": "U.S. Government Publishing Office",
+          "edition": "2024 edition of the United States Code",
+          "title": "2 U.S.C. 1902, 2024 edition of the United States Code",
+          "quote": "The annual rate of pay for the Chief of the Capitol Police shall be the amount equal to the annual rate of basic pay for level II of the Executive Schedule under section 5313 of title 5.",
+          "url": "https://www.govinfo.gov/link/uscode/2/1902?link-type=html",
+          "documentSha256": "12042655e60800ad7b365c88e3739389817beac3651722d382bdfecfb19676b9",
+          "retrievedAt": "2026-10-06T00:45:22Z",
+          "statesTheFigure": false
+        },
+        {
+          "role": "states what that Executive Schedule level pays",
+          "citation": "Salary Table No. 2026-EX, Effective January 2026",
+          "publisher": "U.S. Office of Personnel Management",
+          "title": "Salary Table No. 2026-EX",
+          "quote": "Level II $228,000",
+          "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+          "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+          "retrievedAt": "2026-09-11T03:05:36Z",
+          "statesTheFigure": false
+        }
+      ],
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "tableFootnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+      "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "viaStatute": null,
+      "viaQuote": null,
+      "unitsEvidenceKind": "currency_mark_on_the_figure_the_record_is_computed_from"
     }
   }
 }

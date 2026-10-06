@@ -12,7 +12,7 @@ achievable route to more exact-node costs actually is.
 Printed by `python scripts/validate_published_graph.py` on every run, which
 is the copy to trust; restated here as of 2026-09-23:
 
-    cost identified for the node itself:  170 of 5,510 nodes (3.1%)
+    cost identified for the node itself:  172 of 5,510 nodes (3.1%)
     a share of an ancestor's total:       693 nodes
     no figure at all:                   4,657 nodes (4,591 of them posts)
     the measured nodes cover 99.0% of the anchor, counting each only once
@@ -55,8 +55,12 @@ by `scripts/report_cost_coverage.py`, puts every one of the 5,510 nodes in
 exactly one class — measured, estimate, salary, unpriced post by reason, or
 no figure with its reason — with the document route that would move each.
 
-The one exception is a real salary. **1,196** position nodes carry a pay claim an
-official source states (1,193 before the Code title scan's three rows of
+The one exception is a real salary. **1,231** position nodes carry a pay claim an
+official source states (1,196 before the owner's six decisions of 2026-10-07 —
+the COPS Office and Ginnie Mae measured, a `minus_dollars` shape for five
+legislative-branch officers, a reader for Reorganization Plans and the chambers'
+pay orders, USAJOBS announcements as a grade listing, and four posts renamed to
+the titles committed documents print — 1,193 before the Code title scan's three rows of
 2026-10-06 — the FDA Commissioner, the NOAA Administrator and the Archivist —
 1,158 before the twelfth batch's later clusters of
 2026-10-06, which priced the uniformed services' principals from Schedule 8 of
@@ -77,8 +81,8 @@ chamber's leaders and the President pro tempore and none for those offices;
 the panel leads with "priced as a Member's seat, not for the office", and the
 two joint-committee posts are refused because which chamber their holder sits
 in is a fact about a person this project never reads — 188 from the White House Office roster (22 of them
-titles the roster lists N times at one rate, published for each holder), 237
-from the Executive Schedule as 5 U.S.C. §§5312–5316 sets it (98 of them through
+titles the roster lists N times at one rate, published for each holder), 241
+from the Executive Schedule as 5 U.S.C. §§5312–5316 sets it (99 of them through
 a reviewed identification a second statute backs, each resting on three
 documents; nine of those are benches — the FCC's, FTC's, CFTC's, FERC's,
 NRC's, FMC's, CPSC's and SEC's `Commissioner (×4)` and the Fed's `Governor (×4
@@ -110,20 +114,27 @@ Level IV and the NNSA Administrator at 42 U.S.C. 7132(c)'s Level III — and 27
 Inspectors General of the establishments 5 U.S.C. 401(1) lists at Level III
 plus the Act's 3 percent — $215,888, arithmetic the block carries in the open
 and no document prints; 23 of the 27 published, the other four displaced by a
-listed level the current export supplied on 2026-10-05), 22 twelve months of
+listed level the current export supplied on 2026-10-05; and since 2026-10-07
+five legislative-branch officers a stated number of dollars below, or through a
+second statute to, an officer priced by reference, and seven posts whose level a
+Reorganization Plan or a chamber's pay order sets — 59 published in all), 23
+twelve months of
 the uniformed services' MONTHLY basic pay (`positionMilitaryPay`, since
 2026-10-06: Schedule 8 of the pay-adjustment order, found in the committed
 note to 5 U.S.C. 5332, joined to the Title 10 or 14 section fixing the
-post's grade — 17 posts — or naming the post in its own footnote — 5 senior
-enlisted advisers — the annual figure arithmetic no document prints), 72 a
+post's grade — 17 posts — or naming the post in its own footnote — 6 senior
+enlisted advisers, the Space Force's since its 2026-10-07 rename to the
+footnote's own title — the annual figure arithmetic no document prints), 72 a
 Title 38 tier BAND rather than a rate, 68 from a
 listing's level joined to OPM's table (31 before the current export's rules of
 2026-10-05), 27 statutory at a row naming the office
 or tier (uscourts.gov, senate.gov, Schedule 6 and, since 2026-10-05, Schedule 7's
 "Judges of the Court of International Trade" for the CIT's chief judge and its
 bench of eight — the one judicial tier uscourts.gov's own table does not print),
-22 a base-pay RANGE (18 until the current export supplied more listed pay
-plans on 2026-10-05), and
+40 a base-pay RANGE (18 until the current export supplied more listed pay
+plans on 2026-10-05; 22 until 2026-10-07, when five USAJOBS announcements
+listing "Associate (Medical Center) Director" at GS-15 graded the 18 `VAMC
+Associate Director (Administrative)` nodes), and
 **18 a figure no single document states** (four Article I chief judges and,
 since the multi-post rule became per field on 2026-09-23, their four benches —
 `Judge (×18)` among them, because "Each judge shall receive salary at the same
@@ -147,7 +158,7 @@ U.S.C. 603's 92 percent of a Director paid as a district judge, $229,908,
 the FJC's through §626 — three documents each for the chains, none stating the
 figure, 7443A read from GPO's 2024-edition rendering on govinfo because the
 OLRC's host was under maintenance). A node may carry
-more than one, so the per-source figures sum past 1,196 (the President's $400,000,
+more than one, so the per-source figures sum past 1,231 (the President's $400,000,
 stated by 3 U.S.C. 102 itself since 2026-10-05, among them). Each shows in place of
 the withheld estimate, under its
 own heading rather than COST, with the panel saying it is compensation for one

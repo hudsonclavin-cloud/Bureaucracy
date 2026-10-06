@@ -6410,7 +6410,107 @@
     "verificationMethod": "name_labelled_on_its_organisations_official_page",
     "verificationMatchedIn": "content",
     "verificationSiteFrom": "leg-senate-admin-saa",
-    "parentId": "leg-senate-admin-saa"
+    "parentId": "leg-senate-admin-saa",
+    "positionTierReferencePay": {
+      "source": "statutory_tier_reference_pay",
+      "sourceLabel": "a statute setting the post's pay by reference to an Executive Schedule level, joined to OPM's table",
+      "method": "pay_set_by_reference_to_an_executive_schedule_level_joined_to_opm_table",
+      "amount": 228000.0,
+      "rateText": "$228,000",
+      "level": "II",
+      "levelText": "Level II",
+      "levelRateText": "$228,000",
+      "levelAmount": 228000.0,
+      "percent": 0,
+      "arithmetic": null,
+      "office": "Sergeant at Arms and Doorkeeper of the Senate",
+      "statute": "Order of the President pro tempore of the Senate of March 25, 2024",
+      "statuteQuote": "The annual rates of compensation of the Secretary of the Senate, the Sergeant at Arms and Doorkeeper, and the Legislative Counsel shall each be equal to the annual rate for level II.",
+      "identification": {
+        "kind": "reviewed_row",
+        "nodeName": "Sergeant at Arms",
+        "office": "Sergeant at Arms and Doorkeeper of the Senate",
+        "instrumentDefines": "the term \"annual rate for level II\" means the annual rate of basic pay for level II of the Executive Schedule under section 5313 of title 5, United States Code, including any adjustment to such rate after the date of this Order"
+      },
+      "derivation": "Order of the President pro tempore of the Senate of March 25, 2024 sec. 2(a): “The annual rates of compensation of the Secretary of the Senate, the Sergeant at Arms and Doorkeeper, and the Legislative Counsel shall each be equal to the annual rate for level II.” · Salary Table No. 2026-EX, Effective January 2026: Level II $228,000",
+      "quote": "Order of the President pro tempore of the Senate of March 25, 2024 sec. 2(a): “The annual rates of compensation of the Secretary of the Senate, the Sergeant at Arms and Doorkeeper, and the Legislative Counsel shall each be equal to the annual rate for level II.” · Salary Table No. 2026-EX, Effective January 2026: Level II $228,000",
+      "documents": [
+        {
+          "role": "sets this post's basic pay by reference to Executive Schedule Level II",
+          "citation": "Order of the President pro tempore of the Senate of March 25, 2024, sec. 2(a)",
+          "publisher": "U.S. Government Publishing Office",
+          "edition": "2024 edition of the United States Code",
+          "title": "Order of the President pro tempore of the Senate of March 25, 2024, as printed in a Statutory Note to 2 U.S.C. 4571, 2024 edition of the United States Code",
+          "quote": "The annual rates of compensation of the Secretary of the Senate, the Sergeant at Arms and Doorkeeper, and the Legislative Counsel shall each be equal to the annual rate for level II.",
+          "url": "https://www.govinfo.gov/link/uscode/2/4571?link-type=html",
+          "documentSha256": "50349db7e89f961318d989825dbb13cb7f5582f4a2bfd044002fac345e4dddbe",
+          "retrievedAt": "2026-10-06T04:15:06Z",
+          "statesTheFigure": false,
+          "instrumentKind": "chamber_pay_order",
+          "instrumentName": "Order of the President pro tempore of the Senate of March 25, 2024",
+          "instrumentIssuer": "the President pro tempore of the Senate",
+          "instrumentDate": "March 25, 2024",
+          "laterOrderCaution": "This is the Order of the President pro tempore of the Senate of March 25, 2024, as the 2024 edition of the United States Code reprints it in a Statutory Note to 2 U.S.C. 4571. A later order of the President pro tempore exists that this repository has not read, and it may have changed this rate."
+        },
+        {
+          "role": "states what that Executive Schedule level pays",
+          "citation": "Salary Table No. 2026-EX, Effective January 2026",
+          "publisher": "U.S. Office of Personnel Management",
+          "title": "Salary Table No. 2026-EX",
+          "quote": "Level II $228,000",
+          "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+          "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+          "retrievedAt": "2026-09-11T03:05:36Z",
+          "statesTheFigure": false
+        }
+      ],
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level II",
+      "url": "https://www.govinfo.gov/link/uscode/2/4571?link-type=html",
+      "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-10-06T04:15:06Z",
+      "instrument": {
+        "id": "order-of-the-president-pro-tempore-2024-03-25",
+        "kind": "chamber_pay_order",
+        "kindWords": "a pay order issued under a statute by the officer the statute names, which the United States Code reprints only in a Statutory Note beneath a section, not as a section of the Code",
+        "name": "Order of the President pro tempore of the Senate of March 25, 2024",
+        "heading": "Order of the President Pro Tempore of the United States Senate",
+        "issuer": "the President pro tempore of the Senate",
+        "date": "March 25, 2024",
+        "effective": "Sections 1 through 10 of this Order are effective on and after January 1, 2024.",
+        "printedIn": "a Statutory Note to 2 U.S.C. 4571, 2024 edition of the United States Code",
+        "publisher": "U.S. Government Publishing Office",
+        "edition": "2024 edition of the United States Code",
+        "url": "https://www.govinfo.gov/link/uscode/2/4571?link-type=html",
+        "documentSha256": "50349db7e89f961318d989825dbb13cb7f5582f4a2bfd044002fac345e4dddbe",
+        "retrievedAt": "2026-10-06T04:15:06Z",
+        "laterOrderCaution": "This is the Order of the President pro tempore of the Senate of March 25, 2024, as the 2024 edition of the United States Code reprints it in a Statutory Note to 2 U.S.C. 4571. A later order of the President pro tempore exists that this repository has not read, and it may have changed this rate."
+      },
+      "verification": {
+        "documents": 2,
+        "documentsStatingTheFigure": 0,
+        "percent": 80,
+        "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+        "caution": "The percentage measures how much official documentation this figure rests on, not the chance that it is right. No document here states the figure for this post: an instrument the United States Code prints outside its sections -- a Reorganization Plan, or a chamber's pay order reprinted in a Statutory Note -- sets its pay by reference to an Executive Schedule level, and OPM's table states what that level pays.",
+        "documentRoles": [
+          {
+            "url": "https://www.govinfo.gov/link/uscode/2/4571?link-type=html"
+          },
+          {
+            "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx"
+          }
+        ]
+      }
+    }
   },
   {
     "id": "leg-senate-admin-chaplain",
@@ -15456,7 +15556,106 @@
     "verificationMethod": "name_labelled_on_its_organisations_official_page",
     "verificationMatchedIn": "content",
     "verificationSiteFrom": "leg-house-cao",
-    "parentId": "leg-house-cao"
+    "parentId": "leg-house-cao",
+    "positionTierReferencePay": {
+      "source": "statutory_tier_reference_pay",
+      "sourceLabel": "a statute setting the post's pay by reference to an Executive Schedule level, joined to OPM's table",
+      "method": "pay_set_by_reference_to_an_executive_schedule_level_joined_to_opm_table",
+      "amount": 228000.0,
+      "rateText": "$228,000",
+      "level": "II",
+      "levelText": "Level II",
+      "levelRateText": "$228,000",
+      "levelAmount": 228000.0,
+      "percent": 0,
+      "arithmetic": null,
+      "office": "Chief Administrative Officer of the House of Representatives",
+      "statute": "Order of the Speaker of the House of Representatives of January 17, 2025",
+      "statuteQuote": "The annual rate of pay for the Clerk, the Sergeant-at-Arms, the Chief Administrative Officer, the Chaplain, the General Counsel to the House, the Inspector General, the Director of Interparliamentary Affairs, the Attending Physician, and one additional position in the Office of the Sergeant at Arms with duties related to emergency preparedness, planning and operations shall be equal to the annual rate of basic pay for level II of the Executive Schedule under section 5313 of title 5, United States Code, including any adjustment to such rate after the date of this Order.",
+      "identification": {
+        "kind": "reviewed_row",
+        "nodeName": "Chief Administrative Officer",
+        "office": "Chief Administrative Officer of the House of Representatives"
+      },
+      "derivation": "Order of the Speaker of the House of Representatives of January 17, 2025 sec. 1(a): “The annual rate of pay for the Clerk, the Sergeant-at-Arms, the Chief Administrative Officer, the Chaplain, the General Counsel to the House, the Inspector General, the Director of Interparliamentary Affairs, the Attending Physician, and one additional position in the Office of the Sergeant at Arms with duties related to emergency preparedness, planning and operations shall be equal to the annual rate of basic pay for level II of the Executive Schedule under section 5313 of title 5, United States Code, including any adjustment to such rate after the date of this Order.” · Salary Table No. 2026-EX, Effective January 2026: Level II $228,000",
+      "quote": "Order of the Speaker of the House of Representatives of January 17, 2025 sec. 1(a): “The annual rate of pay for the Clerk, the Sergeant-at-Arms, the Chief Administrative Officer, the Chaplain, the General Counsel to the House, the Inspector General, the Director of Interparliamentary Affairs, the Attending Physician, and one additional position in the Office of the Sergeant at Arms with duties related to emergency preparedness, planning and operations shall be equal to the annual rate of basic pay for level II of the Executive Schedule under section 5313 of title 5, United States Code, including any adjustment to such rate after the date of this Order.” · Salary Table No. 2026-EX, Effective January 2026: Level II $228,000",
+      "documents": [
+        {
+          "role": "sets this post's basic pay by reference to Executive Schedule Level II",
+          "citation": "Order of the Speaker of the House of Representatives of January 17, 2025, sec. 1(a)",
+          "publisher": "U.S. Government Publishing Office",
+          "edition": "2024 edition of the United States Code",
+          "title": "Order of the Speaker of the House of Representatives of January 17, 2025, as printed in a Statutory Note to 2 U.S.C. 4532, 2024 edition of the United States Code",
+          "quote": "The annual rate of pay for the Clerk, the Sergeant-at-Arms, the Chief Administrative Officer, the Chaplain, the General Counsel to the House, the Inspector General, the Director of Interparliamentary Affairs, the Attending Physician, and one additional position in the Office of the Sergeant at Arms with duties related to emergency preparedness, planning and operations shall be equal to the annual rate of basic pay for level II of the Executive Schedule under section 5313 of title 5, United States Code, including any adjustment to such rate after the date of this Order.",
+          "url": "https://www.govinfo.gov/link/uscode/2/4532?link-type=html",
+          "documentSha256": "802953ae6bec884d13c4460e39f90bc72dea2d6f7b2d47dfcceff866046f92be",
+          "retrievedAt": "2026-10-06T04:15:07Z",
+          "statesTheFigure": false,
+          "instrumentKind": "chamber_pay_order",
+          "instrumentName": "Order of the Speaker of the House of Representatives of January 17, 2025",
+          "instrumentIssuer": "the Speaker of the House of Representatives",
+          "instrumentDate": "January 17, 2025",
+          "laterOrderCaution": "This is the Order of the Speaker of the House of Representatives of January 17, 2025, as the 2024 edition of the United States Code reprints it in a Statutory Note to 2 U.S.C. 4532. A later order of the Speaker exists that this repository has not read, and it may have changed this rate."
+        },
+        {
+          "role": "states what that Executive Schedule level pays",
+          "citation": "Salary Table No. 2026-EX, Effective January 2026",
+          "publisher": "U.S. Office of Personnel Management",
+          "title": "Salary Table No. 2026-EX",
+          "quote": "Level II $228,000",
+          "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+          "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+          "retrievedAt": "2026-09-11T03:05:36Z",
+          "statesTheFigure": false
+        }
+      ],
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level II",
+      "url": "https://www.govinfo.gov/link/uscode/2/4532?link-type=html",
+      "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-10-06T04:15:07Z",
+      "instrument": {
+        "id": "order-of-the-speaker-2025-01-17",
+        "kind": "chamber_pay_order",
+        "kindWords": "a pay order issued under a statute by the officer the statute names, which the United States Code reprints only in a Statutory Note beneath a section, not as a section of the Code",
+        "name": "Order of the Speaker of the House of Representatives of January 17, 2025",
+        "heading": "Order of the Speaker of the House of Representatives",
+        "issuer": "the Speaker of the House of Representatives",
+        "date": "January 17, 2025",
+        "effective": "This Order shall be effective January 1, 2025, and each provision herein shall continue in place until such time as it is superseded by the issuance of a future Order.",
+        "printedIn": "a Statutory Note to 2 U.S.C. 4532, 2024 edition of the United States Code",
+        "publisher": "U.S. Government Publishing Office",
+        "edition": "2024 edition of the United States Code",
+        "url": "https://www.govinfo.gov/link/uscode/2/4532?link-type=html",
+        "documentSha256": "802953ae6bec884d13c4460e39f90bc72dea2d6f7b2d47dfcceff866046f92be",
+        "retrievedAt": "2026-10-06T04:15:07Z",
+        "laterOrderCaution": "This is the Order of the Speaker of the House of Representatives of January 17, 2025, as the 2024 edition of the United States Code reprints it in a Statutory Note to 2 U.S.C. 4532. A later order of the Speaker exists that this repository has not read, and it may have changed this rate."
+      },
+      "verification": {
+        "documents": 2,
+        "documentsStatingTheFigure": 0,
+        "percent": 80,
+        "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+        "caution": "The percentage measures how much official documentation this figure rests on, not the chance that it is right. No document here states the figure for this post: an instrument the United States Code prints outside its sections -- a Reorganization Plan, or a chamber's pay order reprinted in a Statutory Note -- sets its pay by reference to an Executive Schedule level, and OPM's table states what that level pays.",
+        "documentRoles": [
+          {
+            "url": "https://www.govinfo.gov/link/uscode/2/4532?link-type=html"
+          },
+          {
+            "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx"
+          }
+        ]
+      }
+    }
   },
   {
     "id": "leg-house-parliamentarian",
@@ -16278,7 +16477,121 @@
     },
     "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
     "evidenceVerifiedAt": "2025-12-31",
-    "parentId": "leg-support-gao"
+    "parentId": "leg-support-gao",
+    "positionTierReferencePay": {
+      "source": "statutory_tier_reference_pay",
+      "sourceLabel": "a statute setting the post's pay by reference to an Executive Schedule level, joined to OPM's table",
+      "method": "pay_set_at_a_stated_dollar_amount_less_than_another_officers_rate_set_by_reference_to_an_executive_schedule_level",
+      "amount": 223000.0,
+      "rateText": "$223,000",
+      "level": "II",
+      "levelText": "Level II",
+      "levelRateText": "$228,000",
+      "levelAmount": 228000.0,
+      "percent": 0,
+      "arithmetic": {
+        "operation": "minus_dollars",
+        "baseAmount": 228000.0,
+        "baseAmountRaw": "228,000",
+        "baseText": "$228,000",
+        "baseLevel": "II",
+        "baseOffice": "Comptroller General",
+        "baseNodeId": "leg-support-gao-comptroller-general-of-the-united-states",
+        "minusDollars": 5000,
+        "minusDollarsText": "$5,000",
+        "result": 223000.0,
+        "resultText": "$223,000",
+        "note": "No document prints $223,000. 31 U.S.C. 705(b)(4) sets the rate at $5,000 less than the Comptroller General's; 31 U.S.C. 703(f)(1) sets the Comptroller General's at Level II's rate, and Salary Table No. 2026-EX prints $228,000 for Level II; the figure is that arithmetic and nothing more."
+      },
+      "office": "Inspector General for the Government Accountability Office",
+      "statute": "31 U.S.C. 705(b)(4)",
+      "statuteQuote": "The Inspector General shall be paid at an annual rate of pay equal to $5,000 less than the annual rate of pay of the Comptroller General",
+      "identification": {
+        "kind": "reviewed_row",
+        "nodeName": "Inspector General"
+      },
+      "derivation": "31 U.S.C. 705(b)(4) (b)(4): “The Inspector General shall be paid at an annual rate of pay equal to $5,000 less than the annual rate of pay of the Comptroller General” · 31 U.S.C. 703(f)(1) (f): “Comptroller General is equal to the rate for level II of the Executive Schedule” · Salary Table No. 2026-EX, Effective January 2026: Level II $228,000 · $228,000 − $5,000 = $223,000",
+      "quote": "31 U.S.C. 705(b)(4) (b)(4): “The Inspector General shall be paid at an annual rate of pay equal to $5,000 less than the annual rate of pay of the Comptroller General” · 31 U.S.C. 703(f)(1) (f): “Comptroller General is equal to the rate for level II of the Executive Schedule” · Salary Table No. 2026-EX, Effective January 2026: Level II $228,000 · $228,000 − $5,000 = $223,000",
+      "documents": [
+        {
+          "role": "sets this post's basic pay at $5,000 less than the Comptroller General's",
+          "citation": "31 U.S.C. 705(b)(4)",
+          "publisher": "U.S. Government Publishing Office",
+          "edition": "2024 edition of the United States Code",
+          "title": "31 U.S.C. 705(b)(4), 2024 edition of the United States Code",
+          "quote": "The Inspector General shall be paid at an annual rate of pay equal to $5,000 less than the annual rate of pay of the Comptroller General",
+          "url": "https://www.govinfo.gov/link/uscode/31/705?link-type=html",
+          "documentSha256": "962ddbe5e310e1f65f058a4b664c65392fffea6f59f2983dd6c3311a9a3ea172",
+          "retrievedAt": "2026-10-06T04:15:06Z",
+          "statesTheFigure": false
+        },
+        {
+          "role": "sets the Comptroller General's basic pay by reference to Executive Schedule Level II",
+          "citation": "31 U.S.C. 703(f)(1)",
+          "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+          "edition": "current through the prelim edition",
+          "title": "31 U.S.C. 703(f)(1), current through the prelim edition",
+          "quote": "Comptroller General is equal to the rate for level II of the Executive Schedule",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title31-section703&num=0&edition=prelim",
+          "documentSha256": "bea4dd6d430c5148d0086bf25aef5cda0928821e85213dcf1d9f7205d5c4c015",
+          "retrievedAt": "2026-09-27T22:10:20Z",
+          "statesTheFigure": false
+        },
+        {
+          "role": "states what that Executive Schedule level pays",
+          "citation": "Salary Table No. 2026-EX, Effective January 2026",
+          "publisher": "U.S. Office of Personnel Management",
+          "title": "Salary Table No. 2026-EX",
+          "quote": "Level II $228,000",
+          "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+          "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+          "retrievedAt": "2026-09-11T03:05:36Z",
+          "statesTheFigure": false
+        }
+      ],
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "$5,000 less than the Comptroller General's rate (Level II)",
+      "url": "https://www.govinfo.gov/link/uscode/31/705?link-type=html",
+      "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-10-06T04:15:06Z",
+      "referencedOfficer": {
+        "nodeId": "leg-support-gao-comptroller-general-of-the-united-states",
+        "office": "Comptroller General",
+        "statute": "31 U.S.C. 703(f)(1)",
+        "statuteQuote": "Comptroller General is equal to the rate for level II of the Executive Schedule",
+        "viaStatute": null,
+        "amount": 228000.0,
+        "rateText": "$228,000",
+        "level": "II"
+      },
+      "verification": {
+        "documents": 3,
+        "documentsStatingTheFigure": 0,
+        "percent": 90,
+        "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+        "caution": "The percentage measures how much official documentation this figure rests on, not the chance that it is right. No document here states the figure for this post: its statute sets its pay a stated number of dollars below another officer's, that officer's pay is set by reference to an Executive Schedule level, and OPM's table states what that level pays; the subtraction is arithmetic this project performed and no document prints.",
+        "documentRoles": [
+          {
+            "url": "https://www.govinfo.gov/link/uscode/31/705?link-type=html"
+          },
+          {
+            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title31-section703&num=0&edition=prelim"
+          },
+          {
+            "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx"
+          }
+        ]
+      }
+    }
   },
   {
     "id": "leg-support-cbo",
@@ -32144,6 +32457,28 @@
     "sourceCount": 4,
     "confidenceScore": 1.0,
     "verificationStatus": "verified",
+    "rollup_total_amount": 512977431.15,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Alcohol and Tobacco Tax and Trade Bureau:",
+    "budget_as_of": "2026-08-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "treasury_header_sum": true,
+    "treasury_component_rows": [
+      {
+        "name": "Salaries and Expenses",
+        "amount": 135921189.46
+      },
+      {
+        "name": "Internal Revenue Collections for Puerto Rico",
+        "amount": 377056241.69
+      }
+    ],
+    "treasury_header_sum_note": "The statement prints no total line for this unit; the figure is the sum of the 2 lines it prints beneath the unit's header, listed below.",
+    "treasury_section": "Department of the Treasury",
+    "treasury_classification_id": "59309531",
     "lastVerified": "2026-09-20T00:33:15+00:00",
     "evidenceUrls": [
       "https://www.ttb.gov",
@@ -39382,7 +39717,7 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "resolved_total_amount": 1193064410.34,
+    "resolved_total_amount": 1212622843.3,
     "cost_status": "allocated",
     "cost_basis": "subtree_weight",
     "cost_validation": "estimated_from_parent",
@@ -39557,7 +39892,7 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "resolved_total_amount": 1193064410.34,
+    "resolved_total_amount": 1212622843.3,
     "cost_status": "allocated",
     "cost_basis": "subtree_weight",
     "cost_validation": "estimated_from_parent",
@@ -39728,7 +40063,7 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "resolved_total_amount": 1193064410.34,
+    "resolved_total_amount": 1212622843.3,
     "cost_status": "allocated",
     "cost_basis": "subtree_weight",
     "cost_validation": "estimated_from_parent",
@@ -40019,7 +40354,7 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "resolved_total_amount": 1193064410.34,
+    "resolved_total_amount": 1212622843.3,
     "cost_status": "allocated",
     "cost_basis": "subtree_weight",
     "cost_validation": "estimated_from_parent",
@@ -40761,32 +41096,38 @@
       "manualParent": "Department of Justice (DOJ)"
     },
     "sourceUrls": [
+      "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
       "https://cops.usdoj.gov/",
       "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-290"
     ],
     "sourceTypes": [
       "us_government_manual",
+      "treasury_outlays",
+      "government_dataset",
       "official_site"
     ],
-    "proofSourceCount": 2,
+    "proofSourceCount": 5,
     "proofSourceTypes": [
       "us_government_manual",
-      "official_site"
+      "treasury_outlays",
+      "government_dataset",
+      "official_site",
+      "official_financial_record"
     ],
     "existsProven": true,
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "resolved_total_amount": 238612882.07,
-    "cost_status": "allocated",
-    "cost_basis": "subtree_weight",
-    "cost_validation": "estimated_from_parent",
-    "costVerificationStatus": "unverified",
-    "costConfidenceScore": 0.2,
-    "costVerificationReason": "estimated_from_parent",
-    "costSourceCount": 0,
-    "sourceCount": 2,
-    "confidenceScore": 0.8,
+    "resolved_total_amount": 462550050.1,
+    "cost_status": "official",
+    "cost_basis": "treasury_rollup",
+    "cost_validation": "matched_official_rollup",
+    "costVerificationStatus": "verified",
+    "costConfidenceScore": 0.95,
+    "costVerificationReason": "matched_official_rollup",
+    "costSourceCount": 1,
+    "sourceCount": 3,
+    "confidenceScore": 0.9,
     "verificationStatus": "verified",
     "lastVerified": "2026-09-20T23:47:06+00:00",
     "evidenceUrls": [
@@ -40857,7 +41198,7 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "resolved_total_amount": 238612882.07,
+    "resolved_total_amount": 242524568.66,
     "cost_status": "allocated",
     "cost_basis": "subtree_weight",
     "cost_validation": "estimated_from_parent",
@@ -40920,7 +41261,7 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "resolved_total_amount": 238612882.07,
+    "resolved_total_amount": 242524568.66,
     "cost_status": "allocated",
     "cost_basis": "subtree_weight",
     "cost_validation": "estimated_from_parent",
@@ -40997,7 +41338,7 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "resolved_total_amount": 238612882.07,
+    "resolved_total_amount": 242524568.66,
     "cost_status": "allocated",
     "cost_basis": "subtree_weight",
     "cost_validation": "estimated_from_parent",
@@ -41084,6 +41425,36 @@
     "sourceCount": 4,
     "confidenceScore": 1.0,
     "verificationStatus": "verified",
+    "rollup_total_amount": 4518129781.85,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Office of Justice Programs:",
+    "budget_as_of": "2026-08-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "treasury_header_sum": true,
+    "treasury_component_rows": [
+      {
+        "name": "State and Local Law Enforcement Assistance",
+        "amount": 1331581738.43
+      },
+      {
+        "name": "Community Oriented Policing Services",
+        "amount": 462550050.1
+      },
+      {
+        "name": "Crime Victims Fund",
+        "amount": 1574290055.49
+      },
+      {
+        "name": "Other",
+        "amount": 1149707937.83
+      }
+    ],
+    "treasury_header_sum_note": "The statement prints no total line for this unit; the figure is the sum of the 4 lines it prints beneath the unit's header, listed below.",
+    "treasury_section": "Department of Justice",
+    "treasury_classification_id": "59309177",
     "lastVerified": "2026-09-20T23:47:06+00:00",
     "evidenceUrls": [
       "https://www.ojp.gov/",
@@ -41189,7 +41560,7 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "resolved_total_amount": 238612882.07,
+    "resolved_total_amount": 242524568.66,
     "cost_status": "allocated",
     "cost_basis": "subtree_weight",
     "cost_validation": "estimated_from_parent",
@@ -41294,7 +41665,7 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "resolved_total_amount": 238612882.07,
+    "resolved_total_amount": 242524568.66,
     "cost_status": "allocated",
     "cost_basis": "subtree_weight",
     "cost_validation": "estimated_from_parent",
@@ -41479,7 +41850,7 @@
     "cost_status": "official",
     "cost_basis": "treasury_rollup",
     "cost_validation": "matched_official_rollup",
-    "child_cost_basis": "dollars",
+    "child_cost_basis": "employees",
     "costVerificationStatus": "verified",
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
@@ -42119,6 +42490,28 @@
     "sourceCount": 4,
     "confidenceScore": 1.0,
     "verificationStatus": "verified",
+    "rollup_total_amount": 1364367888.4,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Bureau of Land Management:",
+    "budget_as_of": "2026-08-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "treasury_header_sum": true,
+    "treasury_component_rows": [
+      {
+        "name": "Management of Lands and Resources",
+        "amount": 999551219.81
+      },
+      {
+        "name": "Other",
+        "amount": 364816668.59
+      }
+    ],
+    "treasury_header_sum_note": "The statement prints no total line for this unit; the figure is the sum of the 2 lines it prints beneath the unit's header, listed below.",
+    "treasury_section": "Department of the Interior",
+    "treasury_classification_id": "59309088",
     "lastVerified": "2026-09-20T00:33:15+00:00",
     "evidenceUrls": [
       "https://www.blm.gov/",
@@ -43403,6 +43796,28 @@
     "sourceCount": 4,
     "confidenceScore": 1.0,
     "verificationStatus": "verified",
+    "rollup_total_amount": 2987056641.15,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Bureau of Reclamation:",
+    "budget_as_of": "2026-08-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "treasury_header_sum": true,
+    "treasury_component_rows": [
+      {
+        "name": "Water and Related Resources",
+        "amount": 2462819119.24
+      },
+      {
+        "name": "Other",
+        "amount": 524237521.91
+      }
+    ],
+    "treasury_header_sum_note": "The statement prints no total line for this unit; the figure is the sum of the 2 lines it prints beneath the unit's header, listed below.",
+    "treasury_section": "Department of the Interior",
+    "treasury_classification_id": "59309103",
     "lastVerified": "2026-09-20T00:33:15+00:00",
     "evidenceUrls": [
       "https://www.usbr.gov/",
@@ -44792,7 +45207,7 @@
     "cost_status": "official",
     "cost_basis": "treasury_rollup",
     "cost_validation": "matched_official_rollup",
-    "child_cost_basis": "dollars",
+    "child_cost_basis": "subtree",
     "costVerificationStatus": "verified",
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
@@ -45057,7 +45472,6 @@
       "package": "BUDGET-2027-DB",
       "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
     },
-    "child_cost_basis_implied": true,
     "parentId": "exec-cabinet"
   },
   {
@@ -46055,6 +46469,32 @@
     "sourceCount": 3,
     "confidenceScore": 0.9,
     "verificationStatus": "verified",
+    "rollup_total_amount": 5270811519.5,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Natural Resources Conservation Service:",
+    "budget_as_of": "2026-08-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "treasury_header_sum": true,
+    "treasury_component_rows": [
+      {
+        "name": "Conservation Operations",
+        "amount": 1161344235.5
+      },
+      {
+        "name": "Farm Security and Rural Investment Programs",
+        "amount": 3575953778.98
+      },
+      {
+        "name": "Other",
+        "amount": 533513505.02
+      }
+    ],
+    "treasury_header_sum_note": "The statement prints no total line for this unit; the figure is the sum of the 3 lines it prints beneath the unit's header, listed below.",
+    "treasury_section": "Department of Agriculture",
+    "treasury_classification_id": "59308536",
     "lastVerified": "2026-09-20T00:33:15+00:00",
     "evidenceUrls": [
       "https://www.nrcs.usda.gov/",
@@ -48775,7 +49215,104 @@
     },
     "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
     "evidenceVerifiedAt": "2025-12-31",
-    "parentId": "exec-dept-doc-noaa"
+    "parentId": "exec-dept-doc-noaa",
+    "positionTierReferencePay": {
+      "source": "statutory_tier_reference_pay",
+      "sourceLabel": "a statute setting the post's pay by reference to an Executive Schedule level, joined to OPM's table",
+      "method": "pay_set_by_reference_to_an_executive_schedule_level_joined_to_opm_table",
+      "amount": 184900.0,
+      "rateText": "$184,900",
+      "level": "V",
+      "levelText": "Level V",
+      "levelRateText": "$184,900",
+      "levelAmount": 184900.0,
+      "percent": 0,
+      "arithmetic": null,
+      "office": "Chief Scientist of the National Oceanic and Atmospheric Administration",
+      "statute": "Reorganization Plan No. 4 of 1970",
+      "statuteQuote": "There shall be in the Administration a Chief Scientist of the National Oceanic and Atmospheric Administration who shall be appointed by the President and shall be compensated at the rate now or hereafter provided for Level V of the Executive Schedule Pay Rates (5 U.S.C. 5316).",
+      "identification": {
+        "kind": "reviewed_row",
+        "nodeName": "Chief Scientist",
+        "office": "Chief Scientist of the National Oceanic and Atmospheric Administration"
+      },
+      "derivation": "Reorganization Plan No. 4 of 1970 §2(d): “There shall be in the Administration a Chief Scientist of the National Oceanic and Atmospheric Administration who shall be appointed by the President and shall be compensated at the rate now or hereafter provided for Level V of the Executive Schedule Pay Rates (5 U.S.C. 5316).” · Salary Table No. 2026-EX, Effective January 2026: Level V $184,900",
+      "quote": "Reorganization Plan No. 4 of 1970 §2(d): “There shall be in the Administration a Chief Scientist of the National Oceanic and Atmospheric Administration who shall be appointed by the President and shall be compensated at the rate now or hereafter provided for Level V of the Executive Schedule Pay Rates (5 U.S.C. 5316).” · Salary Table No. 2026-EX, Effective January 2026: Level V $184,900",
+      "documents": [
+        {
+          "role": "sets this post's basic pay by reference to Executive Schedule Level V",
+          "citation": "Reorganization Plan No. 4 of 1970, §2(d)",
+          "publisher": "U.S. Government Publishing Office",
+          "edition": "2024 edition of the United States Code",
+          "title": "Reorganization Plan No. 4 of 1970, as printed in 5 U.S.C. App., Reorganization Plans",
+          "quote": "There shall be in the Administration a Chief Scientist of the National Oceanic and Atmospheric Administration who shall be appointed by the President and shall be compensated at the rate now or hereafter provided for Level V of the Executive Schedule Pay Rates (5 U.S.C. 5316).",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-app-reorganiz.htm",
+          "documentSha256": "71eadef8ca108d8da8faac8033fe8476475ee9beec0e391d3c20145b6528c398",
+          "retrievedAt": "2026-10-06T04:16:55Z",
+          "statesTheFigure": false,
+          "instrumentKind": "reorganization_plan",
+          "instrumentName": "Reorganization Plan No. 4 of 1970",
+          "instrumentIssuer": "the President",
+          "instrumentDate": "July 9, 1970"
+        },
+        {
+          "role": "states what that Executive Schedule level pays",
+          "citation": "Salary Table No. 2026-EX, Effective January 2026",
+          "publisher": "U.S. Office of Personnel Management",
+          "title": "Salary Table No. 2026-EX",
+          "quote": "Level V $184,900",
+          "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+          "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+          "retrievedAt": "2026-09-11T03:05:36Z",
+          "statesTheFigure": false
+        }
+      ],
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level V",
+      "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-app-reorganiz.htm",
+      "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-10-06T04:16:55Z",
+      "instrument": {
+        "id": "reorganization-plan-no-4-of-1970",
+        "kind": "reorganization_plan",
+        "kindWords": "a Reorganization Plan, transmitted by the President under chapter 9 of Title 5 and in effect, which the United States Code prints in Title 5's Appendix rather than as a section of the Code",
+        "name": "Reorganization Plan No. 4 of 1970",
+        "heading": "REORGANIZATION PLAN NO. 4 OF 1970",
+        "issuer": "the President",
+        "date": "July 9, 1970",
+        "effective": "Eff. Oct. 3, 1970, 35 F.R. 15627, 84 Stat. 2090, as amended Pub. L. 94–461, §4(c)(1), Oct. 8, 1976, 90 Stat. 1969; Pub. L. 95–219, §3(a)(1), Dec. 28, 1977, 91 Stat. 1613; Pub. L. 98–498, title III, §320(c)(3), Oct. 19, 1984, 98 Stat. 2309; Pub. L. 99–659, title IV, §407(d), Nov. 14, 1986, 100 Stat. 3739; Pub. L. 112–166, §2(b)(1), Aug. 10, 2012, 126 Stat. 1283",
+        "printedIn": "5 U.S.C. App., Reorganization Plans",
+        "publisher": "U.S. Government Publishing Office",
+        "edition": "2024 edition of the United States Code",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-app-reorganiz.htm",
+        "documentSha256": "71eadef8ca108d8da8faac8033fe8476475ee9beec0e391d3c20145b6528c398",
+        "retrievedAt": "2026-10-06T04:16:55Z"
+      },
+      "verification": {
+        "documents": 2,
+        "documentsStatingTheFigure": 0,
+        "percent": 80,
+        "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+        "caution": "The percentage measures how much official documentation this figure rests on, not the chance that it is right. No document here states the figure for this post: an instrument the United States Code prints outside its sections -- a Reorganization Plan, or a chamber's pay order reprinted in a Statutory Note -- sets its pay by reference to an Executive Schedule level, and OPM's table states what that level pays.",
+        "documentRoles": [
+          {
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-app-reorganiz.htm"
+          },
+          {
+            "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx"
+          }
+        ]
+      }
+    }
   },
   {
     "id": "exec-dept-doc-nist",
@@ -57657,7 +58194,7 @@
     "proofReason": "official_source_recorded",
     "resolved_total_amount": null,
     "cost_status": "unavailable",
-    "cost_basis": "implied_employee_weight",
+    "cost_basis": "subtree_weight",
     "cost_validation": "post_is_not_a_budget_unit",
     "costVerificationStatus": "unverified",
     "costConfidenceScore": 0.0,
@@ -57704,7 +58241,7 @@
     "proofReason": "official_source_recorded",
     "resolved_total_amount": null,
     "cost_status": "unavailable",
-    "cost_basis": "implied_employee_weight",
+    "cost_basis": "subtree_weight",
     "cost_validation": "post_is_not_a_budget_unit",
     "costVerificationStatus": "unverified",
     "costConfidenceScore": 0.0,
@@ -57862,7 +58399,7 @@
     "proofReason": "official_source_recorded",
     "resolved_total_amount": null,
     "cost_status": "unavailable",
-    "cost_basis": "implied_employee_weight",
+    "cost_basis": "subtree_weight",
     "cost_validation": "post_is_not_a_budget_unit",
     "costVerificationStatus": "unverified",
     "costConfidenceScore": 0.0,
@@ -58033,7 +58570,7 @@
     "proofReason": "official_source_recorded",
     "resolved_total_amount": null,
     "cost_status": "unavailable",
-    "cost_basis": "implied_employee_weight",
+    "cost_basis": "subtree_weight",
     "cost_validation": "post_is_not_a_budget_unit",
     "costVerificationStatus": "unverified",
     "costConfidenceScore": 0.0,
@@ -58204,7 +58741,7 @@
     "proofReason": "official_source_recorded",
     "resolved_total_amount": null,
     "cost_status": "unavailable",
-    "cost_basis": "implied_employee_weight",
+    "cost_basis": "subtree_weight",
     "cost_validation": "post_is_not_a_budget_unit",
     "costVerificationStatus": "unverified",
     "costConfidenceScore": 0.0,
@@ -58370,7 +58907,7 @@
     "proofReason": "official_source_recorded",
     "resolved_total_amount": null,
     "cost_status": "unavailable",
-    "cost_basis": "implied_employee_weight",
+    "cost_basis": "subtree_weight",
     "cost_validation": "post_is_not_a_budget_unit",
     "costVerificationStatus": "unverified",
     "costConfidenceScore": 0.0,
@@ -58509,9 +59046,9 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "resolved_total_amount": 263115905.75,
+    "resolved_total_amount": 397953284.9,
     "cost_status": "allocated",
-    "cost_basis": "implied_employee_weight",
+    "cost_basis": "subtree_weight",
     "cost_validation": "estimated_from_parent",
     "child_cost_basis": "subtree",
     "costVerificationStatus": "unverified",
@@ -58548,31 +59085,37 @@
     "color": "#c84a4a",
     "children": [],
     "sourceUrls": [
+      "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
       "https://www.ginniemae.gov/"
     ],
     "sourceTypes": [
+      "treasury_outlays",
+      "government_dataset",
       "official_site"
     ],
-    "proofSourceCount": 1,
+    "proofSourceCount": 4,
     "proofSourceTypes": [
-      "official_site"
+      "treasury_outlays",
+      "government_dataset",
+      "official_site",
+      "official_financial_record"
     ],
     "existsProven": true,
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "resolved_total_amount": 210492724.6,
-    "cost_status": "allocated",
-    "cost_basis": "employee_weight",
-    "cost_validation": "estimated_from_parent",
+    "resolved_total_amount": -1839035438.49,
+    "cost_status": "official",
+    "cost_basis": "treasury_rollup",
+    "cost_validation": "matched_official_rollup",
     "child_cost_basis": "subtree",
-    "costVerificationStatus": "unverified",
-    "costConfidenceScore": 0.2,
-    "costVerificationReason": "estimated_from_parent",
-    "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
+    "costVerificationStatus": "verified",
+    "costConfidenceScore": 0.95,
+    "costVerificationReason": "matched_official_rollup",
+    "costSourceCount": 1,
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
     "lastVerified": "2026-09-20T00:33:15+00:00",
     "evidenceUrls": [
       "https://www.ginniemae.gov/"
@@ -59401,9 +59944,9 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "resolved_total_amount": 263115905.75,
+    "resolved_total_amount": 397953284.9,
     "cost_status": "allocated",
-    "cost_basis": "implied_employee_weight",
+    "cost_basis": "subtree_weight",
     "cost_validation": "estimated_from_parent",
     "child_cost_basis": "subtree",
     "costVerificationStatus": "unverified",
@@ -59457,9 +60000,9 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "resolved_total_amount": 263115905.75,
+    "resolved_total_amount": 397953284.9,
     "cost_status": "allocated",
-    "cost_basis": "implied_employee_weight",
+    "cost_basis": "subtree_weight",
     "cost_validation": "estimated_from_parent",
     "child_cost_basis": "subtree",
     "costVerificationStatus": "unverified",
@@ -59513,9 +60056,9 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "resolved_total_amount": 263115905.75,
+    "resolved_total_amount": 397953284.9,
     "cost_status": "allocated",
-    "cost_basis": "implied_employee_weight",
+    "cost_basis": "subtree_weight",
     "cost_validation": "estimated_from_parent",
     "child_cost_basis": "subtree",
     "costVerificationStatus": "unverified",
@@ -59569,9 +60112,9 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "resolved_total_amount": 263115905.75,
+    "resolved_total_amount": 397953284.9,
     "cost_status": "allocated",
-    "cost_basis": "implied_employee_weight",
+    "cost_basis": "subtree_weight",
     "cost_validation": "estimated_from_parent",
     "child_cost_basis": "subtree",
     "costVerificationStatus": "unverified",
@@ -59625,9 +60168,9 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "resolved_total_amount": 263115905.75,
+    "resolved_total_amount": 397953284.9,
     "cost_status": "allocated",
-    "cost_basis": "implied_employee_weight",
+    "cost_basis": "subtree_weight",
     "cost_validation": "estimated_from_parent",
     "child_cost_basis": "subtree",
     "costVerificationStatus": "unverified",
@@ -59681,9 +60224,9 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "resolved_total_amount": 263115905.75,
+    "resolved_total_amount": 397953284.9,
     "cost_status": "allocated",
-    "cost_basis": "implied_employee_weight",
+    "cost_basis": "subtree_weight",
     "cost_validation": "estimated_from_parent",
     "child_cost_basis": "subtree",
     "costVerificationStatus": "unverified",
@@ -59737,9 +60280,9 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "resolved_total_amount": 263115905.75,
+    "resolved_total_amount": 397953284.9,
     "cost_status": "allocated",
-    "cost_basis": "implied_employee_weight",
+    "cost_basis": "subtree_weight",
     "cost_validation": "estimated_from_parent",
     "child_cost_basis": "subtree",
     "costVerificationStatus": "unverified",
@@ -59793,9 +60336,9 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "resolved_total_amount": 263115905.75,
+    "resolved_total_amount": 397953284.9,
     "cost_status": "allocated",
-    "cost_basis": "implied_employee_weight",
+    "cost_basis": "subtree_weight",
     "cost_validation": "estimated_from_parent",
     "child_cost_basis": "subtree",
     "costVerificationStatus": "unverified",
@@ -59849,9 +60392,9 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "resolved_total_amount": 263115905.75,
+    "resolved_total_amount": 397953284.9,
     "cost_status": "allocated",
-    "cost_basis": "implied_employee_weight",
+    "cost_basis": "subtree_weight",
     "cost_validation": "estimated_from_parent",
     "child_cost_basis": "subtree",
     "costVerificationStatus": "unverified",
@@ -59905,9 +60448,9 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "resolved_total_amount": 263115905.75,
+    "resolved_total_amount": 397953284.9,
     "cost_status": "allocated",
-    "cost_basis": "implied_employee_weight",
+    "cost_basis": "subtree_weight",
     "cost_validation": "estimated_from_parent",
     "child_cost_basis": "subtree",
     "costVerificationStatus": "unverified",
@@ -64202,6 +64745,36 @@
     "sourceCount": 3,
     "confidenceScore": 0.9,
     "verificationStatus": "verified",
+    "rollup_total_amount": 23763992947.05,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "National Nuclear Security Administration:",
+    "budget_as_of": "2026-08-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "treasury_header_sum": true,
+    "treasury_component_rows": [
+      {
+        "name": "Naval Reactors",
+        "amount": 1886001048.57
+      },
+      {
+        "name": "Weapons Activities",
+        "amount": 19207268782.3
+      },
+      {
+        "name": "Defense Nuclear Nonproliferation",
+        "amount": 2201521835.41
+      },
+      {
+        "name": "Other",
+        "amount": 469201280.77
+      }
+    ],
+    "treasury_header_sum_note": "The statement prints no total line for this unit; the figure is the sum of the 4 lines it prints beneath the unit's header, listed below.",
+    "treasury_section": "Department of Energy",
+    "treasury_classification_id": "59308790",
     "lastVerified": "2026-09-20T00:33:15+00:00",
     "evidenceUrls": [
       "https://www.energy.gov/nnsa/national-nuclear-security-administration",
@@ -68390,6 +68963,40 @@
     "sourceCount": 2,
     "confidenceScore": 0.8,
     "verificationStatus": "verified",
+    "rollup_total_amount": 100361712221.24,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Veterans Health Administration:",
+    "budget_as_of": "2026-08-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "treasury_header_sum": true,
+    "treasury_component_rows": [
+      {
+        "name": "Veterans Choice Fund, Veterans Health Administration",
+        "amount": -16725.31
+      },
+      {
+        "name": "Medical Services",
+        "amount": 81819094954.0
+      },
+      {
+        "name": "Medical Support and Compliance",
+        "amount": 9201645423.04
+      },
+      {
+        "name": "Medical Facilities",
+        "amount": 8453652409.7
+      },
+      {
+        "name": "Other",
+        "amount": 887336159.81
+      }
+    ],
+    "treasury_header_sum_note": "The statement prints no total line for this unit; the figure is the sum of the 5 lines it prints beneath the unit's header, listed below.",
+    "treasury_section": "Department of Veterans Affairs",
+    "treasury_classification_id": "59309636",
     "lastVerified": "2026-09-20T00:33:15+00:00",
     "evidenceUrls": [
       "https://www.va.gov/health"
@@ -80069,6 +80676,32 @@
     "sourceCount": 3,
     "confidenceScore": 0.9,
     "verificationStatus": "verified",
+    "rollup_total_amount": 2055857347.93,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Postal Service:",
+    "budget_as_of": "2026-08-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "treasury_header_sum": true,
+    "treasury_component_rows": [
+      {
+        "name": "Public Enterprise Funds",
+        "amount": 1779710073.98
+      },
+      {
+        "name": "Other",
+        "amount": 206087273.95
+      },
+      {
+        "name": "Other",
+        "amount": 70060000.0
+      }
+    ],
+    "treasury_header_sum_note": "The statement prints no total line for this unit; the figure is the sum of the 3 lines it prints beneath the unit's header, listed below.",
+    "treasury_section": "Independent Agencies",
+    "treasury_classification_id": "59310014",
     "lastVerified": "2026-09-08T19:19:15Z",
     "placementVerified": false,
     "placementParentId": "exec-independent",
@@ -85346,6 +85979,16 @@
     "sourceCount": 2,
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
+    "rollup_total_amount": 941240516.35,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Corporation for National and Community Service",
+    "budget_as_of": "2026-08-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "treasury_section": "Independent Agencies",
+    "treasury_classification_id": "59309942",
     "lastVerified": "2025-12-31",
     "verificationUnread": {
       "kind": "host_refuses_crawler",
@@ -97631,6 +98274,32 @@
     "sourceCount": 3,
     "confidenceScore": 0.9,
     "verificationStatus": "verified",
+    "rollup_total_amount": 9879942633.73,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Federal Communications Commission:",
+    "budget_as_of": "2026-08-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "treasury_header_sum": true,
+    "treasury_component_rows": [
+      {
+        "name": "Universal Service Fund",
+        "amount": 7935112366.76
+      },
+      {
+        "name": "Spectrum Auction Program Account",
+        "amount": 234605.41
+      },
+      {
+        "name": "Other",
+        "amount": 1944595661.56
+      }
+    ],
+    "treasury_header_sum_note": "The statement prints no total line for this unit; the figure is the sum of the 3 lines it prints beneath the unit's header, listed below.",
+    "treasury_section": "Independent Agencies",
+    "treasury_classification_id": "59309961",
     "lastVerified": "2026-09-08T19:19:15Z",
     "verificationUnread": {
       "kind": "host_refuses_crawler",

@@ -49,7 +49,6 @@
       "grade": "E-9"
     },
     "footnoteTitlesUnmatched": [
-      "Chief Master Sergeant of the Space Force",
       "Senior Enlisted Advisor to the Chairman of the Joint Chiefs of Staff",
       "Senior Enlisted Advisor to the Chief of the National Guard Bureau"
     ],
@@ -146,19 +145,18 @@
       }
     },
     "gradeRows": 17,
-    "priced": 22,
+    "priced": 23,
     "pricedByGrade": 17,
-    "pricedByFootnote": 5,
+    "pricedByFootnote": 6,
     "documentsStatingTheFigure": 0,
     "strengthScale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
     "refused": {},
     "notPriced": {
-      "exec-dept-defense-sf-senior-enlisted-advisor": "Schedule 8's footnote prints 'Chief Master Sergeant of the Space Force'; the graph's generic 'Senior Enlisted Advisor' is not that title by equality and no document in hand says which office stands under it (10 U.S.C. 9084 leaves the Office of the Chief of Space Operations' organisation to the Secretary of the Air Force). A rename candidate, not a pricing",
       "exec-dept-defense-agency-nga-director-national-geospatial-intelligence-agency-nga": "10 U.S.C. 441(b)(3) fixes lieutenant general or vice admiral only IF an officer of the armed forces holds the post, which is a fact about a person this project never reads",
       "exec-dept-defense-cocom-commanders-without-a-grade-statute": "nine of the eleven combatant commanders (AFRICOM, CENTCOM, EUCOM, INDOPACOM, NORTHCOM, SOUTHCOM, SPACECOM, STRATCOM, TRANSCOM) hold their grade by presidential designation under 10 U.S.C. 601(a), which names no post; 10 U.S.C. 164 fixes none; Schedule 8's footnote names them only as subject to the Level II ceiling, and a ceiling is not a rate",
       "exec-dept-defense-jcs-copies-of-the-service-chiefs": "the Joint Chiefs of Staff grouping carries a second node for each service chief and for the Commandant of the Coast Guard; each is the office the service's own node already carries, and publishing one salary on two nodes is the rule the Vice President's Senate-leadership node set"
     },
-    "validated": 22,
+    "validated": 23,
     "rejected": [],
     "conflicts": [],
     "double_counted": []
@@ -2515,6 +2513,108 @@
         "flat": true,
         "firstBlockPopulatedColumns": 0,
         "note": "Every populated cell of the O-10 row prints $18,999.90, in the Over 20 through Over 40 columns; the cells for 2 or less through Over 18 print nothing, so the grade's monthly rate does not vary with years of service."
+      },
+      "unitsEvidenceKind": "currency_mark_on_the_figure_the_record_is_computed_from"
+    },
+    "exec-dept-defense-sf-senior-enlisted-advisor": {
+      "nodeId": "exec-dept-defense-sf-senior-enlisted-advisor",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "basic_pay",
+      "amount": 134002.8,
+      "amountRaw": "134,002.80",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "For noncommissioned officers serving as Sergeant Major of the Army, Master Chief Petty Officer of the Navy or Coast Guard, Chief Master Sergeant of the Air Force, Sergeant Major of the Marine Corps, Chief Master Sergeant of the Space Force, Senior Enlisted Advisor to the Chairman of the Joint Chiefs of Staff, or Senior Enlisted Advisor to the Chief of the National Guard Bureau, basic pay for this grade is $11,166.90 per month, regardless of cumulative years of service under",
+      "quote": "Schedule 8 — Pay of the Uniformed Services (Effective January 1, 2026), enlisted footnote 1: “For noncommissioned officers serving as Sergeant Major of the Army, Master Chief Petty Officer of the Navy or Coast Guard, Chief Master Sergeant of the Air Force, Sergeant Major of the Marine Corps, Chief Master Sergeant of the Space Force, Senior Enlisted Advisor to the Chairman of the Joint Chiefs of Staff, or Senior Enlisted Advisor to the Chief of the National Guard Bureau, basic pay for this grade is $11,166.90 per month, regardless of cumulative years of service under” · $11,166.90 × 12 = $134,002.80",
+      "fiscalYear": 2026,
+      "periodCoverage": "annual_rate",
+      "periodAsOf": "2026-01-01",
+      "amountScope": "this post, named in the footnote as “Chief Master Sergeant of the Space Force”, twelve times the monthly rate",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "military_basic_pay_schedule",
+      "sourceUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5332&num=0&edition=prelim",
+      "documentSha256": "6656771d1a4103ab85e484fac10490c67d0126d8ed11832b804510ff7c9a9e59",
+      "retrievedAt": "2026-09-23T14:35:38Z",
+      "locator": {
+        "section": "5 U.S.C. 5332 note",
+        "subsection": "Schedule 8 — Pay of the Uniformed Services, enlisted footnote 1"
+      },
+      "method": "post_named_in_schedule_8_footnote_at_a_stated_monthly_rate",
+      "office": "Chief Master Sergeant of the Space Force",
+      "monthly": {
+        "amount": 11166.9,
+        "amountRaw": "11,166.90",
+        "text": "$11,166.90 per month",
+        "statedFor": "this post, named in the footnote as “Chief Master Sergeant of the Space Force”"
+      },
+      "arithmetic": {
+        "operation": "monthly_times_12",
+        "baseAmount": 11166.9,
+        "baseAmountRaw": "11,166.90",
+        "baseText": "$11,166.90 per month",
+        "factor": 12,
+        "result": 134002.8,
+        "resultText": "$134,002.80",
+        "note": "No document prints $134,002.80. Schedule 8 prints basic pay by the month (\"part i-monthly basic pay\"): $11,166.90 for this post, named in the footnote as “Chief Master Sergeant of the Space Force”; the annual figure is twelve times that and nothing more."
+      },
+      "rateText": "$134,002.80",
+      "derivation": "Schedule 8 — Pay of the Uniformed Services (Effective January 1, 2026), enlisted footnote 1: “For noncommissioned officers serving as Sergeant Major of the Army, Master Chief Petty Officer of the Navy or Coast Guard, Chief Master Sergeant of the Air Force, Sergeant Major of the Marine Corps, Chief Master Sergeant of the Space Force, Senior Enlisted Advisor to the Chairman of the Joint Chiefs of Staff, or Senior Enlisted Advisor to the Chief of the National Guard Bureau, basic pay for this grade is $11,166.90 per month, regardless of cumulative years of service under” · $11,166.90 × 12 = $134,002.80",
+      "identification": {
+        "kind": "named_in_footnote",
+        "nodeName": "Chief Master Sergeant of the Space Force",
+        "title": "Chief Master Sergeant of the Space Force",
+        "printedItem": "Chief Master Sergeant of the Space Force",
+        "readsTwoOffices": false,
+        "grade": "E-9"
+      },
+      "documents": [
+        {
+          "role": "names the post by title and prints its monthly basic pay: $11,166.90 per month regardless of years of service",
+          "citation": "5 U.S.C. 5332 note, Ex. Ord. No. 14368, Schedule 8 — Pay of the Uniformed Services (Effective January 1, 2026)",
+          "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives, reproducing Executive Order 14368",
+          "title": "Schedule 8 — Pay of the Uniformed Services (Effective January 1, 2026)",
+          "quote": "For noncommissioned officers serving as Sergeant Major of the Army, Master Chief Petty Officer of the Navy or Coast Guard, Chief Master Sergeant of the Air Force, Sergeant Major of the Marine Corps, Chief Master Sergeant of the Space Force, Senior Enlisted Advisor to the Chairman of the Joint Chiefs of Staff, or Senior Enlisted Advisor to the Chief of the National Guard Bureau, basic pay for this grade is $11,166.90 per month, regardless of cumulative years of service under",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5332&num=0&edition=prelim",
+          "documentSha256": "6656771d1a4103ab85e484fac10490c67d0126d8ed11832b804510ff7c9a9e59",
+          "retrievedAt": "2026-09-23T14:35:38Z",
+          "statesTheFigure": false,
+          "statesTheMonthlyFigure": true
+        }
+      ],
+      "schedule": {
+        "label": "Schedule 8 — Pay of the Uniformed Services",
+        "title": "Pay of the Uniformed Services",
+        "effective": "(Effective January 1, 2026)",
+        "year": "2026",
+        "partHeading": "part i-monthly basic pay"
+      },
+      "capFootnote": {
+        "text": "Basic pay is limited to the rate of basic pay for level II of the Executive Schedule in effect during calendar year 2026, which is $18,899.90 per month, for officers at pay grades O–7 through O–⁠10. This includes officers serving as Chairman or Vice Chairman of the Joint Chiefs of Staff, Chief of Staff of the Army, Chief of Naval Operations, Chief of Staff of the Air Force, Commandant of the Marine Corps, Chief of Space Operations, Commandant of the Coast Guard, Chief of the National Guard Bureau, or commander of a unified or specified combatant command (as defined in",
+        "monthlyAsPrinted": "$18,899.90",
+        "note": "The officer table's footnote 1 prints the Level II ceiling for pay grades O-7 through O-10 as $18,899.90 per month, while the O-10 row prints $18,999.90; the two differ by $100.00 and this project publishes the row's figure, recording the discrepancy rather than reconciling it."
+      },
+      "scheduleUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5332&num=0&edition=prelim",
+      "scheduleSha256": "6656771d1a4103ab85e484fac10490c67d0126d8ed11832b804510ff7c9a9e59",
+      "scheduleRetrievedAt": "2026-09-23T14:35:38Z",
+      "effective": "2026-01-01",
+      "statute": "5 U.S.C. 5332 note",
+      "grade": "noncommissioned officer, pay grade E-9",
+      "payGrade": "E-9",
+      "footnote": {
+        "text": "For noncommissioned officers serving as Sergeant Major of the Army, Master Chief Petty Officer of the Navy or Coast Guard, Chief Master Sergeant of the Air Force, Sergeant Major of the Marine Corps, Chief Master Sergeant of the Space Force, Senior Enlisted Advisor to the Chairman of the Joint Chiefs of Staff, or Senior Enlisted Advisor to the Chief of the National Guard Bureau, basic pay for this grade is $11,166.90 per month, regardless of cumulative years of service under",
+        "items": [
+          "Sergeant Major of the Army",
+          "Master Chief Petty Officer of the Navy or Coast Guard",
+          "Chief Master Sergeant of the Air Force",
+          "Sergeant Major of the Marine Corps",
+          "Chief Master Sergeant of the Space Force",
+          "Senior Enlisted Advisor to the Chairman of the Joint Chiefs of Staff",
+          "Senior Enlisted Advisor to the Chief of the National Guard Bureau"
+        ],
+        "printedItem": "Chief Master Sergeant of the Space Force",
+        "title": "Chief Master Sergeant of the Space Force",
+        "monthlyAsPrinted": "$11,166.90"
       },
       "unitsEvidenceKind": "currency_mark_on_the_figure_the_record_is_computed_from"
     },
