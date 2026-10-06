@@ -6561,6 +6561,28 @@ TREASURY_UNDISTRIBUTED_LABEL = "Undistributed Offsetting Receipts"
 TREASURY_STATEMENT_FIXTURE_GLOB = (Path(__file__).resolve().parents[1] / "tests" / "fixtures", "mts_table5_*.json")
 
 
+#: Mirror of build_graph's TREASURY_HEADER_SUM_ALIAS_KEYS, keyed by the node
+#: each alias reaches (TREASURY_ROW_ALIASES): the one header the owner has let
+#: reach a node by a reviewed alias rather than by name equality. Every other
+#: header must still reduce to its node's own name.
+#: "Government National Mortgage Association:" is the corporation 12 U.S.C.
+#: 1716b names; the graph's node is "Ginnie Mae". tests/test_treasury_header_
+#: sums.py pins this equal to the exporter's table.
+TREASURY_HEADER_SUM_ALIASES = {
+    "exec-dept-hud-ginnie": "government national mortgage association",
+}
+
+
+def treasury_counted_in_header_sum_note(header_label, holder_name, parent_name):
+    """Mirror of build_graph.counted_in_header_sum_note, word for word; the test pins them."""
+    return (
+        "The statement prints this unit's line beneath the \"{}\" header, and the lines beneath "
+        "that header are summed into the published figure of {}, so the same money is already inside it; "
+        "it is shown here, measured, and kept out of the arithmetic of {} so it is never counted twice.".format(
+            header_label, holder_name, parent_name)
+    )
+
+
 def treasury_header_sum_note(count):
     """Mirror of build_graph.header_sum_note, word for word; the test pins them."""
     noun = "line" if count == 1 else "lines"
@@ -6657,19 +6679,24 @@ class TreasuryStatementRows:
             return own
         return sum(self.value(k) for k in self.kids(row) if not self.is_total(k))
 
-    def components(self, header):
-        """Mirror of SectionTree.header_components: the lines beneath a header,
-        a receipts-type child as one part at its own netted amount, a
+    def component_rows(self, header):
+        """Mirror of SectionTree.header_components, as the rows themselves: the
+        lines beneath a header, a receipts-type child as one part, a
         sub-header descended into, a Total-- row never a part."""
         out = []
         for kid in self.kids(header):
             if self.is_total(kid):
                 continue
             if self.is_receipts(kid) or not self.is_header(kid):
-                out.append((self.label(kid), round(self.value(kid), 2)))
+                out.append(kid)
                 continue
-            out.extend(self.components(kid))
+            out.extend(self.component_rows(kid))
         return out
+
+    def components(self, header):
+        """The same parts as (label, amount), a receipts-type child at its own
+        netted amount."""
+        return [(self.label(kid), round(self.value(kid), 2)) for kid in self.component_rows(header)]
 
     def keys(self, row):
         """Mirror of build_graph.treasury_row_keys on the crawler's normalised
@@ -6817,7 +6844,11 @@ def main(argv):
     #    further. A line the Treasury files under another section is outside
     #    the parent's total altogether and is checked in the report instead.
     def is_external(node):
-        return node.get("treasury_external_section") is True
+        # A line the Treasury files under another section, or a printed line
+        # that is also one of another node's header-sum components (its money
+        # already inside that node's figure; the stamp is re-derived from the
+        # statement by its own check below, so a forged one fails the gate).
+        return node.get("treasury_external_section") is True or bool(node.get("treasury_counted_in_header_sum"))
 
     over_parent = []
     for parent, _ in pairs:
@@ -7645,7 +7676,8 @@ def main(argv):
                 "{} names classification id {!r}, which the {} statement does not print".format(
                     label(node), node.get("treasury_classification_id"), as_of))
             continue
-        if canonical_key(reading.label(header)) != canonical_key(node.get("name")):
+        header_key = canonical_key(reading.label(header))
+        if header_key != canonical_key(node.get("name")) and TREASURY_HEADER_SUM_ALIASES.get(str(node.get("id") or "")) != header_key:
             header_sum_violations.append(
                 "{} carries a header sum for {!r}, a name the node does not reduce to".format(
                     label(node), reading.printed(header)))
@@ -7688,6 +7720,129 @@ def main(argv):
                 "{} carries a header sum for {!r}, a name {} matchable rows of the statement carry".format(
                     label(node), reading.printed(header), carried))
     gate.check("a Treasury header sum is the statement's own lines beneath a header it totals nowhere", header_sum_violations)
+
+    # A printed line that is also one of a header sum's components, applied to
+    # a unit the header-sum node does not contain ("Community Oriented Policing
+    # Services", printed beneath "Office of Justice Programs:", on the COPS
+    # node beside OJP under the Department of Justice). The same dollars are in
+    # two published figures, so the node is stamped with the id of the node
+    # whose header sum holds them and a sentence saying so, and every parent
+    # arithmetic check above leaves it out. Re-derived here from the committed
+    # statement: the holder must be a header-sum node; the stamped node's line
+    # must be one of the rows the statement prints beneath the holder's header,
+    # at the amount the node publishes, and listed among the holder's
+    # components; the holder must not contain the node (then the nested
+    # arithmetic is already right and a stamp would hide nothing) nor the node
+    # the holder; and the sentence must be the mirrored one naming the header,
+    # the holder and the parent the tree gives the node. Conversely, a measured
+    # node whose line is such a component and which the holder does not
+    # contain must carry the stamp, or the money is counted twice unannounced.
+    counted_violations = []
+    parent_of = {str(n.get("id") or ""): p for n, p in pairs if p is not None}
+    by_id = {str(n.get("id") or ""): n for n in nodes}
+
+    def gate_ancestor_ids(node_id):
+        out = set()
+        current = parent_of.get(node_id)
+        while current is not None:
+            current_id = str(current.get("id") or "")
+            if current_id in out:
+                break
+            out.add(current_id)
+            current = parent_of.get(current_id)
+        return out
+
+    holder_components = {}
+    for holder in nodes:
+        if holder.get("treasury_header_sum") is not True:
+            continue
+        if committed_statements is None:
+            committed_statements = load_committed_treasury_statements()
+        statement = committed_statements.get(str(holder.get("budget_as_of") or ""))
+        if statement is None:
+            continue
+        reading = statement[1]
+        header = reading.rows.get(str(holder.get("treasury_classification_id") or "").strip())
+        if header is None or not reading.is_header(header):
+            continue
+        holder_components[str(holder.get("id") or "")] = (reading, header, reading.component_rows(header))
+    for node in nodes:
+        holder_id = node.get("treasury_counted_in_header_sum")
+        note = node.get("treasury_counted_in_header_sum_note")
+        node_id = str(node.get("id") or "")
+        if not holder_id:
+            if note is not None:
+                counted_violations.append("{} carries a counted-in-header-sum sentence without the stamp".format(label(node)))
+            # The converse: an unstamped measured line that is a component of
+            # a header sum the tree does not place it inside.
+            line_id = str(node.get("treasury_classification_id") or "").strip()
+            if line_id and node.get("rollup_total_amount") is not None and node.get("treasury_header_sum") is not True:
+                for other_id, (reading, header, rows) in holder_components.items():
+                    if other_id == node_id or other_id in gate_ancestor_ids(node_id) or node_id in gate_ancestor_ids(other_id):
+                        continue
+                    if any(str(r.get("classification_id") or "").strip() == line_id for r in rows):
+                        counted_violations.append(
+                            "{} publishes a line that is already inside {}'s header sum, without the stamp that keeps it "
+                            "out of its parent's arithmetic".format(label(node), label(by_id.get(other_id) or {"id": other_id})))
+            continue
+        holder_id = str(holder_id)
+        holder = by_id.get(holder_id)
+        if holder is None or holder.get("treasury_header_sum") is not True:
+            counted_violations.append("{} names {!r} as the header sum holding its line, which is not a header-sum node".format(
+                label(node), holder_id))
+            continue
+        if node.get("treasury_header_sum") is True or node.get("synthetic") or is_post(node):
+            counted_violations.append("{} carries the counted-in-header-sum stamp on a header sum, a synthetic line or a post".format(label(node)))
+            continue
+        if holder_id == node_id or holder_id in gate_ancestor_ids(node_id) or node_id in gate_ancestor_ids(holder_id):
+            counted_violations.append("{} is inside {} (or contains it) in the tree, so its line needs no counted-in-header-sum stamp".format(
+                label(node), label(holder)))
+            continue
+        if holder_id not in holder_components:
+            counted_violations.append("{} names {}, whose header sum cannot be re-derived from a committed statement".format(
+                label(node), label(holder)))
+            continue
+        reading, header, rows = holder_components[holder_id]
+        line_id = str(node.get("treasury_classification_id") or "").strip()
+        line = next((r for r in rows if str(r.get("classification_id") or "").strip() == line_id), None)
+        if line is None:
+            counted_violations.append("{} carries classification id {!r}, which is not a line the statement prints beneath {!r}".format(
+                label(node), line_id, reading.printed(header)))
+            continue
+        try:
+            rollup = float(node.get("rollup_total_amount"))
+        except (TypeError, ValueError):
+            counted_violations.append("{} carries the counted-in-header-sum stamp with no Treasury line amount".format(label(node)))
+            continue
+        printed_amount = reading.value(line)
+        if abs(round(printed_amount, 2) - rollup) > 0.005:
+            counted_violations.append("{} publishes {:,.2f} where the statement prints {:,.2f} for {!r}".format(
+                label(node), rollup, printed_amount, reading.printed(line)))
+        if str(node.get("treasury_row_name") or "") != reading.printed(line):
+            counted_violations.append("{} quotes {!r} where the statement prints {!r}".format(
+                label(node), node.get("treasury_row_name"), reading.printed(line)))
+        listed = []
+        for component in holder.get("treasury_component_rows") or []:
+            if not isinstance(component, dict):
+                continue
+            try:
+                listed.append((str(component.get("name") or ""), round(float(component.get("amount")), 2)))
+            except (TypeError, ValueError):
+                continue
+        if (reading.label(line), round(printed_amount, 2)) not in listed:
+            counted_violations.append("{}'s line {!r} is not among the lines {} lists".format(
+                label(node), reading.printed(line), label(holder)))
+        parent = parent_of.get(node_id)
+        expected = treasury_counted_in_header_sum_note(
+            reading.label(header), str(holder.get("name") or holder_id), str((parent or {}).get("name") or "its parent"))
+        if str(note or "") != expected:
+            counted_violations.append("{} lacks the sentence saying its line is already inside {}'s figure".format(
+                label(node), label(holder)))
+        if str(node.get("cost_status") or "") != "official":
+            counted_violations.append("{} carries the counted-in-header-sum stamp on a {!r} cost".format(
+                label(node), node.get("cost_status")))
+    gate.check("a Treasury line already inside another node's header sum is stamped, sourced and kept out of its parent's arithmetic",
+               counted_violations)
 
     # A unit the government has replaced. Nothing is deleted, so the site keeps
     # drawing it for anyone who asks — which makes the claim "this no longer
@@ -8454,6 +8609,11 @@ def main(argv):
         len(header_sum_nodes),
         sum(len(n.get("treasury_component_rows") or []) for n in header_sum_nodes),
         sum(amount_of(n) or 0.0 for n in header_sum_nodes)))
+    counted_nodes = [n for n in nodes if n.get("treasury_counted_in_header_sum")]
+    if counted_nodes:
+        print("  counted in a header sum: {:,} measured line(s) whose money is already inside another node's header sum (${:,.0f}), shown measured and kept out of the parent's arithmetic: {}".format(
+            len(counted_nodes), sum(amount_of(n) or 0.0 for n in counted_nodes),
+            ", ".join("{} in {}".format(n.get("id"), n.get("treasury_counted_in_header_sum")) for n in counted_nodes)))
     print("  with a cost          : {:,}".format(sum(1 for n in nodes if amount_of(n) is not None)))
     print("  verification         : {}".format(dict(verification.most_common())))
     print("  cost_status          : {}".format(dict(cost_status.most_common())))

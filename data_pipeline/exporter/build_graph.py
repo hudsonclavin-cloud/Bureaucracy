@@ -229,6 +229,10 @@ MINIMAL_GRAPH_FIELDS = (
     # the lines by printed name and amount, and the sentence the panel prints
     # under the figure (the receipts lines carry the same component list)
     "treasury_header_sum", "treasury_component_rows", "treasury_header_sum_note",
+    # a printed line that is also one of those lines, applied to a unit the
+    # header-sum node does not contain: which node's figure already holds the
+    # money, and the sentence saying it is kept out of the parent's arithmetic
+    "treasury_counted_in_header_sum", "treasury_counted_in_header_sum_note",
     # the verification box
     "sourceUrls", "sourceTypes", "sourceCount", "lastVerified",
     "verificationStatus", "confidenceScore", "verificationMethod",
@@ -1092,7 +1096,41 @@ TREASURY_ROW_ALIASES = {
     # AmeriCorps published an apportioned share (CLAUDE.md, "Known base-graph
     # gaps").
     "corporation for national and community service": "exec-ind-misc-americorps",
+    # Added 2026-10-07. The statement prints "Community Oriented Policing
+    # Services" ($462,550,050.10 on the 2026-08-31 statement) as a line beneath
+    # the "Office of Justice Programs:" header, which has no Total-- line; the
+    # graph's node is "Office of Community Oriented Policing Services", whose
+    # name contains the line's whole, and the Government Manual's 2025-12-31
+    # edition carries an entry for the office under exactly that name
+    # (granule GOVMAN-2025-12-31-290). Both the line and the node sit in the
+    # Department of Justice's section, so it passes the same-section test.
+    # The Manual files the office beside OJP under the Department, not beneath
+    # it, and the graph is NOT re-parented to follow the Treasury: the header
+    # is an appropriations grouping, not an organisational placement. So the
+    # same dollars are inside OJP's header sum and on this node, and the node
+    # is stamped `treasury_counted_in_header_sum` and kept out of the
+    # Department's arithmetic (see stamp_lines_counted_in_header_sums).
+    "community oriented policing services": "exec-dept-doj-office-community-oriented-policing-services",
+    # Added 2026-10-07, and the one alias that may reach a header sum (see
+    # TREASURY_HEADER_SUM_ALIAS_KEYS). "Government National Mortgage
+    # Association:" is a header with one line beneath it ("Guarantees of
+    # Mortgage-Backed Securities", -$1,839,035,438.49 on the 2026-08-31
+    # statement) and no Total-- line; the node is "Ginnie Mae". The basis:
+    # 12 U.S.C. 1716b establishes the corporation under its statutory name;
+    # the Government Manual's HUD entry prints "Government National Mortgage
+    # Association—Ginnie Mae"; and this graph's own reviewed Schedule row
+    # prices "President, Government National Mortgage Association" (12 U.S.C.
+    # 1723) on a post beneath this very node. Filed by the statement under the
+    # Department of Housing and Urban Development, where the node sits.
+    "government national mortgage association": "exec-dept-hud-ginnie",
 }
+#: An alias is a reviewed identification of a PRINTED line, and a header sum is
+#: already one step from a printed figure, so by default the two are not
+#: stacked: a header reaches a node by name equality or not at all. These keys
+#: are the exceptions the owner has chosen, each a row of TREASURY_ROW_ALIASES
+#: whose basis names the unit outright (a statute's own name for it), and the
+#: gate mirrors each by node id. Every other alias is still refused on a header.
+TREASURY_HEADER_SUM_ALIAS_KEYS = frozenset({"government national mortgage association"})
 # A Treasury outlay line is an organisation's spending; a committee named after
 # an agency, or a position, is never the thing that spent it.
 NON_ORGANISATION_TYPE_KEYWORDS = ("committee", "subcommittee", "position", "role", "caucus", "office holder")
@@ -1134,6 +1172,24 @@ TREASURY_ROW_FIELDS = ("budget_as_of", "budget_year", "amount_kind", "source_sys
 #: what a fresh statement clears before it re-derives them (the same
 #: clear-and-replace `remove_synthetic_receipts` gives the receipts lines).
 TREASURY_HEADER_SUM_FIELDS = ("treasury_header_sum", "treasury_component_rows", "treasury_header_sum_note")
+#: A printed line that is one of a header sum's components, applied to a unit
+#: the header-sum node does not contain: the id of the node whose figure
+#: already holds the money, and the sentence the panel prints. Cleared with the
+#: other Treasury fields on a build handed a statement, carried forward with
+#: them otherwise.
+TREASURY_COUNTED_IN_HEADER_SUM_FIELDS = ("treasury_counted_in_header_sum", "treasury_counted_in_header_sum_note")
+
+
+def counted_in_header_sum_note(header_label: str, holder_name: str, parent_name: str) -> str:
+    """The sentence the panel prints under a line that is also inside another
+    node's header sum. One template, mirrored by the gate word for word: the
+    money is measured, it is already inside the holder's published figure, and
+    the parent's arithmetic leaves it out so it is never counted twice."""
+    return (
+        f"The statement prints this unit's line beneath the \"{header_label}\" header, and the lines beneath "
+        f"that header are summed into the published figure of {holder_name}, so the same money is already inside it; "
+        f"it is shown here, measured, and kept out of the arithmetic of {parent_name} so it is never counted twice."
+    )
 
 
 def header_sum_note(count: int) -> str:
@@ -1185,6 +1241,11 @@ def derive_header_sum_rows(tree: SectionTree) -> list[dict[str, Any]]:
         row["treasury_component_rows"] = [
             {"name": plain_label(component), "amount": round_currency(value)} for component, value in components
         ]
+        # Internal to the matcher, never copied onto a node: which printed rows
+        # the sum is made of, so a component line applied to a node the
+        # header-sum node does not contain can be recognised and kept out of
+        # its parent's arithmetic (stamp_lines_counted_in_header_sums).
+        row["treasury_component_ids"] = [str(component.get("classification_id") or "") for component, _ in components]
         out.append(row)
     return out
 
@@ -1343,6 +1404,70 @@ def treasury_row_keys(row: dict[str, Any]) -> list[str]:
     return [key for key in keys if key]
 
 
+def stamp_lines_counted_in_header_sums(
+    chosen: dict[str, tuple[dict[str, Any], dict[str, Any]]],
+    node_map: dict[str, dict[str, Any]],
+    parent_map: dict[str, str],
+) -> list[dict[str, Any]]:
+    """A printed line that is one of a header sum's components, applied to a
+    unit the header-sum node does not contain.
+
+    "Community Oriented Policing Services" is printed beneath the "Office of
+    Justice Programs:" header, which has no Total-- line, so OJP's node is
+    measured as the sum of the lines beneath that header -- COPS's line among
+    them. The COPS node sits beside OJP under the Department of Justice, and
+    the graph is not re-parented to follow the Treasury: the header is an
+    appropriations grouping, not an organisational placement. So the line is
+    applied to COPS by the ordinary one-line-one-node rule and the same
+    dollars are also inside OJP's figure. Such a node is stamped with the id
+    of the node whose figure already holds the money and a sentence saying so,
+    and the cascade keeps it out of its parent's arithmetic exactly as it
+    keeps out a line the Treasury files under another section, so nothing is
+    counted twice and the parent's unlined children's pool is not reduced by
+    it a second time.
+
+    A component line applied to a DESCENDANT of the header-sum node needs no
+    stamp: it sits inside that node's figure in the tree too, and the ordinary
+    nested arithmetic is already right. Nor does one applied to the header-sum
+    node itself, or to an ancestor of it.
+    """
+    holders: dict[str, dict[str, Any]] = {}
+    for node, row in chosen.values():
+        if not row.get("treasury_header_sum"):
+            continue
+        for component_id in row.get("treasury_component_ids") or []:
+            if component_id:
+                holders[component_id] = node
+
+    def ancestors(node_id: str) -> set[str]:
+        out: set[str] = set()
+        current = parent_map.get(node_id)
+        while current and current not in out:
+            out.add(current)
+            current = parent_map.get(current)
+        return out
+
+    stamped: list[dict[str, Any]] = []
+    for target_id, (node, row) in chosen.items():
+        if row.get("treasury_header_sum"):
+            continue
+        holder = holders.get(str(row.get("classification_id") or ""))
+        if holder is None or holder is node:
+            continue
+        holder_id = str(holder.get("id") or "")
+        if holder_id in ancestors(target_id) or target_id in ancestors(holder_id):
+            continue
+        parent = node_map.get(parent_map.get(target_id, ""))
+        node["treasury_counted_in_header_sum"] = holder_id
+        node["treasury_counted_in_header_sum_note"] = counted_in_header_sum_note(
+            plain_label({"originalName": holder.get("treasury_row_name")}),
+            str(holder.get("name") or holder_id),
+            str((parent or {}).get("name") or "its parent"),
+        )
+        stamped.append({"id": target_id, "holder": holder_id, "row": node.get("treasury_row_name"), "amount": node.get("rollup_total_amount")})
+    return stamped
+
+
 def apply_treasury_outlay_rows(
     root: dict[str, Any],
     rows: list[dict[str, Any]],
@@ -1416,6 +1541,8 @@ def apply_treasury_outlay_rows(
         "header_sums_derived": len(header_sum_rows),
         "header_sums_applied": 0,
         "header_sums": [],
+        "header_sums_by_alias": 0,
+        "lines_counted_in_header_sums": [],
         "stale_rollups_cleared": 0,
         "synthetic_receipts_cleared": 0,
         "carried_forward_citations_restored": 0,
@@ -1427,7 +1554,7 @@ def apply_treasury_outlay_rows(
     }
     if statement_present:
         stats["synthetic_receipts_cleared"] = remove_synthetic_receipts(root)
-    node_map, _ = index_tree(root)
+    node_map, parent_map = index_tree(root)
     if not statement_present:
         stats["synthetic_ids"] = [str(n.get("id")) for n, _ in walk_tree(root) if is_synthetic_receipts(n)]
         if stats["synthetic_ids"]:
@@ -1446,7 +1573,10 @@ def apply_treasury_outlay_rows(
         if not str(node.get("budget_source") or "").startswith("Treasury"):
             continue
         stats["stale_rollups_cleared"] += 1
-        for field_name in ("rollup_total_amount", "treasury_row_name", "budget_source", *TREASURY_ROW_FIELDS, *TREASURY_HEADER_SUM_FIELDS):
+        for field_name in (
+            "rollup_total_amount", "treasury_row_name", "budget_source",
+            *TREASURY_ROW_FIELDS, *TREASURY_HEADER_SUM_FIELDS, *TREASURY_COUNTED_IN_HEADER_SUM_FIELDS,
+        ):
             node.pop(field_name, None)
         node["sourceUrls"] = [url for url in (node.get("sourceUrls") or []) if "fiscaldata.treasury.gov" not in str(url)]
         node["sourceTypes"] = [t for t in (node.get("sourceTypes") or []) if t != "treasury_outlays"]
@@ -1522,8 +1652,11 @@ def apply_treasury_outlay_rows(
             # An alias is a reviewed identification of a PRINTED line. A header
             # sum is already one step from a printed figure, so the two are not
             # stacked: a header reaches a node by name equality or not at all,
-            # which is the rule the gate re-checks word for word.
-            alias_id = None if row.get("treasury_header_sum") else TREASURY_ROW_ALIASES.get(key)
+            # which is the rule the gate re-checks word for word -- except for
+            # the keys TREASURY_HEADER_SUM_ALIAS_KEYS names, each mirrored by
+            # node id in the gate.
+            alias_allowed = not row.get("treasury_header_sum") or key in TREASURY_HEADER_SUM_ALIAS_KEYS
+            alias_id = TREASURY_ROW_ALIASES.get(key) if alias_allowed else None
             if alias_id and alias_id in node_map:
                 target = node_map[alias_id]
                 break
@@ -1576,12 +1709,16 @@ def apply_treasury_outlay_rows(
             stats["header_sums"].append({
                 "id": target_id, "header": node["treasury_row_name"], "amount": node["rollup_total_amount"], "lines": len(components),
             })
+        if row.get("treasury_header_sum") and canonical_name_key(node.get("name")) not in treasury_row_keys(row):
+            stats["header_sums_by_alias"] += 1
         verify_node_sources(node)
         stats["rows_applied"] += 1
         if (node["rollup_total_amount"] or 0) < 0:
             stats["rows_negative_applied"] += 1
         if len(stats["applied"]) < applied_cap:
             stats["applied"].append({"id": target_id, "row": node["treasury_row_name"], "amount": node["rollup_total_amount"]})
+
+    stats["lines_counted_in_header_sums"] = stamp_lines_counted_in_header_sums(chosen, node_map, parent_map)
 
     # Netting: publish the true lines and carry what the Treasury nets
     # against them explicitly. Only when the statement's own identity holds
@@ -1837,6 +1974,10 @@ def compute_official_floors(root: dict[str, Any]) -> dict[str, float]:
         else:
             floor = sum(visit(child) for child in node.get("children", []) if isinstance(child, dict))
         floors[str(node.get("id") or "")] = floor
+        # A line already inside another node's header sum is not money its
+        # ancestors' groupings measure a second time.
+        if node.get("treasury_counted_in_header_sum"):
+            return 0.0
         return floor
 
     visit(root)
@@ -2031,6 +2172,7 @@ def annotate_resolved_costs(
         "sibling_sets_scaled_to_official_floors": 0,
         "treasury_pools_negative": 0,
         "treasury_external_lines": 0,
+        "treasury_lines_counted_in_header_sums": 0,
     }
     official_floors = compute_official_floors(root)
 
@@ -2104,6 +2246,12 @@ def annotate_resolved_costs(
         # outlay — but it is not part of this node's total, so it is
         # published exactly and left out of the arithmetic here, flagged.
         external_children: list[tuple[dict[str, Any], float]] = []
+        # A printed line that is also one of another node's header-sum
+        # components (COPS's line, inside OJP's sum, on a COPS node beside OJP)
+        # is measured -- it is that unit's line -- but its money is already in
+        # a sibling's or cousin's figure, so it is left out of the arithmetic
+        # here by the same path as an external-section line, unflagged as one.
+        counted_children: list[tuple[dict[str, Any], float]] = []
         # A unit the government has replaced is not a claimant on this year's
         # money. It is taken out of the weights entirely rather than merely
         # denied a share: left in the denominator it would divide a real pool
@@ -2120,6 +2268,9 @@ def annotate_resolved_costs(
             child_section = str(child.get("treasury_section") or "")
             if official_child_total is not None and child_section and current_section and child_section != current_section:
                 external_children.append((child, official_child_total))
+                continue
+            if official_child_total is not None and child.get("treasury_counted_in_header_sum"):
+                counted_children.append((child, official_child_total))
                 continue
             if official_child_total is not None:
                 anchored_children.append((child, official_child_total))
@@ -2280,6 +2431,15 @@ def annotate_resolved_costs(
                 inherited_validation="unit_superseded",
                 section=current_section,
             )
+        for child, official_child_total in counted_children:
+            counters["treasury_lines_counted_in_header_sums"] += 1
+            recurse(
+                child,
+                official_child_total,
+                inherited_basis="treasury_rollup",
+                inherited_validation="matched_official_rollup",
+                section=current_section,
+            )
         for child, official_child_total in external_children:
             child["treasury_external_section"] = True
             counters["treasury_external_lines"] += 1
@@ -2433,6 +2593,7 @@ def annotate_resolved_costs(
             "posts_not_apportioned": counters["posts_not_apportioned"],
             "superseded_units_not_apportioned": counters["superseded_units_not_apportioned"],
             "sibling_sets_scaled_to_official_floors": counters["sibling_sets_scaled_to_official_floors"],
+            "treasury_lines_counted_in_header_sums": counters["treasury_lines_counted_in_header_sums"],
             "treasury_lines_scaled": summarize_scaled_official(root),
         },
         "nodes": validity_nodes,

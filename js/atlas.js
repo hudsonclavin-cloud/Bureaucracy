@@ -444,6 +444,13 @@ function describeCost(node) {
     const headerSum = node.treasury_header_sum === true && String(node.treasury_header_sum_note || "").trim()
       ? ` ${String(node.treasury_header_sum_note).trim()}${headerSumLinesText(node)}`
       : "";
+    // A printed line that is also one of another node's header-sum lines
+    // (COPS's, inside the Office of Justice Programs' sum): the pipeline's
+    // own sentence, verbatim, saying the money is already in that figure and
+    // is kept out of the parent's arithmetic. Stamp and sentence together.
+    const counted = String(node.treasury_counted_in_header_sum || "").trim() && String(node.treasury_counted_in_header_sum_note || "").trim()
+      ? ` ${String(node.treasury_counted_in_header_sum_note).trim()}`
+      : "";
     if (isReceiptsLine(node)) {
       label = "Measured (Treasury accounting line)";
       note = "Not an organisation. The receipts and transfers the Treasury nets inside the published total above, carried here as the statement prints them so the units above sum to that figure to the cent.";
@@ -457,6 +464,7 @@ function describeCost(node) {
     } else if (headerSum) {
       note = `U.S. Treasury outlays, from the Monthly Treasury Statement (Table 5).${headerSum}`;
     }
+    if (counted && !isReceiptsLine(node)) note += counted;
     return { amount: formatExactMoney(amount), label, note, period: costPeriodLabel(node), sourceUrl };
   }
   if (validation === "post_is_not_a_budget_unit") {

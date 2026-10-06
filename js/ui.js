@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20261006b";
-import { loadMergedGraphData } from "./graphLoader.js?v=20261006b";
+import { createGovernmentGraph } from "./graph.js?v=20261007a";
+import { loadMergedGraphData } from "./graphLoader.js?v=20261007a";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -2780,6 +2780,17 @@ function headerSumSentence(node) {
   return sentence ? ` ${sentence}` : "";
 }
 
+// The sentence the pipeline generated for a printed line that is also one of
+// another node's header-sum lines (COPS's, inside the Office of Justice
+// Programs' sum): the money is measured, already inside that node's figure,
+// and kept out of the parent's arithmetic. Stamp and sentence together, as
+// for the header sum itself; "" otherwise.
+function countedInHeaderSumSentence(node) {
+  if (!String(node.treasury_counted_in_header_sum || "").trim()) return "";
+  const sentence = String(node.treasury_counted_in_header_sum_note || "").trim();
+  return sentence ? ` ${sentence}` : "";
+}
+
 // The lines the statement prints beneath a header-sum unit, by printed name
 // and exact amount, in the statement's print order. Rendered only where the
 // stamp is present; the receipts lines carry the same field and keep their
@@ -2871,18 +2882,25 @@ function describeCost(node) {
   // verbatim, so the panel never calls it a line the Treasury prints. The
   // lines themselves are listed under the note by buildCostBlock.
   const headerSumNote = headerSumSentence(node);
+  const countedNote = countedInHeaderSumSentence(node);
   if (status === "official" && amount < 0) {
     return {
       ...COST_STATUS_COPY.official,
       note: `Net outlays below zero for the period: the Monthly Treasury Statement (Table 5) reports more receipts than spending for this unit.${headerSumNote}${
         node.treasury_external_section ? ` The Treasury files this line under its "${node.treasury_section}" section, so it is measured but not part of its parent's total here.` : ""
-      }`,
+      }${countedNote}`,
     };
   }
   if (status === "official" && node.treasury_external_section) {
     return {
       ...COST_STATUS_COPY.official,
-      note: `${headerSumNote ? `U.S. Treasury outlays, from the Monthly Treasury Statement (Table 5).${headerSumNote}` : COST_STATUS_COPY.official.note} The Treasury files this line under its "${node.treasury_section}" section, so it is measured but not part of its parent's total here.`,
+      note: `${headerSumNote ? `U.S. Treasury outlays, from the Monthly Treasury Statement (Table 5).${headerSumNote}` : COST_STATUS_COPY.official.note} The Treasury files this line under its "${node.treasury_section}" section, so it is measured but not part of its parent's total here.${countedNote}`,
+    };
+  }
+  if (status === "official" && countedNote) {
+    return {
+      ...COST_STATUS_COPY.official,
+      note: `${COST_STATUS_COPY.official.note}${countedNote}`,
     };
   }
   if (status === "official" && headerSumNote) {

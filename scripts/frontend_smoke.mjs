@@ -977,6 +977,37 @@ try {
     measurements.treasuryHeaderSum = `${headerSumNodes.length} nodes carry treasury_header_sum; checked ${headerSumNode ? headerSumNode.id : "none"}`;
   }
 
+  // A printed line that is also one of another node's header-sum lines,
+  // applied to a unit that node does not contain (the Office of Community
+  // Oriented Policing Services, whose line the statement prints beneath the
+  // Office of Justice Programs' header): the panel reads MEASURED over the
+  // exact line and prints the pipeline's own sentence saying the money is
+  // already inside that node's figure and kept out of the parent's
+  // arithmetic. Picked from the served graph; skipped with a note when no
+  // node carries the stamp.
+  const countedNodes = allNodes.filter(
+    (n) => String(n.treasury_counted_in_header_sum || "").trim() && String(n.treasury_counted_in_header_sum_note || "").trim(),
+  );
+  const countedNode = countedNodes.find((n) => unique(n));
+  if (!countedNodes.length) {
+    measurements.treasuryCountedInHeaderSum = "skipped: no node in the served graph carries treasury_counted_in_header_sum (regenerate the graph from a statement to land it)";
+  } else {
+    check("a line counted in a header sum, on a node with a unique name, is in the served graph", Boolean(countedNode), countedNodes.map((n) => n.id).join(", "));
+    if (countedNode) {
+      await openByName(countedNode.name);
+      const stats = await text("#info-stats");
+      check("a line counted in a header sum reads MEASURED", /\bMEASURED\b/.test(stats), stats);
+      check("a line counted in a header sum shows the exact line", stats.includes(exactDollars(countedNode.resolved_total_amount)), stats);
+      check(
+        "a line counted in a header sum prints the pipeline's own sentence",
+        stats.includes(String(countedNode.treasury_counted_in_header_sum_note)) && /never counted twice/.test(stats),
+        stats,
+      );
+      check("a line counted in a header sum is not called an estimate", !/\bESTIMATE\b|CAPPED/.test(stats), stats);
+    }
+    measurements.treasuryCountedInHeaderSum = `${countedNodes.length} nodes carry treasury_counted_in_header_sum; checked ${countedNode ? countedNode.id : "none"}`;
+  }
+
   // A node whose name states a count says how many it actually carries.
   const short = allNodes.find((n) => n.childrenIncomplete);
   check("some grouping carries fewer than its name states", Boolean(short), "none");
