@@ -6,7 +6,7 @@ Do not edit by hand; regenerate it. The 100 largest title families are in
 
 ## What this covers
 
-- **Part A — 1,674 unpriced positions** in the 1,605 title families outside the top 100, across **16 shards**, whole organisations per shard.
+- **Part A — 1,607 unpriced positions** in the 1,581 title families outside the top 100, across **15 shards**, whole organisations per shard.
 - **Part B — 681 organisation nodes** that publish an apportioned estimate rather than a measured
   cost, across **7 shards**, whole parents per shard:
   - 240 — a committee or subcommittee (no Table 5 line can ever name one)
@@ -26,7 +26,7 @@ reads it out of a committed document.**
 
 # Part A — positions
 
-## Prompt A1 — 3 organisation(s), 100 title(s)
+## Prompt A1 — 3 organisation(s), 97 title(s)
 
 ```
 I am building a data-backed public graph of the U.S. federal government. Every
@@ -104,7 +104,6 @@ THE TITLES:
 - exec-eop-who-deputy-counsel-to-the-president-4 | Deputy Counsel to the President (×4)  [×N]
 - exec-eop-who-deputy-director-for-legislative-affairs-house | Deputy Director for Legislative Affairs — House
 - exec-eop-who-deputy-director-for-legislative-affairs-senate | Deputy Director for Legislative Affairs — Senate
-- exec-eop-who-deputy-national-security-advisor-2 | Deputy National Security Advisor (×2)  [×N]
 - exec-eop-who-deputy-press-secretary-2 | Deputy Press Secretary (×2)  [×N]
 - exec-eop-who-director-of-presidential-personnel | Director of Presidential Personnel
 - exec-eop-who-director-of-public-liaison | Director of Public Liaison
@@ -140,7 +139,6 @@ THE TITLES:
 - exec-eop-who-special-assistant-to-the-president-and-grant-coordinator | Special Assistant to the President and Grant Coordinator
 - exec-eop-who-special-assistant-to-the-president-and-presidential-speechwriter-2 | Special Assistant to the President and Presidential Speechwriter (×2)  [×N]
 - exec-eop-who-special-assistant-to-the-president-and-senior-policy-advisor-to-the-deputy-chief-of-staff-for-policy-3 | Special Assistant to the President and Senior Policy Advisor to the Deputy Chief of Staff for Policy (×3)  [×N]
-- exec-eop-who-staff-assistant-15 | Staff Assistant (×15)  [×N]
 - exec-eop-who-stenographer-5 | Stenographer (×5)  [×N]
 - exec-eop-who-supervisor-for-records-management-3 | Supervisor for Records Management (×3)  [×N]
 - exec-eop-who-travel-coordinator-4 | Travel Coordinator (×4)  [×N]
@@ -185,12 +183,11 @@ THE TITLES:
 - exec-dept-doj-fbi-executive-assistant-director-national-security-branch | Executive Assistant Director — National Security Branch
 - exec-dept-doj-fbi-executive-assistant-director-science-technology-branch | Executive Assistant Director — Science & Technology Branch
 - exec-dept-doj-fbi-intelligence-analyst-multiple | Intelligence Analyst (×multiple)  [×N]
-- exec-dept-doj-fbi-special-agent-sa-multiple | Special Agent (SA) (×multiple)  [×N]
 - exec-dept-doj-fbi-special-agent-in-charge-sac-56-field-offices | Special Agent in Charge (SAC) — 56 Field Offices
 - exec-dept-doj-fbi-supervisory-special-agent-ssa-squad-level | Supervisory Special Agent (SSA) — Squad Level
 ```
 
-## Prompt A2 — 7 organisation(s), 109 title(s)
+## Prompt A2 — 7 organisation(s), 104 title(s)
 
 ```
 I am building a data-backed public graph of the U.S. federal government. Every
@@ -246,25 +243,6 @@ above, one line each, with the document URL it came from and whether it is
 official-published or third-party-estimated.
 
 THE TITLES:
-
-### Individual Senator Offices (100)  [leg-senate-offices]
-- leg-senate-offices-casework-director | Casework Director
-- leg-senate-offices-communications-director | Communications Director
-- leg-senate-offices-deputy-chief-of-staff | Deputy Chief of Staff
-- leg-senate-offices-deputy-communications-director | Deputy Communications Director
-- leg-senate-offices-deputy-state-director | Deputy State Director
-- leg-senate-offices-digital-director | Digital Director
-- leg-senate-offices-legislative-correspondent | Legislative Correspondent
-- leg-senate-offices-legislative-counsel | Legislative Counsel
-- leg-senate-offices-legislative-director | Legislative Director
-- leg-senate-offices-office-manager | Office Manager
-- leg-senate-offices-press-secretary | Press Secretary
-- leg-senate-offices-regional-representative-4 | Regional Representative (×4)  [×N]
-- leg-senate-offices-scheduler-executive-assistant | Scheduler / Executive Assistant
-- leg-senate-offices-senior-caseworker-4 | Senior Caseworker (×4)  [×N]
-- leg-senate-offices-senior-legislative-assistant-3 | Senior Legislative Assistant (×3)  [×N]
-- leg-senate-offices-staff-assistant | Staff Assistant
-- leg-senate-offices-state-director | State Director
 
 ### Sergeant at Arms of the Senate  [leg-senate-admin-saa]
 - leg-senate-admin-saa-assistant-saa-capitol-division | Assistant SAA — Capitol Division
@@ -336,11 +314,42 @@ THE TITLES:
 - exec-dept-hhs-nih-principal-deputy-director | Principal Deputy Director
 - exec-dept-hhs-nih-scientific-review-officer-multiple | Scientific Review Officer (×multiple)  [×N]
 
+### Individual Senator Offices (100)  [leg-senate-offices]
+- leg-senate-offices-casework-director | Casework Director
+- leg-senate-offices-deputy-communications-director | Deputy Communications Director
+- leg-senate-offices-deputy-state-director | Deputy State Director
+- leg-senate-offices-digital-director | Digital Director
+- leg-senate-offices-legislative-correspondent | Legislative Correspondent
+- leg-senate-offices-legislative-counsel | Legislative Counsel
+- leg-senate-offices-legislative-director | Legislative Director
+- leg-senate-offices-office-manager | Office Manager
+- leg-senate-offices-press-secretary | Press Secretary
+- leg-senate-offices-regional-representative-4 | Regional Representative (×4)  [×N]
+- leg-senate-offices-scheduler-executive-assistant | Scheduler / Executive Assistant
+- leg-senate-offices-senior-caseworker-4 | Senior Caseworker (×4)  [×N]
+- leg-senate-offices-senior-legislative-assistant-3 | Senior Legislative Assistant (×3)  [×N]
+- leg-senate-offices-state-director | State Director
+
+### Joint Chiefs of Staff  [exec-dept-defense-jcs]
+- exec-dept-defense-jcs-chief-of-naval-operations | Chief of Naval Operations
+- exec-dept-defense-jcs-chief-of-space-operations | Chief of Space Operations
+- exec-dept-defense-jcs-chief-of-staff-of-the-air-force | Chief of Staff of the Air Force
+- exec-dept-defense-jcs-chief-of-staff-of-the-army | Chief of Staff of the Army
+- exec-dept-defense-jcs-commandant-of-the-coast-guard | Commandant of the Coast Guard
+- exec-dept-defense-jcs-commandant-of-the-marine-corps | Commandant of the Marine Corps
+- exec-dept-defense-jcs-j1-director-for-personnel | J1 — Director for Personnel
+- exec-dept-defense-jcs-j2-director-for-intelligence | J2 — Director for Intelligence
+- exec-dept-defense-jcs-j3-director-for-operations | J3 — Director for Operations
+- exec-dept-defense-jcs-j4-director-for-logistics | J4 — Director for Logistics
+- exec-dept-defense-jcs-j5-director-for-strategy-plans | J5 — Director for Strategy & Plans
+- exec-dept-defense-jcs-j6-director-for-c3-cyber | J6 — Director for C3/Cyber
+- exec-dept-defense-jcs-j7-director-for-joint-force-development | J7 — Director for Joint Force Development
+- exec-dept-defense-jcs-j8-director-for-force-structure | J8 — Director for Force Structure
+
 ### Secretary of the Senate  [leg-senate-admin-secretary]
 - leg-senate-admin-secretary-assistant-secretary-of-the-senate | Assistant Secretary of the Senate
 - leg-senate-admin-secretary-bill-clerk | Bill Clerk
 - leg-senate-admin-secretary-deputy-secretary-of-the-senate | Deputy Secretary of the Senate
-- leg-senate-admin-secretary-director-of-finance | Director of Finance
 - leg-senate-admin-secretary-director-of-public-records | Director of Public Records
 - leg-senate-admin-secretary-director-of-senate-security | Director of Senate Security
 - leg-senate-admin-secretary-director-of-the-capitol-printing-folding-room | Director of the Capitol Printing & Folding Room
@@ -352,26 +361,9 @@ THE TITLES:
 - leg-senate-admin-secretary-senate-curator | Senate Curator
 - leg-senate-admin-secretary-senate-historian | Senate Historian
 - leg-senate-admin-secretary-senate-librarian | Senate Librarian
-
-### Securities & Exchange Commission (SEC)  [exec-regulatory-sec]
-- exec-regulatory-sec-cfo | CFO
-- exec-regulatory-sec-cio | CIO
-- exec-regulatory-sec-chief-accountant | Chief Accountant
-- exec-regulatory-sec-director-division-of-corporation-finance | Director — Division of Corporation Finance
-- exec-regulatory-sec-director-division-of-economic-risk-analysis | Director — Division of Economic & Risk Analysis
-- exec-regulatory-sec-director-division-of-enforcement | Director — Division of Enforcement
-- exec-regulatory-sec-director-division-of-investment-management | Director — Division of Investment Management
-- exec-regulatory-sec-director-division-of-trading-markets | Director — Division of Trading & Markets
-- exec-regulatory-sec-director-office-of-compliance-inspections-examinations | Director — Office of Compliance Inspections & Examinations
-- exec-regulatory-sec-director-office-of-credit-ratings | Director — Office of Credit Ratings
-- exec-regulatory-sec-director-office-of-municipal-securities | Director — Office of Municipal Securities
-- exec-regulatory-sec-financial-examiner-multiple | Financial Examiner (×multiple)  [×N]
-- exec-regulatory-sec-regional-director-11-regional-offices | Regional Director — 11 Regional Offices
-- exec-regulatory-sec-secretary-of-the-commission | Secretary of the Commission
-- exec-regulatory-sec-senior-staff-attorney-multiple | Senior Staff Attorney (×multiple)  [×N]
 ```
 
-## Prompt A3 — 8 organisation(s), 109 title(s)
+## Prompt A3 — 8 organisation(s), 103 title(s)
 
 ```
 I am building a data-backed public graph of the U.S. federal government. Every
@@ -427,54 +419,6 @@ above, one line each, with the document URL it came from and whether it is
 official-published or third-party-estimated.
 
 THE TITLES:
-
-### Customs & Border Protection (CBP)  [exec-dept-dhs-cbp]
-- exec-dept-dhs-cbp-assistant-commissioner-air-marine-operations | Assistant Commissioner — Air & Marine Operations
-- exec-dept-dhs-cbp-assistant-commissioner-intelligence | Assistant Commissioner — Intelligence
-- exec-dept-dhs-cbp-assistant-commissioner-international-affairs | Assistant Commissioner — International Affairs
-- exec-dept-dhs-cbp-assistant-commissioner-office-of-field-operations | Assistant Commissioner — Office of Field Operations
-- exec-dept-dhs-cbp-assistant-commissioner-trade | Assistant Commissioner — Trade
-- exec-dept-dhs-cbp-border-patrol-agent-multiple | Border Patrol Agent (×multiple)  [×N]
-- exec-dept-dhs-cbp-cbp-officer-multiple | CBP Officer (×multiple)  [×N]
-- exec-dept-dhs-cbp-chief-operating-officer | Chief Operating Officer  [OPM lists it; the row prints no rate]
-- exec-dept-dhs-cbp-chief-patrol-agent-20-border-patrol-sectors | Chief Patrol Agent — 20 Border Patrol Sectors
-- exec-dept-dhs-cbp-chief-of-the-border-patrol | Chief of the Border Patrol
-- exec-dept-dhs-cbp-deputy-chief-of-the-border-patrol | Deputy Chief of the Border Patrol
-- exec-dept-dhs-cbp-deputy-commissioner | Deputy Commissioner  [OPM lists it; the row prints no rate]
-- exec-dept-dhs-cbp-director-20-field-offices-office-of-field-operations | Director — 20 Field Offices (Office of Field Operations)
-- exec-dept-dhs-cbp-port-director-328-ports-of-entry | Port Director — 328 Ports of Entry
-
-### Individual Representative Offices (435)  [leg-house-offices]
-- leg-house-offices-caseworker-3 | Caseworker (×3)  [×N]
-- leg-house-offices-communications-director | Communications Director
-- leg-house-offices-constituent-services-director | Constituent Services Director
-- leg-house-offices-deputy-chief-of-staff | Deputy Chief of Staff
-- leg-house-offices-deputy-district-director | Deputy District Director
-- leg-house-offices-district-director | District Director
-- leg-house-offices-field-representative-2 | Field Representative (×2)  [×N]
-- leg-house-offices-legislative-assistant-3 | Legislative Assistant (×3)  [×N]
-- leg-house-offices-legislative-correspondent | Legislative Correspondent
-- leg-house-offices-legislative-director | Legislative Director
-- leg-house-offices-press-secretary | Press Secretary
-- leg-house-offices-scheduler | Scheduler
-- leg-house-offices-senior-legislative-assistant-2 | Senior Legislative Assistant (×2)  [×N]
-- leg-house-offices-staff-assistant | Staff Assistant
-
-### Joint Chiefs of Staff  [exec-dept-defense-jcs]
-- exec-dept-defense-jcs-chief-of-naval-operations | Chief of Naval Operations
-- exec-dept-defense-jcs-chief-of-space-operations | Chief of Space Operations
-- exec-dept-defense-jcs-chief-of-staff-of-the-air-force | Chief of Staff of the Air Force
-- exec-dept-defense-jcs-chief-of-staff-of-the-army | Chief of Staff of the Army
-- exec-dept-defense-jcs-commandant-of-the-coast-guard | Commandant of the Coast Guard
-- exec-dept-defense-jcs-commandant-of-the-marine-corps | Commandant of the Marine Corps
-- exec-dept-defense-jcs-j1-director-for-personnel | J1 — Director for Personnel
-- exec-dept-defense-jcs-j2-director-for-intelligence | J2 — Director for Intelligence
-- exec-dept-defense-jcs-j3-director-for-operations | J3 — Director for Operations
-- exec-dept-defense-jcs-j4-director-for-logistics | J4 — Director for Logistics
-- exec-dept-defense-jcs-j5-director-for-strategy-plans | J5 — Director for Strategy & Plans
-- exec-dept-defense-jcs-j6-director-for-c3-cyber | J6 — Director for C3/Cyber
-- exec-dept-defense-jcs-j7-director-for-joint-force-development | J7 — Director for Joint Force Development
-- exec-dept-defense-jcs-j8-director-for-force-structure | J8 — Director for Force Structure
 
 ### U.S. Air Force  [exec-dept-defense-af]
 - exec-dept-defense-af-af-a1-manpower-personnel | AF/A1 (Manpower & Personnel)
@@ -552,9 +496,51 @@ THE TITLES:
 - exec-dept-hhs-cdc-epidemic-intelligence-service-eis-officer-multiple | Epidemic Intelligence Service (EIS) Officer (×multiple)  [×N]
 - exec-dept-hhs-cdc-principal-deputy-director | Principal Deputy Director
 - exec-dept-hhs-cdc-public-health-advisor-multiple | Public Health Advisor (×multiple)  [×N]
+
+### Customs & Border Protection (CBP)  [exec-dept-dhs-cbp]
+- exec-dept-dhs-cbp-assistant-commissioner-air-marine-operations | Assistant Commissioner — Air & Marine Operations
+- exec-dept-dhs-cbp-assistant-commissioner-intelligence | Assistant Commissioner — Intelligence
+- exec-dept-dhs-cbp-assistant-commissioner-international-affairs | Assistant Commissioner — International Affairs
+- exec-dept-dhs-cbp-assistant-commissioner-office-of-field-operations | Assistant Commissioner — Office of Field Operations
+- exec-dept-dhs-cbp-assistant-commissioner-trade | Assistant Commissioner — Trade
+- exec-dept-dhs-cbp-border-patrol-agent-multiple | Border Patrol Agent (×multiple)  [×N]
+- exec-dept-dhs-cbp-cbp-officer-multiple | CBP Officer (×multiple)  [×N]
+- exec-dept-dhs-cbp-chief-patrol-agent-20-border-patrol-sectors | Chief Patrol Agent — 20 Border Patrol Sectors
+- exec-dept-dhs-cbp-chief-of-the-border-patrol | Chief of the Border Patrol
+- exec-dept-dhs-cbp-deputy-chief-of-the-border-patrol | Deputy Chief of the Border Patrol
+- exec-dept-dhs-cbp-director-20-field-offices-office-of-field-operations | Director — 20 Field Offices (Office of Field Operations)
+- exec-dept-dhs-cbp-port-director-328-ports-of-entry | Port Director — 328 Ports of Entry
+
+### Securities & Exchange Commission (SEC)  [exec-regulatory-sec]
+- exec-regulatory-sec-chief-accountant | Chief Accountant
+- exec-regulatory-sec-director-division-of-corporation-finance | Director — Division of Corporation Finance
+- exec-regulatory-sec-director-division-of-economic-risk-analysis | Director — Division of Economic & Risk Analysis
+- exec-regulatory-sec-director-division-of-investment-management | Director — Division of Investment Management
+- exec-regulatory-sec-director-division-of-trading-markets | Director — Division of Trading & Markets
+- exec-regulatory-sec-director-office-of-compliance-inspections-examinations | Director — Office of Compliance Inspections & Examinations
+- exec-regulatory-sec-director-office-of-credit-ratings | Director — Office of Credit Ratings
+- exec-regulatory-sec-director-office-of-municipal-securities | Director — Office of Municipal Securities
+- exec-regulatory-sec-financial-examiner-multiple | Financial Examiner (×multiple)  [×N]
+- exec-regulatory-sec-regional-director-11-regional-offices | Regional Director — 11 Regional Offices
+- exec-regulatory-sec-secretary-of-the-commission | Secretary of the Commission
+- exec-regulatory-sec-senior-staff-attorney-multiple | Senior Staff Attorney (×multiple)  [×N]
+
+### U.S. Navy  [exec-dept-defense-navy]
+- exec-dept-defense-navy-chief-of-naval-research | Chief of Naval Research
+- exec-dept-defense-navy-commander-naval-air-systems-command-navair | Commander — Naval Air Systems Command (NAVAIR)
+- exec-dept-defense-navy-commander-naval-sea-systems-command-navsea | Commander — Naval Sea Systems Command (NAVSEA)
+- exec-dept-defense-navy-commander-naval-supply-systems-command-navsup | Commander — Naval Supply Systems Command (NAVSUP)
+- exec-dept-defense-navy-commander-u-s-fleet-forces-command | Commander — U.S. Fleet Forces Command
+- exec-dept-defense-navy-commander-u-s-naval-forces-europe-africa | Commander — U.S. Naval Forces Europe-Africa
+- exec-dept-defense-navy-commander-u-s-pacific-fleet | Commander — U.S. Pacific Fleet
+- exec-dept-defense-navy-opnav-n1-personnel | OPNAV N1 (Personnel)
+- exec-dept-defense-navy-opnav-n2-n6-intelligence-communications | OPNAV N2/N6 (Intelligence/Communications)
+- exec-dept-defense-navy-opnav-n3-n5-operations-strategy | OPNAV N3/N5 (Operations/Strategy)
+- exec-dept-defense-navy-opnav-n4-logistics | OPNAV N4 (Logistics)
+- exec-dept-defense-navy-opnav-n8-programming | OPNAV N8 (Programming)
 ```
 
-## Prompt A4 — 10 organisation(s), 108 title(s)
+## Prompt A4 — 10 organisation(s), 105 title(s)
 
 ```
 I am building a data-backed public graph of the U.S. federal government. Every
@@ -611,20 +597,6 @@ official-published or third-party-estimated.
 
 THE TITLES:
 
-### U.S. Navy  [exec-dept-defense-navy]
-- exec-dept-defense-navy-chief-of-naval-research | Chief of Naval Research
-- exec-dept-defense-navy-commander-naval-air-systems-command-navair | Commander — Naval Air Systems Command (NAVAIR)
-- exec-dept-defense-navy-commander-naval-sea-systems-command-navsea | Commander — Naval Sea Systems Command (NAVSEA)
-- exec-dept-defense-navy-commander-naval-supply-systems-command-navsup | Commander — Naval Supply Systems Command (NAVSUP)
-- exec-dept-defense-navy-commander-u-s-fleet-forces-command | Commander — U.S. Fleet Forces Command
-- exec-dept-defense-navy-commander-u-s-naval-forces-europe-africa | Commander — U.S. Naval Forces Europe-Africa
-- exec-dept-defense-navy-commander-u-s-pacific-fleet | Commander — U.S. Pacific Fleet
-- exec-dept-defense-navy-opnav-n1-personnel | OPNAV N1 (Personnel)
-- exec-dept-defense-navy-opnav-n2-n6-intelligence-communications | OPNAV N2/N6 (Intelligence/Communications)
-- exec-dept-defense-navy-opnav-n3-n5-operations-strategy | OPNAV N3/N5 (Operations/Strategy)
-- exec-dept-defense-navy-opnav-n4-logistics | OPNAV N4 (Logistics)
-- exec-dept-defense-navy-opnav-n8-programming | OPNAV N8 (Programming)
-
 ### Veterans Benefits Administration (VBA)  [exec-dept-va-vba]
 - exec-dept-va-vba-deputy-under-secretary-for-benefits | Deputy Under Secretary for Benefits
 - exec-dept-va-vba-director-compensation-service | Director — Compensation Service
@@ -651,19 +623,6 @@ THE TITLES:
 - exec-dept-dot-faa-coo-air-traffic-organization | COO — Air Traffic Organization
 - exec-dept-dot-faa-regional-administrator-9-regions | Regional Administrator — 9 Regions
 - exec-dept-dot-faa-tracon-facility-manager-multiple | TRACON Facility Manager (×multiple)  [×N]
-
-### Food & Drug Administration (FDA)  [exec-dept-hhs-fda]
-- exec-dept-hhs-fda-associate-commissioner-regulatory-affairs-ora | Associate Commissioner — Regulatory Affairs (ORA)
-- exec-dept-hhs-fda-consumer-safety-officer-multiple | Consumer Safety Officer (×multiple)  [×N]
-- exec-dept-hhs-fda-deputy-commissioner | Deputy Commissioner
-- exec-dept-hhs-fda-director-center-for-biologics-evaluation-research-cber | Director — Center for Biologics Evaluation & Research (CBER)
-- exec-dept-hhs-fda-director-center-for-devices-radiological-health-cdrh | Director — Center for Devices & Radiological Health (CDRH)
-- exec-dept-hhs-fda-director-center-for-drug-evaluation-research-cder | Director — Center for Drug Evaluation & Research (CDER)
-- exec-dept-hhs-fda-director-center-for-food-safety-applied-nutrition-cfsan | Director — Center for Food Safety & Applied Nutrition (CFSAN)
-- exec-dept-hhs-fda-director-center-for-veterinary-medicine-cvm | Director — Center for Veterinary Medicine (CVM)
-- exec-dept-hhs-fda-director-national-center-for-toxicological-research-nctr | Director — National Center for Toxicological Research (NCTR)
-- exec-dept-hhs-fda-pharmacologist-multiple | Pharmacologist (×multiple)  [×N]
-- exec-dept-hhs-fda-regional-director-5-ora-regions | Regional Director — 5 ORA Regions
 
 ### National Nuclear Security Administration (NNSA)  [exec-dept-doe-nnsa]
 - exec-dept-doe-nnsa-deputy-administrator-defense-nuclear-nonproliferation | Deputy Administrator — Defense Nuclear Nonproliferation
@@ -715,6 +674,18 @@ THE TITLES:
 - exec-regulatory-fcc-chief-wireline-competition-bureau | Chief — Wireline Competition Bureau
 - exec-regulatory-fcc-spectrum-analyst-multiple | Spectrum Analyst (×multiple)  [×N]
 
+### Food & Drug Administration (FDA)  [exec-dept-hhs-fda]
+- exec-dept-hhs-fda-associate-commissioner-regulatory-affairs-ora | Associate Commissioner — Regulatory Affairs (ORA)
+- exec-dept-hhs-fda-consumer-safety-officer-multiple | Consumer Safety Officer (×multiple)  [×N]
+- exec-dept-hhs-fda-director-center-for-biologics-evaluation-research-cber | Director — Center for Biologics Evaluation & Research (CBER)
+- exec-dept-hhs-fda-director-center-for-devices-radiological-health-cdrh | Director — Center for Devices & Radiological Health (CDRH)
+- exec-dept-hhs-fda-director-center-for-drug-evaluation-research-cder | Director — Center for Drug Evaluation & Research (CDER)
+- exec-dept-hhs-fda-director-center-for-food-safety-applied-nutrition-cfsan | Director — Center for Food Safety & Applied Nutrition (CFSAN)
+- exec-dept-hhs-fda-director-center-for-veterinary-medicine-cvm | Director — Center for Veterinary Medicine (CVM)
+- exec-dept-hhs-fda-director-national-center-for-toxicological-research-nctr | Director — National Center for Toxicological Research (NCTR)
+- exec-dept-hhs-fda-pharmacologist-multiple | Pharmacologist (×multiple)  [×N]
+- exec-dept-hhs-fda-regional-director-5-ora-regions | Regional Director — 5 ORA Regions
+
 ### Internal Revenue Service (IRS)  [exec-dept-treasury-irs]
 - exec-dept-treasury-irs-chief-appeals-officer | Chief Appeals Officer
 - exec-dept-treasury-irs-chief-criminal-investigation-ci | Chief, Criminal Investigation (CI)  [OPM lists it; the row prints no rate]
@@ -738,9 +709,21 @@ THE TITLES:
 - exec-dept-dhs-tsa-federal-air-marshal-fams-classified-number | Federal Air Marshal (FAMS) (×classified number)  [×N]
 - exec-dept-dhs-tsa-federal-security-director-major-airports-450 | Federal Security Director — major airports (×450+)  [×N]
 - exec-dept-dhs-tsa-transportation-security-officer-tso-screening | Transportation Security Officer (TSO) — Screening
+
+### U.S. Secret Service (USSS)  [exec-dept-dhs-usss]
+- exec-dept-dhs-usss-assistant-director-investigations | Assistant Director — Investigations
+- exec-dept-dhs-usss-assistant-director-protective-operations | Assistant Director — Protective Operations
+- exec-dept-dhs-usss-assistant-director-technical-security | Assistant Director — Technical Security
+- exec-dept-dhs-usss-assistant-director-training | Assistant Director — Training
+- exec-dept-dhs-usss-counter-sniper-multiple | Counter Sniper (×multiple)  [×N]
+- exec-dept-dhs-usss-director-usss | Director, USSS
+- exec-dept-dhs-usss-special-agent-in-charge-42-field-offices | Special Agent in Charge — 42 field offices
+- exec-dept-dhs-usss-special-agent-in-charge-washington-field-office | Special Agent in Charge — Washington Field Office
+- exec-dept-dhs-usss-special-agent-protective-detail-multiple | Special Agent — Protective Detail (×multiple)  [×N]
+- exec-dept-dhs-usss-uniformed-division-officer-multiple | Uniformed Division Officer (×multiple)  [×N]
 ```
 
-## Prompt A5 — 11 organisation(s), 109 title(s)
+## Prompt A5 — 11 organisation(s), 108 title(s)
 
 ```
 I am building a data-backed public graph of the U.S. federal government. Every
@@ -796,18 +779,6 @@ above, one line each, with the document URL it came from and whether it is
 official-published or third-party-estimated.
 
 THE TITLES:
-
-### U.S. Secret Service (USSS)  [exec-dept-dhs-usss]
-- exec-dept-dhs-usss-assistant-director-investigations | Assistant Director — Investigations
-- exec-dept-dhs-usss-assistant-director-protective-operations | Assistant Director — Protective Operations
-- exec-dept-dhs-usss-assistant-director-technical-security | Assistant Director — Technical Security
-- exec-dept-dhs-usss-assistant-director-training | Assistant Director — Training
-- exec-dept-dhs-usss-counter-sniper-multiple | Counter Sniper (×multiple)  [×N]
-- exec-dept-dhs-usss-director-usss | Director, USSS
-- exec-dept-dhs-usss-special-agent-in-charge-42-field-offices | Special Agent in Charge — 42 field offices
-- exec-dept-dhs-usss-special-agent-in-charge-washington-field-office | Special Agent in Charge — Washington Field Office
-- exec-dept-dhs-usss-special-agent-protective-detail-multiple | Special Agent — Protective Detail (×multiple)  [×N]
-- exec-dept-dhs-usss-uniformed-division-officer-multiple | Uniformed Division Officer (×multiple)  [×N]
 
 ### USAFRICOM — Africa Command  [exec-dept-defense-cocom-usafricom]
 - exec-dept-defense-cocom-usafricom-chief-of-staff-usafricom | Chief of Staff, USAFRICOM
@@ -917,19 +888,30 @@ THE TITLES:
 - exec-dept-defense-cocom-ustranscom-j6-communications-ustranscom | J6 — Communications, USTRANSCOM
 - exec-dept-defense-cocom-ustranscom-joint-intelligence-center-director-ustranscom | Joint Intelligence Center Director, USTRANSCOM
 
-### Administrative Office of U.S. Courts (AOUSC)  [jud-support-aousc]
-- jud-support-aousc-associate-director-judicial-services | Associate Director — Judicial Services
-- jud-support-aousc-associate-director-management-administrative-services | Associate Director — Management & Administrative Services
-- jud-support-aousc-associate-director-technology-services | Associate Director — Technology Services
-- jud-support-aousc-chief-human-resources-officer | Chief Human Resources Officer
-- jud-support-aousc-director-court-administration-policy | Director — Court Administration Policy
-- jud-support-aousc-director-court-services | Director — Court Services
-- jud-support-aousc-director-defender-services | Director — Defender Services
-- jud-support-aousc-director-human-resources | Director — Human Resources
-- jud-support-aousc-director-probation-pretrial-services | Director — Probation & Pretrial Services
+### Federal Law Enforcement Training Centers (FLETC)  [exec-dept-dhs-fletc]
+- exec-dept-dhs-fletc-assistant-director-management-administration | Assistant Director — Management & Administration
+- exec-dept-dhs-fletc-assistant-director-training-operations | Assistant Director — Training Operations
+- exec-dept-dhs-fletc-criminal-investigator-training-program-coordinator | Criminal Investigator Training Program Coordinator
+- exec-dept-dhs-fletc-director-fletc | Director, FLETC
+- exec-dept-dhs-fletc-instructor-multiple | Instructor (×multiple)  [×N]
+- exec-dept-dhs-fletc-superintendent-artesia-nm | Superintendent — Artesia, NM
+- exec-dept-dhs-fletc-superintendent-charleston-sc | Superintendent — Charleston, SC
+- exec-dept-dhs-fletc-superintendent-cheltenham-md | Superintendent — Cheltenham, MD
+- exec-dept-dhs-fletc-superintendent-glynco-ga-main-campus | Superintendent — Glynco, GA (main campus)
+
+### Federal Student Aid (FSA)  [exec-dept-ed-fsa]
+- exec-dept-ed-fsa-chief-operating-officer-fsa | Chief Operating Officer, FSA  [OPM lists it; the row prints no rate]
+- exec-dept-ed-fsa-deputy-coo-chief-financial-officer | Deputy COO / Chief Financial Officer
+- exec-dept-ed-fsa-director-application-origination | Director — Application & Origination
+- exec-dept-ed-fsa-director-borrower-experience-division | Director — Borrower Experience Division
+- exec-dept-ed-fsa-director-fafsa-program-office | Director — FAFSA Program Office
+- exec-dept-ed-fsa-director-partner-experience-division | Director — Partner Experience Division
+- exec-dept-ed-fsa-director-portfolio-risk-management | Director — Portfolio Risk Management
+- exec-dept-ed-fsa-director-research-analytics-evaluation | Director — Research, Analytics & Evaluation
+- exec-dept-ed-fsa-financial-aid-specialist-multiple | Financial Aid Specialist (×multiple)  [×N]
 ```
 
-## Prompt A6 — 12 organisation(s), 107 title(s)
+## Prompt A6 — 13 organisation(s), 110 title(s)
 
 ```
 I am building a data-backed public graph of the U.S. federal government. Every
@@ -986,71 +968,16 @@ official-published or third-party-estimated.
 
 THE TITLES:
 
-### Centers for Medicare & Medicaid Services (CMS)  [exec-dept-hhs-cms]
-- exec-dept-hhs-cms-director-center-for-clinical-standards-quality | Director — Center for Clinical Standards & Quality
-- exec-dept-hhs-cms-director-center-for-consumer-information-insurance-oversight | Director — Center for Consumer Information & Insurance Oversight
-- exec-dept-hhs-cms-director-center-for-medicaid-chip-services | Director — Center for Medicaid & CHIP Services
-- exec-dept-hhs-cms-director-center-for-medicare | Director — Center for Medicare
-- exec-dept-hhs-cms-director-center-for-medicare-medicaid-innovation-cmmi | Director — Center for Medicare & Medicaid Innovation (CMMI)
-- exec-dept-hhs-cms-director-center-for-program-integrity | Director — Center for Program Integrity
-- exec-dept-hhs-cms-health-insurance-specialist-multiple | Health Insurance Specialist (×multiple)  [×N]
-- exec-dept-hhs-cms-medical-officer-multiple | Medical Officer (×multiple)  [×N]
-- exec-dept-hhs-cms-regional-administrator-10-regions | Regional Administrator — 10 Regions
-
-### Chief Administrative Officer  [leg-house-cao]
-- leg-house-cao-deputy-cao | Deputy CAO
-- leg-house-cao-director-of-child-care-center | Director of Child Care Center
-- leg-house-cao-director-of-congressional-record-index | Director of Congressional Record Index
-- leg-house-cao-director-of-finance | Director of Finance
-- leg-house-cao-director-of-it-customer-support | Director of IT Customer Support
-- leg-house-cao-director-of-payroll-benefits | Director of Payroll & Benefits
-- leg-house-cao-director-of-photography | Director of Photography
-- leg-house-cao-director-of-supply-services | Director of Supply Services
-- leg-house-cao-director-of-travel | Director of Travel
-
-### Drug Enforcement Administration (DEA)  [exec-dept-doj-dea]
-- exec-dept-doj-dea-assistant-administrator-diversion-control-division | Assistant Administrator — Diversion Control Division
-- exec-dept-doj-dea-assistant-administrator-human-resources-division | Assistant Administrator — Human Resources Division
-- exec-dept-doj-dea-assistant-administrator-intelligence-division | Assistant Administrator — Intelligence Division
-- exec-dept-doj-dea-assistant-administrator-operational-support-division | Assistant Administrator — Operational Support Division
-- exec-dept-doj-dea-chief-inspector | Chief Inspector
-- exec-dept-doj-dea-country-attach-86-foreign-offices | Country Attaché — 86 Foreign Offices
-- exec-dept-doj-dea-diversion-investigator-multiple | Diversion Investigator (×multiple)  [×N]
-- exec-dept-doj-dea-special-agent-multiple | Special Agent (×multiple)  [×N]
-- exec-dept-doj-dea-special-agent-in-charge-21-domestic-division-offices | Special Agent in Charge — 21 Domestic Division Offices
-
-### Federal Deposit Insurance Corporation (FDIC)  [exec-regulatory-fdic]
-- exec-regulatory-fdic-bank-examiner-multiple | Bank Examiner (×multiple)  [×N]
-- exec-regulatory-fdic-ceo-coo | CEO (COO)
-- exec-regulatory-fdic-cfo | CFO
-- exec-regulatory-fdic-cio | CIO
-- exec-regulatory-fdic-director-3 | Director (×3)  [×N]
-- exec-regulatory-fdic-director-division-of-depositor-consumer-protection | Director — Division of Depositor & Consumer Protection
-- exec-regulatory-fdic-director-division-of-resolutions-receiverships | Director — Division of Resolutions & Receiverships
-- exec-regulatory-fdic-director-division-of-risk-management-supervision | Director — Division of Risk Management Supervision
-- exec-regulatory-fdic-regional-director-8-regions | Regional Director — 8 Regions
-
-### Federal Law Enforcement Training Centers (FLETC)  [exec-dept-dhs-fletc]
-- exec-dept-dhs-fletc-assistant-director-management-administration | Assistant Director — Management & Administration
-- exec-dept-dhs-fletc-assistant-director-training-operations | Assistant Director — Training Operations
-- exec-dept-dhs-fletc-criminal-investigator-training-program-coordinator | Criminal Investigator Training Program Coordinator
-- exec-dept-dhs-fletc-director-fletc | Director, FLETC
-- exec-dept-dhs-fletc-instructor-multiple | Instructor (×multiple)  [×N]
-- exec-dept-dhs-fletc-superintendent-artesia-nm | Superintendent — Artesia, NM
-- exec-dept-dhs-fletc-superintendent-charleston-sc | Superintendent — Charleston, SC
-- exec-dept-dhs-fletc-superintendent-cheltenham-md | Superintendent — Cheltenham, MD
-- exec-dept-dhs-fletc-superintendent-glynco-ga-main-campus | Superintendent — Glynco, GA (main campus)
-
-### Federal Student Aid (FSA)  [exec-dept-ed-fsa]
-- exec-dept-ed-fsa-chief-operating-officer-fsa | Chief Operating Officer, FSA  [OPM lists it; the row prints no rate]
-- exec-dept-ed-fsa-deputy-coo-chief-financial-officer | Deputy COO / Chief Financial Officer
-- exec-dept-ed-fsa-director-application-origination | Director — Application & Origination
-- exec-dept-ed-fsa-director-borrower-experience-division | Director — Borrower Experience Division
-- exec-dept-ed-fsa-director-fafsa-program-office | Director — FAFSA Program Office
-- exec-dept-ed-fsa-director-partner-experience-division | Director — Partner Experience Division
-- exec-dept-ed-fsa-director-portfolio-risk-management | Director — Portfolio Risk Management
-- exec-dept-ed-fsa-director-research-analytics-evaluation | Director — Research, Analytics & Evaluation
-- exec-dept-ed-fsa-financial-aid-specialist-multiple | Financial Aid Specialist (×multiple)  [×N]
+### Individual Representative Offices (435)  [leg-house-offices]
+- leg-house-offices-caseworker-3 | Caseworker (×3)  [×N]
+- leg-house-offices-constituent-services-director | Constituent Services Director
+- leg-house-offices-field-representative-2 | Field Representative (×2)  [×N]
+- leg-house-offices-legislative-assistant-3 | Legislative Assistant (×3)  [×N]
+- leg-house-offices-legislative-correspondent | Legislative Correspondent
+- leg-house-offices-legislative-director | Legislative Director
+- leg-house-offices-press-secretary | Press Secretary
+- leg-house-offices-scheduler | Scheduler
+- leg-house-offices-senior-legislative-assistant-2 | Senior Legislative Assistant (×2)  [×N]
 
 ### NOAA — National Oceanic & Atmospheric Administration  [exec-dept-doc-noaa]
 - exec-dept-doc-noaa-director-nesdis-satellite-operations | Director — NESDIS (satellite operations)
@@ -1107,18 +1034,78 @@ THE TITLES:
 - exec-dept-defense-cocom-ussocom-j6-communications-ussocom | J6 — Communications, USSOCOM
 - exec-dept-defense-cocom-ussocom-joint-intelligence-center-director-ussocom | Joint Intelligence Center Director, USSOCOM
 
-### All 94 District Courts — Standard Structure  [jud-district-structure]
-- jud-district-structure-chief-judge | Chief Judge
-- jud-district-structure-chief-pretrial-services-officer | Chief Pretrial Services Officer
-- jud-district-structure-chief-u-s-probation-officer | Chief U.S. Probation Officer
-- jud-district-structure-court-reporter-ecro | Court Reporter / ECRO
-- jud-district-structure-court-security-officer-cso | Court Security Officer (CSO)
-- jud-district-structure-courtroom-deputy-clerk | Courtroom Deputy Clerk
-- jud-district-structure-district-judge-varies-per-district | District Judge (×varies per district)  [×N]
-- jud-district-structure-u-s-probation-officer-multiple | U.S. Probation Officer (×multiple)  [×N]
+### Administrative Office of U.S. Courts (AOUSC)  [jud-support-aousc]
+- jud-support-aousc-associate-director-judicial-services | Associate Director — Judicial Services
+- jud-support-aousc-associate-director-management-administrative-services | Associate Director — Management & Administrative Services
+- jud-support-aousc-associate-director-technology-services | Associate Director — Technology Services
+- jud-support-aousc-director-court-administration-policy | Director — Court Administration Policy
+- jud-support-aousc-director-court-services | Director — Court Services
+- jud-support-aousc-director-defender-services | Director — Defender Services
+- jud-support-aousc-director-human-resources | Director — Human Resources
+- jud-support-aousc-director-probation-pretrial-services | Director — Probation & Pretrial Services
+
+### Bureau of Land Management (BLM)  [exec-dept-doi-blm]
+- exec-dept-doi-blm-assistant-field-manager | Assistant Field Manager
+- exec-dept-doi-blm-associate-state-director | Associate State Director
+- exec-dept-doi-blm-field-manager-149-field-offices | Field Manager — 149 Field Offices
+- exec-dept-doi-blm-petroleum-engineer | Petroleum Engineer
+- exec-dept-doi-blm-range-conservationist | Range Conservationist
+- exec-dept-doi-blm-realty-specialist | Realty Specialist
+- exec-dept-doi-blm-state-director-12-state-offices | State Director — 12 State Offices
+- exec-dept-doi-blm-wildlife-biologist | Wildlife Biologist
+
+### Centers for Medicare & Medicaid Services (CMS)  [exec-dept-hhs-cms]
+- exec-dept-hhs-cms-director-center-for-clinical-standards-quality | Director — Center for Clinical Standards & Quality
+- exec-dept-hhs-cms-director-center-for-consumer-information-insurance-oversight | Director — Center for Consumer Information & Insurance Oversight
+- exec-dept-hhs-cms-director-center-for-medicaid-chip-services | Director — Center for Medicaid & CHIP Services
+- exec-dept-hhs-cms-director-center-for-medicare | Director — Center for Medicare
+- exec-dept-hhs-cms-director-center-for-medicare-medicaid-innovation-cmmi | Director — Center for Medicare & Medicaid Innovation (CMMI)
+- exec-dept-hhs-cms-director-center-for-program-integrity | Director — Center for Program Integrity
+- exec-dept-hhs-cms-health-insurance-specialist-multiple | Health Insurance Specialist (×multiple)  [×N]
+- exec-dept-hhs-cms-medical-officer-multiple | Medical Officer (×multiple)  [×N]
+
+### Chief Administrative Officer  [leg-house-cao]
+- leg-house-cao-deputy-cao | Deputy CAO
+- leg-house-cao-director-of-child-care-center | Director of Child Care Center
+- leg-house-cao-director-of-congressional-record-index | Director of Congressional Record Index
+- leg-house-cao-director-of-it-customer-support | Director of IT Customer Support
+- leg-house-cao-director-of-payroll-benefits | Director of Payroll & Benefits
+- leg-house-cao-director-of-photography | Director of Photography
+- leg-house-cao-director-of-supply-services | Director of Supply Services
+- leg-house-cao-director-of-travel | Director of Travel
+
+### Drug Enforcement Administration (DEA)  [exec-dept-doj-dea]
+- exec-dept-doj-dea-assistant-administrator-diversion-control-division | Assistant Administrator — Diversion Control Division
+- exec-dept-doj-dea-assistant-administrator-human-resources-division | Assistant Administrator — Human Resources Division
+- exec-dept-doj-dea-assistant-administrator-intelligence-division | Assistant Administrator — Intelligence Division
+- exec-dept-doj-dea-assistant-administrator-operational-support-division | Assistant Administrator — Operational Support Division
+- exec-dept-doj-dea-chief-inspector | Chief Inspector
+- exec-dept-doj-dea-country-attach-86-foreign-offices | Country Attaché — 86 Foreign Offices
+- exec-dept-doj-dea-diversion-investigator-multiple | Diversion Investigator (×multiple)  [×N]
+- exec-dept-doj-dea-special-agent-in-charge-21-domestic-division-offices | Special Agent in Charge — 21 Domestic Division Offices
+
+### Forest Service (USFS)  [exec-dept-usda-fs]
+- exec-dept-usda-fs-chief-forest-service | Chief, Forest Service
+- exec-dept-usda-fs-deputy-chief-national-forest-system | Deputy Chief — National Forest System
+- exec-dept-usda-fs-deputy-chief-research-development | Deputy Chief — Research & Development
+- exec-dept-usda-fs-district-ranger-multiple | District Ranger (×multiple)  [×N]
+- exec-dept-usda-fs-firefighter-hotshot-smokejumper-engine-crew | Firefighter (Hotshot/Smokejumper/Engine crew)
+- exec-dept-usda-fs-forest-supervisor-154-national-forests | Forest Supervisor — 154 National Forests
+- exec-dept-usda-fs-law-enforcement-officer | Law Enforcement Officer
+- exec-dept-usda-fs-regional-forester-9-regions | Regional Forester — 9 Regions
+
+### National Economic Council  [exec-eop-nec]
+- exec-eop-nec-deputy-director-nec-2 | Deputy Director, NEC (×2)  [×N]
+- exec-eop-nec-director-nec | Director, NEC
+- exec-eop-nec-senior-director-domestic-finance | Senior Director — Domestic Finance
+- exec-eop-nec-senior-director-energy-climate | Senior Director — Energy & Climate
+- exec-eop-nec-senior-director-health-retirement | Senior Director — Health & Retirement
+- exec-eop-nec-senior-director-housing | Senior Director — Housing
+- exec-eop-nec-senior-director-international-economics | Senior Director — International Economics
+- exec-eop-nec-senior-director-labor-workforce | Senior Director — Labor & Workforce
 ```
 
-## Prompt A7 — 15 organisation(s), 110 title(s)
+## Prompt A7 — 16 organisation(s), 109 title(s)
 
 ```
 I am building a data-backed public graph of the U.S. federal government. Every
@@ -1175,36 +1162,6 @@ official-published or third-party-estimated.
 
 THE TITLES:
 
-### Bureau of Land Management (BLM)  [exec-dept-doi-blm]
-- exec-dept-doi-blm-assistant-field-manager | Assistant Field Manager
-- exec-dept-doi-blm-associate-state-director | Associate State Director
-- exec-dept-doi-blm-field-manager-149-field-offices | Field Manager — 149 Field Offices
-- exec-dept-doi-blm-petroleum-engineer | Petroleum Engineer
-- exec-dept-doi-blm-range-conservationist | Range Conservationist
-- exec-dept-doi-blm-realty-specialist | Realty Specialist
-- exec-dept-doi-blm-state-director-12-state-offices | State Director — 12 State Offices
-- exec-dept-doi-blm-wildlife-biologist | Wildlife Biologist
-
-### Forest Service (USFS)  [exec-dept-usda-fs]
-- exec-dept-usda-fs-chief-forest-service | Chief, Forest Service
-- exec-dept-usda-fs-deputy-chief-national-forest-system | Deputy Chief — National Forest System
-- exec-dept-usda-fs-deputy-chief-research-development | Deputy Chief — Research & Development
-- exec-dept-usda-fs-district-ranger-multiple | District Ranger (×multiple)  [×N]
-- exec-dept-usda-fs-firefighter-hotshot-smokejumper-engine-crew | Firefighter (Hotshot/Smokejumper/Engine crew)
-- exec-dept-usda-fs-forest-supervisor-154-national-forests | Forest Supervisor — 154 National Forests
-- exec-dept-usda-fs-law-enforcement-officer | Law Enforcement Officer
-- exec-dept-usda-fs-regional-forester-9-regions | Regional Forester — 9 Regions
-
-### National Economic Council  [exec-eop-nec]
-- exec-eop-nec-deputy-director-nec-2 | Deputy Director, NEC (×2)  [×N]
-- exec-eop-nec-director-nec | Director, NEC
-- exec-eop-nec-senior-director-domestic-finance | Senior Director — Domestic Finance
-- exec-eop-nec-senior-director-energy-climate | Senior Director — Energy & Climate
-- exec-eop-nec-senior-director-health-retirement | Senior Director — Health & Retirement
-- exec-eop-nec-senior-director-housing | Senior Director — Housing
-- exec-eop-nec-senior-director-international-economics | Senior Director — International Economics
-- exec-eop-nec-senior-director-labor-workforce | Senior Director — Labor & Workforce
-
 ### Supreme Court of the United States (SCOTUS)  [jud-scotus]
 - jud-scotus-director-of-budget-personnel | Director of Budget & Personnel
 - jud-scotus-law-clerk-to-associate-justices-4-per-justice | Law Clerk to Associate Justices (×4 per Justice)  [×N]
@@ -1225,6 +1182,15 @@ THE TITLES:
 - exec-dept-doi-usgs-center-director-multiple-science-centers | Center Director (×multiple Science Centers)  [×N]
 - exec-dept-doi-usgs-research-geologist-hydrologist-biologist-multiple | Research Geologist / Hydrologist / Biologist (×multiple)  [×N]
 
+### Federal Deposit Insurance Corporation (FDIC)  [exec-regulatory-fdic]
+- exec-regulatory-fdic-bank-examiner-multiple | Bank Examiner (×multiple)  [×N]
+- exec-regulatory-fdic-ceo-coo | CEO (COO)
+- exec-regulatory-fdic-director-3 | Director (×3)  [×N]
+- exec-regulatory-fdic-director-division-of-depositor-consumer-protection | Director — Division of Depositor & Consumer Protection
+- exec-regulatory-fdic-director-division-of-resolutions-receiverships | Director — Division of Resolutions & Receiverships
+- exec-regulatory-fdic-director-division-of-risk-management-supervision | Director — Division of Risk Management Supervision
+- exec-regulatory-fdic-regional-director-8-regions | Regional Director — 8 Regions
+
 ### Federal Emergency Management Agency (FEMA)  [exec-dept-dhs-fema]
 - exec-dept-dhs-fema-associate-administrator-grant-programs | Associate Administrator — Grant Programs
 - exec-dept-dhs-fema-associate-administrator-mitigation | Associate Administrator — Mitigation
@@ -1243,24 +1209,6 @@ THE TITLES:
 - jud-support-fpd-paralegal-multiple | Paralegal (×multiple)  [×N]
 - jud-support-fpd-supervisory-assistant-fpd-multiple | Supervisory Assistant FPD (×multiple)  [×N]
 
-### Immigration & Customs Enforcement (ICE)  [exec-dept-dhs-ice]
-- exec-dept-dhs-ice-deportation-officer-multiple | Deportation Officer (×multiple)  [×N]
-- exec-dept-dhs-ice-executive-associate-director-ero | Executive Associate Director — ERO
-- exec-dept-dhs-ice-executive-associate-director-hsi | Executive Associate Director — HSI
-- exec-dept-dhs-ice-field-office-director-ero-24-field-offices | Field Office Director — ERO (×24 field offices)  [×N]
-- exec-dept-dhs-ice-hsi-attach-80-foreign-offices | HSI Attaché (×80+ foreign offices)  [×N]
-- exec-dept-dhs-ice-special-agent-multiple | Special Agent (×multiple)  [×N]
-- exec-dept-dhs-ice-special-agent-in-charge-hsi-30-domestic | Special Agent in Charge — HSI (×30 domestic)  [×N]
-
-### Joint Committee on Taxation  [leg-joint-tax]
-- leg-joint-tax-deputy-chief-of-staff | Deputy Chief of Staff
-- leg-joint-tax-director-of-business-tax | Director of Business Tax
-- leg-joint-tax-director-of-individual-tax | Director of Individual Tax
-- leg-joint-tax-director-of-international-tax | Director of International Tax
-- leg-joint-tax-director-of-refund-review-operations | Director of Refund Review Operations
-- leg-joint-tax-director-of-revenue-estimating | Director of Revenue Estimating
-- leg-joint-tax-director-of-tax-modeling | Director of Tax Modeling
-
 ### National Archives & Records Administration (NARA)  [exec-ind-nara]
 - exec-ind-nara-deputy-archivist | Deputy Archivist
 - exec-ind-nara-director-federal-register | Director — Federal Register
@@ -1278,15 +1226,6 @@ THE TITLES:
 - exec-dept-doc-nist-director-material-measurement-laboratory | Director — Material Measurement Laboratory
 - exec-dept-doc-nist-director-physical-measurement-laboratory | Director — Physical Measurement Laboratory
 - exec-dept-doc-nist-research-scientist-multiple | Research Scientist (×multiple)  [×N]
-
-### Office of Operations — Field Structure  [exec-ind-ssa-field-ops]
-- exec-ind-ssa-field-ops-area-director-multiple-per-region | Area Director (×multiple per region)  [×N]
-- exec-ind-ssa-field-ops-claims-representative-multiple | Claims Representative (×multiple)  [×N]
-- exec-ind-ssa-field-ops-district-manager-1-200-field-offices | District Manager — 1,200 field offices
-- exec-ind-ssa-field-ops-operations-supervisor | Operations Supervisor
-- exec-ind-ssa-field-ops-regional-commissioner-10-regions | Regional Commissioner — 10 Regions
-- exec-ind-ssa-field-ops-service-representative-multiple | Service Representative (×multiple)  [×N]
-- exec-ind-ssa-field-ops-teleservice-representative-multiple | Teleservice Representative (×multiple)  [×N]
 
 ### Office of Personnel Management (OPM)  [exec-ind-opm]
 - exec-ind-opm-associate-director-employee-services-hr-solutions | Associate Director — Employee Services (HR Solutions)
@@ -1314,9 +1253,58 @@ THE TITLES:
 - exec-ind-ssa-deputy-commissioner-operations | Deputy Commissioner — Operations
 - exec-ind-ssa-deputy-commissioner-retirement-disability-policy | Deputy Commissioner — Retirement & Disability Policy
 - exec-ind-ssa-deputy-commissioner-systems-cio | Deputy Commissioner — Systems (CIO)
+
+### U.S. Marine Corps  [exec-dept-defense-marines]
+- exec-dept-defense-marines-commanding-general-marforcom | Commanding General — MARFORCOM
+- exec-dept-defense-marines-commanding-general-marforpac | Commanding General — MARFORPAC
+- exec-dept-defense-marines-commanding-general-marsocom | Commanding General — MARSOCOM
+- exec-dept-defense-marines-commanding-general-marine-corps-reserve | Commanding General — Marine Corps Reserve
+- exec-dept-defense-marines-hqmc-dc-combat-development-integration | HQMC DC Combat Development & Integration
+- exec-dept-defense-marines-hqmc-dc-installations-logistics | HQMC DC Installations & Logistics
+- exec-dept-defense-marines-hqmc-dc-manpower-reserve-affairs | HQMC DC Manpower & Reserve Affairs
+
+### All 94 District Courts — Standard Structure  [jud-district-structure]
+- jud-district-structure-chief-judge | Chief Judge
+- jud-district-structure-chief-u-s-probation-officer | Chief U.S. Probation Officer
+- jud-district-structure-court-reporter-ecro | Court Reporter / ECRO
+- jud-district-structure-courtroom-deputy-clerk | Courtroom Deputy Clerk
+- jud-district-structure-district-judge-varies-per-district | District Judge (×varies per district)  [×N]
+- jud-district-structure-u-s-probation-officer-multiple | U.S. Probation Officer (×multiple)  [×N]
+
+### Food and Nutrition Administration (FNA)  [exec-dept-usda-fns]
+- exec-dept-usda-fns-administrator-fns | Administrator, FNS
+- exec-dept-usda-fns-associate-administrator-child-nutrition | Associate Administrator — Child Nutrition
+- exec-dept-usda-fns-associate-administrator-snap | Associate Administrator — SNAP
+- exec-dept-usda-fns-associate-administrator-wic | Associate Administrator — WIC
+- exec-dept-usda-fns-nutritionist-multiple | Nutritionist (×multiple)  [×N]
+- exec-dept-usda-fns-regional-administrator-7-regions | Regional Administrator — 7 Regions
+
+### Immigration & Customs Enforcement (ICE)  [exec-dept-dhs-ice]
+- exec-dept-dhs-ice-deportation-officer-multiple | Deportation Officer (×multiple)  [×N]
+- exec-dept-dhs-ice-executive-associate-director-ero | Executive Associate Director — ERO
+- exec-dept-dhs-ice-executive-associate-director-hsi | Executive Associate Director — HSI
+- exec-dept-dhs-ice-field-office-director-ero-24-field-offices | Field Office Director — ERO (×24 field offices)  [×N]
+- exec-dept-dhs-ice-hsi-attach-80-foreign-offices | HSI Attaché (×80+ foreign offices)  [×N]
+- exec-dept-dhs-ice-special-agent-in-charge-hsi-30-domestic | Special Agent in Charge — HSI (×30 domestic)  [×N]
+
+### Joint Committee on Taxation  [leg-joint-tax]
+- leg-joint-tax-director-of-business-tax | Director of Business Tax
+- leg-joint-tax-director-of-individual-tax | Director of Individual Tax
+- leg-joint-tax-director-of-international-tax | Director of International Tax
+- leg-joint-tax-director-of-refund-review-operations | Director of Refund Review Operations
+- leg-joint-tax-director-of-revenue-estimating | Director of Revenue Estimating
+- leg-joint-tax-director-of-tax-modeling | Director of Tax Modeling
+
+### Nuclear Regulatory Commission (NRC)  [exec-regulatory-nrc]
+- exec-regulatory-nrc-director-office-of-nuclear-material-safety-safeguards | Director — Office of Nuclear Material Safety & Safeguards
+- exec-regulatory-nrc-director-office-of-nuclear-reactor-regulation | Director — Office of Nuclear Reactor Regulation
+- exec-regulatory-nrc-director-office-of-nuclear-regulatory-research | Director — Office of Nuclear Regulatory Research
+- exec-regulatory-nrc-director-office-of-nuclear-security-incident-response | Director — Office of Nuclear Security & Incident Response
+- exec-regulatory-nrc-nuclear-reactor-regulation-specialist-multiple | Nuclear Reactor Regulation Specialist (×multiple)  [×N]
+- exec-regulatory-nrc-regional-director-4-regions | Regional Director — 4 Regions
 ```
 
-## Prompt A8 — 18 organisation(s), 109 title(s)
+## Prompt A8 — 20 organisation(s), 106 title(s)
 
 ```
 I am building a data-backed public graph of the U.S. federal government. Every
@@ -1373,104 +1361,6 @@ official-published or third-party-estimated.
 
 THE TITLES:
 
-### U.S. Marine Corps  [exec-dept-defense-marines]
-- exec-dept-defense-marines-commanding-general-marforcom | Commanding General — MARFORCOM
-- exec-dept-defense-marines-commanding-general-marforpac | Commanding General — MARFORPAC
-- exec-dept-defense-marines-commanding-general-marsocom | Commanding General — MARSOCOM
-- exec-dept-defense-marines-commanding-general-marine-corps-reserve | Commanding General — Marine Corps Reserve
-- exec-dept-defense-marines-hqmc-dc-combat-development-integration | HQMC DC Combat Development & Integration
-- exec-dept-defense-marines-hqmc-dc-installations-logistics | HQMC DC Installations & Logistics
-- exec-dept-defense-marines-hqmc-dc-manpower-reserve-affairs | HQMC DC Manpower & Reserve Affairs
-
-### U.S. Postal Service (USPS)  [exec-ind-usps]
-- exec-ind-usps-chief-human-resources-officer | Chief Human Resources Officer
-- exec-ind-usps-chief-marketing-commerce-officer | Chief Marketing & Commerce Officer
-- exec-ind-usps-chief-postal-inspector | Chief Postal Inspector  [OPM lists it; the row prints no rate]
-- exec-ind-usps-chief-retail-delivery-officer | Chief Retail & Delivery Officer
-- exec-ind-usps-deputy-postmaster-general | Deputy Postmaster General  [OPM lists it; the row prints no rate]
-- exec-ind-usps-postmaster-general-pmg | Postmaster General (PMG)
-- exec-ind-usps-usps-board-of-governors-9-members | USPS Board of Governors (9 members)
-
-### Animal & Plant Health Inspection Service (APHIS)  [exec-dept-usda-aphis]
-- exec-dept-usda-aphis-area-director-multiple | Area Director (×multiple)  [×N]
-- exec-dept-usda-aphis-deputy-administrator-plant-protection-quarantine | Deputy Administrator — Plant Protection & Quarantine
-- exec-dept-usda-aphis-deputy-administrator-veterinary-services | Deputy Administrator — Veterinary Services
-- exec-dept-usda-aphis-deputy-administrator-wildlife-services | Deputy Administrator — Wildlife Services
-- exec-dept-usda-aphis-plant-protection-quarantine-officer | Plant Protection & Quarantine Officer
-- exec-dept-usda-aphis-veterinary-medical-officer-multiple | Veterinary Medical Officer (×multiple)  [×N]
-
-### Bureau of Labor Statistics (BLS)  [exec-dept-dol-bls]
-- exec-dept-dol-bls-deputy-commissioner | Deputy Commissioner
-- exec-dept-dol-bls-director-office-of-employment-unemployment-statistics | Director — Office of Employment & Unemployment Statistics
-- exec-dept-dol-bls-director-office-of-prices-living-conditions | Director — Office of Prices & Living Conditions
-- exec-dept-dol-bls-director-office-of-productivity-technology | Director — Office of Productivity & Technology
-- exec-dept-dol-bls-economist-multiple | Economist (×multiple)  [×N]
-- exec-dept-dol-bls-survey-statistician-multiple | Survey Statistician (×multiple)  [×N]
-
-### Bureau of the Fiscal Service  [exec-dept-treasury-fiscal]
-- exec-dept-treasury-fiscal-commissioner-fiscal-service | Commissioner, Fiscal Service
-- exec-dept-treasury-fiscal-deputy-commissioner | Deputy Commissioner
-- exec-dept-treasury-fiscal-director-debt-management-services | Director, Debt Management Services
-- exec-dept-treasury-fiscal-director-finance-administration | Director, Finance & Administration
-- exec-dept-treasury-fiscal-director-government-wide-accounting | Director, Government-wide Accounting
-- exec-dept-treasury-fiscal-director-payments-management | Director, Payments Management
-
-### Census Bureau  [exec-dept-doc-census]
-- exec-dept-doc-census-associate-director-decennial-census-programs | Associate Director — Decennial Census Programs
-- exec-dept-doc-census-associate-director-demographic-programs | Associate Director — Demographic Programs
-- exec-dept-doc-census-associate-director-economic-programs | Associate Director — Economic Programs
-- exec-dept-doc-census-deputy-director-coo | Deputy Director & COO
-- exec-dept-doc-census-regional-director-12-regional-offices | Regional Director — 12 Regional Offices
-- exec-dept-doc-census-statistician-demographer-multiple | Statistician / Demographer (×multiple)  [×N]
-
-### Clerk of the House  [leg-house-clerk]
-- leg-house-clerk-deputy-clerk | Deputy Clerk
-- leg-house-clerk-director-of-communications | Director of Communications
-- leg-house-clerk-director-of-finance | Director of Finance
-- leg-house-clerk-director-of-house-history-preservation | Director of House History & Preservation
-- leg-house-clerk-director-of-information-systems | Director of Information Systems
-- leg-house-clerk-director-of-legislative-resource-center | Director of Legislative Resource Center
-
-### Commodity Futures Trading Commission (CFTC)  [exec-regulatory-cftc]
-- exec-regulatory-cftc-chief-economist | Chief Economist
-- exec-regulatory-cftc-director-division-of-clearing-risk | Director — Division of Clearing & Risk
-- exec-regulatory-cftc-director-division-of-enforcement | Director — Division of Enforcement
-- exec-regulatory-cftc-director-division-of-market-oversight | Director — Division of Market Oversight
-- exec-regulatory-cftc-director-division-of-swap-dealer-intermediary-oversight | Director — Division of Swap Dealer & Intermediary Oversight
-- exec-regulatory-cftc-executive-director | Executive Director  [OPM lists it; the row prints no rate]
-
-### Federal Trade Commission (FTC)  [exec-regulatory-ftc]
-- exec-regulatory-ftc-chief-advisor | Chief Advisor
-- exec-regulatory-ftc-director-bureau-of-competition | Director — Bureau of Competition
-- exec-regulatory-ftc-director-bureau-of-consumer-protection | Director — Bureau of Consumer Protection
-- exec-regulatory-ftc-director-bureau-of-economics | Director — Bureau of Economics
-- exec-regulatory-ftc-economist-multiple | Economist (×multiple)  [×N]
-- exec-regulatory-ftc-regional-director-7-regional-offices | Regional Director — 7 Regional Offices
-
-### Food and Nutrition Administration (FNA)  [exec-dept-usda-fns]
-- exec-dept-usda-fns-administrator-fns | Administrator, FNS
-- exec-dept-usda-fns-associate-administrator-child-nutrition | Associate Administrator — Child Nutrition
-- exec-dept-usda-fns-associate-administrator-snap | Associate Administrator — SNAP
-- exec-dept-usda-fns-associate-administrator-wic | Associate Administrator — WIC
-- exec-dept-usda-fns-nutritionist-multiple | Nutritionist (×multiple)  [×N]
-- exec-dept-usda-fns-regional-administrator-7-regions | Regional Administrator — 7 Regions
-
-### Joint Economic Committee  [leg-joint-econ]
-- leg-joint-econ-chair-alternates-senate-house | Chair (alternates Senate/House)
-- leg-joint-econ-chief-economist | Chief Economist
-- leg-joint-econ-executive-director | Executive Director
-- leg-joint-econ-policy-director | Policy Director
-- leg-joint-econ-senior-economist-4 | Senior Economist (×4)  [×N]
-- leg-joint-econ-vice-chair | Vice Chair
-
-### Nuclear Regulatory Commission (NRC)  [exec-regulatory-nrc]
-- exec-regulatory-nrc-director-office-of-nuclear-material-safety-safeguards | Director — Office of Nuclear Material Safety & Safeguards
-- exec-regulatory-nrc-director-office-of-nuclear-reactor-regulation | Director — Office of Nuclear Reactor Regulation
-- exec-regulatory-nrc-director-office-of-nuclear-regulatory-research | Director — Office of Nuclear Regulatory Research
-- exec-regulatory-nrc-director-office-of-nuclear-security-incident-response | Director — Office of Nuclear Security & Incident Response
-- exec-regulatory-nrc-nuclear-reactor-regulation-specialist-multiple | Nuclear Reactor Regulation Specialist (×multiple)  [×N]
-- exec-regulatory-nrc-regional-director-4-regions | Regional Director — 4 Regions
-
 ### Office of Energy Efficiency & Renewable Energy (EERE)  [exec-dept-doe-eere]
 - exec-dept-doe-eere-director-building-technologies | Director — Building Technologies
 - exec-dept-doe-eere-director-hydrogen-fuel-cell-technologies | Director — Hydrogen & Fuel Cell Technologies
@@ -1478,6 +1368,14 @@ THE TITLES:
 - exec-dept-doe-eere-director-vehicle-technologies | Director — Vehicle Technologies
 - exec-dept-doe-eere-director-weatherization-intergovernmental-programs | Director — Weatherization & Intergovernmental Programs
 - exec-dept-doe-eere-director-wind-energy-technologies | Director — Wind Energy Technologies
+
+### Office of Operations — Field Structure  [exec-ind-ssa-field-ops]
+- exec-ind-ssa-field-ops-claims-representative-multiple | Claims Representative (×multiple)  [×N]
+- exec-ind-ssa-field-ops-district-manager-1-200-field-offices | District Manager — 1,200 field offices
+- exec-ind-ssa-field-ops-operations-supervisor | Operations Supervisor
+- exec-ind-ssa-field-ops-regional-commissioner-10-regions | Regional Commissioner — 10 Regions
+- exec-ind-ssa-field-ops-service-representative-multiple | Service Representative (×multiple)  [×N]
+- exec-ind-ssa-field-ops-teleservice-representative-multiple | Teleservice Representative (×multiple)  [×N]
 
 ### Office of Science (SC)  [exec-dept-doe-sc]
 - exec-dept-doe-sc-associate-director-advanced-scientific-computing-research | Associate Director — Advanced Scientific Computing Research
@@ -1503,13 +1401,20 @@ THE TITLES:
 - exec-dept-dhs-uscis-director-field-office-89-offices | Director — Field Office (×89 offices)  [×N]
 - exec-dept-dhs-uscis-immigration-services-officer-multiple | Immigration Services Officer (×multiple)  [×N]
 
-### U.S. Mint  [exec-dept-treasury-mint]
-- exec-dept-treasury-mint-cfo | CFO
-- exec-dept-treasury-mint-director-u-s-mint | Director, U.S. Mint
-- exec-dept-treasury-mint-plant-superintendent-denver-mint | Plant Superintendent — Denver Mint
-- exec-dept-treasury-mint-plant-superintendent-philadelphia-mint | Plant Superintendent — Philadelphia Mint
-- exec-dept-treasury-mint-plant-superintendent-san-francisco-mint | Plant Superintendent — San Francisco Mint
-- exec-dept-treasury-mint-plant-superintendent-west-point-mint | Plant Superintendent — West Point Mint
+### U.S. Postal Service (USPS)  [exec-ind-usps]
+- exec-ind-usps-chief-marketing-commerce-officer | Chief Marketing & Commerce Officer
+- exec-ind-usps-chief-postal-inspector | Chief Postal Inspector  [OPM lists it; the row prints no rate]
+- exec-ind-usps-chief-retail-delivery-officer | Chief Retail & Delivery Officer
+- exec-ind-usps-deputy-postmaster-general | Deputy Postmaster General  [OPM lists it; the row prints no rate]
+- exec-ind-usps-postmaster-general-pmg | Postmaster General (PMG)
+- exec-ind-usps-usps-board-of-governors-9-members | USPS Board of Governors (9 members)
+
+### Animal & Plant Health Inspection Service (APHIS)  [exec-dept-usda-aphis]
+- exec-dept-usda-aphis-deputy-administrator-plant-protection-quarantine | Deputy Administrator — Plant Protection & Quarantine
+- exec-dept-usda-aphis-deputy-administrator-veterinary-services | Deputy Administrator — Veterinary Services
+- exec-dept-usda-aphis-deputy-administrator-wildlife-services | Deputy Administrator — Wildlife Services
+- exec-dept-usda-aphis-plant-protection-quarantine-officer | Plant Protection & Quarantine Officer
+- exec-dept-usda-aphis-veterinary-medical-officer-multiple | Veterinary Medical Officer (×multiple)  [×N]
 
 ### Bureau of Engraving & Printing  [exec-dept-treasury-bep]
 - exec-dept-treasury-bep-associate-director-for-management | Associate Director for Management
@@ -1517,78 +1422,20 @@ THE TITLES:
 - exec-dept-treasury-bep-director-bep | Director, BEP
 - exec-dept-treasury-bep-superintendent-dc-facility | Superintendent, DC Facility
 - exec-dept-treasury-bep-superintendent-fort-worth-facility | Superintendent, Fort Worth Facility
-```
 
-## Prompt A9 — 23 organisation(s), 108 title(s)
+### Bureau of the Fiscal Service  [exec-dept-treasury-fiscal]
+- exec-dept-treasury-fiscal-commissioner-fiscal-service | Commissioner, Fiscal Service
+- exec-dept-treasury-fiscal-director-debt-management-services | Director, Debt Management Services
+- exec-dept-treasury-fiscal-director-finance-administration | Director, Finance & Administration
+- exec-dept-treasury-fiscal-director-government-wide-accounting | Director, Government-wide Accounting
+- exec-dept-treasury-fiscal-director-payments-management | Director, Payments Management
 
-```
-I am building a data-backed public graph of the U.S. federal government. Every
-published figure must be traceable to a specific published government document
-that prints it; I cannot publish a reported or estimated salary.
-
-Below are federal POSITIONS, grouped by the organisation they sit in. For each
-one I need to know what it is paid and, more importantly, WHICH PUBLISHED
-DOCUMENT states that.
-
-For EVERY title listed below, return exactly one line in this pipe-delimited
-format and nothing else per title:
-
-    <node id> | <pay system> | <document URL> | <rate|range|none> | <join key> | <figure or —> | <confidence>
-
-- **pay system** — one of: `general_schedule`, `senior_executive_service`,
-  `senior_level`, `executive_schedule`, `title_38_va`, `title_5_excepted`,
-  `administratively_determined`, `foreign_service`, `military_title_37`,
-  `federal_wage_system`, `judicial_statutory`, `legislative_chamber`,
-  `board_or_commission_statutory`, `not_federally_paid`, `unknown`.
-- **document URL** — the URL of the *published document that states the pay*,
-  on the publisher's own site. A `.gov` host wherever one exists. Not a news
-  article, not a salary-aggregator site, not Wikipedia, not FederalPay.org or
-  GovSalaries — those are third-party republications and this tool cannot cite
-  them. If no official document states it, write `—` and say so.
-- **rate|range|none** — whether that document prints a single annual rate,
-  a minimum-and-maximum band, or no figure at all for this title.
-- **join key** — the exact string the document uses for this title, so a
-  matcher can find the row: a grade (`GS-15`), a level (`EX-IV`), a printed
-  title, a tier name, a statutory citation.
-- **figure** — only where the document prints one, as printed. `—` otherwise.
-  Never estimate, never average, never interpolate between grades.
-- **confidence** — `certain` only if you opened the document and read the row;
-  `likely` if the pay system is documented but the specific row is inferred;
-  `speculative` otherwise.
-
-Rules that matter more than coverage:
-1. **A missing answer is a result.** A line reading
-   `<node id> | unknown | — | none | — | — | certain` is a correct answer and
-   is more useful than a guess. Do not fill gaps.
-2. **Never average or interpolate.** If a title spans GS-13 to GS-15, say
-   `range` and give the grade span as the join key — do not produce a midpoint.
-3. **Do not read across agencies.** An Inspector General's pay at one agency
-   is not evidence about another's; answer per organisation as listed.
-4. A title marked `[×N]` stands for several holders in this graph. Give a
-   figure only where the document states ONE rate that applies to every
-   holder of the title by its own terms (a tier, a statutory rate, a roster
-   listing each holder at the same figure); otherwise answer the pay system,
-   the document and `range` or `none`. Never one holder's pay for the group.
-
-END with a section titled LOAD-BEARING NUMBERS: every figure you returned
-above, one line each, with the document URL it came from and whether it is
-official-published or third-party-estimated.
-
-THE TITLES:
-
-### Bureau of Indian Affairs (BIA)  [exec-dept-doi-bia]
-- exec-dept-doi-bia-agency-superintendent-83-agencies | Agency Superintendent (×83 agencies)  [×N]
-- exec-dept-doi-bia-deputy-director-indian-services | Deputy Director — Indian Services
-- exec-dept-doi-bia-regional-director-12-regional-offices | Regional Director — 12 Regional Offices
-- exec-dept-doi-bia-social-services-program-manager | Social Services Program Manager
-- exec-dept-doi-bia-tribal-government-specialist | Tribal Government Specialist
-
-### Bureau of Reclamation (BOR)  [exec-dept-doi-bor]
-- exec-dept-doi-bor-area-manager | Area Manager
-- exec-dept-doi-bor-civil-engineer | Civil Engineer
-- exec-dept-doi-bor-hydrologist | Hydrologist
-- exec-dept-doi-bor-regional-director-5-regions | Regional Director — 5 Regions
-- exec-dept-doi-bor-water-master | Water Master
+### Census Bureau  [exec-dept-doc-census]
+- exec-dept-doc-census-associate-director-decennial-census-programs | Associate Director — Decennial Census Programs
+- exec-dept-doc-census-associate-director-demographic-programs | Associate Director — Demographic Programs
+- exec-dept-doc-census-associate-director-economic-programs | Associate Director — Economic Programs
+- exec-dept-doc-census-deputy-director-coo | Deputy Director & COO
+- exec-dept-doc-census-statistician-demographer-multiple | Statistician / Demographer (×multiple)  [×N]
 
 ### Copyright Office  [leg-support-loc-copyright]
 - leg-support-loc-copyright-associate-register-for-policy-international-affairs | Associate Register for Policy & International Affairs
@@ -1618,6 +1465,13 @@ THE TITLES:
 - jud-support-fjc-director-research-division | Director — Research Division
 - jud-support-fjc-research-scientist-attorney-multiple | Research Scientist / Attorney (×multiple)  [×N]
 
+### Federal Trade Commission (FTC)  [exec-regulatory-ftc]
+- exec-regulatory-ftc-chief-advisor | Chief Advisor
+- exec-regulatory-ftc-director-bureau-of-competition | Director — Bureau of Competition
+- exec-regulatory-ftc-director-bureau-of-consumer-protection | Director — Bureau of Consumer Protection
+- exec-regulatory-ftc-director-bureau-of-economics | Director — Bureau of Economics
+- exec-regulatory-ftc-regional-director-7-regional-offices | Regional Director — 7 Regional Offices
+
 ### Health Resources & Services Administration (HRSA)  [exec-dept-hhs-hrsa]
 - exec-dept-hhs-hrsa-associate-administrator-hiv-aids-bureau | Associate Administrator — HIV/AIDS Bureau
 - exec-dept-hhs-hrsa-associate-administrator-health-workforce | Associate Administrator — Health Workforce
@@ -1625,19 +1479,12 @@ THE TITLES:
 - exec-dept-hhs-hrsa-associate-administrator-primary-healthcare | Associate Administrator — Primary Healthcare
 - exec-dept-hhs-hrsa-director-national-health-service-corps | Director — National Health Service Corps
 
-### National Security Council  [exec-eop-nsc]
-- exec-eop-nsc-deputy-national-security-advisor-2 | Deputy National Security Advisor (×2)  [×N]
-- exec-eop-nsc-nsc-chief-of-staff | NSC Chief of Staff
-- exec-eop-nsc-nsc-director-of-communications | NSC Director of Communications
-- exec-eop-nsc-nsc-legal-advisor | NSC Legal Advisor
-- exec-eop-nsc-national-security-advisor-chair | National Security Advisor (Chair)
-
-### Natural Resources Conservation Service (NRCS)  [exec-dept-usda-nrcs]
-- exec-dept-usda-nrcs-civil-engineer | Civil Engineer
-- exec-dept-usda-nrcs-deputy-chief | Deputy Chief
-- exec-dept-usda-nrcs-district-conservationist | District Conservationist
-- exec-dept-usda-nrcs-soil-conservationist | Soil Conservationist
-- exec-dept-usda-nrcs-state-conservationist-50-states | State Conservationist — 50 states
+### Joint Economic Committee  [leg-joint-econ]
+- leg-joint-econ-chair-alternates-senate-house | Chair (alternates Senate/House)
+- leg-joint-econ-executive-director | Executive Director
+- leg-joint-econ-policy-director | Policy Director
+- leg-joint-econ-senior-economist-4 | Senior Economist (×4)  [×N]
+- leg-joint-econ-vice-chair | Vice Chair
 
 ### Office of Environmental Management (EM)  [exec-dept-doe-em]
 - exec-dept-doe-em-site-manager-hanford-site-richland-wa-largest-em-site | Site Manager — Hanford Site (Richland, WA) — largest EM site
@@ -1653,26 +1500,70 @@ THE TITLES:
 - exec-ind-ssa-oho-hearing-office-chief-alj-168-offices | Hearing Office Chief ALJ — 168 offices
 - exec-ind-ssa-oho-hearing-office-director-multiple | Hearing Office Director (×multiple)  [×N]
 
-### Small Business Administration (SBA)  [exec-ind-sba]
-- exec-ind-sba-associate-administrator-capital-access | Associate Administrator — Capital Access
-- exec-ind-sba-associate-administrator-disaster-assistance | Associate Administrator — Disaster Assistance
-- exec-ind-sba-associate-administrator-entrepreneurial-development | Associate Administrator — Entrepreneurial Development
-- exec-ind-sba-associate-administrator-government-contracting-business-development | Associate Administrator — Government Contracting & Business Development
-- exec-ind-sba-regional-administrator-10-regions | Regional Administrator — 10 Regions
-
 ### Smithsonian Institution  [exec-ind-smithsonian]
 - exec-ind-smithsonian-deputy-secretary | Deputy Secretary
 - exec-ind-smithsonian-secretary-of-the-smithsonian | Secretary of the Smithsonian
 - exec-ind-smithsonian-under-secretary-for-finance-administration | Under Secretary for Finance & Administration
 - exec-ind-smithsonian-under-secretary-for-museums-culture | Under Secretary for Museums & Culture
 - exec-ind-smithsonian-under-secretary-for-science-research | Under Secretary for Science & Research
+```
 
-### Southern District of New York (S.D.N.Y.)  [jud-district-sdny]
-- jud-district-sdny-chief-pretrial-services-officer | Chief Pretrial Services Officer
-- jud-district-sdny-chief-probation-officer | Chief Probation Officer
-- jud-district-sdny-court-security-officer-multiple | Court Security Officer (×multiple)  [×N]
-- jud-district-sdny-courtroom-deputy-multiple | Courtroom Deputy (×multiple)  [×N]
-- jud-district-sdny-senior-judge-multiple | Senior Judge (×multiple)  [×N]
+## Prompt A9 — 26 organisation(s), 107 title(s)
+
+```
+I am building a data-backed public graph of the U.S. federal government. Every
+published figure must be traceable to a specific published government document
+that prints it; I cannot publish a reported or estimated salary.
+
+Below are federal POSITIONS, grouped by the organisation they sit in. For each
+one I need to know what it is paid and, more importantly, WHICH PUBLISHED
+DOCUMENT states that.
+
+For EVERY title listed below, return exactly one line in this pipe-delimited
+format and nothing else per title:
+
+    <node id> | <pay system> | <document URL> | <rate|range|none> | <join key> | <figure or —> | <confidence>
+
+- **pay system** — one of: `general_schedule`, `senior_executive_service`,
+  `senior_level`, `executive_schedule`, `title_38_va`, `title_5_excepted`,
+  `administratively_determined`, `foreign_service`, `military_title_37`,
+  `federal_wage_system`, `judicial_statutory`, `legislative_chamber`,
+  `board_or_commission_statutory`, `not_federally_paid`, `unknown`.
+- **document URL** — the URL of the *published document that states the pay*,
+  on the publisher's own site. A `.gov` host wherever one exists. Not a news
+  article, not a salary-aggregator site, not Wikipedia, not FederalPay.org or
+  GovSalaries — those are third-party republications and this tool cannot cite
+  them. If no official document states it, write `—` and say so.
+- **rate|range|none** — whether that document prints a single annual rate,
+  a minimum-and-maximum band, or no figure at all for this title.
+- **join key** — the exact string the document uses for this title, so a
+  matcher can find the row: a grade (`GS-15`), a level (`EX-IV`), a printed
+  title, a tier name, a statutory citation.
+- **figure** — only where the document prints one, as printed. `—` otherwise.
+  Never estimate, never average, never interpolate between grades.
+- **confidence** — `certain` only if you opened the document and read the row;
+  `likely` if the pay system is documented but the specific row is inferred;
+  `speculative` otherwise.
+
+Rules that matter more than coverage:
+1. **A missing answer is a result.** A line reading
+   `<node id> | unknown | — | none | — | — | certain` is a correct answer and
+   is more useful than a guess. Do not fill gaps.
+2. **Never average or interpolate.** If a title spans GS-13 to GS-15, say
+   `range` and give the grade span as the join key — do not produce a midpoint.
+3. **Do not read across agencies.** An Inspector General's pay at one agency
+   is not evidence about another's; answer per organisation as listed.
+4. A title marked `[×N]` stands for several holders in this graph. Give a
+   figure only where the document states ONE rate that applies to every
+   holder of the title by its own terms (a tier, a statutory rate, a roster
+   listing each holder at the same figure); otherwise answer the pay system,
+   the document and `range` or `none`. Never one holder's pay for the group.
+
+END with a section titled LOAD-BEARING NUMBERS: every figure you returned
+above, one line each, with the document URL it came from and whether it is
+official-published or third-party-estimated.
+
+THE TITLES:
 
 ### U.S. Fish & Wildlife Service (FWS)  [exec-dept-doi-fws]
 - exec-dept-doi-fws-fish-hatchery-manager | Fish Hatchery Manager
@@ -1681,18 +1572,19 @@ THE TITLES:
 - exec-dept-doi-fws-regional-director-8-regions | Regional Director — 8 Regions
 - exec-dept-doi-fws-wildlife-biologist | Wildlife Biologist
 
+### U.S. Mint  [exec-dept-treasury-mint]
+- exec-dept-treasury-mint-director-u-s-mint | Director, U.S. Mint
+- exec-dept-treasury-mint-plant-superintendent-denver-mint | Plant Superintendent — Denver Mint
+- exec-dept-treasury-mint-plant-superintendent-philadelphia-mint | Plant Superintendent — Philadelphia Mint
+- exec-dept-treasury-mint-plant-superintendent-san-francisco-mint | Plant Superintendent — San Francisco Mint
+- exec-dept-treasury-mint-plant-superintendent-west-point-mint | Plant Superintendent — West Point Mint
+
 ### United States Patent and Trademark Office (USPTO)  [exec-dept-doc-uspto]
 - exec-dept-doc-uspto-chief-administrative-trademark-judge-ttab | Chief Administrative Trademark Judge (TTAB)
 - exec-dept-doc-uspto-commissioner-for-patents | Commissioner for Patents  [OPM lists it; the row prints no rate]
 - exec-dept-doc-uspto-commissioner-for-trademarks | Commissioner for Trademarks
 - exec-dept-doc-uspto-patent-examiner-multiple | Patent Examiner (×multiple)  [×N]
 - exec-dept-doc-uspto-trademark-examining-attorney-multiple | Trademark Examining Attorney (×multiple)  [×N]
-
-### Agricultural Research Service (ARS)  [exec-dept-usda-ars]
-- exec-dept-usda-ars-area-director-8-areas | Area Director (×8 Areas)  [×N]
-- exec-dept-usda-ars-deputy-administrator-national-programs | Deputy Administrator — National Programs
-- exec-dept-usda-ars-research-leader-multiple-locations | Research Leader (×multiple locations)  [×N]
-- exec-dept-usda-ars-research-scientist-chemist-biologist-multiple | Research Scientist / Chemist / Biologist (×multiple)  [×N]
 
 ### Alcohol & Tobacco Tax & Trade Bureau (TTB)  [exec-dept-treasury-ttb]
 - exec-dept-treasury-ttb-administrator-ttb | Administrator, TTB
@@ -1712,11 +1604,29 @@ THE TITLES:
 - leg-support-cbo-budget-review-division-deputy-chief-budget-review-division | Deputy Chief, Budget Review Division
 - leg-support-cbo-budget-review-division-senior-analyst-budget-review-division-multiple | Senior Analyst, Budget Review Division (×multiple)  [×N]
 
+### Bureau of Indian Affairs (BIA)  [exec-dept-doi-bia]
+- exec-dept-doi-bia-agency-superintendent-83-agencies | Agency Superintendent (×83 agencies)  [×N]
+- exec-dept-doi-bia-deputy-director-indian-services | Deputy Director — Indian Services
+- exec-dept-doi-bia-social-services-program-manager | Social Services Program Manager
+- exec-dept-doi-bia-tribal-government-specialist | Tribal Government Specialist
+
+### Bureau of Labor Statistics (BLS)  [exec-dept-dol-bls]
+- exec-dept-dol-bls-director-office-of-employment-unemployment-statistics | Director — Office of Employment & Unemployment Statistics
+- exec-dept-dol-bls-director-office-of-prices-living-conditions | Director — Office of Prices & Living Conditions
+- exec-dept-dol-bls-director-office-of-productivity-technology | Director — Office of Productivity & Technology
+- exec-dept-dol-bls-survey-statistician-multiple | Survey Statistician (×multiple)  [×N]
+
 ### Bureau of Ocean Energy Management (BOEM)  [exec-dept-doi-boem]
 - exec-dept-doi-boem-environmental-scientist | Environmental Scientist
 - exec-dept-doi-boem-offshore-energy-analyst | Offshore Energy Analyst
 - exec-dept-doi-boem-petroleum-engineer | Petroleum Engineer
 - exec-dept-doi-boem-regional-director-3-regions | Regional Director — 3 Regions
+
+### Bureau of Reclamation (BOR)  [exec-dept-doi-bor]
+- exec-dept-doi-bor-area-manager | Area Manager
+- exec-dept-doi-bor-hydrologist | Hydrologist
+- exec-dept-doi-bor-regional-director-5-regions | Regional Director — 5 Regions
+- exec-dept-doi-bor-water-master | Water Master
 
 ### Bureau of Safety & Environmental Enforcement (BSEE)  [exec-dept-doi-bsee]
 - exec-dept-doi-bsee-offshore-inspector-multiple | Offshore Inspector (×multiple)  [×N]
@@ -1724,11 +1634,95 @@ THE TITLES:
 - exec-dept-doi-bsee-regional-director-gulf-of-mexico | Regional Director — Gulf of Mexico
 - exec-dept-doi-bsee-regional-director-pacific | Regional Director — Pacific
 
+### Clerk of the House  [leg-house-clerk]
+- leg-house-clerk-deputy-clerk | Deputy Clerk
+- leg-house-clerk-director-of-house-history-preservation | Director of House History & Preservation
+- leg-house-clerk-director-of-information-systems | Director of Information Systems
+- leg-house-clerk-director-of-legislative-resource-center | Director of Legislative Resource Center
+
+### Commodity Futures Trading Commission (CFTC)  [exec-regulatory-cftc]
+- exec-regulatory-cftc-director-division-of-clearing-risk | Director — Division of Clearing & Risk
+- exec-regulatory-cftc-director-division-of-market-oversight | Director — Division of Market Oversight
+- exec-regulatory-cftc-director-division-of-swap-dealer-intermediary-oversight | Director — Division of Swap Dealer & Intermediary Oversight
+- exec-regulatory-cftc-executive-director | Executive Director  [OPM lists it; the row prints no rate]
+
 ### Communications Division  [leg-support-uscp-communications-division]
 - leg-support-uscp-communications-division-commander-communications-division | Commander, Communications Division
 - leg-support-uscp-communications-division-lieutenant-communications-division-multiple | Lieutenant, Communications Division (×multiple)  [×N]
 - leg-support-uscp-communications-division-officer-communications-division-multiple | Officer, Communications Division (×multiple)  [×N]
 - leg-support-uscp-communications-division-sergeant-communications-division-multiple | Sergeant, Communications Division (×multiple)  [×N]
+
+### Congressional Relations  [leg-support-gao-congressional-relations]
+- leg-support-gao-congressional-relations-analyst-congressional-relations-multiple | Analyst, Congressional Relations (×multiple)  [×N]
+- leg-support-gao-congressional-relations-assistant-director-congressional-relations | Assistant Director, Congressional Relations
+- leg-support-gao-congressional-relations-managing-director-congressional-relations | Managing Director, Congressional Relations
+- leg-support-gao-congressional-relations-senior-analyst-congressional-relations-multiple | Senior Analyst, Congressional Relations (×multiple)  [×N]
+
+### Court of Appeals for the Armed Forces (CAAF)  [jud-specialized-caaf]
+- jud-specialized-caaf-chief-judge-air-force-court-of-criminal-appeals | Chief Judge — Air Force Court of Criminal Appeals
+- jud-specialized-caaf-chief-judge-army-court-of-criminal-appeals | Chief Judge — Army Court of Criminal Appeals
+- jud-specialized-caaf-chief-judge-coast-guard-court-of-criminal-appeals | Chief Judge — Coast Guard Court of Criminal Appeals
+- jud-specialized-caaf-chief-judge-navy-marine-court-of-criminal-appeals | Chief Judge — Navy-Marine Court of Criminal Appeals
+
+### Criminal Investigative Division  [leg-support-uscp-criminal-investigative-division]
+- leg-support-uscp-criminal-investigative-division-commander-criminal-investigative-division | Commander, Criminal Investigative Division
+- leg-support-uscp-criminal-investigative-division-lieutenant-criminal-investigative-division-multiple | Lieutenant, Criminal Investigative Division (×multiple)  [×N]
+- leg-support-uscp-criminal-investigative-division-officer-criminal-investigative-division-multiple | Officer, Criminal Investigative Division (×multiple)  [×N]
+- leg-support-uscp-criminal-investigative-division-sergeant-criminal-investigative-division-multiple | Sergeant, Criminal Investigative Division (×multiple)  [×N]
+
+### Defense Capabilities & Management  [leg-support-gao-defense-capabilities-management]
+- leg-support-gao-defense-capabilities-management-analyst-defense-capabilities-management-multiple | Analyst, Defense Capabilities & Management (×multiple)  [×N]
+- leg-support-gao-defense-capabilities-management-assistant-director-defense-capabilities-management | Assistant Director, Defense Capabilities & Management
+- leg-support-gao-defense-capabilities-management-managing-director-defense-capabilities-management | Managing Director, Defense Capabilities & Management
+- leg-support-gao-defense-capabilities-management-senior-analyst-defense-capabilities-management-multiple | Senior Analyst, Defense Capabilities & Management (×multiple)  [×N]
+
+### Economic & Financial Markets  [leg-support-gao-economic-financial-markets]
+- leg-support-gao-economic-financial-markets-analyst-economic-financial-markets-multiple | Analyst, Economic & Financial Markets (×multiple)  [×N]
+- leg-support-gao-economic-financial-markets-assistant-director-economic-financial-markets | Assistant Director, Economic & Financial Markets
+- leg-support-gao-economic-financial-markets-managing-director-economic-financial-markets | Managing Director, Economic & Financial Markets
+- leg-support-gao-economic-financial-markets-senior-analyst-economic-financial-markets-multiple | Senior Analyst, Economic & Financial Markets (×multiple)  [×N]
+
+### Economic Analysis Division  [leg-support-cbo-economic-analysis-division]
+- leg-support-cbo-economic-analysis-division-analyst-economic-analysis-division-multiple | Analyst, Economic Analysis Division (×multiple)  [×N]
+- leg-support-cbo-economic-analysis-division-chief-economic-analysis-division | Chief, Economic Analysis Division
+- leg-support-cbo-economic-analysis-division-deputy-chief-economic-analysis-division | Deputy Chief, Economic Analysis Division
+- leg-support-cbo-economic-analysis-division-senior-analyst-economic-analysis-division-multiple | Senior Analyst, Economic Analysis Division (×multiple)  [×N]
+
+### Education, Workforce & Income Security  [leg-support-gao-education-workforce-income-security]
+- leg-support-gao-education-workforce-income-security-analyst-education-workforce-income-security-multiple | Analyst, Education, Workforce & Income Security (×multiple)  [×N]
+- leg-support-gao-education-workforce-income-security-assistant-director-education-workforce-income-security | Assistant Director, Education, Workforce & Income Security
+- leg-support-gao-education-workforce-income-security-managing-director-education-workforce-income-security | Managing Director, Education, Workforce & Income Security
+- leg-support-gao-education-workforce-income-security-senior-analyst-education-workforce-income-security-multiple | Senior Analyst, Education, Workforce & Income Security (×multiple)  [×N]
+
+### Farm Service Agency (FSA)  [exec-dept-usda-fsa]
+- exec-dept-usda-fsa-agricultural-program-specialist | Agricultural Program Specialist
+- exec-dept-usda-fsa-county-executive-director-2-100-county-offices | County Executive Director — ~2,100 county offices
+- exec-dept-usda-fsa-farm-loan-officer | Farm Loan Officer
+- exec-dept-usda-fsa-state-executive-director-50-states | State Executive Director — 50 states
+
+### Federal Highway Administration (FHWA)  [exec-dept-dot-fhwa]
+- exec-dept-dot-fhwa-associate-administrator-federal-lands-highway | Associate Administrator — Federal Lands Highway
+- exec-dept-dot-fhwa-associate-administrator-planning-environment-realty | Associate Administrator — Planning, Environment & Realty
+- exec-dept-dot-fhwa-division-administrator-52-state-divisions | Division Administrator — 52 State Divisions
+- exec-dept-dot-fhwa-highway-engineer-multiple | Highway Engineer (×multiple)  [×N]
+
+### Financial Analysis Division  [leg-support-cbo-financial-analysis-division]
+- leg-support-cbo-financial-analysis-division-analyst-financial-analysis-division-multiple | Analyst, Financial Analysis Division (×multiple)  [×N]
+- leg-support-cbo-financial-analysis-division-chief-financial-analysis-division | Chief, Financial Analysis Division
+- leg-support-cbo-financial-analysis-division-deputy-chief-financial-analysis-division | Deputy Chief, Financial Analysis Division
+- leg-support-cbo-financial-analysis-division-senior-analyst-financial-analysis-division-multiple | Senior Analyst, Financial Analysis Division (×multiple)  [×N]
+
+### Financial Management & Assurance  [leg-support-gao-financial-management-assurance]
+- leg-support-gao-financial-management-assurance-analyst-financial-management-assurance-multiple | Analyst, Financial Management & Assurance (×multiple)  [×N]
+- leg-support-gao-financial-management-assurance-assistant-director-financial-management-assurance | Assistant Director, Financial Management & Assurance
+- leg-support-gao-financial-management-assurance-managing-director-financial-management-assurance | Managing Director, Financial Management & Assurance
+- leg-support-gao-financial-management-assurance-senior-analyst-financial-management-assurance-multiple | Senior Analyst, Financial Management & Assurance (×multiple)  [×N]
+
+### Food Safety & Inspection Service (FSIS)  [exec-dept-usda-fsis]
+- exec-dept-usda-fsis-circuit-supervisor | Circuit Supervisor
+- exec-dept-usda-fsis-district-manager-10-districts | District Manager — 10 districts
+- exec-dept-usda-fsis-food-inspector-multiple | Food Inspector (×multiple)  [×N]
+- exec-dept-usda-fsis-veterinary-medical-officer-multiple | Veterinary Medical Officer (×multiple)  [×N]
 ```
 
 ## Prompt A10 — 27 organisation(s), 108 title(s)
@@ -1787,90 +1781,6 @@ above, one line each, with the document URL it came from and whether it is
 official-published or third-party-estimated.
 
 THE TITLES:
-
-### Congressional Relations  [leg-support-gao-congressional-relations]
-- leg-support-gao-congressional-relations-analyst-congressional-relations-multiple | Analyst, Congressional Relations (×multiple)  [×N]
-- leg-support-gao-congressional-relations-assistant-director-congressional-relations | Assistant Director, Congressional Relations
-- leg-support-gao-congressional-relations-managing-director-congressional-relations | Managing Director, Congressional Relations
-- leg-support-gao-congressional-relations-senior-analyst-congressional-relations-multiple | Senior Analyst, Congressional Relations (×multiple)  [×N]
-
-### Court of Appeals for the Armed Forces (CAAF)  [jud-specialized-caaf]
-- jud-specialized-caaf-chief-judge-air-force-court-of-criminal-appeals | Chief Judge — Air Force Court of Criminal Appeals
-- jud-specialized-caaf-chief-judge-army-court-of-criminal-appeals | Chief Judge — Army Court of Criminal Appeals
-- jud-specialized-caaf-chief-judge-coast-guard-court-of-criminal-appeals | Chief Judge — Coast Guard Court of Criminal Appeals
-- jud-specialized-caaf-chief-judge-navy-marine-court-of-criminal-appeals | Chief Judge — Navy-Marine Court of Criminal Appeals
-
-### Criminal Investigative Division  [leg-support-uscp-criminal-investigative-division]
-- leg-support-uscp-criminal-investigative-division-commander-criminal-investigative-division | Commander, Criminal Investigative Division
-- leg-support-uscp-criminal-investigative-division-lieutenant-criminal-investigative-division-multiple | Lieutenant, Criminal Investigative Division (×multiple)  [×N]
-- leg-support-uscp-criminal-investigative-division-officer-criminal-investigative-division-multiple | Officer, Criminal Investigative Division (×multiple)  [×N]
-- leg-support-uscp-criminal-investigative-division-sergeant-criminal-investigative-division-multiple | Sergeant, Criminal Investigative Division (×multiple)  [×N]
-
-### Defense Capabilities & Management  [leg-support-gao-defense-capabilities-management]
-- leg-support-gao-defense-capabilities-management-analyst-defense-capabilities-management-multiple | Analyst, Defense Capabilities & Management (×multiple)  [×N]
-- leg-support-gao-defense-capabilities-management-assistant-director-defense-capabilities-management | Assistant Director, Defense Capabilities & Management
-- leg-support-gao-defense-capabilities-management-managing-director-defense-capabilities-management | Managing Director, Defense Capabilities & Management
-- leg-support-gao-defense-capabilities-management-senior-analyst-defense-capabilities-management-multiple | Senior Analyst, Defense Capabilities & Management (×multiple)  [×N]
-
-### District Offices (68)  [exec-ind-sba-districts]
-- exec-ind-sba-districts-deputy-district-director | Deputy District Director
-- exec-ind-sba-districts-district-director | District Director
-- exec-ind-sba-districts-economic-development-specialist-multiple | Economic Development Specialist (×multiple)  [×N]
-- exec-ind-sba-districts-lender-relations-specialist | Lender Relations Specialist
-
-### Economic & Financial Markets  [leg-support-gao-economic-financial-markets]
-- leg-support-gao-economic-financial-markets-analyst-economic-financial-markets-multiple | Analyst, Economic & Financial Markets (×multiple)  [×N]
-- leg-support-gao-economic-financial-markets-assistant-director-economic-financial-markets | Assistant Director, Economic & Financial Markets
-- leg-support-gao-economic-financial-markets-managing-director-economic-financial-markets | Managing Director, Economic & Financial Markets
-- leg-support-gao-economic-financial-markets-senior-analyst-economic-financial-markets-multiple | Senior Analyst, Economic & Financial Markets (×multiple)  [×N]
-
-### Economic Analysis Division  [leg-support-cbo-economic-analysis-division]
-- leg-support-cbo-economic-analysis-division-analyst-economic-analysis-division-multiple | Analyst, Economic Analysis Division (×multiple)  [×N]
-- leg-support-cbo-economic-analysis-division-chief-economic-analysis-division | Chief, Economic Analysis Division
-- leg-support-cbo-economic-analysis-division-deputy-chief-economic-analysis-division | Deputy Chief, Economic Analysis Division
-- leg-support-cbo-economic-analysis-division-senior-analyst-economic-analysis-division-multiple | Senior Analyst, Economic Analysis Division (×multiple)  [×N]
-
-### Education, Workforce & Income Security  [leg-support-gao-education-workforce-income-security]
-- leg-support-gao-education-workforce-income-security-analyst-education-workforce-income-security-multiple | Analyst, Education, Workforce & Income Security (×multiple)  [×N]
-- leg-support-gao-education-workforce-income-security-assistant-director-education-workforce-income-security | Assistant Director, Education, Workforce & Income Security
-- leg-support-gao-education-workforce-income-security-managing-director-education-workforce-income-security | Managing Director, Education, Workforce & Income Security
-- leg-support-gao-education-workforce-income-security-senior-analyst-education-workforce-income-security-multiple | Senior Analyst, Education, Workforce & Income Security (×multiple)  [×N]
-
-### Farm Service Agency (FSA)  [exec-dept-usda-fsa]
-- exec-dept-usda-fsa-agricultural-program-specialist | Agricultural Program Specialist
-- exec-dept-usda-fsa-county-executive-director-2-100-county-offices | County Executive Director — ~2,100 county offices
-- exec-dept-usda-fsa-farm-loan-officer | Farm Loan Officer
-- exec-dept-usda-fsa-state-executive-director-50-states | State Executive Director — 50 states
-
-### Federal Highway Administration (FHWA)  [exec-dept-dot-fhwa]
-- exec-dept-dot-fhwa-associate-administrator-federal-lands-highway | Associate Administrator — Federal Lands Highway
-- exec-dept-dot-fhwa-associate-administrator-planning-environment-realty | Associate Administrator — Planning, Environment & Realty
-- exec-dept-dot-fhwa-division-administrator-52-state-divisions | Division Administrator — 52 State Divisions
-- exec-dept-dot-fhwa-highway-engineer-multiple | Highway Engineer (×multiple)  [×N]
-
-### Financial Analysis Division  [leg-support-cbo-financial-analysis-division]
-- leg-support-cbo-financial-analysis-division-analyst-financial-analysis-division-multiple | Analyst, Financial Analysis Division (×multiple)  [×N]
-- leg-support-cbo-financial-analysis-division-chief-financial-analysis-division | Chief, Financial Analysis Division
-- leg-support-cbo-financial-analysis-division-deputy-chief-financial-analysis-division | Deputy Chief, Financial Analysis Division
-- leg-support-cbo-financial-analysis-division-senior-analyst-financial-analysis-division-multiple | Senior Analyst, Financial Analysis Division (×multiple)  [×N]
-
-### Financial Management & Assurance  [leg-support-gao-financial-management-assurance]
-- leg-support-gao-financial-management-assurance-analyst-financial-management-assurance-multiple | Analyst, Financial Management & Assurance (×multiple)  [×N]
-- leg-support-gao-financial-management-assurance-assistant-director-financial-management-assurance | Assistant Director, Financial Management & Assurance
-- leg-support-gao-financial-management-assurance-managing-director-financial-management-assurance | Managing Director, Financial Management & Assurance
-- leg-support-gao-financial-management-assurance-senior-analyst-financial-management-assurance-multiple | Senior Analyst, Financial Management & Assurance (×multiple)  [×N]
-
-### Food Safety & Inspection Service (FSIS)  [exec-dept-usda-fsis]
-- exec-dept-usda-fsis-circuit-supervisor | Circuit Supervisor
-- exec-dept-usda-fsis-district-manager-10-districts | District Manager — 10 districts
-- exec-dept-usda-fsis-food-inspector-multiple | Food Inspector (×multiple)  [×N]
-- exec-dept-usda-fsis-veterinary-medical-officer-multiple | Veterinary Medical Officer (×multiple)  [×N]
-
-### Foreign Intelligence Surveillance Court (FISC)  [jud-specialized-fisc]
-- jud-specialized-fisc-amicus-curiae-multiple-standing-amici-for-privacy-advocacy | Amicus Curiae (×multiple standing amici for privacy advocacy)  [×N]
-- jud-specialized-fisc-court-security-officer | Court Security Officer
-- jud-specialized-fisc-fisc-judge-10-assigned-district-judges | FISC Judge (×10 assigned district judges)  [×N]
-- jud-specialized-fisc-presiding-judge-fisc | Presiding Judge, FISC
 
 ### Forensic Audits & Investigative Service  [leg-support-gao-forensic-audits-investigative-service]
 - leg-support-gao-forensic-audits-investigative-service-analyst-forensic-audits-investigative-service-multiple | Analyst, Forensic Audits & Investigative Service (×multiple)  [×N]
@@ -1949,64 +1859,12 @@ THE TITLES:
 - exec-dept-dot-nhtsa-associate-administrator-research-program-development | Associate Administrator — Research & Program Development
 - exec-dept-dot-nhtsa-associate-administrator-rulemaking | Associate Administrator — Rulemaking
 - exec-dept-dot-nhtsa-safety-defects-engineer-multiple | Safety Defects Engineer (×multiple)  [×N]
-```
 
-## Prompt A11 — 31 organisation(s), 109 title(s)
-
-```
-I am building a data-backed public graph of the U.S. federal government. Every
-published figure must be traceable to a specific published government document
-that prints it; I cannot publish a reported or estimated salary.
-
-Below are federal POSITIONS, grouped by the organisation they sit in. For each
-one I need to know what it is paid and, more importantly, WHICH PUBLISHED
-DOCUMENT states that.
-
-For EVERY title listed below, return exactly one line in this pipe-delimited
-format and nothing else per title:
-
-    <node id> | <pay system> | <document URL> | <rate|range|none> | <join key> | <figure or —> | <confidence>
-
-- **pay system** — one of: `general_schedule`, `senior_executive_service`,
-  `senior_level`, `executive_schedule`, `title_38_va`, `title_5_excepted`,
-  `administratively_determined`, `foreign_service`, `military_title_37`,
-  `federal_wage_system`, `judicial_statutory`, `legislative_chamber`,
-  `board_or_commission_statutory`, `not_federally_paid`, `unknown`.
-- **document URL** — the URL of the *published document that states the pay*,
-  on the publisher's own site. A `.gov` host wherever one exists. Not a news
-  article, not a salary-aggregator site, not Wikipedia, not FederalPay.org or
-  GovSalaries — those are third-party republications and this tool cannot cite
-  them. If no official document states it, write `—` and say so.
-- **rate|range|none** — whether that document prints a single annual rate,
-  a minimum-and-maximum band, or no figure at all for this title.
-- **join key** — the exact string the document uses for this title, so a
-  matcher can find the row: a grade (`GS-15`), a level (`EX-IV`), a printed
-  title, a tier name, a statutory citation.
-- **figure** — only where the document prints one, as printed. `—` otherwise.
-  Never estimate, never average, never interpolate between grades.
-- **confidence** — `certain` only if you opened the document and read the row;
-  `likely` if the pay system is documented but the specific row is inferred;
-  `speculative` otherwise.
-
-Rules that matter more than coverage:
-1. **A missing answer is a result.** A line reading
-   `<node id> | unknown | — | none | — | — | certain` is a correct answer and
-   is more useful than a guess. Do not fill gaps.
-2. **Never average or interpolate.** If a title spans GS-13 to GS-15, say
-   `range` and give the grade span as the join key — do not produce a midpoint.
-3. **Do not read across agencies.** An Inspector General's pay at one agency
-   is not evidence about another's; answer per organisation as listed.
-4. A title marked `[×N]` stands for several holders in this graph. Give a
-   figure only where the document states ONE rate that applies to every
-   holder of the title by its own terms (a tier, a statutory rate, a roster
-   listing each holder at the same figure); otherwise answer the pay system,
-   the document and `range` or `none`. Never one holder's pay for the group.
-
-END with a section titled LOAD-BEARING NUMBERS: every figure you returned
-above, one line each, with the document URL it came from and whether it is
-official-published or third-party-estimated.
-
-THE TITLES:
+### National Security Council  [exec-eop-nsc]
+- exec-eop-nsc-nsc-chief-of-staff | NSC Chief of Staff
+- exec-eop-nsc-nsc-director-of-communications | NSC Director of Communications
+- exec-eop-nsc-nsc-legal-advisor | NSC Legal Advisor
+- exec-eop-nsc-national-security-advisor-chair | National Security Advisor (Chair)
 
 ### National Security Division  [leg-support-cbo-national-security-division]
 - leg-support-cbo-national-security-division-analyst-national-security-division-multiple | Analyst, National Security Division (×multiple)  [×N]
@@ -2019,6 +1877,12 @@ THE TITLES:
 - leg-support-gao-natural-resources-environment-assistant-director-natural-resources-environment | Assistant Director, Natural Resources & Environment
 - leg-support-gao-natural-resources-environment-managing-director-natural-resources-environment | Managing Director, Natural Resources & Environment
 - leg-support-gao-natural-resources-environment-senior-analyst-natural-resources-environment-multiple | Senior Analyst, Natural Resources & Environment (×multiple)  [×N]
+
+### Natural Resources Conservation Service (NRCS)  [exec-dept-usda-nrcs]
+- exec-dept-usda-nrcs-deputy-chief | Deputy Chief
+- exec-dept-usda-nrcs-district-conservationist | District Conservationist
+- exec-dept-usda-nrcs-soil-conservationist | Soil Conservationist
+- exec-dept-usda-nrcs-state-conservationist-50-states | State Conservationist — 50 states
 
 ### Office of Administration  [exec-eop-onadm]
 - exec-eop-onadm-director-of-facilities-management | Director of Facilities Management
@@ -2079,108 +1943,9 @@ THE TITLES:
 - leg-support-gao-science-technology-assessment-analytics-assistant-director-science-technology-assessment-analytics | Assistant Director, Science, Technology Assessment & Analytics
 - leg-support-gao-science-technology-assessment-analytics-managing-director-science-technology-assessment-analytics | Managing Director, Science, Technology Assessment & Analytics
 - leg-support-gao-science-technology-assessment-analytics-senior-analyst-science-technology-assessment-analytics-multiple | Senior Analyst, Science, Technology Assessment & Analytics (×multiple)  [×N]
-
-### Strategic Issues  [leg-support-gao-strategic-issues]
-- leg-support-gao-strategic-issues-analyst-strategic-issues-multiple | Analyst, Strategic Issues (×multiple)  [×N]
-- leg-support-gao-strategic-issues-assistant-director-strategic-issues | Assistant Director, Strategic Issues
-- leg-support-gao-strategic-issues-managing-director-strategic-issues | Managing Director, Strategic Issues
-- leg-support-gao-strategic-issues-senior-analyst-strategic-issues-multiple | Senior Analyst, Strategic Issues (×multiple)  [×N]
-
-### Substance Abuse and Mental Health Services Administration (SAMHSA)  [exec-dept-hhs-samhsa]
-- exec-dept-hhs-samhsa-administrator-samhsa | Administrator, SAMHSA
-- exec-dept-hhs-samhsa-director-center-for-mental-health-services | Director — Center for Mental Health Services
-- exec-dept-hhs-samhsa-director-center-for-substance-abuse-prevention | Director — Center for Substance Abuse Prevention
-- exec-dept-hhs-samhsa-director-center-for-substance-abuse-treatment | Director — Center for Substance Abuse Treatment
-
-### Tax Analysis Division  [leg-support-cbo-tax-analysis-division]
-- leg-support-cbo-tax-analysis-division-analyst-tax-analysis-division-multiple | Analyst, Tax Analysis Division (×multiple)  [×N]
-- leg-support-cbo-tax-analysis-division-chief-tax-analysis-division | Chief, Tax Analysis Division
-- leg-support-cbo-tax-analysis-division-deputy-chief-tax-analysis-division | Deputy Chief, Tax Analysis Division
-- leg-support-cbo-tax-analysis-division-senior-analyst-tax-analysis-division-multiple | Senior Analyst, Tax Analysis Division (×multiple)  [×N]
-
-### U.S. Sentencing Commission (USSC)  [jud-support-ussc]
-- jud-support-ussc-commissioner-6 | Commissioner (×6)  [×N]
-- jud-support-ussc-director-education-sentencing-practice | Director — Education & Sentencing Practice
-- jud-support-ussc-director-research-data | Director — Research & Data
-- jud-support-ussc-staff-director | Staff Director
-
-### Board of Veterans Appeals (BVA)  [exec-dept-va-bva]
-- exec-dept-va-bva-staff-attorney-law-clerk-multiple | Staff Attorney / Law Clerk (×multiple)  [×N]
-- exec-dept-va-bva-veterans-law-judge-multiple | Veterans Law Judge (×multiple)  [×N]
-- exec-dept-va-bva-vice-chairman | Vice Chairman
-
-### Bureau of Alcohol, Tobacco, Firearms & Explosives (ATF)  [exec-dept-doj-atf]
-- exec-dept-doj-atf-industry-operations-inspector-multiple | Industry Operations Inspector (×multiple)  [×N]
-- exec-dept-doj-atf-special-agent-multiple | Special Agent (×multiple)  [×N]
-- exec-dept-doj-atf-special-agent-in-charge-25-field-divisions | Special Agent in Charge — 25 Field Divisions
-
-### Central Intelligence Agency (CIA)  [exec-ind-cia]
-- exec-ind-cia-chief-operating-officer-coo | Chief Operating Officer (COO)
-- exec-ind-cia-director-of-congressional-affairs | Director of Congressional Affairs
-- exec-ind-cia-director-sherman-kent-school-training | Director — Sherman Kent School (Training)
-
-### Consumer Product Safety Commission (CPSC)  [exec-regulatory-cpsc]
-- exec-regulatory-cpsc-compliance-officer-safety-analyst-multiple | Compliance Officer / Safety Analyst (×multiple)  [×N]
-- exec-regulatory-cpsc-director-office-of-compliance-field-operations | Director — Office of Compliance & Field Operations
-- exec-regulatory-cpsc-director-office-of-hazard-identification-reduction | Director — Office of Hazard Identification & Reduction
-
-### Council of Economic Advisers  [exec-eop-cea]
-- exec-eop-cea-chief-economist | Chief Economist
-- exec-eop-cea-economist-multiple | Economist (×multiple)  [×N]
-- exec-eop-cea-senior-economist-multiple | Senior Economist (×multiple)  [×N]
-
-### Employee Benefits Security Administration (EBSA)  [exec-dept-dol-ebsa]
-- exec-dept-dol-ebsa-benefits-advisor-multiple | Benefits Advisor (×multiple)  [×N]
-- exec-dept-dol-ebsa-criminal-investigator-multiple | Criminal Investigator (×multiple)  [×N]
-- exec-dept-dol-ebsa-regional-director-10-regions | Regional Director — 10 Regions
-
-### Employment & Training Administration (ETA)  [exec-dept-dol-eta]
-- exec-dept-dol-eta-administrator-office-of-apprenticeship | Administrator — Office of Apprenticeship
-- exec-dept-dol-eta-administrator-office-of-unemployment-insurance | Administrator — Office of Unemployment Insurance  [OPM lists it; the row prints no rate]
-- exec-dept-dol-eta-grant-officer-multiple | Grant Officer (×multiple)  [×N]
-
-### Federal Housing Administration (FHA)  [exec-dept-hud-fha]
-- exec-dept-hud-fha-deputy-assistant-secretary-multifamily-housing | Deputy Assistant Secretary — Multifamily Housing
-- exec-dept-hud-fha-deputy-assistant-secretary-single-family-housing | Deputy Assistant Secretary — Single Family Housing
-- exec-dept-hud-fha-homeownership-center-director-4-centers | Homeownership Center Director (×4 centers)  [×N]
-
-### Federal Motor Carrier Safety Admin (FMCSA)  [exec-dept-dot-fmcsa]
-- exec-dept-dot-fmcsa-associate-administrator-field-operations | Associate Administrator — Field Operations
-- exec-dept-dot-fmcsa-commercial-vehicle-safety-specialist-multiple | Commercial Vehicle Safety Specialist (×multiple)  [×N]
-- exec-dept-dot-fmcsa-division-administrator-52-state-divisions | Division Administrator — 52 State Divisions
-
-### Federal Railroad Administration (FRA)  [exec-dept-dot-fra]
-- exec-dept-dot-fra-associate-administrator-safety | Associate Administrator — Safety
-- exec-dept-dot-fra-railroad-safety-inspector-multiple | Railroad Safety Inspector (×multiple)  [×N]
-- exec-dept-dot-fra-regional-administrator-8-regions | Regional Administrator — 8 Regions
-
-### Federal Transit Administration (FTA)  [exec-dept-dot-fta]
-- exec-dept-dot-fta-associate-administrator-transit-programs | Associate Administrator — Transit Programs
-- exec-dept-dot-fta-regional-administrator-10-regions | Regional Administrator — 10 Regions
-- exec-dept-dot-fta-transit-specialist-multiple | Transit Specialist (×multiple)  [×N]
-
-### Financial Crimes Enforcement Network (FinCEN)  [exec-dept-treasury-fincen]
-- exec-dept-treasury-fincen-associate-director-enforcement | Associate Director — Enforcement
-- exec-dept-treasury-fincen-associate-director-policy | Associate Director — Policy
-- exec-dept-treasury-fincen-associate-director-regulatory-policy-programs | Associate Director — Regulatory Policy & Programs
-
-### Foreign Service Institute  [exec-dept-state-foreign-service-institute]
-- exec-dept-state-foreign-service-institute-assistant-secretary-foreign-service-institute | Assistant Secretary, Foreign Service Institute
-- exec-dept-state-foreign-service-institute-deputy-assistant-secretary-2-4-foreign-service-institute | Deputy Assistant Secretary (×2-4), Foreign Service Institute  [×N]
-- exec-dept-state-foreign-service-institute-office-director-multiple-foreign-service-institute | Office Director (×multiple), Foreign Service Institute  [×N]
-
-### Government Accountability Office (GAO)  [leg-support-gao]
-- leg-support-gao-chief-administrative-officer | Chief Administrative Officer
-- leg-support-gao-chief-operating-officer | Chief Operating Officer
-- leg-support-gao-director-of-congressional-relations | Director of Congressional Relations
-
-### Indian Health Service (IHS)  [exec-dept-hhs-ihs]
-- exec-dept-hhs-ihs-area-director-12-ihs-areas | Area Director — 12 IHS Areas
-- exec-dept-hhs-ihs-chief-medical-officer | Chief Medical Officer
-- exec-dept-hhs-ihs-chief-nursing-officer | Chief Nursing Officer
 ```
 
-## Prompt A12 — 40 organisation(s), 109 title(s)
+## Prompt A11 — 35 organisation(s), 110 title(s)
 
 ```
 I am building a data-backed public graph of the U.S. federal government. Every
@@ -2236,6 +2001,91 @@ above, one line each, with the document URL it came from and whether it is
 official-published or third-party-estimated.
 
 THE TITLES:
+
+### Small Business Administration (SBA)  [exec-ind-sba]
+- exec-ind-sba-associate-administrator-capital-access | Associate Administrator — Capital Access
+- exec-ind-sba-associate-administrator-disaster-assistance | Associate Administrator — Disaster Assistance
+- exec-ind-sba-associate-administrator-entrepreneurial-development | Associate Administrator — Entrepreneurial Development
+- exec-ind-sba-associate-administrator-government-contracting-business-development | Associate Administrator — Government Contracting & Business Development
+
+### Strategic Issues  [leg-support-gao-strategic-issues]
+- leg-support-gao-strategic-issues-analyst-strategic-issues-multiple | Analyst, Strategic Issues (×multiple)  [×N]
+- leg-support-gao-strategic-issues-assistant-director-strategic-issues | Assistant Director, Strategic Issues
+- leg-support-gao-strategic-issues-managing-director-strategic-issues | Managing Director, Strategic Issues
+- leg-support-gao-strategic-issues-senior-analyst-strategic-issues-multiple | Senior Analyst, Strategic Issues (×multiple)  [×N]
+
+### Substance Abuse and Mental Health Services Administration (SAMHSA)  [exec-dept-hhs-samhsa]
+- exec-dept-hhs-samhsa-administrator-samhsa | Administrator, SAMHSA
+- exec-dept-hhs-samhsa-director-center-for-mental-health-services | Director — Center for Mental Health Services
+- exec-dept-hhs-samhsa-director-center-for-substance-abuse-prevention | Director — Center for Substance Abuse Prevention
+- exec-dept-hhs-samhsa-director-center-for-substance-abuse-treatment | Director — Center for Substance Abuse Treatment
+
+### Tax Analysis Division  [leg-support-cbo-tax-analysis-division]
+- leg-support-cbo-tax-analysis-division-analyst-tax-analysis-division-multiple | Analyst, Tax Analysis Division (×multiple)  [×N]
+- leg-support-cbo-tax-analysis-division-chief-tax-analysis-division | Chief, Tax Analysis Division
+- leg-support-cbo-tax-analysis-division-deputy-chief-tax-analysis-division | Deputy Chief, Tax Analysis Division
+- leg-support-cbo-tax-analysis-division-senior-analyst-tax-analysis-division-multiple | Senior Analyst, Tax Analysis Division (×multiple)  [×N]
+
+### U.S. Sentencing Commission (USSC)  [jud-support-ussc]
+- jud-support-ussc-commissioner-6 | Commissioner (×6)  [×N]
+- jud-support-ussc-director-education-sentencing-practice | Director — Education & Sentencing Practice
+- jud-support-ussc-director-research-data | Director — Research & Data
+- jud-support-ussc-staff-director | Staff Director
+
+### Agricultural Research Service (ARS)  [exec-dept-usda-ars]
+- exec-dept-usda-ars-deputy-administrator-national-programs | Deputy Administrator — National Programs
+- exec-dept-usda-ars-research-leader-multiple-locations | Research Leader (×multiple locations)  [×N]
+- exec-dept-usda-ars-research-scientist-chemist-biologist-multiple | Research Scientist / Chemist / Biologist (×multiple)  [×N]
+
+### Board of Veterans Appeals (BVA)  [exec-dept-va-bva]
+- exec-dept-va-bva-staff-attorney-law-clerk-multiple | Staff Attorney / Law Clerk (×multiple)  [×N]
+- exec-dept-va-bva-veterans-law-judge-multiple | Veterans Law Judge (×multiple)  [×N]
+- exec-dept-va-bva-vice-chairman | Vice Chairman
+
+### Consumer Product Safety Commission (CPSC)  [exec-regulatory-cpsc]
+- exec-regulatory-cpsc-compliance-officer-safety-analyst-multiple | Compliance Officer / Safety Analyst (×multiple)  [×N]
+- exec-regulatory-cpsc-director-office-of-compliance-field-operations | Director — Office of Compliance & Field Operations
+- exec-regulatory-cpsc-director-office-of-hazard-identification-reduction | Director — Office of Hazard Identification & Reduction
+
+### Employment & Training Administration (ETA)  [exec-dept-dol-eta]
+- exec-dept-dol-eta-administrator-office-of-apprenticeship | Administrator — Office of Apprenticeship
+- exec-dept-dol-eta-administrator-office-of-unemployment-insurance | Administrator — Office of Unemployment Insurance  [OPM lists it; the row prints no rate]
+- exec-dept-dol-eta-grant-officer-multiple | Grant Officer (×multiple)  [×N]
+
+### Federal Housing Administration (FHA)  [exec-dept-hud-fha]
+- exec-dept-hud-fha-deputy-assistant-secretary-multifamily-housing | Deputy Assistant Secretary — Multifamily Housing
+- exec-dept-hud-fha-deputy-assistant-secretary-single-family-housing | Deputy Assistant Secretary — Single Family Housing
+- exec-dept-hud-fha-homeownership-center-director-4-centers | Homeownership Center Director (×4 centers)  [×N]
+
+### Federal Motor Carrier Safety Admin (FMCSA)  [exec-dept-dot-fmcsa]
+- exec-dept-dot-fmcsa-associate-administrator-field-operations | Associate Administrator — Field Operations
+- exec-dept-dot-fmcsa-commercial-vehicle-safety-specialist-multiple | Commercial Vehicle Safety Specialist (×multiple)  [×N]
+- exec-dept-dot-fmcsa-division-administrator-52-state-divisions | Division Administrator — 52 State Divisions
+
+### Federal Railroad Administration (FRA)  [exec-dept-dot-fra]
+- exec-dept-dot-fra-associate-administrator-safety | Associate Administrator — Safety
+- exec-dept-dot-fra-railroad-safety-inspector-multiple | Railroad Safety Inspector (×multiple)  [×N]
+- exec-dept-dot-fra-regional-administrator-8-regions | Regional Administrator — 8 Regions
+
+### Financial Crimes Enforcement Network (FinCEN)  [exec-dept-treasury-fincen]
+- exec-dept-treasury-fincen-associate-director-enforcement | Associate Director — Enforcement
+- exec-dept-treasury-fincen-associate-director-policy | Associate Director — Policy
+- exec-dept-treasury-fincen-associate-director-regulatory-policy-programs | Associate Director — Regulatory Policy & Programs
+
+### Foreign Intelligence Surveillance Court (FISC)  [jud-specialized-fisc]
+- jud-specialized-fisc-amicus-curiae-multiple-standing-amici-for-privacy-advocacy | Amicus Curiae (×multiple standing amici for privacy advocacy)  [×N]
+- jud-specialized-fisc-fisc-judge-10-assigned-district-judges | FISC Judge (×10 assigned district judges)  [×N]
+- jud-specialized-fisc-presiding-judge-fisc | Presiding Judge, FISC
+
+### Foreign Service Institute  [exec-dept-state-foreign-service-institute]
+- exec-dept-state-foreign-service-institute-assistant-secretary-foreign-service-institute | Assistant Secretary, Foreign Service Institute
+- exec-dept-state-foreign-service-institute-deputy-assistant-secretary-2-4-foreign-service-institute | Deputy Assistant Secretary (×2-4), Foreign Service Institute  [×N]
+- exec-dept-state-foreign-service-institute-office-director-multiple-foreign-service-institute | Office Director (×multiple), Foreign Service Institute  [×N]
+
+### Indian Health Service (IHS)  [exec-dept-hhs-ihs]
+- exec-dept-hhs-ihs-area-director-12-ihs-areas | Area Director — 12 IHS Areas
+- exec-dept-hhs-ihs-chief-medical-officer | Chief Medical Officer
+- exec-dept-hhs-ihs-chief-nursing-officer | Chief Nursing Officer
 
 ### Maritime Administration (MARAD)  [exec-dept-dot-marad]
 - exec-dept-dot-marad-associate-administrator-environment-compliance | Associate Administrator — Environment & Compliance
@@ -2331,103 +2181,9 @@ THE TITLES:
 - exec-eop-nsc-western-hemisphere-deputy-director-western-hemisphere | Deputy Director, Western Hemisphere
 - exec-eop-nsc-western-hemisphere-director-western-hemisphere-multiple | Director, Western Hemisphere (×multiple)  [×N]
 - exec-eop-nsc-western-hemisphere-senior-director-western-hemisphere | Senior Director, Western Hemisphere
-
-### Occupational Safety & Health Administration (OSHA)  [exec-dept-dol-osha]
-- exec-dept-dol-osha-area-director-85-area-offices | Area Director — 85 Area Offices
-- exec-dept-dol-osha-compliance-safety-health-officer-csho-inspector-multiple | Compliance Safety & Health Officer (CSHO) — Inspector (×multiple)  [×N]
-- exec-dept-dol-osha-regional-administrator-10-regions | Regional Administrator — 10 Regions
-
-### Office of Community Planning & Development (CPD)  [exec-dept-hud-cpd]
-- exec-dept-hud-cpd-director-cdbg-program | Director — CDBG Program
-- exec-dept-hud-cpd-director-home-program | Director — HOME Program
-- exec-dept-hud-cpd-director-homeless-assistance-programs | Director — Homeless Assistance Programs
-
-### Office of Elementary & Secondary Education (OESE)  [exec-dept-ed-oese]
-- exec-dept-ed-oese-director-school-improvement | Director — School Improvement
-- exec-dept-ed-oese-director-title-i-program | Director — Title I Program
-- exec-dept-ed-oese-education-program-specialist-multiple | Education Program Specialist (×multiple)  [×N]
-
-### Office of Federal Contract Compliance Programs (OFCCP)  [exec-dept-dol-ofccp]
-- exec-dept-dol-ofccp-compliance-officer-multiple | Compliance Officer (×multiple)  [×N]
-- exec-dept-dol-ofccp-district-director-multiple | District Director (×multiple)  [×N]
-- exec-dept-dol-ofccp-regional-director-6-regions | Regional Director — 6 Regions
-
-### Office of Public & Indian Housing (PIH)  [exec-dept-hud-pih]
-- exec-dept-hud-pih-deputy-assistant-secretary-field-operations | Deputy Assistant Secretary — Field Operations
-- exec-dept-hud-pih-public-housing-director-local-phas | Public Housing Director (×local PHAs)  [×N]
-- exec-dept-hud-pih-regional-director-10-regions | Regional Director — 10 Regions
-
-### Office of the Chief of Protocol  [exec-dept-state-office-of-the-chief-of-protocol]
-- exec-dept-state-office-of-the-chief-of-protocol-assistant-secretary-office-of-the-chief-of-protocol | Assistant Secretary, Office of the Chief of Protocol
-- exec-dept-state-office-of-the-chief-of-protocol-deputy-assistant-secretary-2-4-office-of-the-chief-of-protocol | Deputy Assistant Secretary (×2-4), Office of the Chief of Protocol  [×N]
-- exec-dept-state-office-of-the-chief-of-protocol-office-director-multiple-office-of-the-chief-of-protocol | Office Director (×multiple), Office of the Chief of Protocol  [×N]
-
-### Pipeline & Hazardous Materials Safety Admin (PHMSA)  [exec-dept-dot-phmsa]
-- exec-dept-dot-phmsa-associate-administrator-pipelines-hazardous-materials | Associate Administrator — Pipelines & Hazardous Materials
-- exec-dept-dot-phmsa-pipeline-safety-inspector-multiple | Pipeline Safety Inspector (×multiple)  [×N]
-- exec-dept-dot-phmsa-regional-director-5-regions | Regional Director — 5 Regions
-
-### U.S. Capitol Police  [leg-support-uscp]
-- leg-support-uscp-assistant-chief-operations | Assistant Chief — Operations
-- leg-support-uscp-deputy-chief-professional-responsibility | Deputy Chief — Professional Responsibility
-- leg-support-uscp-deputy-chief-uniformed-operations | Deputy Chief — Uniformed Operations
-
-### U.S. Mission to the United Nations  [exec-dept-state-u-s-mission-to-the-united-nations]
-- exec-dept-state-u-s-mission-to-the-united-nations-assistant-secretary-u-s-mission-to-the-united-nations | Assistant Secretary, U.S. Mission to the United Nations
-- exec-dept-state-u-s-mission-to-the-united-nations-deputy-assistant-secretary-2-4-u-s-mission-to-the-united-nations | Deputy Assistant Secretary (×2-4), U.S. Mission to the United Nations  [×N]
-- exec-dept-state-u-s-mission-to-the-united-nations-office-director-multiple-u-s-mission-to-the-united-nations | Office Director (×multiple), U.S. Mission to the United Nations  [×N]
-
-### Wage & Hour Division (WHD)  [exec-dept-dol-whd]
-- exec-dept-dol-whd-district-director-50-districts | District Director — 50+ districts
-- exec-dept-dol-whd-regional-administrator-5-regions | Regional Administrator — 5 Regions
-- exec-dept-dol-whd-wage-hour-investigator-multiple | Wage & Hour Investigator (×multiple)  [×N]
-
-### American Art Museum  [exec-ind-smithsonian-american-art-museum]
-- exec-ind-smithsonian-american-art-museum-deputy-director-american-art-museum | Deputy Director, American Art Museum
-- exec-ind-smithsonian-american-art-museum-director-american-art-museum | Director, American Art Museum
-
-### Anacostia Community Museum  [exec-ind-smithsonian-anacostia-community-museum]
-- exec-ind-smithsonian-anacostia-community-museum-deputy-director-anacostia-community-museum | Deputy Director, Anacostia Community Museum
-- exec-ind-smithsonian-anacostia-community-museum-director-anacostia-community-museum | Director, Anacostia Community Museum
-
-### Budget Review Division  [exec-eop-omb-budget-review-division]
-- exec-eop-omb-budget-review-division-administrator-chief-budget-review-division | Administrator / Chief, Budget Review Division
-- exec-eop-omb-budget-review-division-deputy-administrator-budget-review-division | Deputy Administrator, Budget Review Division
-
-### Bureau of African Affairs  [exec-dept-state-bureau-of-african-affairs]
-- exec-dept-state-bureau-of-african-affairs-deputy-assistant-secretary-2-4-bureau-of-african-affairs | Deputy Assistant Secretary (×2-4), Bureau of African Affairs  [×N]
-- exec-dept-state-bureau-of-african-affairs-office-director-multiple-bureau-of-african-affairs | Office Director (×multiple), Bureau of African Affairs  [×N]
-
-### Bureau of Arms Control, Verification & Compliance  [exec-dept-state-bureau-of-arms-control-verification-compliance]
-- exec-dept-state-bureau-of-arms-control-verification-compliance-deputy-assistant-secretary-2-4-bureau-of-arms-control-verification-compliance | Deputy Assistant Secretary (×2-4), Bureau of Arms Control, Verification & Compliance  [×N]
-- exec-dept-state-bureau-of-arms-control-verification-compliance-office-director-multiple-bureau-of-arms-control-verification-compliance | Office Director (×multiple), Bureau of Arms Control, Verification & Compliance  [×N]
-
-### Bureau of Consular Affairs  [exec-dept-state-bureau-of-consular-affairs]
-- exec-dept-state-bureau-of-consular-affairs-deputy-assistant-secretary-2-4-bureau-of-consular-affairs | Deputy Assistant Secretary (×2-4), Bureau of Consular Affairs  [×N]
-- exec-dept-state-bureau-of-consular-affairs-office-director-multiple-bureau-of-consular-affairs | Office Director (×multiple), Bureau of Consular Affairs  [×N]
-
-### Bureau of Diplomatic Security  [exec-dept-state-bureau-of-diplomatic-security]
-- exec-dept-state-bureau-of-diplomatic-security-deputy-assistant-secretary-2-4-bureau-of-diplomatic-security | Deputy Assistant Secretary (×2-4), Bureau of Diplomatic Security  [×N]
-- exec-dept-state-bureau-of-diplomatic-security-office-director-multiple-bureau-of-diplomatic-security | Office Director (×multiple), Bureau of Diplomatic Security  [×N]
-
-### Bureau of East Asian & Pacific Affairs  [exec-dept-state-bureau-of-east-asian-pacific-affairs]
-- exec-dept-state-bureau-of-east-asian-pacific-affairs-deputy-assistant-secretary-2-4-bureau-of-east-asian-pacific-affairs | Deputy Assistant Secretary (×2-4), Bureau of East Asian & Pacific Affairs  [×N]
-- exec-dept-state-bureau-of-east-asian-pacific-affairs-office-director-multiple-bureau-of-east-asian-pacific-affairs | Office Director (×multiple), Bureau of East Asian & Pacific Affairs  [×N]
-
-### Bureau of Economic Analysis (BEA)  [exec-dept-doc-bea]
-- exec-dept-doc-bea-chief-statistician | Chief Statistician
-- exec-dept-doc-bea-national-accounts-economist-multiple | National Accounts Economist (×multiple)  [×N]
-
-### Bureau of European & Eurasian Affairs  [exec-dept-state-bureau-of-european-eurasian-affairs]
-- exec-dept-state-bureau-of-european-eurasian-affairs-deputy-assistant-secretary-2-4-bureau-of-european-eurasian-affairs | Deputy Assistant Secretary (×2-4), Bureau of European & Eurasian Affairs  [×N]
-- exec-dept-state-bureau-of-european-eurasian-affairs-office-director-multiple-bureau-of-european-eurasian-affairs | Office Director (×multiple), Bureau of European & Eurasian Affairs  [×N]
-
-### Bureau of Global Public Affairs  [exec-dept-state-bureau-of-global-public-affairs]
-- exec-dept-state-bureau-of-global-public-affairs-deputy-assistant-secretary-2-4-bureau-of-global-public-affairs | Deputy Assistant Secretary (×2-4), Bureau of Global Public Affairs  [×N]
-- exec-dept-state-bureau-of-global-public-affairs-office-director-multiple-bureau-of-global-public-affairs | Office Director (×multiple), Bureau of Global Public Affairs  [×N]
 ```
 
-## Prompt A13 — 55 organisation(s), 110 title(s)
+## Prompt A12 — 51 organisation(s), 110 title(s)
 
 ```
 I am building a data-backed public graph of the U.S. federal government. Every
@@ -2484,6 +2240,94 @@ official-published or third-party-estimated.
 
 THE TITLES:
 
+### Office of Community Planning & Development (CPD)  [exec-dept-hud-cpd]
+- exec-dept-hud-cpd-director-cdbg-program | Director — CDBG Program
+- exec-dept-hud-cpd-director-home-program | Director — HOME Program
+- exec-dept-hud-cpd-director-homeless-assistance-programs | Director — Homeless Assistance Programs
+
+### Office of Elementary & Secondary Education (OESE)  [exec-dept-ed-oese]
+- exec-dept-ed-oese-director-school-improvement | Director — School Improvement
+- exec-dept-ed-oese-director-title-i-program | Director — Title I Program
+- exec-dept-ed-oese-education-program-specialist-multiple | Education Program Specialist (×multiple)  [×N]
+
+### Office of the Chief of Protocol  [exec-dept-state-office-of-the-chief-of-protocol]
+- exec-dept-state-office-of-the-chief-of-protocol-assistant-secretary-office-of-the-chief-of-protocol | Assistant Secretary, Office of the Chief of Protocol
+- exec-dept-state-office-of-the-chief-of-protocol-deputy-assistant-secretary-2-4-office-of-the-chief-of-protocol | Deputy Assistant Secretary (×2-4), Office of the Chief of Protocol  [×N]
+- exec-dept-state-office-of-the-chief-of-protocol-office-director-multiple-office-of-the-chief-of-protocol | Office Director (×multiple), Office of the Chief of Protocol  [×N]
+
+### Pipeline & Hazardous Materials Safety Admin (PHMSA)  [exec-dept-dot-phmsa]
+- exec-dept-dot-phmsa-associate-administrator-pipelines-hazardous-materials | Associate Administrator — Pipelines & Hazardous Materials
+- exec-dept-dot-phmsa-pipeline-safety-inspector-multiple | Pipeline Safety Inspector (×multiple)  [×N]
+- exec-dept-dot-phmsa-regional-director-5-regions | Regional Director — 5 Regions
+
+### Southern District of New York (S.D.N.Y.)  [jud-district-sdny]
+- jud-district-sdny-chief-probation-officer | Chief Probation Officer
+- jud-district-sdny-courtroom-deputy-multiple | Courtroom Deputy (×multiple)  [×N]
+- jud-district-sdny-senior-judge-multiple | Senior Judge (×multiple)  [×N]
+
+### U.S. Capitol Police  [leg-support-uscp]
+- leg-support-uscp-assistant-chief-operations | Assistant Chief — Operations
+- leg-support-uscp-deputy-chief-professional-responsibility | Deputy Chief — Professional Responsibility
+- leg-support-uscp-deputy-chief-uniformed-operations | Deputy Chief — Uniformed Operations
+
+### U.S. Mission to the United Nations  [exec-dept-state-u-s-mission-to-the-united-nations]
+- exec-dept-state-u-s-mission-to-the-united-nations-assistant-secretary-u-s-mission-to-the-united-nations | Assistant Secretary, U.S. Mission to the United Nations
+- exec-dept-state-u-s-mission-to-the-united-nations-deputy-assistant-secretary-2-4-u-s-mission-to-the-united-nations | Deputy Assistant Secretary (×2-4), U.S. Mission to the United Nations  [×N]
+- exec-dept-state-u-s-mission-to-the-united-nations-office-director-multiple-u-s-mission-to-the-united-nations | Office Director (×multiple), U.S. Mission to the United Nations  [×N]
+
+### Wage & Hour Division (WHD)  [exec-dept-dol-whd]
+- exec-dept-dol-whd-district-director-50-districts | District Director — 50+ districts
+- exec-dept-dol-whd-regional-administrator-5-regions | Regional Administrator — 5 Regions
+- exec-dept-dol-whd-wage-hour-investigator-multiple | Wage & Hour Investigator (×multiple)  [×N]
+
+### American Art Museum  [exec-ind-smithsonian-american-art-museum]
+- exec-ind-smithsonian-american-art-museum-deputy-director-american-art-museum | Deputy Director, American Art Museum
+- exec-ind-smithsonian-american-art-museum-director-american-art-museum | Director, American Art Museum
+
+### Anacostia Community Museum  [exec-ind-smithsonian-anacostia-community-museum]
+- exec-ind-smithsonian-anacostia-community-museum-deputy-director-anacostia-community-museum | Deputy Director, Anacostia Community Museum
+- exec-ind-smithsonian-anacostia-community-museum-director-anacostia-community-museum | Director, Anacostia Community Museum
+
+### Budget Review Division  [exec-eop-omb-budget-review-division]
+- exec-eop-omb-budget-review-division-administrator-chief-budget-review-division | Administrator / Chief, Budget Review Division
+- exec-eop-omb-budget-review-division-deputy-administrator-budget-review-division | Deputy Administrator, Budget Review Division
+
+### Bureau of African Affairs  [exec-dept-state-bureau-of-african-affairs]
+- exec-dept-state-bureau-of-african-affairs-deputy-assistant-secretary-2-4-bureau-of-african-affairs | Deputy Assistant Secretary (×2-4), Bureau of African Affairs  [×N]
+- exec-dept-state-bureau-of-african-affairs-office-director-multiple-bureau-of-african-affairs | Office Director (×multiple), Bureau of African Affairs  [×N]
+
+### Bureau of Alcohol, Tobacco, Firearms & Explosives (ATF)  [exec-dept-doj-atf]
+- exec-dept-doj-atf-industry-operations-inspector-multiple | Industry Operations Inspector (×multiple)  [×N]
+- exec-dept-doj-atf-special-agent-in-charge-25-field-divisions | Special Agent in Charge — 25 Field Divisions
+
+### Bureau of Arms Control, Verification & Compliance  [exec-dept-state-bureau-of-arms-control-verification-compliance]
+- exec-dept-state-bureau-of-arms-control-verification-compliance-deputy-assistant-secretary-2-4-bureau-of-arms-control-verification-compliance | Deputy Assistant Secretary (×2-4), Bureau of Arms Control, Verification & Compliance  [×N]
+- exec-dept-state-bureau-of-arms-control-verification-compliance-office-director-multiple-bureau-of-arms-control-verification-compliance | Office Director (×multiple), Bureau of Arms Control, Verification & Compliance  [×N]
+
+### Bureau of Consular Affairs  [exec-dept-state-bureau-of-consular-affairs]
+- exec-dept-state-bureau-of-consular-affairs-deputy-assistant-secretary-2-4-bureau-of-consular-affairs | Deputy Assistant Secretary (×2-4), Bureau of Consular Affairs  [×N]
+- exec-dept-state-bureau-of-consular-affairs-office-director-multiple-bureau-of-consular-affairs | Office Director (×multiple), Bureau of Consular Affairs  [×N]
+
+### Bureau of Diplomatic Security  [exec-dept-state-bureau-of-diplomatic-security]
+- exec-dept-state-bureau-of-diplomatic-security-deputy-assistant-secretary-2-4-bureau-of-diplomatic-security | Deputy Assistant Secretary (×2-4), Bureau of Diplomatic Security  [×N]
+- exec-dept-state-bureau-of-diplomatic-security-office-director-multiple-bureau-of-diplomatic-security | Office Director (×multiple), Bureau of Diplomatic Security  [×N]
+
+### Bureau of East Asian & Pacific Affairs  [exec-dept-state-bureau-of-east-asian-pacific-affairs]
+- exec-dept-state-bureau-of-east-asian-pacific-affairs-deputy-assistant-secretary-2-4-bureau-of-east-asian-pacific-affairs | Deputy Assistant Secretary (×2-4), Bureau of East Asian & Pacific Affairs  [×N]
+- exec-dept-state-bureau-of-east-asian-pacific-affairs-office-director-multiple-bureau-of-east-asian-pacific-affairs | Office Director (×multiple), Bureau of East Asian & Pacific Affairs  [×N]
+
+### Bureau of Economic Analysis (BEA)  [exec-dept-doc-bea]
+- exec-dept-doc-bea-chief-statistician | Chief Statistician
+- exec-dept-doc-bea-national-accounts-economist-multiple | National Accounts Economist (×multiple)  [×N]
+
+### Bureau of European & Eurasian Affairs  [exec-dept-state-bureau-of-european-eurasian-affairs]
+- exec-dept-state-bureau-of-european-eurasian-affairs-deputy-assistant-secretary-2-4-bureau-of-european-eurasian-affairs | Deputy Assistant Secretary (×2-4), Bureau of European & Eurasian Affairs  [×N]
+- exec-dept-state-bureau-of-european-eurasian-affairs-office-director-multiple-bureau-of-european-eurasian-affairs | Office Director (×multiple), Bureau of European & Eurasian Affairs  [×N]
+
+### Bureau of Global Public Affairs  [exec-dept-state-bureau-of-global-public-affairs]
+- exec-dept-state-bureau-of-global-public-affairs-deputy-assistant-secretary-2-4-bureau-of-global-public-affairs | Deputy Assistant Secretary (×2-4), Bureau of Global Public Affairs  [×N]
+- exec-dept-state-bureau-of-global-public-affairs-office-director-multiple-bureau-of-global-public-affairs | Office Director (×multiple), Bureau of Global Public Affairs  [×N]
+
 ### Bureau of International Organization Affairs  [exec-dept-state-bureau-of-international-organization-affairs]
 - exec-dept-state-bureau-of-international-organization-affairs-deputy-assistant-secretary-2-4-bureau-of-international-organization-affairs | Deputy Assistant Secretary (×2-4), Bureau of International Organization Affairs  [×N]
 - exec-dept-state-bureau-of-international-organization-affairs-office-director-multiple-bureau-of-international-organization-affairs | Office Director (×multiple), Bureau of International Organization Affairs  [×N]
@@ -2507,6 +2351,10 @@ THE TITLES:
 ### Bureau of Western Hemisphere Affairs  [exec-dept-state-bureau-of-western-hemisphere-affairs]
 - exec-dept-state-bureau-of-western-hemisphere-affairs-deputy-assistant-secretary-2-4-bureau-of-western-hemisphere-affairs | Deputy Assistant Secretary (×2-4), Bureau of Western Hemisphere Affairs  [×N]
 - exec-dept-state-bureau-of-western-hemisphere-affairs-office-director-multiple-bureau-of-western-hemisphere-affairs | Office Director (×multiple), Bureau of Western Hemisphere Affairs  [×N]
+
+### Central Intelligence Agency (CIA)  [exec-ind-cia]
+- exec-ind-cia-director-of-congressional-affairs | Director of Congressional Affairs
+- exec-ind-cia-director-sherman-kent-school-training | Director — Sherman Kent School (Training)
 
 ### Cooper Hewitt (Smithsonian Design Museum)  [exec-ind-smithsonian-cooper-hewitt-smithsonian-design-museum]
 - exec-ind-smithsonian-cooper-hewitt-smithsonian-design-museum-deputy-director-cooper-hewitt-smithsonian-design-museum | Deputy Director, Cooper Hewitt (Smithsonian Design Museum)
@@ -2572,6 +2420,10 @@ THE TITLES:
 - exec-ind-cia-directorate-of-support-ds-deputy-director-directorate-of-support | Deputy Director, Directorate of Support
 - exec-ind-cia-directorate-of-support-ds-director-directorate-of-support | Director, Directorate of Support
 
+### District Offices (68)  [exec-ind-sba-districts]
+- exec-ind-sba-districts-economic-development-specialist-multiple | Economic Development Specialist (×multiple)  [×N]
+- exec-ind-sba-districts-lender-relations-specialist | Lender Relations Specialist
+
 ### DoD Education Activity (DoDEA)  [exec-dept-defense-agency-dodea]
 - exec-dept-defense-agency-dodea-deputy-director-dod-education-activity-dodea | Deputy Director, DoD Education Activity (DoDEA)
 - exec-dept-defense-agency-dodea-director-dod-education-activity-dodea | Director, DoD Education Activity (DoDEA)
@@ -2580,13 +2432,83 @@ THE TITLES:
 - exec-eop-omb-economic-policy-division-administrator-chief-economic-policy-division | Administrator / Chief, Economic Policy Division
 - exec-eop-omb-economic-policy-division-deputy-administrator-economic-policy-division | Deputy Administrator, Economic Policy Division
 
+### Employee Benefits Security Administration (EBSA)  [exec-dept-dol-ebsa]
+- exec-dept-dol-ebsa-benefits-advisor-multiple | Benefits Advisor (×multiple)  [×N]
+- exec-dept-dol-ebsa-criminal-investigator-multiple | Criminal Investigator (×multiple)  [×N]
+
+### Federal Transit Administration (FTA)  [exec-dept-dot-fta]
+- exec-dept-dot-fta-associate-administrator-transit-programs | Associate Administrator — Transit Programs
+- exec-dept-dot-fta-transit-specialist-multiple | Transit Specialist (×multiple)  [×N]
+
 ### Ginnie Mae  [exec-dept-hud-ginnie]
 - exec-dept-hud-ginnie-chief-risk-officer | Chief Risk Officer
 - exec-dept-hud-ginnie-executive-vp-coo | Executive VP / COO
 
+### Government Accountability Office (GAO)  [leg-support-gao]
+- leg-support-gao-chief-administrative-officer | Chief Administrative Officer
+- leg-support-gao-director-of-congressional-relations | Director of Congressional Relations
+
 ### Hirshhorn Museum & Sculpture Garden  [exec-ind-smithsonian-hirshhorn-museum-sculpture-garden]
 - exec-ind-smithsonian-hirshhorn-museum-sculpture-garden-deputy-director-hirshhorn-museum-sculpture-garden | Deputy Director, Hirshhorn Museum & Sculpture Garden
 - exec-ind-smithsonian-hirshhorn-museum-sculpture-garden-director-hirshhorn-museum-sculpture-garden | Director, Hirshhorn Museum & Sculpture Garden
+```
+
+## Prompt A13 — 55 organisation(s), 110 title(s)
+
+```
+I am building a data-backed public graph of the U.S. federal government. Every
+published figure must be traceable to a specific published government document
+that prints it; I cannot publish a reported or estimated salary.
+
+Below are federal POSITIONS, grouped by the organisation they sit in. For each
+one I need to know what it is paid and, more importantly, WHICH PUBLISHED
+DOCUMENT states that.
+
+For EVERY title listed below, return exactly one line in this pipe-delimited
+format and nothing else per title:
+
+    <node id> | <pay system> | <document URL> | <rate|range|none> | <join key> | <figure or —> | <confidence>
+
+- **pay system** — one of: `general_schedule`, `senior_executive_service`,
+  `senior_level`, `executive_schedule`, `title_38_va`, `title_5_excepted`,
+  `administratively_determined`, `foreign_service`, `military_title_37`,
+  `federal_wage_system`, `judicial_statutory`, `legislative_chamber`,
+  `board_or_commission_statutory`, `not_federally_paid`, `unknown`.
+- **document URL** — the URL of the *published document that states the pay*,
+  on the publisher's own site. A `.gov` host wherever one exists. Not a news
+  article, not a salary-aggregator site, not Wikipedia, not FederalPay.org or
+  GovSalaries — those are third-party republications and this tool cannot cite
+  them. If no official document states it, write `—` and say so.
+- **rate|range|none** — whether that document prints a single annual rate,
+  a minimum-and-maximum band, or no figure at all for this title.
+- **join key** — the exact string the document uses for this title, so a
+  matcher can find the row: a grade (`GS-15`), a level (`EX-IV`), a printed
+  title, a tier name, a statutory citation.
+- **figure** — only where the document prints one, as printed. `—` otherwise.
+  Never estimate, never average, never interpolate between grades.
+- **confidence** — `certain` only if you opened the document and read the row;
+  `likely` if the pay system is documented but the specific row is inferred;
+  `speculative` otherwise.
+
+Rules that matter more than coverage:
+1. **A missing answer is a result.** A line reading
+   `<node id> | unknown | — | none | — | — | certain` is a correct answer and
+   is more useful than a guess. Do not fill gaps.
+2. **Never average or interpolate.** If a title spans GS-13 to GS-15, say
+   `range` and give the grade span as the join key — do not produce a midpoint.
+3. **Do not read across agencies.** An Inspector General's pay at one agency
+   is not evidence about another's; answer per organisation as listed.
+4. A title marked `[×N]` stands for several holders in this graph. Give a
+   figure only where the document states ONE rate that applies to every
+   holder of the title by its own terms (a tier, a statutory rate, a roster
+   listing each holder at the same figure); otherwise answer the pay system,
+   the document and `range` or `none`. Never one holder's pay for the group.
+
+END with a section titled LOAD-BEARING NUMBERS: every figure you returned
+above, one line each, with the document URL it came from and whether it is
+official-published or third-party-estimated.
+
+THE TITLES:
 
 ### House Committee on Agriculture  [leg-house-cmte-agriculture]
 - leg-house-cmte-agriculture-minority-staff-director-agriculture | Minority Staff Director, Agriculture
@@ -2676,10 +2598,6 @@ THE TITLES:
 - exec-ind-smithsonian-lemelson-center-for-invention-innovation-deputy-director-lemelson-center-for-invention-innovation | Deputy Director, Lemelson Center for Invention & Innovation
 - exec-ind-smithsonian-lemelson-center-for-invention-innovation-director-lemelson-center-for-invention-innovation | Director, Lemelson Center for Invention & Innovation
 
-### Library of Congress  [leg-support-loc]
-- leg-support-loc-deputy-librarian-of-congress | Deputy Librarian of Congress
-- leg-support-loc-director-of-communications | Director of Communications
-
 ### Missile Defense Agency (MDA)  [exec-dept-defense-agency-mda]
 - exec-dept-defense-agency-mda-deputy-director-missile-defense-agency-mda | Deputy Director, Missile Defense Agency (MDA)
 - exec-dept-defense-agency-mda-director-missile-defense-agency-mda | Director, Missile Defense Agency (MDA)
@@ -2703,64 +2621,6 @@ THE TITLES:
 ### National Museum of American History  [exec-ind-smithsonian-national-museum-of-american-history]
 - exec-ind-smithsonian-national-museum-of-american-history-deputy-director-national-museum-of-american-history | Deputy Director, National Museum of American History
 - exec-ind-smithsonian-national-museum-of-american-history-director-national-museum-of-american-history | Director, National Museum of American History
-```
-
-## Prompt A14 — 65 organisation(s), 110 title(s)
-
-```
-I am building a data-backed public graph of the U.S. federal government. Every
-published figure must be traceable to a specific published government document
-that prints it; I cannot publish a reported or estimated salary.
-
-Below are federal POSITIONS, grouped by the organisation they sit in. For each
-one I need to know what it is paid and, more importantly, WHICH PUBLISHED
-DOCUMENT states that.
-
-For EVERY title listed below, return exactly one line in this pipe-delimited
-format and nothing else per title:
-
-    <node id> | <pay system> | <document URL> | <rate|range|none> | <join key> | <figure or —> | <confidence>
-
-- **pay system** — one of: `general_schedule`, `senior_executive_service`,
-  `senior_level`, `executive_schedule`, `title_38_va`, `title_5_excepted`,
-  `administratively_determined`, `foreign_service`, `military_title_37`,
-  `federal_wage_system`, `judicial_statutory`, `legislative_chamber`,
-  `board_or_commission_statutory`, `not_federally_paid`, `unknown`.
-- **document URL** — the URL of the *published document that states the pay*,
-  on the publisher's own site. A `.gov` host wherever one exists. Not a news
-  article, not a salary-aggregator site, not Wikipedia, not FederalPay.org or
-  GovSalaries — those are third-party republications and this tool cannot cite
-  them. If no official document states it, write `—` and say so.
-- **rate|range|none** — whether that document prints a single annual rate,
-  a minimum-and-maximum band, or no figure at all for this title.
-- **join key** — the exact string the document uses for this title, so a
-  matcher can find the row: a grade (`GS-15`), a level (`EX-IV`), a printed
-  title, a tier name, a statutory citation.
-- **figure** — only where the document prints one, as printed. `—` otherwise.
-  Never estimate, never average, never interpolate between grades.
-- **confidence** — `certain` only if you opened the document and read the row;
-  `likely` if the pay system is documented but the specific row is inferred;
-  `speculative` otherwise.
-
-Rules that matter more than coverage:
-1. **A missing answer is a result.** A line reading
-   `<node id> | unknown | — | none | — | — | certain` is a correct answer and
-   is more useful than a guess. Do not fill gaps.
-2. **Never average or interpolate.** If a title spans GS-13 to GS-15, say
-   `range` and give the grade span as the join key — do not produce a midpoint.
-3. **Do not read across agencies.** An Inspector General's pay at one agency
-   is not evidence about another's; answer per organisation as listed.
-4. A title marked `[×N]` stands for several holders in this graph. Give a
-   figure only where the document states ONE rate that applies to every
-   holder of the title by its own terms (a tier, a statutory rate, a roster
-   listing each holder at the same figure); otherwise answer the pay system,
-   the document and `range` or `none`. Never one holder's pay for the group.
-
-END with a section titled LOAD-BEARING NUMBERS: every figure you returned
-above, one line each, with the document URL it came from and whether it is
-official-published or third-party-estimated.
-
-THE TITLES:
 
 ### National Museum of Asian Art  [exec-ind-smithsonian-national-museum-of-asian-art]
 - exec-ind-smithsonian-national-museum-of-asian-art-deputy-director-national-museum-of-asian-art | Deputy Director, National Museum of Asian Art
@@ -2798,17 +2658,21 @@ THE TITLES:
 - exec-ind-smithsonian-national-zoo-deputy-director-national-zoo | Deputy Director, National Zoo
 - exec-ind-smithsonian-national-zoo-director-national-zoo | Director, National Zoo
 
-### Office for Civil Rights (OCR)  [exec-dept-ed-ocr]
-- exec-dept-ed-ocr-civil-rights-attorney-investigator-multiple | Civil Rights Attorney / Investigator (×multiple)  [×N]
-- exec-dept-ed-ocr-regional-director-12-regional-offices | Regional Director — 12 Regional Offices
+### Occupational Safety & Health Administration (OSHA)  [exec-dept-dol-osha]
+- exec-dept-dol-osha-area-director-85-area-offices | Area Director — 85 Area Offices
+- exec-dept-dol-osha-compliance-safety-health-officer-csho-inspector-multiple | Compliance Safety & Health Officer (CSHO) — Inspector (×multiple)  [×N]
 
-### Office of Fair Housing & Equal Opportunity (FHEO)  [exec-dept-hud-fheo]
-- exec-dept-hud-fheo-fair-housing-investigator-multiple | Fair Housing Investigator (×multiple)  [×N]
-- exec-dept-hud-fheo-regional-director-10-regions | Regional Director — 10 Regions
+### Office of Federal Contract Compliance Programs (OFCCP)  [exec-dept-dol-ofccp]
+- exec-dept-dol-ofccp-compliance-officer-multiple | Compliance Officer (×multiple)  [×N]
+- exec-dept-dol-ofccp-regional-director-6-regions | Regional Director — 6 Regions
 
 ### Office of Financial Research (OFR)  [exec-dept-treasury-ofr]
 - exec-dept-treasury-ofr-chief-data-officer | Chief Data Officer
 - exec-dept-treasury-ofr-director-research-analysis | Director — Research & Analysis
+
+### Office of Public & Indian Housing (PIH)  [exec-dept-hud-pih]
+- exec-dept-hud-pih-deputy-assistant-secretary-field-operations | Deputy Assistant Secretary — Field Operations
+- exec-dept-hud-pih-public-housing-director-local-phas | Public Housing Director (×local PHAs)  [×N]
 
 ### Office of the Solicitor General  [exec-dept-doj-solicitor]
 - exec-dept-doj-solicitor-assistant-to-the-solicitor-general-multiple | Assistant to the Solicitor General (×multiple)  [×N]
@@ -2865,6 +2729,64 @@ THE TITLES:
 ### Senate Committee on Foreign Relations  [leg-senate-cmte-foreign-relations]
 - leg-senate-cmte-foreign-relations-minority-staff-director-foreign-relations | Minority Staff Director, Foreign Relations
 - leg-senate-cmte-foreign-relations-staff-director-foreign-relations | Staff Director, Foreign Relations
+```
+
+## Prompt A14 — 91 organisation(s), 110 title(s)
+
+```
+I am building a data-backed public graph of the U.S. federal government. Every
+published figure must be traceable to a specific published government document
+that prints it; I cannot publish a reported or estimated salary.
+
+Below are federal POSITIONS, grouped by the organisation they sit in. For each
+one I need to know what it is paid and, more importantly, WHICH PUBLISHED
+DOCUMENT states that.
+
+For EVERY title listed below, return exactly one line in this pipe-delimited
+format and nothing else per title:
+
+    <node id> | <pay system> | <document URL> | <rate|range|none> | <join key> | <figure or —> | <confidence>
+
+- **pay system** — one of: `general_schedule`, `senior_executive_service`,
+  `senior_level`, `executive_schedule`, `title_38_va`, `title_5_excepted`,
+  `administratively_determined`, `foreign_service`, `military_title_37`,
+  `federal_wage_system`, `judicial_statutory`, `legislative_chamber`,
+  `board_or_commission_statutory`, `not_federally_paid`, `unknown`.
+- **document URL** — the URL of the *published document that states the pay*,
+  on the publisher's own site. A `.gov` host wherever one exists. Not a news
+  article, not a salary-aggregator site, not Wikipedia, not FederalPay.org or
+  GovSalaries — those are third-party republications and this tool cannot cite
+  them. If no official document states it, write `—` and say so.
+- **rate|range|none** — whether that document prints a single annual rate,
+  a minimum-and-maximum band, or no figure at all for this title.
+- **join key** — the exact string the document uses for this title, so a
+  matcher can find the row: a grade (`GS-15`), a level (`EX-IV`), a printed
+  title, a tier name, a statutory citation.
+- **figure** — only where the document prints one, as printed. `—` otherwise.
+  Never estimate, never average, never interpolate between grades.
+- **confidence** — `certain` only if you opened the document and read the row;
+  `likely` if the pay system is documented but the specific row is inferred;
+  `speculative` otherwise.
+
+Rules that matter more than coverage:
+1. **A missing answer is a result.** A line reading
+   `<node id> | unknown | — | none | — | — | certain` is a correct answer and
+   is more useful than a guess. Do not fill gaps.
+2. **Never average or interpolate.** If a title spans GS-13 to GS-15, say
+   `range` and give the grade span as the join key — do not produce a midpoint.
+3. **Do not read across agencies.** An Inspector General's pay at one agency
+   is not evidence about another's; answer per organisation as listed.
+4. A title marked `[×N]` stands for several holders in this graph. Give a
+   figure only where the document states ONE rate that applies to every
+   holder of the title by its own terms (a tier, a statutory rate, a roster
+   listing each holder at the same figure); otherwise answer the pay system,
+   the document and `range` or `none`. Never one holder's pay for the group.
+
+END with a section titled LOAD-BEARING NUMBERS: every figure you returned
+above, one line each, with the document URL it came from and whether it is
+official-published or third-party-estimated.
+
+THE TITLES:
 
 ### Senate Committee on Health, Education, Labor & Pensions  [leg-senate-cmte-health-education-labor-pensions]
 - leg-senate-cmte-health-education-labor-pensions-minority-staff-director-health-education-labor-pensions | Minority Staff Director, Health, Education, Labor & Pensions
@@ -3001,64 +2923,6 @@ THE TITLES:
 
 ### Chemical, Bioengineering, Energy and Transport Systems (CBET)  [exec-ind-nsf-engineering-eng-chemical-bioengineering-environmental-transport-systems]
 - exec-ind-nsf-engineering-eng-chemical-bioengineering-environmental-transport-systems-division-director-chemical-bioengineering-environmental-transport-systems | Division Director, Chemical, Bioengineering, Environmental & Transport Systems
-```
-
-## Prompt A15 — 110 organisation(s), 110 title(s)
-
-```
-I am building a data-backed public graph of the U.S. federal government. Every
-published figure must be traceable to a specific published government document
-that prints it; I cannot publish a reported or estimated salary.
-
-Below are federal POSITIONS, grouped by the organisation they sit in. For each
-one I need to know what it is paid and, more importantly, WHICH PUBLISHED
-DOCUMENT states that.
-
-For EVERY title listed below, return exactly one line in this pipe-delimited
-format and nothing else per title:
-
-    <node id> | <pay system> | <document URL> | <rate|range|none> | <join key> | <figure or —> | <confidence>
-
-- **pay system** — one of: `general_schedule`, `senior_executive_service`,
-  `senior_level`, `executive_schedule`, `title_38_va`, `title_5_excepted`,
-  `administratively_determined`, `foreign_service`, `military_title_37`,
-  `federal_wage_system`, `judicial_statutory`, `legislative_chamber`,
-  `board_or_commission_statutory`, `not_federally_paid`, `unknown`.
-- **document URL** — the URL of the *published document that states the pay*,
-  on the publisher's own site. A `.gov` host wherever one exists. Not a news
-  article, not a salary-aggregator site, not Wikipedia, not FederalPay.org or
-  GovSalaries — those are third-party republications and this tool cannot cite
-  them. If no official document states it, write `—` and say so.
-- **rate|range|none** — whether that document prints a single annual rate,
-  a minimum-and-maximum band, or no figure at all for this title.
-- **join key** — the exact string the document uses for this title, so a
-  matcher can find the row: a grade (`GS-15`), a level (`EX-IV`), a printed
-  title, a tier name, a statutory citation.
-- **figure** — only where the document prints one, as printed. `—` otherwise.
-  Never estimate, never average, never interpolate between grades.
-- **confidence** — `certain` only if you opened the document and read the row;
-  `likely` if the pay system is documented but the specific row is inferred;
-  `speculative` otherwise.
-
-Rules that matter more than coverage:
-1. **A missing answer is a result.** A line reading
-   `<node id> | unknown | — | none | — | — | certain` is a correct answer and
-   is more useful than a guess. Do not fill gaps.
-2. **Never average or interpolate.** If a title spans GS-13 to GS-15, say
-   `range` and give the grade span as the join key — do not produce a midpoint.
-3. **Do not read across agencies.** An Inspector General's pay at one agency
-   is not evidence about another's; answer per organisation as listed.
-4. A title marked `[×N]` stands for several holders in this graph. Give a
-   figure only where the document states ONE rate that applies to every
-   holder of the title by its own terms (a tier, a statutory rate, a roster
-   listing each holder at the same figure); otherwise answer the pay system,
-   the document and `range` or `none`. Never one holder's pay for the group.
-
-END with a section titled LOAD-BEARING NUMBERS: every figure you returned
-above, one line each, with the document URL it came from and whether it is
-official-published or third-party-estimated.
-
-THE TITLES:
 
 ### Children & Families  [leg-senate-cmte-health-education-labor-pensions-sub-children-families]
 - leg-senate-cmte-health-education-labor-pensions-sub-children-families-staff-director-subcommittee-on-children-families | Staff Director, Subcommittee on Children & Families
@@ -3072,9 +2936,6 @@ THE TITLES:
 ### Computer & Information Science & Engineering (CISE)  [exec-ind-nsf-computer-information-science-engineering-cise]
 - exec-ind-nsf-computer-information-science-engineering-cise-assistant-director-computer-information-science-engineering-cise | Assistant Director, Computer & Information Science & Engineering (CISE)
 
-### Congressional Budget Office (CBO)  [leg-support-cbo]
-- leg-support-cbo-director-of-communications | Director of Communications
-
 ### Constitution  [leg-senate-cmte-judiciary-sub-constitution]
 - leg-senate-cmte-judiciary-sub-constitution-staff-director-subcommittee-on-constitution | Staff Director, Subcommittee on Constitution
 
@@ -3083,6 +2944,9 @@ THE TITLES:
 
 ### Convergence Accelerator  [exec-ind-nsf-technology-innovation-partnerships-tip-convergence-accelerator]
 - exec-ind-nsf-technology-innovation-partnerships-tip-convergence-accelerator-division-director-convergence-accelerator | Division Director, Convergence Accelerator
+
+### Council of Economic Advisers  [exec-eop-cea]
+- exec-eop-cea-senior-economist-multiple | Senior Economist (×multiple)  [×N]
 
 ### Court of Appeals for Veterans Claims (CAVC)  [jud-specialized-cavc]
 - jud-specialized-cavc-pro-se-staff-attorney-multiple | Pro Se Staff Attorney (×multiple)  [×N]
@@ -3215,6 +3079,64 @@ THE TITLES:
 
 ### Fermi National Accelerator Laboratory  [exec-dept-doe-fermi-national-accelerator-laboratory]
 - exec-dept-doe-fermi-national-accelerator-laboratory-laboratory-director-fermi-national-accelerator-laboratory | Laboratory Director, Fermi National Accelerator Laboratory
+```
+
+## Prompt A15 — 110 organisation(s), 110 title(s)
+
+```
+I am building a data-backed public graph of the U.S. federal government. Every
+published figure must be traceable to a specific published government document
+that prints it; I cannot publish a reported or estimated salary.
+
+Below are federal POSITIONS, grouped by the organisation they sit in. For each
+one I need to know what it is paid and, more importantly, WHICH PUBLISHED
+DOCUMENT states that.
+
+For EVERY title listed below, return exactly one line in this pipe-delimited
+format and nothing else per title:
+
+    <node id> | <pay system> | <document URL> | <rate|range|none> | <join key> | <figure or —> | <confidence>
+
+- **pay system** — one of: `general_schedule`, `senior_executive_service`,
+  `senior_level`, `executive_schedule`, `title_38_va`, `title_5_excepted`,
+  `administratively_determined`, `foreign_service`, `military_title_37`,
+  `federal_wage_system`, `judicial_statutory`, `legislative_chamber`,
+  `board_or_commission_statutory`, `not_federally_paid`, `unknown`.
+- **document URL** — the URL of the *published document that states the pay*,
+  on the publisher's own site. A `.gov` host wherever one exists. Not a news
+  article, not a salary-aggregator site, not Wikipedia, not FederalPay.org or
+  GovSalaries — those are third-party republications and this tool cannot cite
+  them. If no official document states it, write `—` and say so.
+- **rate|range|none** — whether that document prints a single annual rate,
+  a minimum-and-maximum band, or no figure at all for this title.
+- **join key** — the exact string the document uses for this title, so a
+  matcher can find the row: a grade (`GS-15`), a level (`EX-IV`), a printed
+  title, a tier name, a statutory citation.
+- **figure** — only where the document prints one, as printed. `—` otherwise.
+  Never estimate, never average, never interpolate between grades.
+- **confidence** — `certain` only if you opened the document and read the row;
+  `likely` if the pay system is documented but the specific row is inferred;
+  `speculative` otherwise.
+
+Rules that matter more than coverage:
+1. **A missing answer is a result.** A line reading
+   `<node id> | unknown | — | none | — | — | certain` is a correct answer and
+   is more useful than a guess. Do not fill gaps.
+2. **Never average or interpolate.** If a title spans GS-13 to GS-15, say
+   `range` and give the grade span as the join key — do not produce a midpoint.
+3. **Do not read across agencies.** An Inspector General's pay at one agency
+   is not evidence about another's; answer per organisation as listed.
+4. A title marked `[×N]` stands for several holders in this graph. Give a
+   figure only where the document states ONE rate that applies to every
+   holder of the title by its own terms (a tier, a statutory rate, a roster
+   listing each holder at the same figure); otherwise answer the pay system,
+   the document and `range` or `none`. Never one holder's pay for the group.
+
+END with a section titled LOAD-BEARING NUMBERS: every figure you returned
+above, one line each, with the document URL it came from and whether it is
+official-published or third-party-estimated.
+
+THE TITLES:
 
 ### Financial Institutions & Consumer Protection  [leg-senate-cmte-banking-housing-urban-affairs-sub-financial-institutions-consumer-protection]
 - leg-senate-cmte-banking-housing-urban-affairs-sub-financial-institutions-consumer-protection-staff-director-subcommittee-on-financial-institutions-consumer-protection | Staff Director, Subcommittee on Financial Institutions & Consumer Protection
@@ -3315,6 +3237,9 @@ THE TITLES:
 ### Legislative Branch  [leg-senate-cmte-appropriations-sub-legislative-branch]
 - leg-senate-cmte-appropriations-sub-legislative-branch-staff-director-subcommittee-on-legislative-branch | Staff Director, Subcommittee on Legislative Branch
 
+### Library of Congress  [leg-support-loc]
+- leg-support-loc-deputy-librarian-of-congress | Deputy Librarian of Congress
+
 ### Los Alamos National Laboratory  [exec-dept-doe-los-alamos-national-laboratory]
 - exec-dept-doe-los-alamos-national-laboratory-laboratory-director-los-alamos-national-laboratory | Laboratory Director, Los Alamos National Laboratory
 
@@ -3366,11 +3291,17 @@ THE TITLES:
 ### Oceans, Fisheries, Climate Change & Manufacturing  [leg-senate-cmte-commerce-science-transportation-sub-oceans-fisheries-climate-change-manufacturing]
 - leg-senate-cmte-commerce-science-transportation-sub-oceans-fisheries-climate-change-manufacturing-staff-director-subcommittee-on-oceans-fisheries-climate-change-manufacturing | Staff Director, Subcommittee on Oceans, Fisheries, Climate Change & Manufacturing
 
+### Office for Civil Rights (OCR)  [exec-dept-ed-ocr]
+- exec-dept-ed-ocr-civil-rights-attorney-investigator-multiple | Civil Rights Attorney / Investigator (×multiple)  [×N]
+
 ### Office of Advanced Cyberinfrastructure  [exec-ind-nsf-computer-information-science-engineering-cise-advanced-cyberinfrastructure]
 - exec-ind-nsf-computer-information-science-engineering-cise-advanced-cyberinfrastructure-division-director-advanced-cyberinfrastructure | Division Director, Advanced Cyberinfrastructure
 
 ### Office of E-Government & IT (Federal CIO)  [exec-eop-omb-office-of-e-government-it-federal-cio]
 - exec-eop-omb-office-of-e-government-it-federal-cio-deputy-administrator-office-of-e-government-it-federal-cio | Deputy Administrator, Office of E-Government & IT (Federal CIO)
+
+### Office of Fair Housing & Equal Opportunity (FHEO)  [exec-dept-hud-fheo]
+- exec-dept-hud-fheo-fair-housing-investigator-multiple | Fair Housing Investigator (×multiple)  [×N]
 
 ### Office of Federal Financial Management  [exec-eop-omb-office-of-federal-financial-management]
 - exec-eop-omb-office-of-federal-financial-management-deputy-administrator-office-of-federal-financial-management | Deputy Administrator, Office of Federal Financial Management
@@ -3389,64 +3320,6 @@ THE TITLES:
 
 ### Personnel  [leg-senate-cmte-armed-services-sub-personnel]
 - leg-senate-cmte-armed-services-sub-personnel-staff-director-subcommittee-on-personnel | Staff Director, Subcommittee on Personnel
-```
-
-## Prompt A16 — 49 organisation(s), 49 title(s)
-
-```
-I am building a data-backed public graph of the U.S. federal government. Every
-published figure must be traceable to a specific published government document
-that prints it; I cannot publish a reported or estimated salary.
-
-Below are federal POSITIONS, grouped by the organisation they sit in. For each
-one I need to know what it is paid and, more importantly, WHICH PUBLISHED
-DOCUMENT states that.
-
-For EVERY title listed below, return exactly one line in this pipe-delimited
-format and nothing else per title:
-
-    <node id> | <pay system> | <document URL> | <rate|range|none> | <join key> | <figure or —> | <confidence>
-
-- **pay system** — one of: `general_schedule`, `senior_executive_service`,
-  `senior_level`, `executive_schedule`, `title_38_va`, `title_5_excepted`,
-  `administratively_determined`, `foreign_service`, `military_title_37`,
-  `federal_wage_system`, `judicial_statutory`, `legislative_chamber`,
-  `board_or_commission_statutory`, `not_federally_paid`, `unknown`.
-- **document URL** — the URL of the *published document that states the pay*,
-  on the publisher's own site. A `.gov` host wherever one exists. Not a news
-  article, not a salary-aggregator site, not Wikipedia, not FederalPay.org or
-  GovSalaries — those are third-party republications and this tool cannot cite
-  them. If no official document states it, write `—` and say so.
-- **rate|range|none** — whether that document prints a single annual rate,
-  a minimum-and-maximum band, or no figure at all for this title.
-- **join key** — the exact string the document uses for this title, so a
-  matcher can find the row: a grade (`GS-15`), a level (`EX-IV`), a printed
-  title, a tier name, a statutory citation.
-- **figure** — only where the document prints one, as printed. `—` otherwise.
-  Never estimate, never average, never interpolate between grades.
-- **confidence** — `certain` only if you opened the document and read the row;
-  `likely` if the pay system is documented but the specific row is inferred;
-  `speculative` otherwise.
-
-Rules that matter more than coverage:
-1. **A missing answer is a result.** A line reading
-   `<node id> | unknown | — | none | — | — | certain` is a correct answer and
-   is more useful than a guess. Do not fill gaps.
-2. **Never average or interpolate.** If a title spans GS-13 to GS-15, say
-   `range` and give the grade span as the join key — do not produce a midpoint.
-3. **Do not read across agencies.** An Inspector General's pay at one agency
-   is not evidence about another's; answer per organisation as listed.
-4. A title marked `[×N]` stands for several holders in this graph. Give a
-   figure only where the document states ONE rate that applies to every
-   holder of the title by its own terms (a tier, a statutory rate, a roster
-   listing each holder at the same figure); otherwise answer the pay system,
-   the document and `range` or `none`. Never one holder's pay for the group.
-
-END with a section titled LOAD-BEARING NUMBERS: every figure you returned
-above, one line each, with the document URL it came from and whether it is
-official-published or third-party-estimated.
-
-THE TITLES:
 
 ### Primary Health & Retirement Security  [leg-senate-cmte-health-education-labor-pensions-sub-primary-health-retirement-security]
 - leg-senate-cmte-health-education-labor-pensions-sub-primary-health-retirement-security-staff-director-subcommittee-on-primary-health-retirement-security | Staff Director, Subcommittee on Primary Health & Retirement Security

@@ -58,7 +58,7 @@ class PartitionTests(unittest.TestCase):
         if graph is None:
             self.skipTest("no published graph")
         rows = collect(graph)
-        here = {r["id"] for cls in ("post_multiplicity", "post_listed_no_rate", "post_unreached") for r in rows.get(cls, [])}
+        here = {r["id"] for cls in UNPRICED_POST_CLASSES for r in rows.get(cls, [])}
         groups, positions, priced, _ = collect_unpriced(graph)
         there = {row["id"] for group in groups.values() for row in group}
         self.assertEqual(here, there)
@@ -73,7 +73,7 @@ class PartitionTests(unittest.TestCase):
         rows = collect(graph)
         for row in rows["salary"]:
             self.assertTrue(any(isinstance(by_id[row["id"]].get(f), dict) for f in PAY_FIELDS), row["id"])
-        for cls in ("post_multiplicity", "post_listed_no_rate", "post_unreached"):
+        for cls in UNPRICED_POST_CLASSES:
             for row in rows.get(cls, []):
                 self.assertFalse(any(isinstance(by_id[row["id"]].get(f), dict) for f in PAY_FIELDS), row["id"])
 
@@ -84,6 +84,10 @@ class PartitionTests(unittest.TestCase):
         self.assertEqual(classify({"type": "Position", "cost_status": "unavailable", "representsPosts": {"count": 2}}), "post_multiplicity")
         self.assertEqual(classify({"type": "Position", "cost_status": "unavailable", "positionListing": {}}), "post_listed_no_rate")
         self.assertEqual(classify({"type": "Position", "cost_status": "unavailable"}), "post_unreached")
+        self.assertEqual(classify({"type": "Position", "cost_status": "unavailable"}, True), "post_beneath_replaced_unit")
+        self.assertEqual(classify({"type": "Position", "cost_status": "unavailable", "positionEmployer": {"federallyPaid": False}}), "post_not_federally_paid")
+        # A priced post beneath a replaced unit is still a salary: the figure exists.
+        self.assertEqual(classify({"type": "Position", "positionTierPay": {"minimum": 1.0}}, True), "salary")
         self.assertEqual(classify({"type": "Subcommittee", "cost_status": "allocated"}), "estimate_committee")
         self.assertEqual(classify({"type": "Bureau", "cost_status": "allocated", "ombBudget": {}}), "estimate_beside_sourced_figure")
         self.assertEqual(classify({"type": "Bureau", "cost_status": "allocated"}), "estimate")
@@ -94,6 +98,12 @@ class PartitionTests(unittest.TestCase):
         # defect upstream, and this report must not file it as an organisation.
         self.assertEqual(classify({"type": "Position", "cost_status": "allocated"}), "post_unreached")
         self.assertEqual(classify({"type": "Office", "cost_status": "unavailable"}), "other")
+
+
+UNPRICED_POST_CLASSES = (
+    "post_multiplicity", "post_listed_no_rate", "post_unreached",
+    "post_beneath_replaced_unit", "post_not_federally_paid",
+)
 
 
 class DocumentTests(unittest.TestCase):

@@ -13,8 +13,9 @@ same list in the same run.
 
 | reason | count | what it means |
 |---|---|---|
-| `unreached` | 2,592 | no source this project has read names the title at all. Not a coverage gap somebody has not got to: no pay document in the repository names this title under this organisation, so nothing could have reached it. |
-| `multiplicity` | 750 | the node states a multiplicity (×N) and no claim that holds for every holder has reached it. Since 2026-09-23 a claim that holds for each holder by its own terms IS published on such a node with a `holders` block -- a tier or parity rate paid to every judge of the tier, a band every holder is within, or a roster listing every holder at one rate -- and 43 such nodes carry one. What stays refused is an incumbency-shaped claim (one listing's level, one row of the current export), because that is one appointment's figure and not the group's. For these nodes no office-rate claim has reached them at all. Knowing which pay system governs the title is still useful -- it is what would let the graph carry the schedule rather than a rate -- so these are listed and asked about. |
+| `unreached` | 2,232 | no source this project has read names the title at all. Not a coverage gap somebody has not got to: no pay document in the repository names this title under this organisation, so nothing could have reached it. |
+| `multiplicity` | 678 | the node states a multiplicity (×N) and no claim that holds for every holder has reached it. Since 2026-09-23 a claim that holds for each holder by its own terms IS published on such a node with a `holders` block -- a tier or parity rate paid to every judge of the tier, a band every holder is within, or a roster listing every holder at one rate -- and 43 such nodes carry one. What stays refused is an incumbency-shaped claim (one listing's level, one row of the current export), because that is one appointment's figure and not the group's. For these nodes no office-rate claim has reached them at all. Knowing which pay system governs the title is still useful -- it is what would let the graph carry the schedule rather than a rate -- so these are listed and asked about. |
+| `beneath_replaced_unit` | 432 | the post sits beneath a unit the government has replaced, and research on it is paused. The owner's decision of 2026-10-07: these posts (the eighteen former VA networks' medical-centre posts and network officers, CURATION.md §10) are not asked about in any research pack until a VA document maps medical centres to the five current networks and they are re-homed. What pays a medical-centre post does not depend on which network it reports to, so the question is not lost; it is waiting on curation, not on research. |
 | `listed_no_rate` | 18 | OPM lists the position and the row prints no rate. The PLUM archive or the current export names the title under this organisation but the Level/Grade/Pay cell carries a rank or is empty, and no salary table this project has read prices that pay plan. |
 
 ---
@@ -89,505 +90,505 @@ same list in the same run.
 
 `exec-dept-va-vha-visn-23-midwest-vamc`
 
-- `exec-dept-va-vha-visn-23-midwest-vamc-associate-director-for-patient-care-services-cno` — Associate Director for Patient Care Services (CNO) — `unreached`
-- `exec-dept-va-vha-visn-23-midwest-vamc-canteen-chief` — Canteen Chief — `unreached`
-- `exec-dept-va-vha-visn-23-midwest-vamc-chief-dental-service` — Chief — Dental Service — `unreached`
-- `exec-dept-va-vha-visn-23-midwest-vamc-chief-emergency-medicine` — Chief — Emergency Medicine — `unreached`
-- `exec-dept-va-vha-visn-23-midwest-vamc-chief-environmental-management` — Chief — Environmental Management — `unreached`
-- `exec-dept-va-vha-visn-23-midwest-vamc-chief-facilities-management` — Chief — Facilities Management — `unreached`
-- `exec-dept-va-vha-visn-23-midwest-vamc-chief-finance` — Chief — Finance — `unreached`
-- `exec-dept-va-vha-visn-23-midwest-vamc-chief-human-resources` — Chief — Human Resources — `unreached`
-- `exec-dept-va-vha-visn-23-midwest-vamc-chief-laboratory` — Chief — Laboratory — `unreached`
-- `exec-dept-va-vha-visn-23-midwest-vamc-chief-medicine-service` — Chief — Medicine Service — `unreached`
-- `exec-dept-va-vha-visn-23-midwest-vamc-chief-mental-health-service` — Chief — Mental Health Service — `unreached`
-- `exec-dept-va-vha-visn-23-midwest-vamc-chief-nursing` — Chief — Nursing — `unreached`
-- `exec-dept-va-vha-visn-23-midwest-vamc-chief-pharmacy` — Chief — Pharmacy — `unreached`
-- `exec-dept-va-vha-visn-23-midwest-vamc-chief-primary-care` — Chief — Primary Care — `unreached`
-- `exec-dept-va-vha-visn-23-midwest-vamc-chief-radiology` — Chief — Radiology — `unreached`
-- `exec-dept-va-vha-visn-23-midwest-vamc-chief-rehabilitation` — Chief — Rehabilitation — `unreached`
-- `exec-dept-va-vha-visn-23-midwest-vamc-chief-social-work` — Chief — Social Work — `unreached`
-- `exec-dept-va-vha-visn-23-midwest-vamc-chief-surgery-service` — Chief — Surgery Service — `unreached`
-- `exec-dept-va-vha-visn-23-midwest-vamc-clinical-pharmacist-multiple` — Clinical Pharmacist (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-23-midwest-vamc-nurse-multiple` — Nurse (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-23-midwest-vamc-physician-multiple` — Physician (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-23-midwest-vamc-social-worker-multiple` — Social Worker (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-23-midwest-vamc-va-police-chief` — VA Police Chief — `unreached`
+- `exec-dept-va-vha-visn-23-midwest-vamc-associate-director-for-patient-care-services-cno` — Associate Director for Patient Care Services (CNO) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-23-midwest-vamc-canteen-chief` — Canteen Chief — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-23-midwest-vamc-chief-dental-service` — Chief — Dental Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-23-midwest-vamc-chief-emergency-medicine` — Chief — Emergency Medicine — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-23-midwest-vamc-chief-environmental-management` — Chief — Environmental Management — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-23-midwest-vamc-chief-facilities-management` — Chief — Facilities Management — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-23-midwest-vamc-chief-finance` — Chief — Finance — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-23-midwest-vamc-chief-human-resources` — Chief — Human Resources — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-23-midwest-vamc-chief-laboratory` — Chief — Laboratory — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-23-midwest-vamc-chief-medicine-service` — Chief — Medicine Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-23-midwest-vamc-chief-mental-health-service` — Chief — Mental Health Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-23-midwest-vamc-chief-nursing` — Chief — Nursing — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-23-midwest-vamc-chief-pharmacy` — Chief — Pharmacy — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-23-midwest-vamc-chief-primary-care` — Chief — Primary Care — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-23-midwest-vamc-chief-radiology` — Chief — Radiology — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-23-midwest-vamc-chief-rehabilitation` — Chief — Rehabilitation — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-23-midwest-vamc-chief-social-work` — Chief — Social Work — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-23-midwest-vamc-chief-surgery-service` — Chief — Surgery Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-23-midwest-vamc-clinical-pharmacist-multiple` — Clinical Pharmacist (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-23-midwest-vamc-nurse-multiple` — Nurse (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-23-midwest-vamc-physician-multiple` — Physician (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-23-midwest-vamc-social-worker-multiple` — Social Worker (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-23-midwest-vamc-va-police-chief` — VA Police Chief — `beneath_replaced_unit`
 
 ## VA Medical Centers  — 23 unpriced
 
 `exec-dept-va-vha-visn-22-desert-pacific-vamc`
 
-- `exec-dept-va-vha-visn-22-desert-pacific-vamc-associate-director-for-patient-care-services-cno` — Associate Director for Patient Care Services (CNO) — `unreached`
-- `exec-dept-va-vha-visn-22-desert-pacific-vamc-canteen-chief` — Canteen Chief — `unreached`
-- `exec-dept-va-vha-visn-22-desert-pacific-vamc-chief-dental-service` — Chief — Dental Service — `unreached`
-- `exec-dept-va-vha-visn-22-desert-pacific-vamc-chief-emergency-medicine` — Chief — Emergency Medicine — `unreached`
-- `exec-dept-va-vha-visn-22-desert-pacific-vamc-chief-environmental-management` — Chief — Environmental Management — `unreached`
-- `exec-dept-va-vha-visn-22-desert-pacific-vamc-chief-facilities-management` — Chief — Facilities Management — `unreached`
-- `exec-dept-va-vha-visn-22-desert-pacific-vamc-chief-finance` — Chief — Finance — `unreached`
-- `exec-dept-va-vha-visn-22-desert-pacific-vamc-chief-human-resources` — Chief — Human Resources — `unreached`
-- `exec-dept-va-vha-visn-22-desert-pacific-vamc-chief-laboratory` — Chief — Laboratory — `unreached`
-- `exec-dept-va-vha-visn-22-desert-pacific-vamc-chief-medicine-service` — Chief — Medicine Service — `unreached`
-- `exec-dept-va-vha-visn-22-desert-pacific-vamc-chief-mental-health-service` — Chief — Mental Health Service — `unreached`
-- `exec-dept-va-vha-visn-22-desert-pacific-vamc-chief-nursing` — Chief — Nursing — `unreached`
-- `exec-dept-va-vha-visn-22-desert-pacific-vamc-chief-pharmacy` — Chief — Pharmacy — `unreached`
-- `exec-dept-va-vha-visn-22-desert-pacific-vamc-chief-primary-care` — Chief — Primary Care — `unreached`
-- `exec-dept-va-vha-visn-22-desert-pacific-vamc-chief-radiology` — Chief — Radiology — `unreached`
-- `exec-dept-va-vha-visn-22-desert-pacific-vamc-chief-rehabilitation` — Chief — Rehabilitation — `unreached`
-- `exec-dept-va-vha-visn-22-desert-pacific-vamc-chief-social-work` — Chief — Social Work — `unreached`
-- `exec-dept-va-vha-visn-22-desert-pacific-vamc-chief-surgery-service` — Chief — Surgery Service — `unreached`
-- `exec-dept-va-vha-visn-22-desert-pacific-vamc-clinical-pharmacist-multiple` — Clinical Pharmacist (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-22-desert-pacific-vamc-nurse-multiple` — Nurse (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-22-desert-pacific-vamc-physician-multiple` — Physician (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-22-desert-pacific-vamc-social-worker-multiple` — Social Worker (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-22-desert-pacific-vamc-va-police-chief` — VA Police Chief — `unreached`
+- `exec-dept-va-vha-visn-22-desert-pacific-vamc-associate-director-for-patient-care-services-cno` — Associate Director for Patient Care Services (CNO) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-22-desert-pacific-vamc-canteen-chief` — Canteen Chief — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-22-desert-pacific-vamc-chief-dental-service` — Chief — Dental Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-22-desert-pacific-vamc-chief-emergency-medicine` — Chief — Emergency Medicine — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-22-desert-pacific-vamc-chief-environmental-management` — Chief — Environmental Management — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-22-desert-pacific-vamc-chief-facilities-management` — Chief — Facilities Management — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-22-desert-pacific-vamc-chief-finance` — Chief — Finance — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-22-desert-pacific-vamc-chief-human-resources` — Chief — Human Resources — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-22-desert-pacific-vamc-chief-laboratory` — Chief — Laboratory — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-22-desert-pacific-vamc-chief-medicine-service` — Chief — Medicine Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-22-desert-pacific-vamc-chief-mental-health-service` — Chief — Mental Health Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-22-desert-pacific-vamc-chief-nursing` — Chief — Nursing — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-22-desert-pacific-vamc-chief-pharmacy` — Chief — Pharmacy — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-22-desert-pacific-vamc-chief-primary-care` — Chief — Primary Care — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-22-desert-pacific-vamc-chief-radiology` — Chief — Radiology — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-22-desert-pacific-vamc-chief-rehabilitation` — Chief — Rehabilitation — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-22-desert-pacific-vamc-chief-social-work` — Chief — Social Work — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-22-desert-pacific-vamc-chief-surgery-service` — Chief — Surgery Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-22-desert-pacific-vamc-clinical-pharmacist-multiple` — Clinical Pharmacist (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-22-desert-pacific-vamc-nurse-multiple` — Nurse (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-22-desert-pacific-vamc-physician-multiple` — Physician (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-22-desert-pacific-vamc-social-worker-multiple` — Social Worker (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-22-desert-pacific-vamc-va-police-chief` — VA Police Chief — `beneath_replaced_unit`
 
 ## VA Medical Centers  — 23 unpriced
 
 `exec-dept-va-vha-visn-21-sierra-pacific-vamc`
 
-- `exec-dept-va-vha-visn-21-sierra-pacific-vamc-associate-director-for-patient-care-services-cno` — Associate Director for Patient Care Services (CNO) — `unreached`
-- `exec-dept-va-vha-visn-21-sierra-pacific-vamc-canteen-chief` — Canteen Chief — `unreached`
-- `exec-dept-va-vha-visn-21-sierra-pacific-vamc-chief-dental-service` — Chief — Dental Service — `unreached`
-- `exec-dept-va-vha-visn-21-sierra-pacific-vamc-chief-emergency-medicine` — Chief — Emergency Medicine — `unreached`
-- `exec-dept-va-vha-visn-21-sierra-pacific-vamc-chief-environmental-management` — Chief — Environmental Management — `unreached`
-- `exec-dept-va-vha-visn-21-sierra-pacific-vamc-chief-facilities-management` — Chief — Facilities Management — `unreached`
-- `exec-dept-va-vha-visn-21-sierra-pacific-vamc-chief-finance` — Chief — Finance — `unreached`
-- `exec-dept-va-vha-visn-21-sierra-pacific-vamc-chief-human-resources` — Chief — Human Resources — `unreached`
-- `exec-dept-va-vha-visn-21-sierra-pacific-vamc-chief-laboratory` — Chief — Laboratory — `unreached`
-- `exec-dept-va-vha-visn-21-sierra-pacific-vamc-chief-medicine-service` — Chief — Medicine Service — `unreached`
-- `exec-dept-va-vha-visn-21-sierra-pacific-vamc-chief-mental-health-service` — Chief — Mental Health Service — `unreached`
-- `exec-dept-va-vha-visn-21-sierra-pacific-vamc-chief-nursing` — Chief — Nursing — `unreached`
-- `exec-dept-va-vha-visn-21-sierra-pacific-vamc-chief-pharmacy` — Chief — Pharmacy — `unreached`
-- `exec-dept-va-vha-visn-21-sierra-pacific-vamc-chief-primary-care` — Chief — Primary Care — `unreached`
-- `exec-dept-va-vha-visn-21-sierra-pacific-vamc-chief-radiology` — Chief — Radiology — `unreached`
-- `exec-dept-va-vha-visn-21-sierra-pacific-vamc-chief-rehabilitation` — Chief — Rehabilitation — `unreached`
-- `exec-dept-va-vha-visn-21-sierra-pacific-vamc-chief-social-work` — Chief — Social Work — `unreached`
-- `exec-dept-va-vha-visn-21-sierra-pacific-vamc-chief-surgery-service` — Chief — Surgery Service — `unreached`
-- `exec-dept-va-vha-visn-21-sierra-pacific-vamc-clinical-pharmacist-multiple` — Clinical Pharmacist (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-21-sierra-pacific-vamc-nurse-multiple` — Nurse (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-21-sierra-pacific-vamc-physician-multiple` — Physician (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-21-sierra-pacific-vamc-social-worker-multiple` — Social Worker (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-21-sierra-pacific-vamc-va-police-chief` — VA Police Chief — `unreached`
+- `exec-dept-va-vha-visn-21-sierra-pacific-vamc-associate-director-for-patient-care-services-cno` — Associate Director for Patient Care Services (CNO) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-21-sierra-pacific-vamc-canteen-chief` — Canteen Chief — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-21-sierra-pacific-vamc-chief-dental-service` — Chief — Dental Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-21-sierra-pacific-vamc-chief-emergency-medicine` — Chief — Emergency Medicine — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-21-sierra-pacific-vamc-chief-environmental-management` — Chief — Environmental Management — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-21-sierra-pacific-vamc-chief-facilities-management` — Chief — Facilities Management — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-21-sierra-pacific-vamc-chief-finance` — Chief — Finance — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-21-sierra-pacific-vamc-chief-human-resources` — Chief — Human Resources — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-21-sierra-pacific-vamc-chief-laboratory` — Chief — Laboratory — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-21-sierra-pacific-vamc-chief-medicine-service` — Chief — Medicine Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-21-sierra-pacific-vamc-chief-mental-health-service` — Chief — Mental Health Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-21-sierra-pacific-vamc-chief-nursing` — Chief — Nursing — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-21-sierra-pacific-vamc-chief-pharmacy` — Chief — Pharmacy — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-21-sierra-pacific-vamc-chief-primary-care` — Chief — Primary Care — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-21-sierra-pacific-vamc-chief-radiology` — Chief — Radiology — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-21-sierra-pacific-vamc-chief-rehabilitation` — Chief — Rehabilitation — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-21-sierra-pacific-vamc-chief-social-work` — Chief — Social Work — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-21-sierra-pacific-vamc-chief-surgery-service` — Chief — Surgery Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-21-sierra-pacific-vamc-clinical-pharmacist-multiple` — Clinical Pharmacist (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-21-sierra-pacific-vamc-nurse-multiple` — Nurse (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-21-sierra-pacific-vamc-physician-multiple` — Physician (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-21-sierra-pacific-vamc-social-worker-multiple` — Social Worker (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-21-sierra-pacific-vamc-va-police-chief` — VA Police Chief — `beneath_replaced_unit`
 
 ## VA Medical Centers  — 23 unpriced
 
 `exec-dept-va-vha-visn-20-northwest-vamc`
 
-- `exec-dept-va-vha-visn-20-northwest-vamc-associate-director-for-patient-care-services-cno` — Associate Director for Patient Care Services (CNO) — `unreached`
-- `exec-dept-va-vha-visn-20-northwest-vamc-canteen-chief` — Canteen Chief — `unreached`
-- `exec-dept-va-vha-visn-20-northwest-vamc-chief-dental-service` — Chief — Dental Service — `unreached`
-- `exec-dept-va-vha-visn-20-northwest-vamc-chief-emergency-medicine` — Chief — Emergency Medicine — `unreached`
-- `exec-dept-va-vha-visn-20-northwest-vamc-chief-environmental-management` — Chief — Environmental Management — `unreached`
-- `exec-dept-va-vha-visn-20-northwest-vamc-chief-facilities-management` — Chief — Facilities Management — `unreached`
-- `exec-dept-va-vha-visn-20-northwest-vamc-chief-finance` — Chief — Finance — `unreached`
-- `exec-dept-va-vha-visn-20-northwest-vamc-chief-human-resources` — Chief — Human Resources — `unreached`
-- `exec-dept-va-vha-visn-20-northwest-vamc-chief-laboratory` — Chief — Laboratory — `unreached`
-- `exec-dept-va-vha-visn-20-northwest-vamc-chief-medicine-service` — Chief — Medicine Service — `unreached`
-- `exec-dept-va-vha-visn-20-northwest-vamc-chief-mental-health-service` — Chief — Mental Health Service — `unreached`
-- `exec-dept-va-vha-visn-20-northwest-vamc-chief-nursing` — Chief — Nursing — `unreached`
-- `exec-dept-va-vha-visn-20-northwest-vamc-chief-pharmacy` — Chief — Pharmacy — `unreached`
-- `exec-dept-va-vha-visn-20-northwest-vamc-chief-primary-care` — Chief — Primary Care — `unreached`
-- `exec-dept-va-vha-visn-20-northwest-vamc-chief-radiology` — Chief — Radiology — `unreached`
-- `exec-dept-va-vha-visn-20-northwest-vamc-chief-rehabilitation` — Chief — Rehabilitation — `unreached`
-- `exec-dept-va-vha-visn-20-northwest-vamc-chief-social-work` — Chief — Social Work — `unreached`
-- `exec-dept-va-vha-visn-20-northwest-vamc-chief-surgery-service` — Chief — Surgery Service — `unreached`
-- `exec-dept-va-vha-visn-20-northwest-vamc-clinical-pharmacist-multiple` — Clinical Pharmacist (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-20-northwest-vamc-nurse-multiple` — Nurse (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-20-northwest-vamc-physician-multiple` — Physician (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-20-northwest-vamc-social-worker-multiple` — Social Worker (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-20-northwest-vamc-va-police-chief` — VA Police Chief — `unreached`
+- `exec-dept-va-vha-visn-20-northwest-vamc-associate-director-for-patient-care-services-cno` — Associate Director for Patient Care Services (CNO) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-20-northwest-vamc-canteen-chief` — Canteen Chief — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-20-northwest-vamc-chief-dental-service` — Chief — Dental Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-20-northwest-vamc-chief-emergency-medicine` — Chief — Emergency Medicine — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-20-northwest-vamc-chief-environmental-management` — Chief — Environmental Management — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-20-northwest-vamc-chief-facilities-management` — Chief — Facilities Management — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-20-northwest-vamc-chief-finance` — Chief — Finance — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-20-northwest-vamc-chief-human-resources` — Chief — Human Resources — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-20-northwest-vamc-chief-laboratory` — Chief — Laboratory — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-20-northwest-vamc-chief-medicine-service` — Chief — Medicine Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-20-northwest-vamc-chief-mental-health-service` — Chief — Mental Health Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-20-northwest-vamc-chief-nursing` — Chief — Nursing — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-20-northwest-vamc-chief-pharmacy` — Chief — Pharmacy — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-20-northwest-vamc-chief-primary-care` — Chief — Primary Care — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-20-northwest-vamc-chief-radiology` — Chief — Radiology — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-20-northwest-vamc-chief-rehabilitation` — Chief — Rehabilitation — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-20-northwest-vamc-chief-social-work` — Chief — Social Work — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-20-northwest-vamc-chief-surgery-service` — Chief — Surgery Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-20-northwest-vamc-clinical-pharmacist-multiple` — Clinical Pharmacist (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-20-northwest-vamc-nurse-multiple` — Nurse (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-20-northwest-vamc-physician-multiple` — Physician (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-20-northwest-vamc-social-worker-multiple` — Social Worker (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-20-northwest-vamc-va-police-chief` — VA Police Chief — `beneath_replaced_unit`
 
 ## VA Medical Centers  — 23 unpriced
 
 `exec-dept-va-vha-visn-19-rocky-mountain-vamc`
 
-- `exec-dept-va-vha-visn-19-rocky-mountain-vamc-associate-director-for-patient-care-services-cno` — Associate Director for Patient Care Services (CNO) — `unreached`
-- `exec-dept-va-vha-visn-19-rocky-mountain-vamc-canteen-chief` — Canteen Chief — `unreached`
-- `exec-dept-va-vha-visn-19-rocky-mountain-vamc-chief-dental-service` — Chief — Dental Service — `unreached`
-- `exec-dept-va-vha-visn-19-rocky-mountain-vamc-chief-emergency-medicine` — Chief — Emergency Medicine — `unreached`
-- `exec-dept-va-vha-visn-19-rocky-mountain-vamc-chief-environmental-management` — Chief — Environmental Management — `unreached`
-- `exec-dept-va-vha-visn-19-rocky-mountain-vamc-chief-facilities-management` — Chief — Facilities Management — `unreached`
-- `exec-dept-va-vha-visn-19-rocky-mountain-vamc-chief-finance` — Chief — Finance — `unreached`
-- `exec-dept-va-vha-visn-19-rocky-mountain-vamc-chief-human-resources` — Chief — Human Resources — `unreached`
-- `exec-dept-va-vha-visn-19-rocky-mountain-vamc-chief-laboratory` — Chief — Laboratory — `unreached`
-- `exec-dept-va-vha-visn-19-rocky-mountain-vamc-chief-medicine-service` — Chief — Medicine Service — `unreached`
-- `exec-dept-va-vha-visn-19-rocky-mountain-vamc-chief-mental-health-service` — Chief — Mental Health Service — `unreached`
-- `exec-dept-va-vha-visn-19-rocky-mountain-vamc-chief-nursing` — Chief — Nursing — `unreached`
-- `exec-dept-va-vha-visn-19-rocky-mountain-vamc-chief-pharmacy` — Chief — Pharmacy — `unreached`
-- `exec-dept-va-vha-visn-19-rocky-mountain-vamc-chief-primary-care` — Chief — Primary Care — `unreached`
-- `exec-dept-va-vha-visn-19-rocky-mountain-vamc-chief-radiology` — Chief — Radiology — `unreached`
-- `exec-dept-va-vha-visn-19-rocky-mountain-vamc-chief-rehabilitation` — Chief — Rehabilitation — `unreached`
-- `exec-dept-va-vha-visn-19-rocky-mountain-vamc-chief-social-work` — Chief — Social Work — `unreached`
-- `exec-dept-va-vha-visn-19-rocky-mountain-vamc-chief-surgery-service` — Chief — Surgery Service — `unreached`
-- `exec-dept-va-vha-visn-19-rocky-mountain-vamc-clinical-pharmacist-multiple` — Clinical Pharmacist (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-19-rocky-mountain-vamc-nurse-multiple` — Nurse (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-19-rocky-mountain-vamc-physician-multiple` — Physician (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-19-rocky-mountain-vamc-social-worker-multiple` — Social Worker (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-19-rocky-mountain-vamc-va-police-chief` — VA Police Chief — `unreached`
+- `exec-dept-va-vha-visn-19-rocky-mountain-vamc-associate-director-for-patient-care-services-cno` — Associate Director for Patient Care Services (CNO) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-19-rocky-mountain-vamc-canteen-chief` — Canteen Chief — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-19-rocky-mountain-vamc-chief-dental-service` — Chief — Dental Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-19-rocky-mountain-vamc-chief-emergency-medicine` — Chief — Emergency Medicine — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-19-rocky-mountain-vamc-chief-environmental-management` — Chief — Environmental Management — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-19-rocky-mountain-vamc-chief-facilities-management` — Chief — Facilities Management — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-19-rocky-mountain-vamc-chief-finance` — Chief — Finance — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-19-rocky-mountain-vamc-chief-human-resources` — Chief — Human Resources — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-19-rocky-mountain-vamc-chief-laboratory` — Chief — Laboratory — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-19-rocky-mountain-vamc-chief-medicine-service` — Chief — Medicine Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-19-rocky-mountain-vamc-chief-mental-health-service` — Chief — Mental Health Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-19-rocky-mountain-vamc-chief-nursing` — Chief — Nursing — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-19-rocky-mountain-vamc-chief-pharmacy` — Chief — Pharmacy — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-19-rocky-mountain-vamc-chief-primary-care` — Chief — Primary Care — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-19-rocky-mountain-vamc-chief-radiology` — Chief — Radiology — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-19-rocky-mountain-vamc-chief-rehabilitation` — Chief — Rehabilitation — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-19-rocky-mountain-vamc-chief-social-work` — Chief — Social Work — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-19-rocky-mountain-vamc-chief-surgery-service` — Chief — Surgery Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-19-rocky-mountain-vamc-clinical-pharmacist-multiple` — Clinical Pharmacist (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-19-rocky-mountain-vamc-nurse-multiple` — Nurse (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-19-rocky-mountain-vamc-physician-multiple` — Physician (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-19-rocky-mountain-vamc-social-worker-multiple` — Social Worker (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-19-rocky-mountain-vamc-va-police-chief` — VA Police Chief — `beneath_replaced_unit`
 
 ## VA Medical Centers  — 23 unpriced
 
 `exec-dept-va-vha-visn-17-texas-vamc`
 
-- `exec-dept-va-vha-visn-17-texas-vamc-associate-director-for-patient-care-services-cno` — Associate Director for Patient Care Services (CNO) — `unreached`
-- `exec-dept-va-vha-visn-17-texas-vamc-canteen-chief` — Canteen Chief — `unreached`
-- `exec-dept-va-vha-visn-17-texas-vamc-chief-dental-service` — Chief — Dental Service — `unreached`
-- `exec-dept-va-vha-visn-17-texas-vamc-chief-emergency-medicine` — Chief — Emergency Medicine — `unreached`
-- `exec-dept-va-vha-visn-17-texas-vamc-chief-environmental-management` — Chief — Environmental Management — `unreached`
-- `exec-dept-va-vha-visn-17-texas-vamc-chief-facilities-management` — Chief — Facilities Management — `unreached`
-- `exec-dept-va-vha-visn-17-texas-vamc-chief-finance` — Chief — Finance — `unreached`
-- `exec-dept-va-vha-visn-17-texas-vamc-chief-human-resources` — Chief — Human Resources — `unreached`
-- `exec-dept-va-vha-visn-17-texas-vamc-chief-laboratory` — Chief — Laboratory — `unreached`
-- `exec-dept-va-vha-visn-17-texas-vamc-chief-medicine-service` — Chief — Medicine Service — `unreached`
-- `exec-dept-va-vha-visn-17-texas-vamc-chief-mental-health-service` — Chief — Mental Health Service — `unreached`
-- `exec-dept-va-vha-visn-17-texas-vamc-chief-nursing` — Chief — Nursing — `unreached`
-- `exec-dept-va-vha-visn-17-texas-vamc-chief-pharmacy` — Chief — Pharmacy — `unreached`
-- `exec-dept-va-vha-visn-17-texas-vamc-chief-primary-care` — Chief — Primary Care — `unreached`
-- `exec-dept-va-vha-visn-17-texas-vamc-chief-radiology` — Chief — Radiology — `unreached`
-- `exec-dept-va-vha-visn-17-texas-vamc-chief-rehabilitation` — Chief — Rehabilitation — `unreached`
-- `exec-dept-va-vha-visn-17-texas-vamc-chief-social-work` — Chief — Social Work — `unreached`
-- `exec-dept-va-vha-visn-17-texas-vamc-chief-surgery-service` — Chief — Surgery Service — `unreached`
-- `exec-dept-va-vha-visn-17-texas-vamc-clinical-pharmacist-multiple` — Clinical Pharmacist (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-17-texas-vamc-nurse-multiple` — Nurse (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-17-texas-vamc-physician-multiple` — Physician (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-17-texas-vamc-social-worker-multiple` — Social Worker (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-17-texas-vamc-va-police-chief` — VA Police Chief — `unreached`
+- `exec-dept-va-vha-visn-17-texas-vamc-associate-director-for-patient-care-services-cno` — Associate Director for Patient Care Services (CNO) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-17-texas-vamc-canteen-chief` — Canteen Chief — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-17-texas-vamc-chief-dental-service` — Chief — Dental Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-17-texas-vamc-chief-emergency-medicine` — Chief — Emergency Medicine — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-17-texas-vamc-chief-environmental-management` — Chief — Environmental Management — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-17-texas-vamc-chief-facilities-management` — Chief — Facilities Management — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-17-texas-vamc-chief-finance` — Chief — Finance — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-17-texas-vamc-chief-human-resources` — Chief — Human Resources — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-17-texas-vamc-chief-laboratory` — Chief — Laboratory — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-17-texas-vamc-chief-medicine-service` — Chief — Medicine Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-17-texas-vamc-chief-mental-health-service` — Chief — Mental Health Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-17-texas-vamc-chief-nursing` — Chief — Nursing — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-17-texas-vamc-chief-pharmacy` — Chief — Pharmacy — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-17-texas-vamc-chief-primary-care` — Chief — Primary Care — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-17-texas-vamc-chief-radiology` — Chief — Radiology — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-17-texas-vamc-chief-rehabilitation` — Chief — Rehabilitation — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-17-texas-vamc-chief-social-work` — Chief — Social Work — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-17-texas-vamc-chief-surgery-service` — Chief — Surgery Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-17-texas-vamc-clinical-pharmacist-multiple` — Clinical Pharmacist (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-17-texas-vamc-nurse-multiple` — Nurse (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-17-texas-vamc-physician-multiple` — Physician (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-17-texas-vamc-social-worker-multiple` — Social Worker (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-17-texas-vamc-va-police-chief` — VA Police Chief — `beneath_replaced_unit`
 
 ## VA Medical Centers  — 23 unpriced
 
 `exec-dept-va-vha-visn-16-south-central-vamc`
 
-- `exec-dept-va-vha-visn-16-south-central-vamc-associate-director-for-patient-care-services-cno` — Associate Director for Patient Care Services (CNO) — `unreached`
-- `exec-dept-va-vha-visn-16-south-central-vamc-canteen-chief` — Canteen Chief — `unreached`
-- `exec-dept-va-vha-visn-16-south-central-vamc-chief-dental-service` — Chief — Dental Service — `unreached`
-- `exec-dept-va-vha-visn-16-south-central-vamc-chief-emergency-medicine` — Chief — Emergency Medicine — `unreached`
-- `exec-dept-va-vha-visn-16-south-central-vamc-chief-environmental-management` — Chief — Environmental Management — `unreached`
-- `exec-dept-va-vha-visn-16-south-central-vamc-chief-facilities-management` — Chief — Facilities Management — `unreached`
-- `exec-dept-va-vha-visn-16-south-central-vamc-chief-finance` — Chief — Finance — `unreached`
-- `exec-dept-va-vha-visn-16-south-central-vamc-chief-human-resources` — Chief — Human Resources — `unreached`
-- `exec-dept-va-vha-visn-16-south-central-vamc-chief-laboratory` — Chief — Laboratory — `unreached`
-- `exec-dept-va-vha-visn-16-south-central-vamc-chief-medicine-service` — Chief — Medicine Service — `unreached`
-- `exec-dept-va-vha-visn-16-south-central-vamc-chief-mental-health-service` — Chief — Mental Health Service — `unreached`
-- `exec-dept-va-vha-visn-16-south-central-vamc-chief-nursing` — Chief — Nursing — `unreached`
-- `exec-dept-va-vha-visn-16-south-central-vamc-chief-pharmacy` — Chief — Pharmacy — `unreached`
-- `exec-dept-va-vha-visn-16-south-central-vamc-chief-primary-care` — Chief — Primary Care — `unreached`
-- `exec-dept-va-vha-visn-16-south-central-vamc-chief-radiology` — Chief — Radiology — `unreached`
-- `exec-dept-va-vha-visn-16-south-central-vamc-chief-rehabilitation` — Chief — Rehabilitation — `unreached`
-- `exec-dept-va-vha-visn-16-south-central-vamc-chief-social-work` — Chief — Social Work — `unreached`
-- `exec-dept-va-vha-visn-16-south-central-vamc-chief-surgery-service` — Chief — Surgery Service — `unreached`
-- `exec-dept-va-vha-visn-16-south-central-vamc-clinical-pharmacist-multiple` — Clinical Pharmacist (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-16-south-central-vamc-nurse-multiple` — Nurse (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-16-south-central-vamc-physician-multiple` — Physician (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-16-south-central-vamc-social-worker-multiple` — Social Worker (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-16-south-central-vamc-va-police-chief` — VA Police Chief — `unreached`
+- `exec-dept-va-vha-visn-16-south-central-vamc-associate-director-for-patient-care-services-cno` — Associate Director for Patient Care Services (CNO) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-16-south-central-vamc-canteen-chief` — Canteen Chief — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-16-south-central-vamc-chief-dental-service` — Chief — Dental Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-16-south-central-vamc-chief-emergency-medicine` — Chief — Emergency Medicine — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-16-south-central-vamc-chief-environmental-management` — Chief — Environmental Management — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-16-south-central-vamc-chief-facilities-management` — Chief — Facilities Management — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-16-south-central-vamc-chief-finance` — Chief — Finance — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-16-south-central-vamc-chief-human-resources` — Chief — Human Resources — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-16-south-central-vamc-chief-laboratory` — Chief — Laboratory — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-16-south-central-vamc-chief-medicine-service` — Chief — Medicine Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-16-south-central-vamc-chief-mental-health-service` — Chief — Mental Health Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-16-south-central-vamc-chief-nursing` — Chief — Nursing — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-16-south-central-vamc-chief-pharmacy` — Chief — Pharmacy — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-16-south-central-vamc-chief-primary-care` — Chief — Primary Care — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-16-south-central-vamc-chief-radiology` — Chief — Radiology — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-16-south-central-vamc-chief-rehabilitation` — Chief — Rehabilitation — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-16-south-central-vamc-chief-social-work` — Chief — Social Work — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-16-south-central-vamc-chief-surgery-service` — Chief — Surgery Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-16-south-central-vamc-clinical-pharmacist-multiple` — Clinical Pharmacist (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-16-south-central-vamc-nurse-multiple` — Nurse (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-16-south-central-vamc-physician-multiple` — Physician (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-16-south-central-vamc-social-worker-multiple` — Social Worker (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-16-south-central-vamc-va-police-chief` — VA Police Chief — `beneath_replaced_unit`
 
 ## VA Medical Centers  — 23 unpriced
 
 `exec-dept-va-vha-visn-15-heartland-vamc`
 
-- `exec-dept-va-vha-visn-15-heartland-vamc-associate-director-for-patient-care-services-cno` — Associate Director for Patient Care Services (CNO) — `unreached`
-- `exec-dept-va-vha-visn-15-heartland-vamc-canteen-chief` — Canteen Chief — `unreached`
-- `exec-dept-va-vha-visn-15-heartland-vamc-chief-dental-service` — Chief — Dental Service — `unreached`
-- `exec-dept-va-vha-visn-15-heartland-vamc-chief-emergency-medicine` — Chief — Emergency Medicine — `unreached`
-- `exec-dept-va-vha-visn-15-heartland-vamc-chief-environmental-management` — Chief — Environmental Management — `unreached`
-- `exec-dept-va-vha-visn-15-heartland-vamc-chief-facilities-management` — Chief — Facilities Management — `unreached`
-- `exec-dept-va-vha-visn-15-heartland-vamc-chief-finance` — Chief — Finance — `unreached`
-- `exec-dept-va-vha-visn-15-heartland-vamc-chief-human-resources` — Chief — Human Resources — `unreached`
-- `exec-dept-va-vha-visn-15-heartland-vamc-chief-laboratory` — Chief — Laboratory — `unreached`
-- `exec-dept-va-vha-visn-15-heartland-vamc-chief-medicine-service` — Chief — Medicine Service — `unreached`
-- `exec-dept-va-vha-visn-15-heartland-vamc-chief-mental-health-service` — Chief — Mental Health Service — `unreached`
-- `exec-dept-va-vha-visn-15-heartland-vamc-chief-nursing` — Chief — Nursing — `unreached`
-- `exec-dept-va-vha-visn-15-heartland-vamc-chief-pharmacy` — Chief — Pharmacy — `unreached`
-- `exec-dept-va-vha-visn-15-heartland-vamc-chief-primary-care` — Chief — Primary Care — `unreached`
-- `exec-dept-va-vha-visn-15-heartland-vamc-chief-radiology` — Chief — Radiology — `unreached`
-- `exec-dept-va-vha-visn-15-heartland-vamc-chief-rehabilitation` — Chief — Rehabilitation — `unreached`
-- `exec-dept-va-vha-visn-15-heartland-vamc-chief-social-work` — Chief — Social Work — `unreached`
-- `exec-dept-va-vha-visn-15-heartland-vamc-chief-surgery-service` — Chief — Surgery Service — `unreached`
-- `exec-dept-va-vha-visn-15-heartland-vamc-clinical-pharmacist-multiple` — Clinical Pharmacist (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-15-heartland-vamc-nurse-multiple` — Nurse (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-15-heartland-vamc-physician-multiple` — Physician (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-15-heartland-vamc-social-worker-multiple` — Social Worker (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-15-heartland-vamc-va-police-chief` — VA Police Chief — `unreached`
+- `exec-dept-va-vha-visn-15-heartland-vamc-associate-director-for-patient-care-services-cno` — Associate Director for Patient Care Services (CNO) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-15-heartland-vamc-canteen-chief` — Canteen Chief — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-15-heartland-vamc-chief-dental-service` — Chief — Dental Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-15-heartland-vamc-chief-emergency-medicine` — Chief — Emergency Medicine — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-15-heartland-vamc-chief-environmental-management` — Chief — Environmental Management — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-15-heartland-vamc-chief-facilities-management` — Chief — Facilities Management — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-15-heartland-vamc-chief-finance` — Chief — Finance — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-15-heartland-vamc-chief-human-resources` — Chief — Human Resources — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-15-heartland-vamc-chief-laboratory` — Chief — Laboratory — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-15-heartland-vamc-chief-medicine-service` — Chief — Medicine Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-15-heartland-vamc-chief-mental-health-service` — Chief — Mental Health Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-15-heartland-vamc-chief-nursing` — Chief — Nursing — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-15-heartland-vamc-chief-pharmacy` — Chief — Pharmacy — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-15-heartland-vamc-chief-primary-care` — Chief — Primary Care — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-15-heartland-vamc-chief-radiology` — Chief — Radiology — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-15-heartland-vamc-chief-rehabilitation` — Chief — Rehabilitation — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-15-heartland-vamc-chief-social-work` — Chief — Social Work — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-15-heartland-vamc-chief-surgery-service` — Chief — Surgery Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-15-heartland-vamc-clinical-pharmacist-multiple` — Clinical Pharmacist (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-15-heartland-vamc-nurse-multiple` — Nurse (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-15-heartland-vamc-physician-multiple` — Physician (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-15-heartland-vamc-social-worker-multiple` — Social Worker (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-15-heartland-vamc-va-police-chief` — VA Police Chief — `beneath_replaced_unit`
 
 ## VA Medical Centers  — 23 unpriced
 
 `exec-dept-va-vha-visn-12-great-lakes-vamc`
 
-- `exec-dept-va-vha-visn-12-great-lakes-vamc-associate-director-for-patient-care-services-cno` — Associate Director for Patient Care Services (CNO) — `unreached`
-- `exec-dept-va-vha-visn-12-great-lakes-vamc-canteen-chief` — Canteen Chief — `unreached`
-- `exec-dept-va-vha-visn-12-great-lakes-vamc-chief-dental-service` — Chief — Dental Service — `unreached`
-- `exec-dept-va-vha-visn-12-great-lakes-vamc-chief-emergency-medicine` — Chief — Emergency Medicine — `unreached`
-- `exec-dept-va-vha-visn-12-great-lakes-vamc-chief-environmental-management` — Chief — Environmental Management — `unreached`
-- `exec-dept-va-vha-visn-12-great-lakes-vamc-chief-facilities-management` — Chief — Facilities Management — `unreached`
-- `exec-dept-va-vha-visn-12-great-lakes-vamc-chief-finance` — Chief — Finance — `unreached`
-- `exec-dept-va-vha-visn-12-great-lakes-vamc-chief-human-resources` — Chief — Human Resources — `unreached`
-- `exec-dept-va-vha-visn-12-great-lakes-vamc-chief-laboratory` — Chief — Laboratory — `unreached`
-- `exec-dept-va-vha-visn-12-great-lakes-vamc-chief-medicine-service` — Chief — Medicine Service — `unreached`
-- `exec-dept-va-vha-visn-12-great-lakes-vamc-chief-mental-health-service` — Chief — Mental Health Service — `unreached`
-- `exec-dept-va-vha-visn-12-great-lakes-vamc-chief-nursing` — Chief — Nursing — `unreached`
-- `exec-dept-va-vha-visn-12-great-lakes-vamc-chief-pharmacy` — Chief — Pharmacy — `unreached`
-- `exec-dept-va-vha-visn-12-great-lakes-vamc-chief-primary-care` — Chief — Primary Care — `unreached`
-- `exec-dept-va-vha-visn-12-great-lakes-vamc-chief-radiology` — Chief — Radiology — `unreached`
-- `exec-dept-va-vha-visn-12-great-lakes-vamc-chief-rehabilitation` — Chief — Rehabilitation — `unreached`
-- `exec-dept-va-vha-visn-12-great-lakes-vamc-chief-social-work` — Chief — Social Work — `unreached`
-- `exec-dept-va-vha-visn-12-great-lakes-vamc-chief-surgery-service` — Chief — Surgery Service — `unreached`
-- `exec-dept-va-vha-visn-12-great-lakes-vamc-clinical-pharmacist-multiple` — Clinical Pharmacist (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-12-great-lakes-vamc-nurse-multiple` — Nurse (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-12-great-lakes-vamc-physician-multiple` — Physician (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-12-great-lakes-vamc-social-worker-multiple` — Social Worker (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-12-great-lakes-vamc-va-police-chief` — VA Police Chief — `unreached`
+- `exec-dept-va-vha-visn-12-great-lakes-vamc-associate-director-for-patient-care-services-cno` — Associate Director for Patient Care Services (CNO) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-12-great-lakes-vamc-canteen-chief` — Canteen Chief — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-12-great-lakes-vamc-chief-dental-service` — Chief — Dental Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-12-great-lakes-vamc-chief-emergency-medicine` — Chief — Emergency Medicine — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-12-great-lakes-vamc-chief-environmental-management` — Chief — Environmental Management — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-12-great-lakes-vamc-chief-facilities-management` — Chief — Facilities Management — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-12-great-lakes-vamc-chief-finance` — Chief — Finance — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-12-great-lakes-vamc-chief-human-resources` — Chief — Human Resources — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-12-great-lakes-vamc-chief-laboratory` — Chief — Laboratory — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-12-great-lakes-vamc-chief-medicine-service` — Chief — Medicine Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-12-great-lakes-vamc-chief-mental-health-service` — Chief — Mental Health Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-12-great-lakes-vamc-chief-nursing` — Chief — Nursing — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-12-great-lakes-vamc-chief-pharmacy` — Chief — Pharmacy — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-12-great-lakes-vamc-chief-primary-care` — Chief — Primary Care — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-12-great-lakes-vamc-chief-radiology` — Chief — Radiology — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-12-great-lakes-vamc-chief-rehabilitation` — Chief — Rehabilitation — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-12-great-lakes-vamc-chief-social-work` — Chief — Social Work — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-12-great-lakes-vamc-chief-surgery-service` — Chief — Surgery Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-12-great-lakes-vamc-clinical-pharmacist-multiple` — Clinical Pharmacist (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-12-great-lakes-vamc-nurse-multiple` — Nurse (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-12-great-lakes-vamc-physician-multiple` — Physician (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-12-great-lakes-vamc-social-worker-multiple` — Social Worker (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-12-great-lakes-vamc-va-police-chief` — VA Police Chief — `beneath_replaced_unit`
 
 ## VA Medical Centers  — 23 unpriced
 
 `exec-dept-va-vha-visn-10-great-lakes-vamc`
 
-- `exec-dept-va-vha-visn-10-great-lakes-vamc-associate-director-for-patient-care-services-cno` — Associate Director for Patient Care Services (CNO) — `unreached`
-- `exec-dept-va-vha-visn-10-great-lakes-vamc-canteen-chief` — Canteen Chief — `unreached`
-- `exec-dept-va-vha-visn-10-great-lakes-vamc-chief-dental-service` — Chief — Dental Service — `unreached`
-- `exec-dept-va-vha-visn-10-great-lakes-vamc-chief-emergency-medicine` — Chief — Emergency Medicine — `unreached`
-- `exec-dept-va-vha-visn-10-great-lakes-vamc-chief-environmental-management` — Chief — Environmental Management — `unreached`
-- `exec-dept-va-vha-visn-10-great-lakes-vamc-chief-facilities-management` — Chief — Facilities Management — `unreached`
-- `exec-dept-va-vha-visn-10-great-lakes-vamc-chief-finance` — Chief — Finance — `unreached`
-- `exec-dept-va-vha-visn-10-great-lakes-vamc-chief-human-resources` — Chief — Human Resources — `unreached`
-- `exec-dept-va-vha-visn-10-great-lakes-vamc-chief-laboratory` — Chief — Laboratory — `unreached`
-- `exec-dept-va-vha-visn-10-great-lakes-vamc-chief-medicine-service` — Chief — Medicine Service — `unreached`
-- `exec-dept-va-vha-visn-10-great-lakes-vamc-chief-mental-health-service` — Chief — Mental Health Service — `unreached`
-- `exec-dept-va-vha-visn-10-great-lakes-vamc-chief-nursing` — Chief — Nursing — `unreached`
-- `exec-dept-va-vha-visn-10-great-lakes-vamc-chief-pharmacy` — Chief — Pharmacy — `unreached`
-- `exec-dept-va-vha-visn-10-great-lakes-vamc-chief-primary-care` — Chief — Primary Care — `unreached`
-- `exec-dept-va-vha-visn-10-great-lakes-vamc-chief-radiology` — Chief — Radiology — `unreached`
-- `exec-dept-va-vha-visn-10-great-lakes-vamc-chief-rehabilitation` — Chief — Rehabilitation — `unreached`
-- `exec-dept-va-vha-visn-10-great-lakes-vamc-chief-social-work` — Chief — Social Work — `unreached`
-- `exec-dept-va-vha-visn-10-great-lakes-vamc-chief-surgery-service` — Chief — Surgery Service — `unreached`
-- `exec-dept-va-vha-visn-10-great-lakes-vamc-clinical-pharmacist-multiple` — Clinical Pharmacist (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-10-great-lakes-vamc-nurse-multiple` — Nurse (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-10-great-lakes-vamc-physician-multiple` — Physician (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-10-great-lakes-vamc-social-worker-multiple` — Social Worker (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-10-great-lakes-vamc-va-police-chief` — VA Police Chief — `unreached`
+- `exec-dept-va-vha-visn-10-great-lakes-vamc-associate-director-for-patient-care-services-cno` — Associate Director for Patient Care Services (CNO) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-10-great-lakes-vamc-canteen-chief` — Canteen Chief — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-10-great-lakes-vamc-chief-dental-service` — Chief — Dental Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-10-great-lakes-vamc-chief-emergency-medicine` — Chief — Emergency Medicine — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-10-great-lakes-vamc-chief-environmental-management` — Chief — Environmental Management — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-10-great-lakes-vamc-chief-facilities-management` — Chief — Facilities Management — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-10-great-lakes-vamc-chief-finance` — Chief — Finance — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-10-great-lakes-vamc-chief-human-resources` — Chief — Human Resources — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-10-great-lakes-vamc-chief-laboratory` — Chief — Laboratory — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-10-great-lakes-vamc-chief-medicine-service` — Chief — Medicine Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-10-great-lakes-vamc-chief-mental-health-service` — Chief — Mental Health Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-10-great-lakes-vamc-chief-nursing` — Chief — Nursing — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-10-great-lakes-vamc-chief-pharmacy` — Chief — Pharmacy — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-10-great-lakes-vamc-chief-primary-care` — Chief — Primary Care — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-10-great-lakes-vamc-chief-radiology` — Chief — Radiology — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-10-great-lakes-vamc-chief-rehabilitation` — Chief — Rehabilitation — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-10-great-lakes-vamc-chief-social-work` — Chief — Social Work — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-10-great-lakes-vamc-chief-surgery-service` — Chief — Surgery Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-10-great-lakes-vamc-clinical-pharmacist-multiple` — Clinical Pharmacist (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-10-great-lakes-vamc-nurse-multiple` — Nurse (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-10-great-lakes-vamc-physician-multiple` — Physician (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-10-great-lakes-vamc-social-worker-multiple` — Social Worker (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-10-great-lakes-vamc-va-police-chief` — VA Police Chief — `beneath_replaced_unit`
 
 ## VA Medical Centers  — 23 unpriced
 
 `exec-dept-va-vha-visn-9-mid-south-vamc`
 
-- `exec-dept-va-vha-visn-9-mid-south-vamc-associate-director-for-patient-care-services-cno` — Associate Director for Patient Care Services (CNO) — `unreached`
-- `exec-dept-va-vha-visn-9-mid-south-vamc-canteen-chief` — Canteen Chief — `unreached`
-- `exec-dept-va-vha-visn-9-mid-south-vamc-chief-dental-service` — Chief — Dental Service — `unreached`
-- `exec-dept-va-vha-visn-9-mid-south-vamc-chief-emergency-medicine` — Chief — Emergency Medicine — `unreached`
-- `exec-dept-va-vha-visn-9-mid-south-vamc-chief-environmental-management` — Chief — Environmental Management — `unreached`
-- `exec-dept-va-vha-visn-9-mid-south-vamc-chief-facilities-management` — Chief — Facilities Management — `unreached`
-- `exec-dept-va-vha-visn-9-mid-south-vamc-chief-finance` — Chief — Finance — `unreached`
-- `exec-dept-va-vha-visn-9-mid-south-vamc-chief-human-resources` — Chief — Human Resources — `unreached`
-- `exec-dept-va-vha-visn-9-mid-south-vamc-chief-laboratory` — Chief — Laboratory — `unreached`
-- `exec-dept-va-vha-visn-9-mid-south-vamc-chief-medicine-service` — Chief — Medicine Service — `unreached`
-- `exec-dept-va-vha-visn-9-mid-south-vamc-chief-mental-health-service` — Chief — Mental Health Service — `unreached`
-- `exec-dept-va-vha-visn-9-mid-south-vamc-chief-nursing` — Chief — Nursing — `unreached`
-- `exec-dept-va-vha-visn-9-mid-south-vamc-chief-pharmacy` — Chief — Pharmacy — `unreached`
-- `exec-dept-va-vha-visn-9-mid-south-vamc-chief-primary-care` — Chief — Primary Care — `unreached`
-- `exec-dept-va-vha-visn-9-mid-south-vamc-chief-radiology` — Chief — Radiology — `unreached`
-- `exec-dept-va-vha-visn-9-mid-south-vamc-chief-rehabilitation` — Chief — Rehabilitation — `unreached`
-- `exec-dept-va-vha-visn-9-mid-south-vamc-chief-social-work` — Chief — Social Work — `unreached`
-- `exec-dept-va-vha-visn-9-mid-south-vamc-chief-surgery-service` — Chief — Surgery Service — `unreached`
-- `exec-dept-va-vha-visn-9-mid-south-vamc-clinical-pharmacist-multiple` — Clinical Pharmacist (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-9-mid-south-vamc-nurse-multiple` — Nurse (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-9-mid-south-vamc-physician-multiple` — Physician (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-9-mid-south-vamc-social-worker-multiple` — Social Worker (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-9-mid-south-vamc-va-police-chief` — VA Police Chief — `unreached`
+- `exec-dept-va-vha-visn-9-mid-south-vamc-associate-director-for-patient-care-services-cno` — Associate Director for Patient Care Services (CNO) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-9-mid-south-vamc-canteen-chief` — Canteen Chief — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-9-mid-south-vamc-chief-dental-service` — Chief — Dental Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-9-mid-south-vamc-chief-emergency-medicine` — Chief — Emergency Medicine — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-9-mid-south-vamc-chief-environmental-management` — Chief — Environmental Management — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-9-mid-south-vamc-chief-facilities-management` — Chief — Facilities Management — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-9-mid-south-vamc-chief-finance` — Chief — Finance — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-9-mid-south-vamc-chief-human-resources` — Chief — Human Resources — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-9-mid-south-vamc-chief-laboratory` — Chief — Laboratory — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-9-mid-south-vamc-chief-medicine-service` — Chief — Medicine Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-9-mid-south-vamc-chief-mental-health-service` — Chief — Mental Health Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-9-mid-south-vamc-chief-nursing` — Chief — Nursing — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-9-mid-south-vamc-chief-pharmacy` — Chief — Pharmacy — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-9-mid-south-vamc-chief-primary-care` — Chief — Primary Care — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-9-mid-south-vamc-chief-radiology` — Chief — Radiology — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-9-mid-south-vamc-chief-rehabilitation` — Chief — Rehabilitation — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-9-mid-south-vamc-chief-social-work` — Chief — Social Work — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-9-mid-south-vamc-chief-surgery-service` — Chief — Surgery Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-9-mid-south-vamc-clinical-pharmacist-multiple` — Clinical Pharmacist (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-9-mid-south-vamc-nurse-multiple` — Nurse (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-9-mid-south-vamc-physician-multiple` — Physician (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-9-mid-south-vamc-social-worker-multiple` — Social Worker (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-9-mid-south-vamc-va-police-chief` — VA Police Chief — `beneath_replaced_unit`
 
 ## VA Medical Centers  — 23 unpriced
 
 `exec-dept-va-vha-visn-8-sunshine-fl-vamc`
 
-- `exec-dept-va-vha-visn-8-sunshine-fl-vamc-associate-director-for-patient-care-services-cno` — Associate Director for Patient Care Services (CNO) — `unreached`
-- `exec-dept-va-vha-visn-8-sunshine-fl-vamc-canteen-chief` — Canteen Chief — `unreached`
-- `exec-dept-va-vha-visn-8-sunshine-fl-vamc-chief-dental-service` — Chief — Dental Service — `unreached`
-- `exec-dept-va-vha-visn-8-sunshine-fl-vamc-chief-emergency-medicine` — Chief — Emergency Medicine — `unreached`
-- `exec-dept-va-vha-visn-8-sunshine-fl-vamc-chief-environmental-management` — Chief — Environmental Management — `unreached`
-- `exec-dept-va-vha-visn-8-sunshine-fl-vamc-chief-facilities-management` — Chief — Facilities Management — `unreached`
-- `exec-dept-va-vha-visn-8-sunshine-fl-vamc-chief-finance` — Chief — Finance — `unreached`
-- `exec-dept-va-vha-visn-8-sunshine-fl-vamc-chief-human-resources` — Chief — Human Resources — `unreached`
-- `exec-dept-va-vha-visn-8-sunshine-fl-vamc-chief-laboratory` — Chief — Laboratory — `unreached`
-- `exec-dept-va-vha-visn-8-sunshine-fl-vamc-chief-medicine-service` — Chief — Medicine Service — `unreached`
-- `exec-dept-va-vha-visn-8-sunshine-fl-vamc-chief-mental-health-service` — Chief — Mental Health Service — `unreached`
-- `exec-dept-va-vha-visn-8-sunshine-fl-vamc-chief-nursing` — Chief — Nursing — `unreached`
-- `exec-dept-va-vha-visn-8-sunshine-fl-vamc-chief-pharmacy` — Chief — Pharmacy — `unreached`
-- `exec-dept-va-vha-visn-8-sunshine-fl-vamc-chief-primary-care` — Chief — Primary Care — `unreached`
-- `exec-dept-va-vha-visn-8-sunshine-fl-vamc-chief-radiology` — Chief — Radiology — `unreached`
-- `exec-dept-va-vha-visn-8-sunshine-fl-vamc-chief-rehabilitation` — Chief — Rehabilitation — `unreached`
-- `exec-dept-va-vha-visn-8-sunshine-fl-vamc-chief-social-work` — Chief — Social Work — `unreached`
-- `exec-dept-va-vha-visn-8-sunshine-fl-vamc-chief-surgery-service` — Chief — Surgery Service — `unreached`
-- `exec-dept-va-vha-visn-8-sunshine-fl-vamc-clinical-pharmacist-multiple` — Clinical Pharmacist (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-8-sunshine-fl-vamc-nurse-multiple` — Nurse (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-8-sunshine-fl-vamc-physician-multiple` — Physician (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-8-sunshine-fl-vamc-social-worker-multiple` — Social Worker (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-8-sunshine-fl-vamc-va-police-chief` — VA Police Chief — `unreached`
+- `exec-dept-va-vha-visn-8-sunshine-fl-vamc-associate-director-for-patient-care-services-cno` — Associate Director for Patient Care Services (CNO) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-8-sunshine-fl-vamc-canteen-chief` — Canteen Chief — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-8-sunshine-fl-vamc-chief-dental-service` — Chief — Dental Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-8-sunshine-fl-vamc-chief-emergency-medicine` — Chief — Emergency Medicine — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-8-sunshine-fl-vamc-chief-environmental-management` — Chief — Environmental Management — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-8-sunshine-fl-vamc-chief-facilities-management` — Chief — Facilities Management — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-8-sunshine-fl-vamc-chief-finance` — Chief — Finance — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-8-sunshine-fl-vamc-chief-human-resources` — Chief — Human Resources — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-8-sunshine-fl-vamc-chief-laboratory` — Chief — Laboratory — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-8-sunshine-fl-vamc-chief-medicine-service` — Chief — Medicine Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-8-sunshine-fl-vamc-chief-mental-health-service` — Chief — Mental Health Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-8-sunshine-fl-vamc-chief-nursing` — Chief — Nursing — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-8-sunshine-fl-vamc-chief-pharmacy` — Chief — Pharmacy — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-8-sunshine-fl-vamc-chief-primary-care` — Chief — Primary Care — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-8-sunshine-fl-vamc-chief-radiology` — Chief — Radiology — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-8-sunshine-fl-vamc-chief-rehabilitation` — Chief — Rehabilitation — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-8-sunshine-fl-vamc-chief-social-work` — Chief — Social Work — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-8-sunshine-fl-vamc-chief-surgery-service` — Chief — Surgery Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-8-sunshine-fl-vamc-clinical-pharmacist-multiple` — Clinical Pharmacist (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-8-sunshine-fl-vamc-nurse-multiple` — Nurse (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-8-sunshine-fl-vamc-physician-multiple` — Physician (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-8-sunshine-fl-vamc-social-worker-multiple` — Social Worker (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-8-sunshine-fl-vamc-va-police-chief` — VA Police Chief — `beneath_replaced_unit`
 
 ## VA Medical Centers  — 23 unpriced
 
 `exec-dept-va-vha-visn-7-southeast-vamc`
 
-- `exec-dept-va-vha-visn-7-southeast-vamc-associate-director-for-patient-care-services-cno` — Associate Director for Patient Care Services (CNO) — `unreached`
-- `exec-dept-va-vha-visn-7-southeast-vamc-canteen-chief` — Canteen Chief — `unreached`
-- `exec-dept-va-vha-visn-7-southeast-vamc-chief-dental-service` — Chief — Dental Service — `unreached`
-- `exec-dept-va-vha-visn-7-southeast-vamc-chief-emergency-medicine` — Chief — Emergency Medicine — `unreached`
-- `exec-dept-va-vha-visn-7-southeast-vamc-chief-environmental-management` — Chief — Environmental Management — `unreached`
-- `exec-dept-va-vha-visn-7-southeast-vamc-chief-facilities-management` — Chief — Facilities Management — `unreached`
-- `exec-dept-va-vha-visn-7-southeast-vamc-chief-finance` — Chief — Finance — `unreached`
-- `exec-dept-va-vha-visn-7-southeast-vamc-chief-human-resources` — Chief — Human Resources — `unreached`
-- `exec-dept-va-vha-visn-7-southeast-vamc-chief-laboratory` — Chief — Laboratory — `unreached`
-- `exec-dept-va-vha-visn-7-southeast-vamc-chief-medicine-service` — Chief — Medicine Service — `unreached`
-- `exec-dept-va-vha-visn-7-southeast-vamc-chief-mental-health-service` — Chief — Mental Health Service — `unreached`
-- `exec-dept-va-vha-visn-7-southeast-vamc-chief-nursing` — Chief — Nursing — `unreached`
-- `exec-dept-va-vha-visn-7-southeast-vamc-chief-pharmacy` — Chief — Pharmacy — `unreached`
-- `exec-dept-va-vha-visn-7-southeast-vamc-chief-primary-care` — Chief — Primary Care — `unreached`
-- `exec-dept-va-vha-visn-7-southeast-vamc-chief-radiology` — Chief — Radiology — `unreached`
-- `exec-dept-va-vha-visn-7-southeast-vamc-chief-rehabilitation` — Chief — Rehabilitation — `unreached`
-- `exec-dept-va-vha-visn-7-southeast-vamc-chief-social-work` — Chief — Social Work — `unreached`
-- `exec-dept-va-vha-visn-7-southeast-vamc-chief-surgery-service` — Chief — Surgery Service — `unreached`
-- `exec-dept-va-vha-visn-7-southeast-vamc-clinical-pharmacist-multiple` — Clinical Pharmacist (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-7-southeast-vamc-nurse-multiple` — Nurse (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-7-southeast-vamc-physician-multiple` — Physician (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-7-southeast-vamc-social-worker-multiple` — Social Worker (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-7-southeast-vamc-va-police-chief` — VA Police Chief — `unreached`
+- `exec-dept-va-vha-visn-7-southeast-vamc-associate-director-for-patient-care-services-cno` — Associate Director for Patient Care Services (CNO) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-7-southeast-vamc-canteen-chief` — Canteen Chief — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-7-southeast-vamc-chief-dental-service` — Chief — Dental Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-7-southeast-vamc-chief-emergency-medicine` — Chief — Emergency Medicine — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-7-southeast-vamc-chief-environmental-management` — Chief — Environmental Management — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-7-southeast-vamc-chief-facilities-management` — Chief — Facilities Management — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-7-southeast-vamc-chief-finance` — Chief — Finance — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-7-southeast-vamc-chief-human-resources` — Chief — Human Resources — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-7-southeast-vamc-chief-laboratory` — Chief — Laboratory — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-7-southeast-vamc-chief-medicine-service` — Chief — Medicine Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-7-southeast-vamc-chief-mental-health-service` — Chief — Mental Health Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-7-southeast-vamc-chief-nursing` — Chief — Nursing — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-7-southeast-vamc-chief-pharmacy` — Chief — Pharmacy — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-7-southeast-vamc-chief-primary-care` — Chief — Primary Care — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-7-southeast-vamc-chief-radiology` — Chief — Radiology — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-7-southeast-vamc-chief-rehabilitation` — Chief — Rehabilitation — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-7-southeast-vamc-chief-social-work` — Chief — Social Work — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-7-southeast-vamc-chief-surgery-service` — Chief — Surgery Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-7-southeast-vamc-clinical-pharmacist-multiple` — Clinical Pharmacist (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-7-southeast-vamc-nurse-multiple` — Nurse (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-7-southeast-vamc-physician-multiple` — Physician (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-7-southeast-vamc-social-worker-multiple` — Social Worker (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-7-southeast-vamc-va-police-chief` — VA Police Chief — `beneath_replaced_unit`
 
 ## VA Medical Centers  — 23 unpriced
 
 `exec-dept-va-vha-visn-6-mid-atlantic-health-care-vamc`
 
-- `exec-dept-va-vha-visn-6-mid-atlantic-health-care-vamc-associate-director-for-patient-care-services-cno` — Associate Director for Patient Care Services (CNO) — `unreached`
-- `exec-dept-va-vha-visn-6-mid-atlantic-health-care-vamc-canteen-chief` — Canteen Chief — `unreached`
-- `exec-dept-va-vha-visn-6-mid-atlantic-health-care-vamc-chief-dental-service` — Chief — Dental Service — `unreached`
-- `exec-dept-va-vha-visn-6-mid-atlantic-health-care-vamc-chief-emergency-medicine` — Chief — Emergency Medicine — `unreached`
-- `exec-dept-va-vha-visn-6-mid-atlantic-health-care-vamc-chief-environmental-management` — Chief — Environmental Management — `unreached`
-- `exec-dept-va-vha-visn-6-mid-atlantic-health-care-vamc-chief-facilities-management` — Chief — Facilities Management — `unreached`
-- `exec-dept-va-vha-visn-6-mid-atlantic-health-care-vamc-chief-finance` — Chief — Finance — `unreached`
-- `exec-dept-va-vha-visn-6-mid-atlantic-health-care-vamc-chief-human-resources` — Chief — Human Resources — `unreached`
-- `exec-dept-va-vha-visn-6-mid-atlantic-health-care-vamc-chief-laboratory` — Chief — Laboratory — `unreached`
-- `exec-dept-va-vha-visn-6-mid-atlantic-health-care-vamc-chief-medicine-service` — Chief — Medicine Service — `unreached`
-- `exec-dept-va-vha-visn-6-mid-atlantic-health-care-vamc-chief-mental-health-service` — Chief — Mental Health Service — `unreached`
-- `exec-dept-va-vha-visn-6-mid-atlantic-health-care-vamc-chief-nursing` — Chief — Nursing — `unreached`
-- `exec-dept-va-vha-visn-6-mid-atlantic-health-care-vamc-chief-pharmacy` — Chief — Pharmacy — `unreached`
-- `exec-dept-va-vha-visn-6-mid-atlantic-health-care-vamc-chief-primary-care` — Chief — Primary Care — `unreached`
-- `exec-dept-va-vha-visn-6-mid-atlantic-health-care-vamc-chief-radiology` — Chief — Radiology — `unreached`
-- `exec-dept-va-vha-visn-6-mid-atlantic-health-care-vamc-chief-rehabilitation` — Chief — Rehabilitation — `unreached`
-- `exec-dept-va-vha-visn-6-mid-atlantic-health-care-vamc-chief-social-work` — Chief — Social Work — `unreached`
-- `exec-dept-va-vha-visn-6-mid-atlantic-health-care-vamc-chief-surgery-service` — Chief — Surgery Service — `unreached`
-- `exec-dept-va-vha-visn-6-mid-atlantic-health-care-vamc-clinical-pharmacist-multiple` — Clinical Pharmacist (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-6-mid-atlantic-health-care-vamc-nurse-multiple` — Nurse (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-6-mid-atlantic-health-care-vamc-physician-multiple` — Physician (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-6-mid-atlantic-health-care-vamc-social-worker-multiple` — Social Worker (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-6-mid-atlantic-health-care-vamc-va-police-chief` — VA Police Chief — `unreached`
+- `exec-dept-va-vha-visn-6-mid-atlantic-health-care-vamc-associate-director-for-patient-care-services-cno` — Associate Director for Patient Care Services (CNO) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-6-mid-atlantic-health-care-vamc-canteen-chief` — Canteen Chief — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-6-mid-atlantic-health-care-vamc-chief-dental-service` — Chief — Dental Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-6-mid-atlantic-health-care-vamc-chief-emergency-medicine` — Chief — Emergency Medicine — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-6-mid-atlantic-health-care-vamc-chief-environmental-management` — Chief — Environmental Management — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-6-mid-atlantic-health-care-vamc-chief-facilities-management` — Chief — Facilities Management — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-6-mid-atlantic-health-care-vamc-chief-finance` — Chief — Finance — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-6-mid-atlantic-health-care-vamc-chief-human-resources` — Chief — Human Resources — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-6-mid-atlantic-health-care-vamc-chief-laboratory` — Chief — Laboratory — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-6-mid-atlantic-health-care-vamc-chief-medicine-service` — Chief — Medicine Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-6-mid-atlantic-health-care-vamc-chief-mental-health-service` — Chief — Mental Health Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-6-mid-atlantic-health-care-vamc-chief-nursing` — Chief — Nursing — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-6-mid-atlantic-health-care-vamc-chief-pharmacy` — Chief — Pharmacy — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-6-mid-atlantic-health-care-vamc-chief-primary-care` — Chief — Primary Care — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-6-mid-atlantic-health-care-vamc-chief-radiology` — Chief — Radiology — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-6-mid-atlantic-health-care-vamc-chief-rehabilitation` — Chief — Rehabilitation — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-6-mid-atlantic-health-care-vamc-chief-social-work` — Chief — Social Work — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-6-mid-atlantic-health-care-vamc-chief-surgery-service` — Chief — Surgery Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-6-mid-atlantic-health-care-vamc-clinical-pharmacist-multiple` — Clinical Pharmacist (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-6-mid-atlantic-health-care-vamc-nurse-multiple` — Nurse (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-6-mid-atlantic-health-care-vamc-physician-multiple` — Physician (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-6-mid-atlantic-health-care-vamc-social-worker-multiple` — Social Worker (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-6-mid-atlantic-health-care-vamc-va-police-chief` — VA Police Chief — `beneath_replaced_unit`
 
 ## VA Medical Centers  — 23 unpriced
 
 `exec-dept-va-vha-visn-5-capitol-health-care-network-vamc`
 
-- `exec-dept-va-vha-visn-5-capitol-health-care-network-vamc-associate-director-for-patient-care-services-cno` — Associate Director for Patient Care Services (CNO) — `unreached`
-- `exec-dept-va-vha-visn-5-capitol-health-care-network-vamc-canteen-chief` — Canteen Chief — `unreached`
-- `exec-dept-va-vha-visn-5-capitol-health-care-network-vamc-chief-dental-service` — Chief — Dental Service — `unreached`
-- `exec-dept-va-vha-visn-5-capitol-health-care-network-vamc-chief-emergency-medicine` — Chief — Emergency Medicine — `unreached`
-- `exec-dept-va-vha-visn-5-capitol-health-care-network-vamc-chief-environmental-management` — Chief — Environmental Management — `unreached`
-- `exec-dept-va-vha-visn-5-capitol-health-care-network-vamc-chief-facilities-management` — Chief — Facilities Management — `unreached`
-- `exec-dept-va-vha-visn-5-capitol-health-care-network-vamc-chief-finance` — Chief — Finance — `unreached`
-- `exec-dept-va-vha-visn-5-capitol-health-care-network-vamc-chief-human-resources` — Chief — Human Resources — `unreached`
-- `exec-dept-va-vha-visn-5-capitol-health-care-network-vamc-chief-laboratory` — Chief — Laboratory — `unreached`
-- `exec-dept-va-vha-visn-5-capitol-health-care-network-vamc-chief-medicine-service` — Chief — Medicine Service — `unreached`
-- `exec-dept-va-vha-visn-5-capitol-health-care-network-vamc-chief-mental-health-service` — Chief — Mental Health Service — `unreached`
-- `exec-dept-va-vha-visn-5-capitol-health-care-network-vamc-chief-nursing` — Chief — Nursing — `unreached`
-- `exec-dept-va-vha-visn-5-capitol-health-care-network-vamc-chief-pharmacy` — Chief — Pharmacy — `unreached`
-- `exec-dept-va-vha-visn-5-capitol-health-care-network-vamc-chief-primary-care` — Chief — Primary Care — `unreached`
-- `exec-dept-va-vha-visn-5-capitol-health-care-network-vamc-chief-radiology` — Chief — Radiology — `unreached`
-- `exec-dept-va-vha-visn-5-capitol-health-care-network-vamc-chief-rehabilitation` — Chief — Rehabilitation — `unreached`
-- `exec-dept-va-vha-visn-5-capitol-health-care-network-vamc-chief-social-work` — Chief — Social Work — `unreached`
-- `exec-dept-va-vha-visn-5-capitol-health-care-network-vamc-chief-surgery-service` — Chief — Surgery Service — `unreached`
-- `exec-dept-va-vha-visn-5-capitol-health-care-network-vamc-clinical-pharmacist-multiple` — Clinical Pharmacist (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-5-capitol-health-care-network-vamc-nurse-multiple` — Nurse (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-5-capitol-health-care-network-vamc-physician-multiple` — Physician (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-5-capitol-health-care-network-vamc-social-worker-multiple` — Social Worker (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-5-capitol-health-care-network-vamc-va-police-chief` — VA Police Chief — `unreached`
+- `exec-dept-va-vha-visn-5-capitol-health-care-network-vamc-associate-director-for-patient-care-services-cno` — Associate Director for Patient Care Services (CNO) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-5-capitol-health-care-network-vamc-canteen-chief` — Canteen Chief — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-5-capitol-health-care-network-vamc-chief-dental-service` — Chief — Dental Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-5-capitol-health-care-network-vamc-chief-emergency-medicine` — Chief — Emergency Medicine — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-5-capitol-health-care-network-vamc-chief-environmental-management` — Chief — Environmental Management — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-5-capitol-health-care-network-vamc-chief-facilities-management` — Chief — Facilities Management — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-5-capitol-health-care-network-vamc-chief-finance` — Chief — Finance — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-5-capitol-health-care-network-vamc-chief-human-resources` — Chief — Human Resources — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-5-capitol-health-care-network-vamc-chief-laboratory` — Chief — Laboratory — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-5-capitol-health-care-network-vamc-chief-medicine-service` — Chief — Medicine Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-5-capitol-health-care-network-vamc-chief-mental-health-service` — Chief — Mental Health Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-5-capitol-health-care-network-vamc-chief-nursing` — Chief — Nursing — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-5-capitol-health-care-network-vamc-chief-pharmacy` — Chief — Pharmacy — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-5-capitol-health-care-network-vamc-chief-primary-care` — Chief — Primary Care — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-5-capitol-health-care-network-vamc-chief-radiology` — Chief — Radiology — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-5-capitol-health-care-network-vamc-chief-rehabilitation` — Chief — Rehabilitation — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-5-capitol-health-care-network-vamc-chief-social-work` — Chief — Social Work — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-5-capitol-health-care-network-vamc-chief-surgery-service` — Chief — Surgery Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-5-capitol-health-care-network-vamc-clinical-pharmacist-multiple` — Clinical Pharmacist (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-5-capitol-health-care-network-vamc-nurse-multiple` — Nurse (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-5-capitol-health-care-network-vamc-physician-multiple` — Physician (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-5-capitol-health-care-network-vamc-social-worker-multiple` — Social Worker (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-5-capitol-health-care-network-vamc-va-police-chief` — VA Police Chief — `beneath_replaced_unit`
 
 ## VA Medical Centers  — 23 unpriced
 
 `exec-dept-va-vha-visn-4-visn-4-vamc`
 
-- `exec-dept-va-vha-visn-4-visn-4-vamc-associate-director-for-patient-care-services-cno` — Associate Director for Patient Care Services (CNO) — `unreached`
-- `exec-dept-va-vha-visn-4-visn-4-vamc-canteen-chief` — Canteen Chief — `unreached`
-- `exec-dept-va-vha-visn-4-visn-4-vamc-chief-dental-service` — Chief — Dental Service — `unreached`
-- `exec-dept-va-vha-visn-4-visn-4-vamc-chief-emergency-medicine` — Chief — Emergency Medicine — `unreached`
-- `exec-dept-va-vha-visn-4-visn-4-vamc-chief-environmental-management` — Chief — Environmental Management — `unreached`
-- `exec-dept-va-vha-visn-4-visn-4-vamc-chief-facilities-management` — Chief — Facilities Management — `unreached`
-- `exec-dept-va-vha-visn-4-visn-4-vamc-chief-finance` — Chief — Finance — `unreached`
-- `exec-dept-va-vha-visn-4-visn-4-vamc-chief-human-resources` — Chief — Human Resources — `unreached`
-- `exec-dept-va-vha-visn-4-visn-4-vamc-chief-laboratory` — Chief — Laboratory — `unreached`
-- `exec-dept-va-vha-visn-4-visn-4-vamc-chief-medicine-service` — Chief — Medicine Service — `unreached`
-- `exec-dept-va-vha-visn-4-visn-4-vamc-chief-mental-health-service` — Chief — Mental Health Service — `unreached`
-- `exec-dept-va-vha-visn-4-visn-4-vamc-chief-nursing` — Chief — Nursing — `unreached`
-- `exec-dept-va-vha-visn-4-visn-4-vamc-chief-pharmacy` — Chief — Pharmacy — `unreached`
-- `exec-dept-va-vha-visn-4-visn-4-vamc-chief-primary-care` — Chief — Primary Care — `unreached`
-- `exec-dept-va-vha-visn-4-visn-4-vamc-chief-radiology` — Chief — Radiology — `unreached`
-- `exec-dept-va-vha-visn-4-visn-4-vamc-chief-rehabilitation` — Chief — Rehabilitation — `unreached`
-- `exec-dept-va-vha-visn-4-visn-4-vamc-chief-social-work` — Chief — Social Work — `unreached`
-- `exec-dept-va-vha-visn-4-visn-4-vamc-chief-surgery-service` — Chief — Surgery Service — `unreached`
-- `exec-dept-va-vha-visn-4-visn-4-vamc-clinical-pharmacist-multiple` — Clinical Pharmacist (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-4-visn-4-vamc-nurse-multiple` — Nurse (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-4-visn-4-vamc-physician-multiple` — Physician (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-4-visn-4-vamc-social-worker-multiple` — Social Worker (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-4-visn-4-vamc-va-police-chief` — VA Police Chief — `unreached`
+- `exec-dept-va-vha-visn-4-visn-4-vamc-associate-director-for-patient-care-services-cno` — Associate Director for Patient Care Services (CNO) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-4-visn-4-vamc-canteen-chief` — Canteen Chief — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-4-visn-4-vamc-chief-dental-service` — Chief — Dental Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-4-visn-4-vamc-chief-emergency-medicine` — Chief — Emergency Medicine — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-4-visn-4-vamc-chief-environmental-management` — Chief — Environmental Management — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-4-visn-4-vamc-chief-facilities-management` — Chief — Facilities Management — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-4-visn-4-vamc-chief-finance` — Chief — Finance — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-4-visn-4-vamc-chief-human-resources` — Chief — Human Resources — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-4-visn-4-vamc-chief-laboratory` — Chief — Laboratory — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-4-visn-4-vamc-chief-medicine-service` — Chief — Medicine Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-4-visn-4-vamc-chief-mental-health-service` — Chief — Mental Health Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-4-visn-4-vamc-chief-nursing` — Chief — Nursing — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-4-visn-4-vamc-chief-pharmacy` — Chief — Pharmacy — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-4-visn-4-vamc-chief-primary-care` — Chief — Primary Care — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-4-visn-4-vamc-chief-radiology` — Chief — Radiology — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-4-visn-4-vamc-chief-rehabilitation` — Chief — Rehabilitation — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-4-visn-4-vamc-chief-social-work` — Chief — Social Work — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-4-visn-4-vamc-chief-surgery-service` — Chief — Surgery Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-4-visn-4-vamc-clinical-pharmacist-multiple` — Clinical Pharmacist (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-4-visn-4-vamc-nurse-multiple` — Nurse (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-4-visn-4-vamc-physician-multiple` — Physician (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-4-visn-4-vamc-social-worker-multiple` — Social Worker (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-4-visn-4-vamc-va-police-chief` — VA Police Chief — `beneath_replaced_unit`
 
 ## VA Medical Centers  — 23 unpriced
 
 `exec-dept-va-vha-visn-2-mid-atlantic-vamc`
 
-- `exec-dept-va-vha-visn-2-mid-atlantic-vamc-associate-director-for-patient-care-services-cno` — Associate Director for Patient Care Services (CNO) — `unreached`
-- `exec-dept-va-vha-visn-2-mid-atlantic-vamc-canteen-chief` — Canteen Chief — `unreached`
-- `exec-dept-va-vha-visn-2-mid-atlantic-vamc-chief-dental-service` — Chief — Dental Service — `unreached`
-- `exec-dept-va-vha-visn-2-mid-atlantic-vamc-chief-emergency-medicine` — Chief — Emergency Medicine — `unreached`
-- `exec-dept-va-vha-visn-2-mid-atlantic-vamc-chief-environmental-management` — Chief — Environmental Management — `unreached`
-- `exec-dept-va-vha-visn-2-mid-atlantic-vamc-chief-facilities-management` — Chief — Facilities Management — `unreached`
-- `exec-dept-va-vha-visn-2-mid-atlantic-vamc-chief-finance` — Chief — Finance — `unreached`
-- `exec-dept-va-vha-visn-2-mid-atlantic-vamc-chief-human-resources` — Chief — Human Resources — `unreached`
-- `exec-dept-va-vha-visn-2-mid-atlantic-vamc-chief-laboratory` — Chief — Laboratory — `unreached`
-- `exec-dept-va-vha-visn-2-mid-atlantic-vamc-chief-medicine-service` — Chief — Medicine Service — `unreached`
-- `exec-dept-va-vha-visn-2-mid-atlantic-vamc-chief-mental-health-service` — Chief — Mental Health Service — `unreached`
-- `exec-dept-va-vha-visn-2-mid-atlantic-vamc-chief-nursing` — Chief — Nursing — `unreached`
-- `exec-dept-va-vha-visn-2-mid-atlantic-vamc-chief-pharmacy` — Chief — Pharmacy — `unreached`
-- `exec-dept-va-vha-visn-2-mid-atlantic-vamc-chief-primary-care` — Chief — Primary Care — `unreached`
-- `exec-dept-va-vha-visn-2-mid-atlantic-vamc-chief-radiology` — Chief — Radiology — `unreached`
-- `exec-dept-va-vha-visn-2-mid-atlantic-vamc-chief-rehabilitation` — Chief — Rehabilitation — `unreached`
-- `exec-dept-va-vha-visn-2-mid-atlantic-vamc-chief-social-work` — Chief — Social Work — `unreached`
-- `exec-dept-va-vha-visn-2-mid-atlantic-vamc-chief-surgery-service` — Chief — Surgery Service — `unreached`
-- `exec-dept-va-vha-visn-2-mid-atlantic-vamc-clinical-pharmacist-multiple` — Clinical Pharmacist (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-2-mid-atlantic-vamc-nurse-multiple` — Nurse (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-2-mid-atlantic-vamc-physician-multiple` — Physician (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-2-mid-atlantic-vamc-social-worker-multiple` — Social Worker (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-2-mid-atlantic-vamc-va-police-chief` — VA Police Chief — `unreached`
+- `exec-dept-va-vha-visn-2-mid-atlantic-vamc-associate-director-for-patient-care-services-cno` — Associate Director for Patient Care Services (CNO) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-2-mid-atlantic-vamc-canteen-chief` — Canteen Chief — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-2-mid-atlantic-vamc-chief-dental-service` — Chief — Dental Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-2-mid-atlantic-vamc-chief-emergency-medicine` — Chief — Emergency Medicine — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-2-mid-atlantic-vamc-chief-environmental-management` — Chief — Environmental Management — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-2-mid-atlantic-vamc-chief-facilities-management` — Chief — Facilities Management — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-2-mid-atlantic-vamc-chief-finance` — Chief — Finance — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-2-mid-atlantic-vamc-chief-human-resources` — Chief — Human Resources — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-2-mid-atlantic-vamc-chief-laboratory` — Chief — Laboratory — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-2-mid-atlantic-vamc-chief-medicine-service` — Chief — Medicine Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-2-mid-atlantic-vamc-chief-mental-health-service` — Chief — Mental Health Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-2-mid-atlantic-vamc-chief-nursing` — Chief — Nursing — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-2-mid-atlantic-vamc-chief-pharmacy` — Chief — Pharmacy — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-2-mid-atlantic-vamc-chief-primary-care` — Chief — Primary Care — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-2-mid-atlantic-vamc-chief-radiology` — Chief — Radiology — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-2-mid-atlantic-vamc-chief-rehabilitation` — Chief — Rehabilitation — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-2-mid-atlantic-vamc-chief-social-work` — Chief — Social Work — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-2-mid-atlantic-vamc-chief-surgery-service` — Chief — Surgery Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-2-mid-atlantic-vamc-clinical-pharmacist-multiple` — Clinical Pharmacist (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-2-mid-atlantic-vamc-nurse-multiple` — Nurse (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-2-mid-atlantic-vamc-physician-multiple` — Physician (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-2-mid-atlantic-vamc-social-worker-multiple` — Social Worker (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-2-mid-atlantic-vamc-va-police-chief` — VA Police Chief — `beneath_replaced_unit`
 
 ## VA Medical Centers  — 23 unpriced
 
 `exec-dept-va-vha-visn-1-new-england-vamc`
 
-- `exec-dept-va-vha-visn-1-new-england-vamc-associate-director-for-patient-care-services-cno` — Associate Director for Patient Care Services (CNO) — `unreached`
-- `exec-dept-va-vha-visn-1-new-england-vamc-canteen-chief` — Canteen Chief — `unreached`
-- `exec-dept-va-vha-visn-1-new-england-vamc-chief-dental-service` — Chief — Dental Service — `unreached`
-- `exec-dept-va-vha-visn-1-new-england-vamc-chief-emergency-medicine` — Chief — Emergency Medicine — `unreached`
-- `exec-dept-va-vha-visn-1-new-england-vamc-chief-environmental-management` — Chief — Environmental Management — `unreached`
-- `exec-dept-va-vha-visn-1-new-england-vamc-chief-facilities-management` — Chief — Facilities Management — `unreached`
-- `exec-dept-va-vha-visn-1-new-england-vamc-chief-finance` — Chief — Finance — `unreached`
-- `exec-dept-va-vha-visn-1-new-england-vamc-chief-human-resources` — Chief — Human Resources — `unreached`
-- `exec-dept-va-vha-visn-1-new-england-vamc-chief-laboratory` — Chief — Laboratory — `unreached`
-- `exec-dept-va-vha-visn-1-new-england-vamc-chief-medicine-service` — Chief — Medicine Service — `unreached`
-- `exec-dept-va-vha-visn-1-new-england-vamc-chief-mental-health-service` — Chief — Mental Health Service — `unreached`
-- `exec-dept-va-vha-visn-1-new-england-vamc-chief-nursing` — Chief — Nursing — `unreached`
-- `exec-dept-va-vha-visn-1-new-england-vamc-chief-pharmacy` — Chief — Pharmacy — `unreached`
-- `exec-dept-va-vha-visn-1-new-england-vamc-chief-primary-care` — Chief — Primary Care — `unreached`
-- `exec-dept-va-vha-visn-1-new-england-vamc-chief-radiology` — Chief — Radiology — `unreached`
-- `exec-dept-va-vha-visn-1-new-england-vamc-chief-rehabilitation` — Chief — Rehabilitation — `unreached`
-- `exec-dept-va-vha-visn-1-new-england-vamc-chief-social-work` — Chief — Social Work — `unreached`
-- `exec-dept-va-vha-visn-1-new-england-vamc-chief-surgery-service` — Chief — Surgery Service — `unreached`
-- `exec-dept-va-vha-visn-1-new-england-vamc-clinical-pharmacist-multiple` — Clinical Pharmacist (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-1-new-england-vamc-nurse-multiple` — Nurse (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-1-new-england-vamc-physician-multiple` — Physician (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-1-new-england-vamc-social-worker-multiple` — Social Worker (×multiple) — `multiplicity`
-- `exec-dept-va-vha-visn-1-new-england-vamc-va-police-chief` — VA Police Chief — `unreached`
+- `exec-dept-va-vha-visn-1-new-england-vamc-associate-director-for-patient-care-services-cno` — Associate Director for Patient Care Services (CNO) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-1-new-england-vamc-canteen-chief` — Canteen Chief — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-1-new-england-vamc-chief-dental-service` — Chief — Dental Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-1-new-england-vamc-chief-emergency-medicine` — Chief — Emergency Medicine — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-1-new-england-vamc-chief-environmental-management` — Chief — Environmental Management — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-1-new-england-vamc-chief-facilities-management` — Chief — Facilities Management — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-1-new-england-vamc-chief-finance` — Chief — Finance — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-1-new-england-vamc-chief-human-resources` — Chief — Human Resources — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-1-new-england-vamc-chief-laboratory` — Chief — Laboratory — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-1-new-england-vamc-chief-medicine-service` — Chief — Medicine Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-1-new-england-vamc-chief-mental-health-service` — Chief — Mental Health Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-1-new-england-vamc-chief-nursing` — Chief — Nursing — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-1-new-england-vamc-chief-pharmacy` — Chief — Pharmacy — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-1-new-england-vamc-chief-primary-care` — Chief — Primary Care — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-1-new-england-vamc-chief-radiology` — Chief — Radiology — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-1-new-england-vamc-chief-rehabilitation` — Chief — Rehabilitation — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-1-new-england-vamc-chief-social-work` — Chief — Social Work — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-1-new-england-vamc-chief-surgery-service` — Chief — Surgery Service — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-1-new-england-vamc-clinical-pharmacist-multiple` — Clinical Pharmacist (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-1-new-england-vamc-nurse-multiple` — Nurse (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-1-new-england-vamc-physician-multiple` — Physician (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-1-new-england-vamc-social-worker-multiple` — Social Worker (×multiple) — `beneath_replaced_unit`
+- `exec-dept-va-vha-visn-1-new-england-vamc-va-police-chief` — VA Police Chief — `beneath_replaced_unit`
 
 ## Federal Reserve System  — 22 unpriced
 
@@ -6394,109 +6395,109 @@ same list in the same run.
 
 `exec-dept-va-vha-visn-1-new-england`
 
-- `exec-dept-va-vha-visn-1-new-england-network-cfo-visn-1-new-england` — Network CFO, VISN 1 — New England — `unreached`
+- `exec-dept-va-vha-visn-1-new-england-network-cfo-visn-1-new-england` — Network CFO, VISN 1 — New England — `beneath_replaced_unit`
 
 ## VISN 10 — Great Lakes  — 1 unpriced
 
 `exec-dept-va-vha-visn-10-great-lakes`
 
-- `exec-dept-va-vha-visn-10-great-lakes-network-cfo-visn-10-great-lakes` — Network CFO, VISN 10 — Great Lakes — `unreached`
+- `exec-dept-va-vha-visn-10-great-lakes-network-cfo-visn-10-great-lakes` — Network CFO, VISN 10 — Great Lakes — `beneath_replaced_unit`
 
 ## VISN 12 — Great Lakes  — 1 unpriced
 
 `exec-dept-va-vha-visn-12-great-lakes`
 
-- `exec-dept-va-vha-visn-12-great-lakes-network-cfo-visn-12-great-lakes` — Network CFO, VISN 12 — Great Lakes — `unreached`
+- `exec-dept-va-vha-visn-12-great-lakes-network-cfo-visn-12-great-lakes` — Network CFO, VISN 12 — Great Lakes — `beneath_replaced_unit`
 
 ## VISN 15 — Heartland  — 1 unpriced
 
 `exec-dept-va-vha-visn-15-heartland`
 
-- `exec-dept-va-vha-visn-15-heartland-network-cfo-visn-15-heartland` — Network CFO, VISN 15 — Heartland — `unreached`
+- `exec-dept-va-vha-visn-15-heartland-network-cfo-visn-15-heartland` — Network CFO, VISN 15 — Heartland — `beneath_replaced_unit`
 
 ## VISN 16 — South Central  — 1 unpriced
 
 `exec-dept-va-vha-visn-16-south-central`
 
-- `exec-dept-va-vha-visn-16-south-central-network-cfo-visn-16-south-central` — Network CFO, VISN 16 — South Central — `unreached`
+- `exec-dept-va-vha-visn-16-south-central-network-cfo-visn-16-south-central` — Network CFO, VISN 16 — South Central — `beneath_replaced_unit`
 
 ## VISN 17 — Texas  — 1 unpriced
 
 `exec-dept-va-vha-visn-17-texas`
 
-- `exec-dept-va-vha-visn-17-texas-network-cfo-visn-17-texas` — Network CFO, VISN 17 — Texas — `unreached`
+- `exec-dept-va-vha-visn-17-texas-network-cfo-visn-17-texas` — Network CFO, VISN 17 — Texas — `beneath_replaced_unit`
 
 ## VISN 19 — Rocky Mountain  — 1 unpriced
 
 `exec-dept-va-vha-visn-19-rocky-mountain`
 
-- `exec-dept-va-vha-visn-19-rocky-mountain-network-cfo-visn-19-rocky-mountain` — Network CFO, VISN 19 — Rocky Mountain — `unreached`
+- `exec-dept-va-vha-visn-19-rocky-mountain-network-cfo-visn-19-rocky-mountain` — Network CFO, VISN 19 — Rocky Mountain — `beneath_replaced_unit`
 
 ## VISN 2 — Mid-Atlantic  — 1 unpriced
 
 `exec-dept-va-vha-visn-2-mid-atlantic`
 
-- `exec-dept-va-vha-visn-2-mid-atlantic-network-cfo-visn-2-mid-atlantic` — Network CFO, VISN 2 — Mid-Atlantic — `unreached`
+- `exec-dept-va-vha-visn-2-mid-atlantic-network-cfo-visn-2-mid-atlantic` — Network CFO, VISN 2 — Mid-Atlantic — `beneath_replaced_unit`
 
 ## VISN 20 — Northwest  — 1 unpriced
 
 `exec-dept-va-vha-visn-20-northwest`
 
-- `exec-dept-va-vha-visn-20-northwest-network-cfo-visn-20-northwest` — Network CFO, VISN 20 — Northwest — `unreached`
+- `exec-dept-va-vha-visn-20-northwest-network-cfo-visn-20-northwest` — Network CFO, VISN 20 — Northwest — `beneath_replaced_unit`
 
 ## VISN 21 — Sierra Pacific  — 1 unpriced
 
 `exec-dept-va-vha-visn-21-sierra-pacific`
 
-- `exec-dept-va-vha-visn-21-sierra-pacific-network-cfo-visn-21-sierra-pacific` — Network CFO, VISN 21 — Sierra Pacific — `unreached`
+- `exec-dept-va-vha-visn-21-sierra-pacific-network-cfo-visn-21-sierra-pacific` — Network CFO, VISN 21 — Sierra Pacific — `beneath_replaced_unit`
 
 ## VISN 22 — Desert Pacific  — 1 unpriced
 
 `exec-dept-va-vha-visn-22-desert-pacific`
 
-- `exec-dept-va-vha-visn-22-desert-pacific-network-cfo-visn-22-desert-pacific` — Network CFO, VISN 22 — Desert Pacific — `unreached`
+- `exec-dept-va-vha-visn-22-desert-pacific-network-cfo-visn-22-desert-pacific` — Network CFO, VISN 22 — Desert Pacific — `beneath_replaced_unit`
 
 ## VISN 23 — Midwest  — 1 unpriced
 
 `exec-dept-va-vha-visn-23-midwest`
 
-- `exec-dept-va-vha-visn-23-midwest-network-cfo-visn-23-midwest` — Network CFO, VISN 23 — Midwest — `unreached`
+- `exec-dept-va-vha-visn-23-midwest-network-cfo-visn-23-midwest` — Network CFO, VISN 23 — Midwest — `beneath_replaced_unit`
 
 ## VISN 4 — VISN 4  — 1 unpriced
 
 `exec-dept-va-vha-visn-4-visn-4`
 
-- `exec-dept-va-vha-visn-4-visn-4-network-cfo-visn-4-visn-4` — Network CFO, VISN 4 — VISN 4 — `unreached`
+- `exec-dept-va-vha-visn-4-visn-4-network-cfo-visn-4-visn-4` — Network CFO, VISN 4 — VISN 4 — `beneath_replaced_unit`
 
 ## VISN 5 — Capitol Health Care Network  — 1 unpriced
 
 `exec-dept-va-vha-visn-5-capitol-health-care-network`
 
-- `exec-dept-va-vha-visn-5-capitol-health-care-network-network-cfo-visn-5-capitol-health-care-network` — Network CFO, VISN 5 — Capitol Health Care Network — `unreached`
+- `exec-dept-va-vha-visn-5-capitol-health-care-network-network-cfo-visn-5-capitol-health-care-network` — Network CFO, VISN 5 — Capitol Health Care Network — `beneath_replaced_unit`
 
 ## VISN 6 — Mid-Atlantic Health Care  — 1 unpriced
 
 `exec-dept-va-vha-visn-6-mid-atlantic-health-care`
 
-- `exec-dept-va-vha-visn-6-mid-atlantic-health-care-network-cfo-visn-6-mid-atlantic-health-care` — Network CFO, VISN 6 — Mid-Atlantic Health Care — `unreached`
+- `exec-dept-va-vha-visn-6-mid-atlantic-health-care-network-cfo-visn-6-mid-atlantic-health-care` — Network CFO, VISN 6 — Mid-Atlantic Health Care — `beneath_replaced_unit`
 
 ## VISN 7 — Southeast  — 1 unpriced
 
 `exec-dept-va-vha-visn-7-southeast`
 
-- `exec-dept-va-vha-visn-7-southeast-network-cfo-visn-7-southeast` — Network CFO, VISN 7 — Southeast — `unreached`
+- `exec-dept-va-vha-visn-7-southeast-network-cfo-visn-7-southeast` — Network CFO, VISN 7 — Southeast — `beneath_replaced_unit`
 
 ## VISN 8 — Sunshine (FL)  — 1 unpriced
 
 `exec-dept-va-vha-visn-8-sunshine-fl`
 
-- `exec-dept-va-vha-visn-8-sunshine-fl-network-cfo-visn-8-sunshine-fl` — Network CFO, VISN 8 — Sunshine (FL) — `unreached`
+- `exec-dept-va-vha-visn-8-sunshine-fl-network-cfo-visn-8-sunshine-fl` — Network CFO, VISN 8 — Sunshine (FL) — `beneath_replaced_unit`
 
 ## VISN 9 — Mid South  — 1 unpriced
 
 `exec-dept-va-vha-visn-9-mid-south`
 
-- `exec-dept-va-vha-visn-9-mid-south-network-cfo-visn-9-mid-south` — Network CFO, VISN 9 — Mid South — `unreached`
+- `exec-dept-va-vha-visn-9-mid-south-network-cfo-visn-9-mid-south` — Network CFO, VISN 9 — Mid South — `beneath_replaced_unit`
 
 ## Water & Power  — 1 unpriced
 

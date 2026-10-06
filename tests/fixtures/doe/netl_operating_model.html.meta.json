@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-10-06T16:17:53Z",
+ "url": "https://netl.doe.gov/node/12519",
+ "status": 200,
+ "final_url": "https://netl.doe.gov/node/12519",
+ "content_type": "text/html; charset=UTF-8",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /node/12519",
+ "bytes": 42242,
+ "sha256": "ec2e6d085caea74ee334af4ee77c8f17617906af64118762dace1a0364eb8665",
+ "error": null
+}

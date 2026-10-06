@@ -14,6 +14,7 @@ import unittest
 from pathlib import Path
 
 from data_pipeline.verification.pay_documents import PAY_FIELDS
+from scripts.report_unpriced_positions import NOT_RESEARCHED, collect as collect_unpriced
 from scripts.report_research_prompts import (
     ORG_CLASSES,
     TOP_FAMILIES,
@@ -91,6 +92,12 @@ class PublishedPackTests(unittest.TestCase):
             if any(isinstance(node.get(field), dict) for field in PAY_FIELDS):
                 continue
             expected.add(node["id"])
+        # Paused and unpaid posts are not research work (the owner's decisions of
+        # 2026-10-07); the unpriced inventory still lists them.
+        groups, _, _, _ = collect_unpriced(self.graph)
+        not_asked = {row["id"] for rows in groups.values() for row in rows if row["reason"] in NOT_RESEARCHED}
+        self.assertGreater(len(not_asked), 0)
+        expected -= not_asked
         self.assertEqual({p["id"] for p in self.posts}, expected)
 
         appendix = self.top_text.split("## Appendix", 1)[1]

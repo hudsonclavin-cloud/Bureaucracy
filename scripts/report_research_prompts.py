@@ -64,6 +64,8 @@ from data_pipeline.verification.pay_documents import PAY_FIELDS  # noqa: E402
 from scripts.report_cost_coverage import classify as coverage_class  # noqa: E402
 from scripts.report_unpriced_positions import (  # noqa: E402
     DIRECTIVE,
+    NOT_RESEARCHED,
+    REASONS,
     SHARD_FORMAT,
     SHARD_TITLES,
     classify as unpriced_reason,
@@ -125,21 +127,28 @@ def is_position(node) -> bool:
 
 
 def collect(graph):
-    """Unpriced posts with their family, and unmeasured organisations."""
+    """Unpriced posts that are research work, with their family; the unpriced
+    posts that are not (paused or placed off federal pay), by reason; and the
+    unmeasured organisations."""
     posts: list[dict] = []
     orgs: list[dict] = []
+    skipped: Counter = Counter()
     for node, parent, grand, replaced in walk(graph):
         parent = parent or {}
         grand = grand or {}
         if is_position(node):
             if any(isinstance(node.get(field), dict) for field in PAY_FIELDS):
                 continue
+            reason = unpriced_reason(node, replaced)
+            if reason in NOT_RESEARCHED:
+                skipped[reason] += 1
+                continue
             posts.append(
                 {
                     "id": str(node.get("id") or ""),
                     "name": str(node.get("name") or ""),
                     "family": family_name(node.get("name")),
-                    "reason": unpriced_reason(node),
+                    "reason": reason,
                     "parentId": str(parent.get("id") or "?"),
                     "parentName": str(parent.get("name") or "?"),
                     "grandName": str(grand.get("name") or "?"),
@@ -164,7 +173,7 @@ def collect(graph):
                     ),
                 }
             )
-    return posts, orgs
+    return posts, orgs, skipped
 
 
 def rank_families(posts):
@@ -283,13 +292,11 @@ Rules that matter more than coverage:
 4. **Never one holder's pay for a group.** Where the family is marked ×N,
    give a figure only where the document states one rate every holder is paid
    by its own terms (a tier, a statutory rate); otherwise the system, the
-   document and `range` or `none`.
-5. **Beneath a replaced unit** marks posts this graph still files under a
-   network the agency has redrawn. Answer the pay question all the same: what
-   pays the post does not depend on which network it reports to."""
+   document and `range` or `none`."""
 
 
-def render_top(families, posts, orgs, top_n) -> str:
+def render_top(families, posts, orgs, top_n, skipped=None) -> str:
+    skipped = skipped or {}
     top = families[:top_n]
     covered = sum(len(f["rows"]) for f in top)
     clusters = biggest_clusters(posts, families)
@@ -305,7 +312,9 @@ def render_top(families, posts, orgs, top_n) -> str:
     w("")
     w("## The biggest clusters")
     w("")
-    w(f"- **{len(posts):,}** positions carry no pay claim, in **{len(families):,}** title families.")
+    w(f"- **{len(posts):,}** positions carry no pay claim and are research work, in **{len(families):,}** title families.")
+    for reason, count in sorted(skipped.items()):
+        w(f"- **{count:,}** more carry none and are not asked about here: {REASONS[reason][0]}.")
     if first is not None:
         w(
             f"- The largest family is **{first['name']}**: {len(first['rows'])} unpriced posts in "
@@ -316,10 +325,9 @@ def render_top(families, posts, orgs, top_n) -> str:
         "sit directly beneath groupings of that name."
     )
     w(
-        f"- **{clusters['replaced']:,}** of the {len(posts):,} sit beneath a unit the graph marks as "
-        "replaced by the government (`lifecycle: superseded`). They are still asked about here — what "
-        "pays a post does not depend on which network it reports to — but pricing them on the graph "
-        "means re-homing them under the current structure first, which is curation and not research."
+        "- The first run of this prompt, answered on 2026-10-07 against the ranking of that morning, "
+        "is ledgered family by family in `CURATION.md` §19.22, with what it settled and what it left "
+        "unknown. Codes are renumbered on every render; the ledger names families, not codes."
     )
     w(
         f"- The {min(top_n, len(families))} families below hold **{covered:,}** of the {len(posts):,} "
@@ -538,13 +546,13 @@ def render_remainder(families, posts, orgs, top_n, per_shard) -> str:
 
 
 def build(graph, top_n=TOP_FAMILIES, per_shard=SHARD_TITLES):
-    posts, orgs = collect(graph)
+    posts, orgs, skipped = collect(graph)
     families = rank_families(posts)
     return (
         posts,
         orgs,
         families,
-        render_top(families, posts, orgs, top_n),
+        render_top(families, posts, orgs, top_n, skipped),
         render_remainder(families, posts, orgs, top_n, per_shard),
     )
 
@@ -564,7 +572,7 @@ def main(argv: list[str] | None = None) -> int:
     posts, orgs, families, top_text, remainder_text = build(graph)
     top = families[:TOP_FAMILIES]
     covered = sum(len(f["rows"]) for f in top)
-    print(f"unpriced positions {len(posts):,} in {len(families):,} families")
+    print(f"unpriced positions that are research work {len(posts):,} in {len(families):,} families")
     print(f"top {len(top)} families hold {covered:,}; the remainder holds {len(posts) - covered:,}")
     print(f"beneath a replaced unit: {sum(1 for p in posts if p['replaced']):,}")
     for cls in ORG_CLASSES:

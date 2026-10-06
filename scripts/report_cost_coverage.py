@@ -135,6 +135,22 @@ CLASSES = {
         "titles and asks for the DOCUMENT, not the figure. Research batches are run against it, and "
         "what each bought — and what each got wrong — is in `CURATION.md` §19.",
     ),
+    "post_not_federally_paid": (
+        "Post with no figure — a document places it off every federal pay schedule",
+        "An official document committed here establishes that the post's holder is not paid by the "
+        "federal government: it sits in a DOE laboratory that DOE states is operated by a contractor. "
+        "The node carries `positionEmployer` saying so, in the document's own words and no further.",
+        "Nothing to find: no federal pay figure exists for it. The owner's decision of 2026-10-07 "
+        "takes these out of the research packs.",
+    ),
+    "post_beneath_replaced_unit": (
+        "Post with no figure — beneath a unit the government has replaced",
+        "The post sits under a unit marked `lifecycle: superseded` (the eighteen former VA networks): "
+        "the viewer draws it only when a reader asks for replaced units.",
+        "Curation first, by the owner's decision of 2026-10-07: research on these is paused until a VA "
+        "document maps medical centres to the five current networks and the posts are re-homed. What "
+        "pays a medical-centre post does not depend on its network, so the research question survives.",
+    ),
     "negative_pool": (
         "No figure — beneath a Treasury pool that nets below zero",
         "The unit above publishes the Treasury's net figure and its measured lines already reach "
@@ -163,12 +179,19 @@ CLASSES = {
 
 
 def walk(root):
-    stack = [(root, None)]
-    while stack:
-        node, parent = stack.pop()
+    for node, parent, _ in walk_with_lifecycle(root):
         yield node, parent
+
+
+def walk_with_lifecycle(root):
+    """(node, parent, beneath a replaced unit?) for every node."""
+    stack = [(root, None, False)]
+    while stack:
+        node, parent, replaced = stack.pop()
+        replaced = replaced or str(node.get("lifecycle") or "") == "superseded"
+        yield node, parent, replaced
         for child in node.get("children") or []:
-            stack.append((child, node))
+            stack.append((child, node, replaced))
 
 
 def is_position(node) -> bool:
@@ -185,7 +208,7 @@ def has_pay_claim(node) -> bool:
     return any(isinstance(node.get(field), dict) for field in PAY_FIELDS)
 
 
-def classify(node) -> str:
+def classify(node, replaced: bool = False) -> str:
     """Exactly one class per node, decided in this order."""
     status = str(node.get("cost_status") or "").casefold()
     validation = str(node.get("cost_validation") or "").casefold()
@@ -194,7 +217,7 @@ def classify(node) -> str:
     if is_position(node):
         if has_pay_claim(node):
             return "salary"
-        return "post_" + classify_unpriced_post(node)
+        return "post_" + classify_unpriced_post(node, replaced)
     if validation == "unit_superseded" or str(node.get("lifecycle") or "") == "superseded":
         return "superseded"
     if validation == "treasury_pool_negative":
@@ -213,8 +236,8 @@ def classify(node) -> str:
 def collect(graph):
     """Class -> rows, every node exactly once."""
     rows: dict[str, list[dict]] = defaultdict(list)
-    for node, parent in walk(graph):
-        cls = classify(node)
+    for node, parent, replaced in walk_with_lifecycle(graph):
+        cls = classify(node, replaced)
         rows[cls].append(
             {
                 "id": str(node.get("id") or ""),
@@ -247,10 +270,14 @@ def render(rows) -> str:
     with_figure = sum(len(rows[c]) for c in ("measured", "measured_treasury_line", "salary"))
     estimates = sum(len(rows[c]) for c in ("estimate", "estimate_committee", "estimate_beside_sourced_figure"))
     none_ever = sum(len(rows[c]) for c in ("negative_pool", "superseded", "below_precision"))
-    posts_unpriced = sum(len(rows[c]) for c in ("post_multiplicity", "post_listed_no_rate", "post_unreached"))
+    posts_researchable = sum(len(rows[c]) for c in ("post_multiplicity", "post_listed_no_rate", "post_unreached"))
+    posts_paused = len(rows.get("post_beneath_replaced_unit", []))
+    posts_unpaid = len(rows.get("post_not_federally_paid", []))
     w(f"- showing a figure a document states (measured cost or salary): **{with_figure:,}**")
     w(f"- carrying an apportioned estimate, withheld unless asked for: **{estimates:,}**")
-    w(f"- positions no document prices: **{posts_unpriced:,}**")
+    w(f"- positions no document prices: **{posts_researchable + posts_paused + posts_unpaid:,}** — "
+      f"{posts_researchable:,} research work, {posts_paused:,} paused beneath a replaced unit, "
+      f"{posts_unpaid:,} a document places off every federal pay schedule")
     w(f"- no figure now and none from any route (negative pool, replaced unit, below a cent): **{none_ever:,}**")
     w("")
     w("| class | nodes | what it means | route |")

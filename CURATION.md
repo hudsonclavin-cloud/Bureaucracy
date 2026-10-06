@@ -5180,3 +5180,93 @@ by what each moves on the graph. **Refreshed the same day**: on the rebuild
 cost of their own), the CFPB gains the Manual's entry, its official
 description and its alias match (held at `partial`), the PLUM archive's
 records are unchanged, and no cost figure moves. Gate clean.
+
+### 19.22 The top-100 prompt, answered, and the owner's four decisions (2026-10-07)
+
+The owner ran `docs/RESEARCH_PROMPT_4_TOP100.md` as rendered at commit 3ed6648
+and pasted the answer back. Its own closing section is worth quoting in
+substance, because it is the right reading of itself: the ledger is
+conservative, `unknown`/`speculative` mean the research did not establish a
+post-to-document connection and not that no document exists, and no vacancy
+announcement was used. Family codes are renumbered on every render, so this
+ledger names families.
+
+**What it settled, checked against committed bytes before anything is built.**
+
+- **National laboratories (six families, 102 posts at the time).** The answer
+  cited NETL's own page, which says "The U.S. Department of Energy operates 17
+  national laboratories. NETL is the only government-owned,
+  government-operated facility. The other 16 are government-owned,
+  contractor-operated." Fetched and committed at
+  `tests/fixtures/doe/netl_operating_model.html` (2026-10-06, sha256
+  `ec2e6d08…`); the sentence is there. The graph carries exactly the 17, NETL
+  among them. It splits the families the answer said they must: NETL's seven
+  posts are federal and stay research work, the other sixteen labs' are what
+  the owner's "not federally paid" decision covers. The page states the
+  OPERATOR, not each post's employer; whether a second document states what an
+  operating contractor's staff are is recorded with the build below.
+- **The circuit-judge rate.** $264,900 for 2026, which is exactly what the
+  committed `tests/fixtures/uscourts/judicial_compensation.html` prints. It
+  prices nothing new: the thirteen `Circuit Judge (×N active + senior judges)`
+  nodes bundle senior judges, whose salary 28 U.S.C. 371(b)(2) sets apart, and
+  stay refused for that reason (CLAUDE.md, "One bench shape stays refused").
+- **The VA's Table 1 and Table 2, Tier 3 bands** ($165,000–$350,000 and
+  $225,000–$400,000, effective January 11, 2026) agree with what
+  `va_title38_pay.py` reads from the committed PDF — a second reading, not new
+  evidence. The answer itself marks the title-to-tier mapping as inferred, which
+  is the reason the module refuses Tables 1 and 2 (choosing a table per node
+  would be this repository deciding which service chiefs are doctors). And every
+  one of those posts now sits beneath a replaced unit, which the owner paused
+  (below). Declined.
+- **The Smithsonian (six families, 126 posts).** The answer's own finding is
+  that federal (GS, WG, SL) and trust (IS, HG, IL, AE) staff work side by side,
+  so a title alone settles neither. Declined: no post is placed off federal pay
+  on a family's evidence.
+- **Postal posts.** City and rural carriers and clerks are on bargaining-unit
+  schedules (city carriers by career appointment date); postmasters, managers
+  and supervisors are nonbargaining (EAS). Every node is a district template
+  standing for many holders, and no document prints one figure for every
+  holder. Declined, recorded: the vocabulary needs a postal-nonbargaining
+  system name before these can even be classified.
+- **Foreign Service Officers, law clerks, clerks of court, circuit executives,
+  chief staff attorneys.** Each answer names a pay SYSTEM (the Foreign Service
+  Schedule by class; the judiciary's JSP and CPS, set locally) and no figure for
+  the post. Declined for the reason every earlier batch's copies were.
+- **`Trial Attorney / AUSA` (DOJ divisions).** The answer splits it: AUSAs are
+  administratively determined, trial attorneys elsewhere General Schedule. One
+  node stands for both, so neither can price it; a curation split would come
+  first. Declined.
+- **NSF program directors.** Rotators under IPA agreements are paid by their
+  home institution through the grant; temporary federal appointees are
+  administratively determined. The title does not say which. Declined.
+- **Every other family (about seventy)** came back `all | unknown | — | none`,
+  among them the stamped administrative titles (CFO, Chief of Staff, General
+  Counsel, Inspector General, CIO, Director of Public Affairs) and the regional
+  quartet. That is the measurement the deck predicted: a stamped title has no
+  pay document of its own, and the routes that do reach some of them (the
+  Executive Schedule's scoped titles, the Inspector General Act, OPM's listings)
+  are already built.
+
+**The answer's design advice, weighed.** It recommends separating
+"amount verified" from "applicability verified" and publishing only when both
+hold. This repository already does that in its own terms: every proxy-scoped
+pay block is graded `partial`, the panel says which document states the figure
+and which supplies the applicability, and `documentsStatingTheFigure` is
+published per block. It also recommends postal-nonbargaining and Court Personnel
+System vocabulary; recorded for the next prompt pack, not built.
+
+**The owner's four decisions, the same day** (the deck's recommendations,
+accepted as written):
+
+1. **Posts beneath a replaced unit are paused.** `report_unpriced_positions.py`
+   classifies them `beneath_replaced_unit` (432 posts) and
+   `report_cost_coverage.py` files them in a class of their own; neither research
+   pack asks about them any more, and the inventory still lists every one. Pack 3
+   now asks about 2,928 posts in 28 shards (3,360 in 33 before); pack 4's top 100
+   families hold 1,321 of 2,928.
+2. **"Not federally paid", where a document establishes it** — the laboratories
+   above; built in parallel and recorded below when it lands.
+3. **A sourced non-cost figure may head an organisation's panel**, labelled by
+   basis and period — built in parallel, recorded below.
+4. **Committee disbursements as a new basis** — feasibility measured first,
+   recorded below.

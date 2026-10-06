@@ -77,6 +77,21 @@ BRANCH_NAMES = {
 }
 
 REASONS = {
+    "beneath_replaced_unit": (
+        "the post sits beneath a unit the government has replaced, and research on it is paused",
+        "The owner's decision of 2026-10-07: these posts (the eighteen former VA networks' medical-centre "
+        "posts and network officers, CURATION.md §10) are not asked about in any research pack until a VA "
+        "document maps medical centres to the five current networks and they are re-homed. What pays a "
+        "medical-centre post does not depend on which network it reports to, so the question is not lost; "
+        "it is waiting on curation, not on research.",
+    ),
+    "not_federally_paid": (
+        "an official document establishes the post is not on a federal pay schedule",
+        "The owner's decision of 2026-10-07: where a committed official document establishes that a "
+        "post's holder is not paid by the federal government (a laboratory DOE states is operated by a "
+        "contractor), the post carries `positionEmployer` saying so and is no longer research work. No "
+        "federal pay figure exists for it to find.",
+    ),
     "multiplicity": (
         "the node states a multiplicity (×N) and no claim that holds for every holder has reached it",
         "Since 2026-09-23 a claim that holds for each holder by its own terms IS published on such a "
@@ -102,13 +117,21 @@ REASONS = {
 }
 
 
+#: Reasons that are not research work: no research pack asks about these posts.
+#: The inventory still lists every one, so "covers every unpriced position" stays
+#: a checkable claim.
+NOT_RESEARCHED = ("beneath_replaced_unit", "not_federally_paid")
+
+
 def walk(root):
-    stack = [(root, None)]
+    """(node, parent, beneath a replaced unit?) for every node."""
+    stack = [(root, None, False)]
     while stack:
-        node, parent = stack.pop()
-        yield node, parent
+        node, parent, replaced = stack.pop()
+        replaced = replaced or str(node.get("lifecycle") or "") == "superseded"
+        yield node, parent, replaced
         for child in node.get("children") or []:
-            stack.append((child, node))
+            stack.append((child, node, replaced))
 
 
 def branch_of(node_id: str) -> str:
@@ -116,7 +139,16 @@ def branch_of(node_id: str) -> str:
     return prefix if prefix in BRANCH_NAMES else "?"
 
 
-def classify(node) -> str:
+def is_not_federally_paid(node) -> bool:
+    block = node.get("positionEmployer")
+    return isinstance(block, dict) and block.get("federallyPaid") is False
+
+
+def classify(node, replaced: bool = False) -> str:
+    if replaced:
+        return "beneath_replaced_unit"
+    if is_not_federally_paid(node):
+        return "not_federally_paid"
     if node.get("representsPosts"):
         return "multiplicity"
     if isinstance(node.get("positionListing"), dict) or isinstance(node.get("positionCurrentListing"), dict):
@@ -130,7 +162,7 @@ def collect(graph):
     priced = 0
     multi_priced = 0
     positions = 0
-    for node, parent in walk(graph):
+    for node, parent, replaced in walk(graph):
         if "position" not in str(node.get("type") or "").casefold():
             continue
         positions += 1
@@ -144,7 +176,7 @@ def collect(graph):
             {
                 "id": str(node.get("id") or ""),
                 "name": str(node.get("name") or ""),
-                "reason": classify(node),
+                "reason": classify(node, replaced),
                 "branch": branch_of(node.get("id")),
                 "listed": bool(
                     isinstance(node.get("positionListing"), dict)
@@ -153,6 +185,16 @@ def collect(graph):
             }
         )
     return groups, positions, priced, multi_priced
+
+
+def researchable(groups):
+    """The groups with every row a research pack should ask about."""
+    out = {}
+    for key, rows in groups.items():
+        kept = [row for row in rows if row["reason"] not in NOT_RESEARCHED]
+        if kept:
+            out[key] = kept
+    return out
 
 
 def shard(groups, per_shard: int):
@@ -259,9 +301,11 @@ def render_prompts(shards, totals) -> str:
     w("## What this covers")
     w("")
     w(f"The published graph carries **{positions:,} position nodes**. **{priced:,}** carry a pay claim")
-    w(f"an official document supports. **{unpriced:,}** do not, and every one of them is listed")
-    w(f"in this pack across **{len(shards)} shards** — the complete inventory, with each")
-    w("position's id and the reason nothing reached it, is in `docs/UNPRICED_POSITIONS.md`.")
+    asked = sum(len(rows) for entries in shards for _, rows in entries)
+    w(f"an official document supports. **{unpriced:,}** do not. **{asked:,}** of them are research work")
+    w(f"and every one is listed in this pack across **{len(shards)} shards**; the other")
+    w(f"{unpriced - asked:,} are not asked about, for the reasons below. The complete inventory, with")
+    w("each position's id and the reason nothing reached it, is in `docs/UNPRICED_POSITIONS.md`.")
     w("")
     w("Why each is unpriced today:")
     w("")
@@ -408,7 +452,8 @@ def main(argv: list[str] | None = None) -> int:
     for row in rows:
         reason_counts[row["reason"]] += 1
     totals = (positions, priced, len(rows), dict(reason_counts), multi_priced)
-    shards = shard(groups, args.shard_titles)
+    shards = shard(researchable(groups), args.shard_titles)
+    asked = sum(1 for row in rows if row["reason"] not in NOT_RESEARCHED)
 
     print(f"positions {positions:,}  priced {priced:,}  unpriced {len(rows):,}")
     for reason, count in sorted(reason_counts.items(), key=lambda kv: -kv[1]):
@@ -416,9 +461,9 @@ def main(argv: list[str] | None = None) -> int:
     print(f"organisations with an unpriced position: {len(groups):,}")
     print(f"shards at {args.shard_titles} titles each: {len(shards)}")
     covered = sum(len(r) for entries in shards for _, r in entries)
-    print(f"titles carried by the pack: {covered:,} (of {len(rows):,})")
-    if covered != len(rows):
-        print("refused: the pack does not cover every unpriced position")
+    print(f"titles carried by the pack: {covered:,} (of {asked:,} researchable, {len(rows):,} unpriced)")
+    if covered != asked:
+        print("refused: the pack does not cover every researchable unpriced position")
         return 1
 
     if args.dry_run:

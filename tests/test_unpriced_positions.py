@@ -13,7 +13,9 @@ from pathlib import Path
 
 from data_pipeline.verification.pay_documents import PAY_FIELDS
 from scripts.report_unpriced_positions import (
+    NOT_RESEARCHED,
     REASONS,
+    researchable,
     classify,
     collect,
     render_inventory,
@@ -129,7 +131,7 @@ class GeneratedDocumentTests(unittest.TestCase):
         counts: dict[str, int] = {}
         for row in rows:
             counts[row["reason"]] = counts.get(row["reason"], 0) + 1
-        expected = render_prompts(shard(groups, 110), (positions, priced, len(rows), counts, multi_priced))
+        expected = render_prompts(shard(researchable(groups), 110), (positions, priced, len(rows), counts, multi_priced))
         self.assertEqual(
             expected, PROMPTS.read_text(encoding="utf-8"),
             "docs/PAY_SOURCE_RESEARCH_PROMPT_3.md is stale; re-run scripts/report_unpriced_positions.py")
@@ -153,14 +155,39 @@ class GeneratedDocumentTests(unittest.TestCase):
         self.assertGreater(multi_priced, 0)
         self.assertIn(f"and {multi_priced} such nodes carry one", expected)
 
-    def test_every_unpriced_node_id_appears_in_the_prompt_pack(self):
+    def test_every_researchable_unpriced_node_id_appears_in_the_prompt_pack(self):
         graph = _graph()
         if graph is None or not PROMPTS.exists():
             self.skipTest("no published graph or no prompt pack")
         text = PROMPTS.read_text(encoding="utf-8")
         groups, _, _, _ = collect(graph)
-        missing = [row["id"] for rows in groups.values() for row in rows if row["id"] not in text]
+        missing = [row["id"] for rows in researchable(groups).values() for row in rows if row["id"] not in text]
         self.assertEqual([], missing[:20])
+
+    def test_a_paused_or_unpaid_post_is_not_asked_about(self):
+        """The owner's decisions of 2026-10-07: posts beneath a replaced unit are
+        paused, and a post a document places off every federal pay schedule is
+        not research work. The inventory still lists them."""
+        graph = _graph()
+        if graph is None or not PROMPTS.exists() or not INVENTORY.exists():
+            self.skipTest("no published graph or no documents")
+        prompts = PROMPTS.read_text(encoding="utf-8")
+        inventory = INVENTORY.read_text(encoding="utf-8")
+        groups, _, _, _ = collect(graph)
+        skipped = [row["id"] for rows in groups.values() for row in rows if row["reason"] in NOT_RESEARCHED]
+        self.assertGreater(len(skipped), 0)
+        for node_id in skipped:
+            self.assertNotIn(f"- {node_id} |", prompts)
+            self.assertIn(f"`{node_id}`", inventory)
+
+    def test_a_post_beneath_a_replaced_unit_is_classified_as_paused(self):
+        self.assertEqual("beneath_replaced_unit", classify({"name": "Chief — Surgery Service"}, True))
+        self.assertEqual("unreached", classify({"name": "Chief — Surgery Service"}, False))
+
+    def test_a_post_a_document_places_off_federal_pay_is_classified_as_such(self):
+        self.assertEqual("not_federally_paid", classify({"positionEmployer": {"federallyPaid": False}}))
+        self.assertEqual("unreached", classify({"positionEmployer": {"federallyPaid": True}}))
+        self.assertEqual("unreached", classify({"positionEmployer": "no"}))
 
     def test_the_pack_refuses_third_party_salary_sites(self):
         if not PROMPTS.exists():
