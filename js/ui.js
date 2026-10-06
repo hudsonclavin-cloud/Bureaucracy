@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20261007d";
-import { loadMergedGraphData } from "./graphLoader.js?v=20261007d";
+import { createGovernmentGraph } from "./graph.js?v=20261007e";
+import { loadMergedGraphData } from "./graphLoader.js?v=20261007e";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -245,6 +245,8 @@ function summariseGraph(root) {
     placed: 0, orgEdges: 0, unreachable: 0, posts: 0, paidPosts: 0,
     allocated: 0, noFigure: 0, postsWithoutFigure: 0,
     orgs: 0, orgsSourced: 0, orgsUnread: 0, orgsHostRefuses: 0,
+    sourcedFigure: 0, sourcedFigureFileA: 0, sourcedFigureOmb: 0, sourcedFigureAudited: 0,
+    sourcedFigureWithEstimate: 0, sourcedFigureNoFigure: 0,
   };
   const stack = [root];
   while (stack.length) {
@@ -286,6 +288,19 @@ function summariseGraph(root) {
         count.paidPosts += 1;
       }
     }
+    // An organisation whose headline, in the default view, is a sourced
+    // figure of another kind (since 2026-10-07). A group of its own, never
+    // counted as measured: some carry a withheld estimate as well, the rest
+    // sit beneath a negative Treasury pool and carry no cost figure at all.
+    const sourced = node !== root ? sourcedFigureOf(node) : null;
+    if (sourced) {
+      count.sourcedFigure += 1;
+      if (sourced.kind === "fileA") count.sourcedFigureFileA += 1;
+      else if (sourced.kind === "omb") count.sourcedFigureOmb += 1;
+      else if (sourced.kind === "audited") count.sourcedFigureAudited += 1;
+      if (status === "allocated" || status === "scaled_official") count.sourcedFigureWithEstimate += 1;
+      if (status === "unavailable" || !status) count.sourcedFigureNoFigure += 1;
+    }
     if (node !== root && !isPost) {
       count.orgEdges += 1;
       if (String(node.synthetic || "") !== "treasury_receipts" && !/treasury accounting line/i.test(String(node.type || ""))) {
@@ -318,7 +333,10 @@ function describeProvenance(count) {
     // reads first must say so rather than counting them as if they were on
     // screen.
     `${count.allocated.toLocaleString()} apportioned estimates, withheld unless asked for`,
-    `${count.noFigure.toLocaleString()} with no figure at all, ${count.postsWithoutFigure.toLocaleString()} of them posts, which have no budget to divide`,
+    `${count.noFigure.toLocaleString()} with no cost figure at all, ${count.postsWithoutFigure.toLocaleString()} of them posts, which have no budget to divide`,
+    // Its own clause, never folded into the measured count: a figure of
+    // another kind, headed as what it is.
+    `${count.sourcedFigure.toLocaleString()} organisations without a measured cost headed instead by a sourced figure of another kind (${count.sourcedFigureFileA.toLocaleString()} File A gross outlays, ${count.sourcedFigureOmb.toLocaleString()} OMB completed-year outlays, ${count.sourcedFigureAudited.toLocaleString()} audited net cost)`,
     `${count.sourced.toLocaleString()} of ${count.nodes.toLocaleString()} nodes carry a source`,
     `${count.placed.toLocaleString()} of ${count.orgEdges.toLocaleString()} organisation placements evidenced by the parent's official page (${count.unreachable.toLocaleString()} unreachable: parent has no page)`,
     "the descriptions carry no citation",
@@ -348,8 +366,16 @@ function readingGuidePoints(count) {
       + `${count.allocated.toLocaleString()} more could be shown as a share worked out by splitting a `
       + `parent's total among its children — arithmetic, not a number anyone published — and those stay `
       + `hidden until you ask for them, with "Also show estimated shares of a parent's total" on the left. `
-      + `The remaining ${count.noFigure.toLocaleString()} have no figure at all and never will; ticking `
-      + `the box does not reveal a number for them, because there is none to reveal.`,
+      + `The remaining ${count.noFigure.toLocaleString()} have no cost figure at all and never will; ticking `
+      + `the box does not reveal a number for them, because there is none to reveal. `
+      + `${count.sourcedFigure.toLocaleString()} organisations without a measured cost show, at the top of their `
+      + `panel, a figure of another kind that a named source publishes for them — gross outlays from `
+      + `USAspending (${count.sourcedFigureFileA.toLocaleString()}), the sum of OMB's budget accounts for a `
+      + `completed year (${count.sourcedFigureOmb.toLocaleString()}), or the Treasury's audited net cost `
+      + `(${count.sourcedFigureAudited.toLocaleString()}). Each is headed as what it is, with its year and `
+      + `its basis, and none is the cost or counted as measured; `
+      + `${count.sourcedFigureWithEstimate.toLocaleString()} of them still hold an estimate behind the box, and `
+      + `${count.sourcedFigureNoFigure.toLocaleString()} are among the ones with no cost figure.`,
     ],
     [
       "A job is not a budget",
@@ -2617,6 +2643,85 @@ function positiveAmountBlock(block) {
   return block && typeof block === "object" && typeof block.amount === "number" && block.amount > 0 ? block : null;
 }
 
+// The same mechanism one level up, by the owner's decision of 2026-10-07: an
+// ORGANISATION with no measured cost of its own may carry a sourced figure of
+// another kind under its own heading below the cost block — USAspending's
+// File A gross outlays, the sum of OMB's account rows for a completed year,
+// Treasury's audited net cost — and until now its headline read "Not
+// available" above them. Where it carries one, that figure is the headline
+// instead, headed as the kind of figure it is and never as COST.
+//
+// The order is declared, and it is the anchor's two coordinates. The anchor
+// is the Monthly Treasury Statement's NET OUTLAYS for the CURRENT fiscal year
+// TO DATE (`__budgetSummary.amount_kind: fytd_net_outlays`), so the figure
+// that stands in for it should sit as near as possible on both clocks:
+//
+//   1. File A gross outlays — the same fiscal year, to date (as of a date
+//      weeks from the anchor's), and cash out of the door like the anchor;
+//      the basis differs only in being GROSS, before the offsetting
+//      collections the statement nets off.
+//   2. OMB's outlays — the same basis as the anchor (net of offsetting
+//      collections; OMB's guide calls its totals "generally consistent with"
+//      the statement), but for a COMPLETED year, and a sum of account rows
+//      OMB never totals itself.
+//   3. Audited net cost — a completed year AND an accrual basis, gross cost
+//      less earned revenue: the furthest from net outlays on both counts.
+//
+// Between the first two the trade is clock against basis, and it was
+// measured rather than argued: on the 9 measured nodes that carry both File A
+// and OMB beside their Treasury line, File A's figure sits a median 7.7% from
+// the measured one and OMB's 18.4% (6 of 9 within 10% against 3 of 9). Same
+// year beats same basis here, because a unit's year-on-year change is usually
+// larger than its offsetting collections. A sample of nine is small, so the
+// reason is the clock and the measurement only agrees with it.
+//
+// A post never uses this path (the pay order above is its headline), nor a
+// measured node, a Treasury accounting line or a replaced unit. A unit beneath
+// a negative Treasury pool may: it has no estimate, and these figures are
+// about it rather than apportioned to it. Zero is never a headline.
+const SOURCED_FIGURE_STAND_IN_ORDER = [
+  ["fileA", (node) => nonZeroBlock(node.usaspendingOutlays, "amount")],
+  ["omb", (node) => nonZeroBlock(node.ombBudget, "outlays")],
+  ["audited", (node) => nonZeroBlock(node.auditedNetCost, "netCostUsd")],
+];
+
+const SOURCED_FIGURE_KINDS = new Set(SOURCED_FIGURE_STAND_IN_ORDER.map(([name]) => name));
+
+// A figure below zero is published as the source prints it (OMB's FDIC,
+// Treasury's audited FDIC); only zero, which no source here publishes as a
+// measurement, and a missing figure are refused.
+function nonZeroBlock(block, field) {
+  if (!block || typeof block !== "object") return null;
+  const amount = block[field];
+  return typeof amount === "number" && Number.isFinite(amount) && amount !== 0 ? block : null;
+}
+
+// The pipeline's own POST_TYPE_KEYWORDS (position, role, office holder): a
+// post is not a budget unit and never takes an organisation's figure.
+function isPostType(node) {
+  return /position|\brole\b|office holder/i.test(String(node.type || ""));
+}
+
+function canTakeSourcedFigure(node) {
+  if (isPostType(node)) return false;
+  if (String(node.synthetic || "") || /treasury accounting line/i.test(String(node.type || ""))) return false;
+  if (String(node.lifecycle || "") === "superseded" || String(node.cost_validation || "") === "unit_superseded") return false;
+  return true;
+}
+
+// Which sourced figure this organisation's headline would show when no
+// estimate is on screen, by the declared order — independent of the
+// estimates toggle, so the reading guide can count the same thing the panel
+// shows in the default view.
+function sourcedFigureOf(node) {
+  if (isCostIdentifiedForTheNode(node) || !canTakeSourcedFigure(node)) return null;
+  for (const [name, read] of SOURCED_FIGURE_STAND_IN_ORDER) {
+    const block = read(node);
+    if (block) return { kind: name, block };
+  }
+  return null;
+}
+
 function costStandInOf(node) {
   if (isCostIdentifiedForTheNode(node)) {
     return null;
@@ -2628,6 +2733,12 @@ function costStandInOf(node) {
     if (block) {
       kind = name;
       break;
+    }
+  }
+  if (!block) {
+    const sourced = sourcedFigureOf(node);
+    if (sourced) {
+      ({ kind, block } = sourced);
     }
   }
   if (!block) {
@@ -2644,6 +2755,7 @@ function costStandInOf(node) {
   return {
     kind,
     block,
+    sourced: SOURCED_FIGURE_KINDS.has(kind),
     current: kind === "current" ? block : null,
     pay: kind === "pay" ? block : null,
     range: kind === "range" ? block : null,
@@ -2679,9 +2791,28 @@ function standInAmountText(standIn) {
     case "range":
     case "tier":
       return formatGradeRange(block);
+    case "fileA":
+      return formatSignedWholeDollars(block.amount);
+    case "omb":
+      return formatSignedWholeDollars(block.outlays);
+    case "audited":
+      return formatSignedWholeDollars(block.netCostUsd);
     default:
       return block.rateText || `$${Math.round(block.amount).toLocaleString()}`;
   }
+}
+
+// A sourced figure as the block carries it, to the dollar, the sign leading:
+// OMB's FDIC nets below zero and is printed so, not as "$-31…".
+function formatSignedWholeDollars(amount) {
+  return `${amount < 0 ? "-" : ""}$${Math.round(Math.abs(amount)).toLocaleString()}`;
+}
+
+// The year a block names, or words saying it names none — never a year this
+// code supplies.
+function blockFiscalYear(value) {
+  const text = String(value ?? "").trim();
+  return text ? `FY${text}` : "a fiscal year the record does not state";
 }
 
 // The heading drawn where COST would be, and the line beneath it that says
@@ -2747,6 +2878,27 @@ function standInHeading(standIn) {
         label: "TITLE 38 PAY RANGE, NOT A RATE",
         period: `the VA's ${block.table || "Title 38 pay table"}${block.effectiveText ? `, ${lowerEffective(block.effectiveText)}` : ""} — bounds for an appointment, not a rate and not a cost`,
       };
+    // An organisation's sourced figure of another kind. The label names the
+    // measure and the publisher; the period line, read off the block, says
+    // which year and in what sense, and that it is not the cost. The audited
+    // statement's measure is called "net cost" by its publisher, and its
+    // label keeps that name rather than renaming the figure — the period line
+    // says it is accrual and not outlays.
+    case "fileA":
+      return {
+        label: "GROSS OUTLAYS — USASPENDING FILE A",
+        period: `${blockFiscalYear(block.fiscalYear)} to ${block.periodAsOf || "an unstated date"}, fiscal year to date — gross, before offsetting collections; not the cost`,
+      };
+    case "omb":
+      return {
+        label: "OUTLAYS — OMB PUBLIC BUDGET DATABASE",
+        period: `${blockFiscalYear(block.fiscalYear)}, a completed year — the sum of ${Number.isInteger(block.outlayAccountRows) ? `${block.outlayAccountRows.toLocaleString()} account rows` : "the account rows"} OMB files under this unit, not a figure OMB prints, and not the cost`,
+      };
+    case "audited":
+      return {
+        label: "AUDITED NET COST — TREASURY STATEMENT OF NET COST",
+        period: `${blockFiscalYear(block.fiscalYear)}${block.statementDate ? `, ended ${block.statementDate}` : ""} — accrual, not outlays; not the cost`,
+      };
     default:
       return { label: "PAY", period: null };
   }
@@ -2776,6 +2928,10 @@ function standInBadgeLabel(standIn) {
       return "No cost known; a base-pay range is shown";
     case "tier":
       return "No cost known; a Title 38 pay range is shown";
+    case "fileA":
+    case "omb":
+    case "audited":
+      return "No measured cost; a sourced figure of another kind is shown";
     default:
       return "No cost known; a rate of pay is shown";
   }
@@ -2845,6 +3001,39 @@ function standInNote(standIn) {
     case "tier":
       note = ` What is shown instead is a Title 38 pay RANGE: the VA's ${block.table || "pay table"}${block.effectiveText ? ` (${lowerEffective(block.effectiveText)})` : ""} names "${block.coverageTitle || "this title"}" at Tier ${block.tier} and bounds an appointment between ${printed}. The schedule publishes no rate for anybody, and the range is not what this unit costs.`;
       break;
+    case "fileA": {
+      const alias = block.nameAlias && typeof block.nameAlias === "object" ? block.nameAlias : null;
+      note = ` What is shown instead is a sourced figure of another kind: USAspending's File A reports gross outlays of ${printed} for "${block.apiName || block.toptierName || "this unit"}", ${blockFiscalYear(block.fiscalYear)} to date as of ${block.periodAsOf || "an unstated date"}.` +
+        " Gross outlays are counted before the offsetting collections the Monthly Treasury Statement nets off, and they come from the agencies' DATA Act submissions rather than from the statement, so the figure is not this unit's net outlays and not its cost." +
+        (alias ? ` USAspending names the unit "${alias.apiName || block.apiName}"; that the two names denote one unit is a recorded alias, so the figure is held to the weaker grade.` : "");
+      break;
+    }
+    case "omb": {
+      const listed = block.level === "bureau" && block.listedBureau
+        ? `"${block.listedBureau}", which OMB files under "${block.listedAgency}"`
+        : `"${block.listedAgency || "this unit"}"`;
+      const rows = Number.isInteger(block.outlayAccountRows) ? `${block.outlayAccountRows.toLocaleString()} account rows` : "account rows";
+      const precision = String(block.precisionNote || "").includes("detail below millions is not available")
+        ? ` The file is in thousands of dollars and, in OMB's words, "detail below millions is not available".`
+        : "";
+      note = ` What is shown instead is a sourced figure of another kind: OMB's outlays for ${listed}, ${blockFiscalYear(block.fiscalYear)}, a year that has ended — ${printed}, the sum this project performed over the ${rows} OMB's Public Budget Database files under the unit; OMB prints no total for it.` +
+        (block.outlays < 0
+          ? ` The figure is below zero as the database gives it: "${String(block.netQuote || "").trim()}" A unit that collects more than it spends nets below zero.`
+          : (block.netQuote ? ` "${String(block.netQuote).trim()}"` : "")) +
+        (block.treasuryQuote ? ` OMB's guide: "${String(block.treasuryQuote).trim()}" — generally consistent, not the same, and for a completed year where this graph measures the current one to date.` : " It is for a completed year where this graph measures the current one to date.") +
+        precision +
+        " Not this unit's cost.";
+      break;
+    }
+    case "audited": {
+      const parts = typeof block.grossCostUsd === "number" && typeof block.earnedRevenueUsd === "number"
+        ? ` (gross cost ${formatSignedWholeDollars(block.grossCostUsd)} less earned revenue ${formatSignedWholeDollars(block.earnedRevenueUsd)})`
+        : "";
+      note = ` What is shown instead is a sourced figure of another kind: Treasury's audited Statement of Net Cost reports a net cost of ${printed} for "${block.agencyName || "this unit"}", ${blockFiscalYear(block.fiscalYear)}${block.statementDate ? `, ended ${block.statementDate}` : ""}${parts}.` +
+        (block.netCostUsd < 0 ? " A net cost below zero means the unit's earned revenue exceeded its gross cost for the year." : "") +
+        (block.basisNote ? ` ${String(block.basisNote).trim()}` : " It is accrual accounting for a completed year, not outlays, and not this unit's cost.");
+      break;
+    }
     default:
       note = "";
   }
@@ -2965,7 +3154,9 @@ function describeCost(node) {
   if (hasWithheldEstimate(node)) {
     return {
       label: payLabel || "No cost known for this node",
-      tone: "unavailable",
+      // A sourced figure of another kind is drawn hollow and dashed, the
+      // badge every unmeasured figure wears: never the filled measured one.
+      tone: standIn && standIn.sourced ? "none" : "unavailable",
       note:
         "No record names this node's own cost. The figure this graph could otherwise show is its share of an ancestor's " +
         "measured total, divided among siblings by budget, headcount or subtree size — a number nobody measured, so it is " +
@@ -2988,7 +3179,7 @@ function describeCost(node) {
       return {
         ...unavailable,
         note:
-          "The unit above it publishes the Treasury's net figure, and the measured lines beneath that unit already reach or exceed it \u2014 its net outlays are negative, or a line this graph has no node for is. Nothing remains to apportion to its unmeasured parts, so no figure is shown rather than a guess. There is no estimate for this node to reveal, whatever the estimates box says." +
+          "The unit above it publishes the Treasury's net figure, and the measured lines beneath that unit already reach or exceed it \u2014 its net outlays are negative, or a line this graph has no node for is. Nothing remains to apportion to its unmeasured parts, so no estimate is shown rather than a guess. There is no estimate for this node to reveal, whatever the estimates box says." +
           payNote,
       };
     }
@@ -3133,6 +3324,16 @@ function buildCostBlock(node) {
     compact.className = "info-cost-compact";
     compact.textContent = `${formatApproximateCost(exactAmount)}, to three figures`;
     compact.title = "The same measured figure, rounded for reading; the exact figure above it is the claim.";
+    amount.appendChild(compact);
+  }
+  // A sourced figure of another kind gets the same reading aid: its own
+  // number, to three figures, never a different claim.
+  const sourcedAmount = standIn && standIn.sourced ? toFiniteAmount(standIn.block[{ fileA: "amount", omb: "outlays", audited: "netCostUsd" }[standIn.kind]]) : null;
+  if (sourcedAmount !== null && Math.abs(sourcedAmount) >= 1e9) {
+    const compact = document.createElement("span");
+    compact.className = "info-cost-compact";
+    compact.textContent = `${formatApproximateCost(sourcedAmount)}, to three figures`;
+    compact.title = "The same sourced figure, rounded for reading; the exact figure above it is what the source gives.";
     amount.appendChild(compact);
   }
   head.appendChild(amount);
