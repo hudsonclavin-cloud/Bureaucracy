@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-06T17:00:31.804763+00:00",
+  "timestamp": "2026-10-06T18:03:01.406009+00:00",
   "mode": "offline_regeneration",
   "note": "Rebuilt from the curated base graph and the Treasury anchor already published; no crawler ran. See scripts/regenerate_published_graph.py.",
   "nodes_before": 5481,
@@ -695,6 +695,17 @@
       "positionMilitaryPay": 23,
       "positionTierPay": 72,
       "positionReportedPay": 188
+    },
+    "employment_status_evidence": {
+      "stamped": 112,
+      "unknown_node": 0,
+      "not_a_post": 0,
+      "renamed_since_the_derivation": 0,
+      "moved_since_the_derivation": 0,
+      "under_netl": 0,
+      "not_a_reviewed_laboratory": 0,
+      "carries_a_pay_claim": 0,
+      "beside_a_measured_cost": 0
     },
     "budget_reconciliation": {
       "nodes_seen": 5510,
