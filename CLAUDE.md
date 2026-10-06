@@ -56,6 +56,7 @@ python scripts/derive_military_pay_evidence.py --dry-run  # Schedule 8 of the pa
 python scripts/derive_us_code_stated_pay_evidence.py --dry-run   # an office's salary a Code section states in dollars (3 U.S.C. 102, the President); writes nothing
 python scripts/report_unpriced_positions.py --dry-run        # every position with no pay claim, and the prompt pack that covers all of them
 python scripts/report_cost_coverage.py --dry-run             # every node in exactly one cost class, and the route that would move each; writes docs/COST_COVERAGE.md
+python scripts/report_research_prompts.py --dry-run         # the 100 title families holding the most unpriced posts in one prompt, the rest and every estimate in shards; writes docs/RESEARCH_PROMPT_4_*.md
 python scripts/derive_congressional_pay_evidence.py --dry-run  # senate.gov's own salary schedule; writes nothing
 python scripts/derive_whitehouse_pay_evidence.py --dry-run     # the White House Office's statutory staff roster; writes nothing
 python scripts/expand_whitehouse_office.py --dry-run           # what the roster would add to the curated WHO subtree; writes nothing
@@ -2529,6 +2530,40 @@ shards carry **no** follow-up-chain directive, which the lead prompt does:
 that directive is for exploratory prompts and is anti-signal on an enumeration
 pass, where expansion buries the per-title verdicts the shard exists to
 produce. A test pins that asymmetry.
+
+**Pack 4: the families, and the units (since 2026-10-07).** Pack 3 shards by
+organisation, which asks the same question once per copy of a stamped title:
+`Chief — Medicine Service` sits under eighteen medical-centre groupings and
+`Chief Financial Officer` under sixty organisations.
+`scripts/report_research_prompts.py` groups the unpriced posts into title
+FAMILIES — the name with its multiplicity, any parenthetical and a trailing
+`, VISN N` or `, Region N` set aside — and ranks them by unpriced nodes held.
+On the first run 3,360 posts fall into 1,705 families and the top 100 hold
+1,686 of them (50%); the largest family is `Chief Financial Officer` (60 posts
+in 60 organisations) and the largest grouping by name is `VA Medical Centers`
+(414). `docs/RESEARCH_PROMPT_4_TOP100.md` is one prompt naming those 100, about
+18,000 characters with an appendix mapping each family to its node ids, asking
+for one answer line per employer group wherever the pay system differs and
+naming the cases where the people are not federal employees at all
+(contractor-operated laboratories, Smithsonian trust staff, postal bargaining
+units). It carries the follow-up directive after the table, scoped to findings
+that change more than one family. `docs/RESEARCH_PROMPT_4_REMAINDER.md` carries
+the other 1,674 posts in 16 organisation shards and, for the first time, the
+681 organisation nodes that publish an estimate (240 committees, 62 with a
+sourced figure beside, 379 bare) in 7 shards asking for the document that
+prints the unit's own spending, by basis and period. `tests/test_research_prompts.py`
+asserts every unpriced post is named exactly once across the two documents,
+every estimate organisation once, and both equal a fresh render.
+
+**A finding the families made visible: 432 of the 3,360 unpriced posts, and
+90 priced ones, sit beneath a unit the graph marks as replaced** — the eighteen
+former VISNs of `CURATION.md` §10, each still carrying its `VA Medical Centers`
+grouping, its network officers and their posts. The viewer draws a replaced
+node only when the reader asks for replaced units, so those 90 salaries
+(the 72 Title 38 bands and the 18 USAJOBS-graded Associate Directors) are not
+in the default view. What pays a medical-centre post does not depend on which
+network it reports to; re-homing the medical-centre posts under the five
+current networks is a curation decision, recorded and not taken here.
 
 **Schedule 6, and the two refusals it turns into figures (since
 2026-09-23).** `congressional_pay.py`'s own docstring records exactly what it
