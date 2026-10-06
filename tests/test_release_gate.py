@@ -88,6 +88,7 @@ class ReleaseGateTests(unittest.TestCase):
             usaspending_evidence_path=None,
             net_cost_evidence_path=None,
             omb_budget_evidence_path=None,
+            committee_disbursements_evidence_path=None,
         )
         self.graph_path = result.graph_path
         self.graph = json.loads(self.graph_path.read_text(encoding="utf-8"))

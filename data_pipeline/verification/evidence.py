@@ -132,6 +132,11 @@ EVIDENCE_OWNED_FIELDS = (
     # because a newer package moves the actual/estimate boundary and a figure
     # that is no longer an actual must stop being published as one.
     "ombBudget",
+    # What a chamber paid out for a committee's account over its report's
+    # period (data_pipeline/verification/committee_disbursements.py), beside
+    # the estimate. Withdrawn here with the rest, so a record refused since the
+    # last build -- or a committee renamed or re-typed -- stops being published.
+    "committeeDisbursements",
     "verificationMethod",
     "verificationFailure",
     "verificationUnread",

@@ -294,6 +294,9 @@ MINIMAL_GRAPH_FIELDS = (
     # OMB's budget authority and outlays for the last completed fiscal year,
     # likewise beside the cost and never in it
     "ombBudget",
+    # What a chamber paid out for a committee's account over its report's
+    # period, beside the estimate and never in it (committee_disbursements.py)
+    "committeeDisbursements",
     # whether the government still has this unit. Absent means it does; the
     # viewer hides a superseded one unless asked, and the panel says what
     # replaced it and quotes the page that says so.
@@ -2778,6 +2781,7 @@ def build_graph(
     govman_evidence_path: str | Path | None = "default",
     fr_signature_evidence_path: str | Path | None = "default",
     omb_budget_evidence_path: str | Path | None = "default",
+    committee_disbursements_evidence_path: str | Path | None = "default",
 ) -> BuildResult:
     payload_list = list(iter_payload_items(payloads))
     fresh_budget_summary = extract_budget_summary(payload_list)
@@ -3280,6 +3284,24 @@ def build_graph(
     )
     validation["omb_budget_evidence"] = apply_omb_budget_evidence(
         graph, load_omb_budget_evidence(resolved_omb_path) if resolved_omb_path else {}, index_tree=index_tree,
+    )
+    # What each chamber paid out for a committee's account, from the House's
+    # Statement of Disbursements and the Senate's Report of the Secretary.
+    # Beside the estimate and never in it, on a node typed Committee only.
+    from data_pipeline.verification.committee_disbursements import (  # noqa: E402 — same late-import shape as omb_budget
+        DEFAULT_EVIDENCE_PATH as DEFAULT_COMMITTEE_DISBURSEMENTS_PATH,
+        apply_committee_disbursements_evidence,
+        load_committee_disbursements_evidence,
+    )
+
+    resolved_disbursements_path = (
+        DEFAULT_COMMITTEE_DISBURSEMENTS_PATH
+        if committee_disbursements_evidence_path == "default" else committee_disbursements_evidence_path
+    )
+    validation["committee_disbursements_evidence"] = apply_committee_disbursements_evidence(
+        graph,
+        load_committee_disbursements_evidence(resolved_disbursements_path) if resolved_disbursements_path else {},
+        index_tree=index_tree,
     )
     validation["usaspending_evidence"] = apply_usaspending_evidence(
         graph, load_usaspending_evidence(resolved_usaspending_path) if resolved_usaspending_path else {}, index_tree=index_tree,

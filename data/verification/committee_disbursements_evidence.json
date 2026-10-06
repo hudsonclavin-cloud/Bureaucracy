@@ -1,0 +1,3532 @@
+{
+  "_note": "Derived by scripts/derive_committee_disbursements_evidence.py from the House's Statement of Disbursements and the Senate's Report of the Secretary of the Senate, committed verbatim under tests/fixtures/disbursements/ with their digests. Each record is the sum of the totals the chamber prints for one committee's account over the report's period, every component listed. No row about a person is read. It is not a cost and the exporter never writes it into one.",
+  "source": {
+    "kind": "committee_disbursements",
+    "derivedAt": "2026-10-06T16:44:18Z"
+  },
+  "report": {
+    "house": {
+      "chamber": "house",
+      "committees_in_graph": 21,
+      "ambiguous": [],
+      "refused": {},
+      "matched": {
+        "leg-house-cmte-appropriations": "committee_key_equal",
+        "leg-house-cmte-budget": "committee_key_equal",
+        "leg-house-cmte-agriculture": "committee_key_equal",
+        "leg-house-cmte-armed-services": "committee_type_words_folded",
+        "leg-house-cmte-financial-services": "committee_key_equal",
+        "leg-house-cmte-natural-resources": "committee_key_equal",
+        "leg-house-cmte-foreign-affairs": "committee_key_equal",
+        "leg-house-cmte-judiciary": "committee_key_equal",
+        "leg-house-cmte-rules": "committee_key_equal",
+        "leg-house-cmte-small-business": "committee_key_equal",
+        "leg-house-cmte-veterans-affairs": "committee_key_equal",
+        "leg-house-cmte-ways-means": "committee_key_equal",
+        "leg-house-cmte-homeland-security": "committee_type_words_folded",
+        "leg-house-cmte-energy-commerce": "reviewed_row",
+        "leg-house-cmte-education-the-workforce": "reviewed_row",
+        "leg-house-cmte-oversight-accountability": "reviewed_row",
+        "leg-house-cmte-house-administration": "reviewed_row",
+        "leg-house-cmte-transportation-infrastructure": "reviewed_row",
+        "leg-house-cmte-science-space-technology": "reviewed_row",
+        "leg-house-cmte-permanent-select-committee-on-intelligence": "reviewed_row",
+        "leg-house-cmte-select-committee-on-the-chinese-communist-party": "reviewed_row"
+      },
+      "labels_not_matched": [
+        "2026 COMMITTEE ON ETHICS",
+        "2026 REPUBLICAN STUDY COMMITTEE",
+        "FISCAL YEAR 2026 COMMITTEE RENOVATION PROJECT"
+      ]
+    },
+    "senate": {
+      "chamber": "senate",
+      "committees_in_graph": 20,
+      "ambiguous": [],
+      "refused": {},
+      "matched": {
+        "leg-senate-cmte-agriculture-nutrition-and-forestry": "committee_type_words_folded",
+        "leg-senate-cmte-armed-services": "committee_type_words_folded",
+        "leg-senate-cmte-banking-housing-urban-affairs": "committee_type_words_folded",
+        "leg-senate-cmte-commerce-science-transportation": "committee_type_words_folded",
+        "leg-senate-cmte-energy-natural-resources": "committee_type_words_folded",
+        "leg-senate-cmte-environment-public-works": "committee_type_words_folded",
+        "leg-senate-cmte-foreign-relations": "committee_type_words_folded",
+        "leg-senate-cmte-homeland-security-governmental-affairs": "committee_type_words_folded",
+        "leg-senate-cmte-health-education-labor-pensions": "committee_type_words_folded",
+        "leg-senate-cmte-indian-affairs": "committee_type_words_folded",
+        "leg-senate-cmte-rules-administration": "committee_type_words_folded",
+        "leg-senate-cmte-small-business-entrepreneurship": "committee_type_words_folded",
+        "leg-senate-cmte-veterans-affairs": "committee_type_words_folded",
+        "leg-senate-cmte-budget": "reviewed_row",
+        "leg-senate-cmte-finance": "reviewed_row",
+        "leg-senate-cmte-judiciary": "reviewed_row",
+        "leg-senate-cmte-select-committee-on-intelligence": "reviewed_row",
+        "leg-senate-cmte-select-committee-on-ethics": "reviewed_row",
+        "leg-senate-cmte-special-committee-on-aging": "reviewed_row"
+      },
+      "labels_not_matched": [
+        "SPECIAL RESERVES"
+      ]
+    }
+  },
+  "nodes": {
+    "leg-house-cmte-appropriations": {
+      "nodeId": "leg-house-cmte-appropriations",
+      "nodeName": "House Committee on Appropriations",
+      "chamber": "house",
+      "costBasis": "disbursements",
+      "document": {
+        "title": "Statement of Disbursements of the House",
+        "file": "tests/fixtures/disbursements/house/2026q2_sod_summary_grid.csv",
+        "url": "https://www.house.gov/sites/default/files/2026-08/grids/APRIL-JUNE%202026%20SOD%20SUMM%20GRID-FINAL.csv",
+        "sha256": "4828ceb94cc1dc67bbdc4faa276ef0cc0e36cbc3f4dcf0a84f9e1f54b005b28b",
+        "fetchedAt": "2026-10-06T16:20:22Z",
+        "statementVolume": {
+          "file": "tests/fixtures/disbursements/house/2026q2_vol3_signed.pdf",
+          "url": "https://www.house.gov/sites/default/files/2026-08/books/2026q2_vol3_signed.pdf",
+          "sha256": "d7034a1122e34dae76f40257e20e5290d4a82367d9c531af6502311b259ca495"
+        },
+        "column": "QTD AMOUNT",
+        "columnDefinition": "Quarterly Amount — This amount lists the total expenditures for the specified quarter",
+        "statementTotal": {
+          "text": "$ 449,333,548.30",
+          "label": "Disbursements for salaries and expenses and canceled checks"
+        }
+      },
+      "period": {
+        "printed": "STATEMENT OF DISBURSEMENTS OF THE HOUSE FROM APRIL 1, 2026 TO JUNE 30, 2026",
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "coverage": "quarter"
+      },
+      "listedNames": [
+        "FISCAL YEAR 2026 COMMITTEE ON APPROPRIATIONS"
+      ],
+      "matchRule": "committee_key_equal",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "unitsEvidence": {
+        "kind": "currency_mark_on_the_statements_own_total_bounds_the_column",
+        "statementTotal": "$ 449,333,548.30",
+        "columnAnchor": "5131656.29"
+      },
+      "caveat": "The statement's summary file lists the committee's current-year organisation only. Disbursements the quarter charged to the committee's earlier-year accounts are printed in the signed volumes beside named payees and are not in this figure.",
+      "components": [
+        {
+          "label": "FISCAL YEAR 2026 COMMITTEE ON APPROPRIATIONS",
+          "program": "APPROPRIATIONS COMMITTEE",
+          "printed": "5131656.29",
+          "locator": {
+            "row": 6370,
+            "column": "QTD AMOUNT",
+            "organization": "FISCAL YEAR 2026 COMMITTEE ON APPROPRIATIONS",
+            "program": "APPROPRIATIONS COMMITTEE",
+            "description": "OFFICE TOTALS:"
+          },
+          "amount": 5131656.29,
+          "unitsEvidenceKind": "currency_mark_on_the_statements_own_total_bounds_the_column"
+        },
+        {
+          "label": "FISCAL YEAR 2026 COMMITTEE ON APPROPRIATIONS",
+          "program": "INTERN ALLOWANCES",
+          "printed": "65903.57",
+          "locator": {
+            "row": 6373,
+            "column": "QTD AMOUNT",
+            "organization": "FISCAL YEAR 2026 COMMITTEE ON APPROPRIATIONS",
+            "program": "INTERN ALLOWANCES",
+            "description": "OFFICE TOTALS:"
+          },
+          "amount": 65903.57,
+          "unitsEvidenceKind": "currency_mark_on_the_statements_own_total_bounds_the_column"
+        }
+      ],
+      "zeroComponents": [],
+      "amount": 5197559.86,
+      "componentCount": 2,
+      "documentsStatingTheFigure": 0,
+      "arithmetic": {
+        "operation": "sum_of_printed_totals",
+        "note": "The document prints no single total for this committee; the figure is the sum of the 2 totals it prints, each listed with its printed text."
+      },
+      "notTheCost": "Cash the chamber's disbursing office paid out for the committee's account over the period. It is not the Treasury's net outlays, not the graph's estimate for this node, and not its cost."
+    },
+    "leg-house-cmte-budget": {
+      "nodeId": "leg-house-cmte-budget",
+      "nodeName": "House Committee on Budget",
+      "chamber": "house",
+      "costBasis": "disbursements",
+      "document": {
+        "title": "Statement of Disbursements of the House",
+        "file": "tests/fixtures/disbursements/house/2026q2_sod_summary_grid.csv",
+        "url": "https://www.house.gov/sites/default/files/2026-08/grids/APRIL-JUNE%202026%20SOD%20SUMM%20GRID-FINAL.csv",
+        "sha256": "4828ceb94cc1dc67bbdc4faa276ef0cc0e36cbc3f4dcf0a84f9e1f54b005b28b",
+        "fetchedAt": "2026-10-06T16:20:22Z",
+        "statementVolume": {
+          "file": "tests/fixtures/disbursements/house/2026q2_vol3_signed.pdf",
+          "url": "https://www.house.gov/sites/default/files/2026-08/books/2026q2_vol3_signed.pdf",
+          "sha256": "d7034a1122e34dae76f40257e20e5290d4a82367d9c531af6502311b259ca495"
+        },
+        "column": "QTD AMOUNT",
+        "columnDefinition": "Quarterly Amount — This amount lists the total expenditures for the specified quarter",
+        "statementTotal": {
+          "text": "$ 449,333,548.30",
+          "label": "Disbursements for salaries and expenses and canceled checks"
+        }
+      },
+      "period": {
+        "printed": "STATEMENT OF DISBURSEMENTS OF THE HOUSE FROM APRIL 1, 2026 TO JUNE 30, 2026",
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "coverage": "quarter"
+      },
+      "listedNames": [
+        "2026 COMMITTEE ON BUDGET"
+      ],
+      "matchRule": "committee_key_equal",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "unitsEvidence": {
+        "kind": "currency_mark_on_the_statements_own_total_bounds_the_column",
+        "statementTotal": "$ 449,333,548.30",
+        "columnAnchor": "1111163.18"
+      },
+      "caveat": "The statement's summary file lists the committee's current-year organisation only. Disbursements the quarter charged to the committee's earlier-year accounts are printed in the signed volumes beside named payees and are not in this figure.",
+      "components": [
+        {
+          "label": "2026 COMMITTEE ON BUDGET",
+          "program": "GENERAL EXPENDITURES",
+          "printed": "1111163.18",
+          "locator": {
+            "row": 6382,
+            "column": "QTD AMOUNT",
+            "organization": "2026 COMMITTEE ON BUDGET",
+            "program": "GENERAL EXPENDITURES",
+            "description": "OFFICE TOTALS:"
+          },
+          "amount": 1111163.18,
+          "unitsEvidenceKind": "currency_mark_on_the_statements_own_total_bounds_the_column"
+        },
+        {
+          "label": "2026 COMMITTEE ON BUDGET",
+          "program": "INTERN ALLOWANCES",
+          "printed": "22996",
+          "locator": {
+            "row": 6385,
+            "column": "QTD AMOUNT",
+            "organization": "2026 COMMITTEE ON BUDGET",
+            "program": "INTERN ALLOWANCES",
+            "description": "OFFICE TOTALS:"
+          },
+          "amount": 22996.0,
+          "unitsEvidenceKind": "currency_mark_on_the_statements_own_total_bounds_the_column"
+        }
+      ],
+      "zeroComponents": [],
+      "amount": 1134159.18,
+      "componentCount": 2,
+      "documentsStatingTheFigure": 0,
+      "arithmetic": {
+        "operation": "sum_of_printed_totals",
+        "note": "The document prints no single total for this committee; the figure is the sum of the 2 totals it prints, each listed with its printed text."
+      },
+      "notTheCost": "Cash the chamber's disbursing office paid out for the committee's account over the period. It is not the Treasury's net outlays, not the graph's estimate for this node, and not its cost."
+    },
+    "leg-house-cmte-agriculture": {
+      "nodeId": "leg-house-cmte-agriculture",
+      "nodeName": "House Committee on Agriculture",
+      "chamber": "house",
+      "costBasis": "disbursements",
+      "document": {
+        "title": "Statement of Disbursements of the House",
+        "file": "tests/fixtures/disbursements/house/2026q2_sod_summary_grid.csv",
+        "url": "https://www.house.gov/sites/default/files/2026-08/grids/APRIL-JUNE%202026%20SOD%20SUMM%20GRID-FINAL.csv",
+        "sha256": "4828ceb94cc1dc67bbdc4faa276ef0cc0e36cbc3f4dcf0a84f9e1f54b005b28b",
+        "fetchedAt": "2026-10-06T16:20:22Z",
+        "statementVolume": {
+          "file": "tests/fixtures/disbursements/house/2026q2_vol3_signed.pdf",
+          "url": "https://www.house.gov/sites/default/files/2026-08/books/2026q2_vol3_signed.pdf",
+          "sha256": "d7034a1122e34dae76f40257e20e5290d4a82367d9c531af6502311b259ca495"
+        },
+        "column": "QTD AMOUNT",
+        "columnDefinition": "Quarterly Amount — This amount lists the total expenditures for the specified quarter",
+        "statementTotal": {
+          "text": "$ 449,333,548.30",
+          "label": "Disbursements for salaries and expenses and canceled checks"
+        }
+      },
+      "period": {
+        "printed": "STATEMENT OF DISBURSEMENTS OF THE HOUSE FROM APRIL 1, 2026 TO JUNE 30, 2026",
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "coverage": "quarter"
+      },
+      "listedNames": [
+        "2026 COMMITTEE ON AGRICULTURE"
+      ],
+      "matchRule": "committee_key_equal",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "unitsEvidence": {
+        "kind": "currency_mark_on_the_statements_own_total_bounds_the_column",
+        "statementTotal": "$ 449,333,548.30",
+        "columnAnchor": "1571274.53"
+      },
+      "caveat": "The statement's summary file lists the committee's current-year organisation only. Disbursements the quarter charged to the committee's earlier-year accounts are printed in the signed volumes beside named payees and are not in this figure.",
+      "components": [
+        {
+          "label": "2026 COMMITTEE ON AGRICULTURE",
+          "program": "GENERAL EXPENDITURES",
+          "printed": "1571274.53",
+          "locator": {
+            "row": 6394,
+            "column": "QTD AMOUNT",
+            "organization": "2026 COMMITTEE ON AGRICULTURE",
+            "program": "GENERAL EXPENDITURES",
+            "description": "OFFICE TOTALS:"
+          },
+          "amount": 1571274.53,
+          "unitsEvidenceKind": "currency_mark_on_the_statements_own_total_bounds_the_column"
+        },
+        {
+          "label": "2026 COMMITTEE ON AGRICULTURE",
+          "program": "INTERN ALLOWANCES",
+          "printed": "25888.31",
+          "locator": {
+            "row": 6397,
+            "column": "QTD AMOUNT",
+            "organization": "2026 COMMITTEE ON AGRICULTURE",
+            "program": "INTERN ALLOWANCES",
+            "description": "OFFICE TOTALS:"
+          },
+          "amount": 25888.31,
+          "unitsEvidenceKind": "currency_mark_on_the_statements_own_total_bounds_the_column"
+        }
+      ],
+      "zeroComponents": [],
+      "amount": 1597162.84,
+      "componentCount": 2,
+      "documentsStatingTheFigure": 0,
+      "arithmetic": {
+        "operation": "sum_of_printed_totals",
+        "note": "The document prints no single total for this committee; the figure is the sum of the 2 totals it prints, each listed with its printed text."
+      },
+      "notTheCost": "Cash the chamber's disbursing office paid out for the committee's account over the period. It is not the Treasury's net outlays, not the graph's estimate for this node, and not its cost."
+    },
+    "leg-house-cmte-armed-services": {
+      "nodeId": "leg-house-cmte-armed-services",
+      "nodeName": "House Committee on Armed Services",
+      "chamber": "house",
+      "costBasis": "disbursements",
+      "document": {
+        "title": "Statement of Disbursements of the House",
+        "file": "tests/fixtures/disbursements/house/2026q2_sod_summary_grid.csv",
+        "url": "https://www.house.gov/sites/default/files/2026-08/grids/APRIL-JUNE%202026%20SOD%20SUMM%20GRID-FINAL.csv",
+        "sha256": "4828ceb94cc1dc67bbdc4faa276ef0cc0e36cbc3f4dcf0a84f9e1f54b005b28b",
+        "fetchedAt": "2026-10-06T16:20:22Z",
+        "statementVolume": {
+          "file": "tests/fixtures/disbursements/house/2026q2_vol3_signed.pdf",
+          "url": "https://www.house.gov/sites/default/files/2026-08/books/2026q2_vol3_signed.pdf",
+          "sha256": "d7034a1122e34dae76f40257e20e5290d4a82367d9c531af6502311b259ca495"
+        },
+        "column": "QTD AMOUNT",
+        "columnDefinition": "Quarterly Amount — This amount lists the total expenditures for the specified quarter",
+        "statementTotal": {
+          "text": "$ 449,333,548.30",
+          "label": "Disbursements for salaries and expenses and canceled checks"
+        }
+      },
+      "period": {
+        "printed": "STATEMENT OF DISBURSEMENTS OF THE HOUSE FROM APRIL 1, 2026 TO JUNE 30, 2026",
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "coverage": "quarter"
+      },
+      "listedNames": [
+        "2026 ARMED SERVICES COMMITTEE"
+      ],
+      "matchRule": "committee_type_words_folded",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "unitsEvidence": {
+        "kind": "currency_mark_on_the_statements_own_total_bounds_the_column",
+        "statementTotal": "$ 449,333,548.30",
+        "columnAnchor": "2476495.58"
+      },
+      "caveat": "The statement's summary file lists the committee's current-year organisation only. Disbursements the quarter charged to the committee's earlier-year accounts are printed in the signed volumes beside named payees and are not in this figure.",
+      "components": [
+        {
+          "label": "2026 ARMED SERVICES COMMITTEE",
+          "program": "GENERAL EXPENDITURES",
+          "printed": "2476495.58",
+          "locator": {
+            "row": 6406,
+            "column": "QTD AMOUNT",
+            "organization": "2026 ARMED SERVICES COMMITTEE",
+            "program": "GENERAL EXPENDITURES",
+            "description": "OFFICE TOTALS:"
+          },
+          "amount": 2476495.58,
+          "unitsEvidenceKind": "currency_mark_on_the_statements_own_total_bounds_the_column"
+        }
+      ],
+      "zeroComponents": [],
+      "amount": 2476495.58,
+      "componentCount": 1,
+      "documentsStatingTheFigure": 1,
+      "arithmetic": {
+        "operation": "sum_of_printed_totals",
+        "note": "The figure is the one total the document prints for this committee."
+      },
+      "notTheCost": "Cash the chamber's disbursing office paid out for the committee's account over the period. It is not the Treasury's net outlays, not the graph's estimate for this node, and not its cost."
+    },
+    "leg-house-cmte-financial-services": {
+      "nodeId": "leg-house-cmte-financial-services",
+      "nodeName": "House Committee on Financial Services",
+      "chamber": "house",
+      "costBasis": "disbursements",
+      "document": {
+        "title": "Statement of Disbursements of the House",
+        "file": "tests/fixtures/disbursements/house/2026q2_sod_summary_grid.csv",
+        "url": "https://www.house.gov/sites/default/files/2026-08/grids/APRIL-JUNE%202026%20SOD%20SUMM%20GRID-FINAL.csv",
+        "sha256": "4828ceb94cc1dc67bbdc4faa276ef0cc0e36cbc3f4dcf0a84f9e1f54b005b28b",
+        "fetchedAt": "2026-10-06T16:20:22Z",
+        "statementVolume": {
+          "file": "tests/fixtures/disbursements/house/2026q2_vol3_signed.pdf",
+          "url": "https://www.house.gov/sites/default/files/2026-08/books/2026q2_vol3_signed.pdf",
+          "sha256": "d7034a1122e34dae76f40257e20e5290d4a82367d9c531af6502311b259ca495"
+        },
+        "column": "QTD AMOUNT",
+        "columnDefinition": "Quarterly Amount — This amount lists the total expenditures for the specified quarter",
+        "statementTotal": {
+          "text": "$ 449,333,548.30",
+          "label": "Disbursements for salaries and expenses and canceled checks"
+        }
+      },
+      "period": {
+        "printed": "STATEMENT OF DISBURSEMENTS OF THE HOUSE FROM APRIL 1, 2026 TO JUNE 30, 2026",
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "coverage": "quarter"
+      },
+      "listedNames": [
+        "2026 COMMITTEE ON FINANCIAL SERVICES"
+      ],
+      "matchRule": "committee_key_equal",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "unitsEvidence": {
+        "kind": "currency_mark_on_the_statements_own_total_bounds_the_column",
+        "statementTotal": "$ 449,333,548.30",
+        "columnAnchor": "2320234.62"
+      },
+      "caveat": "The statement's summary file lists the committee's current-year organisation only. Disbursements the quarter charged to the committee's earlier-year accounts are printed in the signed volumes beside named payees and are not in this figure.",
+      "components": [
+        {
+          "label": "2026 COMMITTEE ON FINANCIAL SERVICES",
+          "program": "GENERAL EXPENDITURES",
+          "printed": "2320234.62",
+          "locator": {
+            "row": 6415,
+            "column": "QTD AMOUNT",
+            "organization": "2026 COMMITTEE ON FINANCIAL SERVICES",
+            "program": "GENERAL EXPENDITURES",
+            "description": "OFFICE TOTALS:"
+          },
+          "amount": 2320234.62,
+          "unitsEvidenceKind": "currency_mark_on_the_statements_own_total_bounds_the_column"
+        },
+        {
+          "label": "2026 COMMITTEE ON FINANCIAL SERVICES",
+          "program": "INTERN ALLOWANCES",
+          "printed": "21384.71",
+          "locator": {
+            "row": 6418,
+            "column": "QTD AMOUNT",
+            "organization": "2026 COMMITTEE ON FINANCIAL SERVICES",
+            "program": "INTERN ALLOWANCES",
+            "description": "OFFICE TOTALS:"
+          },
+          "amount": 21384.71,
+          "unitsEvidenceKind": "currency_mark_on_the_statements_own_total_bounds_the_column"
+        }
+      ],
+      "zeroComponents": [],
+      "amount": 2341619.33,
+      "componentCount": 2,
+      "documentsStatingTheFigure": 0,
+      "arithmetic": {
+        "operation": "sum_of_printed_totals",
+        "note": "The document prints no single total for this committee; the figure is the sum of the 2 totals it prints, each listed with its printed text."
+      },
+      "notTheCost": "Cash the chamber's disbursing office paid out for the committee's account over the period. It is not the Treasury's net outlays, not the graph's estimate for this node, and not its cost."
+    },
+    "leg-house-cmte-natural-resources": {
+      "nodeId": "leg-house-cmte-natural-resources",
+      "nodeName": "House Committee on Natural Resources",
+      "chamber": "house",
+      "costBasis": "disbursements",
+      "document": {
+        "title": "Statement of Disbursements of the House",
+        "file": "tests/fixtures/disbursements/house/2026q2_sod_summary_grid.csv",
+        "url": "https://www.house.gov/sites/default/files/2026-08/grids/APRIL-JUNE%202026%20SOD%20SUMM%20GRID-FINAL.csv",
+        "sha256": "4828ceb94cc1dc67bbdc4faa276ef0cc0e36cbc3f4dcf0a84f9e1f54b005b28b",
+        "fetchedAt": "2026-10-06T16:20:22Z",
+        "statementVolume": {
+          "file": "tests/fixtures/disbursements/house/2026q2_vol3_signed.pdf",
+          "url": "https://www.house.gov/sites/default/files/2026-08/books/2026q2_vol3_signed.pdf",
+          "sha256": "d7034a1122e34dae76f40257e20e5290d4a82367d9c531af6502311b259ca495"
+        },
+        "column": "QTD AMOUNT",
+        "columnDefinition": "Quarterly Amount — This amount lists the total expenditures for the specified quarter",
+        "statementTotal": {
+          "text": "$ 449,333,548.30",
+          "label": "Disbursements for salaries and expenses and canceled checks"
+        }
+      },
+      "period": {
+        "printed": "STATEMENT OF DISBURSEMENTS OF THE HOUSE FROM APRIL 1, 2026 TO JUNE 30, 2026",
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "coverage": "quarter"
+      },
+      "listedNames": [
+        "2026 COMMITTEE ON NATURAL RESOURCES"
+      ],
+      "matchRule": "committee_key_equal",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "unitsEvidence": {
+        "kind": "currency_mark_on_the_statements_own_total_bounds_the_column",
+        "statementTotal": "$ 449,333,548.30",
+        "columnAnchor": "1758645.2"
+      },
+      "caveat": "The statement's summary file lists the committee's current-year organisation only. Disbursements the quarter charged to the committee's earlier-year accounts are printed in the signed volumes beside named payees and are not in this figure.",
+      "components": [
+        {
+          "label": "2026 COMMITTEE ON NATURAL RESOURCES",
+          "program": "GENERAL EXPENDITURES",
+          "printed": "1758645.2",
+          "locator": {
+            "row": 6487,
+            "column": "QTD AMOUNT",
+            "organization": "2026 COMMITTEE ON NATURAL RESOURCES",
+            "program": "GENERAL EXPENDITURES",
+            "description": "OFFICE TOTALS:"
+          },
+          "amount": 1758645.2,
+          "unitsEvidenceKind": "currency_mark_on_the_statements_own_total_bounds_the_column"
+        },
+        {
+          "label": "2026 COMMITTEE ON NATURAL RESOURCES",
+          "program": "INTERN ALLOWANCES",
+          "printed": "22648.33",
+          "locator": {
+            "row": 6490,
+            "column": "QTD AMOUNT",
+            "organization": "2026 COMMITTEE ON NATURAL RESOURCES",
+            "program": "INTERN ALLOWANCES",
+            "description": "OFFICE TOTALS:"
+          },
+          "amount": 22648.33,
+          "unitsEvidenceKind": "currency_mark_on_the_statements_own_total_bounds_the_column"
+        }
+      ],
+      "zeroComponents": [],
+      "amount": 1781293.53,
+      "componentCount": 2,
+      "documentsStatingTheFigure": 0,
+      "arithmetic": {
+        "operation": "sum_of_printed_totals",
+        "note": "The document prints no single total for this committee; the figure is the sum of the 2 totals it prints, each listed with its printed text."
+      },
+      "notTheCost": "Cash the chamber's disbursing office paid out for the committee's account over the period. It is not the Treasury's net outlays, not the graph's estimate for this node, and not its cost."
+    },
+    "leg-house-cmte-foreign-affairs": {
+      "nodeId": "leg-house-cmte-foreign-affairs",
+      "nodeName": "House Committee on Foreign Affairs",
+      "chamber": "house",
+      "costBasis": "disbursements",
+      "document": {
+        "title": "Statement of Disbursements of the House",
+        "file": "tests/fixtures/disbursements/house/2026q2_sod_summary_grid.csv",
+        "url": "https://www.house.gov/sites/default/files/2026-08/grids/APRIL-JUNE%202026%20SOD%20SUMM%20GRID-FINAL.csv",
+        "sha256": "4828ceb94cc1dc67bbdc4faa276ef0cc0e36cbc3f4dcf0a84f9e1f54b005b28b",
+        "fetchedAt": "2026-10-06T16:20:22Z",
+        "statementVolume": {
+          "file": "tests/fixtures/disbursements/house/2026q2_vol3_signed.pdf",
+          "url": "https://www.house.gov/sites/default/files/2026-08/books/2026q2_vol3_signed.pdf",
+          "sha256": "d7034a1122e34dae76f40257e20e5290d4a82367d9c531af6502311b259ca495"
+        },
+        "column": "QTD AMOUNT",
+        "columnDefinition": "Quarterly Amount — This amount lists the total expenditures for the specified quarter",
+        "statementTotal": {
+          "text": "$ 449,333,548.30",
+          "label": "Disbursements for salaries and expenses and canceled checks"
+        }
+      },
+      "period": {
+        "printed": "STATEMENT OF DISBURSEMENTS OF THE HOUSE FROM APRIL 1, 2026 TO JUNE 30, 2026",
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "coverage": "quarter"
+      },
+      "listedNames": [
+        "2026 COMMITTEE ON FOREIGN AFFAIRS"
+      ],
+      "matchRule": "committee_key_equal",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "unitsEvidence": {
+        "kind": "currency_mark_on_the_statements_own_total_bounds_the_column",
+        "statementTotal": "$ 449,333,548.30",
+        "columnAnchor": "2568559.99"
+      },
+      "caveat": "The statement's summary file lists the committee's current-year organisation only. Disbursements the quarter charged to the committee's earlier-year accounts are printed in the signed volumes beside named payees and are not in this figure.",
+      "components": [
+        {
+          "label": "2026 COMMITTEE ON FOREIGN AFFAIRS",
+          "program": "GENERAL EXPENDITURES",
+          "printed": "2568559.99",
+          "locator": {
+            "row": 6499,
+            "column": "QTD AMOUNT",
+            "organization": "2026 COMMITTEE ON FOREIGN AFFAIRS",
+            "program": "GENERAL EXPENDITURES",
+            "description": "OFFICE TOTALS:"
+          },
+          "amount": 2568559.99,
+          "unitsEvidenceKind": "currency_mark_on_the_statements_own_total_bounds_the_column"
+        },
+        {
+          "label": "2026 COMMITTEE ON FOREIGN AFFAIRS",
+          "program": "INTERN ALLOWANCES",
+          "printed": "34933.33",
+          "locator": {
+            "row": 6502,
+            "column": "QTD AMOUNT",
+            "organization": "2026 COMMITTEE ON FOREIGN AFFAIRS",
+            "program": "INTERN ALLOWANCES",
+            "description": "OFFICE TOTALS:"
+          },
+          "amount": 34933.33,
+          "unitsEvidenceKind": "currency_mark_on_the_statements_own_total_bounds_the_column"
+        }
+      ],
+      "zeroComponents": [],
+      "amount": 2603493.32,
+      "componentCount": 2,
+      "documentsStatingTheFigure": 0,
+      "arithmetic": {
+        "operation": "sum_of_printed_totals",
+        "note": "The document prints no single total for this committee; the figure is the sum of the 2 totals it prints, each listed with its printed text."
+      },
+      "notTheCost": "Cash the chamber's disbursing office paid out for the committee's account over the period. It is not the Treasury's net outlays, not the graph's estimate for this node, and not its cost."
+    },
+    "leg-house-cmte-judiciary": {
+      "nodeId": "leg-house-cmte-judiciary",
+      "nodeName": "House Committee on Judiciary",
+      "chamber": "house",
+      "costBasis": "disbursements",
+      "document": {
+        "title": "Statement of Disbursements of the House",
+        "file": "tests/fixtures/disbursements/house/2026q2_sod_summary_grid.csv",
+        "url": "https://www.house.gov/sites/default/files/2026-08/grids/APRIL-JUNE%202026%20SOD%20SUMM%20GRID-FINAL.csv",
+        "sha256": "4828ceb94cc1dc67bbdc4faa276ef0cc0e36cbc3f4dcf0a84f9e1f54b005b28b",
+        "fetchedAt": "2026-10-06T16:20:22Z",
+        "statementVolume": {
+          "file": "tests/fixtures/disbursements/house/2026q2_vol3_signed.pdf",
+          "url": "https://www.house.gov/sites/default/files/2026-08/books/2026q2_vol3_signed.pdf",
+          "sha256": "d7034a1122e34dae76f40257e20e5290d4a82367d9c531af6502311b259ca495"
+        },
+        "column": "QTD AMOUNT",
+        "columnDefinition": "Quarterly Amount — This amount lists the total expenditures for the specified quarter",
+        "statementTotal": {
+          "text": "$ 449,333,548.30",
+          "label": "Disbursements for salaries and expenses and canceled checks"
+        }
+      },
+      "period": {
+        "printed": "STATEMENT OF DISBURSEMENTS OF THE HOUSE FROM APRIL 1, 2026 TO JUNE 30, 2026",
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "coverage": "quarter"
+      },
+      "listedNames": [
+        "2026 COMMITTEE ON JUDICIARY"
+      ],
+      "matchRule": "committee_key_equal",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "unitsEvidence": {
+        "kind": "currency_mark_on_the_statements_own_total_bounds_the_column",
+        "statementTotal": "$ 449,333,548.30",
+        "columnAnchor": "2995867.71"
+      },
+      "caveat": "The statement's summary file lists the committee's current-year organisation only. Disbursements the quarter charged to the committee's earlier-year accounts are printed in the signed volumes beside named payees and are not in this figure.",
+      "components": [
+        {
+          "label": "2026 COMMITTEE ON JUDICIARY",
+          "program": "GENERAL EXPENDITURES",
+          "printed": "2995867.71",
+          "locator": {
+            "row": 6511,
+            "column": "QTD AMOUNT",
+            "organization": "2026 COMMITTEE ON JUDICIARY",
+            "program": "GENERAL EXPENDITURES",
+            "description": "OFFICE TOTALS:"
+          },
+          "amount": 2995867.71,
+          "unitsEvidenceKind": "currency_mark_on_the_statements_own_total_bounds_the_column"
+        },
+        {
+          "label": "2026 COMMITTEE ON JUDICIARY",
+          "program": "INTERN ALLOWANCES",
+          "printed": "17716.67",
+          "locator": {
+            "row": 6514,
+            "column": "QTD AMOUNT",
+            "organization": "2026 COMMITTEE ON JUDICIARY",
+            "program": "INTERN ALLOWANCES",
+            "description": "OFFICE TOTALS:"
+          },
+          "amount": 17716.67,
+          "unitsEvidenceKind": "currency_mark_on_the_statements_own_total_bounds_the_column"
+        }
+      ],
+      "zeroComponents": [],
+      "amount": 3013584.38,
+      "componentCount": 2,
+      "documentsStatingTheFigure": 0,
+      "arithmetic": {
+        "operation": "sum_of_printed_totals",
+        "note": "The document prints no single total for this committee; the figure is the sum of the 2 totals it prints, each listed with its printed text."
+      },
+      "notTheCost": "Cash the chamber's disbursing office paid out for the committee's account over the period. It is not the Treasury's net outlays, not the graph's estimate for this node, and not its cost."
+    },
+    "leg-house-cmte-rules": {
+      "nodeId": "leg-house-cmte-rules",
+      "nodeName": "House Committee on Rules",
+      "chamber": "house",
+      "costBasis": "disbursements",
+      "document": {
+        "title": "Statement of Disbursements of the House",
+        "file": "tests/fixtures/disbursements/house/2026q2_sod_summary_grid.csv",
+        "url": "https://www.house.gov/sites/default/files/2026-08/grids/APRIL-JUNE%202026%20SOD%20SUMM%20GRID-FINAL.csv",
+        "sha256": "4828ceb94cc1dc67bbdc4faa276ef0cc0e36cbc3f4dcf0a84f9e1f54b005b28b",
+        "fetchedAt": "2026-10-06T16:20:22Z",
+        "statementVolume": {
+          "file": "tests/fixtures/disbursements/house/2026q2_vol3_signed.pdf",
+          "url": "https://www.house.gov/sites/default/files/2026-08/books/2026q2_vol3_signed.pdf",
+          "sha256": "d7034a1122e34dae76f40257e20e5290d4a82367d9c531af6502311b259ca495"
+        },
+        "column": "QTD AMOUNT",
+        "columnDefinition": "Quarterly Amount — This amount lists the total expenditures for the specified quarter",
+        "statementTotal": {
+          "text": "$ 449,333,548.30",
+          "label": "Disbursements for salaries and expenses and canceled checks"
+        }
+      },
+      "period": {
+        "printed": "STATEMENT OF DISBURSEMENTS OF THE HOUSE FROM APRIL 1, 2026 TO JUNE 30, 2026",
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "coverage": "quarter"
+      },
+      "listedNames": [
+        "2026 COMMITTEE ON RULES"
+      ],
+      "matchRule": "committee_key_equal",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "unitsEvidence": {
+        "kind": "currency_mark_on_the_statements_own_total_bounds_the_column",
+        "statementTotal": "$ 449,333,548.30",
+        "columnAnchor": "911768.72"
+      },
+      "caveat": "The statement's summary file lists the committee's current-year organisation only. Disbursements the quarter charged to the committee's earlier-year accounts are printed in the signed volumes beside named payees and are not in this figure.",
+      "components": [
+        {
+          "label": "2026 COMMITTEE ON RULES",
+          "program": "GENERAL EXPENDITURES",
+          "printed": "911768.72",
+          "locator": {
+            "row": 6535,
+            "column": "QTD AMOUNT",
+            "organization": "2026 COMMITTEE ON RULES",
+            "program": "GENERAL EXPENDITURES",
+            "description": "OFFICE TOTALS:"
+          },
+          "amount": 911768.72,
+          "unitsEvidenceKind": "currency_mark_on_the_statements_own_total_bounds_the_column"
+        },
+        {
+          "label": "2026 COMMITTEE ON RULES",
+          "program": "INTERN ALLOWANCES",
+          "printed": "12533.33",
+          "locator": {
+            "row": 6538,
+            "column": "QTD AMOUNT",
+            "organization": "2026 COMMITTEE ON RULES",
+            "program": "INTERN ALLOWANCES",
+            "description": "OFFICE TOTALS:"
+          },
+          "amount": 12533.33,
+          "unitsEvidenceKind": "currency_mark_on_the_statements_own_total_bounds_the_column"
+        }
+      ],
+      "zeroComponents": [],
+      "amount": 924302.05,
+      "componentCount": 2,
+      "documentsStatingTheFigure": 0,
+      "arithmetic": {
+        "operation": "sum_of_printed_totals",
+        "note": "The document prints no single total for this committee; the figure is the sum of the 2 totals it prints, each listed with its printed text."
+      },
+      "notTheCost": "Cash the chamber's disbursing office paid out for the committee's account over the period. It is not the Treasury's net outlays, not the graph's estimate for this node, and not its cost."
+    },
+    "leg-house-cmte-small-business": {
+      "nodeId": "leg-house-cmte-small-business",
+      "nodeName": "House Committee on Small Business",
+      "chamber": "house",
+      "costBasis": "disbursements",
+      "document": {
+        "title": "Statement of Disbursements of the House",
+        "file": "tests/fixtures/disbursements/house/2026q2_sod_summary_grid.csv",
+        "url": "https://www.house.gov/sites/default/files/2026-08/grids/APRIL-JUNE%202026%20SOD%20SUMM%20GRID-FINAL.csv",
+        "sha256": "4828ceb94cc1dc67bbdc4faa276ef0cc0e36cbc3f4dcf0a84f9e1f54b005b28b",
+        "fetchedAt": "2026-10-06T16:20:22Z",
+        "statementVolume": {
+          "file": "tests/fixtures/disbursements/house/2026q2_vol3_signed.pdf",
+          "url": "https://www.house.gov/sites/default/files/2026-08/books/2026q2_vol3_signed.pdf",
+          "sha256": "d7034a1122e34dae76f40257e20e5290d4a82367d9c531af6502311b259ca495"
+        },
+        "column": "QTD AMOUNT",
+        "columnDefinition": "Quarterly Amount — This amount lists the total expenditures for the specified quarter",
+        "statementTotal": {
+          "text": "$ 449,333,548.30",
+          "label": "Disbursements for salaries and expenses and canceled checks"
+        }
+      },
+      "period": {
+        "printed": "STATEMENT OF DISBURSEMENTS OF THE HOUSE FROM APRIL 1, 2026 TO JUNE 30, 2026",
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "coverage": "quarter"
+      },
+      "listedNames": [
+        "2026 COMMITTEE ON SMALL BUSINESS"
+      ],
+      "matchRule": "committee_key_equal",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "unitsEvidence": {
+        "kind": "currency_mark_on_the_statements_own_total_bounds_the_column",
+        "statementTotal": "$ 449,333,548.30",
+        "columnAnchor": "753405.13"
+      },
+      "caveat": "The statement's summary file lists the committee's current-year organisation only. Disbursements the quarter charged to the committee's earlier-year accounts are printed in the signed volumes beside named payees and are not in this figure.",
+      "components": [
+        {
+          "label": "2026 COMMITTEE ON SMALL BUSINESS",
+          "program": "GENERAL EXPENDITURES",
+          "printed": "753405.13",
+          "locator": {
+            "row": 6559,
+            "column": "QTD AMOUNT",
+            "organization": "2026 COMMITTEE ON SMALL BUSINESS",
+            "program": "GENERAL EXPENDITURES",
+            "description": "OFFICE TOTALS:"
+          },
+          "amount": 753405.13,
+          "unitsEvidenceKind": "currency_mark_on_the_statements_own_total_bounds_the_column"
+        },
+        {
+          "label": "2026 COMMITTEE ON SMALL BUSINESS",
+          "program": "INTERN ALLOWANCES",
+          "printed": "18714.44",
+          "locator": {
+            "row": 6562,
+            "column": "QTD AMOUNT",
+            "organization": "2026 COMMITTEE ON SMALL BUSINESS",
+            "program": "INTERN ALLOWANCES",
+            "description": "OFFICE TOTALS:"
+          },
+          "amount": 18714.44,
+          "unitsEvidenceKind": "currency_mark_on_the_statements_own_total_bounds_the_column"
+        }
+      ],
+      "zeroComponents": [],
+      "amount": 772119.57,
+      "componentCount": 2,
+      "documentsStatingTheFigure": 0,
+      "arithmetic": {
+        "operation": "sum_of_printed_totals",
+        "note": "The document prints no single total for this committee; the figure is the sum of the 2 totals it prints, each listed with its printed text."
+      },
+      "notTheCost": "Cash the chamber's disbursing office paid out for the committee's account over the period. It is not the Treasury's net outlays, not the graph's estimate for this node, and not its cost."
+    },
+    "leg-house-cmte-veterans-affairs": {
+      "nodeId": "leg-house-cmte-veterans-affairs",
+      "nodeName": "House Committee on Veterans' Affairs",
+      "chamber": "house",
+      "costBasis": "disbursements",
+      "document": {
+        "title": "Statement of Disbursements of the House",
+        "file": "tests/fixtures/disbursements/house/2026q2_sod_summary_grid.csv",
+        "url": "https://www.house.gov/sites/default/files/2026-08/grids/APRIL-JUNE%202026%20SOD%20SUMM%20GRID-FINAL.csv",
+        "sha256": "4828ceb94cc1dc67bbdc4faa276ef0cc0e36cbc3f4dcf0a84f9e1f54b005b28b",
+        "fetchedAt": "2026-10-06T16:20:22Z",
+        "statementVolume": {
+          "file": "tests/fixtures/disbursements/house/2026q2_vol3_signed.pdf",
+          "url": "https://www.house.gov/sites/default/files/2026-08/books/2026q2_vol3_signed.pdf",
+          "sha256": "d7034a1122e34dae76f40257e20e5290d4a82367d9c531af6502311b259ca495"
+        },
+        "column": "QTD AMOUNT",
+        "columnDefinition": "Quarterly Amount — This amount lists the total expenditures for the specified quarter",
+        "statementTotal": {
+          "text": "$ 449,333,548.30",
+          "label": "Disbursements for salaries and expenses and canceled checks"
+        }
+      },
+      "period": {
+        "printed": "STATEMENT OF DISBURSEMENTS OF THE HOUSE FROM APRIL 1, 2026 TO JUNE 30, 2026",
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "coverage": "quarter"
+      },
+      "listedNames": [
+        "2026 COMMITTEE ON VETERANS AFFAIRS"
+      ],
+      "matchRule": "committee_key_equal",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "unitsEvidence": {
+        "kind": "currency_mark_on_the_statements_own_total_bounds_the_column",
+        "statementTotal": "$ 449,333,548.30",
+        "columnAnchor": "1363187"
+      },
+      "caveat": "The statement's summary file lists the committee's current-year organisation only. Disbursements the quarter charged to the committee's earlier-year accounts are printed in the signed volumes beside named payees and are not in this figure.",
+      "components": [
+        {
+          "label": "2026 COMMITTEE ON VETERANS AFFAIRS",
+          "program": "GENERAL EXPENDITURES",
+          "printed": "1363187",
+          "locator": {
+            "row": 6580,
+            "column": "QTD AMOUNT",
+            "organization": "2026 COMMITTEE ON VETERANS AFFAIRS",
+            "program": "GENERAL EXPENDITURES",
+            "description": "OFFICE TOTALS:"
+          },
+          "amount": 1363187.0,
+          "unitsEvidenceKind": "currency_mark_on_the_statements_own_total_bounds_the_column"
+        },
+        {
+          "label": "2026 COMMITTEE ON VETERANS AFFAIRS",
+          "program": "INTERN ALLOWANCES",
+          "printed": "25179.99",
+          "locator": {
+            "row": 6583,
+            "column": "QTD AMOUNT",
+            "organization": "2026 COMMITTEE ON VETERANS AFFAIRS",
+            "program": "INTERN ALLOWANCES",
+            "description": "OFFICE TOTALS:"
+          },
+          "amount": 25179.99,
+          "unitsEvidenceKind": "currency_mark_on_the_statements_own_total_bounds_the_column"
+        }
+      ],
+      "zeroComponents": [],
+      "amount": 1388366.99,
+      "componentCount": 2,
+      "documentsStatingTheFigure": 0,
+      "arithmetic": {
+        "operation": "sum_of_printed_totals",
+        "note": "The document prints no single total for this committee; the figure is the sum of the 2 totals it prints, each listed with its printed text."
+      },
+      "notTheCost": "Cash the chamber's disbursing office paid out for the committee's account over the period. It is not the Treasury's net outlays, not the graph's estimate for this node, and not its cost."
+    },
+    "leg-house-cmte-ways-means": {
+      "nodeId": "leg-house-cmte-ways-means",
+      "nodeName": "House Committee on Ways & Means",
+      "chamber": "house",
+      "costBasis": "disbursements",
+      "document": {
+        "title": "Statement of Disbursements of the House",
+        "file": "tests/fixtures/disbursements/house/2026q2_sod_summary_grid.csv",
+        "url": "https://www.house.gov/sites/default/files/2026-08/grids/APRIL-JUNE%202026%20SOD%20SUMM%20GRID-FINAL.csv",
+        "sha256": "4828ceb94cc1dc67bbdc4faa276ef0cc0e36cbc3f4dcf0a84f9e1f54b005b28b",
+        "fetchedAt": "2026-10-06T16:20:22Z",
+        "statementVolume": {
+          "file": "tests/fixtures/disbursements/house/2026q2_vol3_signed.pdf",
+          "url": "https://www.house.gov/sites/default/files/2026-08/books/2026q2_vol3_signed.pdf",
+          "sha256": "d7034a1122e34dae76f40257e20e5290d4a82367d9c531af6502311b259ca495"
+        },
+        "column": "QTD AMOUNT",
+        "columnDefinition": "Quarterly Amount — This amount lists the total expenditures for the specified quarter",
+        "statementTotal": {
+          "text": "$ 449,333,548.30",
+          "label": "Disbursements for salaries and expenses and canceled checks"
+        }
+      },
+      "period": {
+        "printed": "STATEMENT OF DISBURSEMENTS OF THE HOUSE FROM APRIL 1, 2026 TO JUNE 30, 2026",
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "coverage": "quarter"
+      },
+      "listedNames": [
+        "2026 COMMITTEE ON WAYS AND MEANS"
+      ],
+      "matchRule": "committee_key_equal",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "unitsEvidence": {
+        "kind": "currency_mark_on_the_statements_own_total_bounds_the_column",
+        "statementTotal": "$ 449,333,548.30",
+        "columnAnchor": "3123382.43"
+      },
+      "caveat": "The statement's summary file lists the committee's current-year organisation only. Disbursements the quarter charged to the committee's earlier-year accounts are printed in the signed volumes beside named payees and are not in this figure.",
+      "components": [
+        {
+          "label": "2026 COMMITTEE ON WAYS AND MEANS",
+          "program": "GENERAL EXPENDITURES",
+          "printed": "3123382.43",
+          "locator": {
+            "row": 6592,
+            "column": "QTD AMOUNT",
+            "organization": "2026 COMMITTEE ON WAYS AND MEANS",
+            "program": "GENERAL EXPENDITURES",
+            "description": "OFFICE TOTALS:"
+          },
+          "amount": 3123382.43,
+          "unitsEvidenceKind": "currency_mark_on_the_statements_own_total_bounds_the_column"
+        },
+        {
+          "label": "2026 COMMITTEE ON WAYS AND MEANS",
+          "program": "INTERN ALLOWANCES",
+          "printed": "60894.98",
+          "locator": {
+            "row": 6595,
+            "column": "QTD AMOUNT",
+            "organization": "2026 COMMITTEE ON WAYS AND MEANS",
+            "program": "INTERN ALLOWANCES",
+            "description": "OFFICE TOTALS:"
+          },
+          "amount": 60894.98,
+          "unitsEvidenceKind": "currency_mark_on_the_statements_own_total_bounds_the_column"
+        }
+      ],
+      "zeroComponents": [],
+      "amount": 3184277.41,
+      "componentCount": 2,
+      "documentsStatingTheFigure": 0,
+      "arithmetic": {
+        "operation": "sum_of_printed_totals",
+        "note": "The document prints no single total for this committee; the figure is the sum of the 2 totals it prints, each listed with its printed text."
+      },
+      "notTheCost": "Cash the chamber's disbursing office paid out for the committee's account over the period. It is not the Treasury's net outlays, not the graph's estimate for this node, and not its cost."
+    },
+    "leg-house-cmte-homeland-security": {
+      "nodeId": "leg-house-cmte-homeland-security",
+      "nodeName": "House Committee on Homeland Security",
+      "chamber": "house",
+      "costBasis": "disbursements",
+      "document": {
+        "title": "Statement of Disbursements of the House",
+        "file": "tests/fixtures/disbursements/house/2026q2_sod_summary_grid.csv",
+        "url": "https://www.house.gov/sites/default/files/2026-08/grids/APRIL-JUNE%202026%20SOD%20SUMM%20GRID-FINAL.csv",
+        "sha256": "4828ceb94cc1dc67bbdc4faa276ef0cc0e36cbc3f4dcf0a84f9e1f54b005b28b",
+        "fetchedAt": "2026-10-06T16:20:22Z",
+        "statementVolume": {
+          "file": "tests/fixtures/disbursements/house/2026q2_vol3_signed.pdf",
+          "url": "https://www.house.gov/sites/default/files/2026-08/books/2026q2_vol3_signed.pdf",
+          "sha256": "d7034a1122e34dae76f40257e20e5290d4a82367d9c531af6502311b259ca495"
+        },
+        "column": "QTD AMOUNT",
+        "columnDefinition": "Quarterly Amount — This amount lists the total expenditures for the specified quarter",
+        "statementTotal": {
+          "text": "$ 449,333,548.30",
+          "label": "Disbursements for salaries and expenses and canceled checks"
+        }
+      },
+      "period": {
+        "printed": "STATEMENT OF DISBURSEMENTS OF THE HOUSE FROM APRIL 1, 2026 TO JUNE 30, 2026",
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "coverage": "quarter"
+      },
+      "listedNames": [
+        "2026 HOMELAND SECURITY"
+      ],
+      "matchRule": "committee_type_words_folded",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "unitsEvidence": {
+        "kind": "currency_mark_on_the_statements_own_total_bounds_the_column",
+        "statementTotal": "$ 449,333,548.30",
+        "columnAnchor": "1797173.17"
+      },
+      "caveat": "The statement's summary file lists the committee's current-year organisation only. Disbursements the quarter charged to the committee's earlier-year accounts are printed in the signed volumes beside named payees and are not in this figure.",
+      "components": [
+        {
+          "label": "2026 HOMELAND SECURITY",
+          "program": "GENERAL EXPENDITURES",
+          "printed": "1797173.17",
+          "locator": {
+            "row": 6626,
+            "column": "QTD AMOUNT",
+            "organization": "2026 HOMELAND SECURITY",
+            "program": "GENERAL EXPENDITURES",
+            "description": "OFFICE TOTALS:"
+          },
+          "amount": 1797173.17,
+          "unitsEvidenceKind": "currency_mark_on_the_statements_own_total_bounds_the_column"
+        },
+        {
+          "label": "2026 HOMELAND SECURITY",
+          "program": "INTERN ALLOWANCES",
+          "printed": "48690.57",
+          "locator": {
+            "row": 6629,
+            "column": "QTD AMOUNT",
+            "organization": "2026 HOMELAND SECURITY",
+            "program": "INTERN ALLOWANCES",
+            "description": "OFFICE TOTALS:"
+          },
+          "amount": 48690.57,
+          "unitsEvidenceKind": "currency_mark_on_the_statements_own_total_bounds_the_column"
+        }
+      ],
+      "zeroComponents": [],
+      "amount": 1845863.74,
+      "componentCount": 2,
+      "documentsStatingTheFigure": 0,
+      "arithmetic": {
+        "operation": "sum_of_printed_totals",
+        "note": "The document prints no single total for this committee; the figure is the sum of the 2 totals it prints, each listed with its printed text."
+      },
+      "notTheCost": "Cash the chamber's disbursing office paid out for the committee's account over the period. It is not the Treasury's net outlays, not the graph's estimate for this node, and not its cost."
+    },
+    "leg-house-cmte-energy-commerce": {
+      "nodeId": "leg-house-cmte-energy-commerce",
+      "nodeName": "House Committee on Energy & Commerce",
+      "chamber": "house",
+      "costBasis": "disbursements",
+      "document": {
+        "title": "Statement of Disbursements of the House",
+        "file": "tests/fixtures/disbursements/house/2026q2_sod_summary_grid.csv",
+        "url": "https://www.house.gov/sites/default/files/2026-08/grids/APRIL-JUNE%202026%20SOD%20SUMM%20GRID-FINAL.csv",
+        "sha256": "4828ceb94cc1dc67bbdc4faa276ef0cc0e36cbc3f4dcf0a84f9e1f54b005b28b",
+        "fetchedAt": "2026-10-06T16:20:22Z",
+        "statementVolume": {
+          "file": "tests/fixtures/disbursements/house/2026q2_vol3_signed.pdf",
+          "url": "https://www.house.gov/sites/default/files/2026-08/books/2026q2_vol3_signed.pdf",
+          "sha256": "d7034a1122e34dae76f40257e20e5290d4a82367d9c531af6502311b259ca495"
+        },
+        "column": "QTD AMOUNT",
+        "columnDefinition": "Quarterly Amount — This amount lists the total expenditures for the specified quarter",
+        "statementTotal": {
+          "text": "$ 449,333,548.30",
+          "label": "Disbursements for salaries and expenses and canceled checks"
+        }
+      },
+      "period": {
+        "printed": "STATEMENT OF DISBURSEMENTS OF THE HOUSE FROM APRIL 1, 2026 TO JUNE 30, 2026",
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "coverage": "quarter"
+      },
+      "listedNames": [
+        "2026 COMMITTEE ON ENERGY & COMMERCE",
+        "2026 COMM ON ENERGY & COMMERCE-MIN"
+      ],
+      "matchRule": "reviewed_row",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "matchBasis": "The statement files the committee under two organisations, the majority's and one suffixed '-MIN'; no other committee in the file is split. Both are this committee's staff, so the row claims both and the figure is their sum -- the majority alone, which the name rule reaches, would leave the minority's disbursements out.",
+      "unitsEvidence": {
+        "kind": "currency_mark_on_the_statements_own_total_bounds_the_column",
+        "statementTotal": "$ 449,333,548.30",
+        "columnAnchor": "1813498.34"
+      },
+      "caveat": "The statement's summary file lists the committee's current-year organisation only. Disbursements the quarter charged to the committee's earlier-year accounts are printed in the signed volumes beside named payees and are not in this figure.",
+      "components": [
+        {
+          "label": "2026 COMMITTEE ON ENERGY & COMMERCE",
+          "program": "GENERAL EXPENDITURES",
+          "printed": "1813498.34",
+          "locator": {
+            "row": 6439,
+            "column": "QTD AMOUNT",
+            "organization": "2026 COMMITTEE ON ENERGY & COMMERCE",
+            "program": "GENERAL EXPENDITURES",
+            "description": "OFFICE TOTALS:"
+          },
+          "amount": 1813498.34,
+          "unitsEvidenceKind": "currency_mark_on_the_statements_own_total_bounds_the_column"
+        },
+        {
+          "label": "2026 COMMITTEE ON ENERGY & COMMERCE",
+          "program": "INTERN ALLOWANCES",
+          "printed": "26576",
+          "locator": {
+            "row": 6442,
+            "column": "QTD AMOUNT",
+            "organization": "2026 COMMITTEE ON ENERGY & COMMERCE",
+            "program": "INTERN ALLOWANCES",
+            "description": "OFFICE TOTALS:"
+          },
+          "amount": 26576.0,
+          "unitsEvidenceKind": "currency_mark_on_the_statements_own_total_bounds_the_column"
+        },
+        {
+          "label": "2026 COMM ON ENERGY & COMMERCE-MIN",
+          "program": "GENERAL EXPENDITURES",
+          "printed": "1225176.99",
+          "locator": {
+            "row": 6451,
+            "column": "QTD AMOUNT",
+            "organization": "2026 COMM ON ENERGY & COMMERCE-MIN",
+            "program": "GENERAL EXPENDITURES",
+            "description": "OFFICE TOTALS:"
+          },
+          "amount": 1225176.99,
+          "unitsEvidenceKind": "currency_mark_on_the_statements_own_total_bounds_the_column"
+        },
+        {
+          "label": "2026 COMM ON ENERGY & COMMERCE-MIN",
+          "program": "INTERN ALLOWANCES",
+          "printed": "22030.55",
+          "locator": {
+            "row": 6454,
+            "column": "QTD AMOUNT",
+            "organization": "2026 COMM ON ENERGY & COMMERCE-MIN",
+            "program": "INTERN ALLOWANCES",
+            "description": "OFFICE TOTALS:"
+          },
+          "amount": 22030.55,
+          "unitsEvidenceKind": "currency_mark_on_the_statements_own_total_bounds_the_column"
+        }
+      ],
+      "zeroComponents": [],
+      "amount": 3087281.88,
+      "componentCount": 4,
+      "documentsStatingTheFigure": 0,
+      "arithmetic": {
+        "operation": "sum_of_printed_totals",
+        "note": "The document prints no single total for this committee; the figure is the sum of the 4 totals it prints, each listed with its printed text."
+      },
+      "notTheCost": "Cash the chamber's disbursing office paid out for the committee's account over the period. It is not the Treasury's net outlays, not the graph's estimate for this node, and not its cost."
+    },
+    "leg-house-cmte-education-the-workforce": {
+      "nodeId": "leg-house-cmte-education-the-workforce",
+      "nodeName": "House Committee on Education & the Workforce",
+      "chamber": "house",
+      "costBasis": "disbursements",
+      "document": {
+        "title": "Statement of Disbursements of the House",
+        "file": "tests/fixtures/disbursements/house/2026q2_sod_summary_grid.csv",
+        "url": "https://www.house.gov/sites/default/files/2026-08/grids/APRIL-JUNE%202026%20SOD%20SUMM%20GRID-FINAL.csv",
+        "sha256": "4828ceb94cc1dc67bbdc4faa276ef0cc0e36cbc3f4dcf0a84f9e1f54b005b28b",
+        "fetchedAt": "2026-10-06T16:20:22Z",
+        "statementVolume": {
+          "file": "tests/fixtures/disbursements/house/2026q2_vol3_signed.pdf",
+          "url": "https://www.house.gov/sites/default/files/2026-08/books/2026q2_vol3_signed.pdf",
+          "sha256": "d7034a1122e34dae76f40257e20e5290d4a82367d9c531af6502311b259ca495"
+        },
+        "column": "QTD AMOUNT",
+        "columnDefinition": "Quarterly Amount — This amount lists the total expenditures for the specified quarter",
+        "statementTotal": {
+          "text": "$ 449,333,548.30",
+          "label": "Disbursements for salaries and expenses and canceled checks"
+        }
+      },
+      "period": {
+        "printed": "STATEMENT OF DISBURSEMENTS OF THE HOUSE FROM APRIL 1, 2026 TO JUNE 30, 2026",
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "coverage": "quarter"
+      },
+      "listedNames": [
+        "2026 COMMITTEE ON EDUCATION AND WORKFORCE"
+      ],
+      "matchRule": "reviewed_row",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "matchBasis": "The statement prints the committee's name without the article; no other committee of the House has this jurisdiction.",
+      "unitsEvidence": {
+        "kind": "currency_mark_on_the_statements_own_total_bounds_the_column",
+        "statementTotal": "$ 449,333,548.30",
+        "columnAnchor": "1990104.7"
+      },
+      "caveat": "The statement's summary file lists the committee's current-year organisation only. Disbursements the quarter charged to the committee's earlier-year accounts are printed in the signed volumes beside named payees and are not in this figure.",
+      "components": [
+        {
+          "label": "2026 COMMITTEE ON EDUCATION AND WORKFORCE",
+          "program": "GENERAL EXPENDITURES",
+          "printed": "1990104.7",
+          "locator": {
+            "row": 6427,
+            "column": "QTD AMOUNT",
+            "organization": "2026 COMMITTEE ON EDUCATION AND WORKFORCE",
+            "program": "GENERAL EXPENDITURES",
+            "description": "OFFICE TOTALS:"
+          },
+          "amount": 1990104.7,
+          "unitsEvidenceKind": "currency_mark_on_the_statements_own_total_bounds_the_column"
+        },
+        {
+          "label": "2026 COMMITTEE ON EDUCATION AND WORKFORCE",
+          "program": "INTERN ALLOWANCES",
+          "printed": "32763.68",
+          "locator": {
+            "row": 6430,
+            "column": "QTD AMOUNT",
+            "organization": "2026 COMMITTEE ON EDUCATION AND WORKFORCE",
+            "program": "INTERN ALLOWANCES",
+            "description": "OFFICE TOTALS:"
+          },
+          "amount": 32763.68,
+          "unitsEvidenceKind": "currency_mark_on_the_statements_own_total_bounds_the_column"
+        }
+      ],
+      "zeroComponents": [],
+      "amount": 2022868.38,
+      "componentCount": 2,
+      "documentsStatingTheFigure": 0,
+      "arithmetic": {
+        "operation": "sum_of_printed_totals",
+        "note": "The document prints no single total for this committee; the figure is the sum of the 2 totals it prints, each listed with its printed text."
+      },
+      "notTheCost": "Cash the chamber's disbursing office paid out for the committee's account over the period. It is not the Treasury's net outlays, not the graph's estimate for this node, and not its cost."
+    },
+    "leg-house-cmte-oversight-accountability": {
+      "nodeId": "leg-house-cmte-oversight-accountability",
+      "nodeName": "House Committee on Oversight and Government Reform",
+      "chamber": "house",
+      "costBasis": "disbursements",
+      "document": {
+        "title": "Statement of Disbursements of the House",
+        "file": "tests/fixtures/disbursements/house/2026q2_sod_summary_grid.csv",
+        "url": "https://www.house.gov/sites/default/files/2026-08/grids/APRIL-JUNE%202026%20SOD%20SUMM%20GRID-FINAL.csv",
+        "sha256": "4828ceb94cc1dc67bbdc4faa276ef0cc0e36cbc3f4dcf0a84f9e1f54b005b28b",
+        "fetchedAt": "2026-10-06T16:20:22Z",
+        "statementVolume": {
+          "file": "tests/fixtures/disbursements/house/2026q2_vol3_signed.pdf",
+          "url": "https://www.house.gov/sites/default/files/2026-08/books/2026q2_vol3_signed.pdf",
+          "sha256": "d7034a1122e34dae76f40257e20e5290d4a82367d9c531af6502311b259ca495"
+        },
+        "column": "QTD AMOUNT",
+        "columnDefinition": "Quarterly Amount — This amount lists the total expenditures for the specified quarter",
+        "statementTotal": {
+          "text": "$ 449,333,548.30",
+          "label": "Disbursements for salaries and expenses and canceled checks"
+        }
+      },
+      "period": {
+        "printed": "STATEMENT OF DISBURSEMENTS OF THE HOUSE FROM APRIL 1, 2026 TO JUNE 30, 2026",
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "coverage": "quarter"
+      },
+      "listedNames": [
+        "2026 COMMITTEE ON OVERSIGHT AND ACCOUNTABILITY"
+      ],
+      "matchRule": "reviewed_row",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "matchBasis": "The statement's organisation still carries the committee's 118th-Congress name; the House Clerk's committee list (tests/fixtures/directories/house/committees.xlsx) carries no committee of that name and this graph's node, whose id keeps the earlier name, is the same committee under its current one.",
+      "unitsEvidence": {
+        "kind": "currency_mark_on_the_statements_own_total_bounds_the_column",
+        "statementTotal": "$ 449,333,548.30",
+        "columnAnchor": "3339578.45"
+      },
+      "caveat": "The statement's summary file lists the committee's current-year organisation only. Disbursements the quarter charged to the committee's earlier-year accounts are printed in the signed volumes beside named payees and are not in this figure.",
+      "components": [
+        {
+          "label": "2026 COMMITTEE ON OVERSIGHT AND ACCOUNTABILITY",
+          "program": "GENERAL EXPENDITURES",
+          "printed": "3339578.45",
+          "locator": {
+            "row": 6463,
+            "column": "QTD AMOUNT",
+            "organization": "2026 COMMITTEE ON OVERSIGHT AND ACCOUNTABILITY",
+            "program": "GENERAL EXPENDITURES",
+            "description": "OFFICE TOTALS:"
+          },
+          "amount": 3339578.45,
+          "unitsEvidenceKind": "currency_mark_on_the_statements_own_total_bounds_the_column"
+        },
+        {
+          "label": "2026 COMMITTEE ON OVERSIGHT AND ACCOUNTABILITY",
+          "program": "INTERN ALLOWANCES",
+          "printed": "69283.71",
+          "locator": {
+            "row": 6466,
+            "column": "QTD AMOUNT",
+            "organization": "2026 COMMITTEE ON OVERSIGHT AND ACCOUNTABILITY",
+            "program": "INTERN ALLOWANCES",
+            "description": "OFFICE TOTALS:"
+          },
+          "amount": 69283.71,
+          "unitsEvidenceKind": "currency_mark_on_the_statements_own_total_bounds_the_column"
+        }
+      ],
+      "zeroComponents": [],
+      "amount": 3408862.16,
+      "componentCount": 2,
+      "documentsStatingTheFigure": 0,
+      "arithmetic": {
+        "operation": "sum_of_printed_totals",
+        "note": "The document prints no single total for this committee; the figure is the sum of the 2 totals it prints, each listed with its printed text."
+      },
+      "notTheCost": "Cash the chamber's disbursing office paid out for the committee's account over the period. It is not the Treasury's net outlays, not the graph's estimate for this node, and not its cost."
+    },
+    "leg-house-cmte-house-administration": {
+      "nodeId": "leg-house-cmte-house-administration",
+      "nodeName": "House Committee on House Administration",
+      "chamber": "house",
+      "costBasis": "disbursements",
+      "document": {
+        "title": "Statement of Disbursements of the House",
+        "file": "tests/fixtures/disbursements/house/2026q2_sod_summary_grid.csv",
+        "url": "https://www.house.gov/sites/default/files/2026-08/grids/APRIL-JUNE%202026%20SOD%20SUMM%20GRID-FINAL.csv",
+        "sha256": "4828ceb94cc1dc67bbdc4faa276ef0cc0e36cbc3f4dcf0a84f9e1f54b005b28b",
+        "fetchedAt": "2026-10-06T16:20:22Z",
+        "statementVolume": {
+          "file": "tests/fixtures/disbursements/house/2026q2_vol3_signed.pdf",
+          "url": "https://www.house.gov/sites/default/files/2026-08/books/2026q2_vol3_signed.pdf",
+          "sha256": "d7034a1122e34dae76f40257e20e5290d4a82367d9c531af6502311b259ca495"
+        },
+        "column": "QTD AMOUNT",
+        "columnDefinition": "Quarterly Amount — This amount lists the total expenditures for the specified quarter",
+        "statementTotal": {
+          "text": "$ 449,333,548.30",
+          "label": "Disbursements for salaries and expenses and canceled checks"
+        }
+      },
+      "period": {
+        "printed": "STATEMENT OF DISBURSEMENTS OF THE HOUSE FROM APRIL 1, 2026 TO JUNE 30, 2026",
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "coverage": "quarter"
+      },
+      "listedNames": [
+        "2026 HOUSE ADMINISTRATION"
+      ],
+      "matchRule": "reviewed_row",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "matchBasis": "The statement prints the committee's name without the type words; the chamber word is part of this committee's own name, so the fold that drops a leading 'House' cannot reach it.",
+      "unitsEvidence": {
+        "kind": "currency_mark_on_the_statements_own_total_bounds_the_column",
+        "statementTotal": "$ 449,333,548.30",
+        "columnAnchor": "1540228.06"
+      },
+      "caveat": "The statement's summary file lists the committee's current-year organisation only. Disbursements the quarter charged to the committee's earlier-year accounts are printed in the signed volumes beside named payees and are not in this figure.",
+      "components": [
+        {
+          "label": "2026 HOUSE ADMINISTRATION",
+          "program": "GENERAL EXPENDITURES",
+          "printed": "1540228.06",
+          "locator": {
+            "row": 6475,
+            "column": "QTD AMOUNT",
+            "organization": "2026 HOUSE ADMINISTRATION",
+            "program": "GENERAL EXPENDITURES",
+            "description": "OFFICE TOTALS:"
+          },
+          "amount": 1540228.06,
+          "unitsEvidenceKind": "currency_mark_on_the_statements_own_total_bounds_the_column"
+        },
+        {
+          "label": "2026 HOUSE ADMINISTRATION",
+          "program": "INTERN ALLOWANCES",
+          "printed": "22900",
+          "locator": {
+            "row": 6478,
+            "column": "QTD AMOUNT",
+            "organization": "2026 HOUSE ADMINISTRATION",
+            "program": "INTERN ALLOWANCES",
+            "description": "OFFICE TOTALS:"
+          },
+          "amount": 22900.0,
+          "unitsEvidenceKind": "currency_mark_on_the_statements_own_total_bounds_the_column"
+        }
+      ],
+      "zeroComponents": [],
+      "amount": 1563128.06,
+      "componentCount": 2,
+      "documentsStatingTheFigure": 0,
+      "arithmetic": {
+        "operation": "sum_of_printed_totals",
+        "note": "The document prints no single total for this committee; the figure is the sum of the 2 totals it prints, each listed with its printed text."
+      },
+      "notTheCost": "Cash the chamber's disbursing office paid out for the committee's account over the period. It is not the Treasury's net outlays, not the graph's estimate for this node, and not its cost."
+    },
+    "leg-house-cmte-transportation-infrastructure": {
+      "nodeId": "leg-house-cmte-transportation-infrastructure",
+      "nodeName": "House Committee on Transportation & Infrastructure",
+      "chamber": "house",
+      "costBasis": "disbursements",
+      "document": {
+        "title": "Statement of Disbursements of the House",
+        "file": "tests/fixtures/disbursements/house/2026q2_sod_summary_grid.csv",
+        "url": "https://www.house.gov/sites/default/files/2026-08/grids/APRIL-JUNE%202026%20SOD%20SUMM%20GRID-FINAL.csv",
+        "sha256": "4828ceb94cc1dc67bbdc4faa276ef0cc0e36cbc3f4dcf0a84f9e1f54b005b28b",
+        "fetchedAt": "2026-10-06T16:20:22Z",
+        "statementVolume": {
+          "file": "tests/fixtures/disbursements/house/2026q2_vol3_signed.pdf",
+          "url": "https://www.house.gov/sites/default/files/2026-08/books/2026q2_vol3_signed.pdf",
+          "sha256": "d7034a1122e34dae76f40257e20e5290d4a82367d9c531af6502311b259ca495"
+        },
+        "column": "QTD AMOUNT",
+        "columnDefinition": "Quarterly Amount — This amount lists the total expenditures for the specified quarter",
+        "statementTotal": {
+          "text": "$ 449,333,548.30",
+          "label": "Disbursements for salaries and expenses and canceled checks"
+        }
+      },
+      "period": {
+        "printed": "STATEMENT OF DISBURSEMENTS OF THE HOUSE FROM APRIL 1, 2026 TO JUNE 30, 2026",
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "coverage": "quarter"
+      },
+      "listedNames": [
+        "2026 TRANSPORTATION-INFRASTRUCTURE"
+      ],
+      "matchRule": "reviewed_row",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "matchBasis": "The statement abbreviates the committee's name with a hyphen for 'and'.",
+      "unitsEvidence": {
+        "kind": "currency_mark_on_the_statements_own_total_bounds_the_column",
+        "statementTotal": "$ 449,333,548.30",
+        "columnAnchor": "2441009.66"
+      },
+      "caveat": "The statement's summary file lists the committee's current-year organisation only. Disbursements the quarter charged to the committee's earlier-year accounts are printed in the signed volumes beside named payees and are not in this figure.",
+      "components": [
+        {
+          "label": "2026 TRANSPORTATION-INFRASTRUCTURE",
+          "program": "GENERAL EXPENDITURES",
+          "printed": "2441009.66",
+          "locator": {
+            "row": 6523,
+            "column": "QTD AMOUNT",
+            "organization": "2026 TRANSPORTATION-INFRASTRUCTURE",
+            "program": "GENERAL EXPENDITURES",
+            "description": "OFFICE TOTALS:"
+          },
+          "amount": 2441009.66,
+          "unitsEvidenceKind": "currency_mark_on_the_statements_own_total_bounds_the_column"
+        },
+        {
+          "label": "2026 TRANSPORTATION-INFRASTRUCTURE",
+          "program": "INTERN ALLOWANCES",
+          "printed": "33415.26",
+          "locator": {
+            "row": 6526,
+            "column": "QTD AMOUNT",
+            "organization": "2026 TRANSPORTATION-INFRASTRUCTURE",
+            "program": "INTERN ALLOWANCES",
+            "description": "OFFICE TOTALS:"
+          },
+          "amount": 33415.26,
+          "unitsEvidenceKind": "currency_mark_on_the_statements_own_total_bounds_the_column"
+        }
+      ],
+      "zeroComponents": [],
+      "amount": 2474424.92,
+      "componentCount": 2,
+      "documentsStatingTheFigure": 0,
+      "arithmetic": {
+        "operation": "sum_of_printed_totals",
+        "note": "The document prints no single total for this committee; the figure is the sum of the 2 totals it prints, each listed with its printed text."
+      },
+      "notTheCost": "Cash the chamber's disbursing office paid out for the committee's account over the period. It is not the Treasury's net outlays, not the graph's estimate for this node, and not its cost."
+    },
+    "leg-house-cmte-science-space-technology": {
+      "nodeId": "leg-house-cmte-science-space-technology",
+      "nodeName": "House Committee on Science, Space & Technology",
+      "chamber": "house",
+      "costBasis": "disbursements",
+      "document": {
+        "title": "Statement of Disbursements of the House",
+        "file": "tests/fixtures/disbursements/house/2026q2_sod_summary_grid.csv",
+        "url": "https://www.house.gov/sites/default/files/2026-08/grids/APRIL-JUNE%202026%20SOD%20SUMM%20GRID-FINAL.csv",
+        "sha256": "4828ceb94cc1dc67bbdc4faa276ef0cc0e36cbc3f4dcf0a84f9e1f54b005b28b",
+        "fetchedAt": "2026-10-06T16:20:22Z",
+        "statementVolume": {
+          "file": "tests/fixtures/disbursements/house/2026q2_vol3_signed.pdf",
+          "url": "https://www.house.gov/sites/default/files/2026-08/books/2026q2_vol3_signed.pdf",
+          "sha256": "d7034a1122e34dae76f40257e20e5290d4a82367d9c531af6502311b259ca495"
+        },
+        "column": "QTD AMOUNT",
+        "columnDefinition": "Quarterly Amount — This amount lists the total expenditures for the specified quarter",
+        "statementTotal": {
+          "text": "$ 449,333,548.30",
+          "label": "Disbursements for salaries and expenses and canceled checks"
+        }
+      },
+      "period": {
+        "printed": "STATEMENT OF DISBURSEMENTS OF THE HOUSE FROM APRIL 1, 2026 TO JUNE 30, 2026",
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "coverage": "quarter"
+      },
+      "listedNames": [
+        "2026 COMM ON SCIENCE SPACE&TECH"
+      ],
+      "matchRule": "reviewed_row",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "matchBasis": "The statement abbreviates 'Committee' and 'Technology'; no other committee of the House has this jurisdiction.",
+      "unitsEvidence": {
+        "kind": "currency_mark_on_the_statements_own_total_bounds_the_column",
+        "statementTotal": "$ 449,333,548.30",
+        "columnAnchor": "1572099.78"
+      },
+      "caveat": "The statement's summary file lists the committee's current-year organisation only. Disbursements the quarter charged to the committee's earlier-year accounts are printed in the signed volumes beside named payees and are not in this figure.",
+      "components": [
+        {
+          "label": "2026 COMM ON SCIENCE SPACE&TECH",
+          "program": "GENERAL EXPENDITURES",
+          "printed": "1572099.78",
+          "locator": {
+            "row": 6547,
+            "column": "QTD AMOUNT",
+            "organization": "2026 COMM ON SCIENCE SPACE&TECH",
+            "program": "GENERAL EXPENDITURES",
+            "description": "OFFICE TOTALS:"
+          },
+          "amount": 1572099.78,
+          "unitsEvidenceKind": "currency_mark_on_the_statements_own_total_bounds_the_column"
+        },
+        {
+          "label": "2026 COMM ON SCIENCE SPACE&TECH",
+          "program": "INTERN ALLOWANCES",
+          "printed": "20543.32",
+          "locator": {
+            "row": 6550,
+            "column": "QTD AMOUNT",
+            "organization": "2026 COMM ON SCIENCE SPACE&TECH",
+            "program": "INTERN ALLOWANCES",
+            "description": "OFFICE TOTALS:"
+          },
+          "amount": 20543.32,
+          "unitsEvidenceKind": "currency_mark_on_the_statements_own_total_bounds_the_column"
+        }
+      ],
+      "zeroComponents": [],
+      "amount": 1592643.1,
+      "componentCount": 2,
+      "documentsStatingTheFigure": 0,
+      "arithmetic": {
+        "operation": "sum_of_printed_totals",
+        "note": "The document prints no single total for this committee; the figure is the sum of the 2 totals it prints, each listed with its printed text."
+      },
+      "notTheCost": "Cash the chamber's disbursing office paid out for the committee's account over the period. It is not the Treasury's net outlays, not the graph's estimate for this node, and not its cost."
+    },
+    "leg-house-cmte-permanent-select-committee-on-intelligence": {
+      "nodeId": "leg-house-cmte-permanent-select-committee-on-intelligence",
+      "nodeName": "House Permanent Select Committee on Intelligence",
+      "chamber": "house",
+      "costBasis": "disbursements",
+      "document": {
+        "title": "Statement of Disbursements of the House",
+        "file": "tests/fixtures/disbursements/house/2026q2_sod_summary_grid.csv",
+        "url": "https://www.house.gov/sites/default/files/2026-08/grids/APRIL-JUNE%202026%20SOD%20SUMM%20GRID-FINAL.csv",
+        "sha256": "4828ceb94cc1dc67bbdc4faa276ef0cc0e36cbc3f4dcf0a84f9e1f54b005b28b",
+        "fetchedAt": "2026-10-06T16:20:22Z",
+        "statementVolume": {
+          "file": "tests/fixtures/disbursements/house/2026q2_vol3_signed.pdf",
+          "url": "https://www.house.gov/sites/default/files/2026-08/books/2026q2_vol3_signed.pdf",
+          "sha256": "d7034a1122e34dae76f40257e20e5290d4a82367d9c531af6502311b259ca495"
+        },
+        "column": "QTD AMOUNT",
+        "columnDefinition": "Quarterly Amount — This amount lists the total expenditures for the specified quarter",
+        "statementTotal": {
+          "text": "$ 449,333,548.30",
+          "label": "Disbursements for salaries and expenses and canceled checks"
+        }
+      },
+      "period": {
+        "printed": "STATEMENT OF DISBURSEMENTS OF THE HOUSE FROM APRIL 1, 2026 TO JUNE 30, 2026",
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "coverage": "quarter"
+      },
+      "listedNames": [
+        "2026 INTELLIGENCE"
+      ],
+      "matchRule": "reviewed_row",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "matchBasis": "The statement prints the committee by its subject alone; the House has one intelligence committee.",
+      "unitsEvidence": {
+        "kind": "currency_mark_on_the_statements_own_total_bounds_the_column",
+        "statementTotal": "$ 449,333,548.30",
+        "columnAnchor": "2087349.75"
+      },
+      "caveat": "The statement's summary file lists the committee's current-year organisation only. Disbursements the quarter charged to the committee's earlier-year accounts are printed in the signed volumes beside named payees and are not in this figure.",
+      "components": [
+        {
+          "label": "2026 INTELLIGENCE",
+          "program": "GENERAL EXPENDITURES",
+          "printed": "2087349.75",
+          "locator": {
+            "row": 6604,
+            "column": "QTD AMOUNT",
+            "organization": "2026 INTELLIGENCE",
+            "program": "GENERAL EXPENDITURES",
+            "description": "OFFICE TOTALS:"
+          },
+          "amount": 2087349.75,
+          "unitsEvidenceKind": "currency_mark_on_the_statements_own_total_bounds_the_column"
+        }
+      ],
+      "zeroComponents": [],
+      "amount": 2087349.75,
+      "componentCount": 1,
+      "documentsStatingTheFigure": 1,
+      "arithmetic": {
+        "operation": "sum_of_printed_totals",
+        "note": "The figure is the one total the document prints for this committee."
+      },
+      "notTheCost": "Cash the chamber's disbursing office paid out for the committee's account over the period. It is not the Treasury's net outlays, not the graph's estimate for this node, and not its cost."
+    },
+    "leg-house-cmte-select-committee-on-the-chinese-communist-party": {
+      "nodeId": "leg-house-cmte-select-committee-on-the-chinese-communist-party",
+      "nodeName": "Select Committee on the Strategic Competition Between the United States and the Chinese Communist Party",
+      "chamber": "house",
+      "costBasis": "disbursements",
+      "document": {
+        "title": "Statement of Disbursements of the House",
+        "file": "tests/fixtures/disbursements/house/2026q2_sod_summary_grid.csv",
+        "url": "https://www.house.gov/sites/default/files/2026-08/grids/APRIL-JUNE%202026%20SOD%20SUMM%20GRID-FINAL.csv",
+        "sha256": "4828ceb94cc1dc67bbdc4faa276ef0cc0e36cbc3f4dcf0a84f9e1f54b005b28b",
+        "fetchedAt": "2026-10-06T16:20:22Z",
+        "statementVolume": {
+          "file": "tests/fixtures/disbursements/house/2026q2_vol3_signed.pdf",
+          "url": "https://www.house.gov/sites/default/files/2026-08/books/2026q2_vol3_signed.pdf",
+          "sha256": "d7034a1122e34dae76f40257e20e5290d4a82367d9c531af6502311b259ca495"
+        },
+        "column": "QTD AMOUNT",
+        "columnDefinition": "Quarterly Amount — This amount lists the total expenditures for the specified quarter",
+        "statementTotal": {
+          "text": "$ 449,333,548.30",
+          "label": "Disbursements for salaries and expenses and canceled checks"
+        }
+      },
+      "period": {
+        "printed": "STATEMENT OF DISBURSEMENTS OF THE HOUSE FROM APRIL 1, 2026 TO JUNE 30, 2026",
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "coverage": "quarter"
+      },
+      "listedNames": [
+        "2026 SELECT COMMITTEE COMPETITION US AND CHINA"
+      ],
+      "matchRule": "reviewed_row",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "matchBasis": "The statement abbreviates the select committee's name; the House has one select committee on competition with China.",
+      "unitsEvidence": {
+        "kind": "currency_mark_on_the_statements_own_total_bounds_the_column",
+        "statementTotal": "$ 449,333,548.30",
+        "columnAnchor": "1185434.85"
+      },
+      "caveat": "The statement's summary file lists the committee's current-year organisation only. Disbursements the quarter charged to the committee's earlier-year accounts are printed in the signed volumes beside named payees and are not in this figure.",
+      "components": [
+        {
+          "label": "2026 SELECT COMMITTEE COMPETITION US AND CHINA",
+          "program": "GENERAL EXPENDITURES",
+          "printed": "1185434.85",
+          "locator": {
+            "row": 6613,
+            "column": "QTD AMOUNT",
+            "organization": "2026 SELECT COMMITTEE COMPETITION US AND CHINA",
+            "program": "GENERAL EXPENDITURES",
+            "description": "OFFICE TOTALS:"
+          },
+          "amount": 1185434.85,
+          "unitsEvidenceKind": "currency_mark_on_the_statements_own_total_bounds_the_column"
+        },
+        {
+          "label": "2026 SELECT COMMITTEE COMPETITION US AND CHINA",
+          "program": "INTERN ALLOWANCES",
+          "printed": "19661.66",
+          "locator": {
+            "row": 6616,
+            "column": "QTD AMOUNT",
+            "organization": "2026 SELECT COMMITTEE COMPETITION US AND CHINA",
+            "program": "INTERN ALLOWANCES",
+            "description": "OFFICE TOTALS:"
+          },
+          "amount": 19661.66,
+          "unitsEvidenceKind": "currency_mark_on_the_statements_own_total_bounds_the_column"
+        }
+      ],
+      "zeroComponents": [],
+      "amount": 1205096.51,
+      "componentCount": 2,
+      "documentsStatingTheFigure": 0,
+      "arithmetic": {
+        "operation": "sum_of_printed_totals",
+        "note": "The document prints no single total for this committee; the figure is the sum of the 2 totals it prints, each listed with its printed text."
+      },
+      "notTheCost": "Cash the chamber's disbursing office paid out for the committee's account over the period. It is not the Treasury's net outlays, not the graph's estimate for this node, and not its cost."
+    },
+    "leg-senate-cmte-agriculture-nutrition-and-forestry": {
+      "nodeId": "leg-senate-cmte-agriculture-nutrition-and-forestry",
+      "nodeName": "Senate Committee on Agriculture, Nutrition, and Forestry",
+      "chamber": "senate",
+      "costBasis": "disbursements",
+      "document": {
+        "title": "Report of the Secretary of the Senate",
+        "part": "Part II",
+        "file": "tests/fixtures/disbursements/senate/GPO-CDOC-119sdoc6-2.pdf",
+        "url": "https://www.govinfo.gov/content/pkg/GPO-CDOC-119sdoc6/pdf/GPO-CDOC-119sdoc6-2.pdf",
+        "sha256": "8c0198e57f3f4a3bba56939e3972c7c2d3ef55f4d01aa0addd2457ff98158e47",
+        "fetchedAt": "2026-10-06T16:32:33Z",
+        "account": "Expenses of Inquiries and Investigations"
+      },
+      "period": {
+        "printed": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)",
+        "start": "2025-10-01",
+        "end": "2026-03-31",
+        "coverage": "fiscal_year_to_date"
+      },
+      "listedNames": [
+        "AGRICULTURE, NUTRITION AND FORESTRY"
+      ],
+      "matchRule": "committee_type_words_folded",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "unitsEvidence": {
+        "kind": "currency_mark_on_the_printed_figure"
+      },
+      "signConvention": "The report prints an expenditure as a reduction of the account, with a minus sign; a figure printed without one is a net credit in the period and reduces the total.",
+      "components": [
+        {
+          "label": "AGRICULTURE, NUTRITION AND FORESTRY",
+          "funding": "S.RES. 59C (118TH)",
+          "printed": "-$41,659.80",
+          "locator": {
+            "page": "B-2-1",
+            "heading": "STATEMENT OF EXPENDITURES AGRICULTURE, NUTRITION AND FORESTRY S.RES. 59C (118TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-1",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          },
+          "amount": 41659.8,
+          "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+        },
+        {
+          "label": "AGRICULTURE, NUTRITION AND FORESTRY",
+          "funding": "S.RES. 59D (118TH)",
+          "printed": "-$13,341.10",
+          "locator": {
+            "page": "B-2-2",
+            "heading": "STATEMENT OF EXPENDITURES AGRICULTURE, NUTRITION AND FORESTRY S.RES. 59D (118TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-2",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          },
+          "amount": 13341.1,
+          "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+        },
+        {
+          "label": "AGRICULTURE, NUTRITION AND FORESTRY",
+          "funding": "S.RES. 94B (119TH)",
+          "printed": "-$483,438.47",
+          "locator": {
+            "page": "B-2-3",
+            "heading": "STATEMENT OF EXPENDITURES AGRICULTURE, NUTRITION AND FORESTRY S.RES. 94B (119TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-3",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          },
+          "amount": 483438.47,
+          "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+        },
+        {
+          "label": "AGRICULTURE, NUTRITION AND FORESTRY",
+          "funding": "S.RES. 94C (119TH)",
+          "printed": "-$2,862,601.38",
+          "locator": {
+            "page": "B-2-5",
+            "heading": "STATEMENT OF EXPENDITURES AGRICULTURE, NUTRITION AND FORESTRY S.RES. 94C (119TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-5",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          },
+          "amount": 2862601.38,
+          "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+        }
+      ],
+      "zeroComponents": [],
+      "amount": 3401040.75,
+      "componentCount": 4,
+      "documentsStatingTheFigure": 0,
+      "arithmetic": {
+        "operation": "sum_of_printed_totals",
+        "note": "The document prints no single total for this committee; the figure is the sum of the 4 totals it prints, each listed with its printed text."
+      },
+      "notTheCost": "Cash the chamber's disbursing office paid out for the committee's account over the period. It is not the Treasury's net outlays, not the graph's estimate for this node, and not its cost."
+    },
+    "leg-senate-cmte-armed-services": {
+      "nodeId": "leg-senate-cmte-armed-services",
+      "nodeName": "Senate Committee on Armed Services",
+      "chamber": "senate",
+      "costBasis": "disbursements",
+      "document": {
+        "title": "Report of the Secretary of the Senate",
+        "part": "Part II",
+        "file": "tests/fixtures/disbursements/senate/GPO-CDOC-119sdoc6-2.pdf",
+        "url": "https://www.govinfo.gov/content/pkg/GPO-CDOC-119sdoc6/pdf/GPO-CDOC-119sdoc6-2.pdf",
+        "sha256": "8c0198e57f3f4a3bba56939e3972c7c2d3ef55f4d01aa0addd2457ff98158e47",
+        "fetchedAt": "2026-10-06T16:32:33Z",
+        "account": "Expenses of Inquiries and Investigations"
+      },
+      "period": {
+        "printed": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)",
+        "start": "2025-10-01",
+        "end": "2026-03-31",
+        "coverage": "fiscal_year_to_date"
+      },
+      "listedNames": [
+        "ARMED SERVICES"
+      ],
+      "matchRule": "committee_type_words_folded",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "unitsEvidence": {
+        "kind": "currency_mark_on_the_printed_figure"
+      },
+      "signConvention": "The report prints an expenditure as a reduction of the account, with a minus sign; a figure printed without one is a net credit in the period and reduces the total.",
+      "components": [
+        {
+          "label": "ARMED SERVICES",
+          "funding": "S.RES. 59C (118TH)",
+          "printed": "-$2,248.00",
+          "locator": {
+            "page": "B-2-10",
+            "heading": "STATEMENT OF EXPENDITURES ARMED SERVICES S.RES. 59C (118TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-10",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          },
+          "amount": 2248.0,
+          "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+        },
+        {
+          "label": "ARMED SERVICES",
+          "funding": "S.RES. 94B (119TH)",
+          "printed": "-$279,000.61",
+          "locator": {
+            "page": "B-2-12",
+            "heading": "STATEMENT OF EXPENDITURES ARMED SERVICES S.RES. 94B (119TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-12",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          },
+          "amount": 279000.61,
+          "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+        },
+        {
+          "label": "ARMED SERVICES",
+          "funding": "S.RES. 94C (119TH)",
+          "printed": "-$4,501,211.87",
+          "locator": {
+            "page": "B-2-13",
+            "heading": "STATEMENT OF EXPENDITURES ARMED SERVICES S.RES. 94C (119TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-13",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          },
+          "amount": 4501211.87,
+          "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+        }
+      ],
+      "zeroComponents": [
+        {
+          "label": "ARMED SERVICES",
+          "funding": "S.RES. 59D (118TH)",
+          "printed": "$.00",
+          "locator": {
+            "page": "B-2-11",
+            "heading": "STATEMENT OF EXPENDITURES ARMED SERVICES S.RES. 59D (118TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-11",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          }
+        }
+      ],
+      "amount": 4782460.48,
+      "componentCount": 3,
+      "documentsStatingTheFigure": 0,
+      "arithmetic": {
+        "operation": "sum_of_printed_totals",
+        "note": "The document prints no single total for this committee; the figure is the sum of the 3 totals it prints, each listed with its printed text."
+      },
+      "notTheCost": "Cash the chamber's disbursing office paid out for the committee's account over the period. It is not the Treasury's net outlays, not the graph's estimate for this node, and not its cost."
+    },
+    "leg-senate-cmte-banking-housing-urban-affairs": {
+      "nodeId": "leg-senate-cmte-banking-housing-urban-affairs",
+      "nodeName": "Senate Committee on Banking, Housing & Urban Affairs",
+      "chamber": "senate",
+      "costBasis": "disbursements",
+      "document": {
+        "title": "Report of the Secretary of the Senate",
+        "part": "Part II",
+        "file": "tests/fixtures/disbursements/senate/GPO-CDOC-119sdoc6-2.pdf",
+        "url": "https://www.govinfo.gov/content/pkg/GPO-CDOC-119sdoc6/pdf/GPO-CDOC-119sdoc6-2.pdf",
+        "sha256": "8c0198e57f3f4a3bba56939e3972c7c2d3ef55f4d01aa0addd2457ff98158e47",
+        "fetchedAt": "2026-10-06T16:32:33Z",
+        "account": "Expenses of Inquiries and Investigations"
+      },
+      "period": {
+        "printed": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)",
+        "start": "2025-10-01",
+        "end": "2026-03-31",
+        "coverage": "fiscal_year_to_date"
+      },
+      "listedNames": [
+        "BANKING, HOUSING AND URBAN AFFAIRS"
+      ],
+      "matchRule": "committee_type_words_folded",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "unitsEvidence": {
+        "kind": "currency_mark_on_the_printed_figure"
+      },
+      "signConvention": "The report prints an expenditure as a reduction of the account, with a minus sign; a figure printed without one is a net credit in the period and reduces the total.",
+      "components": [
+        {
+          "label": "BANKING, HOUSING AND URBAN AFFAIRS",
+          "funding": "S.RES. 59D (118TH)",
+          "printed": "-$1,937.10",
+          "locator": {
+            "page": "B-2-17",
+            "heading": "STATEMENT OF EXPENDITURES BANKING, HOUSING AND URBAN AFFAIRS S.RES. 59D (118TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-17",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          },
+          "amount": 1937.1,
+          "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+        },
+        {
+          "label": "BANKING, HOUSING AND URBAN AFFAIRS",
+          "funding": "S.RES. 94B (119TH)",
+          "printed": "-$212,970.53",
+          "locator": {
+            "page": "B-2-18",
+            "heading": "STATEMENT OF EXPENDITURES BANKING, HOUSING AND URBAN AFFAIRS S.RES. 94B (119TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-18",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          },
+          "amount": 212970.53,
+          "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+        },
+        {
+          "label": "BANKING, HOUSING AND URBAN AFFAIRS",
+          "funding": "S.RES. 94C (119TH)",
+          "printed": "-$3,323,098.40",
+          "locator": {
+            "page": "B-2-20",
+            "heading": "STATEMENT OF EXPENDITURES BANKING, HOUSING AND URBAN AFFAIRS S.RES. 94C (119TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-20",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          },
+          "amount": 3323098.4,
+          "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+        }
+      ],
+      "zeroComponents": [
+        {
+          "label": "BANKING, HOUSING AND URBAN AFFAIRS",
+          "funding": "S.RES. 59C (118TH)",
+          "printed": "$.00",
+          "locator": {
+            "page": "B-2-16",
+            "heading": "STATEMENT OF EXPENDITURES BANKING, HOUSING AND URBAN AFFAIRS S.RES. 59C (118TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-16",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          }
+        }
+      ],
+      "amount": 3538006.03,
+      "componentCount": 3,
+      "documentsStatingTheFigure": 0,
+      "arithmetic": {
+        "operation": "sum_of_printed_totals",
+        "note": "The document prints no single total for this committee; the figure is the sum of the 3 totals it prints, each listed with its printed text."
+      },
+      "notTheCost": "Cash the chamber's disbursing office paid out for the committee's account over the period. It is not the Treasury's net outlays, not the graph's estimate for this node, and not its cost."
+    },
+    "leg-senate-cmte-commerce-science-transportation": {
+      "nodeId": "leg-senate-cmte-commerce-science-transportation",
+      "nodeName": "Senate Committee on Commerce, Science & Transportation",
+      "chamber": "senate",
+      "costBasis": "disbursements",
+      "document": {
+        "title": "Report of the Secretary of the Senate",
+        "part": "Part II",
+        "file": "tests/fixtures/disbursements/senate/GPO-CDOC-119sdoc6-2.pdf",
+        "url": "https://www.govinfo.gov/content/pkg/GPO-CDOC-119sdoc6/pdf/GPO-CDOC-119sdoc6-2.pdf",
+        "sha256": "8c0198e57f3f4a3bba56939e3972c7c2d3ef55f4d01aa0addd2457ff98158e47",
+        "fetchedAt": "2026-10-06T16:32:33Z",
+        "account": "Expenses of Inquiries and Investigations"
+      },
+      "period": {
+        "printed": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)",
+        "start": "2025-10-01",
+        "end": "2026-03-31",
+        "coverage": "fiscal_year_to_date"
+      },
+      "listedNames": [
+        "COMMERCE, SCIENCE AND TRANSPORTATION"
+      ],
+      "matchRule": "committee_type_words_folded",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "unitsEvidence": {
+        "kind": "currency_mark_on_the_printed_figure"
+      },
+      "signConvention": "The report prints an expenditure as a reduction of the account, with a minus sign; a figure printed without one is a net credit in the period and reduces the total.",
+      "components": [
+        {
+          "label": "COMMERCE, SCIENCE AND TRANSPORTATION",
+          "funding": "S.RES. 59D (118TH)",
+          "printed": "-$30,073.49",
+          "locator": {
+            "page": "B-2-29",
+            "heading": "STATEMENT OF EXPENDITURES COMMERCE, SCIENCE AND TRANSPORTATION S.RES. 59D (118TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-29",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          },
+          "amount": 30073.49,
+          "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+        },
+        {
+          "label": "COMMERCE, SCIENCE AND TRANSPORTATION",
+          "funding": "S.RES. 94B (119TH)",
+          "printed": "-$266,926.25",
+          "locator": {
+            "page": "B-2-30",
+            "heading": "STATEMENT OF EXPENDITURES COMMERCE, SCIENCE AND TRANSPORTATION S.RES. 94B (119TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-30",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          },
+          "amount": 266926.25,
+          "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+        },
+        {
+          "label": "COMMERCE, SCIENCE AND TRANSPORTATION",
+          "funding": "S.RES. 94C (119TH)",
+          "printed": "-$4,642,508.23",
+          "locator": {
+            "page": "B-2-32",
+            "heading": "STATEMENT OF EXPENDITURES COMMERCE, SCIENCE AND TRANSPORTATION S.RES. 94C (119TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-32",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          },
+          "amount": 4642508.23,
+          "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+        }
+      ],
+      "zeroComponents": [
+        {
+          "label": "COMMERCE, SCIENCE AND TRANSPORTATION",
+          "funding": "S.RES. 59C (118TH)",
+          "printed": "$.00",
+          "locator": {
+            "page": "B-2-28",
+            "heading": "STATEMENT OF EXPENDITURES COMMERCE, SCIENCE AND TRANSPORTATION S.RES. 59C (118TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-28",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          }
+        }
+      ],
+      "amount": 4939507.97,
+      "componentCount": 3,
+      "documentsStatingTheFigure": 0,
+      "arithmetic": {
+        "operation": "sum_of_printed_totals",
+        "note": "The document prints no single total for this committee; the figure is the sum of the 3 totals it prints, each listed with its printed text."
+      },
+      "notTheCost": "Cash the chamber's disbursing office paid out for the committee's account over the period. It is not the Treasury's net outlays, not the graph's estimate for this node, and not its cost."
+    },
+    "leg-senate-cmte-energy-natural-resources": {
+      "nodeId": "leg-senate-cmte-energy-natural-resources",
+      "nodeName": "Senate Committee on Energy & Natural Resources",
+      "chamber": "senate",
+      "costBasis": "disbursements",
+      "document": {
+        "title": "Report of the Secretary of the Senate",
+        "part": "Part II",
+        "file": "tests/fixtures/disbursements/senate/GPO-CDOC-119sdoc6-2.pdf",
+        "url": "https://www.govinfo.gov/content/pkg/GPO-CDOC-119sdoc6/pdf/GPO-CDOC-119sdoc6-2.pdf",
+        "sha256": "8c0198e57f3f4a3bba56939e3972c7c2d3ef55f4d01aa0addd2457ff98158e47",
+        "fetchedAt": "2026-10-06T16:32:33Z",
+        "account": "Expenses of Inquiries and Investigations"
+      },
+      "period": {
+        "printed": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)",
+        "start": "2025-10-01",
+        "end": "2026-03-31",
+        "coverage": "fiscal_year_to_date"
+      },
+      "listedNames": [
+        "ENERGY AND NATURAL RESOURCES"
+      ],
+      "matchRule": "committee_type_words_folded",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "unitsEvidence": {
+        "kind": "currency_mark_on_the_printed_figure"
+      },
+      "signConvention": "The report prints an expenditure as a reduction of the account, with a minus sign; a figure printed without one is a net credit in the period and reduces the total.",
+      "components": [
+        {
+          "label": "ENERGY AND NATURAL RESOURCES",
+          "funding": "S.RES. 59C (118TH)",
+          "printed": "-$39.99",
+          "locator": {
+            "page": "B-2-36",
+            "heading": "STATEMENT OF EXPENDITURES ENERGY AND NATURAL RESOURCES S.RES. 59C (118TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-36",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          },
+          "amount": 39.99,
+          "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+        },
+        {
+          "label": "ENERGY AND NATURAL RESOURCES",
+          "funding": "S.RES. 94B (119TH)",
+          "printed": "-$325,819.52",
+          "locator": {
+            "page": "B-2-38",
+            "heading": "STATEMENT OF EXPENDITURES ENERGY AND NATURAL RESOURCES S.RES. 94B (119TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-38",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          },
+          "amount": 325819.52,
+          "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+        },
+        {
+          "label": "ENERGY AND NATURAL RESOURCES",
+          "funding": "S.RES. 94C (119TH)",
+          "printed": "-$2,586,988.16",
+          "locator": {
+            "page": "B-2-41",
+            "heading": "STATEMENT OF EXPENDITURES ENERGY AND NATURAL RESOURCES S.RES. 94C (119TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-41",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          },
+          "amount": 2586988.16,
+          "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+        }
+      ],
+      "zeroComponents": [
+        {
+          "label": "ENERGY AND NATURAL RESOURCES",
+          "funding": "S.RES. 59D (118TH)",
+          "printed": "$.00",
+          "locator": {
+            "page": "B-2-37",
+            "heading": "STATEMENT OF EXPENDITURES ENERGY AND NATURAL RESOURCES S.RES. 59D (118TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-37",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          }
+        }
+      ],
+      "amount": 2912847.67,
+      "componentCount": 3,
+      "documentsStatingTheFigure": 0,
+      "arithmetic": {
+        "operation": "sum_of_printed_totals",
+        "note": "The document prints no single total for this committee; the figure is the sum of the 3 totals it prints, each listed with its printed text."
+      },
+      "notTheCost": "Cash the chamber's disbursing office paid out for the committee's account over the period. It is not the Treasury's net outlays, not the graph's estimate for this node, and not its cost."
+    },
+    "leg-senate-cmte-environment-public-works": {
+      "nodeId": "leg-senate-cmte-environment-public-works",
+      "nodeName": "Senate Committee on Environment & Public Works",
+      "chamber": "senate",
+      "costBasis": "disbursements",
+      "document": {
+        "title": "Report of the Secretary of the Senate",
+        "part": "Part II",
+        "file": "tests/fixtures/disbursements/senate/GPO-CDOC-119sdoc6-2.pdf",
+        "url": "https://www.govinfo.gov/content/pkg/GPO-CDOC-119sdoc6/pdf/GPO-CDOC-119sdoc6-2.pdf",
+        "sha256": "8c0198e57f3f4a3bba56939e3972c7c2d3ef55f4d01aa0addd2457ff98158e47",
+        "fetchedAt": "2026-10-06T16:32:33Z",
+        "account": "Expenses of Inquiries and Investigations"
+      },
+      "period": {
+        "printed": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)",
+        "start": "2025-10-01",
+        "end": "2026-03-31",
+        "coverage": "fiscal_year_to_date"
+      },
+      "listedNames": [
+        "ENVIRONMENT AND PUBLIC WORKS"
+      ],
+      "matchRule": "committee_type_words_folded",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "unitsEvidence": {
+        "kind": "currency_mark_on_the_printed_figure"
+      },
+      "signConvention": "The report prints an expenditure as a reduction of the account, with a minus sign; a figure printed without one is a net credit in the period and reduces the total.",
+      "components": [
+        {
+          "label": "ENVIRONMENT AND PUBLIC WORKS",
+          "funding": "S.RES. 59D (118TH)",
+          "printed": "$1,253.55",
+          "locator": {
+            "page": "B-2-45",
+            "heading": "STATEMENT OF EXPENDITURES ENVIRONMENT AND PUBLIC WORKS S.RES. 59D (118TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-45",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          },
+          "amount": -1253.55,
+          "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+        },
+        {
+          "label": "ENVIRONMENT AND PUBLIC WORKS",
+          "funding": "S.RES. 94B (119TH)",
+          "printed": "-$51,192.69",
+          "locator": {
+            "page": "B-2-46",
+            "heading": "STATEMENT OF EXPENDITURES ENVIRONMENT AND PUBLIC WORKS S.RES. 94B (119TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-46",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          },
+          "amount": 51192.69,
+          "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+        },
+        {
+          "label": "ENVIRONMENT AND PUBLIC WORKS",
+          "funding": "S.RES. 94C (119TH)",
+          "printed": "-$3,051,172.02",
+          "locator": {
+            "page": "B-2-48",
+            "heading": "STATEMENT OF EXPENDITURES ENVIRONMENT AND PUBLIC WORKS S.RES. 94C (119TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-48",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          },
+          "amount": 3051172.02,
+          "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+        }
+      ],
+      "zeroComponents": [
+        {
+          "label": "ENVIRONMENT AND PUBLIC WORKS",
+          "funding": "S.RES. 59C (118TH)",
+          "printed": "$.00",
+          "locator": {
+            "page": "B-2-44",
+            "heading": "STATEMENT OF EXPENDITURES ENVIRONMENT AND PUBLIC WORKS S.RES. 59C (118TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-44",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          }
+        }
+      ],
+      "amount": 3101111.16,
+      "componentCount": 3,
+      "documentsStatingTheFigure": 0,
+      "arithmetic": {
+        "operation": "sum_of_printed_totals",
+        "note": "The document prints no single total for this committee; the figure is the sum of the 3 totals it prints, each listed with its printed text."
+      },
+      "notTheCost": "Cash the chamber's disbursing office paid out for the committee's account over the period. It is not the Treasury's net outlays, not the graph's estimate for this node, and not its cost."
+    },
+    "leg-senate-cmte-foreign-relations": {
+      "nodeId": "leg-senate-cmte-foreign-relations",
+      "nodeName": "Senate Committee on Foreign Relations",
+      "chamber": "senate",
+      "costBasis": "disbursements",
+      "document": {
+        "title": "Report of the Secretary of the Senate",
+        "part": "Part II",
+        "file": "tests/fixtures/disbursements/senate/GPO-CDOC-119sdoc6-2.pdf",
+        "url": "https://www.govinfo.gov/content/pkg/GPO-CDOC-119sdoc6/pdf/GPO-CDOC-119sdoc6-2.pdf",
+        "sha256": "8c0198e57f3f4a3bba56939e3972c7c2d3ef55f4d01aa0addd2457ff98158e47",
+        "fetchedAt": "2026-10-06T16:32:33Z",
+        "account": "Expenses of Inquiries and Investigations"
+      },
+      "period": {
+        "printed": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)",
+        "start": "2025-10-01",
+        "end": "2026-03-31",
+        "coverage": "fiscal_year_to_date"
+      },
+      "listedNames": [
+        "FOREIGN RELATIONS"
+      ],
+      "matchRule": "committee_type_words_folded",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "unitsEvidence": {
+        "kind": "currency_mark_on_the_printed_figure"
+      },
+      "signConvention": "The report prints an expenditure as a reduction of the account, with a minus sign; a figure printed without one is a net credit in the period and reduces the total.",
+      "components": [
+        {
+          "label": "FOREIGN RELATIONS",
+          "funding": "S.RES. 59C (118TH)",
+          "printed": "-$21,000.00",
+          "locator": {
+            "page": "B-2-62",
+            "heading": "STATEMENT OF EXPENDITURES FOREIGN RELATIONS S.RES. 59C (118TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-62",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          },
+          "amount": 21000.0,
+          "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+        },
+        {
+          "label": "FOREIGN RELATIONS",
+          "funding": "S.RES. 94B (119TH)",
+          "printed": "-$492,082.64",
+          "locator": {
+            "page": "B-2-64",
+            "heading": "STATEMENT OF EXPENDITURES FOREIGN RELATIONS S.RES. 94B (119TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-64",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          },
+          "amount": 492082.64,
+          "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+        },
+        {
+          "label": "FOREIGN RELATIONS",
+          "funding": "S.RES. 94C (119TH)",
+          "printed": "-$4,312,146.70",
+          "locator": {
+            "page": "B-2-69",
+            "heading": "STATEMENT OF EXPENDITURES FOREIGN RELATIONS S.RES. 94C (119TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-69",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          },
+          "amount": 4312146.7,
+          "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+        }
+      ],
+      "zeroComponents": [
+        {
+          "label": "FOREIGN RELATIONS",
+          "funding": "S.RES. 59D (118TH)",
+          "printed": "$.00",
+          "locator": {
+            "page": "B-2-63",
+            "heading": "STATEMENT OF EXPENDITURES FOREIGN RELATIONS S.RES. 59D (118TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-63",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          }
+        }
+      ],
+      "amount": 4825229.34,
+      "componentCount": 3,
+      "documentsStatingTheFigure": 0,
+      "arithmetic": {
+        "operation": "sum_of_printed_totals",
+        "note": "The document prints no single total for this committee; the figure is the sum of the 3 totals it prints, each listed with its printed text."
+      },
+      "notTheCost": "Cash the chamber's disbursing office paid out for the committee's account over the period. It is not the Treasury's net outlays, not the graph's estimate for this node, and not its cost."
+    },
+    "leg-senate-cmte-homeland-security-governmental-affairs": {
+      "nodeId": "leg-senate-cmte-homeland-security-governmental-affairs",
+      "nodeName": "Senate Committee on Homeland Security & Governmental Affairs",
+      "chamber": "senate",
+      "costBasis": "disbursements",
+      "document": {
+        "title": "Report of the Secretary of the Senate",
+        "part": "Part II",
+        "file": "tests/fixtures/disbursements/senate/GPO-CDOC-119sdoc6-2.pdf",
+        "url": "https://www.govinfo.gov/content/pkg/GPO-CDOC-119sdoc6/pdf/GPO-CDOC-119sdoc6-2.pdf",
+        "sha256": "8c0198e57f3f4a3bba56939e3972c7c2d3ef55f4d01aa0addd2457ff98158e47",
+        "fetchedAt": "2026-10-06T16:32:33Z",
+        "account": "Expenses of Inquiries and Investigations"
+      },
+      "period": {
+        "printed": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)",
+        "start": "2025-10-01",
+        "end": "2026-03-31",
+        "coverage": "fiscal_year_to_date"
+      },
+      "listedNames": [
+        "HOMELAND SECURITY AND GOVERNMENTAL AFFAIRS"
+      ],
+      "matchRule": "committee_type_words_folded",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "unitsEvidence": {
+        "kind": "currency_mark_on_the_printed_figure"
+      },
+      "signConvention": "The report prints an expenditure as a reduction of the account, with a minus sign; a figure printed without one is a net credit in the period and reduces the total.",
+      "components": [
+        {
+          "label": "HOMELAND SECURITY AND GOVERNMENTAL AFFAIRS",
+          "funding": "S.RES. 59D (118TH)",
+          "printed": "-$99.98",
+          "locator": {
+            "page": "B-2-76",
+            "heading": "STATEMENT OF EXPENDITURES HOMELAND SECURITY AND GOVERNMENTAL AFFAIRS S.RES. 59D (118TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-76",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          },
+          "amount": 99.98,
+          "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+        },
+        {
+          "label": "HOMELAND SECURITY AND GOVERNMENTAL AFFAIRS",
+          "funding": "S.RES. 94B (119TH)",
+          "printed": "-$1,068,502.67",
+          "locator": {
+            "page": "B-2-77",
+            "heading": "STATEMENT OF EXPENDITURES HOMELAND SECURITY AND GOVERNMENTAL AFFAIRS S.RES. 94B (119TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-77",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          },
+          "amount": 1068502.67,
+          "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+        },
+        {
+          "label": "HOMELAND SECURITY AND GOVERNMENTAL AFFAIRS",
+          "funding": "S.RES. 94C (119TH)",
+          "printed": "-$5,212,884.51",
+          "locator": {
+            "page": "B-2-81",
+            "heading": "STATEMENT OF EXPENDITURES HOMELAND SECURITY AND GOVERNMENTAL AFFAIRS S.RES. 94C (119TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-81",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          },
+          "amount": 5212884.51,
+          "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+        }
+      ],
+      "zeroComponents": [
+        {
+          "label": "HOMELAND SECURITY AND GOVERNMENTAL AFFAIRS",
+          "funding": "S.RES. 59C (118TH)",
+          "printed": "$.00",
+          "locator": {
+            "page": "B-2-75",
+            "heading": "STATEMENT OF EXPENDITURES HOMELAND SECURITY AND GOVERNMENTAL AFFAIRS S.RES. 59C (118TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-75",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          }
+        }
+      ],
+      "amount": 6281487.16,
+      "componentCount": 3,
+      "documentsStatingTheFigure": 0,
+      "arithmetic": {
+        "operation": "sum_of_printed_totals",
+        "note": "The document prints no single total for this committee; the figure is the sum of the 3 totals it prints, each listed with its printed text."
+      },
+      "notTheCost": "Cash the chamber's disbursing office paid out for the committee's account over the period. It is not the Treasury's net outlays, not the graph's estimate for this node, and not its cost."
+    },
+    "leg-senate-cmte-health-education-labor-pensions": {
+      "nodeId": "leg-senate-cmte-health-education-labor-pensions",
+      "nodeName": "Senate Committee on Health, Education, Labor & Pensions",
+      "chamber": "senate",
+      "costBasis": "disbursements",
+      "document": {
+        "title": "Report of the Secretary of the Senate",
+        "part": "Part II",
+        "file": "tests/fixtures/disbursements/senate/GPO-CDOC-119sdoc6-2.pdf",
+        "url": "https://www.govinfo.gov/content/pkg/GPO-CDOC-119sdoc6/pdf/GPO-CDOC-119sdoc6-2.pdf",
+        "sha256": "8c0198e57f3f4a3bba56939e3972c7c2d3ef55f4d01aa0addd2457ff98158e47",
+        "fetchedAt": "2026-10-06T16:32:33Z",
+        "account": "Expenses of Inquiries and Investigations"
+      },
+      "period": {
+        "printed": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)",
+        "start": "2025-10-01",
+        "end": "2026-03-31",
+        "coverage": "fiscal_year_to_date"
+      },
+      "listedNames": [
+        "HEALTH, EDUCATION, LABOR, AND PENSIONS"
+      ],
+      "matchRule": "committee_type_words_folded",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "unitsEvidence": {
+        "kind": "currency_mark_on_the_printed_figure"
+      },
+      "signConvention": "The report prints an expenditure as a reduction of the account, with a minus sign; a figure printed without one is a net credit in the period and reduces the total.",
+      "components": [
+        {
+          "label": "HEALTH, EDUCATION, LABOR, AND PENSIONS",
+          "funding": "S.RES. 94B (119TH)",
+          "printed": "-$269,667.35",
+          "locator": {
+            "page": "B-2-89",
+            "heading": "STATEMENT OF EXPENDITURES HEALTH, EDUCATION, LABOR, AND PENSIONS S.RES. 94B (119TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-89",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          },
+          "amount": 269667.35,
+          "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+        },
+        {
+          "label": "HEALTH, EDUCATION, LABOR, AND PENSIONS",
+          "funding": "S.RES. 94C (119TH)",
+          "printed": "-$5,154,723.47",
+          "locator": {
+            "page": "B-2-91",
+            "heading": "STATEMENT OF EXPENDITURES HEALTH, EDUCATION, LABOR, AND PENSIONS S.RES. 94C (119TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-91",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          },
+          "amount": 5154723.47,
+          "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+        }
+      ],
+      "zeroComponents": [
+        {
+          "label": "HEALTH, EDUCATION, LABOR, AND PENSIONS",
+          "funding": "S.RES. 59C (118TH)",
+          "printed": "$.00",
+          "locator": {
+            "page": "B-2-87",
+            "heading": "STATEMENT OF EXPENDITURES HEALTH, EDUCATION, LABOR, AND PENSIONS S.RES. 59C (118TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-87",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          }
+        },
+        {
+          "label": "HEALTH, EDUCATION, LABOR, AND PENSIONS",
+          "funding": "S.RES. 59D (118TH)",
+          "printed": "$.00",
+          "locator": {
+            "page": "B-2-88",
+            "heading": "STATEMENT OF EXPENDITURES HEALTH, EDUCATION, LABOR, AND PENSIONS S.RES. 59D (118TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-88",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          }
+        }
+      ],
+      "amount": 5424390.82,
+      "componentCount": 2,
+      "documentsStatingTheFigure": 0,
+      "arithmetic": {
+        "operation": "sum_of_printed_totals",
+        "note": "The document prints no single total for this committee; the figure is the sum of the 2 totals it prints, each listed with its printed text."
+      },
+      "notTheCost": "Cash the chamber's disbursing office paid out for the committee's account over the period. It is not the Treasury's net outlays, not the graph's estimate for this node, and not its cost."
+    },
+    "leg-senate-cmte-indian-affairs": {
+      "nodeId": "leg-senate-cmte-indian-affairs",
+      "nodeName": "Senate Committee on Indian Affairs",
+      "chamber": "senate",
+      "costBasis": "disbursements",
+      "document": {
+        "title": "Report of the Secretary of the Senate",
+        "part": "Part II",
+        "file": "tests/fixtures/disbursements/senate/GPO-CDOC-119sdoc6-2.pdf",
+        "url": "https://www.govinfo.gov/content/pkg/GPO-CDOC-119sdoc6/pdf/GPO-CDOC-119sdoc6-2.pdf",
+        "sha256": "8c0198e57f3f4a3bba56939e3972c7c2d3ef55f4d01aa0addd2457ff98158e47",
+        "fetchedAt": "2026-10-06T16:32:33Z",
+        "account": "Expenses of Inquiries and Investigations"
+      },
+      "period": {
+        "printed": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)",
+        "start": "2025-10-01",
+        "end": "2026-03-31",
+        "coverage": "fiscal_year_to_date"
+      },
+      "listedNames": [
+        "INDIAN AFFAIRS"
+      ],
+      "matchRule": "committee_type_words_folded",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "unitsEvidence": {
+        "kind": "currency_mark_on_the_printed_figure"
+      },
+      "signConvention": "The report prints an expenditure as a reduction of the account, with a minus sign; a figure printed without one is a net credit in the period and reduces the total.",
+      "components": [
+        {
+          "label": "INDIAN AFFAIRS",
+          "funding": "S.RES. 94B (119TH)",
+          "printed": "-$38,294.84",
+          "locator": {
+            "page": "B-2-97",
+            "heading": "STATEMENT OF EXPENDITURES INDIAN AFFAIRS S.RES. 94B (119TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-97",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          },
+          "amount": 38294.84,
+          "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+        },
+        {
+          "label": "INDIAN AFFAIRS",
+          "funding": "S.RES. 94C (119TH)",
+          "printed": "-$1,177,743.67",
+          "locator": {
+            "page": "B-2-99",
+            "heading": "STATEMENT OF EXPENDITURES INDIAN AFFAIRS S.RES. 94C (119TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-99",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          },
+          "amount": 1177743.67,
+          "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+        }
+      ],
+      "zeroComponents": [
+        {
+          "label": "INDIAN AFFAIRS",
+          "funding": "S.RES. 59C (118TH)",
+          "printed": "$.00",
+          "locator": {
+            "page": "B-2-95",
+            "heading": "STATEMENT OF EXPENDITURES INDIAN AFFAIRS S.RES. 59C (118TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-95",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          }
+        },
+        {
+          "label": "INDIAN AFFAIRS",
+          "funding": "S.RES. 59D (118TH)",
+          "printed": "$.00",
+          "locator": {
+            "page": "B-2-96",
+            "heading": "STATEMENT OF EXPENDITURES INDIAN AFFAIRS S.RES. 59D (118TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-96",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          }
+        }
+      ],
+      "amount": 1216038.51,
+      "componentCount": 2,
+      "documentsStatingTheFigure": 0,
+      "arithmetic": {
+        "operation": "sum_of_printed_totals",
+        "note": "The document prints no single total for this committee; the figure is the sum of the 2 totals it prints, each listed with its printed text."
+      },
+      "notTheCost": "Cash the chamber's disbursing office paid out for the committee's account over the period. It is not the Treasury's net outlays, not the graph's estimate for this node, and not its cost."
+    },
+    "leg-senate-cmte-rules-administration": {
+      "nodeId": "leg-senate-cmte-rules-administration",
+      "nodeName": "Senate Committee on Rules & Administration",
+      "chamber": "senate",
+      "costBasis": "disbursements",
+      "document": {
+        "title": "Report of the Secretary of the Senate",
+        "part": "Part II",
+        "file": "tests/fixtures/disbursements/senate/GPO-CDOC-119sdoc6-2.pdf",
+        "url": "https://www.govinfo.gov/content/pkg/GPO-CDOC-119sdoc6/pdf/GPO-CDOC-119sdoc6-2.pdf",
+        "sha256": "8c0198e57f3f4a3bba56939e3972c7c2d3ef55f4d01aa0addd2457ff98158e47",
+        "fetchedAt": "2026-10-06T16:32:33Z",
+        "account": "Expenses of Inquiries and Investigations"
+      },
+      "period": {
+        "printed": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)",
+        "start": "2025-10-01",
+        "end": "2026-03-31",
+        "coverage": "fiscal_year_to_date"
+      },
+      "listedNames": [
+        "RULES AND ADMINISTRATION"
+      ],
+      "matchRule": "committee_type_words_folded",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "unitsEvidence": {
+        "kind": "currency_mark_on_the_printed_figure"
+      },
+      "signConvention": "The report prints an expenditure as a reduction of the account, with a minus sign; a figure printed without one is a net credit in the period and reduces the total.",
+      "components": [
+        {
+          "label": "RULES AND ADMINISTRATION",
+          "funding": "S.RES. 59D (118TH)",
+          "printed": "-$3,675.00",
+          "locator": {
+            "page": "B-2-120",
+            "heading": "STATEMENT OF EXPENDITURES RULES AND ADMINISTRATION S.RES. 59D (118TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-120",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          },
+          "amount": 3675.0,
+          "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+        },
+        {
+          "label": "RULES AND ADMINISTRATION",
+          "funding": "S.RES. 94B (119TH)",
+          "printed": "-$96,719.89",
+          "locator": {
+            "page": "B-2-121",
+            "heading": "STATEMENT OF EXPENDITURES RULES AND ADMINISTRATION S.RES. 94B (119TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-121",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          },
+          "amount": 96719.89,
+          "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+        },
+        {
+          "label": "RULES AND ADMINISTRATION",
+          "funding": "S.RES. 94C (119TH)",
+          "printed": "-$1,686,300.20",
+          "locator": {
+            "page": "B-2-122",
+            "heading": "STATEMENT OF EXPENDITURES RULES AND ADMINISTRATION S.RES. 94C (119TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-122",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          },
+          "amount": 1686300.2,
+          "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+        }
+      ],
+      "zeroComponents": [
+        {
+          "label": "RULES AND ADMINISTRATION",
+          "funding": "S.RES. 59C (118TH)",
+          "printed": "$.00",
+          "locator": {
+            "page": "B-2-119",
+            "heading": "STATEMENT OF EXPENDITURES RULES AND ADMINISTRATION S.RES. 59C (118TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-119",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          }
+        }
+      ],
+      "amount": 1786695.09,
+      "componentCount": 3,
+      "documentsStatingTheFigure": 0,
+      "arithmetic": {
+        "operation": "sum_of_printed_totals",
+        "note": "The document prints no single total for this committee; the figure is the sum of the 3 totals it prints, each listed with its printed text."
+      },
+      "notTheCost": "Cash the chamber's disbursing office paid out for the committee's account over the period. It is not the Treasury's net outlays, not the graph's estimate for this node, and not its cost."
+    },
+    "leg-senate-cmte-small-business-entrepreneurship": {
+      "nodeId": "leg-senate-cmte-small-business-entrepreneurship",
+      "nodeName": "Senate Committee on Small Business & Entrepreneurship",
+      "chamber": "senate",
+      "costBasis": "disbursements",
+      "document": {
+        "title": "Report of the Secretary of the Senate",
+        "part": "Part II",
+        "file": "tests/fixtures/disbursements/senate/GPO-CDOC-119sdoc6-2.pdf",
+        "url": "https://www.govinfo.gov/content/pkg/GPO-CDOC-119sdoc6/pdf/GPO-CDOC-119sdoc6-2.pdf",
+        "sha256": "8c0198e57f3f4a3bba56939e3972c7c2d3ef55f4d01aa0addd2457ff98158e47",
+        "fetchedAt": "2026-10-06T16:32:33Z",
+        "account": "Expenses of Inquiries and Investigations"
+      },
+      "period": {
+        "printed": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)",
+        "start": "2025-10-01",
+        "end": "2026-03-31",
+        "coverage": "fiscal_year_to_date"
+      },
+      "listedNames": [
+        "SMALL BUSINESS AND ENTREPRENEURSHIP"
+      ],
+      "matchRule": "committee_type_words_folded",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "unitsEvidence": {
+        "kind": "currency_mark_on_the_printed_figure"
+      },
+      "signConvention": "The report prints an expenditure as a reduction of the account, with a minus sign; a figure printed without one is a net credit in the period and reduces the total.",
+      "components": [
+        {
+          "label": "SMALL BUSINESS AND ENTREPRENEURSHIP",
+          "funding": "S.RES. 94B (119TH)",
+          "printed": "-$233,924.99",
+          "locator": {
+            "page": "B-2-126",
+            "heading": "STATEMENT OF EXPENDITURES SMALL BUSINESS AND ENTREPRENEURSHIP S.RES. 94B (119TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-126",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          },
+          "amount": 233924.99,
+          "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+        },
+        {
+          "label": "SMALL BUSINESS AND ENTREPRENEURSHIP",
+          "funding": "S.RES. 94C (119TH)",
+          "printed": "-$1,895,077.56",
+          "locator": {
+            "page": "B-2-129",
+            "heading": "STATEMENT OF EXPENDITURES SMALL BUSINESS AND ENTREPRENEURSHIP S.RES. 94C (119TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-129",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          },
+          "amount": 1895077.56,
+          "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+        }
+      ],
+      "zeroComponents": [
+        {
+          "label": "SMALL BUSINESS AND ENTREPRENEURSHIP",
+          "funding": "S.RES. 59C (118TH)",
+          "printed": "$.00",
+          "locator": {
+            "page": "B-2-124",
+            "heading": "STATEMENT OF EXPENDITURES SMALL BUSINESS AND ENTREPRENEURSHIP S.RES. 59C (118TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-124",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          }
+        },
+        {
+          "label": "SMALL BUSINESS AND ENTREPRENEURSHIP",
+          "funding": "S.RES. 59D (118TH)",
+          "printed": "$.00",
+          "locator": {
+            "page": "B-2-125",
+            "heading": "STATEMENT OF EXPENDITURES SMALL BUSINESS AND ENTREPRENEURSHIP S.RES. 59D (118TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-125",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          }
+        }
+      ],
+      "amount": 2129002.55,
+      "componentCount": 2,
+      "documentsStatingTheFigure": 0,
+      "arithmetic": {
+        "operation": "sum_of_printed_totals",
+        "note": "The document prints no single total for this committee; the figure is the sum of the 2 totals it prints, each listed with its printed text."
+      },
+      "notTheCost": "Cash the chamber's disbursing office paid out for the committee's account over the period. It is not the Treasury's net outlays, not the graph's estimate for this node, and not its cost."
+    },
+    "leg-senate-cmte-veterans-affairs": {
+      "nodeId": "leg-senate-cmte-veterans-affairs",
+      "nodeName": "Senate Committee on Veterans' Affairs",
+      "chamber": "senate",
+      "costBasis": "disbursements",
+      "document": {
+        "title": "Report of the Secretary of the Senate",
+        "part": "Part II",
+        "file": "tests/fixtures/disbursements/senate/GPO-CDOC-119sdoc6-2.pdf",
+        "url": "https://www.govinfo.gov/content/pkg/GPO-CDOC-119sdoc6/pdf/GPO-CDOC-119sdoc6-2.pdf",
+        "sha256": "8c0198e57f3f4a3bba56939e3972c7c2d3ef55f4d01aa0addd2457ff98158e47",
+        "fetchedAt": "2026-10-06T16:32:33Z",
+        "account": "Expenses of Inquiries and Investigations"
+      },
+      "period": {
+        "printed": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)",
+        "start": "2025-10-01",
+        "end": "2026-03-31",
+        "coverage": "fiscal_year_to_date"
+      },
+      "listedNames": [
+        "VETERANS' AFFAIRS"
+      ],
+      "matchRule": "committee_type_words_folded",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "unitsEvidence": {
+        "kind": "currency_mark_on_the_printed_figure"
+      },
+      "signConvention": "The report prints an expenditure as a reduction of the account, with a minus sign; a figure printed without one is a net credit in the period and reduces the total.",
+      "components": [
+        {
+          "label": "VETERANS' AFFAIRS",
+          "funding": "S.RES. 59D (118TH)",
+          "printed": "-$192.00",
+          "locator": {
+            "page": "B-2-141",
+            "heading": "STATEMENT OF EXPENDITURES VETERANS' AFFAIRS S.RES. 59D (118TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-141",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          },
+          "amount": 192.0,
+          "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+        },
+        {
+          "label": "VETERANS' AFFAIRS",
+          "funding": "S.RES. 94B (119TH)",
+          "printed": "-$146,439.60",
+          "locator": {
+            "page": "B-2-142",
+            "heading": "STATEMENT OF EXPENDITURES VETERANS' AFFAIRS S.RES. 94B (119TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-142",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          },
+          "amount": 146439.6,
+          "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+        },
+        {
+          "label": "VETERANS' AFFAIRS",
+          "funding": "S.RES. 94C (119TH)",
+          "printed": "-$1,955,717.39",
+          "locator": {
+            "page": "B-2-143",
+            "heading": "STATEMENT OF EXPENDITURES VETERANS' AFFAIRS S.RES. 94C (119TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-143",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          },
+          "amount": 1955717.39,
+          "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+        }
+      ],
+      "zeroComponents": [
+        {
+          "label": "VETERANS' AFFAIRS",
+          "funding": "S.RES. 59C (118TH)",
+          "printed": "$.00",
+          "locator": {
+            "page": "B-2-140",
+            "heading": "STATEMENT OF EXPENDITURES VETERANS' AFFAIRS S.RES. 59C (118TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-140",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          }
+        }
+      ],
+      "amount": 2102348.99,
+      "componentCount": 3,
+      "documentsStatingTheFigure": 0,
+      "arithmetic": {
+        "operation": "sum_of_printed_totals",
+        "note": "The document prints no single total for this committee; the figure is the sum of the 3 totals it prints, each listed with its printed text."
+      },
+      "notTheCost": "Cash the chamber's disbursing office paid out for the committee's account over the period. It is not the Treasury's net outlays, not the graph's estimate for this node, and not its cost."
+    },
+    "leg-senate-cmte-budget": {
+      "nodeId": "leg-senate-cmte-budget",
+      "nodeName": "Senate Committee on the Budget",
+      "chamber": "senate",
+      "costBasis": "disbursements",
+      "document": {
+        "title": "Report of the Secretary of the Senate",
+        "part": "Part II",
+        "file": "tests/fixtures/disbursements/senate/GPO-CDOC-119sdoc6-2.pdf",
+        "url": "https://www.govinfo.gov/content/pkg/GPO-CDOC-119sdoc6/pdf/GPO-CDOC-119sdoc6-2.pdf",
+        "sha256": "8c0198e57f3f4a3bba56939e3972c7c2d3ef55f4d01aa0addd2457ff98158e47",
+        "fetchedAt": "2026-10-06T16:32:33Z",
+        "account": "Expenses of Inquiries and Investigations"
+      },
+      "period": {
+        "printed": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)",
+        "start": "2025-10-01",
+        "end": "2026-03-31",
+        "coverage": "fiscal_year_to_date"
+      },
+      "listedNames": [
+        "BUDGET"
+      ],
+      "matchRule": "reviewed_row",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "matchBasis": "The report heads each Inquiries and Investigations account with the committee's subject alone; the one-word label is below the fold's two-token floor.",
+      "unitsEvidence": {
+        "kind": "currency_mark_on_the_printed_figure"
+      },
+      "signConvention": "The report prints an expenditure as a reduction of the account, with a minus sign; a figure printed without one is a net credit in the period and reduces the total.",
+      "components": [
+        {
+          "label": "BUDGET",
+          "funding": "S.RES. 94B (119TH)",
+          "printed": "-$90,305.12",
+          "locator": {
+            "page": "B-2-25",
+            "heading": "STATEMENT OF EXPENDITURES BUDGET S.RES. 94B (119TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-25",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          },
+          "amount": 90305.12,
+          "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+        },
+        {
+          "label": "BUDGET",
+          "funding": "S.RES. 94C (119TH)",
+          "printed": "-$2,465,231.59",
+          "locator": {
+            "page": "B-2-26",
+            "heading": "STATEMENT OF EXPENDITURES BUDGET S.RES. 94C (119TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-26",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          },
+          "amount": 2465231.59,
+          "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+        }
+      ],
+      "zeroComponents": [
+        {
+          "label": "BUDGET",
+          "funding": "S.RES. 59C (118TH)",
+          "printed": "$.00",
+          "locator": {
+            "page": "B-2-23",
+            "heading": "STATEMENT OF EXPENDITURES BUDGET S.RES. 59C (118TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-23",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          }
+        },
+        {
+          "label": "BUDGET",
+          "funding": "S.RES. 59D (118TH)",
+          "printed": "$.00",
+          "locator": {
+            "page": "B-2-24",
+            "heading": "STATEMENT OF EXPENDITURES BUDGET S.RES. 59D (118TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-24",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          }
+        }
+      ],
+      "amount": 2555536.71,
+      "componentCount": 2,
+      "documentsStatingTheFigure": 0,
+      "arithmetic": {
+        "operation": "sum_of_printed_totals",
+        "note": "The document prints no single total for this committee; the figure is the sum of the 2 totals it prints, each listed with its printed text."
+      },
+      "notTheCost": "Cash the chamber's disbursing office paid out for the committee's account over the period. It is not the Treasury's net outlays, not the graph's estimate for this node, and not its cost."
+    },
+    "leg-senate-cmte-finance": {
+      "nodeId": "leg-senate-cmte-finance",
+      "nodeName": "Senate Committee on Finance",
+      "chamber": "senate",
+      "costBasis": "disbursements",
+      "document": {
+        "title": "Report of the Secretary of the Senate",
+        "part": "Part II",
+        "file": "tests/fixtures/disbursements/senate/GPO-CDOC-119sdoc6-2.pdf",
+        "url": "https://www.govinfo.gov/content/pkg/GPO-CDOC-119sdoc6/pdf/GPO-CDOC-119sdoc6-2.pdf",
+        "sha256": "8c0198e57f3f4a3bba56939e3972c7c2d3ef55f4d01aa0addd2457ff98158e47",
+        "fetchedAt": "2026-10-06T16:32:33Z",
+        "account": "Expenses of Inquiries and Investigations"
+      },
+      "period": {
+        "printed": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)",
+        "start": "2025-10-01",
+        "end": "2026-03-31",
+        "coverage": "fiscal_year_to_date"
+      },
+      "listedNames": [
+        "FINANCE"
+      ],
+      "matchRule": "reviewed_row",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "matchBasis": "As for the Budget Committee: the report's one-word label for the committee's account.",
+      "unitsEvidence": {
+        "kind": "currency_mark_on_the_printed_figure"
+      },
+      "signConvention": "The report prints an expenditure as a reduction of the account, with a minus sign; a figure printed without one is a net credit in the period and reduces the total.",
+      "components": [
+        {
+          "label": "FINANCE",
+          "funding": "S.RES. 94B (119TH)",
+          "printed": "-$152,419.74",
+          "locator": {
+            "page": "B-2-56",
+            "heading": "STATEMENT OF EXPENDITURES FINANCE S.RES. 94B (119TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-56",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          },
+          "amount": 152419.74,
+          "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+        },
+        {
+          "label": "FINANCE",
+          "funding": "S.RES. 94C (119TH)",
+          "printed": "-$5,306,102.83",
+          "locator": {
+            "page": "B-2-58",
+            "heading": "STATEMENT OF EXPENDITURES FINANCE S.RES. 94C (119TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-58",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          },
+          "amount": 5306102.83,
+          "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+        }
+      ],
+      "zeroComponents": [
+        {
+          "label": "FINANCE",
+          "funding": "S.RES. 59C (118TH)",
+          "printed": "$.00",
+          "locator": {
+            "page": "B-2-54",
+            "heading": "STATEMENT OF EXPENDITURES FINANCE S.RES. 59C (118TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-54",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          }
+        },
+        {
+          "label": "FINANCE",
+          "funding": "S.RES. 59D (118TH)",
+          "printed": "$.00",
+          "locator": {
+            "page": "B-2-55",
+            "heading": "STATEMENT OF EXPENDITURES FINANCE S.RES. 59D (118TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-55",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          }
+        }
+      ],
+      "amount": 5458522.57,
+      "componentCount": 2,
+      "documentsStatingTheFigure": 0,
+      "arithmetic": {
+        "operation": "sum_of_printed_totals",
+        "note": "The document prints no single total for this committee; the figure is the sum of the 2 totals it prints, each listed with its printed text."
+      },
+      "notTheCost": "Cash the chamber's disbursing office paid out for the committee's account over the period. It is not the Treasury's net outlays, not the graph's estimate for this node, and not its cost."
+    },
+    "leg-senate-cmte-judiciary": {
+      "nodeId": "leg-senate-cmte-judiciary",
+      "nodeName": "United States Senate Committee on the Judiciary",
+      "chamber": "senate",
+      "costBasis": "disbursements",
+      "document": {
+        "title": "Report of the Secretary of the Senate",
+        "part": "Part II",
+        "file": "tests/fixtures/disbursements/senate/GPO-CDOC-119sdoc6-2.pdf",
+        "url": "https://www.govinfo.gov/content/pkg/GPO-CDOC-119sdoc6/pdf/GPO-CDOC-119sdoc6-2.pdf",
+        "sha256": "8c0198e57f3f4a3bba56939e3972c7c2d3ef55f4d01aa0addd2457ff98158e47",
+        "fetchedAt": "2026-10-06T16:32:33Z",
+        "account": "Expenses of Inquiries and Investigations"
+      },
+      "period": {
+        "printed": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)",
+        "start": "2025-10-01",
+        "end": "2026-03-31",
+        "coverage": "fiscal_year_to_date"
+      },
+      "listedNames": [
+        "JUDICIARY"
+      ],
+      "matchRule": "reviewed_row",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "matchBasis": "As for the Budget Committee: the report's one-word label for the committee's account.",
+      "unitsEvidence": {
+        "kind": "currency_mark_on_the_printed_figure"
+      },
+      "signConvention": "The report prints an expenditure as a reduction of the account, with a minus sign; a figure printed without one is a net credit in the period and reduces the total.",
+      "components": [
+        {
+          "label": "JUDICIARY",
+          "funding": "S.RES. 59C (118TH)",
+          "printed": "-$120.00",
+          "locator": {
+            "page": "B-2-110",
+            "heading": "STATEMENT OF EXPENDITURES JUDICIARY S.RES. 59C (118TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-110",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          },
+          "amount": 120.0,
+          "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+        },
+        {
+          "label": "JUDICIARY",
+          "funding": "S.RES. 94B (119TH)",
+          "printed": "-$256,488.71",
+          "locator": {
+            "page": "B-2-112",
+            "heading": "STATEMENT OF EXPENDITURES JUDICIARY S.RES. 94B (119TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-112",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          },
+          "amount": 256488.71,
+          "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+        },
+        {
+          "label": "JUDICIARY",
+          "funding": "S.RES. 94C (119TH)",
+          "printed": "-$6,456,511.94",
+          "locator": {
+            "page": "B-2-114",
+            "heading": "STATEMENT OF EXPENDITURES JUDICIARY S.RES. 94C (119TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-114",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          },
+          "amount": 6456511.94,
+          "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+        }
+      ],
+      "zeroComponents": [
+        {
+          "label": "JUDICIARY",
+          "funding": "S.RES. 59D (118TH)",
+          "printed": "$.00",
+          "locator": {
+            "page": "B-2-111",
+            "heading": "STATEMENT OF EXPENDITURES JUDICIARY S.RES. 59D (118TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-111",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          }
+        }
+      ],
+      "amount": 6713120.65,
+      "componentCount": 3,
+      "documentsStatingTheFigure": 0,
+      "arithmetic": {
+        "operation": "sum_of_printed_totals",
+        "note": "The document prints no single total for this committee; the figure is the sum of the 3 totals it prints, each listed with its printed text."
+      },
+      "notTheCost": "Cash the chamber's disbursing office paid out for the committee's account over the period. It is not the Treasury's net outlays, not the graph's estimate for this node, and not its cost."
+    },
+    "leg-senate-cmte-select-committee-on-intelligence": {
+      "nodeId": "leg-senate-cmte-select-committee-on-intelligence",
+      "nodeName": "Senate Select Committee on Intelligence",
+      "chamber": "senate",
+      "costBasis": "disbursements",
+      "document": {
+        "title": "Report of the Secretary of the Senate",
+        "part": "Part II",
+        "file": "tests/fixtures/disbursements/senate/GPO-CDOC-119sdoc6-2.pdf",
+        "url": "https://www.govinfo.gov/content/pkg/GPO-CDOC-119sdoc6/pdf/GPO-CDOC-119sdoc6-2.pdf",
+        "sha256": "8c0198e57f3f4a3bba56939e3972c7c2d3ef55f4d01aa0addd2457ff98158e47",
+        "fetchedAt": "2026-10-06T16:32:33Z",
+        "account": "Expenses of Inquiries and Investigations"
+      },
+      "period": {
+        "printed": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)",
+        "start": "2025-10-01",
+        "end": "2026-03-31",
+        "coverage": "fiscal_year_to_date"
+      },
+      "listedNames": [
+        "INTELLIGENCE"
+      ],
+      "matchRule": "reviewed_row",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "matchBasis": "As for the Budget Committee: the Senate has one intelligence committee.",
+      "unitsEvidence": {
+        "kind": "currency_mark_on_the_printed_figure"
+      },
+      "signConvention": "The report prints an expenditure as a reduction of the account, with a minus sign; a figure printed without one is a net credit in the period and reduces the total.",
+      "components": [
+        {
+          "label": "INTELLIGENCE",
+          "funding": "S.RES. 94B (119TH)",
+          "printed": "-$416,244.07",
+          "locator": {
+            "page": "B-2-104",
+            "heading": "STATEMENT OF EXPENDITURES INTELLIGENCE S.RES. 94B (119TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-104",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          },
+          "amount": 416244.07,
+          "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+        },
+        {
+          "label": "INTELLIGENCE",
+          "funding": "S.RES. 94C (119TH)",
+          "printed": "-$4,732,696.32",
+          "locator": {
+            "page": "B-2-106",
+            "heading": "STATEMENT OF EXPENDITURES INTELLIGENCE S.RES. 94C (119TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-106",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          },
+          "amount": 4732696.32,
+          "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+        }
+      ],
+      "zeroComponents": [
+        {
+          "label": "INTELLIGENCE",
+          "funding": "S.RES. 59C (118TH)",
+          "printed": "$.00",
+          "locator": {
+            "page": "B-2-102",
+            "heading": "STATEMENT OF EXPENDITURES INTELLIGENCE S.RES. 59C (118TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-102",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          }
+        },
+        {
+          "label": "INTELLIGENCE",
+          "funding": "S.RES. 59D (118TH)",
+          "printed": "$.00",
+          "locator": {
+            "page": "B-2-103",
+            "heading": "STATEMENT OF EXPENDITURES INTELLIGENCE S.RES. 59D (118TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-103",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          }
+        }
+      ],
+      "amount": 5148940.39,
+      "componentCount": 2,
+      "documentsStatingTheFigure": 0,
+      "arithmetic": {
+        "operation": "sum_of_printed_totals",
+        "note": "The document prints no single total for this committee; the figure is the sum of the 2 totals it prints, each listed with its printed text."
+      },
+      "notTheCost": "Cash the chamber's disbursing office paid out for the committee's account over the period. It is not the Treasury's net outlays, not the graph's estimate for this node, and not its cost."
+    },
+    "leg-senate-cmte-select-committee-on-ethics": {
+      "nodeId": "leg-senate-cmte-select-committee-on-ethics",
+      "nodeName": "U.S. Senate Select Committee on Ethics",
+      "chamber": "senate",
+      "costBasis": "disbursements",
+      "document": {
+        "title": "Report of the Secretary of the Senate",
+        "part": "Part II",
+        "file": "tests/fixtures/disbursements/senate/GPO-CDOC-119sdoc6-2.pdf",
+        "url": "https://www.govinfo.gov/content/pkg/GPO-CDOC-119sdoc6/pdf/GPO-CDOC-119sdoc6-2.pdf",
+        "sha256": "8c0198e57f3f4a3bba56939e3972c7c2d3ef55f4d01aa0addd2457ff98158e47",
+        "fetchedAt": "2026-10-06T16:32:33Z",
+        "account": "Expenses of Inquiries and Investigations"
+      },
+      "period": {
+        "printed": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)",
+        "start": "2025-10-01",
+        "end": "2026-03-31",
+        "coverage": "fiscal_year_to_date"
+      },
+      "listedNames": [
+        "ETHICS"
+      ],
+      "matchRule": "reviewed_row",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "matchBasis": "The report heads the account 'ETHICS' and names its funding 'COMMITTEE ON ETHICS - FY 2026'; the Senate has one ethics committee.",
+      "unitsEvidence": {
+        "kind": "currency_mark_on_the_printed_figure"
+      },
+      "signConvention": "The report prints an expenditure as a reduction of the account, with a minus sign; a figure printed without one is a net credit in the period and reduces the total.",
+      "components": [
+        {
+          "label": "ETHICS",
+          "funding": "COMMITTEE ON ETHICS - FY 2025",
+          "printed": "-$22,997.37",
+          "locator": {
+            "page": "B-2-52",
+            "heading": "STATEMENT OF EXPENDITURES ETHICS COMMITTEE ON ETHICS - FY 2025 EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-52",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          },
+          "amount": 22997.37,
+          "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+        },
+        {
+          "label": "ETHICS",
+          "funding": "COMMITTEE ON ETHICS - FY 2026",
+          "printed": "-$1,320,943.62",
+          "locator": {
+            "page": "B-2-53",
+            "heading": "STATEMENT OF EXPENDITURES ETHICS COMMITTEE ON ETHICS - FY 2026 EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-53",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          },
+          "amount": 1320943.62,
+          "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+        }
+      ],
+      "zeroComponents": [
+        {
+          "label": "ETHICS",
+          "funding": "COMMITTEE ON ETHICS - FY 2024",
+          "printed": "$.00",
+          "locator": {
+            "page": "B-2-51",
+            "heading": "STATEMENT OF EXPENDITURES ETHICS COMMITTEE ON ETHICS - FY 2024 EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-51",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          }
+        }
+      ],
+      "amount": 1343940.99,
+      "componentCount": 2,
+      "documentsStatingTheFigure": 0,
+      "arithmetic": {
+        "operation": "sum_of_printed_totals",
+        "note": "The document prints no single total for this committee; the figure is the sum of the 2 totals it prints, each listed with its printed text."
+      },
+      "notTheCost": "Cash the chamber's disbursing office paid out for the committee's account over the period. It is not the Treasury's net outlays, not the graph's estimate for this node, and not its cost."
+    },
+    "leg-senate-cmte-special-committee-on-aging": {
+      "nodeId": "leg-senate-cmte-special-committee-on-aging",
+      "nodeName": "Senate Special Committee on Aging",
+      "chamber": "senate",
+      "costBasis": "disbursements",
+      "document": {
+        "title": "Report of the Secretary of the Senate",
+        "part": "Part II",
+        "file": "tests/fixtures/disbursements/senate/GPO-CDOC-119sdoc6-2.pdf",
+        "url": "https://www.govinfo.gov/content/pkg/GPO-CDOC-119sdoc6/pdf/GPO-CDOC-119sdoc6-2.pdf",
+        "sha256": "8c0198e57f3f4a3bba56939e3972c7c2d3ef55f4d01aa0addd2457ff98158e47",
+        "fetchedAt": "2026-10-06T16:32:33Z",
+        "account": "Expenses of Inquiries and Investigations"
+      },
+      "period": {
+        "printed": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)",
+        "start": "2025-10-01",
+        "end": "2026-03-31",
+        "coverage": "fiscal_year_to_date"
+      },
+      "listedNames": [
+        "SPECIAL COMMITTEE ON AGING"
+      ],
+      "matchRule": "reviewed_row",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "matchBasis": "The report prints the committee's own name; the fold leaves the single token 'aging', which is below its two-token floor.",
+      "unitsEvidence": {
+        "kind": "currency_mark_on_the_printed_figure"
+      },
+      "signConvention": "The report prints an expenditure as a reduction of the account, with a minus sign; a figure printed without one is a net credit in the period and reduces the total.",
+      "components": [
+        {
+          "label": "SPECIAL COMMITTEE ON AGING",
+          "funding": "S.RES. 94B (119TH)",
+          "printed": "-$79,356.67",
+          "locator": {
+            "page": "B-2-136",
+            "heading": "STATEMENT OF EXPENDITURES SPECIAL COMMITTEE ON AGING S.RES. 94B (119TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-136",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          },
+          "amount": 79356.67,
+          "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+        },
+        {
+          "label": "SPECIAL COMMITTEE ON AGING",
+          "funding": "S.RES. 94C (119TH)",
+          "printed": "-$1,366,613.31",
+          "locator": {
+            "page": "B-2-137",
+            "heading": "STATEMENT OF EXPENDITURES SPECIAL COMMITTEE ON AGING S.RES. 94C (119TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-137",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          },
+          "amount": 1366613.31,
+          "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+        }
+      ],
+      "zeroComponents": [
+        {
+          "label": "SPECIAL COMMITTEE ON AGING",
+          "funding": "S.RES. 59C (118TH)",
+          "printed": "$.00",
+          "locator": {
+            "page": "B-2-134",
+            "heading": "STATEMENT OF EXPENDITURES SPECIAL COMMITTEE ON AGING S.RES. 59C (118TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-134",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          }
+        },
+        {
+          "label": "SPECIAL COMMITTEE ON AGING",
+          "funding": "S.RES. 59D (118TH)",
+          "printed": "$.00",
+          "locator": {
+            "page": "B-2-135",
+            "heading": "STATEMENT OF EXPENDITURES SPECIAL COMMITTEE ON AGING S.RES. 59D (118TH) EXPENSES OF INQUIRIES AND INVESTIGATIONS B-2-135",
+            "row": "ORGANIZATION TOTALS",
+            "column": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)"
+          }
+        }
+      ],
+      "amount": 1445969.98,
+      "componentCount": 2,
+      "documentsStatingTheFigure": 0,
+      "arithmetic": {
+        "operation": "sum_of_printed_totals",
+        "note": "The document prints no single total for this committee; the figure is the sum of the 2 totals it prints, each listed with its printed text."
+      },
+      "notTheCost": "Cash the chamber's disbursing office paid out for the committee's account over the period. It is not the Treasury's net outlays, not the graph's estimate for this node, and not its cost."
+    }
+  }
+}

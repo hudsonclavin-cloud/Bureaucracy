@@ -79,15 +79,27 @@ BASES = {
     "basic_pay",             # one post's rate. Never an organisation's cost.
     "payroll",               # a unit's staff cost. An input to cost, not cost.
     "full_time_equivalents",  # not money at all.
+    # Cash a chamber's disbursing office paid out for one committee's account
+    # over a report's period: the House's Statement of Disbursements, the
+    # Senate's Report of the Secretary. Not the Treasury's net outlays, never a
+    # cost, and the only basis that may sit on a committee -- see
+    # COMMITTEE_ONLY_BASES.
+    "disbursements",
 }
 
 #: Figures about money that has actually moved or been committed. These cannot
 #: exist for a fiscal year that has not finished, which is how the first draft
 #: let an "audited actual" be filed for FY2028.
-REALIZED_BASES = {"net_outlays", "gross_outlays", "obligations", "audited_net_cost", "payroll"}
+REALIZED_BASES = {"net_outlays", "gross_outlays", "obligations", "audited_net_cost", "payroll", "disbursements"}
 
 NON_MONETARY_BASES = {"full_time_equivalents"}
 POSITION_ONLY_BASES = {"basic_pay"}
+#: The mirror image of POSITION_ONLY_BASES. A committee is not an organisation
+#: in `is_organisation`'s sense -- the gate refuses it a measured cost -- so
+#: every organisation's measure is refused on it. What a chamber disbursed for
+#: a committee's account is the one money figure a committee has of its own,
+#: and this basis may sit on a committee and on nothing else.
+COMMITTEE_ONLY_BASES = {"disbursements"}
 
 #: Declared units, and the factor that turns the printed figure into the base
 #: unit. `thousands_count` exists because FTE tables are printed in thousands
@@ -213,6 +225,14 @@ SOURCE_TYPES = {
     # (military_pay.py). The record's own figure is twelve months of a
     # printed monthly rate and is itself printed nowhere.
     "military_basic_pay_schedule",
+    # The House's quarterly Statement of Disbursements (2 U.S.C. 104a): the
+    # summary CSV's office totals, one per committee organisation and program.
+    # See data_pipeline/verification/committee_disbursements.py.
+    "house_statement_of_disbursements",
+    # The Senate's semiannual Report of the Secretary of the Senate
+    # (2 U.S.C. 4108), Part II: a committee's Inquiries and Investigations
+    # account, one summary block per funding resolution.
+    "senate_secretary_report",
 }
 
 #: Documents that state their scale by *printing* it rather than by declaring
@@ -248,6 +268,9 @@ SCALE_PRINTED_SOURCE_TYPES = {
     # 3 U.S.C. 102 prints "$400,000 a year" and says "dollars" nowhere; the
     # mark attached to the record's own figure is the scale.
     "us_code_stated_rate",
+    # The Senate report prints each period figure on a committee's
+    # ORGANIZATION TOTALS row with its mark attached ("-$483,438.47").
+    "senate_secretary_report",
 }
 
 #: The narrowest rule of all, granted to exactly one source type: a record
@@ -330,6 +353,26 @@ DICTIONARY_SCALED_SOURCE_TYPES = {
 #: which is what this rule asks the derive step to guarantee.
 COLUMN_HEAD_MARK_SOURCE_TYPES = {"opm_pay_table", "us_code_pay_schedules"}
 
+#: A sixth way, granted to exactly one source type: the House's Statement of
+#: Disbursements. Its summary CSV prints bare decimals ("1571274.53") and its
+#: signed volumes print the committees' figures bare too; neither says
+#: "dollars". The one place the statement marks a figure is its Statement of
+#: Accountability -- "$ 449,333,548.30", everything the House disbursed for
+#: salaries and expenses in the quarter -- and that marked total bounds the
+#: column from both sides. No office's quarter can exceed the whole House's,
+#: so the record's figure must be at most the total; and the column's anchor
+#: (the largest office total the record's committee has in the same column)
+#: read in thousands must EXCEED the total, which a column in thousands or
+#: larger could not do. All required: `statementTotal.text` is a figure
+#: printed with its mark attached and to the cent, with a label;
+#: `columnAnchor` names the column and quotes a figure no smaller than the
+#: record's own; and the evidence quotes the total, the anchor, the column and
+#: the record's own figure. The bound is the whole argument: the CSV drops
+#: trailing zeros ("22996"), so how a figure is typeset proves nothing here. The derive step guarantees the anchor sits in the
+#: same column of the same file; the release gate re-reads both documents.
+#: Tried last. Kind: `currency_mark_on_the_statements_own_total_bounds_the_column`.
+STATEMENT_TOTAL_BOUNDED_SOURCE_TYPES = {"house_statement_of_disbursements"}
+
 #: Which bases a source can actually report. A Congressional Justification
 #: cannot report an audited net cost; nothing stopped that being claimed.
 #: CJs *do* print prior-year actual columns, so realized bases are allowed
@@ -356,6 +399,8 @@ SOURCE_BASES = {
     "statutory_parity_derived_pay": {"basic_pay"},
     "statutory_tier_reference_pay": {"basic_pay"},
     "us_code_stated_rate": {"basic_pay"},
+    "house_statement_of_disbursements": {"disbursements"},
+    "senate_secretary_report": {"disbursements"},
 }
 
 SCOPE_MATCHES = {"exact", "parent", "child", "broader_account", "proxy", "ambiguous"}
@@ -610,6 +655,45 @@ def _column_head_prints_dollars(
     return ""
 
 
+#: A figure as a CSV prints it: digits, an optional sign, at most two decimals.
+#: The House's file drops trailing zeros ("22996", "1758645.2").
+_PLAIN_FIGURE = re.compile(r"-?\d[\d,]*(?:\.\d{1,2})?")
+
+
+def _statement_total_bounds_the_column(
+    record: Mapping[str, Any], evidence: str, amount_raw: Any, source_type: str, units: str
+) -> str:
+    """Whether the statement's own marked total bounds this column to dollars.
+    See `STATEMENT_TOTAL_BOUNDED_SOURCE_TYPES`.
+
+    Returns the total's printed text, or "" when the record does not show this.
+    """
+    if units != "usd" or source_type not in STATEMENT_TOTAL_BOUNDED_SOURCE_TYPES:
+        return ""
+    total = record.get("statementTotal")
+    anchor = record.get("columnAnchor")
+    if not isinstance(total, Mapping) or not isinstance(anchor, Mapping):
+        return ""
+    total_text = _text(total.get("text"))
+    if not _text(total.get("label")) or not re.fullmatch(r"\$\s*[\d,]+\.\d\d", total_text):
+        return ""
+    anchor_raw = _text(anchor.get("amountRaw"))
+    column = _text(anchor.get("column")).casefold()
+    raw = _text(amount_raw)
+    if not column or not _PLAIN_FIGURE.fullmatch(anchor_raw) or not _PLAIN_FIGURE.fullmatch(raw):
+        return ""
+    if total_text.casefold() not in evidence or column not in evidence:
+        return ""
+    if anchor_raw not in evidence or raw not in evidence:
+        return ""
+    total_value = float(total_text.replace("$", "").replace(",", "").strip())
+    anchor_value = abs(float(anchor_raw.replace(",", "")))
+    own_value = abs(float(raw.replace(",", "")))
+    if own_value > anchor_value or anchor_value > total_value or anchor_value * 1000 <= total_value:
+        return ""
+    return total_text
+
+
 def _is_real_number(value: Any) -> bool:
     """A number, not a bool, and finite.
 
@@ -685,6 +769,12 @@ def is_organisation(node: Mapping[str, Any]) -> bool:
     return not node.get("synthetic") and not any(
         word in type_text for word in ("position", "role", "committee", "caucus", "office holder")
     )
+
+
+def is_committee(node: Mapping[str, Any]) -> bool:
+    """A node typed Committee or Subcommittee -- the release gate's two
+    committee types -- and nothing synthetic."""
+    return not node.get("synthetic") and _text(node.get("type")).casefold() in {"committee", "subcommittee"}
 
 
 @dataclass(frozen=True)
@@ -839,7 +929,10 @@ def validate_record(
         computed = "" if (printed or dictionary or column_head) else _computed_from_marked_figure(
             record, units_evidence, record.get("amountRaw"), source_type, units
         )
-        if not printed and not dictionary and not column_head and not computed:
+        bounded = "" if (printed or dictionary or column_head or computed) else _statement_total_bounds_the_column(
+            record, units_evidence, record.get("amountRaw"), source_type, units
+        )
+        if not printed and not dictionary and not column_head and not computed and not bounded:
             raise Rejected(
                 f"{node_id}: unitsEvidence {record.get('unitsEvidence')!r} states no scale "
                 f"(expected one of {UNIT_PHRASES[units]})"
@@ -850,8 +943,10 @@ def validate_record(
             units_evidence_kind = "publishers_data_dictionary"
         elif column_head:
             units_evidence_kind = "currency_mark_on_the_columns_first_figure"
-        else:
+        elif computed:
             units_evidence_kind = "currency_mark_on_the_figure_the_record_is_computed_from"
+        else:
+            units_evidence_kind = "currency_mark_on_the_statements_own_total_bounds_the_column"
     else:
         if stated != units:
             raise Rejected(
@@ -976,9 +1071,21 @@ def validate_record(
 
     # --- node kind ------------------------------------------------------
     node_is_org = is_organisation(node)
-    if basis in POSITION_ONLY_BASES and node_is_org:
+    if basis in COMMITTEE_ONLY_BASES or is_committee(node):
+        # A committee takes this basis and no other, and this basis sits on a
+        # committee and nothing else. Checked before the organisation rule,
+        # which would otherwise refuse every committee by its type word.
+        if basis not in COMMITTEE_ONLY_BASES:
+            raise Rejected(
+                f"{node_id}: basis {basis!r} cannot sit on a committee; only {sorted(COMMITTEE_ONLY_BASES)} can"
+            )
+        if not is_committee(node):
+            raise Rejected(
+                f"{node_id}: basis {basis!r} is a committee's account and cannot sit on a {node.get('type')!r}"
+            )
+    elif basis in POSITION_ONLY_BASES and node_is_org:
         raise Rejected(f"{node_id}: basis {basis!r} is one post's pay and cannot sit on an organisation")
-    if basis not in POSITION_ONLY_BASES and not node_is_org:
+    elif basis not in POSITION_ONLY_BASES and not node_is_org:
         raise Rejected(f"{node_id}: basis {basis!r} is an organisation's measure and cannot sit on a {node.get('type')!r}")
 
     if state == "conflicted" and not (record.get("conflictsWith") or []):
