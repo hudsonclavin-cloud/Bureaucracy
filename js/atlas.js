@@ -467,6 +467,15 @@ function describeCost(node) {
     if (counted && !isReceiptsLine(node)) note += counted;
     return { amount: formatExactMoney(amount), label, note, period: costPeriodLabel(node), sourceUrl };
   }
+  if (validation === "post_is_not_a_budget_unit" && employerOf(node)) {
+    return {
+      amount: null,
+      label: "Not federally paid",
+      note: "This is a post, not a unit of government, so no budget figure is shown for it. No federal pay document prices it either; the pay row below says why.",
+      period: "",
+      sourceUrl: null,
+    };
+  }
   if (validation === "post_is_not_a_budget_unit") {
     return { amount: null, label: "Not available", note: POST_NOTE, period: "", sourceUrl: null };
   }
@@ -500,7 +509,41 @@ function describeCost(node) {
 // Each block is the panel's, shortened to its claim and its caveat.
 // ---------------------------------------------------------------------------
 
+// The ten fields a pay document writes on a post. A post carrying any of them
+// never shows the employer sentence: the gate refuses the two together.
+const PAY_FIELDS = [
+  "positionPayRate", "positionGradePay", "positionCurrentPay", "positionSchedulePay",
+  "positionStatutoryPay", "positionDerivedPay", "positionTierPay", "positionTierReferencePay",
+  "positionMilitaryPay", "positionReportedPay",
+];
+
+// A post whose employer committed documents say is not the federal
+// government: a post of one of DOE's sixteen contractor-operated
+// laboratories (employment_status.py, since 2026-10-07).
+function employerOf(node) {
+  const block = node && node.positionEmployer;
+  if (!block || typeof block !== "object") return null;
+  if (block.federallyPaid !== false || block.kind !== "contractor_operated_laboratory") return null;
+  if (isMeasured(node) || PAY_FIELDS.some((field) => node[field])) return null;
+  return block;
+}
+
 function describePay(node) {
+  const employer = employerOf(node);
+  if (employer) {
+    const docs = Array.isArray(employer.documents) ? employer.documents.filter((d) => d && isHttpUrl(d.url)) : [];
+    return [{
+      heading: "Not federally paid",
+      notARate: true,
+      text: `${String(employer.headline || "").trim()} ${String(employer.notEstablished || "").trim()}${
+        docs.length
+          ? ` The ${docs.length} documents, in their own words: ${docs.map((d) => `${d.title || d.url}${d.dated ? ` (${d.dated})` : ""}: ${
+            (Array.isArray(d.quotes) ? d.quotes : []).filter((q) => q && typeof q.text === "string").map((q) => `${q.section ? `§${q.section} ` : ""}"${q.text}"`).join("; ")
+          }`).join(". ")}. None of them names this post.`
+          : ""
+      }`,
+    }];
+  }
   const blocks = [];
   const listing = node.positionListing;
   if (listing && typeof listing === "object" && typeof listing.reportedPay === "number" && listing.reportedPay > 0) {
@@ -757,7 +800,10 @@ function renderDetail(node) {
   ];
   if (cost.sourceUrl) rows.push(row("Cost source", `${link(cost.sourceUrl, "Monthly Treasury Statement, Table 5 (fiscaldata.treasury.gov)")}<span class="detail-note">Evidence of the cost, not of the unit's existence.</span>`));
   if (pay.length) {
-    rows.push(row("Pay", `${pay.map((block) => `<span class="detail-pay"><em>${escapeHtml(block.heading)}:</em> ${escapeHtml(block.text)}</span>`).join("")}<span class="detail-note">A rate of basic pay is not this unit's cost: it excludes benefits and is not a share of federal outlays, which is what every other figure in this graph means.</span>`, "pay-row"));
+    const rateNote = pay.some((block) => !block.notARate)
+      ? `<span class="detail-note">A rate of basic pay is not this unit's cost: it excludes benefits and is not a share of federal outlays, which is what every other figure in this graph means.</span>`
+      : "";
+    rows.push(row("Pay", `${pay.map((block) => `<span class="detail-pay"><em>${escapeHtml(block.heading)}:</em> ${escapeHtml(block.text)}</span>`).join("")}${rateNote}`, "pay-row"));
   }
   detail.innerHTML = `<div>
       <div class="detail-type">${escapeHtml(node.type || "Federal entity")}${isSuperseded(node) ? " · replaced" : ""}</div>

@@ -933,6 +933,50 @@ try {
     measurements.militaryPay = `${militaryNodes.length} nodes carry positionMilitaryPay; checked ${[militaryByGrade, militaryByFootnote].filter(Boolean).map((n) => n.id).join(", ")}`;
   }
 
+  // A post of one of DOE's sixteen contractor-operated laboratories
+  // (employment_status.py, since 2026-10-07): the headline reads "Not
+  // federally paid" under PAY, the panel prints the sentence naming the
+  // laboratory and the NETL page, and the qualifier saying what no document
+  // here establishes. NETL's own posts are federal and must not show it.
+  // Skipped with a note when the served graph carries no such block.
+  const employerNodes = allNodes.filter((n) => n.positionEmployer && n.positionEmployer.federallyPaid === false);
+  if (!employerNodes.length) {
+    measurements.employer = "skipped: no node in the served graph carries positionEmployer (regenerate the graph to land it)";
+  } else {
+    const employerNode = employerNodes.find((n) => unique(n));
+    check("a contractor-laboratory post with a unique name is in the served graph", Boolean(employerNode), employerNodes.length);
+    if (employerNode) {
+      await openByName(employerNode.name);
+      const stats = await text("#info-stats");
+      const head = await text("#info-stats .info-cost-label");
+      const amount = await text("#info-stats .info-cost-amount");
+      const employerText = await text("#info-employer");
+      const lab = employerNode.positionEmployer.laboratoryName;
+      check("a contractor-laboratory post's headline reads Not federally paid", /Not federally paid/.test(amount) && !/Not available/.test(amount), amount);
+      check("the headline is headed PAY, not COST", /^PAY/.test(head) && !/COST/.test(head), head);
+      check(
+        "the panel says the laboratory is one of the 16 DOE laboratories a contractor operates, citing the NETL page",
+        employerText.includes(`Not on a federal pay schedule: ${lab} is one of the 16 DOE laboratories operated by a contractor (DOE, NETL page, May 22, 2023).`),
+        employerText,
+      );
+      check("the panel says what no document here establishes", /No document here names who holds this post/.test(employerText) && /the money is DOE's, through the contract/.test(employerText), employerText);
+      check("the employer sentence sits in the cost block", stats.includes("Not on a federal pay schedule"), stats.slice(0, 600));
+      check(
+        "the panel prints the regulation's own words, with its section",
+        employerText.includes("§970.3102-370 \"The contracts are totally financed by DOE advance payments\""),
+        employerText,
+      );
+      measurements.employer = { node: employerNode.id, posts: employerNodes.length };
+    }
+    const netlPost = allNodes.find((n) => n.name === "Laboratory Director, National Energy Technology Laboratory");
+    if (netlPost) {
+      check("NETL's posts carry no employer block in the served graph", !netlPost.positionEmployer, netlPost.id);
+      await openByName(netlPost.name);
+      const netlStats = await text("#info-stats");
+      check("NETL's Laboratory Director is not called not federally paid", !/Not federally paid|Not on a federal pay schedule/.test(netlStats), netlStats.slice(0, 400));
+    }
+  }
+
   // A unit the statement prints lines beneath and totals nowhere: the panel
   // reads MEASURED over the exact sum, prints the pipeline's own sentence
   // saying the figure is that sum and never a line the Treasury prints, and

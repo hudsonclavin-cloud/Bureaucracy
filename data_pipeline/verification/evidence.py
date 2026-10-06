@@ -211,6 +211,12 @@ EVIDENCE_OWNED_FIELDS = (
     # GS range gs_pay.py hangs off it is withdrawn with it on every build, so
     # a family whose announcements stop agreeing stops being ranged.
     "positionVacancyListing",
+    # Written by employment_status.py (since 2026-10-07): a post of one of
+    # DOE's sixteen contractor-operated laboratories is not paid on a federal
+    # pay schedule. Withdrawn here with the rest, so a document that stops
+    # saying so, a laboratory dropped from DOE's index, or a post that moves
+    # or gains a pay claim loses the block on the next build.
+    "positionEmployer",
     "employeesOfficial",
     "employeesOfficialSource",
     # Written by pay_tables.py. It is a gloss on positionListing directly

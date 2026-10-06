@@ -278,6 +278,10 @@ MINIMAL_GRAPH_FIELDS = (
     # grade: the listing a GS base range hangs off where no PLUM listing
     # reports the post. Not evidence the node exists, and never a salary
     "positionVacancyListing",
+    # who pays the post, where committed official documents say it is not
+    # the federal government: a post of one of DOE's sixteen contractor-
+    # operated laboratories. Never a rate, never a cost, never a source
+    "positionEmployer",
     # the Government Manual's listing of a post in its own agency's entry,
     # with the leadership table's own "updated" footer, which the panel
     # prints because some tables are years older than the edition
@@ -2778,6 +2782,7 @@ def build_graph(
     govman_evidence_path: str | Path | None = "default",
     fr_signature_evidence_path: str | Path | None = "default",
     omb_budget_evidence_path: str | Path | None = "default",
+    employment_status_evidence_path: str | Path | None = "default",
 ) -> BuildResult:
     payload_list = list(iter_payload_items(payloads))
     fresh_budget_summary = extract_budget_summary(payload_list)
@@ -3373,6 +3378,27 @@ def build_graph(
     )
 
     validation["pay_documents"] = annotate_pay_documents(graph)
+    # Who pays a post, where committed official documents say it is not the
+    # federal government: the posts of DOE's sixteen contractor-operated
+    # laboratories (employment_status.py, since 2026-10-07). After every pay
+    # pass and the multi-post sweep, because it leaves a post any pay
+    # document has priced alone and must read that off the final tree.
+    from data_pipeline.verification.employment_status import (  # noqa: E402 — imports this module
+        DEFAULT_EVIDENCE_PATH as DEFAULT_EMPLOYMENT_STATUS_EVIDENCE_PATH,
+        apply_employment_status,
+        load_evidence as load_employment_status_evidence,
+    )
+
+    resolved_employment_status_path = (
+        DEFAULT_EMPLOYMENT_STATUS_EVIDENCE_PATH
+        if employment_status_evidence_path == "default"
+        else employment_status_evidence_path
+    )
+    validation["employment_status_evidence"] = apply_employment_status(
+        graph,
+        load_employment_status_evidence(resolved_employment_status_path) if resolved_employment_status_path else {},
+        index_tree=index_tree,
+    )
     validation["whitehouse_pay_evidence"]["stands_for_many_posts_after_pruning"] = multi_post_withdrawn
     validity_report["audit_report"] = {"summary": deepcopy(audit_report.get("summary", {}))}
     validity_report["root_orphan_resolution"] = orphan_resolution
