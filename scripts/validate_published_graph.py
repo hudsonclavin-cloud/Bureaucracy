@@ -6585,6 +6585,324 @@ def alias_on_a_figure_violations(node, label_of):
     return out
 
 
+# ---------------------------------------------------------------------------
+# What each chamber paid out for a committee's account
+# (data_pipeline/verification/committee_disbursements.py), re-derived here from
+# the committed documents with a reader of this file's own. Stdlib only and
+# importing nothing from data_pipeline: the reviewed rows are mirrored by node
+# id, and tests/test_committee_disbursements.py pins the mirror, the committee
+# key and the parse equal to the module's.
+
+DISBURSEMENT_FIXTURES = PROJECT_ROOT / "tests" / "fixtures" / "disbursements"
+DISBURSEMENT_HOUSE_CSV = DISBURSEMENT_FIXTURES / "house" / "2026q2_sod_summary_grid.csv"
+DISBURSEMENT_HOUSE_PDF = DISBURSEMENT_FIXTURES / "house" / "2026q2_vol3_signed.pdf"
+DISBURSEMENT_SENATE_PDF = DISBURSEMENT_FIXTURES / "senate" / "GPO-CDOC-119sdoc6-2.pdf"
+DISBURSEMENT_CHAMBER_ROOTS = {"house": "leg-house", "senate": "leg-senate"}
+DISBURSEMENT_MATCH_RULES = ("committee_key_equal", "committee_type_words_folded", "reviewed_row")
+DISBURSEMENT_MEASURED = ("official", "root_total", "scaled_official")
+#: node id -> (chamber, the node's name when the row was written, the labels
+#: the document prints). Mirror of committee_disbursements.REVIEWED_ROWS.
+COMMITTEE_DISBURSEMENT_ROWS = {
+    "leg-house-cmte-energy-commerce": (
+        "house", "House Committee on Energy & Commerce",
+        ("2026 COMMITTEE ON ENERGY & COMMERCE", "2026 COMM ON ENERGY & COMMERCE-MIN")),
+    "leg-house-cmte-education-the-workforce": (
+        "house", "House Committee on Education & the Workforce", ("2026 COMMITTEE ON EDUCATION AND WORKFORCE",)),
+    "leg-house-cmte-oversight-accountability": (
+        "house", "House Committee on Oversight and Government Reform", ("2026 COMMITTEE ON OVERSIGHT AND ACCOUNTABILITY",)),
+    "leg-house-cmte-house-administration": (
+        "house", "House Committee on House Administration", ("2026 HOUSE ADMINISTRATION",)),
+    "leg-house-cmte-transportation-infrastructure": (
+        "house", "House Committee on Transportation & Infrastructure", ("2026 TRANSPORTATION-INFRASTRUCTURE",)),
+    "leg-house-cmte-science-space-technology": (
+        "house", "House Committee on Science, Space & Technology", ("2026 COMM ON SCIENCE SPACE&TECH",)),
+    "leg-house-cmte-permanent-select-committee-on-intelligence": (
+        "house", "House Permanent Select Committee on Intelligence", ("2026 INTELLIGENCE",)),
+    "leg-house-cmte-select-committee-on-the-chinese-communist-party": (
+        "house", "Select Committee on the Strategic Competition Between the United States and the Chinese Communist Party",
+        ("2026 SELECT COMMITTEE COMPETITION US AND CHINA",)),
+    "leg-senate-cmte-budget": ("senate", "Senate Committee on the Budget", ("BUDGET",)),
+    "leg-senate-cmte-finance": ("senate", "Senate Committee on Finance", ("FINANCE",)),
+    "leg-senate-cmte-judiciary": ("senate", "United States Senate Committee on the Judiciary", ("JUDICIARY",)),
+    "leg-senate-cmte-select-committee-on-intelligence": (
+        "senate", "Senate Select Committee on Intelligence", ("INTELLIGENCE",)),
+    "leg-senate-cmte-select-committee-on-ethics": ("senate", "U.S. Senate Select Committee on Ethics", ("ETHICS",)),
+    "leg-senate-cmte-special-committee-on-aging": (
+        "senate", "Senate Special Committee on Aging", ("SPECIAL COMMITTEE ON AGING",)),
+}
+
+_DISBURSEMENT_DOCUMENTS = None
+
+
+def disbursement_committee_key(name):
+    """Mirror of data_pipeline.verification.congress.committee_key."""
+    key = canonical_key(name)
+    for chamber in ("senate ", "house "):
+        if key.startswith(chamber):
+            key = key[len(chamber):]
+            break
+    for prefix in ("committee on permanent select committee", "committee on select committee",
+                   "committee on special committee", "committee on joint "):
+        if key.startswith(prefix):
+            key = key[len("committee on "):]
+    if key.startswith("committee on the "):
+        key = "committee on " + key[len("committee on the "):]
+    return key.strip()
+
+
+def _disbursement_pdf_pages(raw, marker):
+    """One text per content stream: literal strings joined, a positioning
+    operator or a wide kerning gap read as a space. Independent of the
+    module's reader; the test pins the two to the same sections."""
+    import zlib
+
+    token = re.compile(rb"\((?:\\.|[^\\()])*\)|-?\d+(?:\.\d+)?|TJ|Tj|BT|ET|Td|TD|T\*|Tm")
+    escapes = {ord("n"): "\n", ord("r"): "\r", ord("t"): "\t", ord("b"): "\b", ord("f"): "\f"}
+    pages = []
+    for match in re.finditer(rb"stream\r?\n(.*?)endstream", raw, re.S):
+        try:
+            body = zlib.decompress(match.group(1))
+        except zlib.error:
+            continue
+        if b"BT" not in body or marker not in body:
+            continue
+        out = []
+        for found in token.finditer(body):
+            tok = found.group(0)
+            if tok.startswith(b"("):
+                inner, i, text = tok[1:-1], 0, []
+                while i < len(inner):
+                    c = inner[i]
+                    if c == 0x5C and i + 1 < len(inner):
+                        n = inner[i + 1]
+                        if n in escapes:
+                            text.append(escapes[n])
+                            i += 2
+                        elif 0x30 <= n <= 0x37:
+                            j, digits = i + 1, b""
+                            while j < len(inner) and len(digits) < 3 and 0x30 <= inner[j] <= 0x37:
+                                digits += bytes([inner[j]])
+                                j += 1
+                            text.append(chr(int(digits, 8) & 0xFF))
+                            i = j
+                        else:
+                            text.append(chr(n))
+                            i += 2
+                    else:
+                        text.append(chr(c))
+                        i += 1
+                out.append("".join(text))
+            elif tok in (b"Td", b"TD", b"T*", b"Tm", b"ET"):
+                out.append(" ")
+            elif tok not in (b"TJ", b"Tj", b"BT"):
+                try:
+                    if float(tok) <= -120:
+                        out.append(" ")
+                except ValueError:
+                    pass
+        pages.append(re.sub(r"\s+", " ", "".join(out)).strip())
+    return pages
+
+
+def committee_disbursement_documents():
+    """Both chambers' documents, read once per process. Returns a dict with
+    `house` and `senate`, or `error` when a document cannot be read."""
+    global _DISBURSEMENT_DOCUMENTS
+    if _DISBURSEMENT_DOCUMENTS is not None:
+        return _DISBURSEMENT_DOCUMENTS
+    import csv as _csv
+    import hashlib as _hashlib
+
+    def meta_of(path):
+        meta = json.loads(path.with_name(path.name + ".meta.json").read_text(encoding="utf-8"))
+        return meta
+
+    try:
+        docs = {}
+        # The House: the summary CSV's office totals, and the signed volume's
+        # Statement of Accountability for the period and the marked total.
+        csv_raw = DISBURSEMENT_HOUSE_CSV.read_bytes()
+        pdf_raw = DISBURSEMENT_HOUSE_PDF.read_bytes()
+        house = {
+            "sha256": _hashlib.sha256(csv_raw).hexdigest(), "url": meta_of(DISBURSEMENT_HOUSE_CSV).get("url"),
+            "volumeSha256": _hashlib.sha256(pdf_raw).hexdigest(), "offices": {},
+        }
+        rows = list(_csv.reader(io.StringIO(csv_raw.decode("utf-8-sig"))))
+        for row in rows[1:]:
+            org, program, description, _ytd, qtd = (cell.strip() for cell in row)
+            if description == "OFFICE TOTALS:":
+                house["offices"].setdefault(org, []).append((program, qtd))
+        for text in _disbursement_pdf_pages(pdf_raw, b"ABILITY"):
+            if "STATEMENT OF ACCOUNTABILITY FOR APPROPRIATIONS" not in text:
+                continue
+            period = re.search(r"STATEMENT OF DISBURSEMENTS OF THE HOUSE FROM ([A-Z]+ \d{1,2}, \d{4}) TO ([A-Z]+ \d{1,2}, \d{4})", text)
+            total = re.search(r"Disbursements for salaries and expenses and canceled checks Transfers: Deposited in "
+                              r"general fund of the Treasury (\$ ?[\d,]+\.\d\d) ", text)
+            if period and total:
+                house["periodPrinted"] = period.group(0)
+                house["start"] = datetime.strptime(period.group(1).title(), "%B %d, %Y").date().isoformat()
+                house["end"] = datetime.strptime(period.group(2).title(), "%B %d, %Y").date().isoformat()
+                house["statementTotal"] = total.group(1)
+            break
+        docs["house"] = house
+        # The Senate: one summary block per committee and funding resolution.
+        senate_raw = DISBURSEMENT_SENATE_PDF.read_bytes()
+        senate = {"sha256": _hashlib.sha256(senate_raw).hexdigest(),
+                  "url": meta_of(DISBURSEMENT_SENATE_PDF).get("url"), "sections": {}, "periods": set()}
+        heading = re.compile(
+            r"STATEMENT OF EXPENDITURES ([A-Z][A-Z ,.'&-]+?) (S\.RES\. \S+ \(\d+TH\)|COMMITTEE ON [A-Z ]+ - FY \d{4}) "
+            r"EXPENSES OF INQUIRIES AND INVESTIGATIONS (B-[\d-]+)")
+        for text in _disbursement_pdf_pages(senate_raw, b"ORGANIZ"):
+            found = heading.findall(text)
+            totals = re.findall(r"ORGANIZATION TOTALS (-?\$?[\d,]*\.\d\d) (-?\$[\d,]*\.\d\d) (-?\$[\d,]*\.\d\d)", text)
+            if len(found) != 1 or len(totals) != 1:
+                continue
+            period = re.findall(r"NET EXPENDITURES FOR THE PERIOD OF (\d\d/\d\d/\d{4}) THRU (\d\d/\d\d/\d{4}) \(\$\)", text)
+            if len(period) != 1:
+                continue
+            senate["periods"].add(period[0])
+            label_text, funding, page = found[0]
+            senate["sections"].setdefault(label_text.strip(), []).append((funding, page, totals[0][1]))
+        if len(senate["periods"]) == 1:
+            (start, end), = senate["periods"]
+            senate["start"] = datetime.strptime(start, "%m/%d/%Y").date().isoformat()
+            senate["end"] = datetime.strptime(end, "%m/%d/%Y").date().isoformat()
+        docs["senate"] = senate
+    except (OSError, ValueError) as error:
+        docs = {"error": str(error)}
+    _DISBURSEMENT_DOCUMENTS = docs
+    return docs
+
+
+def _disbursement_chamber(node_id, tree_parents):
+    current = tree_parents.get(node_id)
+    while current:
+        for chamber, root_id in DISBURSEMENT_CHAMBER_ROOTS.items():
+            if current == root_id:
+                return chamber
+        current = tree_parents.get(current)
+    return None
+
+
+def committee_disbursement_violations(node, block, docs, label, tree_parents, by_id):
+    """Everything a `committeeDisbursements` block may claim, re-derived."""
+    out = []
+    say = lambda text: out.append("{} {}".format(label(node), text))  # noqa: E731
+    node_id = str(node.get("id") or "")
+    if str(node.get("type") or "").strip().casefold() != "committee":
+        say("is typed {!r}; a chamber's committee disbursements sit on a node typed Committee only".format(node.get("type")))
+        return out
+    if str(node.get("cost_status") or "") in DISBURSEMENT_MEASURED:
+        say("carries committee disbursements beside a measured cost")
+    chamber = str(block.get("chamber") or "")
+    if chamber not in DISBURSEMENT_CHAMBER_ROOTS:
+        say("names chamber {!r}".format(chamber))
+        return out
+    if _disbursement_chamber(node_id, tree_parents) != chamber:
+        say("cites the {} document but is not a committee of that chamber in the tree".format(chamber))
+        return out
+    if canonical_key(block.get("nodeName")) != canonical_key(node.get("name")):
+        say("carries a block written for {!r}".format(block.get("nodeName")))
+    if str(block.get("costBasis") or "") != "disbursements":
+        say("files its block under basis {!r}".format(block.get("costBasis")))
+    if str(block.get("scopeMatch") or "") != "proxy" or str(block.get("financialEvidenceStatus") or "") != "partial":
+        say("claims more than a proxy graded partial")
+    if not str(block.get("notTheCost") or "").strip():
+        say("does not say the figure is not the cost")
+    if "error" in docs:
+        say("cannot be checked: {}".format(docs["error"]))
+        return out
+    doc = docs[chamber]
+    document = block.get("document") if isinstance(block.get("document"), dict) else {}
+    if document.get("sha256") != doc.get("sha256"):
+        say("cites a digest the committed {} document does not have".format(chamber))
+    if document.get("url") != doc.get("url"):
+        say("cites {!r}, not the committed document's address".format(document.get("url")))
+    period = block.get("period") if isinstance(block.get("period"), dict) else {}
+    if period.get("start") != doc.get("start") or period.get("end") != doc.get("end"):
+        say("states a period the document does not print")
+    rule = str(block.get("matchRule") or "")
+    labels = [str(x) for x in (block.get("listedNames") or [])]
+    if rule not in DISBURSEMENT_MATCH_RULES or not labels:
+        say("names no rule this gate knows ({!r}) or no label".format(rule))
+        return out
+    row = COMMITTEE_DISBURSEMENT_ROWS.get(node_id)
+    if rule == "reviewed_row":
+        if row is None or row[0] != chamber or tuple(labels) != row[2]:
+            say("claims a reviewed identification this gate does not mirror for it")
+            return out
+        if canonical_key(row[1]) != canonical_key(node.get("name")):
+            say("carries a reviewed row written for {!r}".format(row[1]))
+    else:
+        if row is not None or len(labels) != 1:
+            say("is matched by name where a reviewed row governs it, or by name to several labels")
+            return out
+        printed = labels[0]
+        if chamber == "house":
+            parsed = re.match(r"^(?:FISCAL YEAR )?\d{4} (.+?)\s*$", printed)
+            printed = parsed.group(1) if parsed else ""
+        if rule == "committee_key_equal":
+            key_of = disbursement_committee_key
+        else:
+            key_of = lambda name: committee_core_key(canonical_key(name))  # noqa: E731
+        key = key_of(printed)
+        peers = [
+            other for other in by_id.values()
+            if str(other.get("type") or "").strip().casefold() == "committee"
+            and _disbursement_chamber(str(other.get("id") or ""), tree_parents) == chamber
+            and key and key_of(other.get("name")) == key
+        ]
+        if not key or [str(p.get("id")) for p in peers] != [node_id]:
+            say("is matched by {} to {!r}, which does not reduce to this committee alone".format(rule, labels[0]))
+    # The components, re-derived from the document by the labels.
+    expected = []
+    if chamber == "house":
+        for printed_label in labels:
+            offices = doc["offices"].get(printed_label)
+            if not offices:
+                say("quotes {!r}, which the House's summary file does not carry".format(printed_label))
+                return out
+            for program, qtd in offices:
+                if float(qtd) != 0:
+                    expected.append((printed_label, program, qtd, float(qtd)))
+        got = [(str(c.get("label")), str(c.get("program")), str(c.get("printed")), c.get("amount"))
+               for c in block.get("components") or []]
+        units = block.get("unitsEvidence") if isinstance(block.get("unitsEvidence"), dict) else {}
+        if units.get("statementTotal") != doc.get("statementTotal"):
+            say("bounds its scale by {!r}, not the statement's own marked total".format(units.get("statementTotal")))
+        if not str(block.get("caveat") or "").strip():
+            say("does not say the summary file omits the committee's earlier-year accounts")
+    else:
+        for printed_label in labels:
+            sections = doc["sections"].get(printed_label)
+            if not sections:
+                say("quotes {!r}, which the Senate report prints no summary for".format(printed_label))
+                return out
+            for funding, _page, net in sections:
+                magnitude = float(net.lstrip("-").lstrip("$").replace(",", "") or 0)
+                if magnitude != 0:
+                    expected.append((printed_label, funding, net, magnitude if net.startswith("-") else -magnitude))
+        got = [(str(c.get("label")), str(c.get("funding")), str(c.get("printed")), c.get("amount"))
+               for c in block.get("components") or []]
+    if sorted(got, key=str) != sorted(expected, key=str):
+        say("lists components that are not the totals the document prints for {}".format(labels))
+    total = round(sum(e[3] for e in expected), 2)
+    amount = block.get("amount")
+    if not isinstance(amount, (int, float)) or abs(float(amount) - total) > 0.005:
+        say("publishes {} where the printed totals sum to {}".format(amount, total))
+    stating = 1 if len(expected) == 1 else 0
+    if block.get("documentsStatingTheFigure") != stating or block.get("componentCount") != len(expected):
+        say("misstates how many components there are or whether a document prints the sum")
+    estimate = node.get("resolved_total_amount")
+    if (str(node.get("cost_status") or "") == "allocated" and isinstance(estimate, (int, float))
+            and isinstance(amount, (int, float)) and abs(float(estimate) - float(amount)) < 0.005):
+        say("publishes its disbursements as its estimate, to the cent")
+    for url in node.get("sourceUrls") or []:
+        if str(url) in (doc.get("url"), document.get("url")):
+            say("puts the disbursement document among its own sources")
+    return out
+
+
 def walk(node, parent=None):
     """Yield (node, parent) for every dict node in the tree."""
     yield node, parent
@@ -8907,6 +9225,30 @@ def main(argv):
             net_cost_violations.append(
                 "{} publishes its audited net cost as its cost — different basis, different period".format(label(node)))
     gate.check("an audited net cost is the statement's own figure, and never the cost", net_cost_violations)
+
+    # What a chamber paid out for a committee's account, re-derived from the
+    # committed documents: the House's summary CSV and signed volume, the
+    # Senate's Part II. Never on a subcommittee, a post or anything not typed
+    # Committee, never beside a measured cost, never equal to the estimate.
+    disbursement_violations = []
+    disbursement_nodes = [n for n in nodes if isinstance(n.get("committeeDisbursements"), dict)]
+    if disbursement_nodes:
+        disbursement_documents = committee_disbursement_documents()
+        for node in disbursement_nodes:
+            disbursement_violations.extend(committee_disbursement_violations(
+                node, node["committeeDisbursements"], disbursement_documents, label, tree_parents, by_id))
+    for node in nodes:
+        if "committeeDisbursements" in node and not isinstance(node.get("committeeDisbursements"), dict):
+            disbursement_violations.append("{} carries a committeeDisbursements that is not a block".format(label(node)))
+    gate.check(
+        "a committee's disbursements are the chamber's own printed totals, and never the cost",
+        disbursement_violations,
+        " — {} committee(s): {} House, {} Senate".format(
+            len(disbursement_nodes),
+            sum(1 for n in disbursement_nodes if n["committeeDisbursements"].get("chamber") == "house"),
+            sum(1 for n in disbursement_nodes if n["committeeDisbursements"].get("chamber") == "senate"),
+        ) if not disbursement_violations else "",
+    )
 
     # The Government Manual's listing of a post, re-derived from the committed
     # package rather than trusted. The block quotes an agency and a title; the

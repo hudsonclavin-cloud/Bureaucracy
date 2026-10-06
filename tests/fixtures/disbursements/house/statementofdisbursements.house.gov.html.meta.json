@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-10-06T16:32:40Z",
+ "url": "https://statementofdisbursements.house.gov/",
+ "status": null,
+ "final_url": null,
+ "content_type": null,
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "no readable robots.txt (URLError); failing open",
+ "bytes": null,
+ "sha256": null,
+ "error": "URLError: <urlopen error Tunnel connection failed: 502 Bad Gateway>"
+}

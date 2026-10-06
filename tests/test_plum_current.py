@@ -685,6 +685,7 @@ class _GateHarness(unittest.TestCase):
             schedule_pay_evidence_path=None, judicial_pay_evidence_path=None, congressional_pay_evidence_path=None,
             whitehouse_pay_evidence_path=None, usaspending_evidence_path=None, net_cost_evidence_path=None,
             govman_evidence_path=None, omb_budget_evidence_path=None,
+            committee_disbursements_evidence_path=None,
         )
 
     def _gate(self, path):

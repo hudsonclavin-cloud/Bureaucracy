@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20261007a";
-import { loadMergedGraphData } from "./graphLoader.js?v=20261007a";
+import { createGovernmentGraph } from "./graph.js?v=20261007d";
+import { loadMergedGraphData } from "./graphLoader.js?v=20261007d";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -785,6 +785,53 @@ function ensureVerificationLegend() {
 // What OPM's number is, and is not. The coverage sentence is the data
 // dictionary's own; the disagreement line exists because the two figures are
 // usually measuring different populations, not because one is wrong.
+// What a chamber paid out for a committee's account, from its own report:
+// the House's quarterly Statement of Disbursements or the Senate's semiannual
+// Report of the Secretary. Its report's name and period head the row, because
+// the two chambers' figures cover different stretches of time and neither is
+// the Treasury's year to date.
+function disbursementReportLabel(block) {
+  return block.chamber === "senate"
+    ? "Report of the Secretary of the Senate"
+    : "House Statement of Disbursements";
+}
+
+function disbursementPeriodLabel(block) {
+  const period = block.period || {};
+  const fmt = (iso) => {
+    const date = new Date(`${iso}T00:00:00Z`);
+    return Number.isNaN(date.getTime())
+      ? String(iso || "")
+      : date.toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric", timeZone: "UTC" });
+  };
+  return `${fmt(period.start)} – ${fmt(period.end)}`;
+}
+
+function disbursementSentence(block) {
+  const chamber = block.chamber === "senate" ? "the Senate" : "the House";
+  const report = block.chamber === "senate"
+    ? "the Report of the Secretary of the Senate"
+    : "the House's Statement of Disbursements";
+  const names = (block.listedNames || []).map((name) => `"${name}"`).join(" and ");
+  const parts = [];
+  parts.push(`This is what ${chamber} paid out for the committee's office over ${disbursementPeriodLabel(block)}: `);
+  parts.push(`$${Math.round(block.amount).toLocaleString()}, from ${report}, which lists the committee as ${names}. `);
+  const count = Number(block.componentCount) || 0;
+  if (count > 1) {
+    const unit = block.chamber === "senate" ? "funding resolution" : "office and program";
+    parts.push(`The report prints no single total for the committee; the figure is the sum of the ${count} totals it prints, one per ${unit}, which this project added up. `);
+  }
+  if (block.matchRule === "reviewed_row" && block.matchBasis) {
+    parts.push(`The report's name for the committee differs from the graph's; the identification is a reviewed one: ${block.matchBasis} `);
+  }
+  if (block.signConvention && (block.components || []).some((c) => typeof c.amount === "number" && c.amount < 0)) {
+    parts.push(`${block.signConvention} `);
+  }
+  if (block.caveat) parts.push(`${block.caveat} `);
+  parts.push("It is cash paid out for the committee's account over that period — not the Treasury's net outlays, not the estimate above, and not the cost. ");
+  return parts.join("");
+}
+
 function renderHeadcountProvenance(data) {
   let line = document.getElementById("info-headcount-provenance");
   if (!line && dom.infoStats) {
@@ -863,6 +910,10 @@ function renderHeadcountProvenance(data) {
       add(`USAspending spells this unit differently from the graph — "${fileA.nameAlias.apiName}" against "${fileA.nameAlias.graphName}". ${fileA.nameAlias.basis} Because that match rests on a recorded alias rather than on the two names agreeing, this figure is held to the weaker grade. `);
     }
     add("This is a gross, year-to-date figure from a different system than the Treasury statement's net line; it is shown beside the cost and is not the cost. ");
+  }
+  const disbursed = data.committeeDisbursements;
+  if (disbursed && typeof disbursed === "object" && typeof disbursed.amount === "number") {
+    add(disbursementSentence(disbursed));
   }
   if (!hasHeadcount) return;
   const on = source.checkedAt
@@ -3295,6 +3346,15 @@ function renderInfoPanel(nodeObj) {
         `$${Math.round(omb.budgetAuthority).toLocaleString()}`,
       ]);
     }
+  }
+  // What the chamber paid out for the committee's account, under its own
+  // heading: the chamber's report and its period, never the word COST alone.
+  const disbursedRow = data.committeeDisbursements;
+  if (disbursedRow && typeof disbursedRow === "object" && typeof disbursedRow.amount === "number") {
+    statRows.push([
+      `DISBURSEMENTS — ${disbursementReportLabel(disbursedRow)}, ${disbursementPeriodLabel(disbursedRow)} (not the cost)`,
+      `$${Math.round(disbursedRow.amount).toLocaleString()}`,
+    ]);
   }
   if (data.budget) {
     // A hand-typed note in the curated file, not a sourced figure. Unlabelled it
