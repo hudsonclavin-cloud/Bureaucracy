@@ -221,6 +221,82 @@ the published graph never duplicates one.
 `cost_validation: estimated_from_parent` and
 `costVerificationStatus: unverified` on every allocated node.
 
+**The statement's own lines beneath a header it totals nowhere (since
+2026-10-06).** Table 5 prints some sub-agencies as a header with lines beneath
+and no `Total--` line of their own — the Veterans Health Administration, the
+NNSA, NRCS, BLM, the Bureau of Reclamation, the Office of Justice Programs,
+TTB, the FCC, the Postal Service — and the crawler emits such a header with
+`rollup_total_amount: None`, which `collect_treasury_outlay_rows` dropped. So
+nine units whose header reduces to exactly one organisation node, each in the
+section of its own ancestors, were apportioned by headcount and subtree size
+while the statement printed their money line by line under their names:
+**about $150.7bn**, the VHA's $100.4bn against an $80.2bn estimate, the
+NNSA's $23.8bn against $4.9bn, the FCC's $9.9bn against $0.18bn, NRCS's
+$5.3bn against $15.3bn. The twelfth batch's Treasury cluster found it and the
+fixture confirmed it before anything was built.
+
+`SectionTree.total_less_headers()` names such a header (no `Total--` child,
+outside every receipts-type subtree per `receipts_component_ids`, at least one
+line beneath), `header_components` lists its lines — a receipts-type child is
+ONE component at its own netted amount, the shape `make_receipts_node` uses,
+and a sub-header is descended into, since "Postal Service:" prints an
+"Off-Budget:" sub-header with two lines beneath and one beside — and
+`derive_header_sum_rows` turns it into a row carrying the sum, stamped
+`treasury_header_sum: True` with `treasury_component_rows` and a generated
+sentence (`treasury_header_sum_note`: "The statement prints no total line for
+this unit; the figure is the sum of the N lines it prints beneath the unit's
+header, listed below."). The row joins the statement's rows AFTER the
+receipts filter and BEFORE the key counting, so the ordinary one-line-one-node
+rule covers it: "Defense Agencies:" is a header and the name of nine
+object-class lines, and prices nothing. **It takes no alias.** An alias in
+`TREASURY_ROW_ALIASES` is a reviewed identification of a PRINTED line, and a
+sum is already one step from a printed figure, so the "Government National
+Mortgage Association:" header (one line, −$1.84bn) reaches nothing while the
+node is named "Ginnie Mae" — recorded, not forced. A sum of exactly zero is
+never derived; a negative one is kept, the Mint's rule. A build handed no
+statement carries the three fields forward with the other Treasury fields and
+a fresh statement clears and re-derives them, so re-feeding the published
+graph never duplicates one.
+
+The claim is exact and the words say so: the figure is a sum this repository
+performed over lines the statement prints, which the statement itself totals
+nowhere — never "a line the Treasury prints". The panel prints the
+sentence under the Treasury's source line and every component by name and
+exact amount (`#info-cost-components`), the atlas the same in prose, and the
+gate re-reads the components off the committed statement with its own stdlib
+reading of the API rows — by classification id, parent id and the printed
+amounts — and refuses a stamp on a post or a synthetic line, a sentence with
+the wrong count, a figure that is not the listed lines' sum, a header that has
+a `Total--` child or sits inside a receipts subtree, a header whose label does
+not reduce to the node's name, components that are not the statement's lines
+beneath that header, and a header whose key more than one matchable row
+carries; `tests/test_treasury_header_sums.py` corrupts it nineteen ways and
+pins the nine sums to the cent against the raw rows. One consequence to know:
+the gate re-derives only from `tests/fixtures/mts_table5_*.json`, so a graph
+built from a newer live statement fails the gate until that statement is
+committed as a fixture — which this repository already does for every
+statement it builds from.
+
+**Measured on the rebuild, not asserted.** Nine header sums, 28 lines,
+$150,714,848,412; measured nodes **160 → 170** and Treasury lines **159 →
+169** — the nine, plus the one alias row the same cluster supplied,
+`Corporation for National and Community Service` → AmeriCorps, the gap the
+"Known base-graph gaps" section had carried since 2026-09-19 (AmeriCorps
+`allocated` $1.37bn → `official` $941,240,516.35; the line sits in the
+independent agencies' section where the node does). **140 nodes moved by more
+than 0.1%**, every one an unlined sibling of something now measured: the
+Energy Department's "National Laboratories" grouping fell from $34.9bn to
+$19.2bn as the NNSA's money left its pool, each VISN rose a quarter as the
+VHA's estimate stopped taking $80bn of the VA's remainder, the seven USPS
+Areas fell from $2.82bn to $0.26bn each, and the CIA and its five directorates
+rose from $0.73bn to $6.16bn, because the Postal Service's $22bn estimate had
+dominated the pool the independent agencies share and the measured Postal
+Service nets $2.06bn. Those moves are the honest direction, and the cascade's
+weakness they expose is the one this file already records: wherever a sibling
+group has no dollar or headcount evidence, one measured line landing beside
+it redistributes everything else. `treasury_component_rows` is in the viewer
+copy now, for the receipts lines as well, so the panel can list the lines.
+
 **A post is not a budget unit (since 2026-09-14).** The measured path had
 always refused to land a Treasury line on a position — `is_post_node` /
 `NON_ORGANISATION_TYPE_KEYWORDS`, on the grounds that a post is not the thing
@@ -4125,8 +4201,9 @@ that one import is the only thing the smoke check cannot prove.
 ### Exact-node costs, and what the graph does not claim
 
 `docs/EXACT_NODE_COSTS.md` is the standing answer to "why is most of this
-graph an estimate". 160 of 5,510 nodes (2.9%; 139 of 5,402 when this was
-first written) carry a cost a record names for them; those cover **98.8% of
+graph an estimate". 170 of 5,510 nodes (3.1%; 139 of 5,402 when this was
+first written, 160 until the nine header sums and the AmeriCorps alias of
+2026-10-06) carry a cost a record names for them; those cover **99.0% of
 the anchor**, so the apportioned figures
 subdivide measured money rather than invent it — which does not make a
 subdivision a measurement. **Since 2026-09-09 the site does not show one by
@@ -4745,7 +4822,7 @@ identical refusals — but a position *can* carry a cost nomination, its rate of
 basic pay, which is never the unit's cost.
 
 The standing numbers this work exists to move: 358 of 890 organisations have
-no candidate page at all, so the verifier can never reach them; and 160 of
+no candidate page at all, so the verifier can never reach them; and 170 of
 5,510 nodes carry a cost identified for themselves (294 of 807 and 139 of
 5,402 when this was written). `nominate.py status --kind
 source` prints the first and `validate_published_graph.py` the second; those
@@ -4881,7 +4958,16 @@ which is the AmeriCorps alias case `CURATION.md` §2 records: the graph's
 node is named for the agency's current branding and the statement for its
 statutory name, and `TREASURY_ROW_ALIASES` carries no row joining the two, so
 the statement's line for it ($941.2M on the 2026-08-31 statement) reaches no
-node and AmeriCorps publishes an `allocated` share. The `0.0` this section
+node and AmeriCorps publishes an `allocated` share — until 2026-10-06, when
+the twelfth batch's Treasury cluster supplied the row (basis: §2's statutory
+name, the identification `node_aliases.json` already carries for name
+evidence; the line sits in the independent agencies' section where the node
+does) and AmeriCorps publishes the statement's $941,240,516.35 as `official`.
+The same cluster found the larger gap this section never listed, because it
+was not a missing node: nine sub-agencies the statement prints as a header
+with lines beneath and no `Total--` line, about $150.7bn, now measured as
+the sum of those lines (see "The statement's own lines beneath a header it
+totals nowhere" above). The `0.0` this section
 used to cite is the `outlay_amount` USAspending's toptier agency list prints for the agency, not
 this line's, and zero is never published as a measurement.
 

@@ -198,7 +198,10 @@ class PublishedViewerCopyTests(unittest.TestCase):
         seen = set()
         for node in walk(self.viewer):
             seen.update(node.keys())
-        for field in ("treasury_row_name", "treasury_component_rows", "budget_source",
+        # `treasury_component_rows` left this list on 2026-10-06: the panel
+        # prints a header-sum unit's lines by name and amount, so the field is
+        # read by js/ now and MINIMAL_GRAPH_FIELDS carries it.
+        for field in ("treasury_row_name", "budget_source",
                       "proofReason", "proofStatus", "existsProven", "costSourceCount"):
             self.assertNotIn(field, seen, f"{field!r} should not be shipped to the browser")
 

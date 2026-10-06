@@ -416,6 +416,18 @@ function costPeriodLabel(node) {
   return String(summary?.label || "").trim() || (asOf ? `As of ${String(asOf).trim()}` : "");
 }
 
+// The lines beneath a header-sum unit, as one sentence for the directory's
+// cost note: " Lines: Medical Services ($81,819,094,954); …" or "".
+function headerSumLinesText(node) {
+  const lines = Array.isArray(node.treasury_component_rows) ? node.treasury_component_rows : [];
+  if (!lines.length) return "";
+  const parts = lines.map((component) => {
+    const amount = toFiniteAmount(component.amount);
+    return `${String(component.name || "unnamed line")} (${amount === null ? "amount not stated" : formatExactMoney(amount)})`;
+  });
+  return ` Lines: ${parts.join("; ")}.`;
+}
+
 function describeCost(node) {
   const status = String(node.cost_status || "").toLowerCase();
   const validation = String(node.cost_validation || "").toLowerCase();
@@ -426,15 +438,24 @@ function describeCost(node) {
     let note = status === "root_total"
       ? "U.S. Treasury outlays, from the Monthly Treasury Statement."
       : "U.S. Treasury outlays reported for this unit in the Monthly Treasury Statement (Table 5).";
+    // A unit the statement prints lines beneath and totals nowhere: the
+    // pipeline's own sentence, verbatim, and the lines it adds up, so the
+    // directory never calls the figure a line the Treasury prints.
+    const headerSum = node.treasury_header_sum === true && String(node.treasury_header_sum_note || "").trim()
+      ? ` ${String(node.treasury_header_sum_note).trim()}${headerSumLinesText(node)}`
+      : "";
     if (isReceiptsLine(node)) {
       label = "Measured (Treasury accounting line)";
       note = "Not an organisation. The receipts and transfers the Treasury nets inside the published total above, carried here as the statement prints them so the units above sum to that figure to the cent.";
     } else if (amount < 0) {
-      note = `Net outlays below zero for the period: the Monthly Treasury Statement (Table 5) reports more receipts than spending for this unit.${
+      note = `Net outlays below zero for the period: the Monthly Treasury Statement (Table 5) reports more receipts than spending for this unit.${headerSum}${
         node.treasury_external_section ? ` The Treasury files this line under its "${node.treasury_section}" section, so it is measured but not part of its parent's total here.` : ""
       }`;
     } else if (node.treasury_external_section) {
+      if (headerSum) note = `U.S. Treasury outlays, from the Monthly Treasury Statement (Table 5).${headerSum}`;
       note += ` The Treasury files this line under its "${node.treasury_section}" section, so it is measured but not part of its parent's total here.`;
+    } else if (headerSum) {
+      note = `U.S. Treasury outlays, from the Monthly Treasury Statement (Table 5).${headerSum}`;
     }
     return { amount: formatExactMoney(amount), label, note, period: costPeriodLabel(node), sourceUrl };
   }

@@ -225,6 +225,10 @@ MINIMAL_GRAPH_FIELDS = (
     "costVerificationStatus", "cost_weight_dispute", "rollup_total_amount",
     "measured_net_beneath", "treasury_external_section", "treasury_section",
     "synthetic", "amount_kind", "budget_as_of",
+    # a unit the statement prints lines beneath and totals nowhere: the stamp,
+    # the lines by printed name and amount, and the sentence the panel prints
+    # under the figure (the receipts lines carry the same component list)
+    "treasury_header_sum", "treasury_component_rows", "treasury_header_sum_note",
     # the verification box
     "sourceUrls", "sourceTypes", "sourceCount", "lastVerified",
     "verificationStatus", "confidenceScore", "verificationMethod",
@@ -1075,6 +1079,19 @@ TREASURY_ROW_ALIASES = {
     # 5 still prints "Education and Human Resources", under National Science
     # Foundation, where the node sits.
     "education and human resources": "exec-ind-nsf-education-human-resources-ehr",
+    # Added 2026-10-06. The graph's node is named for the agency's current
+    # branding and the statement for its statutory name: CURATION.md §2
+    # records the Corporation for National and Community Service as
+    # AmeriCorps' statutory name, and data/curation/node_aliases.json already
+    # carries the same identification for the name evidence, on the
+    # Government Manual's own entry. Table 5 prints the line once, under
+    # Independent Agencies, where the node sits (exec-independent >
+    # exec-ind-misc, neither of which carries a line of its own), so it
+    # passes the same-section test the rows above pass. $941,240,516.35 on
+    # the 2026-08-31 statement; until this row the line reached no node and
+    # AmeriCorps published an apportioned share (CLAUDE.md, "Known base-graph
+    # gaps").
+    "corporation for national and community service": "exec-ind-misc-americorps",
 }
 # A Treasury outlay line is an organisation's spending; a committee named after
 # an agency, or a position, is never the thing that spent it.
@@ -1113,6 +1130,63 @@ def is_superseded_node(node: dict[str, Any]) -> bool:
     """Has the government replaced this unit? Read off the curated file only."""
     return str((node or {}).get("lifecycle") or "") == LIFECYCLE_SUPERSEDED
 TREASURY_ROW_FIELDS = ("budget_as_of", "budget_year", "amount_kind", "source_system", "allocation_basis")
+#: The stamp a header-sum node carries beside its Treasury line fields, and
+#: what a fresh statement clears before it re-derives them (the same
+#: clear-and-replace `remove_synthetic_receipts` gives the receipts lines).
+TREASURY_HEADER_SUM_FIELDS = ("treasury_header_sum", "treasury_component_rows", "treasury_header_sum_note")
+
+
+def header_sum_note(count: int) -> str:
+    """The sentence the panel prints under a header-sum figure. One template,
+    mirrored by the gate word for word, so the claim cannot drift: the
+    statement prints no total for this unit, and the figure is this project's
+    addition of the lines it does print -- never "a line the Treasury prints"."""
+    noun = "line" if count == 1 else "lines"
+    return (
+        f"The statement prints no total line for this unit; the figure is the sum of the {count} {noun} "
+        "it prints beneath the unit's header, listed below."
+    )
+
+
+def derive_header_sum_rows(tree: SectionTree) -> list[dict[str, Any]]:
+    """One matchable row per header the statement prints lines beneath and
+    totals nowhere, priced by the statement's own arithmetic.
+
+    Table 5 prints some sub-agencies as a header with lines beneath it and no
+    "Total--" line of their own -- "Veterans Health Administration:" over
+    Medical Services, Medical Support and Compliance, Medical Facilities and
+    two more, $100.4B in all on the 2026-08-31 statement. `collect_treasury
+    _outlay_rows` drops every row whose amount is None, so such a unit never
+    reached the matcher and its money was apportioned among its department's
+    unlined children by headcount and subtree size -- about $151bn across
+    nine units the statement reports line by line.
+
+    Each derived row is the header's own row (its id, its parent, its period
+    and source fields) with the amount filled in as the sum of the components
+    `SectionTree.header_components` lists, and two fields that make the claim
+    exact wherever the row lands: `treasury_header_sum` and the component
+    lines by printed name and amount. `SectionTree.total_less_headers` has
+    already refused a header with a "Total--" child (one unit reported twice;
+    the total is the figure), a header inside a receipts-type subtree (a
+    receipt of an agency, never the agency), and a header with nothing
+    beneath it. A sum of exactly zero is dropped here, since zero is never
+    published; a negative sum is kept and published as the statement prints
+    it, the Mint's rule.
+    """
+    out: list[dict[str, Any]] = []
+    for header in tree.total_less_headers():
+        components = tree.header_components(header)
+        amount = round_currency(sum(value for _, value in components))
+        if amount is None or amount == 0:
+            continue
+        row = deepcopy(header)
+        row["rollup_total_amount"] = amount
+        row["treasury_header_sum"] = True
+        row["treasury_component_rows"] = [
+            {"name": plain_label(component), "amount": round_currency(value)} for component, value in components
+        ]
+        out.append(row)
+    return out
 
 
 def payloads_carry_treasury_statement(payloads: Iterable[dict[str, Any]]) -> bool:
@@ -1318,10 +1392,20 @@ def apply_treasury_outlay_rows(
         skipped_rows = [r for r in rows if str(r.get("classification_id") or "") in components | undistributed_ids]
         rows = [r for r in rows if str(r.get("classification_id") or "") not in components | undistributed_ids]
         negative_rows = [r for r in skipped_rows if (parse_cost_amount(r.get("rollup_total_amount")) or 0) < 0]
+        # A header the statement prints lines beneath and totals nowhere is
+        # matched like a line, priced by the statement's own arithmetic, and
+        # stamped so the claim stays exact (see derive_header_sum_rows). It
+        # joins the key counts below, so a name several header rows or lines
+        # carry still prices nothing.
+        header_sum_rows = derive_header_sum_rows(tree) if rows else []
+        rows = rows + header_sum_rows
     else:
+        header_sum_rows = []
         rows, negative_rows = split_negative_outlay_rows(rows)
     stats: dict[str, Any] = {
-        "rows": len(rows) + len(negative_rows),
+        # The statement's own amount-bearing rows; the derived header rows are
+        # counted on their own line below, since the statement printed no such row.
+        "rows": len(rows) - len(header_sum_rows) + len(negative_rows),
         "rows_applied": 0,
         "rows_negative_applied": 0,
         "rows_unmatched": 0,
@@ -1329,6 +1413,9 @@ def apply_treasury_outlay_rows(
         "rows_superseded": 0,
         "rows_negative_skipped": len(negative_rows),
         "negative_sample": [str(row.get("originalName") or row.get("name")) for row in negative_rows[:negative_cap]],
+        "header_sums_derived": len(header_sum_rows),
+        "header_sums_applied": 0,
+        "header_sums": [],
         "stale_rollups_cleared": 0,
         "synthetic_receipts_cleared": 0,
         "carried_forward_citations_restored": 0,
@@ -1359,7 +1446,7 @@ def apply_treasury_outlay_rows(
         if not str(node.get("budget_source") or "").startswith("Treasury"):
             continue
         stats["stale_rollups_cleared"] += 1
-        for field_name in ("rollup_total_amount", "treasury_row_name", "budget_source", *TREASURY_ROW_FIELDS):
+        for field_name in ("rollup_total_amount", "treasury_row_name", "budget_source", *TREASURY_ROW_FIELDS, *TREASURY_HEADER_SUM_FIELDS):
             node.pop(field_name, None)
         node["sourceUrls"] = [url for url in (node.get("sourceUrls") or []) if "fiscaldata.treasury.gov" not in str(url)]
         node["sourceTypes"] = [t for t in (node.get("sourceTypes") or []) if t != "treasury_outlays"]
@@ -1432,7 +1519,11 @@ def apply_treasury_outlay_rows(
         target: dict[str, Any] | None = None
         ambiguous = False
         for key in treasury_row_keys(row):
-            alias_id = TREASURY_ROW_ALIASES.get(key)
+            # An alias is a reviewed identification of a PRINTED line. A header
+            # sum is already one step from a printed figure, so the two are not
+            # stacked: a header reaches a node by name equality or not at all,
+            # which is the rule the gate re-checks word for word.
+            alias_id = None if row.get("treasury_header_sum") else TREASURY_ROW_ALIASES.get(key)
             if alias_id and alias_id in node_map:
                 target = node_map[alias_id]
                 break
@@ -1472,6 +1563,19 @@ def apply_treasury_outlay_rows(
             if row.get(field_name) not in (None, ""):
                 node[field_name] = deepcopy(row[field_name])
         merge_source_provenance(node, row)
+        if row.get("treasury_header_sum"):
+            # The statement prints this unit's lines and totals them nowhere;
+            # the figure is their sum, and the node says so in every field a
+            # reader or the gate might look at: the stamp, the lines by printed
+            # name and amount, and the sentence the panel prints verbatim.
+            components = [dict(c) for c in row.get("treasury_component_rows") or []]
+            node["treasury_header_sum"] = True
+            node["treasury_component_rows"] = components
+            node["treasury_header_sum_note"] = header_sum_note(len(components))
+            stats["header_sums_applied"] += 1
+            stats["header_sums"].append({
+                "id": target_id, "header": node["treasury_row_name"], "amount": node["rollup_total_amount"], "lines": len(components),
+            })
         verify_node_sources(node)
         stats["rows_applied"] += 1
         if (node["rollup_total_amount"] or 0) < 0:

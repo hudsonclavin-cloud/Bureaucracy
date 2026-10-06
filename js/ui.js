@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20261006a";
-import { loadMergedGraphData } from "./graphLoader.js?v=20261006a";
+import { createGovernmentGraph } from "./graph.js?v=20261006b";
+import { loadMergedGraphData } from "./graphLoader.js?v=20261006b";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -2770,6 +2770,45 @@ function isBelowPrecision(node) {
   );
 }
 
+// The sentence the pipeline generated for a header-sum node, with a leading
+// space so it can follow another sentence, or "" where the node carries none.
+// Only the stamp AND the sentence together count: a sentence without the
+// stamp is nothing the gate accepted.
+function headerSumSentence(node) {
+  if (node.treasury_header_sum !== true) return "";
+  const sentence = String(node.treasury_header_sum_note || "").trim();
+  return sentence ? ` ${sentence}` : "";
+}
+
+// The lines the statement prints beneath a header-sum unit, by printed name
+// and exact amount, in the statement's print order. Rendered only where the
+// stamp is present; the receipts lines carry the same field and keep their
+// description instead.
+function buildHeaderSumLines(node) {
+  if (node.treasury_header_sum !== true || !Array.isArray(node.treasury_component_rows) || !node.treasury_component_rows.length) {
+    return null;
+  }
+  const list = document.createElement("ul");
+  list.id = "info-cost-components";
+  list.className = "info-cost-components";
+  list.setAttribute("aria-label", "The lines the statement prints beneath this unit's header");
+  list.style.listStyle = "none";
+  list.style.margin = "4px 0 0";
+  list.style.padding = "0 0 0 10px";
+  list.style.borderLeft = "1px solid rgba(154,138,106,0.35)";
+  list.style.fontSize = "9px";
+  list.style.lineHeight = "1.6";
+  list.style.color = "#9a8a6a";
+  for (const component of node.treasury_component_rows) {
+    const item = document.createElement("li");
+    const amount = toFiniteAmount(component.amount);
+    const exact = amount === null ? "amount not stated" : `${amount < 0 ? "-" : ""}$${Math.round(Math.abs(amount)).toLocaleString("en-US")}`;
+    item.textContent = `${String(component.name || "unnamed line")} — ${exact}`;
+    list.appendChild(item);
+  }
+  return list;
+}
+
 function describeCost(node) {
   const standIn = costStandInOf(node);
   const payNote = standIn ? standInNote(standIn) : "";
@@ -2826,10 +2865,16 @@ function describeCost(node) {
       note: "Not an organisation. The receipts and transfers the Treasury nets inside the published total above, carried here as the statement prints them so the units above sum to that figure to the cent.",
     };
   }
+  // A unit the statement prints lines beneath and totals nowhere. The figure
+  // is the sum of those lines — the statement's own arithmetic, performed
+  // here — and the sentence saying so is the pipeline's own, printed
+  // verbatim, so the panel never calls it a line the Treasury prints. The
+  // lines themselves are listed under the note by buildCostBlock.
+  const headerSumNote = headerSumSentence(node);
   if (status === "official" && amount < 0) {
     return {
       ...COST_STATUS_COPY.official,
-      note: `Net outlays below zero for the period: the Monthly Treasury Statement (Table 5) reports more receipts than spending for this unit.${
+      note: `Net outlays below zero for the period: the Monthly Treasury Statement (Table 5) reports more receipts than spending for this unit.${headerSumNote}${
         node.treasury_external_section ? ` The Treasury files this line under its "${node.treasury_section}" section, so it is measured but not part of its parent's total here.` : ""
       }`,
     };
@@ -2837,7 +2882,13 @@ function describeCost(node) {
   if (status === "official" && node.treasury_external_section) {
     return {
       ...COST_STATUS_COPY.official,
-      note: `${COST_STATUS_COPY.official.note} The Treasury files this line under its "${node.treasury_section}" section, so it is measured but not part of its parent's total here.`,
+      note: `${headerSumNote ? `U.S. Treasury outlays, from the Monthly Treasury Statement (Table 5).${headerSumNote}` : COST_STATUS_COPY.official.note} The Treasury files this line under its "${node.treasury_section}" section, so it is measured but not part of its parent's total here.`,
+    };
+  }
+  if (status === "official" && headerSumNote) {
+    return {
+      ...COST_STATUS_COPY.official,
+      note: `U.S. Treasury outlays, from the Monthly Treasury Statement (Table 5).${headerSumNote}`,
     };
   }
   if (status === "allocated" && amount < 0) {
@@ -2958,6 +3009,11 @@ function buildCostBlock(node) {
   note.className = "info-cost-note";
   note.textContent = copy.note;
   block.appendChild(note);
+
+  // "listed below" in the header-sum sentence means here: every line the
+  // statement prints beneath the unit's header, by printed name and amount.
+  const headerSumLines = buildHeaderSumLines(node);
+  if (headerSumLines) block.appendChild(headerSumLines);
 
   // The estimate was always one tick away, and since 2026-10-05 the tick is
   // here too. The owner read "the costs have been disappearing" off a panel

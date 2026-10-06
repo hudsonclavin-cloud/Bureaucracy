@@ -4791,7 +4791,12 @@ reason, 30 beneath a negative pool, 36 replaced units. *Later that morning the
 Code title scan's rows (below) took pay claims to **1,196**, unpriced to
 **3,395** (no document names the title **2,627**), reviewed Schedule rows to
 **98** and Schedule-priced posts to **237**, tier-reference rows to **25**,
-records **52**, published **47**.*
+records **52**, published **47**; the Treasury cluster's nine header sums and
+one alias row (below) took measured nodes **160 → 170** and Treasury lines
+applied **159 → 169**, so the estimates fell **693 → 683** (240 committees, 34
+beside a sourced non-cost figure, 409 bare) and the coverage classes read 170
+measured, 683 estimates, 1,196 salaries, 3,395 unpriced posts, 30 beneath a
+negative pool, 36 replaced units.*
 
 **The Code title scan: 221 Executive Schedule titles that reach no record,
 and four defects in this repository's own reading of the Code.** The scan ran
@@ -4902,5 +4907,88 @@ Director (2)"; and the DoD's stamped `Deputy CFO / Controller` against
 "Deputy Under Secretary of Defense (Comptroller)", which no statute names
 a Deputy CFO.
 
-**The Treasury alias cluster's results are recorded in the paragraphs that
-follow.**
+**The Treasury statement, re-read for lines the graph is not taking: $151bn
+the Treasury prints line by line under nine units' names and totals
+nowhere.** The cluster compared every row of the 2026-08-31 statement (806
+rows; 450 unmatched lines reducing to 301 labels, 130 lines published
+measured) with the 650 organisation nodes under the exporter's own
+`canonical_name_key`, `SectionTree` and `TREASURY_ROW_ALIASES`. Its largest
+finding is not an alias. Table 5 prints some sub-agencies as a **header with
+lines beneath and no `Total--` line of its own** — the Veterans Health
+Administration, the NNSA, NRCS, BLM, the Bureau of Reclamation, the Office
+of Justice Programs, TTB, the FCC, the Postal Service, and seven more the
+graph has no node for (NIFA, RMA, RHS, RUS, OSERS, OWCP, Ginnie Mae's
+header) — and the crawler emits such a header with `rollup_total_amount:
+None`, which `collect_treasury_outlay_rows` drops, so none of them ever
+reached the matcher even where the header's name reduces to exactly one
+node. Verified against the fixture before anything was built, each in the
+section of its node's own ancestors, with the node's apportioned estimate
+beside the statement's own lines: VHA $100,361,712,221.24 over five lines
+(estimated $80.2bn), NNSA $23,763,992,947.05 over four (estimated $4.9bn),
+FCC $9,879,942,633.73 over three (estimated $0.18bn), NRCS
+$5,270,811,519.50 (estimated $15.3bn), OJP $4,518,129,781.85 (estimated
+$0.31bn), Reclamation $2,987,056,641.15, the Postal Service
+$2,055,857,347.93 (estimated $22.0bn — the net of an off-budget enterprise
+whose receipts offset nearly everything), BLM $1,364,367,888.40 and TTB
+$512,977,431.15. Headcount and subtree size had put the NNSA at a fifth of
+what the statement prints under its name and NRCS at three times it. The
+exporter now prices such a header by the sum of the lines beneath it, as
+the statement's own arithmetic and stamped as exactly that
+(`treasury_header_sum`, the component lines by name and amount, and a
+sentence saying the statement prints no total line for the unit); the
+agency-named headers inside "Undistributed Offsetting Receipts" are receipts
+OF an agency and are refused through `receipts_component_ids`, pinned.
+Measured on the rebuild: **nine units, 28 lines, $150,714,848,412 in all**;
+measured nodes **160 → 170** and Treasury lines applied **159 → 169** (nine
+sums and the alias below, no line lost); **140 nodes moved by more than 0.1%**
+and ten changed status — VHA +$20.1bn and NNSA +$18.9bn from estimate to
+measured, the Postal Service −$20.0bn, the Energy Department's "National
+Laboratories" grouping $34.9bn → $19.2bn as the NNSA's money leaves its pool,
+the VISNs +25% each as the VHA's unlined siblings share what the VHA's
+estimate used to take, the seven USPS Areas $2.82bn → $0.26bn each, and the
+CIA and its five directorates +739% from a pool the Postal Service's estimate
+had dominated. The sums take no alias by design — an alias is a reviewed
+identification of a PRINTED line and a sum is already one step from one — so
+the "Government National Mortgage Association:" header (one line, −$1.84bn)
+reaches nothing while the node is named "Ginnie Mae"; that is the one case
+left on the table, recorded rather than forced. "Defense Agencies:" is a
+header AND the name of nine object-class lines, and the ordinary ambiguity
+rule prices nothing from it. The gate re-reads every component line off the
+committed statement by classification id (`tests/test_treasury_header_sums.py`
+corrupts it nineteen ways), the panel and the atlas print the sentence and
+every component line with its exact amount, and a graph built from a newer
+live statement fails the gate until that statement is committed as a fixture. **One alias row**: the statement's "Corporation for
+National and Community Service" ($941,240,516.35) is AmeriCorps' statutory
+name, the identification §2 and `node_aliases.json` already record, and the
+line is filed in the independent agencies' section where the node sits:
+AmeriCorps `allocated` $1,373,379,126.41 → `official` $941,240,516.35; it was the one gap `CLAUDE.md`'s "Known base-graph gaps"
+still named. **Declined or deferred to the owner, with the reason:** the
+"Community Oriented Policing Services" line ($462.6m) names the COPS node,
+but the statement files it beneath the Office of Justice Programs' header
+and the graph places COPS beside OJP under the Department directly, so
+applying both would count the line twice in DOJ's measured children — the
+honest fix is a re-parenting (curation), not an alias, and it is left for
+the owner; the "Intelligence Community Management Account" ($527.9m) names
+an account of the DNI, not the Office, and its basis would be an
+appropriations act this repository has not read; "Federal Drug Control
+Programs" ($349.0m) names the ONDCP but is filed under Independent Agencies
+while the node sits under the EOP, so the same-section rule refuses it and
+only the Tax Court's external-line shape could carry it, by decision; and
+shared names — "Science" (DOE's $7.8bn and NASA's $5.8bn), "Science and
+Technology" (DHS and EPA), "Departmental Offices" (Treasury's header and the
+Interior's total) — can never be aliased while `TREASURY_ROW_ALIASES` is
+keyed by canonical name alone; a section-qualified key is a design decision,
+recorded. Declined on the standing rules: the Treasury's groupings (Other
+Defense Civil Programs, International Assistance Programs, "Independent
+Agencies" itself, every "Other"), the 46 DoD object-class slices and the
+"Department of the Army / Navy / Air Force" lines beneath them (the civilian
+department against the uniformed service, and a name nine lines carry), some
+forty trust funds and payment funds (OPM's "Postal Service Retiree Health
+Benefits Fund" is OPM's, not the Postal Service's), and the sub-accounts of
+units that already carry their `Total--` line (the IRS's four, Federal
+Student Aid's, FNS's, the Forest Service's, the FAA's, CMS's, ACF's). One
+probe artefact recorded so nobody chases it: `probe_treasury_rows.py`
+reports "Armed Forces Retirement Home" (−$7.8m) as applied because it is
+handed the money rows alone; that row sits inside Undistributed Offsetting
+Receipts and the real build excludes it, which is why the probe says 131
+measured and the graph 130.

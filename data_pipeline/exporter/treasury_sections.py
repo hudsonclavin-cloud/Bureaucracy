@@ -75,6 +75,14 @@ def is_header_row(row: dict[str, Any]) -> bool:
     return bool(row.get("is_header")) or parse_cost_amount(row.get("rollup_total_amount")) is None
 
 
+def is_receipts_row(row: dict[str, Any]) -> bool:
+    """A receipts-type row: one of the eight netted labels, or the
+    government-wide section that is made of them. Everything beneath such a
+    row is a receipt OF an agency, never an agency."""
+    label = plain_label(row)
+    return label in RECEIPTS_LABELS or label == UNDISTRIBUTED_LABEL
+
+
 @dataclass
 class SectionTree:
     rows: dict[str, dict[str, Any]] = field(default_factory=dict)
@@ -141,6 +149,56 @@ class SectionTree:
         """The section's own receipts-type lines, direct children only."""
         return [k for k in self.kids(header) if plain_label(k) in RECEIPTS_LABELS and not is_total_row(k)]
 
+    def header_components(self, header: dict[str, Any]) -> list[tuple[dict[str, Any], float]]:
+        """The lines the statement prints beneath a header, each with its
+        amount, in print order: the rows a reader adds up to get the header's
+        figure when the statement prints no "Total--" line for it.
+
+        A "Total--" child is never a component (it is the sum, not a part of
+        it). A receipts-type child -- "Proprietary Receipts from the Public",
+        which may itself be a header over per-agency rows -- is ONE component
+        at its own netted amount, the shape `make_receipts_node` already
+        gives it, so the parts listed are the parts the statement prints at
+        this level and the sum is the statement's own arithmetic. Any other
+        sub-header is descended into, because its lines are this header's
+        lines printed one level further in ("Postal Service" prints an
+        "Off-Budget" header with two lines beneath and one line beside it).
+        """
+        out: list[tuple[dict[str, Any], float]] = []
+        for kid in self.kids(header):
+            if is_total_row(kid):
+                continue
+            if is_receipts_row(kid) or not is_header_row(kid):
+                out.append((kid, self.amount(kid)))
+                continue
+            out.extend(self.header_components(kid))
+        return out
+
+    def total_less_headers(self) -> list[dict[str, Any]]:
+        """Headers the statement prints lines beneath and totals nowhere.
+
+        Table 5 prints some sub-agencies this way -- "Natural Resources
+        Conservation Service:" with three lines under it and no "Total--"
+        line -- so the unit's figure exists on the page only as the sum of
+        those lines. A header WITH a "Total--" child is excluded (the total is
+        the figure, and the ordinary one-line-one-node rule reads it); so is
+        every header inside a receipts-type subtree, where an agency's name
+        labels a receipt of that agency and not the agency; so is a header
+        with nothing but headers or totals beneath it, which prints no figure
+        at all.
+        """
+        components = self.receipts_component_ids()
+        out: list[dict[str, Any]] = []
+        for row in self.rows.values():
+            if not is_header_row(row) or self.total_row(row) is not None:
+                continue
+            if str(row.get("classification_id") or "") in components:
+                continue
+            if not self.header_components(row):
+                continue
+            out.append(row)
+        return out
+
     def receipts_component_ids(self) -> set[str]:
         """Every row inside a receipts-type subtree — a "Department of the
         Navy" under "Proprietary Receipts from the Public:" is a receipt of
@@ -153,7 +211,7 @@ class SectionTree:
                 mark(kid)
 
         for row in self.rows.values():
-            if plain_label(row) in RECEIPTS_LABELS or plain_label(row) == UNDISTRIBUTED_LABEL:
+            if is_receipts_row(row):
                 out.add(str(row.get("classification_id") or ""))
                 mark(row)
         return out

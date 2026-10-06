@@ -6538,6 +6538,187 @@ def canonical_key(value):
     return text.strip()
 
 
+#: Mirror of data_pipeline.exporter.treasury_sections.RECEIPTS_LABELS and
+#: UNDISTRIBUTED_LABEL, stdlib-only by design (this file imports nothing from
+#: data_pipeline); tests/test_treasury_header_sums.py pins the two equal.
+TREASURY_RECEIPTS_LABELS = frozenset(
+    {
+        "Proprietary Receipts from the Public",
+        "Intrabudgetary Transactions",
+        "Offsetting Governmental Receipts",
+        "Employer Share, Employee Retirement",
+        "Interest Received by Trust Funds",
+        "Rents and Royalties on the Outer Continental Shelf Lands",
+        "Sale of Major Assets",
+        "Other Interest",
+    }
+)
+TREASURY_UNDISTRIBUTED_LABEL = "Undistributed Offsetting Receipts"
+#: Every verbatim Table 5 response committed under tests/fixtures/, keyed by
+#: the record date the response itself carries. A header sum is re-derived
+#: from the statement it cites, and a statement nobody committed cannot be
+#: re-derived from, so a node dated to one is refused rather than trusted.
+TREASURY_STATEMENT_FIXTURE_GLOB = (Path(__file__).resolve().parents[1] / "tests" / "fixtures", "mts_table5_*.json")
+
+
+def treasury_header_sum_note(count):
+    """Mirror of build_graph.header_sum_note, word for word; the test pins them."""
+    noun = "line" if count == 1 else "lines"
+    return (
+        "The statement prints no total line for this unit; the figure is the sum of the {} {} "
+        "it prints beneath the unit's header, listed below.".format(count, noun)
+    )
+
+
+class TreasuryStatementRows:
+    """A second, independent reading of a verbatim Table 5 response.
+
+    The exporter's `SectionTree` reads the crawler's rows; this reads the API's
+    own fields -- `classification_desc`, `current_fytd_net_outly_amt`,
+    `classification_id`, `parent_id`, `print_order_nbr` -- and imports nothing
+    from the module it checks. A header is a row whose amount is null; a
+    "Total--" row is the sum of its siblings and never a part; a receipts-type
+    row is one of the eight netted labels or the government-wide section made
+    of them, and everything beneath one is a receipt OF an agency.
+    """
+
+    def __init__(self, rows):
+        self.rows = {}
+        self.children = {}
+        self.parent_of = {}
+        ordered = sorted(
+            (r for r in rows if isinstance(r, dict) and str(r.get("classification_id") or "").strip() not in ("", "null")),
+            key=lambda r: int(str(r.get("print_order_nbr") or 0) or 0),
+        )
+        for row in ordered:
+            self.rows[str(row["classification_id"]).strip()] = row
+        for row in ordered:
+            parent = str(row.get("parent_id") or "").strip()
+            if parent in ("", "null") or parent not in self.rows:
+                parent = None
+            self.parent_of[str(row["classification_id"]).strip()] = parent
+            self.children.setdefault(parent, []).append(row)
+
+    @staticmethod
+    def printed(row):
+        return str(row.get("classification_desc") or "").strip()
+
+    @classmethod
+    def label(cls, row):
+        text = cls.printed(row)
+        if text.startswith("Total--"):
+            text = text[len("Total--"):]
+        return text.rstrip(":").strip()
+
+    @staticmethod
+    def amount(row):
+        value = row.get("current_fytd_net_outly_amt")
+        if value in (None, "", "null"):
+            return None
+        try:
+            return float(str(value).replace(",", ""))
+        except (TypeError, ValueError):
+            return None
+
+    @classmethod
+    def is_header(cls, row):
+        return cls.amount(row) is None
+
+    @classmethod
+    def is_total(cls, row):
+        return cls.printed(row).startswith("Total--")
+
+    @classmethod
+    def is_receipts(cls, row):
+        return cls.label(row) in TREASURY_RECEIPTS_LABELS or cls.label(row) == TREASURY_UNDISTRIBUTED_LABEL
+
+    def kids(self, row):
+        return list(self.children.get(str(row.get("classification_id") or "").strip(), []))
+
+    def has_total_child(self, row):
+        return any(self.is_total(k) for k in self.kids(row))
+
+    def inside_receipts_subtree(self, row):
+        """The row itself, or any ancestor, is receipts-type."""
+        current = row
+        for _ in range(60):
+            if self.is_receipts(current):
+                return True
+            parent = self.parent_of.get(str(current.get("classification_id") or "").strip())
+            if parent is None:
+                return False
+            current = self.rows[parent]
+        return False
+
+    def value(self, row):
+        """A line's printed amount; a header's is the sum of its non-total children."""
+        own = self.amount(row)
+        if own is not None:
+            return own
+        return sum(self.value(k) for k in self.kids(row) if not self.is_total(k))
+
+    def components(self, header):
+        """Mirror of SectionTree.header_components: the lines beneath a header,
+        a receipts-type child as one part at its own netted amount, a
+        sub-header descended into, a Total-- row never a part."""
+        out = []
+        for kid in self.kids(header):
+            if self.is_total(kid):
+                continue
+            if self.is_receipts(kid) or not self.is_header(kid):
+                out.append((self.label(kid), round(self.value(kid), 2)))
+                continue
+            out.extend(self.components(kid))
+        return out
+
+    def keys(self, row):
+        """Mirror of build_graph.treasury_row_keys on the crawler's normalised
+        name: the label's key and, where the label carries "--", the key of the
+        part before it ("Department of Defense--Military Programs")."""
+        name = self.label(row)
+        keys = [canonical_key(name)]
+        if "--" in name:
+            keys.append(canonical_key(name.split("--", 1)[0]))
+        return [k for k in keys if k]
+
+    def matchable_key_counts(self):
+        """How many rows the exporter puts in front of the matcher carry each
+        key: every non-zero printed line outside a receipts subtree, and every
+        total-less header with lines beneath it. A header sum may only have
+        been chosen where its key is carried once."""
+        counts = Counter()
+        for row in self.rows.values():
+            if self.inside_receipts_subtree(row):
+                continue
+            if self.is_header(row):
+                if self.has_total_child(row) or not self.components(row) or round(self.value(row), 2) == 0:
+                    continue
+            elif self.amount(row) == 0:
+                continue
+            for key in self.keys(row):
+                counts[key] += 1
+        return counts
+
+
+def load_committed_treasury_statements():
+    """{record_date: (path, TreasuryStatementRows)} for every committed Table 5
+    response, keyed by the date the response itself carries."""
+    out = {}
+    directory, pattern = TREASURY_STATEMENT_FIXTURE_GLOB
+    for path in sorted(directory.glob(pattern)):
+        try:
+            payload = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, ValueError):
+            continue
+        rows = payload.get("rows") if isinstance(payload, dict) else None
+        if not isinstance(rows, list) or not rows:
+            continue
+        date = str(payload.get("record_date") or "").strip() or str((rows[0] or {}).get("record_date") or "").strip()
+        if date and date not in out:
+            out[date] = (path, TreasuryStatementRows(rows))
+    return out
+
+
 def main(argv):
     graph_path = Path(argv[1]) if len(argv) > 1 else DEFAULT_GRAPH
     if not graph_path.exists():
@@ -6606,10 +6787,13 @@ def main(argv):
     measured_violations = list(illegitimate)
     if graph not in verified:
         measured_violations.insert(0, "root {} is not measured (no Treasury anchor)".format(label(graph)))
+    header_sum_count = sum(1 for n in verified if n is not graph and n.get("treasury_header_sum") is True)
     gate.check(
         "measured costs are the root and Treasury lines only",
         measured_violations,
-        " — root + {} Treasury line(s)".format(len(verified) - (1 if graph in verified else 0)) if not measured_violations else "",
+        " — root + {} Treasury line(s), {} of them the sum of the lines beneath a header the statement totals nowhere".format(
+            len(verified) - (1 if graph in verified else 0), header_sum_count)
+        if not measured_violations else "",
     )
 
     # 3. Every amount carries a provenance label.
@@ -7381,6 +7565,130 @@ def main(argv):
             non_org_measured.append("{} is a {!r} carrying a measured cost".format(label(node), node.get("type")))
     gate.check("a measured cost sits only on an organisation", non_org_measured)
 
+    # A unit the statement prints lines beneath and totals nowhere. Table 5
+    # prints some sub-agencies as a header with lines under it and no Total--
+    # line of its own ("Veterans Health Administration:" over five lines,
+    # $100.4B), and the exporter prices such a unit by the sum of those lines
+    # -- the statement's own arithmetic, stamped `treasury_header_sum` with
+    # the lines by printed name and amount and a sentence saying exactly that.
+    # Every such block is re-derived here from the committed statement it
+    # cites, by a second stdlib reading of the API's own rows: the header must
+    # be a header (null amount) the statement prints, must reduce to the node's
+    # name, must have no Total-- child (then the total is the figure and the
+    # ordinary rule reads it), must sit outside every receipts-type subtree (an
+    # agency's name there labels a receipt of that agency), must be the only
+    # matchable row carrying its name, and the components and their sum must be
+    # exactly the statement's. A post never carries one, and the sentence is
+    # mirrored word for word so the panel cannot call it a line the Treasury
+    # prints. A statement nobody committed cannot be re-derived from, so a
+    # block dated to one is refused rather than trusted.
+    header_sum_violations = []
+    committed_statements = None
+    for node in nodes:
+        stamped = node.get("treasury_header_sum")
+        components = node.get("treasury_component_rows")
+        is_receipts_line = str(node.get("synthetic") or "") == "treasury_receipts"
+        if not stamped:
+            if isinstance(components, list) and components and not is_receipts_line:
+                header_sum_violations.append("{} lists component lines without the header-sum stamp".format(label(node)))
+            if node.get("treasury_header_sum_note") is not None:
+                header_sum_violations.append("{} carries a header-sum sentence without the stamp".format(label(node)))
+            continue
+        if stamped is not True:
+            header_sum_violations.append("{} carries treasury_header_sum {!r}, not True".format(label(node), stamped))
+            continue
+        if is_post(node):
+            header_sum_violations.append("{} is a post priced by a Treasury header sum".format(label(node)))
+            continue
+        if node.get("synthetic"):
+            header_sum_violations.append("{} is a synthetic line carrying a header sum".format(label(node)))
+            continue
+        if not isinstance(components, list) or not components or not all(isinstance(c, dict) for c in components):
+            header_sum_violations.append("{} carries a header sum with no component lines".format(label(node)))
+            continue
+        expected_note = treasury_header_sum_note(len(components))
+        if str(node.get("treasury_header_sum_note") or "") != expected_note:
+            header_sum_violations.append("{} lacks the header-sum sentence for {} lines".format(label(node), len(components)))
+        try:
+            rollup = float(node.get("rollup_total_amount"))
+        except (TypeError, ValueError):
+            header_sum_violations.append("{} carries a header sum with no Treasury line amount".format(label(node)))
+            continue
+        if rollup == 0:
+            header_sum_violations.append("{} publishes a header sum of zero".format(label(node)))
+        block_sum = 0.0
+        block_parts = []
+        for component in components:
+            try:
+                part = float(component.get("amount"))
+            except (TypeError, ValueError):
+                header_sum_violations.append("{} lists a component line with no amount".format(label(node)))
+                part = 0.0
+            block_sum += part
+            block_parts.append((str(component.get("name") or ""), round(part, 2)))
+        if abs(block_sum - rollup) > 0.005:
+            header_sum_violations.append(
+                "{} publishes {:,.2f} but its listed lines sum to {:,.2f}".format(label(node), rollup, block_sum))
+        if committed_statements is None:
+            committed_statements = load_committed_treasury_statements()
+        as_of = str(node.get("budget_as_of") or "")
+        statement = committed_statements.get(as_of)
+        if statement is None:
+            header_sum_violations.append(
+                "{} cites a statement dated {!r} that is not committed under tests/fixtures/mts_table5_*.json, "
+                "so its header sum cannot be re-derived".format(label(node), as_of))
+            continue
+        _path, reading = statement
+        header = reading.rows.get(str(node.get("treasury_classification_id") or "").strip())
+        if header is None:
+            header_sum_violations.append(
+                "{} names classification id {!r}, which the {} statement does not print".format(
+                    label(node), node.get("treasury_classification_id"), as_of))
+            continue
+        if canonical_key(reading.label(header)) != canonical_key(node.get("name")):
+            header_sum_violations.append(
+                "{} carries a header sum for {!r}, a name the node does not reduce to".format(
+                    label(node), reading.printed(header)))
+        if str(node.get("treasury_row_name") or "") != reading.printed(header):
+            header_sum_violations.append(
+                "{} quotes {!r} where the statement prints {!r}".format(
+                    label(node), node.get("treasury_row_name"), reading.printed(header)))
+        if not reading.is_header(header):
+            header_sum_violations.append(
+                "{} carries a header sum for {!r}, which is a printed line, not a header".format(
+                    label(node), reading.printed(header)))
+            continue
+        if reading.has_total_child(header):
+            header_sum_violations.append(
+                "{} carries a header sum for {!r}, which has a Total-- line of its own".format(
+                    label(node), reading.printed(header)))
+        if reading.inside_receipts_subtree(header):
+            header_sum_violations.append(
+                "{} carries a header sum for {!r}, a header inside a receipts-type subtree".format(
+                    label(node), reading.printed(header)))
+        derived = reading.components(header)
+        if not derived:
+            header_sum_violations.append(
+                "{} carries a header sum for {!r}, which has no line beneath it".format(label(node), reading.printed(header)))
+            continue
+        if sorted(derived) != sorted(block_parts):
+            header_sum_violations.append(
+                "{} lists lines that are not the statement's lines beneath {!r}: listed {}, printed {}".format(
+                    label(node), reading.printed(header),
+                    [name for name, _ in block_parts], [name for name, _ in derived]))
+        derived_sum = round(sum(amount for _, amount in derived), 2)
+        if abs(derived_sum - rollup) > 0.005:
+            header_sum_violations.append(
+                "{} publishes {:,.2f} where the statement's lines beneath {!r} sum to {:,.2f}".format(
+                    label(node), rollup, reading.printed(header), derived_sum))
+        counts = reading.matchable_key_counts()
+        carried = max(counts.get(key, 0) for key in reading.keys(header)) if reading.keys(header) else 0
+        if carried != 1:
+            header_sum_violations.append(
+                "{} carries a header sum for {!r}, a name {} matchable rows of the statement carry".format(
+                    label(node), reading.printed(header), carried))
+    gate.check("a Treasury header sum is the statement's own lines beneath a header it totals nowhere", header_sum_violations)
+
     # A unit the government has replaced. Nothing is deleted, so the site keeps
     # drawing it for anyone who asks — which makes the claim "this no longer
     # exists" a published claim like any other, and it needs a source that says
@@ -8141,6 +8449,11 @@ def main(argv):
         len(exact), len(nodes), len(exact) / len(nodes) if nodes else 0, len(estimated)))
     print("  the measured nodes cover {:.1%} of the anchor ({:,.0f} of {:,.0f}), counting each only once".format(
         exact_dollars / anchor_total if anchor_total else 0, exact_dollars, anchor_total))
+    header_sum_nodes = [n for n in nodes if n.get("treasury_header_sum") is True]
+    print("  Treasury header sums : {:,} units priced by the sum of the lines the statement prints beneath a header it totals nowhere ({:,} lines, ${:,.0f} in all), each saying so in words; never called a line the Treasury prints".format(
+        len(header_sum_nodes),
+        sum(len(n.get("treasury_component_rows") or []) for n in header_sum_nodes),
+        sum(amount_of(n) or 0.0 for n in header_sum_nodes)))
     print("  with a cost          : {:,}".format(sum(1 for n in nodes if amount_of(n) is not None)))
     print("  verification         : {}".format(dict(verification.most_common())))
     print("  cost_status          : {}".format(dict(cost_status.most_common())))

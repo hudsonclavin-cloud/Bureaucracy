@@ -933,6 +933,50 @@ try {
     measurements.militaryPay = `${militaryNodes.length} nodes carry positionMilitaryPay; checked ${[militaryByGrade, militaryByFootnote].filter(Boolean).map((n) => n.id).join(", ")}`;
   }
 
+  // A unit the statement prints lines beneath and totals nowhere: the panel
+  // reads MEASURED over the exact sum, prints the pipeline's own sentence
+  // saying the figure is that sum and never a line the Treasury prints, and
+  // lists every line by printed name and amount. Picked from the served graph
+  // (the Veterans Health Administration on the 2026-08-31 statement, but
+  // whichever node carries the stamp); the field lands only when the graph is
+  // regenerated from a statement, so with NO such node the check is skipped
+  // with a note under `measurements` rather than failing on absent data.
+  const headerSumNodes = allNodes.filter((n) => n.treasury_header_sum === true);
+  const headerSumNode = headerSumNodes.find((n) => unique(n));
+  if (!headerSumNodes.length) {
+    measurements.treasuryHeaderSum = "skipped: no node in the served graph carries treasury_header_sum (regenerate the graph from a statement to land it)";
+  } else {
+    check("a header-sum unit with a unique name is in the served graph", Boolean(headerSumNode), headerSumNodes.map((n) => n.id).join(", "));
+    if (headerSumNode) {
+      await openByName(headerSumNode.name);
+      const stats = await text("#info-stats");
+      check("a header-sum unit reads MEASURED", /\bMEASURED\b/.test(stats), stats);
+      check("a header-sum unit shows the exact sum of the statement's lines", stats.includes(exactDollars(headerSumNode.resolved_total_amount)), stats);
+      check(
+        "a header-sum unit prints the pipeline's own sentence",
+        stats.includes(String(headerSumNode.treasury_header_sum_note)) && /prints no total line for this unit/.test(stats),
+        stats,
+      );
+      check("a header-sum unit is never called a line the Treasury reports for it", !/reported for this unit in the Monthly Treasury Statement/.test(stats), stats);
+      check("a header-sum unit is not called an estimate", !/\bESTIMATE\b|CAPPED/.test(stats), stats);
+      const lineCount = await page.locator("#info-cost-components li").count();
+      check(
+        "a header-sum unit lists every line the statement prints beneath its header",
+        lineCount === headerSumNode.treasury_component_rows.length,
+        `${lineCount} listed, ${headerSumNode.treasury_component_rows.length} in the served graph`,
+      );
+      const listed = await text("#info-cost-components");
+      for (const component of headerSumNode.treasury_component_rows) {
+        check(
+          `the listed lines carry "${component.name}" with its exact amount`,
+          listed.includes(String(component.name)) && listed.includes(exactDollars(component.amount)),
+          listed,
+        );
+      }
+    }
+    measurements.treasuryHeaderSum = `${headerSumNodes.length} nodes carry treasury_header_sum; checked ${headerSumNode ? headerSumNode.id : "none"}`;
+  }
+
   // A node whose name states a count says how many it actually carries.
   const short = allNodes.find((n) => n.childrenIncomplete);
   check("some grouping carries fewer than its name states", Boolean(short), "none");

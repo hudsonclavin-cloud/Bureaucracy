@@ -12,16 +12,16 @@ achievable route to more exact-node costs actually is.
 Printed by `python scripts/validate_published_graph.py` on every run, which
 is the copy to trust; restated here as of 2026-09-23:
 
-    cost identified for the node itself:  160 of 5,510 nodes (2.9%)
+    cost identified for the node itself:  170 of 5,510 nodes (3.1%)
     a share of an ancestor's total:       693 nodes
     no figure at all:                   4,657 nodes (4,591 of them posts)
-    the measured nodes cover 98.8% of the anchor, counting each only once
+    the measured nodes cover 99.0% of the anchor, counting each only once
 
 Those numbers are the whole picture and they point in opposite directions.
 **2.9% of nodes** carry a figure a record names for them: the root's Treasury
 anchor, and the 159 Monthly Treasury Statement Table 5 lines applied to the
 nodes they name (29 of which are the receipts lines the exporter carries
-explicitly). But those nodes account for **98.8% of the money**. The apportioned figures are a subdivision of measured totals, not
+explicitly). But those nodes account for **99.0% of the money**. The apportioned figures are a subdivision of measured totals, not
 invented money — every one of them is some measured ancestor's dollars split
 among its children.
 

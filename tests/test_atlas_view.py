@@ -74,9 +74,13 @@ def test_apportioned_estimates_are_withheld_in_the_panels_words():
         assert fragment in UI, fragment
     assert "a number nobody measured, so it is not shown here" in ATLAS
     # Nothing formats an allocated amount: the only money formatter is the
-    # exact one, reached from the measured branch alone.
+    # exact one, reached from the measured branch alone -- directly for the
+    # figure, and through headerSumLinesText for the statement's own lines
+    # beneath a header-sum unit, which that branch alone calls.
     assert "formatExactMoney" in ATLAS
-    assert ATLAS.count("formatExactMoney(") == 2  # the definition and the measured branch
+    assert ATLAS.count("formatExactMoney(") == 3  # the definition, the measured branch, the header-sum lines
+    assert ATLAS.count("headerSumLinesText(") == 2  # the definition and the measured branch
+    assert ATLAS.index("function headerSumLinesText(") < ATLAS.index("function describeCost(")
 
 
 def test_a_post_says_the_panels_sentence_and_shows_pay_under_its_own_heading():

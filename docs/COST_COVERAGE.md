@@ -11,18 +11,18 @@ this project publishes is one a committed document states and a matcher re-deriv
 on every run; nothing here is a number somebody reports.
 
 - nodes in the published graph: **5,510**
-- showing a figure a document states (measured cost or salary): **1,356**
-- carrying an apportioned estimate, withheld unless asked for: **693**
+- showing a figure a document states (measured cost or salary): **1,366**
+- carrying an apportioned estimate, withheld unless asked for: **683**
 - positions no document prices: **3,395**
 - no figure now and none from any route (negative pool, replaced unit, below a cent): **66**
 
 | class | nodes | what it means | route |
 |---|---|---|---|
 | Measured — a Treasury accounting line | 30 | The receipts and transfers the Monthly Treasury Statement nets inside a unit's published total, carried as explicit children so the arithmetic closes, plus Interest on the Public Debt and the government-wide offsetting receipts. Not organisations. | Nothing to do: these ARE the statement's own lines. |
-| Measured — the Treasury's own figure for the unit | 130 | The root's anchor and every Table 5 line applied to the node it names (`cost_status: official`). The only costs this graph calls measured. | Nothing to do for the node; the statement is re-fetched and re-applied on each run. |
+| Measured — the Treasury's own figure for the unit | 140 | The root's anchor and every Table 5 line applied to the node it names (`cost_status: official`). The only costs this graph calls measured. | Nothing to do for the node; the statement is re-fetched and re-applied on each run. |
 | Estimate — a committee or subcommittee | 240 | An apportioned share of the chamber's measured total. No line of Table 5 names a committee, so no Treasury alias can ever reach one of these. | The documents that state committee spending are the chambers' own: the House's quarterly Statement of Disbursements (disbursements.house.gov) and the Senate's semiannual Report of the Secretary of the Senate (senate.gov). Both are large PDFs on `.gov` hosts, neither has been fetched, and the figure each prints is disbursements for a period — a basis `financial_evidence.BASES` would have to name, beside its own heading, never as Table 5 net outlays. A reviewed decision before any build. |
-| Estimate — with a sourced figure already published beside it | 42 | An apportioned share, and beside it at least one figure an official source states for this unit under its own heading: USAspending File A gross outlays (fiscal year to date), OMB's Public Budget Database outlays (last completed year, summed over the unit's account rows), or Treasury's audited Statement of Net Cost (last completed year). Each is on the panel today; none is headed COST, because each measures something different from the Treasury's net outlays on a different clock. | The decision is the owner's, not a build: whether the headline may fall back to one of these, labelled by its basis and period, when the Treasury prints no line — the same move the panel makes since 2026-10-05 for a post's salary. Measured on the 94 nodes that carry both, not one OMB FY2025 figure agrees with the Treasury line within 1%, so a fallback would be a different number under a different label, never the same claim. |
-| Estimate — no sourced figure of any kind | 411 | An apportioned share of an ancestor's measured total, divided among siblings by budget, headcount or subtree size. Table 5 stops at the bureau, so divisions, regional offices, laboratories, centres and the courts beneath a circuit print no line of their own. | Three routes, in order of reach: OMB's Public Budget Database bureau rows (committed; 72 bureaus matched so far, more need a node whose name the file carries); USAspending File B by Treasury Account Symbol, which reaches programme level and has not been fetched; an agency's own Agency Financial Report. Each yields a figure beside the estimate, not a cost, until the decision above is made. |
+| Estimate — with a sourced figure already published beside it | 34 | An apportioned share, and beside it at least one figure an official source states for this unit under its own heading: USAspending File A gross outlays (fiscal year to date), OMB's Public Budget Database outlays (last completed year, summed over the unit's account rows), or Treasury's audited Statement of Net Cost (last completed year). Each is on the panel today; none is headed COST, because each measures something different from the Treasury's net outlays on a different clock. | The decision is the owner's, not a build: whether the headline may fall back to one of these, labelled by its basis and period, when the Treasury prints no line — the same move the panel makes since 2026-10-05 for a post's salary. Measured on the 94 nodes that carry both, not one OMB FY2025 figure agrees with the Treasury line within 1%, so a fallback would be a different number under a different label, never the same claim. |
+| Estimate — no sourced figure of any kind | 409 | An apportioned share of an ancestor's measured total, divided among siblings by budget, headcount or subtree size. Table 5 stops at the bureau, so divisions, regional offices, laboratories, centres and the courts beneath a circuit print no line of their own. | Three routes, in order of reach: OMB's Public Budget Database bureau rows (committed; 72 bureaus matched so far, more need a node whose name the file carries); USAspending File B by Treasury Account Symbol, which reaches programme level and has not been fetched; an agency's own Agency Financial Report. Each yields a figure beside the estimate, not a cost, until the decision above is made. |
 | Salary — a pay claim an official document supports | 1,196 | A position carrying at least one of the ten pay fields: a printed rate, a schedule level priced by OPM's table, a statutory rate, a roster figure, a derivation the block carries in the open, twelve months of a printed monthly military rate, or a range. Since 2026-10-05 it is the post's headline figure, headed as pay and never as COST. | Nothing to do for the node; each pay field is re-derived from its committed document on every run and withdrawn when the document stops supporting it. |
 | Post with no figure — stands for several holders | 750 | The node's name states a multiplicity and no claim that holds for every holder has reached it. An incumbency-shaped claim (one listing's level, one row of the current export) is refused on such a node because it is one appointment's figure, not the group's. | A tier, a statutory rate, a parity provision or a roster listing every holder at one figure IS published on such a node with a `holders` block. Finding which pay SYSTEM governs the title is the useful step: it lets the graph carry the schedule rather than a rate. `docs/UNPRICED_POSITIONS.md` lists every one. |
 | Post with no figure — OPM lists it and prints no rate | 18 | The PLUM archive or the current export names the title under this organisation but the Level/Grade/Pay cell carries a rank or is empty, and no salary table this project has read prices that pay plan. | A salary table for the pay plan (AD, OT and the others) where OPM publishes one; most of these plans have none, and the honest state is a listing with no figure. |
@@ -39,31 +39,31 @@ Where Table 5 stops is visible in which TYPES carry an estimate and no line:
 |---|---|---|---|
 | Subcommittee | 0 | 0 | 195 |
 | Division | 115 | 0 | 0 |
-| Independent Agency | 40 | 15 | 0 |
+| Independent Agency | 39 | 15 | 0 |
 | Committee | 0 | 0 | 45 |
-| Bureau | 32 | 5 | 0 |
 | Regional Office | 35 | 0 | 0 |
-| Office | 30 | 2 | 0 |
+| Bureau | 32 | 2 | 0 |
+| Office | 29 | 2 | 0 |
 | Museum/Unit | 24 | 0 | 0 |
 | Defense Agency | 22 | 0 | 0 |
-| Agency | 8 | 10 | 0 |
 | National Laboratory | 17 | 0 | 0 |
+| Agency | 8 | 7 | 0 |
 | Presidential Library | 14 | 0 | 0 |
 | Circuit Court | 13 | 0 | 0 |
 | Directorate | 12 | 0 | 0 |
 | Combatant Command | 11 | 0 | 0 |
 | NASA Center | 10 | 0 | 0 |
 | Area Office | 7 | 0 | 0 |
-| Independent Regulatory Commission | 2 | 5 | 0 |
+| Independent Regulatory Commission | 2 | 4 | 0 |
 | Military Branch | 3 | 2 | 0 |
 | Mission Directorate | 5 | 0 | 0 |
 | Specialized Court | 4 | 1 | 0 |
 | Component Agency | 1 | 1 | 0 |
-| Government Corporation | 1 | 1 | 0 |
 | Branch | 1 | 0 | 0 |
 | Court | 1 | 0 | 0 |
 | District Court | 1 | 0 | 0 |
 | Field Structure | 1 | 0 | 0 |
+| Government Corporation | 1 | 0 | 0 |
 | Operating Division | 1 | 0 | 0 |
 
 ---
@@ -105,7 +105,7 @@ The receipts and transfers the Monthly Treasury Statement nets inside a unit's p
 - `exec-ind-ssa--treasury-receipts` — Offsetting receipts and intrabudgetary transactions (Treasury accounting line; under Social Security Administration (SSA))
 - `treasury-undistributed-offsetting-receipts` — Undistributed offsetting receipts (Treasury accounting line; under The Constitution of the United States)
 
-## Measured — the Treasury's own figure for the unit — 130
+## Measured — the Treasury's own figure for the unit — 140
 
 The root's anchor and every Table 5 line applied to the node it names (`cost_status: official`). The only costs this graph calls measured.
 
@@ -126,6 +126,7 @@ The root's anchor and every Table 5 line applied to the node it names (`cost_sta
 - `exec-dept-usda-fns` — Food and Nutrition Administration (FNA) (Agency; under Department of Agriculture (USDA))
 - `exec-dept-usda-foreign-agricultural-service` — Foreign Agricultural Service (Component Agency; under Department of Agriculture (USDA)) — beside it: ombBudget
 - `exec-dept-usda-fs` — Forest Service (USFS) (Agency; under Department of Agriculture (USDA)) — beside it: ombBudget
+- `exec-dept-usda-nrcs` — Natural Resources Conservation Service (NRCS) (Agency; under Department of Agriculture (USDA)) — beside it: usaspendingOutlays, ombBudget
 - `exec-dept-doc-census` — Census Bureau (Bureau; under Department of Commerce)
 - `exec-dept-doc-economic-development-administration` — Economic Development Administration (Component Agency; under Department of Commerce) — beside it: ombBudget
 - `exec-dept-doc-ita` — International Trade Administration (ITA) (Bureau; under Department of Commerce) — beside it: ombBudget
@@ -135,6 +136,7 @@ The root's anchor and every Table 5 line applied to the node it names (`cost_sta
 - `exec-dept-ed-fsa` — Federal Student Aid (FSA) (Office; under Department of Education)
 - `exec-dept-ed-ies` — Institute of Education Sciences (IES) (Office; under Department of Education) — beside it: ombBudget
 - `exec-dept-ed-oese` — Office of Elementary & Secondary Education (OESE) (Office; under Department of Education) — beside it: ombBudget
+- `exec-dept-doe-nnsa` — National Nuclear Security Administration (NNSA) (Agency; under Department of Energy (DOE)) — beside it: usaspendingOutlays, ombBudget
 - `exec-dept-doe-eere` — Office of Energy Efficiency & Renewable Energy (EERE) (Office; under Department of Energy (DOE))
 - `exec-dept-hhs-administration-for-children-and-families` — Administration for Children and Families (Component Agency; under Department of Health & Human Services (HHS)) — beside it: ombBudget
 - `exec-dept-hhs-administration-for-community-living` — Administration for Community Living (Component Agency; under Department of Health & Human Services (HHS)) — beside it: ombBudget
@@ -160,6 +162,7 @@ The root's anchor and every Table 5 line applied to the node it names (`cost_sta
 - `exec-dept-doj-bop` — Bureau of Prisons (BOP) (Bureau; under Department of Justice (DOJ))
 - `exec-dept-doj-dea` — Drug Enforcement Administration (DEA) (Bureau; under Department of Justice (DOJ)) — beside it: ombBudget
 - `exec-dept-doj-fbi` — Federal Bureau of Investigation (FBI) (Bureau; under Department of Justice (DOJ)) — beside it: ombBudget
+- `exec-dept-doj-office-justice-programs` — Office of Justice Programs (Office; under Department of Justice (DOJ))
 - `exec-dept-doj-usao` — U.S. Attorneys Office (USAO — 94 Districts) (Bureau; under Department of Justice (DOJ))
 - `exec-dept-doj-usms` — U.S. Marshals Service (USMS) (Bureau; under Department of Justice (DOJ))
 - `exec-dept-dol-bls` — Bureau of Labor Statistics (BLS) (Agency; under Department of Labor (DOL))
@@ -174,12 +177,16 @@ The root's anchor and every Table 5 line applied to the node it names (`cost_sta
 - `exec-dept-dot-fta` — Federal Transit Administration (FTA) (Agency; under Department of Transportation (DOT)) — beside it: ombBudget
 - `exec-dept-dot-marad` — Maritime Administration (MARAD) (Agency; under Department of Transportation (DOT)) — beside it: ombBudget
 - `exec-dept-dot-nhtsa` — National Highway Traffic Safety Admin (NHTSA) (Agency; under Department of Transportation (DOT))
+- `exec-dept-va-vha` — Veterans Health Administration (VHA) (Agency; under Department of Veterans Affairs (VA)) — beside it: usaspendingOutlays, ombBudget
 - `exec-dept-doi-bia` — Bureau of Indian Affairs (BIA) (Bureau; under Department of the Interior (DOI)) — beside it: ombBudget
+- `exec-dept-doi-blm` — Bureau of Land Management (BLM) (Bureau; under Department of the Interior (DOI)) — beside it: usaspendingOutlays, ombBudget
 - `exec-dept-doi-boem` — Bureau of Ocean Energy Management (BOEM) (Bureau; under Department of the Interior (DOI)) — beside it: ombBudget
+- `exec-dept-doi-bor` — Bureau of Reclamation (BOR) (Bureau; under Department of the Interior (DOI)) — beside it: usaspendingOutlays, ombBudget
 - `exec-dept-doi-nps` — National Park Service (NPS) (Bureau; under Department of the Interior (DOI)) — beside it: ombBudget
 - `exec-dept-doi-office-surface-mining-reclamation-enforcement` — Office of Surface Mining Reclamation and Enforcement (Bureau; under Department of the Interior (DOI)) — beside it: ombBudget
 - `exec-dept-doi-fws` — U.S. Fish & Wildlife Service (FWS) (Bureau; under Department of the Interior (DOI)) — beside it: ombBudget
 - `exec-dept-doi-usgs` — U.S. Geological Survey (USGS) (Bureau; under Department of the Interior (DOI)) — beside it: ombBudget
+- `exec-dept-treasury-ttb` — Alcohol & Tobacco Tax & Trade Bureau (TTB) (Bureau; under Department of the Treasury) — beside it: usaspendingOutlays, ombBudget
 - `exec-dept-treasury-bep` — Bureau of Engraving & Printing (Bureau; under Department of the Treasury) — beside it: ombBudget
 - `exec-dept-treasury-fiscal` — Bureau of the Fiscal Service (Bureau; under Department of the Treasury)
 - `exec-dept-treasury-irs` — Internal Revenue Service (IRS) (Bureau; under Department of the Treasury) — beside it: ombBudget
@@ -199,7 +206,9 @@ The root's anchor and every Table 5 line applied to the node it names (`cost_sta
 - `exec-ind-sba` — Small Business Administration (SBA) (Agency; under Independent Establishments & Government Corporations) — beside it: ombBudget, auditedNetCost
 - `exec-ind-smithsonian` — Smithsonian Institution (Agency; under Independent Establishments & Government Corporations) — beside it: ombBudget
 - `exec-ind-ssa` — Social Security Administration (SSA) (Agency; under Independent Establishments & Government Corporations) — beside it: ombBudget, auditedNetCost
+- `exec-ind-usps` — U.S. Postal Service (USPS) (Government Corporation; under Independent Establishments & Government Corporations) — beside it: ombBudget, auditedNetCost
 - `exec-regulatory-bureau-of-consumer-financial-protection` — Bureau of Consumer Financial Protection (Regulatory Agency; under Independent Regulatory Commissions) — beside it: ombBudget
+- `exec-regulatory-fcc` — Federal Communications Commission (FCC) (Independent Regulatory Commission; under Independent Regulatory Commissions) — beside it: usaspendingOutlays, ombBudget, auditedNetCost
 - `exec-regulatory-fdic` — Federal Deposit Insurance Corporation (FDIC) (Independent Regulatory Commission; under Independent Regulatory Commissions) — beside it: ombBudget, auditedNetCost
 - `exec-regulatory-federal-housing-finance-agency` — Federal Housing Finance Agency (Regulatory Agency; under Independent Regulatory Commissions) — beside it: ombBudget
 - `exec-regulatory-nrc` — Nuclear Regulatory Commission (NRC) (Independent Regulatory Commission; under Independent Regulatory Commissions) — beside it: ombBudget, auditedNetCost
@@ -208,6 +217,7 @@ The root's anchor and every Table 5 line applied to the node it names (`cost_sta
 - `leg-house` — United States House of Representatives (Chamber; under Legislative Branch) — beside it: ombBudget
 - `leg-senate` — United States Senate (Chamber; under Legislative Branch) — beside it: ombBudget
 - `exec-ind-nsf-education-human-resources-ehr` — Directorate for STEM Education (EDU) (Directorate; under National Science Foundation (NSF))
+- `exec-ind-misc-americorps` — AmeriCorps (Independent Agency; under Other Independent Agencies (25+))
 - `exec-ind-misc-corporation-for-public-broadcasting` — Corporation for Public Broadcasting (Government Corporation; under Other Independent Agencies (25+)) — beside it: ombBudget
 - `exec-ind-misc-equal-employment-opportunity-commission-eeoc` — Equal Employment Opportunity Commission (EEOC) (Independent Agency; under Other Independent Agencies (25+)) — beside it: ombBudget
 - `exec-ind-misc-export-import-bank-of-the-u-s` — Export-Import Bank of the U.S. (Independent Agency; under Other Independent Agencies (25+)) — beside it: ombBudget, auditedNetCost
@@ -489,14 +499,12 @@ An apportioned share of the chamber's measured total. No line of Table 5 names a
 - `leg-senate-cmte-judiciary-sub-criminal-justice-counterterrorism` — Subcommittee on Crime and Counterterrorism (Subcommittee; under United States Senate Committee on the Judiciary)
 - `leg-senate-cmte-judiciary-sub-federal-courts-oversight-agency-action-federal-rights` — Subcommittee on Federal Courts, Oversight, Agency Action, and Federal Rights (Subcommittee; under United States Senate Committee on the Judiciary)
 
-## Estimate — with a sourced figure already published beside it — 42
+## Estimate — with a sourced figure already published beside it — 34
 
 An apportioned share, and beside it at least one figure an official source states for this unit under its own heading: USAspending File A gross outlays (fiscal year to date), OMB's Public Budget Database outlays (last completed year, summed over the unit's account rows), or Treasury's audited Statement of Net Cost (last completed year). Each is on the panel today; none is headed COST, because each measures something different from the Treasury's net outlays on a different clock.
 
 **Route.** The decision is the owner's, not a build: whether the headline may fall back to one of these, labelled by its basis and period, when the Treasury prints no line — the same move the panel makes since 2026-10-05 for a post's salary. Measured on the 94 nodes that carry both, not one OMB FY2025 figure agrees with the Treasury line within 1%, so a fallback would be a different number under a different label, never the same claim.
 
-- `exec-dept-usda-nrcs` — Natural Resources Conservation Service (NRCS) (Agency; under Department of Agriculture (USDA)) — beside it: usaspendingOutlays, ombBudget
-- `exec-dept-doe-nnsa` — National Nuclear Security Administration (NNSA) (Agency; under Department of Energy (DOE)) — beside it: usaspendingOutlays, ombBudget
 - `exec-dept-dhs-fletc` — Federal Law Enforcement Training Centers (FLETC) (Component Agency; under Department of Homeland Security (DHS)) — beside it: usaspendingOutlays, ombBudget
 - `exec-dept-hud-fheo` — Office of Fair Housing & Equal Opportunity (FHEO) (Office; under Department of Housing & Urban Development (HUD)) — beside it: usaspendingOutlays
 - `exec-dept-doj-parole-commission` — United States Parole Commission (Office; under Department of Justice (DOJ)) — beside it: ombBudget
@@ -504,17 +512,11 @@ An apportioned share, and beside it at least one figure an official source state
 - `exec-dept-dol-ofccp` — Office of Federal Contract Compliance Programs (OFCCP) (Agency; under Department of Labor (DOL)) — beside it: usaspendingOutlays, ombBudget
 - `exec-dept-dol-veterans-employment-training-service` — Veterans' Employment and Training Service (Agency; under Department of Labor (DOL)) — beside it: ombBudget
 - `exec-dept-dot-phmsa` — Pipeline & Hazardous Materials Safety Admin (PHMSA) (Agency; under Department of Transportation (DOT)) — beside it: usaspendingOutlays
-- `exec-dept-va-vha` — Veterans Health Administration (VHA) (Agency; under Department of Veterans Affairs (VA)) — beside it: usaspendingOutlays, ombBudget
-- `exec-dept-doi-blm` — Bureau of Land Management (BLM) (Bureau; under Department of the Interior (DOI)) — beside it: usaspendingOutlays, ombBudget
-- `exec-dept-doi-bor` — Bureau of Reclamation (BOR) (Bureau; under Department of the Interior (DOI)) — beside it: usaspendingOutlays, ombBudget
 - `exec-dept-doi-bsee` — Bureau of Safety & Environmental Enforcement (BSEE) (Bureau; under Department of the Interior (DOI)) — beside it: usaspendingOutlays, ombBudget
-- `exec-dept-treasury-ttb` — Alcohol & Tobacco Tax & Trade Bureau (TTB) (Bureau; under Department of the Treasury) — beside it: usaspendingOutlays, ombBudget
 - `exec-dept-treasury-fincen` — Financial Crimes Enforcement Network (FinCEN) (Bureau; under Department of the Treasury) — beside it: usaspendingOutlays, ombBudget
 - `exec-ind-cia` — Central Intelligence Agency (CIA) (Agency; under Independent Establishments & Government Corporations) — beside it: ombBudget
-- `exec-ind-usps` — U.S. Postal Service (USPS) (Government Corporation; under Independent Establishments & Government Corporations) — beside it: ombBudget, auditedNetCost
 - `exec-regulatory-cftc` — Commodity Futures Trading Commission (CFTC) (Independent Regulatory Commission; under Independent Regulatory Commissions) — beside it: usaspendingOutlays, ombBudget
 - `exec-regulatory-cpsc` — Consumer Product Safety Commission (CPSC) (Independent Regulatory Commission; under Independent Regulatory Commissions) — beside it: usaspendingOutlays, ombBudget
-- `exec-regulatory-fcc` — Federal Communications Commission (FCC) (Independent Regulatory Commission; under Independent Regulatory Commissions) — beside it: usaspendingOutlays, ombBudget, auditedNetCost
 - `exec-regulatory-fmc` — Federal Maritime Commission (FMC) (Independent Regulatory Commission; under Independent Regulatory Commissions) — beside it: usaspendingOutlays, ombBudget
 - `exec-regulatory-ftc` — Federal Trade Commission (FTC) (Independent Regulatory Commission; under Independent Regulatory Commissions) — beside it: ombBudget
 - `jud-support-fjc` — Federal Judicial Center (FJC) (Agency; under Judicial Support Organizations) — beside it: ombBudget
@@ -538,7 +540,7 @@ An apportioned share, and beside it at least one figure an official source state
 - `exec-ind-misc-u-s-international-development-finance-corp-dfc` — U.S. International Development Finance Corporation (Independent Agency; under Other Independent Agencies (25+)) — beside it: usaspendingOutlays, auditedNetCost
 - `jud-specialized-cavc` — Court of Appeals for Veterans Claims (CAVC) (Specialized Court; under Specialized Federal Courts) — beside it: usaspendingOutlays
 
-## Estimate — no sourced figure of any kind — 411
+## Estimate — no sourced figure of any kind — 409
 
 An apportioned share of an ancestor's measured total, divided among siblings by budget, headcount or subtree size. Table 5 stops at the bureau, so divisions, regional offices, laboratories, centres and the courts beneath a circuit print no line of their own.
 
@@ -636,7 +638,6 @@ An apportioned share of an ancestor's measured total, divided among siblings by 
 - `exec-dept-doj-international-criminal-police-organization-washington` — International Criminal Police Organization (INTERPOL)-Washington (Bureau; under Department of Justice (DOJ))
 - `exec-dept-doj-div-nsd` — National Security Division (Division; under Department of Justice (DOJ))
 - `exec-dept-doj-office-community-oriented-policing-services` — Office of Community Oriented Policing Services (Office; under Department of Justice (DOJ))
-- `exec-dept-doj-office-justice-programs` — Office of Justice Programs (Office; under Department of Justice (DOJ))
 - `exec-dept-doj-solicitor` — Office of the Solicitor General (Office; under Department of Justice (DOJ))
 - `exec-dept-doj-office-violence-against-women` — Office on Violence Against Women (Office; under Department of Justice (DOJ))
 - `exec-dept-doj-div-tax` — Tax Division (Division; under Department of Justice (DOJ))
@@ -812,7 +813,6 @@ An apportioned share of an ancestor's measured total, divided among siblings by 
 - `exec-eop-omb-performance-personnel-management` — Performance & Personnel Management (Division; under Office of Management and Budget (OMB))
 - `exec-ind-misc-administrative-conference-of-the-united-states` — Administrative Conference of the United States (Independent Agency; under Other Independent Agencies (25+))
 - `exec-ind-misc-advisory-council-on-historic-preservation` — Advisory Council on Historic Preservation (Independent Agency; under Other Independent Agencies (25+))
-- `exec-ind-misc-americorps` — AmeriCorps (Independent Agency; under Other Independent Agencies (25+))
 - `exec-ind-misc-armed-forces-retirement-home` — Armed Forces Retirement Home (Independent Agency; under Other Independent Agencies (25+))
 - `exec-ind-misc-civil-rights-cold-case-records-review-board` — Civil Rights Cold Case Records Review Board (Independent Agency; under Other Independent Agencies (25+))
 - `exec-ind-misc-cigie` — Council of the Inspectors General on Integrity and Efficiency (Independent Agency; under Other Independent Agencies (25+))
