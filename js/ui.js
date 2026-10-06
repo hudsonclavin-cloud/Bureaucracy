@@ -2514,6 +2514,18 @@ const COST_STATUS_COPY = {
 // each node — but every figure below the root is apportioned from that same
 // total, so the period applies to all of them.
 let graphBudgetSummary = null;
+// Documents the viewer copy stores once on the root (`__sharedDocuments`) and
+// a block names by `documentsRef`; graph.json keeps each block whole.
+let graphSharedDocuments = {};
+function setGraphSharedDocuments(shared) {
+  graphSharedDocuments = shared && typeof shared === "object" ? shared : {};
+}
+function documentsOfBlock(block) {
+  if (!block || typeof block !== "object") return [];
+  if (Array.isArray(block.documents)) return block.documents;
+  const shared = block.documentsRef ? graphSharedDocuments[block.documentsRef] : null;
+  return Array.isArray(shared) ? shared : [];
+}
 
 function setGraphBudgetSummary(summary) {
   graphBudgetSummary = summary && typeof summary === "object" ? summary : null;
@@ -2666,7 +2678,7 @@ function buildEmployerLines(block) {
   // What the documents establish, in their own words rather than a
   // paraphrase: each one linked, then its quotes verbatim (a CFR quote with
   // the section it sits in).
-  const docs = Array.isArray(block.documents) ? block.documents.filter((d) => d && typeof d.url === "string" && /^https:\/\//.test(d.url)) : [];
+  const docs = documentsOfBlock(block).filter((d) => d && typeof d.url === "string" && /^https:\/\//.test(d.url));
   if (docs.length) {
     host.appendChild(document.createTextNode(` The ${docs.length} documents, in their own words:`));
     for (const doc of docs) {
@@ -4258,6 +4270,7 @@ async function initGraphApp() {
     onStatus: (message) => setText(dom.loadStatus, message),
   });
   setGraphBudgetSummary(data && data.__budgetSummary);
+  setGraphSharedDocuments(data && data.__sharedDocuments);
   const summary = summariseGraph(data);
   const provenance = document.getElementById("data-provenance");
   if (provenance) {

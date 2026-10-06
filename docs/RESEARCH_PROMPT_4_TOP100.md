@@ -6,12 +6,13 @@ organisation that publishes an estimate are in `docs/RESEARCH_PROMPT_4_REMAINDER
 
 ## The biggest clusters
 
-- **2,928** positions carry no pay claim and are research work, in **1,681** title families.
+- **2,816** positions carry no pay claim and are research work, in **1,665** title families.
 - **432** more carry none and are not asked about here: the post sits beneath a unit the government has replaced, and research on it is paused.
+- **112** more carry none and are not asked about here: an official document establishes the post is not on a federal pay schedule.
 - The largest family is **Chief Financial Officer**: 60 unpriced posts in 60 organisation(s).
 - The largest single grouping by name is **White House Office**: 60 unpriced posts sit directly beneath groupings of that name.
 - The first run of this prompt, answered on 2026-10-07 against the ranking of that morning, is ledgered family by family in `CURATION.md` §19.22, with what it settled and what it left unknown. Codes are renumbered on every render; the ledger names families, not codes.
-- The 100 families below hold **1,321** of the 2,928 (45%). The other 1,581 families hold 1,607, most of them a title that exists once.
+- The 100 families below hold **1,231** of the 2,816 (44%). The other 1,565 families hold 1,585, most of them a title that exists once.
 
 ## How the families were formed and ranked
 
@@ -108,87 +109,87 @@ F016 | Head of Collections Management | 21 posts in 21 organisation(s) | 21 bene
 F017 | Head of Education | 21 posts in 21 organisation(s) | 21 beneath Smithsonian Institution
 F018 | Head of Facilities | 21 posts in 21 organisation(s) | 21 beneath Smithsonian Institution
 F019 | Deputy Director / Vice Chair | 19 posts in 19 organisation(s) | 19 beneath Other Independent Agencies (25+)
-F020 | Chief Research Officer / Chief Science Officer | 17 posts in 17 organisation(s) | 17 beneath National Laboratories
-F021 | Department Manager | 17 posts in 17 organisation(s) [17 ×N] | 17 beneath National Laboratories
-F022 | Deputy Laboratory Director | 17 posts in 17 organisation(s) | 17 beneath National Laboratories
-F023 | Director of Public Affairs | 17 posts in 17 organisation(s) | 15 beneath The Cabinet — Executive Departments; CIA; GAO
-F024 | Division Director | 17 posts in 17 organisation(s) [17 ×N] | 17 beneath National Laboratories
-F025 | Postdoctoral Researcher | 17 posts in 17 organisation(s) [17 ×N] | 17 beneath National Laboratories
-F026 | Principal Scientist / Researcher | 17 posts in 17 organisation(s) [17 ×N] | 17 beneath National Laboratories
-F027 | Foreign Service Officer | 16 posts in 16 organisation(s) [16 ×N] | 16 beneath Department of State
-F028 | Law Clerk | 16 posts in 16 organisation(s) [16 ×N] | 13 beneath U.S. Courts of Appeals (13 Circuits); All 94 District Courts — Standard Structure; S.D.N.Y.; U.S. Court of Federal Claims
-F029 | Clerk of Court | 15 posts in 15 organisation(s) | 13 beneath U.S. Courts of Appeals (13 Circuits); All 94 District Courts — Standard Structure; S.D.N.Y.
-F030 | Deputy CFO / Controller | 15 posts in 15 organisation(s) | 15 beneath The Cabinet — Executive Departments
-F031 | Deputy CIO | 15 posts in 15 organisation(s) | 15 beneath The Cabinet — Executive Departments
-F032 | Deputy General Counsel | 15 posts in 15 organisation(s) | 15 beneath The Cabinet — Executive Departments
-F033 | Deputy Inspector General | 15 posts in 15 organisation(s) | 15 beneath The Cabinet — Executive Departments
-F034 | Director of Legislative Affairs | 15 posts in 15 organisation(s) | 15 beneath The Cabinet — Executive Departments
-F035 | Diversity & Inclusion Officer | 15 posts in 15 organisation(s) | 15 beneath The Cabinet — Executive Departments
-F036 | Executive Secretary | 15 posts in 15 organisation(s) | 15 beneath The Cabinet — Executive Departments
-F037 | Archivist | 14 posts in 14 organisation(s) [14 ×N] | 14 beneath NARA
-F038 | Chief Human Capital Officer | 14 posts in 14 organisation(s) | 13 beneath The Cabinet — Executive Departments; GAO
-F039 | Director of Education & Public Programs | 14 posts in 14 organisation(s) | 14 beneath NARA
-F040 | Director of Human Resources | 14 posts in 14 organisation(s) | 10 beneath NASA Field Centers (10); Chief Administrative Officer; Clerk of the House; Office of Administration; Secretary of the Senate
-F041 | Museum Curator | 14 posts in 14 organisation(s) | 14 beneath NARA
-F042 | Staff Attorney | 14 posts in 14 organisation(s) [14 ×N] | 13 beneath U.S. Courts of Appeals (13 Circuits); FTC
-F043 | Supervisory Archivist | 14 posts in 14 organisation(s) | 14 beneath NARA
-F044 | Chief Staff Attorney | 13 posts in 13 organisation(s) | 13 beneath U.S. Courts of Appeals (13 Circuits)
-F045 | Circuit Executive | 13 posts in 13 organisation(s) | 13 beneath U.S. Courts of Appeals (13 Circuits)
-F046 | Circuit Judge | 13 posts in 13 organisation(s) [13 ×N] | 13 beneath U.S. Courts of Appeals (13 Circuits)
-F047 | Library Director | 13 posts in 13 organisation(s) | 13 beneath U.S. Courts of Appeals (13 Circuits)
-F048 | Chief Scientist | 11 posts in 11 organisation(s) | 10 beneath NASA Field Centers (10); NASA
-F049 | Chief Engineer | 10 posts in 10 organisation(s) | 10 beneath NASA Field Centers (10)
-F050 | Deputy Center Director | 10 posts in 10 organisation(s) | 10 beneath NASA Field Centers (10)
-F051 | Director of Safety & Mission Assurance | 10 posts in 10 organisation(s) | 10 beneath NASA Field Centers (10)
-F052 | Program Manager | 10 posts in 10 organisation(s) [10 ×N] | 10 beneath NASA Field Centers (10)
-F053 | Research Engineer / Scientist | 10 posts in 10 organisation(s) [10 ×N] | 10 beneath NASA Field Centers (10)
-F054 | Budget Examiner | 8 posts in 8 organisation(s) [8 ×N] | 8 beneath OMB
-F055 | Chief Counsel | 8 posts in 8 organisation(s) | 4 beneath Department of the Treasury; DEA; FHWA; FDA; NHTSA
-F056 | Deputy Administrator | 8 posts in 8 organisation(s) | CMS; FSA; FRA; FTA; FNA; MARAD; National Telecommunications and Information Administration; SAMHSA
-F057 | Deputy Assistant Director | 8 posts in 8 organisation(s) [2 OPM-listed, no rate printed] | 8 beneath NSF
-F058 | District Manager | 8 posts in 8 organisation(s) [1 ×N] | Districts (multiple) ×7; MSHA
-F059 | Program Associate Director | 8 posts in 8 organisation(s) [8 ×N] | 8 beneath OMB
-F060 | City Letter Carrier | 7 posts in 7 organisation(s) [7 ×N] | Districts (multiple) ×7
-F061 | Deputy Assistant Administrator | 7 posts in 7 organisation(s) | 7 beneath EPA
-F062 | Deputy Assistant Attorney General | 7 posts in 7 organisation(s) [7 ×N] | 7 beneath DOJ
-F063 | Director — Division | 7 posts in 7 organisation(s) [7 ×N] | 7 beneath EPA
-F064 | Environmental Scientist / Engineer | 7 posts in 7 organisation(s) [7 ×N] | 7 beneath EPA
-F065 | Mail Processing Clerk | 7 posts in 7 organisation(s) [7 ×N] | Districts (multiple) ×7
-F066 | Manager — Processing & Distribution Center | 7 posts in 7 organisation(s) | Districts (multiple) ×7
-F067 | Postmaster — Local Post Offices | 7 posts in 7 organisation(s) | Districts (multiple) ×7
-F068 | Rural Letter Carrier | 7 posts in 7 organisation(s) [7 ×N] | Districts (multiple) ×7
-F069 | Sales & Service Associate | 7 posts in 7 organisation(s) [7 ×N] | Districts (multiple) ×7
-F070 | Section Chief | 7 posts in 7 organisation(s) [7 ×N] | 7 beneath DOJ
-F071 | Supervisor Customer Services | 7 posts in 7 organisation(s) | Districts (multiple) ×7
-F072 | Trial Attorney / AUSA | 7 posts in 7 organisation(s) [7 ×N] | 7 beneath DOJ
-F073 | Clerk of the Court | 6 posts in 6 organisation(s) | 5 beneath Specialized Federal Courts; SCOTUS
-F074 | Case Officer / Analyst / Engineer | 5 posts in 5 organisation(s) [5 ×N] | 5 beneath CIA
-F075 | Chief, Regional/Functional Division | 5 posts in 5 organisation(s) [5 ×N] | 5 beneath CIA
-F076 | Deputy Assistant Secretary | 5 posts in 5 organisation(s) | ETA; OSHA; EERE; EM; FHEO
-F077 | Deputy Commissioner | 4 posts in 4 organisation(s) [1 OPM-listed, no rate printed] | BLS; Bureau of the Fiscal Service; CBP; FDA
-F078 | Regional Administrator — 10 Regions | 4 posts in 4 organisation(s) | CMS; FTA; OSHA; SBA
-F079 | Special Agent | 4 posts in 4 organisation(s) [4 ×N] | ATF; DEA; FBI; ICE
-F080 | Area Director | 3 posts in 3 organisation(s) [3 ×N] | ARS; APHIS; Office of Operations — Field Structure
-F081 | CFO | 3 posts in 3 organisation(s) | FDIC; SEC; U.S. Mint
-F082 | Chief Economist | 3 posts in 3 organisation(s) | CFTC; Council of Economic Advisers; Joint Economic Committee
-F083 | Chief Operating Officer | 3 posts in 3 organisation(s) [1 OPM-listed, no rate printed] | CIA; CBP; GAO
-F084 | Court Security Officer | 3 posts in 3 organisation(s) [1 ×N] | All 94 District Courts — Standard Structure; FISC; S.D.N.Y.
-F085 | Deputy Chief of Staff | 3 posts in 3 organisation(s) | Individual Representative Offices (435); Individual Senator Offices (100); Joint Committee on Taxation
-F086 | Director of Communications | 3 posts in 3 organisation(s) | Clerk of the House; CBO; Library of Congress
-F087 | Director of Finance | 3 posts in 3 organisation(s) | Chief Administrative Officer; Clerk of the House; Secretary of the Senate
-F088 | District Director | 3 posts in 3 organisation(s) [1 ×N] | District Offices (68); Individual Representative Offices (435); OFCCP
-F089 | Economist | 3 posts in 3 organisation(s) [3 ×N] | BLS; Council of Economic Advisers; FTC
-F090 | Regional Director — 10 Regions | 3 posts in 3 organisation(s) | EBSA; FHEO; PIH
-F091 | Regional Director — 12 Regional Offices | 3 posts in 3 organisation(s) | BIA; Census Bureau; OCR
-F092 | Staff Assistant | 3 posts in 3 organisation(s) [1 ×N] | Individual Representative Offices (435); Individual Senator Offices (100); White House Office
-F093 | Chief Human Resources Officer | 2 posts in 2 organisation(s) | AOUSC; USPS
-F094 | Chief Pretrial Services Officer | 2 posts in 2 organisation(s) | All 94 District Courts — Standard Structure; S.D.N.Y.
-F095 | CIO | 2 posts in 2 organisation(s) | FDIC; SEC
-F096 | Civil Engineer | 2 posts in 2 organisation(s) | BOR; NRCS
-F097 | Communications Director | 2 posts in 2 organisation(s) | Individual Representative Offices (435); Individual Senator Offices (100)
-F098 | Deputy District Director | 2 posts in 2 organisation(s) | District Offices (68); Individual Representative Offices (435)
-F099 | Deputy National Security Advisor | 2 posts in 2 organisation(s) [2 ×N] | National Security Council; White House Office
-F100 | Director — Division of Enforcement | 2 posts in 2 organisation(s) | CFTC; SEC
+F020 | Director of Public Affairs | 17 posts in 17 organisation(s) | 15 beneath The Cabinet — Executive Departments; CIA; GAO
+F021 | Foreign Service Officer | 16 posts in 16 organisation(s) [16 ×N] | 16 beneath Department of State
+F022 | Law Clerk | 16 posts in 16 organisation(s) [16 ×N] | 13 beneath U.S. Courts of Appeals (13 Circuits); All 94 District Courts — Standard Structure; S.D.N.Y.; U.S. Court of Federal Claims
+F023 | Clerk of Court | 15 posts in 15 organisation(s) | 13 beneath U.S. Courts of Appeals (13 Circuits); All 94 District Courts — Standard Structure; S.D.N.Y.
+F024 | Deputy CFO / Controller | 15 posts in 15 organisation(s) | 15 beneath The Cabinet — Executive Departments
+F025 | Deputy CIO | 15 posts in 15 organisation(s) | 15 beneath The Cabinet — Executive Departments
+F026 | Deputy General Counsel | 15 posts in 15 organisation(s) | 15 beneath The Cabinet — Executive Departments
+F027 | Deputy Inspector General | 15 posts in 15 organisation(s) | 15 beneath The Cabinet — Executive Departments
+F028 | Director of Legislative Affairs | 15 posts in 15 organisation(s) | 15 beneath The Cabinet — Executive Departments
+F029 | Diversity & Inclusion Officer | 15 posts in 15 organisation(s) | 15 beneath The Cabinet — Executive Departments
+F030 | Executive Secretary | 15 posts in 15 organisation(s) | 15 beneath The Cabinet — Executive Departments
+F031 | Archivist | 14 posts in 14 organisation(s) [14 ×N] | 14 beneath NARA
+F032 | Chief Human Capital Officer | 14 posts in 14 organisation(s) | 13 beneath The Cabinet — Executive Departments; GAO
+F033 | Director of Education & Public Programs | 14 posts in 14 organisation(s) | 14 beneath NARA
+F034 | Director of Human Resources | 14 posts in 14 organisation(s) | 10 beneath NASA Field Centers (10); Chief Administrative Officer; Clerk of the House; Office of Administration; Secretary of the Senate
+F035 | Museum Curator | 14 posts in 14 organisation(s) | 14 beneath NARA
+F036 | Staff Attorney | 14 posts in 14 organisation(s) [14 ×N] | 13 beneath U.S. Courts of Appeals (13 Circuits); FTC
+F037 | Supervisory Archivist | 14 posts in 14 organisation(s) | 14 beneath NARA
+F038 | Chief Staff Attorney | 13 posts in 13 organisation(s) | 13 beneath U.S. Courts of Appeals (13 Circuits)
+F039 | Circuit Executive | 13 posts in 13 organisation(s) | 13 beneath U.S. Courts of Appeals (13 Circuits)
+F040 | Circuit Judge | 13 posts in 13 organisation(s) [13 ×N] | 13 beneath U.S. Courts of Appeals (13 Circuits)
+F041 | Library Director | 13 posts in 13 organisation(s) | 13 beneath U.S. Courts of Appeals (13 Circuits)
+F042 | Chief Scientist | 11 posts in 11 organisation(s) | 10 beneath NASA Field Centers (10); NASA
+F043 | Chief Engineer | 10 posts in 10 organisation(s) | 10 beneath NASA Field Centers (10)
+F044 | Deputy Center Director | 10 posts in 10 organisation(s) | 10 beneath NASA Field Centers (10)
+F045 | Director of Safety & Mission Assurance | 10 posts in 10 organisation(s) | 10 beneath NASA Field Centers (10)
+F046 | Program Manager | 10 posts in 10 organisation(s) [10 ×N] | 10 beneath NASA Field Centers (10)
+F047 | Research Engineer / Scientist | 10 posts in 10 organisation(s) [10 ×N] | 10 beneath NASA Field Centers (10)
+F048 | Budget Examiner | 8 posts in 8 organisation(s) [8 ×N] | 8 beneath OMB
+F049 | Chief Counsel | 8 posts in 8 organisation(s) | 4 beneath Department of the Treasury; DEA; FHWA; FDA; NHTSA
+F050 | Deputy Administrator | 8 posts in 8 organisation(s) | CMS; FSA; FRA; FTA; FNA; MARAD; National Telecommunications and Information Administration; SAMHSA
+F051 | Deputy Assistant Director | 8 posts in 8 organisation(s) [2 OPM-listed, no rate printed] | 8 beneath NSF
+F052 | District Manager | 8 posts in 8 organisation(s) [1 ×N] | Districts (multiple) ×7; MSHA
+F053 | Program Associate Director | 8 posts in 8 organisation(s) [8 ×N] | 8 beneath OMB
+F054 | City Letter Carrier | 7 posts in 7 organisation(s) [7 ×N] | Districts (multiple) ×7
+F055 | Deputy Assistant Administrator | 7 posts in 7 organisation(s) | 7 beneath EPA
+F056 | Deputy Assistant Attorney General | 7 posts in 7 organisation(s) [7 ×N] | 7 beneath DOJ
+F057 | Director — Division | 7 posts in 7 organisation(s) [7 ×N] | 7 beneath EPA
+F058 | Environmental Scientist / Engineer | 7 posts in 7 organisation(s) [7 ×N] | 7 beneath EPA
+F059 | Mail Processing Clerk | 7 posts in 7 organisation(s) [7 ×N] | Districts (multiple) ×7
+F060 | Manager — Processing & Distribution Center | 7 posts in 7 organisation(s) | Districts (multiple) ×7
+F061 | Postmaster — Local Post Offices | 7 posts in 7 organisation(s) | Districts (multiple) ×7
+F062 | Rural Letter Carrier | 7 posts in 7 organisation(s) [7 ×N] | Districts (multiple) ×7
+F063 | Sales & Service Associate | 7 posts in 7 organisation(s) [7 ×N] | Districts (multiple) ×7
+F064 | Section Chief | 7 posts in 7 organisation(s) [7 ×N] | 7 beneath DOJ
+F065 | Supervisor Customer Services | 7 posts in 7 organisation(s) | Districts (multiple) ×7
+F066 | Trial Attorney / AUSA | 7 posts in 7 organisation(s) [7 ×N] | 7 beneath DOJ
+F067 | Clerk of the Court | 6 posts in 6 organisation(s) | 5 beneath Specialized Federal Courts; SCOTUS
+F068 | Case Officer / Analyst / Engineer | 5 posts in 5 organisation(s) [5 ×N] | 5 beneath CIA
+F069 | Chief, Regional/Functional Division | 5 posts in 5 organisation(s) [5 ×N] | 5 beneath CIA
+F070 | Deputy Assistant Secretary | 5 posts in 5 organisation(s) | ETA; OSHA; EERE; EM; FHEO
+F071 | Deputy Commissioner | 4 posts in 4 organisation(s) [1 OPM-listed, no rate printed] | BLS; Bureau of the Fiscal Service; CBP; FDA
+F072 | Regional Administrator — 10 Regions | 4 posts in 4 organisation(s) | CMS; FTA; OSHA; SBA
+F073 | Special Agent | 4 posts in 4 organisation(s) [4 ×N] | ATF; DEA; FBI; ICE
+F074 | Area Director | 3 posts in 3 organisation(s) [3 ×N] | ARS; APHIS; Office of Operations — Field Structure
+F075 | CFO | 3 posts in 3 organisation(s) | FDIC; SEC; U.S. Mint
+F076 | Chief Economist | 3 posts in 3 organisation(s) | CFTC; Council of Economic Advisers; Joint Economic Committee
+F077 | Chief Operating Officer | 3 posts in 3 organisation(s) [1 OPM-listed, no rate printed] | CIA; CBP; GAO
+F078 | Court Security Officer | 3 posts in 3 organisation(s) [1 ×N] | All 94 District Courts — Standard Structure; FISC; S.D.N.Y.
+F079 | Deputy Chief of Staff | 3 posts in 3 organisation(s) | Individual Representative Offices (435); Individual Senator Offices (100); Joint Committee on Taxation
+F080 | Director of Communications | 3 posts in 3 organisation(s) | Clerk of the House; CBO; Library of Congress
+F081 | Director of Finance | 3 posts in 3 organisation(s) | Chief Administrative Officer; Clerk of the House; Secretary of the Senate
+F082 | District Director | 3 posts in 3 organisation(s) [1 ×N] | District Offices (68); Individual Representative Offices (435); OFCCP
+F083 | Economist | 3 posts in 3 organisation(s) [3 ×N] | BLS; Council of Economic Advisers; FTC
+F084 | Regional Director — 10 Regions | 3 posts in 3 organisation(s) | EBSA; FHEO; PIH
+F085 | Regional Director — 12 Regional Offices | 3 posts in 3 organisation(s) | BIA; Census Bureau; OCR
+F086 | Staff Assistant | 3 posts in 3 organisation(s) [1 ×N] | Individual Representative Offices (435); Individual Senator Offices (100); White House Office
+F087 | Chief Human Resources Officer | 2 posts in 2 organisation(s) | AOUSC; USPS
+F088 | Chief Pretrial Services Officer | 2 posts in 2 organisation(s) | All 94 District Courts — Standard Structure; S.D.N.Y.
+F089 | CIO | 2 posts in 2 organisation(s) | FDIC; SEC
+F090 | Civil Engineer | 2 posts in 2 organisation(s) | BOR; NRCS
+F091 | Communications Director | 2 posts in 2 organisation(s) | Individual Representative Offices (435); Individual Senator Offices (100)
+F092 | Deputy District Director | 2 posts in 2 organisation(s) | District Offices (68); Individual Representative Offices (435)
+F093 | Deputy National Security Advisor | 2 posts in 2 organisation(s) [2 ×N] | National Security Council; White House Office
+F094 | Director — Division of Enforcement | 2 posts in 2 organisation(s) | CFTC; SEC
+F095 | Division Administrator — 52 State Divisions | 2 posts in 2 organisation(s) | FHWA; FMCSA
+F096 | Executive Director | 2 posts in 2 organisation(s) [1 OPM-listed, no rate printed] | CFTC; Joint Economic Committee
+F097 | Legislative Correspondent | 2 posts in 2 organisation(s) | Individual Representative Offices (435); Individual Senator Offices (100)
+F098 | Legislative Director | 2 posts in 2 organisation(s) | Individual Representative Offices (435); Individual Senator Offices (100)
+F099 | Minority Staff Director, Appropriations | 2 posts in 2 organisation(s) | House Committee on Appropriations; Senate Committee on Appropriations
+F100 | Minority Staff Director, Armed Services | 2 posts in 2 organisation(s) | House Committee on Armed Services; Senate Committee on Armed Services
 
 After the table is complete for every family code, and only then:
 
@@ -894,67 +895,7 @@ organisations; this lists the node ids.
 - `exec-ind-misc-tennessee-valley-authority-tva-deputy-director-vice-chair` — Deputy Director / Vice Chair — under Tennessee Valley Authority (TVA)
 - `exec-ind-misc-u-s-international-development-finance-corp-dfc-deputy-director-vice-chair` — Deputy Director / Vice Chair — under U.S. International Development Finance Corporation
 
-### F020 — Chief Research Officer / Chief Science Officer (17)
-
-- `exec-dept-doe-ames-national-laboratory-chief-research-officer-chief-science-officer` — Chief Research Officer / Chief Science Officer — under Ames National Laboratory
-- `exec-dept-doe-argonne-national-laboratory-chief-research-officer-chief-science-officer` — Chief Research Officer / Chief Science Officer — under Argonne National Laboratory
-- `exec-dept-doe-brookhaven-national-laboratory-chief-research-officer-chief-science-officer` — Chief Research Officer / Chief Science Officer — under Brookhaven National Laboratory
-- `exec-dept-doe-fermi-national-accelerator-laboratory-chief-research-officer-chief-science-officer` — Chief Research Officer / Chief Science Officer — under Fermi National Accelerator Laboratory
-- `exec-dept-doe-idaho-national-laboratory-chief-research-officer-chief-science-officer` — Chief Research Officer / Chief Science Officer — under Idaho National Laboratory
-- `exec-dept-doe-lawrence-berkeley-national-laboratory-chief-research-officer-chief-science-officer` — Chief Research Officer / Chief Science Officer — under Lawrence Berkeley National Laboratory
-- `exec-dept-doe-lawrence-livermore-national-laboratory-chief-research-officer-chief-science-officer` — Chief Research Officer / Chief Science Officer — under Lawrence Livermore National Laboratory
-- `exec-dept-doe-los-alamos-national-laboratory-chief-research-officer-chief-science-officer` — Chief Research Officer / Chief Science Officer — under Los Alamos National Laboratory
-- `exec-dept-doe-national-energy-technology-laboratory-chief-research-officer-chief-science-officer` — Chief Research Officer / Chief Science Officer — under National Energy Technology Laboratory
-- `exec-dept-doe-national-renewable-energy-laboratory-chief-research-officer-chief-science-officer` — Chief Research Officer / Chief Science Officer — under National Laboratory of the Rockies (NLR)
-- `exec-dept-doe-oak-ridge-national-laboratory-chief-research-officer-chief-science-officer` — Chief Research Officer / Chief Science Officer — under Oak Ridge National Laboratory
-- `exec-dept-doe-pacific-northwest-national-laboratory-chief-research-officer-chief-science-officer` — Chief Research Officer / Chief Science Officer — under Pacific Northwest National Laboratory
-- `exec-dept-doe-princeton-plasma-physics-laboratory-chief-research-officer-chief-science-officer` — Chief Research Officer / Chief Science Officer — under Princeton Plasma Physics Laboratory
-- `exec-dept-doe-sandia-national-laboratories-chief-research-officer-chief-science-officer` — Chief Research Officer / Chief Science Officer — under Sandia National Laboratories
-- `exec-dept-doe-savannah-river-national-laboratory-chief-research-officer-chief-science-officer` — Chief Research Officer / Chief Science Officer — under Savannah River National Laboratory
-- `exec-dept-doe-slac-national-accelerator-laboratory-chief-research-officer-chief-science-officer` — Chief Research Officer / Chief Science Officer — under SLAC National Accelerator Laboratory
-- `exec-dept-doe-thomas-jefferson-national-accelerator-facility-chief-research-officer-chief-science-officer` — Chief Research Officer / Chief Science Officer — under Thomas Jefferson National Accelerator Facility
-
-### F021 — Department Manager (17)
-
-- `exec-dept-doe-ames-national-laboratory-department-manager-multiple` — Department Manager (×multiple) — under Ames National Laboratory — ×N
-- `exec-dept-doe-argonne-national-laboratory-department-manager-multiple` — Department Manager (×multiple) — under Argonne National Laboratory — ×N
-- `exec-dept-doe-brookhaven-national-laboratory-department-manager-multiple` — Department Manager (×multiple) — under Brookhaven National Laboratory — ×N
-- `exec-dept-doe-fermi-national-accelerator-laboratory-department-manager-multiple` — Department Manager (×multiple) — under Fermi National Accelerator Laboratory — ×N
-- `exec-dept-doe-idaho-national-laboratory-department-manager-multiple` — Department Manager (×multiple) — under Idaho National Laboratory — ×N
-- `exec-dept-doe-lawrence-berkeley-national-laboratory-department-manager-multiple` — Department Manager (×multiple) — under Lawrence Berkeley National Laboratory — ×N
-- `exec-dept-doe-lawrence-livermore-national-laboratory-department-manager-multiple` — Department Manager (×multiple) — under Lawrence Livermore National Laboratory — ×N
-- `exec-dept-doe-los-alamos-national-laboratory-department-manager-multiple` — Department Manager (×multiple) — under Los Alamos National Laboratory — ×N
-- `exec-dept-doe-national-energy-technology-laboratory-department-manager-multiple` — Department Manager (×multiple) — under National Energy Technology Laboratory — ×N
-- `exec-dept-doe-national-renewable-energy-laboratory-department-manager-multiple` — Department Manager (×multiple) — under National Laboratory of the Rockies (NLR) — ×N
-- `exec-dept-doe-oak-ridge-national-laboratory-department-manager-multiple` — Department Manager (×multiple) — under Oak Ridge National Laboratory — ×N
-- `exec-dept-doe-pacific-northwest-national-laboratory-department-manager-multiple` — Department Manager (×multiple) — under Pacific Northwest National Laboratory — ×N
-- `exec-dept-doe-princeton-plasma-physics-laboratory-department-manager-multiple` — Department Manager (×multiple) — under Princeton Plasma Physics Laboratory — ×N
-- `exec-dept-doe-sandia-national-laboratories-department-manager-multiple` — Department Manager (×multiple) — under Sandia National Laboratories — ×N
-- `exec-dept-doe-savannah-river-national-laboratory-department-manager-multiple` — Department Manager (×multiple) — under Savannah River National Laboratory — ×N
-- `exec-dept-doe-slac-national-accelerator-laboratory-department-manager-multiple` — Department Manager (×multiple) — under SLAC National Accelerator Laboratory — ×N
-- `exec-dept-doe-thomas-jefferson-national-accelerator-facility-department-manager-multiple` — Department Manager (×multiple) — under Thomas Jefferson National Accelerator Facility — ×N
-
-### F022 — Deputy Laboratory Director (17)
-
-- `exec-dept-doe-ames-national-laboratory-deputy-laboratory-director` — Deputy Laboratory Director — under Ames National Laboratory
-- `exec-dept-doe-argonne-national-laboratory-deputy-laboratory-director` — Deputy Laboratory Director — under Argonne National Laboratory
-- `exec-dept-doe-brookhaven-national-laboratory-deputy-laboratory-director` — Deputy Laboratory Director — under Brookhaven National Laboratory
-- `exec-dept-doe-fermi-national-accelerator-laboratory-deputy-laboratory-director` — Deputy Laboratory Director — under Fermi National Accelerator Laboratory
-- `exec-dept-doe-idaho-national-laboratory-deputy-laboratory-director` — Deputy Laboratory Director — under Idaho National Laboratory
-- `exec-dept-doe-lawrence-berkeley-national-laboratory-deputy-laboratory-director` — Deputy Laboratory Director — under Lawrence Berkeley National Laboratory
-- `exec-dept-doe-lawrence-livermore-national-laboratory-deputy-laboratory-director` — Deputy Laboratory Director — under Lawrence Livermore National Laboratory
-- `exec-dept-doe-los-alamos-national-laboratory-deputy-laboratory-director` — Deputy Laboratory Director — under Los Alamos National Laboratory
-- `exec-dept-doe-national-energy-technology-laboratory-deputy-laboratory-director` — Deputy Laboratory Director — under National Energy Technology Laboratory
-- `exec-dept-doe-national-renewable-energy-laboratory-deputy-laboratory-director` — Deputy Laboratory Director — under National Laboratory of the Rockies (NLR)
-- `exec-dept-doe-oak-ridge-national-laboratory-deputy-laboratory-director` — Deputy Laboratory Director — under Oak Ridge National Laboratory
-- `exec-dept-doe-pacific-northwest-national-laboratory-deputy-laboratory-director` — Deputy Laboratory Director — under Pacific Northwest National Laboratory
-- `exec-dept-doe-princeton-plasma-physics-laboratory-deputy-laboratory-director` — Deputy Laboratory Director — under Princeton Plasma Physics Laboratory
-- `exec-dept-doe-sandia-national-laboratories-deputy-laboratory-director` — Deputy Laboratory Director — under Sandia National Laboratories
-- `exec-dept-doe-savannah-river-national-laboratory-deputy-laboratory-director` — Deputy Laboratory Director — under Savannah River National Laboratory
-- `exec-dept-doe-slac-national-accelerator-laboratory-deputy-laboratory-director` — Deputy Laboratory Director — under SLAC National Accelerator Laboratory
-- `exec-dept-doe-thomas-jefferson-national-accelerator-facility-deputy-laboratory-director` — Deputy Laboratory Director — under Thomas Jefferson National Accelerator Facility
-
-### F023 — Director of Public Affairs (17)
+### F020 — Director of Public Affairs (17)
 
 - `exec-dept-defense-director-of-public-affairs` — Director of Public Affairs — under Department of Defense (DoD)
 - `exec-dept-dhs-director-of-public-affairs` — Director of Public Affairs — under Department of Homeland Security (DHS)
@@ -974,67 +915,7 @@ organisations; this lists the node ids.
 - `exec-ind-cia-director-of-public-affairs` — Director of Public Affairs — under Central Intelligence Agency (CIA)
 - `leg-support-gao-director-of-public-affairs` — Director of Public Affairs — under Government Accountability Office (GAO)
 
-### F024 — Division Director (17)
-
-- `exec-dept-doe-ames-national-laboratory-division-director-multiple` — Division Director (×multiple) — under Ames National Laboratory — ×N
-- `exec-dept-doe-argonne-national-laboratory-division-director-multiple` — Division Director (×multiple) — under Argonne National Laboratory — ×N
-- `exec-dept-doe-brookhaven-national-laboratory-division-director-multiple` — Division Director (×multiple) — under Brookhaven National Laboratory — ×N
-- `exec-dept-doe-fermi-national-accelerator-laboratory-division-director-multiple` — Division Director (×multiple) — under Fermi National Accelerator Laboratory — ×N
-- `exec-dept-doe-idaho-national-laboratory-division-director-multiple` — Division Director (×multiple) — under Idaho National Laboratory — ×N
-- `exec-dept-doe-lawrence-berkeley-national-laboratory-division-director-multiple` — Division Director (×multiple) — under Lawrence Berkeley National Laboratory — ×N
-- `exec-dept-doe-lawrence-livermore-national-laboratory-division-director-multiple` — Division Director (×multiple) — under Lawrence Livermore National Laboratory — ×N
-- `exec-dept-doe-los-alamos-national-laboratory-division-director-multiple` — Division Director (×multiple) — under Los Alamos National Laboratory — ×N
-- `exec-dept-doe-national-energy-technology-laboratory-division-director-multiple` — Division Director (×multiple) — under National Energy Technology Laboratory — ×N
-- `exec-dept-doe-national-renewable-energy-laboratory-division-director-multiple` — Division Director (×multiple) — under National Laboratory of the Rockies (NLR) — ×N
-- `exec-dept-doe-oak-ridge-national-laboratory-division-director-multiple` — Division Director (×multiple) — under Oak Ridge National Laboratory — ×N
-- `exec-dept-doe-pacific-northwest-national-laboratory-division-director-multiple` — Division Director (×multiple) — under Pacific Northwest National Laboratory — ×N
-- `exec-dept-doe-princeton-plasma-physics-laboratory-division-director-multiple` — Division Director (×multiple) — under Princeton Plasma Physics Laboratory — ×N
-- `exec-dept-doe-sandia-national-laboratories-division-director-multiple` — Division Director (×multiple) — under Sandia National Laboratories — ×N
-- `exec-dept-doe-savannah-river-national-laboratory-division-director-multiple` — Division Director (×multiple) — under Savannah River National Laboratory — ×N
-- `exec-dept-doe-slac-national-accelerator-laboratory-division-director-multiple` — Division Director (×multiple) — under SLAC National Accelerator Laboratory — ×N
-- `exec-dept-doe-thomas-jefferson-national-accelerator-facility-division-director-multiple` — Division Director (×multiple) — under Thomas Jefferson National Accelerator Facility — ×N
-
-### F025 — Postdoctoral Researcher (17)
-
-- `exec-dept-doe-ames-national-laboratory-postdoctoral-researcher-multiple` — Postdoctoral Researcher (×multiple) — under Ames National Laboratory — ×N
-- `exec-dept-doe-argonne-national-laboratory-postdoctoral-researcher-multiple` — Postdoctoral Researcher (×multiple) — under Argonne National Laboratory — ×N
-- `exec-dept-doe-brookhaven-national-laboratory-postdoctoral-researcher-multiple` — Postdoctoral Researcher (×multiple) — under Brookhaven National Laboratory — ×N
-- `exec-dept-doe-fermi-national-accelerator-laboratory-postdoctoral-researcher-multiple` — Postdoctoral Researcher (×multiple) — under Fermi National Accelerator Laboratory — ×N
-- `exec-dept-doe-idaho-national-laboratory-postdoctoral-researcher-multiple` — Postdoctoral Researcher (×multiple) — under Idaho National Laboratory — ×N
-- `exec-dept-doe-lawrence-berkeley-national-laboratory-postdoctoral-researcher-multiple` — Postdoctoral Researcher (×multiple) — under Lawrence Berkeley National Laboratory — ×N
-- `exec-dept-doe-lawrence-livermore-national-laboratory-postdoctoral-researcher-multiple` — Postdoctoral Researcher (×multiple) — under Lawrence Livermore National Laboratory — ×N
-- `exec-dept-doe-los-alamos-national-laboratory-postdoctoral-researcher-multiple` — Postdoctoral Researcher (×multiple) — under Los Alamos National Laboratory — ×N
-- `exec-dept-doe-national-energy-technology-laboratory-postdoctoral-researcher-multiple` — Postdoctoral Researcher (×multiple) — under National Energy Technology Laboratory — ×N
-- `exec-dept-doe-national-renewable-energy-laboratory-postdoctoral-researcher-multiple` — Postdoctoral Researcher (×multiple) — under National Laboratory of the Rockies (NLR) — ×N
-- `exec-dept-doe-oak-ridge-national-laboratory-postdoctoral-researcher-multiple` — Postdoctoral Researcher (×multiple) — under Oak Ridge National Laboratory — ×N
-- `exec-dept-doe-pacific-northwest-national-laboratory-postdoctoral-researcher-multiple` — Postdoctoral Researcher (×multiple) — under Pacific Northwest National Laboratory — ×N
-- `exec-dept-doe-princeton-plasma-physics-laboratory-postdoctoral-researcher-multiple` — Postdoctoral Researcher (×multiple) — under Princeton Plasma Physics Laboratory — ×N
-- `exec-dept-doe-sandia-national-laboratories-postdoctoral-researcher-multiple` — Postdoctoral Researcher (×multiple) — under Sandia National Laboratories — ×N
-- `exec-dept-doe-savannah-river-national-laboratory-postdoctoral-researcher-multiple` — Postdoctoral Researcher (×multiple) — under Savannah River National Laboratory — ×N
-- `exec-dept-doe-slac-national-accelerator-laboratory-postdoctoral-researcher-multiple` — Postdoctoral Researcher (×multiple) — under SLAC National Accelerator Laboratory — ×N
-- `exec-dept-doe-thomas-jefferson-national-accelerator-facility-postdoctoral-researcher-multiple` — Postdoctoral Researcher (×multiple) — under Thomas Jefferson National Accelerator Facility — ×N
-
-### F026 — Principal Scientist / Researcher (17)
-
-- `exec-dept-doe-ames-national-laboratory-principal-scientist-researcher-multiple` — Principal Scientist / Researcher (×multiple) — under Ames National Laboratory — ×N
-- `exec-dept-doe-argonne-national-laboratory-principal-scientist-researcher-multiple` — Principal Scientist / Researcher (×multiple) — under Argonne National Laboratory — ×N
-- `exec-dept-doe-brookhaven-national-laboratory-principal-scientist-researcher-multiple` — Principal Scientist / Researcher (×multiple) — under Brookhaven National Laboratory — ×N
-- `exec-dept-doe-fermi-national-accelerator-laboratory-principal-scientist-researcher-multiple` — Principal Scientist / Researcher (×multiple) — under Fermi National Accelerator Laboratory — ×N
-- `exec-dept-doe-idaho-national-laboratory-principal-scientist-researcher-multiple` — Principal Scientist / Researcher (×multiple) — under Idaho National Laboratory — ×N
-- `exec-dept-doe-lawrence-berkeley-national-laboratory-principal-scientist-researcher-multiple` — Principal Scientist / Researcher (×multiple) — under Lawrence Berkeley National Laboratory — ×N
-- `exec-dept-doe-lawrence-livermore-national-laboratory-principal-scientist-researcher-multiple` — Principal Scientist / Researcher (×multiple) — under Lawrence Livermore National Laboratory — ×N
-- `exec-dept-doe-los-alamos-national-laboratory-principal-scientist-researcher-multiple` — Principal Scientist / Researcher (×multiple) — under Los Alamos National Laboratory — ×N
-- `exec-dept-doe-national-energy-technology-laboratory-principal-scientist-researcher-multiple` — Principal Scientist / Researcher (×multiple) — under National Energy Technology Laboratory — ×N
-- `exec-dept-doe-national-renewable-energy-laboratory-principal-scientist-researcher-multiple` — Principal Scientist / Researcher (×multiple) — under National Laboratory of the Rockies (NLR) — ×N
-- `exec-dept-doe-oak-ridge-national-laboratory-principal-scientist-researcher-multiple` — Principal Scientist / Researcher (×multiple) — under Oak Ridge National Laboratory — ×N
-- `exec-dept-doe-pacific-northwest-national-laboratory-principal-scientist-researcher-multiple` — Principal Scientist / Researcher (×multiple) — under Pacific Northwest National Laboratory — ×N
-- `exec-dept-doe-princeton-plasma-physics-laboratory-principal-scientist-researcher-multiple` — Principal Scientist / Researcher (×multiple) — under Princeton Plasma Physics Laboratory — ×N
-- `exec-dept-doe-sandia-national-laboratories-principal-scientist-researcher-multiple` — Principal Scientist / Researcher (×multiple) — under Sandia National Laboratories — ×N
-- `exec-dept-doe-savannah-river-national-laboratory-principal-scientist-researcher-multiple` — Principal Scientist / Researcher (×multiple) — under Savannah River National Laboratory — ×N
-- `exec-dept-doe-slac-national-accelerator-laboratory-principal-scientist-researcher-multiple` — Principal Scientist / Researcher (×multiple) — under SLAC National Accelerator Laboratory — ×N
-- `exec-dept-doe-thomas-jefferson-national-accelerator-facility-principal-scientist-researcher-multiple` — Principal Scientist / Researcher (×multiple) — under Thomas Jefferson National Accelerator Facility — ×N
-
-### F027 — Foreign Service Officer (16)
+### F021 — Foreign Service Officer (16)
 
 - `exec-dept-state-bureau-of-african-affairs-foreign-service-officer-multiple` — Foreign Service Officer (×multiple) — under Bureau of African Affairs — ×N
 - `exec-dept-state-bureau-of-arms-control-verification-compliance-foreign-service-officer-multiple` — Foreign Service Officer (×multiple) — under Bureau of Arms Control, Verification & Compliance — ×N
@@ -1053,7 +934,7 @@ organisations; this lists the node ids.
 - `exec-dept-state-office-of-the-chief-of-protocol-foreign-service-officer-multiple` — Foreign Service Officer (×multiple) — under Office of the Chief of Protocol — ×N
 - `exec-dept-state-u-s-mission-to-the-united-nations-foreign-service-officer-multiple` — Foreign Service Officer (×multiple) — under U.S. Mission to the United Nations — ×N
 
-### F028 — Law Clerk (16)
+### F022 — Law Clerk (16)
 
 - `jud-circuit-10th-circuit-law-clerk-3-per-active-judge` — Law Clerk (×3 per active judge) — under Tenth Circuit — ×N
 - `jud-circuit-11th-circuit-law-clerk-3-per-active-judge` — Law Clerk (×3 per active judge) — under Eleventh Circuit — ×N
@@ -1072,7 +953,7 @@ organisations; this lists the node ids.
 - `jud-district-structure-law-clerk-2-4-per-judge` — Law Clerk (×2-4 per judge) — under All 94 District Courts — Standard Structure — ×N
 - `jud-specialized-claims-law-clerk-2-per-judge` — Law Clerk (×2 per judge) — under U.S. Court of Federal Claims — ×N
 
-### F029 — Clerk of Court (15)
+### F023 — Clerk of Court (15)
 
 - `jud-circuit-10th-circuit-clerk-of-court` — Clerk of Court — under Tenth Circuit
 - `jud-circuit-11th-circuit-clerk-of-court` — Clerk of Court — under Eleventh Circuit
@@ -1090,7 +971,7 @@ organisations; this lists the node ids.
 - `jud-district-sdny-clerk-of-court` — Clerk of Court — under Southern District of New York (S.D.N.Y.)
 - `jud-district-structure-clerk-of-court` — Clerk of Court — under All 94 District Courts — Standard Structure
 
-### F030 — Deputy CFO / Controller (15)
+### F024 — Deputy CFO / Controller (15)
 
 - `exec-dept-defense-deputy-cfo-controller` — Deputy CFO / Controller — under Department of Defense (DoD)
 - `exec-dept-dhs-deputy-cfo-controller` — Deputy CFO / Controller — under Department of Homeland Security (DHS)
@@ -1108,7 +989,7 @@ organisations; this lists the node ids.
 - `exec-dept-usda-deputy-cfo-controller` — Deputy CFO / Controller — under Department of Agriculture (USDA)
 - `exec-dept-va-deputy-cfo-controller` — Deputy CFO / Controller — under Department of Veterans Affairs (VA)
 
-### F031 — Deputy CIO (15)
+### F025 — Deputy CIO (15)
 
 - `exec-dept-defense-deputy-cio` — Deputy CIO — under Department of Defense (DoD)
 - `exec-dept-dhs-deputy-cio` — Deputy CIO — under Department of Homeland Security (DHS)
@@ -1126,7 +1007,7 @@ organisations; this lists the node ids.
 - `exec-dept-usda-deputy-cio` — Deputy CIO — under Department of Agriculture (USDA)
 - `exec-dept-va-deputy-cio` — Deputy CIO — under Department of Veterans Affairs (VA)
 
-### F032 — Deputy General Counsel (15)
+### F026 — Deputy General Counsel (15)
 
 - `exec-dept-defense-deputy-general-counsel` — Deputy General Counsel — under Department of Defense (DoD)
 - `exec-dept-dhs-deputy-general-counsel` — Deputy General Counsel — under Department of Homeland Security (DHS)
@@ -1144,7 +1025,7 @@ organisations; this lists the node ids.
 - `exec-dept-usda-deputy-general-counsel` — Deputy General Counsel — under Department of Agriculture (USDA)
 - `exec-dept-va-deputy-general-counsel` — Deputy General Counsel — under Department of Veterans Affairs (VA)
 
-### F033 — Deputy Inspector General (15)
+### F027 — Deputy Inspector General (15)
 
 - `exec-dept-defense-deputy-inspector-general` — Deputy Inspector General — under Department of Defense (DoD)
 - `exec-dept-dhs-deputy-inspector-general` — Deputy Inspector General — under Department of Homeland Security (DHS)
@@ -1162,7 +1043,7 @@ organisations; this lists the node ids.
 - `exec-dept-usda-deputy-inspector-general` — Deputy Inspector General — under Department of Agriculture (USDA)
 - `exec-dept-va-deputy-inspector-general` — Deputy Inspector General — under Department of Veterans Affairs (VA)
 
-### F034 — Director of Legislative Affairs (15)
+### F028 — Director of Legislative Affairs (15)
 
 - `exec-dept-defense-director-of-legislative-affairs` — Director of Legislative Affairs — under Department of Defense (DoD)
 - `exec-dept-dhs-director-of-legislative-affairs` — Director of Legislative Affairs — under Department of Homeland Security (DHS)
@@ -1180,7 +1061,7 @@ organisations; this lists the node ids.
 - `exec-dept-usda-director-of-legislative-affairs` — Director of Legislative Affairs — under Department of Agriculture (USDA)
 - `exec-dept-va-director-of-legislative-affairs` — Director of Legislative Affairs — under Department of Veterans Affairs (VA)
 
-### F035 — Diversity & Inclusion Officer (15)
+### F029 — Diversity & Inclusion Officer (15)
 
 - `exec-dept-defense-diversity-inclusion-officer` — Diversity & Inclusion Officer — under Department of Defense (DoD)
 - `exec-dept-dhs-diversity-inclusion-officer` — Diversity & Inclusion Officer — under Department of Homeland Security (DHS)
@@ -1198,7 +1079,7 @@ organisations; this lists the node ids.
 - `exec-dept-usda-diversity-inclusion-officer` — Diversity & Inclusion Officer — under Department of Agriculture (USDA)
 - `exec-dept-va-diversity-inclusion-officer` — Diversity & Inclusion Officer — under Department of Veterans Affairs (VA)
 
-### F036 — Executive Secretary (15)
+### F030 — Executive Secretary (15)
 
 - `exec-dept-defense-executive-secretary` — Executive Secretary — under Department of Defense (DoD)
 - `exec-dept-dhs-executive-secretary` — Executive Secretary — under Department of Homeland Security (DHS)
@@ -1216,7 +1097,7 @@ organisations; this lists the node ids.
 - `exec-dept-usda-executive-secretary` — Executive Secretary — under Department of Agriculture (USDA)
 - `exec-dept-va-executive-secretary` — Executive Secretary — under Department of Veterans Affairs (VA)
 
-### F037 — Archivist (14)
+### F031 — Archivist (14)
 
 - `exec-ind-nara-barack-obama-presidential-library-chicago-il-archivist-multiple` — Archivist (×multiple) — under Barack Obama Presidential Library (Chicago, IL) — ×N
 - `exec-ind-nara-dwight-d-eisenhower-presidential-library-abilene-ks-archivist-multiple` — Archivist (×multiple) — under Dwight D. Eisenhower Presidential Library (Abilene, KS) — ×N
@@ -1233,7 +1114,7 @@ organisations; this lists the node ids.
 - `exec-ind-nara-ronald-reagan-presidential-library-simi-valley-ca-archivist-multiple` — Archivist (×multiple) — under Ronald Reagan Presidential Library (Simi Valley, CA) — ×N
 - `exec-ind-nara-william-j-clinton-presidential-library-little-rock-ar-archivist-multiple` — Archivist (×multiple) — under William J. Clinton Presidential Library (Little Rock, AR) — ×N
 
-### F038 — Chief Human Capital Officer (14)
+### F032 — Chief Human Capital Officer (14)
 
 - `exec-dept-defense-chief-human-capital-officer` — Chief Human Capital Officer — under Department of Defense (DoD)
 - `exec-dept-dhs-chief-human-capital-officer` — Chief Human Capital Officer — under Department of Homeland Security (DHS)
@@ -1250,7 +1131,7 @@ organisations; this lists the node ids.
 - `exec-dept-va-chief-human-capital-officer` — Chief Human Capital Officer — under Department of Veterans Affairs (VA)
 - `leg-support-gao-chief-human-capital-officer` — Chief Human Capital Officer — under Government Accountability Office (GAO)
 
-### F039 — Director of Education & Public Programs (14)
+### F033 — Director of Education & Public Programs (14)
 
 - `exec-ind-nara-barack-obama-presidential-library-chicago-il-director-of-education-public-programs` — Director of Education & Public Programs — under Barack Obama Presidential Library (Chicago, IL)
 - `exec-ind-nara-dwight-d-eisenhower-presidential-library-abilene-ks-director-of-education-public-programs` — Director of Education & Public Programs — under Dwight D. Eisenhower Presidential Library (Abilene, KS)
@@ -1267,7 +1148,7 @@ organisations; this lists the node ids.
 - `exec-ind-nara-ronald-reagan-presidential-library-simi-valley-ca-director-of-education-public-programs` — Director of Education & Public Programs — under Ronald Reagan Presidential Library (Simi Valley, CA)
 - `exec-ind-nara-william-j-clinton-presidential-library-little-rock-ar-director-of-education-public-programs` — Director of Education & Public Programs — under William J. Clinton Presidential Library (Little Rock, AR)
 
-### F040 — Director of Human Resources (14)
+### F034 — Director of Human Resources (14)
 
 - `exec-eop-onadm-director-of-human-resources` — Director of Human Resources — under Office of Administration
 - `exec-ind-nasa-ames-research-center-arc-director-of-human-resources` — Director of Human Resources — under Ames Research Center (ARC)
@@ -1284,7 +1165,7 @@ organisations; this lists the node ids.
 - `leg-house-clerk-director-of-human-resources` — Director of Human Resources — under Clerk of the House
 - `leg-senate-admin-secretary-director-of-human-resources` — Director of Human Resources — under Secretary of the Senate
 
-### F041 — Museum Curator (14)
+### F035 — Museum Curator (14)
 
 - `exec-ind-nara-barack-obama-presidential-library-chicago-il-museum-curator` — Museum Curator — under Barack Obama Presidential Library (Chicago, IL)
 - `exec-ind-nara-dwight-d-eisenhower-presidential-library-abilene-ks-museum-curator` — Museum Curator — under Dwight D. Eisenhower Presidential Library (Abilene, KS)
@@ -1301,7 +1182,7 @@ organisations; this lists the node ids.
 - `exec-ind-nara-ronald-reagan-presidential-library-simi-valley-ca-museum-curator` — Museum Curator — under Ronald Reagan Presidential Library (Simi Valley, CA)
 - `exec-ind-nara-william-j-clinton-presidential-library-little-rock-ar-museum-curator` — Museum Curator — under William J. Clinton Presidential Library (Little Rock, AR)
 
-### F042 — Staff Attorney (14)
+### F036 — Staff Attorney (14)
 
 - `exec-regulatory-ftc-staff-attorney-multiple` — Staff Attorney (×multiple) — under Federal Trade Commission (FTC) — ×N
 - `jud-circuit-10th-circuit-staff-attorney-multiple` — Staff Attorney (×multiple) — under Tenth Circuit — ×N
@@ -1318,7 +1199,7 @@ organisations; this lists the node ids.
 - `jud-circuit-d-c-circuit-staff-attorney-multiple` — Staff Attorney (×multiple) — under U.S. Court of Appeals for the D.C. Circuit — ×N
 - `jud-circuit-federal-circuit-staff-attorney-multiple` — Staff Attorney (×multiple) — under U.S. Court of Appeals for the Federal Circuit — ×N
 
-### F043 — Supervisory Archivist (14)
+### F037 — Supervisory Archivist (14)
 
 - `exec-ind-nara-barack-obama-presidential-library-chicago-il-supervisory-archivist` — Supervisory Archivist — under Barack Obama Presidential Library (Chicago, IL)
 - `exec-ind-nara-dwight-d-eisenhower-presidential-library-abilene-ks-supervisory-archivist` — Supervisory Archivist — under Dwight D. Eisenhower Presidential Library (Abilene, KS)
@@ -1335,7 +1216,7 @@ organisations; this lists the node ids.
 - `exec-ind-nara-ronald-reagan-presidential-library-simi-valley-ca-supervisory-archivist` — Supervisory Archivist — under Ronald Reagan Presidential Library (Simi Valley, CA)
 - `exec-ind-nara-william-j-clinton-presidential-library-little-rock-ar-supervisory-archivist` — Supervisory Archivist — under William J. Clinton Presidential Library (Little Rock, AR)
 
-### F044 — Chief Staff Attorney (13)
+### F038 — Chief Staff Attorney (13)
 
 - `jud-circuit-10th-circuit-chief-staff-attorney` — Chief Staff Attorney — under Tenth Circuit
 - `jud-circuit-11th-circuit-chief-staff-attorney` — Chief Staff Attorney — under Eleventh Circuit
@@ -1351,7 +1232,7 @@ organisations; this lists the node ids.
 - `jud-circuit-d-c-circuit-chief-staff-attorney` — Chief Staff Attorney — under U.S. Court of Appeals for the D.C. Circuit
 - `jud-circuit-federal-circuit-chief-staff-attorney` — Chief Staff Attorney — under U.S. Court of Appeals for the Federal Circuit
 
-### F045 — Circuit Executive (13)
+### F039 — Circuit Executive (13)
 
 - `jud-circuit-10th-circuit-circuit-executive` — Circuit Executive — under Tenth Circuit
 - `jud-circuit-11th-circuit-circuit-executive` — Circuit Executive — under Eleventh Circuit
@@ -1367,7 +1248,7 @@ organisations; this lists the node ids.
 - `jud-circuit-d-c-circuit-circuit-executive` — Circuit Executive — under U.S. Court of Appeals for the D.C. Circuit
 - `jud-circuit-federal-circuit-circuit-executive` — Circuit Executive — under U.S. Court of Appeals for the Federal Circuit
 
-### F046 — Circuit Judge (13)
+### F040 — Circuit Judge (13)
 
 - `jud-circuit-10th-circuit-circuit-judge-11-active-senior-judges` — Circuit Judge (×11 active + senior judges) — under Tenth Circuit — ×N
 - `jud-circuit-11th-circuit-circuit-judge-11-active-senior-judges` — Circuit Judge (×11 active + senior judges) — under Eleventh Circuit — ×N
@@ -1383,7 +1264,7 @@ organisations; this lists the node ids.
 - `jud-circuit-d-c-circuit-circuit-judge-10-active-senior-judges` — Circuit Judge (×10 active + senior judges) — under U.S. Court of Appeals for the D.C. Circuit — ×N
 - `jud-circuit-federal-circuit-circuit-judge-11-active-senior-judges` — Circuit Judge (×11 active + senior judges) — under U.S. Court of Appeals for the Federal Circuit — ×N
 
-### F047 — Library Director (13)
+### F041 — Library Director (13)
 
 - `jud-circuit-10th-circuit-library-director` — Library Director — under Tenth Circuit
 - `jud-circuit-11th-circuit-library-director` — Library Director — under Eleventh Circuit
@@ -1399,7 +1280,7 @@ organisations; this lists the node ids.
 - `jud-circuit-d-c-circuit-library-director` — Library Director — under U.S. Court of Appeals for the D.C. Circuit
 - `jud-circuit-federal-circuit-library-director` — Library Director — under U.S. Court of Appeals for the Federal Circuit
 
-### F048 — Chief Scientist (11)
+### F042 — Chief Scientist (11)
 
 - `exec-ind-nasa-ames-research-center-arc-chief-scientist` — Chief Scientist — under Ames Research Center (ARC)
 - `exec-ind-nasa-armstrong-flight-research-center-afrc-chief-scientist` — Chief Scientist — under Armstrong Flight Research Center (AFRC)
@@ -1413,7 +1294,7 @@ organisations; this lists the node ids.
 - `exec-ind-nasa-marshall-space-flight-center-msfc-chief-scientist` — Chief Scientist — under Marshall Space Flight Center (MSFC)
 - `exec-ind-nasa-stennis-space-center-ssc-chief-scientist` — Chief Scientist — under Stennis Space Center (SSC)
 
-### F049 — Chief Engineer (10)
+### F043 — Chief Engineer (10)
 
 - `exec-ind-nasa-ames-research-center-arc-chief-engineer` — Chief Engineer — under Ames Research Center (ARC)
 - `exec-ind-nasa-armstrong-flight-research-center-afrc-chief-engineer` — Chief Engineer — under Armstrong Flight Research Center (AFRC)
@@ -1426,7 +1307,7 @@ organisations; this lists the node ids.
 - `exec-ind-nasa-marshall-space-flight-center-msfc-chief-engineer` — Chief Engineer — under Marshall Space Flight Center (MSFC)
 - `exec-ind-nasa-stennis-space-center-ssc-chief-engineer` — Chief Engineer — under Stennis Space Center (SSC)
 
-### F050 — Deputy Center Director (10)
+### F044 — Deputy Center Director (10)
 
 - `exec-ind-nasa-ames-research-center-arc-deputy-center-director` — Deputy Center Director — under Ames Research Center (ARC)
 - `exec-ind-nasa-armstrong-flight-research-center-afrc-deputy-center-director` — Deputy Center Director — under Armstrong Flight Research Center (AFRC)
@@ -1439,7 +1320,7 @@ organisations; this lists the node ids.
 - `exec-ind-nasa-marshall-space-flight-center-msfc-deputy-center-director` — Deputy Center Director — under Marshall Space Flight Center (MSFC)
 - `exec-ind-nasa-stennis-space-center-ssc-deputy-center-director` — Deputy Center Director — under Stennis Space Center (SSC)
 
-### F051 — Director of Safety & Mission Assurance (10)
+### F045 — Director of Safety & Mission Assurance (10)
 
 - `exec-ind-nasa-ames-research-center-arc-director-of-safety-mission-assurance` — Director of Safety & Mission Assurance — under Ames Research Center (ARC)
 - `exec-ind-nasa-armstrong-flight-research-center-afrc-director-of-safety-mission-assurance` — Director of Safety & Mission Assurance — under Armstrong Flight Research Center (AFRC)
@@ -1452,7 +1333,7 @@ organisations; this lists the node ids.
 - `exec-ind-nasa-marshall-space-flight-center-msfc-director-of-safety-mission-assurance` — Director of Safety & Mission Assurance — under Marshall Space Flight Center (MSFC)
 - `exec-ind-nasa-stennis-space-center-ssc-director-of-safety-mission-assurance` — Director of Safety & Mission Assurance — under Stennis Space Center (SSC)
 
-### F052 — Program Manager (10)
+### F046 — Program Manager (10)
 
 - `exec-ind-nasa-ames-research-center-arc-program-manager-multiple` — Program Manager (×multiple) — under Ames Research Center (ARC) — ×N
 - `exec-ind-nasa-armstrong-flight-research-center-afrc-program-manager-multiple` — Program Manager (×multiple) — under Armstrong Flight Research Center (AFRC) — ×N
@@ -1465,7 +1346,7 @@ organisations; this lists the node ids.
 - `exec-ind-nasa-marshall-space-flight-center-msfc-program-manager-multiple` — Program Manager (×multiple) — under Marshall Space Flight Center (MSFC) — ×N
 - `exec-ind-nasa-stennis-space-center-ssc-program-manager-multiple` — Program Manager (×multiple) — under Stennis Space Center (SSC) — ×N
 
-### F053 — Research Engineer / Scientist (10)
+### F047 — Research Engineer / Scientist (10)
 
 - `exec-ind-nasa-ames-research-center-arc-research-engineer-scientist-multiple` — Research Engineer / Scientist (×multiple) — under Ames Research Center (ARC) — ×N
 - `exec-ind-nasa-armstrong-flight-research-center-afrc-research-engineer-scientist-multiple` — Research Engineer / Scientist (×multiple) — under Armstrong Flight Research Center (AFRC) — ×N
@@ -1478,7 +1359,7 @@ organisations; this lists the node ids.
 - `exec-ind-nasa-marshall-space-flight-center-msfc-research-engineer-scientist-multiple` — Research Engineer / Scientist (×multiple) — under Marshall Space Flight Center (MSFC) — ×N
 - `exec-ind-nasa-stennis-space-center-ssc-research-engineer-scientist-multiple` — Research Engineer / Scientist (×multiple) — under Stennis Space Center (SSC) — ×N
 
-### F054 — Budget Examiner (8)
+### F048 — Budget Examiner (8)
 
 - `exec-eop-omb-budget-review-division-budget-examiner-multiple` — Budget Examiner (×multiple) — under Budget Review Division — ×N
 - `exec-eop-omb-economic-policy-division-budget-examiner-multiple` — Budget Examiner (×multiple) — under Economic Policy Division — ×N
@@ -1489,7 +1370,7 @@ organisations; this lists the node ids.
 - `exec-eop-omb-oira-office-of-information-regulatory-affairs-budget-examiner-multiple` — Budget Examiner (×multiple) — under Office of Information and Regulatory Affairs (OIRA) — ×N
 - `exec-eop-omb-performance-personnel-management-budget-examiner-multiple` — Budget Examiner (×multiple) — under Performance & Personnel Management — ×N
 
-### F055 — Chief Counsel (8)
+### F049 — Chief Counsel (8)
 
 - `exec-dept-doj-dea-chief-counsel` — Chief Counsel — under Drug Enforcement Administration (DEA)
 - `exec-dept-dot-fhwa-chief-counsel` — Chief Counsel — under Federal Highway Administration (FHWA)
@@ -1500,7 +1381,7 @@ organisations; this lists the node ids.
 - `exec-dept-treasury-ofac-chief-counsel` — Chief Counsel — under Office of Foreign Assets Control (OFAC)
 - `exec-dept-treasury-ttb-chief-counsel` — Chief Counsel — under Alcohol & Tobacco Tax & Trade Bureau (TTB)
 
-### F056 — Deputy Administrator (8)
+### F050 — Deputy Administrator (8)
 
 - `exec-dept-doc-ntia-deputy-administrator` — Deputy Administrator — under National Telecommunications and Information Administration
 - `exec-dept-dot-fra-deputy-administrator` — Deputy Administrator — under Federal Railroad Administration (FRA)
@@ -1511,7 +1392,7 @@ organisations; this lists the node ids.
 - `exec-dept-usda-fns-deputy-administrator` — Deputy Administrator — under Food and Nutrition Administration (FNA)
 - `exec-dept-usda-fsa-deputy-administrator` — Deputy Administrator — under Farm Service Agency (FSA)
 
-### F057 — Deputy Assistant Director (8)
+### F051 — Deputy Assistant Director (8)
 
 - `exec-ind-nsf-biological-sciences-bio-deputy-assistant-director` — Deputy Assistant Director — under Biological Sciences (BIO)
 - `exec-ind-nsf-computer-information-science-engineering-cise-deputy-assistant-director` — Deputy Assistant Director — under Computer & Information Science & Engineering (CISE)
@@ -1522,7 +1403,7 @@ organisations; this lists the node ids.
 - `exec-ind-nsf-social-behavioral-economic-sciences-sbe-deputy-assistant-director` — Deputy Assistant Director — under Social, Behavioral & Economic Sciences (SBE)
 - `exec-ind-nsf-technology-innovation-partnerships-tip-deputy-assistant-director` — Deputy Assistant Director — under Technology, Innovation & Partnerships (TIP)
 
-### F058 — District Manager (8)
+### F052 — District Manager (8)
 
 - `exec-dept-dol-msha-district-manager-12` — District Manager (×12) — under Mine Safety & Health Administration (MSHA) — ×N
 - `exec-ind-usps-capital-metro-area-districts-district-manager` — District Manager — under Districts (multiple)
@@ -1533,7 +1414,7 @@ organisations; this lists the node ids.
 - `exec-ind-usps-southern-area-districts-district-manager` — District Manager — under Districts (multiple)
 - `exec-ind-usps-western-area-districts-district-manager` — District Manager — under Districts (multiple)
 
-### F059 — Program Associate Director (8)
+### F053 — Program Associate Director (8)
 
 - `exec-eop-omb-budget-review-division-program-associate-director-multiple` — Program Associate Director (×multiple) — under Budget Review Division — ×N
 - `exec-eop-omb-economic-policy-division-program-associate-director-multiple` — Program Associate Director (×multiple) — under Economic Policy Division — ×N
@@ -1544,7 +1425,7 @@ organisations; this lists the node ids.
 - `exec-eop-omb-oira-office-of-information-regulatory-affairs-program-associate-director-multiple` — Program Associate Director (×multiple) — under Office of Information and Regulatory Affairs (OIRA) — ×N
 - `exec-eop-omb-performance-personnel-management-program-associate-director-multiple` — Program Associate Director (×multiple) — under Performance & Personnel Management — ×N
 
-### F060 — City Letter Carrier (7)
+### F054 — City Letter Carrier (7)
 
 - `exec-ind-usps-capital-metro-area-districts-city-letter-carrier-multiple` — City Letter Carrier (×multiple) — under Districts (multiple) — ×N
 - `exec-ind-usps-eastern-area-districts-city-letter-carrier-multiple` — City Letter Carrier (×multiple) — under Districts (multiple) — ×N
@@ -1554,7 +1435,7 @@ organisations; this lists the node ids.
 - `exec-ind-usps-southern-area-districts-city-letter-carrier-multiple` — City Letter Carrier (×multiple) — under Districts (multiple) — ×N
 - `exec-ind-usps-western-area-districts-city-letter-carrier-multiple` — City Letter Carrier (×multiple) — under Districts (multiple) — ×N
 
-### F061 — Deputy Assistant Administrator (7)
+### F055 — Deputy Assistant Administrator (7)
 
 - `exec-ind-epa-office-of-air-radiation-oar-deputy-assistant-administrator` — Deputy Assistant Administrator — under Office of Air & Radiation (OAR)
 - `exec-ind-epa-office-of-chemical-safety-pollution-prevention-ocspp-deputy-assistant-administrator` — Deputy Assistant Administrator — under Office of Chemical Safety & Pollution Prevention (OCSPP)
@@ -1564,7 +1445,7 @@ organisations; this lists the node ids.
 - `exec-ind-epa-office-of-research-development-ord-deputy-assistant-administrator` — Deputy Assistant Administrator — under Office of Research & Development (ORD)
 - `exec-ind-epa-office-of-water-ow-deputy-assistant-administrator` — Deputy Assistant Administrator — under Office of Water (OW)
 
-### F062 — Deputy Assistant Attorney General (7)
+### F056 — Deputy Assistant Attorney General (7)
 
 - `exec-dept-doj-div-antitrust-deputy-assistant-attorney-general-3-5` — Deputy Assistant Attorney General (×3-5) — under Antitrust Division — ×N
 - `exec-dept-doj-div-civil-deputy-assistant-attorney-general-3-5` — Deputy Assistant Attorney General (×3-5) — under Civil Division — ×N
@@ -1574,7 +1455,7 @@ organisations; this lists the node ids.
 - `exec-dept-doj-div-nsd-deputy-assistant-attorney-general-3-5` — Deputy Assistant Attorney General (×3-5) — under National Security Division — ×N
 - `exec-dept-doj-div-tax-deputy-assistant-attorney-general-3-5` — Deputy Assistant Attorney General (×3-5) — under Tax Division — ×N
 
-### F063 — Director — Division (7)
+### F057 — Director — Division (7)
 
 - `exec-ind-epa-office-of-air-radiation-oar-director-division-multiple` — Director — Division (×multiple) — under Office of Air & Radiation (OAR) — ×N
 - `exec-ind-epa-office-of-chemical-safety-pollution-prevention-ocspp-director-division-multiple` — Director — Division (×multiple) — under Office of Chemical Safety & Pollution Prevention (OCSPP) — ×N
@@ -1584,7 +1465,7 @@ organisations; this lists the node ids.
 - `exec-ind-epa-office-of-research-development-ord-director-division-multiple` — Director — Division (×multiple) — under Office of Research & Development (ORD) — ×N
 - `exec-ind-epa-office-of-water-ow-director-division-multiple` — Director — Division (×multiple) — under Office of Water (OW) — ×N
 
-### F064 — Environmental Scientist / Engineer (7)
+### F058 — Environmental Scientist / Engineer (7)
 
 - `exec-ind-epa-office-of-air-radiation-oar-environmental-scientist-engineer-multiple` — Environmental Scientist / Engineer (×multiple) — under Office of Air & Radiation (OAR) — ×N
 - `exec-ind-epa-office-of-chemical-safety-pollution-prevention-ocspp-environmental-scientist-engineer-multiple` — Environmental Scientist / Engineer (×multiple) — under Office of Chemical Safety & Pollution Prevention (OCSPP) — ×N
@@ -1594,7 +1475,7 @@ organisations; this lists the node ids.
 - `exec-ind-epa-office-of-research-development-ord-environmental-scientist-engineer-multiple` — Environmental Scientist / Engineer (×multiple) — under Office of Research & Development (ORD) — ×N
 - `exec-ind-epa-office-of-water-ow-environmental-scientist-engineer-multiple` — Environmental Scientist / Engineer (×multiple) — under Office of Water (OW) — ×N
 
-### F065 — Mail Processing Clerk (7)
+### F059 — Mail Processing Clerk (7)
 
 - `exec-ind-usps-capital-metro-area-districts-mail-processing-clerk-multiple` — Mail Processing Clerk (×multiple) — under Districts (multiple) — ×N
 - `exec-ind-usps-eastern-area-districts-mail-processing-clerk-multiple` — Mail Processing Clerk (×multiple) — under Districts (multiple) — ×N
@@ -1604,7 +1485,7 @@ organisations; this lists the node ids.
 - `exec-ind-usps-southern-area-districts-mail-processing-clerk-multiple` — Mail Processing Clerk (×multiple) — under Districts (multiple) — ×N
 - `exec-ind-usps-western-area-districts-mail-processing-clerk-multiple` — Mail Processing Clerk (×multiple) — under Districts (multiple) — ×N
 
-### F066 — Manager — Processing & Distribution Center (7)
+### F060 — Manager — Processing & Distribution Center (7)
 
 - `exec-ind-usps-capital-metro-area-districts-manager-processing-distribution-center` — Manager — Processing & Distribution Center — under Districts (multiple)
 - `exec-ind-usps-eastern-area-districts-manager-processing-distribution-center` — Manager — Processing & Distribution Center — under Districts (multiple)
@@ -1614,7 +1495,7 @@ organisations; this lists the node ids.
 - `exec-ind-usps-southern-area-districts-manager-processing-distribution-center` — Manager — Processing & Distribution Center — under Districts (multiple)
 - `exec-ind-usps-western-area-districts-manager-processing-distribution-center` — Manager — Processing & Distribution Center — under Districts (multiple)
 
-### F067 — Postmaster — Local Post Offices (7)
+### F061 — Postmaster — Local Post Offices (7)
 
 - `exec-ind-usps-capital-metro-area-districts-postmaster-local-post-offices` — Postmaster — Local Post Offices — under Districts (multiple)
 - `exec-ind-usps-eastern-area-districts-postmaster-local-post-offices` — Postmaster — Local Post Offices — under Districts (multiple)
@@ -1624,7 +1505,7 @@ organisations; this lists the node ids.
 - `exec-ind-usps-southern-area-districts-postmaster-local-post-offices` — Postmaster — Local Post Offices — under Districts (multiple)
 - `exec-ind-usps-western-area-districts-postmaster-local-post-offices` — Postmaster — Local Post Offices — under Districts (multiple)
 
-### F068 — Rural Letter Carrier (7)
+### F062 — Rural Letter Carrier (7)
 
 - `exec-ind-usps-capital-metro-area-districts-rural-letter-carrier-multiple` — Rural Letter Carrier (×multiple) — under Districts (multiple) — ×N
 - `exec-ind-usps-eastern-area-districts-rural-letter-carrier-multiple` — Rural Letter Carrier (×multiple) — under Districts (multiple) — ×N
@@ -1634,7 +1515,7 @@ organisations; this lists the node ids.
 - `exec-ind-usps-southern-area-districts-rural-letter-carrier-multiple` — Rural Letter Carrier (×multiple) — under Districts (multiple) — ×N
 - `exec-ind-usps-western-area-districts-rural-letter-carrier-multiple` — Rural Letter Carrier (×multiple) — under Districts (multiple) — ×N
 
-### F069 — Sales & Service Associate (7)
+### F063 — Sales & Service Associate (7)
 
 - `exec-ind-usps-capital-metro-area-districts-sales-service-associate-multiple` — Sales & Service Associate (×multiple) — under Districts (multiple) — ×N
 - `exec-ind-usps-eastern-area-districts-sales-service-associate-multiple` — Sales & Service Associate (×multiple) — under Districts (multiple) — ×N
@@ -1644,7 +1525,7 @@ organisations; this lists the node ids.
 - `exec-ind-usps-southern-area-districts-sales-service-associate-multiple` — Sales & Service Associate (×multiple) — under Districts (multiple) — ×N
 - `exec-ind-usps-western-area-districts-sales-service-associate-multiple` — Sales & Service Associate (×multiple) — under Districts (multiple) — ×N
 
-### F070 — Section Chief (7)
+### F064 — Section Chief (7)
 
 - `exec-dept-doj-div-antitrust-section-chief-multiple` — Section Chief (×multiple) — under Antitrust Division — ×N
 - `exec-dept-doj-div-civil-rights-section-chief-multiple` — Section Chief (×multiple) — under Civil Rights Division — ×N
@@ -1654,7 +1535,7 @@ organisations; this lists the node ids.
 - `exec-dept-doj-div-nsd-section-chief-multiple` — Section Chief (×multiple) — under National Security Division — ×N
 - `exec-dept-doj-div-tax-section-chief-multiple` — Section Chief (×multiple) — under Tax Division — ×N
 
-### F071 — Supervisor Customer Services (7)
+### F065 — Supervisor Customer Services (7)
 
 - `exec-ind-usps-capital-metro-area-districts-supervisor-customer-services` — Supervisor Customer Services — under Districts (multiple)
 - `exec-ind-usps-eastern-area-districts-supervisor-customer-services` — Supervisor Customer Services — under Districts (multiple)
@@ -1664,7 +1545,7 @@ organisations; this lists the node ids.
 - `exec-ind-usps-southern-area-districts-supervisor-customer-services` — Supervisor Customer Services — under Districts (multiple)
 - `exec-ind-usps-western-area-districts-supervisor-customer-services` — Supervisor Customer Services — under Districts (multiple)
 
-### F072 — Trial Attorney / AUSA (7)
+### F066 — Trial Attorney / AUSA (7)
 
 - `exec-dept-doj-div-antitrust-trial-attorney-ausa-multiple` — Trial Attorney / AUSA (×multiple) — under Antitrust Division — ×N
 - `exec-dept-doj-div-civil-rights-trial-attorney-ausa-multiple` — Trial Attorney / AUSA (×multiple) — under Civil Rights Division — ×N
@@ -1674,7 +1555,7 @@ organisations; this lists the node ids.
 - `exec-dept-doj-div-nsd-trial-attorney-ausa-multiple` — Trial Attorney / AUSA (×multiple) — under National Security Division — ×N
 - `exec-dept-doj-div-tax-trial-attorney-ausa-multiple` — Trial Attorney / AUSA (×multiple) — under Tax Division — ×N
 
-### F073 — Clerk of the Court (6)
+### F067 — Clerk of the Court (6)
 
 - `jud-scotus-clerk-of-the-court` — Clerk of the Court — under Supreme Court of the United States (SCOTUS)
 - `jud-specialized-caaf-clerk-of-the-court` — Clerk of the Court — under Court of Appeals for the Armed Forces (CAAF)
@@ -1683,7 +1564,7 @@ organisations; this lists the node ids.
 - `jud-specialized-intl-trade-clerk-of-the-court` — Clerk of the Court — under U.S. Court of International Trade (CIT)
 - `jud-specialized-tax-clerk-of-the-court` — Clerk of the Court — under U.S. Tax Court
 
-### F074 — Case Officer / Analyst / Engineer (5)
+### F068 — Case Officer / Analyst / Engineer (5)
 
 - `exec-ind-cia-directorate-of-analysis-da-case-officer-analyst-engineer-multiple` — Case Officer / Analyst / Engineer (×multiple) — under Directorate of Analysis (DA) — ×N
 - `exec-ind-cia-directorate-of-digital-innovation-ddi-case-officer-analyst-engineer-multiple` — Case Officer / Analyst / Engineer (×multiple) — under Directorate of Digital Innovation (DDI) — ×N
@@ -1691,7 +1572,7 @@ organisations; this lists the node ids.
 - `exec-ind-cia-directorate-of-science-technology-dst-case-officer-analyst-engineer-multiple` — Case Officer / Analyst / Engineer (×multiple) — under Directorate of Science & Technology (DS&T) — ×N
 - `exec-ind-cia-directorate-of-support-ds-case-officer-analyst-engineer-multiple` — Case Officer / Analyst / Engineer (×multiple) — under Directorate of Support (DS) — ×N
 
-### F075 — Chief, Regional/Functional Division (5)
+### F069 — Chief, Regional/Functional Division (5)
 
 - `exec-ind-cia-directorate-of-analysis-da-chief-regional-functional-division-multiple` — Chief, Regional/Functional Division (×multiple) — under Directorate of Analysis (DA) — ×N
 - `exec-ind-cia-directorate-of-digital-innovation-ddi-chief-regional-functional-division-multiple` — Chief, Regional/Functional Division (×multiple) — under Directorate of Digital Innovation (DDI) — ×N
@@ -1699,7 +1580,7 @@ organisations; this lists the node ids.
 - `exec-ind-cia-directorate-of-science-technology-dst-chief-regional-functional-division-multiple` — Chief, Regional/Functional Division (×multiple) — under Directorate of Science & Technology (DS&T) — ×N
 - `exec-ind-cia-directorate-of-support-ds-chief-regional-functional-division-multiple` — Chief, Regional/Functional Division (×multiple) — under Directorate of Support (DS) — ×N
 
-### F076 — Deputy Assistant Secretary (5)
+### F070 — Deputy Assistant Secretary (5)
 
 - `exec-dept-doe-eere-deputy-assistant-secretary` — Deputy Assistant Secretary — under Office of Energy Efficiency & Renewable Energy (EERE)
 - `exec-dept-doe-em-deputy-assistant-secretary` — Deputy Assistant Secretary — under Office of Environmental Management (EM)
@@ -1707,142 +1588,172 @@ organisations; this lists the node ids.
 - `exec-dept-dol-osha-deputy-assistant-secretary` — Deputy Assistant Secretary — under Occupational Safety & Health Administration (OSHA)
 - `exec-dept-hud-fheo-deputy-assistant-secretary` — Deputy Assistant Secretary — under Office of Fair Housing & Equal Opportunity (FHEO)
 
-### F077 — Deputy Commissioner (4)
+### F071 — Deputy Commissioner (4)
 
 - `exec-dept-dhs-cbp-deputy-commissioner` — Deputy Commissioner — under Customs & Border Protection (CBP) — OPM-listed
 - `exec-dept-dol-bls-deputy-commissioner` — Deputy Commissioner — under Bureau of Labor Statistics (BLS)
 - `exec-dept-hhs-fda-deputy-commissioner` — Deputy Commissioner — under Food & Drug Administration (FDA)
 - `exec-dept-treasury-fiscal-deputy-commissioner` — Deputy Commissioner — under Bureau of the Fiscal Service
 
-### F078 — Regional Administrator — 10 Regions (4)
+### F072 — Regional Administrator — 10 Regions (4)
 
 - `exec-dept-dol-osha-regional-administrator-10-regions` — Regional Administrator — 10 Regions — under Occupational Safety & Health Administration (OSHA)
 - `exec-dept-dot-fta-regional-administrator-10-regions` — Regional Administrator — 10 Regions — under Federal Transit Administration (FTA)
 - `exec-dept-hhs-cms-regional-administrator-10-regions` — Regional Administrator — 10 Regions — under Centers for Medicare & Medicaid Services (CMS)
 - `exec-ind-sba-regional-administrator-10-regions` — Regional Administrator — 10 Regions — under Small Business Administration (SBA)
 
-### F079 — Special Agent (4)
+### F073 — Special Agent (4)
 
 - `exec-dept-dhs-ice-special-agent-multiple` — Special Agent (×multiple) — under Immigration & Customs Enforcement (ICE) — ×N
 - `exec-dept-doj-atf-special-agent-multiple` — Special Agent (×multiple) — under Bureau of Alcohol, Tobacco, Firearms & Explosives (ATF) — ×N
 - `exec-dept-doj-dea-special-agent-multiple` — Special Agent (×multiple) — under Drug Enforcement Administration (DEA) — ×N
 - `exec-dept-doj-fbi-special-agent-sa-multiple` — Special Agent (SA) (×multiple) — under Federal Bureau of Investigation (FBI) — ×N
 
-### F080 — Area Director (3)
+### F074 — Area Director (3)
 
 - `exec-dept-usda-aphis-area-director-multiple` — Area Director (×multiple) — under Animal & Plant Health Inspection Service (APHIS) — ×N
 - `exec-dept-usda-ars-area-director-8-areas` — Area Director (×8 Areas) — under Agricultural Research Service (ARS) — ×N
 - `exec-ind-ssa-field-ops-area-director-multiple-per-region` — Area Director (×multiple per region) — under Office of Operations — Field Structure — ×N
 
-### F081 — CFO (3)
+### F075 — CFO (3)
 
 - `exec-dept-treasury-mint-cfo` — CFO — under U.S. Mint
 - `exec-regulatory-fdic-cfo` — CFO — under Federal Deposit Insurance Corporation (FDIC)
 - `exec-regulatory-sec-cfo` — CFO — under Securities & Exchange Commission (SEC)
 
-### F082 — Chief Economist (3)
+### F076 — Chief Economist (3)
 
 - `exec-eop-cea-chief-economist` — Chief Economist — under Council of Economic Advisers
 - `exec-regulatory-cftc-chief-economist` — Chief Economist — under Commodity Futures Trading Commission (CFTC)
 - `leg-joint-econ-chief-economist` — Chief Economist — under Joint Economic Committee
 
-### F083 — Chief Operating Officer (3)
+### F077 — Chief Operating Officer (3)
 
 - `exec-dept-dhs-cbp-chief-operating-officer` — Chief Operating Officer — under Customs & Border Protection (CBP) — OPM-listed
 - `exec-ind-cia-chief-operating-officer-coo` — Chief Operating Officer (COO) — under Central Intelligence Agency (CIA)
 - `leg-support-gao-chief-operating-officer` — Chief Operating Officer — under Government Accountability Office (GAO)
 
-### F084 — Court Security Officer (3)
+### F078 — Court Security Officer (3)
 
 - `jud-district-sdny-court-security-officer-multiple` — Court Security Officer (×multiple) — under Southern District of New York (S.D.N.Y.) — ×N
 - `jud-district-structure-court-security-officer-cso` — Court Security Officer (CSO) — under All 94 District Courts — Standard Structure
 - `jud-specialized-fisc-court-security-officer` — Court Security Officer — under Foreign Intelligence Surveillance Court (FISC)
 
-### F085 — Deputy Chief of Staff (3)
+### F079 — Deputy Chief of Staff (3)
 
 - `leg-house-offices-deputy-chief-of-staff` — Deputy Chief of Staff — under Individual Representative Offices (435)
 - `leg-joint-tax-deputy-chief-of-staff` — Deputy Chief of Staff — under Joint Committee on Taxation
 - `leg-senate-offices-deputy-chief-of-staff` — Deputy Chief of Staff — under Individual Senator Offices (100)
 
-### F086 — Director of Communications (3)
+### F080 — Director of Communications (3)
 
 - `leg-house-clerk-director-of-communications` — Director of Communications — under Clerk of the House
 - `leg-support-cbo-director-of-communications` — Director of Communications — under Congressional Budget Office (CBO)
 - `leg-support-loc-director-of-communications` — Director of Communications — under Library of Congress
 
-### F087 — Director of Finance (3)
+### F081 — Director of Finance (3)
 
 - `leg-house-cao-director-of-finance` — Director of Finance — under Chief Administrative Officer
 - `leg-house-clerk-director-of-finance` — Director of Finance — under Clerk of the House
 - `leg-senate-admin-secretary-director-of-finance` — Director of Finance — under Secretary of the Senate
 
-### F088 — District Director (3)
+### F082 — District Director (3)
 
 - `exec-dept-dol-ofccp-district-director-multiple` — District Director (×multiple) — under Office of Federal Contract Compliance Programs (OFCCP) — ×N
 - `exec-ind-sba-districts-district-director` — District Director — under District Offices (68)
 - `leg-house-offices-district-director` — District Director — under Individual Representative Offices (435)
 
-### F089 — Economist (3)
+### F083 — Economist (3)
 
 - `exec-dept-dol-bls-economist-multiple` — Economist (×multiple) — under Bureau of Labor Statistics (BLS) — ×N
 - `exec-eop-cea-economist-multiple` — Economist (×multiple) — under Council of Economic Advisers — ×N
 - `exec-regulatory-ftc-economist-multiple` — Economist (×multiple) — under Federal Trade Commission (FTC) — ×N
 
-### F090 — Regional Director — 10 Regions (3)
+### F084 — Regional Director — 10 Regions (3)
 
 - `exec-dept-dol-ebsa-regional-director-10-regions` — Regional Director — 10 Regions — under Employee Benefits Security Administration (EBSA)
 - `exec-dept-hud-fheo-regional-director-10-regions` — Regional Director — 10 Regions — under Office of Fair Housing & Equal Opportunity (FHEO)
 - `exec-dept-hud-pih-regional-director-10-regions` — Regional Director — 10 Regions — under Office of Public & Indian Housing (PIH)
 
-### F091 — Regional Director — 12 Regional Offices (3)
+### F085 — Regional Director — 12 Regional Offices (3)
 
 - `exec-dept-doc-census-regional-director-12-regional-offices` — Regional Director — 12 Regional Offices — under Census Bureau
 - `exec-dept-doi-bia-regional-director-12-regional-offices` — Regional Director — 12 Regional Offices — under Bureau of Indian Affairs (BIA)
 - `exec-dept-ed-ocr-regional-director-12-regional-offices` — Regional Director — 12 Regional Offices — under Office for Civil Rights (OCR)
 
-### F092 — Staff Assistant (3)
+### F086 — Staff Assistant (3)
 
 - `exec-eop-who-staff-assistant-15` — Staff Assistant (×15) — under White House Office — ×N
 - `leg-house-offices-staff-assistant` — Staff Assistant — under Individual Representative Offices (435)
 - `leg-senate-offices-staff-assistant` — Staff Assistant — under Individual Senator Offices (100)
 
-### F093 — Chief Human Resources Officer (2)
+### F087 — Chief Human Resources Officer (2)
 
 - `exec-ind-usps-chief-human-resources-officer` — Chief Human Resources Officer — under U.S. Postal Service (USPS)
 - `jud-support-aousc-chief-human-resources-officer` — Chief Human Resources Officer — under Administrative Office of U.S. Courts (AOUSC)
 
-### F094 — Chief Pretrial Services Officer (2)
+### F088 — Chief Pretrial Services Officer (2)
 
 - `jud-district-sdny-chief-pretrial-services-officer` — Chief Pretrial Services Officer — under Southern District of New York (S.D.N.Y.)
 - `jud-district-structure-chief-pretrial-services-officer` — Chief Pretrial Services Officer — under All 94 District Courts — Standard Structure
 
-### F095 — CIO (2)
+### F089 — CIO (2)
 
 - `exec-regulatory-fdic-cio` — CIO — under Federal Deposit Insurance Corporation (FDIC)
 - `exec-regulatory-sec-cio` — CIO — under Securities & Exchange Commission (SEC)
 
-### F096 — Civil Engineer (2)
+### F090 — Civil Engineer (2)
 
 - `exec-dept-doi-bor-civil-engineer` — Civil Engineer — under Bureau of Reclamation (BOR)
 - `exec-dept-usda-nrcs-civil-engineer` — Civil Engineer — under Natural Resources Conservation Service (NRCS)
 
-### F097 — Communications Director (2)
+### F091 — Communications Director (2)
 
 - `leg-house-offices-communications-director` — Communications Director — under Individual Representative Offices (435)
 - `leg-senate-offices-communications-director` — Communications Director — under Individual Senator Offices (100)
 
-### F098 — Deputy District Director (2)
+### F092 — Deputy District Director (2)
 
 - `exec-ind-sba-districts-deputy-district-director` — Deputy District Director — under District Offices (68)
 - `leg-house-offices-deputy-district-director` — Deputy District Director — under Individual Representative Offices (435)
 
-### F099 — Deputy National Security Advisor (2)
+### F093 — Deputy National Security Advisor (2)
 
 - `exec-eop-nsc-deputy-national-security-advisor-2` — Deputy National Security Advisor (×2) — under National Security Council — ×N
 - `exec-eop-who-deputy-national-security-advisor-2` — Deputy National Security Advisor (×2) — under White House Office — ×N
 
-### F100 — Director — Division of Enforcement (2)
+### F094 — Director — Division of Enforcement (2)
 
 - `exec-regulatory-cftc-director-division-of-enforcement` — Director — Division of Enforcement — under Commodity Futures Trading Commission (CFTC)
 - `exec-regulatory-sec-director-division-of-enforcement` — Director — Division of Enforcement — under Securities & Exchange Commission (SEC)
+
+### F095 — Division Administrator — 52 State Divisions (2)
+
+- `exec-dept-dot-fhwa-division-administrator-52-state-divisions` — Division Administrator — 52 State Divisions — under Federal Highway Administration (FHWA)
+- `exec-dept-dot-fmcsa-division-administrator-52-state-divisions` — Division Administrator — 52 State Divisions — under Federal Motor Carrier Safety Admin (FMCSA)
+
+### F096 — Executive Director (2)
+
+- `exec-regulatory-cftc-executive-director` — Executive Director — under Commodity Futures Trading Commission (CFTC) — OPM-listed
+- `leg-joint-econ-executive-director` — Executive Director — under Joint Economic Committee
+
+### F097 — Legislative Correspondent (2)
+
+- `leg-house-offices-legislative-correspondent` — Legislative Correspondent — under Individual Representative Offices (435)
+- `leg-senate-offices-legislative-correspondent` — Legislative Correspondent — under Individual Senator Offices (100)
+
+### F098 — Legislative Director (2)
+
+- `leg-house-offices-legislative-director` — Legislative Director — under Individual Representative Offices (435)
+- `leg-senate-offices-legislative-director` — Legislative Director — under Individual Senator Offices (100)
+
+### F099 — Minority Staff Director, Appropriations (2)
+
+- `leg-house-cmte-appropriations-minority-staff-director-appropriations` — Minority Staff Director, Appropriations — under House Committee on Appropriations
+- `leg-senate-cmte-appropriations-minority-staff-director-appropriations` — Minority Staff Director, Appropriations — under Senate Committee on Appropriations
+
+### F100 — Minority Staff Director, Armed Services (2)
+
+- `leg-house-cmte-armed-services-minority-staff-director-armed-services` — Minority Staff Director, Armed Services — under House Committee on Armed Services
+- `leg-senate-cmte-armed-services-minority-staff-director-armed-services` — Minority Staff Director, Armed Services — under Senate Committee on Armed Services
 

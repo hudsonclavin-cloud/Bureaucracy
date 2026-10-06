@@ -13,9 +13,10 @@ same list in the same run.
 
 | reason | count | what it means |
 |---|---|---|
-| `unreached` | 2,232 | no source this project has read names the title at all. Not a coverage gap somebody has not got to: no pay document in the repository names this title under this organisation, so nothing could have reached it. |
-| `multiplicity` | 678 | the node states a multiplicity (×N) and no claim that holds for every holder has reached it. Since 2026-09-23 a claim that holds for each holder by its own terms IS published on such a node with a `holders` block -- a tier or parity rate paid to every judge of the tier, a band every holder is within, or a roster listing every holder at one rate -- and 43 such nodes carry one. What stays refused is an incumbency-shaped claim (one listing's level, one row of the current export), because that is one appointment's figure and not the group's. For these nodes no office-rate claim has reached them at all. Knowing which pay system governs the title is still useful -- it is what would let the graph carry the schedule rather than a rate -- so these are listed and asked about. |
+| `unreached` | 2,184 | no source this project has read names the title at all. Not a coverage gap somebody has not got to: no pay document in the repository names this title under this organisation, so nothing could have reached it. |
+| `multiplicity` | 614 | the node states a multiplicity (×N) and no claim that holds for every holder has reached it. Since 2026-09-23 a claim that holds for each holder by its own terms IS published on such a node with a `holders` block -- a tier or parity rate paid to every judge of the tier, a band every holder is within, or a roster listing every holder at one rate -- and 43 such nodes carry one. What stays refused is an incumbency-shaped claim (one listing's level, one row of the current export), because that is one appointment's figure and not the group's. For these nodes no office-rate claim has reached them at all. Knowing which pay system governs the title is still useful -- it is what would let the graph carry the schedule rather than a rate -- so these are listed and asked about. |
 | `beneath_replaced_unit` | 432 | the post sits beneath a unit the government has replaced, and research on it is paused. The owner's decision of 2026-10-07: these posts (the eighteen former VA networks' medical-centre posts and network officers, CURATION.md §10) are not asked about in any research pack until a VA document maps medical centres to the five current networks and they are re-homed. What pays a medical-centre post does not depend on which network it reports to, so the question is not lost; it is waiting on curation, not on research. |
+| `not_federally_paid` | 112 | an official document establishes the post is not on a federal pay schedule. The owner's decision of 2026-10-07: where a committed official document establishes that a post's holder is not paid by the federal government (a laboratory DOE states is operated by a contractor), the post carries `positionEmployer` saying so and is no longer research work. No federal pay figure exists for it to find. |
 | `listed_no_rate` | 18 | OPM lists the position and the row prints no rate. The PLUM archive or the current export names the title under this organisation but the Level/Grade/Pay cell carries a rank or is empty, and no salary table this project has read prices that pay plan. |
 
 ---
@@ -2453,37 +2454,37 @@ same list in the same run.
 
 `exec-dept-doe-ames-national-laboratory`
 
-- `exec-dept-doe-ames-national-laboratory-chief-research-officer-chief-science-officer` — Chief Research Officer / Chief Science Officer — `unreached`
-- `exec-dept-doe-ames-national-laboratory-department-manager-multiple` — Department Manager (×multiple) — `multiplicity`
-- `exec-dept-doe-ames-national-laboratory-deputy-laboratory-director` — Deputy Laboratory Director — `unreached`
-- `exec-dept-doe-ames-national-laboratory-division-director-multiple` — Division Director (×multiple) — `multiplicity`
-- `exec-dept-doe-ames-national-laboratory-laboratory-director-ames-national-laboratory` — Laboratory Director, Ames National Laboratory — `unreached`
-- `exec-dept-doe-ames-national-laboratory-postdoctoral-researcher-multiple` — Postdoctoral Researcher (×multiple) — `multiplicity`
-- `exec-dept-doe-ames-national-laboratory-principal-scientist-researcher-multiple` — Principal Scientist / Researcher (×multiple) — `multiplicity`
+- `exec-dept-doe-ames-national-laboratory-chief-research-officer-chief-science-officer` — Chief Research Officer / Chief Science Officer — `not_federally_paid`
+- `exec-dept-doe-ames-national-laboratory-department-manager-multiple` — Department Manager (×multiple) — `not_federally_paid`
+- `exec-dept-doe-ames-national-laboratory-deputy-laboratory-director` — Deputy Laboratory Director — `not_federally_paid`
+- `exec-dept-doe-ames-national-laboratory-division-director-multiple` — Division Director (×multiple) — `not_federally_paid`
+- `exec-dept-doe-ames-national-laboratory-laboratory-director-ames-national-laboratory` — Laboratory Director, Ames National Laboratory — `not_federally_paid`
+- `exec-dept-doe-ames-national-laboratory-postdoctoral-researcher-multiple` — Postdoctoral Researcher (×multiple) — `not_federally_paid`
+- `exec-dept-doe-ames-national-laboratory-principal-scientist-researcher-multiple` — Principal Scientist / Researcher (×multiple) — `not_federally_paid`
 
 ## Argonne National Laboratory  — 7 unpriced
 
 `exec-dept-doe-argonne-national-laboratory`
 
-- `exec-dept-doe-argonne-national-laboratory-chief-research-officer-chief-science-officer` — Chief Research Officer / Chief Science Officer — `unreached`
-- `exec-dept-doe-argonne-national-laboratory-department-manager-multiple` — Department Manager (×multiple) — `multiplicity`
-- `exec-dept-doe-argonne-national-laboratory-deputy-laboratory-director` — Deputy Laboratory Director — `unreached`
-- `exec-dept-doe-argonne-national-laboratory-division-director-multiple` — Division Director (×multiple) — `multiplicity`
-- `exec-dept-doe-argonne-national-laboratory-laboratory-director-argonne-national-laboratory` — Laboratory Director, Argonne National Laboratory — `unreached`
-- `exec-dept-doe-argonne-national-laboratory-postdoctoral-researcher-multiple` — Postdoctoral Researcher (×multiple) — `multiplicity`
-- `exec-dept-doe-argonne-national-laboratory-principal-scientist-researcher-multiple` — Principal Scientist / Researcher (×multiple) — `multiplicity`
+- `exec-dept-doe-argonne-national-laboratory-chief-research-officer-chief-science-officer` — Chief Research Officer / Chief Science Officer — `not_federally_paid`
+- `exec-dept-doe-argonne-national-laboratory-department-manager-multiple` — Department Manager (×multiple) — `not_federally_paid`
+- `exec-dept-doe-argonne-national-laboratory-deputy-laboratory-director` — Deputy Laboratory Director — `not_federally_paid`
+- `exec-dept-doe-argonne-national-laboratory-division-director-multiple` — Division Director (×multiple) — `not_federally_paid`
+- `exec-dept-doe-argonne-national-laboratory-laboratory-director-argonne-national-laboratory` — Laboratory Director, Argonne National Laboratory — `not_federally_paid`
+- `exec-dept-doe-argonne-national-laboratory-postdoctoral-researcher-multiple` — Postdoctoral Researcher (×multiple) — `not_federally_paid`
+- `exec-dept-doe-argonne-national-laboratory-principal-scientist-researcher-multiple` — Principal Scientist / Researcher (×multiple) — `not_federally_paid`
 
 ## Brookhaven National Laboratory  — 7 unpriced
 
 `exec-dept-doe-brookhaven-national-laboratory`
 
-- `exec-dept-doe-brookhaven-national-laboratory-chief-research-officer-chief-science-officer` — Chief Research Officer / Chief Science Officer — `unreached`
-- `exec-dept-doe-brookhaven-national-laboratory-department-manager-multiple` — Department Manager (×multiple) — `multiplicity`
-- `exec-dept-doe-brookhaven-national-laboratory-deputy-laboratory-director` — Deputy Laboratory Director — `unreached`
-- `exec-dept-doe-brookhaven-national-laboratory-division-director-multiple` — Division Director (×multiple) — `multiplicity`
-- `exec-dept-doe-brookhaven-national-laboratory-laboratory-director-brookhaven-national-laboratory` — Laboratory Director, Brookhaven National Laboratory — `unreached`
-- `exec-dept-doe-brookhaven-national-laboratory-postdoctoral-researcher-multiple` — Postdoctoral Researcher (×multiple) — `multiplicity`
-- `exec-dept-doe-brookhaven-national-laboratory-principal-scientist-researcher-multiple` — Principal Scientist / Researcher (×multiple) — `multiplicity`
+- `exec-dept-doe-brookhaven-national-laboratory-chief-research-officer-chief-science-officer` — Chief Research Officer / Chief Science Officer — `not_federally_paid`
+- `exec-dept-doe-brookhaven-national-laboratory-department-manager-multiple` — Department Manager (×multiple) — `not_federally_paid`
+- `exec-dept-doe-brookhaven-national-laboratory-deputy-laboratory-director` — Deputy Laboratory Director — `not_federally_paid`
+- `exec-dept-doe-brookhaven-national-laboratory-division-director-multiple` — Division Director (×multiple) — `not_federally_paid`
+- `exec-dept-doe-brookhaven-national-laboratory-laboratory-director-brookhaven-national-laboratory` — Laboratory Director, Brookhaven National Laboratory — `not_federally_paid`
+- `exec-dept-doe-brookhaven-national-laboratory-postdoctoral-researcher-multiple` — Postdoctoral Researcher (×multiple) — `not_federally_paid`
+- `exec-dept-doe-brookhaven-national-laboratory-principal-scientist-researcher-multiple` — Principal Scientist / Researcher (×multiple) — `not_federally_paid`
 
 ## Bureau of the Fiscal Service  — 7 unpriced
 
@@ -2705,13 +2706,13 @@ same list in the same run.
 
 `exec-dept-doe-fermi-national-accelerator-laboratory`
 
-- `exec-dept-doe-fermi-national-accelerator-laboratory-chief-research-officer-chief-science-officer` — Chief Research Officer / Chief Science Officer — `unreached`
-- `exec-dept-doe-fermi-national-accelerator-laboratory-department-manager-multiple` — Department Manager (×multiple) — `multiplicity`
-- `exec-dept-doe-fermi-national-accelerator-laboratory-deputy-laboratory-director` — Deputy Laboratory Director — `unreached`
-- `exec-dept-doe-fermi-national-accelerator-laboratory-division-director-multiple` — Division Director (×multiple) — `multiplicity`
-- `exec-dept-doe-fermi-national-accelerator-laboratory-laboratory-director-fermi-national-accelerator-laboratory` — Laboratory Director, Fermi National Accelerator Laboratory — `unreached`
-- `exec-dept-doe-fermi-national-accelerator-laboratory-postdoctoral-researcher-multiple` — Postdoctoral Researcher (×multiple) — `multiplicity`
-- `exec-dept-doe-fermi-national-accelerator-laboratory-principal-scientist-researcher-multiple` — Principal Scientist / Researcher (×multiple) — `multiplicity`
+- `exec-dept-doe-fermi-national-accelerator-laboratory-chief-research-officer-chief-science-officer` — Chief Research Officer / Chief Science Officer — `not_federally_paid`
+- `exec-dept-doe-fermi-national-accelerator-laboratory-department-manager-multiple` — Department Manager (×multiple) — `not_federally_paid`
+- `exec-dept-doe-fermi-national-accelerator-laboratory-deputy-laboratory-director` — Deputy Laboratory Director — `not_federally_paid`
+- `exec-dept-doe-fermi-national-accelerator-laboratory-division-director-multiple` — Division Director (×multiple) — `not_federally_paid`
+- `exec-dept-doe-fermi-national-accelerator-laboratory-laboratory-director-fermi-national-accelerator-laboratory` — Laboratory Director, Fermi National Accelerator Laboratory — `not_federally_paid`
+- `exec-dept-doe-fermi-national-accelerator-laboratory-postdoctoral-researcher-multiple` — Postdoctoral Researcher (×multiple) — `not_federally_paid`
+- `exec-dept-doe-fermi-national-accelerator-laboratory-principal-scientist-researcher-multiple` — Principal Scientist / Researcher (×multiple) — `not_federally_paid`
 
 ## First Circuit  — 7 unpriced
 
@@ -2753,13 +2754,13 @@ same list in the same run.
 
 `exec-dept-doe-idaho-national-laboratory`
 
-- `exec-dept-doe-idaho-national-laboratory-chief-research-officer-chief-science-officer` — Chief Research Officer / Chief Science Officer — `unreached`
-- `exec-dept-doe-idaho-national-laboratory-department-manager-multiple` — Department Manager (×multiple) — `multiplicity`
-- `exec-dept-doe-idaho-national-laboratory-deputy-laboratory-director` — Deputy Laboratory Director — `unreached`
-- `exec-dept-doe-idaho-national-laboratory-division-director-multiple` — Division Director (×multiple) — `multiplicity`
-- `exec-dept-doe-idaho-national-laboratory-laboratory-director-idaho-national-laboratory` — Laboratory Director, Idaho National Laboratory — `unreached`
-- `exec-dept-doe-idaho-national-laboratory-postdoctoral-researcher-multiple` — Postdoctoral Researcher (×multiple) — `multiplicity`
-- `exec-dept-doe-idaho-national-laboratory-principal-scientist-researcher-multiple` — Principal Scientist / Researcher (×multiple) — `multiplicity`
+- `exec-dept-doe-idaho-national-laboratory-chief-research-officer-chief-science-officer` — Chief Research Officer / Chief Science Officer — `not_federally_paid`
+- `exec-dept-doe-idaho-national-laboratory-department-manager-multiple` — Department Manager (×multiple) — `not_federally_paid`
+- `exec-dept-doe-idaho-national-laboratory-deputy-laboratory-director` — Deputy Laboratory Director — `not_federally_paid`
+- `exec-dept-doe-idaho-national-laboratory-division-director-multiple` — Division Director (×multiple) — `not_federally_paid`
+- `exec-dept-doe-idaho-national-laboratory-laboratory-director-idaho-national-laboratory` — Laboratory Director, Idaho National Laboratory — `not_federally_paid`
+- `exec-dept-doe-idaho-national-laboratory-postdoctoral-researcher-multiple` — Postdoctoral Researcher (×multiple) — `not_federally_paid`
+- `exec-dept-doe-idaho-national-laboratory-principal-scientist-researcher-multiple` — Principal Scientist / Researcher (×multiple) — `not_federally_paid`
 
 ## Immigration & Customs Enforcement (ICE)  — 7 unpriced
 
@@ -2777,37 +2778,37 @@ same list in the same run.
 
 `exec-dept-doe-lawrence-berkeley-national-laboratory`
 
-- `exec-dept-doe-lawrence-berkeley-national-laboratory-chief-research-officer-chief-science-officer` — Chief Research Officer / Chief Science Officer — `unreached`
-- `exec-dept-doe-lawrence-berkeley-national-laboratory-department-manager-multiple` — Department Manager (×multiple) — `multiplicity`
-- `exec-dept-doe-lawrence-berkeley-national-laboratory-deputy-laboratory-director` — Deputy Laboratory Director — `unreached`
-- `exec-dept-doe-lawrence-berkeley-national-laboratory-division-director-multiple` — Division Director (×multiple) — `multiplicity`
-- `exec-dept-doe-lawrence-berkeley-national-laboratory-laboratory-director-lawrence-berkeley-national-laboratory` — Laboratory Director, Lawrence Berkeley National Laboratory — `unreached`
-- `exec-dept-doe-lawrence-berkeley-national-laboratory-postdoctoral-researcher-multiple` — Postdoctoral Researcher (×multiple) — `multiplicity`
-- `exec-dept-doe-lawrence-berkeley-national-laboratory-principal-scientist-researcher-multiple` — Principal Scientist / Researcher (×multiple) — `multiplicity`
+- `exec-dept-doe-lawrence-berkeley-national-laboratory-chief-research-officer-chief-science-officer` — Chief Research Officer / Chief Science Officer — `not_federally_paid`
+- `exec-dept-doe-lawrence-berkeley-national-laboratory-department-manager-multiple` — Department Manager (×multiple) — `not_federally_paid`
+- `exec-dept-doe-lawrence-berkeley-national-laboratory-deputy-laboratory-director` — Deputy Laboratory Director — `not_federally_paid`
+- `exec-dept-doe-lawrence-berkeley-national-laboratory-division-director-multiple` — Division Director (×multiple) — `not_federally_paid`
+- `exec-dept-doe-lawrence-berkeley-national-laboratory-laboratory-director-lawrence-berkeley-national-laboratory` — Laboratory Director, Lawrence Berkeley National Laboratory — `not_federally_paid`
+- `exec-dept-doe-lawrence-berkeley-national-laboratory-postdoctoral-researcher-multiple` — Postdoctoral Researcher (×multiple) — `not_federally_paid`
+- `exec-dept-doe-lawrence-berkeley-national-laboratory-principal-scientist-researcher-multiple` — Principal Scientist / Researcher (×multiple) — `not_federally_paid`
 
 ## Lawrence Livermore National Laboratory  — 7 unpriced
 
 `exec-dept-doe-lawrence-livermore-national-laboratory`
 
-- `exec-dept-doe-lawrence-livermore-national-laboratory-chief-research-officer-chief-science-officer` — Chief Research Officer / Chief Science Officer — `unreached`
-- `exec-dept-doe-lawrence-livermore-national-laboratory-department-manager-multiple` — Department Manager (×multiple) — `multiplicity`
-- `exec-dept-doe-lawrence-livermore-national-laboratory-deputy-laboratory-director` — Deputy Laboratory Director — `unreached`
-- `exec-dept-doe-lawrence-livermore-national-laboratory-division-director-multiple` — Division Director (×multiple) — `multiplicity`
-- `exec-dept-doe-lawrence-livermore-national-laboratory-laboratory-director-lawrence-livermore-national-laboratory` — Laboratory Director, Lawrence Livermore National Laboratory — `unreached`
-- `exec-dept-doe-lawrence-livermore-national-laboratory-postdoctoral-researcher-multiple` — Postdoctoral Researcher (×multiple) — `multiplicity`
-- `exec-dept-doe-lawrence-livermore-national-laboratory-principal-scientist-researcher-multiple` — Principal Scientist / Researcher (×multiple) — `multiplicity`
+- `exec-dept-doe-lawrence-livermore-national-laboratory-chief-research-officer-chief-science-officer` — Chief Research Officer / Chief Science Officer — `not_federally_paid`
+- `exec-dept-doe-lawrence-livermore-national-laboratory-department-manager-multiple` — Department Manager (×multiple) — `not_federally_paid`
+- `exec-dept-doe-lawrence-livermore-national-laboratory-deputy-laboratory-director` — Deputy Laboratory Director — `not_federally_paid`
+- `exec-dept-doe-lawrence-livermore-national-laboratory-division-director-multiple` — Division Director (×multiple) — `not_federally_paid`
+- `exec-dept-doe-lawrence-livermore-national-laboratory-laboratory-director-lawrence-livermore-national-laboratory` — Laboratory Director, Lawrence Livermore National Laboratory — `not_federally_paid`
+- `exec-dept-doe-lawrence-livermore-national-laboratory-postdoctoral-researcher-multiple` — Postdoctoral Researcher (×multiple) — `not_federally_paid`
+- `exec-dept-doe-lawrence-livermore-national-laboratory-principal-scientist-researcher-multiple` — Principal Scientist / Researcher (×multiple) — `not_federally_paid`
 
 ## Los Alamos National Laboratory  — 7 unpriced
 
 `exec-dept-doe-los-alamos-national-laboratory`
 
-- `exec-dept-doe-los-alamos-national-laboratory-chief-research-officer-chief-science-officer` — Chief Research Officer / Chief Science Officer — `unreached`
-- `exec-dept-doe-los-alamos-national-laboratory-department-manager-multiple` — Department Manager (×multiple) — `multiplicity`
-- `exec-dept-doe-los-alamos-national-laboratory-deputy-laboratory-director` — Deputy Laboratory Director — `unreached`
-- `exec-dept-doe-los-alamos-national-laboratory-division-director-multiple` — Division Director (×multiple) — `multiplicity`
-- `exec-dept-doe-los-alamos-national-laboratory-laboratory-director-los-alamos-national-laboratory` — Laboratory Director, Los Alamos National Laboratory — `unreached`
-- `exec-dept-doe-los-alamos-national-laboratory-postdoctoral-researcher-multiple` — Postdoctoral Researcher (×multiple) — `multiplicity`
-- `exec-dept-doe-los-alamos-national-laboratory-principal-scientist-researcher-multiple` — Principal Scientist / Researcher (×multiple) — `multiplicity`
+- `exec-dept-doe-los-alamos-national-laboratory-chief-research-officer-chief-science-officer` — Chief Research Officer / Chief Science Officer — `not_federally_paid`
+- `exec-dept-doe-los-alamos-national-laboratory-department-manager-multiple` — Department Manager (×multiple) — `not_federally_paid`
+- `exec-dept-doe-los-alamos-national-laboratory-deputy-laboratory-director` — Deputy Laboratory Director — `not_federally_paid`
+- `exec-dept-doe-los-alamos-national-laboratory-division-director-multiple` — Division Director (×multiple) — `not_federally_paid`
+- `exec-dept-doe-los-alamos-national-laboratory-laboratory-director-los-alamos-national-laboratory` — Laboratory Director, Los Alamos National Laboratory — `not_federally_paid`
+- `exec-dept-doe-los-alamos-national-laboratory-postdoctoral-researcher-multiple` — Postdoctoral Researcher (×multiple) — `not_federally_paid`
+- `exec-dept-doe-los-alamos-national-laboratory-principal-scientist-researcher-multiple` — Principal Scientist / Researcher (×multiple) — `not_federally_paid`
 
 ## Missile Defense Agency (MDA)  — 7 unpriced
 
@@ -2849,25 +2850,25 @@ same list in the same run.
 
 `exec-dept-doe-national-renewable-energy-laboratory`
 
-- `exec-dept-doe-national-renewable-energy-laboratory-chief-research-officer-chief-science-officer` — Chief Research Officer / Chief Science Officer — `unreached`
-- `exec-dept-doe-national-renewable-energy-laboratory-department-manager-multiple` — Department Manager (×multiple) — `multiplicity`
-- `exec-dept-doe-national-renewable-energy-laboratory-deputy-laboratory-director` — Deputy Laboratory Director — `unreached`
-- `exec-dept-doe-national-renewable-energy-laboratory-division-director-multiple` — Division Director (×multiple) — `multiplicity`
-- `exec-dept-doe-national-renewable-energy-laboratory-laboratory-director-national-renewable-energy-laboratory` — Laboratory Director, National Renewable Energy Laboratory — `unreached`
-- `exec-dept-doe-national-renewable-energy-laboratory-postdoctoral-researcher-multiple` — Postdoctoral Researcher (×multiple) — `multiplicity`
-- `exec-dept-doe-national-renewable-energy-laboratory-principal-scientist-researcher-multiple` — Principal Scientist / Researcher (×multiple) — `multiplicity`
+- `exec-dept-doe-national-renewable-energy-laboratory-chief-research-officer-chief-science-officer` — Chief Research Officer / Chief Science Officer — `not_federally_paid`
+- `exec-dept-doe-national-renewable-energy-laboratory-department-manager-multiple` — Department Manager (×multiple) — `not_federally_paid`
+- `exec-dept-doe-national-renewable-energy-laboratory-deputy-laboratory-director` — Deputy Laboratory Director — `not_federally_paid`
+- `exec-dept-doe-national-renewable-energy-laboratory-division-director-multiple` — Division Director (×multiple) — `not_federally_paid`
+- `exec-dept-doe-national-renewable-energy-laboratory-laboratory-director-national-renewable-energy-laboratory` — Laboratory Director, National Renewable Energy Laboratory — `not_federally_paid`
+- `exec-dept-doe-national-renewable-energy-laboratory-postdoctoral-researcher-multiple` — Postdoctoral Researcher (×multiple) — `not_federally_paid`
+- `exec-dept-doe-national-renewable-energy-laboratory-principal-scientist-researcher-multiple` — Principal Scientist / Researcher (×multiple) — `not_federally_paid`
 
 ## Oak Ridge National Laboratory  — 7 unpriced
 
 `exec-dept-doe-oak-ridge-national-laboratory`
 
-- `exec-dept-doe-oak-ridge-national-laboratory-chief-research-officer-chief-science-officer` — Chief Research Officer / Chief Science Officer — `unreached`
-- `exec-dept-doe-oak-ridge-national-laboratory-department-manager-multiple` — Department Manager (×multiple) — `multiplicity`
-- `exec-dept-doe-oak-ridge-national-laboratory-deputy-laboratory-director` — Deputy Laboratory Director — `unreached`
-- `exec-dept-doe-oak-ridge-national-laboratory-division-director-multiple` — Division Director (×multiple) — `multiplicity`
-- `exec-dept-doe-oak-ridge-national-laboratory-laboratory-director-oak-ridge-national-laboratory` — Laboratory Director, Oak Ridge National Laboratory — `unreached`
-- `exec-dept-doe-oak-ridge-national-laboratory-postdoctoral-researcher-multiple` — Postdoctoral Researcher (×multiple) — `multiplicity`
-- `exec-dept-doe-oak-ridge-national-laboratory-principal-scientist-researcher-multiple` — Principal Scientist / Researcher (×multiple) — `multiplicity`
+- `exec-dept-doe-oak-ridge-national-laboratory-chief-research-officer-chief-science-officer` — Chief Research Officer / Chief Science Officer — `not_federally_paid`
+- `exec-dept-doe-oak-ridge-national-laboratory-department-manager-multiple` — Department Manager (×multiple) — `not_federally_paid`
+- `exec-dept-doe-oak-ridge-national-laboratory-deputy-laboratory-director` — Deputy Laboratory Director — `not_federally_paid`
+- `exec-dept-doe-oak-ridge-national-laboratory-division-director-multiple` — Division Director (×multiple) — `not_federally_paid`
+- `exec-dept-doe-oak-ridge-national-laboratory-laboratory-director-oak-ridge-national-laboratory` — Laboratory Director, Oak Ridge National Laboratory — `not_federally_paid`
+- `exec-dept-doe-oak-ridge-national-laboratory-postdoctoral-researcher-multiple` — Postdoctoral Researcher (×multiple) — `not_federally_paid`
+- `exec-dept-doe-oak-ridge-national-laboratory-principal-scientist-researcher-multiple` — Principal Scientist / Researcher (×multiple) — `not_federally_paid`
 
 ## Office of Energy Efficiency & Renewable Energy (EERE)  — 7 unpriced
 
@@ -2897,13 +2898,13 @@ same list in the same run.
 
 `exec-dept-doe-pacific-northwest-national-laboratory`
 
-- `exec-dept-doe-pacific-northwest-national-laboratory-chief-research-officer-chief-science-officer` — Chief Research Officer / Chief Science Officer — `unreached`
-- `exec-dept-doe-pacific-northwest-national-laboratory-department-manager-multiple` — Department Manager (×multiple) — `multiplicity`
-- `exec-dept-doe-pacific-northwest-national-laboratory-deputy-laboratory-director` — Deputy Laboratory Director — `unreached`
-- `exec-dept-doe-pacific-northwest-national-laboratory-division-director-multiple` — Division Director (×multiple) — `multiplicity`
-- `exec-dept-doe-pacific-northwest-national-laboratory-laboratory-director-pacific-northwest-national-laboratory` — Laboratory Director, Pacific Northwest National Laboratory — `unreached`
-- `exec-dept-doe-pacific-northwest-national-laboratory-postdoctoral-researcher-multiple` — Postdoctoral Researcher (×multiple) — `multiplicity`
-- `exec-dept-doe-pacific-northwest-national-laboratory-principal-scientist-researcher-multiple` — Principal Scientist / Researcher (×multiple) — `multiplicity`
+- `exec-dept-doe-pacific-northwest-national-laboratory-chief-research-officer-chief-science-officer` — Chief Research Officer / Chief Science Officer — `not_federally_paid`
+- `exec-dept-doe-pacific-northwest-national-laboratory-department-manager-multiple` — Department Manager (×multiple) — `not_federally_paid`
+- `exec-dept-doe-pacific-northwest-national-laboratory-deputy-laboratory-director` — Deputy Laboratory Director — `not_federally_paid`
+- `exec-dept-doe-pacific-northwest-national-laboratory-division-director-multiple` — Division Director (×multiple) — `not_federally_paid`
+- `exec-dept-doe-pacific-northwest-national-laboratory-laboratory-director-pacific-northwest-national-laboratory` — Laboratory Director, Pacific Northwest National Laboratory — `not_federally_paid`
+- `exec-dept-doe-pacific-northwest-national-laboratory-postdoctoral-researcher-multiple` — Postdoctoral Researcher (×multiple) — `not_federally_paid`
+- `exec-dept-doe-pacific-northwest-national-laboratory-principal-scientist-researcher-multiple` — Principal Scientist / Researcher (×multiple) — `not_federally_paid`
 
 ## Pentagon Force Protection Agency (PFPA)  — 7 unpriced
 
@@ -2921,49 +2922,49 @@ same list in the same run.
 
 `exec-dept-doe-princeton-plasma-physics-laboratory`
 
-- `exec-dept-doe-princeton-plasma-physics-laboratory-chief-research-officer-chief-science-officer` — Chief Research Officer / Chief Science Officer — `unreached`
-- `exec-dept-doe-princeton-plasma-physics-laboratory-department-manager-multiple` — Department Manager (×multiple) — `multiplicity`
-- `exec-dept-doe-princeton-plasma-physics-laboratory-deputy-laboratory-director` — Deputy Laboratory Director — `unreached`
-- `exec-dept-doe-princeton-plasma-physics-laboratory-division-director-multiple` — Division Director (×multiple) — `multiplicity`
-- `exec-dept-doe-princeton-plasma-physics-laboratory-laboratory-director-princeton-plasma-physics-laboratory` — Laboratory Director, Princeton Plasma Physics Laboratory — `unreached`
-- `exec-dept-doe-princeton-plasma-physics-laboratory-postdoctoral-researcher-multiple` — Postdoctoral Researcher (×multiple) — `multiplicity`
-- `exec-dept-doe-princeton-plasma-physics-laboratory-principal-scientist-researcher-multiple` — Principal Scientist / Researcher (×multiple) — `multiplicity`
+- `exec-dept-doe-princeton-plasma-physics-laboratory-chief-research-officer-chief-science-officer` — Chief Research Officer / Chief Science Officer — `not_federally_paid`
+- `exec-dept-doe-princeton-plasma-physics-laboratory-department-manager-multiple` — Department Manager (×multiple) — `not_federally_paid`
+- `exec-dept-doe-princeton-plasma-physics-laboratory-deputy-laboratory-director` — Deputy Laboratory Director — `not_federally_paid`
+- `exec-dept-doe-princeton-plasma-physics-laboratory-division-director-multiple` — Division Director (×multiple) — `not_federally_paid`
+- `exec-dept-doe-princeton-plasma-physics-laboratory-laboratory-director-princeton-plasma-physics-laboratory` — Laboratory Director, Princeton Plasma Physics Laboratory — `not_federally_paid`
+- `exec-dept-doe-princeton-plasma-physics-laboratory-postdoctoral-researcher-multiple` — Postdoctoral Researcher (×multiple) — `not_federally_paid`
+- `exec-dept-doe-princeton-plasma-physics-laboratory-principal-scientist-researcher-multiple` — Principal Scientist / Researcher (×multiple) — `not_federally_paid`
 
 ## SLAC National Accelerator Laboratory  — 7 unpriced
 
 `exec-dept-doe-slac-national-accelerator-laboratory`
 
-- `exec-dept-doe-slac-national-accelerator-laboratory-chief-research-officer-chief-science-officer` — Chief Research Officer / Chief Science Officer — `unreached`
-- `exec-dept-doe-slac-national-accelerator-laboratory-department-manager-multiple` — Department Manager (×multiple) — `multiplicity`
-- `exec-dept-doe-slac-national-accelerator-laboratory-deputy-laboratory-director` — Deputy Laboratory Director — `unreached`
-- `exec-dept-doe-slac-national-accelerator-laboratory-division-director-multiple` — Division Director (×multiple) — `multiplicity`
-- `exec-dept-doe-slac-national-accelerator-laboratory-laboratory-director-slac-national-accelerator-laboratory` — Laboratory Director, SLAC National Accelerator Laboratory — `unreached`
-- `exec-dept-doe-slac-national-accelerator-laboratory-postdoctoral-researcher-multiple` — Postdoctoral Researcher (×multiple) — `multiplicity`
-- `exec-dept-doe-slac-national-accelerator-laboratory-principal-scientist-researcher-multiple` — Principal Scientist / Researcher (×multiple) — `multiplicity`
+- `exec-dept-doe-slac-national-accelerator-laboratory-chief-research-officer-chief-science-officer` — Chief Research Officer / Chief Science Officer — `not_federally_paid`
+- `exec-dept-doe-slac-national-accelerator-laboratory-department-manager-multiple` — Department Manager (×multiple) — `not_federally_paid`
+- `exec-dept-doe-slac-national-accelerator-laboratory-deputy-laboratory-director` — Deputy Laboratory Director — `not_federally_paid`
+- `exec-dept-doe-slac-national-accelerator-laboratory-division-director-multiple` — Division Director (×multiple) — `not_federally_paid`
+- `exec-dept-doe-slac-national-accelerator-laboratory-laboratory-director-slac-national-accelerator-laboratory` — Laboratory Director, SLAC National Accelerator Laboratory — `not_federally_paid`
+- `exec-dept-doe-slac-national-accelerator-laboratory-postdoctoral-researcher-multiple` — Postdoctoral Researcher (×multiple) — `not_federally_paid`
+- `exec-dept-doe-slac-national-accelerator-laboratory-principal-scientist-researcher-multiple` — Principal Scientist / Researcher (×multiple) — `not_federally_paid`
 
 ## Sandia National Laboratories  — 7 unpriced
 
 `exec-dept-doe-sandia-national-laboratories`
 
-- `exec-dept-doe-sandia-national-laboratories-chief-research-officer-chief-science-officer` — Chief Research Officer / Chief Science Officer — `unreached`
-- `exec-dept-doe-sandia-national-laboratories-department-manager-multiple` — Department Manager (×multiple) — `multiplicity`
-- `exec-dept-doe-sandia-national-laboratories-deputy-laboratory-director` — Deputy Laboratory Director — `unreached`
-- `exec-dept-doe-sandia-national-laboratories-division-director-multiple` — Division Director (×multiple) — `multiplicity`
-- `exec-dept-doe-sandia-national-laboratories-laboratory-director-sandia-national-laboratories` — Laboratory Director, Sandia National Laboratories — `unreached`
-- `exec-dept-doe-sandia-national-laboratories-postdoctoral-researcher-multiple` — Postdoctoral Researcher (×multiple) — `multiplicity`
-- `exec-dept-doe-sandia-national-laboratories-principal-scientist-researcher-multiple` — Principal Scientist / Researcher (×multiple) — `multiplicity`
+- `exec-dept-doe-sandia-national-laboratories-chief-research-officer-chief-science-officer` — Chief Research Officer / Chief Science Officer — `not_federally_paid`
+- `exec-dept-doe-sandia-national-laboratories-department-manager-multiple` — Department Manager (×multiple) — `not_federally_paid`
+- `exec-dept-doe-sandia-national-laboratories-deputy-laboratory-director` — Deputy Laboratory Director — `not_federally_paid`
+- `exec-dept-doe-sandia-national-laboratories-division-director-multiple` — Division Director (×multiple) — `not_federally_paid`
+- `exec-dept-doe-sandia-national-laboratories-laboratory-director-sandia-national-laboratories` — Laboratory Director, Sandia National Laboratories — `not_federally_paid`
+- `exec-dept-doe-sandia-national-laboratories-postdoctoral-researcher-multiple` — Postdoctoral Researcher (×multiple) — `not_federally_paid`
+- `exec-dept-doe-sandia-national-laboratories-principal-scientist-researcher-multiple` — Principal Scientist / Researcher (×multiple) — `not_federally_paid`
 
 ## Savannah River National Laboratory  — 7 unpriced
 
 `exec-dept-doe-savannah-river-national-laboratory`
 
-- `exec-dept-doe-savannah-river-national-laboratory-chief-research-officer-chief-science-officer` — Chief Research Officer / Chief Science Officer — `unreached`
-- `exec-dept-doe-savannah-river-national-laboratory-department-manager-multiple` — Department Manager (×multiple) — `multiplicity`
-- `exec-dept-doe-savannah-river-national-laboratory-deputy-laboratory-director` — Deputy Laboratory Director — `unreached`
-- `exec-dept-doe-savannah-river-national-laboratory-division-director-multiple` — Division Director (×multiple) — `multiplicity`
-- `exec-dept-doe-savannah-river-national-laboratory-laboratory-director-savannah-river-national-laboratory` — Laboratory Director, Savannah River National Laboratory — `unreached`
-- `exec-dept-doe-savannah-river-national-laboratory-postdoctoral-researcher-multiple` — Postdoctoral Researcher (×multiple) — `multiplicity`
-- `exec-dept-doe-savannah-river-national-laboratory-principal-scientist-researcher-multiple` — Principal Scientist / Researcher (×multiple) — `multiplicity`
+- `exec-dept-doe-savannah-river-national-laboratory-chief-research-officer-chief-science-officer` — Chief Research Officer / Chief Science Officer — `not_federally_paid`
+- `exec-dept-doe-savannah-river-national-laboratory-department-manager-multiple` — Department Manager (×multiple) — `not_federally_paid`
+- `exec-dept-doe-savannah-river-national-laboratory-deputy-laboratory-director` — Deputy Laboratory Director — `not_federally_paid`
+- `exec-dept-doe-savannah-river-national-laboratory-division-director-multiple` — Division Director (×multiple) — `not_federally_paid`
+- `exec-dept-doe-savannah-river-national-laboratory-laboratory-director-savannah-river-national-laboratory` — Laboratory Director, Savannah River National Laboratory — `not_federally_paid`
+- `exec-dept-doe-savannah-river-national-laboratory-postdoctoral-researcher-multiple` — Postdoctoral Researcher (×multiple) — `not_federally_paid`
+- `exec-dept-doe-savannah-river-national-laboratory-principal-scientist-researcher-multiple` — Principal Scientist / Researcher (×multiple) — `not_federally_paid`
 
 ## Sixth Circuit  — 7 unpriced
 
@@ -3017,13 +3018,13 @@ same list in the same run.
 
 `exec-dept-doe-thomas-jefferson-national-accelerator-facility`
 
-- `exec-dept-doe-thomas-jefferson-national-accelerator-facility-chief-research-officer-chief-science-officer` — Chief Research Officer / Chief Science Officer — `unreached`
-- `exec-dept-doe-thomas-jefferson-national-accelerator-facility-department-manager-multiple` — Department Manager (×multiple) — `multiplicity`
-- `exec-dept-doe-thomas-jefferson-national-accelerator-facility-deputy-laboratory-director` — Deputy Laboratory Director — `unreached`
-- `exec-dept-doe-thomas-jefferson-national-accelerator-facility-division-director-multiple` — Division Director (×multiple) — `multiplicity`
-- `exec-dept-doe-thomas-jefferson-national-accelerator-facility-laboratory-director-thomas-jefferson-national-accelerator-facility` — Laboratory Director, Thomas Jefferson National Accelerator Facility — `unreached`
-- `exec-dept-doe-thomas-jefferson-national-accelerator-facility-postdoctoral-researcher-multiple` — Postdoctoral Researcher (×multiple) — `multiplicity`
-- `exec-dept-doe-thomas-jefferson-national-accelerator-facility-principal-scientist-researcher-multiple` — Principal Scientist / Researcher (×multiple) — `multiplicity`
+- `exec-dept-doe-thomas-jefferson-national-accelerator-facility-chief-research-officer-chief-science-officer` — Chief Research Officer / Chief Science Officer — `not_federally_paid`
+- `exec-dept-doe-thomas-jefferson-national-accelerator-facility-department-manager-multiple` — Department Manager (×multiple) — `not_federally_paid`
+- `exec-dept-doe-thomas-jefferson-national-accelerator-facility-deputy-laboratory-director` — Deputy Laboratory Director — `not_federally_paid`
+- `exec-dept-doe-thomas-jefferson-national-accelerator-facility-division-director-multiple` — Division Director (×multiple) — `not_federally_paid`
+- `exec-dept-doe-thomas-jefferson-national-accelerator-facility-laboratory-director-thomas-jefferson-national-accelerator-facility` — Laboratory Director, Thomas Jefferson National Accelerator Facility — `not_federally_paid`
+- `exec-dept-doe-thomas-jefferson-national-accelerator-facility-postdoctoral-researcher-multiple` — Postdoctoral Researcher (×multiple) — `not_federally_paid`
+- `exec-dept-doe-thomas-jefferson-national-accelerator-facility-principal-scientist-researcher-multiple` — Principal Scientist / Researcher (×multiple) — `not_federally_paid`
 
 ## U.S. Court of Appeals for the D.C. Circuit  — 7 unpriced
 

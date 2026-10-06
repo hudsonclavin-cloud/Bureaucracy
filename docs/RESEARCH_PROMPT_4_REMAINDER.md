@@ -6,7 +6,7 @@ Do not edit by hand; regenerate it. The 100 largest title families are in
 
 ## What this covers
 
-- **Part A — 1,607 unpriced positions** in the 1,581 title families outside the top 100, across **15 shards**, whole organisations per shard.
+- **Part A — 1,585 unpriced positions** in the 1,565 title families outside the top 100, across **15 shards**, whole organisations per shard.
 - **Part B — 681 organisation nodes** that publish an apportioned estimate rather than a measured
   cost, across **7 shards**, whole parents per shard:
   - 240 — a committee or subcommittee (no Table 5 line can ever name one)
@@ -314,22 +314,6 @@ THE TITLES:
 - exec-dept-hhs-nih-principal-deputy-director | Principal Deputy Director
 - exec-dept-hhs-nih-scientific-review-officer-multiple | Scientific Review Officer (×multiple)  [×N]
 
-### Individual Senator Offices (100)  [leg-senate-offices]
-- leg-senate-offices-casework-director | Casework Director
-- leg-senate-offices-deputy-communications-director | Deputy Communications Director
-- leg-senate-offices-deputy-state-director | Deputy State Director
-- leg-senate-offices-digital-director | Digital Director
-- leg-senate-offices-legislative-correspondent | Legislative Correspondent
-- leg-senate-offices-legislative-counsel | Legislative Counsel
-- leg-senate-offices-legislative-director | Legislative Director
-- leg-senate-offices-office-manager | Office Manager
-- leg-senate-offices-press-secretary | Press Secretary
-- leg-senate-offices-regional-representative-4 | Regional Representative (×4)  [×N]
-- leg-senate-offices-scheduler-executive-assistant | Scheduler / Executive Assistant
-- leg-senate-offices-senior-caseworker-4 | Senior Caseworker (×4)  [×N]
-- leg-senate-offices-senior-legislative-assistant-3 | Senior Legislative Assistant (×3)  [×N]
-- leg-senate-offices-state-director | State Director
-
 ### Joint Chiefs of Staff  [exec-dept-defense-jcs]
 - exec-dept-defense-jcs-chief-of-naval-operations | Chief of Naval Operations
 - exec-dept-defense-jcs-chief-of-space-operations | Chief of Space Operations
@@ -361,9 +345,25 @@ THE TITLES:
 - leg-senate-admin-secretary-senate-curator | Senate Curator
 - leg-senate-admin-secretary-senate-historian | Senate Historian
 - leg-senate-admin-secretary-senate-librarian | Senate Librarian
+
+### U.S. Air Force  [exec-dept-defense-af]
+- exec-dept-defense-af-af-a1-manpower-personnel | AF/A1 (Manpower & Personnel)
+- exec-dept-defense-af-af-a2-intelligence | AF/A2 (Intelligence)
+- exec-dept-defense-af-af-a3-operations | AF/A3 (Operations)
+- exec-dept-defense-af-af-a4-logistics | AF/A4 (Logistics)
+- exec-dept-defense-af-af-a5-strategy-planning | AF/A5 (Strategy & Planning)
+- exec-dept-defense-af-af-a6-communications | AF/A6 (Communications)
+- exec-dept-defense-af-af-a8-programs | AF/A8 (Programs)
+- exec-dept-defense-af-commander-air-combat-command-acc | Commander — Air Combat Command (ACC)
+- exec-dept-defense-af-commander-air-force-global-strike-command-afgsc | Commander — Air Force Global Strike Command (AFGSC)
+- exec-dept-defense-af-commander-air-force-materiel-command-afmc | Commander — Air Force Materiel Command (AFMC)
+- exec-dept-defense-af-commander-air-force-special-operations-command-afsoc | Commander — Air Force Special Operations Command (AFSOC)
+- exec-dept-defense-af-commander-air-mobility-command-amc | Commander — Air Mobility Command (AMC)
+- exec-dept-defense-af-commander-pacific-air-forces-pacaf | Commander — Pacific Air Forces (PACAF)
+- exec-dept-defense-af-commander-u-s-air-forces-in-europe-usafe | Commander — U.S. Air Forces in Europe (USAFE)
 ```
 
-## Prompt A3 — 8 organisation(s), 103 title(s)
+## Prompt A3 — 8 organisation(s), 101 title(s)
 
 ```
 I am building a data-backed public graph of the U.S. federal government. Every
@@ -419,22 +419,6 @@ above, one line each, with the document URL it came from and whether it is
 official-published or third-party-estimated.
 
 THE TITLES:
-
-### U.S. Air Force  [exec-dept-defense-af]
-- exec-dept-defense-af-af-a1-manpower-personnel | AF/A1 (Manpower & Personnel)
-- exec-dept-defense-af-af-a2-intelligence | AF/A2 (Intelligence)
-- exec-dept-defense-af-af-a3-operations | AF/A3 (Operations)
-- exec-dept-defense-af-af-a4-logistics | AF/A4 (Logistics)
-- exec-dept-defense-af-af-a5-strategy-planning | AF/A5 (Strategy & Planning)
-- exec-dept-defense-af-af-a6-communications | AF/A6 (Communications)
-- exec-dept-defense-af-af-a8-programs | AF/A8 (Programs)
-- exec-dept-defense-af-commander-air-combat-command-acc | Commander — Air Combat Command (ACC)
-- exec-dept-defense-af-commander-air-force-global-strike-command-afgsc | Commander — Air Force Global Strike Command (AFGSC)
-- exec-dept-defense-af-commander-air-force-materiel-command-afmc | Commander — Air Force Materiel Command (AFMC)
-- exec-dept-defense-af-commander-air-force-special-operations-command-afsoc | Commander — Air Force Special Operations Command (AFSOC)
-- exec-dept-defense-af-commander-air-mobility-command-amc | Commander — Air Mobility Command (AMC)
-- exec-dept-defense-af-commander-pacific-air-forces-pacaf | Commander — Pacific Air Forces (PACAF)
-- exec-dept-defense-af-commander-u-s-air-forces-in-europe-usafe | Commander — U.S. Air Forces in Europe (USAFE)
 
 ### U.S. Coast Guard  [exec-dept-dhs-uscg]
 - exec-dept-dhs-uscg-commander-atlantic-area | Commander — Atlantic Area
@@ -510,6 +494,20 @@ THE TITLES:
 - exec-dept-dhs-cbp-deputy-chief-of-the-border-patrol | Deputy Chief of the Border Patrol
 - exec-dept-dhs-cbp-director-20-field-offices-office-of-field-operations | Director — 20 Field Offices (Office of Field Operations)
 - exec-dept-dhs-cbp-port-director-328-ports-of-entry | Port Director — 328 Ports of Entry
+
+### Individual Senator Offices (100)  [leg-senate-offices]
+- leg-senate-offices-casework-director | Casework Director
+- leg-senate-offices-deputy-communications-director | Deputy Communications Director
+- leg-senate-offices-deputy-state-director | Deputy State Director
+- leg-senate-offices-digital-director | Digital Director
+- leg-senate-offices-legislative-counsel | Legislative Counsel
+- leg-senate-offices-office-manager | Office Manager
+- leg-senate-offices-press-secretary | Press Secretary
+- leg-senate-offices-regional-representative-4 | Regional Representative (×4)  [×N]
+- leg-senate-offices-scheduler-executive-assistant | Scheduler / Executive Assistant
+- leg-senate-offices-senior-caseworker-4 | Senior Caseworker (×4)  [×N]
+- leg-senate-offices-senior-legislative-assistant-3 | Senior Legislative Assistant (×3)  [×N]
+- leg-senate-offices-state-director | State Director
 
 ### Securities & Exchange Commission (SEC)  [exec-regulatory-sec]
 - exec-regulatory-sec-chief-accountant | Chief Accountant
@@ -911,7 +909,7 @@ THE TITLES:
 - exec-dept-ed-fsa-financial-aid-specialist-multiple | Financial Aid Specialist (×multiple)  [×N]
 ```
 
-## Prompt A6 — 13 organisation(s), 110 title(s)
+## Prompt A6 — 13 organisation(s), 109 title(s)
 
 ```
 I am building a data-backed public graph of the U.S. federal government. Every
@@ -967,17 +965,6 @@ above, one line each, with the document URL it came from and whether it is
 official-published or third-party-estimated.
 
 THE TITLES:
-
-### Individual Representative Offices (435)  [leg-house-offices]
-- leg-house-offices-caseworker-3 | Caseworker (×3)  [×N]
-- leg-house-offices-constituent-services-director | Constituent Services Director
-- leg-house-offices-field-representative-2 | Field Representative (×2)  [×N]
-- leg-house-offices-legislative-assistant-3 | Legislative Assistant (×3)  [×N]
-- leg-house-offices-legislative-correspondent | Legislative Correspondent
-- leg-house-offices-legislative-director | Legislative Director
-- leg-house-offices-press-secretary | Press Secretary
-- leg-house-offices-scheduler | Scheduler
-- leg-house-offices-senior-legislative-assistant-2 | Senior Legislative Assistant (×2)  [×N]
 
 ### NOAA — National Oceanic & Atmospheric Administration  [exec-dept-doc-noaa]
 - exec-dept-doc-noaa-director-nesdis-satellite-operations | Director — NESDIS (satellite operations)
@@ -1103,6 +1090,16 @@ THE TITLES:
 - exec-eop-nec-senior-director-housing | Senior Director — Housing
 - exec-eop-nec-senior-director-international-economics | Senior Director — International Economics
 - exec-eop-nec-senior-director-labor-workforce | Senior Director — Labor & Workforce
+
+### Supreme Court of the United States (SCOTUS)  [jud-scotus]
+- jud-scotus-director-of-budget-personnel | Director of Budget & Personnel
+- jud-scotus-law-clerk-to-associate-justices-4-per-justice | Law Clerk to Associate Justices (×4 per Justice)  [×N]
+- jud-scotus-law-clerk-to-chief-justice-4 | Law Clerk to Chief Justice (×4)  [×N]
+- jud-scotus-librarian-of-the-supreme-court | Librarian of the Supreme Court
+- jud-scotus-marshal-of-the-supreme-court | Marshal of the Supreme Court
+- jud-scotus-public-information-officer | Public Information Officer
+- jud-scotus-reporter-of-decisions | Reporter of Decisions
+- jud-scotus-supreme-court-police-chief | Supreme Court Police Chief
 ```
 
 ## Prompt A7 — 16 organisation(s), 109 title(s)
@@ -1162,16 +1159,6 @@ official-published or third-party-estimated.
 
 THE TITLES:
 
-### Supreme Court of the United States (SCOTUS)  [jud-scotus]
-- jud-scotus-director-of-budget-personnel | Director of Budget & Personnel
-- jud-scotus-law-clerk-to-associate-justices-4-per-justice | Law Clerk to Associate Justices (×4 per Justice)  [×N]
-- jud-scotus-law-clerk-to-chief-justice-4 | Law Clerk to Chief Justice (×4)  [×N]
-- jud-scotus-librarian-of-the-supreme-court | Librarian of the Supreme Court
-- jud-scotus-marshal-of-the-supreme-court | Marshal of the Supreme Court
-- jud-scotus-public-information-officer | Public Information Officer
-- jud-scotus-reporter-of-decisions | Reporter of Decisions
-- jud-scotus-supreme-court-police-chief | Supreme Court Police Chief
-
 ### U.S. Geological Survey (USGS)  [exec-dept-doi-usgs]
 - exec-dept-doi-usgs-associate-director-climate-land-use-change | Associate Director — Climate & Land Use Change
 - exec-dept-doi-usgs-associate-director-core-science-systems | Associate Director — Core Science Systems
@@ -1209,6 +1196,15 @@ THE TITLES:
 - jud-support-fpd-paralegal-multiple | Paralegal (×multiple)  [×N]
 - jud-support-fpd-supervisory-assistant-fpd-multiple | Supervisory Assistant FPD (×multiple)  [×N]
 
+### Individual Representative Offices (435)  [leg-house-offices]
+- leg-house-offices-caseworker-3 | Caseworker (×3)  [×N]
+- leg-house-offices-constituent-services-director | Constituent Services Director
+- leg-house-offices-field-representative-2 | Field Representative (×2)  [×N]
+- leg-house-offices-legislative-assistant-3 | Legislative Assistant (×3)  [×N]
+- leg-house-offices-press-secretary | Press Secretary
+- leg-house-offices-scheduler | Scheduler
+- leg-house-offices-senior-legislative-assistant-2 | Senior Legislative Assistant (×2)  [×N]
+
 ### National Archives & Records Administration (NARA)  [exec-ind-nara]
 - exec-ind-nara-deputy-archivist | Deputy Archivist
 - exec-ind-nara-director-federal-register | Director — Federal Register
@@ -1217,6 +1213,15 @@ THE TITLES:
 - exec-ind-nara-executive-for-agency-services | Executive for Agency Services
 - exec-ind-nara-executive-for-legislative-archives-presidential-libraries-museum-services | Executive for Legislative Archives, Presidential Libraries & Museum Services
 - exec-ind-nara-executive-for-research-services | Executive for Research Services
+
+### National Energy Technology Laboratory  [exec-dept-doe-national-energy-technology-laboratory]
+- exec-dept-doe-national-energy-technology-laboratory-chief-research-officer-chief-science-officer | Chief Research Officer / Chief Science Officer
+- exec-dept-doe-national-energy-technology-laboratory-department-manager-multiple | Department Manager (×multiple)  [×N]
+- exec-dept-doe-national-energy-technology-laboratory-deputy-laboratory-director | Deputy Laboratory Director
+- exec-dept-doe-national-energy-technology-laboratory-division-director-multiple | Division Director (×multiple)  [×N]
+- exec-dept-doe-national-energy-technology-laboratory-laboratory-director-national-energy-technology-laboratory | Laboratory Director, National Energy Technology Laboratory
+- exec-dept-doe-national-energy-technology-laboratory-postdoctoral-researcher-multiple | Postdoctoral Researcher (×multiple)  [×N]
+- exec-dept-doe-national-energy-technology-laboratory-principal-scientist-researcher-multiple | Principal Scientist / Researcher (×multiple)  [×N]
 
 ### National Institute of Standards and Technology (NIST)  [exec-dept-doc-nist]
 - exec-dept-doc-nist-chips-program-director | CHIPS Program Director
@@ -1294,17 +1299,9 @@ THE TITLES:
 - leg-joint-tax-director-of-refund-review-operations | Director of Refund Review Operations
 - leg-joint-tax-director-of-revenue-estimating | Director of Revenue Estimating
 - leg-joint-tax-director-of-tax-modeling | Director of Tax Modeling
-
-### Nuclear Regulatory Commission (NRC)  [exec-regulatory-nrc]
-- exec-regulatory-nrc-director-office-of-nuclear-material-safety-safeguards | Director — Office of Nuclear Material Safety & Safeguards
-- exec-regulatory-nrc-director-office-of-nuclear-reactor-regulation | Director — Office of Nuclear Reactor Regulation
-- exec-regulatory-nrc-director-office-of-nuclear-regulatory-research | Director — Office of Nuclear Regulatory Research
-- exec-regulatory-nrc-director-office-of-nuclear-security-incident-response | Director — Office of Nuclear Security & Incident Response
-- exec-regulatory-nrc-nuclear-reactor-regulation-specialist-multiple | Nuclear Reactor Regulation Specialist (×multiple)  [×N]
-- exec-regulatory-nrc-regional-director-4-regions | Regional Director — 4 Regions
 ```
 
-## Prompt A8 — 20 organisation(s), 106 title(s)
+## Prompt A8 — 20 organisation(s), 107 title(s)
 
 ```
 I am building a data-backed public graph of the U.S. federal government. Every
@@ -1360,6 +1357,14 @@ above, one line each, with the document URL it came from and whether it is
 official-published or third-party-estimated.
 
 THE TITLES:
+
+### Nuclear Regulatory Commission (NRC)  [exec-regulatory-nrc]
+- exec-regulatory-nrc-director-office-of-nuclear-material-safety-safeguards | Director — Office of Nuclear Material Safety & Safeguards
+- exec-regulatory-nrc-director-office-of-nuclear-reactor-regulation | Director — Office of Nuclear Reactor Regulation
+- exec-regulatory-nrc-director-office-of-nuclear-regulatory-research | Director — Office of Nuclear Regulatory Research
+- exec-regulatory-nrc-director-office-of-nuclear-security-incident-response | Director — Office of Nuclear Security & Incident Response
+- exec-regulatory-nrc-nuclear-reactor-regulation-specialist-multiple | Nuclear Reactor Regulation Specialist (×multiple)  [×N]
+- exec-regulatory-nrc-regional-director-4-regions | Regional Director — 4 Regions
 
 ### Office of Energy Efficiency & Renewable Energy (EERE)  [exec-dept-doe-eere]
 - exec-dept-doe-eere-director-building-technologies | Director — Building Technologies
@@ -1478,13 +1483,6 @@ THE TITLES:
 - exec-dept-hhs-hrsa-associate-administrator-maternal-child-health | Associate Administrator — Maternal & Child Health
 - exec-dept-hhs-hrsa-associate-administrator-primary-healthcare | Associate Administrator — Primary Healthcare
 - exec-dept-hhs-hrsa-director-national-health-service-corps | Director — National Health Service Corps
-
-### Joint Economic Committee  [leg-joint-econ]
-- leg-joint-econ-chair-alternates-senate-house | Chair (alternates Senate/House)
-- leg-joint-econ-executive-director | Executive Director
-- leg-joint-econ-policy-director | Policy Director
-- leg-joint-econ-senior-economist-4 | Senior Economist (×4)  [×N]
-- leg-joint-econ-vice-chair | Vice Chair
 
 ### Office of Environmental Management (EM)  [exec-dept-doe-em]
 - exec-dept-doe-em-site-manager-hanford-site-richland-wa-largest-em-site | Site Manager — Hanford Site (Richland, WA) — largest EM site
@@ -1640,12 +1638,6 @@ THE TITLES:
 - leg-house-clerk-director-of-information-systems | Director of Information Systems
 - leg-house-clerk-director-of-legislative-resource-center | Director of Legislative Resource Center
 
-### Commodity Futures Trading Commission (CFTC)  [exec-regulatory-cftc]
-- exec-regulatory-cftc-director-division-of-clearing-risk | Director — Division of Clearing & Risk
-- exec-regulatory-cftc-director-division-of-market-oversight | Director — Division of Market Oversight
-- exec-regulatory-cftc-director-division-of-swap-dealer-intermediary-oversight | Director — Division of Swap Dealer & Intermediary Oversight
-- exec-regulatory-cftc-executive-director | Executive Director  [OPM lists it; the row prints no rate]
-
 ### Communications Division  [leg-support-uscp-communications-division]
 - leg-support-uscp-communications-division-commander-communications-division | Commander, Communications Division
 - leg-support-uscp-communications-division-lieutenant-communications-division-multiple | Lieutenant, Communications Division (×multiple)  [×N]
@@ -1700,12 +1692,6 @@ THE TITLES:
 - exec-dept-usda-fsa-farm-loan-officer | Farm Loan Officer
 - exec-dept-usda-fsa-state-executive-director-50-states | State Executive Director — 50 states
 
-### Federal Highway Administration (FHWA)  [exec-dept-dot-fhwa]
-- exec-dept-dot-fhwa-associate-administrator-federal-lands-highway | Associate Administrator — Federal Lands Highway
-- exec-dept-dot-fhwa-associate-administrator-planning-environment-realty | Associate Administrator — Planning, Environment & Realty
-- exec-dept-dot-fhwa-division-administrator-52-state-divisions | Division Administrator — 52 State Divisions
-- exec-dept-dot-fhwa-highway-engineer-multiple | Highway Engineer (×multiple)  [×N]
-
 ### Financial Analysis Division  [leg-support-cbo-financial-analysis-division]
 - leg-support-cbo-financial-analysis-division-analyst-financial-analysis-division-multiple | Analyst, Financial Analysis Division (×multiple)  [×N]
 - leg-support-cbo-financial-analysis-division-chief-financial-analysis-division | Chief, Financial Analysis Division
@@ -1723,6 +1709,18 @@ THE TITLES:
 - exec-dept-usda-fsis-district-manager-10-districts | District Manager — 10 districts
 - exec-dept-usda-fsis-food-inspector-multiple | Food Inspector (×multiple)  [×N]
 - exec-dept-usda-fsis-veterinary-medical-officer-multiple | Veterinary Medical Officer (×multiple)  [×N]
+
+### Forensic Audits & Investigative Service  [leg-support-gao-forensic-audits-investigative-service]
+- leg-support-gao-forensic-audits-investigative-service-analyst-forensic-audits-investigative-service-multiple | Analyst, Forensic Audits & Investigative Service (×multiple)  [×N]
+- leg-support-gao-forensic-audits-investigative-service-assistant-director-forensic-audits-investigative-service | Assistant Director, Forensic Audits & Investigative Service
+- leg-support-gao-forensic-audits-investigative-service-managing-director-forensic-audits-investigative-service | Managing Director, Forensic Audits & Investigative Service
+- leg-support-gao-forensic-audits-investigative-service-senior-analyst-forensic-audits-investigative-service-multiple | Senior Analyst, Forensic Audits & Investigative Service (×multiple)  [×N]
+
+### Hazardous Incident Response Division  [leg-support-uscp-hazardous-incident-response-division]
+- leg-support-uscp-hazardous-incident-response-division-commander-hazardous-incident-response-division | Commander, Hazardous Incident Response Division
+- leg-support-uscp-hazardous-incident-response-division-lieutenant-hazardous-incident-response-division-multiple | Lieutenant, Hazardous Incident Response Division (×multiple)  [×N]
+- leg-support-uscp-hazardous-incident-response-division-officer-hazardous-incident-response-division-multiple | Officer, Hazardous Incident Response Division (×multiple)  [×N]
+- leg-support-uscp-hazardous-incident-response-division-sergeant-hazardous-incident-response-division-multiple | Sergeant, Hazardous Incident Response Division (×multiple)  [×N]
 ```
 
 ## Prompt A10 — 27 organisation(s), 108 title(s)
@@ -1782,18 +1780,6 @@ official-published or third-party-estimated.
 
 THE TITLES:
 
-### Forensic Audits & Investigative Service  [leg-support-gao-forensic-audits-investigative-service]
-- leg-support-gao-forensic-audits-investigative-service-analyst-forensic-audits-investigative-service-multiple | Analyst, Forensic Audits & Investigative Service (×multiple)  [×N]
-- leg-support-gao-forensic-audits-investigative-service-assistant-director-forensic-audits-investigative-service | Assistant Director, Forensic Audits & Investigative Service
-- leg-support-gao-forensic-audits-investigative-service-managing-director-forensic-audits-investigative-service | Managing Director, Forensic Audits & Investigative Service
-- leg-support-gao-forensic-audits-investigative-service-senior-analyst-forensic-audits-investigative-service-multiple | Senior Analyst, Forensic Audits & Investigative Service (×multiple)  [×N]
-
-### Hazardous Incident Response Division  [leg-support-uscp-hazardous-incident-response-division]
-- leg-support-uscp-hazardous-incident-response-division-commander-hazardous-incident-response-division | Commander, Hazardous Incident Response Division
-- leg-support-uscp-hazardous-incident-response-division-lieutenant-hazardous-incident-response-division-multiple | Lieutenant, Hazardous Incident Response Division (×multiple)  [×N]
-- leg-support-uscp-hazardous-incident-response-division-officer-hazardous-incident-response-division-multiple | Officer, Hazardous Incident Response Division (×multiple)  [×N]
-- leg-support-uscp-hazardous-incident-response-division-sergeant-hazardous-incident-response-division-multiple | Sergeant, Hazardous Incident Response Division (×multiple)  [×N]
-
 ### Health Care  [leg-support-gao-health-care]
 - leg-support-gao-health-care-analyst-health-care-multiple | Analyst, Health Care (×multiple)  [×N]
 - leg-support-gao-health-care-assistant-director-health-care | Assistant Director, Health Care
@@ -1835,6 +1821,12 @@ THE TITLES:
 - exec-dept-doc-ita-deputy-under-secretary | Deputy Under Secretary
 - exec-dept-doc-ita-director-100-export-assistance-centers | Director — 100+ Export Assistance Centers
 - exec-dept-doc-ita-under-secretary-for-international-trade | Under Secretary for International Trade
+
+### Joint Economic Committee  [leg-joint-econ]
+- leg-joint-econ-chair-alternates-senate-house | Chair (alternates Senate/House)
+- leg-joint-econ-policy-director | Policy Director
+- leg-joint-econ-senior-economist-4 | Senior Economist (×4)  [×N]
+- leg-joint-econ-vice-chair | Vice Chair
 
 ### K-9 Unit  [leg-support-uscp-k-9-unit]
 - leg-support-uscp-k-9-unit-commander-k-9-unit | Commander, K-9 Unit
@@ -1943,9 +1935,15 @@ THE TITLES:
 - leg-support-gao-science-technology-assessment-analytics-assistant-director-science-technology-assessment-analytics | Assistant Director, Science, Technology Assessment & Analytics
 - leg-support-gao-science-technology-assessment-analytics-managing-director-science-technology-assessment-analytics | Managing Director, Science, Technology Assessment & Analytics
 - leg-support-gao-science-technology-assessment-analytics-senior-analyst-science-technology-assessment-analytics-multiple | Senior Analyst, Science, Technology Assessment & Analytics (×multiple)  [×N]
+
+### Small Business Administration (SBA)  [exec-ind-sba]
+- exec-ind-sba-associate-administrator-capital-access | Associate Administrator — Capital Access
+- exec-ind-sba-associate-administrator-disaster-assistance | Associate Administrator — Disaster Assistance
+- exec-ind-sba-associate-administrator-entrepreneurial-development | Associate Administrator — Entrepreneurial Development
+- exec-ind-sba-associate-administrator-government-contracting-business-development | Associate Administrator — Government Contracting & Business Development
 ```
 
-## Prompt A11 — 35 organisation(s), 110 title(s)
+## Prompt A11 — 35 organisation(s), 109 title(s)
 
 ```
 I am building a data-backed public graph of the U.S. federal government. Every
@@ -2002,12 +2000,6 @@ official-published or third-party-estimated.
 
 THE TITLES:
 
-### Small Business Administration (SBA)  [exec-ind-sba]
-- exec-ind-sba-associate-administrator-capital-access | Associate Administrator — Capital Access
-- exec-ind-sba-associate-administrator-disaster-assistance | Associate Administrator — Disaster Assistance
-- exec-ind-sba-associate-administrator-entrepreneurial-development | Associate Administrator — Entrepreneurial Development
-- exec-ind-sba-associate-administrator-government-contracting-business-development | Associate Administrator — Government Contracting & Business Development
-
 ### Strategic Issues  [leg-support-gao-strategic-issues]
 - leg-support-gao-strategic-issues-analyst-strategic-issues-multiple | Analyst, Strategic Issues (×multiple)  [×N]
 - leg-support-gao-strategic-issues-assistant-director-strategic-issues | Assistant Director, Strategic Issues
@@ -2042,6 +2034,11 @@ THE TITLES:
 - exec-dept-va-bva-veterans-law-judge-multiple | Veterans Law Judge (×multiple)  [×N]
 - exec-dept-va-bva-vice-chairman | Vice Chairman
 
+### Commodity Futures Trading Commission (CFTC)  [exec-regulatory-cftc]
+- exec-regulatory-cftc-director-division-of-clearing-risk | Director — Division of Clearing & Risk
+- exec-regulatory-cftc-director-division-of-market-oversight | Director — Division of Market Oversight
+- exec-regulatory-cftc-director-division-of-swap-dealer-intermediary-oversight | Director — Division of Swap Dealer & Intermediary Oversight
+
 ### Consumer Product Safety Commission (CPSC)  [exec-regulatory-cpsc]
 - exec-regulatory-cpsc-compliance-officer-safety-analyst-multiple | Compliance Officer / Safety Analyst (×multiple)  [×N]
 - exec-regulatory-cpsc-director-office-of-compliance-field-operations | Director — Office of Compliance & Field Operations
@@ -2052,15 +2049,15 @@ THE TITLES:
 - exec-dept-dol-eta-administrator-office-of-unemployment-insurance | Administrator — Office of Unemployment Insurance  [OPM lists it; the row prints no rate]
 - exec-dept-dol-eta-grant-officer-multiple | Grant Officer (×multiple)  [×N]
 
+### Federal Highway Administration (FHWA)  [exec-dept-dot-fhwa]
+- exec-dept-dot-fhwa-associate-administrator-federal-lands-highway | Associate Administrator — Federal Lands Highway
+- exec-dept-dot-fhwa-associate-administrator-planning-environment-realty | Associate Administrator — Planning, Environment & Realty
+- exec-dept-dot-fhwa-highway-engineer-multiple | Highway Engineer (×multiple)  [×N]
+
 ### Federal Housing Administration (FHA)  [exec-dept-hud-fha]
 - exec-dept-hud-fha-deputy-assistant-secretary-multifamily-housing | Deputy Assistant Secretary — Multifamily Housing
 - exec-dept-hud-fha-deputy-assistant-secretary-single-family-housing | Deputy Assistant Secretary — Single Family Housing
 - exec-dept-hud-fha-homeownership-center-director-4-centers | Homeownership Center Director (×4 centers)  [×N]
-
-### Federal Motor Carrier Safety Admin (FMCSA)  [exec-dept-dot-fmcsa]
-- exec-dept-dot-fmcsa-associate-administrator-field-operations | Associate Administrator — Field Operations
-- exec-dept-dot-fmcsa-commercial-vehicle-safety-specialist-multiple | Commercial Vehicle Safety Specialist (×multiple)  [×N]
-- exec-dept-dot-fmcsa-division-administrator-52-state-divisions | Division Administrator — 52 State Divisions
 
 ### Federal Railroad Administration (FRA)  [exec-dept-dot-fra]
 - exec-dept-dot-fra-associate-administrator-safety | Associate Administrator — Safety
@@ -2436,6 +2433,10 @@ THE TITLES:
 - exec-dept-dol-ebsa-benefits-advisor-multiple | Benefits Advisor (×multiple)  [×N]
 - exec-dept-dol-ebsa-criminal-investigator-multiple | Criminal Investigator (×multiple)  [×N]
 
+### Federal Motor Carrier Safety Admin (FMCSA)  [exec-dept-dot-fmcsa]
+- exec-dept-dot-fmcsa-associate-administrator-field-operations | Associate Administrator — Field Operations
+- exec-dept-dot-fmcsa-commercial-vehicle-safety-specialist-multiple | Commercial Vehicle Safety Specialist (×multiple)  [×N]
+
 ### Federal Transit Administration (FTA)  [exec-dept-dot-fta]
 - exec-dept-dot-fta-associate-administrator-transit-programs | Associate Administrator — Transit Programs
 - exec-dept-dot-fta-transit-specialist-multiple | Transit Specialist (×multiple)  [×N]
@@ -2447,10 +2448,6 @@ THE TITLES:
 ### Government Accountability Office (GAO)  [leg-support-gao]
 - leg-support-gao-chief-administrative-officer | Chief Administrative Officer
 - leg-support-gao-director-of-congressional-relations | Director of Congressional Relations
-
-### Hirshhorn Museum & Sculpture Garden  [exec-ind-smithsonian-hirshhorn-museum-sculpture-garden]
-- exec-ind-smithsonian-hirshhorn-museum-sculpture-garden-deputy-director-hirshhorn-museum-sculpture-garden | Deputy Director, Hirshhorn Museum & Sculpture Garden
-- exec-ind-smithsonian-hirshhorn-museum-sculpture-garden-director-hirshhorn-museum-sculpture-garden | Director, Hirshhorn Museum & Sculpture Garden
 ```
 
 ## Prompt A13 — 55 organisation(s), 110 title(s)
@@ -2510,17 +2507,13 @@ official-published or third-party-estimated.
 
 THE TITLES:
 
+### Hirshhorn Museum & Sculpture Garden  [exec-ind-smithsonian-hirshhorn-museum-sculpture-garden]
+- exec-ind-smithsonian-hirshhorn-museum-sculpture-garden-deputy-director-hirshhorn-museum-sculpture-garden | Deputy Director, Hirshhorn Museum & Sculpture Garden
+- exec-ind-smithsonian-hirshhorn-museum-sculpture-garden-director-hirshhorn-museum-sculpture-garden | Director, Hirshhorn Museum & Sculpture Garden
+
 ### House Committee on Agriculture  [leg-house-cmte-agriculture]
 - leg-house-cmte-agriculture-minority-staff-director-agriculture | Minority Staff Director, Agriculture
 - leg-house-cmte-agriculture-staff-director-agriculture | Staff Director, Agriculture
-
-### House Committee on Appropriations  [leg-house-cmte-appropriations]
-- leg-house-cmte-appropriations-minority-staff-director-appropriations | Minority Staff Director, Appropriations
-- leg-house-cmte-appropriations-staff-director-appropriations | Staff Director, Appropriations
-
-### House Committee on Armed Services  [leg-house-cmte-armed-services]
-- leg-house-cmte-armed-services-minority-staff-director-armed-services | Minority Staff Director, Armed Services
-- leg-house-cmte-armed-services-staff-director-armed-services | Staff Director, Armed Services
 
 ### House Committee on Budget  [leg-house-cmte-budget]
 - leg-house-cmte-budget-minority-staff-director-budget | Minority Staff Director, Budget
@@ -2698,14 +2691,6 @@ THE TITLES:
 - leg-senate-cmte-agriculture-nutrition-and-forestry-minority-staff-director-agriculture-nutrition-and-forestry | Minority Staff Director, Agriculture, Nutrition, and Forestry
 - leg-senate-cmte-agriculture-nutrition-and-forestry-staff-director-agriculture-nutrition-and-forestry | Staff Director, Agriculture, Nutrition, and Forestry
 
-### Senate Committee on Appropriations  [leg-senate-cmte-appropriations]
-- leg-senate-cmte-appropriations-minority-staff-director-appropriations | Minority Staff Director, Appropriations
-- leg-senate-cmte-appropriations-staff-director-appropriations | Staff Director, Appropriations
-
-### Senate Committee on Armed Services  [leg-senate-cmte-armed-services]
-- leg-senate-cmte-armed-services-minority-staff-director-armed-services | Minority Staff Director, Armed Services
-- leg-senate-cmte-armed-services-staff-director-armed-services | Staff Director, Armed Services
-
 ### Senate Committee on Banking, Housing & Urban Affairs  [leg-senate-cmte-banking-housing-urban-affairs]
 - leg-senate-cmte-banking-housing-urban-affairs-minority-staff-director-banking-housing-urban-affairs | Minority Staff Director, Banking, Housing & Urban Affairs
 - leg-senate-cmte-banking-housing-urban-affairs-staff-director-banking-housing-urban-affairs | Staff Director, Banking, Housing & Urban Affairs
@@ -2729,9 +2714,21 @@ THE TITLES:
 ### Senate Committee on Foreign Relations  [leg-senate-cmte-foreign-relations]
 - leg-senate-cmte-foreign-relations-minority-staff-director-foreign-relations | Minority Staff Director, Foreign Relations
 - leg-senate-cmte-foreign-relations-staff-director-foreign-relations | Staff Director, Foreign Relations
+
+### Senate Committee on Health, Education, Labor & Pensions  [leg-senate-cmte-health-education-labor-pensions]
+- leg-senate-cmte-health-education-labor-pensions-minority-staff-director-health-education-labor-pensions | Minority Staff Director, Health, Education, Labor & Pensions
+- leg-senate-cmte-health-education-labor-pensions-staff-director-health-education-labor-pensions | Staff Director, Health, Education, Labor & Pensions
+
+### Senate Committee on Homeland Security & Governmental Affairs  [leg-senate-cmte-homeland-security-governmental-affairs]
+- leg-senate-cmte-homeland-security-governmental-affairs-minority-staff-director-homeland-security-governmental-affairs | Minority Staff Director, Homeland Security & Governmental Affairs
+- leg-senate-cmte-homeland-security-governmental-affairs-staff-director-homeland-security-governmental-affairs | Staff Director, Homeland Security & Governmental Affairs
+
+### Senate Committee on Indian Affairs  [leg-senate-cmte-indian-affairs]
+- leg-senate-cmte-indian-affairs-minority-staff-director-indian-affairs | Minority Staff Director, Indian Affairs
+- leg-senate-cmte-indian-affairs-staff-director-indian-affairs | Staff Director, Indian Affairs
 ```
 
-## Prompt A14 — 91 organisation(s), 110 title(s)
+## Prompt A14 — 94 organisation(s), 110 title(s)
 
 ```
 I am building a data-backed public graph of the U.S. federal government. Every
@@ -2787,18 +2784,6 @@ above, one line each, with the document URL it came from and whether it is
 official-published or third-party-estimated.
 
 THE TITLES:
-
-### Senate Committee on Health, Education, Labor & Pensions  [leg-senate-cmte-health-education-labor-pensions]
-- leg-senate-cmte-health-education-labor-pensions-minority-staff-director-health-education-labor-pensions | Minority Staff Director, Health, Education, Labor & Pensions
-- leg-senate-cmte-health-education-labor-pensions-staff-director-health-education-labor-pensions | Staff Director, Health, Education, Labor & Pensions
-
-### Senate Committee on Homeland Security & Governmental Affairs  [leg-senate-cmte-homeland-security-governmental-affairs]
-- leg-senate-cmte-homeland-security-governmental-affairs-minority-staff-director-homeland-security-governmental-affairs | Minority Staff Director, Homeland Security & Governmental Affairs
-- leg-senate-cmte-homeland-security-governmental-affairs-staff-director-homeland-security-governmental-affairs | Staff Director, Homeland Security & Governmental Affairs
-
-### Senate Committee on Indian Affairs  [leg-senate-cmte-indian-affairs]
-- leg-senate-cmte-indian-affairs-minority-staff-director-indian-affairs | Minority Staff Director, Indian Affairs
-- leg-senate-cmte-indian-affairs-staff-director-indian-affairs | Staff Director, Indian Affairs
 
 ### Senate Committee on Rules & Administration  [leg-senate-cmte-rules-administration]
 - leg-senate-cmte-rules-administration-minority-staff-director-rules-administration | Minority Staff Director, Rules & Administration
@@ -2882,9 +2867,6 @@ THE TITLES:
 ### American Battle Monuments Commission (ABMC)  [exec-ind-misc-american-battle-monuments-commission-abmc]
 - exec-ind-misc-american-battle-monuments-commission-abmc-director-administrator-chair-american-battle-monuments-commission | Director / Administrator / Chair, American Battle Monuments Commission
 
-### Ames National Laboratory  [exec-dept-doe-ames-national-laboratory]
-- exec-dept-doe-ames-national-laboratory-laboratory-director-ames-national-laboratory | Laboratory Director, Ames National Laboratory
-
 ### Ames Research Center (ARC)  [exec-ind-nasa-ames-research-center-arc]
 - exec-ind-nasa-ames-research-center-arc-center-director-ames-research-center-arc | Center Director, Ames Research Center (ARC)
 
@@ -2893,9 +2875,6 @@ THE TITLES:
 
 ### Architect of the Capitol  [leg-support-aoc]
 - leg-support-aoc-assistant-architect-of-the-capitol | Assistant Architect of the Capitol
-
-### Argonne National Laboratory  [exec-dept-doe-argonne-national-laboratory]
-- exec-dept-doe-argonne-national-laboratory-laboratory-director-argonne-national-laboratory | Laboratory Director, Argonne National Laboratory
 
 ### Armstrong Flight Research Center (AFRC)  [exec-ind-nasa-armstrong-flight-research-center-afrc]
 - exec-ind-nasa-armstrong-flight-research-center-afrc-center-director-armstrong-flight-research-center-afrc | Center Director, Armstrong Flight Research Center (AFRC)
@@ -2911,9 +2890,6 @@ THE TITLES:
 
 ### Border Management, Federal Workforce, and Regulatory Affairs  [leg-senate-cmte-homeland-security-governmental-affairs-sub-government-operations-border-management]
 - leg-senate-cmte-homeland-security-governmental-affairs-sub-government-operations-border-management-staff-director-subcommittee-on-government-operations-border-management | Staff Director, Subcommittee on Government Operations & Border Management
-
-### Brookhaven National Laboratory  [exec-dept-doe-brookhaven-national-laboratory]
-- exec-dept-doe-brookhaven-national-laboratory-laboratory-director-brookhaven-national-laboratory | Laboratory Director, Brookhaven National Laboratory
 
 ### Chemical Safety & Hazard Investigation Board (CSB)  [exec-ind-misc-chemical-safety-hazard-investigation-board-csb]
 - exec-ind-misc-chemical-safety-hazard-investigation-board-csb-director-administrator-chair-chemical-safety-hazard-investigation-board | Director / Administrator / Chair, Chemical Safety & Hazard Investigation Board
@@ -3077,11 +3053,38 @@ THE TITLES:
 ### Federal Maritime Commission (FMC)  [exec-regulatory-fmc]
 - exec-regulatory-fmc-managing-director | Managing Director
 
-### Fermi National Accelerator Laboratory  [exec-dept-doe-fermi-national-accelerator-laboratory]
-- exec-dept-doe-fermi-national-accelerator-laboratory-laboratory-director-fermi-national-accelerator-laboratory | Laboratory Director, Fermi National Accelerator Laboratory
+### Financial Institutions & Consumer Protection  [leg-senate-cmte-banking-housing-urban-affairs-sub-financial-institutions-consumer-protection]
+- leg-senate-cmte-banking-housing-urban-affairs-sub-financial-institutions-consumer-protection-staff-director-subcommittee-on-financial-institutions-consumer-protection | Staff Director, Subcommittee on Financial Institutions & Consumer Protection
+
+### Financial Services & General Government  [leg-senate-cmte-appropriations-sub-financial-services-general-government]
+- leg-senate-cmte-appropriations-sub-financial-services-general-government-staff-director-subcommittee-on-financial-services-general-government | Staff Director, Subcommittee on Financial Services & General Government
+
+### Fiscal Responsibility & Economic Growth  [leg-senate-cmte-finance-sub-fiscal-responsibility-economic-growth]
+- leg-senate-cmte-finance-sub-fiscal-responsibility-economic-growth-staff-director-subcommittee-on-fiscal-responsibility-economic-growth | Staff Director, Subcommittee on Fiscal Responsibility & Economic Growth
+
+### Fisheries, Water & Wildlife  [leg-senate-cmte-environment-public-works-sub-fisheries-water-wildlife]
+- leg-senate-cmte-environment-public-works-sub-fisheries-water-wildlife-staff-director-subcommittee-on-fisheries-water-wildlife | Staff Director, Subcommittee on Fisheries, Water & Wildlife
+
+### Food and Nutrition, Specialty Crops, Organics, and Research  [leg-senate-cmte-agriculture-nutrition-and-forestry-sub-food-nutrition-specialty-crops-agricultural-research]
+- leg-senate-cmte-agriculture-nutrition-and-forestry-sub-food-nutrition-specialty-crops-agricultural-research-staff-director-subcommittee-on-food-nutrition-specialty-crops-agricultural-research | Staff Director, Subcommittee on Food & Nutrition, Specialty Crops & Agricultural Research
+
+### Franklin D. Roosevelt Presidential Library and Museum  [exec-ind-nara-franklin-d-roosevelt-presidential-library-hyde-park-ny]
+- exec-ind-nara-franklin-d-roosevelt-presidential-library-hyde-park-ny-director-franklin-d-roosevelt-presidential-library | Director, Franklin D. Roosevelt Presidential Library
+
+### George Bush Presidential Library and Museum  [exec-ind-nara-george-h-w-bush-presidential-library-college-station-tx]
+- exec-ind-nara-george-h-w-bush-presidential-library-college-station-tx-director-george-h-w-bush-presidential-library | Director, George H.W. Bush Presidential Library
+
+### George W. Bush Presidential Library (Dallas, TX)  [exec-ind-nara-george-w-bush-presidential-library-dallas-tx]
+- exec-ind-nara-george-w-bush-presidential-library-dallas-tx-director-george-w-bush-presidential-library | Director, George W. Bush Presidential Library
+
+### Gerald R. Ford Presidential Library (Ann Arbor, MI)  [exec-ind-nara-gerald-r-ford-presidential-library-ann-arbor-mi]
+- exec-ind-nara-gerald-r-ford-presidential-library-ann-arbor-mi-director-gerald-r-ford-presidential-library | Director, Gerald R. Ford Presidential Library
+
+### Glenn Research Center (GRC)  [exec-ind-nasa-glenn-research-center-grc]
+- exec-ind-nasa-glenn-research-center-grc-center-director-glenn-research-center-grc | Center Director, Glenn Research Center (GRC)
 ```
 
-## Prompt A15 — 110 organisation(s), 110 title(s)
+## Prompt A15 — 91 organisation(s), 91 title(s)
 
 ```
 I am building a data-backed public graph of the U.S. federal government. Every
@@ -3138,36 +3141,6 @@ official-published or third-party-estimated.
 
 THE TITLES:
 
-### Financial Institutions & Consumer Protection  [leg-senate-cmte-banking-housing-urban-affairs-sub-financial-institutions-consumer-protection]
-- leg-senate-cmte-banking-housing-urban-affairs-sub-financial-institutions-consumer-protection-staff-director-subcommittee-on-financial-institutions-consumer-protection | Staff Director, Subcommittee on Financial Institutions & Consumer Protection
-
-### Financial Services & General Government  [leg-senate-cmte-appropriations-sub-financial-services-general-government]
-- leg-senate-cmte-appropriations-sub-financial-services-general-government-staff-director-subcommittee-on-financial-services-general-government | Staff Director, Subcommittee on Financial Services & General Government
-
-### Fiscal Responsibility & Economic Growth  [leg-senate-cmte-finance-sub-fiscal-responsibility-economic-growth]
-- leg-senate-cmte-finance-sub-fiscal-responsibility-economic-growth-staff-director-subcommittee-on-fiscal-responsibility-economic-growth | Staff Director, Subcommittee on Fiscal Responsibility & Economic Growth
-
-### Fisheries, Water & Wildlife  [leg-senate-cmte-environment-public-works-sub-fisheries-water-wildlife]
-- leg-senate-cmte-environment-public-works-sub-fisheries-water-wildlife-staff-director-subcommittee-on-fisheries-water-wildlife | Staff Director, Subcommittee on Fisheries, Water & Wildlife
-
-### Food and Nutrition, Specialty Crops, Organics, and Research  [leg-senate-cmte-agriculture-nutrition-and-forestry-sub-food-nutrition-specialty-crops-agricultural-research]
-- leg-senate-cmte-agriculture-nutrition-and-forestry-sub-food-nutrition-specialty-crops-agricultural-research-staff-director-subcommittee-on-food-nutrition-specialty-crops-agricultural-research | Staff Director, Subcommittee on Food & Nutrition, Specialty Crops & Agricultural Research
-
-### Franklin D. Roosevelt Presidential Library and Museum  [exec-ind-nara-franklin-d-roosevelt-presidential-library-hyde-park-ny]
-- exec-ind-nara-franklin-d-roosevelt-presidential-library-hyde-park-ny-director-franklin-d-roosevelt-presidential-library | Director, Franklin D. Roosevelt Presidential Library
-
-### George Bush Presidential Library and Museum  [exec-ind-nara-george-h-w-bush-presidential-library-college-station-tx]
-- exec-ind-nara-george-h-w-bush-presidential-library-college-station-tx-director-george-h-w-bush-presidential-library | Director, George H.W. Bush Presidential Library
-
-### George W. Bush Presidential Library (Dallas, TX)  [exec-ind-nara-george-w-bush-presidential-library-dallas-tx]
-- exec-ind-nara-george-w-bush-presidential-library-dallas-tx-director-george-w-bush-presidential-library | Director, George W. Bush Presidential Library
-
-### Gerald R. Ford Presidential Library (Ann Arbor, MI)  [exec-ind-nara-gerald-r-ford-presidential-library-ann-arbor-mi]
-- exec-ind-nara-gerald-r-ford-presidential-library-ann-arbor-mi-director-gerald-r-ford-presidential-library | Director, Gerald R. Ford Presidential Library
-
-### Glenn Research Center (GRC)  [exec-ind-nasa-glenn-research-center-grc]
-- exec-ind-nasa-glenn-research-center-grc-center-director-glenn-research-center-grc | Center Director, Glenn Research Center (GRC)
-
 ### Goddard Space Flight Center (GSFC)  [exec-ind-nasa-goddard-space-flight-center-gsfc]
 - exec-ind-nasa-goddard-space-flight-center-gsfc-center-director-goddard-space-flight-center-gsfc | Center Director, Goddard Space Flight Center (GSFC)
 
@@ -3183,6 +3156,12 @@ THE TITLES:
 ### Homeland Security  [leg-senate-cmte-appropriations-sub-homeland-security]
 - leg-senate-cmte-appropriations-sub-homeland-security-staff-director-subcommittee-on-homeland-security | Staff Director, Subcommittee on Homeland Security
 
+### House Committee on Appropriations  [leg-house-cmte-appropriations]
+- leg-house-cmte-appropriations-staff-director-appropriations | Staff Director, Appropriations
+
+### House Committee on Armed Services  [leg-house-cmte-armed-services]
+- leg-house-cmte-armed-services-staff-director-armed-services | Staff Director, Armed Services
+
 ### House Leadership  [leg-house-leadership]
 - leg-house-leadership-problem-solvers-caucus-co-chairs | Problem Solvers Caucus Co-Chairs
 
@@ -3191,9 +3170,6 @@ THE TITLES:
 
 ### Human Rights & the Law  [leg-senate-cmte-judiciary-sub-human-rights-the-law]
 - leg-senate-cmte-judiciary-sub-human-rights-the-law-staff-director-subcommittee-on-human-rights-the-law | Staff Director, Subcommittee on Human Rights & the Law
-
-### Idaho National Laboratory  [exec-dept-doe-idaho-national-laboratory]
-- exec-dept-doe-idaho-national-laboratory-laboratory-director-idaho-national-laboratory | Laboratory Director, Idaho National Laboratory
 
 ### Institute of Education Sciences (IES)  [exec-dept-ed-ies]
 - exec-dept-ed-ies-statistician-research-scientist-multiple | Statistician / Research Scientist (×multiple)  [×N]
@@ -3228,20 +3204,11 @@ THE TITLES:
 ### Langley Research Center (LaRC)  [exec-ind-nasa-langley-research-center-larc]
 - exec-ind-nasa-langley-research-center-larc-center-director-langley-research-center-larc | Center Director, Langley Research Center (LaRC)
 
-### Lawrence Berkeley National Laboratory  [exec-dept-doe-lawrence-berkeley-national-laboratory]
-- exec-dept-doe-lawrence-berkeley-national-laboratory-laboratory-director-lawrence-berkeley-national-laboratory | Laboratory Director, Lawrence Berkeley National Laboratory
-
-### Lawrence Livermore National Laboratory  [exec-dept-doe-lawrence-livermore-national-laboratory]
-- exec-dept-doe-lawrence-livermore-national-laboratory-laboratory-director-lawrence-livermore-national-laboratory | Laboratory Director, Lawrence Livermore National Laboratory
-
 ### Legislative Branch  [leg-senate-cmte-appropriations-sub-legislative-branch]
 - leg-senate-cmte-appropriations-sub-legislative-branch-staff-director-subcommittee-on-legislative-branch | Staff Director, Subcommittee on Legislative Branch
 
 ### Library of Congress  [leg-support-loc]
 - leg-support-loc-deputy-librarian-of-congress | Deputy Librarian of Congress
-
-### Los Alamos National Laboratory  [exec-dept-doe-los-alamos-national-laboratory]
-- exec-dept-doe-los-alamos-national-laboratory-laboratory-director-los-alamos-national-laboratory | Laboratory Director, Los Alamos National Laboratory
 
 ### Lyndon B. Johnson Presidential Library (Austin, TX)  [exec-ind-nara-lyndon-b-johnson-presidential-library-austin-tx]
 - exec-ind-nara-lyndon-b-johnson-presidential-library-austin-tx-director-lyndon-b-johnson-presidential-library | Director, Lyndon B. Johnson Presidential Library
@@ -3267,12 +3234,6 @@ THE TITLES:
 ### National Center for Science and Engineering Statistics (NCSES)  [exec-ind-nsf-social-behavioral-economic-sciences-sbe-national-center-for-science-engineering-statistics]
 - exec-ind-nsf-social-behavioral-economic-sciences-sbe-national-center-for-science-engineering-statistics-division-director-national-center-for-science-engineering-statistics | Division Director, National Center for Science & Engineering Statistics
 
-### National Energy Technology Laboratory  [exec-dept-doe-national-energy-technology-laboratory]
-- exec-dept-doe-national-energy-technology-laboratory-laboratory-director-national-energy-technology-laboratory | Laboratory Director, National Energy Technology Laboratory
-
-### National Laboratory of the Rockies (NLR)  [exec-dept-doe-national-renewable-energy-laboratory]
-- exec-dept-doe-national-renewable-energy-laboratory-laboratory-director-national-renewable-energy-laboratory | Laboratory Director, National Renewable Energy Laboratory
-
 ### National Parks  [leg-senate-cmte-energy-natural-resources-sub-national-parks]
 - leg-senate-cmte-energy-natural-resources-sub-national-parks-staff-director-subcommittee-on-national-parks | Staff Director, Subcommittee on National Parks
 
@@ -3284,9 +3245,6 @@ THE TITLES:
 
 ### Near East, South Asia, Central Asia & Counterterrorism  [leg-senate-cmte-foreign-relations-sub-near-east-south-asia-central-asia-counterterrorism]
 - leg-senate-cmte-foreign-relations-sub-near-east-south-asia-central-asia-counterterrorism-staff-director-subcommittee-on-near-east-south-asia-central-asia-counterterrorism | Staff Director, Subcommittee on Near East, South Asia, Central Asia & Counterterrorism
-
-### Oak Ridge National Laboratory  [exec-dept-doe-oak-ridge-national-laboratory]
-- exec-dept-doe-oak-ridge-national-laboratory-laboratory-director-oak-ridge-national-laboratory | Laboratory Director, Oak Ridge National Laboratory
 
 ### Oceans, Fisheries, Climate Change & Manufacturing  [leg-senate-cmte-commerce-science-transportation-sub-oceans-fisheries-climate-change-manufacturing]
 - leg-senate-cmte-commerce-science-transportation-sub-oceans-fisheries-climate-change-manufacturing-staff-director-subcommittee-on-oceans-fisheries-climate-change-manufacturing | Staff Director, Subcommittee on Oceans, Fisheries, Climate Change & Manufacturing
@@ -3312,9 +3270,6 @@ THE TITLES:
 ### Office of Information and Regulatory Affairs (OIRA)  [exec-eop-omb-oira-office-of-information-regulatory-affairs]
 - exec-eop-omb-oira-office-of-information-regulatory-affairs-deputy-administrator-oira | Deputy Administrator, OIRA
 
-### Pacific Northwest National Laboratory  [exec-dept-doe-pacific-northwest-national-laboratory]
-- exec-dept-doe-pacific-northwest-national-laboratory-laboratory-director-pacific-northwest-national-laboratory | Laboratory Director, Pacific Northwest National Laboratory
-
 ### Permanent Subcommittee on Investigations  [leg-senate-cmte-homeland-security-governmental-affairs-sub-investigations-subcommittee-on-permanent-investigations]
 - leg-senate-cmte-homeland-security-governmental-affairs-sub-investigations-subcommittee-on-permanent-investigations-staff-director-subcommittee-on-investigations-subcommittee-on-permanent-investigations | Staff Director, Subcommittee on Investigations & Subcommittee on Permanent Investigations
 
@@ -3323,9 +3278,6 @@ THE TITLES:
 
 ### Primary Health & Retirement Security  [leg-senate-cmte-health-education-labor-pensions-sub-primary-health-retirement-security]
 - leg-senate-cmte-health-education-labor-pensions-sub-primary-health-retirement-security-staff-director-subcommittee-on-primary-health-retirement-security | Staff Director, Subcommittee on Primary Health & Retirement Security
-
-### Princeton Plasma Physics Laboratory  [exec-dept-doe-princeton-plasma-physics-laboratory]
-- exec-dept-doe-princeton-plasma-physics-laboratory-laboratory-director-princeton-plasma-physics-laboratory | Laboratory Director, Princeton Plasma Physics Laboratory
 
 ### Privacy, Technology & the Law  [leg-senate-cmte-judiciary-sub-privacy-technology-the-law]
 - leg-senate-cmte-judiciary-sub-privacy-technology-the-law-staff-director-subcommittee-on-privacy-technology-the-law | Staff Director, Subcommittee on Privacy, Technology & the Law
@@ -3342,15 +3294,6 @@ THE TITLES:
 ### Ronald Reagan Presidential Library (Simi Valley, CA)  [exec-ind-nara-ronald-reagan-presidential-library-simi-valley-ca]
 - exec-ind-nara-ronald-reagan-presidential-library-simi-valley-ca-director-ronald-reagan-presidential-library | Director, Ronald Reagan Presidential Library
 
-### SLAC National Accelerator Laboratory  [exec-dept-doe-slac-national-accelerator-laboratory]
-- exec-dept-doe-slac-national-accelerator-laboratory-laboratory-director-slac-national-accelerator-laboratory | Laboratory Director, SLAC National Accelerator Laboratory
-
-### Sandia National Laboratories  [exec-dept-doe-sandia-national-laboratories]
-- exec-dept-doe-sandia-national-laboratories-laboratory-director-sandia-national-laboratories | Laboratory Director, Sandia National Laboratories
-
-### Savannah River National Laboratory  [exec-dept-doe-savannah-river-national-laboratory]
-- exec-dept-doe-savannah-river-national-laboratory-laboratory-director-savannah-river-national-laboratory | Laboratory Director, Savannah River National Laboratory
-
 ### Science & Space  [leg-senate-cmte-commerce-science-transportation-sub-science-space]
 - leg-senate-cmte-commerce-science-transportation-sub-science-space-staff-director-subcommittee-on-science-space | Staff Director, Subcommittee on Science & Space
 
@@ -3362,6 +3305,12 @@ THE TITLES:
 
 ### Securities, Insurance & Investment  [leg-senate-cmte-banking-housing-urban-affairs-sub-securities-insurance-investment]
 - leg-senate-cmte-banking-housing-urban-affairs-sub-securities-insurance-investment-staff-director-subcommittee-on-securities-insurance-investment | Staff Director, Subcommittee on Securities, Insurance & Investment
+
+### Senate Committee on Appropriations  [leg-senate-cmte-appropriations]
+- leg-senate-cmte-appropriations-staff-director-appropriations | Staff Director, Appropriations
+
+### Senate Committee on Armed Services  [leg-senate-cmte-armed-services]
+- leg-senate-cmte-armed-services-staff-director-armed-services | Staff Director, Armed Services
 
 ### Senate Leadership  [leg-senate-leadership]
 - leg-senate-leadership-president-of-the-senate-vice-president | President of the Senate (Vice President)
@@ -3422,9 +3371,6 @@ THE TITLES:
 
 ### The Subcommittee on Conservation, Forestry, Natural Resources, and Biotechnology  [leg-senate-cmte-agriculture-nutrition-and-forestry-sub-conservation-climate-forestry-natural-resources]
 - leg-senate-cmte-agriculture-nutrition-and-forestry-sub-conservation-climate-forestry-natural-resources-staff-director-subcommittee-on-conservation-climate-forestry-natural-resources | Staff Director, Subcommittee on Conservation, Climate, Forestry & Natural Resources
-
-### Thomas Jefferson National Accelerator Facility  [exec-dept-doe-thomas-jefferson-national-accelerator-facility]
-- exec-dept-doe-thomas-jefferson-national-accelerator-facility-laboratory-director-thomas-jefferson-national-accelerator-facility | Laboratory Director, Thomas Jefferson National Accelerator Facility
 
 ### Tourism, Trade & Export Promotion  [leg-senate-cmte-commerce-science-transportation-sub-tourism-trade-export-promotion]
 - leg-senate-cmte-commerce-science-transportation-sub-tourism-trade-export-promotion-staff-director-subcommittee-on-tourism-trade-export-promotion | Staff Director, Subcommittee on Tourism, Trade & Export Promotion

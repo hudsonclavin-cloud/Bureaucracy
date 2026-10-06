@@ -312,6 +312,36 @@ MINIMAL_GRAPH_FIELDS = (
 MINIMAL_GRAPH_ROOT_FIELDS = ("__budgetSummary", "relationships")
 
 
+#: Blocks whose `documents` list is identical across many nodes. In the viewer
+#: copy each such list is stored ONCE on the root, under `__sharedDocuments`,
+#: and the block carries `documentsRef` instead: the employer block repeats the
+#: same three documents' quotes on each of its 112 posts, about 1.9 KB a node.
+#: graph.json keeps every block whole (the gate reads it there); only the
+#: browser's copy is deduplicated, and the panel resolves the reference.
+SHARED_DOCUMENT_BLOCKS = ("positionEmployer",)
+
+
+def share_repeated_documents(root: dict[str, Any]) -> None:
+    shared: dict[str, Any] = {}
+    keys: dict[str, str] = {}
+    stack = [root]
+    while stack:
+        node = stack.pop()
+        stack.extend(child for child in node.get("children", []) if isinstance(child, dict))
+        for field in SHARED_DOCUMENT_BLOCKS:
+            block = node.get(field)
+            if not isinstance(block, dict) or not isinstance(block.get("documents"), list):
+                continue
+            serial = json.dumps(block["documents"], sort_keys=True, ensure_ascii=False)
+            if serial not in keys:
+                keys[serial] = f"{field}-{len(keys) + 1}"
+                shared[keys[serial]] = block["documents"]
+            del block["documents"]
+            block["documentsRef"] = keys[serial]
+    if shared:
+        root["__sharedDocuments"] = shared
+
+
 def prune_graph_for_viewer(node: dict[str, Any], *, is_root: bool = True) -> dict[str, Any]:
     """The published tree with every field the browser never reads removed."""
     keys = MINIMAL_GRAPH_FIELDS + (MINIMAL_GRAPH_ROOT_FIELDS if is_root else ())
@@ -321,6 +351,8 @@ def prune_graph_for_viewer(node: dict[str, Any], *, is_root: bool = True) -> dic
         if isinstance(child, dict):
             children.append(prune_graph_for_viewer(child, is_root=False))
     result["children"] = children
+    if is_root:
+        share_repeated_documents(result)
     return result
 
 

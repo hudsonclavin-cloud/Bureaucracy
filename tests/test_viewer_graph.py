@@ -24,6 +24,7 @@ from pathlib import Path
 from data_pipeline.exporter.build_graph import (
     MINIMAL_GRAPH_FIELDS,
     MINIMAL_GRAPH_ROOT_FIELDS,
+    SHARED_DOCUMENT_BLOCKS,
     prune_graph_for_viewer,
 )
 
@@ -207,15 +208,34 @@ class PublishedViewerCopyTests(unittest.TestCase):
 
     def test_values_are_unchanged_for_the_fields_it_keeps(self):
         by_id = {n["id"]: n for n in walk(self.graph)}
+        shared = self.viewer.get("__sharedDocuments") or {}
         checked = 0
         for node in walk(self.viewer):
             original = by_id[node["id"]]
             for key, value in node.items():
-                if key == "children":
+                if key in ("children", "__sharedDocuments"):
                     continue
+                if key in SHARED_DOCUMENT_BLOCKS and isinstance(value, dict) and "documentsRef" in value:
+                    # Stored once on the root in the viewer copy; resolved, it
+                    # must be exactly the block graph.json carries.
+                    value = {k: v for k, v in value.items() if k != "documentsRef"}
+                    value["documents"] = shared[node[key]["documentsRef"]]
                 self.assertEqual(value, original.get(key), f"{node['id']}.{key}")
                 checked += 1
         self.assertGreater(checked, 10_000)
+
+
+    def test_repeated_documents_are_stored_once_and_every_reference_resolves(self):
+        shared = self.viewer.get("__sharedDocuments") or {}
+        refs = set()
+        for node in walk(self.viewer):
+            for field in SHARED_DOCUMENT_BLOCKS:
+                block = node.get(field)
+                if isinstance(block, dict):
+                    self.assertNotIn("documents", block, f"{node['id']}.{field} ships its documents again")
+                    self.assertIn(block.get("documentsRef"), shared, f"{node['id']}.{field} names no shared list")
+                    refs.add(block["documentsRef"])
+        self.assertEqual(refs, set(shared), "a shared list nothing names")
 
 
 if __name__ == "__main__":

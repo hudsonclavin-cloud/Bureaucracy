@@ -5264,8 +5264,18 @@ accepted as written):
    pack asks about them any more, and the inventory still lists every one. Pack 3
    now asks about 2,928 posts in 28 shards (3,360 in 33 before); pack 4's top 100
    families hold 1,321 of 2,928.
-2. **"Not federally paid", where a document establishes it** — the laboratories
-   above; built in parallel and recorded below when it lands.
+2. **"Not federally paid", where a document establishes it** — built the same
+   day as `positionEmployer` on the 112 posts directly under the 16
+   contractor-operated laboratories, on three documents: NETL's page (the
+   operator), DOE's own index of its 17 laboratories (which sixteen), and the
+   DOE Acquisition Regulation, 48 CFR part 970 (an M&O contractor sets its
+   employees' pay within DOE-approved schedules; DOE finances the contract).
+   Part 970 never says "not Federal employees" in words, and the qualifier says
+   so. Because DOE finances the contracts, the headline reads "Not on a federal
+   pay schedule" rather than the decision's "not federally paid". NETL's seven
+   posts are federal and stay research work. The research packs no longer ask
+   about the 112: pack 3 asks about 2,816 posts, pack 4's top 100 families hold
+   1,231 of them.
 3. **A sourced non-cost figure may head an organisation's panel**, labelled by
    basis and period — built the same day: 72 organisations with no measured
    cost are headed by File A gross outlays (34) or OMB's completed-year

@@ -615,7 +615,12 @@ function employerOf(node) {
 function describePay(node) {
   const employer = employerOf(node);
   if (employer) {
-    const docs = Array.isArray(employer.documents) ? employer.documents.filter((d) => d && isHttpUrl(d.url)) : [];
+    // The viewer copy stores repeated documents once on the root and the block
+    // names them by `documentsRef` (build_graph.share_repeated_documents).
+    const shared = state.root && state.root.__sharedDocuments && employer.documentsRef
+      ? state.root.__sharedDocuments[employer.documentsRef] : null;
+    const docList = Array.isArray(employer.documents) ? employer.documents : (Array.isArray(shared) ? shared : []);
+    const docs = docList.filter((d) => d && isHttpUrl(d.url));
     return [{
       heading: "Not on a federal pay schedule",
       notARate: true,
