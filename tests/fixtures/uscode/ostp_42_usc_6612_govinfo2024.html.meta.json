@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-10-05T23:28:15Z",
+ "url": "https://www.govinfo.gov/link/uscode/42/6612?link-type=html",
+ "status": 200,
+ "final_url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap79-subchapII-sec6612.htm",
+ "content_type": "text/html",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /link/uscode/42/6612",
+ "bytes": 3316,
+ "sha256": "9c4a04785685aa01c09e4396f81deb1559fe6da360a6b7b428a46a673247e988",
+ "error": null
+}

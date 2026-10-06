@@ -366,10 +366,19 @@ class PublishedGraphTests(unittest.TestCase):
                     reviewed.add((node.get("id"), field))
                     self.assertEqual(90, block["verification"]["percent"])
                     self.assertEqual(1, block["verification"]["documentsStatingTheFigure"])
-                if field == "positionTierReferencePay" and (
-                        isinstance(block.get("arithmetic"), dict) or len(block.get("documents") or []) == 3):
+                if field == "positionTierReferencePay" and len(block.get("documents") or []) == 3:
+                    # Three documents: an establishment's IG (401(1) is the
+                    # third) or an IES centre Commissioner (9511(c)(3) is).
                     reviewed.add((node.get("id"), field))
                     self.assertEqual(90, block["verification"]["percent"])
+                    self.assertEqual(0, block["verification"]["documentsStatingTheFigure"])
+                elif field == "positionTierReferencePay" and isinstance(block.get("arithmetic"), dict):
+                    # Arithmetic no longer means an IG: since 2026-10-05 a
+                    # reviewed row may add a percentage too (AmeriCorps'
+                    # CEO, 42 U.S.C. 12651c(b)), on two documents at 80%.
+                    self.assertEqual("reviewed_row", (block.get("identification") or {}).get("kind"), node.get("id"))
+                    self.assertEqual(80, block["verification"]["percent"], node.get("id"))
+                    self.assertEqual(2, block["verification"]["documents"], node.get("id"))
                     self.assertEqual(0, block["verification"]["documentsStatingTheFigure"])
                 if field == "positionDerivedPay" and block.get("viaStatute"):
                     reviewed.add((node.get("id"), field))

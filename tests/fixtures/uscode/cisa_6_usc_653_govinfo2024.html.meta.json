@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-10-05T23:55:42Z",
+ "url": "https://www.govinfo.gov/link/uscode/6/653?link-type=html",
+ "status": 200,
+ "final_url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title6/html/USCODE-2024-title6-chap1-subchapXVIII-partA-sec653.htm",
+ "content_type": "text/html",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /link/uscode/6/653",
+ "bytes": 6741,
+ "sha256": "75f0dcce08188d948bbece5588e45a7f670d323d282da3e9d38e35c5b2cd5d2d",
+ "error": null
+}

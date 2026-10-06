@@ -28,9 +28,9 @@
     "file": "data/verification/position_evidence.json",
     "current_export_file": "data/verification/plum_current_evidence.json",
     "rule": "the current export's listing supplies the pay plan and grade where it lists the post; the archive's otherwise; each record's listingClaim.source names which",
-    "from_current": 170,
+    "from_current": 255,
     "from_archive": 11,
-    "either_reports_a_rate": 114
+    "either_reports_a_rate": 155
   },
   "report": {
     "source": "opm_salary_table_range",
@@ -57,25 +57,25 @@
         "retrievedAt": "2026-09-21T03:00:01Z"
       }
     },
-    "listings_considered": 181,
-    "ranged": 26,
+    "listings_considered": 266,
+    "ranged": 30,
     "refused": {
       "a_listing_reports_a_rate": 10,
-      "archive_reports_a_rate": 104,
+      "archive_reports_a_rate": 145,
       "no_pay_plan_reported": 2,
-      "pay_plan_ad_has_no_table_here": 2,
-      "pay_plan_ex_has_no_table_here": 32,
-      "pay_plan_ot_has_no_table_here": 5
+      "pay_plan_ad_has_no_table_here": 3,
+      "pay_plan_ex_has_no_table_here": 70,
+      "pay_plan_ot_has_no_table_here": 6
     },
     "ranged_by_kind": {
       "general_schedule_grade": 1,
-      "senior_executive_service": 24,
+      "senior_executive_service": 28,
       "senior_level": 1
     },
     "ranged_by_grade": {
       "15": 1
     },
-    "validated": 26,
+    "validated": 30,
     "rejected": []
   },
   "nodes": {
@@ -1183,6 +1183,144 @@
         }
       }
     },
+    "exec-dept-doj-bop-chief-of-staff": {
+      "nodeId": "exec-dept-doj-bop-chief-of-staff",
+      "kind": "senior_executive_service",
+      "payPlan": "ES",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "sourceType": "opm_pay_table",
+      "sourceUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/ES.aspx",
+      "documentSha256": "202c3f63db65c9584d7ae37f7f40d58337762517f149c37b587ed71c09e53026",
+      "retrievedAt": "2026-09-21T03:00:01Z",
+      "table": "Salary Table No. 2026-ES",
+      "effectiveText": "Effective January 2026",
+      "periodAsOf": "2026-01-01",
+      "fiscalYear": 2026,
+      "tableFootnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "listingClaim": {
+        "payPlan": "ES",
+        "payLevel": null,
+        "listedTitle": "CHIEF OF STAFF",
+        "source": "opm_plum_current_export",
+        "edition": "OPM PLUM Reporting current export (fetched 2026-09-21)",
+        "period": null,
+        "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+        "checkedAt": "2026-09-21T03:02:16Z",
+        "valuesFrom": "current_export"
+      },
+      "grade": null,
+      "amountScope": "Senior Executive Service pay system, Agencies with a Certified SES Performance Appraisal System / Agencies without a Certified SES Performance Appraisal System",
+      "quote": "Agencies with a Certified SES Performance Appraisal System $151,661 $228,000 | Agencies without a Certified SES Performance Appraisal System $151,661 $209,600",
+      "minimum": 151661.0,
+      "minimumRaw": "151,661",
+      "maximum": 228000.0,
+      "maximumRaw": "228,000",
+      "rows": [
+        {
+          "label": "Agencies with a Certified SES Performance Appraisal System",
+          "minimum": 151661.0,
+          "minimumRaw": "151,661",
+          "maximum": 228000.0,
+          "maximumRaw": "228,000",
+          "rowText": "Agencies with a Certified SES Performance Appraisal System $151,661 $228,000"
+        },
+        {
+          "label": "Agencies without a Certified SES Performance Appraisal System",
+          "minimum": 151661.0,
+          "minimumRaw": "151,661",
+          "maximum": 209600.0,
+          "maximumRaw": "209,600",
+          "rowText": "Agencies without a Certified SES Performance Appraisal System $151,661 $209,600"
+        }
+      ],
+      "bounds": {
+        "minimum": {
+          "nodeId": "exec-dept-doj-bop-chief-of-staff",
+          "financialEvidenceStatus": "partial",
+          "costBasis": "basic_pay",
+          "amount": 151661.0,
+          "amountRaw": "151,661",
+          "units": "usd",
+          "normalizedMultiplier": 1,
+          "unitsEvidence": "Agencies with a Certified SES Performance Appraisal System $151,661 $228,000",
+          "quote": "Agencies with a Certified SES Performance Appraisal System $151,661 $228,000",
+          "fiscalYear": 2026,
+          "periodCoverage": "annual_rate",
+          "periodAsOf": "2026-01-01",
+          "amountScope": "Senior Executive Service pay system, Agencies with a Certified SES Performance Appraisal System / Agencies without a Certified SES Performance Appraisal System",
+          "scopeMatch": "proxy",
+          "rollupRole": "line",
+          "sourceType": "opm_pay_table",
+          "sourceUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/ES.aspx",
+          "documentSha256": "202c3f63db65c9584d7ae37f7f40d58337762517f149c37b587ed71c09e53026",
+          "retrievedAt": "2026-09-21T03:00:01Z",
+          "locator": {
+            "table": "Salary Table No. 2026-ES",
+            "row": "Agencies with a Certified SES Performance Appraisal System",
+            "column": "Minimum"
+          },
+          "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+        },
+        "maximumWithCertifiedSystem": {
+          "nodeId": "exec-dept-doj-bop-chief-of-staff",
+          "financialEvidenceStatus": "partial",
+          "costBasis": "basic_pay",
+          "amount": 228000.0,
+          "amountRaw": "228,000",
+          "units": "usd",
+          "normalizedMultiplier": 1,
+          "unitsEvidence": "Agencies with a Certified SES Performance Appraisal System $151,661 $228,000",
+          "quote": "Agencies with a Certified SES Performance Appraisal System $151,661 $228,000",
+          "fiscalYear": 2026,
+          "periodCoverage": "annual_rate",
+          "periodAsOf": "2026-01-01",
+          "amountScope": "Senior Executive Service pay system, Agencies with a Certified SES Performance Appraisal System / Agencies without a Certified SES Performance Appraisal System",
+          "scopeMatch": "proxy",
+          "rollupRole": "line",
+          "sourceType": "opm_pay_table",
+          "sourceUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/ES.aspx",
+          "documentSha256": "202c3f63db65c9584d7ae37f7f40d58337762517f149c37b587ed71c09e53026",
+          "retrievedAt": "2026-09-21T03:00:01Z",
+          "locator": {
+            "table": "Salary Table No. 2026-ES",
+            "row": "Agencies with a Certified SES Performance Appraisal System",
+            "column": "Maximum"
+          },
+          "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+        },
+        "maximumWithoutCertifiedSystem": {
+          "nodeId": "exec-dept-doj-bop-chief-of-staff",
+          "financialEvidenceStatus": "partial",
+          "costBasis": "basic_pay",
+          "amount": 209600.0,
+          "amountRaw": "209,600",
+          "units": "usd",
+          "normalizedMultiplier": 1,
+          "unitsEvidence": "Agencies without a Certified SES Performance Appraisal System $151,661 $209,600",
+          "quote": "Agencies without a Certified SES Performance Appraisal System $151,661 $209,600",
+          "fiscalYear": 2026,
+          "periodCoverage": "annual_rate",
+          "periodAsOf": "2026-01-01",
+          "amountScope": "Senior Executive Service pay system, Agencies with a Certified SES Performance Appraisal System / Agencies without a Certified SES Performance Appraisal System",
+          "scopeMatch": "proxy",
+          "rollupRole": "line",
+          "sourceType": "opm_pay_table",
+          "sourceUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/ES.aspx",
+          "documentSha256": "202c3f63db65c9584d7ae37f7f40d58337762517f149c37b587ed71c09e53026",
+          "retrievedAt": "2026-09-21T03:00:01Z",
+          "locator": {
+            "table": "Salary Table No. 2026-ES",
+            "row": "Agencies without a Certified SES Performance Appraisal System",
+            "column": "Maximum"
+          },
+          "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+        }
+      }
+    },
     "exec-dept-doj-div-civil-rights-deputy-assistant-attorney-general-3-5": {
       "nodeId": "exec-dept-doj-div-civil-rights-deputy-assistant-attorney-general-3-5",
       "kind": "senior_executive_service",
@@ -1735,6 +1873,144 @@
         }
       }
     },
+    "exec-dept-ed-chief-information-officer": {
+      "nodeId": "exec-dept-ed-chief-information-officer",
+      "kind": "senior_executive_service",
+      "payPlan": "ES",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "sourceType": "opm_pay_table",
+      "sourceUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/ES.aspx",
+      "documentSha256": "202c3f63db65c9584d7ae37f7f40d58337762517f149c37b587ed71c09e53026",
+      "retrievedAt": "2026-09-21T03:00:01Z",
+      "table": "Salary Table No. 2026-ES",
+      "effectiveText": "Effective January 2026",
+      "periodAsOf": "2026-01-01",
+      "fiscalYear": 2026,
+      "tableFootnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "listingClaim": {
+        "payPlan": "ES",
+        "payLevel": null,
+        "listedTitle": "CHIEF INFORMATION OFFICER",
+        "source": "opm_plum_current_export",
+        "edition": "OPM PLUM Reporting current export (fetched 2026-09-21)",
+        "period": null,
+        "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+        "checkedAt": "2026-09-21T03:02:16Z",
+        "valuesFrom": "current_export"
+      },
+      "grade": null,
+      "amountScope": "Senior Executive Service pay system, Agencies with a Certified SES Performance Appraisal System / Agencies without a Certified SES Performance Appraisal System",
+      "quote": "Agencies with a Certified SES Performance Appraisal System $151,661 $228,000 | Agencies without a Certified SES Performance Appraisal System $151,661 $209,600",
+      "minimum": 151661.0,
+      "minimumRaw": "151,661",
+      "maximum": 228000.0,
+      "maximumRaw": "228,000",
+      "rows": [
+        {
+          "label": "Agencies with a Certified SES Performance Appraisal System",
+          "minimum": 151661.0,
+          "minimumRaw": "151,661",
+          "maximum": 228000.0,
+          "maximumRaw": "228,000",
+          "rowText": "Agencies with a Certified SES Performance Appraisal System $151,661 $228,000"
+        },
+        {
+          "label": "Agencies without a Certified SES Performance Appraisal System",
+          "minimum": 151661.0,
+          "minimumRaw": "151,661",
+          "maximum": 209600.0,
+          "maximumRaw": "209,600",
+          "rowText": "Agencies without a Certified SES Performance Appraisal System $151,661 $209,600"
+        }
+      ],
+      "bounds": {
+        "minimum": {
+          "nodeId": "exec-dept-ed-chief-information-officer",
+          "financialEvidenceStatus": "partial",
+          "costBasis": "basic_pay",
+          "amount": 151661.0,
+          "amountRaw": "151,661",
+          "units": "usd",
+          "normalizedMultiplier": 1,
+          "unitsEvidence": "Agencies with a Certified SES Performance Appraisal System $151,661 $228,000",
+          "quote": "Agencies with a Certified SES Performance Appraisal System $151,661 $228,000",
+          "fiscalYear": 2026,
+          "periodCoverage": "annual_rate",
+          "periodAsOf": "2026-01-01",
+          "amountScope": "Senior Executive Service pay system, Agencies with a Certified SES Performance Appraisal System / Agencies without a Certified SES Performance Appraisal System",
+          "scopeMatch": "proxy",
+          "rollupRole": "line",
+          "sourceType": "opm_pay_table",
+          "sourceUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/ES.aspx",
+          "documentSha256": "202c3f63db65c9584d7ae37f7f40d58337762517f149c37b587ed71c09e53026",
+          "retrievedAt": "2026-09-21T03:00:01Z",
+          "locator": {
+            "table": "Salary Table No. 2026-ES",
+            "row": "Agencies with a Certified SES Performance Appraisal System",
+            "column": "Minimum"
+          },
+          "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+        },
+        "maximumWithCertifiedSystem": {
+          "nodeId": "exec-dept-ed-chief-information-officer",
+          "financialEvidenceStatus": "partial",
+          "costBasis": "basic_pay",
+          "amount": 228000.0,
+          "amountRaw": "228,000",
+          "units": "usd",
+          "normalizedMultiplier": 1,
+          "unitsEvidence": "Agencies with a Certified SES Performance Appraisal System $151,661 $228,000",
+          "quote": "Agencies with a Certified SES Performance Appraisal System $151,661 $228,000",
+          "fiscalYear": 2026,
+          "periodCoverage": "annual_rate",
+          "periodAsOf": "2026-01-01",
+          "amountScope": "Senior Executive Service pay system, Agencies with a Certified SES Performance Appraisal System / Agencies without a Certified SES Performance Appraisal System",
+          "scopeMatch": "proxy",
+          "rollupRole": "line",
+          "sourceType": "opm_pay_table",
+          "sourceUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/ES.aspx",
+          "documentSha256": "202c3f63db65c9584d7ae37f7f40d58337762517f149c37b587ed71c09e53026",
+          "retrievedAt": "2026-09-21T03:00:01Z",
+          "locator": {
+            "table": "Salary Table No. 2026-ES",
+            "row": "Agencies with a Certified SES Performance Appraisal System",
+            "column": "Maximum"
+          },
+          "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+        },
+        "maximumWithoutCertifiedSystem": {
+          "nodeId": "exec-dept-ed-chief-information-officer",
+          "financialEvidenceStatus": "partial",
+          "costBasis": "basic_pay",
+          "amount": 209600.0,
+          "amountRaw": "209,600",
+          "units": "usd",
+          "normalizedMultiplier": 1,
+          "unitsEvidence": "Agencies without a Certified SES Performance Appraisal System $151,661 $209,600",
+          "quote": "Agencies without a Certified SES Performance Appraisal System $151,661 $209,600",
+          "fiscalYear": 2026,
+          "periodCoverage": "annual_rate",
+          "periodAsOf": "2026-01-01",
+          "amountScope": "Senior Executive Service pay system, Agencies with a Certified SES Performance Appraisal System / Agencies without a Certified SES Performance Appraisal System",
+          "scopeMatch": "proxy",
+          "rollupRole": "line",
+          "sourceType": "opm_pay_table",
+          "sourceUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/ES.aspx",
+          "documentSha256": "202c3f63db65c9584d7ae37f7f40d58337762517f149c37b587ed71c09e53026",
+          "retrievedAt": "2026-09-21T03:00:01Z",
+          "locator": {
+            "table": "Salary Table No. 2026-ES",
+            "row": "Agencies without a Certified SES Performance Appraisal System",
+            "column": "Maximum"
+          },
+          "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+        }
+      }
+    },
     "exec-dept-ed-ocr-deputy-assistant-secretary": {
       "nodeId": "exec-dept-ed-ocr-deputy-assistant-secretary",
       "kind": "general_schedule_grade",
@@ -1853,7 +2129,7 @@
         "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/html/GS.aspx",
         "fetched_at": "2026-09-21T02:59:12Z",
         "sha256": "0bf65e7d20ed2ec841de4d25d946a5d4e34640deb98437f3d85081ec8e1f57c0",
-        "file": "/home/user/Bureaucracy/.claude/worktrees/agent-ae3d5e6fc1bebcdbe/tests/fixtures/opm/pay/general_schedule_2026.html",
+        "file": "/home/user/Bureaucracy/tests/fixtures/opm/pay/general_schedule_2026.html",
         "agrees": "every one of the 150 step figures, the table number and the effective heading"
       }
     },
@@ -2106,6 +2382,144 @@
         },
         "maximumWithoutCertifiedSystem": {
           "nodeId": "exec-dept-hhs-fda-chief-of-staff",
+          "financialEvidenceStatus": "partial",
+          "costBasis": "basic_pay",
+          "amount": 209600.0,
+          "amountRaw": "209,600",
+          "units": "usd",
+          "normalizedMultiplier": 1,
+          "unitsEvidence": "Agencies without a Certified SES Performance Appraisal System $151,661 $209,600",
+          "quote": "Agencies without a Certified SES Performance Appraisal System $151,661 $209,600",
+          "fiscalYear": 2026,
+          "periodCoverage": "annual_rate",
+          "periodAsOf": "2026-01-01",
+          "amountScope": "Senior Executive Service pay system, Agencies with a Certified SES Performance Appraisal System / Agencies without a Certified SES Performance Appraisal System",
+          "scopeMatch": "proxy",
+          "rollupRole": "line",
+          "sourceType": "opm_pay_table",
+          "sourceUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/ES.aspx",
+          "documentSha256": "202c3f63db65c9584d7ae37f7f40d58337762517f149c37b587ed71c09e53026",
+          "retrievedAt": "2026-09-21T03:00:01Z",
+          "locator": {
+            "table": "Salary Table No. 2026-ES",
+            "row": "Agencies without a Certified SES Performance Appraisal System",
+            "column": "Maximum"
+          },
+          "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+        }
+      }
+    },
+    "exec-dept-hud-chief-human-capital-officer": {
+      "nodeId": "exec-dept-hud-chief-human-capital-officer",
+      "kind": "senior_executive_service",
+      "payPlan": "ES",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "sourceType": "opm_pay_table",
+      "sourceUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/ES.aspx",
+      "documentSha256": "202c3f63db65c9584d7ae37f7f40d58337762517f149c37b587ed71c09e53026",
+      "retrievedAt": "2026-09-21T03:00:01Z",
+      "table": "Salary Table No. 2026-ES",
+      "effectiveText": "Effective January 2026",
+      "periodAsOf": "2026-01-01",
+      "fiscalYear": 2026,
+      "tableFootnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "listingClaim": {
+        "payPlan": "ES",
+        "payLevel": null,
+        "listedTitle": "CHIEF HUMAN CAPITAL OFFICER",
+        "source": "opm_plum_current_export",
+        "edition": "OPM PLUM Reporting current export (fetched 2026-09-21)",
+        "period": null,
+        "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+        "checkedAt": "2026-09-21T03:02:16Z",
+        "valuesFrom": "current_export"
+      },
+      "grade": null,
+      "amountScope": "Senior Executive Service pay system, Agencies with a Certified SES Performance Appraisal System / Agencies without a Certified SES Performance Appraisal System",
+      "quote": "Agencies with a Certified SES Performance Appraisal System $151,661 $228,000 | Agencies without a Certified SES Performance Appraisal System $151,661 $209,600",
+      "minimum": 151661.0,
+      "minimumRaw": "151,661",
+      "maximum": 228000.0,
+      "maximumRaw": "228,000",
+      "rows": [
+        {
+          "label": "Agencies with a Certified SES Performance Appraisal System",
+          "minimum": 151661.0,
+          "minimumRaw": "151,661",
+          "maximum": 228000.0,
+          "maximumRaw": "228,000",
+          "rowText": "Agencies with a Certified SES Performance Appraisal System $151,661 $228,000"
+        },
+        {
+          "label": "Agencies without a Certified SES Performance Appraisal System",
+          "minimum": 151661.0,
+          "minimumRaw": "151,661",
+          "maximum": 209600.0,
+          "maximumRaw": "209,600",
+          "rowText": "Agencies without a Certified SES Performance Appraisal System $151,661 $209,600"
+        }
+      ],
+      "bounds": {
+        "minimum": {
+          "nodeId": "exec-dept-hud-chief-human-capital-officer",
+          "financialEvidenceStatus": "partial",
+          "costBasis": "basic_pay",
+          "amount": 151661.0,
+          "amountRaw": "151,661",
+          "units": "usd",
+          "normalizedMultiplier": 1,
+          "unitsEvidence": "Agencies with a Certified SES Performance Appraisal System $151,661 $228,000",
+          "quote": "Agencies with a Certified SES Performance Appraisal System $151,661 $228,000",
+          "fiscalYear": 2026,
+          "periodCoverage": "annual_rate",
+          "periodAsOf": "2026-01-01",
+          "amountScope": "Senior Executive Service pay system, Agencies with a Certified SES Performance Appraisal System / Agencies without a Certified SES Performance Appraisal System",
+          "scopeMatch": "proxy",
+          "rollupRole": "line",
+          "sourceType": "opm_pay_table",
+          "sourceUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/ES.aspx",
+          "documentSha256": "202c3f63db65c9584d7ae37f7f40d58337762517f149c37b587ed71c09e53026",
+          "retrievedAt": "2026-09-21T03:00:01Z",
+          "locator": {
+            "table": "Salary Table No. 2026-ES",
+            "row": "Agencies with a Certified SES Performance Appraisal System",
+            "column": "Minimum"
+          },
+          "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+        },
+        "maximumWithCertifiedSystem": {
+          "nodeId": "exec-dept-hud-chief-human-capital-officer",
+          "financialEvidenceStatus": "partial",
+          "costBasis": "basic_pay",
+          "amount": 228000.0,
+          "amountRaw": "228,000",
+          "units": "usd",
+          "normalizedMultiplier": 1,
+          "unitsEvidence": "Agencies with a Certified SES Performance Appraisal System $151,661 $228,000",
+          "quote": "Agencies with a Certified SES Performance Appraisal System $151,661 $228,000",
+          "fiscalYear": 2026,
+          "periodCoverage": "annual_rate",
+          "periodAsOf": "2026-01-01",
+          "amountScope": "Senior Executive Service pay system, Agencies with a Certified SES Performance Appraisal System / Agencies without a Certified SES Performance Appraisal System",
+          "scopeMatch": "proxy",
+          "rollupRole": "line",
+          "sourceType": "opm_pay_table",
+          "sourceUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/ES.aspx",
+          "documentSha256": "202c3f63db65c9584d7ae37f7f40d58337762517f149c37b587ed71c09e53026",
+          "retrievedAt": "2026-09-21T03:00:01Z",
+          "locator": {
+            "table": "Salary Table No. 2026-ES",
+            "row": "Agencies with a Certified SES Performance Appraisal System",
+            "column": "Maximum"
+          },
+          "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+        },
+        "maximumWithoutCertifiedSystem": {
+          "nodeId": "exec-dept-hud-chief-human-capital-officer",
           "financialEvidenceStatus": "partial",
           "costBasis": "basic_pay",
           "amount": 209600.0,
@@ -3507,6 +3921,144 @@
           "locator": {
             "table": "Salary Table No. 2026-SL/ST",
             "row": "Agencies without a Certified SL/ST Performance Appraisal System",
+            "column": "Maximum"
+          },
+          "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+        }
+      }
+    },
+    "exec-ind-misc-merit-systems-protection-board-mspb-general-counsel": {
+      "nodeId": "exec-ind-misc-merit-systems-protection-board-mspb-general-counsel",
+      "kind": "senior_executive_service",
+      "payPlan": "ES",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "sourceType": "opm_pay_table",
+      "sourceUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/ES.aspx",
+      "documentSha256": "202c3f63db65c9584d7ae37f7f40d58337762517f149c37b587ed71c09e53026",
+      "retrievedAt": "2026-09-21T03:00:01Z",
+      "table": "Salary Table No. 2026-ES",
+      "effectiveText": "Effective January 2026",
+      "periodAsOf": "2026-01-01",
+      "fiscalYear": 2026,
+      "tableFootnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "listingClaim": {
+        "payPlan": "ES",
+        "payLevel": null,
+        "listedTitle": "GENERAL COUNSEL",
+        "source": "opm_plum_current_export",
+        "edition": "OPM PLUM Reporting current export (fetched 2026-09-21)",
+        "period": null,
+        "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+        "checkedAt": "2026-09-21T03:02:16Z",
+        "valuesFrom": "current_export"
+      },
+      "grade": null,
+      "amountScope": "Senior Executive Service pay system, Agencies with a Certified SES Performance Appraisal System / Agencies without a Certified SES Performance Appraisal System",
+      "quote": "Agencies with a Certified SES Performance Appraisal System $151,661 $228,000 | Agencies without a Certified SES Performance Appraisal System $151,661 $209,600",
+      "minimum": 151661.0,
+      "minimumRaw": "151,661",
+      "maximum": 228000.0,
+      "maximumRaw": "228,000",
+      "rows": [
+        {
+          "label": "Agencies with a Certified SES Performance Appraisal System",
+          "minimum": 151661.0,
+          "minimumRaw": "151,661",
+          "maximum": 228000.0,
+          "maximumRaw": "228,000",
+          "rowText": "Agencies with a Certified SES Performance Appraisal System $151,661 $228,000"
+        },
+        {
+          "label": "Agencies without a Certified SES Performance Appraisal System",
+          "minimum": 151661.0,
+          "minimumRaw": "151,661",
+          "maximum": 209600.0,
+          "maximumRaw": "209,600",
+          "rowText": "Agencies without a Certified SES Performance Appraisal System $151,661 $209,600"
+        }
+      ],
+      "bounds": {
+        "minimum": {
+          "nodeId": "exec-ind-misc-merit-systems-protection-board-mspb-general-counsel",
+          "financialEvidenceStatus": "partial",
+          "costBasis": "basic_pay",
+          "amount": 151661.0,
+          "amountRaw": "151,661",
+          "units": "usd",
+          "normalizedMultiplier": 1,
+          "unitsEvidence": "Agencies with a Certified SES Performance Appraisal System $151,661 $228,000",
+          "quote": "Agencies with a Certified SES Performance Appraisal System $151,661 $228,000",
+          "fiscalYear": 2026,
+          "periodCoverage": "annual_rate",
+          "periodAsOf": "2026-01-01",
+          "amountScope": "Senior Executive Service pay system, Agencies with a Certified SES Performance Appraisal System / Agencies without a Certified SES Performance Appraisal System",
+          "scopeMatch": "proxy",
+          "rollupRole": "line",
+          "sourceType": "opm_pay_table",
+          "sourceUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/ES.aspx",
+          "documentSha256": "202c3f63db65c9584d7ae37f7f40d58337762517f149c37b587ed71c09e53026",
+          "retrievedAt": "2026-09-21T03:00:01Z",
+          "locator": {
+            "table": "Salary Table No. 2026-ES",
+            "row": "Agencies with a Certified SES Performance Appraisal System",
+            "column": "Minimum"
+          },
+          "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+        },
+        "maximumWithCertifiedSystem": {
+          "nodeId": "exec-ind-misc-merit-systems-protection-board-mspb-general-counsel",
+          "financialEvidenceStatus": "partial",
+          "costBasis": "basic_pay",
+          "amount": 228000.0,
+          "amountRaw": "228,000",
+          "units": "usd",
+          "normalizedMultiplier": 1,
+          "unitsEvidence": "Agencies with a Certified SES Performance Appraisal System $151,661 $228,000",
+          "quote": "Agencies with a Certified SES Performance Appraisal System $151,661 $228,000",
+          "fiscalYear": 2026,
+          "periodCoverage": "annual_rate",
+          "periodAsOf": "2026-01-01",
+          "amountScope": "Senior Executive Service pay system, Agencies with a Certified SES Performance Appraisal System / Agencies without a Certified SES Performance Appraisal System",
+          "scopeMatch": "proxy",
+          "rollupRole": "line",
+          "sourceType": "opm_pay_table",
+          "sourceUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/ES.aspx",
+          "documentSha256": "202c3f63db65c9584d7ae37f7f40d58337762517f149c37b587ed71c09e53026",
+          "retrievedAt": "2026-09-21T03:00:01Z",
+          "locator": {
+            "table": "Salary Table No. 2026-ES",
+            "row": "Agencies with a Certified SES Performance Appraisal System",
+            "column": "Maximum"
+          },
+          "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+        },
+        "maximumWithoutCertifiedSystem": {
+          "nodeId": "exec-ind-misc-merit-systems-protection-board-mspb-general-counsel",
+          "financialEvidenceStatus": "partial",
+          "costBasis": "basic_pay",
+          "amount": 209600.0,
+          "amountRaw": "209,600",
+          "units": "usd",
+          "normalizedMultiplier": 1,
+          "unitsEvidence": "Agencies without a Certified SES Performance Appraisal System $151,661 $209,600",
+          "quote": "Agencies without a Certified SES Performance Appraisal System $151,661 $209,600",
+          "fiscalYear": 2026,
+          "periodCoverage": "annual_rate",
+          "periodAsOf": "2026-01-01",
+          "amountScope": "Senior Executive Service pay system, Agencies with a Certified SES Performance Appraisal System / Agencies without a Certified SES Performance Appraisal System",
+          "scopeMatch": "proxy",
+          "rollupRole": "line",
+          "sourceType": "opm_pay_table",
+          "sourceUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/ES.aspx",
+          "documentSha256": "202c3f63db65c9584d7ae37f7f40d58337762517f149c37b587ed71c09e53026",
+          "retrievedAt": "2026-09-21T03:00:01Z",
+          "locator": {
+            "table": "Salary Table No. 2026-ES",
+            "row": "Agencies without a Certified SES Performance Appraisal System",
             "column": "Maximum"
           },
           "unitsEvidenceKind": "currency_mark_on_the_printed_figure"

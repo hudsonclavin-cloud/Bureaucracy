@@ -292,8 +292,19 @@ class MatchingTests(FixtureTestCase):
         self.assertFalse(listing["payPlanAndLevelOnOneRow"])
 
     def test_html_entities_are_resolved_for_keys_and_kept_as_served(self) -> None:
+        # The title's own key first; since 2026-10-05 the key with the White
+        # House commissioning rank folded off follows it (a leading prefix
+        # only, never a containment), so "Press Secretary" is reachable from
+        # the row the export prints with the rank in front.
         self.assertEqual(export_title_keys("ASSISTANT TO THE PRESIDENT &amp; PRESS SECRETARY", WHO),
-                         ["assistant to the president and press secretary"])
+                         ["assistant to the president and press secretary", "press secretary"])
+        self.assertEqual(export_title_keys("CHIEF OF STAFF", DOE), ["chief of staff"])
+        # A rank inside the title is not a leading rank, and a fold that
+        # leaves one token is refused.
+        self.assertEqual(export_title_keys("DEPUTY TO THE ASSISTANT TO THE PRESIDENT AND CHIEF OF STAFF", WHO),
+                         ["deputy to the assistant to the president and chief of staff"])
+        self.assertEqual(export_title_keys("ASSISTANT TO THE PRESIDENT AND COUNSELOR", WHO),
+                         ["assistant to the president and counselor"])
         _, records, _ = self._match()
         self.assertEqual(records["who-press"]["listedTitle"], "ASSISTANT TO THE PRESIDENT &amp; PRESS SECRETARY")
 
@@ -317,6 +328,105 @@ class MatchingTests(FixtureTestCase):
             self.assertEqual(gate.plum_export_title_keys(title, org), export_title_keys(title, org), title)
         self.assertEqual(gate.plum_agency_unit(EOP_WHO), WHO)
         self.assertEqual((gate.PLUM_CURRENT_METHOD, gate.PLUM_CURRENT_PLACEMENT_METHOD, gate.PLUM_CURRENT_SOURCE), (METHOD, PLACEMENT_METHOD, SOURCE))
+
+
+    # ---- since 2026-10-05: a sub-organisation named for the post ------------
+
+    def test_a_sub_organisation_named_for_the_post_reaches_the_agencys_own_post(self) -> None:
+        write_fixture(self.tmp, ROWS + [row(NASA, "OFFICE OF THE CHIEF OF STAFF", "CHIEF OF STAFF", "Filled", "NA", "$180,000", "ES")])
+        _, records, report = self._match()
+        record = records["nasa-cos"]
+        self.assertEqual(record["scopeRule"], plum_current.SCOPE_OFFICE_NAMED_FOR_THE_POST)
+        self.assertEqual(record["organization"], "OFFICE OF THE CHIEF OF STAFF")
+        self.assertEqual(record["placement"], {"status": "listed", "parentId": "exec-ind-nasa", "parentListedName": NASA})
+        self.assertEqual(record["reportedPayText"], "$180,000")
+        self.assertEqual(report["offices_named_for_a_post"], 1)
+        self.assertEqual(report["positions_matched_under_an_office_named_for_the_post"], 1)
+
+    def test_a_sub_organisation_not_named_for_the_post_reaches_nothing(self) -> None:
+        # The Administrator's office has a Chief of Staff row; that row is
+        # not the agency's Chief of Staff by this rule, and the broader
+        # fallback that would land it was measured and refused.
+        write_fixture(self.tmp, ROWS + [row(NASA, "OFFICE OF THE ADMINISTRATOR", "CHIEF OF STAFF", "Filled", "NA", "$180,000", "ES")])
+        _, records, report = self._match()
+        self.assertNotIn("nasa-cos", records)
+        self.assertEqual(report["offices_named_for_a_post"], 0)
+
+    def test_a_title_filed_under_two_offices_named_for_it_claims_neither(self) -> None:
+        write_fixture(self.tmp, ROWS + [
+            row(NASA, "OFFICE OF THE CHIEF OF STAFF", "CHIEF OF STAFF", "Filled", "NA", "$180,000", "ES"),
+            row(NASA, "CHIEF OF STAFF", "CHIEF OF STAFF", "Vacant", "NA", "$170,000", "ES"),
+        ])
+        _, records, report = self._match()
+        self.assertNotIn("nasa-cos", records)
+        self.assertEqual([r["id"] for r in report["positions_title_in_several_groups"]], ["nasa-cos"])
+
+    def test_the_named_office_rule_never_displaces_a_row_the_agency_itself_carries(self) -> None:
+        # DOE files its Chief of Staff under DOE itself; a second row under
+        # an "Office of the Chief of Staff" changes nothing about the record.
+        write_fixture(self.tmp, ROWS + [row(DOE, "OFFICE OF THE CHIEF OF STAFF", "CHIEF OF STAFF", "Filled", "NA", "$999,000", "ES")])
+        _, records, _ = self._match()
+        self.assertEqual(records["doe-cos"]["organization"], DOE)
+        self.assertNotIn("scopeRule", records["doe-cos"])
+
+    def test_office_named_for_key_strips_only_a_leading_office_of(self) -> None:
+        self.assertEqual(plum_current.office_named_for_key("OFFICE OF THE GENERAL COUNSEL"), "general counsel")
+        self.assertEqual(plum_current.office_named_for_key("OFFICE OF GENERAL COUNSEL"), "general counsel")
+        self.assertEqual(plum_current.office_named_for_key("GENERAL COUNSEL"), "general counsel")
+        self.assertEqual(plum_current.office_named_for_key("IMMEDIATE OFFICE OF THE SECRETARY"), "secretary")
+        self.assertEqual(plum_current.office_named_for_key("NATIONAL OCEANIC AND ATMOSPHERIC ADMINISTRATION"), "national oceanic and atmospheric administration")
+        self.assertEqual(gate.plum_office_named_for_key("OFFICE OF THE GENERAL COUNSEL"), "general counsel")
+        for value in ("OFFICE OF THE GENERAL COUNSEL", "OFFICE OF INSPECTOR GENERAL", "GENERAL COUNSEL", "OFFICE OF THE DIRECTOR", "BOARD OF DIRECTORS"):
+            self.assertEqual(gate.plum_office_named_for_key(value), plum_current.office_named_for_key(value), value)
+
+    # ---- since 2026-10-05: the White House commissioning rank folded off --
+
+    def test_a_white_house_title_with_the_rank_in_front_reaches_the_bare_post(self) -> None:
+        self.base["children"][1]["children"][1]["children"][0]["children"].append(P("who-legis", "Director of Legislative Affairs"))
+        self.node_map, self.parent_map = index_tree(self.base)
+        write_fixture(self.tmp, ROWS + [row(EOP_WHO, WHO, "ASSISTANT TO THE PRESIDENT AND DIRECTOR OF LEGISLATIVE AFFAIRS", "Filled", "NA", "$195,200", "AD")])
+        _, records, _ = self._match()
+        self.assertEqual(records["who-legis"]["listedTitle"], "ASSISTANT TO THE PRESIDENT AND DIRECTOR OF LEGISLATIVE AFFAIRS")
+        self.assertEqual(records["who-legis"]["matchedAlternative"] if "matchedAlternative" in records["who-legis"] else "director of legislative affairs", "director of legislative affairs")
+
+    def test_a_rank_folded_listing_survives_the_rename_guard_and_is_applied(self) -> None:
+        # The guard that refuses a listing whose title no longer names the
+        # node must know the fold too, or every rank-folded match would be
+        # matched by the derive step and refused by the build.
+        self.base["children"][1]["children"][1]["children"][0]["children"].append(P("who-legis", "Director of Legislative Affairs"))
+        self.node_map, self.parent_map = index_tree(self.base)
+        write_fixture(self.tmp, ROWS + [row(EOP_WHO, WHO, "ASSISTANT TO THE PRESIDENT AND DIRECTOR OF LEGISLATIVE AFFAIRS", "Filled", "NA", "$195,200", "AD")])
+        _, records, _ = self._match()
+        self.assertTrue(plum_current.listed_title_still_names("Director of Legislative Affairs", ["White House Office", WHO],
+                                                              "ASSISTANT TO THE PRESIDENT AND DIRECTOR OF LEGISLATIVE AFFAIRS"))
+        self.assertFalse(plum_current.listed_title_still_names("Director of Legislative Affairs", ["White House Office", WHO],
+                                                               "DEPUTY ASSISTANT TO THE PRESIDENT AND DEPUTY DIRECTOR OF LEGISLATIVE AFFAIRS"))
+        self.assertFalse(plum_current.listed_title_still_names("Deputy Director of Legislative Affairs", ["White House Office", WHO],
+                                                               "ASSISTANT TO THE PRESIDENT AND DIRECTOR OF LEGISLATIVE AFFAIRS"))
+        stats = apply_current_listing(self.base, {"who-legis": records["who-legis"]})
+        self.assertEqual(stats["listed"], 1)
+        self.assertEqual(stats["stale_name"], 0)
+        node = index_tree(self.base)[0]["who-legis"]
+        self.assertEqual(node["positionCurrentListing"]["listedTitle"], "ASSISTANT TO THE PRESIDENT AND DIRECTOR OF LEGISLATIVE AFFAIRS")
+        self.assertEqual(node["placementParentId"], "exec-eop-who")
+
+    def test_a_deputys_compound_title_never_reaches_the_principal(self) -> None:
+        # "DEPUTY DIRECTOR OF LEGISLATIVE AFFAIRS" CONTAINS the principal's
+        # title; the fold removes a leading rank only, so the deputy's row
+        # reaches nothing named "Director of Legislative Affairs".
+        self.base["children"][1]["children"][1]["children"][0]["children"].append(P("who-legis", "Director of Legislative Affairs"))
+        self.node_map, self.parent_map = index_tree(self.base)
+        write_fixture(self.tmp, ROWS + [row(EOP_WHO, WHO, "DEPUTY ASSISTANT TO THE PRESIDENT AND DEPUTY DIRECTOR OF LEGISLATIVE AFFAIRS", "Filled", "NA", "$155,000", "AD")])
+        _, records, _ = self._match()
+        self.assertNotIn("who-legis", records)
+
+    def test_the_gates_rank_fold_mirrors_the_modules(self) -> None:
+        for title in ("ASSISTANT TO THE PRESIDENT AND DIRECTOR OF LEGISLATIVE AFFAIRS",
+                      "DEPUTY ASSISTANT TO THE PRESIDENT AND DEPUTY COUNSEL TO THE PRESIDENT",
+                      "SPECIAL ASSISTANT TO THE PRESIDENT &amp; SENIOR ADVISOR",
+                      "ASSISTANT TO THE PRESIDENT AND COUNSELOR", "CHIEF OF STAFF",
+                      "DEPUTY TO THE ASSISTANT TO THE PRESIDENT AND CHIEF OF STAFF"):
+            self.assertEqual(gate.plum_export_title_keys(title, WHO), export_title_keys(title, WHO), title)
 
 
 class PayRecordTests(FixtureTestCase):
@@ -536,10 +646,15 @@ class ListingCombinationTests(unittest.TestCase):
         self.assertEqual(stats["listing_reports_a_rate"], 1)
 
 
-class ScriptBuildAndGateTests(unittest.TestCase):
+class _GateHarness(unittest.TestCase):
+    """The derive -> build -> gate harness; `FIXTURE_ROWS` is the export a
+    subclass writes, `ROWS` unless it says otherwise."""
+
+    FIXTURE_ROWS = ROWS
+
     def setUp(self) -> None:
         self.tmp = TEST_TMP_ROOT / f"plumcur-gate-{uuid.uuid4().hex}"
-        self.csv = write_fixture(self.tmp)
+        self.csv = write_fixture(self.tmp, self.FIXTURE_ROWS)
         self.base = self.tmp / "base.json"
         self.base.write_text(json.dumps(BASE), encoding="utf-8")
         self.out = self.tmp / "plum_current_evidence.json"
@@ -578,6 +693,35 @@ class ScriptBuildAndGateTests(unittest.TestCase):
             code = gate_main(["gate", str(path)])
         return code, buf.getvalue()
 
+    def _corrupt(self, node_id="doe-cos", node_fields=None, listing_fields=None, pay_fields=None, mutate=None):
+        self._derive()
+        result = self._build()
+        graph = json.loads(result.graph_path.read_text(encoding="utf-8"))
+        by_id = index_tree(graph)[0]
+        node = by_id[node_id]
+        for key, value in (listing_fields or {}).items():
+            if value is None:
+                node["positionCurrentListing"].pop(key, None)
+            else:
+                node["positionCurrentListing"][key] = value
+        for key, value in (pay_fields or {}).items():
+            node["positionCurrentPay"][key] = value
+        for key, value in (node_fields or {}).items():
+            node[key] = value
+        if mutate:
+            mutate(graph, by_id)
+        # A pay block stamped by hand here would carry no document count, and
+        # the gate refuses that -- correctly, since a published figure has to
+        # say how many documents it rests on. Run the production pass rather
+        # than hand-writing the count, so this fixture cannot drift from it.
+        annotate_pay_documents(graph)
+        path = self.tmp / "bad.json"
+        path.write_text(json.dumps(graph), encoding="utf-8")
+        return self._gate(path)
+
+
+
+class ScriptBuildAndGateTests(_GateHarness):
     def test_dry_run_writes_nothing_and_reports_every_stage(self) -> None:
         code, out = self._derive("--dry-run")
         self.assertEqual(code, 0, out)
@@ -613,32 +757,6 @@ class ScriptBuildAndGateTests(unittest.TestCase):
         viewer = json.loads((self.tmp / "graph.min.json").read_text(encoding="utf-8")) if (self.tmp / "graph.min.json").exists() else None
         if viewer is not None:
             self.assertIn("positionCurrentPay", index_tree(viewer)[0]["doe-cos"])
-
-    def _corrupt(self, node_id="doe-cos", node_fields=None, listing_fields=None, pay_fields=None, mutate=None):
-        self._derive()
-        result = self._build()
-        graph = json.loads(result.graph_path.read_text(encoding="utf-8"))
-        by_id = index_tree(graph)[0]
-        node = by_id[node_id]
-        for key, value in (listing_fields or {}).items():
-            if value is None:
-                node["positionCurrentListing"].pop(key, None)
-            else:
-                node["positionCurrentListing"][key] = value
-        for key, value in (pay_fields or {}).items():
-            node["positionCurrentPay"][key] = value
-        for key, value in (node_fields or {}).items():
-            node[key] = value
-        if mutate:
-            mutate(graph, by_id)
-        # A pay block stamped by hand here would carry no document count, and
-        # the gate refuses that -- correctly, since a published figure has to
-        # say how many documents it rests on. Run the production pass rather
-        # than hand-writing the count, so this fixture cannot drift from it.
-        annotate_pay_documents(graph)
-        path = self.tmp / "bad.json"
-        path.write_text(json.dumps(graph), encoding="utf-8")
-        return self._gate(path)
 
     def test_the_gate_refuses_a_listing_on_a_non_post(self) -> None:
         code, out = self._corrupt(node_fields={"type": "Office"})
@@ -734,6 +852,51 @@ class ScriptBuildAndGateTests(unittest.TestCase):
         code, out = self._corrupt(node_id="doe-secretary", node_fields={"positionPayRate": table_rate, "positionListing": archive_listing})
         self.assertEqual(code, 0, out)
 
+
+
+class NamedOfficeGateTests(_GateHarness):
+    """The office-named-for-the-post rule, end to end and refused in both
+    directions by the gate."""
+
+    FIXTURE_ROWS = ROWS + [row(NASA, "OFFICE OF THE CHIEF OF STAFF", "CHIEF OF STAFF", "Filled", "NA", "$180,000", "ES")]
+
+    def test_the_block_carries_the_rule_and_the_gate_passes(self) -> None:
+        code, out = self._derive()
+        self.assertEqual(code, 0, out)
+        result = self._build()
+        graph = json.loads(result.graph_path.read_text(encoding="utf-8"))
+        node = index_tree(graph)[0]["nasa-cos"]
+        self.assertEqual(node["positionCurrentListing"]["scopeRule"], plum_current.SCOPE_OFFICE_NAMED_FOR_THE_POST)
+        self.assertEqual(node["positionCurrentListing"]["organization"], "OFFICE OF THE CHIEF OF STAFF")
+        self.assertEqual(node["positionCurrentPay"]["rateText"], "$180,000")
+        self.assertEqual(node["placementParentId"], "exec-ind-nasa")
+        self.assertEqual(node["placementMethod"], PLACEMENT_METHOD)
+        code, out = self._gate(result.graph_path)
+        self.assertEqual(code, 0, out)
+
+    def test_the_gate_refuses_the_rule_where_the_office_is_not_named_for_the_title(self) -> None:
+        code, out = self._corrupt(node_id="doe-cos", listing_fields={"scopeRule": plum_current.SCOPE_OFFICE_NAMED_FOR_THE_POST,
+                                                                     "organization": "OFFICE OF SCIENCE"})
+        self.assertEqual(code, 1, out)
+        self.assertIn("under a unit named for it, but that unit is 'OFFICE OF SCIENCE'", out)
+
+    def test_the_gate_refuses_the_rule_on_a_row_the_agency_itself_carries(self) -> None:
+        code, out = self._corrupt(node_id="doe-cos", listing_fields={"scopeRule": plum_current.SCOPE_OFFICE_NAMED_FOR_THE_POST})
+        self.assertEqual(code, 1, out)
+        self.assertIn("filed under the agency itself", out)
+
+    def test_the_gate_refuses_a_rule_it_does_not_know(self) -> None:
+        code, out = self._corrupt(node_id="nasa-cos", listing_fields={"scopeRule": "agency_fallback"})
+        self.assertEqual(code, 1, out)
+        self.assertIn("names a scoping rule 'agency_fallback' this pipeline does not produce", out)
+
+    def test_the_gate_refuses_the_named_office_block_moved_under_another_parent(self) -> None:
+        def move(graph, by_id):
+            by_id["exec-ind-nasa"]["children"].remove(by_id["nasa-cos"])
+            by_id["exec-ind-uspto"]["children"].append(by_id["nasa-cos"])
+        code, out = self._corrupt(node_id="nasa-cos", mutate=move)
+        self.assertEqual(code, 1, out)
+        self.assertIn("but its parent in the tree is", out)
 
 if __name__ == "__main__":
     unittest.main()

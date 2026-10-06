@@ -105,6 +105,23 @@ SOURCE = CURRENT_PLUM_SOURCE
 SOURCE_TYPE = "opm_plum_current_export"
 METHOD = "listed_in_opm_current_plum_export"
 PLACEMENT_METHOD = "listed_under_organization_in_opm_current_plum_export"
+
+#: Since 2026-10-05: the export files a title under a sub-organisation NAMED
+#: FOR THAT TITLE -- "OFFICE OF THE GENERAL COUNSEL" / "GENERAL COUNSEL",
+#: "OFFICE OF INSPECTOR GENERAL" / "INSPECTOR GENERAL", "OFFICE OF THE
+#: ADMINISTRATOR" / "ADMINISTRATOR" -- and this graph has no node for that
+#: office, only the post, drawn directly under the agency. The office is named
+#: for its head, so the row is the agency's own General Counsel and nothing
+#: else; the record carries this rule so the gate can check that the
+#: sub-organisation really is named for the title and the panel can say
+#: where the export files it. Measured before it was built: 72 rows reach 70
+#: posts, every one a stamped administrative title (General Counsel 30, Chief
+#: Information Officer 11, Chief Financial Officer 6, Inspector General 4),
+#: and a broader fallback -- any unmatched sub-organisation's rows scoped to
+#: the agency's children -- was measured at 283 rows and REFUSED, because it
+#: lands an Under Secretary's Chief of Staff on the Secretary's.
+SCOPE_OFFICE_NAMED_FOR_THE_POST = "office_named_for_the_post"
+_OFFICE_OF = re.compile(r"^(?:immediate )?office of (?:the )?")
 PAY_SOURCE = "opm_plum_current_export"
 PAY_SOURCE_TYPE = "opm_plum_current_export"
 PAY_METHOD = "rate_of_basic_pay_stated_in_opm_current_plum_export"
@@ -272,7 +289,27 @@ def split_scoped_agency(agency: Any) -> tuple[str, str] | None:
 
 
 def export_title_keys(title: Any, organisation_name: Any) -> list[str]:
-    return archive_title_keys(unescape(title), unescape(organisation_name))
+    """The archive's keys, plus -- since 2026-10-05 -- the title with its White
+    House commissioning rank folded off the front, by `whitehouse_pay.title_core`:
+    the export prints "ASSISTANT TO THE PRESIDENT AND DIRECTOR OF LEGISLATIVE
+    AFFAIRS" where this graph writes "Director of Legislative Affairs". A
+    leading rank only, never a containment, and at least two tokens must be
+    left; a title with no rank yields the same key twice and nothing is added.
+    Measured on the committed export: 8 rows reach 7 White House posts."""
+    from data_pipeline.verification.whitehouse_pay import title_core
+
+    keys = archive_title_keys(unescape(title), unescape(organisation_name))
+    folded = canonical_name_key(title_core(unescape(title)))
+    if folded and folded not in keys:
+        keys.append(folded)
+    return keys
+
+
+def office_named_for_key(organization: Any) -> str:
+    """The canonical key of the post a sub-organisation is named for:
+    "Office of the General Counsel" -> "general counsel"; a name carrying no
+    such prefix is its own key ("General Counsel" -> "general counsel")."""
+    return _OFFICE_OF.sub("", canonical_name_key(unescape(organization))).strip()
 
 
 def agency_unit_name(agency: Any) -> str:
@@ -618,6 +655,93 @@ def match_positions(
             if len(report["samples"]) < 15:
                 report["samples"].append({"id": node_id, "name": positions[node_id].get("name"), "listedTitle": listed_title,
                                           "positionStatus": record["positionStatus"], "payPlan": record["payPlan"]})
+    # A second pass, since 2026-10-05: rows the export files under a
+    # sub-organisation NAMED FOR THE TITLE, where that sub-organisation names
+    # no node here. "OFFICE OF THE GENERAL COUNSEL" / "GENERAL COUNSEL" under
+    # the Department of Agriculture is the department's General Counsel, a
+    # post this graph draws directly under the department. The rows are
+    # scoped to the agency node's own direct children under exactly the
+    # refusals above, the record says which rule reached it, and the
+    # placement it claims is under the agency -- the unit the export files
+    # the office under. A title filed under two such offices of one agency
+    # ("OFFICE OF GENERAL COUNSEL" and "OFFICE OF THE GENERAL COUNSEL")
+    # claims nothing.
+    report["offices_named_for_a_post"] = 0
+    report["positions_matched_under_an_office_named_for_the_post"] = 0
+    named: dict[str, dict[str, dict[tuple[str, str], list[dict[str, Any]]]]] = {}
+    for (agency, organization), org_rows in groups.items():
+        if (agency, organization) in group_nodes or agency not in agency_nodes:
+            continue
+        office = office_named_for_key(organization)
+        rows = [r for r in org_rows if office and canonical_name_key(unescape(r["title"])) == office]
+        if not rows:
+            continue
+        report["offices_named_for_a_post"] += 1
+        named.setdefault(agency_nodes[agency], {}).setdefault(office, {})[(agency, organization)] = rows
+    for agency_id, by_title in sorted(named.items()):
+        agency_node = node_map[agency_id]
+        children = [i for i in positions if parent_map.get(i) == agency_id and i not in records]
+        if not children:
+            continue
+        alternatives = {i: position_name_alternatives(positions[i].get("name"), agency_node.get("name")) for i in children}
+        shared = Counter(k for keys in alternatives.values() for k in keys)
+        for node_id in sorted(children):
+            keys = alternatives[node_id]
+            hits = [k for k in keys if k in by_title]
+            if not hits:
+                continue
+            if any(shared[k] > 1 for k in keys):
+                report["positions_shared_title"].append({"id": node_id, "name": positions[node_id].get("name"), "organization": agency_id})
+                continue
+            if len(hits) > 1:
+                report["positions_ambiguous_alternatives"].append({"id": node_id, "name": positions[node_id].get("name"), "titles": sorted(hits)})
+                continue
+            filings = by_title[hits[0]]
+            if len(filings) != 1:
+                report["positions_title_in_several_groups"].append({"id": node_id, "name": positions[node_id].get("name"), "groups": sorted(filings)})
+                continue
+            (agency, organization), rows = next(iter(filings.items()))
+            spellings = sorted({r["title"] for r in rows})
+            if len(spellings) > 1:
+                report["positions_title_ambiguous_in_export"].append({"id": node_id, "name": positions[node_id].get("name"), "titles": spellings})
+                continue
+            listed_title = spellings[0]
+            agency_alias = alias_hits.get(agency_id)
+            record = {
+                "source": SOURCE,
+                "method": METHOD,
+                "edition": label,
+                "listedTitle": listed_title,
+                "agency": agency,
+                "organization": organization,
+                "agencyMatchedBy": "scoped_prefix" if split_scoped_agency(agency) and not (export_agency_keys(agency) & {canonical_name_key(agency_node.get("name"))}) else "name",
+                "scopeRule": SCOPE_OFFICE_NAMED_FOR_THE_POST,
+                **describe_listing(rows),
+                "exportFetchedAt": export.get("fetched_at"),
+                "url": export.get("url"),
+                "documentSha256": export.get("sha256"),
+                "placement": {"status": STATUS_LISTED, "parentId": agency_id, "parentListedName": agency_unit_name(agency)},
+            }
+            if len(keys) > 1:
+                record["matchedAlternative"] = hits[0]
+            if agency_alias is not None:
+                record["organisationNameAlias"] = {"alias": agency_alias.alias, "basis": agency_alias.basis, "organisationId": agency_id}
+                report["positions_under_an_aliased_agency"] = report.get("positions_under_an_aliased_agency", 0) + 1
+            records[node_id] = record
+            report["positions_matched"] += 1
+            report["positions_matched_under_an_office_named_for_the_post"] += 1
+            name = str(positions[node_id].get("name") or "")
+            if unmatched_titles.get(name):
+                # Counted unmatched above, among the agency's own rows; it is
+                # matched now, and the count says so.
+                unmatched_titles[name] -= 1
+                report["positions_unmatched"] -= 1
+                if unmatched_titles[name] <= 0:
+                    del unmatched_titles[name]
+            plan = str(record.get("payPlan") or "?")
+            report["positions_by_pay_plan"][plan] = report["positions_by_pay_plan"].get(plan, 0) + 1
+            if record.get("reportedPay") is not None:
+                report["positions_with_a_rate"] += 1
     report["unmatched_titles_top"] = unmatched_titles.most_common(25)
     live_by_agency: Counter[str] = Counter()
     for (agency, _), rows in groups.items():
@@ -734,11 +858,22 @@ def load_current_listings(path: str | Path | None = DEFAULT_EVIDENCE_PATH) -> di
 
 
 def listed_title_still_names(node_name: Any, parent_names: Any, listed_title: Any) -> bool:
-    """The archive's rename guard, with the export's entities resolved first."""
+    """The archive's rename guard, with the export's entities resolved first
+    -- and, since 2026-10-05, the title's White House commissioning rank
+    folded off the front the way `export_title_keys` folds it, so a node the
+    fold reached is not then refused as renamed. A leading rank only."""
     from data_pipeline.verification.positions import listed_title_still_names as _archive_rule
+    from data_pipeline.verification.whitehouse_pay import title_core
 
     names = [parent_names] if parent_names is None or isinstance(parent_names, str) else list(parent_names)
-    return _archive_rule(node_name, [unescape(n) if n else n for n in names], unescape(listed_title))
+    cleaned = [unescape(n) if n else n for n in names]
+    title = unescape(listed_title)
+    if _archive_rule(node_name, cleaned, title):
+        return True
+    folded = canonical_name_key(title_core(title))
+    if folded == canonical_name_key(title):
+        return False
+    return any(folded == key for parent in (cleaned or [None]) for key in position_name_alternatives(node_name, parent))
 
 
 def apply_current_listing(
@@ -841,6 +976,10 @@ def apply_current_listing(
         for field in ("positionStatusCounts", "appointmentTypeCounts", "payPlanCounts", "levelCounts"):
             if record.get(field):
                 block[field] = record[field]
+        if record.get("scopeRule"):
+            # Which rule reached this node, so the gate can re-check it and
+            # the panel can say where the export actually files the title.
+            block["scopeRule"] = record["scopeRule"]
         node["positionCurrentListing"] = block
         if agency_alias_row is not None:
             stamp_alias_match(node, agency_alias_row.block(

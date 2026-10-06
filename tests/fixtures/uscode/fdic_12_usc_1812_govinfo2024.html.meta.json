@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-10-06T00:00:02Z",
+ "url": "https://www.govinfo.gov/link/uscode/12/1812?link-type=html",
+ "status": 200,
+ "final_url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title12/html/USCODE-2024-title12-chap16-sec1812.htm",
+ "content_type": "text/html",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /link/uscode/12/1812",
+ "bytes": 14022,
+ "sha256": "fb1e38e43ba315f7c6812141af74e910a92ed97256a5dcab9a29135aee256108",
+ "error": null
+}

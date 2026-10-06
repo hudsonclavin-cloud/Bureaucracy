@@ -36,8 +36,31 @@ unverified`. The estimates remain in `graph.json` — the cascade's arithmetic
 and the gate's child-sum checks are built on them — so a consumer of the
 JSON must read `cost_status` and not `resolved_total_amount` alone.
 
-The one exception is a real salary. **1,111** position nodes carry a pay claim an
-official source states — 461 the offices Members of Congress hold (every
+**"The costs have been disappearing" (2026-10-05) — they have not.** The owner
+reported that the costs of all nodes had been vanishing. Checked against every
+published graph since 2026-09-23 rather than argued: each one carries the same
+**159** measured lines, the same **693** apportioned shares and the same
+**4,657** nodes with no figure (the 693 was 655 before the 39 units of
+2026-09-23 landed, and 637 before the 15 Treasury units of 2026-09-19). What
+changed is nothing in the data; what a visitor sees is the default view
+described in the paragraph above, which withholds every one of the 693 until
+the box is ticked — and the tick is remembered per browser in `localStorage`,
+so a new browser, a private window or cleared site data shows the withheld
+view again. The default stands, because it is the owner's own decision and a
+number nobody measured still must not be the first thing a reader sees; what
+moved is that the opt-in is now one click away inside the cost block itself
+(a "Show the estimate" button beside the sentence saying the figure is
+withheld, wired to the same checkbox), and `docs/COST_COVERAGE.md`, generated
+by `scripts/report_cost_coverage.py`, puts every one of the 5,510 nodes in
+exactly one class — measured, estimate, salary, unpriced post by reason, or
+no figure with its reason — with the document route that would move each.
+
+The one exception is a real salary. **1,158** position nodes carry a pay claim an
+official source states (1,111 before the twelfth batch of 2026-10-05: its
+current-export rules — a sub-organisation named for the post, and the White
+House rank fold — took the export's listings from 170 to 255 and its printed
+rates from 88 to 128, and its fifteen reviewed Schedule rows and four
+tier-reference rows priced nineteen more posts from the Code) — 461 the offices Members of Congress hold (every
 committee's chair and ranking member in both chambers, the whips, the
 conference and caucus chairs), priced since 2026-09-30 by the owner's decision
 at Schedule 6's SEAT rate for their chamber ($174,000), because Schedule 6
@@ -101,7 +124,7 @@ U.S.C. 603's 92 percent of a Director paid as a district judge, $229,908,
 the FJC's through §626 — three documents each for the chains, none stating the
 figure, 7443A read from GPO's 2024-edition rendering on govinfo because the
 OLRC's host was under maintenance). A node may carry
-more than one, so the per-source figures sum past 1,111 (the President's $400,000,
+more than one, so the per-source figures sum past 1,158 (the President's $400,000,
 stated by 3 U.S.C. 102 itself since 2026-10-05, among them). Each shows in place of
 the withheld estimate, under its
 own heading rather than COST, with the panel saying it is compensation for one

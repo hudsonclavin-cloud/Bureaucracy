@@ -316,6 +316,156 @@ US_CODE_COUNTED_CLASSES = {
     },
 }
 US_CODE_REVIEWED_IDENTIFICATIONS = {
+    "exec-ind-misc-national-labor-relations-board-nlrb-independent-director-administrator-chair-national-labor-relations-board": (
+        "Director / Administrator / Chair, National Labor Relations Board",
+        "Chairman, National Labor Relations Board", "III", "5314",
+        "29 U.S.C. 153", "nlrb_29_usc_153_govinfo2024.html",
+        "The President shall designate one member to serve as Chairman of the Board.",
+        "the office under the template is the Chairman: 29 U.S.C. 153(a) has the President designate one member of the Board to serve as Chairman, and 5 U.S.C. 5314 places the Chairman of the National Labor Relations Board at Level III; the Board's own statute creates no Director or Administrator",
+        False,
+    ),
+    "exec-regulatory-fdic-chair-fdic": (
+        "Chair, FDIC",
+        "Chairman, Board of Directors, Federal Deposit Insurance Corporation", "III", "5314",
+        "12 U.S.C. 1812", "fdic_12_usc_1812_govinfo2024.html",
+        "1 of the appointed members shall be designated by the President, by and with the advice and consent of the Senate, to serve as Chairperson of the Board of Directors for a term of 5 years.",
+        "the same office: 12 U.S.C. 1812(b)(1) has one appointed member designated to serve as Chairperson of the Board of Directors, and 5 U.S.C. 5314 places the Chairman of the Board of Directors of the Federal Deposit Insurance Corporation at Level III; the graph spells the title without gender and names the Corporation by its acronym",
+        False,
+    ),
+    "exec-regulatory-fdic-vice-chair": (
+        "Vice Chair",
+        "Member, Board of Directors of the Federal Deposit Insurance Corporation", "IV", "5315",
+        "12 U.S.C. 1812", "fdic_12_usc_1812_govinfo2024.html",
+        "1 of the appointed members shall be designated by the President, by and with the advice and consent of the Senate, to serve as Vice Chairperson of the Board of Directors.",
+        "the Vice Chairperson is an appointed member of the Board: 12 U.S.C. 1812(b)(2) designates one appointed member to serve as Vice Chairperson, 5 U.S.C. 5315 places a Member of the Board of Directors of the Federal Deposit Insurance Corporation at Level IV, and only the Chairman is placed separately (5314)",
+        False,
+    ),
+    "exec-ind-misc-merit-systems-protection-board-mspb-deputy-director-vice-chair": (
+        "Deputy Director / Vice Chair",
+        "Members, Merit Systems Protection Board", "IV", "5315",
+        "5 U.S.C. 1203", "mspb_5_usc_1203.html",
+        "The President shall from time to time designate one of the members of the Board as Vice Chairman of the Board.",
+        "the office under the template is the Vice Chairman, a member of the Board: 5 U.S.C. 1203(b) has the President designate one of the members as Vice Chairman, and 5 U.S.C. 5315 places the Members of the Merit Systems Protection Board at Level IV; the Board's statute creates no Deputy Director",
+        False,
+    ),
+    "exec-ind-misc-national-transportation-safety-board-ntsb-deputy-director-vice-chair": (
+        "Deputy Director / Vice Chair",
+        "Members, National Transportation Safety Board", "IV", "5315",
+        "49 U.S.C. 1111", "ntsb_49_usc_1111.html",
+        "The President also shall designate a Vice Chairman of the Board.",
+        "the office under the template is the Vice Chairman, a member of the Board: 49 U.S.C. 1111(d) has the President designate a Vice Chairman, and 5 U.S.C. 5315 places the Members of the National Transportation Safety Board at Level IV; the Board's statute creates no Deputy Director",
+        False,
+    ),
+    "exec-ind-misc-peace-corps-deputy-director-vice-chair": (
+        "Deputy Director / Vice Chair",
+        "Deputy Director of the Peace Corps", "IV", "5315",
+        "22 U.S.C. 2503", "peacecorps_22_usc_2503.html",
+        "The President may appoint, by and with the advice and consent of the Senate, a Director of the Peace Corps and a Deputy Director of the Peace Corps.",
+        "the office under the template is the Deputy Director: 22 U.S.C. 2503(a) has the President appoint a Director of the Peace Corps and a Deputy Director of the Peace Corps, and 5 U.S.C. 5315 places the Deputy Director of the Peace Corps at Level IV; the Peace Corps has no Vice Chair",
+        False,
+    ),
+    "exec-ind-misc-u-s-postal-rate-commission-postal-regulatory-commission-deputy-director-vice-chair": (
+        "Deputy Director / Vice Chair",
+        "Members, Postal Regulatory Commission (4)", "IV", "5315",
+        "39 U.S.C. 502", "prc_39_usc_502.html",
+        "The Commissioners shall by majority vote designate a Vice Chairman of the Commission.",
+        "the office under the template is the Vice Chairman, one of the Commissioners: 39 U.S.C. 502(e) has the Commissioners designate a Vice Chairman from among themselves, and 5 U.S.C. 5315 places the Members of the Postal Regulatory Commission (4) at Level IV, only the Chairman being placed separately (5314); CURATION.md §19.14 declined this post on the ground that the statute designates no Vice Chairman, which the committed section shows to be wrong",
+        False,
+    ),
+    "exec-ind-misc-federal-labor-relations-authority-flra-general-counsel": (
+        "General Counsel",
+        "Members, Federal Labor Relations Authority (2) and its General Counsel", "V", "5316",
+        "5 U.S.C. 7104", "flra_5_usc_7104.html",
+        "The General Counsel of the Authority shall be appointed by the President, by and with the advice and consent of the Senate, for a term of 5 years.",
+        "the same office: 5 U.S.C. 7104(f)(1) has the President appoint the General Counsel of the Authority, and 5 U.S.C. 5316 places the General Counsel at Level V in one printed item with the Authority's two Members; OPM's current export lists the post at EX V, which agrees",
+        False,
+    ),
+    "exec-ind-misc-u-s-international-development-finance-corp-dfc-director-administrator-chair-u-s-international-development-finance-corp": (
+        "Director / Administrator / Chair, U.S. International Development Finance Corp",
+        "Chief Executive Officer, United States International Development Finance Corporation", "II", "5313",
+        "22 U.S.C. 9613", "dfc_22_usc_9613_govinfo2024.html",
+        "There shall be in the Corporation a Chief Executive Officer, who shall be appointed by the President, by and with the advice and consent of the Senate, and who shall serve at the pleasure of the President.",
+        "the office under the template is the Chief Executive Officer: 22 U.S.C. 9613(d)(1) puts a Chief Executive Officer in the Corporation, appointed by the President, and 5 U.S.C. 5313 places the Chief Executive Officer of the United States International Development Finance Corporation at Level II; the Corporation's statute creates no Director or Administrator",
+        False,
+    ),
+    "exec-dept-dhs-cisa-executive-assistant-director-cybersecurity": (
+        "Executive Assistant Director — Cybersecurity",
+        "Assistant Director for Cybersecurity, Cybersecurity and Infrastructure Security Agency", "IV", "5315",
+        "6 U.S.C. 653", "cisa_6_usc_653_govinfo2024.html",
+        "Any reference to the Assistant Secretary for Cybersecurity and Communications or Assistant Director "
+        "for Cybersecurity in any law, regulation, map, document, record, or other paper of the United States "
+        "shall be deemed to be a reference to the Executive Assistant Director for Cybersecurity.",
+        "the same office by the statute's own deeming rule: 6 U.S.C. 653(a)(3) deems any reference to the "
+        "Assistant Director for Cybersecurity in any law to be a reference to the Executive Assistant Director "
+        "for Cybersecurity, and 5 U.S.C. 5315 -- a law -- places the Assistant Director for Cybersecurity of "
+        "the Cybersecurity and Infrastructure Security Agency at Level IV; the same shape as the 6 U.S.C. "
+        "652(a) rule TREASURY_ROW_ALIASES already relies on for CISA's Treasury line",
+        False,
+    ),
+    "exec-dept-dhs-cisa-executive-assistant-director-infrastructure-security": (
+        "Executive Assistant Director — Infrastructure Security",
+        "Assistant Director for Infrastructure Security, Cybersecurity and Infrastructure Security Agency", "IV", "5315",
+        "6 U.S.C. 654", "cisa_6_usc_654_govinfo2024.html",
+        "Any reference to the Assistant Secretary for Infrastructure Protection or Assistant Director for "
+        "Infrastructure Security in any law, regulation, map, document, record, or other paper of the United "
+        "States shall be deemed to be a reference to the Executive Assistant Director for Infrastructure Security.",
+        "the same office by the statute's own deeming rule: 6 U.S.C. 654(a)(3) deems any reference to the "
+        "Assistant Director for Infrastructure Security in any law to be a reference to the Executive Assistant "
+        "Director for Infrastructure Security, and 5 U.S.C. 5315 places the Assistant Director for "
+        "Infrastructure Security of the Cybersecurity and Infrastructure Security Agency at Level IV",
+        False,
+    ),
+    "exec-dept-doj-bop-director-bop": (
+        "Director, BOP",
+        "Director, Bureau of Prisons, Department of Justice", "IV", "5315",
+        "18 U.S.C. 4041", "bop_18_usc_4041_govinfo2024.html",
+        "The Bureau of Prisons shall be in charge of a director appointed by and serving directly under the Attorney General.",
+        "the same office: 18 U.S.C. 4041 puts the Bureau of Prisons in charge of a director appointed by and "
+        "serving under the Attorney General, and 5 U.S.C. 5315 places the Director of the Bureau of Prisons, "
+        "Department of Justice, at Level IV; the graph names the post with the Bureau's acronym, which the "
+        "scoped route refuses because the office half is the bare word Director",
+        False,
+    ),
+    "exec-dept-dhs-fema-deputy-administrator": (
+        "Deputy Administrator",
+        "Deputy Administrators, Federal Emergency Management Agency", "III", "5314",
+        "6 U.S.C. 321c", "fema_6_usc_321c_govinfo2024.html",
+        "The President may appoint, by and with the advice and consent of the Senate, not more than 4 Deputy "
+        "Administrators to assist the Administrator in carrying out this subchapter.",
+        "a Deputy Administrator is one of the Deputy Administrators: 6 U.S.C. 321c(a) lets the President "
+        "appoint not more than four Deputy Administrators of the Federal Emergency Management Agency, and "
+        "5 U.S.C. 5314 places the Deputy Administrators of the Agency at Level III as a class, the way it places "
+        "the Members of the Federal Reserve Board whose Vice Chairs this table already prices one node at a time; "
+        "this node is the Agency's one Deputy Administrator so named, and the current PLUM export lists two PAS "
+        "rows at EX III under the title",
+        False,
+    ),
+    "exec-eop-ondcp-deputy-director": (
+        "Deputy Director",
+        "Deputy Director of National Drug Control Policy", "II", "5313",
+        "21 U.S.C. 1703", "ondcp_21_usc_1703.html",
+        "There shall be a Deputy Director who shall report directly to the Director, and who shall be "
+        "appointed by the President, and shall serve at the pleasure of the President.",
+        "the same office: 21 U.S.C. 1703(a)(1)(B) creates one Deputy Director of the Office of National "
+        "Drug Control Policy, reporting to the Director the same section puts at the head of the Office, "
+        "and 5 U.S.C. 5313 places the Deputy Director of National Drug Control Policy at Level II; the "
+        "graph names the post by its bare title under the Office",
+        False,
+    ),
+    "exec-eop-ostp-director-presidential-science-advisor": (
+        "Director (Presidential Science Advisor)",
+        "Director of the Office of Science and Technology", "II", "5313",
+        "42 U.S.C. 6612", "ostp_42_usc_6612_govinfo2024.html",
+        "There shall be at the head of the Office a Director who shall be appointed by the President, by "
+        "and with the advice and consent of the Senate, and who shall be compensated at the rate provided "
+        "for level II of the Executive Schedule in section 5313 of title 5.",
+        "the same office: 42 U.S.C. 6612(a) puts a Director at the head of the Office of Science and "
+        "Technology Policy and itself pays that Director at level II of the Executive Schedule, the level "
+        "5 U.S.C. 5313 prints for 'Director of the Office of Science and Technology' -- the office's "
+        "name as styled before Pub. L. 94-282 (1976) created the present Office; the graph names the post "
+        "by its title with the informal label in brackets",
+        False,
+    ),
     "exec-regulatory-fed-chair-board-of-governors": (
         "Chair, Board of Governors",
         "Chairman, Board of Governors of the Federal Reserve System", "I", "5312",
@@ -955,7 +1105,7 @@ def uscode_operative_text(path):
             return ""
         text = re.sub(r"(?is)<(script|style)\b.*?</\1>", " ", raw)
         text = re.sub(r"\s+", " ", _html.unescape(re.sub(r"<[^>]+>", " ", text))).strip()
-        start = re.search(r"\u00a7\s?\d+[A-Za-z]?(?:[-\u2013]\d+)?\.", text)
+        start = re.search(r"\u00a7\s?\d+[A-Za-z]{0,2}(?:[-\u2013]\d+)?\.", text)
         body = text[start.start():] if start else text
         cuts = [body.find(h) for h in ("Historical and Revision Notes", "Editorial Notes", "Statutory Notes")]
         cuts = [c for c in cuts if c > 0]
@@ -1063,6 +1213,16 @@ PLUM_CURRENT_LIVE_STATUSES = ("Filled", "Vacant")
 PLUM_CURRENT_SOURCE = "opm_plum_current_export"
 PLUM_CURRENT_METHOD = "listed_in_opm_current_plum_export"
 PLUM_CURRENT_PLACEMENT_METHOD = "listed_under_organization_in_opm_current_plum_export"
+#: plum_current.SCOPE_OFFICE_NAMED_FOR_THE_POST mirrored: a listing the export
+#: files under a sub-organisation named for the title itself, scoped to the
+#: agency's own children because this graph has no node for that office.
+PLUM_CURRENT_SCOPE_OFFICE_NAMED_FOR_THE_POST = "office_named_for_the_post"
+#: whitehouse_pay.RANK_PREFIXES mirrored, in the gate's own key form.
+PLUM_RANK_PREFIXES = (
+    "deputy assistant to the president and ",
+    "special assistant to the president and ",
+    "assistant to the president and ",
+)
 PLUM_CURRENT_PAY_UNITS_KIND = "currency_mark_on_the_printed_figure"
 _PLUM_CURRENT_CACHE = {}
 _FIXTURE_DIGESTS = {}
@@ -1130,6 +1290,28 @@ def is_us_code_document_url(url):
     if "uscode.house.gov" in text:
         return True
     return "www.govinfo.gov" in text and ("USCODE-" in text or "/link/uscode/" in text)
+
+
+def us_code_url_names_section(url, citation):
+    """Whether a URL addresses the section a citation names, on either host
+    this pipeline reads the Code from: the OLRC's granule id
+    ("title42-section6612"), or GPO's rendering on www.govinfo.gov -- its link
+    service ("/link/uscode/42/6612") or the granule it resolves to
+    ("USCODE-2024-title42-...-sec6612.htm"). A section number may carry a
+    letter and a dashed suffix (42 U.S.C. 2000e-4, 2 U.S.C. 136a-2); every
+    form prints both."""
+    text = str(url or "")
+    parts = re.match(r"^(\d+) U\.S\.C\. (\d+[A-Za-z]?(?:-\d+)?)$", str(citation or ""))
+    if not parts:
+        return False
+    title, section = parts.group(1), parts.group(2)
+    if host_of(text) == US_CODE_HOST:
+        return "title{}-section{}".format(title, section) in text
+    if host_of(text) == "www.govinfo.gov" and is_us_code_document_url(text):
+        if re.search(r"/link/uscode/{}/{}(?:[?#]|$)".format(re.escape(title), re.escape(section)), text):
+            return True
+        return "USCODE-" in text and "title{}".format(title) in text and re.search(r"-sec{}\.htm".format(re.escape(section)), text) is not None
+    return False
 #: node id -> (citation, tier, the sentence the section's operative text prints)
 DERIVED_PAY_PROVISIONS = {
     "jud-specialized-tax-chief-judge-tax-court": (
@@ -2281,7 +2463,10 @@ def _strip_plum_qualifier(text, qualifier_keys):
 def plum_export_title_keys(title, organization):
     """positions.archive_title_keys mirrored: the title's own key and, when
     the tail after a comma is the organisation the row is filed under, the
-    key of what is left."""
+    key of what is left -- and, since 2026-10-05, the title with a White
+    House commissioning rank folded off the front (plum_current.export_title_keys
+    through whitehouse_pay.title_core), a leading prefix only, never a
+    containment, and only when at least two tokens remain."""
     import html as _html
 
     text = _html.unescape(str(title or "")).strip()
@@ -2290,7 +2475,38 @@ def plum_export_title_keys(title, organization):
         key = canonical_key(candidate)
         if key and key not in keys:
             keys.append(key)
+    folded = plum_rank_folded_key(text)
+    if folded and folded not in keys:
+        keys.append(folded)
     return keys
+
+
+def plum_rank_folded_key(title):
+    """whitehouse_pay.title_core mirrored stdlib-only: upper-case, '&' spelled
+    out, punctuation dropped; the first matching rank prefix removed; at least
+    two tokens must remain; then the gate's own canonical key of the result.
+    Returns the plain key when no rank leads the title."""
+    import re as _re
+
+    upper = str(title or "").upper().replace("&", " AND ")
+    folded = " ".join(_re.sub(r"[^A-Z0-9 ]+", " ", upper).split())
+    low = folded.casefold()
+    for prefix in PLUM_RANK_PREFIXES:
+        if low.startswith(prefix):
+            rest = low[len(prefix):].strip()
+            if len(rest.split()) >= 2:
+                return canonical_key(rest)
+            break
+    return canonical_key(folded)
+
+
+def plum_office_named_for_key(organization):
+    """plum_current.office_named_for_key mirrored: the post a sub-organisation
+    is named for, its leading 'Office of (the)' removed."""
+    import html as _html
+    import re as _re
+
+    return _re.sub(r"^(?:immediate )?office of (?:the )?", "", canonical_key(_html.unescape(str(organization or "")))).strip()
 
 
 def plum_agency_unit(agency):
@@ -2309,6 +2525,12 @@ def plum_listing_parent_keys(listing):
     as a whole and as its unit half."""
     org_keys = plum_org_keys(listing.get("organization"))
     agency_keys = plum_org_keys(listing.get("agency")) | plum_org_keys(plum_agency_unit(listing.get("agency")))
+    if str(listing.get("scopeRule") or "") == PLUM_CURRENT_SCOPE_OFFICE_NAMED_FOR_THE_POST:
+        # The export files the title under an office named for it that this
+        # graph has no node for; the post sits under the agency here, and
+        # that is the parent the listing must answer to. Whether the office
+        # really is named for the title is checked by the caller.
+        return agency_keys
     if not org_keys or org_keys & agency_keys:
         return agency_keys
     return org_keys
@@ -2354,6 +2576,14 @@ def current_listing_violations(node, listing, today, label, parent_name, parent_
     # named as such rather than only as a row the export does not carry.
     if not ((plum_org_keys(parent_name) | set(parent_alias_keys)) & plum_listing_parent_keys(listing)):
         say("is filed by the export under {!r}, but its parent in the tree is {!r}".format(organization or agency, parent_name))
+    rule = listing.get("scopeRule")
+    if rule is not None:
+        if str(rule) != PLUM_CURRENT_SCOPE_OFFICE_NAMED_FOR_THE_POST:
+            say("names a scoping rule {!r} this pipeline does not produce".format(rule))
+        elif plum_org_keys(organization) & (plum_org_keys(agency) | plum_org_keys(plum_agency_unit(agency))):
+            say("claims the office-named-for-the-post rule for a row filed under the agency itself ({!r})".format(organization))
+        elif plum_office_named_for_key(organization) != canonical_key(title):
+            say("claims the export files {!r} under a unit named for it, but that unit is {!r}".format(title, organization))
     # The name: the title must still be one the node's name answers to.
     if not (position_title_keys(node.get("name"), parent_name) & set(plum_export_title_keys(title, organization))):
         say("is listed as {!r}, which does not name it".format(title))
@@ -2692,11 +2922,7 @@ def reviewed_schedule_violations(node, pay, reviewed, today, label):
     elif quote not in operative:
         say("rests on a sentence {} does not print in its operative text (only in the publisher's notes, or not at all)".format(citation))
     basis_url = str(identification.get("basisUrl") or "")
-    # A section number may carry a letter and a dashed suffix (42 U.S.C.
-    # 2000e-4, 2 U.S.C. 136a-2); the granule id prints both.
-    parts = re.match(r"^(\d+) U\.S\.C\. (\d+[A-Za-z]?(?:-\d+)?)$", citation)
-    expected_granule = "title{}-section{}".format(parts.group(1), parts.group(2)) if parts else ""
-    if host_of(basis_url) != US_CODE_HOST or not expected_granule or expected_granule not in basis_url:
+    if not us_code_url_names_section(basis_url, citation):
         say("does not link the section its identification rests on ({!r})".format(basis_url))
     checked = str(identification.get("basisCheckedAt") or "")
     if not re.match(r"^\d{4}-\d{2}-\d{2}", checked) or checked[:10] > today:
@@ -3445,6 +3671,27 @@ TIER_REFERENCE_ROWS = {
         "Representatives) shall receive compensation equivalent to the compensation paid at level IV of the "
         "Executive Schedule (5 U.S.C. 5315).",
     ),
+    "exec-ind-misc-privacy-civil-liberties-oversight-board-pclob-director-administrator-chair-privacy-civil-liberties-oversight-board": (
+        "Director / Administrator / Chair, Privacy & Civil Liberties Oversight Board", "Chairman of the Privacy and Civil Liberties Oversight Board", "42 U.S.C. 2000ee(i)(1)(A)",
+        "pclob_42_usc_2000ee_govinfo2024.html", "III",
+        "The chairman of the Board shall be compensated at the rate of pay payable for a position at level III of the Executive Schedule under section 5314 of title 5.",
+    ),
+    "exec-ind-misc-appalachian-regional-commission-arc-director-administrator-chair-appalachian-regional-commission": (
+        "Director / Administrator / Chair, Appalachian Regional Commission", "Federal Cochairman of the Appalachian Regional Commission", "40 U.S.C. 14301(c)",
+        "arc_40_usc_14301_govinfo2024.html", "III",
+        "The Federal Cochairman shall be compensated by the Federal Government at level III of the Executive Schedule as set out in section 5314 of title 5.",
+    ),
+    "exec-ind-misc-americorps-director-administrator-chair-americorps": (
+        "Director / Administrator / Chair, AmeriCorps", "Chief Executive Officer of the Corporation for National and Community Service", "42 U.S.C. 12651c(b)",
+        "cncs_42_usc_12651c_govinfo2024.html", "III",
+        "The Chief Executive Officer shall be compensated at the rate provided for level III of the Executive Schedule under section 5314 of title 5, plus 3 percent.",
+        3,
+    ),
+    "exec-dept-dhs-usss-chief-uniformed-division": (
+        "Chief — Uniformed Division", "Chief of the United States Secret Service Uniformed Division", "5 U.S.C. 10203(a)",
+        "usss_5_usc_10203_govinfo2024.html", "V",
+        "the Chief position will be equal to the rate of pay for level V of the Executive Schedule",
+    ),
     "leg-support-loc-librarian-of-congress": (
         "Librarian of Congress", "Librarian of Congress", "2 U.S.C. 136a-2(1)",
         "loc_2_usc_136a-2.html", "II",
@@ -3468,6 +3715,15 @@ TIER_REFERENCE_IES_COMPOSITION = (
 #: and that the section's operative text must still print. Mirrors each
 #: row's `identificationQuote` in tier_reference_pay.TIER_REFERENCE_PROVISIONS.
 TIER_REFERENCE_IDENTIFICATIONS = {
+    "exec-ind-misc-americorps-director-administrator-chair-americorps": (
+        "The Corporation shall be headed by an individual who shall serve as Chief Executive Officer of the Corporation, and who shall be appointed by the President, by and with the advice and consent of the Senate."
+    ),
+    "exec-ind-misc-privacy-civil-liberties-oversight-board-pclob-director-administrator-chair-privacy-civil-liberties-oversight-board": (
+        "The Board shall be composed of a full-time chairman and 4 additional members, who shall be appointed by the President, by and with the advice and consent of the Senate."
+    ),
+    "exec-ind-misc-appalachian-regional-commission-arc-director-administrator-chair-appalachian-regional-commission": (
+        "The Commission is composed of the Federal Cochairman, appointed by the President by and with the advice and consent of the Senate, and the Governor of each participating State in the Appalachian region."
+    ),
     "exec-ind-misc-broadcasting-board-of-governors-usagm-director-administrator-chair-broadcasting-board-of-governors-usagm": (
         "The head of the United States Agency for Global Media shall be a Chief Executive Officer, who shall "
         "be appointed by the President, by and with the advice and consent of the Senate."
@@ -3566,16 +3822,23 @@ def tier_reference_pay_violations(node, pay, today, label, tree_parent_name=None
     row = TIER_REFERENCE_ROWS.get(node_id)
     arithmetic = pay.get("arithmetic")
     if row is not None:
-        node_name, office, citation, fixture, level, sentence = row
-        percent = 0
-        if str(pay.get("method") or "") != TIER_REFERENCE_METHOD:
-            say("prices a reviewed row under method {!r}, not {!r}".format(pay.get("method"), TIER_REFERENCE_METHOD))
+        # A seventh element is the percentage the row's statute adds to the
+        # level's rate (42 U.S.C. 12651c(b): "plus 3 percent", the Inspector
+        # General Act's shape on a reviewed row); absent, the statute states
+        # the level's rate outright and the block may carry no arithmetic.
+        node_name, office, citation, fixture, level, sentence = row[:6]
+        percent = int(row[6]) if len(row) > 6 else 0
+        expected_method = TIER_REFERENCE_METHOD_PERCENT if percent else TIER_REFERENCE_METHOD
+        if str(pay.get("method") or "") != expected_method:
+            say("prices a reviewed row under method {!r}, not {!r}".format(pay.get("method"), expected_method))
         if canonical_key(node.get("name")) != canonical_key(node_name):
             say("is now called {!r}, not {!r}, the name its row was written against".format(node.get("name"), node_name))
         if identification.get("kind") != "reviewed_row" or str(identification.get("nodeName") or "") != node_name:
             say("does not identify itself as the reviewed row for {!r}".format(node_name))
-        if arithmetic is not None:
+        if arithmetic is not None and not percent:
             say("carries arithmetic on a row whose statute states the level's rate outright")
+        if percent and not isinstance(arithmetic, dict):
+            say("prices a reviewed row whose statute adds {} percent without publishing the arithmetic".format(percent))
         if str(pay.get("office") or "") != office:
             say("names office {!r}; the row is {!r}".format(pay.get("office"), office))
         identifies = TIER_REFERENCE_IDENTIFICATIONS.get(node_id)
@@ -4617,6 +4880,7 @@ ALIAS_SCOPES = {"node", "organisation"}
 #: `tests/test_node_aliases.py` pins this equal to the committed table.
 NODE_ALIASES = {
     "exec-ind-misc-americorps": ("AmeriCorps", ("Corporation for National and Community Service",)),
+    "exec-dept-doj-bop": ("Bureau of Prisons (BOP)", ("Federal Bureau of Prisons",)),
     "exec-vp": ("The Vice President of the United States", ("The Vice President",)),
     "jud-support-aousc": ("Administrative Office of U.S. Courts (AOUSC)",
                           ("Administrative Office of the United States Courts",)),
@@ -6949,11 +7213,20 @@ def main(argv):
     for n in table_paid:
         key = str(n["positionPayRate"].get("payLevel") or "?")
         by_level[key] = by_level.get(key, 0) + 1
-    print("  salary table         : {:,} positions priced from {} for the level the archive reports ({}); "
-          "{:,} not priced (a level on another pay plan)".format(
+    # A level may come from either listing -- the archive's or the current
+    # export's -- so the unpriced count is taken over both: a node listed at
+    # a level by either and priced by neither. (The first version subtracted
+    # the priced count from the ARCHIVE's levels alone and printed -37 once
+    # the current export supplied more levels than the archive had.)
+    level_unpriced = sum(
+        1 for n in nodes
+        if not isinstance(n.get("positionPayRate"), dict)
+        and any(isinstance(n.get(f), dict) and n[f].get("payLevel") for f in ("positionListing", "positionCurrentListing")))
+    print("  salary table         : {:,} positions priced from {} for the level a PLUM listing reports ({}); "
+          "{:,} listed at a level and not priced (a level on another pay plan, or priced by another route)".format(
               len(table_paid), EXECUTIVE_SCHEDULE_TABLE,
               ", ".join("{} {}".format(k, by_level[k]) for k in sorted(by_level, key=len)) or "none",
-              with_level - len(table_paid)))
+              level_unpriced))
     ranged = [n for n in nodes if isinstance(n.get("positionGradePay"), dict)]
     ranged_kinds = Counter(str(n["positionGradePay"].get("kind") or "?") for n in ranged)
     print("  pay ranges           : {:,} positions carry a base-pay RANGE, never a rate, for the pay plan the archive reports "

@@ -465,7 +465,10 @@ def operative_text(raw_html: str) -> str:
     """
     text = re.sub(r"(?is)<(script|style)\b.*?</\1>", " ", raw_html)
     text = _collapse(html_module.unescape(re.sub(r"<[^>]+>", " ", text)))
-    start = re.search(r"§\s?\d+[A-Za-z]?(?:[-\u2013]\d+)?\.", text)
+    # Up to two letters: 42 U.S.C. 2000ee (the Privacy and Civil Liberties
+    # Oversight Board) is a real section number, and the first version of
+    # this pattern admitted one letter and refused its heading.
+    start = re.search(r"§\s?\d+[A-Za-z]{0,2}(?:[-\u2013]\d+)?\.", text)
     if start is None:
         raise Unreadable("the page carries no section heading")
     body = text[start.start() :]

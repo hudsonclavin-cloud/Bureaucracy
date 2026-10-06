@@ -421,6 +421,182 @@ METHOD_REVIEWED = "level_assigned_by_5_usc_5312_5316_to_the_office_a_second_stat
 #: schedule record (a singular title the Code names once) is stripped as an
 #: incumbency-shaped claim. The gate mirrors the mark by node id.
 REVIEWED_TITLE_ROWS: dict[str, dict[str, Any]] = {
+    # The twelfth research batch (2026-10-05): two Executive Office posts the
+    # Code prints under a title this graph does not use, then four Justice and
+    # Homeland Security posts from the same batch (CURATION.md §19.20), and
+    # nine from its regulatory and financial agencies cluster.
+    "exec-ind-misc-national-labor-relations-board-nlrb-independent-director-administrator-chair-national-labor-relations-board": {
+        "nodeName": "Director / Administrator / Chair, National Labor Relations Board",
+        "statutoryTitle": "Chairman, National Labor Relations Board",
+        "basisCitation": "29 U.S.C. 153",
+        "basisFixture": "nlrb_29_usc_153_govinfo2024.html",
+        "basisQuote": "The President shall designate one member to serve as Chairman of the Board.",
+        "basis": "the office under the template is the Chairman: 29 U.S.C. 153(a) has the President designate one member of the Board to serve as Chairman, and 5 U.S.C. 5314 places the Chairman of the National Labor Relations Board at Level III; the Board's own statute creates no Director or Administrator",
+    },
+    "exec-regulatory-fdic-chair-fdic": {
+        "nodeName": "Chair, FDIC",
+        "statutoryTitle": "Chairman, Board of Directors, Federal Deposit Insurance Corporation",
+        "basisCitation": "12 U.S.C. 1812",
+        "basisFixture": "fdic_12_usc_1812_govinfo2024.html",
+        "basisQuote": "1 of the appointed members shall be designated by the President, by and with the advice and consent of the Senate, to serve as Chairperson of the Board of Directors for a term of 5 years.",
+        "basis": "the same office: 12 U.S.C. 1812(b)(1) has one appointed member designated to serve as Chairperson of the Board of Directors, and 5 U.S.C. 5314 places the Chairman of the Board of Directors of the Federal Deposit Insurance Corporation at Level III; the graph spells the title without gender and names the Corporation by its acronym",
+    },
+    "exec-regulatory-fdic-vice-chair": {
+        "nodeName": "Vice Chair",
+        "statutoryTitle": "Member, Board of Directors of the Federal Deposit Insurance Corporation",
+        "basisCitation": "12 U.S.C. 1812",
+        "basisFixture": "fdic_12_usc_1812_govinfo2024.html",
+        "basisQuote": "1 of the appointed members shall be designated by the President, by and with the advice and consent of the Senate, to serve as Vice Chairperson of the Board of Directors.",
+        "basis": "the Vice Chairperson is an appointed member of the Board: 12 U.S.C. 1812(b)(2) designates one appointed member to serve as Vice Chairperson, 5 U.S.C. 5315 places a Member of the Board of Directors of the Federal Deposit Insurance Corporation at Level IV, and only the Chairman is placed separately (5314)",
+    },
+    "exec-ind-misc-merit-systems-protection-board-mspb-deputy-director-vice-chair": {
+        "nodeName": "Deputy Director / Vice Chair",
+        "statutoryTitle": "Members, Merit Systems Protection Board",
+        "basisCitation": "5 U.S.C. 1203",
+        "basisFixture": "mspb_5_usc_1203.html",
+        "basisQuote": "The President shall from time to time designate one of the members of the Board as Vice Chairman of the Board.",
+        "basis": "the office under the template is the Vice Chairman, a member of the Board: 5 U.S.C. 1203(b) has the President designate one of the members as Vice Chairman, and 5 U.S.C. 5315 places the Members of the Merit Systems Protection Board at Level IV; the Board's statute creates no Deputy Director",
+    },
+    "exec-ind-misc-national-transportation-safety-board-ntsb-deputy-director-vice-chair": {
+        "nodeName": "Deputy Director / Vice Chair",
+        "statutoryTitle": "Members, National Transportation Safety Board",
+        "basisCitation": "49 U.S.C. 1111",
+        "basisFixture": "ntsb_49_usc_1111.html",
+        "basisQuote": "The President also shall designate a Vice Chairman of the Board.",
+        "basis": "the office under the template is the Vice Chairman, a member of the Board: 49 U.S.C. 1111(d) has the President designate a Vice Chairman, and 5 U.S.C. 5315 places the Members of the National Transportation Safety Board at Level IV; the Board's statute creates no Deputy Director",
+    },
+    "exec-ind-misc-peace-corps-deputy-director-vice-chair": {
+        "nodeName": "Deputy Director / Vice Chair",
+        "statutoryTitle": "Deputy Director of the Peace Corps",
+        "basisCitation": "22 U.S.C. 2503",
+        "basisFixture": "peacecorps_22_usc_2503.html",
+        "basisQuote": "The President may appoint, by and with the advice and consent of the Senate, a Director of the Peace Corps and a Deputy Director of the Peace Corps.",
+        "basis": "the office under the template is the Deputy Director: 22 U.S.C. 2503(a) has the President appoint a Director of the Peace Corps and a Deputy Director of the Peace Corps, and 5 U.S.C. 5315 places the Deputy Director of the Peace Corps at Level IV; the Peace Corps has no Vice Chair",
+    },
+    "exec-ind-misc-u-s-postal-rate-commission-postal-regulatory-commission-deputy-director-vice-chair": {
+        "nodeName": "Deputy Director / Vice Chair",
+        "statutoryTitle": "Members, Postal Regulatory Commission (4)",
+        "basisCitation": "39 U.S.C. 502",
+        "basisFixture": "prc_39_usc_502.html",
+        "basisQuote": "The Commissioners shall by majority vote designate a Vice Chairman of the Commission.",
+        "basis": "the office under the template is the Vice Chairman, one of the Commissioners: 39 U.S.C. 502(e) has the Commissioners designate a Vice Chairman from among themselves, and 5 U.S.C. 5315 places the Members of the Postal Regulatory Commission (4) at Level IV, only the Chairman being placed separately (5314); CURATION.md §19.14 declined this post on the ground that the statute designates no Vice Chairman, which the committed section shows to be wrong",
+    },
+    "exec-ind-misc-federal-labor-relations-authority-flra-general-counsel": {
+        "nodeName": "General Counsel",
+        "statutoryTitle": "Members, Federal Labor Relations Authority (2) and its General Counsel",
+        "basisCitation": "5 U.S.C. 7104",
+        "basisFixture": "flra_5_usc_7104.html",
+        "basisQuote": "The General Counsel of the Authority shall be appointed by the President, by and with the advice and consent of the Senate, for a term of 5 years.",
+        "basis": "the same office: 5 U.S.C. 7104(f)(1) has the President appoint the General Counsel of the Authority, and 5 U.S.C. 5316 places the General Counsel at Level V in one printed item with the Authority's two Members; OPM's current export lists the post at EX V, which agrees",
+    },
+    "exec-ind-misc-u-s-international-development-finance-corp-dfc-director-administrator-chair-u-s-international-development-finance-corp": {
+        "nodeName": "Director / Administrator / Chair, U.S. International Development Finance Corp",
+        "statutoryTitle": "Chief Executive Officer, United States International Development Finance Corporation",
+        "basisCitation": "22 U.S.C. 9613",
+        "basisFixture": "dfc_22_usc_9613_govinfo2024.html",
+        "basisQuote": "There shall be in the Corporation a Chief Executive Officer, who shall be appointed by the President, by and with the advice and consent of the Senate, and who shall serve at the pleasure of the President.",
+        "basis": "the office under the template is the Chief Executive Officer: 22 U.S.C. 9613(d)(1) puts a Chief Executive Officer in the Corporation, appointed by the President, and 5 U.S.C. 5313 places the Chief Executive Officer of the United States International Development Finance Corporation at Level II; the Corporation's statute creates no Director or Administrator",
+    },
+    "exec-dept-dhs-cisa-executive-assistant-director-cybersecurity": {
+        "nodeName": "Executive Assistant Director — Cybersecurity",
+        "statutoryTitle": "Assistant Director for Cybersecurity, Cybersecurity and Infrastructure Security Agency",
+        "basisCitation": "6 U.S.C. 653",
+        "basisFixture": "cisa_6_usc_653_govinfo2024.html",
+        "basisQuote": (
+            "Any reference to the Assistant Secretary for Cybersecurity and Communications or Assistant Director "
+            "for Cybersecurity in any law, regulation, map, document, record, or other paper of the United States "
+            "shall be deemed to be a reference to the Executive Assistant Director for Cybersecurity."
+        ),
+        "basis": (
+            "the same office by the statute's own deeming rule: 6 U.S.C. 653(a)(3) deems any reference to the "
+            "Assistant Director for Cybersecurity in any law to be a reference to the Executive Assistant Director "
+            "for Cybersecurity, and 5 U.S.C. 5315 -- a law -- places the Assistant Director for Cybersecurity of "
+            "the Cybersecurity and Infrastructure Security Agency at Level IV; the same shape as the 6 U.S.C. "
+            "652(a) rule TREASURY_ROW_ALIASES already relies on for CISA's Treasury line"
+        ),
+    },
+    "exec-dept-dhs-cisa-executive-assistant-director-infrastructure-security": {
+        "nodeName": "Executive Assistant Director — Infrastructure Security",
+        "statutoryTitle": "Assistant Director for Infrastructure Security, Cybersecurity and Infrastructure Security Agency",
+        "basisCitation": "6 U.S.C. 654",
+        "basisFixture": "cisa_6_usc_654_govinfo2024.html",
+        "basisQuote": (
+            "Any reference to the Assistant Secretary for Infrastructure Protection or Assistant Director for "
+            "Infrastructure Security in any law, regulation, map, document, record, or other paper of the United "
+            "States shall be deemed to be a reference to the Executive Assistant Director for Infrastructure Security."
+        ),
+        "basis": (
+            "the same office by the statute's own deeming rule: 6 U.S.C. 654(a)(3) deems any reference to the "
+            "Assistant Director for Infrastructure Security in any law to be a reference to the Executive Assistant "
+            "Director for Infrastructure Security, and 5 U.S.C. 5315 places the Assistant Director for "
+            "Infrastructure Security of the Cybersecurity and Infrastructure Security Agency at Level IV"
+        ),
+    },
+    "exec-dept-doj-bop-director-bop": {
+        "nodeName": "Director, BOP",
+        "statutoryTitle": "Director, Bureau of Prisons, Department of Justice",
+        "basisCitation": "18 U.S.C. 4041",
+        "basisFixture": "bop_18_usc_4041_govinfo2024.html",
+        "basisQuote": "The Bureau of Prisons shall be in charge of a director appointed by and serving directly under the Attorney General.",
+        "basis": (
+            "the same office: 18 U.S.C. 4041 puts the Bureau of Prisons in charge of a director appointed by and "
+            "serving under the Attorney General, and 5 U.S.C. 5315 places the Director of the Bureau of Prisons, "
+            "Department of Justice, at Level IV; the graph names the post with the Bureau's acronym, which the "
+            "scoped route refuses because the office half is the bare word Director"
+        ),
+    },
+    "exec-dept-dhs-fema-deputy-administrator": {
+        "nodeName": "Deputy Administrator",
+        "statutoryTitle": "Deputy Administrators, Federal Emergency Management Agency",
+        "basisCitation": "6 U.S.C. 321c",
+        "basisFixture": "fema_6_usc_321c_govinfo2024.html",
+        "basisQuote": (
+            "The President may appoint, by and with the advice and consent of the Senate, not more than 4 Deputy "
+            "Administrators to assist the Administrator in carrying out this subchapter."
+        ),
+        "basis": (
+            "a Deputy Administrator is one of the Deputy Administrators: 6 U.S.C. 321c(a) lets the President "
+            "appoint not more than four Deputy Administrators of the Federal Emergency Management Agency, and "
+            "5 U.S.C. 5314 places the Deputy Administrators of the Agency at Level III as a class, the way it places "
+            "the Members of the Federal Reserve Board whose Vice Chairs this table already prices one node at a time; "
+            "this node is the Agency's one Deputy Administrator so named, and the current PLUM export lists two PAS "
+            "rows at EX III under the title"
+        ),
+    },
+    "exec-eop-ondcp-deputy-director": {
+        "nodeName": "Deputy Director",
+        "statutoryTitle": "Deputy Director of National Drug Control Policy",
+        "basisCitation": "21 U.S.C. 1703",
+        "basisFixture": "ondcp_21_usc_1703.html",
+        "basisQuote": (
+            "There shall be a Deputy Director who shall report directly to the Director, and who shall be "
+            "appointed by the President, and shall serve at the pleasure of the President."
+        ),
+        "basis": (
+            "the same office: 21 U.S.C. 1703(a)(1)(B) creates one Deputy Director of the Office of National "
+            "Drug Control Policy, reporting to the Director the same section puts at the head of the Office, "
+            "and 5 U.S.C. 5313 places the Deputy Director of National Drug Control Policy at Level II; the "
+            "graph names the post by its bare title under the Office"
+        ),
+    },
+    "exec-eop-ostp-director-presidential-science-advisor": {
+        "nodeName": "Director (Presidential Science Advisor)",
+        "statutoryTitle": "Director of the Office of Science and Technology",
+        "basisCitation": "42 U.S.C. 6612",
+        "basisFixture": "ostp_42_usc_6612_govinfo2024.html",
+        "basisQuote": (
+            "There shall be at the head of the Office a Director who shall be appointed by the President, by "
+            "and with the advice and consent of the Senate, and who shall be compensated at the rate provided "
+            "for level II of the Executive Schedule in section 5313 of title 5."
+        ),
+        "basis": (
+            "the same office: 42 U.S.C. 6612(a) puts a Director at the head of the Office of Science and "
+            "Technology Policy and itself pays that Director at level II of the Executive Schedule, the level "
+            "5 U.S.C. 5313 prints for 'Director of the Office of Science and Technology' -- the office's "
+            "name as styled before Pub. L. 94-282 (1976) created the present Office; the graph names the post "
+            "by its title with the informal label in brackets"
+        ),
+    },
     "exec-regulatory-fed-chair-board-of-governors": {
         "nodeName": "Chair, Board of Governors",
         "statutoryTitle": "Chairman, Board of Governors of the Federal Reserve System",

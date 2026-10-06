@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-10-06T00:00:03Z",
+ "url": "https://www.govinfo.gov/link/uscode/22/9613?link-type=html",
+ "status": 200,
+ "final_url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title22/html/USCODE-2024-title22-chap103-subchapI-sec9613.htm",
+ "content_type": "text/html",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /link/uscode/22/9613",
+ "bytes": 19821,
+ "sha256": "ba86d5f6ed3644aed199f5e6396db085bed2372f65e320ace22d5e62b4476d83",
+ "error": null
+}

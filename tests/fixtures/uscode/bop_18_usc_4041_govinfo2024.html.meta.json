@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-10-05T23:55:44Z",
+ "url": "https://www.govinfo.gov/link/uscode/18/4041?link-type=html",
+ "status": 200,
+ "final_url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partIII-chap303-sec4041.htm",
+ "content_type": "text/html",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /link/uscode/18/4041",
+ "bytes": 3881,
+ "sha256": "785b35155f4843bb0ee21fb300eae3f7567d7c82028f87141ceef0baa68f6dc0",
+ "error": null
+}

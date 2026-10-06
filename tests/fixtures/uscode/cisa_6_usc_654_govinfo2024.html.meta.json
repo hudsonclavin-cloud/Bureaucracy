@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-10-05T23:55:43Z",
+ "url": "https://www.govinfo.gov/link/uscode/6/654?link-type=html",
+ "status": 200,
+ "final_url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title6/html/USCODE-2024-title6-chap1-subchapXVIII-partA-sec654.htm",
+ "content_type": "text/html",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /link/uscode/6/654",
+ "bytes": 6397,
+ "sha256": "cea1270291d6aeed749ad95167b63f30b32d90a73dd82fa4d665c21296f624ee",
+ "error": null
+}

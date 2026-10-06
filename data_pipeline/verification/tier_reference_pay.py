@@ -360,6 +360,59 @@ TIER_REFERENCE_PROVISIONS: dict[str, dict[str, Any]] = {
             "Secretary of the Senate and the Clerk of the House of Representatives) for a term of one year."
         ),
     },
+    # The twelfth batch (2026-10-05, CURATION.md §19.20): the Secret Service
+    # Uniformed Division's Chief. 5 U.S.C. 10203(a) prints the Division's
+    # schedule of rates as a table and sets the Chief's row by reference to
+    # Level V; the Code's own footnote says the sentence "Probably should be
+    # followed by 'for'", so the quote stops where the printed words do.
+    "exec-ind-misc-privacy-civil-liberties-oversight-board-pclob-director-administrator-chair-privacy-civil-liberties-oversight-board": {
+        "nodeName": "Director / Administrator / Chair, Privacy & Civil Liberties Oversight Board",
+        "office": "Chairman of the Privacy and Civil Liberties Oversight Board",
+        "citation": "42 U.S.C. 2000ee(i)(1)(A)",
+        "fixture": "pclob_42_usc_2000ee_govinfo2024.html",
+        "subsection": "(i)(1)(A)",
+        "level": "III",
+        "percent": 0,
+        "quote": "The chairman of the Board shall be compensated at the rate of pay payable for a position at level III of the Executive Schedule under section 5314 of title 5.",
+        "identificationQuote": "The Board shall be composed of a full-time chairman and 4 additional members, who shall be appointed by the President, by and with the advice and consent of the Senate.",
+    },
+    "exec-ind-misc-appalachian-regional-commission-arc-director-administrator-chair-appalachian-regional-commission": {
+        "nodeName": "Director / Administrator / Chair, Appalachian Regional Commission",
+        "office": "Federal Cochairman of the Appalachian Regional Commission",
+        "citation": "40 U.S.C. 14301(c)",
+        "fixture": "arc_40_usc_14301_govinfo2024.html",
+        "subsection": "(c) Compensation",
+        "level": "III",
+        "percent": 0,
+        "quote": "The Federal Cochairman shall be compensated by the Federal Government at level III of the Executive Schedule as set out in section 5314 of title 5.",
+        "identificationQuote": "The Commission is composed of the Federal Cochairman, appointed by the President by and with the advice and consent of the Senate, and the Governor of each participating State in the Appalachian region.",
+    },
+    # The Corporation for National and Community Service (AmeriCorps): the
+    # Inspector General Act's shape on a reviewed row, 42 U.S.C. 12651c(b)
+    # adding 3 percent to Level III for the Chief Executive Officer the same
+    # section puts at the head of the Corporation. The stamped node is priced
+    # only because (a) names the office under the template.
+    "exec-ind-misc-americorps-director-administrator-chair-americorps": {
+        "nodeName": "Director / Administrator / Chair, AmeriCorps",
+        "office": "Chief Executive Officer of the Corporation for National and Community Service",
+        "citation": "42 U.S.C. 12651c(b)",
+        "fixture": "cncs_42_usc_12651c_govinfo2024.html",
+        "subsection": "(b) Compensation",
+        "level": "III",
+        "percent": 3,
+        "quote": "The Chief Executive Officer shall be compensated at the rate provided for level III of the Executive Schedule under section 5314 of title 5, plus 3 percent.",
+        "identificationQuote": "The Corporation shall be headed by an individual who shall serve as Chief Executive Officer of the Corporation, and who shall be appointed by the President, by and with the advice and consent of the Senate.",
+    },
+    "exec-dept-dhs-usss-chief-uniformed-division": {
+        "nodeName": "Chief — Uniformed Division",
+        "office": "Chief of the United States Secret Service Uniformed Division",
+        "citation": "5 U.S.C. 10203(a)",
+        "fixture": "usss_5_usc_10203_govinfo2024.html",
+        "subsection": "(a)",
+        "level": "V",
+        "percent": 0,
+        "quote": "the Chief position will be equal to the rate of pay for level V of the Executive Schedule",
+    },
     "leg-support-loc-librarian-of-congress": {
         "nodeName": "Librarian of Congress",
         "office": "Librarian of Congress",

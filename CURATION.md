@@ -3584,6 +3584,9 @@ more; every lead is accounted for here.
   12 U.S.C. 1752a designates a Chairman and no Vice Chairman (the Board's
   three members are read and committed; nothing here says which member the
   stamp stands for), and 39 U.S.C. 502 was not fetched on the same doubt.
+  (The PRC half of this was wrong: §502(e), committed since for the
+  Commission's Chairman row, has the Commissioners designate a Vice Chairman
+  by majority vote. Corrected and priced on 2026-10-05, §19.20.)
   The SEC's `Chair, SEC`: 15 U.S.C. 78d composes the Commission and does
   not designate its Chairman (Reorganization Plan No. 10 of 1950 does),
   so no basis sentence exists in a section of the Code. The EPA's
@@ -4146,3 +4149,283 @@ declined with its reason in this file, or declined on the section's own
 text. `docs/PAY_SOURCE_RESEARCH_PROMPT_3.md` carries the 3,480 titles still
 unpriced should a twelfth batch be wanted.
 
+
+### 19.20 The twelfth batch, run as ten parallel agents against the repository's own documents (2026-10-05, late)
+
+**How this batch differs from the eleven before it.** Every earlier batch was
+a set of Perplexity answers pasted in by the owner and read against the graph.
+The owner closed that series ("these are the last perplexity responses") and
+asked for the twelfth to be started from the research pack itself, in
+parallel. So this batch is ten research agents, one per cluster of
+`docs/UNPRICED_POSITIONS.md` (the VA's medical centres, the White House and
+the rest of the Executive Office, the regulatory and financial agencies,
+Justice and Homeland Security, Defense, congressional staff, the judiciary,
+the remaining departments, a scan of the Code's titles, and the Treasury
+alias candidates), each read-only on the repository, each allowed `.gov` and
+`.mil` documents only, each returning leads with the document's URL, what it
+states (a rate, a range, a level, a system or nothing), a verbatim quote and
+the join key, and declines with the reason. The agents ran two at a time on
+this sandbox's four cores, so the clusters landed over an evening; what each
+yielded is below, cluster by cluster, and the ones still running when this
+section was written are marked.
+
+**What was built before any cluster returned, because the panel itself was
+the first finding.** The owner's complaint that positions "still don't have
+their salaries attached" was true of the panel and not of the data:
+`CLAUDE.md`'s "A priced post's salary is its headline figure" records the
+fix, and `docs/COST_COVERAGE.md` the inventory the standing ask is measured
+against.
+
+**White House Office and the Executive Office of the President (192 unpriced
+posts). Built: two reviewed Schedule rows and two matcher rules.**
+
+- **ONDCP Deputy Director** — 5 U.S.C. 5313 prints "Deputy Director of
+  National Drug Control Policy." (Level II) and 21 U.S.C. 1703(a)(1)(B),
+  already committed, creates the office: "There shall be a Deputy Director
+  who shall report directly to the Director, and who shall be appointed by
+  the President, and shall serve at the pleasure of the President." A
+  reviewed row, the Fed's shape. $228,000, `partial`, `proxy`.
+- **OSTP Director (Presidential Science Advisor)** — 42 U.S.C. 6612(a),
+  fetched from govinfo's 2024-edition rendering (the OLRC host still under
+  maintenance): "There shall be at the head of the Office a Director who
+  shall be appointed by the President, by and with the advice and consent of
+  the Senate, and who shall be compensated at the rate provided for level II
+  of the Executive Schedule in section 5313 of title 5." The agent proposed
+  the tier-reference shape; the reviewed-row shape was used instead because
+  §5313 itself prints the office — as "Director of the Office of Science and
+  Technology", the Office's name before Pub. L. 94–282 (1976) created the
+  present one — so this is the Fed's shape with a basis section that states
+  the level itself, which the FCC's and NSF's rows already are. The gate's
+  reviewed-row check accepted only an OLRC basis URL and refused the govinfo
+  one on the first build; `us_code_url_names_section` now accepts either
+  host's URL for the section the citation names and nothing else.
+- **The export's rows under sub-organisations this graph has no node for.**
+  The agent found four printed SES rates the matcher never reached — the
+  OMB's and the ONDCP's Chiefs of Staff ($197,200, $195,200) and General
+  Counsels — filed under "OFFICE OF THE DIRECTOR", "GENERAL COUNSEL" and
+  "OFFICE OF GENERAL COUNSEL", and proposed a scoping fallback. Measured
+  first, in two shapes. A broad fallback (any unmatched sub-organisation's
+  rows scoped to the agency's own children) reaches 283 rows on 173 posts
+  and lands an Under Secretary's "CHIEF OF STAFF" on the Secretary's eleven
+  times over at Agriculture alone: **refused**. The narrow rule — the
+  sub-organisation is NAMED FOR THE TITLE ("Office of the General Counsel" /
+  "General Counsel") — reaches 72 rows on 70 posts, every one a stamped
+  administrative title, and was built with its own `scopeRule` on the
+  record, a placement under the agency, a panel sentence saying where the
+  export files it, and gate checks in both directions. Two of the four posts
+  the agent named are priced by it — the OMB's General Counsel ($197,200,
+  under "GENERAL COUNSEL") and the ONDCP's ($195,200, under "OFFICE OF
+  GENERAL COUNSEL"); both Chiefs of Staff sit under "OFFICE OF THE
+  DIRECTOR", which is not named for a Chief of Staff, and stay unpriced by
+  this rule, which is the honest edge of it.
+- **The White House rank fold, applied to the export.** "ASSISTANT TO THE
+  PRESIDENT AND DIRECTOR OF LEGISLATIVE AFFAIRS" folds, by the roster
+  module's own `title_core`, to the graph's `Director of Legislative
+  Affairs`; 8 rows reach 7 posts, the Director of Legislative Affairs among
+  them (the July roster prints no row for the principal). The first build
+  matched the row in the derive step and then refused it as "renamed" in the
+  build, because the rename guard did not know the fold; it does now.
+- **Declined, with the reason.** The three Deputy USTRs are a counted class
+  ("Deputy United States Trade Representatives (3)", Level III, 19 U.S.C.
+  2171(b)(2) composing exactly three) whose nodes are named "Deputy USTR —
+  Americas" and so fail the counted-class name rule (the singular office
+  first and whole); a rename is a curated-file write no sanctioned script
+  makes for a post of this shape, and an alias is read by no money join —
+  left for a rename decision. Three WHO posts the roster and the export both
+  print at one rate under a title the graph words differently ("Assistant to
+  the President & Counsel" against "COUNSEL TO THE PRESIDENT", "Chief
+  Speechwriter" against "DIRECTOR OF SPEECHWRITING", "Director of Public
+  Liaison" against "DIRECTOR OF THE OFFICE OF PUBLIC LIAISON") — the
+  equality-after-fold rule is right to refuse each, and the same rename
+  decision applies. The NEC's Director and deputies are WHO appointees
+  printed in the WHO roster under compound titles and placed outside the
+  `exec-eop-who` subtree the roster module scopes to. 3 U.S.C. 105, 106 and
+  107 state CEILINGS ("at rates not to exceed … level II"), as do 42 U.S.C.
+  6612(b) for OSTP's Associate Directors, 42 U.S.C. 4372(b) and 19 U.S.C.
+  2171(e)(1): none prices anybody. The NSC's and CEA's staff are a pay
+  SYSTEM (the General Schedule; AD for the CEA's experts) with no title
+  named. Seven WHO posts the roster lists at $0.00 and 33 titles it lists at
+  differing rates stay refused as before.
+
+**The VA's medical centres (450 unpriced posts). Built: nothing; the governing
+handbook confirms the refusal.** The agent read VA Handbook 5007 Part IX
+(5007/59): paragraph 9c assigns the TIER by role ("Tier 3. Service chief,
+service line manager or other assignment … requiring a specialty within the
+assigned pay table") and paragraph 13a makes the TABLE a per-person
+determination ("recommending the appropriate pay table, tier level and
+market pay amount … for individual physicians, dentists [and podiatrists]").
+So no VA document assigns "Chief — Medicine Service" to Table 1 or Table 2,
+and §19.2's refusal of the sixteen service-chief families (288 nodes) rests
+on the source now rather than on inference. The four leads it did return are
+all USAJOBS vacancy announcements giving a pay plan and grade (VAMC Associate
+Director GS-15 on five announcements; Associate Director for Patient Care
+Services Nurse V on four; Network CFO GS-15 on one, a detail; VA Police
+Chief GS-12 on two), and §19.12 refuses a vacancy posting as a pay document:
+a posting is one facility's advertisement for one appointment, not a
+document stating what the title pays. Recorded, not built; the owner can
+decide the class. Two curation findings ride with it: Handbook 5007 Part II
+Appendix B defines the Nurse Executive as "Chiefs of Nursing Service or
+equivalent positions that represent the highest ranking nurse management
+position at a facility", so the graph's separate `Chief — Nursing` beside
+`Associate Director for Patient Care Services (CNO)` duplicates one post;
+and the Network CFO announcement says VISN CFOs report to VA's Office of
+Management, not to the Network Director. Nurses are a per-station locality
+system (152 stations, 8,513 rows); pharmacists and social workers are
+hybrid Title 38 on per-station GS special rates; canteen chiefs are outside
+the GS by 38 U.S.C. 7802(e). A "Physician (×multiple)" band spanning Tables
+1 and 2 ($124,308–$400,000) was flagged and not recommended: the union is
+not a printed row.
+
+**A displacement the rules made, recorded as a finding.** With the export's
+listings reaching 252 posts, four tier-reference figures were displaced by a
+listed level the table prices, under the standing rule that a figure set by
+reference never displaces a printed one: the GPO's Director (listed EX II,
+the same $228,000) and the Treasury's, Commerce's and Energy's Inspectors
+General, which OPM's export lists at EX IV, EX IV and EX III where 5 U.S.C.
+403(e) sets Level III plus 3 percent ($215,888). Two official documents
+disagree about three Inspectors General; the panel now shows the export's
+level and the table's rate for it, and this ledger records that the Act says
+otherwise. Whether a statute's tier-reference figure should outrank an
+incumbency listing's level is the owner's decision.
+
+**Justice and Homeland Security (about 230 unpriced posts across 25
+organisations). Built: four reviewed Schedule rows, one tier-reference row,
+one alias row.**
+
+- **CISA's two Executive Assistant Directors** (Cybersecurity;
+  Infrastructure Security) — 5 U.S.C. 5315 prints "Assistant Director for
+  Cybersecurity, Cybersecurity and Infrastructure Security Agency" and
+  "Assistant Director for Infrastructure Security, …" at Level IV, and 6
+  U.S.C. 653(a)(3) and 654(a)(3) (fetched from govinfo) each deem "Any
+  reference to … Assistant Director for Cybersecurity in any law, regulation,
+  map, document, record, or other paper of the United States" to be a
+  reference to the Executive Assistant Director — the same deeming shape 6
+  U.S.C. 652(a) supplies for CISA's Treasury line. Reviewed rows, Level IV,
+  $197,200 each.
+- **Director, BOP** — §5315's "Director, Bureau of Prisons, Department of
+  Justice" (Level IV) with 18 U.S.C. 4041: "The Bureau of Prisons shall be in
+  charge of a director appointed by and serving directly under the Attorney
+  General." The scoped route had refused this one because the office half is
+  the bare word Director.
+- **FEMA Deputy Administrator** — §5314's class "Deputy Administrators,
+  Federal Emergency Management Agency" (Level III) with 6 U.S.C. 321c(a)
+  composing "not more than 4 Deputy Administrators"; the agent's correction
+  that the composition is in §321c and not in the committed §313 is right,
+  and §321c is committed now. The graph's second node, `Deputy Administrator
+  — Protection & National Preparedness`, is declined: the export lists two
+  PAS EX-III rows, neither under that name, so the name reads as stale, and
+  a reviewed row is written against a node's name.
+- **Secret Service Chief, Uniformed Division** — 5 U.S.C. 10203(a) prints the
+  Division's schedule of rates as a table and sets the Chief's row by
+  reference: "the Chief position will be equal to the rate of pay for level V
+  of the Executive Schedule" — the Code's own footnote reads "So in original.
+  Probably should be followed by 'for'", so the quote stops where the printed
+  words do. A tier-reference row, $184,900; the Officer and Sergeant rows of
+  the same schedule are as-enacted figures adjusted annually under (b)(1)(A),
+  and the current schedule sits on a host that answers 403.
+- **The Bureau of Prisons, in the alias table.** The export files all 72 of
+  the Bureau's live rows under "FEDERAL BUREAU OF PRISONS" and this graph
+  names the node "Bureau of Prisons (BOP)", so its Director's and Deputy
+  Director's rows reached nothing. One row in `node_aliases.json` (§17), with
+  18 U.S.C. 4041's statutory name as the basis: the Deputy Director's
+  $193,209 reaches the graph through it, and the alias is read by the
+  export's agency scoping only, never by a money matcher.
+- **Declined, with the reason.** 28 U.S.C. 548 caps U.S. Attorneys and
+  Assistant U.S. Attorneys at Level IV ("Subject to sections 5315 through
+  5317 of title 5, the Attorney General shall fix the annual salaries") — a
+  ceiling. 6 U.S.C. 464(b) and 317(b)(1) put the FLETC Director and FEMA's
+  Regional Administrators in the Senior Executive Service by statute, a pay
+  SYSTEM the project has no shape for yet (a statute-placed SES range would
+  be a new field; recorded as a candidate). The 94 U.S. Marshals are an SL
+  bench the export lists mostly at $197,200 and once at GS-15 — not one rate
+  for every holder. The DHS Chief of Staff sits under "OFFICE OF THE
+  SECRETARY", which is not named for a Chief of Staff. CISA's Executive
+  Assistant Director for Emergency Communications ($220,780) and TSA's
+  Executive Assistant Administrators ($221,900) are printed under titles the
+  graph words differently ("FOR" where the graph prints a dash; "Executive"
+  dropped) — rename candidates, not matcher loosenings. The DHS and DOJ
+  Directors of Legislative and Public Affairs under the stamp are, by 6
+  U.S.C. 113(a)(1)(I) and 28 U.S.C. 506, Assistant Secretaries and an
+  Assistant Attorney General if designated — conditional, and the node names
+  are not the class's office. TSA's 2026 compensation bands by occupational
+  series, the Coast Guard's flag grades (37 U.S.C. 203(a)(2) is a ceiling and
+  the DFAS table is walled) and the FBI/DEA SES system (5 U.S.C. 3151 names no
+  title) price nothing. Every DOJ and DHS component host probed answers an
+  Akamai 403.
+
+**The regulatory and financial agencies. Built: nine reviewed Schedule rows
+and three tier-reference rows — and one earlier decline corrected.**
+
+- Reviewed rows, each the Fed's shape with the body's own section committed
+  (the NLRB's, FDIC's and DFC's fetched from govinfo; the MSPB's, NTSB's,
+  Peace Corps', PRC's and FLRA's already in hand for their chairs or members):
+  the **NLRB's Chairman** (III; 29 U.S.C. 153(a) "The President shall
+  designate one member to serve as Chairman of the Board."); the **FDIC's
+  Chairperson** (III) and **Vice Chairperson** (IV, the Code's singular
+  "Member, Board of Directors of the Federal Deposit Insurance Corporation";
+  12 U.S.C. 1812(b)(1)–(2)); the **MSPB's Vice Chairman** (IV; 5 U.S.C.
+  1203(b)); the **NTSB's Vice Chairman** (IV; 49 U.S.C. 1111(d)); the **Peace
+  Corps' Deputy Director** (IV; 22 U.S.C. 2503(a)); the **PRC's Vice
+  Chairman** (IV, one of "Members, Postal Regulatory Commission (4)"; 39
+  U.S.C. 502(e)); the **FLRA's General Counsel** (V, the Code's one compound
+  item "Members, Federal Labor Relations Authority (2) and its General
+  Counsel"; 5 U.S.C. 7104(f)(1); the export already listed the post at EX V,
+  which agrees); and the **DFC's Chief Executive Officer** (II; 22 U.S.C.
+  9613(d)(1)). Six of the nine price a stamped "Director / Administrator /
+  Chair" or "Deputy Director / Vice Chair" node, each only because the body's
+  own section names the office under it.
+- **§19.14 was wrong about the PRC.** It declined the PRC's Vice Chair
+  because "neither statute designates one" and recorded that 39 U.S.C. 502
+  had not been fetched; §502(e), committed since for the Chairman's row,
+  reads "The Commissioners shall by majority vote designate a Vice Chairman
+  of the Commission." The NCUA half of that decline stands.
+- Tier-reference rows: the **PCLOB's chairman** at Level III (42 U.S.C.
+  2000ee(i)(1)(A), with (h)(1) naming "a full-time chairman and 4 additional
+  members" under the stamp — a section number with two letters, which the
+  three operative-text readers refused until their heading pattern admitted
+  it); the **ARC's Federal Cochairman** at Level III (40 U.S.C. 14301(c),
+  with (b)(1) composing the Commission "of the Federal Cochairman … and the
+  Governor of each participating State"); and **AmeriCorps' Chief Executive
+  Officer** at Level III plus 3 percent (42 U.S.C. 12651c(b), with (a)
+  putting the Chief Executive Officer at the head of the Corporation) — the
+  Inspector General Act's arithmetic on a reviewed row, $215,888, which the
+  gate's row tuple now carries as a seventh element.
+- **Declined, with the reason.** The NRC's three statutory office directors
+  are Level IV in the Code and ES $228,000 in the export — recorded as a
+  conflict, priced from neither. The FCC's Managing Director: 47 U.S.C.
+  155(e) sets Level V and the export prints $228,000, now published; a
+  tier-reference row would be derived and displaced on every build, so the
+  conflict is recorded instead. The SEC's Chairman and the EPA's
+  Administrator are identified by Reorganization Plans in Title 5's
+  Appendix, a document kind the reviewed-row reader has not handled. The
+  ARC's alternate Federal Cochairman (Level V) is not shown to be the stamped
+  "Deputy Director / Vice Chair". The SSA's Chief Actuary is paid "at the
+  highest rate of basic pay for the Senior Executive Service under section
+  5382(b)", whose maximum depends on a certification this project cannot
+  read. OPM's five Associate Directors are a counted class at Level V the
+  export lists on the ES plan, which the counted-class rule defers to. TVA's
+  chairman draws a stipend. Administrative law judges are an AL table across
+  steps. NASA's centre directors, EPA's regional administrators and SSA's
+  deputy commissioners are export rows whose titles or organisations this
+  graph words differently ("DIRECTOR, AMES RESEARCH CENTER" against "Center
+  Director, Ames Research Center (ARC)"; "REGION 1- BOSTON, MASSACHUSETTS"
+  against "EPA Region 1 (New England)"; "DEPUTY COMMISSIONER FOR OPERATIONS"
+  against "Deputy Commissioner — Operations") — rename and alias candidates.
+  **The strongest new-source lead** is the Federal Reserve's own Annual
+  Report, Table G.12, which prints each Reserve Bank president's annual
+  salary (Boston $496,700 … New York $568,100, effective December 31, 2024),
+  on a `.gov` host: a roster-shaped document for twelve nodes this project
+  has no module for yet. The Fed, SEC, CFTC, OCC, NCUA and FDIC set their own
+  staff pay outside Title 5 and publish no figure per title; www.sec.gov
+  answers the crawler 403.
+
+**The batch's running total.** Pay claims **1,111 → 1,158**, unpriced
+positions **3,480 → 3,433**, reviewed Schedule rows **76 → 91**,
+Schedule-priced posts **215 → 230**, tier-reference records **42 → 46** (41
+published), current-export listings **170 → 255** (255 with the Bureau of
+Prisons alias; 252 without), printed rates **88 → 128**, nodes with an
+official source **980 → 1,039**.
+
+**Still running when this section was written:** Defense, congressional
+staff, the judiciary, the remaining departments, the Code title scan and the
+Treasury alias candidates. Their results are appended below as they land.

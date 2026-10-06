@@ -54,6 +54,7 @@ python scripts/derive_derived_pay_evidence.py --dry-run     # a figure NO docume
 python scripts/derive_tier_reference_pay_evidence.py --dry-run  # pay a statute sets BY REFERENCE to an Executive Schedule level (GAO's officers; the IG Act's Level III + 3%), joined to OPM's table; writes nothing
 python scripts/derive_us_code_stated_pay_evidence.py --dry-run   # an office's salary a Code section states in dollars (3 U.S.C. 102, the President); writes nothing
 python scripts/report_unpriced_positions.py --dry-run        # every position with no pay claim, and the prompt pack that covers all of them
+python scripts/report_cost_coverage.py --dry-run             # every node in exactly one cost class, and the route that would move each; writes docs/COST_COVERAGE.md
 python scripts/derive_congressional_pay_evidence.py --dry-run  # senate.gov's own salary schedule; writes nothing
 python scripts/derive_whitehouse_pay_evidence.py --dry-run     # the White House Office's statutory staff roster; writes nothing
 python scripts/expand_whitehouse_office.py --dry-run           # what the roster would add to the curated WHO subtree; writes nothing
@@ -1427,7 +1428,9 @@ names any of the three. `Bureau of Consumer Financial Protection` →
 `Consumer Financial Protection Bureau` was declined first as a word-order
 difference whose basis would need 12 U.S.C. 5491, which this repository has not
 read; later the same day it was added on the Manual's own entry 321 instead, so
-the table now carries it among 13 rows and `NODE_ALIASES` mirrors it. The
+the table now carries it among 13 rows and `NODE_ALIASES` mirrors it (14
+since 2026-10-05: the Bureau of Prisons answers to "Federal Bureau of
+Prisons", the name OPM's current export files its 72 rows under, §19.20). The
 Manual evidence has not been re-derived since, so the published graph carries no
 alias match for it yet, and the file's `_declined` list and §17.4 still record
 the refusal. `National
@@ -1975,6 +1978,80 @@ listing states. The panel prints a CURRENT PLUM BOOK sentence in the listing
 block and the rate under `PAY — CURRENT PLUM BOOK` with the fetch date on the
 period line, never under COST; the atlas view carries the same block.
 
+**Two more ways a row of the current export reaches a post (since
+2026-10-05, the twelfth research batch).** The batch's White House agent
+found four printed SES rates the matcher never reached — the OMB's and the
+ONDCP's Chiefs of Staff and General Counsels — because the export files them
+under sub-organisations this graph has no node for ("OFFICE OF THE
+DIRECTOR", "GENERAL COUNSEL"), and one White House principal the July roster
+does not list but the export does, under its commissioning rank. Both were
+measured before anything was built. A broad fallback — any unmatched
+sub-organisation's rows scoped to the agency's own children — reaches 283
+rows on 173 posts and was **refused**, because it lands an Under Secretary's
+"CHIEF OF STAFF" on the Secretary's: the Department of Agriculture's
+department-level Chief of Staff would have taken rows from eleven Under and
+Assistant Secretaries' offices. The rule built instead is the export's own
+filing read back, the way `archive_title_keys` reads a title's trailing
+organisation: **a sub-organisation NAMED FOR THE TITLE** — "Office of the
+General Counsel" / "General Counsel", "Office of Inspector General" /
+"Inspector General", "Office of the Administrator" / "Administrator" — whose
+name reduces, with a leading "Office of (the)" removed, to the row's own
+title, and which names no node here. The office is named for its head, so
+the row is the agency's own General Counsel and nothing else; it is scoped
+to the agency node's direct children under every refusal the main pass
+makes, a title filed under two such offices of one agency claims nothing,
+and a row the agency itself carries is never displaced. Measured on the
+committed export: 72 rows reach 70 posts, every one a stamped administrative
+title (General Counsel 30, Chief Information Officer 11, Chief Financial
+Officer 6, Inspector General 4). The record and the published block carry
+`scopeRule: office_named_for_the_post`, the placement claimed is under the
+agency (the unit the export files the office under), the panel says the
+export files the title "under a unit named for this very post, which this
+graph has no node for", and the gate refuses the rule on a row filed under
+the agency itself, on an organisation not named for the title, a rule it
+does not know, and the block moved under another parent. The second rule is
+the roster's own fold applied to the export: `export_title_keys` now also
+yields the title with its White House commissioning rank folded off the
+front, by `whitehouse_pay.title_core` (a leading rank only, never a
+containment, at least two tokens left), so "ASSISTANT TO THE PRESIDENT AND
+DIRECTOR OF LEGISLATIVE AFFAIRS" reaches `Director of Legislative Affairs`;
+8 rows, 7 posts, and the rename guard `listed_title_still_names` learned the
+same fold, because the first build matched the row in the derive step and
+refused it as "renamed" in the build. The gate mirrors both
+(`plum_rank_folded_key`, `plum_office_named_for_key`), and
+`tests/test_plum_current.py` pins the module and the gate equal and corrupts
+each rule in turn. Listings **170 → 252** (255 once the Bureau of Prisons
+alias row let the export's "FEDERAL BUREAU OF PRISONS" rows reach the
+Bureau), printed rates **88 → 128**, placements from the export **55 →
+137**, nodes with an official source **980 → 1,039**, `verified` **520 →
+538**, and — with the salary-table and range joins re-derived from the
+enlarged listings (EX records 31 → 68, ranges 26 → 30 derived) and the
+reviewed Schedule rows and tier-reference rows the same batch supplied
+(fifteen reviewed rows: the ONDCP's Deputy Director at Level II through 21
+U.S.C. 1703; the OSTP's Director at Level II through 42 U.S.C. 6612(a), the
+Code still printing the Office's pre-1976 name; CISA's two Executive
+Assistant Directors at Level IV through the deeming rules of 6 U.S.C.
+653(a)(3) and 654(a)(3); the Director of the Bureau of Prisons through 18
+U.S.C. 4041; FEMA's Deputy Administrator from the Code's class title through
+6 U.S.C. 321c(a); the NLRB's Chairman, the FDIC's Chairperson and Vice
+Chairperson, the MSPB's, NTSB's and PRC's Vice Chairmen, the Peace Corps'
+Deputy Director, the FLRA's General Counsel and the DFC's Chief Executive
+Officer, each from the body's own section; and four tier-reference rows: the
+Secret Service Uniformed Division's Chief at Level V from 5 U.S.C. 10203(a),
+the PCLOB's chairman and the ARC's Federal Cochairman at Level III from 42
+U.S.C. 2000ee(i)(1)(A) and 40 U.S.C. 14301(c), and AmeriCorps' Chief
+Executive Officer at Level III plus 3 percent from 42 U.S.C. 12651c(b), the
+Inspector General Act's arithmetic on a reviewed row, which the gate's
+reviewed-row tuple now carries as a seventh element) — pay claims **1,111 →
+1,158**, unpriced **3,480 → 3,433**, reviewed Schedule rows **76 → 91**,
+Schedule-priced **215 → 230**, tier-reference records **42 → 46** (41
+published: the four the listings displaced, above, stay displaced). The
+heading pattern all three operative-text readers share admitted one letter
+after a section number and refused "§2000ee."; it admits two now, pinned
+both ways. The gate's salary-table summary line, which subtracted the priced
+count from the ARCHIVE's levels alone, printed "-37 not priced" on the first
+build and now counts a level from either listing.
+
 **The level half, from current law instead of a closed archive (since
 2026-09-18).** Every Executive Schedule rate this project published took its
 *level* from one place: OPM's PLUM archive of the **previous** administration
@@ -2292,12 +2369,15 @@ International Trade and the Ex-Im Vice Chair of 2026-10-05, 1,102 before the
 Tax Court's special trial judges and the two judicial-support Deputy
 Directors the same day, 1,105 before the USAGM's CEO and the EAC's and FEC's
 chairs and vice chairs that evening, 1,110 before the President's own salary
-from 3 U.S.C. 102 the same night); **3,480
-do not**, and `scripts/report_unpriced_positions.py` says why for every one
-of them:
+from 3 U.S.C. 102 the same night, 1,111 before the twelfth batch's
+current-export rules and its nineteen reviewed and tier-reference rows later
+that night, which took it to 1,158); **3,433
+do not** (3,480 before that night), and `scripts/report_unpriced_positions.py`
+says why for every one of them:
 
-- **2,710** — no pay document this project has read names the title at all.
-  Not a coverage gap somebody has not got to.
+- **2,663** — no pay document this project has read names the title at all.
+  Not a coverage gap somebody has not got to. (2,710 before the
+  current-export rules and the twelfth batch's rows of 2026-10-05.)
 - **752** — the node states a multiplicity (`Physician (×multiple)`) and no
   claim that holds for every holder reaches it. Since the per-field rule
   below, a tier rate, a parity rate, a band or a uniform roster line IS
@@ -2306,8 +2386,8 @@ of them:
   SYSTEM governs the title is a fact worth having.
 - **18** — OPM lists the position and the row prints no rate.
 
-The concentration is the useful part: **432** of the 3,480 sit under `VA
-Medical Centers`, 360 of them among the 2,710 (the service chiefs
+The concentration is the useful part: **432** of the 3,433 sit under `VA
+Medical Centers`, 360 of them among the 2,663 (the service chiefs
 `va_title38_pay.py` deliberately refuses, since choosing a Title 38 table per
 node would be this module deciding which VA service chiefs are doctors), 61
 under the White House Office (83 before the multi-post rule), 56 under
@@ -2318,11 +2398,12 @@ before the committee chairs and ranking members were priced).
 per unpriced position with its id and its reason;
 `docs/PAY_SOURCE_RESEARCH_PROMPT_3.md` is a research prompt pack generated
 from the same list in the same run — a lead prompt asking which pay systems
-exist and where each is published, then **34 enumeration shards naming every
-one of the 3,480 titles** (39 and 4,003 until 2026-09-30, 38 and 3,953 until
+exist and where each is published, then **33 enumeration shards naming every
+one of the 3,433 titles** (39 and 4,003 until 2026-09-30, 38 and 3,953 until
 that evening's Members decision, 34 and 3,492 until 2026-10-05, 34 and 3,489
 until that day's special trial judges, 34 and 3,486 until its six govinfo
-sections, 34 and 3,481 until the President's salary). The multiplicity
+sections, 34 and 3,481 until the President's salary, 34 and 3,480 until the
+twelfth batch's current-export rules and rows). The multiplicity
 reason's "N such nodes carry one" is read off the graph on each run since
 2026-09-30; it had said 28 since 2026-09-23 while the graph carried 37. `tests/test_unpriced_positions.py` asserts the
 coverage rather than trusting it: every unpriced id appears in the pack, no
@@ -3147,7 +3228,8 @@ Financial Management (31 U.S.C. 504) and the Administrator of Electronic
 Government (44 U.S.C. 3602); and the PHMSA Administrator (49 U.S.C. 108,
 which the current export already lists at EX-III). Declined with reasons in
 §19.14: the NCUA's and PRC's stamped Vice Chairs (neither statute
-designates one), the SEC's Chair (78d does not designate the Chairman; that
+designates one — wrong for the PRC, whose 39 U.S.C. 502(e) was not fetched
+that day and does; corrected and priced on 2026-10-05, §19.20), the SEC's Chair (78d does not designate the Chairman; that
 is a 1950 reorganization plan), the EPA's Administrator (no organic section
 of the Code to cite), and every Member of Congress the batch priced at
 $174,000 as a committee chair or ranking member, which is the Members
@@ -3657,6 +3739,59 @@ ring that drifts behind the breadcrumb is where the data puts it, and moving
 it would be a lie about the scene; only the text the renderer chooses to draw
 is suppressed.
 
+**A priced post's salary is its headline figure, and the estimate is one
+click away (since 2026-10-05).** The owner reported two things on the same
+day: that "the costs of all nodes have been disappearing", and that
+positions "still don't have their salaries attached" although the data was
+there. Both were checked against the published graphs before anything was
+changed. The first is not a data loss: every `graph.json` committed since
+2026-09-23 carries the same 159 measured lines, 693 apportioned shares and
+4,657 nodes with no figure, and the pay claims climbed 381 → 1,111 across
+the same commits. What a visitor sees is the default view the owner chose on
+2026-09-09, which withholds all 693 estimates until "Also show estimated
+shares of a parent's total" is ticked — and `readStoredPrefs` remembers that
+tick per browser, so a new browser or a private window shows the withheld
+view again. The default is kept; the control moved: `buildCostBlock` now
+draws a "Show the estimate" button beside the sentence that says the figure
+is withheld, wired to the same checkbox so the column's box reflects it, and
+drawn only where `hasWithheldEstimate` is true — a post or a unit beneath a
+negative pool has nothing to reveal and gets no button. The second was real
+and was the panel's: `costStandInOf` promoted only three of the nine pay
+fields to the headline (the current export's rate, the archive's, a table's
+range), so a post priced from the Executive Schedule, a statute, the White
+House roster or a parity provision read "Not available" and "No cost known
+for this node" above a nine-pixel line stating its salary — the President at
+"Not available" with $400,000 a year beneath. `PAY_STAND_IN_ORDER` now reads
+all nine, in a declared order: a figure a document states for the OFFICE
+first (`positionStatutoryPay`, `positionSchedulePay`,
+`positionTierReferencePay`, `positionDerivedPay`), then one it states for an
+incumbency (the roster's `positionReportedPay`, the current export's rate,
+the archive's rate, the table's rate for a listed level), then a range
+(`positionGradePay`, `positionTierPay`). Each kind has its own heading —
+"PAY — EXECUTIVE SCHEDULE", "PAY — DERIVED, STATED BY NO DOCUMENT", "TITLE
+38 PAY RANGE, NOT A RATE" — never the word COST, its own badge ("No cost
+known; the statutory rate of pay is shown") and its own sentence saying what
+the figure is and is not, with "for each of the N holders" where the block
+carries a `holders` stamp. The reading guide's count of posts that show a
+salary now uses the same rule, having missed the two Code-supplied fields
+and under-counted by a few hundred. `scripts/frontend_smoke.mjs` opens a
+statutory, a schedule, a roster and a bench node and asserts each one's
+headline is the document's own figure under a PAY heading, that the button
+exists only where an estimate is withheld, and that pressing it turns the
+column's checkbox on. `scripts/report_cost_coverage.py` is the groundwork
+for the standing ask that every node come to carry a figure: it puts every
+one of the 5,510 nodes in exactly one class (measured, estimate — committee,
+beside a sourced figure, or bare —, salary, unpriced post by the unpriced
+report's own reason, negative pool, replaced unit) with the document route
+that would move it, writes `docs/COST_COVERAGE.md`, and
+`tests/test_cost_coverage.py` asserts the partition and compares the
+committed copy byte for byte. The two decisions it surfaces are the owner's,
+not a build's: whether the headline may fall back to a sourced non-cost
+figure (OMB's completed-year outlays, File A gross outlays, audited net
+cost) where the Treasury prints no line, labelled by basis and period as a
+salary now is; and whether to read the chambers' own disbursement reports
+for the 240 committees, which no Table 5 line can ever name.
+
 **Still true and deliberately not changed: every node is the same size.**
 `nodeRadiusForDepth` takes a depth and returns the constant `NODE_RADIUS`, so
 the most available visual channel in the scene encodes nothing — the 159
@@ -3815,8 +3950,10 @@ subdivide measured money rather than invent it — which does not make a
 subdivision a measurement. **Since 2026-09-09 the site does not show one by
 default**, by the owner's decision: a node with no measured cost of its own
 shows no figure and says why, and ticking "Also show estimated shares of a
-parent's total" opts back in. The exception is a real salary — **1,111** of the
-4,591 positions carry a pay claim an official source states, counted on the
+parent's total" opts back in. The exception is a real salary — **1,158** of the
+4,591 positions carry a pay claim an official source states (1,111 before the
+twelfth batch's current-export rules and its nineteen rows landed late on
+2026-10-05), counted on the
 published graph on 2026-10-05 after Schedule 6, the VA's Title 38 bands, the
 Article I parity derivations, the per-field multi-post rule, the Federal
 Reserve rows, the reviewed rows of the fourth research batch, the six
@@ -3838,8 +3975,12 @@ Commissioners, the FCA Board's Chairman, the Librarian of Congress, since
 2026-10-05 the USAGM's Chief Executive Officer and the EAC's and FEC's chairs
 and vice chairs from sections read on govinfo, and 26
 Inspectors General at Level III plus the Act's
-3 percent, arithmetic no document prints), 72 a Title 38 tier BAND rather than a rate (`positionTierPay`), 215 from the
-Executive Schedule as 5 U.S.C. §§5312–5316 sets it (76 of them through a
+3 percent, arithmetic no document prints — 37 published since the night of
+2026-10-05, when the current export's office-named-for-the-post rule gave
+the GPO's Director and the Treasury's, Commerce's and Energy's Inspectors
+General a listed level the table prices, which a figure set by reference
+never displaces), 72 a Title 38 tier BAND rather than a rate (`positionTierPay`), 230 from the
+Executive Schedule as 5 U.S.C. §§5312–5316 sets it (91 of them through a
 reviewed identification a second statute backs — 12 U.S.C. 241–242 for the
 Fed's four, then the FCC's, FTC's, CFTC's, FERC's, NRC's and FMC's chairs
 and benches, the IRS, FAA, DHS, OPM, SSA, FEMA, BLM, CIA, CMS, NIST, SBA,
@@ -3856,8 +3997,10 @@ places without naming, "Assistant Attorneys General (11)" and seven more,
 each on the Code, the table and, for six of the eight classes, the statute
 that composes the class), 188 from
 the White House
-roster (22 of them titles listed N times at one rate), 88 the rate the current PLUM export prints for the one row under the
-title, 31 from a listing's level joined to OPM's table, 488 statutory (20 from
+roster (22 of them titles listed N times at one rate), 128 the rate the current PLUM export prints for the one row under the
+title (88 before the office-named-for-the-post rule and the rank fold of
+2026-10-05), 68 from a listing's level joined to OPM's table (31 before the
+same rules supplied more listed levels), 488 statutory (20 from
 uscourts.gov and senate.gov, 4 from Schedule 6 of the annual pay-adjustment
 order naming the office, 2 from its Schedule 7 since 2026-10-05 — the Court
 of International Trade's chief judge and bench, the one judicial tier
@@ -3865,7 +4008,7 @@ uscourts.gov's table does not print — 1 the President's own salary as 3
 U.S.C. 102 states it in dollars, since the same night, and since 2026-09-30 the 461 offices Members of
 Congress hold — every committee's chair and ranking member, the whips, the
 conference and caucus chairs — at Schedule 6's SEAT rate for their chamber,
-by the owner's decision and a rule the gate mirrors), and 18 a
+by the owner's decision and a rule the gate mirrors), and 22 a
 base-pay **range** rather than a rate (`positionGradePay`, counted separately
 because a range is not a rate and the panel says so; it read 32 until the
 current export supplied a printed figure for 14 of them, and a printed figure
@@ -3887,9 +4030,11 @@ on 2026-10-05 with the Court of International Trade's two judge nodes and the
 Ex-Im Bank's Vice Chair, 1,105 the same evening with the Tax Court's
 special trial judges and the two judicial-support Deputy Directors, 1,110
 with the USAGM's CEO and the EAC's and FEC's chairs and vice chairs from the
-six sections govinfo served, and 1,111 with the President's salary from 3
-U.S.C. 102. Shown in
-the cost block under its own heading and never headed COST.
+six sections govinfo served, 1,111 with the President's salary from 3
+U.S.C. 102, and 1,158 late the same night with the twelfth batch's
+current-export rules and its nineteen reviewed and tier-reference rows. Shown in
+the cost block under its own heading and never headed COST — and, since the
+same night, as the post's headline figure where it has no cost.
 
 That figure read **354** until 2026-09-19 and was wrong: it added up the
 *records* each source derives rather than counting the nodes that publish one,
@@ -3909,7 +4054,8 @@ benches, 638 with the counted classes and the ninth batch's rows, 1,099
 with the offices Members of Congress hold, 1,102 with the Court of
 International Trade and the Ex-Im Vice Chair, 1,105 with the special
 trial judges and the two Deputy Directors, 1,110 with the five posts the
-govinfo sections priced, and 1,111 with the President. The estimates
+govinfo sections priced, 1,111 with the President, and 1,158 with the
+twelfth batch's current-export rules and rows. The estimates
 stay in `graph.json` because the cascade's arithmetic and the gate's
 child-sum checks are built on them, so a consumer of the JSON must read
 `cost_status`, not `resolved_total_amount` alone. The gate prints both

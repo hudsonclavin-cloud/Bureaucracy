@@ -906,5 +906,35 @@ class PublishedGraphTests(unittest.TestCase):
                     self.assertNotIn("uscode.house.gov", str(url))
 
 
+
+class SectionHeadingLettersTests(unittest.TestCase):
+    """A section number may carry two letters -- 42 U.S.C. 2000ee, the Privacy
+    and Civil Liberties Oversight Board -- and both operative-text readers
+    must find its heading, or the section is refused as carrying none (which
+    the first version of the pattern did, admitting one letter)."""
+
+    FIXTURE = Path(__file__).resolve().parents[1] / "tests" / "fixtures" / "uscode" / "pclob_42_usc_2000ee_govinfo2024.html"
+    SENTENCE = ("The chairman of the Board shall be compensated at the rate of pay payable for a position at level III of the "
+                "Executive Schedule under section 5314 of title 5.")
+
+    @unittest.skipUnless(FIXTURE.exists(), "the PCLOB section is not committed")
+    def test_both_readers_find_the_two_letter_heading(self):
+        from scripts.validate_published_graph import uscode_operative_text
+
+        module_text = operative_text(self.FIXTURE.read_text(encoding="utf-8"))
+        gate_text = uscode_operative_text(self.FIXTURE)
+        self.assertIn(self.SENTENCE, module_text)
+        self.assertIn(self.SENTENCE, gate_text)
+        self.assertEqual(module_text, gate_text)
+
+    def test_a_heading_without_a_number_is_still_refused(self):
+        from data_pipeline.verification.derived_pay import Unreadable
+
+        with self.assertRaises(Unreadable):
+            operative_text("<html><body><p>No section here.</p><p>Editorial Notes</p></body></html>")
+        # Three letters are not a section number this pattern knows.
+        with self.assertRaises(Unreadable):
+            operative_text("<html><body><h3>§2000abc. Not a section</h3><p>Text.</p></body></html>")
+
 if __name__ == "__main__":
     unittest.main()

@@ -962,5 +962,10 @@ says, and what was built from it, is `CURATION.md` §19.18. Nothing on the
 OLRC's host was retried a third time. One more section followed the same
 route that night for the eleventh batch: 3 U.S.C. 102 (the President's
 compensation), `USCODE-2024-title3-chap2-sec102.htm`, 77,567 bytes, 200,
-19:33 UTC (`CURATION.md` §19.19).
+19:33 UTC (`CURATION.md` §19.19). And one more for the twelfth, later still:
+42 U.S.C. 6612 (the OSTP Director's compensation),
+`USCODE-2024-title42-chap79-subchapII-sec6612.htm`, 3,316 bytes, 200, 23:28
+UTC, the basis of a reviewed Schedule row (`CURATION.md` §19.20); the gate
+accepts a reviewed row's basis URL from either host since then, provided it
+names the section the citation does (`us_code_url_names_section`).
 

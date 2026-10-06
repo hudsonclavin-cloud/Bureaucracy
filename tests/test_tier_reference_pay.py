@@ -252,17 +252,26 @@ class MirrorTests(unittest.TestCase):
     def test_the_gate_mirrors_the_gao_rows_by_node_id(self):
         self.assertEqual(set(TIER_REFERENCE_ROWS), set(TIER_REFERENCE_PROVISIONS))
         for node_id, row in TIER_REFERENCE_PROVISIONS.items():
-            node_name, office, citation, fixture, level, sentence = TIER_REFERENCE_ROWS[node_id]
+            mirrored = TIER_REFERENCE_ROWS[node_id]
+            node_name, office, citation, fixture, level, sentence = mirrored[:6]
+            # A seventh element is the percentage the row's statute adds
+            # (AmeriCorps' CEO, 42 U.S.C. 12651c(b)); absent, zero.
+            self.assertEqual(int(mirrored[6]) if len(mirrored) > 6 else 0, int(row["percent"]), node_id)
             self.assertEqual((row["nodeName"], row["office"], row["citation"], row["fixture"], row["level"], row["quote"]),
                              (node_name, office, citation, fixture, level, sentence))
-            self.assertEqual(0, row["percent"])
+            # A percentage is carried by the mirror exactly where the row has one.
+            self.assertEqual(int(row["percent"]) > 0, len(mirrored) > 6, node_id)
             self.assertIn(level, EXECUTIVE_SCHEDULE_RATES)
 
     def test_the_gate_mirrors_the_identifying_sentence_of_every_stamped_row(self):
         with_identification = {n: row["identificationQuote"] for n, row in TIER_REFERENCE_PROVISIONS.items()
                                if row.get("identificationQuote")}
         self.assertEqual(with_identification, TIER_REFERENCE_IDENTIFICATIONS)
-        self.assertEqual(5, len(with_identification))
+        # The USAGM's CEO, the EAC's and FEC's chairs and vice chairs, and --
+        # since the twelfth batch -- the PCLOB's chairman, the ARC's Federal
+        # Cochairman and AmeriCorps' CEO: every stamped title the module
+        # prices carries the sentence of its own section naming the office.
+        self.assertEqual(8, len(with_identification))
         for node_id, sentence in with_identification.items():
             row = TIER_REFERENCE_PROVISIONS[node_id]
             with self.subTest(node=node_id):
@@ -605,13 +614,34 @@ class PublishedGraphTests(unittest.TestCase):
     def test_the_published_blocks_are_the_gao_officers_and_the_establishments_igs(self):
         node_map, parent_map = index_tree(json.loads(GRAPH.read_text(encoding="utf-8")))
         priced = {node_id: node for node_id, node in node_map.items() if isinstance(node.get(FIELD), dict)}
-        # 42 derived (the GAO's two, the GPO's two, the IES's four, the FCA
+        # 46 derived (the GAO's two, the GPO's two, the IES's four, the FCA
         # Board's Chairman, the Librarian of Congress, the USAGM's CEO, the
-        # EAC's and the FEC's chair and vice chair, and 27 IGs); the
-        # Department of Justice's IG carries OPM's archived listing with a
-        # printed level and rate (`positionPayRate`), which a figure set by
-        # reference never displaces, so 41 are published.
+        # EAC's and the FEC's chair and vice chair, and -- since the twelfth
+        # batch of 2026-10-05 -- the Secret Service Uniformed Division's
+        # Chief, the PCLOB's chairman, the ARC's Federal Cochairman and
+        # AmeriCorps' Chief Executive Officer, plus 27 IGs); a figure set by
+        # reference never displaces a rate a PLUM listing's own level prices
+        # (`positionPayRate`): the Department of Justice's IG from the
+        # archive, and since the current export's office-named-for-the-post
+        # rule of 2026-10-05 the GPO's Director (listed EX II, the same
+        # $228,000) and the Treasury's, Commerce's and Energy's IGs -- which
+        # the export lists at EX IV, EX IV and EX III where 5 U.S.C. 403(e)
+        # sets Level III plus 3 percent, a disagreement between two official
+        # documents this project surfaces rather than resolves. 41 published.
         self.assertEqual(41, len(priced), sorted(priced))
+        for added in ("exec-dept-dhs-usss-chief-uniformed-division",
+                      "exec-ind-misc-privacy-civil-liberties-oversight-board-pclob-director-administrator-chair-privacy-civil-liberties-oversight-board",
+                      "exec-ind-misc-appalachian-regional-commission-arc-director-administrator-chair-appalachian-regional-commission",
+                      "exec-ind-misc-americorps-director-administrator-chair-americorps"):
+            self.assertIn(added, priced)
+        americorps = priced["exec-ind-misc-americorps-director-administrator-chair-americorps"][FIELD]
+        self.assertEqual(americorps["percent"], 3)
+        self.assertEqual(americorps["arithmetic"]["operation"], "plus_percent")
+        self.assertEqual(americorps["amount"], 215888.0)
+        for displaced in ("exec-dept-treasury-inspector-general", "exec-dept-doc-inspector-general",
+                          "exec-dept-doe-inspector-general", "leg-support-gpo-director-gpo-public-printer"):
+            self.assertNotIn(displaced, priced)
+            self.assertIsInstance(node_map[displaced].get("positionPayRate"), dict, displaced)
         for node_id in TIER_REFERENCE_IDENTIFICATIONS:
             self.assertIn(node_id, priced)
         self.assertNotIn("exec-dept-doj-inspector-general", priced)

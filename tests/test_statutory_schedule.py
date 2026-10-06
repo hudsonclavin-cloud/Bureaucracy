@@ -48,6 +48,7 @@ from scripts.validate_published_graph import (
     fixture_digest,
     reviewed_schedule_violations,
     schedule_pay_violations,
+    us_code_url_names_section,
     uscode_operative_text,
 )
 
@@ -655,7 +656,14 @@ class ReviewedMatchTests(unittest.TestCase):
                 self.assertEqual(ident["nodeName"], row["nodeName"])
                 self.assertEqual(ident["basisCitation"], row["basisCitation"])
                 self.assertEqual(ident["basisQuote"], row["basisQuote"])
-                self.assertEqual(ident["basisUrl"], basis_url_for(row["basisCitation"]))
+                # The URL is the one the basis fixture's own fetch record
+                # names -- the OLRC granule for most rows, GPO's link service
+                # on govinfo for a section read while the OLRC host was under
+                # maintenance (the OSTP Director's, 2026-10-05) -- and either
+                # way it must address the section the citation names.
+                meta = json.loads((US_CODE_BASIS_FIXTURE_DIR / (row["basisFixture"] + ".meta.json")).read_text(encoding="utf-8"))
+                self.assertEqual(ident["basisUrl"], meta["url"])
+                self.assertTrue(us_code_url_names_section(ident["basisUrl"], row["basisCitation"]), ident["basisUrl"])
                 self.assertEqual(ident["basisSha256"], fixture_digest(US_CODE_BASIS_FIXTURE_DIR / row["basisFixture"]))
                 self.assertTrue(ident["basisCheckedAt"])
 
@@ -791,6 +799,20 @@ class ReviewedGateTests(unittest.TestCase):
             with self.subTest(node=node_id):
                 self.assertEqual(schedule_pay_violations(fed_node(node_id), good_reviewed_pay(node_id), REVIEWED_TODAY, label), [])
 
+    def test_a_basis_read_from_govinfo_passes_when_it_names_the_section(self) -> None:
+        # Since 2026-10-05 a reviewed row's basis may have been read from GPO's
+        # rendering of the Code on www.govinfo.gov (the OLRC host was under
+        # maintenance); the gate accepts its link-service URL and the granule
+        # it resolves to, and only for the section the citation names.
+        good = good_reviewed_pay(self.NODE_ID)
+        for url in ("https://www.govinfo.gov/link/uscode/12/242?link-type=html",
+                    "https://www.govinfo.gov/content/pkg/USCODE-2024-title12/html/USCODE-2024-title12-chap3-subchapII-sec242.htm"):
+            with self.subTest(url=url):
+                pay = {**good, "identification": {**good["identification"], "basisUrl": url}}
+                self.assertEqual(schedule_pay_violations(self.node, pay, REVIEWED_TODAY, label), [])
+        self.assertTrue(us_code_url_names_section("https://www.govinfo.gov/link/uscode/42/2000e-4?link-type=html", "42 U.S.C. 2000e-4"))
+        self.assertFalse(us_code_url_names_section("https://www.govinfo.gov/link/uscode/42/2000e?link-type=html", "42 U.S.C. 2000e-4"))
+
     def test_each_way_a_reviewed_record_can_be_faked_is_refused(self) -> None:
         good = good_reviewed_pay(self.NODE_ID)
         ident = good["identification"]
@@ -819,6 +841,10 @@ class ReviewedGateTests(unittest.TestCase):
             "a basis URL on another host": (None, {**good, "identification": {**ident, "basisUrl": "https://www.law.cornell.edu/uscode/text/12/242"}}),
             "a basis URL for another section": (None, {**good, "identification": {
                 **ident, "basisUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title12-section241&num=0&edition=prelim"}}),
+            "a govinfo link for another section": (None, {**good, "identification": {
+                **ident, "basisUrl": "https://www.govinfo.gov/link/uscode/12/241?link-type=html"}}),
+            "a govinfo page that is not the Code": (None, {**good, "identification": {
+                **ident, "basisUrl": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-072"}}),
             "a basis read in the future": (None, {**good, "identification": {**ident, "basisCheckedAt": "2027-01-01T00:00:00Z"}}),
             "a scope claimed on a reviewed row": (None, {**good, "scopedOffice": "Vice Chair for Supervision", "scopedOrganisationId": "exec-regulatory-fed"}),
             "a statutory title the Code prints for another level": (None, {**good, "statutoryTitle": "Chairman, Board of Governors of the Federal Reserve System"}),

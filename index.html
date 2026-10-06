@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23141414'/%3E%3Ccircle cx='16' cy='8' r='3' fill='%23c8a84a'/%3E%3Ccircle cx='8' cy='23' r='3' fill='%234a8ac8'/%3E%3Ccircle cx='24' cy='23' r='3' fill='%23c84a4a'/%3E%3Cpath d='M16 11v6M14 19l-4 2M18 19l4 2' stroke='%236a6a6a' stroke-width='1.5' fill='none'/%3E%3C/svg%3E">
-<link rel="stylesheet" href="./css/atlas.css?v=20261005c">
+<link rel="stylesheet" href="./css/atlas.css?v=20261005d">
 <title>U.S. Federal Government — 3D Explorer</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=IBM+Plex+Mono:wght@300;400;500&display=swap');
@@ -99,6 +99,8 @@ body.dragging{cursor:grabbing;}
 .info-cost-badge.is-estimate{color:#c8884a;border-color:#c8884a;background:transparent;}
 .info-cost-badge.is-none{color:#9a8a6a;border-color:rgba(154,138,106,0.7);border-style:dashed;background:transparent;}
 .info-cost-note{font-size:9px;color:#9a8a6a;line-height:1.6;margin-top:6px;}
+.info-cost-reveal{display:inline-block;margin-top:6px;padding:3px 8px;font:inherit;font-size:9px;letter-spacing:0.08em;text-transform:uppercase;color:#c8884a;background:transparent;border:1px solid #c8884a;border-radius:3px;cursor:pointer;}
+.info-cost-reveal:hover,.info-cost-reveal:focus-visible{color:#020408;background:#c8884a;outline:none;}
 #info-children-label{font-size:9px;color:var(--gold-dim);letter-spacing:0.15em;text-transform:uppercase;margin:12px 0 6px;}
 #info-children-list{display:flex;flex-direction:column;gap:3px;max-height:180px;overflow-y:auto;}
 #info-children-list::-webkit-scrollbar{width:2px;}
@@ -485,8 +487,8 @@ window.setTimeout(function () {
   }
 }, 20000);
 </script>
-<script type="module" src="./js/atlas.js?v=20261005c"></script>
-<script type="module" src="./js/ui.js?v=20261005c"
+<script type="module" src="./js/atlas.js?v=20261005d"></script>
+<script type="module" src="./js/ui.js?v=20261005d"
   onerror="window.__graphBootFailed('Failed to load application scripts (network or CDN unreachable). Check your connection and reload.')"></script>
 </body>
 </html>

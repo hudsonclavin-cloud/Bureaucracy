@@ -733,6 +733,17 @@ try {
     check("the source's own quoted words are shown", /The source's own words: "/.test(statutory), statutory);
     const statutoryStats = await text("#info-stats");
     check("the statutory rate is not headed as a cost", !/\bCOST\b[^A-Z]*\$[\d,]+/.test(statutoryStats), statutoryStats);
+    // Since 2026-10-05 the statutory rate is the post's HEADLINE figure, where
+    // "Not available" used to sit above a nine-pixel line stating it: the
+    // President read "No cost known for this node" with $400,000 a year
+    // printed beneath. The headline is headed PAY, never COST, and the badge
+    // says a rate of pay is shown in the cost's place.
+    const statutoryHead = await text("#info-stats .info-cost-label");
+    const statutoryAmount = await text("#info-stats .info-cost-amount");
+    check("a statutory rate is the post's headline figure", new RegExp(withStatutoryPay.positionStatutoryPay.rateText.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).test(statutoryAmount), statutoryAmount);
+    check("the headline is headed PAY, not COST", /^PAY/.test(statutoryHead) && !/COST/.test(statutoryHead), statutoryHead);
+    check("the badge says a rate of pay stands in for the cost", /No cost known; .*rate.* is shown/i.test(statutoryStats), statutoryStats.slice(0, 400));
+    check("the headline is not called Not available", !/Not available/.test(statutoryAmount), statutoryAmount);
   }
 
   // A reported rate from the White House Office's statutory personnel report:
@@ -752,6 +763,13 @@ try {
     check("no roster name is rendered", !/\b[A-Z][A-Z.'\-]{1,}, +[A-Z][A-Z.'\-]*\b/.test(reported.replace(withReportedPay.positionReportedPay.reportedTitle || "", "")), reported);
     const reportedStats = await text("#info-stats");
     check("the reported rate is not headed as a cost", !/\bCOST\b[^A-Z]*\$[\d,]+/.test(reportedStats), reportedStats);
+    const reportedHead = await text("#info-stats .info-cost-label");
+    check("a roster-priced post heads its figure as pay", /^PAY/.test(reportedHead), reportedHead);
+    if (!withReportedPay.positionStatutoryPay && !withReportedPay.positionSchedulePay && !withReportedPay.positionTierReferencePay && !withReportedPay.positionDerivedPay) {
+      const reportedAmount = await text("#info-stats .info-cost-amount");
+      check("the roster's rate is the post's headline figure", new RegExp(withReportedPay.positionReportedPay.rateText.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).test(reportedAmount), reportedAmount);
+      check("the headline names the staff report", /WHITE HOUSE STAFF REPORT/.test(reportedHead), reportedHead);
+    }
   }
 
   // The exact-costs-only view: with it on, an apportioned share is not shown
@@ -768,6 +786,25 @@ try {
     check("no dollar figure is shown by default", !/≈\s*\$/.test(before), before.slice(0, 400));
     check("the panel says what the withheld figure would have been", /share of an ancestor's measured total/.test(before), before.slice(0, 600));
     check("the panel names the opt-in rather than blaming a hidden setting", /Also show estimated shares/.test(before), before.slice(0, 600));
+    // Since 2026-10-05 the opt-in is one click away inside the cost block
+    // too: a button beside the sentence that says the figure is withheld,
+    // wired to the same checkbox, so the column's box reflects it.
+    const revealButton = page.locator("#info-stats .info-cost-reveal");
+    check("the withheld estimate offers a button to show it", (await revealButton.count()) === 1, `${await revealButton.count()} buttons`);
+    if ((await revealButton.count()) === 1) {
+      await revealButton.first().click();
+      await page.waitForTimeout(300);
+      const revealed = await text("#info-stats");
+      check("the button shows the estimate, labelled", /≈\s*\$/.test(revealed) && /ESTIMATE/.test(revealed), revealed.slice(0, 400));
+      const boxOn = await page.evaluate(() => {
+        const label = [...document.querySelectorAll("#verification-toggles label")].find((l) => /Also show estimated shares/i.test(l.textContent || ""));
+        return label ? label.querySelector("input").checked : null;
+      });
+      check("the button turned the column's own checkbox on", boxOn === true, String(boxOn));
+      check("the button is gone once the estimate is shown", (await page.locator("#info-stats .info-cost-reveal").count()) === 0, "still offered");
+      await setEstimatesShown(false);
+      await page.waitForTimeout(200);
+    }
     const toggled = await clickEstimateToggle();
     check("the estimate opt-in exists", toggled, "no such toggle");
     if (toggled) {
@@ -790,7 +827,13 @@ try {
 
   // A position with a real reported rate of pay shows it in place of the
   // withheld estimate, under a heading that is not the word COST.
+  // A node whose ONLY pay claim is the archive's printed rate: the headline
+  // prefers a statute's, a schedule's, a derivation's, the roster's and the
+  // current export's figure to it, so a node carrying any of those would be
+  // headed by that one instead.
   const paid = allNodes.find((n) => n.positionListing && typeof n.positionListing.reportedPay === "number"
+    && !n.positionStatutoryPay && !n.positionSchedulePay && !n.positionTierReferencePay && !n.positionDerivedPay
+    && !n.positionReportedPay && !n.positionCurrentPay
     && nameCounts.get(n.name) === 1);
   check("some position carries a reported rate of pay", Boolean(paid), "none");
   if (paid) {
@@ -799,6 +842,31 @@ try {
     check("the rate of pay is shown by default", /REPORTED RATE OF BASIC PAY/.test(stats), stats.slice(0, 400));
     check("the rate is not headed as a cost", !/^COST|ANNUAL COST/m.test(stats.split("REPORTED")[0]), stats.slice(0, 400));
     check("the panel says a salary is not the unit's cost", /compensation for one post, not what this unit costs/.test(stats), stats.slice(0, 700));
+  }
+
+  // A post priced from the Executive Schedule and nothing above it in the
+  // order: the Code's level, priced by OPM's table, is the headline.
+  const scheduled = allNodes.find((n) => n.positionSchedulePay && typeof n.positionSchedulePay.amount === "number"
+    && !n.positionStatutoryPay && unique(n));
+  check("some position is priced from the Executive Schedule alone", Boolean(scheduled), "none");
+  if (scheduled) {
+    await openByName(scheduled.name);
+    const scheduledHead = await text("#info-stats .info-cost-label");
+    const scheduledAmount = await text("#info-stats .info-cost-amount");
+    check("an Executive Schedule rate is the headline figure", new RegExp(scheduled.positionSchedulePay.rateText.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).test(scheduledAmount), scheduledAmount);
+    check("the headline names the Executive Schedule", /EXECUTIVE SCHEDULE/.test(scheduledHead), scheduledHead);
+  }
+
+  // A bench priced for each holder keeps the figure and says whose it is.
+  const bench = allNodes.find((n) => n.positionDerivedPay && n.positionDerivedPay.holders && Number.isInteger(n.positionDerivedPay.holders.count) && unique(n));
+  check("some bench carries a derived rate for each holder", Boolean(bench), "none");
+  if (bench) {
+    await openByName(bench.name);
+    const benchStats = await text("#info-stats");
+    const benchHead = await text("#info-stats .info-cost-label");
+    check("a bench's derived rate is its headline figure", new RegExp(bench.positionDerivedPay.rateText.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).test(await text("#info-stats .info-cost-amount")), benchHead);
+    check("the headline says no document states a derived figure", /DERIVED, STATED BY NO DOCUMENT/.test(benchHead), benchHead);
+    check("the bench's figure is said to be each holder's, not the group's", new RegExp(`for each of the ${bench.positionDerivedPay.holders.count} holders`).test(benchStats), benchStats.slice(0, 900));
   }
 
   // A node whose name states a count says how many it actually carries.

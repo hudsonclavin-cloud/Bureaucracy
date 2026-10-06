@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-10-05T23:55:45Z",
+ "url": "https://www.govinfo.gov/link/uscode/5/10203?link-type=html",
+ "status": 200,
+ "final_url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partIII-subpartI-chap102-sec10203.htm",
+ "content_type": "text/html",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /link/uscode/5/10203",
+ "bytes": 10042,
+ "sha256": "eed9f242e958af0ad5a0c7fbaee96ea4bf8ba91626507fe5052a5f0b0804b6c6",
+ "error": null
+}

@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-10-06T00:00:05Z",
+ "url": "https://www.govinfo.gov/link/uscode/40/14301?link-type=html",
+ "status": 200,
+ "final_url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title40/html/USCODE-2024-title40-subtitleIV-chap143-subchapI-sec14301.htm",
+ "content_type": "text/html",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /link/uscode/40/14301",
+ "bytes": 8612,
+ "sha256": "5e8475437bcdabd78a19ce48200de5a5ed444a160d8a28760d94c17049651583",
+ "error": null
+}

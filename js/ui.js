@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20261005c";
-import { loadMergedGraphData } from "./graphLoader.js?v=20261005c";
+import { createGovernmentGraph } from "./graph.js?v=20261005d";
+import { loadMergedGraphData } from "./graphLoader.js?v=20261005d";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -278,8 +278,11 @@ function summariseGraph(root) {
     if (isPost) {
       count.posts += 1;
       if (String(node.cost_validation || "") === "post_is_not_a_budget_unit") count.postsWithoutFigure += 1;
-      if (reportedPayOf(node) || currentPayOf(node) || node.positionPayRate || node.positionStatutoryPay
-        || node.positionReportedPay || gradePayOf(node) || tierPayOf(node) || derivedPayOf(node)) {
+      // Every pay field, the same list the panel's headline reads: the two
+      // the Code supplies (a schedule level, a rate set by reference) were
+      // missing here until 2026-10-05, so the card under-counted the posts
+      // that show a salary by a few hundred.
+      if (costStandInOf(node)) {
         count.paidPosts += 1;
       }
     }
@@ -354,8 +357,9 @@ function readingGuidePoints(count) {
       + `So no position is given a share of an agency's outlays — that share is not a quantity that `
       + `exists, and it is why ${count.postsWithoutFigure.toLocaleString()} of the `
       + `${count.posts.toLocaleString()} posts show nothing under cost. `
-      + `${count.paidPosts.toLocaleString()} show a rate or a base-pay range instead, and only where an official `
-      + `document states one. A salary is not a budget either, and is labelled separately.`,
+      + `${count.paidPosts.toLocaleString()} show a salary instead — a rate, or a base-pay range — as the figure `
+      + `at the top of their panel, and only where an official document states one. A salary is not a budget `
+      + `either, and it is headed as pay, never as cost.`,
     ],
     [
       "“No source recorded” is the usual answer, not a glitch",
@@ -1505,6 +1509,12 @@ function renderCurrentListing(data) {
   add(`CURRENT PLUM BOOK: OPM's PLUM Reporting export${on ? `, fetched ${on},` : ""} lists "${listing.listedTitle}"`);
   if (listing.organization) add(` under ${listing.organization}`);
   if (listing.agency && listing.agency !== listing.organization) add(` (${listing.agency})`);
+  if (listing.scopeRule === "office_named_for_the_post") {
+    // The export files the title under a unit named for the post itself —
+    // "Office of the General Counsel" / "General Counsel" — that this graph
+    // draws no node for; the post sits directly under the agency here.
+    add(" — a unit named for this very post, which this graph has no node for; the post is drawn directly under the agency here");
+  }
   if (listing.positionStatus) {
     add(`, ${String(listing.positionStatus).toLowerCase()}`);
   } else if (listing.positionStatusCounts && typeof listing.positionStatusCounts === "object") {
@@ -2357,24 +2367,67 @@ function hasWithheldEstimate(node) {
 
 // What stands in for the cost wherever the node has no measured cost of its
 // own and no estimate is on show — the estimate withheld, or, for a post, no
-// figure at all: a reported rate of basic pay, else a base-pay range a table
-// states for the listing's grade. Never beside a measured cost, and null
-// where there is nothing to stand in.
+// figure at all: the pay an official document states for the post. Nine
+// fields can carry one, and until 2026-10-05 only three of them reached this
+// headline (the current export's printed rate, the archive's, a table's
+// range): a post priced from the Executive Schedule, from a statute, from the
+// White House roster or from a parity provision read "No cost known for this
+// node" above a nine-pixel line stating its salary — which is how the
+// President of the United States was published at "Not available" with
+// $400,000 a year printed beneath. Every field reaches it now, in the order
+// below: a figure a document states for the OFFICE first, then one it states
+// for an incumbency, then a figure this project derived from two documents,
+// then a range. Each is headed as the claim it is, never as COST, and the
+// block beneath says what the figure is and is not. Never beside a measured
+// cost, and null where there is nothing to stand in.
+const PAY_STAND_IN_ORDER = [
+  ["statutory", (node) => positiveAmountBlock(node.positionStatutoryPay)],
+  ["schedule", (node) => positiveAmountBlock(node.positionSchedulePay)],
+  ["tierReference", (node) => tierReferencePayOf(node)],
+  ["derived", (node) => derivedPayOf(node)],
+  ["reported", (node) => positiveAmountBlock(node.positionReportedPay)],
+  ["current", (node) => currentPayOf(node)],
+  ["pay", (node) => reportedPayOf(node)],
+  ["tableRate", (node) => positiveAmountBlock(node.positionPayRate)],
+  ["range", (node) => gradePayOf(node)],
+  ["tier", (node) => tierPayOf(node)],
+];
+
+function positiveAmountBlock(block) {
+  return block && typeof block === "object" && typeof block.amount === "number" && block.amount > 0 ? block : null;
+}
+
 function costStandInOf(node) {
   if (isCostIdentifiedForTheNode(node)) {
     return null;
   }
-  // The current export's own printed figure first, then the archive's rate,
-  // then a table's range: a printed figure beats a band.
-  const current = currentPayOf(node);
-  const pay = current ? null : reportedPayOf(node);
-  const range = current || pay ? null : gradePayOf(node);
-  if (!current && !pay && !range) {
+  let kind = null;
+  let block = null;
+  for (const [name, read] of PAY_STAND_IN_ORDER) {
+    block = read(node);
+    if (block) {
+      kind = name;
+      break;
+    }
+  }
+  if (!block) {
     return null;
   }
   const status = String(node.cost_status || "").toLowerCase();
   const nothingElse = !status || status === "unavailable" || toFiniteAmount(node.resolved_total_amount) === null || isBelowPrecision(node);
-  return hasWithheldEstimate(node) || nothingElse ? { current, pay, range } : null;
+  if (!(hasWithheldEstimate(node) || nothingElse)) {
+    return null;
+  }
+  // The three named keys are kept for the callers that read them: the
+  // multi-post sentence asks whether the archive's one-post rate is what is
+  // shown, and nothing else should start asking by kind through them.
+  return {
+    kind,
+    block,
+    current: kind === "current" ? block : null,
+    pay: kind === "pay" ? block : null,
+    range: kind === "range" ? block : null,
+  };
 }
 
 function showsCurrentPayInsteadOfCost(node) {
@@ -2390,6 +2443,181 @@ function showsPayInsteadOfCost(node) {
 function showsRangeInsteadOfCost(node) {
   const standIn = costStandInOf(node);
   return Boolean(standIn && standIn.range);
+}
+
+function lowerEffective(text) {
+  return String(text || "").replace(/^Effective\b/, "effective");
+}
+
+// The figure as the document prints it: a rate's own text, a range's two
+// bounds. Never one figure for a range.
+function standInAmountText(standIn) {
+  const block = standIn.block;
+  switch (standIn.kind) {
+    case "pay":
+      return block.reportedPayText || `$${Math.round(block.reportedPay).toLocaleString()}`;
+    case "range":
+    case "tier":
+      return formatGradeRange(block);
+    default:
+      return block.rateText || `$${Math.round(block.amount).toLocaleString()}`;
+  }
+}
+
+// The heading drawn where COST would be, and the line beneath it that says
+// which document and that it is not a cost. The heading is the first thing a
+// reader takes as the claim, so none of them is the word COST and each names
+// the kind of claim: a statute's rate, a schedule level, a roster's figure, a
+// derivation, a range.
+function standInHeading(standIn) {
+  const block = standIn.block;
+  const fetched = formatFetchDate(block.exportFetchedAt);
+  switch (standIn.kind) {
+    case "statutory": {
+      const seat = block.memberSeat && typeof block.memberSeat === "object";
+      return {
+        label: seat ? "PAY — A MEMBER'S SEAT, NOT THE OFFICE" : block.statesTheOffice === true ? "PAY — STATED BY THE U.S. CODE" : "PAY — STATUTORY RATE",
+        period: `${block.sourceLabel || "a primary official source"}${block.year ? `, ${block.year}` : ""} — a rate of basic pay, not a cost`,
+      };
+    }
+    case "schedule":
+      return {
+        label: "PAY — EXECUTIVE SCHEDULE",
+        period: `${block.citation || "5 U.S.C. 5312–5316"} sets the level; OPM's ${block.table || "salary table"}${block.effectiveText ? `, ${lowerEffective(block.effectiveText)}` : ""}, prices it — a rate of basic pay, not a cost`,
+      };
+    case "tierReference":
+      return {
+        label: "PAY — SET BY REFERENCE TO A LEVEL",
+        period: `${block.statute || "a statute"} names Executive Schedule ${block.levelText || `level ${block.level}`}${block.percent ? ` plus ${block.percent} percent` : ""}; no document states this figure for the post`,
+      };
+    case "derived":
+      return {
+        label: "PAY — DERIVED, STATED BY NO DOCUMENT",
+        period: `${block.statute || "a statutory provision"} joined to the U.S. Courts' compensation table${block.year ? `, ${block.year}` : ""} — a rate of basic pay, not a cost`,
+      };
+    case "reported":
+      return {
+        label: "PAY — WHITE HOUSE STAFF REPORT",
+        period: `the White House Office's annual report to Congress${block.asOf ? `, as of ${block.asOf}` : ""} — the listed person's rate of basic pay, not a cost`,
+      };
+    case "current":
+      return {
+        label: "PAY — CURRENT PLUM BOOK",
+        period: `OPM's current Plum Book export${fetched ? `, fetched ${fetched}` : ""} — one row's rate of basic pay, not a cost`,
+      };
+    case "pay":
+      return { label: "REPORTED RATE OF BASIC PAY", period: null };
+    case "tableRate":
+      return {
+        label: "PAY — RATE FOR THE LISTED LEVEL",
+        period: `OPM's ${block.table || "salary table"}${block.effectiveText ? `, ${lowerEffective(block.effectiveText)}` : ""}, for ${block.amountScope || "the level"} a PLUM listing reports — a table's rate for a rank, not a cost`,
+      };
+    case "range":
+      return { label: block.kind === "general_schedule_grade" ? "BASE PAY RANGE, BEFORE LOCALITY" : "PAY SYSTEM RANGE", period: null };
+    case "tier":
+      return {
+        label: "TITLE 38 PAY RANGE, NOT A RATE",
+        period: `the VA's ${block.table || "Title 38 pay table"}${block.effectiveText ? `, ${lowerEffective(block.effectiveText)}` : ""} — bounds for an appointment, not a rate and not a cost`,
+      };
+    default:
+      return { label: "PAY", period: null };
+  }
+}
+
+function standInBadgeLabel(standIn) {
+  switch (standIn.kind) {
+    case "statutory":
+      return standIn.block.memberSeat ? "No cost known; the Member's seat rate is shown" : "No cost known; the statutory rate of pay is shown";
+    case "schedule":
+      return "No cost known; the Executive Schedule rate is shown";
+    case "tierReference":
+      return "No cost known; a rate set by reference to a level is shown";
+    case "derived":
+      return "No cost known; a derived rate of pay is shown";
+    case "reported":
+      return "No cost known; the staff report's rate of pay is shown";
+    case "current":
+      return "No cost known; the current Plum Book's rate of pay is shown";
+    case "pay":
+      return "No cost known; a reported rate of pay is shown";
+    case "tableRate":
+      return "No cost known; the table's rate for the listed level is shown";
+    case "range":
+      return "No cost known; a base-pay range is shown";
+    case "tier":
+      return "No cost known; a Title 38 pay range is shown";
+    default:
+      return "No cost known; a rate of pay is shown";
+  }
+}
+
+// The sentence appended to the cost note saying what the headline figure IS,
+// per kind — the detailed block each pay field renders below carries the
+// documents, the quote and the document count; this says only enough that a
+// reader who stops at the badge is not misled about what the number means.
+function standInNote(standIn) {
+  const block = standIn.block;
+  const printed = standInAmountText(standIn);
+  let note = "";
+  switch (standIn.kind) {
+    case "statutory": {
+      const seat = block.memberSeat && typeof block.memberSeat === "object" ? block.memberSeat : null;
+      note = seat
+        ? ` What is shown instead is a Member's pay: ${block.sourceLabel || "Schedule 6"} prints ${printed} on its row "${seat.row || block.amountScope || "Members"}"${block.year ? ` for ${block.year}` : ""}, and the holder of this office is a Member of the chamber, for whom no separate rate is printed. That is a salary, not what this unit costs.`
+        : block.statesTheOffice === true
+          ? ` What is shown instead is the salary ${block.sourceLabel || "a section of the United States Code"} states for ${block.office || block.amountScope || "the office"}: ${printed}. A salary is not what this unit costs.`
+          : ` What is shown instead is a statutory rate of basic pay: ${block.sourceLabel || "a primary official source"} states ${printed} for ${block.amountScope || "this tier"}${block.year ? ` for ${block.year}` : ""}. It names a tier or a group of roles rather than this post by name, and a salary is not what this unit costs.`;
+      break;
+    }
+    case "schedule":
+      note = ` What is shown instead is the Executive Schedule rate: ${block.citation || "the United States Code"} places "${block.statutoryTitle || "this office"}" at level ${block.payLevel || "?"}, and OPM's ${block.table || "salary table"} pays ${printed} for that level. A statutory rate of basic pay, not what the holder receives and not what this unit costs.`;
+      break;
+    case "tierReference":
+      note = ` What is shown instead is pay a statute sets by reference: ${block.statute || "a statute"} ties this post to Executive Schedule ${block.levelText || `level ${block.level}`}${block.percent ? ` plus ${block.percent} percent` : ""}, and OPM's table prices that level${block.percent ? "; the result is arithmetic this project performed" : ""}. No document states ${printed} for the post itself, and it is not what this unit costs.`;
+      break;
+    case "derived":
+      note = ` What is shown instead is a figure no document states: ${block.statute || "a statutory provision"} sets the pay at ${block.amountScope || "another tier's rate"}, the U.S. Courts' Judicial Compensation table prices that tier, and ${printed} is the join${block.arithmetic && typeof block.arithmetic === "object" ? ", with the statute's percentage applied" : ""}. Not what this unit costs.`;
+      break;
+    case "reported":
+      note = ` What is shown instead is the rate the White House Office's own annual report to Congress lists under "${block.reportedTitle || "this title"}"${block.asOf ? ` (as of ${block.asOf})` : ""}: ${printed}. That is what the listed person is paid, not what the post pays whoever holds it, and not what this unit costs.`;
+      break;
+    case "current":
+      note = ` What is shown instead is a rate of basic pay: OPM's current PLUM Reporting export` +
+        `${formatFetchDate(block.exportFetchedAt) ? ` (fetched ${formatFetchDate(block.exportFetchedAt)})` : ""}` +
+        ` prints ${block.rateText} for the one row listed under "${block.listedTitle}". That is what that listing is paid, a row being an incumbency; not what the post pays whoever holds it, and not what this unit costs.` +
+        payDocumentsSentence(block);
+      break;
+    case "pay":
+      note = ` What is shown instead is a rate of basic pay: OPM's PLUM archive reports ${block.reportedPayText} for this post` +
+        `${block.edition ? ` (${block.edition})` : ""}. That is compensation for one post, not what this unit costs.`;
+      break;
+    case "tableRate": {
+      const levelFromCurrent = block.levelSource && block.levelSource.source === "opm_plum_current_export";
+      note = ` What is shown instead is OPM's ${block.table || "salary table"} rate for ${block.amountScope || "the level"} ${levelFromCurrent ? "the current PLUM export" : "OPM's PLUM archive"} lists this post at: two documents, a rank and a table, and neither says what this post pays whoever holds it now. Not what this unit costs.`;
+      break;
+    }
+    case "range":
+      note = block.kind === "general_schedule_grade"
+        ? ` What is shown instead is the base General Schedule range for grade ${block.grade} in ${String(block.effective || "").slice(0, 4)}, before locality pay, from OPM's ${block.table}; not this unit's cost and not necessarily what the post pays now.`
+        : ` What is shown instead is the range OPM's ${block.table} states for the pay system the listing files this post on; not this unit's cost and not necessarily what the post pays now.`;
+      break;
+    case "tier":
+      note = ` What is shown instead is a Title 38 pay RANGE: the VA's ${block.table || "pay table"}${block.effectiveText ? ` (${lowerEffective(block.effectiveText)})` : ""} names "${block.coverageTitle || "this title"}" at Tier ${block.tier} and bounds an appointment between ${printed}. The schedule publishes no rate for anybody, and the range is not what this unit costs.`;
+      break;
+    default:
+      note = "";
+  }
+  // A figure kept on a node that stands for several posts is each holder's,
+  // by the statute's or the roster's own words; the sweep that stamps
+  // `holders` has already refused the incumbency-shaped claims, so what is
+  // here is a rate for each, and never the group's total.
+  const holders = block.holders && typeof block.holders === "object" ? block.holders : null;
+  if (holders) {
+    note += Number.isInteger(holders.count)
+      ? ` The figure is for each of the ${holders.count} holders this node stands for, not the group's total.`
+      : ` The figure is for each holder this node stands for (${String(holders.text || "several").trim()}), not the group's total.`;
+  }
+  return note;
 }
 
 // A rate of basic pay an official source reports for this post. Not the
@@ -2408,17 +2636,8 @@ function formatCostAmount(node) {
   if (standIn) {
     // The estimate is withheld, or there is none; a real salary or a stated
     // range is shown, headed as pay rather than as a cost by the head drawn
-    // beside it. The current export's own printed figure first, then the
-    // archive's.
-    if (standIn.current) {
-      return standIn.current.rateText || `$${Math.round(standIn.current.amount).toLocaleString()}`;
-    }
-    if (standIn.pay) {
-      return standIn.pay.reportedPayText || `$${Math.round(standIn.pay.reportedPay).toLocaleString()}`;
-    }
-    // A base-pay RANGE, where a table states one for the listing's pay plan
-    // and the archive states no rate. Two bounds, never one figure.
-    return formatGradeRange(standIn.range);
+    // beside it, in the order PAY_STAND_IN_ORDER sets.
+    return standInAmountText(standIn);
   }
   if (hasWithheldEstimate(node)) {
     return null;
@@ -2446,29 +2665,8 @@ function isBelowPrecision(node) {
 
 function describeCost(node) {
   const standIn = costStandInOf(node);
-  const current = standIn ? standIn.current : null;
-  const pay = standIn ? standIn.pay : null;
-  const range = standIn ? standIn.range : null;
-  const payNote = current
-    ? ` What is shown instead is a rate of basic pay: OPM's current PLUM Reporting export` +
-      `${formatFetchDate(current.exportFetchedAt) ? ` (fetched ${formatFetchDate(current.exportFetchedAt)})` : ""}` +
-      ` prints ${current.rateText} for the one row listed under "${current.listedTitle}". That is what that listing is paid, a row being an incumbency; not what the post pays whoever holds it, and not what this unit costs.` +
-      payDocumentsSentence(current)
-    : pay
-    ? ` What is shown instead is a rate of basic pay: OPM's PLUM archive reports ${pay.reportedPayText} for this post` +
-      `${pay.edition ? ` (${pay.edition})` : ""}. That is compensation for one post, not what this unit costs.`
-    : range
-      ? (range.kind === "general_schedule_grade"
-        ? ` What is shown instead is the base General Schedule range for grade ${range.grade} in ${String(range.effective || "").slice(0, 4)}, before locality pay, from OPM's ${range.table}; not this unit's cost and not necessarily what the post pays now.`
-        : ` What is shown instead is the range OPM's ${range.table} states for the pay system the listing files this post on; not this unit's cost and not necessarily what the post pays now.`)
-      : "";
-  const payLabel = current
-    ? "No cost known; the current Plum Book's rate of pay is shown"
-    : pay
-    ? "No cost known; a reported rate of pay is shown"
-    : range
-      ? "No cost known; a base-pay range is shown"
-      : null;
+  const payNote = standIn ? standInNote(standIn) : "";
+  const payLabel = standIn ? standInBadgeLabel(standIn) : null;
   // Only a node that actually holds an apportioned share is told the box
   // would reveal one. A post, or a unit beneath a negative Treasury pool,
   // has nothing to reveal, and "tick to see it" about a figure that does not
@@ -2508,9 +2706,8 @@ function describeCost(node) {
         ...unavailable,
         note:
           "This is a post, not a unit of government. No federal financial system reports spending for an individual post, and a share of the organisation's budget above it would not be a cost this post incurred \u2014 so no figure is shown, and there is no estimate to reveal." +
-          (pay
-            ? payNote
-            : " Where an official document states what the post is paid, that rate appears below instead, and a salary is not the same thing as a budget."),
+          (payNote
+            || " Where an official document states what the post is paid, that rate appears below instead, and a salary is not the same thing as a budget."),
       };
     }
     return { ...unavailable, note: COST_STATUS_COPY.unavailable.note + payNote };
@@ -2601,32 +2798,14 @@ function buildCostBlock(node) {
   // When the estimate is withheld and a salary is shown in its place, the
   // heading must not read COST: a rate of basic pay for one post is not what
   // a unit costs, and the label is the first thing a reader takes as the
-  // claim. The period line below is the Treasury anchor's and is suppressed
-  // for the same reason.
-  // The current Plum Book's own printed rate comes first: it is the live
-  // export's figure for the one row under this title, headed PAY with the
-  // export's fetch date on the period line, and never headed COST.
-  const showingCurrentPay = showsCurrentPayInsteadOfCost(node);
-  const showingPay = showsPayInsteadOfCost(node);
-  // A base-pay RANGE shown in the estimate's place is headed as a range, and
-  // as base pay before locality where it is the General Schedule's: the two
-  // bounds are the table's and the word COST would make them the unit's.
-  const showingRange = showsRangeInsteadOfCost(node);
-  const period = showingCurrentPay
-    ? {
-        label: `OPM's current Plum Book export${formatFetchDate(currentPayOf(node).exportFetchedAt) ? `, fetched ${formatFetchDate(currentPayOf(node).exportFetchedAt)}` : ""} — one row's rate of basic pay, not a cost`,
-        amountKind: null,
-      }
-    : showingPay || showingRange ? { label: null, amountKind: null } : getCostPeriod(node);
+  // claim. The period line below is the Treasury anchor's and is replaced for
+  // the same reason by a line naming the pay document, where there is one.
+  const standIn = costStandInOf(node);
+  const heading = standIn ? standInHeading(standIn) : null;
+  const period = heading ? { label: heading.period, amountKind: null } : getCostPeriod(node);
   const label = document.createElement("span");
   label.className = "info-cost-label";
-  label.textContent = showingCurrentPay
-    ? "PAY — CURRENT PLUM BOOK"
-    : showingPay
-      ? "REPORTED RATE OF BASIC PAY"
-      : showingRange
-        ? (gradePayOf(node).kind === "general_schedule_grade" ? "BASE PAY RANGE, BEFORE LOCALITY" : "PAY SYSTEM RANGE")
-        : coversFullYear(period.amountKind) ? "ANNUAL COST" : "COST";
+  label.textContent = heading ? heading.label : coversFullYear(period.amountKind) ? "ANNUAL COST" : "COST";
   head.appendChild(label);
 
   const amountText = formatCostAmount(node);
@@ -2639,7 +2818,7 @@ function buildCostBlock(node) {
   // to three figures, never a different claim. Estimates are untouched; they
   // were always rounded and marked ≈.
   const exactAmount = toFiniteAmount(node.resolved_total_amount);
-  if (amountText !== null && !showingCurrentPay && !showingPay && !showingRange && isCostIdentifiedForTheNode(node) && exactAmount !== null && Math.abs(exactAmount) >= 1e9) {
+  if (amountText !== null && !standIn && isCostIdentifiedForTheNode(node) && exactAmount !== null && Math.abs(exactAmount) >= 1e9) {
     const compact = document.createElement("span");
     compact.className = "info-cost-compact";
     compact.textContent = `${formatApproximateCost(exactAmount)}, to three figures`;
@@ -2672,6 +2851,26 @@ function buildCostBlock(node) {
   note.className = "info-cost-note";
   note.textContent = copy.note;
   block.appendChild(note);
+
+  // The estimate was always one tick away, and since 2026-10-05 the tick is
+  // here too. The owner read "the costs have been disappearing" off a panel
+  // whose figure sat behind a checkbox in the other column; the data had not
+  // changed — 693 nodes carry an apportioned share and the default view has
+  // withheld every one of them since 2026-09-09, by the owner's own decision
+  // — so the control that reveals it now sits beside the sentence saying it
+  // is withheld. It is the same checkbox: one click here turns the estimates
+  // on for every node, and the box in the column reflects it.
+  if (hasWithheldEstimate(node) && dom.toggleExactCosts) {
+    const reveal = document.createElement("button");
+    reveal.type = "button";
+    reveal.className = "info-cost-reveal";
+    reveal.textContent = "Show the estimate";
+    reveal.title = "Turns on \u201cAlso show estimated shares of a parent's total\u201d for every node";
+    reveal.addEventListener("click", () => {
+      if (!dom.toggleExactCosts.checked) dom.toggleExactCosts.click();
+    });
+    block.appendChild(reveal);
+  }
 
   return block;
 }

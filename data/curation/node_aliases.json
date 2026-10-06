@@ -123,6 +123,13 @@
       "alias": "Privacy and Civil Liberties and Oversight Board",
       "basis": "The export's own spelling, recorded as the export's rather than as the board's. OPM's current PLUM export files 5 live rows under 'PRIVACY AND CIVIL LIBERTIES AND OVERSIGHT BOARD', which carries a conjunction before 'Oversight' that the board's own name does not; the Federal Register's agency directory, which already reaches this node, prints it without. Recorded so those rows can be read, and the panel quotes the export's string rather than presenting it as a name the board uses.",
       "addedOn": "2026-09-21"
+    },
+    {
+      "id": "exec-dept-doj-bop",
+      "name": "Bureau of Prisons (BOP)",
+      "alias": "Federal Bureau of Prisons",
+      "basis": "18 U.S.C. 4041 names the unit 'The Bureau of Prisons' (committed at tests/fixtures/uscode/bop_18_usc_4041_govinfo2024.html); the Bureau styles itself the Federal Bureau of Prisons, which is the name OPM's current PLUM export files every one of its 72 live rows under ('FEDERAL BUREAU OF PRISONS', under the Department of Justice) and none under the statutory name. One unit, two spellings; the twelfth research batch's Justice cluster found the export's rows for the Bureau's Director and Deputy Director reaching nothing for want of this row (CURATION.md §19.20).",
+      "addedOn": "2026-10-05"
     }
   ],
   "_declined": [
