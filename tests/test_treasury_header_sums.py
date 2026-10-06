@@ -34,10 +34,13 @@ for extra in (PROJECT_ROOT, PROJECT_ROOT / "scripts"):
 from data_pipeline.crawler.treasury_outlays import parse_outlay_rows  # noqa: E402
 from data_pipeline.exporter.build_graph import (  # noqa: E402
     MINIMAL_GRAPH_FIELDS,
+    TREASURY_COUNTED_IN_HEADER_SUM_FIELDS,
+    TREASURY_HEADER_SUM_ALIAS_KEYS,
     TREASURY_HEADER_SUM_FIELDS,
     TREASURY_ROW_ALIASES,
     build_graph,
     canonical_name_key,
+    counted_in_header_sum_note,
     derive_header_sum_rows,
     header_sum_note,
     index_tree,
@@ -98,6 +101,11 @@ BASE = {
                 ]},
                 {"id": "exec-dept-doj", "name": "Department of Justice (DOJ)", "type": "Cabinet Department", "children": [
                     {"id": "exec-dept-doj-office-justice-programs", "name": "Office of Justice Programs", "type": "Component Agency", "children": []},
+                    # Beside OJP, as the graph and the Government Manual place it; the
+                    # statement prints its line beneath OJP's header.
+                    {"id": "exec-dept-doj-office-community-oriented-policing-services",
+                     "name": "Office of Community Oriented Policing Services", "type": "Office", "children": []},
+                    {"id": "exec-dept-doj-unlined", "name": "Office of Nothing at Justice", "type": "Office", "children": []},
                 ]},
                 {"id": "exec-dept-treasury", "name": "Department of the Treasury", "type": "Cabinet Department", "children": [
                     {"id": "exec-dept-treasury-ttb", "name": "Alcohol & Tobacco Tax & Trade Bureau (TTB)", "type": "Component Agency", "children": []},
@@ -109,8 +117,12 @@ BASE = {
                     ]},
                 ]},
                 {"id": "exec-dept-hud", "name": "Department of Housing and Urban Development (HUD)", "type": "Cabinet Department", "children": [
-                    # The statement's header is "Government National Mortgage Association:"; this name does not reduce to it.
-                    {"id": "exec-dept-hud-ginnie", "name": "Ginnie Mae", "type": "Agency", "children": []},
+                    # The statement's header is "Government National Mortgage Association:"; this name does not
+                    # reduce to it, and the one alias allowed to reach a header sum joins them.
+                    {"id": "exec-dept-hud-ginnie", "name": "Ginnie Mae", "type": "Agency", "children": [
+                        {"id": "exec-dept-hud-ginnie-office", "name": "Office of Securities Operations", "type": "Office", "children": []},
+                    ]},
+                    {"id": "exec-dept-hud-unlined", "name": "Office of Nothing at Housing", "type": "Office", "children": []},
                 ]},
                 {"id": "exec-dept-defense", "name": "Department of Defense (DoD)", "type": "Cabinet Department", "children": [
                     # "Defense Agencies" is a total-less header AND a line the statement prints nine more times.
@@ -247,7 +259,7 @@ class HeaderSumTests(unittest.TestCase):
         result = self._build([statement_payload()])
         stats = result.validation["treasury_outlay_rows"]
         self.assertTrue(stats["treasury_netting"]["identity"]["holds"], stats["treasury_netting"])
-        self.assertEqual(stats["header_sums_applied"], 9, stats["header_sums"])
+        self.assertEqual(stats["header_sums_applied"], 10, stats["header_sums"])
         # The one ambiguous name is the control this BASE plants: "Defense
         # Agencies" is a total-less header AND a line printed nine more times,
         # and every one of those rows is reported, the header's among them.
@@ -320,7 +332,13 @@ class HeaderSumTests(unittest.TestCase):
         _, nodes = self._graph(self._build([statement_payload()]))
         # "Defense Agencies:" is a total-less header and a line printed nine more times.
         self.assertIsNone(nodes["exec-dept-defense-agencies"].get("rollup_total_amount"))
-        # "Government National Mortgage Association:" is a total-less header; "Ginnie Mae" is not that name.
+        # A header whose name does not reduce to the node's, with the one
+        # flagged alias withdrawn, reaches nothing: "Ginnie Mae" is not
+        # "Government National Mortgage Association".
+        from unittest import mock
+        from data_pipeline.exporter import build_graph as module
+        with mock.patch.object(module, "TREASURY_HEADER_SUM_ALIAS_KEYS", frozenset()):
+            _, nodes = self._graph(self._build([statement_payload()]))
         ginnie = nodes["exec-dept-hud-ginnie"]
         self.assertIsNone(ginnie.get("rollup_total_amount"))
         self.assertNotIn("treasury_header_sum", ginnie)
@@ -370,8 +388,8 @@ class HeaderSumTests(unittest.TestCase):
         self.assertEqual(nodes["exec-dept-va-vha-under"]["cost_status"], "unavailable")
         code, out = self._gate(result.graph_path)
         self.assertEqual(code, 0, out)
-        self.assertIn("9 of them the sum of the lines beneath a header the statement totals nowhere", out)
-        self.assertIn("Treasury header sums : 9 units", out)
+        self.assertIn("10 of them the sum of the lines beneath a header the statement totals nowhere", out)
+        self.assertIn("Treasury header sums : 10 units", out)
 
     def test_header_sums_are_carried_forward_and_replaced_never_duplicated(self) -> None:
         first = self._build([statement_payload()])
@@ -387,7 +405,7 @@ class HeaderSumTests(unittest.TestCase):
                 self.assertEqual({k: nodes[node_id].get(k) for k in before[node_id]}, before[node_id])
         # A fresh statement replaces them: the same stamp once, the lines once.
         again = self._build([statement_payload()], reuse=True)
-        self.assertEqual(again.validation["treasury_outlay_rows"]["header_sums_applied"], 9)
+        self.assertEqual(again.validation["treasury_outlay_rows"]["header_sums_applied"], 10)
         self.assertGreater(again.validation["treasury_outlay_rows"]["stale_rollups_cleared"], 0)
         _, nodes = self._graph(again)
         for node_id in NINE:
@@ -427,21 +445,248 @@ class HeaderSumTests(unittest.TestCase):
         self.assertNotIn("treasury_external_section", americorps)
         self.assertNotIn("treasury_header_sum", americorps)
 
-    def test_an_alias_is_never_stacked_on_a_header_sum(self) -> None:
-        """A header sum reaches a node by name equality or not at all. Give
-        the GNMA header an alias and it must still price nothing."""
+    def test_an_unflagged_alias_is_never_stacked_on_a_header_sum(self) -> None:
+        """A header sum reaches a node by name equality, or by one of the
+        aliases TREASURY_HEADER_SUM_ALIAS_KEYS flags, or not at all. Point the
+        NNSA's header at another node with an ordinary alias row and the alias
+        is refused: the header still lands on the node its name reduces to,
+        and the alias's target prices nothing."""
         tree = section_tree()
         derived = {canonical_name_key(r["name"]): r for r in derive_header_sum_rows(tree)}
-        self.assertIn("government national mortgage association", derived)
+        self.assertIn("national nuclear security administration", derived)
+        self.assertNotIn("national nuclear security administration", TREASURY_HEADER_SUM_ALIAS_KEYS)
+        from unittest import mock
         from data_pipeline.exporter import build_graph as module
-        original = dict(module.TREASURY_ROW_ALIASES)
-        module.TREASURY_ROW_ALIASES["government national mortgage association"] = "exec-dept-hud-ginnie"
-        try:
+        with mock.patch.dict(module.TREASURY_ROW_ALIASES, {"national nuclear security administration": "exec-dept-doe-unlined"}):
             _, nodes = self._graph(self._build([statement_payload()]))
-        finally:
-            module.TREASURY_ROW_ALIASES.clear()
-            module.TREASURY_ROW_ALIASES.update(original)
-        self.assertIsNone(nodes["exec-dept-hud-ginnie"].get("rollup_total_amount"))
+        self.assertIsNone(nodes["exec-dept-doe-unlined"].get("rollup_total_amount"))
+        self.assertIs(nodes["exec-dept-doe-nnsa"].get("treasury_header_sum"), True)
+
+    def test_the_flagged_alias_is_the_only_one_and_it_is_a_reviewed_row(self) -> None:
+        self.assertEqual(TREASURY_HEADER_SUM_ALIAS_KEYS, frozenset({"government national mortgage association"}))
+        for key in TREASURY_HEADER_SUM_ALIAS_KEYS:
+            self.assertIn(key, TREASURY_ROW_ALIASES)
+            self.assertEqual(canonical_name_key(key), key)
+        # The gate mirrors the flagged rows by the node each reaches.
+        self.assertEqual(gate.TREASURY_HEADER_SUM_ALIASES, {TREASURY_ROW_ALIASES[k]: k for k in TREASURY_HEADER_SUM_ALIAS_KEYS})
+
+    def test_ginnie_mae_is_measured_negative_by_the_flagged_alias(self) -> None:
+        result = self._build([statement_payload()])
+        stats = result.validation["treasury_outlay_rows"]
+        self.assertEqual(stats["header_sums_by_alias"], 1)
+        _, nodes = self._graph(result)
+        ginnie = nodes["exec-dept-hud-ginnie"]
+        self.assertEqual(ginnie["cost_status"], "official")
+        self.assertIs(ginnie["treasury_header_sum"], True)
+        self.assertEqual(ginnie["treasury_row_name"], "Government National Mortgage Association:")
+        self.assertEqual(ginnie["resolved_total_amount"], -1_839_035_438.49)
+        self.assertEqual(ginnie["resolved_total_amount"], row_amount("Guarantees of Mortgage-Backed Securities"))
+        self.assertEqual(ginnie["treasury_component_rows"], [{"name": "Guarantees of Mortgage-Backed Securities", "amount": -1_839_035_438.49}])
+        self.assertEqual(ginnie["treasury_header_sum_note"], header_sum_note(1))
+        self.assertEqual(ginnie["treasury_section"], "Department of Housing and Urban Development")
+        # Negative, the Mint's rule: nothing can be apportioned from it.
+        self.assertEqual(ginnie["treasury_pool_negative"], -1_839_035_438.49)
+        office = nodes["exec-dept-hud-ginnie-office"]
+        self.assertEqual(office["cost_status"], "unavailable")
+        self.assertEqual(office["cost_validation"], "treasury_pool_negative")
+        self.assertIsNone(office.get("resolved_total_amount"))
+        code, out = self._gate(result.graph_path)
+        self.assertEqual(code, 0, out)
+
+    def test_the_gate_refuses_an_alias_it_does_not_mirror_on_a_header_sum(self) -> None:
+        result = self._build([statement_payload()])
+        from unittest import mock
+        with mock.patch.dict(gate.TREASURY_HEADER_SUM_ALIASES, {}, clear=True):
+            code, out = self._gate(result.graph_path)
+        self.assertEqual(code, 1, out)
+        self.assertIn("a name the node does not reduce to", out)
+        # The flagged row moved to another node of the department is refused too.
+        graph = json.loads(result.graph_path.read_text(encoding="utf-8"))
+        nodes = index_tree(graph)[0]
+        block = {k: json.loads(json.dumps(nodes["exec-dept-hud-ginnie"][k])) for k in (
+            "treasury_header_sum", "treasury_component_rows", "treasury_header_sum_note", "treasury_classification_id",
+            "treasury_row_name", "budget_as_of", "budget_source", "rollup_total_amount")}
+        nodes["exec-dept-hud-unlined"].update(block)
+        path = self.tmp / "moved.json"
+        path.write_text(json.dumps(graph), encoding="utf-8")
+        code, out = self._gate(path)
+        self.assertEqual(code, 1, out)
+        self.assertIn("a name the node does not reduce to", out)
+
+    # -- a line counted in a header sum, on a node beside it ------------------
+
+    COPS = "exec-dept-doj-office-community-oriented-policing-services"
+    OJP = "exec-dept-doj-office-justice-programs"
+
+    def test_the_cops_line_is_measured_beside_ojp_and_kept_out_of_doj_s_arithmetic(self) -> None:
+        self.assertEqual(TREASURY_ROW_ALIASES["community oriented policing services"], self.COPS)
+        result = self._build([statement_payload()])
+        stats = result.validation["treasury_outlay_rows"]
+        self.assertEqual([entry["id"] for entry in stats["lines_counted_in_header_sums"]], [self.COPS])
+        graph, nodes = self._graph(result)
+        cops, ojp, doj = nodes[self.COPS], nodes[self.OJP], nodes["exec-dept-doj"]
+        # Measured to the cent, the line as the statement prints it.
+        self.assertEqual(cops["cost_status"], "official")
+        self.assertEqual(cops["costVerificationStatus"], "verified")
+        self.assertEqual(cops["treasury_row_name"], "Community Oriented Policing Services")
+        self.assertEqual(cops["resolved_total_amount"], row_amount("Community Oriented Policing Services"))
+        self.assertAlmostEqual(cops["resolved_total_amount"], 462_550_050.10, places=2)
+        self.assertEqual(cops["treasury_section"], "Department of Justice")
+        self.assertNotIn("treasury_external_section", cops)
+        self.assertNotIn("treasury_header_sum", cops)
+        # Stamped with the node whose figure already holds the money, and the sentence.
+        self.assertEqual(cops["treasury_counted_in_header_sum"], self.OJP)
+        self.assertEqual(cops["treasury_counted_in_header_sum_note"],
+                         counted_in_header_sum_note("Office of Justice Programs", "Office of Justice Programs", "Department of Justice (DOJ)"))
+        self.assertIn("never counted twice", cops["treasury_counted_in_header_sum_note"])
+        # OJP unchanged: still the statement's four lines beneath its header, COPS's among them.
+        self.assertAlmostEqual(ojp["resolved_total_amount"], 4_518_129_781.85, places=2)
+        self.assertIn({"name": "Community Oriented Policing Services", "amount": 462_550_050.1}, ojp["treasury_component_rows"])
+        self.assertEqual(len(ojp["treasury_component_rows"]), 4)
+        self.assertNotIn("treasury_counted_in_header_sum", ojp)
+        # DOJ's parts, COPS left out, sum to DOJ's net figure to the cent.
+        kids = [c for c in doj["children"] if c.get("resolved_total_amount") is not None and not c.get("treasury_counted_in_header_sum")]
+        self.assertNotIn(self.COPS, {c["id"] for c in kids})
+        self.assertAlmostEqual(sum(c["resolved_total_amount"] for c in kids) + float(doj.get("treasury_unapportioned") or 0.0),
+                               doj["resolved_total_amount"], places=2)
+        # Counted in, it would overrun DOJ by exactly the COPS line.
+        with_cops = sum(c["resolved_total_amount"] for c in doj["children"] if c.get("resolved_total_amount") is not None)
+        self.assertAlmostEqual(with_cops - doj["resolved_total_amount"], cops["resolved_total_amount"], places=2)
+        code, out = self._gate(result.graph_path)
+        self.assertEqual(code, 0, out)
+        self.assertIn("counted in a header sum: 1 measured line(s)", out)
+
+    def test_doj_s_unlined_sibling_takes_the_pool_it_would_take_with_no_cops_node_at_all(self) -> None:
+        """The COPS line is already inside OJP's figure, so the Department's
+        unlined children's pool must not shrink by it a second time: the
+        unlined sibling's estimate is exactly what it is in a graph that has
+        no COPS node to carry the line."""
+        _, nodes = self._graph(self._build([statement_payload()]))
+        with_cops = nodes["exec-dept-doj-unlined"]
+        self.assertEqual(with_cops["cost_status"], "allocated")
+        base = json.loads(self.base.read_text(encoding="utf-8"))
+        doj = index_tree(base)[0]["exec-dept-doj"]
+        doj["children"] = [c for c in doj["children"] if c["id"] != self.COPS]
+        self.base.write_text(json.dumps(base), encoding="utf-8")
+        _, without = self._graph(self._build([statement_payload()]))
+        self.assertAlmostEqual(with_cops["resolved_total_amount"], without["exec-dept-doj-unlined"]["resolved_total_amount"], places=2)
+        self.assertAlmostEqual(nodes[self.OJP]["resolved_total_amount"], without[self.OJP]["resolved_total_amount"], places=2)
+        self.assertAlmostEqual(nodes["exec-dept-doj"]["resolved_total_amount"], without["exec-dept-doj"]["resolved_total_amount"], places=2)
+
+    def _move_cops(self, new_parent_id: str, *, new_parent: dict | None = None) -> None:
+        base = json.loads(self.base.read_text(encoding="utf-8"))
+        node_map = index_tree(base)[0]
+        doj = node_map["exec-dept-doj"]
+        cops = next(c for c in doj["children"] if c["id"] == self.COPS)
+        doj["children"] = [c for c in doj["children"] if c["id"] != self.COPS]
+        if new_parent is not None:
+            new_parent["children"] = [cops]
+            doj["children"].append(new_parent)
+        else:
+            node_map[new_parent_id]["children"].append(cops)
+        self.base.write_text(json.dumps(base), encoding="utf-8")
+
+    def test_a_component_line_on_a_descendant_of_the_header_sum_needs_no_stamp(self) -> None:
+        """Placed beneath OJP, the COPS node sits inside OJP's figure in the
+        tree too, and the ordinary nested arithmetic is already right."""
+        self._move_cops(self.OJP)
+        result = self._build([statement_payload()])
+        _, nodes = self._graph(result)
+        cops = nodes[self.COPS]
+        self.assertEqual(cops["cost_status"], "official")
+        self.assertAlmostEqual(cops["resolved_total_amount"], 462_550_050.10, places=2)
+        for field in TREASURY_COUNTED_IN_HEADER_SUM_FIELDS:
+            self.assertNotIn(field, cops)
+        self.assertEqual(result.validation["treasury_outlay_rows"]["lines_counted_in_header_sums"], [])
+        code, out = self._gate(result.graph_path)
+        self.assertEqual(code, 0, out)
+
+    def test_beneath_an_unlined_grouping_the_line_is_no_floor_on_the_grouping(self) -> None:
+        """A stamped line under an unlined grouping: the grouping's estimate is
+        not floored by money already inside OJP, the sentence names the
+        grouping as the parent whose arithmetic leaves the line out, and the
+        gate passes."""
+        grouping = {"id": "exec-dept-doj-grouping", "name": "Grants Offices Grouping", "type": "Division", "children": []}
+        self._move_cops("", new_parent=grouping)
+        result = self._build([statement_payload()])
+        _, nodes = self._graph(result)
+        cops = nodes[self.COPS]
+        self.assertEqual(cops["treasury_counted_in_header_sum"], self.OJP)
+        self.assertEqual(cops["treasury_counted_in_header_sum_note"],
+                         counted_in_header_sum_note("Office of Justice Programs", "Office of Justice Programs", "Grants Offices Grouping"))
+        self.assertEqual(nodes["exec-dept-doj-grouping"]["cost_status"], "allocated")
+        self.assertNotIn("measured_net_beneath", nodes["exec-dept-doj-grouping"])
+        code, out = self._gate(result.graph_path)
+        self.assertEqual(code, 0, out)
+
+    def test_the_stamp_is_carried_forward_and_cleared_by_a_fresh_statement(self) -> None:
+        first = self._build([statement_payload()])
+        _, nodes = self._graph(first)
+        before = {k: nodes[self.COPS].get(k) for k in ("rollup_total_amount", *TREASURY_COUNTED_IN_HEADER_SUM_FIELDS)}
+        carried = self._build([{"nodes": [], "edges": [], "budgetSummary": statement_payload()["budgetSummary"]}], reuse=True)
+        _, nodes = self._graph(carried)
+        self.assertEqual({k: nodes[self.COPS].get(k) for k in before}, before)
+        self.assertEqual(nodes[self.COPS]["cost_status"], "official")
+        code, out = self._gate(carried.graph_path)
+        self.assertEqual(code, 0, out)
+        # A stale stamp on a node the statement does not make a component is cleared.
+        stale = json.loads(carried.graph_path.read_text(encoding="utf-8"))
+        index_tree(stale)[0]["exec-dept-usda-fs"].update({
+            "treasury_counted_in_header_sum": self.OJP, "treasury_counted_in_header_sum_note": "stale"})
+        carried.graph_path.write_text(json.dumps(stale), encoding="utf-8")
+        again = self._build([statement_payload()], reuse=True)
+        _, nodes = self._graph(again)
+        for field in TREASURY_COUNTED_IN_HEADER_SUM_FIELDS:
+            self.assertNotIn(field, nodes["exec-dept-usda-fs"])
+        self.assertEqual({k: nodes[self.COPS].get(k) for k in before}, before)
+
+    def test_the_gate_refuses_each_way_a_counted_stamp_can_be_faked(self) -> None:
+        result = self._build([statement_payload()])
+        code, out = self._gate(result.graph_path)
+        self.assertEqual(code, 0, out)
+        graph = json.loads(result.graph_path.read_text(encoding="utf-8"))
+        check = "a Treasury line already inside another node's header sum is stamped"
+
+        def corrupt(mutate):
+            corrupted = json.loads(json.dumps(graph))
+            mutate(corrupted, index_tree(corrupted)[0])
+            path = self.tmp / f"{uuid.uuid4().hex}.json"
+            path.write_text(json.dumps(corrupted), encoding="utf-8")
+            return self._gate(path)
+
+        def reparent_under_ojp(g, n):
+            doj = n["exec-dept-doj"]
+            cops = next(c for c in doj["children"] if c["id"] == self.COPS)
+            doj["children"] = [c for c in doj["children"] if c["id"] != self.COPS]
+            n[self.OJP].setdefault("children", []).append(cops)
+
+        tree = section_tree()
+        other_line = next(cid for cid, r in tree.rows.items() if r["originalName"] == "Corporation for National and Community Service")
+        cases = {
+            "a stamp naming a node that is not a header sum": lambda g, n: n[self.COPS].__setitem__("treasury_counted_in_header_sum", "exec-dept-doj"),
+            "a stamp naming a header sum the line is not a component of": lambda g, n: n[self.COPS].__setitem__(
+                "treasury_counted_in_header_sum", "exec-dept-va-vha"),
+            "a line that is not among the header's components": lambda g, n: n[self.COPS].__setitem__("treasury_classification_id", other_line),
+            "a stamp on a descendant of the header-sum node": reparent_under_ojp,
+            "the sentence missing": lambda g, n: n[self.COPS].pop("treasury_counted_in_header_sum_note"),
+            "the sentence naming the wrong parent": lambda g, n: n[self.COPS].__setitem__(
+                "treasury_counted_in_header_sum_note",
+                counted_in_header_sum_note("Office of Justice Programs", "Office of Justice Programs", "Department of Energy (DOE)")),
+            "the sentence without the stamp": lambda g, n: n[self.COPS].pop("treasury_counted_in_header_sum"),
+            "the stamp and sentence both dropped, the line counted twice": lambda g, n: [
+                n[self.COPS].pop(k) for k in ("treasury_counted_in_header_sum", "treasury_counted_in_header_sum_note")],
+            "a figure the statement does not print for the line": lambda g, n: n[self.COPS].update(
+                {"rollup_total_amount": 400_000_000.0, "resolved_total_amount": 400_000_000.0}),
+            "the stamp on a post": lambda g, n: n[self.COPS].__setitem__("type", "Position"),
+            "the line dropped from the holder's listed components": lambda g, n: n[self.OJP].__setitem__(
+                "treasury_component_rows", [c for c in n[self.OJP]["treasury_component_rows"] if c["name"] != "Community Oriented Policing Services"]),
+        }
+        for name, mutate in cases.items():
+            with self.subTest(case=name):
+                code, out = corrupt(mutate)
+                self.assertEqual(code, 1, f"{name}:\n{out}")
+                if name not in ("the stamp on a post", "the line dropped from the holder's listed components"):
+                    self.assertIn(check, "".join(line for line in out.splitlines() if line.startswith("FAIL")), f"{name}:\n{out}")
 
     # -- the gate -----------------------------------------------------------
 
@@ -529,6 +774,8 @@ class HeaderSumTests(unittest.TestCase):
         self.assertEqual(gate.TREASURY_UNDISTRIBUTED_LABEL, UNDISTRIBUTED_LABEL)
         for count in range(1, 10):
             self.assertEqual(gate.treasury_header_sum_note(count), header_sum_note(count))
+        for args in (("Office of Justice Programs", "Office of Justice Programs", "Department of Justice (DOJ)"), ("A", "B", "C")):
+            self.assertEqual(gate.treasury_counted_in_header_sum_note(*args), counted_in_header_sum_note(*args))
         tree = section_tree()
         reading = gate.TreasuryStatementRows(raw_rows())
         headers = tree.total_less_headers()
@@ -588,9 +835,14 @@ class HeaderSumTests(unittest.TestCase):
         self.assertIn("forest service", index)
 
     def test_the_viewer_copy_carries_the_stamp_the_lines_and_the_sentence(self) -> None:
-        for field in TREASURY_HEADER_SUM_FIELDS:
+        for field in (*TREASURY_HEADER_SUM_FIELDS, *TREASURY_COUNTED_IN_HEADER_SUM_FIELDS):
             self.assertIn(field, MINIMAL_GRAPH_FIELDS)
         _, nodes = self._graph(self._build([statement_payload()]))
+        cops = index_tree(prune_graph_for_viewer(json.loads(json.dumps(
+            {"id": ROOT_ID, "children": [nodes["exec-dept-doj-office-community-oriented-policing-services"]]}))))[0][
+            "exec-dept-doj-office-community-oriented-policing-services"]
+        self.assertEqual(cops["treasury_counted_in_header_sum"], "exec-dept-doj-office-justice-programs")
+        self.assertIn("never counted twice", cops["treasury_counted_in_header_sum_note"])
         pruned = index_tree(prune_graph_for_viewer(json.loads(json.dumps({"id": ROOT_ID, "children": [nodes["exec-dept-va-vha"]]}))))[0]
         vha = pruned["exec-dept-va-vha"]
         self.assertIs(vha["treasury_header_sum"], True)
