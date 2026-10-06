@@ -5267,7 +5267,12 @@ accepted as written):
 2. **"Not federally paid", where a document establishes it** — the laboratories
    above; built in parallel and recorded below when it lands.
 3. **A sourced non-cost figure may head an organisation's panel**, labelled by
-   basis and period — built in parallel, recorded below.
+   basis and period — built the same day: 72 organisations with no measured
+   cost are headed by File A gross outlays (34) or OMB's completed-year
+   outlays (38), never by the word COST, in that order because File A shares
+   the anchor's clock (on the nine measured nodes carrying both, File A sits a
+   median 7.7% from the Treasury figure and OMB 18.4%). Audited net cost heads
+   nothing yet.
 4. **Committee disbursements as a new basis** — built the same day. 40 of
    the 41 chamber committees carry `committeeDisbursements`: the House's 21
    from its Statement of Disbursements for April 1 – June 30, 2026
