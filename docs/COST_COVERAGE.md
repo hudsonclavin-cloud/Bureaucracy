@@ -11,9 +11,9 @@ this project publishes is one a committed document states and a matcher re-deriv
 on every run; nothing here is a number somebody reports.
 
 - nodes in the published graph: **5,510**
-- showing a figure a document states (measured cost or salary): **1,318**
+- showing a figure a document states (measured cost or salary): **1,353**
 - carrying an apportioned estimate, withheld unless asked for: **693**
-- positions no document prices: **3,433**
+- positions no document prices: **3,398**
 - no figure now and none from any route (negative pool, replaced unit, below a cent): **66**
 
 | class | nodes | what it means | route |
@@ -23,10 +23,10 @@ on every run; nothing here is a number somebody reports.
 | Estimate — a committee or subcommittee | 240 | An apportioned share of the chamber's measured total. No line of Table 5 names a committee, so no Treasury alias can ever reach one of these. | The documents that state committee spending are the chambers' own: the House's quarterly Statement of Disbursements (disbursements.house.gov) and the Senate's semiannual Report of the Secretary of the Senate (senate.gov). Both are large PDFs on `.gov` hosts, neither has been fetched, and the figure each prints is disbursements for a period — a basis `financial_evidence.BASES` would have to name, beside its own heading, never as Table 5 net outlays. A reviewed decision before any build. |
 | Estimate — with a sourced figure already published beside it | 42 | An apportioned share, and beside it at least one figure an official source states for this unit under its own heading: USAspending File A gross outlays (fiscal year to date), OMB's Public Budget Database outlays (last completed year, summed over the unit's account rows), or Treasury's audited Statement of Net Cost (last completed year). Each is on the panel today; none is headed COST, because each measures something different from the Treasury's net outlays on a different clock. | The decision is the owner's, not a build: whether the headline may fall back to one of these, labelled by its basis and period, when the Treasury prints no line — the same move the panel makes since 2026-10-05 for a post's salary. Measured on the 94 nodes that carry both, not one OMB FY2025 figure agrees with the Treasury line within 1%, so a fallback would be a different number under a different label, never the same claim. |
 | Estimate — no sourced figure of any kind | 411 | An apportioned share of an ancestor's measured total, divided among siblings by budget, headcount or subtree size. Table 5 stops at the bureau, so divisions, regional offices, laboratories, centres and the courts beneath a circuit print no line of their own. | Three routes, in order of reach: OMB's Public Budget Database bureau rows (committed; 72 bureaus matched so far, more need a node whose name the file carries); USAspending File B by Treasury Account Symbol, which reaches programme level and has not been fetched; an agency's own Agency Financial Report. Each yields a figure beside the estimate, not a cost, until the decision above is made. |
-| Salary — a pay claim an official document supports | 1,158 | A position carrying at least one of the nine pay fields: a printed rate, a schedule level priced by OPM's table, a statutory rate, a roster figure, a derivation the block carries in the open, or a range. Since 2026-10-05 it is the post's headline figure, headed as pay and never as COST. | Nothing to do for the node; each pay field is re-derived from its committed document on every run and withdrawn when the document stops supporting it. |
-| Post with no figure — stands for several holders | 752 | The node's name states a multiplicity and no claim that holds for every holder has reached it. An incumbency-shaped claim (one listing's level, one row of the current export) is refused on such a node because it is one appointment's figure, not the group's. | A tier, a statutory rate, a parity provision or a roster listing every holder at one figure IS published on such a node with a `holders` block. Finding which pay SYSTEM governs the title is the useful step: it lets the graph carry the schedule rather than a rate. `docs/UNPRICED_POSITIONS.md` lists every one. |
+| Salary — a pay claim an official document supports | 1,193 | A position carrying at least one of the nine pay fields: a printed rate, a schedule level priced by OPM's table, a statutory rate, a roster figure, a derivation the block carries in the open, or a range. Since 2026-10-05 it is the post's headline figure, headed as pay and never as COST. | Nothing to do for the node; each pay field is re-derived from its committed document on every run and withdrawn when the document stops supporting it. |
+| Post with no figure — stands for several holders | 750 | The node's name states a multiplicity and no claim that holds for every holder has reached it. An incumbency-shaped claim (one listing's level, one row of the current export) is refused on such a node because it is one appointment's figure, not the group's. | A tier, a statutory rate, a parity provision or a roster listing every holder at one figure IS published on such a node with a `holders` block. Finding which pay SYSTEM governs the title is the useful step: it lets the graph carry the schedule rather than a rate. `docs/UNPRICED_POSITIONS.md` lists every one. |
 | Post with no figure — OPM lists it and prints no rate | 18 | The PLUM archive or the current export names the title under this organisation but the Level/Grade/Pay cell carries a rank or is empty, and no salary table this project has read prices that pay plan. | A salary table for the pay plan (AD, OT and the others) where OPM publishes one; most of these plans have none, and the honest state is a listing with no figure. |
-| Post with no figure — no document this project has read names the title | 2,663 | Not a coverage gap somebody has not got to: no pay document in the repository names this title under this organisation, so nothing could have reached it. | The research prompt pack `docs/PAY_SOURCE_RESEARCH_PROMPT_3.md` names every one of these titles and asks for the DOCUMENT, not the figure. Research batches are run against it, and what each bought — and what each got wrong — is in `CURATION.md` §19. |
+| Post with no figure — no document this project has read names the title | 2,630 | Not a coverage gap somebody has not got to: no pay document in the repository names this title under this organisation, so nothing could have reached it. | The research prompt pack `docs/PAY_SOURCE_RESEARCH_PROMPT_3.md` names every one of these titles and asks for the DOCUMENT, not the figure. Research batches are run against it, and what each bought — and what each got wrong — is in `CURATION.md` §19. |
 | No figure — beneath a Treasury pool that nets below zero | 30 | The unit above publishes the Treasury's net figure and its measured lines already reach or exceed it (the Executive Office of the President nets to −$1.24bn), so nothing remains to apportion. Published `unavailable` rather than a guess. | USAspending File A gross outlays already sit beside the blank for several EOP offices. A cost would need the Treasury to print a line for the unit, which it does not. |
 | No figure — a unit the government has replaced | 36 | Marked `lifecycle: superseded` from an official page's own words. Kept with its sources as a record of what the government used to be; takes no share and gives none. | Never: a replaced unit has no current cost by construction. |
 | No figure — the share rounds below one cent | 0 | An apportioned share so small it rounds below a cent, published `unavailable` rather than $0. | Moves only when the pool above it is re-divided. |
@@ -956,7 +956,7 @@ An apportioned share of an ancestor's measured total, divided among siblings by 
 - `exec-dept-va-vha-visn-4` — VISN 4 (Regional Office; under Veterans Integrated Service Networks)
 - `exec-dept-va-vha-visn-5` — VISN 5 (Regional Office; under Veterans Integrated Service Networks)
 
-## Salary — a pay claim an official document supports — 1,158
+## Salary — a pay claim an official document supports — 1,193
 
 A position carrying at least one of the nine pay fields: a printed rate, a schedule level priced by OPM's table, a statutory rate, a roster figure, a derivation the block carries in the open, or a range. Since 2026-10-05 it is the post's headline figure, headed as pay and never as COST.
 
@@ -964,7 +964,7 @@ A position carrying at least one of the nine pay fields: a printed rate, a sched
 
 Listed by source in `docs/EXACT_NODE_COSTS.md`; not repeated here.
 
-## Post with no figure — stands for several holders — 752
+## Post with no figure — stands for several holders — 750
 
 The node's name states a multiplicity and no claim that holds for every holder has reached it. An incumbency-shaped claim (one listing's level, one row of the current export) is refused on such a node because it is one appointment's figure, not the group's.
 
@@ -980,7 +980,7 @@ The PLUM archive or the current export names the title under this organisation b
 
 Listed one per line, with its reason, in `docs/UNPRICED_POSITIONS.md`; not repeated here.
 
-## Post with no figure — no document this project has read names the title — 2,663
+## Post with no figure — no document this project has read names the title — 2,630
 
 Not a coverage gap somebody has not got to: no pay document in the repository names this title under this organisation, so nothing could have reached it.
 

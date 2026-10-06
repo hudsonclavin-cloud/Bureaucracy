@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-10-06T00:25:41Z",
+ "url": "https://www.govinfo.gov/link/uscode/14/302?link-type=html",
+ "status": 200,
+ "final_url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title14/html/USCODE-2024-title14-subtitleI-chap3-sec302.htm",
+ "content_type": "text/html",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /link/uscode/14/302",
+ "bytes": 8155,
+ "sha256": "1c5ffdaed7a9b83276eefb002f257b428808d1de452db412ae34226e179fd972",
+ "error": null
+}

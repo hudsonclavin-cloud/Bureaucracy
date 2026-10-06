@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-10-06T00:25:19Z",
+ "url": "https://www.govinfo.gov/link/uscode/10/8044?link-type=html",
+ "status": 200,
+ "final_url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleC-partI-chap806-sec8044.htm",
+ "content_type": "text/html",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /link/uscode/10/8044",
+ "bytes": 4732,
+ "sha256": "834ff9994c0071452a42605a99d372f59d00c4725f61839123402d108e02ca7e",
+ "error": null
+}

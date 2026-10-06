@@ -52,6 +52,7 @@ python scripts/derive_fr_signature_evidence.py --dry-run  # the title an officia
 python scripts/derive_judicial_pay_evidence.py --dry-run    # uscourts.gov's own compensation table; writes nothing
 python scripts/derive_derived_pay_evidence.py --dry-run     # a figure NO document states: a statutory parity provision joined to that table; writes nothing
 python scripts/derive_tier_reference_pay_evidence.py --dry-run  # pay a statute sets BY REFERENCE to an Executive Schedule level (GAO's officers; the IG Act's Level III + 3%), joined to OPM's table; writes nothing
+python scripts/derive_military_pay_evidence.py --dry-run  # Schedule 8 of the pay-adjustment order (the uniformed services' MONTHLY basic pay) joined to the statute fixing a post's grade; the annual figure is 12 × the printed one; writes nothing
 python scripts/derive_us_code_stated_pay_evidence.py --dry-run   # an office's salary a Code section states in dollars (3 U.S.C. 102, the President); writes nothing
 python scripts/report_unpriced_positions.py --dry-run        # every position with no pay claim, and the prompt pack that covers all of them
 python scripts/report_cost_coverage.py --dry-run             # every node in exactly one cost class, and the route that would move each; writes docs/COST_COVERAGE.md
@@ -2050,7 +2051,20 @@ heading pattern all three operative-text readers share admitted one letter
 after a section number and refused "§2000ee."; it admits two now, pinned
 both ways. The gate's salary-table summary line, which subtracted the priced
 count from the ARCHIVE's levels alone, printed "-37 not priced" on the first
-build and now counts a level from either listing.
+build and now counts a level from either listing. **The batch's later
+clusters, the next morning (2026-10-06), took the totals further**: pay
+claims **1,158 → 1,193** — 22 uniformed posts from Schedule 8 of the same
+pay-adjustment order (`military_pay.py`, below); the Department of Defense's
+Chief Financial Officer as the Under Secretary of Defense (Comptroller), the
+IRS Chief Counsel and four Transportation posts (the NHTSA Administrator and
+Deputy, the FMCSA and FHWA Deputies) as reviewed Schedule rows, **91 → 97**
+rows and **230 → 236** priced; the Architect of the Capitol, the Chief of
+the Capitol Police, the GAO's General Counsel and the NNSA Administrator as
+tier-reference rows, **41 → 45** published; the Sentencing Commission's Chair
+at the circuit-judge rate and the two magistrate benches at 92 percent — a
+ceiling 28 U.S.C. 634(a) sets and the compensation table's own Explanatory
+Note resolves — as derived rows, **15 → 18**; unpriced **3,433 → 3,398**.
+`CURATION.md` §19.20 carries every cluster and every decline.
 
 **The level half, from current law instead of a closed archive (since
 2026-09-18).** Every Executive Schedule rate this project published took its
@@ -2371,14 +2385,16 @@ Directors the same day, 1,105 before the USAGM's CEO and the EAC's and FEC's
 chairs and vice chairs that evening, 1,110 before the President's own salary
 from 3 U.S.C. 102 the same night, 1,111 before the twelfth batch's
 current-export rules and its nineteen reviewed and tier-reference rows later
-that night, which took it to 1,158); **3,433
-do not** (3,480 before that night), and `scripts/report_unpriced_positions.py`
+that night, which took it to 1,158, and 1,158 before the batch's later
+clusters the next morning, which took it to 1,193); **3,398
+do not** (3,480 before that night, 3,433 before the morning), and `scripts/report_unpriced_positions.py`
 says why for every one of them:
 
-- **2,663** — no pay document this project has read names the title at all.
+- **2,630** — no pay document this project has read names the title at all.
   Not a coverage gap somebody has not got to. (2,710 before the
-  current-export rules and the twelfth batch's rows of 2026-10-05.)
-- **752** — the node states a multiplicity (`Physician (×multiple)`) and no
+  current-export rules and the twelfth batch's rows of 2026-10-05; 2,663
+  before its later clusters of 2026-10-06.)
+- **750** — the node states a multiplicity (`Physician (×multiple)`) and no
   claim that holds for every holder reaches it. Since the per-field rule
   below, a tier rate, a parity rate, a band or a uniform roster line IS
   published on such a node (`Judge (×18)` is priced now); what stays refused
@@ -2386,8 +2402,8 @@ says why for every one of them:
   SYSTEM governs the title is a fact worth having.
 - **18** — OPM lists the position and the row prints no rate.
 
-The concentration is the useful part: **432** of the 3,433 sit under `VA
-Medical Centers`, 360 of them among the 2,663 (the service chiefs
+The concentration is the useful part: **432** of the 3,398 sit under `VA
+Medical Centers`, 360 of them among the 2,630 (the service chiefs
 `va_title38_pay.py` deliberately refuses, since choosing a Title 38 table per
 node would be this module deciding which VA service chiefs are doctors), 61
 under the White House Office (83 before the multi-post rule), 56 under
@@ -2399,7 +2415,8 @@ per unpriced position with its id and its reason;
 `docs/PAY_SOURCE_RESEARCH_PROMPT_3.md` is a research prompt pack generated
 from the same list in the same run — a lead prompt asking which pay systems
 exist and where each is published, then **33 enumeration shards naming every
-one of the 3,433 titles** (39 and 4,003 until 2026-09-30, 38 and 3,953 until
+one of the 3,398 titles** (33 and 3,433 until the morning of 2026-10-06,
+39 and 4,003 until 2026-09-30, 38 and 3,953 until
 that evening's Members decision, 34 and 3,492 until 2026-10-05, 34 and 3,489
 until that day's special trial judges, 34 and 3,486 until its six govinfo
 sections, 34 and 3,481 until the President's salary, 34 and 3,480 until the
@@ -2720,6 +2737,91 @@ Schedule level II, which is a ceiling and not a rate, so no module reads them
 and nothing is published from them. The module's shape, should a DoD-published
 table ever answer, is `derived_pay.py`'s: Title 10 gives the post its grade,
 the table prices the grade, neither states the figure, and the panel says so.
+
+**The uniformed services, priced from a table the repository already held
+(`military_pay.py`, since 2026-10-06).** `tests/fixtures/dfas/README.md` had
+recorded on 2026-09-27 that every host publishing the military basic-pay
+table — dfas.mil, militarypay.defense.gov, comptroller.defense.gov, the
+service hosts, the Coast Guard's — answers `robots.txt` and the page itself
+with an Akamai 403, and that "if a DoD-published table becomes reachable" the
+module's shape would be `derived_pay.py`'s. The twelfth batch's Defense
+cluster re-measured the same refusal on ten hosts and then found the table in
+a file committed four days before that README was written: the note to 5
+U.S.C. 5332 (`pay_schedules_5_usc_5332.html`), from which
+`us_code_pay_schedules.py` prices Schedules 5, 6 and 7, reproduces Executive
+Order 14368 in full, and its **Schedule 8 — Pay of the Uniformed Services
+(Effective January 1, 2026)** is the monthly basic-pay table itself. The
+parser's `if number not in ("5", "6", "7")` had been stepping over it on
+every run under a digest the gate already recomputed. `military_pay.py` reads
+the eighth schedule from the same bytes; nothing was fetched from any DoD
+host and the README now says so.
+
+**Two routes, both from Schedule 8, and a tenth pay field.**
+`positionMilitaryPay` is office-rate class — a grade a statute fixes is the
+office's — and its figure is **twelve times a printed monthly rate**, which no
+document states: Schedule 8 prints basic pay by the month ("part i-monthly
+basic pay"), so every record carries the monthly figure as printed, an
+`arithmetic` block (`operation: monthly_times_12`, the factor named on the
+record) and `documentsStatingTheFigure: 0`, and `financial_evidence` accepts
+it under a third computed operation beside `plus_percent` and `percent_of`,
+granted to this source type (`military_basic_pay_schedule`): the monthly
+figure must carry its mark in the evidence, the annual figure must be printed
+nowhere, and the result must equal base × 12 to the cent. **A grade a statute
+fixes** (`GRADE_PROVISIONS`, seventeen reviewed rows by node id): Title 10
+and Title 14 fix the grade in so many words — "The Chief of Staff, while so
+serving, has the grade of general without vacating his permanent grade"
+(10 U.S.C. 7033(b)), "The Commandant while so serving shall have the grade of
+admiral" (14 U.S.C. 302) — 37 U.S.C. 201(a)(1) assigns "General" and
+"Admiral" to pay grade O-10 (the Space Force rows carry 201(a)(2)'s sentence
+too), and the O-10 row prints $18,999.90 in all eleven populated columns:
+three documents, 90% on the project's scale, $227,998.80 a year. The Chairman
+and Vice Chairman of the Joint Chiefs, the Chief of the National Guard
+Bureau, the chief and vice chief of each of the five services, the Commandant
+and Vice Commandant of the Coast Guard, and the commanders of Special
+Operations Command and Cyber Command (10 U.S.C. 167(c), 167b(c)) — the only
+two of the eleven combatant commanders whose grade a statute fixes. **A post
+the schedule's own footnote names**: the enlisted footnote states one rate
+for seven posts by title, "basic pay for this grade is $11,166.90 per month,
+regardless of cumulative years of service", and five are nodes here by name
+equality — the Sergeant Major of the Army, the Master Chief Petty Officers of
+the Navy and of the Coast Guard (one printed item, "of the Navy or Coast
+Guard", read as both by a rule declared once and quoted whole), the Chief
+Master Sergeant of the Air Force and the Sergeant Major of the Marine Corps —
+one document, 70%, $134,002.80 a year. Twenty-two posts, all `partial`, all
+`proxy`, none of which carried a pay claim of any kind before.
+
+**Three rules, each a measurement.** A row must be **flat** before one figure
+may stand for the grade: the first block (2 or less through Over 18) must
+print nothing for it and every populated cell of the second must print the
+same figure, true of O-10 and O-9 and false of every other grade — which is
+why the senior enlisted advisers are priced from the footnote that names them
+and never from the E-9 row, whose cells run from $8,105.10 to $10,729.20. The
+document **disagrees with itself by $100**: the officer table's footnote 1
+prints the Level II ceiling as "$18,899.90 per month" while the O-10 row
+prints $18,999.90, no rendering of the order reachable from here settles it
+(the Federal Register's plain text answers its "Request Access" page and
+govinfo's prints every schedule as "[GRAPHIC] [TIFF OMITTED]"), so every
+record quotes the footnote verbatim beside the row's figure and reconciles
+nothing. And **a ceiling is not a rate**: the nine combatant commanders whose
+grade a presidential designation under 10 U.S.C. 601(a) carries, not a
+statute, are named by the footnote only as subject to the Level II cap and
+are refused, as §19.7 refused 37 U.S.C. 203(a)(2). Also refused, each on the
+derive step's output: the Joint Chiefs grouping's six copies of the service
+chiefs and the Coast Guard's Commandant (one office, one node priced, the
+`exec-vp` rule), the Space Force's generic "Senior Enlisted Advisor" (the
+footnote prints "Chief Master Sergeant of the Space Force"; a rename
+candidate), and the NGA Director (10 U.S.C. 441(b)(3)'s grade holds only IF an
+officer holds the post). The gate (`military_pay_violations`) re-parses
+Schedule 8 from the committed bytes with its own reader, mirrors the
+seventeen rows by node id and the footnote's title rule, re-finds every grade
+sentence and the §201 row in the operative text, recomputes the twelve months
+and refuses the monthly figure published as the annual one, a row that is not
+flat, a document claiming to state the figure, a block on a JCS copy, a
+`verified` grade, and a statute or schedule URL among the node's own sources;
+`tests/test_military_pay.py` and `tests/test_military_pay_gate.py` corrupt
+each in turn. The panel heads the figure "PAY — MILITARY BASIC PAY, 12 × THE
+MONTHLY RATE" and prints the monthly figure, the multiplication, the grade
+sentence and the $100 beside it.
 
 **Benches priced from the Code's class title (since 2026-09-27, the owner's
 decision).** The Executive Schedule places some offices one at a time
@@ -3950,9 +4052,10 @@ subdivide measured money rather than invent it — which does not make a
 subdivision a measurement. **Since 2026-09-09 the site does not show one by
 default**, by the owner's decision: a node with no measured cost of its own
 shows no figure and says why, and ticking "Also show estimated shares of a
-parent's total" opts back in. The exception is a real salary — **1,158** of the
-4,591 positions carry a pay claim an official source states (1,111 before the
-twelfth batch's current-export rules and its nineteen rows landed late on
+parent's total" opts back in. The exception is a real salary — **1,193** of the
+4,591 positions carry a pay claim an official source states (1,158 before the
+twelfth batch's later clusters landed on the morning of 2026-10-06, 1,111
+before its current-export rules and its nineteen rows landed late on
 2026-10-05), counted on the
 published graph on 2026-10-05 after Schedule 6, the VA's Title 38 bands, the
 Article I parity derivations, the per-field multi-post rule, the Federal
@@ -3960,7 +4063,7 @@ Reserve rows, the reviewed rows of the fourth research batch, the six
 class-title benches, the tier-reference module, the thirteen reviewed rows
 of §19.9's list, the eight candidates of §19.10 and the twenty-two rows that
 closed the eighth batch (§19.12), the bankruptcy judges of 2026-09-30 and
-that day's counted classes and ninth-batch rows, landed: 15 a figure no
+that day's counted classes and ninth-batch rows, landed: 18 a figure no
 document states (`positionDerivedPay`, four chief judges and their four
 benches, the Administrative Office's Director, the Federal Judicial
 Center's Director through a chain of two statutes, two bankruptcy
@@ -3968,19 +4071,32 @@ benches at 28 U.S.C. 153(a)'s 92 percent of the district-judge rate,
 arithmetic the block carries in the open, and since 2026-10-05 the Tax
 Court's special trial judges at 26 U.S.C. 7443A(d)'s 90 percent of a Tax
 Court judge's own parity rate and the AO's and FJC's Deputy Directors at 92
-percent of a Director paid as a district judge — a percentage of a join), 41 a rate a
+percent of a Director paid as a district judge — a percentage of a join, and
+since 2026-10-06 the Sentencing Commission's Chair at the circuit-judge rate
+by 28 U.S.C. 992(c) and the two magistrate benches at 28 U.S.C. 634(a)'s 92
+percent, a ceiling the compensation table's own Explanatory Note states the
+Judicial Conference fixed at), 45 a rate a
 statute sets by REFERENCE to an Executive Schedule level (`positionTierReferencePay`:
 the GAO's two officers, the GPO's two, the IES's Director and three
 Commissioners, the FCA Board's Chairman, the Librarian of Congress, since
 2026-10-05 the USAGM's Chief Executive Officer and the EAC's and FEC's chairs
-and vice chairs from sections read on govinfo, and 26
+and vice chairs from sections read on govinfo, since 2026-10-06 the Architect
+of the Capitol, the Chief of the Capitol Police, the GAO's General Counsel
+and the NNSA Administrator, and 26
 Inspectors General at Level III plus the Act's
-3 percent, arithmetic no document prints — 37 published since the night of
+3 percent, arithmetic no document prints — 37 published on the night of
 2026-10-05, when the current export's office-named-for-the-post rule gave
 the GPO's Director and the Treasury's, Commerce's and Energy's Inspectors
 General a listed level the table prices, which a figure set by reference
-never displaces), 72 a Title 38 tier BAND rather than a rate (`positionTierPay`), 230 from the
-Executive Schedule as 5 U.S.C. §§5312–5316 sets it (91 of them through a
+never displaces, and 45 the next morning), 22 twelve months of the uniformed
+services' MONTHLY basic pay (`positionMilitaryPay`, since 2026-10-06:
+Schedule 8 of the pay-adjustment order joined to the statute that fixes a
+post's grade, or naming the post in its own footnote — the Joint Chiefs'
+Chairman and Vice Chairman, the service chiefs and vice chiefs, the Coast
+Guard's Commandant and Vice Commandant, the Chief of the National Guard
+Bureau, two combatant commanders and five senior enlisted advisers, the
+annual figure arithmetic no document prints), 72 a Title 38 tier BAND rather than a rate (`positionTierPay`), 236 from the
+Executive Schedule as 5 U.S.C. §§5312–5316 sets it (97 of them through a
 reviewed identification a second statute backs — 12 U.S.C. 241–242 for the
 Fed's four, then the FCC's, FTC's, CFTC's, FERC's, NRC's and FMC's chairs
 and benches, the IRS, FAA, DHS, OPM, SSA, FEMA, BLM, CIA, CMS, NIST, SBA,
@@ -3990,7 +4106,10 @@ stamped agency heads from the MSPB to the Export-Import Bank, and since
 2026-09-30 the EEOC's, NMB's and NEA's heads, the EEOC's Vice Chairman,
 Ginnie Mae's President, the Wage and Hour Administrator, the OMB's
 Director, Deputy Director and three office heads, and the PHMSA
-Administrator; nine of the 75 are benches priced from the Code's "Members,
+Administrator, and since 2026-10-06 the Department of Defense's Chief
+Financial Officer as the Under Secretary of Defense (Comptroller), the IRS
+Chief Counsel, the NHTSA Administrator and Deputy Administrator and the
+FMCSA's and FHWA's Deputy Administrators; nine of the 75 are benches priced from the Code's "Members,
 …" class title for each holder, the CPSC's and SEC's among them since
 2026-09-30 — and 40 more as reviewed members of a COUNTED class the Code
 places without naming, "Assistant Attorneys General (11)" and seven more,
@@ -4031,8 +4150,12 @@ Ex-Im Bank's Vice Chair, 1,105 the same evening with the Tax Court's
 special trial judges and the two judicial-support Deputy Directors, 1,110
 with the USAGM's CEO and the EAC's and FEC's chairs and vice chairs from the
 six sections govinfo served, 1,111 with the President's salary from 3
-U.S.C. 102, and 1,158 late the same night with the twelfth batch's
-current-export rules and its nineteen reviewed and tier-reference rows. Shown in
+U.S.C. 102, 1,158 late the same night with the twelfth batch's
+current-export rules and its nineteen reviewed and tier-reference rows, and
+1,193 on the morning of 2026-10-06 with the batch's later clusters — the
+uniformed services, the Defense Comptroller, the legislative-branch officers,
+the Sentencing Commission's Chair, the magistrate benches and the
+Transportation deputies. Shown in
 the cost block under its own heading and never headed COST — and, since the
 same night, as the post's headline figure where it has no cost.
 
@@ -4054,8 +4177,9 @@ benches, 638 with the counted classes and the ninth batch's rows, 1,099
 with the offices Members of Congress hold, 1,102 with the Court of
 International Trade and the Ex-Im Vice Chair, 1,105 with the special
 trial judges and the two Deputy Directors, 1,110 with the five posts the
-govinfo sections priced, 1,111 with the President, and 1,158 with the
-twelfth batch's current-export rules and rows. The estimates
+govinfo sections priced, 1,111 with the President, 1,158 with the
+twelfth batch's current-export rules and rows, and 1,193 with its later
+clusters the next morning. The estimates
 stay in `graph.json` because the cascade's arithmetic and the gate's
 child-sum checks are built on them, so a consumer of the JSON must read
 `cost_status`, not `resolved_total_amount` alone. The gate prints both

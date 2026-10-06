@@ -316,6 +316,21 @@ US_CODE_COUNTED_CLASSES = {
     },
 }
 US_CODE_REVIEWED_IDENTIFICATIONS = {
+    # The twelfth batch's Defense cluster (2026-10-06): the Department's
+    # Chief Financial Officer is the Under Secretary of Defense (Comptroller)
+    # by 10 U.S.C. 135(b). "Chief Financial Officer" names 81 nodes here, so
+    # the row is keyed to the Department of Defense's node alone. The
+    # Department's Chief Information Officer has no row: §5315 prints that
+    # title with a proviso the module's parser refuses on length, and reading
+    # the proviso would be reading law (CURATION.md §19.20).
+    "exec-dept-defense-chief-financial-officer": (
+        "Chief Financial Officer",
+        "Under Secretary of Defense (Comptroller)", "III", "5314",
+        "10 U.S.C. 135", "dod_10_usc_135_govinfo2024.html",
+        "The Under Secretary of Defense (Comptroller) is the agency Chief Financial Officer of the Department of Defense for the purposes of chapter 9 of title 31.",
+        "the same office: 10 U.S.C. 135(b) makes the Under Secretary of Defense (Comptroller) the agency Chief Financial Officer of the Department of Defense for the purposes of chapter 9 of title 31, and 5 U.S.C. 5314 places the Under Secretary of Defense (Comptroller) at Level III; the Schedule's own history agrees -- 5 U.S.C. 5315's Amendments note records a 'Chief Financial Officer, Department of Defense' item inserted at Level IV by Pub. L. 101-576 (1990) and struck by Pub. L. 103-160 (1993), the Act whose entry in 5314's note inserted 'Comptroller of the Department of Defense' at Level III, renamed 'Under Secretary of Defense (Comptroller)' by Pub. L. 103-337 -- so the Department's CFO is the Under Secretary and not a Level IV officer of its own; 'Chief Financial Officer' is a stamped title this graph carries under 81 nodes, and this row is keyed to the Department of Defense's node alone",
+        False,
+    ),
     "exec-ind-misc-national-labor-relations-board-nlrb-independent-director-administrator-chair-national-labor-relations-board": (
         "Director / Administrator / Chair, National Labor Relations Board",
         "Chairman, National Labor Relations Board", "III", "5314",
@@ -519,6 +534,19 @@ US_CODE_REVIEWED_IDENTIFICATIONS = {
         "26 U.S.C. 7803", "irs_26_usc_7803.html",
         "There shall be in the Department of the Treasury a Commissioner of Internal Revenue who shall be appointed by the President, by and with the advice and consent of the Senate.",
         "the same office: 26 U.S.C. 7803 creates the Commissioner of Internal Revenue in the Department of the Treasury, and 5 U.S.C. 5314 places that Commissioner at Level III; the graph files the post under the Internal Revenue Service and names it by the Service's acronym",
+        False,
+    ),
+    # The twelfth batch's judiciary cluster (2026-10-06): the IRS's Chief
+    # Counsel, keyed to the Service's node alone -- "Chief Counsel" is a
+    # stamped title under nine bureaus here, and the Tax Court subtree draws
+    # the same office a second time ("Chief Counsel — IRS (opposing)"), which
+    # this row must never reach.
+    "exec-dept-treasury-irs-chief-counsel": (
+        "Chief Counsel",
+        "Chief Counsel for the Internal Revenue Service, Department of the Treasury", "V", "5316",
+        "26 U.S.C. 7803", "irs_26_usc_7803.html",
+        "There shall be in the Department of the Treasury a Chief Counsel for the Internal Revenue Service who shall be appointed by the President, by and with the consent of the Senate.",
+        "the same office: 26 U.S.C. 7803(b)(1) creates the Chief Counsel for the Internal Revenue Service in the Department of the Treasury, and 5 U.S.C. 5316 places the Chief Counsel for the Internal Revenue Service, Department of the Treasury at Level V; the graph files the post under the Internal Revenue Service under the bare title 'Chief Counsel', a stamped title nine bureaus carry here, so the row is keyed to the Service's node alone",
         False,
     ),
     "exec-dept-dot-faa-administrator-faa": (
@@ -775,6 +803,38 @@ US_CODE_REVIEWED_IDENTIFICATIONS = {
         "49 U.S.C. 104", "fhwa_49_usc_104.html",
         "The head of the Administration is the Administrator who is appointed by the President, by and with the advice and consent of the Senate.",
         "the same office: 49 U.S.C. 104 makes the Administrator the head of the Federal Highway Administration, appointed by the President with the Senate's consent, and 5 U.S.C. 5313 places that Administrator at Level II; the graph names the Administration by its acronym",
+        False,
+    ),
+    "exec-dept-dot-nhtsa-administrator-nhtsa": (
+        "Administrator, NHTSA",
+        "Administrator of the National Highway Traffic Safety Administration", "III", "5314",
+        "49 U.S.C. 105", "nhtsa_49_usc_105_govinfo2024.html",
+        "The head of the Administration is the Administrator who is appointed by the President, by and with the advice and consent of the Senate.",
+        "the same office: 49 U.S.C. 105(b) makes the Administrator the head of the National Highway Traffic Safety Administration, appointed by the President with the Senate's consent, and 5 U.S.C. 5314 places that Administrator at Level III; the graph names the Administration by its acronym",
+        False,
+    ),
+    "exec-dept-dot-nhtsa-deputy-administrator": (
+        "Deputy Administrator",
+        "Deputy Administrator of the National Highway Traffic Safety Administration", "V", "5316",
+        "49 U.S.C. 105", "nhtsa_49_usc_105_govinfo2024.html",
+        "The Administration has a Deputy Administrator who is appointed by the Secretary of Transportation, with the approval of the President.",
+        "the same office: 49 U.S.C. 105(b) gives the National Highway Traffic Safety Administration one Deputy Administrator, appointed by the Secretary with the President's approval, and 5 U.S.C. 5316 places that Deputy Administrator at Level V; the graph names the post bare under the Administration's own node, and a row is keyed by id",
+        False,
+    ),
+    "exec-dept-dot-fmcsa-deputy-administrator": (
+        "Deputy Administrator",
+        "Deputy Administrator of the Federal Motor Carrier Safety Administration", "V", "5316",
+        "49 U.S.C. 113", "fmcsa_49_usc_113_govinfo2024.html",
+        "The Administration shall have a Deputy Administrator appointed by the Secretary, with the approval of the President.",
+        "the same office: 49 U.S.C. 113(d) gives the Federal Motor Carrier Safety Administration one Deputy Administrator, appointed by the Secretary with the President's approval, and 5 U.S.C. 5316 places that Deputy Administrator at Level V; the graph names the post bare under the Administration's own node, and a row is keyed by id",
+        False,
+    ),
+    "exec-dept-dot-fhwa-deputy-administrator": (
+        "Deputy Administrator",
+        "Deputy Federal Highway Administrator", "IV", "5315",
+        "49 U.S.C. 104", "fhwa_49_usc_104.html",
+        "The Administration has a Deputy Federal Highway Administrator who is appointed by the Secretary, with the approval of the President.",
+        "the same office: 49 U.S.C. 104(b)(2) gives the Federal Highway Administration one Deputy Federal Highway Administrator, appointed by the Secretary with the President's approval, and 5 U.S.C. 5315 places that officer at Level IV; the graph names the post bare 'Deputy Administrator' under the Administration's own node, and a row is keyed by id",
         False,
     ),
     "exec-dept-doc-uspto-director-under-secretary-for-ip": (
@@ -1372,8 +1432,10 @@ DERIVED_PAY_PROVISIONS["jud-support-fjc-director-fjc"] = (
 #: 100 to the cent against the mirrored table; the row is keyed by node id and
 #: the percentage mirrored beside it, so a parity row cannot acquire a
 #: percentage and a percentage row cannot drop one. The magistrate judges'
-#: section (28 U.S.C. 634(a)) is committed and deliberately NOT here: it sets a
-#: CEILING ("up to" 92 percent), fixed by the Judicial Conference, not a rate.
+#: section (28 U.S.C. 634(a)) sets a CEILING ("up to" 92 percent), fixed by
+#: the Judicial Conference, and was deliberately not here until 2026-10-06,
+#: when the compensation page's own Explanatory Note was read as the document
+#: stating what the Conference fixed -- see DERIVED_PAY_CEILING_BASIS below.
 DERIVED_PAY_BANKRUPTCY_SENTENCE = (
     "Each bankruptcy judge shall serve on a full-time basis and shall receive as full compensation "
     "for his services, a salary at an annual rate that is equal to 92 percent of the salary of a "
@@ -1414,6 +1476,70 @@ DERIVED_PAY_PROVISIONS["jud-support-fjc-deputy-director"] = (
     "the Deputy Director of the Administrative Office of the United States Courts.",
     ("28 U.S.C. 603", DERIVED_PAY_AO_SENTENCES),
 )
+#: The Chair of the United States Sentencing Commission, since 2026-10-06 (the
+#: twelfth batch's judiciary cluster): 28 U.S.C. 992(c), read from GPO's 2024
+#: edition on www.govinfo.gov, pays the Chair and Vice Chairs at the annual
+#: CIRCUIT-judge rate -- an office row, no percentage, no chain. The
+#: Commission's "Commissioner (×6)" bench has no row: the same subsection pays
+#: the other voting members "at the daily rate", so a figure for the bench
+#: would be false of some of its members (derived_pay.NOT_PRICED).
+DERIVED_PAY_PROVISIONS["jud-support-ussc-chair-ussc"] = (
+    "28 U.S.C. 992(c)",
+    "circuit judges",
+    "The Chair and Vice Chairs of the Commission shall hold full-time positions and shall be compensated "
+    "during their terms of office at the annual rate at which judges of the United States courts of appeals "
+    "are compensated.",
+)
+#: The magistrate judges, since 2026-10-06 (the owner's decision): 28 U.S.C.
+#: 634(a) states a CEILING ("up to an annual rate equal to 92 percent"), and
+#: the Judicial Compensation page -- the document the tier is read from --
+#: prints beneath its table the sentence that says what the Judicial
+#: Conference fixed under it. The statute sentence is mirrored as every other
+#: row's is; the page's sentence is mirrored by node id in
+#: DERIVED_PAY_CEILING_BASIS, must be on the block as `ceilingBasis.quote`,
+#: and is re-read from the committed page's bytes by `derived_pay_violations`.
+#: A row NOT in that mirror may carry no `ceilingBasis` at all.
+DERIVED_PAY_MAGISTRATE_SENTENCE = (
+    "Officers appointed under this chapter shall receive, as full compensation for their services, salaries to "
+    "be fixed by the conference pursuant to section 633, at rates for full-time United States magistrate judges "
+    "up to an annual rate equal to 92 percent of the salary of a judge of the district court of the United "
+    "States, as determined pursuant to section 135"
+)
+DERIVED_PAY_MAGISTRATE_BASIS_SENTENCE = (
+    "By statute, the salary of a bankruptcy or magistrate judge is equal to 92 percent of the salary of a "
+    "district judge."
+)
+for _node_id in ("jud-district-sdny-magistrate-judge-13", "jud-district-structure-magistrate-judge-varies"):
+    DERIVED_PAY_PROVISIONS[_node_id] = ("28 U.S.C. 634(a)", "district judges", DERIVED_PAY_MAGISTRATE_SENTENCE)
+DERIVED_PAY_CEILING_BASIS = {
+    "jud-district-sdny-magistrate-judge-13": DERIVED_PAY_MAGISTRATE_BASIS_SENTENCE,
+    "jud-district-structure-magistrate-judge-varies": DERIVED_PAY_MAGISTRATE_BASIS_SENTENCE,
+}
+#: The committed compensation page, re-read by the gate so a ceiling-basis
+#: sentence is checked against the publisher's bytes and not copied off the
+#: block (tests/test_judicial_pay.py pins the digest the table mirror rests on).
+DERIVED_PAY_TABLE_FIXTURE = PROJECT_ROOT / "tests" / "fixtures" / "uscourts" / "judicial_compensation.html"
+_DERIVED_PAY_TABLE_TEXT = {}
+
+
+def derived_pay_table_text(path=DERIVED_PAY_TABLE_FIXTURE):
+    """The committed Judicial Compensation page's whole readable text, stdlib
+    only: tags stripped, entities unescaped, whitespace folded. Empty when the
+    file is not there, which refuses every ceiling-basis block."""
+    import html as _html
+
+    key = str(path)
+    if key not in _DERIVED_PAY_TABLE_TEXT:
+        try:
+            raw = Path(path).read_text(encoding="utf-8", errors="replace")
+        except OSError:
+            _DERIVED_PAY_TABLE_TEXT[key] = ""
+        else:
+            text = re.sub(r"(?is)<(script|style)\b.*?</\1>", " ", raw)
+            _DERIVED_PAY_TABLE_TEXT[key] = re.sub(r"\s+", " ", _html.unescape(re.sub(r"<[^>]+>", " ", text))).strip()
+    return _DERIVED_PAY_TABLE_TEXT[key]
+
+
 #: node id -> the whole percentage of the tier the statute pays. Every other
 #: derived row is paid AT the tier and must carry no arithmetic block.
 DERIVED_PAY_PERCENT_OF = {
@@ -1422,6 +1548,8 @@ DERIVED_PAY_PERCENT_OF = {
     "jud-specialized-tax-special-trial-judge-multiple": 90,
     "jud-support-aousc-deputy-director": 92,
     "jud-support-fjc-deputy-director": 92,
+    "jud-district-sdny-magistrate-judge-13": 92,
+    "jud-district-structure-magistrate-judge-varies": 92,
 }
 #: The sentence 38 U.S.C. 7253's Amendments note prints as the section's PRIOR
 #: text. It is on the page, it is not the law, and publishing it would put the
@@ -1457,6 +1585,10 @@ PAY_DOCUMENT_URL_KEYS = {
     "positionTierPay": ("url",),
     "positionDerivedPay": (("documents", "*", "url"),),
     "positionTierReferencePay": (("documents", "*", "url"),),
+    # Schedule 8's monthly basic pay times twelve: a grade statute, 37 U.S.C.
+    # 201 and the schedule on the grade route, the schedule alone on the
+    # footnote route (military_pay.py, since 2026-10-06).
+    "positionMilitaryPay": (("documents", "*", "url"),),
 }
 #: How many of a field's documents print the figure itself. Every printed rate
 #: or printed pair of bounds is 1; a derived figure is 0, and that difference
@@ -1471,6 +1603,9 @@ PAY_DOCUMENT_STATES_FIGURE = {
     "positionTierPay": 1,
     "positionDerivedPay": 0,
     "positionTierReferencePay": 0,
+    # The third zero: Schedule 8 prints a MONTHLY rate, and no document prints
+    # the annual figure the block publishes.
+    "positionMilitaryPay": 0,
 }
 
 # The Senate's own year-by-year salary schedule, mirrored the same way and
@@ -3397,7 +3532,12 @@ def tier_pay_violations(node, pay, today, label, parent_name):
 #: holder alike, so a node standing for several posts may carry one -- with a
 #: `holders` block the sweep stamps from the node's own stated multiplicity.
 #: Mirrors pay_tables.OFFICE_RATE_PAY_FIELDS; pinned by tests/test_multi_post_pay.py.
-OFFICE_RATE_PAY_FIELDS = ("positionStatutoryPay", "positionDerivedPay", "positionTierPay", "positionTierReferencePay")
+OFFICE_RATE_PAY_FIELDS = (
+    "positionStatutoryPay", "positionDerivedPay", "positionTierPay", "positionTierReferencePay",
+    # A grade a statute fixes is the office's, and Schedule 8's footnote names
+    # the post itself (military_pay.py, since 2026-10-06).
+    "positionMilitaryPay",
+)
 #: A roster figure may sit on a multi-post node only when the block itself says
 #: the roster lists every holder at one rate (mirrors pay_tables.UNIFORM_ROSTER_PAY_FIELDS).
 UNIFORM_ROSTER_PAY_FIELDS = ("positionReportedPay",)
@@ -3697,6 +3837,32 @@ TIER_REFERENCE_ROWS = {
         "loc_2_usc_136a-2.html", "II",
         "the Librarian of Congress shall be compensated at an annual rate of pay which is equal to the annual rate of basic pay payable for positions at level II of the Executive Schedule under section 5313 of title 5",
     ),
+    # 2026-10-06, the twelfth batch's legislative-branch cluster: three officers
+    # whose own section sets the rate at a level (govinfo, 2024 edition).
+    "leg-support-aoc-architect-of-the-capitol": (
+        "Architect of the Capitol", "Architect of the Capitol", "2 U.S.C. 1802",
+        "aoc_2_usc_1802_govinfo2024.html", "II",
+        "The compensation of the Architect of the Capitol shall be at an annual rate which is equal to the "
+        "annual rate of basic pay for level II of the Executive Schedule under section 5313 of title 5.",
+    ),
+    "leg-support-uscp-chief-of-police": (
+        "Chief of Police", "Chief of the Capitol Police", "2 U.S.C. 1902",
+        "uscp_2_usc_1902_govinfo2024.html", "II",
+        "The annual rate of pay for the Chief of the Capitol Police shall be the amount equal to the annual "
+        "rate of basic pay for level II of the Executive Schedule under section 5313 of title 5.",
+    ),
+    "leg-support-gao-general-counsel": (
+        "General Counsel", "General Counsel of the Government Accountability Office", "31 U.S.C. 731(c)",
+        "gao_31_usc_731_govinfo2024.html", "IV",
+        "The annual rate of basic pay of the General Counsel of the Government Accountability Office is "
+        "equal to the rate for level IV of the Executive Schedule.",
+    ),
+    "exec-dept-doe-nnsa-administrator-nnsa": (
+        "Administrator, NNSA", "Under Secretary for Nuclear Security, who serves as the Administrator for Nuclear Security",
+        "42 U.S.C. 7132(c)(1)", "doe_42_usc_7132_govinfo2024.html", "III",
+        "The Under Secretary shall be compensated at the rate provided for at level III of the Executive "
+        "Schedule under section 5314 of title 5.",
+    ),
 }
 #: Rows priced from 20 U.S.C. 9517(a)'s class sentence ("each Commissioner" of
 #: the National Education Centers) carry 9511(c)(3), the sentence that names
@@ -3715,6 +3881,10 @@ TIER_REFERENCE_IES_COMPOSITION = (
 #: and that the section's operative text must still print. Mirrors each
 #: row's `identificationQuote` in tier_reference_pay.TIER_REFERENCE_PROVISIONS.
 TIER_REFERENCE_IDENTIFICATIONS = {
+    "exec-dept-doe-nnsa-administrator-nnsa": (
+        "The Under Secretary for Nuclear Security shall serve as the Administrator for Nuclear Security "
+        "under section 2402 of title 50."
+    ),
     "exec-ind-misc-americorps-director-administrator-chair-americorps": (
         "The Corporation shall be headed by an individual who shall serve as Chief Executive Officer of the Corporation, and who shall be appointed by the President, by and with the advice and consent of the Senate."
     ),
@@ -4019,6 +4189,760 @@ def tier_reference_pay_violations(node, pay, today, label, tree_parent_name=None
     return out
 
 
+# Military basic pay: Schedule 8 of the annual pay-adjustment order, which the
+# note to 5 U.S.C. 5332 reproduces beside Schedules 5-7, prints the uniformed
+# services' basic pay BY THE MONTH. Two routes, both mirrored here from
+# military_pay.py and pinned equal to it by tests/test_military_pay_gate.py:
+# a post whose GRADE a section of Title 10 or 14 fixes in so many words
+# (joined to 37 U.S.C. 201(a)(1), which assigns "General" and "Admiral" to pay
+# grade O-10, and to the O-10 row, flat at $18,999.90 across every populated
+# column), and a post the schedule's own enlisted footnote NAMES at a stated
+# monthly rate. No document states the annual figure: it is the monthly rate
+# times twelve, arithmetic the block carries in the open, and the gate
+# recomputes it from the figure it re-parses out of the committed bytes with
+# its own reader, importing nothing from the module it checks.
+MILITARY_PAY_FIELD = "positionMilitaryPay"
+MILITARY_PAY_SOURCE = "military_basic_pay_schedule"
+MILITARY_PAY_METHOD_GRADE = "grade_fixed_by_statute_joined_to_37_usc_201_and_schedule_8_monthly_basic_pay"
+MILITARY_PAY_METHOD_NAMED = "post_named_in_schedule_8_footnote_at_a_stated_monthly_rate"
+MILITARY_PAY_KIND_GRADE = "grade_fixed_by_statute"
+MILITARY_PAY_KIND_NAMED = "named_in_footnote"
+MILITARY_PAY_OPERATION = "monthly_times_12"
+MILITARY_PAY_FACTOR = 12
+MILITARY_PAY_GRADE = "O-10"
+MILITARY_ENLISTED_PAY_GRADE = "E-9"
+#: The committed note to 5 U.S.C. 5332 (the same bytes Schedules 5-7 are read
+#: from) and the statute that assigns a grade word to a pay grade.
+MILITARY_SCHEDULE_FIXTURE = US_CODE_BASIS_FIXTURE_DIR / "pay_schedules_5_usc_5332.html"
+MILITARY_MAPPING_FIXTURE = "military_pay_grades_37_usc_201_govinfo2024.html"
+MILITARY_MAPPING_CITATION = "37 U.S.C. 201(a)(1)"
+MILITARY_MAPPING_SECTION = "37 U.S.C. 201"
+MILITARY_SPACE_FORCE_MAPPING_CITATION = "37 U.S.C. 201(a)(2)"
+#: The row of 201(a)(1)'s table as the publisher's operative text prints it:
+#: an en dash and a U+2060 word joiner between the "O" and the "10".
+MILITARY_MAPPING_ROW = "O–⁠10 General Admiral"
+#: 201(a)(2), quoted on the two Space Force rows: their officers take the Air
+#: Force's equivalent grade for the purpose of computing basic pay.
+MILITARY_SPACE_FORCE_SENTENCE = (
+    "For the purpose of computing their basic pay, commissioned officers of the Space Force are assigned "
+    "to the pay grades in the table in paragraph (1) by grade or rank in the Air Force that is equivalent "
+    "to the grade or rank in which such officers are serving in the Space Force."
+)
+MILITARY_SCHEDULE_NUMBER = "8"
+MILITARY_SCHEDULE_TITLE = "Pay of the Uniformed Services"
+MILITARY_SCHEDULE_PART_HEADING = "part i-monthly basic pay"
+MILITARY_SCHEDULE_SECOND_BLOCK_HEAD = ("Over 20", "Over 22", "Over 24", "Over 26", "Over 28", "Over 30",
+                                       "Over 32", "Over 34", "Over 36", "Over 38", "Over 40")
+MILITARY_FOOTNOTE_OPEN = "For noncommissioned officers serving as "
+MILITARY_FOOTNOTE_RATE_RE = re.compile(r"basic pay for this grade is (\$[\d,]+\.\d{2}) per month")
+MILITARY_CAP_FOOTNOTE_OPEN = "Basic pay is limited to the rate of basic pay for level II of the Executive Schedule"
+MILITARY_CAP_RATE_RE = re.compile(r"which is (\$[\d,]+\.\d{2}) per month")
+#: node id -> (node name the row was written against, office, citation,
+#: fixture, the statute's own grade word, the pay grade 201(a)(1) assigns it,
+#: the grade sentence the section's operative text prints, the sentence of the
+#: same section naming the office where the grade sentence says only "The
+#: Chief of Staff" (else None), whether the row is a Space Force post).
+#: Mirrors military_pay.GRADE_PROVISIONS by node id.
+MILITARY_GRADE_ROWS = {
+    "exec-dept-defense-jcs-chairman-of-the-joint-chiefs-of-staff-cjcs": (
+        "Chairman of the Joint Chiefs of Staff (CJCS)", "Chairman of the Joint Chiefs of Staff",
+        "10 U.S.C. 152(c)", "jcs_10_usc_152_govinfo2024.html", "general or admiral", "O-10",
+        "The Chairman, while so serving, holds the grade of general or, in the case of the Navy, admiral, "
+        "and outranks all other officers of the armed forces.",
+        None, False,
+    ),
+    "exec-dept-defense-jcs-vice-chairman-of-the-joint-chiefs-of-staff-vcjcs": (
+        "Vice Chairman of the Joint Chiefs of Staff (VCJCS)", "Vice Chairman of the Joint Chiefs of Staff",
+        "10 U.S.C. 154(f)", "jcs_10_usc_154_govinfo2024.html", "general or admiral", "O-10",
+        "The Vice Chairman, while so serving, holds the grade of general or, in the case of an officer of "
+        "the Navy, admiral and outranks all other officers of the armed forces except the Chairman.",
+        None, False,
+    ),
+    "exec-dept-defense-jcs-national-guard-bureau-chief": (
+        "National Guard Bureau Chief", "Chief of the National Guard Bureau",
+        "10 U.S.C. 10502(e)(1)", "ngb_10_usc_10502_govinfo2024.html", "general", "O-10",
+        "The Chief of the National Guard Bureau shall be appointed to serve in the grade of general.",
+        None, False,
+    ),
+    "exec-dept-defense-army-chief-of-staff-of-the-army-4-star-general": (
+        "Chief of Staff of the Army (4-star General)", "Chief of Staff of the Army",
+        "10 U.S.C. 7033(b)", "army_10_usc_7033_govinfo2024.html", "general", "O-10",
+        "The Chief of Staff, while so serving, has the grade of general without vacating his permanent grade.",
+        "There is a Chief of Staff of the Army", False,
+    ),
+    "exec-dept-defense-army-vice-chief-of-staff-of-the-army": (
+        "Vice Chief of Staff of the Army", "Vice Chief of Staff of the Army",
+        "10 U.S.C. 7034(b)", "army_10_usc_7034_govinfo2024.html", "general", "O-10",
+        "The Vice Chief of Staff of the Army, while so serving, has the grade of general without vacating "
+        "his permanent grade.",
+        None, False,
+    ),
+    "exec-dept-defense-navy-chief-of-naval-operations-4-star-admiral": (
+        "Chief of Naval Operations (4-star Admiral)", "Chief of Naval Operations",
+        "10 U.S.C. 8033(b)", "navy_10_usc_8033_govinfo2024.html", "admiral", "O-10",
+        "The Chief of Naval Operations, while so serving, has the grade of admiral without vacating his "
+        "permanent grade.",
+        None, False,
+    ),
+    "exec-dept-defense-navy-vice-chief-of-naval-operations": (
+        "Vice Chief of Naval Operations", "Vice Chief of Naval Operations",
+        "10 U.S.C. 8035(b)", "navy_10_usc_8035_govinfo2024.html", "admiral", "O-10",
+        "The Vice Chief of Naval Operations, while so serving, has the grade of admiral without vacating "
+        "his permanent grade.",
+        None, False,
+    ),
+    "exec-dept-defense-marines-commandant-of-the-marine-corps-4-star-general": (
+        "Commandant of the Marine Corps (4-star General)", "Commandant of the Marine Corps",
+        "10 U.S.C. 8043(b)", "marines_10_usc_8043_govinfo2024.html", "general", "O-10",
+        "The Commandant of the Marine Corps, while so serving, has the grade of general without vacating "
+        "his permanent grade.",
+        None, False,
+    ),
+    "exec-dept-defense-marines-assistant-commandant-of-the-marine-corps": (
+        "Assistant Commandant of the Marine Corps", "Assistant Commandant of the Marine Corps",
+        "10 U.S.C. 8044(b)", "marines_10_usc_8044_govinfo2024.html", "general", "O-10",
+        "The Assistant Commandant of the Marine Corps, while so serving, has the grade of general without "
+        "vacating his permanent grade.",
+        None, False,
+    ),
+    "exec-dept-defense-af-chief-of-staff-of-the-air-force-4-star-general": (
+        "Chief of Staff of the Air Force (4-star General)", "Chief of Staff of the Air Force",
+        "10 U.S.C. 9033(b)", "af_10_usc_9033_govinfo2024.html", "general", "O-10",
+        "The Chief of Staff, while so serving, has the grade of general without vacating his permanent grade.",
+        "There is a Chief of Staff of the Air Force", False,
+    ),
+    "exec-dept-defense-af-vice-chief-of-staff": (
+        "Vice Chief of Staff", "Vice Chief of Staff of the Air Force",
+        "10 U.S.C. 9034(b)", "af_10_usc_9034_govinfo2024.html", "general", "O-10",
+        "The Vice Chief of Staff of the Air Force, while so serving, has the grade of general without "
+        "vacating his permanent grade.",
+        None, False,
+    ),
+    "exec-dept-defense-sf-chief-of-space-operations-4-star-general": (
+        "Chief of Space Operations (4-star General)", "Chief of Space Operations",
+        "10 U.S.C. 9082(b)", "sf_10_usc_9082_govinfo2024.html", "general", "O-10",
+        "The Chief, while so serving, has the grade of general without vacating the permanent grade of "
+        "the officer.",
+        "There is a Chief of Space Operations", True,
+    ),
+    "exec-dept-defense-sf-vice-chief-of-space-operations": (
+        "Vice Chief of Space Operations", "Vice Chief of Space Operations",
+        "10 U.S.C. 9083(b)", "sf_10_usc_9083_govinfo2024.html", "general", "O-10",
+        "The Vice Chief of Space Operations, while so serving, has the grade of general without vacating "
+        "the permanent grade of the officer.",
+        None, True,
+    ),
+    "exec-dept-dhs-uscg-commandant-of-the-coast-guard-4-star-admiral": (
+        "Commandant of the Coast Guard (4-star Admiral)", "Commandant of the Coast Guard",
+        "14 U.S.C. 302", "uscg_14_usc_302_govinfo2024.html", "admiral", "O-10",
+        "The Commandant while so serving shall have the grade of admiral.",
+        "one Commandant for a period of four years, who may be reappointed for further periods of four years, "
+        "who shall act as Chief of the Coast Guard",
+        False,
+    ),
+    "exec-dept-dhs-uscg-vice-commandant": (
+        "Vice Commandant", "Vice Commandant of the Coast Guard",
+        "14 U.S.C. 304", "uscg_14_usc_304_govinfo2024.html", "admiral", "O-10",
+        "The Vice Commandant shall, while so serving, have the grade of admiral with pay and allowances of that grade.",
+        None, False,
+    ),
+    "exec-dept-defense-cocom-ussocom-commander-ccdr-ussocom": (
+        "Commander (CCDR), USSOCOM", "Commander of the United States Special Operations Command",
+        "10 U.S.C. 167(c)", "socom_10_usc_167_govinfo2024.html", "general or admiral", "O-10",
+        "The commander of the special operations command shall hold the grade of general or, in the case "
+        "of an officer of the Navy, admiral while serving in that position, without vacating his permanent "
+        "grade.",
+        None, False,
+    ),
+    "exec-dept-defense-cocom-uscybercom-commander-ccdr-uscybercom": (
+        "Commander (CCDR), USCYBERCOM", "Commander of the United States Cyber Command",
+        "10 U.S.C. 167b(c)", "cybercom_10_usc_167b_govinfo2024.html", "general or admiral", "O-10",
+        "The Commander of the United States Cyber Command shall hold the grade of general or, in the case "
+        "of an officer of the Navy, admiral while serving in that position, without vacating that "
+        "officer's permanent grade.",
+        None, False,
+    ),
+}
+#: The one printed item of the enlisted footnote that names two offices at
+#: once: "<title> of the Navy or Coast Guard" is read as "<title> of the Navy"
+#: and "<title> of the Coast Guard". Mirrors military_pay._NAVY_OR_COAST_GUARD.
+MILITARY_FOOTNOTE_ITEM_RULE = re.compile(r"^(?P<title>.+) of the Navy or Coast Guard$")
+#: Posts this pipeline deliberately does not price from Schedule 8, each with
+#: the reason military_pay.NOT_PRICED records; a block on any of them is
+#: refused outright. The Space Force's generic "Senior Enlisted Advisor" (the
+#: footnote prints "Chief Master Sergeant of the Space Force"); the NGA
+#: Director (10 U.S.C. 441(b)(3) fixes a grade only IF an officer holds the
+#: post, a fact about a person); the nine combatant commanders whose grade no
+#: statute fixes (10 U.S.C. 164 fixes none; 601(a) names no post; the
+#: schedule's footnote names them only under the Level II CEILING); and the
+#: Joint Chiefs of Staff grouping's second node for each service chief and
+#: the Commandant of the Coast Guard, since one salary on two nodes is the
+#: rule the Vice President's Senate-leadership node set.
+MILITARY_NOT_PRICED_NODE_IDS = frozenset({
+    "exec-dept-defense-sf-senior-enlisted-advisor",
+    "exec-dept-defense-agency-nga-director-national-geospatial-intelligence-agency-nga",
+    "exec-dept-defense-cocom-usafricom-commander-ccdr-usafricom",
+    "exec-dept-defense-cocom-uscentcom-commander-ccdr-uscentcom",
+    "exec-dept-defense-cocom-useucom-commander-ccdr-useucom",
+    "exec-dept-defense-cocom-usindopacom-commander-ccdr-usindopacom",
+    "exec-dept-defense-cocom-usnorthcom-commander-ccdr-usnorthcom",
+    "exec-dept-defense-cocom-ussouthcom-commander-ccdr-ussouthcom",
+    "exec-dept-defense-cocom-usspacecom-commander-ccdr-usspacecom",
+    "exec-dept-defense-cocom-usstratcom-commander-ccdr-usstratcom",
+    "exec-dept-defense-cocom-ustranscom-commander-ccdr-ustranscom",
+    "exec-dept-defense-jcs-chief-of-staff-of-the-army",
+    "exec-dept-defense-jcs-chief-of-naval-operations",
+    "exec-dept-defense-jcs-commandant-of-the-marine-corps",
+    "exec-dept-defense-jcs-chief-of-staff-of-the-air-force",
+    "exec-dept-defense-jcs-chief-of-space-operations",
+    "exec-dept-defense-jcs-commandant-of-the-coast-guard",
+})
+_MILITARY_GRADE_LABEL_RE = re.compile(r"^([OWE])[–-]⁠?(\d+E?)$")
+_MILITARY_MARK_RE = re.compile(r"^\d$")
+_MILITARY_MONEY_RE = re.compile(r"^(\$?)([0-9]{1,3}(?:,[0-9]{3})*\.[0-9]{2})$")
+_MILITARY_EFFECTIVE_RE = re.compile(r"^\(Effective January 1, (\d{4})\)$")
+_MILITARY_SCHEDULE_CACHE = {}
+
+
+def military_footnote_titles(items):
+    """Each printed item of the enlisted footnote as the office or offices it
+    names: {"title", "printedItem"} per office, the Navy-or-Coast-Guard item
+    read as two under MILITARY_FOOTNOTE_ITEM_RULE."""
+    titles = []
+    for item in items:
+        match = MILITARY_FOOTNOTE_ITEM_RULE.match(item)
+        if match:
+            titles.append({"title": "{} of the Navy".format(match.group("title")), "printedItem": item})
+            titles.append({"title": "{} of the Coast Guard".format(match.group("title")), "printedItem": item})
+        else:
+            titles.append({"title": item, "printedItem": item})
+    return titles
+
+
+def _military_grade_key(line):
+    """"O–⁠10" -> "O-10"; "E–9" -> "E-9"; anything else -> None."""
+    match = _MILITARY_GRADE_LABEL_RE.match(line)
+    return "{}-{}".format(match.group(1), match.group(2)) if match else None
+
+
+def _military_block_rows(lines, start):
+    """The rows of one years-of-service block from the line after its last
+    column header: a grade label, zero or more single-digit footnote marks,
+    then the money cells, until a line that is none of those. Returns
+    ({grade: row}, index stopped at); a grade printed twice in one block (the
+    enlisted table's E-1) is keyed with its marks the second time."""
+    rows = {}
+    cursor = start
+    while cursor < len(lines):
+        grade = _military_grade_key(lines[cursor])
+        if grade is None:
+            break
+        printed_label = lines[cursor]
+        cursor += 1
+        marks = []
+        while cursor < len(lines) and _MILITARY_MARK_RE.match(lines[cursor]) and _military_grade_key(lines[cursor]) is None:
+            marks.append(lines[cursor])
+            cursor += 1
+        figures = []
+        while cursor < len(lines):
+            money = _MILITARY_MONEY_RE.match(lines[cursor])
+            if money is None:
+                break
+            figures.append({"printed": lines[cursor], "amountRaw": money.group(2), "marked": money.group(1) == "$"})
+            cursor += 1
+        key = grade if grade not in rows else "{}/{}".format(grade, "+".join(marks) or "unmarked")
+        if key in rows:
+            return None, cursor
+        raws = {figure["amountRaw"] for figure in figures}
+        rows[key] = {
+            "grade": grade,
+            "label": printed_label,
+            "marks": marks,
+            "figures": figures,
+            "populated": len(figures),
+            "flat": len(figures) > 0 and len(raws) == 1,
+            "amountRaw": figures[0]["amountRaw"] if len(figures) > 0 and len(raws) == 1 else None,
+            "rowText": " ".join([printed_label] + marks + [figure["printed"] for figure in figures]),
+        }
+    return rows, cursor
+
+
+def military_schedule_8(path=MILITARY_SCHEDULE_FIXTURE):
+    """Schedule 8 of the committed note to 5 U.S.C. 5332, read with this
+    file's own reader and memoised: the digest recomputed from the bytes and
+    compared with the .meta.json, the schedule's heading, title, effective
+    line and part heading located, the officer table's Over 20 block parsed
+    for its O-10 row (and the first block checked to print nothing for it),
+    the enlisted footnote naming the senior enlisted advisers with its monthly
+    figure and its printed items, and the officer table's Level II ceiling
+    footnote with its own figure. Returns {"error": ...} rather than guessing
+    at a reshaped page.
+    """
+    import html as _html
+    import hashlib as _hashlib
+
+    key = str(path)
+    if key in _MILITARY_SCHEDULE_CACHE:
+        return _MILITARY_SCHEDULE_CACHE[key]
+
+    def fail(reason):
+        result = {"error": reason}
+        _MILITARY_SCHEDULE_CACHE[key] = result
+        return result
+
+    fixture = Path(path)
+    meta_path = fixture.with_name(fixture.name + ".meta.json")
+    try:
+        raw = fixture.read_bytes()
+        meta = json.loads(meta_path.read_text(encoding="utf-8"))
+    except (OSError, ValueError) as error:
+        return fail("the committed note or its .meta.json cannot be read ({})".format(error))
+    digest = _hashlib.sha256(raw).hexdigest()
+    recorded = str(meta.get("sha256") or "").lower()
+    text = re.sub(r"(?is)<(script|style)\b.*?</\1>", " ", raw.decode("utf-8", errors="replace"))
+    text = _html.unescape(re.sub(r"<[^>]+>", "\n", text))
+    lines = [line.strip() for line in text.split("\n") if line.strip()]
+
+    heads = [i for i, line in enumerate(lines)
+             if line == "Schedule" and i + 4 < len(lines) and lines[i + 1] == MILITARY_SCHEDULE_NUMBER]
+    if len(heads) != 1:
+        return fail("the note prints the Schedule 8 heading {} times, not once".format(len(heads)))
+    start = heads[0]
+    if lines[start + 2] != MILITARY_SCHEDULE_TITLE:
+        return fail("Schedule 8 is titled {!r}".format(lines[start + 2]))
+    effective_match = _MILITARY_EFFECTIVE_RE.match(lines[start + 3])
+    if effective_match is None:
+        return fail("Schedule 8 is not followed by its effective line but by {!r}".format(lines[start + 3]))
+    if lines[start + 4] != MILITARY_SCHEDULE_PART_HEADING:
+        return fail("Schedule 8's first part is headed {!r}".format(lines[start + 4]))
+    ends = [i for i in range(start + 4, len(lines) - 1) if lines[i] == "Schedule" and lines[i + 1] == "9"]
+    stop = ends[0] if ends else len(lines)
+
+    def find(label_text, begin):
+        for index in range(begin, stop):
+            if lines[index] == label_text:
+                return index
+        return None
+
+    def both_blocks(section_heading):
+        section = find(section_heading, start)
+        if section is None:
+            return None, None, None, "Schedule 8 prints no {!r} table".format(section_heading)
+        over_18 = find("Over 18", section)
+        over_20 = find("Over 20", section)
+        if over_18 is None or over_20 is None or over_20 < over_18:
+            return None, None, None, "{}'s year columns are not where this reader expects them".format(section_heading)
+        first_rows, _ = _military_block_rows(lines, over_18 + 1)
+        head = tuple(lines[over_20: over_20 + len(MILITARY_SCHEDULE_SECOND_BLOCK_HEAD)])
+        if head != MILITARY_SCHEDULE_SECOND_BLOCK_HEAD:
+            return None, None, None, "{}'s second block is headed {!r}".format(section_heading, head)
+        second_rows, second_end = _military_block_rows(lines, over_20 + len(MILITARY_SCHEDULE_SECOND_BLOCK_HEAD))
+        if first_rows is None or second_rows is None:
+            return None, None, None, "{} prints a pay grade three times in one block".format(section_heading)
+        return first_rows, second_rows, second_end, None
+
+    officer_first, officer_second, officer_end, error = both_blocks("Commissioned Officers")
+    if error:
+        return fail(error)
+    o10 = officer_second.get(MILITARY_PAY_GRADE)
+    o10_first = officer_first.get(MILITARY_PAY_GRADE)
+    if o10 is None:
+        return fail("Schedule 8 prints no O-10 row in the Over 20 through Over 40 block")
+    o10_flat = bool(o10["flat"] and o10_first is not None and o10_first["populated"] == 0
+                    and o10["populated"] == len(MILITARY_SCHEDULE_SECOND_BLOCK_HEAD))
+    cap_text = next((lines[i] for i in range(officer_end, stop) if lines[i].startswith(MILITARY_CAP_FOOTNOTE_OPEN)), None)
+    if cap_text is None:
+        return fail("Schedule 8's officer table carries no Level II ceiling footnote")
+    cap_rate = MILITARY_CAP_RATE_RE.search(cap_text)
+    if cap_rate is None:
+        return fail("the Level II ceiling footnote prints no monthly figure")
+
+    enlisted_first, enlisted_second, enlisted_end, error = both_blocks("Enlisted Members")
+    if error:
+        return fail(error)
+    footnote_text = next((lines[i] for i in range(enlisted_end, stop) if lines[i].startswith(MILITARY_FOOTNOTE_OPEN)), None)
+    if footnote_text is None:
+        return fail("Schedule 8's enlisted table carries no footnote naming the senior enlisted advisers")
+    footnote_rate = MILITARY_FOOTNOTE_RATE_RE.search(footnote_text)
+    if footnote_rate is None:
+        return fail("the senior enlisted advisers' footnote prints no monthly figure")
+    body = footnote_text[len(MILITARY_FOOTNOTE_OPEN):]
+    cut = body.find(", basic pay for this grade is")
+    if cut < 0:
+        return fail("the enlisted footnote no longer states a rate 'for this grade'")
+    items = []
+    for item in body[:cut].split(","):
+        item = item.strip()
+        if item.startswith("or "):
+            item = item[3:].strip()
+        if item:
+            items.append(item)
+    e9 = enlisted_second.get(MILITARY_ENLISTED_PAY_GRADE)
+    result = {
+        "sha256": digest,
+        "recordedSha256": recorded,
+        "digestMatches": bool(recorded) and digest == recorded,
+        "url": str(meta.get("url") or ""),
+        "fetchedAt": str(meta.get("fetched_at") or ""),
+        "effective": lines[start + 3],
+        "year": effective_match.group(1),
+        "title": MILITARY_SCHEDULE_TITLE,
+        "partHeading": MILITARY_SCHEDULE_PART_HEADING,
+        "o10": {
+            "label": o10["label"],
+            "marks": list(o10["marks"]),
+            "figures": [figure["printed"] for figure in o10["figures"]],
+            "allMarked": all(figure["marked"] for figure in o10["figures"]),
+            "populated": o10["populated"],
+            "firstBlockPopulated": o10_first["populated"] if o10_first else None,
+            "flat": o10_flat,
+            "amountRaw": o10["amountRaw"] if o10_flat else None,
+            "rowText": o10["rowText"],
+        },
+        "footnote": {
+            "text": footnote_text,
+            "amountAsPrinted": footnote_rate.group(1),
+            "amountRaw": footnote_rate.group(1)[1:],
+            "items": items,
+            "titles": military_footnote_titles(items),
+            # The footnote is the enlisted table's footnote 1, the mark the
+            # E-9 row carries; "E-9" is published only when that still holds.
+            "grade": MILITARY_ENLISTED_PAY_GRADE if e9 is not None and e9["marks"] == ["1"] else None,
+        },
+        "cap": {
+            "text": cap_text,
+            "amountAsPrinted": cap_rate.group(1),
+            "amountRaw": cap_rate.group(1)[1:],
+        },
+    }
+    _MILITARY_SCHEDULE_CACHE[key] = result
+    return result
+
+
+def _military_section_of(citation):
+    """"10 U.S.C. 167b(c)" -> "10 U.S.C. 167b", the form us_code_url_names_section takes."""
+    match = re.match(r"^(\d+ U\.S\.C\. \d+[A-Za-z]?(?:-\d+)?)", str(citation or ""))
+    return match.group(1) if match else ""
+
+
+def military_pay_violations(node, pay, today, label, tree_parent_name=None):
+    """Everything that must be true of a military basic-pay figure.
+
+    Two routes, one field. A GRADE row is mirrored by node id: the node must
+    still carry the name the row was written against, the block must name the
+    row's office, citation, grade word and pay grade, quote the grade sentence
+    (and the office sentence where the row has one) the section's OPERATIVE
+    text prints now, quote 37 U.S.C. 201(a)(1)'s own O-10 row as the operative
+    text prints it (and 201(a)(2)'s Space Force sentence on a Space Force
+    row), and carry the monthly figure this gate re-parses from the O-10 row
+    of the committed note. A FOOTNOTE post must be named, by canonical
+    equality, by a title the re-parsed footnote lists, quote the footnote
+    verbatim and carry its figure. Both routes publish twelve times the
+    monthly figure, with the arithmetic in the open and recomputed here, and
+    neither may claim that any document states the annual figure.
+    """
+    out = []
+    say = lambda text: out.append("{} {}".format(label(node), text))
+    if not isinstance(pay, dict):
+        say("{} {!r} is not a record".format(MILITARY_PAY_FIELD, pay))
+        return out
+    type_text = str(node.get("type") or "").casefold()
+    if not any(word in type_text for word in ("position", "role", "office holder")):
+        say("carries a military basic-pay figure but is a {!r}, not a post".format(node.get("type")))
+    out.extend(holders_violations(node, pay, MILITARY_PAY_FIELD, label))
+    if str(pay.get("source") or "") != MILITARY_PAY_SOURCE:
+        say("prices from source {!r}, which this pipeline does not produce for military basic pay".format(pay.get("source")))
+        return out
+    node_id = str(node.get("id") or "")
+    if node_id in MILITARY_NOT_PRICED_NODE_IDS:
+        say("is a post this pipeline deliberately does not price from Schedule 8 (military_pay.NOT_PRICED), and carries a figure from it")
+        return out
+
+    schedule = military_schedule_8()
+    if schedule.get("error"):
+        say("rests on Schedule 8, which this gate cannot read from the committed note: {}".format(schedule["error"]))
+        return out
+    if not schedule["digestMatches"]:
+        say("rests on a committed note whose bytes do not match the digest its fetch recorded")
+    identification = pay.get("identification") if isinstance(pay.get("identification"), dict) else {}
+    kind = str(identification.get("kind") or "")
+    monthly = pay.get("monthly") if isinstance(pay.get("monthly"), dict) else {}
+    arithmetic = pay.get("arithmetic") if isinstance(pay.get("arithmetic"), dict) else None
+    monthly_raw = str(monthly.get("amountRaw") or "")
+    documents = pay.get("documents")
+    mapping_operative = uscode_operative_text(US_CODE_BASIS_FIXTURE_DIR / MILITARY_MAPPING_FIXTURE)
+    section_citation = None
+
+    if kind == MILITARY_PAY_KIND_GRADE:
+        expected_method = MILITARY_PAY_METHOD_GRADE
+        expected_documents = 3
+        row = MILITARY_GRADE_ROWS.get(node_id)
+        if row is None:
+            say("carries a grade a statute fixes but is not one of the reviewed grade rows this gate mirrors")
+        else:
+            node_name, office, citation, fixture, grade_word, pay_grade, quote, office_quote, space_force = row
+            section_citation = citation
+            if canonical_key(node.get("name")) != canonical_key(node_name):
+                say("is now called {!r}, not {!r}, the name its grade row was written against".format(node.get("name"), node_name))
+            if str(identification.get("nodeName") or "") != node_name:
+                say("does not identify itself as the grade row for {!r}".format(node_name))
+            if str(pay.get("office") or "") != office or str(identification.get("office") or "") != office:
+                say("names office {!r}; the row is {!r}".format(pay.get("office"), office))
+            if str(pay.get("statute") or "") != citation:
+                say("cites {!r}; this row's statute is {!r}".format(pay.get("statute"), citation))
+            if str(pay.get("grade") or "") != grade_word or str(identification.get("grade") or "") != grade_word:
+                say("states grade {!r}; {} says {!r}".format(pay.get("grade"), citation, grade_word))
+            if pay_grade != MILITARY_PAY_GRADE or str(pay.get("payGrade") or "") != pay_grade \
+                    or str(identification.get("payGrade") or "") != pay_grade:
+                say("prices pay grade {!r}; the grade {} fixes is 37 U.S.C. 201(a)(1)'s {}".format(
+                    pay.get("payGrade"), citation, MILITARY_PAY_GRADE))
+            if str(pay.get("statuteQuote") or "") != quote or str(identification.get("statuteQuote") or "") != quote:
+                say("quotes a grade sentence that is not the one {} prints for this post".format(citation))
+            operative = uscode_operative_text(US_CODE_BASIS_FIXTURE_DIR / fixture)
+            if not operative:
+                say("cites {!r}, whose operative text this gate cannot separate from its notes".format(fixture))
+            else:
+                if quote not in operative:
+                    say("rests on a grade sentence {} does not print in its operative text".format(citation))
+                if office_quote and office_quote not in operative:
+                    say("rests on an office sentence {} does not print in its operative text".format(citation))
+            if office_quote:
+                if str(identification.get("officeQuote") or "") != office_quote:
+                    say("does not quote the sentence of {} that names the office the grade sentence calls only by its post".format(citation))
+            elif identification.get("officeQuote"):
+                say("quotes an office sentence on a row that has none")
+            if str(identification.get("mappingCitation") or "") != MILITARY_MAPPING_CITATION \
+                    or str(identification.get("mappingQuote") or "") != MILITARY_MAPPING_ROW:
+                say("does not quote {}'s own row assigning the grade to pay grade {}".format(MILITARY_MAPPING_CITATION, MILITARY_PAY_GRADE))
+            if space_force:
+                if str(identification.get("spaceForceMapping") or "") != MILITARY_SPACE_FORCE_SENTENCE:
+                    say("is a Space Force post and does not quote {}'s sentence assigning its officers the Air Force's equivalent grade".format(
+                        MILITARY_SPACE_FORCE_MAPPING_CITATION))
+                if MILITARY_SPACE_FORCE_SENTENCE not in mapping_operative:
+                    say("rests on a Space Force sentence 37 U.S.C. 201 does not print in its operative text")
+            elif identification.get("spaceForceMapping"):
+                say("quotes the Space Force sentence on a post that is not one")
+            expected_digest = fixture_digest(US_CODE_BASIS_FIXTURE_DIR / fixture)
+            grade_documents = [d for d in (documents or []) if isinstance(d, dict) and str(d.get("citation") or "") == citation]
+            if len(grade_documents) != 1:
+                say("names {} documents citing {}, not one".format(len(grade_documents), citation))
+            elif expected_digest and str(grade_documents[0].get("documentSha256") or "").lower() != expected_digest:
+                say("cites {} under a digest that is not the committed section's".format(citation))
+        if not mapping_operative:
+            say("rests on 37 U.S.C. 201, whose operative text this gate cannot separate from its notes")
+        elif MILITARY_MAPPING_ROW not in mapping_operative:
+            say("rests on an O-10 row 37 U.S.C. 201(a)(1) does not print in its operative text")
+        mapping_digest = fixture_digest(US_CODE_BASIS_FIXTURE_DIR / MILITARY_MAPPING_FIXTURE)
+        mapping_documents = [d for d in (documents or []) if isinstance(d, dict)
+                             and str(d.get("citation") or "") in (MILITARY_MAPPING_CITATION, MILITARY_SPACE_FORCE_MAPPING_CITATION)]
+        if len(mapping_documents) != 1:
+            say("names {} documents citing 37 U.S.C. 201, not one".format(len(mapping_documents)))
+        elif mapping_digest and str(mapping_documents[0].get("documentSha256") or "").lower() != mapping_digest:
+            say("cites 37 U.S.C. 201 under a digest that is not the committed section's")
+        o10 = schedule["o10"]
+        if not o10["flat"]:
+            say("rests on Schedule 8's O-10 row, which this gate does not read as one figure in every populated column with nothing in the first block")
+        elif monthly_raw != o10["amountRaw"]:
+            say("states a monthly figure of {!r}; Schedule 8's O-10 row prints {!r}".format(monthly_raw, o10["amountRaw"]))
+        if str(pay.get("payGradeAsPrinted") or "") != o10["label"]:
+            say("prints the pay grade as {!r}; the schedule prints {!r}".format(pay.get("payGradeAsPrinted"), o10["label"]))
+        schedule_row = pay.get("scheduleRow") if isinstance(pay.get("scheduleRow"), dict) else {}
+        if str(schedule_row.get("rowText") or "") != o10["rowText"]:
+            say("quotes an O-10 row that is not the one Schedule 8 prints")
+        if pay.get("footnote") is not None:
+            say("carries the enlisted footnote on a grade row")
+    elif kind == MILITARY_PAY_KIND_NAMED:
+        expected_method = MILITARY_PAY_METHOD_NAMED
+        expected_documents = 1
+        footnote = schedule["footnote"]
+        node_key = canonical_key(node.get("name"))
+        matches = [entry for entry in footnote["titles"] if canonical_key(entry["title"]) == node_key]
+        if len(matches) != 1:
+            say("is named {!r}, which Schedule 8's enlisted footnote does not list as a title ({} match(es))".format(node.get("name"), len(matches)))
+        else:
+            entry = matches[0]
+            if str(identification.get("title") or "") != entry["title"] or str(pay.get("office") or "") != entry["title"]:
+                say("names office {!r}; the footnote's title for this post is {!r}".format(pay.get("office"), entry["title"]))
+            if str(identification.get("printedItem") or "") != entry["printedItem"]:
+                say("quotes printed item {!r}; the footnote names this post in {!r}".format(identification.get("printedItem"), entry["printedItem"]))
+            if identification.get("readsTwoOffices") is not (entry["printedItem"] != entry["title"]):
+                say("misstates whether its printed item names two offices")
+            block = pay.get("footnote") if isinstance(pay.get("footnote"), dict) else {}
+            if str(block.get("printedItem") or "") != entry["printedItem"] or str(block.get("title") or "") != entry["title"]:
+                say("publishes a footnote block naming another item or title than the one that names it")
+        if str(identification.get("printedItem") or "") not in footnote["items"]:
+            say("quotes a printed item the enlisted footnote does not carry")
+        block = pay.get("footnote") if isinstance(pay.get("footnote"), dict) else {}
+        if str(block.get("text") or "") != footnote["text"]:
+            say("quotes an enlisted footnote that is not the one Schedule 8 prints")
+        if str(block.get("monthlyAsPrinted") or "") != footnote["amountAsPrinted"]:
+            say("prints the footnote's figure as {!r}; the footnote prints {!r}".format(block.get("monthlyAsPrinted"), footnote["amountAsPrinted"]))
+        if monthly_raw != footnote["amountRaw"]:
+            say("states a monthly figure of {!r}; the footnote prints {!r}".format(monthly_raw, footnote["amountRaw"]))
+        if footnote["grade"] is None:
+            say("rests on an enlisted footnote this gate cannot tie to the E-9 row's mark")
+        elif str(pay.get("payGrade") or "") != footnote["grade"] or str(identification.get("grade") or "") != footnote["grade"]:
+            say("files the footnote's rate under pay grade {!r}; the footnote is the {} row's".format(pay.get("payGrade"), footnote["grade"]))
+        if pay.get("scheduleRow") is not None:
+            say("carries an officer row on a footnote post")
+    else:
+        say("identifies its route as {!r}, which is neither a grade a statute fixes nor a post the footnote names".format(kind))
+        return out
+
+    if str(pay.get("method") or "") != expected_method:
+        say("prices a {} record under method {!r}, not {!r}".format(kind, pay.get("method"), expected_method))
+
+    # Both routes: the monthly figure, the arithmetic, the annual figure.
+    try:
+        monthly_amount = float(monthly_raw.replace(",", "")) if monthly_raw else None
+    except ValueError:
+        monthly_amount = None
+    if monthly_amount is None or not _MILITARY_MONEY_RE.match(monthly_raw):
+        say("publishes a monthly figure {!r} that is not a printed money figure".format(monthly_raw))
+    else:
+        if monthly.get("amount") != monthly_amount:
+            say("states monthly amount {!r} beside the printed {!r}".format(monthly.get("amount"), monthly_raw))
+        if str(monthly.get("text") or "") != "${} per month".format(monthly_raw):
+            say("words the monthly figure as {!r}, not as the schedule's '${} per month'".format(monthly.get("text"), monthly_raw))
+    expected_annual = round(monthly_amount * MILITARY_PAY_FACTOR, 2) if monthly_amount is not None else None
+    amount = pay.get("amount")
+    if isinstance(amount, bool) or not isinstance(amount, (int, float)):
+        say("publishes {!r} as a rate of basic pay".format(amount))
+    else:
+        if monthly_amount is not None and abs(float(amount) - monthly_amount) < 0.005:
+            say("publishes the monthly figure {:,.2f} as the annual rate".format(float(amount)))
+        if expected_annual is not None and abs(float(amount) - expected_annual) > 0.005:
+            say("publishes {:,.2f}; ${} a month times twelve is {:,.2f}".format(float(amount), monthly_raw, expected_annual))
+    if arithmetic is None:
+        say("publishes an annual figure without the arithmetic that turned a monthly rate into it")
+    else:
+        if arithmetic.get("operation") != MILITARY_PAY_OPERATION:
+            say("publishes arithmetic that is not 'monthly times 12' ({!r})".format(arithmetic.get("operation")))
+        if arithmetic.get("factor") != MILITARY_PAY_FACTOR:
+            say("multiplies the monthly rate by {!r}, not twelve".format(arithmetic.get("factor")))
+        if str(arithmetic.get("baseAmountRaw") or "") != monthly_raw or (
+                monthly_amount is not None and arithmetic.get("baseAmount") != monthly_amount):
+            say("computes from a base that is not the monthly figure it states")
+        if str(arithmetic.get("baseText") or "") != "${} per month".format(monthly_raw):
+            say("words its base as {!r}, not as the schedule's monthly figure".format(arithmetic.get("baseText")))
+        if expected_annual is not None and (arithmetic.get("result") != expected_annual or arithmetic.get("result") != amount):
+            say("publishes a computed result that is not the monthly figure times twelve, or not the amount published")
+        if expected_annual is not None and str(arithmetic.get("resultText") or "") != "${:,.2f}".format(expected_annual):
+            say("prints the result as {!r}; the computation gives {!r}".format(arithmetic.get("resultText"), "${:,.2f}".format(expected_annual)))
+        if not str(arithmetic.get("note") or "").strip():
+            say("publishes arithmetic without a sentence saying no document prints the result")
+    if expected_annual is not None and str(pay.get("rateText") or "") != "${:,.2f}".format(expected_annual):
+        say("prints the rate as {!r}; the computation gives {!r}".format(pay.get("rateText"), "${:,.2f}".format(expected_annual)))
+    derivation = str(pay.get("derivation") or "")
+    if monthly_raw and ("${} × {} = ".format(monthly_raw, MILITARY_PAY_FACTOR) not in derivation
+                        or (expected_annual is not None and "${:,.2f}".format(expected_annual) not in derivation)):
+        say("publishes a derivation that does not carry the monthly figure, the factor and the result")
+
+    # The schedule as cited, and the Level II ceiling footnote the block
+    # quotes beside the row -- verbatim, and printing its own figure.
+    schedule_block = pay.get("schedule") if isinstance(pay.get("schedule"), dict) else {}
+    if str(schedule_block.get("effective") or "") != schedule["effective"] or str(schedule_block.get("year") or "") != schedule["year"]:
+        say("dates the schedule {!r}, not {!r}".format(schedule_block.get("effective"), schedule["effective"]))
+    if str(pay.get("effective") or "") != "{}-01-01".format(schedule["year"]):
+        say("dates the rate {!r}, not {}-01-01".format(pay.get("effective"), schedule["year"]))
+    if str(pay.get("scheduleUrl") or "") != schedule["url"]:
+        say("cites {!r} as the schedule, not the committed note's own URL".format(pay.get("scheduleUrl")))
+    cap = pay.get("capFootnote") if isinstance(pay.get("capFootnote"), dict) else {}
+    if str(cap.get("text") or "") != schedule["cap"]["text"]:
+        say("quotes a Level II ceiling footnote that is not the one Schedule 8 prints")
+    elif schedule["cap"]["amountAsPrinted"] not in str(cap.get("text") or ""):
+        say("quotes a ceiling footnote that does not print its own figure {}".format(schedule["cap"]["amountAsPrinted"]))
+    if str(cap.get("monthlyAsPrinted") or "") != schedule["cap"]["amountAsPrinted"]:
+        say("states the ceiling as {!r}; the footnote prints {!r}".format(cap.get("monthlyAsPrinted"), schedule["cap"]["amountAsPrinted"]))
+    if not str(cap.get("note") or "").strip():
+        say("quotes the ceiling footnote without the sentence recording that it and the row differ")
+
+    # Documents: the statute (grade route), 37 U.S.C. 201 (grade route) and the
+    # note; exactly as many distinct URLs as the route rests on, none of them
+    # claiming to state the annual figure.
+    if not isinstance(documents, list) or len(documents) != expected_documents:
+        say("names {!r} documents, not {}".format(len(documents) if isinstance(documents, list) else documents, expected_documents))
+        documents = []
+    urls = []
+    for document in documents:
+        if not isinstance(document, dict):
+            say("publishes a document entry that is not a record")
+            continue
+        url = str(document.get("url") or "")
+        if url not in urls:
+            urls.append(url)
+        if not url.startswith("https://"):
+            say("names a supporting document with no https citation ({!r})".format(url))
+        if not re.fullmatch(r"[0-9a-f]{64}", str(document.get("documentSha256") or "")):
+            say("names a supporting document with no digest")
+        if not str(document.get("quote") or "").strip():
+            say("names a supporting document it quotes nothing from")
+        if not str(document.get("role") or "").strip():
+            say("names a supporting document without saying what it supplies")
+        if document.get("statesTheFigure"):
+            say("claims a supporting document states the annual figure; none of them does")
+        if url == schedule["url"] and str(document.get("documentSha256") or "").lower() != schedule["sha256"]:
+            say("cites the note under a digest that is not the committed file's")
+    if documents and len(urls) != expected_documents:
+        say("names {} distinct document URLs, not {}".format(len(urls), expected_documents))
+    if documents and schedule["url"] not in urls:
+        say("publishes a Schedule 8 figure with no citation of the note that prints the schedule")
+    if documents and kind == MILITARY_PAY_KIND_GRADE:
+        if section_citation and not any(us_code_url_names_section(url, _military_section_of(section_citation)) for url in urls):
+            say("publishes a grade a statute fixes with no document addressing {}".format(_military_section_of(section_citation)))
+        if not any(us_code_url_names_section(url, MILITARY_MAPPING_SECTION) for url in urls):
+            say("publishes a grade joined to a pay grade with no document addressing 37 U.S.C. 201")
+        if section_citation and str(pay.get("url") or "") not in urls:
+            say("cites {!r} as its statute, which its own document list does not name".format(pay.get("url")))
+    if documents and kind == MILITARY_PAY_KIND_NAMED and str(pay.get("url") or "") != schedule["url"]:
+        say("cites {!r} as its source, not the note that prints the footnote".format(pay.get("url")))
+    for url in urls:
+        if url != schedule["url"] and not is_us_code_document_url(url):
+            say("names a document on {!r}, a host this pipeline does not read the Code from".format(url))
+
+    verification = pay.get("verification")
+    if not isinstance(verification, dict):
+        say("publishes a military basic-pay figure with no statement of how many documents verify it")
+    else:
+        count = verification.get("documents")
+        if count != expected_documents or not isinstance(count, int) or isinstance(count, bool):
+            say("says {!r} documents verify it and rests on {}".format(count, expected_documents))
+        elif verification.get("percent") != DERIVED_PAY_STRENGTH_BY_COUNT.get(count):
+            say("publishes {!r}% for {} documents; this project's own scale gives {!r}%".format(
+                verification.get("percent"), count, DERIVED_PAY_STRENGTH_BY_COUNT.get(count)))
+        if verification.get("documentsStatingTheFigure") != 0:
+            say("claims {!r} of its documents state the annual figure; none of them does".format(
+                verification.get("documentsStatingTheFigure")))
+        if not str(verification.get("scale") or "").strip():
+            say("publishes a percentage without saying what scale it is on")
+        if not str(verification.get("caution") or "").strip():
+            say("publishes a percentage with no sentence saying what it does not measure")
+
+    if str(pay.get("scopeMatch") or "") != "proxy":
+        say("claims scope {!r}; a grade's or a footnote's monthly rate times twelve is never more than a proxy".format(pay.get("scopeMatch")))
+    if str(pay.get("financialEvidenceStatus") or "") != "partial":
+        say("grades a military basic-pay figure {!r}, not 'partial'".format(pay.get("financialEvidenceStatus")))
+    checked = str(pay.get("checkedAt") or "")
+    if not re.match(r"^\d{4}-\d{2}-\d{2}", checked) or checked[:10] > today:
+        say("claims a military basic-pay figure without a past retrieval date ({!r})".format(checked))
+    if str(node.get("cost_status") or "") in ("official", "root_total", "scaled_official"):
+        say("carries a military basic-pay figure and a measured cost status {!r}".format(node.get("cost_status")))
+    method = str(pay.get("method") or "")
+    if method and str(node.get("verificationMethod") or "") == method:
+        say("verifies its own existence with a pay figure")
+    if method and str(node.get("placementMethod") or "") == method:
+        say("places itself with a pay figure")
+    for source_url in node.get("sourceUrls") or []:
+        if is_us_code_document_url(str(source_url)):
+            say("counts a pay document among the sources that it exists")
+    for other in ("positionStatutoryPay", "positionPayRate", "positionGradePay", "positionSchedulePay",
+                  "positionDerivedPay", "positionTierReferencePay", "positionTierPay",
+                  "positionCurrentPay", "positionReportedPay"):
+        if isinstance(node.get(other), dict):
+            say("carries a military basic-pay figure beside {}; two figures for one post".format(other))
+    return out
+
+
 def derived_pay_violations(node, pay, today, label):
     """Everything that must be true of a figure NO document states.
 
@@ -4145,6 +5069,37 @@ def derived_pay_violations(node, pay, today, label):
         scope = str(pay.get("amountScope") or "")
         if "{} percent".format(percent_of) not in scope:
             say("scopes the figure as {!r}, which does not say it is {} percent of the tier".format(scope, percent_of))
+
+    # A statute that states a CEILING (28 U.S.C. 634(a), "up to" 92 percent)
+    # prices nothing on its own; the row rests on the compensation page's own
+    # sentence saying what the Judicial Conference fixed under it. That
+    # sentence is mirrored by node id, must be on the block with the reading
+    # in words, and is re-found in the committed page's bytes -- never copied
+    # off the block. Every other row must carry no such basis: a ceiling
+    # reading on a provision that states a rate is an unreviewed claim.
+    ceiling_sentence = DERIVED_PAY_CEILING_BASIS.get(node_id)
+    ceiling_basis = pay.get("ceilingBasis")
+    if ceiling_sentence is None:
+        if ceiling_basis:
+            say("carries a ceilingBasis block on a provision that states the rate itself, not a ceiling")
+    elif not isinstance(ceiling_basis, dict):
+        say("rests on a statutory ceiling ({}) without the compensation page's sentence that resolves it".format(citation))
+    else:
+        if str(ceiling_basis.get("quote") or "") != ceiling_sentence:
+            say("quotes a ceiling-basis sentence that is not the one the Judicial Compensation page prints")
+        elif ceiling_sentence not in derived_pay_table_text():
+            say("rests on a sentence the committed Judicial Compensation page does not print")
+        if not str(ceiling_basis.get("reading") or "").strip():
+            say("publishes a ceiling-basis sentence without saying in words how the ceiling is read")
+        if str(ceiling_basis.get("url") or "") != DERIVED_PAY_TABLE_URL:
+            say("cites {!r} for its ceiling-basis sentence, not the compensation page this pipeline reads".format(
+                ceiling_basis.get("url")))
+        if ceiling_basis.get("statuteStatesACeiling") is not True:
+            say("publishes a ceiling-basis block that does not say the statute states a ceiling")
+        if ceiling_sentence not in str(pay.get("derivation") or ""):
+            say("publishes a derivation that does not carry the compensation page's sentence the ceiling is read through")
+        if "up to" not in str(pay.get("statuteQuote") or ""):
+            say("rests on a ceiling-basis sentence while quoting a statute that states no ceiling")
 
     if str(pay.get("year") or "") != JUDICIAL_COMPENSATION_YEAR:
         say("prices year {!r}, not {!r}".format(pay.get("year"), JUDICIAL_COMPENSATION_YEAR))
@@ -4917,7 +5872,7 @@ ALIAS_FORBIDDEN_BLOCKS = (
     "employeesOfficialSource", "cost_weight_dispute", "positionPayRate",
     "positionGradePay", "positionStatutoryPay", "positionSchedulePay",
     "positionReportedPay", "positionCurrentPay", "positionDerivedPay",
-    "positionTierReferencePay",
+    "positionTierReferencePay", "positionMilitaryPay",
 )
 #: Deliberately only this feature's own rule and field. `usaspendingOutlays`
 #: carries a `nameAlias` of its OWN -- `USASPENDING_NAME_ALIASES`, a separate
@@ -5913,6 +6868,7 @@ def main(argv):
     bad_tier_pay = []
     bad_derived_pay = []
     bad_tier_reference_pay = []
+    bad_military_pay = []
     bad_pay_documents = []
     bad_schedule_pay = []
     bad_reported_pay = []
@@ -6156,6 +7112,15 @@ def main(argv):
             _reference_parent = tree_parents.get(str(node.get("id") or ""))
             bad_tier_reference_pay.extend(tier_reference_pay_violations(
                 node, tier_reference_pay, today, label, name_by_id.get(_reference_parent)))
+        # Military basic pay: Schedule 8's monthly rate for the grade a statute
+        # fixes (reviewed rows by node id) or for the post its footnote names,
+        # times twelve, re-parsed from the committed note by this file's own
+        # reader and recomputed here.
+        military_pay = node.get("positionMilitaryPay")
+        if military_pay is not None:
+            _military_parent = tree_parents.get(str(node.get("id") or ""))
+            bad_military_pay.extend(military_pay_violations(
+                node, military_pay, today, label, name_by_id.get(_military_parent)))
         # And, on every pay field alike, how many documents the figure rests
         # on: recomputed from the URLs the block itself carries, so a count
         # is a fact about the block rather than a number somebody wrote down.
@@ -6301,6 +7266,11 @@ def main(argv):
         "a rate set by reference to an Executive Schedule level is the table's rate for the level its statute names, "
         "an Inspector General's only under an establishment 5 U.S.C. 401 lists, with its arithmetic in the open",
         bad_tier_reference_pay,
+    )
+    gate.check(
+        "a military basic-pay figure is Schedule 8's own monthly rate for the grade a statute fixes, or for the post "
+        "its footnote names, times twelve, with the arithmetic in the open and no document stating the annual figure",
+        bad_military_pay,
     )
     gate.check(
         "every pay figure says how many documents it rests on, counted from the URLs it carries",
@@ -7279,6 +8249,17 @@ def main(argv):
           "level ({:,} reviewed rows mirrored by id — the GAO's, the GPO's and the IES's officers, the FCA's Chairman, the Librarian, and the USAGM's, EAC's and FEC's stamped heads; {:,} Inspectors General of an establishment 5 U.S.C. 401(1) lists, each "
           "Level III plus 3 percent, arithmetic no document prints); 0 documents state any figure".format(
               len(reference_paid), len(reference_paid) - len(reference_igs), len(reference_igs)))
+    military_paid = [n for n in nodes if isinstance(n.get("positionMilitaryPay"), dict)]
+    military_by_grade = [n for n in military_paid
+                         if (n["positionMilitaryPay"].get("identification") or {}).get("kind") == MILITARY_PAY_KIND_GRADE]
+    military_by_footnote = [n for n in military_paid
+                            if (n["positionMilitaryPay"].get("identification") or {}).get("kind") == MILITARY_PAY_KIND_NAMED]
+    print("  military basic pay   : {:,} positions priced from Schedule 8 of the pay-adjustment order, the uniformed services' "
+          "MONTHLY basic pay times twelve ({:,} whose grade a section of Title 10 or 14 fixes, joined to 37 U.S.C. 201's pay grade "
+          "and the schedule's flat O-10 row — {:,} reviewed rows mirrored by id; {:,} named in the schedule's own enlisted footnote at "
+          "its stated monthly rate); 0 documents state any annual figure, and {:,} posts are refused by id as deliberately unpriced".format(
+              len(military_paid), len(military_by_grade), len(MILITARY_GRADE_ROWS), len(military_by_footnote),
+              len(MILITARY_NOT_PRICED_NODE_IDS)))
     reported_paid = [n for n in nodes if isinstance(n.get("positionReportedPay"), dict)]
     uniform_paid = [n for n in reported_paid
                     if isinstance(n["positionReportedPay"].get("holders"), dict)

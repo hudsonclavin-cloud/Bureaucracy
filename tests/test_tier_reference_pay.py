@@ -11,7 +11,7 @@ import unittest
 from datetime import date
 from pathlib import Path
 
-from data_pipeline.exporter.build_graph import MINIMAL_GRAPH_FIELDS, index_tree
+from data_pipeline.exporter.build_graph import MINIMAL_GRAPH_FIELDS, canonical_name_key, index_tree
 from data_pipeline.verification import financial_evidence as fe
 from data_pipeline.verification.derived_pay import STATUTE_HOSTS, load_section, statute_publisher
 from data_pipeline.verification.evidence import EVIDENCE_OWNED_FIELDS
@@ -271,7 +271,10 @@ class MirrorTests(unittest.TestCase):
         # since the twelfth batch -- the PCLOB's chairman, the ARC's Federal
         # Cochairman and AmeriCorps' CEO: every stamped title the module
         # prices carries the sentence of its own section naming the office.
-        self.assertEqual(8, len(with_identification))
+        # Nine with the NNSA Administrator (2026-10-06), whose own section
+        # says the Under Secretary for Nuclear Security it pays IS the
+        # Administrator this graph names.
+        self.assertEqual(9, len(with_identification))
         for node_id, sentence in with_identification.items():
             row = TIER_REFERENCE_PROVISIONS[node_id]
             with self.subTest(node=node_id):
@@ -281,8 +284,15 @@ class MirrorTests(unittest.TestCase):
                 self.assertIn(sentence, section["operative"])
                 self.assertIn(sentence, uscode_operative_text(US_CODE_BASIS_FIXTURE_DIR / row["fixture"]))
                 self.assertNotEqual(sentence, row["quote"])
-                # A stamped title, never a name the statute prints.
-                self.assertTrue(row["nodeName"].startswith(("Director / Administrator / Chair", "Deputy Director / Vice Chair")))
+                # A title the statute does not print -- the stamped
+                # "Director / Administrator / Chair" family, or (the NNSA
+                # Administrator) a graph title that is not the office the pay
+                # sentence names -- which is why the row needs the sentence.
+                self.assertNotEqual(canonical_name_key(row["nodeName"]), canonical_name_key(row["office"]))
+                self.assertTrue(
+                    row["nodeName"].startswith(("Director / Administrator / Chair", "Deputy Director / Vice Chair"))
+                    or node_id == "exec-dept-doe-nnsa-administrator-nnsa"
+                )
                 self.assertIn("www.govinfo.gov", section["url"])
 
     def test_a_code_granule_on_govinfo_is_a_statute_and_the_manual_on_govinfo_is_not(self):
@@ -627,9 +637,19 @@ class PublishedGraphTests(unittest.TestCase):
         # $228,000) and the Treasury's, Commerce's and Energy's IGs -- which
         # the export lists at EX IV, EX IV and EX III where 5 U.S.C. 403(e)
         # sets Level III plus 3 percent, a disagreement between two official
-        # documents this project surfaces rather than resolves. 41 published.
-        self.assertEqual(41, len(priced), sorted(priced))
+        # documents this project surfaces rather than resolves. 41 published;
+        # 44 since 2026-10-06, when the twelfth batch's legislative-branch
+        # cluster added the Architect of the Capitol (2 U.S.C. 1802), the
+        # Chief of the Capitol Police (2 U.S.C. 1902) and the GAO's General
+        # Counsel (31 U.S.C. 731(c)) as reviewed rows; 45 with the NNSA
+        # Administrator (42 U.S.C. 7132(c)) from the same batch's
+        # remaining-departments cluster.
+        self.assertEqual(45, len(priced), sorted(priced))
         for added in ("exec-dept-dhs-usss-chief-uniformed-division",
+                      "exec-dept-doe-nnsa-administrator-nnsa",
+                      "leg-support-aoc-architect-of-the-capitol",
+                      "leg-support-uscp-chief-of-police",
+                      "leg-support-gao-general-counsel",
                       "exec-ind-misc-privacy-civil-liberties-oversight-board-pclob-director-administrator-chair-privacy-civil-liberties-oversight-board",
                       "exec-ind-misc-appalachian-regional-commission-arc-director-administrator-chair-appalachian-regional-commission",
                       "exec-ind-misc-americorps-director-administrator-chair-americorps"):

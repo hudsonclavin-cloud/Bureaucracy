@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-10-06T00:25:22Z",
+ "url": "https://www.govinfo.gov/link/uscode/10/9033?link-type=html",
+ "status": 200,
+ "final_url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleD-partI-chap905-sec9033.htm",
+ "content_type": "text/html",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /link/uscode/10/9033",
+ "bytes": 17607,
+ "sha256": "d913952dd4095482b5784aa32c1dc12218575401aac8e52d7014dd14303f5a34",
+ "error": null
+}

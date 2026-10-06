@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-10-06T00:51:22Z",
+ "url": "https://www.govinfo.gov/link/uscode/28/992?link-type=html",
+ "status": 200,
+ "final_url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title28/html/USCODE-2024-title28-partIII-chap58-sec992.htm",
+ "content_type": "text/html",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /link/uscode/28/992",
+ "bytes": 8000,
+ "sha256": "4a17b90af2d5e684bfc3e7859e4b92d55ce664c367147e6e556e0b03d0fa2733",
+ "error": null
+}

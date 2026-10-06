@@ -15,13 +15,19 @@ from __future__ import annotations
 import copy
 import json
 import unittest
+import unittest.mock
 from pathlib import Path
 
 from data_pipeline.exporter.build_graph import MINIMAL_GRAPH_FIELDS, index_tree
 from data_pipeline.verification.evidence import EVIDENCE_OWNED_FIELDS
 from data_pipeline.verification.derived_pay import (
+    MAGISTRATE_BASIS_QUOTE,
+    MAGISTRATE_JUDGE_QUOTE,
     STATUTE_HOSTS,
+    USSC_CHAIR_QUOTE,
+    compensation_page_text,
     joined_quote,
+    page_text,
     quote_parts,
     statute_publisher,
     NOT_PRICED,
@@ -38,7 +44,9 @@ from data_pipeline.verification.derived_pay import (
 from data_pipeline.verification.judicial_pay import DEFAULT_TABLE_HTML, load_judicial_compensation
 from data_pipeline.verification.pay_documents import annotate_pay_documents
 from data_pipeline.verification.pay_tables import withdraw_pay_from_multi_post_nodes
+import scripts.validate_published_graph as gate
 from scripts.validate_published_graph import (
+    DERIVED_PAY_CEILING_BASIS,
     DERIVED_PAY_STATUTE_HOSTS,
     DERIVED_PAY_METHOD,
     DERIVED_PAY_PERCENT_OF,
@@ -46,8 +54,10 @@ from scripts.validate_published_graph import (
     DERIVED_PAY_REPEALED_TEXT,
     DERIVED_PAY_SOURCE,
     DERIVED_PAY_STRENGTH_BY_COUNT,
+    DERIVED_PAY_TABLE_FIXTURE,
     DERIVED_PAY_TABLE_URL,
     JUDICIAL_COMPENSATION_TIERS,
+    derived_pay_table_text,
     derived_pay_violations,
 )
 
@@ -134,7 +144,9 @@ def _base_tree():
             # A district court's bankruptcy bench, paid 92 percent of a
             # district judge's salary by 28 U.S.C. 153(a) -- a percentage OF
             # the tier -- and its magistrate bench, which 28 U.S.C. 634(a)
-            # caps at 92 percent ("up to") and which stays unpriced.
+            # caps at 92 percent ("up to") and which is priced, since
+            # 2026-10-06, through the compensation page's own sentence that
+            # the salary IS 92 percent.
             {
                 "id": "jud-district",
                 "name": "U.S. District Courts (94 Districts)",
@@ -176,11 +188,30 @@ def _base_tree():
                     {"id": "jud-support-fjc-deputy-director", "name": "Deputy Director", "type": "Position"},
                 ],
             },
+            # The Sentencing Commission, since 2026-10-06: its Chair is paid at
+            # the circuit-judge rate by 28 U.S.C. 992(c); its bench of six
+            # bundles Vice Chairs at that annual rate with members paid by the
+            # day, and is never priced.
+            {
+                "id": "jud-support-ussc",
+                "name": "U.S. Sentencing Commission (USSC)",
+                "type": "Agency",
+                "children": [
+                    {"id": "jud-support-ussc-chair-ussc", "name": "Chair, USSC", "type": "Position"},
+                    {"id": "jud-support-ussc-commissioner-6", "name": "Commissioner (×6)", "type": "Position",
+                     "representsPosts": {"text": "×6", "kind": "exact", "count": 6}},
+                    {"id": "jud-support-ussc-staff-director", "name": "Staff Director", "type": "Position"},
+                ],
+            },
         ],
     }
 
 
-def _records():
+def _table_text():
+    return compensation_page_text(DEFAULT_TABLE_HTML)
+
+
+def _records(table_text="default"):
     loaded, compensation = _compensation()
     node_map, _ = index_tree(_base_tree())
     return build_records(
@@ -189,6 +220,7 @@ def _records():
         table_url=loaded["url"],
         table_sha256=loaded["sha256"],
         table_retrieved_at=loaded["fetched_at"],
+        table_text=_table_text() if table_text == "default" else table_text,
     )
 
 
@@ -297,8 +329,22 @@ class MirrorTests(unittest.TestCase):
             "jud-specialized-tax-special-trial-judge-multiple": 90,
             "jud-support-aousc-deputy-director": 92,
             "jud-support-fjc-deputy-director": 92,
+            # Since 2026-10-06: 28 U.S.C. 634(a)'s ceiling, read through the
+            # compensation page's own sentence (see the ceiling test below).
+            "jud-district-sdny-magistrate-judge-13": 92,
+            "jud-district-structure-magistrate-judge-varies": 92,
         }, percent_rows)
         self.assertEqual(percent_rows, DERIVED_PAY_PERCENT_OF)
+        # A ceiling basis sits on exactly the magistrate rows, in both tables.
+        basis_rows = {n: p["basisQuote"] for n, p in PARITY_PROVISIONS.items() if p.get("basisQuote")}
+        self.assertEqual({
+            "jud-district-sdny-magistrate-judge-13": MAGISTRATE_BASIS_QUOTE,
+            "jud-district-structure-magistrate-judge-varies": MAGISTRATE_BASIS_QUOTE,
+        }, basis_rows)
+        self.assertEqual(basis_rows, DERIVED_PAY_CEILING_BASIS)
+        for node_id in basis_rows:
+            self.assertTrue(PARITY_PROVISIONS[node_id].get("basisReading"), node_id)
+            self.assertTrue(PARITY_PROVISIONS[node_id].get("percentOfWhat"), node_id)
         for node_id in ("jud-district-sdny-bankruptcy-judge-12", "jud-district-structure-bankruptcy-judge-varies"):
             self.assertEqual("28 U.S.C. 153(a)", PARITY_PROVISIONS[node_id]["citation"])
             self.assertEqual("district judges", PARITY_PROVISIONS[node_id]["tier"])
@@ -336,22 +382,76 @@ class MirrorTests(unittest.TestCase):
         self.assertNotIn(" ".join(parts), operative)
         self.assertIn(" … ", joined_quote(parts))
 
-    def test_the_magistrate_judges_are_refused_because_the_statute_sets_a_ceiling(self):
+    def test_the_magistrate_ceiling_is_pinned_and_the_compensation_page_resolves_it(self):
         """28 U.S.C. 634(a) pays full-time magistrate judges "up to" 92
-        percent, fixed by the Judicial Conference: a ceiling, not a rate.
-        Checked against the committed section, not asserted."""
-        for node_id in ("jud-district-sdny-magistrate-judge-13", "jud-district-structure-magistrate-judge-varies"):
-            self.assertNotIn(node_id, PARITY_PROVISIONS)
-            self.assertIn("up to", NOT_PRICED[node_id])
-            self.assertIn("ceiling", NOT_PRICED[node_id])
+        percent, fixed by the Judicial Conference: a ceiling, not a rate, and
+        the distinction from 28 U.S.C. 153(a)'s "equal to" is still pinned
+        against both committed sections. What changed on 2026-10-06 is that
+        the Administrative Office's own Judicial Compensation page -- the
+        document the tier is read from -- prints beneath its table that the
+        salary IS 92 percent, which is the document saying what the
+        Conference fixed under the ceiling. The rows carry that sentence as
+        their basis and are no longer in NOT_PRICED."""
         operative = load_section("magistrate_judges_28_usc_634.html")["operative"]
         self.assertIn("up to an annual rate equal to 92 percent of the salary of a judge of the district court", operative)
         self.assertIn("salaries to be fixed by the conference pursuant to section 633", operative)
         self.assertIn("not less than an annual salary of $100, nor more than one-half the maximum salary", operative)
+        self.assertIn(MAGISTRATE_JUDGE_QUOTE, operative)
+        self.assertIn("up to an annual rate", MAGISTRATE_JUDGE_QUOTE)
         # And the bankruptcy section says "equal to", with no ceiling word.
         bankruptcy = load_section("bankruptcy_judges_28_usc_153.html")["operative"]
         self.assertIn("equal to 92 percent of the salary of a judge of the district court", bankruptcy)
         self.assertNotIn("up to an annual rate", bankruptcy)
+        # The page's own sentence, in its bytes -- by the module's reader and
+        # by the gate's independent one -- and in the table's Explanatory
+        # Notes rather than in any row the table parser carries.
+        text = _table_text()
+        self.assertIn(MAGISTRATE_BASIS_QUOTE, text)
+        self.assertEqual(1, text.count(MAGISTRATE_BASIS_QUOTE))
+        self.assertIn(MAGISTRATE_BASIS_QUOTE, derived_pay_table_text())
+        self.assertEqual(text, derived_pay_table_text())
+        self.assertEqual(DEFAULT_TABLE_HTML.resolve(), Path(DERIVED_PAY_TABLE_FIXTURE).resolve())
+        self.assertIn("Explanatory Notes", text[: text.find(MAGISTRATE_BASIS_QUOTE)])
+        loaded = load_judicial_compensation(DEFAULT_TABLE_HTML)
+        self.assertNotIn("92 percent", " ".join(loaded["table"]["footnotes"]))
+        for node_id in ("jud-district-sdny-magistrate-judge-13", "jud-district-structure-magistrate-judge-varies"):
+            self.assertIn(node_id, PARITY_PROVISIONS)
+            self.assertNotIn(node_id, NOT_PRICED)
+            provision = PARITY_PROVISIONS[node_id]
+            self.assertEqual(("28 U.S.C. 634(a)", "district judges", 92), (provision["citation"], provision["tier"], provision["percentOf"]))
+            self.assertEqual(MAGISTRATE_BASIS_QUOTE, provision["basisQuote"])
+            self.assertIn("CEILING", provision["basisReading"])
+            self.assertIn("full-time", provision["basisReading"])
+            self.assertFalse(provision.get("via"))
+
+    def test_the_sentencing_commission_chair_and_the_bench_it_does_not_price(self):
+        """28 U.S.C. 992(c), read from GPO's 2024 edition: the Chair and Vice
+        Chairs at the annual circuit-judge rate -- an office row, no
+        percentage, no chain -- and the other voting members "at the daily
+        rate", which is why the Commissioner (×6) bench is refused with that
+        reason and the Vice Chairs, who have no nodes, reach nothing."""
+        provision = PARITY_PROVISIONS["jud-support-ussc-chair-ussc"]
+        self.assertEqual(("28 U.S.C. 992(c)", "circuit judges"), (provision["citation"], provision["tier"]))
+        self.assertFalse(provision.get("percentOf"))
+        self.assertFalse(provision.get("via"))
+        self.assertFalse(provision.get("basisQuote"))
+        self.assertEqual(USSC_CHAIR_QUOTE, provision["quote"])
+        section = load_section(provision["fixture"])
+        self.assertIn("www.govinfo.gov", section["url"])
+        self.assertIn("USCODE-2024-title28", section["final_url"])
+        self.assertEqual(("U.S. Government Publishing Office", "2024 edition of the United States Code"),
+                         statute_publisher(section["url"], section["final_url"]))
+        self.assertIn(USSC_CHAIR_QUOTE, section["operative"])
+        # Both directions on the bench: the sentence that refuses it is the law.
+        self.assertIn("shall be paid at the daily rate at which judges of the United States courts of appeals "
+                      "are compensated", section["operative"])
+        self.assertNotIn("jud-support-ussc-commissioner-6", PARITY_PROVISIONS)
+        self.assertIn("daily rate", NOT_PRICED["jud-support-ussc-commissioner-6"])
+        self.assertIn("Vice Chairs", NOT_PRICED["jud-support-ussc-commissioner-6"])
+        self.assertEqual(DERIVED_PAY_PROVISIONS["jud-support-ussc-chair-ussc"],
+                         ("28 U.S.C. 992(c)", "circuit judges", USSC_CHAIR_QUOTE))
+        self.assertNotIn("jud-support-ussc-chair-ussc", DERIVED_PAY_PERCENT_OF)
+        self.assertNotIn("jud-support-ussc-chair-ussc", DERIVED_PAY_CEILING_BASIS)
 
     def test_the_deputies_are_priced_and_no_longer_refused(self):
         for node_id in ("jud-support-aousc-deputy-director", "jud-support-fjc-deputy-director"):
@@ -368,11 +468,18 @@ class MirrorTests(unittest.TestCase):
         district = [n for n, p in PARITY_PROVISIONS.items() if p["tier"] == "district judges"]
         # six judges' seats, the two directors since 2026-09-28, the two
         # bankruptcy benches since 2026-09-30 (a percentage of the same tier),
-        # and since 2026-10-05 the special trial judges and the two deputies
-        # (a percentage of a join to the same tier)
-        self.assertEqual(13, len(district))
+        # since 2026-10-05 the special trial judges and the two deputies (a
+        # percentage of a join to the same tier), and since 2026-10-06 the two
+        # magistrate benches (the same percentage, through a ceiling)
+        self.assertEqual(15, len(district))
         at_the_rate = [n for n in district if not PARITY_PROVISIONS[n].get("percentOf")]
         self.assertEqual(8, len(at_the_rate))
+        # And at the circuit tier: the CAAF's chief judge and bench, and since
+        # 2026-10-06 the Sentencing Commission's Chair -- three nodes, two
+        # statutes, one $264,900.
+        circuit = sorted(n for n, p in PARITY_PROVISIONS.items() if p["tier"] == "circuit judges")
+        self.assertEqual(["jud-specialized-caaf-chief-judge-caaf", "jud-specialized-caaf-judge-4", "jud-support-ussc-chair-ussc"],
+                         circuit)
 
     def test_each_bench_takes_its_own_courts_provision(self):
         from data_pipeline.verification.derived_pay import BENCH_NODES
@@ -401,13 +508,39 @@ class MirrorTests(unittest.TestCase):
 
 class BuildTests(unittest.TestCase):
     def test_the_records_and_no_more(self):
-        """Four chief judges, four benches and two directors. The bench nodes
-        are in the tree only for the Tax Court here, so seven reach the
-        fixture; the CIT and the two deputies never."""
+        """Four chief judges, the Tax Court's two benches, the bankruptcy and
+        magistrate benches of one district, two directors, two deputies and
+        the Sentencing Commission's Chair reach the fixture tree; the CIT, the
+        Commission's bench and its Staff Director never."""
         records, report = _records()
-        self.assertEqual(11, len(records))
-        self.assertEqual(11, report["priced"])
-        self.assertNotIn("jud-district-sdny-magistrate-judge-13", records)
+        self.assertEqual(13, len(records))
+        self.assertEqual(13, report["priced"])
+        self.assertIn("jud-district-sdny-magistrate-judge-13", records)
+        self.assertIn("jud-support-ussc-chair-ussc", records)
+        self.assertNotIn("jud-support-ussc-commissioner-6", records)
+        self.assertNotIn("jud-support-ussc-staff-director", records)
+        self.assertEqual(["jud-district-sdny-magistrate-judge-13"], report["ceilingBasisRows"])
+        chair = records["jud-support-ussc-chair-ussc"]
+        self.assertEqual(JUDICIAL_COMPENSATION_TIERS["circuit judges"], chair["amount"])
+        self.assertEqual("$264,900", chair["rateText"])
+        self.assertEqual(2, len(chair["documents"]))
+        self.assertEqual("U.S. Government Publishing Office", chair["documents"][0]["publisher"])
+        self.assertEqual("2024 edition of the United States Code", chair["documents"][0]["edition"])
+        self.assertIsNone(chair["arithmetic"])
+        self.assertIsNone(chair["ceilingBasis"])
+        self.assertEqual("the Chair of the United States Sentencing Commission", chair["subject"])
+        magistrates = records["jud-district-sdny-magistrate-judge-13"]
+        self.assertEqual(round(JUDICIAL_COMPENSATION_TIERS["district judges"] * 0.92, 2), magistrates["amount"])
+        self.assertEqual(magistrates["amount"], records["jud-district-sdny-bankruptcy-judge-12"]["amount"])
+        self.assertEqual(MAGISTRATE_BASIS_QUOTE, magistrates["ceilingBasis"]["quote"])
+        self.assertIs(True, magistrates["ceilingBasis"]["statuteStatesACeiling"])
+        self.assertEqual(DERIVED_PAY_TABLE_URL, magistrates["ceilingBasis"]["url"])
+        self.assertIn("CEILING", magistrates["ceilingBasis"]["reading"])
+        self.assertIn(MAGISTRATE_BASIS_QUOTE, magistrates["derivation"])
+        self.assertIn("caps the rate at 92 percent", magistrates["arithmetic"]["note"])
+        self.assertIn("ceiling", magistrates["documents"][0]["role"])
+        self.assertIsNone(records["jud-district-sdny-bankruptcy-judge-12"]["ceilingBasis"])
+        self.assertNotIn("ceiling", records["jud-district-sdny-bankruptcy-judge-12"]["documents"][0]["role"])
         self.assertIn("jud-support-aousc-deputy-director", records)
         self.assertIn("jud-support-fjc-deputy-director", records)
         self.assertIn("jud-specialized-tax-special-trial-judge-multiple", records)
@@ -432,8 +565,36 @@ class BuildTests(unittest.TestCase):
                 self.assertEqual(expected, len(record["documents"]))
                 self.assertFalse(any(d["statesTheFigure"] for d in record["documents"]))
                 hosts = {d["url"] for d in record["documents"]}
-                self.assertTrue(any("uscode.house.gov" in url for url in hosts))
+                self.assertTrue(any(url.startswith(f"https://{host}/") for url in hosts for host in STATUTE_HOSTS), hosts)
                 self.assertIn(DERIVED_PAY_TABLE_URL, hosts)
+
+    def test_a_ceiling_row_falls_when_the_page_no_longer_prints_the_sentence(self):
+        """The basis is re-found on every run, never trusted: strip the
+        Explanatory Note from the page's text and the magistrate row is
+        refused with the reason, while the bankruptcy row beside it -- whose
+        statute states the rate -- stands. Pass no page text at all and the
+        row is refused too, because the sentence is half of what it rests on."""
+        text = _table_text()
+        self.assertIn(MAGISTRATE_BASIS_QUOTE, text)
+        stripped = text.replace(MAGISTRATE_BASIS_QUOTE, "")
+        records, report = _records(table_text=stripped)
+        self.assertNotIn("jud-district-sdny-magistrate-judge-13", records)
+        self.assertIn("no longer prints the sentence", report["refused"]["jud-district-sdny-magistrate-judge-13"])
+        self.assertIn("jud-district-sdny-bankruptcy-judge-12", records)
+        self.assertEqual(12, len(records))
+        records, report = _records(table_text=None)
+        self.assertNotIn("jud-district-sdny-magistrate-judge-13", records)
+        self.assertIn("was not supplied", report["refused"]["jud-district-sdny-magistrate-judge-13"])
+        self.assertEqual(12, len(records))
+        # A doctored copy of the page itself, read the way the derive script
+        # reads the committed one.
+        raw = DEFAULT_TABLE_HTML.read_text(encoding="utf-8")
+        self.assertEqual(text, page_text(raw))
+        doctored = page_text(raw.replace("is equal to 92 percent of the salary of a district judge", "is set by the Judicial Conference"))
+        self.assertNotIn(MAGISTRATE_BASIS_QUOTE, doctored)
+        records, report = _records(table_text=doctored)
+        self.assertNotIn("jud-district-sdny-magistrate-judge-13", records)
+        self.assertIn("jud-support-ussc-chair-ussc", records)
 
     def test_the_figure_is_the_tables_own_for_the_tier_the_statute_names(self):
         records, _ = _records()
@@ -513,7 +674,7 @@ class ApplyTests(unittest.TestCase):
         records, _ = _records()
         tree = _base_tree()
         stats = apply_pay_evidence(tree, records, index_tree=index_tree)
-        self.assertEqual(11, stats["priced"])
+        self.assertEqual(13, stats["priced"])
         # The document count, the percentage and the sentence saying what the
         # percentage does not measure are stamped by the shared pass that does
         # the same for every other pay field -- one code path for one number.
@@ -531,6 +692,12 @@ class ApplyTests(unittest.TestCase):
             for field in ("sourceUrls", "sourceTypes", "lastVerified", "verificationMethod"):
                 self.assertIsNone(node.get(field))
             self.assertIsNone(node.get("resolved_total_amount"))
+        # The ceiling basis reaches the block on the magistrate bench and on
+        # nothing else.
+        self.assertEqual(MAGISTRATE_BASIS_QUOTE, node_map["jud-district-sdny-magistrate-judge-13"]["positionDerivedPay"]["ceilingBasis"]["quote"])
+        for node_id in records:
+            if node_id != "jud-district-sdny-magistrate-judge-13":
+                self.assertIsNone(node_map[node_id]["positionDerivedPay"]["ceilingBasis"], node_id)
 
     def test_a_node_another_source_already_priced_is_left_alone(self):
         records, _ = _records()
@@ -538,7 +705,7 @@ class ApplyTests(unittest.TestCase):
         node_map, _ = index_tree(tree)
         node_map["jud-specialized-tax-chief-judge-tax-court"]["positionStatutoryPay"] = {"source": "elsewhere"}
         stats = apply_pay_evidence(tree, records, index_tree=index_tree)
-        self.assertEqual(10, stats["priced"])
+        self.assertEqual(12, stats["priced"])
         self.assertEqual(1, stats["already_priced_by_another_source"])
         node_map, _ = index_tree(tree)
         self.assertIsNone(node_map["jud-specialized-tax-chief-judge-tax-court"].get("positionDerivedPay"))
@@ -562,6 +729,11 @@ class ApplyTests(unittest.TestCase):
         self.assertEqual(12, bankruptcy["holders"]["count"])
         self.assertEqual(92, bankruptcy["percentOf"])
         self.assertEqual("percent_of", bankruptcy["arithmetic"]["operation"])
+        # The magistrate bench the same way: 634(a) says "full-time United
+        # States magistrate judges", and the ceiling basis rides through.
+        magistrates = node_map["jud-district-sdny-magistrate-judge-13"]["positionDerivedPay"]
+        self.assertEqual(13, magistrates["holders"]["count"])
+        self.assertEqual(MAGISTRATE_BASIS_QUOTE, magistrates["ceilingBasis"]["quote"])
         # And the document-count pass words its caution for the arithmetic.
         annotate_pay_documents(tree)
         node_map, _ = index_tree(tree)
@@ -789,14 +961,117 @@ class GateTests(unittest.TestCase):
             self.assertIn(" … ", node["positionDerivedPay"]["derivation"])
 
     def test_a_percentage_record_moved_to_the_magistrate_bench_is_caught(self):
-        """Same court, same count shape, a real statute -- and no provision:
-        28 U.S.C. 634(a) is a ceiling."""
+        """Same court, same count shape, the same $229,908 -- and a different
+        statute: the bankruptcy record on the magistrate bench cites 153(a)
+        where the node's provision is 634(a), and carries no ceiling basis."""
         node_map, _ = index_tree(self.tree)
         magistrates = node_map["jud-district-sdny-magistrate-judge-13"]
         moved = copy.deepcopy(node_map["jud-district-sdny-bankruptcy-judge-12"]["positionDerivedPay"])
         moved["holders"]["count"] = 13
         moved["holders"]["text"] = "×13"
-        self.assertTrue(any("no parity provision" in v for v in self._check(magistrates, moved)))
+        out = self._check(magistrates, moved)
+        self.assertTrue(any("this node's parity provision is '28 U.S.C. 634(a)'" in v for v in out), out)
+        self.assertTrue(any("without the compensation page's sentence" in v for v in out), out)
+        # And the other way: the magistrate record on the bankruptcy bench
+        # carries a ceiling basis the bankruptcy statute does not need.
+        bankruptcy = node_map["jud-district-sdny-bankruptcy-judge-12"]
+        moved = copy.deepcopy(magistrates["positionDerivedPay"])
+        moved["holders"]["count"] = 12
+        moved["holders"]["text"] = "×12"
+        out = self._check(bankruptcy, moved)
+        self.assertTrue(any("states the rate itself, not a ceiling" in v for v in out), out)
+        self.assertTrue(any("this node's parity provision is '28 U.S.C. 153(a)'" in v for v in out), out)
+
+    def test_the_magistrate_row_passes_and_each_part_of_the_ceiling_basis_is_checked(self):
+        """The ceiling the compensation page resolves: the honest block
+        passes; the basis dropped, misquoted, unread, unexplained, cited
+        elsewhere, or standing beside a statute with no ceiling in it is
+        refused; and the sentence is checked against the committed page's
+        bytes rather than the block's own copy."""
+        node_map, _ = index_tree(self.tree)
+        bench = node_map["jud-district-sdny-magistrate-judge-13"]
+        self.assertEqual([], self._check(bench))
+        honest = bench["positionDerivedPay"]
+        self.assertEqual(round(JUDICIAL_COMPENSATION_TIERS["district judges"] * 0.92, 2), honest["amount"])
+        self.assertEqual(2, honest["verification"]["documents"])
+        self.assertEqual(80, honest["verification"]["percent"])
+        self.assertEqual(0, honest["verification"]["documentsStatingTheFigure"])
+        self.assertEqual(13, honest["holders"]["count"])
+        self.assertIn("up to", honest["statuteQuote"])
+
+        pay = copy.deepcopy(honest)
+        pay["ceilingBasis"] = None
+        self.assertTrue(any("without the compensation page's sentence" in v for v in self._check(bench, pay)))
+
+        pay = copy.deepcopy(honest)
+        pay["ceilingBasis"]["quote"] = "By statute, the salary of a magistrate judge is 92 percent of a district judge's."
+        self.assertTrue(any("not the one the Judicial Compensation page prints" in v for v in self._check(bench, pay)))
+
+        pay = copy.deepcopy(honest)
+        pay["ceilingBasis"]["reading"] = ""
+        self.assertTrue(any("without saying in words" in v for v in self._check(bench, pay)))
+
+        pay = copy.deepcopy(honest)
+        pay["ceilingBasis"]["url"] = "https://example.gov/elsewhere"
+        self.assertTrue(any("not the compensation page this pipeline reads" in v for v in self._check(bench, pay)))
+
+        pay = copy.deepcopy(honest)
+        pay["ceilingBasis"]["statuteStatesACeiling"] = False
+        self.assertTrue(any("does not say the statute states a ceiling" in v for v in self._check(bench, pay)))
+
+        pay = copy.deepcopy(honest)
+        pay["derivation"] = pay["derivation"].replace(MAGISTRATE_BASIS_QUOTE, "")
+        self.assertTrue(any("the ceiling is read through" in v for v in self._check(bench, pay)))
+
+        # The bankruptcy sentence -- a rate, no "up to" -- quoted as this
+        # node's statute: wrong sentence for the provision, and no ceiling.
+        pay = copy.deepcopy(honest)
+        pay["statuteQuote"] = DERIVED_PAY_PROVISIONS["jud-district-sdny-bankruptcy-judge-12"][2]
+        out = self._check(bench, pay)
+        self.assertTrue(any("not the one 28 U.S.C. 634(a) prints now" in v for v in out), out)
+        self.assertTrue(any("states no ceiling" in v for v in out), out)
+
+        # The committed page no longer printing the sentence: the gate reads
+        # the bytes, not the block.
+        with unittest.mock.patch.object(gate, "derived_pay_table_text", return_value="a page with no such note"):
+            self.assertTrue(any("committed Judicial Compensation page does not print" in v for v in self._check(bench)))
+        self.assertEqual([], self._check(bench))
+
+    def test_the_sentencing_commission_chair_passes_and_is_tied_to_its_own_node(self):
+        """The Chair at the circuit-judge rate: two documents, 80%, the
+        statute read from govinfo. The CAAF's chief judge prices the identical
+        $264,900 from a different statute, so a record moved between the two
+        keeps a correct figure and a correct tier, and only the node's own id
+        tells them apart; and the Commission's bench has no provision at all."""
+        node_map, _ = index_tree(self.tree)
+        chair = node_map["jud-support-ussc-chair-ussc"]
+        self.assertEqual([], self._check(chair))
+        pay = chair["positionDerivedPay"]
+        self.assertEqual(JUDICIAL_COMPENSATION_TIERS["circuit judges"], pay["amount"])
+        self.assertEqual("$264,900", pay["rateText"])
+        self.assertEqual("circuit judges", pay["seatTier"])
+        self.assertEqual(2, pay["verification"]["documents"])
+        self.assertEqual(80, pay["verification"]["percent"])
+        self.assertIsNone(pay["arithmetic"])
+        self.assertIsNone(pay["ceilingBasis"])
+        self.assertNotIn("holders", pay)
+        self.assertIn("www.govinfo.gov", pay["url"])
+        caaf = node_map["jud-specialized-caaf-chief-judge-caaf"]
+        self.assertEqual(pay["amount"], caaf["positionDerivedPay"]["amount"])
+        out = self._check(caaf, pay)
+        self.assertTrue(any("this node's parity provision is '10 U.S.C. 942(d)'" in v for v in out), out)
+        out = self._check(chair, caaf["positionDerivedPay"])
+        self.assertTrue(any("this node's parity provision is '28 U.S.C. 992(c)'" in v for v in out), out)
+        # The bench of six: no provision, by decision, and the gate says so.
+        commissioners = node_map["jud-support-ussc-commissioner-6"]
+        self.assertNotIn("positionDerivedPay", commissioners)
+        moved = copy.deepcopy(pay)
+        moved["holders"] = {"text": "×6", "kind": "exact", "count": 6, "appliesToEachHolder": True, "note": "each"}
+        self.assertTrue(any("no parity provision" in v for v in self._check(commissioners, moved)))
+        # A percentage block on the Chair's parity row is refused as on any other.
+        forged = copy.deepcopy(pay)
+        forged["percentOf"] = 92
+        self.assertTrue(any("arithmetic on a parity provision" in v for v in self._check(chair, forged)))
 
     def test_a_document_claiming_to_state_the_figure_is_caught(self):
         pay = copy.deepcopy(self.node["positionDerivedPay"])

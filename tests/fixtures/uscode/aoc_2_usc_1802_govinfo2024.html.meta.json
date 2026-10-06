@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-10-06T00:45:19Z",
+ "url": "https://www.govinfo.gov/link/uscode/2/1802?link-type=html",
+ "status": 200,
+ "final_url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title2/html/USCODE-2024-title2-chap28-subchapI-sec1802.htm",
+ "content_type": "text/html",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /link/uscode/2/1802",
+ "bytes": 7783,
+ "sha256": "a53d25abfa1198cc60e1f460c4eb596cc27327f9413200722e600733ea052932",
+ "error": null
+}

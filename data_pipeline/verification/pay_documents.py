@@ -256,6 +256,35 @@ PAY_DOCUMENT_FIELDS: dict[str, dict[str, Any]] = {
             "arithmetic this project performed and no document prints."
         ),
     },
+    "positionMilitaryPay": {
+        # Schedule 8 of the pay-adjustment order prints the uniformed services'
+        # basic pay BY THE MONTH. A grade-route record rests on three documents
+        # (the statute fixing the post's grade, 37 U.S.C. 201 assigning it a
+        # pay grade, the schedule pricing the pay grade); a footnote-route
+        # record on the schedule alone, whose footnote names the post. Neither
+        # states the ANNUAL figure the block publishes: it is twelve times a
+        # printed monthly rate, arithmetic the block carries in the open.
+        "urlKeys": (("documents", "*", "url"),),
+        "roles": {},
+        "statesTheFigure": 0,
+        "caution": (
+            "The percentage measures how much official documentation this figure rests on, "
+            "not the chance that it is right. No document here states the annual figure: a "
+            "statute fixes the post's grade, 37 U.S.C. 201 assigns that grade a pay grade, and "
+            "Schedule 8 prints what that pay grade is paid BY THE MONTH; the annual figure is "
+            "twelve times the printed monthly rate, arithmetic this project performed."
+        ),
+        # The same block on a senior enlisted adviser the schedule's own
+        # footnote names: one document, which names the post and prints its
+        # monthly rate, and the annual figure is still the multiplication.
+        "footnoteCaution": (
+            "The percentage measures how much official documentation this figure rests on, "
+            "not the chance that it is right. One document, Schedule 8, names this post in its "
+            "own footnote and prints its monthly basic pay; no document states the annual "
+            "figure, which is twelve times the printed monthly rate, arithmetic this project "
+            "performed."
+        ),
+    },
 }
 
 #: Every pay field, in the order the panel prints them. Kept beside the table
@@ -317,6 +346,13 @@ def _member_seat(block: Mapping[str, Any]) -> bool:
 def _states_the_office(block: Mapping[str, Any]) -> bool:
     """A statutory block whose section names the office itself says so."""
     return block.get("statesTheOffice") is True
+
+
+def _named_in_footnote(block: Mapping[str, Any]) -> bool:
+    """A military block priced from Schedule 8's own footnote says so in its
+    identification."""
+    identification = block.get("identification")
+    return isinstance(identification, Mapping) and identification.get("kind") == "named_in_footnote"
 
 
 def _uniform_roster(block: Mapping[str, Any]) -> bool:
@@ -394,6 +430,7 @@ def annotate_pay_documents(root: dict[str, Any]) -> dict[str, int]:
                     else (spec.get("percentCaution") or spec["caution"]) if _percent_of_tier(block)
                     else (spec.get("memberSeatCaution") or spec["caution"]) if _member_seat(block)
                     else (spec.get("statesOfficeCaution") or spec["caution"]) if _states_the_office(block)
+                    else (spec.get("footnoteCaution") or spec["caution"]) if _named_in_footnote(block)
                     else spec["caution"]
                 ),
                 "documentRoles": roles,

@@ -46,6 +46,7 @@ def _tree():
              "positionDerivedPay": {"amount": 1.0},
              "positionTierPay": {"minimum": 1.0, "maximum": 2.0},
              "positionTierReferencePay": {"amount": 1.0},
+             "positionMilitaryPay": {"amount": 1.0},
              "positionPayRate": {"amount": 1.0},
              "positionGradePay": {"minimum": 1.0, "maximum": 2.0},
              "positionCurrentPay": {"amount": 1.0},

@@ -16125,6 +16125,82 @@
       "attempts": 1,
       "detail": "PermissionError: robots.txt disallows this path (www.gao.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
     },
+    "positionTierReferencePay": {
+      "source": "statutory_tier_reference_pay",
+      "sourceLabel": "a statute setting the post's pay by reference to an Executive Schedule level, joined to OPM's table",
+      "method": "pay_set_by_reference_to_an_executive_schedule_level_joined_to_opm_table",
+      "amount": 197200.0,
+      "rateText": "$197,200",
+      "level": "IV",
+      "levelText": "Level IV",
+      "levelRateText": "$197,200",
+      "levelAmount": 197200.0,
+      "percent": 0,
+      "arithmetic": null,
+      "office": "General Counsel of the Government Accountability Office",
+      "statute": "31 U.S.C. 731(c)",
+      "statuteQuote": "The annual rate of basic pay of the General Counsel of the Government Accountability Office is equal to the rate for level IV of the Executive Schedule.",
+      "identification": {
+        "kind": "reviewed_row",
+        "nodeName": "General Counsel"
+      },
+      "derivation": "31 U.S.C. 731(c) (c): “The annual rate of basic pay of the General Counsel of the Government Accountability Office is equal to the rate for level IV of the Executive Schedule.” · Salary Table No. 2026-EX, Effective January 2026: Level IV $197,200",
+      "quote": "31 U.S.C. 731(c) (c): “The annual rate of basic pay of the General Counsel of the Government Accountability Office is equal to the rate for level IV of the Executive Schedule.” · Salary Table No. 2026-EX, Effective January 2026: Level IV $197,200",
+      "documents": [
+        {
+          "role": "sets this post's basic pay by reference to Executive Schedule Level IV",
+          "citation": "31 U.S.C. 731(c)",
+          "publisher": "U.S. Government Publishing Office",
+          "edition": "an edition of the United States Code",
+          "title": "31 U.S.C. 731(c), an edition of the United States Code",
+          "quote": "The annual rate of basic pay of the General Counsel of the Government Accountability Office is equal to the rate for level IV of the Executive Schedule.",
+          "url": "https://www.govinfo.gov/link/uscode/31/731?link-type=html",
+          "documentSha256": "528d24360f09c959e4662c33cf63942540411efa1202e94e740fea1de7e6692b",
+          "retrievedAt": "2026-10-06T00:45:25Z",
+          "statesTheFigure": false
+        },
+        {
+          "role": "states what that Executive Schedule level pays",
+          "citation": "Salary Table No. 2026-EX, Effective January 2026",
+          "publisher": "U.S. Office of Personnel Management",
+          "title": "Salary Table No. 2026-EX",
+          "quote": "Level IV $197,200",
+          "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+          "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+          "retrievedAt": "2026-09-11T03:05:36Z",
+          "statesTheFigure": false
+        }
+      ],
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level IV",
+      "url": "https://www.govinfo.gov/link/uscode/31/731?link-type=html",
+      "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-10-06T00:45:25Z",
+      "verification": {
+        "documents": 2,
+        "documentsStatingTheFigure": 0,
+        "percent": 80,
+        "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+        "caution": "The percentage measures how much official documentation this figure rests on, not the chance that it is right. No document here states the figure for this post: a statute sets its pay by reference to an Executive Schedule level, and OPM's table states what that level pays; where the statute adds a percentage, the result is arithmetic this project performed and no document prints.",
+        "documentRoles": [
+          {
+            "url": "https://www.govinfo.gov/link/uscode/31/731?link-type=html"
+          },
+          {
+            "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx"
+          }
+        ]
+      }
+    },
     "evidenceUrls": [
       "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-075"
     ],
@@ -17437,6 +17513,82 @@
     "verificationMethod": "name_labelled_on_its_organisations_official_page",
     "verificationMatchedIn": "content",
     "verificationSiteFrom": "leg-support-aoc",
+    "positionTierReferencePay": {
+      "source": "statutory_tier_reference_pay",
+      "sourceLabel": "a statute setting the post's pay by reference to an Executive Schedule level, joined to OPM's table",
+      "method": "pay_set_by_reference_to_an_executive_schedule_level_joined_to_opm_table",
+      "amount": 228000.0,
+      "rateText": "$228,000",
+      "level": "II",
+      "levelText": "Level II",
+      "levelRateText": "$228,000",
+      "levelAmount": 228000.0,
+      "percent": 0,
+      "arithmetic": null,
+      "office": "Architect of the Capitol",
+      "statute": "2 U.S.C. 1802",
+      "statuteQuote": "The compensation of the Architect of the Capitol shall be at an annual rate which is equal to the annual rate of basic pay for level II of the Executive Schedule under section 5313 of title 5.",
+      "identification": {
+        "kind": "reviewed_row",
+        "nodeName": "Architect of the Capitol"
+      },
+      "derivation": "2 U.S.C. 1802 (the section's one sentence): “The compensation of the Architect of the Capitol shall be at an annual rate which is equal to the annual rate of basic pay for level II of the Executive Schedule under section 5313 of title 5.” · Salary Table No. 2026-EX, Effective January 2026: Level II $228,000",
+      "quote": "2 U.S.C. 1802 (the section's one sentence): “The compensation of the Architect of the Capitol shall be at an annual rate which is equal to the annual rate of basic pay for level II of the Executive Schedule under section 5313 of title 5.” · Salary Table No. 2026-EX, Effective January 2026: Level II $228,000",
+      "documents": [
+        {
+          "role": "sets this post's basic pay by reference to Executive Schedule Level II",
+          "citation": "2 U.S.C. 1802",
+          "publisher": "U.S. Government Publishing Office",
+          "edition": "an edition of the United States Code",
+          "title": "2 U.S.C. 1802, an edition of the United States Code",
+          "quote": "The compensation of the Architect of the Capitol shall be at an annual rate which is equal to the annual rate of basic pay for level II of the Executive Schedule under section 5313 of title 5.",
+          "url": "https://www.govinfo.gov/link/uscode/2/1802?link-type=html",
+          "documentSha256": "a53d25abfa1198cc60e1f460c4eb596cc27327f9413200722e600733ea052932",
+          "retrievedAt": "2026-10-06T00:45:19Z",
+          "statesTheFigure": false
+        },
+        {
+          "role": "states what that Executive Schedule level pays",
+          "citation": "Salary Table No. 2026-EX, Effective January 2026",
+          "publisher": "U.S. Office of Personnel Management",
+          "title": "Salary Table No. 2026-EX",
+          "quote": "Level II $228,000",
+          "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+          "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+          "retrievedAt": "2026-09-11T03:05:36Z",
+          "statesTheFigure": false
+        }
+      ],
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level II",
+      "url": "https://www.govinfo.gov/link/uscode/2/1802?link-type=html",
+      "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-10-06T00:45:19Z",
+      "verification": {
+        "documents": 2,
+        "documentsStatingTheFigure": 0,
+        "percent": 80,
+        "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+        "caution": "The percentage measures how much official documentation this figure rests on, not the chance that it is right. No document here states the figure for this post: a statute sets its pay by reference to an Executive Schedule level, and OPM's table states what that level pays; where the statute adds a percentage, the result is arithmetic this project performed and no document prints.",
+        "documentRoles": [
+          {
+            "url": "https://www.govinfo.gov/link/uscode/2/1802?link-type=html"
+          },
+          {
+            "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx"
+          }
+        ]
+      }
+    },
     "govmanListing": {
       "source": "us_government_manual",
       "listedTitle": "ARCHITECT OF THE CAPITOL",
@@ -17885,6 +18037,82 @@
     "verificationMethod": "name_labelled_on_its_organisations_official_page",
     "verificationMatchedIn": "content",
     "verificationSiteFrom": "leg-support-uscp",
+    "positionTierReferencePay": {
+      "source": "statutory_tier_reference_pay",
+      "sourceLabel": "a statute setting the post's pay by reference to an Executive Schedule level, joined to OPM's table",
+      "method": "pay_set_by_reference_to_an_executive_schedule_level_joined_to_opm_table",
+      "amount": 228000.0,
+      "rateText": "$228,000",
+      "level": "II",
+      "levelText": "Level II",
+      "levelRateText": "$228,000",
+      "levelAmount": 228000.0,
+      "percent": 0,
+      "arithmetic": null,
+      "office": "Chief of the Capitol Police",
+      "statute": "2 U.S.C. 1902",
+      "statuteQuote": "The annual rate of pay for the Chief of the Capitol Police shall be the amount equal to the annual rate of basic pay for level II of the Executive Schedule under section 5313 of title 5.",
+      "identification": {
+        "kind": "reviewed_row",
+        "nodeName": "Chief of Police"
+      },
+      "derivation": "2 U.S.C. 1902 (the section's one sentence): “The annual rate of pay for the Chief of the Capitol Police shall be the amount equal to the annual rate of basic pay for level II of the Executive Schedule under section 5313 of title 5.” · Salary Table No. 2026-EX, Effective January 2026: Level II $228,000",
+      "quote": "2 U.S.C. 1902 (the section's one sentence): “The annual rate of pay for the Chief of the Capitol Police shall be the amount equal to the annual rate of basic pay for level II of the Executive Schedule under section 5313 of title 5.” · Salary Table No. 2026-EX, Effective January 2026: Level II $228,000",
+      "documents": [
+        {
+          "role": "sets this post's basic pay by reference to Executive Schedule Level II",
+          "citation": "2 U.S.C. 1902",
+          "publisher": "U.S. Government Publishing Office",
+          "edition": "an edition of the United States Code",
+          "title": "2 U.S.C. 1902, an edition of the United States Code",
+          "quote": "The annual rate of pay for the Chief of the Capitol Police shall be the amount equal to the annual rate of basic pay for level II of the Executive Schedule under section 5313 of title 5.",
+          "url": "https://www.govinfo.gov/link/uscode/2/1902?link-type=html",
+          "documentSha256": "12042655e60800ad7b365c88e3739389817beac3651722d382bdfecfb19676b9",
+          "retrievedAt": "2026-10-06T00:45:22Z",
+          "statesTheFigure": false
+        },
+        {
+          "role": "states what that Executive Schedule level pays",
+          "citation": "Salary Table No. 2026-EX, Effective January 2026",
+          "publisher": "U.S. Office of Personnel Management",
+          "title": "Salary Table No. 2026-EX",
+          "quote": "Level II $228,000",
+          "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+          "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+          "retrievedAt": "2026-09-11T03:05:36Z",
+          "statesTheFigure": false
+        }
+      ],
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level II",
+      "url": "https://www.govinfo.gov/link/uscode/2/1902?link-type=html",
+      "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-10-06T00:45:22Z",
+      "verification": {
+        "documents": 2,
+        "documentsStatingTheFigure": 0,
+        "percent": 80,
+        "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+        "caution": "The percentage measures how much official documentation this figure rests on, not the chance that it is right. No document here states the figure for this post: a statute sets its pay by reference to an Executive Schedule level, and OPM's table states what that level pays; where the statute adds a percentage, the result is arithmetic this project performed and no document prints.",
+        "documentRoles": [
+          {
+            "url": "https://www.govinfo.gov/link/uscode/2/1902?link-type=html"
+          },
+          {
+            "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx"
+          }
+        ]
+      }
+    },
     "parentId": "leg-support-uscp"
   },
   {
@@ -18519,12 +18747,33 @@
     "sourceUrls": [
       "https://escs.opm.gov/escs-net/api/pbpub/download-data"
     ],
-    "evidenceUrls": [
-      "https://escs.opm.gov/escs-net/api/pbpub/download-data"
-    ],
     "sourceTypes": [
       "opm_plum_current_export",
       "official_site"
+    ],
+    "proofSourceCount": 2,
+    "proofSourceTypes": [
+      "opm_plum_current_export",
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": null,
+    "cost_status": "unavailable",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "post_is_not_a_budget_unit",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.0,
+    "costVerificationReason": "missing_cost",
+    "costSourceCount": 0,
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": "2026-09-21T03:02:16Z",
+    "evidenceUrls": [
+      "https://escs.opm.gov/escs-net/api/pbpub/download-data"
     ],
     "positionCurrentListing": {
       "source": "opm_plum_current_export",
@@ -18548,7 +18797,6 @@
       "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
       "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6"
     },
-    "lastVerified": "2026-09-21T03:02:16Z",
     "evidenceVerifiedAt": "2026-09-21T03:02:16Z",
     "verificationMethod": "listed_in_opm_current_plum_export",
     "placementVerified": true,
@@ -18557,18 +18805,6 @@
     "placementParentId": "exec-eop-who",
     "placementMatchedText": "ASSISTANT TO THE PRESIDENT AND CHIEF OF STAFF",
     "placementMethod": "listed_under_organization_in_opm_current_plum_export",
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "proofSourceCount": 2,
-    "proofSourceTypes": [
-      "opm_plum_current_export",
-      "official_site"
-    ],
-    "existsProven": true,
-    "parentProven": true,
-    "proofStatus": "proven",
-    "proofReason": "official_source_recorded",
     "positionCurrentPay": {
       "source": "opm_plum_current_export",
       "sourceLabel": "OPM's current PLUM Reporting export",
@@ -18636,14 +18872,6 @@
         ]
       }
     },
-    "resolved_total_amount": null,
-    "cost_status": "unavailable",
-    "cost_basis": "subtree_weight",
-    "cost_validation": "post_is_not_a_budget_unit",
-    "costVerificationStatus": "unverified",
-    "costConfidenceScore": 0.0,
-    "costVerificationReason": "missing_cost",
-    "costSourceCount": 0,
     "parentId": "exec-eop-who"
   },
   {
@@ -18658,12 +18886,33 @@
     "sourceUrls": [
       "https://escs.opm.gov/escs-net/api/pbpub/download-data"
     ],
-    "evidenceUrls": [
-      "https://escs.opm.gov/escs-net/api/pbpub/download-data"
-    ],
     "sourceTypes": [
       "opm_plum_current_export",
       "official_site"
+    ],
+    "proofSourceCount": 2,
+    "proofSourceTypes": [
+      "opm_plum_current_export",
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": null,
+    "cost_status": "unavailable",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "post_is_not_a_budget_unit",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.0,
+    "costVerificationReason": "missing_cost",
+    "costSourceCount": 0,
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": "2026-09-21T03:02:16Z",
+    "evidenceUrls": [
+      "https://escs.opm.gov/escs-net/api/pbpub/download-data"
     ],
     "positionCurrentListing": {
       "source": "opm_plum_current_export",
@@ -18687,7 +18936,6 @@
       "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
       "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6"
     },
-    "lastVerified": "2026-09-21T03:02:16Z",
     "evidenceVerifiedAt": "2026-09-21T03:02:16Z",
     "verificationMethod": "listed_in_opm_current_plum_export",
     "placementVerified": true,
@@ -18696,18 +18944,6 @@
     "placementParentId": "exec-eop-who",
     "placementMatchedText": "ASSISTANT TO THE PRESIDENT AND DEPUTY CHIEF OF STAFF FOR OPERATIONS",
     "placementMethod": "listed_under_organization_in_opm_current_plum_export",
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "proofSourceCount": 2,
-    "proofSourceTypes": [
-      "opm_plum_current_export",
-      "official_site"
-    ],
-    "existsProven": true,
-    "parentProven": true,
-    "proofStatus": "proven",
-    "proofReason": "official_source_recorded",
     "positionCurrentPay": {
       "source": "opm_plum_current_export",
       "sourceLabel": "OPM's current PLUM Reporting export",
@@ -18775,14 +19011,6 @@
         ]
       }
     },
-    "resolved_total_amount": null,
-    "cost_status": "unavailable",
-    "cost_basis": "subtree_weight",
-    "cost_validation": "post_is_not_a_budget_unit",
-    "costVerificationStatus": "unverified",
-    "costConfidenceScore": 0.0,
-    "costVerificationReason": "missing_cost",
-    "costSourceCount": 0,
     "parentId": "exec-eop-who"
   },
   {
@@ -18797,12 +19025,33 @@
     "sourceUrls": [
       "https://escs.opm.gov/escs-net/api/pbpub/download-data"
     ],
-    "evidenceUrls": [
-      "https://escs.opm.gov/escs-net/api/pbpub/download-data"
-    ],
     "sourceTypes": [
       "opm_plum_current_export",
       "official_site"
+    ],
+    "proofSourceCount": 2,
+    "proofSourceTypes": [
+      "opm_plum_current_export",
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": null,
+    "cost_status": "unavailable",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "post_is_not_a_budget_unit",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.0,
+    "costVerificationReason": "missing_cost",
+    "costSourceCount": 0,
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": "2026-09-21T03:02:16Z",
+    "evidenceUrls": [
+      "https://escs.opm.gov/escs-net/api/pbpub/download-data"
     ],
     "positionCurrentListing": {
       "source": "opm_plum_current_export",
@@ -18830,7 +19079,6 @@
         "$155,000": 1
       }
     },
-    "lastVerified": "2026-09-21T03:02:16Z",
     "evidenceVerifiedAt": "2026-09-21T03:02:16Z",
     "verificationMethod": "listed_in_opm_current_plum_export",
     "placementVerified": true,
@@ -18839,26 +19087,6 @@
     "placementParentId": "exec-eop-who",
     "placementMatchedText": "DEPUTY ASSISTANT TO THE PRESIDENT AND DEPUTY COUNSEL TO THE PRESIDENT",
     "placementMethod": "listed_under_organization_in_opm_current_plum_export",
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "proofSourceCount": 2,
-    "proofSourceTypes": [
-      "opm_plum_current_export",
-      "official_site"
-    ],
-    "existsProven": true,
-    "parentProven": true,
-    "proofStatus": "proven",
-    "proofReason": "official_source_recorded",
-    "resolved_total_amount": null,
-    "cost_status": "unavailable",
-    "cost_basis": "subtree_weight",
-    "cost_validation": "post_is_not_a_budget_unit",
-    "costVerificationStatus": "unverified",
-    "costConfidenceScore": 0.0,
-    "costVerificationReason": "missing_cost",
-    "costSourceCount": 0,
     "representsPosts": {
       "text": "×4",
       "kind": "exact",
@@ -18878,12 +19106,33 @@
     "sourceUrls": [
       "https://escs.opm.gov/escs-net/api/pbpub/download-data"
     ],
-    "evidenceUrls": [
-      "https://escs.opm.gov/escs-net/api/pbpub/download-data"
-    ],
     "sourceTypes": [
       "opm_plum_current_export",
       "official_site"
+    ],
+    "proofSourceCount": 2,
+    "proofSourceTypes": [
+      "opm_plum_current_export",
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": null,
+    "cost_status": "unavailable",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "post_is_not_a_budget_unit",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.0,
+    "costVerificationReason": "missing_cost",
+    "costSourceCount": 0,
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": "2026-09-21T03:02:16Z",
+    "evidenceUrls": [
+      "https://escs.opm.gov/escs-net/api/pbpub/download-data"
     ],
     "positionCurrentListing": {
       "source": "opm_plum_current_export",
@@ -18907,7 +19156,6 @@
       "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
       "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6"
     },
-    "lastVerified": "2026-09-21T03:02:16Z",
     "evidenceVerifiedAt": "2026-09-21T03:02:16Z",
     "verificationMethod": "listed_in_opm_current_plum_export",
     "placementVerified": true,
@@ -18916,18 +19164,6 @@
     "placementParentId": "exec-eop-who",
     "placementMatchedText": "ASSISTANT TO THE PRESIDENT AND PRESS SECRETARY",
     "placementMethod": "listed_under_organization_in_opm_current_plum_export",
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "proofSourceCount": 2,
-    "proofSourceTypes": [
-      "opm_plum_current_export",
-      "official_site"
-    ],
-    "existsProven": true,
-    "parentProven": true,
-    "proofStatus": "proven",
-    "proofReason": "official_source_recorded",
     "positionCurrentPay": {
       "source": "opm_plum_current_export",
       "sourceLabel": "OPM's current PLUM Reporting export",
@@ -18995,14 +19231,6 @@
         ]
       }
     },
-    "resolved_total_amount": null,
-    "cost_status": "unavailable",
-    "cost_basis": "subtree_weight",
-    "cost_validation": "post_is_not_a_budget_unit",
-    "costVerificationStatus": "unverified",
-    "costConfidenceScore": 0.0,
-    "costVerificationReason": "missing_cost",
-    "costSourceCount": 0,
     "parentId": "exec-eop-who"
   },
   {
@@ -19017,12 +19245,33 @@
     "sourceUrls": [
       "https://escs.opm.gov/escs-net/api/pbpub/download-data"
     ],
-    "evidenceUrls": [
-      "https://escs.opm.gov/escs-net/api/pbpub/download-data"
-    ],
     "sourceTypes": [
       "opm_plum_current_export",
       "official_site"
+    ],
+    "proofSourceCount": 2,
+    "proofSourceTypes": [
+      "opm_plum_current_export",
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": null,
+    "cost_status": "unavailable",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "post_is_not_a_budget_unit",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.0,
+    "costVerificationReason": "missing_cost",
+    "costSourceCount": 0,
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": "2026-09-21T03:02:16Z",
+    "evidenceUrls": [
+      "https://escs.opm.gov/escs-net/api/pbpub/download-data"
     ],
     "positionCurrentListing": {
       "source": "opm_plum_current_export",
@@ -19046,7 +19295,6 @@
       "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
       "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6"
     },
-    "lastVerified": "2026-09-21T03:02:16Z",
     "evidenceVerifiedAt": "2026-09-21T03:02:16Z",
     "verificationMethod": "listed_in_opm_current_plum_export",
     "placementVerified": true,
@@ -19055,18 +19303,6 @@
     "placementParentId": "exec-eop-who",
     "placementMatchedText": "ASSISTANT TO THE PRESIDENT AND DIRECTOR OF LEGISLATIVE AFFAIRS",
     "placementMethod": "listed_under_organization_in_opm_current_plum_export",
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "proofSourceCount": 2,
-    "proofSourceTypes": [
-      "opm_plum_current_export",
-      "official_site"
-    ],
-    "existsProven": true,
-    "parentProven": true,
-    "proofStatus": "proven",
-    "proofReason": "official_source_recorded",
     "positionCurrentPay": {
       "source": "opm_plum_current_export",
       "sourceLabel": "OPM's current PLUM Reporting export",
@@ -19102,14 +19338,6 @@
         ]
       }
     },
-    "resolved_total_amount": null,
-    "cost_status": "unavailable",
-    "cost_basis": "subtree_weight",
-    "cost_validation": "post_is_not_a_budget_unit",
-    "costVerificationStatus": "unverified",
-    "costConfidenceScore": 0.0,
-    "costVerificationReason": "missing_cost",
-    "costSourceCount": 0,
     "parentId": "exec-eop-who"
   },
   {
@@ -19124,12 +19352,33 @@
     "sourceUrls": [
       "https://escs.opm.gov/escs-net/api/pbpub/download-data"
     ],
-    "evidenceUrls": [
-      "https://escs.opm.gov/escs-net/api/pbpub/download-data"
-    ],
     "sourceTypes": [
       "opm_plum_current_export",
       "official_site"
+    ],
+    "proofSourceCount": 2,
+    "proofSourceTypes": [
+      "opm_plum_current_export",
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": null,
+    "cost_status": "unavailable",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "post_is_not_a_budget_unit",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.0,
+    "costVerificationReason": "missing_cost",
+    "costSourceCount": 0,
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": "2026-09-21T03:02:16Z",
+    "evidenceUrls": [
+      "https://escs.opm.gov/escs-net/api/pbpub/download-data"
     ],
     "positionCurrentListing": {
       "source": "opm_plum_current_export",
@@ -19153,7 +19402,6 @@
       "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
       "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6"
     },
-    "lastVerified": "2026-09-21T03:02:16Z",
     "evidenceVerifiedAt": "2026-09-21T03:02:16Z",
     "verificationMethod": "listed_in_opm_current_plum_export",
     "placementVerified": true,
@@ -19162,18 +19410,6 @@
     "placementParentId": "exec-eop-who",
     "placementMatchedText": "DEPUTY ASSISTANT TO THE PRESIDENT AND DIRECTOR OF INTERGOVERNMENTAL AFFAIRS",
     "placementMethod": "listed_under_organization_in_opm_current_plum_export",
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "proofSourceCount": 2,
-    "proofSourceTypes": [
-      "opm_plum_current_export",
-      "official_site"
-    ],
-    "existsProven": true,
-    "parentProven": true,
-    "proofStatus": "proven",
-    "proofReason": "official_source_recorded",
     "positionCurrentPay": {
       "source": "opm_plum_current_export",
       "sourceLabel": "OPM's current PLUM Reporting export",
@@ -19241,14 +19477,6 @@
         ]
       }
     },
-    "resolved_total_amount": null,
-    "cost_status": "unavailable",
-    "cost_basis": "subtree_weight",
-    "cost_validation": "post_is_not_a_budget_unit",
-    "costVerificationStatus": "unverified",
-    "costConfidenceScore": 0.0,
-    "costVerificationReason": "missing_cost",
-    "costSourceCount": 0,
     "parentId": "exec-eop-who"
   },
   {
@@ -19263,12 +19491,33 @@
     "sourceUrls": [
       "https://escs.opm.gov/escs-net/api/pbpub/download-data"
     ],
-    "evidenceUrls": [
-      "https://escs.opm.gov/escs-net/api/pbpub/download-data"
-    ],
     "sourceTypes": [
       "opm_plum_current_export",
       "official_site"
+    ],
+    "proofSourceCount": 2,
+    "proofSourceTypes": [
+      "opm_plum_current_export",
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": null,
+    "cost_status": "unavailable",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "post_is_not_a_budget_unit",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.0,
+    "costVerificationReason": "missing_cost",
+    "costSourceCount": 0,
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": "2026-09-21T03:02:16Z",
+    "evidenceUrls": [
+      "https://escs.opm.gov/escs-net/api/pbpub/download-data"
     ],
     "positionCurrentListing": {
       "source": "opm_plum_current_export",
@@ -19292,7 +19541,6 @@
       "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
       "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6"
     },
-    "lastVerified": "2026-09-21T03:02:16Z",
     "evidenceVerifiedAt": "2026-09-21T03:02:16Z",
     "verificationMethod": "listed_in_opm_current_plum_export",
     "placementVerified": true,
@@ -19301,18 +19549,6 @@
     "placementParentId": "exec-eop-who",
     "placementMatchedText": "ASSISTANT TO THE PRESIDENT &amp; CABINET SECRETARY",
     "placementMethod": "listed_under_organization_in_opm_current_plum_export",
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "proofSourceCount": 2,
-    "proofSourceTypes": [
-      "opm_plum_current_export",
-      "official_site"
-    ],
-    "existsProven": true,
-    "parentProven": true,
-    "proofStatus": "proven",
-    "proofReason": "official_source_recorded",
     "positionCurrentPay": {
       "source": "opm_plum_current_export",
       "sourceLabel": "OPM's current PLUM Reporting export",
@@ -19380,14 +19616,6 @@
         ]
       }
     },
-    "resolved_total_amount": null,
-    "cost_status": "unavailable",
-    "cost_basis": "subtree_weight",
-    "cost_validation": "post_is_not_a_budget_unit",
-    "costVerificationStatus": "unverified",
-    "costConfidenceScore": 0.0,
-    "costVerificationReason": "missing_cost",
-    "costSourceCount": 0,
     "parentId": "exec-eop-who"
   },
   {
@@ -33238,6 +33466,149 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2025-12-31",
+    "positionMilitaryPay": {
+      "source": "military_basic_pay_schedule",
+      "sourceLabel": "Schedule 8 of the annual pay-adjustment order (the uniformed services' monthly basic pay), joined to the statute that fixes the post's grade",
+      "method": "grade_fixed_by_statute_joined_to_37_usc_201_and_schedule_8_monthly_basic_pay",
+      "amount": 227998.8,
+      "rateText": "$227,998.80",
+      "monthly": {
+        "amount": 18999.9,
+        "amountRaw": "18,999.90",
+        "text": "$18,999.90 per month",
+        "statedFor": "pay grade O-10"
+      },
+      "arithmetic": {
+        "operation": "monthly_times_12",
+        "baseAmount": 18999.9,
+        "baseAmountRaw": "18,999.90",
+        "baseText": "$18,999.90 per month",
+        "factor": 12,
+        "result": 227998.8,
+        "resultText": "$227,998.80",
+        "note": "No document prints $227,998.80. Schedule 8 prints basic pay by the month (\"part i-monthly basic pay\"): $18,999.90 for pay grade O-10; the annual figure is twelve times that and nothing more."
+      },
+      "office": "Commandant of the Marine Corps",
+      "statute": "10 U.S.C. 8043(b)",
+      "statuteQuote": "The Commandant of the Marine Corps, while so serving, has the grade of general without vacating his permanent grade.",
+      "grade": "general",
+      "payGrade": "O-10",
+      "payGradeAsPrinted": "O–⁠10",
+      "scheduleRow": {
+        "grade": "O-10",
+        "rowText": "O–⁠10 1 $18,999.90 $18,999.90 $18,999.90 $18,999.90 $18,999.90 $18,999.90 $18,999.90 $18,999.90 $18,999.90 $18,999.90 $18,999.90",
+        "populatedColumns": 11,
+        "columns": [
+          "Over 20",
+          "Over 22",
+          "Over 24",
+          "Over 26",
+          "Over 28",
+          "Over 30",
+          "Over 32",
+          "Over 34",
+          "Over 36",
+          "Over 38",
+          "Over 40"
+        ],
+        "flat": true,
+        "firstBlockPopulatedColumns": 0,
+        "note": "Every populated cell of the O-10 row prints $18,999.90, in the Over 20 through Over 40 columns; the cells for 2 or less through Over 18 print nothing, so the grade's monthly rate does not vary with years of service."
+      },
+      "footnote": null,
+      "capFootnote": {
+        "text": "Basic pay is limited to the rate of basic pay for level II of the Executive Schedule in effect during calendar year 2026, which is $18,899.90 per month, for officers at pay grades O–7 through O–⁠10. This includes officers serving as Chairman or Vice Chairman of the Joint Chiefs of Staff, Chief of Staff of the Army, Chief of Naval Operations, Chief of Staff of the Air Force, Commandant of the Marine Corps, Chief of Space Operations, Commandant of the Coast Guard, Chief of the National Guard Bureau, or commander of a unified or specified combatant command (as defined in",
+        "monthlyAsPrinted": "$18,899.90",
+        "note": "The officer table's footnote 1 prints the Level II ceiling for pay grades O-7 through O-10 as $18,899.90 per month, while the O-10 row prints $18,999.90; the two differ by $100.00 and this project publishes the row's figure, recording the discrepancy rather than reconciling it."
+      },
+      "identification": {
+        "kind": "grade_fixed_by_statute",
+        "nodeName": "Commandant of the Marine Corps (4-star General)",
+        "office": "Commandant of the Marine Corps",
+        "grade": "general",
+        "payGrade": "O-10",
+        "payGradeAsPrinted": "O–⁠10",
+        "statuteQuote": "The Commandant of the Marine Corps, while so serving, has the grade of general without vacating his permanent grade.",
+        "officeQuote": null,
+        "mappingCitation": "37 U.S.C. 201(a)(1)",
+        "mappingQuote": "O–⁠10 General Admiral",
+        "spaceForceMapping": null
+      },
+      "derivation": "10 U.S.C. 8043(b) (b): “The Commandant of the Marine Corps, while so serving, has the grade of general without vacating his permanent grade.” · 37 U.S.C. 201(a)(1): “O–⁠10 General Admiral” · Schedule 8 — Pay of the Uniformed Services (Effective January 1, 2026), O-10 row: O–⁠10 1 $18,999.90 $18,999.90 $18,999.90 $18,999.90 $18,999.90 $18,999.90 $18,999.90 $18,999.90 $18,999.90 $18,999.90 $18,999.90 · $18,999.90 × 12 = $227,998.80",
+      "quote": "10 U.S.C. 8043(b) (b): “The Commandant of the Marine Corps, while so serving, has the grade of general without vacating his permanent grade.” · 37 U.S.C. 201(a)(1): “O–⁠10 General Admiral” · Schedule 8 — Pay of the Uniformed Services (Effective January 1, 2026), O-10 row: O–⁠10 1 $18,999.90 $18,999.90 $18,999.90 $18,999.90 $18,999.90 $18,999.90 $18,999.90 $18,999.90 $18,999.90 $18,999.90 $18,999.90 · $18,999.90 × 12 = $227,998.80",
+      "documents": [
+        {
+          "role": "fixes this post's grade: general",
+          "citation": "10 U.S.C. 8043(b)",
+          "publisher": "U.S. Government Publishing Office",
+          "edition": "2024 edition of the United States Code",
+          "title": "10 U.S.C. 8043(b), 2024 edition of the United States Code",
+          "quote": "The Commandant of the Marine Corps, while so serving, has the grade of general without vacating his permanent grade.",
+          "url": "https://www.govinfo.gov/link/uscode/10/8043?link-type=html",
+          "documentSha256": "805723e5d5687d1dbd8f4ff53121624fbb870569b6a734469cca33d74fe800f0",
+          "retrievedAt": "2026-10-06T00:25:16Z",
+          "statesTheFigure": false
+        },
+        {
+          "role": "assigns the grade of general to pay grade O-10 for the purpose of computing basic pay",
+          "citation": "37 U.S.C. 201(a)(1)",
+          "publisher": "U.S. Government Publishing Office",
+          "edition": "2024 edition of the United States Code",
+          "title": "37 U.S.C. 201(a)(1), 2024 edition of the United States Code",
+          "quote": "O–⁠10 General Admiral",
+          "url": "https://www.govinfo.gov/link/uscode/37/201?link-type=html",
+          "documentSha256": "d5269e94ea2bddd1848d2275d6fbd1a30285996517a54009933a647e48ce1643",
+          "retrievedAt": "2026-10-06T00:22:48Z",
+          "statesTheFigure": false
+        },
+        {
+          "role": "prints the monthly basic pay for pay grade O-10: $18,999.90 in every populated column",
+          "citation": "5 U.S.C. 5332 note, Ex. Ord. No. 14368, Schedule 8 — Pay of the Uniformed Services (Effective January 1, 2026)",
+          "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives, reproducing Executive Order 14368",
+          "title": "Schedule 8 — Pay of the Uniformed Services (Effective January 1, 2026)",
+          "quote": "O–⁠10 1 $18,999.90 $18,999.90 $18,999.90 $18,999.90 $18,999.90 $18,999.90 $18,999.90 $18,999.90 $18,999.90 $18,999.90 $18,999.90",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5332&num=0&edition=prelim",
+          "documentSha256": "6656771d1a4103ab85e484fac10490c67d0126d8ed11832b804510ff7c9a9e59",
+          "retrievedAt": "2026-09-23T14:35:38Z",
+          "statesTheFigure": false,
+          "statesTheMonthlyFigure": true
+        }
+      ],
+      "schedule": {
+        "label": "Schedule 8 — Pay of the Uniformed Services",
+        "title": "Pay of the Uniformed Services",
+        "effective": "(Effective January 1, 2026)",
+        "year": "2026",
+        "partHeading": "part i-monthly basic pay"
+      },
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "pay grade O-10, twelve times the monthly rate",
+      "url": "https://www.govinfo.gov/link/uscode/10/8043?link-type=html",
+      "scheduleUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5332&num=0&edition=prelim",
+      "checkedAt": "2026-10-06T00:25:16Z",
+      "verification": {
+        "documents": 3,
+        "documentsStatingTheFigure": 0,
+        "percent": 90,
+        "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+        "caution": "The percentage measures how much official documentation this figure rests on, not the chance that it is right. No document here states the annual figure: a statute fixes the post's grade, 37 U.S.C. 201 assigns that grade a pay grade, and Schedule 8 prints what that pay grade is paid BY THE MONTH; the annual figure is twelve times the printed monthly rate, arithmetic this project performed.",
+        "documentRoles": [
+          {
+            "url": "https://www.govinfo.gov/link/uscode/10/8043?link-type=html"
+          },
+          {
+            "url": "https://www.govinfo.gov/link/uscode/37/201?link-type=html"
+          },
+          {
+            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5332&num=0&edition=prelim"
+          }
+        ]
+      }
+    },
     "evidenceUrls": [
       "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-275"
     ],
@@ -37709,6 +38080,489 @@
       "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-281"
     },
     "parentId": "exec-dept-doj"
+  },
+  {
+    "id": "exec-dept-doj-bop-director-bop",
+    "name": "Director, BOP",
+    "type": "Position",
+    "desc": "Federal position: Director, BOP",
+    "employees": null,
+    "budget": null,
+    "color": "#666666",
+    "children": [],
+    "sourceUrls": [
+      "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+    ],
+    "sourceTypes": [
+      "opm_plum_current_export",
+      "official_site"
+    ],
+    "proofSourceCount": 2,
+    "proofSourceTypes": [
+      "opm_plum_current_export",
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": null,
+    "cost_status": "unavailable",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "post_is_not_a_budget_unit",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.0,
+    "costVerificationReason": "missing_cost",
+    "costSourceCount": 0,
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": "2026-09-21T03:02:16Z",
+    "evidenceUrls": [
+      "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+    ],
+    "positionCurrentListing": {
+      "source": "opm_plum_current_export",
+      "method": "listed_in_opm_current_plum_export",
+      "edition": "OPM PLUM Reporting current export (fetched 2026-09-21)",
+      "listedTitle": "DIRECTOR",
+      "agency": "DEPARTMENT OF JUSTICE",
+      "organization": "FEDERAL BUREAU OF PRISONS",
+      "positionStatus": "Filled",
+      "appointmentType": "NA",
+      "payPlan": "ES",
+      "level": "$197,152",
+      "payLevel": null,
+      "reportedPay": 197152.0,
+      "reportedPayText": "$197,152",
+      "payPlanAndLevelOnOneRow": true,
+      "rows": 1,
+      "rowsListed": 1,
+      "exportFetchedAt": "2026-09-21T03:02:16Z",
+      "checkedAt": "2026-09-21T03:02:16Z",
+      "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+      "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6"
+    },
+    "verificationAliasMatch": {
+      "alias": "Federal Bureau of Prisons",
+      "basis": "18 U.S.C. 4041 names the unit 'The Bureau of Prisons' (committed at tests/fixtures/uscode/bop_18_usc_4041_govinfo2024.html); the Bureau styles itself the Federal Bureau of Prisons, which is the name OPM's current PLUM export files every one of its 72 live rows under ('FEDERAL BUREAU OF PRISONS', under the Department of Justice) and none under the statutory name. One unit, two spellings; the twelfth research batch's Justice cluster found the export's rows for the Bureau's Director and Deputy Director reaching nothing for want of this row (CURATION.md §19.20).",
+      "matchedText": "DEPARTMENT OF JUSTICE",
+      "scope": "organisation",
+      "source": "opm_plum_current_export",
+      "owner": "exec-dept-doj-bop",
+      "urls": [
+        "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+      ],
+      "matches": [
+        {
+          "source": "opm_plum_current_export",
+          "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+          "alias": "Federal Bureau of Prisons",
+          "basis": "18 U.S.C. 4041 names the unit 'The Bureau of Prisons' (committed at tests/fixtures/uscode/bop_18_usc_4041_govinfo2024.html); the Bureau styles itself the Federal Bureau of Prisons, which is the name OPM's current PLUM export files every one of its 72 live rows under ('FEDERAL BUREAU OF PRISONS', under the Department of Justice) and none under the statutory name. One unit, two spellings; the twelfth research batch's Justice cluster found the export's rows for the Bureau's Director and Deputy Director reaching nothing for want of this row (CURATION.md §19.20).",
+          "matchedText": "DEPARTMENT OF JUSTICE",
+          "scope": "organisation",
+          "owner": "exec-dept-doj-bop"
+        }
+      ],
+      "gradedAtMost": "partial"
+    },
+    "evidenceVerifiedAt": "2026-09-21T03:02:16Z",
+    "verificationMethod": "listed_in_opm_current_plum_export",
+    "placementVerified": true,
+    "placementUrl": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+    "placementVerifiedAt": "2026-09-21T03:02:16Z",
+    "placementParentId": "exec-dept-doj-bop",
+    "placementMatchedText": "DIRECTOR",
+    "placementMethod": "listed_under_organization_in_opm_current_plum_export",
+    "positionCurrentPay": {
+      "source": "opm_plum_current_export",
+      "sourceLabel": "OPM's current PLUM Reporting export",
+      "method": "rate_of_basic_pay_stated_in_opm_current_plum_export",
+      "amount": 197152.0,
+      "rateText": "$197,152",
+      "payPlan": "ES",
+      "listedTitle": "DIRECTOR",
+      "agency": "DEPARTMENT OF JUSTICE",
+      "organization": "FEDERAL BUREAU OF PRISONS",
+      "positionStatus": "Filled",
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "DIRECTOR",
+      "quote": "DIRECTOR; DEPARTMENT OF JUSTICE; FEDERAL BUREAU OF PRISONS; Pay Plan ES; Level, Grade, or Pay $197,152; Position Status Filled",
+      "unitsEvidenceKind": "currency_mark_on_the_printed_figure",
+      "exportFetchedAt": "2026-09-21T03:02:16Z",
+      "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+      "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6",
+      "checkedAt": "2026-09-21T03:02:16Z",
+      "verification": {
+        "documents": 1,
+        "documentsStatingTheFigure": 1,
+        "percent": 70,
+        "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+        "caution": "One document states the figure outright. The percentage measures how much official documentation it rests on, not the chance that it is right -- and a row in that export is an incumbency, not the post's own rate.",
+        "documentRoles": [
+          {
+            "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+            "role": "prints the rate for the one row listed under this title now"
+          }
+        ]
+      }
+    },
+    "positionSchedulePay": {
+      "source": "us_code_executive_schedule",
+      "method": "level_assigned_by_5_usc_5312_5316_to_the_office_a_second_statute_identifies_this_post_as",
+      "identification": {
+        "nodeName": "Director, BOP",
+        "basis": "the same office: 18 U.S.C. 4041 puts the Bureau of Prisons in charge of a director appointed by and serving under the Attorney General, and 5 U.S.C. 5315 places the Director of the Bureau of Prisons, Department of Justice, at Level IV; the graph names the post with the Bureau's acronym, which the scoped route refuses because the office half is the bare word Director",
+        "basisCitation": "18 U.S.C. 4041",
+        "basisQuote": "The Bureau of Prisons shall be in charge of a director appointed by and serving directly under the Attorney General.",
+        "basisUrl": "https://www.govinfo.gov/link/uscode/18/4041?link-type=html",
+        "basisSha256": "785b35155f4843bb0ee21fb300eae3f7567d7c82028f87141ceef0baa68f6dc0",
+        "basisCheckedAt": "2026-10-05T23:55:44Z"
+      },
+      "payLevel": "IV",
+      "citation": "5 U.S.C. §5315",
+      "statutoryTitle": "Director, Bureau of Prisons, Department of Justice",
+      "scopedOffice": null,
+      "scopedOrganisation": null,
+      "scopedOrganisationId": null,
+      "statuteUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
+      "statuteCheckedAt": "2026-09-18T20:34:27Z",
+      "amount": 197200.0,
+      "rateText": "$197,200",
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level IV",
+      "quote": "Level IV $197,200",
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-11T03:05:36Z",
+      "verification": {
+        "documents": 3,
+        "documentsStatingTheFigure": 1,
+        "percent": 90,
+        "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+        "caution": "One document states the rate and another is the statute that puts this post at that level; where a third is listed, it is the statute that says this post is the office the Code names, because the Code's title is not this node's name. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+        "documentRoles": [
+          {
+            "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+            "role": "states what that Executive Schedule level pays"
+          },
+          {
+            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
+            "role": "places this post at that level"
+          },
+          {
+            "url": "https://www.govinfo.gov/link/uscode/18/4041?link-type=html",
+            "role": "identifies this post as the office the Code places at that level"
+          }
+        ]
+      }
+    },
+    "parentId": "exec-dept-doj-bop"
+  },
+  {
+    "id": "exec-dept-doj-bop-deputy-director",
+    "name": "Deputy Director",
+    "type": "Position",
+    "desc": "Federal position: Deputy Director",
+    "employees": null,
+    "budget": null,
+    "color": "#666666",
+    "children": [],
+    "sourceUrls": [
+      "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+    ],
+    "sourceTypes": [
+      "opm_plum_current_export",
+      "official_site"
+    ],
+    "proofSourceCount": 2,
+    "proofSourceTypes": [
+      "opm_plum_current_export",
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": null,
+    "cost_status": "unavailable",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "post_is_not_a_budget_unit",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.0,
+    "costVerificationReason": "missing_cost",
+    "costSourceCount": 0,
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": "2026-09-21T03:02:16Z",
+    "evidenceUrls": [
+      "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+    ],
+    "positionCurrentListing": {
+      "source": "opm_plum_current_export",
+      "method": "listed_in_opm_current_plum_export",
+      "edition": "OPM PLUM Reporting current export (fetched 2026-09-21)",
+      "listedTitle": "DEPUTY DIRECTOR",
+      "agency": "DEPARTMENT OF JUSTICE",
+      "organization": "FEDERAL BUREAU OF PRISONS",
+      "positionStatus": "Filled",
+      "appointmentType": "NA",
+      "payPlan": "ES",
+      "level": "$193,209",
+      "payLevel": null,
+      "reportedPay": 193209.0,
+      "reportedPayText": "$193,209",
+      "payPlanAndLevelOnOneRow": true,
+      "rows": 1,
+      "rowsListed": 1,
+      "exportFetchedAt": "2026-09-21T03:02:16Z",
+      "checkedAt": "2026-09-21T03:02:16Z",
+      "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+      "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6"
+    },
+    "verificationAliasMatch": {
+      "alias": "Federal Bureau of Prisons",
+      "basis": "18 U.S.C. 4041 names the unit 'The Bureau of Prisons' (committed at tests/fixtures/uscode/bop_18_usc_4041_govinfo2024.html); the Bureau styles itself the Federal Bureau of Prisons, which is the name OPM's current PLUM export files every one of its 72 live rows under ('FEDERAL BUREAU OF PRISONS', under the Department of Justice) and none under the statutory name. One unit, two spellings; the twelfth research batch's Justice cluster found the export's rows for the Bureau's Director and Deputy Director reaching nothing for want of this row (CURATION.md §19.20).",
+      "matchedText": "DEPARTMENT OF JUSTICE",
+      "scope": "organisation",
+      "source": "opm_plum_current_export",
+      "owner": "exec-dept-doj-bop",
+      "urls": [
+        "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+      ],
+      "matches": [
+        {
+          "source": "opm_plum_current_export",
+          "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+          "alias": "Federal Bureau of Prisons",
+          "basis": "18 U.S.C. 4041 names the unit 'The Bureau of Prisons' (committed at tests/fixtures/uscode/bop_18_usc_4041_govinfo2024.html); the Bureau styles itself the Federal Bureau of Prisons, which is the name OPM's current PLUM export files every one of its 72 live rows under ('FEDERAL BUREAU OF PRISONS', under the Department of Justice) and none under the statutory name. One unit, two spellings; the twelfth research batch's Justice cluster found the export's rows for the Bureau's Director and Deputy Director reaching nothing for want of this row (CURATION.md §19.20).",
+          "matchedText": "DEPARTMENT OF JUSTICE",
+          "scope": "organisation",
+          "owner": "exec-dept-doj-bop"
+        }
+      ],
+      "gradedAtMost": "partial"
+    },
+    "evidenceVerifiedAt": "2026-09-21T03:02:16Z",
+    "verificationMethod": "listed_in_opm_current_plum_export",
+    "placementVerified": true,
+    "placementUrl": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+    "placementVerifiedAt": "2026-09-21T03:02:16Z",
+    "placementParentId": "exec-dept-doj-bop",
+    "placementMatchedText": "DEPUTY DIRECTOR",
+    "placementMethod": "listed_under_organization_in_opm_current_plum_export",
+    "positionCurrentPay": {
+      "source": "opm_plum_current_export",
+      "sourceLabel": "OPM's current PLUM Reporting export",
+      "method": "rate_of_basic_pay_stated_in_opm_current_plum_export",
+      "amount": 193209.0,
+      "rateText": "$193,209",
+      "payPlan": "ES",
+      "listedTitle": "DEPUTY DIRECTOR",
+      "agency": "DEPARTMENT OF JUSTICE",
+      "organization": "FEDERAL BUREAU OF PRISONS",
+      "positionStatus": "Filled",
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "DEPUTY DIRECTOR",
+      "quote": "DEPUTY DIRECTOR; DEPARTMENT OF JUSTICE; FEDERAL BUREAU OF PRISONS; Pay Plan ES; Level, Grade, or Pay $193,209; Position Status Filled",
+      "unitsEvidenceKind": "currency_mark_on_the_printed_figure",
+      "exportFetchedAt": "2026-09-21T03:02:16Z",
+      "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+      "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6",
+      "checkedAt": "2026-09-21T03:02:16Z",
+      "verification": {
+        "documents": 1,
+        "documentsStatingTheFigure": 1,
+        "percent": 70,
+        "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+        "caution": "One document states the figure outright. The percentage measures how much official documentation it rests on, not the chance that it is right -- and a row in that export is an incumbency, not the post's own rate.",
+        "documentRoles": [
+          {
+            "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+            "role": "prints the rate for the one row listed under this title now"
+          }
+        ]
+      }
+    },
+    "parentId": "exec-dept-doj-bop"
+  },
+  {
+    "id": "exec-dept-doj-bop-chief-of-staff",
+    "name": "Chief of Staff",
+    "type": "Position",
+    "desc": "Federal position: Chief of Staff",
+    "employees": null,
+    "budget": null,
+    "color": "#666666",
+    "children": [],
+    "sourceUrls": [
+      "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+    ],
+    "sourceTypes": [
+      "opm_plum_current_export",
+      "official_site"
+    ],
+    "proofSourceCount": 2,
+    "proofSourceTypes": [
+      "opm_plum_current_export",
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": null,
+    "cost_status": "unavailable",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "post_is_not_a_budget_unit",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.0,
+    "costVerificationReason": "missing_cost",
+    "costSourceCount": 0,
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": "2026-09-21T03:02:16Z",
+    "evidenceUrls": [
+      "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+    ],
+    "positionCurrentListing": {
+      "source": "opm_plum_current_export",
+      "method": "listed_in_opm_current_plum_export",
+      "edition": "OPM PLUM Reporting current export (fetched 2026-09-21)",
+      "listedTitle": "CHIEF OF STAFF",
+      "agency": "DEPARTMENT OF JUSTICE",
+      "organization": "FEDERAL BUREAU OF PRISONS",
+      "positionStatus": "Vacant",
+      "appointmentType": "CA",
+      "payPlan": "ES",
+      "level": null,
+      "payLevel": null,
+      "reportedPay": null,
+      "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": false,
+      "rows": 1,
+      "rowsListed": 1,
+      "exportFetchedAt": "2026-09-21T03:02:16Z",
+      "checkedAt": "2026-09-21T03:02:16Z",
+      "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+      "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6"
+    },
+    "verificationAliasMatch": {
+      "alias": "Federal Bureau of Prisons",
+      "basis": "18 U.S.C. 4041 names the unit 'The Bureau of Prisons' (committed at tests/fixtures/uscode/bop_18_usc_4041_govinfo2024.html); the Bureau styles itself the Federal Bureau of Prisons, which is the name OPM's current PLUM export files every one of its 72 live rows under ('FEDERAL BUREAU OF PRISONS', under the Department of Justice) and none under the statutory name. One unit, two spellings; the twelfth research batch's Justice cluster found the export's rows for the Bureau's Director and Deputy Director reaching nothing for want of this row (CURATION.md §19.20).",
+      "matchedText": "DEPARTMENT OF JUSTICE",
+      "scope": "organisation",
+      "source": "opm_plum_current_export",
+      "owner": "exec-dept-doj-bop",
+      "urls": [
+        "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+      ],
+      "matches": [
+        {
+          "source": "opm_plum_current_export",
+          "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+          "alias": "Federal Bureau of Prisons",
+          "basis": "18 U.S.C. 4041 names the unit 'The Bureau of Prisons' (committed at tests/fixtures/uscode/bop_18_usc_4041_govinfo2024.html); the Bureau styles itself the Federal Bureau of Prisons, which is the name OPM's current PLUM export files every one of its 72 live rows under ('FEDERAL BUREAU OF PRISONS', under the Department of Justice) and none under the statutory name. One unit, two spellings; the twelfth research batch's Justice cluster found the export's rows for the Bureau's Director and Deputy Director reaching nothing for want of this row (CURATION.md §19.20).",
+          "matchedText": "DEPARTMENT OF JUSTICE",
+          "scope": "organisation",
+          "owner": "exec-dept-doj-bop"
+        }
+      ],
+      "gradedAtMost": "partial"
+    },
+    "evidenceVerifiedAt": "2026-09-21T03:02:16Z",
+    "verificationMethod": "listed_in_opm_current_plum_export",
+    "placementVerified": true,
+    "placementUrl": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+    "placementVerifiedAt": "2026-09-21T03:02:16Z",
+    "placementParentId": "exec-dept-doj-bop",
+    "placementMatchedText": "CHIEF OF STAFF",
+    "placementMethod": "listed_under_organization_in_opm_current_plum_export",
+    "positionGradePay": {
+      "source": "opm_salary_table_range",
+      "method": "pay_system_range_for_the_pay_plan_reported_in_the_plum_archive",
+      "kind": "senior_executive_service",
+      "payPlan": "ES",
+      "grade": null,
+      "minimum": 151661.0,
+      "minimumPrinted": "151,661",
+      "maximum": 228000.0,
+      "maximumPrinted": "228,000",
+      "table": "Salary Table No. 2026-ES",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Senior Executive Service pay system, Agencies with a Certified SES Performance Appraisal System / Agencies without a Certified SES Performance Appraisal System",
+      "quote": "Agencies with a Certified SES Performance Appraisal System $151,661 $228,000 | Agencies without a Certified SES Performance Appraisal System $151,661 $209,600",
+      "unitsEvidenceKind": "currency_mark_on_the_printed_figure",
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "listingSource": {
+        "source": "opm_plum_current_export",
+        "edition": "OPM PLUM Reporting current export (fetched 2026-09-21)",
+        "period": null,
+        "listedTitle": "CHIEF OF STAFF",
+        "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+        "checkedAt": "2026-09-21T03:02:16Z"
+      },
+      "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/ES.aspx",
+      "documentSha256": "202c3f63db65c9584d7ae37f7f40d58337762517f149c37b587ed71c09e53026",
+      "checkedAt": "2026-09-21T03:00:01Z",
+      "rows": [
+        {
+          "label": "Agencies with a Certified SES Performance Appraisal System",
+          "minimum": 151661.0,
+          "minimumRaw": "151,661",
+          "maximum": 228000.0,
+          "maximumRaw": "228,000",
+          "rowText": "Agencies with a Certified SES Performance Appraisal System $151,661 $228,000"
+        },
+        {
+          "label": "Agencies without a Certified SES Performance Appraisal System",
+          "minimum": 151661.0,
+          "minimumRaw": "151,661",
+          "maximum": 209600.0,
+          "maximumRaw": "209,600",
+          "rowText": "Agencies without a Certified SES Performance Appraisal System $151,661 $209,600"
+        }
+      ],
+      "verification": {
+        "documents": 2,
+        "documentsStatingTheFigure": 1,
+        "percent": 80,
+        "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+        "caution": "One document prints the bounds and the other states which pay plan this post is on. The percentage measures how much official documentation the range rests on, not the chance that it is right -- and a range is not a rate: neither document says what this post is paid.",
+        "documentRoles": [
+          {
+            "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/ES.aspx",
+            "role": "states the pay system's or grade's printed bounds"
+          },
+          {
+            "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+            "role": "states the pay plan this post is on"
+          }
+        ]
+      }
+    },
+    "parentId": "exec-dept-doj-bop"
   },
   {
     "id": "exec-dept-doj-bop-correctional-officer-multiple",
@@ -60562,7 +61416,65 @@
     },
     "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
     "evidenceVerifiedAt": "2025-12-31",
-    "parentId": "exec-dept-dot-fhwa"
+    "parentId": "exec-dept-dot-fhwa",
+    "positionSchedulePay": {
+      "source": "us_code_executive_schedule",
+      "method": "level_assigned_by_5_usc_5312_5316_to_the_office_a_second_statute_identifies_this_post_as",
+      "identification": {
+        "nodeName": "Deputy Administrator",
+        "basis": "the same office: 49 U.S.C. 104(b)(2) gives the Federal Highway Administration one Deputy Federal Highway Administrator, appointed by the Secretary with the President's approval, and 5 U.S.C. 5315 places that officer at Level IV; the graph names the post bare 'Deputy Administrator' under the Administration's own node, and a row is keyed by id",
+        "basisCitation": "49 U.S.C. 104",
+        "basisQuote": "The Administration has a Deputy Federal Highway Administrator who is appointed by the Secretary, with the approval of the President.",
+        "basisUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title49-section104&num=0&edition=prelim",
+        "basisSha256": "7e8459420bce10bcaad9e18e994d583d7ff3f64abe437acb798625dd5749c92f",
+        "basisCheckedAt": "2026-09-28T19:22:21Z"
+      },
+      "payLevel": "IV",
+      "citation": "5 U.S.C. §5315",
+      "statutoryTitle": "Deputy Federal Highway Administrator",
+      "scopedOffice": null,
+      "scopedOrganisation": null,
+      "scopedOrganisationId": null,
+      "statuteUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
+      "statuteCheckedAt": "2026-09-18T20:34:27Z",
+      "amount": 197200.0,
+      "rateText": "$197,200",
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level IV",
+      "quote": "Level IV $197,200",
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-11T03:05:36Z",
+      "verification": {
+        "documents": 3,
+        "documentsStatingTheFigure": 1,
+        "percent": 90,
+        "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+        "caution": "One document states the rate and another is the statute that puts this post at that level; where a third is listed, it is the statute that says this post is the office the Code names, because the Code's title is not this node's name. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+        "documentRoles": [
+          {
+            "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+            "role": "states what that Executive Schedule level pays"
+          },
+          {
+            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
+            "role": "places this post at that level"
+          },
+          {
+            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title49-section104&num=0&edition=prelim",
+            "role": "identifies this post as the office the Code places at that level"
+          }
+        ]
+      }
+    }
   },
   {
     "id": "exec-dept-dot-nhtsa",
@@ -88383,7 +89295,6 @@
         ]
       }
     },
-    "parentId": "exec-ind-misc-federal-labor-relations-authority-flra",
     "positionSchedulePay": {
       "source": "us_code_executive_schedule",
       "method": "level_assigned_by_5_usc_5312_5316_to_the_office_a_second_statute_identifies_this_post_as",
@@ -88441,7 +89352,8 @@
           }
         ]
       }
-    }
+    },
+    "parentId": "exec-ind-misc-federal-labor-relations-authority-flra"
   },
   {
     "id": "exec-ind-misc-national-mediation-board-nmb",

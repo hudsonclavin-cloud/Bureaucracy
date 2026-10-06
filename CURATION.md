@@ -4426,6 +4426,356 @@ published), current-export listings **170 → 255** (255 with the Bureau of
 Prisons alias; 252 without), printed rates **88 → 128**, nodes with an
 official source **980 → 1,039**.
 
-**Still running when this section was written:** Defense, congressional
-staff, the judiciary, the remaining departments, the Code title scan and the
-Treasury alias candidates. Their results are appended below as they land.
+**Defense: the military basic-pay table was in the repository all along
+(2026-10-06).** The Defense cluster's first finding was about this
+repository and not about the government. `tests/fixtures/dfas/README.md`
+had recorded, on 2026-09-27, that every host publishing the uniformed
+services' basic-pay table answers 403, and the cluster re-measured the same
+refusal on ten hosts — then found the table in a file committed four days
+before that README was written: the note to 5 U.S.C. 5332
+(`tests/fixtures/uscode/pay_schedules_5_usc_5332.html`), from which
+`us_code_pay_schedules.py` prices Schedules 5, 6 and 7, reproduces Executive
+Order 14368 in full, and its **Schedule 8 — Pay of the Uniformed Services
+(Effective January 1, 2026)** is the monthly basic-pay table itself, every
+officer, warrant and enlisted row with its footnotes. The parser had refused
+every schedule number but the three it was written for, so the document sat
+unread under a digest the gate already recomputed on every run.
+
+`military_pay.py` reads the eighth schedule from the same bytes, and prices
+posts by two routes, both from it. **A grade a statute fixes:** Title 10 and
+Title 14 fix the grade of seventeen posts in so many words — "The Chief of
+Staff, while so serving, has the grade of general without vacating his
+permanent grade" (10 U.S.C. 7033(b)), "The Commandant while so serving shall
+have the grade of admiral" (14 U.S.C. 302) — 37 U.S.C. 201(a)(1) assigns
+"General" and "Admiral" to pay grade O-10, and Schedule 8's O-10 row prints
+$18,999.90 in every one of its eleven populated columns. Three documents,
+and **no document states an annual figure**: the schedule prints MONTHLY
+rates ("part i-monthly basic pay"), so the $227,998.80 the graph publishes is
+twelve times the printed monthly figure, arithmetic the block carries in the
+open the way the Inspector General Act's 3 percent is, under a third
+operation the validator now accepts (`monthly_times_12`, the factor named on
+the record). The seventeen are the Chairman and Vice Chairman of the Joint
+Chiefs (10 U.S.C. 152(c), 154(f)), the Chief of the National Guard Bureau
+(10502(e)(1)), the chief and vice chief of each of the five services (7033,
+7034, 8033, 8035, 8043, 8044, 9033, 9034, 9082, 9083), the Commandant and
+Vice Commandant of the Coast Guard (14 U.S.C. 302, 304) and the two combatant
+commanders whose grade a statute fixes, Special Operations Command and Cyber
+Command (10 U.S.C. 167(c), 167b(c)). Every grade sentence was re-found in its
+section's operative text, fetched from GPO's 2024-edition rendering on
+govinfo; the two Space Force rows carry 201(a)(2)'s sentence as well, since
+Space Force officers take the Air Force's equivalent grade. **A post the
+schedule's own footnote names:** the enlisted footnote states one rate for
+seven posts by title — "basic pay for this grade is $11,166.90 per month,
+regardless of cumulative years of service" — and five of them are nodes here
+by name equality: the Sergeant Major of the Army, the Master Chief Petty
+Officers of the Navy and of the Coast Guard, the Chief Master Sergeant of the
+Air Force and the Sergeant Major of the Marine Corps, at $134,002.80 a year.
+The one printed item that names two offices, "Master Chief Petty Officer of
+the Navy or Coast Guard", is read as both by a rule declared once and quoted
+whole on the record.
+
+Three things the module refuses, each recorded on the derive step's output.
+**A row must be flat before one figure may stand for it:** Schedule 8 prices
+by grade AND years of service, and a grade is priced only when its first
+block prints nothing and every populated cell of its second prints the same
+figure — true of O-10 (and O-9, which no row here needs) and false of every
+other grade, which is why the senior enlisted advisers are priced from the
+footnote that names them and never from the E-9 row, whose eleven cells run
+from $8,105.10 to $10,729.20. **The document disagrees with itself by $100,
+and the disagreement is published, not fixed:** the officer table's footnote
+1 says basic pay for O-7 through O-10 "is limited to the rate of basic pay
+for level II of the Executive Schedule in effect during calendar year 2026,
+which is $18,899.90 per month", while the O-10 row prints $18,999.90; no
+rendering of the order reachable from here settles it (the Federal
+Register's plain text answers its "Request Access" page and govinfo's prints
+the schedules as "[GRAPHIC] [TIFF OMITTED]"), so every record quotes the
+footnote verbatim beside the row's figure and says the two differ. **The
+nine combatant commanders whose grade no statute fixes are not priced:**
+10 U.S.C. 164 fixes none, theirs comes from a presidential designation under
+10 U.S.C. 601(a) that names no post, and the footnote names them only as
+subject to the Level II ceiling — a ceiling, not a rate, the reading §19.7
+already applied to 37 U.S.C. 203(a)(2). Also declined: the Joint Chiefs
+grouping's six copies of the service chiefs and the Commandant of the Coast
+Guard (the same office as the service's own node, and one salary is published
+once, the rule `exec-vp` set); the Space Force's "Senior Enlisted Advisor",
+because the footnote prints "Chief Master Sergeant of the Space Force" and
+no document in hand says which office stands under the graph's generic title
+— a rename candidate; and the Director of the National Geospatial-Intelligence
+Agency, whose 10 U.S.C. 441(b)(3) grade holds only IF an officer holds the
+post, a fact about a person this project never reads. The cluster's wider
+declines are the staff posts: the Joint Staff's J-directors, the services'
+G-, N- and A-staff deputies and the Marine Corps' Deputy Commandants (their
+sections say "general officers" or "officers above captain" and fix no
+grade), every service-component and area commander (designated under 601(a)
+or 14 U.S.C. 305(a)(1)(A), which name no post), the Chief of Army Reserve
+and the Director of the Army National Guard (appointed "from general
+officers", no grade), the defense agencies' directors (50 U.S.C. 3602 and
+10 U.S.C. 201 and 1073c name the posts and state no grade or pay), the
+sixteen agencies' stamped CFO/CIO/CoS/GC/IG titles, and the ninety-nine
+combatant-command staff posts.
+
+**Defense: the Department's own Chief Financial Officer.** Two of the
+Department's stamped administrative posts stand under titles the Code prints
+for them, and one row landed. `exec-dept-defense-chief-financial-officer` is
+priced as the **Under Secretary of Defense (Comptroller)** (Level III,
+5 U.S.C. 5314, $209,600) on 10 U.S.C. 135(b)'s own sentence — "The Under
+Secretary of Defense (Comptroller) is the agency Chief Financial Officer of
+the Department of Defense for the purposes of chapter 9 of title 31." — read
+from govinfo's 2024-edition rendering and re-found in the operative text by
+both readers. The Schedule's own history agrees and the row's basis says so:
+§5315's Amendments note records a "Chief Financial Officer, Department of
+Defense" item inserted at Level IV by Pub. L. 101–576 and struck by Pub. L.
+103–160, the same Act whose §5314 entry inserted "Comptroller of the
+Department of Defense" at Level III, renamed by Pub. L. 103–337. "Chief
+Financial Officer" names 81 nodes in this graph, so the row is keyed to the
+Department's node alone, and the test asserts the gate refuses the same
+record on every one of the other 80. The **Chief Information Officer** was
+declined, not for want of a statute — 10 U.S.C. 142(a) was fetched and its
+appointment sentence is in the operative text — but because §5315 prints the
+title as "Chief Information Officer, Department of Defense (unless the
+official designated as the Chief Information Officer of the Department of
+Defense is an official listed under section 5312, 5313, or 5314 of this
+title)", 213 characters with a 164-character proviso, and the title parser
+refuses anything over 140 characters as a sentence rather than a title. The
+proviso makes Level IV conditional on who is designated; reading it would be
+reading law, and the parser was left as it is. The "Director of Legislative
+Affairs" template was declined too: 10 U.S.C. 138(b)(3) names an Assistant
+Secretary of Defense for Legislative Affairs, one of the Level IV counted
+class, and treating the stamped Director as that office is the judgement the
+stamp rule refuses; the Code also counts 20 Assistant Secretaries where
+§138(a)(1) says 19. The Department's Under Secretaries, Deputy Under
+Secretaries, Assistant Secretaries, DOT&E and CAPE directors are a curation
+gap — §§5314–5315 print all of them and the Department's node carries none.
+
+**Congressional staff: three officers priced, four shapes recorded, and
+roughly 330 posts paid at a rate the appointing officer fixes under a
+ceiling.** The cluster read GPO's 2024 edition of Title 2 and Title 31, the
+two chambers' pay orders as the Code's notes reprint them, the House
+Statement of Disbursements and the Senate's Report of the Secretary, and
+sorted its ~400 unpriced posts the way this file sorts everything: a rate a
+document states, a shape this project has not decided, a ceiling, or nothing.
+Three posts are **tier-reference rows** in the shape the GAO's officers
+already take, each sentence re-found in its section's operative text: the
+**Architect of the Capitol** at Level II (2 U.S.C. 1802: "The compensation of
+the Architect of the Capitol shall be at an annual rate which is equal to the
+annual rate of basic pay for level II of the Executive Schedule"); the
+**Chief of the Capitol Police** at Level II (2 U.S.C. 1902, keyed by id to the
+graph's "Chief of Police"); and the **GAO's General Counsel** at Level IV
+(31 U.S.C. 731(c), which names the Office and so answers the stamp problem
+"General Counsel" otherwise has). Four more are a subtraction on a join —
+the shape the Inspector General Act's "plus 3 percent" takes turned the other
+way — and are **recorded as the next decision rather than built**: the AOC's
+Inspector General at "$1,500 less than the annual rate of pay of the
+Architect" (2 U.S.C. 1808(c)(3), $226,500); the Capitol Police's Inspector
+General at "$1,000 less than the annual rate of pay in effect for the Chief"
+(2 U.S.C. 1909(b)(4), $227,000); the GAO's Inspector General at "$5,000 less
+than the annual rate of pay of the Comptroller General" (31 U.S.C. 705(b)(4),
+$223,000); and the CBO's Director and Deputy Director, whose chain §19.10
+left unread and the cluster closed — 2 U.S.C. 601(a)(5)(A) pays the Director
+"the maximum rate of pay in effect under section 4575(f)", 4575(f)'s own
+operative text names "the annual rate of basic pay in effect for level II of
+the Executive Schedule", and (5)(B) pays the Deputy "$1,000 less than the
+annual rate of pay received by the Director" — a two-statute chain to Level
+II ($228,000) and a subtraction on it ($227,000). None of these five figures
+is printed by any document; each would publish `documentsStatingTheFigure: 0`
+with the arithmetic in the open, and the one thing they need is a
+`minus_dollars` operation beside `plus_percent` and `percent_of`, which is a
+validator and gate change the owner should see before it is made. Two more
+are a different kind of document: the Order of the President pro tempore
+(2 U.S.C. 4571 notes, March 25, 2024) makes the Secretary of the Senate, the
+Sergeant at Arms and Doorkeeper and the Legislative Counsel "each … equal to
+the annual rate for level II" and the Chaplain likewise, and the Order of the
+Speaker (2 U.S.C. 4532 notes, January 17, 2025) puts the Clerk, the
+Sergeant-at-Arms, the Chief Administrative Officer, the Chaplain, the General
+Counsel, the Inspector General, the Director of Interparliamentary Affairs
+and the Attending Physician at Level II. Both are law-like instruments issued
+under a statute (2 U.S.C. 4575a(i), 4532), both are printed only in the
+Code's Statutory Notes — beneath the cut this project uses to keep repealed
+text out — and a later order of each exists that the OLRC host would not
+serve. They reach four position nodes (the Secretary of the Senate, the
+Senate's Sergeant at Arms, the Clerk and the CAO) and are declined for now
+with the reason stated: an order is its own document class, and reading it
+out of a notes block would be the one thing the operative-text rule exists
+to forbid. The House disbursement statement corroborates by arithmetic the
+document does not perform (the Clerk's $57,000 for a quarter is $228,000/4),
+which is a reason to believe the orders and not a document stating a rate.
+The remaining ~330 posts — Senators' and Members' office staff, committee
+staff directors, the Secretary's and Sergeant at Arms' offices, the Clerk's
+and CAO's directors, the CBO's staff and the GAO's analysts — are paid at
+rates the appointing officer fixes within a floor and the Level II ceiling
+(2 U.S.C. 4575(d)(2), (e)(3)(B), (f); the Speaker's order's $45,000–Level II
+band; 2 U.S.C. 601(b) for the CBO; 31 U.S.C. 732(c) for the GAO's own band
+table, which maps no title to a band), and both disbursement reports are
+person-level amounts for a period, never a rate for a title — so none is
+priced, each for a reason now recorded. The CRS Director's "greater of"
+Level III or the certified SL maximum (2 U.S.C. 166(c)) is the Deputy
+Librarian's declined shape and is left with it; the Senate Chaplain and the
+House's Sergeant at Arms, Chaplain and Inspector General exist here only as
+Office nodes, a curation gap the orders would reach if a post were curated.
+
+**The judiciary: three rows, and a ceiling the compensation table's own page
+resolves (2026-10-06).** The cluster's three strong leads all landed, each in
+a shape this file already has. **The IRS Chief Counsel.** 5 U.S.C. 5316
+prints "Chief Counsel for the Internal Revenue Service, Department of the
+Treasury" at Level V, and no route could reach the node: the graph's name is
+the bare "Chief Counsel", a title nine bureaus carry, and the scoped route
+splits the Code's title at its comma into an office half no node is named by
+and an organisation half ("Department of the Treasury") that is not the
+node's parent. It is a reviewed row keyed to `exec-dept-treasury-irs-chief-
+counsel` alone, with 26 U.S.C. 7803(b)(1) as the identifying statute —
+"There shall be in the Department of the Treasury a Chief Counsel for the
+Internal Revenue Service who shall be appointed by the President, by and
+with the consent of the Senate." — the same section the Commissioner's row
+already cites, a different sentence of it, quoted as the page prints it (the
+Chief Counsel's appointment clause lacks the "advice and" the Commissioner's
+carries, and a tidied copy would have been refused by both readers). $184,900,
+`partial`, `proxy`. The Tax Court subtree draws the same office a second time
+as "Chief Counsel — IRS (opposing)", the post where it litigates; it is
+reached by no route and the gate refuses the record moved onto it, onto the
+eight other Chief Counsels and onto the Commissioner; a test moves
+7803(b)(1)'s sentence beneath the Editorial Notes and the Chief Counsel's row
+falls while the Commissioner's stands. Level V prices eight posts now.
+**The Chair of the U.S. Sentencing Commission.** 28 U.S.C. 992(c), fetched
+from GPO's 2024 edition through govinfo's link service, pays "The Chair and
+Vice Chairs of the Commission … at the annual rate at which judges of the
+United States courts of appeals are compensated", so `jud-support-ussc-chair-
+ussc` is a derived office row in the Administrative Office Director's shape
+at the circuit-judge tier — $264,900, two documents, 80%, neither stating
+the figure. The CAAF's chief judge prices the identical figure from 10 U.S.C.
+942(d), so the gate's id-keyed mirror is what tells a record moved between
+the two apart, and a test moves it both ways. The Commission's `Commissioner
+(×6)` bench is deliberately not priced and recorded in `derived_pay.
+NOT_PRICED`: the same subsection pays the voting members other than the
+Chair and Vice Chairs "at the daily rate at which judges of the United
+States courts of appeals are compensated", so the bench bundles three Vice
+Chairs at the annual rate with members paid by the day, and one annual
+figure would be false of some of its holders — the senior-judge refusal's
+shape. The three Vice Chairs have no nodes and nothing was invented for
+them. A link-service fetch records the link as `url` and the dated granule as
+`final_url`, so `statute_publisher` now reads the edition off either and a
+record names "U.S. Government Publishing Office, 2024 edition of the United
+States Code" rather than "an edition". **The magistrate judges.** §19.13 had
+refused both benches on a true reading of 28 U.S.C. 634(a): full-time
+magistrate judges' salaries are "fixed by the conference … up to an annual
+rate equal to 92 percent of the salary of a judge of the district court", a
+ceiling and not a rate, which is why the bankruptcy benches were priced and
+these were not. The committed Judicial Compensation page — the document the
+tier is already read from — prints beneath its table, in its Explanatory
+Notes: "By statute, the salary of a bankruptcy or magistrate judge is equal
+to 92 percent of the salary of a district judge. 28 U.S.C. §§ 153, 634(a)."
+That is the Administrative Office stating what the Judicial Conference fixed
+under the ceiling, checked against the bytes (exactly one occurrence, in no
+row the table parser carries). So `jud-district-sdny-magistrate-judge-13` and
+`jud-district-structure-magistrate-judge-varies` are percent-of rows in the
+bankruptcy shape — $249,900 × 92% = $229,908, arithmetic in the open, two
+documents, 80%, none stating the figure — with one thing more: the provision
+carries the page's sentence as `basisQuote`, `build_records` re-finds it in
+the page's own text on every run and refuses the row when it is gone, the
+block publishes it as `ceilingBasis` with a reading in words (a ceiling, the
+full-time salary, part-time magistrates at $100 to half the maximum), the
+derivation carries it, and the gate mirrors it by node id, re-reads the
+committed page's bytes, and refuses a `ceilingBasis` on any row whose statute
+states the rate itself. The distinction the tests pinned is kept — "up to" IS
+in §634 and NOT in §153 — and what changed is a second sentence of a
+document already in hand resolving it; the owner, who decided the bankruptcy
+shape and left the magistrates refused, may reverse this one. The multi-post
+sweep keeps both with `holders`; derived rows **15 → 18**. The cluster's
+other leads are recorded and not built: the CFC's chief special master at
+Level IV (42 U.S.C. 300aa-12(c)(5)) needs a node the graph lacks; the SSA's
+administrative law judges are bounded by OPM's 2026-ALJ table and placed by
+5 CFR 930.205, a system and not a rate; law clerks sit at JSP-11 to JSP-14 by
+OSCAR's own statement and court unit executives on a JSP table to grade 18,
+but no official document states which grade a given clerk or executive holds;
+the circuit executive (28 U.S.C. 332(f)(1)), the Federal Public Defender (18
+U.S.C. 3006A(g)(2)(A), chained to the U.S. Attorney's own ceiling under 28
+U.S.C. 548), the Sentencing Commission's Staff Director (§995(a)(2)) and the
+FJC's professional staff (§625(b)) are ceilings; the Supreme Court's officers
+are paid as the Court fixes (28 U.S.C. 671–675); the CFC's senior judges are
+topped up only while recalled (28 U.S.C. 797(d)); and the court reporters'
+and Court Personnel System tables print bands no document ties a post to.
+
+**The remaining departments: 1,259 unpriced posts under twelve departments,
+and where the Code reaches.** The cluster read the five committed Executive
+Schedule sections against every title under HHS, USDA, Commerce, Education,
+Energy, the Interior, Labor, State, Transportation, the Treasury, the VA and
+HUD, fetched each identifying section from GPO's 2024-edition rendering on
+govinfo (`uscode.house.gov` still under maintenance; `www.state.gov` answers
+`robots.txt` and its homepage with a 659,508-byte 403 page, so State's own
+Senior Foreign Service table cannot be read from here), and read the
+committed current PLUM export by its `READ_COLUMNS` only. 432 of the 1,259
+are the VA Medical Centers' service chiefs `va_title38_pay.py` refuses by
+design and 51 are the Energy Department's contractor-laboratory posts;
+neither was re-adjudicated. What the Code sets or identifies, in shapes this
+repository already has: **four Transportation reviewed rows** the Schedule
+already prints — the NHTSA Administrator (III) and Deputy Administrator (V)
+through 49 U.S.C. 105(b), the FMCSA Deputy Administrator (V) through 49
+U.S.C. 113(d), and the Deputy Federal Highway Administrator (IV) through the
+committed 49 U.S.C. 104(b)(2); the FTA's Deputy Administrator is printed by
+§5316 but 49 U.S.C. 107 names no deputy, so it stays speculative. **The NNSA
+Administrator**: 42 U.S.C. 7132(c) pays the Under Secretary for Nuclear
+Security at Level III and (c)(3), with 50 U.S.C. 2402(a)(2), makes that
+officer the Administrator — the tier-reference shape with an identification
+sentence. **The IRS Chief Counsel**: §5316 prints "Chief Counsel for the
+Internal Revenue Service, Department of the Treasury" at Level V and 26
+U.S.C. 7803(b)(1) creates the office — the judiciary cluster found the same
+lead and it is recorded with that cluster's rows. **Reorganization Plans are
+a document kind this repository has not read**, and the cluster's three
+strongest Commerce leads rest on them: Reorganization Plan No. 4 of 1970
+sets NOAA's Administrator at Level III, its Deputy Administrator at Level IV
+and its Chief Scientist at Level V, and Reorganization Plan No. 3 of 1979
+sets a Deputy Secretary of Commerce at Level II — the office §19.7 and §8
+recorded as absent from §5313, which it is; the Plan sets its pay by
+reference — and the Under Secretary for International Trade at Level III.
+The Plans sit in Title 5's Appendix on govinfo, their pages carry no "§N."
+heading for `operative_text` to anchor on, and §19.14 already declined the
+SEC's Chairman and the EPA's Administrator for the same reason; they are
+recorded here as one decision — a reader for the Appendix — covering six
+posts rather than taken one at a time. **Listing leads that need a name, not
+a matcher**: the export files the FDA's head as "COMMISSIONER OF FOOD AND
+DRUGS" at EX IV (21 U.S.C. 393(d)(1) identifies the office), the Mint's
+Director at SL $176,300 and its Deputy at ES $226,026 (31 U.S.C. 304(b)(1)),
+the United States Representative to the United Nations at EX III under the
+graph's stamped "Assistant Secretary, U.S. Mission to the United Nations",
+the Chief of Protocol at EX IV under the same stamp, the NNSA's two Deputy
+Administrators at EX IV, and some twenty SES rows for the Office of Science's
+associate directors, OFAC, the BLS, CMS, Ginnie Mae, the Fiscal Service, the
+BEP, BOEM and PIH — each a rename or alias candidate, each declined until a
+document supplies the graph's title. **Ceilings and systems, not rates,**
+each declined with its section: every chief of mission at "one of Levels
+II–V as the President determines" (22 U.S.C. 3961(a), a band of four levels
+no field here carries); the Senior Foreign Service within the SES range (22
+U.S.C. 3962(a)); the National Taxpayer Advocate and the Chief of Appeals at
+the SES maximum, which OPM's committed table prints twice (26 U.S.C. 7803);
+USPTO's Commissioners at the SES maximum and its trademark judges at Level
+III (35 U.S.C. 3(b)); the FAA's Chief Operating Officer at 3 U.S.C. 102's
+$400,000 (49 U.S.C. 106(r)(2)(A)); Federal Student Aid's Chief Operating
+Officer at the SES maximum (20 U.S.C. 1018(d)(5)(A)); the Board of Veterans'
+Appeals' Vice Chairman on 5 U.S.C. 5372's rates unless SES (38 U.S.C.
+7101(a)(4)); and the OCC's pay fixed outside Title 5 (12 U.S.C. 482; the
+export prints its Senior Deputy Comptroller and Chief Counsel at OT
+$331,800). The VHA's "Principal Deputy Under Secretary for Health" against
+38 U.S.C. 7306(a)(1)'s "Deputy Under Secretary for Health", which Table 4
+Tier 1 lists, is the reviewed identification §19.19 already left to the
+owner. Declined with reasons: the fifteen departments' stamped ten-title
+office (no statute names any of them), the DOL, DOI and State "General
+Counsel" stamps (the Code prints Solicitors and a Legal Adviser instead), two
+IRS Deputy Commissioner nodes where the Code places one office, SAMHSA's
+Administrator (the same office as its Assistant Secretary), the NNSA and EM
+site managers, every bureau-level GS and SES post no document names, and the
+embassy section chiefs and attachés of the Foreign Service system.
+
+**The batch's running total, restated (2026-10-06, morning).** Pay claims
+**1,158 → 1,193** of 4,591 positions; unpriced **3,433 → 3,398** (no document
+names the title **2,663 → 2,630**; a multiplicity no office-rate claim reaches
+**752 → 750**; listed with no rate 18); reviewed Schedule rows **91 → 97**,
+Schedule-priced posts **230 → 236**; tier-reference rows **19 → 23**, records
+**46 → 50**, published **41 → 45**; derived rows **15 → 18**; the new
+`positionMilitaryPay` field on **22** posts; nodes with an official source
+1,039, `verified` 538, `partial` 454. `docs/COST_COVERAGE.md` puts the 5,510
+nodes in their classes: 160 measured, 693 estimates (240 committees, 42 beside
+a sourced non-cost figure, 411 bare), 1,193 salaries, 3,398 unpriced posts by
+reason, 30 beneath a negative pool, 36 replaced units.
+
+**Still running when this paragraph was written (2026-10-06, morning):** the
+Code title scan and the Treasury alias candidates. Their results are appended
+below as they land.

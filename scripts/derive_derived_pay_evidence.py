@@ -44,6 +44,7 @@ from data_pipeline.verification.derived_pay import (  # noqa: E402
     STRENGTH_SCALE,
     Unreadable,
     build_records,
+    compensation_page_text,
     document_strength_percent,
 )
 from data_pipeline.verification.judicial_pay import (  # noqa: E402
@@ -84,6 +85,10 @@ def main(argv: list[str] | None = None) -> int:
             table_url=loaded["url"],
             table_sha256=loaded["sha256"],
             table_retrieved_at=loaded["fetched_at"],
+            # The page's own text, from the bytes the digest check above has
+            # just vouched for: the magistrate rows rest on a sentence printed
+            # beneath the table, outside the rows the table parser carries.
+            table_text=compensation_page_text(loaded["file"]),
         )
     except Unreadable as error:
         print(f"refused: {error}")

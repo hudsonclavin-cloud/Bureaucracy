@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-10-06T00:25:35Z",
+ "url": "https://www.govinfo.gov/link/uscode/10/167?link-type=html",
+ "status": 200,
+ "final_url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partI-chap6-sec167.htm",
+ "content_type": "text/html",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /link/uscode/10/167",
+ "bytes": 40564,
+ "sha256": "5823d55c918cbe6276e74213e8e668847ad9a760f746eb33ab793f090f38ec9f",
+ "error": null
+}

@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-10-06T00:25:30Z",
+ "url": "https://www.govinfo.gov/link/uscode/10/9083?link-type=html",
+ "status": 200,
+ "final_url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleD-partI-chap908-sec9083.htm",
+ "content_type": "text/html",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /link/uscode/10/9083",
+ "bytes": 3671,
+ "sha256": "a665463b6f5bbc1ff932cbde238e332dd41d2e7d5a028b61691baf2efb3cdcaa",
+ "error": null
+}

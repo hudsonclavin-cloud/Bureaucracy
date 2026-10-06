@@ -231,6 +231,11 @@ EVIDENCE_OWNED_FIELDS = (
     # the rest so a repealed reference or a delisted establishment takes the
     # figure off the site.
     "positionTierReferencePay",
+    # Written by military_pay.py: a statute fixes the post's grade, 37 U.S.C.
+    # 201 assigns the grade a pay grade, and Schedule 8 of the pay-adjustment
+    # order prices it by the month; withdrawn with the rest so a repealed
+    # grade sentence or a reshaped schedule takes the figure off the site.
+    "positionMilitaryPay",
     # Written by judicial_pay.py and congressional_pay.py, withdrawn here
     # with the rest for the same reason: a statutory-pay claim that is no
     # longer supported (the table stops naming this tier, the node is

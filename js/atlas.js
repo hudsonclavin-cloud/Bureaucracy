@@ -548,9 +548,14 @@ function describePay(node) {
     const basis = arithmetic
       ? `${derived.statute || "A statutory provision"} states that ${subject} is paid ${arithmetic.percent} percent of ${derived.percentOfWhat || `the salary of ${arithmetic.baseTier || "a judicial tier"}`}${derived.viaStatute ? `; ${derived.viaStatute} puts that office at the rate of ${arithmetic.baseTier || "the tier"}` : ""}; the U.S. Courts' Judicial Compensation table prints ${arithmetic.baseText || "a figure"} for ${arithmetic.baseTier || "that tier"}${derived.year ? ` for ${derived.year}` : ""}. ${arithmetic.baseText || "That figure"} × ${arithmetic.percent}% = ${printed}, arithmetic this project performed and no document prints.`
       : `${derived.statute || "A statutory parity provision"} states that ${subject} is paid ${derived.viaStatute ? `what another office is paid, and ${derived.viaStatute} states that that office is paid` : ""} at the rate of ${derived.amountScope || "another court's judges"}; the U.S. Courts' Judicial Compensation table states that tier pays ${printed}${derived.year ? ` for ${derived.year}` : ""}.`;
+    // A statutory CEILING (28 U.S.C. 634(a), "up to" 92 percent) is read
+    // through the sentence the same compensation page prints beneath its table.
+    const ceiling = derived.ceilingBasis && typeof derived.ceilingBasis === "object" && derived.ceilingBasis.quote
+      ? ` ${derived.statute || "That statute"} states a ceiling ("up to"), not a rate; the same page prints beneath its table: "${String(derived.ceilingBasis.quote).trim()}" — the document saying what the Judicial Conference fixed under it.`
+      : "";
     blocks.push({
       heading: "Derived pay — no single document states it",
-      text: `${basis} ${count} official document${count === 1 ? " verifies" : "s verify"} it — ${Number(verification.percent || 0)}% on this project's own source scale — and ${stating === 0 ? "neither states the figure" : `${stating} state${stating === 1 ? "s" : ""} the figure`}. The percentage measures how much official documentation the claim rests on, not the chance that it is right.${holdersNote(derived)}`,
+      text: `${basis}${ceiling} ${count} official document${count === 1 ? " verifies" : "s verify"} it — ${Number(verification.percent || 0)}% on this project's own source scale — and ${stating === 0 ? "neither states the figure" : `${stating} state${stating === 1 ? "s" : ""} the figure`}. The percentage measures how much official documentation the claim rests on, not the chance that it is right.${holdersNote(derived)}`,
     });
   }
   const reference = node.positionTierReferencePay;
@@ -563,6 +568,32 @@ function describePay(node) {
       text: arithmetic
         ? `${reference.statute || "The statute"} sets an Inspector General's basic pay at the rate for Executive Schedule ${reference.levelText || `Level ${reference.level}`} plus ${arithmetic.percent} percent; OPM's ${reference.table || "table"} prints ${arithmetic.baseText || reference.levelRateText} for that level. ${arithmetic.baseText || reference.levelRateText} + ${arithmetic.percent}% = ${printed}, arithmetic this project performed and no document prints.${identification.establishment ? ` 5 U.S.C. 401(1) lists ${identification.establishment} as an establishment whose Inspector General that section covers.` : ""}${holdersNote(reference)}${payDocuments(reference)}`
         : `${reference.statute || "The statute"} sets the ${reference.office || "post"}'s pay equal to the rate for Executive Schedule ${reference.levelText || `Level ${reference.level}`}; OPM's ${reference.table || "table"} prints ${printed} for that level. The post is not itself on the Schedule.${identification.statuteIdentifies ? ` The graph's title is a template; the same section names the office under it: "${String(identification.statuteIdentifies).trim()}"` : ""}${holdersNote(reference)}${payDocuments(reference)}`,
+    });
+  }
+  // Schedule 8 of the pay-adjustment order prints the uniformed services'
+  // basic pay BY THE MONTH; a statute fixes the post's grade (or the
+  // schedule's own footnote names the post), and the annual figure is twelve
+  // times the printed monthly one -- arithmetic this project performed, said
+  // so in the one paragraph, with the officer footnote's $100 discrepancy
+  // recorded where the grade route carries it.
+  const military = node.positionMilitaryPay;
+  if (military && typeof military === "object" && typeof military.amount === "number") {
+    const printed = military.rateText || `$${military.amount.toLocaleString("en-US")}`;
+    const identification = military.identification && typeof military.identification === "object" ? military.identification : {};
+    const monthly = military.monthly && typeof military.monthly === "object" ? military.monthly : {};
+    const schedule = military.schedule && typeof military.schedule === "object" ? military.schedule : {};
+    const scheduleRow = military.scheduleRow && typeof military.scheduleRow === "object" ? military.scheduleRow : null;
+    const footnote = military.footnote && typeof military.footnote === "object" ? military.footnote : null;
+    const capFootnote = military.capFootnote && typeof military.capFootnote === "object" ? military.capFootnote : null;
+    const byGrade = identification.kind === "grade_fixed_by_statute";
+    const payGrade = military.payGrade || identification.payGrade || "";
+    blocks.push({
+      heading: "Military basic pay — twelve months of a printed monthly rate",
+      text: `${schedule.label || "Schedule 8 — Pay of the Uniformed Services"}${schedule.effective ? ` ${schedule.effective}` : ""} prints ${monthly.text || "a monthly rate"} for ${byGrade ? `pay grade ${payGrade || "?"}` : "the post by title"}; ${printed} a year is twelve times that, arithmetic this project performed and no document prints.${
+        byGrade
+          ? ` ${military.statute || "A statute"} fixes the post's grade: "${String(military.statuteQuote || identification.statuteQuote || "").trim()}"${identification.officeQuote ? ` The same section says which office: "${String(identification.officeQuote).trim()}"` : ""} ${identification.mappingCitation || "37 U.S.C. 201(a)(1)"} assigns the grade of ${military.grade || identification.grade || "general or admiral"} to pay grade ${payGrade || "O-10"}: "${String(identification.mappingQuote || "").trim()}"${identification.spaceForceMapping ? ` 37 U.S.C. 201(a)(2), for the Space Force: "${String(identification.spaceForceMapping).trim()}"` : ""}${scheduleRow && scheduleRow.note ? ` ${String(scheduleRow.note).trim()}` : ""}${capFootnote && capFootnote.note ? ` ${String(capFootnote.note).trim()}` : ""}`
+          : `${footnote && footnote.text ? ` The schedule's enlisted footnote names the post: "${String(footnote.text).trim()}"` : ""}${identification.readsTwoOffices === true ? ` The printed item "${(footnote && footnote.printedItem) || identification.printedItem || ""}" names two offices at once, and this post is one of them.` : ""}`
+      }${holdersNote(military)}${payDocuments(military)}`,
     });
   }
   const reported = node.positionReportedPay;

@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-10-06T00:56:39Z",
+ "url": "https://www.govinfo.gov/link/uscode/49/113?link-type=html",
+ "status": 200,
+ "final_url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title49/html/USCODE-2024-title49-subtitleI-chap1-sec113.htm",
+ "content_type": "text/html",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /link/uscode/49/113",
+ "bytes": 22464,
+ "sha256": "02bec16f511f63b3ad7bb50a1857dc0705586a52781be2d247cff8c7cc2c7bd6",
+ "error": null
+}

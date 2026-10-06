@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-10-06T00:25:03Z",
+ "url": "https://www.govinfo.gov/link/uscode/10/154?link-type=html",
+ "status": 200,
+ "final_url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partI-chap5-sec154.htm",
+ "content_type": "text/html",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /link/uscode/10/154",
+ "bytes": 9403,
+ "sha256": "d77d07ea30a22072c551365c55ac8ad7b62446b4323f1d8b67cbdd0498e4a9b7",
+ "error": null
+}

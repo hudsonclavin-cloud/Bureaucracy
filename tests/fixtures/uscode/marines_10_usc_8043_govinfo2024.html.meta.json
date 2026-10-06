@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-10-06T00:25:16Z",
+ "url": "https://www.govinfo.gov/link/uscode/10/8043?link-type=html",
+ "status": 200,
+ "final_url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleC-partI-chap806-sec8043.htm",
+ "content_type": "text/html",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /link/uscode/10/8043",
+ "bytes": 11096,
+ "sha256": "805723e5d5687d1dbd8f4ff53121624fbb870569b6a734469cca33d74fe800f0",
+ "error": null
+}

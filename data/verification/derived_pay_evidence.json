@@ -33,6 +33,11 @@
         "sha256": "aa8cefffe28149c2a8a4689d1f47430c1b6ac50bde906dcfff2bbb4501aa017c",
         "fetched_at": "2026-09-28T19:24:41Z"
       },
+      "magistrate_judges_28_usc_634.html": {
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title28-section634&num=0&edition=prelim",
+        "sha256": "3734470e07154e0152e61461a58987488c8acd1bdc60bd7d198f375e0880ec31",
+        "fetched_at": "2026-09-30T02:08:01Z"
+      },
       "tax_court_26_usc_7443.html": {
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section7443&num=0&edition=prelim",
         "sha256": "0c945fea2c6372286c13a5841318d1a1f5dabcca2622e08da01c53c8eb9a782d",
@@ -42,6 +47,11 @@
         "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleF-chap76-subchapC-partI-sec7443A.htm",
         "sha256": "a6a6274d370dfa80dd1ff508a60f47357e0865a715c484f9f96ace23f08005db",
         "fetched_at": "2026-10-05T18:44:50Z"
+      },
+      "ussc_28_usc_992_govinfo2024.html": {
+        "url": "https://www.govinfo.gov/link/uscode/28/992?link-type=html",
+        "sha256": "4a17b90af2d5e684bfc3e7859e4b92d55ce664c367147e6e556e0b03d0fa2733",
+        "fetched_at": "2026-10-06T00:51:22Z"
       }
     },
     "table": {
@@ -53,7 +63,9 @@
     "year": "2026",
     "documentsPerRecord": {
       "jud-district-sdny-bankruptcy-judge-12": 2,
+      "jud-district-sdny-magistrate-judge-13": 2,
       "jud-district-structure-bankruptcy-judge-varies": 2,
+      "jud-district-structure-magistrate-judge-varies": 2,
       "jud-specialized-caaf-chief-judge-caaf": 2,
       "jud-specialized-caaf-judge-4": 2,
       "jud-specialized-cavc-chief-judge-cavc": 2,
@@ -66,7 +78,8 @@
       "jud-support-aousc-deputy-director": 2,
       "jud-support-aousc-director-aousc": 2,
       "jud-support-fjc-deputy-director": 3,
-      "jud-support-fjc-director-fjc": 3
+      "jud-support-fjc-director-fjc": 3,
+      "jud-support-ussc-chair-ussc": 2
     },
     "documentsStatingTheFigure": 0,
     "documentStrengthPercent": {
@@ -112,6 +125,11 @@
         "sha256": "aa8cefffe28149c2a8a4689d1f47430c1b6ac50bde906dcfff2bbb4501aa017c",
         "fetched_at": "2026-09-28T19:24:41Z"
       },
+      "magistrate_judges_28_usc_634.html": {
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title28-section634&num=0&edition=prelim",
+        "sha256": "3734470e07154e0152e61461a58987488c8acd1bdc60bd7d198f375e0880ec31",
+        "fetched_at": "2026-09-30T02:08:01Z"
+      },
       "tax_court_26_usc_7443.html": {
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section7443&num=0&edition=prelim",
         "sha256": "0c945fea2c6372286c13a5841318d1a1f5dabcca2622e08da01c53c8eb9a782d",
@@ -121,13 +139,20 @@
         "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleF-chap76-subchapC-partI-sec7443A.htm",
         "sha256": "a6a6274d370dfa80dd1ff508a60f47357e0865a715c484f9f96ace23f08005db",
         "fetched_at": "2026-10-05T18:44:50Z"
+      },
+      "ussc_28_usc_992_govinfo2024.html": {
+        "url": "https://www.govinfo.gov/link/uscode/28/992?link-type=html",
+        "sha256": "4a17b90af2d5e684bfc3e7859e4b92d55ce664c367147e6e556e0b03d0fa2733",
+        "fetched_at": "2026-10-06T00:51:22Z"
       }
     },
-    "considered": 15,
-    "priced": 15,
+    "considered": 18,
+    "priced": 18,
     "documentsPerRecord": {
       "jud-district-sdny-bankruptcy-judge-12": 2,
+      "jud-district-sdny-magistrate-judge-13": 2,
       "jud-district-structure-bankruptcy-judge-varies": 2,
+      "jud-district-structure-magistrate-judge-varies": 2,
       "jud-specialized-caaf-chief-judge-caaf": 2,
       "jud-specialized-caaf-judge-4": 2,
       "jud-specialized-cavc-chief-judge-cavc": 2,
@@ -140,7 +165,8 @@
       "jud-support-aousc-deputy-director": 2,
       "jud-support-aousc-director-aousc": 2,
       "jud-support-fjc-deputy-director": 3,
-      "jud-support-fjc-director-fjc": 3
+      "jud-support-fjc-director-fjc": 3,
+      "jud-support-ussc-chair-ussc": 2
     },
     "documentsStatingTheFigure": 0,
     "documentStrengthPercent": {
@@ -150,12 +176,15 @@
     "strengthScale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
     "refused": {},
     "notPriced": {
-      "jud-district-sdny-magistrate-judge-13": "28 U.S.C. 634(a) sets full-time magistrate judges' salaries \"at rates ... up to an annual rate equal to 92 percent of the salary of a judge of the district court\", fixed by the Judicial Conference: a ceiling and not a rate, and part-time magistrate judges are paid between $100 and half the full-time maximum; no document here states what the Conference fixed",
-      "jud-district-structure-magistrate-judge-varies": "28 U.S.C. 634(a) sets full-time magistrate judges' salaries \"at rates ... up to an annual rate equal to 92 percent of the salary of a judge of the district court\", fixed by the Judicial Conference: a ceiling and not a rate, and part-time magistrate judges are paid between $100 and half the full-time maximum; no document here states what the Conference fixed",
-      "jud-specialized-intl-trade-chief-judge-cit": "28 U.S.C. 252 states no parity: it sets the rate by reference to section 225 of the Federal Salary Act of 1967 as adjusted by 28 U.S.C. 461, a chain through documents this project has not read"
+      "jud-specialized-intl-trade-chief-judge-cit": "28 U.S.C. 252 states no parity: it sets the rate by reference to section 225 of the Federal Salary Act of 1967 as adjusted by 28 U.S.C. 461, a chain through documents this project has not read",
+      "jud-support-ussc-commissioner-6": "28 U.S.C. 992(c) pays the Commission's Chair and Vice Chairs at the annual rate of a judge of the courts of appeals and its other voting members \"at the daily rate at which judges of the United States courts of appeals are compensated\"; this bench of six bundles the three Vice Chairs at the annual rate with members paid by the day, so one annual figure would be false of some of its holders"
     },
     "repealedTextRefused": "The chief judge of the Court shall receive a salary at the same rate as is received by judges of the United States Courts of Appeals.",
-    "validated": 15,
+    "ceilingBasisRows": [
+      "jud-district-sdny-magistrate-judge-13",
+      "jud-district-structure-magistrate-judge-varies"
+    ],
+    "validated": 18,
     "rejected": [],
     "conflicts": [],
     "double_counted": []
@@ -188,6 +217,7 @@
         "resultText": "$229,908",
         "note": "No document prints $229,908. 28 U.S.C. 153(a) sets the rate at 92 percent of a district judge's, and Judicial Compensation 2026 prints $249,900 for District Judges; the figure is that arithmetic and nothing more."
       },
+      "ceilingBasis": null,
       "scopeMatch": "proxy",
       "rollupRole": "line",
       "sourceType": "statutory_parity_derived_pay",
@@ -238,6 +268,93 @@
       "tableRetrievedAt": "2026-09-14T15:20:14Z",
       "unitsEvidenceKind": "currency_mark_on_the_figure_the_record_is_computed_from"
     },
+    "jud-district-sdny-magistrate-judge-13": {
+      "nodeId": "jud-district-sdny-magistrate-judge-13",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "basic_pay",
+      "amount": 229908.0,
+      "amountRaw": "229,908",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "Year District Judges Circuit Judges Associate Justices Chief Justice; 2026 $249,900 $264,900 $306,600 $320,700",
+      "quote": "28 U.S.C. 634(a) (a): “Officers appointed under this chapter shall receive, as full compensation for their services, salaries to be fixed by the conference pursuant to section 633, at rates for full-time United States magistrate judges up to an annual rate equal to 92 percent of the salary of a judge of the district court of the United States, as determined pursuant to section 135” · Judicial Compensation 2026, Explanatory Notes: “By statute, the salary of a bankruptcy or magistrate judge is equal to 92 percent of the salary of a district judge.” · Judicial Compensation 2026: District Judges $249,900 × 92% = $229,908",
+      "fiscalYear": 2026,
+      "periodCoverage": "annual_rate",
+      "periodAsOf": "2026-01-01",
+      "amountScope": "92 percent of District Judges",
+      "percentOf": 92,
+      "percentOfWhat": "a district judge's salary -- the ceiling 28 U.S.C. 634(a) sets, which the Administrative Office's own Judicial Compensation page states the salary is equal to",
+      "arithmetic": {
+        "operation": "percent_of",
+        "baseAmount": 249900.0,
+        "baseAmountRaw": "249,900",
+        "baseText": "$249,900",
+        "baseTier": "district judges",
+        "percent": 92,
+        "result": 229908.0,
+        "resultText": "$229,908",
+        "note": "No document prints $229,908. 28 U.S.C. 634(a) caps the rate at 92 percent of a district judge's salary -- the ceiling 28 U.S.C. 634(a) sets, which the Administrative Office's own Judicial Compensation page states the salary is equal to, the Judicial Compensation page states the salary is equal to that percentage, and Judicial Compensation 2026 prints $249,900 for District Judges; the figure is that arithmetic and nothing more."
+      },
+      "ceilingBasis": {
+        "quote": "By statute, the salary of a bankruptcy or magistrate judge is equal to 92 percent of the salary of a district judge.",
+        "reading": "28 U.S.C. 634(a) sets a CEILING, not a rate: full-time magistrate judges' salaries are fixed by the Judicial Conference \"up to\" 92 percent of a district judge's, and part-time magistrate judges are paid between $100 and half the full-time maximum. The Administrative Office's own Judicial Compensation page, the document this figure's tier is read from, states beneath its table that the salary \"is equal to 92 percent of the salary of a district judge\", which is what the Conference fixed under that ceiling; the figure is published on that sentence and is the full-time salary.",
+        "citation": "Judicial Compensation, 2026, Explanatory Notes",
+        "publisher": "Administrative Office of the United States Courts",
+        "url": "https://www.uscourts.gov/about-federal-courts/about-federal-judges/judicial-compensation",
+        "documentSha256": "014c9a66ad48a019ab127752e9cd46e4cec94da5e8e94d41a4eb9e785e96e494",
+        "retrievedAt": "2026-09-14T15:20:14Z",
+        "statuteStatesACeiling": true
+      },
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "statutory_parity_derived_pay",
+      "sourceUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title28-section634&num=0&edition=prelim",
+      "documentSha256": "3734470e07154e0152e61461a58987488c8acd1bdc60bd7d198f375e0880ec31",
+      "retrievedAt": "2026-09-30T02:08:01Z",
+      "locator": {
+        "section": "28 U.S.C. 634(a)",
+        "subsection": "(a)"
+      },
+      "court": null,
+      "subject": "every full-time magistrate judge of the Southern District of New York",
+      "statute": "28 U.S.C. 634(a)",
+      "statuteQuote": "Officers appointed under this chapter shall receive, as full compensation for their services, salaries to be fixed by the conference pursuant to section 633, at rates for full-time United States magistrate judges up to an annual rate equal to 92 percent of the salary of a judge of the district court of the United States, as determined pursuant to section 135",
+      "viaStatute": null,
+      "viaQuote": null,
+      "seatTier": "district judges",
+      "year": "2026",
+      "rateText": "$229,908",
+      "derivation": "28 U.S.C. 634(a) (a): “Officers appointed under this chapter shall receive, as full compensation for their services, salaries to be fixed by the conference pursuant to section 633, at rates for full-time United States magistrate judges up to an annual rate equal to 92 percent of the salary of a judge of the district court of the United States, as determined pursuant to section 135” · Judicial Compensation 2026, Explanatory Notes: “By statute, the salary of a bankruptcy or magistrate judge is equal to 92 percent of the salary of a district judge.” · Judicial Compensation 2026: District Judges $249,900 × 92% = $229,908",
+      "documents": [
+        {
+          "role": "caps this post's pay at a percentage of the tier, a ceiling the compensation page's own sentence resolves",
+          "citation": "28 U.S.C. 634(a)",
+          "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+          "edition": "current through the prelim edition",
+          "title": "28 U.S.C. 634(a), current through the prelim edition",
+          "quote": "Officers appointed under this chapter shall receive, as full compensation for their services, salaries to be fixed by the conference pursuant to section 633, at rates for full-time United States magistrate judges up to an annual rate equal to 92 percent of the salary of a judge of the district court of the United States, as determined pursuant to section 135",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title28-section634&num=0&edition=prelim",
+          "documentSha256": "3734470e07154e0152e61461a58987488c8acd1bdc60bd7d198f375e0880ec31",
+          "retrievedAt": "2026-09-30T02:08:01Z",
+          "statesTheFigure": false
+        },
+        {
+          "role": "states what that tier pays, and in its Explanatory Notes that the salary is equal to the percentage the statute caps it at",
+          "citation": "Judicial Compensation, 2026",
+          "publisher": "Administrative Office of the United States Courts",
+          "title": "Judicial Compensation",
+          "quote": "Year District Judges Circuit Judges Associate Justices Chief Justice; 2026 $249,900 $264,900 $306,600 $320,700",
+          "url": "https://www.uscourts.gov/about-federal-courts/about-federal-judges/judicial-compensation",
+          "documentSha256": "014c9a66ad48a019ab127752e9cd46e4cec94da5e8e94d41a4eb9e785e96e494",
+          "retrievedAt": "2026-09-14T15:20:14Z",
+          "statesTheFigure": false
+        }
+      ],
+      "tableUrl": "https://www.uscourts.gov/about-federal-courts/about-federal-judges/judicial-compensation",
+      "tableSha256": "014c9a66ad48a019ab127752e9cd46e4cec94da5e8e94d41a4eb9e785e96e494",
+      "tableRetrievedAt": "2026-09-14T15:20:14Z",
+      "unitsEvidenceKind": "currency_mark_on_the_figure_the_record_is_computed_from"
+    },
     "jud-district-structure-bankruptcy-judge-varies": {
       "nodeId": "jud-district-structure-bankruptcy-judge-varies",
       "financialEvidenceStatus": "partial",
@@ -265,6 +382,7 @@
         "resultText": "$229,908",
         "note": "No document prints $229,908. 28 U.S.C. 153(a) sets the rate at 92 percent of a district judge's, and Judicial Compensation 2026 prints $249,900 for District Judges; the figure is that arithmetic and nothing more."
       },
+      "ceilingBasis": null,
       "scopeMatch": "proxy",
       "rollupRole": "line",
       "sourceType": "statutory_parity_derived_pay",
@@ -315,6 +433,93 @@
       "tableRetrievedAt": "2026-09-14T15:20:14Z",
       "unitsEvidenceKind": "currency_mark_on_the_figure_the_record_is_computed_from"
     },
+    "jud-district-structure-magistrate-judge-varies": {
+      "nodeId": "jud-district-structure-magistrate-judge-varies",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "basic_pay",
+      "amount": 229908.0,
+      "amountRaw": "229,908",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "Year District Judges Circuit Judges Associate Justices Chief Justice; 2026 $249,900 $264,900 $306,600 $320,700",
+      "quote": "28 U.S.C. 634(a) (a): “Officers appointed under this chapter shall receive, as full compensation for their services, salaries to be fixed by the conference pursuant to section 633, at rates for full-time United States magistrate judges up to an annual rate equal to 92 percent of the salary of a judge of the district court of the United States, as determined pursuant to section 135” · Judicial Compensation 2026, Explanatory Notes: “By statute, the salary of a bankruptcy or magistrate judge is equal to 92 percent of the salary of a district judge.” · Judicial Compensation 2026: District Judges $249,900 × 92% = $229,908",
+      "fiscalYear": 2026,
+      "periodCoverage": "annual_rate",
+      "periodAsOf": "2026-01-01",
+      "amountScope": "92 percent of District Judges",
+      "percentOf": 92,
+      "percentOfWhat": "a district judge's salary -- the ceiling 28 U.S.C. 634(a) sets, which the Administrative Office's own Judicial Compensation page states the salary is equal to",
+      "arithmetic": {
+        "operation": "percent_of",
+        "baseAmount": 249900.0,
+        "baseAmountRaw": "249,900",
+        "baseText": "$249,900",
+        "baseTier": "district judges",
+        "percent": 92,
+        "result": 229908.0,
+        "resultText": "$229,908",
+        "note": "No document prints $229,908. 28 U.S.C. 634(a) caps the rate at 92 percent of a district judge's salary -- the ceiling 28 U.S.C. 634(a) sets, which the Administrative Office's own Judicial Compensation page states the salary is equal to, the Judicial Compensation page states the salary is equal to that percentage, and Judicial Compensation 2026 prints $249,900 for District Judges; the figure is that arithmetic and nothing more."
+      },
+      "ceilingBasis": {
+        "quote": "By statute, the salary of a bankruptcy or magistrate judge is equal to 92 percent of the salary of a district judge.",
+        "reading": "28 U.S.C. 634(a) sets a CEILING, not a rate: full-time magistrate judges' salaries are fixed by the Judicial Conference \"up to\" 92 percent of a district judge's, and part-time magistrate judges are paid between $100 and half the full-time maximum. The Administrative Office's own Judicial Compensation page, the document this figure's tier is read from, states beneath its table that the salary \"is equal to 92 percent of the salary of a district judge\", which is what the Conference fixed under that ceiling; the figure is published on that sentence and is the full-time salary.",
+        "citation": "Judicial Compensation, 2026, Explanatory Notes",
+        "publisher": "Administrative Office of the United States Courts",
+        "url": "https://www.uscourts.gov/about-federal-courts/about-federal-judges/judicial-compensation",
+        "documentSha256": "014c9a66ad48a019ab127752e9cd46e4cec94da5e8e94d41a4eb9e785e96e494",
+        "retrievedAt": "2026-09-14T15:20:14Z",
+        "statuteStatesACeiling": true
+      },
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "statutory_parity_derived_pay",
+      "sourceUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title28-section634&num=0&edition=prelim",
+      "documentSha256": "3734470e07154e0152e61461a58987488c8acd1bdc60bd7d198f375e0880ec31",
+      "retrievedAt": "2026-09-30T02:08:01Z",
+      "locator": {
+        "section": "28 U.S.C. 634(a)",
+        "subsection": "(a)"
+      },
+      "court": null,
+      "subject": "every full-time magistrate judge, in every district",
+      "statute": "28 U.S.C. 634(a)",
+      "statuteQuote": "Officers appointed under this chapter shall receive, as full compensation for their services, salaries to be fixed by the conference pursuant to section 633, at rates for full-time United States magistrate judges up to an annual rate equal to 92 percent of the salary of a judge of the district court of the United States, as determined pursuant to section 135",
+      "viaStatute": null,
+      "viaQuote": null,
+      "seatTier": "district judges",
+      "year": "2026",
+      "rateText": "$229,908",
+      "derivation": "28 U.S.C. 634(a) (a): “Officers appointed under this chapter shall receive, as full compensation for their services, salaries to be fixed by the conference pursuant to section 633, at rates for full-time United States magistrate judges up to an annual rate equal to 92 percent of the salary of a judge of the district court of the United States, as determined pursuant to section 135” · Judicial Compensation 2026, Explanatory Notes: “By statute, the salary of a bankruptcy or magistrate judge is equal to 92 percent of the salary of a district judge.” · Judicial Compensation 2026: District Judges $249,900 × 92% = $229,908",
+      "documents": [
+        {
+          "role": "caps this post's pay at a percentage of the tier, a ceiling the compensation page's own sentence resolves",
+          "citation": "28 U.S.C. 634(a)",
+          "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+          "edition": "current through the prelim edition",
+          "title": "28 U.S.C. 634(a), current through the prelim edition",
+          "quote": "Officers appointed under this chapter shall receive, as full compensation for their services, salaries to be fixed by the conference pursuant to section 633, at rates for full-time United States magistrate judges up to an annual rate equal to 92 percent of the salary of a judge of the district court of the United States, as determined pursuant to section 135",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title28-section634&num=0&edition=prelim",
+          "documentSha256": "3734470e07154e0152e61461a58987488c8acd1bdc60bd7d198f375e0880ec31",
+          "retrievedAt": "2026-09-30T02:08:01Z",
+          "statesTheFigure": false
+        },
+        {
+          "role": "states what that tier pays, and in its Explanatory Notes that the salary is equal to the percentage the statute caps it at",
+          "citation": "Judicial Compensation, 2026",
+          "publisher": "Administrative Office of the United States Courts",
+          "title": "Judicial Compensation",
+          "quote": "Year District Judges Circuit Judges Associate Justices Chief Justice; 2026 $249,900 $264,900 $306,600 $320,700",
+          "url": "https://www.uscourts.gov/about-federal-courts/about-federal-judges/judicial-compensation",
+          "documentSha256": "014c9a66ad48a019ab127752e9cd46e4cec94da5e8e94d41a4eb9e785e96e494",
+          "retrievedAt": "2026-09-14T15:20:14Z",
+          "statesTheFigure": false
+        }
+      ],
+      "tableUrl": "https://www.uscourts.gov/about-federal-courts/about-federal-judges/judicial-compensation",
+      "tableSha256": "014c9a66ad48a019ab127752e9cd46e4cec94da5e8e94d41a4eb9e785e96e494",
+      "tableRetrievedAt": "2026-09-14T15:20:14Z",
+      "unitsEvidenceKind": "currency_mark_on_the_figure_the_record_is_computed_from"
+    },
     "jud-specialized-caaf-chief-judge-caaf": {
       "nodeId": "jud-specialized-caaf-chief-judge-caaf",
       "financialEvidenceStatus": "partial",
@@ -332,6 +537,7 @@
       "percentOf": null,
       "percentOfWhat": null,
       "arithmetic": null,
+      "ceilingBasis": null,
       "scopeMatch": "proxy",
       "rollupRole": "line",
       "sourceType": "statutory_parity_derived_pay",
@@ -399,6 +605,7 @@
       "percentOf": null,
       "percentOfWhat": null,
       "arithmetic": null,
+      "ceilingBasis": null,
       "scopeMatch": "proxy",
       "rollupRole": "line",
       "sourceType": "statutory_parity_derived_pay",
@@ -466,6 +673,7 @@
       "percentOf": null,
       "percentOfWhat": null,
       "arithmetic": null,
+      "ceilingBasis": null,
       "scopeMatch": "proxy",
       "rollupRole": "line",
       "sourceType": "statutory_parity_derived_pay",
@@ -533,6 +741,7 @@
       "percentOf": null,
       "percentOfWhat": null,
       "arithmetic": null,
+      "ceilingBasis": null,
       "scopeMatch": "proxy",
       "rollupRole": "line",
       "sourceType": "statutory_parity_derived_pay",
@@ -600,6 +809,7 @@
       "percentOf": null,
       "percentOfWhat": null,
       "arithmetic": null,
+      "ceilingBasis": null,
       "scopeMatch": "proxy",
       "rollupRole": "line",
       "sourceType": "statutory_parity_derived_pay",
@@ -667,6 +877,7 @@
       "percentOf": null,
       "percentOfWhat": null,
       "arithmetic": null,
+      "ceilingBasis": null,
       "scopeMatch": "proxy",
       "rollupRole": "line",
       "sourceType": "statutory_parity_derived_pay",
@@ -734,6 +945,7 @@
       "percentOf": null,
       "percentOfWhat": null,
       "arithmetic": null,
+      "ceilingBasis": null,
       "scopeMatch": "proxy",
       "rollupRole": "line",
       "sourceType": "statutory_parity_derived_pay",
@@ -801,6 +1013,7 @@
       "percentOf": null,
       "percentOfWhat": null,
       "arithmetic": null,
+      "ceilingBasis": null,
       "scopeMatch": "proxy",
       "rollupRole": "line",
       "sourceType": "statutory_parity_derived_pay",
@@ -878,6 +1091,7 @@
         "resultText": "$224,910",
         "note": "No document prints $224,910. 26 U.S.C. 7443A(d) sets the rate at 90 percent of a Tax Court judge's salary, which 26 U.S.C. 7443(c)(1) sets at a district judge's, and Judicial Compensation 2026 prints $249,900 for District Judges; the figure is that arithmetic and nothing more."
       },
+      "ceilingBasis": null,
       "scopeMatch": "proxy",
       "rollupRole": "line",
       "sourceType": "statutory_parity_derived_pay",
@@ -967,6 +1181,7 @@
         "resultText": "$229,908",
         "note": "No document prints $229,908. 28 U.S.C. 603 sets the rate at 92 percent of the Director's salary, which the same section sets at a district judge's, and Judicial Compensation 2026 prints $249,900 for District Judges; the figure is that arithmetic and nothing more."
       },
+      "ceilingBasis": null,
       "scopeMatch": "proxy",
       "rollupRole": "line",
       "sourceType": "statutory_parity_derived_pay",
@@ -1034,6 +1249,7 @@
       "percentOf": null,
       "percentOfWhat": null,
       "arithmetic": null,
+      "ceilingBasis": null,
       "scopeMatch": "proxy",
       "rollupRole": "line",
       "sourceType": "statutory_parity_derived_pay",
@@ -1111,6 +1327,7 @@
         "resultText": "$229,908",
         "note": "No document prints $229,908. 28 U.S.C. 626 sets the rate at 92 percent of the Administrative Office Deputy Director's salary, which 28 U.S.C. 603 sets at 92 percent of a Director paid as a district judge, and Judicial Compensation 2026 prints $249,900 for District Judges; the figure is that arithmetic and nothing more."
       },
+      "ceilingBasis": null,
       "scopeMatch": "proxy",
       "rollupRole": "line",
       "sourceType": "statutory_parity_derived_pay",
@@ -1190,6 +1407,7 @@
       "percentOf": null,
       "percentOfWhat": null,
       "arithmetic": null,
+      "ceilingBasis": null,
       "scopeMatch": "proxy",
       "rollupRole": "line",
       "sourceType": "statutory_parity_derived_pay",
@@ -1233,6 +1451,74 @@
           "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title28-section603&num=0&edition=prelim",
           "documentSha256": "af01b512f3f8e6fe884eb769fa433b57e71af80a3b729d6bfa8c65e3cbc64332",
           "retrievedAt": "2026-09-28T19:25:24Z",
+          "statesTheFigure": false
+        },
+        {
+          "role": "states what that tier pays",
+          "citation": "Judicial Compensation, 2026",
+          "publisher": "Administrative Office of the United States Courts",
+          "title": "Judicial Compensation",
+          "quote": "Year District Judges Circuit Judges Associate Justices Chief Justice; 2026 $249,900 $264,900 $306,600 $320,700",
+          "url": "https://www.uscourts.gov/about-federal-courts/about-federal-judges/judicial-compensation",
+          "documentSha256": "014c9a66ad48a019ab127752e9cd46e4cec94da5e8e94d41a4eb9e785e96e494",
+          "retrievedAt": "2026-09-14T15:20:14Z",
+          "statesTheFigure": false
+        }
+      ],
+      "tableUrl": "https://www.uscourts.gov/about-federal-courts/about-federal-judges/judicial-compensation",
+      "tableSha256": "014c9a66ad48a019ab127752e9cd46e4cec94da5e8e94d41a4eb9e785e96e494",
+      "tableRetrievedAt": "2026-09-14T15:20:14Z",
+      "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+    },
+    "jud-support-ussc-chair-ussc": {
+      "nodeId": "jud-support-ussc-chair-ussc",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "basic_pay",
+      "amount": 264900.0,
+      "amountRaw": "264,900",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "Year District Judges Circuit Judges Associate Justices Chief Justice; 2026 $249,900 $264,900 $306,600 $320,700",
+      "quote": "28 U.S.C. 992(c) (c): “The Chair and Vice Chairs of the Commission shall hold full-time positions and shall be compensated during their terms of office at the annual rate at which judges of the United States courts of appeals are compensated.” · Judicial Compensation 2026: Circuit Judges $264,900",
+      "fiscalYear": 2026,
+      "periodCoverage": "annual_rate",
+      "periodAsOf": "2026-01-01",
+      "amountScope": "Circuit Judges",
+      "percentOf": null,
+      "percentOfWhat": null,
+      "arithmetic": null,
+      "ceilingBasis": null,
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "statutory_parity_derived_pay",
+      "sourceUrl": "https://www.govinfo.gov/link/uscode/28/992?link-type=html",
+      "documentSha256": "4a17b90af2d5e684bfc3e7859e4b92d55ce664c367147e6e556e0b03d0fa2733",
+      "retrievedAt": "2026-10-06T00:51:22Z",
+      "locator": {
+        "section": "28 U.S.C. 992(c)",
+        "subsection": "(c)"
+      },
+      "court": null,
+      "subject": "the Chair of the United States Sentencing Commission",
+      "statute": "28 U.S.C. 992(c)",
+      "statuteQuote": "The Chair and Vice Chairs of the Commission shall hold full-time positions and shall be compensated during their terms of office at the annual rate at which judges of the United States courts of appeals are compensated.",
+      "viaStatute": null,
+      "viaQuote": null,
+      "seatTier": "circuit judges",
+      "year": "2026",
+      "rateText": "$264,900",
+      "derivation": "28 U.S.C. 992(c) (c): “The Chair and Vice Chairs of the Commission shall hold full-time positions and shall be compensated during their terms of office at the annual rate at which judges of the United States courts of appeals are compensated.” · Judicial Compensation 2026: Circuit Judges $264,900",
+      "documents": [
+        {
+          "role": "states the tier this post is paid at",
+          "citation": "28 U.S.C. 992(c)",
+          "publisher": "U.S. Government Publishing Office",
+          "edition": "2024 edition of the United States Code",
+          "title": "28 U.S.C. 992(c), 2024 edition of the United States Code",
+          "quote": "The Chair and Vice Chairs of the Commission shall hold full-time positions and shall be compensated during their terms of office at the annual rate at which judges of the United States courts of appeals are compensated.",
+          "url": "https://www.govinfo.gov/link/uscode/28/992?link-type=html",
+          "documentSha256": "4a17b90af2d5e684bfc3e7859e4b92d55ce664c367147e6e556e0b03d0fa2733",
+          "retrievedAt": "2026-10-06T00:51:22Z",
           "statesTheFigure": false
         },
         {

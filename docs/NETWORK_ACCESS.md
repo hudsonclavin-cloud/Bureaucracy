@@ -969,3 +969,45 @@ UTC, the basis of a reviewed Schedule row (`CURATION.md` §19.20); the gate
 accepts a reviewed row's basis URL from either host since then, provided it
 names the section the citation does (`us_code_url_names_section`).
 
+
+## 16. 2026-10-06: the twelfth batch's hosts, and a table that needed no host
+
+**Ten DoD and legislative hosts re-measured, all still 403.** The Defense
+research cluster re-probed every host §14 recorded and a few more —
+`www.dfas.mil`, `militarypay.defense.gov`, `comptroller.defense.gov`,
+`media.defense.gov`, `www.defense.gov`, `www.nationalguard.mil`,
+`www.mynavyhr.navy.mil`, `www.afpc.af.mil`, `www.uscg.mil`, `www.dcms.uscg.mil`
+— and each answered `robots.txt` and the page with the same Akamai 403; the
+legislative cluster found `www.cbo.gov` and `www.gao.gov` answering 403 to the
+project's User-Agent as well, and `www.sec.gov` the same. None was worked
+around. The military basic-pay table those hosts publish turned out to be
+committed already: the note to 5 U.S.C. 5332
+(`tests/fixtures/uscode/pay_schedules_5_usc_5332.html`, fetched 2026-09-23 from
+the OLRC) reproduces Executive Order 14368 with its Schedule 8, which
+`military_pay.py` now reads (`tests/fixtures/dfas/README.md`, correction;
+`CURATION.md` §19.20). The Federal Register's plain-text rendering of the same
+order answered its "Request Access" page three times (§13's random refusal),
+and govinfo's HTML rendering of the order prints every schedule as
+"[GRAPHIC] [TIFF OMITTED]", so the OLRC note is the one text rendering of
+Schedule 8 this project has.
+
+**uscode.house.gov still under maintenance; govinfo's link service for every
+section.** The OLRC host served its 14,615-byte "Under Maintenance" page on
+every attempt across the evening and night (§15). Twenty-two U.S. Code
+sections were fetched through `https://www.govinfo.gov/link/uscode/<title>/
+<section>?link-type=html` instead, each resolving to the 2024 edition's
+granule, each committed with the `_govinfo2024` suffix and its `.meta.json`:
+10 U.S.C. 135, 142, 152, 154, 167, 167b, 7033, 7034, 8033, 8035, 8043, 8044,
+9033, 9034, 9082, 9083 and 10502; 14 U.S.C. 302 and 304; 37 U.S.C. 201;
+2 U.S.C. 1802 and 1902; 31 U.S.C. 731. Two limits of the link service were
+measured and are worth knowing: it answers **400** for `10/8021` (a section the
+Navy chapter's table of contents lists) and for dashed section numbers such as
+`2/136a-1`, where the granule path must be used directly; and a section's
+`.meta.json` records the link URL as `url` and the granule as `final_url`, so
+`derived_pay.load_section` now returns `final_url` and the edition a document
+names is read off the address that served the bytes rather than off the link.
+
+**Refused on robots, not read.** The judiciary cluster found `ecfr.gov`'s
+renderer API disallowed by that host's `robots.txt` and discarded its content
+unread; 5 CFR 930.205 was read from govinfo's 2025 CFR rendering instead,
+which the host allows.

@@ -425,6 +425,78 @@ TIER_REFERENCE_PROVISIONS: dict[str, dict[str, Any]] = {
             "the Librarian of Congress shall be compensated at an annual rate of pay which is equal to the annual rate of basic pay payable for positions at level II of the Executive Schedule under section 5313 of title 5"
         ),
     },
+    # --- 2026-10-06: the twelfth batch's legislative-branch cluster. Three
+    # --- more officers whose own section sets the rate at a level, read from
+    # --- govinfo's 2024 edition. The "$X less than" officers beside them (the
+    # --- AOC's, the Capitol Police's and the GAO's Inspectors General, the
+    # --- CBO's Deputy Director) are a subtraction on a join this module does
+    # --- not yet publish; CURATION.md §19.20 records them as the next decision.
+    "leg-support-aoc-architect-of-the-capitol": {
+        "nodeName": "Architect of the Capitol",
+        "office": "Architect of the Capitol",
+        "citation": "2 U.S.C. 1802",
+        "fixture": "aoc_2_usc_1802_govinfo2024.html",
+        "subsection": "(the section's one sentence)",
+        "level": "II",
+        "percent": 0,
+        "quote": (
+            "The compensation of the Architect of the Capitol shall be at an annual rate which is equal to the "
+            "annual rate of basic pay for level II of the Executive Schedule under section 5313 of title 5."
+        ),
+    },
+    "leg-support-uscp-chief-of-police": {
+        # The graph names the post "Chief of Police" under the U.S. Capitol
+        # Police; the statute says "Chief of the Capitol Police". Keyed by id.
+        "nodeName": "Chief of Police",
+        "office": "Chief of the Capitol Police",
+        "citation": "2 U.S.C. 1902",
+        "fixture": "uscp_2_usc_1902_govinfo2024.html",
+        "subsection": "(the section's one sentence)",
+        "level": "II",
+        "percent": 0,
+        "quote": (
+            "The annual rate of pay for the Chief of the Capitol Police shall be the amount equal to the annual "
+            "rate of basic pay for level II of the Executive Schedule under section 5313 of title 5."
+        ),
+    },
+    "leg-support-gao-general-counsel": {
+        # "General Counsel" names 92 nodes here; 31 U.S.C. 731(c) names the
+        # GAO's by its organisation, which is what keys the row to this one.
+        "nodeName": "General Counsel",
+        "office": "General Counsel of the Government Accountability Office",
+        "citation": "31 U.S.C. 731(c)",
+        "fixture": "gao_31_usc_731_govinfo2024.html",
+        "subsection": "(c)",
+        "level": "IV",
+        "percent": 0,
+        "quote": (
+            "The annual rate of basic pay of the General Counsel of the Government Accountability Office is "
+            "equal to the rate for level IV of the Executive Schedule."
+        ),
+    },
+    # The remaining-departments cluster of the same batch: the Energy
+    # Department's Under Secretary for Nuclear Security, whose own section
+    # pays the office at Level III and, two paragraphs on, makes that officer
+    # the Administrator of the National Nuclear Security Administration — the
+    # title this graph carries. The Schedule's counted class "Under
+    # Secretaries of Energy (3)" agrees and is not needed.
+    "exec-dept-doe-nnsa-administrator-nnsa": {
+        "nodeName": "Administrator, NNSA",
+        "office": "Under Secretary for Nuclear Security, who serves as the Administrator for Nuclear Security",
+        "citation": "42 U.S.C. 7132(c)(1)",
+        "fixture": "doe_42_usc_7132_govinfo2024.html",
+        "subsection": "(c)(1)",
+        "level": "III",
+        "percent": 0,
+        "quote": (
+            "The Under Secretary shall be compensated at the rate provided for at level III of the Executive "
+            "Schedule under section 5314 of title 5."
+        ),
+        "identificationQuote": (
+            "The Under Secretary for Nuclear Security shall serve as the Administrator for Nuclear Security "
+            "under section 2402 of title 50."
+        ),
+    },
 }
 
 #: The Inspector General Act's rate, and the section that says whose.

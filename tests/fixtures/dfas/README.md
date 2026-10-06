@@ -35,3 +35,23 @@ reads them yet. If a DoD-published table becomes reachable, the module's
 shape is `derived_pay.py`'s: Title 10 says the post carries grade O-10, the
 table prices O-10, neither document alone states the figure, and the panel
 says so.
+
+## Correction (2026-10-06): the table was in the repository all along
+
+The twelfth research batch re-measured every host above (still 403: dfas.mil,
+militarypay.defense.gov, comptroller.defense.gov, media.defense.gov,
+defense.gov, nationalguard.mil, mynavyhr.navy.mil, afpc.af.mil, uscg.mil,
+dcms.uscg.mil) and then found the document somewhere nobody had looked: the
+note to 5 U.S.C. 5332 committed on 2026-09-23 at
+`tests/fixtures/uscode/pay_schedules_5_usc_5332.html` reproduces Executive
+Order 14368 in full, and its **Schedule 8 — Pay of the Uniformed Services
+(Effective January 1, 2026)** is the monthly basic-pay table itself: every
+officer, warrant and enlisted row with its footnotes. `us_code_pay_schedules.py`
+reads only Schedules 5, 6 and 7 of that file; `military_pay.py` reads the
+eighth from the same bytes, under the same digest. No DFAS host was needed,
+and none was reached. The shape sketched in the last paragraph above is the
+one built: a Title 10 or 14 section fixes the grade, 37 U.S.C. 201(a)(1)
+assigns it pay grade O-10, Schedule 8 prices O-10 by the month, and the
+annual figure is twelve times that, arithmetic the record carries in the open.
+The refusals recorded above stand as a measurement of those hosts; they were
+simply never the only route.

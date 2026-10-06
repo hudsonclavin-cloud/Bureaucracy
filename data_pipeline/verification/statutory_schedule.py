@@ -425,6 +425,30 @@ REVIEWED_TITLE_ROWS: dict[str, dict[str, Any]] = {
     # Code prints under a title this graph does not use, then four Justice and
     # Homeland Security posts from the same batch (CURATION.md §19.20), and
     # nine from its regulatory and financial agencies cluster.
+    #
+    # Its Defense cluster (2026-10-06): the Department's Chief Financial
+    # Officer. "Chief Financial Officer" is the stamped title this graph
+    # carries under 81 nodes, so the row is keyed to the Department of
+    # Defense's node and no other; the Code prints no "Chief Financial
+    # Officer, Department of Defense" in its operative text -- §5315's
+    # Amendments note records that item inserted by Pub. L. 101-576 (1990)
+    # and struck by Pub. L. 103-160 (1993) -- because the Department's CFO is
+    # the Under Secretary of Defense (Comptroller), whom §5314 places at
+    # Level III and whom 10 U.S.C. 135(b) names as the CFO in so many words.
+    # The Department's Chief Information Officer is NOT a row here: §5315
+    # prints that title with a 164-character proviso ("unless the official
+    # designated as the Chief Information Officer ... is an official listed
+    # under section 5312, 5313, or 5314"), the parser refuses a title over
+    # `MAX_TITLE_CHARS` as a sentence rather than a title, and reading the
+    # proviso would be reading law. Recorded in CURATION.md §19.20.
+    "exec-dept-defense-chief-financial-officer": {
+        "nodeName": "Chief Financial Officer",
+        "statutoryTitle": "Under Secretary of Defense (Comptroller)",
+        "basisCitation": "10 U.S.C. 135",
+        "basisFixture": "dod_10_usc_135_govinfo2024.html",
+        "basisQuote": "The Under Secretary of Defense (Comptroller) is the agency Chief Financial Officer of the Department of Defense for the purposes of chapter 9 of title 31.",
+        "basis": "the same office: 10 U.S.C. 135(b) makes the Under Secretary of Defense (Comptroller) the agency Chief Financial Officer of the Department of Defense for the purposes of chapter 9 of title 31, and 5 U.S.C. 5314 places the Under Secretary of Defense (Comptroller) at Level III; the Schedule's own history agrees -- 5 U.S.C. 5315's Amendments note records a 'Chief Financial Officer, Department of Defense' item inserted at Level IV by Pub. L. 101-576 (1990) and struck by Pub. L. 103-160 (1993), the Act whose entry in 5314's note inserted 'Comptroller of the Department of Defense' at Level III, renamed 'Under Secretary of Defense (Comptroller)' by Pub. L. 103-337 -- so the Department's CFO is the Under Secretary and not a Level IV officer of its own; 'Chief Financial Officer' is a stamped title this graph carries under 81 nodes, and this row is keyed to the Department of Defense's node alone",
+    },
     "exec-ind-misc-national-labor-relations-board-nlrb-independent-director-administrator-chair-national-labor-relations-board": {
         "nodeName": "Director / Administrator / Chair, National Labor Relations Board",
         "statutoryTitle": "Chairman, National Labor Relations Board",
@@ -672,6 +696,23 @@ REVIEWED_TITLE_ROWS: dict[str, dict[str, Any]] = {
         ),
         "basis": (
             "the same office: 26 U.S.C. 7803 creates the Commissioner of Internal Revenue in the Department of the Treasury, and 5 U.S.C. 5314 places that Commissioner at Level III; the graph files the post under the Internal Revenue Service and names it by the Service's acronym"
+        ),
+    },
+    # The twelfth batch's judiciary cluster (2026-10-06): the IRS's Chief
+    # Counsel. "Chief Counsel" is a stamped title this graph carries under nine
+    # bureaus, so the row is keyed to the Internal Revenue Service's node alone;
+    # the Tax Court subtree's "Chief Counsel — IRS (opposing)" is the same
+    # office drawn a second time where it litigates and is NOT priced.
+    "exec-dept-treasury-irs-chief-counsel": {
+        "nodeName": "Chief Counsel",
+        "statutoryTitle": "Chief Counsel for the Internal Revenue Service, Department of the Treasury",
+        "basisCitation": "26 U.S.C. 7803",
+        "basisFixture": "irs_26_usc_7803.html",
+        "basisQuote": (
+            "There shall be in the Department of the Treasury a Chief Counsel for the Internal Revenue Service who shall be appointed by the President, by and with the consent of the Senate."
+        ),
+        "basis": (
+            "the same office: 26 U.S.C. 7803(b)(1) creates the Chief Counsel for the Internal Revenue Service in the Department of the Treasury, and 5 U.S.C. 5316 places the Chief Counsel for the Internal Revenue Service, Department of the Treasury at Level V; the graph files the post under the Internal Revenue Service under the bare title 'Chief Counsel', a stamped title nine bureaus carry here, so the row is keyed to the Service's node alone"
         ),
     },
     "exec-dept-dot-faa-administrator-faa": {
@@ -1062,6 +1103,58 @@ REVIEWED_TITLE_ROWS: dict[str, dict[str, Any]] = {
         ),
         "basis": (
             "the same office: 49 U.S.C. 104 makes the Administrator the head of the Federal Highway Administration, appointed by the President with the Senate's consent, and 5 U.S.C. 5313 places that Administrator at Level II; the graph names the Administration by its acronym"
+        ),
+    },
+    # --- 2026-10-06, the twelfth batch's remaining-departments cluster: four
+    # --- Transportation posts the Schedule prints and no route reached. The
+    # --- NHTSA rows' section was read from govinfo's 2024 edition; the FHWA
+    # --- Deputy's from the section already committed for its Administrator.
+    "exec-dept-dot-nhtsa-administrator-nhtsa": {
+        "nodeName": "Administrator, NHTSA",
+        "statutoryTitle": "Administrator of the National Highway Traffic Safety Administration",
+        "basisCitation": "49 U.S.C. 105",
+        "basisFixture": "nhtsa_49_usc_105_govinfo2024.html",
+        "basisQuote": (
+            "The head of the Administration is the Administrator who is appointed by the President, by and with the advice and consent of the Senate."
+        ),
+        "basis": (
+            "the same office: 49 U.S.C. 105(b) makes the Administrator the head of the National Highway Traffic Safety Administration, appointed by the President with the Senate's consent, and 5 U.S.C. 5314 places that Administrator at Level III; the graph names the Administration by its acronym"
+        ),
+    },
+    "exec-dept-dot-nhtsa-deputy-administrator": {
+        "nodeName": "Deputy Administrator",
+        "statutoryTitle": "Deputy Administrator of the National Highway Traffic Safety Administration",
+        "basisCitation": "49 U.S.C. 105",
+        "basisFixture": "nhtsa_49_usc_105_govinfo2024.html",
+        "basisQuote": (
+            "The Administration has a Deputy Administrator who is appointed by the Secretary of Transportation, with the approval of the President."
+        ),
+        "basis": (
+            "the same office: 49 U.S.C. 105(b) gives the National Highway Traffic Safety Administration one Deputy Administrator, appointed by the Secretary with the President's approval, and 5 U.S.C. 5316 places that Deputy Administrator at Level V; the graph names the post bare under the Administration's own node, and a row is keyed by id"
+        ),
+    },
+    "exec-dept-dot-fmcsa-deputy-administrator": {
+        "nodeName": "Deputy Administrator",
+        "statutoryTitle": "Deputy Administrator of the Federal Motor Carrier Safety Administration",
+        "basisCitation": "49 U.S.C. 113",
+        "basisFixture": "fmcsa_49_usc_113_govinfo2024.html",
+        "basisQuote": (
+            "The Administration shall have a Deputy Administrator appointed by the Secretary, with the approval of the President."
+        ),
+        "basis": (
+            "the same office: 49 U.S.C. 113(d) gives the Federal Motor Carrier Safety Administration one Deputy Administrator, appointed by the Secretary with the President's approval, and 5 U.S.C. 5316 places that Deputy Administrator at Level V; the graph names the post bare under the Administration's own node, and a row is keyed by id"
+        ),
+    },
+    "exec-dept-dot-fhwa-deputy-administrator": {
+        "nodeName": "Deputy Administrator",
+        "statutoryTitle": "Deputy Federal Highway Administrator",
+        "basisCitation": "49 U.S.C. 104",
+        "basisFixture": "fhwa_49_usc_104.html",
+        "basisQuote": (
+            "The Administration has a Deputy Federal Highway Administrator who is appointed by the Secretary, with the approval of the President."
+        ),
+        "basis": (
+            "the same office: 49 U.S.C. 104(b)(2) gives the Federal Highway Administration one Deputy Federal Highway Administrator, appointed by the Secretary with the President's approval, and 5 U.S.C. 5315 places that officer at Level IV; the graph names the post bare 'Deputy Administrator' under the Administration's own node, and a row is keyed by id"
         ),
     },
     "exec-dept-doc-uspto-director-under-secretary-for-ip": {

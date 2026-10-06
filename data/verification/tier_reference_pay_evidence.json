@@ -9,6 +9,11 @@
     "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
     "tableRetrievedAt": "2026-09-11T03:05:36Z",
     "sections": {
+      "aoc_2_usc_1802_govinfo2024.html": {
+        "url": "https://www.govinfo.gov/link/uscode/2/1802?link-type=html",
+        "sha256": "a53d25abfa1198cc60e1f460c4eb596cc27327f9413200722e600733ea052932",
+        "fetched_at": "2026-10-06T00:45:19Z"
+      },
       "arc_40_usc_14301_govinfo2024.html": {
         "url": "https://www.govinfo.gov/link/uscode/40/14301?link-type=html",
         "sha256": "5e8475437bcdabd78a19ce48200de5a5ed444a160d8a28760d94c17049651583",
@@ -18,6 +23,11 @@
         "url": "https://www.govinfo.gov/link/uscode/42/12651c?link-type=html",
         "sha256": "6b6d93ab63f3dc7f9efaf64b64cafa49d7fb8a26487d74f0331a609d6ed3572d",
         "fetched_at": "2026-10-06T00:00:05Z"
+      },
+      "doe_42_usc_7132_govinfo2024.html": {
+        "url": "https://www.govinfo.gov/link/uscode/42/7132?link-type=html",
+        "sha256": "e0ce3e11095e92b86f8b24f5933cab31e59b038a694e889d36e634e2e69348c9",
+        "fetched_at": "2026-10-06T00:56:41Z"
       },
       "eac_52_usc_20923_govinfo2024.html": {
         "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title52/html/USCODE-2024-title52-subtitleII-chap209-subchapII-partA-subpart1-sec20923.htm",
@@ -38,6 +48,11 @@
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title31-section703&num=0&edition=prelim",
         "sha256": "bea4dd6d430c5148d0086bf25aef5cda0928821e85213dcf1d9f7205d5c4c015",
         "fetched_at": "2026-09-27T22:10:20Z"
+      },
+      "gao_31_usc_731_govinfo2024.html": {
+        "url": "https://www.govinfo.gov/link/uscode/31/731?link-type=html",
+        "sha256": "528d24360f09c959e4662c33cf63942540411efa1202e94e740fea1de7e6692b",
+        "fetched_at": "2026-10-06T00:45:25Z"
       },
       "gpo_44_usc_303.html": {
         "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title44-section303&num=0&edition=prelim",
@@ -84,6 +99,11 @@
         "sha256": "97701b80deeaa5d078ebabe8a4d30e678af9d7e2841687932b5ab412d5fdcdb6",
         "fetched_at": "2026-10-05T18:59:35Z"
       },
+      "uscp_2_usc_1902_govinfo2024.html": {
+        "url": "https://www.govinfo.gov/link/uscode/2/1902?link-type=html",
+        "sha256": "12042655e60800ad7b365c88e3739389817beac3651722d382bdfecfb19676b9",
+        "fetched_at": "2026-10-06T00:45:22Z"
+      },
       "usss_5_usc_10203_govinfo2024.html": {
         "url": "https://www.govinfo.gov/link/uscode/5/10203?link-type=html",
         "sha256": "eed9f242e958af0ad5a0c7fbaee96ea4bf8ba91626507fe5052a5f0b0804b6c6",
@@ -128,9 +148,9 @@
       "National Reconnaissance Office"
     ],
     "inspectorGeneralNodesConsidered": 81,
-    "reviewedRows": 19,
-    "priced": 46,
-    "pricedByReviewedRow": 19,
+    "reviewedRows": 23,
+    "priced": 50,
+    "pricedByReviewedRow": 23,
     "pricedInspectorsGeneral": 27,
     "documentsStatingTheFigure": 0,
     "strengthScale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
@@ -195,7 +215,7 @@
       "not_an_establishment": "the node's organisation is not one 5 U.S.C. 401(1) lists, so 403(e) does not set its pay: a designated Federal entity's IG (5 U.S.C. 415, read and committed, prints no rate of pay), a Defense agency's stamped 'Inspector General' beneath the Department's own, a legislative office's, or the CIA's (5 U.S.C. 423, not read)",
       "americorps_named_only_in_the_alias_table": "5 U.S.C. 401(1) lists the Corporation for National and Community Service; this graph calls it AmeriCorps and carries the statutory name only in node_aliases.json, which no join that lands a number may read"
     },
-    "validated": 46,
+    "validated": 50,
     "rejected": [],
     "conflicts": [],
     "double_counted": []
@@ -876,6 +896,84 @@
       "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
       "tableRetrievedAt": "2026-09-11T03:05:36Z",
       "unitsEvidenceKind": "currency_mark_on_the_figure_the_record_is_computed_from"
+    },
+    "exec-dept-doe-nnsa-administrator-nnsa": {
+      "nodeId": "exec-dept-doe-nnsa-administrator-nnsa",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "basic_pay",
+      "amount": 209600.0,
+      "amountRaw": "209,600",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "Level III $209,600",
+      "quote": "42 U.S.C. 7132(c)(1) (c)(1): “The Under Secretary shall be compensated at the rate provided for at level III of the Executive Schedule under section 5314 of title 5.” · Salary Table No. 2026-EX, Effective January 2026: Level III $209,600",
+      "fiscalYear": 2026,
+      "periodCoverage": "annual_rate",
+      "periodAsOf": "2026-01-01",
+      "amountScope": "Level III",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "statutory_tier_reference_pay",
+      "sourceUrl": "https://www.govinfo.gov/link/uscode/42/7132?link-type=html",
+      "documentSha256": "e0ce3e11095e92b86f8b24f5933cab31e59b038a694e889d36e634e2e69348c9",
+      "retrievedAt": "2026-10-06T00:56:41Z",
+      "locator": {
+        "section": "42 U.S.C. 7132(c)(1)",
+        "subsection": "(c)(1)"
+      },
+      "method": "pay_set_by_reference_to_an_executive_schedule_level_joined_to_opm_table",
+      "office": "Under Secretary for Nuclear Security, who serves as the Administrator for Nuclear Security",
+      "statute": "42 U.S.C. 7132(c)(1)",
+      "statuteQuote": "The Under Secretary shall be compensated at the rate provided for at level III of the Executive Schedule under section 5314 of title 5.",
+      "level": "III",
+      "levelText": "Level III",
+      "levelRateText": "$209,600",
+      "levelAmount": 209600.0,
+      "percent": 0,
+      "arithmetic": null,
+      "rateText": "$209,600",
+      "derivation": "42 U.S.C. 7132(c)(1) (c)(1): “The Under Secretary shall be compensated at the rate provided for at level III of the Executive Schedule under section 5314 of title 5.” · Salary Table No. 2026-EX, Effective January 2026: Level III $209,600",
+      "identification": {
+        "kind": "reviewed_row",
+        "nodeName": "Administrator, NNSA",
+        "statuteIdentifies": "The Under Secretary for Nuclear Security shall serve as the Administrator for Nuclear Security under section 2402 of title 50.",
+        "office": "Under Secretary for Nuclear Security, who serves as the Administrator for Nuclear Security"
+      },
+      "documents": [
+        {
+          "role": "sets this post's basic pay by reference to Executive Schedule Level III",
+          "citation": "42 U.S.C. 7132(c)(1)",
+          "publisher": "U.S. Government Publishing Office",
+          "edition": "an edition of the United States Code",
+          "title": "42 U.S.C. 7132(c)(1), an edition of the United States Code",
+          "quote": "The Under Secretary shall be compensated at the rate provided for at level III of the Executive Schedule under section 5314 of title 5.",
+          "url": "https://www.govinfo.gov/link/uscode/42/7132?link-type=html",
+          "documentSha256": "e0ce3e11095e92b86f8b24f5933cab31e59b038a694e889d36e634e2e69348c9",
+          "retrievedAt": "2026-10-06T00:56:41Z",
+          "statesTheFigure": false
+        },
+        {
+          "role": "states what that Executive Schedule level pays",
+          "citation": "Salary Table No. 2026-EX, Effective January 2026",
+          "publisher": "U.S. Office of Personnel Management",
+          "title": "Salary Table No. 2026-EX",
+          "quote": "Level III $209,600",
+          "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+          "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+          "retrievedAt": "2026-09-11T03:05:36Z",
+          "statesTheFigure": false
+        }
+      ],
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "tableFootnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+      "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
     },
     "exec-dept-doi-inspector-general": {
       "nodeId": "exec-dept-doi-inspector-general",
@@ -4015,6 +4113,82 @@
       "tableRetrievedAt": "2026-09-11T03:05:36Z",
       "unitsEvidenceKind": "currency_mark_on_the_figure_the_record_is_computed_from"
     },
+    "leg-support-aoc-architect-of-the-capitol": {
+      "nodeId": "leg-support-aoc-architect-of-the-capitol",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "basic_pay",
+      "amount": 228000.0,
+      "amountRaw": "228,000",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "Level II $228,000",
+      "quote": "2 U.S.C. 1802 (the section's one sentence): “The compensation of the Architect of the Capitol shall be at an annual rate which is equal to the annual rate of basic pay for level II of the Executive Schedule under section 5313 of title 5.” · Salary Table No. 2026-EX, Effective January 2026: Level II $228,000",
+      "fiscalYear": 2026,
+      "periodCoverage": "annual_rate",
+      "periodAsOf": "2026-01-01",
+      "amountScope": "Level II",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "statutory_tier_reference_pay",
+      "sourceUrl": "https://www.govinfo.gov/link/uscode/2/1802?link-type=html",
+      "documentSha256": "a53d25abfa1198cc60e1f460c4eb596cc27327f9413200722e600733ea052932",
+      "retrievedAt": "2026-10-06T00:45:19Z",
+      "locator": {
+        "section": "2 U.S.C. 1802",
+        "subsection": "(the section's one sentence)"
+      },
+      "method": "pay_set_by_reference_to_an_executive_schedule_level_joined_to_opm_table",
+      "office": "Architect of the Capitol",
+      "statute": "2 U.S.C. 1802",
+      "statuteQuote": "The compensation of the Architect of the Capitol shall be at an annual rate which is equal to the annual rate of basic pay for level II of the Executive Schedule under section 5313 of title 5.",
+      "level": "II",
+      "levelText": "Level II",
+      "levelRateText": "$228,000",
+      "levelAmount": 228000.0,
+      "percent": 0,
+      "arithmetic": null,
+      "rateText": "$228,000",
+      "derivation": "2 U.S.C. 1802 (the section's one sentence): “The compensation of the Architect of the Capitol shall be at an annual rate which is equal to the annual rate of basic pay for level II of the Executive Schedule under section 5313 of title 5.” · Salary Table No. 2026-EX, Effective January 2026: Level II $228,000",
+      "identification": {
+        "kind": "reviewed_row",
+        "nodeName": "Architect of the Capitol"
+      },
+      "documents": [
+        {
+          "role": "sets this post's basic pay by reference to Executive Schedule Level II",
+          "citation": "2 U.S.C. 1802",
+          "publisher": "U.S. Government Publishing Office",
+          "edition": "an edition of the United States Code",
+          "title": "2 U.S.C. 1802, an edition of the United States Code",
+          "quote": "The compensation of the Architect of the Capitol shall be at an annual rate which is equal to the annual rate of basic pay for level II of the Executive Schedule under section 5313 of title 5.",
+          "url": "https://www.govinfo.gov/link/uscode/2/1802?link-type=html",
+          "documentSha256": "a53d25abfa1198cc60e1f460c4eb596cc27327f9413200722e600733ea052932",
+          "retrievedAt": "2026-10-06T00:45:19Z",
+          "statesTheFigure": false
+        },
+        {
+          "role": "states what that Executive Schedule level pays",
+          "citation": "Salary Table No. 2026-EX, Effective January 2026",
+          "publisher": "U.S. Office of Personnel Management",
+          "title": "Salary Table No. 2026-EX",
+          "quote": "Level II $228,000",
+          "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+          "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+          "retrievedAt": "2026-09-11T03:05:36Z",
+          "statesTheFigure": false
+        }
+      ],
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "tableFootnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+      "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+    },
     "leg-support-gao-comptroller-general-of-the-united-states": {
       "nodeId": "leg-support-gao-comptroller-general-of-the-united-states",
       "financialEvidenceStatus": "partial",
@@ -4150,6 +4324,82 @@
           "publisher": "U.S. Office of Personnel Management",
           "title": "Salary Table No. 2026-EX",
           "quote": "Level III $209,600",
+          "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+          "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+          "retrievedAt": "2026-09-11T03:05:36Z",
+          "statesTheFigure": false
+        }
+      ],
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "tableFootnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+      "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+    },
+    "leg-support-gao-general-counsel": {
+      "nodeId": "leg-support-gao-general-counsel",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "basic_pay",
+      "amount": 197200.0,
+      "amountRaw": "197,200",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "Level IV $197,200",
+      "quote": "31 U.S.C. 731(c) (c): “The annual rate of basic pay of the General Counsel of the Government Accountability Office is equal to the rate for level IV of the Executive Schedule.” · Salary Table No. 2026-EX, Effective January 2026: Level IV $197,200",
+      "fiscalYear": 2026,
+      "periodCoverage": "annual_rate",
+      "periodAsOf": "2026-01-01",
+      "amountScope": "Level IV",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "statutory_tier_reference_pay",
+      "sourceUrl": "https://www.govinfo.gov/link/uscode/31/731?link-type=html",
+      "documentSha256": "528d24360f09c959e4662c33cf63942540411efa1202e94e740fea1de7e6692b",
+      "retrievedAt": "2026-10-06T00:45:25Z",
+      "locator": {
+        "section": "31 U.S.C. 731(c)",
+        "subsection": "(c)"
+      },
+      "method": "pay_set_by_reference_to_an_executive_schedule_level_joined_to_opm_table",
+      "office": "General Counsel of the Government Accountability Office",
+      "statute": "31 U.S.C. 731(c)",
+      "statuteQuote": "The annual rate of basic pay of the General Counsel of the Government Accountability Office is equal to the rate for level IV of the Executive Schedule.",
+      "level": "IV",
+      "levelText": "Level IV",
+      "levelRateText": "$197,200",
+      "levelAmount": 197200.0,
+      "percent": 0,
+      "arithmetic": null,
+      "rateText": "$197,200",
+      "derivation": "31 U.S.C. 731(c) (c): “The annual rate of basic pay of the General Counsel of the Government Accountability Office is equal to the rate for level IV of the Executive Schedule.” · Salary Table No. 2026-EX, Effective January 2026: Level IV $197,200",
+      "identification": {
+        "kind": "reviewed_row",
+        "nodeName": "General Counsel"
+      },
+      "documents": [
+        {
+          "role": "sets this post's basic pay by reference to Executive Schedule Level IV",
+          "citation": "31 U.S.C. 731(c)",
+          "publisher": "U.S. Government Publishing Office",
+          "edition": "an edition of the United States Code",
+          "title": "31 U.S.C. 731(c), an edition of the United States Code",
+          "quote": "The annual rate of basic pay of the General Counsel of the Government Accountability Office is equal to the rate for level IV of the Executive Schedule.",
+          "url": "https://www.govinfo.gov/link/uscode/31/731?link-type=html",
+          "documentSha256": "528d24360f09c959e4662c33cf63942540411efa1202e94e740fea1de7e6692b",
+          "retrievedAt": "2026-10-06T00:45:25Z",
+          "statesTheFigure": false
+        },
+        {
+          "role": "states what that Executive Schedule level pays",
+          "citation": "Salary Table No. 2026-EX, Effective January 2026",
+          "publisher": "U.S. Office of Personnel Management",
+          "title": "Salary Table No. 2026-EX",
+          "quote": "Level IV $197,200",
           "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
           "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
           "retrievedAt": "2026-09-11T03:05:36Z",
@@ -4370,6 +4620,82 @@
           "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title2-section136a-2&num=0&edition=prelim",
           "documentSha256": "8174515f9f6de4dce27da726eb9b0bb48ea7d2bd7bc32133cf351c36e30d8522",
           "retrievedAt": "2026-09-28T22:29:11Z",
+          "statesTheFigure": false
+        },
+        {
+          "role": "states what that Executive Schedule level pays",
+          "citation": "Salary Table No. 2026-EX, Effective January 2026",
+          "publisher": "U.S. Office of Personnel Management",
+          "title": "Salary Table No. 2026-EX",
+          "quote": "Level II $228,000",
+          "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+          "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+          "retrievedAt": "2026-09-11T03:05:36Z",
+          "statesTheFigure": false
+        }
+      ],
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "tableFootnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "tableSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+      "tableRetrievedAt": "2026-09-11T03:05:36Z",
+      "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+    },
+    "leg-support-uscp-chief-of-police": {
+      "nodeId": "leg-support-uscp-chief-of-police",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "basic_pay",
+      "amount": 228000.0,
+      "amountRaw": "228,000",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "Level II $228,000",
+      "quote": "2 U.S.C. 1902 (the section's one sentence): “The annual rate of pay for the Chief of the Capitol Police shall be the amount equal to the annual rate of basic pay for level II of the Executive Schedule under section 5313 of title 5.” · Salary Table No. 2026-EX, Effective January 2026: Level II $228,000",
+      "fiscalYear": 2026,
+      "periodCoverage": "annual_rate",
+      "periodAsOf": "2026-01-01",
+      "amountScope": "Level II",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "statutory_tier_reference_pay",
+      "sourceUrl": "https://www.govinfo.gov/link/uscode/2/1902?link-type=html",
+      "documentSha256": "12042655e60800ad7b365c88e3739389817beac3651722d382bdfecfb19676b9",
+      "retrievedAt": "2026-10-06T00:45:22Z",
+      "locator": {
+        "section": "2 U.S.C. 1902",
+        "subsection": "(the section's one sentence)"
+      },
+      "method": "pay_set_by_reference_to_an_executive_schedule_level_joined_to_opm_table",
+      "office": "Chief of the Capitol Police",
+      "statute": "2 U.S.C. 1902",
+      "statuteQuote": "The annual rate of pay for the Chief of the Capitol Police shall be the amount equal to the annual rate of basic pay for level II of the Executive Schedule under section 5313 of title 5.",
+      "level": "II",
+      "levelText": "Level II",
+      "levelRateText": "$228,000",
+      "levelAmount": 228000.0,
+      "percent": 0,
+      "arithmetic": null,
+      "rateText": "$228,000",
+      "derivation": "2 U.S.C. 1902 (the section's one sentence): “The annual rate of pay for the Chief of the Capitol Police shall be the amount equal to the annual rate of basic pay for level II of the Executive Schedule under section 5313 of title 5.” · Salary Table No. 2026-EX, Effective January 2026: Level II $228,000",
+      "identification": {
+        "kind": "reviewed_row",
+        "nodeName": "Chief of Police"
+      },
+      "documents": [
+        {
+          "role": "sets this post's basic pay by reference to Executive Schedule Level II",
+          "citation": "2 U.S.C. 1902",
+          "publisher": "U.S. Government Publishing Office",
+          "edition": "an edition of the United States Code",
+          "title": "2 U.S.C. 1902, an edition of the United States Code",
+          "quote": "The annual rate of pay for the Chief of the Capitol Police shall be the amount equal to the annual rate of basic pay for level II of the Executive Schedule under section 5313 of title 5.",
+          "url": "https://www.govinfo.gov/link/uscode/2/1902?link-type=html",
+          "documentSha256": "12042655e60800ad7b365c88e3739389817beac3651722d382bdfecfb19676b9",
+          "retrievedAt": "2026-10-06T00:45:22Z",
           "statesTheFigure": false
         },
         {

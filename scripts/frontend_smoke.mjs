@@ -262,6 +262,23 @@ try {
     }
   }
 
+  // A post priced from Schedule 8's monthly basic pay: the directory's pay
+  // row carries the military block under its own heading. Skipped with a
+  // note when the served graph carries no such node (see the universe-view
+  // check further down for why), never failed on the absence of data.
+  const directoryMilitary = allNodes.find((n) => isPostNode(n) && n.positionMilitaryPay && typeof n.positionMilitaryPay.amount === "number" && reachable(n));
+  if (directoryMilitary) {
+    check("the directory opens a post priced from Schedule 8", await openInDirectory(directoryMilitary), directoryMilitary.name);
+    const militaryPayHead = await rowText(".pay-row dt");
+    const militaryPayRow = await rowText(".pay-row dd");
+    check("the directory heads military basic pay as pay, not cost", /^pay$/i.test(militaryPayHead), militaryPayHead);
+    check("the directory prints the military basic pay heading", /Military basic pay — twelve months of a printed monthly rate/i.test(militaryPayRow), militaryPayRow);
+    check("the directory prints the monthly figure the schedule states", militaryPayRow.includes(directoryMilitary.positionMilitaryPay.monthly.text), militaryPayRow);
+    check("the directory says the annual figure is this project's arithmetic", /twelve times that, arithmetic this project performed and no document prints/.test(militaryPayRow), militaryPayRow);
+  } else if (!allNodes.some((n) => n.positionMilitaryPay)) {
+    measurements.directoryMilitaryPay = "skipped: no node in the served graph carries positionMilitaryPay";
+  }
+
   // An organisation whose queued page could not be read: the directory says
   // why, as a fact about the host, and never "no source recorded".
   const unreadOrg = allNodes.find((n) => !isPostNode(n) && n.verificationUnread && !n.verificationMethod && !n.verificationFailure && reachable(n));
@@ -765,7 +782,7 @@ try {
     check("the reported rate is not headed as a cost", !/\bCOST\b[^A-Z]*\$[\d,]+/.test(reportedStats), reportedStats);
     const reportedHead = await text("#info-stats .info-cost-label");
     check("a roster-priced post heads its figure as pay", /^PAY/.test(reportedHead), reportedHead);
-    if (!withReportedPay.positionStatutoryPay && !withReportedPay.positionSchedulePay && !withReportedPay.positionTierReferencePay && !withReportedPay.positionDerivedPay) {
+    if (!withReportedPay.positionStatutoryPay && !withReportedPay.positionSchedulePay && !withReportedPay.positionTierReferencePay && !withReportedPay.positionDerivedPay && !withReportedPay.positionMilitaryPay) {
       const reportedAmount = await text("#info-stats .info-cost-amount");
       check("the roster's rate is the post's headline figure", new RegExp(withReportedPay.positionReportedPay.rateText.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).test(reportedAmount), reportedAmount);
       check("the headline names the staff report", /WHITE HOUSE STAFF REPORT/.test(reportedHead), reportedHead);
@@ -832,7 +849,7 @@ try {
   // current export's figure to it, so a node carrying any of those would be
   // headed by that one instead.
   const paid = allNodes.find((n) => n.positionListing && typeof n.positionListing.reportedPay === "number"
-    && !n.positionStatutoryPay && !n.positionSchedulePay && !n.positionTierReferencePay && !n.positionDerivedPay
+    && !n.positionStatutoryPay && !n.positionSchedulePay && !n.positionTierReferencePay && !n.positionDerivedPay && !n.positionMilitaryPay
     && !n.positionReportedPay && !n.positionCurrentPay
     && nameCounts.get(n.name) === 1);
   check("some position carries a reported rate of pay", Boolean(paid), "none");
@@ -867,6 +884,53 @@ try {
     check("a bench's derived rate is its headline figure", new RegExp(bench.positionDerivedPay.rateText.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).test(await text("#info-stats .info-cost-amount")), benchHead);
     check("the headline says no document states a derived figure", /DERIVED, STATED BY NO DOCUMENT/.test(benchHead), benchHead);
     check("the bench's figure is said to be each holder's, not the group's", new RegExp(`for each of the ${bench.positionDerivedPay.holders.count} holders`).test(benchStats), benchStats.slice(0, 900));
+  }
+
+  // Military basic pay: Schedule 8 of the pay-adjustment order prints the
+  // uniformed services' basic pay BY THE MONTH, and the headline is twelve
+  // times it -- arithmetic this project performed and no document prints.
+  // One node of each route, picked from the served graph: a grade a statute
+  // fixes (the Chairman of the Joint Chiefs' "general or admiral", pay grade
+  // O-10) and a post the enlisted footnote names by title (the Sergeant
+  // Major of the Army). The field lands on the graph only when it is next
+  // regenerated, so when NO node carries it the check is skipped with a
+  // note under `measurements` rather than failing on the absence of data;
+  // once any node carries it, both routes must be present and must render.
+  const militaryNodes = allNodes.filter((n) => n.positionMilitaryPay && typeof n.positionMilitaryPay.amount === "number" && unique(n));
+  const militaryKind = (n) => (n.positionMilitaryPay.identification && n.positionMilitaryPay.identification.kind) || "";
+  const militaryByGrade = militaryNodes.find((n) => militaryKind(n) === "grade_fixed_by_statute");
+  const militaryByFootnote = militaryNodes.find((n) => militaryKind(n) === "named_in_footnote");
+  if (!allNodes.some((n) => n.positionMilitaryPay)) {
+    measurements.militaryPay = "skipped: no node in the served graph carries positionMilitaryPay (regenerate the graph to land it)";
+  } else {
+    check("some position is priced from Schedule 8 by a grade a statute fixes", Boolean(militaryByGrade), "none");
+    check("some position is priced from Schedule 8's own footnote naming it", Boolean(militaryByFootnote), "none");
+    for (const [route, node] of [["grade", militaryByGrade], ["footnote", militaryByFootnote]]) {
+      if (!node) continue;
+      const block = node.positionMilitaryPay;
+      await openByName(node.name);
+      const head = await text("#info-stats .info-cost-label");
+      const amount = await text("#info-stats .info-cost-amount");
+      const stats = await text("#info-stats");
+      const military = await text("#info-military-pay");
+      check(`a military rate is the headline figure (${route} route)`, amount.includes(block.rateText), amount);
+      check(`the headline names military basic pay, not COST (${route} route)`, /MILITARY BASIC PAY/.test(head) && !/COST/.test(head), head);
+      check(`the badge says twelve months of monthly basic pay stand in for the cost (${route} route)`, /twelve months|monthly basic pay/i.test(stats), stats.slice(0, 400));
+      check(`the military block prints the monthly figure as the schedule does (${route} route)`, military.includes(block.monthly.text), military);
+      check(`the military block says the annual figure is arithmetic no document prints (${route} route)`, /twelve times that, arithmetic this project performed and no document prints/.test(military), military);
+      check(`the military block says a rate of pay is not the unit's cost (${route} route)`, /not this unit's cost/.test(military), military);
+      check(`the military block says it is never a verification the post exists (${route} route)`, /never a verification that the post exists/.test(military), military);
+      if (route === "grade") {
+        // The officer footnote's Level II ceiling ($18,899.90) differs from
+        // the O-10 row ($18,999.90) by $100; the panel prints the discrepancy
+        // rather than reconciling it, so both figures must be on screen.
+        check("the grade route prints the footnote's $18,899.90 ceiling beside the row's figure", military.includes("$18,899.90") && military.includes(block.monthly.text), military);
+        check("the grade route names the statute fixing the grade", Boolean(block.statute) && military.includes(block.statute), military);
+      } else {
+        check("the footnote route quotes the footnote naming the post", Boolean(block.footnote && block.footnote.text) && military.includes(block.footnote.text), military);
+      }
+    }
+    measurements.militaryPay = `${militaryNodes.length} nodes carry positionMilitaryPay; checked ${[militaryByGrade, militaryByFootnote].filter(Boolean).map((n) => n.id).join(", ")}`;
   }
 
   // A node whose name states a count says how many it actually carries.

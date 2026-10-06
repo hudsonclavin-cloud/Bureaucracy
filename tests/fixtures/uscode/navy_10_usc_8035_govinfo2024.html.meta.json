@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-10-06T00:25:14Z",
+ "url": "https://www.govinfo.gov/link/uscode/10/8035?link-type=html",
+ "status": 200,
+ "final_url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleC-partI-chap805-sec8035.htm",
+ "content_type": "text/html",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /link/uscode/10/8035",
+ "bytes": 5069,
+ "sha256": "7ef411175e6e25c9f331387854788cae4ee7f1d2ecacb12c3ab220c9c54d98d2",
+ "error": null
+}

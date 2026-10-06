@@ -904,5 +904,432 @@ class ReviewedGateTests(unittest.TestCase):
         self.assertEqual(out, [])
 
 
+# --------------------------------------------------------------------------
+# The twelfth batch's Defense cluster (2026-10-06): the Department's Chief
+# Financial Officer, priced as the Under Secretary of Defense (Comptroller) --
+# and the Chief Information Officer the parser refuses.
+
+
+class DefenseComptrollerRowTests(unittest.TestCase):
+    """'Chief Financial Officer' names 81 nodes in this graph, so the row is
+    keyed to the Department of Defense's node and everything that ties the
+    figure to THAT node is pinned here: the title the Code prints and its
+    level, the sentence 10 U.S.C. 135(b) prints in its OPERATIVE text, the
+    derived record applied the way the exporter applies it and passing the
+    gate, the gate's refusal of the same record on every other Chief Financial
+    Officer, and the parser's refusal of the Department's Chief Information
+    Officer, whose §5315 entry is a title with a 164-character proviso."""
+
+    NODE_ID = "exec-dept-defense-chief-financial-officer"
+    CIO_ID = "exec-dept-defense-chief-information-officer"
+    FIXTURE = "dod_10_usc_135_govinfo2024.html"
+    TITLE = "Under Secretary of Defense (Comptroller)"
+    QUOTE = ("The Under Secretary of Defense (Comptroller) is the agency Chief Financial Officer "
+             "of the Department of Defense for the purposes of chapter 9 of title 31.")
+    CIO_TITLE = ("Chief Information Officer, Department of Defense (unless the official designated as the "
+                 "Chief Information Officer of the Department of Defense is an official listed under "
+                 "section 5312, 5313, or 5314 of this title)")
+
+    @classmethod
+    def setUpClass(cls) -> None:
+        from data_pipeline.exporter.build_graph import DEFAULT_BASE_GRAPH, load_base_graph
+
+        cls.schedule = ss.load_schedule()
+        cls.node_map, cls.parent_map = index_tree(load_base_graph(DEFAULT_BASE_GRAPH))
+
+    @staticmethod
+    def _flat(name):
+        import html as html_module
+        import re
+
+        raw = (US_CODE_BASIS_FIXTURE_DIR / name).read_text(encoding="utf-8")
+        return re.sub(r"\s+", " ", html_module.unescape(re.sub(r"<[^>]+>", " ", raw)))
+
+    def test_the_row_is_what_the_code_and_its_own_history_print(self) -> None:
+        row = ss.REVIEWED_TITLE_ROWS[self.NODE_ID]
+        self.assertEqual(row["nodeName"], "Chief Financial Officer")
+        self.assertEqual(row["statutoryTitle"], self.TITLE)
+        self.assertEqual((row["basisCitation"], row["basisFixture"], row["basisQuote"]),
+                         ("10 U.S.C. 135", self.FIXTURE, self.QUOTE))
+        self.assertNotIn("classTitle", row)
+        position = self.schedule["index"][canonical_name_key(self.TITLE)]
+        self.assertEqual((position["title"], position["level"], position["section"], position["statedPosts"]),
+                         (self.TITLE, "III", "5314", 1))
+        # The Code prints no "Chief Financial Officer, Department of Defense"
+        # in force: the only place those words appear is §5315's Amendments
+        # note, as an item inserted in 1990 and struck in 1993 -- the history
+        # the row's basis leans on, so the notes must really print it.
+        self.assertNotIn(canonical_name_key("Chief Financial Officer, Department of Defense"), self.schedule["index"])
+        notes_5315 = self._flat("exec_schedule_5315.html")
+        self.assertIn("struck out item relating to Chief Financial Officer, Department of Defense", notes_5315)
+        self.assertIn("Pub. L. 101–576 inserted items relating to Chief Financial Officer of Departments of "
+                      "Agriculture, Commerce, Defense", notes_5315)
+        notes_5314 = self._flat("exec_schedule_5314.html")
+        self.assertIn("Pub. L. 103–160 inserted items relating to Comptroller of the Department of Defense", notes_5314)
+        self.assertIn('Pub. L. 103–337 substituted "Under Secretary of Defense (Comptroller)" for '
+                      '"Comptroller of the Department of Defense"', notes_5314)
+        # And the basis sentence is the law, not the notes, by both readers.
+        self.assertIn(self.QUOTE, ss.load_basis_section(self.FIXTURE)["operative"])
+        self.assertIn(self.QUOTE, uscode_operative_text(US_CODE_BASIS_FIXTURE_DIR / self.FIXTURE))
+
+    def test_the_row_matches_on_the_real_graph_and_only_through_the_reviewed_route(self) -> None:
+        whole = ss.match_positions(self.node_map, self.schedule)["matched"]
+        scoped = ss.match_scoped_positions(self.node_map, self.schedule, already_matched=whole)["matched"]
+        self.assertNotIn(self.NODE_ID, whole)
+        self.assertNotIn(self.NODE_ID, scoped)
+        result = ss.match_reviewed_rows(self.node_map, self.schedule, already_matched={**whole, **scoped})
+        self.assertIn(self.NODE_ID, result["matched"])
+        entry = result["matched"][self.NODE_ID]
+        self.assertEqual(entry["method"], ss.METHOD_REVIEWED)
+        self.assertEqual((entry["title"], entry["level"], entry["section"]), (self.TITLE, "III", "5314"))
+        self.assertNotIn("classTitle", entry)
+        ident = entry["identification"]
+        self.assertEqual(ident["nodeName"], "Chief Financial Officer")
+        self.assertEqual(ident["basisCitation"], "10 U.S.C. 135")
+        self.assertEqual(ident["basisQuote"], self.QUOTE)
+        # Read from GPO's rendering through its link service, which is the URL
+        # the fixture's own fetch record names.
+        self.assertEqual(ident["basisUrl"], "https://www.govinfo.gov/link/uscode/10/135?link-type=html")
+        self.assertTrue(us_code_url_names_section(ident["basisUrl"], "10 U.S.C. 135"))
+        self.assertEqual(ident["basisSha256"], fixture_digest(US_CODE_BASIS_FIXTURE_DIR / self.FIXTURE))
+        # The node is one post, directly under the Department.
+        self.assertEqual(self.parent_map[self.NODE_ID], "exec-dept-defense")
+        self.assertFalse(ss.states_a_multiplicity(self.node_map[self.NODE_ID]["name"]))
+
+    def test_the_derived_record_applied_to_the_node_passes_the_gate(self) -> None:
+        """The published graph is rebuilt by the coordinator, so the record is
+        checked here the way the exporter would publish it: built from the
+        real statute and the real table, validated, applied, and gated."""
+        from data_pipeline.verification import financial_evidence as fe
+        from data_pipeline.verification.pay_tables import (
+            DEFAULT_PAY_TABLE_HTML,
+            federal_fiscal_year_of,
+            load_executive_schedule,
+        )
+
+        loaded = load_executive_schedule(DEFAULT_PAY_TABLE_HTML)
+        matched = ss.match_reviewed_rows(self.node_map, self.schedule)["matched"]
+        fiscal_year = federal_fiscal_year_of(date.fromisoformat(str(loaded["table"]["effective"])))
+        records, _report = ss.build_records(
+            {self.NODE_ID: matched[self.NODE_ID]}, loaded["table"],
+            table_url=loaded["url"], table_sha256=loaded["sha256"],
+            retrieved_at=loaded["fetched_at"], fiscal_year=fiscal_year,
+        )
+        node = {k: v for k, v in self.node_map[self.NODE_ID].items() if k != "children"}
+        record = fe.validate_record(records[self.NODE_ID], node)
+        self.assertEqual(fe.classify(record), "partial")
+        record["financialEvidenceStatus"] = "partial"
+        for key in ("levelClaim", "rateText", "effectiveText", "table", "tableFootnotes"):
+            record[key] = records[self.NODE_ID][key]
+        probe = {"id": "root", "name": "Root", "type": "Foundation", "children": [
+            {"id": "exec-dept-defense", "name": "Department of Defense (DoD)", "type": "Cabinet Department",
+             "children": [node]}]}
+        stats = ss.apply_schedule_pay(probe, {self.NODE_ID: record})
+        self.assertEqual(stats["priced"], 1)
+        applied = probe["children"][0]["children"][0]
+        pay = applied["positionSchedulePay"]
+        self.assertEqual((pay["payLevel"], pay["amount"], pay["statutoryTitle"], pay["method"]),
+                         ("III", EXECUTIVE_SCHEDULE_RATES["III"], self.TITLE, ss.METHOD_REVIEWED))
+        self.assertEqual((pay["scopeMatch"], pay["financialEvidenceStatus"]), ("proxy", "partial"))
+        self.assertNotIn("classTitle", pay)
+        self.assertEqual(schedule_pay_violations(applied, pay, REVIEWED_TODAY, label), [])
+        # Nothing the rate wrote reads as evidence that the post exists.
+        for field in ("sourceUrls", "sourceTypes", "lastVerified", "verificationMethod"):
+            self.assertNotIn(field, applied)
+
+    def _doctored_directory(self, transform):
+        import hashlib
+        import tempfile
+
+        tmp = Path(tempfile.mkdtemp())
+        for row in ss.REVIEWED_TITLE_ROWS.values():
+            for name in (row["basisFixture"], row["basisFixture"] + ".meta.json"):
+                (tmp / name).write_bytes((US_CODE_BASIS_FIXTURE_DIR / name).read_bytes())
+        raw = (tmp / self.FIXTURE).read_text(encoding="utf-8")
+        doctored = transform(raw)
+        (tmp / self.FIXTURE).write_text(doctored, encoding="utf-8")
+        meta_path = tmp / (self.FIXTURE + ".meta.json")
+        meta = json.loads(meta_path.read_text(encoding="utf-8"))
+        meta["sha256"] = hashlib.sha256(doctored.encode("utf-8")).hexdigest()
+        meta_path.write_text(json.dumps(meta), encoding="utf-8")
+        return tmp
+
+    def test_the_sentence_moved_beneath_the_notes_cut_fells_the_row(self) -> None:
+        """The CAVC lesson, on GPO's rendering: move 135(b)'s sentence out of
+        the law and into the Editorial Notes, re-sign the digest, and the row
+        must fall while the page still carries the sentence -- by the module's
+        reader and by the gate's independent one."""
+        def transform(raw):
+            head, sep, tail = raw.partition("<strong>Editorial Notes</strong>")
+            self.assertTrue(sep)
+            self.assertIn(self.QUOTE, head)
+            self.assertNotIn(self.QUOTE, tail)
+            return (head.replace(self.QUOTE, "The Under Secretary performs the duties the Secretary prescribes.")
+                    + sep + "</h4><p>" + self.QUOTE + "</p><h4>" + tail)
+
+        directory = self._doctored_directory(transform)
+        node_map = {self.NODE_ID: dict(self.node_map[self.NODE_ID])}
+        result = ss.match_reviewed_rows(node_map, self.schedule, directory=directory)
+        self.assertNotIn(self.NODE_ID, result["matched"])
+        self.assertEqual(result["refusals"]["reviewed_row_basis_quote_not_in_operative_text"], [self.NODE_ID])
+        doctored = (directory / self.FIXTURE).read_text(encoding="utf-8")
+        self.assertIn(self.QUOTE, doctored)
+        self.assertNotIn(self.QUOTE, ss.load_basis_section(self.FIXTURE, directory)["operative"])
+        self.assertNotIn(self.QUOTE, uscode_operative_text(directory / self.FIXTURE))
+        # The committed page, untouched, still prints it as the law.
+        self.assertIn(self.QUOTE, uscode_operative_text(US_CODE_BASIS_FIXTURE_DIR / self.FIXTURE))
+        # An unsigned edit is refused before the quote is even looked for.
+        with (directory / self.FIXTURE).open("a", encoding="utf-8") as handle:
+            handle.write("<!-- one byte more -->")
+        result = ss.match_reviewed_rows(node_map, self.schedule, directory=directory)
+        self.assertEqual(result["refusals"]["reviewed_row_basis_unreadable"], [self.NODE_ID])
+
+    def test_the_record_on_any_other_chief_financial_officer_is_refused(self) -> None:
+        """81 nodes carry this name and the record for one would keep a real
+        title, a real section, a real sentence and the right figure on any of
+        them; only the node's own id tells them apart, and the gate keys on it."""
+        good = good_reviewed_pay(self.NODE_ID)
+        self.assertEqual(schedule_pay_violations(reviewed_node(self.NODE_ID), good, REVIEWED_TODAY, label), [])
+        self.assertEqual(schedule_pay_violations(self.node_map[self.NODE_ID], good, REVIEWED_TODAY, label), [])
+        govinfo = {**good, "identification": {**good["identification"],
+                                              "basisUrl": "https://www.govinfo.gov/link/uscode/10/135?link-type=html"}}
+        self.assertEqual(schedule_pay_violations(self.node_map[self.NODE_ID], govinfo, REVIEWED_TODAY, label), [])
+        others = sorted(i for i, n in self.node_map.items()
+                        if n.get("name") == "Chief Financial Officer" and i != self.NODE_ID)
+        self.assertGreaterEqual(len(others), 60)
+        for other in others:
+            with self.subTest(node=other):
+                self.assertNotEqual(schedule_pay_violations(self.node_map[other], good, REVIEWED_TODAY, label), [])
+        # On the Department's own Chief Information Officer -- the post the
+        # same cluster surfaced and this table deliberately has no row for.
+        self.assertNotEqual(schedule_pay_violations(self.node_map[self.CIO_ID], good, REVIEWED_TODAY, label), [])
+        # And on the Deputy, whom the Code places separately at Level IV.
+        self.assertNotEqual(schedule_pay_violations(self.node_map["exec-dept-defense-deputy-cfo-controller"], good,
+                                                    REVIEWED_TODAY, label), [])
+        # Module side: the node renamed, or gone, prices nothing.
+        renamed = {self.NODE_ID: {**self.node_map[self.NODE_ID], "name": "Comptroller"}}
+        self.assertEqual(ss.match_reviewed_rows(renamed, self.schedule)["refusals"]["reviewed_row_node_renamed"],
+                         [self.NODE_ID])
+        self.assertIn(self.NODE_ID, ss.match_reviewed_rows({}, self.schedule)["refusals"]["reviewed_row_names_no_node"])
+
+    def test_the_chief_information_officer_is_refused_by_the_parser_and_has_no_row(self) -> None:
+        """§5315 prints the Department's Chief Information Officer as a title
+        with a proviso -- Level IV only while the designated official is not
+        also one the Code lists at a higher level -- and the parser refuses
+        anything over MAX_TITLE_CHARS as a sentence, because reading the
+        proviso would be reading law. Pinned in both directions: the page
+        prints it in those words, and no table here names the node."""
+        self.assertGreater(len(self.CIO_TITLE), ss.MAX_TITLE_CHARS)
+        self.assertEqual(len(self.CIO_TITLE), 213)
+        raw = (US_CODE_BASIS_FIXTURE_DIR / "exec_schedule_5315.html").read_text(encoding="utf-8")
+        self.assertIn(self.CIO_TITLE + ".", ss._text_of(raw))
+        parsed = ss.parse_section(raw, section="5315")
+        self.assertTrue(any(s.startswith("Chief Information Officer, Department of Defense (unless") for s in parsed["skipped"]))
+        self.assertNotIn(canonical_name_key(self.CIO_TITLE), self.schedule["index"])
+        self.assertNotIn(canonical_name_key(self.CIO_TITLE), self.schedule["ambiguous"])
+        self.assertEqual(self.node_map[self.CIO_ID]["name"], "Chief Information Officer")
+        self.assertEqual(self.parent_map[self.CIO_ID], "exec-dept-defense")
+        for table in (ss.REVIEWED_TITLE_ROWS, US_CODE_REVIEWED_IDENTIFICATIONS, US_CODE_EXECUTIVE_SCHEDULE):
+            self.assertNotIn(self.CIO_ID, table)
+        self.assertNotIn(self.CIO_ID, {i for spec in US_CODE_COUNTED_CLASSES.values() for i in spec["members"]})
+
+
+# --------------------------------------------------------------------------
+# The twelfth batch's judiciary cluster (2026-10-06): the IRS's Chief Counsel,
+# priced from 5 U.S.C. 5316's own title through 26 U.S.C. 7803(b)(1) -- and
+# the Tax Court subtree's copy of the same office, which must never be.
+
+
+class IrsChiefCounselRowTests(unittest.TestCase):
+    """'Chief Counsel' is a stamped title this graph carries under nine
+    bureaus, and the Tax Court subtree draws the IRS's own Chief Counsel a
+    second time as 'Chief Counsel — IRS (opposing)', the office where it
+    litigates. The row is keyed to the Internal Revenue Service's node alone,
+    and everything that ties the figure to THAT node is pinned here: the
+    title §5316 prints and its level, the sentence 7803(b)(1) prints in its
+    OPERATIVE text (the same section the Commissioner's row cites, a
+    different sentence), the record applied as the exporter applies it and
+    passing the gate, and the gate's refusal of the same record on the Tax
+    Court's copy and on every other Chief Counsel."""
+
+    NODE_ID = "exec-dept-treasury-irs-chief-counsel"
+    OPPOSING_ID = "jud-specialized-tax-chief-counsel-irs-opposing"
+    COMMISSIONER_ID = "exec-dept-treasury-irs-commissioner-irs"
+    FIXTURE = "irs_26_usc_7803.html"
+    TITLE = "Chief Counsel for the Internal Revenue Service, Department of the Treasury"
+    QUOTE = ("There shall be in the Department of the Treasury a Chief Counsel for the Internal Revenue Service "
+             "who shall be appointed by the President, by and with the consent of the Senate.")
+
+    @classmethod
+    def setUpClass(cls) -> None:
+        from data_pipeline.exporter.build_graph import DEFAULT_BASE_GRAPH, load_base_graph
+
+        cls.schedule = ss.load_schedule()
+        cls.node_map, cls.parent_map = index_tree(load_base_graph(DEFAULT_BASE_GRAPH))
+
+    def test_the_row_is_what_the_code_prints(self) -> None:
+        row = ss.REVIEWED_TITLE_ROWS[self.NODE_ID]
+        self.assertEqual(row["nodeName"], "Chief Counsel")
+        self.assertEqual(row["statutoryTitle"], self.TITLE)
+        self.assertEqual((row["basisCitation"], row["basisFixture"], row["basisQuote"]),
+                         ("26 U.S.C. 7803", self.FIXTURE, self.QUOTE))
+        self.assertNotIn("classTitle", row)
+        self.assertIn("Level V", row["basis"])
+        position = self.schedule["index"][canonical_name_key(self.TITLE)]
+        self.assertEqual((position["title"], position["level"], position["section"], position["statedPosts"]),
+                         (self.TITLE, "V", "5316", 1))
+        self.assertNotIn(canonical_name_key(self.TITLE), self.schedule["ambiguous"])
+        # The sentence is the law, not the notes, by both readers -- and it is
+        # a different sentence of the section the Commissioner's row already
+        # cites: 7803(a)(1) creates the Commissioner, 7803(b)(1) the Chief
+        # Counsel, and the Chief Counsel's is appointed "by and with the
+        # consent of the Senate", without the word "advice" the Commissioner's
+        # carries, which is why the quote is the page's words and not a tidied copy.
+        operative = ss.load_basis_section(self.FIXTURE)["operative"]
+        self.assertIn(self.QUOTE, operative)
+        self.assertIn(self.QUOTE, uscode_operative_text(US_CODE_BASIS_FIXTURE_DIR / self.FIXTURE))
+        commissioner = ss.REVIEWED_TITLE_ROWS[self.COMMISSIONER_ID]
+        self.assertEqual(commissioner["basisFixture"], self.FIXTURE)
+        self.assertNotEqual(commissioner["basisQuote"], self.QUOTE)
+        self.assertIn(commissioner["basisQuote"], operative)
+        self.assertIn("(b) Chief Counsel for the Internal Revenue Service (1) Appointment", operative)
+        self.assertEqual(US_CODE_REVIEWED_IDENTIFICATIONS[self.NODE_ID][:4], ("Chief Counsel", self.TITLE, "V", "5316"))
+
+    def test_the_row_matches_on_the_real_graph_and_only_through_the_reviewed_route(self) -> None:
+        whole = ss.match_positions(self.node_map, self.schedule)["matched"]
+        scoped = ss.match_scoped_positions(self.node_map, self.schedule, already_matched=whole)["matched"]
+        self.assertNotIn(self.NODE_ID, whole)
+        self.assertNotIn(self.NODE_ID, scoped)
+        result = ss.match_reviewed_rows(self.node_map, self.schedule, already_matched={**whole, **scoped})
+        self.assertIn(self.NODE_ID, result["matched"])
+        entry = result["matched"][self.NODE_ID]
+        self.assertEqual(entry["method"], ss.METHOD_REVIEWED)
+        self.assertEqual((entry["title"], entry["level"], entry["section"]), (self.TITLE, "V", "5316"))
+        self.assertNotIn("classTitle", entry)
+        ident = entry["identification"]
+        self.assertEqual(ident["nodeName"], "Chief Counsel")
+        self.assertEqual(ident["basisCitation"], "26 U.S.C. 7803")
+        self.assertEqual(ident["basisQuote"], self.QUOTE)
+        self.assertTrue(us_code_url_names_section(ident["basisUrl"], "26 U.S.C. 7803"))
+        self.assertEqual(ident["basisSha256"], fixture_digest(US_CODE_BASIS_FIXTURE_DIR / self.FIXTURE))
+        # One post, directly under the Service.
+        self.assertEqual(self.parent_map[self.NODE_ID], "exec-dept-treasury-irs")
+        self.assertFalse(ss.states_a_multiplicity(self.node_map[self.NODE_ID]["name"]))
+        # The Tax Court's copy of the office is reached by no route at all.
+        self.assertEqual(self.node_map[self.OPPOSING_ID]["name"], "Chief Counsel — IRS (opposing)")
+        self.assertEqual(self.parent_map[self.OPPOSING_ID], "jud-specialized-tax")
+        for table in (ss.REVIEWED_TITLE_ROWS, US_CODE_REVIEWED_IDENTIFICATIONS, US_CODE_EXECUTIVE_SCHEDULE,
+                      whole, scoped, result["matched"]):
+            self.assertNotIn(self.OPPOSING_ID, table)
+        self.assertNotIn(self.OPPOSING_ID, {i for spec in US_CODE_COUNTED_CLASSES.values() for i in spec["members"]})
+
+    def test_the_derived_record_applied_to_the_node_passes_the_gate(self) -> None:
+        """Built from the real statute and the real table, validated, applied
+        the way the exporter applies it, and gated -- Level V, $184,900."""
+        from data_pipeline.verification import financial_evidence as fe
+        from data_pipeline.verification.pay_tables import (
+            DEFAULT_PAY_TABLE_HTML,
+            federal_fiscal_year_of,
+            load_executive_schedule,
+        )
+
+        loaded = load_executive_schedule(DEFAULT_PAY_TABLE_HTML)
+        matched = ss.match_reviewed_rows(self.node_map, self.schedule)["matched"]
+        fiscal_year = federal_fiscal_year_of(date.fromisoformat(str(loaded["table"]["effective"])))
+        records, _report = ss.build_records(
+            {self.NODE_ID: matched[self.NODE_ID]}, loaded["table"],
+            table_url=loaded["url"], table_sha256=loaded["sha256"],
+            retrieved_at=loaded["fetched_at"], fiscal_year=fiscal_year,
+        )
+        node = {k: v for k, v in self.node_map[self.NODE_ID].items() if k != "children"}
+        record = fe.validate_record(records[self.NODE_ID], node)
+        self.assertEqual(fe.classify(record), "partial")
+        record["financialEvidenceStatus"] = "partial"
+        for key in ("levelClaim", "rateText", "effectiveText", "table", "tableFootnotes"):
+            record[key] = records[self.NODE_ID][key]
+        probe = {"id": "root", "name": "Root", "type": "Foundation", "children": [
+            {"id": "exec-dept-treasury-irs", "name": "Internal Revenue Service (IRS)", "type": "Bureau",
+             "children": [node]}]}
+        stats = ss.apply_schedule_pay(probe, {self.NODE_ID: record})
+        self.assertEqual(stats["priced"], 1)
+        applied = probe["children"][0]["children"][0]
+        pay = applied["positionSchedulePay"]
+        self.assertEqual((pay["payLevel"], pay["amount"], pay["statutoryTitle"], pay["method"]),
+                         ("V", EXECUTIVE_SCHEDULE_RATES["V"], self.TITLE, ss.METHOD_REVIEWED))
+        self.assertEqual((pay["scopeMatch"], pay["financialEvidenceStatus"]), ("proxy", "partial"))
+        self.assertNotIn("classTitle", pay)
+        self.assertEqual(schedule_pay_violations(applied, pay, REVIEWED_TODAY, label), [])
+        for field in ("sourceUrls", "sourceTypes", "lastVerified", "verificationMethod"):
+            self.assertNotIn(field, applied)
+
+    def test_the_record_on_the_tax_courts_copy_and_on_every_other_chief_counsel_is_refused(self) -> None:
+        """The Tax Court subtree's 'Chief Counsel — IRS (opposing)' IS this
+        office, drawn where it litigates, and pricing it would publish one
+        salary twice; the eight other Chief Counsels are other bureaus' posts
+        with the same stamped name. Only the node's own id keeps the figure
+        on the Service's node, and the gate keys on it."""
+        good = good_reviewed_pay(self.NODE_ID)
+        self.assertEqual(schedule_pay_violations(reviewed_node(self.NODE_ID), good, REVIEWED_TODAY, label), [])
+        self.assertEqual(schedule_pay_violations(self.node_map[self.NODE_ID], good, REVIEWED_TODAY, label), [])
+        opposing = self.node_map[self.OPPOSING_ID]
+        out = schedule_pay_violations(opposing, good, REVIEWED_TODAY, label)
+        self.assertNotEqual(out, [])
+        self.assertTrue(any("no row for" in v or "names no such post" in v for v in out), out)
+        # Renamed to the bare title it would need to match the row's name, it
+        # is still refused: the row is keyed by id, not by name.
+        self.assertNotEqual(schedule_pay_violations({**opposing, "name": "Chief Counsel"}, good, REVIEWED_TODAY, label), [])
+        others = sorted(i for i, n in self.node_map.items() if n.get("name") == "Chief Counsel" and i != self.NODE_ID)
+        self.assertEqual(8, len(others))
+        for other in others:
+            with self.subTest(node=other):
+                self.assertNotEqual(schedule_pay_violations(self.node_map[other], good, REVIEWED_TODAY, label), [])
+        # On the Commissioner, whose row cites the same section at Level III.
+        self.assertNotEqual(schedule_pay_violations(self.node_map[self.COMMISSIONER_ID], good, REVIEWED_TODAY, label), [])
+        # The Commissioner's record on the Chief Counsel: same basis section,
+        # a different sentence and a different level.
+        self.assertNotEqual(schedule_pay_violations(self.node_map[self.NODE_ID], good_reviewed_pay(self.COMMISSIONER_ID),
+                                                    REVIEWED_TODAY, label), [])
+        # Module side: renamed or gone, the row prices nothing.
+        renamed = {self.NODE_ID: {**self.node_map[self.NODE_ID], "name": "Chief Counsel, IRS"}}
+        self.assertEqual(ss.match_reviewed_rows(renamed, self.schedule)["refusals"]["reviewed_row_node_renamed"],
+                         [self.NODE_ID])
+        self.assertIn(self.NODE_ID, ss.match_reviewed_rows({}, self.schedule)["refusals"]["reviewed_row_names_no_node"])
+
+    def test_the_sentence_moved_beneath_the_notes_cut_fells_the_row_and_leaves_the_commissioners(self) -> None:
+        """Move 7803(b)(1)'s sentence into the Editorial Notes, re-sign the
+        digest, and the Chief Counsel's row falls while the page still carries
+        the sentence -- and the Commissioner's row, whose sentence in the same
+        section is untouched, stands."""
+        import hashlib
+        import tempfile
+
+        tmp = Path(tempfile.mkdtemp())
+        for row in ss.REVIEWED_TITLE_ROWS.values():
+            for name in (row["basisFixture"], row["basisFixture"] + ".meta.json"):
+                (tmp / name).write_bytes((US_CODE_BASIS_FIXTURE_DIR / name).read_bytes())
+        raw = (tmp / self.FIXTURE).read_text(encoding="utf-8")
+        head, sep, tail = raw.partition("<strong>Editorial Notes</strong>")
+        self.assertTrue(sep)
+        self.assertIn(self.QUOTE, head)
+        self.assertNotIn(self.QUOTE, tail)
+        doctored = (head.replace(self.QUOTE, "The Chief Counsel shall be appointed as the Secretary prescribes.")
+                    + sep + "<p>" + self.QUOTE + "</p>" + tail)
+        (tmp / self.FIXTURE).write_text(doctored, encoding="utf-8")
+        meta_path = tmp / (self.FIXTURE + ".meta.json")
+        meta = json.loads(meta_path.read_text(encoding="utf-8"))
+        meta["sha256"] = hashlib.sha256(doctored.encode("utf-8")).hexdigest()
+        meta_path.write_text(json.dumps(meta), encoding="utf-8")
+        node_map = {self.NODE_ID: dict(self.node_map[self.NODE_ID]),
+                    self.COMMISSIONER_ID: dict(self.node_map[self.COMMISSIONER_ID])}
+        result = ss.match_reviewed_rows(node_map, self.schedule, directory=tmp)
+        self.assertNotIn(self.NODE_ID, result["matched"])
+        self.assertIn(self.COMMISSIONER_ID, result["matched"])
+        self.assertEqual(result["refusals"]["reviewed_row_basis_quote_not_in_operative_text"], [self.NODE_ID])
+        self.assertIn(self.QUOTE, (tmp / self.FIXTURE).read_text(encoding="utf-8"))
+        self.assertNotIn(self.QUOTE, ss.load_basis_section(self.FIXTURE, tmp)["operative"])
+        self.assertNotIn(self.QUOTE, uscode_operative_text(tmp / self.FIXTURE))
+        self.assertIn(self.QUOTE, uscode_operative_text(US_CODE_BASIS_FIXTURE_DIR / self.FIXTURE))
+
+
 if __name__ == "__main__":
     unittest.main()

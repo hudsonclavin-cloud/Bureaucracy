@@ -55,8 +55,14 @@ by `scripts/report_cost_coverage.py`, puts every one of the 5,510 nodes in
 exactly one class — measured, estimate, salary, unpriced post by reason, or
 no figure with its reason — with the document route that would move each.
 
-The one exception is a real salary. **1,158** position nodes carry a pay claim an
-official source states (1,111 before the twelfth batch of 2026-10-05: its
+The one exception is a real salary. **1,193** position nodes carry a pay claim an
+official source states (1,158 before the twelfth batch's later clusters of
+2026-10-06, which priced the uniformed services' principals from Schedule 8 of
+the pay-adjustment order — twelve months of a printed monthly rate, arithmetic
+no document prints — the Defense Comptroller, the IRS Chief Counsel, four
+Transportation posts, the Architect of the Capitol, the Chief of the Capitol
+Police, the GAO's General Counsel, the NNSA Administrator, the Sentencing
+Commission's Chair and the two magistrate benches; 1,111 before the twelfth batch of 2026-10-05: its
 current-export rules — a sub-organisation named for the post, and the White
 House rank fold — took the export's listings from 170 to 255 and its printed
 rates from 88 to 128, and its fifteen reviewed Schedule rows and four
@@ -69,8 +75,8 @@ chamber's leaders and the President pro tempore and none for those offices;
 the panel leads with "priced as a Member's seat, not for the office", and the
 two joint-committee posts are refused because which chamber their holder sits
 in is a fact about a person this project never reads — 188 from the White House Office roster (22 of them
-titles the roster lists N times at one rate, published for each holder), 214
-from the Executive Schedule as 5 U.S.C. §§5312–5316 sets it (75 of them through
+titles the roster lists N times at one rate, published for each holder), 236
+from the Executive Schedule as 5 U.S.C. §§5312–5316 sets it (97 of them through
 a reviewed identification a second statute backs, each resting on three
 documents; nine of those are benches — the FCC's, FTC's, CFTC's, FERC's,
 NRC's, FMC's, CPSC's and SEC's `Commissioner (×4)` and the Fed's `Governor (×4
@@ -78,8 +84,9 @@ members)` — and, since 2026-09-30, 40 as reviewed members of a COUNTED class
 the Code places without naming, "Assistant Attorneys General (11)" and seven
 more, on the Code, the table and, where one has been read, the statute that
 composes the class —
-priced from the Code's own "Members, …" class title for each holder alike), 88
-the rate OPM's current PLUM export prints for the one row under the title, 36 a
+priced from the Code's own "Members, …" class title for each holder alike), 128
+the rate OPM's current PLUM export prints for the one row under the title (88
+until the office-named-for-the-post rule and the rank fold of 2026-10-05), 45 a
 rate a statute sets by REFERENCE to an Executive Schedule level the post is not
 itself placed at (`positionTierReferencePay`: the Comptroller General and the
 Deputy at 31 U.S.C. 703(f)'s levels II and III, the GPO's Director and Deputy
@@ -92,16 +99,28 @@ Assistance Commission's and Federal Election Commission's chairs and vice
 chairs at 52 U.S.C. 20923(d)(1)'s and 30106(a)(4)'s Level IV — each a stamped
 `Director / Administrator / Chair` or `Deputy Director / Vice Chair` title
 priced only because the same section says which office stands under it, read
-from GPO's 2024-edition rendering on govinfo — and 26 Inspectors
-General of the establishments 5 U.S.C. 401(1) lists at Level III plus the
-Act's 3 percent — $215,888, arithmetic the block carries in the open and no
-document prints), 72 a Title 38 tier BAND rather than a rate, 31 from a
-listing's level joined to OPM's table, 26 statutory at a row naming the office
+from GPO's 2024-edition rendering on govinfo, since 2026-10-06 the Architect
+of the Capitol at 2 U.S.C. 1802's Level II, the Chief of the Capitol Police at
+2 U.S.C. 1902's Level II, the GAO's General Counsel at 31 U.S.C. 731(c)'s
+Level IV and the NNSA Administrator at 42 U.S.C. 7132(c)'s Level III — and 27
+Inspectors General of the establishments 5 U.S.C. 401(1) lists at Level III
+plus the Act's 3 percent — $215,888, arithmetic the block carries in the open
+and no document prints; 23 of the 27 published, the other four displaced by a
+listed level the current export supplied on 2026-10-05), 22 twelve months of
+the uniformed services' MONTHLY basic pay (`positionMilitaryPay`, since
+2026-10-06: Schedule 8 of the pay-adjustment order, found in the committed
+note to 5 U.S.C. 5332, joined to the Title 10 or 14 section fixing the
+post's grade — 17 posts — or naming the post in its own footnote — 5 senior
+enlisted advisers — the annual figure arithmetic no document prints), 72 a
+Title 38 tier BAND rather than a rate, 68 from a
+listing's level joined to OPM's table (31 before the current export's rules of
+2026-10-05), 27 statutory at a row naming the office
 or tier (uscourts.gov, senate.gov, Schedule 6 and, since 2026-10-05, Schedule 7's
 "Judges of the Court of International Trade" for the CIT's chief judge and its
 bench of eight — the one judicial tier uscourts.gov's own table does not print),
-18 a base-pay RANGE, and
-**15 a figure no single document states** (four Article I chief judges and,
+22 a base-pay RANGE (18 until the current export supplied more listed pay
+plans on 2026-10-05), and
+**18 a figure no single document states** (four Article I chief judges and,
 since the multi-post rule became per field on 2026-09-23, their four benches —
 `Judge (×18)` among them, because "Each judge shall receive salary at the same
 rate" is the bench's fact and not one holder's — and, since 2026-09-28, the
@@ -124,7 +143,7 @@ U.S.C. 603's 92 percent of a Director paid as a district judge, $229,908,
 the FJC's through §626 — three documents each for the chains, none stating the
 figure, 7443A read from GPO's 2024-edition rendering on govinfo because the
 OLRC's host was under maintenance). A node may carry
-more than one, so the per-source figures sum past 1,158 (the President's $400,000,
+more than one, so the per-source figures sum past 1,193 (the President's $400,000,
 stated by 3 U.S.C. 102 itself since 2026-10-05, among them). Each shows in place of
 the withheld estimate, under its
 own heading rather than COST, with the panel saying it is compensation for one

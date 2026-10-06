@@ -208,6 +208,11 @@ SOURCE_TYPES = {
     # its own operative text -- 3 U.S.C. 102, the President -- read for the
     # one office it names. See data_pipeline/verification/us_code_stated_pay.py.
     "us_code_stated_rate",
+    # Schedule 8 of the annual pay-adjustment order -- the uniformed services'
+    # monthly basic pay -- joined to the statute fixing a post's grade
+    # (military_pay.py). The record's own figure is twelve months of a
+    # printed monthly rate and is itself printed nowhere.
+    "military_basic_pay_schedule",
 }
 
 #: Documents that state their scale by *printing* it rather than by declaring
@@ -259,8 +264,18 @@ SCALE_PRINTED_SOURCE_TYPES = {
 #: Two operations, each the statute's own words: "plus 3 percent" (the
 #: Inspector General Act) and "92 percent of" (28 U.S.C. 153 for bankruptcy
 #: judges). A record names which, and the rule recomputes accordingly.
-COMPUTED_FROM_MARKED_FIGURE_SOURCE_TYPES = {"statutory_tier_reference_pay", "statutory_parity_derived_pay"}
-COMPUTED_OPERATIONS = ("plus_percent", "percent_of")
+#: A third operation and a third grantee since 2026-10-06: Schedule 8 of the
+#: pay-adjustment order prints basic pay BY THE MONTH ("part i-monthly basic
+#: pay"; 37 U.S.C. 203(a)(1) speaks of "the rates of monthly basic pay"), so a
+#: military record's annual figure is twelve times a printed monthly one. The
+#: record names the factor (`arithmetic.factor`, always 12), the monthly figure
+#: must carry its mark in the evidence, and the result must equal base x 12 to
+#: the cent; no percentage is read for this operation.
+COMPUTED_FROM_MARKED_FIGURE_SOURCE_TYPES = {
+    "statutory_tier_reference_pay", "statutory_parity_derived_pay", "military_basic_pay_schedule",
+}
+COMPUTED_OPERATIONS = ("plus_percent", "percent_of", "monthly_times_12")
+MONTHLY_TIMES_12_FACTOR = 12
 
 #: A third way a source can state its scale, narrower still, and granted to
 #: exactly one source type: a machine-readable API whose publisher states no
@@ -323,6 +338,7 @@ SOURCE_BASES = {
     "uscourts_judicial_compensation": {"basic_pay"},
     "senate_salary_schedule": {"basic_pay"},
     "us_code_pay_schedules": {"basic_pay"},
+    "military_basic_pay_schedule": {"basic_pay"},
     "va_title38_pay_ranges": {"basic_pay"},
     "whitehouse_staff_report": {"basic_pay"},
     "opm_plum_current_export": {"basic_pay"},
@@ -483,7 +499,15 @@ def _computed_from_marked_figure(
     percent = arithmetic.get("percent")
     if not re.fullmatch(r"[\d,]+(?:\.\d{1,2})?", base_raw):
         return ""
-    if isinstance(percent, bool) or not isinstance(percent, int) or not (0 < percent <= 100):
+    if operation == "monthly_times_12":
+        # No percentage is involved; the factor is the twelve months of a
+        # year and the record must say so itself rather than leave it implied.
+        factor = arithmetic.get("factor")
+        if isinstance(factor, bool) or not isinstance(factor, int) or factor != MONTHLY_TIMES_12_FACTOR:
+            return ""
+        if percent not in (None, 0):
+            return ""
+    elif isinstance(percent, bool) or not isinstance(percent, int) or not (0 < percent <= 100):
         return ""
     base_match = re.search(rf"\$\s*{re.escape(base_raw)}(?![\d,]|\.\d)", evidence)
     if base_match is None:
@@ -494,7 +518,12 @@ def _computed_from_marked_figure(
     if re.search(rf"\$\s*{re.escape(raw)}(?![\d,]|\.\d)", evidence):
         return ""
     base = float(base_raw.replace(",", ""))
-    expected = round(base * (100 + percent) / 100.0, 2) if operation == "plus_percent" else round(base * percent / 100.0, 2)
+    if operation == "monthly_times_12":
+        expected = round(base * MONTHLY_TIMES_12_FACTOR, 2)
+    elif operation == "plus_percent":
+        expected = round(base * (100 + percent) / 100.0, 2)
+    else:
+        expected = round(base * percent / 100.0, 2)
     if abs(float(raw.replace(",", "")) - expected) > 0.005:
         return ""
     return base_match.group(0)

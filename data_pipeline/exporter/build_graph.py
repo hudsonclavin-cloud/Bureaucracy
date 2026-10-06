@@ -257,6 +257,11 @@ MINIMAL_GRAPH_FIELDS = (
     # level, and OPM's table prices the level; an Inspector General's adds
     # the Act's 3 percent, arithmetic the block carries in the open
     "positionTierReferencePay",
+    # a statute fixes the post's GRADE, 37 U.S.C. 201 assigns the grade a pay
+    # grade, and Schedule 8 of the pay-adjustment order prices it by the
+    # month; the block carries the monthly figure as printed and the twelve
+    # months of arithmetic in the open
+    "positionMilitaryPay",
     # OPM's CURRENT PLUM export: the listing of the post as it stands now,
     # and the rate of basic pay that export prints for the one row under the
     # title -- a second document beside the archive's listing, never a cost
@@ -2496,6 +2501,7 @@ def build_graph(
     va_title38_pay_evidence_path: str | Path | None = "default",
     derived_pay_evidence_path: str | Path | None = "default",
     tier_reference_pay_evidence_path: str | Path | None = "default",
+    military_pay_evidence_path: str | Path | None = "default",
     whitehouse_pay_evidence_path: str | Path | None = "default",
     usaspending_evidence_path: str | Path | None = "default",
     net_cost_evidence_path: str | Path | None = "default",
@@ -2863,6 +2869,26 @@ def build_graph(
         load_tier_reference_pay_evidence(resolved_tier_reference_pay_path) if resolved_tier_reference_pay_path else {},
         index_tree=index_tree,
     )
+    # The uniformed services: a grade a statute fixes, joined to 37 U.S.C. 201
+    # and Schedule 8 of the pay-adjustment order; the senior enlisted advisers
+    # from the schedule's own footnote. After every other route for the same
+    # reason the tier-reference pass is: it leaves a priced node alone.
+    from data_pipeline.verification.military_pay import (  # noqa: E402 — imports this module
+        DEFAULT_PAY_EVIDENCE_PATH as DEFAULT_MILITARY_PAY_EVIDENCE_PATH,
+        apply_pay_evidence as apply_military_pay_evidence,
+        load_pay_evidence as load_military_pay_evidence,
+    )
+
+    resolved_military_pay_path = (
+        DEFAULT_MILITARY_PAY_EVIDENCE_PATH
+        if military_pay_evidence_path == "default"
+        else military_pay_evidence_path
+    )
+    validation["military_pay_evidence"] = apply_military_pay_evidence(
+        graph,
+        load_military_pay_evidence(resolved_military_pay_path) if resolved_military_pay_path else {},
+        index_tree=index_tree,
+    )
     from data_pipeline.verification.whitehouse_pay import (  # noqa: E402 — whitehouse_pay imports this module
         DEFAULT_PAY_EVIDENCE_PATH as DEFAULT_WHITEHOUSE_PAY_EVIDENCE_PATH,
         apply_pay_evidence as apply_whitehouse_pay_evidence,
@@ -3048,6 +3074,7 @@ def build_graph(
     validation["va_title38_pay_evidence"]["stands_for_many_posts_after_pruning"] = multi_post_withdrawn
     validation["derived_pay_evidence"]["stands_for_many_posts_after_pruning"] = multi_post_withdrawn
     validation["tier_reference_pay_evidence"]["stands_for_many_posts_after_pruning"] = multi_post_withdrawn
+    validation["military_pay_evidence"]["stands_for_many_posts_after_pruning"] = multi_post_withdrawn
     # How many documents each pay figure rests on, and what that count is
     # worth on this project's own source arithmetic. Last, deliberately: it
     # counts the URLs a block actually ends up carrying, so it must run after

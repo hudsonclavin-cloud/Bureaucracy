@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20261005d";
-import { loadMergedGraphData } from "./graphLoader.js?v=20261005d";
+import { createGovernmentGraph } from "./graph.js?v=20261006a";
+import { loadMergedGraphData } from "./graphLoader.js?v=20261006a";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -1275,6 +1275,12 @@ function tierReferencePayOf(node) {
   return pay;
 }
 
+function militaryPayOf(node) {
+  const pay = node.positionMilitaryPay;
+  if (!pay || typeof pay !== "object" || typeof pay.amount !== "number") return null;
+  return pay;
+}
+
 // A statute that sets the post's pay BY REFERENCE to an Executive Schedule
 // level the post is not itself placed at -- 31 U.S.C. 703(f) for the GAO's
 // officers, 5 U.S.C. 403(e) for an establishment's Inspector General -- joined
@@ -1328,6 +1334,81 @@ function renderTierReferencePay(data) {
   for (const note of notes) add(` The table's own note: "${String(note).trim()}"`);
 }
 
+// Military basic pay, from Schedule 8 of the annual pay-adjustment order --
+// the uniformed services' basic-pay table, which prints its rates BY THE
+// MONTH -- reached two ways. A Title 10 or Title 14 section fixes the post's
+// grade in so many words, 37 U.S.C. 201(a)(1) assigns that grade a pay grade,
+// and the schedule's row for the pay grade prints one figure in every
+// populated column; or the schedule's own enlisted footnote names the post by
+// title at a stated monthly rate. Either way the annual figure is twelve
+// times the monthly one, arithmetic this project performed and no document
+// prints, so the block leads with the monthly figure as the schedule prints
+// it and the multiplication in the open -- the treatment the Inspector
+// General Act's 3 percent gets above. The officer footnote's Level II ceiling
+// differs from the O-10 row by $100; it is quoted beside the figure and not
+// reconciled.
+function renderMilitaryPay(data) {
+  let line = document.getElementById("info-military-pay");
+  if (!line && dom.infoStats) {
+    line = document.createElement("div");
+    line.id = "info-military-pay";
+    line.style.fontSize = "9px";
+    line.style.color = "#8f7a5d";
+    line.style.letterSpacing = "0.06em";
+    line.style.margin = "2px 0 8px";
+    dom.infoStats.insertAdjacentElement("afterend", line);
+  }
+  if (!line) return;
+  const pay = militaryPayOf(data);
+  if (!pay) {
+    if (line) line.replaceChildren();
+    return;
+  }
+  line.replaceChildren();
+  const add = (text) => line.appendChild(document.createTextNode(text));
+  const printed = pay.rateText || `$${pay.amount.toLocaleString()}`;
+  const documents = Array.isArray(pay.documents) ? pay.documents : [];
+  const identification = pay.identification && typeof pay.identification === "object" ? pay.identification : {};
+  const monthly = pay.monthly && typeof pay.monthly === "object" ? pay.monthly : {};
+  const schedule = pay.schedule && typeof pay.schedule === "object" ? pay.schedule : {};
+  const scheduleRow = pay.scheduleRow && typeof pay.scheduleRow === "object" ? pay.scheduleRow : null;
+  const footnote = pay.footnote && typeof pay.footnote === "object" ? pay.footnote : null;
+  const capFootnote = pay.capFootnote && typeof pay.capFootnote === "object" ? pay.capFootnote : null;
+  const byGrade = identification.kind === "grade_fixed_by_statute";
+  const monthlyText = monthly.text || (typeof monthly.amount === "number" ? `$${monthly.amount.toLocaleString()} per month` : "a monthly rate");
+  const scheduleName = `${schedule.label || "Schedule 8 — Pay of the Uniformed Services"}${schedule.effective ? ` ${schedule.effective}` : ""}`;
+  const payGrade = pay.payGrade || identification.payGrade || "";
+  add(`MILITARY BASIC PAY — ${scheduleName} prints ${monthlyText} for ${byGrade ? `pay grade ${payGrade || "?"}` : "the post by title"}; ${printed} a year is twelve times that, arithmetic this project performed and no document prints.`);
+  if (byGrade) {
+    add(` ${pay.statute || "A statute"} fixes the post's grade: "${String(pay.statuteQuote || identification.statuteQuote || "").trim()}"`);
+    if (identification.officeQuote) {
+      add(` The grade sentence names the office only by its title; the same section says which: "${String(identification.officeQuote).trim()}"`);
+    }
+    add(` ${identification.mappingCitation || "37 U.S.C. 201(a)(1)"} assigns the grade of ${pay.grade || identification.grade || "general or admiral"} to pay grade ${payGrade || "O-10"} for the purpose of computing basic pay: "${String(identification.mappingQuote || "").trim()}"`);
+    if (identification.spaceForceMapping) {
+      add(` 37 U.S.C. 201(a)(2), for the Space Force: "${String(identification.spaceForceMapping).trim()}"`);
+    }
+    if (scheduleRow && scheduleRow.note) add(` ${String(scheduleRow.note).trim()}`);
+    if (capFootnote && capFootnote.note) {
+      add(` ${String(capFootnote.note).trim()}`);
+      if (capFootnote.text) add(` The footnote's own words: "${String(capFootnote.text).trim()}"`);
+    }
+  } else {
+    if (footnote && footnote.text) add(` The schedule's enlisted footnote names the post: "${String(footnote.text).trim()}"`);
+    if (identification.readsTwoOffices === true) {
+      const item = (footnote && footnote.printedItem) || identification.printedItem || "";
+      add(` The printed item "${item}" names two offices at once, and this post is one of them.`);
+    }
+  }
+  add(holdersSentence(pay));
+  add(payDocumentsSentence(pay));
+  for (const document of documents) {
+    if (!document || typeof document !== "object") continue;
+    add(` ${document.citation || "A document"} — ${document.role || "supplies part of the figure"}: "${String(document.quote || "").trim()}"`);
+  }
+  add(" It is a pay schedule's figure for a grade or a title, not this post as the graph draws it, so it is never a verification that the post exists. It is not this unit's cost: basic pay excludes benefits and is not a share of federal outlays.");
+}
+
 function renderDerivedPay(data) {
   let line = document.getElementById("info-derived-pay");
   if (!line && dom.infoStats) {
@@ -1365,6 +1446,13 @@ function renderDerivedPay(data) {
     const ofWhat = pay.percentOfWhat || `the salary of ${arithmetic.baseTier || "a judicial tier"}`;
     const via = pay.viaStatute ? ` ${pay.viaStatute} is the statute that puts that office at the rate of ${arithmetic.baseTier || "the tier"}.` : "";
     add(` ${pay.statute || "A statutory provision"} states that ${subject} is paid ${arithmetic.percent} percent of ${ofWhat}.${via} The U.S. Courts' Judicial Compensation table prints ${arithmetic.baseText || "a figure"} for ${arithmetic.baseTier || "that tier"}. ${arithmetic.baseText || "That figure"} × ${arithmetic.percent}% = ${printed} — arithmetic this project performed, printed by no document.`);
+    // A statute that states a CEILING ("up to" 92 percent, 28 U.S.C. 634(a))
+    // prices nothing by itself; the same compensation page prints, beneath its
+    // table, the sentence saying what the Judicial Conference fixed under it,
+    // and the block carries that sentence with the reading in words.
+    if (pay.ceilingBasis && typeof pay.ceilingBasis === "object" && pay.ceilingBasis.quote) {
+      add(` ${pay.statute || "That statute"} states a CEILING ("up to" that percentage), not a rate. The same Judicial Compensation page prints beneath its table: "${String(pay.ceilingBasis.quote).trim()}" — the document that says what the Judicial Conference fixed under the ceiling. ${pay.ceilingBasis.reading ? String(pay.ceilingBasis.reading).trim() : ""}`);
+    }
   } else if (pay.viaStatute) {
     add(` ${pay.statute || "A statutory parity provision"} states that ${subject} is paid what another office is paid; ${pay.viaStatute} states that that office is paid at the rate of ${pay.amountScope || "a judicial tier"}; the U.S. Courts' Judicial Compensation table states what that tier pays. The figure is the join of the three.`);
   } else {
@@ -2367,8 +2455,9 @@ function hasWithheldEstimate(node) {
 
 // What stands in for the cost wherever the node has no measured cost of its
 // own and no estimate is on show — the estimate withheld, or, for a post, no
-// figure at all: the pay an official document states for the post. Nine
-// fields can carry one, and until 2026-10-05 only three of them reached this
+// figure at all: the pay an official document states for the post. Ten
+// fields can carry one (nine until Schedule 8's military basic pay landed on
+// 2026-10-06), and until 2026-10-05 only three of them reached this
 // headline (the current export's printed rate, the archive's, a table's
 // range): a post priced from the Executive Schedule, from a statute, from the
 // White House roster or from a parity provision read "No cost known for this
@@ -2385,6 +2474,7 @@ const PAY_STAND_IN_ORDER = [
   ["schedule", (node) => positiveAmountBlock(node.positionSchedulePay)],
   ["tierReference", (node) => tierReferencePayOf(node)],
   ["derived", (node) => derivedPayOf(node)],
+  ["military", (node) => militaryPayOf(node)],
   ["reported", (node) => positiveAmountBlock(node.positionReportedPay)],
   ["current", (node) => currentPayOf(node)],
   ["pay", (node) => reportedPayOf(node)],
@@ -2495,6 +2585,14 @@ function standInHeading(standIn) {
         label: "PAY — DERIVED, STATED BY NO DOCUMENT",
         period: `${block.statute || "a statutory provision"} joined to the U.S. Courts' compensation table${block.year ? `, ${block.year}` : ""} — a rate of basic pay, not a cost`,
       };
+    case "military": {
+      const schedule = block.schedule && typeof block.schedule === "object" ? block.schedule : {};
+      const byGrade = block.identification && typeof block.identification === "object" && block.identification.kind === "grade_fixed_by_statute";
+      return {
+        label: "PAY — MILITARY BASIC PAY, 12 × THE MONTHLY RATE",
+        period: `${schedule.label || "Schedule 8 — Pay of the Uniformed Services"}${schedule.effective ? `, ${lowerEffective(String(schedule.effective).replace(/^\(|\)$/g, ""))}` : ""}; ${byGrade ? `${block.statute || "a statute"} fixes the grade` : "its own footnote names the post"} — a rate of basic pay, not a cost`,
+      };
+    }
     case "reported":
       return {
         label: "PAY — WHITE HOUSE STAFF REPORT",
@@ -2534,6 +2632,8 @@ function standInBadgeLabel(standIn) {
       return "No cost known; a rate set by reference to a level is shown";
     case "derived":
       return "No cost known; a derived rate of pay is shown";
+    case "military":
+      return "No cost known; twelve months of the schedule's monthly basic pay are shown";
     case "reported":
       return "No cost known; the staff report's rate of pay is shown";
     case "current":
@@ -2578,6 +2678,13 @@ function standInNote(standIn) {
     case "derived":
       note = ` What is shown instead is a figure no document states: ${block.statute || "a statutory provision"} sets the pay at ${block.amountScope || "another tier's rate"}, the U.S. Courts' Judicial Compensation table prices that tier, and ${printed} is the join${block.arithmetic && typeof block.arithmetic === "object" ? ", with the statute's percentage applied" : ""}. Not what this unit costs.`;
       break;
+    case "military": {
+      const monthly = block.monthly && typeof block.monthly === "object" ? block.monthly : {};
+      const schedule = block.schedule && typeof block.schedule === "object" ? block.schedule : {};
+      const byGrade = block.identification && typeof block.identification === "object" && block.identification.kind === "grade_fixed_by_statute";
+      note = ` What is shown instead is twelve months of military basic pay: ${schedule.label || "Schedule 8 — Pay of the Uniformed Services"} prints ${monthly.text || "a monthly rate"} for ${byGrade ? `pay grade ${block.payGrade || "?"}, the grade ${block.statute || "a statute"} fixes for this post` : "this post, which its own footnote names by title"}, and ${printed} is twelve times that — arithmetic this project performed, which no document prints, and not what this unit costs.`;
+      break;
+    }
     case "reported":
       note = ` What is shown instead is the rate the White House Office's own annual report to Congress lists under "${block.reportedTitle || "this title"}"${block.asOf ? ` (as of ${block.asOf})` : ""}: ${printed}. That is what the listed person is paid, not what the post pays whoever holds it, and not what this unit costs.`;
       break;
@@ -2964,6 +3071,7 @@ function renderInfoPanel(nodeObj) {
   renderStatutoryPay(data);
   renderDerivedPay(data);
   renderTierReferencePay(data);
+  renderMilitaryPay(data);
   renderSchedulePay(data);
   renderReportedPay(data);
   renderCountProvenance(data);

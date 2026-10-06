@@ -113,6 +113,34 @@ from one section (each re-found in the operative text on its own), and the
 record names every document in the chain and says that none states the
 figure. See the comment above `SPECIAL_TRIAL_JUDGE_QUOTE`.
 
+## A ceiling the compensation table's own page resolves (since 2026-10-06, the
+## twelfth research batch's judiciary cluster)
+
+28 U.S.C. 634(a) pays full-time magistrate judges "up to an annual rate equal
+to 92 percent of the salary of a judge of the district court" -- a CEILING
+the Judicial Conference fixes a salary beneath, which is why the two
+magistrate benches were refused here while the bankruptcy benches (28 U.S.C.
+153(a), "equal to 92 percent", no ceiling word) were priced. The Administrative
+Office's own Judicial Compensation page -- the very document the table is read
+from -- prints beneath the table: "By statute, the salary of a bankruptcy or
+magistrate judge is equal to 92 percent of the salary of a district judge.
+28 U.S.C. §§ 153, 634(a)." That sentence is the document that says what the
+Conference fixed under the ceiling. So the magistrate rows are percent-of rows
+in the bankruptcy shape with one thing more: a `basisQuote`, re-found in the
+compensation page's own text on every run (`build_records` refuses the row
+when the page no longer prints it), published on the block as `ceilingBasis`
+with the reading in words, and mirrored by the gate by node id. The document
+count stays at two -- the sentence is on the same page as the table -- and the
+distinction the tests pinned is kept: "up to" IS in §634 and NOT in §153; what
+changed is that a second sentence of a document already in hand resolves it.
+
+The same cluster priced the Chair of the United States Sentencing Commission
+from 28 U.S.C. 992(c), an office row in the Administrative Office Director's
+shape at the CIRCUIT-judge tier, and refused the Commission's `Commissioner
+(×6)` bench: §992(c) pays the Vice Chairs at the annual circuit-judge rate and
+the other voting members "at the daily rate", so one figure for the bench
+would be false of some of its members, the senior-judge refusal's shape.
+
 Basic pay is not the node's cost, for the reason `pay_tables.py` states, and
 nothing here writes `sourceUrls`, `sourceTypes`, `lastVerified` or
 `verificationMethod` -- the channel by which a five-row table carried 29
@@ -369,6 +397,88 @@ PARITY_PROVISIONS["jud-support-fjc-deputy-director"] = {
     },
 }
 
+#: The Chair of the United States Sentencing Commission, since 2026-10-06 (the
+#: twelfth research batch's judiciary cluster): 28 U.S.C. 992(c) pays "The
+#: Chair and Vice Chairs of the Commission" at "the annual rate at which judges
+#: of the United States courts of appeals are compensated" -- an office row in
+#: the AO Director's shape, at the CIRCUIT-judge tier, read from GPO's 2024
+#: edition on www.govinfo.gov. The Commission's `Commissioner (×6)` bench is
+#: NOT priced (see `NOT_PRICED`): the same subsection pays the Vice Chairs the
+#: annual rate and the other voting members "at the daily rate at which judges
+#: of the United States courts of appeals are compensated", so one annual
+#: figure for the bench would be false of some of its members. The three Vice
+#: Chairs have no nodes of their own in this graph.
+USSC_CHAIR_QUOTE = (
+    "The Chair and Vice Chairs of the Commission shall hold full-time positions and shall be compensated "
+    "during their terms of office at the annual rate at which judges of the United States courts of appeals "
+    "are compensated."
+)
+PARITY_PROVISIONS["jud-support-ussc-chair-ussc"] = {
+    "citation": "28 U.S.C. 992(c)",
+    "fixture": "ussc_28_usc_992_govinfo2024.html",
+    "court": None,
+    "subject": "the Chair of the United States Sentencing Commission",
+    "subsection": "(c)",
+    "tier": "circuit judges",
+    "quote": USSC_CHAIR_QUOTE,
+}
+
+#: The magistrate judges, since 2026-10-06 (the owner's decision): a CEILING
+#: the compensation table's own page resolves. 28 U.S.C. 634(a) pays
+#: full-time magistrate judges "up to an annual rate equal to 92 percent of
+#: the salary of a judge of the district court", fixed by the Judicial
+#: Conference -- so the statute alone states no rate, and these two rows were
+#: in `NOT_PRICED` for exactly that reason. The Administrative Office's own
+#: Judicial Compensation page prints, beneath the table this module prices
+#: from: "By statute, the salary of a bankruptcy or magistrate judge is equal
+#: to 92 percent of the salary of a district judge." That is the document
+#: stating what the Conference fixed under the ceiling, so the row carries it
+#: as `basisQuote`, `build_records` refuses the row unless the page still
+#: prints that sentence, the block publishes it as `ceilingBasis` with the
+#: reading in words, and the gate mirrors it by node id. The statute quote
+#: stops at "section 135" as the bankruptcy quote does; the part-time clause
+#: that follows it (between $100 and half the full-time maximum) is named in
+#: the reading, because the AO's sentence states the salary without that
+#: qualification and the figure is the full-time one.
+MAGISTRATE_JUDGE_QUOTE = (
+    "Officers appointed under this chapter shall receive, as full compensation for their services, salaries to "
+    "be fixed by the conference pursuant to section 633, at rates for full-time United States magistrate judges "
+    "up to an annual rate equal to 92 percent of the salary of a judge of the district court of the United "
+    "States, as determined pursuant to section 135"
+)
+MAGISTRATE_BASIS_QUOTE = (
+    "By statute, the salary of a bankruptcy or magistrate judge is equal to 92 percent of the salary of a "
+    "district judge."
+)
+MAGISTRATE_BASIS_READING = (
+    "28 U.S.C. 634(a) sets a CEILING, not a rate: full-time magistrate judges' salaries are fixed by the "
+    "Judicial Conference \"up to\" 92 percent of a district judge's, and part-time magistrate judges are paid "
+    "between $100 and half the full-time maximum. The Administrative Office's own Judicial Compensation page, "
+    "the document this figure's tier is read from, states beneath its table that the salary \"is equal to 92 "
+    "percent of the salary of a district judge\", which is what the Conference fixed under that ceiling; the "
+    "figure is published on that sentence and is the full-time salary."
+)
+for _node_id, _subject in (
+    ("jud-district-sdny-magistrate-judge-13", "every full-time magistrate judge of the Southern District of New York"),
+    ("jud-district-structure-magistrate-judge-varies", "every full-time magistrate judge, in every district"),
+):
+    PARITY_PROVISIONS[_node_id] = {
+        "citation": "28 U.S.C. 634(a)",
+        "fixture": "magistrate_judges_28_usc_634.html",
+        "court": None,
+        "subject": _subject,
+        "subsection": "(a)",
+        "tier": "district judges",
+        "percentOf": 92,
+        "percentOfWhat": (
+            "a district judge's salary -- the ceiling 28 U.S.C. 634(a) sets, which the Administrative Office's own "
+            "Judicial Compensation page states the salary is equal to"
+        ),
+        "quote": MAGISTRATE_JUDGE_QUOTE,
+        "basisQuote": MAGISTRATE_BASIS_QUOTE,
+        "basisReading": MAGISTRATE_BASIS_READING,
+    }
+
 #: The hosts a statute may be read from, and the publisher each one is. The
 #: Office of the Law Revision Counsel's prelim edition is the first choice;
 #: the Government Publishing Office's annual edition is the same text as of
@@ -376,10 +486,13 @@ PARITY_PROVISIONS["jud-support-fjc-deputy-director"] = {
 STATUTE_HOSTS = ("uscode.house.gov", "www.govinfo.gov")
 
 
-def statute_publisher(url: str) -> tuple[str, str]:
-    """(publisher, edition words) for a committed statute's URL."""
+def statute_publisher(url: str, final_url: str = "") -> tuple[str, str]:
+    """(publisher, edition words) for a committed statute's URL. A fetch made
+    through govinfo's link service records the link as `url` and the dated
+    granule it resolved to as `final_url`; the edition is read off whichever
+    carries the package id."""
     if "www.govinfo.gov" in url:
-        match = re.search(r"USCODE-(\d{4})", url)
+        match = re.search(r"USCODE-(\d{4})", url) or re.search(r"USCODE-(\d{4})", str(final_url or ""))
         edition = f"{match.group(1)} edition of the United States Code" if match else "an edition of the United States Code"
         return ("U.S. Government Publishing Office", edition)
     return ("Office of the Law Revision Counsel, U.S. House of Representatives", "current through the prelim edition")
@@ -417,17 +530,14 @@ for _bench, _chief in BENCH_NODES.items():
 #: Read, and deliberately not priced, with the reason. Kept as data so the
 #: derive step can print it and a reviewer can see each is a decision.
 NOT_PRICED = {
-    "jud-district-sdny-magistrate-judge-13": (
-        "28 U.S.C. 634(a) sets full-time magistrate judges' salaries \"at rates ... up to an annual rate "
-        "equal to 92 percent of the salary of a judge of the district court\", fixed by the Judicial "
-        "Conference: a ceiling and not a rate, and part-time magistrate judges are paid between $100 and "
-        "half the full-time maximum; no document here states what the Conference fixed"
-    ),
-    "jud-district-structure-magistrate-judge-varies": (
-        "28 U.S.C. 634(a) sets full-time magistrate judges' salaries \"at rates ... up to an annual rate "
-        "equal to 92 percent of the salary of a judge of the district court\", fixed by the Judicial "
-        "Conference: a ceiling and not a rate, and part-time magistrate judges are paid between $100 and "
-        "half the full-time maximum; no document here states what the Conference fixed"
+    # The two magistrate benches sat here until 2026-10-06 ("a ceiling and not
+    # a rate ... no document here states what the Conference fixed"); the
+    # Administrative Office's own page does, and they are priced above.
+    "jud-support-ussc-commissioner-6": (
+        "28 U.S.C. 992(c) pays the Commission's Chair and Vice Chairs at the annual rate of a judge of the "
+        "courts of appeals and its other voting members \"at the daily rate at which judges of the United "
+        "States courts of appeals are compensated\"; this bench of six bundles the three Vice Chairs at the "
+        "annual rate with members paid by the day, so one annual figure would be false of some of its holders"
     ),
     "jud-specialized-intl-trade-chief-judge-cit": (
         "28 U.S.C. 252 states no parity: it sets the rate by reference to section 225 of the "
@@ -507,6 +617,9 @@ def load_section(fixture: str) -> dict[str, Any]:
     return {
         "file": str(path),
         "url": url,
+        # govinfo's link service redirects to the dated edition's granule; the
+        # address that served the bytes is what names the edition.
+        "final_url": str(meta.get("final_url") or url),
         "fetched_at": fetched_at,
         "sha256": digest,
         "operative": operative_text(decoded),
@@ -526,6 +639,21 @@ def load_pay_evidence(path: str | Path = DEFAULT_PAY_EVIDENCE_PATH) -> dict[str,
     return nodes if isinstance(nodes, dict) else {}
 
 
+def page_text(raw_html: str) -> str:
+    """A page's whole readable text: tags stripped, entities unescaped,
+    whitespace collapsed. What a provision's `basisQuote` is re-found in --
+    the compensation page's Explanatory Notes sit outside its table, so the
+    table parser's rows cannot carry them."""
+    text = re.sub(r"(?is)<(script|style)\b.*?</\1>", " ", raw_html)
+    return _collapse(html_module.unescape(re.sub(r"<[^>]+>", " ", text)))
+
+
+def compensation_page_text(html_path: str | Path) -> str:
+    """The committed Judicial Compensation page's text, read from the same
+    bytes `judicial_pay.load_judicial_compensation` has just vouched for."""
+    return page_text(Path(html_path).read_text(encoding="utf-8", errors="replace"))
+
+
 def build_records(
     node_map: Mapping[str, Mapping[str, Any]],
     compensation: Mapping[str, Any],
@@ -533,9 +661,16 @@ def build_records(
     table_url: str,
     table_sha256: str,
     table_retrieved_at: str,
+    table_text: str | None = None,
 ) -> tuple[dict[str, dict[str, Any]], dict[str, Any]]:
     """One record per parity provision whose quote is still in its section's
-    operative text and whose tier the compensation table still prices."""
+    operative text and whose tier the compensation table still prices.
+
+    `table_text` is the compensation page's own text (`compensation_page_text`);
+    a provision carrying a `basisQuote` -- the magistrate judges, whose statute
+    states a ceiling the page's own sentence resolves -- is refused unless that
+    sentence is still printed there. A caller that passes no page text prices
+    no such row: the sentence is half of what the claim rests on."""
     year = str(compensation.get("year") or "")
     tiers = compensation.get("tiers") or {}
     header = str(compensation.get("headerText") or "")
@@ -576,6 +711,23 @@ def build_records(
                 refusals[node_id] = f"{via['citation']} no longer carries the quoted sentence ({where})"
                 continue
             via_quote = joined_quote(via["quote"])
+        basis_quote = _collapse(str(provision.get("basisQuote") or ""))
+        if basis_quote:
+            # A ceiling is resolved only by the page's own sentence, re-found
+            # now; a page that no longer prints it leaves the statute's "up
+            # to" standing alone, which prices nothing.
+            if table_text is None:
+                refusals[node_id] = (
+                    f"{provision['citation']} states a ceiling and the compensation page's text was not supplied, "
+                    "so the sentence that resolves it could not be re-found"
+                )
+                continue
+            if basis_quote not in table_text:
+                refusals[node_id] = (
+                    f"{provision['citation']} states a ceiling and the Judicial Compensation page no longer prints "
+                    "the sentence that resolved it"
+                )
+                continue
         tier = tiers.get(provision["tier"])
         if not tier:
             refusals[node_id] = f"the compensation table does not price {provision['tier']!r} for {year}"
@@ -612,9 +764,16 @@ def build_records(
                 "result": amount,
                 "resultText": rate_text,
                 "note": (
-                    f"No document prints {rate_text}. {provision['citation']} sets the rate at {percent_of} percent "
-                    f"of {percent_of_what}, and Judicial Compensation {year} "
-                    f"prints {tier['rateText']} for {tier_label}; the figure is that arithmetic and nothing more."
+                    (
+                        f"No document prints {rate_text}. {provision['citation']} caps the rate at {percent_of} percent "
+                        f"of {percent_of_what}, the Judicial Compensation page states the salary is equal to that "
+                        f"percentage, and Judicial Compensation {year} prints {tier['rateText']} for {tier_label}; "
+                        "the figure is that arithmetic and nothing more."
+                    ) if basis_quote else (
+                        f"No document prints {rate_text}. {provision['citation']} sets the rate at {percent_of} percent "
+                        f"of {percent_of_what}, and Judicial Compensation {year} "
+                        f"prints {tier['rateText']} for {tier_label}; the figure is that arithmetic and nothing more."
+                    )
                 ),
             }
             arithmetic_text = f" × {percent_of}% = {rate_text}"
@@ -624,16 +783,31 @@ def build_records(
             rate_text = tier["rateText"]
             arithmetic = None
             arithmetic_text = ""
+        basis_text = (
+            f"· Judicial Compensation {year}, Explanatory Notes: “{basis_quote}” " if basis_quote else ""
+        )
         derivation = (
             f"{provision['citation']} {provision['subsection']}: “{quote}” "
             f"{via_text}"
+            f"{basis_text}"
             f"· Judicial Compensation {year}: {tier_label} {tier['rateText']}{arithmetic_text}"
         )
-        publisher, edition = statute_publisher(section["url"])
+        ceiling_basis = {
+            "quote": basis_quote,
+            "reading": _collapse(str(provision.get("basisReading") or "")),
+            "citation": f"Judicial Compensation, {year}, Explanatory Notes",
+            "publisher": "Administrative Office of the United States Courts",
+            "url": table_url,
+            "documentSha256": table_sha256,
+            "retrievedAt": table_retrieved_at,
+            "statuteStatesACeiling": True,
+        } if basis_quote else None
+        publisher, edition = statute_publisher(section["url"], section.get("final_url", ""))
         documents = [
             {
                 "role": (f"states the percentage of another office's pay this post is paid" if (via and percent_of)
                          else "states whose pay this post's equals" if via
+                         else "caps this post's pay at a percentage of the tier, a ceiling the compensation page's own sentence resolves" if basis_quote
                          else f"states the percentage of the tier this post is paid at" if percent_of
                          else "states the tier this post is paid at"),
                 "citation": provision["citation"],
@@ -649,9 +823,9 @@ def build_records(
             *([{
                 "role": "states the tier that office is paid at",
                 "citation": via["citation"],
-                "publisher": statute_publisher(via_section["url"])[0],
-                "edition": statute_publisher(via_section["url"])[1],
-                "title": f"{via['citation']}, {statute_publisher(via_section['url'])[1]}",
+                "publisher": statute_publisher(via_section["url"], via_section.get("final_url", ""))[0],
+                "edition": statute_publisher(via_section["url"], via_section.get("final_url", ""))[1],
+                "title": f"{via['citation']}, {statute_publisher(via_section['url'], via_section.get('final_url', ''))[1]}",
                 "quote": via_quote,
                 "url": via_section["url"],
                 "documentSha256": via_section["sha256"],
@@ -659,7 +833,8 @@ def build_records(
                 "statesTheFigure": False,
             }] if via else []),
             {
-                "role": "states what that tier pays",
+                "role": ("states what that tier pays, and in its Explanatory Notes that the salary is equal to the "
+                         "percentage the statute caps it at" if basis_quote else "states what that tier pays"),
                 "citation": f"Judicial Compensation, {year}",
                 "publisher": "Administrative Office of the United States Courts",
                 "title": "Judicial Compensation",
@@ -689,6 +864,9 @@ def build_records(
             "percentOf": int(percent_of) if percent_of else None,
             "percentOfWhat": provision.get("percentOfWhat") if percent_of else None,
             "arithmetic": arithmetic,
+            # The sentence of the compensation page that resolves a statutory
+            # ceiling, where the row rests on one; None on every other row.
+            "ceilingBasis": ceiling_basis,
             # Never "exact", and not for the usual reason alone: no document
             # here states this figure for this post at all.
             "scopeMatch": "proxy",
@@ -741,6 +919,9 @@ def build_records(
         "refused": dict(sorted(refusals.items())),
         "notPriced": dict(sorted(NOT_PRICED.items())),
         "repealedTextRefused": REPEALED_CAVC_CHIEF_JUDGE_TEXT,
+        "ceilingBasisRows": sorted(
+            node_id for node_id, record in records.items() if isinstance(record.get("ceilingBasis"), dict)
+        ),
     }
     return records, report
 
@@ -809,6 +990,7 @@ def apply_pay_evidence(
             "percentOf": record.get("percentOf"),
             "percentOfWhat": record.get("percentOfWhat"),
             "arithmetic": dict(record["arithmetic"]) if isinstance(record.get("arithmetic"), dict) else None,
+            "ceilingBasis": dict(record["ceilingBasis"]) if isinstance(record.get("ceilingBasis"), dict) else None,
             "derivation": record.get("derivation"),
             "quote": record.get("quote"),
             "documents": documents,

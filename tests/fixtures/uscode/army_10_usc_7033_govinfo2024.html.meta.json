@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-10-06T00:25:05Z",
+ "url": "https://www.govinfo.gov/link/uscode/10/7033?link-type=html",
+ "status": 200,
+ "final_url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleB-partI-chap705-sec7033.htm",
+ "content_type": "text/html",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /link/uscode/10/7033",
+ "bytes": 16468,
+ "sha256": "b1c7c65ca6602edb522b970c614b719baff45b53fe4d803ae83da6ed44145f4f",
+ "error": null
+}

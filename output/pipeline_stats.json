@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-06T00:04:18.109330+00:00",
+  "timestamp": "2026-10-06T01:10:07.674946+00:00",
   "mode": "offline_regeneration",
   "note": "Rebuilt from the curated base graph and the Treasury anchor already published; no crawler ran. See scripts/regenerate_published_graph.py.",
   "nodes_before": 5481,
@@ -30,15 +30,15 @@
   "verified_node_count": 544,
   "treasury_total_fetched": false,
   "build_validation": {
-    "initial_node_count": 1036,
-    "input_node_count": 1036,
+    "initial_node_count": 1039,
+    "input_node_count": 1039,
     "input_edge_count": 0,
-    "exported_node_count": 1036,
+    "exported_node_count": 1039,
     "exported_edge_count": 0,
     "nodes_removed_missing_parent": 0,
     "nodes_reattached_to_root": 0,
     "nodes_removed_structural_errors": 0,
-    "final_node_count": 1036,
+    "final_node_count": 1039,
     "orphan_nodes_detected": 0,
     "recovered_orphan_nodes": 0,
     "root_attached_missing_parent_nodes": 0,
@@ -57,14 +57,14 @@
     "dropped_placeholder_nodes": 0,
     "average_confidence_score": 0.76,
     "pipeline_summary": {
-      "initial_node_count": 1036,
-      "raw_nodes_loaded": 1036,
-      "nodes_after_normalization": 1036,
-      "nodes_after_merge": 1036,
+      "initial_node_count": 1039,
+      "raw_nodes_loaded": 1039,
+      "nodes_after_normalization": 1039,
+      "nodes_after_merge": 1039,
       "nodes_removed_missing_parent": 0,
       "nodes_reattached_to_root": 0,
       "nodes_removed_structural_errors": 0,
-      "final_node_count": 1036,
+      "final_node_count": 1039,
       "nodes_removed_cost_validation": 0
     },
     "cycle_fallback_root_attachments": 0,
@@ -99,7 +99,7 @@
       "unknown_node": 10,
       "unknown_status": 0,
       "urls_added": 630,
-      "stale_claims_cleared": 1007,
+      "stale_claims_cleared": 1010,
       "alias_confirmations": 0,
       "alias_records_without_a_row": 0,
       "placements_refused_alias": 0,
@@ -197,7 +197,7 @@
       "not_validated": 0
     },
     "schedule_pay_evidence": {
-      "priced": 230,
+      "priced": 236,
       "priced_scoped": 61,
       "unknown_node": 0,
       "not_a_position": 0,
@@ -245,20 +245,30 @@
       "stands_for_many_posts_after_pruning": 0
     },
     "derived_pay_evidence": {
-      "priced": 15,
+      "priced": 18,
       "unknown_node": 0,
       "not_a_position": 0,
       "already_priced_by_another_source": 0,
       "stands_for_many_posts_after_pruning": 0
     },
     "tier_reference_pay_evidence": {
-      "priced": 41,
+      "priced": 45,
       "priced_inspectors_general": 23,
       "unknown_node": 0,
       "not_a_position": 0,
       "renamed_since_the_match": 0,
       "reparented_since_the_match": 0,
       "already_priced_by_another_source": 5,
+      "stands_for_many_posts_after_pruning": 0
+    },
+    "military_pay_evidence": {
+      "priced": 22,
+      "priced_by_grade": 17,
+      "priced_by_footnote": 5,
+      "unknown_node": 0,
+      "not_a_position": 0,
+      "renamed_since_the_match": 0,
+      "already_priced_by_another_source": 0,
       "stands_for_many_posts_after_pruning": 0
     },
     "whitehouse_pay_evidence": {
@@ -360,15 +370,16 @@
       "not_capped_other_evidence": 1
     },
     "pay_documents": {
-      "annotated": 1252,
+      "annotated": 1287,
       "no_document": 0,
-      "positionDerivedPay": 15,
+      "positionDerivedPay": 18,
       "positionStatutoryPay": 488,
       "positionCurrentPay": 128,
-      "positionSchedulePay": 230,
-      "positionTierReferencePay": 41,
+      "positionSchedulePay": 236,
+      "positionTierReferencePay": 45,
       "positionPayRate": 68,
       "positionGradePay": 22,
+      "positionMilitaryPay": 22,
       "positionTierPay": 72,
       "positionReportedPay": 188
     },

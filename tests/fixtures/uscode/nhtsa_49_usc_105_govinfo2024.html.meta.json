@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-10-06T00:56:36Z",
+ "url": "https://www.govinfo.gov/link/uscode/49/105?link-type=html",
+ "status": 200,
+ "final_url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title49/html/USCODE-2024-title49-subtitleI-chap1-sec105.htm",
+ "content_type": "text/html",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /link/uscode/49/105",
+ "bytes": 9712,
+ "sha256": "5045a468cb25621c71a1a2b7f66ccd71af323c95336ec6a7e74e4b9991caa88c",
+ "error": null
+}

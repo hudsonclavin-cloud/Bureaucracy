@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-10-06T00:22:48Z",
+ "url": "https://www.govinfo.gov/link/uscode/37/201?link-type=html",
+ "status": 200,
+ "final_url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title37/html/USCODE-2024-title37-chap3-sec201.htm",
+ "content_type": "text/html",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /link/uscode/37/201",
+ "bytes": 20585,
+ "sha256": "d5269e94ea2bddd1848d2275d6fbd1a30285996517a54009933a647e48ce1643",
+ "error": null
+}

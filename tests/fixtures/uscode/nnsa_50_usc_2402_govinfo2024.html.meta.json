@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-10-06T00:56:44Z",
+ "url": "https://www.govinfo.gov/link/uscode/50/2402?link-type=html",
+ "status": 200,
+ "final_url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap41-subchapI-sec2402.htm",
+ "content_type": "text/html",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /link/uscode/50/2402",
+ "bytes": 24389,
+ "sha256": "d7620b44439b998f5281ca760da4e8e928a8bf626e9f079d96758a506b966982",
+ "error": null
+}

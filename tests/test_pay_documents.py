@@ -106,7 +106,9 @@ class TableTests(unittest.TestCase):
         zero = {f for f, s in PAY_DOCUMENT_FIELDS.items() if s["statesTheFigure"] == 0}
         # The second zero since 2026-09-28: a rate set by REFERENCE to an
         # Executive Schedule level, which no document states for the post.
-        self.assertEqual({"positionDerivedPay", "positionTierReferencePay"}, zero)
+        # The third since 2026-10-06: Schedule 8 prints a MONTHLY rate, and
+        # the annual figure is twelve times it, which no document prints.
+        self.assertEqual({"positionDerivedPay", "positionTierReferencePay", "positionMilitaryPay"}, zero)
 
     def test_the_gate_mirrors_the_scale(self):
         for count, percent in DERIVED_PAY_STRENGTH_BY_COUNT.items():
@@ -342,8 +344,11 @@ class PublishedGraphTests(unittest.TestCase):
         counted), a tier-reference row priced from a class sentence that
         names no centre (20 U.S.C. 9511(c)(3) does, and is counted), and a
         derived rate reached through two statutes (the FJC's Director, 28
-        U.S.C. 626 -> 603). Every three-count must be one of the four and
-        every one of the four must count three."""
+        U.S.C. 626 -> 603); and since 2026-10-06 a uniformed officer whose
+        grade a statute fixes (the grade sentence, 37 U.S.C. 201(a)(1)'s pay
+        grade and Schedule 8's row are three documents, none stating the
+        annual figure). Every three-count must be one of the five and every
+        one of the five must count three."""
         if not self.nodes:
             self.skipTest("no published graph")
         threes = set()
@@ -384,6 +389,21 @@ class PublishedGraphTests(unittest.TestCase):
                     reviewed.add((node.get("id"), field))
                     self.assertEqual(90, block["verification"]["percent"])
                     self.assertEqual(0, block["verification"]["documentsStatingTheFigure"])
+                if field == "positionMilitaryPay":
+                    kind = (block.get("identification") or {}).get("kind")
+                    self.assertEqual(0, block["verification"]["documentsStatingTheFigure"], node.get("id"))
+                    if kind == "grade_fixed_by_statute":
+                        # The statute fixing the grade, 37 U.S.C. 201's pay
+                        # grade and Schedule 8's row: three documents.
+                        reviewed.add((node.get("id"), field))
+                        self.assertEqual(3, len(block.get("documents") or []), node.get("id"))
+                        self.assertEqual(90, block["verification"]["percent"], node.get("id"))
+                    else:
+                        # A post the schedule's own footnote names rests on
+                        # the one document that prints the monthly rate.
+                        self.assertEqual("named_in_footnote", kind, node.get("id"))
+                        self.assertEqual(1, block["verification"]["documents"], node.get("id"))
+                        self.assertEqual(70, block["verification"]["percent"], node.get("id"))
         self.assertEqual(threes, reviewed)
         self.assertTrue(reviewed, "no reviewed identification is published")
 

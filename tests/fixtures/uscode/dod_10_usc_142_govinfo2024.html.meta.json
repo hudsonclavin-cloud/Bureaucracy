@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-10-06T00:25:49Z",
+ "url": "https://www.govinfo.gov/link/uscode/10/142?link-type=html",
+ "status": 200,
+ "final_url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partI-chap4-sec142.htm",
+ "content_type": "text/html",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /link/uscode/10/142",
+ "bytes": 18482,
+ "sha256": "6c1a765fe0d96750baabe3ff4624b08a8736c3a63c973550a640fcf37fc7b1eb",
+ "error": null
+}

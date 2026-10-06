@@ -8,13 +8,13 @@ checkable claim. `docs/PAY_SOURCE_RESEARCH_PROMPT_3.md` is generated from this
 same list in the same run.
 
 - position nodes in the published graph: **4,591**
-- carrying a pay claim an official document supports: **1,158**
-- carrying none: **3,433**
+- carrying a pay claim an official document supports: **1,193**
+- carrying none: **3,398**
 
 | reason | count | what it means |
 |---|---|---|
-| `unreached` | 2,663 | no source this project has read names the title at all. Not a coverage gap somebody has not got to: no pay document in the repository names this title under this organisation, so nothing could have reached it. |
-| `multiplicity` | 752 | the node states a multiplicity (×N) and no claim that holds for every holder has reached it. Since 2026-09-23 a claim that holds for each holder by its own terms IS published on such a node with a `holders` block -- a tier or parity rate paid to every judge of the tier, a band every holder is within, or a roster listing every holder at one rate -- and 41 such nodes carry one. What stays refused is an incumbency-shaped claim (one listing's level, one row of the current export), because that is one appointment's figure and not the group's. For these nodes no office-rate claim has reached them at all. Knowing which pay system governs the title is still useful -- it is what would let the graph carry the schedule rather than a rate -- so these are listed and asked about. |
+| `unreached` | 2,630 | no source this project has read names the title at all. Not a coverage gap somebody has not got to: no pay document in the repository names this title under this organisation, so nothing could have reached it. |
+| `multiplicity` | 750 | the node states a multiplicity (×N) and no claim that holds for every holder has reached it. Since 2026-09-23 a claim that holds for each holder by its own terms IS published on such a node with a `holders` block -- a tier or parity rate paid to every judge of the tier, a band every holder is within, or a roster listing every holder at one rate -- and 43 such nodes carry one. What stays refused is an incumbency-shaped claim (one listing's level, one row of the current export), because that is one appointment's figure and not the group's. For these nodes no office-rate claim has reached them at all. Knowing which pay system governs the title is still useful -- it is what would let the graph carry the schedule rather than a rate -- so these are listed and asked about. |
 | `listed_no_rate` | 18 | OPM lists the position and the row prints no rate. The PLUM archive or the current export names the title under this organisation but the Level/Grade/Pay cell carries a rank or is empty, and no salary table this project has read prices that pay plan. |
 
 ---
@@ -706,28 +706,6 @@ same list in the same run.
 - `exec-regulatory-sec-secretary-of-the-commission` — Secretary of the Commission — `unreached`
 - `exec-regulatory-sec-senior-staff-attorney-multiple` — Senior Staff Attorney (×multiple) — `multiplicity`
 
-## Joint Chiefs of Staff  — 17 unpriced
-
-`exec-dept-defense-jcs`
-
-- `exec-dept-defense-jcs-chairman-of-the-joint-chiefs-of-staff-cjcs` — Chairman of the Joint Chiefs of Staff (CJCS) — `unreached`
-- `exec-dept-defense-jcs-chief-of-naval-operations` — Chief of Naval Operations — `unreached`
-- `exec-dept-defense-jcs-chief-of-space-operations` — Chief of Space Operations — `unreached`
-- `exec-dept-defense-jcs-chief-of-staff-of-the-air-force` — Chief of Staff of the Air Force — `unreached`
-- `exec-dept-defense-jcs-chief-of-staff-of-the-army` — Chief of Staff of the Army — `unreached`
-- `exec-dept-defense-jcs-commandant-of-the-coast-guard` — Commandant of the Coast Guard — `unreached`
-- `exec-dept-defense-jcs-commandant-of-the-marine-corps` — Commandant of the Marine Corps — `unreached`
-- `exec-dept-defense-jcs-j1-director-for-personnel` — J1 — Director for Personnel — `unreached`
-- `exec-dept-defense-jcs-j2-director-for-intelligence` — J2 — Director for Intelligence — `unreached`
-- `exec-dept-defense-jcs-j3-director-for-operations` — J3 — Director for Operations — `unreached`
-- `exec-dept-defense-jcs-j4-director-for-logistics` — J4 — Director for Logistics — `unreached`
-- `exec-dept-defense-jcs-j5-director-for-strategy-plans` — J5 — Director for Strategy & Plans — `unreached`
-- `exec-dept-defense-jcs-j6-director-for-c3-cyber` — J6 — Director for C3/Cyber — `unreached`
-- `exec-dept-defense-jcs-j7-director-for-joint-force-development` — J7 — Director for Joint Force Development — `unreached`
-- `exec-dept-defense-jcs-j8-director-for-force-structure` — J8 — Director for Force Structure — `unreached`
-- `exec-dept-defense-jcs-national-guard-bureau-chief` — National Guard Bureau Chief — `unreached`
-- `exec-dept-defense-jcs-vice-chairman-of-the-joint-chiefs-of-staff-vcjcs` — Vice Chairman of the Joint Chiefs of Staff (VCJCS) — `unreached`
-
 ## Secretary of the Senate  — 17 unpriced
 
 `leg-senate-admin-secretary`
@@ -772,72 +750,6 @@ same list in the same run.
 - `leg-senate-admin-saa-director-of-web-technology-innovation` — Director of Web Technology & Innovation — `unreached`
 - `leg-senate-admin-saa-sergeant-at-arms` — Sergeant at Arms — `unreached`
 
-## U.S. Air Force  — 17 unpriced
-
-`exec-dept-defense-af`
-
-- `exec-dept-defense-af-af-a1-manpower-personnel` — AF/A1 (Manpower & Personnel) — `unreached`
-- `exec-dept-defense-af-af-a2-intelligence` — AF/A2 (Intelligence) — `unreached`
-- `exec-dept-defense-af-af-a3-operations` — AF/A3 (Operations) — `unreached`
-- `exec-dept-defense-af-af-a4-logistics` — AF/A4 (Logistics) — `unreached`
-- `exec-dept-defense-af-af-a5-strategy-planning` — AF/A5 (Strategy & Planning) — `unreached`
-- `exec-dept-defense-af-af-a6-communications` — AF/A6 (Communications) — `unreached`
-- `exec-dept-defense-af-af-a8-programs` — AF/A8 (Programs) — `unreached`
-- `exec-dept-defense-af-chief-master-sergeant-of-the-air-force` — Chief Master Sergeant of the Air Force — `unreached`
-- `exec-dept-defense-af-chief-of-staff-of-the-air-force-4-star-general` — Chief of Staff of the Air Force (4-star General) — `unreached`
-- `exec-dept-defense-af-commander-air-combat-command-acc` — Commander — Air Combat Command (ACC) — `unreached`
-- `exec-dept-defense-af-commander-air-force-global-strike-command-afgsc` — Commander — Air Force Global Strike Command (AFGSC) — `unreached`
-- `exec-dept-defense-af-commander-air-force-materiel-command-afmc` — Commander — Air Force Materiel Command (AFMC) — `unreached`
-- `exec-dept-defense-af-commander-air-force-special-operations-command-afsoc` — Commander — Air Force Special Operations Command (AFSOC) — `unreached`
-- `exec-dept-defense-af-commander-air-mobility-command-amc` — Commander — Air Mobility Command (AMC) — `unreached`
-- `exec-dept-defense-af-commander-pacific-air-forces-pacaf` — Commander — Pacific Air Forces (PACAF) — `unreached`
-- `exec-dept-defense-af-commander-u-s-air-forces-in-europe-usafe` — Commander — U.S. Air Forces in Europe (USAFE) — `unreached`
-- `exec-dept-defense-af-vice-chief-of-staff` — Vice Chief of Staff — `unreached`
-
-## U.S. Coast Guard  — 17 unpriced
-
-`exec-dept-dhs-uscg`
-
-- `exec-dept-dhs-uscg-commandant-of-the-coast-guard-4-star-admiral` — Commandant of the Coast Guard (4-star Admiral) — `unreached`
-- `exec-dept-dhs-uscg-commander-atlantic-area` — Commander — Atlantic Area — `unreached`
-- `exec-dept-dhs-uscg-commander-pacific-area` — Commander — Pacific Area — `unreached`
-- `exec-dept-dhs-uscg-district-commander-11th-district-alameda` — District Commander — 11th District (Alameda) — `unreached`
-- `exec-dept-dhs-uscg-district-commander-13th-district-seattle` — District Commander — 13th District (Seattle) — `unreached`
-- `exec-dept-dhs-uscg-district-commander-14th-district-honolulu` — District Commander — 14th District (Honolulu) — `unreached`
-- `exec-dept-dhs-uscg-district-commander-17th-district-juneau` — District Commander — 17th District (Juneau) — `unreached`
-- `exec-dept-dhs-uscg-district-commander-1st-district-boston` — District Commander — 1st District (Boston) — `unreached`
-- `exec-dept-dhs-uscg-district-commander-5th-district-portsmouth` — District Commander — 5th District (Portsmouth) — `unreached`
-- `exec-dept-dhs-uscg-district-commander-7th-district-miami` — District Commander — 7th District (Miami) — `unreached`
-- `exec-dept-dhs-uscg-district-commander-8th-district-new-orleans` — District Commander — 8th District (New Orleans) — `unreached`
-- `exec-dept-dhs-uscg-district-commander-9th-district-cleveland` — District Commander — 9th District (Cleveland) — `unreached`
-- `exec-dept-dhs-uscg-master-chief-petty-officer-of-the-coast-guard` — Master Chief Petty Officer of the Coast Guard — `unreached`
-- `exec-dept-dhs-uscg-rescue-swimmer-aviation-survival-technician` — Rescue Swimmer / Aviation Survival Technician — `unreached`
-- `exec-dept-dhs-uscg-sector-commander-multiple` — Sector Commander (×multiple) — `multiplicity`
-- `exec-dept-dhs-uscg-station-commander-multiple` — Station Commander (×multiple) — `multiplicity`
-- `exec-dept-dhs-uscg-vice-commandant` — Vice Commandant — `unreached`
-
-## U.S. Space Force  — 17 unpriced
-
-`exec-dept-defense-sf`
-
-- `exec-dept-defense-sf-chief-of-space-operations-4-star-general` — Chief of Space Operations (4-star General) — `unreached`
-- `exec-dept-defense-sf-commander-space-operations-command` — Commander — Space Operations Command — `unreached`
-- `exec-dept-defense-sf-commander-space-systems-command` — Commander — Space Systems Command — `unreached`
-- `exec-dept-defense-sf-commander-space-training-readiness-command` — Commander — Space Training & Readiness Command — `unreached`
-- `exec-dept-defense-sf-delta-1-space-domain-awareness` — Delta 1 — Space Domain Awareness — `unreached`
-- `exec-dept-defense-sf-delta-10-space-electromagnetic-warfare` — Delta 10 — Space Electromagnetic Warfare — `unreached`
-- `exec-dept-defense-sf-delta-11-space-battle-management` — Delta 11 — Space Battle Management — `unreached`
-- `exec-dept-defense-sf-delta-18-advanced-capabilities` — Delta 18 — Advanced Capabilities — `unreached`
-- `exec-dept-defense-sf-delta-2-intelligence` — Delta 2 — Intelligence — `unreached`
-- `exec-dept-defense-sf-delta-3-space-electronic-warfare` — Delta 3 — Space Electronic Warfare — `unreached`
-- `exec-dept-defense-sf-delta-5-command-control` — Delta 5 — Command & Control — `unreached`
-- `exec-dept-defense-sf-delta-6-cyber-operations` — Delta 6 — Cyber Operations — `unreached`
-- `exec-dept-defense-sf-delta-7-isr-cyber` — Delta 7 — ISR & Cyber — `unreached`
-- `exec-dept-defense-sf-delta-8-satellite-communications` — Delta 8 — Satellite Communications — `unreached`
-- `exec-dept-defense-sf-delta-9-missile-warning` — Delta 9 — Missile Warning — `unreached`
-- `exec-dept-defense-sf-senior-enlisted-advisor` — Senior Enlisted Advisor — `unreached`
-- `exec-dept-defense-sf-vice-chief-of-space-operations` — Vice Chief of Space Operations — `unreached`
-
 ## National Institutes of Health (NIH)  — 16 unpriced
 
 `exec-dept-hhs-nih`
@@ -858,27 +770,6 @@ same list in the same run.
 - `exec-dept-hhs-nih-principal-deputy-director` — Principal Deputy Director — `unreached`
 - `exec-dept-hhs-nih-program-officer-multiple` — Program Officer (×multiple) — `multiplicity`
 - `exec-dept-hhs-nih-scientific-review-officer-multiple` — Scientific Review Officer (×multiple) — `multiplicity`
-
-## U.S. Army  — 16 unpriced
-
-`exec-dept-defense-army`
-
-- `exec-dept-defense-army-army-g-1-personnel` — Army G-1 (Personnel) — `unreached`
-- `exec-dept-defense-army-army-g-2-intelligence` — Army G-2 (Intelligence) — `unreached`
-- `exec-dept-defense-army-army-g-3-operations` — Army G-3 (Operations) — `unreached`
-- `exec-dept-defense-army-army-g-4-logistics` — Army G-4 (Logistics) — `unreached`
-- `exec-dept-defense-army-army-g-6-communications` — Army G-6 (Communications) — `unreached`
-- `exec-dept-defense-army-army-g-8-force-structure` — Army G-8 (Force Structure) — `unreached`
-- `exec-dept-defense-army-chief-of-staff-of-the-army-4-star-general` — Chief of Staff of the Army (4-star General) — `unreached`
-- `exec-dept-defense-army-chief-army-national-guard` — Chief, Army National Guard — `unreached`
-- `exec-dept-defense-army-chief-army-reserve` — Chief, Army Reserve — `unreached`
-- `exec-dept-defense-army-commanding-general-amc` — Commanding General — AMC — `unreached`
-- `exec-dept-defense-army-commanding-general-forscom` — Commanding General — FORSCOM — `unreached`
-- `exec-dept-defense-army-commanding-general-tradoc` — Commanding General — TRADOC — `unreached`
-- `exec-dept-defense-army-commanding-general-usareur-af` — Commanding General — USAREUR-AF — `unreached`
-- `exec-dept-defense-army-commanding-general-usarpac` — Commanding General — USARPAC — `unreached`
-- `exec-dept-defense-army-sergeant-major-of-the-army` — Sergeant Major of the Army — `unreached`
-- `exec-dept-defense-army-vice-chief-of-staff-of-the-army` — Vice Chief of Staff of the Army — `unreached`
 
 ## U.S. Embassies & Consulates (180+)  — 16 unpriced
 
@@ -941,25 +832,25 @@ same list in the same run.
 - `leg-house-offices-senior-legislative-assistant-2` — Senior Legislative Assistant (×2) — `multiplicity`
 - `leg-house-offices-staff-assistant` — Staff Assistant — `unreached`
 
-## U.S. Navy  — 15 unpriced
+## U.S. Space Force  — 15 unpriced
 
-`exec-dept-defense-navy`
+`exec-dept-defense-sf`
 
-- `exec-dept-defense-navy-chief-of-naval-operations-4-star-admiral` — Chief of Naval Operations (4-star Admiral) — `unreached`
-- `exec-dept-defense-navy-chief-of-naval-research` — Chief of Naval Research — `unreached`
-- `exec-dept-defense-navy-commander-naval-air-systems-command-navair` — Commander — Naval Air Systems Command (NAVAIR) — `unreached`
-- `exec-dept-defense-navy-commander-naval-sea-systems-command-navsea` — Commander — Naval Sea Systems Command (NAVSEA) — `unreached`
-- `exec-dept-defense-navy-commander-naval-supply-systems-command-navsup` — Commander — Naval Supply Systems Command (NAVSUP) — `unreached`
-- `exec-dept-defense-navy-commander-u-s-fleet-forces-command` — Commander — U.S. Fleet Forces Command — `unreached`
-- `exec-dept-defense-navy-commander-u-s-naval-forces-europe-africa` — Commander — U.S. Naval Forces Europe-Africa — `unreached`
-- `exec-dept-defense-navy-commander-u-s-pacific-fleet` — Commander — U.S. Pacific Fleet — `unreached`
-- `exec-dept-defense-navy-master-chief-petty-officer-of-the-navy` — Master Chief Petty Officer of the Navy — `unreached`
-- `exec-dept-defense-navy-opnav-n1-personnel` — OPNAV N1 (Personnel) — `unreached`
-- `exec-dept-defense-navy-opnav-n2-n6-intelligence-communications` — OPNAV N2/N6 (Intelligence/Communications) — `unreached`
-- `exec-dept-defense-navy-opnav-n3-n5-operations-strategy` — OPNAV N3/N5 (Operations/Strategy) — `unreached`
-- `exec-dept-defense-navy-opnav-n4-logistics` — OPNAV N4 (Logistics) — `unreached`
-- `exec-dept-defense-navy-opnav-n8-programming` — OPNAV N8 (Programming) — `unreached`
-- `exec-dept-defense-navy-vice-chief-of-naval-operations` — Vice Chief of Naval Operations — `unreached`
+- `exec-dept-defense-sf-commander-space-operations-command` — Commander — Space Operations Command — `unreached`
+- `exec-dept-defense-sf-commander-space-systems-command` — Commander — Space Systems Command — `unreached`
+- `exec-dept-defense-sf-commander-space-training-readiness-command` — Commander — Space Training & Readiness Command — `unreached`
+- `exec-dept-defense-sf-delta-1-space-domain-awareness` — Delta 1 — Space Domain Awareness — `unreached`
+- `exec-dept-defense-sf-delta-10-space-electromagnetic-warfare` — Delta 10 — Space Electromagnetic Warfare — `unreached`
+- `exec-dept-defense-sf-delta-11-space-battle-management` — Delta 11 — Space Battle Management — `unreached`
+- `exec-dept-defense-sf-delta-18-advanced-capabilities` — Delta 18 — Advanced Capabilities — `unreached`
+- `exec-dept-defense-sf-delta-2-intelligence` — Delta 2 — Intelligence — `unreached`
+- `exec-dept-defense-sf-delta-3-space-electronic-warfare` — Delta 3 — Space Electronic Warfare — `unreached`
+- `exec-dept-defense-sf-delta-5-command-control` — Delta 5 — Command & Control — `unreached`
+- `exec-dept-defense-sf-delta-6-cyber-operations` — Delta 6 — Cyber Operations — `unreached`
+- `exec-dept-defense-sf-delta-7-isr-cyber` — Delta 7 — ISR & Cyber — `unreached`
+- `exec-dept-defense-sf-delta-8-satellite-communications` — Delta 8 — Satellite Communications — `unreached`
+- `exec-dept-defense-sf-delta-9-missile-warning` — Delta 9 — Missile Warning — `unreached`
+- `exec-dept-defense-sf-senior-enlisted-advisor` — Senior Enlisted Advisor — `unreached`
 
 ## Customs & Border Protection (CBP)  — 14 unpriced
 
@@ -980,6 +871,63 @@ same list in the same run.
 - `exec-dept-dhs-cbp-director-20-field-offices-office-of-field-operations` — Director — 20 Field Offices (Office of Field Operations) — `unreached`
 - `exec-dept-dhs-cbp-port-director-328-ports-of-entry` — Port Director — 328 Ports of Entry — `unreached`
 
+## Joint Chiefs of Staff  — 14 unpriced
+
+`exec-dept-defense-jcs`
+
+- `exec-dept-defense-jcs-chief-of-naval-operations` — Chief of Naval Operations — `unreached`
+- `exec-dept-defense-jcs-chief-of-space-operations` — Chief of Space Operations — `unreached`
+- `exec-dept-defense-jcs-chief-of-staff-of-the-air-force` — Chief of Staff of the Air Force — `unreached`
+- `exec-dept-defense-jcs-chief-of-staff-of-the-army` — Chief of Staff of the Army — `unreached`
+- `exec-dept-defense-jcs-commandant-of-the-coast-guard` — Commandant of the Coast Guard — `unreached`
+- `exec-dept-defense-jcs-commandant-of-the-marine-corps` — Commandant of the Marine Corps — `unreached`
+- `exec-dept-defense-jcs-j1-director-for-personnel` — J1 — Director for Personnel — `unreached`
+- `exec-dept-defense-jcs-j2-director-for-intelligence` — J2 — Director for Intelligence — `unreached`
+- `exec-dept-defense-jcs-j3-director-for-operations` — J3 — Director for Operations — `unreached`
+- `exec-dept-defense-jcs-j4-director-for-logistics` — J4 — Director for Logistics — `unreached`
+- `exec-dept-defense-jcs-j5-director-for-strategy-plans` — J5 — Director for Strategy & Plans — `unreached`
+- `exec-dept-defense-jcs-j6-director-for-c3-cyber` — J6 — Director for C3/Cyber — `unreached`
+- `exec-dept-defense-jcs-j7-director-for-joint-force-development` — J7 — Director for Joint Force Development — `unreached`
+- `exec-dept-defense-jcs-j8-director-for-force-structure` — J8 — Director for Force Structure — `unreached`
+
+## U.S. Air Force  — 14 unpriced
+
+`exec-dept-defense-af`
+
+- `exec-dept-defense-af-af-a1-manpower-personnel` — AF/A1 (Manpower & Personnel) — `unreached`
+- `exec-dept-defense-af-af-a2-intelligence` — AF/A2 (Intelligence) — `unreached`
+- `exec-dept-defense-af-af-a3-operations` — AF/A3 (Operations) — `unreached`
+- `exec-dept-defense-af-af-a4-logistics` — AF/A4 (Logistics) — `unreached`
+- `exec-dept-defense-af-af-a5-strategy-planning` — AF/A5 (Strategy & Planning) — `unreached`
+- `exec-dept-defense-af-af-a6-communications` — AF/A6 (Communications) — `unreached`
+- `exec-dept-defense-af-af-a8-programs` — AF/A8 (Programs) — `unreached`
+- `exec-dept-defense-af-commander-air-combat-command-acc` — Commander — Air Combat Command (ACC) — `unreached`
+- `exec-dept-defense-af-commander-air-force-global-strike-command-afgsc` — Commander — Air Force Global Strike Command (AFGSC) — `unreached`
+- `exec-dept-defense-af-commander-air-force-materiel-command-afmc` — Commander — Air Force Materiel Command (AFMC) — `unreached`
+- `exec-dept-defense-af-commander-air-force-special-operations-command-afsoc` — Commander — Air Force Special Operations Command (AFSOC) — `unreached`
+- `exec-dept-defense-af-commander-air-mobility-command-amc` — Commander — Air Mobility Command (AMC) — `unreached`
+- `exec-dept-defense-af-commander-pacific-air-forces-pacaf` — Commander — Pacific Air Forces (PACAF) — `unreached`
+- `exec-dept-defense-af-commander-u-s-air-forces-in-europe-usafe` — Commander — U.S. Air Forces in Europe (USAFE) — `unreached`
+
+## U.S. Coast Guard  — 14 unpriced
+
+`exec-dept-dhs-uscg`
+
+- `exec-dept-dhs-uscg-commander-atlantic-area` — Commander — Atlantic Area — `unreached`
+- `exec-dept-dhs-uscg-commander-pacific-area` — Commander — Pacific Area — `unreached`
+- `exec-dept-dhs-uscg-district-commander-11th-district-alameda` — District Commander — 11th District (Alameda) — `unreached`
+- `exec-dept-dhs-uscg-district-commander-13th-district-seattle` — District Commander — 13th District (Seattle) — `unreached`
+- `exec-dept-dhs-uscg-district-commander-14th-district-honolulu` — District Commander — 14th District (Honolulu) — `unreached`
+- `exec-dept-dhs-uscg-district-commander-17th-district-juneau` — District Commander — 17th District (Juneau) — `unreached`
+- `exec-dept-dhs-uscg-district-commander-1st-district-boston` — District Commander — 1st District (Boston) — `unreached`
+- `exec-dept-dhs-uscg-district-commander-5th-district-portsmouth` — District Commander — 5th District (Portsmouth) — `unreached`
+- `exec-dept-dhs-uscg-district-commander-7th-district-miami` — District Commander — 7th District (Miami) — `unreached`
+- `exec-dept-dhs-uscg-district-commander-8th-district-new-orleans` — District Commander — 8th District (New Orleans) — `unreached`
+- `exec-dept-dhs-uscg-district-commander-9th-district-cleveland` — District Commander — 9th District (Cleveland) — `unreached`
+- `exec-dept-dhs-uscg-rescue-swimmer-aviation-survival-technician` — Rescue Swimmer / Aviation Survival Technician — `unreached`
+- `exec-dept-dhs-uscg-sector-commander-multiple` — Sector Commander (×multiple) — `multiplicity`
+- `exec-dept-dhs-uscg-station-commander-multiple` — Station Commander (×multiple) — `multiplicity`
+
 ## Food & Drug Administration (FDA)  — 13 unpriced
 
 `exec-dept-hhs-fda`
@@ -997,6 +945,24 @@ same list in the same run.
 - `exec-dept-hhs-fda-director-national-center-for-toxicological-research-nctr` — Director — National Center for Toxicological Research (NCTR) — `unreached`
 - `exec-dept-hhs-fda-pharmacologist-multiple` — Pharmacologist (×multiple) — `multiplicity`
 - `exec-dept-hhs-fda-regional-director-5-ora-regions` — Regional Director — 5 ORA Regions — `unreached`
+
+## U.S. Army  — 13 unpriced
+
+`exec-dept-defense-army`
+
+- `exec-dept-defense-army-army-g-1-personnel` — Army G-1 (Personnel) — `unreached`
+- `exec-dept-defense-army-army-g-2-intelligence` — Army G-2 (Intelligence) — `unreached`
+- `exec-dept-defense-army-army-g-3-operations` — Army G-3 (Operations) — `unreached`
+- `exec-dept-defense-army-army-g-4-logistics` — Army G-4 (Logistics) — `unreached`
+- `exec-dept-defense-army-army-g-6-communications` — Army G-6 (Communications) — `unreached`
+- `exec-dept-defense-army-army-g-8-force-structure` — Army G-8 (Force Structure) — `unreached`
+- `exec-dept-defense-army-chief-army-national-guard` — Chief, Army National Guard — `unreached`
+- `exec-dept-defense-army-chief-army-reserve` — Chief, Army Reserve — `unreached`
+- `exec-dept-defense-army-commanding-general-amc` — Commanding General — AMC — `unreached`
+- `exec-dept-defense-army-commanding-general-forscom` — Commanding General — FORSCOM — `unreached`
+- `exec-dept-defense-army-commanding-general-tradoc` — Commanding General — TRADOC — `unreached`
+- `exec-dept-defense-army-commanding-general-usareur-af` — Commanding General — USAREUR-AF — `unreached`
+- `exec-dept-defense-army-commanding-general-usarpac` — Commanding General — USARPAC — `unreached`
 
 ## Administrative Office of U.S. Courts (AOUSC)  — 12 unpriced
 
@@ -1032,40 +998,6 @@ same list in the same run.
 - `exec-dept-hhs-cdc-principal-deputy-director` — Principal Deputy Director — `unreached`
 - `exec-dept-hhs-cdc-public-health-advisor-multiple` — Public Health Advisor (×multiple) — `multiplicity`
 
-## Department of Defense (DoD)  — 12 unpriced
-
-`exec-dept-defense`
-
-- `exec-dept-defense-chief-financial-officer` — Chief Financial Officer — `unreached`
-- `exec-dept-defense-chief-human-capital-officer` — Chief Human Capital Officer — `unreached`
-- `exec-dept-defense-chief-information-officer` — Chief Information Officer — `unreached`
-- `exec-dept-defense-chief-of-staff` — Chief of Staff — `unreached`
-- `exec-dept-defense-deputy-cfo-controller` — Deputy CFO / Controller — `unreached`
-- `exec-dept-defense-deputy-cio` — Deputy CIO — `unreached`
-- `exec-dept-defense-deputy-general-counsel` — Deputy General Counsel — `unreached`
-- `exec-dept-defense-deputy-inspector-general` — Deputy Inspector General — `unreached`
-- `exec-dept-defense-director-of-legislative-affairs` — Director of Legislative Affairs — `unreached`
-- `exec-dept-defense-director-of-public-affairs` — Director of Public Affairs — `unreached`
-- `exec-dept-defense-diversity-inclusion-officer` — Diversity & Inclusion Officer — `unreached`
-- `exec-dept-defense-executive-secretary` — Executive Secretary — `unreached`
-
-## Internal Revenue Service (IRS)  — 12 unpriced
-
-`exec-dept-treasury-irs`
-
-- `exec-dept-treasury-irs-chief-appeals-officer` — Chief Appeals Officer — `unreached`
-- `exec-dept-treasury-irs-chief-counsel` — Chief Counsel — `unreached`
-- `exec-dept-treasury-irs-chief-of-staff` — Chief of Staff — `unreached`
-- `exec-dept-treasury-irs-chief-criminal-investigation-ci` — Chief, Criminal Investigation (CI) — `listed_no_rate`
-- `exec-dept-treasury-irs-commissioner-large-business-international-division` — Commissioner, Large Business & International Division — `unreached`
-- `exec-dept-treasury-irs-commissioner-small-business-self-employed-division` — Commissioner, Small Business/Self-Employed Division — `unreached`
-- `exec-dept-treasury-irs-commissioner-wage-investment-division` — Commissioner, Wage & Investment Division — `unreached`
-- `exec-dept-treasury-irs-deputy-commissioner-for-operations-support` — Deputy Commissioner for Operations Support — `unreached`
-- `exec-dept-treasury-irs-deputy-commissioner-for-services-enforcement` — Deputy Commissioner for Services & Enforcement — `unreached`
-- `exec-dept-treasury-irs-director-whistleblower-office` — Director, Whistleblower Office — `unreached`
-- `exec-dept-treasury-irs-national-taxpayer-advocate` — National Taxpayer Advocate — `unreached`
-- `exec-dept-treasury-irs-special-agent-in-charge-21-ci-field-offices` — Special Agent in Charge (×21 CI Field Offices) — `multiplicity`
-
 ## NOAA — National Oceanic & Atmospheric Administration  — 12 unpriced
 
 `exec-dept-doc-noaa`
@@ -1082,23 +1014,6 @@ same list in the same run.
 - `exec-dept-doc-noaa-meteorologist-in-charge-122-weather-forecast-offices` — Meteorologist-in-Charge — 122 Weather Forecast Offices — `unreached`
 - `exec-dept-doc-noaa-national-hurricane-center-director` — National Hurricane Center Director — `unreached`
 - `exec-dept-doc-noaa-oceanographer-multiple` — Oceanographer (×multiple) — `multiplicity`
-
-## National Nuclear Security Administration (NNSA)  — 12 unpriced
-
-`exec-dept-doe-nnsa`
-
-- `exec-dept-doe-nnsa-administrator-nnsa` — Administrator, NNSA — `unreached`
-- `exec-dept-doe-nnsa-deputy-administrator-defense-nuclear-nonproliferation` — Deputy Administrator — Defense Nuclear Nonproliferation — `unreached`
-- `exec-dept-doe-nnsa-deputy-administrator-defense-programs` — Deputy Administrator — Defense Programs — `unreached`
-- `exec-dept-doe-nnsa-deputy-administrator-naval-reactors` — Deputy Administrator — Naval Reactors — `unreached`
-- `exec-dept-doe-nnsa-site-manager-kansas-city-national-security-campus` — Site Manager — Kansas City National Security Campus — `unreached`
-- `exec-dept-doe-nnsa-site-manager-lawrence-livermore-national-laboratory` — Site Manager — Lawrence Livermore National Laboratory — `unreached`
-- `exec-dept-doe-nnsa-site-manager-los-alamos-national-security` — Site Manager — Los Alamos National Security — `unreached`
-- `exec-dept-doe-nnsa-site-manager-nevada-national-security-site` — Site Manager — Nevada National Security Site — `unreached`
-- `exec-dept-doe-nnsa-site-manager-pantex-plant-amarillo-tx` — Site Manager — Pantex Plant (Amarillo, TX) — `unreached`
-- `exec-dept-doe-nnsa-site-manager-sandia-national-laboratories` — Site Manager — Sandia National Laboratories — `unreached`
-- `exec-dept-doe-nnsa-site-manager-savannah-river-site` — Site Manager — Savannah River Site — `unreached`
-- `exec-dept-doe-nnsa-site-manager-y-12-national-security-complex` — Site Manager — Y-12 National Security Complex — `unreached`
 
 ## National Park Service (NPS)  — 12 unpriced
 
@@ -1117,6 +1032,23 @@ same list in the same run.
 - `exec-dept-doi-nps-resource-management-specialist` — Resource Management Specialist — `unreached`
 - `exec-dept-doi-nps-superintendent-park-units-425` — Superintendent — Park Units (×425+) — `multiplicity`
 
+## U.S. Navy  — 12 unpriced
+
+`exec-dept-defense-navy`
+
+- `exec-dept-defense-navy-chief-of-naval-research` — Chief of Naval Research — `unreached`
+- `exec-dept-defense-navy-commander-naval-air-systems-command-navair` — Commander — Naval Air Systems Command (NAVAIR) — `unreached`
+- `exec-dept-defense-navy-commander-naval-sea-systems-command-navsea` — Commander — Naval Sea Systems Command (NAVSEA) — `unreached`
+- `exec-dept-defense-navy-commander-naval-supply-systems-command-navsup` — Commander — Naval Supply Systems Command (NAVSUP) — `unreached`
+- `exec-dept-defense-navy-commander-u-s-fleet-forces-command` — Commander — U.S. Fleet Forces Command — `unreached`
+- `exec-dept-defense-navy-commander-u-s-naval-forces-europe-africa` — Commander — U.S. Naval Forces Europe-Africa — `unreached`
+- `exec-dept-defense-navy-commander-u-s-pacific-fleet` — Commander — U.S. Pacific Fleet — `unreached`
+- `exec-dept-defense-navy-opnav-n1-personnel` — OPNAV N1 (Personnel) — `unreached`
+- `exec-dept-defense-navy-opnav-n2-n6-intelligence-communications` — OPNAV N2/N6 (Intelligence/Communications) — `unreached`
+- `exec-dept-defense-navy-opnav-n3-n5-operations-strategy` — OPNAV N3/N5 (Operations/Strategy) — `unreached`
+- `exec-dept-defense-navy-opnav-n4-logistics` — OPNAV N4 (Logistics) — `unreached`
+- `exec-dept-defense-navy-opnav-n8-programming` — OPNAV N8 (Programming) — `unreached`
+
 ## Veterans Benefits Administration (VBA)  — 12 unpriced
 
 `exec-dept-va-vba`
@@ -1133,22 +1065,6 @@ same list in the same run.
 - `exec-dept-va-vba-rating-veterans-service-representative-multiple` — Rating Veterans Service Representative (×multiple) — `multiplicity`
 - `exec-dept-va-vba-regional-office-director-56-regional-offices` — Regional Office Director — 56 Regional Offices — `unreached`
 - `exec-dept-va-vba-veterans-service-representative-multiple` — Veterans Service Representative (×multiple) — `multiplicity`
-
-## All 94 District Courts — Standard Structure  — 11 unpriced
-
-`jud-district-structure`
-
-- `jud-district-structure-chief-judge` — Chief Judge — `unreached`
-- `jud-district-structure-chief-pretrial-services-officer` — Chief Pretrial Services Officer — `unreached`
-- `jud-district-structure-chief-u-s-probation-officer` — Chief U.S. Probation Officer — `unreached`
-- `jud-district-structure-clerk-of-court` — Clerk of Court — `unreached`
-- `jud-district-structure-court-reporter-ecro` — Court Reporter / ECRO — `unreached`
-- `jud-district-structure-court-security-officer-cso` — Court Security Officer (CSO) — `unreached`
-- `jud-district-structure-courtroom-deputy-clerk` — Courtroom Deputy Clerk — `unreached`
-- `jud-district-structure-district-judge-varies-per-district` — District Judge (×varies per district) — `multiplicity`
-- `jud-district-structure-law-clerk-2-4-per-judge` — Law Clerk (×2-4 per judge) — `multiplicity`
-- `jud-district-structure-magistrate-judge-varies` — Magistrate Judge (×varies) — `multiplicity`
-- `jud-district-structure-u-s-probation-officer-multiple` — U.S. Probation Officer (×multiple) — `multiplicity`
 
 ## Chief Administrative Officer  — 11 unpriced
 
@@ -1181,6 +1097,22 @@ same list in the same run.
 - `exec-dept-doc-director-of-public-affairs` — Director of Public Affairs — `unreached`
 - `exec-dept-doc-diversity-inclusion-officer` — Diversity & Inclusion Officer — `unreached`
 - `exec-dept-doc-executive-secretary` — Executive Secretary — `unreached`
+
+## Department of Defense (DoD)  — 11 unpriced
+
+`exec-dept-defense`
+
+- `exec-dept-defense-chief-human-capital-officer` — Chief Human Capital Officer — `unreached`
+- `exec-dept-defense-chief-information-officer` — Chief Information Officer — `unreached`
+- `exec-dept-defense-chief-of-staff` — Chief of Staff — `unreached`
+- `exec-dept-defense-deputy-cfo-controller` — Deputy CFO / Controller — `unreached`
+- `exec-dept-defense-deputy-cio` — Deputy CIO — `unreached`
+- `exec-dept-defense-deputy-general-counsel` — Deputy General Counsel — `unreached`
+- `exec-dept-defense-deputy-inspector-general` — Deputy Inspector General — `unreached`
+- `exec-dept-defense-director-of-legislative-affairs` — Director of Legislative Affairs — `unreached`
+- `exec-dept-defense-director-of-public-affairs` — Director of Public Affairs — `unreached`
+- `exec-dept-defense-diversity-inclusion-officer` — Diversity & Inclusion Officer — `unreached`
+- `exec-dept-defense-executive-secretary` — Executive Secretary — `unreached`
 
 ## Department of Justice (DOJ)  — 11 unpriced
 
@@ -1294,6 +1226,38 @@ same list in the same run.
 - `exec-regulatory-fcc-chief-wireline-competition-bureau` — Chief — Wireline Competition Bureau — `unreached`
 - `exec-regulatory-fcc-spectrum-analyst-multiple` — Spectrum Analyst (×multiple) — `multiplicity`
 
+## Internal Revenue Service (IRS)  — 11 unpriced
+
+`exec-dept-treasury-irs`
+
+- `exec-dept-treasury-irs-chief-appeals-officer` — Chief Appeals Officer — `unreached`
+- `exec-dept-treasury-irs-chief-of-staff` — Chief of Staff — `unreached`
+- `exec-dept-treasury-irs-chief-criminal-investigation-ci` — Chief, Criminal Investigation (CI) — `listed_no_rate`
+- `exec-dept-treasury-irs-commissioner-large-business-international-division` — Commissioner, Large Business & International Division — `unreached`
+- `exec-dept-treasury-irs-commissioner-small-business-self-employed-division` — Commissioner, Small Business/Self-Employed Division — `unreached`
+- `exec-dept-treasury-irs-commissioner-wage-investment-division` — Commissioner, Wage & Investment Division — `unreached`
+- `exec-dept-treasury-irs-deputy-commissioner-for-operations-support` — Deputy Commissioner for Operations Support — `unreached`
+- `exec-dept-treasury-irs-deputy-commissioner-for-services-enforcement` — Deputy Commissioner for Services & Enforcement — `unreached`
+- `exec-dept-treasury-irs-director-whistleblower-office` — Director, Whistleblower Office — `unreached`
+- `exec-dept-treasury-irs-national-taxpayer-advocate` — National Taxpayer Advocate — `unreached`
+- `exec-dept-treasury-irs-special-agent-in-charge-21-ci-field-offices` — Special Agent in Charge (×21 CI Field Offices) — `multiplicity`
+
+## National Nuclear Security Administration (NNSA)  — 11 unpriced
+
+`exec-dept-doe-nnsa`
+
+- `exec-dept-doe-nnsa-deputy-administrator-defense-nuclear-nonproliferation` — Deputy Administrator — Defense Nuclear Nonproliferation — `unreached`
+- `exec-dept-doe-nnsa-deputy-administrator-defense-programs` — Deputy Administrator — Defense Programs — `unreached`
+- `exec-dept-doe-nnsa-deputy-administrator-naval-reactors` — Deputy Administrator — Naval Reactors — `unreached`
+- `exec-dept-doe-nnsa-site-manager-kansas-city-national-security-campus` — Site Manager — Kansas City National Security Campus — `unreached`
+- `exec-dept-doe-nnsa-site-manager-lawrence-livermore-national-laboratory` — Site Manager — Lawrence Livermore National Laboratory — `unreached`
+- `exec-dept-doe-nnsa-site-manager-los-alamos-national-security` — Site Manager — Los Alamos National Security — `unreached`
+- `exec-dept-doe-nnsa-site-manager-nevada-national-security-site` — Site Manager — Nevada National Security Site — `unreached`
+- `exec-dept-doe-nnsa-site-manager-pantex-plant-amarillo-tx` — Site Manager — Pantex Plant (Amarillo, TX) — `unreached`
+- `exec-dept-doe-nnsa-site-manager-sandia-national-laboratories` — Site Manager — Sandia National Laboratories — `unreached`
+- `exec-dept-doe-nnsa-site-manager-savannah-river-site` — Site Manager — Savannah River Site — `unreached`
+- `exec-dept-doe-nnsa-site-manager-y-12-national-security-complex` — Site Manager — Y-12 National Security Complex — `unreached`
+
 ## Office of the U.S. Trade Representative  — 11 unpriced
 
 `exec-eop-ustr`
@@ -1325,6 +1289,21 @@ same list in the same run.
 - `exec-dept-dhs-usss-special-agent-in-charge-washington-field-office` — Special Agent in Charge — Washington Field Office — `unreached`
 - `exec-dept-dhs-usss-special-agent-protective-detail-multiple` — Special Agent — Protective Detail (×multiple) — `multiplicity`
 - `exec-dept-dhs-usss-uniformed-division-officer-multiple` — Uniformed Division Officer (×multiple) — `multiplicity`
+
+## All 94 District Courts — Standard Structure  — 10 unpriced
+
+`jud-district-structure`
+
+- `jud-district-structure-chief-judge` — Chief Judge — `unreached`
+- `jud-district-structure-chief-pretrial-services-officer` — Chief Pretrial Services Officer — `unreached`
+- `jud-district-structure-chief-u-s-probation-officer` — Chief U.S. Probation Officer — `unreached`
+- `jud-district-structure-clerk-of-court` — Clerk of Court — `unreached`
+- `jud-district-structure-court-reporter-ecro` — Court Reporter / ECRO — `unreached`
+- `jud-district-structure-court-security-officer-cso` — Court Security Officer (CSO) — `unreached`
+- `jud-district-structure-courtroom-deputy-clerk` — Courtroom Deputy Clerk — `unreached`
+- `jud-district-structure-district-judge-varies-per-district` — District Judge (×varies per district) — `multiplicity`
+- `jud-district-structure-law-clerk-2-4-per-judge` — Law Clerk (×2-4 per judge) — `multiplicity`
+- `jud-district-structure-u-s-probation-officer-multiple` — U.S. Probation Officer (×multiple) — `multiplicity`
 
 ## Centers for Medicare & Medicaid Services (CMS)  — 10 unpriced
 
@@ -1536,21 +1515,6 @@ same list in the same run.
 - `exec-dept-dhs-tsa-federal-security-director-major-airports-450` — Federal Security Director — major airports (×450+) — `multiplicity`
 - `exec-dept-dhs-tsa-transportation-security-officer-tso-screening` — Transportation Security Officer (TSO) — Screening — `unreached`
 
-## U.S. Marine Corps  — 10 unpriced
-
-`exec-dept-defense-marines`
-
-- `exec-dept-defense-marines-assistant-commandant-of-the-marine-corps` — Assistant Commandant of the Marine Corps — `unreached`
-- `exec-dept-defense-marines-commandant-of-the-marine-corps-4-star-general` — Commandant of the Marine Corps (4-star General) — `unreached`
-- `exec-dept-defense-marines-commanding-general-marforcom` — Commanding General — MARFORCOM — `unreached`
-- `exec-dept-defense-marines-commanding-general-marforpac` — Commanding General — MARFORPAC — `unreached`
-- `exec-dept-defense-marines-commanding-general-marsocom` — Commanding General — MARSOCOM — `unreached`
-- `exec-dept-defense-marines-commanding-general-marine-corps-reserve` — Commanding General — Marine Corps Reserve — `unreached`
-- `exec-dept-defense-marines-hqmc-dc-combat-development-integration` — HQMC DC Combat Development & Integration — `unreached`
-- `exec-dept-defense-marines-hqmc-dc-installations-logistics` — HQMC DC Installations & Logistics — `unreached`
-- `exec-dept-defense-marines-hqmc-dc-manpower-reserve-affairs` — HQMC DC Manpower & Reserve Affairs — `unreached`
-- `exec-dept-defense-marines-sergeant-major-of-the-marine-corps` — Sergeant Major of the Marine Corps — `unreached`
-
 ## U.S. Marshals Service (USMS)  — 10 unpriced
 
 `exec-dept-doj-usms`
@@ -1596,21 +1560,6 @@ same list in the same run.
 - `exec-dept-defense-cocom-uscentcom-j6-communications-uscentcom` — J6 — Communications, USCENTCOM — `unreached`
 - `exec-dept-defense-cocom-uscentcom-joint-intelligence-center-director-uscentcom` — Joint Intelligence Center Director, USCENTCOM — `unreached`
 
-## USCYBERCOM — Cyber Command  — 10 unpriced
-
-`exec-dept-defense-cocom-uscybercom`
-
-- `exec-dept-defense-cocom-uscybercom-chief-of-staff-uscybercom` — Chief of Staff, USCYBERCOM — `unreached`
-- `exec-dept-defense-cocom-uscybercom-commander-ccdr-uscybercom` — Commander (CCDR), USCYBERCOM — `unreached`
-- `exec-dept-defense-cocom-uscybercom-deputy-commander-uscybercom` — Deputy Commander, USCYBERCOM — `unreached`
-- `exec-dept-defense-cocom-uscybercom-j1-personnel-uscybercom` — J1 — Personnel, USCYBERCOM — `unreached`
-- `exec-dept-defense-cocom-uscybercom-j2-intelligence-uscybercom` — J2 — Intelligence, USCYBERCOM — `unreached`
-- `exec-dept-defense-cocom-uscybercom-j3-operations-uscybercom` — J3 — Operations, USCYBERCOM — `unreached`
-- `exec-dept-defense-cocom-uscybercom-j4-logistics-uscybercom` — J4 — Logistics, USCYBERCOM — `unreached`
-- `exec-dept-defense-cocom-uscybercom-j5-strategy-plans-uscybercom` — J5 — Strategy & Plans, USCYBERCOM — `unreached`
-- `exec-dept-defense-cocom-uscybercom-j6-communications-uscybercom` — J6 — Communications, USCYBERCOM — `unreached`
-- `exec-dept-defense-cocom-uscybercom-joint-intelligence-center-director-uscybercom` — Joint Intelligence Center Director, USCYBERCOM — `unreached`
-
 ## USEUCOM — European Command  — 10 unpriced
 
 `exec-dept-defense-cocom-useucom`
@@ -1655,21 +1604,6 @@ same list in the same run.
 - `exec-dept-defense-cocom-usnorthcom-j5-strategy-plans-usnorthcom` — J5 — Strategy & Plans, USNORTHCOM — `unreached`
 - `exec-dept-defense-cocom-usnorthcom-j6-communications-usnorthcom` — J6 — Communications, USNORTHCOM — `unreached`
 - `exec-dept-defense-cocom-usnorthcom-joint-intelligence-center-director-usnorthcom` — Joint Intelligence Center Director, USNORTHCOM — `unreached`
-
-## USSOCOM — Special Operations Command  — 10 unpriced
-
-`exec-dept-defense-cocom-ussocom`
-
-- `exec-dept-defense-cocom-ussocom-chief-of-staff-ussocom` — Chief of Staff, USSOCOM — `unreached`
-- `exec-dept-defense-cocom-ussocom-commander-ccdr-ussocom` — Commander (CCDR), USSOCOM — `unreached`
-- `exec-dept-defense-cocom-ussocom-deputy-commander-ussocom` — Deputy Commander, USSOCOM — `unreached`
-- `exec-dept-defense-cocom-ussocom-j1-personnel-ussocom` — J1 — Personnel, USSOCOM — `unreached`
-- `exec-dept-defense-cocom-ussocom-j2-intelligence-ussocom` — J2 — Intelligence, USSOCOM — `unreached`
-- `exec-dept-defense-cocom-ussocom-j3-operations-ussocom` — J3 — Operations, USSOCOM — `unreached`
-- `exec-dept-defense-cocom-ussocom-j4-logistics-ussocom` — J4 — Logistics, USSOCOM — `unreached`
-- `exec-dept-defense-cocom-ussocom-j5-strategy-plans-ussocom` — J5 — Strategy & Plans, USSOCOM — `unreached`
-- `exec-dept-defense-cocom-ussocom-j6-communications-ussocom` — J6 — Communications, USSOCOM — `unreached`
-- `exec-dept-defense-cocom-ussocom-joint-intelligence-center-director-ussocom` — Joint Intelligence Center Director, USSOCOM — `unreached`
 
 ## USSOUTHCOM — Southern Command  — 10 unpriced
 
@@ -1828,20 +1762,6 @@ same list in the same run.
 - `exec-ind-nasa-goddard-space-flight-center-gsfc-director-of-safety-mission-assurance` — Director of Safety & Mission Assurance — `unreached`
 - `exec-ind-nasa-goddard-space-flight-center-gsfc-program-manager-multiple` — Program Manager (×multiple) — `multiplicity`
 - `exec-ind-nasa-goddard-space-flight-center-gsfc-research-engineer-scientist-multiple` — Research Engineer / Scientist (×multiple) — `multiplicity`
-
-## Government Accountability Office (GAO)  — 9 unpriced
-
-`leg-support-gao`
-
-- `leg-support-gao-chief-administrative-officer` — Chief Administrative Officer — `unreached`
-- `leg-support-gao-chief-financial-officer` — Chief Financial Officer — `unreached`
-- `leg-support-gao-chief-human-capital-officer` — Chief Human Capital Officer — `unreached`
-- `leg-support-gao-chief-information-officer` — Chief Information Officer — `unreached`
-- `leg-support-gao-chief-operating-officer` — Chief Operating Officer — `unreached`
-- `leg-support-gao-director-of-congressional-relations` — Director of Congressional Relations — `unreached`
-- `leg-support-gao-director-of-public-affairs` — Director of Public Affairs — `unreached`
-- `leg-support-gao-general-counsel` — General Counsel — `unreached`
-- `leg-support-gao-inspector-general` — Inspector General — `unreached`
 
 ## Jet Propulsion Laboratory (JPL)  — 9 unpriced
 
@@ -2024,6 +1944,34 @@ same list in the same run.
 - `exec-ind-usps-deputy-postmaster-general` — Deputy Postmaster General — `listed_no_rate`
 - `exec-ind-usps-postmaster-general-pmg` — Postmaster General (PMG) — `unreached`
 - `exec-ind-usps-usps-board-of-governors-9-members` — USPS Board of Governors (9 members) — `unreached`
+
+## USCYBERCOM — Cyber Command  — 9 unpriced
+
+`exec-dept-defense-cocom-uscybercom`
+
+- `exec-dept-defense-cocom-uscybercom-chief-of-staff-uscybercom` — Chief of Staff, USCYBERCOM — `unreached`
+- `exec-dept-defense-cocom-uscybercom-deputy-commander-uscybercom` — Deputy Commander, USCYBERCOM — `unreached`
+- `exec-dept-defense-cocom-uscybercom-j1-personnel-uscybercom` — J1 — Personnel, USCYBERCOM — `unreached`
+- `exec-dept-defense-cocom-uscybercom-j2-intelligence-uscybercom` — J2 — Intelligence, USCYBERCOM — `unreached`
+- `exec-dept-defense-cocom-uscybercom-j3-operations-uscybercom` — J3 — Operations, USCYBERCOM — `unreached`
+- `exec-dept-defense-cocom-uscybercom-j4-logistics-uscybercom` — J4 — Logistics, USCYBERCOM — `unreached`
+- `exec-dept-defense-cocom-uscybercom-j5-strategy-plans-uscybercom` — J5 — Strategy & Plans, USCYBERCOM — `unreached`
+- `exec-dept-defense-cocom-uscybercom-j6-communications-uscybercom` — J6 — Communications, USCYBERCOM — `unreached`
+- `exec-dept-defense-cocom-uscybercom-joint-intelligence-center-director-uscybercom` — Joint Intelligence Center Director, USCYBERCOM — `unreached`
+
+## USSOCOM — Special Operations Command  — 9 unpriced
+
+`exec-dept-defense-cocom-ussocom`
+
+- `exec-dept-defense-cocom-ussocom-chief-of-staff-ussocom` — Chief of Staff, USSOCOM — `unreached`
+- `exec-dept-defense-cocom-ussocom-deputy-commander-ussocom` — Deputy Commander, USSOCOM — `unreached`
+- `exec-dept-defense-cocom-ussocom-j1-personnel-ussocom` — J1 — Personnel, USSOCOM — `unreached`
+- `exec-dept-defense-cocom-ussocom-j2-intelligence-ussocom` — J2 — Intelligence, USSOCOM — `unreached`
+- `exec-dept-defense-cocom-ussocom-j3-operations-ussocom` — J3 — Operations, USSOCOM — `unreached`
+- `exec-dept-defense-cocom-ussocom-j4-logistics-ussocom` — J4 — Logistics, USSOCOM — `unreached`
+- `exec-dept-defense-cocom-ussocom-j5-strategy-plans-ussocom` — J5 — Strategy & Plans, USSOCOM — `unreached`
+- `exec-dept-defense-cocom-ussocom-j6-communications-ussocom` — J6 — Communications, USSOCOM — `unreached`
+- `exec-dept-defense-cocom-ussocom-joint-intelligence-center-director-ussocom` — Joint Intelligence Center Director, USSOCOM — `unreached`
 
 ## American Art Museum  — 8 unpriced
 
@@ -2232,6 +2180,19 @@ same list in the same run.
 - `exec-dept-usda-fs-forest-supervisor-154-national-forests` — Forest Supervisor — 154 National Forests — `unreached`
 - `exec-dept-usda-fs-law-enforcement-officer` — Law Enforcement Officer — `unreached`
 - `exec-dept-usda-fs-regional-forester-9-regions` — Regional Forester — 9 Regions — `unreached`
+
+## Government Accountability Office (GAO)  — 8 unpriced
+
+`leg-support-gao`
+
+- `leg-support-gao-chief-administrative-officer` — Chief Administrative Officer — `unreached`
+- `leg-support-gao-chief-financial-officer` — Chief Financial Officer — `unreached`
+- `leg-support-gao-chief-human-capital-officer` — Chief Human Capital Officer — `unreached`
+- `leg-support-gao-chief-information-officer` — Chief Information Officer — `unreached`
+- `leg-support-gao-chief-operating-officer` — Chief Operating Officer — `unreached`
+- `leg-support-gao-director-of-congressional-relations` — Director of Congressional Relations — `unreached`
+- `leg-support-gao-director-of-public-affairs` — Director of Public Affairs — `unreached`
+- `leg-support-gao-inspector-general` — Inspector General — `unreached`
 
 ## Hirshhorn Museum & Sculpture Garden  — 8 unpriced
 
@@ -2544,19 +2505,6 @@ same list in the same run.
 - `exec-ind-smithsonian-smithsonian-tropical-research-institute-head-of-collections-management` — Head of Collections Management — `unreached`
 - `exec-ind-smithsonian-smithsonian-tropical-research-institute-head-of-education` — Head of Education — `unreached`
 - `exec-ind-smithsonian-smithsonian-tropical-research-institute-head-of-facilities` — Head of Facilities — `unreached`
-
-## Southern District of New York (S.D.N.Y.)  — 8 unpriced
-
-`jud-district-sdny`
-
-- `jud-district-sdny-chief-pretrial-services-officer` — Chief Pretrial Services Officer — `unreached`
-- `jud-district-sdny-chief-probation-officer` — Chief Probation Officer — `unreached`
-- `jud-district-sdny-clerk-of-court` — Clerk of Court — `unreached`
-- `jud-district-sdny-court-security-officer-multiple` — Court Security Officer (×multiple) — `multiplicity`
-- `jud-district-sdny-courtroom-deputy-multiple` — Courtroom Deputy (×multiple) — `multiplicity`
-- `jud-district-sdny-law-clerk-2-4-per-judge` — Law Clerk (×2-4 per judge) — `multiplicity`
-- `jud-district-sdny-magistrate-judge-13` — Magistrate Judge (×13) — `multiplicity`
-- `jud-district-sdny-senior-judge-multiple` — Senior Judge (×multiple) — `multiplicity`
 
 ## Ames National Laboratory  — 7 unpriced
 
@@ -2930,18 +2878,6 @@ same list in the same run.
 - `exec-dept-defense-agency-nga-general-counsel` — General Counsel — `unreached`
 - `exec-dept-defense-agency-nga-inspector-general` — Inspector General — `unreached`
 
-## National Highway Traffic Safety Admin (NHTSA)  — 7 unpriced
-
-`exec-dept-dot-nhtsa`
-
-- `exec-dept-dot-nhtsa-administrator-nhtsa` — Administrator, NHTSA — `unreached`
-- `exec-dept-dot-nhtsa-associate-administrator-enforcement` — Associate Administrator — Enforcement — `unreached`
-- `exec-dept-dot-nhtsa-associate-administrator-research-program-development` — Associate Administrator — Research & Program Development — `unreached`
-- `exec-dept-dot-nhtsa-associate-administrator-rulemaking` — Associate Administrator — Rulemaking — `unreached`
-- `exec-dept-dot-nhtsa-chief-counsel` — Chief Counsel — `unreached`
-- `exec-dept-dot-nhtsa-deputy-administrator` — Deputy Administrator — `unreached`
-- `exec-dept-dot-nhtsa-safety-defects-engineer-multiple` — Safety Defects Engineer (×multiple) — `multiplicity`
-
 ## National Laboratory of the Rockies (NLR)  — 7 unpriced
 
 `exec-dept-doe-national-renewable-energy-laboratory`
@@ -3074,6 +3010,18 @@ same list in the same run.
 - `jud-circuit-6th-circuit-library-director` — Library Director — `unreached`
 - `jud-circuit-6th-circuit-staff-attorney-multiple` — Staff Attorney (×multiple) — `multiplicity`
 
+## Southern District of New York (S.D.N.Y.)  — 7 unpriced
+
+`jud-district-sdny`
+
+- `jud-district-sdny-chief-pretrial-services-officer` — Chief Pretrial Services Officer — `unreached`
+- `jud-district-sdny-chief-probation-officer` — Chief Probation Officer — `unreached`
+- `jud-district-sdny-clerk-of-court` — Clerk of Court — `unreached`
+- `jud-district-sdny-court-security-officer-multiple` — Court Security Officer (×multiple) — `multiplicity`
+- `jud-district-sdny-courtroom-deputy-multiple` — Courtroom Deputy (×multiple) — `multiplicity`
+- `jud-district-sdny-law-clerk-2-4-per-judge` — Law Clerk (×2-4 per judge) — `multiplicity`
+- `jud-district-sdny-senior-judge-multiple` — Senior Judge (×multiple) — `multiplicity`
+
 ## Tenth Circuit  — 7 unpriced
 
 `jud-circuit-10th-circuit`
@@ -3194,6 +3142,18 @@ same list in the same run.
 - `jud-circuit-7th-circuit-library-director` — Library Director — `unreached`
 - `jud-circuit-7th-circuit-staff-attorney-multiple` — Staff Attorney (×multiple) — `multiplicity`
 
+## U.S. Marine Corps  — 7 unpriced
+
+`exec-dept-defense-marines`
+
+- `exec-dept-defense-marines-commanding-general-marforcom` — Commanding General — MARFORCOM — `unreached`
+- `exec-dept-defense-marines-commanding-general-marforpac` — Commanding General — MARFORPAC — `unreached`
+- `exec-dept-defense-marines-commanding-general-marsocom` — Commanding General — MARSOCOM — `unreached`
+- `exec-dept-defense-marines-commanding-general-marine-corps-reserve` — Commanding General — Marine Corps Reserve — `unreached`
+- `exec-dept-defense-marines-hqmc-dc-combat-development-integration` — HQMC DC Combat Development & Integration — `unreached`
+- `exec-dept-defense-marines-hqmc-dc-installations-logistics` — HQMC DC Installations & Logistics — `unreached`
+- `exec-dept-defense-marines-hqmc-dc-manpower-reserve-affairs` — HQMC DC Manpower & Reserve Affairs — `unreached`
+
 ## Animal & Plant Health Inspection Service (APHIS)  — 6 unpriced
 
 `exec-dept-usda-aphis`
@@ -3259,17 +3219,6 @@ same list in the same run.
 - `exec-ind-nara-dwight-d-eisenhower-presidential-library-abilene-ks-director-dwight-d-eisenhower-presidential-library` — Director, Dwight D. Eisenhower Presidential Library — `unreached`
 - `exec-ind-nara-dwight-d-eisenhower-presidential-library-abilene-ks-museum-curator` — Museum Curator — `unreached`
 - `exec-ind-nara-dwight-d-eisenhower-presidential-library-abilene-ks-supervisory-archivist` — Supervisory Archivist — `unreached`
-
-## Federal Highway Administration (FHWA)  — 6 unpriced
-
-`exec-dept-dot-fhwa`
-
-- `exec-dept-dot-fhwa-associate-administrator-federal-lands-highway` — Associate Administrator — Federal Lands Highway — `unreached`
-- `exec-dept-dot-fhwa-associate-administrator-planning-environment-realty` — Associate Administrator — Planning, Environment & Realty — `unreached`
-- `exec-dept-dot-fhwa-chief-counsel` — Chief Counsel — `unreached`
-- `exec-dept-dot-fhwa-deputy-administrator` — Deputy Administrator — `unreached`
-- `exec-dept-dot-fhwa-division-administrator-52-state-divisions` — Division Administrator — 52 State Divisions — `unreached`
-- `exec-dept-dot-fhwa-highway-engineer-multiple` — Highway Engineer (×multiple) — `multiplicity`
 
 ## Financial Crimes Enforcement Network (FinCEN)  — 6 unpriced
 
@@ -3491,17 +3440,6 @@ same list in the same run.
 - `exec-ind-sba-chief-of-staff` — Chief of Staff — `unreached`
 - `exec-ind-sba-regional-administrator-10-regions` — Regional Administrator — 10 Regions — `unreached`
 
-## U.S. Capitol Police  — 6 unpriced
-
-`leg-support-uscp`
-
-- `leg-support-uscp-assistant-chief-operations` — Assistant Chief — Operations — `unreached`
-- `leg-support-uscp-chief-of-police` — Chief of Police — `unreached`
-- `leg-support-uscp-deputy-chief-professional-responsibility` — Deputy Chief — Professional Responsibility — `unreached`
-- `leg-support-uscp-deputy-chief-uniformed-operations` — Deputy Chief — Uniformed Operations — `unreached`
-- `leg-support-uscp-general-counsel` — General Counsel — `unreached`
-- `leg-support-uscp-inspector-general` — Inspector General — `unreached`
-
 ## U.S. Citizenship & Immigration Services (USCIS)  — 6 unpriced
 
 `exec-dept-dhs-uscis`
@@ -3512,17 +3450,6 @@ same list in the same run.
 - `exec-dept-dhs-uscis-asylum-officer-multiple` — Asylum Officer (×multiple) — `multiplicity`
 - `exec-dept-dhs-uscis-director-field-office-89-offices` — Director — Field Office (×89 offices) — `multiplicity`
 - `exec-dept-dhs-uscis-immigration-services-officer-multiple` — Immigration Services Officer (×multiple) — `multiplicity`
-
-## U.S. Sentencing Commission (USSC)  — 6 unpriced
-
-`jud-support-ussc`
-
-- `jud-support-ussc-chair-ussc` — Chair, USSC — `unreached`
-- `jud-support-ussc-commissioner-6` — Commissioner (×6) — `multiplicity`
-- `jud-support-ussc-director-education-sentencing-practice` — Director — Education & Sentencing Practice — `unreached`
-- `jud-support-ussc-director-research-data` — Director — Research & Data — `unreached`
-- `jud-support-ussc-general-counsel` — General Counsel — `unreached`
-- `jud-support-ussc-staff-director` — Staff Director — `unreached`
 
 ## William J. Clinton Presidential Library (Little Rock, AR)  — 6 unpriced
 
@@ -3645,6 +3572,16 @@ same list in the same run.
 - `exec-dept-usda-fsa-farm-loan-officer` — Farm Loan Officer — `unreached`
 - `exec-dept-usda-fsa-state-executive-director-50-states` — State Executive Director — 50 states — `unreached`
 
+## Federal Highway Administration (FHWA)  — 5 unpriced
+
+`exec-dept-dot-fhwa`
+
+- `exec-dept-dot-fhwa-associate-administrator-federal-lands-highway` — Associate Administrator — Federal Lands Highway — `unreached`
+- `exec-dept-dot-fhwa-associate-administrator-planning-environment-realty` — Associate Administrator — Planning, Environment & Realty — `unreached`
+- `exec-dept-dot-fhwa-chief-counsel` — Chief Counsel — `unreached`
+- `exec-dept-dot-fhwa-division-administrator-52-state-divisions` — Division Administrator — 52 State Divisions — `unreached`
+- `exec-dept-dot-fhwa-highway-engineer-multiple` — Highway Engineer (×multiple) — `multiplicity`
+
 ## Federal Judicial Center (FJC)  — 5 unpriced
 
 `jud-support-fjc`
@@ -3684,6 +3621,16 @@ same list in the same run.
 - `exec-ind-misc-national-capital-planning-commission-ncpc-director-administrator-chair-national-capital-planning-commission` — Director / Administrator / Chair, National Capital Planning Commission — `unreached`
 - `exec-ind-misc-national-capital-planning-commission-ncpc-general-counsel` — General Counsel — `unreached`
 - `exec-ind-misc-national-capital-planning-commission-ncpc-inspector-general` — Inspector General — `unreached`
+
+## National Highway Traffic Safety Admin (NHTSA)  — 5 unpriced
+
+`exec-dept-dot-nhtsa`
+
+- `exec-dept-dot-nhtsa-associate-administrator-enforcement` — Associate Administrator — Enforcement — `unreached`
+- `exec-dept-dot-nhtsa-associate-administrator-research-program-development` — Associate Administrator — Research & Program Development — `unreached`
+- `exec-dept-dot-nhtsa-associate-administrator-rulemaking` — Associate Administrator — Rulemaking — `unreached`
+- `exec-dept-dot-nhtsa-chief-counsel` — Chief Counsel — `unreached`
+- `exec-dept-dot-nhtsa-safety-defects-engineer-multiple` — Safety Defects Engineer (×multiple) — `multiplicity`
 
 ## National Science Foundation (NSF)  — 5 unpriced
 
@@ -3765,6 +3712,16 @@ same list in the same run.
 - `exec-dept-hhs-samhsa-director-center-for-substance-abuse-prevention` — Director — Center for Substance Abuse Prevention — `unreached`
 - `exec-dept-hhs-samhsa-director-center-for-substance-abuse-treatment` — Director — Center for Substance Abuse Treatment — `unreached`
 
+## U.S. Capitol Police  — 5 unpriced
+
+`leg-support-uscp`
+
+- `leg-support-uscp-assistant-chief-operations` — Assistant Chief — Operations — `unreached`
+- `leg-support-uscp-deputy-chief-professional-responsibility` — Deputy Chief — Professional Responsibility — `unreached`
+- `leg-support-uscp-deputy-chief-uniformed-operations` — Deputy Chief — Uniformed Operations — `unreached`
+- `leg-support-uscp-general-counsel` — General Counsel — `unreached`
+- `leg-support-uscp-inspector-general` — Inspector General — `unreached`
+
 ## U.S. Fish & Wildlife Service (FWS)  — 5 unpriced
 
 `exec-dept-doi-fws`
@@ -3774,6 +3731,16 @@ same list in the same run.
 - `exec-dept-doi-fws-refuge-manager-nwrs-568` — Refuge Manager — NWRs (×568) — `multiplicity`
 - `exec-dept-doi-fws-regional-director-8-regions` — Regional Director — 8 Regions — `unreached`
 - `exec-dept-doi-fws-wildlife-biologist` — Wildlife Biologist — `unreached`
+
+## U.S. Sentencing Commission (USSC)  — 5 unpriced
+
+`jud-support-ussc`
+
+- `jud-support-ussc-commissioner-6` — Commissioner (×6) — `multiplicity`
+- `jud-support-ussc-director-education-sentencing-practice` — Director — Education & Sentencing Practice — `unreached`
+- `jud-support-ussc-director-research-data` — Director — Research & Data — `unreached`
+- `jud-support-ussc-general-counsel` — General Counsel — `unreached`
+- `jud-support-ussc-staff-director` — Staff Director — `unreached`
 
 ## United States Patent and Trademark Office (USPTO)  — 5 unpriced
 
@@ -3802,15 +3769,6 @@ same list in the same run.
 - `exec-ind-misc-appalachian-regional-commission-arc-deputy-director-vice-chair` — Deputy Director / Vice Chair — `unreached`
 - `exec-ind-misc-appalachian-regional-commission-arc-general-counsel` — General Counsel — `unreached`
 - `exec-ind-misc-appalachian-regional-commission-arc-inspector-general` — Inspector General — `unreached`
-
-## Architect of the Capitol  — 4 unpriced
-
-`leg-support-aoc`
-
-- `leg-support-aoc-architect-of-the-capitol` — Architect of the Capitol — `unreached`
-- `leg-support-aoc-assistant-architect-of-the-capitol` — Assistant Architect of the Capitol — `unreached`
-- `leg-support-aoc-chief-of-staff` — Chief of Staff — `unreached`
-- `leg-support-aoc-inspector-general` — Inspector General — `unreached`
 
 ## Budget Analysis Division  — 4 unpriced
 
@@ -4189,15 +4147,6 @@ same list in the same run.
 - `exec-ind-misc-farm-credit-administration-deputy-director-vice-chair` — Deputy Director / Vice Chair — `unreached`
 - `exec-ind-misc-farm-credit-administration-general-counsel` — General Counsel — `unreached`
 - `exec-ind-misc-farm-credit-administration-inspector-general` — Inspector General — `unreached`
-
-## Federal Motor Carrier Safety Admin (FMCSA)  — 4 unpriced
-
-`exec-dept-dot-fmcsa`
-
-- `exec-dept-dot-fmcsa-associate-administrator-field-operations` — Associate Administrator — Field Operations — `unreached`
-- `exec-dept-dot-fmcsa-commercial-vehicle-safety-specialist-multiple` — Commercial Vehicle Safety Specialist (×multiple) — `multiplicity`
-- `exec-dept-dot-fmcsa-deputy-administrator` — Deputy Administrator — `unreached`
-- `exec-dept-dot-fmcsa-division-administrator-52-state-divisions` — Division Administrator — 52 State Divisions — `unreached`
 
 ## Federal Railroad Administration (FRA)  — 4 unpriced
 
@@ -4701,6 +4650,14 @@ same list in the same run.
 - `exec-dept-doj-div-antitrust-section-chief-multiple` — Section Chief (×multiple) — `multiplicity`
 - `exec-dept-doj-div-antitrust-trial-attorney-ausa-multiple` — Trial Attorney / AUSA (×multiple) — `multiplicity`
 
+## Architect of the Capitol  — 3 unpriced
+
+`leg-support-aoc`
+
+- `leg-support-aoc-assistant-architect-of-the-capitol` — Assistant Architect of the Capitol — `unreached`
+- `leg-support-aoc-chief-of-staff` — Chief of Staff — `unreached`
+- `leg-support-aoc-inspector-general` — Inspector General — `unreached`
+
 ## Board of Veterans Appeals (BVA)  — 3 unpriced
 
 `exec-dept-va-bva`
@@ -5100,6 +5057,14 @@ same list in the same run.
 - `exec-ind-misc-federal-labor-relations-authority-flra-chief-financial-officer` — Chief Financial Officer — `unreached`
 - `exec-ind-misc-federal-labor-relations-authority-flra-deputy-director-vice-chair` — Deputy Director / Vice Chair — `unreached`
 - `exec-ind-misc-federal-labor-relations-authority-flra-inspector-general` — Inspector General — `unreached`
+
+## Federal Motor Carrier Safety Admin (FMCSA)  — 3 unpriced
+
+`exec-dept-dot-fmcsa`
+
+- `exec-dept-dot-fmcsa-associate-administrator-field-operations` — Associate Administrator — Field Operations — `unreached`
+- `exec-dept-dot-fmcsa-commercial-vehicle-safety-specialist-multiple` — Commercial Vehicle Safety Specialist (×multiple) — `multiplicity`
+- `exec-dept-dot-fmcsa-division-administrator-52-state-divisions` — Division Administrator — 52 State Divisions — `unreached`
 
 ## Ginnie Mae  — 3 unpriced
 
