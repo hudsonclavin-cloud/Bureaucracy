@@ -1170,6 +1170,12 @@ function renderSchedulePay(data) {
       add(` No statute composing the class has been read here${identification && identification.basis ? ` (${identification.basis})` : ""}, so this rests on two documents: the Code places the class and counts it, and the table sets the rate.`);
     }
     add(" A statutory rate of basic pay, not what the holder receives: it excludes benefits, any freeze the table notes below, and it is not a share of federal outlays, which is what every other figure in this graph means.");
+  } else if (identification && identification.basisInstrument && typeof identification.basisInstrument === "object") {
+    // The basis is an instrument the Code prints outside its sections (a
+    // Reorganization Plan), read as that one instrument and nothing around it.
+    const instrument = identification.basisInstrument;
+    add(` That title is not this node's name, and no name match joined them: this is a reviewed identification — ${identification.basis || "recorded without a stated basis"}. The basis is ${instrument.name || "an instrument"}, issued by ${instrument.issuer || "its issuer"} on ${instrument.date || "an unrecorded date"} and printed in ${instrument.printedIn || "the Code"} — ${instrument.kindWords || "not a section of the Code"}. It prints "${identification.basisQuote || ""}"${identification.basisCheckedAt ? ` (read ${formatFetchDate(identification.basisCheckedAt)})` : ""}; the sentence is re-found inside that one instrument on every build.`);
+    add(" Three documents: the instrument says which office this post is, the Executive Schedule sets that office's level, and the table sets the rate. It does not depend on who holds the office — but it is a statutory rate of basic pay, not what the holder receives: it excludes benefits, any freeze the table notes below, and it is not a share of federal outlays, which is what every other figure in this graph means.");
   } else if (identification) {
     add(` That title is not this node's name, and no name match joined them: this is a reviewed identification — ${identification.basis || "recorded without a stated basis"}. ${identification.basisCitation || "The basis statute"} prints "${identification.basisQuote || ""}" in its operative text${identification.basisCheckedAt ? ` (read ${formatFetchDate(identification.basisCheckedAt)})` : ""}, and it is re-checked on every build.`);
     add(" Three documents: the basis statute says which office this post is, the Executive Schedule sets that office's level, and the table sets the rate. Current law names the office, so this does not depend on who holds it — but it is a statutory rate of basic pay, not what the holder receives: it excludes benefits, any freeze the table notes below, and it is not a share of federal outlays, which is what every other figure in this graph means.");
@@ -1333,6 +1339,18 @@ function renderTierReferencePay(data) {
     if (identification.statuteIdentifies) {
       add(` The graph's title for this post is a template; the same section says which office stands under it: "${String(identification.statuteIdentifies).trim()}"`);
     }
+  }
+  // Since 2026-10-07: an instrument the Code prints outside its sections --
+  // a Reorganization Plan, or a chamber's pay order reprinted in a Statutory
+  // Note -- sets the pay. Say which instrument, who issued it and when, and,
+  // for a pay order, that a later order may have changed it.
+  const instrument = pay.instrument && typeof pay.instrument === "object" ? pay.instrument : null;
+  if (instrument) {
+    add(` That is not a section of the Code: it is ${instrument.name || "an instrument"}, issued by ${instrument.issuer || "its issuer"} on ${instrument.date || "an unrecorded date"} — ${instrument.kindWords || "an instrument printed outside the Code's sections"} (${instrument.printedIn || "the Code"}). The sentence was read from that one instrument and nothing printed around it.`);
+    if (identification.instrumentDefines) {
+      add(` The same instrument defines the term: "${String(identification.instrumentDefines).trim()}"`);
+    }
+    if (instrument.laterOrderCaution) add(` ${String(instrument.laterOrderCaution).trim()}`);
   }
   add(holdersSentence(pay));
   add(payDocumentsSentence(pay));

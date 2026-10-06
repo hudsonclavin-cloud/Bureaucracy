@@ -1165,6 +1165,323 @@ US_CODE_REVIEWED_IDENTIFICATIONS = {
         True,
     ),
 }
+#: Reviewed rows whose BASIS is an instrument the Code prints outside its
+#: sections rather than a section of it (since 2026-10-07). Same nine fields
+#: as US_CODE_REVIEWED_IDENTIFICATIONS -- the citation is the instrument's,
+#: the fixture the page it is printed on -- plus the instrument id. Mirrors
+#: statutory_schedule.REVIEWED_INSTRUMENT_ROWS.
+US_CODE_REVIEWED_INSTRUMENT_IDENTIFICATIONS = {
+    "exec-regulatory-sec-chair-sec": (
+        "Chair, SEC",
+        "Chairman, Securities and Exchange Commission", "III", "5314",
+        "Reorganization Plan No. 10 of 1950, §3", "reorganization_plans_5_usc_app_govinfo2024.html",
+        "The functions of the Commission with respect to choosing a Chairman from among the Commissioners "
+        "composing the Commission are hereby transferred to the President.",
+        "the office under the graph's 'Chair' is the Chairman: Reorganization Plan No. 10 of 1950, a plan "
+        "the President transmitted under the Reorganization Act of 1949 and which took effect May 24, 1950, "
+        "transfers to the President the choosing of a Chairman from among the Commissioners (§3) and vests "
+        "the Commission's executive and administrative functions in that Chairman (§1(a)); 5 U.S.C. 5314 "
+        "places the Chairman, Securities and Exchange Commission at Level III; 15 U.S.C. 78d composes the "
+        "Commission and designates no Chairman, which is why the basis is the Plan",
+        False,
+        "reorganization-plan-no-10-of-1950",
+    ),
+}
+
+# Instruments the Code prints OUTSIDE its sections (since 2026-10-07): the
+# Reorganization Plans in Title 5's Appendix, and the two chambers' pay
+# orders, which the Code reprints only in the Statutory Notes beneath 2 U.S.C.
+# 4571 and 4532 -- beneath the cut `uscode_operative_text` makes, on pages
+# whose Amendments notes print struck-out law. Mirrors
+# notes_instruments.INSTRUMENTS and is read here with this file's own stdlib
+# reader, importing nothing from the module it checks: ONE instrument, located
+# by its own printed heading, up to the next heading of the same kind; never
+# an Amendments note, never text after "Prior to amendment"; a quote must sit
+# outside the publisher's square-bracketed insertions.
+#: id -> (kind, fixture, heading, name, issuer, date, effective, printedIn,
+#: notes section or None, issuing officer or None)
+NOTES_INSTRUMENTS = {
+    "reorganization-plan-no-10-of-1950": (
+        "reorganization_plan", "reorganization_plans_5_usc_app_govinfo2024.html",
+        "REORGANIZATION PLAN NO. 10 OF 1950", "Reorganization Plan No. 10 of 1950", "the President",
+        "March 13, 1950", "Eff. May 24, 1950, 15 F.R. 3175, 64 Stat. 1265",
+        "5 U.S.C. App., Reorganization Plans", None, None,
+    ),
+    "reorganization-plan-no-3-of-1970": (
+        "reorganization_plan", "reorganization_plans_5_usc_app_govinfo2024.html",
+        "REORGANIZATION PLAN NO. 3 OF 1970", "Reorganization Plan No. 3 of 1970", "the President",
+        "July 9, 1970",
+        "Eff. Dec. 2, 1970, 35 F.R. 15623, 84 Stat. 2086, as amended Pub. L. 98–80, §2(a)(2), (b)(2), "
+        "(c)(2)(C), Aug. 23, 1983, 97 Stat. 485, 486",
+        "5 U.S.C. App., Reorganization Plans", None, None,
+    ),
+    "reorganization-plan-no-4-of-1970": (
+        "reorganization_plan", "reorganization_plans_5_usc_app_govinfo2024.html",
+        "REORGANIZATION PLAN NO. 4 OF 1970", "Reorganization Plan No. 4 of 1970", "the President",
+        "July 9, 1970",
+        "Eff. Oct. 3, 1970, 35 F.R. 15627, 84 Stat. 2090, as amended Pub. L. 94–461, §4(c)(1), Oct. 8, "
+        "1976, 90 Stat. 1969; Pub. L. 95–219, §3(a)(1), Dec. 28, 1977, 91 Stat. 1613; Pub. L. 98–498, "
+        "title III, §320(c)(3), Oct. 19, 1984, 98 Stat. 2309; Pub. L. 99–659, title IV, §407(d), Nov. 14, "
+        "1986, 100 Stat. 3739; Pub. L. 112–166, §2(b)(1), Aug. 10, 2012, 126 Stat. 1283",
+        "5 U.S.C. App., Reorganization Plans", None, None,
+    ),
+    "reorganization-plan-no-3-of-1979": (
+        "reorganization_plan", "reorganization_plans_5_usc_app_govinfo2024.html",
+        "REORGANIZATION PLAN NO. 3 OF 1979", "Reorganization Plan No. 3 of 1979", "the President",
+        "September 25, 1979",
+        "44 F.R. 69273, 93 Stat. 1381, as amended Pub. L. 97–195, §1(c)(6), June 16, 1982, 96 Stat. 115; "
+        "Pub. L. 97–377, title I, §122, Dec. 21, 1982, 96 Stat. 1913; Pub. L. 117–328, div. BB, title VI, "
+        "§604, Dec. 29, 2022, 136 Stat. 5566",
+        "5 U.S.C. App., Reorganization Plans", None, None,
+    ),
+    "order-of-the-president-pro-tempore-2024-03-25": (
+        "chamber_pay_order", "senate_pay_order_2_usc_4571_govinfo2024.html",
+        "Order of the President Pro Tempore of the United States Senate",
+        "Order of the President pro tempore of the Senate of March 25, 2024",
+        "the President pro tempore of the Senate", "March 25, 2024",
+        "Sections 1 through 10 of this Order are effective on and after January 1, 2024.",
+        "a Statutory Note to 2 U.S.C. 4571, 2024 edition of the United States Code",
+        "2 U.S.C. 4571", "President pro tempore",
+    ),
+    "order-of-the-speaker-2025-01-17": (
+        "chamber_pay_order", "house_pay_order_2_usc_4532_govinfo2024.html",
+        "Order of the Speaker of the House of Representatives",
+        "Order of the Speaker of the House of Representatives of January 17, 2025",
+        "the Speaker of the House of Representatives", "January 17, 2025",
+        "This Order shall be effective January 1, 2025, and each provision herein shall continue in place "
+        "until such time as it is superseded by the issuance of a future Order.",
+        "a Statutory Note to 2 U.S.C. 4532, 2024 edition of the United States Code",
+        "2 U.S.C. 4532", "Speaker",
+    ),
+}
+NOTES_INSTRUMENT_LATER_ORDER_CAUTION = (
+    "This is the {name}, as the 2024 edition of the United States Code reprints it in a Statutory Note to "
+    "{section}. A later order of the {officer} exists that this repository has not read, and it may have "
+    "changed this rate."
+)
+_NOTES_INSTRUMENT_CACHE = {}
+
+
+def notes_instrument_caution(instrument_id):
+    """The later-order caution an order-based record must carry, or None for
+    an instrument that is not a pay order."""
+    spec = NOTES_INSTRUMENTS.get(instrument_id)
+    if spec is None or spec[0] != "chamber_pay_order":
+        return None
+    return NOTES_INSTRUMENT_LATER_ORDER_CAUTION.format(name=spec[3], section=spec[8], officer=spec[9])
+
+
+def _notes_flat(markup):
+    """Markup to text, stdlib-only: comments dropped (GPO prints
+    `<!-- PDFPage:N -->` mid-word), tags spaced, entities unescaped,
+    whitespace folded."""
+    import html as _html
+
+    out = []
+    i = 0
+    while i < len(markup):
+        if markup.startswith("<!--", i):
+            j = markup.find("-->", i)
+            i = len(markup) if j < 0 else j + 3
+            continue
+        if markup[i] == "<":
+            j = markup.find(">", i)
+            out.append(" ")
+            i = len(markup) if j < 0 else j + 1
+            continue
+        out.append(markup[i])
+        i += 1
+    return " ".join(_html.unescape("".join(out)).split())
+
+
+def _notes_drop_signatures(raw):
+    """Remove every `presidential-signature` paragraph: it names the official
+    who signed, which nothing here reads."""
+    out = raw
+    marker = '<p class="presidential-signature"'
+    while True:
+        i = out.find(marker)
+        if i < 0:
+            return out
+        j = out.find("</p>", i)
+        out = out[:i] + " " + (out[j + 4:] if j >= 0 else "")
+
+
+def _notes_field_spans(raw, field):
+    spans = []
+    start_tag, end_tag = "<!-- field-start:{} -->".format(field), "<!-- field-end:{} -->".format(field)
+    i = raw.find(start_tag)
+    while i >= 0:
+        j = raw.find(end_tag, i)
+        if j < 0:
+            break
+        spans.append((i, j + len(end_tag)))
+        i = raw.find(start_tag, j)
+    return spans
+
+
+def _notes_elements(raw, open_prefix, close, lo=0, hi=None):
+    """(start, end, flat text) of every element opening with `open_prefix`."""
+    hi = len(raw) if hi is None else hi
+    found = []
+    i = raw.find(open_prefix, lo)
+    while 0 <= i < hi:
+        j = raw.find(close, i)
+        if j < 0:
+            break
+        inner_start = raw.find(">", i) + 1
+        found.append((i, j + len(close), _notes_flat(raw[inner_start:j])))
+        i = raw.find(open_prefix, j)
+    return found
+
+
+def notes_instrument_text(instrument_id):
+    """{'text', 'amendments'} for one instrument from its committed page, or
+    a string saying why it cannot be read. The page's digest is checked
+    against its .meta.json first."""
+    if instrument_id in _NOTES_INSTRUMENT_CACHE:
+        return _NOTES_INSTRUMENT_CACHE[instrument_id]
+    spec = NOTES_INSTRUMENTS.get(instrument_id)
+    result = None
+    if spec is None:
+        result = "names an instrument {!r} this gate does not mirror".format(instrument_id)
+    else:
+        kind, fixture, heading, _name, _issuer, date_text, effective = spec[:7]
+        path = US_CODE_BASIS_FIXTURE_DIR / fixture
+        meta_path = path.with_name(path.name + ".meta.json")
+        try:
+            meta = json.loads(meta_path.read_text(encoding="utf-8"))
+            raw = path.read_text(encoding="utf-8", errors="replace")
+        except (OSError, ValueError):
+            meta, raw = None, None
+        if raw is None:
+            result = "cites {!r}, which is not committed with its .meta.json".format(fixture)
+        elif str(meta.get("sha256") or "").lower() != fixture_digest(path):
+            result = "cites {!r}, whose bytes are not the ones its fetch recorded".format(fixture)
+        else:
+            raw = _notes_drop_signatures(raw)
+            body = None
+            if kind == "reorganization_plan":
+                heads = [h for h in _notes_elements(raw, '<h2 class="reorganizationplan-head"', "</h2>") if h[2] == heading]
+                if len(heads) != 1:
+                    result = "cannot find {!r} printed once as a plan heading".format(heading)
+                else:
+                    start = heads[0][1]
+                    ends = [e for e in (raw.find('<h2 class="reorganizationplan-head"', start),
+                                        raw.find("<!-- field-end:reorganizationplan -->", start)) if e > 0]
+                    body = raw[start:min(ends)] if ends else None
+                    if body is not None:
+                        for s, _e, text in _notes_elements(body, '<h4 class="note-head"', "</h4>"):
+                            if text == "Message of the President":
+                                body = body[:s]
+                                break
+                        subheads = _notes_elements(body, '<h4 class="reorganizationplan-subhead"', "</h4>")
+                        flat = _notes_flat(body)
+                        if not subheads or subheads[0][2] != effective:
+                            result = "{} is not printed with the effective line the mirror names".format(heading)
+                        elif ("in Congress assembled, {}, pursuant to".format(date_text)) not in flat:
+                            result = "{} is not printed as transmitted {}".format(heading, date_text)
+            else:
+                lo = raw.find("<!-- field-start:notes -->")
+                hi = raw.find("<!-- field-end:notes -->")
+                amendments = _notes_field_spans(raw, "amendment-note")
+                heads = [h for h in _notes_elements(raw, '<h4 class="note-head"', "</h4>", lo, hi) if h[2] == heading] if 0 <= lo < hi else []
+                if len(heads) != 1:
+                    result = "cannot find {!r} printed once as a note heading".format(heading)
+                elif any(s <= heads[0][0] < e for s, e in amendments):
+                    result = "{!r} is printed inside an Amendments note".format(heading)
+                else:
+                    after = _notes_elements(raw, '<h4 class="note-head"', "</h4>", heads[0][1], hi)
+                    date_line = after[0] if after and not raw[heads[0][1]:after[0][0]].strip() else None
+                    if date_line is None or not (date_line[2] == date_text or date_line[2].endswith(", " + date_text)):
+                        result = "{!r} is not followed by a date line ending {!r}".format(heading, date_text)
+                    else:
+                        start = date_line[1]
+                        ends = [raw.find("<!-- field-start:miscellaneous-note -->", start), hi]
+                        ends.extend(h[0] for h in _notes_elements(raw, '<h4 class="note-head"', "</h4>", start, hi)
+                                    if h[2].startswith("Order of the "))
+                        body = raw[start:min(e for e in ends if e > 0)]
+                        for s, e in reversed(_notes_field_spans(body, "amendment-note")):
+                            body = body[:s] + " " + body[e:]
+                        if effective not in _notes_flat(body):
+                            result = "{} does not print the effective sentence the mirror names".format(heading)
+            if result is None and body is not None:
+                text = _notes_flat(body)
+                for marker in ("Prior to amendment", "read as follows"):
+                    if marker in text:
+                        text = text[: text.find(marker)].strip()
+                result = {
+                    "text": text,
+                    "amendments": " ".join(_notes_flat(raw[s:e]) for s, e in _notes_field_spans(raw, "amendment-note")),
+                    "url": str(meta.get("url") or ""),
+                    "sha256": fixture_digest(path),
+                }
+            elif result is None:
+                result = "cannot separate {} from the page".format(heading)
+    _NOTES_INSTRUMENT_CACHE[instrument_id] = result
+    return result
+
+
+def notes_quote_problem(instrument_id, quote):
+    """None when `quote` is the instrument's own words outside the publisher's
+    square-bracketed insertions; otherwise what is wrong."""
+    read = notes_instrument_text(instrument_id)
+    if not isinstance(read, dict):
+        return read
+    text = read["text"]
+    if not quote:
+        return "quotes nothing"
+    spans = []
+    depth_start = None
+    for index, char in enumerate(text):
+        if char == "[":
+            depth_start = index
+        elif char == "]" and depth_start is not None:
+            spans.append((depth_start, index + 1))
+            depth_start = None
+    at = text.find(quote)
+    while at >= 0:
+        if not any(s <= at and at + len(quote) <= e for s, e in spans):
+            return None
+        at = text.find(quote, at + 1)
+    if quote in text:
+        return "quotes only the publisher's square-bracketed insertion, not the instrument"
+    if quote in read["amendments"]:
+        return "quotes an Amendments note, which prints the law as it used to read"
+    return "quotes a sentence the instrument does not print"
+
+
+def notes_instrument_block_violations(block, instrument_id, what, say):
+    """The instrument block a record carries must be the mirrored instrument,
+    named, dated and attributed as printed, cited to the committed page, and
+    -- for a pay order -- carrying the later-order caution."""
+    spec = NOTES_INSTRUMENTS.get(instrument_id)
+    if spec is None:
+        say("{} names an instrument this gate does not mirror".format(what))
+        return
+    if not isinstance(block, dict):
+        say("{} rests on {} without publishing which instrument it is".format(what, spec[3]))
+        return
+    kind, fixture, heading, name, issuer, date_text, effective, printed_in = spec[:8]
+    for key, wanted in (("id", instrument_id), ("kind", kind), ("name", name), ("heading", heading),
+                        ("issuer", issuer), ("date", date_text), ("effective", effective), ("printedIn", printed_in)):
+        if str(block.get(key) or "") != wanted:
+            say("{} records the instrument's {} as {!r}; it is printed {!r}".format(what, key, block.get(key), wanted))
+    read = notes_instrument_text(instrument_id)
+    if not isinstance(read, dict):
+        say("{} {}".format(what, read))
+        return
+    if str(block.get("documentSha256") or "").lower() != read["sha256"]:
+        say("{} names a digest that is not the committed page's".format(what))
+    if str(block.get("url") or "") != read["url"] or not is_us_code_document_url(block.get("url")):
+        say("{} does not cite the page the instrument was read from ({!r})".format(what, block.get("url")))
+    caution = notes_instrument_caution(instrument_id)
+    if caution is not None and str(block.get("laterOrderCaution") or "") != caution:
+        say("{} rests on {} without the caution that a later order may have changed it".format(what, name))
+    if caution is None and block.get("laterOrderCaution"):
+        say("{} carries a later-order caution on an instrument that is not a pay order".format(what))
+
+
 _US_CODE_OPERATIVE_CACHE = {}
 
 
@@ -3034,7 +3351,10 @@ def reviewed_schedule_violations(node, pay, reviewed, today, label):
     was written against. A rename withdraws it, as it does everywhere else."""
     out = []
     say = lambda text: out.append("{} {}".format(label(node), text))
-    node_name, title, level, section, citation, fixture, quote, basis, class_title = reviewed
+    node_name, title, level, section, citation, fixture, quote, basis, class_title = reviewed[:9]
+    # A tenth element names an instrument the Code prints outside its sections
+    # (a Reorganization Plan): the basis is read from that instrument alone.
+    instrument_id = reviewed[9] if len(reviewed) > 9 else None
     if str(pay.get("method") or "") != US_CODE_REVIEWED_METHOD:
         say("prices a reviewed identification under method {!r}, not {!r}".format(
             pay.get("method"), US_CODE_REVIEWED_METHOD))
@@ -3074,14 +3394,29 @@ def reviewed_schedule_violations(node, pay, reviewed, today, label):
         say("cites basis section {!r}, which is not committed".format(fixture))
     elif str(identification.get("basisSha256") or "").lower() != digest:
         say("names a basis digest that is not the committed section's")
-    operative = uscode_operative_text(path)
-    if not operative:
-        say("cites a basis section whose operative text this gate cannot separate from its notes")
-    elif quote not in operative:
-        say("rests on a sentence {} does not print in its operative text (only in the publisher's notes, or not at all)".format(citation))
     basis_url = str(identification.get("basisUrl") or "")
-    if not us_code_url_names_section(basis_url, citation):
-        say("does not link the section its identification rests on ({!r})".format(basis_url))
+    if instrument_id is not None:
+        problem = notes_quote_problem(instrument_id, quote)
+        if problem is not None:
+            say("rests on {}: {}".format(NOTES_INSTRUMENTS[instrument_id][3], problem))
+        kind = NOTES_INSTRUMENTS[instrument_id][0]
+        if str(identification.get("basisDocumentKind") or "") != kind:
+            say("rests on a {} without recording the basis document's kind".format(kind.replace("_", " ")))
+        notes_instrument_block_violations(identification.get("basisInstrument"), instrument_id,
+                                          "its identification", say)
+        read = notes_instrument_text(instrument_id)
+        if isinstance(read, dict) and basis_url != read["url"]:
+            say("does not link the page its instrument is printed on ({!r})".format(basis_url))
+    else:
+        if identification.get("basisDocumentKind") or identification.get("basisInstrument"):
+            say("names an instrument as the basis of a row whose basis is a section of the Code")
+        operative = uscode_operative_text(path)
+        if not operative:
+            say("cites a basis section whose operative text this gate cannot separate from its notes")
+        elif quote not in operative:
+            say("rests on a sentence {} does not print in its operative text (only in the publisher's notes, or not at all)".format(citation))
+        if not us_code_url_names_section(basis_url, citation):
+            say("does not link the section its identification rests on ({!r})".format(basis_url))
     checked = str(identification.get("basisCheckedAt") or "")
     if not re.match(r"^\d{4}-\d{2}-\d{2}", checked) or checked[:10] > today:
         say("claims a reviewed identification without a past retrieval date ({!r})".format(checked))
@@ -3256,7 +3591,7 @@ def schedule_pay_violations(node, pay, today, label, tree_parent=None, tree_pare
     # Which post the Code actually names. Without this the figure is right and
     # the office is anybody's.
     expected = US_CODE_EXECUTIVE_SCHEDULE.get(node_id)
-    reviewed = US_CODE_REVIEWED_IDENTIFICATIONS.get(node_id)
+    reviewed = US_CODE_REVIEWED_IDENTIFICATIONS.get(node_id) or US_CODE_REVIEWED_INSTRUMENT_IDENTIFICATIONS.get(node_id)
     counted_spec = None
     if isinstance(pay.get("countedClass"), dict) or str(pay.get("method") or "") == US_CODE_COUNTED_METHOD:
         # The fourth route: one office of a counted class. Its own checker
@@ -4033,6 +4368,85 @@ TIER_REFERENCE_IDENTIFICATIONS = {
         "Secretary of the Senate and the Clerk of the House of Representatives) for a term of one year."
     ),
 }
+#: Since 2026-10-07: posts whose pay an instrument the Code prints outside its
+#: sections sets by reference to a level -- a Reorganization Plan, or a
+#: chamber's pay order reprinted in a Statutory Note. node id -> (node name the
+#: row was written against, office, citation, instrument id, subsection,
+#: level, the sentence the instrument prints, the instrument's own definition
+#: of the term the sentence uses or None). Mirrors
+#: tier_reference_pay.INSTRUMENT_PROVISIONS; each instrument is re-read here
+#: by NOTES_INSTRUMENTS with this file's own reader. Keyed by id because
+#: "Chief Administrative Officer" names the GAO's post as well as the House's,
+#: "Legislative Counsel" a Senator's staff post, and each chamber's officers
+#: are drawn twice, once as an Office and once as the post.
+_SENATE_ORDER_SENTENCE = (
+    "The annual rates of compensation of the Secretary of the Senate, the Sergeant at Arms and "
+    "Doorkeeper, and the Legislative Counsel shall each be equal to the annual rate for level II."
+)
+_SENATE_ORDER_DEFINITION = (
+    'the term "annual rate for level II" means the annual rate of basic pay for level II of the '
+    "Executive Schedule under section 5313 of title 5, United States Code, including any adjustment to "
+    "such rate after the date of this Order"
+)
+_HOUSE_ORDER_SENTENCE = (
+    "The annual rate of pay for the Clerk, the Sergeant-at-Arms, the Chief Administrative Officer, the "
+    "Chaplain, the General Counsel to the House, the Inspector General, the Director of Interparliamentary "
+    "Affairs, the Attending Physician, and one additional position in the Office of the Sergeant at Arms "
+    "with duties related to emergency preparedness, planning and operations shall be equal to the annual "
+    "rate of basic pay for level II of the Executive Schedule under section 5313 of title 5, United States "
+    "Code, including any adjustment to such rate after the date of this Order."
+)
+TIER_REFERENCE_INSTRUMENT_ROWS = {
+    "exec-dept-doc-noaa-deputy-administrator": (
+        "Deputy Administrator", "Deputy Administrator of the National Oceanic and Atmospheric Administration",
+        "Reorganization Plan No. 4 of 1970", "reorganization-plan-no-4-of-1970", "§2(c)", "IV",
+        "There shall be in the Administration a Deputy Administrator of the National Oceanic and Atmospheric "
+        "Administration who shall be appointed by the President, by and with the advice and consent of the "
+        "Senate, and shall be compensated at the rate now or hereafter provided for Level IV of the Executive "
+        "Schedule Pay Rates (5 U.S.C. 5315).",
+        None,
+    ),
+    "exec-dept-doc-noaa-chief-scientist": (
+        "Chief Scientist", "Chief Scientist of the National Oceanic and Atmospheric Administration",
+        "Reorganization Plan No. 4 of 1970", "reorganization-plan-no-4-of-1970", "§2(d)", "V",
+        "There shall be in the Administration a Chief Scientist of the National Oceanic and Atmospheric "
+        "Administration who shall be appointed by the President and shall be compensated at the rate now or "
+        "hereafter provided for Level V of the Executive Schedule Pay Rates (5 U.S.C. 5316).",
+        None,
+    ),
+    "exec-dept-doc-deputy-secretary-of-department-of-commerce": (
+        "Deputy Secretary of Department of Commerce", "Deputy Secretary of Commerce",
+        "Reorganization Plan No. 3 of 1979", "reorganization-plan-no-3-of-1979", "§2(b)(1)", "II",
+        'There shall be in the Department of Commerce (hereinafter referred to as the "Department") a Deputy '
+        "Secretary appointed by the President, by and with the advice and consent of the Senate. The Deputy "
+        "Secretary shall receive compensation at the rate payable for Level II of the Executive Schedule "
+        "[5 U.S.C. 5313], and shall perform such duties and exercise such powers as the Secretary may from "
+        "time to time prescribe.",
+        None,
+    ),
+    "leg-senate-admin-secretary-secretary-of-the-senate": (
+        "Secretary of the Senate", "Secretary of the Senate",
+        "Order of the President pro tempore of the Senate of March 25, 2024",
+        "order-of-the-president-pro-tempore-2024-03-25", "sec. 2(a)", "II",
+        _SENATE_ORDER_SENTENCE, _SENATE_ORDER_DEFINITION,
+    ),
+    "leg-senate-admin-saa-sergeant-at-arms": (
+        "Sergeant at Arms", "Sergeant at Arms and Doorkeeper of the Senate",
+        "Order of the President pro tempore of the Senate of March 25, 2024",
+        "order-of-the-president-pro-tempore-2024-03-25", "sec. 2(a)", "II",
+        _SENATE_ORDER_SENTENCE, _SENATE_ORDER_DEFINITION,
+    ),
+    "leg-house-clerk-clerk-of-the-house": (
+        "Clerk of the House", "Clerk of the House of Representatives",
+        "Order of the Speaker of the House of Representatives of January 17, 2025",
+        "order-of-the-speaker-2025-01-17", "sec. 1(a)", "II", _HOUSE_ORDER_SENTENCE, None,
+    ),
+    "leg-house-cao-chief-administrative-officer": (
+        "Chief Administrative Officer", "Chief Administrative Officer of the House of Representatives",
+        "Order of the Speaker of the House of Representatives of January 17, 2025",
+        "order-of-the-speaker-2025-01-17", "sec. 1(a)", "II", _HOUSE_ORDER_SENTENCE, None,
+    ),
+}
 TIER_REFERENCE_COMPOSED_ROWS = {
     "exec-dept-ed-ies-commissioner-national-center-for-education-research-ncer",
     "exec-dept-ed-ies-commissioner-national-center-for-education-evaluation-ncee",
@@ -4117,8 +4531,12 @@ def tier_reference_pay_violations(node, pay, today, label, tree_parent_name=None
     identification = pay.get("identification") if isinstance(pay.get("identification"), dict) else {}
     row = TIER_REFERENCE_ROWS.get(node_id)
     minus_row = TIER_REFERENCE_MINUS_ROWS.get(node_id)
+    instrument_row = TIER_REFERENCE_INSTRUMENT_ROWS.get(node_id)
+    instrument_id = None
     arithmetic = pay.get("arithmetic")
     minus = None
+    if instrument_row is None and pay.get("instrument") is not None:
+        say("names an instrument outside the Code's sections on a post no instrument row prices")
     if minus_row is not None:
         node_name, office, citation, fixture, sentence, ref_id, minus = minus_row
         ref_row = TIER_REFERENCE_ROWS.get(ref_id)
@@ -4169,6 +4587,48 @@ def tier_reference_pay_violations(node, pay, today, label, tree_parent_name=None
             say("does not quote the sentence of {} that sets the {}'s pay it is computed from".format(ref_citation, ref_office))
         if via_ref is not None and " … ".join(via_ref[2]) not in quoted:
             say("does not quote {}, the second statute the {}'s level rests on".format(via_ref[0], ref_office))
+    elif instrument_row is not None:
+        # An instrument the Code prints outside its sections (a Reorganization
+        # Plan, a chamber's pay order): keyed by id, the sentence re-read from
+        # that one instrument, the instrument named, dated and attributed as
+        # printed, and -- for a pay order -- the later-order caution.
+        node_name, office, citation, instrument_id, subsection, level, sentence, definition = instrument_row
+        percent = 0
+        fixture = None
+        if str(pay.get("method") or "") != TIER_REFERENCE_METHOD:
+            say("prices an instrument row under method {!r}, not {!r}".format(pay.get("method"), TIER_REFERENCE_METHOD))
+        if canonical_key(node.get("name")) != canonical_key(node_name):
+            say("is now called {!r}, not {!r}, the name its row was written against".format(node.get("name"), node_name))
+        if identification.get("kind") != "reviewed_row" or str(identification.get("nodeName") or "") != node_name:
+            say("does not identify itself as the reviewed row for {!r}".format(node_name))
+        if str(pay.get("office") or "") != office or str(identification.get("office") or "") != office:
+            say("names office {!r}; the row is {!r}".format(pay.get("office"), office))
+        if arithmetic is not None:
+            say("carries arithmetic on a row whose instrument states the level's rate outright")
+        if identification.get("statuteIdentifies"):
+            say("quotes an identifying sentence on a row that has none")
+        if definition is not None:
+            if str(identification.get("instrumentDefines") or "") != definition:
+                say("prices from {}'s defined term without quoting the instrument's own definition".format(citation))
+            else:
+                problem = notes_quote_problem(instrument_id, definition)
+                if problem is not None:
+                    say("rests on a definition {}: {}".format(citation, problem))
+        elif identification.get("instrumentDefines"):
+            say("quotes a definition on a row whose instrument needs none")
+        notes_instrument_block_violations(pay.get("instrument"), instrument_id, "its pay", say)
+        caution = notes_instrument_caution(instrument_id)
+        instrument_documents = [d for d in (pay.get("documents") or []) if isinstance(d, dict)
+                                and str(d.get("instrumentName") or "") == NOTES_INSTRUMENTS[instrument_id][3]]
+        if len(instrument_documents) != 1:
+            say("does not list {} among its documents by name".format(citation))
+        else:
+            if str(instrument_documents[0].get("citation") or "") != "{}, {}".format(citation, subsection):
+                say("cites the instrument as {!r}, not {!r}".format(
+                    instrument_documents[0].get("citation"), "{}, {}".format(citation, subsection)))
+            if caution is not None and str(instrument_documents[0].get("laterOrderCaution") or "") != caution:
+                say("lists {} as a document without the caution that a later order may have changed it".format(citation))
+        expected_documents = 2
     elif row is not None:
         # A seventh element is the percentage the row's statute adds to the
         # level's rate (42 U.S.C. 12651c(b): "plus 3 percent", the Inspector
@@ -4266,11 +4726,16 @@ def tier_reference_pay_violations(node, pay, today, label, tree_parent_name=None
         say("cites {!r}; this block's statute is {!r}".format(pay.get("statute"), citation))
     if str(pay.get("statuteQuote") or "") != sentence:
         say("quotes a sentence that is not the one {} prints for this rule".format(citation))
-    operative = uscode_operative_text(US_CODE_BASIS_FIXTURE_DIR / fixture)
-    if not operative:
-        say("cites {!r}, whose operative text this gate cannot separate from its notes".format(fixture))
-    elif sentence not in operative:
-        say("rests on a sentence {} does not print in its operative text".format(citation))
+    if instrument_id is not None:
+        problem = notes_quote_problem(instrument_id, sentence)
+        if problem is not None:
+            say("rests on {}: {}".format(citation, problem))
+    else:
+        operative = uscode_operative_text(US_CODE_BASIS_FIXTURE_DIR / fixture)
+        if not operative:
+            say("cites {!r}, whose operative text this gate cannot separate from its notes".format(fixture))
+        elif sentence not in operative:
+            say("rests on a sentence {} does not print in its operative text".format(citation))
     if str(pay.get("level") or "") != level:
         say("prices level {!r}; {} names {!r}".format(pay.get("level"), citation, level))
     if pay.get("percent") != percent:
@@ -8762,8 +9227,8 @@ def main(argv):
               "{:,} are members of a counted class the Code places without naming them ({:,} classes, {:,} members mirrored)".format(
                   len(schedule_paid), US_CODE_SECTIONS[0], US_CODE_SECTIONS[-1],
                   ", ".join("{} {}".format(k, sched_levels[k]) for k in ("I", "II", "III", "IV", "V") if sched_levels.get(k)) or "none",
-                  len(US_CODE_EXECUTIVE_SCHEDULE) + len(US_CODE_REVIEWED_IDENTIFICATIONS) + sum(len(c["members"]) for c in US_CODE_COUNTED_CLASSES.values()),
-                  len(reviewed_paid), len(US_CODE_REVIEWED_IDENTIFICATIONS),
+                  len(US_CODE_EXECUTIVE_SCHEDULE) + len(US_CODE_REVIEWED_IDENTIFICATIONS) + len(US_CODE_REVIEWED_INSTRUMENT_IDENTIFICATIONS) + sum(len(c["members"]) for c in US_CODE_COUNTED_CLASSES.values()),
+                  len(reviewed_paid), len(US_CODE_REVIEWED_IDENTIFICATIONS) + len(US_CODE_REVIEWED_INSTRUMENT_IDENTIFICATIONS),
                   len(counted_paid), len(US_CODE_COUNTED_CLASSES), sum(len(c["members"]) for c in US_CODE_COUNTED_CLASSES.values())))
     statutory_paid = [n for n in nodes if isinstance(n.get("positionStatutoryPay"), dict)]
     by_source = Counter(str(n["positionStatutoryPay"].get("source") or "?") for n in statutory_paid)
@@ -8797,6 +9262,14 @@ def main(argv):
           "Level III plus 3 percent, arithmetic no document prints); 0 documents state any figure".format(
               len(reference_paid), len(reference_paid) - len(reference_igs), len(reference_via), len(reference_minus),
               len(reference_igs)))
+    reference_instruments = Counter(
+        str(n["positionTierReferencePay"]["instrument"].get("kind") or "?") for n in reference_paid
+        if isinstance(n["positionTierReferencePay"].get("instrument"), dict))
+    print("                         {:,} of them from an instrument the Code prints OUTSIDE its sections, read one "
+          "instrument at a time ({}; {:,} rows mirrored by id; every pay-order record carries the caution that a "
+          "later order may have changed it)".format(
+              sum(reference_instruments.values()), dict(reference_instruments) or "none",
+              len(TIER_REFERENCE_INSTRUMENT_ROWS)))
     military_paid = [n for n in nodes if isinstance(n.get("positionMilitaryPay"), dict)]
     military_by_grade = [n for n in military_paid
                          if (n["positionMilitaryPay"].get("identification") or {}).get("kind") == MILITARY_PAY_KIND_GRADE]

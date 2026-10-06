@@ -538,7 +538,7 @@ function describePay(node) {
         schedule.countedClass && typeof schedule.countedClass === "object"
           ? ` That is a counted class of ${schedule.countedClass.statedPosts} offices the Code names none of; this post is priced as one of them on its own name ("${schedule.countedClass.singular}") and its place inside ${schedule.countedClass.scopeName || schedule.countedClass.scopeId}, a reviewed membership (${schedule.countedClass.membersInGraph} of the ${schedule.countedClass.statedPosts} are in this graph).${schedule.identification && schedule.identification.basisCitation ? ` ${schedule.identification.basisCitation} composes the class: "${schedule.identification.basisQuote || ""}".` : " No statute composing the class has been read here."}${schedule.countedClass.namedAs ? ` It also names this office: "${schedule.countedClass.namedAs}".` : ""}`
           : schedule.identification && typeof schedule.identification === "object"
-          ? ` That title is not this node's name: a reviewed identification — ${schedule.identification.basis || "no stated basis"}; ${schedule.identification.basisCitation || "the basis statute"} prints "${schedule.identification.basisQuote || ""}".`
+          ? ` That title is not this node's name: a reviewed identification — ${schedule.identification.basis || "no stated basis"}; ${schedule.identification.basisCitation || "the basis statute"} prints "${schedule.identification.basisQuote || ""}".${instrumentNote({ instrument: schedule.identification.basisInstrument })}`
           : ""
       }${schedule.classTitle === true ? " The Code's title is a class title placing every member of the body at that level." : ""} A statutory rate of basic pay, not what the holder receives.${holdersNote(schedule)}${payDocuments(schedule)}`,
     });
@@ -645,6 +645,18 @@ function describePay(node) {
 // as `ui.js` appends it to every pay block in the panel. One sentence, the
 // same scale, so a reader comparing two rows in this view is comparing the
 // same thing.
+// Since 2026-10-07: an instrument the Code prints outside its sections (a
+// Reorganization Plan, a chamber's pay order) is named with its issuer and
+// date, and a pay order's later-order caution is printed beside the figure.
+function instrumentNote(block) {
+  const instrument = block && block.instrument && typeof block.instrument === "object" ? block.instrument : null;
+  if (!instrument) return "";
+  const defines = block.identification && block.identification.instrumentDefines
+    ? ` It defines the term: "${String(block.identification.instrumentDefines).trim()}"` : "";
+  const caution = instrument.laterOrderCaution ? ` ${String(instrument.laterOrderCaution).trim()}` : "";
+  return ` That is not a section of the Code: it is ${instrument.name || "an instrument"}, issued by ${instrument.issuer || "its issuer"} on ${instrument.date || "an unrecorded date"}, printed in ${instrument.printedIn || "the Code"}.${defines}${caution}`;
+}
+
 function holdersNote(block) {
   const holders = block && typeof block === "object" ? block.holders : null;
   if (!holders || typeof holders !== "object") return "";

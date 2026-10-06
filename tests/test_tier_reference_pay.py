@@ -33,6 +33,7 @@ from data_pipeline.verification.tier_reference_pay import (
     PAY_SOURCE,
     IES_COMPOSITION,
     TIER_REFERENCE_PROVISIONS,
+    INSTRUMENT_PROVISIONS,
     apply_pay_evidence,
     build_records,
     parse_establishments,
@@ -577,7 +578,10 @@ class BuildTests(unittest.TestCase):
         self.assertEqual("stands for several posts", report["refused"]["exec-ind-epa-inspector-general-bench"])
         # The reviewed rows whose nodes this fixture tree does not carry are
         # refused for that and nothing else.
-        self.assertEqual({node_id: "node not in the graph" for node_id in TIER_REFERENCE_PROVISIONS
+        # 2026-10-07: the instrument rows (Reorganization Plans, the chambers'
+        # pay orders; tests/test_notes_instruments.py) name nodes this tree
+        # does not carry either, and are refused for that alone.
+        self.assertEqual({node_id: "node not in the graph" for node_id in {**TIER_REFERENCE_PROVISIONS, **INSTRUMENT_PROVISIONS}
                           if node_id not in PRICED_IN_BASE_TREE},
                          {k: v for k, v in report["refused"].items() if k != "exec-ind-epa-inspector-general-bench"})
         # 13 since 2026-10-06: the NOAA Administrator and the Archivist. 20
@@ -1188,7 +1192,6 @@ class PublishedGraphTests(unittest.TestCase):
         # GAO's Inspectors General ($1,500, $1,000, $5,000) and the CBO's
         # Deputy Director ($1,000 below the Director). None carried a pay
         # field before. (This count holds only once the graph is regenerated.)
-        self.assertEqual(52, len(priced), sorted(priced))
         for node_id, figure in MINUS_FIGURES.items():
             block = priced[node_id][FIELD]
             self.assertEqual(figure, block["amount"], node_id)
@@ -1200,6 +1203,18 @@ class PublishedGraphTests(unittest.TestCase):
             self.assertEqual(0, block["verification"]["documentsStatingTheFigure"], node_id)
         self.assertEqual("2 U.S.C. 4575(f)", priced[CBO_DIRECTOR_ID][FIELD]["viaStatute"])
         self.assertEqual(EXECUTIVE_SCHEDULE_RATES["II"], priced[CBO_DIRECTOR_ID][FIELD]["amount"])
+        # 59 with the seven instrument rows below (same day, the reader).
+        self.assertEqual(59, len(priced), sorted(priced))
+        # 54 since 2026-10-07 (passes only after the coordinator's regenerate):
+        # seven posts whose pay an instrument the Code prints outside its
+        # sections sets -- NOAA's Deputy Administrator and Chief Scientist
+        # (Reorganization Plan No. 4 of 1970), the Deputy Secretary of
+        # Commerce (No. 3 of 1979), the Secretary of the Senate and the
+        # Senate's Sergeant at Arms (the Order of the President pro tempore of
+        # March 25, 2024), the Clerk and the CAO of the House (the Order of
+        # the Speaker of January 17, 2025). None carried a pay field before.
+        for node_id in INSTRUMENT_PROVISIONS:
+            self.assertIn(node_id, priced)
         for added in ("exec-dept-dhs-usss-chief-uniformed-division",
                       "exec-dept-doe-nnsa-administrator-nnsa",
                       NOAA_ID,
@@ -1235,7 +1250,7 @@ class PublishedGraphTests(unittest.TestCase):
                 # Manual is published on the same host. A Code granule may not.
                 self.assertFalse(any(is_us_code_document_url(u) or str(u) == TIER_REFERENCE_TABLE_URL
                                      for u in node.get("sourceUrls") or []))
-                if node_id not in TIER_REFERENCE_PROVISIONS:
+                if node_id not in TIER_REFERENCE_PROVISIONS and node_id not in INSTRUMENT_PROVISIONS:
                     self.assertIn(node[FIELD]["identification"]["establishment"], establishments)
         # The stamped Defense-agency IGs, the DFEs', the Library's and the
         # CIA's are not among them. (The GAO's left this list on 2026-10-07:
