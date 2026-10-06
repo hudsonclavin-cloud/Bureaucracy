@@ -2969,6 +2969,270 @@ def vacancy_grade_pay_violations(node, pay, listing, label):
     return out
 
 
+# ---------------------------------------------------------------------------
+# Who pays a post, where committed official documents say it is not the
+# federal government (data_pipeline/verification/employment_status.py, since
+# 2026-10-07, the owner's decision). Three documents: NETL's own page says
+# DOE operates 17 laboratories and 16 are contractor-operated; DOE's index
+# labels the 17 by name; 48 CFR part 970 says the contractors managing and
+# operating DOE's laboratories set their employees' compensation and that
+# DOE finances the contracts. Everything below is mirrored by hand and
+# re-read from the committed bytes with a reading of this file's own, and
+# tests/test_employment_status.py pins each mirror equal to the module.
+# ---------------------------------------------------------------------------
+
+EMPLOYER_FIELD = "positionEmployer"
+EMPLOYER_KIND = "contractor_operated_laboratory"
+EMPLOYER_METHOD = "laboratory_doe_states_is_contractor_operated"
+#: Mirrors the keys employment_status.apply_employment_status writes.
+EMPLOYER_BLOCK_KEYS = frozenset({
+    "federallyPaid", "kind", "method", "laboratoryId", "laboratoryName", "laboratoryListedAs",
+    "headline", "notEstablished", "documents", "documentCount", "readOn",
+})
+EMPLOYER_FIXTURE_DIR = PROJECT_ROOT / "tests" / "fixtures" / "doe"
+EMPLOYER_NETL_ID = "exec-dept-doe-national-energy-technology-laboratory"
+EMPLOYER_NETL_LISTED_AS = "National Energy Technology Laboratory"
+EMPLOYER_LABORATORY_COUNT = 17
+#: Mirrors employment_status.CONTRACTOR_OPERATED_LABS: node id -> (the name
+#: the row was written against, the label DOE's index prints).
+EMPLOYER_LABS = {
+    "exec-dept-doe-ames-national-laboratory": ("Ames National Laboratory", "Ames National Laboratory"),
+    "exec-dept-doe-argonne-national-laboratory": ("Argonne National Laboratory", "Argonne National Laboratory"),
+    "exec-dept-doe-brookhaven-national-laboratory": ("Brookhaven National Laboratory", "Brookhaven National Laboratory"),
+    "exec-dept-doe-fermi-national-accelerator-laboratory": (
+        "Fermi National Accelerator Laboratory", "Fermi National Accelerator Laboratory"),
+    "exec-dept-doe-idaho-national-laboratory": ("Idaho National Laboratory", "Idaho National Laboratory"),
+    "exec-dept-doe-lawrence-berkeley-national-laboratory": (
+        "Lawrence Berkeley National Laboratory", "Lawrence Berkeley National Laboratory"),
+    "exec-dept-doe-lawrence-livermore-national-laboratory": (
+        "Lawrence Livermore National Laboratory", "Lawrence Livermore National Laboratory"),
+    "exec-dept-doe-los-alamos-national-laboratory": ("Los Alamos National Laboratory", "Los Alamos National Laboratory"),
+    "exec-dept-doe-national-renewable-energy-laboratory": (
+        "National Laboratory of the Rockies (NLR)", "National Laboratory of the Rockies"),
+    "exec-dept-doe-oak-ridge-national-laboratory": ("Oak Ridge National Laboratory", "Oak Ridge National Laboratory"),
+    "exec-dept-doe-pacific-northwest-national-laboratory": (
+        "Pacific Northwest National Laboratory", "Pacific Northwest National Laboratory"),
+    "exec-dept-doe-princeton-plasma-physics-laboratory": (
+        "Princeton Plasma Physics Laboratory", "Princeton Plasma Physics Laboratory"),
+    "exec-dept-doe-sandia-national-laboratories": ("Sandia National Laboratories", "Sandia National Laboratories"),
+    "exec-dept-doe-savannah-river-national-laboratory": (
+        "Savannah River National Laboratory", "Savannah River National Laboratory"),
+    "exec-dept-doe-slac-national-accelerator-laboratory": (
+        "SLAC National Accelerator Laboratory", "SLAC National Accelerator Laboratory"),
+    "exec-dept-doe-thomas-jefferson-national-accelerator-facility": (
+        "Thomas Jefferson National Accelerator Facility", "Thomas Jefferson National Accelerator Facility"),
+}
+#: Mirrors employment_status.DOCUMENTS: role -> (fixture, the address it was
+#: fetched from, the title the block prints, the date it prints or None,
+#: [(CFR section or None, quoted text)]). Order is the block's.
+EMPLOYER_DOCUMENTS = (
+    ("operator", "netl_operating_model.html", "https://netl.doe.gov/node/12519",
+     "The NETL Unique Advantage of Being a Government-Owned, Government-Operated Laboratory", "May 22, 2023", (
+         (None, "The U.S. Department of Energy operates 17 national laboratories. NETL is the only government-owned, "
+                "government-operated facility. The other 16 are government-owned, contractor-operated."),
+     )),
+    ("laboratories", "national_laboratories.html", "https://www.energy.gov/national-laboratories",
+     "National Laboratories (energy.gov)", None, (
+         (None, "The Energy Department's 17 National Labs"),
+         (None, "NETL is government-owned and government-operated (GOGO)"),
+     )),
+    ("regulation", "dear_48_cfr_970_govinfo2025.xml",
+     "https://www.govinfo.gov/content/pkg/CFR-2025-title48-vol5/xml/CFR-2025-title48-vol5-part970.xml",
+     "48 CFR part 970 (Department of Energy Acquisition Regulation)", None, (
+         ("970.2770-3", "DOE has negotiated technology transfer clauses with the contractors managing and operating "
+                        "its laboratories."),
+         ("970.0371-7", "Employees of a management and operating contractor are entitled to the same rights and "
+                        "privileges with respect to outside employment as other citizens."),
+         ("970.3102-506", "Generally, the compensation paid individual employees should be left to the judgment of "
+                          "contractors subject to the limitations of DOE-approved compensation policies, programs, "
+                          "classification systems, and schedules"),
+         ("970.3102-370", "The contracts are totally financed by DOE advance payments"),
+     )),
+)
+#: Mirrors employment_status's three sentence templates. The panel prints
+#: them as the reason, so an unmirrored sentence would be a free channel.
+EMPLOYER_HEADLINE = (
+    "Not on a federal pay schedule: {laboratory} is one of the 16 DOE laboratories operated by a contractor "
+    "(DOE, NETL page, May 22, 2023)."
+)
+EMPLOYER_NOT_ESTABLISHED = (
+    "No document here names who holds this post or says every holder is the contractor's employee, and the "
+    "title is a template every DOE laboratory node carries. 'Not on a federal pay schedule' means not paid as a federal "
+    "employee on a federal pay schedule; the money is DOE's, through the contract."
+)
+#: Every field a pay document writes on a post: the three classes declared
+#: further down (INCUMBENCY_, OFFICE_RATE_ and UNIFORM_ROSTER_PAY_FIELDS),
+#: spelled out because they are defined after this point; a test pins the
+#: two equal.
+EMPLOYER_PAY_FIELDS = (
+    "positionPayRate", "positionGradePay", "positionCurrentPay", "positionSchedulePay",
+    "positionStatutoryPay", "positionDerivedPay", "positionTierPay", "positionTierReferencePay",
+    "positionMilitaryPay", "positionReportedPay",
+)
+_EMPLOYER_READING = {}
+
+
+def _employer_html_text(markup):
+    import html as _html
+
+    markup = re.sub(r"(?is)<(script|style|noscript|template)\b.*?</\1\s*>", " ", markup)
+    return re.sub(r"\s+", " ", _html.unescape(re.sub(r"<[^>]+>", " ", markup))).strip()
+
+
+def employer_reading(directory=None):
+    """The three documents as this gate reads them: digest recomputed against
+    the fetch's own record, every mirrored quote re-found (a CFR quote inside
+    the one SECTION whose SECTNO it names), and DOE's laboratory labels.
+    Returns {"documents": {role: {...}}, "labels": [...], "problems": [...]}."""
+    import hashlib as _hashlib
+    import html as _html
+
+    directory = Path(directory) if directory else EMPLOYER_FIXTURE_DIR
+    key = str(directory)
+    if key in _EMPLOYER_READING:
+        return _EMPLOYER_READING[key]
+    problems = []
+    documents = {}
+    labels = []
+    for role, fixture, url, title, dated, quotes in EMPLOYER_DOCUMENTS:
+        path = directory / fixture
+        try:
+            raw = path.read_bytes()
+            meta = json.loads(path.with_name(path.name + ".meta.json").read_text(encoding="utf-8"))
+        except (OSError, ValueError) as error:
+            problems.append("{}: unreadable ({})".format(fixture, error))
+            continue
+        digest = _hashlib.sha256(raw).hexdigest()
+        if digest != str(meta.get("sha256") or ""):
+            problems.append("{}: sha256 {} is not the {} its fetch recorded".format(fixture, digest, meta.get("sha256")))
+        if str(meta.get("url") or "") != url or str(meta.get("final_url") or "") != url:
+            problems.append("{}: fetched from {}, not the mirrored {}".format(fixture, meta.get("final_url"), url))
+        markup = raw.decode("utf-8", errors="replace")
+        if fixture.endswith(".xml"):
+            sections = {}
+            for block in re.findall(r"<SECTION>(.*?)</SECTION>", markup, re.S):
+                number = re.search(r"<SECTNO>\s*(.*?)\s*</SECTNO>", block, re.S)
+                text = re.sub(r"\s+", " ", _html.unescape(re.sub(r"<[^>]+>", " ", block))).strip()
+                sections.setdefault(number.group(1).strip() if number else "", []).append(text)
+            for section, quote in quotes:
+                found = sections.get(section) or []
+                if len(found) != 1 or quote not in found[0]:
+                    problems.append("48 CFR {} does not print, once, in that section: {!r}".format(section, quote[:80]))
+        else:
+            text = _employer_html_text(markup)
+            for _section, quote in quotes:
+                if quote not in text:
+                    problems.append("{} does not print: {!r}".format(fixture, quote[:80]))
+            if dated and (title not in text or dated not in text):
+                problems.append("{} does not print the title and date the block cites it by".format(fixture))
+            if role == "laboratories":
+                labels = [
+                    re.sub(r"\s+", " ", _html.unescape(re.sub(r"<[^>]+>", " ", inner))).strip()
+                    for attrs, inner in re.findall(r"<button([^>]*)>(.*?)</button>", markup, re.S)
+                    if re.search(r'class="[^"]*\busa-accordion__button\b', attrs)
+                    and re.search(r'aria-controls="energy-accordion', attrs)
+                ]
+        documents[role] = {"url": url, "sha256": digest, "recordedSha256": meta.get("sha256"),
+                           "fetchedAt": meta.get("fetched_at"), "quotes": [q for _s, q in quotes],
+                           "sections": [s for s, _q in quotes], "title": title, "dated": dated}
+    expected = {listed for _name, listed in EMPLOYER_LABS.values()} | {EMPLOYER_NETL_LISTED_AS}
+    if len(labels) != EMPLOYER_LABORATORY_COUNT or set(labels) != expected:
+        problems.append("DOE's index labels {} laboratories ({}); the mirror expects exactly the {}".format(
+            len(labels), sorted(set(labels) ^ expected), EMPLOYER_LABORATORY_COUNT))
+    reading = {"documents": documents, "labels": labels, "problems": problems}
+    _EMPLOYER_READING[key] = reading
+    return reading
+
+
+def employer_violations(node, block, today, label, tree_parent_id, parent_node, reading=None):
+    """Everything that must be true of a `positionEmployer` block."""
+    out = []
+    say = lambda text: out.append("{} {}".format(label(node), text))
+    if not isinstance(block, dict):
+        say("carries a {} as its employer block".format(type(block).__name__))
+        return out
+    reading = reading if reading is not None else employer_reading()
+    for problem in reading["problems"]:
+        say("rests on a document the gate cannot read as cited: {}".format(problem))
+    if not is_post(node):
+        say("is not a post; an employer is a fact about a post")
+    if block.get("federallyPaid") is not False:
+        say("says federallyPaid {!r}; this block exists only to say false".format(block.get("federallyPaid")))
+    if block.get("kind") != EMPLOYER_KIND or block.get("method") != EMPLOYER_METHOD:
+        say("names kind/method {!r}/{!r}".format(block.get("kind"), block.get("method")))
+    # Only the keys the module writes: an extra key is text the panel or a
+    # reader could take as part of the claim with nothing checking it.
+    extra = sorted(set(block) - EMPLOYER_BLOCK_KEYS)
+    if extra:
+        say("carries keys the module never writes: {}".format(", ".join(extra)))
+    if tree_parent_id == EMPLOYER_NETL_ID:
+        say("sits on a post of NETL, the one government-operated laboratory; its posts are federal")
+    elif tree_parent_id not in EMPLOYER_LABS:
+        say("sits under {!r}, which is not one of the sixteen contractor-operated laboratories".format(tree_parent_id))
+    else:
+        node_name, listed_as = EMPLOYER_LABS[tree_parent_id]
+        parent_name = str((parent_node or {}).get("name") or "")
+        if parent_name != node_name:
+            say("sits under {!r}, renamed from the {!r} the identification was reviewed against".format(parent_name, node_name))
+        if listed_as not in reading["labels"]:
+            say("names a laboratory DOE's index does not label: {!r}".format(listed_as))
+        if block.get("laboratoryListedAs") != listed_as:
+            say("quotes DOE's label {!r}; the reviewed label is {!r}".format(block.get("laboratoryListedAs"), listed_as))
+        if block.get("laboratoryName") != parent_name:
+            say("names laboratory {!r}; the tree's parent is {!r}".format(block.get("laboratoryName"), parent_name))
+        if block.get("headline") != EMPLOYER_HEADLINE.format(laboratory=parent_name):
+            say("publishes a headline sentence that is not the mirrored one")
+    if block.get("laboratoryId") != tree_parent_id:
+        say("names laboratory {!r}; the tree gives it parent {!r}".format(block.get("laboratoryId"), tree_parent_id))
+    if block.get("notEstablished") != EMPLOYER_NOT_ESTABLISHED:
+        say("does not say in the mirrored words what no document here establishes")
+    present = [field for field in EMPLOYER_PAY_FIELDS if field in node]
+    if present:
+        say("carries a pay claim ({}) beside a claim that no federal pay schedule applies".format(", ".join(present)))
+    if str(node.get("cost_status") or "") in ("official", "root_total", "scaled_official"):
+        say("sits beside a measured cost")
+    documents = block.get("documents")
+    roles = [str(d.get("role") or "") for d in documents if isinstance(d, dict)] if isinstance(documents, list) else []
+    if roles != [role for role, _f, _u, _t, _d, _q in EMPLOYER_DOCUMENTS]:
+        say("lists documents {!r}; the claim rests on the operator page, DOE's index and 48 CFR part 970, in that order".format(roles))
+    else:
+        for doc in documents:
+            mirror = reading["documents"].get(doc.get("role"))
+            if mirror is None:
+                continue
+            if doc.get("url") != mirror["url"]:
+                say("cites {} for the {} document; the committed one is {}".format(doc.get("url"), doc.get("role"), mirror["url"]))
+            if doc.get("sha256") != mirror["sha256"] or doc.get("sha256") != mirror["recordedSha256"]:
+                say("cites digest {} for the {} document; the committed bytes are {}".format(doc.get("sha256"), doc.get("role"), mirror["sha256"]))
+            if doc.get("fetchedAt") != mirror["fetchedAt"]:
+                say("dates the {} document {!r}; its fetch recorded {!r}".format(doc.get("role"), doc.get("fetchedAt"), mirror["fetchedAt"]))
+            doc_extra = sorted(set(doc) - {"role", "title", "url", "sha256", "fetchedAt", "dated", "quotes"})
+            if doc_extra:
+                say("cites the {} document with keys the module never writes: {}".format(doc.get("role"), ", ".join(doc_extra)))
+            if doc.get("title") != mirror["title"] or doc.get("dated") != mirror["dated"]:
+                say("names the {} document {!r} ({!r}); the mirror cites it as {!r} ({!r})".format(
+                    doc.get("role"), doc.get("title"), doc.get("dated"), mirror["title"], mirror["dated"]))
+            quotes = doc.get("quotes") if isinstance(doc.get("quotes"), list) else []
+            texts = [str(q.get("text") or "") for q in quotes if isinstance(q, dict)]
+            sections = [q.get("section") for q in quotes if isinstance(q, dict)]
+            if any(not isinstance(q, dict) or set(q) - {"text", "section"} for q in quotes):
+                say("quotes the {} document with keys the module never writes".format(doc.get("role")))
+            if texts != mirror["quotes"] or sections != mirror["sections"]:
+                say("quotes the {} document in words or sections the mirror does not carry".format(doc.get("role")))
+    urls = {str(d.get("url") or "") for d in documents if isinstance(d, dict)} if isinstance(documents, list) else set()
+    if block.get("documentCount") != len(urls) or len(urls) != len(EMPLOYER_DOCUMENTS):
+        say("counts {!r} documents; it lists {}".format(block.get("documentCount"), len(urls)))
+    mirrored_urls = {url for _r, _f, url, _t, _d, _q in EMPLOYER_DOCUMENTS}
+    leaked = sorted(u for u in (node.get("sourceUrls") or []) if str(u) in mirrored_urls)
+    if leaked:
+        say("puts an employer document among its own sources: {}".format(", ".join(leaked)))
+    if str(node.get("verificationMethod") or "") == EMPLOYER_METHOD or "contractor_operated" in str(node.get("placementMethod") or ""):
+        say("claims a verification or a placement from documents that name no post")
+    read_on = str(block.get("readOn") or "")
+    if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", read_on) or read_on > today:
+        say("is dated {!r}, which is not a past ISO date".format(read_on))
+    return out
+
 
 def grade_pay_violations(node, pay, listing, today, label):
     """Everything that must be true of a base-pay RANGE looked up from a
@@ -8828,6 +9092,27 @@ def main(argv):
         "a USAJOBS vacancy listing is a reviewed title family's, on a member of it, resting on at least two committed "
         "announcements that all print one pay plan and grade, verifying nothing, with no salary and no contact",
         bad_vacancy_listing,
+    )
+
+    # Who pays a post, where committed documents say it is not the federal
+    # government (employment_status.py). The parent is read off the tree this
+    # gate walks, never off `parentId`.
+    bad_employer = []
+    employer_count = 0
+    employer_documents = employer_reading()
+    for node in nodes:
+        if EMPLOYER_FIELD not in node:
+            continue
+        employer_count += 1
+        _e_parent_id = tree_parents.get(str(node.get("id") or ""))
+        bad_employer.extend(employer_violations(
+            node, node.get(EMPLOYER_FIELD), today, label, _e_parent_id, by_id.get(_e_parent_id), employer_documents))
+    gate.check(
+        "a 'not federally paid' block sits on a post directly under one of DOE's sixteen contractor-operated "
+        "laboratories (never NETL's), rests on the three committed documents as quoted, and carries no pay, no "
+        "cost and no source",
+        bad_employer,
+        " ({} posts)".format(employer_count),
     )
 
     # A published disagreement is a claim like any other: it must name both

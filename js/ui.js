@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20261007e";
-import { loadMergedGraphData } from "./graphLoader.js?v=20261007e";
+import { createGovernmentGraph } from "./graph.js?v=20261007f";
+import { loadMergedGraphData } from "./graphLoader.js?v=20261007f";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -2639,6 +2639,52 @@ const PAY_STAND_IN_ORDER = [
   ["tier", (node) => tierPayOf(node)],
 ];
 
+// A post whose employer committed documents say is not the federal
+// government (employment_status.py, since 2026-10-07): a post of one of
+// DOE's sixteen contractor-operated laboratories. Only where no pay document
+// prices the post and no cost is measured for it; the gate refuses the block
+// beside either, and this reads it the same way so a stale copy never wins.
+function employerOf(node) {
+  const block = node && node.positionEmployer;
+  if (!block || typeof block !== "object") return null;
+  if (block.federallyPaid !== false || block.kind !== "contractor_operated_laboratory") return null;
+  if (isCostIdentifiedForTheNode(node)) return null;
+  for (const [, read] of PAY_STAND_IN_ORDER) {
+    if (read(node)) return null;
+  }
+  return block;
+}
+
+function buildEmployerLines(block) {
+  const host = document.createElement("div");
+  host.id = "info-employer";
+  host.className = "info-cost-note";
+  const head = document.createElement("strong");
+  head.textContent = String(block.headline || "");
+  host.appendChild(head);
+  host.appendChild(document.createTextNode(` ${String(block.notEstablished || "").trim()}`));
+  // What the documents establish, in their own words rather than a
+  // paraphrase: each one linked, then its quotes verbatim (a CFR quote with
+  // the section it sits in).
+  const docs = Array.isArray(block.documents) ? block.documents.filter((d) => d && typeof d.url === "string" && /^https:\/\//.test(d.url)) : [];
+  if (docs.length) {
+    host.appendChild(document.createTextNode(` The ${docs.length} documents, in their own words:`));
+    for (const doc of docs) {
+      host.appendChild(document.createTextNode(" "));
+      const link = document.createElement("a");
+      link.href = doc.url;
+      link.target = "_blank";
+      link.rel = "noopener";
+      link.textContent = `${doc.title || doc.url}${doc.dated ? ` (${doc.dated})` : ""}`;
+      host.appendChild(link);
+      const quotes = Array.isArray(doc.quotes) ? doc.quotes.filter((q) => q && typeof q.text === "string") : [];
+      host.appendChild(document.createTextNode(`: ${quotes.map((q) => `${q.section ? `§${q.section} ` : ""}"${q.text}"`).join("; ")}.`));
+    }
+    host.appendChild(document.createTextNode(" None of them names this post, and none is a source of its existence."));
+  }
+  return host;
+}
+
 function positiveAmountBlock(block) {
   return block && typeof block === "object" && typeof block.amount === "number" && block.amount > 0 ? block : null;
 }
@@ -3183,6 +3229,14 @@ function describeCost(node) {
           payNote,
       };
     }
+    if (validation === "post_is_not_a_budget_unit" && employerOf(node)) {
+      return {
+        ...unavailable,
+        label: "No cost known; not on a federal pay schedule",
+        note:
+          "This is a post, not a unit of government, so no budget figure is shown for it. No federal pay document prices it either, and the documents below say why: the laboratory it sits in is operated by a contractor.",
+      };
+    }
     if (validation === "post_is_not_a_budget_unit") {
       return {
         ...unavailable,
@@ -3303,16 +3357,20 @@ function buildCostBlock(node) {
   // the same reason by a line naming the pay document, where there is one.
   const standIn = costStandInOf(node);
   const heading = standIn ? standInHeading(standIn) : null;
+  // A post DOE's documents say a contractor's laboratory employs: no pay
+  // document prices it and none ever will, so the headline says why rather
+  // than "Not available", and the heading is PAY because that is the claim.
+  const employer = standIn ? null : employerOf(node);
   const period = heading ? { label: heading.period, amountKind: null } : getCostPeriod(node);
   const label = document.createElement("span");
   label.className = "info-cost-label";
-  label.textContent = heading ? heading.label : coversFullYear(period.amountKind) ? "ANNUAL COST" : "COST";
+  label.textContent = heading ? heading.label : employer ? "PAY" : coversFullYear(period.amountKind) ? "ANNUAL COST" : "COST";
   head.appendChild(label);
 
   const amountText = formatCostAmount(node);
   const amount = document.createElement("span");
   amount.className = "info-cost-amount";
-  amount.textContent = amountText === null ? "Not available" : amountText;
+  amount.textContent = amountText === null ? (employer ? "Not on a federal pay schedule" : "Not available") : amountText;
   // A measured figure is printed exact — sixteen digits for the root — and
   // that stays the primary reading. Above a billion dollars a compact form is
   // set beneath it so the magnitude can be read at a glance: the same number
@@ -3367,6 +3425,7 @@ function buildCostBlock(node) {
   // statement prints beneath the unit's header, by printed name and amount.
   const headerSumLines = buildHeaderSumLines(node);
   if (headerSumLines) block.appendChild(headerSumLines);
+  if (employer && amountText === null) block.appendChild(buildEmployerLines(employer));
 
   // The estimate was always one tick away, and since 2026-10-05 the tick is
   // here too. The owner read "the costs have been disappearing" off a panel

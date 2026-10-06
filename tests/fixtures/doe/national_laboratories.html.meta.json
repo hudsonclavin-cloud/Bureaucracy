@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-10-06T16:22:54Z",
+ "url": "https://www.energy.gov/national-laboratories",
+ "status": 200,
+ "final_url": "https://www.energy.gov/national-laboratories",
+ "content_type": "text/html; charset=utf-8",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /national-laboratories",
+ "bytes": 205600,
+ "sha256": "9b09566bd343f112480b7382d794c987e003ffe0bc56e03a77b406d69fd238d6",
+ "error": null
+}
