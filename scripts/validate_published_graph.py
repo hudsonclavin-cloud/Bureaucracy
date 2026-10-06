@@ -2681,6 +2681,295 @@ def usaspending_violations(node, block, today, label):
     return out
 
 
+# ---------------------------------------------------------------------------
+# USAJOBS vacancy announcements as a LISTING of a title family's pay plan and
+# grade (data_pipeline/verification/usajobs.py, since 2026-10-07, the owner's
+# decision). Mirrored here by family, with the announcements each family rests
+# on, and re-read from the committed pages with this file's own stdlib reader,
+# which imports nothing from the module it checks. Only the overview of each
+# page is ever read -- from the main content to the "This job is open to"
+# section -- so the agency contact, a named person, is never parsed by either
+# reader; the gate keeps it out of the published blocks structurally: every
+# string the block quotes from an announcement must be the overview's own,
+# and nothing shaped like an e-mail address or a telephone number may appear.
+# The posting's Salary cell IS read here, and only so it can be refused: it is
+# the duty station's locality range, and a block carrying any of its figures
+# has published what this listing must never publish.
+USAJOBS_SOURCE = "usajobs_vacancy_announcements"
+USAJOBS_METHOD = "pay_plan_and_grade_stated_by_every_usajobs_announcement_for_the_title_family"
+USAJOBS_GRADE_PAY_METHOD = "base_range_for_the_grade_every_usajobs_announcement_for_the_title_family_states"
+USAJOBS_FIXTURE_DIR = PROJECT_ROOT / "tests" / "fixtures" / "usajobs"
+USAJOBS_MINIMUM_ANNOUNCEMENTS = 2
+#: family -> the membership rule, read off the tree, and the announcements.
+#: Only families the module LISTS are here: the Network CFO family (one
+#: announcement) and the CNO (Title 38, no national range) are declined, so a
+#: block naming either is a block on a node outside the reviewed families.
+USAJOBS_VACANCY_FAMILIES = {
+    "vamc_associate_director_administrative": {
+        "nodeName": "VAMC Associate Director (Administrative)",
+        "parentName": "VA Medical Centers",
+        "grandparentType": "VISN",
+        "payPlan": "GS",
+        "grade": "15",
+        "series": "0670",
+        "announcements": ("848110500", "848756100", "860101900", "863018500", "880101300"),
+    },
+}
+_USAJOBS_CACHE = {}
+_USAJOBS_CONTACT_SHAPES = (
+    re.compile(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}"),
+    re.compile(r"\(?\b\d{3}\)?[-.\s]\d{3}[-.]\d{4}\b"),
+    re.compile(r"(?i)mailto:|tel:"),
+)
+
+
+def _usajobs_text(fragment):
+    import html as _html
+
+    return re.sub(r"\s+", " ", _html.unescape(re.sub(r"<[^>]+>", " ", fragment))).strip()
+
+
+def usajobs_announcement(announcement_id):
+    """One committed announcement's overview, read with this file's own
+    regular expressions, or None. Digest recomputed from the bytes and
+    compared with the fetch's own record; the fetch must be of the
+    announcement's own address and must not have landed elsewhere."""
+    key = str(announcement_id)
+    if key in _USAJOBS_CACHE:
+        return _USAJOBS_CACHE[key]
+    result = None
+    path = USAJOBS_FIXTURE_DIR / "{}.html".format(key)
+    meta_path = USAJOBS_FIXTURE_DIR / "{}.html.meta.json".format(key)
+    try:
+        raw = path.read_bytes()
+        meta = json.loads(meta_path.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        raw, meta = None, None
+    url = "https://www.usajobs.gov/job/{}".format(key)
+    if (
+        raw is not None and re.fullmatch(r"\d{6,12}", key)
+        and fixture_digest(path) == str(meta.get("sha256") or "").lower()
+        and str(meta.get("url") or "") == url and str(meta.get("final_url") or "") == url
+        and int(meta.get("status") or 0) == 200 and not meta.get("error")
+    ):
+        page = raw.decode("utf-8", errors="replace")
+        start = page.find('<main id="main_content">')
+        end = page.find('id="joa-hiring-paths"', start if start >= 0 else 0)
+        overview = page[start:end] if 0 <= start < end else ""
+        if overview and not any(m in overview.casefold() for m in ("mailto:", "tel:", "agency contact")):
+            def all_of(pattern):
+                return sorted({_usajobs_text(m) for m in re.findall(pattern, overview, re.S)} - {""})
+
+            def date_of(labels):
+                found = sorted({m for label in labels for m in re.findall(
+                    re.escape(label) + r"</span>\s*([0-9/]+)\s*</div>", overview)})
+                if len(found) != 1:
+                    return None
+                month, day, year = found[0].split("/")
+                return "{}-{}-{}".format(year, month, day)
+
+            banner = {
+                field: all_of(r'class="[^"]*\b' + cls + r'\b[^"]*">(.*?)</(?:h1|div)>')
+                for field, cls in (
+                    ("title", "usajobs-joa-banner__title"), ("department", "usajobs-joa-banner__dept"),
+                    ("agency", "usajobs-joa-banner__agency"), ("hiringOrganization", "usajobs-joa-banner__hiring-organization"),
+                )
+            }
+            grades = all_of(r"Pay scale &amp; grade</dt>\s*<dd>\s*<div>(.*?)</div>")
+            series_blocks = re.findall(r"Occupations and job series</div>\s*<ul>(.*?)</ul>", overview, re.S)
+            series = sorted({_usajobs_text(li)[:4] for block in series_blocks for li in re.findall(r"<li>(.*?)</li>", block, re.S)})
+            locations = []
+            for item in re.findall(r'class="location-item[^"]*"[^>]*>\s*<div class="font-bold">(.*?)</div>', overview, re.S):
+                place = _usajobs_text(item)
+                if place and place not in locations:
+                    locations.append(place)
+            salaries = re.findall(r"\$\s*([0-9][0-9,]*(?:\.[0-9]{2})?)", " ".join(
+                _usajobs_text(m) for m in re.findall(r">Salary</dt>\s*<dd>(.*?)</dd>", overview, re.S)))
+            if all(len(v) == 1 for v in banner.values()) and len(grades) == 1:
+                result = {
+                    "id": key, "url": url, "documentSha256": fixture_digest(path),
+                    "fetchedAt": str(meta.get("fetched_at") or ""),
+                    **{field: values[0] for field, values in banner.items()},
+                    "payScaleAndGrade": grades[0],
+                    "series": series,
+                    "locations": locations,
+                    "openDate": date_of(("Open date:",)),
+                    "closeDate": date_of(("Close date:", "Closed date:", "Closing date:")),
+                    # Read only to be refused: the locality salary, as digit
+                    # strings with and without separators.
+                    "salaryFigures": sorted({s for figure in salaries for s in (figure, figure.replace(",", "").split(".")[0])}),
+                    "overview": overview,
+                    "overviewText": _usajobs_text(overview),
+                }
+    _USAJOBS_CACHE[key] = result
+    return result
+
+
+def _usajobs_strings(value):
+    """Every string and number in a block, as text."""
+    if isinstance(value, dict):
+        for item in value.values():
+            yield from _usajobs_strings(item)
+    elif isinstance(value, list):
+        for item in value:
+            yield from _usajobs_strings(item)
+    elif isinstance(value, bool) or value is None:
+        return
+    elif isinstance(value, (int, float)):
+        yield "{:.0f}".format(value) if float(value).is_integer() else str(value)
+        yield "{:,.0f}".format(value)
+    else:
+        yield str(value)
+
+
+def usajobs_leak_violations(node, block, field, announcement_ids, label):
+    """A block that carries a contact or an announcement's salary."""
+    out = []
+    say = lambda text: out.append("{} {}".format(label(node), text))
+    texts = list(_usajobs_strings(block))
+    for shape in _USAJOBS_CONTACT_SHAPES:
+        if any(shape.search(t) for t in texts):
+            say("carries a contact-shaped string in {}; no contact is ever read from an announcement".format(field))
+            break
+    for announcement_id in announcement_ids:
+        page = usajobs_announcement(announcement_id)
+        if page is None:
+            continue
+        for figure in page["salaryFigures"]:
+            if len(figure.replace(",", "")) >= 5 and any(figure in t for t in texts):
+                say("publishes {!r} in {}, a figure from announcement {}'s locality salary; the listing publishes no salary".format(
+                    figure, field, announcement_id))
+    return out
+
+
+def vacancy_listing_violations(node, listing, today, label, parent, grandparent):
+    """Everything that must be true of a USAJOBS vacancy listing."""
+    out = []
+    say = lambda text: out.append("{} {}".format(label(node), text))
+    if not isinstance(listing, dict):
+        say("positionVacancyListing {!r} is not a record".format(listing))
+        return out
+    type_text = str(node.get("type") or "").casefold()
+    if not any(word in type_text for word in ("position", "role", "office holder")):
+        say("carries a vacancy listing but is a {!r}, not a post".format(node.get("type")))
+    if node.get("representsPosts"):
+        say("carries a vacancy listing but stands for several posts")
+    if listing.get("source") != USAJOBS_SOURCE or listing.get("method") != USAJOBS_METHOD:
+        say("carries a vacancy listing from {!r} / {!r}, which this pipeline does not produce".format(
+            listing.get("source"), listing.get("method")))
+    family = USAJOBS_VACANCY_FAMILIES.get(str(listing.get("family") or ""))
+    if family is None:
+        say("carries a vacancy listing for family {!r}, which is not a reviewed family the announcements list".format(
+            listing.get("family")))
+        return out
+    # Membership, off the tree the gate is walking.
+    if (
+        str(node.get("name") or "") != family["nodeName"]
+        or not isinstance(parent, dict) or str(parent.get("name") or "") != family["parentName"]
+        or not isinstance(grandparent, dict) or str(grandparent.get("type") or "") != family["grandparentType"]
+    ):
+        say("carries the {} family's vacancy listing but is not a {!r} under {!r} in a {}".format(
+            listing.get("family"), family["nodeName"], family["parentName"], family["grandparentType"]))
+    announcements = listing.get("announcements")
+    if not isinstance(announcements, list):
+        say("names no announcements")
+        return out
+    ids = [str(a.get("id") or "") if isinstance(a, dict) else "" for a in announcements]
+    if len(ids) < USAJOBS_MINIMUM_ANNOUNCEMENTS:
+        say("rests on {} announcement(s); one posting is one vacancy, and a listing needs at least {}".format(
+            len(ids), USAJOBS_MINIMUM_ANNOUNCEMENTS))
+    if sorted(ids) != sorted(family["announcements"]) or len(set(ids)) != len(ids):
+        say("names announcements {!r}; the reviewed family rests on {!r}".format(ids, list(family["announcements"])))
+    if listing.get("announcementCount") != len(ids):
+        say("says {!r} announcements and lists {}".format(listing.get("announcementCount"), len(ids)))
+    grades_printed = set()
+    for item in announcements:
+        if not isinstance(item, dict):
+            continue
+        page = usajobs_announcement(item.get("id"))
+        if page is None:
+            say("names announcement {!r}, which is not committed, does not match its digest, or cannot be read".format(item.get("id")))
+            continue
+        grades_printed.add(page["payScaleAndGrade"])
+        for key in ("url", "documentSha256", "fetchedAt", "title", "department", "agency", "hiringOrganization",
+                    "payScaleAndGrade", "openDate", "closeDate"):
+            if str(item.get(key) or "") != str(page[key] or ""):
+                say("quotes announcement {}'s {} as {!r}; the page prints {!r}".format(
+                    page["id"], key, item.get(key), page[key]))
+        if list(item.get("locations") or []) != page["locations"]:
+            say("lists announcement {}'s locations as {!r}; the page prints {!r}".format(page["id"], item.get("locations"), page["locations"]))
+        if sorted(str(s.get("code") or "") for s in (item.get("series") or []) if isinstance(s, dict)) != page["series"]:
+            say("quotes announcement {}'s series wrongly".format(page["id"]))
+        if family["series"] not in page["series"]:
+            say("rests on announcement {}, which is not in series {}".format(page["id"], family["series"]))
+        for text in _usajobs_strings(item):
+            if not text or text.replace(",", "").isdigit() or re.fullmatch(r"\d{4}", text) or text in (
+                page["url"], page["documentSha256"], page["fetchedAt"], page["openDate"], page["closeDate"], page["id"],
+            ):
+                continue
+            # Every quoted string is the overview's own: a string from
+            # anywhere else on the page -- the contact, above all -- is
+            # refused without the gate ever having to read it.
+            if _usajobs_text(text) not in page["overviewText"]:
+                say("quotes {!r} from announcement {}, which its overview does not print".format(text[:60], page["id"]))
+    if len(grades_printed) != 1:
+        say("rests on announcements that print {!r}; a listing needs every one to print the same pay plan and grade".format(
+            sorted(grades_printed)))
+    expected_cell = "{} {}".format(family["payPlan"], family["grade"])
+    if grades_printed and grades_printed != {expected_cell}:
+        say("lists the family at {!r}; the announcements print {!r}".format(expected_cell, sorted(grades_printed)))
+    if str(listing.get("payPlan") or "") != family["payPlan"] or str(listing.get("payLevel") or "") != family["grade"]:
+        say("lists pay plan {!r} grade {!r}; the announcements print {}".format(
+            listing.get("payPlan"), listing.get("payLevel"), expected_cell))
+    if listing.get("payPlanAndLevelOnOneRow") is not True:
+        say("does not say the announcements print the pay plan and grade in one cell")
+    if listing.get("reportedPay") is not None:
+        say("publishes a rate of pay; a vacancy listing states a grade and no salary")
+    if str(listing.get("url") or "") not in [str(a.get("url") or "") for a in announcements if isinstance(a, dict)]:
+        say("cites {!r}, which is not one of its own announcements".format(listing.get("url")))
+    checked = str(listing.get("checkedAt") or "")
+    if not re.match(r"^\d{4}-\d{2}-\d{2}", checked) or checked[:10] > today:
+        say("claims a vacancy listing without a past retrieval date ({!r})".format(checked))
+    if not str(listing.get("edition") or "").strip() or not str(listing.get("statement") or "").strip():
+        say("does not say which announcements it is or what they state")
+    elif "none names this node" not in str(listing.get("statement")) or "not published" not in str(listing.get("statement")):
+        say("does not say that no announcement names this node and that their salaries are not published")
+    # It verifies nothing and places nothing.
+    usajobs_urls = {"https://www.usajobs.gov/job/{}".format(i) for i in ids}
+    if usajobs_urls & {str(u) for u in (node.get("sourceUrls") or [])}:
+        say("cites a vacancy announcement as a source of the post's existence")
+    if "usajobs" in str(node.get("verificationMethod") or "") or "usajobs" in str(node.get("placementMethod") or ""):
+        say("claims a verification or a placement from vacancy announcements, which name no node")
+    out.extend(usajobs_leak_violations(node, listing, "positionVacancyListing", ids, label))
+    return out
+
+
+def vacancy_grade_pay_violations(node, pay, listing, label):
+    """The checks a range resting on a vacancy listing needs beyond
+    `grade_pay_violations`: General Schedule only, the method its own, the
+    same announcements as the listing beneath it, the words that say it is a
+    range and nobody's pay, and no salary or contact anywhere in it."""
+    out = []
+    say = lambda text: out.append("{} {}".format(label(node), text))
+    source = pay.get("listingSource") if isinstance(pay.get("listingSource"), dict) else {}
+    if str(pay.get("kind") or "") != "general_schedule_grade":
+        say("ranges {!r} from a vacancy listing; announcements state a General Schedule grade and nothing else".format(pay.get("kind")))
+    if pay.get("method") != USAJOBS_GRADE_PAY_METHOD:
+        say("ranges a vacancy listing's grade under method {!r}".format(pay.get("method")))
+    ids = [str(a.get("id") or "") for a in (source.get("announcements") or []) if isinstance(a, dict)]
+    listed = [str(a.get("id") or "") for a in ((listing or {}).get("announcements") or []) if isinstance(a, dict)] if isinstance(listing, dict) else []
+    if ids != listed or source.get("announcementCount") != len(ids):
+        say("names announcements {!r} for its grade; the listing beneath it rests on {!r}".format(ids, listed))
+    if isinstance(listing, dict) and source.get("family") != listing.get("family"):
+        say("names family {!r}; the listing beneath it is {!r}".format(source.get("family"), listing.get("family")))
+    statement = str(pay.get("vacancyStatement") or "")
+    if "{} USAJOBS announcements".format(len(ids)) not in statement or "not anyone's pay" not in statement or "before locality" not in statement:
+        say("does not say in words how many announcements list the grade and that the range is base pay before locality, not anyone's pay")
+    out.extend(usajobs_leak_violations(node, pay, "positionGradePay", ids, label))
+    return out
+
+
+
 def grade_pay_violations(node, pay, listing, today, label):
     """Everything that must be true of a base-pay RANGE looked up from a
     salary table for the pay plan or grade the archive reports.
@@ -7753,6 +8042,7 @@ def main(argv):
     bad_usaspending = []
     bad_current_listing = []
     bad_current_pay = []
+    bad_vacancy_listing = []
     for node in nodes:
         urls = [str(u) for u in (node.get("sourceUrls") or []) if str(u).startswith(("http://", "https://"))]
         official = [u for u in urls if urlparse(u).netloc.lower().endswith((".gov", ".mil"))]
@@ -7931,6 +8221,17 @@ def main(argv):
         # current listing and never the archive's. A rate stated by the OTHER
         # listing is refused too: two figures for one post.
         listings_by_source = {"opm_plum_archive": listing, PLUM_CURRENT_SOURCE: current_listing}
+        # A USAJOBS vacancy listing (usajobs.py, since 2026-10-07): the third
+        # document a range may hang off, never a rate, and never a PLUM
+        # listing -- so it is outside _other_listing_states_a_rate's reach
+        # and it states no rate in any case.
+        vacancy_listing = node.get("positionVacancyListing")
+        if vacancy_listing is not None:
+            _v_parent_id = tree_parents.get(str(node.get("id") or ""))
+            _v_grand_id = tree_parents.get(str(_v_parent_id or ""))
+            bad_vacancy_listing.extend(vacancy_listing_violations(
+                node, vacancy_listing, today, label, by_id.get(_v_parent_id), by_id.get(_v_grand_id)))
+        listings_by_source[USAJOBS_SOURCE] = vacancy_listing
 
         def _other_listing_states_a_rate(chosen):
             return any(
@@ -7956,6 +8257,8 @@ def main(argv):
             listing_source = grade_pay.get("listingSource") if isinstance(grade_pay, dict) and isinstance(grade_pay.get("listingSource"), dict) else {}
             chosen = str(listing_source.get("source") or "opm_plum_archive")
             bad_grade_pay.extend(grade_pay_violations(node, grade_pay, listings_by_source.get(chosen), today, label))
+            if chosen == USAJOBS_SOURCE:
+                bad_grade_pay.extend(vacancy_grade_pay_violations(node, grade_pay, vacancy_listing, label))
             if _other_listing_states_a_rate(chosen):
                 bad_grade_pay.append("{} carries a table range beside a rate a PLUM listing states; two figures for one post".format(label(node)))
         # A single-source statutory rate — judicial or congressional — beside
@@ -8172,6 +8475,11 @@ def main(argv):
     gate.check("a File A gross outlay is the fixture's own figure for the key it names, dated, and never the cost", bad_usaspending)
     gate.check("a current PLUM listing is a Filled or Vacant row of the committed export, filed under the node's own parent, naming it", bad_current_listing)
     gate.check("a current PLUM rate is the row's own printed figure for the listing beneath it, a proxy, never zero and never a cost", bad_current_pay)
+    gate.check(
+        "a USAJOBS vacancy listing is a reviewed title family's, on a member of it, resting on at least two committed "
+        "announcements that all print one pay plan and grade, verifying nothing, with no salary and no contact",
+        bad_vacancy_listing,
+    )
 
     # A published disagreement is a claim like any other: it must name both
     # figures, sit on the estimate it actually affected, and be a real
@@ -9210,6 +9518,15 @@ def main(argv):
           "(General Schedule grade {:,}, base pay before locality; SES {:,}; SL/ST {:,})".format(
               len(ranged), ranged_kinds.get("general_schedule_grade", 0),
               ranged_kinds.get("senior_executive_service", 0), ranged_kinds.get("senior_level", 0)))
+    vacancy_listed = [n for n in nodes if isinstance(n.get("positionVacancyListing"), dict)]
+    if vacancy_listed:
+        vacancy_ranged = sum(
+            1 for n in vacancy_listed
+            if isinstance(n.get("positionGradePay"), dict)
+            and (n["positionGradePay"].get("listingSource") or {}).get("source") == USAJOBS_SOURCE)
+        print("  vacancy listings     : {:,} positions carry a USAJOBS vacancy listing of their title family's pay plan "
+              "and grade ({:,} ranged from it); a listing names no node and verifies nothing".format(
+                  len(vacancy_listed), vacancy_ranged))
     schedule_paid = [n for n in nodes if isinstance(n.get("positionSchedulePay"), dict)]
     if schedule_paid or US_CODE_EXECUTIVE_SCHEDULE:
         sched_levels = Counter(str(n["positionSchedulePay"].get("payLevel") or "?") for n in schedule_paid)

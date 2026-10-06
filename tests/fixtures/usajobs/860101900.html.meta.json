@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-10-06T04:16:43Z",
+ "url": "https://www.usajobs.gov/job/860101900",
+ "status": 200,
+ "final_url": "https://www.usajobs.gov/job/860101900",
+ "content_type": "text/html; charset=utf-8",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /job/860101900",
+ "bytes": 138315,
+ "sha256": "48b0d5624b3d20fe14c87f91e493932fa72acf2d6e47cbb24c35cf2571a23f80",
+ "error": null
+}

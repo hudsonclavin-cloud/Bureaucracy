@@ -17,7 +17,14 @@ Reads four committed fixtures and one evidence file, and joins them:
 - `data/verification/position_evidence.json`, derived from the PLUM archive of
   the PREVIOUS administration (January 21, 2021 - January 20, 2025), which
   says which posts were filed on which pay plan and, for the General Schedule,
-  at which grade -- and states no rate for these.
+  at which grade -- and states no rate for these;
+- `data/verification/usajobs_evidence.json` (since 2026-10-07, the owner's
+  decision), derived by `scripts/derive_usajobs_evidence.py` from committed
+  USAJOBS vacancy announcements: where every announcement for a reviewed
+  title family states the same pay plan and grade, a listing of that family
+  at that grade. Used only for a node no PLUM listing reports; the range it
+  supports is the table's base range for the grade, never an announcement's
+  locality salary.
 
 No table states a rate for any post. A GS grade is ten steps; a pay system is
 a band. So every record here is a RANGE with a minimum and a maximum, scoped
@@ -65,6 +72,10 @@ from data_pipeline.verification.positions import (  # noqa: E402
     DEFAULT_POSITION_EVIDENCE_PATH,
     load_position_evidence,
 )
+from data_pipeline.verification.usajobs import (  # noqa: E402
+    DEFAULT_EVIDENCE_PATH as DEFAULT_VACANCY_EVIDENCE_PATH,
+    load_evidence as load_vacancy_listings,
+)
 
 DEFAULT_BASE_GRAPH = PROJECT_ROOT / "data" / "federal_gov_complete_1.json"
 
@@ -84,6 +95,8 @@ def main(argv: list[str] | None = None) -> int:
                         help="position evidence, which supplies the pay plan and grade each post was reported on")
     parser.add_argument("--current-listings", type=Path, default=DEFAULT_PLUM_CURRENT_EVIDENCE_PATH,
                         help="current PLUM export evidence; where it lists a post its pay plan and grade are used instead of the archive's")
+    parser.add_argument("--vacancy-listings", type=Path, default=DEFAULT_VACANCY_EVIDENCE_PATH,
+                        help="USAJOBS vacancy listings (scripts/derive_usajobs_evidence.py); used only where no PLUM listing reports the post")
     parser.add_argument("--out", type=Path, default=DEFAULT_EVIDENCE_PATH)
     parser.add_argument("--dry-run", action="store_true", help="report what would be written and write nothing")
     args = parser.parse_args((argv or sys.argv)[1:])
@@ -97,10 +110,23 @@ def main(argv: list[str] | None = None) -> int:
     archive_listings = load_position_evidence(args.positions)
     current_listings = load_current_listings(args.current_listings)
     listings, listing_stats = combine_listings(archive_listings, current_listings)
+    # A vacancy listing stands where a PLUM listing stands, and only where no
+    # PLUM listing reports the post: a document about this post beats
+    # announcements about its title family.
+    vacancy_listings = load_vacancy_listings(args.vacancy_listings)
+    listing_stats["from_vacancy_announcements"] = 0
+    listing_stats["vacancy_listing_beside_a_plum_listing"] = 0
+    for node_id, record in sorted(vacancy_listings.items()):
+        if node_id in listings:
+            listing_stats["vacancy_listing_beside_a_plum_listing"] += 1
+            continue
+        listings[node_id] = dict(record)
+        listing_stats["from_vacancy_announcements"] += 1
     if not listings:
         print(f"no position evidence at {_relative(args.positions)} or {_relative(args.current_listings)}; nothing can be ranged")
         return 1
-    print(f"listings: {listing_stats['from_current']} from the current export, {listing_stats['from_archive']} from the archive; "
+    print(f"listings: {listing_stats['from_current']} from the current export, {listing_stats['from_archive']} from the archive, "
+          f"{listing_stats['from_vacancy_announcements']} from USAJOBS vacancy announcements; "
           f"{listing_stats['either_reports_a_rate']} refused because a listing states a rate")
 
     records, report = build_records(listings, tables)
@@ -174,7 +200,10 @@ def main(argv: list[str] | None = None) -> int:
             "state. The GS record cites the PDF rendering, the one that prints the currency mark (on grade 1, "
             "once per column, which is the fourth and narrowest scale rule financial_evidence grants); the HTML "
             "rendering is committed beside it and must agree on all 150 figures. Where the archive itself prints "
-            "a rate for a post, that rate wins and no range is written. Basic pay is not the node's cost. "
+            "a rate for a post, that rate wins and no range is written. Since 2026-10-07 a USAJOBS vacancy listing "
+            "(data/verification/usajobs_evidence.json) supplies the pay plan and grade for a node no PLUM listing "
+            "reports, where every announcement for a reviewed title family states the same grade; the range is still "
+            "the table's base range, never an announcement's locality salary. Basic pay is not the node's cost. "
             "Regenerate by re-running the script; never edit by hand."
         ),
         "sources": report["tables"],
@@ -182,6 +211,7 @@ def main(argv: list[str] | None = None) -> int:
             "kind": "opm_plum_archive_or_current_export",
             "file": _relative(args.positions),
             "current_export_file": _relative(args.current_listings),
+            "vacancy_listing_file": _relative(args.vacancy_listings),
             "rule": "the current export's listing supplies the pay plan and grade where it lists the post; the archive's "
                     "otherwise; each record's listingClaim.source names which",
             **listing_stats,

@@ -668,6 +668,10 @@ class ScriptAndGateTestCase(unittest.TestCase):
         with redirect_stdout(buf):
             code = derive_gs_pay_evidence.main([
                 "d", "--base-graph", str(self.base), "--positions", str(self.positions),
+                # Hermetic since 2026-10-07: the committed USAJOBS listings
+                # (data/verification/usajobs_evidence.json) name nodes this
+                # synthetic base does not carry.
+                "--vacancy-listings", str(self.tmp / "no_vacancy_listings.json"),
                 "--out", str(self.out), *extra,
             ])
         return code, buf.getvalue()

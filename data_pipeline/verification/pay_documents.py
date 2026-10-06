@@ -87,6 +87,30 @@ PAY_DOCUMENT_FIELDS: dict[str, dict[str, Any]] = {
             "not the chance that it is right -- and a range is not a rate: neither document "
             "says what this post is paid."
         ),
+        # A range whose pay plan and grade come from USAJOBS vacancy
+        # announcements (usajobs.py, since 2026-10-07). The listing half is
+        # SEVERAL announcements that agree, and it is counted once, at
+        # `listingSource.url` -- deliberately: together they state one thing
+        # about a title family, not about this post, and the identification of
+        # the family with this node is reviewed. Counting each announcement
+        # would carry a template node under a replaced network to 100% on the
+        # strength of how many vacancies happened to be advertised. The block
+        # names every announcement; the panel prints the number.
+        "vacancyRoles": {
+            "url": "states the grade's printed bounds",
+            ("listingSource", "url"): (
+                "is one of the USAJOBS vacancy announcements, listed in the block, that each state "
+                "the same pay plan and grade for one vacancy of this title family"
+            ),
+        },
+        "vacancyCaution": (
+            "One document prints the bounds; the listing is a set of USAJOBS vacancy announcements, "
+            "each stating the pay plan and grade of one vacancy at one facility, counted once because "
+            "together they state one thing about a title family and none names this post. That this "
+            "node is that title is a reviewed identification. A range is not a rate: no document says "
+            "what this post is paid, and the announcements' own salaries, which include a duty "
+            "station's locality pay, are not published."
+        ),
     },
     "positionSchedulePay": {
         # The third key is present only on a reviewed identification
@@ -402,6 +426,13 @@ def _instrument_based(block: Mapping[str, Any]) -> bool:
     return isinstance(block.get("instrument"), Mapping)
 
 
+def _vacancy_listing(block: Mapping[str, Any]) -> bool:
+    """A range whose pay plan and grade come from USAJOBS vacancy
+    announcements names that listing as its own `listingSource`."""
+    source = block.get("listingSource")
+    return isinstance(source, Mapping) and source.get("source") == "usajobs_vacancy_announcements"
+
+
 def _uniform_roster(block: Mapping[str, Any]) -> bool:
     """A roster block that lists every holder at one rate says so in `holders`."""
     holders = block.get("holders")
@@ -431,6 +462,8 @@ def count_documents(field: str, block: Mapping[str, Any]) -> tuple[int, list[dic
         role_words = spec["memberSeatRoles"]
     elif _states_the_office(block) and spec.get("statesOfficeRoles"):
         role_words = spec["statesOfficeRoles"]
+    elif _vacancy_listing(block) and spec.get("vacancyRoles"):
+        role_words = spec["vacancyRoles"]
     for key in spec["urlKeys"]:
         for url in _urls_at(block, key):
             if url in seen:
@@ -481,6 +514,7 @@ def annotate_pay_documents(root: dict[str, Any]) -> dict[str, int]:
                     else (spec.get("statesOfficeCaution") or spec["caution"]) if _states_the_office(block)
                     else (spec.get("footnoteCaution") or spec["caution"]) if _named_in_footnote(block)
                     else (spec.get("instrumentCaution") or spec["caution"]) if _instrument_based(block)
+                    else (spec.get("vacancyCaution") or spec["caution"]) if _vacancy_listing(block)
                     else spec["caution"]
                 ),
                 "documentRoles": roles,
