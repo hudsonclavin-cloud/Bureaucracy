@@ -10,6 +10,11 @@ General "is equal to the rate for level II"; the Deputy, level III),
 ... plus 3 percent"), 5 U.S.C. 401 (which establishments' Inspectors General
 that covers, by name), and OPM's table, which prices the levels.
 
+Since 2026-10-07 also 2 U.S.C. 601 and 4575(f) (the CBO's Director, a chain
+of two statutes to Level II) and four posts paid a stated number of dollars
+less than an officer priced here (2 U.S.C. 1808(c)(3), 1909(b)(4), 31 U.S.C.
+705(b)(4), 2 U.S.C. 601(a)(5)(B)), each computed from that officer's own record.
+
 **No document states any of these figures for these posts.** A GAO record's
 figure is the level's printed rate; an Inspector General's is arithmetic on
 it -- $209,600 plus 3 percent -- and the record carries that arithmetic in
@@ -129,8 +134,11 @@ def main(argv: list[str] | None = None) -> int:
         print(f"    {count:>3}  {key}…")
     for line in rejected[:20]:
         print(f"  REJECTED {line}")
+    print(f"through a second statute: {report['pricedThroughASecondStatute']}   "
+          f"a stated number of dollars less than an officer priced here: {report['pricedAtAStatedAmountLess']}")
     print(
-        f"A reviewed row's record rests on 2 official documents ({document_strength_percent(2)}%), 3 where a composing section is needed, an Inspector General's on 3 "
+        f"A reviewed row's record rests on 2 official documents ({document_strength_percent(2)}%), 3 where a composing "
+        f"section, a second statute or a referenced officer's section is needed, an Inspector General's on 3 "
         f"({document_strength_percent(3)}%), on {STRENGTH_SCALE}; 0 of them state the figure for the post."
     )
     print("Every record is scoped 'proxy'. Basic pay is not the node's cost, and nothing here writes a source URL onto a node.")

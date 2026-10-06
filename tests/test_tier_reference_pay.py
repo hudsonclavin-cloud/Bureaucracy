@@ -27,7 +27,9 @@ from data_pipeline.verification.tier_reference_pay import (
     INSPECTOR_GENERAL_RULE,
     NOT_PRICED_KINDS,
     PAY_METHOD,
+    PAY_METHOD_MINUS,
     PAY_METHOD_PERCENT,
+    PAY_METHOD_VIA,
     PAY_SOURCE,
     IES_COMPOSITION,
     TIER_REFERENCE_PROVISIONS,
@@ -47,10 +49,14 @@ from scripts.validate_published_graph import (
     TIER_REFERENCE_IES_COMPOSITION,
     TIER_REFERENCE_IG_RULE,
     TIER_REFERENCE_METHOD,
+    TIER_REFERENCE_METHOD_MINUS,
     TIER_REFERENCE_METHOD_PERCENT,
+    TIER_REFERENCE_METHOD_VIA,
+    TIER_REFERENCE_MINUS_ROWS,
     TIER_REFERENCE_ROWS,
     TIER_REFERENCE_SOURCE,
     TIER_REFERENCE_TABLE_URL,
+    TIER_REFERENCE_VIA,
     US_CODE_BASIS_FIXTURE_DIR,
     is_us_code_document_url,
     tier_reference_establishments,
@@ -95,6 +101,24 @@ def _base_tree():
                   "name": "Comptroller General of the United States", "type": "Position"},
                  {"id": "leg-support-gao-deputy-comptroller-general", "name": "Deputy Comptroller General", "type": "Position"},
                  {"id": "leg-support-gao-inspector-general", "name": "Inspector General", "type": "Position"},
+             ]},
+            # 2026-10-07: the legislative officers whose IGs (and the CBO's
+            # Deputy) are paid a stated number of dollars less than them, and
+            # the CBO's Director, priced through a second statute.
+            {"id": "leg-support-aoc", "name": "Architect of the Capitol (AOC)", "type": "Agency",
+             "children": [
+                 {"id": "leg-support-aoc-architect-of-the-capitol", "name": "Architect of the Capitol", "type": "Position"},
+                 {"id": "leg-support-aoc-inspector-general", "name": "Inspector General", "type": "Position"},
+             ]},
+            {"id": "leg-support-uscp", "name": "U.S. Capitol Police (USCP)", "type": "Agency",
+             "children": [
+                 {"id": "leg-support-uscp-chief-of-police", "name": "Chief of Police", "type": "Position"},
+                 {"id": "leg-support-uscp-inspector-general", "name": "Inspector General", "type": "Position"},
+             ]},
+            {"id": "leg-support-cbo", "name": "Congressional Budget Office (CBO)", "type": "Agency",
+             "children": [
+                 {"id": "leg-support-cbo-director-cbo", "name": "Director, CBO", "type": "Position"},
+                 {"id": "leg-support-cbo-deputy-director-cbo", "name": "Deputy Director, CBO", "type": "Position"},
              ]},
             {"id": "exec-dept-defense", "name": "Department of Defense (DoD)", "type": "Cabinet Department",
              "children": [
@@ -190,7 +214,27 @@ PRICED_IN_BASE_TREE = {
     "exec-ind-misc-federal-election-commission-fec-deputy-director-vice-chair",
     "exec-dept-doc-noaa-administrator-noaa",
     "exec-ind-nara-archivist-of-the-united-states",
+    # 2026-10-07: the Architect and the Chief, the CBO's Director through
+    # 2 U.S.C. 4575(f), and the four posts a stated amount below an officer.
+    "leg-support-aoc-architect-of-the-capitol",
+    "leg-support-uscp-chief-of-police",
+    "leg-support-cbo-director-cbo",
+    "leg-support-aoc-inspector-general",
+    "leg-support-uscp-inspector-general",
+    "leg-support-gao-inspector-general",
+    "leg-support-cbo-deputy-director-cbo",
 }
+AOC_ID = "leg-support-aoc-architect-of-the-capitol"
+AOC_IG_ID = "leg-support-aoc-inspector-general"
+USCP_CHIEF_ID = "leg-support-uscp-chief-of-police"
+USCP_IG_ID = "leg-support-uscp-inspector-general"
+CG_ID = "leg-support-gao-comptroller-general-of-the-united-states"
+GAO_IG_ID = "leg-support-gao-inspector-general"
+CBO_DIRECTOR_ID = "leg-support-cbo-director-cbo"
+CBO_DEPUTY_ID = "leg-support-cbo-deputy-director-cbo"
+MINUS_IDS = {AOC_IG_ID, USCP_IG_ID, GAO_IG_ID, CBO_DEPUTY_ID}
+#: What each subtraction yields: Level II's $228,000 less the statute's amount.
+MINUS_FIGURES = {AOC_IG_ID: 226500.0, USCP_IG_ID: 227000.0, GAO_IG_ID: 223000.0, CBO_DEPUTY_ID: 227000.0}
 STAMPED_IN_BASE_TREE = {node_id for node_id in PRICED_IN_BASE_TREE if node_id in TIER_REFERENCE_IDENTIFICATIONS}
 NOAA_ID = "exec-dept-doc-noaa-administrator-noaa"
 ARCHIVIST_ID = "exec-ind-nara-archivist-of-the-united-states"
@@ -302,6 +346,63 @@ class SectionTests(unittest.TestCase):
         self.assertIsNone(re.search(r"rate of (basic )?pay|Executive Schedule", text))
 
 
+class SubtractionSectionTests(unittest.TestCase):
+    """2026-10-07: what each section of the five leads prints, read in the
+    operative text by both readers -- the dollar amount and the officer it is
+    taken from in the section's own words, and the CBO chain's two links."""
+
+    CASES = {
+        AOC_IG_ID: ("aoc_2_usc_1808_govinfo2024.html", "$1,500", "the Architect of the Capitol"),
+        USCP_IG_ID: ("uscp_2_usc_1909_govinfo2024.html", "$1,000", "the Chief of the Capitol Police"),
+        GAO_IG_ID: ("gao_31_usc_705_govinfo2024.html", "$5,000", "the Comptroller General"),
+        CBO_DEPUTY_ID: ("cbo_2_usc_601.html", "$1,000", "received by the Director"),
+    }
+
+    def test_each_subtraction_is_printed_in_its_sections_operative_text_with_its_officer(self):
+        for node_id, (fixture, dollars, officer) in self.CASES.items():
+            with self.subTest(node=node_id):
+                row = TIER_REFERENCE_PROVISIONS[node_id]
+                self.assertEqual(fixture, row["fixture"])
+                module_text = load_section(fixture)["operative"]
+                self.assertEqual(module_text, uscode_operative_text(US_CODE_BASIS_FIXTURE_DIR / fixture))
+                self.assertIn(row["quote"], module_text)
+                self.assertIn(f"{dollars} less than the annual rate of pay", row["quote"])
+                self.assertIn(officer, row["quote"])
+                self.assertEqual("${:,}".format(row["minusDollars"]["amount"]), dollars)
+
+    def test_the_referenced_officers_sections_set_level_ii(self):
+        for ref_id in (AOC_ID, USCP_CHIEF_ID, CG_ID):
+            row = TIER_REFERENCE_PROVISIONS[ref_id]
+            self.assertEqual("II", row["level"])
+            self.assertIn("level II", row["quote"])
+            self.assertIn(row["quote"], load_section(row["fixture"])["operative"])
+
+    def test_the_cbo_chain_reaches_level_ii_through_4575f(self):
+        row = TIER_REFERENCE_PROVISIONS[CBO_DIRECTOR_ID]
+        text_601 = load_section("cbo_2_usc_601.html")["operative"]
+        self.assertIn(row["quote"], text_601)
+        self.assertIn("the maximum rate of pay in effect under section 4575(f)", row["quote"])
+        # 601 itself states no level, and no figure: the level is 4575(f)'s.
+        self.assertNotIn("level II", text_601[text_601.find("(5)(A)"):text_601.find("(b) Personnel")])
+        text_4575 = load_section(row["via"]["fixture"])["operative"]
+        self.assertEqual(text_4575, uscode_operative_text(US_CODE_BASIS_FIXTURE_DIR / row["via"]["fixture"]))
+        for part in row["via"]["quote"]:
+            self.assertIn(part, text_4575)
+            self.assertEqual(1, text_4575.count(part))
+        self.assertIn("level II of the Executive Schedule", row["via"]["quote"][1])
+        self.assertTrue(row["via"]["quote"][0].startswith("(f) General limitation"))
+
+    def test_the_four_govinfo_sections_came_from_the_2024_edition_and_say_so(self):
+        for fixture in ("aoc_2_usc_1808_govinfo2024.html", "uscp_2_usc_1909_govinfo2024.html",
+                        "gao_31_usc_705_govinfo2024.html", "cbo_2_usc_4575_govinfo2024.html"):
+            with self.subTest(fixture=fixture):
+                section = load_section(fixture)
+                self.assertTrue(section["url"].startswith("https://www.govinfo.gov/link/uscode/"), section["url"])
+                self.assertIn("USCODE-2024", section["final_url"])
+                self.assertEqual("2024 edition of the United States Code",
+                                 statute_publisher(section["url"], section["final_url"])[1])
+
+
 class SectionNumberingTests(unittest.TestCase):
     """2 U.S.C. 136a–2 is numbered with an en-dash and a second number, and
     until 2026-09-28 none of the three operative-text readers found its
@@ -323,8 +424,12 @@ class SectionNumberingTests(unittest.TestCase):
 
 class MirrorTests(unittest.TestCase):
     def test_the_gate_mirrors_the_gao_rows_by_node_id(self):
-        self.assertEqual(set(TIER_REFERENCE_ROWS), set(TIER_REFERENCE_PROVISIONS))
-        for node_id, row in TIER_REFERENCE_PROVISIONS.items():
+        # Since 2026-10-07 the rows that subtract a stated amount from another
+        # officer's figure are mirrored apart, in TIER_REFERENCE_MINUS_ROWS.
+        level_rows = {n: row for n, row in TIER_REFERENCE_PROVISIONS.items() if not row.get("minusDollars")}
+        self.assertEqual(set(TIER_REFERENCE_ROWS), set(level_rows))
+        self.assertEqual(set(TIER_REFERENCE_MINUS_ROWS), set(TIER_REFERENCE_PROVISIONS) - set(level_rows))
+        for node_id, row in level_rows.items():
             mirrored = TIER_REFERENCE_ROWS[node_id]
             node_name, office, citation, fixture, level, sentence = mirrored[:6]
             # A seventh element is the percentage the row's statute adds
@@ -335,6 +440,31 @@ class MirrorTests(unittest.TestCase):
             # A percentage is carried by the mirror exactly where the row has one.
             self.assertEqual(int(row["percent"]) > 0, len(mirrored) > 6, node_id)
             self.assertIn(level, EXECUTIVE_SCHEDULE_RATES)
+
+    def test_the_gate_mirrors_the_chain_and_the_subtractions_by_node_id(self):
+        """2026-10-07: the CBO Director's middle statute, and the four rows that
+        subtract a stated amount, each mirrored with the officer it names."""
+        via_rows = {n: row["via"] for n, row in TIER_REFERENCE_PROVISIONS.items() if row.get("via")}
+        self.assertEqual({CBO_DIRECTOR_ID}, set(via_rows))
+        self.assertEqual(set(via_rows), set(TIER_REFERENCE_VIA))
+        for node_id, via in via_rows.items():
+            self.assertEqual((via["citation"], via["fixture"], tuple(via["quote"])), TIER_REFERENCE_VIA[node_id])
+        self.assertEqual(
+            {node_id: (row["nodeName"], row["office"], row["citation"], row["fixture"], row["quote"],
+                       row["minusDollars"]["referencedNodeId"], row["minusDollars"]["amount"])
+             for node_id, row in TIER_REFERENCE_PROVISIONS.items() if row.get("minusDollars")},
+            TIER_REFERENCE_MINUS_ROWS)
+        self.assertEqual(
+            {AOC_IG_ID: (AOC_ID, 1500), USCP_IG_ID: (USCP_CHIEF_ID, 1000), GAO_IG_ID: (CG_ID, 5000),
+             CBO_DEPUTY_ID: (CBO_DIRECTOR_ID, 1000)},
+            {node_id: (row[5], row[6]) for node_id, row in TIER_REFERENCE_MINUS_ROWS.items()})
+        self.assertEqual(TIER_REFERENCE_METHOD_VIA, PAY_METHOD_VIA)
+        self.assertEqual(TIER_REFERENCE_METHOD_MINUS, PAY_METHOD_MINUS)
+        # Every referenced officer is a level row at a level's own rate.
+        for _, row in TIER_REFERENCE_MINUS_ROWS.items():
+            ref = TIER_REFERENCE_ROWS[row[5]]
+            self.assertEqual(6, len(ref))
+            self.assertEqual("II", ref[4])
 
     def test_the_gate_mirrors_the_identifying_sentence_of_every_stamped_row(self):
         with_identification = {n: row["identificationQuote"] for n, row in TIER_REFERENCE_PROVISIONS.items()
@@ -450,8 +580,17 @@ class BuildTests(unittest.TestCase):
         self.assertEqual({node_id: "node not in the graph" for node_id in TIER_REFERENCE_PROVISIONS
                           if node_id not in PRICED_IN_BASE_TREE},
                          {k: v for k, v in report["refused"].items() if k != "exec-ind-epa-inspector-general-bench"})
-        # 13 since 2026-10-06: the NOAA Administrator and the Archivist.
-        self.assertEqual(13, report["pricedByReviewedRow"])
+        # 13 since 2026-10-06: the NOAA Administrator and the Archivist. 20
+        # since 2026-10-07: the Architect, the Chief of the Capitol Police, the
+        # CBO's Director through 4575(f), and the four posts a stated amount
+        # below an officer (the GAO's IG among them, already in this tree).
+        self.assertEqual(20, report["pricedByReviewedRow"])
+        self.assertEqual(1, report["pricedThroughASecondStatute"])
+        self.assertEqual(4, report["pricedAtAStatedAmountLess"])
+        # A legislative IG priced by its own section is not reported as an IG
+        # 5 U.S.C. 401(1) does not reach: its row's outcome is the record.
+        for node_id in (AOC_IG_ID, USCP_IG_ID, GAO_IG_ID):
+            self.assertNotIn(node_id, report["notPriced"])
         for node_id in STAMPED_IN_BASE_TREE:
             record = records[node_id]
             self.assertEqual(2, len(record["documents"]))
@@ -638,6 +777,99 @@ class BuildTests(unittest.TestCase):
         with self.assertRaises(fe.Rejected):
             fe.validate_record(record, node_map["exec-dept-defense-inspector-general"])
 
+    # --- 2026-10-07: the chain and the subtractions --------------------------
+
+    def test_the_cbo_director_is_level_ii_through_a_second_statute_on_three_documents(self):
+        records, _ = _records()
+        director = records[CBO_DIRECTOR_ID]
+        self.assertEqual(EXECUTIVE_SCHEDULE_RATES["II"], director["amount"])
+        self.assertIsNone(director["arithmetic"])
+        self.assertEqual(PAY_METHOD_VIA, director["method"])
+        self.assertEqual("2 U.S.C. 4575(f)", director["viaStatute"])
+        self.assertEqual(["2 U.S.C. 601(a)(5)(A)", "2 U.S.C. 4575(f)", "Salary Table No. 2026-EX, Effective January 2026"],
+                         [d["citation"] for d in director["documents"]])
+        self.assertEqual(3, len({d["url"] for d in director["documents"]}))
+        self.assertEqual(" … ".join(TIER_REFERENCE_PROVISIONS[CBO_DIRECTOR_ID]["via"]["quote"]), director["viaQuote"])
+        self.assertIn(director["viaQuote"], director["derivation"])
+
+    def test_each_subtraction_is_the_referenced_officers_figure_less_the_statutes_amount(self):
+        records, _ = _records()
+        for node_id in MINUS_IDS:
+            with self.subTest(node=node_id):
+                record = records[node_id]
+                row = TIER_REFERENCE_PROVISIONS[node_id]
+                ref = records[row["minusDollars"]["referencedNodeId"]]
+                dollars = row["minusDollars"]["amount"]
+                self.assertEqual(MINUS_FIGURES[node_id], record["amount"])
+                self.assertEqual(ref["amount"] - dollars, record["amount"])
+                self.assertEqual(PAY_METHOD_MINUS, record["method"])
+                arithmetic = record["arithmetic"]
+                self.assertEqual("minus_dollars", arithmetic["operation"])
+                self.assertEqual((ref["amount"], dollars, record["amount"], ref["nodeId"]),
+                                 (arithmetic["baseAmount"], arithmetic["minusDollars"], arithmetic["result"],
+                                  arithmetic["baseNodeId"]))
+                self.assertIn("No document prints", arithmetic["note"])
+                self.assertEqual(0, record["percent"])
+                self.assertEqual(ref["level"], record["level"])
+                self.assertEqual(ref["nodeId"], record["referencedOfficer"]["nodeId"])
+                # Three distinct documents, none of which states the figure:
+                # the post's section, the referenced officer's (merged into
+                # one entry where it is the same section) and any middle
+                # statute, and OPM's table.
+                urls = [d["url"] for d in record["documents"]]
+                self.assertEqual(len(urls), len(set(urls)))
+                self.assertEqual(3, len(urls))
+                self.assertIn(TIER_REFERENCE_TABLE_URL, urls)
+                self.assertTrue(all(d["statesTheFigure"] is False for d in record["documents"]))
+                quoted = " ".join(d["quote"] for d in record["documents"])
+                self.assertIn(row["quote"], quoted)
+                self.assertIn(ref["statuteQuote"], quoted)
+                self.assertNotIn(record["rateText"], quoted)
+                self.assertEqual("proxy", record["scopeMatch"])
+        # The CBO Deputy's sentence and the Director's are two sentences of one
+        # section: one entry, both quoted; 4575(f) is the second document.
+        deputy = records[CBO_DEPUTY_ID]
+        self.assertEqual("2 U.S.C. 601(a)(5)(B) and 2 U.S.C. 601(a)(5)(A)", deputy["documents"][0]["citation"])
+        self.assertIn("2 U.S.C. 4575(f)", [d["citation"] for d in deputy["documents"]])
+
+    def test_every_subtraction_passes_the_validator_under_the_computed_rule(self):
+        records, _ = _records()
+        node_map, _ = index_tree(_base_tree())
+        for node_id in MINUS_IDS:
+            out = fe.validate_record(records[node_id], node_map[node_id])
+            self.assertEqual("partial", fe.classify(out))
+            self.assertEqual("currency_mark_on_the_figure_the_record_is_computed_from", out["unitsEvidenceKind"])
+        out = fe.validate_record(records[CBO_DIRECTOR_ID], node_map[CBO_DIRECTOR_ID])
+        self.assertEqual("currency_mark_on_the_printed_figure", out["unitsEvidenceKind"])
+
+    def test_a_subtraction_falls_when_its_section_states_another_amount(self):
+        records, report = self._records_with_doctored_fixtures([
+            ("aoc_2_usc_1808_govinfo2024.html", b"$1,500 less than", b"$2,500 less than"),
+        ])
+        self.assertNotIn(AOC_IG_ID, records)
+        self.assertIn("no longer carries the quoted sentence", report["refused"][AOC_IG_ID])
+        self.assertIn(AOC_ID, records)
+
+    def test_a_subtraction_falls_with_the_officer_it_is_taken_from(self):
+        # The Architect renamed: no record, so the IG has no base. The CBO's
+        # chain broken at 4575(f): the Director falls, and the Deputy with him.
+        tree = _base_tree()
+        node_map, _ = index_tree(tree)
+        node_map[AOC_ID]["name"] = "Architect"
+        records, report = _records(tree)
+        self.assertNotIn(AOC_IG_ID, records)
+        self.assertTrue(report["refused"][AOC_IG_ID].startswith("referenced_officer_not_priced_here"))
+        self.assertIn(USCP_IG_ID, records)
+        records, report = self._records_with_doctored_fixtures([
+            ("cbo_2_usc_4575_govinfo2024.html",
+             b"in excess of the annual rate of basic pay in effect for level II of the Executive Schedule under section 5313 of title 5, unless",
+             b"in excess of the annual rate of basic pay in effect for level III of the Executive Schedule under section 5314 of title 5, unless"),
+        ])
+        self.assertNotIn(CBO_DIRECTOR_ID, records)
+        self.assertIn("2 U.S.C. 4575(f) no longer carries", report["refused"][CBO_DIRECTOR_ID])
+        self.assertNotIn(CBO_DEPUTY_ID, records)
+        self.assertTrue(report["refused"][CBO_DEPUTY_ID].startswith("referenced_officer_not_priced_here"))
+
     def test_a_renamed_gao_node_is_refused_not_guessed(self):
         tree = _base_tree()
         node_map, _ = index_tree(tree)
@@ -652,7 +884,11 @@ class ApplyTests(unittest.TestCase):
         records, _ = _records()
         tree = _base_tree()
         stats = apply_pay_evidence(tree, records, index_tree=index_tree)
-        self.assertEqual(15, stats["priced"])  # 13 + the NOAA Administrator and the Archivist (2026-10-06)
+        # 13 + the NOAA Administrator and the Archivist (2026-10-06) + the seven
+        # legislative rows of 2026-10-07, four of them a stated amount less.
+        self.assertEqual(22, stats["priced"])
+        self.assertEqual(4, stats["priced_at_a_stated_amount_less"])
+        self.assertEqual(0, stats["referenced_officer_not_priced"])
         self.assertEqual(2, stats["priced_inspectors_general"])
         annotate_pay_documents(tree)
         node_map, _ = index_tree(tree)
@@ -662,7 +898,9 @@ class ApplyTests(unittest.TestCase):
             # An IG's third document is 401(1)'s list; a composed row's is
             # 9511(c)(3); every other row rests on the statute and the table.
             composed = bool((TIER_REFERENCE_PROVISIONS.get(node_id) or {}).get("composition"))
-            expected = 3 if (pay["arithmetic"] or composed) else 2
+            # Since 2026-10-07 a chain (4575(f) is the middle document) and a
+            # subtraction (the referenced officer's section) rest on three too.
+            expected = 3 if (pay["arithmetic"] or composed or pay.get("viaStatute")) else 2
             self.assertEqual(expected, pay["verification"]["documents"])
             self.assertEqual(DERIVED_PAY_STRENGTH_BY_COUNT[expected], pay["verification"]["percent"])
             self.assertEqual(0, pay["verification"]["documentsStatingTheFigure"])
@@ -676,7 +914,7 @@ class ApplyTests(unittest.TestCase):
         node_map, _ = index_tree(tree)
         node_map["exec-dept-defense-inspector-general"]["positionSchedulePay"] = {"source": "elsewhere"}
         stats = apply_pay_evidence(tree, records, index_tree=index_tree)
-        self.assertEqual(14, stats["priced"])
+        self.assertEqual(21, stats["priced"])
         self.assertEqual(1, stats["already_priced_by_another_source"])
 
     def test_an_ig_reparented_since_the_match_is_refused(self):
@@ -699,6 +937,46 @@ class ApplyTests(unittest.TestCase):
         node_map, _ = index_tree(tree)
         self.assertNotIn("holders", node_map["exec-dept-defense-inspector-general"][FIELD])
 
+    def test_a_subtraction_is_not_stamped_when_its_officers_block_is_not(self):
+        """The base cannot outlive the officer: an Architect another source
+        already priced carries no block of this module, so the IG computed
+        from it is not stamped either -- not re-based on the other figure."""
+        records, _ = _records()
+        tree = _base_tree()
+        node_map, _ = index_tree(tree)
+        node_map[AOC_ID]["positionStatutoryPay"] = {"source": "elsewhere", "amount": 1.0}
+        stats = apply_pay_evidence(tree, records, index_tree=index_tree)
+        self.assertNotIn(FIELD, node_map[AOC_ID])
+        self.assertNotIn(FIELD, node_map[AOC_IG_ID])
+        self.assertEqual(1, stats["referenced_officer_not_priced"])
+        self.assertEqual(3, stats["priced_at_a_stated_amount_less"])
+        # Records applied in any order still stamp the officer first.
+        tree = _base_tree()
+        reversed_records = dict(sorted(records.items(), reverse=True))
+        stats = apply_pay_evidence(tree, reversed_records, index_tree=index_tree)
+        self.assertEqual(4, stats["priced_at_a_stated_amount_less"])
+        node_map, _ = index_tree(tree)
+        self.assertEqual(MINUS_FIGURES[CBO_DEPUTY_ID], node_map[CBO_DEPUTY_ID][FIELD]["amount"])
+        self.assertEqual(CBO_DIRECTOR_ID, node_map[CBO_DEPUTY_ID][FIELD]["referencedOfficer"]["nodeId"])
+        self.assertEqual("2 U.S.C. 4575(f)", node_map[CBO_DIRECTOR_ID][FIELD]["viaStatute"])
+
+    def test_the_document_count_and_caution_name_the_chain_and_the_subtraction(self):
+        records, _ = _records()
+        tree = _base_tree()
+        apply_pay_evidence(tree, records, index_tree=index_tree)
+        annotate_pay_documents(tree)
+        node_map, _ = index_tree(tree)
+        for node_id in MINUS_IDS | {CBO_DIRECTOR_ID}:
+            verification = node_map[node_id][FIELD]["verification"]
+            self.assertEqual(3, verification["documents"], node_id)
+            self.assertEqual(90, verification["percent"], node_id)
+            self.assertEqual(0, verification["documentsStatingTheFigure"], node_id)
+        self.assertEqual(PAY_DOCUMENT_FIELDS[FIELD]["minusCaution"],
+                         node_map[AOC_IG_ID][FIELD]["verification"]["caution"])
+        self.assertEqual(PAY_DOCUMENT_FIELDS[FIELD]["viaCaution"],
+                         node_map[CBO_DIRECTOR_ID][FIELD]["verification"]["caution"])
+        self.assertEqual(PAY_DOCUMENT_FIELDS[FIELD]["caution"], node_map[AOC_ID][FIELD]["verification"]["caution"])
+
 
 class GateTests(unittest.TestCase):
     """Each dimension corrupted in turn, against blocks the gate accepts."""
@@ -715,7 +993,8 @@ class GateTests(unittest.TestCase):
         if parent_name == "use-tree":
             parent = self.node_map.get(self.parent_map.get(node_id) or "")
             parent_name = parent.get("name") if parent else None
-        return tier_reference_pay_violations(node, pay if pay is not None else node[FIELD], TODAY, _label, parent_name)
+        return tier_reference_pay_violations(node, pay if pay is not None else node[FIELD], TODAY, _label, parent_name,
+                                             node_by_id=self.node_map)
 
     def test_every_honest_block_passes(self):
         for node_id in PRICED_IN_BASE_TREE:
@@ -806,6 +1085,70 @@ class GateTests(unittest.TestCase):
         node["cost_status"] = "official"
         self.assertNotEqual([], tier_reference_pay_violations(node, node[FIELD], TODAY, _label, "Department of Defense (DoD)"))
 
+    def test_each_way_a_subtraction_or_a_chain_can_be_faked_is_refused(self):
+        """2026-10-07. Every honest block passes above; each corruption below
+        is refused, the subtraction recomputed from the referenced officer's
+        mirrored level and checked against that officer's published block."""
+        aoc_ig = self.node_map[AOC_IG_ID][FIELD]
+        uscp_ig = self.node_map[USCP_IG_ID][FIELD]
+        deputy = self.node_map[CBO_DEPUTY_ID][FIELD]
+        director = self.node_map[CBO_DIRECTOR_ID][FIELD]
+        arith = aoc_ig["arithmetic"]
+        base = EXECUTIVE_SCHEDULE_RATES["II"]
+        cases = {
+            "a wrong amount subtracted": (AOC_IG_ID, {**aoc_ig, "amount": base - 2500,
+                                                      "rateText": "${:,.0f}".format(base - 2500),
+                                                      "arithmetic": {**arith, "minusDollars": 2500, "minusDollarsText": "$2,500",
+                                                                     "result": base - 2500}}),
+            "the result off by a dollar": (AOC_IG_ID, {**aoc_ig, "amount": aoc_ig["amount"] + 1,
+                                                       "arithmetic": {**arith, "result": aoc_ig["amount"] + 1}}),
+            "the referenced officer's figure published as the IG's": (AOC_IG_ID, {**aoc_ig, "amount": base, "rateText": "$228,000",
+                                                                                  "arithmetic": {**arith, "result": base}}),
+            "a dropped arithmetic block": (AOC_IG_ID, {**aoc_ig, "arithmetic": None}),
+            "another operation": (AOC_IG_ID, {**aoc_ig, "arithmetic": {**arith, "operation": "plus_percent"}}),
+            "a percentage on a subtraction": (AOC_IG_ID, {**aoc_ig, "arithmetic": {**arith, "percent": 3}}),
+            "a base that is not the referenced officer's level": (AOC_IG_ID, {**aoc_ig, "arithmetic": {**arith, "baseAmount": 209600.0, "baseText": "$209,600"}}),
+            "a base named on another officer": (AOC_IG_ID, {**aoc_ig, "arithmetic": {**arith, "baseNodeId": USCP_CHIEF_ID}}),
+            "the referenced officer misnamed": (AOC_IG_ID, {**aoc_ig, "referencedOfficer": {**aoc_ig["referencedOfficer"], "nodeId": USCP_CHIEF_ID}}),
+            "a level that is not the referenced officer's": (AOC_IG_ID, {**aoc_ig, "level": "III"}),
+            "the AOC IG's block moved onto the Capitol Police IG": (USCP_IG_ID, aoc_ig),
+            "the Capitol Police IG's block moved onto the AOC's": (AOC_IG_ID, uscp_ig),
+            "a subtraction block moved onto the officer itself": (AOC_ID, aoc_ig),
+            "the subtraction under the level method": (AOC_IG_ID, {**aoc_ig, "method": PAY_METHOD}),
+            "a document claiming to state the figure": (AOC_IG_ID, {**aoc_ig, "documents": [{**aoc_ig["documents"][0], "statesTheFigure": True}] + aoc_ig["documents"][1:]}),
+            "the referenced officer's section dropped": (AOC_IG_ID, {**aoc_ig, "documents": [aoc_ig["documents"][0], aoc_ig["documents"][2]]}),
+            "one document listed twice": (AOC_IG_ID, {**aoc_ig, "documents": aoc_ig["documents"][:2] + [aoc_ig["documents"][0]]}),
+            "a summary claiming a document states the figure": (AOC_IG_ID, {**aoc_ig, "verification": {**aoc_ig["verification"], "documentsStatingTheFigure": 1}}),
+            "the Deputy's block without 4575(f)": (CBO_DEPUTY_ID, {**deputy, "documents": [d for d in deputy["documents"] if d["citation"] != "2 U.S.C. 4575(f)"]}),
+            "a verified grade": (AOC_IG_ID, {**aoc_ig, "financialEvidenceStatus": "verified"}),
+            # The chain.
+            "the Director without the middle statute": (CBO_DIRECTOR_ID, {**director, "documents": [d for d in director["documents"] if d["citation"] != "2 U.S.C. 4575(f)"]}),
+            "the Director misquoting the middle statute": (CBO_DIRECTOR_ID, {**director, "documents": [
+                {**d, "quote": "No officer shall be paid in excess of level II"} if d["citation"] == "2 U.S.C. 4575(f)" else d
+                for d in director["documents"]]}),
+            "the Director naming no second statute": (CBO_DIRECTOR_ID, {**director, "viaStatute": None}),
+            "the Director under the plain level method": (CBO_DIRECTOR_ID, {**director, "method": PAY_METHOD}),
+            "a second statute on a row that has none": (AOC_ID, {**self.node_map[AOC_ID][FIELD], "viaStatute": "2 U.S.C. 4575(f)"}),
+        }
+        for name, (node_id, pay) in cases.items():
+            with self.subTest(case=name):
+                self.assertNotEqual([], self._check(node_id, pay), name)
+
+    def test_a_subtraction_whose_officer_publishes_no_base_is_refused(self):
+        node = self.node_map[AOC_IG_ID]
+        without = {k: v for k, v in self.node_map.items()}
+        without[AOC_ID] = {k: v for k, v in self.node_map[AOC_ID].items() if k != FIELD}
+        self.assertNotEqual([], tier_reference_pay_violations(node, node[FIELD], TODAY, _label, "Architect of the Capitol (AOC)",
+                                                              node_by_id=without))
+        other = dict(self.node_map)
+        other[AOC_ID] = {**self.node_map[AOC_ID], FIELD: {**self.node_map[AOC_ID][FIELD], "amount": 209600.0}}
+        self.assertNotEqual([], tier_reference_pay_violations(node, node[FIELD], TODAY, _label, "Architect of the Capitol (AOC)",
+                                                              node_by_id=other))
+        # Without the published graph the gate cannot confirm the base, and says so.
+        self.assertNotEqual([], tier_reference_pay_violations(node, node[FIELD], TODAY, _label, "Architect of the Capitol (AOC)"))
+        self.assertEqual([], tier_reference_pay_violations(node, node[FIELD], TODAY, _label, "Architect of the Capitol (AOC)",
+                                                           node_by_id=self.node_map))
+
 
 class PublishedGraphTests(unittest.TestCase):
     @unittest.skipUnless(GRAPH.exists(), "no published graph")
@@ -837,8 +1180,26 @@ class PublishedGraphTests(unittest.TestCase):
         # Level III) and the Archivist of the United States (44 U.S.C.
         # 2103(b), Level III in the section's own words) landed as reviewed
         # rows -- neither node carried any pay field before, so the
-        # leave-alone rule did not apply and both publish.
-        self.assertEqual(47, len(priced), sorted(priced))
+        # leave-alone rule did not apply and both publish. 52 since 2026-10-07,
+        # the owner's decision on CURATION.md §19.20's congressional-staff
+        # leads: the CBO's Director through 2 U.S.C. 601(a)(5)(A) and 4575(f)
+        # to Level II, and four posts a stated number of dollars below an
+        # officer priced here -- the Architect's, the Capitol Police's and the
+        # GAO's Inspectors General ($1,500, $1,000, $5,000) and the CBO's
+        # Deputy Director ($1,000 below the Director). None carried a pay
+        # field before. (This count holds only once the graph is regenerated.)
+        self.assertEqual(52, len(priced), sorted(priced))
+        for node_id, figure in MINUS_FIGURES.items():
+            block = priced[node_id][FIELD]
+            self.assertEqual(figure, block["amount"], node_id)
+            self.assertEqual("minus_dollars", block["arithmetic"]["operation"], node_id)
+            ref_id = TIER_REFERENCE_MINUS_ROWS[node_id][5]
+            self.assertIn(ref_id, priced, node_id)
+            self.assertEqual(block["arithmetic"]["baseAmount"], priced[ref_id][FIELD]["amount"], node_id)
+            self.assertEqual(3, block["verification"]["documents"], node_id)
+            self.assertEqual(0, block["verification"]["documentsStatingTheFigure"], node_id)
+        self.assertEqual("2 U.S.C. 4575(f)", priced[CBO_DIRECTOR_ID][FIELD]["viaStatute"])
+        self.assertEqual(EXECUTIVE_SCHEDULE_RATES["II"], priced[CBO_DIRECTOR_ID][FIELD]["amount"])
         for added in ("exec-dept-dhs-usss-chief-uniformed-division",
                       "exec-dept-doe-nnsa-administrator-nnsa",
                       NOAA_ID,
@@ -866,7 +1227,8 @@ class PublishedGraphTests(unittest.TestCase):
         for node_id, node in priced.items():
             with self.subTest(node=node_id):
                 parent = node_map.get(parent_map.get(node_id) or "")
-                self.assertEqual([], tier_reference_pay_violations(node, node[FIELD], TODAY, _label, parent.get("name") if parent else None))
+                self.assertEqual([], tier_reference_pay_violations(node, node[FIELD], TODAY, _label, parent.get("name") if parent else None,
+                                                                   node_by_id=node_map))
                 # The pay documents never among the node's own sources; OPM's
                 # PLUM listings, a different document, may be.
                 # A govinfo URL may sit there legitimately: the Government
@@ -875,10 +1237,11 @@ class PublishedGraphTests(unittest.TestCase):
                                      for u in node.get("sourceUrls") or []))
                 if node_id not in TIER_REFERENCE_PROVISIONS:
                     self.assertIn(node[FIELD]["identification"]["establishment"], establishments)
-        # The stamped Defense-agency IGs, the DFEs' and the legislative ones
-        # are not among them.
+        # The stamped Defense-agency IGs, the DFEs', the Library's and the
+        # CIA's are not among them. (The GAO's left this list on 2026-10-07:
+        # 31 U.S.C. 705(b)(4) prices it, not 5 U.S.C. 403(e).)
         for absent in ("exec-dept-defense-agency-dia-inspector-general", "exec-ind-misc-national-labor-relations-board-nlrb-independent-inspector-general",
-                       "leg-support-gao-inspector-general", "exec-ind-cia-inspector-general", "exec-ind-misc-americorps-inspector-general"):
+                       "exec-ind-cia-inspector-general", "exec-ind-misc-americorps-inspector-general"):
             self.assertNotIn(absent, priced)
 
 

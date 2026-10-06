@@ -584,11 +584,15 @@ function describePay(node) {
     const printed = reference.rateText || `$${reference.amount.toLocaleString("en-US")}`;
     const arithmetic = reference.arithmetic && typeof reference.arithmetic === "object" ? reference.arithmetic : null;
     const identification = reference.identification && typeof reference.identification === "object" ? reference.identification : {};
+    const minus = arithmetic && arithmetic.operation === "minus_dollars" ? arithmetic : null;
+    const refOfficer = reference.referencedOfficer && typeof reference.referencedOfficer === "object" ? reference.referencedOfficer : {};
     blocks.push({
       heading: "Pay set by reference to a level — no document states it",
-      text: arithmetic
+      text: minus
+        ? `${reference.statute || "The statute"} sets this post's basic pay at ${minus.minusDollarsText || `$${minus.minusDollars}`} less than the ${minus.baseOffice || refOfficer.office || "officer it names"}'s; ${refOfficer.statute || "another statute"}${refOfficer.viaStatute ? `, through ${refOfficer.viaStatute},` : ""} sets that officer's at the rate for Executive Schedule ${reference.levelText || `Level ${reference.level}`}, and OPM's ${reference.table || "table"} prints ${minus.baseText || reference.levelRateText} for that level. ${minus.baseText || reference.levelRateText} − ${minus.minusDollarsText || `$${minus.minusDollars}`} = ${printed}, arithmetic this project performed and no document prints.${holdersNote(reference)}${payDocuments(reference)}`
+        : arithmetic
         ? `${reference.statute || "The statute"} sets an Inspector General's basic pay at the rate for Executive Schedule ${reference.levelText || `Level ${reference.level}`} plus ${arithmetic.percent} percent; OPM's ${reference.table || "table"} prints ${arithmetic.baseText || reference.levelRateText} for that level. ${arithmetic.baseText || reference.levelRateText} + ${arithmetic.percent}% = ${printed}, arithmetic this project performed and no document prints.${identification.establishment ? ` 5 U.S.C. 401(1) lists ${identification.establishment} as an establishment whose Inspector General that section covers.` : ""}${holdersNote(reference)}${payDocuments(reference)}`
-        : `${reference.statute || "The statute"} sets the ${reference.office || "post"}'s pay equal to the rate for Executive Schedule ${reference.levelText || `Level ${reference.level}`}; OPM's ${reference.table || "table"} prints ${printed} for that level. The post is not itself on the Schedule.${identification.statuteIdentifies ? ` The graph's title is a template; the same section names the office under it: "${String(identification.statuteIdentifies).trim()}"` : ""}${holdersNote(reference)}${payDocuments(reference)}`,
+        : `${reference.statute || "The statute"} sets the ${reference.office || "post"}'s pay equal to ${reference.viaStatute ? `a rate ${reference.viaStatute} sets at` : "the rate for"} Executive Schedule ${reference.levelText || `Level ${reference.level}`}; OPM's ${reference.table || "table"} prints ${printed} for that level. The post is not itself on the Schedule.${identification.statuteIdentifies ? ` The graph's title is a template; the same section names the office under it: "${String(identification.statuteIdentifies).trim()}"` : ""}${holdersNote(reference)}${payDocuments(reference)}`,
     });
   }
   // Schedule 8 of the pay-adjustment order prints the uniformed services'
