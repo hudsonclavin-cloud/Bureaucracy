@@ -181,6 +181,12 @@ PAY_DOCUMENT_FIELDS: dict[str, dict[str, Any]] = {
         # states what a Senator or a Member is paid, and that this post is a
         # Member's is a reviewed rule, not anything the schedule says.
         "memberSeatRoles": {"url": "states what a seat in this chamber is paid"},
+        # A joint committee's post (since 2026-10-08) sits in neither chamber:
+        # the schedule's two seat rows print one figure, and the chamber is
+        # never read.
+        "memberSeatJointRoles": {
+            "url": "states what a seat in either chamber is paid, the same figure on both rows",
+        },
         "memberSeatCaution": (
             "One document states the figure outright, for the SEAT: Schedule 6 prints what a "
             "Senator or a Member of the House is paid and no separate rate for this office. "
@@ -459,7 +465,8 @@ def count_documents(field: str, block: Mapping[str, Any]) -> tuple[int, list[dic
     elif _counted_class(block) and spec.get("countedRoles"):
         role_words = spec["countedRoles"]
     elif _member_seat(block) and spec.get("memberSeatRoles"):
-        role_words = spec["memberSeatRoles"]
+        joint = block["memberSeat"].get("chamber") == "joint" and spec.get("memberSeatJointRoles")
+        role_words = spec["memberSeatJointRoles"] if joint else spec["memberSeatRoles"]
     elif _states_the_office(block) and spec.get("statesOfficeRoles"):
         role_words = spec["statesOfficeRoles"]
     elif _vacancy_listing(block) and spec.get("vacancyRoles"):

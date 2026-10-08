@@ -2253,8 +2253,21 @@ US_CODE_MEMBER_LEADERSHIP_NODES = {
 US_CODE_MEMBER_SEATS_NOT_PRICED = (
     "leg-house-leadership-problem-solvers-caucus-co-chairs",
     "leg-senate-leadership-president-of-the-senate-vice-president",
-    "leg-joint-econ-chair-alternates-senate-house",
-    "leg-joint-econ-vice-chair",
+)
+#: A joint committee's own posts (since 2026-10-08; the module's
+#: MEMBER_JOINT_*): under `leg-joint` and neither chamber, named for one of
+#: these roles (any trailing parenthetical set aside), priced from BOTH seat
+#: rows at once because Schedule 6 prints the same figure on each. A joint
+#: block names no chamber and no single row. Pinned equal to the module's by
+#: tests/test_us_code_pay_schedules.py.
+US_CODE_MEMBER_JOINT_ROOT = "leg-joint"
+US_CODE_MEMBER_JOINT_CHAMBER = "joint"
+US_CODE_MEMBER_JOINT_ROLES = ("Vice Chair", "Ranking Member", "Chair")
+US_CODE_MEMBER_JOINT_SEAT_ROWS = ("senators", "members of the house of representatives")
+US_CODE_MEMBER_JOINT_SEAT_TIER = "senators; members of the house of representatives"
+US_CODE_JOINT_SEAT_ROWS_NOTE = (
+    "Schedule 6 prints the same 174,000 for Senators and for Members of the House of Representatives, "
+    "so the figure is the same whichever chamber the holder sits in."
 )
 #: The panel prints a member-seat block's `basis` as the reason the seat rate
 #: applies, so an unmirrored basis would be a fabricated-reason channel (the
@@ -6472,6 +6485,29 @@ def member_seat_chamber(node_id, tree_parents):
     return None
 
 
+def member_seat_under_joint_root(node_id, tree_parents):
+    """Whether the joint committees' grouping is among a node's ancestors,
+    off the tree the gate is walking."""
+    seen = set()
+    current = tree_parents.get(node_id) if isinstance(tree_parents, dict) else None
+    while current and current not in seen:
+        if current == US_CODE_MEMBER_JOINT_ROOT:
+            return True
+        seen.add(current)
+        current = tree_parents.get(current)
+    return False
+
+
+def member_seat_joint_role(name):
+    """The joint-committee role a post's name states (any trailing
+    parenthetical set aside), or None -- the module's `joint_role_of`."""
+    base = re.sub(r"\s*\([^()]*\)\s*$", "", str(name or "")).strip()
+    for role in US_CODE_MEMBER_JOINT_ROLES:
+        if base == role or base.startswith(role + ", "):
+            return role
+    return None
+
+
 def member_seat_violations(node, pay, label, tree_parents, type_by_id, name_by_id):
     """Everything that must be true of a Schedule 6 block that prices an
     office a Member holds at the SEAT rate rather than at a row naming the
@@ -6499,8 +6535,17 @@ def member_seat_violations(node, pay, label, tree_parents, type_by_id, name_by_i
         say("is priced as a Member's seat and the gate was handed no tree to read its chamber off")
         return out
     chamber = member_seat_chamber(node_id, tree_parents)
+    joint = chamber is None and member_seat_under_joint_root(node_id, tree_parents)
+    kind = str(seat.get("kind") or "")
+    if kind == "joint_committee_post" and not joint:
+        say("is filed as a joint committee's post but the tree puts it under {!r}".format(chamber or "no chamber"))
+    if joint:
+        # A joint committee's post: priced from both seat rows at once, and
+        # nothing in the block may say which chamber the holder sits in.
+        out.extend(member_seat_joint_violations(node, pay, seat, label, tree_parents, type_by_id, name_by_id))
+        return out
     if chamber is None:
-        say("sits under neither chamber grouping (a joint committee?) and is priced as a Member's seat")
+        say("sits under neither chamber grouping nor a joint committee and is priced as a Member's seat")
     else:
         expected_row = US_CODE_MEMBER_SEAT_ROWS[chamber]
         if str(seat.get("chamber") or "") != chamber:
@@ -6511,7 +6556,6 @@ def member_seat_violations(node, pay, label, tree_parents, type_by_id, name_by_i
             say("prices tier {!r} for a seat in {!r}, whose row is {!r}".format(pay.get("seatTier"), chamber, expected_row))
         if str(pay.get("amountScope") or "").casefold() != expected_row:
             say("scopes the figure to {!r}, not the chamber's row".format(pay.get("amountScope")))
-    kind = str(seat.get("kind") or "")
     parent_id = tree_parents.get(node_id) or ""
     parent_type = str(type_by_id.get(parent_id) or "").casefold()
     if node_id in US_CODE_MEMBER_LEADERSHIP_NODES:
@@ -6545,6 +6589,62 @@ def member_seat_violations(node, pay, label, tree_parents, type_by_id, name_by_i
         say("gives a basis that does not say the holder is never read")
     if chamber == "leg-house" and US_CODE_HOUSE_SEAT_ROWS_NOTE not in basis:
         say("prices a House seat without noting the Delegate and Resident Commissioner rows")
+    return out
+
+
+def member_seat_joint_violations(node, pay, seat, label, tree_parents, type_by_id, name_by_id):
+    """A joint committee's chair, vice chair or ranking member, priced at the
+    seat rate from BOTH of Schedule 6's seat rows: the block must quote both,
+    name neither chamber, name no single row, sit directly under a committee,
+    state a joint role and carry the sentence saying the figure is the same
+    either way."""
+    out = []
+    say = lambda text: out.append("{} {}".format(label(node), text))
+    node_id = str(node.get("id") or "")
+    name = str(node.get("name") or "")
+    if str(seat.get("kind") or "") != "joint_committee_post":
+        say("sits under a joint committee and is filed as {!r}, not a joint committee's post".format(seat.get("kind")))
+    if str(seat.get("chamber") or "") != US_CODE_MEMBER_JOINT_CHAMBER:
+        say("is a joint committee's post and names chamber {!r}; which chamber the holder sits in is never read".format(
+            seat.get("chamber")))
+    if seat.get("row"):
+        say("is a joint committee's post and names one chamber's row {!r}".format(seat.get("row")))
+    rows = seat.get("rows")
+    if not isinstance(rows, list) or tuple(str(r).casefold() for r in rows) != US_CODE_MEMBER_JOINT_SEAT_ROWS:
+        say("is a joint committee's post and does not carry both seat rows ({!r})".format(rows))
+    if str(pay.get("seatTier") or "") != US_CODE_MEMBER_JOINT_SEAT_TIER:
+        say("is a joint committee's post priced at tier {!r}, not both seat rows".format(pay.get("seatTier")))
+    if str(pay.get("amountScope") or "").casefold() != US_CODE_MEMBER_JOINT_SEAT_TIER:
+        say("is a joint committee's post scoped to {!r}, not both seat rows".format(pay.get("amountScope")))
+    quote = str(pay.get("quote") or "").casefold()
+    for row in US_CODE_MEMBER_JOINT_SEAT_ROWS:
+        figure = US_CODE_SCHEDULE_6_RATES.get(row)
+        if figure is None or "{} {:,.0f}".format(row, figure) not in quote:
+            say("is a joint committee's post whose quote does not carry the row {!r} with its figure".format(row))
+    figures = {US_CODE_SCHEDULE_6_RATES.get(row) for row in US_CODE_MEMBER_JOINT_SEAT_ROWS}
+    if len(figures) != 1:
+        say("is a joint committee's post and the two seat rows print different figures")
+    parent_id = tree_parents.get(node_id) or ""
+    parent_type = str((type_by_id or {}).get(parent_id) or "").casefold()
+    if parent_type not in US_CODE_MEMBER_COMMITTEE_TYPES:
+        say("sits under a {!r} ({!r}), not a joint committee, and is priced as its {}".format(
+            (type_by_id or {}).get(parent_id), (name_by_id or {}).get(parent_id), seat.get("role")))
+    role = member_seat_joint_role(name)
+    if role is None:
+        say("is named {!r}, which states no joint-committee role".format(name))
+    elif str(seat.get("role") or "") != role:
+        say("names its role {!r}; the name says {!r}".format(seat.get("role"), role))
+    if str(seat.get("body") or "") != str((name_by_id or {}).get(parent_id) or ""):
+        say("names its body {!r}; the tree puts it under {!r}".format(seat.get("body"), (name_by_id or {}).get(parent_id)))
+    basis = str(seat.get("basis") or "")
+    if US_CODE_MEMBER_SEAT_SEPARATE_RATES not in basis:
+        say("gives a basis that does not carry the schedule's own list of the offices it prices separately")
+    if US_CODE_MEMBER_SEAT_REVIEWED_WORDS not in basis:
+        say("gives a basis that does not say the identification is a reviewed rule")
+    if US_CODE_JOINT_SEAT_ROWS_NOTE not in basis:
+        say("gives a basis that does not say the figure is the same whichever chamber the holder sits in")
+    if "never read" not in basis:
+        say("gives a basis that does not say the holder is never read")
     return out
 
 
@@ -6602,16 +6702,28 @@ def statutory_pay_violations(node, pay, today, label, tree_parents=None, type_by
         # chamber's row, read off the tree, and the rule is checked there.
         out.extend(member_seat_violations(node, pay, label, tree_parents, type_by_id, name_by_id))
         chamber = member_seat_chamber(node_id, tree_parents)
-        expected_tier_for_node = US_CODE_MEMBER_SEAT_ROWS.get(chamber) if chamber else None
+        if chamber:
+            expected_tier_for_node = US_CODE_MEMBER_SEAT_ROWS.get(chamber)
+        elif member_seat_under_joint_root(node_id, tree_parents):
+            expected_tier_for_node = US_CODE_MEMBER_JOINT_SEAT_TIER
+        else:
+            expected_tier_for_node = None
     else:
         expected_tier_for_node = STATUTORY_PAY_NODE_TIERS.get(node_id)
-        if source == "us_code_pay_schedules" and tier in US_CODE_MEMBER_SEAT_ROWS.values():
+        if source == "us_code_pay_schedules" and (
+            tier in US_CODE_MEMBER_SEAT_ROWS.values() or tier == US_CODE_MEMBER_JOINT_SEAT_TIER
+        ):
             say("prices a Member's seat row without the member-seat method and its block")
     if expected_tier_for_node is None:
         say("prices a node this pipeline has no known tier for")
     elif tier != expected_tier_for_node:
         say("prices tier {!r} on a node that is a {!r}".format(tier, expected_tier_for_node))
-    expected = mirror["tiers"].get(tier)
+    if tier == US_CODE_MEMBER_JOINT_SEAT_TIER and source == "us_code_pay_schedules":
+        # Both seat rows at once: the figure is theirs only while they agree.
+        joint_figures = {US_CODE_SCHEDULE_6_RATES.get(row) for row in US_CODE_MEMBER_JOINT_SEAT_ROWS}
+        expected = joint_figures.pop() if len(joint_figures) == 1 else None
+    else:
+        expected = mirror["tiers"].get(tier)
     amount = pay.get("amount")
     if isinstance(amount, bool) or not isinstance(amount, (int, float)):
         say("publishes {!r} as a rate of basic pay".format(amount))
@@ -6665,7 +6777,10 @@ def statutory_pay_violations(node, pay, today, label, tree_parents=None, type_by
             say("prices from Schedule {} without quoting its heading".format(number))
         if effective.casefold() not in quote.casefold():
             say("prices from Schedule {} without quoting the effective line the note prints".format(number))
-        if tier and tier not in quote.casefold():
+        if tier == US_CODE_MEMBER_JOINT_SEAT_TIER:
+            if any(row not in quote.casefold() for row in US_CODE_MEMBER_JOINT_SEAT_ROWS):
+                say("prices a joint committee's post without quoting both seat rows")
+        elif tier and tier not in quote.casefold():
             say("prices an office its own quoted schedule row does not name")
         # The bare rows are readable as dollars only because the column's
         # first figure carries the mark; the record must carry it too.

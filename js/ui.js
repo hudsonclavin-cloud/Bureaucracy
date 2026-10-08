@@ -1330,7 +1330,7 @@ function renderStatutoryPay(data) {
     // chamber's row, never at a row naming the office. The basis is the
     // reviewed rule in the pipeline's own words, and the block says the
     // identification is a rule, not a document naming this post.
-    add(`PRICED AS A MEMBER'S SEAT, NOT FOR THE OFFICE — ${pay.sourceLabel || "Schedule 6"}${on ? ` (checked ${on})` : ""} prints ${printed} on its row "${seat.row || pay.amountScope || "Members"}"${pay.year ? ` for ${pay.year}` : ""}. `);
+    add(`PRICED AS A MEMBER'S SEAT, NOT FOR THE OFFICE — ${pay.sourceLabel || "Schedule 6"}${on ? ` (checked ${on})` : ""} prints ${printed} ${memberSeatRowsText(seat, pay)}${pay.year ? ` for ${pay.year}` : ""}. `);
     add(seat.basis || "The holder of this office is a Member of the chamber and Schedule 6 prints no separate rate for it.");
     add(" It is not this unit's cost: basic pay excludes benefits and is not a share of federal outlays.");
   } else if (pay.statesTheOffice === true) {
@@ -1602,6 +1602,17 @@ function renderDerivedPay(data) {
 // alike. This sentence is what stops it reading as one person's pay or as the
 // group's combined pay. A roster figure carries `holders.uniformRate` only
 // when the report listed every holder at one identical rate.
+// Where Schedule 6 prints the figure a Member's-seat block rests on. A seat in
+// one chamber rests on that chamber's row; a joint committee's post (since
+// 2026-10-08) carries `rows`, both seat rows, because Schedule 6 prints the
+// same figure on each and which chamber the holder sits in is never read.
+function memberSeatRowsText(seat, block) {
+  if (seat && Array.isArray(seat.rows) && seat.rows.length) {
+    return `on both its seat rows, ${seat.rows.map((row) => `"${row}"`).join(" and ")}`;
+  }
+  return `on its row "${(seat && seat.row) || (block && block.amountScope) || "Members"}"`;
+}
+
 function holdersSentence(block) {
   const holders = block && typeof block === "object" ? block.holders : null;
   if (!holders || typeof holders !== "object") return "";
@@ -3009,7 +3020,7 @@ function standInNote(standIn) {
     case "statutory": {
       const seat = block.memberSeat && typeof block.memberSeat === "object" ? block.memberSeat : null;
       note = seat
-        ? ` What is shown instead is a Member's pay: ${block.sourceLabel || "Schedule 6"} prints ${printed} on its row "${seat.row || block.amountScope || "Members"}"${block.year ? ` for ${block.year}` : ""}, and the holder of this office is a Member of the chamber, for whom no separate rate is printed. That is a salary, not what this unit costs.`
+        ? ` What is shown instead is a Member's pay: ${block.sourceLabel || "Schedule 6"} prints ${printed} ${memberSeatRowsText(seat, block)}${block.year ? ` for ${block.year}` : ""}, and the holder of this office is ${Array.isArray(seat.rows) && seat.rows.length ? "a Member of one chamber or the other — the figure is the same for both, and which chamber is never read —" : "a Member of the chamber,"} for whom no separate rate is printed. That is a salary, not what this unit costs.`
         : block.statesTheOffice === true
           ? ` What is shown instead is the salary ${block.sourceLabel || "a section of the United States Code"} states for ${block.office || block.amountScope || "the office"}: ${printed}. A salary is not what this unit costs.`
           : ` What is shown instead is a statutory rate of basic pay: ${block.sourceLabel || "a primary official source"} states ${printed} for ${block.amountScope || "this tier"}${block.year ? ` for ${block.year}` : ""}. It names a tier or a group of roles rather than this post by name, and a salary is not what this unit costs.`;

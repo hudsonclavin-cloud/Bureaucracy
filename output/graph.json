@@ -61151,6 +61151,51 @@
                   "budget": null,
                   "color": "#666666",
                   "children": [],
+                  "positionStatutoryPay": {
+                    "source": "us_code_pay_schedules",
+                    "sourceLabel": "Schedule 6 of the annual pay-adjustment order, as 5 U.S.C. 5332's note prints it",
+                    "method": "member_of_congress_priced_at_the_seat_rate_of_schedule_6_of_the_annual_pay_adjustment_order",
+                    "amount": 174000.0,
+                    "rateText": "$174,000 (Schedule 6 — Vice President and Members Of Congress, Effective on the first day of the first applicable pay period beginning on or after January 1, 2026)",
+                    "year": "2026",
+                    "effective": "2026-01-01",
+                    "costBasis": "basic_pay",
+                    "scopeMatch": "proxy",
+                    "financialEvidenceStatus": "partial",
+                    "amountScope": "Senators; Members of the House of Representatives",
+                    "seatTier": "senators; members of the house of representatives",
+                    "quote": "Schedule 6 — Vice President and Members Of Congress · (Effective on the first day of the first applicable pay period beginning on or after January 1, 2026) · Vice President $292,300 · Senators 174,000 · Members of the House of Representatives 174,000",
+                    "footnotes": [
+                      "Schedule 6 — Vice President and Members Of Congress · (Effective on the first day of the first applicable pay period beginning on or after January 1, 2026) · Vice President $292,300 · Senators 174,000 · Members of the House of Representatives 174,000"
+                    ],
+                    "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5332&num=0&edition=prelim",
+                    "checkedAt": "2026-09-23T14:35:38Z",
+                    "memberSeat": {
+                      "kind": "joint_committee_post",
+                      "role": "Chair",
+                      "body": "Joint Economic Committee",
+                      "chamber": "joint",
+                      "chamberName": "a joint committee of the Senate and the House of Representatives",
+                      "rows": [
+                        "Senators",
+                        "Members of the House of Representatives"
+                      ],
+                      "basis": "The Chair of the Joint Economic Committee is a Senator or a Member of the House of Representatives: a joint committee is composed of Members of both chambers (a reviewed rule, not a document naming this post). Schedule 6 prints a separate rate only for the Vice President, the Speaker, the majority and minority leaders of each chamber and the President pro tempore, and none for a joint committee's chair, so this post is priced at the seat's rate and nothing is added for holding it. Schedule 6 prints the same 174,000 for Senators and for Members of the House of Representatives, so the figure is the same whichever chamber the holder sits in. Which chamber the holder sits in, and which Member holds the post, is never read."
+                    },
+                    "verification": {
+                      "documents": 1,
+                      "documentsStatingTheFigure": 1,
+                      "percent": 70,
+                      "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+                      "caution": "One document states the figure outright, for the SEAT: Schedule 6 prints what a Senator or a Member of the House is paid and no separate rate for this office. That this post is a Member's, and so is paid the seat rate and nothing more, is a reviewed rule this project applies, not a document naming the post. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+                      "documentRoles": [
+                        {
+                          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5332&num=0&edition=prelim",
+                          "role": "states what a seat in either chamber is paid, the same figure on both rows"
+                        }
+                      ]
+                    }
+                  },
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -61181,6 +61226,51 @@
                   "budget": null,
                   "color": "#666666",
                   "children": [],
+                  "positionStatutoryPay": {
+                    "source": "us_code_pay_schedules",
+                    "sourceLabel": "Schedule 6 of the annual pay-adjustment order, as 5 U.S.C. 5332's note prints it",
+                    "method": "member_of_congress_priced_at_the_seat_rate_of_schedule_6_of_the_annual_pay_adjustment_order",
+                    "amount": 174000.0,
+                    "rateText": "$174,000 (Schedule 6 — Vice President and Members Of Congress, Effective on the first day of the first applicable pay period beginning on or after January 1, 2026)",
+                    "year": "2026",
+                    "effective": "2026-01-01",
+                    "costBasis": "basic_pay",
+                    "scopeMatch": "proxy",
+                    "financialEvidenceStatus": "partial",
+                    "amountScope": "Senators; Members of the House of Representatives",
+                    "seatTier": "senators; members of the house of representatives",
+                    "quote": "Schedule 6 — Vice President and Members Of Congress · (Effective on the first day of the first applicable pay period beginning on or after January 1, 2026) · Vice President $292,300 · Senators 174,000 · Members of the House of Representatives 174,000",
+                    "footnotes": [
+                      "Schedule 6 — Vice President and Members Of Congress · (Effective on the first day of the first applicable pay period beginning on or after January 1, 2026) · Vice President $292,300 · Senators 174,000 · Members of the House of Representatives 174,000"
+                    ],
+                    "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5332&num=0&edition=prelim",
+                    "checkedAt": "2026-09-23T14:35:38Z",
+                    "memberSeat": {
+                      "kind": "joint_committee_post",
+                      "role": "Vice Chair",
+                      "body": "Joint Economic Committee",
+                      "chamber": "joint",
+                      "chamberName": "a joint committee of the Senate and the House of Representatives",
+                      "rows": [
+                        "Senators",
+                        "Members of the House of Representatives"
+                      ],
+                      "basis": "The Vice Chair of the Joint Economic Committee is a Senator or a Member of the House of Representatives: a joint committee is composed of Members of both chambers (a reviewed rule, not a document naming this post). Schedule 6 prints a separate rate only for the Vice President, the Speaker, the majority and minority leaders of each chamber and the President pro tempore, and none for a joint committee's vice chair, so this post is priced at the seat's rate and nothing is added for holding it. Schedule 6 prints the same 174,000 for Senators and for Members of the House of Representatives, so the figure is the same whichever chamber the holder sits in. Which chamber the holder sits in, and which Member holds the post, is never read."
+                    },
+                    "verification": {
+                      "documents": 1,
+                      "documentsStatingTheFigure": 1,
+                      "percent": 70,
+                      "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+                      "caution": "One document states the figure outright, for the SEAT: Schedule 6 prints what a Senator or a Member of the House is paid and no separate rate for this office. That this post is a Member's, and so is paid the seat rate and nothing more, is a reviewed rule this project applies, not a document naming the post. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+                      "documentRoles": [
+                        {
+                          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5332&num=0&edition=prelim",
+                          "role": "states what a seat in either chamber is paid, the same figure on both rows"
+                        }
+                      ]
+                    }
+                  },
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,

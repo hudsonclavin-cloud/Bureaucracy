@@ -378,6 +378,13 @@ from data_pipeline.verification.us_code_pay_schedules import (  # noqa: E402
     MEMBER_SEATS_NOT_PRICED,
     METHOD_MEMBER_SEAT,
     SEPARATE_RATES_SENTENCE,
+    JOINT_SEAT_ROWS_NOTE,
+    MEMBER_JOINT_CHAMBER,
+    MEMBER_JOINT_ROLES,
+    MEMBER_JOINT_ROOT,
+    MEMBER_JOINT_SEAT_ROWS,
+    MEMBER_JOINT_SEAT_TIER,
+    joint_role_of,
     match_member_seats,
 )
 from scripts.validate_published_graph import (  # noqa: E402
@@ -389,6 +396,13 @@ from scripts.validate_published_graph import (  # noqa: E402
     US_CODE_MEMBER_SEAT_ROWS,
     US_CODE_MEMBER_SEAT_SEPARATE_RATES,
     US_CODE_MEMBER_SEATS_NOT_PRICED,
+    US_CODE_JOINT_SEAT_ROWS_NOTE,
+    US_CODE_MEMBER_JOINT_CHAMBER,
+    US_CODE_MEMBER_JOINT_ROLES,
+    US_CODE_MEMBER_JOINT_ROOT,
+    US_CODE_MEMBER_JOINT_SEAT_ROWS,
+    US_CODE_MEMBER_JOINT_SEAT_TIER,
+    member_seat_joint_role,
 )
 
 
@@ -508,6 +522,25 @@ class MemberSeatMirrorTests(unittest.TestCase):
         self.assertEqual(tuple(sorted(MEMBER_SEATS_NOT_PRICED)), tuple(sorted(US_CODE_MEMBER_SEATS_NOT_PRICED)))
         self.assertEqual(SEPARATE_RATES_SENTENCE, US_CODE_MEMBER_SEAT_SEPARATE_RATES)
         self.assertEqual(HOUSE_SEAT_ROWS_NOTE, US_CODE_HOUSE_SEAT_ROWS_NOTE)
+        self.assertEqual(MEMBER_JOINT_ROOT, US_CODE_MEMBER_JOINT_ROOT)
+        self.assertEqual(MEMBER_JOINT_CHAMBER, US_CODE_MEMBER_JOINT_CHAMBER)
+        self.assertEqual(tuple(MEMBER_JOINT_ROLES), tuple(US_CODE_MEMBER_JOINT_ROLES))
+        self.assertEqual(tuple(r.casefold() for r in MEMBER_JOINT_SEAT_ROWS), US_CODE_MEMBER_JOINT_SEAT_ROWS)
+        self.assertEqual(MEMBER_JOINT_SEAT_TIER, US_CODE_MEMBER_JOINT_SEAT_TIER)
+        self.assertEqual(JOINT_SEAT_ROWS_NOTE, US_CODE_JOINT_SEAT_ROWS_NOTE)
+        # The joint tier is both chamber rows, in the order the schedule prints them.
+        self.assertEqual(tuple(MEMBER_JOINT_SEAT_ROWS), tuple(CHAMBER_SEAT_ROWS.values()))
+        self.assertEqual(MEMBER_JOINT_SEAT_TIER, "; ".join(MEMBER_JOINT_SEAT_ROWS).casefold())
+        for name in ("Chair (alternates Senate/House)", "Vice Chair", "Ranking Member, W", "Chair, W",
+                     "Chief Economist", "Senior Economist (×4)", "Vice Chairman", "Co-Chair"):
+            with self.subTest(name=name):
+                self.assertEqual(joint_role_of(name), member_seat_joint_role(name))
+
+    def test_the_joint_note_s_figure_is_what_both_rows_print(self):
+        rows = {r["office"]: r for r in parse_pay_schedules(PAGE)["schedules"]["6"]["rows"]}
+        printed = {rows[office]["printed"] for office in MEMBER_JOINT_SEAT_ROWS}
+        self.assertEqual({"174,000"}, printed)
+        self.assertIn("174,000 for Senators and for Members of the House of Representatives", JOINT_SEAT_ROWS_NOTE)
 
     def test_the_seat_rows_are_what_the_note_prints(self):
         rows = {r["office"]: r["amount"] for r in parse_pay_schedules(PAGE)["schedules"]["6"]["rows"]}
@@ -543,7 +576,7 @@ class MemberSeatMatchingTests(unittest.TestCase):
         self.assertEqual(records["leg-house-cmte-z-chair"]["amount"], 174_000.0)
         self.assertEqual(records["leg-house-cmte-z-chair"]["method"], METHOD_MEMBER_SEAT)
         self.assertEqual(records["leg-house-cmte-z-chair"]["scopeMatch"], "proxy")
-        self.assertEqual(report["memberSeats"]["byChamber"], {"leg-senate": 4, "leg-house": 3})
+        self.assertEqual(report["memberSeats"]["byChamber"], {"leg-senate": 4, "leg-house": 3, "joint": 3})
 
     def test_staff_beside_the_chairs_are_never_reached(self):
         records, _ = _member_records(_member_tree())
@@ -554,13 +587,57 @@ class MemberSeatMatchingTests(unittest.TestCase):
         records, _ = _member_records(_member_tree())
         self.assertNotIn("exec-ind-board-chair", records)
 
-    def test_the_joint_committees_are_refused_for_want_of_a_chamber(self):
+    def test_a_joint_committee_s_chair_and_vice_chair_are_priced_from_both_seat_rows(self):
+        records, _ = _member_records(_member_tree())
+        for node_id, role in (("leg-joint-econ-chair-alternates-senate-house", "Chair"),
+                              ("leg-joint-econ-vice-chair", "Vice Chair"),
+                              ("leg-joint-other-chair", "Chair")):
+            with self.subTest(node=node_id):
+                record = records[node_id]
+                seat = record["memberSeat"]
+                self.assertEqual("joint_committee_post", seat["kind"])
+                self.assertEqual(role, seat["role"])
+                self.assertEqual(MEMBER_JOINT_CHAMBER, seat["chamber"])
+                self.assertNotIn("row", seat)
+                self.assertEqual(list(MEMBER_JOINT_SEAT_ROWS), seat["rows"])
+                self.assertEqual(MEMBER_JOINT_SEAT_TIER, record["role"])
+                self.assertEqual(174_000.0, record["amount"])
+                self.assertIn("Senators 174,000", record["quote"])
+                self.assertIn("Members of the House of Representatives 174,000", record["quote"])
+                self.assertIn(JOINT_SEAT_ROWS_NOTE, seat["basis"])
+                self.assertNotIn("Delegates", seat["basis"])
+                self.assertEqual("proxy", record["scopeMatch"])
+        self.assertEqual("Joint Economic Committee",
+                         records["leg-joint-econ-chair-alternates-senate-house"]["memberSeat"]["body"])
+
+    def test_a_joint_committee_s_staff_and_a_post_outside_every_committee_are_never_reached(self):
+        tree = _member_tree()
+        joint = next(c for c in tree["children"][0]["children"] if c["id"] == "leg-joint")
+        econ = joint["children"][0]
+        econ["children"].append({"id": "leg-joint-econ-chief-economist", "name": "Chief Economist", "type": "Position"})
+        econ["children"].append({"id": "leg-joint-econ-senior-economist-4", "name": "Chair (×4)", "type": "Position",
+                                 "representsPosts": {"text": "×4", "kind": "exact", "count": 4}})
+        joint["children"].append({"id": "leg-joint-loose-chair", "name": "Chair", "type": "Position"})
+        node_map, parent_map = index_tree(tree)
+        matches, _, reasons = match_member_seats(node_map, parent_map)
+        self.assertNotIn("leg-joint-econ-chief-economist", matches)
+        self.assertEqual("stands_for_several_posts", reasons["leg-joint-econ-senior-economist-4"])
+        # Directly under the grouping, not a committee: never considered.
+        self.assertNotIn("leg-joint-loose-chair", matches)
+
+    def test_a_joint_post_whose_two_seat_rows_disagree_is_refused(self):
+        import copy
+        schedules = copy.deepcopy(parse_pay_schedules(PAGE)["schedules"])
+        for row in schedules["6"]["rows"]:
+            if row["office"] == "Members of the House of Representatives":
+                row["amount"] = 175_000.0
+                row["printed"] = row["amountRaw"] = "175,000"
         node_map, parent_map = index_tree(_member_tree())
-        matches, refusals, reasons = match_member_seats(node_map, parent_map)
-        self.assertNotIn("leg-joint-other-chair", matches)
-        self.assertEqual(reasons["leg-joint-other-chair"], "chamber_not_determinable_from_the_tree")
-        self.assertTrue(reasons["leg-joint-econ-chair-alternates-senate-house"].startswith("refused_by_name:"))
-        self.assertTrue(reasons["leg-joint-econ-vice-chair"].startswith("refused_by_name:"))
+        records, report = build_records(node_map, schedules, url=SCHEDULE_URL, sha256="a" * 64,
+                                        retrieved_at="2026-09-30T00:00:00Z", parent_map=parent_map)
+        self.assertNotIn("leg-joint-econ-vice-chair", records)
+        self.assertEqual(3, report["refused"]["joint_post_seat_rows_print_different_figures"])
+        self.assertIn("leg-senate-cmte-x-chair", records)
 
     def test_the_leadership_table_prices_the_whips_and_refuses_by_name(self):
         records, _ = _member_records(_member_tree())
@@ -614,7 +691,7 @@ class MemberSeatMatchingTests(unittest.TestCase):
         tree = _member_tree()
         records, _ = _member_records(tree)
         stats = apply_pay_evidence(tree, records)
-        self.assertEqual(stats["member_seats"], 7)
+        self.assertEqual(stats["member_seats"], 10)
         node_map = index_tree(tree)[0]
         pay = node_map["leg-senate-cmte-x-chair"]["positionStatutoryPay"]
         self.assertEqual(pay["method"], METHOD_MEMBER_SEAT)
@@ -701,10 +778,16 @@ class MemberSeatGateTests(unittest.TestCase):
     def test_a_post_moved_out_of_both_chambers_is_caught(self):
         node_map, parents, types, names = self._apply()
         chair = node_map["leg-house-cmte-z-chair"]
-        parents = dict(parents)
-        parents["leg-house-cmte-z"] = "leg-joint"
-        out = self._check(chair, chair["positionStatutoryPay"], parents, types, names)
+        moved = dict(parents)
+        moved["leg-house-cmte-z"] = "legislative-branch"
+        out = self._check(chair, chair["positionStatutoryPay"], moved, types, names)
         self.assertTrue(any("neither chamber" in v for v in out), out)
+        # Moved under the joint committees, a House seat's block is a joint
+        # post's that names a chamber and one row: caught as such.
+        joint = dict(parents)
+        joint["leg-house-cmte-z"] = "leg-joint"
+        out = self._check(chair, chair["positionStatutoryPay"], joint, types, names)
+        self.assertTrue(any("names chamber 'leg-house'" in v for v in out), out)
 
     def test_a_renamed_post_is_caught(self):
         node_map, parents, types, names = self._apply()
@@ -736,6 +819,81 @@ class MemberSeatGateTests(unittest.TestCase):
         parents["leg-senate-leadership"] = "leg-house"
         out = self._check(whip, whip["positionStatutoryPay"], parents, types, names)
         self.assertTrue(any("table places in" in v for v in out), out)
+
+    def test_every_forgery_a_joint_committee_s_seat_makes_possible_is_caught(self):
+        node_map, parents, types, names = self._apply()
+        joint = node_map["leg-joint-econ-chair-alternates-senate-house"]
+        base = joint["positionStatutoryPay"]
+        seat = base["memberSeat"]
+        self.assertEqual(self._check(joint, base, parents, types, names), [])
+        one_row_quote = base["quote"].replace(" · Members of the House of Representatives 174,000", "")
+        attacks = {
+            "only the Senate's row quoted": {**base, "quote": one_row_quote, "footnotes": [one_row_quote]},
+            "only the House's row quoted": {**base, "quote": base["quote"].replace(" · Senators 174,000", "")},
+            "a chamber named": {**base, "memberSeat": {**seat, "chamber": "leg-senate"}},
+            "the House named": {**base, "memberSeat": {**seat, "chamber": "leg-house"}},
+            "one chamber's row named": {**base, "memberSeat": {**seat, "row": "Senators"}},
+            "one row of the two kept": {**base, "memberSeat": {**seat, "rows": ["Senators"]}},
+            "priced at the Senate tier": {**base, "seatTier": "senators", "amountScope": "Senators"},
+            "priced at the House tier": {**base, "seatTier": "members of the house of representatives",
+                                         "amountScope": "Members of the House of Representatives"},
+            "filed as a committee post": {**base, "memberSeat": {**seat, "kind": "committee_post"}},
+            "a basis without the same-figure sentence": {
+                **base, "memberSeat": {**seat, "basis": seat["basis"].replace(JOINT_SEAT_ROWS_NOTE, "")}},
+            "a basis without the schedule's own list": {
+                **base, "memberSeat": {**seat, "basis": seat["basis"].replace(SEPARATE_RATES_SENTENCE, "")}},
+            "a basis that reads the holder": {
+                **base, "memberSeat": {**seat, "basis": seat["basis"].replace("never read", "read")}},
+            "a role the name does not say": {**base, "memberSeat": {**seat, "role": "Vice Chair"}},
+            "a body the tree does not say": {**base, "memberSeat": {**seat, "body": "Joint Committee on Taxation"}},
+            "the method dropped": {**base, "method": "office_named_in_schedule_6_of_the_annual_pay_adjustment_order"},
+            "another figure": {**base, "amount": 193_400.0},
+        }
+        for name, pay in attacks.items():
+            with self.subTest(attack=name):
+                self.assertTrue(self._check(joint, pay, parents, types, names), f"{name} was not caught")
+
+    def test_a_joint_seat_on_a_parent_that_is_not_a_joint_committee_is_caught(self):
+        node_map, parents, types, names = self._apply()
+        joint = node_map["leg-joint-econ-vice-chair"]
+        pay = joint["positionStatutoryPay"]
+        # The committee re-typed: not a committee any more.
+        retyped = dict(types)
+        retyped["leg-joint-econ"] = "Office"
+        out = self._check(joint, pay, parents, retyped, names)
+        self.assertTrue(any("not a joint committee" in v for v in out), out)
+        # Moved under a chamber: the joint block now names no chamber the tree gives it.
+        moved = dict(parents)
+        moved["leg-joint-econ"] = "leg-house"
+        out = self._check(joint, pay, moved, types, names)
+        self.assertTrue(any("tree puts it under 'leg-house'" in v for v in out), out)
+        # Moved out of every joint committee and both chambers.
+        loose = dict(parents)
+        loose["leg-joint-econ"] = "legislative-branch"
+        out = self._check(joint, pay, loose, types, names)
+        self.assertTrue(any("nor a joint committee" in v for v in out), out)
+
+    def test_a_joint_seat_on_a_node_standing_for_several_posts_is_caught(self):
+        node_map, parents, types, names = self._apply()
+        joint = dict(node_map["leg-joint-econ-vice-chair"])
+        joint["representsPosts"] = {"text": "×2", "kind": "exact", "count": 2}
+        out = self._check(joint, joint["positionStatutoryPay"], parents, types, names)
+        self.assertTrue(any("several posts" in v for v in out), out)
+
+    def test_a_joint_seat_on_a_renamed_staff_post_is_caught(self):
+        node_map, parents, types, names = self._apply()
+        joint = dict(node_map["leg-joint-econ-vice-chair"])
+        joint["name"] = "Chief Economist"
+        out = self._check(joint, joint["positionStatutoryPay"], parents, types, names)
+        self.assertTrue(any("states no joint-committee role" in v for v in out), out)
+
+    def test_a_chamber_seat_filed_as_joint_is_caught(self):
+        node_map, parents, types, names = self._apply()
+        chair = node_map["leg-house-cmte-z-chair"]
+        joint_pay = node_map["leg-joint-other-chair"]["positionStatutoryPay"]
+        out = self._check(chair, joint_pay, parents, types, names)
+        self.assertTrue(out)
+        self.assertTrue(any("filed as a joint committee's post" in v for v in out), out)
 
     def test_without_the_tree_the_seat_cannot_be_checked_and_is_refused(self):
         node_map, _, _, _ = self._apply()
@@ -814,7 +972,23 @@ class MemberSeatPublishedGraphTests(unittest.TestCase):
             self.assertIn("SEAT", str(verification.get("caution")))
             self.assertFalse([u for u in (node.get("sourceUrls") or []) if "uscode.house.gov" in str(u)])
             self.assertNotIn(node.get("cost_status"), ("official", "root_total", "scaled_official"))
-        self.assertEqual(seen, 461)
+        self.assertEqual(seen, 463)
+
+    def test_the_joint_economic_committee_s_chair_and_vice_chair_carry_a_joint_seat(self):
+        for node_id in ("leg-joint-econ-chair-alternates-senate-house", "leg-joint-econ-vice-chair"):
+            pay = self.nodes[node_id].get("positionStatutoryPay")
+            with self.subTest(node=node_id):
+                self.assertIsInstance(pay, dict)
+                self.assertEqual(pay["memberSeat"]["kind"], "joint_committee_post")
+                self.assertEqual(pay["memberSeat"]["chamber"], MEMBER_JOINT_CHAMBER)
+                self.assertNotIn("row", pay["memberSeat"])
+                self.assertEqual(pay["seatTier"], MEMBER_JOINT_SEAT_TIER)
+                self.assertEqual(pay["amount"], 174_000.0)
+        # The other joint committees' posts are staff, never priced as Members.
+        for node_id, node in self.nodes.items():
+            if node_id.startswith("leg-joint-") and node_id not in (
+                    "leg-joint-econ-chair-alternates-senate-house", "leg-joint-econ-vice-chair"):
+                self.assertNotIn("positionStatutoryPay", node, node_id)
 
 
 # ---------------------------------------------------------------------------

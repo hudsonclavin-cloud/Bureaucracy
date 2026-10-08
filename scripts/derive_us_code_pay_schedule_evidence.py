@@ -116,13 +116,15 @@ def main(argv: list[str] | None = None) -> int:
             print(f"    {count:5d}  {reason}")
     seats = report.get("memberSeats") or {}
     print(
-        "Members' offices priced at the seat rate: {}  ({} committee posts, {} leadership offices; "
-        "Senate {}, House {})".format(
+        "Members' offices priced at the seat rate: {}  ({} committee posts, {} leadership offices, "
+        "{} joint-committee posts; Senate {}, House {}, joint {})".format(
             seats.get("priced", 0),
             (seats.get("byKind") or {}).get("committee_post", 0),
             (seats.get("byKind") or {}).get("leadership_office", 0),
+            (seats.get("byKind") or {}).get("joint_committee_post", 0),
             (seats.get("byChamber") or {}).get("leg-senate", 0),
             (seats.get("byChamber") or {}).get("leg-house", 0),
+            (seats.get("byChamber") or {}).get("joint", 0),
         )
     )
     for reason, count in (seats.get("refused") or {}).items():

@@ -919,6 +919,133 @@ INSTRUMENT_NOT_PRICED = {
     ),
 }
 
+#: The chambers' pay orders read in full (2026-10-08, the thirteenth research
+#: batch), for every post node beneath the four officers they price. Beyond
+#: the rows above, each order states a RATE for further officers -- the
+#: Senate's Secretaries for the Majority and Minority (sec. 2(b)), Deputy
+#: Legislative Counsel and Senior Counsels (sec. 2(c)), Chaplain (sec. 3),
+#: Senate Legal Counsel and Deputy (sec. 10(a)-(b)); the House's
+#: Sergeant-at-Arms, Chaplain, General Counsel, Inspector General, Director of
+#: Interparliamentary Affairs, Attending Physician and one unnamed
+#: emergency-preparedness position (sec. 1(a)) -- and none of them is a post
+#: node here: each is an Office node, or has no node at all. Every post node
+#: the batch named beneath the Secretary's, the Sergeant at Arms', the
+#: Clerk's and the CAO's offices is reached only by a CEILING ("shall not
+#: exceed", "in excess of", "maximum"), and a ceiling is not a rate. So each
+#: is declined here with the order's own words, re-found in the instrument on
+#: every derive run (a ceiling no longer printed is a refusal, not a silent
+#: decline). The orders' further ceilings -- committee staff (Senate sec.
+#: 5(b)), Senators' office staff (sec. 6(c)(2)), the Assistant Senate Legal
+#: Counsels (sec. 10(c)), the House's Parliamentarian, Legislative Counsel and
+#: Law Revision Counsel (sec. 1(b), "subject to the maximum") -- reach no post
+#: node the batch named, or reach staff titles (Staff Director, Legislative
+#: Counsel to a Senator) priced by nothing; they are recorded in words rather
+#: than enumerated.
+INSTRUMENT_CEILINGS: dict[str, dict[str, Any]] = {
+    "senate-order-sec-2c": {
+        "instrument": "order-of-the-president-pro-tempore-2024-03-25",
+        "subsection": "sec. 2(c)",
+        "quote": (
+            "the maximum annual rates of compensation for the Assistant Secretary of the Senate, the "
+            "Parliamentarian, the Financial Clerk, the Assistant to the Majority Leader for Floor Operations, "
+            "the Assistant to the Minority Leader for Floor Operations, the Chief of Staff for the Majority "
+            "Leader, and the Chief of Staff for the Minority Leader shall not exceed, the annual rate for level II."
+        ),
+        "office": ("leg-senate-admin-secretary",),
+        "nodes": ("leg-senate-admin-secretary-assistant-secretary-of-the-senate",),
+        "why": "names this office and states only a maximum for it",
+    },
+    "senate-order-sec-4b": {
+        "instrument": "order-of-the-president-pro-tempore-2024-03-25",
+        "subsection": "sec. 4(b)",
+        "quote": (
+            "No officer or employee within the Office of the Secretary of the Senate and no officer or employee "
+            "within the Office of the Sergeant at Arms and Doorkeeper shall, for any period of time, be paid gross "
+            "compensation at an annual rate that is in excess of the annual rate for level II."
+        ),
+        "office": ("leg-senate-admin-secretary", "leg-senate-admin-saa"),
+        "nodes": (
+            "leg-senate-admin-secretary-deputy-secretary-of-the-senate",
+            "leg-senate-admin-secretary-bill-clerk",
+            "leg-senate-admin-secretary-director-of-finance",
+            "leg-senate-admin-secretary-director-of-human-resources",
+            "leg-senate-admin-secretary-director-of-public-records",
+            "leg-senate-admin-secretary-director-of-senate-security",
+            "leg-senate-admin-secretary-director-of-the-capitol-printing-folding-room",
+            "leg-senate-admin-secretary-director-of-the-page-program",
+            "leg-senate-admin-secretary-enrolling-clerk",
+            "leg-senate-admin-secretary-executive-clerk",
+            "leg-senate-admin-secretary-journal-clerk",
+            "leg-senate-admin-secretary-legislative-information-officer",
+            "leg-senate-admin-secretary-senate-curator",
+            "leg-senate-admin-secretary-senate-historian",
+            "leg-senate-admin-secretary-senate-librarian",
+            "leg-senate-admin-saa-assistant-saa-capitol-division",
+            "leg-senate-admin-saa-assistant-saa-senate-division",
+            "leg-senate-admin-saa-capitol-police-liaison-officer",
+            "leg-senate-admin-saa-deputy-sergeant-at-arms",
+            "leg-senate-admin-saa-director-of-capitol-services",
+            "leg-senate-admin-saa-director-of-doorkeeper-operations",
+            "leg-senate-admin-saa-director-of-id-credentialing",
+            "leg-senate-admin-saa-director-of-mailing-services",
+            "leg-senate-admin-saa-director-of-senate-hair-care-services",
+            "leg-senate-admin-saa-director-of-senate-parking",
+            "leg-senate-admin-saa-director-of-senate-photo-studio",
+            "leg-senate-admin-saa-director-of-senate-post-office",
+            "leg-senate-admin-saa-director-of-senate-recording-studio",
+            "leg-senate-admin-saa-director-of-senate-restaurants",
+            "leg-senate-admin-saa-director-of-telecommunications",
+            "leg-senate-admin-saa-director-of-web-technology-innovation",
+        ),
+        "why": (
+            "names no rate for this post; the only provision reaching the office the graph places it in is "
+            "a ceiling"
+        ),
+    },
+    "house-order-sec-2a": {
+        "instrument": "order-of-the-speaker-2025-01-17",
+        "subsection": "sec. 2(a)",
+        "quote": (
+            "The maximum annual rate of pay for any employee whose pay is disbursed by the Chief Administrative "
+            "Officer and is not otherwise provided for in this Order or otherwise limited by law, rule, or "
+            "regulation, shall be equal to the annual rate of basic pay for level II of the Executive Schedule"
+        ),
+        "office": ("leg-house-cao", "leg-house-clerk"),
+        "nodes": (
+            "leg-house-cao-deputy-cao",
+            "leg-house-cao-director-of-child-care-center",
+            "leg-house-cao-director-of-congressional-record-index",
+            "leg-house-cao-director-of-finance",
+            "leg-house-cao-director-of-human-resources",
+            "leg-house-cao-director-of-it-customer-support",
+            "leg-house-cao-director-of-payroll-benefits",
+            "leg-house-cao-director-of-photography",
+            "leg-house-cao-director-of-supply-services",
+            "leg-house-cao-director-of-travel",
+            "leg-house-clerk-deputy-clerk",
+            "leg-house-clerk-director-of-communications",
+            "leg-house-clerk-director-of-finance",
+            "leg-house-clerk-director-of-house-history-preservation",
+            "leg-house-clerk-director-of-human-resources",
+            "leg-house-clerk-director-of-information-systems",
+            "leg-house-clerk-director-of-legislative-resource-center",
+        ),
+        "why": (
+            "names no rate for this post (sec. 1(a) names the Clerk and the Chief Administrative Officer, not "
+            "their deputies or staff); the only provision that could reach it is a ceiling"
+        ),
+    },
+}
+
+
+def ceiling_reason(group: Mapping[str, Any], instrument_name: str) -> str:
+    """The decline reason the derive step records, quoting the order."""
+    return (
+        f"{instrument_name}, {group['subsection']}, {group['why']}, and a ceiling is not a rate: "
+        f"\"{group['quote']}\""
+    )
+
+
 #: The Inspector General Act's rate, and the section that says whose.
 INSPECTOR_GENERAL_RULE: dict[str, Any] = {
     "title": "Inspector General",
@@ -1237,6 +1364,25 @@ def build_records(
         )
     for node_id, reason in INSTRUMENT_NOT_PRICED.items():
         not_priced[node_id] = reason
+    # The orders' ceilings: declined with the order's own words, re-found.
+    for group_id, group in sorted(INSTRUMENT_CEILINGS.items()):
+        instrument = instruments.get(group["instrument"])
+        if instrument is None:
+            try:
+                instrument = load_instrument(group["instrument"], directory)
+            except Unreadable as error:
+                refusals[group_id] = f"{group['instrument']}: {error}"
+                continue
+            instruments[group["instrument"]] = instrument
+        where = where_is(instrument, group["quote"])
+        if where is not None:
+            refusals[group_id] = f"{instrument['name']} does not carry the ceiling the decline quotes ({where})"
+            continue
+        for node_id in group["nodes"]:
+            if node_id in records:
+                refusals[group_id] = f"{node_id} is priced and declined at once"
+                continue
+            not_priced[node_id] = ceiling_reason(group, instrument["name"])
 
     # --- the Inspectors General ----------------------------------------------
     rule = INSPECTOR_GENERAL_RULE
