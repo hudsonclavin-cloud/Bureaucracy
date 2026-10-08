@@ -2808,6 +2808,7 @@ def build_graph(
     us_code_pay_schedule_evidence_path: str | Path | None = "default",
     us_code_stated_pay_evidence_path: str | Path | None = "default",
     va_title38_pay_evidence_path: str | Path | None = "default",
+    doj_ad_pay_evidence_path: str | Path | None = "default",
     derived_pay_evidence_path: str | Path | None = "default",
     tier_reference_pay_evidence_path: str | Path | None = "default",
     military_pay_evidence_path: str | Path | None = "default",
@@ -3156,6 +3157,24 @@ def build_graph(
     validation["va_title38_pay_evidence"] = apply_va_title38_pay_evidence(
         graph,
         load_va_title38_pay_evidence(resolved_va_title38_pay_path) if resolved_va_title38_pay_path else {},
+        index_tree=index_tree,
+    )
+    # The same field from a second schedule: the U.S. Attorneys' AD pay plan
+    # chart, whose first table is headed with the title it pays (doj_ad_pay.py,
+    # since 2026-10-08). A band for the title, so it may sit on a node that
+    # stands for several posts; the multi-post sweep stamps `holders` on it.
+    from data_pipeline.verification.doj_ad_pay import (  # noqa: E402 — imports this module
+        DEFAULT_PAY_EVIDENCE_PATH as DEFAULT_DOJ_AD_PAY_EVIDENCE_PATH,
+        apply_pay_evidence as apply_doj_ad_pay_evidence,
+        load_pay_evidence as load_doj_ad_pay_evidence,
+    )
+
+    resolved_doj_ad_pay_path = (
+        DEFAULT_DOJ_AD_PAY_EVIDENCE_PATH if doj_ad_pay_evidence_path == "default" else doj_ad_pay_evidence_path
+    )
+    validation["doj_ad_pay_evidence"] = apply_doj_ad_pay_evidence(
+        graph,
+        load_doj_ad_pay_evidence(resolved_doj_ad_pay_path) if resolved_doj_ad_pay_path else {},
         index_tree=index_tree,
     )
     # Last of the judicial pay passes, deliberately: this is the only source

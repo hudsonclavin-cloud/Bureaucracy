@@ -1,0 +1,165 @@
+{
+  "_note": "Derived by scripts/derive_doj_ad_pay_evidence.py from two committed pages of the U.S. Attorneys' career centre, fetched 2026-10-08T00:04:19Z: the Administratively Determined pay plan chart (the table headed 'Assistant United States Attorneys (AUSA)', grades AD-21 to AD-29, base pay before locality, tables for 2025) and the salary information page (the AD plan pays Assistant United States Attorneys; Supervisory AUSAs and Senior Litigation Counsel are categories of their own). Every figure is a band the chart prints, never a rate paid, and not the node's cost. The chart's second table names no post and is not read. Regenerate by re-running the script; never edit by hand.",
+  "source": {
+    "kind": "doj_usao_ad_pay_plan",
+    "chart": {
+      "url": "https://www.justice.gov/usao/career-center/salary-information/administratively-determined-pay-plan-charts",
+      "sha256": "ae022a954ab6f1c6c34969bfa46c88710d6e865c981588d2ee15d55e2f688495",
+      "fetchedAt": "2026-10-08T00:04:19Z",
+      "file": "tests/fixtures/doj/usao_ad_pay_plan_charts.html"
+    },
+    "planPage": {
+      "url": "https://www.justice.gov/usao/career-center/salary-information",
+      "sha256": "5042c378ebd6896d24a62c71b8c15f0a1c457e2b6e8a902243f8be9fe3b8cb1c",
+      "fetchedAt": "2026-10-08T00:04:53Z",
+      "file": "tests/fixtures/doj/usao_salary_information.html"
+    },
+    "effective": "2025-01-12"
+  },
+  "report": {
+    "source": "doj_usao_ad_pay_plan",
+    "chart": {
+      "url": "https://www.justice.gov/usao/career-center/salary-information/administratively-determined-pay-plan-charts",
+      "sha256": "ae022a954ab6f1c6c34969bfa46c88710d6e865c981588d2ee15d55e2f688495",
+      "fetchedAt": "2026-10-08T00:04:19Z"
+    },
+    "planPage": {
+      "url": "https://www.justice.gov/usao/career-center/salary-information",
+      "sha256": "5042c378ebd6896d24a62c71b8c15f0a1c457e2b6e8a902243f8be9fe3b8cb1c",
+      "fetchedAt": "2026-10-08T00:04:53Z"
+    },
+    "effective": "2025-01-12",
+    "table": "Assistant United States Attorneys (AUSA)",
+    "grades": [
+      {
+        "grade": "AD-21",
+        "years": "0-2",
+        "minimum": 63163.0,
+        "maximum": 107376.0
+      },
+      {
+        "grade": "AD-23",
+        "years": "3-4",
+        "minimum": 67863.0,
+        "maximum": 115369.0
+      },
+      {
+        "grade": "AD-25",
+        "years": "5",
+        "minimum": 72918.0,
+        "maximum": 123959.0
+      },
+      {
+        "grade": "AD-26",
+        "years": "6",
+        "minimum": 78346.0,
+        "maximum": 133189.0
+      },
+      {
+        "grade": "AD-27",
+        "years": "7",
+        "minimum": 84181.0,
+        "maximum": 143107.0
+      },
+      {
+        "grade": "AD-28",
+        "years": "8",
+        "minimum": 90449.0,
+        "maximum": 153761.0
+      },
+      {
+        "grade": "AD-29",
+        "years": "9+",
+        "minimum": 97181.0,
+        "maximum": 165209.0
+      }
+    ],
+    "priced": 2,
+    "refused": {},
+    "notPriced": {
+      "exec-dept-doj-usao-civil-division-chief": "a supervisory AUSA post: the chart's second table covers 'Executive, Managerial, Supervisory, Special Assistant or Senior Litigation Counsel AUSAs' and names no post, so which grade a division chief holds is stated nowhere",
+      "exec-dept-doj-usao-criminal-division-chief": "a supervisory AUSA post: the chart's second table names no post, so which grade a division chief holds is stated nowhere",
+      "exec-dept-doj-usao-first-assistant-u-s-attorney": "the chart names no First Assistant; the second table covers executive and supervisory AUSAs without naming a post",
+      "exec-dept-doj-usao-u-s-attorney-94-appointed-by-president": "the salary page puts United States Attorneys on the AD plan and the chart prints no row naming them"
+    },
+    "tableNotRead": {
+      "Executive, Managerial, Supervisory, Special Assistant or Senior Litigation Counsel AUSAs": "names no post; prints '$0' and 'n/a' in some cells; which of its grades a division chief or a First Assistant holds is stated nowhere"
+    },
+    "validated": 2,
+    "rejected": []
+  },
+  "nodes": {
+    "exec-dept-doj-usao-assistant-u-s-attorney-civil-multiple": {
+      "nodeId": "exec-dept-doj-usao-assistant-u-s-attorney-civil-multiple",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "basic_pay",
+      "amount": 63163.0,
+      "amountRaw": "63,163",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "These tables are for 2025 and are effective as of January 12, 2025. · The tables below do not include locality based comparability adjustments (locality pay). · Assistant United States Attorneys (AUSA) · AD-21 minimum $63,163 · AD-29 maximum $165,209",
+      "quote": "These tables are for 2025 and are effective as of January 12, 2025. · The tables below do not include locality based comparability adjustments (locality pay). · Assistant United States Attorneys (AUSA) · AD-21 minimum $63,163 · AD-29 maximum $165,209",
+      "fiscalYear": 2025,
+      "periodCoverage": "annual_rate",
+      "periodAsOf": "2025-01-12",
+      "amountScope": "Assistant United States Attorneys (AUSA)",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "doj_usao_ad_pay_plan_chart",
+      "sourceUrl": "https://www.justice.gov/usao/career-center/salary-information/administratively-determined-pay-plan-charts",
+      "documentSha256": "ae022a954ab6f1c6c34969bfa46c88710d6e865c981588d2ee15d55e2f688495",
+      "retrievedAt": "2026-10-08T00:04:19Z",
+      "locator": {
+        "page": "Assistant United States Attorneys (AUSA)",
+        "section": "AD-21 to AD-29"
+      },
+      "rangeMinimum": 63163.0,
+      "rangeMaximum": 165209.0,
+      "rangeMinimumRaw": "63,163",
+      "rangeMaximumRaw": "165,209",
+      "gradeLow": "AD-21",
+      "gradeHigh": "AD-29",
+      "rangeText": "$63,163 – $165,209",
+      "planUrl": "https://www.justice.gov/usao/career-center/salary-information",
+      "planSha256": "5042c378ebd6896d24a62c71b8c15f0a1c457e2b6e8a902243f8be9fe3b8cb1c",
+      "planRetrievedAt": "2026-10-08T00:04:53Z",
+      "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+    },
+    "exec-dept-doj-usao-assistant-u-s-attorney-criminal-multiple": {
+      "nodeId": "exec-dept-doj-usao-assistant-u-s-attorney-criminal-multiple",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "basic_pay",
+      "amount": 63163.0,
+      "amountRaw": "63,163",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "These tables are for 2025 and are effective as of January 12, 2025. · The tables below do not include locality based comparability adjustments (locality pay). · Assistant United States Attorneys (AUSA) · AD-21 minimum $63,163 · AD-29 maximum $165,209",
+      "quote": "These tables are for 2025 and are effective as of January 12, 2025. · The tables below do not include locality based comparability adjustments (locality pay). · Assistant United States Attorneys (AUSA) · AD-21 minimum $63,163 · AD-29 maximum $165,209",
+      "fiscalYear": 2025,
+      "periodCoverage": "annual_rate",
+      "periodAsOf": "2025-01-12",
+      "amountScope": "Assistant United States Attorneys (AUSA)",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "doj_usao_ad_pay_plan_chart",
+      "sourceUrl": "https://www.justice.gov/usao/career-center/salary-information/administratively-determined-pay-plan-charts",
+      "documentSha256": "ae022a954ab6f1c6c34969bfa46c88710d6e865c981588d2ee15d55e2f688495",
+      "retrievedAt": "2026-10-08T00:04:19Z",
+      "locator": {
+        "page": "Assistant United States Attorneys (AUSA)",
+        "section": "AD-21 to AD-29"
+      },
+      "rangeMinimum": 63163.0,
+      "rangeMaximum": 165209.0,
+      "rangeMinimumRaw": "63,163",
+      "rangeMaximumRaw": "165,209",
+      "gradeLow": "AD-21",
+      "gradeHigh": "AD-29",
+      "rangeText": "$63,163 – $165,209",
+      "planUrl": "https://www.justice.gov/usao/career-center/salary-information",
+      "planSha256": "5042c378ebd6896d24a62c71b8c15f0a1c457e2b6e8a902243f8be9fe3b8cb1c",
+      "planRetrievedAt": "2026-10-08T00:04:53Z",
+      "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+    }
+  }
+}

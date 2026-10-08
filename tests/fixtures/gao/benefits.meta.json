@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-10-08T00:07:31Z",
+ "url": "https://www.gao.gov/about/careers/benefits",
+ "status": null,
+ "final_url": null,
+ "content_type": null,
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "robots.txt could not be read (403); refused by policy",
+ "bytes": null,
+ "sha256": null,
+ "error": "not fetched: robots.txt robots.txt could not be read (403); refused by policy"
+}

@@ -1922,7 +1922,9 @@ PAY_DOCUMENT_URL_KEYS = {
     "positionStatutoryPay": ("url",),
     "positionReportedPay": ("url",),
     "positionCurrentPay": ("url",),
-    "positionTierPay": ("url",),
+    # A VA band carries `url` alone; an AD pay plan band (doj_ad_pay.py) also
+    # names the salary page that says which titles the plan pays.
+    "positionTierPay": ("url", ("planDocument", "url")),
     "positionDerivedPay": (("documents", "*", "url"),),
     "positionTierReferencePay": (("documents", "*", "url"),),
     # Schedule 8's monthly basic pay times twelve: a grade statute, 37 U.S.C.
@@ -4322,7 +4324,233 @@ VA_TITLE38_NEVER_PRICED = (
 )
 
 
-def tier_pay_violations(node, pay, today, label, parent_name):
+#: The U.S. Attorneys' Administratively Determined pay plan chart, mirrored
+#: stdlib-only and pinned equal to `doj_ad_pay` by tests/test_doj_ad_pay.py.
+#: The gate also re-reads both committed pages with its own reader, so a
+#: mirror that drifted from the bytes fails here and not only in a test.
+DOJ_AD_FIXTURE_DIR = PROJECT_ROOT / "tests" / "fixtures" / "doj"
+DOJ_AD_CHART_FIXTURE = DOJ_AD_FIXTURE_DIR / "usao_ad_pay_plan_charts.html"
+DOJ_AD_PLAN_FIXTURE = DOJ_AD_FIXTURE_DIR / "usao_salary_information.html"
+DOJ_AD_SOURCE = "doj_usao_ad_pay_plan"
+DOJ_AD_KIND = "administratively_determined_grade_band"
+DOJ_AD_CHART_URL = (
+    "https://www.justice.gov/usao/career-center/salary-information/administratively-determined-pay-plan-charts"
+)
+DOJ_AD_PLAN_URL = "https://www.justice.gov/usao/career-center/salary-information"
+DOJ_AD_TABLE_HEADING = "Assistant United States Attorneys (AUSA)"
+DOJ_AD_EXCLUDED_TABLE = "Executive, Managerial, Supervisory, Special Assistant or Senior Litigation Counsel AUSAs"
+DOJ_AD_EFFECTIVE = "2025-01-12"
+DOJ_AD_EFFECTIVE_TEXT = "These tables are for 2025 and are effective as of January 12, 2025."
+DOJ_AD_LOCALITY_TEXT = "The tables below do not include locality based comparability adjustments (locality pay)."
+#: grade -> (minimum, maximum), as the AUSA table prints them.
+DOJ_AD_GRADES = {
+    "AD-21": (63_163.0, 107_376.0),
+    "AD-23": (67_863.0, 115_369.0),
+    "AD-25": (72_918.0, 123_959.0),
+    "AD-26": (78_346.0, 133_189.0),
+    "AD-27": (84_181.0, 143_107.0),
+    "AD-28": (90_449.0, 153_761.0),
+    "AD-29": (97_181.0, 165_209.0),
+}
+DOJ_AD_GRADE_LOW = "AD-21"
+DOJ_AD_GRADE_HIGH = "AD-29"
+DOJ_AD_PLAN_QUOTE = (
+    "The Administratively Determined (AD) Pay Plan is a component-specific compensation system for Assistant "
+    "United States Attorneys, Supervisory Assistant United States Attorneys, Senior Litigation Counsel, Special "
+    "Assistant United States Attorneys and United States Attorneys established under authority of 28 United "
+    "States Code 548, Salaries, and approved by the Attorney General."
+)
+DOJ_AD_TEMPORARY_PROMOTION_QUOTE = (
+    "Promotions to supervisory and Senior Litigation Counsel positions are made on a temporary basis."
+)
+#: node id -> (name the row was written against, the parent id the tree must give it).
+DOJ_AD_ROWS = {
+    "exec-dept-doj-usao-assistant-u-s-attorney-civil-multiple": (
+        "Assistant U.S. Attorney — Civil (×multiple)", "exec-dept-doj-usao",
+    ),
+    "exec-dept-doj-usao-assistant-u-s-attorney-criminal-multiple": (
+        "Assistant U.S. Attorney — Criminal (×multiple)", "exec-dept-doj-usao",
+    ),
+}
+_DOJ_AD_PAGES = {}
+
+
+def _doj_ad_page(path):
+    """The committed page's raw text, folded text and digests, or None when
+    it is missing. Read once per run."""
+    key = str(path)
+    if key not in _DOJ_AD_PAGES:
+        import hashlib as _hashlib
+        import html as _html
+        try:
+            raw = Path(path).read_bytes()
+            meta = json.loads(Path(str(path) + ".meta.json").read_text(encoding="utf-8"))
+        except (OSError, ValueError):
+            _DOJ_AD_PAGES[key] = None
+            return None
+        text = raw.decode("utf-8", errors="replace")
+        stripped = re.sub(r"<script.*?</script>|<style.*?</style>", " ", text, flags=re.S)
+        _DOJ_AD_PAGES[key] = {
+            "raw": text,
+            "text": " ".join(_html.unescape(re.sub(r"<[^>]+>", " ", stripped)).split()),
+            "sha256": _hashlib.sha256(raw).hexdigest(),
+            "recorded": str(meta.get("sha256") or "").lower(),
+            "url": str(meta.get("url") or ""),
+        }
+    return _DOJ_AD_PAGES[key]
+
+
+def doj_ad_chart_grades(path=DOJ_AD_CHART_FIXTURE):
+    """The AUSA table's grade -> (minimum, maximum), read off the committed
+    chart with this file's own reader: the rows of the first table after the
+    heading, each cell's text, and nothing from the module it checks."""
+    import html as _html
+    page = _doj_ad_page(path)
+    if page is None:
+        return {}
+    raw = page["raw"]
+    at = raw.find(">{}</h2>".format(DOJ_AD_TABLE_HEADING))
+    if at < 0:
+        return {}
+    start = raw.find("<table", at)
+    end = raw.find("</table>", start)
+    if start < 0 or end < 0:
+        return {}
+    grades = {}
+    for row in re.findall(r"<tr[^>]*>(.*?)</tr>", raw[start:end], re.S):
+        cells = [" ".join(_html.unescape(re.sub(r"<[^>]+>", " ", c)).split())
+                 for c in re.findall(r"<t[dh][^>]*>(.*?)</t[dh]>", row, re.S)]
+        if len(cells) == 7 and re.fullmatch(r"AD-\d{2}", cells[0]):
+            try:
+                grades[cells[0]] = (float(cells[2].lstrip("$").replace(",", "")),
+                                    float(cells[6].lstrip("$").replace(",", "")))
+            except ValueError:
+                continue
+    return grades
+
+
+def ad_pay_violations(node, pay, today, label, parent_id):
+    """A band from the U.S. Attorneys' AD pay plan chart.
+
+    Two documents: the chart prints each grade's bounds under a table headed
+    with the title, and the salary page says the plan pays that title. Both
+    are re-read here; the node is a reviewed row by id, under the parent the
+    tree gives it; and the band is never a rate.
+    """
+    out = []
+    say = lambda text: out.append("{} {}".format(label(node), text))
+    node_id = str(node.get("id") or "")
+    if str(pay.get("kind") or "") != DOJ_AD_KIND:
+        say("claims band kind {!r}, not {!r}".format(pay.get("kind"), DOJ_AD_KIND))
+    row = DOJ_AD_ROWS.get(node_id)
+    if row is None:
+        say("carries an AD pay plan band, and no reviewed row prices this node from the chart")
+    else:
+        if str(node.get("name") or "") != row[0]:
+            say("is now called {!r}, not the {!r} its band was written against".format(node.get("name"), row[0]))
+        if str(parent_id or "") != row[1]:
+            say("sits under {!r}, not {!r}, which is half of what identified it".format(parent_id or "nothing", row[1]))
+    if str(pay.get("matchRule") or "") != "reviewed_row_by_node_id":
+        say("claims match rule {!r}, which this pipeline does not produce".format(pay.get("matchRule")))
+    if str(pay.get("table") or "") != DOJ_AD_TABLE_HEADING or str(pay.get("coverageTitle") or "") != DOJ_AD_TABLE_HEADING:
+        say("cites table {!r}; the band is printed under {!r}".format(pay.get("table"), DOJ_AD_TABLE_HEADING))
+    if str(pay.get("excludedTable") or "") != DOJ_AD_EXCLUDED_TABLE:
+        say("does not name the chart's second table, which its range does not include")
+    if DOJ_AD_EXCLUDED_TABLE not in str(pay.get("scopeNote") or ""):
+        say("publishes an AD band without the sentence saying which table it excludes")
+
+    low = DOJ_AD_GRADES[DOJ_AD_GRADE_LOW][0]
+    high = DOJ_AD_GRADES[DOJ_AD_GRADE_HIGH][1]
+    if str(pay.get("gradeLow") or "") != DOJ_AD_GRADE_LOW or str(pay.get("gradeHigh") or "") != DOJ_AD_GRADE_HIGH:
+        say("spans {!r} to {!r}; the AUSA table runs {} to {}".format(
+            pay.get("gradeLow"), pay.get("gradeHigh"), DOJ_AD_GRADE_LOW, DOJ_AD_GRADE_HIGH))
+    for key, expected in (("minimum", low), ("maximum", high)):
+        value = pay.get(key)
+        if isinstance(value, bool) or not isinstance(value, (int, float)):
+            say("publishes {!r} as the band's {}".format(value, key))
+        elif abs(float(value) - expected) > 0.005:
+            say("publishes {:,.2f} as the {}; the AUSA table prints {:,.2f}".format(float(value), key, expected))
+    printed = "${:,.0f} – ${:,.0f}".format(low, high)
+    if str(pay.get("rangeText") or "") != printed:
+        say("prints the band as {!r}; the table prints {!r}".format(pay.get("rangeText"), printed))
+
+    quote = str(pay.get("quote") or "")
+    for needed in (DOJ_AD_EFFECTIVE_TEXT, DOJ_AD_LOCALITY_TEXT, DOJ_AD_TABLE_HEADING,
+                   "${:,.0f}".format(low), "${:,.0f}".format(high)):
+        if needed not in quote:
+            say("quotes the chart without {!r}".format(needed))
+    if str(pay.get("effective") or "") != DOJ_AD_EFFECTIVE or str(pay.get("effectiveText") or "") != DOJ_AD_EFFECTIVE_TEXT:
+        say("dates the band {!r}; the chart says {!r}".format(
+            pay.get("effectiveText") or pay.get("effective"), DOJ_AD_EFFECTIVE_TEXT))
+    if str(pay.get("localityText") or "") != DOJ_AD_LOCALITY_TEXT:
+        say("publishes an AD band without the chart's sentence saying it is before locality pay")
+
+    # The two documents, re-read: the digest each fetch recorded, the band on
+    # the chart's own rows, the salary page's sentences.
+    if str(pay.get("url") or "") != DOJ_AD_CHART_URL:
+        say("cites {!r}, not the AD pay plan chart".format(pay.get("url")))
+    chart = _doj_ad_page(DOJ_AD_CHART_FIXTURE)
+    if chart is None:
+        say("rests on an AD pay plan chart the repository does not carry")
+    else:
+        if chart["sha256"] != chart["recorded"] or str(pay.get("documentSha256") or "") != chart["sha256"]:
+            say("cites a chart digest that is not the committed page's")
+        if chart["url"] != DOJ_AD_CHART_URL:
+            say("rests on a committed chart fetched from {!r}".format(chart["url"]))
+        for needed in (DOJ_AD_EFFECTIVE_TEXT, DOJ_AD_LOCALITY_TEXT, DOJ_AD_EXCLUDED_TABLE):
+            if needed not in chart["text"]:
+                say("rests on a chart that no longer prints {!r}".format(needed))
+        if doj_ad_chart_grades() != DOJ_AD_GRADES:
+            say("rests on a chart whose AUSA rows are not the mirrored grades")
+    plan_block = pay.get("planDocument") if isinstance(pay.get("planDocument"), dict) else {}
+    if str(plan_block.get("url") or "") != DOJ_AD_PLAN_URL:
+        say("does not cite the salary page that says which titles the AD plan pays")
+    if str(plan_block.get("quote") or "") != DOJ_AD_PLAN_QUOTE:
+        say("quotes the salary page as saying something other than the sentence it prints")
+    if str(plan_block.get("temporaryPromotionQuote") or "") != DOJ_AD_TEMPORARY_PROMOTION_QUOTE:
+        say("drops the salary page's sentence that supervisory and Senior Litigation Counsel posts are temporary")
+    plan_page = _doj_ad_page(DOJ_AD_PLAN_FIXTURE)
+    if plan_page is None:
+        say("rests on a salary page the repository does not carry")
+    else:
+        if plan_page["sha256"] != plan_page["recorded"] or str(plan_block.get("sha256") or "") != plan_page["sha256"]:
+            say("cites a salary-page digest that is not the committed page's")
+        if plan_page["url"] != DOJ_AD_PLAN_URL:
+            say("rests on a committed salary page fetched from {!r}".format(plan_page["url"]))
+        for needed in (DOJ_AD_PLAN_QUOTE, DOJ_AD_TEMPORARY_PROMOTION_QUOTE):
+            if needed not in plan_page["text"]:
+                say("rests on a salary page that no longer prints {!r}".format(needed[:60]))
+    for key, value in (("checkedAt", pay.get("checkedAt")), ("planDocument.checkedAt", plan_block.get("checkedAt"))):
+        text = str(value or "")
+        if not re.match(r"^\d{4}-\d{2}-\d{2}", text) or text[:10] > today:
+            say("claims an AD band without a past retrieval date for {} ({!r})".format(key, text))
+
+    for forbidden in ("amount", "rate", "rateText", "salary"):
+        if forbidden in pay:
+            say("carries {!r} beside a band; a range is never published as a rate".format(forbidden))
+    if not str(pay.get("note") or "").strip():
+        say("publishes a band with no sentence saying it is a band")
+    if str(pay.get("scopeMatch") or "") != "proxy":
+        say("claims scope {!r}; which node the chart's heading names is a reviewed row, never more than a proxy".format(
+            pay.get("scopeMatch")))
+    if str(pay.get("financialEvidenceStatus") or "") != "partial":
+        say("grades an AD band {!r}, not 'partial'".format(pay.get("financialEvidenceStatus")))
+    if str(pay.get("costBasis") or "") != "basic_pay":
+        say("files its band as {!r} rather than basic_pay".format(pay.get("costBasis")))
+    if str(node.get("cost_status") or "") in ("official", "root_total", "scaled_official"):
+        say("carries an AD band and a measured cost status {!r}".format(node.get("cost_status")))
+    method = str(pay.get("method") or "")
+    if method and str(node.get("verificationMethod") or "") == method:
+        say("verifies its own existence with a pay chart that names no unit")
+    if method and str(node.get("placementMethod") or "") == method:
+        say("places itself with a pay chart that names no unit")
+    for source_url in node.get("sourceUrls") or []:
+        if "justice.gov/usao/career-center" in str(source_url):
+            say("counts the pay chart among the sources that it exists")
+    return out
+
+
+def tier_pay_violations(node, pay, today, label, parent_name, parent_id=None):
     """Everything that must be true of a pay-schedule TIER band.
 
     A band is a weaker claim than a rate and needs one check a rate does not:
@@ -4342,6 +4570,9 @@ def tier_pay_violations(node, pay, today, label, parent_name):
         say("carries a Title 38 pay band but is a {!r}, not a post".format(node.get("type")))
     out.extend(holders_violations(node, pay, "positionTierPay", label))
 
+    if str(pay.get("source") or "") == DOJ_AD_SOURCE:
+        out.extend(ad_pay_violations(node, pay, today, label, parent_id))
+        return out
     if str(pay.get("source") or "") != "va_title38_pay_ranges":
         say("prices from source {!r}, which this pipeline does not produce for a tier band".format(pay.get("source")))
         return out
@@ -8889,7 +9120,8 @@ def main(argv):
         tier_pay = node.get("positionTierPay")
         if tier_pay is not None:
             _tier_parent = tree_parents.get(str(node.get("id") or ""))
-            bad_tier_pay.extend(tier_pay_violations(node, tier_pay, today, label, name_by_id.get(_tier_parent)))
+            bad_tier_pay.extend(tier_pay_violations(
+                node, tier_pay, today, label, name_by_id.get(_tier_parent), parent_id=_tier_parent))
         # The one figure in this project no document states: a parity
         # provision names the tier, the compensation table prices it. Checked
         # against the section's own current sentence, mirrored by node id,

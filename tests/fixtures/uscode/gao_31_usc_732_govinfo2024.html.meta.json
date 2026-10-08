@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-10-08T00:05:18Z",
+ "url": "https://www.govinfo.gov/link/uscode/31/732?link-type=html",
+ "status": 200,
+ "final_url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title31/html/USCODE-2024-title31-subtitleI-chap7-subchapIII-sec732.htm",
+ "content_type": "text/html",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /link/uscode/31/732",
+ "bytes": 48200,
+ "sha256": "fed1b482bf968e644fff43ec6d680837cb80990ee51e23b23e2f54a3fbc05970",
+ "error": null
+}

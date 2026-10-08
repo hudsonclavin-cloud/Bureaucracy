@@ -191,6 +191,11 @@ SOURCE_TYPES = {
     # appointment may be set. See
     # data_pipeline/verification/va_title38_pay.py.
     "va_title38_pay_ranges",
+    # The U.S. Attorneys' Administratively Determined pay plan chart: a table
+    # headed with the title it pays, printing each grade's minimum and maximum
+    # before locality. A band, never a rate. See
+    # data_pipeline/verification/doj_ad_pay.py.
+    "doj_usao_ad_pay_plan_chart",
     # A roster, not a rate schedule: the White House Office's statutory annual
     # report states what each listed person is paid, so a record from it is a
     # claim about an incumbent rather than about the office. See
@@ -253,6 +258,9 @@ SCALE_PRINTED_SOURCE_TYPES = {
     # Every VA tier row prints both bounds with the mark attached
     # ("$220,000 $400,000"), so the record's own figure carries it.
     "va_title38_pay_ranges",
+    # Every cell of the AD chart prints its figure with the mark attached
+    # ("$63,163"), and the page says "dollars" nowhere.
+    "doj_usao_ad_pay_plan_chart",
     "whitehouse_staff_report",
     # The export's cell prints "$228,000" and nothing in the file says
     # "dollars"; the mark attached to the record's own figure is the scale.
@@ -394,6 +402,7 @@ SOURCE_BASES = {
     "us_code_pay_schedules": {"basic_pay"},
     "military_basic_pay_schedule": {"basic_pay"},
     "va_title38_pay_ranges": {"basic_pay"},
+    "doj_usao_ad_pay_plan_chart": {"basic_pay"},
     "whitehouse_staff_report": {"basic_pay"},
     "opm_plum_current_export": {"basic_pay"},
     "statutory_parity_derived_pay": {"basic_pay"},

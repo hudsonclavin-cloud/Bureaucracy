@@ -136779,6 +136779,64 @@
                       "budget": null,
                       "color": "#666666",
                       "children": [],
+                      "positionTierPay": {
+                        "source": "doj_usao_ad_pay_plan",
+                        "sourceLabel": "the U.S. Attorneys' Administratively Determined pay plan chart",
+                        "method": "title_heading_a_table_of_the_us_attorneys_ad_pay_plan_chart",
+                        "kind": "administratively_determined_grade_band",
+                        "minimum": 63163.0,
+                        "maximum": 165209.0,
+                        "rangeText": "$63,163 – $165,209",
+                        "gradeLow": "AD-21",
+                        "gradeHigh": "AD-29",
+                        "coverageTitle": "Assistant United States Attorneys (AUSA)",
+                        "table": "Assistant United States Attorneys (AUSA)",
+                        "excludedTable": "Executive, Managerial, Supervisory, Special Assistant or Senior Litigation Counsel AUSAs",
+                        "matchRule": "reviewed_row_by_node_id",
+                        "effective": "2025-01-12",
+                        "effectiveText": "These tables are for 2025 and are effective as of January 12, 2025.",
+                        "localityText": "The tables below do not include locality based comparability adjustments (locality pay).",
+                        "costBasis": "basic_pay",
+                        "scopeMatch": "proxy",
+                        "financialEvidenceStatus": "partial",
+                        "note": "a range the chart prints for the title, not a rate: the U.S. Attorneys' AD pay plan chart states the bounds of each grade and the grade depends on years of experience; it publishes no figure for any holder",
+                        "scopeNote": "The chart's first table, headed 'Assistant United States Attorneys (AUSA)', prints this range. Its second table, headed 'Executive, Managerial, Supervisory, Special Assistant or Senior Litigation Counsel AUSAs', is not included: the salary page lists Supervisory Assistant United States Attorneys and Senior Litigation Counsel as categories of their own beside Assistant United States Attorneys, and says promotions to those positions are made on a temporary basis.",
+                        "quote": "These tables are for 2025 and are effective as of January 12, 2025. · The tables below do not include locality based comparability adjustments (locality pay). · Assistant United States Attorneys (AUSA) · AD-21 minimum $63,163 · AD-29 maximum $165,209",
+                        "url": "https://www.justice.gov/usao/career-center/salary-information/administratively-determined-pay-plan-charts",
+                        "documentSha256": "ae022a954ab6f1c6c34969bfa46c88710d6e865c981588d2ee15d55e2f688495",
+                        "checkedAt": "2026-10-08T00:04:19Z",
+                        "planDocument": {
+                          "url": "https://www.justice.gov/usao/career-center/salary-information",
+                          "sha256": "5042c378ebd6896d24a62c71b8c15f0a1c457e2b6e8a902243f8be9fe3b8cb1c",
+                          "checkedAt": "2026-10-08T00:04:53Z",
+                          "quote": "The Administratively Determined (AD) Pay Plan is a component-specific compensation system for Assistant United States Attorneys, Supervisory Assistant United States Attorneys, Senior Litigation Counsel, Special Assistant United States Attorneys and United States Attorneys established under authority of 28 United States Code 548, Salaries, and approved by the Attorney General.",
+                          "temporaryPromotionQuote": "Promotions to supervisory and Senior Litigation Counsel positions are made on a temporary basis."
+                        },
+                        "holders": {
+                          "text": "×multiple",
+                          "kind": "unstated",
+                          "appliesToEachHolder": true,
+                          "note": "This node stands for several posts. The range is the band the source prints for the title, and it bounds each holder alike; it is not a rate any of them is paid, not one person's pay and not the group's combined pay.",
+                          "as_written": "multiple"
+                        },
+                        "verification": {
+                          "documents": 2,
+                          "documentsStatingTheFigure": 1,
+                          "percent": 80,
+                          "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+                          "caution": "One document prints the bounds under a table headed with the title, and the other says the pay plan pays that title. That this node is that title is a reviewed identification. The percentage measures how much official documentation the band rests on, not the chance that it is right -- and a band is not a rate: neither document says what any holder is paid, and the bounds are base pay before locality.",
+                          "documentRoles": [
+                            {
+                              "url": "https://www.justice.gov/usao/career-center/salary-information/administratively-determined-pay-plan-charts",
+                              "role": "prints each grade's minimum and maximum under a table headed with this title"
+                            },
+                            {
+                              "url": "https://www.justice.gov/usao/career-center/salary-information",
+                              "role": "states that the Administratively Determined pay plan pays this title"
+                            }
+                          ]
+                        }
+                      },
                       "sourceUrls": [],
                       "sourceTypes": [],
                       "sourceCount": 0,
@@ -136814,6 +136872,64 @@
                       "budget": null,
                       "color": "#666666",
                       "children": [],
+                      "positionTierPay": {
+                        "source": "doj_usao_ad_pay_plan",
+                        "sourceLabel": "the U.S. Attorneys' Administratively Determined pay plan chart",
+                        "method": "title_heading_a_table_of_the_us_attorneys_ad_pay_plan_chart",
+                        "kind": "administratively_determined_grade_band",
+                        "minimum": 63163.0,
+                        "maximum": 165209.0,
+                        "rangeText": "$63,163 – $165,209",
+                        "gradeLow": "AD-21",
+                        "gradeHigh": "AD-29",
+                        "coverageTitle": "Assistant United States Attorneys (AUSA)",
+                        "table": "Assistant United States Attorneys (AUSA)",
+                        "excludedTable": "Executive, Managerial, Supervisory, Special Assistant or Senior Litigation Counsel AUSAs",
+                        "matchRule": "reviewed_row_by_node_id",
+                        "effective": "2025-01-12",
+                        "effectiveText": "These tables are for 2025 and are effective as of January 12, 2025.",
+                        "localityText": "The tables below do not include locality based comparability adjustments (locality pay).",
+                        "costBasis": "basic_pay",
+                        "scopeMatch": "proxy",
+                        "financialEvidenceStatus": "partial",
+                        "note": "a range the chart prints for the title, not a rate: the U.S. Attorneys' AD pay plan chart states the bounds of each grade and the grade depends on years of experience; it publishes no figure for any holder",
+                        "scopeNote": "The chart's first table, headed 'Assistant United States Attorneys (AUSA)', prints this range. Its second table, headed 'Executive, Managerial, Supervisory, Special Assistant or Senior Litigation Counsel AUSAs', is not included: the salary page lists Supervisory Assistant United States Attorneys and Senior Litigation Counsel as categories of their own beside Assistant United States Attorneys, and says promotions to those positions are made on a temporary basis.",
+                        "quote": "These tables are for 2025 and are effective as of January 12, 2025. · The tables below do not include locality based comparability adjustments (locality pay). · Assistant United States Attorneys (AUSA) · AD-21 minimum $63,163 · AD-29 maximum $165,209",
+                        "url": "https://www.justice.gov/usao/career-center/salary-information/administratively-determined-pay-plan-charts",
+                        "documentSha256": "ae022a954ab6f1c6c34969bfa46c88710d6e865c981588d2ee15d55e2f688495",
+                        "checkedAt": "2026-10-08T00:04:19Z",
+                        "planDocument": {
+                          "url": "https://www.justice.gov/usao/career-center/salary-information",
+                          "sha256": "5042c378ebd6896d24a62c71b8c15f0a1c457e2b6e8a902243f8be9fe3b8cb1c",
+                          "checkedAt": "2026-10-08T00:04:53Z",
+                          "quote": "The Administratively Determined (AD) Pay Plan is a component-specific compensation system for Assistant United States Attorneys, Supervisory Assistant United States Attorneys, Senior Litigation Counsel, Special Assistant United States Attorneys and United States Attorneys established under authority of 28 United States Code 548, Salaries, and approved by the Attorney General.",
+                          "temporaryPromotionQuote": "Promotions to supervisory and Senior Litigation Counsel positions are made on a temporary basis."
+                        },
+                        "holders": {
+                          "text": "×multiple",
+                          "kind": "unstated",
+                          "appliesToEachHolder": true,
+                          "note": "This node stands for several posts. The range is the band the source prints for the title, and it bounds each holder alike; it is not a rate any of them is paid, not one person's pay and not the group's combined pay.",
+                          "as_written": "multiple"
+                        },
+                        "verification": {
+                          "documents": 2,
+                          "documentsStatingTheFigure": 1,
+                          "percent": 80,
+                          "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+                          "caution": "One document prints the bounds under a table headed with the title, and the other says the pay plan pays that title. That this node is that title is a reviewed identification. The percentage measures how much official documentation the band rests on, not the chance that it is right -- and a band is not a rate: neither document says what any holder is paid, and the bounds are base pay before locality.",
+                          "documentRoles": [
+                            {
+                              "url": "https://www.justice.gov/usao/career-center/salary-information/administratively-determined-pay-plan-charts",
+                              "role": "prints each grade's minimum and maximum under a table headed with this title"
+                            },
+                            {
+                              "url": "https://www.justice.gov/usao/career-center/salary-information",
+                              "role": "states that the Administratively Determined pay plan pays this title"
+                            }
+                          ]
+                        }
+                      },
                       "sourceUrls": [],
                       "sourceTypes": [],
                       "sourceCount": 0,
