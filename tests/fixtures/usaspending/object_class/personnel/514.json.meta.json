@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-10-08T16:07:40Z",
+ "url": "https://api.usaspending.gov/api/v2/financial_spending/object_class/?fiscal_year=2025&funding_agency_id=1163&major_object_class_code=10",
+ "status": 200,
+ "final_url": "https://api.usaspending.gov/api/v2/financial_spending/object_class/?fiscal_year=2025&funding_agency_id=1163&major_object_class_code=10",
+ "content_type": "application/json",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "no readable robots.txt (HTTP 404); failing open",
+ "bytes": 965,
+ "sha256": "e26ae9e1840f4a33eb583d23997869ef071bb466fc34ba9d8c79647bd962dda4",
+ "error": null
+}

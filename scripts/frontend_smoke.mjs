@@ -666,6 +666,22 @@ try {
       /USAspending's File A reports gross outlays of \$[\d,]+ for ".+" \((toptier|bureau ".+" of toptier) \S+\) for FY\d{4} through \d{4}-\d{2}-\d{2}.* and is not the cost\./.test(note), note);
   }
 
+  // Where an agency's money goes: the FY2025 object-class breakdown, staff pay
+  // first, under its own heading and never as the cost.
+  const withSpending = allNodes.find((n) => n.spendingByKind && n.spendingByKind.staffPay
+    && typeof n.spendingByKind.staffPay.amount === "number");
+  check("some agency carries an object-class breakdown", Boolean(withSpending), "none");
+  if (withSpending) {
+    await openByName(withSpending.name);
+    const section = await text("#info-spending-by-kind");
+    check("the breakdown is headed WHERE THE MONEY GOES with its fiscal year",
+      /WHERE THE MONEY GOES — FY2025/.test(section), section.slice(0, 400));
+    const staff = Math.round(withSpending.spendingByKind.staffPay.amount).toLocaleString("en-US");
+    check("the staff-pay line names the served figure and its share of obligations",
+      section.includes(`Pay and benefits of staff: $${staff} (`) && /% of obligations\)/.test(section), section.slice(0, 400));
+    check("the breakdown says it is not the cost", /not the Treasury's net outlays shown as cost/.test(section), section.slice(0, 900));
+  }
+
   // A node with an OPM figure and nothing else must not be told it has no
   // source at all: the provenance block right below shows an opm.gov URL.
   const officialNoSources = allNodes.find(

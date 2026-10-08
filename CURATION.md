@@ -5518,3 +5518,48 @@ reach rule".
 - **Counts:** pay claims 1,248 → 1,258; unpriced 3,343 → 3,333; current-export
   listings 271 → 283; archive listings 129 → 138. Twelve nodes changed and
   nothing else.
+
+## 20. Where an agency's money goes: USAspending's object classes (2026-10-08)
+
+The owner's ask: "we do not need every individual, but a good total cost of
+everyone combined is perfect ... we just want to see where the money goes,
+generally." `data_pipeline/verification/object_class.py` stamps
+`spendingByKind` on an agency organisation: FY2025 obligations by the
+publisher's own major object classes, every minor class with obligations and
+gross outlays, and `staffPay`, the sum of object classes 11.x (personnel
+compensation) and 12.x (personnel benefits), listed by code.
+
+- **Reach, not widened.** Only the toptier keys of the phase-2 crosswalk that
+  `usaspending.py` applies (name equality, or one of its reviewed aliases —
+  AmeriCorps through CNCS). The crosswalk was built for organisations with no
+  measured Treasury line, so it holds 22 toptier keys and no department; an
+  agency-level breakdown is never stamped on a bureau. 22 matched, **21
+  published**.
+- **Three fixtures per agency**, under `tests/fixtures/usaspending/object_class/`
+  (`minor/`, `major/`, `personnel/`, 66 files with `.meta.json`):
+  `/api/v2/agency/<code>/object_class/?fiscal_year=2025`,
+  `/api/v2/financial_spending/major_object_class/` and its minor classes under
+  major class 10. robots.txt answers 404; fetched 2026-10-08.
+- **The grouping is the publisher's**: "Personnel compensation and benefits",
+  "Contractual services and supplies", "Acquisition of assets", "Grants and
+  fixed charges", "Other", "Unknown Object Type". Nothing is regrouped here.
+- **Declined: the Appalachian Regional Commission** (toptier 309). Its minor
+  classes sum to $190,227,483.43 and its major groups to $9,215,690.61, with no
+  personnel group at all; two of the publisher's endpoints disagree, so neither
+  is published.
+- **Excluded from staff pay, by name:** 13.0 "Benefits for former personnel",
+  which pays people the agency no longer employs.
+- **Scale.** The publisher's Data Dictionary carries both File B elements
+  (`ObligationsIncurredByProgramObjectClass_CPE`,
+  `GrossOutlayAmountByProgramObjectClass_CPE`) but maps them to the account
+  download's columns, not to this endpoint's field names. The block quotes the
+  elements and says so; it is weaker than the File A rule, where the
+  dictionary names the API field itself.
+- **Measured:** staff pay across the 21 agencies $2,029,415,393.45 of FY2025
+  obligations. Largest: FCC $340.7m (2.9% of $11.7bn, the rest Universal
+  Service grants), USAGM $307.7m (40.3%), FTC $292.5m (68.3%), CFTC $234.7m
+  (64.1%), AmeriCorps $179.8m (11.0%).
+- **Open, for the owner:** the departments, where most of the money is. Their
+  toptier rows each reduce by name to exactly one organisation here (89 of the
+  111 toptier rows do), but no crosswalk row proposes them, so reaching them
+  means widening the reach, which this pass did not do.

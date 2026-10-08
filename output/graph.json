@@ -277785,7 +277785,252 @@
                     "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-133",
                     "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
                   },
-                  "evidenceVerifiedAt": "2025-12-31"
+                  "evidenceVerifiedAt": "2025-12-31",
+                  "spendingByKind": {
+                    "source": "usaspending_file_b_object_class",
+                    "fiscalYear": 2025,
+                    "periodCoverage": "full_fiscal_year",
+                    "basis": "obligations",
+                    "toptierCode": "485",
+                    "apiName": "Corporation for National and Community Service",
+                    "nameAlias": {
+                      "graphName": "AmeriCorps",
+                      "apiName": "Corporation for National and Community Service"
+                    },
+                    "groups": [
+                      {
+                        "code": "40",
+                        "name": "Grants and fixed charges",
+                        "obligations": 921000071.42
+                      },
+                      {
+                        "code": "20",
+                        "name": "Contractual services and supplies",
+                        "obligations": 290978056.64
+                      },
+                      {
+                        "code": "90",
+                        "name": "Other",
+                        "obligations": 245078585.0
+                      },
+                      {
+                        "code": "10",
+                        "name": "Personnel compensation and benefits",
+                        "obligations": 179981299.61
+                      },
+                      {
+                        "code": "30",
+                        "name": "Acquisition of assets",
+                        "obligations": 24128270.27
+                      },
+                      {
+                        "code": "00",
+                        "name": "Unknown Object Type",
+                        "obligations": -32468322.83
+                      }
+                    ],
+                    "totalObligations": 1628697960.11,
+                    "totalGrossOutlays": 1621539618.25,
+                    "classes": [
+                      [
+                        "Grants, subsidies, and contributions",
+                        893681714.64,
+                        880894287.26
+                      ],
+                      [
+                        "Financial transfers",
+                        245078585.0,
+                        245078585.0
+                      ],
+                      [
+                        "Other services from non-Federal sources",
+                        208661804.78,
+                        138205015.04
+                      ],
+                      [
+                        "Full-time permanent",
+                        82436438.9,
+                        79038669.96
+                      ],
+                      [
+                        "Special personal services payments",
+                        61430861.07,
+                        61723566.78
+                      ],
+                      [
+                        "Advisory and assistance services",
+                        46438811.08,
+                        85299890.67
+                      ],
+                      [
+                        "Civilian personnel benefits",
+                        31368366.55,
+                        30967235.84
+                      ],
+                      [
+                        "Refunds",
+                        27317500.44,
+                        27323722.62
+                      ],
+                      [
+                        "Equipment",
+                        14667543.37,
+                        20647909.03
+                      ],
+                      [
+                        "Other goods and services from Federal sources",
+                        11277331.57,
+                        15546006.35
+                      ],
+                      [
+                        "Medical care",
+                        9730001.09,
+                        7138450.11
+                      ],
+                      [
+                        "Land and structures",
+                        9460726.9,
+                        8856405.11
+                      ],
+                      [
+                        "Travel and transportation of persons",
+                        6258069.19,
+                        6753297.25
+                      ],
+                      [
+                        "Rental payments to GSA",
+                        3980907.94,
+                        4123507.55
+                      ],
+                      [
+                        "Communications, utilities, and miscellaneous charges",
+                        3154036.1,
+                        3227053.61
+                      ],
+                      [
+                        "Other personnel compensation",
+                        2549271.42,
+                        2229579.23
+                      ],
+                      [
+                        "Other than full-time permanent",
+                        2034069.57,
+                        2051314.0
+                      ],
+                      [
+                        "Supplies and materials",
+                        737549.35,
+                        1985750.32
+                      ],
+                      [
+                        "Rental payments to others",
+                        266962.41,
+                        332924.66
+                      ],
+                      [
+                        "Operation and maintenance of equipment",
+                        249748.83,
+                        562011.38
+                      ],
+                      [
+                        "Benefits for former personnel",
+                        162292.1,
+                        167523.1
+                      ],
+                      [
+                        "Transportation of things",
+                        140000.0,
+                        177292.0
+                      ],
+                      [
+                        "Operation and maintenance of facilities",
+                        50598.08,
+                        17598.08
+                      ],
+                      [
+                        "Printing and reproduction",
+                        32236.22,
+                        263190.57
+                      ],
+                      [
+                        "Insurance claims and indemnities",
+                        856.34,
+                        856.34
+                      ],
+                      [
+                        "Research and development contracts",
+                        0.0,
+                        414970.95
+                      ],
+                      [
+                        "Unknown",
+                        -32468322.83,
+                        -1486994.56
+                      ]
+                    ],
+                    "staffPay": {
+                      "amount": 179819007.51,
+                      "share": 0.1104,
+                      "classes": [
+                        [
+                          "11.1",
+                          "Full-time permanent",
+                          82436438.9
+                        ],
+                        [
+                          "11.3",
+                          "Other than full-time permanent",
+                          2034069.57
+                        ],
+                        [
+                          "11.5",
+                          "Other personnel compensation",
+                          2549271.42
+                        ],
+                        [
+                          "11.8",
+                          "Special personal services payments",
+                          61430861.07
+                        ],
+                        [
+                          "12.1",
+                          "Civilian personnel benefits",
+                          31368366.55
+                        ]
+                      ],
+                      "note": "Pay and benefits of everyone the agency employs, FY2025, obligations: object classes 11 (personnel compensation) and 12 (personnel benefits) as listed; 13.0, benefits for former personnel, is not included. A sum this repository performed over the rows USAspending prints."
+                    },
+                    "documents": {
+                      "minor": {
+                        "url": "https://api.usaspending.gov/api/v2/agency/485/object_class/?fiscal_year=2025&limit=100",
+                        "file": "tests/fixtures/usaspending/object_class/minor/485.json",
+                        "sha256": "959f92a9108ea5b15db9db8c2248ef32658496866352d78ceea170267e4ec673",
+                        "fetchedAt": "2026-10-08T16:07:25Z"
+                      },
+                      "major": {
+                        "url": "https://api.usaspending.gov/api/v2/financial_spending/major_object_class/?fiscal_year=2025&funding_agency_id=1166",
+                        "file": "tests/fixtures/usaspending/object_class/major/485.json",
+                        "sha256": "bc5a7fd79f066cd9f72b57e45122232db089b4d5465dbfb6852363f84410ea03",
+                        "fetchedAt": "2026-10-08T16:07:27Z"
+                      },
+                      "personnel": {
+                        "url": "https://api.usaspending.gov/api/v2/financial_spending/object_class/?fiscal_year=2025&funding_agency_id=1166&major_object_class_code=10",
+                        "file": "tests/fixtures/usaspending/object_class/personnel/485.json",
+                        "sha256": "d48182f92f4e623ac98b36bcf5b53e38da1fb8997077c3ca11e62dbf6016e5ed",
+                        "fetchedAt": "2026-10-08T16:07:28Z"
+                      }
+                    },
+                    "units": {
+                      "elements": [
+                        "ObligationsIncurredByProgramObjectClass_CPE",
+                        "GrossOutlayAmountByProgramObjectClass_CPE"
+                      ],
+                      "dictionarySha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+                      "dictionaryFile": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+                      "note": "The publisher's Data Dictionary carries both File B elements as dollar figures of the account breakdown; it maps them to the account download's columns, not to this endpoint's field names."
+                    },
+                    "note": "Obligations by object class for fiscal year 2025, a completed year, as USAspending reports DATA Act File B. Obligations are commitments, not cash, and gross of offsetting collections: this is not the Treasury's net outlays the graph shows as a cost."
+                  }
                 },
                 {
                   "id": "exec-ind-misc-selective-service-system",
@@ -278134,6 +278379,183 @@
                       "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
                       "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
                     }
+                  },
+                  "spendingByKind": {
+                    "source": "usaspending_file_b_object_class",
+                    "fiscalYear": 2025,
+                    "periodCoverage": "full_fiscal_year",
+                    "basis": "obligations",
+                    "toptierCode": "090",
+                    "apiName": "Selective Service System",
+                    "nameAlias": null,
+                    "groups": [
+                      {
+                        "code": "10",
+                        "name": "Personnel compensation and benefits",
+                        "obligations": 18961921.95
+                      },
+                      {
+                        "code": "20",
+                        "name": "Contractual services and supplies",
+                        "obligations": 13718811.54
+                      },
+                      {
+                        "code": "30",
+                        "name": "Acquisition of assets",
+                        "obligations": 1248494.98
+                      },
+                      {
+                        "code": "00",
+                        "name": "Unknown Object Type",
+                        "obligations": 0.0
+                      }
+                    ],
+                    "totalObligations": 33929228.47,
+                    "totalGrossOutlays": 34766324.58,
+                    "classes": [
+                      [
+                        "Full-time permanent",
+                        12299406.71,
+                        12728681.95
+                      ],
+                      [
+                        "Civilian personnel benefits",
+                        4720423.93,
+                        4864800.45
+                      ],
+                      [
+                        "Advisory and assistance services",
+                        4594253.96,
+                        2337148.53
+                      ],
+                      [
+                        "Communications, utilities, and miscellaneous charges",
+                        2831344.65,
+                        2859365.04
+                      ],
+                      [
+                        "Other goods and services from Federal sources",
+                        2421625.29,
+                        2364212.82
+                      ],
+                      [
+                        "Other services from non-Federal sources",
+                        2386393.68,
+                        2591935.37
+                      ],
+                      [
+                        "Special personal services payments",
+                        1401729.67,
+                        1980806.69
+                      ],
+                      [
+                        "Equipment",
+                        1248494.98,
+                        3515547.03
+                      ],
+                      [
+                        "Rental payments to GSA",
+                        1054580.0,
+                        312841.08
+                      ],
+                      [
+                        "Other than full-time permanent",
+                        357958.4,
+                        393023.67
+                      ],
+                      [
+                        "Printing and reproduction",
+                        210738.79,
+                        163029.59
+                      ],
+                      [
+                        "Other personnel compensation",
+                        182403.24,
+                        250669.24
+                      ],
+                      [
+                        "Travel and transportation of persons",
+                        89978.02,
+                        95551.61
+                      ],
+                      [
+                        "Supplies and materials",
+                        69914.3,
+                        211374.44
+                      ],
+                      [
+                        "Operation and maintenance of facilities",
+                        59982.85,
+                        82263.78
+                      ],
+                      [
+                        "Operation and maintenance of equipment",
+                        0.0,
+                        15073.29
+                      ]
+                    ],
+                    "staffPay": {
+                      "amount": 18961921.95,
+                      "share": 0.5589,
+                      "classes": [
+                        [
+                          "11.1",
+                          "Full-time permanent",
+                          12299406.71
+                        ],
+                        [
+                          "11.3",
+                          "Other than full-time permanent",
+                          357958.4
+                        ],
+                        [
+                          "11.5",
+                          "Other personnel compensation",
+                          182403.24
+                        ],
+                        [
+                          "11.8",
+                          "Special personal services payments",
+                          1401729.67
+                        ],
+                        [
+                          "12.1",
+                          "Civilian personnel benefits",
+                          4720423.93
+                        ]
+                      ],
+                      "note": "Pay and benefits of everyone the agency employs, FY2025, obligations: object classes 11 (personnel compensation) and 12 (personnel benefits) as listed; 13.0, benefits for former personnel, is not included. A sum this repository performed over the rows USAspending prints."
+                    },
+                    "documents": {
+                      "minor": {
+                        "url": "https://api.usaspending.gov/api/v2/agency/090/object_class/?fiscal_year=2025&limit=100",
+                        "file": "tests/fixtures/usaspending/object_class/minor/090.json",
+                        "sha256": "b520fa5a4981ab7eb9318e2710477f7b54b36e07c5d2a5e8ecd4e8033c84ab04",
+                        "fetchedAt": "2026-10-08T16:07:30Z"
+                      },
+                      "major": {
+                        "url": "https://api.usaspending.gov/api/v2/financial_spending/major_object_class/?fiscal_year=2025&funding_agency_id=1067",
+                        "file": "tests/fixtures/usaspending/object_class/major/090.json",
+                        "sha256": "f54dc4ec4a574b67130b8dd013f49a7a10bff8c18a824092420211ca27ad9e76",
+                        "fetchedAt": "2026-10-08T16:07:31Z"
+                      },
+                      "personnel": {
+                        "url": "https://api.usaspending.gov/api/v2/financial_spending/object_class/?fiscal_year=2025&funding_agency_id=1067&major_object_class_code=10",
+                        "file": "tests/fixtures/usaspending/object_class/personnel/090.json",
+                        "sha256": "bf68dd8eafe2ee0972a99ed532ca8c2b2d74538914c8f58d81d7cdaa7a8fed9d",
+                        "fetchedAt": "2026-10-08T16:07:32Z"
+                      }
+                    },
+                    "units": {
+                      "elements": [
+                        "ObligationsIncurredByProgramObjectClass_CPE",
+                        "GrossOutlayAmountByProgramObjectClass_CPE"
+                      ],
+                      "dictionarySha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+                      "dictionaryFile": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+                      "note": "The publisher's Data Dictionary carries both File B elements as dollar figures of the account breakdown; it maps them to the account download's columns, not to this endpoint's field names."
+                    },
+                    "note": "Obligations by object class for fiscal year 2025, a completed year, as USAspending reports DATA Act File B. Obligations are commitments, not cash, and gross of offsetting collections: this is not the Treasury's net outlays the graph shows as a cost."
                   }
                 },
                 {
@@ -279070,6 +279492,208 @@
                       "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
                       "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
                     }
+                  },
+                  "spendingByKind": {
+                    "source": "usaspending_file_b_object_class",
+                    "fiscalYear": 2025,
+                    "periodCoverage": "full_fiscal_year",
+                    "basis": "obligations",
+                    "toptierCode": "077",
+                    "apiName": "U.S. International Development Finance Corporation",
+                    "nameAlias": null,
+                    "groups": [
+                      {
+                        "code": "40",
+                        "name": "Grants and fixed charges",
+                        "obligations": 640124079.34
+                      },
+                      {
+                        "code": "10",
+                        "name": "Personnel compensation and benefits",
+                        "obligations": 151966876.41
+                      },
+                      {
+                        "code": "20",
+                        "name": "Contractual services and supplies",
+                        "obligations": 125557013.14
+                      },
+                      {
+                        "code": "30",
+                        "name": "Acquisition of assets",
+                        "obligations": 102556270.05
+                      },
+                      {
+                        "code": "90",
+                        "name": "Other",
+                        "obligations": 85575376.51
+                      },
+                      {
+                        "code": "00",
+                        "name": "Unknown Object Type",
+                        "obligations": 0.0
+                      }
+                    ],
+                    "totalObligations": 1105779615.45,
+                    "totalGrossOutlays": 1193476161.14,
+                    "classes": [
+                      [
+                        "Grants, subsidies, and contributions",
+                        638602401.33,
+                        633606740.75
+                      ],
+                      [
+                        "Full-time permanent",
+                        106784653.48,
+                        106490096.97
+                      ],
+                      [
+                        "Investments and loans",
+                        101899559.89,
+                        209106412.71
+                      ],
+                      [
+                        "Financial transfers",
+                        85575376.51,
+                        86611270.63
+                      ],
+                      [
+                        "Advisory and assistance services",
+                        73186681.58,
+                        65929712.11
+                      ],
+                      [
+                        "Civilian personnel benefits",
+                        40682218.93,
+                        38729709.91
+                      ],
+                      [
+                        "Operation and maintenance of equipment",
+                        20801517.52,
+                        21363085.75
+                      ],
+                      [
+                        "Rental payments to others",
+                        13817845.84,
+                        11150985.98
+                      ],
+                      [
+                        "Travel and transportation of persons",
+                        8105710.18,
+                        7607393.58
+                      ],
+                      [
+                        "Other personnel compensation",
+                        4250029.0,
+                        4345629.0
+                      ],
+                      [
+                        "Communications, utilities, and miscellaneous charges",
+                        2672165.92,
+                        1309642.58
+                      ],
+                      [
+                        "Supplies and materials",
+                        2305814.21,
+                        2654866.95
+                      ],
+                      [
+                        "Transportation of things",
+                        1813307.82,
+                        46992.68
+                      ],
+                      [
+                        "Interest and dividends",
+                        1521678.01,
+                        320167.09
+                      ],
+                      [
+                        "Other goods and services from Federal sources",
+                        1343107.31,
+                        2063712.56
+                      ],
+                      [
+                        "Other services from non-Federal sources",
+                        745095.36,
+                        1233838.75
+                      ],
+                      [
+                        "Equipment",
+                        656710.16,
+                        247001.98
+                      ],
+                      [
+                        "Operation and maintenance of facilities",
+                        641395.62,
+                        352195.06
+                      ],
+                      [
+                        "Benefits for former personnel",
+                        249975.0,
+                        115907.32
+                      ],
+                      [
+                        "Printing and reproduction",
+                        124371.78,
+                        190798.78
+                      ]
+                    ],
+                    "staffPay": {
+                      "amount": 151716901.41,
+                      "share": 0.1372,
+                      "classes": [
+                        [
+                          "11.1",
+                          "Full-time permanent",
+                          106784653.48
+                        ],
+                        [
+                          "11.3",
+                          "Other than full-time permanent",
+                          0.0
+                        ],
+                        [
+                          "11.5",
+                          "Other personnel compensation",
+                          4250029.0
+                        ],
+                        [
+                          "12.1",
+                          "Civilian personnel benefits",
+                          40682218.93
+                        ]
+                      ],
+                      "note": "Pay and benefits of everyone the agency employs, FY2025, obligations: object classes 11 (personnel compensation) and 12 (personnel benefits) as listed; 13.0, benefits for former personnel, is not included. A sum this repository performed over the rows USAspending prints."
+                    },
+                    "documents": {
+                      "minor": {
+                        "url": "https://api.usaspending.gov/api/v2/agency/077/object_class/?fiscal_year=2025&limit=100",
+                        "file": "tests/fixtures/usaspending/object_class/minor/077.json",
+                        "sha256": "130c24507c587b5eef84b2dba171dd4dac7aba3bfe7c68b43a3ee7142f147e5d",
+                        "fetchedAt": "2026-10-08T16:07:33Z"
+                      },
+                      "major": {
+                        "url": "https://api.usaspending.gov/api/v2/financial_spending/major_object_class/?fiscal_year=2025&funding_agency_id=1522",
+                        "file": "tests/fixtures/usaspending/object_class/major/077.json",
+                        "sha256": "6c05fdbb77fe65e4fa8f3d5d5e21b28c29fe0f4efa1beffdc4ddad3d5fad5e24",
+                        "fetchedAt": "2026-10-08T16:07:35Z"
+                      },
+                      "personnel": {
+                        "url": "https://api.usaspending.gov/api/v2/financial_spending/object_class/?fiscal_year=2025&funding_agency_id=1522&major_object_class_code=10",
+                        "file": "tests/fixtures/usaspending/object_class/personnel/077.json",
+                        "sha256": "1917d8e2dd39525871116b0ad63de458dc4e2ce0aa6616fc77faf774cecd9605",
+                        "fetchedAt": "2026-10-08T16:07:36Z"
+                      }
+                    },
+                    "units": {
+                      "elements": [
+                        "ObligationsIncurredByProgramObjectClass_CPE",
+                        "GrossOutlayAmountByProgramObjectClass_CPE"
+                      ],
+                      "dictionarySha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+                      "dictionaryFile": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+                      "note": "The publisher's Data Dictionary carries both File B elements as dollar figures of the account breakdown; it maps them to the account download's columns, not to this endpoint's field names."
+                    },
+                    "note": "Obligations by object class for fiscal year 2025, a completed year, as USAspending reports DATA Act File B. Obligations are commitments, not cash, and gross of offsetting collections: this is not the Treasury's net outlays the graph shows as a cost."
                   }
                 },
                 {
@@ -280630,6 +281254,228 @@
                       "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
                       "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
                     }
+                  },
+                  "spendingByKind": {
+                    "source": "usaspending_file_b_object_class",
+                    "fiscalYear": 2025,
+                    "periodCoverage": "full_fiscal_year",
+                    "basis": "obligations",
+                    "toptierCode": "514",
+                    "apiName": "U.S. Agency for Global Media",
+                    "nameAlias": null,
+                    "groups": [
+                      {
+                        "code": "40",
+                        "name": "Grants and fixed charges",
+                        "obligations": 317369954.34
+                      },
+                      {
+                        "code": "10",
+                        "name": "Personnel compensation and benefits",
+                        "obligations": 313989990.08
+                      },
+                      {
+                        "code": "20",
+                        "name": "Contractual services and supplies",
+                        "obligations": 112032927.65
+                      },
+                      {
+                        "code": "30",
+                        "name": "Acquisition of assets",
+                        "obligations": 19350748.14
+                      },
+                      {
+                        "code": "00",
+                        "name": "Unknown Object Type",
+                        "obligations": 0.0
+                      }
+                    ],
+                    "totalObligations": 762743620.21,
+                    "totalGrossOutlays": 778561171.39,
+                    "classes": [
+                      [
+                        "Grants, subsidies, and contributions",
+                        304212448.37,
+                        323311676.17
+                      ],
+                      [
+                        "Full-time permanent",
+                        183630861.04,
+                        161422061.09
+                      ],
+                      [
+                        "Civilian personnel benefits",
+                        67468333.11,
+                        68152604.47
+                      ],
+                      [
+                        "Other services from non-Federal sources",
+                        49699856.48,
+                        65605086.66
+                      ],
+                      [
+                        "Other personnel compensation",
+                        48296342.52,
+                        48853020.85
+                      ],
+                      [
+                        "Communications, utilities, and miscellaneous charges",
+                        46152400.58,
+                        38278582.38
+                      ],
+                      [
+                        "Equipment",
+                        19350748.14,
+                        22765543.65
+                      ],
+                      [
+                        "Insurance claims and indemnities",
+                        13140075.84,
+                        11909469.71
+                      ],
+                      [
+                        "Benefits for former personnel",
+                        6290733.18,
+                        5897768.67
+                      ],
+                      [
+                        "Operation and maintenance of equipment",
+                        5371795.46,
+                        8109280.81
+                      ],
+                      [
+                        "Special personal services payments",
+                        4779367.72,
+                        4763620.54
+                      ],
+                      [
+                        "Advisory and assistance services",
+                        4436880.27,
+                        3579399.59
+                      ],
+                      [
+                        "Other than full-time permanent",
+                        3524352.51,
+                        3624591.31
+                      ],
+                      [
+                        "Supplies and materials",
+                        2484164.63,
+                        3515806.62
+                      ],
+                      [
+                        "Travel and transportation of persons",
+                        1438772.92,
+                        1664744.37
+                      ],
+                      [
+                        "Operation and maintenance of facilities",
+                        659147.38,
+                        1056353.63
+                      ],
+                      [
+                        "Research and development contracts",
+                        614644.23,
+                        4228950.95
+                      ],
+                      [
+                        "Medical care",
+                        533896.7,
+                        350264.86
+                      ],
+                      [
+                        "Rental payments to others",
+                        329742.59,
+                        1166795.27
+                      ],
+                      [
+                        "Transportation of things",
+                        220128.75,
+                        202949.13
+                      ],
+                      [
+                        "Rental payments to GSA",
+                        82614.86,
+                        145562.16
+                      ],
+                      [
+                        "Interest and dividends",
+                        17430.13,
+                        17430.13
+                      ],
+                      [
+                        "Printing and reproduction",
+                        8882.8,
+                        16322.48
+                      ],
+                      [
+                        "Unknown",
+                        0.0,
+                        -76714.11
+                      ]
+                    ],
+                    "staffPay": {
+                      "amount": 307699256.9,
+                      "share": 0.4034,
+                      "classes": [
+                        [
+                          "11.1",
+                          "Full-time permanent",
+                          183630861.04
+                        ],
+                        [
+                          "11.3",
+                          "Other than full-time permanent",
+                          3524352.51
+                        ],
+                        [
+                          "11.5",
+                          "Other personnel compensation",
+                          48296342.52
+                        ],
+                        [
+                          "11.8",
+                          "Special personal services payments",
+                          4779367.72
+                        ],
+                        [
+                          "12.1",
+                          "Civilian personnel benefits",
+                          67468333.11
+                        ]
+                      ],
+                      "note": "Pay and benefits of everyone the agency employs, FY2025, obligations: object classes 11 (personnel compensation) and 12 (personnel benefits) as listed; 13.0, benefits for former personnel, is not included. A sum this repository performed over the rows USAspending prints."
+                    },
+                    "documents": {
+                      "minor": {
+                        "url": "https://api.usaspending.gov/api/v2/agency/514/object_class/?fiscal_year=2025&limit=100",
+                        "file": "tests/fixtures/usaspending/object_class/minor/514.json",
+                        "sha256": "175ea987622ba7b50ac8b97d663fde24affb348b77ef2f7808a206f17c690c69",
+                        "fetchedAt": "2026-10-08T16:07:37Z"
+                      },
+                      "major": {
+                        "url": "https://api.usaspending.gov/api/v2/financial_spending/major_object_class/?fiscal_year=2025&funding_agency_id=1163",
+                        "file": "tests/fixtures/usaspending/object_class/major/514.json",
+                        "sha256": "a252a4ee0aaba8c7b3e8b11fbdff4cd14c3b197ad15aca110a39b7f5bb14738e",
+                        "fetchedAt": "2026-10-08T16:07:39Z"
+                      },
+                      "personnel": {
+                        "url": "https://api.usaspending.gov/api/v2/financial_spending/object_class/?fiscal_year=2025&funding_agency_id=1163&major_object_class_code=10",
+                        "file": "tests/fixtures/usaspending/object_class/personnel/514.json",
+                        "sha256": "e26ae9e1840f4a33eb583d23997869ef071bb466fc34ba9d8c79647bd962dda4",
+                        "fetchedAt": "2026-10-08T16:07:40Z"
+                      }
+                    },
+                    "units": {
+                      "elements": [
+                        "ObligationsIncurredByProgramObjectClass_CPE",
+                        "GrossOutlayAmountByProgramObjectClass_CPE"
+                      ],
+                      "dictionarySha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+                      "dictionaryFile": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+                      "note": "The publisher's Data Dictionary carries both File B elements as dollar figures of the account breakdown; it maps them to the account download's columns, not to this endpoint's field names."
+                    },
+                    "note": "Obligations by object class for fiscal year 2025, a completed year, as USAspending reports DATA Act File B. Obligations are commitments, not cash, and gross of offsetting collections: this is not the Treasury's net outlays the graph shows as a cost."
                   }
                 },
                 {
@@ -281156,6 +282002,188 @@
                       "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
                       "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
                     }
+                  },
+                  "spendingByKind": {
+                    "source": "usaspending_file_b_object_class",
+                    "fiscalYear": 2025,
+                    "periodCoverage": "full_fiscal_year",
+                    "basis": "obligations",
+                    "toptierCode": "424",
+                    "apiName": "National Transportation Safety Board",
+                    "nameAlias": null,
+                    "groups": [
+                      {
+                        "code": "10",
+                        "name": "Personnel compensation and benefits",
+                        "obligations": 98891479.99
+                      },
+                      {
+                        "code": "20",
+                        "name": "Contractual services and supplies",
+                        "obligations": 50855322.94
+                      },
+                      {
+                        "code": "30",
+                        "name": "Acquisition of assets",
+                        "obligations": 4527302.6
+                      },
+                      {
+                        "code": "00",
+                        "name": "Unknown Object Type",
+                        "obligations": 0.0
+                      }
+                    ],
+                    "totalObligations": 154274105.53,
+                    "totalGrossOutlays": 147425759.61,
+                    "classes": [
+                      [
+                        "Full-time permanent",
+                        66076910.95,
+                        65848201.45
+                      ],
+                      [
+                        "Civilian personnel benefits",
+                        26629409.41,
+                        26513031.57
+                      ],
+                      [
+                        "Other services from non-Federal sources",
+                        16092553.88,
+                        8918957.75
+                      ],
+                      [
+                        "Rental payments to GSA",
+                        10623915.0,
+                        10176522.82
+                      ],
+                      [
+                        "Other goods and services from Federal sources",
+                        9161002.76,
+                        8821641.57
+                      ],
+                      [
+                        "Operation and maintenance of equipment",
+                        7265108.88,
+                        6940091.04
+                      ],
+                      [
+                        "Equipment",
+                        4238032.41,
+                        6209359.75
+                      ],
+                      [
+                        "Other personnel compensation",
+                        3709334.16,
+                        3744112.31
+                      ],
+                      [
+                        "Travel and transportation of persons",
+                        3311086.52,
+                        3298497.29
+                      ],
+                      [
+                        "Other than full-time permanent",
+                        2475825.47,
+                        2479763.45
+                      ],
+                      [
+                        "Advisory and assistance services",
+                        1711086.32,
+                        1757358.54
+                      ],
+                      [
+                        "Communications, utilities, and miscellaneous charges",
+                        898279.28,
+                        996964.69
+                      ],
+                      [
+                        "Supplies and materials",
+                        764891.86,
+                        879563.87
+                      ],
+                      [
+                        "Operation and maintenance of facilities",
+                        611527.76,
+                        483791.36
+                      ],
+                      [
+                        "Land and structures",
+                        289270.19,
+                        0.0
+                      ],
+                      [
+                        "Rental payments to others",
+                        221292.32,
+                        199475.32
+                      ],
+                      [
+                        "Transportation of things",
+                        107261.28,
+                        100192.94
+                      ],
+                      [
+                        "Printing and reproduction",
+                        87317.08,
+                        58233.89
+                      ]
+                    ],
+                    "staffPay": {
+                      "amount": 98891479.99,
+                      "share": 0.641,
+                      "classes": [
+                        [
+                          "11.1",
+                          "Full-time permanent",
+                          66076910.95
+                        ],
+                        [
+                          "11.3",
+                          "Other than full-time permanent",
+                          2475825.47
+                        ],
+                        [
+                          "11.5",
+                          "Other personnel compensation",
+                          3709334.16
+                        ],
+                        [
+                          "12.1",
+                          "Civilian personnel benefits",
+                          26629409.41
+                        ]
+                      ],
+                      "note": "Pay and benefits of everyone the agency employs, FY2025, obligations: object classes 11 (personnel compensation) and 12 (personnel benefits) as listed; 13.0, benefits for former personnel, is not included. A sum this repository performed over the rows USAspending prints."
+                    },
+                    "documents": {
+                      "minor": {
+                        "url": "https://api.usaspending.gov/api/v2/agency/424/object_class/?fiscal_year=2025&limit=100",
+                        "file": "tests/fixtures/usaspending/object_class/minor/424.json",
+                        "sha256": "d83d38c1fc7fe50ac71c8a2bb00f9a890db1eb83b38358dc9cd945ce8d5b7463",
+                        "fetchedAt": "2026-10-08T16:07:41Z"
+                      },
+                      "major": {
+                        "url": "https://api.usaspending.gov/api/v2/financial_spending/major_object_class/?fiscal_year=2025&funding_agency_id=1130",
+                        "file": "tests/fixtures/usaspending/object_class/major/424.json",
+                        "sha256": "d37f22438f2e2b46cfecadcfa48d6cc07d1b6be1d0bfe34a560d84b13eb57e39",
+                        "fetchedAt": "2026-10-08T16:07:43Z"
+                      },
+                      "personnel": {
+                        "url": "https://api.usaspending.gov/api/v2/financial_spending/object_class/?fiscal_year=2025&funding_agency_id=1130&major_object_class_code=10",
+                        "file": "tests/fixtures/usaspending/object_class/personnel/424.json",
+                        "sha256": "6c61862c21f8053fa4fd3b4ac3fad06881433663ddb21534556f189ada8b62b4",
+                        "fetchedAt": "2026-10-08T16:07:46Z"
+                      }
+                    },
+                    "units": {
+                      "elements": [
+                        "ObligationsIncurredByProgramObjectClass_CPE",
+                        "GrossOutlayAmountByProgramObjectClass_CPE"
+                      ],
+                      "dictionarySha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+                      "dictionaryFile": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+                      "note": "The publisher's Data Dictionary carries both File B elements as dollar figures of the account breakdown; it maps them to the account download's columns, not to this endpoint's field names."
+                    },
+                    "note": "Obligations by object class for fiscal year 2025, a completed year, as USAspending reports DATA Act File B. Obligations are commitments, not cash, and gross of offsetting collections: this is not the Treasury's net outlays the graph shows as a cost."
                   }
                 },
                 {
@@ -282929,6 +283957,178 @@
                       "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
                       "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
                     }
+                  },
+                  "spendingByKind": {
+                    "source": "usaspending_file_b_object_class",
+                    "fiscalYear": 2025,
+                    "periodCoverage": "full_fiscal_year",
+                    "basis": "obligations",
+                    "toptierCode": "062",
+                    "apiName": "Office of Special Counsel",
+                    "nameAlias": null,
+                    "groups": [
+                      {
+                        "code": "10",
+                        "name": "Personnel compensation and benefits",
+                        "obligations": 26178121.75
+                      },
+                      {
+                        "code": "20",
+                        "name": "Contractual services and supplies",
+                        "obligations": 5246382.37
+                      },
+                      {
+                        "code": "30",
+                        "name": "Acquisition of assets",
+                        "obligations": 86325.51
+                      },
+                      {
+                        "code": "00",
+                        "name": "Unknown Object Type",
+                        "obligations": 0.0
+                      }
+                    ],
+                    "totalObligations": 31510829.63,
+                    "totalGrossOutlays": 32046788.26,
+                    "classes": [
+                      [
+                        "Full-time permanent",
+                        18286455.75,
+                        18172085.29
+                      ],
+                      [
+                        "Civilian personnel benefits",
+                        6618233.02,
+                        6599728.15
+                      ],
+                      [
+                        "Advisory and assistance services",
+                        2111670.38,
+                        2680975.99
+                      ],
+                      [
+                        "Rental payments to GSA",
+                        1741517.5,
+                        1638631.27
+                      ],
+                      [
+                        "Other than full-time permanent",
+                        754007.65,
+                        745165.18
+                      ],
+                      [
+                        "Other services from non-Federal sources",
+                        718284.84,
+                        891857.04
+                      ],
+                      [
+                        "Other personnel compensation",
+                        514447.37,
+                        514447.37
+                      ],
+                      [
+                        "Other goods and services from Federal sources",
+                        323319.71,
+                        163024.67
+                      ],
+                      [
+                        "Operation and maintenance of facilities",
+                        173128.63,
+                        246714.41
+                      ],
+                      [
+                        "Equipment",
+                        86325.51,
+                        163285.55
+                      ],
+                      [
+                        "Travel and transportation of persons",
+                        74473.93,
+                        70324.72
+                      ],
+                      [
+                        "Communications, utilities, and miscellaneous charges",
+                        64763.65,
+                        47824.82
+                      ],
+                      [
+                        "Supplies and materials",
+                        20227.75,
+                        82749.86
+                      ],
+                      [
+                        "Printing and reproduction",
+                        18962.0,
+                        24962.0
+                      ],
+                      [
+                        "Benefits for former personnel",
+                        4977.96,
+                        4977.96
+                      ],
+                      [
+                        "Medical care",
+                        33.98,
+                        33.98
+                      ]
+                    ],
+                    "staffPay": {
+                      "amount": 26173143.79,
+                      "share": 0.8306,
+                      "classes": [
+                        [
+                          "11.1",
+                          "Full-time permanent",
+                          18286455.75
+                        ],
+                        [
+                          "11.3",
+                          "Other than full-time permanent",
+                          754007.65
+                        ],
+                        [
+                          "11.5",
+                          "Other personnel compensation",
+                          514447.37
+                        ],
+                        [
+                          "12.1",
+                          "Civilian personnel benefits",
+                          6618233.02
+                        ]
+                      ],
+                      "note": "Pay and benefits of everyone the agency employs, FY2025, obligations: object classes 11 (personnel compensation) and 12 (personnel benefits) as listed; 13.0, benefits for former personnel, is not included. A sum this repository performed over the rows USAspending prints."
+                    },
+                    "documents": {
+                      "minor": {
+                        "url": "https://api.usaspending.gov/api/v2/agency/062/object_class/?fiscal_year=2025&limit=100",
+                        "file": "tests/fixtures/usaspending/object_class/minor/062.json",
+                        "sha256": "5d7453c21d5fdaf0e182152f182438c33254488474ee72b4d09573a68d04581c",
+                        "fetchedAt": "2026-10-08T16:07:47Z"
+                      },
+                      "major": {
+                        "url": "https://api.usaspending.gov/api/v2/financial_spending/major_object_class/?fiscal_year=2025&funding_agency_id=695",
+                        "file": "tests/fixtures/usaspending/object_class/major/062.json",
+                        "sha256": "3abff5ebc2be1956b8b40fbe03f2317637cf6cdfabbc238e17e9dd618019d7e9",
+                        "fetchedAt": "2026-10-08T16:07:49Z"
+                      },
+                      "personnel": {
+                        "url": "https://api.usaspending.gov/api/v2/financial_spending/object_class/?fiscal_year=2025&funding_agency_id=695&major_object_class_code=10",
+                        "file": "tests/fixtures/usaspending/object_class/personnel/062.json",
+                        "sha256": "feefe81b067d2248c7de115c9b3011a8857d3e84c0aff3113c3b998c75bbd030",
+                        "fetchedAt": "2026-10-08T16:07:50Z"
+                      }
+                    },
+                    "units": {
+                      "elements": [
+                        "ObligationsIncurredByProgramObjectClass_CPE",
+                        "GrossOutlayAmountByProgramObjectClass_CPE"
+                      ],
+                      "dictionarySha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+                      "dictionaryFile": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+                      "note": "The publisher's Data Dictionary carries both File B elements as dollar figures of the account breakdown; it maps them to the account download's columns, not to this endpoint's field names."
+                    },
+                    "note": "Obligations by object class for fiscal year 2025, a completed year, as USAspending reports DATA Act File B. Obligations are commitments, not cash, and gross of offsetting collections: this is not the Treasury's net outlays the graph shows as a cost."
                   }
                 },
                 {
@@ -283471,6 +284671,183 @@
                       "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
                       "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
                     }
+                  },
+                  "spendingByKind": {
+                    "source": "usaspending_file_b_object_class",
+                    "fiscalYear": 2025,
+                    "periodCoverage": "full_fiscal_year",
+                    "basis": "obligations",
+                    "toptierCode": "389",
+                    "apiName": "Merit Systems Protection Board",
+                    "nameAlias": null,
+                    "groups": [
+                      {
+                        "code": "10",
+                        "name": "Personnel compensation and benefits",
+                        "obligations": 41472917.83
+                      },
+                      {
+                        "code": "20",
+                        "name": "Contractual services and supplies",
+                        "obligations": 8982213.87
+                      },
+                      {
+                        "code": "30",
+                        "name": "Acquisition of assets",
+                        "obligations": 568874.65
+                      },
+                      {
+                        "code": "00",
+                        "name": "Unknown Object Type",
+                        "obligations": 0.0
+                      }
+                    ],
+                    "totalObligations": 51024006.35,
+                    "totalGrossOutlays": 51974427.54,
+                    "classes": [
+                      [
+                        "Full-time permanent",
+                        29511381.6,
+                        29195022.23
+                      ],
+                      [
+                        "Civilian personnel benefits",
+                        10780249.22,
+                        10712714.56
+                      ],
+                      [
+                        "Rental payments to GSA",
+                        3750000.0,
+                        3717961.46
+                      ],
+                      [
+                        "Other goods and services from Federal sources",
+                        2036513.32,
+                        2070390.82
+                      ],
+                      [
+                        "Communications, utilities, and miscellaneous charges",
+                        952807.56,
+                        1031095.34
+                      ],
+                      [
+                        "Advisory and assistance services",
+                        861844.96,
+                        1247050.91
+                      ],
+                      [
+                        "Other personnel compensation",
+                        809280.37,
+                        809280.37
+                      ],
+                      [
+                        "Operation and maintenance of equipment",
+                        685281.79,
+                        748519.72
+                      ],
+                      [
+                        "Equipment",
+                        568874.65,
+                        966979.45
+                      ],
+                      [
+                        "Other services from non-Federal sources",
+                        424779.35,
+                        502118.57
+                      ],
+                      [
+                        "Other than full-time permanent",
+                        372006.64,
+                        379384.0
+                      ],
+                      [
+                        "Printing and reproduction",
+                        90061.95,
+                        80000.0
+                      ],
+                      [
+                        "Supplies and materials",
+                        66039.53,
+                        281770.32
+                      ],
+                      [
+                        "Rental payments to others",
+                        44542.8,
+                        47427.9
+                      ],
+                      [
+                        "Travel and transportation of persons",
+                        30145.85,
+                        158642.39
+                      ],
+                      [
+                        "Transportation of things",
+                        24255.25,
+                        8702.36
+                      ],
+                      [
+                        "Operation and maintenance of facilities",
+                        15941.51,
+                        17367.14
+                      ]
+                    ],
+                    "staffPay": {
+                      "amount": 41472917.83,
+                      "share": 0.8128,
+                      "classes": [
+                        [
+                          "11.1",
+                          "Full-time permanent",
+                          29511381.6
+                        ],
+                        [
+                          "11.3",
+                          "Other than full-time permanent",
+                          372006.64
+                        ],
+                        [
+                          "11.5",
+                          "Other personnel compensation",
+                          809280.37
+                        ],
+                        [
+                          "12.1",
+                          "Civilian personnel benefits",
+                          10780249.22
+                        ]
+                      ],
+                      "note": "Pay and benefits of everyone the agency employs, FY2025, obligations: object classes 11 (personnel compensation) and 12 (personnel benefits) as listed; 13.0, benefits for former personnel, is not included. A sum this repository performed over the rows USAspending prints."
+                    },
+                    "documents": {
+                      "minor": {
+                        "url": "https://api.usaspending.gov/api/v2/agency/389/object_class/?fiscal_year=2025&limit=100",
+                        "file": "tests/fixtures/usaspending/object_class/minor/389.json",
+                        "sha256": "d5d3e2ffd1a44d343096373efa85b62ccb382df08e6aa858438d003290f5496c",
+                        "fetchedAt": "2026-10-08T16:07:51Z"
+                      },
+                      "major": {
+                        "url": "https://api.usaspending.gov/api/v2/financial_spending/major_object_class/?fiscal_year=2025&funding_agency_id=610",
+                        "file": "tests/fixtures/usaspending/object_class/major/389.json",
+                        "sha256": "0de07df69b3ba732f7cef5d4f04c68abf112f53ebb2e3b9b74e9b98595b51061",
+                        "fetchedAt": "2026-10-08T16:07:53Z"
+                      },
+                      "personnel": {
+                        "url": "https://api.usaspending.gov/api/v2/financial_spending/object_class/?fiscal_year=2025&funding_agency_id=610&major_object_class_code=10",
+                        "file": "tests/fixtures/usaspending/object_class/personnel/389.json",
+                        "sha256": "d0c97d082031c701544572878325273c42e06e61f5cd2cb477905668528b2b0b",
+                        "fetchedAt": "2026-10-08T16:07:54Z"
+                      }
+                    },
+                    "units": {
+                      "elements": [
+                        "ObligationsIncurredByProgramObjectClass_CPE",
+                        "GrossOutlayAmountByProgramObjectClass_CPE"
+                      ],
+                      "dictionarySha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+                      "dictionaryFile": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+                      "note": "The publisher's Data Dictionary carries both File B elements as dollar figures of the account breakdown; it maps them to the account download's columns, not to this endpoint's field names."
+                    },
+                    "note": "Obligations by object class for fiscal year 2025, a completed year, as USAspending reports DATA Act File B. Obligations are commitments, not cash, and gross of offsetting collections: this is not the Treasury's net outlays the graph shows as a cost."
                   }
                 },
                 {
@@ -283990,6 +285367,198 @@
                       "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
                       "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
                     }
+                  },
+                  "spendingByKind": {
+                    "source": "usaspending_file_b_object_class",
+                    "fiscalYear": 2025,
+                    "periodCoverage": "full_fiscal_year",
+                    "basis": "obligations",
+                    "toptierCode": "054",
+                    "apiName": "Federal Labor Relations Authority",
+                    "nameAlias": null,
+                    "groups": [
+                      {
+                        "code": "10",
+                        "name": "Personnel compensation and benefits",
+                        "obligations": 24546133.84
+                      },
+                      {
+                        "code": "20",
+                        "name": "Contractual services and supplies",
+                        "obligations": 4917750.55
+                      },
+                      {
+                        "code": "30",
+                        "name": "Acquisition of assets",
+                        "obligations": 12258.92
+                      },
+                      {
+                        "code": "40",
+                        "name": "Grants and fixed charges",
+                        "obligations": 2419.05
+                      },
+                      {
+                        "code": "00",
+                        "name": "Unknown Object Type",
+                        "obligations": 0.0
+                      }
+                    ],
+                    "totalObligations": 29478562.36,
+                    "totalGrossOutlays": 30483385.0,
+                    "classes": [
+                      [
+                        "Full-time permanent",
+                        17382126.2,
+                        17992908.84
+                      ],
+                      [
+                        "Civilian personnel benefits",
+                        6460455.2,
+                        6649060.17
+                      ],
+                      [
+                        "Rental payments to GSA",
+                        1879934.77,
+                        1788023.84
+                      ],
+                      [
+                        "Other services from non-Federal sources",
+                        1246074.84,
+                        1323518.7
+                      ],
+                      [
+                        "Other goods and services from Federal sources",
+                        972381.49,
+                        979448.8
+                      ],
+                      [
+                        "Other personnel compensation",
+                        489495.62,
+                        489495.62
+                      ],
+                      [
+                        "Operation and maintenance of equipment",
+                        272854.8,
+                        507837.85
+                      ],
+                      [
+                        "Benefits for former personnel",
+                        206580.76,
+                        206580.76
+                      ],
+                      [
+                        "Advisory and assistance services",
+                        205914.02,
+                        210087.05
+                      ],
+                      [
+                        "Communications, utilities, and miscellaneous charges",
+                        119101.5,
+                        108274.99
+                      ],
+                      [
+                        "Operation and maintenance of facilities",
+                        46320.0,
+                        68880.0
+                      ],
+                      [
+                        "Printing and reproduction",
+                        45282.0,
+                        22608.8
+                      ],
+                      [
+                        "Supplies and materials",
+                        38352.86,
+                        36560.02
+                      ],
+                      [
+                        "Transportation of things",
+                        35822.27,
+                        17957.15
+                      ],
+                      [
+                        "Rental payments to others",
+                        35032.39,
+                        21142.39
+                      ],
+                      [
+                        "Travel and transportation of persons",
+                        20679.61,
+                        32398.31
+                      ],
+                      [
+                        "Equipment",
+                        12258.92,
+                        17780.92
+                      ],
+                      [
+                        "Other than full-time permanent",
+                        7476.06,
+                        8401.74
+                      ],
+                      [
+                        "Refunds",
+                        2419.05,
+                        2419.05
+                      ]
+                    ],
+                    "staffPay": {
+                      "amount": 24339553.08,
+                      "share": 0.8257,
+                      "classes": [
+                        [
+                          "11.1",
+                          "Full-time permanent",
+                          17382126.2
+                        ],
+                        [
+                          "11.3",
+                          "Other than full-time permanent",
+                          7476.06
+                        ],
+                        [
+                          "11.5",
+                          "Other personnel compensation",
+                          489495.62
+                        ],
+                        [
+                          "12.1",
+                          "Civilian personnel benefits",
+                          6460455.2
+                        ]
+                      ],
+                      "note": "Pay and benefits of everyone the agency employs, FY2025, obligations: object classes 11 (personnel compensation) and 12 (personnel benefits) as listed; 13.0, benefits for former personnel, is not included. A sum this repository performed over the rows USAspending prints."
+                    },
+                    "documents": {
+                      "minor": {
+                        "url": "https://api.usaspending.gov/api/v2/agency/054/object_class/?fiscal_year=2025&limit=100",
+                        "file": "tests/fixtures/usaspending/object_class/minor/054.json",
+                        "sha256": "9421e25571f8b766ca24dcba41a73059893cc9e4a75f559dd469e4c73eb17786",
+                        "fetchedAt": "2026-10-08T16:07:55Z"
+                      },
+                      "major": {
+                        "url": "https://api.usaspending.gov/api/v2/financial_spending/major_object_class/?fiscal_year=2025&funding_agency_id=685",
+                        "file": "tests/fixtures/usaspending/object_class/major/054.json",
+                        "sha256": "f359c9163cc361fb79c168aa6c2994adc9627d3c10f5316d04fe2215adda4967",
+                        "fetchedAt": "2026-10-08T16:07:57Z"
+                      },
+                      "personnel": {
+                        "url": "https://api.usaspending.gov/api/v2/financial_spending/object_class/?fiscal_year=2025&funding_agency_id=685&major_object_class_code=10",
+                        "file": "tests/fixtures/usaspending/object_class/personnel/054.json",
+                        "sha256": "15fa3c48827e97351a15e21c3a116f467d121dd0a3784b078785e9c6ba06dbb3",
+                        "fetchedAt": "2026-10-08T16:07:58Z"
+                      }
+                    },
+                    "units": {
+                      "elements": [
+                        "ObligationsIncurredByProgramObjectClass_CPE",
+                        "GrossOutlayAmountByProgramObjectClass_CPE"
+                      ],
+                      "dictionarySha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+                      "dictionaryFile": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+                      "note": "The publisher's Data Dictionary carries both File B elements as dollar figures of the account breakdown; it maps them to the account download's columns, not to this endpoint's field names."
+                    },
+                    "note": "Obligations by object class for fiscal year 2025, a completed year, as USAspending reports DATA Act File B. Obligations are commitments, not cash, and gross of offsetting collections: this is not the Treasury's net outlays the graph shows as a cost."
                   }
                 },
                 {
@@ -284463,6 +286032,183 @@
                       "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
                       "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
                     }
+                  },
+                  "spendingByKind": {
+                    "source": "usaspending_file_b_object_class",
+                    "fiscalYear": 2025,
+                    "periodCoverage": "full_fiscal_year",
+                    "basis": "obligations",
+                    "toptierCode": "421",
+                    "apiName": "National Mediation Board",
+                    "nameAlias": null,
+                    "groups": [
+                      {
+                        "code": "10",
+                        "name": "Personnel compensation and benefits",
+                        "obligations": 9735189.44
+                      },
+                      {
+                        "code": "20",
+                        "name": "Contractual services and supplies",
+                        "obligations": 5208654.15
+                      },
+                      {
+                        "code": "30",
+                        "name": "Acquisition of assets",
+                        "obligations": 27476.88
+                      }
+                    ],
+                    "totalObligations": 14971320.47,
+                    "totalGrossOutlays": 14454845.78,
+                    "classes": [
+                      [
+                        "Full-time permanent",
+                        5147087.29,
+                        5135768.2
+                      ],
+                      [
+                        "Civilian personnel benefits",
+                        2102450.5,
+                        2096415.32
+                      ],
+                      [
+                        "Special personal services payments",
+                        1672170.0,
+                        1270990.0
+                      ],
+                      [
+                        "Rental payments to GSA",
+                        1460218.33,
+                        1541793.52
+                      ],
+                      [
+                        "Communications, utilities, and miscellaneous charges",
+                        1418510.3,
+                        1261896.0
+                      ],
+                      [
+                        "Other goods and services from Federal sources",
+                        1159055.77,
+                        1143101.51
+                      ],
+                      [
+                        "Other services from non-Federal sources",
+                        889578.93,
+                        519461.28
+                      ],
+                      [
+                        "Other than full-time permanent",
+                        697799.65,
+                        694863.9
+                      ],
+                      [
+                        "Travel and transportation of persons",
+                        170554.8,
+                        214851.57
+                      ],
+                      [
+                        "Other personnel compensation",
+                        115682.0,
+                        115682.0
+                      ],
+                      [
+                        "Rental payments to others",
+                        50000.0,
+                        46970.0
+                      ],
+                      [
+                        "Operation and maintenance of equipment",
+                        34507.34,
+                        124048.83
+                      ],
+                      [
+                        "Equipment",
+                        27476.88,
+                        59457.75
+                      ],
+                      [
+                        "Advisory and assistance services",
+                        13952.11,
+                        175459.37
+                      ],
+                      [
+                        "Supplies and materials",
+                        10167.56,
+                        51977.52
+                      ],
+                      [
+                        "Operation and maintenance of facilities",
+                        1619.38,
+                        1619.38
+                      ],
+                      [
+                        "Printing and reproduction",
+                        489.63,
+                        489.63
+                      ]
+                    ],
+                    "staffPay": {
+                      "amount": 9735189.44,
+                      "share": 0.6503,
+                      "classes": [
+                        [
+                          "11.1",
+                          "Full-time permanent",
+                          5147087.29
+                        ],
+                        [
+                          "11.3",
+                          "Other than full-time permanent",
+                          697799.65
+                        ],
+                        [
+                          "11.5",
+                          "Other personnel compensation",
+                          115682.0
+                        ],
+                        [
+                          "11.8",
+                          "Special personal services payments",
+                          1672170.0
+                        ],
+                        [
+                          "12.1",
+                          "Civilian personnel benefits",
+                          2102450.5
+                        ]
+                      ],
+                      "note": "Pay and benefits of everyone the agency employs, FY2025, obligations: object classes 11 (personnel compensation) and 12 (personnel benefits) as listed; 13.0, benefits for former personnel, is not included. A sum this repository performed over the rows USAspending prints."
+                    },
+                    "documents": {
+                      "minor": {
+                        "url": "https://api.usaspending.gov/api/v2/agency/421/object_class/?fiscal_year=2025&limit=100",
+                        "file": "tests/fixtures/usaspending/object_class/minor/421.json",
+                        "sha256": "ec905ff0b4afa31ee4a4ee4104a4ea4c782f7bfd919d3bfea0ac1d4a405dfd9e",
+                        "fetchedAt": "2026-10-08T16:07:59Z"
+                      },
+                      "major": {
+                        "url": "https://api.usaspending.gov/api/v2/financial_spending/major_object_class/?fiscal_year=2025&funding_agency_id=1142",
+                        "file": "tests/fixtures/usaspending/object_class/major/421.json",
+                        "sha256": "336fb388db647fd649fadc47855f46ab8e067db3b7cd107dadcdf7affad28092",
+                        "fetchedAt": "2026-10-08T16:08:01Z"
+                      },
+                      "personnel": {
+                        "url": "https://api.usaspending.gov/api/v2/financial_spending/object_class/?fiscal_year=2025&funding_agency_id=1142&major_object_class_code=10",
+                        "file": "tests/fixtures/usaspending/object_class/personnel/421.json",
+                        "sha256": "216ee932a6a9311bb9a47b11a0fb16342634343033ab11cac30b68a3aeb5b8c6",
+                        "fetchedAt": "2026-10-08T16:08:02Z"
+                      }
+                    },
+                    "units": {
+                      "elements": [
+                        "ObligationsIncurredByProgramObjectClass_CPE",
+                        "GrossOutlayAmountByProgramObjectClass_CPE"
+                      ],
+                      "dictionarySha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+                      "dictionaryFile": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+                      "note": "The publisher's Data Dictionary carries both File B elements as dollar figures of the account breakdown; it maps them to the account download's columns, not to this endpoint's field names."
+                    },
+                    "note": "Obligations by object class for fiscal year 2025, a completed year, as USAspending reports DATA Act File B. Obligations are commitments, not cash, and gross of offsetting collections: this is not the Treasury's net outlays the graph shows as a cost."
                   }
                 },
                 {
@@ -285182,6 +286928,193 @@
                       "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
                       "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
                     }
+                  },
+                  "spendingByKind": {
+                    "source": "usaspending_file_b_object_class",
+                    "fiscalYear": 2025,
+                    "periodCoverage": "full_fiscal_year",
+                    "basis": "obligations",
+                    "toptierCode": "360",
+                    "apiName": "Federal Election Commission",
+                    "nameAlias": null,
+                    "groups": [
+                      {
+                        "code": "10",
+                        "name": "Personnel compensation and benefits",
+                        "obligations": 56181575.79
+                      },
+                      {
+                        "code": "20",
+                        "name": "Contractual services and supplies",
+                        "obligations": 22656823.45
+                      },
+                      {
+                        "code": "30",
+                        "name": "Acquisition of assets",
+                        "obligations": 4462947.3
+                      },
+                      {
+                        "code": "00",
+                        "name": "Unknown Object Type",
+                        "obligations": 20000.0
+                      },
+                      {
+                        "code": "40",
+                        "name": "Grants and fixed charges",
+                        "obligations": 13040.8
+                      }
+                    ],
+                    "totalObligations": 83334387.34,
+                    "totalGrossOutlays": 81657049.65,
+                    "classes": [
+                      [
+                        "Full-time permanent",
+                        38668647.13,
+                        38543180.46
+                      ],
+                      [
+                        "Civilian personnel benefits",
+                        14972122.52,
+                        14913482.56
+                      ],
+                      [
+                        "Operation and maintenance of equipment",
+                        11179423.97,
+                        10335174.75
+                      ],
+                      [
+                        "Rental payments to GSA",
+                        5367734.44,
+                        5254662.34
+                      ],
+                      [
+                        "Equipment",
+                        4462947.3,
+                        4652557.88
+                      ],
+                      [
+                        "Other goods and services from Federal sources",
+                        3120087.86,
+                        2946357.17
+                      ],
+                      [
+                        "Advisory and assistance services",
+                        2115747.66,
+                        1493795.13
+                      ],
+                      [
+                        "Other than full-time permanent",
+                        1735972.49,
+                        1755549.4
+                      ],
+                      [
+                        "Other personnel compensation",
+                        804833.65,
+                        800690.64
+                      ],
+                      [
+                        "Supplies and materials",
+                        420213.04,
+                        501155.83
+                      ],
+                      [
+                        "Communications, utilities, and miscellaneous charges",
+                        331241.3,
+                        299191.56
+                      ],
+                      [
+                        "Printing and reproduction",
+                        85589.45,
+                        8377.99
+                      ],
+                      [
+                        "Unknown",
+                        20000.0,
+                        20000.0
+                      ],
+                      [
+                        "Travel and transportation of persons",
+                        19231.04,
+                        8023.34
+                      ],
+                      [
+                        "Other services from non-Federal sources",
+                        17554.69,
+                        107937.54
+                      ],
+                      [
+                        "Grants, subsidies, and contributions",
+                        13040.8,
+                        4433.06
+                      ],
+                      [
+                        "Benefits for former personnel",
+                        0.0,
+                        0.0
+                      ],
+                      [
+                        "Insurance claims and indemnities",
+                        0.0,
+                        12480.0
+                      ]
+                    ],
+                    "staffPay": {
+                      "amount": 56181575.79,
+                      "share": 0.6742,
+                      "classes": [
+                        [
+                          "11.1",
+                          "Full-time permanent",
+                          38668647.13
+                        ],
+                        [
+                          "11.3",
+                          "Other than full-time permanent",
+                          1735972.49
+                        ],
+                        [
+                          "11.5",
+                          "Other personnel compensation",
+                          804833.65
+                        ],
+                        [
+                          "12.1",
+                          "Civilian personnel benefits",
+                          14972122.52
+                        ]
+                      ],
+                      "note": "Pay and benefits of everyone the agency employs, FY2025, obligations: object classes 11 (personnel compensation) and 12 (personnel benefits) as listed; 13.0, benefits for former personnel, is not included. A sum this repository performed over the rows USAspending prints."
+                    },
+                    "documents": {
+                      "minor": {
+                        "url": "https://api.usaspending.gov/api/v2/agency/360/object_class/?fiscal_year=2025&limit=100",
+                        "file": "tests/fixtures/usaspending/object_class/minor/360.json",
+                        "sha256": "69e5f87daa4312a0d094fbf3c77d5382cd1d84757562afb5c6ba98d803ed1b65",
+                        "fetchedAt": "2026-10-08T16:08:03Z"
+                      },
+                      "major": {
+                        "url": "https://api.usaspending.gov/api/v2/financial_spending/major_object_class/?fiscal_year=2025&funding_agency_id=1128",
+                        "file": "tests/fixtures/usaspending/object_class/major/360.json",
+                        "sha256": "194656a693eeffb841ce2aa6e548d31a18673d545261f1b71d283d9f2ea2f6a2",
+                        "fetchedAt": "2026-10-08T16:08:04Z"
+                      },
+                      "personnel": {
+                        "url": "https://api.usaspending.gov/api/v2/financial_spending/object_class/?fiscal_year=2025&funding_agency_id=1128&major_object_class_code=10",
+                        "file": "tests/fixtures/usaspending/object_class/personnel/360.json",
+                        "sha256": "df7a3b7fa76d150d268b4717cc06730127c2ab16fdfaa4b733a2777d040a7ae3",
+                        "fetchedAt": "2026-10-08T16:08:06Z"
+                      }
+                    },
+                    "units": {
+                      "elements": [
+                        "ObligationsIncurredByProgramObjectClass_CPE",
+                        "GrossOutlayAmountByProgramObjectClass_CPE"
+                      ],
+                      "dictionarySha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+                      "dictionaryFile": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+                      "note": "The publisher's Data Dictionary carries both File B elements as dollar figures of the account breakdown; it maps them to the account download's columns, not to this endpoint's field names."
+                    },
+                    "note": "Obligations by object class for fiscal year 2025, a completed year, as USAspending reports DATA Act File B. Obligations are commitments, not cash, and gross of offsetting collections: this is not the Treasury's net outlays the graph shows as a cost."
                   }
                 },
                 {
@@ -285827,6 +287760,213 @@
                       "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
                       "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
                     }
+                  },
+                  "spendingByKind": {
+                    "source": "usaspending_file_b_object_class",
+                    "fiscalYear": 2025,
+                    "periodCoverage": "full_fiscal_year",
+                    "basis": "obligations",
+                    "toptierCode": "525",
+                    "apiName": "Election Assistance Commission",
+                    "nameAlias": null,
+                    "groups": [
+                      {
+                        "code": "40",
+                        "name": "Grants and fixed charges",
+                        "obligations": 15056830.28
+                      },
+                      {
+                        "code": "10",
+                        "name": "Personnel compensation and benefits",
+                        "obligations": 13833659.24
+                      },
+                      {
+                        "code": "20",
+                        "name": "Contractual services and supplies",
+                        "obligations": 13298588.97
+                      },
+                      {
+                        "code": "30",
+                        "name": "Acquisition of assets",
+                        "obligations": 183107.64
+                      },
+                      {
+                        "code": "90",
+                        "name": "Other",
+                        "obligations": 8812.8
+                      }
+                    ],
+                    "totalObligations": 42380998.93,
+                    "totalGrossOutlays": 39674335.83,
+                    "classes": [
+                      [
+                        "Grants, subsidies, and contributions",
+                        15056830.28,
+                        13645794.43
+                      ],
+                      [
+                        "Full-time permanent",
+                        5697951.55,
+                        5614643.05
+                      ],
+                      [
+                        "Other services from non-Federal sources",
+                        4443537.09,
+                        3580178.99
+                      ],
+                      [
+                        "Other than full-time permanent",
+                        4119977.3,
+                        4129709.68
+                      ],
+                      [
+                        "Civilian personnel benefits",
+                        3863571.5,
+                        3833435.03
+                      ],
+                      [
+                        "Other goods and services from Federal sources",
+                        2732202.56,
+                        2988279.5
+                      ],
+                      [
+                        "Advisory and assistance services",
+                        2670436.34,
+                        2773961.93
+                      ],
+                      [
+                        "Travel and transportation of persons",
+                        1720741.25,
+                        1361485.28
+                      ],
+                      [
+                        "Rental payments to GSA",
+                        718971.24,
+                        718971.24
+                      ],
+                      [
+                        "Communications, utilities, and miscellaneous charges",
+                        402277.84,
+                        78497.35
+                      ],
+                      [
+                        "Operation and maintenance of equipment",
+                        369492.0,
+                        88744.25
+                      ],
+                      [
+                        "Equipment",
+                        178069.11,
+                        524277.96
+                      ],
+                      [
+                        "Other personnel compensation",
+                        116210.49,
+                        116210.49
+                      ],
+                      [
+                        "Supplies and materials",
+                        111525.17,
+                        118468.47
+                      ],
+                      [
+                        "Printing and reproduction",
+                        91750.0,
+                        28407.92
+                      ],
+                      [
+                        "Operation and maintenance of facilities",
+                        23600.0,
+                        23600.0
+                      ],
+                      [
+                        "Special personal services payments",
+                        20702.4,
+                        21249.6
+                      ],
+                      [
+                        "Benefits for former personnel",
+                        15246.0,
+                        3072.0
+                      ],
+                      [
+                        "Transportation of things",
+                        14055.48,
+                        14478.48
+                      ],
+                      [
+                        "Financial transfers",
+                        8812.8,
+                        8812.8
+                      ],
+                      [
+                        "Land and structures",
+                        5038.53,
+                        2057.38
+                      ]
+                    ],
+                    "staffPay": {
+                      "amount": 13818413.24,
+                      "share": 0.3261,
+                      "classes": [
+                        [
+                          "11.1",
+                          "Full-time permanent",
+                          5697951.55
+                        ],
+                        [
+                          "11.3",
+                          "Other than full-time permanent",
+                          4119977.3
+                        ],
+                        [
+                          "11.5",
+                          "Other personnel compensation",
+                          116210.49
+                        ],
+                        [
+                          "11.8",
+                          "Special personal services payments",
+                          20702.4
+                        ],
+                        [
+                          "12.1",
+                          "Civilian personnel benefits",
+                          3863571.5
+                        ]
+                      ],
+                      "note": "Pay and benefits of everyone the agency employs, FY2025, obligations: object classes 11 (personnel compensation) and 12 (personnel benefits) as listed; 13.0, benefits for former personnel, is not included. A sum this repository performed over the rows USAspending prints."
+                    },
+                    "documents": {
+                      "minor": {
+                        "url": "https://api.usaspending.gov/api/v2/agency/525/object_class/?fiscal_year=2025&limit=100",
+                        "file": "tests/fixtures/usaspending/object_class/minor/525.json",
+                        "sha256": "c7a435d9f90e296a8ecb300279483959fdc8c223aed20ee73206c502a8e99aec",
+                        "fetchedAt": "2026-10-08T16:08:07Z"
+                      },
+                      "major": {
+                        "url": "https://api.usaspending.gov/api/v2/financial_spending/major_object_class/?fiscal_year=2025&funding_agency_id=1141",
+                        "file": "tests/fixtures/usaspending/object_class/major/525.json",
+                        "sha256": "8d25d56edd54d58cc08d2b2d01596df5b097432bae4d430d30a427ed1f7527fd",
+                        "fetchedAt": "2026-10-08T16:08:08Z"
+                      },
+                      "personnel": {
+                        "url": "https://api.usaspending.gov/api/v2/financial_spending/object_class/?fiscal_year=2025&funding_agency_id=1141&major_object_class_code=10",
+                        "file": "tests/fixtures/usaspending/object_class/personnel/525.json",
+                        "sha256": "c8752873e07bd104ade731ac91d08a02d566aeb3de82621c5715524725290622",
+                        "fetchedAt": "2026-10-08T16:08:10Z"
+                      }
+                    },
+                    "units": {
+                      "elements": [
+                        "ObligationsIncurredByProgramObjectClass_CPE",
+                        "GrossOutlayAmountByProgramObjectClass_CPE"
+                      ],
+                      "dictionarySha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+                      "dictionaryFile": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+                      "note": "The publisher's Data Dictionary carries both File B elements as dollar figures of the account breakdown; it maps them to the account download's columns, not to this endpoint's field names."
+                    },
+                    "note": "Obligations by object class for fiscal year 2025, a completed year, as USAspending reports DATA Act File B. Obligations are commitments, not cash, and gross of offsetting collections: this is not the Treasury's net outlays the graph shows as a cost."
                   }
                 },
                 {
@@ -286230,6 +288370,171 @@
                       "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
                       "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
                     }
+                  },
+                  "spendingByKind": {
+                    "source": "usaspending_file_b_object_class",
+                    "fiscalYear": 2025,
+                    "periodCoverage": "full_fiscal_year",
+                    "basis": "obligations",
+                    "toptierCode": "510",
+                    "apiName": "United States Chemical Safety Board",
+                    "nameAlias": {
+                      "graphName": "Chemical Safety & Hazard Investigation Board (CSB)",
+                      "apiName": "United States Chemical Safety Board"
+                    },
+                    "groups": [
+                      {
+                        "code": "10",
+                        "name": "Personnel compensation and benefits",
+                        "obligations": 9971101.86
+                      },
+                      {
+                        "code": "20",
+                        "name": "Contractual services and supplies",
+                        "obligations": 4480992.21
+                      },
+                      {
+                        "code": "00",
+                        "name": "Unknown Object Type",
+                        "obligations": 0.0
+                      }
+                    ],
+                    "totalObligations": 14452094.07,
+                    "totalGrossOutlays": 14113024.85,
+                    "classes": [
+                      [
+                        "Full-time permanent",
+                        6531390.44,
+                        6415326.07
+                      ],
+                      [
+                        "Civilian personnel benefits",
+                        2574762.39,
+                        2566177.65
+                      ],
+                      [
+                        "Other services from non-Federal sources",
+                        1090766.93,
+                        1148700.82
+                      ],
+                      [
+                        "Advisory and assistance services",
+                        1001348.15,
+                        523748.76
+                      ],
+                      [
+                        "Other goods and services from Federal sources",
+                        1000504.37,
+                        987214.66
+                      ],
+                      [
+                        "Rental payments to others",
+                        466077.94,
+                        416250.74
+                      ],
+                      [
+                        "Other than full-time permanent",
+                        438160.88,
+                        440635.2
+                      ],
+                      [
+                        "Other personnel compensation",
+                        415325.03,
+                        418161.38
+                      ],
+                      [
+                        "Travel and transportation of persons",
+                        359866.26,
+                        323737.3
+                      ],
+                      [
+                        "Supplies and materials",
+                        225385.76,
+                        299795.38
+                      ],
+                      [
+                        "Operation and maintenance of equipment",
+                        217867.5,
+                        382997.33
+                      ],
+                      [
+                        "Communications, utilities, and miscellaneous charges",
+                        105841.26,
+                        166725.32
+                      ],
+                      [
+                        "Printing and reproduction",
+                        13334.04,
+                        12135.04
+                      ],
+                      [
+                        "Special personal services payments",
+                        11463.12,
+                        11419.2
+                      ]
+                    ],
+                    "staffPay": {
+                      "amount": 9971101.86,
+                      "share": 0.6899,
+                      "classes": [
+                        [
+                          "11.1",
+                          "Full-time permanent",
+                          6531390.44
+                        ],
+                        [
+                          "11.3",
+                          "Other than full-time permanent",
+                          438160.88
+                        ],
+                        [
+                          "11.5",
+                          "Other personnel compensation",
+                          415325.03
+                        ],
+                        [
+                          "11.8",
+                          "Special personal services payments",
+                          11463.12
+                        ],
+                        [
+                          "12.1",
+                          "Civilian personnel benefits",
+                          2574762.39
+                        ]
+                      ],
+                      "note": "Pay and benefits of everyone the agency employs, FY2025, obligations: object classes 11 (personnel compensation) and 12 (personnel benefits) as listed; 13.0, benefits for former personnel, is not included. A sum this repository performed over the rows USAspending prints."
+                    },
+                    "documents": {
+                      "minor": {
+                        "url": "https://api.usaspending.gov/api/v2/agency/510/object_class/?fiscal_year=2025&limit=100",
+                        "file": "tests/fixtures/usaspending/object_class/minor/510.json",
+                        "sha256": "a26c1a916e6dc43e26c28653724541154f41d1a67d527a3d8012e5b325383688",
+                        "fetchedAt": "2026-10-08T16:08:11Z"
+                      },
+                      "major": {
+                        "url": "https://api.usaspending.gov/api/v2/financial_spending/major_object_class/?fiscal_year=2025&funding_agency_id=1162",
+                        "file": "tests/fixtures/usaspending/object_class/major/510.json",
+                        "sha256": "e9eb737d24f3991e03c4cc6bb9500e737e1830b403295b46c60fbe01d3ce8089",
+                        "fetchedAt": "2026-10-08T16:08:12Z"
+                      },
+                      "personnel": {
+                        "url": "https://api.usaspending.gov/api/v2/financial_spending/object_class/?fiscal_year=2025&funding_agency_id=1162&major_object_class_code=10",
+                        "file": "tests/fixtures/usaspending/object_class/personnel/510.json",
+                        "sha256": "680367db072fe3bcbfab493d7b00efe7c5a2b96c30183d537d80e33290b8a519",
+                        "fetchedAt": "2026-10-08T16:08:13Z"
+                      }
+                    },
+                    "units": {
+                      "elements": [
+                        "ObligationsIncurredByProgramObjectClass_CPE",
+                        "GrossOutlayAmountByProgramObjectClass_CPE"
+                      ],
+                      "dictionarySha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+                      "dictionaryFile": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+                      "note": "The publisher's Data Dictionary carries both File B elements as dollar figures of the account breakdown; it maps them to the account download's columns, not to this endpoint's field names."
+                    },
+                    "note": "Obligations by object class for fiscal year 2025, a completed year, as USAspending reports DATA Act File B. Obligations are commitments, not cash, and gross of offsetting collections: this is not the Treasury's net outlays the graph shows as a cost."
                   }
                 },
                 {
@@ -287037,6 +289342,183 @@
                       "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
                       "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
                     }
+                  },
+                  "spendingByKind": {
+                    "source": "usaspending_file_b_object_class",
+                    "fiscalYear": 2025,
+                    "periodCoverage": "full_fiscal_year",
+                    "basis": "obligations",
+                    "toptierCode": "535",
+                    "apiName": "Privacy and Civil Liberties Oversight Board",
+                    "nameAlias": null,
+                    "groups": [
+                      {
+                        "code": "10",
+                        "name": "Personnel compensation and benefits",
+                        "obligations": 8332958.41
+                      },
+                      {
+                        "code": "20",
+                        "name": "Contractual services and supplies",
+                        "obligations": 5059949.82
+                      },
+                      {
+                        "code": "30",
+                        "name": "Acquisition of assets",
+                        "obligations": 385924.29
+                      },
+                      {
+                        "code": "40",
+                        "name": "Grants and fixed charges",
+                        "obligations": 0.0
+                      }
+                    ],
+                    "totalObligations": 13778832.52,
+                    "totalGrossOutlays": 13137136.55,
+                    "classes": [
+                      [
+                        "Full-time permanent",
+                        5456762.53,
+                        5410865.96
+                      ],
+                      [
+                        "Advisory and assistance services",
+                        2851524.48,
+                        2147724.47
+                      ],
+                      [
+                        "Civilian personnel benefits",
+                        2275446.93,
+                        2264703.06
+                      ],
+                      [
+                        "Rental payments to GSA",
+                        1029065.14,
+                        1028986.04
+                      ],
+                      [
+                        "Equipment",
+                        385924.29,
+                        238398.12
+                      ],
+                      [
+                        "Other than full-time permanent",
+                        378961.96,
+                        398424.98
+                      ],
+                      [
+                        "Other goods and services from Federal sources",
+                        334137.99,
+                        349983.41
+                      ],
+                      [
+                        "Other services from non-Federal sources",
+                        268012.52,
+                        479972.78
+                      ],
+                      [
+                        "Communications, utilities, and miscellaneous charges",
+                        261296.4,
+                        275704.64
+                      ],
+                      [
+                        "Supplies and materials",
+                        191277.71,
+                        188297.72
+                      ],
+                      [
+                        "Other personnel compensation",
+                        185061.99,
+                        185061.99
+                      ],
+                      [
+                        "Operation and maintenance of facilities",
+                        75120.78,
+                        70148.38
+                      ],
+                      [
+                        "Benefits for former personnel",
+                        36725.0,
+                        36725.0
+                      ],
+                      [
+                        "Rental payments to others",
+                        23307.82,
+                        16757.41
+                      ],
+                      [
+                        "Travel and transportation of persons",
+                        20300.98,
+                        19611.56
+                      ],
+                      [
+                        "Printing and reproduction",
+                        5906.0,
+                        3453.73
+                      ],
+                      [
+                        "Insurance claims and indemnities",
+                        0.0,
+                        22317.3
+                      ]
+                    ],
+                    "staffPay": {
+                      "amount": 8296233.41,
+                      "share": 0.6021,
+                      "classes": [
+                        [
+                          "11.1",
+                          "Full-time permanent",
+                          5456762.53
+                        ],
+                        [
+                          "11.3",
+                          "Other than full-time permanent",
+                          378961.96
+                        ],
+                        [
+                          "11.5",
+                          "Other personnel compensation",
+                          185061.99
+                        ],
+                        [
+                          "12.1",
+                          "Civilian personnel benefits",
+                          2275446.93
+                        ]
+                      ],
+                      "note": "Pay and benefits of everyone the agency employs, FY2025, obligations: object classes 11 (personnel compensation) and 12 (personnel benefits) as listed; 13.0, benefits for former personnel, is not included. A sum this repository performed over the rows USAspending prints."
+                    },
+                    "documents": {
+                      "minor": {
+                        "url": "https://api.usaspending.gov/api/v2/agency/535/object_class/?fiscal_year=2025&limit=100",
+                        "file": "tests/fixtures/usaspending/object_class/minor/535.json",
+                        "sha256": "c82039ddee5b520ecf05944980c55a282f7589d8cffe10dadd8ea6cf84574e40",
+                        "fetchedAt": "2026-10-08T16:08:15Z"
+                      },
+                      "major": {
+                        "url": "https://api.usaspending.gov/api/v2/financial_spending/major_object_class/?fiscal_year=2025&funding_agency_id=1143",
+                        "file": "tests/fixtures/usaspending/object_class/major/535.json",
+                        "sha256": "4e991950ffd81249b68bca3cb1cdb0fa026b5da9e156920fe33771922a54b2be",
+                        "fetchedAt": "2026-10-08T16:08:16Z"
+                      },
+                      "personnel": {
+                        "url": "https://api.usaspending.gov/api/v2/financial_spending/object_class/?fiscal_year=2025&funding_agency_id=1143&major_object_class_code=10",
+                        "file": "tests/fixtures/usaspending/object_class/personnel/535.json",
+                        "sha256": "9d59e69a1fc2388f27b5edfd47b4fb305c73d5d64c2ab5d7b3acc7984bdb7b0d",
+                        "fetchedAt": "2026-10-08T16:08:17Z"
+                      }
+                    },
+                    "units": {
+                      "elements": [
+                        "ObligationsIncurredByProgramObjectClass_CPE",
+                        "GrossOutlayAmountByProgramObjectClass_CPE"
+                      ],
+                      "dictionarySha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+                      "dictionaryFile": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+                      "note": "The publisher's Data Dictionary carries both File B elements as dollar figures of the account breakdown; it maps them to the account download's columns, not to this endpoint's field names."
+                    },
+                    "note": "Obligations by object class for fiscal year 2025, a completed year, as USAspending reports DATA Act File B. Obligations are commitments, not cash, and gross of offsetting collections: this is not the Treasury's net outlays the graph shows as a cost."
                   }
                 },
                 {
@@ -289387,6 +291869,173 @@
                       "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
                       "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
                     }
+                  },
+                  "spendingByKind": {
+                    "source": "usaspending_file_b_object_class",
+                    "fiscalYear": 2025,
+                    "periodCoverage": "full_fiscal_year",
+                    "basis": "obligations",
+                    "toptierCode": "394",
+                    "apiName": "National Capital Planning Commission",
+                    "nameAlias": null,
+                    "groups": [
+                      {
+                        "code": "20",
+                        "name": "Contractual services and supplies",
+                        "obligations": 6158617.64
+                      },
+                      {
+                        "code": "10",
+                        "name": "Personnel compensation and benefits",
+                        "obligations": 6153101.59
+                      },
+                      {
+                        "code": "30",
+                        "name": "Acquisition of assets",
+                        "obligations": 67225.51
+                      }
+                    ],
+                    "totalObligations": 12378944.74,
+                    "totalGrossOutlays": 11144655.78,
+                    "classes": [
+                      [
+                        "Full-time permanent",
+                        4295811.43,
+                        4286368.0
+                      ],
+                      [
+                        "Advisory and assistance services",
+                        4172625.0,
+                        2963834.91
+                      ],
+                      [
+                        "Civilian personnel benefits",
+                        1614197.2,
+                        1609501.67
+                      ],
+                      [
+                        "Rental payments to others",
+                        1138199.92,
+                        1138199.92
+                      ],
+                      [
+                        "Other goods and services from Federal sources",
+                        495158.38,
+                        471505.3
+                      ],
+                      [
+                        "Operation and maintenance of equipment",
+                        200055.57,
+                        189404.36
+                      ],
+                      [
+                        "Other than full-time permanent",
+                        138362.96,
+                        137900.8
+                      ],
+                      [
+                        "Other personnel compensation",
+                        104730.0,
+                        104730.0
+                      ],
+                      [
+                        "Communications, utilities, and miscellaneous charges",
+                        73106.42,
+                        65080.91
+                      ],
+                      [
+                        "Equipment",
+                        67225.51,
+                        68045.51
+                      ],
+                      [
+                        "Operation and maintenance of facilities",
+                        25321.31,
+                        12295.41
+                      ],
+                      [
+                        "Travel and transportation of persons",
+                        18815.31,
+                        20434.06
+                      ],
+                      [
+                        "Supplies and materials",
+                        16900.29,
+                        17630.37
+                      ],
+                      [
+                        "Other services from non-Federal sources",
+                        12868.76,
+                        16812.88
+                      ],
+                      [
+                        "Printing and reproduction",
+                        5566.68,
+                        368.68
+                      ],
+                      [
+                        "Transportation of things",
+                        0.0,
+                        42543.0
+                      ]
+                    ],
+                    "staffPay": {
+                      "amount": 6153101.59,
+                      "share": 0.4971,
+                      "classes": [
+                        [
+                          "11.1",
+                          "Full-time permanent",
+                          4295811.43
+                        ],
+                        [
+                          "11.3",
+                          "Other than full-time permanent",
+                          138362.96
+                        ],
+                        [
+                          "11.5",
+                          "Other personnel compensation",
+                          104730.0
+                        ],
+                        [
+                          "12.1",
+                          "Civilian personnel benefits",
+                          1614197.2
+                        ]
+                      ],
+                      "note": "Pay and benefits of everyone the agency employs, FY2025, obligations: object classes 11 (personnel compensation) and 12 (personnel benefits) as listed; 13.0, benefits for former personnel, is not included. A sum this repository performed over the rows USAspending prints."
+                    },
+                    "documents": {
+                      "minor": {
+                        "url": "https://api.usaspending.gov/api/v2/agency/394/object_class/?fiscal_year=2025&limit=100",
+                        "file": "tests/fixtures/usaspending/object_class/minor/394.json",
+                        "sha256": "982290ea9c7aa4e89d3d914b49297bd7659f3139238014220c455a73190980a1",
+                        "fetchedAt": "2026-10-08T16:08:22Z"
+                      },
+                      "major": {
+                        "url": "https://api.usaspending.gov/api/v2/financial_spending/major_object_class/?fiscal_year=2025&funding_agency_id=1126",
+                        "file": "tests/fixtures/usaspending/object_class/major/394.json",
+                        "sha256": "444773e243255608a11d5c238c9c5dd30e7fff40f952d305821e98e84b73e5ca",
+                        "fetchedAt": "2026-10-08T16:08:24Z"
+                      },
+                      "personnel": {
+                        "url": "https://api.usaspending.gov/api/v2/financial_spending/object_class/?fiscal_year=2025&funding_agency_id=1126&major_object_class_code=10",
+                        "file": "tests/fixtures/usaspending/object_class/personnel/394.json",
+                        "sha256": "509efca961a3e8e5766799af1cd39386d03aa80c36941a6f1a3e5dbc87eba431",
+                        "fetchedAt": "2026-10-08T16:08:25Z"
+                      }
+                    },
+                    "units": {
+                      "elements": [
+                        "ObligationsIncurredByProgramObjectClass_CPE",
+                        "GrossOutlayAmountByProgramObjectClass_CPE"
+                      ],
+                      "dictionarySha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+                      "dictionaryFile": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+                      "note": "The publisher's Data Dictionary carries both File B elements as dollar figures of the account breakdown; it maps them to the account download's columns, not to this endpoint's field names."
+                    },
+                    "note": "Obligations by object class for fiscal year 2025, a completed year, as USAspending reports DATA Act File B. Obligations are commitments, not cash, and gross of offsetting collections: this is not the Treasury's net outlays the graph shows as a cost."
                   }
                 },
                 {
@@ -289693,6 +292342,223 @@
                       "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
                       "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
                     }
+                  },
+                  "spendingByKind": {
+                    "source": "usaspending_file_b_object_class",
+                    "fiscalYear": 2025,
+                    "periodCoverage": "full_fiscal_year",
+                    "basis": "obligations",
+                    "toptierCode": "074",
+                    "apiName": "American Battle Monuments Commission",
+                    "nameAlias": null,
+                    "groups": [
+                      {
+                        "code": "20",
+                        "name": "Contractual services and supplies",
+                        "obligations": 58846016.4
+                      },
+                      {
+                        "code": "10",
+                        "name": "Personnel compensation and benefits",
+                        "obligations": 48859626.29
+                      },
+                      {
+                        "code": "30",
+                        "name": "Acquisition of assets",
+                        "obligations": 18879016.2
+                      },
+                      {
+                        "code": "40",
+                        "name": "Grants and fixed charges",
+                        "obligations": 12818.7
+                      },
+                      {
+                        "code": "00",
+                        "name": "Unknown Object Type",
+                        "obligations": 0.0
+                      }
+                    ],
+                    "totalObligations": 126597477.59,
+                    "totalGrossOutlays": 103483062.3,
+                    "classes": [
+                      [
+                        "Full-time permanent",
+                        28050697.25,
+                        27945880.55
+                      ],
+                      [
+                        "Other goods and services from Federal sources",
+                        17740095.58,
+                        17819830.56
+                      ],
+                      [
+                        "Land and structures",
+                        16007273.11,
+                        5007586.46
+                      ],
+                      [
+                        "Civilian personnel benefits",
+                        12023323.35,
+                        11861631.5
+                      ],
+                      [
+                        "Advisory and assistance services",
+                        10192618.53,
+                        7471725.0
+                      ],
+                      [
+                        "Operation and maintenance of facilities",
+                        7004520.6,
+                        5158080.06
+                      ],
+                      [
+                        "Other services from non-Federal sources",
+                        6761537.87,
+                        3028433.07
+                      ],
+                      [
+                        "Supplies and materials",
+                        4936235.88,
+                        4527640.51
+                      ],
+                      [
+                        "Military personnel benefits",
+                        4600500.06,
+                        4666912.73
+                      ],
+                      [
+                        "Communications, utilities, and miscellaneous charges",
+                        4211942.08,
+                        3100482.68
+                      ],
+                      [
+                        "Rental payments to others",
+                        3504483.82,
+                        1898588.84
+                      ],
+                      [
+                        "Equipment",
+                        2871743.09,
+                        2497520.76
+                      ],
+                      [
+                        "Other than full-time permanent",
+                        1955755.34,
+                        1956722.0
+                      ],
+                      [
+                        "Other personnel compensation",
+                        1512546.62,
+                        1573596.79
+                      ],
+                      [
+                        "Travel and transportation of persons",
+                        1389906.83,
+                        1266410.75
+                      ],
+                      [
+                        "Transportation of things",
+                        1187181.16,
+                        803781.84
+                      ],
+                      [
+                        "Rental payments to GSA",
+                        1004915.3,
+                        958864.5
+                      ],
+                      [
+                        "Benefits for former personnel",
+                        716803.67,
+                        685853.1
+                      ],
+                      [
+                        "Operation and maintenance of equipment",
+                        605916.77,
+                        965664.48
+                      ],
+                      [
+                        "Printing and reproduction",
+                        237692.51,
+                        212402.01
+                      ],
+                      [
+                        "Medical care",
+                        68920.93,
+                        62586.87
+                      ],
+                      [
+                        "Insurance claims and indemnities",
+                        12818.7,
+                        12818.7
+                      ],
+                      [
+                        "Subsistence and support of persons",
+                        48.54,
+                        48.54
+                      ]
+                    ],
+                    "staffPay": {
+                      "amount": 48142822.62,
+                      "share": 0.3803,
+                      "classes": [
+                        [
+                          "11.1",
+                          "Full-time permanent",
+                          28050697.25
+                        ],
+                        [
+                          "11.3",
+                          "Other than full-time permanent",
+                          1955755.34
+                        ],
+                        [
+                          "11.5",
+                          "Other personnel compensation",
+                          1512546.62
+                        ],
+                        [
+                          "12.1",
+                          "Civilian personnel benefits",
+                          12023323.35
+                        ],
+                        [
+                          "12.2",
+                          "Military personnel benefits",
+                          4600500.06
+                        ]
+                      ],
+                      "note": "Pay and benefits of everyone the agency employs, FY2025, obligations: object classes 11 (personnel compensation) and 12 (personnel benefits) as listed; 13.0, benefits for former personnel, is not included. A sum this repository performed over the rows USAspending prints."
+                    },
+                    "documents": {
+                      "minor": {
+                        "url": "https://api.usaspending.gov/api/v2/agency/074/object_class/?fiscal_year=2025&limit=100",
+                        "file": "tests/fixtures/usaspending/object_class/minor/074.json",
+                        "sha256": "afd89a1434bdebefb915cce43ac0333f7aed5db57f384fc94182d668740e7096",
+                        "fetchedAt": "2026-10-08T16:08:26Z"
+                      },
+                      "major": {
+                        "url": "https://api.usaspending.gov/api/v2/financial_spending/major_object_class/?fiscal_year=2025&funding_agency_id=805",
+                        "file": "tests/fixtures/usaspending/object_class/major/074.json",
+                        "sha256": "eb33b2985d06ee8cc2201144fc8669fba8ae20c9e6ace79c1dfd39f2219206db",
+                        "fetchedAt": "2026-10-08T16:08:27Z"
+                      },
+                      "personnel": {
+                        "url": "https://api.usaspending.gov/api/v2/financial_spending/object_class/?fiscal_year=2025&funding_agency_id=805&major_object_class_code=10",
+                        "file": "tests/fixtures/usaspending/object_class/personnel/074.json",
+                        "sha256": "d381c7d3a2f0fe9c5d808e8d81c6eca0356dee743afa9a4a99512417b57c191e",
+                        "fetchedAt": "2026-10-08T16:08:29Z"
+                      }
+                    },
+                    "units": {
+                      "elements": [
+                        "ObligationsIncurredByProgramObjectClass_CPE",
+                        "GrossOutlayAmountByProgramObjectClass_CPE"
+                      ],
+                      "dictionarySha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+                      "dictionaryFile": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+                      "note": "The publisher's Data Dictionary carries both File B elements as dollar figures of the account breakdown; it maps them to the account download's columns, not to this endpoint's field names."
+                    },
+                    "note": "Obligations by object class for fiscal year 2025, a completed year, as USAspending reports DATA Act File B. Obligations are commitments, not cash, and gross of offsetting collections: this is not the Treasury's net outlays the graph shows as a cost."
                   }
                 },
                 {
@@ -298089,6 +300955,218 @@
                   "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
                   "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
                 }
+              },
+              "spendingByKind": {
+                "source": "usaspending_file_b_object_class",
+                "fiscalYear": 2025,
+                "periodCoverage": "full_fiscal_year",
+                "basis": "obligations",
+                "toptierCode": "027",
+                "apiName": "Federal Communications Commission",
+                "nameAlias": null,
+                "groups": [
+                  {
+                    "code": "40",
+                    "name": "Grants and fixed charges",
+                    "obligations": 10903489026.74
+                  },
+                  {
+                    "code": "20",
+                    "name": "Contractual services and supplies",
+                    "obligations": 459773032.12
+                  },
+                  {
+                    "code": "10",
+                    "name": "Personnel compensation and benefits",
+                    "obligations": 340685261.0
+                  },
+                  {
+                    "code": "30",
+                    "name": "Acquisition of assets",
+                    "obligations": 3190796.73
+                  }
+                ],
+                "totalObligations": 11707138116.59,
+                "totalGrossOutlays": 11515214740.28,
+                "classes": [
+                  [
+                    "Grants, subsidies, and contributions",
+                    10834248551.26,
+                    10652174400.18
+                  ],
+                  [
+                    "Other services from non-Federal sources",
+                    333094599.88,
+                    377764090.34
+                  ],
+                  [
+                    "Full-time permanent",
+                    241540861.0,
+                    240990389.33
+                  ],
+                  [
+                    "Civilian personnel benefits",
+                    88518802.86,
+                    88161620.08
+                  ],
+                  [
+                    "Operation and maintenance of equipment",
+                    80153345.03,
+                    93385678.93
+                  ],
+                  [
+                    "Interest and dividends",
+                    69220065.86,
+                    4449.42
+                  ],
+                  [
+                    "Rental payments to GSA",
+                    29773686.0,
+                    28840018.2
+                  ],
+                  [
+                    "Other goods and services from Federal sources",
+                    7253452.28,
+                    8194638.07
+                  ],
+                  [
+                    "Communications, utilities, and miscellaneous charges",
+                    5400500.1,
+                    5590109.09
+                  ],
+                  [
+                    "Special personal services payments",
+                    5150100.03,
+                    3632325.21
+                  ],
+                  [
+                    "Other personnel compensation",
+                    3736720.13,
+                    6016020.54
+                  ],
+                  [
+                    "Equipment",
+                    2681304.98,
+                    2691473.19
+                  ],
+                  [
+                    "Printing and reproduction",
+                    1996730.91,
+                    1731368.17
+                  ],
+                  [
+                    "Other than full-time permanent",
+                    1738776.98,
+                    1737860.56
+                  ],
+                  [
+                    "Rental payments to others",
+                    1170300.93,
+                    824912.98
+                  ],
+                  [
+                    "Operation and maintenance of facilities",
+                    616937.34,
+                    759962.04
+                  ],
+                  [
+                    "Land and structures",
+                    509491.75,
+                    509491.75
+                  ],
+                  [
+                    "Supplies and materials",
+                    456619.16,
+                    581456.59
+                  ],
+                  [
+                    "Medical care",
+                    179080.01,
+                    134312.88
+                  ],
+                  [
+                    "Transportation of things",
+                    70119.95,
+                    43099.16
+                  ],
+                  [
+                    "Insurance claims and indemnities",
+                    20409.62,
+                    21197.76
+                  ],
+                  [
+                    "Benefits for former personnel",
+                    0.0,
+                    29524.16
+                  ],
+                  [
+                    "Travel and transportation of persons",
+                    -392339.47,
+                    1396341.65
+                  ]
+                ],
+                "staffPay": {
+                  "amount": 340685261.0,
+                  "share": 0.0291,
+                  "classes": [
+                    [
+                      "11.1",
+                      "Full-time permanent",
+                      241540861.0
+                    ],
+                    [
+                      "11.3",
+                      "Other than full-time permanent",
+                      1738776.98
+                    ],
+                    [
+                      "11.5",
+                      "Other personnel compensation",
+                      3736720.13
+                    ],
+                    [
+                      "11.8",
+                      "Special personal services payments",
+                      5150100.03
+                    ],
+                    [
+                      "12.1",
+                      "Civilian personnel benefits",
+                      88518802.86
+                    ]
+                  ],
+                  "note": "Pay and benefits of everyone the agency employs, FY2025, obligations: object classes 11 (personnel compensation) and 12 (personnel benefits) as listed; 13.0, benefits for former personnel, is not included. A sum this repository performed over the rows USAspending prints."
+                },
+                "documents": {
+                  "minor": {
+                    "url": "https://api.usaspending.gov/api/v2/agency/027/object_class/?fiscal_year=2025&limit=100",
+                    "file": "tests/fixtures/usaspending/object_class/minor/027.json",
+                    "sha256": "6a0f877ebb137cab9bc35676f14f151e6d4e74b340f79b864c8ac7d5640cc7d3",
+                    "fetchedAt": "2026-10-08T16:08:30Z"
+                  },
+                  "major": {
+                    "url": "https://api.usaspending.gov/api/v2/financial_spending/major_object_class/?fiscal_year=2025&funding_agency_id=538",
+                    "file": "tests/fixtures/usaspending/object_class/major/027.json",
+                    "sha256": "2c5fec9ea8a219a668f0bb4d47214645d817d759f51d98aa9d743c1d666eb6e9",
+                    "fetchedAt": "2026-10-08T16:08:33Z"
+                  },
+                  "personnel": {
+                    "url": "https://api.usaspending.gov/api/v2/financial_spending/object_class/?fiscal_year=2025&funding_agency_id=538&major_object_class_code=10",
+                    "file": "tests/fixtures/usaspending/object_class/personnel/027.json",
+                    "sha256": "d4da4cf9eab160679b5f4811ff8a893574f64cc180711af0c80baf6276afbce4",
+                    "fetchedAt": "2026-10-08T16:08:34Z"
+                  }
+                },
+                "units": {
+                  "elements": [
+                    "ObligationsIncurredByProgramObjectClass_CPE",
+                    "GrossOutlayAmountByProgramObjectClass_CPE"
+                  ],
+                  "dictionarySha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+                  "dictionaryFile": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+                  "note": "The publisher's Data Dictionary carries both File B elements as dollar figures of the account breakdown; it maps them to the account download's columns, not to this endpoint's field names."
+                },
+                "note": "Obligations by object class for fiscal year 2025, a completed year, as USAspending reports DATA Act File B. Obligations are commitments, not cash, and gross of offsetting collections: this is not the Treasury's net outlays the graph shows as a cost."
               }
             },
             {
@@ -299308,6 +302386,208 @@
                 "budgetAuthorityAccountRows": 3,
                 "package": "BUDGET-2027-DB",
                 "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
+              },
+              "spendingByKind": {
+                "source": "usaspending_file_b_object_class",
+                "fiscalYear": 2025,
+                "periodCoverage": "full_fiscal_year",
+                "basis": "obligations",
+                "toptierCode": "029",
+                "apiName": "Federal Trade Commission",
+                "nameAlias": null,
+                "groups": [
+                  {
+                    "code": "10",
+                    "name": "Personnel compensation and benefits",
+                    "obligations": 293219951.05
+                  },
+                  {
+                    "code": "20",
+                    "name": "Contractual services and supplies",
+                    "obligations": 130544167.84
+                  },
+                  {
+                    "code": "30",
+                    "name": "Acquisition of assets",
+                    "obligations": 4168747.83
+                  },
+                  {
+                    "code": "40",
+                    "name": "Grants and fixed charges",
+                    "obligations": 41000.0
+                  }
+                ],
+                "totalObligations": 427973866.72,
+                "totalGrossOutlays": 429452021.44,
+                "classes": [
+                  [
+                    "Full-time permanent",
+                    199761233.58,
+                    197849842.64
+                  ],
+                  [
+                    "Civilian personnel benefits",
+                    74831596.89,
+                    74575775.47
+                  ],
+                  [
+                    "Advisory and assistance services",
+                    72854764.36,
+                    76156367.81
+                  ],
+                  [
+                    "Rental payments to GSA",
+                    22705004.94,
+                    24657913.08
+                  ],
+                  [
+                    "Operation and maintenance of equipment",
+                    21034137.56,
+                    18677883.2
+                  ],
+                  [
+                    "Other than full-time permanent",
+                    11455772.56,
+                    11478264.32
+                  ],
+                  [
+                    "Other personnel compensation",
+                    6109408.48,
+                    6109408.48
+                  ],
+                  [
+                    "Other services from non-Federal sources",
+                    4523851.0,
+                    4985021.89
+                  ],
+                  [
+                    "Communications, utilities, and miscellaneous charges",
+                    3605621.33,
+                    3580023.4
+                  ],
+                  [
+                    "Equipment",
+                    3176776.48,
+                    3024026.36
+                  ],
+                  [
+                    "Printing and reproduction",
+                    2083241.5,
+                    2449215.62
+                  ],
+                  [
+                    "Operation and maintenance of facilities",
+                    1915619.78,
+                    1664688.94
+                  ],
+                  [
+                    "Travel and transportation of persons",
+                    1244274.75,
+                    1293712.5
+                  ],
+                  [
+                    "Land and structures",
+                    991971.35,
+                    663920.09
+                  ],
+                  [
+                    "Benefits for former personnel",
+                    756748.62,
+                    1331748.62
+                  ],
+                  [
+                    "Special personal services payments",
+                    305190.92,
+                    452531.6
+                  ],
+                  [
+                    "Rental payments to others",
+                    276190.9,
+                    137473.1
+                  ],
+                  [
+                    "Supplies and materials",
+                    244448.76,
+                    280845.88
+                  ],
+                  [
+                    "Transportation of things",
+                    57114.82,
+                    42460.3
+                  ],
+                  [
+                    "Insurance claims and indemnities",
+                    41000.0,
+                    41000.0
+                  ],
+                  [
+                    "Other goods and services from Federal sources",
+                    -101.86,
+                    -101.86
+                  ]
+                ],
+                "staffPay": {
+                  "amount": 292463202.43,
+                  "share": 0.6834,
+                  "classes": [
+                    [
+                      "11.1",
+                      "Full-time permanent",
+                      199761233.58
+                    ],
+                    [
+                      "11.3",
+                      "Other than full-time permanent",
+                      11455772.56
+                    ],
+                    [
+                      "11.5",
+                      "Other personnel compensation",
+                      6109408.48
+                    ],
+                    [
+                      "11.8",
+                      "Special personal services payments",
+                      305190.92
+                    ],
+                    [
+                      "12.1",
+                      "Civilian personnel benefits",
+                      74831596.89
+                    ]
+                  ],
+                  "note": "Pay and benefits of everyone the agency employs, FY2025, obligations: object classes 11 (personnel compensation) and 12 (personnel benefits) as listed; 13.0, benefits for former personnel, is not included. A sum this repository performed over the rows USAspending prints."
+                },
+                "documents": {
+                  "minor": {
+                    "url": "https://api.usaspending.gov/api/v2/agency/029/object_class/?fiscal_year=2025&limit=100",
+                    "file": "tests/fixtures/usaspending/object_class/minor/029.json",
+                    "sha256": "9e41e971cf471e8b28a741ae226d1eb71aedd5ea9017cbff93debe8b292f8805",
+                    "fetchedAt": "2026-10-08T16:08:35Z"
+                  },
+                  "major": {
+                    "url": "https://api.usaspending.gov/api/v2/financial_spending/major_object_class/?fiscal_year=2025&funding_agency_id=552",
+                    "file": "tests/fixtures/usaspending/object_class/major/029.json",
+                    "sha256": "18edcbe22a6d9f858e32b0d3fa64d64ad45b4727928f2f58846fcdf71993ace3",
+                    "fetchedAt": "2026-10-08T16:08:36Z"
+                  },
+                  "personnel": {
+                    "url": "https://api.usaspending.gov/api/v2/financial_spending/object_class/?fiscal_year=2025&funding_agency_id=552&major_object_class_code=10",
+                    "file": "tests/fixtures/usaspending/object_class/personnel/029.json",
+                    "sha256": "e6279a11cf718df239680aa74884e868666c67053d2c2816c2fbbe3c3e027901",
+                    "fetchedAt": "2026-10-08T16:08:38Z"
+                  }
+                },
+                "units": {
+                  "elements": [
+                    "ObligationsIncurredByProgramObjectClass_CPE",
+                    "GrossOutlayAmountByProgramObjectClass_CPE"
+                  ],
+                  "dictionarySha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+                  "dictionaryFile": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+                  "note": "The publisher's Data Dictionary carries both File B elements as dollar figures of the account breakdown; it maps them to the account download's columns, not to this endpoint's field names."
+                },
+                "note": "Obligations by object class for fiscal year 2025, a completed year, as USAspending reports DATA Act File B. Obligations are commitments, not cash, and gross of offsetting collections: this is not the Treasury's net outlays the graph shows as a cost."
               }
             },
             {
@@ -302078,6 +305358,203 @@
                   "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
                   "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
                 }
+              },
+              "spendingByKind": {
+                "source": "usaspending_file_b_object_class",
+                "fiscalYear": 2025,
+                "periodCoverage": "full_fiscal_year",
+                "basis": "obligations",
+                "toptierCode": "061",
+                "apiName": "Consumer Product Safety Commission",
+                "nameAlias": null,
+                "groups": [
+                  {
+                    "code": "10",
+                    "name": "Personnel compensation and benefits",
+                    "obligations": 101768855.23
+                  },
+                  {
+                    "code": "20",
+                    "name": "Contractual services and supplies",
+                    "obligations": 49973018.32
+                  },
+                  {
+                    "code": "30",
+                    "name": "Acquisition of assets",
+                    "obligations": 276131.11
+                  },
+                  {
+                    "code": "40",
+                    "name": "Grants and fixed charges",
+                    "obligations": 21600.0
+                  }
+                ],
+                "totalObligations": 152039604.66,
+                "totalGrossOutlays": 158345166.73,
+                "classes": [
+                  [
+                    "Full-time permanent",
+                    70232981.15,
+                    69966154.2
+                  ],
+                  [
+                    "Civilian personnel benefits",
+                    26891502.73,
+                    26852799.86
+                  ],
+                  [
+                    "Other services from non-Federal sources",
+                    20516375.23,
+                    21456087.06
+                  ],
+                  [
+                    "Rental payments to GSA",
+                    8125152.98,
+                    8123960.26
+                  ],
+                  [
+                    "Advisory and assistance services",
+                    7457811.05,
+                    9466366.08
+                  ],
+                  [
+                    "Operation and maintenance of equipment",
+                    5877592.67,
+                    5361601.28
+                  ],
+                  [
+                    "Other goods and services from Federal sources",
+                    4070178.35,
+                    4610791.9
+                  ],
+                  [
+                    "Other than full-time permanent",
+                    2964289.86,
+                    2991940.0
+                  ],
+                  [
+                    "Communications, utilities, and miscellaneous charges",
+                    1995383.07,
+                    2261540.78
+                  ],
+                  [
+                    "Other personnel compensation",
+                    1561104.65,
+                    1539071.54
+                  ],
+                  [
+                    "Supplies and materials",
+                    859289.46,
+                    771664.03
+                  ],
+                  [
+                    "Travel and transportation of persons",
+                    552692.25,
+                    535974.06
+                  ],
+                  [
+                    "Equipment",
+                    276131.11,
+                    1000198.26
+                  ],
+                  [
+                    "Printing and reproduction",
+                    254150.42,
+                    275761.82
+                  ],
+                  [
+                    "Transportation of things",
+                    180369.22,
+                    99388.75
+                  ],
+                  [
+                    "Benefits for former personnel",
+                    118976.84,
+                    493780.35
+                  ],
+                  [
+                    "Operation and maintenance of facilities",
+                    84023.62,
+                    271939.35
+                  ],
+                  [
+                    "Insurance claims and indemnities",
+                    11600.0,
+                    11600.0
+                  ],
+                  [
+                    "Refunds",
+                    10000.0,
+                    10000.0
+                  ],
+                  [
+                    "Research and development contracts",
+                    0.0,
+                    219223.09
+                  ],
+                  [
+                    "Grants, subsidies, and contributions",
+                    0.0,
+                    2025324.06
+                  ]
+                ],
+                "staffPay": {
+                  "amount": 101649878.39,
+                  "share": 0.6686,
+                  "classes": [
+                    [
+                      "11.1",
+                      "Full-time permanent",
+                      70232981.15
+                    ],
+                    [
+                      "11.3",
+                      "Other than full-time permanent",
+                      2964289.86
+                    ],
+                    [
+                      "11.5",
+                      "Other personnel compensation",
+                      1561104.65
+                    ],
+                    [
+                      "12.1",
+                      "Civilian personnel benefits",
+                      26891502.73
+                    ]
+                  ],
+                  "note": "Pay and benefits of everyone the agency employs, FY2025, obligations: object classes 11 (personnel compensation) and 12 (personnel benefits) as listed; 13.0, benefits for former personnel, is not included. A sum this repository performed over the rows USAspending prints."
+                },
+                "documents": {
+                  "minor": {
+                    "url": "https://api.usaspending.gov/api/v2/agency/061/object_class/?fiscal_year=2025&limit=100",
+                    "file": "tests/fixtures/usaspending/object_class/minor/061.json",
+                    "sha256": "802b25582ec72a119b7251182f1a2ee96259f5f2a4234cac6d33b4ef145f054a",
+                    "fetchedAt": "2026-10-08T16:08:39Z"
+                  },
+                  "major": {
+                    "url": "https://api.usaspending.gov/api/v2/financial_spending/major_object_class/?fiscal_year=2025&funding_agency_id=694",
+                    "file": "tests/fixtures/usaspending/object_class/major/061.json",
+                    "sha256": "d47226a02c96412d8f9de9fbdacb0498e62ebde744f9a1097dcfc44928eb7a75",
+                    "fetchedAt": "2026-10-08T16:08:40Z"
+                  },
+                  "personnel": {
+                    "url": "https://api.usaspending.gov/api/v2/financial_spending/object_class/?fiscal_year=2025&funding_agency_id=694&major_object_class_code=10",
+                    "file": "tests/fixtures/usaspending/object_class/personnel/061.json",
+                    "sha256": "a7e77fc89779ae55c8f5ca450c3727e4a6cbbc6a33e9f3c245cacc17c89e3d04",
+                    "fetchedAt": "2026-10-08T16:08:42Z"
+                  }
+                },
+                "units": {
+                  "elements": [
+                    "ObligationsIncurredByProgramObjectClass_CPE",
+                    "GrossOutlayAmountByProgramObjectClass_CPE"
+                  ],
+                  "dictionarySha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+                  "dictionaryFile": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+                  "note": "The publisher's Data Dictionary carries both File B elements as dollar figures of the account breakdown; it maps them to the account download's columns, not to this endpoint's field names."
+                },
+                "note": "Obligations by object class for fiscal year 2025, a completed year, as USAspending reports DATA Act File B. Obligations are commitments, not cash, and gross of offsetting collections: this is not the Treasury's net outlays the graph shows as a cost."
               }
             },
             {
@@ -303560,6 +307037,218 @@
                   "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
                   "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
                 }
+              },
+              "spendingByKind": {
+                "source": "usaspending_file_b_object_class",
+                "fiscalYear": 2025,
+                "periodCoverage": "full_fiscal_year",
+                "basis": "obligations",
+                "toptierCode": "339",
+                "apiName": "Commodity Futures Trading Commission",
+                "nameAlias": null,
+                "groups": [
+                  {
+                    "code": "10",
+                    "name": "Personnel compensation and benefits",
+                    "obligations": 235004601.7
+                  },
+                  {
+                    "code": "20",
+                    "name": "Contractual services and supplies",
+                    "obligations": 112292861.59
+                  },
+                  {
+                    "code": "30",
+                    "name": "Acquisition of assets",
+                    "obligations": 9371716.07
+                  },
+                  {
+                    "code": "90",
+                    "name": "Other",
+                    "obligations": 6121163.54
+                  },
+                  {
+                    "code": "40",
+                    "name": "Grants and fixed charges",
+                    "obligations": 3178836.97
+                  },
+                  {
+                    "code": "00",
+                    "name": "Unknown Object Type",
+                    "obligations": 0.0
+                  }
+                ],
+                "totalObligations": 365969179.87,
+                "totalGrossOutlays": 365711470.44,
+                "classes": [
+                  [
+                    "Full-time permanent",
+                    164883342.3,
+                    161747838.41
+                  ],
+                  [
+                    "Advisory and assistance services",
+                    66673081.77,
+                    69649703.86
+                  ],
+                  [
+                    "Civilian personnel benefits",
+                    62046208.5,
+                    61059654.94
+                  ],
+                  [
+                    "Rental payments to others",
+                    21221182.88,
+                    21398633.56
+                  ],
+                  [
+                    "Equipment",
+                    9371716.07,
+                    2900834.92
+                  ],
+                  [
+                    "Operation and maintenance of equipment",
+                    8440762.14,
+                    6325387.46
+                  ],
+                  [
+                    "Unvouchered",
+                    6121163.54,
+                    14347545.1
+                  ],
+                  [
+                    "Other personnel compensation",
+                    5241731.95,
+                    4836528.42
+                  ],
+                  [
+                    "Rental payments to GSA",
+                    3936486.01,
+                    3936486.03
+                  ],
+                  [
+                    "Communications, utilities, and miscellaneous charges",
+                    3879071.08,
+                    2527208.05
+                  ],
+                  [
+                    "Insurance claims and indemnities",
+                    3178836.97,
+                    3178836.97
+                  ],
+                  [
+                    "Supplies and materials",
+                    2966415.05,
+                    3406241.55
+                  ],
+                  [
+                    "Other services from non-Federal sources",
+                    2564712.67,
+                    4394663.48
+                  ],
+                  [
+                    "Other than full-time permanent",
+                    2497410.78,
+                    2525775.49
+                  ],
+                  [
+                    "Other goods and services from Federal sources",
+                    1036570.87,
+                    1187180.68
+                  ],
+                  [
+                    "Travel and transportation of persons",
+                    681418.65,
+                    678611.28
+                  ],
+                  [
+                    "Printing and reproduction",
+                    436392.99,
+                    344394.31
+                  ],
+                  [
+                    "Operation and maintenance of facilities",
+                    390801.85,
+                    858615.45
+                  ],
+                  [
+                    "Benefits for former personnel",
+                    335908.17,
+                    335908.17
+                  ],
+                  [
+                    "Transportation of things",
+                    53789.23,
+                    40160.1
+                  ],
+                  [
+                    "Medical care",
+                    12176.4,
+                    5073.5
+                  ],
+                  [
+                    "Land and structures",
+                    0.0,
+                    26188.71
+                  ]
+                ],
+                "staffPay": {
+                  "amount": 234668693.53,
+                  "share": 0.6412,
+                  "classes": [
+                    [
+                      "11.1",
+                      "Full-time permanent",
+                      164883342.3
+                    ],
+                    [
+                      "11.3",
+                      "Other than full-time permanent",
+                      2497410.78
+                    ],
+                    [
+                      "11.5",
+                      "Other personnel compensation",
+                      5241731.95
+                    ],
+                    [
+                      "12.1",
+                      "Civilian personnel benefits",
+                      62046208.5
+                    ]
+                  ],
+                  "note": "Pay and benefits of everyone the agency employs, FY2025, obligations: object classes 11 (personnel compensation) and 12 (personnel benefits) as listed; 13.0, benefits for former personnel, is not included. A sum this repository performed over the rows USAspending prints."
+                },
+                "documents": {
+                  "minor": {
+                    "url": "https://api.usaspending.gov/api/v2/agency/339/object_class/?fiscal_year=2025&limit=100",
+                    "file": "tests/fixtures/usaspending/object_class/minor/339.json",
+                    "sha256": "a9ded0c31e032ae89ce352215a4682e607d631cd231a365405e543b80be901ed",
+                    "fetchedAt": "2026-10-08T16:08:43Z"
+                  },
+                  "major": {
+                    "url": "https://api.usaspending.gov/api/v2/financial_spending/major_object_class/?fiscal_year=2025&funding_agency_id=1129",
+                    "file": "tests/fixtures/usaspending/object_class/major/339.json",
+                    "sha256": "22681ece3fb3b61c611c2f8b33cd2ac6ac9909804c1033a5536fd08f68847440",
+                    "fetchedAt": "2026-10-08T16:08:44Z"
+                  },
+                  "personnel": {
+                    "url": "https://api.usaspending.gov/api/v2/financial_spending/object_class/?fiscal_year=2025&funding_agency_id=1129&major_object_class_code=10",
+                    "file": "tests/fixtures/usaspending/object_class/personnel/339.json",
+                    "sha256": "e2330907559aa43447dead44fce92b190e8dffda85a546eef347a5d57ff55110",
+                    "fetchedAt": "2026-10-08T16:08:45Z"
+                  }
+                },
+                "units": {
+                  "elements": [
+                    "ObligationsIncurredByProgramObjectClass_CPE",
+                    "GrossOutlayAmountByProgramObjectClass_CPE"
+                  ],
+                  "dictionarySha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+                  "dictionaryFile": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+                  "note": "The publisher's Data Dictionary carries both File B elements as dollar figures of the account breakdown; it maps them to the account download's columns, not to this endpoint's field names."
+                },
+                "note": "Obligations by object class for fiscal year 2025, a completed year, as USAspending reports DATA Act File B. Obligations are commitments, not cash, and gross of offsetting collections: this is not the Treasury's net outlays the graph shows as a cost."
               }
             },
             {
@@ -304104,6 +307793,178 @@
                   "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
                   "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
                 }
+              },
+              "spendingByKind": {
+                "source": "usaspending_file_b_object_class",
+                "fiscalYear": 2025,
+                "periodCoverage": "full_fiscal_year",
+                "basis": "obligations",
+                "toptierCode": "065",
+                "apiName": "Federal Maritime Commission",
+                "nameAlias": null,
+                "groups": [
+                  {
+                    "code": "10",
+                    "name": "Personnel compensation and benefits",
+                    "obligations": 27397124.43
+                  },
+                  {
+                    "code": "20",
+                    "name": "Contractual services and supplies",
+                    "obligations": 11508451.57
+                  },
+                  {
+                    "code": "30",
+                    "name": "Acquisition of assets",
+                    "obligations": 390026.34
+                  }
+                ],
+                "totalObligations": 39295602.34,
+                "totalGrossOutlays": 39765223.57,
+                "classes": [
+                  [
+                    "Full-time permanent",
+                    18913013.86,
+                    18687684.8
+                  ],
+                  [
+                    "Civilian personnel benefits",
+                    7159458.58,
+                    7051271.92
+                  ],
+                  [
+                    "Rental payments to GSA",
+                    3214906.16,
+                    2939220.04
+                  ],
+                  [
+                    "Other goods and services from Federal sources",
+                    2950288.69,
+                    2831873.31
+                  ],
+                  [
+                    "Advisory and assistance services",
+                    2896297.87,
+                    3666300.66
+                  ],
+                  [
+                    "Other services from non-Federal sources",
+                    1309908.56,
+                    1268408.59
+                  ],
+                  [
+                    "Other than full-time permanent",
+                    829342.57,
+                    835094.69
+                  ],
+                  [
+                    "Communications, utilities, and miscellaneous charges",
+                    795064.64,
+                    1159464.76
+                  ],
+                  [
+                    "Equipment",
+                    390026.34,
+                    741793.77
+                  ],
+                  [
+                    "Other personnel compensation",
+                    340463.02,
+                    88803.28
+                  ],
+                  [
+                    "Benefits for former personnel",
+                    154846.4,
+                    136026.79
+                  ],
+                  [
+                    "Supplies and materials",
+                    139199.45,
+                    199435.11
+                  ],
+                  [
+                    "Travel and transportation of persons",
+                    129229.26,
+                    115443.83
+                  ],
+                  [
+                    "Operation and maintenance of equipment",
+                    42744.13,
+                    22319.27
+                  ],
+                  [
+                    "Transportation of things",
+                    30661.81,
+                    21931.75
+                  ],
+                  [
+                    "Printing and reproduction",
+                    151.0,
+                    151.0
+                  ]
+                ],
+                "staffPay": {
+                  "amount": 27242278.03,
+                  "share": 0.6933,
+                  "classes": [
+                    [
+                      "11.1",
+                      "Full-time permanent",
+                      18913013.86
+                    ],
+                    [
+                      "11.3",
+                      "Other than full-time permanent",
+                      829342.57
+                    ],
+                    [
+                      "11.5",
+                      "Other personnel compensation",
+                      340463.02
+                    ],
+                    [
+                      "11.8",
+                      "Special personal services payments",
+                      0.0
+                    ],
+                    [
+                      "12.1",
+                      "Civilian personnel benefits",
+                      7159458.58
+                    ]
+                  ],
+                  "note": "Pay and benefits of everyone the agency employs, FY2025, obligations: object classes 11 (personnel compensation) and 12 (personnel benefits) as listed; 13.0, benefits for former personnel, is not included. A sum this repository performed over the rows USAspending prints."
+                },
+                "documents": {
+                  "minor": {
+                    "url": "https://api.usaspending.gov/api/v2/agency/065/object_class/?fiscal_year=2025&limit=100",
+                    "file": "tests/fixtures/usaspending/object_class/minor/065.json",
+                    "sha256": "d2ac5d98d8c7ed4a05855c986dca2befb38ada0d6a06d5cdd4185ea8a2d1d72c",
+                    "fetchedAt": "2026-10-08T16:08:47Z"
+                  },
+                  "major": {
+                    "url": "https://api.usaspending.gov/api/v2/financial_spending/major_object_class/?fiscal_year=2025&funding_agency_id=699",
+                    "file": "tests/fixtures/usaspending/object_class/major/065.json",
+                    "sha256": "865ee89b165fc0f8118079a8473920a000c27000b0f767b9ba95f410bc028e27",
+                    "fetchedAt": "2026-10-08T16:08:48Z"
+                  },
+                  "personnel": {
+                    "url": "https://api.usaspending.gov/api/v2/financial_spending/object_class/?fiscal_year=2025&funding_agency_id=699&major_object_class_code=10",
+                    "file": "tests/fixtures/usaspending/object_class/personnel/065.json",
+                    "sha256": "b5166061c7d05fbc6e0086213900d843225f14d13fbc6202a09eaf0213fa2de3",
+                    "fetchedAt": "2026-10-08T16:08:50Z"
+                  }
+                },
+                "units": {
+                  "elements": [
+                    "ObligationsIncurredByProgramObjectClass_CPE",
+                    "GrossOutlayAmountByProgramObjectClass_CPE"
+                  ],
+                  "dictionarySha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+                  "dictionaryFile": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+                  "note": "The publisher's Data Dictionary carries both File B elements as dollar figures of the account breakdown; it maps them to the account download's columns, not to this endpoint's field names."
+                },
+                "note": "Obligations by object class for fiscal year 2025, a completed year, as USAspending reports DATA Act File B. Obligations are commitments, not cash, and gross of offsetting collections: this is not the Treasury's net outlays the graph shows as a cost."
               }
             },
             {
@@ -313186,6 +317047,188 @@
                   "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
                   "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
                 }
+              },
+              "spendingByKind": {
+                "source": "usaspending_file_b_object_class",
+                "fiscalYear": 2025,
+                "periodCoverage": "full_fiscal_year",
+                "basis": "obligations",
+                "toptierCode": "345",
+                "apiName": "United States Court of Appeals for Veterans Claims",
+                "nameAlias": null,
+                "groups": [
+                  {
+                    "code": "10",
+                    "name": "Personnel compensation and benefits",
+                    "obligations": 31333459.66
+                  },
+                  {
+                    "code": "20",
+                    "name": "Contractual services and supplies",
+                    "obligations": 8088193.49
+                  },
+                  {
+                    "code": "40",
+                    "name": "Grants and fixed charges",
+                    "obligations": 3000000.0
+                  },
+                  {
+                    "code": "30",
+                    "name": "Acquisition of assets",
+                    "obligations": 2819862.24
+                  }
+                ],
+                "totalObligations": 45241515.39,
+                "totalGrossOutlays": 44518593.89,
+                "classes": [
+                  [
+                    "Other than full-time permanent",
+                    19751032.79,
+                    19645704.81
+                  ],
+                  [
+                    "Civilian personnel benefits",
+                    8336601.08,
+                    8279338.63
+                  ],
+                  [
+                    "Rental payments to GSA",
+                    3576750.73,
+                    3249254.48
+                  ],
+                  [
+                    "Grants, subsidies, and contributions",
+                    3000000.0,
+                    3000000.0
+                  ],
+                  [
+                    "Full-time permanent",
+                    2882891.17,
+                    2881010.26
+                  ],
+                  [
+                    "Equipment",
+                    2819862.24,
+                    1536678.75
+                  ],
+                  [
+                    "Other goods and services from Federal sources",
+                    1485439.3,
+                    1356081.13
+                  ],
+                  [
+                    "Advisory and assistance services",
+                    1377981.76,
+                    1438617.84
+                  ],
+                  [
+                    "Other services from non-Federal sources",
+                    856267.94,
+                    804571.42
+                  ],
+                  [
+                    "Other personnel compensation",
+                    362934.62,
+                    362934.62
+                  ],
+                  [
+                    "Supplies and materials",
+                    186056.63,
+                    244390.67
+                  ],
+                  [
+                    "Rental payments to others",
+                    184149.4,
+                    172820.81
+                  ],
+                  [
+                    "Operation and maintenance of equipment",
+                    161109.48,
+                    161109.32
+                  ],
+                  [
+                    "Communications, utilities, and miscellaneous charges",
+                    120563.15,
+                    230938.73
+                  ],
+                  [
+                    "Operation and maintenance of facilities",
+                    80246.48,
+                    140216.23
+                  ],
+                  [
+                    "Travel and transportation of persons",
+                    46251.57,
+                    49368.15
+                  ],
+                  [
+                    "Transportation of things",
+                    13377.05,
+                    12104.56
+                  ],
+                  [
+                    "Land and structures",
+                    0.0,
+                    953453.48
+                  ]
+                ],
+                "staffPay": {
+                  "amount": 31333459.66,
+                  "share": 0.6926,
+                  "classes": [
+                    [
+                      "11.1",
+                      "Full-time permanent",
+                      2882891.17
+                    ],
+                    [
+                      "11.3",
+                      "Other than full-time permanent",
+                      19751032.79
+                    ],
+                    [
+                      "11.5",
+                      "Other personnel compensation",
+                      362934.62
+                    ],
+                    [
+                      "12.1",
+                      "Civilian personnel benefits",
+                      8336601.08
+                    ]
+                  ],
+                  "note": "Pay and benefits of everyone the agency employs, FY2025, obligations: object classes 11 (personnel compensation) and 12 (personnel benefits) as listed; 13.0, benefits for former personnel, is not included. A sum this repository performed over the rows USAspending prints."
+                },
+                "documents": {
+                  "minor": {
+                    "url": "https://api.usaspending.gov/api/v2/agency/345/object_class/?fiscal_year=2025&limit=100",
+                    "file": "tests/fixtures/usaspending/object_class/minor/345.json",
+                    "sha256": "5b4904591419185dcdffa5b7540c14b81a59e175aa1e54baad4a0cf0c385554a",
+                    "fetchedAt": "2026-10-08T16:08:51Z"
+                  },
+                  "major": {
+                    "url": "https://api.usaspending.gov/api/v2/financial_spending/major_object_class/?fiscal_year=2025&funding_agency_id=1169",
+                    "file": "tests/fixtures/usaspending/object_class/major/345.json",
+                    "sha256": "4686c23d849bd4c7464684a63e87591f87f25a44ea32fee615c17eb5f72e2879",
+                    "fetchedAt": "2026-10-08T16:08:52Z"
+                  },
+                  "personnel": {
+                    "url": "https://api.usaspending.gov/api/v2/financial_spending/object_class/?fiscal_year=2025&funding_agency_id=1169&major_object_class_code=10",
+                    "file": "tests/fixtures/usaspending/object_class/personnel/345.json",
+                    "sha256": "52e5545bc7d3688c3dfcd4c4d3663f03f20dc93e08ced3fa5b247c175db72e39",
+                    "fetchedAt": "2026-10-08T16:08:53Z"
+                  }
+                },
+                "units": {
+                  "elements": [
+                    "ObligationsIncurredByProgramObjectClass_CPE",
+                    "GrossOutlayAmountByProgramObjectClass_CPE"
+                  ],
+                  "dictionarySha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+                  "dictionaryFile": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+                  "note": "The publisher's Data Dictionary carries both File B elements as dollar figures of the account breakdown; it maps them to the account download's columns, not to this endpoint's field names."
+                },
+                "note": "Obligations by object class for fiscal year 2025, a completed year, as USAspending reports DATA Act File B. Obligations are commitments, not cash, and gross of offsetting collections: this is not the Treasury's net outlays the graph shows as a cost."
               }
             }
           ],

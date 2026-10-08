@@ -293,6 +293,9 @@ MINIMAL_GRAPH_FIELDS = (
     "federalRegisterSignature",
     # USAspending File A gross outlays, beside the cost and never in it
     "usaspendingOutlays",
+    # USAspending's FY2025 object-class breakdown: what an agency's
+    # obligations were spent ON, staff pay first; never the cost
+    "spendingByKind",
     # Treasury's audited Statement of Net Cost, likewise beside and never in
     "auditedNetCost",
     # OMB's budget authority and outlays for the last completed fiscal year,
@@ -2869,6 +2872,7 @@ def build_graph(
     military_pay_evidence_path: str | Path | None = "default",
     whitehouse_pay_evidence_path: str | Path | None = "default",
     usaspending_evidence_path: str | Path | None = "default",
+    object_class_evidence_path: str | Path | None = "default",
     net_cost_evidence_path: str | Path | None = "default",
     govman_evidence_path: str | Path | None = "default",
     fr_signature_evidence_path: str | Path | None = "default",
@@ -3416,6 +3420,21 @@ def build_graph(
     )
     validation["usaspending_evidence"] = apply_usaspending_evidence(
         graph, load_usaspending_evidence(resolved_usaspending_path) if resolved_usaspending_path else {}, index_tree=index_tree,
+    )
+    # USAspending's object-class breakdown for the same toptier agencies:
+    # where the money goes, staff pay first, beside the cost and never in it.
+    from data_pipeline.verification.object_class import (  # noqa: E402 — imports usaspending, which imports this module
+        DEFAULT_EVIDENCE_PATH as DEFAULT_OBJECT_CLASS_EVIDENCE_PATH,
+        apply_evidence as apply_object_class_evidence,
+        load_evidence as load_object_class_evidence,
+    )
+
+    resolved_object_class_path = (
+        DEFAULT_OBJECT_CLASS_EVIDENCE_PATH if object_class_evidence_path == "default" else object_class_evidence_path
+    )
+    validation["object_class_evidence"] = apply_object_class_evidence(
+        graph, load_object_class_evidence(resolved_object_class_path) if resolved_object_class_path else {},
+        index_tree=index_tree,
     )
     proof_status_counts, _ = annotate_proof_tree(
         graph,

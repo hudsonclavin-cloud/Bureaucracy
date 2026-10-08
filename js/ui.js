@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20261008d";
-import { loadMergedGraphData } from "./graphLoader.js?v=20261008d";
+import { createGovernmentGraph } from "./graph.js?v=20261008e";
+import { loadMergedGraphData } from "./graphLoader.js?v=20261008e";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -2753,6 +2753,63 @@ function buildEmployerLines(block) {
   return host;
 }
 
+// Where an agency's money goes (object_class.py, since 2026-10-08): the
+// publisher's own major object classes for FY2025 obligations, each a bar with
+// its figure and share, staff pay called out first. Never headed COST: it is a
+// completed year's obligations, not the Treasury's net outlays.
+function buildSpendingByKind(node) {
+  const block = node && node.spendingByKind;
+  if (!block || typeof block !== "object" || isPostType(node)) return null;
+  const total = Number(block.totalObligations);
+  const staff = block.staffPay && typeof block.staffPay === "object" ? Number(block.staffPay.amount) : NaN;
+  const groups = Array.isArray(block.groups) ? block.groups.filter((g) => g && typeof g.obligations === "number") : [];
+  if (!(total > 0) || !(staff > 0) || !groups.length) return null;
+  const money = (v) => `${v < 0 ? "−" : ""}$${Math.round(Math.abs(v)).toLocaleString("en-US")}`;
+  const pct = (v) => `${((v / total) * 100).toFixed(1)}%`;
+  const host = document.createElement("div");
+  host.id = "info-spending-by-kind";
+  host.className = "info-spend";
+  const head = document.createElement("div");
+  head.className = "info-cost-label";
+  head.textContent = `WHERE THE MONEY GOES — FY${block.fiscalYear}`;
+  host.appendChild(head);
+  const staffLine = document.createElement("div");
+  staffLine.className = "info-spend-staff";
+  staffLine.textContent = `Pay and benefits of staff: ${money(staff)} (${pct(staff)} of obligations)`;
+  host.appendChild(staffLine);
+  for (const group of groups) {
+    const row = document.createElement("div");
+    row.className = "info-spend-row";
+    const label = document.createElement("div");
+    label.className = "info-spend-label";
+    label.textContent = `${group.name} — ${money(group.obligations)} (${pct(group.obligations)})`;
+    const track = document.createElement("div");
+    track.className = "info-spend-track";
+    const bar = document.createElement("div");
+    bar.className = `info-spend-bar${group.code === "10" ? " is-staff" : ""}`;
+    bar.style.width = `${Math.max(0, Math.min(100, (group.obligations / total) * 100)).toFixed(1)}%`;
+    track.appendChild(bar);
+    row.append(label, track);
+    host.appendChild(row);
+  }
+  const caveat = document.createElement("div");
+  caveat.className = "info-cost-note";
+  const classes = Array.isArray(block.staffPay.classes) ? block.staffPay.classes.map((c) => `${c[0]} ${c[1]}`).join(", ") : "";
+  caveat.textContent = `Obligations by object class for FY${block.fiscalYear}, a completed year, as USAspending reports them (total ${money(total)}) — not the Treasury's net outlays shown as cost. Staff pay is object classes ${classes}; benefits for former personnel are not included.`;
+  host.appendChild(caveat);
+  const docs = block.documents && typeof block.documents === "object" ? block.documents : {};
+  if (docs.major && /^https:\/\//.test(String(docs.major.url || ""))) {
+    const link = document.createElement("a");
+    link.href = docs.major.url;
+    link.target = "_blank";
+    link.rel = "noopener";
+    link.className = "info-cost-note";
+    link.textContent = "USAspending, major object classes";
+    host.appendChild(link);
+  }
+  return host;
+}
+
 function positiveAmountBlock(block) {
   return block && typeof block === "object" && typeof block.amount === "number" && block.amount > 0 ? block : null;
 }
@@ -3513,6 +3570,8 @@ function buildCostBlock(node) {
   const headerSumLines = buildHeaderSumLines(node);
   if (headerSumLines) block.appendChild(headerSumLines);
   if (employer && amountText === null) block.appendChild(buildEmployerLines(employer));
+  const spending = buildSpendingByKind(node);
+  if (spending) block.appendChild(spending);
 
   // The estimate was always one tick away, and since 2026-10-05 the tick is
   // here too. The owner read "the costs have been disappearing" off a panel

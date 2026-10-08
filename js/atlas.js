@@ -885,6 +885,30 @@ function supersededNotice(node) {
   )}</p>`;
 }
 
+const formatSpendingFigure = (amount) => `${amount < 0 ? "−" : ""}$${Math.round(Math.abs(amount)).toLocaleString("en-US")}`;
+
+// The panel's buildSpendingByKind (js/ui.js), in this view's words: the
+// publisher's major object classes for FY2025 obligations, staff pay first.
+function describeSpendingByKind(node) {
+  const block = node && node.spendingByKind;
+  if (!block || typeof block !== "object" || isPost(node)) return null;
+  const total = Number(block.totalObligations);
+  const staff = block.staffPay && typeof block.staffPay === "object" ? Number(block.staffPay.amount) : NaN;
+  const groups = Array.isArray(block.groups) ? block.groups.filter((g) => g && typeof g.obligations === "number") : [];
+  if (!(total > 0) || !(staff > 0) || !groups.length) return null;
+  const pct = (v) => `${((v / total) * 100).toFixed(1)}%`;
+  const bars = groups.map((g) => {
+    const width = Math.max(0, Math.min(100, (g.obligations / total) * 100)).toFixed(1);
+    return `<span class="spend-label">${escapeHtml(g.name)} — ${escapeHtml(formatSpendingFigure(g.obligations))} (${pct(g.obligations)})</span><span class="spend-track"><span class="spend-bar${g.code === "10" ? " is-staff" : ""}" style="width:${width}%"></span></span>`;
+  }).join("");
+  const classes = Array.isArray(block.staffPay.classes) ? block.staffPay.classes.map((c) => `${c[0]} ${c[1]}`).join(", ") : "";
+  const major = block.documents && block.documents.major ? block.documents.major.url : null;
+  return {
+    fiscalYear: block.fiscalYear,
+    html: `<strong class="spend-staff">Pay and benefits of staff: ${escapeHtml(formatSpendingFigure(staff))} (${pct(staff)} of obligations)</strong>${bars}<span class="detail-note">Obligations by object class for FY${escapeHtml(String(block.fiscalYear))}, a completed year, as USAspending reports them (total ${escapeHtml(formatSpendingFigure(total))}) — not the Treasury's net outlays shown as cost. Staff pay is object classes ${escapeHtml(classes)}; benefits for former personnel are not included.${isHttpUrl(major) ? ` ${link(major, "USAspending, major object classes")}` : ""}</span>`,
+  };
+}
+
 function renderDetail(node) {
   if (!node) return;
   const route = pathTo(node);
@@ -907,6 +931,8 @@ function renderDetail(node) {
   ];
   if (cost.figureSource && isHttpUrl(cost.figureSource.url)) rows.push(row("Figure source", `${link(cost.figureSource.url, cost.figureSource.label)}<span class="detail-note">Evidence of this figure, which is not the unit's cost, and not of the unit's existence.</span>`));
   if (cost.sourceUrl) rows.push(row("Cost source", `${link(cost.sourceUrl, "Monthly Treasury Statement, Table 5 (fiscaldata.treasury.gov)")}<span class="detail-note">Evidence of the cost, not of the unit's existence.</span>`));
+  const spending = describeSpendingByKind(node);
+  if (spending) rows.push(row(`Where the money goes — FY${spending.fiscalYear}`, spending.html, "spend-row"));
   if (pay.length) {
     const rateNote = pay.some((block) => !block.notARate)
       ? `<span class="detail-note">A rate of basic pay is not this unit's cost: it excludes benefits and is not a share of federal outlays, which is what every other figure in this graph means.</span>`

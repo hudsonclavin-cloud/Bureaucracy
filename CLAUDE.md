@@ -61,6 +61,7 @@ python scripts/derive_congressional_pay_evidence.py --dry-run  # senate.gov's ow
 python scripts/derive_whitehouse_pay_evidence.py --dry-run     # the White House Office's statutory staff roster; writes nothing
 python scripts/expand_whitehouse_office.py --dry-run           # what the roster would add to the curated WHO subtree; writes nothing
 python scripts/derive_usaspending_evidence.py --dry-run   # File A gross outlays for the crosswalk's name-equal keys and its reviewed aliases; writes nothing
+python scripts/derive_object_class_evidence.py --dry-run  # FY2025 obligations by object class for the same toptier agencies, staff pay first; writes nothing
 python scripts/derive_net_cost_evidence.py --dry-run       # Treasury's audited Statement of Net Cost; writes nothing
 python scripts/derive_omb_budget_evidence.py --dry-run     # OMB's Public Budget Database, last COMPLETED year only; writes nothing
 python scripts/verify_base_graph.py --dry-run    # existence checks planned against official pages; no fetch, no write
@@ -5374,6 +5375,38 @@ reported sibling or beside its own block, a payout weight on a measured figure,
 and shares that are not one rate per dollar paid; `tests/test_cost_cascade_units.py`
 (`CommitteePayoutWeightTests`) and `tests/test_committee_disbursements.py`
 (`PayoutWeightGateTests`) pin both directions.
+
+**Where an agency's money goes (`object_class.py`, since 2026-10-08, the
+owner's ask: "a good total cost of everyone combined ... we just want to see
+where the money goes, generally").** DATA Act File B reports obligations by
+OBJECT CLASS — what the money was spent on — and USAspending publishes it per
+toptier agency. `spendingByKind` carries, for FY2025 (a completed year), the
+publisher's own major object classes with obligations, every minor class with
+obligations and gross outlays as printed, and `staffPay`: the sum of classes
+11.x (personnel compensation) and 12.x (personnel benefits), listed by code,
+13.0 "Benefits for former personnel" excluded and said to be. Three fixtures
+per agency are committed under `tests/fixtures/usaspending/object_class/`
+(`minor/`, `major/`, `personnel/`), digests recomputed; the reach is exactly
+the toptier keys `usaspending.py` applies, by name equality or its reviewed
+aliases, never a bureau. 22 matched and **21 published**; the Appalachian
+Regional Commission is refused because two of the publisher's endpoints
+disagree ($190.2m of minor classes against $9.2m of major groups). Staff pay
+across the 21 is **$2,029,415,393.45**; largest the FCC ($340.7m, 2.9% of
+$11.7bn), USAGM ($307.7m), FTC ($292.5m), CFTC ($234.7m) and AmeriCorps
+($179.8m). The scale rests on the Data Dictionary's two File B elements,
+which it maps to the account download's columns rather than to this
+endpoint's fields, and the block says so. Nothing writes a cost field,
+`sourceUrls` or a verification method; the field is in
+`EVIDENCE_OWNED_FIELDS` and `MINIMAL_GRAPH_FIELDS`; the panel and the atlas
+print it under "WHERE THE MONEY GOES — FY2025", a bar per group, staff pay
+first. The gate (`spending_by_kind_violations`) mirrors node → toptier code,
+re-reads all three fixtures and refuses a block on a post, on a node the
+crosswalk does not reach, with any figure or class row the fixtures do not
+print, a staff pay that is not the sum of its listed 11.x/12.x rows, no
+fiscal year, or a figure equal to the measured cost;
+`tests/test_object_class.py` pins both directions. The departments are not
+reached: the crosswalk proposes none of them, though all fifteen reduce by
+name to one node each (`CURATION.md` §20).
 
 **The thirteenth research batch (2026-10-08), built by five agents against the
 repository's own documents.** The owner pasted per-node answers for 627 posts

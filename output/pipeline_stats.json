@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-08T05:01:23.175493+00:00",
+  "timestamp": "2026-10-08T16:12:01.868980+00:00",
   "mode": "offline_regeneration",
   "note": "Rebuilt from the curated base graph and the Treasury anchor already published; no crawler ran. See scripts/regenerate_published_graph.py.",
   "nodes_before": 5481,
@@ -27,7 +27,7 @@
     "unverified": 4491
   },
   "average_confidence_score": 0.76,
-  "verified_node_count": 549,
+  "verified_node_count": 558,
   "treasury_total_fetched": false,
   "build_validation": {
     "initial_node_count": 1066,
@@ -53,7 +53,7 @@
       "verified": 558,
       "unverified": 4491
     },
-    "verified_node_count": 549,
+    "verified_node_count": 558,
     "dropped_placeholder_nodes": 0,
     "average_confidence_score": 0.76,
     "pipeline_summary": {
@@ -673,6 +673,13 @@
         "toptier": 20,
         "bureau": 23
       }
+    },
+    "object_class_evidence": {
+      "applied": 21,
+      "unknown_node": 0,
+      "not_an_organisation": 0,
+      "stale_name": 0,
+      "malformed": 0
     },
     "budget_summary_reused_from_previous_build": false,
     "budget_summary": {

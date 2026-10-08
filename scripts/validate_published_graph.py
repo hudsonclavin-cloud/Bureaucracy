@@ -2734,6 +2734,151 @@ def usaspending_violations(node, block, today, label):
 
 
 # ---------------------------------------------------------------------------
+# Where an agency's money goes: USAspending's FY2025 object-class breakdown
+# (data_pipeline/verification/object_class.py, since 2026-10-08). Mirrored by
+# node id -> toptier code: exactly the toptier keys usaspending.py applies,
+# and `tests/test_object_class.py` pins this table equal to the derive step.
+# The figures are re-read here from the three committed fixtures per agency
+# with this file's own reader, which imports nothing from the module.
+OBJECT_CLASS_AGENCIES = {
+    "exec-ind-misc-american-battle-monuments-commission-abmc": "074",
+    "exec-ind-misc-americorps": "485",
+    "exec-ind-misc-broadcasting-board-of-governors-usagm": "514",
+    "exec-ind-misc-chemical-safety-hazard-investigation-board-csb": "510",
+    "exec-ind-misc-election-assistance-commission-eac": "525",
+    "exec-ind-misc-federal-election-commission-fec": "360",
+    "exec-ind-misc-federal-labor-relations-authority-flra": "054",
+    "exec-ind-misc-merit-systems-protection-board-mspb": "389",
+    "exec-ind-misc-national-capital-planning-commission-ncpc": "394",
+    "exec-ind-misc-national-mediation-board-nmb": "421",
+    "exec-ind-misc-national-transportation-safety-board-ntsb": "424",
+    "exec-ind-misc-office-of-special-counsel-osc": "062",
+    "exec-ind-misc-privacy-civil-liberties-oversight-board-pclob": "535",
+    "exec-ind-misc-selective-service-system": "090",
+    "exec-ind-misc-u-s-international-development-finance-corp-dfc": "077",
+    "exec-regulatory-cftc": "339",
+    "exec-regulatory-cpsc": "061",
+    "exec-regulatory-fcc": "027",
+    "exec-regulatory-fmc": "065",
+    "exec-regulatory-ftc": "029",
+    "jud-specialized-cavc": "345",
+}
+OBJECT_CLASS_FISCAL_YEAR = 2025
+OBJECT_CLASS_STAFF_PREFIXES = ("11.", "12.")
+
+
+def spending_by_kind_violations(node, block, label):
+    """A `spendingByKind` block is the committed fixtures' own figures for the
+    toptier agency the crosswalk reaches, FY2025, staff pay the sum of the
+    11.x and 12.x rows it lists, on an organisation, and never the cost."""
+    import hashlib
+    import json as _json
+
+    out = []
+    say = lambda text: out.append("{} {}".format(label(node), text))
+    if not isinstance(block, dict):
+        say("spendingByKind {!r} is not a record".format(block))
+        return out
+    if is_post(node) or node.get("synthetic"):
+        say("carries an object-class breakdown but is a {!r}, not an organisation".format(node.get("type")))
+    node_id = str(node.get("id") or "")
+    code = OBJECT_CLASS_AGENCIES.get(node_id)
+    if code is None:
+        say("carries an object-class breakdown, but the crosswalk reaches no toptier agency for it")
+        return out
+    if str(block.get("toptierCode")) != code:
+        say("object-class block names toptier {!r}; the crosswalk reaches {!r}".format(block.get("toptierCode"), code))
+        return out
+    if block.get("source") != "usaspending_file_b_object_class" or block.get("basis") != "obligations":
+        say("object-class block claims source {!r} basis {!r}".format(block.get("source"), block.get("basis")))
+    if block.get("fiscalYear") != OBJECT_CLASS_FISCAL_YEAR or block.get("periodCoverage") != "full_fiscal_year":
+        say("object-class block is not a whole fiscal year {} ({!r}, {!r})".format(
+            OBJECT_CLASS_FISCAL_YEAR, block.get("fiscalYear"), block.get("periodCoverage")))
+        return out
+    documents = block.get("documents") if isinstance(block.get("documents"), dict) else {}
+    loaded = {}
+    for kind in ("minor", "major", "personnel"):
+        doc = documents.get(kind) if isinstance(documents.get(kind), dict) else {}
+        rel = "tests/fixtures/usaspending/object_class/{}/{}.json".format(kind, code)
+        path = PROJECT_ROOT / rel
+        if doc.get("file") != rel or not path.is_file():
+            say("object-class block cites {!r} for {}, not the committed {}".format(doc.get("file"), kind, rel))
+            return out
+        digest = hashlib.sha256(path.read_bytes()).hexdigest()
+        try:
+            meta = _json.loads(path.with_name(path.name + ".meta.json").read_text(encoding="utf-8"))
+        except (OSError, ValueError):
+            meta = {}
+        if digest != str(doc.get("sha256") or "").lower() or digest != str(meta.get("sha256") or "").lower():
+            say("object-class {} fixture's digest is not the block's or its fetch record's".format(kind))
+            return out
+        url = str(doc.get("url") or "")
+        if url != meta.get("url") or not url.startswith("https://api.usaspending.gov/") \
+                or "fiscal_year={}".format(OBJECT_CLASS_FISCAL_YEAR) not in url:
+            say("object-class {} block cites {!r}, not the fixture's FY{} USAspending URL".format(
+                kind, url, OBJECT_CLASS_FISCAL_YEAR))
+            return out
+        loaded[kind] = (_json.loads(path.read_text(encoding="utf-8")).get("results") or [])
+    money = lambda v: round(float(v), 2)
+    groups = sorted((str(r.get("major_object_class_code")), str(r.get("major_object_class_name")),
+                     money(r.get("obligated_amount"))) for r in loaded["major"])
+    published = sorted((str(g.get("code")), str(g.get("name")), g.get("obligations"))
+                       for g in block.get("groups") or [] if isinstance(g, dict))
+    if published != groups:
+        say("object-class groups are not the publisher's major classes as the fixture prints them")
+    total = round(sum(g[2] for g in groups), 2)
+    if block.get("totalObligations") != total or total <= 0:
+        say("object-class total {!r} is not the fixture's {!r}".format(block.get("totalObligations"), total))
+    classes = [[str(r.get("name")), money(r.get("obligated_amount")), money(r.get("gross_outlay_amount"))]
+               for r in loaded["minor"]]
+    if block.get("classes") != classes:
+        say("object-class rows are not the fixture's classes with both figures")
+    if abs(round(sum(c[1] for c in classes), 2) - total) > 1.0:
+        say("object-class fixtures disagree: the classes do not sum to the major groups")
+    if block.get("totalGrossOutlays") != round(sum(c[2] for c in classes), 2):
+        say("object-class gross outlay total is not the sum of the fixture's rows")
+    staff = block.get("staffPay") if isinstance(block.get("staffPay"), dict) else {}
+    expected_rows = sorted([str(r.get("object_class_code")), str(r.get("object_class_name")), money(r.get("obligated_amount"))]
+                           for r in loaded["personnel"]
+                           if str(r.get("object_class_code") or "").startswith(OBJECT_CLASS_STAFF_PREFIXES))
+    listed = staff.get("classes") or []
+    if listed != expected_rows:
+        say("staff pay lists {!r}; the fixture's 11.x and 12.x rows are {!r}".format(listed, expected_rows))
+    amount = staff.get("amount")
+    listed_sum = round(sum(r[2] for r in listed if isinstance(r, list) and len(r) == 3
+                           and isinstance(r[2], (int, float))), 2)
+    if not isinstance(amount, (int, float)) or isinstance(amount, bool) or amount != listed_sum:
+        say("staff pay {!r} is not the sum of the rows it lists ({!r})".format(amount, listed_sum))
+    elif amount <= 0:
+        say("publishes a staff pay of {!r}; zero is never published".format(amount))
+    elif total > 0 and staff.get("share") != round(amount / total, 4):
+        say("staff pay share {!r} is not its amount over the total".format(staff.get("share")))
+    if "13.0" in str(staff.get("note") or "") and "not included" not in str(staff.get("note") or ""):
+        say("staff pay note does not say 13.0 is excluded")
+    if not str(staff.get("note") or "").strip() or not str(block.get("note") or "").strip():
+        say("object-class block carries no note saying what the figures are")
+    alias = block.get("nameAlias") if isinstance(block.get("nameAlias"), dict) else None
+    expected_graph = USASPENDING_NAME_ALIASES[node_id][0] if alias and node_id in USASPENDING_NAME_ALIASES else None
+    if alias is None and canonical_key(block.get("apiName")) != canonical_key(node.get("name")):
+        say("object-class block names {!r}, which no longer names this node".format(block.get("apiName")))
+    if alias is not None and (expected_graph is None or canonical_key(node.get("name")) != canonical_key(expected_graph)
+                              or canonical_key(alias.get("apiName")) != canonical_key(USASPENDING_NAME_ALIASES[node_id][1])):
+        say("object-class block rests on a name alias this repository does not carry for this node")
+    measured = str(node.get("cost_status") or "") in ("official", "root_total")
+    cost = node.get("resolved_total_amount")
+    if measured and isinstance(cost, (int, float)):
+        for figure in (block.get("totalObligations"), block.get("totalGrossOutlays"), amount):
+            if isinstance(figure, (int, float)) and abs(float(cost) - float(figure)) <= 0.005:
+                say("publishes an object-class figure as its measured cost")
+    for url in node.get("sourceUrls") or []:
+        if "object_class" in str(url) and "usaspending.gov" in str(url):
+            say("puts an object-class URL among its own sources")
+    if "object_class" in str(node.get("verificationMethod") or ""):
+        say("claims a verification method from the object-class breakdown")
+    return out
+
+
+# ---------------------------------------------------------------------------
 # USAJOBS vacancy announcements as a LISTING of a title family's pay plan and
 # grade (data_pipeline/verification/usajobs.py, since 2026-10-07, the owner's
 # decision). Mirrored here by family, with the announcements each family rests
@@ -9271,6 +9416,7 @@ def main(argv):
     bad_schedule_pay = []
     bad_reported_pay = []
     bad_usaspending = []
+    bad_spending_by_kind = []
     bad_current_listing = []
     bad_current_pay = []
     bad_vacancy_listing = []
@@ -9565,6 +9711,9 @@ def main(argv):
         usaspending = node.get("usaspendingOutlays")
         if usaspending is not None:
             bad_usaspending.extend(usaspending_violations(node, usaspending, today, label))
+        spending_by_kind = node.get("spendingByKind")
+        if spending_by_kind is not None:
+            bad_spending_by_kind.extend(spending_by_kind_violations(node, spending_by_kind, label))
         # The same, for a page read that did not name the node and stands
         # beside a directory listing that did.
         read_not_named = node.get("pageReadNotNamed")
@@ -9712,6 +9861,7 @@ def main(argv):
     gate.check("an Executive Schedule rate names the post the U.S. Code names, at the level the Code sets", bad_schedule_pay)
     gate.check("a reported pay rate is the roster's own figure for the title it names, and never zero", bad_reported_pay)
     gate.check("a File A gross outlay is the fixture's own figure for the key it names, dated, and never the cost", bad_usaspending)
+    gate.check("an object-class breakdown is the committed FY2025 fixtures' own figures for the agency the crosswalk reaches, staff pay their 11.x and 12.x rows, never the cost", bad_spending_by_kind)
     gate.check("a current PLUM listing is a Filled or Vacant row of the committed export, filed under the node's own parent, naming it", bad_current_listing)
     gate.check("a current PLUM rate is the row's own printed figure for the listing beneath it, a proxy, never zero and never a cost", bad_current_pay)
     gate.check(
