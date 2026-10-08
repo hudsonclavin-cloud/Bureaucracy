@@ -29,6 +29,16 @@ const state = {
   budgetSummary: null,
 };
 
+// OPM FedScope payroll of an organisation's civilian staff: this repository's
+// sum of the table's printed row averages times counts. Never the cost.
+function payrollText(node) {
+  const block = node && node.payrollOfficial;
+  if (!block || typeof block !== "object" || typeof block.totalAnnualPay !== "number") return "";
+  const fmt = (n) => `$${Math.round(n).toLocaleString("en-US")}`;
+  const range = Array.isArray(block.rowAverageRange) ? `; sub-agency averages ${fmt(block.rowAverageRange[0])}–${fmt(block.rowAverageRange[1])}` : "";
+  return `${fmt(block.totalAnnualPay)} annualized adjusted basic pay for ${block.employees.toLocaleString("en-US")} civilian staff, average ${fmt(block.average)}${range} (OPM FedScope, ${block.period}). Civilians in an active pay status only, USPS and intelligence agencies excluded; the sum of OPM's printed row averages, not the cost.`;
+}
+
 function escapeHtml(value) {
   return String(value ?? "").replace(/[&<>'"]/g, (character) => ({
     "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;",
@@ -933,6 +943,8 @@ function renderDetail(node) {
   if (cost.sourceUrl) rows.push(row("Cost source", `${link(cost.sourceUrl, "Monthly Treasury Statement, Table 5 (fiscaldata.treasury.gov)")}<span class="detail-note">Evidence of the cost, not of the unit's existence.</span>`));
   const spending = describeSpendingByKind(node);
   if (spending) rows.push(row(`Where the money goes — FY${spending.fiscalYear}`, spending.html, "spend-row"));
+  const payroll = payrollText(node);
+  if (payroll) rows.push(row("Civilian staff pay", escapeHtml(payroll)));
   if (pay.length) {
     const rateNote = pay.some((block) => !block.notARate)
       ? `<span class="detail-note">A rate of basic pay is not this unit's cost: it excludes benefits and is not a share of federal outlays, which is what every other figure in this graph means.</span>`

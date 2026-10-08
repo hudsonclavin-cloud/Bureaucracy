@@ -5563,3 +5563,35 @@ compensation) and 12.x (personnel benefits), listed by code.
   toptier rows each reduce by name to exactly one organisation here (89 of the
   111 toptier rows do), but no crosswalk row proposes them, so reaching them
   means widening the reach, which this pass did not do.
+
+## 21. What an organisation's civilian staff are paid, from FedScope (2026-10-08)
+
+The owner asked for "a good total cost of everyone combined", not every
+individual. The FedScope summary table `headcounts.py` already reads for a
+headcount prints a second figure on the same row: `AVGSAL`, which the March
+2025 data dictionary defines as "The average employee annualized adjusted
+basic pay." (the dictionary's AVGSAL row, pinned against the PDF by
+`tests/test_fedscope_payroll.py`). `data_pipeline/verification/fedscope_payroll.py`
+publishes `payrollOfficial` beside every headcount stamped on the same build,
+so every refusal `headcounts.py` makes binds unchanged.
+
+- **The total is arithmetic, said so.** OPM prints no total: the figure is
+  the sum, over the sub-agency rows the headcount rests on, of printed count ×
+  printed average. OPM rounds each average to the dollar, so it is exact to
+  within half a dollar per employee; the block's note says so, and that basic
+  pay excludes benefits and is not the cost.
+- **Range: the printed sub-agency averages only** (`rowAverageRange`, on an
+  agency with more than one row). Not a range of individual pay.
+- **178 organisations** carry it (the headcount's 179 less the Tax Court,
+  which `headcounts.py` flags as outside OPM's stated coverage). Across the 74
+  top-most of them, **$185.1bn for 1,654,932 civilians**; the whole table's
+  March 2025 rows sum to $251.6bn for 2,289,472. Largest: VA $52.6bn (474,532
+  staff, average $110,817), VHA $46.9bn, DHS $24.1bn, DoD $16.0bn (its
+  civilian agencies only — the Army, Navy and Air Force civilians land on no
+  node, the gap `headcounts.py` records), DOJ $13.6bn.
+- **Declined:** the per-record files 1–3 (`SALARY` per record, 942 MB
+  uncompressed, many rows `REDACTED`): percentiles from them would rest on a
+  partial population and a re-derivation too heavy for the gate; the
+  September 2024 cube, a different period; any per-post figure — a post with
+  no pay claim shows only a context line read in the browser off its parent's
+  block ("this is not this post's pay").

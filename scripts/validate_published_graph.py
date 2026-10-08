@@ -8200,7 +8200,7 @@ ALIAS_FORBIDDEN_BLOCKS = (
     "employeesOfficialSource", "cost_weight_dispute", "positionPayRate",
     "positionGradePay", "positionStatutoryPay", "positionSchedulePay",
     "positionReportedPay", "positionCurrentPay", "positionDerivedPay",
-    "positionTierReferencePay", "positionMilitaryPay",
+    "positionTierReferencePay", "positionMilitaryPay", "payrollOfficial",
 )
 #: Deliberately only this feature's own rule and field. `usaspendingOutlays`
 #: carries a `nameAlias` of its OWN -- `USASPENDING_NAME_ALIASES`, a separate
@@ -9037,6 +9037,96 @@ def load_committed_treasury_statements():
             out[date] = (path, TreasuryStatementRows(rows))
     return out
 
+
+
+# --- FedScope payroll (data_pipeline/verification/fedscope_payroll.py) ------
+#: Mirrors of the module's constants, pinned equal by tests/test_fedscope_payroll.py.
+FEDSCOPE_PAYROLL_ZIP = PROJECT_ROOT / "tests" / "fixtures" / "opm" / "fedscope" / "fedscope_employment_summary_2025-03.zip"
+FEDSCOPE_PAYROLL_SOURCE = "opm_fedscope_employment_avgsal"
+FEDSCOPE_AVGSAL_DEFINITION = "The average employee annualized adjusted basic pay."
+FEDSCOPE_PAYROLL_COVERAGE = (
+    "EHRI includes data related to Federal civilian employees in the Executive Branch excluding some agencies "
+    "such as the U.S. Postal Service and intelligence agencies. The Employment dataset only includes Federal "
+    "employees in an active pay status."
+)
+
+
+def fedscope_payroll_rows(zip_path=None):
+    """(period, sub-agency code) -> (EMPCOUNT, AVGSAL) and the zip's digest,
+    read with the standard library alone; the digest must be the fetch record's."""
+    import csv
+    import hashlib
+    import zipfile
+    path = Path(zip_path or FEDSCOPE_PAYROLL_ZIP)
+    data = path.read_bytes()
+    digest = hashlib.sha256(data).hexdigest()
+    meta = json.loads(path.with_name(path.name + ".meta.json").read_text(encoding="utf-8"))
+    if meta.get("sha256") != digest:
+        raise ValueError("FedScope summary digest is not the fetch record's")
+    with zipfile.ZipFile(io.BytesIO(data)) as archive:
+        name = [n for n in archive.namelist() if n.split("/")[-1].startswith("Status Employment by Agency and SubAgency")][0]
+        text = archive.read(name).decode("utf-8-sig")
+    rows = {}
+    for row in csv.DictReader(io.StringIO(text), delimiter="\t"):
+        code = str(row.get("DATECODE") or "").strip()
+        rows[("{}-{}".format(code[:4], code[4:]), str(row.get("AGYSUB") or "").strip())] = (
+            int(row["EMPCOUNT"]), int(row["AVGSAL"]))
+    return rows, digest
+
+
+def fedscope_payroll_violations(node, block, rows, digest, label):
+    """Everything a `payrollOfficial` block may claim, re-derived from the zip."""
+    out = []
+    who = label(node)
+    if not isinstance(block, dict):
+        return ["{} carries a payrollOfficial that is not a block".format(who)]
+    if "position" in str(node.get("type") or "").casefold() or node.get("synthetic"):
+        out.append("{} is a post or a synthetic line and carries a payroll".format(who))
+    if block.get("source") != FEDSCOPE_PAYROLL_SOURCE:
+        out.append("{} payroll names an unknown source".format(who))
+    if block.get("definition") != FEDSCOPE_AVGSAL_DEFINITION:
+        out.append("{} payroll does not quote the dictionary's AVGSAL definition".format(who))
+    if block.get("coverage") != FEDSCOPE_PAYROLL_COVERAGE:
+        out.append("{} payroll lacks the dictionary's coverage sentence".format(who))
+    period = block.get("period")
+    if not period:
+        out.append("{} payroll has no period".format(who))
+    if block.get("sha256") != digest:
+        out.append("{} payroll cites a digest the committed file does not have".format(who))
+    if not str(block.get("url") or "").startswith("https://www.opm.gov/"):
+        out.append("{} payroll does not cite OPM".format(who))
+    src = node.get("employeesOfficialSource") if isinstance(node.get("employeesOfficialSource"), dict) else {}
+    if src.get("period") != period:
+        out.append("{} payroll stands beside no headcount for its period".format(who))
+    components = block.get("rows") if isinstance(block.get("rows"), list) else []
+    if not components:
+        out.append("{} payroll lists no rows".format(who))
+    total = 0
+    count = 0
+    for item in components:
+        if not (isinstance(item, list) and len(item) == 3):
+            out.append("{} payroll row is malformed".format(who))
+            continue
+        printed = rows.get((period, str(item[0])))
+        if printed is None or (item[1], item[2]) != printed:
+            out.append("{} payroll row {} is not what the table prints".format(who, item[0]))
+        total += int(item[1]) * int(item[2])
+        count += int(item[1])
+    if block.get("totalAnnualPay") != total:
+        out.append("{} payroll total is not the sum of its rows' count x average".format(who))
+    if block.get("employees") != count or node.get("employeesOfficial") != count:
+        out.append("{} payroll headcount is not its rows' count or the node's OPM headcount".format(who))
+    if count and block.get("average") != round(total / count):
+        out.append("{} payroll average is not total / count".format(who))
+    if len(components) > 1:
+        if block.get("rowAverageRange") != [min(c[2] for c in components), max(c[2] for c in components)]:
+            out.append("{} payroll range is not its rows' printed averages".format(who))
+    elif "rowAverageRange" in block:
+        out.append("{} payroll claims a range over one row".format(who))
+    if str(node.get("cost_status") or "") in ("official", "root_total", "scaled_official") and \
+            node.get("resolved_total_amount") == block.get("totalAnnualPay"):
+        out.append("{} payroll equals the measured cost to the cent".format(who))
+    return out
 
 def main(argv):
     graph_path = Path(argv[1]) if len(argv) > 1 else DEFAULT_GRAPH
@@ -10301,6 +10391,17 @@ def main(argv):
     for node in nodes:
         if "committeeDisbursements" in node and not isinstance(node.get("committeeDisbursements"), dict):
             disbursement_violations.append("{} carries a committeeDisbursements that is not a block".format(label(node)))
+    payroll_violations = []
+    payroll_nodes = [n for n in nodes if "payrollOfficial" in n]
+    if payroll_nodes:
+        payroll_rows, payroll_digest = fedscope_payroll_rows()
+        for node in payroll_nodes:
+            payroll_violations.extend(fedscope_payroll_violations(node, node["payrollOfficial"], payroll_rows, payroll_digest, label))
+    gate.check(
+        "a FedScope payroll is the sum of the table's printed rows, beside a headcount, and never the cost",
+        payroll_violations,
+        " — {} organisation(s)".format(len(payroll_nodes)) if not payroll_violations else "",
+    )
     payout_weight_violations = disbursement_weight_violations(nodes, tree_parents, label)
     gate.check(
         "committees weighted by payouts are weighted by one statement's, in proportion",

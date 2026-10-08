@@ -1801,6 +1801,29 @@ is a civilian department, the second the uniformed service, and they are
 different populations — a curation gap, in `CURATION.md`, not a matcher
 bug.
 
+**What the civilian staff are paid, off the same rows (`fedscope_payroll.py`,
+since 2026-10-08, the owner's ask: "a good total cost of everyone combined").**
+The FedScope row that gives a headcount also prints `AVGSAL`, "The average
+employee annualized adjusted basic pay." in the data dictionary's own words.
+`payrollOfficial` is stamped only beside an `employeesOfficialSource` stamped on
+the same build, so every refusal above binds unchanged, never on a post: the
+total (count × printed average, summed over the record's sub-agency rows — OPM
+prints no total, and each average is rounded to the dollar, so it is exact to
+half a dollar per head), the count, total ÷ count, and on a multi-row agency the
+range of the printed sub-agency averages, which is not a range of individual
+pay. It is not the cost and writes no cost field, `sourceUrls` or
+`verificationMethod`. **178 organisations** (the Tax Court, outside OPM's stated
+coverage, is not one); the 74 top-most carry **$185.1bn for 1,654,932
+civilians**, VA $52.6bn the largest. The gate re-reads the committed zip
+(digest recomputed), refuses a row the table does not print, a total that is not
+the sum, an average that is not total ÷ count, a count that is not the node's
+headcount, a post, a missing period, definition or coverage sentence, and a
+figure equal to a measured cost to the cent. The panel prints it under "PAY OF
+CIVILIAN STAFF — OPM FedScope", and an unpriced post under such an organisation
+gets one line read in the browser off the parent's block, saying it is not the
+post's pay. The per-record files (`SALARY`, many rows `REDACTED`) were not read:
+`CURATION.md` §21.
+
 **Pay, as the archive states it and no further.** The archive's
 `LevelGradePay` column holds two different things — a rank ("IV" for an
 Executive Schedule row, "15" for a General Schedule one) and, for 983 rows,
