@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-10-08T00:04:51Z",
+ "url": "https://www.govinfo.gov/link/uscode/10/10506?link-type=html",
+ "status": 200,
+ "final_url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleE-partI-chap1011-sec10506.htm",
+ "content_type": "text/html",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /link/uscode/10/10506",
+ "bytes": 11064,
+ "sha256": "28585dc2b8f818965b74ceeef03395b5b365b092fa094c78781538f9a93be770",
+ "error": null
+}

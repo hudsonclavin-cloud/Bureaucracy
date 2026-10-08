@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-10-08T00:04:46Z",
+ "url": "https://www.govinfo.gov/link/uscode/14/305?link-type=html",
+ "status": 200,
+ "final_url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title14/html/USCODE-2024-title14-subtitleI-chap3-sec305.htm",
+ "content_type": "text/html",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /link/uscode/14/305",
+ "bytes": 11563,
+ "sha256": "09ee524609c4b17e05049884f7e9b6b8ee20efea46b64182a464ae80dbd0fa61",
+ "error": null
+}

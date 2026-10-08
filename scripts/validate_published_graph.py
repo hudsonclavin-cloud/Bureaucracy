@@ -5643,6 +5643,15 @@ MILITARY_NOT_PRICED_NODE_IDS = frozenset({
     "exec-dept-defense-jcs-chief-of-staff-of-the-air-force",
     "exec-dept-defense-jcs-chief-of-space-operations",
     "exec-dept-defense-jcs-commandant-of-the-coast-guard",
+    # The thirteenth research batch's leads whose grade no section fixes
+    # (2026-10-08): 14 U.S.C. 305 designates Coast Guard vice admirals and
+    # names no Area Commander; 10 U.S.C. 7038, 10506 and 8084 appoint the
+    # reserve and National Guard heads "from general officers" and fix no grade.
+    "exec-dept-dhs-uscg-commander-atlantic-area",
+    "exec-dept-dhs-uscg-commander-pacific-area",
+    "exec-dept-defense-army-chief-army-reserve",
+    "exec-dept-defense-army-chief-army-national-guard",
+    "exec-dept-defense-marines-commanding-general-marine-corps-reserve",
 })
 _MILITARY_GRADE_LABEL_RE = re.compile(r"^([OWE])[–-]⁠?(\d+E?)$")
 _MILITARY_MARK_RE = re.compile(r"^\d$")
